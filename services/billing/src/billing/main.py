@@ -5,6 +5,7 @@ from testee_common.auth.auth import start_firebase
 from testee_common.auth.company_access import remember_assistant
 from testee_common.http.body_limit import BodyLimitMiddleware
 from testee_common.http.compression import compress_answers
+from testee_common.http.docs import add_api_docs
 from testee_common.http.health import health_router
 from testee_common.http.no_store import NoStoreMiddleware
 from testee_common.http.shutdown import close_shared
@@ -49,9 +50,15 @@ app = FastAPI(
     title="billing",
     lifespan=lifespan,
     openapi_url="/openapi.json" if settings.api_docs else None,
+    # Swagger UI as the gateway serves it (add_api_docs below).
+    docs_url=None,
+    redoc_url=None,
     # A company's access check passes on what the request came through (an AI app).
     dependencies=[Depends(remember_assistant)],
 )
+
+if settings.api_docs:
+    add_api_docs(app, "/api/billing")
 add_localized_errors(app)
 app.add_middleware(NoStoreMiddleware)
 app.add_middleware(RequestLogMiddleware)

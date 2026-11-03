@@ -2,6 +2,8 @@ from testee_common.config.settings import ServiceSettings
 
 
 class Settings(ServiceSettings):
+    # Swagger UI at /docs (testee_common.http.docs): the local stack only.
+    api_docs: bool = False
     # Companies' API keys and web hooks; Redis holds the rate limits and maintenance mode.
     database_url: str
     redis_url: str

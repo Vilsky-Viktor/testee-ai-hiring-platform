@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from testee_common.auth.auth import start_firebase
 from testee_common.http.body_limit import BodyLimitMiddleware
 from testee_common.http.compression import compress_answers
+from testee_common.http.docs import add_api_docs
 from testee_common.http.health import health_router
 from testee_common.http.no_store import NoStoreMiddleware
 from testee_common.http.shutdown import close_shared
@@ -51,7 +52,13 @@ app = FastAPI(
     title="library",
     lifespan=lifespan,
     openapi_url="/openapi.json" if settings.api_docs else None,
+    # Swagger UI as the gateway serves it (add_api_docs below).
+    docs_url=None,
+    redoc_url=None,
 )
+
+if settings.api_docs:
+    add_api_docs(app, "/api/library")
 add_localized_errors(app)
 app.add_middleware(MaintenanceMiddleware, get_redis=get_redis)
 app.add_middleware(NoStoreMiddleware)

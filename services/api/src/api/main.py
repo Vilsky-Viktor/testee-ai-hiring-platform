@@ -6,6 +6,7 @@ from testee_common.auth.auth import start_firebase
 from testee_common.auth.company_access import remember_assistant
 from testee_common.http.body_limit import BodyLimitMiddleware
 from testee_common.http.compression import compress_answers
+from testee_common.http.docs import add_api_docs
 from testee_common.http.health import health_router
 from testee_common.http.no_store import NoStoreMiddleware
 from testee_common.http.shutdown import close_shared
@@ -70,6 +71,9 @@ app = FastAPI(
     # route's function name, so renaming a route function is a breaking change.
     generate_unique_id_function=lambda route: route.name,
 )
+
+if settings.api_docs:
+    add_api_docs(app, "/api/v1")
 # Every refusal of the public API carries a machine-readable code.
 add_localized_errors(app, error_codes.BY_STATUS)
 app.add_exception_handler(MissingPermission, missing_permission)
