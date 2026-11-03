@@ -125,7 +125,7 @@ export function TopicReview({
                 type="button"
                 variant="ghost"
                 size="icon"
-                className="absolute end-4 top-1/2 -translate-y-1/2"
+                className="absolute end-4 top-1/2 size-11 -translate-y-1/2"
                 aria-label={t.markup("editTopic", {
                   topic: topic.main_topic,
                   ...bdiText,
@@ -133,7 +133,7 @@ export function TopicReview({
                 tooltip={common("edit")}
                 onClick={() => setEditing(index)}
               >
-                <SquarePenIcon />
+                <SquarePenIcon className="size-6" />
               </Button>
             </li>
           )
