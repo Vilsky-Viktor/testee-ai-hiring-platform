@@ -38,7 +38,7 @@ Per script (`styles/scripts.css`): Arabic and Persian get no letter spacing, whi
 
 ## Language of interviews and emails
 
-- An interview is generated in the language chosen in "generate in", next to the text box. It defaults to the interface language.
+- An interview is generated in the language chosen in "generate in", next to the text box. It defaults to the interface language. The languages voice mode speaks are marked there with a microphone (generation's `GET /api/generate/languages/voice`; without an answer the choice works unmarked).
 - The pasted text can be in any language; the interview follows "generate in".
 - Invite emails follow the interview's language.
 - Questions and options carry the interview's language and direction (`lang`, `dir`), wherever they show: the interview's topics and questions, a candidate's scorecard and report, the session a candidate plays, a practice round and a template's page. Screen readers read them in that language, and an Arabic interview reads right to left in an English interface.

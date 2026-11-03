@@ -153,6 +153,16 @@ export function formatList(items: string[], locale: string) {
   }).format(items)
 }
 
+/** Languages' names in the interface's language, as a list ("English, Spanish, German"; "Englisch und Französisch"). */
+export function formatLanguages(codes: string[], locale: string) {
+  const names = new Intl.DisplayNames(locale, { type: "language" })
+
+  return formatList(
+    codes.map((code) => names.of(code) ?? code),
+    locale
+  )
+}
+
 /** A percentage (0 to 100) as the language writes it ("85 %" in French, "%85" in Turkish); "—"
  * for none (a grade not known yet). `signed` writes a plus before it ("+25%", extra time). */
 export function formatPercent(

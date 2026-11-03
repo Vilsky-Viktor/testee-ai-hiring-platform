@@ -1373,7 +1373,8 @@
     "failed": "Couldn't change automatic top-up. Please try again."
   },
   "generateIn": {
-    "label": "Generate in"
+    "label": "Generate in",
+    "voice": "voice mode"
   },
   "referral": {
     "companyNote": "You both get {reward, number} credits when they make their first top-up, of any amount.",
@@ -1493,7 +1494,8 @@
           "title": "Voice mode with Mira",
           "text": "Mira, our AI interviewer, reads the questions and hears the answers."
         }
-      }
+      },
+      "voiceLanguages": "Voice mode works in interviews in {languages}."
     },
     "shareReports": {
       "title": "See who's best\nShare it in seconds",

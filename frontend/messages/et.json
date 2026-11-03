@@ -1373,7 +1373,8 @@
     "failed": "Automaatset juurdelaadimist ei õnnestunud muuta. Proovi uuesti."
   },
   "generateIn": {
-    "label": "Loo keeles"
+    "label": "Loo keeles",
+    "voice": "häälerežiim"
   },
   "referral": {
     "companyNote": "Te mõlemad saate {reward, number} krediiti, kui nad teevad esimese juurdelaadimise mis tahes summas.",
@@ -1493,7 +1494,8 @@
           "title": "Häälerežiim Miraga",
           "text": "Mira, meie tehisaru intervjueerija, loeb küsimused ette ja kuulab vastuseid."
         }
-      }
+      },
+      "voiceLanguages": "Häälerežiim töötab intervjuudes järgmistes keeltes: {languages}."
     },
     "shareReports": {
       "title": "Vaata, kes on parim\nJaga sekunditega",

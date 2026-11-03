@@ -1373,7 +1373,8 @@
     "failed": "Impossibile modificare la ricarica automatica. Riprova."
   },
   "generateIn": {
-    "label": "Genera in"
+    "label": "Genera in",
+    "voice": "modalità vocale"
   },
   "referral": {
     "companyNote": "Ricevete entrambi {reward, number} crediti quando fa la sua prima ricarica, di qualsiasi importo.",
@@ -1493,7 +1494,8 @@
           "title": "Modalità vocale con Mira",
           "text": "Mira, la nostra intervistatrice IA, legge le domande e ascolta le risposte."
         }
-      }
+      },
+      "voiceLanguages": "La modalità vocale funziona nei colloqui in {languages}."
     },
     "shareReports": {
       "title": "Scopri chi è il migliore\nCondividilo in pochi secondi",

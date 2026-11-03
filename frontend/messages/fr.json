@@ -1373,7 +1373,8 @@
     "failed": "Impossible de modifier la recharge automatique. Veuillez réessayer."
   },
   "generateIn": {
-    "label": "Générer en"
+    "label": "Générer en",
+    "voice": "mode vocal"
   },
   "referral": {
     "companyNote": "Vous recevez chacun {reward, number} crédits lors de sa première recharge, quel que soit le montant.",
@@ -1493,7 +1494,8 @@
           "title": "Mode vocal avec Mira",
           "text": "Mira, notre recruteuse IA, lit les questions et écoute les réponses."
         }
-      }
+      },
+      "voiceLanguages": "Le mode vocal fonctionne dans les entretiens en {languages}."
     },
     "shareReports": {
       "title": "Voyez qui est le meilleur\nPartagez-le en quelques secondes",

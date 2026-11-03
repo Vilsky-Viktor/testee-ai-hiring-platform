@@ -1373,7 +1373,8 @@
     "failed": "Das automatische Aufladen konnte nicht geändert werden. Bitte versuche es erneut."
   },
   "generateIn": {
-    "label": "Erstellen auf"
+    "label": "Erstellen auf",
+    "voice": "Sprachmodus"
   },
   "referral": {
     "companyNote": "Ihr bekommt beide {reward, number} Credits, wenn es zum ersten Mal auflädt, egal mit welchem Betrag.",
@@ -1493,7 +1494,8 @@
           "title": "Sprachmodus mit Mira",
           "text": "Mira, unsere KI-Interviewerin, liest die Fragen vor und hört die Antworten."
         }
-      }
+      },
+      "voiceLanguages": "Der Sprachmodus funktioniert in Interviews auf {languages}."
     },
     "shareReports": {
       "title": "Sieh, wer am besten ist\nTeile es in Sekunden",

@@ -9,7 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import type { InterviewSettingsData } from "@/types/company"
-import { formatList } from "@/lib/format"
+import { formatLanguages } from "@/lib/format"
 import { LIST_BOX } from "@/config/lists"
 import { CARD_PADDING } from "@/config/cards"
 import { AnswerModeSetting } from "@/features/company/components/answer-mode-switch"
@@ -85,7 +85,7 @@ export function InterviewSettings({
           voice.available
             ? t("answerModeHelp")
             : t("voiceModeLanguages", {
-                languages: languageList(voice.languages, locale),
+                languages: formatLanguages(voice.languages, locale),
               })
         }
         voice={saved.voice}
@@ -125,16 +125,6 @@ export function InterviewSettings({
         onChange={(checked) => save({ keep_private: checked })}
       />
     </div>
-  )
-}
-
-/** The languages' names in the interface's language, as a list: "English, Spanish and German". */
-function languageList(codes: string[], locale: string) {
-  const names = new Intl.DisplayNames(locale, { type: "language" })
-
-  return formatList(
-    codes.map((code) => names.of(code) ?? code),
-    locale
   )
 }
 

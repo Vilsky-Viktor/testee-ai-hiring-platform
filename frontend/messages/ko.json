@@ -1373,7 +1373,8 @@
     "failed": "자동 충전을 변경하지 못했습니다. 다시 시도해 주세요."
   },
   "generateIn": {
-    "label": "생성 언어"
+    "label": "생성 언어",
+    "voice": "음성 모드"
   },
   "referral": {
     "companyNote": "상대 회사가 금액에 관계없이 첫 충전을 하면 양쪽 모두 {reward, number} 크레딧을 받습니다.",
@@ -1493,7 +1494,8 @@
           "title": "미라와 함께하는 음성 모드",
           "text": "AI 면접관 미라가 문제를 읽어 주고 답을 들어요."
         }
-      }
+      },
+      "voiceLanguages": "음성 모드는 다음 언어의 면접에서 사용할 수 있습니다: {languages}."
     },
     "shareReports": {
       "title": "누가 가장 잘했는지 한눈에\n몇 초 만에 공유",

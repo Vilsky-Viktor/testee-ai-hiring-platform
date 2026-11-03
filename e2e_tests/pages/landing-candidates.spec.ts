@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 
+import { REQUEST_URL } from "./helpers/env";
 import { loaded } from "./helpers/waits";
 
 // The home page's candidates section plays a question as a candidate sees it. Its counter
@@ -81,4 +82,42 @@ test("on a phone the modes show as cards in place of the demo", { tag: "@phone-o
   await expect(section.getByTestId("candidates-demo")).toBeHidden();
   await expect(section.getByTestId("phone-steps").getByTestId("icon-card")).toHaveCount(2);
   await expect(section.getByTestId("notes")).toBeVisible();
+});
+
+// The languages voice mode speaks, as generation gives them: named under the demo, in the page's
+// language, and marked with a microphone (and a screen reader's text) in the start's "generate
+// in" picker.
+test("the voice languages are named under the demo and marked in the picker", async ({ page }) => {
+  test.setTimeout(120_000);
+  const response = await page.request.get(`${REQUEST_URL}/api/generate/languages/voice`);
+  const voice = (await response.json()) as string[];
+  expect(voice.length).toBeGreaterThan(0);
+  await page.goto("/");
+  await loaded(page);
+
+  const names = await page.evaluate(
+    (codes) => codes.map((code) => new Intl.DisplayNames("en", { type: "language" }).of(code)!),
+    voice,
+  );
+
+  for (const name of names) {
+    await expect(page.locator("#candidates")).toContainText(name);
+  }
+
+  await page.locator("main form").first().locator("[aria-labelledby]").click();
+  const options = page.getByRole("option");
+  await expect(options.first()).toBeVisible();
+  const marked = await options.evaluateAll((items) =>
+    items
+      .filter((item) => item.querySelector('svg[class*="lucide-mic"]'))
+      .map((item) => [
+        item.querySelector("[lang]")!.getAttribute("lang"),
+        item.querySelector(".sr-only")?.textContent ?? "",
+      ]),
+  );
+  expect(marked.map(([language]) => language).sort()).toEqual([...voice].sort());
+
+  for (const [, text] of marked) {
+    expect(text).not.toBe("");
+  }
 });

@@ -1373,7 +1373,8 @@
     "failed": "Automatisch opwaarderen kon niet worden gewijzigd. Probeer het opnieuw."
   },
   "generateIn": {
-    "label": "Genereren in"
+    "label": "Genereren in",
+    "voice": "spraakmodus"
   },
   "referral": {
     "companyNote": "Jullie krijgen allebei {reward, number} credits wanneer zij voor het eerst opwaarderen, met welk bedrag ook.",
@@ -1493,7 +1494,8 @@
           "title": "Spraakmodus met Mira",
           "text": "Mira, onze AI-interviewer, leest de vragen voor en luistert naar de antwoorden."
         }
-      }
+      },
+      "voiceLanguages": "Spraakmodus werkt in interviews in het {languages}."
     },
     "shareReports": {
       "title": "Zie wie de beste is\nDeel het in seconden",

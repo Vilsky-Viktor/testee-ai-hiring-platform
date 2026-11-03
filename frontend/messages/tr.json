@@ -1373,7 +1373,8 @@
     "failed": "Otomatik yükleme değiştirilemedi. Lütfen tekrar deneyin."
   },
   "generateIn": {
-    "label": "Oluşturma dili"
+    "label": "Oluşturma dili",
+    "voice": "sesli mod"
   },
   "referral": {
     "companyNote": "İlk yüklemelerini yaptıklarında, tutar ne olursa olsun, ikiniz de {reward, number} kredi kazanırsınız.",
@@ -1493,7 +1494,8 @@
           "title": "Mira ile sesli mod",
           "text": "Yapay zekâ mülakatçımız Mira soruları okur ve cevapları dinler."
         }
-      }
+      },
+      "voiceLanguages": "Sesli mod şu dillerdeki mülakatlarda çalışır: {languages}."
     },
     "shareReports": {
       "title": "En iyisini görün\nSaniyeler içinde paylaşın",

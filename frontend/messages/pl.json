@@ -1373,7 +1373,8 @@
     "failed": "Nie udało się zmienić automatycznego doładowania. Spróbuj ponownie."
   },
   "generateIn": {
-    "label": "Generuj w języku"
+    "label": "Generuj w języku",
+    "voice": "tryb głosowy"
   },
   "referral": {
     "companyNote": "Oboje dostajecie {reward, number} kredytów, gdy zrobią pierwsze doładowanie, na dowolną kwotę.",
@@ -1493,7 +1494,8 @@
           "title": "Tryb głosowy z Mirą",
           "text": "Mira, nasza rekruterka AI, czyta pytania i słucha odpowiedzi."
         }
-      }
+      },
+      "voiceLanguages": "Tryb głosowy działa w rozmowach w językach: {languages}."
     },
     "shareReports": {
       "title": "Zobacz, kto jest najlepszy\nUdostępnij w kilka sekund",

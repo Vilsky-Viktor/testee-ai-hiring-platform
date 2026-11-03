@@ -1373,7 +1373,8 @@
     "failed": "无法更改自动充值，请重试。"
   },
   "generateIn": {
-    "label": "生成语言"
+    "label": "生成语言",
+    "voice": "语音模式"
   },
   "referral": {
     "companyNote": "对方首次充值（任意金额）后，你们双方各得 {reward, number} 点数。",
@@ -1493,7 +1494,8 @@
           "title": "米拉语音模式",
           "text": "我们的 AI 面试官米拉朗读题目并听取回答。"
         }
-      }
+      },
+      "voiceLanguages": "语音模式适用于以下语言的面试：{languages}。"
     },
     "shareReports": {
       "title": "看清谁最优秀\n几秒内即可分享",

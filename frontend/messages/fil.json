@@ -1373,7 +1373,8 @@
     "failed": "Hindi mabago ang awtomatikong top-up. Pakisubukang muli."
   },
   "generateIn": {
-    "label": "Gawin sa wikang"
+    "label": "Gawin sa wikang",
+    "voice": "voice mode"
   },
   "referral": {
     "companyNote": "Pareho kayong makakakuha ng {reward, number} credits kapag ginawa nila ang kanilang unang top-up, anumang halaga.",
@@ -1493,7 +1494,8 @@
           "title": "Voice mode kasama si Mira",
           "text": "Si Mira, ang aming AI interviewer, ang nagbabasa ng mga tanong at nakikinig sa mga sagot."
         }
-      }
+      },
+      "voiceLanguages": "Gumagana ang voice mode sa mga interview sa {languages}."
     },
     "shareReports": {
       "title": "Tingnan kung sino ang pinakamagaling\nI-share sa loob ng ilang segundo",

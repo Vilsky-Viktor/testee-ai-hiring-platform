@@ -1373,7 +1373,8 @@
     "failed": "Não foi possível alterar a recarga automática. Tente novamente."
   },
   "generateIn": {
-    "label": "Gerar em"
+    "label": "Gerar em",
+    "voice": "modo de voz"
   },
   "referral": {
     "companyNote": "Vocês dois recebem {reward, number} créditos quando ela fizer a primeira recarga, de qualquer valor.",
@@ -1493,7 +1494,8 @@
           "title": "Modo de voz com a Mira",
           "text": "A Mira, nossa entrevistadora de IA, lê as questões e ouve as respostas."
         }
-      }
+      },
+      "voiceLanguages": "O modo de voz funciona em entrevistas em {languages}."
     },
     "shareReports": {
       "title": "Veja quem é o melhor\nCompartilhe em segundos",

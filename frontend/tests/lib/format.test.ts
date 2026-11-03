@@ -6,6 +6,7 @@ import {
   formatDate,
   formatDateTime,
   formatDay,
+  formatLanguages,
   formatList,
   formatPercent,
   formatPrice,
@@ -184,6 +185,14 @@ describe("formatList", () => {
   it("lists items as each language does", () => {
     expect(formatList(["English", "French"], "en")).toBe("English, French")
     expect(formatList(["英語", "フランス語"], "ja")).toBe("英語、フランス語")
+  })
+})
+
+describe("formatLanguages", () => {
+  it("names languages in the interface's language, as a list", () => {
+    expect(formatLanguages(["en", "fr"], "en")).toBe("English, French")
+    expect(formatLanguages(["en", "fr"], "de")).toBe("Englisch und Französisch")
+    expect(formatLanguages(["en", "fr"], "ja")).toBe("英語、フランス語")
   })
 })
 

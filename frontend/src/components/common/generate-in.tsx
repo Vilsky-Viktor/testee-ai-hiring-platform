@@ -8,8 +8,8 @@ import type { Locale } from "@/config/i18n"
 import { apiFetch } from "@/lib/api"
 import { isLocale } from "@/lib/locale"
 
-/** Which language to generate a kit or interview in, among those the backend supports. The form
- * starts it on the interface's language. */
+/** Which language to generate a kit or interview in, among those the backend supports, the ones
+ * voice mode speaks marked with a microphone. The form starts it on the interface's language. */
 export function GenerateIn({
   value,
   onChange,
@@ -19,10 +19,15 @@ export function GenerateIn({
 }) {
   const t = useTranslations("generateIn")
   const [languages, setLanguages] = useState<Locale[]>([])
+  const [voice, setVoice] = useState<string[]>([])
 
   useEffect(() => {
     apiFetch<string[]>("/generate/languages")
       .then((codes) => setLanguages(codes.filter(isLocale)))
+      .catch(() => {})
+    // Only a mark: the choice works without it.
+    apiFetch<string[]>("/generate/languages/voice")
+      .then(setVoice)
       .catch(() => {})
   }, [])
 
@@ -40,6 +45,7 @@ export function GenerateIn({
         onChange={onChange}
         label={t("label")}
         compact
+        voice={voice}
       />
     </div>
   )

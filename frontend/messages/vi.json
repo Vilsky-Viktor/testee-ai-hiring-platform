@@ -1373,7 +1373,8 @@
     "failed": "Không thể thay đổi tự động nạp. Vui lòng thử lại."
   },
   "generateIn": {
-    "label": "Tạo bằng"
+    "label": "Tạo bằng",
+    "voice": "chế độ giọng nói"
   },
   "referral": {
     "companyNote": "Cả hai bên đều nhận {reward, number} credit khi họ nạp credit lần đầu, với bất kỳ số tiền nào.",
@@ -1493,7 +1494,8 @@
           "title": "Chế độ giọng nói với Mira",
           "text": "Mira, người phỏng vấn AI của chúng tôi, đọc câu hỏi và nghe câu trả lời."
         }
-      }
+      },
+      "voiceLanguages": "Chế độ giọng nói dùng được trong các buổi phỏng vấn bằng {languages}."
     },
     "shareReports": {
       "title": "Biết ngay ai giỏi nhất\nChia sẻ trong vài giây",
