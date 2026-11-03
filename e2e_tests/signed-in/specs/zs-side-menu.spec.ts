@@ -93,8 +93,15 @@ test("a company's side menu lists its pages, scrolls on its own and stays in vie
   await owner.setViewportSize({ width: 1280, height: 500 })
   await visit(owner, `/companies/${company.id}/interviews/${interview}`)
   await expect(nav.locator('a[aria-current="page"]')).toBeVisible()
-  const start = await nav.evaluate((element) => element.getBoundingClientRect().top + window.scrollY)
-  await owner.evaluate((top) => window.scrollTo(0, top + 100), start)
+  // Past its start by up to 100px, but no further than its column runs on under it: past the
+  // column's end a sticky element leaves with it, however short the page.
+  const scroll = await nav.evaluate((element) => {
+    const box = element.getBoundingClientRect()
+    const room = element.parentElement!.getBoundingClientRect().bottom - box.bottom
+
+    return box.top + window.scrollY - 24 + Math.min(100, room - 1)
+  })
+  await owner.evaluate((top) => window.scrollTo(0, top), scroll)
   await expect
     .poll(() => nav.evaluate((element) => Math.round(element.getBoundingClientRect().top)))
     .toBe(24)
