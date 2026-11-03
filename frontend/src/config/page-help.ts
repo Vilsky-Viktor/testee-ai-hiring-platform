@@ -38,6 +38,7 @@ export const PAGE_HELP_KEYS = [
   "practiceHistory",
   "practiceRound",
   "features",
+  "hiringFlow",
   "pricing",
   "tests",
   "test",

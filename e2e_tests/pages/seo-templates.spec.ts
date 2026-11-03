@@ -108,6 +108,8 @@ test("robots.txt and the sitemap list what should be found", async ({
 
   for (const path of [
     "/de/pricing",
+    "/hiring-flow",
+    "/de/hiring-flow",
     "/tests",
     "/compare/testgorilla",
     "/guides/hiring-engineers",

@@ -491,6 +491,19 @@
       "Mọi tính năng đều có sẵn: bạn chỉ trả tiền cho mỗi ứng viên đã trả lời ít nhất một câu hỏi."
     ]
   },
+  "hiringFlow": {
+    "title": "Quy trình tuyển dụng",
+    "text": "Mọi bước tuyển dụng với testee, từ mô tả công việc bạn dán vào đến báo cáo bạn chia sẻ và người bạn tuyển, cùng mọi lựa chọn ở mỗi bước.",
+    "actions": [
+      "Cuộn xuống theo đường kẻ: mỗi bước cho thấy điều gì xảy ra, các lựa chọn và hình ảnh của ứng dụng thật.",
+      "Xem các cách ứng viên có thể vào và các cách báo cáo có thể gửi đi, dưới bước mời và bước chia sẻ.",
+      "Tạo buổi phỏng vấn từ nút ở đầu trang, hoặc mở tất cả tính năng.",
+      "Dán mô tả công việc vào ô ở cuối trang để bắt đầu."
+    ],
+    "tips": [
+      "Tạo buổi phỏng vấn là miễn phí: bạn chỉ trả tiền cho mỗi ứng viên trả lời ít nhất một câu hỏi."
+    ]
+  },
   "pricing": {
     "title": "Bảng giá",
     "text": "Chi phí của testee: tạo buổi phỏng vấn miễn phí, bạn trả theo mỗi ứng viên trả lời, không có gói đăng ký.",

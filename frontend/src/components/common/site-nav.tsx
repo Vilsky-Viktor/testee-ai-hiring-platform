@@ -9,7 +9,15 @@ import { LocalizedLink, useUrlLocale } from "@/components/common/localized-link"
 import { NAV_LINKS } from "@/config/navigation"
 import { localizeHref } from "@/lib/locale-path"
 
-export function SiteNav() {
+/** The site's main links: in a row in the header, or one under another, large, in the phone's
+ * menu (`vertical`), where following one closes it (`onNavigate`). */
+export function SiteNav({
+  vertical = false,
+  onNavigate,
+}: {
+  vertical?: boolean
+  onNavigate?: () => void
+}) {
   const t = useTranslations("nav")
   const pathname = usePathname()
   const { user, loading } = useAuth()
@@ -20,7 +28,11 @@ export function SiteNav() {
     // globals.css finds it by data-slot to add the blue dots; the label is translated.
     <nav
       data-slot="main-nav"
-      className="-ms-1.5 flex h-8 items-center sm:-ms-2.5"
+      className={cn(
+        vertical
+          ? "flex flex-col items-start gap-1"
+          : "-ms-1.5 flex h-8 items-center sm:-ms-2.5"
+      )}
       aria-label={t("main")}
     >
       {NAV_LINKS.map((link) => {
@@ -39,8 +51,12 @@ export function SiteNav() {
             key={link.href}
             href={link.href}
             aria-current={current ? "page" : undefined}
+            onClick={onNavigate}
             className={cn(
-              "rounded-lg px-1.5 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground active:bg-surface active:text-foreground sm:px-2.5",
+              "rounded-lg text-muted-foreground transition-colors hover:text-foreground active:bg-surface active:text-foreground",
+              vertical
+                ? "px-3 py-2.5 font-heading text-3xl"
+                : "px-1.5 py-1.5 text-sm sm:px-2.5",
               current && "text-foreground"
             )}
           >

@@ -77,7 +77,11 @@
     "trust": "Confiance",
     "language": "Langue",
     "features": "Fonctionnalités",
-    "featuresLink": "fonctionnalités"
+    "featuresLink": "fonctionnalités",
+    "flowLink": "parcours",
+    "hiringFlow": "Parcours de recrutement",
+    "menu": "Menu",
+    "closeMenu": "Fermer le menu"
   },
   "signIn": {
     "title": "Se connecter",
@@ -1607,7 +1611,9 @@
       "title": "D'autres questions ?",
       "videos": "vidéos",
       "faq": "FAQ",
-      "guides": "guides"
+      "guides": "guides",
+      "features": "fonctionnalités",
+      "hiringFlow": "parcours de recrutement"
     },
     "closing": {
       "title": "Créez votre premier entretien\nC'est gratuit",
@@ -2279,7 +2285,8 @@
       "topics": "revoir les thèmes",
       "practice": "entraînement",
       "news": "actualités",
-      "features": "Fonctionnalités"
+      "features": "Fonctionnalités",
+      "hiringFlow": "Parcours de recrutement"
     },
     "voice": {
       "hold": "Maintenez pour parler",
@@ -2746,7 +2753,7 @@
     "title": "Fonctionnalités : entretiens IA pour recruter, de bout en bout",
     "description": "Toutes les fonctionnalités de testee : entretiens à partir d'une fiche de poste, modes clic et vocal, alertes d'intégrité, rapports, intégrations ATS et API, et conformité.",
     "hero": {
-      "title": "De la fiche de poste\nau bon recrutement",
+      "title": "Tout ce qu'il faut\npour bien recruter",
       "text": "Un entretien chronométré rédigé pour votre poste, des candidats de partout et une vision claire de qui est le meilleur. Toutes les fonctionnalités sont incluses.",
       "start": "Créer un entretien",
       "pricing": "voir les tarifs",
@@ -3074,5 +3081,172 @@
       "test": "test de compétences"
     },
     "label": "Rechercher sur testee"
+  },
+  "hiringFlow": {
+    "title": "Parcours de recrutement",
+    "description": "Chaque étape du recrutement avec testee, de la fiche de poste que vous collez au rapport que vous partagez et à la personne que vous recrutez.",
+    "hero": {
+      "title": "de la fiche de poste\nau bon recrutement",
+      "text": "Chaque étape du recrutement avec testee, et toutes les options à chacune : suivez la ligne vers le bas.",
+      "start": "créer un entretien",
+      "features": "toutes les fonctionnalités"
+    },
+    "step": "Étape {number, number}",
+    "ways": "Options possibles",
+    "stages": {
+      "describe": {
+        "title": "Décrivez le poste",
+        "text": "Collez une fiche de poste ou partez d'un modèle prêt à l'emploi. Tous les postes, tous les secteurs, dans l'une des 23 langues.",
+        "points": {
+          "paste": "Collez une fiche de poste",
+          "template": "Partez d'un modèle",
+          "mira": "Demandez à Mira de le créer",
+          "language": "23 langues",
+          "free": "La création est gratuite"
+        },
+        "alt": "La page de nouvel entretien avec une fiche de poste collée"
+      },
+      "topics": {
+        "title": "Vérifiez les thèmes",
+        "text": "testee propose les thèmes dont le poste a besoin. Vous les gardez, les renommez, en ajoutez ou en retirez, définissez leurs sous-thèmes et validez.",
+        "points": {
+          "proposed": "Thèmes proposés par l'IA",
+          "edit": "Renommer, ajouter ou retirer",
+          "subtopics": "Des sous-thèmes pour chacun",
+          "levels": "Du niveau basique à avancé",
+          "approve": "Valider pour générer"
+        },
+        "alt": "Les thèmes d'un entretien, chacun avec ses questions"
+      },
+      "questions": {
+        "title": "Les questions sont générées et vérifiées",
+        "text": "L'IA rédige un ensemble de questions pour chaque thème, une seconde IA vérifie chaque corrigé à l'aveugle, et chaque candidat reçoit sa propre série aléatoire.",
+        "points": {
+          "unique": "Des questions propres à chaque candidat",
+          "checked": "Corrigés vérifiés par une seconde IA",
+          "bank": "Des questions éprouvées de la banque partagée",
+          "multi": "Une ou plusieurs bonnes réponses",
+          "preview": "Testez-le comme un candidat"
+        },
+        "alt": "Les questions d'un thème, chacune avec son corrigé"
+      },
+      "settings": {
+        "title": "Paramétrez-le",
+        "text": "Choisissez la durée de chaque question, le seuil de réussite et la façon dont les candidats répondent, et mettez l'entretien aux couleurs de votre marque.",
+        "points": {
+          "time": "Temps par question",
+          "passMark": "Seuil de réussite",
+          "mode": "Mode clic ou vocal",
+          "brand": "Votre logo et vos couleurs",
+          "private": "Garder les questions privées"
+        },
+        "alt": "Les paramètres d'un entretien"
+      },
+      "invite": {
+        "title": "Invitez des candidats",
+        "text": "Faites venir les candidats comme votre recrutement fonctionne déjà. Pour chacun, les crédits d'un candidat sont réservés, puis rendus s'il ne commence jamais.",
+        "points": {
+          "names": "Noms et adresses e-mail",
+          "reminder": "Un rappel au bout de 3 jours",
+          "expire": "Les invitations expirent au bout de 30 jours",
+          "credits": "Des crédits uniquement pour ceux qui répondent"
+        },
+        "branches": {
+          "email": {
+            "title": "Par e-mail",
+            "text": "Saisissez leurs adresses e-mail, avec leurs noms si vous le souhaitez : chacun reçoit une invitation avec son propre lien."
+          },
+          "list": {
+            "title": "liste ou fichier",
+            "text": "Collez une liste ou importez un fichier CSV ou texte pour inviter jusqu'à cent personnes à la fois."
+          },
+          "link": {
+            "title": "lien dans l'offre d'emploi",
+            "text": "Activez le lien de partage, et toute personne qui postule passe l'entretien, une fois chacune."
+          },
+          "ats": {
+            "title": "Depuis votre ATS",
+            "text": "Connectez Greenhouse, Workable, Teamtailor, Recruitee ou Breezy HR : déplacer un candidat vers une étape l'invite."
+          },
+          "api": {
+            "title": "Votre plateforme",
+            "text": "Invitez via l'API, ou intégrez l'entretien à votre propre site avec le SDK."
+          },
+          "ai": {
+            "title": "Mira ou app IA",
+            "text": "Demandez à Mira, ou à Claude, ChatGPT ou une autre app IA, d'inviter des candidats pour vous."
+          }
+        },
+        "alt": "La fenêtre d'invitation"
+      },
+      "candidate": {
+        "title": "Les candidats passent l'entretien",
+        "text": "Les candidats voient les règles et la durée dès le départ, s'engagent sur l'honneur et répondent à une question chronométrée à la fois, d'un clic ou à l'oral, sur n'importe quel appareil.",
+        "points": {
+          "pledge": "Un engagement avant de commencer",
+          "timer": "Un minuteur sur chaque question",
+          "click": "Mode clic",
+          "voice": "Mode vocal avec Mira",
+          "phone": "Fonctionne sur téléphone",
+          "extraTime": "Du temps supplémentaire pour qui en a besoin"
+        },
+        "alt": "Une question en mode clic avec deux options cochées"
+      },
+      "results": {
+        "title": "Voyez qui est le meilleur",
+        "text": "La note et les réponses de chaque candidat dès qu'il a terminé, avec les alertes qui méritent un examen attentif et les commentaires de votre équipe.",
+        "points": {
+          "scorecard": "Notes et seuil de réussite",
+          "answers": "Chaque réponse et son temps",
+          "signals": "Alertes d'intégrité",
+          "patterns": "Schémas de réponse inhabituels",
+          "notes": "Les commentaires de votre équipe",
+          "discover": "Des personnes ouvertes aux opportunités"
+        },
+        "alt": "Les candidats d'un entretien, les meilleurs en premier"
+      },
+      "share": {
+        "title": "Partagez les rapports",
+        "text": "Envoyez le rapport d'un candidat à la personne qui décide, sous la forme qu'elle lit, et gardez vos outils à jour.",
+        "points": {
+          "pdf": "Rapports PDF",
+          "digest": "Un récapitulatif quotidien",
+          "bell": "La cloche dans l'application"
+        },
+        "branches": {
+          "email": {
+            "title": "Par e-mail",
+            "text": "Envoyez le rapport PDF à la personne qui décide, dans votre équipe ou en dehors."
+          },
+          "chat": {
+            "title": "Dans une messagerie",
+            "text": "Partagez un court résumé sur WhatsApp, Telegram, Viber ou LINE."
+          },
+          "ats": {
+            "title": "Retour dans votre ATS",
+            "text": "Chaque résultat revient sur la fiche du candidat dans votre ATS sous forme de commentaire."
+          },
+          "slack": {
+            "title": "Vers Slack",
+            "text": "Votre canal est prévenu quand des candidats terminent, et reçoit les notifications que vous choisissez."
+          },
+          "webhooks": {
+            "title": "Webhooks",
+            "text": "Vos systèmes reçoivent le résultat de chaque candidat ayant terminé, en temps réel."
+          }
+        },
+        "alt": "Le partage du rapport d'un candidat"
+      },
+      "decide": {
+        "title": "Décidez et recrutez",
+        "text": "Ce sont des personnes qui décident, jamais l'IA. Marquez le poste comme pourvu pour fermer son lien, et conservez les traces que la loi sur le recrutement vous impose.",
+        "points": {
+          "hired": "Marquer comme recruté",
+          "biasAudit": "Export pour audit des biais",
+          "log": "Journal des actions"
+        },
+        "alt": "Le rapport d'un candidat avec une note au-dessus du seuil de réussite"
+      }
+    }
   }
 }

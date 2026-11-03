@@ -19,6 +19,7 @@ MAX_SEARCH_LENGTH = 100
 PUBLIC_PAGES = {
     "landing": "/",
     "features": "/features",
+    "hiringFlow": "/hiring-flow",
     "pricing": "/pricing",
     "tests": "/tests",
     "aiInterviews": "/ai-interviews",

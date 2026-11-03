@@ -77,7 +77,11 @@
     "trust": "Kepercayaan",
     "language": "Bahasa",
     "features": "Fitur",
-    "featuresLink": "fitur"
+    "featuresLink": "fitur",
+    "flowLink": "alur",
+    "hiringFlow": "Alur rekrutmen",
+    "menu": "Menu",
+    "closeMenu": "Tutup menu"
   },
   "signIn": {
     "title": "Masuk",
@@ -1607,7 +1611,9 @@
       "title": "Ada pertanyaan lain?",
       "videos": "video",
       "faq": "Tanya jawab",
-      "guides": "panduan"
+      "guides": "panduan",
+      "features": "fitur",
+      "hiringFlow": "alur rekrutmen"
     },
     "closing": {
       "title": "Buat wawancara pertamamu\nGratis",
@@ -2279,7 +2285,8 @@
       "topics": "tinjau topik",
       "practice": "latihan",
       "news": "berita",
-      "features": "Fitur"
+      "features": "Fitur",
+      "hiringFlow": "Alur rekrutmen"
     },
     "voice": {
       "hold": "Tahan untuk bicara",
@@ -2746,7 +2753,7 @@
     "title": "Fitur: wawancara AI untuk rekrutmen, dari awal sampai akhir",
     "description": "Semua fitur testee: wawancara dari deskripsi pekerjaan, mode klik dan suara, tanda integritas, laporan, integrasi ATS dan API, serta kepatuhan.",
     "hero": {
-      "title": "Dari deskripsi pekerjaan\nsampai rekrutan yang tepat",
+      "title": "Semua yang kamu butuhkan\nuntuk rekrutan yang tepat",
       "text": "Wawancara berbatas waktu yang ditulis untuk posisimu, kandidat dari mana saja, dan gambaran jelas siapa yang terbaik. Semua fitur sudah termasuk.",
       "start": "Buat wawancara",
       "pricing": "lihat harga",
@@ -3074,5 +3081,172 @@
       "test": "tes keterampilan"
     },
     "label": "Cari di testee"
+  },
+  "hiringFlow": {
+    "title": "Alur rekrutmen",
+    "description": "Setiap langkah rekrutmen dengan testee, dari deskripsi pekerjaan yang kamu tempel sampai laporan yang kamu bagikan dan orang yang kamu rekrut.",
+    "hero": {
+      "title": "dari deskripsi pekerjaan\nsampai rekrutan yang tepat",
+      "text": "Setiap langkah rekrutmen dengan testee, dan setiap pilihan di tiap langkah: ikuti garisnya ke bawah.",
+      "start": "buat wawancara",
+      "features": "semua fitur"
+    },
+    "step": "Langkah {number, number}",
+    "ways": "Pilihan cara",
+    "stages": {
+      "describe": {
+        "title": "Jelaskan pekerjaannya",
+        "text": "Tempel deskripsi pekerjaan, atau mulai dari templat siap pakai. Posisi apa pun, bidang apa pun, dalam salah satu dari 23 bahasa.",
+        "points": {
+          "paste": "Tempel deskripsi pekerjaan",
+          "template": "Mulai dari templat",
+          "mira": "Minta Mira membuatnya",
+          "language": "23 bahasa",
+          "free": "Membuatnya gratis"
+        },
+        "alt": "Halaman wawancara baru dengan deskripsi pekerjaan yang sudah ditempel"
+      },
+      "topics": {
+        "title": "Tinjau topiknya",
+        "text": "testee mengusulkan topik yang dibutuhkan pekerjaan itu. Kamu menyimpan, mengganti nama, menambah, atau menghapusnya, mengatur subtopiknya, lalu menyetujuinya.",
+        "points": {
+          "proposed": "Topik usulan AI",
+          "edit": "Ganti nama, tambah, atau hapus",
+          "subtopics": "Subtopik untuk tiap topik",
+          "levels": "Dari dasar sampai lanjutan",
+          "approve": "Setujui untuk membuat soal"
+        },
+        "alt": "Topik sebuah wawancara, masing-masing dengan soalnya"
+      },
+      "questions": {
+        "title": "Soal dibuat dan diperiksa",
+        "text": "AI menulis kumpulan soal untuk tiap topik, AI kedua memeriksa setiap kunci jawaban tanpa melihat jawaban AI pertama, dan setiap kandidat mendapat set soal acaknya sendiri.",
+        "points": {
+          "unique": "Soal unik per kandidat",
+          "checked": "Kunci jawaban diperiksa AI kedua",
+          "bank": "Soal teruji dari bank soal bersama",
+          "multi": "Satu atau beberapa jawaban",
+          "preview": "Coba sebagai kandidat"
+        },
+        "alt": "Soal sebuah topik, masing-masing dengan kunci jawabannya"
+      },
+      "settings": {
+        "title": "Atur wawancaranya",
+        "text": "Pilih berapa lama waktu tiap soal, nilai lulus, dan cara kandidat menjawab, lalu sesuaikan wawancara dengan merekmu.",
+        "points": {
+          "time": "Waktu per soal",
+          "passMark": "Nilai lulus",
+          "mode": "Mode klik atau suara",
+          "brand": "Logo dan warnamu",
+          "private": "Jaga soal tetap privat"
+        },
+        "alt": "Pengaturan sebuah wawancara"
+      },
+      "invite": {
+        "title": "Undang kandidat",
+        "text": "Datangkan kandidat dengan cara rekrutmenmu biasa berjalan. Untuk tiap orang, kredit seharga satu kandidat disisihkan, dan dikembalikan kalau mereka tidak pernah mulai.",
+        "points": {
+          "names": "Nama dengan email",
+          "reminder": "Satu pengingat setelah 3 hari",
+          "expire": "Undangan kedaluwarsa setelah 30 hari",
+          "credits": "Kredit hanya untuk yang menjawab"
+        },
+        "branches": {
+          "email": {
+            "title": "Lewat email",
+            "text": "Ketik email mereka, dengan nama kalau mau: masing-masing mendapat undangan dengan tautannya sendiri."
+          },
+          "list": {
+            "title": "Daftar atau file",
+            "text": "Tempel daftar atau unggah file CSV atau teks untuk mengundang hingga seratus orang sekaligus."
+          },
+          "link": {
+            "title": "Tautan di iklan lowongan",
+            "text": "Nyalakan tautan berbagi, dan siapa pun yang melamar bisa mengikuti wawancara, masing-masing sekali."
+          },
+          "ats": {
+            "title": "Dari ATS-mu",
+            "text": "Hubungkan Greenhouse, Workable, Teamtailor, Recruitee, atau Breezy HR: memindahkan kandidat ke suatu tahap akan mengundangnya."
+          },
+          "api": {
+            "title": "Platformmu",
+            "text": "Undang lewat API, atau sematkan wawancara di situsmu sendiri dengan SDK."
+          },
+          "ai": {
+            "title": "Mira atau aplikasi AI",
+            "text": "Minta Mira, atau Claude, ChatGPT, atau aplikasi AI lain, untuk mengundang kandidat untukmu."
+          }
+        },
+        "alt": "Dialog undangan"
+      },
+      "candidate": {
+        "title": "Kandidat mengikutinya",
+        "text": "Kandidat melihat aturan dan waktunya sejak awal, berjanji menjawab sendiri, lalu menjawab satu soal berbatas waktu demi satu, dengan klik atau suara, di perangkat apa pun.",
+        "points": {
+          "pledge": "Janji sebelum mulai",
+          "timer": "Timer di setiap soal",
+          "click": "Mode klik",
+          "voice": "Mode suara dengan Mira",
+          "phone": "Bisa di ponsel",
+          "extraTime": "Waktu tambahan bagi yang membutuhkan"
+        },
+        "alt": "Sebuah soal dalam mode klik dengan dua pilihan dicentang"
+      },
+      "results": {
+        "title": "Lihat siapa yang terbaik",
+        "text": "Skor dan jawaban setiap kandidat begitu mereka selesai, dengan tanda yang patut dicek lebih teliti dan catatan timmu.",
+        "points": {
+          "scorecard": "Skor dan nilai lulus",
+          "answers": "Setiap jawaban dan waktunya",
+          "signals": "Tanda integritas",
+          "patterns": "Pola jawaban yang tidak biasa",
+          "notes": "Catatan timmu",
+          "discover": "Orang yang terbuka untuk tawaran kerja"
+        },
+        "alt": "Kandidat sebuah wawancara, yang terbaik di atas"
+      },
+      "share": {
+        "title": "Bagikan laporannya",
+        "text": "Kirim laporan kandidat ke siapa pun yang memutuskan, dalam bentuk yang biasa mereka baca, dan jaga alatmu tetap terbarui.",
+        "points": {
+          "pdf": "Laporan PDF",
+          "digest": "Ringkasan harian",
+          "bell": "Lonceng di aplikasi"
+        },
+        "branches": {
+          "email": {
+            "title": "Lewat email",
+            "text": "Kirim laporan PDF ke siapa pun yang memutuskan, di dalam atau di luar timmu."
+          },
+          "chat": {
+            "title": "Di chat",
+            "text": "Bagikan ringkasan singkat di WhatsApp, Telegram, Viber, atau LINE."
+          },
+          "ats": {
+            "title": "Kembali ke ATS-mu",
+            "text": "Setiap hasil kembali ke kandidatnya di ATS-mu sebagai catatan."
+          },
+          "slack": {
+            "title": "Ke Slack",
+            "text": "Kanalmu diberi tahu saat kandidat selesai, beserta notifikasi yang kamu pilih."
+          },
+          "webhooks": {
+            "title": "Webhook",
+            "text": "Sistemmu menerima hasil setiap kandidat yang selesai saat itu juga."
+          }
+        },
+        "alt": "Membagikan laporan kandidat"
+      },
+      "decide": {
+        "title": "Putuskan dan rekrut",
+        "text": "Manusia yang memutuskan, bukan AI. Tandai posisinya sudah terisi untuk menutup tautannya, dan simpan catatan yang diwajibkan hukum ketenagakerjaanmu.",
+        "points": {
+          "hired": "Tandai diterima",
+          "biasAudit": "Ekspor untuk audit bias",
+          "log": "Log tindakan"
+        },
+        "alt": "Laporan kandidat yang mencapai nilai lulus"
+      }
+    }
   }
 }

@@ -491,6 +491,19 @@
       "Tüm özellikler dahil: yalnızca en az bir soruyu yanıtlayan her aday için ödeme yaparsınız."
     ]
   },
+  "hiringFlow": {
+    "title": "İşe alım süreci",
+    "text": "testee ile işe alımın her adımı, yapıştırdığınız iş tanımından paylaştığınız rapora ve yaptığınız işe alıma kadar, her adımdaki tüm seçeneklerle.",
+    "actions": [
+      "Çizgiyi takip ederek aşağı kaydırın: her adım ne olduğunu, seçeneklerini ve gerçek uygulamanın bir görüntüsünü gösterir.",
+      "Davet ve paylaşım adımlarında adayların nasıl gelebileceğini ve raporların nereye gidebileceğini görün.",
+      "Üstteki düğmeyle bir mülakat oluşturun ya da tüm özellikleri açın.",
+      "Başlamak için sayfanın sonundaki kutuya bir iş tanımı yapıştırın."
+    ],
+    "tips": [
+      "Mülakat oluşturmak ücretsizdir: yalnızca en az bir soruyu cevaplayan her aday için ödeme yaparsınız."
+    ]
+  },
   "pricing": {
     "title": "Fiyatlar",
     "text": "testee'nin maliyeti: mülakat oluşturmak ücretsizdir; abonelik olmadan, cevap veren aday başına ödersiniz.",

@@ -156,3 +156,51 @@ async function answer(candidate: Page, email: string, person: Person) {
     await api(candidate, "POST", `/rounds/sessions/${sessions[0].id}/finish-interview`)
   }
 }
+
+/** Gives each of a finished candidate's sections, in order, its own share of right answers
+ * (`shares`, repeated), so their topics' grades differ: each answer's pick is set to match, the
+ * right options for a right one and a wrong one otherwise (single and multi-answer alike), and
+ * each section's score what its answers add up to, as rounds scores them. */
+export async function spreadSections(inviteId: string, shares: number[]) {
+  type Option = { correct: boolean }
+  type Question = { id: string; options: Option[] }
+
+  await withDatabase("rounds", async (client) => {
+    const sessions = await client.query<{ id: string; questions: Question[] }>(
+      "SELECT id, questions FROM sessions WHERE candidate_invite_id = $1 ORDER BY started_at, id",
+      [inviteId],
+    )
+
+    for (const [index, session] of sessions.rows.entries()) {
+      const answers = await client.query<{ id: string; question_id: string; picks: number[] | null }>(
+        "SELECT id, question_id, picks FROM answers WHERE session_id = $1 ORDER BY created_at, id",
+        [session.id],
+      )
+      const right = Math.round(answers.rows.length * shares[index % shares.length])
+
+      for (const [position, answer] of answers.rows.entries()) {
+        const options = session.questions.find((item) => item.id === answer.question_id)?.options ?? []
+        const correct = position < right
+        const keyed = options.flatMap((option, at) => (option.correct === correct ? [at] : []))
+        const picks = correct ? keyed : keyed.slice(0, 1)
+        await client.query(
+          `UPDATE answers SET correct = $2, score = $3, option_index = $4, picks = $5
+           WHERE id = $1`,
+          [
+            answer.id,
+            correct,
+            correct ? 100 : 0,
+            answer.picks ? null : (picks[0] ?? 0),
+            answer.picks ? picks : null,
+          ],
+        )
+      }
+
+      await client.query(
+        `UPDATE sessions SET final_score = (SELECT round(avg(score)) FROM answers
+           WHERE session_id = $1) WHERE id = $1 AND status = 'finished'`,
+        [session.id],
+      )
+    }
+  })
+}

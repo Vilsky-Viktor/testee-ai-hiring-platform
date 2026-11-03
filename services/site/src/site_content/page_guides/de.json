@@ -491,6 +491,19 @@
       "Alle Funktionen sind inklusive: Du zahlst nur für jeden Kandidaten, der mindestens eine Frage beantwortet."
     ]
   },
+  "hiringFlow": {
+    "title": "Recruiting-Ablauf",
+    "text": "Jeder Schritt im Recruiting mit testee, von der Stellenbeschreibung, die du einfügst, bis zum Bericht, den du teilst, und zur Einstellung, mit allen Optionen bei jedem Schritt.",
+    "actions": [
+      "Scroll der Linie entlang nach unten: Jeder Schritt zeigt, was passiert, seine Optionen und ein Bild der echten App.",
+      "Unter den Schritten Einladen und Teilen siehst du, wie Kandidaten hereinkommen und wie Berichte hinausgehen können.",
+      "Erstelle über den Button oben ein Interview oder öffne alle Funktionen.",
+      "Füge im Feld am Ende der Seite eine Stellenbeschreibung ein, um zu starten."
+    ],
+    "tips": [
+      "Interviews zu erstellen ist kostenlos: Du zahlst nur für jeden Kandidaten, der mindestens eine Frage beantwortet."
+    ]
+  },
   "pricing": {
     "title": "Preise",
     "text": "Was testee kostet: Interviews zu generieren ist kostenlos, und du zahlst pro Kandidat, der antwortet, ohne Abo.",

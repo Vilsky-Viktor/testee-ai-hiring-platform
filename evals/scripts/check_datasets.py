@@ -59,6 +59,7 @@ ACTION_KINDS = {
     "cross",
     "injection",
     "features",
+    "hiring_flow",
 }
 
 

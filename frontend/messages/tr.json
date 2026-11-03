@@ -77,7 +77,11 @@
     "trust": "Güven",
     "language": "Dil",
     "features": "Özellikler",
-    "featuresLink": "özellikler"
+    "featuresLink": "özellikler",
+    "flowLink": "süreç",
+    "hiringFlow": "İşe alım süreci",
+    "menu": "Menü",
+    "closeMenu": "Menüyü kapat"
   },
   "signIn": {
     "title": "Giriş yap",
@@ -1607,7 +1611,9 @@
       "title": "Başka sorunuz mu var?",
       "videos": "videolar",
       "faq": "SSS",
-      "guides": "rehberler"
+      "guides": "rehberler",
+      "features": "özellikler",
+      "hiringFlow": "işe alım süreci"
     },
     "closing": {
       "title": "İlk mülakatınızı oluşturun\nÜcretsiz",
@@ -2279,7 +2285,8 @@
       "topics": "konuları gözden geçir",
       "practice": "pratik",
       "news": "haberler",
-      "features": "Özellikler"
+      "features": "Özellikler",
+      "hiringFlow": "İşe alım süreci"
     },
     "voice": {
       "hold": "Konuşmak için basılı tut",
@@ -2746,7 +2753,7 @@
     "title": "Özellikler: işe alım için baştan sona yapay zekâ mülakatları",
     "description": "testee'nin tüm özellikleri: iş tanımından mülakatlar, tıklama ve sesli mod, dürüstlük uyarıları, raporlar, ATS ve API entegrasyonları ve mevzuata uyum.",
     "hero": {
-      "title": "İş tanımından\ndoğru işe alıma",
+      "title": "Doğru işe alım için\nihtiyacınız olan her şey",
       "text": "Pozisyonunuz için yazılmış süreli bir mülakat, her yerden adaylar ve en iyinin kim olduğuna dair net bir görünüm. Tüm özellikler dahil.",
       "start": "Mülakat oluştur",
       "pricing": "fiyatları görün",
@@ -3074,5 +3081,172 @@
       "test": "beceri testi"
     },
     "label": "testee'de ara"
+  },
+  "hiringFlow": {
+    "title": "İşe alım süreci",
+    "description": "testee ile işe alımın her adımı: yapıştırdığınız iş tanımından paylaştığınız rapora ve yaptığınız işe alıma kadar.",
+    "hero": {
+      "title": "iş tanımından\ndoğru işe alıma",
+      "text": "testee ile işe alımın her adımı ve her adımdaki tüm seçenekler: çizgiyi aşağı doğru takip edin.",
+      "start": "mülakat oluştur",
+      "features": "tüm özellikler"
+    },
+    "step": "Adım {number, number}",
+    "ways": "Seçenekler",
+    "stages": {
+      "describe": {
+        "title": "İşi tanımlayın",
+        "text": "Bir iş tanımı yapıştırın ya da hazır bir şablondan başlayın. Her pozisyon, her sektör, 23 dilden herhangi birinde.",
+        "points": {
+          "paste": "İş tanımı yapıştırın",
+          "template": "Bir şablondan başlayın",
+          "mira": "Mira'dan oluşturmasını isteyin",
+          "language": "23 dil",
+          "free": "Oluşturmak ücretsiz"
+        },
+        "alt": "İş tanımı yapıştırılmış yeni mülakat sayfası"
+      },
+      "topics": {
+        "title": "Konuları gözden geçirin",
+        "text": "testee işin gerektirdiği konuları önerir. Siz bunları tutar, yeniden adlandırır, ekler ya da kaldırır, alt konularını belirler ve onaylarsınız.",
+        "points": {
+          "proposed": "Yapay zekânın önerdiği konular",
+          "edit": "Yeniden adlandırın, ekleyin ya da kaldırın",
+          "subtopics": "Her biri için alt konular",
+          "levels": "Temelden ileri seviyeye",
+          "approve": "Soruları üretmek için onaylayın"
+        },
+        "alt": "Bir mülakatın konuları ve her birinin soruları"
+      },
+      "questions": {
+        "title": "Sorular üretilir ve kontrol edilir",
+        "text": "Yapay zekâ her konu için bir soru havuzu yazar, ikinci bir yapay zekâ her cevap anahtarını körlemesine kontrol eder ve her aday kendi rastgele soru setini alır.",
+        "points": {
+          "unique": "Her adaya özgün sorular",
+          "checked": "İkinci bir yapay zekânın kontrol ettiği cevap anahtarları",
+          "bank": "Ortak bankadan kendini kanıtlamış sorular",
+          "multi": "Tek ve çok cevaplı sorular",
+          "preview": "Bir aday gibi deneyin"
+        },
+        "alt": "Bir konunun soruları ve her birinin cevap anahtarı"
+      },
+      "settings": {
+        "title": "Mülakatı ayarlayın",
+        "text": "Her sorunun süresini, geçme notunu ve adayların nasıl cevap vereceğini seçin, mülakatı markanıza göre düzenleyin.",
+        "points": {
+          "time": "Soru başına süre",
+          "passMark": "Geçme notu",
+          "mode": "Tıklama ya da sesli mod",
+          "brand": "Logonuz ve renkleriniz",
+          "private": "Soruları gizli tutun"
+        },
+        "alt": "Bir mülakatın ayarları"
+      },
+      "invite": {
+        "title": "Adayları davet edin",
+        "text": "Adayları, işe alımınız nasıl işliyorsa öyle getirin. Her aday için bir adaylık kredi ayrılır; hiç başlamazsa iade edilir.",
+        "points": {
+          "names": "E-postalarla birlikte adlar",
+          "reminder": "3 gün sonra bir hatırlatma",
+          "expire": "Davetler 30 gün sonra sona erer",
+          "credits": "Yalnızca cevap verenler için kredi"
+        },
+        "branches": {
+          "email": {
+            "title": "E-postayla",
+            "text": "E-postalarını, isterseniz adlarıyla birlikte yazın: her biri kendi bağlantısını içeren bir davet alır."
+          },
+          "list": {
+            "title": "liste ya da dosya",
+            "text": "Bir liste yapıştırın ya da bir CSV veya metin dosyası yükleyerek tek seferde yüz kişiye kadar davet edin."
+          },
+          "link": {
+            "title": "iş ilanında bağlantı",
+            "text": "Paylaşılabilir bağlantıyı açın; başvuran herkes mülakata birer kez girer."
+          },
+          "ats": {
+            "title": "ATS'nizden",
+            "text": "Greenhouse, Workable, Teamtailor, Recruitee veya Breezy HR'ı bağlayın: bir adayı bir aşamaya taşımak onu davet eder."
+          },
+          "api": {
+            "title": "Platformunuz",
+            "text": "API üzerinden davet edin ya da mülakatı SDK ile kendi sitenize yerleştirin."
+          },
+          "ai": {
+            "title": "Mira ya da yapay zekâ uygulaması",
+            "text": "Adayları sizin yerinize davet etmesini Mira'dan ya da Claude, ChatGPT veya başka bir yapay zekâ uygulamasından isteyin."
+          }
+        },
+        "alt": "Davet penceresi"
+      },
+      "candidate": {
+        "title": "Adaylar mülakata girer",
+        "text": "Adaylar kuralları ve süreyi baştan görür, söz verir ve süreli soruları tek tek, tıklayarak ya da sesle, her cihazda cevaplar.",
+        "points": {
+          "pledge": "Başlamadan önce taahhüt",
+          "timer": "Her soruda bir süre sayacı",
+          "click": "Tıklama modu",
+          "voice": "Mira ile sesli mod",
+          "phone": "Telefonda çalışır",
+          "extraTime": "İhtiyacı olana ek süre"
+        },
+        "alt": "Tıklama modunda iki seçeneği işaretlenmiş bir soru"
+      },
+      "results": {
+        "title": "En iyiyi görün",
+        "text": "Her adayın puanı ve cevapları, bitirir bitirmez; daha yakından bakmaya değer uyarılar ve ekibinizin yorumlarıyla.",
+        "points": {
+          "scorecard": "Puanlar ve geçme notu",
+          "answers": "Her cevap ve süresi",
+          "signals": "Dürüstlük uyarıları",
+          "patterns": "Olağandışı cevap örüntüleri",
+          "notes": "Ekibinizin yorumları",
+          "discover": "İş tekliflerine açık kişiler"
+        },
+        "alt": "Bir mülakatın adayları, en iyiler önce"
+      },
+      "share": {
+        "title": "Raporları paylaşın",
+        "text": "Bir adayın raporunu karar veren kişiye, onun okuduğu şekilde gönderin ve araçlarınızı güncel tutun.",
+        "points": {
+          "pdf": "PDF raporlar",
+          "digest": "Günlük özet",
+          "bell": "Uygulamadaki zil"
+        },
+        "branches": {
+          "email": {
+            "title": "E-postayla",
+            "text": "PDF raporu ekibinizin içinde ya da dışında, karar veren kişiye gönderin."
+          },
+          "chat": {
+            "title": "Sohbette",
+            "text": "Kısa bir özeti WhatsApp, Telegram, Viber veya LINE'da paylaşın."
+          },
+          "ats": {
+            "title": "ATS'nize geri",
+            "text": "Her sonuç, ATS'nizdeki adaya not olarak geri gider."
+          },
+          "slack": {
+            "title": "Slack'e",
+            "text": "Kanalınız adaylar bitirdiğinde haberdar olur ve seçtiğiniz bildirimleri alır."
+          },
+          "webhooks": {
+            "title": "Webhook'lar",
+            "text": "Sistemleriniz, bitiren her adayın sonucunu anında alır."
+          }
+        },
+        "alt": "Bir adayın raporunu paylaşma"
+      },
+      "decide": {
+        "title": "Karar verin ve işe alın",
+        "text": "Kararı insanlar verir, asla yapay zekâ değil. Bağlantısını kapatmak için pozisyonu işe alındı olarak işaretleyin ve işe alım mevzuatınızın istediği kayıtları tutun.",
+        "points": {
+          "hired": "İşe alındı olarak işaretle",
+          "biasAudit": "Yanlılık denetimi dışa aktarımı",
+          "log": "İşlem kaydı"
+        },
+        "alt": "Geçme notu almış bir adayın raporu"
+      }
+    }
   }
 }

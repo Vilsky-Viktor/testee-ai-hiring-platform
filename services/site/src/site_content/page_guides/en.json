@@ -491,6 +491,19 @@
       "Every feature is included: you pay only for each candidate who answers at least one question."
     ]
   },
+  "hiringFlow": {
+    "title": "Hiring flow",
+    "text": "Every step of hiring with testee, from the job description you paste to the report you share and the hire you make, with every option at each step.",
+    "actions": [
+      "Scroll down the line: each step shows what happens, its options and a picture of the real app.",
+      "See the ways candidates can come in and the ways reports can go out, under the invite and share steps.",
+      "Create an interview from the button at the top, or open all features.",
+      "Paste a job description in the box at the end of the page to start."
+    ],
+    "tips": [
+      "Creating interviews is free: you pay only for each candidate who answers at least one question."
+    ]
+  },
   "pricing": {
     "title": "Pricing",
     "text": "What testee costs: generating interviews is free, and you pay per candidate who answers, with no subscription.",

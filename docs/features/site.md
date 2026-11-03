@@ -7,6 +7,7 @@ The site follows the device's light or dark setting until a visitor picks a them
 - [Home page](#home-page)
 - [Header search](#header-search)
 - [Features page](#features-page)
+- [Hiring flow page](#hiring-flow-page)
 - [Skills tests by role](#skills-tests-by-role)
 - [Articles](#articles)
 - [FAQ and help chat](#faq-and-help-chat)
@@ -53,7 +54,7 @@ Every list search works the same way as you type (`components/common/search-fiel
 
 ## Features page
 
-`/features` lists every feature for a company choosing testee (`app/features/page.tsx`, `features/features/`, the groups in `config/features-page.ts`). The header links it between "hiring" and "pricing", and the footer's resources column starts with it.
+`/features` lists every feature for a company choosing testee (`app/features/page.tsx`, `features/features/`, the groups in `config/features-page.ts`). The header links it between "hiring" and "flow", and the footer's resources column starts with it.
 
 - **First screen:** a two-line promise, a short text, "Create an interview" (down to the start box at the page's end) and "see pricing", and a line of facts: any job, the number of languages, how long an interview takes to be ready, no subscription.
 - **Tabs:** the groups as the site's slim tabs (create, invite, interview, decide, connect, trust, pricing), links to each group that stay at the top of the window while the page scrolls, the group being read marked as the current one. A focused element scrolls clear of them.
@@ -61,6 +62,18 @@ Every list search works the same way as you type (`components/common/search-fiel
 - **Counts from the API:** the questions per topic (generation's `GET /api/generate/sizes`), and the free candidates and the number of currencies prices come in (billing's catalog); a point or card that needs one is left out when its service doesn't answer.
 - **Closing screen:** "Create your first interview. It's free." with the home page's start box and the free candidates, then "More questions?" with Mira, the FAQ and the guides.
 - **Pictures:** screens of the real app with made-up people, a light and a dark version each, the page's theme deciding which one loads (`public/features/<name>-<light|dark>.webp`, sizes in `config/features-shots.ts`). They are retaken with `SHOTS=1 e2e_tests/signed-in.sh zz-features-shots.spec.ts` (made-up companies, candidates and their answers: `helpers/feature-shots.ts`, `helpers/feature-people.ts`), then cropped and converted by `scripts/features-shots.sh <screens folder>`. `SHOTS=1 e2e_tests/pages.sh features-shots.spec.ts` takes the whole page, laptop and phone, light and dark, for review.
+
+It's in every language, in the sitemap with hreflang, and has its page guide.
+
+## Hiring flow page
+
+`/hiring-flow` shows the whole of hiring with testee, top to bottom, from the job description to the hire (`app/hiring-flow/page.tsx`, `features/hiring-flow/`, the stages in `config/hiring-flow.ts`). The header links it as "flow" between "features" and "pricing" (on phones, the header's links are in a menu that a burger left of the logo opens from the start side, the links large, `components/common/site-menu.tsx`), and the footer's product column starts with it ("hiring flow").
+
+- **First screen:** like the features page's: a two-line promise, a short text, "create an interview" (down to the start box at the page's end), "all features" and an arrow down to the line.
+- **The line:** one line running down the page (in the middle from tablets up, along the start edge on phones), drawn in the primary colour down to the middle of the screen as the page scrolls; without scripts, or with reduced motion, it's drawn whole at once.
+- **Stages:** describe the job, review the topics, questions generated and checked, set it up, invite candidates, candidates take it, see who's best, share the reports, decide and hire. Each is a node on the line ("Step N", its icon lit once seen) with its title, a sentence and its options as chips on one side and a picture of the real app (the features page's pictures) on the other, sides taking turns from tablets up.
+- **Ways to go:** where a stage can go several ways (inviting: by email, from a list or file, a link in a job ad, from an ATS, from the company's own platform, through Mira or an AI app; sharing: by email, in a chat, back to the ATS, to Slack, web hooks), the line fans out into a row of the landing's grey cards.
+- **Closing screen:** the features page's: the start box with the free candidates, then "More questions?".
 
 It's in every language, in the sitemap with hreflang, and has its page guide.
 

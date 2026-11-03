@@ -77,7 +77,11 @@
     "trust": "Tiwala",
     "language": "Wika",
     "features": "Mga feature",
-    "featuresLink": "mga feature"
+    "featuresLink": "mga feature",
+    "flowLink": "flow",
+    "hiringFlow": "Hiring flow",
+    "menu": "Menu",
+    "closeMenu": "Isara ang menu"
   },
   "signIn": {
     "title": "Mag-sign in",
@@ -1607,7 +1611,9 @@
       "title": "May iba pang tanong?",
       "videos": "mga video",
       "faq": "FAQ",
-      "guides": "mga gabay"
+      "guides": "mga gabay",
+      "features": "mga feature",
+      "hiringFlow": "hiring flow"
     },
     "closing": {
       "title": "Gawin ang iyong unang interview\nLibre ito",
@@ -2279,7 +2285,8 @@
       "topics": "suriin ang mga paksa",
       "practice": "practice",
       "news": "balita",
-      "features": "Mga feature"
+      "features": "Mga feature",
+      "hiringFlow": "Hiring flow"
     },
     "voice": {
       "hold": "Pindutin nang matagal para magsalita",
@@ -2746,7 +2753,7 @@
     "title": "Mga feature: AI interview para sa hiring, mula umpisa hanggang dulo",
     "description": "Lahat ng feature ng testee: interview mula sa job description, click at voice mode, mga integrity flag, report, integration sa ATS at API, at compliance.",
     "hero": {
-      "title": "Mula sa job description\nhanggang sa tamang hire",
+      "title": "Lahat ng kailangan mo\npara sa tamang hire",
       "text": "Isang timed interview na ginawa para sa role mo, mga aplikante mula kahit saan, at malinaw na makikita kung sino ang pinakamagaling. Kasama ang lahat ng feature.",
       "start": "Gumawa ng interview",
       "pricing": "tingnan ang presyo",
@@ -3074,5 +3081,172 @@
       "test": "skills test"
     },
     "label": "Maghanap sa testee"
+  },
+  "hiringFlow": {
+    "title": "Hiring flow",
+    "description": "Bawat hakbang ng hiring gamit ang testee, mula sa job description na ipe-paste mo hanggang sa report na ishe-share mo at sa taong iha-hire mo.",
+    "hero": {
+      "title": "mula sa job description\nhanggang sa tamang hire",
+      "text": "Bawat hakbang ng hiring gamit ang testee, at bawat opsyon sa bawat isa: sundan lang ang linya pababa.",
+      "start": "gumawa ng interview",
+      "features": "lahat ng feature"
+    },
+    "step": "Hakbang {number, number}",
+    "ways": "Mga paraan",
+    "stages": {
+      "describe": {
+        "title": "Ilarawan ang trabaho",
+        "text": "Mag-paste ng job description, o magsimula sa isang handang template. Anumang role, anumang larangan, sa alinman sa 23 wika.",
+        "points": {
+          "paste": "Mag-paste ng job description",
+          "template": "Magsimula sa template",
+          "mira": "Ipagawa kay Mira",
+          "language": "23 wika",
+          "free": "Libre ang paggawa"
+        },
+        "alt": "Ang page ng bagong interview na may naka-paste na job description"
+      },
+      "topics": {
+        "title": "Suriin ang mga topic",
+        "text": "Nagmumungkahi ang testee ng mga topic na kailangan ng trabaho. Puwede mong panatilihin, palitan ang pangalan, dagdagan o alisin ang mga ito, itakda ang mga subtopic nila at i-approve.",
+        "points": {
+          "proposed": "Mga topic na mungkahi ng AI",
+          "edit": "Palitan ang pangalan, magdagdag o mag-alis",
+          "subtopics": "Mga subtopic sa bawat isa",
+          "levels": "Mula basic hanggang advanced",
+          "approve": "I-approve para gumawa ng mga tanong"
+        },
+        "alt": "Ang mga topic ng isang interview, bawat isa may mga tanong"
+      },
+      "questions": {
+        "title": "Ginagawa at sinusuri ang mga tanong",
+        "text": "Sumusulat ang AI ng pool ng mga tanong para sa bawat topic, sinusuri ng pangalawang AI ang bawat answer key nang hindi nakikita ang sagot ng una, at may sariling random na set ang bawat aplikante.",
+        "points": {
+          "unique": "Natatanging mga tanong sa bawat aplikante",
+          "checked": "Answer key na sinuri ng pangalawang AI",
+          "bank": "Mga napatunayang tanong mula sa shared bank",
+          "multi": "Isa o maraming sagot",
+          "preview": "Subukan bilang aplikante"
+        },
+        "alt": "Ang mga tanong ng isang topic, bawat isa may answer key"
+      },
+      "settings": {
+        "title": "I-set up ito",
+        "text": "Piliin kung gaano katagal ang bawat tanong, ang passing grade at kung paano sasagot ang mga aplikante, at ilagay ang brand mo sa interview.",
+        "points": {
+          "time": "Oras bawat tanong",
+          "passMark": "Passing grade",
+          "mode": "Click o voice mode",
+          "brand": "Ang logo at mga kulay mo",
+          "private": "Panatilihing pribado ang mga tanong"
+        },
+        "alt": "Ang settings ng isang interview"
+      },
+      "invite": {
+        "title": "Mag-imbita ng mga aplikante",
+        "text": "Dalhin ang mga aplikante sa paraang gumagana na ang hiring mo. Bawat isa ay pinagrereserbahan ng credits para sa isang aplikante, na ibinabalik kung hindi siya kailanman magsimula.",
+        "points": {
+          "names": "Mga pangalan kasama ang email",
+          "reminder": "Isang paalala pagkalipas ng 3 araw",
+          "expire": "Nag-e-expire ang mga imbitasyon pagkalipas ng 30 araw",
+          "credits": "Credits lang para sa mga sumagot"
+        },
+        "branches": {
+          "email": {
+            "title": "Sa email",
+            "text": "I-type ang mga email nila, kasama ang pangalan kung gusto mo: bawat isa ay makakatanggap ng imbitasyon na may sariling link."
+          },
+          "list": {
+            "title": "Listahan o file",
+            "text": "Mag-paste ng listahan o mag-upload ng CSV o text file para mag-imbita ng hanggang isang daan nang sabay-sabay."
+          },
+          "link": {
+            "title": "Link sa job ad",
+            "text": "I-on ang shareable link at makakasagot ng interview ang sinumang mag-apply, tig-iisang beses."
+          },
+          "ats": {
+            "title": "Mula sa ATS mo",
+            "text": "Ikonekta ang Greenhouse, Workable, Teamtailor, Recruitee o Breezy HR: kapag inilipat mo ang isang aplikante sa isang stage, naiimbitahan siya."
+          },
+          "api": {
+            "title": "Ang platform mo",
+            "text": "Mag-imbita sa pamamagitan ng API, o i-embed ang interview sa sarili mong site gamit ang SDK."
+          },
+          "ai": {
+            "title": "Mira o AI app",
+            "text": "Ipaimbita ang mga aplikante kay Mira, o sa Claude, ChatGPT o ibang AI app."
+          }
+        },
+        "alt": "Ang dialog ng pag-imbita"
+      },
+      "candidate": {
+        "title": "Sumasagot ang mga aplikante",
+        "text": "Nakikita agad ng mga aplikante ang mga patakaran at ang oras, nangangakong sasagot nang mag-isa, at sinasagot ang isang naka-time na tanong sa bawat pagkakataon, sa click o sa boses, sa anumang device.",
+        "points": {
+          "pledge": "Isang pangako bago magsimula",
+          "timer": "Timer sa bawat tanong",
+          "click": "Click mode",
+          "voice": "Voice mode kasama si Mira",
+          "phone": "Gumagana sa phone",
+          "extraTime": "Dagdag na oras para sa mga nangangailangan"
+        },
+        "alt": "Isang tanong sa click mode na may dalawang opsyong naka-tick"
+      },
+      "results": {
+        "title": "Tingnan kung sino ang pinakamagaling",
+        "text": "Ang score at mga sagot ng bawat aplikante sa sandaling matapos sila, kasama ang mga signal na dapat tingnang mabuti at ang mga note ng team mo.",
+        "points": {
+          "scorecard": "Mga score at passing grade",
+          "answers": "Bawat sagot at ang oras nito",
+          "signals": "Mga integrity flag",
+          "patterns": "Kakaibang pattern ng mga sagot",
+          "notes": "Mga note ng team mo",
+          "discover": "Mga taong open to offers"
+        },
+        "alt": "Ang mga aplikante ng isang interview, nauuna ang pinakamagaling"
+      },
+      "share": {
+        "title": "I-share ang mga report",
+        "text": "Ipadala ang report ng isang aplikante sa magpapasya, sa paraang binabasa nila ito, at panatilihing updated ang mga tool mo.",
+        "points": {
+          "pdf": "Mga PDF report",
+          "digest": "Araw-araw na buod",
+          "bell": "Ang bell sa app"
+        },
+        "branches": {
+          "email": {
+            "title": "Sa email",
+            "text": "Ipadala ang PDF report sa magpapasya, nasa loob man o labas ng team mo."
+          },
+          "chat": {
+            "title": "Sa chat",
+            "text": "Mag-share ng maikling buod sa WhatsApp, Telegram, Viber o LINE."
+          },
+          "ats": {
+            "title": "Pabalik sa ATS mo",
+            "text": "Bumabalik ang bawat resulta sa aplikante sa ATS mo bilang note."
+          },
+          "slack": {
+            "title": "Sa Slack",
+            "text": "Nalalaman ng channel mo kapag may natapos na aplikante, pati ang mga notification na pinili mo."
+          },
+          "webhooks": {
+            "title": "Mga webhook",
+            "text": "Natatanggap ng mga system mo ang resulta ng bawat natapos na aplikante habang nangyayari ito."
+          }
+        },
+        "alt": "Pag-share ng report ng isang aplikante"
+      },
+      "decide": {
+        "title": "Magpasya at mag-hire",
+        "text": "Tao ang nagpapasya, hindi kailanman ang AI. Markahang na-hire ang role para isara ang link nito, at itago ang mga record na hinihingi ng batas sa hiring mo.",
+        "points": {
+          "hired": "Markahan bilang na-hire",
+          "biasAudit": "Export para sa bias audit",
+          "log": "Log ng aksyon"
+        },
+        "alt": "Report ng isang aplikanteng umabot sa passing grade"
+      }
+    }
   }
 }

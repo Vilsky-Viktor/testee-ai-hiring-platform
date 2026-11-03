@@ -5,11 +5,15 @@ testee helps companies find out which candidates really know the job: a short, t
 multiple-choice test made from a job description, for any role, used as a screen before \
 interviews or as an interview step itself.
 
-Menus: the header has "hiring" (companies), "features" and "pricing" (on wide screens). The account menu has \
+Menus: the header has "hiring" (companies), "features", "flow" and "pricing" (on phones, in the \
+menu behind the button left of the logo), and a search ("search anything...") that finds, as \
+you type, the user's own companies, interviews and candidates, the site's pages, guides, \
+comparisons, legal texts, FAQ questions and skills tests (a magnifier on phones). The account menu has \
 the user's name and email with a small "copy id" button, then Settings and Top up. The site follows the device's light or dark setting until the visitor picks a theme: three buttons \
 (system, light, dark) in the header for visitors on wide screens, in the account menu once signed \
-in; "system" follows the device's light or dark setting. The footer has three columns. The product: skills tests by role, \
-pre-employment testing, AI interviews, free practice and comparisons. Resources: the features \
+in; "system" follows the device's light or dark setting. The footer has three columns. The product: the hiring flow page (every \
+step of hiring with testee, from the job description to the hire, with the options at each), \
+skills tests by role, pre-employment testing, AI interviews, free practice and comparisons. Resources: the features \
 page (every feature, group by group, with pictures of the app), guides, the FAQ, \
 the legal docs (documents for companies), the developer docs (the API, web hooks, the SDK, MCP and \
 objects) and a news page with testee's latest updates. The company: an about page (the company \
@@ -110,7 +114,8 @@ personal invite first. The site's guide "How to time a skills test" \
 (/guides/skills-test-timing-and-extra-time) explains choosing the average time per question, the number \
 of questions, the total length and extra time.
 - Interview mode, on a test's settings tab: click mode (the default: candidates tap their \
-answers) or voice mode, for tests in English, Spanish, German, French, Portuguese or Italian. In \
+answers) or voice mode, for tests in English, Spanish, German, French, Portuguese or Italian \
+(marked with a microphone in "Generate in"). In \
 voice mode Mira, the AI interviewer, reads each question and its options aloud, and the \
 candidate answers hands-free by voice (a letter, an option's words or what it means); one clear \
 option is saved at once, several are confirmed with a yes first; tapping always works too. The question's time runs while \

@@ -37,6 +37,7 @@ PAGES = {
     "contact": "/contact",
     "news": "/news",
     "features": "/features",
+    "hiring_flow": "/hiring-flow",
     "guide": "/guides/{slug}",
 }
 # Pages named by what they're about: the service and read giving the name, and its field.
@@ -68,8 +69,9 @@ SHOW_DEFINITION = {
             "not everyone's), as `rows` of ids. kind 'link': one link to the single most "
             "relevant, most specific page (`page` and its ids), e.g. the interview's page for a "
             "question about a position, the candidate's report for a candidate, the features page "
-            "for what testee can do. At most one rows and one link per answer; none for small "
-            "talk. Rows are at most 10: a list of "
+            "for what testee can do, the hiring flow page (rather than a guide) for how hiring "
+            "with testee goes, step by step from the job description to the hire. At most one "
+            "rows and one link per answer; none for small talk. Rows are at most 10: a list of "
             "candidates or interviews gets a link to the page with all of them by itself, so add "
             "no link of your own to that page."
         ),

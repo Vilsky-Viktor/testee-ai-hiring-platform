@@ -491,6 +491,19 @@
       "Kõik funktsioonid on hinnas: maksad ainult iga kandidaadi eest, kes vastab vähemalt ühele küsimusele."
     ]
   },
+  "hiringFlow": {
+    "title": "Värbamisprotsess",
+    "text": "Värbamise iga samm testee'ga, alates kleebitud töökuulutusest kuni jagatud aruande ja töötaja palkamiseni, iga sammu kõigi võimalustega.",
+    "actions": [
+      "Keri mööda joont allapoole: iga samm näitab, mis toimub, millised on võimalused, ja pilti päris rakendusest.",
+      "Kutsumise ja jagamise sammu all näed, kuidas kandidaadid sisse tulevad ja kuidas aruanded välja lähevad.",
+      "Loo intervjuu ülaosa nupust või ava kõik võimalused.",
+      "Alustamiseks kleebi töökuulutus lehe lõpus olevasse kasti."
+    ],
+    "tips": [
+      "Intervjuude loomine on tasuta: maksad ainult iga kandidaadi eest, kes vastab vähemalt ühele küsimusele."
+    ]
+  },
   "pricing": {
     "title": "Hinnad",
     "text": "Mida testee maksab: intervjuude loomine on tasuta ja maksad iga vastava kandidaadi eest, ilma tellimuseta.",

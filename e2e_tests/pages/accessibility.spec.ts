@@ -10,6 +10,7 @@ import { loaded } from "./helpers/waits";
 const PAGES = [
   "/",
   "/features",
+  "/hiring-flow",
   "/pricing",
   "/faq",
   "/contact",

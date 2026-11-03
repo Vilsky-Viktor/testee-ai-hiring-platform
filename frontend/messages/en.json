@@ -77,7 +77,11 @@
     "trust": "Trust",
     "language": "Language",
     "features": "Features",
-    "featuresLink": "features"
+    "featuresLink": "features",
+    "flowLink": "flow",
+    "hiringFlow": "Hiring flow",
+    "menu": "Menu",
+    "closeMenu": "Close menu"
   },
   "signIn": {
     "title": "Sign in",
@@ -1607,7 +1611,9 @@
       "title": "More questions?",
       "videos": "videos",
       "faq": "FAQ",
-      "guides": "guides"
+      "guides": "guides",
+      "features": "features",
+      "hiringFlow": "hiring flow"
     },
     "closing": {
       "title": "Create your first interview\nIt's free",
@@ -2279,7 +2285,8 @@
       "topics": "review topics",
       "practice": "practice",
       "news": "news",
-      "features": "Features"
+      "features": "Features",
+      "hiringFlow": "Hiring flow"
     },
     "voice": {
       "hold": "Hold to talk",
@@ -2746,7 +2753,7 @@
     "title": "Features: AI interviews for hiring, end to end",
     "description": "Every testee feature: interviews from a job description, click and voice modes, integrity signals, reports, ATS and API integrations and compliance.",
     "hero": {
-      "title": "From job description\nto the right hire",
+      "title": "Everything you need\nfor the right hire",
       "text": "A timed interview written for your role, candidates from anywhere, and a clear view of who's best. Every feature is included.",
       "start": "Create an interview",
       "pricing": "see pricing",
@@ -3074,5 +3081,172 @@
       "test": "skills test"
     },
     "label": "Search testee"
+  },
+  "hiringFlow": {
+    "title": "Hiring flow",
+    "description": "Every step of hiring with testee, from the job description you paste to the report you share and the hire you make.",
+    "hero": {
+      "title": "from job description\nto the right hire",
+      "text": "Every step of hiring with testee, and every option at each one: follow the line down.",
+      "start": "create an interview",
+      "features": "all features"
+    },
+    "step": "Step {number, number}",
+    "ways": "Ways to go",
+    "stages": {
+      "describe": {
+        "title": "Describe the job",
+        "text": "Paste a job description, or start from a ready template. Any role, any field, in any of 23 languages.",
+        "points": {
+          "paste": "Paste a job description",
+          "template": "Start from a template",
+          "mira": "Ask Mira to create it",
+          "language": "23 languages",
+          "free": "Creating is free"
+        },
+        "alt": "The new interview page with a job description pasted"
+      },
+      "topics": {
+        "title": "Review the topics",
+        "text": "testee proposes the topics the job needs. You keep, rename, add or remove them, set their subtopics and approve.",
+        "points": {
+          "proposed": "Topics proposed by AI",
+          "edit": "Rename, add or remove",
+          "subtopics": "Subtopics for each",
+          "levels": "Basic to advanced",
+          "approve": "Approve to generate"
+        },
+        "alt": "An interview's topics, each with its questions"
+      },
+      "questions": {
+        "title": "Questions are generated and checked",
+        "text": "AI writes a pool of questions for each topic, a second AI checks every answer key blind, and each candidate gets their own random set.",
+        "points": {
+          "unique": "Unique questions per candidate",
+          "checked": "Answer keys checked by a second AI",
+          "bank": "Proven questions from the shared bank",
+          "multi": "Single and multiple answers",
+          "preview": "Try it as a candidate"
+        },
+        "alt": "A topic's questions, each with its answer key"
+      },
+      "settings": {
+        "title": "Set it up",
+        "text": "Choose how long each question takes, the passing grade and how candidates answer, and put the interview in your brand.",
+        "points": {
+          "time": "Time per question",
+          "passMark": "Passing grade",
+          "mode": "Click or voice mode",
+          "brand": "Your logo and colours",
+          "private": "Keep questions private"
+        },
+        "alt": "An interview's settings"
+      },
+      "invite": {
+        "title": "Invite candidates",
+        "text": "Bring candidates in the way your hiring already works. Each one is reserved a candidate's credits, given back if they never start.",
+        "points": {
+          "names": "Names with emails",
+          "reminder": "One reminder after 3 days",
+          "expire": "Invites expire after 30 days",
+          "credits": "Credits only for those who answer"
+        },
+        "branches": {
+          "email": {
+            "title": "By email",
+            "text": "Type their emails, with names if you like: each gets an invitation with their own link."
+          },
+          "list": {
+            "title": "List or file",
+            "text": "Paste a list or upload a CSV or text file to invite up to a hundred at once."
+          },
+          "link": {
+            "title": "Link in job ad",
+            "text": "Turn on the shareable link and anyone who applies takes the interview, once each."
+          },
+          "ats": {
+            "title": "From your ATS",
+            "text": "Connect Greenhouse, Workable, Teamtailor, Recruitee or Breezy HR: moving a candidate to a stage invites them."
+          },
+          "api": {
+            "title": "Your platform",
+            "text": "Invite through the API, or embed the interview in your own site with the SDK."
+          },
+          "ai": {
+            "title": "Mira or AI app",
+            "text": "Ask Mira, or Claude, ChatGPT or another AI app, to invite candidates for you."
+          }
+        },
+        "alt": "The invite dialog"
+      },
+      "candidate": {
+        "title": "Candidates take it",
+        "text": "Candidates see the rules and the time up front, give their word, and answer one timed question at a time, by click or by voice, on any device.",
+        "points": {
+          "pledge": "A pledge before starting",
+          "timer": "A timer on every question",
+          "click": "Click mode",
+          "voice": "Voice mode with Mira",
+          "phone": "Works on a phone",
+          "extraTime": "Extra time for those who need it"
+        },
+        "alt": "A question in click mode with two options ticked"
+      },
+      "results": {
+        "title": "See who's best",
+        "text": "Every candidate's score and answers as soon as they finish, with signals worth a closer look and your team's notes.",
+        "points": {
+          "scorecard": "Scores and passing grade",
+          "answers": "Every answer and its time",
+          "signals": "Integrity signals",
+          "patterns": "Unusual answer patterns",
+          "notes": "Your team's notes",
+          "discover": "People open to offers"
+        },
+        "alt": "An interview's candidates, best first"
+      },
+      "share": {
+        "title": "Share the reports",
+        "text": "Send a candidate's report to whoever decides, in the way they read it, and keep your tools up to date.",
+        "points": {
+          "pdf": "PDF reports",
+          "digest": "A daily digest",
+          "bell": "The bell in the app"
+        },
+        "branches": {
+          "email": {
+            "title": "By email",
+            "text": "Send the PDF report to whoever decides, inside or outside your team."
+          },
+          "chat": {
+            "title": "In a chat",
+            "text": "Share a short summary on WhatsApp, Telegram, Viber or LINE."
+          },
+          "ats": {
+            "title": "Back to your ATS",
+            "text": "Each result goes back to the candidate in your ATS as a note."
+          },
+          "slack": {
+            "title": "To Slack",
+            "text": "Your channel hears when candidates finish, and the notifications you pick."
+          },
+          "webhooks": {
+            "title": "Web hooks",
+            "text": "Your systems get every finished candidate's result as it happens."
+          }
+        },
+        "alt": "Sharing a candidate's report"
+      },
+      "decide": {
+        "title": "Decide and hire",
+        "text": "People decide, never the AI. Mark the role hired to close its link, and keep the records your hiring law asks for.",
+        "points": {
+          "hired": "Mark as hired",
+          "biasAudit": "Bias audit export",
+          "log": "Action log"
+        },
+        "alt": "A candidate's report with a passing grade"
+      }
+    }
   }
 }

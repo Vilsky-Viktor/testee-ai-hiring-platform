@@ -77,7 +77,11 @@
     "trust": "Vertrauen",
     "language": "Sprache",
     "features": "Funktionen",
-    "featuresLink": "funktionen"
+    "featuresLink": "funktionen",
+    "flowLink": "ablauf",
+    "hiringFlow": "Recruiting-Ablauf",
+    "menu": "Menü",
+    "closeMenu": "Menü schließen"
   },
   "signIn": {
     "title": "Anmelden",
@@ -1607,7 +1611,9 @@
       "title": "Noch Fragen?",
       "videos": "videos",
       "faq": "FAQ",
-      "guides": "ratgeber"
+      "guides": "ratgeber",
+      "features": "funktionen",
+      "hiringFlow": "recruiting-ablauf"
     },
     "closing": {
       "title": "Erstelle dein erstes Interview\nEs ist kostenlos",
@@ -2279,7 +2285,8 @@
       "topics": "Themen prüfen",
       "practice": "Übung",
       "news": "Neuigkeiten",
-      "features": "Funktionen"
+      "features": "Funktionen",
+      "hiringFlow": "Recruiting-Ablauf"
     },
     "voice": {
       "hold": "Zum Sprechen gedrückt halten",
@@ -2746,7 +2753,7 @@
     "title": "Funktionen: KI-Interviews fürs Recruiting, von Anfang bis Ende",
     "description": "Alle Funktionen von testee: Interviews aus einer Stellenbeschreibung, Klick- und Sprachmodus, Integritätshinweise, Berichte, ATS- und API-Integrationen und Compliance.",
     "hero": {
-      "title": "Von der Stellenbeschreibung\nzur passenden Besetzung",
+      "title": "Alles, was du brauchst\nfür die passende Besetzung",
       "text": "Ein Interview mit Zeitlimit, geschrieben für deine Stelle, Kandidaten von überall und ein klarer Blick darauf, wer am besten ist. Alle Funktionen sind inklusive.",
       "start": "Interview erstellen",
       "pricing": "preise ansehen",
@@ -3074,5 +3081,172 @@
       "test": "einstellungstest"
     },
     "label": "testee durchsuchen"
+  },
+  "hiringFlow": {
+    "title": "Recruiting-Ablauf",
+    "description": "Jeder Schritt im Recruiting mit testee, von der Stellenbeschreibung, die du einfügst, bis zum Bericht, den du teilst, und zur Einstellung.",
+    "hero": {
+      "title": "von der Stellenbeschreibung\nzur passenden Besetzung",
+      "text": "Jeder Schritt im Recruiting mit testee und jede Option dabei: Folge einfach der Linie nach unten.",
+      "start": "interview erstellen",
+      "features": "alle funktionen"
+    },
+    "step": "Schritt {number, number}",
+    "ways": "Möglichkeiten",
+    "stages": {
+      "describe": {
+        "title": "Stelle beschreiben",
+        "text": "Füge eine Stellenbeschreibung ein oder starte mit einer fertigen Vorlage. Jede Rolle, jede Branche, in jeder von 23 Sprachen.",
+        "points": {
+          "paste": "Stellenbeschreibung einfügen",
+          "template": "Mit einer Vorlage starten",
+          "mira": "Von Mira erstellen lassen",
+          "language": "23 Sprachen",
+          "free": "Erstellen ist kostenlos"
+        },
+        "alt": "Die Seite für ein neues Interview mit eingefügter Stellenbeschreibung"
+      },
+      "topics": {
+        "title": "Themen prüfen",
+        "text": "testee schlägt die Themen vor, die die Stelle braucht. Du behältst sie, benennst sie um, fügst welche hinzu oder entfernst sie, legst ihre Unterthemen fest und gibst sie frei.",
+        "points": {
+          "proposed": "Themen von der KI vorgeschlagen",
+          "edit": "Umbenennen, hinzufügen oder entfernen",
+          "subtopics": "Unterthemen für jedes Thema",
+          "levels": "Von grundlegend bis fortgeschritten",
+          "approve": "Freigeben zum Generieren"
+        },
+        "alt": "Die Themen eines Interviews, jedes mit seinen Fragen"
+      },
+      "questions": {
+        "title": "Fragen werden erstellt und geprüft",
+        "text": "Die KI schreibt für jedes Thema einen Pool an Fragen, eine zweite KI prüft jeden Lösungsschlüssel blind, und jeder Kandidat bekommt seine eigene zufällige Auswahl.",
+        "points": {
+          "unique": "Eigene Fragen für jeden Kandidaten",
+          "checked": "Lösungsschlüssel von einer zweiten KI geprüft",
+          "bank": "Bewährte Fragen aus dem gemeinsamen Fragenpool",
+          "multi": "Eine oder mehrere richtige Antworten",
+          "preview": "Als Kandidat ausprobieren"
+        },
+        "alt": "Die Fragen eines Themas, jede mit ihrem Lösungsschlüssel"
+      },
+      "settings": {
+        "title": "Einrichten",
+        "text": "Wähle, wie lange jede Frage dauert, die Bestehensgrenze und wie Kandidaten antworten, und gestalte das Interview in deiner Marke.",
+        "points": {
+          "time": "Zeit pro Frage",
+          "passMark": "Bestehensgrenze",
+          "mode": "Klick- oder Sprachmodus",
+          "brand": "Dein Logo und deine Farben",
+          "private": "Fragen privat halten"
+        },
+        "alt": "Die Einstellungen eines Interviews"
+      },
+      "invite": {
+        "title": "Kandidaten einladen",
+        "text": "Hol Kandidaten so dazu, wie dein Recruiting schon funktioniert. Für jeden werden die Credits eines Kandidaten reserviert und zurückgegeben, falls er nie beginnt.",
+        "points": {
+          "names": "Namen mit E-Mail-Adressen",
+          "reminder": "Eine Erinnerung nach 3 Tagen",
+          "expire": "Einladungen laufen nach 30 Tagen ab",
+          "credits": "Credits nur für alle, die antworten"
+        },
+        "branches": {
+          "email": {
+            "title": "Per E-Mail",
+            "text": "Gib ihre E-Mail-Adressen ein, auf Wunsch mit Namen: Jeder bekommt eine Einladung mit eigenem Link."
+          },
+          "list": {
+            "title": "liste oder datei",
+            "text": "Füge eine Liste ein oder lade eine CSV- oder Textdatei hoch, um bis zu hundert auf einmal einzuladen."
+          },
+          "link": {
+            "title": "link in der stellenanzeige",
+            "text": "Schalte den teilbaren Link ein, und alle, die sich bewerben, machen das Interview, jeder einmal."
+          },
+          "ats": {
+            "title": "Aus deinem ATS",
+            "text": "Verbinde Greenhouse, Workable, Teamtailor, Recruitee oder Breezy HR: Verschiebst du einen Kandidaten in eine Phase, wird er eingeladen."
+          },
+          "api": {
+            "title": "Deine Plattform",
+            "text": "Lade über die API ein oder bette das Interview mit dem SDK in deine eigene Website ein."
+          },
+          "ai": {
+            "title": "Mira oder KI-App",
+            "text": "Bitte Mira oder Claude, ChatGPT oder eine andere KI-App, Kandidaten für dich einzuladen."
+          }
+        },
+        "alt": "Der Einladungsdialog"
+      },
+      "candidate": {
+        "title": "Kandidaten machen das Interview",
+        "text": "Kandidaten sehen die Regeln und die Zeit vorab, geben ihr Wort und beantworten eine Frage mit Zeitlimit nach der anderen, per Klick oder per Sprache, auf jedem Gerät.",
+        "points": {
+          "pledge": "Eine Zusage vor dem Start",
+          "timer": "Ein Timer bei jeder Frage",
+          "click": "Klickmodus",
+          "voice": "Sprachmodus mit Mira",
+          "phone": "Funktioniert auf dem Handy",
+          "extraTime": "Mehr Zeit für alle, die sie brauchen"
+        },
+        "alt": "Eine Frage im Klickmodus mit zwei ausgewählten Optionen"
+      },
+      "results": {
+        "title": "Sehen, wer am besten ist",
+        "text": "Ergebnis und Antworten jedes Kandidaten, sobald er fertig ist, mit Hinweisen, die einen genaueren Blick wert sind, und den Notizen deines Teams.",
+        "points": {
+          "scorecard": "Ergebnisse und Bestehensgrenze",
+          "answers": "Jede Antwort und ihre Zeit",
+          "signals": "Integritätshinweise",
+          "patterns": "Ungewöhnliche Antwortmuster",
+          "notes": "Die Notizen deines Teams",
+          "discover": "Personen, die offen für Angebote sind"
+        },
+        "alt": "Die Kandidaten eines Interviews, die besten zuerst"
+      },
+      "share": {
+        "title": "Berichte teilen",
+        "text": "Schick den Bericht eines Kandidaten an die Person, die entscheidet, so wie sie ihn liest, und halte deine Tools auf dem neuesten Stand.",
+        "points": {
+          "pdf": "PDF-Berichte",
+          "digest": "Eine tägliche Aktivitätsübersicht",
+          "bell": "Die Glocke in der App"
+        },
+        "branches": {
+          "email": {
+            "title": "Per E-Mail",
+            "text": "Schick den PDF-Bericht an die Person, die entscheidet, innerhalb oder außerhalb deines Teams."
+          },
+          "chat": {
+            "title": "Im Chat",
+            "text": "Teile eine kurze Zusammenfassung per WhatsApp, Telegram, Viber oder LINE."
+          },
+          "ats": {
+            "title": "Zurück in dein ATS",
+            "text": "Jedes Ergebnis geht als Notiz zum Kandidaten in deinem ATS zurück."
+          },
+          "slack": {
+            "title": "In Slack",
+            "text": "Dein Kanal erfährt, wenn Kandidaten fertig sind, und bekommt die Benachrichtigungen, die du auswählst."
+          },
+          "webhooks": {
+            "title": "Webhooks",
+            "text": "Deine Systeme bekommen das Ergebnis jedes fertigen Kandidaten, sobald es vorliegt."
+          }
+        },
+        "alt": "Den Bericht eines Kandidaten teilen"
+      },
+      "decide": {
+        "title": "Entscheiden und einstellen",
+        "text": "Menschen entscheiden, nie die KI. Markiere die Stelle als besetzt, um ihren Link zu schließen, und bewahre die Unterlagen auf, die das für dich geltende Recht verlangt.",
+        "points": {
+          "hired": "Als eingestellt markieren",
+          "biasAudit": "Export für Bias-Audits",
+          "log": "Aktionsprotokoll"
+        },
+        "alt": "Der Bericht eines Kandidaten mit einem Ergebnis über der Bestehensgrenze"
+      }
+    }
   }
 }

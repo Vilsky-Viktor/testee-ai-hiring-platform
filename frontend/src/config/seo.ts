@@ -31,6 +31,7 @@ export const UNCRAWLED_PATHS = ["/api/", "/monitoring"]
 export const PUBLIC_PATHS = [
   "/",
   "/features",
+  "/hiring-flow",
   "/pricing",
   "/privacy",
   "/terms",
@@ -51,6 +52,7 @@ export const PUBLIC_PATHS = [
 export const LOCALIZED_PATHS = [
   "/",
   "/features",
+  "/hiring-flow",
   "/pricing",
   "/faq",
   "/about",

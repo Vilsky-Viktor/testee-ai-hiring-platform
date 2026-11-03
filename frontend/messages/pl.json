@@ -77,7 +77,11 @@
     "trust": "Zaufanie",
     "language": "Język",
     "features": "Funkcje",
-    "featuresLink": "funkcje"
+    "featuresLink": "funkcje",
+    "flowLink": "proces",
+    "hiringFlow": "Proces rekrutacji",
+    "menu": "Menu",
+    "closeMenu": "Zamknij menu"
   },
   "signIn": {
     "title": "Zaloguj się",
@@ -1607,7 +1611,9 @@
       "title": "Masz więcej pytań?",
       "videos": "wideo",
       "faq": "FAQ",
-      "guides": "poradniki"
+      "guides": "poradniki",
+      "features": "funkcje",
+      "hiringFlow": "proces rekrutacji"
     },
     "closing": {
       "title": "Utwórz swoją pierwszą rozmowę\nZa darmo",
@@ -2279,7 +2285,8 @@
       "topics": "sprawdź tematy",
       "practice": "ćwiczenia",
       "news": "nowości",
-      "features": "Funkcje"
+      "features": "Funkcje",
+      "hiringFlow": "Proces rekrutacji"
     },
     "voice": {
       "hold": "Przytrzymaj, aby mówić",
@@ -2746,7 +2753,7 @@
     "title": "Funkcje: rozmowy rekrutacyjne z AI, od początku do końca",
     "description": "Wszystkie funkcje testee: rozmowy z opisu stanowiska, tryb kliknięć i głosowy, ostrzeżenia o podejrzanych zachowaniach, raporty, integracje z ATS i API oraz zgodność z przepisami.",
     "hero": {
-      "title": "Od opisu stanowiska\ndo trafnego zatrudnienia",
+      "title": "Wszystko, czego potrzebujesz\ndo trafnego zatrudnienia",
       "text": "Rozmowa na czas napisana pod Twoje stanowisko, kandydaci z dowolnego miejsca i jasny obraz tego, kto jest najlepszy. Wszystkie funkcje są w cenie.",
       "start": "Utwórz rozmowę",
       "pricing": "zobacz cennik",
@@ -3074,5 +3081,172 @@
       "test": "test umiejętności"
     },
     "label": "Szukaj w testee"
+  },
+  "hiringFlow": {
+    "title": "Proces rekrutacji",
+    "description": "Każdy krok rekrutacji z testee: od wklejonego opisu stanowiska, przez udostępniony raport, po zatrudnienie.",
+    "hero": {
+      "title": "od opisu stanowiska\ndo trafnego zatrudnienia",
+      "text": "Każdy krok rekrutacji z testee i wszystkie opcje na każdym z nich: podążaj linią w dół.",
+      "start": "utwórz rozmowę",
+      "features": "wszystkie funkcje"
+    },
+    "step": "Krok {number, number}",
+    "ways": "Możliwe drogi",
+    "stages": {
+      "describe": {
+        "title": "Opisz stanowisko",
+        "text": "Wklej opis stanowiska albo zacznij od gotowego szablonu. Każde stanowisko, każda branża, w dowolnym z 23 języków.",
+        "points": {
+          "paste": "Wklej opis stanowiska",
+          "template": "Zacznij od szablonu",
+          "mira": "Poproś Mirę o utworzenie",
+          "language": "23 języki",
+          "free": "Tworzenie jest bezpłatne"
+        },
+        "alt": "Strona nowej rozmowy z wklejonym opisem stanowiska"
+      },
+      "topics": {
+        "title": "Przejrzyj tematy",
+        "text": "testee proponuje tematy, których wymaga stanowisko. Ty je zostawiasz, zmieniasz ich nazwy, dodajesz lub usuwasz, ustalasz podtematy i zatwierdzasz.",
+        "points": {
+          "proposed": "Tematy zaproponowane przez AI",
+          "edit": "Zmiana nazwy, dodawanie, usuwanie",
+          "subtopics": "Podtematy w każdym temacie",
+          "levels": "Od podstawowego do zaawansowanego",
+          "approve": "Zatwierdzenie uruchamia generowanie"
+        },
+        "alt": "Tematy rozmowy, każdy z pytaniami"
+      },
+      "questions": {
+        "title": "Pytania są generowane i sprawdzane",
+        "text": "AI pisze pulę pytań do każdego tematu, druga AI sprawdza w ciemno każdy klucz odpowiedzi, a każdy kandydat dostaje własny losowy zestaw.",
+        "points": {
+          "unique": "Inne pytania dla każdego kandydata",
+          "checked": "Klucze odpowiedzi sprawdzane przez drugą AI",
+          "bank": "Sprawdzone pytania ze wspólnej bazy",
+          "multi": "Jedna lub kilka poprawnych odpowiedzi",
+          "preview": "Wypróbuj jako kandydat"
+        },
+        "alt": "Pytania z tematu, każde z kluczem odpowiedzi"
+      },
+      "settings": {
+        "title": "Skonfiguruj",
+        "text": "Wybierz czas na każde pytanie, próg zaliczenia i sposób odpowiadania kandydatów oraz nadaj rozmowie barwy swojej marki.",
+        "points": {
+          "time": "Czas na pytanie",
+          "passMark": "Próg zaliczenia",
+          "mode": "Tryb kliknięć lub głosowy",
+          "brand": "Twoje logo i kolory",
+          "private": "Pytania tylko dla Ciebie"
+        },
+        "alt": "Ustawienia rozmowy"
+      },
+      "invite": {
+        "title": "Zaproś kandydatów",
+        "text": "Zapraszaj kandydatów tak, jak już prowadzisz rekrutację. Na każdego rezerwowane są kredyty za jednego kandydata, zwracane, jeśli nigdy nie zacznie.",
+        "points": {
+          "names": "Imiona i nazwiska z e-mailami",
+          "reminder": "Jedno przypomnienie po 3 dniach",
+          "expire": "Zaproszenia wygasają po 30 dniach",
+          "credits": "Kredyty tylko za tych, którzy odpowiedzą"
+        },
+        "branches": {
+          "email": {
+            "title": "E-mailem",
+            "text": "Wpisz ich adresy e-mail, jeśli chcesz, z imionami: każdy dostanie zaproszenie z własnym linkiem."
+          },
+          "list": {
+            "title": "lista lub plik",
+            "text": "Wklej listę albo prześlij plik CSV lub tekstowy, aby zaprosić do stu osób naraz."
+          },
+          "link": {
+            "title": "link w ogłoszeniu",
+            "text": "Włącz link do udostępnienia, a każdy, kto aplikuje, przejdzie rozmowę, jeden raz."
+          },
+          "ats": {
+            "title": "Z Twojego ATS",
+            "text": "Połącz Greenhouse, Workable, Teamtailor, Recruitee lub Breezy HR: przeniesienie kandydata na dany etap wysyła mu zaproszenie."
+          },
+          "api": {
+            "title": "Twoja platforma",
+            "text": "Zapraszaj przez API albo osadź rozmowę na własnej stronie za pomocą SDK."
+          },
+          "ai": {
+            "title": "Mira lub aplikacja AI",
+            "text": "Poproś Mirę albo Claude'a, ChatGPT lub inną aplikację AI, by zaprosiły kandydatów za Ciebie."
+          }
+        },
+        "alt": "Okno zapraszania"
+      },
+      "candidate": {
+        "title": "Kandydaci przechodzą rozmowę",
+        "text": "Kandydaci z góry widzą zasady i czas, dają słowo i odpowiadają na pytania po jednym, każde na czas, kliknięciem lub głosem, na dowolnym urządzeniu.",
+        "points": {
+          "pledge": "Zobowiązanie przed startem",
+          "timer": "Limit czasu na każde pytanie",
+          "click": "Tryb kliknięć",
+          "voice": "Tryb głosowy z Mirą",
+          "phone": "Działa na telefonie",
+          "extraTime": "Dodatkowy czas dla potrzebujących"
+        },
+        "alt": "Pytanie w trybie kliknięć z dwiema zaznaczonymi odpowiedziami"
+      },
+      "results": {
+        "title": "Zobacz, kto jest najlepszy",
+        "text": "Wynik i odpowiedzi każdego kandydata zaraz po zakończeniu, z sygnałami wartymi bliższego przyjrzenia się i notatkami Twojego zespołu.",
+        "points": {
+          "scorecard": "Wyniki i próg zaliczenia",
+          "answers": "Każda odpowiedź i jej czas",
+          "signals": "Ostrzeżenia o podejrzanych zachowaniach",
+          "patterns": "Nietypowe wzorce odpowiedzi",
+          "notes": "Notatki Twojego zespołu",
+          "discover": "Osoby otwarte na oferty pracy"
+        },
+        "alt": "Kandydaci w rozmowie, od najlepszego"
+      },
+      "share": {
+        "title": "Udostępnij raporty",
+        "text": "Wyślij raport kandydata osobie, która decyduje, w sposób, w jaki go czyta, a Twoje narzędzia będą na bieżąco.",
+        "points": {
+          "pdf": "Raporty PDF",
+          "digest": "Codzienne podsumowanie",
+          "bell": "Dzwonek w aplikacji"
+        },
+        "branches": {
+          "email": {
+            "title": "E-mailem",
+            "text": "Wyślij raport PDF osobie, która decyduje, w zespole lub poza nim."
+          },
+          "chat": {
+            "title": "W komunikatorze",
+            "text": "Udostępnij krótkie podsumowanie na WhatsAppie, Telegramie, Viberze lub LINE."
+          },
+          "ats": {
+            "title": "Z powrotem do Twojego ATS",
+            "text": "Każdy wynik wraca do kandydata w Twoim ATS jako notatka."
+          },
+          "slack": {
+            "title": "Do Slacka",
+            "text": "Twój kanał dowiaduje się, gdy kandydaci kończą, i dostaje wybrane przez Ciebie powiadomienia."
+          },
+          "webhooks": {
+            "title": "Webhooki",
+            "text": "Twoje systemy od razu dostają wynik każdego kandydata, który skończył."
+          }
+        },
+        "alt": "Udostępnianie raportu kandydata"
+      },
+      "decide": {
+        "title": "Zdecyduj i zatrudnij",
+        "text": "Decydują ludzie, nigdy AI. Oznacz stanowisko jako obsadzone, by zamknąć jego link, i przechowuj dokumentację, której wymagają przepisy o rekrutacji.",
+        "points": {
+          "hired": "Oznacz jako zatrudnionego",
+          "biasAudit": "Eksport do audytu stronniczości",
+          "log": "Dziennik działań"
+        },
+        "alt": "Raport kandydata z wynikiem powyżej progu zaliczenia"
+      }
+    }
   }
 }

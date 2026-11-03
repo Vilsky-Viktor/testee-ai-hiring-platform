@@ -77,7 +77,11 @@
     "trust": "Vertrouwen",
     "language": "Taal",
     "features": "Functionaliteiten",
-    "featuresLink": "functionaliteiten"
+    "featuresLink": "functionaliteiten",
+    "flowLink": "proces",
+    "hiringFlow": "Wervingsproces",
+    "menu": "Menu",
+    "closeMenu": "Menu sluiten"
   },
   "signIn": {
     "title": "Inloggen",
@@ -1607,7 +1611,9 @@
       "title": "Nog vragen?",
       "videos": "video's",
       "faq": "FAQ",
-      "guides": "gidsen"
+      "guides": "gidsen",
+      "features": "functionaliteiten",
+      "hiringFlow": "wervingsproces"
     },
     "closing": {
       "title": "Maak je eerste interview\nHet is gratis",
@@ -2279,7 +2285,8 @@
       "topics": "onderwerpen nakijken",
       "practice": "oefenen",
       "news": "nieuws",
-      "features": "Functionaliteiten"
+      "features": "Functionaliteiten",
+      "hiringFlow": "Wervingsproces"
     },
     "voice": {
       "hold": "Ingedrukt houden om te praten",
@@ -2746,7 +2753,7 @@
     "title": "Functionaliteiten: AI-interviews voor werving, van begin tot eind",
     "description": "Alle functionaliteiten van testee: interviews vanuit een functieomschrijving, klik- en spraakmodus, integriteitssignalen, rapporten, ATS- en API-koppelingen en compliance.",
     "hero": {
-      "title": "Van functieomschrijving\nnaar de juiste aanname",
+      "title": "Alles wat je nodig hebt\nvoor de juiste aanname",
       "text": "Een interview met tijdslimiet, geschreven voor je functie, kandidaten van overal en een helder beeld van wie de beste is. Alle functionaliteiten zijn inbegrepen.",
       "start": "Maak een interview",
       "pricing": "bekijk prijzen",
@@ -3074,5 +3081,172 @@
       "test": "selectietest"
     },
     "label": "Zoeken in testee"
+  },
+  "hiringFlow": {
+    "title": "Wervingsproces",
+    "description": "Elke stap van werven met testee, van de functieomschrijving die je plakt tot het rapport dat je deelt en de kandidaat die je aanneemt.",
+    "hero": {
+      "title": "van functieomschrijving\nnaar de juiste aanname",
+      "text": "Elke stap van werven met testee, en elke optie bij elke stap: volg de lijn naar beneden.",
+      "start": "maak een interview",
+      "features": "alle functionaliteiten"
+    },
+    "step": "Stap {number, number}",
+    "ways": "Mogelijkheden",
+    "stages": {
+      "describe": {
+        "title": "Beschrijf de functie",
+        "text": "Plak een functieomschrijving of begin met een kant-en-klaar sjabloon. Elke functie, elke branche, in elk van de 23 talen.",
+        "points": {
+          "paste": "Plak een functieomschrijving",
+          "template": "Begin met een sjabloon",
+          "mira": "Laat Mira het maken",
+          "language": "23 talen",
+          "free": "Aanmaken is gratis"
+        },
+        "alt": "De pagina voor een nieuw interview met een geplakte functieomschrijving"
+      },
+      "topics": {
+        "title": "Bekijk de onderwerpen",
+        "text": "testee stelt de onderwerpen voor die de functie vraagt. Jij houdt ze, geeft ze een andere naam, voegt ze toe of verwijdert ze, stelt hun subonderwerpen in en keurt ze goed.",
+        "points": {
+          "proposed": "Onderwerpen voorgesteld door AI",
+          "edit": "Hernoemen, toevoegen of verwijderen",
+          "subtopics": "Subonderwerpen per onderwerp",
+          "levels": "Van basis tot gevorderd",
+          "approve": "Goedkeuren om te genereren"
+        },
+        "alt": "De onderwerpen van een interview, elk met de vragen"
+      },
+      "questions": {
+        "title": "Vragen worden gegenereerd en gecontroleerd",
+        "text": "AI schrijft per onderwerp een pool van vragen, een tweede AI controleert elke antwoordsleutel blind, en elke kandidaat krijgt een eigen willekeurige set.",
+        "points": {
+          "unique": "Eigen vragen per kandidaat",
+          "checked": "Antwoordsleutels gecontroleerd door een tweede AI",
+          "bank": "Bewezen vragen uit de gedeelde vragenbank",
+          "multi": "Eén of meer goede antwoorden",
+          "preview": "Probeer het als kandidaat"
+        },
+        "alt": "De vragen van een onderwerp, elk met de antwoordsleutel"
+      },
+      "settings": {
+        "title": "Stel het in",
+        "text": "Kies hoe lang elke vraag duurt, de slaaggrens en hoe kandidaten antwoorden, en geef het interview je eigen huisstijl.",
+        "points": {
+          "time": "Tijd per vraag",
+          "passMark": "Slaaggrens",
+          "mode": "Klik- of spraakmodus",
+          "brand": "Je logo en kleuren",
+          "private": "Vragen privé houden"
+        },
+        "alt": "De instellingen van een interview"
+      },
+      "invite": {
+        "title": "Nodig kandidaten uit",
+        "text": "Haal kandidaten binnen zoals je werving al werkt. Voor elke kandidaat worden de credits gereserveerd, en teruggegeven als die nooit begint.",
+        "points": {
+          "names": "Namen met e-mailadressen",
+          "reminder": "Eén herinnering na 3 dagen",
+          "expire": "Uitnodigingen verlopen na 30 dagen",
+          "credits": "Credits alleen voor wie antwoordt"
+        },
+        "branches": {
+          "email": {
+            "title": "Per e-mail",
+            "text": "Typ hun e-mailadressen, eventueel met namen: iedereen krijgt een uitnodiging met een eigen link."
+          },
+          "list": {
+            "title": "lijst of bestand",
+            "text": "Plak een lijst of upload een CSV- of tekstbestand om tot honderd mensen tegelijk uit te nodigen."
+          },
+          "link": {
+            "title": "link in vacature",
+            "text": "Zet de deelbare link aan en iedereen die solliciteert doet het interview, elk één keer."
+          },
+          "ats": {
+            "title": "Vanuit je ATS",
+            "text": "Koppel Greenhouse, Workable, Teamtailor, Recruitee of Breezy HR: zet je een kandidaat in een fase, dan wordt die uitgenodigd."
+          },
+          "api": {
+            "title": "Je platform",
+            "text": "Nodig uit via de API, of sluit het interview met de SDK in op je eigen site."
+          },
+          "ai": {
+            "title": "Mira of AI-app",
+            "text": "Vraag Mira, of Claude, ChatGPT of een andere AI-app, om kandidaten voor je uit te nodigen."
+          }
+        },
+        "alt": "Het uitnodigingsvenster"
+      },
+      "candidate": {
+        "title": "Kandidaten doen het interview",
+        "text": "Kandidaten zien vooraf de regels en de tijd, geven hun woord en beantwoorden één vraag met tijdslimiet tegelijk, met een klik of met hun stem, op elk apparaat.",
+        "points": {
+          "pledge": "Een belofte vóór de start",
+          "timer": "Een timer bij elke vraag",
+          "click": "Klikmodus",
+          "voice": "Spraakmodus met Mira",
+          "phone": "Werkt op een telefoon",
+          "extraTime": "Extra tijd voor wie dat nodig heeft"
+        },
+        "alt": "Een vraag in klikmodus met twee aangevinkte opties"
+      },
+      "results": {
+        "title": "Zie wie de beste is",
+        "text": "De score en antwoorden van elke kandidaat zodra die klaar is, met signalen die een nadere blik waard zijn en de notities van je team.",
+        "points": {
+          "scorecard": "Scores en slaaggrens",
+          "answers": "Elk antwoord en de tijd ervan",
+          "signals": "Integriteitssignalen",
+          "patterns": "Ongebruikelijke antwoordpatronen",
+          "notes": "De notities van je team",
+          "discover": "Mensen die openstaan voor nieuwe kansen"
+        },
+        "alt": "De kandidaten van een interview, de beste eerst"
+      },
+      "share": {
+        "title": "Deel de rapporten",
+        "text": "Stuur het rapport van een kandidaat naar wie beslist, in de vorm die die persoon leest, en houd je tools up-to-date.",
+        "points": {
+          "pdf": "Pdf-rapporten",
+          "digest": "Een dagelijks overzicht",
+          "bell": "De bel in de app"
+        },
+        "branches": {
+          "email": {
+            "title": "Per e-mail",
+            "text": "Stuur het pdf-rapport naar wie beslist, binnen of buiten je team."
+          },
+          "chat": {
+            "title": "In een chat",
+            "text": "Deel een korte samenvatting via WhatsApp, Telegram, Viber of LINE."
+          },
+          "ats": {
+            "title": "Terug naar je ATS",
+            "text": "Elk resultaat gaat als notitie terug naar de kandidaat in je ATS."
+          },
+          "slack": {
+            "title": "Naar Slack",
+            "text": "Je kanaal hoort wanneer kandidaten klaar zijn, plus de meldingen die je kiest."
+          },
+          "webhooks": {
+            "title": "Webhooks",
+            "text": "Je systemen krijgen het resultaat van elke kandidaat die klaar is, meteen."
+          }
+        },
+        "alt": "Het rapport van een kandidaat delen"
+      },
+      "decide": {
+        "title": "Beslis en neem aan",
+        "text": "Mensen beslissen, nooit de AI. Markeer de functie als vervuld om de link te sluiten, en bewaar de gegevens die de wet voor werving van je vraagt.",
+        "points": {
+          "hired": "Markeren als aangenomen",
+          "biasAudit": "Export voor bias-audit",
+          "log": "Actielog"
+        },
+        "alt": "Het rapport van een kandidaat met een score boven de slaaggrens"
+      }
+    }
   }
 }

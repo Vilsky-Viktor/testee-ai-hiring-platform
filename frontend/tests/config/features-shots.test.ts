@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest"
 
 import { FEATURE_GROUPS } from "@/config/features-page"
 import { FEATURE_SHOTS, FEATURE_SHOTS_PATH } from "@/config/features-shots"
+import { FLOW_STAGES } from "@/config/hiring-flow"
 
 import { FRONTEND } from "../source-files"
 
@@ -29,7 +30,7 @@ function webpSize(file: string) {
   }
 }
 
-describe("the features page's pictures", () => {
+describe("the features and hiring flow pages' pictures", () => {
   it("has a light and a dark picture of each shot, as large as its config says", () => {
     for (const [name, size] of Object.entries(FEATURE_SHOTS)) {
       for (const scheme of ["light", "dark"]) {
@@ -38,10 +39,11 @@ describe("the features page's pictures", () => {
     }
   })
 
-  it("keeps only the pictures its rows show", () => {
-    const shown = FEATURE_GROUPS.flatMap((group) =>
-      group.rows.map((row) => row.shot)
-    )
+  it("keeps only the pictures their rows and stages show", () => {
+    const shown = [
+      ...FEATURE_GROUPS.flatMap((group) => group.rows.map((row) => row.shot)),
+      ...FLOW_STAGES.flatMap((stage) => (stage.shot ? [stage.shot] : [])),
+    ]
     const files = readdirSync(FOLDER).map((file) =>
       file.replace(/-(light|dark)\.webp$/, "")
     )

@@ -491,6 +491,19 @@
       "Toutes les fonctionnalités sont incluses : vous payez uniquement pour chaque candidat qui répond à au moins une question."
     ]
   },
+  "hiringFlow": {
+    "title": "Parcours de recrutement",
+    "text": "Chaque étape du recrutement avec testee, de la fiche de poste que vous collez au rapport que vous partagez et à la personne que vous recrutez, avec toutes les options à chaque étape.",
+    "actions": [
+      "Faites défiler la ligne vers le bas : chaque étape montre ce qui se passe, ses options et une image de l'application réelle.",
+      "Sous les étapes d'invitation et de partage, voyez comment les candidats peuvent arriver et comment les rapports peuvent partir.",
+      "Créez un entretien avec le bouton en haut, ou ouvrez toutes les fonctionnalités.",
+      "Collez une fiche de poste dans le champ en bas de la page pour commencer."
+    ],
+    "tips": [
+      "La création d'entretiens est gratuite : vous payez uniquement pour chaque candidat qui répond à au moins une question."
+    ]
+  },
   "pricing": {
     "title": "Tarifs",
     "text": "Ce que coûte testee : générer des entretiens est gratuit, et vous payez par candidat qui répond, sans abonnement.",

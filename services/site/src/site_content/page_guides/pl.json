@@ -491,6 +491,19 @@
       "Wszystkie funkcje są w cenie: płacisz tylko za każdego kandydata, który odpowie na co najmniej jedno pytanie."
     ]
   },
+  "hiringFlow": {
+    "title": "Proces rekrutacji",
+    "text": "Każdy krok rekrutacji z testee, od wklejonego opisu stanowiska, przez udostępniony raport, po zatrudnienie, ze wszystkimi opcjami na każdym kroku.",
+    "actions": [
+      "Przewijaj w dół wzdłuż linii: każdy krok pokazuje, co się dzieje, jakie są opcje, i zrzut prawdziwej aplikacji.",
+      "Przy krokach zapraszania i udostępniania zobacz, jakimi drogami mogą trafić kandydaci i jakimi mogą wyjść raporty.",
+      "Utwórz rozmowę przyciskiem na górze albo otwórz wszystkie funkcje.",
+      "Wklej opis stanowiska w polu na dole strony, aby zacząć."
+    ],
+    "tips": [
+      "Tworzenie rozmów jest bezpłatne: płacisz tylko za każdego kandydata, który odpowie na co najmniej jedno pytanie."
+    ]
+  },
   "pricing": {
     "title": "Cennik",
     "text": "Ile kosztuje testee: generowanie rozmów jest bezpłatne, a płacisz za każdego kandydata, który odpowiada, bez abonamentu.",

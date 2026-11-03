@@ -41,6 +41,7 @@ PAGE_KEYS = (
     "practiceRound",
     # The public pages.
     "features",
+    "hiringFlow",
     "pricing",
     "tests",
     "test",

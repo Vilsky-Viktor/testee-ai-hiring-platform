@@ -77,7 +77,11 @@
     "trust": "Tin cậy",
     "language": "Ngôn ngữ",
     "features": "Tính năng",
-    "featuresLink": "tính năng"
+    "featuresLink": "tính năng",
+    "flowLink": "quy trình",
+    "hiringFlow": "Quy trình tuyển dụng",
+    "menu": "Menu",
+    "closeMenu": "Đóng menu"
   },
   "signIn": {
     "title": "Đăng nhập",
@@ -1607,7 +1611,9 @@
       "title": "Còn câu hỏi khác?",
       "videos": "video",
       "faq": "Câu hỏi thường gặp",
-      "guides": "hướng dẫn"
+      "guides": "hướng dẫn",
+      "features": "tính năng",
+      "hiringFlow": "quy trình tuyển dụng"
     },
     "closing": {
       "title": "Tạo buổi phỏng vấn đầu tiên\nHoàn toàn miễn phí",
@@ -2279,7 +2285,8 @@
       "topics": "xem lại chủ đề",
       "practice": "luyện tập",
       "news": "tin tức",
-      "features": "Tính năng"
+      "features": "Tính năng",
+      "hiringFlow": "Quy trình tuyển dụng"
     },
     "voice": {
       "hold": "Nhấn giữ để nói",
@@ -2746,7 +2753,7 @@
     "title": "Tính năng: phỏng vấn AI cho tuyển dụng, trọn quy trình",
     "description": "Mọi tính năng của testee: phỏng vấn từ mô tả công việc, chế độ nhấp và giọng nói, cảnh báo hành vi bất thường, báo cáo, tích hợp ATS và API, và tuân thủ.",
     "hero": {
-      "title": "Từ mô tả công việc\nđến đúng người cần tuyển",
+      "title": "Mọi thứ bạn cần\nđể tuyển đúng người",
       "text": "Buổi phỏng vấn có tính giờ được soạn cho vị trí của bạn, ứng viên từ mọi nơi, và cái nhìn rõ ràng ai giỏi nhất. Mọi tính năng đều có sẵn.",
       "start": "Tạo buổi phỏng vấn",
       "pricing": "xem bảng giá",
@@ -3074,5 +3081,172 @@
       "test": "bài kiểm tra kỹ năng"
     },
     "label": "Tìm trong testee"
+  },
+  "hiringFlow": {
+    "title": "Quy trình tuyển dụng",
+    "description": "Mọi bước tuyển dụng với testee, từ mô tả công việc bạn dán vào đến báo cáo bạn chia sẻ và người bạn tuyển.",
+    "hero": {
+      "title": "từ mô tả công việc\nđến đúng người cần tuyển",
+      "text": "Mọi bước tuyển dụng với testee, và mọi lựa chọn ở mỗi bước: cứ theo đường kẻ đi xuống.",
+      "start": "tạo buổi phỏng vấn",
+      "features": "tất cả tính năng"
+    },
+    "step": "Bước {number, number}",
+    "ways": "Các cách thực hiện",
+    "stages": {
+      "describe": {
+        "title": "Mô tả công việc",
+        "text": "Dán mô tả công việc, hoặc bắt đầu từ một mẫu có sẵn. Mọi vị trí, mọi lĩnh vực, bằng bất kỳ ngôn ngữ nào trong 23 ngôn ngữ.",
+        "points": {
+          "paste": "Dán mô tả công việc",
+          "template": "Bắt đầu từ mẫu",
+          "mira": "Nhờ Mira tạo",
+          "language": "23 ngôn ngữ",
+          "free": "Tạo miễn phí"
+        },
+        "alt": "Trang tạo buổi phỏng vấn mới với mô tả công việc đã dán"
+      },
+      "topics": {
+        "title": "Xem lại các chủ đề",
+        "text": "testee đề xuất các chủ đề mà công việc cần. Bạn giữ, đổi tên, thêm hoặc xóa chúng, đặt chủ đề con rồi phê duyệt.",
+        "points": {
+          "proposed": "Chủ đề do AI đề xuất",
+          "edit": "Đổi tên, thêm hoặc xóa",
+          "subtopics": "Chủ đề con cho từng chủ đề",
+          "levels": "Từ cơ bản đến nâng cao",
+          "approve": "Phê duyệt để tạo câu hỏi"
+        },
+        "alt": "Các chủ đề của buổi phỏng vấn, mỗi chủ đề kèm câu hỏi"
+      },
+      "questions": {
+        "title": "Câu hỏi được tạo và kiểm tra",
+        "text": "AI soạn một bộ câu hỏi cho mỗi chủ đề, một AI thứ hai kiểm tra từng đáp án mà không xem đáp án của AI thứ nhất, và mỗi ứng viên nhận một bộ câu hỏi ngẫu nhiên của riêng mình.",
+        "points": {
+          "unique": "Câu hỏi riêng cho từng ứng viên",
+          "checked": "Đáp án được AI thứ hai kiểm tra",
+          "bank": "Câu hỏi đã kiểm chứng từ ngân hàng dùng chung",
+          "multi": "Một hoặc nhiều đáp án đúng",
+          "preview": "Làm thử như ứng viên"
+        },
+        "alt": "Câu hỏi của một chủ đề, mỗi câu kèm đáp án"
+      },
+      "settings": {
+        "title": "Thiết lập",
+        "text": "Chọn thời gian cho mỗi câu hỏi, điểm đạt và cách ứng viên trả lời, rồi đưa thương hiệu của bạn vào buổi phỏng vấn.",
+        "points": {
+          "time": "Thời gian mỗi câu",
+          "passMark": "Điểm đạt",
+          "mode": "Chế độ nhấp hoặc giọng nói",
+          "brand": "Logo và màu sắc của bạn",
+          "private": "Giữ câu hỏi riêng tư"
+        },
+        "alt": "Cài đặt của buổi phỏng vấn"
+      },
+      "invite": {
+        "title": "Mời ứng viên",
+        "text": "Đưa ứng viên vào theo đúng cách bạn vẫn tuyển dụng. Mỗi người được giữ trước số credit cho một ứng viên, và được hoàn lại nếu họ không bao giờ bắt đầu.",
+        "points": {
+          "names": "Tên kèm email",
+          "reminder": "Một lời nhắc sau 3 ngày",
+          "expire": "Lời mời hết hạn sau 30 ngày",
+          "credits": "Chỉ tính credit cho người trả lời"
+        },
+        "branches": {
+          "email": {
+            "title": "Qua email",
+            "text": "Nhập email của họ, kèm tên nếu muốn: mỗi người nhận một lời mời với liên kết riêng."
+          },
+          "list": {
+            "title": "Danh sách hoặc tệp",
+            "text": "Dán danh sách hoặc tải lên tệp CSV hay tệp văn bản để mời tới một trăm người một lần."
+          },
+          "link": {
+            "title": "Liên kết trong tin tuyển dụng",
+            "text": "Bật liên kết chia sẻ và bất kỳ ai ứng tuyển cũng làm được buổi phỏng vấn, mỗi người một lần."
+          },
+          "ats": {
+            "title": "Từ ATS của bạn",
+            "text": "Kết nối Greenhouse, Workable, Teamtailor, Recruitee hoặc Breezy HR: chuyển ứng viên sang một giai đoạn là họ được mời."
+          },
+          "api": {
+            "title": "Nền tảng của bạn",
+            "text": "Mời qua API, hoặc nhúng buổi phỏng vấn vào trang web của riêng bạn bằng SDK."
+          },
+          "ai": {
+            "title": "Mira hoặc ứng dụng AI",
+            "text": "Nhờ Mira, hoặc Claude, ChatGPT hay một ứng dụng AI khác, mời ứng viên giúp bạn."
+          }
+        },
+        "alt": "Hộp thoại mời ứng viên"
+      },
+      "candidate": {
+        "title": "Ứng viên làm bài",
+        "text": "Ứng viên xem quy tắc và thời gian ngay từ đầu, cam kết tự làm bài, rồi trả lời từng câu hỏi có tính giờ, bằng cách nhấp hoặc bằng giọng nói, trên mọi thiết bị.",
+        "points": {
+          "pledge": "Cam kết trước khi bắt đầu",
+          "timer": "Đồng hồ đếm giờ cho mỗi câu",
+          "click": "Chế độ nhấp",
+          "voice": "Chế độ giọng nói với Mira",
+          "phone": "Dùng được trên điện thoại",
+          "extraTime": "Thêm thời gian cho người cần"
+        },
+        "alt": "Một câu hỏi ở chế độ nhấp với hai lựa chọn được đánh dấu"
+      },
+      "results": {
+        "title": "Xem ai giỏi nhất",
+        "text": "Điểm và câu trả lời của mọi ứng viên ngay khi họ làm xong, kèm các cảnh báo đáng xem kỹ và ghi chú của nhóm bạn.",
+        "points": {
+          "scorecard": "Điểm số và điểm đạt",
+          "answers": "Mọi câu trả lời và thời gian của nó",
+          "signals": "Cảnh báo hành vi bất thường",
+          "patterns": "Kiểu trả lời bất thường",
+          "notes": "Ghi chú của nhóm bạn",
+          "discover": "Người sẵn sàng nhận cơ hội việc làm"
+        },
+        "alt": "Ứng viên của một buổi phỏng vấn, người giỏi nhất trước"
+      },
+      "share": {
+        "title": "Chia sẻ báo cáo",
+        "text": "Gửi báo cáo của ứng viên cho người ra quyết định, theo cách họ quen đọc, và giữ cho các công cụ của bạn luôn cập nhật.",
+        "points": {
+          "pdf": "Báo cáo PDF",
+          "digest": "Bản tóm tắt hằng ngày",
+          "bell": "Chuông trong ứng dụng"
+        },
+        "branches": {
+          "email": {
+            "title": "Qua email",
+            "text": "Gửi báo cáo PDF cho người ra quyết định, trong hay ngoài nhóm của bạn."
+          },
+          "chat": {
+            "title": "Qua tin nhắn",
+            "text": "Chia sẻ bản tóm tắt ngắn trên WhatsApp, Telegram, Viber hoặc LINE."
+          },
+          "ats": {
+            "title": "Trở lại ATS của bạn",
+            "text": "Mỗi kết quả được gửi lại cho ứng viên trong ATS của bạn dưới dạng ghi chú."
+          },
+          "slack": {
+            "title": "Tới Slack",
+            "text": "Kênh của bạn được báo khi ứng viên làm xong, cùng các thông báo bạn chọn."
+          },
+          "webhooks": {
+            "title": "Webhook",
+            "text": "Hệ thống của bạn nhận kết quả của mọi ứng viên làm xong ngay khi có."
+          }
+        },
+        "alt": "Chia sẻ báo cáo của một ứng viên"
+      },
+      "decide": {
+        "title": "Quyết định và tuyển",
+        "text": "Con người quyết định, không bao giờ là AI. Đánh dấu vị trí đã tuyển để đóng liên kết của nó, và lưu giữ hồ sơ mà luật tuyển dụng của bạn yêu cầu.",
+        "points": {
+          "hired": "Đánh dấu đã tuyển",
+          "biasAudit": "Xuất dữ liệu kiểm toán thiên lệch",
+          "log": "Nhật ký thao tác"
+        },
+        "alt": "Báo cáo của một ứng viên đạt điểm đạt"
+      }
+    }
   }
 }

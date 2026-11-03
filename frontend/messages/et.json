@@ -77,7 +77,11 @@
     "trust": "Usaldus",
     "language": "Keel",
     "features": "Võimalused",
-    "featuresLink": "võimalused"
+    "featuresLink": "võimalused",
+    "flowLink": "protsess",
+    "hiringFlow": "Värbamisprotsess",
+    "menu": "Menüü",
+    "closeMenu": "Sulge menüü"
   },
   "signIn": {
     "title": "Logi sisse",
@@ -1607,7 +1611,9 @@
       "title": "Veel küsimusi?",
       "videos": "videod",
       "faq": "KKK",
-      "guides": "juhendid"
+      "guides": "juhendid",
+      "features": "võimalused",
+      "hiringFlow": "värbamisprotsess"
     },
     "closing": {
       "title": "Loo oma esimene intervjuu\nSee on tasuta",
@@ -2279,7 +2285,8 @@
       "topics": "vaata teemad üle",
       "practice": "harjutamine",
       "news": "uudised",
-      "features": "Võimalused"
+      "features": "Võimalused",
+      "hiringFlow": "Värbamisprotsess"
     },
     "voice": {
       "hold": "Hoia all, et rääkida",
@@ -2746,7 +2753,7 @@
     "title": "Võimalused: tehisaruga intervjuud värbamiseks algusest lõpuni",
     "description": "Kõik testee võimalused: intervjuud töökuulutuse põhjal, klõpsu- ja häälerežiim, märked kahtlase käitumise kohta, raportid, ATS- ja API-integratsioonid ning nõuetele vastavus.",
     "hero": {
-      "title": "Töökuulutusest\nõige töötajani",
+      "title": "Kõik, mida vajad\nõige töötaja palkamiseks",
       "text": "Sinu ametikoha jaoks kirjutatud ajapiiranguga intervjuu, kandidaadid igalt poolt ja selge pilt sellest, kes on parim. Kõik funktsioonid on hinnas.",
       "start": "Loo intervjuu",
       "pricing": "vaata hindu",
@@ -3074,5 +3081,172 @@
       "test": "oskustest"
     },
     "label": "Otsi testee'st"
+  },
+  "hiringFlow": {
+    "title": "Värbamisprotsess",
+    "description": "Värbamise iga samm testee'ga, alates kleebitud töökuulutusest kuni jagatud aruande ja töötaja palkamiseni.",
+    "hero": {
+      "title": "töökuulutusest\nõige töötajani",
+      "text": "Värbamise iga samm testee'ga ja iga sammu kõik võimalused: järgi joont allapoole.",
+      "start": "loo intervjuu",
+      "features": "kõik võimalused"
+    },
+    "step": "{number, number}. samm",
+    "ways": "Võimalused",
+    "stages": {
+      "describe": {
+        "title": "Kirjelda ametikohta",
+        "text": "Kleebi töökuulutus või alusta valmis mallist. Iga ametikoht, iga valdkond, ükskõik millises 23 keelest.",
+        "points": {
+          "paste": "Kleebi töökuulutus",
+          "template": "Alusta mallist",
+          "mira": "Palu Miral see luua",
+          "language": "23 keelt",
+          "free": "Loomine on tasuta"
+        },
+        "alt": "Uue intervjuu leht kleebitud töökuulutusega"
+      },
+      "topics": {
+        "title": "Vaata teemad üle",
+        "text": "testee pakub välja teemad, mida ametikoht nõuab. Sina jätad need alles, nimetad ümber, lisad või eemaldad, määrad nende alateemad ja kinnitad.",
+        "points": {
+          "proposed": "AI pakutud teemad",
+          "edit": "Nimeta ümber, lisa või eemalda",
+          "subtopics": "Igal teemal alateemad",
+          "levels": "Lihtsast raskeni",
+          "approve": "Kinnita ja küsimused luuakse"
+        },
+        "alt": "Intervjuu teemad, igaüks oma küsimustega"
+      },
+      "questions": {
+        "title": "Küsimused luuakse ja kontrollitakse",
+        "text": "AI kirjutab igale teemale küsimuste kogumi, teine AI kontrollib iga vastusevõtit pimesi ja iga kandidaat saab oma juhusliku komplekti.",
+        "points": {
+          "unique": "Igale kandidaadile oma küsimused",
+          "checked": "Vastusevõtmeid kontrollib teine AI",
+          "bank": "Tõestatud küsimused ühisest pangast",
+          "multi": "Üks või mitu õiget vastust",
+          "preview": "Proovi kandidaadina"
+        },
+        "alt": "Teema küsimused, igaüks oma vastusevõtmega"
+      },
+      "settings": {
+        "title": "Seadista",
+        "text": "Vali, kui palju aega iga küsimus võtab, läbimise lävi ja kuidas kandidaadid vastavad, ning kujunda intervjuu oma brändi järgi.",
+        "points": {
+          "time": "Aeg küsimuse kohta",
+          "passMark": "Läbimise lävi",
+          "mode": "Klõpsu- või häälerežiim",
+          "brand": "Sinu logo ja värvid",
+          "private": "Küsimused jäävad sinu omaks"
+        },
+        "alt": "Intervjuu seaded"
+      },
+      "invite": {
+        "title": "Kutsu kandidaadid",
+        "text": "Too kandidaadid sisse nii, nagu su värbamine juba käib. Igaühe jaoks broneeritakse ühe kandidaadi krediidid, mis tulevad tagasi, kui ta ei alusta.",
+        "points": {
+          "names": "Nimed koos e-posti aadressidega",
+          "reminder": "Üks meeldetuletus 3 päeva pärast",
+          "expire": "Kutsed aeguvad 30 päeva pärast",
+          "credits": "Krediidid ainult vastanute eest"
+        },
+        "branches": {
+          "email": {
+            "title": "E-kirjaga",
+            "text": "Sisesta nende e-posti aadressid, soovi korral koos nimedega: igaüks saab kutse oma lingiga."
+          },
+          "list": {
+            "title": "nimekiri või fail",
+            "text": "Kleebi nimekiri või laadi üles CSV- või tekstifail, et kutsuda korraga kuni sada inimest."
+          },
+          "link": {
+            "title": "link töökuulutuses",
+            "text": "Lülita jagatav link sisse ja iga kandideerija teeb intervjuu, igaüks ühe korra."
+          },
+          "ats": {
+            "title": "Sinu ATS-ist",
+            "text": "Ühenda Greenhouse, Workable, Teamtailor, Recruitee või Breezy HR: kui viid kandidaadi etappi, saab ta kutse."
+          },
+          "api": {
+            "title": "Sinu platvorm",
+            "text": "Kutsu API kaudu või põimi intervjuu SDK abil oma veebisaiti."
+          },
+          "ai": {
+            "title": "Mira või AI-rakendus",
+            "text": "Palu Miral või Claude'il, ChatGPT-l või mõnel teisel AI-rakendusel kandidaadid sinu eest kutsuda."
+          }
+        },
+        "alt": "Kutsumise aken"
+      },
+      "candidate": {
+        "title": "Kandidaadid teevad intervjuu",
+        "text": "Kandidaadid näevad reegleid ja aega juba enne, annavad oma sõna ning vastavad ajapiiranguga küsimustele ükshaaval, klõpsu või häälega, mis tahes seadmes.",
+        "points": {
+          "pledge": "Lubadus enne alustamist",
+          "timer": "Taimer igal küsimusel",
+          "click": "Klõpsurežiim",
+          "voice": "Häälerežiim Miraga",
+          "phone": "Töötab telefonis",
+          "extraTime": "Lisaaeg neile, kes seda vajavad"
+        },
+        "alt": "Küsimus klõpsurežiimis, kaks varianti märgitud"
+      },
+      "results": {
+        "title": "Vaata, kes on parim",
+        "text": "Iga kandidaadi tulemus ja vastused kohe, kui ta lõpetab, koos lähemat vaatamist väärivate märkide ja sinu meeskonna märkmetega.",
+        "points": {
+          "scorecard": "Tulemused ja läbimise lävi",
+          "answers": "Iga vastus ja selle aeg",
+          "signals": "Märked kahtlase käitumise kohta",
+          "patterns": "Ebatavalised vastuste mustrid",
+          "notes": "Sinu meeskonna märkmed",
+          "discover": "Tööpakkumistele avatud inimesed"
+        },
+        "alt": "Intervjuu kandidaadid, parimad eespool"
+      },
+      "share": {
+        "title": "Jaga aruandeid",
+        "text": "Saada kandidaadi aruanne otsustajale talle sobival viisil ja hoia oma tööriistad ajakohasena.",
+        "points": {
+          "pdf": "PDF-aruanded",
+          "digest": "Igapäevane kokkuvõte",
+          "bell": "Kell rakenduses"
+        },
+        "branches": {
+          "email": {
+            "title": "E-kirjaga",
+            "text": "Saada PDF-aruanne otsustajale, olgu ta sinu meeskonnas või väljaspool."
+          },
+          "chat": {
+            "title": "Vestluses",
+            "text": "Jaga lühikest kokkuvõtet WhatsAppis, Telegramis, Viberis või LINE'is."
+          },
+          "ats": {
+            "title": "Tagasi sinu ATS-i",
+            "text": "Iga tulemus läheb sinu ATS-is kandidaadi juurde märkmena."
+          },
+          "slack": {
+            "title": "Slacki",
+            "text": "Sinu kanal saab teada, kui kandidaadid lõpetavad, ja saab sinu valitud teavitused."
+          },
+          "webhooks": {
+            "title": "Webhookid",
+            "text": "Sinu süsteemid saavad iga lõpetanud kandidaadi tulemuse kohe."
+          }
+        },
+        "alt": "Kandidaadi aruande jagamine"
+      },
+      "decide": {
+        "title": "Otsusta ja palka",
+        "text": "Otsustavad inimesed, mitte kunagi AI. Märgi ametikoht täidetuks, et selle link sulgeda, ja säilita dokumendid, mida värbamist reguleerivad seadused nõuavad.",
+        "points": {
+          "hired": "Märgi palgatuks",
+          "biasAudit": "Eksport kallutatuse auditi jaoks",
+          "log": "Toimingute logi"
+        },
+        "alt": "Kandidaadi aruanne, tulemus üle läbimise läve"
+      }
+    }
   }
 }

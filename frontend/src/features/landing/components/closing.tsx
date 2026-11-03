@@ -62,6 +62,14 @@ export async function Closing({
             {t("moreQuestions.guides")}
           </MoreLink>
         </div>
+        <div className="flex flex-wrap justify-center gap-3">
+          <MoreLink href="/features" className="h-12">
+            {t("moreQuestions.features")}
+          </MoreLink>
+          <MoreLink href="/hiring-flow" className="h-12">
+            {t("moreQuestions.hiringFlow")}
+          </MoreLink>
+        </div>
       </div>
     </section>
   )

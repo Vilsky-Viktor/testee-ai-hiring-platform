@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Makes the features page's pictures (frontend/public/features/<name>-<light|dark>.webp) from the
-# screens e2e_tests/signed-in/specs/zz-features-shots.spec.ts takes with SHOTS=1: crops each to
-# the part the page's row is about, converts it to WebP, and writes its size into
+# Makes the features and hiring flow pages' pictures (frontend/public/features/<name>-<light|dark>.webp)
+# from the screens e2e_tests/signed-in/specs/zz-features-shots.spec.ts and zz-flow-shots.spec.ts
+# take with SHOTS=1 (the flow's are flow-* and create): crops each to the part the page shows, converts it to WebP, and writes its size into
 # frontend/src/config/features-shots.ts. The screens are taken at twice the pixels of a
 # 1440 x 900 window; the crops below are in the window's pixels (left, top, width, height).
 # Usage: scripts/features-shots.sh <folder with the screens> (the run's screenshots/features)
@@ -34,6 +34,15 @@ CROPS = {
     "integrations": (350, 190, 994, 700),
     "bias-audit": (427, 172, 576, 556),
     "email": (30, 30, 580, 525),
+    "create": (355, 346, 720, 270),
+    "flow-review": (95, 198, 1240, 590),
+    "flow-questions": (266, 29, 897, 590),
+    "flow-settings": (360, 205, 975, 660),
+    "flow-invite": (459, 248, 512, 404),
+    "flow-question": (86, 36, 1260, 520),
+    "flow-candidates": (350, 226, 994, 664),
+    "flow-share": (427, 304, 576, 292),
+    "flow-report": (40, 95, 1300, 1000),
 }
 SCALE = 2
 source = Path(sys.argv[1])

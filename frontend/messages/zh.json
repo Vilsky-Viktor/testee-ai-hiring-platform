@@ -77,7 +77,11 @@
     "trust": "信任与安全",
     "language": "语言",
     "features": "功能",
-    "featuresLink": "功能"
+    "featuresLink": "功能",
+    "flowLink": "流程",
+    "hiringFlow": "招聘流程",
+    "menu": "菜单",
+    "closeMenu": "关闭菜单"
   },
   "signIn": {
     "title": "登录",
@@ -1607,7 +1611,9 @@
       "title": "还有疑问？",
       "videos": "视频",
       "faq": "常见问题",
-      "guides": "指南"
+      "guides": "指南",
+      "features": "功能",
+      "hiringFlow": "招聘流程"
     },
     "closing": {
       "title": "创建你的第一场面试\n完全免费",
@@ -2279,7 +2285,8 @@
       "topics": "查看主题",
       "practice": "练习",
       "news": "动态",
-      "features": "功能"
+      "features": "功能",
+      "hiringFlow": "招聘流程"
     },
     "voice": {
       "hold": "按住说话",
@@ -2746,7 +2753,7 @@
     "title": "功能：AI 招聘面试，覆盖全流程",
     "description": "testee 的全部功能：根据职位描述生成面试、点选和语音模式、诚信标记、报告、ATS 与 API 集成，以及合规。",
     "hero": {
-      "title": "从职位描述\n到录用合适的人",
+      "title": "录用合适人选\n所需的一切",
       "text": "为你的职位编写的限时面试，来自各个渠道的候选人，一眼看清谁最优秀。所有功能均已包含。",
       "start": "创建面试",
       "pricing": "查看价格",
@@ -3074,5 +3081,172 @@
       "test": "技能测试"
     },
     "label": "搜索 testee"
+  },
+  "hiringFlow": {
+    "title": "招聘流程",
+    "description": "使用 testee 招聘的每一步：从你粘贴的职位描述，到你分享的报告，再到最终录用。",
+    "hero": {
+      "title": "从职位描述\n到录用合适的人",
+      "text": "使用 testee 招聘的每一步，以及每一步的所有选项：沿着线往下看。",
+      "start": "创建面试",
+      "features": "全部功能"
+    },
+    "step": "第 {number, number} 步",
+    "ways": "可选方式",
+    "stages": {
+      "describe": {
+        "title": "描述职位",
+        "text": "粘贴职位描述，或从现成模板开始。任何职位、任何领域，23 种语言任选。",
+        "points": {
+          "paste": "粘贴职位描述",
+          "template": "从模板开始",
+          "mira": "让米拉来创建",
+          "language": "23 种语言",
+          "free": "创建免费"
+        },
+        "alt": "粘贴了职位描述的新建面试页面"
+      },
+      "topics": {
+        "title": "审核主题",
+        "text": "testee 会提出该职位所需的主题。你可以保留、重命名、添加或删除主题，设置子主题，然后批准。",
+        "points": {
+          "proposed": "AI 提议的主题",
+          "edit": "重命名、添加或删除",
+          "subtopics": "每个主题的子主题",
+          "levels": "从初级到高级",
+          "approve": "批准后生成题目"
+        },
+        "alt": "一场面试的各个主题及其题目"
+      },
+      "questions": {
+        "title": "生成并检查题目",
+        "text": "AI 为每个主题编写题目池，第二个 AI 在看不到答案的情况下核对每道题的答案，每位候选人都会得到一套自己的随机题目。",
+        "points": {
+          "unique": "每位候选人的题目各不相同",
+          "checked": "答案由第二个 AI 核对",
+          "bank": "共享题库中经过验证的题目",
+          "multi": "单选和多选",
+          "preview": "以候选人身份试答"
+        },
+        "alt": "某个主题的题目及各自的答案"
+      },
+      "settings": {
+        "title": "进行设置",
+        "text": "选择每道题的时长、及格线和候选人的作答方式，并为面试加上你的品牌。",
+        "points": {
+          "time": "每题时长",
+          "passMark": "及格线",
+          "mode": "点选或语音模式",
+          "brand": "你的标志和配色",
+          "private": "题目不公开"
+        },
+        "alt": "面试设置"
+      },
+      "invite": {
+        "title": "邀请候选人",
+        "text": "按你现有的招聘方式引入候选人。每位候选人会预留一位候选人的点数，如果对方始终没有开始，点数会退回。",
+        "points": {
+          "names": "姓名和邮箱",
+          "reminder": "3 天后提醒一次",
+          "expire": "邀请 30 天后过期",
+          "credits": "只为作答的人扣点数"
+        },
+        "branches": {
+          "email": {
+            "title": "通过邮件",
+            "text": "输入他们的邮箱，也可以附上姓名：每人都会收到一封带有专属链接的邀请。"
+          },
+          "list": {
+            "title": "名单或文件",
+            "text": "粘贴名单或上传 CSV 或文本文件，一次最多邀请一百人。"
+          },
+          "link": {
+            "title": "招聘广告中的链接",
+            "text": "开启分享链接，每位申请人都可以参加面试，每人一次。"
+          },
+          "ats": {
+            "title": "从你的 ATS",
+            "text": "连接 Greenhouse、Workable、Teamtailor、Recruitee 或 Breezy HR：把候选人移到某个阶段即可邀请。"
+          },
+          "api": {
+            "title": "你的平台",
+            "text": "通过 API 邀请，或用 SDK 将面试嵌入你自己的网站。"
+          },
+          "ai": {
+            "title": "米拉或 AI 应用",
+            "text": "让米拉，或 Claude、ChatGPT 等 AI 应用替你邀请候选人。"
+          }
+        },
+        "alt": "邀请对话框"
+      },
+      "candidate": {
+        "title": "候选人参加面试",
+        "text": "候选人事先看到规则和时间，做出承诺，然后在任何设备上逐题限时作答，可点选也可语音。",
+        "points": {
+          "pledge": "开始前的承诺",
+          "timer": "每道题都有计时",
+          "click": "点选模式",
+          "voice": "米拉语音模式",
+          "phone": "手机也能作答",
+          "extraTime": "需要时可延长时间"
+        },
+        "alt": "点选模式下勾选了两个选项的题目"
+      },
+      "results": {
+        "title": "看看谁最优秀",
+        "text": "候选人一完成，即可看到其分数和答案，以及值得细看的信号和团队的备注。",
+        "points": {
+          "scorecard": "分数和及格线",
+          "answers": "每个答案及其用时",
+          "signals": "诚信标记",
+          "patterns": "异常作答模式",
+          "notes": "团队备注",
+          "discover": "接受工作邀约的人"
+        },
+        "alt": "面试的候选人，按成绩从高到低排列"
+      },
+      "share": {
+        "title": "分享报告",
+        "text": "以决策者习惯的方式把候选人的报告发给对方，并让你使用的工具保持同步。",
+        "points": {
+          "pdf": "PDF 报告",
+          "digest": "每日摘要",
+          "bell": "应用内的铃铛通知"
+        },
+        "branches": {
+          "email": {
+            "title": "通过邮件",
+            "text": "把 PDF 报告发给决策者，无论对方是否在你的团队中。"
+          },
+          "chat": {
+            "title": "通过聊天应用",
+            "text": "在 WhatsApp、Telegram、Viber 或 LINE 上分享简短摘要。"
+          },
+          "ats": {
+            "title": "回传到你的 ATS",
+            "text": "每个结果都会以备注形式回传到 ATS 中对应的候选人。"
+          },
+          "slack": {
+            "title": "发送到 Slack",
+            "text": "候选人完成时你的频道会收到通知，还有你选择的其他通知。"
+          },
+          "webhooks": {
+            "title": "Webhook",
+            "text": "每位候选人完成后，你的系统会即时收到其结果。"
+          }
+        },
+        "alt": "分享候选人的报告"
+      },
+      "decide": {
+        "title": "决定并录用",
+        "text": "做决定的是人，绝不是 AI。将职位标记为已录用即可关闭其链接，并保留招聘法规要求的记录。",
+        "points": {
+          "hired": "标记为已录用",
+          "biasAudit": "偏见审计数据导出",
+          "log": "操作记录"
+        },
+        "alt": "达到及格线的候选人报告"
+      }
+    }
   }
 }

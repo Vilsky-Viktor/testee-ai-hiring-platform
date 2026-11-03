@@ -11,6 +11,7 @@ import { REQUEST_URL } from "./helpers/env";
 const LOCALIZED = [
   "/",
   "/features",
+  "/hiring-flow",
   "/pricing",
   "/faq",
   "/about",

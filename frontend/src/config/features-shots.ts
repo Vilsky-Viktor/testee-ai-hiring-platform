@@ -1,4 +1,4 @@
-// The features page's pictures of the real app, in public/features/<name>-<light|dark>.webp:
+// The features page's and the hiring flow page's pictures of the real app, in public/features/<name>-<light|dark>.webp:
 // made by e2e_tests/signed-in/specs/zz-features-shots.spec.ts (SHOTS=1) and
 // scripts/features-shots.sh, which crops them and gives each its size here (both themes alike),
 // at twice the pixels of the screen they were taken on.
@@ -17,6 +17,15 @@ export const FEATURE_SHOTS = {
   integrations: { width: 1988, height: 1400 },
   "bias-audit": { width: 1152, height: 1112 },
   email: { width: 1160, height: 1050 },
+  "flow-review": { width: 2480, height: 1180 },
+  "flow-questions": { width: 1794, height: 1180 },
+  "flow-settings": { width: 1950, height: 1320 },
+  "flow-invite": { width: 1024, height: 808 },
+  "flow-question": { width: 2520, height: 1040 },
+  "flow-candidates": { width: 1988, height: 1328 },
+  "flow-share": { width: 1152, height: 584 },
+  "flow-report": { width: 2600, height: 2000 },
+  create: { width: 1440, height: 540 },
 } as const
 
 export type FeatureShotName = keyof typeof FEATURE_SHOTS

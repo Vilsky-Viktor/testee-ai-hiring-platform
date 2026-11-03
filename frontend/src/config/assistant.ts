@@ -25,6 +25,7 @@ export const LINK_PAGES: [RegExp, MessageKey<"assistant.pages">][] = [
   [/^\/sessions\//, "practice"],
   [/^\/news$/, "news"],
   [/^\/features$/, "features"],
+  [/^\/hiring-flow$/, "hiringFlow"],
   [/\/integrations\/slack$/, "slack"],
   [/\/integrations\/api$/, "api"],
   [/\/integrations(\/[^/]+)?$/, "integrations"],
@@ -59,6 +60,7 @@ export const PAGE_LABELS: Record<string, MessageKey<"assistant.pages">> = {
   contact: "contact",
   news: "news",
   features: "features",
+  hiring_flow: "hiringFlow",
 }
 
 // A company's pages: /companies/<id>/…, maybe under a language's prefix.

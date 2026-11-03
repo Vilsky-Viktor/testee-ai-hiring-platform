@@ -77,7 +77,11 @@
     "trust": "Confiança",
     "language": "Idioma",
     "features": "Recursos",
-    "featuresLink": "recursos"
+    "featuresLink": "recursos",
+    "flowLink": "processo",
+    "hiringFlow": "Processo seletivo",
+    "menu": "Menu",
+    "closeMenu": "Fechar menu"
   },
   "signIn": {
     "title": "Entrar",
@@ -1607,7 +1611,9 @@
       "title": "Mais perguntas?",
       "videos": "vídeos",
       "faq": "FAQ",
-      "guides": "guias"
+      "guides": "guias",
+      "features": "recursos",
+      "hiringFlow": "processo seletivo"
     },
     "closing": {
       "title": "Crie sua primeira entrevista\nÉ grátis",
@@ -2279,7 +2285,8 @@
       "topics": "revisar os temas",
       "practice": "prática",
       "news": "novidades",
-      "features": "Recursos"
+      "features": "Recursos",
+      "hiringFlow": "Processo seletivo"
     },
     "voice": {
       "hold": "Segure para falar",
@@ -2746,7 +2753,7 @@
     "title": "Recursos: entrevistas com IA para contratar, do início ao fim",
     "description": "Todos os recursos da testee: entrevistas a partir de uma descrição da vaga, modos clique e voz, alertas de integridade, relatórios, integrações com ATS e API e conformidade.",
     "hero": {
-      "title": "Da descrição da vaga\nà contratação certa",
+      "title": "Tudo o que você precisa\npara a contratação certa",
       "text": "Uma entrevista cronometrada escrita para a sua vaga, candidatos de qualquer lugar e uma visão clara de quem é o melhor. Todos os recursos estão incluídos.",
       "start": "Criar uma entrevista",
       "pricing": "ver preços",
@@ -3074,5 +3081,172 @@
       "test": "teste de habilidades"
     },
     "label": "Buscar na testee"
+  },
+  "hiringFlow": {
+    "title": "Processo seletivo",
+    "description": "Cada etapa da contratação com a testee, da descrição da vaga que você cola ao relatório que você compartilha e à pessoa que você contrata.",
+    "hero": {
+      "title": "da descrição da vaga\nà contratação certa",
+      "text": "Cada etapa da contratação com a testee, e cada opção em cada uma: siga a linha para baixo.",
+      "start": "criar uma entrevista",
+      "features": "todos os recursos"
+    },
+    "step": "Etapa {number, number}",
+    "ways": "Caminhos possíveis",
+    "stages": {
+      "describe": {
+        "title": "Descreva a vaga",
+        "text": "Cole uma descrição da vaga ou comece com um modelo pronto. Qualquer cargo, qualquer área, em qualquer um dos 23 idiomas.",
+        "points": {
+          "paste": "Cole uma descrição da vaga",
+          "template": "Comece com um modelo",
+          "mira": "Peça à Mira para criá-la",
+          "language": "23 idiomas",
+          "free": "Criar é grátis"
+        },
+        "alt": "A página de nova entrevista com uma descrição da vaga colada"
+      },
+      "topics": {
+        "title": "Revise os tópicos",
+        "text": "A testee sugere os tópicos de que a vaga precisa. Você os mantém, renomeia, adiciona ou remove, define os subtópicos e aprova.",
+        "points": {
+          "proposed": "Tópicos sugeridos pela IA",
+          "edit": "Renomeie, adicione ou remova",
+          "subtopics": "Subtópicos para cada um",
+          "levels": "Do básico ao avançado",
+          "approve": "Aprove para gerar"
+        },
+        "alt": "Os tópicos de uma entrevista, cada um com suas perguntas"
+      },
+      "questions": {
+        "title": "As perguntas são geradas e verificadas",
+        "text": "A IA escreve um conjunto de perguntas para cada tópico, uma segunda IA verifica cada gabarito às cegas, e cada candidato recebe sua própria seleção aleatória.",
+        "points": {
+          "unique": "Perguntas diferentes para cada candidato",
+          "checked": "Gabaritos verificados por uma segunda IA",
+          "bank": "Perguntas aprovadas do banco compartilhado",
+          "multi": "Uma ou várias respostas certas",
+          "preview": "Experimente como candidato"
+        },
+        "alt": "As perguntas de um tópico, cada uma com seu gabarito"
+      },
+      "settings": {
+        "title": "Configure",
+        "text": "Escolha quanto tempo dura cada pergunta, a nota de aprovação e como os candidatos respondem, e coloque a entrevista com a sua marca.",
+        "points": {
+          "time": "Tempo por pergunta",
+          "passMark": "Nota de aprovação",
+          "mode": "Modo clique ou voz",
+          "brand": "Seu logo e suas cores",
+          "private": "Perguntas privadas"
+        },
+        "alt": "As configurações de uma entrevista"
+      },
+      "invite": {
+        "title": "Convide candidatos",
+        "text": "Traga candidatos do jeito que a sua contratação já funciona. Para cada um, os créditos de um candidato ficam reservados e são devolvidos se ele nunca começar.",
+        "points": {
+          "names": "Nomes com e-mails",
+          "reminder": "Um lembrete após 3 dias",
+          "expire": "Os convites expiram após 30 dias",
+          "credits": "Créditos só para quem responde"
+        },
+        "branches": {
+          "email": {
+            "title": "Por e-mail",
+            "text": "Digite os e-mails, com nomes se quiser: cada um recebe um convite com o próprio link."
+          },
+          "list": {
+            "title": "lista ou arquivo",
+            "text": "Cole uma lista ou envie um arquivo CSV ou de texto para convidar até cem pessoas de uma vez."
+          },
+          "link": {
+            "title": "link no anúncio da vaga",
+            "text": "Ative o link compartilhável e quem se candidatar faz a entrevista, uma vez cada um."
+          },
+          "ats": {
+            "title": "Do seu ATS",
+            "text": "Conecte Greenhouse, Workable, Teamtailor, Recruitee ou Breezy HR: mover um candidato para uma etapa o convida."
+          },
+          "api": {
+            "title": "Sua plataforma",
+            "text": "Convide pela API ou incorpore a entrevista no seu próprio site com o SDK."
+          },
+          "ai": {
+            "title": "Mira ou app de IA",
+            "text": "Peça à Mira, ou ao Claude, ao ChatGPT ou a outro app de IA, para convidar candidatos por você."
+          }
+        },
+        "alt": "A janela de convite"
+      },
+      "candidate": {
+        "title": "Os candidatos fazem a entrevista",
+        "text": "Os candidatos veem as regras e o tempo logo de início, dão a sua palavra e respondem a uma pergunta cronometrada por vez, com um clique ou por voz, em qualquer dispositivo.",
+        "points": {
+          "pledge": "Um compromisso antes de começar",
+          "timer": "Um cronômetro em cada pergunta",
+          "click": "Modo clique",
+          "voice": "Modo de voz com a Mira",
+          "phone": "Funciona no celular",
+          "extraTime": "Tempo extra para quem precisa"
+        },
+        "alt": "Uma pergunta no modo clique com duas opções marcadas"
+      },
+      "results": {
+        "title": "Veja quem é o melhor",
+        "text": "A nota e as respostas de cada candidato assim que ele termina, com alertas que merecem um olhar mais atento e as anotações da sua equipe.",
+        "points": {
+          "scorecard": "Notas e nota de aprovação",
+          "answers": "Cada resposta e seu tempo",
+          "signals": "Alertas de integridade",
+          "patterns": "Padrões de resposta incomuns",
+          "notes": "As anotações da sua equipe",
+          "discover": "Pessoas abertas a propostas"
+        },
+        "alt": "Os candidatos de uma entrevista, os melhores primeiro"
+      },
+      "share": {
+        "title": "Compartilhe os relatórios",
+        "text": "Envie o relatório de um candidato para quem decide, do jeito que essa pessoa lê, e mantenha suas ferramentas atualizadas.",
+        "points": {
+          "pdf": "Relatórios em PDF",
+          "digest": "Um resumo diário",
+          "bell": "O sino no app"
+        },
+        "branches": {
+          "email": {
+            "title": "Por e-mail",
+            "text": "Envie o relatório em PDF para quem decide, dentro ou fora da sua equipe."
+          },
+          "chat": {
+            "title": "Em um chat",
+            "text": "Compartilhe um resumo curto no WhatsApp, Telegram, Viber ou LINE."
+          },
+          "ats": {
+            "title": "De volta ao seu ATS",
+            "text": "Cada resultado volta ao candidato no seu ATS como uma anotação."
+          },
+          "slack": {
+            "title": "Para o Slack",
+            "text": "Seu canal fica sabendo quando os candidatos terminam, e recebe as notificações que você escolher."
+          },
+          "webhooks": {
+            "title": "Webhooks",
+            "text": "Seus sistemas recebem na hora o resultado de cada candidato que termina."
+          }
+        },
+        "alt": "Compartilhando o relatório de um candidato"
+      },
+      "decide": {
+        "title": "Decida e contrate",
+        "text": "Quem decide são as pessoas, nunca a IA. Marque a vaga como preenchida para fechar o link dela, e guarde os registros que a lei de contratação exige.",
+        "points": {
+          "hired": "Marcar como contratado",
+          "biasAudit": "Exportação para auditoria de viés",
+          "log": "Registro de ações"
+        },
+        "alt": "O relatório de um candidato com nota acima da nota de aprovação"
+      }
+    }
   }
 }

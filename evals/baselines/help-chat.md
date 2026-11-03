@@ -264,3 +264,11 @@ passed 97.3% (90.8–99.3), made up 2.7% (0.7–9.2), sign-in marker 100%, ident
 (`results/help_chat_features-page.json`). Misses: h17's known invented retake limit (2 of 3);
 none about the features page. Within the noise of the last run (90.7%, 82.0–95.4); kept so the
 guide says what is true. $1.96.
+
+2026-11-04, the header's search and the hiring flow page in the guide (the header's "flow" link
+and the phone's menu, the search and what it finds, the hiring flow page first in the footer's
+product column, the voice languages marked in "Generate in"): before 96.0% (88.9–98.6), made up
+4.0% (1.4–11.1), sign-in marker 100%, identity 18 of 18 (`results/help_chat_flow-search-base.json`;
+misses h17's known invented retake limit, 3 of 3); after 100.0% (95.1–100.0), made up 0.0%
+(0.0–4.9), sign-in marker 100%, identity 18 of 18 (`results/help_chat_flow-search.json`). Within
+the noise (the intervals overlap); kept so the guide says what is true. $1.94 and $2.10.

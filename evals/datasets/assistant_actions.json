@@ -1431,6 +1431,39 @@
      "features"
     ]
    }
+  },
+  {
+   "id": "h01",
+   "kind": "hiring_flow",
+   "page": "interviewsA",
+   "message": "How does hiring with testee work, from start to finish?",
+   "expect": {
+    "link": [
+     "hiring_flow"
+    ]
+   }
+  },
+  {
+   "id": "h02",
+   "kind": "hiring_flow",
+   "page": "companies",
+   "message": "Walk me through the steps from a job description to a hire.",
+   "expect": {
+    "link": [
+     "hiring_flow"
+    ]
+   }
+  },
+  {
+   "id": "h03",
+   "kind": "hiring_flow",
+   "page": "settings",
+   "message": "Is there a page that shows the whole hiring process step by step?",
+   "expect": {
+    "link": [
+     "hiring_flow"
+    ]
+   }
   }
  ],
  "judge_traps": [

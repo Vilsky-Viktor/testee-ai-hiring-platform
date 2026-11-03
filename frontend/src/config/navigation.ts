@@ -13,6 +13,12 @@ export const NAV_LINKS = [
     exact: false,
   },
   {
+    href: "/hiring-flow",
+    label: "flowLink",
+    signedInOnly: false,
+    exact: false,
+  },
+  {
     href: "/pricing",
     label: "pricingLink",
     signedInOnly: false,
@@ -24,6 +30,7 @@ export const NAV_LINKS = [
 // and the company; `label` is the nav message.
 export const FOOTER_COLUMNS = [
   [
+    { href: "/hiring-flow", label: "hiringFlow" },
     { href: "/tests", label: "tests" },
     { href: "/pre-employment-testing", label: "preEmploymentTesting" },
     { href: "/ai-interviews", label: "aiInterviews" },

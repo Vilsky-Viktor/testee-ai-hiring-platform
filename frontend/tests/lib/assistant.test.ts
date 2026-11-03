@@ -51,6 +51,7 @@ describe("linkPage", () => {
     ["/pricing", "pricing"],
     ["/top-up", "topUp"],
     ["/features", "features"],
+    ["/hiring-flow", "hiringFlow"],
     [`/companies/${COMPANY}/integrations/slack`, "slack"],
     [`/companies/${COMPANY}/integrations/greenhouse`, "integrations"],
     [`/companies/${COMPANY}/interviews/i1/candidates/c1`, "candidate"],

@@ -491,6 +491,19 @@
       "Tutte le funzionalità sono incluse: paghi solo per ogni candidato che risponde ad almeno una domanda."
     ]
   },
+  "hiringFlow": {
+    "title": "Processo di selezione",
+    "text": "Ogni fase della selezione con testee, dalla descrizione del ruolo che incolli al report che condividi e all'assunzione che fai, con ogni opzione in ciascuna fase.",
+    "actions": [
+      "Scorri lungo la linea verso il basso: ogni fase mostra cosa succede, le sue opzioni e un'immagine dell'app reale.",
+      "Sotto le fasi di invito e condivisione vedi i modi in cui i candidati possono arrivare e i report possono uscire.",
+      "Crea un colloquio con il pulsante in alto, oppure apri tutte le funzionalità.",
+      "Incolla una descrizione del ruolo nel riquadro in fondo alla pagina per iniziare."
+    ],
+    "tips": [
+      "Creare colloqui è gratis: paghi solo per ogni candidato che risponde ad almeno una domanda."
+    ]
+  },
   "pricing": {
     "title": "Prezzi",
     "text": "Quanto costa testee: generare colloqui è gratis, e paghi per ogni candidato che risponde, senza abbonamento.",

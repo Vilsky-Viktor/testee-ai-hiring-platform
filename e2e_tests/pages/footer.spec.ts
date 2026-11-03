@@ -20,6 +20,7 @@ test("the footer groups its links by product, resources and company", { tag: "@p
   const columns = page.getByRole("contentinfo").getByRole("navigation").getByRole("list");
   await expect(columns).toHaveCount(3);
   expect(await hrefs(columns.nth(0).getByRole("link"))).toEqual([
+    "/hiring-flow",
     "/tests",
     "/pre-employment-testing",
     "/ai-interviews",

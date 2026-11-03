@@ -153,3 +153,43 @@ test("the header's logo link is named by its visible text", { tag: "@phone" }, a
   const letters = [...shown].map((letter) => letter.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   await expect(logo).toHaveAccessibleName(new RegExp(`^${letters.join("\\s*")}\\s+\\S`));
 });
+
+// On a phone the header's links move into a menu opened by a button left of the logo; it lists
+// them in order and closes on Escape, on its close button and when a link is followed.
+test("on a phone the header's links are in the menu left of the logo", { tag: "@phone-only" }, async ({
+  page,
+}) => {
+  await page.goto("/faq");
+  await loaded(page);
+  const banner = page.getByRole("banner");
+  await expect(banner.getByRole("navigation")).toHaveCount(0);
+  const burger = banner.getByRole("button").first();
+  await expect(burger).toHaveAccessibleName(/.+/);
+  const [burgerBox, logoBox] = [await burger.boundingBox(), await banner.locator('a[href="/"]').boundingBox()];
+  expect(burgerBox!.x + burgerBox!.width).toBeLessThanOrEqual(logoBox!.x);
+
+  const menu = page.getByRole("dialog");
+  await burger.click();
+  const links = menu.getByRole("navigation").getByRole("link");
+  await expect(links.first()).toBeVisible();
+  expect(await links.evaluateAll((items) => items.map((item) => item.getAttribute("href")))).toEqual([
+    "/companies",
+    "/features",
+    "/hiring-flow",
+    "/pricing",
+  ]);
+  await page.keyboard.press("Escape");
+  await expect(menu).toHaveCount(0);
+
+  // Its one button closes it.
+  await burger.click();
+  await expect(menu.getByRole("button")).toHaveCount(1);
+  await expect(menu.getByRole("button")).toHaveAccessibleName(/.+/);
+  await menu.getByRole("button").click();
+  await expect(menu).toHaveCount(0);
+
+  await burger.click();
+  await menu.locator('a[href="/hiring-flow"]').click();
+  await expect(page).toHaveURL(/\/hiring-flow$/);
+  await expect(menu).toHaveCount(0);
+});

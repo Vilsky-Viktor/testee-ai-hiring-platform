@@ -1,7 +1,7 @@
 import { cn } from "cn"
 
 import { KeepAcronyms } from "@/components/common/keep-acronyms"
-import { FeatureShot } from "@/features/features/components/feature-shot"
+import { FeatureShot } from "@/components/common/feature-shot"
 import { DOT_CLASS } from "@/config/dot"
 import type { FeatureShotName } from "@/config/features-shots"
 

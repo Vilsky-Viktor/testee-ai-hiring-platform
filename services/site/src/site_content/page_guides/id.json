@@ -491,6 +491,19 @@
       "Semua fitur sudah termasuk: kamu hanya membayar untuk setiap kandidat yang menjawab setidaknya satu soal."
     ]
   },
+  "hiringFlow": {
+    "title": "Alur rekrutmen",
+    "text": "Setiap langkah rekrutmen dengan testee, dari deskripsi pekerjaan yang kamu tempel sampai laporan yang kamu bagikan dan orang yang kamu rekrut, dengan setiap pilihan di tiap langkah.",
+    "actions": [
+      "Gulir ke bawah mengikuti garis: setiap langkah menunjukkan apa yang terjadi, pilihannya, dan gambar aplikasi yang sebenarnya.",
+      "Lihat cara kandidat bisa masuk dan cara laporan bisa dikirim keluar, di bawah langkah undang dan bagikan.",
+      "Buat wawancara dari tombol di bagian atas, atau buka semua fitur.",
+      "Tempel deskripsi pekerjaan di kotak di akhir halaman untuk memulai."
+    ],
+    "tips": [
+      "Membuat wawancara itu gratis: kamu hanya membayar untuk setiap kandidat yang menjawab setidaknya satu soal."
+    ]
+  },
   "pricing": {
     "title": "Harga",
     "text": "Biaya testee: membuat wawancara gratis, dan kamu membayar per kandidat yang menjawab, tanpa langganan.",

@@ -17,7 +17,8 @@ Contents: [Mira](#mira-an-ai-assistant-that-says-so-2026-10-22-kept) ·
 [The average time per question](#the-average-time-per-question-2026-10-29-kept) ·
 [An interview's notes](#an-interviews-notes-2026-10-30-kept) ·
 [Inviting by voice or by click](#inviting-by-voice-or-by-click-2026-10-30-kept) ·
-[A link to the features page](#a-link-to-the-features-page-2026-10-31-kept)
+[A link to the features page](#a-link-to-the-features-page-2026-10-31-kept) ·
+[A link to the hiring flow page](#a-link-to-the-hiring-flow-page-2026-11-04-kept)
 
 ## Mira, an AI assistant that says so (2026-10-22, kept)
 
@@ -202,3 +203,27 @@ the features page in its menus) and after on all 79 (`…_features-link.json`): 
 the features page. On the 76 earlier cases 13,710 then 13,948 tokens and $0.00143 then $0.00145
 a turn, within the noise (±877 tokens); the new cases read the whole guide, 48,000 tokens a turn.
 Misses before: e07 twice, m05.3; after: e12.2, m03.2, m05.3; none about links. $0.43 and $0.47.
+
+## A link to the hiring flow page (2026-11-04, kept)
+
+The `show` tool's link pages gain `hiring_flow` (`/hiring-flow`), and its description names the
+hiring flow page (rather than a guide) for how hiring with testee goes, step by step from the job
+description to the hire. Three new cases (82 in all, kind `hiring_flow`): h01 asks how hiring
+with testee works from start to finish, h02 for the steps from a job description to a hire, h03
+for one page that shows the whole process; each expects a link to the hiring flow page and no
+action. `assistant_actions.py`, 3 repeats, `gpt-6-luna` low, before on the 79 earlier cases
+(`results/assistant_actions_hiring-flow-base.json`) and after on all 82 (`…_hiring-flow-link2.json`):
+task success 99.2% (97.0–99.8), then 98.8% (96.5–99.6); the 79 earlier cases 235/237 both times;
+tool choice 99.2% both, arguments 100% both, asked first 100% both, link 100% then 97.8%
+(88.4–99.6), injection safe 100% both, judge traps 8/8 both. The new cases 8 of 9; h01.1 answered
+from the platform guide without a link. On the 79 earlier cases 15,217 then 15,218 tokens and
+$0.00158 a turn both times; the new cases 22,500 tokens a turn. Misses before: e02.3, i08.2;
+after: h01.1, m03.3, m06.1 (the cross-page cases' extra action, none about links). A first
+wording ("for how hiring with testee goes step by step", `…_hiring-flow-link.json`) linked the
+hiring flow page in 3 of 9: h01 and h02 read a hiring guide and linked it; naming the page
+"rather than a guide" brought 7 of 9 on the new cases alone (`…_hiring-flow-try2.json`), then 8
+of 9 in the full run. That the guides keep their links: `guides.py`, its 20 guide questions, 2
+repeats, before (`…_guides_hiring-flow-guides-base.json`, `show.py` as at `HEAD`) and after
+(`…_guides-new.json`): with the guide tools correct 40/40 both, complete 24/40 then 22/40, read
+the right guide and linked it 37/40 both; wins against without them 36/1/3 then 40/0/0. $0.48,
+$0.51, $0.09, $0.09 and $0.49 the action runs, $0.62 and $0.63 the guide runs.

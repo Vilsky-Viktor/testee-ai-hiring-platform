@@ -491,6 +491,19 @@
       "Kasama ang lahat ng feature: magbabayad ka lang para sa bawat aplikanteng sumagot ng kahit isang tanong."
     ]
   },
+  "hiringFlow": {
+    "title": "Hiring flow",
+    "text": "Bawat hakbang ng hiring gamit ang testee, mula sa job description na ipe-paste mo hanggang sa report na ishe-share mo at sa taong iha-hire mo, kasama ang bawat opsyon sa bawat hakbang.",
+    "actions": [
+      "Mag-scroll pababa sa linya: ipinapakita ng bawat hakbang kung ano ang nangyayari, ang mga opsyon nito at isang larawan ng totoong app.",
+      "Tingnan ang mga paraan ng pagpasok ng mga aplikante at ng paglabas ng mga report, sa ilalim ng mga hakbang na mag-imbita at mag-share.",
+      "Gumawa ng interview mula sa button sa itaas, o buksan ang lahat ng feature.",
+      "Mag-paste ng job description sa box sa dulo ng page para magsimula."
+    ],
+    "tips": [
+      "Libre ang paggawa ng mga interview: magbabayad ka lang para sa bawat aplikanteng sumagot ng kahit isang tanong."
+    ]
+  },
   "pricing": {
     "title": "Presyo",
     "text": "Magkano ang testee: libre ang paggawa ng mga interview, at magbabayad ka bawat aplikanteng sumasagot, nang walang subscription.",

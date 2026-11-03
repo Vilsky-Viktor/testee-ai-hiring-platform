@@ -7,6 +7,7 @@ const PAGES = [
   "/",
   "/companies",
   "/features",
+  "/hiring-flow",
   "/pricing",
   "/terms",
   "/privacy",

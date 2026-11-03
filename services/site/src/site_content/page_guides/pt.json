@@ -491,6 +491,19 @@
       "Todos os recursos estão incluídos: você paga só por cada candidato que responde a pelo menos uma pergunta."
     ]
   },
+  "hiringFlow": {
+    "title": "Processo seletivo",
+    "text": "Cada etapa da contratação com a testee, da descrição da vaga que você cola ao relatório que você compartilha e à pessoa que você contrata, com todas as opções de cada etapa.",
+    "actions": [
+      "Role pela linha para baixo: cada etapa mostra o que acontece, suas opções e uma imagem do app real.",
+      "Nas etapas de convite e compartilhamento, veja como os candidatos podem chegar e como os relatórios podem sair.",
+      "Crie uma entrevista pelo botão no topo, ou abra todos os recursos.",
+      "Cole uma descrição da vaga na caixa no fim da página para começar."
+    ],
+    "tips": [
+      "Criar entrevistas é grátis: você paga só por cada candidato que responde a pelo menos uma pergunta."
+    ]
+  },
   "pricing": {
     "title": "Preços",
     "text": "Quanto custa a testee: gerar entrevistas é grátis, e você paga por candidato que responde, sem assinatura.",

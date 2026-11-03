@@ -264,7 +264,7 @@ test("the comparison shows testee's price range from the catalog", async ({ page
   await expect(section.getByRole("link")).toHaveAttribute("href", "/compare");
 });
 
-test("the closing buttons lead to Mira, the videos, the FAQ and the guides", async ({
+test("the closing buttons lead to Mira, the videos, the FAQ, the guides, the features and the flow", async ({
   page,
 }) => {
   test.setTimeout(120_000);
@@ -280,6 +280,11 @@ test("the closing buttons lead to Mira, the videos, the FAQ and the guides", asy
   await expect(buttons.nth(1)).toHaveAttribute("rel", /noopener/);
   await expect(buttons.nth(2)).toHaveAttribute("href", "/faq");
   await expect(buttons.nth(3)).toHaveAttribute("href", "/guides");
+  // The row under them: the features and the hiring flow pages.
+  const more = closing.locator("div:has(> a[href='/hiring-flow']) > *");
+  await expect(more).toHaveCount(2);
+  await expect(more.nth(0)).toHaveAttribute("href", "/features");
+  await expect(more.nth(1)).toHaveAttribute("href", "/hiring-flow");
 
   await buttons.nth(0).click();
   await expect(page.getByRole("dialog")).toBeVisible();

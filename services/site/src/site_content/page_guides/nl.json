@@ -491,6 +491,19 @@
       "Alle functionaliteiten zijn inbegrepen: je betaalt alleen voor elke kandidaat die minstens één vraag beantwoordt."
     ]
   },
+  "hiringFlow": {
+    "title": "Wervingsproces",
+    "text": "Elke stap van werven met testee, van de functieomschrijving die je plakt tot het rapport dat je deelt en de kandidaat die je aanneemt, met elke optie bij elke stap.",
+    "actions": [
+      "Scroll langs de lijn naar beneden: elke stap laat zien wat er gebeurt, de opties en een afbeelding van de echte app.",
+      "Bij de stappen uitnodigen en delen zie je hoe kandidaten binnenkomen en hoe rapporten naar buiten kunnen.",
+      "Maak een interview met de knop bovenaan, of open alle functionaliteiten.",
+      "Plak een functieomschrijving in het vak onderaan de pagina om te beginnen."
+    ],
+    "tips": [
+      "Interviews maken is gratis: je betaalt alleen voor elke kandidaat die minstens één vraag beantwoordt."
+    ]
+  },
   "pricing": {
     "title": "Prijzen",
     "text": "Wat testee kost: interviews genereren is gratis, en je betaalt per kandidaat die antwoordt, zonder abonnement.",

@@ -77,7 +77,11 @@
     "trust": "Fiducia",
     "language": "Lingua",
     "features": "Funzionalità",
-    "featuresLink": "funzionalità"
+    "featuresLink": "funzionalità",
+    "flowLink": "processo",
+    "hiringFlow": "Processo di selezione",
+    "menu": "Menu",
+    "closeMenu": "Chiudi il menu"
   },
   "signIn": {
     "title": "Accedi",
@@ -1607,7 +1611,9 @@
       "title": "Altre domande?",
       "videos": "video",
       "faq": "FAQ",
-      "guides": "guide"
+      "guides": "guide",
+      "features": "funzionalità",
+      "hiringFlow": "processo di selezione"
     },
     "closing": {
       "title": "Crea il tuo primo colloquio\nÈ gratis",
@@ -2279,7 +2285,8 @@
       "topics": "rivedi gli argomenti",
       "practice": "pratica",
       "news": "novità",
-      "features": "Funzionalità"
+      "features": "Funzionalità",
+      "hiringFlow": "Processo di selezione"
     },
     "voice": {
       "hold": "Tieni premuto per parlare",
@@ -2746,7 +2753,7 @@
     "title": "Funzionalità: colloqui con IA per assumere, dall'inizio alla fine",
     "description": "Tutte le funzionalità di testee: colloqui da una descrizione del ruolo, modalità clic e vocale, segnalazioni di integrità, report, integrazioni con ATS e API e conformità normativa.",
     "hero": {
-      "title": "Dalla descrizione del ruolo\nall'assunzione giusta",
+      "title": "Tutto ciò che serve\nper l'assunzione giusta",
       "text": "Un colloquio a tempo scritto per il tuo ruolo, candidati da ovunque e una visione chiara di chi è il migliore. Tutte le funzionalità sono incluse.",
       "start": "Crea un colloquio",
       "pricing": "vedi i prezzi",
@@ -3074,5 +3081,172 @@
       "test": "test di competenze"
     },
     "label": "Cerca su testee"
+  },
+  "hiringFlow": {
+    "title": "Processo di selezione",
+    "description": "Ogni fase della selezione con testee, dalla descrizione del ruolo che incolli al report che condividi e all'assunzione che fai.",
+    "hero": {
+      "title": "dalla descrizione del ruolo\nall'assunzione giusta",
+      "text": "Ogni fase della selezione con testee, e ogni opzione in ciascuna: segui la linea verso il basso.",
+      "start": "crea un colloquio",
+      "features": "tutte le funzionalità"
+    },
+    "step": "Fase {number, number}",
+    "ways": "Strade possibili",
+    "stages": {
+      "describe": {
+        "title": "Descrivi il ruolo",
+        "text": "Incolla una descrizione del ruolo o parti da un modello pronto. Qualsiasi ruolo, qualsiasi settore, in una qualsiasi delle 23 lingue.",
+        "points": {
+          "paste": "Incolla una descrizione del ruolo",
+          "template": "Parti da un modello",
+          "mira": "Chiedi a Mira di crearlo",
+          "language": "23 lingue",
+          "free": "La creazione è gratuita"
+        },
+        "alt": "La pagina per un nuovo colloquio con una descrizione del ruolo incollata"
+      },
+      "topics": {
+        "title": "Rivedi gli argomenti",
+        "text": "testee propone gli argomenti che servono al ruolo. Tu li tieni, li rinomini, ne aggiungi o ne togli, imposti i sottoargomenti e approvi.",
+        "points": {
+          "proposed": "Argomenti proposti dall'IA",
+          "edit": "Rinomina, aggiungi o togli",
+          "subtopics": "Sottoargomenti per ciascuno",
+          "levels": "Dal livello base all'avanzato",
+          "approve": "Approva per generare"
+        },
+        "alt": "Gli argomenti di un colloquio, ognuno con le sue domande"
+      },
+      "questions": {
+        "title": "Le domande vengono generate e verificate",
+        "text": "L'IA scrive un insieme di domande per ogni argomento, una seconda IA verifica alla cieca ogni chiave di correzione, e ogni candidato riceve una serie casuale tutta sua.",
+        "points": {
+          "unique": "Domande diverse per ogni candidato",
+          "checked": "Chiavi di correzione verificate da una seconda IA",
+          "bank": "Domande collaudate dalla banca domande condivisa",
+          "multi": "Una o più risposte giuste",
+          "preview": "Provalo come un candidato"
+        },
+        "alt": "Le domande di un argomento, ognuna con la sua chiave di correzione"
+      },
+      "settings": {
+        "title": "Configuralo",
+        "text": "Scegli quanto tempo dura ogni domanda, la soglia di superamento e come rispondono i candidati, e dai al colloquio il tuo brand.",
+        "points": {
+          "time": "Tempo per domanda",
+          "passMark": "Soglia di superamento",
+          "mode": "Modalità clic o vocale",
+          "brand": "Il tuo logo e i tuoi colori",
+          "private": "Domande riservate"
+        },
+        "alt": "Le impostazioni di un colloquio"
+      },
+      "invite": {
+        "title": "Invita i candidati",
+        "text": "Fai entrare i candidati così come funziona già la tua selezione. Per ognuno vengono riservati i crediti di un candidato, restituiti se non inizia mai.",
+        "points": {
+          "names": "Nomi con email",
+          "reminder": "Un promemoria dopo 3 giorni",
+          "expire": "Gli inviti scadono dopo 30 giorni",
+          "credits": "Crediti solo per chi risponde"
+        },
+        "branches": {
+          "email": {
+            "title": "Via email",
+            "text": "Scrivi le loro email, con i nomi se vuoi: ognuno riceve un invito con il proprio link."
+          },
+          "list": {
+            "title": "elenco o file",
+            "text": "Incolla un elenco o carica un file CSV o di testo per invitare fino a cento persone alla volta."
+          },
+          "link": {
+            "title": "link nell'annuncio",
+            "text": "Attiva il link condivisibile e chiunque si candidi svolge il colloquio, una volta ciascuno."
+          },
+          "ats": {
+            "title": "Dal tuo ATS",
+            "text": "Collega Greenhouse, Workable, Teamtailor, Recruitee o Breezy HR: spostare un candidato in una fase lo invita."
+          },
+          "api": {
+            "title": "La tua piattaforma",
+            "text": "Invita tramite l'API, o integra il colloquio nel tuo sito con l'SDK."
+          },
+          "ai": {
+            "title": "Mira o app IA",
+            "text": "Chiedi a Mira, o a Claude, ChatGPT o un'altra app IA, di invitare i candidati per te."
+          }
+        },
+        "alt": "La finestra di invito"
+      },
+      "candidate": {
+        "title": "I candidati lo svolgono",
+        "text": "I candidati vedono subito le regole e il tempo, danno la loro parola e rispondono a una domanda a tempo alla volta, con un clic o a voce, da qualsiasi dispositivo.",
+        "points": {
+          "pledge": "Un impegno prima di iniziare",
+          "timer": "Un timer su ogni domanda",
+          "click": "Modalità clic",
+          "voice": "Modalità vocale con Mira",
+          "phone": "Funziona sul telefono",
+          "extraTime": "Tempo extra per chi ne ha bisogno"
+        },
+        "alt": "Una domanda in modalità clic con due opzioni selezionate"
+      },
+      "results": {
+        "title": "Scopri chi è il migliore",
+        "text": "Il punteggio e le risposte di ogni candidato appena finisce, con le segnalazioni da guardare meglio e le note del tuo team.",
+        "points": {
+          "scorecard": "Punteggi e soglia di superamento",
+          "answers": "Ogni risposta e il suo tempo",
+          "signals": "Segnalazioni di integrità",
+          "patterns": "Andamenti delle risposte insoliti",
+          "notes": "Le note del tuo team",
+          "discover": "Persone aperte a nuove opportunità"
+        },
+        "alt": "I candidati di un colloquio, i migliori per primi"
+      },
+      "share": {
+        "title": "Condividi i report",
+        "text": "Invia il report di un candidato a chi decide, nel modo in cui lo legge, e tieni aggiornati i tuoi strumenti.",
+        "points": {
+          "pdf": "Report PDF",
+          "digest": "Un riepilogo giornaliero",
+          "bell": "La campanella nell'app"
+        },
+        "branches": {
+          "email": {
+            "title": "Via email",
+            "text": "Invia il report PDF a chi decide, dentro o fuori dal tuo team."
+          },
+          "chat": {
+            "title": "In chat",
+            "text": "Condividi un breve riepilogo su WhatsApp, Telegram, Viber o LINE."
+          },
+          "ats": {
+            "title": "Di nuovo nel tuo ATS",
+            "text": "Ogni risultato torna al candidato nel tuo ATS come nota."
+          },
+          "slack": {
+            "title": "Su Slack",
+            "text": "Il tuo canale viene avvisato quando i candidati finiscono, e riceve le notifiche che scegli."
+          },
+          "webhooks": {
+            "title": "Webhook",
+            "text": "I tuoi sistemi ricevono in tempo reale il risultato di ogni candidato che ha finito."
+          }
+        },
+        "alt": "La condivisione del report di un candidato"
+      },
+      "decide": {
+        "title": "Decidi e assumi",
+        "text": "Decidono le persone, mai l'IA. Segna il ruolo come coperto per chiuderne il link, e conserva la documentazione richiesta dalla normativa sulle assunzioni.",
+        "points": {
+          "hired": "Segna come assunto",
+          "biasAudit": "Esportazione per audit sui bias",
+          "log": "Registro attività"
+        },
+        "alt": "Il report di un candidato con un punteggio sopra la soglia di superamento"
+      }
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { cn } from "cn"
-import type { ComponentType } from "react"
+import type { ComponentType, CSSProperties } from "react"
 
 import { KeepAcronyms } from "@/components/common/keep-acronyms"
 
@@ -14,6 +14,7 @@ export function IconCard({
   title,
   lit = false,
   className,
+  style,
   children,
 }: {
   // A lucide icon, or another icon sized by its class (McpIcon).
@@ -22,12 +23,15 @@ export function IconCard({
   lit?: boolean
   // Its fill, when not the site's grey.
   className?: string
+  // Its own timing, for cards coming in one after another.
+  style?: CSSProperties
   children: React.ReactNode
 }) {
   return (
     <li
       data-testid="icon-card"
       data-lit={lit || undefined}
+      style={style}
       className={cn(
         "relative flex flex-col justify-center gap-1.5 bg-surface px-6 py-5 pe-16 transition-shadow duration-300 sm:rounded-xl sm:p-5 sm:pe-16",
         lit && "border-primary-gradient",

@@ -148,3 +148,92 @@ export async function miraLoud(page: Page) {
     { polling: 16 },
   )
 }
+
+// The topics a senior accountant's job description gets, as the review shows them.
+export const FLOW_TOPICS = [
+  {
+    main_topic: "Month-end close",
+    subtopics: ["Accruals and prepayments", "Cut-off", "Close checklists"],
+  },
+  {
+    main_topic: "Account reconciliations",
+    subtopics: ["Bank reconciliations", "Intercompany balances", "Suspense accounts"],
+  },
+  { main_topic: "VAT compliance in the EU", subtopics: ["Returns", "Reverse charge", "OSS"] },
+  { main_topic: "IFRS reporting", subtopics: ["Revenue (IFRS 15)", "Leases (IFRS 16)"] },
+  { main_topic: "Management accounts", subtopics: ["Variance analysis", "Forecasts"] },
+  { main_topic: "Audit support", subtopics: ["Year-end schedules", "Audit queries"] },
+]
+
+/** Turns a throwaway company's interview into one whose topics wait for review: a generation in
+ * review in the generation database with `topics`, and the interview waiting on it, as companies
+ * keeps it while its topics are reviewed. Returns the generation's id. */
+export async function topicsInReview(interviewId: string, companyId: string, topics = FLOW_TOPICS) {
+  const generationId = await withDatabase("generation", async (client) => {
+    const found = await client.query(
+      `INSERT INTO generations (id, owner_uid, kind, company_id, text, language, status, topics)
+       VALUES (gen_random_uuid(), 'e2e', 'interview', $1, 'Senior Accountant', 'en',
+               'awaiting_review', $2::jsonb)
+       RETURNING id`,
+      [companyId, JSON.stringify(topics)],
+    )
+
+    return found.rows[0].id as string
+  })
+  await withDatabase("companies", (client) =>
+    client.query(
+      "UPDATE interviews SET set_id = NULL, title = NULL, generation_id = $2 WHERE id = $1",
+      [interviewId, generationId],
+    ),
+  )
+
+  return generationId
+}
+
+type Step = {
+  session: { id: string }
+  question: { question_id: string; text: string; options: string[]; multi: boolean } | null
+}
+
+/** Starts the invite of the candidate signed in on `candidate` and answers its questions until a
+ * "select all that apply" one without a code example comes up, which it leaves open. Returns that
+ * question's session and the options its answer key marks right (from library). */
+export async function reachMultiAnswer(candidate: Page, token: string) {
+  const { sessions } = await api<{ sessions: { id: string }[] }>(
+    candidate,
+    "POST",
+    `/companies/invites/${token}/start`,
+    { pledged: true },
+  )
+
+  for (const section of sessions) {
+    for (;;) {
+      const step = await api<Step>(candidate, "POST", `/rounds/sessions/${section.id}/step`)
+
+      if (!step.question) {
+        break
+      }
+
+      if (step.question.multi && !step.question.text.includes("```")) {
+        const right = await withDatabase("library", async (client) => {
+          const found = await client.query<{ options: { answer: string; correct: boolean }[] }>(
+            "SELECT options FROM questions WHERE id = $1",
+            [step.question!.question_id],
+          )
+
+          return found.rows[0].options.filter((option) => option.correct).map((option) => option.answer)
+        })
+
+        return { sessionId: step.session.id, right }
+      }
+
+      await api(candidate, "POST", `/rounds/sessions/${step.session.id}/answers`, {
+        question_id: step.question.question_id,
+        option_index: 0,
+      })
+    }
+  }
+
+  throw new Error("No multi-answer question without an example in this interview")
+}
+
