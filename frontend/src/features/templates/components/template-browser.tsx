@@ -1,12 +1,8 @@
-import { SearchIcon } from "lucide-react"
 import { getLocale, getTranslations } from "next-intl/server"
 
-import { InputAction } from "@/components/common/input-action"
+import { SearchField } from "@/components/common/search-field"
 import { SearchedList } from "@/components/common/searched-list"
-import {
-  ALL_LANGUAGES,
-  TemplateFilterBar,
-} from "@/features/templates/components/template-filters"
+import { TemplateFilterBar } from "@/features/templates/components/template-filters"
 import { TemplateList } from "@/features/templates/components/template-list"
 import { DEFAULT_LOCALE } from "@/config/i18n"
 import { MAX_TITLE_LENGTH } from "@/config/limits"
@@ -85,31 +81,15 @@ export async function TemplateBrowser({
 
   return (
     <SearchedList>
-      <form action={base} className="flex">
-        <InputAction
-          maxLength={MAX_TITLE_LENGTH}
-          name="q"
-          defaultValue={choice.q}
-          placeholder={t("search")}
-          aria-label={t("search")}
-          action={t("searchAction")}
-          icon={<SearchIcon className="size-5" />}
-          // The level and languages sit inside the field, before its button.
-          addon={
-            <TemplateFilterBar base={base} filters={filters} current={choice} />
-          }
-        />
-        {/* A new search keeps the level and languages. */}
-        {choice.level && (
-          <input type="hidden" name="level" value={choice.level} />
-        )}
-        {choice.languages.length === 0 && (
-          <input type="hidden" name="lang" value={ALL_LANGUAGES} />
-        )}
-        {choice.languages.map((language) => (
-          <input key={language} type="hidden" name="lang" value={language} />
-        ))}
-      </form>
+      <SearchField
+        q={choice.q}
+        label={t("search")}
+        maxLength={MAX_TITLE_LENGTH}
+        // The level and languages sit inside the field; a new search keeps them.
+        addon={
+          <TemplateFilterBar base={base} filters={filters} current={choice} />
+        }
+      />
 
       <TemplateList
         path={path}

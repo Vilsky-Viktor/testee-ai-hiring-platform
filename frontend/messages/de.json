@@ -278,7 +278,6 @@
     "requestChanged": "Diese Anfrage hat sich geändert; prüfe sie erneut.",
     "emails": "E-Mails",
     "emailSearch": "E-Mail-Adresse",
-    "emailSearchAction": "Suchen",
     "emailsIntro": "Suche eine E-Mail-Adresse, um die E-Mails zu sehen und zu stoppen, die testee an sie schickt – für jemanden, der uns per E-Mail darum gebeten hat.",
     "account": "testee-Konto",
     "accountText": "<bdi>{email}</bdi> hat ein Konto. Änderungen hier werden als deine protokolliert.",
@@ -757,7 +756,6 @@
     "empty": "Noch keine Vorlagen.",
     "topics": "{count, plural, one {# Thema} other {# Themen}}",
     "search": "Nach Rolle oder Thema suchen",
-    "searchAction": "Suchen",
     "level": "Level: {level}",
     "anyLevel": "Jedes Level",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Noch keine Kandidaten eingeladen.",
     "noMatches": "Keine passenden Kandidaten.",
     "search": "Kandidaten nach E-Mail oder Name suchen",
-    "searchAction": "Suchen",
     "status": "Status: {status}",
     "anyStatus": "jeder Status",
     "progress": "Fortschritt",
@@ -1155,7 +1152,6 @@
     "empty": "Noch keine Interviews. Erstelle dein erstes.",
     "noMatches": "Keine passenden Interviews.",
     "search": "Interviews nach Titel suchen",
-    "searchAction": "Suchen",
     "candidateCount": "{count, plural, one {# Kandidat} other {# Kandidaten}}",
     "deleteLabel": "<bdi>{title}</bdi> löschen",
     "deleteTitle": "Dieses Interview löschen?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Ratgeber für die Personalauswahl",
-    "intro": "Praktische Ratgeber für Hiring Manager: Bewerber vorauswählen, Einstellungstests und KI fair und rechtssicher in der Personalauswahl einsetzen."
+    "intro": "Praktische Ratgeber für Hiring Manager: Bewerber vorauswählen, Einstellungstests und KI fair und rechtssicher in der Personalauswahl einsetzen.",
+    "search": "Ratgeber durchsuchen",
+    "noMatches": "Kein Ratgeber passt zu deiner Suche."
   },
   "tests": {
     "title": "Einstellungstests nach Rolle",
@@ -2974,6 +2972,10 @@
         "title": "Als eingestellt markieren",
         "text": "Schließe die Stelle und ihren teilbaren Link in einem Schritt."
       },
+      "search": {
+        "title": "Alles durchsuchen",
+        "text": "Eine Suche in der Kopfzeile findet deine Unternehmen, Interviews und Kandidaten sowie jede Seite, jeden Ratgeber und jeden Einstellungstest."
+      },
       "slack": {
         "title": "Slack",
         "text": "Wähle einen Kanal und welche Benachrichtigungen dorthin gehen."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Erstelle dein erstes Interview\nEs ist kostenlos"
     }
+  },
+  "search": {
+    "placeholder": "alles durchsuchen...",
+    "open": "Suchen",
+    "close": "Suche schließen",
+    "empty": "Nichts gefunden",
+    "searching": "Suche läuft…",
+    "clear": "Suchfeld leeren",
+    "kinds": {
+      "company": "unternehmen",
+      "interview": "interview",
+      "candidate": "kandidat",
+      "page": "seite",
+      "guide": "ratgeber",
+      "comparison": "vergleich",
+      "legal": "rechtliches",
+      "faq": "FAQ",
+      "test": "einstellungstest"
+    },
+    "label": "testee durchsuchen"
   }
 }

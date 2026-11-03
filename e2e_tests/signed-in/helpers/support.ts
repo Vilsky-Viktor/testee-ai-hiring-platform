@@ -2,23 +2,26 @@ import { expect, type Locator, type Page } from "@playwright/test"
 
 import { visit } from "./navigation"
 
-/** Searches the admin zone's support tab for `query`; the links of what it found, in order,
- * once the API has answered. Pressing Enter before the page is ready sends nothing, so it's
- * pressed again until the search goes out. The wait for the answer and the key press are awaited
- * together: a wait that gave up while a slow press was still going would otherwise fail the
- * test on its own, and its clean-up would delete the test's company under the search still
- * running (a candidate's search then found nothing). */
+/** Searches the admin zone's support tab for `query` (it searches as it's typed); the links of
+ * what it found, in order, once the API has answered that query. Typed before the page has
+ * hydrated, the text would be lost, so it's emptied and typed again until the search goes out.
+ * The wait for the answer and the typing are awaited together: a wait that gave up while a slow
+ * fill was still going would otherwise fail the test on its own, and its clean-up would delete
+ * the test's company under the search still running (a candidate's search then found nothing). */
 export async function supportSearch(page: Page, query: string) {
   await visit(page, "/superadmin/support")
-  const box = page.getByRole("main").getByRole("textbox")
+  const box = page.getByRole("main").getByRole("searchbox")
 
   await expect(async () => {
-    await box.fill(query)
+    await box.fill("")
     await Promise.all([
-      page.waitForResponse((response) => response.url().includes("/support/search"), {
-        timeout: 15_000,
-      }),
-      box.press("Enter"),
+      page.waitForResponse(
+        (response) =>
+          response.url().includes("/support/search") &&
+          response.request().postDataJSON()?.query === query.trim(),
+        { timeout: 15_000 }
+      ),
+      box.fill(query),
     ])
   }).toPass({ timeout: 90_000 })
 

@@ -278,7 +278,6 @@
     "requestChanged": "Dit verzoek is gewijzigd; controleer het opnieuw.",
     "emails": "E-mails",
     "emailSearch": "E-mailadres",
-    "emailSearchAction": "Zoeken",
     "emailsIntro": "Zoek een e-mailadres om de e-mails te zien en te stoppen die testee ernaar stuurt, voor iemand die ons dat per e-mail vroeg.",
     "account": "testee-account",
     "accountText": "<bdi>{email}</bdi> heeft een account. Wijzigingen hier worden als de jouwe vastgelegd.",
@@ -757,7 +756,6 @@
     "empty": "Nog geen sjablonen.",
     "topics": "{count, plural, one {# onderwerp} other {# onderwerpen}}",
     "search": "Zoeken op functie of onderwerp",
-    "searchAction": "Zoeken",
     "level": "Niveau: {level}",
     "anyLevel": "Elk niveau",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Nog geen kandidaten uitgenodigd.",
     "noMatches": "Geen kandidaten gevonden.",
     "search": "Kandidaten zoeken op e-mailadres of naam",
-    "searchAction": "Zoeken",
     "status": "Status: {status}",
     "anyStatus": "elke status",
     "progress": "Voortgang",
@@ -1155,7 +1152,6 @@
     "empty": "Nog geen interviews. Maak je eerste interview.",
     "noMatches": "Geen interviews gevonden.",
     "search": "Interviews zoeken op titel",
-    "searchAction": "Zoeken",
     "candidateCount": "{count, plural, one {# kandidaat} other {# kandidaten}}",
     "deleteLabel": "<bdi>{title}</bdi> verwijderen",
     "deleteTitle": "Dit interview verwijderen?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Gidsen voor werving",
-    "intro": "Praktische gidsen voor hiring managers: sollicitanten screenen, selectietesten en AI eerlijk en wettig inzetten bij werving."
+    "intro": "Praktische gidsen voor hiring managers: sollicitanten screenen, selectietesten en AI eerlijk en wettig inzetten bij werving.",
+    "search": "Gidsen doorzoeken",
+    "noMatches": "Geen gidsen gevonden voor je zoekopdracht."
   },
   "tests": {
     "title": "Selectietesten per functie",
@@ -2974,6 +2972,10 @@
         "title": "Markeren als aangenomen",
         "text": "Sluit de functie en de deelbare link in één stap."
       },
+      "search": {
+        "title": "Alles doorzoeken",
+        "text": "Eén zoekveld in de kopregel vindt je bedrijven, interviews en kandidaten, en elke pagina, gids en selectietest."
+      },
       "slack": {
         "title": "Slack",
         "text": "Kies een kanaal en welke meldingen daarheen gaan."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Maak je eerste interview\nHet is gratis"
     }
+  },
+  "search": {
+    "placeholder": "doorzoek alles...",
+    "open": "Zoeken",
+    "close": "Zoeken sluiten",
+    "empty": "Niets gevonden",
+    "searching": "Zoeken…",
+    "clear": "Zoekopdracht wissen",
+    "kinds": {
+      "company": "bedrijf",
+      "interview": "interview",
+      "candidate": "kandidaat",
+      "page": "pagina",
+      "guide": "gids",
+      "comparison": "vergelijking",
+      "legal": "juridisch",
+      "faq": "FAQ",
+      "test": "selectietest"
+    },
+    "label": "Zoeken in testee"
   }
 }

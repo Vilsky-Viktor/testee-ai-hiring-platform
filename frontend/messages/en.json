@@ -278,7 +278,6 @@
     "requestChanged": "This request changed; check it again.",
     "emails": "Emails",
     "emailSearch": "Email address",
-    "emailSearchAction": "Find",
     "emailsIntro": "Find an email address to see and stop the emails testee sends to it, for someone who asked us by email.",
     "account": "testee account",
     "accountText": "<bdi>{email}</bdi> has an account. Changes made here are logged as yours.",
@@ -757,7 +756,6 @@
     "empty": "No templates yet.",
     "topics": "{count, plural, one {# topic} other {# topics}}",
     "search": "Search by role or topic",
-    "searchAction": "Search",
     "level": "Level: {level}",
     "anyLevel": "Any level",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "No candidates invited yet.",
     "noMatches": "No candidates match.",
     "search": "Search candidates by email or name",
-    "searchAction": "Search",
     "status": "Status: {status}",
     "anyStatus": "any status",
     "progress": "Progress",
@@ -1155,7 +1152,6 @@
     "empty": "No interviews yet. Create your first one.",
     "noMatches": "No interviews match.",
     "search": "Search interviews by title",
-    "searchAction": "Search",
     "candidateCount": "{count, plural, one {# candidate} other {# candidates}}",
     "deleteLabel": "Delete <bdi>{title}</bdi>",
     "deleteTitle": "Delete this interview?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Guides for hiring",
-    "intro": "Practical guides for hiring managers: screening applicants, skills tests and using AI in hiring fairly and legally."
+    "intro": "Practical guides for hiring managers: screening applicants, skills tests and using AI in hiring fairly and legally.",
+    "search": "Search guides",
+    "noMatches": "No guides match your search."
   },
   "tests": {
     "title": "Skills tests by role",
@@ -2974,6 +2972,10 @@
         "title": "Mark as hired",
         "text": "Close the role and its shareable link in one step."
       },
+      "search": {
+        "title": "Search everything",
+        "text": "One search in the header finds your companies, interviews and candidates, and every page, guide and skills test."
+      },
       "slack": {
         "title": "Slack",
         "text": "Pick a channel and which notifications go there."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Create your first interview\nIt's free"
     }
+  },
+  "search": {
+    "placeholder": "search anything...",
+    "open": "Search",
+    "close": "Close search",
+    "empty": "Nothing found",
+    "searching": "Searching…",
+    "clear": "Clear search",
+    "kinds": {
+      "company": "company",
+      "interview": "interview",
+      "candidate": "candidate",
+      "page": "page",
+      "guide": "guide",
+      "comparison": "comparison",
+      "legal": "legal",
+      "faq": "FAQ",
+      "test": "skills test"
+    },
+    "label": "Search testee"
   }
 }

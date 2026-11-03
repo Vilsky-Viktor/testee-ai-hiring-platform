@@ -88,10 +88,7 @@ export default async function InterviewsPage({
         }
       >
         <SearchedList>
-          <InterviewSearch
-            action={`/companies/${companyId}/interviews`}
-            q={q}
-          />
+          <InterviewSearch q={q} />
           {interviews && (
             <InterviewList
               companyId={companyId}

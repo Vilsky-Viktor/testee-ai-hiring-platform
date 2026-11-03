@@ -21,6 +21,7 @@ from site_content.api.v1 import (
     internal_news,
     news,
     schedules,
+    search,
     superadmin_news,
 )
 from site_content.config import settings
@@ -54,6 +55,7 @@ app.add_middleware(RequestLogMiddleware)
 app.add_middleware(BodyLimitMiddleware)
 compress_answers(app)
 app.include_router(help.router)
+app.include_router(search.router)
 app.include_router(internal_help.router)
 app.include_router(internal_accounts.router)
 app.include_router(events.router)

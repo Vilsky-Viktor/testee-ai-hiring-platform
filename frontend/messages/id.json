@@ -278,7 +278,6 @@
     "requestChanged": "Permintaan ini berubah; periksa lagi.",
     "emails": "Email",
     "emailSearch": "Alamat email",
-    "emailSearchAction": "Cari",
     "emailsIntro": "Cari alamat email untuk melihat dan menghentikan email yang dikirim testee ke alamat itu, untuk orang yang memintanya kepada kami lewat email.",
     "account": "Akun testee",
     "accountText": "<bdi>{email}</bdi> punya akun. Perubahan di sini dicatat atas namamu.",
@@ -757,7 +756,6 @@
     "empty": "Belum ada templat.",
     "topics": "{count, plural, other {# topik}}",
     "search": "Cari berdasarkan posisi atau topik",
-    "searchAction": "Cari",
     "level": "Level: {level}",
     "anyLevel": "Semua level",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Belum ada kandidat yang diundang.",
     "noMatches": "Tidak ada kandidat yang cocok.",
     "search": "Cari kandidat berdasarkan email atau nama",
-    "searchAction": "Cari",
     "status": "Status: {status}",
     "anyStatus": "semua status",
     "progress": "Kemajuan",
@@ -1155,7 +1152,6 @@
     "empty": "Belum ada wawancara. Buat yang pertama.",
     "noMatches": "Tidak ada wawancara yang cocok.",
     "search": "Cari wawancara berdasarkan judul",
-    "searchAction": "Cari",
     "candidateCount": "{count, plural, other {# kandidat}}",
     "deleteLabel": "Hapus <bdi>{title}</bdi>",
     "deleteTitle": "Hapus wawancara ini?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Panduan rekrutmen",
-    "intro": "Panduan praktis untuk hiring manager: menyaring pelamar, tes keterampilan, dan memakai AI dalam rekrutmen secara adil dan sesuai hukum."
+    "intro": "Panduan praktis untuk hiring manager: menyaring pelamar, tes keterampilan, dan memakai AI dalam rekrutmen secara adil dan sesuai hukum.",
+    "search": "Cari panduan",
+    "noMatches": "Tidak ada panduan yang cocok dengan pencarianmu."
   },
   "tests": {
     "title": "Tes seleksi karyawan per posisi",
@@ -2974,6 +2972,10 @@
         "title": "Tandai diterima",
         "text": "Tutup posisi dan tautan berbaginya dalam satu langkah."
       },
+      "search": {
+        "title": "Cari apa saja",
+        "text": "Satu pencarian di header menemukan perusahaan, wawancara, dan kandidatmu, serta setiap halaman, panduan, dan tes keterampilan."
+      },
       "slack": {
         "title": "Slack",
         "text": "Pilih kanal dan notifikasi mana yang dikirim ke sana."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Buat wawancara pertamamu\nGratis"
     }
+  },
+  "search": {
+    "placeholder": "cari apa saja...",
+    "open": "Cari",
+    "close": "Tutup pencarian",
+    "empty": "Tidak ada hasil",
+    "searching": "Mencari…",
+    "clear": "Hapus pencarian",
+    "kinds": {
+      "company": "perusahaan",
+      "interview": "wawancara",
+      "candidate": "kandidat",
+      "page": "halaman",
+      "guide": "panduan",
+      "comparison": "perbandingan",
+      "legal": "hukum",
+      "faq": "tanya jawab",
+      "test": "tes keterampilan"
+    },
+    "label": "Cari di testee"
   }
 }

@@ -278,7 +278,6 @@
     "requestChanged": "Questa richiesta è cambiata; controllala di nuovo.",
     "emails": "Email",
     "emailSearch": "Indirizzo email",
-    "emailSearchAction": "Cerca",
     "emailsIntro": "Cerca un indirizzo email per vedere e fermare le email che testee gli invia, per chi ce lo ha chiesto via email.",
     "account": "Account testee",
     "accountText": "<bdi>{email}</bdi> ha un account. Le modifiche fatte qui sono registrate a tuo nome.",
@@ -757,7 +756,6 @@
     "empty": "Ancora nessun modello.",
     "topics": "{count, plural, one {# argomento} other {# argomenti}}",
     "search": "Cerca per ruolo o argomento",
-    "searchAction": "Cerca",
     "level": "Livello: {level}",
     "anyLevel": "Qualsiasi livello",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Ancora nessun candidato invitato.",
     "noMatches": "Nessun candidato corrisponde.",
     "search": "Cerca candidati per email o nome",
-    "searchAction": "Cerca",
     "status": "Stato: {status}",
     "anyStatus": "qualsiasi stato",
     "progress": "Progresso",
@@ -1155,7 +1152,6 @@
     "empty": "Ancora nessun colloquio. Crea il primo.",
     "noMatches": "Nessun colloquio corrisponde.",
     "search": "Cerca colloqui per titolo",
-    "searchAction": "Cerca",
     "candidateCount": "{count, plural, one {# candidato} other {# candidati}}",
     "deleteLabel": "Elimina <bdi>{title}</bdi>",
     "deleteTitle": "Eliminare questo colloquio?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Guide per assumere",
-    "intro": "Guide pratiche per chi assume: selezionare i candidati, test di competenze e usare l'IA nelle assunzioni in modo equo e legale."
+    "intro": "Guide pratiche per chi assume: selezionare i candidati, test di competenze e usare l'IA nelle assunzioni in modo equo e legale.",
+    "search": "Cerca nelle guide",
+    "noMatches": "Nessuna guida corrisponde alla tua ricerca."
   },
   "tests": {
     "title": "Test di selezione del personale per ruolo",
@@ -2974,6 +2972,10 @@
         "title": "Segna come assunto",
         "text": "Chiudi il ruolo e il suo link condivisibile in un solo passaggio."
       },
+      "search": {
+        "title": "Cerca ovunque",
+        "text": "Un'unica ricerca nell'intestazione trova le tue aziende, i colloqui e i candidati, e ogni pagina, guida e test di competenze."
+      },
       "slack": {
         "title": "Slack",
         "text": "Scegli un canale e quali notifiche ci arrivano."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Crea il tuo primo colloquio\nÈ gratis"
     }
+  },
+  "search": {
+    "placeholder": "cerca qualsiasi cosa...",
+    "open": "Cerca",
+    "close": "Chiudi la ricerca",
+    "empty": "Nessun risultato",
+    "searching": "Ricerca in corso…",
+    "clear": "Cancella la ricerca",
+    "kinds": {
+      "company": "azienda",
+      "interview": "colloquio",
+      "candidate": "candidato",
+      "page": "pagina",
+      "guide": "guida",
+      "comparison": "confronto",
+      "legal": "note legali",
+      "faq": "FAQ",
+      "test": "test di competenze"
+    },
+    "label": "Cerca su testee"
   }
 }

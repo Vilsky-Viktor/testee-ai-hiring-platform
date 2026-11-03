@@ -2,6 +2,7 @@ import { expect, test } from "../fixtures"
 import { api, createCompany, createInterview, inviteCandidate } from "../helpers/api"
 import { inviteToken } from "../helpers/db"
 import { hoverFor, visit } from "../helpers/navigation"
+import { searchFor } from "../helpers/search"
 import { shot } from "../helpers/screenshots"
 import { ownerEmail, throwawayEmail } from "../helpers/users"
 
@@ -88,11 +89,12 @@ test("owner invites candidates with names three ways and finds one by name", asy
   )
   await owner.keyboard.press("Escape")
 
-  // Search matches part of a name, in any case.
-  const search = owner.locator("main input[name=q]")
-  await search.fill("stone")
-  await search.press("Enter")
-  await expect(owner).toHaveURL(/q=stone/)
+  // Search matches part of a name, in any case, as it's typed; the tab and the sort stay.
+  await visit(owner, `${list}&sort=grade`)
+  await searchFor(owner.getByRole("main").getByRole("searchbox"), "stone")
+  await expect(owner).toHaveURL(
+    (url) => url.searchParams.get("tab") === "candidates" && url.searchParams.get("sort") === "grade"
+  )
   await expect(owner.getByText(bob, { exact: true }).filter({ visible: true })).toBeVisible()
   await expect(owner.getByText(ann, { exact: true })).toHaveCount(0)
   await shot(owner, "search-by-name")

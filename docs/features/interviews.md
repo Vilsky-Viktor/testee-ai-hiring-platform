@@ -43,7 +43,7 @@ When a generated interview is ready, the generation page opens it marked as just
 
 ## The interviews list
 
-A company's **interviews** tab lists its interviews, newest first, with a search above it: it finds the interviews whose title contains the text, in any case, with `%` and `_` matched as typed (`GET /companies/interviews?q=`). The address keeps the search (`?q=`), so a reload and the pages loaded as you scroll keep it too. An interview with a [pinned note](#notes) shows it as one muted line under its name. Each row, and the interview's page under its title, shows how it's answered: a pointer icon for click mode, a microphone for voice mode, after the title's last word, named in its tooltip and for screen readers (`voice` on every interview in companies' lists).
+A company's **interviews** tab lists its interviews, newest first, with a search above it that searches as you type ([how list searches work](site.md#header-search)): it finds the interviews whose title contains the text, in any case, with `%` and `_` matched as typed (`GET /companies/interviews?q=`). The address keeps the search (`?q=`), so a reload and the pages loaded as you scroll keep it too. An interview with a [pinned note](#notes) shows it as one muted line under its name. Each row, and the interview's page under its title, shows how it's answered: a pointer icon for click mode, a microphone for voice mode, after the title's last word, named in its tooltip and for screen readers (`voice` on every interview in companies' lists).
 
 ## The interview page
 

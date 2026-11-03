@@ -34,7 +34,7 @@ src/site_content/
 │                           # each opens its transaction
 ├── repositories/           # Database queries (news, the outbox); take the session, never commit
 ├── models/, schemas/       # SQLAlchemy tables; request and response models
-├── helpers/, constants/    # Pure functions (guides, legal versions); fixed values, the FAQ
+├── helpers/, constants/    # Pure functions (guides, legal versions, search); fixed values, the FAQ
 ├── integrations/           # billing (public prices), generation (translations), Redis
 ├── jobs/                   # One-off: the copy of library's news rows
 ├── prompts/                # The platform guide (help.py) and the help knowledge's frame
@@ -47,7 +47,9 @@ migrations/                       # Alembic
 ```
 
 Its public routes are under `/api/site/` (`/api/site/help/faq`, `/help/guide`, `/help/pages/...`,
-`/help/guides...`, `/help/legal/...`, `/help/contact`, `/news`, `/superadmin/news...`).
+`/help/guides...`, `/help/legal/...`, `/help/contact`, `/search` (the header's and the guides hub's
+search over the public pages, legal texts, guides, comparisons and FAQ questions), `/news`,
+`/superadmin/news...`).
 
 The help articles come from `frontend/content` at the repo root (`constants/help.py`); the
 images copy it to `/frontend/content`, at the same place relative to the code.

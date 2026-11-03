@@ -5,6 +5,7 @@ The pages anyone can open without signing in, and how search engines see them. E
 The site follows the device's light or dark setting until a visitor picks a theme (`providers/theme-provider.tsx`). The header's theme buttons (in the account menu once signed in, not on phones) offer system, light and dark; "system" follows the device's light or dark setting, and the choice is kept in the browser (`theme` in local storage). A company's interview pages show the theme the link, the API or the SDK asks for, else the candidate's own (their device's setting unless they picked another); the PDF reports and the emails are always light.
 
 - [Home page](#home-page)
+- [Header search](#header-search)
 - [Features page](#features-page)
 - [Skills tests by role](#skills-tests-by-role)
 - [Articles](#articles)
@@ -37,6 +38,18 @@ Below, the page follows a company's hiring, one section per screen, each with a 
 - **The closing screen:** "Create your first interview. It's free." with "Create an interview" and the free candidates, then "More questions?" with buttons to ask Mira, the demo videos on YouTube, the FAQ and the guides.
 
 Prices, the price range and the free candidates come from billing's catalog, so they follow any change, in the visitor's currency (their country's: see [Currencies](billing.md#currencies)), or a signed-in person's own (see [Currencies](billing.md#currencies)). The hero's second line ("Just $2 – $5 per candidate.") and the page descriptions name that range, written as each language writes a price range, and leave the price out when billing doesn't answer; without the catalog the page shows without the comparison and the pricing sections. Nothing in the pictures is real data. Signed-in users see the landing page too. On phones the animated pictures of creating an interview, what candidates see, the reports, Mira's chat and the quality loop are left out: their sections show their steps as cards instead (the three steps; click mode and voice mode; the PDF, sharing via messengers or email, and team notes and Slack; Mira's info, help and actions; the loop's five steps), each card the screen's full width with square corners and a gap between them, and the invite picture shows its cards without wires. The facts under each section stay, one a row, each after a blue dot. A picture plays once 40% of it is on screen, or, for one taller than that, once it fills 40% of the screen; scrolling within it doesn't start it again. With reduced motion every picture shows a still, complete frame (in the create section, the finished interview).
+
+## Header search
+
+The header's search ("search anything...", `components/common/global-search.tsx`, `lib/search.ts`) finds any kind of page from anywhere on the site. From tablets up it fills the header between its links and its buttons; on phones a magnifier opens it in a bar under the header. It asks once typing stops for half a second (no button), a light gliding along the field's bottom while it loads, with a clear button, and lists at most 5 results, each with what it is (company, interview, candidate, page, guide, comparison, legal, FAQ, skills test); a candidate shows their company and interview under their name. Picking one, by click or with the arrow keys and Enter, opens it. It asks three services at once and lists their results in this order, leaving out one that fails:
+
+- **The user's own companies** (signed in only): companies by name, interviews by title and candidates by name or email, in the companies the user is a member of, any role, at most 5 (companies' `GET /api/companies/search?q=`).
+- **The site's pages** (site's public `GET /api/site/search?q=&kind=&limit=`, in the page's language): the public pages by their [page guide](companies.md#page-guides)'s title, the legal texts, the guides, the comparisons (by title or description) and the FAQ's questions; best first: a title that starts with the text, then a word of the title that does, then a title that contains it, then a description that does. `kind` (`page`, `guide`, `comparison`, `legal`, `faq`) keeps only one kind; `limit` is 5 by default and at most 50. An empty query finds nothing.
+- **The skills tests** by title, in the interface's language or English (the public template catalog, as on `/tests`).
+
+The guides hub (`/guides`) has its own search, over the guides only: the same site search with `kind=guide`, its query in the address (`?q=`).
+
+Every list search works the same way as you type (`components/common/search-field.tsx`): a company's interviews, an interview's candidates, the templates and the practice tests, the guides hub and the admin zone's support search ask 500 ms after typing stops (`SEARCH_DELAY_MS`), Enter at once, with no button, the same gliding light while they load and a clear button.
 
 ## Features page
 

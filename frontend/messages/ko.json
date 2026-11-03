@@ -278,7 +278,6 @@
     "requestChanged": "이 요청이 변경되었습니다. 다시 확인하세요.",
     "emails": "이메일",
     "emailSearch": "이메일 주소",
-    "emailSearchAction": "찾기",
     "emailsIntro": "이메일로 요청한 사람을 위해 이메일 주소를 찾아 testee가 그 주소로 보내는 이메일을 확인하고 중지하세요.",
     "account": "testee 계정",
     "accountText": "<bdi>{email}</bdi>에 계정이 있습니다. 여기서 한 변경은 내 작업으로 기록됩니다.",
@@ -757,7 +756,6 @@
     "empty": "아직 템플릿이 없습니다.",
     "topics": "{count, plural, other {주제 #개}}",
     "search": "직무나 주제로 검색",
-    "searchAction": "검색",
     "level": "수준: {level}",
     "anyLevel": "모든 수준",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "아직 초대한 지원자가 없습니다.",
     "noMatches": "일치하는 지원자가 없습니다.",
     "search": "이메일 또는 이름으로 지원자 검색",
-    "searchAction": "검색",
     "status": "상태: {status}",
     "anyStatus": "모든 상태",
     "progress": "진행률",
@@ -1155,7 +1152,6 @@
     "empty": "아직 면접이 없습니다. 첫 면접을 만들어 보세요.",
     "noMatches": "일치하는 면접이 없습니다.",
     "search": "제목으로 면접 검색",
-    "searchAction": "검색",
     "candidateCount": "{count, plural, other {지원자 #명}}",
     "deleteLabel": "<bdi>{title}</bdi> 삭제",
     "deleteTitle": "이 면접을 삭제할까요?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "채용 가이드",
-    "intro": "채용 담당자를 위한 실용 가이드: 지원자 선별, 역량 테스트, 채용에서 AI를 공정하고 합법적으로 쓰는 방법."
+    "intro": "채용 담당자를 위한 실용 가이드: 지원자 선별, 역량 테스트, 채용에서 AI를 공정하고 합법적으로 쓰는 방법.",
+    "search": "가이드 검색",
+    "noMatches": "검색과 일치하는 가이드가 없습니다."
   },
   "tests": {
     "title": "직무별 역량 테스트",
@@ -2974,6 +2972,10 @@
         "title": "채용됨으로 표시",
         "text": "직무와 공유 링크를 한 번에 닫습니다."
       },
+      "search": {
+        "title": "한 번에 모두 검색",
+        "text": "헤더의 검색 하나로 내 회사, 면접, 지원자는 물론 모든 페이지, 가이드, 역량 테스트를 찾을 수 있습니다."
+      },
       "slack": {
         "title": "Slack",
         "text": "채널과 그곳으로 보낼 알림을 고르세요."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "첫 면접을 만들어 보세요\n무료입니다"
     }
+  },
+  "search": {
+    "placeholder": "무엇이든 검색...",
+    "open": "검색",
+    "close": "검색 닫기",
+    "empty": "검색 결과 없음",
+    "searching": "검색 중…",
+    "clear": "검색어 지우기",
+    "kinds": {
+      "company": "회사",
+      "interview": "면접",
+      "candidate": "지원자",
+      "page": "페이지",
+      "guide": "가이드",
+      "comparison": "비교",
+      "legal": "법률 문서",
+      "faq": "자주 묻는 질문",
+      "test": "역량 테스트"
+    },
+    "label": "testee 검색"
   }
 }

@@ -77,7 +77,8 @@ test("an owner sees how to connect Workable and manages its linked jobs", async 
   // The interview: the newest ones, and any of the company's found by its title.
   const { title } = await api<{ title: string }>(owner, "GET", `/companies/interviews/${interviewId}`)
   const picker = link.locator("button[role=combobox]")
-  const search = owner.locator("input[role=combobox]")
+  // The picker's own search, not the header's.
+  const search = owner.locator("input[role=combobox]:not(header *)")
   const options = owner.getByRole("option")
   await picker.click()
   await shot(owner, "interview-picker")

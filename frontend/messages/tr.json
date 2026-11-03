@@ -278,7 +278,6 @@
     "requestChanged": "Bu istek değişti; yeniden kontrol edin.",
     "emails": "E-postalar",
     "emailSearch": "E-posta adresi",
-    "emailSearchAction": "Bul",
     "emailsIntro": "Bizden e-postayla isteyen biri için bir e-posta adresini bulun; testee'nin bu adrese gönderdiği e-postaları görün ve durdurun.",
     "account": "testee hesabı",
     "accountText": "<bdi>{email}</bdi> adresinin bir hesabı var. Burada yapılan değişiklikler sizin adınıza kaydedilir.",
@@ -757,7 +756,6 @@
     "empty": "Henüz şablon yok.",
     "topics": "{count, plural, one {# konu} other {# konu}}",
     "search": "Pozisyona veya konuya göre ara",
-    "searchAction": "Ara",
     "level": "Seviye: {level}",
     "anyLevel": "Her seviye",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Henüz davet edilen aday yok.",
     "noMatches": "Eşleşen aday yok.",
     "search": "Adayları e-postaya veya ada göre ara",
-    "searchAction": "Ara",
     "status": "Durum: {status}",
     "anyStatus": "her durum",
     "progress": "İlerleme",
@@ -1155,7 +1152,6 @@
     "empty": "Henüz mülakat yok. İlkini oluşturun.",
     "noMatches": "Eşleşen mülakat yok.",
     "search": "Mülakatları başlığa göre ara",
-    "searchAction": "Ara",
     "candidateCount": "{count, plural, one {# aday} other {# aday}}",
     "deleteLabel": "<bdi>{title}</bdi> öğesini sil",
     "deleteTitle": "Bu mülakat silinsin mi?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "İşe alım rehberleri",
-    "intro": "İşe alım yöneticileri için pratik rehberler: başvuruları eleme, beceri testleri ve işe alımda yapay zekâyı adil ve yasal şekilde kullanma."
+    "intro": "İşe alım yöneticileri için pratik rehberler: başvuruları eleme, beceri testleri ve işe alımda yapay zekâyı adil ve yasal şekilde kullanma.",
+    "search": "Rehberlerde ara",
+    "noMatches": "Aramanızla eşleşen rehber yok."
   },
   "tests": {
     "title": "Pozisyona göre işe alım testleri",
@@ -2974,6 +2972,10 @@
         "title": "İşe alındı olarak işaretle",
         "text": "Pozisyonu ve paylaşılabilir bağlantısını tek adımda kapatın."
       },
+      "search": {
+        "title": "Her şeyi arayın",
+        "text": "Üst bilgideki tek bir arama şirketlerinizi, mülakatlarınızı ve adaylarınızı, ayrıca her sayfayı, rehberi ve beceri testini bulur."
+      },
       "slack": {
         "title": "Slack",
         "text": "Bir kanal ve oraya hangi bildirimlerin gideceğini seçin."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "İlk mülakatınızı oluşturun\nÜcretsiz"
     }
+  },
+  "search": {
+    "placeholder": "her şeyi arayın...",
+    "open": "Ara",
+    "close": "Aramayı kapat",
+    "empty": "Hiçbir şey bulunamadı",
+    "searching": "Aranıyor…",
+    "clear": "Aramayı temizle",
+    "kinds": {
+      "company": "şirket",
+      "interview": "mülakat",
+      "candidate": "aday",
+      "page": "sayfa",
+      "guide": "rehber",
+      "comparison": "karşılaştırma",
+      "legal": "yasal belge",
+      "faq": "SSS",
+      "test": "beceri testi"
+    },
+    "label": "testee'de ara"
   }
 }

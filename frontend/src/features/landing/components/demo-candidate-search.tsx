@@ -15,7 +15,7 @@ const TRIGGER = buttonVariants({
 
 /** The candidates tab's search (features/company/components/candidate-search.tsx), for the
  * landing: the real field, empty, with the status filter and the sort inside it as their menus'
- * buttons show them, and the search button. */
+ * buttons show them; it searches as you type, so it has no button. */
 export function DemoCandidateSearch() {
   const t = useTranslations("candidates")
 
@@ -25,7 +25,6 @@ export function DemoCandidateSearch() {
       <InputAction
         readOnly
         placeholder={t("search")}
-        action={t("searchAction")}
         icon={<SearchIcon className="size-5" />}
         addon={
           <span className="flex shrink-0 items-center gap-1">

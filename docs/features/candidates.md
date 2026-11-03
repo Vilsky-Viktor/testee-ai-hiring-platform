@@ -177,7 +177,7 @@ The candidate's page shows the card: with no signal, only the follow-up question
 - Can be filtered by status: invited, in process, finished, passed, flagged, not delivered, expired.
 - A candidate taking it in another mode than the interview's shows that mode's icon (see [A candidate's own mode](#a-candidates-own-mode)).
 
-Any member, viewers too, can also search a company's candidates across all its interviews by email or name, newest first, a page at a time (`GET /companies/{id}/candidates?q=&offset=&limit=` in companies). Each row is a list row with its interview's id and title; candidates of a deleted interview are gone with it. The app has no page for it.
+Any member, viewers too, can also search a company's candidates across all its interviews by email or name, newest first, a page at a time (`GET /companies/{id}/candidates?q=&offset=&limit=` in companies). Each row is a list row with its interview's id and title; candidates of a deleted interview are gone with it. The app has no page for it. The [header's search](site.md#header-search) finds candidates too, with the user's companies and interviews, across every company the user is a member of (`GET /companies/search?q=`, at most 5).
 
 "Not delivered" means the invite email bounced or was marked as spam (see [Notifications and emails](notifications.md#undelivered-emails)).
 

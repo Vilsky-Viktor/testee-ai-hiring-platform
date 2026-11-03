@@ -33,7 +33,6 @@ export function InterviewCandidatesTab({
   return (
     <SearchedList>
       <CandidateSearch
-        action={interviewHref}
         sort={sort}
         q={search}
         status={status}

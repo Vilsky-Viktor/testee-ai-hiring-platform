@@ -26,6 +26,6 @@ test("a contact message sent twice quickly goes once", async ({ page }) => {
   answer();
 
   // Sent: the reply goes to the address given.
-  await expect(page.getByRole("status")).toContainText("ann@example.com");
+  await expect(page.getByRole("main").getByRole("status")).toContainText("ann@example.com");
   expect(sent).toBe(1);
 });

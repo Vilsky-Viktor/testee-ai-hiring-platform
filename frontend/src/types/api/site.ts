@@ -155,6 +155,28 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/search": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Search Pages
+     * @description The site's public pages matching `q` in the page's language, best first: pages, legal
+     *     texts, guides, comparisons and the FAQ's questions, or only those of `kind` (the guides hub's
+     *     search); nothing for an empty query; public.
+     */
+    get: operations["search_pages_search_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/internal/help/knowledge": {
     parameters: {
       query?: never
@@ -644,6 +666,23 @@ export interface components {
       publishTime?: string | null
     }
     /**
+     * SearchKind
+     * @enum {string}
+     */
+    SearchKind: "page" | "guide" | "comparison" | "legal" | "faq"
+    /**
+     * SearchResultOut
+     * @description A public page the site's search found: its title in the page's language, what it is and
+     *     where it is.
+     */
+    SearchResultOut: {
+      kind: components["schemas"]["SearchKind"]
+      /** Title */
+      title: string
+      /** Path */
+      path: string
+    }
+    /**
      * UserEmailIn
      * @description An email address sent in the body, so request logs don't record it: the account's, in
      *     accounts' calls to delete or export a user's data, or the one a superadmin looks up.
@@ -883,6 +922,39 @@ export interface operations {
           [name: string]: unknown
         }
         content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  search_pages_search_get: {
+    parameters: {
+      query?: {
+        q?: string
+        kind?: components["schemas"]["SearchKind"] | null
+        limit?: number
+      }
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["SearchResultOut"][]
+        }
       }
       /** @description Validation Error */
       422: {

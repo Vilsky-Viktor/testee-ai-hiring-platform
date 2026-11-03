@@ -289,7 +289,7 @@ test("a join link warns a user signed in with another email", async ({
   const other = await signInAs(throwawayEmail("other"), { ui: true });
   await visit(other, `/join/${member.token}`);
   await expect(other.getByRole("heading", { name: company.name })).toBeVisible();
-  await expect(other.getByRole("status")).toContainText(
+  await expect(other.getByRole("main").getByRole("status")).toContainText(
     "The email does not match. Sign in with the invitation email to join.",
   );
   await expect(other.getByRole("main").getByRole("button")).toHaveCount(0);

@@ -14,7 +14,7 @@ For a complaint about an account, a company's top-ups or spending, an interview 
 
 ## Search
 
-One box takes whatever the complaint gives (at most 300 characters), sent in the request body. It finds at most 20 results, each a testee account, or a company, an interview or a candidate (an invite) with the company it belongs to:
+One box takes whatever the complaint gives (at most 300 characters), sent in the request body as you type, once typing stops for half a second (no button). It finds at most 20 results, each a testee account, or a company, an interview or a candidate (an invite) with the company it belongs to:
 
 - **a link or path from testee's site,** on any host and under any language prefix: the deepest page it points at (`/companies/{id}`, `/interviews/{id}`, `/candidates/{invite id}`),
 - **an id:** the company, interview or candidate invite that has it,

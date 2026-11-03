@@ -278,7 +278,6 @@
     "requestChanged": "Esta solicitud ha cambiado; revísala de nuevo.",
     "emails": "Correos",
     "emailSearch": "Dirección de correo",
-    "emailSearchAction": "Buscar",
     "emailsIntro": "Busca una dirección de correo para ver y detener los correos que testee le envía, para alguien que nos lo pidió por correo.",
     "account": "Cuenta de testee",
     "accountText": "<bdi>{email}</bdi> tiene una cuenta. Los cambios que hagas aquí quedan registrados como tuyos.",
@@ -757,7 +756,6 @@
     "empty": "Aún no hay plantillas.",
     "topics": "{count, plural, one {# tema} other {# temas}}",
     "search": "Buscar por puesto o tema",
-    "searchAction": "Buscar",
     "level": "Nivel: {level}",
     "anyLevel": "Cualquier nivel",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Aún no se ha invitado a ningún candidato.",
     "noMatches": "Ningún candidato coincide.",
     "search": "Buscar candidatos por correo o nombre",
-    "searchAction": "Buscar",
     "status": "Estado: {status}",
     "anyStatus": "cualquier estado",
     "progress": "Progreso",
@@ -1155,7 +1152,6 @@
     "empty": "Aún no hay entrevistas. Crea la primera.",
     "noMatches": "Ninguna entrevista coincide.",
     "search": "Buscar entrevistas por título",
-    "searchAction": "Buscar",
     "candidateCount": "{count, plural, one {# candidato} other {# candidatos}}",
     "deleteLabel": "Eliminar <bdi>{title}</bdi>",
     "deleteTitle": "¿Eliminar esta entrevista?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Guías para contratar",
-    "intro": "Guías prácticas para responsables de contratación: filtrar candidatos, pruebas de habilidades y usar la IA al contratar de forma justa y legal."
+    "intro": "Guías prácticas para responsables de contratación: filtrar candidatos, pruebas de habilidades y usar la IA al contratar de forma justa y legal.",
+    "search": "Buscar guías",
+    "noMatches": "Ninguna guía coincide con tu búsqueda."
   },
   "tests": {
     "title": "Pruebas de selección por puesto",
@@ -2974,6 +2972,10 @@
         "title": "Marcar el puesto como cubierto",
         "text": "Cierra el puesto y su enlace para compartir en un solo paso."
       },
+      "search": {
+        "title": "Busca de todo",
+        "text": "Una sola búsqueda en la cabecera encuentra tus empresas, entrevistas y candidatos, y cada página, guía y prueba de habilidades."
+      },
       "slack": {
         "title": "Slack",
         "text": "Elige un canal y qué notificaciones van allí."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Crea tu primera entrevista\nEs gratis"
     }
+  },
+  "search": {
+    "placeholder": "busca lo que quieras...",
+    "open": "Buscar",
+    "close": "Cerrar búsqueda",
+    "empty": "No se encontró nada",
+    "searching": "Buscando…",
+    "clear": "Borrar búsqueda",
+    "kinds": {
+      "company": "empresa",
+      "interview": "entrevista",
+      "candidate": "candidato",
+      "page": "página",
+      "guide": "guía",
+      "comparison": "comparativa",
+      "legal": "legal",
+      "faq": "FAQ",
+      "test": "prueba de habilidades"
+    },
+    "label": "Buscar en testee"
   }
 }

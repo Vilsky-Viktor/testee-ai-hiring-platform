@@ -15,6 +15,7 @@ PUBLIC = {
     "GET /help/guides/{slug}",
     "GET /help/legal/{document}",
     "POST /help/contact",
+    "GET /search",
     "GET /news",
     "GET /health",
     "GET /ready",

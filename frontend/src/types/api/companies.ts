@@ -771,6 +771,27 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/search": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Search Mine
+     * @description The header's search in the user's own companies: companies by name, interviews by title
+     *     and candidates by name or email, in that order, at most five; any member, viewers too.
+     */
+    get: operations["search_mine_search_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/interviews/{interview_id}/candidates/{invite_id}/extra-time": {
     parameters: {
       query?: never
@@ -4375,6 +4396,33 @@ export interface components {
       /** Passed */
       passed: boolean | null
     }
+    /**
+     * SearchResultOut
+     * @description A company, interview or candidate of the user's companies found by the header's search:
+     *     its name, what it is, and the ids its page is built from.
+     */
+    SearchResultOut: {
+      /**
+       * Kind
+       * @enum {string}
+       */
+      kind: "company" | "interview" | "candidate"
+      /** Title */
+      title: string
+      /**
+       * Company Id
+       * Format: uuid
+       */
+      company_id: string
+      /** Company */
+      company: string
+      /** Interview */
+      interview?: string | null
+      /** Interview Id */
+      interview_id?: string | null
+      /** Invite Id */
+      invite_id?: string | null
+    }
     /** SectionGrade */
     SectionGrade: {
       /** Title */
@@ -6411,6 +6459,37 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["CompanyCandidateOut"][]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  search_mine_search_get: {
+    parameters: {
+      query?: {
+        q?: string
+      }
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["SearchResultOut"][]
         }
       }
       /** @description Validation Error */

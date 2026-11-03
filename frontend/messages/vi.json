@@ -278,7 +278,6 @@
     "requestChanged": "Yêu cầu này đã thay đổi; hãy kiểm tra lại.",
     "emails": "Email",
     "emailSearch": "Địa chỉ email",
-    "emailSearchAction": "Tìm",
     "emailsIntro": "Tìm một địa chỉ email để xem và dừng các email testee gửi đến địa chỉ đó, cho người đã yêu cầu chúng tôi qua email.",
     "account": "Tài khoản testee",
     "accountText": "<bdi>{email}</bdi> có tài khoản. Các thay đổi ở đây được ghi lại dưới tên bạn.",
@@ -757,7 +756,6 @@
     "empty": "Chưa có mẫu nào.",
     "topics": "{count, plural, other {# chủ đề}}",
     "search": "Tìm theo vị trí hoặc chủ đề",
-    "searchAction": "Tìm",
     "level": "Cấp độ: {level}",
     "anyLevel": "Mọi cấp độ",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Chưa mời ứng viên nào.",
     "noMatches": "Không có ứng viên phù hợp.",
     "search": "Tìm ứng viên theo email hoặc tên",
-    "searchAction": "Tìm",
     "status": "Trạng thái: {status}",
     "anyStatus": "mọi trạng thái",
     "progress": "Tiến độ",
@@ -1155,7 +1152,6 @@
     "empty": "Chưa có buổi phỏng vấn nào. Hãy tạo buổi đầu tiên.",
     "noMatches": "Không có buổi phỏng vấn phù hợp.",
     "search": "Tìm buổi phỏng vấn theo tiêu đề",
-    "searchAction": "Tìm",
     "candidateCount": "{count, plural, other {# ứng viên}}",
     "deleteLabel": "Xóa <bdi>{title}</bdi>",
     "deleteTitle": "Xóa buổi phỏng vấn này?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Hướng dẫn tuyển dụng",
-    "intro": "Hướng dẫn thực tế cho nhà quản lý tuyển dụng: sàng lọc ứng viên, bài kiểm tra kỹ năng và dùng AI trong tuyển dụng một cách công bằng, hợp pháp."
+    "intro": "Hướng dẫn thực tế cho nhà quản lý tuyển dụng: sàng lọc ứng viên, bài kiểm tra kỹ năng và dùng AI trong tuyển dụng một cách công bằng, hợp pháp.",
+    "search": "Tìm hướng dẫn",
+    "noMatches": "Không có hướng dẫn nào khớp với tìm kiếm của bạn."
   },
   "tests": {
     "title": "Bài kiểm tra tuyển dụng theo vị trí",
@@ -2974,6 +2972,10 @@
         "title": "Đánh dấu đã tuyển",
         "text": "Đóng vị trí và liên kết chia sẻ của nó chỉ trong một bước."
       },
+      "search": {
+        "title": "Tìm mọi thứ",
+        "text": "Một ô tìm kiếm ở đầu trang tìm ra công ty, buổi phỏng vấn và ứng viên của bạn, cùng mọi trang, hướng dẫn và bài kiểm tra kỹ năng."
+      },
       "slack": {
         "title": "Slack",
         "text": "Chọn một kênh và những thông báo được gửi đến đó."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Tạo buổi phỏng vấn đầu tiên\nHoàn toàn miễn phí"
     }
+  },
+  "search": {
+    "placeholder": "tìm bất cứ thứ gì...",
+    "open": "Tìm kiếm",
+    "close": "Đóng tìm kiếm",
+    "empty": "Không tìm thấy gì",
+    "searching": "Đang tìm…",
+    "clear": "Xóa tìm kiếm",
+    "kinds": {
+      "company": "công ty",
+      "interview": "phỏng vấn",
+      "candidate": "ứng viên",
+      "page": "trang",
+      "guide": "hướng dẫn",
+      "comparison": "so sánh",
+      "legal": "pháp lý",
+      "faq": "câu hỏi thường gặp",
+      "test": "bài kiểm tra kỹ năng"
+    },
+    "label": "Tìm trong testee"
   }
 }

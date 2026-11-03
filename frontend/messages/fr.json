@@ -278,7 +278,6 @@
     "requestChanged": "Cette demande a changé ; vérifiez-la à nouveau.",
     "emails": "E-mails",
     "emailSearch": "Adresse e-mail",
-    "emailSearchAction": "Rechercher",
     "emailsIntro": "Recherchez une adresse e-mail pour voir et arrêter les e-mails que testee lui envoie, pour quelqu'un qui nous l'a demandé par e-mail.",
     "account": "Compte testee",
     "accountText": "<bdi>{email}</bdi> a un compte. Les modifications faites ici sont enregistrées à votre nom.",
@@ -757,7 +756,6 @@
     "empty": "Aucun modèle pour l'instant.",
     "topics": "{count, plural, one {# thème} other {# thèmes}}",
     "search": "Rechercher par poste ou thème",
-    "searchAction": "Rechercher",
     "level": "Niveau : {level}",
     "anyLevel": "Tous niveaux",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Aucun candidat invité pour l'instant.",
     "noMatches": "Aucun candidat ne correspond.",
     "search": "Rechercher des candidats par e-mail ou par nom",
-    "searchAction": "Rechercher",
     "status": "Statut : {status}",
     "anyStatus": "tous statuts",
     "progress": "Progression",
@@ -1155,7 +1152,6 @@
     "empty": "Aucun entretien pour l'instant. Créez le premier.",
     "noMatches": "Aucun entretien ne correspond.",
     "search": "Rechercher des entretiens par titre",
-    "searchAction": "Rechercher",
     "candidateCount": "{count, plural, one {# candidat} other {# candidats}}",
     "deleteLabel": "Supprimer <bdi>{title}</bdi>",
     "deleteTitle": "Supprimer cet entretien ?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Guides pour recruter",
-    "intro": "Des guides pratiques pour les recruteurs : présélectionner les candidats, les tests de compétences et utiliser l'IA dans le recrutement de façon équitable et légale."
+    "intro": "Des guides pratiques pour les recruteurs : présélectionner les candidats, les tests de compétences et utiliser l'IA dans le recrutement de façon équitable et légale.",
+    "search": "Rechercher un guide",
+    "noMatches": "Aucun guide ne correspond à votre recherche."
   },
   "tests": {
     "title": "Tests de recrutement par métier",
@@ -2974,6 +2972,10 @@
         "title": "Marquer comme recruté",
         "text": "Fermez le poste et son lien de partage en une seule étape."
       },
+      "search": {
+        "title": "Tout rechercher",
+        "text": "Une seule recherche dans l'en-tête trouve vos entreprises, entretiens et candidats, ainsi que chaque page, guide et test de compétences."
+      },
       "slack": {
         "title": "Slack",
         "text": "Choisissez un canal et les notifications qui y sont envoyées."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Créez votre premier entretien\nC'est gratuit"
     }
+  },
+  "search": {
+    "placeholder": "rechercher partout...",
+    "open": "Rechercher",
+    "close": "Fermer la recherche",
+    "empty": "Aucun résultat",
+    "searching": "Recherche…",
+    "clear": "Effacer la recherche",
+    "kinds": {
+      "company": "entreprise",
+      "interview": "entretien",
+      "candidate": "candidat",
+      "page": "page",
+      "guide": "guide",
+      "comparison": "comparatif",
+      "legal": "juridique",
+      "faq": "FAQ",
+      "test": "test de compétences"
+    },
+    "label": "Rechercher sur testee"
   }
 }

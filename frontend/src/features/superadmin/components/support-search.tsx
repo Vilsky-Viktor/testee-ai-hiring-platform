@@ -3,12 +3,18 @@
 import { ChevronRightIcon, SearchIcon } from "lucide-react"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
 import { InputAction } from "@/components/common/input-action"
+import { SearchEnd } from "@/components/common/search-field"
 import { SearchedList } from "@/components/common/searched-list"
-import { LIST_BOX, LIST_EMPTY, ROW_HOVER } from "@/config/lists"
+import {
+  LIST_BOX,
+  LIST_EMPTY,
+  ROW_HOVER,
+  SEARCH_DELAY_MS,
+} from "@/config/lists"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import { bdi } from "@/lib/bidi"
 import type { SupportResult } from "@/types/superadmin"
@@ -24,53 +30,70 @@ const PAGES = {
 /** The support tab's search: whatever a complaint gives (an ID from "copy id", a page's link,
  * an email, a Paddle transaction or a company's name) finds the companies, interviews and
  * candidates it names, and the account an ID or an email belongs to; each opens its own
- * support page. The API reads the query. */
+ * support page. The API reads the query, asked once typing pauses. */
 export function SupportSearch() {
   const t = useTranslations("superadmin")
   const [query, setQuery] = useState("")
   const [results, setResults] = useState<SupportResult[]>()
-  const [searching, setSearching] = useState(false)
+  // The query whose search is on its way, for the spinner.
+  const [sent, setSent] = useState("")
+  const q = query.trim()
 
-  async function search() {
-    if (!query.trim()) {
+  useEffect(() => {
+    if (!q) {
       return
     }
 
-    setSearching(true)
-
-    try {
-      const found = await apiFetch<{ results: SupportResult[] }>(
+    let current = true
+    const timer = window.setTimeout(() => {
+      setSent(q)
+      apiFetch<{ results: SupportResult[] }>(
         "/companies/superadmin/support/search",
-        { method: "POST", body: JSON.stringify({ query: query.trim() }) }
+        {
+          method: "POST",
+          body: JSON.stringify({ query: q }),
+        }
       )
-      setResults(found.results)
-    } catch (error) {
-      toast.error(apiErrorMessage(error, t("actionFailed")))
-    } finally {
-      setSearching(false)
+        .then((found) => current && setResults(found.results))
+        .catch((error) =>
+          toast.error(apiErrorMessage(error, t("actionFailed")))
+        )
+    }, SEARCH_DELAY_MS)
+
+    return () => {
+      current = false
+      window.clearTimeout(timer)
     }
-  }
+  }, [q, t])
 
   // The search alone until it has results (or none), then the two as one block.
   const field = (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault()
-        void search()
+    <InputAction
+      role="searchbox"
+      enterKeyHint="search"
+      maxLength={300}
+      placeholder={t("supportSearch")}
+      aria-label={t("supportSearch")}
+      value={query}
+      onChange={(event) => {
+        setQuery(event.target.value)
+
+        if (!event.target.value.trim()) {
+          setResults(undefined)
+        }
       }}
-      className="flex"
-    >
-      <InputAction
-        maxLength={300}
-        placeholder={t("supportSearch")}
-        aria-label={t("supportSearch")}
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        action={t("emailSearchAction")}
-        icon={<SearchIcon className="size-5" />}
-        disabled={searching}
-      />
-    </form>
+      icon={<SearchIcon className="size-5" />}
+      loading={sent !== "" && sent === q}
+      trailing={
+        <SearchEnd
+          clearable={query !== ""}
+          onClear={() => {
+            setQuery("")
+            setResults(undefined)
+          }}
+        />
+      }
+    />
   )
 
   if (!results) {

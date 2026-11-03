@@ -48,6 +48,7 @@ from companies.api.v1 import (
     pause,
     reports,
     schedules,
+    search,
     superadmin,
     superadmin_companies,
     superadmin_support,
@@ -97,6 +98,7 @@ app.include_router(interview_notes.router)
 app.include_router(discover.router)
 app.include_router(candidates.router)
 app.include_router(company_candidates.router)
+app.include_router(search.router)
 app.include_router(accommodations.router)
 app.include_router(bulk_invites.router)
 app.include_router(interview_generation.router)

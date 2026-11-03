@@ -80,7 +80,9 @@ test("owner creates a company, an interview from a template and invites a candid
     await visit(owner, `${companyUrl}/interviews`)
     await openTab(owner, "/templates")
     // The filters are lowercase, the level's first among them (language names keep their capitals).
-    await expect(owner.getByRole("main").locator("form").getByRole("button").first()).toHaveCSS(
+    await expect(
+      owner.locator('main [data-slot="searched-list"] > :first-child').getByRole("button").first()
+    ).toHaveCSS(
       "text-transform",
       "lowercase"
     )

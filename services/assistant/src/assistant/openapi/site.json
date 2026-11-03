@@ -319,6 +319,83 @@
     }
    }
   },
+  "/search": {
+   "get": {
+    "tags": [
+     "search"
+    ],
+    "summary": "Search Pages",
+    "description": "The site's public pages matching `q` in the page's language, best first: pages, legal\ntexts, guides, comparisons and the FAQ's questions, or only those of `kind` (the guides hub's\nsearch); nothing for an empty query; public.",
+    "operationId": "search_pages_search_get",
+    "parameters": [
+     {
+      "name": "q",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "string",
+       "maxLength": 100,
+       "default": "",
+       "title": "Q"
+      }
+     },
+     {
+      "name": "kind",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "$ref": "#/components/schemas/SearchKind"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Kind"
+      }
+     },
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "maximum": 50,
+       "minimum": 1,
+       "default": 5,
+       "title": "Limit"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/SearchResultOut"
+         },
+         "title": "Response Search Pages Search Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/internal/help/knowledge": {
    "get": {
     "tags": [
@@ -1460,6 +1537,40 @@
      "messageId"
     ],
     "title": "PushMessage"
+   },
+   "SearchKind": {
+    "type": "string",
+    "enum": [
+     "page",
+     "guide",
+     "comparison",
+     "legal",
+     "faq"
+    ],
+    "title": "SearchKind"
+   },
+   "SearchResultOut": {
+    "properties": {
+     "kind": {
+      "$ref": "#/components/schemas/SearchKind"
+     },
+     "title": {
+      "type": "string",
+      "title": "Title"
+     },
+     "path": {
+      "type": "string",
+      "title": "Path"
+     }
+    },
+    "type": "object",
+    "required": [
+     "kind",
+     "title",
+     "path"
+    ],
+    "title": "SearchResultOut",
+    "description": "A public page the site's search found: its title in the page's language, what it is and\nwhere it is."
    },
    "UserEmailIn": {
     "properties": {

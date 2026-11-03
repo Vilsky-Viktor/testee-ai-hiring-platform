@@ -4,6 +4,7 @@ import { expect, test } from "../fixtures"
 import { api, createCompany, createInterview } from "../helpers/api"
 import { PHONE } from "../helpers/layout"
 import { visit } from "../helpers/navigation"
+import { searchFor } from "../helpers/search"
 import { shot } from "../helpers/screenshots"
 import { throwawayEmail } from "../helpers/users"
 
@@ -27,7 +28,7 @@ async function interviewsToSearch(owner: Page) {
 }
 
 function searchField(page: Page) {
-  return page.getByRole("main").locator("form").getByRole("textbox")
+  return page.getByRole("main").getByRole("searchbox")
 }
 
 test("the interviews list is searched by title, in the address and across pages", async ({
@@ -40,10 +41,9 @@ test("the interviews list is searched by title, in the address and across pages"
   await visit(owner, list)
   await expect(owner.getByText("Designer", { exact: true }).filter({ visible: true })).toBeVisible()
 
-  // Any case finds the titles containing it; the address keeps the search.
-  await searchField(owner).fill("BACKEND")
-  await searchField(owner).press("Enter")
-  await expect(owner).toHaveURL(/[?&]q=BACKEND/)
+  // Any case finds the titles containing it, as it's typed (no button); the address keeps the
+  // search.
+  await searchFor(searchField(owner), "BACKEND")
   // The visible rows: while the list renders again, Next.js can keep a hidden copy of it.
   await expect(owner.getByText("Backend 21", { exact: true }).filter({ visible: true })).toBeVisible()
   await expect(owner.getByText("Designer", { exact: true }).filter({ visible: true })).toHaveCount(0)
@@ -77,6 +77,15 @@ test("the interviews list is searched by title, in the address and across pages"
   await expect(owner.getByTestId("no-interviews")).toHaveCount(0)
   await expect(owner.getByText("Backend 21", { exact: true }).filter({ visible: true })).toHaveCount(0)
   await shot(owner, "desktop-no-matches")
+
+  // The clear button empties the search: every interview again (clicked again if the page
+  // hadn't hydrated yet).
+  await expect(async () => {
+    await searchField(owner).locator("..").getByRole("button").click()
+    await expect(owner).toHaveURL((url) => !url.searchParams.has("q"), { timeout: 3_000 })
+  }).toPass({ timeout: 30_000 })
+  await expect(searchField(owner)).toHaveValue("")
+  await expect(owner.getByText("Designer", { exact: true }).filter({ visible: true })).toBeVisible()
 
   await owner.setViewportSize(PHONE)
   await visit(owner, `${list}?q=backend`)

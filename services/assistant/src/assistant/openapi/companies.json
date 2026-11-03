@@ -2839,6 +2839,60 @@
     }
    }
   },
+  "/search": {
+   "get": {
+    "tags": [
+     "search"
+    ],
+    "summary": "Search Mine",
+    "description": "The header's search in the user's own companies: companies by name, interviews by title\nand candidates by name or email, in that order, at most five; any member, viewers too.",
+    "operationId": "search_mine_search_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "q",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "string",
+       "maxLength": 254,
+       "default": "",
+       "title": "Q"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/SearchResultOut"
+         },
+         "title": "Response Search Mine Search Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/interviews/{interview_id}/candidates/{invite_id}/extra-time": {
    "put": {
     "tags": [
@@ -12539,6 +12593,76 @@
     ],
     "title": "ScorecardSection",
     "description": "One topic's round."
+   },
+   "SearchResultOut": {
+    "properties": {
+     "kind": {
+      "type": "string",
+      "enum": [
+       "company",
+       "interview",
+       "candidate"
+      ],
+      "title": "Kind"
+     },
+     "title": {
+      "type": "string",
+      "title": "Title"
+     },
+     "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id"
+     },
+     "company": {
+      "type": "string",
+      "title": "Company"
+     },
+     "interview": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Interview"
+     },
+     "interview_id": {
+      "anyOf": [
+       {
+        "type": "string",
+        "format": "uuid"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Interview Id"
+     },
+     "invite_id": {
+      "anyOf": [
+       {
+        "type": "string",
+        "format": "uuid"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Invite Id"
+     }
+    },
+    "type": "object",
+    "required": [
+     "kind",
+     "title",
+     "company_id",
+     "company"
+    ],
+    "title": "SearchResultOut",
+    "description": "A company, interview or candidate of the user's companies found by the header's search:\nits name, what it is, and the ids its page is built from."
    },
    "SectionGrade": {
     "properties": {

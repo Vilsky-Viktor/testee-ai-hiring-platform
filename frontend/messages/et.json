@@ -278,7 +278,6 @@
     "requestChanged": "See taotlus muutus; vaata see uuesti üle.",
     "emails": "E-kirjad",
     "emailSearch": "E-posti aadress",
-    "emailSearchAction": "Otsi",
     "emailsIntro": "Otsi e-posti aadressi, et näha ja peatada e-kirju, mida testee sellele saadab, kui keegi on meilt seda e-kirjaga palunud.",
     "account": "testee konto",
     "accountText": "Aadressil <bdi>{email}</bdi> on konto. Siin tehtud muudatused logitakse sinu nimele.",
@@ -757,7 +756,6 @@
     "empty": "Malle veel pole.",
     "topics": "{count, plural, one {# teema} other {# teemat}}",
     "search": "Otsi rolli või teema järgi",
-    "searchAction": "Otsi",
     "level": "Tase: {level}",
     "anyLevel": "Iga tase",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Kandidaate pole veel kutsutud.",
     "noMatches": "Sobivaid kandidaate pole.",
     "search": "Otsi kandidaate e-posti või nime järgi",
-    "searchAction": "Otsi",
     "status": "Olek: {status}",
     "anyStatus": "iga olek",
     "progress": "Edenemine",
@@ -1155,7 +1152,6 @@
     "empty": "Intervjuusid veel pole. Loo esimene.",
     "noMatches": "Sobivaid intervjuusid pole.",
     "search": "Otsi intervjuusid pealkirja järgi",
-    "searchAction": "Otsi",
     "candidateCount": "{count, plural, one {# kandidaat} other {# kandidaati}}",
     "deleteLabel": "Kustuta <bdi>{title}</bdi>",
     "deleteTitle": "Kustutada see intervjuu?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Värbamisjuhendid",
-    "intro": "Praktilised juhendid värbajatele: kandidaatide eelvalik, oskustestid ning AI õiglane ja seaduslik kasutamine värbamisel."
+    "intro": "Praktilised juhendid värbajatele: kandidaatide eelvalik, oskustestid ning AI õiglane ja seaduslik kasutamine värbamisel.",
+    "search": "Otsi juhendeid",
+    "noMatches": "Otsingule ei vasta ükski juhend."
   },
   "tests": {
     "title": "Värbamistestid ametikohtade kaupa",
@@ -2974,6 +2972,10 @@
         "title": "Märgi palgatuks",
         "text": "Sulge ametikoht ja selle jagatav link ühe sammuga."
       },
+      "search": {
+        "title": "Otsi kõike",
+        "text": "Üks otsing päises leiab sinu ettevõtted, intervjuud ja kandidaadid ning iga lehe, juhendi ja oskustesti."
+      },
       "slack": {
         "title": "Slack",
         "text": "Vali kanal ja millised teavitused sinna lähevad."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Loo oma esimene intervjuu\nSee on tasuta"
     }
+  },
+  "search": {
+    "placeholder": "otsi mida tahes...",
+    "open": "Otsi",
+    "close": "Sulge otsing",
+    "empty": "Midagi ei leitud",
+    "searching": "Otsin…",
+    "clear": "Tühjenda otsing",
+    "kinds": {
+      "company": "ettevõte",
+      "interview": "intervjuu",
+      "candidate": "kandidaat",
+      "page": "leht",
+      "guide": "juhend",
+      "comparison": "võrdlus",
+      "legal": "õigusdokument",
+      "faq": "KKK",
+      "test": "oskustest"
+    },
+    "label": "Otsi testee'st"
   }
 }

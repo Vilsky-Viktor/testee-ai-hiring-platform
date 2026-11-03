@@ -278,7 +278,6 @@
     "requestChanged": "Nagbago ang request na ito; suriin ulit.",
     "emails": "Mga email",
     "emailSearch": "Email address",
-    "emailSearchAction": "Hanapin",
     "emailsIntro": "Maghanap ng email address para makita at mapahinto ang mga email na ipinapadala ng testee rito, para sa taong humiling nito sa amin sa email.",
     "account": "testee account",
     "accountText": "May account ang <bdi>{email}</bdi>. Naitatala bilang iyo ang mga pagbabagong ginawa rito.",
@@ -757,7 +756,6 @@
     "empty": "Wala pang template.",
     "topics": "{count, plural, one {# topic} other {# topic}}",
     "search": "Maghanap ayon sa role o topic",
-    "searchAction": "Maghanap",
     "level": "Level: {level}",
     "anyLevel": "Kahit anong level",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Wala pang inimbitahang aplikante.",
     "noMatches": "Walang tugmang aplikante.",
     "search": "Maghanap ng aplikante ayon sa email o pangalan",
-    "searchAction": "Maghanap",
     "status": "Status: {status}",
     "anyStatus": "kahit anong status",
     "progress": "Progreso",
@@ -1155,7 +1152,6 @@
     "empty": "Wala pang interview. Gumawa ng una.",
     "noMatches": "Walang tugmang interview.",
     "search": "Maghanap ng interview ayon sa pamagat",
-    "searchAction": "Maghanap",
     "candidateCount": "{count, plural, one {# aplikante} other {# aplikante}}",
     "deleteLabel": "Burahin ang <bdi>{title}</bdi>",
     "deleteTitle": "Burahin ang interview na ito?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Mga gabay sa pag-hire",
-    "intro": "Mga praktikal na gabay para sa mga hiring manager: pag-screen ng mga aplikante, mga skills test, at patas at legal na paggamit ng AI sa pag-hire."
+    "intro": "Mga praktikal na gabay para sa mga hiring manager: pag-screen ng mga aplikante, mga skills test, at patas at legal na paggamit ng AI sa pag-hire.",
+    "search": "Maghanap ng gabay",
+    "noMatches": "Walang gabay na tugma sa hinanap mo."
   },
   "tests": {
     "title": "Mga skills assessment test ayon sa role",
@@ -2974,6 +2972,10 @@
         "title": "Markahan bilang na-hire",
         "text": "Isara ang role at ang shareable link nito sa isang hakbang."
       },
+      "search": {
+        "title": "Hanapin ang lahat",
+        "text": "Isang search sa header ang nakakahanap ng mga kumpanya, interview at aplikante mo, pati ng bawat page, gabay at skills test."
+      },
       "slack": {
         "title": "Slack",
         "text": "Pumili ng channel at kung aling mga notification ang mapupunta roon."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Gawin ang iyong unang interview\nLibre ito"
     }
+  },
+  "search": {
+    "placeholder": "maghanap ng kahit ano...",
+    "open": "Maghanap",
+    "close": "Isara ang search",
+    "empty": "Walang nahanap",
+    "searching": "Naghahanap…",
+    "clear": "I-clear ang search",
+    "kinds": {
+      "company": "kumpanya",
+      "interview": "interview",
+      "candidate": "aplikante",
+      "page": "page",
+      "guide": "gabay",
+      "comparison": "paghahambing",
+      "legal": "legal",
+      "faq": "FAQ",
+      "test": "skills test"
+    },
+    "label": "Maghanap sa testee"
   }
 }

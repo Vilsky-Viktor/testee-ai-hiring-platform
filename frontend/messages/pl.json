@@ -278,7 +278,6 @@
     "requestChanged": "To zgłoszenie się zmieniło; sprawdź je ponownie.",
     "emails": "E-maile",
     "emailSearch": "Adres e-mail",
-    "emailSearchAction": "Znajdź",
     "emailsIntro": "Znajdź adres e-mail, by zobaczyć i zatrzymać e-maile, które testee na niego wysyła – dla osoby, która poprosiła nas o to e-mailem.",
     "account": "Konto testee",
     "accountText": "<bdi>{email}</bdi> ma konto. Zmiany wprowadzone tutaj są zapisywane jako Twoje.",
@@ -757,7 +756,6 @@
     "empty": "Nie ma jeszcze szablonów.",
     "topics": "{count, plural, one {# temat} few {# tematy} many {# tematów} other {# tematu}}",
     "search": "Szukaj według roli lub tematu",
-    "searchAction": "Szukaj",
     "level": "Poziom: {level}",
     "anyLevel": "Dowolny poziom",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Nie zaproszono jeszcze kandydatów.",
     "noMatches": "Brak pasujących kandydatów.",
     "search": "Szukaj kandydatów po e-mailu lub imieniu i nazwisku",
-    "searchAction": "Szukaj",
     "status": "Status: {status}",
     "anyStatus": "dowolny status",
     "progress": "Postęp",
@@ -1155,7 +1152,6 @@
     "empty": "Nie ma jeszcze rozmów. Utwórz pierwszą.",
     "noMatches": "Brak pasujących rozmów.",
     "search": "Szukaj rozmów po tytule",
-    "searchAction": "Szukaj",
     "candidateCount": "{count, plural, one {# kandydat} few {# kandydaci} many {# kandydatów} other {# kandydata}}",
     "deleteLabel": "Usuń <bdi>{title}</bdi>",
     "deleteTitle": "Usunąć tę rozmowę?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Poradniki rekrutacyjne",
-    "intro": "Praktyczne poradniki dla osób rekrutujących: preselekcja kandydatów, testy umiejętności oraz uczciwe i zgodne z prawem korzystanie z AI w rekrutacji."
+    "intro": "Praktyczne poradniki dla osób rekrutujących: preselekcja kandydatów, testy umiejętności oraz uczciwe i zgodne z prawem korzystanie z AI w rekrutacji.",
+    "search": "Szukaj poradników",
+    "noMatches": "Żaden poradnik nie pasuje do wyszukiwania."
   },
   "tests": {
     "title": "Testy rekrutacyjne według stanowiska",
@@ -2974,6 +2972,10 @@
         "title": "Oznacz jako zatrudnionego",
         "text": "Zamknij stanowisko i jego link do udostępnienia jednym krokiem."
       },
+      "search": {
+        "title": "Przeszukuj wszystko",
+        "text": "Jedna wyszukiwarka w nagłówku znajdzie Twoje firmy, rozmowy i kandydatów oraz każdą stronę, poradnik i test umiejętności."
+      },
       "slack": {
         "title": "Slack",
         "text": "Wybierz kanał i powiadomienia, które mają tam trafiać."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Utwórz swoją pierwszą rozmowę\nTo nic nie kosztuje"
     }
+  },
+  "search": {
+    "placeholder": "szukaj czegokolwiek...",
+    "open": "Szukaj",
+    "close": "Zamknij wyszukiwanie",
+    "empty": "Nic nie znaleziono",
+    "searching": "Wyszukiwanie…",
+    "clear": "Wyczyść wyszukiwanie",
+    "kinds": {
+      "company": "firma",
+      "interview": "rozmowa",
+      "candidate": "kandydat",
+      "page": "strona",
+      "guide": "poradnik",
+      "comparison": "porównanie",
+      "legal": "dokument prawny",
+      "faq": "FAQ",
+      "test": "test umiejętności"
+    },
+    "label": "Szukaj w testee"
   }
 }

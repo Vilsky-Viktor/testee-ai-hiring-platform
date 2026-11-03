@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl"
 
 import { AssistantButton } from "@/features/assistant/components/assistant-button"
+import { HeaderSearch, PhoneSearch } from "@/components/common/global-search"
 import { useAuth } from "@/providers/auth-provider"
 import { LocalizedLink } from "@/components/common/localized-link"
 import { NotificationBell } from "@/components/common/notification-bell"
@@ -17,7 +18,7 @@ export function SiteHeader() {
 
   return (
     // Exactly 3.5rem including the border.
-    <header className="h-14 border-b">
+    <header className="relative h-14 border-b">
       {/* Both sides are h-8 boxes centered in the row, so they share one center line. */}
       <div className="mx-auto flex h-full max-w-page items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6">
         {/* The logo and links share a text baseline; the separator stays centered. */}
@@ -31,7 +32,9 @@ export function SiteHeader() {
           <span aria-hidden className="h-5 w-px self-center bg-border" />
           <SiteNav />
         </div>
+        <HeaderSearch />
         <div className="flex h-8 items-center gap-3 max-[359px]:gap-1.5">
+          <PhoneSearch />
           {/* Hidden on phones, where it doesn't fit next to Sign in; signed-in users have it in
               their menu. */}
           {!loading && !user && (

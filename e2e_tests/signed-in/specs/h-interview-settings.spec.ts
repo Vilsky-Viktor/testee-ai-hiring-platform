@@ -83,7 +83,7 @@ test("an owner turns on the shareable link on the settings tab", async ({ signIn
 
   await visit(owner, `${interviewUrl}?tab=candidates`)
   // Loaded: the candidates' search is there.
-  await expect(owner.locator('main form input[name="tab"][value="candidates"]')).toHaveCount(1)
+  await expect(owner.getByRole("main").getByRole("searchbox")).toHaveCount(1)
   await expect(owner.getByRole("main").getByRole("switch")).toHaveCount(0)
 
   await visit(owner, `${interviewUrl}?tab=settings`)

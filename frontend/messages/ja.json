@@ -278,7 +278,6 @@
     "requestChanged": "このリクエストは変更されました。もう一度確認してください。",
     "emails": "メール",
     "emailSearch": "メールアドレス",
-    "emailSearchAction": "検索",
     "emailsIntro": "メールで依頼してきた人のために、メールアドレスを検索して、testee がそのアドレスに送るメールを確認・停止できます。",
     "account": "testee アカウント",
     "accountText": "<bdi>{email}</bdi> にはアカウントがあります。ここでの変更はあなたの操作として記録されます。",
@@ -757,7 +756,6 @@
     "empty": "テンプレートはまだありません。",
     "topics": "{count, plural, other {トピック # 件}}",
     "search": "職種やトピックで検索",
-    "searchAction": "検索",
     "level": "レベル: {level}",
     "anyLevel": "すべてのレベル",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "まだ候補者を招待していません。",
     "noMatches": "一致する候補者はいません。",
     "search": "メールアドレスまたは氏名で候補者を検索",
-    "searchAction": "検索",
     "status": "ステータス: {status}",
     "anyStatus": "すべてのステータス",
     "progress": "進捗",
@@ -1155,7 +1152,6 @@
     "empty": "面接はまだありません。最初の面接を作成しましょう。",
     "noMatches": "一致する面接はありません。",
     "search": "タイトルで面接を検索",
-    "searchAction": "検索",
     "candidateCount": "{count, plural, other {候補者 # 人}}",
     "deleteLabel": "<bdi>{title}</bdi> を削除",
     "deleteTitle": "この面接を削除しますか？",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "採用ガイド",
-    "intro": "採用担当者向けの実践ガイド：応募者のスクリーニング、スキルテスト、採用での AI の公正かつ合法的な活用。"
+    "intro": "採用担当者向けの実践ガイド：応募者のスクリーニング、スキルテスト、採用での AI の公正かつ合法的な活用。",
+    "search": "ガイドを検索",
+    "noMatches": "検索に一致するガイドはありません。"
   },
   "tests": {
     "title": "職種別スキルチェックテスト",
@@ -2974,6 +2972,10 @@
         "title": "採用済みにする",
         "text": "職種の募集と共有リンクを一度に締め切ります。"
       },
+      "search": {
+        "title": "すべてを検索",
+        "text": "ヘッダーの検索ひとつで、登録した会社、面接、候補者に加え、すべてのページ、ガイド、スキルテストが見つかります。"
+      },
       "slack": {
         "title": "Slack",
         "text": "チャンネルと、そこに送る通知を選べます。"
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "最初の面接を作成\n無料です"
     }
+  },
+  "search": {
+    "placeholder": "なんでも検索…",
+    "open": "検索",
+    "close": "検索を閉じる",
+    "empty": "見つかりませんでした",
+    "searching": "検索中…",
+    "clear": "検索をクリア",
+    "kinds": {
+      "company": "会社",
+      "interview": "面接",
+      "candidate": "候補者",
+      "page": "ページ",
+      "guide": "ガイド",
+      "comparison": "比較",
+      "legal": "法的文書",
+      "faq": "よくある質問",
+      "test": "スキルテスト"
+    },
+    "label": "testee 内を検索"
   }
 }

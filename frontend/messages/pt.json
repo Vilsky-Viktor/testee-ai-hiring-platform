@@ -278,7 +278,6 @@
     "requestChanged": "Esta solicitação mudou; verifique-a de novo.",
     "emails": "E-mails",
     "emailSearch": "Endereço de e-mail",
-    "emailSearchAction": "Buscar",
     "emailsIntro": "Busque um endereço de e-mail para ver e interromper os e-mails que a testee envia a ele, para quem nos pediu isso por e-mail.",
     "account": "Conta testee",
     "accountText": "<bdi>{email}</bdi> tem uma conta. As alterações feitas aqui ficam registradas em seu nome.",
@@ -757,7 +756,6 @@
     "empty": "Ainda não há modelos.",
     "topics": "{count, plural, one {# tópico} other {# tópicos}}",
     "search": "Buscar por cargo ou tópico",
-    "searchAction": "Buscar",
     "level": "Nível: {level}",
     "anyLevel": "Qualquer nível",
     "levels": {
@@ -1058,7 +1056,6 @@
     "empty": "Nenhum candidato convidado ainda.",
     "noMatches": "Nenhum candidato encontrado.",
     "search": "Buscar candidatos por e-mail ou nome",
-    "searchAction": "Buscar",
     "status": "Status: {status}",
     "anyStatus": "qualquer status",
     "progress": "Progresso",
@@ -1155,7 +1152,6 @@
     "empty": "Ainda não há entrevistas. Crie a primeira.",
     "noMatches": "Nenhuma entrevista encontrada.",
     "search": "Buscar entrevistas por título",
-    "searchAction": "Buscar",
     "candidateCount": "{count, plural, one {# candidato} other {# candidatos}}",
     "deleteLabel": "Excluir <bdi>{title}</bdi>",
     "deleteTitle": "Excluir esta entrevista?",
@@ -1865,7 +1861,9 @@
   },
   "guides": {
     "title": "Guias de contratação",
-    "intro": "Guias práticos para gestores contratantes: triagem de candidatos, testes de habilidades e uso de IA na contratação de forma justa e legal."
+    "intro": "Guias práticos para gestores contratantes: triagem de candidatos, testes de habilidades e uso de IA na contratação de forma justa e legal.",
+    "search": "Buscar guias",
+    "noMatches": "Nenhum guia corresponde à sua busca."
   },
   "tests": {
     "title": "Testes de recrutamento e seleção por cargo",
@@ -2974,6 +2972,10 @@
         "title": "Marcar como contratado",
         "text": "Feche a vaga e o link compartilhável dela em um só passo."
       },
+      "search": {
+        "title": "Busque tudo",
+        "text": "Uma única busca no cabeçalho encontra suas empresas, entrevistas e candidatos, e cada página, guia e teste de habilidades."
+      },
       "slack": {
         "title": "Slack",
         "text": "Escolha um canal e quais notificações vão para ele."
@@ -3052,5 +3054,25 @@
     "closing": {
       "title": "Crie sua primeira entrevista\nÉ grátis"
     }
+  },
+  "search": {
+    "placeholder": "busque qualquer coisa...",
+    "open": "Buscar",
+    "close": "Fechar busca",
+    "empty": "Nada encontrado",
+    "searching": "Buscando…",
+    "clear": "Limpar busca",
+    "kinds": {
+      "company": "empresa",
+      "interview": "entrevista",
+      "candidate": "candidato",
+      "page": "página",
+      "guide": "guia",
+      "comparison": "comparação",
+      "legal": "jurídico",
+      "faq": "FAQ",
+      "test": "teste de habilidades"
+    },
+    "label": "Buscar na testee"
   }
 }
