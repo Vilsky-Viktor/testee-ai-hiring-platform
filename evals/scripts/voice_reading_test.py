@@ -6,6 +6,7 @@ heard, and nothing added (no run of ADDED_WORDS or more words the script hasn't,
 or a comment). The transcription's own errors count too, alike for every speech model.
 
     evals/run.sh rounds voice_reading_test.py --label base     # --repeat 2
+    evals/run.sh rounds voice_reading_test.py --dataset voice_reading_languages.json  # all 23
 
 Costs about ten cents a repeat."""
 
@@ -14,6 +15,7 @@ import asyncio
 import json
 import re
 import time
+from collections import defaultdict
 
 from common import DATASETS, RESULTS, load, run_record, save
 from stats import mean, share
@@ -60,11 +62,12 @@ async def one(item: dict, slots: asyncio.Semaphore) -> dict:
         )
 
     heard = result.text.strip()
-    rate, added = word_errors(script, heard)
+    rate, added = word_errors(script, heard, letters=False)
     heard_seconds = audio_seconds(getattr(result, "usage", None), len(audio), MAX_ANSWER_SECONDS)
 
     return {
         "id": item["id"],
+        "language": item["language"],
         "script": script,
         "heard": heard,
         "word_errors": round(rate, 3),
@@ -77,8 +80,18 @@ async def one(item: dict, slots: asyncio.Semaphore) -> dict:
     }
 
 
-async def main(label: str, repeat: int) -> None:
-    items = load(DATASETS / "voice_reading.json")["items"]
+def by_language(rows: list[dict]) -> dict:
+    """Readings heard right, per language."""
+    found = defaultdict(list)
+
+    for row in rows:
+        found[row["language"]].append(row["word_errors"] <= MAX_WORD_ERRORS)
+
+    return {f"heard_right_{key}": share(sum(v), len(v)) for key, v in sorted(found.items())}
+
+
+async def main(label: str, repeat: int, dataset: str) -> None:
+    items = load(DATASETS / dataset)["items"]
     slots = asyncio.Semaphore(MAX_CONCURRENCY)
     rows = await asyncio.gather(*(one(item, slots) for item in items for _ in range(repeat)))
     scores = {
@@ -86,12 +99,14 @@ async def main(label: str, repeat: int) -> None:
         "word_errors": mean([r["word_errors"] for r in rows], 3),
         "letters": share(sum(r["letters"] for r in rows), len(rows)),
         "nothing_added": share(sum(r["added"] < ADDED_WORDS for r in rows), len(rows)),
+        **by_language(rows),
     }
     times = sorted(r["took"] for r in rows)
     speech = round(sum(r["speech_cost"] for r in rows), 4)
     run = run_record(
         model=f"{settings.speech_model} ({settings.speech_voice})",
         transcribe_model=settings.transcribe_model,
+        dataset=dataset,
         repeat=repeat,
         scores=scores,
         cost=round(speech + sum(r["hearing_cost"] for r in rows), 4),
@@ -111,5 +126,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--label", default="run")
     parser.add_argument("--repeat", type=int, default=2)
+    parser.add_argument("--dataset", default="voice_reading.json")
     args = parser.parse_args()
-    asyncio.run(main(args.label, args.repeat))
+    asyncio.run(main(args.label, args.repeat, args.dataset))

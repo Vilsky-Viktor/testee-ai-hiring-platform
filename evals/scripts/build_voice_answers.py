@@ -8,7 +8,8 @@ encoded to Ogg Opus, as browsers record, with pink noise mixed into the noisy on
     evals/run.sh rounds build_voice_answers.py
     python3 evals/scripts/build_voice_answers.py --encode
 
-`--dataset voice_hearing.json` speaks that set's answers instead.
+`--dataset voice_hearing.json` speaks that set's answers instead; answers with audio already are
+skipped.
 
 Costs about two cents."""
 
@@ -109,6 +110,8 @@ if __name__ == "__main__":
     parser.add_argument("--dataset", default="voice_answers.json")
     args = parser.parse_args()
     spoken = [i for i in load(DATASETS / args.dataset)["items"] if "spoken" in i]
+    # Frozen: an answer already made keeps its audio; only new ones are spoken.
+    spoken = [i for i in spoken if not path_of(i, "ogg").exists()]
 
     if args.encode:
         encode(spoken)

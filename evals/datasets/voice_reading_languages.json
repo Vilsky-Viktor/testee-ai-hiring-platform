@@ -1,0 +1,559 @@
+{
+ "about": "Every question of voice_hearing.json (a single-answer statistics question and a select-all one on version control in each of the 23 interface languages), read aloud as voice mode reads it, to compare reading quality per language (voice_reading_test.py --dataset voice_reading_languages.json). Hand-written.",
+ "built": "2026-11-04 by hand",
+ "model": "gpt-realtime-2.1-mini",
+ "items": [
+  {
+   "id": "ar1",
+   "language": "ar",
+   "text": "ما مقياس النزعة المركزية الأقل تأثرًا بالقيم المتطرفة؟",
+   "options": [
+    "المتوسط الحسابي",
+    "الوسيط",
+    "المدى",
+    "الانحراف المعياري"
+   ],
+   "multi": false
+  },
+  {
+   "id": "ar2",
+   "language": "ar",
+   "text": "أيٌّ مما يلي أنظمة للتحكم في الإصدارات؟",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "he1",
+   "language": "he",
+   "text": "איזה מדד של נטייה מרכזית מושפע הכי פחות מערכים קיצוניים?",
+   "options": [
+    "הממוצע",
+    "החציון",
+    "הטווח",
+    "סטיית התקן"
+   ],
+   "multi": false
+  },
+  {
+   "id": "he2",
+   "language": "he",
+   "text": "אילו מהבאים הן מערכות לניהול גרסאות?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "fa1",
+   "language": "fa",
+   "text": "کدام شاخص گرایش مرکزی کمترین تأثیر را از مقادیر پرت می‌گیرد؟",
+   "options": [
+    "میانگین",
+    "میانه",
+    "دامنه",
+    "انحراف معیار"
+   ],
+   "multi": false
+  },
+  {
+   "id": "fa2",
+   "language": "fa",
+   "text": "کدام‌یک از این‌ها سیستم کنترل نسخه هستند؟",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "hi1",
+   "language": "hi",
+   "text": "केंद्रीय प्रवृत्ति का कौन-सा माप चरम मानों से सबसे कम प्रभावित होता है?",
+   "options": [
+    "माध्य",
+    "माध्यिका",
+    "परास",
+    "मानक विचलन"
+   ],
+   "multi": false
+  },
+  {
+   "id": "hi2",
+   "language": "hi",
+   "text": "इनमें से कौन-से वर्ज़न कंट्रोल सिस्टम हैं?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "ja1",
+   "language": "ja",
+   "text": "外れ値の影響を最も受けにくい代表値はどれですか？",
+   "options": [
+    "平均値",
+    "中央値",
+    "範囲",
+    "標準偏差"
+   ],
+   "multi": false
+  },
+  {
+   "id": "ja2",
+   "language": "ja",
+   "text": "次のうち、バージョン管理システムはどれですか？",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "ko1",
+   "language": "ko",
+   "text": "극단값의 영향을 가장 적게 받는 대푯값은 무엇입니까?",
+   "options": [
+    "평균",
+    "중앙값",
+    "범위",
+    "표준편차"
+   ],
+   "multi": false
+  },
+  {
+   "id": "ko2",
+   "language": "ko",
+   "text": "다음 중 버전 관리 시스템은 무엇입니까?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "zh1",
+   "language": "zh",
+   "text": "哪种集中趋势的量度受极端值影响最小？",
+   "options": [
+    "平均数",
+    "中位数",
+    "极差",
+    "标准差"
+   ],
+   "multi": false
+  },
+  {
+   "id": "zh2",
+   "language": "zh",
+   "text": "以下哪些是版本控制系统？",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "th1",
+   "language": "th",
+   "text": "ค่ากลางใดได้รับผลกระทบจากค่าสุดโต่งน้อยที่สุด",
+   "options": [
+    "ค่าเฉลี่ย",
+    "มัธยฐาน",
+    "พิสัย",
+    "ส่วนเบี่ยงเบนมาตรฐาน"
+   ],
+   "multi": false
+  },
+  {
+   "id": "th2",
+   "language": "th",
+   "text": "ข้อใดเป็นระบบควบคุมเวอร์ชัน",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "vi1",
+   "language": "vi",
+   "text": "Số đo xu hướng trung tâm nào ít bị ảnh hưởng nhất bởi các giá trị ngoại lai?",
+   "options": [
+    "Trung bình cộng",
+    "Trung vị",
+    "Khoảng biến thiên",
+    "Độ lệch chuẩn"
+   ],
+   "multi": false
+  },
+  {
+   "id": "vi2",
+   "language": "vi",
+   "text": "Những công cụ nào sau đây là hệ thống quản lý phiên bản?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "id1",
+   "language": "id",
+   "text": "Ukuran pemusatan data mana yang paling sedikit dipengaruhi oleh nilai ekstrem?",
+   "options": [
+    "Rata-rata",
+    "Median",
+    "Jangkauan",
+    "Simpangan baku"
+   ],
+   "multi": false
+  },
+  {
+   "id": "id2",
+   "language": "id",
+   "text": "Manakah yang merupakan sistem kontrol versi?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "fil1",
+   "language": "fil",
+   "text": "Aling sukatan ng central tendency ang pinakakaunting naaapektuhan ng matitinding halaga?",
+   "options": [
+    "Ang mean",
+    "Ang median",
+    "Ang range",
+    "Ang standard deviation"
+   ],
+   "multi": false
+  },
+  {
+   "id": "fil2",
+   "language": "fil",
+   "text": "Alin sa mga ito ang mga version control system?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "et1",
+   "language": "et",
+   "text": "Milline keskväärtuse näitaja on äärmuslikest väärtustest kõige vähem mõjutatud?",
+   "options": [
+    "Aritmeetiline keskmine",
+    "Mediaan",
+    "Haare",
+    "Standardhälve"
+   ],
+   "multi": false
+  },
+  {
+   "id": "et2",
+   "language": "et",
+   "text": "Millised neist on versioonihaldussüsteemid?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "nl1",
+   "language": "nl",
+   "text": "Welke centrummaat wordt het minst beïnvloed door extreme waarden?",
+   "options": [
+    "Het gemiddelde",
+    "De mediaan",
+    "De spreidingsbreedte",
+    "De standaardafwijking"
+   ],
+   "multi": false
+  },
+  {
+   "id": "nl2",
+   "language": "nl",
+   "text": "Welke hiervan zijn versiebeheersystemen?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "pl1",
+   "language": "pl",
+   "text": "Która miara tendencji centralnej jest najmniej wrażliwa na wartości skrajne?",
+   "options": [
+    "Średnia arytmetyczna",
+    "Mediana",
+    "Rozstęp",
+    "Odchylenie standardowe"
+   ],
+   "multi": false
+  },
+  {
+   "id": "pl2",
+   "language": "pl",
+   "text": "Które z poniższych to systemy kontroli wersji?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "ru1",
+   "language": "ru",
+   "text": "Какая мера центральной тенденции меньше всего зависит от выбросов?",
+   "options": [
+    "Среднее арифметическое",
+    "Медиана",
+    "Размах",
+    "Стандартное отклонение"
+   ],
+   "multi": false
+  },
+  {
+   "id": "ru2",
+   "language": "ru",
+   "text": "Какие из этих систем — системы контроля версий?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "tr1",
+   "language": "tr",
+   "text": "Uç değerlerden en az etkilenen merkezi eğilim ölçüsü hangisidir?",
+   "options": [
+    "Aritmetik ortalama",
+    "Medyan",
+    "Açıklık",
+    "Standart sapma"
+   ],
+   "multi": false
+  },
+  {
+   "id": "tr2",
+   "language": "tr",
+   "text": "Bunlardan hangileri sürüm kontrol sistemidir?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "uk1",
+   "language": "uk",
+   "text": "Яка міра центральної тенденції найменше залежить від викидів?",
+   "options": [
+    "Середнє арифметичне",
+    "Медіана",
+    "Розмах",
+    "Стандартне відхилення"
+   ],
+   "multi": false
+  },
+  {
+   "id": "uk2",
+   "language": "uk",
+   "text": "Які з цих систем є системами контролю версій?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "en1",
+   "language": "en",
+   "text": "Which measure of central tendency is least affected by extreme values?",
+   "options": [
+    "The mean",
+    "The median",
+    "The range",
+    "The standard deviation"
+   ],
+   "multi": false
+  },
+  {
+   "id": "en2",
+   "language": "en",
+   "text": "Which of these are version control systems?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "es1",
+   "language": "es",
+   "text": "¿Qué medida de tendencia central se ve menos afectada por los valores extremos?",
+   "options": [
+    "La media",
+    "La mediana",
+    "El rango",
+    "La desviación estándar"
+   ],
+   "multi": false
+  },
+  {
+   "id": "es2",
+   "language": "es",
+   "text": "¿Cuáles de estos son sistemas de control de versiones?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "de1",
+   "language": "de",
+   "text": "Welches Lagemaß wird am wenigsten von Extremwerten beeinflusst?",
+   "options": [
+    "Der Mittelwert",
+    "Der Median",
+    "Die Spannweite",
+    "Die Standardabweichung"
+   ],
+   "multi": false
+  },
+  {
+   "id": "de2",
+   "language": "de",
+   "text": "Welche davon sind Versionsverwaltungssysteme?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "fr1",
+   "language": "fr",
+   "text": "Quelle mesure de tendance centrale est la moins sensible aux valeurs extrêmes ?",
+   "options": [
+    "La moyenne",
+    "La médiane",
+    "L'étendue",
+    "L'écart type"
+   ],
+   "multi": false
+  },
+  {
+   "id": "fr2",
+   "language": "fr",
+   "text": "Lesquels de ces outils sont des systèmes de gestion de versions ?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "pt1",
+   "language": "pt",
+   "text": "Qual medida de tendência central é menos afetada por valores extremos?",
+   "options": [
+    "A média",
+    "A mediana",
+    "A amplitude",
+    "O desvio padrão"
+   ],
+   "multi": false
+  },
+  {
+   "id": "pt2",
+   "language": "pt",
+   "text": "Quais destes são sistemas de controle de versão?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  {
+   "id": "it1",
+   "language": "it",
+   "text": "Quale misura di tendenza centrale è meno influenzata dai valori estremi?",
+   "options": [
+    "La media",
+    "La mediana",
+    "Il campo di variazione",
+    "La deviazione standard"
+   ],
+   "multi": false
+  },
+  {
+   "id": "it2",
+   "language": "it",
+   "text": "Quali di questi sono sistemi di controllo di versione?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  }
+ ]
+}
