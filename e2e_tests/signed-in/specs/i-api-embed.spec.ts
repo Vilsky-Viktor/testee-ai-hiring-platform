@@ -115,7 +115,7 @@ test("a company's own site embeds a candidate's interview and hears it finish", 
   await expect(start).toBeVisible()
   await expect(frame.locator("header, footer")).toHaveCount(0)
   // The SDK asked for the dark theme: testee's dark colors, as the company has none of its own.
-  await expect(frame.locator("html")).toHaveCSS("--background", "#0a0a0a")
+  await expect(frame.locator("html")).toHaveCSS("--background", "#171717")
   await shot(site, "invitation")
   // The frame fits its content and stops: a page sized by the screen (the frame's own height)
   // would grow it without end.

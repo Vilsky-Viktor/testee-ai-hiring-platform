@@ -1,0 +1,87 @@
+/* The site's colour tokens, light and dark (globals.css maps them to Tailwind's colours). */
+
+/* Light tokens; .light-scope sets them again inside a dark page. Off-white and dark grey, not
+   pure white and black, which glare. */
+:root,
+.light-scope {
+  --background: oklch(0.982 0 0);
+  --foreground: oklch(0.21 0 0);
+  --card: oklch(0.982 0 0);
+  --card-foreground: oklch(0.21 0 0);
+  --popover: oklch(0.982 0 0);
+  --popover-foreground: oklch(0.21 0 0);
+  /* Light enough to read as the brand's blue, dark enough for 4.5:1 on the muted gray (4.7:1). */
+  --primary: oklch(0.52 0.19 255);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.945 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.945 0 0); /* grey enough to tell from the page at a glance */
+  /* 4.5:1 on the muted gray, not only on the page (WCAG AA): 5.1:1 and 5.7:1. */
+  --muted-foreground: oklch(0.5 0 0);
+  /* A field's placeholder and resting name: the muted text, which light has no room to dim. */
+  --placeholder: var(--muted-foreground);
+  /* Every grey background (fields, hovered rows, grey buttons and cards): the search field's. */
+  --surface: var(--muted);
+  --accent: oklch(0.945 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.897 0 0);
+  --input: oklch(0.897 0 0);
+  --ring: oklch(0.56 0.19 255);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.965 0 0);
+  --sidebar-foreground: oklch(0.21 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.945 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.897 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* Dark tokens: a dark grey page and soft white text, not black and pure white, which glare. */
+.dark {
+  --background: oklch(0.205 0 0);
+  --foreground: oklch(0.93 0 0);
+  --card: oklch(0.245 0 0);
+  --card-foreground: oklch(0.93 0 0);
+  --popover: oklch(0.245 0 0);
+  --popover-foreground: oklch(0.93 0 0);
+  --primary: oklch(0.68 0.16 255);
+  --primary-foreground: oklch(0.17 0.03 255);
+  --secondary: oklch(0.29 0 0);
+  --secondary-foreground: oklch(0.93 0 0);
+  --muted: oklch(0.29 0 0);
+  --muted-foreground: oklch(0.72 0 0);
+  /* Dimmer than the muted text, still 4.5:1 on every field's gray (the muted one the lightest). */
+  --placeholder: color-mix(
+    in oklch,
+    var(--muted-foreground) 89%,
+    var(--background)
+  );
+  --surface: color-mix(in oklab, var(--input) 30%, transparent);
+  --accent: oklch(0.29 0 0);
+  --accent-foreground: oklch(0.93 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.68 0.16 255);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.245 0 0);
+  --sidebar-foreground: oklch(0.93 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.29 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}

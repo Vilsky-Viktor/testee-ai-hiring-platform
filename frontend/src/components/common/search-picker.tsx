@@ -65,7 +65,8 @@ export function SearchPicker<T extends string>({
           "relative flex items-center justify-between gap-3 rounded-xl border border-transparent normal-case transition-colors outline-none hover:bg-surface focus-visible:border-ring-gradient disabled:opacity-50",
           // Compact, it sits inside a grey input card, a bit lighter than the card.
           compact
-            ? cn(PILL_FILL, "h-9 w-48 bg-(--pill) px-4 text-sm")
+            ? // On a grey field: hovered a step darker than the field, not the field's own grey.
+              cn(PILL_FILL, "h-9 w-48 bg-(--pill) px-4 text-sm hover:bg-input")
             : "h-12 w-full max-w-xs bg-surface px-5 text-base",
           triggerClassName
         )}

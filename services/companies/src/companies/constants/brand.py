@@ -10,29 +10,30 @@ class Theme(StrEnum):
     DARK = "dark"
 
 
-# testee's own colors (the site's themes), where a company starts from.
+# testee's own colors (the site's themes, styles/globals.css, as hex), where a company starts from
+# and what "reset" brings back.
 TESTEE_COLORS = {
     Theme.LIGHT: {
-        "background": "#ffffff",
-        "foreground": "#0a0a0a",
-        "card": "#ffffff",
-        "card_foreground": "#0a0a0a",
-        "primary": "#006bd9",
+        "background": "#f9f9f9",
+        "foreground": "#181818",
+        "card": "#f9f9f9",
+        "card_foreground": "#181818",
+        "primary": "#0065d2",
         "primary_foreground": "#fafafa",
-        "muted": "#f5f5f5",
-        "muted_foreground": "#6f6f6f",
-        "border": "#e5e5e5",
+        "muted": "#ededed",
+        "muted_foreground": "#636363",
+        "border": "#dddddd",
     },
     Theme.DARK: {
-        "background": "#0a0a0a",
-        "foreground": "#fafafa",
-        "card": "#171717",
-        "card_foreground": "#fafafa",
+        "background": "#171717",
+        "foreground": "#e8e8e8",
+        "card": "#202020",
+        "card_foreground": "#e8e8e8",
         "primary": "#4c99f8",
         "primary_foreground": "#06101c",
-        "muted": "#262626",
-        "muted_foreground": "#a1a1a1",
-        "border": "#222222",
+        "muted": "#2b2b2b",
+        "muted_foreground": "#a4a4a4",
+        "border": "#2e2e2e",
     },
 }
 

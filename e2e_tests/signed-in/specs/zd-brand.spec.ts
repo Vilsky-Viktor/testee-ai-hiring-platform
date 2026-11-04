@@ -141,7 +141,7 @@ test("an owner sets the company's colors and its candidates see them", async ({ 
   await subPage("?page=dark").click()
   await expect(owner).toHaveURL(new RegExp(`${brand}\\?page=dark$`))
   await open("?page=dark")
-  await expect(field("page", 0)).toHaveValue("#0a0a0a")
+  await expect(field("page", 0)).toHaveValue("#171717")
   await shot(owner, "dark")
 
   // The candidate's invitation, in the company's colors.
@@ -173,7 +173,7 @@ test("an owner sets the company's colors and its candidates see them", async ({ 
 
   // Asked for the dark theme in the address: testee's dark set, as the company has none.
   await visit(candidate, `/invite/${await inviteToken(email)}?theme=dark`)
-  await expect(candidate.locator("html")).toHaveCSS("--background", "#0a0a0a")
+  await expect(candidate.locator("html")).toHaveCSS("--background", "#171717")
 })
 
 // Colors saved before a check that now refuses them (the page's text on the gray card behind
