@@ -1423,11 +1423,34 @@
         "paste": "Colar"
       },
       "ready": "<n>3.</n> Sua entrevista está pronta",
+      "invited": "<n>4.</n> O candidato recebe o convite",
       "status": "Pronta",
+      "email": {
+        "search": "Pesquisar e-mail",
+        "compose": "Escrever",
+        "inbox": "Caixa de entrada",
+        "starred": "Com estrela",
+        "sent": "Enviados",
+        "drafts": "Rascunhos",
+        "from": "testee.",
+        "toMe": "para mim",
+        "now": "agora",
+        "subject": "Convite para entrevista de {company}",
+        "preheader": "Faça “{title}” na testee. Entre com {email} para começar.",
+        "heading": "Convite para entrevista",
+        "invited": "<b>{company}</b> convida você para a entrevista “{title}” na testee.",
+        "signIn": "Entre com {email} para começar. Só este endereço pode fazer a entrevista, e você tem uma única tentativa.",
+        "button": "Abrir o convite",
+        "pasteLink": "Ou cole este link no seu navegador",
+        "footer": "Este e-mail foi enviado para {email} porque alguém convidou este endereço no testee. Se você não esperava por ele, pode ignorá-lo.",
+        "stopCompany": "Não me enviar e-mails de {company}",
+        "operator": "A testee é operada pela {name}, {address}."
+      },
       "phone": {
         "describe": "Cole uma descrição de vaga ou escreva algumas palavras sobre o cargo.",
         "adjust": "Mantenha os tópicos que importam, renomeie-os ou adicione os seus.",
-        "ready": "As questões são escritas para cada tópico; convide candidatos por link ou e-mail."
+        "ready": "As questões são escritas para cada tópico; convide candidatos por link ou e-mail.",
+        "invited": "Cada candidato recebe um e-mail com o próprio link para a entrevista."
       }
     },
     "proof": {

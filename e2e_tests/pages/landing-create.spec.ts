@@ -4,9 +4,10 @@ import { REQUEST_URL } from "./helpers/env";
 import { pauseClock } from "./helpers/clock";
 import { loaded } from "./helpers/waits";
 
-// The home page's "create an interview" section: one frame playing the three steps, a numbered
+// The home page's "create an interview" section: one frame playing the four steps, a numbered
 // pill on its top edge naming the one shown; under it, short facts, one being how many questions
-// each topic gets, as generation's public sizes route says. On phones, the steps as cards.
+// each topic gets, as generation's public sizes route says. On phones, the steps as cards. The last
+// step is the candidate's inbox, the invitation opened.
 
 async function questionsPerTopic(page: Page) {
   const response = await page.request.get(`${REQUEST_URL}/api/generate/sizes`);
@@ -23,7 +24,7 @@ function frameBox(frame: Locator) {
   });
 }
 
-test("with reduced motion the create section rests on the finished interview and its counts", async ({
+test("with reduced motion the create section rests on the invitation the candidate got", async ({
   page,
 }) => {
   test.setTimeout(120_000);
@@ -32,14 +33,17 @@ test("with reduced motion the create section rests on the finished interview and
   const section = page.locator("#how");
   await section.scrollIntoViewIfNeeded();
 
-  await expect(section.getByTestId("demo-interview")).toBeVisible();
-  await expect(section.getByTestId("demo-writing")).toBeHidden();
-  // The pill names the last step.
+  // The pill names the last step, and the email shows, to the invited address (DEMO_INVITE_EMAIL
+  // in frontend/src/config/create-demo.ts; the demo is hidden from screen readers, so it has no
+  // roles to find it by).
   await expect(section.getByTestId("create-step").last()).toHaveAttribute("data-current", "true");
+  const email = section.getByTestId("demo-invite-email");
+  await expect(email).toBeVisible();
+  await expect(email).toContainText("maria@example.com");
+  await expect(section.getByTestId("demo-writing")).toBeHidden();
 
-  // Its topic rows each show how many questions were written for the topic:
-  // DEMO_INTERVIEW.topicQuestions (frontend/src/config/create-demo.ts), not what one candidate
-  // gets (the demo is hidden from screen readers, so it has no roles to find it by).
+  // The interview before it, unseen now, has its topic rows each showing how many questions were
+  // written for the topic: DEMO_INTERVIEW.topicQuestions, not what one candidate gets.
   const rows = section.getByTestId("demo-interview").locator("ul").last().locator("li");
   await expect(rows).not.toHaveCount(0);
 
@@ -67,14 +71,14 @@ test("the create demo's pill names each step in turn and the frame never moves",
   const frame = section.getByTestId("demo-panel");
   await expect(frame).toHaveCount(1);
   const pills = section.getByTestId("create-step");
-  await expect(pills).toHaveCount(3);
+  await expect(pills).toHaveCount(4);
   const current = () =>
     pills.evaluateAll((all) => all.findIndex((pill) => pill.dataset.current === "true"));
   const boxes = new Set([await frameBox(frame)]);
 
   expect(await current()).toBe(0);
 
-  for (const step of [1, 2]) {
+  for (const step of [1, 2, 3]) {
     await expect
       .poll(
         async () => {
@@ -91,7 +95,7 @@ test("the create demo's pill names each step in turn and the frame never moves",
   expect([...boxes]).toHaveLength(1);
 });
 
-test("on a phone the steps show as three cards in place of the frame", { tag: "@phone-only" }, async ({
+test("on a phone the steps show as four cards in place of the frame", { tag: "@phone-only" }, async ({
   page,
 }) => {
   test.setTimeout(120_000);
@@ -100,7 +104,7 @@ test("on a phone the steps show as three cards in place of the frame", { tag: "@
   await section.scrollIntoViewIfNeeded();
 
   await expect(section.getByTestId("demo-panel")).toBeHidden();
-  await expect(section.getByTestId("phone-steps").getByTestId("icon-card")).toHaveCount(3);
+  await expect(section.getByTestId("phone-steps").getByTestId("icon-card")).toHaveCount(4);
   // Each as wide as the screen.
   const widths = await section
     .getByTestId("icon-card")

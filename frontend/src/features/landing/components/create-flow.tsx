@@ -4,12 +4,14 @@ import { cn } from "cn"
 import { useRef, useState } from "react"
 
 import { CreateDescribe } from "@/features/landing/components/create-describe"
+import { CreateEmail } from "@/features/landing/components/create-email"
 import { CreateReady } from "@/features/landing/components/create-ready"
 import { CreateTopics } from "@/features/landing/components/create-topics"
 import { DemoPanel } from "@/features/landing/components/demo-panel"
 import { DemoPointer } from "@/features/landing/components/demo-pointer"
 import { PromoBurst } from "@/features/landing/components/promo-burst"
 import {
+  INBOX,
   READY,
   STEPS,
   TARGETS,
@@ -22,7 +24,8 @@ import { pointedAt, useDemoSteps } from "@/hooks/use-demo-steps"
 /** How an interview is created, played in one frame, each screen taking the last one's place: a
  * job description pasted into the home page's box and sent, and a first company named; the
  * topics it gives, adjusted by hand and by asking the AI, then approved; their questions written,
- * then the interview ready, its questions per candidate changed and a candidate invited. A
+ * then the interview ready, its questions per candidate changed and a candidate invited; last,
+ * the candidate's inbox, the invitation opened and its button clicked. A
  * numbered pill on the frame's top edge names the stage. The frame keeps one size as it plays.
  * Played as a promo: a camera zooms towards where the pointer works, screens slide in with
  * depth, and a burst marks the interview ready and the candidate invited; the effects scoped to
@@ -37,7 +40,8 @@ export function CreateFlow({
   }
 }) {
   const { ref, ...at } = useDemoSteps<HTMLDivElement>(STEPS)
-  const stage = at.index < TOPICS ? 0 : at.index < WRITING ? 1 : 2
+  const stage =
+    at.index < TOPICS ? 0 : at.index < WRITING ? 1 : at.index < INBOX ? 2 : 3
   // What the pointer moves to: the element named so in the screen shown, found as the pointer
   // looks for it. Made once, so the pointer only moves when its target does.
   const [targets] = useState(() =>
@@ -131,6 +135,7 @@ export function CreateFlow({
                 2,
                 <CreateReady at={at} labels={{ status: labels.status }} />
               )}
+              {screen(3, <CreateEmail at={at} />)}
             </div>
           </div>
           {/* The interview ready, and the candidate invited. */}

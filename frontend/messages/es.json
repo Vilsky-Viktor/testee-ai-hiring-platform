@@ -1423,11 +1423,34 @@
         "paste": "Pegar"
       },
       "ready": "<n>3.</n> Tu entrevista está lista",
+      "invited": "<n>4.</n> El candidato recibe la invitación",
       "status": "Lista",
+      "email": {
+        "search": "Buscar correo",
+        "compose": "Redactar",
+        "inbox": "Recibidos",
+        "starred": "Destacados",
+        "sent": "Enviados",
+        "drafts": "Borradores",
+        "from": "testee.",
+        "toMe": "para mí",
+        "now": "ahora",
+        "subject": "Invitación a entrevista de {company}",
+        "preheader": "Haz «{title}» en testee. Inicia sesión con {email} para empezar.",
+        "heading": "Invitación a una entrevista",
+        "invited": "<b>{company}</b> te invita a la entrevista «{title}» en testee.",
+        "signIn": "Inicia sesión con {email} para empezar. Solo esta dirección puede hacer la entrevista, y tienes un solo intento.",
+        "button": "Abrir la invitación",
+        "pasteLink": "O pega este enlace en tu navegador",
+        "footer": "Este correo se envió a {email} porque alguien invitó a esta dirección en testee. Si no lo esperabas, puedes ignorarlo.",
+        "stopCompany": "No enviarme más correos de {company}",
+        "operator": "testee está gestionada por {name}, {address}."
+      },
       "phone": {
         "describe": "Pega una descripción del puesto o escribe unas palabras sobre el puesto.",
         "adjust": "Quédate con los temas que importan, cámbiales el nombre o añade los tuyos.",
-        "ready": "Se escriben preguntas para cada tema; invita a candidatos por enlace o correo."
+        "ready": "Se escriben preguntas para cada tema; invita a candidatos por enlace o correo.",
+        "invited": "Cada candidato recibe un correo con su propio enlace a la entrevista."
       }
     },
     "proof": {

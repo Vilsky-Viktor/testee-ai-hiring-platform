@@ -1423,11 +1423,34 @@
         "paste": "Plakken"
       },
       "ready": "<n>3.</n> Je interview is klaar",
+      "invited": "<n>4.</n> De kandidaat krijgt de uitnodiging",
       "status": "Klaar",
+      "email": {
+        "search": "Zoeken in mail",
+        "compose": "Opstellen",
+        "inbox": "Inbox",
+        "starred": "Met ster",
+        "sent": "Verzonden",
+        "drafts": "Concepten",
+        "from": "testee.",
+        "toMe": "aan mij",
+        "now": "nu",
+        "subject": "Uitnodiging voor een interview van {company}",
+        "preheader": "Doe “{title}” op testee. Log in met {email} om te beginnen.",
+        "heading": "Uitnodiging voor een interview",
+        "invited": "<b>{company}</b> nodigt je uit voor het interview “{title}” op testee.",
+        "signIn": "Log in met {email} om te beginnen. Alleen dit adres kan het interview doen, en je hebt één poging.",
+        "button": "Uitnodiging openen",
+        "pasteLink": "Of plak deze link in je browser",
+        "footer": "Deze e-mail is naar {email} gestuurd omdat iemand dit adres op testee heeft uitgenodigd. Verwachtte je hem niet, dan kun je hem negeren.",
+        "stopCompany": "Stuur me geen e-mails meer namens {company}",
+        "operator": "testee wordt beheerd door {name}, {address}."
+      },
       "phone": {
         "describe": "Plak een functieomschrijving, of schrijf een paar woorden over de functie.",
         "adjust": "Houd de onderwerpen die ertoe doen, geef ze een andere naam of voeg je eigen toe.",
-        "ready": "Per onderwerp worden vragen geschreven; nodig kandidaten uit via een link of e-mail."
+        "ready": "Per onderwerp worden vragen geschreven; nodig kandidaten uit via een link of e-mail.",
+        "invited": "Elke kandidaat krijgt een e-mail met een eigen link naar het interview."
       }
     },
     "proof": {

@@ -1423,11 +1423,34 @@
         "paste": "Yapıştır"
       },
       "ready": "<n>3.</n> Mülakatınız hazır",
+      "invited": "<n>4.</n> Aday daveti alır",
       "status": "Hazır",
+      "email": {
+        "search": "Postalarda ara",
+        "compose": "Oluştur",
+        "inbox": "Gelen Kutusu",
+        "starred": "Yıldızlı",
+        "sent": "Gönderilenler",
+        "drafts": "Taslaklar",
+        "from": "testee.",
+        "toMe": "bana",
+        "now": "şimdi",
+        "subject": "{company} mülakat daveti",
+        "preheader": "testee'de “{title}” mülakatına katılın. Başlamak için {email} ile giriş yapın.",
+        "heading": "Mülakat daveti",
+        "invited": "<b>{company}</b> sizi testee'deki “{title}” mülakatına davet ediyor.",
+        "signIn": "Başlamak için {email} ile giriş yapın. Mülakata yalnızca bu adres katılabilir ve tek bir hakkınız var.",
+        "button": "Daveti aç",
+        "pasteLink": "Ya da bu bağlantıyı tarayıcınıza yapıştırın",
+        "footer": "Bu e-posta {email} adresine, biri bu adresi testee'ye davet ettiği için gönderildi. Beklemiyorsanız görmezden gelebilirsiniz.",
+        "stopCompany": "{company} adına bana e-posta gönderme",
+        "operator": "testee, {name} tarafından işletilir, {address}."
+      },
       "phone": {
         "describe": "Bir iş tanımı yapıştırın ya da pozisyon hakkında birkaç kelime yazın.",
         "adjust": "Önemli konuları tutun, yeniden adlandırın ya da kendi konularınızı ekleyin.",
-        "ready": "Her konu için sorular yazılır; adayları bağlantıyla ya da e-postayla davet edin."
+        "ready": "Her konu için sorular yazılır; adayları bağlantıyla ya da e-postayla davet edin.",
+        "invited": "Her aday, mülakata özel bağlantısını içeren bir e-posta alır."
       }
     },
     "proof": {

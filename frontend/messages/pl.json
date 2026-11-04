@@ -1423,11 +1423,34 @@
         "paste": "Wklej"
       },
       "ready": "<n>3.</n> Twoja rozmowa jest gotowa",
+      "invited": "<n>4.</n> Kandydat dostaje zaproszenie",
       "status": "Gotowa",
+      "email": {
+        "search": "Szukaj w poczcie",
+        "compose": "Utwórz",
+        "inbox": "Odebrane",
+        "starred": "Oznaczone gwiazdką",
+        "sent": "Wysłane",
+        "drafts": "Wersje robocze",
+        "from": "testee.",
+        "toMe": "do mnie",
+        "now": "teraz",
+        "subject": "Zaproszenie na rozmowę od {company}",
+        "preheader": "Weź udział w „{title}” w testee. Zaloguj się adresem {email}, aby zacząć.",
+        "heading": "Zaproszenie na rozmowę",
+        "invited": "<b>{company}</b> zaprasza Cię na rozmowę „{title}” w testee.",
+        "signIn": "Zaloguj się adresem {email}, aby zacząć. Tylko ten adres może wziąć udział w rozmowie i masz jedno podejście.",
+        "button": "Otwórz zaproszenie",
+        "pasteLink": "Lub wklej ten link do przeglądarki",
+        "footer": "Ta wiadomość została wysłana na {email}, ponieważ ktoś zaprosił ten adres w testee. Jeśli się jej nie spodziewasz, możesz ją zignorować.",
+        "stopCompany": "Nie wysyłaj mi e-maili od {company}",
+        "operator": "testee jest prowadzona przez {name}, {address}."
+      },
       "phone": {
         "describe": "Wklej opis stanowiska albo napisz kilka słów o roli.",
         "adjust": "Zostaw ważne tematy, zmień ich nazwy albo dodaj własne.",
-        "ready": "Pytania powstają dla każdego tematu; zaproś kandydatów linkiem lub e-mailem."
+        "ready": "Pytania powstają dla każdego tematu; zaproś kandydatów linkiem lub e-mailem.",
+        "invited": "Każdy kandydat dostaje e-mail z własnym linkiem do rozmowy."
       }
     },
     "proof": {

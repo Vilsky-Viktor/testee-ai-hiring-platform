@@ -1423,11 +1423,34 @@
         "paste": "Einfügen"
       },
       "ready": "<n>3.</n> Dein Interview ist fertig",
+      "invited": "<n>4.</n> Der Kandidat erhält die Einladung",
       "status": "Bereit",
+      "email": {
+        "search": "In E-Mails suchen",
+        "compose": "Schreiben",
+        "inbox": "Posteingang",
+        "starred": "Markiert",
+        "sent": "Gesendet",
+        "drafts": "Entwürfe",
+        "from": "testee.",
+        "toMe": "an mich",
+        "now": "jetzt",
+        "subject": "Interview-Einladung von {company}",
+        "preheader": "Absolviere „{title}“ auf testee. Melde dich mit {email} an, um zu beginnen.",
+        "heading": "Einladung zum Interview",
+        "invited": "<b>{company}</b> lädt dich zum Interview „{title}“ auf testee ein.",
+        "signIn": "Melde dich mit {email} an, um zu beginnen. Nur diese Adresse kann das Interview absolvieren, und du hast einen Versuch.",
+        "button": "Einladung öffnen",
+        "pasteLink": "Oder füge diesen Link in deinen Browser ein",
+        "footer": "Diese E-Mail wurde an {email} gesendet, weil jemand diese Adresse auf testee eingeladen hat. Wenn du sie nicht erwartet hast, kannst du sie ignorieren.",
+        "stopCompany": "Keine E-Mails mehr von {company}",
+        "operator": "testee wird von {name} betrieben, {address}."
+      },
       "phone": {
         "describe": "Füge eine Stellenbeschreibung ein oder schreib ein paar Worte zur Rolle.",
         "adjust": "Behalte die wichtigen Themen, benenne sie um oder füge eigene hinzu.",
-        "ready": "Für jedes Thema werden Fragen erstellt; lade Kandidaten per Link oder E-Mail ein."
+        "ready": "Für jedes Thema werden Fragen erstellt; lade Kandidaten per Link oder E-Mail ein.",
+        "invited": "Jeder Kandidat erhält eine E-Mail mit seinem eigenen Link zum Interview."
       }
     },
     "proof": {

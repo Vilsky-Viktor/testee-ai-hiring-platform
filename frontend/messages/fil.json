@@ -1423,11 +1423,34 @@
         "paste": "I-paste"
       },
       "ready": "<n>3.</n> Handa na ang interview mo",
+      "invited": "<n>4.</n> Natatanggap ng aplikante ang imbitasyon",
       "status": "Handa na",
+      "email": {
+        "search": "Maghanap sa mail",
+        "compose": "Mag-compose",
+        "inbox": "Inbox",
+        "starred": "Naka-star",
+        "sent": "Naipadala",
+        "drafts": "Mga Draft",
+        "from": "testee.",
+        "toMe": "sa akin",
+        "now": "ngayon",
+        "subject": "Imbitasyon sa interview mula sa {company}",
+        "preheader": "Sagutan ang “{title}” sa testee. Mag-sign in gamit ang {email} para magsimula.",
+        "heading": "Imbitasyon sa interview",
+        "invited": "Iniimbitahan ka ng <b>{company}</b> sa interview na “{title}” sa testee.",
+        "signIn": "Mag-sign in gamit ang {email} para magsimula. Ang address na ito lang ang puwedeng sumagot sa interview, at may isang pagkakataon ka lang.",
+        "button": "Buksan ang imbitasyon",
+        "pasteLink": "O i-paste ang link na ito sa iyong browser",
+        "footer": "Ipinadala ang email na ito sa {email} dahil may nag-imbita sa address na ito sa testee. Kung hindi mo ito inaasahan, puwede mo itong balewalain.",
+        "stopCompany": "Huwag na akong padalhan ng email para sa {company}",
+        "operator": "Ang testee ay pinapatakbo ng {name}, {address}."
+      },
       "phone": {
         "describe": "Mag-paste ng job description, o magsulat ng ilang salita tungkol sa role.",
         "adjust": "Itira ang mahahalagang topic, palitan ang pangalan nila o magdagdag ng sarili mo.",
-        "ready": "May mga tanong para sa bawat topic; imbitahan ang mga aplikante gamit ang link o email."
+        "ready": "May mga tanong para sa bawat topic; imbitahan ang mga aplikante gamit ang link o email.",
+        "invited": "Bawat aplikante ay nakakatanggap ng email na may sarili niyang link sa interview."
       }
     },
     "proof": {

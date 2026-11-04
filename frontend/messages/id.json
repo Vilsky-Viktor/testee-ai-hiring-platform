@@ -1423,11 +1423,34 @@
         "paste": "Tempel"
       },
       "ready": "<n>3.</n> Wawancaramu sudah siap",
+      "invited": "<n>4.</n> Kandidat menerima undangan",
       "status": "Siap",
+      "email": {
+        "search": "Telusuri email",
+        "compose": "Tulis",
+        "inbox": "Kotak Masuk",
+        "starred": "Berbintang",
+        "sent": "Terkirim",
+        "drafts": "Draf",
+        "from": "testee.",
+        "toMe": "kepada saya",
+        "now": "sekarang",
+        "subject": "Undangan wawancara dari {company}",
+        "preheader": "Ikuti “{title}” di testee. Masuk dengan {email} untuk mulai.",
+        "heading": "Undangan wawancara",
+        "invited": "<b>{company}</b> mengundangmu mengikuti wawancara “{title}” di testee.",
+        "signIn": "Masuk dengan {email} untuk mulai. Hanya alamat ini yang bisa mengikuti wawancara, dan kamu punya satu kesempatan.",
+        "button": "Buka undangan",
+        "pasteLink": "Atau tempel tautan ini di browsermu",
+        "footer": "Email ini dikirim ke {email} karena seseorang mengundang alamat ini di testee. Jika kamu tidak mengharapkannya, abaikan saja.",
+        "stopCompany": "Jangan kirimi saya email dari {company}",
+        "operator": "testee dijalankan oleh {name}, {address}."
+      },
       "phone": {
         "describe": "Tempel deskripsi pekerjaan, atau tulis beberapa kata tentang posisinya.",
         "adjust": "Pertahankan topik yang penting, ganti namanya, atau tambahkan topikmu sendiri.",
-        "ready": "Soal ditulis untuk setiap topik; undang kandidat lewat tautan atau email."
+        "ready": "Soal ditulis untuk setiap topik; undang kandidat lewat tautan atau email.",
+        "invited": "Setiap kandidat menerima email berisi tautan wawancara khusus untuknya."
       }
     },
     "proof": {

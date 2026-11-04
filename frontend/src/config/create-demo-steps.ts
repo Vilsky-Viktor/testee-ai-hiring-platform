@@ -28,8 +28,8 @@ export const WRITTEN = ADJUSTED.map(({ name }) => name)
 // types into the request for changes and clicks apply, and a topic is added; then it clicks
 // approve, the questions are written, topic by topic, and the interview is ready: it changes the
 // questions each candidate gets on two topics, clicks to invite, the invite dialog opens, a
-// candidate's email is typed and sent, and the "sent" notice shows. Last, the interview alone:
-// the still frame.
+// candidate's email is typed and sent, and the "sent" notice shows. Then the candidate's inbox:
+// the invitation arrives, the pointer opens it, and clicks its button. Last, the still frame.
 export const STEPS: DemoStep[] = [
   { name: "empty", ms: 500, point: "field" },
   { name: "menu", ms: 300, click: true },
@@ -88,7 +88,13 @@ export const STEPS: DemoStep[] = [
   { name: "aimSendInvite", ms: 700, point: "sendInvite" },
   { name: "sendInvite", ms: 450, click: true },
   { name: "invited", ms: 1600, point: "none" },
-  { name: "rest", ms: 300 },
+  { name: "inbox", ms: 900 },
+  { name: "aimMail", ms: 800, point: "mail" },
+  { name: "openMail", ms: 400, click: true },
+  { name: "opened", ms: 1200 },
+  { name: "aimOpenInvite", ms: 800, point: "openInvite" },
+  { name: "openInvite", ms: 500, click: true },
+  { name: "rest", ms: 600 },
 ]
 
 // The steps the invite dialog is open for.
@@ -119,11 +125,15 @@ export const TARGETS = [
   "invite",
   "email",
   "sendInvite",
+  "mail",
+  "openInvite",
 ]
 
 export const APPLIED = stepIndex(STEPS, "applied")
 export const WRITING = stepIndex(STEPS, "writing")
 export const READY = stepIndex(STEPS, "ready")
+export const INBOX = stepIndex(STEPS, "inbox")
+export const OPENED = stepIndex(STEPS, "opened")
 export const PASTED = stepIndex(STEPS, "pasted")
 export const CHOOSING = stepIndex(STEPS, "company")
 export const ADDING = stepIndex(STEPS, "chooseNew")

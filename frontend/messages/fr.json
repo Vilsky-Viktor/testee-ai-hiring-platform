@@ -1423,11 +1423,34 @@
         "paste": "Coller"
       },
       "ready": "<n>3.</n> Votre entretien est prêt",
+      "invited": "<n>4.</n> Le candidat reçoit l'invitation",
       "status": "Prêt",
+      "email": {
+        "search": "Rechercher dans les messages",
+        "compose": "Nouveau message",
+        "inbox": "Boîte de réception",
+        "starred": "Messages suivis",
+        "sent": "Messages envoyés",
+        "drafts": "Brouillons",
+        "from": "testee.",
+        "toMe": "à moi",
+        "now": "à l'instant",
+        "subject": "Invitation à un entretien : {company}",
+        "preheader": "Passez « {title} » sur testee. Connectez-vous avec {email} pour commencer.",
+        "heading": "Invitation à un entretien",
+        "invited": "<b>{company}</b> vous invite à l'entretien « {title} » sur testee.",
+        "signIn": "Connectez-vous avec {email} pour commencer. Seule cette adresse peut passer l'entretien, et vous n'avez qu'une tentative.",
+        "button": "Ouvrir l'invitation",
+        "pasteLink": "Ou collez ce lien dans votre navigateur",
+        "footer": "Cet e-mail a été envoyé à {email} parce que quelqu'un a invité cette adresse sur testee. Si vous ne l'attendiez pas, vous pouvez l'ignorer.",
+        "stopCompany": "Ne plus m'envoyer d'e-mails de la part de {company}",
+        "operator": "testee est exploitée par {name}, {address}."
+      },
       "phone": {
         "describe": "Collez une fiche de poste, ou écrivez quelques mots sur le poste.",
         "adjust": "Gardez les thèmes qui comptent, renommez-les ou ajoutez les vôtres.",
-        "ready": "Des questions sont rédigées pour chaque thème ; invitez des candidats par lien ou par e-mail."
+        "ready": "Des questions sont rédigées pour chaque thème ; invitez des candidats par lien ou par e-mail.",
+        "invited": "Chaque candidat reçoit un e-mail avec son propre lien vers l'entretien."
       }
     },
     "proof": {

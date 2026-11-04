@@ -1423,11 +1423,34 @@
         "paste": "Kleebi"
       },
       "ready": "<n>3.</n> Sinu intervjuu on valmis",
+      "invited": "<n>4.</n> Kandidaat saab kutse",
       "status": "Valmis",
+      "email": {
+        "search": "Otsi kirju",
+        "compose": "Koosta",
+        "inbox": "Postkast",
+        "starred": "Tärniga",
+        "sent": "Saadetud",
+        "drafts": "Mustandid",
+        "from": "testee.",
+        "toMe": "mulle",
+        "now": "nüüd",
+        "subject": "Intervjuukutse ettevõttelt {company}",
+        "preheader": "Tee testees intervjuu „{title}“. Alustamiseks logi sisse aadressiga {email}.",
+        "heading": "Kutse intervjuule",
+        "invited": "<b>{company}</b> kutsub sind testees intervjuule „{title}“.",
+        "signIn": "Alustamiseks logi sisse aadressiga {email}. Intervjuud saab teha ainult see aadress ja sul on üks katse.",
+        "button": "Ava kutse",
+        "pasteLink": "Või kleebi see link oma brauserisse",
+        "footer": "See e-kiri saadeti aadressile {email}, sest keegi kutsus selle aadressi testeesse. Kui sa seda ei oodanud, võid selle tähelepanuta jätta.",
+        "stopCompany": "Ära saada mulle e-kirju ettevõttelt {company}",
+        "operator": "testeed haldab {name}, {address}."
+      },
       "phone": {
         "describe": "Kleebi töökuulutus või kirjuta paar sõna rolli kohta.",
         "adjust": "Jäta alles olulised teemad, nimeta need ümber või lisa enda omad.",
-        "ready": "Iga teema jaoks koostatakse küsimused; kutsu kandidaadid lingi või e-posti teel."
+        "ready": "Iga teema jaoks koostatakse küsimused; kutsu kandidaadid lingi või e-posti teel.",
+        "invited": "Iga kandidaat saab e-kirja oma lingiga intervjuule."
       }
     },
     "proof": {

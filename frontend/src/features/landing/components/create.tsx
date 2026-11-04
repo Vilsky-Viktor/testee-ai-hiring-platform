@@ -2,6 +2,7 @@ import {
   BadgeCheckIcon,
   ClipboardPasteIcon,
   ListChecksIcon,
+  MailIcon,
 } from "lucide-react"
 import { getTranslations } from "next-intl/server"
 
@@ -12,16 +13,18 @@ import { PhoneSteps } from "@/features/landing/components/phone-steps"
 import { LandingSection } from "@/features/landing/components/section"
 import { BAND } from "@/config/landing-backgrounds"
 
-// The three steps, each with its icon on phones.
+// The four steps, each with its icon on phones.
 const STEPS = {
   describe: ClipboardPasteIcon,
   adjust: ListChecksIcon,
   ready: BadgeCheckIcon,
+  invited: MailIcon,
 }
 const STEP_KEYS = Object.keys(STEPS) as (keyof typeof STEPS)[]
 
 /** How an interview is created, played in one frame: a job description pasted and a first
- * company named, its topics adjusted, and the interview made from them, a candidate invited.
+ * company named, its topics adjusted, and the interview made from them, a candidate invited, who
+ * gets the invitation by email.
  * Under it, short facts: that no subject expert is needed to make one, the questions written for
  * each topic (`questionsPerTopic`, from Controls; left out without it), and the ready
  * templates. On phones, the three steps as cards in place of the frame. */

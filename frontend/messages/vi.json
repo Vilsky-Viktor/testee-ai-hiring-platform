@@ -1423,11 +1423,34 @@
         "paste": "Dán"
       },
       "ready": "<n>3.</n> Buổi phỏng vấn của bạn đã sẵn sàng",
+      "invited": "<n>4.</n> Ứng viên nhận được lời mời",
       "status": "Sẵn sàng",
+      "email": {
+        "search": "Tìm kiếm thư",
+        "compose": "Soạn thư",
+        "inbox": "Hộp thư đến",
+        "starred": "Có gắn dấu sao",
+        "sent": "Đã gửi",
+        "drafts": "Thư nháp",
+        "from": "testee.",
+        "toMe": "tới tôi",
+        "now": "bây giờ",
+        "subject": "Lời mời phỏng vấn từ {company}",
+        "preheader": "Tham gia phỏng vấn “{title}” trên testee. Đăng nhập bằng {email} để bắt đầu.",
+        "heading": "Lời mời phỏng vấn",
+        "invited": "<b>{company}</b> mời bạn tham gia buổi phỏng vấn “{title}” trên testee.",
+        "signIn": "Đăng nhập bằng {email} để bắt đầu. Chỉ địa chỉ này mới có thể tham gia phỏng vấn và bạn chỉ có một lần làm bài.",
+        "button": "Mở lời mời",
+        "pasteLink": "Hoặc dán liên kết này vào trình duyệt của bạn",
+        "footer": "Email này được gửi đến {email} vì có người đã mời địa chỉ này trên testee. Nếu bạn không mong đợi email này, bạn có thể bỏ qua.",
+        "stopCompany": "Đừng gửi email từ {company} cho tôi",
+        "operator": "testee do {name}, {address} vận hành."
+      },
       "phone": {
         "describe": "Dán mô tả công việc, hoặc viết vài dòng về vị trí.",
         "adjust": "Giữ các chủ đề quan trọng, đổi tên hoặc thêm chủ đề của riêng bạn.",
-        "ready": "Câu hỏi được soạn cho từng chủ đề; mời ứng viên qua liên kết hoặc email."
+        "ready": "Câu hỏi được soạn cho từng chủ đề; mời ứng viên qua liên kết hoặc email.",
+        "invited": "Mỗi ứng viên nhận được một email kèm liên kết phỏng vấn riêng của mình."
       }
     },
     "proof": {

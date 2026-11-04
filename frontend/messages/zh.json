@@ -1423,11 +1423,34 @@
         "paste": "粘贴"
       },
       "ready": "<n>3.</n> 你的面试已就绪",
+      "invited": "<n>4.</n> 候选人收到邀请",
       "status": "就绪",
+      "email": {
+        "search": "搜索邮件",
+        "compose": "写邮件",
+        "inbox": "收件箱",
+        "starred": "已加星标",
+        "sent": "已发送",
+        "drafts": "草稿",
+        "from": "testee.",
+        "toMe": "发送至我",
+        "now": "刚刚",
+        "subject": "{company} 的面试邀请",
+        "preheader": "在 testee 上完成“{title}”。使用 {email} 登录即可开始。",
+        "heading": "面试邀请",
+        "invited": "<b>{company}</b> 邀请你在 testee 上参加“{title}”面试。",
+        "signIn": "使用 {email} 登录即可开始。只有这个邮箱地址可以参加面试，并且只有一次机会。",
+        "button": "打开邀请",
+        "pasteLink": "或者将此链接粘贴到浏览器中",
+        "footer": "这封邮件发送到 {email}，因为有人在 testee 上邀请了这个地址。如果这封邮件与你无关，可以忽略。",
+        "stopCompany": "不再给我发送来自 {company} 的邮件",
+        "operator": "testee 由 {name}（{address}）运营。"
+      },
       "phone": {
         "describe": "粘贴职位描述，或简单写几句关于这个职位的介绍。",
         "adjust": "保留重要的主题，重命名或添加你自己的主题。",
-        "ready": "为每个主题编写题目；通过链接或邮件邀请候选人。"
+        "ready": "为每个主题编写题目；通过链接或邮件邀请候选人。",
+        "invited": "每位候选人都会收到一封邮件，内含其专属的面试链接。"
       }
     },
     "proof": {

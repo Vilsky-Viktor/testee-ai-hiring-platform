@@ -1423,11 +1423,34 @@
         "paste": "Paste"
       },
       "ready": "<n>3.</n> Your interview is ready",
+      "invited": "<n>4.</n> The candidate gets the invite",
       "status": "Ready",
+      "email": {
+        "search": "Search mail",
+        "compose": "Compose",
+        "inbox": "Inbox",
+        "starred": "Starred",
+        "sent": "Sent",
+        "drafts": "Drafts",
+        "from": "testee.",
+        "toMe": "to me",
+        "now": "now",
+        "subject": "Interview invite from {company}",
+        "preheader": "Take “{title}” on testee. Sign in with {email} to start.",
+        "heading": "Interview invitation",
+        "invited": "<b>{company}</b> invited you to the “{title}” interview on testee.",
+        "signIn": "Sign in with {email} to start. Only this address can take the interview, and you get one attempt.",
+        "button": "Open the invite",
+        "pasteLink": "Or paste this link into your browser",
+        "footer": "This email was sent to {email} because someone invited this address on testee. If you weren't expecting it, you can ignore it.",
+        "stopCompany": "Don't email me for {company}",
+        "operator": "testee is run by {name}, {address}."
+      },
       "phone": {
         "describe": "Paste a job description, or write a few words about the role.",
         "adjust": "Keep the topics that matter, rename them or add your own.",
-        "ready": "Questions are written for each topic; invite candidates by link or email."
+        "ready": "Questions are written for each topic; invite candidates by link or email.",
+        "invited": "Each candidate gets an email with their own link to the interview."
       }
     },
     "proof": {

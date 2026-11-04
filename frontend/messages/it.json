@@ -1423,11 +1423,34 @@
         "paste": "Incolla"
       },
       "ready": "<n>3.</n> Il tuo colloquio è pronto",
+      "invited": "<n>4.</n> Il candidato riceve l'invito",
       "status": "Pronto",
+      "email": {
+        "search": "Cerca nella posta",
+        "compose": "Scrivi",
+        "inbox": "Posta in arrivo",
+        "starred": "Speciali",
+        "sent": "Inviati",
+        "drafts": "Bozze",
+        "from": "testee.",
+        "toMe": "a me",
+        "now": "ora",
+        "subject": "Invito a un colloquio da {company}",
+        "preheader": "Svolgi «{title}» su testee. Accedi con {email} per iniziare.",
+        "heading": "Invito a un colloquio",
+        "invited": "<b>{company}</b> ti invita al colloquio «{title}» su testee.",
+        "signIn": "Accedi con {email} per iniziare. Solo questo indirizzo può svolgere il colloquio, e hai un solo tentativo.",
+        "button": "Apri l'invito",
+        "pasteLink": "Oppure incolla questo link nel tuo browser",
+        "footer": "Questa email è stata inviata a {email} perché qualcuno ha invitato questo indirizzo su testee. Se non te l'aspettavi, puoi ignorarla.",
+        "stopCompany": "Non inviarmi email da parte di {company}",
+        "operator": "testee è gestita da {name}, {address}."
+      },
       "phone": {
         "describe": "Incolla una descrizione del ruolo, oppure scrivi due parole sul ruolo.",
         "adjust": "Tieni gli argomenti che contano, rinominali o aggiungine di tuoi.",
-        "ready": "Le domande vengono scritte per ogni argomento; invita i candidati con un link o via email."
+        "ready": "Le domande vengono scritte per ogni argomento; invita i candidati con un link o via email.",
+        "invited": "Ogni candidato riceve un'email con il proprio link al colloquio."
       }
     },
     "proof": {
