@@ -1403,7 +1403,6 @@
   "landing": {
     "more": "如何运作",
     "demos": "视频",
-    "demosTooltip": "在 YouTube 上观看演示",
     "videoTooltip": "了解 testee 如何运作",
     "watchVideo": "观看视频",
     "howItWorks": "使用方式",
