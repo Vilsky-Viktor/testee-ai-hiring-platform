@@ -29,8 +29,8 @@ const RESULTS_SLOT = "search-results"
  * (PhoneSearch). */
 export function HeaderSearch() {
   return (
-    <div className="mx-6 hidden min-w-0 flex-1 self-stretch md:flex lg:mx-14">
-      <SearchBox className="h-full w-full" />
+    <div className="mx-6 hidden min-w-0 flex-1 self-stretch py-1.5 md:flex lg:mx-14">
+      <SearchBox className="h-full w-full rounded-xl border border-transparent focus-within:border-primary" />
     </div>
   )
 }
