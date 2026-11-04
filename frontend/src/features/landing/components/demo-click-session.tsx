@@ -34,6 +34,7 @@ export function DemoClickSession({
         question={question}
         picked={picked}
         exampleColors={exampleColors}
+        appear={active}
         className="min-h-0 flex-1 content-start overflow-hidden lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-8"
       />
       <DemoSessionFooter

@@ -3,6 +3,7 @@
 import { cn } from "cn"
 
 import { DemoCandidateSearch } from "@/features/landing/components/demo-candidate-search"
+import { PROMO_POP } from "@/features/landing/components/demo-panel"
 import { DemoInterviewTabs } from "@/features/landing/components/demo-interview-tabs"
 import { DemoReportActions } from "@/features/landing/components/demo-share"
 import { InterviewHeader } from "@/features/landing/components/interview-header"
@@ -18,11 +19,13 @@ import {
 /** An interview's candidates tab, for the landing: its header with the report's actions (the
  * one `pressed` pressed in), its tabs, and the candidates as the real list's rows, with their
  * grades and integrity signals; the row `opened` (its place) shaded as it's clicked. Each row is
- * the pointer's "row<place>". */
+ * the pointer's "row<place>". Each time the list is `shown`, its rows pop in one after another. */
 export function DemoCandidates({
+  shown,
   pressed,
   opened,
 }: {
+  shown: boolean
   pressed: "download" | "share" | null
   opened: number | null
 }) {
@@ -49,11 +52,18 @@ export function DemoCandidates({
               <li
                 key={candidate.email}
                 data-demo-target={`row${index}`}
+                style={{ animationDelay: `${200 + index * 70}ms` }}
                 className={cn(
-                  "transition-colors [&_a>span]:py-3",
-                  opened === index && "bg-surface"
+                  "relative transition-colors [&_a>span]:py-3",
+                  opened === index && "bg-surface",
+                  shown && PROMO_POP
                 )}
               >
+                {/* Where the camera looks when it zooms on the row: its title, at the start. */}
+                <span
+                  data-camera-focus
+                  className="pointer-events-none absolute start-[22%] top-1/2 size-px"
+                />
                 <CandidateRow candidate={candidate} href="#reports" />
               </li>
             ))}

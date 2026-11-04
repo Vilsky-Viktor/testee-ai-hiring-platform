@@ -7,8 +7,10 @@ import { useEffect, useId, useRef, useState } from "react"
 import { useStill } from "@/hooks/use-still"
 import { NetOutside } from "@/features/landing/components/net-outside"
 import { NetWave } from "@/features/landing/components/net-wave"
+import { PROMO_POP } from "@/features/landing/components/demo-panel"
+import { PromoBurst } from "@/features/landing/components/promo-burst"
+import { QualityStepCard } from "@/features/landing/components/quality-step-card"
 import { Wire, wireLength } from "@/features/landing/components/wire"
-import { INVITE_SPEED } from "@/config/invite-demo"
 import {
   NET_CELL,
   NET_WAVE_SECONDS,
@@ -17,6 +19,10 @@ import {
   QUALITY_ELLIPSE,
   QUALITY_ICONS,
   QUALITY_PAUSE_MS,
+  QUALITY_POP_AFTER_MS,
+  QUALITY_POP_STAGGER_MS,
+  QUALITY_SPEED,
+  QUALITY_START_MS,
   QUALITY_STEPS,
   type QualityStep,
 } from "@/config/trust-quality-demo"
@@ -33,8 +39,10 @@ const PLACES = ellipsePoints(
 
 /** How a question gets better: written, checked, answered, flagged and rewritten, five cards of
  * one size spaced evenly round an ellipse, wired one to the next along it, the last back to the
- * first. While on screen a question runs round it, resting on each step, which lights up; with
- * reduced motion, the ring alone. Right to left, the ring mirrors. */
+ * first. Played as a promo: as it comes into view the chip and then the steps pop in one after
+ * another; a question then runs round it, resting on each step, which lights up with a pulse on
+ * its icon, and a soft burst marks each lap round. With reduced motion, the ring alone, still.
+ * Right to left, the ring mirrors. */
 export function QualityLoop({
   labels,
   lines,
@@ -48,7 +56,6 @@ export function QualityLoop({
   // The net pattern's id, letters and digits only, for an SVG url().
   const net = `net-${useId().replace(/[^a-zA-Z0-9]/g, "")}`
   const [wires, setWires] = useState<string[]>([])
-  // The stage's size, in pixels, for the net inside the ellipse.
   // The stage's size, in pixels, for the net inside the ellipse, and the section's box across the
   // page in the stage's frame, for the net outside it.
   const [size, setSize] = useState<{
@@ -60,6 +67,8 @@ export function QualityLoop({
   const [lit, setLit] = useState<number | null>(null)
   const still = useStill()
   const [fired, setFired] = useState<number[]>(QUALITY_STEPS.map(() => 0))
+  // How many laps the question has run since the loop came into view.
+  const [laps, setLaps] = useState(0)
 
   // The ellipse's arcs through the cards' centres and the cards' one height, the tallest card's
   // content and its padding, again whenever the stage or a card's content changes size.
@@ -115,7 +124,8 @@ export function QualityLoop({
     return () => observer.disconnect()
   }, [ref])
 
-  // Round the ring: a rest on a step, then the wire to the next, which takes as long as it's long.
+  // Round the ring, once the steps have popped in: a rest on a step, then the wire to the next,
+  // which takes as long as it's long; back on the first, a lap is done.
   useEffect(() => {
     if (!playing || wires.length === 0 || still) {
       return
@@ -130,18 +140,27 @@ export function QualityLoop({
           counts.map((count, at) => (at === step ? count + 1 : count))
         )
         timer = window.setTimeout(
-          () => rest((step + 1) % wires.length),
-          (wireLength(wires[step]) / INVITE_SPEED) * 1000
+          () => {
+            const next = (step + 1) % wires.length
+
+            if (next === 0) {
+              setLaps((count) => count + 1)
+            }
+
+            rest(next)
+          },
+          (wireLength(wires[step]) / QUALITY_SPEED) * 1000
         )
       }, QUALITY_PAUSE_MS)
     }
 
-    rest(0)
+    timer = window.setTimeout(() => rest(0), QUALITY_START_MS)
 
-    // Off screen, no step is lit.
+    // Off screen, no step is lit and the laps count again.
     return () => {
       window.clearTimeout(timer)
       setLit(null)
+      setLaps(0)
     }
   }, [playing, wires, still])
 
@@ -217,7 +236,7 @@ export function QualityLoop({
               fired={fired[at]}
               traveller="comet"
               thickness={1.5}
-              speed={INVITE_SPEED}
+              speed={QUALITY_SPEED}
             />
           ))}
         </g>
@@ -227,7 +246,10 @@ export function QualityLoop({
           waves' clock). */}
       <span
         data-testid="ai-chip"
-        className="absolute top-1/2 left-1/2 flex size-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center text-primary lg:size-36"
+        className={cn(
+          "absolute top-1/2 left-1/2 flex size-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center text-primary lg:size-36",
+          playing ? PROMO_POP : "motion-safe:opacity-0"
+        )}
       >
         <CpuAiIcon
           className={cn(
@@ -242,51 +264,28 @@ export function QualityLoop({
           strokeWidth={1.5}
         />
       </span>
-      {QUALITY_STEPS.map((key, at) => {
-        const Icon = QUALITY_ICONS[key]
-
-        return (
-          <div
-            key={key}
-            data-testid="quality-step"
-            data-lit={lit === at || undefined}
-            style={
-              {
-                "--x": `${PLACES[at].x}%`,
-                "--y": `${PLACES[at].y}%`,
-              } as React.CSSProperties
+      {/* A lap done: a soft burst from the chip, behind the steps. */}
+      {playing && !still && laps > 0 && (
+        <PromoBurst key={laps} className="z-0" />
+      )}
+      {QUALITY_STEPS.map((key, at) => (
+        <QualityStepCard
+          key={key}
+          x={PLACES[at].x}
+          y={PLACES[at].y}
+          icon={QUALITY_ICONS[key]}
+          label={labels[key]}
+          line={lines[key]}
+          lit={lit === at}
+          entering={playing}
+          delay={QUALITY_POP_AFTER_MS + at * QUALITY_POP_STAGGER_MS}
+          content={(element) => {
+            if (element) {
+              contents.current[at] = element
             }
-            className={cn(
-              "absolute start-(--x) top-(--y) z-10 flex size-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-2 rounded-xl border p-1.5 pt-6 text-center lowercase transition-shadow duration-300 lg:h-(--card-h) lg:w-60 lg:justify-start lg:p-5 lg:pt-9 rtl:translate-x-1/2",
-              // The page's colour, see-through as much as the interview card among the ways in.
-              "bg-background/75",
-              lit === at && "border-primary-gradient"
-            )}
-          >
-            {/* The step's icon, sitting on the card's top edge. */}
-            <span className="absolute top-0 left-1/2 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl border bg-background text-foreground lg:size-12 [&_svg]:size-5 lg:[&_svg]:size-6">
-              <Icon />
-            </span>
-            <span
-              ref={(element) => {
-                if (element) {
-                  contents.current[at] = element
-                }
-              }}
-              className="flex min-w-0 shrink-0 flex-col items-center"
-            >
-              <span className="flex min-w-0 flex-col gap-1">
-                <span className="font-heading text-sm font-medium break-words lg:text-lg">
-                  {labels[key]}
-                </span>
-                <span className="hidden text-sm leading-snug text-muted-foreground normal-case lg:block">
-                  {lines[key]}
-                </span>
-              </span>
-            </span>
-          </div>
-        )
-      })}
+          }}
+        />
+      ))}
     </div>
   )
 }

@@ -46,7 +46,20 @@ export const QUALITY_CARD_PADDING = 58
 export const NET_CELL = 22
 
 // How long the question rests on a step before it moves on, in milliseconds.
-export const QUALITY_PAUSE_MS = 900
+export const QUALITY_PAUSE_MS = 700
+
+// How fast the question runs along a wire, in pixels a second.
+export const QUALITY_SPEED = 150
+
+// As the loop comes into view: the chip pops in, then the steps one after another, this many
+// milliseconds apart, from this long after it; the question sets off once the last has landed.
+export const QUALITY_POP_AFTER_MS = 150
+export const QUALITY_POP_STAGGER_MS = 90
+export const QUALITY_START_MS = 900
+
+// The columns under the loop pop in one after another as they come into view, this many
+// milliseconds apart.
+export const TRUST_POP_STAGGER_MS = 120
 
 // The cards under the loop, by their text's key.
 export const TRUST_CARDS = ["person", "fair", "laws", "log"] as const

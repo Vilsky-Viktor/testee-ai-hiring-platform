@@ -30,10 +30,14 @@ export function DemoDescription({
     <div className="relative flex min-h-0 flex-1 flex-col p-5">
       {/* A long text runs past the field's bottom, cut off there as a field scrolls it. */}
       <div className="min-h-0 flex-1 overflow-hidden text-base">
+        {/* Pasted, the text sweeps in from the start edge. */}
         <p
+          key={pasted ? "pasted" : "empty"}
           className={cn(
             "whitespace-pre-line",
-            !pasted && "text-muted-foreground"
+            pasted
+              ? "motion-safe:animate-[promo-sweep_0.8s_ease-out_both]"
+              : "text-muted-foreground"
           )}
         >
           {pasted ? text : placeholder}

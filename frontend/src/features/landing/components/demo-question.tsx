@@ -14,26 +14,38 @@ import type { CodeToken } from "@/lib/code-tokens"
 // Nothing happens on a tap: the pointer plays the picks.
 const NO_TAP = () => {}
 
+// As its screen comes in: the question, then each option, popping in one after another; and an
+// option as it's picked, a small bump (promo-pop, promo-tick: animations.css). Only with motion
+// allowed.
+const POP =
+  "motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
+const QUESTION_APPEAR = `${POP} [animation-delay:250ms]`
+const OPTIONS_APPEAR =
+  "motion-safe:[&_li]:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both] [&_li]:[animation-delay:350ms] [&_li:nth-child(2)]:[animation-delay:430ms] [&_li:nth-child(3)]:[animation-delay:510ms] [&_li:nth-child(4)]:[animation-delay:590ms] motion-safe:[&_[aria-pressed=true]]:animate-[promo-tick_0.4s_ease-out]"
+
 /** A question and its options as a candidate plays it (features/company/components/
  * session-play.tsx), for the landing: the grey card, with the multi-answer tag on a multi-answer
  * question; its example under it in the editor's look (`exampleColors`); the hint to pick several
- * and the real option cards, the `picked` ones marked. The options are the pointer's. */
+ * and the real option cards, the `picked` ones marked. The options are the pointer's. While it
+ * `appear`s (its screen shown), the question and options pop in and a picked option bumps. */
 export function DemoQuestionCard({
   question,
   picked,
   exampleColors = null,
+  appear,
   className,
 }: {
   question: DemoQuestion
   picked: number[]
   exampleColors?: CodeToken[][] | null
+  appear: boolean
   className?: string
 }) {
   const t = useTranslations("session")
 
   return (
     <div className={cn("grid grid-cols-[minmax(0,1fr)] gap-5", className)}>
-      <div className="space-y-3">
+      <div className={cn("space-y-3", appear && QUESTION_APPEAR)}>
         <div className={cn("space-y-3 rounded-xl bg-surface", CARD_PADDING)}>
           {question.multi && <MultiChoiceTag />}
           <p className="text-xl leading-snug font-normal">{question.text}</p>
@@ -57,7 +69,10 @@ export function DemoQuestionCard({
         )}
         <div
           data-demo-target="options"
-          className="[&_button]:py-2.5 [&_button]:text-base"
+          className={cn(
+            "[&_button]:py-2.5 [&_button]:text-base",
+            appear && OPTIONS_APPEAR
+          )}
         >
           <ChoiceOptions
             options={question.options}

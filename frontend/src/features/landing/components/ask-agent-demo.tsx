@@ -1,5 +1,6 @@
 "use client"
 
+import { cn } from "cn"
 import { HistoryIcon, SparklesIcon, SquarePenIcon, XIcon } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 import { Fragment, useEffect, useRef, useState } from "react"
@@ -12,6 +13,7 @@ import {
 } from "@/features/landing/components/demo-action-card"
 import { DemoChatInput } from "@/features/landing/components/demo-chat-input"
 import { DemoPointer } from "@/features/landing/components/demo-pointer"
+import { PromoBurst } from "@/features/landing/components/promo-burst"
 import {
   ASK_AGENT_EMAIL,
   ASK_AGENT_INTERVIEW,
@@ -20,11 +22,21 @@ import {
   type AskAgentCard,
   type AskAgentQuestion,
 } from "@/config/ask-agent-demo"
-import { GLOW_CARD } from "@/config/landing-backgrounds"
 import { type DemoStep, pointedAt, useDemoSteps } from "@/hooks/use-demo-steps"
 import { bdi, bdiText } from "@/lib/bidi"
 import { formatPercent } from "@/lib/format"
 import { graphemes, sliceGraphemes } from "@/lib/graphemes"
+
+// The promo's motion, with motion allowed: the person's message rising from the input into its
+// place; Mira's growing out of a dot at its tail (the bottom of its start side); each landing
+// with a small settle. As a question is sent, its text leaves the input, and the send arrow
+// flies up out of its button and comes back.
+const RISE =
+  "motion-safe:animate-[promo-rise_0.55s_cubic-bezier(0.2,0.9,0.3,1)_both] origin-bottom-right rtl:origin-bottom-left"
+const GROW =
+  "motion-safe:animate-[promo-grow_0.5s_cubic-bezier(0.2,0.9,0.3,1)_both] origin-bottom-left rtl:origin-bottom-right"
+const SEND =
+  "motion-safe:[&_.demo-pressed]:overflow-hidden motion-safe:[&_.demo-pressed_svg]:animate-[promo-lift_0.4s_ease-in-out] motion-safe:[&_.truncate]:animate-[promo-leave_0.3s_ease-in_forwards]"
 
 // A step and what it shows: how many of the chat's items (each question, its answer, and the
 // action card before the last answer), the question in the input, the tool at work, the action
@@ -55,7 +67,7 @@ function asked(
     { name: `send-${question}`, ms: 400, click: true, ...shared },
     {
       name: `work-${question}`,
-      ms: 1500,
+      ms: 700,
       point: "none",
       upTo: before + 1,
       lit,
@@ -68,13 +80,13 @@ function asked(
  * the last after its action's card is confirmed; then a pause on the complete frame. */
 function demoSteps(letters: Record<AskAgentQuestion, number>): Step[] {
   return [
-    { name: "start", ms: 1000, point: "none", upTo: 0 },
+    { name: "start", ms: 300, point: "none", upTo: 0 },
     ...asked("stats", letters.stats, 0, "info"),
-    { name: "answer-stats", ms: 3200, upTo: 2, lit: "info" },
+    { name: "answer-stats", ms: 1400, upTo: 2, lit: "info" },
     ...asked("help", letters.help, 2, "help"),
-    { name: "answer-help", ms: 4200, upTo: 4, lit: "help" },
+    { name: "answer-help", ms: 2000, upTo: 4, lit: "help" },
     ...asked("invite", letters.invite, 4, "actions"),
-    { name: "card", ms: 1600, upTo: 6, card: "pending", lit: "actions" },
+    { name: "card", ms: 500, upTo: 6, card: "pending", lit: "actions" },
     {
       name: "aimConfirm",
       ms: 800,
@@ -93,22 +105,26 @@ function demoSteps(letters: Record<AskAgentQuestion, number>): Step[] {
     },
     {
       name: "running",
-      ms: 900,
+      ms: 400,
       point: "none",
       upTo: 6,
       card: "running",
       lit: "actions",
     },
-    { name: "done", ms: 3500, upTo: 7, lit: "actions" },
-    { name: "end", ms: 1500, upTo: 7 },
+    { name: "done", ms: 1500, upTo: 7, lit: "actions" },
+    { name: "end", ms: 400, upTo: 7 },
   ]
 }
 
 /** The assistant's panel answering three questions in turn, played while on screen: how many
  * candidates passed an interview (from its report), how to give extra time (from a guide), and
  * a candidate invited once the pointer confirms the action's card. Beside it, the three things
- * it does, each lit while the chat shows it. A fixed height that scrolls as messages come; with
- * reduced motion, the whole conversation, still. On phones, the three cards alone. */
+ * it does, each lit while the chat shows it, with a small bump. A fixed height that scrolls as
+ * messages come. Played as a promo: the typed question leaves the input as send is pressed (its
+ * arrow flying up and back) and rises into its bubble, Mira's messages grow out of a dot at
+ * their tail, each landing with a small settle, and a burst marks the candidate invited
+ * (`data-promo`, animations.css). With reduced motion, the whole conversation, still. On phones, the three
+ * cards alone. */
 export function AskAgentDemo() {
   const t = useTranslations("landing.justAsk")
   const locale = useLocale()
@@ -138,6 +154,8 @@ export function AskAgentDemo() {
   const confirmRef = useRef<HTMLSpanElement>(null)
   const targets = { input: inputRef, send: sendRef, confirm: confirmRef }
   const point = pointedAt(steps, index)
+  const target =
+    point && point in targets ? targets[point as keyof typeof targets] : null
   const asking = step.asking ? questions[step.asking] : null
   const typed = step.name.startsWith("type-")
     ? sliceGraphemes(asking!, n)
@@ -148,12 +166,15 @@ export function AskAgentDemo() {
   const answer = (text: React.ReactNode) => (
     <ChatBubble
       role="assistant"
-      className="border bg-transparent p-4 whitespace-normal"
+      className={cn("border bg-transparent p-4 whitespace-normal", GROW)}
       content={text}
     />
   )
+  const question = (key: string, text: string) => (
+    <ChatBubble key={key} role="user" className={RISE} content={text} />
+  )
   const items = [
-    <ChatBubble key="q-stats" role="user" content={stats} />,
+    question("q-stats", stats),
     answer(
       t("answers.stats", {
         passed,
@@ -163,7 +184,7 @@ export function AskAgentDemo() {
         best: formatPercent(best, locale),
       })
     ),
-    <ChatBubble key="q-help" role="user" content={help} />,
+    question("q-help", help),
     answer(
       t.rich("answers.help", {
         link: (chunks) => (
@@ -171,7 +192,7 @@ export function AskAgentDemo() {
         ),
       })
     ),
-    <ChatBubble key="q-invite" role="user" content={invite} />,
+    question("q-invite", invite),
     <DemoActionCard
       key="card"
       state={step.card ?? "done"}
@@ -192,19 +213,18 @@ export function AskAgentDemo() {
   }, [step.upTo, step.working, step.card])
 
   return (
-    <div className="mx-auto grid w-full max-w-4xl gap-4 md:grid-cols-[minmax(0,1fr)_16rem] lg:grid-cols-[minmax(0,1fr)_19rem]">
+    <div
+      data-promo
+      className="mx-auto grid w-full max-w-4xl gap-4 md:grid-cols-[minmax(0,1fr)_16rem] lg:grid-cols-[minmax(0,1fr)_19rem]"
+    >
       <div
         ref={ref}
         aria-hidden
         data-testid="agent-chat"
-        className={`relative flex h-120 flex-col overflow-hidden rounded-xl ${GLOW_CARD} text-popover-foreground ring-1 ring-foreground/10 motion-reduce:h-auto max-sm:hidden`}
+        className="relative flex h-120 flex-col overflow-hidden rounded-xl bg-popover/60 text-popover-foreground ring-1 ring-foreground/10 motion-reduce:h-auto max-sm:hidden dark:bg-surface"
       >
         <DemoPointer
-          target={
-            point && point in targets
-              ? targets[point as keyof typeof targets]
-              : null
-          }
+          target={target}
           clicking={step.click === true}
           click={index}
         />
@@ -223,7 +243,7 @@ export function AskAgentDemo() {
             ref={scroller}
             className="flex-1 overflow-hidden px-4 pt-4 pb-6 text-start"
           >
-            <ul className="space-y-3 *:animate-in *:fade-in">
+            <ul className="space-y-3">
               {/* Mira's welcome, there from the start. */}
               {answer(t("welcome"))}
               {items.slice(0, step.upTo).map((item, at) => (
@@ -232,7 +252,10 @@ export function AskAgentDemo() {
               {step.working && (
                 <ChatBubble
                   role="assistant"
-                  className="space-y-2 border bg-transparent p-4 whitespace-normal"
+                  className={cn(
+                    "space-y-2 border bg-transparent p-4 whitespace-normal",
+                    GROW
+                  )}
                   content={
                     <>
                       <p className="text-xs text-muted-foreground">
@@ -247,7 +270,14 @@ export function AskAgentDemo() {
               )}
             </ul>
           </div>
-          <div className="shrink-0 px-4 pb-4">
+          {/* As it's sent, the typed text leaves the input and the send arrow flies up and
+              back. */}
+          <div
+            className={cn(
+              "shrink-0 px-4 pb-4",
+              step.name.startsWith("send-") && SEND
+            )}
+          >
             <DemoChatInput
               ref={inputRef}
               sendRef={sendRef}
@@ -260,6 +290,8 @@ export function AskAgentDemo() {
             />
           </div>
         </div>
+        {/* The candidate invited. */}
+        {step.name === "done" && <PromoBurst />}
       </div>
       <AskAgentCards lit={step.lit} />
     </div>

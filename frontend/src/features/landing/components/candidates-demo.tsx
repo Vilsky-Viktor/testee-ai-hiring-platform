@@ -2,23 +2,26 @@
 
 import { cn } from "cn"
 import { useTranslations } from "next-intl"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 import { DemoClickSession } from "@/features/landing/components/demo-click-session"
 import { DemoInvitation } from "@/features/landing/components/demo-invitation"
 import { DemoMicPrompt } from "@/features/landing/components/demo-mic-prompt"
 import { DemoPanel } from "@/features/landing/components/demo-panel"
 import { DemoPointer } from "@/features/landing/components/demo-pointer"
+import { PromoBurst } from "@/features/landing/components/promo-burst"
 import { DemoStartAction } from "@/features/landing/components/demo-start-action"
 import { DemoVoiceSession } from "@/features/landing/components/demo-voice-session"
 import { AnswerModeSwitch } from "@/features/company/components/answer-mode-switch"
 import { CLICK_QUESTIONS } from "@/config/candidates-demo"
 import {
+  type CandidateStep,
   CLICK_START,
   STEPS,
   TARGETS,
   VOICE_START,
 } from "@/config/candidates-demo-steps"
+import { useDemoCamera } from "@/hooks/use-demo-camera"
 import { pointedAt, stepIndex, useDemoSteps } from "@/hooks/use-demo-steps"
 import { useStill } from "@/hooks/use-still"
 import type { VoiceAccess } from "@/hooks/use-voice-access"
@@ -28,12 +31,16 @@ import type { VoiceStatus } from "@/types/round"
 // Each voice-screen step's state: whose turn it is and whether the option is picked.
 const VOICE: Record<string, [VoiceStatus, boolean]> = {
   vSpeaking: ["speaking", false],
+  vReading: ["speaking", false],
   vListening: ["hearing", false],
   vThinking: ["thinking", false],
   vPicked: ["speaking", true],
   vYes: ["hearing", true],
   vMoving: ["speaking", true],
 }
+
+// The steps a burst marks: the click-mode interview finished, and the voice answer saved.
+const BURSTS = ["cDone", "vMoving"]
 
 // The voice screen before it plays: Mira about to speak.
 const BEFORE_VOICE: [VoiceStatus, boolean] = ["speaking", false]
@@ -51,13 +58,26 @@ function accessAt(index: number): VoiceAccess {
   return index >= stepIndex(STEPS, "vAllow") ? "asking" : "ask"
 }
 
+/** The place in the play of the screen `step` shows: the click-mode start page, its questions,
+ * the voice start page and the voice screen, so the next slides in from the end and the last
+ * leaves towards the start. */
+function placeOf(step: CandidateStep) {
+  if (step.voice) {
+    return CLICK_QUESTIONS.length + (step.screen === "start" ? 1 : 2)
+  }
+
+  return step.screen === "start" ? 0 : Number(step.screen.slice(1)) + 1
+}
+
 /** What a candidate sees, played by a pointer in one panel, in click mode and then in voice mode,
  * the switch above it showing which; a visitor can switch to either. Click mode: the start page,
  * the pledge ticked and started, a question answered by a tap and Next. Voice mode: the start
  * page, the microphone and sound allowed in the browser's prompt, started, and the voice screen:
  * Mira reads, the candidate answers, she thinks, picks it, hears a yes and moves on. The screens
- * lie on top of each other, so the panel is as tall as the tallest and never changes size. With
- * reduced motion, each mode's last frame. */
+ * lie on top of each other, so the panel is as tall as the tallest and never changes size.
+ * Played as a promo: a camera zooms towards where the pointer works or the step looks, screens
+ * slide in with depth, options pop in, and a burst marks each mode's end; the effects scoped to it
+ * (`data-promo`, animations.css). With reduced motion, each mode's last frame, none of it moving. */
 export function CandidatesDemo({
   exampleColors,
 }: {
@@ -90,7 +110,14 @@ export function CandidatesDemo({
     )
   )
   const point = pointedAt(STEPS, index)
+  const camera = useRef<HTMLDivElement>(null)
+  const view = useDemoCamera(
+    camera,
+    targets[step.look ?? point ?? ""] ?? null,
+    index
+  )
   const voice = step.voice
+  const shownAt = placeOf(step)
 
   function choose(toVoice: boolean) {
     const to = toVoice ? VOICE_START : CLICK_START
@@ -102,17 +129,25 @@ export function CandidatesDemo({
     }
   }
 
-  // A screen, shown while it's the step's, fading in after the one before has faded out.
-  function screen(shown: boolean, content: React.ReactNode, key?: string) {
+  // A screen (the `place`-th), shown while it's the step's: it slides in from the end, out of
+  // focus and a little smaller, as the one before leaves towards the start.
+  function screen(place: number, content: React.ReactNode, key?: string) {
+    const shown = place === shownAt
+
     return (
       <div
         key={key}
         data-shown={shown}
         className={cn(
-          "flex min-h-0 flex-col transition-[opacity,translate,visibility]",
+          "flex min-h-0 flex-col transition-[opacity,translate,scale,filter,visibility] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none motion-reduce:filter-none",
           shown
-            ? "delay-200 duration-500"
-            : "invisible translate-y-2 opacity-0 duration-200"
+            ? "delay-200 duration-700"
+            : cn(
+                "invisible scale-95 opacity-0 blur-sm duration-300",
+                place > shownAt
+                  ? "translate-x-[8%] rtl:-translate-x-[8%]"
+                  : "-translate-x-[8%] rtl:translate-x-[8%]"
+              )
         )}
       >
         {content}
@@ -128,6 +163,7 @@ export function CandidatesDemo({
     <div
       data-testid="candidates-demo"
       data-step={step.name}
+      data-promo
       className="relative mx-auto w-full max-w-5xl"
     >
       <div className="absolute start-1/2 top-0 z-20 w-max -translate-x-1/2 -translate-y-2/3 rtl:translate-x-1/2">
@@ -140,70 +176,87 @@ export function CandidatesDemo({
       </div>
       <div className="w-full">
         <DemoPanel ref={ref}>
-          <DemoPointer
-            target={targets[point ?? ""] ?? null}
-            clicking={step.click === true}
-            click={index}
-          />
-          <DemoMicPrompt
-            open={["vAllow", "vPrompt", "vAimPrompt", "vPromptAllow"].includes(
-              step.name
-            )}
-            pressed={step.name === "vPromptAllow"}
-          />
-          {/* One fixed height for every screen of both modes, the tallest's (the voice screen
-              with Mute), so the page never moves as they change. */}
-          <div className="grid h-[54rem] grid-cols-[minmax(0,1fr)] grid-rows-[minmax(0,1fr)] p-2 pt-5 *:min-w-0 *:[grid-area:1/1] max-sm:h-[49rem] sm:p-5 lg:h-[38rem]">
-            {screen(
-              !voice && step.screen === "start",
-              <DemoInvitation
-                voice={false}
-                action={
-                  <DemoStartAction
-                    access={null}
-                    pledged={voice || after("cPledge")}
-                    pressed={step.name === "cStart"}
-                  />
-                }
+          {/* The camera: the screens, the pointer and the browser's prompt zoom together, cut at
+              the frame's inner edge (the screens reach out to it). */}
+          <div className="relative -m-3 flex flex-1 flex-col overflow-hidden rounded-[calc(var(--radius-xl)-1px)] max-sm:rounded-none">
+            <div
+              ref={camera}
+              style={{
+                transform: `translate(${view.x}px, ${view.y}px) scale(${view.scale})`,
+              }}
+              className="relative flex flex-1 flex-col p-3 transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none!"
+            >
+              <DemoPointer
+                target={targets[point ?? ""] ?? null}
+                clicking={step.click === true}
+                click={index}
               />
-            )}
-            {CLICK_QUESTIONS.map((question, at) => {
-              const shown = step.screen === `q${at}`
+              <DemoMicPrompt
+                open={[
+                  "vAllow",
+                  "vPrompt",
+                  "vAimPrompt",
+                  "vPromptAllow",
+                ].includes(step.name)}
+                pressed={step.name === "vPromptAllow"}
+              />
+              {/* One fixed height for every screen of both modes, the tallest's (the voice screen
+                  with Mute), so the page never moves as they change. */}
+              <div className="grid h-[54rem] grid-cols-[minmax(0,1fr)] grid-rows-[minmax(0,1fr)] p-2 pt-5 *:min-w-0 *:[grid-area:1/1] max-sm:h-[49rem] sm:p-5 lg:h-[38rem]">
+                {screen(
+                  0,
+                  <DemoInvitation
+                    voice={false}
+                    action={
+                      <DemoStartAction
+                        access={null}
+                        pledged={voice || after("cPledge")}
+                        pressed={step.name === "cStart"}
+                      />
+                    }
+                  />
+                )}
+                {CLICK_QUESTIONS.map((question, at) => {
+                  const shown = step.screen === `q${at}`
 
-              return screen(
-                shown,
-                <DemoClickSession
-                  question={question}
-                  exampleColors={exampleColors[at]}
-                  active={shown}
-                  // Unseen, a question keeps its picks, so it fades out as it was left.
-                  picked={shown ? step.picked : question.picks}
-                  pressed={step.name === `next${at}`}
-                />,
-                `q${at}`
-              )
-            })}
-            {screen(
-              voice && step.screen === "start",
-              <DemoInvitation
-                voice
-                action={
-                  <DemoStartAction
-                    access={accessAt(index)}
-                    pledged={voice && after("vPledge")}
-                    pressed={step.name === "vStart"}
+                  return screen(
+                    at + 1,
+                    <DemoClickSession
+                      question={question}
+                      exampleColors={exampleColors[at]}
+                      active={shown}
+                      // Unseen, a question keeps its picks, so it fades out as it was left.
+                      picked={shown ? step.picked : question.picks}
+                      pressed={step.name === `next${at}`}
+                    />,
+                    `q${at}`
+                  )
+                })}
+                {screen(
+                  CLICK_QUESTIONS.length + 1,
+                  <DemoInvitation
+                    voice
+                    action={
+                      <DemoStartAction
+                        access={accessAt(index)}
+                        pledged={voice && after("vPledge")}
+                        pressed={step.name === "vStart"}
+                      />
+                    }
                   />
-                }
-              />
-            )}
-            {screen(
-              voice && step.screen === "voice",
-              <DemoVoiceSession
-                active={voice && step.screen === "voice"}
-                status={status}
-                picked={voicePicked}
-              />
-            )}
+                )}
+                {screen(
+                  CLICK_QUESTIONS.length + 2,
+                  <DemoVoiceSession
+                    active={voice && step.screen === "voice"}
+                    status={status}
+                    picked={voicePicked}
+                  />
+                )}
+              </div>
+            </div>
+            {/* The click-mode interview finished, and the voice answer saved. */}
+            {BURSTS.includes(step.name) && <PromoBurst key={step.name} />}
           </div>
         </DemoPanel>
       </div>

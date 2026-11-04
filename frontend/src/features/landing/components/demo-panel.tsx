@@ -1,6 +1,13 @@
 // A button in a demo as the pointer clicks it: the real button's pressed look
 // (components/ui/button.tsx), shrunk and dimmed a little.
-export const DEMO_PRESSED = "translate-y-px scale-[0.97] opacity-80"
+// `demo-pressed` marks it for the create promo's glow (animations.css); elsewhere it does nothing.
+export const DEMO_PRESSED =
+  "demo-pressed translate-y-px scale-[0.97] opacity-80"
+
+// Something new in a promo arriving: up from a little smaller and out of focus (promo-pop,
+// animations.css); only with motion allowed.
+export const PROMO_POP =
+  "motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
 
 // A group of panels, laid out in a column.
 export const DEMO_GROUP = "flex flex-col gap-3"

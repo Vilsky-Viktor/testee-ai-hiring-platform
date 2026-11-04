@@ -82,7 +82,10 @@ function DemoClock({ running }: { running: boolean }) {
   }, [running, still])
 
   return (
-    <span className="flex items-center gap-1.5 font-medium">
+    <span
+      data-demo-target="clock"
+      className="flex items-center gap-1.5 font-medium"
+    >
       <TimerIcon className="size-4" />
       {clock(left)}
     </span>

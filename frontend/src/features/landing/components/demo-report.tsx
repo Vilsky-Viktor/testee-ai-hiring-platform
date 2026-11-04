@@ -5,6 +5,7 @@ import { CheckIcon } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 
 import { DemoAnswerPatterns } from "@/features/landing/components/demo-answer-patterns"
+import { PROMO_POP } from "@/features/landing/components/demo-panel"
 import { DemoReportActions } from "@/features/landing/components/demo-share"
 import { Dot } from "@/components/common/dot"
 import { GradeBlock, GradeCard } from "@/components/common/grade-card"
@@ -19,6 +20,7 @@ import {
   type DemoTopic,
 } from "@/config/reports-demo"
 import { WARNING_TONE } from "@/config/tones"
+import { useCountUp } from "@/hooks/use-count-up"
 import { useElementSize } from "@/hooks/use-element-size"
 import { formatPercent } from "@/lib/format"
 import { gradeTone } from "@/lib/grade-tone"
@@ -62,13 +64,16 @@ function reviewItem(topic: DemoTopic): ReviewItem | null {
  * their email, name and status with the report's actions (the share `pressed` in); the grade
  * card with whether they passed and their pledge; the note that people decide; what their
  * answers show, when anything stood out; then each topic with its signals and grade, and one of
- * its questions as they answered it. */
+ * its questions as they answered it. Once `active`, its parts pop in one after another and the
+ * grade counts up to the candidate's; back at 0 when not. */
 export function DemoReport({
   candidate,
+  active,
   scrolled,
   pressed,
 }: {
   candidate: DemoCandidate
+  active: boolean
   scrolled: number
   pressed: boolean
 }) {
@@ -85,6 +90,12 @@ export function DemoReport({
   const by = Math.min(room, scrolled)
   const signals =
     candidate.tab_leaves + candidate.copies + candidate.fast_answers
+  const grade = useCountUp(active ? (candidate.grade ?? 0) : 0).shown
+  // A part of the page, the `order`th to pop in.
+  const pop = (order: number) => ({
+    style: { animationDelay: `${250 + order * 90}ms` },
+    className: cn(active && PROMO_POP),
+  })
 
   return (
     <div ref={windowRef} className="relative min-h-0 flex-1 overflow-hidden">
@@ -93,7 +104,13 @@ export function DemoReport({
         style={{ transform: `translateY(${-by}px)` }}
         className="absolute inset-x-0 top-0 space-y-8 transition-transform duration-2000 ease-in-out motion-reduce:transition-none"
       >
-        <div className="flex flex-wrap items-center justify-between gap-4">
+        <div
+          style={pop(0).style}
+          className={cn(
+            "flex flex-wrap items-center justify-between gap-4",
+            pop(0).className
+          )}
+        >
           <div className="min-w-0 space-y-1">
             <p className="font-heading text-3xl font-medium tracking-tight break-all">
               {candidate.email}
@@ -107,28 +124,39 @@ export function DemoReport({
           </div>
           <DemoReportActions pressed={pressed ? "share" : null} />
         </div>
-        <GradeCard>
-          <GradeBlock
-            value={formatPercent(candidate.grade, locale)}
-            label={t("grade")}
-            tone={gradeTone(candidate.passed)}
-          />
-          <div className="flex flex-col justify-center gap-1 px-8 py-6 text-base max-sm:items-center">
-            <PassStatus passed={candidate.passed} passMark={DEMO_PASS_MARK} />
-            <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
-              <CheckIcon aria-hidden className="size-4 shrink-0" />
-              {report("pledged")}
-            </p>
-          </div>
-        </GradeCard>
-        <InfoCard className="text-sm">
-          {signals ? report("humanReviewSignals") : report("humanReview")}
-        </InfoCard>
+        <div {...pop(1)}>
+          <GradeCard>
+            <GradeBlock
+              value={formatPercent(
+                candidate.grade == null ? null : grade,
+                locale
+              )}
+              label={t("grade")}
+              tone={gradeTone(candidate.passed)}
+            />
+            <div className="flex flex-col justify-center gap-1 px-8 py-6 text-base max-sm:items-center">
+              <PassStatus passed={candidate.passed} passMark={DEMO_PASS_MARK} />
+              <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <CheckIcon aria-hidden className="size-4 shrink-0" />
+                {report("pledged")}
+              </p>
+            </div>
+          </GradeCard>
+        </div>
+        <div {...pop(2)}>
+          <InfoCard className="text-sm">
+            {signals ? report("humanReviewSignals") : report("humanReview")}
+          </InfoCard>
+        </div>
         {candidate.patterns && (
-          <DemoAnswerPatterns patterns={candidate.patterns} />
+          <div {...pop(3)}>
+            <DemoAnswerPatterns patterns={candidate.patterns} />
+          </div>
         )}
-        {candidate.topics?.map((topic) => (
-          <DemoTopicSection key={topic.title} topic={topic} />
+        {candidate.topics?.map((topic, index) => (
+          <div key={topic.title} {...pop(4 + index)}>
+            <DemoTopicSection topic={topic} />
+          </div>
         ))}
       </div>
     </div>

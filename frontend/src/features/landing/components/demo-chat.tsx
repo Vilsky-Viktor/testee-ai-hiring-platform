@@ -9,7 +9,10 @@ import {
 import { useLocale, useTranslations } from "next-intl"
 
 import { Caret } from "@/features/landing/components/caret"
-import { DEMO_PRESSED } from "@/features/landing/components/demo-panel"
+import {
+  DEMO_PRESSED,
+  PROMO_POP,
+} from "@/features/landing/components/demo-panel"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import {
   DEMO_CHAT,
@@ -54,7 +57,7 @@ function summaryOf(candidate: DemoCandidate) {
 
 /** A chat in WhatsApp, where "share" sends a report's text summary, drawn generically for the
  * landing: the app's name and the chat's, the `messages` sent so far (the latest at the bottom,
- * older ones scrolling off the top), and the message box with `typed` so far (a caret while
+ * older ones scrolling off the top, each popping in), and the message box with `typed` so far (a caret while
  * `typing`) and its send button (the pointer's "chatSend", pressed in while `pressed`). */
 export function DemoChat({
   messages,
@@ -87,7 +90,10 @@ export function DemoChat({
         {messages.map((message, index) => (
           <div
             key={index}
-            className="max-w-[92%] shrink-0 animate-in self-end rounded-xl rounded-ee-sm bg-background px-4 pt-3 pb-2 duration-300 fade-in slide-in-from-bottom-2 sm:max-w-sm"
+            className={cn(
+              "max-w-[92%] shrink-0 self-end rounded-xl rounded-ee-sm bg-background px-4 pt-3 pb-2 sm:max-w-sm",
+              PROMO_POP
+            )}
           >
             <p className="text-sm leading-relaxed whitespace-pre-line">
               {message.summary

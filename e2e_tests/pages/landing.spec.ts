@@ -63,13 +63,28 @@ test("every section shows, in order, within the window", { tag: "@phone" }, asyn
     const section = page.locator(`#${id}`);
     await section.scrollIntoViewIfNeeded();
     await expect(section.getByRole("heading").first()).not.toBeEmpty();
-    // Nothing in it reaches past the window's edges: the page never scrolls sideways.
+    // Nothing in it reaches past the window's edges: the page never scrolls sideways. A part cut
+    // off by a box inside the window (a demo's camera zoomed in) shows nothing past it.
     const outside = await section.evaluate((element, right) => {
+      const beyond = (box: DOMRect) => box.left < -1 || box.right > right + 1;
+      const clipped = (part: Element) => {
+        for (let box = part.parentElement; box; box = box === element ? null : box.parentElement) {
+          if (
+            /hidden|clip/.test(getComputedStyle(box).overflowX) &&
+            !beyond(box.getBoundingClientRect())
+          ) {
+            return true;
+          }
+        }
+
+        return false;
+      };
+
       return [...element.querySelectorAll("*")]
         .filter((part) => {
           const box = part.getBoundingClientRect();
 
-          return box.width > 0 && (box.left < -1 || box.right > right + 1);
+          return box.width > 0 && beyond(box) && !clipped(part);
         })
         .map((part) => part.outerHTML.slice(0, 120));
     }, width);

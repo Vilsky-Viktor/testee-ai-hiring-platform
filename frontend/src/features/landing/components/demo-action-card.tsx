@@ -25,7 +25,10 @@ export function DemoActionCard({
   const pages = useTranslations("assistant.pages")
 
   return (
-    <li className={`space-y-3 ${CARD} text-sm`}>
+    // Popping in as it comes, with motion allowed (the "just ask" promo).
+    <li
+      className={`space-y-3 ${CARD} text-sm motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]`}
+    >
       <div className="space-y-0.5">
         <p className="font-medium">{t("titles.invite_candidate")}</p>
         <p>{ASK_AGENT_INTERVIEW}</p>

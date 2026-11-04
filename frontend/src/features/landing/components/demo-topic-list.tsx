@@ -14,7 +14,7 @@ import {
 /** The topic review's list (features/generation/components/topic-review.tsx), small: the first
  * `shown` topics, the edited one with its subtopic once `added` and its editor in its place
  * while `editing` (`typed` so far, `typing`, the button `pressed`), and the topic the AI added
- * once `applied`. */
+ * once `applied`. Each topic pops in as it shows (promo-pop, animations.css). */
 export function DemoTopicList({
   aimed = false,
   shown,
@@ -40,7 +40,10 @@ export function DemoTopicList({
       {DEMO_TOPICS.slice(0, shown).map((topic) => {
         if (topic.name !== DEMO_EDITED) {
           return (
-            <li key={topic.name}>
+            <li
+              key={topic.name}
+              className="motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
+            >
               <TopicCard name={topic.name} subtopics={topic.subtopics} />
             </li>
           )
@@ -52,7 +55,10 @@ export function DemoTopicList({
 
         // The edited topic: its row and its editor in one place, as tall as the taller.
         return (
-          <li key={topic.name} className="grid *:[grid-area:1/1]">
+          <li
+            key={topic.name}
+            className="grid *:[grid-area:1/1] motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
+          >
             <span className={cn("grid items-center", editing && "invisible")}>
               <TopicCard
                 name={topic.name}
@@ -74,7 +80,7 @@ export function DemoTopicList({
         )
       })}
       {applied && (
-        <li>
+        <li className="motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]">
           <TopicCard
             name={DEMO_NEW_TOPIC.name}
             subtopics={DEMO_NEW_TOPIC.subtopics}

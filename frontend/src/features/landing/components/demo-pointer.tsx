@@ -8,7 +8,8 @@ import { type RefObject, useEffect, useRef, useState } from "react"
  * the primary colour; hidden while there's no target, and with reduced motion. Each click is keyed
  * by `click`, so the ring plays again for the next one. Measured from the page, so it finds its
  * target at any width, and again whenever a transition in the panel ends, so a target that was
- * still moving into place (a window opening) is reached where it settles. */
+ * still moving into place (a window opening) is reached where it settles. A panel drawn scaled
+ * (the create promo's camera) is measured back to its own size, so the pointer stays on target. */
 export function DemoPointer({
   target,
   clicking,
@@ -43,8 +44,10 @@ export function DemoPointer({
           return null
         }
 
-        const x = goal.left + goal.width / 2 - box.left
-        const y = goal.top + goal.height / 2 - box.top
+        // The panel's own size over its drawn one: 1 unless it's scaled.
+        const ratio = box.width ? panel!.offsetWidth / box.width : 1
+        const x = (goal.left + goal.width / 2 - box.left) * ratio
+        const y = (goal.top + goal.height / 2 - box.top) * ratio
 
         // Unmoved, it stays as it is (a transition elsewhere ending re-measures it).
         if (
@@ -102,6 +105,7 @@ export function DemoPointer({
       {clicking && (
         <span
           key={click}
+          data-ripple
           className="absolute -top-4 -left-4 size-8 animate-[ripple_0.5s_ease-out_forwards] rounded-full bg-primary/25"
         />
       )}

@@ -1,7 +1,9 @@
 "use client"
 
+import { cn } from "cn"
 import { HashIcon, PlusIcon, SendHorizontalIcon, UsersIcon } from "lucide-react"
 
+import { PROMO_POP } from "@/features/landing/components/demo-panel"
 import { DemoSlackSidebar } from "@/features/landing/components/demo-slack-sidebar"
 import { Wordmark } from "@/components/common/wordmark"
 import { useElementSize } from "@/hooks/use-element-size"
@@ -31,8 +33,15 @@ function finishedText(place: number) {
  * its name and members; testee's messages, each from the app (testee's mark as its square
  * picture, its name, the APP tag and the time) with the blocks testee sends (a plain-text section
  * and an "Open in testee" button); and the message box. Scrolled to the newest message once
- * `scrolled`, gliding there. */
-export function DemoSlackChannel({ scrolled }: { scrolled: boolean }) {
+ * `scrolled`, gliding there. Each time the channel is `shown`, its messages pop in one after
+ * another. */
+export function DemoSlackChannel({
+  shown,
+  scrolled,
+}: {
+  shown: boolean
+  scrolled: boolean
+}) {
   const { ref: windowRef, size: windowSize } = useElementSize<HTMLDivElement>()
   const { ref: listRef, size: listSize } = useElementSize<HTMLDivElement>()
   const room =
@@ -67,8 +76,12 @@ export function DemoSlackChannel({ scrolled }: { scrolled: boolean }) {
             style={{ transform: `translateY(${scrolled ? -room : 0}px)` }}
             className="absolute inset-x-0 top-0 space-y-1 py-3 transition-transform duration-3000 ease-in-out motion-reduce:transition-none"
           >
-            {DEMO_SLACK_FINISHED.map(({ candidate, time }) => (
-              <div key={candidate} className="flex gap-2.5 px-4 py-2">
+            {DEMO_SLACK_FINISHED.map(({ candidate, time }, index) => (
+              <div
+                key={candidate}
+                style={{ animationDelay: `${250 + index * 80}ms` }}
+                className={cn("flex gap-2.5 px-4 py-2", shown && PROMO_POP)}
+              >
                 <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-surface">
                   <Wordmark short className="text-lg leading-none" />
                 </span>

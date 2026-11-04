@@ -45,7 +45,10 @@ export function DemoVoiceSession({
       {/* On phones, where it's stacked, what doesn't fit the picture is cut off above the
           footer. */}
       <div className="grid min-h-0 flex-1 content-start gap-6 overflow-hidden lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:items-start lg:gap-10">
-        <div className="flex flex-col items-center gap-8 text-center *:w-full max-sm:gap-6">
+        <div
+          data-demo-target="voice"
+          className="flex flex-col items-center gap-8 text-center *:w-full max-sm:gap-6"
+        >
           <MiraWave
             waveRef={waves.mira}
             status={status}
@@ -58,6 +61,7 @@ export function DemoVoiceSession({
         <DemoQuestionCard
           question={VOICE_QUESTION}
           picked={picked ? VOICE_QUESTION.picks : []}
+          appear={active}
         />
       </div>
       <DemoSessionFooter

@@ -7,7 +7,8 @@ import { WritingProgress } from "@/components/common/writing-progress"
 
 /** The questions being written, as the generation page shows it (features/generation/
  * components/generation-progress.tsx) at its own size: testee's loading mark, the page's title
- * and note, and the real progress, `ready` of `topics` topics done, `questions` a topic. */
+ * and note, and the real progress, `ready` of `topics` topics done, `questions` a topic: it bumps
+ * as each topic is done. */
 export function DemoGeneration({
   topics,
   ready,
@@ -28,14 +29,19 @@ export function DemoGeneration({
         </p>
         <p className="text-base text-muted-foreground">{t("writingNote")}</p>
       </div>
-      <WritingProgress
-        progress={{
-          done: ready * questions,
-          total: topics * questions,
-          topics,
-          topics_ready: ready,
-        }}
-      />
+      <div
+        key={ready}
+        className="w-full motion-safe:animate-[promo-tick_0.4s_ease-out]"
+      >
+        <WritingProgress
+          progress={{
+            done: ready * questions,
+            total: topics * questions,
+            topics,
+            topics_ready: ready,
+          }}
+        />
+      </div>
     </div>
   )
 }
