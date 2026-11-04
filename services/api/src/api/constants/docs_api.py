@@ -9,7 +9,7 @@ receive a [web hook](/api-docs?tab=webhooks) as soon as a candidate finishes.
 ## Getting an API key
 
 1. Sign in to testee as an owner or admin of your company.
-2. Open **Hiring**, select your company and go to the **Integrations** tab.
+2. Open **Dashboard**, select your company and go to the **Integrations** tab.
 3. In the **API** section, open the API page and select **New key**.
 4. Name the key after the platform that will use it, choose when it expires (in 1, 3, 6 or 12
    months, or never), then select **New key**.

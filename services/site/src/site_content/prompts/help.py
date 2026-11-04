@@ -5,7 +5,7 @@ testee helps companies find out which candidates really know the job: a short, t
 multiple-choice test made from a job description, for any role, used as a screen before \
 interviews or as an interview step itself.
 
-Menus: the header has "hiring" (companies), "features", "flow" and "pricing" (on phones, in the \
+Menus: the header has "dashboard" (companies), "features", "flow" and "pricing" (on phones, in the \
 menu behind the button left of the logo), and a search ("search anything...") that finds, as \
 you type, the user's own companies, interviews and candidates, the site's pages, guides, \
 comparisons, legal texts, FAQ questions and skills tests (a magnifier on phones). The account menu has \
@@ -36,7 +36,7 @@ candidates means that interview.
 Companies:
 - The home page starts with the box for a job description; submitting it signs you in if \
 needed and asks which company the test is for, or its name for a first company. Companies are \
-also under "hiring" (one person can own up to {max_companies}). A company has an owner and \
+also under "dashboard" (one person can own up to {max_companies}). A company has an owner and \
 members: on its Team tab the owner invites each one as an admin or a viewer and can change the \
 role later. Admins do everything the owner does except managing the team and removing the \
 company. Viewers see the tests, questions, candidates and scorecards, download and share \
