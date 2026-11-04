@@ -9,6 +9,8 @@ intent is a reaction (Mira asks again).
 
     evals/run.sh rounds voice_answers_test.py --label base     # --repeat 2, --only en01,de04
     evals/run.sh rounds voice_answers_test.py --hearing live --label streamed
+    evals/run.sh rounds voice_answers_test.py --dataset voice_hearing.json --label new-langs
+    evals/run.sh rounds voice_answers_test.py --dataset voice_hearing.json --hearing elevenlabs
     evals/run.sh rounds voice_answers_test.py --hearing live --live-model gpt-live-transcribe \
         --delay low --label live-low
 
@@ -16,7 +18,10 @@ MODEL and EFFORT test another matching model. `--hearing live` streams the spoke
 mode does while the candidate speaks (voice_live.py: rounds' realtime transcription session, in
 real time; `--live-model` and its `--delay` try another model) instead of sending whole
 recordings, and reports how long the final text took after each answer's end; `--no-keywords`
-leaves out the recognition hints. Costs about a cent a repeat (gpt-live-transcribe: about five)."""
+leaves out the recognition hints. `--hearing elevenlabs` hears the recordings with ElevenLabs'
+Scribe instead (elevenlabs_hearing.py), to compare; `--dataset voice_hearing.json` takes the
+languages voice mode doesn't offer yet. Costs about a cent a repeat (gpt-live-transcribe: about
+five)."""
 
 import argparse
 import asyncio
@@ -25,7 +30,10 @@ import os
 import time
 from collections import defaultdict
 
+import httpx
 from common import DATASETS, RESULTS, cost, load, run_record, save
+from elevenlabs_hearing import MODEL as SCRIBE
+from elevenlabs_hearing import hear_elevenlabs
 from openai import OpenAIError
 from stats import share
 from testee_common.ai.llm import audio_cost
@@ -56,6 +64,7 @@ SOUND = {
     "picks": [],
 }
 MAX_CONCURRENCY = 8
+DEFAULT_DATASET = "voice_answers.json"
 
 
 def question_of(data: dict, item: dict) -> NextQuestion:
@@ -88,6 +97,17 @@ async def hear(data: dict, item: dict, args) -> tuple[str, float, float | None]:
             return None, 0.0, None
 
     audio = path.read_bytes()
+
+    if args.hearing == "elevenlabs":
+        try:
+            text, spent = await hear_elevenlabs(audio, item["language"], keywords)
+        except httpx.HTTPError as error:
+            print(f"- ElevenLabs hearing failed {item['id']}: {type(error).__name__}")
+
+            return None, 0.0, None
+
+        return text, spent, None
+
     model = settings.transcribe_model
     result = await speech_to_text(
         get_transcribe_client(),
@@ -169,13 +189,15 @@ def scores_of(rows: list[dict]) -> dict:
 
 
 async def main(args) -> None:
-    data = load(DATASETS / "voice_answers.json")
+    data = load(DATASETS / args.dataset)
     items = [i for i in data["items"] if not args.only or i["id"] in args.only.split(",")]
     slots = asyncio.Semaphore(MAX_CONCURRENCY)
+    # The sounds are heard as a question of voice_answers.json's.
     sounds = [
         {**SOUND, **sound}
         for sound in load(DATASETS / "voice_sounds.json")["items"]
-        if not args.only or sound["id"] in args.only.split(",")
+        if (not args.only or sound["id"] in args.only.split(","))
+        and args.dataset == DEFAULT_DATASET
     ]
     jobs = [(item, False) for item in items] + [(i, True) for i in items if "spoken" in i]
     jobs += [(sound, True) for sound in sounds]
@@ -195,11 +217,14 @@ async def main(args) -> None:
         f"{args.live_model} ({args.delay or 'no delay'}"
         f"{', no keywords' if args.no_keywords else ''}, streamed)"
         if args.hearing == "live"
+        else SCRIBE
+        if args.hearing == "elevenlabs"
         else settings.transcribe_model
     )
     run = run_record(
         model=f"{settings.voice_match_model} ({settings.voice_match_reasoning_effort}), "
         f"hearing {hearing}",
+        dataset=args.dataset,
         repeat=args.repeat,
         scores=scores,
         cost=spent,
@@ -238,7 +263,10 @@ if __name__ == "__main__":
     parser.add_argument("--label", default="run")
     parser.add_argument("--repeat", type=int, default=2)
     parser.add_argument("--only", default="")
-    parser.add_argument("--hearing", choices=("recording", "live"), default="recording")
+    parser.add_argument("--dataset", default=DEFAULT_DATASET)
+    parser.add_argument(
+        "--hearing", choices=("recording", "live", "elevenlabs"), default="recording"
+    )
     parser.add_argument("--live-model", default=settings.transcribe_model)
     parser.add_argument("--delay", default="")
     parser.add_argument("--no-keywords", action="store_true")

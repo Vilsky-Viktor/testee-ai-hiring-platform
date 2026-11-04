@@ -1,0 +1,3375 @@
+{
+ "about": "Made-up spoken answers to multiple-choice questions in the 17 languages voice mode doesn't offer yet (all of the interface's but English, Spanish, German, French, Portuguese and Italian), to measure how well speech-to-text hears them before any is added: per language, one single-answer and one select-all question and ten answers, all spoken: a letter alone, a letter after a word ('option C'), a read option, a position, two letters, two read options, a yes and a no to a waiting choice, a change while waiting ('no, D'), and an undecided trap. Read aloud by a native-sounding voice, half with noise (build_voice_answers.py --dataset voice_hearing.json), heard by OpenAI or ElevenLabs (voice_answers_test.py --hearing), then matched by rounds' own call; graded by code. Hand-written.",
+ "built": "2026-11-04 by hand; audio gpt-realtime-2.1-mini",
+ "model": "gpt-realtime-2.1-mini",
+ "questions": {
+  "ar1": {
+   "language": "ar",
+   "text": "ما مقياس النزعة المركزية الأقل تأثرًا بالقيم المتطرفة؟",
+   "options": [
+    "المتوسط الحسابي",
+    "الوسيط",
+    "المدى",
+    "الانحراف المعياري"
+   ],
+   "multi": false
+  },
+  "ar2": {
+   "language": "ar",
+   "text": "أيٌّ مما يلي أنظمة للتحكم في الإصدارات؟",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "he1": {
+   "language": "he",
+   "text": "איזה מדד של נטייה מרכזית מושפע הכי פחות מערכים קיצוניים?",
+   "options": [
+    "הממוצע",
+    "החציון",
+    "הטווח",
+    "סטיית התקן"
+   ],
+   "multi": false
+  },
+  "he2": {
+   "language": "he",
+   "text": "אילו מהבאים הן מערכות לניהול גרסאות?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "fa1": {
+   "language": "fa",
+   "text": "کدام شاخص گرایش مرکزی کمترین تأثیر را از مقادیر پرت می‌گیرد؟",
+   "options": [
+    "میانگین",
+    "میانه",
+    "دامنه",
+    "انحراف معیار"
+   ],
+   "multi": false
+  },
+  "fa2": {
+   "language": "fa",
+   "text": "کدام‌یک از این‌ها سیستم کنترل نسخه هستند؟",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "hi1": {
+   "language": "hi",
+   "text": "केंद्रीय प्रवृत्ति का कौन-सा माप चरम मानों से सबसे कम प्रभावित होता है?",
+   "options": [
+    "माध्य",
+    "माध्यिका",
+    "परास",
+    "मानक विचलन"
+   ],
+   "multi": false
+  },
+  "hi2": {
+   "language": "hi",
+   "text": "इनमें से कौन-से वर्ज़न कंट्रोल सिस्टम हैं?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "ja1": {
+   "language": "ja",
+   "text": "外れ値の影響を最も受けにくい代表値はどれですか？",
+   "options": [
+    "平均値",
+    "中央値",
+    "範囲",
+    "標準偏差"
+   ],
+   "multi": false
+  },
+  "ja2": {
+   "language": "ja",
+   "text": "次のうち、バージョン管理システムはどれですか？",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "ko1": {
+   "language": "ko",
+   "text": "극단값의 영향을 가장 적게 받는 대푯값은 무엇입니까?",
+   "options": [
+    "평균",
+    "중앙값",
+    "범위",
+    "표준편차"
+   ],
+   "multi": false
+  },
+  "ko2": {
+   "language": "ko",
+   "text": "다음 중 버전 관리 시스템은 무엇입니까?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "zh1": {
+   "language": "zh",
+   "text": "哪种集中趋势的量度受极端值影响最小？",
+   "options": [
+    "平均数",
+    "中位数",
+    "极差",
+    "标准差"
+   ],
+   "multi": false
+  },
+  "zh2": {
+   "language": "zh",
+   "text": "以下哪些是版本控制系统？",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "th1": {
+   "language": "th",
+   "text": "ค่ากลางใดได้รับผลกระทบจากค่าสุดโต่งน้อยที่สุด",
+   "options": [
+    "ค่าเฉลี่ย",
+    "มัธยฐาน",
+    "พิสัย",
+    "ส่วนเบี่ยงเบนมาตรฐาน"
+   ],
+   "multi": false
+  },
+  "th2": {
+   "language": "th",
+   "text": "ข้อใดเป็นระบบควบคุมเวอร์ชัน",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "vi1": {
+   "language": "vi",
+   "text": "Số đo xu hướng trung tâm nào ít bị ảnh hưởng nhất bởi các giá trị ngoại lai?",
+   "options": [
+    "Trung bình cộng",
+    "Trung vị",
+    "Khoảng biến thiên",
+    "Độ lệch chuẩn"
+   ],
+   "multi": false
+  },
+  "vi2": {
+   "language": "vi",
+   "text": "Những công cụ nào sau đây là hệ thống quản lý phiên bản?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "id1": {
+   "language": "id",
+   "text": "Ukuran pemusatan data mana yang paling sedikit dipengaruhi oleh nilai ekstrem?",
+   "options": [
+    "Rata-rata",
+    "Median",
+    "Jangkauan",
+    "Simpangan baku"
+   ],
+   "multi": false
+  },
+  "id2": {
+   "language": "id",
+   "text": "Manakah yang merupakan sistem kontrol versi?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "fil1": {
+   "language": "fil",
+   "text": "Aling sukatan ng central tendency ang pinakakaunting naaapektuhan ng matitinding halaga?",
+   "options": [
+    "Ang mean",
+    "Ang median",
+    "Ang range",
+    "Ang standard deviation"
+   ],
+   "multi": false
+  },
+  "fil2": {
+   "language": "fil",
+   "text": "Alin sa mga ito ang mga version control system?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "et1": {
+   "language": "et",
+   "text": "Milline keskväärtuse näitaja on äärmuslikest väärtustest kõige vähem mõjutatud?",
+   "options": [
+    "Aritmeetiline keskmine",
+    "Mediaan",
+    "Haare",
+    "Standardhälve"
+   ],
+   "multi": false
+  },
+  "et2": {
+   "language": "et",
+   "text": "Millised neist on versioonihaldussüsteemid?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "nl1": {
+   "language": "nl",
+   "text": "Welke centrummaat wordt het minst beïnvloed door extreme waarden?",
+   "options": [
+    "Het gemiddelde",
+    "De mediaan",
+    "De spreidingsbreedte",
+    "De standaardafwijking"
+   ],
+   "multi": false
+  },
+  "nl2": {
+   "language": "nl",
+   "text": "Welke hiervan zijn versiebeheersystemen?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "pl1": {
+   "language": "pl",
+   "text": "Która miara tendencji centralnej jest najmniej wrażliwa na wartości skrajne?",
+   "options": [
+    "Średnia arytmetyczna",
+    "Mediana",
+    "Rozstęp",
+    "Odchylenie standardowe"
+   ],
+   "multi": false
+  },
+  "pl2": {
+   "language": "pl",
+   "text": "Które z poniższych to systemy kontroli wersji?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "ru1": {
+   "language": "ru",
+   "text": "Какая мера центральной тенденции меньше всего зависит от выбросов?",
+   "options": [
+    "Среднее арифметическое",
+    "Медиана",
+    "Размах",
+    "Стандартное отклонение"
+   ],
+   "multi": false
+  },
+  "ru2": {
+   "language": "ru",
+   "text": "Какие из этих систем — системы контроля версий?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "tr1": {
+   "language": "tr",
+   "text": "Uç değerlerden en az etkilenen merkezi eğilim ölçüsü hangisidir?",
+   "options": [
+    "Aritmetik ortalama",
+    "Medyan",
+    "Açıklık",
+    "Standart sapma"
+   ],
+   "multi": false
+  },
+  "tr2": {
+   "language": "tr",
+   "text": "Bunlardan hangileri sürüm kontrol sistemidir?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  },
+  "uk1": {
+   "language": "uk",
+   "text": "Яка міра центральної тенденції найменше залежить від викидів?",
+   "options": [
+    "Середнє арифметичне",
+    "Медіана",
+    "Розмах",
+    "Стандартне відхилення"
+   ],
+   "multi": false
+  },
+  "uk2": {
+   "language": "uk",
+   "text": "Які з цих систем є системами контролю версій?",
+   "options": [
+    "Git",
+    "Mercurial",
+    "Docker",
+    "Subversion"
+   ],
+   "multi": true
+  }
+ },
+ "items": [
+  {
+   "id": "ar01",
+   "language": "ar",
+   "question": "ar1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it naturally, as a native Arabic speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ar02",
+   "language": "ar",
+   "question": "ar1",
+   "said": "الخيار C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it quickly and casually, as a native Arabic speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ar03",
+   "language": "ar",
+   "question": "ar1",
+   "said": "الانحراف المعياري",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it slowly and clearly, as a native Arabic speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ar04",
+   "language": "ar",
+   "question": "ar1",
+   "said": "الأول",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it hesitantly, as a native Arabic speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ar05",
+   "language": "ar",
+   "question": "ar2",
+   "said": "A و C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it naturally, as a native Arabic speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ar06",
+   "language": "ar",
+   "question": "ar2",
+   "said": "Mercurial و Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it quickly and casually, as a native Arabic speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ar07",
+   "language": "ar",
+   "question": "ar2",
+   "said": "نعم",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it slowly and clearly, as a native Arabic speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ar08",
+   "language": "ar",
+   "question": "ar1",
+   "said": "لا",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it hesitantly, as a native Arabic speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ar09",
+   "language": "ar",
+   "question": "ar1",
+   "said": "لا، D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it naturally, as a native Arabic speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ar10",
+   "language": "ar",
+   "question": "ar1",
+   "said": "ربما B، وربما C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it quickly and casually, as a native Arabic speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "he01",
+   "language": "he",
+   "question": "he1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it quickly and casually, as a native Hebrew speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "he02",
+   "language": "he",
+   "question": "he1",
+   "said": "אפשרות C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it slowly and clearly, as a native Hebrew speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "he03",
+   "language": "he",
+   "question": "he1",
+   "said": "סטיית התקן",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it hesitantly, as a native Hebrew speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "he04",
+   "language": "he",
+   "question": "he1",
+   "said": "הראשונה",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it naturally, as a native Hebrew speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "he05",
+   "language": "he",
+   "question": "he2",
+   "said": "A ו-C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it quickly and casually, as a native Hebrew speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "he06",
+   "language": "he",
+   "question": "he2",
+   "said": "Mercurial ו-Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it slowly and clearly, as a native Hebrew speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "he07",
+   "language": "he",
+   "question": "he2",
+   "said": "כן",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it hesitantly, as a native Hebrew speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "he08",
+   "language": "he",
+   "question": "he1",
+   "said": "לא",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it naturally, as a native Hebrew speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "he09",
+   "language": "he",
+   "question": "he1",
+   "said": "לא, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it quickly and casually, as a native Hebrew speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "he10",
+   "language": "he",
+   "question": "he1",
+   "said": "אולי B, אולי C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it slowly and clearly, as a native Hebrew speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fa01",
+   "language": "fa",
+   "question": "fa1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it slowly and clearly, as a native Persian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fa02",
+   "language": "fa",
+   "question": "fa1",
+   "said": "گزینه C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it hesitantly, as a native Persian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "fa03",
+   "language": "fa",
+   "question": "fa1",
+   "said": "انحراف معیار",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it naturally, as a native Persian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fa04",
+   "language": "fa",
+   "question": "fa1",
+   "said": "اولی",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it quickly and casually, as a native Persian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "fa05",
+   "language": "fa",
+   "question": "fa2",
+   "said": "A و C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it slowly and clearly, as a native Persian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fa06",
+   "language": "fa",
+   "question": "fa2",
+   "said": "Mercurial و Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it hesitantly, as a native Persian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "fa07",
+   "language": "fa",
+   "question": "fa2",
+   "said": "بله",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it naturally, as a native Persian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fa08",
+   "language": "fa",
+   "question": "fa1",
+   "said": "نه",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it quickly and casually, as a native Persian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "fa09",
+   "language": "fa",
+   "question": "fa1",
+   "said": "نه، D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it slowly and clearly, as a native Persian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fa10",
+   "language": "fa",
+   "question": "fa1",
+   "said": "شاید B، شاید C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it hesitantly, as a native Persian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "hi01",
+   "language": "hi",
+   "question": "hi1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it hesitantly, as a native Hindi speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "hi02",
+   "language": "hi",
+   "question": "hi1",
+   "said": "ऑप्शन C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it naturally, as a native Hindi speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "hi03",
+   "language": "hi",
+   "question": "hi1",
+   "said": "मानक विचलन",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it quickly and casually, as a native Hindi speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "hi04",
+   "language": "hi",
+   "question": "hi1",
+   "said": "पहला वाला",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it slowly and clearly, as a native Hindi speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "hi05",
+   "language": "hi",
+   "question": "hi2",
+   "said": "A और C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it hesitantly, as a native Hindi speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "hi06",
+   "language": "hi",
+   "question": "hi2",
+   "said": "Mercurial और Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it naturally, as a native Hindi speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "hi07",
+   "language": "hi",
+   "question": "hi2",
+   "said": "हाँ",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it quickly and casually, as a native Hindi speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "hi08",
+   "language": "hi",
+   "question": "hi1",
+   "said": "नहीं",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it slowly and clearly, as a native Hindi speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "hi09",
+   "language": "hi",
+   "question": "hi1",
+   "said": "नहीं, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it hesitantly, as a native Hindi speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "hi10",
+   "language": "hi",
+   "question": "hi1",
+   "said": "शायद B, शायद C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it naturally, as a native Hindi speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ja01",
+   "language": "ja",
+   "question": "ja1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it naturally, as a native Japanese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ja02",
+   "language": "ja",
+   "question": "ja1",
+   "said": "選択肢C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it quickly and casually, as a native Japanese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ja03",
+   "language": "ja",
+   "question": "ja1",
+   "said": "標準偏差",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it slowly and clearly, as a native Japanese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ja04",
+   "language": "ja",
+   "question": "ja1",
+   "said": "最初のもの",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it hesitantly, as a native Japanese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ja05",
+   "language": "ja",
+   "question": "ja2",
+   "said": "AとC",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it naturally, as a native Japanese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ja06",
+   "language": "ja",
+   "question": "ja2",
+   "said": "MercurialとSubversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it quickly and casually, as a native Japanese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ja07",
+   "language": "ja",
+   "question": "ja2",
+   "said": "はい",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it slowly and clearly, as a native Japanese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ja08",
+   "language": "ja",
+   "question": "ja1",
+   "said": "いいえ",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it hesitantly, as a native Japanese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ja09",
+   "language": "ja",
+   "question": "ja1",
+   "said": "いいえ、D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it naturally, as a native Japanese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ja10",
+   "language": "ja",
+   "question": "ja1",
+   "said": "BかCか迷っています",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it quickly and casually, as a native Japanese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ko01",
+   "language": "ko",
+   "question": "ko1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it quickly and casually, as a native Korean speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ko02",
+   "language": "ko",
+   "question": "ko1",
+   "said": "C번이요",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it slowly and clearly, as a native Korean speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ko03",
+   "language": "ko",
+   "question": "ko1",
+   "said": "표준편차",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it hesitantly, as a native Korean speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ko04",
+   "language": "ko",
+   "question": "ko1",
+   "said": "첫 번째",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it naturally, as a native Korean speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ko05",
+   "language": "ko",
+   "question": "ko2",
+   "said": "A랑 C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it quickly and casually, as a native Korean speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ko06",
+   "language": "ko",
+   "question": "ko2",
+   "said": "Mercurial이랑 Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it slowly and clearly, as a native Korean speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ko07",
+   "language": "ko",
+   "question": "ko2",
+   "said": "네",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it hesitantly, as a native Korean speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ko08",
+   "language": "ko",
+   "question": "ko1",
+   "said": "아니요",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it naturally, as a native Korean speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ko09",
+   "language": "ko",
+   "question": "ko1",
+   "said": "아니요, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it quickly and casually, as a native Korean speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ko10",
+   "language": "ko",
+   "question": "ko1",
+   "said": "B인지 C인지 모르겠어요",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it slowly and clearly, as a native Korean speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "zh01",
+   "language": "zh",
+   "question": "zh1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it slowly and clearly, as a native Mandarin Chinese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "zh02",
+   "language": "zh",
+   "question": "zh1",
+   "said": "选C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it hesitantly, as a native Mandarin Chinese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "zh03",
+   "language": "zh",
+   "question": "zh1",
+   "said": "标准差",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it naturally, as a native Mandarin Chinese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "zh04",
+   "language": "zh",
+   "question": "zh1",
+   "said": "第一个",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it quickly and casually, as a native Mandarin Chinese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "zh05",
+   "language": "zh",
+   "question": "zh2",
+   "said": "A和C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it slowly and clearly, as a native Mandarin Chinese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "zh06",
+   "language": "zh",
+   "question": "zh2",
+   "said": "Mercurial和Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it hesitantly, as a native Mandarin Chinese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "zh07",
+   "language": "zh",
+   "question": "zh2",
+   "said": "对",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it naturally, as a native Mandarin Chinese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "zh08",
+   "language": "zh",
+   "question": "zh1",
+   "said": "不对",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it quickly and casually, as a native Mandarin Chinese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "zh09",
+   "language": "zh",
+   "question": "zh1",
+   "said": "不对，D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it slowly and clearly, as a native Mandarin Chinese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "zh10",
+   "language": "zh",
+   "question": "zh1",
+   "said": "可能是B，也可能是C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it hesitantly, as a native Mandarin Chinese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "th01",
+   "language": "th",
+   "question": "th1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it hesitantly, as a native Thai speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "th02",
+   "language": "th",
+   "question": "th1",
+   "said": "ข้อ C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it naturally, as a native Thai speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "th03",
+   "language": "th",
+   "question": "th1",
+   "said": "ส่วนเบี่ยงเบนมาตรฐาน",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it quickly and casually, as a native Thai speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "th04",
+   "language": "th",
+   "question": "th1",
+   "said": "ข้อแรก",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it slowly and clearly, as a native Thai speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "th05",
+   "language": "th",
+   "question": "th2",
+   "said": "A กับ C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it hesitantly, as a native Thai speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "th06",
+   "language": "th",
+   "question": "th2",
+   "said": "Mercurial กับ Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it naturally, as a native Thai speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "th07",
+   "language": "th",
+   "question": "th2",
+   "said": "ใช่",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it quickly and casually, as a native Thai speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "th08",
+   "language": "th",
+   "question": "th1",
+   "said": "ไม่ใช่",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it slowly and clearly, as a native Thai speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "th09",
+   "language": "th",
+   "question": "th1",
+   "said": "ไม่ใช่ เอาข้อ D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it hesitantly, as a native Thai speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "th10",
+   "language": "th",
+   "question": "th1",
+   "said": "อาจจะ B หรืออาจจะ C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it naturally, as a native Thai speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "vi01",
+   "language": "vi",
+   "question": "vi1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it naturally, as a native Vietnamese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "vi02",
+   "language": "vi",
+   "question": "vi1",
+   "said": "Đáp án C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it quickly and casually, as a native Vietnamese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "vi03",
+   "language": "vi",
+   "question": "vi1",
+   "said": "Độ lệch chuẩn",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it slowly and clearly, as a native Vietnamese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "vi04",
+   "language": "vi",
+   "question": "vi1",
+   "said": "Cái đầu tiên",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it hesitantly, as a native Vietnamese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "vi05",
+   "language": "vi",
+   "question": "vi2",
+   "said": "A và C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it naturally, as a native Vietnamese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "vi06",
+   "language": "vi",
+   "question": "vi2",
+   "said": "Mercurial và Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it quickly and casually, as a native Vietnamese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "vi07",
+   "language": "vi",
+   "question": "vi2",
+   "said": "Đúng",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it slowly and clearly, as a native Vietnamese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "vi08",
+   "language": "vi",
+   "question": "vi1",
+   "said": "Không",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it hesitantly, as a native Vietnamese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "vi09",
+   "language": "vi",
+   "question": "vi1",
+   "said": "Không, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it naturally, as a native Vietnamese speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "vi10",
+   "language": "vi",
+   "question": "vi1",
+   "said": "Có thể là B, cũng có thể là C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it quickly and casually, as a native Vietnamese speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "id01",
+   "language": "id",
+   "question": "id1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it quickly and casually, as a native Indonesian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "id02",
+   "language": "id",
+   "question": "id1",
+   "said": "Opsi C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it slowly and clearly, as a native Indonesian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "id03",
+   "language": "id",
+   "question": "id1",
+   "said": "Simpangan baku",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it hesitantly, as a native Indonesian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "id04",
+   "language": "id",
+   "question": "id1",
+   "said": "Yang pertama",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it naturally, as a native Indonesian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "id05",
+   "language": "id",
+   "question": "id2",
+   "said": "A dan C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it quickly and casually, as a native Indonesian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "id06",
+   "language": "id",
+   "question": "id2",
+   "said": "Mercurial dan Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it slowly and clearly, as a native Indonesian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "id07",
+   "language": "id",
+   "question": "id2",
+   "said": "Ya",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it hesitantly, as a native Indonesian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "id08",
+   "language": "id",
+   "question": "id1",
+   "said": "Bukan",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it naturally, as a native Indonesian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "id09",
+   "language": "id",
+   "question": "id1",
+   "said": "Bukan, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it quickly and casually, as a native Indonesian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "id10",
+   "language": "id",
+   "question": "id1",
+   "said": "Mungkin B, mungkin C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it slowly and clearly, as a native Indonesian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fil01",
+   "language": "fil",
+   "question": "fil1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it slowly and clearly, as a native Filipino speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fil02",
+   "language": "fil",
+   "question": "fil1",
+   "said": "Option C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it hesitantly, as a native Filipino speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "fil03",
+   "language": "fil",
+   "question": "fil1",
+   "said": "Ang standard deviation",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it naturally, as a native Filipino speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fil04",
+   "language": "fil",
+   "question": "fil1",
+   "said": "Yung una",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it quickly and casually, as a native Filipino speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "fil05",
+   "language": "fil",
+   "question": "fil2",
+   "said": "A at C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it slowly and clearly, as a native Filipino speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fil06",
+   "language": "fil",
+   "question": "fil2",
+   "said": "Mercurial at Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it hesitantly, as a native Filipino speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "fil07",
+   "language": "fil",
+   "question": "fil2",
+   "said": "Oo",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it naturally, as a native Filipino speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fil08",
+   "language": "fil",
+   "question": "fil1",
+   "said": "Hindi",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it quickly and casually, as a native Filipino speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "fil09",
+   "language": "fil",
+   "question": "fil1",
+   "said": "Hindi, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it slowly and clearly, as a native Filipino speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "fil10",
+   "language": "fil",
+   "question": "fil1",
+   "said": "Baka B, baka C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it hesitantly, as a native Filipino speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "et01",
+   "language": "et",
+   "question": "et1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it hesitantly, as a native Estonian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "et02",
+   "language": "et",
+   "question": "et1",
+   "said": "Vastus C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it naturally, as a native Estonian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "et03",
+   "language": "et",
+   "question": "et1",
+   "said": "Standardhälve",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it quickly and casually, as a native Estonian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "et04",
+   "language": "et",
+   "question": "et1",
+   "said": "Esimene",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it slowly and clearly, as a native Estonian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "et05",
+   "language": "et",
+   "question": "et2",
+   "said": "A ja C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it hesitantly, as a native Estonian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "et06",
+   "language": "et",
+   "question": "et2",
+   "said": "Mercurial ja Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it naturally, as a native Estonian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "et07",
+   "language": "et",
+   "question": "et2",
+   "said": "Jah",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it quickly and casually, as a native Estonian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "et08",
+   "language": "et",
+   "question": "et1",
+   "said": "Ei",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it slowly and clearly, as a native Estonian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "et09",
+   "language": "et",
+   "question": "et1",
+   "said": "Ei, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it hesitantly, as a native Estonian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "et10",
+   "language": "et",
+   "question": "et1",
+   "said": "Võib-olla B, võib-olla C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it naturally, as a native Estonian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "nl01",
+   "language": "nl",
+   "question": "nl1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it naturally, as a native Dutch speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "nl02",
+   "language": "nl",
+   "question": "nl1",
+   "said": "Optie C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it quickly and casually, as a native Dutch speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "nl03",
+   "language": "nl",
+   "question": "nl1",
+   "said": "De standaardafwijking",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it slowly and clearly, as a native Dutch speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "nl04",
+   "language": "nl",
+   "question": "nl1",
+   "said": "De eerste",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it hesitantly, as a native Dutch speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "nl05",
+   "language": "nl",
+   "question": "nl2",
+   "said": "A en C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it naturally, as a native Dutch speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "nl06",
+   "language": "nl",
+   "question": "nl2",
+   "said": "Mercurial en Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it quickly and casually, as a native Dutch speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "nl07",
+   "language": "nl",
+   "question": "nl2",
+   "said": "Ja",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it slowly and clearly, as a native Dutch speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "nl08",
+   "language": "nl",
+   "question": "nl1",
+   "said": "Nee",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it hesitantly, as a native Dutch speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "nl09",
+   "language": "nl",
+   "question": "nl1",
+   "said": "Nee, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it naturally, as a native Dutch speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "nl10",
+   "language": "nl",
+   "question": "nl1",
+   "said": "Misschien B, misschien C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it quickly and casually, as a native Dutch speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "pl01",
+   "language": "pl",
+   "question": "pl1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it quickly and casually, as a native Polish speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "pl02",
+   "language": "pl",
+   "question": "pl1",
+   "said": "Odpowiedź C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it slowly and clearly, as a native Polish speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "pl03",
+   "language": "pl",
+   "question": "pl1",
+   "said": "Odchylenie standardowe",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it hesitantly, as a native Polish speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "pl04",
+   "language": "pl",
+   "question": "pl1",
+   "said": "Pierwsza",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it naturally, as a native Polish speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "pl05",
+   "language": "pl",
+   "question": "pl2",
+   "said": "A i C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it quickly and casually, as a native Polish speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "pl06",
+   "language": "pl",
+   "question": "pl2",
+   "said": "Mercurial i Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it slowly and clearly, as a native Polish speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "pl07",
+   "language": "pl",
+   "question": "pl2",
+   "said": "Tak",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it hesitantly, as a native Polish speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "pl08",
+   "language": "pl",
+   "question": "pl1",
+   "said": "Nie",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it naturally, as a native Polish speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "pl09",
+   "language": "pl",
+   "question": "pl1",
+   "said": "Nie, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it quickly and casually, as a native Polish speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "pl10",
+   "language": "pl",
+   "question": "pl1",
+   "said": "Może B, może C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it slowly and clearly, as a native Polish speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ru01",
+   "language": "ru",
+   "question": "ru1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it slowly and clearly, as a native Russian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ru02",
+   "language": "ru",
+   "question": "ru1",
+   "said": "Вариант C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it hesitantly, as a native Russian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ru03",
+   "language": "ru",
+   "question": "ru1",
+   "said": "Стандартное отклонение",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it naturally, as a native Russian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ru04",
+   "language": "ru",
+   "question": "ru1",
+   "said": "Первый",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it quickly and casually, as a native Russian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ru05",
+   "language": "ru",
+   "question": "ru2",
+   "said": "A и C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it slowly and clearly, as a native Russian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ru06",
+   "language": "ru",
+   "question": "ru2",
+   "said": "Mercurial и Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it hesitantly, as a native Russian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ru07",
+   "language": "ru",
+   "question": "ru2",
+   "said": "Да",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it naturally, as a native Russian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ru08",
+   "language": "ru",
+   "question": "ru1",
+   "said": "Нет",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it quickly and casually, as a native Russian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "ru09",
+   "language": "ru",
+   "question": "ru1",
+   "said": "Нет, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it slowly and clearly, as a native Russian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "ru10",
+   "language": "ru",
+   "question": "ru1",
+   "said": "Может, B, а может, C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it hesitantly, as a native Russian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "tr01",
+   "language": "tr",
+   "question": "tr1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it hesitantly, as a native Turkish speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "tr02",
+   "language": "tr",
+   "question": "tr1",
+   "said": "C şıkkı",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it naturally, as a native Turkish speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "tr03",
+   "language": "tr",
+   "question": "tr1",
+   "said": "Standart sapma",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it quickly and casually, as a native Turkish speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "tr04",
+   "language": "tr",
+   "question": "tr1",
+   "said": "İlki",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it slowly and clearly, as a native Turkish speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "tr05",
+   "language": "tr",
+   "question": "tr2",
+   "said": "A ve C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it hesitantly, as a native Turkish speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "tr06",
+   "language": "tr",
+   "question": "tr2",
+   "said": "Mercurial ve Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it naturally, as a native Turkish speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "tr07",
+   "language": "tr",
+   "question": "tr2",
+   "said": "Evet",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it quickly and casually, as a native Turkish speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "tr08",
+   "language": "tr",
+   "question": "tr1",
+   "said": "Hayır",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it slowly and clearly, as a native Turkish speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "tr09",
+   "language": "tr",
+   "question": "tr1",
+   "said": "Hayır, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it hesitantly, as a native Turkish speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "tr10",
+   "language": "tr",
+   "question": "tr1",
+   "said": "Belki B, belki C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it naturally, as a native Turkish speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "uk01",
+   "language": "uk",
+   "question": "uk1",
+   "said": "B",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1
+   ],
+   "kind": "letter",
+   "spoken": {
+    "voice": "shimmer",
+    "style": "Say it naturally, as a native Ukrainian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "uk02",
+   "language": "uk",
+   "question": "uk1",
+   "said": "Варіант C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    2
+   ],
+   "kind": "letter with a word",
+   "spoken": {
+    "voice": "alloy",
+    "style": "Say it quickly and casually, as a native Ukrainian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "uk03",
+   "language": "uk",
+   "question": "uk1",
+   "said": "Стандартне відхилення",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "read option",
+   "spoken": {
+    "voice": "marin",
+    "style": "Say it slowly and clearly, as a native Ukrainian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "uk04",
+   "language": "uk",
+   "question": "uk1",
+   "said": "Перший",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0
+   ],
+   "kind": "position",
+   "spoken": {
+    "voice": "cedar",
+    "style": "Say it hesitantly, as a native Ukrainian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "uk05",
+   "language": "uk",
+   "question": "uk2",
+   "said": "A і C",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "letters multi",
+   "spoken": {
+    "voice": "ash",
+    "style": "Say it naturally, as a native Ukrainian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "uk06",
+   "language": "uk",
+   "question": "uk2",
+   "said": "Mercurial і Subversion",
+   "waiting": [],
+   "intent": "choose",
+   "picks": [
+    1,
+    3
+   ],
+   "kind": "read options multi",
+   "spoken": {
+    "voice": "coral",
+    "style": "Say it quickly and casually, as a native Ukrainian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "uk07",
+   "language": "uk",
+   "question": "uk2",
+   "said": "Так",
+   "waiting": [
+    0,
+    2
+   ],
+   "intent": "confirm",
+   "picks": [
+    0,
+    2
+   ],
+   "kind": "confirm multi",
+   "spoken": {
+    "voice": "echo",
+    "style": "Say it slowly and clearly, as a native Ukrainian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "uk08",
+   "language": "uk",
+   "question": "uk1",
+   "said": "Ні",
+   "waiting": [
+    1
+   ],
+   "intent": "reject",
+   "picks": [],
+   "kind": "reject",
+   "spoken": {
+    "voice": "sage",
+    "style": "Say it hesitantly, as a native Ukrainian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  },
+  {
+   "id": "uk09",
+   "language": "uk",
+   "question": "uk1",
+   "said": "Ні, D",
+   "waiting": [
+    1
+   ],
+   "intent": "choose",
+   "picks": [
+    3
+   ],
+   "kind": "change while waiting",
+   "spoken": {
+    "voice": "verse",
+    "style": "Say it naturally, as a native Ukrainian speaker would, saying any option letter the way people in that language name it.",
+    "noise": true
+   }
+  },
+  {
+   "id": "uk10",
+   "language": "uk",
+   "question": "uk1",
+   "said": "Може, B, а може, C",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "undecided",
+   "spoken": {
+    "voice": "ballad",
+    "style": "Say it quickly and casually, as a native Ukrainian speaker would, saying any option letter the way people in that language name it.",
+    "noise": false
+   }
+  }
+ ]
+}

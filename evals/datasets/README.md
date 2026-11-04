@@ -293,6 +293,20 @@ over 10% off; then Ogg Opus with pink noise mixed into most, by ffmpeg) into
 `audio/answer_<id>.ogg`. Graded by code
 (`voice_answers_test.py`): the intent and the options.
 
+## `voice_hearing.json` and `audio/answer_*.ogg` (by hand, 2026-11-04; audio by `gpt-realtime-2.1-mini`, 2026-11-04)
+
+170 made-up spoken answers in the 17 interface languages voice mode doesn't offer yet (ar, et, fa,
+fil, he, hi, id, ja, ko, nl, pl, ru, th, tr, uk, vi, zh), to see in which ones speech-to-text hears
+short answers well enough to add them. Per language, a single-answer statistics question with its
+options in that language and a select-all one on version control (Git, Mercurial, Docker,
+Subversion), and ten answers, all spoken: a letter alone, a letter after a word ("option C"), a
+read option, a position, two letters, two read options, a yes and a no to a waiting choice, "no,
+D" while one waits, and an undecided trap ("maybe B, maybe C"). Spoken by OpenAI's realtime voice
+model as a native speaker naming the letters as that language does (`build_voice_answers.py
+--dataset voice_hearing.json`), half with pink noise. Graded by code (`voice_answers_test.py
+--dataset voice_hearing.json`, `--hearing elevenlabs` for ElevenLabs' Scribe): the intent and the
+options. The voice is OpenAI's, which may favour OpenAI's hearing.
+
 ## `voice_sounds.json` and `audio/sound_*.ogg` (by hand, 2026-10-30; synthesised by ffmpeg)
 
 23 made-up sounds that aren't speech, what a candidate's microphone hears besides their answer:

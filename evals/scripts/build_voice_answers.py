@@ -8,6 +8,8 @@ encoded to Ogg Opus, as browsers record, with pink noise mixed into the noisy on
     evals/run.sh rounds build_voice_answers.py
     python3 evals/scripts/build_voice_answers.py --encode
 
+`--dataset voice_hearing.json` speaks that set's answers instead.
+
 Costs about two cents."""
 
 import argparse
@@ -104,8 +106,9 @@ def encode(items: list[dict]) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--encode", action="store_true")
+    parser.add_argument("--dataset", default="voice_answers.json")
     args = parser.parse_args()
-    spoken = [i for i in load(DATASETS / "voice_answers.json")["items"] if "spoken" in i]
+    spoken = [i for i in load(DATASETS / args.dataset)["items"] if "spoken" in i]
 
     if args.encode:
         encode(spoken)
