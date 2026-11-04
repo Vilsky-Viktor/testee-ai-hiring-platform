@@ -29,6 +29,8 @@ const FLOW_TEMPLATE = "Senior Accountant"
 // SHOTS=1, at twice the pixels, with made-up people; nothing here checks the product.
 test.skip(process.env.SHOTS !== "1", "Pictures for the hiring flow page, taken with SHOTS=1 only")
 test.use({ deviceScaleFactor: 2, viewport: SHOT_VIEWPORT })
+// One after the other: both make "Northwind Labs", and company names are unique across testee.
+test.describe.configure({ mode: "serial" })
 
 // The hiring flow's first step: the new interview page's box with a job description pasted.
 test("hiring flow: a job description", async ({ signInAs }) => {
