@@ -26,6 +26,9 @@ const PAGES = [
 // Also checked on a phone, where the layout differs most.
 const PHONE_PAGES = ["/", "/pricing"];
 const THEMES = ["light", "dark"] as const;
+// The home pages: axe takes long over their demos' many screens, past the usual time when tests
+// run side by side.
+const HOME_PAGES = ["/", "/ar"];
 const WCAG_AA = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
 
 // Known issues: found by the scan, tracked here until fixed, rather than turning their rules off.
@@ -55,6 +58,7 @@ for (const path of PAGES) {
     const tag = PHONE_PAGES.includes(path) ? "@phone" : [];
 
     test(`${path} in ${theme} meets WCAG 2.2 AA`, { tag }, async ({ page }) => {
+      test.slow(HOME_PAGES.includes(path));
       await setScheme(page, theme);
       await page.emulateMedia({ reducedMotion: "reduce" });
       await page.goto(path);
@@ -70,6 +74,8 @@ for (const theme of THEMES) {
   test(`the sign-in dialog and the assistant's panel in ${theme} meet WCAG 2.2 AA`, async ({
     page,
   }) => {
+    // Two scans of the home page (HOME_PAGES).
+    test.slow();
     await setScheme(page, theme);
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/");
