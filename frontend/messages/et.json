@@ -3073,7 +3073,7 @@
     }
   },
   "search": {
-    "placeholder": "otsi mida tahes...",
+    "placeholder": "otsi...",
     "open": "Otsi",
     "close": "Sulge otsing",
     "empty": "Midagi ei leitud",

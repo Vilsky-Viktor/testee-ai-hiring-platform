@@ -3073,7 +3073,7 @@
     }
   },
   "search": {
-    "placeholder": "무엇이든 검색...",
+    "placeholder": "검색...",
     "open": "검색",
     "close": "검색 닫기",
     "empty": "검색 결과 없음",

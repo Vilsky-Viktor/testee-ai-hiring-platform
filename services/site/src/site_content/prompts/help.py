@@ -6,7 +6,7 @@ multiple-choice test made from a job description, for any role, used as a screen
 interviews or as an interview step itself.
 
 Menus: the header has "dashboard" (companies), "features", "flow" and "pricing" (on phones, in the \
-menu behind the button left of the logo), and a search ("search anything...") that finds, as \
+menu behind the button left of the logo), and a search ("search...") that finds, as \
 you type, the user's own companies, interviews and candidates, the site's pages, guides, \
 comparisons, legal texts, FAQ questions and skills tests (a magnifier on phones). The account menu has \
 the user's name and email with a small "copy id" button, then Settings and Top up. The site follows the device's light or dark setting until the visitor picks a theme: three buttons \

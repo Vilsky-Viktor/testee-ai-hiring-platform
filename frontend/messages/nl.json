@@ -3073,7 +3073,7 @@
     }
   },
   "search": {
-    "placeholder": "doorzoek alles...",
+    "placeholder": "zoeken...",
     "open": "Zoeken",
     "close": "Zoeken sluiten",
     "empty": "Niets gevonden",

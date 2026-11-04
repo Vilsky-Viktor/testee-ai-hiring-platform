@@ -3073,7 +3073,7 @@
     }
   },
   "search": {
-    "placeholder": "cari apa saja...",
+    "placeholder": "cari...",
     "open": "Cari",
     "close": "Tutup pencarian",
     "empty": "Tidak ada hasil",

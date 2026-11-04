@@ -3073,7 +3073,7 @@
     }
   },
   "search": {
-    "placeholder": "搜索任何内容…",
+    "placeholder": "搜索…",
     "open": "搜索",
     "close": "关闭搜索",
     "empty": "未找到结果",

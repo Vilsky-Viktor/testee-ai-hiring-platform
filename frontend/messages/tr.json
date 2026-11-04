@@ -3073,7 +3073,7 @@
     }
   },
   "search": {
-    "placeholder": "her şeyi arayın...",
+    "placeholder": "ara...",
     "open": "Ara",
     "close": "Aramayı kapat",
     "empty": "Hiçbir şey bulunamadı",

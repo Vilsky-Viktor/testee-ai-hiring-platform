@@ -3073,7 +3073,7 @@
     }
   },
   "search": {
-    "placeholder": "szukaj czegokolwiek...",
+    "placeholder": "szukaj...",
     "open": "Szukaj",
     "close": "Zamknij wyszukiwanie",
     "empty": "Nic nie znaleziono",

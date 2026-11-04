@@ -3073,7 +3073,7 @@
     }
   },
   "search": {
-    "placeholder": "maghanap ng kahit ano...",
+    "placeholder": "maghanap...",
     "open": "Maghanap",
     "close": "Isara ang search",
     "empty": "Walang nahanap",

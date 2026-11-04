@@ -3073,7 +3073,7 @@
     }
   },
   "search": {
-    "placeholder": "なんでも検索…",
+    "placeholder": "検索…",
     "open": "検索",
     "close": "検索を閉じる",
     "empty": "見つかりませんでした",

@@ -3073,7 +3073,7 @@
     }
   },
   "search": {
-    "placeholder": "tìm bất cứ thứ gì...",
+    "placeholder": "tìm kiếm...",
     "open": "Tìm kiếm",
     "close": "Đóng tìm kiếm",
     "empty": "Không tìm thấy gì",
