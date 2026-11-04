@@ -5,4 +5,5 @@ type Schemas = components["schemas"]
 
 export type ReportReason = (typeof REPORT_REASONS)[number]
 export type QuestionReport = Schemas["ReportOut"]
-export type QuestionStats = Schemas["QuestionText"]
+// Interviews' questions also say whether an owner or admin left them out.
+export type QuestionStats = Schemas["QuestionText"] & { excluded?: boolean }

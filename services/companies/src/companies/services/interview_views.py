@@ -146,15 +146,15 @@ async def detail(interview: Interview, member: Member) -> InterviewDetail:
     interview = await attach_set_if_reachable(interview)
     base = await one_out(interview)
     found = await set_cache.get_set(interview.set_id) if interview.set_id else None
-    topics = topics_out(found, interview.topic_limits) if found else []
+    topics = topics_out(found, interview) if found else []
 
     return InterviewDetail(
         **base.model_dump(),
         company_id=interview.company_id,
         language=interview.language,
         topics=topics,
-        total_minutes=interview_minutes(found, interview.topic_limits, interview.question_seconds),
-        total_questions=interview_questions(found, interview.topic_limits),
+        total_minutes=interview_minutes(found, interview, interview.question_seconds),
+        total_questions=interview_questions(found, interview),
         max_questions=MAX_INTERVIEW_QUESTIONS,
         can_edit=can_edit(member),
         keep_private=interview.keep_private,

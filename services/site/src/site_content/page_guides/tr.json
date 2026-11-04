@@ -97,8 +97,8 @@
     "title": "Konular",
     "text": "Bu mülakatın ölçtükleri: konuları, her birinin alt konuları ve kendi soru havuzu. Her aday her havuzdan rastgele bir set alır.",
     "actions": [
-      "Bir konunun sorularını ve cevaplarını okumak için “Soruları yönet”i açın.",
-      "Zayıf bir soruyu yeniden oluşturun, yanlış bir cevabı işaretleyin veya adayların bir soruyla ilgili bildirimlerini okuyun.",
+      "Bir konunun sorularına gitmek için “Soruları yönet”i açın: soruları okuyun, bazılarını devre dışı bırakın, beğenin, beğenmeyin veya bildirin.",
+      "Bir konunun sorular sayfasında zayıf bir soruyu yeniden oluşturun veya yanlış bir cevabı işaretleyin.",
       "Her adayın bir konudan kaç soru alacağını belirleyin; 0, konuyu yeni adaylar için dışarıda bırakır. Bir aday tüm konulardan toplam en fazla 60 soru alır: bir konuyu artırmak için başka birini azaltın.",
       "Mülakatı aday olarak deneyin veya silin."
     ],
@@ -106,6 +106,21 @@
       "Yapay zekânın yazdığı sorular hatalı olabilir: kimseyi davet etmeden önce her konuya göz atın.",
       "Mülakatı yeniden adlandırmak için başlığa tıklayın.",
       "Üstteki kartlar her adayın alacaklarını toplar: toplam soru, soru başına ortalama süre ve mülakatın tamamının süresi. Her değişiklikle güncellenir."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Sorular",
+    "text": "Bir konunun soruları; cevapları, beğenileri, beğenmeyenleri ve bildirimleriyle. Her aday, etkin sorular arasından rastgele bir set alır.",
+    "actions": [
+      "Bir soruyu devre dışı bırakmak için işaretini kaldırın: bundan sonra hiçbir aday onu almaz. Yeniden etkinleştirmek için işaretleyin (sahipler ve yöneticiler).",
+      "Bir soruyu beğenin veya beğenmeyin; geri almak için seçiminize tekrar tıklayın.",
+      "Bir sorunun bildirimlerini açın ve her soru için bir kez kendi bildiriminizi ekleyin.",
+      "Zayıf bir soruyu yeniden oluşturun veya yanlış bir cevabı işaretleyin (sahipler ve yöneticiler)."
+    ],
+    "tips": [
+      "Yapay zekânın yazdığı sorular hatalı olabilir: kimseyi davet etmeden önce okuyun.",
+      "Beğenileriniz, beğenmemeleriniz ve bildirimleriniz adaylarınkiyle aynı ağırlıktadır ve zayıf soruların düzeltilmesine yardım eder.",
+      "Konunun sayısı yalnızca etkin soruları sayar: bir aday bu konudan asla daha fazlasını almaz."
     ]
   },
   "interviewCandidates": {

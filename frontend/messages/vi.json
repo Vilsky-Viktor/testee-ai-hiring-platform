@@ -886,7 +886,16 @@
     "count": "{count, plural, other {câu hỏi}}",
     "loadFailed": "Không thể tải câu hỏi.",
     "yourAnswer": "câu trả lời của bạn",
-    "aiWritten": "Câu hỏi và đáp án do AI viết có thể sai. Hãy đánh dấu đáp án sai hoặc tạo lại."
+    "aiWritten": "Câu hỏi và đáp án do AI viết có thể sai. Hãy đánh dấu đáp án sai hoặc tạo lại.",
+    "excludeFailed": "Không thể lưu thay đổi. Vui lòng thử lại.",
+    "addReport": "Thêm báo cáo",
+    "youReported": "Bạn đã báo cáo",
+    "includedHint": "Bỏ chọn để tắt câu hỏi",
+    "excludedHint": "Chọn để bật câu hỏi",
+    "includedView": "Câu hỏi đang bật",
+    "excludedView": "Câu hỏi đã tắt",
+    "active": "Đang bật",
+    "disabled": "Đã tắt"
   },
   "rounds": {
     "answered": "Đã trả lời",

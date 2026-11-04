@@ -9,8 +9,7 @@ import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { FEEDBACK_HOVER_CLASS } from "@/config/feedback"
 import { apiFetch } from "@/lib/api"
-
-type Thumb = 1 | -1
+import { nextVote, type Thumb } from "@/lib/question-votes"
 
 export function QuestionRating({ basePath }: { basePath: string }) {
   const t = useTranslations("questions")
@@ -30,22 +29,25 @@ export function QuestionRating({ basePath }: { basePath: string }) {
       .catch(() => {})
   }, [basePath])
 
-  // Voting again switches the vote.
-  async function rate(next: Thumb) {
-    if (saving || next === value) {
+  // The other thumb switches the vote; the same one again takes it back (a click by mistake).
+  async function rate(clicked: Thumb) {
+    if (saving) {
       return
     }
 
     const previous = value
+    const next = nextVote(value, clicked)
     voted.current = true
     setValue(next)
     setSaving(true)
 
     try {
-      await apiFetch(`${basePath}/rating`, {
-        method: "PUT",
-        body: JSON.stringify({ value: next }),
-      })
+      await apiFetch(
+        `${basePath}/rating`,
+        next === null
+          ? { method: "DELETE" }
+          : { method: "PUT", body: JSON.stringify({ value: next }) }
+      )
     } catch {
       setValue(previous)
       toast.error(t("ratingFailed"))
@@ -53,8 +55,6 @@ export function QuestionRating({ basePath }: { basePath: string }) {
       setSaving(false)
     }
   }
-
-  const locked = saving
 
   return (
     <div className="contents">
@@ -65,7 +65,6 @@ export function QuestionRating({ basePath }: { basePath: string }) {
         aria-label={t("helpful")}
         className={cn(FEEDBACK_HOVER_CLASS, "h-full w-full rounded-none")}
         aria-pressed={value === 1}
-        disabled={locked}
         onClick={() => rate(1)}
       >
         <ThumbsUpIcon
@@ -79,7 +78,6 @@ export function QuestionRating({ basePath }: { basePath: string }) {
         aria-label={t("unhelpful")}
         className={cn(FEEDBACK_HOVER_CLASS, "h-full w-full rounded-none")}
         aria-pressed={value === -1}
-        disabled={locked}
         onClick={() => rate(-1)}
       >
         <ThumbsDownIcon

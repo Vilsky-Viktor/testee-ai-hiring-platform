@@ -214,7 +214,11 @@ export interface paths {
     /** Rate */
     put: operations["rate_sessions__session_id__questions__question_id__rating_put"]
     post?: never
-    delete?: never
+    /**
+     * Unrate
+     * @description Takes back the candidate's thumbs up or down (a click by mistake).
+     */
+    delete: operations["unrate_sessions__session_id__questions__question_id__rating_delete"]
     options?: never
     head?: never
     patch?: never
@@ -1281,7 +1285,10 @@ export interface components {
       /** Difficulty */
       difficulty?: number | null
     }
-    /** RatingIn */
+    /**
+     * RatingIn
+     * @description A thumbs up (1) or down (-1) on a question.
+     */
     RatingIn: {
       /**
        * Value
@@ -1289,7 +1296,10 @@ export interface components {
        */
       value: -1 | 1
     }
-    /** ReportIn */
+    /**
+     * ReportIn
+     * @description A report on a question: library checks the reason and the comment's length.
+     */
     ReportIn: {
       /** Reason */
       reason: string
@@ -1932,6 +1942,38 @@ export interface operations {
         "application/json": components["schemas"]["RatingIn"]
       }
     }
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": unknown
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  unrate_sessions__session_id__questions__question_id__rating_delete: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        session_id: string
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
     responses: {
       /** @description Successful Response */
       200: {

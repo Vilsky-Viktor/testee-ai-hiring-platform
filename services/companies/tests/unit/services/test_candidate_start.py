@@ -26,7 +26,12 @@ INVITE = SimpleNamespace(
 )
 MARKED_AT = datetime(2026, 10, 30, 9, tzinfo=UTC)
 INTERVIEW = SimpleNamespace(
-    set_id=uuid.uuid4(), company_id=uuid.uuid4(), question_seconds=60, topic_limits={}, voice=False
+    set_id=uuid.uuid4(),
+    company_id=uuid.uuid4(),
+    question_seconds=60,
+    topic_limits={},
+    excluded_questions={},
+    voice=False,
 )
 
 

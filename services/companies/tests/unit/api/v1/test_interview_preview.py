@@ -57,6 +57,7 @@ def started(monkeypatch, redis):
             set_id=set_id,
             question_seconds=45,
             topic_limits={},
+            excluded_questions={},
             voice=voice["on"],
         )
 
@@ -233,6 +234,7 @@ def test_a_preview_of_an_interview_deleted_meanwhile_loses_its_sessions(
             set_id=SET_ID,
             question_seconds=45,
             topic_limits={},
+            excluded_questions={},
         )
 
     async def delete_invite_sessions(invite_ids):

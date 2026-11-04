@@ -886,7 +886,16 @@
     "count": "{count, plural, one {pytanie} few {pytania} many {pytań} other {pytania}}",
     "loadFailed": "Nie udało się wczytać pytań.",
     "yourAnswer": "Twoja odpowiedź",
-    "aiWritten": "Pytania i klucze odpowiedzi pisane przez AI mogą zawierać błędy. Oznacz błędną odpowiedź lub wygeneruj pytanie ponownie."
+    "aiWritten": "Pytania i klucze odpowiedzi pisane przez AI mogą zawierać błędy. Oznacz błędną odpowiedź lub wygeneruj pytanie ponownie.",
+    "excludeFailed": "Nie udało się zapisać zmiany. Spróbuj ponownie.",
+    "addReport": "Dodaj zgłoszenie",
+    "youReported": "Zgłoszone przez Ciebie",
+    "includedHint": "Odznacz, by wyłączyć pytanie",
+    "excludedHint": "Zaznacz, by włączyć pytanie",
+    "includedView": "Pytanie włączone",
+    "excludedView": "Pytanie wyłączone",
+    "active": "Aktywne",
+    "disabled": "Wyłączone"
   },
   "rounds": {
     "answered": "Odpowiedzi",

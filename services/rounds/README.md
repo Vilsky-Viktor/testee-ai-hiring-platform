@@ -1,6 +1,7 @@
 # rounds
 
-Candidates' interview sessions and their answers, and free practice rounds. It keeps sessions, answers and integrity signals in its own database, and reads a finished candidate's answer patterns from them when asked (`/internal/invites/{id}/answer-patterns`, never stored); questions come from library, and scores go out as
+Candidates' interview sessions and their answers, and free practice rounds. It keeps sessions, answers and integrity signals in its own database, and reads a finished candidate's answer patterns from them when asked (`/internal/invites/{id}/answer-patterns`, never stored); questions come from library, a candidate's votes and reports on their session's questions go to it
+(`testee_common.http.question_feedback`), and scores go out as
 events; a deleted interview's or company's sessions go when its `interview.deleted` or
 `company.deleted` arrives. An interview taken by voice is read aloud and answered by voice here too
 (voice mode, below). It also keeps who is open to offers (`/open-to-offers`: a practice user's

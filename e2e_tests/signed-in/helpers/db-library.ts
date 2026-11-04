@@ -170,3 +170,37 @@ export async function lengthenQuestions(
     ),
   );
 }
+
+/** Made-up members' likes, dislikes and reports on the first questions of a company's topic
+ * (`topicId`, the interview's copy), one entry per question in their order, so a picture shows
+ * real-looking counts. They go with the company's questions. */
+export async function addFeedback(
+  topicId: string,
+  counts: { likes: number; dislikes: number; reports: number }[],
+) {
+  await withDatabase("library", async (client) => {
+    const { rows } = await client.query(
+      "SELECT id FROM questions WHERE topic_id = $1 ORDER BY position LIMIT $2",
+      [topicId, counts.length],
+    );
+
+    for (const [index, { likes, dislikes, reports }] of counts.entries()) {
+      const votes = [...Array(likes).fill(1), ...Array(dislikes).fill(-1)];
+
+      for (const [voter, value] of votes.entries()) {
+        await client.query(
+          "INSERT INTO question_ratings (question_id, user_id, value) VALUES ($1, $2, $3)",
+          [rows[index].id, `e2e-shot-${voter}`, value],
+        );
+      }
+
+      for (let reporter = 0; reporter < reports; reporter++) {
+        await client.query(
+          `INSERT INTO question_reports (id, question_id, user_id, reason, comment, status)
+           VALUES (gen_random_uuid(), $1, $2, 'unclear', '', 'open')`,
+          [rows[index].id, `e2e-shot-${reporter}`],
+        );
+      }
+    }
+  });
+}

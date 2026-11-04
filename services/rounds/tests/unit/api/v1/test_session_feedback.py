@@ -46,7 +46,7 @@ def test_candidate_rates_only_own_session_questions(client, monkeypatch):
         )
 
     monkeypatch.setattr(sessions, "get", fake_get)
-    monkeypatch.setattr(feedback, "rate", fake_rate)
+    monkeypatch.setattr(feedback.client, "rate", fake_rate)
     app.dependency_overrides[current_user] = lambda: User(
         uid="cand", email="cand@example.com", email_verified=True
     )
@@ -74,7 +74,7 @@ def test_the_librarys_daily_limit_reaches_the_candidate(client, monkeypatch):
         )
 
     monkeypatch.setattr(sessions, "get", fake_get)
-    monkeypatch.setattr(feedback, "report", fake_report)
+    monkeypatch.setattr(feedback.client, "report", fake_report)
     app.dependency_overrides[current_user] = lambda: User(
         uid="cand", email="cand@example.com", email_verified=True
     )
@@ -86,3 +86,35 @@ def test_the_librarys_daily_limit_reaches_the_candidate(client, monkeypatch):
     app.dependency_overrides.clear()
     assert response.status_code == 429
     assert response.json() == {"detail": "Too many requests. Try again later."}
+
+
+def test_a_candidate_takes_back_only_their_own_sessions_vote(client, monkeypatch):
+    row = owned_session()
+    calls = []
+
+    async def fake_get(session, _session_id):
+        return row
+
+    async def fake_unrate(question_id, user_id):
+        calls.append((question_id, user_id))
+
+        return httpx.Response(204, request=httpx.Request("DELETE", "http://library"))
+
+    monkeypatch.setattr(sessions, "get", fake_get)
+    monkeypatch.setattr(feedback.client, "unrate", fake_unrate)
+    base = f"/sessions/{row.id}/questions"
+    app.dependency_overrides[current_user] = lambda: User(
+        uid="eve", email="eve@example.com", email_verified=True
+    )
+    # Someone else's session.
+    others = client.delete(f"{base}/{QUESTION_ID}/rating")
+    app.dependency_overrides[current_user] = lambda: User(
+        uid="cand", email="cand@example.com", email_verified=True
+    )
+    # A question not in the candidate's own session, then one in it.
+    elsewhere = client.delete(f"{base}/{uuid4()}/rating")
+    own = client.delete(f"{base}/{QUESTION_ID}/rating")
+
+    app.dependency_overrides.clear()
+    assert [others.status_code, elsewhere.status_code, own.status_code] == [404, 404, 204]
+    assert calls == [(QUESTION_ID, "cand")]

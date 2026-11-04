@@ -97,8 +97,8 @@
     "title": "Temas",
     "text": "Lo que evalúa esta entrevista: sus temas, cada uno con subtemas y su propio banco de preguntas. Cada candidato recibe una selección aleatoria de cada banco.",
     "actions": [
-      "Abre «Gestionar preguntas» para leer las preguntas y respuestas de un tema.",
-      "Regenera una pregunta floja, marca una respuesta incorrecta o lee los reportes de los candidatos sobre una pregunta.",
+      "Abre «Gestionar preguntas» para ir a las preguntas de un tema: léelas, desactiva algunas, márcalas con me gusta o no me gusta, o repórtalas.",
+      "Regenera una pregunta floja o marca una respuesta incorrecta en la página de preguntas de un tema.",
       "Define cuántas preguntas recibe cada candidato de un tema; con 0, el tema queda fuera para los nuevos candidatos. Cada candidato recibe como máximo 60 preguntas entre todos los temas: baja un tema para subir otro.",
       "Prueba la entrevista como candidato o elimínala."
     ],
@@ -106,6 +106,21 @@
       "Las preguntas escritas por IA pueden tener errores: repasa cada tema antes de invitar a nadie.",
       "Haz clic en el título para cambiar el nombre de la entrevista.",
       "Las tarjetas de arriba suman lo que recibe cada candidato: el total de preguntas, el tiempo medio por pregunta y el tiempo de toda la entrevista. Se actualizan con cada cambio."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Preguntas",
+    "text": "Las preguntas de un tema con sus respuestas, me gusta, no me gusta y reportes. Cada candidato recibe una selección aleatoria de las activas.",
+    "actions": [
+      "Desmarca una pregunta para desactivarla: a partir de ahora ningún candidato la recibe. Márcala para volver a activarla (propietarios y administradores).",
+      "Marca una pregunta con me gusta o no me gusta; vuelve a hacer clic en tu elección para retirarla.",
+      "Abre los reportes de una pregunta y añade el tuyo, uno por pregunta.",
+      "Regenera una pregunta floja o marca una respuesta incorrecta (propietarios y administradores)."
+    ],
+    "tips": [
+      "Las preguntas escritas por IA pueden tener errores: léelas antes de invitar a alguien.",
+      "Tus me gusta, no me gusta y reportes cuentan igual que los de los candidatos y ayudan a corregir preguntas flojas.",
+      "El número del tema cuenta solo las preguntas activas: un candidato nunca recibe más de ese tema."
     ]
   },
   "interviewCandidates": {

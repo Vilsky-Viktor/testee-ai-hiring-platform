@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import func, select
+from sqlalchemy import delete, func, select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -21,6 +21,15 @@ async def rate_question(
     )
 
     await session.execute(statement)
+
+
+async def unrate_question(session: AsyncSession, question_id: uuid.UUID, user_id: str) -> None:
+    """Removes the user's thumbs up or down; none left is fine."""
+    await session.execute(
+        delete(QuestionRating).where(
+            QuestionRating.question_id == question_id, QuestionRating.user_id == user_id
+        )
+    )
 
 
 async def my_question_rating(
@@ -61,6 +70,20 @@ async def question_stats(
         stats[question_id]["reports"] = count
 
     return stats
+
+
+async def mine(
+    session: AsyncSession, question_ids: list[uuid.UUID], user_id: str
+) -> tuple[dict[uuid.UUID, int], set[uuid.UUID]]:
+    """The user's own vote per question, and the questions they've reported (in any revision)."""
+    votes = select(QuestionRating.question_id, QuestionRating.value).where(
+        QuestionRating.question_id.in_(question_ids), QuestionRating.user_id == user_id
+    )
+    reported = select(QuestionReporter.question_id).where(
+        QuestionReporter.question_id.in_(question_ids), QuestionReporter.user_id == user_id
+    )
+
+    return dict((await session.execute(votes)).all()), set(await session.scalars(reported))
 
 
 async def list_reports(

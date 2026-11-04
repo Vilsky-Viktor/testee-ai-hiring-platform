@@ -920,10 +920,83 @@ export interface paths {
       path?: never
       cookie?: never
     }
-    /** List Topic Questions */
+    /**
+     * List Topic Questions
+     * @description The topic's questions, each with the member's own like or dislike and report, and
+     *     whether an owner or admin left it out.
+     */
     get: operations["list_topic_questions_interviews__interview_id__topics__topic_id__questions_get"]
     put?: never
     post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/interviews/{interview_id}/topics/{topic_id}/questions/{question_id}/excluded": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    /**
+     * Set Question Excluded
+     * @description Leaves the question out of the interview (no candidate gets it), or brings it back: owners
+     *     and admins. 422 when it would leave candidates no question.
+     */
+    put: operations["set_question_excluded_interviews__interview_id__topics__topic_id__questions__question_id__excluded_put"]
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/interviews/{interview_id}/questions/{question_id}/rating": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    /**
+     * Rate Question
+     * @description A member's like (1) or dislike (-1) on one of the interview's questions.
+     */
+    put: operations["rate_question_interviews__interview_id__questions__question_id__rating_put"]
+    post?: never
+    /**
+     * Unrate Question
+     * @description Takes back a member's like or dislike (a click by mistake).
+     */
+    delete: operations["unrate_question_interviews__interview_id__questions__question_id__rating_delete"]
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/interviews/{interview_id}/questions/{question_id}/reports": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * List Question Reports
+     * @description The reports on a question, its candidates' and its members': every member reads them.
+     */
+    get: operations["list_question_reports_interviews__interview_id__questions__question_id__reports_get"]
+    put?: never
+    /**
+     * Report Question
+     * @description A member's report on one of the interview's questions, once each (409 for a second).
+     */
+    post: operations["report_question_interviews__interview_id__questions__question_id__reports_post"]
     delete?: never
     options?: never
     head?: never
@@ -983,26 +1056,6 @@ export interface paths {
      * @description One click: the marked answer is wrong. The verifier checks it and fixes or replaces it.
      */
     post: operations["mark_wrong_interviews__interview_id__questions__question_id__wrong_post"]
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  "/interviews/{interview_id}/questions/{question_id}/reports": {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    /**
-     * List Question Reports
-     * @description Candidates' reports on a question, read where it's fixed: owners and admins.
-     */
-    get: operations["list_question_reports_interviews__interview_id__questions__question_id__reports_get"]
-    put?: never
-    post?: never
     delete?: never
     options?: never
     head?: never
@@ -4109,6 +4162,11 @@ export interface components {
       /** Publishtime */
       publishTime?: string | null
     }
+    /** QuestionExcludedIn */
+    QuestionExcludedIn: {
+      /** Excluded */
+      excluded: boolean
+    }
     /** QuestionOption */
     QuestionOption: {
       /** Answer */
@@ -4141,6 +4199,29 @@ export interface components {
       dislikes: number
       /** Reports */
       reports: number
+      /** My Rating */
+      my_rating?: (-1 | 1) | null
+      /**
+       * Reported
+       * @default false
+       */
+      reported: boolean
+      /**
+       * Excluded
+       * @default false
+       */
+      excluded: boolean
+    }
+    /**
+     * RatingIn
+     * @description A thumbs up (1) or down (-1) on a question.
+     */
+    RatingIn: {
+      /**
+       * Value
+       * @enum {integer}
+       */
+      value: -1 | 1
     }
     /**
      * ReferralOut
@@ -4184,6 +4265,19 @@ export interface components {
       email: string
       /** Pdf */
       pdf: string
+    }
+    /**
+     * ReportIn
+     * @description A report on a question: library checks the reason and the comment's length.
+     */
+    ReportIn: {
+      /** Reason */
+      reason: string
+      /**
+       * Comment
+       * @default
+       */
+      comment: string
     }
     /** ReportOut */
     ReportOut: {
@@ -4813,6 +4907,11 @@ export interface components {
       subtopics: string[]
       /** Question Count */
       question_count: number
+      /**
+       * Excluded Count
+       * @default 0
+       */
+      excluded_count: number
       /** Question Limit */
       question_limit: number
     }
@@ -6738,6 +6837,182 @@ export interface operations {
       }
     }
   }
+  set_question_excluded_interviews__interview_id__topics__topic_id__questions__question_id__excluded_put: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        interview_id: string
+        topic_id: string
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["QuestionExcludedIn"]
+      }
+    }
+    responses: {
+      /** @description Successful Response */
+      204: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  rate_question_interviews__interview_id__questions__question_id__rating_put: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        interview_id: string
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["RatingIn"]
+      }
+    }
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": unknown
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  unrate_question_interviews__interview_id__questions__question_id__rating_delete: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        interview_id: string
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": unknown
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  list_question_reports_interviews__interview_id__questions__question_id__reports_get: {
+    parameters: {
+      query?: {
+        /** @description Number of items to skip */
+        offset?: number
+        /** @description Number of items to return, up to 100 */
+        limit?: number
+      }
+      header?: never
+      path: {
+        interview_id: string
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["ReportOut"][]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  report_question_interviews__interview_id__questions__question_id__reports_post: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        interview_id: string
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["ReportIn"]
+      }
+    }
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": unknown
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
   set_topic_limit_interviews__interview_id__topics__topic_id__limit_put: {
     parameters: {
       query?: never
@@ -6824,43 +7099,6 @@ export interface operations {
           [name: string]: unknown
         }
         content?: never
-      }
-      /** @description Validation Error */
-      422: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": components["schemas"]["HTTPValidationError"]
-        }
-      }
-    }
-  }
-  list_question_reports_interviews__interview_id__questions__question_id__reports_get: {
-    parameters: {
-      query?: {
-        /** @description Number of items to skip */
-        offset?: number
-        /** @description Number of items to return, up to 100 */
-        limit?: number
-      }
-      header?: never
-      path: {
-        interview_id: string
-        question_id: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Successful Response */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": components["schemas"]["ReportOut"][]
-        }
       }
       /** @description Validation Error */
       422: {

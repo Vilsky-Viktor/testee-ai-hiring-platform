@@ -1,7 +1,7 @@
 import { expect, test } from "../fixtures"
 import { api, createCompany } from "../helpers/api"
 import { addTemplate, deleteTemplate } from "../helpers/db-library"
-import { openDialog, visit } from "../helpers/navigation"
+import { visit } from "../helpers/navigation"
 import { throwawayEmail } from "../helpers/users"
 
 // Text in another language than the page carries its own lang and dir, so screen readers read
@@ -34,8 +34,9 @@ test("an interview's topics and questions carry the interview's language", async
     const topics = owner.getByRole("main").locator('[lang="de"][dir="ltr"]')
     await expect(topics.getByText("E2E topic").filter({ visible: true })).toBeVisible()
 
-    await openDialog(owner, owner.getByTestId("manage-questions").first())
-    const questions = owner.getByRole("dialog").locator('[lang="de"]')
+    await owner.getByTestId("manage-questions").first().click()
+    await expect(owner).toHaveURL(/\/topics\/[^/?]+$/)
+    const questions = owner.getByRole("main").locator('[lang="de"]')
     await expect(questions.getByText("E2E question 1?").filter({ visible: true })).toBeVisible()
   } finally {
     await deleteTemplate(templateId)

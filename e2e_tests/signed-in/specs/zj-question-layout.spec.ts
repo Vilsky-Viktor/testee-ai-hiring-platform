@@ -96,6 +96,26 @@ test("an interview question sits beside its options and rates before a pick", as
     await expect.poll(() => card.evaluate((element) => element.scrollTop)).toBeGreaterThan(0)
     await shot(candidate, "question-desktop", false)
 
+    // The question's like is saved; a second click takes it back, and it stays taken back.
+    const like = rating.getByRole("button").first()
+    const saved = (method: string) =>
+      candidate.waitForResponse(
+        (response: Response) =>
+          response.url().endsWith("/rating") && response.request().method() === method,
+      )
+    const liked = saved("PUT")
+    await like.click()
+    expect((await liked).ok()).toBe(true)
+    await expect(like).toHaveAttribute("aria-pressed", "true")
+    const removed = saved("DELETE")
+    await like.click()
+    expect((await removed).ok()).toBe(true)
+    await expect(like).toHaveAttribute("aria-pressed", "false")
+    const loaded = saved("GET")
+    await candidate.reload()
+    expect(await (await loaded).json()).toEqual({ value: null })
+    await expect(like).toHaveAttribute("aria-pressed", "false")
+
     // Phone: stacked, the question and the options as wide as the screen, the rating after them.
     await candidate.setViewportSize(PHONE)
     // Nothing to scroll in on a phone: the box grows with the question.

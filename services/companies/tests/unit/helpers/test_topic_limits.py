@@ -4,7 +4,7 @@ interview, the room left for a topic added later."""
 import pytest
 
 from companies.constants.interviews import MAX_INTERVIEW_QUESTIONS
-from companies.helpers.interviews import even_share, topic_limits
+from companies.helpers.interviews import even_share, set_sizes, topic_limits
 
 
 def topics(*sizes: int) -> list[tuple[str, int]]:
@@ -61,3 +61,10 @@ def test_topics_added_later_share_the_room_in_order():
 def test_a_number_left_from_an_earlier_set_doesnt_count():
     """A regenerated topic has a new id: the old one's number is ignored."""
     assert topic_limits(topics(50, 50), {"gone": 60}) == {"topic-0": 10, "topic-1": 10}
+
+
+def test_questions_left_out_dont_count_in_their_topics_size():
+    found = {"topics": [{"id": "sql", "question_count": 12}, {"id": "git", "question_count": 5}]}
+
+    assert set_sizes(found, {}) == [("sql", 12), ("git", 5)]
+    assert set_sizes(found, {"sql": ["a", "b", "c"], "gone": ["d"]}) == [("sql", 9), ("git", 5)]

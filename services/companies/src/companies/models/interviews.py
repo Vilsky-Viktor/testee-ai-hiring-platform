@@ -69,6 +69,11 @@ class Interview(Base):
     # (repositories/interviews.py); the database's default is from before tests had them.
     question_seconds: Mapped[int] = mapped_column(server_default="60")
     topic_limits: Mapped[dict[str, int]] = mapped_column(JSONB, default=dict, server_default="{}")
+    # The questions an owner or admin left out, by topic id: no candidate gets them, and their
+    # topic counts without them.
+    excluded_questions: Mapped[dict[str, list[str]]] = mapped_column(
+        JSONB, default=dict, server_default="{}"
+    )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=lambda: datetime.now(UTC), server_default=func.now()
     )

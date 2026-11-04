@@ -647,6 +647,61 @@
       }
      }
     }
+   },
+   "delete": {
+    "tags": [
+     "sessions"
+    ],
+    "summary": "Unrate",
+    "description": "Takes back the candidate's thumbs up or down (a click by mistake).",
+    "operationId": "unrate_sessions__session_id__questions__question_id__rating_delete",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "session_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Session Id"
+      }
+     },
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
    }
   },
   "/sessions/{session_id}/questions/{question_id}/reports/mine": {
@@ -3092,7 +3147,8 @@
     "required": [
      "value"
     ],
-    "title": "RatingIn"
+    "title": "RatingIn",
+    "description": "A thumbs up (1) or down (-1) on a question."
    },
    "ReportIn": {
     "properties": {
@@ -3110,7 +3166,8 @@
     "required": [
      "reason"
     ],
-    "title": "ReportIn"
+    "title": "ReportIn",
+    "description": "A report on a question: library checks the reason and the comment's length."
    },
    "ResumeIn": {
     "properties": {

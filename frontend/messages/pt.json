@@ -886,7 +886,16 @@
     "count": "{count, plural, one {questão} other {questões}}",
     "loadFailed": "Não foi possível carregar as questões.",
     "yourAnswer": "sua resposta",
-    "aiWritten": "Questões e gabaritos escritos por IA podem estar errados. Marque o erro ou gere de novo."
+    "aiWritten": "Questões e gabaritos escritos por IA podem estar errados. Marque o erro ou gere de novo.",
+    "excludeFailed": "Não foi possível salvar a alteração. Tente novamente.",
+    "addReport": "Adicionar reporte",
+    "youReported": "Você já reportou",
+    "includedHint": "Desmarque para desativar a questão",
+    "excludedHint": "Marque para ativar a questão",
+    "includedView": "Questão ativada",
+    "excludedView": "Questão desativada",
+    "active": "Ativa",
+    "disabled": "Desativada"
   },
   "rounds": {
     "answered": "Respondidas",

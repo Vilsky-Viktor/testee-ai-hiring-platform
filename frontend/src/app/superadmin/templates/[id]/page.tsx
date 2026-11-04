@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getTranslations } from "next-intl/server"
 
@@ -7,7 +8,7 @@ import { BackLink } from "@/components/common/back-link"
 import { EditableTitle } from "@/components/common/editable-title"
 import { PageHeader } from "@/components/common/page-header"
 import { SubtopicList } from "@/components/common/subtopic-list"
-import { TopicQuestions } from "@/components/common/topic-questions"
+import { Button } from "@/components/ui/button"
 import { DottedText } from "@/components/common/dot"
 import { languageOf } from "@/lib/locale"
 import { serverFetch } from "@/lib/server-api"
@@ -26,6 +27,7 @@ export default async function TemplatePage({
 }) {
   const { id } = await params
   const t = await getTranslations("superadmin")
+  const questions = await getTranslations("questions")
   const [template, addition] = await Promise.all([
     serverFetch<PooledTemplate>(`/library/superadmin/templates/${id}`),
     serverFetch<Addition>(
@@ -79,14 +81,20 @@ export default async function TemplatePage({
               <SubtopicList subtopics={topic.subtopics} />
             </span>
             <span className="flex shrink-0 flex-col items-center gap-3 max-sm:flex-row max-sm:flex-wrap max-sm:justify-center max-sm:gap-4">
-              <TopicQuestions
-                title={topic.title}
-                language={template.language}
-                path={`${base}/topics/${topic.id}/questions`}
-                regeneratePath={`/generate/superadmin/templates/${id}/questions`}
-                wrongPath={`${base}/questions`}
-                reportsPath={`${base}/questions`}
-              />
+              {/* The topic's questions have a page of their own. */}
+              <Button
+                variant="outline"
+                className="h-9 shrink-0 px-4"
+                data-testid="manage-questions"
+                nativeButton={false}
+                render={
+                  <Link
+                    href={`/superadmin/templates/${id}/topics/${topic.id}`}
+                  />
+                }
+              >
+                {questions("manage")}
+              </Button>
               <p
                 className="text-sm whitespace-nowrap text-muted-foreground tabular-nums"
                 data-testid="pool-counts"

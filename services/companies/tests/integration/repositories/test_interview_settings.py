@@ -1,6 +1,9 @@
 import uuid
 
-from companies.repositories import interview_generations, interviews
+import pytest
+from fastapi import HTTPException
+
+from companies.repositories import excluded_questions, interview_generations, interviews
 from companies.schemas.interviews import InterviewSettings
 from tests.integration import factories
 from tests.integration.transactions import transaction
@@ -93,3 +96,28 @@ def test_a_generated_test_takes_its_levels_seconds_once_and_keeps_the_companys_a
         return first, later, (await transaction(interviews.get, old.id)).question_seconds
 
     assert run(scenario()) == (75, 45, 60)
+
+
+def test_questions_left_out_are_saved_and_a_refused_change_keeps_them(run):
+    topic, question = str(uuid.uuid4()), str(uuid.uuid4())
+
+    def leave_out(stored, limits):
+        return {**stored, topic: [question]}
+
+    def refuse(stored, limits):
+        raise HTTPException(422, "No")
+
+    async def scenario():
+        company = await factories.company(f"Acme {uuid.uuid4()}", "owner", "owner@example.com")
+        found = await transaction(interviews.create, company.id, uuid.uuid4(), "en", 60)
+        new = (await transaction(interviews.get, found.id)).excluded_questions
+        await transaction(excluded_questions.change, found.id, leave_out)
+
+        with pytest.raises(HTTPException):
+            await transaction(excluded_questions.change, found.id, refuse)
+
+        return new, (await transaction(interviews.get, found.id)).excluded_questions
+
+    new, saved = run(scenario())
+
+    assert (new, saved) == ({}, {topic: [question]})

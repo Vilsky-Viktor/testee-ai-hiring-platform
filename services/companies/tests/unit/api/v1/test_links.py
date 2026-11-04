@@ -28,6 +28,7 @@ INTERVIEW = Interview(
     set_id=uuid.uuid4(),
     question_seconds=60,
     topic_limits={},
+    excluded_questions={},
     link_token="abc",
 )
 

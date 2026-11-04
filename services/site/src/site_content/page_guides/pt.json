@@ -97,8 +97,8 @@
     "title": "Tópicos",
     "text": "O que esta entrevista avalia: seus tópicos, cada um com subtópicos e seu próprio banco de questões. Cada candidato recebe uma seleção aleatória de cada banco.",
     "actions": [
-      "Abra “Gerenciar questões” para ler as questões e respostas de um tópico.",
-      "Gere novamente uma questão fraca, marque uma resposta errada ou leia os reportes dos candidatos sobre uma questão.",
+      "Abra “Gerenciar questões” para ir às questões de um tópico: leia, desative algumas, curta, descurta ou reporte.",
+      "Gere novamente uma questão fraca ou marque uma resposta errada na página de questões de um tópico.",
       "Defina quantas questões cada candidato recebe de um tópico; com 0, o tópico fica de fora para novos candidatos. Cada candidato recebe no máximo 60 questões somando todos os tópicos: diminua um tópico para aumentar outro.",
       "Experimente a entrevista como candidato ou exclua-a."
     ],
@@ -106,6 +106,21 @@
       "Questões escritas por IA podem estar erradas: dê uma olhada em cada tópico antes de convidar alguém.",
       "Clique no título para renomear a entrevista.",
       "Os cartões no topo somam o que cada candidato recebe: o total de questões, o tempo médio por questão e o tempo da entrevista completa. Eles acompanham cada mudança."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Questões",
+    "text": "As questões de um tópico com respostas, curtidas, descurtidas e reportes. Cada candidato recebe um conjunto aleatório das questões ativas.",
+    "actions": [
+      "Desmarque uma questão para desativá-la: a partir de agora nenhum candidato a recebe. Marque-a para ativá-la de novo (proprietários e administradores).",
+      "Curta ou descurta uma questão; clique de novo na sua escolha para desfazê-la.",
+      "Abra os reportes de uma questão e adicione o seu, um por questão.",
+      "Gere novamente uma questão fraca ou marque uma resposta errada (proprietários e administradores)."
+    ],
+    "tips": [
+      "Questões escritas por IA podem estar erradas: leia antes de convidar alguém.",
+      "Suas curtidas, descurtidas e reportes contam tanto quanto os dos candidatos e ajudam a corrigir questões fracas.",
+      "O número do tópico conta só as questões ativas: um candidato nunca recebe mais do que isso dele."
     ]
   },
   "interviewCandidates": {

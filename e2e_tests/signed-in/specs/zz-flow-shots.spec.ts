@@ -1,6 +1,7 @@
 import { expect, test } from "../fixtures"
-import { createCompany, inviteCandidate } from "../helpers/api"
+import { api, createCompany, inviteCandidate } from "../helpers/api"
 import { addTopUp, inviteToken, verifyCompany } from "../helpers/db"
+import { addFeedback } from "../helpers/db-library"
 import { exampleEmail, PEOPLE, spreadSections, takePart } from "../helpers/feature-people"
 import {
   FLOW_TOPICS,
@@ -73,10 +74,26 @@ test("hiring flow: an accountant's interview", async ({ signInAs }) => {
 
   await visit(owner, base)
   await expect(owner.getByTestId("manage-questions").first()).toBeVisible()
-  await openDialog(owner, owner.getByTestId("manage-questions").first())
-  await expect(owner.getByRole("dialog").getByRole("listitem").first()).toBeVisible()
+  // The first topic's questions, on their page, with a few made-up members' votes and a report;
+  // each row's checkbox shows once they've loaded.
+  const { topics } = await api<{ topics: { id: string }[] }>(
+    owner,
+    "GET",
+    `/companies/interviews/${interviewId}`,
+  )
+  await addFeedback(topics[0].id, [
+    { likes: 4, dislikes: 0, reports: 0 },
+    { likes: 2, dislikes: 1, reports: 1 },
+    { likes: 3, dislikes: 0, reports: 0 },
+  ])
+  await owner.getByTestId("manage-questions").first().click()
+  await expect(owner).toHaveURL(/\/topics\/[^/?]+$/)
+  await expect(owner.getByRole("main").getByRole("checkbox").first()).toBeVisible()
+  // A taller window, so two whole questions with their answer options fit in the picture.
+  await owner.setViewportSize({ width: SHOT_VIEWPORT.width, height: 1500 })
+  await expect(owner.getByRole("main").getByRole("checkbox").nth(1)).toBeVisible()
   await pair(owner, "flow-questions")
-  await owner.keyboard.press("Escape")
+  await owner.setViewportSize(SHOT_VIEWPORT)
 
   await visit(owner, `${base}?tab=settings`)
   await expect(owner.getByRole("main").getByTestId("answer-mode").filter({ visible: true })).toBeVisible()

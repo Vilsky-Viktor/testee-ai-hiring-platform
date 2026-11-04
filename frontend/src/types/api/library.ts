@@ -469,7 +469,8 @@ export interface paths {
     }
     /**
      * List Topic Questions
-     * @description One topic's questions in a set, with their options and feedback counts.
+     * @description One topic's questions in a set, with their options and feedback counts; with `user_id`,
+     *     that user's own vote and report on each.
      */
     get: operations["list_topic_questions_internal_sets__set_id__topics__topic_id__questions_get"]
     put?: never
@@ -716,7 +717,8 @@ export interface paths {
     /** Rate */
     put: operations["rate_internal_questions__question_id__rating_put"]
     post?: never
-    delete?: never
+    /** Unrate */
+    delete: operations["unrate_internal_questions__question_id__rating_delete"]
     options?: never
     head?: never
     patch?: never
@@ -1448,6 +1450,13 @@ export interface components {
        * @default 0
        */
       reports: number
+      /** My Rating */
+      my_rating?: (-1 | 1) | null
+      /**
+       * Reported
+       * @default false
+       */
+      reported: boolean
     }
     /**
      * QuestionUpdateOut
@@ -2764,7 +2773,9 @@ export interface operations {
   }
   list_topic_questions_internal_sets__set_id__topics__topic_id__questions_get: {
     parameters: {
-      query?: never
+      query?: {
+        user_id?: string | null
+      }
       header?: never
       path: {
         set_id: string
@@ -3175,6 +3186,37 @@ export interface operations {
         "application/json": components["schemas"]["InternalRatingIn"]
       }
     }
+    responses: {
+      /** @description Successful Response */
+      204: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  unrate_internal_questions__question_id__rating_delete: {
+    parameters: {
+      query: {
+        user_id: string
+      }
+      header?: never
+      path: {
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
     responses: {
       /** @description Successful Response */
       204: {

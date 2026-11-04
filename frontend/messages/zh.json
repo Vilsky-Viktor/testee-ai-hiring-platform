@@ -886,7 +886,16 @@
     "count": "{count, plural, other {道题}}",
     "loadFailed": "无法加载题目。",
     "yourAnswer": "你的答案",
-    "aiWritten": "AI 编写的题目和答案可能有误。请标记错误答案或重新生成。"
+    "aiWritten": "AI 编写的题目和答案可能有误。请标记错误答案或重新生成。",
+    "excludeFailed": "无法保存更改，请重试。",
+    "addReport": "添加举报",
+    "youReported": "你已举报",
+    "includedHint": "取消勾选以停用题目",
+    "excludedHint": "勾选以启用题目",
+    "includedView": "已启用的题目",
+    "excludedView": "已停用的题目",
+    "active": "已启用",
+    "disabled": "已停用"
   },
   "rounds": {
     "answered": "已回答",

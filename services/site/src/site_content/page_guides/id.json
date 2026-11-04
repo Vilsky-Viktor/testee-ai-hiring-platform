@@ -97,8 +97,8 @@
     "title": "Topik",
     "text": "Yang diuji wawancara ini: topiknya, masing-masing dengan subtopik dan kumpulan soalnya sendiri. Setiap kandidat mendapat set acak dari tiap kumpulan.",
     "actions": [
-      "Buka “Kelola soal” untuk membaca soal dan jawaban sebuah topik.",
-      "Buat ulang soal yang lemah, tandai jawaban yang salah, atau baca laporan kandidat tentang sebuah soal.",
+      "Buka “Kelola soal” untuk menuju soal sebuah topik: baca, nonaktifkan sebagian, beri suka, tidak suka, atau laporkan.",
+      "Buat ulang soal yang lemah atau tandai jawaban yang salah di halaman soal sebuah topik.",
       "Atur berapa soal yang didapat setiap kandidat dari sebuah topik; 0 mengeluarkan topik itu untuk kandidat baru. Setiap kandidat mendapat paling banyak 60 soal dari semua topik: kurangi satu topik untuk menambah topik lain.",
       "Coba wawancara sebagai kandidat, atau hapus."
     ],
@@ -106,6 +106,21 @@
       "Soal buatan AI bisa salah: periksa sekilas setiap topik sebelum mengundang siapa pun.",
       "Klik judul untuk mengganti nama wawancara.",
       "Kartu di atas menjumlahkan yang didapat setiap kandidat: total soal, rata-rata waktu per soal, dan waktu seluruh wawancara. Kartu ini ikut berubah setiap ada perubahan."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Soal",
+    "text": "Soal satu topik beserta jawaban, suka, tidak suka, dan laporannya. Setiap kandidat mendapat kumpulan acak dari soal yang aktif.",
+    "actions": [
+      "Hapus centang sebuah soal untuk menonaktifkannya: mulai sekarang tidak ada kandidat yang mendapatkannya. Centang lagi untuk mengaktifkannya kembali (pemilik dan admin).",
+      "Beri suka atau tidak suka pada soal; klik pilihanmu lagi untuk membatalkannya.",
+      "Buka laporan sebuah soal dan tambahkan laporanmu sendiri, sekali per soal.",
+      "Buat ulang soal yang lemah atau tandai jawaban yang salah (pemilik dan admin)."
+    ],
+    "tips": [
+      "Soal tulisan AI bisa salah: baca dulu sebelum mengundang siapa pun.",
+      "Suka, tidak suka, dan laporanmu dihitung sama seperti milik kandidat dan membantu memperbaiki soal yang lemah.",
+      "Jumlah pada topik hanya menghitung soal aktif: kandidat tidak pernah mendapat lebih dari itu dari topik tersebut."
     ]
   },
   "interviewCandidates": {

@@ -101,22 +101,23 @@ test("owner creates a company, an interview from a template and invites a candid
   await expect(owner.getByTestId("manage-questions").first()).toBeVisible()
   await shot(owner, "interview")
 
-  // The questions of the first topic: the AI warning card and every answer option, each marked
-  // right or wrong for screen readers too.
-  await owner.getByTestId("manage-questions").first().click()
-  // The questions first: until they come, the loading mark is a status of its own.
-  const dialog = owner.getByRole("dialog")
-  await expect(dialog.getByRole("img", { name: "Correct answer" }).first()).toBeVisible()
-  await expect(dialog.getByRole("img", { name: "Wrong answer" }).first()).toBeVisible()
-  await expect(dialog.getByTestId("page-loading")).toHaveCount(0)
-  await expect(dialog.getByRole("status")).toBeVisible()
-  // `inline code` in an option shows as code, as in the question, without its backticks.
-  await expect(dialog.locator("li code").first()).toHaveText("if is_member:")
-  await expect(dialog.getByText("`if is_member:`")).toHaveCount(0)
-  await shot(owner, "manage-questions")
-  await owner.keyboard.press("Escape")
-
   const interviewUrl = owner.url()
+  // The questions of the first topic, on a page of their own: the AI warning card and every
+  // answer option, each marked right or wrong for screen readers too.
+  await owner.getByTestId("manage-questions").first().click()
+  await expect(owner).toHaveURL(/\/interviews\/[^/]+\/topics\/[^/?]+$/)
+  // The questions first: until they come, the loading mark is a status of its own.
+  const questions = owner.getByRole("main")
+  await expect(questions.getByRole("img", { name: "Correct answer" }).first()).toBeVisible()
+  await expect(questions.getByRole("img", { name: "Wrong answer" }).first()).toBeVisible()
+  await expect(questions.getByTestId("page-loading")).toHaveCount(0)
+  await expect(questions.getByRole("status")).toBeVisible()
+  // `inline code` in an option shows as code, as in the question, without its backticks.
+  await expect(questions.locator("li code").first()).toHaveText("if is_member:")
+  await expect(questions.getByText("`if is_member:`")).toHaveCount(0)
+  await shot(owner, "manage-questions")
+  await visit(owner, interviewUrl)
+
   // The back arrow, to the company's interviews.
   await owner.getByRole("main").locator('a[href$="/interviews"]').first().click()
   await expect(owner).toHaveURL(/\/interviews$/)

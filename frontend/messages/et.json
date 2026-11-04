@@ -886,7 +886,16 @@
     "count": "{count, plural, one {küsimus} other {küsimust}}",
     "loadFailed": "Küsimusi ei õnnestunud laadida.",
     "yourAnswer": "sinu vastus",
-    "aiWritten": "AI kirjutatud küsimused ja vastused võivad olla valed. Märgi vale vastus või loo uuesti."
+    "aiWritten": "AI kirjutatud küsimused ja vastused võivad olla valed. Märgi vale vastus või loo uuesti.",
+    "excludeFailed": "Muudatust ei õnnestunud salvestada. Proovi uuesti.",
+    "addReport": "Lisa teade",
+    "youReported": "Sa teatasid sellest",
+    "includedHint": "Eemalda linnuke, et küsimus välja lülitada",
+    "excludedHint": "Lisa linnuke, et küsimus sisse lülitada",
+    "includedView": "Sisselülitatud küsimus",
+    "excludedView": "Väljalülitatud küsimus",
+    "active": "Aktiivne",
+    "disabled": "Välja lülitatud"
   },
   "rounds": {
     "answered": "Vastatud",

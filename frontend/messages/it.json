@@ -886,7 +886,16 @@
     "count": "{count, plural, one {domanda} other {domande}}",
     "loadFailed": "Impossibile caricare le domande.",
     "yourAnswer": "la tua risposta",
-    "aiWritten": "Domande e risposte scritte dall'IA possono essere sbagliate. Segnala un errore o rigenera."
+    "aiWritten": "Domande e risposte scritte dall'IA possono essere sbagliate. Segnala un errore o rigenera.",
+    "excludeFailed": "Impossibile salvare la modifica. Riprova.",
+    "addReport": "Aggiungi segnalazione",
+    "youReported": "L'hai segnalata",
+    "includedHint": "Togli la spunta per disattivare la domanda",
+    "excludedHint": "Spunta per attivare la domanda",
+    "includedView": "Domanda attivata",
+    "excludedView": "Domanda disattivata",
+    "active": "Attiva",
+    "disabled": "Disattivata"
   },
   "rounds": {
     "answered": "Risposte",

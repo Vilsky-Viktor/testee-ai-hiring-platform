@@ -886,7 +886,16 @@
     "count": "{count, plural, one {Frage} other {Fragen}}",
     "loadFailed": "Die Fragen konnten nicht geladen werden.",
     "yourAnswer": "deine Antwort",
-    "aiWritten": "KI-geschriebene Fragen und Lösungen können falsch sein. Melde eine falsche Antwort oder generiere neu."
+    "aiWritten": "KI-geschriebene Fragen und Lösungen können falsch sein. Melde eine falsche Antwort oder generiere neu.",
+    "excludeFailed": "Die Änderung konnte nicht gespeichert werden. Bitte versuche es erneut.",
+    "addReport": "Meldung hinzufügen",
+    "youReported": "Von dir gemeldet",
+    "includedHint": "Abwählen, um die Frage zu deaktivieren",
+    "excludedHint": "Anhaken, um die Frage zu aktivieren",
+    "includedView": "Aktivierte Frage",
+    "excludedView": "Deaktivierte Frage",
+    "active": "Aktiv",
+    "disabled": "Deaktiviert"
   },
   "rounds": {
     "answered": "Beantwortet",

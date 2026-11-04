@@ -99,13 +99,13 @@ async def set_topic_limit(interview: Interview, topic_id: UUID, limit: int, user
     if topic is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Topic not found")
 
-    if limit > topic["question_count"]:
-        raise HTTPException(
-            status.HTTP_422_UNPROCESSABLE_CONTENT,
-            f"The topic has only {topic['question_count']} questions",
-        )
+    sizes = set_sizes(found, interview.excluded_questions)
+    available = dict(sizes)[str(topic_id)]
 
-    sizes = set_sizes(found)
+    if limit > available:
+        raise HTTPException(
+            status.HTTP_422_UNPROCESSABLE_CONTENT, f"The topic has only {available} questions"
+        )
 
     def change(stored: dict[str, int]) -> dict[str, int]:
         before = topic_limits(sizes, stored)

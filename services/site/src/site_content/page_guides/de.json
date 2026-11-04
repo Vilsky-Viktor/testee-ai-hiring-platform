@@ -97,8 +97,8 @@
     "title": "Themen",
     "text": "Was dieses Interview testet: seine Themen, jedes mit Unterthemen und einem eigenen Pool an Fragen. Jeder Kandidat bekommt eine zufällige Auswahl aus jedem Pool.",
     "actions": [
-      "Öffne „Fragen verwalten“, um die Fragen und Antworten eines Themas zu lesen.",
-      "Generiere eine schwache Frage neu, markiere eine falsche Antwort oder lies Meldungen von Kandidaten zu einer Frage.",
+      "Öffne „Fragen verwalten“, um zu den Fragen eines Themas zu gelangen: Lies sie, deaktiviere einzelne, bewerte sie positiv oder negativ oder melde sie.",
+      "Generiere eine schwache Frage neu oder markiere eine falsche Antwort auf der Fragenseite eines Themas.",
       "Lege fest, wie viele Fragen jeder Kandidat aus einem Thema bekommt; mit 0 fällt das Thema für neue Kandidaten weg. Ein Kandidat bekommt über alle Themen höchstens 60 Fragen: Senke ein Thema, um ein anderes zu erhöhen.",
       "Probiere das Interview als Kandidat aus oder lösche es."
     ],
@@ -106,6 +106,21 @@
       "Von KI geschriebene Fragen können falsch sein: Überfliege jedes Thema, bevor du jemanden einlädst.",
       "Klicke auf den Titel, um das Interview umzubenennen.",
       "Die Karten oben zählen zusammen, was jeder Kandidat bekommt: Fragen insgesamt, durchschnittliche Zeit pro Frage und die Zeit des gesamten Interviews. Sie folgen jeder Änderung."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Fragen",
+    "text": "Die Fragen eines Themas mit ihren Antworten, positiven und negativen Bewertungen und Meldungen. Jeder Kandidat erhält eine zufällige Auswahl aus den aktiven Fragen.",
+    "actions": [
+      "Entferne das Häkchen bei einer Frage, um sie zu deaktivieren: Ab sofort erhält sie kein Kandidat mehr. Setze das Häkchen, um sie wieder zu aktivieren (Inhaber und Admins).",
+      "Bewerte eine Frage positiv oder negativ; klicke erneut auf deine Wahl, um sie zurückzunehmen.",
+      "Öffne die Meldungen zu einer Frage und füge deine eigene hinzu, einmal pro Frage.",
+      "Generiere eine schwache Frage neu oder markiere eine falsche Antwort (Inhaber und Admins)."
+    ],
+    "tips": [
+      "KI-generierte Fragen können falsch sein: Lies sie, bevor du jemanden einlädst.",
+      "Deine Bewertungen und Meldungen zählen genauso wie die der Kandidaten und helfen, schwache Fragen zu verbessern.",
+      "Die Zahl beim Thema zählt nur aktive Fragen: Ein Kandidat erhält daraus nie mehr als diese."
     ]
   },
   "interviewCandidates": {

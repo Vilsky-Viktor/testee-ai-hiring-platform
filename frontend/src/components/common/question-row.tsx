@@ -1,31 +1,16 @@
 "use client"
 
-import {
-  CircleAlertIcon,
-  FlagIcon,
-  RefreshCwIcon,
-  ThumbsDownIcon,
-  ThumbsUpIcon,
-} from "lucide-react"
 import { cn } from "cn"
-import { useTranslations } from "next-intl"
 import { useState } from "react"
-import { toast } from "sonner"
 
 import { AnswerOptions } from "@/components/common/answer-options"
-import { QuestionReports } from "@/components/common/question-reports"
+import { QuestionFeedback } from "@/components/common/question-feedback"
+import { QuestionFixes } from "@/components/common/question-fixes"
+import { QuestionInclude } from "@/components/common/question-include"
+import { QuestionReportsPanel } from "@/components/common/question-reports-panel"
 import { MultiChoiceTag } from "@/components/common/multi-choice-tag"
 import { QuestionText } from "@/components/common/question-text"
-import { IconStat } from "@/components/common/icon-stat"
-import { Button } from "@/components/ui/button"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
-import { apiFetch } from "@/lib/api"
 import { languageOf } from "@/lib/locale"
-import { ROUND_ICON_BUTTON } from "@/config/buttons"
 import type { QuestionStats } from "@/types/feedback"
 
 export function QuestionRow({
@@ -34,9 +19,12 @@ export function QuestionRow({
   canRegenerate,
   wrongPath,
   reportsPath,
+  feedbackPath,
+  excludePath,
   regenerating,
   busy,
   onRegenerate,
+  onChange,
 }: {
   question: QuestionStats
   // What the question is written in; its text and options carry it.
@@ -45,36 +33,45 @@ export function QuestionRow({
   // Where to say the marked answer is wrong (owners and admins, superadmins).
   wrongPath?: string
   reportsPath?: string
+  // A member's own like, dislike and report on an interview's question.
+  feedbackPath?: string
+  // Where an owner or admin leaves a question out of the interview, or brings it back; without
+  // it the checkbox only shows whether it's in.
+  excludePath?: string
   regenerating: boolean
   busy: boolean
   onRegenerate: () => void
+  onChange: (question: QuestionStats) => void
 }) {
-  const t = useTranslations("questions")
   const [showReports, setShowReports] = useState(false)
-  const [markedWrong, setMarkedWrong] = useState(false)
 
-  // One click: the verifier checks the marked answer and fixes or replaces the question.
-  async function markWrong() {
-    setMarkedWrong(true)
-
-    try {
-      await apiFetch(`${wrongPath}/${question.id}/wrong`, { method: "POST" })
-      toast.success(t("markedWrong"))
-    } catch {
-      setMarkedWrong(false)
-      toast.error(t("markWrongFailed"))
-    }
-  }
-  const canViewReports = Boolean(reportsPath)
+  const choosable = question.excluded !== undefined
+  const out = Boolean(question.excluded)
 
   return (
-    // Columns: the question, then feedback and actions (on phones, centered on the line under
-    // it); reports open in a row below.
-    <div className="grid grid-cols-[1fr_auto] max-sm:grid-cols-1">
+    // Columns: the checkbox (an interview's questions), the question, then feedback and actions;
+    // on phones one under another, the checkbox and the feedback centered. Reports open in a row
+    // below.
+    <div
+      data-testid="question-row"
+      className={cn(
+        "grid max-sm:grid-cols-1",
+        choosable ? "grid-cols-[auto_1fr_auto]" : "grid-cols-[1fr_auto]"
+      )}
+    >
+      {choosable && (
+        <div className="flex items-start ps-5 pt-5 max-sm:justify-center max-sm:ps-0 max-sm:pt-7">
+          <QuestionInclude
+            question={question}
+            excludePath={excludePath}
+            onChange={onChange}
+          />
+        </div>
+      )}
       <div
         className={cn(
           "min-w-0 px-5 py-5 font-light max-sm:pt-7",
-          regenerating && "opacity-50"
+          (regenerating || out) && "opacity-50"
         )}
       >
         <div {...languageOf(language)}>
@@ -92,78 +89,34 @@ export function QuestionRow({
       </div>
       <div className="self-center py-5 ps-5 pe-6 text-sm whitespace-nowrap text-muted-foreground tabular-nums max-sm:px-5 max-sm:pt-0 max-sm:pb-7">
         <span className="flex flex-col items-end gap-3 max-sm:items-center">
-          <span className="flex items-center gap-4">
-            <IconStat
-              label={t("likes")}
-              icon={<ThumbsUpIcon aria-hidden className="size-4" />}
-            >
-              {question.likes}
-            </IconStat>
-            <IconStat
-              label={t("dislikes")}
-              icon={<ThumbsDownIcon aria-hidden className="size-4" />}
-            >
-              {question.dislikes}
-            </IconStat>
-            {canViewReports ? (
-              <Tooltip>
-                <TooltipTrigger
-                  render={
-                    <button
-                      type="button"
-                      aria-expanded={showReports}
-                      onClick={() => setShowReports((shown) => !shown)}
-                      aria-label={t("showReports", { count: question.reports })}
-                      className={cn(
-                        // Hovered like the likes and dislikes beside it.
-                        ROUND_ICON_BUTTON,
-                        "-mx-2 -my-1 flex cursor-pointer items-center gap-1.5 px-2 py-1 transition-colors aria-expanded:bg-surface aria-expanded:text-foreground"
-                      )}
-                    />
-                  }
-                >
-                  <FlagIcon className="size-4" />
-                  {question.reports}
-                </TooltipTrigger>
-                <TooltipContent>{t("reports")}</TooltipContent>
-              </Tooltip>
-            ) : (
-              <IconStat
-                label={t("reports")}
-                icon={<FlagIcon aria-hidden className="size-4" />}
-              >
-                {question.reports}
-              </IconStat>
-            )}
-          </span>
-          {/* Under each other, beside the question; on one line, on phones. */}
-          <span className="flex flex-col items-end gap-3 max-sm:flex-row">
-            {canRegenerate && (
-              <Button variant="outline" disabled={busy} onClick={onRegenerate}>
-                <RefreshCwIcon
-                  data-icon="inline-start"
-                  className={cn(regenerating && "animate-spin")}
-                />
-                {regenerating ? t("regenerating") : t("regenerate")}
-              </Button>
-            )}
-            {wrongPath && (
-              <Button
-                variant="outline"
-                disabled={busy || markedWrong}
-                onClick={markWrong}
-              >
-                <CircleAlertIcon data-icon="inline-start" />
-                {markedWrong ? t("checking") : t("wrongAnswer")}
-              </Button>
-            )}
-          </span>
+          <QuestionFeedback
+            question={question}
+            ratingPath={
+              feedbackPath ? `${feedbackPath}/${question.id}/rating` : undefined
+            }
+            showReports={showReports}
+            onToggleReports={
+              reportsPath ? () => setShowReports((shown) => !shown) : undefined
+            }
+            onChange={onChange}
+          />
+          <QuestionFixes
+            questionId={question.id}
+            canRegenerate={canRegenerate}
+            wrongPath={wrongPath}
+            regenerating={regenerating}
+            busy={busy}
+            onRegenerate={onRegenerate}
+          />
         </span>
       </div>
-      {canViewReports && showReports && (
-        <div className="col-span-full bg-surface py-5 ps-5 pe-6">
-          <QuestionReports path={`${reportsPath}/${question.id}/reports`} />
-        </div>
+      {reportsPath && showReports && (
+        <QuestionReportsPanel
+          question={question}
+          reportsPath={reportsPath}
+          feedbackPath={feedbackPath}
+          onChange={onChange}
+        />
       )}
     </div>
   )

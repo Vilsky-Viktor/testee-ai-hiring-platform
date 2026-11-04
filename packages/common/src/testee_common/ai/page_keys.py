@@ -11,6 +11,7 @@ PAGE_KEYS = (
     "reviewTopics",
     "generating",
     "interviewTopics",
+    "topicQuestions",
     "interviewCandidates",
     "interviewNotes",
     "interviewDiscover",

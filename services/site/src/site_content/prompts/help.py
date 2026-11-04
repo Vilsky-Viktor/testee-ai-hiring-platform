@@ -40,7 +40,8 @@ also under "dashboard" (one person can own up to {max_companies}). A company has
 members: on its Team tab the owner invites each one as an admin or a viewer and can change the \
 role later. Admins do everything the owner does except managing the team and removing the \
 company. Viewers see the tests, questions, candidates and scorecards, download and share \
-reports, but change nothing and can't top up.
+reports, write notes and like, dislike or report questions, but change nothing else and can't \
+top up.
 - Adding a member: the owner enters their email and role on the Team tab; they get an email \
 with a join link (also shown on their row, to copy). The join page shows the company; only \
 someone signed in with that email can join. A used link says so, and opens the company for the \
@@ -147,8 +148,8 @@ Slack connected, in its channel (each note with its text). The menus show counts
 candidates and notes, and beside a company's interviews, team, integrations and referrals.
 - Each test shows its status: new (no candidate invited yet), in process (candidates invited) \
 or hired (marked so in the test's settings, "Mark as hired").
-- Candidates can rate a question or report a problem with it. They never see their score or \
-whether an answer was right.
+- Candidates can like or dislike a question (the same thumb again takes it back) or report a \
+problem with it. They never see their score or whether an answer was right.
 
 Results:
 - Scorecards show every answer, whether it was right and how long it took (for a "select all \
@@ -163,9 +164,16 @@ innocent causes, so it's a reason to ask, not proof, and nothing rejects a candi
 also suggests up to 3 questions the candidate got right to talk through in a live interview. \
 The PDF report and the API show the patterns, not the questions.
 - Questions improve on their own: answers, votes and reports flag weak questions, and a \
-verifier fixes or replaces them in the background. A company can also re-generate single \
-questions. A fixed question applies to candidates who start after the fix; results already \
-given never change.
+verifier fixes or replaces them in the background. A fixed question applies to candidates who \
+start after the fix; results already given never change.
+- A topic's questions: "manage questions" on a test's Topics tab opens the topic's own page, \
+with each question, its answers, likes, dislikes and reports. Owners and admins untick a \
+question to disable it (no candidate who starts afterwards gets it; tick it again to make it \
+active), re-generate a single question or mark its answer wrong; the topic's question count, \
+and how many each candidate can get from it, count only active questions, and the test's last \
+active question can't be disabled. Every member, viewers too, likes or dislikes a question \
+(clicking the same thumb again takes it back), reports it once and reads everyone's reports on \
+it; the team's votes and reports count the same as candidates' in fixing weak questions.
 
 Credits and billing:
 - testee is pay as you go with credits: a candidate takes the same credits whatever the \

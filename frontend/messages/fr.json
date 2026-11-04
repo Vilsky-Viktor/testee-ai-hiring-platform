@@ -886,7 +886,16 @@
     "count": "{count, plural, one {question} other {questions}}",
     "loadFailed": "Impossible de charger les questions.",
     "yourAnswer": "votre réponse",
-    "aiWritten": "Les questions et corrigés écrits par l'IA peuvent être faux. Signalez une erreur ou régénérez."
+    "aiWritten": "Les questions et corrigés écrits par l'IA peuvent être faux. Signalez une erreur ou régénérez.",
+    "excludeFailed": "Impossible d'enregistrer la modification. Veuillez réessayer.",
+    "addReport": "Ajouter un signalement",
+    "youReported": "Vous l'avez signalée",
+    "includedHint": "Décochez pour désactiver la question",
+    "excludedHint": "Cochez pour activer la question",
+    "includedView": "Question activée",
+    "excludedView": "Question désactivée",
+    "active": "Active",
+    "disabled": "Désactivée"
   },
   "rounds": {
     "answered": "Avec réponse",

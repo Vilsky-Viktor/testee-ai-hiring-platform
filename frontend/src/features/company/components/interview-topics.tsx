@@ -1,6 +1,9 @@
+import Link from "next/link"
+import { useTranslations } from "next-intl"
+
 import { SubtopicList } from "@/components/common/subtopic-list"
 import { TopicQuestionLimit } from "@/components/common/topic-question-limit"
-import { TopicQuestions } from "@/components/common/topic-questions"
+import { Button } from "@/components/ui/button"
 import { LIST_BOX, ROW_HOVER } from "@/config/lists"
 import { languageOf } from "@/lib/locale"
 import type { InterviewDetail } from "@/types/company"
@@ -9,17 +12,19 @@ import type { InterviewDetail } from "@/types/company"
  * interview's `language`. Viewers read the questions; only owners and admins (`canEdit`) change
  * them. */
 export function InterviewTopics({
+  companyId,
   interviewId,
   language,
   topics,
   canEdit,
 }: {
+  companyId: string
   interviewId: string
   language: string
   topics: InterviewDetail["topics"]
   canEdit: boolean
 }) {
-  const questionsPath = `/companies/interviews/${interviewId}/questions`
+  const t = useTranslations("questions")
 
   if (topics.length === 0) {
     return null
@@ -40,14 +45,20 @@ export function InterviewTopics({
             </span>
           </span>
           <span className="flex shrink-0 flex-col items-center gap-3 max-sm:flex-row max-sm:flex-wrap">
-            <TopicQuestions
-              title={topic.title}
-              language={language}
-              path={`/companies/interviews/${interviewId}/topics/${topic.id}/questions`}
-              regeneratePath={canEdit ? questionsPath : undefined}
-              wrongPath={canEdit ? questionsPath : undefined}
-              reportsPath={canEdit ? questionsPath : undefined}
-            />
+            {/* The topic's questions have a page of their own. */}
+            <Button
+              variant="outline"
+              className="h-9 shrink-0 px-4"
+              data-testid="manage-questions"
+              nativeButton={false}
+              render={
+                <Link
+                  href={`/companies/${companyId}/interviews/${interviewId}/topics/${topic.id}`}
+                />
+              }
+            >
+              {t("manage")}
+            </Button>
             <TopicQuestionLimit
               count={topic.question_count}
               limit={topic.question_limit}

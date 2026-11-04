@@ -94,14 +94,14 @@ test("a multi-answer question is ticked, scored in part and shown", async ({ sig
     // The questions list labels the multi-answer ones.
     await visit(owner, `/companies/${company.id}/interviews/${interview.id}`)
     await owner.getByTestId("manage-questions").first().click()
-    const dialog = owner.getByRole("dialog")
-    const labelled = dialog.getByText(MULTI_QUESTION, { exact: false })
+    await expect(owner).toHaveURL(/\/topics\/[^/?]+$/)
+    const list = owner.getByRole("main")
+    const labelled = list.getByText(MULTI_QUESTION, { exact: false })
     // Loaded first: the count is read once.
     await expect(labelled.first()).toBeVisible()
-    await expect(dialog.getByTestId("multi-choice")).toHaveCount(await labelled.count())
-    await expect(dialog.getByTestId("multi-choice").first()).toBeVisible()
+    await expect(list.getByTestId("multi-choice")).toHaveCount(await labelled.count())
+    await expect(list.getByTestId("multi-choice").first()).toBeVisible()
     await shots(owner, "question-list")
-    await owner.keyboard.press("Escape")
 
     // The candidate reaches the multi-answer question of their draw.
     const email = throwawayEmail("multi-candidate")

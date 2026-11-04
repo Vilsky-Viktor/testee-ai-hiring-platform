@@ -3,7 +3,6 @@ recorded in the action log once they answer."""
 
 from uuid import UUID
 
-from fastapi import HTTPException, status
 from testee_common.events.audit_actions import AuditAction
 from testee_common.http.http import passed_on
 from testee_common.limits.pause import refuse_if_paused
@@ -14,6 +13,7 @@ from companies.integrations import generation as generation_api
 from companies.integrations.redis import get_redis
 from companies.models.interviews import Interview
 from companies.services import audit_records
+from companies.services.question_choices import interview_question
 
 
 async def regenerate(interview: Interview, question_id: UUID, user_id: str) -> dict:
@@ -30,10 +30,7 @@ async def regenerate(interview: Interview, question_id: UUID, user_id: str) -> d
 
 async def mark_wrong(interview: Interview, question_id: UUID, user_id: str) -> None:
     """The marked answer is wrong: the verifier checks it and fixes or replaces it."""
-    context = await library.get_question_context(question_id)
-
-    if context is None or str(context["set_id"]) != str(interview.set_id):
-        raise HTTPException(status.HTTP_404_NOT_FOUND, "Question not found")
+    await interview_question(interview, question_id)
 
     # Each mark starts the AI verifier: a company can't use up everyone's day of it.
     key = f"rate:wrong-marks:{interview.company_id}"

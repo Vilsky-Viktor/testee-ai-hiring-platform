@@ -97,8 +97,8 @@
     "title": "Argomenti",
     "text": "Cosa valuta questo colloquio: i suoi argomenti, ognuno con sottoargomenti e un proprio insieme di domande. Ogni candidato riceve una selezione casuale da ciascun insieme.",
     "actions": [
-      "Apri «Gestisci domande» per leggere le domande e le risposte di un argomento.",
-      "Rigenera una domanda debole, segna una risposta sbagliata o leggi le segnalazioni dei candidati su una domanda.",
+      "Apri «Gestisci domande» per andare alle domande di un argomento: leggile, disattivane alcune, metti mi piace o non mi piace, oppure segnalale.",
+      "Rigenera una domanda debole o segna una risposta sbagliata nella pagina delle domande di un argomento.",
       "Stabilisci quante domande riceve ogni candidato da un argomento; con 0 l'argomento resta fuori per i nuovi candidati. Ogni candidato riceve al massimo 60 domande in tutto: abbassa un argomento per alzarne un altro.",
       "Prova il colloquio come candidato, oppure eliminalo."
     ],
@@ -106,6 +106,21 @@
       "Le domande scritte dall'IA possono essere sbagliate: scorri ogni argomento prima di invitare qualcuno.",
       "Fai clic sul titolo per rinominare il colloquio.",
       "Le schede in alto sommano ciò che riceve ogni candidato: le domande totali, il tempo medio per domanda e la durata dell'intero colloquio. Si aggiornano a ogni modifica."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Domande",
+    "text": "Le domande di un argomento con risposte, mi piace, non mi piace e segnalazioni. Ogni candidato riceve una selezione casuale tra quelle attive.",
+    "actions": [
+      "Togli la spunta a una domanda per disattivarla: da ora nessun candidato la riceve. Rimetti la spunta per riattivarla (proprietari e amministratori).",
+      "Metti mi piace o non mi piace a una domanda; clicca di nuovo sulla tua scelta per annullarla.",
+      "Apri le segnalazioni di una domanda e aggiungi la tua, una per domanda.",
+      "Rigenera una domanda debole o segna una risposta sbagliata (proprietari e amministratori)."
+    ],
+    "tips": [
+      "Le domande scritte dall'IA possono essere sbagliate: leggile prima di invitare qualcuno.",
+      "I tuoi mi piace, non mi piace e segnalazioni contano quanto quelli dei candidati e aiutano a correggere le domande deboli.",
+      "Il numero dell'argomento conta solo le domande attive: un candidato non ne riceve mai di più da quell'argomento."
     ]
   },
   "interviewCandidates": {

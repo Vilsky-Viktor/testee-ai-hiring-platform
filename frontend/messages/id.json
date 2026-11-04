@@ -886,7 +886,16 @@
     "count": "{count, plural, other {soal}}",
     "loadFailed": "Soal tidak bisa dimuat.",
     "yourAnswer": "jawabanmu",
-    "aiWritten": "Soal dan kunci jawaban tulisan AI bisa salah. Tandai jawaban yang salah atau buat ulang."
+    "aiWritten": "Soal dan kunci jawaban tulisan AI bisa salah. Tandai jawaban yang salah atau buat ulang.",
+    "excludeFailed": "Perubahan tidak bisa disimpan. Coba lagi.",
+    "addReport": "Tambah laporan",
+    "youReported": "Kamu sudah melaporkan",
+    "includedHint": "Hapus centang untuk menonaktifkan soal",
+    "excludedHint": "Centang untuk mengaktifkan soal",
+    "includedView": "Soal aktif",
+    "excludedView": "Soal nonaktif",
+    "active": "Aktif",
+    "disabled": "Nonaktif"
   },
   "rounds": {
     "answered": "Dijawab",

@@ -15,6 +15,7 @@ Ready-made interviews by role (see [Templates and practice](templates-and-practi
 - Generated from a role description, through the same topic review as a company's interview.
 - Titles never name a company.
 - Can be renamed, checked question by question, re-generated or deleted.
+- Each topic's **manage questions** opens the topic's own page (`/superadmin/templates/{id}/topics/{topicId}`): its questions with their answer options, likes, dislikes and reports, where a question is re-generated, its answer marked wrong or its reports read.
 - Each topic shows how many practice and company questions it has ("30 practice · 60 company", see [the pools](templates-and-practice.md#the-question-bank)).
 - **Top up** (while a topic is short of either) and **Add questions** (a number for every topic, 30 by default) write more in the background, with the run's progress on the page; see [Adding questions](templates-and-practice.md#adding-questions).
 

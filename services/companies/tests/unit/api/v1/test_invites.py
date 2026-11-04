@@ -44,6 +44,7 @@ def stored_invite(monkeypatch):
         generation_id=uuid.uuid4(),
         set_id=uuid.uuid4(),
         topic_limits={},
+        excluded_questions={},
     )
 
     async def fake_get(session, token):

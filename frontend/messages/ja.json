@@ -886,7 +886,16 @@
     "count": "{count, plural, other {問}}",
     "loadFailed": "問題を読み込めませんでした。",
     "yourAnswer": "あなたの回答",
-    "aiWritten": "AI が作成した問題と正解は誤っている場合があります。誤りを報告するか、再生成してください。"
+    "aiWritten": "AI が作成した問題と正解は誤っている場合があります。誤りを報告するか、再生成してください。",
+    "excludeFailed": "変更を保存できませんでした。もう一度お試しください。",
+    "addReport": "報告を追加",
+    "youReported": "報告済み",
+    "includedHint": "チェックを外すと無効になります",
+    "excludedHint": "チェックすると有効になります",
+    "includedView": "有効な問題",
+    "excludedView": "無効な問題",
+    "active": "有効",
+    "disabled": "無効"
   },
   "rounds": {
     "answered": "回答済み",

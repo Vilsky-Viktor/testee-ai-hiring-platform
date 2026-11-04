@@ -1632,7 +1632,7 @@
      "internal"
     ],
     "summary": "List Topic Questions",
-    "description": "One topic's questions in a set, with their options and feedback counts.",
+    "description": "One topic's questions in a set, with their options and feedback counts; with `user_id`,\nthat user's own vote and report on each.",
     "operationId": "list_topic_questions_internal_sets__set_id__topics__topic_id__questions_get",
     "security": [
      {
@@ -1658,6 +1658,22 @@
        "type": "string",
        "format": "uuid",
        "title": "Topic Id"
+      }
+     },
+     {
+      "name": "user_id",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "User Id"
       }
      }
     ],
@@ -2326,6 +2342,54 @@
       }
      }
     },
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   },
+   "delete": {
+    "tags": [
+     "internal"
+    ],
+    "summary": "Unrate",
+    "operationId": "unrate_internal_questions__question_id__rating_delete",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     },
+     {
+      "name": "user_id",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "User Id"
+      }
+     }
+    ],
     "responses": {
      "204": {
       "description": "Successful Response"
@@ -4026,6 +4090,26 @@
       "type": "integer",
       "title": "Reports",
       "default": 0
+     },
+     "my_rating": {
+      "anyOf": [
+       {
+        "type": "integer",
+        "enum": [
+         -1,
+         1
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "My Rating"
+     },
+     "reported": {
+      "type": "boolean",
+      "title": "Reported",
+      "default": false
      }
     },
     "type": "object",

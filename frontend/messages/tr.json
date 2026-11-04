@@ -886,7 +886,16 @@
     "count": "{count, plural, one {soru} other {soru}}",
     "loadFailed": "Sorular yüklenemedi.",
     "yourAnswer": "cevabınız",
-    "aiWritten": "Yapay zekânın yazdığı sorular ve cevaplar hatalı olabilir. Yanlış cevabı işaretleyin ya da yeniden üretin."
+    "aiWritten": "Yapay zekânın yazdığı sorular ve cevaplar hatalı olabilir. Yanlış cevabı işaretleyin ya da yeniden üretin.",
+    "excludeFailed": "Değişiklik kaydedilemedi. Lütfen tekrar deneyin.",
+    "addReport": "Bildirim ekle",
+    "youReported": "Bildirdiniz",
+    "includedHint": "Devre dışı bırakmak için işareti kaldırın",
+    "excludedHint": "Etkinleştirmek için işaretleyin",
+    "includedView": "Etkin soru",
+    "excludedView": "Devre dışı soru",
+    "active": "Etkin",
+    "disabled": "Devre dışı"
   },
   "rounds": {
     "answered": "Cevaplanan",

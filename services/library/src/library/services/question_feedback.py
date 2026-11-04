@@ -21,6 +21,15 @@ async def rate(question_id: uuid.UUID, user_id: str, value: int) -> None:
     await review(question_id)
 
 
+async def unrate(question_id: uuid.UUID, user_id: str) -> None:
+    """Takes back the user's thumbs up or down (a click by mistake), then reviews the question
+    without it."""
+    async with Session.begin() as session:
+        await feedback.unrate_question(session, question_id, user_id)
+
+    await review(question_id)
+
+
 async def report(question_id: uuid.UUID, user_id: str, reason: str, comment: str) -> None:
     """One report per user and question, whatever its revision. One already made is refused
     before it's counted; the count is against floods (with Redis down, not counted)."""

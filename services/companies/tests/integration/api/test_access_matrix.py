@@ -66,6 +66,11 @@ BODIES = {
     "PUT /interviews/{interview_id}/candidates/{invite_id}/extra-time": {"extra_time": 25},
     "PUT /companies/{company_id}/brand-colors/{theme}": {"colors": None},
     "PUT /companies/{company_id}/allowed-domains": {"domains": []},
+    "PUT /interviews/{interview_id}/questions/{question_id}/rating": {"value": 1},
+    "POST /interviews/{interview_id}/questions/{question_id}/reports": {"reason": "unclear"},
+    "PUT /interviews/{interview_id}/topics/{topic_id}/questions/{question_id}/excluded": {
+        "excluded": True
+    },
     "POST /internal/interviews/{interview_id}/invites": lambda ids: {
         "email": "another@example.com",
         "sender_id": ids["sender_id"],
@@ -84,8 +89,10 @@ EXCEPTIONS = {
     "GET /companies/{company_id}/bias-audit": OWNER_ONLY,
     "GET /companies/{company_id}/billing/history": OWNER_ONLY,
     "GET /companies/{company_id}/billing/reserved": OWNER_ONLY,
-    # Reports on a question are read where it's fixed: owners and admins.
-    "GET /interviews/{interview_id}/questions/{question_id}/reports": OWNER_ONLY,
+    # Every member, viewers too, likes, dislikes and reports the interview's questions.
+    "PUT /interviews/{interview_id}/questions/{question_id}/rating": {"viewer": ALLOWED},
+    "DELETE /interviews/{interview_id}/questions/{question_id}/rating": {"viewer": ALLOWED},
+    "POST /interviews/{interview_id}/questions/{question_id}/reports": {"viewer": ALLOWED},
 }
 
 

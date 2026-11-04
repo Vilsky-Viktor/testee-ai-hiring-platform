@@ -31,9 +31,15 @@ A review takes at most 10 revisions in words; after that, topics are only chosen
 - A single-answer question scores 0 or 1 point. A "select all that apply" question scores 0 if any wrong option is ticked; otherwise it earns the share of its right options ticked (2 of 3: 0.67 of a point).
 - A grade is the percentage of points earned over every question the candidate was shown; for single-answer questions alone, that's the percentage answered correctly.
 - Question lists label "select all that apply" questions; scorecards and practice reviews show the options ticked, which were right, and the question's points ("2 of 3 right options · 0.67 of 1 point").
-- Owners and admins can re-generate individual questions.
-- An interview's questions page always shows each question with its answer options.
-- Questions improve on their own: candidates' answers, votes and reports flag weak ones, and a background verifier fixes or replaces them (see [Question quality](../generation.md#question-quality)).
+- Questions improve on their own: candidates' and members' votes and reports, and candidates' answers, flag weak ones, and a background verifier fixes or replaces them (see [Question quality](../generation.md#question-quality)).
+
+### A topic's questions
+
+Each topic's **manage questions** button opens the topic's own page (`/companies/{companyId}/interviews/{id}/topics/{topicId}`, page guide `topicQuestions`): every question with its answer options and its likes, dislikes and reports (`GET /companies/interviews/{id}/topics/{tid}/questions`, which also returns per question `excluded`, the member's own vote `my_rating` and whether they've reported it, `reported`).
+
+- **Disable a question (owners and admins):** unticking its checkbox leaves it out of the interview: no candidate who starts afterwards gets it; ticking it again makes it active (`PUT /companies/interviews/{id}/topics/{tid}/questions/{qid}/excluded`, `{"excluded": true|false}`, 204). The topic's question count, and the most each candidate can get from it, count only active questions; candidates who already started keep the questions they drew. Disabling the last active question of the whole interview is refused (422). Stored per topic in the interview's `excluded_questions` (companies).
+- **Like, dislike, report (every member, viewers too):** a thumb up or down (`PUT /companies/interviews/{id}/questions/{qid}/rating`, `{"value": 1|-1}`); clicking the same thumb again takes the vote back (`DELETE …/rating`). A member reports a question once (`POST /companies/interviews/{id}/questions/{qid}/reports`, `{"reason", "comment"}`; a second is 409) and reads everyone's reports on it, candidates' and members' (`GET /companies/interviews/{id}/questions/{qid}/reports`). Companies passes them to library through `testee_common.http.question_feedback`, the client rounds uses for candidates, so a member's vote or report counts exactly as a candidate's: the same tables, limits and review, and a report takes the question out of the shared question bank.
+- **Re-generate or mark the answer wrong (owners and admins):** re-generating writes a new question in its place; marking the answer wrong sends it to the verifier (see [Question quality](../generation.md#question-quality)).
 
 How generation works step by step is in [Generation](../generation.md).
 

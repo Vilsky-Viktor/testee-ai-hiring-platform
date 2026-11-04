@@ -97,8 +97,8 @@
     "title": "Onderwerpen",
     "text": "Wat dit interview test: de onderwerpen, elk met subonderwerpen en een eigen pool vragen. Elke kandidaat krijgt een willekeurige selectie uit elke pool.",
     "actions": [
-      "Open “Vragen beheren” om de vragen en antwoorden van een onderwerp te lezen.",
-      "Genereer een zwakke vraag opnieuw, markeer een fout antwoord of lees meldingen van kandidaten over een vraag.",
+      "Open “Vragen beheren” om naar de vragen van een onderwerp te gaan: lees ze, schakel er een paar uit, geef ze een like of dislike, of meld ze.",
+      "Genereer een zwakke vraag opnieuw of markeer een fout antwoord op de vragenpagina van een onderwerp.",
       "Stel in hoeveel vragen elke kandidaat uit een onderwerp krijgt; met 0 valt het onderwerp weg voor nieuwe kandidaten. Een kandidaat krijgt over alle onderwerpen samen hooguit 60 vragen: verlaag een onderwerp om een ander te verhogen.",
       "Probeer het interview als kandidaat, of verwijder het."
     ],
@@ -106,6 +106,21 @@
       "Door AI geschreven vragen kunnen fout zijn: loop elk onderwerp even door voordat je iemand uitnodigt.",
       "Klik op de titel om het interview een andere naam te geven.",
       "De kaarten bovenaan tellen op wat elke kandidaat krijgt: het totaal aantal vragen, de gemiddelde tijd per vraag en de tijd van het hele interview. Ze volgen elke wijziging."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Vragen",
+    "text": "De vragen van één onderwerp met hun antwoorden, likes, dislikes en meldingen. Elke kandidaat krijgt een willekeurige selectie uit de actieve vragen.",
+    "actions": [
+      "Vink een vraag uit om die uit te schakelen: vanaf nu krijgt geen enkele kandidaat die nog. Vink haar weer aan om haar actief te maken (eigenaren en beheerders).",
+      "Geef een vraag een like of dislike; klik nog eens op je keuze om die in te trekken.",
+      "Open de meldingen bij een vraag en voeg je eigen melding toe, één per vraag.",
+      "Genereer een zwakke vraag opnieuw of markeer een fout antwoord (eigenaren en beheerders)."
+    ],
+    "tips": [
+      "Door AI geschreven vragen kunnen fout zijn: lees ze voordat je iemand uitnodigt.",
+      "Je likes, dislikes en meldingen tellen even zwaar als die van kandidaten en helpen zwakke vragen te verbeteren.",
+      "Het aantal bij het onderwerp telt alleen actieve vragen: een kandidaat krijgt er nooit meer uit dan dat."
     ]
   },
   "interviewCandidates": {

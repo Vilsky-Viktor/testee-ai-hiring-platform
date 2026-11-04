@@ -4,10 +4,10 @@ import httpx
 from fastapi import APIRouter, HTTPException, Response, status
 from testee_common.auth.auth import CurrentUser
 from testee_common.http.http import passed_on
+from testee_common.http.question_feedback_schemas import RatingIn, ReportIn
 
 from rounds.helpers.rounds import find_question
 from rounds.integrations import feedback
-from rounds.schemas.feedback import RatingIn, ReportIn
 from rounds.services.session_access import get_own_session
 
 router = APIRouter(prefix="/sessions", tags=["sessions"])
@@ -38,21 +38,29 @@ def passed_through(response: httpx.Response) -> Response:
 async def get_rating(session_id: UUID, question_id: UUID, user: CurrentUser) -> Response:
     await require_session_question(session_id, question_id, user)
 
-    return passed_through(await feedback.get_rating(question_id, user.uid))
+    return passed_through(await feedback.client.get_rating(question_id, user.uid))
 
 
 @router.put("/{session_id}/questions/{question_id}/rating")
 async def rate(session_id: UUID, question_id: UUID, body: RatingIn, user: CurrentUser) -> Response:
     await require_session_question(session_id, question_id, user)
 
-    return passed_through(await feedback.rate(question_id, user.uid, body.value))
+    return passed_through(await feedback.client.rate(question_id, user.uid, body.value))
+
+
+@router.delete("/{session_id}/questions/{question_id}/rating")
+async def unrate(session_id: UUID, question_id: UUID, user: CurrentUser) -> Response:
+    """Takes back the candidate's thumbs up or down (a click by mistake)."""
+    await require_session_question(session_id, question_id, user)
+
+    return passed_through(await feedback.client.unrate(question_id, user.uid))
 
 
 @router.get("/{session_id}/questions/{question_id}/reports/mine")
 async def my_report(session_id: UUID, question_id: UUID, user: CurrentUser) -> Response:
     await require_session_question(session_id, question_id, user)
 
-    return passed_through(await feedback.my_report(question_id, user.uid))
+    return passed_through(await feedback.client.my_report(question_id, user.uid))
 
 
 @router.post("/{session_id}/questions/{question_id}/reports")
@@ -61,4 +69,6 @@ async def report(
 ) -> Response:
     await require_session_question(session_id, question_id, user)
 
-    return passed_through(await feedback.report(question_id, user.uid, body.reason, body.comment))
+    return passed_through(
+        await feedback.client.report(question_id, user.uid, body.reason, body.comment)
+    )

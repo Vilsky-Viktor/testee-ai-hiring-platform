@@ -886,7 +886,16 @@
     "count": "{count, plural, one {tanong} other {tanong}}",
     "loadFailed": "Hindi ma-load ang mga tanong.",
     "yourAnswer": "iyong sagot",
-    "aiWritten": "Puwedeng mali ang mga tanong at sagot na isinulat ng AI. Markahan ang maling sagot o i-regenerate."
+    "aiWritten": "Puwedeng mali ang mga tanong at sagot na isinulat ng AI. Markahan ang maling sagot o i-regenerate.",
+    "excludeFailed": "Hindi ma-save ang pagbabago. Pakisubukang muli.",
+    "addReport": "Magdagdag ng report",
+    "youReported": "Na-report mo na",
+    "includedHint": "Alisin ang check para i-disable ang tanong",
+    "excludedHint": "I-check para i-enable ang tanong",
+    "includedView": "Naka-enable na tanong",
+    "excludedView": "Naka-disable na tanong",
+    "active": "Aktibo",
+    "disabled": "Naka-disable"
   },
   "rounds": {
     "answered": "Nasagot",

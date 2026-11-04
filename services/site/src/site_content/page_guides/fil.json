@@ -97,8 +97,8 @@
     "title": "Mga topic",
     "text": "Ang sinusubok ng interview na ito: ang mga topic nito, bawat isa may mga subtopic at sariling pool ng mga tanong. Bawat aplikante ay may random na set mula sa bawat pool.",
     "actions": [
-      "Buksan ang “pamahalaan ang mga tanong” para mabasa ang mga tanong at sagot ng isang topic.",
-      "I-regenerate ang mahinang tanong, markahan ang maling sagot, o basahin ang mga report ng aplikante tungkol sa isang tanong.",
+      "Buksan ang “pamahalaan ang mga tanong” para pumunta sa mga tanong ng isang topic: basahin, i-disable ang ilan, i-like, i-dislike o i-report ang mga ito.",
+      "I-regenerate ang mahinang tanong o markahan ang maling sagot sa page ng mga tanong ng isang topic.",
       "Itakda kung ilang tanong mula sa isang topic ang makukuha ng bawat aplikante; sa 0, hindi na kasama ang topic para sa mga bagong aplikante. Hanggang 60 tanong lang ang makukuha ng isang aplikante sa lahat ng topic: bawasan ang isang topic para madagdagan ang iba.",
       "Subukan ang interview bilang aplikante, o burahin ito."
     ],
@@ -106,6 +106,21 @@
       "Puwedeng mali ang mga tanong na isinulat ng AI: silipin ang bawat topic bago ka mag-imbita.",
       "I-click ang pamagat para palitan ang pangalan ng interview.",
       "Ipinapakita ng mga card sa itaas ang kabuuan ng makukuha ng bawat aplikante: kabuuang tanong, average na oras bawat tanong at oras ng buong interview. Sumusunod ang mga ito sa bawat pagbabago."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Mga tanong",
+    "text": "Ang mga tanong ng isang topic kasama ang mga sagot, like, dislike at report. Bawat aplikante ay nakakakuha ng random na set mula sa mga aktibong tanong.",
+    "actions": [
+      "Alisin ang check sa isang tanong para i-disable ito: wala nang aplikanteng makakakuha nito mula ngayon. I-check ito para maging aktibo ulit (mga may-ari at admin).",
+      "I-like o i-dislike ang isang tanong; i-click ulit ang pinili mo para bawiin ito.",
+      "Buksan ang mga report ng isang tanong at idagdag ang sa iyo, isang beses bawat tanong.",
+      "I-regenerate ang mahinang tanong o markahan ang maling sagot (mga may-ari at admin)."
+    ],
+    "tips": [
+      "Puwedeng mali ang mga tanong na isinulat ng AI: basahin muna bago ka mag-imbita ng kahit sino.",
+      "Ang iyong mga like, dislike at report ay kasimbigat ng sa mga aplikante at nakakatulong ayusin ang mahihinang tanong.",
+      "Mga aktibong tanong lang ang binibilang ng topic: hindi kailanman makakakuha ang aplikante ng higit doon mula rito."
     ]
   },
   "interviewCandidates": {

@@ -10,6 +10,7 @@ export const PAGE_HELP_KEYS = [
   "reviewTopics",
   "generating",
   "interviewTopics",
+  "topicQuestions",
   "interviewCandidates",
   "interviewNotes",
   "interviewDiscover",

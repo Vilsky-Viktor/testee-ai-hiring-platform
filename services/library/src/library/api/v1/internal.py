@@ -125,10 +125,11 @@ async def get_set_content(set_id: UUID, caller: ServiceCaller) -> SetContent:
 
 @router.get("/sets/{set_id}/topics/{topic_id}/questions")
 async def list_topic_questions(
-    set_id: UUID, topic_id: UUID, caller: ServiceCaller
+    set_id: UUID, topic_id: UUID, caller: ServiceCaller, user_id: str | None = None
 ) -> list[QuestionText]:
-    """One topic's questions in a set, with their options and feedback counts."""
-    found = await questions.topic_questions(topic_id)
+    """One topic's questions in a set, with their options and feedback counts; with `user_id`,
+    that user's own vote and report on each."""
+    found = await questions.topic_questions(topic_id, user_id)
 
     if found is None or found[0].id != set_id:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Topic not found")

@@ -100,6 +100,7 @@ export default async function InterviewPage({
           />
         ) : (
           <InterviewTopics
+            companyId={companyId}
             interviewId={id}
             language={interview.language}
             topics={interview.topics}

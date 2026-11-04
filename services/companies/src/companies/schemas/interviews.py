@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Literal
 from uuid import UUID
 
 from pydantic import BaseModel, Field
@@ -72,6 +73,11 @@ class QuestionText(BaseModel):
     likes: int
     dislikes: int
     reports: int
+    # The member's own vote (1 or -1), and whether they've reported it (once each).
+    my_rating: Literal[-1, 1] | None = None
+    reported: bool = False
+    # Left out by an owner or admin: no candidate gets it.
+    excluded: bool = False
 
 
 class ReportOut(BaseModel):
@@ -85,7 +91,10 @@ class TopicOut(BaseModel):
     id: UUID
     title: str
     subtopics: list[str] = []
+    # The questions candidates may get: those an owner or admin left out aren't counted.
     question_count: int
+    # The questions an owner or admin left out.
+    excluded_count: int = 0
     # Questions each candidate gets from the topic.
     question_limit: int
 
@@ -122,6 +131,11 @@ class ReviewIn(BaseModel):
     instructions: str = ""
     # Every drafted topic with the reviewer's own edits; generation validates it.
     topics: list[dict] | None = None
+
+
+class QuestionExcludedIn(BaseModel):
+    # True leaves the question out of the interview; false brings it back.
+    excluded: bool
 
 
 class TopicLimitIn(BaseModel):

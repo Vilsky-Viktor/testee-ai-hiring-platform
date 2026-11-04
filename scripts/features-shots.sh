@@ -36,7 +36,7 @@ CROPS = {
     "email": (30, 30, 580, 525),
     "create": (355, 346, 720, 270),
     "flow-review": (95, 198, 1240, 590),
-    "flow-questions": (266, 29, 897, 590),
+    "flow-questions": (40, 90, 1310, 918),
     "flow-settings": (360, 205, 975, 660),
     "flow-invite": (459, 248, 512, 404),
     "flow-question": (86, 36, 1260, 520),

@@ -18,9 +18,9 @@ TOPIC_ID = uuid.uuid4()
 OTHER_ID = uuid.uuid4()
 
 
-def setup(monkeypatch, saved, limits=None, topics=None):
-    """An interview with `topics` (SQL, 10 questions, by default) at `limits`; the numbers a change
-    saves go to `saved` and become the interview's."""
+def setup(monkeypatch, saved, limits=None, topics=None, excluded=None):
+    """An interview with `topics` (SQL, 10 questions, by default) at `limits`, `excluded` left
+    out; the numbers a change saves go to `saved` and become the interview's."""
     app.dependency_overrides[current_user] = lambda: User(
         uid="bob", email="bob@example.com", email_verified=True, name="Bob"
     )
@@ -30,6 +30,7 @@ def setup(monkeypatch, saved, limits=None, topics=None):
         generation_id=uuid.uuid4(),
         set_id=uuid.uuid4(),
         topic_limits=dict(limits or {}),
+        excluded_questions=dict(excluded or {}),
     )
     company = Company(id=COMPANY_ID, name="My company", created_at=datetime.now(UTC))
     company.members = [
@@ -77,6 +78,22 @@ def test_limit_cannot_exceed_topic_questions(client, monkeypatch):
     app.dependency_overrides.clear()
 
 
+def test_a_limit_counts_only_the_questions_left_in(client, monkeypatch):
+    saved = []
+    setup(monkeypatch, saved, excluded={str(TOPIC_ID): [str(uuid.uuid4()) for _ in range(3)]})
+    url = f"/interviews/{INTERVIEW_ID}/topics/{TOPIC_ID}/limit"
+
+    refused = client.put(url, json={"limit": 8})
+
+    # 10 questions with 3 left out leave 7.
+    assert refused.status_code == 422
+    assert refused.json()["detail"] == "The topic has only 7 questions"
+    assert client.put(url, json={"limit": 7}).status_code == 204
+    assert saved == [{str(TOPIC_ID): 7}]
+
+    app.dependency_overrides.clear()
+
+
 def two_topics(size: int = 10):
     return [
         {"id": str(TOPIC_ID), "title": "SQL", "question_count": size},
@@ -111,7 +128,7 @@ def test_the_last_topic_with_questions_cannot_be_set_to_0(client, monkeypatch):
 
 
 def test_a_session_leaves_out_a_topic_set_to_0():
-    interview = Interview(topic_limits={str(OTHER_ID): 0, str(TOPIC_ID): 2})
+    interview = Interview(topic_limits={str(OTHER_ID): 0, str(TOPIC_ID): 2}, excluded_questions={})
     options = [{"answer": "a", "correct": True}, {"answer": "b", "correct": False}]
     content = {
         "id": "preparation",
@@ -129,6 +146,28 @@ def test_a_session_leaves_out_a_topic_set_to_0():
 
     assert [topic["title"] for topic in topics] == ["SQL"]
     assert len(topics[0]["questions"]) == 2
+
+
+def test_a_session_never_gets_a_question_left_out():
+    options = [{"answer": "a", "correct": True}, {"answer": "b", "correct": False}]
+    content = {
+        "id": "preparation",
+        "topics": [
+            {
+                "id": str(TOPIC_ID),
+                "title": "SQL",
+                "questions": [{"id": f"q{i}", "options": options} for i in range(5)],
+            }
+        ],
+    }
+    # Every question asked for, 2 of the 5 left out.
+    interview = Interview(
+        topic_limits={str(TOPIC_ID): 5}, excluded_questions={str(TOPIC_ID): ["q1", "q3"]}
+    )
+
+    topics = session_topics(interview, content, 0.1)
+
+    assert sorted(question["id"] for question in topics[0]["questions"]) == ["q0", "q2", "q4"]
 
 
 def test_unknown_topic_is_not_found(client, monkeypatch):
@@ -162,9 +201,15 @@ def test_a_topic_without_a_limit_asks_the_default_number():
         ]
     }
 
-    topics = topics_out(found, {ids[2]: 25})
+    left_out = [str(uuid.uuid4()) for _ in range(2)]
+    interview = Interview(topic_limits={ids[2]: 25}, excluded_questions={ids[1]: left_out})
 
-    assert [topic.question_limit for topic in topics] == [DEFAULT_TOPIC_QUESTIONS, 6, 25]
+    topics = topics_out(found, interview)
+
+    # Git's 6 questions with 2 left out give 4, and say so.
+    assert [topic.question_limit for topic in topics] == [DEFAULT_TOPIC_QUESTIONS, 4, 25]
+    assert [topic.question_count for topic in topics] == [70, 4, 70]
+    assert [topic.excluded_count for topic in topics] == [0, 2, 0]
     assert DEFAULT_TOPIC_QUESTIONS == 10
 
 

@@ -46,40 +46,46 @@ def topic_limits(sizes: list[tuple[str, int]], stored: dict[str, int]) -> dict[s
     return {key: counts[key] for key, _ in sizes}
 
 
-def set_sizes(found: dict) -> list[tuple[str, int]]:
-    """Each topic's id and number of questions, from library's set."""
-    return [(str(topic["id"]), topic["question_count"]) for topic in found.get("topics", [])]
+def set_sizes(found: dict, excluded: dict[str, list[str]]) -> list[tuple[str, int]]:
+    """Each topic's id and number of questions candidates may get, from library's set: the ones
+    left out (`excluded`, by topic id) don't count."""
+    return [
+        (str(topic["id"]), topic["question_count"] - len(excluded.get(str(topic["id"]), [])))
+        for topic in found.get("topics", [])
+    ]
 
 
-def topics_out(found: dict, limits: dict[str, int]) -> list[TopicOut]:
-    counts = topic_limits(set_sizes(found), limits)
+def topics_out(found: dict, interview: Interview) -> list[TopicOut]:
+    excluded = interview.excluded_questions
+    counts = topic_limits(set_sizes(found, excluded), interview.topic_limits)
 
     return [
         TopicOut(
             id=topic["id"],
             title=topic["title"],
             subtopics=topic.get("subtopics", []),
-            question_count=topic["question_count"],
+            question_count=topic["question_count"] - len(excluded.get(str(topic["id"]), [])),
+            excluded_count=len(excluded.get(str(topic["id"]), [])),
             question_limit=counts[str(topic["id"])],
         )
         for topic in found.get("topics", [])
     ]
 
 
-def interview_questions(found: dict | None, limits: dict[str, int]) -> int | None:
+def interview_questions(found: dict | None, interview: Interview) -> int | None:
     """Every question a candidate gets, over all topics. None while the interview's questions
     aren't known."""
     if not found:
         return None
 
-    return sum(topic.question_limit for topic in topics_out(found, limits))
+    return sum(topic.question_limit for topic in topics_out(found, interview))
 
 
-def interview_minutes(found: dict | None, limits: dict[str, int], seconds: int) -> int | None:
+def interview_minutes(found: dict | None, interview: Interview, seconds: int) -> int | None:
     """The whole interview's time, in minutes rounded up: every question a candidate gets at
     `seconds` each, in click and voice mode alike (a question's reading aloud counts in its
     time). None while the interview's questions aren't known."""
-    questions = interview_questions(found, limits)
+    questions = interview_questions(found, interview)
 
     if questions is None:
         return None
@@ -98,8 +104,18 @@ def pick_questions(questions: list, limit: int, share: float) -> list:
 
 def session_topics(interview: Interview, content: dict, share: float) -> list[dict]:
     """Each topic with a fresh random subset of its questions, as rounds starts sessions. A topic
-    set to 0 questions is left out: the candidate never sees it, and it never counts."""
-    sizes = [(str(topic["id"]), len(topic["questions"])) for topic in content["topics"]]
+    set to 0 questions is left out: the candidate never sees it, and it never counts; so are the
+    questions an owner or admin left out."""
+    # The questions an owner or admin left out never reach a candidate.
+    kept = {
+        str(topic["id"]): [
+            question
+            for question in topic["questions"]
+            if str(question["id"]) not in interview.excluded_questions.get(str(topic["id"]), [])
+        ]
+        for topic in content["topics"]
+    }
+    sizes = [(key, len(questions)) for key, questions in kept.items()]
     counts = topic_limits(sizes, interview.topic_limits)
 
     return [
@@ -107,7 +123,7 @@ def session_topics(interview: Interview, content: dict, share: float) -> list[di
             "id": topic["id"],
             "preparation_id": content["id"],
             "title": topic["title"],
-            "questions": pick_questions(topic["questions"], counts[str(topic["id"])], share),
+            "questions": pick_questions(kept[str(topic["id"])], counts[str(topic["id"])], share),
         }
         for topic in content["topics"]
         if counts[str(topic["id"])] > 0

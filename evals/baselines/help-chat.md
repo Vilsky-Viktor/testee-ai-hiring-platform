@@ -272,3 +272,11 @@ product column, the voice languages marked in "Generate in"): before 96.0% (88.9
 misses h17's known invented retake limit, 3 of 3); after 100.0% (95.1–100.0), made up 0.0%
 (0.0–4.9), sign-in marker 100%, identity 18 of 18 (`results/help_chat_flow-search.json`). Within
 the noise (the intervals overlap); kept so the guide says what is true. $1.94 and $2.10.
+
+2026-11-04, a topic's questions in the guide (manage questions opens the topic's own page;
+owners and admins disable and re-enable questions, the count of active ones only, the last one
+kept; every member, viewers too, likes, dislikes, takes a vote back and reports once; candidates
+take a vote back too): passed 96.0% (88.9–98.6), made up 4.0% (1.4–11.1), sign-in marker 100%,
+identity 18 of 18 (`results/help_chat_topic-questions.json`). Misses: h17's known invented
+retake limit (2 of 3) and h18 once (the amount shown at checkout); none about questions. Within
+the noise of the last run (100.0%, 95.1–100.0); kept so the guide says what is true. $2.06.

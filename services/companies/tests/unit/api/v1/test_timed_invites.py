@@ -41,6 +41,7 @@ def start(client, monkeypatch, voice=None, own=None):
         set_id=uuid.uuid4(),
         question_seconds=45,
         topic_limits={},
+        excluded_questions={},
         voice=voice,
     )
     sent = {}

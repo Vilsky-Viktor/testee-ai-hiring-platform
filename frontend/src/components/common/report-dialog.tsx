@@ -3,7 +3,7 @@
 import { cn } from "cn"
 import { FlagIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { useEffect, useState } from "react"
+import { type ReactElement, type ReactNode, useEffect, useState } from "react"
 import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
@@ -24,7 +24,19 @@ import { MAX_REPORT_COMMENT_LENGTH } from "@/config/limits"
 import { ApiError, apiErrorMessage, apiFetch } from "@/lib/api"
 import type { ReportReason } from "@/types/feedback"
 
-export function ReportDialog({ basePath }: { basePath: string }) {
+export function ReportDialog({
+  basePath,
+  known,
+  trigger,
+  onReported,
+}: {
+  basePath: string
+  // Whether the user has reported it, when the caller already knows (no extra request).
+  known?: boolean
+  // What opens it, instead of the candidate's flag button; hidden once they've reported.
+  trigger?: ReactElement
+  onReported?: () => void
+}) {
   const t = useTranslations("questions")
   const common = useTranslations("common")
   const reasons = useTranslations("reportReasons")
@@ -32,14 +44,18 @@ export function ReportDialog({ basePath }: { basePath: string }) {
   const [reason, setReason] = useState<ReportReason | "">("")
   const [comment, setComment] = useState("")
   const [sending, setSending] = useState(false)
-  const [reported, setReported] = useState(false)
+  const [reported, setReported] = useState(known ?? false)
 
   // Callers remount this per question, so the state never carries over.
   useEffect(() => {
+    if (known !== undefined) {
+      return
+    }
+
     apiFetch<{ reported: boolean }>(`${basePath}/reports/mine`)
       .then((body) => setReported(body.reported))
       .catch(() => {})
-  }, [basePath])
+  }, [basePath, known])
 
   function handleOpen(next: boolean) {
     setOpen(next)
@@ -67,10 +83,12 @@ export function ReportDialog({ basePath }: { basePath: string }) {
       })
       toast.success(t("reported"))
       setReported(true)
+      onReported?.()
       handleOpen(false)
     } catch (error) {
       if (error instanceof ApiError && error.status === 409) {
         setReported(true)
+        onReported?.()
         handleOpen(false)
 
         return
@@ -86,19 +104,25 @@ export function ReportDialog({ basePath }: { basePath: string }) {
     <Dialog open={open} onOpenChange={handleOpen}>
       <DialogTrigger
         render={
-          <Button
-            variant="ghost"
-            size="icon-lg"
-            aria-label={reported ? t("questionReported") : t("report")}
-            className={cn(FEEDBACK_HOVER_CLASS, "h-full w-full rounded-none")}
-            aria-pressed={reported}
-            disabled={reported}
-          />
+          trigger ?? (
+            <Button
+              variant="ghost"
+              size="icon-lg"
+              aria-label={reported ? t("questionReported") : t("report")}
+              className={cn(FEEDBACK_HOVER_CLASS, "h-full w-full rounded-none")}
+              aria-pressed={reported}
+              disabled={reported}
+            />
+          )
         }
       >
-        <FlagIcon
-          className={cn("size-6", reported && "fill-primary text-primary")}
-        />
+        {trigger ? (
+          (trigger.props as { children?: ReactNode }).children
+        ) : (
+          <FlagIcon
+            className={cn("size-6", reported && "fill-primary text-primary")}
+          />
+        )}
       </DialogTrigger>
       <DialogContent showCloseButton={false} className="sm:max-w-lg">
         <DialogHeader>

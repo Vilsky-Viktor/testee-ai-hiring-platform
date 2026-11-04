@@ -97,8 +97,8 @@
     "title": "Teemad",
     "text": "Mida see intervjuu testib: selle teemad, igaühel alateemad ja oma küsimustekogum. Iga kandidaat saab igast kogumist juhusliku valiku.",
     "actions": [
-      "Ava „Halda küsimusi“, et lugeda teema küsimusi ja vastuseid.",
-      "Loo nõrk küsimus uuesti, märgi vale vastus või loe kandidaatide teateid küsimuse kohta.",
+      "Ava „Halda küsimusi“, et minna teema küsimuste juurde: loe neid, lülita mõni välja, märgi meeldivaks või mittemeeldivaks või teata neist.",
+      "Loo nõrk küsimus uuesti või märgi vale vastus teema küsimuste lehel.",
       "Määra, mitu küsimust iga kandidaat teemast saab; 0 jätab teema uutele kandidaatidele välja. Kandidaat saab kõigist teemadest kokku kuni 60 küsimust: ühe teema tõstmiseks vähenda teist.",
       "Proovi intervjuud kandidaadina või kustuta see."
     ],
@@ -106,6 +106,21 @@
       "Tehisintellekti kirjutatud küsimustes võib olla vigu: sirvi iga teema läbi, enne kui kedagi kutsud.",
       "Klõpsa pealkirjal, et intervjuu ümber nimetada.",
       "Ülal olevad kaardid liidavad kokku, mida iga kandidaat saab: küsimusi kokku, keskmise aja küsimuse kohta ja kogu intervjuu aja. Need muutuvad iga muudatusega."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Küsimused",
+    "text": "Ühe teema küsimused koos vastuste, meeldimiste, mittemeeldimiste ja teadetega. Iga kandidaat saab juhusliku valiku aktiivsetest küsimustest.",
+    "actions": [
+      "Eemalda küsimuselt linnuke, et see välja lülitada: nüüdsest ei saa seda ükski kandidaat. Lisa linnuke, et see uuesti aktiivseks teha (omanikud ja administraatorid).",
+      "Märgi küsimus meeldivaks või mittemeeldivaks; klõpsa oma valikut uuesti, et see tagasi võtta.",
+      "Ava küsimuse teated ja lisa oma, üks küsimuse kohta.",
+      "Loo nõrk küsimus uuesti või märgi vale vastus (omanikud ja administraatorid)."
+    ],
+    "tips": [
+      "AI kirjutatud küsimused võivad olla valed: loe need läbi, enne kui kedagi kutsud.",
+      "Sinu meeldimised, mittemeeldimised ja teated loevad sama palju kui kandidaatide omad ja aitavad nõrku küsimusi parandada.",
+      "Teema arv loeb ainult aktiivseid küsimusi: kandidaat ei saa sellest teemast kunagi rohkem."
     ]
   },
   "interviewCandidates": {

@@ -37,6 +37,7 @@ FORBIDDEN = [
     ("put", f"{INTERVIEW}/topics/{TOPIC_ID}/limit", {"limit": 1}),
     ("post", f"{INTERVIEW}/questions/{QUESTION_ID}/regenerate", None),
     ("post", f"{INTERVIEW}/questions/{QUESTION_ID}/wrong", None),
+    ("put", f"{INTERVIEW}/topics/{TOPIC_ID}/questions/{QUESTION_ID}/excluded", {"excluded": True}),
     ("post", f"{INTERVIEW}/generation/review", {"selected": [0]}),
     ("post", f"{INTERVIEW}/generation/retry", None),
     ("post", f"{INTERVIEW}/generation/cancel", None),
@@ -73,7 +74,11 @@ def viewer(monkeypatch):
         )
     ]
     interview = Interview(
-        id=INTERVIEW_ID, company_id=COMPANY_ID, generation_id=uuid.uuid4(), set_id=uuid.uuid4()
+        id=INTERVIEW_ID,
+        company_id=COMPANY_ID,
+        generation_id=uuid.uuid4(),
+        set_id=uuid.uuid4(),
+        excluded_questions={},
     )
     invite = CandidateInvite(
         id=INVITE_ID, interview_id=INTERVIEW_ID, email="cid@example.com", status="invited"
@@ -140,7 +145,7 @@ def test_a_viewer_reads_the_company_without_verifying_it(client, viewer, monkeyp
 
 
 def test_a_viewer_reads_questions(client, viewer, monkeypatch):
-    async def fake_questions(set_id, topic_id):
+    async def fake_questions(set_id, topic_id, user_id):
         return []
 
     monkeypatch.setattr(library, "get_topic_questions", fake_questions)

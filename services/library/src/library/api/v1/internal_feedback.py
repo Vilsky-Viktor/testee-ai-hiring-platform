@@ -30,6 +30,11 @@ async def rate(question_id: UUID, body: InternalRatingIn, caller: ServiceCaller)
     await question_feedback.rate(question_id, body.user_id, body.value)
 
 
+@router.delete("/{question_id}/rating", status_code=status.HTTP_204_NO_CONTENT)
+async def unrate(question_id: UUID, user_id: str, caller: ServiceCaller) -> None:
+    await question_feedback.unrate(question_id, user_id)
+
+
 @router.get("/{question_id}/reports/mine")
 async def my_report(question_id: UUID, user_id: str, caller: ServiceCaller) -> MyReportOut:
     async with Session() as session:

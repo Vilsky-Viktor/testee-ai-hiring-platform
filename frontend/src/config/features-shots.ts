@@ -18,7 +18,7 @@ export const FEATURE_SHOTS = {
   "bias-audit": { width: 1152, height: 1112 },
   email: { width: 1160, height: 1050 },
   "flow-review": { width: 2480, height: 1180 },
-  "flow-questions": { width: 1794, height: 1180 },
+  "flow-questions": { width: 2620, height: 1836 },
   "flow-settings": { width: 1950, height: 1320 },
   "flow-invite": { width: 1024, height: 808 },
   "flow-question": { width: 2520, height: 1040 },

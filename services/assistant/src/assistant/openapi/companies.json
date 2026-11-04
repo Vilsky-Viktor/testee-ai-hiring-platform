@@ -3231,6 +3231,7 @@
      "interviews"
     ],
     "summary": "List Topic Questions",
+    "description": "The topic's questions, each with the member's own like or dislike and report, and\nwhether an owner or admin left it out.",
     "operationId": "list_topic_questions_interviews__interview_id__topics__topic_id__questions_get",
     "security": [
      {
@@ -3270,6 +3271,355 @@
           "$ref": "#/components/schemas/QuestionText"
          },
          "title": "Response List Topic Questions Interviews  Interview Id  Topics  Topic Id  Questions Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/interviews/{interview_id}/topics/{topic_id}/questions/{question_id}/excluded": {
+   "put": {
+    "tags": [
+     "interviews"
+    ],
+    "summary": "Set Question Excluded",
+    "description": "Leaves the question out of the interview (no candidate gets it), or brings it back: owners\nand admins. 422 when it would leave candidates no question.",
+    "operationId": "set_question_excluded_interviews__interview_id__topics__topic_id__questions__question_id__excluded_put",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "interview_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Interview Id"
+      }
+     },
+     {
+      "name": "topic_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Topic Id"
+      }
+     },
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/QuestionExcludedIn"
+       }
+      }
+     }
+    },
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/interviews/{interview_id}/questions/{question_id}/rating": {
+   "put": {
+    "tags": [
+     "interviews"
+    ],
+    "summary": "Rate Question",
+    "description": "A member's like (1) or dislike (-1) on one of the interview's questions.",
+    "operationId": "rate_question_interviews__interview_id__questions__question_id__rating_put",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "interview_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Interview Id"
+      }
+     },
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/RatingIn"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   },
+   "delete": {
+    "tags": [
+     "interviews"
+    ],
+    "summary": "Unrate Question",
+    "description": "Takes back a member's like or dislike (a click by mistake).",
+    "operationId": "unrate_question_interviews__interview_id__questions__question_id__rating_delete",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "interview_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Interview Id"
+      }
+     },
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/interviews/{interview_id}/questions/{question_id}/reports": {
+   "post": {
+    "tags": [
+     "interviews"
+    ],
+    "summary": "Report Question",
+    "description": "A member's report on one of the interview's questions, once each (409 for a second).",
+    "operationId": "report_question_interviews__interview_id__questions__question_id__reports_post",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "interview_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Interview Id"
+      }
+     },
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/ReportIn"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   },
+   "get": {
+    "tags": [
+     "interviews"
+    ],
+    "summary": "List Question Reports",
+    "description": "The reports on a question, its candidates' and its members': every member reads them.",
+    "operationId": "list_question_reports_interviews__interview_id__questions__question_id__reports_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "interview_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Interview Id"
+      }
+     },
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     },
+     {
+      "name": "offset",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "minimum": 0,
+       "description": "Number of items to skip",
+       "default": 0,
+       "title": "Offset"
+      },
+      "description": "Number of items to skip"
+     },
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "maximum": 100,
+       "minimum": 1,
+       "description": "Number of items to return, up to 100",
+       "default": 100,
+       "title": "Limit"
+      },
+      "description": "Number of items to return, up to 100"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/ReportOut"
+         },
+         "title": "Response List Question Reports Interviews  Interview Id  Questions  Question Id  Reports Get"
         }
        }
       }
@@ -3447,96 +3797,6 @@
     "responses": {
      "204": {
       "description": "Successful Response"
-     },
-     "422": {
-      "description": "Validation Error",
-      "content": {
-       "application/json": {
-        "schema": {
-         "$ref": "#/components/schemas/HTTPValidationError"
-        }
-       }
-      }
-     }
-    }
-   }
-  },
-  "/interviews/{interview_id}/questions/{question_id}/reports": {
-   "get": {
-    "tags": [
-     "interviews"
-    ],
-    "summary": "List Question Reports",
-    "description": "Candidates' reports on a question, read where it's fixed: owners and admins.",
-    "operationId": "list_question_reports_interviews__interview_id__questions__question_id__reports_get",
-    "security": [
-     {
-      "HTTPBearer": []
-     }
-    ],
-    "parameters": [
-     {
-      "name": "interview_id",
-      "in": "path",
-      "required": true,
-      "schema": {
-       "type": "string",
-       "format": "uuid",
-       "title": "Interview Id"
-      }
-     },
-     {
-      "name": "question_id",
-      "in": "path",
-      "required": true,
-      "schema": {
-       "type": "string",
-       "format": "uuid",
-       "title": "Question Id"
-      }
-     },
-     {
-      "name": "offset",
-      "in": "query",
-      "required": false,
-      "schema": {
-       "type": "integer",
-       "minimum": 0,
-       "description": "Number of items to skip",
-       "default": 0,
-       "title": "Offset"
-      },
-      "description": "Number of items to skip"
-     },
-     {
-      "name": "limit",
-      "in": "query",
-      "required": false,
-      "schema": {
-       "type": "integer",
-       "maximum": 100,
-       "minimum": 1,
-       "description": "Number of items to return, up to 100",
-       "default": 100,
-       "title": "Limit"
-      },
-      "description": "Number of items to return, up to 100"
-     }
-    ],
-    "responses": {
-     "200": {
-      "description": "Successful Response",
-      "content": {
-       "application/json": {
-        "schema": {
-         "type": "array",
-         "items": {
-          "$ref": "#/components/schemas/ReportOut"
-         },
-         "title": "Response List Question Reports Interviews  Interview Id  Questions  Question Id  Reports Get"
-        }
-       }
-      }
      },
      "422": {
       "description": "Validation Error",
@@ -11894,6 +12154,19 @@
     ],
     "title": "PushMessage"
    },
+   "QuestionExcludedIn": {
+    "properties": {
+     "excluded": {
+      "type": "boolean",
+      "title": "Excluded"
+     }
+    },
+    "type": "object",
+    "required": [
+     "excluded"
+    ],
+    "title": "QuestionExcludedIn"
+   },
    "QuestionOption": {
     "properties": {
      "answer": {
@@ -11946,6 +12219,31 @@
      "reports": {
       "type": "integer",
       "title": "Reports"
+     },
+     "my_rating": {
+      "anyOf": [
+       {
+        "type": "integer",
+        "enum": [
+         -1,
+         1
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "My Rating"
+     },
+     "reported": {
+      "type": "boolean",
+      "title": "Reported",
+      "default": false
+     },
+     "excluded": {
+      "type": "boolean",
+      "title": "Excluded",
+      "default": false
      }
     },
     "type": "object",
@@ -11959,6 +12257,24 @@
     ],
     "title": "QuestionText",
     "description": "A question as the company manages it: text, answer options and feedback counts."
+   },
+   "RatingIn": {
+    "properties": {
+     "value": {
+      "type": "integer",
+      "enum": [
+       -1,
+       1
+      ],
+      "title": "Value"
+     }
+    },
+    "type": "object",
+    "required": [
+     "value"
+    ],
+    "title": "RatingIn",
+    "description": "A thumbs up (1) or down (-1) on a question."
    },
    "ReferralOut": {
     "properties": {
@@ -12045,6 +12361,25 @@
     ],
     "title": "ReportEmailIn",
     "description": "Who gets the candidate's report, and the PDF the page made, base64-encoded."
+   },
+   "ReportIn": {
+    "properties": {
+     "reason": {
+      "type": "string",
+      "title": "Reason"
+     },
+     "comment": {
+      "type": "string",
+      "title": "Comment",
+      "default": ""
+     }
+    },
+    "type": "object",
+    "required": [
+     "reason"
+    ],
+    "title": "ReportIn",
+    "description": "A report on a question: library checks the reason and the comment's length."
    },
    "ReportOut": {
     "properties": {
@@ -13562,6 +13897,11 @@
      "question_count": {
       "type": "integer",
       "title": "Question Count"
+     },
+     "excluded_count": {
+      "type": "integer",
+      "title": "Excluded Count",
+      "default": 0
      },
      "question_limit": {
       "type": "integer",

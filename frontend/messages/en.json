@@ -886,7 +886,16 @@
     "count": "{count, plural, one {question} other {questions}}",
     "loadFailed": "Couldn't load the questions.",
     "yourAnswer": "your answer",
-    "aiWritten": "AI-written questions and answer keys can be wrong. Mark a wrong answer or re-generate."
+    "aiWritten": "AI-written questions and answer keys can be wrong. Mark a wrong answer or re-generate.",
+    "excludeFailed": "Couldn't save the change. Please try again.",
+    "addReport": "Add report",
+    "youReported": "You reported it",
+    "includedHint": "Untick to disable question",
+    "excludedHint": "Tick to enable question",
+    "includedView": "Enabled question",
+    "excludedView": "Disabled question",
+    "active": "Active",
+    "disabled": "Disabled"
   },
   "rounds": {
     "answered": "Answered",

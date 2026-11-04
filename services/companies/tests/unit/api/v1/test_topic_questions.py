@@ -86,7 +86,7 @@ def test_only_owner_or_admin_can_regenerate(client, monkeypatch, audited):
     app.dependency_overrides.clear()
 
 
-def test_only_owner_or_admin_reads_reports(client, monkeypatch):
+def test_every_member_reads_reports(client, monkeypatch):
     sign_in()
 
     async def fake_reports(_set_id, _question_id, page):
@@ -102,7 +102,7 @@ def test_only_owner_or_admin_reads_reports(client, monkeypatch):
     monkeypatch.setattr(library, "get_question_reports", fake_reports)
     url = f"/interviews/{INTERVIEW_ID}/questions/{QUESTION_ID}/reports"
 
-    for role, expected in (("viewer", 403), ("admin", 200)):
+    for role in ("viewer", "admin"):
         interview, company = interview_and_company(role)
 
         async def fake_interview(session, _interview_id, interview=interview):
@@ -113,19 +113,23 @@ def test_only_owner_or_admin_reads_reports(client, monkeypatch):
 
         monkeypatch.setattr(interviews, "get", fake_interview)
         monkeypatch.setattr(companies, "get", fake_company)
+        response = client.get(url)
 
-        assert client.get(url).status_code == expected
+        assert response.status_code == 200
+        assert [report["reason"] for report in response.json()] == ["unclear"]
 
     app.dependency_overrides.clear()
 
 
-def test_topic_questions_come_with_their_options(client, monkeypatch):
+def test_topic_questions_come_with_their_options_and_the_members_own_say(client, monkeypatch):
     sign_in()
+    left_out = uuid.uuid4()
     interview = Interview(
         id=INTERVIEW_ID,
         company_id=COMPANY_ID,
         generation_id=uuid.uuid4(),
         set_id=uuid.uuid4(),
+        excluded_questions={str(TOPIC_ID): [str(left_out)]},
     )
     company = Company(id=COMPANY_ID, name="My company", created_at=datetime.now(UTC))
     company.members = [
@@ -156,12 +160,16 @@ def test_topic_questions_come_with_their_options(client, monkeypatch):
         "likes": 3,
         "dislikes": 1,
         "reports": 0,
+        "my_rating": 1,
+        "reported": False,
     }
+    other = {**question, "id": str(left_out), "my_rating": None, "reported": True}
 
-    async def fake_questions(set_id, _topic_id):
-        assert set_id == interview.set_id
+    async def fake_questions(set_id, _topic_id, user_id):
+        # Library is asked for the signed-in member's own likes and reports.
+        assert (set_id, user_id) == (interview.set_id, "bob")
 
-        return [question]
+        return [question, other]
 
     monkeypatch.setattr(interviews, "get", fake_interview)
     monkeypatch.setattr(companies, "get", fake_company)
@@ -170,7 +178,8 @@ def test_topic_questions_come_with_their_options(client, monkeypatch):
     response = client.get(f"/interviews/{INTERVIEW_ID}/topics/{TOPIC_ID}/questions")
 
     assert response.status_code == 200
-    assert response.json() == [question]
+    # The one an owner or admin left out says so.
+    assert response.json() == [{**question, "excluded": False}, {**other, "excluded": True}]
 
     app.dependency_overrides.clear()
 

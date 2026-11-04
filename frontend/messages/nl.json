@@ -886,7 +886,16 @@
     "count": "{count, plural, one {vraag} other {vragen}}",
     "loadFailed": "De vragen konden niet worden geladen.",
     "yourAnswer": "jouw antwoord",
-    "aiWritten": "Door AI geschreven vragen en antwoordsleutels kunnen fout zijn. Markeer een fout antwoord of genereer de vraag opnieuw."
+    "aiWritten": "Door AI geschreven vragen en antwoordsleutels kunnen fout zijn. Markeer een fout antwoord of genereer de vraag opnieuw.",
+    "excludeFailed": "De wijziging kon niet worden opgeslagen. Probeer het opnieuw.",
+    "addReport": "Melding toevoegen",
+    "youReported": "Je hebt dit gemeld",
+    "includedHint": "Vink uit om de vraag uit te schakelen",
+    "excludedHint": "Vink aan om de vraag in te schakelen",
+    "includedView": "Ingeschakelde vraag",
+    "excludedView": "Uitgeschakelde vraag",
+    "active": "Actief",
+    "disabled": "Uitgeschakeld"
   },
   "rounds": {
     "answered": "Beantwoord",

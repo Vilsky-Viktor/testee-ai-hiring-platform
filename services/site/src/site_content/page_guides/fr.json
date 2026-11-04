@@ -97,8 +97,8 @@
     "title": "Thèmes",
     "text": "Ce que cet entretien évalue : ses thèmes, chacun avec des sous-thèmes et sa propre banque de questions. Chaque candidat reçoit une sélection aléatoire de chaque banque.",
     "actions": [
-      "Ouvrez « Gérer les questions » pour lire les questions et les réponses d'un thème.",
-      "Régénérez une question faible, signalez une réponse erronée ou lisez les signalements des candidats sur une question.",
+      "Ouvrez « Gérer les questions » pour accéder aux questions d'un thème : lisez-les, désactivez-en certaines, donnez-leur un « J'aime » ou un « Je n'aime pas », ou signalez-les.",
+      "Régénérez une question faible ou marquez une réponse erronée sur la page des questions d'un thème.",
       "Définissez combien de questions chaque candidat reçoit d'un thème ; à 0, le thème est retiré pour les nouveaux candidats. Un candidat reçoit au plus 60 questions sur l'ensemble des thèmes : baissez un thème pour en augmenter un autre.",
       "Essayez l'entretien en tant que candidat, ou supprimez-le."
     ],
@@ -106,6 +106,21 @@
       "Les questions rédigées par l'IA peuvent être fausses : parcourez chaque thème avant d'inviter qui que ce soit.",
       "Cliquez sur le titre pour renommer l'entretien.",
       "Les cartes en haut additionnent ce que reçoit chaque candidat : le total des questions, le temps moyen par question et la durée de l'entretien complet. Elles suivent chaque changement."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Questions",
+    "text": "Les questions d'un thème avec leurs réponses, leurs « J'aime », « Je n'aime pas » et signalements. Chaque candidat reçoit une sélection aléatoire parmi les questions actives.",
+    "actions": [
+      "Décochez une question pour la désactiver : désormais, aucun candidat ne la reçoit. Cochez-la pour la réactiver (propriétaires et admins).",
+      "Donnez un « J'aime » ou un « Je n'aime pas » à une question ; cliquez à nouveau sur votre choix pour l'annuler.",
+      "Ouvrez les signalements d'une question et ajoutez le vôtre, une fois par question.",
+      "Régénérez une question faible ou marquez une réponse erronée (propriétaires et admins)."
+    ],
+    "tips": [
+      "Les questions rédigées par l'IA peuvent être fausses : lisez-les avant d'inviter qui que ce soit.",
+      "Vos « J'aime », « Je n'aime pas » et signalements comptent autant que ceux des candidats et aident à corriger les questions faibles.",
+      "Le nombre du thème ne compte que les questions actives : un candidat n'en reçoit jamais davantage de ce thème."
     ]
   },
   "interviewCandidates": {

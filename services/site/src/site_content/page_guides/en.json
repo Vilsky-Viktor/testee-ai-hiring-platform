@@ -97,8 +97,8 @@
     "title": "Topics",
     "text": "What this interview tests: its topics, each with subtopics and its own pool of questions. Every candidate gets a random set from each pool.",
     "actions": [
-      "Open “manage questions” to read a topic's questions and answers.",
-      "Re-generate a weak question, mark a wrong answer, or read candidates' reports on a question.",
+      "Open “manage questions” to go to a topic's questions: read them, disable some, like, dislike or report them.",
+      "Re-generate a weak question or mark a wrong answer on a topic's questions page.",
       "Set how many questions each candidate gets from a topic; 0 leaves the topic out for new candidates. A candidate gets at most 60 questions over all topics: lower one topic to raise another.",
       "Try the interview as a candidate, or delete it."
     ],
@@ -106,6 +106,21 @@
       "AI-written questions can be wrong: skim each topic before you invite anyone.",
       "Click the title to rename the interview.",
       "The cards at the top add up what each candidate gets: the total questions, the average time per question and the whole interview's time. They follow every change."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Questions",
+    "text": "One topic's questions with their answers, likes, dislikes and reports. Every candidate gets a random set from the active ones.",
+    "actions": [
+      "Untick a question to disable it: no candidate gets it from now on. Tick it to make it active again (owners and admins).",
+      "Like or dislike a question; click your choice again to take it back.",
+      "Open a question's reports and add your own, once per question.",
+      "Re-generate a weak question or mark a wrong answer (owners and admins)."
+    ],
+    "tips": [
+      "AI-written questions can be wrong: read them before you invite anyone.",
+      "Your likes, dislikes and reports count the same as candidates' and help fix weak questions.",
+      "The topic's count is of active questions only: a candidate never gets more from it than that."
     ]
   },
   "interviewCandidates": {

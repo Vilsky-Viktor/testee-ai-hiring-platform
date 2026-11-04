@@ -97,8 +97,8 @@
     "title": "Tematy",
     "text": "Co sprawdza ta rozmowa: jej tematy, każdy z podtematami i własną pulą pytań. Każdy kandydat dostaje losowy zestaw z każdej puli.",
     "actions": [
-      "Otwórz „Zarządzaj pytaniami”, by przeczytać pytania i odpowiedzi tematu.",
-      "Wygeneruj ponownie słabe pytanie, oznacz błędną odpowiedź albo przeczytaj zgłoszenia kandydatów do pytania.",
+      "Otwórz „Zarządzaj pytaniami”, by przejść do pytań tematu: przeczytaj je, wyłącz niektóre, polub, oceń negatywnie albo zgłoś.",
+      "Wygeneruj ponownie słabe pytanie albo oznacz błędną odpowiedź na stronie pytań tematu.",
       "Ustaw, ile pytań z tematu dostaje każdy kandydat; 0 pomija temat dla nowych kandydatów. Kandydat dostaje łącznie najwyżej 60 pytań ze wszystkich tematów: zmniejsz jeden temat, aby zwiększyć inny.",
       "Wypróbuj rozmowę jako kandydat albo ją usuń."
     ],
@@ -106,6 +106,21 @@
       "Pytania napisane przez AI mogą zawierać błędy: przejrzyj każdy temat, zanim kogokolwiek zaprosisz.",
       "Kliknij tytuł, by zmienić nazwę rozmowy.",
       "Karty na górze sumują to, co dostaje każdy kandydat: łączną liczbę pytań, średni czas na pytanie i czas całej rozmowy. Zmieniają się po każdej zmianie."
+    ]
+  },
+  "topicQuestions": {
+    "title": "Pytania",
+    "text": "Pytania jednego tematu z odpowiedziami, polubieniami, negatywnymi ocenami i zgłoszeniami. Każdy kandydat dostaje losowy zestaw spośród aktywnych pytań.",
+    "actions": [
+      "Odznacz pytanie, by je wyłączyć: od teraz nie dostanie go żaden kandydat. Zaznacz je, by znów było aktywne (właściciele i administratorzy).",
+      "Polub pytanie lub oceń je negatywnie; kliknij swój wybór ponownie, by go cofnąć.",
+      "Otwórz zgłoszenia do pytania i dodaj własne, jedno na pytanie.",
+      "Wygeneruj ponownie słabe pytanie albo oznacz błędną odpowiedź (właściciele i administratorzy)."
+    ],
+    "tips": [
+      "Pytania napisane przez AI mogą być błędne: przeczytaj je, zanim kogokolwiek zaprosisz.",
+      "Twoje polubienia, negatywne oceny i zgłoszenia liczą się tak samo jak kandydatów i pomagają poprawiać słabe pytania.",
+      "Liczba przy temacie obejmuje tylko aktywne pytania: kandydat nigdy nie dostanie z niego więcej."
     ]
   },
   "interviewCandidates": {

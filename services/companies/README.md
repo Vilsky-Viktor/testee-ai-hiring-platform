@@ -1,7 +1,8 @@
 # companies
 
 Companies and who may do what in them: companies, members, roles and their invites, the
-access checks every company route runs, interviews (tests), their settings and their team's notes,
+access checks every company route runs, interviews (tests), their settings and their team's notes, the questions owners and admins
+disable in an interview, members' votes and reports on its questions (passed to library),
 the Discover tab (people open to offers, for companies that have topped up), the header's search
 over a user's own companies, interviews and candidates,
 candidates and

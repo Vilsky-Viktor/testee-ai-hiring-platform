@@ -141,3 +141,13 @@ Run again for the notes tools and the routing line naming them (`assistant-actio
 132/153, against 128 / 128; right scope 138 / 140 against 136 / 138; right tools 137 / 133 against
 133 / 130; page checks 23/27 with, 11/27 without, against 22 / 13; `get_page_guide` 15/15; blind
 wins/ties/losses 38/74/41. All within the judge's noise. $1.69.
+
+## A topic's questions (2026-11-04)
+
+Run for the tools' new descriptions from their routes (`list_topic_questions`: each question's
+`excluded`, the member's own `my_rating` and `reported`, kept in its fields; `list_question_reports`:
+candidates' and members' reports, every member). `page_context.py`, 3 repeats
+(`…_topic-questions.json`): general correct with 120/153 (78.4%), without 134/153, against 124 /
+132 on 2026-10-30; right scope 134 / 142; right tools 131 / 129; page checks 25/27 with, 12/27
+without; `get_page_guide` 15/15; blind wins/ties/losses 48/53/52. No case called either tool;
+all within the judge's noise. $1.70.
