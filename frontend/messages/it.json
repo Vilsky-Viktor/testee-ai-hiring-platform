@@ -2908,7 +2908,7 @@
     "points": {
       "questions": "{count, plural, one {# domanda scritta} other {# domande scritte}} per argomento; scegli tu quante ne riceve ogni candidato",
       "options": "Quattro opzioni per domanda, alcune con più di una risposta giusta",
-      "examples": "Codice, query e comandi mostrati come esempi quando il ruolo li richiede",
+      "examples": "Codice, dati, formule o documenti mostrati come esempi quando il ruolo li richiede",
       "names": "Le righe che non si possono invitare vengono indicate, con il motivo",
       "credits": "I crediti tornano indietro per chi non risponde mai",
       "expire": "Gli inviti scadono da soli dopo un mese",

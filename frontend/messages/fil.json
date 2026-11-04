@@ -2908,7 +2908,7 @@
     "points": {
       "questions": "{count, plural, one {# tanong} other {# tanong}} ang ginagawa bawat topic; ikaw ang pipili kung ilan ang makukuha ng bawat aplikante",
       "options": "Apat na pagpipilian bawat tanong, may ilang may higit sa isang tamang sagot",
-      "examples": "Ipinapakita bilang halimbawa ang code, query at command kapag kailangan ng role",
+      "examples": "Ipinapakita bilang halimbawa ang code, data, formula o dokumento kapag kailangan ng role",
       "names": "Pinangangalanan ang mga linyang hindi ma-imbitahan, kasama ang dahilan",
       "credits": "Bumabalik ang credits para sa sinumang hindi kailanman sumagot",
       "expire": "Kusang nag-e-expire ang mga imbitasyon pagkalipas ng isang buwan",

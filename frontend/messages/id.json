@@ -2908,7 +2908,7 @@
     "points": {
       "questions": "{count, plural, other {# soal}} ditulis per topik; kamu memilih berapa banyak yang didapat setiap kandidat",
       "options": "Empat pilihan per soal, sebagian dengan lebih dari satu jawaban benar",
-      "examples": "Kode, kueri, dan perintah ditampilkan sebagai contoh jika posisinya membutuhkan",
+      "examples": "Kode, data, rumus, atau dokumen ditampilkan sebagai contoh jika posisinya membutuhkan",
       "names": "Baris yang tidak bisa diundang disebutkan, beserta alasannya",
       "credits": "Kredit kembali untuk siapa pun yang tidak pernah menjawab",
       "expire": "Undangan kedaluwarsa sendiri setelah sebulan",

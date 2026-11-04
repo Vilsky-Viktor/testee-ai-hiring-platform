@@ -2908,7 +2908,7 @@
     "points": {
       "questions": "Konu başına {count, plural, one {# soru} other {# soru}} yazılır; her adayın kaç soru alacağını siz seçersiniz",
       "options": "Soru başına dört seçenek, bazılarında birden fazla doğru cevap",
-      "examples": "Pozisyon gerektiriyorsa kod, sorgular ve komutlar örnek olarak gösterilir",
+      "examples": "Pozisyon gerektiriyorsa kod, veriler, formüller veya belgeler örnek olarak gösterilir",
       "names": "Davet edilemeyen satırlar nedeniyle birlikte belirtilir",
       "credits": "Hiç cevap vermeyenlerin kredileri geri gelir",
       "expire": "Davetlerin süresi bir ay sonra kendiliğinden dolar",

@@ -2908,7 +2908,7 @@
     "points": {
       "questions": "{count, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} na każdy temat; Ty wybierasz, ile dostanie każdy kandydat",
       "options": "Cztery odpowiedzi do wyboru w każdym pytaniu, czasem więcej niż jedna poprawna",
-      "examples": "Kod, zapytania i polecenia jako przykłady, gdy wymaga tego stanowisko",
+      "examples": "Kod, dane, wzory lub dokumenty jako przykłady, gdy wymaga tego stanowisko",
       "names": "Wiersze, których nie da się zaprosić, są wskazane wraz z powodem",
       "credits": "Kredyty wracają za każdego, kto nie odpowie",
       "expire": "Zaproszenia same wygasają po miesiącu",

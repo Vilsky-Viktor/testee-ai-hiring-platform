@@ -2908,7 +2908,7 @@
     "points": {
       "questions": "{count, plural, one {# küsimus} other {# küsimust}} iga teema kohta; sina valid, mitu iga kandidaat saab",
       "options": "Neli vastusevarianti küsimuse kohta, mõnel rohkem kui üks õige vastus",
-      "examples": "Kood, päringud ja käsud näidetena, kui ametikoht seda nõuab",
+      "examples": "Kood, andmed, valemid või dokumendid näidetena, kui ametikoht seda nõuab",
       "names": "Read, mida ei saa kutsuda, on nimetatud koos põhjusega",
       "credits": "Krediidid tulevad tagasi kõigi eest, kes kunagi ei vasta",
       "expire": "Kutsed aeguvad ise kuu aja pärast",

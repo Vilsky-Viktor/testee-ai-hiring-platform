@@ -2908,7 +2908,7 @@
     "points": {
       "questions": "{count, plural, other {# câu hỏi}} được soạn cho mỗi chủ đề; bạn chọn mỗi ứng viên nhận bao nhiêu câu",
       "options": "Bốn phương án mỗi câu, một số câu có nhiều hơn một đáp án đúng",
-      "examples": "Mã, truy vấn và lệnh được hiển thị làm ví dụ khi vị trí cần",
+      "examples": "Mã, dữ liệu, công thức hoặc tài liệu được hiển thị làm ví dụ khi vị trí cần",
       "names": "Các dòng không mời được sẽ được nêu rõ, kèm lý do",
       "credits": "Credit được hoàn lại cho người không trả lời câu nào",
       "expire": "Lời mời tự hết hạn sau một tháng",

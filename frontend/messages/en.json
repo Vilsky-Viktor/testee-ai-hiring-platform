@@ -2908,7 +2908,7 @@
     "points": {
       "questions": "{count, plural, one {# question} other {# questions}} written per topic; you choose how many each candidate gets",
       "options": "Four options per question, some with more than one right answer",
-      "examples": "Code, queries and commands shown as examples where the role needs them",
+      "examples": "Code, data, formulas or documents shown as examples where the role needs them",
       "names": "Lines that can't be invited are named, with the reason",
       "credits": "Credits come back for anyone who never answers",
       "expire": "Invites expire on their own after a month",

@@ -2908,7 +2908,7 @@
     "points": {
       "questions": "{count, plural, one {# pregunta escrita} other {# preguntas escritas}} por tema; tú eliges cuántas recibe cada candidato",
       "options": "Cuatro opciones por pregunta, algunas con más de una respuesta correcta",
-      "examples": "Código, consultas y comandos como ejemplos cuando el puesto los requiere",
+      "examples": "Código, datos, fórmulas o documentos como ejemplos cuando el puesto los requiere",
       "names": "Las líneas que no se pueden invitar se indican, con el motivo",
       "credits": "Los créditos vuelven por quien nunca responde",
       "expire": "Las invitaciones caducan solas al cabo de un mes",

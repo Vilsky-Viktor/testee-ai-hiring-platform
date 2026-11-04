@@ -2908,7 +2908,7 @@
     "points": {
       "questions": "{count, plural, one {# vraag} other {# vragen}} per onderwerp geschreven; jij kiest hoeveel elke kandidaat krijgt",
       "options": "Vier opties per vraag, soms met meer dan één goed antwoord",
-      "examples": "Code, queries en commando's als voorbeeld waar de functie dat vraagt",
+      "examples": "Code, gegevens, formules of documenten als voorbeeld waar de functie dat vraagt",
       "names": "Regels die niet uitgenodigd kunnen worden, worden genoemd, met de reden",
       "credits": "Credits komen terug voor wie nooit antwoordt",
       "expire": "Uitnodigingen verlopen vanzelf na een maand",
