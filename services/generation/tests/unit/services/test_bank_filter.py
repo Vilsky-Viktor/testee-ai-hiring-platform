@@ -34,8 +34,42 @@ class Filter:
         return SimpleNamespace(identifies=any(text in question for text in self.identifying))
 
 
-def candidate(text: str) -> BankCandidate:
-    return BankCandidate(question_id=uuid.uuid4(), topic="Topic", text=text, options=["A", "B"])
+def candidate(text: str, flagged: bool = False) -> BankCandidate:
+    return BankCandidate(
+        question_id=uuid.uuid4(),
+        topic="Topic",
+        text=text,
+        options=["A", "B"],
+        correct=[0],
+        level="middle",
+        flagged=flagged,
+    )
+
+
+class BlindCheck:
+    """The blind key check: names `key` (None: no clear key), or raises for questions in
+    `fails`; records what it was asked."""
+
+    def __init__(self, key=frozenset({0}), fails=()):
+        self.key = key
+        self.fails = set(fails)
+        self.asked = []
+
+    async def __call__(self, text, options, level, topic):
+        self.asked.append((text, [(o.answer, o.correct) for o in options], level, topic))
+
+        if text in self.fails:
+            raise TimeoutError()
+
+        return None if self.key is None else set(self.key)
+
+
+@pytest.fixture(autouse=True)
+def keys_hold(monkeypatch):
+    check = BlindCheck()
+    monkeypatch.setattr(bank_filter, "blind_key", check)
+
+    return check
 
 
 @pytest.mark.parametrize(
@@ -106,6 +140,49 @@ def test_a_run_stops_at_its_cap(monkeypatch):
 
     assert asyncio.run(bank_filter.check_all()) == 6
     assert len(saved) == 6
+
+
+def run_page(candidates, monkeypatch) -> list[tuple[str, bool]]:
+    saved = []
+
+    async def bank_candidates(limit, after=None):
+        return candidates if after is None else []
+
+    async def save_bank_checks(checks):
+        saved.extend((check.text, check.passed) for check in checks)
+
+    monkeypatch.setattr(llm, "get_bank_filter_llm", lambda: Filter(["Acme"]))
+    monkeypatch.setattr(library, "bank_candidates", bank_candidates)
+    monkeypatch.setattr(library, "save_bank_checks", save_bank_checks)
+    asyncio.run(bank_filter.check_all())
+
+    return saved
+
+
+@pytest.mark.parametrize("key, passed", [({0}, True), ({1}, False), (None, False)])
+def test_a_question_joins_only_when_a_blind_check_names_its_marked_key(key, passed, monkeypatch):
+    check = BlindCheck(key=key)
+    monkeypatch.setattr(bank_filter, "blind_key", check)
+
+    assert run_page([candidate("General?")], monkeypatch) == [("General?", passed)]
+    assert check.asked == [("General?", [("A", True), ("B", False)], "middle", "Topic")]
+
+
+def test_the_key_isnt_checked_for_a_question_the_privacy_filter_keeps_out_or_a_flagged_one(
+    keys_hold, monkeypatch
+):
+    saved = run_page([candidate("Acme's?"), candidate("Flagged?", flagged=True)], monkeypatch)
+
+    assert saved == [("Acme's?", False), ("Flagged?", True)]
+    assert keys_hold.asked == []
+
+
+def test_a_failed_key_check_leaves_no_verdict_for_the_next_run(monkeypatch):
+    monkeypatch.setattr(bank_filter, "blind_key", BlindCheck(fails={"Broken?"}))
+
+    saved = run_page([candidate("General?"), candidate("Broken?")], monkeypatch)
+
+    assert saved == [("General?", True)]
 
 
 @pytest.mark.parametrize("paused, lock", [(True, "token"), (False, None)])

@@ -10,6 +10,11 @@ class BankCandidate(BaseModel):
     topic: str
     text: str
     options: list[str]
+    # The options marked correct, by index: the key a blind check must name before it joins.
+    correct: list[int]
+    level: str
+    # Flagged: it only gets a verdict for the evals' traps (export_flagged.py), never joins.
+    flagged: bool
 
 
 class BankCheckIn(BaseModel):

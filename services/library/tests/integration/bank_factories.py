@@ -1,5 +1,5 @@
 """Questions in the shared bank for the tests: a company's interview whose questions are proven
-(answered MIN_ANSWERS times) and passed the filter, as generation's daily job leaves them."""
+(answered BANK_MIN_ANSWERS times) and passed the filter, as generation's daily job leaves them."""
 
 import uuid
 from datetime import UTC, datetime
@@ -7,7 +7,7 @@ from datetime import UTC, datetime
 from sqlalchemy import text
 from testee_common.ai.sets import PreparationIn
 
-from library.constants.quality import MIN_ANSWERS
+from library.constants.bank import BANK_MIN_ANSWERS
 from library.core.db import Session
 from library.schemas.bank import BankCheckIn
 from library.services import bank as bank_service
@@ -17,7 +17,7 @@ from tests.integration.factories import direction, interview, question_ids
 NOW = datetime(2026, 10, 30, tzinfo=UTC)
 
 
-async def prove(ids, answers=MIN_ANSWERS):
+async def prove(ids, answers=BANK_MIN_ANSWERS):
     """The questions answered `answers` times, unflagged."""
     async with Session.begin() as session:
         await session.execute(

@@ -6,6 +6,7 @@ from datetime import UTC, datetime
 
 from sqlalchemy import text
 
+from library.constants.bank import BANK_MIN_ANSWERS
 from library.constants.quality import QualityFlag
 from library.core.db import Session
 from library.integrations import generation
@@ -47,7 +48,7 @@ def test_only_proven_questions_that_passed_the_filter_join_without_their_company
         )
         passed, failed, unproven, flagged = await question_ids(set_id)
         await prove([passed, failed, flagged])
-        await prove([unproven], answers=29)
+        await prove([unproven], answers=BANK_MIN_ANSWERS - 1)
         await transaction(quality.save_flag, flagged, QualityFlag.REWRITE)
         offered_before = await candidate_ids()
         await check([passed, flagged, unproven])
@@ -196,3 +197,21 @@ def test_the_daily_sweep_takes_out_what_raced_a_flag(run):
     assert len(before) == 1
     assert after == {}
     assert barred is True
+
+
+def test_the_filter_gets_each_questions_level_its_marked_key_and_whether_its_flagged(run):
+    company = a_company(str(uuid.uuid4()))
+
+    async def scenario():
+        set_id = await interview(f"Key {uuid.uuid4()}", owner=company, questions=2, level="hard")
+        proven, flagged = await question_ids(set_id)
+        await prove([proven, flagged])
+        await transaction(quality.save_flag, flagged, QualityFlag.REWRITE)
+
+        return proven, flagged, await bank_service.candidates(100, None)
+
+    proven, flagged, found = run(scenario())
+    mine = {c.question_id: (c.options, c.correct, c.level, c.flagged) for c in found}
+
+    assert mine[proven] == (["right", "wrong"], [0], "hard", False)
+    assert mine[flagged] == (["right", "wrong"], [0], "hard", True)

@@ -19,6 +19,12 @@ class BankCandidate(BaseModel):
     topic: str
     text: str
     options: list[str]
+    # The options marked correct, by index; empty from a library not sending them yet, whose
+    # questions then wait for the next run.
+    correct: list[int] = []
+    level: str = ""
+    # Flagged: only a verdict for the evals' traps, never joins, so its key isn't checked.
+    flagged: bool = False
 
 
 class BankCheck(BaseModel):

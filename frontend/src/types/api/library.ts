@@ -1065,6 +1065,12 @@ export interface components {
       text: string
       /** Options */
       options: string[]
+      /** Correct */
+      correct: number[]
+      /** Level */
+      level: string
+      /** Flagged */
+      flagged: boolean
     }
     /**
      * BankCheckIn

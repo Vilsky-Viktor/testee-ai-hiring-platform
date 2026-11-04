@@ -4,7 +4,7 @@ from datetime import datetime
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from library.constants.quality import MIN_ANSWERS
+from library.constants.bank import BANK_MIN_ANSWERS
 from library.constants.sets import SetKind
 
 # The company's set is kept out of the bank by its interview's opt-out (interview_privacy, by
@@ -23,7 +23,7 @@ REPORTED = "EXISTS (SELECT FROM question_reports r WHERE r.question_id = {questi
 # ones, which only get a verdict (export_flagged.py's eval traps).
 CANDIDATES_SQL = text(
     f"""
-    SELECT q.id, t.title, q.text, q.options
+    SELECT q.id, t.title, q.text, q.options, s.level, qs.flag IS NOT NULL
     FROM question_stats qs
     JOIN questions q ON q.id = qs.question_id
     JOIN topics t ON t.id = q.topic_id
@@ -129,13 +129,14 @@ FORGET_INTERVIEW_SQL = text(
     "DELETE FROM interview_privacy WHERE interview_id = :interview_id AND company_id = :company_id"
 )
 
-PARAMS = {"interview": SetKind.INTERVIEW, "min_answers": MIN_ANSWERS}
+PARAMS = {"interview": SetKind.INTERVIEW, "min_answers": BANK_MIN_ANSWERS}
 
 
 async def candidates(
     session: AsyncSession, limit: int, after: uuid.UUID | None
-) -> list[tuple[uuid.UUID, str, str, list]]:
-    """Companies' questions for the filter: (id, topic, text, options), in id order."""
+) -> list[tuple[uuid.UUID, str, str, list, str, bool]]:
+    """Companies' questions for the filter: (id, topic, text, options, level, flagged), in id
+    order."""
     params = PARAMS | {"limit": limit, "after": after}
 
     return [tuple(row) for row in await session.execute(CANDIDATES_SQL, params)]

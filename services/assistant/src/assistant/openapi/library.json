@@ -3254,6 +3254,21 @@
       },
       "type": "array",
       "title": "Options"
+     },
+     "correct": {
+      "items": {
+       "type": "integer"
+      },
+      "type": "array",
+      "title": "Correct"
+     },
+     "level": {
+      "type": "string",
+      "title": "Level"
+     },
+     "flagged": {
+      "type": "boolean",
+      "title": "Flagged"
      }
     },
     "type": "object",
@@ -3261,7 +3276,10 @@
      "question_id",
      "topic",
      "text",
-     "options"
+     "options",
+     "correct",
+     "level",
+     "flagged"
     ],
     "title": "BankCandidate",
     "description": "A company's question offered to the bank's filter, with its topic's title."

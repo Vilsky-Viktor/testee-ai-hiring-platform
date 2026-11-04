@@ -25,8 +25,11 @@ async def candidates(limit: int, after: uuid.UUID | None) -> list[BankCandidate]
             topic=topic,
             text=wording,
             options=[option["answer"] for option in options],
+            correct=[index for index, option in enumerate(options) if option["correct"]],
+            level=level,
+            flagged=flagged,
         )
-        for question_id, topic, wording, options in found
+        for question_id, topic, wording, options, level, flagged in found
     ]
 
 

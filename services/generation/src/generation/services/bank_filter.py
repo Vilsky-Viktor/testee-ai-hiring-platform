@@ -1,7 +1,7 @@
 """The shared question bank's filter: before a company's question joins the bank that other
 companies' interviews reuse from, it must name and reveal nothing about an organisation or a
-person (docs/generation.md, The question bank). Library offers the questions and keeps the
-verdicts; this service only judges them."""
+person, and a blind check must name its marked key (docs/generation.md, The question bank).
+Library offers the questions and keeps the verdicts; this service only judges them."""
 
 import asyncio
 import logging
@@ -24,6 +24,8 @@ from generation.integrations.redis import get_redis
 from generation.integrations.usage import ai_run
 from generation.prompts.bank_filter import BANK_FILTER_INPUT, BANK_FILTER_SYSTEM
 from generation.schemas.bank_filter import BankCandidate, BankCheck, BankVerdict
+from generation.schemas.regenerate import RegeneratedOption
+from generation.services.verify import blind_key
 
 logger = logging.getLogger(__name__)
 
@@ -48,6 +50,27 @@ async def is_general(topic: str, text: str, options: list[str]) -> bool:
     return not verdict.identifies
 
 
+async def key_holds(candidate: BankCandidate) -> bool:
+    """Whether a check that sees no mark, the options in a new order, names the marked key: the
+    question joins on a few answers, before its statistics could catch a wrong key, and other
+    companies' candidates would be marked by it. Raises when the model's call fails."""
+    options = [
+        RegeneratedOption(answer=answer, correct=index in candidate.correct)
+        for index, answer in enumerate(candidate.options)
+    ]
+    found = await blind_key(candidate.text, options, candidate.level, candidate.topic)
+
+    return found == set(candidate.correct)
+
+
+async def passes(candidate: BankCandidate) -> bool:
+    """The privacy filter, then (for a question that may join) the blind key check."""
+    if not await is_general(candidate.topic, candidate.text, candidate.options):
+        return False
+
+    return candidate.flagged or await key_holds(candidate)
+
+
 async def check_page(candidates: list[BankCandidate]) -> list[BankCheck]:
     """Each candidate's verdict, a few at once; one whose call failed has none and is offered
     again on the next run."""
@@ -56,7 +79,7 @@ async def check_page(candidates: list[BankCandidate]) -> list[BankCheck]:
     async def check(candidate: BankCandidate) -> BankCheck | None:
         async with limit:
             try:
-                passed = await is_general(candidate.topic, candidate.text, candidate.options)
+                passed = await passes(candidate)
             except Exception:
                 logger.exception("Couldn't check question %s for the bank", candidate.question_id)
 
