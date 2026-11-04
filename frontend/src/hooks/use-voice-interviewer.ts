@@ -286,8 +286,7 @@ export function useVoiceInterviewer(
     // server starts as it opens, starts as she reads it.
     announce: (said: VoiceAnnouncement) =>
       say(`${latest.current.sessionId}/voice/phrases/${said}`, true),
-    // A spoken answer was saved: Mira names its options ("B, saved.", "B and D, saved."),
-    // resolving once she has, as announce.
+    // A spoken answer was saved: Mira names it ("B and D, saved."), resolving as announce does.
     announceSaved: (picks: number[]) =>
       say(`${latest.current.sessionId}/voice/${savedClip(picks)}`, true),
     // The question's time ran out: speech begun in time is sent and waited for; the options it
