@@ -28,7 +28,7 @@ test("a spoken answer is heard live, and sent whole when the stream drops", asyn
       expect(Math.max(...mira.streamed())).toBeGreaterThan(A_SECOND)
       await mira.answer({ heard: "B", intent: "choose", picks: [1], clear: true })
       await expect.poll(async () => Number(await answered(candidate))).toBe(before + 1)
-      await expect.poll(() => mira.said()).toContain("saved/1")
+      await expect.poll(() => mira.said()).toContain("saved?picks=1")
       expect(mira.asked.filter((path) => path.startsWith("answers"))).toEqual([])
 
       // The next question: the stream drops while the candidate speaks, so the recording is

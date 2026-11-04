@@ -1718,14 +1718,14 @@
     }
    }
   },
-  "/sessions/{session_id}/voice/saved/{pick}": {
+  "/sessions/{session_id}/voice/saved": {
    "get": {
     "tags": [
      "voice"
     ],
     "summary": "Saved Audio",
-    "description": "Voice mode: the interviewer saying a clear answer's option (`pick`, its index) was saved,\nread aloud (Ogg Opus).",
-    "operationId": "saved_audio_sessions__session_id__voice_saved__pick__get",
+    "description": "Voice mode: the interviewer saying the options in `picks` (indices) were saved, read\naloud (Ogg Opus): a clear answer's one, or what an answer spoken as the time ran out picked.",
+    "operationId": "saved_audio_sessions__session_id__voice_saved_get",
     "security": [
      {
       "HTTPBearer": []
@@ -1743,14 +1743,19 @@
       }
      },
      {
-      "name": "pick",
-      "in": "path",
+      "name": "picks",
+      "in": "query",
       "required": true,
       "schema": {
-       "type": "integer",
-       "minimum": 0,
-       "exclusiveMaximum": 4,
-       "title": "Pick"
+       "type": "array",
+       "items": {
+        "type": "integer",
+        "minimum": 0,
+        "exclusiveMaximum": 4
+       },
+       "minItems": 1,
+       "maxItems": 4,
+       "title": "Picks"
       }
      }
     ],

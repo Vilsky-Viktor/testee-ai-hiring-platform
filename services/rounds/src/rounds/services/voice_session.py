@@ -69,7 +69,7 @@ async def prepare_next(row: Session) -> None:
 
     language = await interview_language(row)
     ahead = [
-        made_ahead(row, saved_answer(pick, language), language, company_text=False)
+        made_ahead(row, saved_answer([pick], language), language, company_text=False)
         for pick in ([] if question.multi else range(len(question.options)))
     ]
     following = next_session_question(row, after=1) or following_question(
@@ -99,11 +99,11 @@ async def phrase_clip(row: Session, phrase: str) -> VoiceClip:
     return await clip_for(row, translate(phrase, language), language, company_text=False)
 
 
-async def saved_clip(row: Session, pick: int) -> VoiceClip:
-    """The interviewer saying the option `pick` was saved: "B, saved."."""
+async def saved_clip(row: Session, picks: list[int]) -> VoiceClip:
+    """The interviewer saying the options `picks` were saved: "B, saved."."""
     language = await interview_language(row)
 
-    return await clip_for(row, saved_answer(pick, language), language, company_text=False)
+    return await clip_for(row, saved_answer(picks, language), language, company_text=False)
 
 
 async def confirmation_clip(row: Session, picks: list[int]) -> VoiceClip:

@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest"
 
-import { keptClips, savedClips } from "@/lib/voice-kept-clips"
+import { keptClips, savedClip, savedClips } from "@/lib/voice-kept-clips"
 
 vi.mock("@/lib/api", async (original) => ({
   ...(await original<typeof import("@/lib/api")>()),
@@ -47,22 +47,27 @@ afterEach(() => {
 })
 
 it("names the saved clips of a question's letters", () => {
-  expect(savedClips(3)).toEqual(["saved/0", "saved/1", "saved/2"])
+  expect(savedClips(3)).toEqual([
+    "saved?picks=0",
+    "saved?picks=1",
+    "saved?picks=2",
+  ])
   expect(savedClips(0)).toEqual([])
+  expect(savedClip([1, 3])).toBe("saved?picks=1&picks=3")
 })
 
 it("fetches each clip once ahead and plays it from the page in every section", async () => {
   const clips = keptClips()
   const { audio, played } = player()
-  clips.preload("section-1", ["phrases/unclear", "saved/1"])
-  clips.preload("section-1", ["saved/1"])
+  clips.preload("section-1", ["phrases/unclear", "saved?picks=1"])
+  clips.preload("section-1", ["saved?picks=1"])
 
-  await clips.play(audio, "section-2/voice/saved/1")
-  await clips.play(audio, "section-2/voice/saved/1")
+  await clips.play(audio, "section-2/voice/saved?picks=1")
+  await clips.play(audio, "section-2/voice/saved?picks=1")
 
   expect(fetches).toEqual([
     "/api/rounds/sessions/section-1/voice/phrases/unclear",
-    "/api/rounds/sessions/section-1/voice/saved/1",
+    "/api/rounds/sessions/section-1/voice/saved?picks=1",
   ])
   expect(played).toEqual(["blob:2", "blob:2"])
 

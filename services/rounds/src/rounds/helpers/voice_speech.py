@@ -87,8 +87,9 @@ def confirmation(picks: list[int], language: str) -> str:
     return translate(CONFIRM, language).format(letters=letters_said(picks, language))
 
 
-def saved_answer(pick: int, language: str) -> str:
-    return translate(SAVED, language).format(letter=LETTERS[pick])
+def saved_answer(picks: list[int], language: str) -> str:
+    """The saved options' letters: "B, saved." or "B and D, saved."."""
+    return translate(SAVED, language).format(letter=letters_said(picks, language))
 
 
 def clip_key(model: str, voice: str, language: str, text: str) -> str:

@@ -23,7 +23,7 @@ from tests.integration.transactions import transaction
 
 CANDIDATE = User(uid="cand", email="cand@example.com", email_verified=True)
 AUDIO = b"OggS a question read aloud"
-SAVED_TEXTS = {saved_answer(pick, "en") for pick in range(4)}
+SAVED_TEXTS = {saved_answer([pick], "en") for pick in range(4)}
 
 
 @pytest.fixture(autouse=True)
@@ -168,7 +168,7 @@ def test_a_questions_saved_answers_are_kept_ahead_for_every_interview(run, monke
 
         for pick in range(len(opened.question.options)):
             key = clip_key(
-                settings.speech_model, settings.speech_voice, "en", saved_answer(pick, "en")
+                settings.speech_model, settings.speech_voice, "en", saved_answer([pick], "en")
             )
 
             async with Db() as db:

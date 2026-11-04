@@ -53,9 +53,10 @@ def test_a_confirmation_names_the_options_chosen():
     assert confirmation([0, 2], "en") == "You chose A and C. Is that right?"
 
 
-def test_a_saved_answer_names_its_options_letter_in_the_language():
-    assert saved_answer(2, "de") == translate(SAVED, "de").format(letter="C")
-    assert saved_answer(2, "de").startswith("C")
+def test_a_saved_answer_names_its_options_letters_in_the_language():
+    assert saved_answer([2], "de") == translate(SAVED, "de").format(letter="C")
+    assert saved_answer([2], "de").startswith("C")
+    assert saved_answer([3, 0], "en") == "A and D, saved."
 
 
 def test_the_same_text_in_the_same_voice_is_one_clip():

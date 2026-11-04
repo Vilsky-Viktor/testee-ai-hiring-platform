@@ -6,6 +6,7 @@ import pytest
 from testee_common.i18n.i18n import translate
 
 from rounds.constants.voice_phrases import SAVED
+from rounds.helpers.voice_speech import letters_said
 from rounds.schemas.voice import VoiceMatch
 from rounds.services import voice_match, voice_session
 from tests.unit.api.v1 import test_voice
@@ -58,7 +59,7 @@ def test_a_turns_stages_are_logged_with_ids_only(client, voice, caplog):
     assert "match;dur=" in line and "total;dur=" in line
 
 
-def test_a_saved_answer_names_its_option_in_the_interviews_language(client, voice, monkeypatch):
+def test_a_saved_answer_names_its_options_in_the_interviews_language(client, voice, monkeypatch):
     read_aloud = []
 
     async def clip_for(row, text, language, company_text):
@@ -69,13 +70,18 @@ def test_a_saved_answer_names_its_option_in_the_interviews_language(client, voic
     monkeypatch.setattr(voice_session, "clip_for", clip_for)
     base = f"/sessions/{voice.row.id}/voice/saved"
 
-    played = client.get(f"{base}/1")
+    played = client.get(f"{base}?picks=1")
+    several = client.get(f"{base}?picks=3&picks=1")
 
-    assert played.status_code == 200
+    assert (played.status_code, several.status_code) == (200, 200)
     assert played.content == b"OggS saved"
-    assert read_aloud == [(translate(SAVED, "de").format(letter="B"), "de", False)]
-    assert client.get(f"{base}/4").status_code == 422
+    assert read_aloud == [
+        (translate(SAVED, "de").format(letter="B"), "de", False),
+        (translate(SAVED, "de").format(letter=letters_said([1, 3], "de")), "de", False),
+    ]
+    assert client.get(f"{base}?picks=4").status_code == 422
+    assert client.get(base).status_code == 422
 
     voice.row = section(voice=False)
 
-    assert client.get(f"/sessions/{voice.row.id}/voice/saved/1").status_code == 409
+    assert client.get(f"/sessions/{voice.row.id}/voice/saved?picks=1").status_code == 409

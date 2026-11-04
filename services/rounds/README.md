@@ -69,7 +69,7 @@ finds it kept. The step's question says whether it's the interview's `last`: the
 "Moving on…" or "Time's up…" before asking for the next step, never after the last. Code blocks and long options aren't read: the interviewer
 points to the screen (`helpers/voice_speech.py`). The browser plays the clip
 (`GET .../voice/question`), the interviewer's phrases (`.../voice/phrases/{phrase}`,
-`.../voice/confirmations?picks=`, `.../voice/saved/{pick}`: "B, saved.", made ahead with the next
+`.../voice/confirmations?picks=`, `.../voice/saved?picks=`: "B, saved.", made ahead with the next
 question for each option of a single-answer question), and streams each spoken answer while
 it's said (`.../voice/stream`, a WebSocket, `services/voice_stream.py`): opened as listening
 starts, signed in by its first message (the Firebase token, checked as a write's: a browser can't

@@ -1,7 +1,7 @@
 from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, Path, Query, Request, Response, WebSocket, status
+from fastapi import APIRouter, Query, Request, Response, WebSocket, status
 from pydantic import Field
 from testee_common.auth.auth import CurrentUser
 
@@ -70,15 +70,13 @@ async def confirmation_audio(session_id: UUID, picks: Chosen, user: CurrentUser)
     return Response(clip.audio, media_type=OGG)
 
 
-@router.get("/{session_id}/voice/saved/{pick}", response_class=Response)
-async def saved_audio(
-    session_id: UUID, pick: Annotated[int, Path(ge=0, lt=OPTIONS_PER_QUESTION)], user: CurrentUser
-) -> Response:
-    """Voice mode: the interviewer saying a clear answer's option (`pick`, its index) was saved,
-    read aloud (Ogg Opus)."""
+@router.get("/{session_id}/voice/saved", response_class=Response)
+async def saved_audio(session_id: UUID, picks: Chosen, user: CurrentUser) -> Response:
+    """Voice mode: the interviewer saying the options in `picks` (indices) were saved, read
+    aloud (Ogg Opus): a clear answer's one, or what an answer spoken as the time ran out picked."""
     row = await get_own_session(session_id, user)
     voice_session.voice_only(row)
-    clip = await voice_session.saved_clip(row, pick)
+    clip = await voice_session.saved_clip(row, sorted(set(picks)))
 
     return Response(clip.audio, media_type=OGG)
 

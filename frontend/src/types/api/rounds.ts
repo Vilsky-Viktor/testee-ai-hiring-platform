@@ -688,7 +688,7 @@ export interface paths {
     patch?: never
     trace?: never
   }
-  "/sessions/{session_id}/voice/saved/{pick}": {
+  "/sessions/{session_id}/voice/saved": {
     parameters: {
       query?: never
       header?: never
@@ -697,10 +697,10 @@ export interface paths {
     }
     /**
      * Saved Audio
-     * @description Voice mode: the interviewer saying a clear answer's option (`pick`, its index) was saved,
-     *     read aloud (Ogg Opus).
+     * @description Voice mode: the interviewer saying the options in `picks` (indices) were saved, read
+     *     aloud (Ogg Opus): a clear answer's one, or what an answer spoken as the time ran out picked.
      */
-    get: operations["saved_audio_sessions__session_id__voice_saved__pick__get"]
+    get: operations["saved_audio_sessions__session_id__voice_saved_get"]
     put?: never
     post?: never
     delete?: never
@@ -2667,13 +2667,14 @@ export interface operations {
       }
     }
   }
-  saved_audio_sessions__session_id__voice_saved__pick__get: {
+  saved_audio_sessions__session_id__voice_saved_get: {
     parameters: {
-      query?: never
+      query: {
+        picks: number[]
+      }
       header?: never
       path: {
         session_id: string
-        pick: number
       }
       cookie?: never
     }

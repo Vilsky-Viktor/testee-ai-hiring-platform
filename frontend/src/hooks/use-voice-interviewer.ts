@@ -9,7 +9,7 @@ import { acknowledgement } from "@/lib/voice-acknowledgement"
 import { answerInProgress } from "@/lib/voice-answering"
 import { react } from "@/lib/voice-reaction"
 import { clipUrl, prepareNextQuestion } from "@/lib/voice-clips"
-import { keptClips, savedClips } from "@/lib/voice-kept-clips"
+import { keptClips, savedClip, savedClips } from "@/lib/voice-kept-clips"
 import { type Meter, meters, soundAllowed } from "@/lib/voice-meters"
 import { type Listener, listen, openMicrophone } from "@/lib/voice-listening"
 import { liveListening } from "@/lib/voice-live"
@@ -286,9 +286,10 @@ export function useVoiceInterviewer(
     // server starts as it opens, starts as she reads it.
     announce: (said: VoiceAnnouncement) =>
       say(`${latest.current.sessionId}/voice/phrases/${said}`, true),
-    // A clear answer was saved: Mira says so ("B, saved."), resolving once she has, as announce.
-    announceSaved: (pick: number) =>
-      say(`${latest.current.sessionId}/voice/saved/${pick}`, true),
+    // A spoken answer was saved: Mira names its options ("B, saved.", "B and D, saved."),
+    // resolving once she has, as announce.
+    announceSaved: (picks: number[]) =>
+      say(`${latest.current.sessionId}/voice/${savedClip(picks)}`, true),
     // The question's time ran out: speech begun in time is sent and waited for; the options it
     // picked (saved without a confirmation), or null.
     timeUp: () => {

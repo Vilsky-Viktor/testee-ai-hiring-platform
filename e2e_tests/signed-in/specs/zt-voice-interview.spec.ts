@@ -117,7 +117,7 @@ test("a clear spoken answer is saved at once", async ({ signInAs }) => {
     const turn = await continued(candidate, token)
     const before = Number(await answered(candidate))
     // Her short clips are in the page before she needs them.
-    expect(mira.asked).toEqual(expect.arrayContaining(["phrases/unclear", "saved/1"]))
+    expect(mira.asked).toEqual(expect.arrayContaining(["phrases/unclear", "saved?picks=1"]))
 
     for (let time = 0; time < 2; time++) {
       await microphone.say()
@@ -144,7 +144,7 @@ test("a clear spoken answer is saved at once", async ({ signInAs }) => {
     await expect.poll(() => mira.asked.filter((path) => path === "question")).toHaveLength(2)
     await expect(turn).toHaveAttribute("data-turn", "candidate")
     const said = await mira.said()
-    expect(said).toContain("saved/1")
+    expect(said).toContain("saved?picks=1")
     expect(said.filter((path) => path.startsWith("confirmations"))).toEqual([])
     expect(said).not.toContain("phrases/next")
     // Nothing picked on the new question.
@@ -154,8 +154,8 @@ test("a clear spoken answer is saved at once", async ({ signInAs }) => {
 
 // The candidate answers in a question's last seconds and the time runs out while Mira is still
 // understanding it: the screen waits for the answer, saves what it picked without asking to
-// confirm, and Mira says the time is up and the answer saved. On the next question nothing is
-// said: she says the time is up with no answer.
+// confirm, and Mira names it as she does a clear answer ("A, saved.") before the next question
+// opens. On the next question nothing is said: she says the time is up with no answer.
 test("an answer spoken before the time runs out still counts", async ({ signInAs }) => {
   // Two questions' time run out.
   test.setTimeout(240_000)
@@ -191,8 +191,9 @@ test("an answer spoken before the time runs out still counts", async ({ signInAs
       const sent = answer.request().postDataJSON()
       expect(sent.option_index ?? sent.picks).toEqual(sent.picks ? [0] : 0)
       await expect.poll(async () => Number(await answered(candidate))).toBe(before + 1)
-      await expect.poll(() => mira.said()).toContain("phrases/time-up-saved")
+      await expect.poll(() => mira.said()).toContain("saved?picks=0")
       expect(await mira.said()).not.toContain("phrases/time-up")
+      expect(await mira.said()).not.toContain("phrases/time-up-saved")
       expect(mira.asked.filter((path) => path.startsWith("confirmations"))).toEqual([])
 
       // Silence until the next question's time runs out: no answer.
@@ -204,7 +205,7 @@ test("an answer spoken before the time runs out still counts", async ({ signInAs
         timeout: ANSWER_SECONDS * 1000 + LISTENING_MS,
       })
       await expect.poll(() => mira.said()).toContain("phrases/time-up")
-      expect((await mira.said()).filter((path) => path === "phrases/time-up-saved")).toHaveLength(1)
+      expect(await mira.said()).not.toContain("phrases/time-up-saved")
       expect(mira.asked.filter((path) => path.startsWith("answers"))).toHaveLength(1)
     },
     ANSWER_SECONDS

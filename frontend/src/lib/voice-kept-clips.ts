@@ -56,7 +56,12 @@ export function keptClips() {
 /** A question's "{letter}, saved." clips, by their path after the session, for its first
  * `letters` options. */
 export function savedClips(letters: number) {
-  return Array.from({ length: letters }, (_, pick) => `saved/${pick}`)
+  return Array.from({ length: letters }, (_, pick) => savedClip([pick]))
+}
+
+/** The "B, saved." clip's path after the session for the options `picks` ("B and D, saved."). */
+export function savedClip(picks: number[]) {
+  return `saved?${picks.map((pick) => `picks=${pick}`).join("&")}`
 }
 
 export type KeptClips = ReturnType<typeof keptClips>

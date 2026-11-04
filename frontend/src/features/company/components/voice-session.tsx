@@ -72,7 +72,7 @@ export function VoiceSession({
   const saveAndAdvance = (picks: number[]) =>
     sendThen(
       async () => {
-        await voice.announceSaved(picks[0])
+        await voice.announceSaved(picks)
         await onAdvance()
       },
       false,
@@ -112,14 +112,24 @@ export function VoiceSession({
           setTimedOut(question?.question_id ?? null)
           // The question's time is over even if its pick can't be saved: the next opens. An
           // answer spoken in time is waited for, and what it picked shows on the options and is
-          // saved without asking; Mira says whether an answer was saved.
+          // saved without asking; Mira names it as she does a clear answer ("B and D, saved."),
+          // or says whether a tapped answer was saved.
           void voice.timeUp().then((picks) => {
             if (picks) {
               setPick({ question: questionId ?? "", options: picks })
             }
 
             return sendThen(
-              (saved) => moveOn(saved ? "time-up-saved" : "time-up"),
+              async (saved) => {
+                if (saved && picks?.length) {
+                  await voice.announceSaved(picks)
+                  await onAdvance()
+
+                  return
+                }
+
+                await moveOn(saved ? "time-up-saved" : "time-up")
+              },
               true,
               picks ?? undefined
             )
