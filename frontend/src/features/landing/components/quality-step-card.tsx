@@ -1,11 +1,14 @@
 import { cn } from "cn"
 import type { LucideIcon } from "lucide-react"
 
-import { PROMO_POP } from "@/features/landing/components/demo-panel"
+// The pop-in (PROMO_POP's), then the background's breath (promo-solid, promo-sections.css), both together.
+const BREATHING =
+  "motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both,promo-solid_3s_ease-in-out_0.5s_infinite]"
 
 /** One of the quality loop's steps: a card at (`x`, `y`) on the ring, its icon on its top edge,
  * its label and line. While `entering` is false (the loop not yet seen, motion allowed), it
- * waits unseen; then it pops in after `delay` milliseconds. Lit, the card takes the primary
+ * waits unseen; then it pops in after `delay` milliseconds, and its see-through background
+ * breathes to solid and back from then on. Lit, the card takes the primary
  * border and its icon pulses with a spreading ring. `content` takes the label's box, for the
  * cards' one height. */
 export function QualityStepCard({
@@ -44,7 +47,8 @@ export function QualityStepCard({
         "absolute start-(--x) top-(--y) z-10 flex size-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-2 rounded-xl border p-1.5 pt-6 text-center lowercase transition-shadow duration-300 lg:h-(--card-h) lg:w-60 lg:justify-start lg:p-5 lg:pt-9 rtl:translate-x-1/2",
         // The page's colour, see-through as much as the interview card among the ways in.
         "bg-background/75",
-        entering ? PROMO_POP : "motion-safe:opacity-0",
+        // Popping in, then breathing from see-through to solid and back, for as long as it shows.
+        entering ? BREATHING : "motion-safe:opacity-0",
         lit && "border-primary-gradient"
       )}
     >

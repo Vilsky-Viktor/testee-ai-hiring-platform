@@ -48,7 +48,11 @@ export const DEMO_INTERVIEW = {
   topicQuestions: 70,
   perCandidate: 10,
   questionSeconds: 60,
+  // The pass mark its settings show.
+  passMark: 70,
 }
+// The time per question the demo types into the interview's settings.
+export const DEMO_QUESTION_SECONDS = "75"
 
 // The questions each candidate gets, changed on two of its topics before inviting: more on one,
 // and none on another, which leaves that topic out.

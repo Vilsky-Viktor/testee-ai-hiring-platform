@@ -14,7 +14,8 @@ import {
 /** The topic review's list (features/generation/components/topic-review.tsx), small: the first
  * `shown` topics, the edited one with its subtopic once `added` and its editor in its place
  * while `editing` (`typed` so far, `typing`, the button `pressed`), and the topic the AI added
- * once `applied`. Each topic pops in as it shows (promo-pop, animations.css). */
+ * once `applied`. Each topic flies in from the start side as it shows, and the AI's added one
+ * also flashes in the primary colour (promo-fly-in, promo-flash: promo.css). */
 export function DemoTopicList({
   aimed = false,
   shown,
@@ -42,7 +43,7 @@ export function DemoTopicList({
           return (
             <li
               key={topic.name}
-              className="motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
+              className="motion-safe:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both] rtl:[--fly-from:1]"
             >
               <TopicCard name={topic.name} subtopics={topic.subtopics} />
             </li>
@@ -57,7 +58,7 @@ export function DemoTopicList({
         return (
           <li
             key={topic.name}
-            className="grid *:[grid-area:1/1] motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
+            className="grid *:[grid-area:1/1] motion-safe:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both] rtl:[--fly-from:1]"
           >
             <span className={cn("grid items-center", editing && "invisible")}>
               <TopicCard
@@ -80,7 +81,7 @@ export function DemoTopicList({
         )
       })}
       {applied && (
-        <li className="motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]">
+        <li className="rounded-b-xl motion-safe:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both,promo-flash_1.6s_ease-out_0.3s] rtl:[--fly-from:1]">
           <TopicCard
             name={DEMO_NEW_TOPIC.name}
             subtopics={DEMO_NEW_TOPIC.subtopics}

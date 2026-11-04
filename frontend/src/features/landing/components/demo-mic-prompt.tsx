@@ -10,7 +10,8 @@ import { DEMO_SITE } from "@/config/candidates-demo"
 
 /** The browser's prompt for the microphone, small, at the picture's top start corner where a
  * browser shows it under its address bar: the site asking, what for, and its three answers, the
- * first (the pointer's "promptAllow") pressed in while `pressed`. Shown while `open`. */
+ * first (the pointer's "promptAllow") pressed in while `pressed`. Shown while `open`, flying up
+ * into place with motion allowed (promo-fly-up, promo.css). */
 export function DemoMicPrompt({
   open,
   pressed,
@@ -25,7 +26,9 @@ export function DemoMicPrompt({
     <div
       className={cn(
         "absolute start-4 top-4 z-5 w-72 space-y-3 rounded-xl bg-popover p-4 text-popover-foreground shadow-md ring-1 ring-foreground/10 transition-[opacity,translate] duration-200",
-        !open && "invisible -translate-y-1 opacity-0"
+        open
+          ? "motion-safe:animate-[promo-fly-up_0.55s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
+          : "invisible -translate-y-1 opacity-0"
       )}
     >
       <p className="flex items-center justify-between gap-3 text-sm font-medium">

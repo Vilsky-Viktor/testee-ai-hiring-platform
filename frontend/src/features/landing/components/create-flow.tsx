@@ -18,6 +18,7 @@ import {
   TOPICS,
   WRITING,
 } from "@/config/create-demo-steps"
+import { useSpotlight } from "@/features/landing/hooks/use-spotlight"
 import { useDemoCamera } from "@/hooks/use-demo-camera"
 import { pointedAt, useDemoSteps } from "@/hooks/use-demo-steps"
 
@@ -27,9 +28,31 @@ import { pointedAt, useDemoSteps } from "@/hooks/use-demo-steps"
  * then the interview ready, its questions per candidate changed and a candidate invited; last,
  * the candidate's inbox, the invitation opened and its button clicked. A
  * numbered pill on the frame's top edge names the stage. The frame keeps one size as it plays.
- * Played as a promo: a camera zooms towards where the pointer works, screens slide in with
- * depth, and a burst marks the interview ready and the candidate invited; the effects scoped to
- * it (`data-promo`, animations.css). With reduced motion, none of it moves. */
+ * Played as a promo that stays readable: the frame holds still, magnifying quickly and close
+ * only as a press leads to the next slide (PRESSES); a field's background lights up before it's
+ * typed in (FIELDS); dialogs and the "sent" notice fly up, menus unfold, topics fly in, the email
+ * drops in, screens rise into place, and a burst marks the interview ready and the candidate
+ * invited (`data-promo`, `data-create-promo`: promo.css). With reduced motion, none of it moves. */
+// The presses that lead to another page or the next slide: the frame magnifies on each. Company
+// named (continue), topics approved (go), the settings tab opened and left by the back arrow,
+// invite sent (sendInvite).
+const PRESSES = new Set([
+  "continue",
+  "go",
+  "openSettings",
+  "back",
+  "sendInvite",
+])
+// The fields typed in: each lights up from when the pointer heads for it.
+const FIELDS = new Set([
+  "name",
+  "subtopic",
+  "ask",
+  "seconds",
+  "email",
+  "inviteName",
+])
+
 export function CreateFlow({
   labels,
 }: {
@@ -61,12 +84,20 @@ export function CreateFlow({
     )
   )
   const point = pointedAt(STEPS, at.index)
-  const camera = useRef<HTMLDivElement>(null)
-  const view = useDemoCamera(camera, targets[point ?? ""] ?? null, at.index)
   const step = STEPS[at.index].name
+  const camera = useRef<HTMLDivElement>(null)
+  const view = useDemoCamera(
+    camera,
+    PRESSES.has(step) ? (targets[point ?? ""] ?? null) : null,
+    at.index,
+    { zoom: 1.35, follow: 0.85 }
+  )
 
-  // A screen, shown while it's the stage's: it slides in from the end, out of focus and a
-  // little smaller, as the one before leaves towards the start.
+  // The field about to be typed in, lit until the pointer moves on.
+  useSpotlight(FIELDS.has(point ?? "") ? targets[point!] : null, at.index)
+
+  // A screen, shown while it's the stage's: it rises into place from a little smaller and out of
+  // focus, as the one before lifts away, growing and fading.
   function screen(number: number, content: React.ReactNode) {
     return (
       <div
@@ -76,10 +107,10 @@ export function CreateFlow({
           stage === number
             ? "delay-200 duration-700"
             : cn(
-                "invisible scale-95 opacity-0 blur-sm duration-300",
+                "invisible opacity-0 blur-sm duration-300",
                 number > stage
-                  ? "translate-x-[8%] rtl:-translate-x-[8%]"
-                  : "-translate-x-[8%] rtl:translate-x-[8%]"
+                  ? "translate-y-8 scale-95"
+                  : "-translate-y-6 scale-105"
               )
         )}
       >
@@ -91,7 +122,7 @@ export function CreateFlow({
   return (
     // The stage's title sits on the frame's top edge, a third of it over it, so it never moves
     // the frame; the titles lie on top of each other, crossfading, as wide as the widest.
-    <div data-promo className="relative">
+    <div data-promo data-create-promo className="relative">
       <div className="absolute start-1/2 top-0 z-20 grid -translate-x-1/2 -translate-y-2/3 *:[grid-area:1/1] rtl:translate-x-1/2">
         {labels.steps.map((title, index) => (
           <p
@@ -108,14 +139,14 @@ export function CreateFlow({
         ))}
       </div>
       <DemoPanel ref={ref}>
-        {/* The camera: the screens and the pointer zoom together, cut at the frame. */}
+        {/* The camera: the screens and the pointer magnify together, cut at the frame. */}
         <div className="relative flex flex-1 flex-col overflow-hidden rounded-lg">
           <div
             ref={camera}
             style={{
               transform: `translate(${view.x}px, ${view.y}px) scale(${view.scale})`,
             }}
-            className="relative flex flex-1 flex-col transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none!"
+            className="relative flex flex-1 flex-col transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none!"
           >
             <DemoPointer
               target={targets[point ?? ""] ?? null}

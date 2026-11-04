@@ -30,17 +30,22 @@ export function DemoDescription({
     <div className="relative flex min-h-0 flex-1 flex-col p-5">
       {/* A long text runs past the field's bottom, cut off there as a field scrolls it. */}
       <div className="min-h-0 flex-1 overflow-hidden text-base">
-        {/* Pasted, the text sweeps in from the start edge. */}
+        {/* Pasted, the text shows at once, selected as freshly pasted text is, and the selection
+            fades (promo-selected, promo.css). */}
         <p
           key={pasted ? "pasted" : "empty"}
           className={cn(
             "whitespace-pre-line",
-            pasted
-              ? "motion-safe:animate-[promo-sweep_0.8s_ease-out_both]"
-              : "text-muted-foreground"
+            !pasted && "text-muted-foreground"
           )}
         >
-          {pasted ? text : placeholder}
+          {pasted ? (
+            <span className="box-decoration-clone motion-safe:animate-[promo-selected_1.6s_ease-out_both]">
+              {text}
+            </span>
+          ) : (
+            placeholder
+          )}
         </p>
       </div>
       {/* Where the pointer right-clicks, inside the empty box; the menu opens from there. */}

@@ -5,10 +5,7 @@ import { useTranslations } from "next-intl"
 import { useMemo, useRef, useState } from "react"
 
 import { DemoCandidates } from "@/features/landing/components/demo-candidates"
-import {
-  DemoChat,
-  type DemoMessage,
-} from "@/features/landing/components/demo-chat"
+import { DemoChat } from "@/features/landing/components/demo-chat"
 import { DemoDownloadCue } from "@/features/landing/components/demo-download-cue"
 import { DemoNotes } from "@/features/landing/components/demo-notes"
 import { DemoPanel } from "@/features/landing/components/demo-panel"
@@ -18,15 +15,23 @@ import { DemoSentNotice } from "@/features/landing/components/demo-popup"
 import { DemoSharePopup } from "@/features/landing/components/demo-share"
 import { DemoSlackChannel } from "@/features/landing/components/demo-slack-channel"
 import { PromoBurst } from "@/features/landing/components/promo-burst"
+import { useSpotlight } from "@/features/landing/hooks/use-spotlight"
+import {
+  litField,
+  messagesAt,
+  popupPressed,
+} from "@/features/landing/utils/reports-demo"
 import {
   DEMO_BEST,
-  DEMO_CHAT_TIMES,
   DEMO_FLAGGED,
   DEMO_REPORT_CANDIDATES,
   DEMO_RUNNER_UP,
   DEMO_SHARE_EMAIL,
 } from "@/config/reports-demo"
 import {
+  REPORT_BURSTS,
+  REPORT_PRESSES,
+  REPORT_SCREEN_ORDER,
   REPORT_TARGETS,
   type ReportStep,
   reportSteps,
@@ -40,69 +45,23 @@ import {
 } from "@/hooks/use-demo-steps"
 import { bdi } from "@/lib/bidi"
 
-// Where each screen lies in the demo's order: a later one slides in from the end, an earlier
-// one from the start.
-const ORDER: Record<ReportStep["screen"], number> = {
-  list: 0,
-  page: 1,
-  chat: 2,
-  notes: 3,
-  slack: 4,
-}
-
-// The big moments, each marked by a burst: the PDF emailed, the best candidate's page, and each
-// report shared to the chat.
-const BURSTS = ["sent", "page0", "summary0", "summary1"]
-
 // The list's action pressed at each step that presses one.
 const LIST_PRESSES: Record<string, "download" | "share"> = {
   download: "download",
   share: "share",
 }
 
-/** What's pressed in the share dialog at step `name`. */
-function popupPressed(name: string) {
-  if (name === "send") {
-    return "send"
-  }
-
-  return name.startsWith("whatsApp") ? "whatsApp" : null
-}
-
-/** The chat's messages at step `index`: each turn's summary once it arrives, then its line once
- * sent. */
-function messagesAt(
-  steps: ReportStep[],
-  index: number,
-  lines: [string, string]
-): DemoMessage[] {
-  const after = (name: string) => index >= stepIndex(steps, name)
-  const messages: DemoMessage[] = []
-
-  ;[DEMO_BEST, DEMO_FLAGGED].forEach((candidate, at) => {
-    if (after(`summary${at}`)) {
-      messages.push({
-        summary: DEMO_REPORT_CANDIDATES[candidate],
-        time: DEMO_CHAT_TIMES[at * 2],
-      })
-    }
-
-    if (after(`sent${at}`)) {
-      messages.push({ text: lines[at], time: DEMO_CHAT_TIMES[at * 2 + 1] })
-    }
-  })
-
-  return messages
-}
-
 /** Reports and sharing, played by a pointer in one panel of a fixed size: the interview's
  * candidates, their PDF downloaded and emailed to the manager; the best candidate's page shared
  * to WhatsApp (its text summary, then a line typed); the flagged one's the same; then a note
  * posted on the interview's notes, and last the Slack channel with testee's messages. The share
- * dialog, the download and the notices lie over the screens. Played as a promo, as the create
- * demo is (create-flow.tsx): a camera zooms towards where the pointer works, screens slide in
- * with depth, their parts pop in, the grade counts up, and a burst marks the big moments. With
- * reduced motion, the Slack channel at its newest message, still. */
+ * dialog, the download and the notices lie over the screens. Played as a promo that stays
+ * readable, as the create demo is (create-flow.tsx): the frame holds still, magnifying quickly
+ * only as a press leads to the next screen (REPORT_PRESSES); a field's background lights up
+ * before it's typed in; screens rise into place; the dialog and the notices fly up, rows fly in,
+ * the report's parts pop in, its grade counts up, chat and Slack messages arrive, and a burst
+ * marks the big moments (`data-promo`, `data-reports-promo`: promo-sections.css). With reduced motion,
+ * the Slack channel at its newest message, still. */
 export function ReportsDemo() {
   const t = useTranslations("landing.shareReports")
   const report = useTranslations("report")
@@ -143,12 +102,20 @@ export function ReportsDemo() {
   const typedTurn = countedAt(steps, at, `typing${turn}`, lines[turn].length)
   const chatTyped = after(`sent${turn}`) ? "" : lines[turn].slice(0, typedTurn)
   const camera = useRef<HTMLDivElement>(null)
-  const view = useDemoCamera(camera, target, at.index)
+  const view = useDemoCamera(
+    camera,
+    REPORT_PRESSES.has(step.name) ? target : null,
+    at.index,
+    { zoom: 1.35, follow: 0.85 }
+  )
 
-  // A screen, shown while it's the step's: it slides in, out of focus and a little smaller, as
-  // the one before leaves, each by its place in the demo's order.
+  useSpotlight(targets[litField(step.name, point)], at.index)
+
+  // A screen, shown while it's the step's: it rises into place from a little smaller and out of
+  // focus, as the one before lifts away, growing and fading; by its place in the demo's order.
   function screen(shown: boolean, key: string, content: React.ReactNode) {
-    const later = ORDER[key.replace(/\d+$/, "") as ReportStep["screen"]]
+    const order =
+      REPORT_SCREEN_ORDER[key.replace(/\d+$/, "") as ReportStep["screen"]]
 
     return (
       <div
@@ -159,10 +126,10 @@ export function ReportsDemo() {
           shown
             ? "delay-200 duration-700"
             : cn(
-                "invisible scale-95 opacity-0 blur-sm duration-300",
-                later >= ORDER[step.screen]
-                  ? "translate-x-[8%] rtl:-translate-x-[8%]"
-                  : "-translate-x-[8%] rtl:translate-x-[8%]"
+                "invisible opacity-0 blur-sm duration-300",
+                order >= REPORT_SCREEN_ORDER[step.screen]
+                  ? "translate-y-8 scale-95"
+                  : "-translate-y-6 scale-105"
               )
         )}
       >
@@ -176,10 +143,11 @@ export function ReportsDemo() {
       data-testid="reports-demo"
       data-step={step.name}
       data-promo
+      data-reports-promo
       className="mx-auto w-full max-w-5xl"
     >
       <DemoPanel ref={ref}>
-        {/* The camera: the screens, what lies over them and the pointer zoom together, cut at
+        {/* The camera: the screens, what lies over them and the pointer magnify together, cut at
             the frame. It fills the frame's padding, so the dialog's shade still reaches its
             edges. */}
         <div className="relative -m-3 flex flex-1 flex-col overflow-hidden rounded-[inherit]">
@@ -188,7 +156,7 @@ export function ReportsDemo() {
             style={{
               transform: `translate(${view.x}px, ${view.y}px) scale(${view.scale})`,
             }}
-            className="relative flex flex-1 flex-col p-3 transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none!"
+            className="relative flex flex-1 flex-col p-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none!"
           >
             <DemoPointer
               target={target}
@@ -219,6 +187,7 @@ export function ReportsDemo() {
                   <DemoReport
                     candidate={DEMO_REPORT_CANDIDATES[candidate]}
                     active={step.candidate === candidate}
+                    best={candidate === DEMO_BEST}
                     scrolled={step.scrolled ?? 0}
                     pressed={step.name.startsWith("share")}
                   />
@@ -285,7 +254,7 @@ export function ReportsDemo() {
               text={report.rich("sent", { email: DEMO_SHARE_EMAIL, ...bdi })}
             />
           </div>
-          {BURSTS.includes(step.name) && <PromoBurst key={step.name} />}
+          {REPORT_BURSTS.has(step.name) && <PromoBurst key={step.name} />}
         </div>
       </DemoPanel>
     </div>

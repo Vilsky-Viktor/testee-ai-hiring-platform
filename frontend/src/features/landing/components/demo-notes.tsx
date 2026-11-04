@@ -5,10 +5,7 @@ import { useTranslations } from "next-intl"
 import { useState } from "react"
 
 import { DemoInterviewTabs } from "@/features/landing/components/demo-interview-tabs"
-import {
-  DEMO_PRESSED,
-  PROMO_POP,
-} from "@/features/landing/components/demo-panel"
+import { DEMO_PRESSED } from "@/features/landing/components/demo-panel"
 import { InterviewHeader } from "@/features/landing/components/interview-header"
 import { NoteRow } from "@/features/company/components/note-row"
 import { SubmitHint } from "@/components/common/submit-hint"
@@ -49,7 +46,7 @@ function note(
 /** An interview's notes tab (features/company/components/interview-notes-tab.tsx), for the
  * landing: its header and tabs, the real note box with `typed` so far and Post (the pointer's
  * "post", pressed in while `pressed`), then the real notes, newest first; once `posted`, the new
- * note popping in on top. What doesn't fit is cut off. */
+ * note dropping in on top, washed in the primary colour a moment. What doesn't fit is cut off. */
 export function DemoNotes({
   typed,
   pressed,
@@ -83,15 +80,7 @@ export function DemoNotes({
           notes: DEMO_NOTE_COUNT + (posted ? 1 : 0),
         }}
       />
-      <div
-        data-demo-target="noteBox"
-        className="relative [&_textarea]:min-h-28"
-      >
-        {/* Where the camera looks while the note is typed: its first line, where the words go. */}
-        <span
-          data-camera-focus
-          className="pointer-events-none absolute start-1/4 top-8 size-px"
-        />
+      <div data-demo-target="noteBox" className="[&_textarea]:min-h-28">
         <FloatingTextarea
           label={t("noteLabel")}
           placeholder={t("notePlaceholder")}
@@ -117,7 +106,13 @@ export function DemoNotes({
       </div>
       <ul className="min-h-0 divide-y overflow-hidden rounded-xl border">
         {shown.map((item) => (
-          <li key={item.id} className={cn(item.id === "new" && PROMO_POP)}>
+          <li
+            key={item.id}
+            className={cn(
+              item.id === "new" &&
+                "motion-safe:animate-[promo-drop_0.6s_cubic-bezier(0.2,0.9,0.3,1.2)_both,promo-flash_1.8s_ease-out_0.4s]"
+            )}
+          >
             <NoteRow
               note={item}
               path=""

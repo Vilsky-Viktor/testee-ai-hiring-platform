@@ -1,42 +1,30 @@
 // The home page's "what candidates see" demo: its steps, in click mode and then in voice mode,
 // and where its pointer's targets are.
-import {
-  CLICK_QUESTIONS,
-  type DemoQuestion,
-  VOICE_QUESTION,
-} from "@/config/candidates-demo"
+import { CLICK_QUESTIONS, type DemoQuestion } from "@/config/candidates-demo"
 import type { DemoStep } from "@/hooks/use-demo-steps"
-
-// A step as written: what the camera looks at (`look`, a target's name or "none") when it isn't
-// what the pointer moves to.
-type Step = DemoStep & { look?: string }
 
 // A step's mode, its screen (the start page, a click-mode question by its place, or the voice
 // screen) and the options picked on it so far.
-export type CandidateStep = Step & {
+export type CandidateStep = DemoStep & {
   voice: boolean
   screen: string
   picked: number[]
 }
 
-const click = (step: Step, screen: string, picked: number[] = []) => ({
+const click = (step: DemoStep, screen: string, picked: number[] = []) => ({
   ...step,
   voice: false,
   screen,
   picked,
 })
-const voice = (step: Step, screen: string) => ({
+const voice = (step: DemoStep, screen: string) => ({
   ...step,
   voice: true,
   screen,
   picked: [],
 })
 
-// How long a new screen is shown whole before the camera moves in.
-const OVERVIEW_MS = 900
-
-/** A click-mode question's steps: read, first whole and then with the camera on its clock, each
- * pick aimed at and clicked, then Next. */
+/** A click-mode question's steps: read, each pick aimed at and clicked, then Next. */
 function questionSteps(question: DemoQuestion, at: number): CandidateStep[] {
   const screen = `q${at}`
   const read = question.example ? 3000 : 1800
@@ -57,11 +45,7 @@ function questionSteps(question: DemoQuestion, at: number): CandidateStep[] {
   })
 
   return [
-    click({ name: `read${at}`, ms: OVERVIEW_MS, point: "none" }, screen),
-    click(
-      { name: `clock${at}`, ms: read - OVERVIEW_MS, look: "clock" },
-      screen
-    ),
+    click({ name: `read${at}`, ms: read, point: "none" }, screen),
     ...picks,
     click({ name: `picked${at}`, ms: 300 }, screen, question.picks),
     click(
@@ -77,10 +61,9 @@ function questionSteps(question: DemoQuestion, at: number): CandidateStep[] {
 // read, answered and Next, the last one's finishing it ("cDone"). Voice mode: the start page
 // read, the microphone and sound allowed in the browser's prompt, the pledge ticked and started;
 // Mira reads the question, the candidate answers, she thinks and picks the option, asks for a
-// yes, hears it and moves on. The camera follows the pointer, or looks where the step says;
-// each new screen is first shown whole.
+// yes, hears it and moves on.
 export const STEPS: CandidateStep[] = [
-  click({ name: "cInvite", ms: 1100, point: "title", look: "none" }, "start"),
+  click({ name: "cInvite", ms: 1100, point: "title" }, "start"),
   click({ name: "cAimPledge", ms: 800, point: "pledge" }, "start"),
   click({ name: "cPledge", ms: 400, click: true }, "start"),
   click({ name: "cAimStart", ms: 700, point: "start" }, "start"),
@@ -91,26 +74,22 @@ export const STEPS: CandidateStep[] = [
     `q${CLICK_QUESTIONS.length - 1}`,
     CLICK_QUESTIONS[CLICK_QUESTIONS.length - 1].picks
   ),
-  voice({ name: "vInvite", ms: 1100, point: "title", look: "none" }, "start"),
+  voice({ name: "vInvite", ms: 1100, point: "title" }, "start"),
   voice({ name: "vAimAllow", ms: 800, point: "allow" }, "start"),
   voice({ name: "vAllow", ms: 400, click: true }, "start"),
-  voice({ name: "vPrompt", ms: 400, look: "promptAllow" }, "start"),
+  voice({ name: "vPrompt", ms: 400 }, "start"),
   voice({ name: "vAimPrompt", ms: 800, point: "promptAllow" }, "start"),
   voice({ name: "vPromptAllow", ms: 400, click: true }, "start"),
-  voice({ name: "vGranted", ms: 600, point: "none", look: "access" }, "start"),
+  voice({ name: "vGranted", ms: 600, point: "none" }, "start"),
   voice({ name: "vAimPledge", ms: 700, point: "pledge" }, "start"),
   voice({ name: "vPledge", ms: 400, click: true }, "start"),
   voice({ name: "vAimStart", ms: 700, point: "start" }, "start"),
   voice({ name: "vStart", ms: 450, click: true }, "start"),
-  voice({ name: "vSpeaking", ms: OVERVIEW_MS, point: "none" }, "voice"),
-  voice({ name: "vReading", ms: 2800 - OVERVIEW_MS, look: "mira" }, "voice"),
-  voice({ name: "vListening", ms: 1800, look: "heard" }, "voice"),
-  voice({ name: "vThinking", ms: 1000, look: "options" }, "voice"),
-  voice(
-    { name: "vPicked", ms: 1600, look: `option${VOICE_QUESTION.picks[0]}` },
-    "voice"
-  ),
-  voice({ name: "vYes", ms: 1200, look: "heard" }, "voice"),
+  voice({ name: "vSpeaking", ms: 2800, point: "none" }, "voice"),
+  voice({ name: "vListening", ms: 1800 }, "voice"),
+  voice({ name: "vThinking", ms: 1000 }, "voice"),
+  voice({ name: "vPicked", ms: 1600 }, "voice"),
+  voice({ name: "vYes", ms: 1200 }, "voice"),
   voice({ name: "vMoving", ms: 1600 }, "voice"),
 ]
 
@@ -129,12 +108,7 @@ export const TARGETS = {
       `[data-demo-target=options] li:nth-child(${option + 1}) button`,
     ])
   ),
-  options: "[data-demo-target=options]",
   next: "[data-demo-target=next]",
-  access: "[data-demo-target=access]",
   allow: "[data-demo-target=access] button",
   promptAllow: "[data-demo-target=promptAllow]",
-  clock: "[data-demo-target=clock]",
-  mira: "[data-demo-target=voice] > :first-child",
-  heard: "[data-demo-target=voice] > :last-child",
 }

@@ -25,6 +25,8 @@ export function DemoPasteMenu({
 
   return (
     <span
+      data-demo-menu
+      data-open={open}
       className={cn(
         "absolute start-1 top-1 z-5 flex min-w-32 origin-top-left flex-col rounded-xl bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 transition-[opacity,scale] duration-100 rtl:origin-top-right",
         !open && "invisible scale-95 opacity-0"

@@ -14,12 +14,15 @@ export function DemoPopup({
 }) {
   return (
     <div
+      data-demo-popup
+      data-open={open}
       className={cn(
         "absolute inset-0 z-5 flex items-center justify-center rounded-[inherit] bg-black/10 p-3 transition-opacity duration-200",
         !open && "invisible opacity-0"
       )}
     >
       <div
+        data-demo-popup-card
         className={cn(
           "w-full max-w-md space-y-5 rounded-xl bg-popover p-5 text-base text-popover-foreground ring-1 ring-foreground/10 transition-[translate,scale] duration-200 sm:p-6",
           !open && "translate-y-2.5 scale-[0.97]"

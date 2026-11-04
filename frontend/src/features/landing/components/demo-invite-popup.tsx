@@ -17,17 +17,22 @@ const NOTHING = () => {}
 /** The invite dialog (features/company/components/invite-candidate.tsx), over the whole frame
  * while `open`: its title, its real tabs (one email, a list, a file) with the first open, the
  * candidate's email (`email` as typed so far, its field in use while `typing`; the pointer's
- * "email") and name, then cancel and invite (the pointer's "sendInvite"),
+ * "email") and name (`name` so far, in use while `naming`; "inviteName"), then cancel and invite
+ * (the pointer's "sendInvite"),
  * pressed in while `pressed`. */
 export function DemoInvitePopup({
   open,
   email,
   typing,
+  name,
+  naming,
   pressed,
 }: {
   open: boolean
   email: string
   typing: boolean
+  name: string
+  naming: boolean
   pressed: boolean
 }) {
   const t = useTranslations("interviews")
@@ -57,12 +62,15 @@ export function DemoInvitePopup({
             className={cn(typing && "border-ring")}
           />
         </span>
-        <FloatingInput
-          label={t("candidateName")}
-          placeholder={DEMO_INVITE_NAME}
-          value=""
-          readOnly
-        />
+        <span data-demo-target="inviteName" className="block">
+          <FloatingInput
+            label={t("candidateName")}
+            placeholder={DEMO_INVITE_NAME}
+            value={name}
+            readOnly
+            className={cn(naming && "border-ring")}
+          />
+        </span>
       </div>
       <div className="flex justify-end gap-2">
         <span

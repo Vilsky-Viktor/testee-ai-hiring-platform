@@ -113,4 +113,32 @@ export const REPORT_TARGETS = [
   "row2",
   "row3",
   "row4",
+  "chatBox",
 ]
+
+// Where each screen lies in the demo's order: a later one rises into place, an earlier one comes
+// back from where it lifted away.
+export const REPORT_SCREEN_ORDER: Record<ReportStep["screen"], number> = {
+  list: 0,
+  page: 1,
+  chat: 2,
+  notes: 3,
+  slack: 4,
+}
+
+// The big moments, each marked by a burst: the PDF emailed, the best candidate's page, and each
+// report shared to the chat.
+export const REPORT_BURSTS = new Set(["sent", "page0", "summary0", "summary1"])
+
+// The presses that lead to the next screen: the frame magnifies on each. A row opening a
+// candidate's page, WhatsApp opening the chat, the notes tab.
+export const REPORT_PRESSES = new Set([
+  "openRow0",
+  "openRow1",
+  "whatsApp0",
+  "whatsApp1",
+  "openNotes",
+])
+
+// The fields typed in that the pointer heads for: each lights up from then.
+export const REPORT_FIELDS = new Set(["email", "noteBox"])

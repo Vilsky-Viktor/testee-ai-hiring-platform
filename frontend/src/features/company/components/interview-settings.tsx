@@ -129,7 +129,7 @@ export function InterviewSettings({
 }
 
 /** A yes-or-no setting: its name, an optional line under it, and a checkbox. */
-function CheckSetting({
+export function CheckSetting({
   label,
   help,
   checked,
@@ -166,8 +166,8 @@ function CheckSetting({
 }
 
 /** A number setting: its name, an optional line under it, and a field with its unit that saves
- * when left. */
-function NumberSetting({
+ * when left. `target` names the field for a landing demo's pointer. */
+export function NumberSetting({
   label,
   help,
   fieldLabel,
@@ -176,6 +176,7 @@ function NumberSetting({
   disabled,
   onChange,
   onSave,
+  target,
 }: {
   label: string
   help?: string
@@ -185,6 +186,7 @@ function NumberSetting({
   disabled: boolean
   onChange: (value: string) => void
   onSave: () => void
+  target?: string
 }) {
   return (
     // On phones the field takes its own line.
@@ -198,7 +200,10 @@ function NumberSetting({
         )}
       </span>
       {/* Same look as the app's other fields (library search, candidate invite). */}
-      <span className="relative w-36 shrink-0 rounded-xl border border-transparent transition-colors focus-within:border-ring-gradient">
+      <span
+        data-demo-target={target}
+        className="relative w-36 shrink-0 rounded-xl border border-transparent transition-colors focus-within:border-ring-gradient"
+      >
         <Input
           type="number"
           inputMode="numeric"

@@ -1,0 +1,273 @@
+/* The landing demos' promo effects: their keyframes, and the ones scoped to a demo
+   (`data-promo`, `data-create-promo`). With reduced motion they end at once (animations.css). */
+
+/* The "create an interview" promo (create-flow.tsx). Something new arrives: up from a little
+   smaller and out of focus. */
+@keyframes promo-pop {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(0.5rem) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
+
+/* Pasted text, selected as freshly pasted text is: the selection's blue behind it, held a moment,
+   then fading. */
+@keyframes promo-selected {
+  0%,
+  35% {
+    background-color: color-mix(in oklab, var(--primary) 28%, transparent);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* A pressed button's glow, spreading out in the primary colour. */
+@keyframes promo-press {
+  from {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 55%, transparent);
+  }
+  to {
+    box-shadow: 0 0 0 0.9rem transparent;
+  }
+}
+
+/* A click's second, wider ring. */
+@keyframes promo-ring {
+  from {
+    opacity: 0.8;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
+/* A big moment: a soft glow swelling and fading, and sparks flying out to (--dx, --dy). */
+@keyframes promo-glow {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes promo-spark {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.4);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(1);
+  }
+}
+
+/* Only in the promo, and only with motion allowed: a click's wider ring, and a pressed button's
+   glow. The shared demo parts carry the marks (`data-ripple`, `demo-pressed`) everywhere. */
+@media (prefers-reduced-motion: no-preference) {
+  /* The fill fades as long as the ring spreads, so the ring (its child) isn't faded early. */
+  [data-promo] [data-ripple] {
+    animation-duration: 0.8s;
+  }
+
+  [data-promo] [data-ripple]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    border: 2px solid var(--primary);
+    animation: promo-ring 0.7s ease-out forwards;
+  }
+
+  [data-promo] .demo-pressed {
+    animation: promo-press 0.6s ease-out;
+  }
+}
+
+/* The promo's progress as a topic is done: a small bump. */
+@keyframes promo-tick {
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+/* The "just ask Mira" promo (ask-agent-demo.tsx). The person's message rising from the input
+   into its place, landing with a small settle. */
+@keyframes promo-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem) scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-0.2rem) scale(1.02);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* Mira's message growing out of a small round dot, settling as it lands. */
+@keyframes promo-grow {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+    border-radius: 9999px;
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* Typed text leaving the input as it's sent: up, fading. */
+@keyframes promo-leave {
+  to {
+    opacity: 0;
+    transform: translateY(-0.75rem);
+  }
+}
+
+/* The send arrow flying up out of its button and coming back in from below. */
+@keyframes promo-lift {
+  45% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  55% {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A landing card coming in as its section is scrolled to: from (--enter-x, --enter-y), out of
+   focus, to its place. */
+@keyframes promo-enter {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translate(var(--enter-x, 0), var(--enter-y, 0));
+  }
+  to {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
+
+/* The create promo's own effects (create-flow.tsx, `data-create-promo`). A dialog or notice flying
+   up into place with a spring. */
+@keyframes promo-fly-up {
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A menu unfolding from where it was opened. */
+@keyframes promo-unfold {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A row flying in from the start side (from the end, right to left). */
+@keyframes promo-fly-in {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--fly-from, -1) * 2rem));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Something new dropping in from above (an email arriving). */
+@keyframes promo-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0.2rem);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* A field about to be typed in: its background breathing from its own grey to a soft wash of the
+   primary colour and back, starting and ending as it was, so it never jumps. */
+@keyframes promo-spotlight {
+  0%,
+  100% {
+    background-color: var(--surface);
+  }
+  50% {
+    background-color: color-mix(in oklab, var(--primary) 22%, var(--surface));
+  }
+}
+
+/* Something just added or changed: a short wash of the primary colour, fading. */
+@keyframes promo-flash {
+  from {
+    background-color: color-mix(in oklab, var(--primary) 18%, transparent);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-create-promo]
+    [data-demo-popup][data-open="true"]
+    > [data-demo-popup-card],
+  [data-create-promo] [data-testid="demo-sent"][data-shown="true"] > * {
+    animation: promo-fly-up 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  }
+
+  [data-create-promo] [data-demo-menu][data-open="true"] {
+    animation: promo-unfold 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  }
+
+  /* The field's own box: its input or text box, or the target itself when it's the box. */
+  [data-create-promo] [data-spotlight] :is(input, textarea),
+  [data-create-promo] [data-spotlight]:not(:has(input, textarea)) {
+    animation: promo-spotlight 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+}

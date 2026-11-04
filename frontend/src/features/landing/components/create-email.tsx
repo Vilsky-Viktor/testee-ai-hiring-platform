@@ -35,6 +35,11 @@ const FOLDERS = [
 const OLDER = [0, 1, 2, 3, 4]
 const POP =
   "motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
+// The invitation arriving: dropping in at the top of the list, then washed in the primary colour.
+const DROP =
+  "motion-safe:animate-[promo-drop_0.6s_cubic-bezier(0.2,0.9,0.3,1.2)_both,promo-flash_1.8s_ease-out_0.4s]"
+// The steps the opened email is scrolled down for, its button in full view.
+const SCROLLED = ["aimOpenInvite", "openInvite", "rest"]
 // The sender as the mail app shows it.
 const SENDER = "no-reply@testee.ai"
 
@@ -100,7 +105,7 @@ export function CreateEmail({ at }: { at: { index: number; n: number } }) {
                 data-demo-target="mail"
                 className={cn(
                   "flex items-center gap-3 px-4 py-3",
-                  POP,
+                  DROP,
                   step === "openMail" && DEMO_PRESSED
                 )}
               >
@@ -156,8 +161,17 @@ export function CreateEmail({ at }: { at: { index: number; n: number } }) {
                   {t("now")}
                 </span>
               </div>
+              {/* Scrolled up as the pointer heads for the button, as a mail app scrolls, so the
+                  whole button shows. */}
               <div className="min-h-0 flex-1 overflow-hidden">
-                <DemoInviteEmail pressed={step === "openInvite"} />
+                <div
+                  className={cn(
+                    "transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                    SCROLLED.includes(step) && "-translate-y-28"
+                  )}
+                >
+                  <DemoInviteEmail pressed={step === "openInvite"} />
+                </div>
               </div>
             </div>
           )}

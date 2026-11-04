@@ -24,6 +24,7 @@ import {
 import { useDemoCamera } from "@/hooks/use-demo-camera"
 import { pointedAt, stepIndex, useDemoSteps } from "@/hooks/use-demo-steps"
 import { useStill } from "@/hooks/use-still"
+import { useSpotlight } from "@/features/landing/hooks/use-spotlight"
 import type { VoiceAccess } from "@/hooks/use-voice-access"
 import type { CodeToken } from "@/lib/code-tokens"
 import type { VoiceStatus } from "@/types/round"
@@ -31,7 +32,6 @@ import type { VoiceStatus } from "@/types/round"
 // Each voice-screen step's state: whose turn it is and whether the option is picked.
 const VOICE: Record<string, [VoiceStatus, boolean]> = {
   vSpeaking: ["speaking", false],
-  vReading: ["speaking", false],
   vListening: ["hearing", false],
   vThinking: ["thinking", false],
   vPicked: ["speaking", true],
@@ -41,6 +41,15 @@ const VOICE: Record<string, [VoiceStatus, boolean]> = {
 
 // The steps a burst marks: the click-mode interview finished, and the voice answer saved.
 const BURSTS = ["cDone", "vMoving"]
+// The presses that lead to the next screen: the frame magnifies on each. Start in either mode,
+// and each question's Next.
+const PRESSES = new Set([
+  "cStart",
+  "vStart",
+  ...CLICK_QUESTIONS.map((_, at) => `next${at}`),
+])
+// What glows as the pointer heads for it: the pledge's box (never an answer).
+const CHOSEN = /^pledge/
 
 // The voice screen before it plays: Mira about to speak.
 const BEFORE_VOICE: [VoiceStatus, boolean] = ["speaking", false]
@@ -59,8 +68,8 @@ function accessAt(index: number): VoiceAccess {
 }
 
 /** The place in the play of the screen `step` shows: the click-mode start page, its questions,
- * the voice start page and the voice screen, so the next slides in from the end and the last
- * leaves towards the start. */
+ * the voice start page and the voice screen, so the next rises into place and the last lifts
+ * away. */
 function placeOf(step: CandidateStep) {
   if (step.voice) {
     return CLICK_QUESTIONS.length + (step.screen === "start" ? 1 : 2)
@@ -75,9 +84,12 @@ function placeOf(step: CandidateStep) {
  * page, the microphone and sound allowed in the browser's prompt, started, and the voice screen:
  * Mira reads, the candidate answers, she thinks, picks it, hears a yes and moves on. The screens
  * lie on top of each other, so the panel is as tall as the tallest and never changes size.
- * Played as a promo: a camera zooms towards where the pointer works or the step looks, screens
- * slide in with depth, options pop in, and a burst marks each mode's end; the effects scoped to it
- * (`data-promo`, animations.css). With reduced motion, each mode's last frame, none of it moving. */
+ * Played as a promo that stays readable: the frame holds still, magnifying quickly and close
+ * only as a press leads to the next screen (PRESSES); the pledge's box glows before it's ticked
+ * (CHOSEN), and a picked option bumps; the question pops in, its options fly in
+ * one after another, the browser's prompt flies up, screens rise into place, and a burst marks
+ * each mode's end (`data-promo`, `data-candidates-promo`: promo-sections.css). With reduced motion, each
+ * mode's last frame, none of it moving. */
 export function CandidatesDemo({
   exampleColors,
 }: {
@@ -113,9 +125,16 @@ export function CandidatesDemo({
   const camera = useRef<HTMLDivElement>(null)
   const view = useDemoCamera(
     camera,
-    targets[step.look ?? point ?? ""] ?? null,
-    index
+    PRESSES.has(step.name) ? (targets[point ?? ""] ?? null) : null,
+    index,
+    { zoom: 1.35, follow: 0.85 }
   )
+
+  // The pledge's check box, lit while the pointer heads for it, until it's ticked (never an
+  // answer: those show nothing before they're clicked).
+  const aimed = step.point
+
+  useSpotlight(CHOSEN.test(aimed ?? "") ? targets[aimed!] : null, index)
   const voice = step.voice
   const shownAt = placeOf(step)
 
@@ -129,8 +148,8 @@ export function CandidatesDemo({
     }
   }
 
-  // A screen (the `place`-th), shown while it's the step's: it slides in from the end, out of
-  // focus and a little smaller, as the one before leaves towards the start.
+  // A screen (the `place`-th), shown while it's the step's: it rises into place from a little
+  // smaller and out of focus, as the one before lifts away, growing and fading.
   function screen(place: number, content: React.ReactNode, key?: string) {
     const shown = place === shownAt
 
@@ -143,10 +162,10 @@ export function CandidatesDemo({
           shown
             ? "delay-200 duration-700"
             : cn(
-                "invisible scale-95 opacity-0 blur-sm duration-300",
+                "invisible opacity-0 blur-sm duration-300",
                 place > shownAt
-                  ? "translate-x-[8%] rtl:-translate-x-[8%]"
-                  : "-translate-x-[8%] rtl:translate-x-[8%]"
+                  ? "translate-y-8 scale-95"
+                  : "-translate-y-6 scale-105"
               )
         )}
       >
@@ -164,6 +183,7 @@ export function CandidatesDemo({
       data-testid="candidates-demo"
       data-step={step.name}
       data-promo
+      data-candidates-promo
       className="relative mx-auto w-full max-w-5xl"
     >
       <div className="absolute start-1/2 top-0 z-20 w-max -translate-x-1/2 -translate-y-2/3 rtl:translate-x-1/2">
@@ -176,15 +196,15 @@ export function CandidatesDemo({
       </div>
       <div className="w-full">
         <DemoPanel ref={ref}>
-          {/* The camera: the screens, the pointer and the browser's prompt zoom together, cut at
-              the frame's inner edge (the screens reach out to it). */}
+          {/* The camera: the screens, the pointer and the browser's prompt magnify together, cut
+              at the frame's inner edge (the screens reach out to it). */}
           <div className="relative -m-3 flex flex-1 flex-col overflow-hidden rounded-[calc(var(--radius-xl)-1px)] max-sm:rounded-none">
             <div
               ref={camera}
               style={{
                 transform: `translate(${view.x}px, ${view.y}px) scale(${view.scale})`,
               }}
-              className="relative flex flex-1 flex-col p-3 transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none!"
+              className="relative flex flex-1 flex-col p-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none!"
             >
               <DemoPointer
                 target={targets[point ?? ""] ?? null}

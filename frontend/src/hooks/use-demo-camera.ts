@@ -19,7 +19,9 @@ const REST = { scale: 1, x: 0, y: 0 }
 export function useDemoCamera(
   camera: RefObject<HTMLElement | null>,
   target: RefObject<HTMLElement | null> | null,
-  step: number
+  step: number,
+  // How far it zooms and how much of the way it turns, when not the defaults above.
+  { zoom = ZOOM, follow = FOLLOW }: { zoom?: number; follow?: number } = {}
 ) {
   const [view, setView] = useState(REST)
 
@@ -47,7 +49,7 @@ export function useDemoCamera(
       const ratio = box!.offsetWidth / rect.width
       const width = box!.offsetWidth
       const height = box!.offsetHeight
-      const scale = width < PHONE_WIDTH ? PHONE_ZOOM : ZOOM
+      const scale = width < PHONE_WIDTH ? Math.min(zoom, PHONE_ZOOM) : zoom
       const x = (goal.left + goal.width / 2 - rect.left) * ratio - width / 2
       const y = (goal.top + goal.height / 2 - rect.top) * ratio - height / 2
       const within = (value: number, size: number) =>
@@ -58,8 +60,8 @@ export function useDemoCamera(
 
       setView({
         scale,
-        x: within(-scale * x * FOLLOW, width),
-        y: within(-scale * y * FOLLOW, height),
+        x: within(-scale * x * follow, width),
+        y: within(-scale * y * follow, height),
       })
     }
 
@@ -70,7 +72,7 @@ export function useDemoCamera(
       cancelAnimationFrame(frame)
       clearTimeout(settled)
     }
-  }, [camera, target, step])
+  }, [camera, target, step, zoom, follow])
 
   return view
 }

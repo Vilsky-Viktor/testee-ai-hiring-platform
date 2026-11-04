@@ -123,7 +123,7 @@ function demoSteps(letters: Record<AskAgentQuestion, number>): Step[] {
  * messages come. Played as a promo: the typed question leaves the input as send is pressed (its
  * arrow flying up and back) and rises into its bubble, Mira's messages grow out of a dot at
  * their tail, each landing with a small settle, and a burst marks the candidate invited
- * (`data-promo`, animations.css). With reduced motion, the whole conversation, still. On phones, the three
+ * (`data-promo`, promo.css). With reduced motion, the whole conversation, still. On phones, the three
  * cards alone. */
 export function AskAgentDemo() {
   const t = useTranslations("landing.justAsk")

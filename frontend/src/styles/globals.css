@@ -5,6 +5,9 @@
 @import "./agent-border.css";
 @import "./bell.css";
 @import "./animations.css";
+/* The landing demos' promo effects. */
+@import "./promo.css";
+@import "./promo-sections.css";
 @import "./scripts.css";
 @import "./headings.css";
 /* The logo's blue dot after titles and menu links (blue-dot for one in markup). */

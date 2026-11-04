@@ -35,7 +35,7 @@ export async function TrustQualitySection() {
 
   return (
     <LandingSection id="trust" title={t("title")} text={t("text")}>
-      {/* A promo: its pictures pop in as they come into view (animations.css). */}
+      {/* A promo: its pictures pop in as they come into view (promo.css). */}
       <div data-promo className="flex flex-col gap-14">
         <div className={`${DEMO_GROUP} max-sm:hidden`}>
           <QualityLoop labels={steps("labels")} lines={steps("lines")} />

@@ -65,15 +65,17 @@ function reviewItem(topic: DemoTopic): ReviewItem | null {
  * card with whether they passed and their pledge; the note that people decide; what their
  * answers show, when anything stood out; then each topic with its signals and grade, and one of
  * its questions as they answered it. Once `active`, its parts pop in one after another and the
- * grade counts up to the candidate's; back at 0 when not. */
+ * grade counts up to the candidate's (the `best` one's then flashing); back at 0 when not. */
 export function DemoReport({
   candidate,
   active,
+  best,
   scrolled,
   pressed,
 }: {
   candidate: DemoCandidate
   active: boolean
+  best: boolean
   scrolled: number
   pressed: boolean
 }) {
@@ -124,7 +126,16 @@ export function DemoReport({
           </div>
           <DemoReportActions pressed={pressed ? "share" : null} />
         </div>
-        <div {...pop(1)}>
+        <div
+          style={pop(1).style}
+          // The card's wash once the grade has counted up.
+          className={cn(
+            pop(1).className,
+            active &&
+              best &&
+              "*:motion-safe:animate-[promo-flash_1.6s_ease-out_1.3s]"
+          )}
+        >
           <GradeCard>
             <GradeBlock
               value={formatPercent(

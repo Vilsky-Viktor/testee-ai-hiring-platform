@@ -6,7 +6,9 @@ import {
   DEMO_CHANGE,
   DEMO_EDITED,
   DEMO_INVITE_EMAIL,
+  DEMO_INVITE_NAME,
   DEMO_NEW_TOPIC,
+  DEMO_QUESTION_SECONDS,
   DEMO_TOPICS,
 } from "@/config/create-demo"
 import { type DemoStep, stepIndex } from "@/hooks/use-demo-steps"
@@ -27,8 +29,9 @@ export const WRITTEN = ADJUSTED.map(({ name }) => name)
 // one by one; it opens a topic's editor, types a subtopic, adds it and closes the editor, then
 // types into the request for changes and clicks apply, and a topic is added; then it clicks
 // approve, the questions are written, topic by topic, and the interview is ready: it changes the
-// questions each candidate gets on two topics, clicks to invite, the invite dialog opens, a
-// candidate's email is typed and sent, and the "sent" notice shows. Then the candidate's inbox:
+// questions each candidate gets on two topics, opens the settings tab, sets the time per question
+// and clicks the back arrow to the interview, clicks to invite, the invite dialog opens, a
+// candidate's email and name are typed and sent, and the "sent" notice shows. Then the inbox:
 // the invitation arrives, the pointer opens it, and clicks its button. Last, the still frame.
 export const STEPS: DemoStep[] = [
   { name: "empty", ms: 500, point: "field" },
@@ -80,11 +83,23 @@ export const STEPS: DemoStep[] = [
   { name: "aimLimit1", ms: 800, point: "limit1" },
   { name: "focusLimit1", ms: 300, click: true },
   { name: "limit1", ms: 700 },
+  { name: "aimSettings", ms: 800, point: "settingsTab" },
+  { name: "openSettings", ms: 400, click: true },
+  { name: "settings", ms: 900, point: "none" },
+  { name: "aimSeconds", ms: 700, point: "seconds" },
+  { name: "focusSeconds", ms: 300, click: true },
+  { name: "typingSeconds", ms: 150, repeat: DEMO_QUESTION_SECONDS.length },
+  { name: "secondsSet", ms: 500 },
+  { name: "aimBack", ms: 800, point: "backLink" },
+  { name: "back", ms: 400, click: true },
   { name: "aimInvite", ms: 800, point: "invite" },
   { name: "invite", ms: 500, click: true },
   { name: "aimEmail", ms: 700, point: "email" },
   { name: "focusEmail", ms: 300, click: true },
   { name: "typingEmail", ms: 70, repeat: DEMO_INVITE_EMAIL.length },
+  { name: "aimInviteName", ms: 700, point: "inviteName" },
+  { name: "focusInviteName", ms: 300, click: true },
+  { name: "typingName", ms: 70, repeat: DEMO_INVITE_NAME.length },
   { name: "aimSendInvite", ms: 700, point: "sendInvite" },
   { name: "sendInvite", ms: 450, click: true },
   { name: "invited", ms: 1600, point: "none" },
@@ -102,6 +117,9 @@ export const INVITING = [
   "aimEmail",
   "focusEmail",
   "typingEmail",
+  "aimInviteName",
+  "focusInviteName",
+  "typingName",
   "aimSendInvite",
   "sendInvite",
 ]
@@ -122,8 +140,12 @@ export const TARGETS = [
   "apply",
   "limit0",
   "limit1",
+  "settingsTab",
+  "seconds",
+  "backLink",
   "invite",
   "email",
+  "inviteName",
   "sendInvite",
   "mail",
   "openInvite",
@@ -132,6 +154,10 @@ export const TARGETS = [
 export const APPLIED = stepIndex(STEPS, "applied")
 export const WRITING = stepIndex(STEPS, "writing")
 export const READY = stepIndex(STEPS, "ready")
+// The interview's settings tab is open from its click until the topics tab is clicked back.
+export const SETTINGS_OPEN = stepIndex(STEPS, "settings")
+export const SETTINGS_CLOSED = stepIndex(STEPS, "aimInvite")
+export const SECONDS_TYPED = stepIndex(STEPS, "typingSeconds")
 export const INBOX = stepIndex(STEPS, "inbox")
 export const OPENED = stepIndex(STEPS, "opened")
 export const PASTED = stepIndex(STEPS, "pasted")

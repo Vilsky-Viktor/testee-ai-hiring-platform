@@ -10,12 +10,17 @@ import { DemoGeneration } from "@/features/landing/components/demo-generation"
 import {
   DEMO_INTERVIEW,
   DEMO_INVITE_EMAIL,
+  DEMO_INVITE_NAME,
   DEMO_LIMITS,
+  DEMO_QUESTION_SECONDS,
 } from "@/config/create-demo"
 import {
   ADJUSTED,
   INVITING,
   READY,
+  SECONDS_TYPED,
+  SETTINGS_CLOSED,
+  SETTINGS_OPEN,
   STEPS,
   WRITTEN,
 } from "@/config/create-demo-steps"
@@ -43,7 +48,8 @@ function limitsAt(index: number) {
 
 /** The create demo's last screen at step `at`: the generation page while the questions are
  * written, then the interview
- * in their place; the questions per candidate changed on two topics, then a candidate invited
+ * in their place; the questions per candidate changed on two topics, the time per question set
+ * in its settings tab, then a candidate invited
  * from the invite dialog, and the "sent" notice. */
 export function CreateReady({
   at,
@@ -55,6 +61,15 @@ export function CreateReady({
   const share = useTranslations("share")
   const step = STEPS[at.index].name
   const emailed = countedAt(STEPS, at, "typingEmail", DEMO_INVITE_EMAIL.length)
+  const named = countedAt(STEPS, at, "typingName", DEMO_INVITE_NAME.length)
+  // The time per question: the interview's own until it's typed over, as typed so far.
+  const seconds =
+    at.index < SECONDS_TYPED
+      ? String(DEMO_INTERVIEW.questionSeconds)
+      : DEMO_QUESTION_SECONDS.slice(
+          0,
+          countedAt(STEPS, at, "typingSeconds", DEMO_QUESTION_SECONDS.length)
+        )
   // The topic whose number is being changed: from its click until the next step moves on.
   const focused =
     CHANGED.find((_, position) =>
@@ -94,6 +109,13 @@ export function CreateReady({
             changed={CHANGED}
             focused={focused}
             pressed={step === "invite"}
+            backPressed={step === "back"}
+            tab={
+              at.index >= SETTINGS_OPEN && at.index < SETTINGS_CLOSED
+                ? "settings"
+                : "topics"
+            }
+            seconds={seconds}
           />
         </div>
       </div>
@@ -101,6 +123,8 @@ export function CreateReady({
         open={INVITING.includes(step)}
         email={DEMO_INVITE_EMAIL.slice(0, emailed)}
         typing={step === "focusEmail" || step === "typingEmail"}
+        name={DEMO_INVITE_NAME.slice(0, named)}
+        naming={step === "focusInviteName" || step === "typingName"}
         pressed={step === "sendInvite"}
       />
       <DemoSentNotice

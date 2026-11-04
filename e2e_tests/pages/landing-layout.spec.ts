@@ -32,6 +32,15 @@ test("every section shows, in order, within the window", { tag: "@phone" }, asyn
     const section = page.locator(`#${id}`);
     await section.scrollIntoViewIfNeeded();
     await expect(section.getByRole("heading").first()).not.toBeEmpty();
+    // Its cards' entrance (coming in from past the edges) ended: they rest in place.
+    await section.evaluate((element) =>
+      Promise.all(
+        element
+          .getAnimations({ subtree: true })
+          .filter((animation) => animation.effect?.getTiming().iterations !== Infinity)
+          .map((animation) => animation.finished.catch(() => undefined)),
+      ),
+    );
     // Nothing in it reaches past the window's edges: the page never scrolls sideways. A part cut
     // off by a box inside the window (a demo's camera zoomed in) shows nothing past it.
     const outside = await section.evaluate((element, right) => {

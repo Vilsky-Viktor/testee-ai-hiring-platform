@@ -3,7 +3,6 @@
 import { cn } from "cn"
 import { HashIcon, PlusIcon, SendHorizontalIcon, UsersIcon } from "lucide-react"
 
-import { PROMO_POP } from "@/features/landing/components/demo-panel"
 import { DemoSlackSidebar } from "@/features/landing/components/demo-slack-sidebar"
 import { Wordmark } from "@/components/common/wordmark"
 import { useElementSize } from "@/hooks/use-element-size"
@@ -33,7 +32,7 @@ function finishedText(place: number) {
  * its name and members; testee's messages, each from the app (testee's mark as its square
  * picture, its name, the APP tag and the time) with the blocks testee sends (a plain-text section
  * and an "Open in testee" button); and the message box. Scrolled to the newest message once
- * `scrolled`, gliding there. Each time the channel is `shown`, its messages pop in one after
+ * `scrolled`, gliding there. Each time the channel is `shown`, its messages fly in one after
  * another. */
 export function DemoSlackChannel({
   shown,
@@ -80,7 +79,11 @@ export function DemoSlackChannel({
               <div
                 key={candidate}
                 style={{ animationDelay: `${250 + index * 80}ms` }}
-                className={cn("flex gap-2.5 px-4 py-2", shown && PROMO_POP)}
+                className={cn(
+                  "flex gap-2.5 px-4 py-2",
+                  shown &&
+                    "motion-safe:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both] rtl:[--fly-from:1]"
+                )}
               >
                 <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-surface">
                   <Wordmark short className="text-lg leading-none" />

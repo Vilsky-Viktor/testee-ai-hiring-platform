@@ -3,7 +3,6 @@
 import { cn } from "cn"
 
 import { DemoCandidateSearch } from "@/features/landing/components/demo-candidate-search"
-import { PROMO_POP } from "@/features/landing/components/demo-panel"
 import { DemoInterviewTabs } from "@/features/landing/components/demo-interview-tabs"
 import { DemoReportActions } from "@/features/landing/components/demo-share"
 import { InterviewHeader } from "@/features/landing/components/interview-header"
@@ -19,7 +18,7 @@ import {
 /** An interview's candidates tab, for the landing: its header with the report's actions (the
  * one `pressed` pressed in), its tabs, and the candidates as the real list's rows, with their
  * grades and integrity signals; the row `opened` (its place) shaded as it's clicked. Each row is
- * the pointer's "row<place>". Each time the list is `shown`, its rows pop in one after another. */
+ * the pointer's "row<place>". Each time the list is `shown`, its rows fly in one after another. */
 export function DemoCandidates({
   shown,
   pressed,
@@ -56,7 +55,8 @@ export function DemoCandidates({
                 className={cn(
                   "relative transition-colors [&_a>span]:py-3",
                   opened === index && "bg-surface",
-                  shown && PROMO_POP
+                  shown &&
+                    "motion-safe:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both] rtl:[--fly-from:1]"
                 )}
               >
                 {/* Where the camera looks when it zooms on the row: its title, at the start. */}

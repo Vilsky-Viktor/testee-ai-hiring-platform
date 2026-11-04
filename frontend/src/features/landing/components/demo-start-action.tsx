@@ -16,7 +16,7 @@ const NOTHING = () => {}
  * voice the real microphone step first (`access`), then the pledge, ticked once `pledged`, and
  * the start button, dimmed until it works and pressed in while `pressed`. With motion allowed,
  * the microphone's step pops in once access is granted, and the pledge bumps as it's ticked
- * (promo-pop, promo-tick: animations.css). */
+ * (promo-pop, promo-tick: promo.css). */
 export function DemoStartAction({
   access,
   pledged,

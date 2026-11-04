@@ -9,10 +9,7 @@ import {
 import { useLocale, useTranslations } from "next-intl"
 
 import { Caret } from "@/features/landing/components/caret"
-import {
-  DEMO_PRESSED,
-  PROMO_POP,
-} from "@/features/landing/components/demo-panel"
+import { DEMO_PRESSED } from "@/features/landing/components/demo-panel"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import {
   DEMO_CHAT,
@@ -57,8 +54,8 @@ function summaryOf(candidate: DemoCandidate) {
 
 /** A chat in WhatsApp, where "share" sends a report's text summary, drawn generically for the
  * landing: the app's name and the chat's, the `messages` sent so far (the latest at the bottom,
- * older ones scrolling off the top, each popping in), and the message box with `typed` so far (a caret while
- * `typing`) and its send button (the pointer's "chatSend", pressed in while `pressed`). */
+ * older ones scrolling off the top, each arriving), and the message box (the demo's
+ * "chatBox") with `typed` so far (a caret while `typing`) and its send button (the pointer's "chatSend", pressed in while `pressed`). */
 export function DemoChat({
   messages,
   typed,
@@ -92,7 +89,10 @@ export function DemoChat({
             key={index}
             className={cn(
               "max-w-[92%] shrink-0 self-end rounded-xl rounded-ee-sm bg-background px-4 pt-3 pb-2 sm:max-w-sm",
-              PROMO_POP
+              // A summary drops in; a typed line rises from the message box.
+              message.summary
+                ? "motion-safe:animate-[promo-drop_0.6s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
+                : "motion-safe:animate-[promo-rise_0.6s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
             )}
           >
             <p className="text-sm leading-relaxed whitespace-pre-line">
@@ -108,7 +108,10 @@ export function DemoChat({
         ))}
         {/* The message box and its send button. */}
         <div className="mt-1 flex shrink-0 items-center gap-2">
-          <span className="flex h-10 min-w-0 flex-1 items-center rounded-full bg-background px-4 text-sm">
+          <span
+            data-demo-target="chatBox"
+            className="flex h-10 min-w-0 flex-1 items-center rounded-full bg-background px-4 text-sm"
+          >
             {typed || typing ? (
               <>
                 <span className="truncate">{typed}</span>

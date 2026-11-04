@@ -1,0 +1,68 @@
+/* The other landing sections' own promo effects (the shared ones and create's: promo.css). */
+
+/* The "what candidates see" promo's own effects (candidates-demo.tsx, `data-candidates-promo`).
+   The pledge's check box as the pointer heads for it: a soft ring of the primary colour swelling
+   around it and back. */
+@keyframes promo-halo {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  50% {
+    box-shadow: 0 0 0 0.4rem
+      color-mix(in oklab, var(--primary) 25%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-candidates-promo] [data-spotlight] > [data-slot="checkbox"] {
+    animation: promo-halo 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+}
+
+/* The trust loop's cards (quality-step-card.tsx): their see-through background breathing to
+   fully solid and back, all the time. */
+@keyframes promo-solid {
+  0%,
+  100% {
+    background-color: color-mix(in oklab, var(--background) 75%, transparent);
+  }
+  50% {
+    background-color: var(--background);
+  }
+}
+
+/* The "see who's best" promo's own effects (reports-demo.tsx, `data-reports-promo`). The chat's
+   message box lit as the summary arrives: as the spotlight, from its own page colour. */
+@keyframes promo-spotlight-page {
+  0%,
+  100% {
+    background-color: var(--background);
+  }
+  50% {
+    background-color: color-mix(
+      in oklab,
+      var(--primary) 22%,
+      var(--background)
+    );
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reports-promo]
+    [data-demo-popup][data-open="true"]
+    > [data-demo-popup-card],
+  [data-reports-promo] [data-testid="demo-sent"][data-shown="true"] > * {
+    animation: promo-fly-up 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  }
+
+  /* The field's own box: its input or text box, or the target itself when it's the box. */
+  [data-reports-promo] [data-spotlight] :is(input, textarea),
+  [data-reports-promo] [data-spotlight]:not(:has(input, textarea)) {
+    animation: promo-spotlight 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  [data-reports-promo] [data-spotlight][data-demo-target="chatBox"] {
+    animation-name: promo-spotlight-page;
+  }
+}
