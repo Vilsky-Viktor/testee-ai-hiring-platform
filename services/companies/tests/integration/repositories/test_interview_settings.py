@@ -1,11 +1,13 @@
+import os
 import uuid
 
 import pytest
 from fastapi import HTTPException
+from testee_common.db.lock_waits import hold_first_commit, race
 
 from companies.repositories import excluded_questions, interview_generations, interviews
 from companies.schemas.interviews import InterviewSettings
-from tests.integration import factories
+from tests.integration import factories, transactions
 from tests.integration.transactions import transaction
 
 
@@ -121,3 +123,30 @@ def test_questions_left_out_are_saved_and_a_refused_change_keeps_them(run):
     new, saved = run(scenario())
 
     assert (new, saved) == ({}, {topic: [question]})
+
+
+def test_two_questions_left_out_at_once_both_stay_out(run, monkeypatch):
+    """Two editors at once: the second change waits for the first and builds on it, so neither
+    question comes back."""
+    topic, first, second = (str(uuid.uuid4()) for _ in range(3))
+
+    def leaving_out(question):
+        def change(stored, limits):
+            return {**stored, topic: [*stored.get(topic, []), question]}
+
+        return change
+
+    async def scenario():
+        company = await factories.company(f"Acme {uuid.uuid4()}", "owner", "owner@example.com")
+        found = await transaction(interviews.create, company.id, uuid.uuid4(), "en", 60)
+        held = hold_first_commit(monkeypatch, transactions)
+        await race(
+            os.environ["DATABASE_URL"],
+            held,
+            transaction(excluded_questions.change, found.id, leaving_out(first)),
+            transaction(excluded_questions.change, found.id, leaving_out(second)),
+        )
+
+        return (await transaction(interviews.get, found.id)).excluded_questions
+
+    assert run(scenario()) == {topic: [first, second]}
