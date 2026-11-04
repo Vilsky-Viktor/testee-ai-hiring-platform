@@ -66,7 +66,8 @@ export async function ShareReportsSection() {
           className={cn(
             buttonVariants({ variant: "outline" }),
             OUTLINE_BUTTON,
-            "h-14 px-10 text-lg lowercase"
+            // On the grey band, hovered a step darker: the outline's own hover grey would vanish.
+            "h-14 px-10 text-lg lowercase hover:bg-input"
           )}
         >
           <DownloadIcon aria-hidden className="size-5" />

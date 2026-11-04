@@ -32,8 +32,7 @@ export async function ComparisonSection({ catalog }: { catalog: Catalog }) {
       id="compare"
       title={t("title")}
       text={t("text")}
-      // Cut sideways at its edges: the cards come in from past them, never widening the page.
-      background={`${BAND} overflow-x-clip`}
+      background={BAND}
     >
       <div className="flex flex-col items-center gap-10">
         {/* On the section's grey band, the cards in the page's colour. */}
@@ -77,7 +76,10 @@ export async function ComparisonSection({ catalog }: { catalog: Catalog }) {
             }
           })}
         />
-        <MoreLink href="/compare">{t("more")}</MoreLink>
+        {/* On the grey band, hovered a step darker: the outline's own hover grey would vanish. */}
+        <MoreLink href="/compare" className="hover:bg-input">
+          {t("more")}
+        </MoreLink>
       </div>
     </LandingSection>
   )
