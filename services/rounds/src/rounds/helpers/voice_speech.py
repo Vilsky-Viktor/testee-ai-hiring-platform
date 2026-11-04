@@ -135,7 +135,8 @@ def ogg_opus(pcm: bytes) -> bytes:
 
 def strays(text: str, transcript: str) -> bool:
     """The reading, by the model's own transcript, isn't the text: too many words wrong, or words
-    added in one place (an answer, a comment)."""
-    rate, added = word_errors(text, transcript)
+    added in one place (an answer, a comment). Options' letters aside: a transcript may write a
+    spoken B in its own alphabet."""
+    rate, added = word_errors(text, transcript, letters=False)
 
     return rate > MAX_READING_WORD_ERRORS or added >= MAX_ADDED_WORDS

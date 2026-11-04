@@ -30,3 +30,27 @@ def test_word_errors_count_changes_and_the_longest_run_added(heard, rate, added)
 
 def test_nothing_said_against_nothing_to_say_is_no_error():
     assert word_errors("", "") == (0.0, 0)
+
+
+@pytest.mark.parametrize(
+    "said, heard, rate",
+    [
+        # Chinese: two characters swapped of 17, not the whole clause wrong.
+        ("哪种集中趋势的量度受极端值影响最小", "哪种集中趋势的度量受极端值影响最小", 2 / 17),
+        # Japanese kana and Thai, each character a word; a Latin letter beside them stays one.
+        ("どれですか B", "どれですか B", 0.0),
+        ("ข้อแรก", "ข้อแรด", 1 / 6),
+    ],
+)
+def test_scripts_without_spaces_count_each_character(said, heard, rate):
+    assert word_errors(said, heard)[0] == pytest.approx(rate)
+
+
+def test_without_letters_a_transcript_writing_them_in_its_own_alphabet_reads_right():
+    said = "Какая мера? A: Медиана. B: Размах."
+    heard = "Какая мера? А: Медиана. Б: Размах."
+
+    assert word_errors(said, heard)[0] == pytest.approx(2 / 6)
+    assert word_errors(said, heard, letters=False) == (0.0, 0)
+    # Characters of unspaced scripts still count, one by one.
+    assert word_errors("标准差", "标准", letters=False)[0] == pytest.approx(1 / 3)
