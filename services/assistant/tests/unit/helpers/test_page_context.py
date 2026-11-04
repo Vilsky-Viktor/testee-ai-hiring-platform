@@ -70,7 +70,9 @@ def test_an_unknown_key_is_dropped_and_a_long_path_is_cut():
     assert PageContext(key="billing", path="/").key == "billing"
 
 
-@pytest.mark.parametrize("field", ["company_id", "interview_id", "candidate_id", "template_id"])
+@pytest.mark.parametrize(
+    "field", ["company_id", "interview_id", "candidate_id", "topic_id", "template_id"]
+)
 def test_an_id_that_isnt_an_id_is_refused(field):
     with pytest.raises(ValidationError):
         PageContext(path="/", **{field: "../internal"})

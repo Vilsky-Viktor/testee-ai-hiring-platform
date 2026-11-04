@@ -39,6 +39,7 @@ class PageContext(BaseModel):
     company_id: str | None = Field(default=None, pattern=PAGE_ID_PATTERN)
     interview_id: str | None = Field(default=None, pattern=PAGE_ID_PATTERN)
     candidate_id: str | None = Field(default=None, pattern=PAGE_ID_PATTERN)
+    topic_id: str | None = Field(default=None, pattern=PAGE_ID_PATTERN)
     template_id: str | None = Field(default=None, pattern=PAGE_ID_PATTERN)
     practice_round_id: str | None = Field(default=None, pattern=PAGE_ID_PATTERN)
 

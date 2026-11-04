@@ -1,7 +1,13 @@
 import type { Page } from "@playwright/test"
 
 import { expect, test } from "../fixtures"
-import { createCompany, createInterview, finishOneAnswer, inviteCandidate } from "../helpers/api"
+import {
+  api,
+  createCompany,
+  createInterview,
+  finishOneAnswer,
+  inviteCandidate,
+} from "../helpers/api"
 import { openPanel } from "../helpers/assistant"
 import { env } from "../helpers/env"
 import { visit } from "../helpers/navigation"
@@ -110,4 +116,43 @@ test("the assistant answers hiring advice from the site's guide and links it", a
   await link.click()
   await expect(owner).toHaveURL(/\/guides\/[a-z0-9-]+$/)
   await expect(owner.getByRole("heading", { level: 1 })).toBeVisible()
+})
+
+test("the assistant knows the topic on screen and links a topic's questions", async ({
+  signInAs,
+}) => {
+  test.skip(!env("OPENAI_API_KEY"), "No OpenAI key: the assistant can't answer")
+  test.setTimeout(300_000)
+  const owner = await signInAs(ownerEmail())
+  const company = await createCompany(owner)
+  const interviewId = await createInterview(owner, company.id)
+  const { topics } = await api<{ topics: { id: string; title: string }[] }>(
+    owner,
+    "GET",
+    `/companies/interviews/${interviewId}`
+  )
+  const [topic] = topics
+  const path = `/companies/${company.id}/interviews/${interviewId}`
+
+  // On a topic's page, the panel sends the topic with the interview, and "here" is that topic.
+  await visit(owner, `${path}/topics/${topic.id}`)
+  let panel = await openPanel(owner)
+  const here = await ask(owner, "How many questions are here?")
+  expect(here.sent.page).toMatchObject({
+    company_id: company.id,
+    interview_id: interviewId,
+    topic_id: topic.id,
+  })
+  expect(here.answer.some((event) => event.done)).toBe(true)
+
+  // Asked elsewhere for a topic's questions, the answer links that topic's page: one link more
+  // than the chat already showed, as it keeps the earlier answers.
+  await visit(owner, path)
+  panel = await openPanel(owner)
+  const links = panel.locator(`a[href$="${path}/topics/${topic.id}"]`)
+  const before = await links.count()
+  await ask(owner, `Show me the questions of the "${topic.title}" topic.`)
+  await expect(links).toHaveCount(before + 1)
+  await links.last().click()
+  await expect(owner).toHaveURL(new RegExp(`/topics/${topic.id}$`))
 })

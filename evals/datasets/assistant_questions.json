@@ -8,7 +8,8 @@
   "candidateBen": {"key": "candidate", "path": "/companies/{company}/interviews/{interview0}/candidates/{ben}", "company": true, "interview": 0, "candidate": "ben", "describe": "Ben Ortiz's report in the interview 'Backend Developer (eval)'"},
   "billing": {"key": "billing", "path": "/companies/{company}/billing", "company": true, "describe": "the company's billing page"},
   "pricing": {"key": "pricing", "path": "/pricing", "describe": "the public pricing page; no company picked in the panel"},
-  "settings": {"key": "settings", "path": "/settings", "describe": "the user's account settings; no company picked in the panel"}
+  "settings": {"key": "settings", "path": "/settings", "describe": "the user's account settings; no company picked in the panel"},
+  "topicIndexes": {"key": "topicQuestions", "path": "/companies/{company}/interviews/{interview0}/topics/{topic}", "company": true, "interview": 0, "topic": "Indexes", "describe": "the questions of the topic 'Indexes' in the interview 'Backend Developer (eval)'"}
  },
  "general": [
   {"id": "g01", "page": "candidatesB", "question": "How many candidates do I have?", "expect": "3, across both interviews; the user didn't say 'here'. Answering only this interview's 1 as the total is a scope mistake (adding it as a detail is fine)."},
@@ -72,6 +73,7 @@
   {"id": "p06", "kind": "data", "page": "candidatesA", "question": "Who's best here?", "expect": "Ann Lee, the best of 'Backend Developer (eval)' (the interview on screen), without asking which interview."},
   {"id": "p07", "kind": "data", "page": "candidatesB", "question": "Who's best here?", "expect": "Cara Diaz, the only candidate of 'Data Analyst (eval)' (the interview on screen), without asking which interview."},
   {"id": "p08", "kind": "data", "page": "candidateBen", "question": "How did this candidate do?", "expect": "Ben Ortiz's grade (the candidate on screen), without asking which candidate."},
-  {"id": "p09", "kind": "moved", "earlier": {"page": "candidatesA", "question": "Who's best here?"}, "page": "candidatesB", "question": "and here?", "expect": "After asking on 'Backend Developer (eval)', the user moved to 'Data Analyst (eval)': the best there, Cara Diaz."}
+  {"id": "p09", "kind": "moved", "earlier": {"page": "candidatesA", "question": "Who's best here?"}, "page": "candidatesB", "question": "and here?", "expect": "After asking on 'Backend Developer (eval)', the user moved to 'Data Analyst (eval)': the best there, Cara Diaz."},
+  {"id": "p10", "kind": "data", "page": "topicIndexes", "question": "What are the questions here about?", "expect": "The questions of the 'Indexes' topic of 'Backend Developer (eval)' (the topic on screen; they read 'Indexes: question 1?' and so on), not the SQL basics ones, without asking which topic or interview."}
  ]
 }

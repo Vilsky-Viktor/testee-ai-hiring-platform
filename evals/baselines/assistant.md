@@ -151,3 +151,17 @@ candidates' and members' reports, every member). `page_context.py`, 3 repeats
 132 on 2026-10-30; right scope 134 / 142; right tools 131 / 129; page checks 25/27 with, 12/27
 without; `get_page_guide` 15/15; blind wins/ties/losses 48/53/52. No case called either tool;
 all within the judge's noise. $1.70.
+
+## The topic in the page context (2026-11-04)
+
+On a topic's questions page the panel sends the topic's id (`topic_id`, "the topic (its
+questions)" in the page line), so "this topic" and "the questions here" mean it. A tenth page
+check, p10, asks "What are the questions here about?" on Backend Developer's Indexes topic (the
+fixture's facts now carry each interview's `topic_ids`, for that page's address).
+`page_context.py`, 3 repeats (`…_topic-page.json`), against `…_topic-questions.json`: general
+correct with 129/153, without 132/153, against 120 / 134; right scope 135 / 140 against
+134 / 142; right tools 139 / 127 against 131 / 129; page checks 27/30 with (the nine earlier
+24/27 against 25/27; p10 3/3), 14/30 without; `get_page_guide` 15/15; blind wins/ties/losses
+52/50/51. p10 passes without the page context too (3/3): the old page line still gives the
+address, which holds the topic's id, so this check guards the topic page rather than proving the
+id's own gain. All within the judge's noise. $1.84.

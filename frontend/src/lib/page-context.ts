@@ -28,6 +28,7 @@ export function pageContext(
     // `id` names an interview on a company's pages (/companies/<id>/interviews/<id>).
     interview_id: params.companyId ? id("id") : undefined,
     candidate_id: id("inviteId"),
+    topic_id: id("topicId"),
     template_id: id("templateId"),
     practice_round_id: id("roundId"),
   }

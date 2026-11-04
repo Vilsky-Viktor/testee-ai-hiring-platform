@@ -169,9 +169,11 @@ async def show(arguments: dict, turn: Turn, shown: set) -> tuple[dict, dict | No
     return {"detail": SHOWN}, block
 
 
-# The reads that are about one interview, or one candidate, by the argument naming it.
+# The reads that are about one interview, or one candidate or topic of it, by the argument
+# naming it.
 INTERVIEW_ARGUMENT = "interview_id"
 CANDIDATE_READS = {"get_scorecard": "invite_id"}
+TOPIC_READS = {"list_topic_questions": "topic_id"}
 
 
 async def setting_link(answer, turn: Turn) -> dict | None:
@@ -193,10 +195,10 @@ async def setting_link(answer, turn: Turn) -> dict | None:
 
 
 async def implied_link(answer, turn: Turn) -> dict | None:
-    """The link an answer about one interview, one candidate or one setting needs when the model
-    gave none: that candidate's report, that interview's candidates, or the setting's page,
-    from what the turn read."""
-    interviews, candidates = set(), set()
+    """The link an answer about one interview, one candidate, one topic or one setting needs
+    when the model gave none: that candidate's report, that topic's questions, that interview's
+    candidates, or the setting's page, from what the turn read."""
+    interviews, candidates, topics = set(), set(), set()
 
     for result in answer.results:
         if not result.succeeded:
@@ -207,6 +209,9 @@ async def implied_link(answer, turn: Turn) -> dict | None:
 
         if result.tool in CANDIDATE_READS:
             candidates.add(str(result.arguments.get(CANDIDATE_READS[result.tool])))
+
+        if result.tool in TOPIC_READS:
+            topics.add(str(result.arguments.get(TOPIC_READS[result.tool])))
 
     if not interviews:
         return await setting_link(answer, turn)
@@ -219,6 +224,9 @@ async def implied_link(answer, turn: Turn) -> dict | None:
     if len(candidates) == 1:
         [candidate_id] = candidates
         target = {"page": "candidate", "interview_id": interview_id, "candidate_id": candidate_id}
+    elif len(topics) == 1:
+        [topic_id] = topics
+        target = {"page": "topic", "interview_id": interview_id, "topic_id": topic_id}
     else:
         target = {"page": "interview_candidates", "interview_id": interview_id}
 

@@ -35,6 +35,7 @@ export const LINK_PAGES: [RegExp, MessageKey<"assistant.pages">][] = [
   [/\/referrals$/, "referrals"],
   [/\/candidates\/[^/]+$/, "candidate"],
   [/\/candidates$/, "candidates"],
+  [/\/interviews\/[^/]+\/topics\/[^/]+$/, "topicQuestions"],
   [/\/interviews\/[^/]+$/, "interview"],
   [/\/interviews$/, "interviews"],
 ]
@@ -44,6 +45,7 @@ export const PAGE_LABELS: Record<string, MessageKey<"assistant.pages">> = {
   interview: "interview",
   interview_candidates: "candidates",
   candidate: "candidate",
+  topic: "topicQuestions",
   company: "interviews",
   members: "team",
   templates: "templates",

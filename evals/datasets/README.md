@@ -110,14 +110,15 @@ questions where every pick model gave the same wrong answer, and there were none
 option indexes in the question's own order (None: no usable answer). The AI's real answers for
 the integrity-signals eval's relaying candidates. Cost $1.07.
 
-## `assistant_questions.json` (by hand, 2026-10-17)
+## `assistant_questions.json` (by hand, 2026-10-17; a topic's page 2026-11-04)
 
-The assistant's page-context test: 8 pages (key, path, the ids the panel sends), 51 general
+The assistant's page-context test: 9 pages (key, path, the ids the panel sends), 51 general
 questions asked on 6 of them (6 name an interview or candidate other than the page's; 8, added
 2026-10-22, ask who the assistant is, its name and whether it's a person, in English, German,
 Japanese, Arabic, Russian and Spanish, with `language` the user's interface language), each with
-what a right answer does, and 9 page checks ("What can I do on this page?" on 5 pages, "Who's
-best here?", "How did this candidate do?", "and here?" after moving). They run against the
+what a right answer does, and 10 page checks ("What can I do on this page?" on 5 pages, "Who's
+best here?", "How did this candidate do?", "and here?" after moving, and "What are the questions
+here about?" on a topic's questions page, which sends the topic's id). They run against the
 throwaway fixture (`../scripts/assistant_fixture.py`), never real records.
 
 ## `assistant_guides.json` (by hand, 2026-10-17)
@@ -134,9 +135,9 @@ handover test (`../scripts/assistant_handover.py`): every service a tool calls f
 asked, and code checks the answer links the contact page after a failed call (and not without
 one), writes no link in its text and doesn't keep retrying.
 
-## `assistant_actions.json` (by hand, 2026-10-20; notes cases 2026-10-29; voice invites 2026-10-30; the features page 2026-10-31; the hiring flow page 2026-11-04)
+## `assistant_actions.json` (by hand, 2026-10-20; notes cases 2026-10-29; voice invites 2026-10-30; the features page 2026-10-31; the hiring flow page 2026-11-04; a topic's page 2026-11-04)
 
-The assistant's action test (`../scripts/assistant_actions.py`): 82 panel messages on 11 pages,
+The assistant's action test (`../scripts/assistant_actions.py`): 85 panel messages on 11 pages,
 against the page-context fixture plus an empty second company, a pending team member and two
 notes on the Backend Developer interview. 52 ask
 for an action of each kind: creating (a company, an interview from a pasted description, one that
@@ -171,7 +172,8 @@ refused because it would change nothing isn't an action either. 8 judge traps
 (`judge_traps`), planted replies with known verdicts, check the judge every run. 3 ask what
 testee can do or for all its features (`features`): a link to the features page, no action.
 3 ask how hiring with testee goes, step by step (`hiring_flow`): a link to the hiring flow
-page, no action.
+page, no action. 3 ask for one topic's questions (`topic`): a link to that topic's page, no
+action.
 `check_datasets.py` checks that its pages' keys are the panel's real ones (an unknown key reaches
 the model as none).
 

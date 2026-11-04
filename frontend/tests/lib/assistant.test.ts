@@ -55,6 +55,7 @@ describe("linkPage", () => {
     [`/companies/${COMPANY}/integrations/slack`, "slack"],
     [`/companies/${COMPANY}/integrations/greenhouse`, "integrations"],
     [`/companies/${COMPANY}/interviews/i1/candidates/c1`, "candidate"],
+    [`/companies/${COMPANY}/interviews/i1/topics/t1`, "topicQuestions"],
     [`/companies/${COMPANY}/interviews/i1/candidates`, "candidates"],
     [`/companies/${COMPANY}/interviews/i1`, "interview"],
     [`/companies/${COMPANY}/members`, "team"],

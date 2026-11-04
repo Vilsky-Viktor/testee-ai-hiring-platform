@@ -5,8 +5,9 @@ import httpx
 import pytest
 
 from assistant.integrations import services
-from assistant.models.answers import Turn
-from assistant.services.show import show
+from assistant.models.answers import Answer, Turn
+from assistant.models.tools import ToolResult
+from assistant.services.show import all_link, finish, show
 
 COMPANY = "8c1d2b8e-1a2b-4c3d-8e9f-0a1b2c3d4e5f"
 TURN = Turn(uuid.uuid4(), "ann", uuid.UUID(COMPANY), "t", "en", frozenset({COMPANY}))
@@ -100,6 +101,7 @@ def test_a_link_is_built_from_the_app_map_and_named_by_what_it_opens(companies):
     [
         {"kind": "link", "page": "https://evil.example"},
         {"kind": "link", "page": "interview", "interview_id": "../internal"},
+        {"kind": "link", "page": "topic", "interview_id": "i1", "topic_id": "../x"},
         # An interview the user can't see.
         {"kind": "link", "page": "interview", "interview_id": "gone"},
         {"kind": "candidates", "rows": [{"interview_id": "i1", "candidate_id": "zz"}]},
@@ -143,9 +145,6 @@ def test_one_list_and_one_link_an_answer(companies):
 def test_an_answer_about_one_interview_gets_its_candidates_link_when_the_model_gave_none(
     companies,
 ):
-    from assistant.models.answers import Answer
-    from assistant.models.tools import ToolResult
-    from assistant.services.show import finish
 
     answer = Answer()
     answer.results.append(ToolResult("list_candidates", {"interview_id": "i1"}, 200, {}, None, 0))
@@ -167,9 +166,6 @@ def test_an_answer_about_one_interview_gets_its_candidates_link_when_the_model_g
 
 
 def test_one_candidates_report_is_linked_and_a_single_row_shows_alone(companies):
-    from assistant.models.answers import Answer
-    from assistant.models.tools import ToolResult
-    from assistant.services.show import finish
 
     answer = Answer()
     answer.results.append(
@@ -195,10 +191,23 @@ def test_one_candidates_report_is_linked_and_a_single_row_shows_alone(companies)
     assert [event["block"]["kind"] for event in emitted] == ["candidate_rows"]
 
 
+def test_an_answer_about_one_topics_questions_links_that_topics_page(companies):
+
+    answer = Answer()
+    answer.results += [
+        ToolResult("get_interview", {"interview_id": "i1"}, 200, {}, None, 0),
+        ToolResult(
+            "list_topic_questions", {"interview_id": "i1", "topic_id": "t1"}, 200, {}, None, 0
+        ),
+    ]
+    emitted = []
+    asyncio.run(finish(answer, TURN, emitted.append))
+
+    assert emitted[0]["block"]["links"] == [f"/companies/{COMPANY}/interviews/i1/topics/t1"]
+    assert emitted[0]["block"]["page"] == "topic"
+
+
 def test_no_link_is_guessed_for_an_answer_about_several_interviews(companies):
-    from assistant.models.answers import Answer
-    from assistant.models.tools import ToolResult
-    from assistant.services.show import finish
 
     answer = Answer()
     answer.results += [
@@ -239,7 +248,6 @@ def test_interview_rows_link_to_the_companys_interviews(companies):
 
 
 def test_candidates_of_several_interviews_have_no_page_of_all_of_them(companies):
-    from assistant.services.show import all_link
 
     chosen = [
         {"interview_id": "i1", "candidate_id": "c1"},

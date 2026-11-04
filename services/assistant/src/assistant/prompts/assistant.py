@@ -127,6 +127,7 @@ PAGE_ID_NAMES = {
     "company_id": "the company",
     "interview_id": "the interview",
     "candidate_id": "the candidate (their invite)",
+    "topic_id": "the topic (its questions)",
     "template_id": "the template",
     "practice_round_id": "the practice round",
 }

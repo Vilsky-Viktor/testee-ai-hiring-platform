@@ -152,6 +152,7 @@ export type PageContext = {
   company_id?: string
   interview_id?: string
   candidate_id?: string
+  topic_id?: string
   template_id?: string
   practice_round_id?: string
 }

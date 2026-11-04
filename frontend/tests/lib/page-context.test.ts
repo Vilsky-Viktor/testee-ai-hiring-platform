@@ -31,6 +31,7 @@ describe("page context", () => {
       company_id: COMPANY,
       interview_id: INTERVIEW,
       candidate_id: undefined,
+      topic_id: undefined,
       template_id: undefined,
       practice_round_id: undefined,
     })

@@ -18,7 +18,8 @@ Contents: [Mira](#mira-an-ai-assistant-that-says-so-2026-10-22-kept) ·
 [An interview's notes](#an-interviews-notes-2026-10-30-kept) ·
 [Inviting by voice or by click](#inviting-by-voice-or-by-click-2026-10-30-kept) ·
 [A link to the features page](#a-link-to-the-features-page-2026-10-31-kept) ·
-[A link to the hiring flow page](#a-link-to-the-hiring-flow-page-2026-11-04-kept)
+[A link to the hiring flow page](#a-link-to-the-hiring-flow-page-2026-11-04-kept) ·
+[A link to a topic's page](#a-link-to-a-topics-page-2026-11-04-kept)
 
 ## Mira, an AI assistant that says so (2026-10-22, kept)
 
@@ -227,3 +228,24 @@ repeats, before (`…_guides_hiring-flow-guides-base.json`, `show.py` as at `HEA
 (`…_guides-new.json`): with the guide tools correct 40/40 both, complete 24/40 then 22/40, read
 the right guide and linked it 37/40 both; wins against without them 36/1/3 then 40/0/0. $0.48,
 $0.51, $0.09, $0.09 and $0.49 the action runs, $0.62 and $0.63 the guide runs.
+
+## A link to a topic's page (2026-11-04, kept)
+
+The `show` tool's link pages gain `topic` (`/companies/{company_id}/interviews/{interview_id}/topics/{topic_id}`,
+with `topic_id` among its ids), and its description names the topic page for one topic's
+questions; with no link from the model, a turn that read one topic's questions
+(`list_topic_questions`) of one interview gets that topic's page (`TOPIC_READS`, after a single
+candidate's report and before the interview's candidates). Three new cases (85 in all, kind
+`topic`): t01 asks for the Indexes questions on Backend Developer's candidates tab, t02 which
+questions the SQL basics topic of Backend Developer has, t03 to be taken to Data Analyst's
+Statistics questions; each expects a link to the topic's page and no action.
+`assistant_actions.py`, 3 repeats, `gpt-6-luna` low, before on the 82 earlier cases
+(`results/assistant_actions_topic-link-base.json`, at `fab74bbd6`; its recorded prompts hash is the
+changed one, as the hash is read when the run ends) and after on all 85 (`…_topic-link.json`):
+task success 100% (98.5–100), then 99.2% (97.2–99.8); the 82 earlier cases 246/246, then
+244/246; tool choice 100% then 99.2%, arguments 100% both, asked first 100% then 97.0%
+(84.7–99.5), link 100% both, injection safe 100% both, judge traps 8/8 both. The new cases 9 of
+9, each linked by the model itself (t03 without reading the questions, from the interview's
+topics). 16,161 then 16,214 tokens and $0.00168 then $0.00169 a turn, 11.8 then 6.4 s (a busier
+stack before). Misses after: e17.3 (no note card), m05.3 (the cross case's pass mark card), none
+about links; all within the noise. $0.50 and $0.52.

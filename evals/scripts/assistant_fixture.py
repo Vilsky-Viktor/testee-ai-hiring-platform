@@ -138,6 +138,8 @@ class Fixture:
                     break
 
                 await asyncio.sleep(2)
+
+            detail = await self.api("GET", f"/companies/interviews/{interview['id']}", owner)
             found.append(
                 {
                     "id": interview["id"],
@@ -145,6 +147,8 @@ class Fixture:
                     "pass_mark": interview["pass_mark"],
                     "question_seconds": interview["question_seconds"],
                     "topics": TEMPLATES[len(found)][1],
+                    # For a topic's page (its questions), by the topic's title.
+                    "topic_ids": {topic["title"]: topic["id"] for topic in detail["topics"]},
                     "candidates": [
                         {
                             **{key: row[key] for key in FACT_FIELDS},

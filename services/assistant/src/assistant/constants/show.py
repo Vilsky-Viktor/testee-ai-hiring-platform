@@ -21,6 +21,7 @@ PAGES = {
     "interview": "/companies/{company_id}/interviews/{interview_id}",
     "interview_candidates": "/companies/{company_id}/interviews/{interview_id}/candidates",
     "candidate": "/companies/{company_id}/interviews/{interview_id}/candidates/{candidate_id}",
+    "topic": "/companies/{company_id}/interviews/{interview_id}/topics/{topic_id}",
     "company": "/companies/{company_id}/interviews",
     "members": "/companies/{company_id}/members",
     "templates": "/companies/{company_id}/templates",
@@ -56,7 +57,15 @@ SETTING_PAGES = {
     "get_api_settings": "api",
 }
 # The ids a link may be filled with.
-LINK_IDS = ("company_id", "interview_id", "candidate_id", "template_id", "provider", "slug")
+LINK_IDS = (
+    "company_id",
+    "interview_id",
+    "candidate_id",
+    "topic_id",
+    "template_id",
+    "provider",
+    "slug",
+)
 
 SHOW_DEFINITION = {
     "type": "function",
@@ -68,8 +77,9 @@ SHOW_DEFINITION = {
             "list or show them, and only the rows that answer (e.g. the best candidate's row, "
             "not everyone's), as `rows` of ids. kind 'link': one link to the single most "
             "relevant, most specific page (`page` and its ids), e.g. the interview's page for a "
-            "question about a position, the candidate's report for a candidate, the features page "
-            "for what testee can do, the hiring flow page (rather than a guide) for how hiring "
+            "question about a position, the candidate's report for a candidate, the topic page "
+            "(with the interview_id and topic_id you read) for one topic's questions, the features "
+            "page for what testee can do, the hiring flow page (rather than a guide) for how hiring "
             "with testee goes, step by step from the job description to the hire. At most one "
             "rows and one link per answer; none for small talk. Rows are at most 10: a list of "
             "candidates or interviews gets a link to the page with all of them by itself, so add "
@@ -95,6 +105,7 @@ SHOW_DEFINITION = {
                 "company_id": {"type": "string"},
                 "interview_id": {"type": "string"},
                 "candidate_id": {"type": "string"},
+                "topic_id": {"type": "string"},
                 "template_id": {"type": "string"},
                 "provider": {"type": "string"},
                 "slug": {"type": "string"},

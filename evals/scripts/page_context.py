@@ -11,8 +11,7 @@ it (as before it), then has the judge compare them: general questions blind, in 
 
 Each question is asked `--repeat` times (3) in each variant; `--only g01,p06` asks only those;
 `--dataset assistant_feedback.json` asks the feedback cases instead. The assistant's model is the
-service's own (ASSISTANT_MODEL): about $0.25 a repeat for its turns, and about $0.30 a repeat for
-the judge (Sol at high).
+service's own (ASSISTANT_MODEL): about $0.25 a repeat for its turns, $0.30 for the judge (Sol).
 """
 
 import argparse
@@ -69,6 +68,7 @@ def page_of(spec: dict, facts: dict) -> tuple[dict, str | None]:
         "interview0": interviews[0]["id"],
         "interview1": interviews[1]["id"],
         "ben": ben["id"],
+        "topic": interviews[spec.get("interview", 0)]["topic_ids"].get(spec.get("topic")),
     }
     page = {"key": spec["key"], "path": spec["path"].format(**ids) + spec.get("query", "")}
     company = ids["company"] if spec.get("company") else None
@@ -81,6 +81,9 @@ def page_of(spec: dict, facts: dict) -> tuple[dict, str | None]:
 
     if "candidate" in spec:
         page["candidate_id"] = ids[spec["candidate"]]
+
+    if "topic" in spec:
+        page["topic_id"] = ids["topic"]
 
     return page, company
 

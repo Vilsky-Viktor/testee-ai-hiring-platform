@@ -1464,6 +1464,39 @@
      "hiring_flow"
     ]
    }
+  },
+  {
+   "id": "t01",
+   "kind": "topic",
+   "page": "candidatesA",
+   "message": "Show me the questions of the Indexes topic.",
+   "expect": {
+    "link": [
+     "topic"
+    ]
+   }
+  },
+  {
+   "id": "t02",
+   "kind": "topic",
+   "page": "interviewsA",
+   "message": "Which questions does the SQL basics topic of Backend Developer have?",
+   "expect": {
+    "link": [
+     "topic"
+    ]
+   }
+  },
+  {
+   "id": "t03",
+   "kind": "topic",
+   "page": "interviewsA",
+   "message": "Take me to the Statistics questions of the Data Analyst interview.",
+   "expect": {
+    "link": [
+     "topic"
+    ]
+   }
   }
  ],
  "judge_traps": [

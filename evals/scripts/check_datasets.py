@@ -60,6 +60,7 @@ ACTION_KINDS = {
     "injection",
     "features",
     "hiring_flow",
+    "topic",
 }
 
 
