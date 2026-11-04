@@ -8,6 +8,10 @@ import { MoreLink } from "@/components/common/more-link"
 import { StartButton } from "@/features/landing/components/start-button"
 import { GLOW } from "@/config/landing-backgrounds"
 
+// "More questions?"'s buttons in the light theme: filled with the page's colour at 60%, so what's
+// behind them shows; clear in the dark, as outline buttons are.
+const SEE_THROUGH = "bg-popover/60 dark:bg-transparent"
+
 /** The landing page's last screen: a two-line call to create the first interview, each line
  * ending with the logo's blue dot, the button back up to the job description box and the free
  * candidates from billing's catalog; under it, "more questions?" with a row of buttons to the
@@ -54,19 +58,22 @@ export async function Closing({
         </h3>
         <div className="flex flex-wrap justify-center gap-3">
           <AskAgentButton />
-          <DemosButton label={t("moreQuestions.videos")} />
-          <MoreLink href="/faq" keepCase className="h-12">
+          <DemosButton
+            label={t("moreQuestions.videos")}
+            className={SEE_THROUGH}
+          />
+          <MoreLink href="/faq" keepCase className={cn("h-12", SEE_THROUGH)}>
             {t("moreQuestions.faq")}
           </MoreLink>
-          <MoreLink href="/guides" className="h-12">
+          <MoreLink href="/guides" className={cn("h-12", SEE_THROUGH)}>
             {t("moreQuestions.guides")}
           </MoreLink>
         </div>
         <div className="flex flex-wrap justify-center gap-3">
-          <MoreLink href="/features" className="h-12">
+          <MoreLink href="/features" className={cn("h-12", SEE_THROUGH)}>
             {t("moreQuestions.features")}
           </MoreLink>
-          <MoreLink href="/hiring-flow" className="h-12">
+          <MoreLink href="/hiring-flow" className={cn("h-12", SEE_THROUGH)}>
             {t("moreQuestions.hiringFlow")}
           </MoreLink>
         </div>
