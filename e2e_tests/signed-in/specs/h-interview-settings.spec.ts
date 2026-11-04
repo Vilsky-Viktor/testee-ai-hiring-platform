@@ -30,6 +30,10 @@ test("an owner changes an interview's settings on its settings tab", async ({ si
   await modes.nth(1).click()
   await expect(modes.nth(1)).toHaveAttribute("aria-pressed", "true")
   await expect(modes.first()).toHaveAttribute("aria-pressed", "false")
+  // The mode's help links the guide to voice mode's quality in each language.
+  await expect(
+    owner.getByRole("main").locator('a[href$="/guides/voice-interview-languages"]')
+  ).toBeVisible()
 
   // The time per question, then the passing grade.
   const seconds = owner.getByRole("main").getByRole("spinbutton").first()

@@ -8,7 +8,6 @@ from generation.main import app
 PUBLIC = {
     # Fixed lists for the public pages.
     "GET /languages",
-    "GET /languages/voice",
     "GET /sizes",
     "GET /health",
     "GET /ready",

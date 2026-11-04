@@ -26,16 +26,13 @@ from companies.repositories import audit, interviews, outbox
 from companies.schemas.interviews import InterviewSettings
 from companies.services import outbox as outbox_service
 from companies.services.interview_access import ready_for_invites
-from companies.services.voice_modes import refuse_unspoken
 
 
 async def update_settings(
     interview: Interview, settings: InterviewSettings, user_id: str, via: str | None
 ) -> None:
     """Saves the settings that were sent, with a line in the log for a changed setting and one
-    for a changed pass mark, and library told of the bank opt-out when it's sent. Voice mode
-    only in VOICE_LANGUAGES (422, voice_unavailable)."""
-    refuse_unspoken(interview, settings.voice)
+    for a changed pass mark, and library told of the bank opt-out when it's sent."""
     sent = settings.model_dump(include=SETTINGS_LOGGED, exclude_none=True)
 
     async with Session.begin() as session:

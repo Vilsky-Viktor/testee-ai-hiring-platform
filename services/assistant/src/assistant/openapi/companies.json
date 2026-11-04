@@ -10785,19 +10785,6 @@
       "title": "Keep Private",
       "default": false
      },
-     "voice_available": {
-      "type": "boolean",
-      "title": "Voice Available",
-      "default": false
-     },
-     "voice_languages": {
-      "items": {
-       "type": "string"
-      },
-      "type": "array",
-      "title": "Voice Languages",
-      "default": []
-     },
      "discover": {
       "type": "boolean",
       "title": "Discover",

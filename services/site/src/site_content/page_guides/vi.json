@@ -168,7 +168,7 @@
     "text": "Cách buổi phỏng vấn này diễn ra với mọi ứng viên.",
     "actions": [
       "Bật liên kết chia sẻ cho tin tuyển dụng: bất kỳ ai có liên kết đều có thể làm bài phỏng vấn.",
-      "Chọn chế độ phỏng vấn: chế độ nhấp, trong đó ứng viên chạm để chọn câu trả lời, hoặc chế độ giọng nói, trong đó Mira, người phỏng vấn AI, đọc to từng câu hỏi và ứng viên trả lời bằng giọng nói hoặc bằng cách chạm. Chế độ giọng nói có sẵn cho các buổi phỏng vấn bằng tiếng Anh, tiếng Tây Ban Nha, tiếng Đức, tiếng Pháp, tiếng Bồ Đào Nha và tiếng Ý.",
+      "Chọn chế độ phỏng vấn: chế độ nhấp, trong đó ứng viên chạm để chọn câu trả lời, hoặc chế độ giọng nói, trong đó Mira, người phỏng vấn AI, đọc to từng câu hỏi và ứng viên trả lời bằng giọng nói hoặc bằng cách chạm. Chế độ giọng nói dùng được ở mọi ngôn ngữ; mức độ đọc và nghe tốt khác nhau tùy ngôn ngữ, và liên kết bên dưới thiết lập này mở hướng dẫn với chất lượng ở từng ngôn ngữ.",
       "Đặt thời gian trung bình mỗi câu hỏi, tính bằng giây: mỗi câu hỏi có thời gian riêng dựa trên độ dài và đoạn mã mà nó hiển thị, còn tổng thời gian của buổi phỏng vấn vẫn giữ nguyên.",
       "Đặt điểm đạt: ứng viên đạt mức này là đậu.",
       "Đánh dấu buổi phỏng vấn là đã tuyển khi bạn đã tuyển được người cho vị trí.",

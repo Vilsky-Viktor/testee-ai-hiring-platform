@@ -1150,12 +1150,11 @@
     "keepPrivate": "Deze vragen buiten de gedeelde vragenbank van testee houden",
     "keepPrivateHelp": "Vragen die al in andere interviews worden hergebruikt, blijven daar",
     "answerMode": "Interviewmodus",
-    "answerModeHelp": "In klikmodus lezen kandidaten elke vraag en tikken ze hun antwoord aan. In spraakmodus leest Mira, een AI-interviewer, elke vraag voor en antwoorden kandidaten met hun stem of door te tikken",
+    "answerModeHelp": "In klikmodus lezen kandidaten elke vraag en tikken ze hun antwoord aan. In spraakmodus leest Mira, een AI-interviewer, elke vraag voor en antwoorden kandidaten met hun stem of door te tikken. <link>Spraakkwaliteit per taal</link>",
     "clickMode": "Klik",
     "clickModeIcon": "Klikmodus: kandidaten tikken hun antwoorden aan",
     "voiceModeIcon": "Spraakmodus: vragen worden voorgelezen en met de stem beantwoord",
     "voiceMode": "Spraak",
-    "voiceModeLanguages": "Beschikbaar voor interviews in het {languages}",
     "tryLabel": "<bdi>{title}</bdi> proberen als kandidaat",
     "tryFailed": "Het voorbeeld kon niet worden gestart. Probeer het opnieuw.",
     "generating": "Wordt gegenereerd…",
@@ -1382,8 +1381,7 @@
     "failed": "Automatisch opwaarderen kon niet worden gewijzigd. Probeer het opnieuw."
   },
   "generateIn": {
-    "label": "Genereren in",
-    "voice": "spraakmodus"
+    "label": "Genereren in"
   },
   "referral": {
     "companyNote": "Jullie krijgen allebei {reward, number} credits wanneer zij voor het eerst opwaarderen, met welk bedrag ook.",
@@ -1504,7 +1502,7 @@
           "text": "Mira, onze AI-interviewer, leest de vragen voor en luistert naar de antwoorden."
         }
       },
-      "voiceLanguages": "Spraakmodus werkt in interviews in het {languages}."
+      "voiceQuality": "Hoe goed Mira voorleest en verstaat, verschilt per taal. <link>Bekijk de kwaliteit per taal</link>."
     },
     "shareReports": {
       "title": "Zie wie de beste is\nDeel het in seconden",
@@ -2900,7 +2898,7 @@
       "saved": "Voortgang wordt onderweg opgeslagen",
       "tap": "Een optie aantikken werkt ook altijd",
       "kept": "De stem wordt alleen omgezet in tekst, nooit bewaard",
-      "voiceLanguages": "In het Engels, Spaans, Duits, Frans, Portugees en Italiaans",
+      "voiceLanguages": "In alle 23 talen, met een kwaliteit die per taal verschilt",
       "contrast": "Kleuren die slecht leesbaar zijn, worden geweigerd",
       "logo": "Je logo op uitnodigingen, in het interview en op pdf-rapporten",
       "sort": "Beste scores bovenaan met één klik",

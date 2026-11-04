@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "تعذّرت قراءة السؤال بصوت عالٍ.",
     "This interview isn't taken by voice.": "لا تُجرى هذه المقابلة بالصوت.",
     "No question is waiting for an answer.": "لا يوجد سؤال بانتظار إجابة.",
-    "Voice mode isn't available in this interview's language.": "وضع الصوت غير متاح بلغة هذه المقابلة.",
     "Look at the example on screen.": "انظر إلى المثال على الشاشة.",
     "Pick multiple options for this question.": "اختر عدة خيارات في هذا السؤال.",
     "{letter}: {text}.": "{letter}: {text}.",

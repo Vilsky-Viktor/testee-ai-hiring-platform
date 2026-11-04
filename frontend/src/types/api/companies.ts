@@ -3606,16 +3606,6 @@ export interface components {
        */
       keep_private: boolean
       /**
-       * Voice Available
-       * @default false
-       */
-      voice_available: boolean
-      /**
-       * Voice Languages
-       * @default []
-       */
-      voice_languages: string[]
-      /**
        * Discover
        * @default false
        */

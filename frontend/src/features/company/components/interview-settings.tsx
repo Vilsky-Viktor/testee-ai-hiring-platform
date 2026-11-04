@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { useLocale, useTranslations } from "next-intl"
+import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
@@ -9,13 +9,15 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import type { InterviewSettingsData } from "@/types/company"
-import { formatLanguages } from "@/lib/format"
 import { LIST_BOX } from "@/config/lists"
 import { CARD_PADDING } from "@/config/cards"
+import { TEXT_LINK } from "@/config/links"
+import { VOICE_GUIDE_PATH } from "@/config/voice"
+import { LocalizedLink } from "@/components/common/localized-link"
 import { AnswerModeSetting } from "@/features/company/components/answer-mode-switch"
 
-/** The interview's settings tab: whether it's taken in click mode or voice mode (voice only in
-the languages the API names), the average time per question (each question gets its own, fitted
+/** The interview's settings tab: whether it's taken in click mode or voice mode (with the guide
+to voice mode's quality in each language), the average time per question (each question gets its own, fitted
 to it by rounds), the pass mark, whether the company hired, and whether its questions stay out of
 testee's shared question bank, one row each in a list like the topics'.
 Every interview is timed, and candidates never see their scores. */
@@ -32,19 +34,17 @@ export function InterviewSettings({
   passMark: number
   hired: boolean
   keepPrivate: boolean
-  // Taken in voice mode (click mode otherwise, the default), whether the interview's language
-  // allows it, and the languages that do.
-  voice: { on: boolean; available: boolean; languages: string[] }
+  // Taken in voice mode (click mode otherwise, the default).
+  voice: boolean
 }) {
   const t = useTranslations("interviews")
-  const locale = useLocale()
   const router = useRouter()
   const [saved, setSaved] = useState<InterviewSettingsData>({
     question_seconds: questionSeconds,
     hired,
     pass_mark: passMark,
     keep_private: keepPrivate,
-    voice: voice.on,
+    voice,
   })
   const [seconds, setSeconds] = useState(String(questionSeconds))
   const [mark, setMark] = useState(String(passMark))
@@ -81,15 +81,15 @@ export function InterviewSettings({
     <div className={LIST_BOX}>
       <AnswerModeSetting
         label={t("answerMode")}
-        help={
-          voice.available
-            ? t("answerModeHelp")
-            : t("voiceModeLanguages", {
-                languages: formatLanguages(voice.languages, locale),
-              })
-        }
+        help={t.rich("answerModeHelp", {
+          link: (chunks) => (
+            <LocalizedLink href={VOICE_GUIDE_PATH} className={TEXT_LINK}>
+              {chunks}
+            </LocalizedLink>
+          ),
+        })}
         voice={saved.voice}
-        disabled={saving || (!voice.available && !saved.voice)}
+        disabled={saving}
         onChange={(on) => save({ voice: on })}
       />
       <NumberSetting

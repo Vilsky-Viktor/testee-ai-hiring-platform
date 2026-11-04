@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Ứng viên có thể trả lời bằng giọng nói không?",
-        "answer": "Có, nếu công ty đặt buổi phỏng vấn ở chế độ giọng nói (bằng tiếng Anh, tiếng Tây Ban Nha, tiếng Đức, tiếng Pháp, tiếng Bồ Đào Nha hoặc tiếng Ý). Câu hỏi được đọc to và ứng viên trả lời thành tiếng; những gì họ nói được chuyển thành văn bản và khớp với một phương án, và không bao giờ được lưu lại. Giọng nói không bị phân tích về ngữ điệu hay cảm xúc, và ứng viên luôn có thể chạm để chọn thay vào đó.",
+        "answer": "Có, nếu công ty đặt buổi phỏng vấn ở chế độ giọng nói, bằng bất kỳ ngôn ngữ nào trong 23 ngôn ngữ của testee; mức độ đọc và nghe tốt khác nhau tùy ngôn ngữ (hướng dẫn \"Phỏng vấn bằng giọng nói trong 23 ngôn ngữ\" cho thấy từng ngôn ngữ). Câu hỏi được đọc to và ứng viên trả lời thành tiếng; những gì họ nói được chuyển thành văn bản và khớp với một phương án, và không bao giờ được lưu lại. Giọng nói không bị phân tích về ngữ điệu hay cảm xúc, và ứng viên luôn có thể chạm để chọn thay vào đó.",
     },
     {
         "key": "cost",

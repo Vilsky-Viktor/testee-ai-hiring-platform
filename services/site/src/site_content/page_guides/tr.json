@@ -168,7 +168,7 @@
     "text": "Bu mülakatın her aday için nasıl işlediği.",
     "actions": [
       "İş ilanı için paylaşılabilir bağlantıyı açın: bağlantıya sahip herkes mülakata girebilir.",
-      "Mülakat modunu seçin: adayların cevaplarına dokunduğu tıklama modu ya da yapay zekâ mülakatçısı Mira'nın her soruyu sesli okuduğu ve adayların sesle veya dokunarak cevap verdiği sesli mod. Sesli mod İngilizce, İspanyolca, Almanca, Fransızca, Portekizce ve İtalyanca mülakatlarda kullanılabilir.",
+      "Mülakat modunu seçin: adayların cevaplarına dokunduğu tıklama modu ya da yapay zekâ mülakatçısı Mira'nın her soruyu sesli okuduğu ve adayların sesle veya dokunarak cevap verdiği sesli mod. Sesli mod her dilde çalışır; ne kadar iyi okuyup duyduğu dile göre değişir ve ayarın altındaki bağlantı, her dildeki kaliteyi gösteren rehberi açar.",
       "Soru başına ortalama süreyi saniye olarak belirleyin: her soru, uzunluğuna ve gösterdiği koda göre kendi süresini alır; mülakatın toplam süresi aynı kalır.",
       "Geçme notunu belirleyin: buna ulaşan adaylar geçer.",
       "Pozisyonu doldurduğunuzda mülakatı işe alındı olarak işaretleyin.",

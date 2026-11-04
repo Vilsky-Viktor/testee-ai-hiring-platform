@@ -168,7 +168,7 @@
     "text": "Como esta entrevista funciona para cada candidato.",
     "actions": [
       "Ative o link compartilhável para um anúncio de vaga: qualquer pessoa com ele pode fazer a entrevista.",
-      "Escolha o modo da entrevista: o modo clique, em que os candidatos tocam nas respostas, ou o modo de voz, em que a Mira, uma entrevistadora de IA, lê cada questão em voz alta e os candidatos respondem por voz ou com um toque. O modo de voz está disponível para entrevistas em inglês, espanhol, alemão, francês, português e italiano.",
+      "Escolha o modo da entrevista: o modo clique, em que os candidatos tocam nas respostas, ou o modo de voz, em que a Mira, uma entrevistadora de IA, lê cada questão em voz alta e os candidatos respondem por voz ou com um toque. O modo de voz funciona em todos os idiomas; o quanto ele lê e entende bem depende do idioma, e o link abaixo da configuração abre o guia com a qualidade em cada um.",
       "Defina o tempo médio por questão, em segundos: cada questão recebe seu próprio tempo de acordo com o tamanho e o código que mostra, e o tempo total da entrevista continua o mesmo.",
       "Defina a nota de aprovação: os candidatos que a atingem são aprovados.",
       "Marque a entrevista como “Contratado” quando preencher a vaga.",

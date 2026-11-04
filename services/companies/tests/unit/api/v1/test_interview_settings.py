@@ -174,33 +174,19 @@ def test_other_settings_send_no_bank_event(client, saved, monkeypatch):
     assert sent == []
 
 
-def test_voice_mode_is_saved_logged_and_shown_in_a_language_that_has_it(client, saved, audited):
+# Voice mode works in every language (Japanese one of those whose quality the voice guide rates).
+@pytest.mark.parametrize("language", ["en", "ja"])
+def test_voice_mode_is_saved_logged_and_shown_in_any_language(client, saved, audited, language):
     url = f"/interviews/{INTERVIEW_ID}/settings"
+    saved.append({"language": language})
     before = client.get(f"/interviews/{INTERVIEW_ID}").json()
 
-    assert (before["voice"], before["voice_available"]) == (False, True)
-    assert before["voice_languages"] == ["en", "es", "de", "fr", "pt", "it"]
+    assert before["voice"] is False
+    assert "voice_available" not in before
     assert client.patch(url, json={"voice": True}).status_code == 204
-    assert saved == [{"voice": True}]
+    assert saved == [{"language": language}, {"voice": True}]
     assert [action for _, _, action, _, _ in audited] == [AuditAction.INTERVIEW_SETTINGS_CHANGED]
     assert client.get(f"/interviews/{INTERVIEW_ID}").json()["voice"] is True
-
-
-def test_voice_mode_is_refused_in_a_language_without_it(client, saved):
-    # The test was written in Japanese, which voice mode doesn't speak.
-    saved.append({"language": "ja"})
-
-    assert client.get(f"/interviews/{INTERVIEW_ID}").json()["voice_available"] is False
-
-    refused = client.patch(f"/interviews/{INTERVIEW_ID}/settings", json={"voice": True})
-
-    assert refused.status_code == 422
-    assert refused.json()["detail"] == "Voice mode isn't available in this interview's language."
-    assert refused.json()["code"] == "voice_unavailable"
-    assert (
-        client.patch(f"/interviews/{INTERVIEW_ID}/settings", json={"voice": False}).status_code
-        == 204
-    )
 
 
 @pytest.mark.parametrize("voice", [True, False])

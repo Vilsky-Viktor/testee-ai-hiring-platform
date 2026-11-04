@@ -2,6 +2,7 @@
 
 import { MicIcon, MousePointerClickIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
+import type { ReactNode } from "react"
 
 import { Button } from "@/components/ui/button"
 import { CARD_PADDING } from "@/config/cards"
@@ -60,7 +61,7 @@ export function AnswerModeSetting({
   ...change
 }: {
   label: string
-  help: string
+  help: ReactNode
   voice: boolean
   disabled: boolean
   onChange: (voice: boolean) => void

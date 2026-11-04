@@ -1,7 +1,7 @@
 import uuid
 
 import pytest
-from testee_common.config.constants import LANGUAGES, VOICE_LANGUAGES
+from testee_common.config.constants import LANGUAGES
 
 from generation.models.generation import Generation
 from generation.repositories import generations
@@ -70,10 +70,3 @@ def test_the_languages_to_generate_in_are_listed(client):
 
     assert languages[0] == "en"
     assert languages == list(LANGUAGES)
-
-
-def test_the_languages_voice_mode_takes_are_listed_among_them(client):
-    voice = client.get("/languages/voice").json()
-
-    assert voice == list(VOICE_LANGUAGES)
-    assert set(voice) <= set(LANGUAGES)

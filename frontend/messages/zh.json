@@ -1150,12 +1150,11 @@
     "keepPrivate": "不将这些题目加入 testee 的共享题库",
     "keepPrivateHelp": "已在其他面试中复用的题目会保留在那里",
     "answerMode": "面试模式",
-    "answerModeHelp": "在点选模式下，候选人阅读每道题并点选答案。在语音模式下，AI 面试官米拉会朗读每道题，候选人可通过语音或点选作答",
+    "answerModeHelp": "在点选模式下，候选人阅读每道题并点选答案。在语音模式下，AI 面试官米拉会朗读每道题，候选人可通过语音或点选作答。<link>各语言的语音效果</link>",
     "clickMode": "点选",
     "clickModeIcon": "点选模式：候选人点选答案",
     "voiceModeIcon": "语音模式：朗读题目，用语音作答",
     "voiceMode": "语音",
-    "voiceModeLanguages": "适用于以下语言的面试：{languages}",
     "tryLabel": "以候选人身份试用 <bdi>{title}</bdi>",
     "tryFailed": "无法开始预览，请重试。",
     "generating": "正在生成…",
@@ -1382,8 +1381,7 @@
     "failed": "无法更改自动充值，请重试。"
   },
   "generateIn": {
-    "label": "生成语言",
-    "voice": "语音模式"
+    "label": "生成语言"
   },
   "referral": {
     "companyNote": "对方首次充值（任意金额）后，你们双方各得 {reward, number} 点数。",
@@ -1504,7 +1502,7 @@
           "text": "我们的 AI 面试官米拉朗读题目并听取回答。"
         }
       },
-      "voiceLanguages": "语音模式适用于以下语言的面试：{languages}。"
+      "voiceQuality": "米拉朗读和识别的效果因语言而异。<link>查看每种语言的效果</link>。"
     },
     "shareReports": {
       "title": "看清谁最优秀\n几秒内即可分享",
@@ -2900,7 +2898,7 @@
       "saved": "作答过程中随时保存进度",
       "tap": "也始终可以点选选项作答",
       "kept": "语音只会转成文字，绝不保留",
-      "voiceLanguages": "支持英语、西班牙语、德语、法语、葡萄牙语和意大利语",
+      "voiceLanguages": "支持全部 23 种语言，效果因语言而异",
       "contrast": "难以阅读的颜色会被拒绝",
       "logo": "邀请、面试和 PDF 报告上都有你的标志",
       "sort": "一键按成绩从高到低排序",

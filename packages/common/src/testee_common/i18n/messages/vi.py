@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "Không thể đọc to câu hỏi.",
     "This interview isn't taken by voice.": "Buổi phỏng vấn này không trả lời bằng giọng nói.",
     "No question is waiting for an answer.": "Không có câu hỏi nào đang chờ trả lời.",
-    "Voice mode isn't available in this interview's language.": "Chế độ giọng nói không khả dụng bằng ngôn ngữ của buổi phỏng vấn này.",
     "Look at the example on screen.": "Hãy xem ví dụ trên màn hình.",
     "Pick multiple options for this question.": "Với câu hỏi này, hãy chọn nhiều phương án.",
     "{letter}: {text}.": "{letter}: {text}.",

@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "Não foi possível ler a pergunta em voz alta.",
     "This interview isn't taken by voice.": "Esta entrevista não é feita por voz.",
     "No question is waiting for an answer.": "Nenhuma pergunta está aguardando resposta.",
-    "Voice mode isn't available in this interview's language.": "O modo de voz não está disponível no idioma desta entrevista.",
     "Look at the example on screen.": "Veja o exemplo na tela.",
     "Pick multiple options for this question.": "Nesta questão, escolha várias opções.",
     "{letter}: {text}.": "{letter}: {text}.",

@@ -1,7 +1,6 @@
 import asyncio
 
 from testee_common.auth.user import User
-from testee_common.config.constants import VOICE_LANGUAGES
 from testee_common.events.analytics import track
 
 from companies.constants.invites import EXTRA_TIME_OPTIONS, InviteStatus
@@ -75,7 +74,7 @@ async def scorecard(
         **row_actions(invite.status),
         extra_time_options=(list(EXTRA_TIME_OPTIONS) if unstarted(invite) and editor else []),
         voice=takes_voice(invite, interview),
-        mode_editable=(editor and unstarted(invite) and interview.language in VOICE_LANGUAGES),
+        mode_editable=editor and unstarted(invite),
         invite_token=open_link_token(invite) if editor else None,
         title=await interview_title(interview),
         company=company.name,

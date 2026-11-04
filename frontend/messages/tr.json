@@ -1150,12 +1150,11 @@
     "keepPrivate": "Bu soruları testee'nin ortak soru bankasının dışında tut",
     "keepPrivateHelp": "Başka mülakatlarda zaten yeniden kullanılan sorular orada kalır",
     "answerMode": "Mülakat modu",
-    "answerModeHelp": "Tıklama modunda adaylar her soruyu okur ve cevaplarına dokunur. Sesli modda yapay zekâ mülakatçısı Mira her soruyu sesli okur, adaylar da sesle veya dokunarak cevap verir",
+    "answerModeHelp": "Tıklama modunda adaylar her soruyu okur ve cevaplarına dokunur. Sesli modda yapay zekâ mülakatçısı Mira her soruyu sesli okur, adaylar da sesle veya dokunarak cevap verir. <link>Dillere göre ses kalitesi</link>",
     "clickMode": "Tıklama",
     "clickModeIcon": "Tıklama modu: adaylar cevaplarına dokunur",
     "voiceModeIcon": "Sesli mod: sorular sesli okunur ve sesle cevaplanır",
     "voiceMode": "Ses",
-    "voiceModeLanguages": "Şu dillerdeki mülakatlarda kullanılabilir: {languages}",
     "tryLabel": "<bdi>{title}</bdi> mülakatını aday olarak dene",
     "tryFailed": "Önizleme başlatılamadı. Lütfen tekrar deneyin.",
     "generating": "Oluşturuluyor…",
@@ -1382,8 +1381,7 @@
     "failed": "Otomatik yükleme değiştirilemedi. Lütfen tekrar deneyin."
   },
   "generateIn": {
-    "label": "Oluşturma dili",
-    "voice": "sesli mod"
+    "label": "Oluşturma dili"
   },
   "referral": {
     "companyNote": "İlk yüklemelerini yaptıklarında, tutar ne olursa olsun, ikiniz de {reward, number} kredi kazanırsınız.",
@@ -1504,7 +1502,7 @@
           "text": "Yapay zekâ mülakatçımız Mira soruları okur ve cevapları dinler."
         }
       },
-      "voiceLanguages": "Sesli mod şu dillerdeki mülakatlarda çalışır: {languages}."
+      "voiceQuality": "Mira'nın ne kadar iyi okuyup duyduğu dile göre değişir. <link>Her dildeki kaliteyi görün</link>."
     },
     "shareReports": {
       "title": "En iyisini görün\nSaniyeler içinde paylaşın",
@@ -2900,7 +2898,7 @@
       "saved": "İlerleme ilerledikçe kaydedilir",
       "tap": "Bir seçeneğe dokunmak da her zaman işe yarar",
       "kept": "Ses yalnızca metne çevrilir, asla saklanmaz",
-      "voiceLanguages": "İngilizce, İspanyolca, Almanca, Fransızca, Portekizce ve İtalyanca",
+      "voiceLanguages": "23 dilin hepsinde, kalitesi dile göre değişir",
       "contrast": "Okunması zor olacak renkler kabul edilmez",
       "logo": "Logonuz davetlerde, mülakatta ve PDF raporlarda",
       "sort": "Tek tıkla en yüksek notlar en üstte",

@@ -282,7 +282,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "Küsimust ei õnnestunud ette lugeda.",
     "This interview isn't taken by voice.": "Seda intervjuud ei tehta häälega.",
     "No question is waiting for an answer.": "Ükski küsimus ei oota vastust.",
-    "Voice mode isn't available in this interview's language.": "Häälerežiim pole selle intervjuu keeles saadaval.",
     "Look at the example on screen.": "Vaata ekraanil olevat näidet.",
     "Pick multiple options for this question.": "Selles küsimuses vali mitu varianti.",
     "{letter}: {text}.": "{letter}: {text}.",

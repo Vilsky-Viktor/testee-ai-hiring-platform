@@ -1150,12 +1150,11 @@
     "keepPrivate": "Huwag isama ang mga tanong na ito sa shared question bank ng testee",
     "keepPrivateHelp": "Mananatili roon ang mga tanong na nagamit na sa ibang interview",
     "answerMode": "Mode ng interview",
-    "answerModeHelp": "Sa click mode, binabasa ng mga aplikante ang bawat tanong at tina-tap ang sagot nila. Sa voice mode, binabasa nang malakas ni Mira, isang AI interviewer, ang bawat tanong at sumasagot ang mga aplikante gamit ang boses o pag-tap",
+    "answerModeHelp": "Sa click mode, binabasa ng mga aplikante ang bawat tanong at tina-tap ang sagot nila. Sa voice mode, binabasa nang malakas ni Mira, isang AI interviewer, ang bawat tanong at sumasagot ang mga aplikante gamit ang boses o pag-tap. <link>Kalidad ng voice mode sa bawat wika</link>",
     "clickMode": "Click",
     "clickModeIcon": "Click mode: tina-tap ng mga aplikante ang sagot nila",
     "voiceModeIcon": "Voice mode: binabasa nang malakas ang mga tanong at sinasagot gamit ang boses",
     "voiceMode": "Voice",
-    "voiceModeLanguages": "Available para sa mga interview sa {languages}",
     "tryLabel": "Subukan ang <bdi>{title}</bdi> bilang aplikante",
     "tryFailed": "Hindi masimulan ang preview. Pakisubukang muli.",
     "generating": "Ginagawa…",
@@ -1382,8 +1381,7 @@
     "failed": "Hindi mabago ang awtomatikong top-up. Pakisubukang muli."
   },
   "generateIn": {
-    "label": "Gawin sa wikang",
-    "voice": "voice mode"
+    "label": "Gawin sa wikang"
   },
   "referral": {
     "companyNote": "Pareho kayong makakakuha ng {reward, number} credits kapag ginawa nila ang kanilang unang top-up, anumang halaga.",
@@ -1504,7 +1502,7 @@
           "text": "Si Mira, ang aming AI interviewer, ang nagbabasa ng mga tanong at nakikinig sa mga sagot."
         }
       },
-      "voiceLanguages": "Gumagana ang voice mode sa mga interview sa {languages}."
+      "voiceQuality": "Nag-iiba-iba sa bawat wika kung gaano kahusay magbasa at makinig si Mira. <link>Tingnan ang kalidad sa bawat isa</link>."
     },
     "shareReports": {
       "title": "Tingnan kung sino ang pinakamagaling\nI-share sa loob ng ilang segundo",
@@ -2900,7 +2898,7 @@
       "saved": "Sine-save ang progreso habang sumasagot",
       "tap": "Gumagana rin palagi ang pag-tap sa isang pagpipilian",
       "kept": "Ginagawa lang na text ang boses, hindi kailanman itinatago",
-      "voiceLanguages": "Sa Ingles, Espanyol, Aleman, Pranses, Portuges at Italyano",
+      "voiceLanguages": "Sa lahat ng 23 wika, na iba-iba ang kalidad bawat wika",
       "contrast": "Tinatanggihan ang mga kulay na mahirap basahin",
       "logo": "Ang logo mo sa mga imbitasyon, sa interview at sa mga PDF report",
       "sort": "Pinakamataas na grade muna sa isang click",

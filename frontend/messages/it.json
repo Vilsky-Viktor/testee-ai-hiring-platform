@@ -1150,12 +1150,11 @@
     "keepPrivate": "Escludi queste domande dalla banca domande condivisa di testee",
     "keepPrivateHelp": "Le domande già riutilizzate in altri colloqui restano lì",
     "answerMode": "Modalità del colloquio",
-    "answerModeHelp": "In modalità clic i candidati leggono ogni domanda e toccano la risposta. In modalità vocale Mira, un'intervistatrice IA, legge ogni domanda ad alta voce e i candidati rispondono a voce o con un tocco",
+    "answerModeHelp": "In modalità clic i candidati leggono ogni domanda e toccano la risposta. In modalità vocale Mira, un'intervistatrice IA, legge ogni domanda ad alta voce e i candidati rispondono a voce o con un tocco. <link>Qualità vocale per lingua</link>",
     "clickMode": "Clic",
     "clickModeIcon": "Modalità clic: i candidati toccano le risposte",
     "voiceModeIcon": "Modalità vocale: le domande vengono lette ad alta voce e si risponde a voce",
     "voiceMode": "Voce",
-    "voiceModeLanguages": "Disponibile per i colloqui in {languages}",
     "tryLabel": "Prova <bdi>{title}</bdi> come candidato",
     "tryFailed": "Impossibile avviare l'anteprima. Riprova.",
     "generating": "In generazione…",
@@ -1382,8 +1381,7 @@
     "failed": "Impossibile modificare la ricarica automatica. Riprova."
   },
   "generateIn": {
-    "label": "Genera in",
-    "voice": "modalità vocale"
+    "label": "Genera in"
   },
   "referral": {
     "companyNote": "Ricevete entrambi {reward, number} crediti quando fa la sua prima ricarica, di qualsiasi importo.",
@@ -1504,7 +1502,7 @@
           "text": "Mira, la nostra intervistatrice IA, legge le domande e ascolta le risposte."
         }
       },
-      "voiceLanguages": "La modalità vocale funziona nei colloqui in {languages}."
+      "voiceQuality": "Quanto bene Mira legge e capisce dipende dalla lingua. <link>Guarda la qualità in ciascuna</link>."
     },
     "shareReports": {
       "title": "Scopri chi è il migliore\nCondividilo in pochi secondi",
@@ -2900,7 +2898,7 @@
       "saved": "I progressi vengono salvati man mano",
       "tap": "Toccare un'opzione funziona sempre",
       "kept": "La voce viene solo trasformata in testo, mai conservata",
-      "voiceLanguages": "In inglese, spagnolo, tedesco, francese, portoghese e italiano",
+      "voiceLanguages": "In tutte le 23 lingue, con una qualità che varia da lingua a lingua",
       "contrast": "I colori difficili da leggere vengono rifiutati",
       "logo": "Il tuo logo su inviti, colloquio e report PDF",
       "sort": "I punteggi migliori in cima con un clic",

@@ -24,27 +24,6 @@ export interface paths {
     patch?: never
     trace?: never
   }
-  "/languages/voice": {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    /**
-     * List Voice Languages
-     * @description The languages voice mode takes interviews in, marked in the "generate in" choice and named
-     *     on the landing page.
-     */
-    get: operations["list_voice_languages_languages_voice_get"]
-    put?: never
-    post?: never
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
   "/sizes": {
     parameters: {
       query?: never
@@ -990,26 +969,6 @@ export interface components {
 export type $defs = Record<string, never>
 export interface operations {
   list_languages_languages_get: {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Successful Response */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": string[]
-        }
-      }
-    }
-  }
-  list_voice_languages_languages_voice_get: {
     parameters: {
       query?: never
       header?: never

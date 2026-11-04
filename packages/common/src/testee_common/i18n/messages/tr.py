@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "Soru sesli okunamadı.",
     "This interview isn't taken by voice.": "Bu mülakat sesle yapılmıyor.",
     "No question is waiting for an answer.": "Cevap bekleyen bir soru yok.",
-    "Voice mode isn't available in this interview's language.": "Sesli mod bu mülakatın dilinde kullanılamıyor.",
     "Look at the example on screen.": "Ekrandaki örneğe bakın.",
     "Pick multiple options for this question.": "Bu soruda birden fazla seçenek seçin.",
     "{letter}: {text}.": "{letter}: {text}.",

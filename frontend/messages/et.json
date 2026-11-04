@@ -1150,12 +1150,11 @@
     "keepPrivate": "Hoia need küsimused testee ühisest küsimustepangast väljas",
     "keepPrivateHelp": "Teistes intervjuudes juba kasutatavad küsimused jäävad sinna",
     "answerMode": "Intervjuu režiim",
-    "answerModeHelp": "Klõpsurežiimis loevad kandidaadid iga küsimuse ise ja puudutavad oma vastust. Häälerežiimis loeb tehisaru intervjueerija Mira iga küsimuse ette ja kandidaadid vastavad hääle või puudutusega",
+    "answerModeHelp": "Klõpsurežiimis loevad kandidaadid iga küsimuse ise ja puudutavad oma vastust. Häälerežiimis loeb tehisaru intervjueerija Mira iga küsimuse ette ja kandidaadid vastavad hääle või puudutusega. <link>Hääle kvaliteet keelte kaupa</link>",
     "clickMode": "Klõps",
     "clickModeIcon": "Klõpsurežiim: kandidaadid puudutavad oma vastuseid",
     "voiceModeIcon": "Häälerežiim: küsimused loetakse ette ja neile vastatakse häälega",
     "voiceMode": "Hääl",
-    "voiceModeLanguages": "Saadaval nendes keeltes intervjuudele: {languages}",
     "tryLabel": "Proovi intervjuud <bdi>{title}</bdi> kandidaadina",
     "tryFailed": "Eelvaadet ei õnnestunud alustada. Proovi uuesti.",
     "generating": "Loomisel…",
@@ -1382,8 +1381,7 @@
     "failed": "Automaatset juurdelaadimist ei õnnestunud muuta. Proovi uuesti."
   },
   "generateIn": {
-    "label": "Loo keeles",
-    "voice": "häälerežiim"
+    "label": "Loo keeles"
   },
   "referral": {
     "companyNote": "Te mõlemad saate {reward, number} krediiti, kui nad teevad esimese juurdelaadimise mis tahes summas.",
@@ -1504,7 +1502,7 @@
           "text": "Mira, meie tehisaru intervjueerija, loeb küsimused ette ja kuulab vastuseid."
         }
       },
-      "voiceLanguages": "Häälerežiim töötab intervjuudes järgmistes keeltes: {languages}."
+      "voiceQuality": "See, kui hästi Mira loeb ja kuuleb, oleneb keelest. <link>Vaata kvaliteeti igas keeles</link>."
     },
     "shareReports": {
       "title": "Vaata, kes on parim\nJaga sekunditega",
@@ -2900,7 +2898,7 @@
       "saved": "Edenemine salvestatakse jooksvalt",
       "tap": "Vastusevarianti saab alati ka puudutada",
       "kept": "Hääl muudetakse ainult tekstiks ja seda ei säilitata kunagi",
-      "voiceLanguages": "Inglise, hispaania, saksa, prantsuse, portugali ja itaalia keeles",
+      "voiceLanguages": "Kõigis 23 keeles, kvaliteet oleneb keelest",
       "contrast": "Raskesti loetavaid värve ei aktsepteerita",
       "logo": "Sinu logo kutsetel, intervjuul ja PDF-raportites",
       "sort": "Parimad hinded eespool ühe klõpsuga",

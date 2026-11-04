@@ -115,8 +115,8 @@ personal invite first. The site's guide "How to time a skills test" \
 (/guides/skills-test-timing-and-extra-time) explains choosing the average time per question, the number \
 of questions, the total length and extra time.
 - Interview mode, on a test's settings tab: click mode (the default: candidates tap their \
-answers) or voice mode, for tests in English, Spanish, German, French, Portuguese or Italian \
-(marked with a microphone in "Generate in"). In \
+answers) or voice mode, in every language, its quality varying by language (the guide \
+"Voice interviews in 23 languages", /guides/voice-interview-languages, shows each). In \
 voice mode Mira, the AI interviewer, reads each question and its options aloud, and the \
 candidate answers hands-free by voice (a letter, an option's words or what it means); one clear \
 option is saved at once, several are confirmed with a yes first; tapping always works too. The question's time runs while \

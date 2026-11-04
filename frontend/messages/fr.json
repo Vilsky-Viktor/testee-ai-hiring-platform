@@ -1150,12 +1150,11 @@
     "keepPrivate": "Garder ces questions hors de la banque de questions partagée de testee",
     "keepPrivateHelp": "Les questions déjà réutilisées dans d'autres entretiens y restent",
     "answerMode": "Mode d'entretien",
-    "answerModeHelp": "En mode clic, les candidats lisent chaque question et touchent leur réponse. En mode vocal, Mira, une recruteuse IA, lit chaque question à voix haute et les candidats répondent à l'oral ou en touchant une réponse",
+    "answerModeHelp": "En mode clic, les candidats lisent chaque question et touchent leur réponse. En mode vocal, Mira, une recruteuse IA, lit chaque question à voix haute et les candidats répondent à l'oral ou en touchant une réponse. <link>Qualité vocale par langue</link>",
     "clickMode": "Clic",
     "clickModeIcon": "Mode clic : les candidats touchent leurs réponses",
     "voiceModeIcon": "Mode vocal : les questions sont lues à voix haute et on y répond à l'oral",
     "voiceMode": "Voix",
-    "voiceModeLanguages": "Disponible pour les entretiens en {languages}",
     "tryLabel": "Essayer <bdi>{title}</bdi> en tant que candidat",
     "tryFailed": "Impossible de démarrer l'aperçu. Veuillez réessayer.",
     "generating": "Génération…",
@@ -1382,8 +1381,7 @@
     "failed": "Impossible de modifier la recharge automatique. Veuillez réessayer."
   },
   "generateIn": {
-    "label": "Générer en",
-    "voice": "mode vocal"
+    "label": "Générer en"
   },
   "referral": {
     "companyNote": "Vous recevez chacun {reward, number} crédits lors de sa première recharge, quel que soit le montant.",
@@ -1504,7 +1502,7 @@
           "text": "Mira, notre recruteuse IA, lit les questions et écoute les réponses."
         }
       },
-      "voiceLanguages": "Le mode vocal fonctionne dans les entretiens en {languages}."
+      "voiceQuality": "La qualité de lecture et d'écoute de Mira varie selon la langue. <link>Voir la qualité dans chacune</link>."
     },
     "shareReports": {
       "title": "Voyez qui est le meilleur\nPartagez-le en quelques secondes",
@@ -2900,7 +2898,7 @@
       "saved": "La progression est enregistrée au fur et à mesure",
       "tap": "Toucher une option fonctionne toujours aussi",
       "kept": "La voix est seulement transcrite en texte, jamais conservée",
-      "voiceLanguages": "En anglais, espagnol, allemand, français, portugais et italien",
+      "voiceLanguages": "Dans les 23 langues, avec une qualité qui varie selon la langue",
       "contrast": "Les couleurs difficiles à lire sont refusées",
       "logo": "Votre logo sur les invitations, l'entretien et les rapports PDF",
       "sort": "Les meilleures notes en premier, en un clic",

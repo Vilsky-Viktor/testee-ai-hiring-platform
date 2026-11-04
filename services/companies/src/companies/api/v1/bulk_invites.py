@@ -19,7 +19,6 @@ from companies.schemas.invites import BulkInviteIn, BulkInviteOut, LineProblemOu
 from companies.services import bulk_invites
 from companies.services import outbox as outbox_service
 from companies.services.interview_access import interview_for, ready_for_invites
-from companies.services.voice_modes import refuse_unspoken
 
 router = APIRouter(prefix="/interviews", tags=["interviews"])
 
@@ -31,7 +30,6 @@ async def invite_many(interview_id: UUID, body: BulkInviteIn, user: CurrentUser)
     says who was invited and why the others weren't. `voice` chooses how they all take it."""
     interview, company, _ = await interview_for(user, interview_id, editor=True)
     interview = await ready_for_invites(interview, user.uid)
-    refuse_unspoken(interview, body.voice)
 
     refusal = list_refusal(body.text, body.filename)
 

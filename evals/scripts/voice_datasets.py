@@ -2,19 +2,15 @@
 voice mode's spoken answers, its readings and the sounds it must ignore. Each says what it is, has
 unique ids and its recordings, and returns the texts to check against prompts' examples."""
 
-import re
 
 from small_datasets import DATASETS, EVALS, check_described, load, unique_ids
 
 # Voice mode's options, by index: four to a question.
 OPTIONS = 4
 INTENTS = {"choose", "confirm", "reject", "unclear"}
-# The languages a test may be taken by voice in, read from the shared constants (this check runs
-# without the package installed).
-CONSTANTS = EVALS.parent / "packages/common/src/testee_common/config/constants.py"
-VOICE_LANGUAGES = set(
-    re.findall(r'"(\w+)"', re.search(r"VOICE_LANGUAGES = \((.*)\)", CONSTANTS.read_text())[1])
-)
+# Voice mode takes every interface language, one messages file each (this check runs without the
+# packages installed).
+VOICE_LANGUAGES = {path.stem for path in (EVALS.parent / "frontend/messages").glob("*.json")}
 
 
 def check_voice(problems: list[str]) -> list[str]:

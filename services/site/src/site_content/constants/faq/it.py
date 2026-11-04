@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "I candidati possono rispondere a voce?",
-        "answer": "Sì, se l'azienda imposta un colloquio in modalità vocale (in inglese, spagnolo, tedesco, francese, portoghese o italiano). Le domande vengono lette ad alta voce e i candidati rispondono a voce; ciò che dicono viene trasformato in testo e abbinato a un'opzione, e non viene mai conservato. Le voci non vengono analizzate per tono o emozioni, e i candidati possono sempre toccare un'opzione.",
+        "answer": "Sì, se l'azienda imposta un colloquio in modalità vocale, in una qualsiasi delle 23 lingue di testee; quanto bene legge e capisce dipende dalla lingua (la guida «Colloqui vocali in 23 lingue» lo mostra per ciascuna). Le domande vengono lette ad alta voce e i candidati rispondono a voce; ciò che dicono viene trasformato in testo e abbinato a un'opzione, e non viene mai conservato. Le voci non vengono analizzate per tono o emozioni, e i candidati possono sempre toccare un'opzione.",
     },
     {
         "key": "cost",

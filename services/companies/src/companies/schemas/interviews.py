@@ -117,9 +117,6 @@ class InterviewDetail(InterviewOut):
     can_edit: bool = False
     # Its questions are kept out of testee's shared question bank (the terms' opt-out).
     keep_private: bool = False
-    # Whether its language allows voice mode (VOICE_LANGUAGES, listed for the setting's note).
-    voice_available: bool = False
-    voice_languages: list[str] = []
     # Whether the company may use the Discover tab: it has topped up at least once.
     discover: bool = False
 

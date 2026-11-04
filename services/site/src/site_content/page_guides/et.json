@@ -168,7 +168,7 @@
     "text": "Kuidas see intervjuu iga kandidaadi jaoks kulgeb.",
     "actions": [
       "Lülita töökuulutuse jaoks sisse jagatav link: igaüks, kellel see on, saab intervjuu teha.",
-      "Vali intervjuu režiim: klõpsurežiim, kus kandidaadid puudutavad oma vastuseid, või häälerežiim, kus tehisaru intervjueerija Mira loeb iga küsimuse ette ja kandidaadid vastavad hääle või puudutusega. Häälerežiim on saadaval inglise, hispaania, saksa, prantsuse, portugali ja itaalia keeles toimuvate intervjuude jaoks.",
+      "Vali intervjuu režiim: klõpsurežiim, kus kandidaadid puudutavad oma vastuseid, või häälerežiim, kus tehisaru intervjueerija Mira loeb iga küsimuse ette ja kandidaadid vastavad hääle või puudutusega. Häälerežiim töötab igas keeles; see, kui hästi see loeb ja kuuleb, oleneb keelest, ning seade all olev link avab juhendi iga keele kvaliteediga.",
       "Määra keskmine aeg küsimuse kohta sekundites: iga küsimus saab oma aja vastavalt pikkusele ja koodile, mida see näitab, ning intervjuu koguaeg jääb samaks.",
       "Määra läbimise lävi: selle saavutanud kandidaadid läbivad intervjuu.",
       "Märgi intervjuu palgatuks, kui oled ametikoha täitnud.",

@@ -182,9 +182,6 @@ LEVELS = ("basic", "medium", "hard")
 # Of those, the ones written right to left.
 RTL_LANGUAGES = {"ar", "he", "fa"}
 DEFAULT_LANGUAGE = "en"
-# The languages a test may be taken by voice in (companies' setting, rounds' speech): those where
-# OpenAI's speech recognition and synthesis are reliable; the rest offer clicks only.
-VOICE_LANGUAGES = ("en", "es", "de", "fr", "pt", "it")
 # The Firebase custom claim that carries the user's language in every ID token.
 LANGUAGE_CLAIM = "language"
 

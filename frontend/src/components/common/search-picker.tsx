@@ -4,7 +4,7 @@ import { Combobox } from "@base-ui/react/combobox"
 import { cn } from "cn"
 import { CheckIcon, ChevronDownIcon, SearchIcon } from "lucide-react"
 
-import { type ReactNode, useId } from "react"
+import { useId } from "react"
 
 import { PILL_FILL } from "@/config/floating-label"
 import { MAX_PICKER_SEARCH_LENGTH } from "@/config/limits"
@@ -13,8 +13,7 @@ import { languageOf } from "@/lib/locale"
 /** A dropdown of choices with a search field above them, matching what each is called
  * (`labelOf`), each in its own language when `langOf` gives one (a language's own name).
  * `compact` is the small trigger that sits next to a text box's send button; `triggerClassName`
- * sizes the trigger to sit beside other controls; `markOf` adds an icon after an item's name
- * (a language voice mode speaks). */
+ * sizes the trigger to sit beside other controls. */
 export function SearchPicker<T extends string>({
   items,
   value,
@@ -28,7 +27,6 @@ export function SearchPicker<T extends string>({
   compact = false,
   triggerClassName,
   valueLabel,
-  markOf,
 }: {
   items: readonly T[]
   value: T
@@ -44,7 +42,6 @@ export function SearchPicker<T extends string>({
   triggerClassName?: string
   // What the trigger shows for the chosen item, when not its label (a currency's code).
   valueLabel?: (item: T) => string
-  markOf?: (item: T) => ReactNode
 }) {
   // Named by its label and the value it shows, so the visible text is in its name (WCAG 2.5.3).
   const labelId = useId()
@@ -108,10 +105,7 @@ export function SearchPicker<T extends string>({
                   value={item}
                   className="flex cursor-default items-center justify-between gap-4 rounded-lg px-3 py-2 text-base outline-none select-none data-highlighted:bg-surface data-highlighted:text-accent-foreground sm:whitespace-nowrap"
                 >
-                  <span className="flex items-center gap-2">
-                    <span {...languageOf(langOf?.(item))}>{labelOf(item)}</span>
-                    {markOf?.(item)}
-                  </span>
+                  <span {...languageOf(langOf?.(item))}>{labelOf(item)}</span>
                   <Combobox.ItemIndicator>
                     <CheckIcon className="size-4" />
                   </Combobox.ItemIndicator>

@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "无法朗读该问题。",
     "This interview isn't taken by voice.": "此面试不通过语音进行。",
     "No question is waiting for an answer.": "没有等待回答的问题。",
-    "Voice mode isn't available in this interview's language.": "此面试的语言不支持语音模式。",
     "Look at the example on screen.": "请看屏幕上的示例。",
     "Pick multiple options for this question.": "这道题请选择多个选项。",
     "{letter}: {text}.": "{letter}：{text}。",

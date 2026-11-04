@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "Pertanyaan tidak dapat dibacakan.",
     "This interview isn't taken by voice.": "Wawancara ini tidak dijawab dengan suara.",
     "No question is waiting for an answer.": "Tidak ada pertanyaan yang menunggu jawaban.",
-    "Voice mode isn't available in this interview's language.": "Mode suara tidak tersedia dalam bahasa wawancara ini.",
     "Look at the example on screen.": "Lihat contoh di layar.",
     "Pick multiple options for this question.": "Untuk soal ini, pilih lebih dari satu jawaban.",
     "{letter}: {text}.": "{letter}: {text}.",

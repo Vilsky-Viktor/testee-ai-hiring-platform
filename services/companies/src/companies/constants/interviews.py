@@ -38,7 +38,6 @@ TOO_MANY_QUESTIONS = "At most {most} questions per candidate; {left} left."
 # Setting the last topic with questions to 0 (a topic at 0 is left out of the interview).
 NO_QUESTIONS_LEFT = "An interview needs at least one topic with questions."
 # Turning voice mode on for an interview in a language speech isn't reliable in.
-VOICE_NOT_IN_LANGUAGE = "Voice mode isn't available in this interview's language."
 # A test's topics with their question counts, from library, kept this long by each companies
 # instance for the test's page: a count that changes (a question revealed in practice is no
 # longer served) shows within it. Candidates starting always read the questions afresh.

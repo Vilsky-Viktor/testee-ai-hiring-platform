@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Czy kandydaci mogą odpowiadać głosem?",
-        "answer": "Tak, jeśli firma ustawi rozmowę w trybie głosowym (po angielsku, hiszpańsku, niemiecku, francusku, portugalsku lub włosku). Pytania są czytane na głos, a kandydaci odpowiadają na głos; to, co mówią, jest zamieniane na tekst i dopasowywane do odpowiedzi i nigdy nie jest zapisywane. Głosy nie są analizowane pod kątem tonu ani emocji, a kandydaci zawsze mogą zamiast tego dotknąć odpowiedzi.",
+        "answer": "Tak, jeśli firma ustawi rozmowę w trybie głosowym, w dowolnym z 23 języków testee; to, jak dobrze Mira czyta i słyszy, zależy od języka (pokazuje to poradnik „Rozmowy głosowe w 23 językach”). Pytania są czytane na głos, a kandydaci odpowiadają na głos; to, co mówią, jest zamieniane na tekst i dopasowywane do odpowiedzi i nigdy nie jest zapisywane. Głosy nie są analizowane pod kątem tonu ani emocji, a kandydaci zawsze mogą zamiast tego dotknąć odpowiedzi.",
     },
     {
         "key": "cost",

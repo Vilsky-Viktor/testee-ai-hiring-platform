@@ -90,3 +90,7 @@ export const FLAT_BAR = 0.06
 export const WAVE_EASE = 0.3
 // How long a context may take to start its sound without a tap before the screen asks for one.
 export const SOUND_WAIT_MS = 300
+
+// The guide to voice mode's quality in each language, linked where voice mode is chosen or
+// described.
+export const VOICE_GUIDE_PATH = "/guides/voice-interview-languages"

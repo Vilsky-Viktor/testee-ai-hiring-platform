@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "질문을 소리 내어 읽지 못했습니다.",
     "This interview isn't taken by voice.": "이 면접은 음성으로 진행되지 않습니다.",
     "No question is waiting for an answer.": "답변을 기다리는 질문이 없습니다.",
-    "Voice mode isn't available in this interview's language.": "이 면접의 언어에서는 음성 모드를 사용할 수 없습니다.",
     "Look at the example on screen.": "화면의 예시를 보세요.",
     "Pick multiple options for this question.": "이 문제에서는 보기를 여러 개 고르세요.",
     "{letter}: {text}.": "{letter}: {text}.",

@@ -1150,12 +1150,11 @@
     "keepPrivate": "Diese Fragen aus dem gemeinsamen Fragenpool von testee heraushalten",
     "keepPrivateHelp": "Fragen, die bereits in anderen Interviews wiederverwendet werden, bleiben dort",
     "answerMode": "Interviewmodus",
-    "answerModeHelp": "Im Klickmodus lesen Kandidaten jede Frage und tippen ihre Antwort an. Im Sprachmodus liest Mira, eine KI-Interviewerin, jede Frage vor, und Kandidaten antworten per Sprache oder durch Antippen",
+    "answerModeHelp": "Im Klickmodus lesen Kandidaten jede Frage und tippen ihre Antwort an. Im Sprachmodus liest Mira, eine KI-Interviewerin, jede Frage vor, und Kandidaten antworten per Sprache oder durch Antippen. <link>Sprachqualität je Sprache</link>",
     "clickMode": "Klick",
     "clickModeIcon": "Klickmodus: Kandidaten tippen ihre Antworten an",
     "voiceModeIcon": "Sprachmodus: Fragen werden vorgelesen und per Sprache beantwortet",
     "voiceMode": "Sprache",
-    "voiceModeLanguages": "Verfügbar für Interviews auf {languages}",
     "tryLabel": "<bdi>{title}</bdi> als Kandidat ausprobieren",
     "tryFailed": "Die Vorschau konnte nicht gestartet werden. Bitte versuche es erneut.",
     "generating": "Wird generiert…",
@@ -1382,8 +1381,7 @@
     "failed": "Das automatische Aufladen konnte nicht geändert werden. Bitte versuche es erneut."
   },
   "generateIn": {
-    "label": "Erstellen auf",
-    "voice": "Sprachmodus"
+    "label": "Erstellen auf"
   },
   "referral": {
     "companyNote": "Ihr bekommt beide {reward, number} Credits, wenn es zum ersten Mal auflädt, egal mit welchem Betrag.",
@@ -1504,7 +1502,7 @@
           "text": "Mira, unsere KI-Interviewerin, liest die Fragen vor und hört die Antworten."
         }
       },
-      "voiceLanguages": "Der Sprachmodus funktioniert in Interviews auf {languages}."
+      "voiceQuality": "Wie gut Mira vorliest und versteht, hängt von der Sprache ab. <link>Qualität in jeder Sprache ansehen</link>."
     },
     "shareReports": {
       "title": "Sieh, wer am besten ist\nTeile es in Sekunden",
@@ -2900,7 +2898,7 @@
       "saved": "Der Fortschritt wird laufend gespeichert",
       "tap": "Eine Option antippen geht immer auch",
       "kept": "Die Stimme wird nur in Text umgewandelt, nie gespeichert",
-      "voiceLanguages": "Auf Englisch, Spanisch, Deutsch, Französisch, Portugiesisch und Italienisch",
+      "voiceLanguages": "In allen 23 Sprachen, mit je nach Sprache unterschiedlicher Qualität",
       "contrast": "Schwer lesbare Farben werden abgelehnt",
       "logo": "Dein Logo auf Einladungen, im Interview und in PDF-Berichten",
       "sort": "Beste Ergebnisse zuerst, mit einem Klick",

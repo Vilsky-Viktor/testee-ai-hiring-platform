@@ -23,11 +23,7 @@ export function InterviewSettingsTab({
         passMark={interview.pass_mark}
         hired={interview.hired}
         keepPrivate={interview.keep_private}
-        voice={{
-          on: interview.voice ?? false,
-          available: interview.voice_available ?? false,
-          languages: interview.voice_languages ?? [],
-        }}
+        voice={interview.voice ?? false}
       />
     </div>
   )

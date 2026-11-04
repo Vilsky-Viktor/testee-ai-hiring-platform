@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "सवाल पढ़कर नहीं सुनाया जा सका।",
     "This interview isn't taken by voice.": "यह इंटरव्यू आवाज़ से नहीं दिया जाता।",
     "No question is waiting for an answer.": "कोई सवाल जवाब का इंतज़ार नहीं कर रहा।",
-    "Voice mode isn't available in this interview's language.": "इस इंटरव्यू की भाषा में वॉइस मोड उपलब्ध नहीं है।",
     "Look at the example on screen.": "स्क्रीन पर दिया गया उदाहरण देखें।",
     "Pick multiple options for this question.": "इस सवाल में एक से ज़्यादा विकल्प चुनें।",
     "{letter}: {text}.": "{letter}: {text}।",

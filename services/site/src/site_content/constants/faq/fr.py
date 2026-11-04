@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Les candidats peuvent-ils répondre à l'oral ?",
-        "answer": "Oui, si l'entreprise passe un entretien en mode vocal (en anglais, espagnol, allemand, français, portugais ou italien). Les questions sont lues à voix haute et les candidats répondent à l'oral ; ce qu'ils disent est transcrit en texte et rapproché d'une réponse, et n'est jamais conservé. Les voix ne sont pas analysées pour le ton ou les émotions, et les candidats peuvent toujours toucher une réponse à la place.",
+        "answer": "Oui, si l'entreprise passe un entretien en mode vocal, dans n'importe laquelle des 23 langues de testee ; la qualité de lecture et d'écoute varie selon la langue (le guide « Le mode vocal en 23 langues » la détaille pour chacune). Les questions sont lues à voix haute et les candidats répondent à l'oral ; ce qu'ils disent est transcrit en texte et rapproché d'une réponse, et n'est jamais conservé. Les voix ne sont pas analysées pour le ton ou les émotions, et les candidats peuvent toujours toucher une réponse à la place.",
     },
     {
         "key": "cost",

@@ -19,7 +19,6 @@ from companies.models.invites import CandidateInvite
 from companies.repositories import audit, invites
 from companies.services import outbox as outbox_service
 from companies.services.candidate_billing import settle_removed
-from companies.services.voice_modes import refuse_unspoken
 
 
 async def remove(
@@ -81,7 +80,6 @@ async def change(
         raise started(fixed)
 
     if "voice" in values:
-        refuse_unspoken(interview, values["voice"])
         values = {**values, "voice": voice_override(values["voice"], interview)}
 
     statuses = (

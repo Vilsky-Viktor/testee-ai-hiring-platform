@@ -85,8 +85,11 @@ def test_only_a_mode_apart_from_the_interviews_is_kept():
     assert voice_override(False, SimpleNamespace(voice=True)) is False
 
 
-def test_a_company_sets_a_candidates_mode_before_they_start(client, candidate, audited):
-    _, invite, saved = candidate
+# Voice mode works in every language (Japanese one of those whose quality the voice guide rates).
+@pytest.mark.parametrize("language", ["en", "ja"])
+def test_a_company_sets_a_candidates_mode_before_they_start(client, candidate, audited, language):
+    interview, invite, saved = candidate
+    interview.language = language
 
     assert client.put(url(invite), json={"voice": True}).status_code == 204
     # Back to the interview's mode: nothing of their own is kept.
@@ -111,22 +114,6 @@ def test_a_candidates_mode_is_fixed_once_they_start(client, candidate):
         "code": "candidate_started",
     }
     assert saved == []
-
-
-def test_voice_is_refused_for_a_candidate_in_a_language_voice_mode_doesnt_speak(client, candidate):
-    interview, invite, saved = candidate
-    interview.language = "ja"
-
-    refused = client.put(url(invite), json={"voice": True})
-
-    assert refused.status_code == 422
-    assert refused.json() == {
-        "detail": "Voice mode isn't available in this interview's language.",
-        "code": "voice_unavailable",
-    }
-    # Click mode is always there.
-    assert client.put(url(invite), json={"voice": False}).status_code == 204
-    assert saved == [{"voice": None}]
 
 
 def test_a_viewer_cant_change_a_candidates_mode(client, candidate):
@@ -167,28 +154,12 @@ def mode_setup(monkeypatch, language):
         ({"voice": False}, (True, None)),
     ],
 )
-def test_an_invite_chooses_how_the_candidate_takes_it(client, monkeypatch, body, mode):
-    _, _, modes = mode_setup(monkeypatch, "en")
+@pytest.mark.parametrize("language", ["en", "ja"])
+def test_an_invite_chooses_how_the_candidate_takes_it(client, monkeypatch, body, mode, language):
+    _, _, modes = mode_setup(monkeypatch, language)
 
     response = client.post(URL, json={"email": "carol@example.com", **body})
     app.dependency_overrides.clear()
 
     assert response.status_code == 201
     assert modes == [mode]
-
-
-@pytest.mark.parametrize("url", [URL, f"{URL}/bulk"])
-def test_voice_is_refused_in_a_language_voice_mode_doesnt_speak(client, monkeypatch, url):
-    sent, used, _ = mode_setup(monkeypatch, "ja")
-    body = {"voice": True, "email": "carol@example.com", "text": "carol@example.com"}
-
-    response = client.post(url, json=body)
-    app.dependency_overrides.clear()
-
-    assert response.status_code == 422
-    assert response.json() == {
-        "detail": "Voice mode isn't available in this interview's language.",
-        "code": "voice_unavailable",
-    }
-    # Refused before any credits are set aside or email is queued.
-    assert (sent, used) == ([], [])

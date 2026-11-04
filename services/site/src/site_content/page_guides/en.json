@@ -168,7 +168,7 @@
     "text": "How this interview runs for every candidate.",
     "actions": [
       "Turn on the shareable link for a job ad: anyone with it can take the interview.",
-      "Choose the interview mode: click mode, where candidates tap their answers, or voice mode, where Mira, an AI interviewer, reads each question aloud and candidates answer by voice or tap. Voice mode is offered for interviews in English, Spanish, German, French, Portuguese and Italian.",
+      "Choose the interview mode: click mode, where candidates tap their answers, or voice mode, where Mira, an AI interviewer, reads each question aloud and candidates answer by voice or tap. Voice mode works in every language; how well it reads and hears varies by language, and the link under the setting opens the guide with the quality in each.",
       "Set the average time per question, in seconds: each question gets its own time from its length and any code it shows, and the interview's total time stays the same.",
       "Set the passing grade: candidates who reach it pass.",
       "Mark the interview as hired once you've filled the role.",

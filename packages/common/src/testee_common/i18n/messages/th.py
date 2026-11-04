@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "อ่านคำถามออกเสียงไม่ได้",
     "This interview isn't taken by voice.": "การสัมภาษณ์นี้ไม่ได้ตอบด้วยเสียง",
     "No question is waiting for an answer.": "ไม่มีคำถามที่รอคำตอบ",
-    "Voice mode isn't available in this interview's language.": "โหมดเสียงไม่พร้อมใช้งานในภาษาของการสัมภาษณ์นี้",
     "Look at the example on screen.": "ดูตัวอย่างบนหน้าจอนะคะ",
     "Pick multiple options for this question.": "ข้อนี้เลือกได้หลายคำตอบค่ะ",
     "{letter}: {text}.": "{letter}: {text}",

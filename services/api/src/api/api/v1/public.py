@@ -113,9 +113,8 @@ async def get_candidate(
             "(`request_in_progress`)"
         ),
         422: refusal(
-            "The body is invalid (`validation_failed`), `return_url` isn't an https address "
-            "(http only on localhost) (`return_url_invalid`), or `mode` is `voice` in a "
-            "language voice mode doesn't support (`voice_unavailable`)"
+            "The body is invalid (`validation_failed`) or `return_url` isn't an https address "
+            "(http only on localhost) (`return_url_invalid`)"
         ),
         429: {
             **refusal("The key reached its email limits or its rate limit (`rate_limited`)"),

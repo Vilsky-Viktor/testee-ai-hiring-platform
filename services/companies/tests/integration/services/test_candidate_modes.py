@@ -14,7 +14,6 @@ from sqlalchemy import select
 from testee_common.auth.user import User
 from testee_common.db.lock_waits import hold_first_commit, race
 from testee_common.events.audit_actions import AuditAction
-from testee_common.i18n.i18n import CodedError
 
 from companies.core.db import Session
 from companies.integrations import library, rounds
@@ -85,22 +84,16 @@ def test_a_candidate_who_started_since_the_page_was_read_keeps_their_mode(run):
     assert AuditAction.CANDIDATE_MODE_SET not in logged
 
 
-def test_voice_is_refused_in_a_language_voice_mode_doesnt_speak(run):
+def test_voice_is_set_in_any_language(run):
     async def scenario():
         company, interview, invite, owner = await a_candidate("ja")
-
-        with pytest.raises(CodedError) as refused:
-            await candidate_changes.change(interview, invite, {"voice": True}, owner)
-
+        await candidate_changes.change(interview, invite, {"voice": True}, owner)
         stored = (await transaction(invites.get, invite.id)).voice
         await factories.deleted(company.id)
 
-        return refused.value, stored
+        return stored
 
-    refused, stored = run(scenario())
-
-    assert (refused.status_code, refused.code) == (422, "voice_unavailable")
-    assert stored is None
+    assert run(scenario()) is True
 
 
 def test_an_invite_sets_the_mode_until_the_candidate_starts(run):

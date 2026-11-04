@@ -207,9 +207,9 @@ def test_the_invite_link_is_there_to_copy_until_the_candidate_finishes(
         # Started: their sessions are made in their mode.
         (InviteStatus.IN_PROCESS, "owner", "en", False),
         (InviteStatus.FINISHED, "owner", "en", False),
-        # A viewer changes nothing; voice mode doesn't speak Arabic.
+        # A viewer changes nothing; voice mode speaks every language, Arabic too.
         (InviteStatus.INVITED, "viewer", "en", False),
-        (InviteStatus.INVITED, "owner", "ar", False),
+        (InviteStatus.INVITED, "owner", "ar", True),
     ],
 )
 def test_a_candidates_mode_can_be_changed_until_they_start(

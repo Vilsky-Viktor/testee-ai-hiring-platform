@@ -1150,12 +1150,11 @@
     "keepPrivate": "Keep these questions out of testee's shared question bank",
     "keepPrivateHelp": "Questions already reused in other interviews stay there",
     "answerMode": "Interview mode",
-    "answerModeHelp": "In click mode candidates read each question and tap their answer. In voice mode Mira, an AI interviewer, reads each question aloud and candidates answer by voice or tap",
+    "answerModeHelp": "In click mode candidates read each question and tap their answer. In voice mode Mira, an AI interviewer, reads each question aloud and candidates answer by voice or tap. <link>Voice quality by language</link>",
     "clickMode": "Click",
     "clickModeIcon": "Click mode: candidates tap their answers",
     "voiceModeIcon": "Voice mode: questions are read aloud and answered by voice",
     "voiceMode": "Voice",
-    "voiceModeLanguages": "Available for interviews in {languages}",
     "tryLabel": "Try <bdi>{title}</bdi> as a candidate",
     "tryFailed": "Couldn't start the preview. Please try again.",
     "generating": "Generating…",
@@ -1382,8 +1381,7 @@
     "failed": "Couldn't change automatic top-up. Please try again."
   },
   "generateIn": {
-    "label": "Generate in",
-    "voice": "voice mode"
+    "label": "Generate in"
   },
   "referral": {
     "companyNote": "You both get {reward, number} credits when they make their first top-up, of any amount.",
@@ -1504,7 +1502,7 @@
           "text": "Mira, our AI interviewer, reads the questions and hears the answers."
         }
       },
-      "voiceLanguages": "Voice mode works in interviews in {languages}."
+      "voiceQuality": "How well Mira reads and hears varies by language. <link>See the quality in each</link>."
     },
     "shareReports": {
       "title": "See who's best\nShare it in seconds",
@@ -2900,7 +2898,7 @@
       "saved": "Progress saved as they go",
       "tap": "Tapping an option always works too",
       "kept": "The voice is only turned into text, never kept",
-      "voiceLanguages": "In English, Spanish, German, French, Portuguese and Italian",
+      "voiceLanguages": "In all 23 languages, with quality that varies by language",
       "contrast": "Colors that would be hard to read are refused",
       "logo": "Your logo on invitations, the interview and PDF reports",
       "sort": "Best grades first in one click",

@@ -168,7 +168,7 @@
     "text": "Jak ta rozmowa przebiega dla każdego kandydata.",
     "actions": [
       "Włącz link do udostępnienia do ogłoszenia o pracę: każdy, kto go ma, może przejść rozmowę.",
-      "Wybierz tryb rozmowy: tryb kliknięć, w którym kandydaci dotykają odpowiedzi, lub tryb głosowy, w którym Mira, rekruterka AI, czyta każde pytanie na głos, a kandydaci odpowiadają głosem lub dotknięciem. Tryb głosowy jest dostępny dla rozmów po angielsku, hiszpańsku, niemiecku, francusku, portugalsku i włosku.",
+      "Wybierz tryb rozmowy: tryb kliknięć, w którym kandydaci dotykają odpowiedzi, lub tryb głosowy, w którym Mira, rekruterka AI, czyta każde pytanie na głos, a kandydaci odpowiadają głosem lub dotknięciem. Tryb głosowy działa w każdym języku; to, jak dobrze czyta i słyszy, zależy od języka, a link pod ustawieniem otwiera poradnik z jakością w każdym z nich.",
       "Ustaw średni czas na pytanie, w sekundach: każde pytanie dostaje własny czas zależnie od długości i kodu, który pokazuje, a łączny czas rozmowy pozostaje taki sam.",
       "Ustaw próg zaliczenia: kandydaci, którzy go osiągną, przechodzą.",
       "Oznacz rozmowę jako zakończoną zatrudnieniem, gdy obsadzisz stanowisko.",

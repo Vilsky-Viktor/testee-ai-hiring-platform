@@ -168,7 +168,7 @@
     "text": "Hoe dit interview verloopt voor elke kandidaat.",
     "actions": [
       "Zet de deelbare link aan voor een vacaturetekst: iedereen met de link kan het interview doen.",
-      "Kies de interviewmodus: klikmodus, waarin kandidaten hun antwoorden aantikken, of spraakmodus, waarin Mira, een AI-interviewer, elke vraag voorleest en kandidaten antwoorden met hun stem of door te tikken. Spraakmodus is beschikbaar voor interviews in het Engels, Spaans, Duits, Frans, Portugees en Italiaans.",
+      "Kies de interviewmodus: klikmodus, waarin kandidaten hun antwoorden aantikken, of spraakmodus, waarin Mira, een AI-interviewer, elke vraag voorleest en kandidaten antwoorden met hun stem of door te tikken. Spraakmodus werkt in elke taal; hoe goed die voorleest en verstaat, verschilt per taal, en de link onder de instelling opent de gids met de kwaliteit per taal.",
       "Stel de gemiddelde tijd per vraag in, in seconden: elke vraag krijgt een eigen tijd op basis van de lengte en de code die ze toont, en de totale tijd van het interview blijft gelijk.",
       "Stel de slaaggrens in: kandidaten die die halen, zijn geslaagd.",
       "Markeer het interview als aangenomen zodra de vacature is vervuld.",

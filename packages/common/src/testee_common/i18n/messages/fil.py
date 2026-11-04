@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "Hindi nabasa nang malakas ang tanong.",
     "This interview isn't taken by voice.": "Hindi sinasagot sa boses ang interview na ito.",
     "No question is waiting for an answer.": "Walang tanong na naghihintay ng sagot.",
-    "Voice mode isn't available in this interview's language.": "Hindi available ang voice mode sa wika ng interview na ito.",
     "Look at the example on screen.": "Tingnan ang halimbawa sa screen.",
     "Pick multiple options for this question.": "Pumili ng higit sa isang opsyon para sa tanong na ito.",
     "{letter}: {text}.": "{letter}: {text}.",

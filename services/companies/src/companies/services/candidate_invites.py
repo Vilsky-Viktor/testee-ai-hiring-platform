@@ -28,7 +28,6 @@ from companies.repositories import audit, companies, invites
 from companies.services import outbox as outbox_service
 from companies.services.candidate_billing import hold_again
 from companies.services.interview_views import interview_title
-from companies.services.voice_modes import refuse_unspoken
 
 
 async def invite(
@@ -52,8 +51,6 @@ async def invite(
     mode doesn't speak is 422."""
     if company.suspended_at is not None:
         raise CodedError(status.HTTP_409_CONFLICT, COMPANY_SUSPENDED, error_codes.COMPANY_SUSPENDED)
-
-    refuse_unspoken(interview, voice)
 
     email = email.lower()
 

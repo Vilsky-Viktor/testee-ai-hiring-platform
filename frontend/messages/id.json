@@ -1150,12 +1150,11 @@
     "keepPrivate": "Jangan masukkan pertanyaan ini ke bank soal bersama testee",
     "keepPrivateHelp": "Pertanyaan yang sudah dipakai ulang di wawancara lain tetap di sana",
     "answerMode": "Mode wawancara",
-    "answerModeHelp": "Dalam mode klik, kandidat membaca setiap soal dan mengetuk jawabannya. Dalam mode suara, Mira, pewawancara AI, membacakan setiap soal dan kandidat menjawab dengan suara atau ketukan",
+    "answerModeHelp": "Dalam mode klik, kandidat membaca setiap soal dan mengetuk jawabannya. Dalam mode suara, Mira, pewawancara AI, membacakan setiap soal dan kandidat menjawab dengan suara atau ketukan. <link>Kualitas mode suara per bahasa</link>",
     "clickMode": "Klik",
     "clickModeIcon": "Mode klik: kandidat mengetuk jawabannya",
     "voiceModeIcon": "Mode suara: soal dibacakan dan dijawab dengan suara",
     "voiceMode": "Suara",
-    "voiceModeLanguages": "Tersedia untuk wawancara dalam {languages}",
     "tryLabel": "Coba <bdi>{title}</bdi> sebagai kandidat",
     "tryFailed": "Pratinjau tidak bisa dimulai. Coba lagi.",
     "generating": "Sedang dibuat…",
@@ -1382,8 +1381,7 @@
     "failed": "Isi ulang otomatis tidak bisa diubah. Coba lagi."
   },
   "generateIn": {
-    "label": "Buat dalam",
-    "voice": "mode suara"
+    "label": "Buat dalam"
   },
   "referral": {
     "companyNote": "Kalian berdua mendapat {reward, number} kredit saat mereka melakukan isi ulang pertama, berapa pun jumlahnya.",
@@ -1504,7 +1502,7 @@
           "text": "Mira, pewawancara AI kami, membacakan soal dan mendengarkan jawabannya."
         }
       },
-      "voiceLanguages": "Mode suara bisa dipakai di wawancara dalam {languages}."
+      "voiceQuality": "Seberapa baik Mira membaca dan mendengar berbeda-beda menurut bahasa. <link>Lihat kualitas di tiap bahasa</link>."
     },
     "shareReports": {
       "title": "Lihat siapa yang terbaik\nBagikan dalam hitungan detik",
@@ -2900,7 +2898,7 @@
       "saved": "Progres tersimpan selama mengerjakan",
       "tap": "Mengetuk pilihan jawaban juga selalu bisa",
       "kept": "Suara hanya diubah menjadi teks, tidak pernah disimpan",
-      "voiceLanguages": "Dalam bahasa Inggris, Spanyol, Jerman, Prancis, Portugis, dan Italia",
+      "voiceLanguages": "Dalam ke-23 bahasa, dengan kualitas yang berbeda-beda per bahasa",
       "contrast": "Warna yang sulit dibaca ditolak",
       "logo": "Logomu di undangan, wawancara, dan laporan PDF",
       "sort": "Nilai terbaik di atas dengan sekali klik",

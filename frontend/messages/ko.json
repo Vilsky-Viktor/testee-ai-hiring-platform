@@ -1150,12 +1150,11 @@
     "keepPrivate": "이 질문들을 testee 공유 문제 은행에서 제외",
     "keepPrivateHelp": "다른 면접에서 이미 재사용된 질문은 그대로 남습니다",
     "answerMode": "면접 모드",
-    "answerModeHelp": "클릭 모드에서는 지원자가 각 문제를 읽고 답을 탭합니다. 음성 모드에서는 AI 면접관 미라가 각 문제를 소리 내어 읽어 주고, 지원자는 음성이나 탭으로 답합니다",
+    "answerModeHelp": "클릭 모드에서는 지원자가 각 문제를 읽고 답을 탭합니다. 음성 모드에서는 AI 면접관 미라가 각 문제를 소리 내어 읽어 주고, 지원자는 음성이나 탭으로 답합니다. <link>언어별 음성 품질</link>",
     "clickMode": "클릭",
     "clickModeIcon": "클릭 모드: 지원자가 답을 탭합니다",
     "voiceModeIcon": "음성 모드: 문제를 소리 내어 읽어 주고 음성으로 답합니다",
     "voiceMode": "음성",
-    "voiceModeLanguages": "{languages} 면접에서 사용할 수 있습니다",
     "tryLabel": "지원자로 <bdi>{title}</bdi> 체험하기",
     "tryFailed": "미리보기를 시작하지 못했습니다. 다시 시도해 주세요.",
     "generating": "생성 중…",
@@ -1382,8 +1381,7 @@
     "failed": "자동 충전을 변경하지 못했습니다. 다시 시도해 주세요."
   },
   "generateIn": {
-    "label": "생성 언어",
-    "voice": "음성 모드"
+    "label": "생성 언어"
   },
   "referral": {
     "companyNote": "상대 회사가 금액에 관계없이 첫 충전을 하면 양쪽 모두 {reward, number} 크레딧을 받습니다.",
@@ -1504,7 +1502,7 @@
           "text": "AI 면접관 미라가 문제를 읽어 주고 답을 들어요."
         }
       },
-      "voiceLanguages": "음성 모드는 다음 언어의 면접에서 사용할 수 있습니다: {languages}."
+      "voiceQuality": "미라가 읽고 알아듣는 수준은 언어마다 다릅니다. <link>언어별 품질 보기</link>."
     },
     "shareReports": {
       "title": "누가 가장 잘했는지 한눈에\n몇 초 만에 공유",
@@ -2900,7 +2898,7 @@
       "saved": "진행 상황은 답하는 대로 저장",
       "tap": "보기를 탭해서 답할 수도 있음",
       "kept": "음성은 텍스트로 바꿀 뿐, 저장하지 않음",
-      "voiceLanguages": "영어, 스페인어, 독일어, 프랑스어, 포르투갈어, 이탈리아어 지원",
+      "voiceLanguages": "23개 언어 모두 지원, 품질은 언어마다 다름",
       "contrast": "읽기 어려운 색상은 설정할 수 없음",
       "logo": "초대, 면접, PDF 보고서에 우리 로고",
       "sort": "클릭 한 번으로 점수 높은 순 정렬",

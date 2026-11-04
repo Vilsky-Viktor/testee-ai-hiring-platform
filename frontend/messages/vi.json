@@ -1150,12 +1150,11 @@
     "keepPrivate": "Không đưa các câu hỏi này vào ngân hàng câu hỏi dùng chung của testee",
     "keepPrivateHelp": "Các câu hỏi đã được dùng lại trong buổi phỏng vấn khác vẫn ở đó",
     "answerMode": "Chế độ phỏng vấn",
-    "answerModeHelp": "Ở chế độ nhấp, ứng viên đọc từng câu hỏi và chạm vào câu trả lời. Ở chế độ giọng nói, Mira, người phỏng vấn AI, đọc to từng câu hỏi và ứng viên trả lời bằng giọng nói hoặc bằng cách chạm",
+    "answerModeHelp": "Ở chế độ nhấp, ứng viên đọc từng câu hỏi và chạm vào câu trả lời. Ở chế độ giọng nói, Mira, người phỏng vấn AI, đọc to từng câu hỏi và ứng viên trả lời bằng giọng nói hoặc bằng cách chạm. <link>Chất lượng giọng nói theo ngôn ngữ</link>",
     "clickMode": "Nhấp",
     "clickModeIcon": "Chế độ nhấp: ứng viên chạm để chọn câu trả lời",
     "voiceModeIcon": "Chế độ giọng nói: câu hỏi được đọc to và trả lời bằng giọng nói",
     "voiceMode": "Giọng nói",
-    "voiceModeLanguages": "Có sẵn cho các buổi phỏng vấn bằng {languages}",
     "tryLabel": "Thử <bdi>{title}</bdi> với vai trò ứng viên",
     "tryFailed": "Không thể bắt đầu bản xem trước. Vui lòng thử lại.",
     "generating": "Đang tạo…",
@@ -1382,8 +1381,7 @@
     "failed": "Không thể thay đổi tự động nạp. Vui lòng thử lại."
   },
   "generateIn": {
-    "label": "Tạo bằng",
-    "voice": "chế độ giọng nói"
+    "label": "Tạo bằng"
   },
   "referral": {
     "companyNote": "Cả hai bên đều nhận {reward, number} credit khi họ nạp credit lần đầu, với bất kỳ số tiền nào.",
@@ -1504,7 +1502,7 @@
           "text": "Mira, người phỏng vấn AI của chúng tôi, đọc câu hỏi và nghe câu trả lời."
         }
       },
-      "voiceLanguages": "Chế độ giọng nói dùng được trong các buổi phỏng vấn bằng {languages}."
+      "voiceQuality": "Mira đọc và nghe tốt đến đâu tùy theo ngôn ngữ. <link>Xem chất lượng ở từng ngôn ngữ</link>."
     },
     "shareReports": {
       "title": "Biết ngay ai giỏi nhất\nChia sẻ trong vài giây",
@@ -2900,7 +2898,7 @@
       "saved": "Tiến độ được lưu trong khi làm",
       "tap": "Chạm vào phương án vẫn luôn dùng được",
       "kept": "Giọng nói chỉ được chuyển thành văn bản, không bao giờ được lưu",
-      "voiceLanguages": "Bằng tiếng Anh, Tây Ban Nha, Đức, Pháp, Bồ Đào Nha và Ý",
+      "voiceLanguages": "Trong cả 23 ngôn ngữ, với chất lượng khác nhau tùy ngôn ngữ",
       "contrast": "Màu khó đọc sẽ bị từ chối",
       "logo": "Logo của bạn trên lời mời, buổi phỏng vấn và báo cáo PDF",
       "sort": "Điểm cao nhất lên đầu chỉ với một cú nhấp",

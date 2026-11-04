@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "Не удалось прочитать вопрос вслух.",
     "This interview isn't taken by voice.": "Это интервью не проходит голосом.",
     "No question is waiting for an answer.": "Нет вопроса, который ждёт ответа.",
-    "Voice mode isn't available in this interview's language.": "Голосовой режим недоступен на языке этого интервью.",
     "Look at the example on screen.": "Посмотрите на пример на экране.",
     "Pick multiple options for this question.": "В этом вопросе выберите несколько вариантов.",
     "{letter}: {text}.": "{letter}: {text}.",

@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Kunnen kandidaten met hun stem antwoorden?",
-        "answer": "Ja, als het bedrijf een interview op spraakmodus zet (in het Engels, Spaans, Duits, Frans, Portugees of Italiaans). De vragen worden voorgelezen en kandidaten antwoorden hardop; wat ze zeggen, wordt omgezet in tekst en gekoppeld aan een optie, en wordt nooit opgeslagen. Stemmen worden niet geanalyseerd op toon of emotie, en kandidaten kunnen altijd in plaats daarvan tikken.",
+        "answer": "Ja, als het bedrijf een interview op spraakmodus zet, in elk van de 23 talen van testee; hoe goed die voorleest en verstaat, verschilt per taal (de gids 'Spraakmodus in 23 talen' laat het per taal zien). De vragen worden voorgelezen en kandidaten antwoorden hardop; wat ze zeggen, wordt omgezet in tekst en gekoppeld aan een optie, en wordt nooit opgeslagen. Stemmen worden niet geanalyseerd op toon of emotie, en kandidaten kunnen altijd in plaats daarvan tikken.",
     },
     {
         "key": "cost",

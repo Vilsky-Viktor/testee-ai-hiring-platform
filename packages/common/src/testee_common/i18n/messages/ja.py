@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "質問を読み上げられませんでした。",
     "This interview isn't taken by voice.": "この面接は音声では受けられません。",
     "No question is waiting for an answer.": "回答を待っている質問はありません。",
-    "Voice mode isn't available in this interview's language.": "この面接の言語では音声モードを利用できません。",
     "Look at the example on screen.": "画面の例をご覧ください。",
     "Pick multiple options for this question.": "この問題では、複数の選択肢を選んでください。",
     "{letter}: {text}.": "{letter}：{text}。",

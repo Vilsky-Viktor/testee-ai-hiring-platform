@@ -168,7 +168,7 @@
     "text": "Le déroulement de cet entretien pour chaque candidat.",
     "actions": [
       "Activez le lien de partage pour une offre d'emploi : toute personne qui l'a peut passer l'entretien.",
-      "Choisissez le mode d'entretien : le mode clic, où les candidats touchent leurs réponses, ou le mode vocal, où Mira, une recruteuse IA, lit chaque question à voix haute et les candidats répondent à l'oral ou en touchant une réponse. Le mode vocal est proposé pour les entretiens en anglais, espagnol, allemand, français, portugais et italien.",
+      "Choisissez le mode d'entretien : le mode clic, où les candidats touchent leurs réponses, ou le mode vocal, où Mira, une recruteuse IA, lit chaque question à voix haute et les candidats répondent à l'oral ou en touchant une réponse. Le mode vocal fonctionne dans toutes les langues ; sa qualité de lecture et d'écoute varie selon la langue, et le lien sous le réglage ouvre le guide qui la détaille pour chacune.",
       "Définissez le temps moyen par question, en secondes : chaque question reçoit son propre temps selon sa longueur et le code qu'elle affiche, et la durée totale de l'entretien reste la même.",
       "Définissez le seuil de réussite : les candidats qui l'atteignent réussissent.",
       "Marquez l'entretien comme recruté une fois le poste pourvu.",

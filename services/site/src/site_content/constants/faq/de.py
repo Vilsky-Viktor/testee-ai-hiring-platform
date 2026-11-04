@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Können Kandidaten per Sprache antworten?",
-        "answer": "Ja, wenn das Unternehmen ein Interview auf den Sprachmodus stellt (auf Englisch, Spanisch, Deutsch, Französisch, Portugiesisch oder Italienisch). Die Fragen werden vorgelesen und Kandidaten antworten laut; was sie sagen, wird in Text umgewandelt und einer Option zugeordnet und nie gespeichert. Stimmen werden nicht auf Tonfall oder Emotionen analysiert, und Kandidaten können jederzeit stattdessen antippen.",
+        "answer": "Ja, wenn das Unternehmen ein Interview auf den Sprachmodus stellt, in jeder der 23 Sprachen von testee; wie gut Mira vorliest und versteht, hängt von der Sprache ab (der Leitfaden „Sprachmodus in 23 Sprachen“ zeigt es für jede). Die Fragen werden vorgelesen und Kandidaten antworten laut; was sie sagen, wird in Text umgewandelt und einer Option zugeordnet und nie gespeichert. Stimmen werden nicht auf Tonfall oder Emotionen analysiert, und Kandidaten können jederzeit stattdessen antippen.",
     },
     {
         "key": "cost",

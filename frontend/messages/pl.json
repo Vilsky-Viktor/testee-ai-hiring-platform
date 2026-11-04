@@ -1150,12 +1150,11 @@
     "keepPrivate": "Nie dodawaj tych pytań do wspólnej bazy pytań testee",
     "keepPrivateHelp": "Pytania już użyte ponownie w innych rozmowach tam pozostaną",
     "answerMode": "Tryb rozmowy",
-    "answerModeHelp": "W trybie kliknięć kandydaci czytają każde pytanie i dotykają odpowiedzi. W trybie głosowym Mira, rekruterka AI, czyta każde pytanie na głos, a kandydaci odpowiadają głosem lub dotknięciem",
+    "answerModeHelp": "W trybie kliknięć kandydaci czytają każde pytanie i dotykają odpowiedzi. W trybie głosowym Mira, rekruterka AI, czyta każde pytanie na głos, a kandydaci odpowiadają głosem lub dotknięciem. <link>Jakość głosu w każdym języku</link>",
     "clickMode": "Kliknięcia",
     "clickModeIcon": "Tryb kliknięć: kandydaci dotykają odpowiedzi",
     "voiceModeIcon": "Tryb głosowy: pytania są czytane na głos, a odpowiedzi udziela się głosem",
     "voiceMode": "Głos",
-    "voiceModeLanguages": "Dostępne w rozmowach w tych językach: {languages}",
     "tryLabel": "Wypróbuj <bdi>{title}</bdi> jako kandydat",
     "tryFailed": "Nie udało się uruchomić podglądu. Spróbuj ponownie.",
     "generating": "Generowanie…",
@@ -1382,8 +1381,7 @@
     "failed": "Nie udało się zmienić automatycznego doładowania. Spróbuj ponownie."
   },
   "generateIn": {
-    "label": "Generuj w języku",
-    "voice": "tryb głosowy"
+    "label": "Generuj w języku"
   },
   "referral": {
     "companyNote": "Oboje dostajecie {reward, number} kredytów, gdy zrobią pierwsze doładowanie, na dowolną kwotę.",
@@ -1504,7 +1502,7 @@
           "text": "Mira, nasza rekruterka AI, czyta pytania i słucha odpowiedzi."
         }
       },
-      "voiceLanguages": "Tryb głosowy działa w rozmowach w językach: {languages}."
+      "voiceQuality": "To, jak dobrze Mira czyta i słyszy, zależy od języka. <link>Zobacz jakość w każdym z nich</link>."
     },
     "shareReports": {
       "title": "Zobacz, kto jest najlepszy\nUdostępnij w kilka sekund",
@@ -2900,7 +2898,7 @@
       "saved": "Postęp zapisuje się na bieżąco",
       "tap": "Dotknięcie odpowiedzi zawsze też działa",
       "kept": "Głos jest tylko zamieniany na tekst, nigdy nie jest przechowywany",
-      "voiceLanguages": "Po angielsku, hiszpańsku, niemiecku, francusku, portugalsku i włosku",
+      "voiceLanguages": "We wszystkich 23 językach, z jakością zależną od języka",
       "contrast": "Kolory trudne do odczytania są odrzucane",
       "logo": "Twoje logo w zaproszeniach, w rozmowie i w raportach PDF",
       "sort": "Najlepsze wyniki na górze jednym kliknięciem",

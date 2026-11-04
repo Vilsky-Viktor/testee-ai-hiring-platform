@@ -1150,12 +1150,11 @@
     "keepPrivate": "Mantener estas preguntas fuera del banco de preguntas compartido de testee",
     "keepPrivateHelp": "Las preguntas que ya se reutilizan en otras entrevistas se quedan allí",
     "answerMode": "Modo de entrevista",
-    "answerModeHelp": "En el modo clic, los candidatos leen cada pregunta y tocan su respuesta. En el modo de voz, Mira, una entrevistadora de IA, lee cada pregunta en voz alta y los candidatos responden con la voz o tocando una opción",
+    "answerModeHelp": "En el modo clic, los candidatos leen cada pregunta y tocan su respuesta. En el modo de voz, Mira, una entrevistadora de IA, lee cada pregunta en voz alta y los candidatos responden con la voz o tocando una opción. <link>Calidad de voz por idioma</link>",
     "clickMode": "Clic",
     "clickModeIcon": "Modo clic: los candidatos tocan sus respuestas",
     "voiceModeIcon": "Modo de voz: las preguntas se leen en voz alta y se responden con la voz",
     "voiceMode": "Voz",
-    "voiceModeLanguages": "Disponible para entrevistas en {languages}",
     "tryLabel": "Probar <bdi>{title}</bdi> como candidato",
     "tryFailed": "No se pudo iniciar la vista previa. Inténtalo de nuevo.",
     "generating": "Generando…",
@@ -1382,8 +1381,7 @@
     "failed": "No se pudo cambiar la recarga automática. Inténtalo de nuevo."
   },
   "generateIn": {
-    "label": "Generar en",
-    "voice": "modo de voz"
+    "label": "Generar en"
   },
   "referral": {
     "companyNote": "Las dos empresas reciben {reward, number} créditos cuando la invitada hace su primera recarga, de cualquier importe.",
@@ -1504,7 +1502,7 @@
           "text": "Mira, nuestra entrevistadora de IA, lee las preguntas y escucha las respuestas."
         }
       },
-      "voiceLanguages": "El modo de voz funciona en entrevistas en {languages}."
+      "voiceQuality": "Lo bien que Mira lee y entiende depende del idioma. <link>Consulta la calidad en cada uno</link>."
     },
     "shareReports": {
       "title": "Mira quién es el mejor\nCompártelo en segundos",
@@ -2900,7 +2898,7 @@
       "saved": "El progreso se guarda sobre la marcha",
       "tap": "Tocar una opción también funciona siempre",
       "kept": "La voz solo se convierte en texto, nunca se guarda",
-      "voiceLanguages": "En inglés, español, alemán, francés, portugués e italiano",
+      "voiceLanguages": "En los 23 idiomas, con una calidad que varía según el idioma",
       "contrast": "Se rechazan los colores difíciles de leer",
       "logo": "Tu logo en las invitaciones, la entrevista y los informes en PDF",
       "sort": "Las mejores notas primero con un clic",

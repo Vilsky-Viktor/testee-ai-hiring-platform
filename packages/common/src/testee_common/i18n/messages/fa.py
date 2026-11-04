@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "خواندن سؤال با صدا ممکن نشد.",
     "This interview isn't taken by voice.": "این مصاحبه با صدا انجام نمی‌شود.",
     "No question is waiting for an answer.": "هیچ سؤالی منتظر پاسخ نیست.",
-    "Voice mode isn't available in this interview's language.": "حالت صوتی به زبان این مصاحبه در دسترس نیست.",
     "Look at the example on screen.": "به مثال روی صفحه نگاه کنید.",
     "Pick multiple options for this question.": "در این پرسش چند گزینه را انتخاب کنید.",
     "{letter}: {text}.": "{letter}: {text}.",

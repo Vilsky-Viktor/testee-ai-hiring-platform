@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "De vraag kon niet worden voorgelezen.",
     "This interview isn't taken by voice.": "Dit interview wordt niet met spraak afgenomen.",
     "No question is waiting for an answer.": "Er wacht geen vraag op een antwoord.",
-    "Voice mode isn't available in this interview's language.": "Spraakmodus is niet beschikbaar in de taal van dit interview.",
     "Look at the example on screen.": "Bekijk het voorbeeld op het scherm.",
     "Pick multiple options for this question.": "Kies bij deze vraag meerdere opties.",
     "{letter}: {text}.": "{letter}: {text}.",

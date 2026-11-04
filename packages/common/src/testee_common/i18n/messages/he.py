@@ -272,7 +272,6 @@ MESSAGES = {
     "Couldn't read the question aloud.": "לא הצלחנו להקריא את השאלה.",
     "This interview isn't taken by voice.": "הריאיון הזה לא מתקיים בקול.",
     "No question is waiting for an answer.": "אין שאלה שממתינה לתשובה.",
-    "Voice mode isn't available in this interview's language.": "מצב קולי לא זמין בשפה של הריאיון הזה.",
     "Look at the example on screen.": "הסתכלו על הדוגמה שעל המסך.",
     "Pick multiple options for this question.": "בשאלה הזו יש לבחור כמה אפשרויות.",
     "{letter}: {text}.": "{letter}: {text}.",
