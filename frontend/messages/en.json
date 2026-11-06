@@ -1316,7 +1316,7 @@
     "voiceDenied": "Microphone blocked. Allow it with the icon beside the address, then try again.",
     "voiceRetry": "Try again",
     "voiceUnsupported": "This browser can't record your voice. Open this page in a current version of Chrome, Edge, Firefox or Safari.",
-    "voice": "Mira, an AI interviewer, reads each question aloud, and its time runs while she reads it. Answer by voice or tap an option. A clear spoken answer to a single-answer question is saved at once and can't be changed. Your voice is only turned into text to read your answer, never kept or analysed.",
+    "voice": "Mira, an AI interviewer, reads each question aloud, and its time runs while she reads it. Answer by voice or tap an option. A clear spoken answer to a single-answer question is saved at once and can't be changed. Your voice is turned into text only to read your answer, and it's never analysed. testee doesn't keep it; OpenAI, which does this for us, may keep it for up to 30 days to check for abuse, unless the law requires longer.",
     "unanswered": "You get one attempt, and unanswered questions count as wrong.",
     "saved": "Progress is saved: use this link again to continue. The interview ends by itself shortly after its whole time has passed since you started.",
     "savedLink": "Progress is saved: we email you a link to continue. The interview ends by itself shortly after its whole time has passed since you started.",
@@ -2976,15 +2976,19 @@
       "contrast": "Colors a company chooses for its interview pages are refused when text on them would be hard to read (below WCAG contrast).",
       "languages": "The site in 23 languages, right to left where the language is written that way.",
       "phones": "Pages fit phone screens and work when you zoom in.",
-      "text": "Interview questions are text with answer options: no audio or video is needed.",
-      "extraTime": "A company can give you extra time on each question. Ask the company for it, or for another accommodation, before you start; you don't have to say why.",
+      "text": "Interview questions are shown as text with answer options, also in voice mode, where you can tap instead of speaking.",
+      "extraTime": "A company can give you extra time on each question. Ask the company for it, or for another accommodation, before you start; you don't have to say why. If you came through a shareable link, ask for a personal invite first: extra time can't be added to a link.",
       "keyboard": "From the keyboard: a \"Skip to content\" link comes first on every page, tabs move with the arrow keys, and screen readers announce a form's errors."
     },
     "limits": {
       "title": "What falls short",
       "timed": "Interview questions are timed, as the company's assessment requires. If you need more time, ask the company for extra time before you start.",
       "audit": "testee hasn't been audited independently yet, so some parts may not meet WCAG 2.2 AA.",
-      "providers": "Paying for credits (Paddle's checkout) and the \"I'm not a robot\" check (Cloudflare Turnstile) are run by those providers, under their own accessibility."
+      "providers": "Paying for credits (Paddle's checkout), the \"I'm not a robot\" check (Cloudflare Turnstile) and the video on the home page (YouTube) are run by those providers, under their own accessibility.",
+      "contrast": "In the light theme, the white text on testee's primary buttons has a contrast of 4.34:1, just under the 4.5:1 that WCAG AA asks for. The dark theme meets it.",
+      "motion": "The home page's moving pictures and a few small animations, such as the pulsing play button, the \"ask Mira\" button and the bell, keep moving with no pause button. Your device's reduce-motion setting stops them.",
+      "contactForm": "The contact form shows each field's name only as a placeholder, which disappears as you type. Screen readers still announce the name.",
+      "voice": "An interview in voice mode needs your microphone and sound allowed before you start, even if you'll tap your answers. If you can't use them, ask the company to set you to answering by tapping."
     },
     "feedback": {
       "title": "Tell us",
@@ -3013,8 +3017,8 @@
       "roles": "testee is the controller of the accounts of the people who use it, and a processor of candidates' data, which belongs to the company that invites them.",
       "noSelling": "We don't sell personal data or share it for advertising. There are no advertising or analytics cookies.",
       "noInference": "testee collects no data about candidates' sex, age, origin or disability, and infers nothing of the kind.",
-      "voice": "In voice mode, a candidate's spoken answer is turned into text and matched to the options, and the option it matched is said back to them and shown on screen; a choice of several options is confirmed first. Their speech isn't recorded or stored, and the voice isn't analysed in any other way.",
-      "ai": "OpenAI, which writes the questions, is told not to store what it receives; it keeps the data at most 30 days, only to check for abuse, and doesn't use it to train its models.",
+      "voice": "In voice mode, a candidate's spoken answer is turned into text and matched to the options, and the option it matched is said back to them and shown on screen; a choice of several options is confirmed first. testee stores no speech, and the voice isn't analysed in any other way. OpenAI, which turns it into text, may keep it for up to 30 days, as below.",
+      "ai": "OpenAI, which writes the questions, is told not to store what it receives where its API offers that choice; it may keep the data for up to 30 days, only to check for abuse unless the law requires longer, and doesn't use it to train its models.",
       "rights": "Anyone can download or delete their own data in Settings, without writing to us."
     },
     "compliance": {
@@ -3023,12 +3027,12 @@
       "humanReview": "testee makes no decision about a candidate: people at the company review the results and decide, and candidates can ask for a person to review their result.",
       "dpa": "The data processing agreement is part of the terms, with nothing to sign. It covers the GDPR, the UK GDPR, and US state privacy laws such as California's, where testee is the company's service provider.",
       "documents": "Companies get <link>instructions for use, a DPIA template and candidate notice templates</link>, with versions for New York City, Illinois and Colorado.",
-      "nyc": "New York City: before using testee for a role there, the employer does what Local Law 144 asks of it: an independent bias audit within the year before use, its summary published, and a notice to candidates at least 10 business days before they are assessed. testee's own independent bias audit is done before <time>{date}</time>, and every year after."
+      "nyc": "New York City: before using testee for a role there, the employer does what Local Law 144 asks of it: an independent bias audit within the year before use, its summary published, and a notice to candidates who live in the city at least 10 business days before they are assessed. testee's own independent bias audit is done before <time>{date}</time>, and every year after."
     },
     "residency": {
       "title": "Where data is stored",
-      "storage": "testee runs on Google Cloud in the EU, in Belgium, where its database is stored. Rate-limit counters are kept at Upstash, also in Belgium, and emails are sent through Resend in Ireland.",
-      "transfers": "Three providers handle data in the United States: Google for sign-in, OpenAI, and Cloudflare for the \"I'm not a robot\" check. These transfers are covered by the EU-US Data Privacy Framework or the European Commission's standard contractual clauses, and for the UK by the UK Extension and the UK International Data Transfer Addendum."
+      "storage": "testee runs on Google Cloud in the EU, in Belgium, where its database is stored. Rate-limit counters are kept at Upstash, also in Belgium. Emails are sent from Ireland through Resend, which stores them in the United States.",
+      "transfers": "Four providers handle data in the United States: Google for sign-in, OpenAI, Resend for emails, and Cloudflare for the \"I'm not a robot\" check. Mail in our Google Workspace inbox may also be stored outside the EU. These transfers are covered by the EU-US Data Privacy Framework or the European Commission's standard contractual clauses, and for the UK by the UK Extension and the UK International Data Transfer Addendum."
     },
     "subprocessors": {
       "title": "Sub-processors",
@@ -3327,7 +3331,7 @@
       "phone": "Works on a phone as well as a computer",
       "saved": "Progress saved as they go",
       "tap": "Tapping an option always works too",
-      "kept": "The voice is only turned into text, never kept",
+      "kept": "testee keeps no voice: it's only turned into text",
       "voiceLanguages": "In all 23 languages, with quality that varies by language",
       "contrast": "Colors that would be hard to read are refused",
       "logo": "Your logo on invitations, the interview and PDF reports",
@@ -3459,7 +3463,7 @@
       },
       "privacy": {
         "title": "Private by design",
-        "text": "No selling of data, nothing inferred about candidates, voice never kept."
+        "text": "No selling of data, nothing inferred about candidates, no voice kept by testee."
       },
       "verified": {
         "title": "Verified companies",
@@ -3475,7 +3479,7 @@
       },
       "expire": {
         "title": "Credits never expire",
-        "text": "Larger top-ups cost less per candidate; unused paid credits are refundable."
+        "text": "Larger top-ups cost less per candidate; unused paid credits are refundable within 14 days."
       },
       "autoTopUp": {
         "title": "Automatic top-up",

@@ -70,4 +70,4 @@ Angka-angka ini adalah gambaran, bukan jaminan. Dua puluh jawaban per bahasa ber
 - Memulai wawancara suara butuh mikrofon yang berfungsi, jadi kandidat yang tidak bisa memakainya perlu mode klik, yang diatur sebelum ia mulai.
 - Kamu bisa mengatur mode untuk seluruh wawancara di pengaturannya dan mengubahnya untuk satu kandidat sebelum ia mulai.
 
-Dalam mode suara, suara kandidat hanya diubah menjadi teks untuk membaca jawaban mereka, tidak pernah dianalisis dengan cara lain apa pun, dan testee tidak pernah menyimpannya. OpenAI, yang mengubah ucapan menjadi teks, diminta untuk tidak menyimpannya dan menyimpan data API paling lama 30 hari, hanya untuk memeriksa penyalahgunaan.
+Dalam mode suara, suara kandidat hanya diubah menjadi teks untuk membaca jawaban mereka, tidak pernah dianalisis dengan cara lain apa pun, dan testee tidak pernah menyimpannya. OpenAI, yang mengubah ucapan menjadi teks, dapat menyimpannya paling lama 30 hari, hanya untuk memeriksa penyalahgunaan kecuali hukum mewajibkan lebih lama.

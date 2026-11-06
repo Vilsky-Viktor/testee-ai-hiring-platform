@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Bisakah kandidat menjawab dengan suara?",
-        "answer": 'Bisa, jika perusahaan mengatur wawancara ke mode suara, dalam bahasa mana pun dari 23 bahasa testee; seberapa baik mode ini membaca dan mendengar berbeda-beda menurut bahasa (panduan "Wawancara suara dalam 23 bahasa" menunjukkan kualitas tiap bahasa). Soal dibacakan dan kandidat menjawab secara lisan; ucapan mereka diubah menjadi teks dan dicocokkan dengan salah satu opsi, dan tidak pernah disimpan. Suara tidak dianalisis untuk nada atau emosi, dan kandidat selalu bisa mengetuk opsi sebagai gantinya.',
+        "answer": 'Bisa, jika perusahaan mengatur wawancara ke mode suara, dalam bahasa mana pun dari 23 bahasa testee; seberapa baik mode ini membaca dan mendengar berbeda-beda menurut bahasa (panduan "Wawancara suara dalam 23 bahasa" menunjukkan kualitas tiap bahasa). Soal dibacakan dan kandidat menjawab secara lisan; ucapan mereka diubah menjadi teks dan dicocokkan dengan salah satu opsi. testee tidak menyimpannya; OpenAI, yang melakukan ini untuk kami, dapat menyimpannya paling lama 30 hari, hanya untuk memeriksa penyalahgunaan kecuali hukum mewajibkan lebih lama. Suara tidak dianalisis untuk nada atau emosi, dan kandidat selalu bisa mengetuk opsi sebagai gantinya.',
     },
     {
         "key": "cost",
@@ -135,12 +135,12 @@ FAQ = [
     {
         "key": "emails",
         "question": "Email apa saja yang dikirim testee, dan bagaimana cara menghentikannya?",
-        "answer": 'Email layanan, seperti undangan, laporan, masalah pembayaran, dan perubahan ketentuan kami, selalu dikirim. Sisanya, seperti ringkasan aktivitas harian, pengingat, dan pembaruan produk, kamu pilih di Pengaturan, bagian Email, atau hentikan dengan tautan "Berhenti berlangganan" di setiap email. Kandidat bisa menghentikan email dari perusahaanmu, atau pengingat sebuah wawancara, lewat tautan di undangan dan pengingat mereka.',
+        "answer": 'Email layanan, seperti undangan, laporan, masalah pembayaran, dan perubahan ketentuan kami, selalu dikirim. Sisanya, seperti ringkasan aktivitas harian, pengingat, dan pembaruan produk, kamu pilih di Pengaturan, bagian Email, atau hentikan dengan tautan "Berhenti berlangganan" di setiap email. Kandidat bisa menghentikan email dari perusahaanmu, atau pengingat sebuah wawancara, lewat tautan di undangan dan pengingat mereka. Berita testee muncul di notifikasimu, ikon lonceng di bagian atas; berita penting juga dikirim lewat email sebagai pembaruan produk, hanya selama pengaturan itu aktif.',
     },
     {
         "key": "delete",
         "question": "Bisakah aku menghapus akunku?",
-        "answer": "Bisa, di Pengaturan. Akun dan datamu dihapus, dan sebelumnya kamu bisa mengunduh salinan datamu. Berita testee muncul di notifikasimu, ikon lonceng di bagian atas; berita penting juga dikirim lewat email sebagai pembaruan produk, hanya selama pengaturan itu aktif.",
+        "answer": "Bisa, di Pengaturan, kecuali jika kamu memiliki perusahaan yang sudah diikuti orang lain: jadikan dulu anggota lain sebagai pemiliknya, atau hapus perusahaan itu. Akun dan datamu dihapus, bersama perusahaan yang hanya beranggotakan kamu dan kreditnya, yang tidak dikembalikan. Sebelumnya kamu bisa mengunduh salinan datamu.",
     },
     {
         "key": "report",

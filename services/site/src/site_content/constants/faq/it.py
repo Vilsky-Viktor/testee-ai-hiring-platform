@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "I candidati possono rispondere a voce?",
-        "answer": "Sì, se l'azienda imposta un colloquio in modalità vocale, in una qualsiasi delle 23 lingue di testee; quanto bene legge e capisce dipende dalla lingua (la guida «Colloqui vocali in 23 lingue» lo mostra per ciascuna). Le domande vengono lette ad alta voce e i candidati rispondono a voce; ciò che dicono viene trasformato in testo e abbinato a un'opzione, e non viene mai conservato. Le voci non vengono analizzate per tono o emozioni, e i candidati possono sempre toccare un'opzione.",
+        "answer": "Sì, se l'azienda imposta un colloquio in modalità vocale, in una qualsiasi delle 23 lingue di testee; quanto bene legge e capisce dipende dalla lingua (la guida «Colloqui vocali in 23 lingue» lo mostra per ciascuna). Le domande vengono lette ad alta voce e i candidati rispondono a voce; ciò che dicono viene trasformato in testo e abbinato a un'opzione. testee non lo conserva; OpenAI, che lo fa per noi, può conservarlo per un massimo di 30 giorni, solo per controllare gli abusi salvo che la legge richieda un periodo più lungo. Le voci non vengono analizzate per tono o emozioni, e i candidati possono sempre toccare un'opzione.",
     },
     {
         "key": "cost",
@@ -135,12 +135,12 @@ FAQ = [
     {
         "key": "emails",
         "question": "Quali email invia testee e come posso interromperle?",
-        "answer": 'Le email di servizio, come inviti, report, problemi di pagamento e modifiche ai nostri termini, vengono sempre inviate. Le altre, come il riepilogo attività giornaliero, i promemoria e le novità sul prodotto, le scegli nelle Impostazioni, alla voce Email, oppure le interrompi con il link "Annulla l\'iscrizione" in ogni email. I candidati possono interrompere le email della tua azienda, o i promemoria di un colloquio, con i link nei loro inviti e promemoria.',
+        "answer": "Le email di servizio, come inviti, report, problemi di pagamento e modifiche ai nostri termini, vengono sempre inviate. Le altre, come il riepilogo attività giornaliero, i promemoria e le novità sul prodotto, le scegli nelle Impostazioni, alla voce Email, oppure le interrompi con il link \"Annulla l'iscrizione\" in ogni email. I candidati possono interrompere le email della tua azienda, o i promemoria di un colloquio, con i link nei loro inviti e promemoria. Le novità di testee compaiono nelle tue notifiche, la campanella in alto; quelle più importanti arrivano anche via email come novità sul prodotto, solo finché quell'impostazione è attiva.",
     },
     {
         "key": "delete",
         "question": "Posso eliminare il mio account?",
-        "answer": "Sì, nelle Impostazioni. Il tuo account e i tuoi dati vengono eliminati, e prima puoi scaricarne una copia. Le novità di testee compaiono nelle tue notifiche, la campanella in alto; quelle più importanti arrivano anche via email come novità sul prodotto, solo finché quell'impostazione è attiva.",
+        "answer": "Sì, nelle Impostazioni, a meno che tu non sia proprietario di un'azienda a cui si sono uniti altri: prima rendi proprietario un altro membro, oppure eliminala. Il tuo account e i tuoi dati vengono eliminati, con le aziende di cui sei l'unico membro e i loro crediti, che non vengono rimborsati. Prima puoi scaricare una copia dei tuoi dati.",
     },
     {
         "key": "report",

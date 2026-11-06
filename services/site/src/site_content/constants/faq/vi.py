@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Ứng viên có thể trả lời bằng giọng nói không?",
-        "answer": 'Có, nếu công ty đặt buổi phỏng vấn ở chế độ giọng nói, bằng bất kỳ ngôn ngữ nào trong 23 ngôn ngữ của testee; mức độ đọc và nghe tốt khác nhau tùy ngôn ngữ (hướng dẫn "Phỏng vấn bằng giọng nói trong 23 ngôn ngữ" cho thấy từng ngôn ngữ). Câu hỏi được đọc to và ứng viên trả lời thành tiếng; những gì họ nói được chuyển thành văn bản và khớp với một phương án, và không bao giờ được lưu lại. Giọng nói không bị phân tích về ngữ điệu hay cảm xúc, và ứng viên luôn có thể chạm để chọn thay vào đó.',
+        "answer": 'Có, nếu công ty đặt buổi phỏng vấn ở chế độ giọng nói, bằng bất kỳ ngôn ngữ nào trong 23 ngôn ngữ của testee; mức độ đọc và nghe tốt khác nhau tùy ngôn ngữ (hướng dẫn "Phỏng vấn bằng giọng nói trong 23 ngôn ngữ" cho thấy từng ngôn ngữ). Câu hỏi được đọc to và ứng viên trả lời thành tiếng; những gì họ nói được chuyển thành văn bản và khớp với một phương án. testee không lưu lại; OpenAI, bên thực hiện việc này cho chúng tôi, có thể lưu giữ tối đa 30 ngày, chỉ để kiểm tra lạm dụng trừ khi pháp luật yêu cầu lâu hơn. Giọng nói không bị phân tích về ngữ điệu hay cảm xúc, và ứng viên luôn có thể chạm để chọn thay vào đó.',
     },
     {
         "key": "cost",
@@ -135,12 +135,12 @@ FAQ = [
     {
         "key": "emails",
         "question": "testee gửi những email nào, và làm sao để dừng nhận?",
-        "answer": 'Email dịch vụ, như lời mời, báo cáo, vấn đề thanh toán và thay đổi điều khoản của chúng tôi, luôn được gửi. Những email còn lại, như tóm tắt hoạt động hằng ngày, lời nhắc và cập nhật sản phẩm, bạn chọn trong Cài đặt, mục Email, hoặc dừng bằng liên kết "Hủy đăng ký" trong mỗi email. Ứng viên có thể dừng nhận email từ công ty bạn, hoặc lời nhắc của một buổi phỏng vấn, bằng các liên kết trong lời mời và lời nhắc của họ.',
+        "answer": 'Email dịch vụ, như lời mời, báo cáo, vấn đề thanh toán và thay đổi điều khoản của chúng tôi, luôn được gửi. Những email còn lại, như tóm tắt hoạt động hằng ngày, lời nhắc và cập nhật sản phẩm, bạn chọn trong Cài đặt, mục Email, hoặc dừng bằng liên kết "Hủy đăng ký" trong mỗi email. Ứng viên có thể dừng nhận email từ công ty bạn, hoặc lời nhắc của một buổi phỏng vấn, bằng các liên kết trong lời mời và lời nhắc của họ. Tin tức của testee hiển thị trong thông báo của bạn, biểu tượng chuông ở trên cùng; tin quan trọng cũng được gửi qua email dưới dạng cập nhật sản phẩm, chỉ khi cài đặt đó đang bật.',
     },
     {
         "key": "delete",
         "question": "Tôi có thể xóa tài khoản không?",
-        "answer": "Có, trong Cài đặt. Tài khoản và dữ liệu của bạn bị xóa, và trước đó bạn có thể tải xuống bản sao dữ liệu. Tin tức của testee hiển thị trong thông báo của bạn, biểu tượng chuông ở trên cùng; tin quan trọng cũng được gửi qua email dưới dạng cập nhật sản phẩm, chỉ khi cài đặt đó đang bật.",
+        "answer": "Có, trong Cài đặt, trừ khi bạn là chủ sở hữu của một công ty có người khác đã tham gia: trước tiên hãy đặt một thành viên khác làm chủ sở hữu, hoặc xóa công ty đó. Tài khoản và dữ liệu của bạn bị xóa, cùng các công ty chỉ có mình bạn là thành viên và credit của các công ty đó, và số credit này không được hoàn lại. Trước đó bạn có thể tải xuống bản sao dữ liệu.",
     },
     {
         "key": "report",

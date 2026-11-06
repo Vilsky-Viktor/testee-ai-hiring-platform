@@ -1316,7 +1316,7 @@
     "voiceDenied": "Mikrofon diblokir. Izinkan lewat ikon di samping alamat, lalu coba lagi.",
     "voiceRetry": "Coba lagi",
     "voiceUnsupported": "Browser ini tidak bisa merekam suaramu. Buka halaman ini di versi terbaru Chrome, Edge, Firefox, atau Safari.",
-    "voice": "Mira, pewawancara AI, membacakan setiap soal, dan waktunya sudah berjalan selama soal dibacakan. Jawab dengan suara atau ketuk salah satu pilihan jawaban. Jawaban lisan yang jelas untuk soal satu jawaban langsung disimpan dan tidak bisa diubah. Suaramu hanya diubah menjadi teks untuk membaca jawabanmu, tidak pernah disimpan atau dianalisis.",
+    "voice": "Mira, pewawancara AI, membacakan setiap soal, dan waktunya sudah berjalan selama soal dibacakan. Jawab dengan suara atau ketuk salah satu pilihan jawaban. Jawaban lisan yang jelas untuk soal satu jawaban langsung disimpan dan tidak bisa diubah. Suaramu hanya diubah menjadi teks untuk membaca jawabanmu, dan tidak pernah dianalisis. testee tidak menyimpannya; OpenAI, yang melakukan ini untuk kami, dapat menyimpannya paling lama 30 hari untuk memeriksa penyalahgunaan, kecuali hukum mewajibkan lebih lama.",
     "unanswered": "Kamu punya satu kesempatan, dan soal yang tidak dijawab dihitung salah.",
     "saved": "Kemajuan disimpan: buka tautan ini lagi untuk melanjutkan. Wawancara berakhir sendiri tak lama setelah seluruh waktunya habis sejak kamu mulai.",
     "savedLink": "Kemajuan disimpan: kami mengirimimu tautan lewat email untuk melanjutkan. Wawancara berakhir sendiri tak lama setelah seluruh waktunya habis sejak kamu mulai.",
@@ -2976,15 +2976,19 @@
       "contrast": "Warna yang dipilih perusahaan untuk halaman wawancaranya ditolak jika teks di atasnya akan sulit dibaca (di bawah kontras WCAG).",
       "languages": "Situs dalam 23 bahasa, dari kanan ke kiri untuk bahasa yang ditulis seperti itu.",
       "phones": "Halaman pas di layar ponsel dan tetap berfungsi saat diperbesar.",
-      "text": "Pertanyaan wawancara berupa teks dengan pilihan jawaban: tidak perlu audio atau video.",
-      "extraTime": "Perusahaan bisa memberimu waktu tambahan di setiap pertanyaan. Mintalah kepada perusahaan, atau minta akomodasi lain, sebelum kamu mulai; kamu tidak perlu menyebutkan alasannya.",
+      "text": "Pertanyaan wawancara ditampilkan sebagai teks dengan pilihan jawaban, juga dalam mode suara, tempat kamu bisa mengetuk alih-alih berbicara.",
+      "extraTime": "Perusahaan bisa memberimu waktu tambahan di setiap pertanyaan. Mintalah kepada perusahaan, atau minta akomodasi lain, sebelum kamu mulai; kamu tidak perlu menyebutkan alasannya. Jika kamu datang lewat tautan berbagi, minta dulu undangan pribadi: waktu tambahan tidak bisa ditambahkan ke tautan.",
       "keyboard": "Dengan keyboard: tautan “Langsung ke konten” muncul pertama di setiap halaman, tab berpindah dengan tombol panah, dan pembaca layar membacakan kesalahan pada formulir."
     },
     "limits": {
       "title": "Yang masih kurang",
       "timed": "Pertanyaan wawancara diberi batas waktu, sesuai kebutuhan penilaian perusahaan. Jika butuh waktu lebih, minta waktu tambahan kepada perusahaan sebelum kamu mulai.",
       "audit": "testee belum diaudit secara independen, jadi beberapa bagian mungkin belum memenuhi WCAG 2.2 AA.",
-      "providers": "Pembayaran kredit (halaman pembayaran Paddle) dan pemeriksaan “Saya bukan robot” (Cloudflare Turnstile) dijalankan oleh penyedia tersebut, dengan aksesibilitas mereka sendiri."
+      "providers": "Pembayaran kredit (halaman pembayaran Paddle), pemeriksaan “Saya bukan robot” (Cloudflare Turnstile), dan video di beranda (YouTube) dijalankan oleh penyedia tersebut, dengan aksesibilitas mereka sendiri.",
+      "contrast": "Di tema terang, teks putih pada tombol utama testee memiliki kontras 4.34:1, sedikit di bawah 4.5:1 yang diminta WCAG AA. Tema gelap memenuhinya.",
+      "motion": "Gambar bergerak di beranda dan beberapa animasi kecil, seperti tombol putar yang berdenyut, tombol “tanya Mira”, dan lonceng, terus bergerak tanpa tombol jeda. Pengaturan pengurangan gerakan di perangkatmu menghentikannya.",
+      "contactForm": "Formulir kontak menampilkan nama setiap kolom hanya sebagai placeholder, yang hilang saat kamu mengetik. Pembaca layar tetap membacakan nama itu.",
+      "voice": "Wawancara dalam mode suara memerlukan izin mikrofon dan suara sebelum kamu mulai, meskipun kamu akan mengetuk jawabanmu. Jika kamu tidak bisa memakainya, minta perusahaan mengatur agar kamu menjawab dengan mengetuk."
     },
     "feedback": {
       "title": "Beri tahu kami",
@@ -3013,8 +3017,8 @@
       "roles": "testee adalah pengendali data untuk akun orang yang menggunakannya, dan pemroses data kandidat, yang menjadi milik perusahaan yang mengundang mereka.",
       "noSelling": "Kami tidak menjual data pribadi atau membagikannya untuk iklan. Tidak ada cookie iklan atau analitik.",
       "noInference": "testee tidak mengumpulkan data tentang jenis kelamin, usia, asal, atau disabilitas kandidat, dan tidak menyimpulkan hal semacam itu.",
-      "voice": "Dalam mode suara, jawaban lisan kandidat diubah menjadi teks dan dicocokkan dengan pilihan yang ada, lalu pilihan yang cocok disebutkan kepadanya dan ditampilkan di layar; jawaban dengan beberapa pilihan dikonfirmasi lebih dulu. Ucapannya tidak direkam atau disimpan, dan suaranya tidak dianalisis dengan cara lain apa pun.",
-      "ai": "OpenAI, yang menulis soal-soalnya, diminta untuk tidak menyimpan apa yang diterimanya; OpenAI menyimpan data paling lama 30 hari, hanya untuk memeriksa penyalahgunaan, dan tidak memakainya untuk melatih modelnya.",
+      "voice": "Dalam mode suara, jawaban lisan kandidat diubah menjadi teks dan dicocokkan dengan pilihan yang ada, lalu pilihan yang cocok disebutkan kepadanya dan ditampilkan di layar; jawaban dengan beberapa pilihan dikonfirmasi lebih dulu. testee tidak menyimpan ucapan, dan suaranya tidak dianalisis dengan cara lain apa pun. OpenAI, yang mengubahnya menjadi teks, dapat menyimpannya paling lama 30 hari, seperti dijelaskan di bawah.",
+      "ai": "OpenAI, yang menulis soal-soalnya, diminta untuk tidak menyimpan apa yang diterimanya jika API-nya menyediakan pilihan itu; OpenAI dapat menyimpan data paling lama 30 hari, hanya untuk memeriksa penyalahgunaan kecuali hukum mewajibkan lebih lama, dan tidak memakainya untuk melatih modelnya.",
       "rights": "Siapa pun bisa mengunduh atau menghapus datanya sendiri di Pengaturan, tanpa perlu menulis kepada kami."
     },
     "compliance": {
@@ -3023,12 +3027,12 @@
       "humanReview": "testee tidak membuat keputusan apa pun tentang kandidat: orang-orang di perusahaan meninjau hasilnya dan memutuskan, dan kandidat bisa meminta seseorang untuk meninjau hasil mereka.",
       "dpa": "Perjanjian pemrosesan data adalah bagian dari ketentuan, tanpa perlu ditandatangani. Perjanjian ini mencakup GDPR, UK GDPR, dan undang-undang privasi negara bagian AS seperti milik California, dengan testee sebagai penyedia layanan (service provider) perusahaan.",
       "documents": "Perusahaan mendapatkan <link>petunjuk penggunaan, templat DPIA, dan templat pemberitahuan kandidat</link>, dengan versi untuk New York City, Illinois, dan Colorado.",
-      "nyc": "New York City: sebelum memakai testee untuk posisi di sana, pemberi kerja memenuhi apa yang diwajibkan Local Law 144: audit bias independen dalam satu tahun sebelum penggunaan, ringkasannya dipublikasikan, dan pemberitahuan kepada kandidat paling lambat 10 hari kerja sebelum mereka dinilai. Audit bias independen milik testee sendiri dilakukan sebelum <time>{date}</time>, lalu setiap tahun setelahnya."
+      "nyc": "New York City: sebelum memakai testee untuk posisi di sana, pemberi kerja memenuhi apa yang diwajibkan Local Law 144: audit bias independen dalam satu tahun sebelum penggunaan, ringkasannya dipublikasikan, dan pemberitahuan kepada kandidat yang tinggal di kota itu paling lambat 10 hari kerja sebelum mereka dinilai. Audit bias independen milik testee sendiri dilakukan sebelum <time>{date}</time>, lalu setiap tahun setelahnya."
     },
     "residency": {
       "title": "Tempat data disimpan",
-      "storage": "testee berjalan di Google Cloud di UE, di Belgia, tempat databasenya disimpan. Penghitung batas penggunaan disimpan di Upstash, juga di Belgia, dan email dikirim melalui Resend di Irlandia.",
-      "transfers": "Tiga penyedia menangani data di Amerika Serikat: Google untuk proses masuk, OpenAI, dan Cloudflare untuk pemeriksaan “Saya bukan robot”. Transfer ini dilindungi oleh EU-US Data Privacy Framework atau klausul kontrak standar Komisi Eropa, dan untuk Inggris oleh UK Extension serta UK International Data Transfer Addendum."
+      "storage": "testee berjalan di Google Cloud di UE, di Belgia, tempat databasenya disimpan. Penghitung batas penggunaan disimpan di Upstash, juga di Belgia. Email dikirim dari Irlandia melalui Resend, yang menyimpannya di Amerika Serikat.",
+      "transfers": "Empat penyedia menangani data di Amerika Serikat: Google untuk proses masuk, OpenAI, Resend untuk email, dan Cloudflare untuk pemeriksaan “Saya bukan robot”. Email di kotak masuk Google Workspace kami juga dapat disimpan di luar UE. Transfer ini dilindungi oleh EU-US Data Privacy Framework atau klausul kontrak standar Komisi Eropa, dan untuk Inggris oleh UK Extension serta UK International Data Transfer Addendum."
     },
     "subprocessors": {
       "title": "Subprosesor",
@@ -3327,7 +3331,7 @@
       "phone": "Bisa di ponsel maupun komputer",
       "saved": "Progres tersimpan selama mengerjakan",
       "tap": "Mengetuk pilihan jawaban juga selalu bisa",
-      "kept": "Suara hanya diubah menjadi teks, tidak pernah disimpan",
+      "kept": "testee tidak menyimpan suara: suara hanya diubah menjadi teks",
       "voiceLanguages": "Dalam ke-23 bahasa, dengan kualitas yang berbeda-beda per bahasa",
       "contrast": "Warna yang sulit dibaca ditolak",
       "logo": "Logomu di undangan, wawancara, dan laporan PDF",
@@ -3459,7 +3463,7 @@
       },
       "privacy": {
         "title": "Privasi sejak rancangan",
-        "text": "Data tidak dijual, tidak ada yang disimpulkan tentang kandidat, suara tidak pernah disimpan."
+        "text": "Data tidak dijual, tidak ada yang disimpulkan tentang kandidat, testee tidak menyimpan suara."
       },
       "verified": {
         "title": "Perusahaan terverifikasi",
@@ -3475,7 +3479,7 @@
       },
       "expire": {
         "title": "Kredit tidak pernah kedaluwarsa",
-        "text": "Isi ulang yang lebih besar lebih murah per kandidat; kredit berbayar yang tidak terpakai bisa di-refund."
+        "text": "Isi ulang yang lebih besar lebih murah per kandidat; kredit berbayar yang tidak terpakai bisa di-refund dalam 14 hari."
       },
       "autoTopUp": {
         "title": "Isi ulang otomatis",

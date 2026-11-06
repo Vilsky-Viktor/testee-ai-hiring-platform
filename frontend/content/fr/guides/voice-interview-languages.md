@@ -70,4 +70,4 @@ Ces chiffres sont indicatifs, pas une garantie. Avec vingt réponses par langue,
 - Démarrer un entretien vocal nécessite un micro en état de marche : un candidat qui ne peut pas en utiliser a donc besoin du mode clic, à activer avant qu'il ne commence.
 - Vous pouvez définir le mode de tout l'entretien dans ses paramètres et le changer pour un candidat avant qu'il ne commence.
 
-En mode vocal, la voix des candidats sert uniquement à transcrire leurs réponses en texte ; elle n'est jamais analysée d'aucune autre manière, et testee ne la conserve jamais. OpenAI, qui transcrit la parole en texte, a pour consigne de ne pas la conserver et garde les données de l'API 30 jours au plus, uniquement pour détecter les abus.
+En mode vocal, la voix des candidats sert uniquement à transcrire leurs réponses en texte ; elle n'est jamais analysée d'aucune autre manière, et testee ne la conserve jamais. OpenAI, qui transcrit la parole en texte, peut la conserver jusqu'à 30 jours, uniquement pour détecter les abus, sauf si la loi exige une durée plus longue.

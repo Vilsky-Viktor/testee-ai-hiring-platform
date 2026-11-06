@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Puwede bang sumagot gamit ang boses ang mga aplikante?",
-        "answer": 'Oo, kung itinakda ng kumpanya ang interview sa voice mode, sa alinman sa 23 wika ng testee; nag-iiba-iba sa bawat wika kung gaano ito kahusay magbasa at makinig (ipinapakita ng gabay na "Voice interview sa 23 wika" ang kalidad sa bawat isa). Binabasa nang malakas ang mga tanong at sumasagot nang pasalita ang mga aplikante; ginagawang text ang sinasabi nila at itinutugma sa isang opsyon, at hindi ito kailanman sine-save. Hindi sinusuri ang boses para sa tono o emosyon, at puwedeng mag-tap na lang palagi ang mga aplikante.',
+        "answer": 'Oo, kung itinakda ng kumpanya ang interview sa voice mode, sa alinman sa 23 wika ng testee; nag-iiba-iba sa bawat wika kung gaano ito kahusay magbasa at makinig (ipinapakita ng gabay na "Voice interview sa 23 wika" ang kalidad sa bawat isa). Binabasa nang malakas ang mga tanong at sumasagot nang pasalita ang mga aplikante; ginagawang text ang sinasabi nila at itinutugma sa isang opsyon. Hindi ito sine-save ng testee; maaari itong itago ng OpenAI, na gumagawa nito para sa amin, nang hanggang 30 araw, para lang suriin kung may pang-aabuso maliban kung mas matagal ang hinihingi ng batas. Hindi sinusuri ang boses para sa tono o emosyon, at puwedeng mag-tap na lang palagi ang mga aplikante.',
     },
     {
         "key": "cost",
@@ -135,12 +135,12 @@ FAQ = [
     {
         "key": "emails",
         "question": "Anong mga email ang ipinapadala ng testee, at paano ko ito ihihinto?",
-        "answer": 'Laging ipinapadala ang mga email ng serbisyo, gaya ng mga imbitasyon, report, problema sa bayad at pagbabago sa aming mga tuntunin. Ang iba, gaya ng araw-araw na buod ng aktibidad, mga paalala at mga update tungkol sa produkto, ay pinipili mo sa Mga setting, sa ilalim ng Mga email, o inihihinto gamit ang link na "Mag-unsubscribe" sa bawat email. Puwedeng ihinto ng mga aplikante ang mga email ng iyong kumpanya, o ang mga paalala ng isang interview, gamit ang mga link sa kanilang mga imbitasyon at paalala.',
+        "answer": 'Laging ipinapadala ang mga email ng serbisyo, gaya ng mga imbitasyon, report, problema sa bayad at pagbabago sa aming mga tuntunin. Ang iba, gaya ng araw-araw na buod ng aktibidad, mga paalala at mga update tungkol sa produkto, ay pinipili mo sa Mga setting, sa ilalim ng Mga email, o inihihinto gamit ang link na "Mag-unsubscribe" sa bawat email. Puwedeng ihinto ng mga aplikante ang mga email ng iyong kumpanya, o ang mga paalala ng isang interview, gamit ang mga link sa kanilang mga imbitasyon at paalala. Lumalabas ang mga balita ng testee sa iyong mga notification, ang kampana sa itaas; ipinapadala rin sa email ang mahahalagang balita bilang update tungkol sa produkto, habang naka-on lang ang setting na iyon.',
     },
     {
         "key": "delete",
         "question": "Puwede ko bang burahin ang account ko?",
-        "answer": "Oo, sa Settings. Buburahin ang account at data mo, at puwede mo munang i-download ang kopya ng data mo. Lumalabas ang mga balita ng testee sa iyong mga notification, ang kampana sa itaas; ipinapadala rin sa email ang mahahalagang balita bilang update tungkol sa produkto, habang naka-on lang ang setting na iyon.",
+        "answer": "Oo, sa Settings, maliban kung ikaw ang may-ari ng kumpanyang may iba nang sumali: gawin munang may-ari nito ang ibang miyembro, o burahin ito. Buburahin ang account at data mo, kasama ang mga kumpanyang ikaw lang ang miyembro at ang credits ng mga ito, na hindi nire-refund. Puwede mo munang i-download ang kopya ng data mo.",
     },
     {
         "key": "report",

@@ -70,4 +70,4 @@ Gabay ang mga numero, hindi garantiya. Dahil dalawampung sagot lang bawat wika, 
 - Kailangan ng gumaganang mikropono para simulan ang voice interview, kaya kailangan ng aplikanteng hindi makakagamit nito ang click mode, na itinatakda bago sila magsimula.
 - Maitatakda mo ang mode para sa buong interview sa settings nito at mapapalitan ito para sa isang aplikante bago siya magsimula.
 
-Sa voice mode, ginagawang text ang boses ng mga aplikante para lang mabasa ang mga sagot nila, hindi ito kailanman sinusuri sa anumang ibang paraan, at hindi ito kailanman iniimbak ng testee. Sinasabihan ang OpenAI, na siyang gumagawa ng text mula sa pananalita, na huwag itong i-save, at itinatago nito ang API data nang hanggang 30 araw, para lang mag-check ng abuse.
+Sa voice mode, ginagawang text ang boses ng mga aplikante para lang mabasa ang mga sagot nila, hindi ito kailanman sinusuri sa anumang ibang paraan, at hindi ito kailanman iniimbak ng testee. Maaari itong itago ng OpenAI, na siyang gumagawa ng text mula sa pananalita, nang hanggang 30 araw, para lang mag-check ng abuse maliban kung mas matagal ang hinihingi ng batas.

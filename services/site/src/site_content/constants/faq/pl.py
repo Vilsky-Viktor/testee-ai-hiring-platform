@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Czy kandydaci mogą odpowiadać głosem?",
-        "answer": "Tak, jeśli firma ustawi rozmowę w trybie głosowym, w dowolnym z 23 języków testee; to, jak dobrze Mira czyta i słyszy, zależy od języka (pokazuje to poradnik „Rozmowy głosowe w 23 językach”). Pytania są czytane na głos, a kandydaci odpowiadają na głos; to, co mówią, jest zamieniane na tekst i dopasowywane do odpowiedzi i nigdy nie jest zapisywane. Głosy nie są analizowane pod kątem tonu ani emocji, a kandydaci zawsze mogą zamiast tego dotknąć odpowiedzi.",
+        "answer": "Tak, jeśli firma ustawi rozmowę w trybie głosowym, w dowolnym z 23 języków testee; to, jak dobrze Mira czyta i słyszy, zależy od języka (pokazuje to poradnik „Rozmowy głosowe w 23 językach”). Pytania są czytane na głos, a kandydaci odpowiadają na głos; to, co mówią, jest zamieniane na tekst i dopasowywane do odpowiedzi. testee tego nie przechowuje; OpenAI, które robi to dla nas, może to przechowywać maksymalnie 30 dni, wyłącznie w celu kontroli nadużyć, chyba że prawo wymaga dłuższego okresu. Głosy nie są analizowane pod kątem tonu ani emocji, a kandydaci zawsze mogą zamiast tego dotknąć odpowiedzi.",
     },
     {
         "key": "cost",
@@ -140,7 +140,7 @@ FAQ = [
     {
         "key": "delete",
         "question": "Czy mogę usunąć konto?",
-        "answer": "Tak, w Ustawieniach. Twoje konto i dane zostają usunięte, a wcześniej możesz pobrać ich kopię.",
+        "answer": "Tak, w Ustawieniach, chyba że jesteś właścicielem firmy, do której dołączyli inni: najpierw przekaż jej własność innemu członkowi albo ją usuń. Twoje konto i dane zostają usunięte wraz z firmami, których jesteś jedynym członkiem, i ich kredytami, które nie podlegają zwrotowi. Wcześniej możesz pobrać kopię swoich danych.",
     },
     {
         "key": "report",

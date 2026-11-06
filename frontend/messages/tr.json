@@ -1316,7 +1316,7 @@
     "voiceDenied": "Mikrofon engellendi. Adresin yanındaki simgeden izin verin, ardından tekrar deneyin.",
     "voiceRetry": "Tekrar dene",
     "voiceUnsupported": "Bu tarayıcı sesinizi kaydedemiyor. Bu sayfayı Chrome, Edge, Firefox veya Safari'nin güncel bir sürümünde açın.",
-    "voice": "Yapay zekâ mülakatçısı Mira her soruyu sesli okur; sorunun süresi o okurken de işler. Sesle cevap verin veya bir seçeneğe dokunun. Tek cevaplı bir soruya verilen net sesli cevap hemen kaydedilir ve değiştirilemez. Sesiniz yalnızca cevabınızı okumak için metne dönüştürülür; asla saklanmaz veya analiz edilmez.",
+    "voice": "Yapay zekâ mülakatçısı Mira her soruyu sesli okur; sorunun süresi o okurken de işler. Sesle cevap verin veya bir seçeneğe dokunun. Tek cevaplı bir soruya verilen net sesli cevap hemen kaydedilir ve değiştirilemez. Sesiniz yalnızca cevabınızı okumak için metne dönüştürülür ve asla analiz edilmez. testee sesinizi saklamaz; bunu bizim için yapan OpenAI, kanun daha uzun bir süre gerektirmedikçe kötüye kullanımı denetlemek için 30 güne kadar saklayabilir.",
     "unanswered": "Tek bir hakkınız var ve cevaplanmayan sorular yanlış sayılır.",
     "saved": "İlerlemeniz kaydedilir: devam etmek için bu bağlantıyı yeniden kullanın. Mülakat, başlamanızdan itibaren tüm süresi dolduktan kısa süre sonra kendiliğinden biter.",
     "savedLink": "İlerlemeniz kaydedilir: devam etmeniz için size e-postayla bir bağlantı göndeririz. Mülakat, başlamanızdan itibaren tüm süresi dolduktan kısa süre sonra kendiliğinden biter.",
@@ -2980,15 +2980,19 @@
       "contrast": "Bir şirketin mülakat sayfaları için seçtiği renkler, üzerlerindeki metin zor okunacaksa (WCAG kontrastının altında) reddedilir.",
       "languages": "Site 23 dilde; sağdan sola yazılan dillerde sağdan sola.",
       "phones": "Sayfalar telefon ekranlarına sığar ve yakınlaştırdığınızda da çalışır.",
-      "text": "Mülakat soruları cevap seçenekleri olan metinlerdir: ses veya video gerekmez.",
-      "extraTime": "Bir şirket size her soru için ek süre verebilir. Başlamadan önce bunu ya da başka bir düzenlemeyi şirketten isteyin; nedenini söylemek zorunda değilsiniz.",
+      "text": "Mülakat soruları cevap seçenekleriyle metin olarak gösterilir; bu, konuşmak yerine dokunabileceğiniz sesli modda da böyledir.",
+      "extraTime": "Bir şirket size her soru için ek süre verebilir. Başlamadan önce bunu ya da başka bir düzenlemeyi şirketten isteyin; nedenini söylemek zorunda değilsiniz. Paylaşılabilir bir bağlantıyla geldiyseniz önce kişisel bir davet isteyin: bağlantıya ek süre eklenemez.",
       "keyboard": "Klavyeyle: her sayfada ilk olarak “İçeriğe geç” bağlantısı gelir, sekmeler arasında ok tuşlarıyla geçilir ve ekran okuyucular formdaki hataları seslendirir."
     },
     "limits": {
       "title": "Eksik kalanlar",
       "timed": "Mülakat soruları, şirketin değerlendirmesinin gerektirdiği gibi sürelidir. Daha fazla süreye ihtiyacınız varsa başlamadan önce şirketten ek süre isteyin.",
       "audit": "testee henüz bağımsız olarak denetlenmedi; bu yüzden bazı bölümler WCAG 2.2 AA'yı karşılamayabilir.",
-      "providers": "Kredi ödemesi (Paddle'ın ödeme sayfası) ve “Ben robot değilim” doğrulaması (Cloudflare Turnstile) bu sağlayıcılar tarafından, kendi erişilebilirlikleriyle yürütülür."
+      "providers": "Kredi ödemesi (Paddle'ın ödeme sayfası), “Ben robot değilim” doğrulaması (Cloudflare Turnstile) ve ana sayfadaki video (YouTube) bu sağlayıcılar tarafından, kendi erişilebilirlikleriyle yürütülür.",
+      "contrast": "Açık temada testee'nin birincil düğmelerindeki beyaz metnin kontrastı 4.34:1'dir; bu, WCAG AA'nın istediği 4.5:1'in biraz altındadır. Koyu tema bu değeri karşılar.",
+      "motion": "Ana sayfadaki hareketli görseller ile titreşen oynatma düğmesi, “Mira'ya sor” düğmesi ve zil gibi birkaç küçük animasyon, duraklatma düğmesi olmadan hareket etmeye devam eder. Cihazınızın hareketi azaltma ayarı bunları durdurur.",
+      "contactForm": "İletişim formu her alanın adını yalnızca yazmaya başlayınca kaybolan bir yer tutucu olarak gösterir. Ekran okuyucular adı yine de seslendirir.",
+      "voice": "Sesli moddaki bir mülakat, cevaplarınıza dokunacak olsanız bile başlamadan önce mikrofonunuza ve sese izin vermenizi gerektirir. Bunları kullanamıyorsanız şirketten sizi dokunarak cevaplamaya almasını isteyin."
     },
     "feedback": {
       "title": "Bize bildirin",
@@ -3017,8 +3021,8 @@
       "roles": "testee, onu kullanan kişilerin hesapları için veri sorumlusu, adayların verileri için ise veri işleyendir; bu veriler adayları davet eden şirkete aittir.",
       "noSelling": "Kişisel verileri satmayız ve reklam için paylaşmayız. Reklam veya analiz çerezleri yoktur.",
       "noInference": "testee adayların cinsiyeti, yaşı, kökeni veya engelliliği hakkında veri toplamaz ve bu türden hiçbir çıkarım yapmaz.",
-      "voice": "Sesli modda adayın sözlü cevabı metne dönüştürülür ve seçeneklerle eşleştirilir; eşleşen seçenek adaya söylenir ve ekranda gösterilir, birden çok seçenekli bir seçim ise önce onaylatılır. Konuşması kaydedilmez veya saklanmaz, ses başka hiçbir şekilde analiz edilmez.",
-      "ai": "Soruları yazan OpenAI'a aldıklarını saklamaması söylenir; verileri yalnızca kötüye kullanımı denetlemek için en fazla 30 gün tutar ve modellerini eğitmek için kullanmaz.",
+      "voice": "Sesli modda adayın sözlü cevabı metne dönüştürülür ve seçeneklerle eşleştirilir; eşleşen seçenek adaya söylenir ve ekranda gösterilir, birden çok seçenekli bir seçim ise önce onaylatılır. testee konuşmayı saklamaz, ses başka hiçbir şekilde analiz edilmez. Konuşmayı metne dönüştüren OpenAI, aşağıda belirtildiği gibi 30 güne kadar saklayabilir.",
+      "ai": "Soruları yazan OpenAI'a, API'si bu seçeneği sunduğu yerlerde aldıklarını saklamaması söylenir; verileri, kanun daha uzun bir süre gerektirmedikçe yalnızca kötüye kullanımı denetlemek için 30 güne kadar tutabilir ve modellerini eğitmek için kullanmaz.",
       "rights": "Herkes, bize yazmadan, Ayarlar'dan kendi verilerini indirebilir veya silebilir."
     },
     "compliance": {
@@ -3027,12 +3031,12 @@
       "humanReview": "testee bir aday hakkında karar vermez: şirketteki kişiler sonuçları inceler ve karar verir, adaylar da sonuçlarının bir insan tarafından incelenmesini isteyebilir.",
       "dpa": "Veri işleme sözleşmesi koşulların bir parçasıdır, imzalanacak bir şey yoktur. GDPR'ı, UK GDPR'ı ve testee'nin şirketin hizmet sağlayıcısı olduğu, Kaliforniya'nınki gibi ABD eyalet gizlilik yasalarını kapsar.",
       "documents": "Şirketler <link>kullanım talimatlarını, bir DPIA şablonunu ve aday bilgilendirme şablonlarını</link> alır; New York City, Illinois ve Colorado için sürümler de vardır.",
-      "nyc": "New York City: işveren, oradaki bir pozisyon için testee'yi kullanmadan önce Local Law 144'ün kendisinden istediklerini yapar: kullanımdan önceki bir yıl içinde bağımsız bir yanlılık denetimi, bu denetimin özetinin yayımlanması ve adaylar değerlendirilmeden en az 10 iş günü önce onlara bildirim. testee'nin kendi bağımsız yanlılık denetimi <time>{date}</time> tarihinden önce yapılır ve sonrasında her yıl tekrarlanır."
+      "nyc": "New York City: işveren, oradaki bir pozisyon için testee'yi kullanmadan önce Local Law 144'ün kendisinden istediklerini yapar: kullanımdan önceki bir yıl içinde bağımsız bir yanlılık denetimi, bu denetimin özetinin yayımlanması ve şehirde yaşayan adaylar değerlendirilmeden en az 10 iş günü önce onlara bildirim. testee'nin kendi bağımsız yanlılık denetimi <time>{date}</time> tarihinden önce yapılır ve sonrasında her yıl tekrarlanır."
     },
     "residency": {
       "title": "Veriler nerede saklanır",
-      "storage": "testee, AB'de, Belçika'da Google Cloud üzerinde çalışır ve veritabanı orada saklanır. Hız sınırı sayaçları yine Belçika'da Upstash'te tutulur, e-postalar ise İrlanda'daki Resend üzerinden gönderilir.",
-      "transfers": "Üç sağlayıcı verileri Amerika Birleşik Devletleri'nde işler: giriş için Google, OpenAI ve “Ben robot değilim” doğrulaması için Cloudflare. Bu aktarımlar AB-ABD Veri Gizliliği Çerçevesi'ne (EU-US Data Privacy Framework) veya Avrupa Komisyonu'nun standart sözleşme hükümlerine, Birleşik Krallık için ise Birleşik Krallık Uzantısı'na (UK Extension) ve Birleşik Krallık Uluslararası Veri Aktarımı Eki'ne (UK International Data Transfer Addendum) dayanır."
+      "storage": "testee, AB'de, Belçika'da Google Cloud üzerinde çalışır ve veritabanı orada saklanır. Hız sınırı sayaçları yine Belçika'da Upstash'te tutulur. E-postalar İrlanda'dan, onları Amerika Birleşik Devletleri'nde saklayan Resend üzerinden gönderilir.",
+      "transfers": "Dört sağlayıcı verileri Amerika Birleşik Devletleri'nde işler: giriş için Google, OpenAI, e-postalar için Resend ve “Ben robot değilim” doğrulaması için Cloudflare. Google Workspace gelen kutumuzdaki postalar da AB dışında saklanabilir. Bu aktarımlar AB-ABD Veri Gizliliği Çerçevesi'ne (EU-US Data Privacy Framework) veya Avrupa Komisyonu'nun standart sözleşme hükümlerine, Birleşik Krallık için ise Birleşik Krallık Uzantısı'na (UK Extension) ve Birleşik Krallık Uluslararası Veri Aktarımı Eki'ne (UK International Data Transfer Addendum) dayanır."
     },
     "subprocessors": {
       "title": "Alt veri işleyenler",
@@ -3331,7 +3335,7 @@
       "phone": "Bilgisayarda olduğu kadar telefonda da çalışır",
       "saved": "İlerleme ilerledikçe kaydedilir",
       "tap": "Bir seçeneğe dokunmak da her zaman işe yarar",
-      "kept": "Ses yalnızca metne çevrilir, asla saklanmaz",
+      "kept": "testee ses saklamaz: ses yalnızca metne çevrilir",
       "voiceLanguages": "23 dilin hepsinde, kalitesi dile göre değişir",
       "contrast": "Okunması zor olacak renkler kabul edilmez",
       "logo": "Logonuz davetlerde, mülakatta ve PDF raporlarda",
@@ -3463,7 +3467,7 @@
       },
       "privacy": {
         "title": "Tasarımdan gizlilik",
-        "text": "Veri satışı yok, adaylar hakkında çıkarım yok, ses asla saklanmaz."
+        "text": "Veri satışı yok, adaylar hakkında çıkarım yok, testee ses saklamaz."
       },
       "verified": {
         "title": "Doğrulanmış şirketler",
@@ -3479,7 +3483,7 @@
       },
       "expire": {
         "title": "Krediler hiç sona ermez",
-        "text": "Daha büyük yüklemelerde aday başına fiyat düşer; kullanılmayan ücretli krediler iade edilebilir."
+        "text": "Daha büyük yüklemelerde aday başına fiyat düşer; kullanılmayan ücretli krediler 14 gün içinde iade edilebilir."
       },
       "autoTopUp": {
         "title": "Otomatik yükleme",

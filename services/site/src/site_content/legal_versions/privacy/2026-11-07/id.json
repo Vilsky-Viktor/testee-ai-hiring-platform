@@ -1,0 +1,189 @@
+{
+  "intro": "Kebijakan ini menjelaskan data pribadi apa yang dikumpulkan testee, untuk apa, berapa lama kami menyimpannya, dan hak-hak yang kamu miliki. testee dijalankan oleh Arcolabs OÜ (kode registrasi 17587452), Sepapaja tn 6, 15551 Tallinn, Harju maakond, Estonia. testee.ai juga menampilkan dokumen ini dalam bahasa lain; hanya versi bahasa Inggris ini yang mengikat, dan jika suatu terjemahan berbeda, yang berlaku adalah versi bahasa Inggris.",
+  "sections": [
+    {
+      "heading": "Siapa yang bertanggung jawab",
+      "paragraphs": [
+        "Untuk akunmu sendiri dan akun perusahaanmu, Arcolabs OÜ adalah pengendali datamu. Tulis ke hello@testee.ai untuk pertanyaan atau permintaan apa pun.",
+        "Saat sebuah perusahaan mengundangmu ke wawancara di testee, perusahaan itu menentukan untuk apa dan bagaimana hasilmu digunakan dan merupakan pengendali hasil tersebut; kami memprosesnya atas nama perusahaan itu. Kamu bisa menghubungi perusahaan itu secara langsung, atau kami, dan kami akan meneruskan permintaanmu."
+      ]
+    },
+    {
+      "heading": "Apa yang kami kumpulkan",
+      "items": [
+        "Akun: nama, alamat email, foto profil, dan ID akunmu, dari akun Google, LinkedIn, atau GitHub yang kamu gunakan untuk masuk, serta akun mana saja di antaranya yang terhubung ke akunmu.",
+        "Yang kamu berikan kepada kami: deskripsi pekerjaan yang kamu tempel dan wawancara yang dibuat darinya, catatan yang kamu tulis di wawancara sebuah perusahaan, email kandidat yang kamu undang (dan nama mereka, jika kamu memberikan atau mengoreksinya), email orang yang kamu undang ke tim perusahaanmu, dan email orang yang kamu kirimi laporan, serta penilaian dan laporanmu tentang soal.",
+        "Asisten: saat kamu masuk, apa yang kamu tulis atau ucapkan kepadanya (pesan suara diubah menjadi teks, dan testee tidak menyimpannya) dan jawabannya, agar kamu bisa kembali ke percakapan. Asisten tidak menyimpan apa yang dibacanya untuk menjawabmu, seperti hasil kandidat, kecuali dalam catatan panggilan AI di bawah: saat kamu membuka percakapan lagi, asisten mengambilnya kembali dengan hak aksesmu saat itu. Jika kamu tidak masuk, pertanyaanmu hanya digunakan untuk menjawabnya dan tidak disimpan, kecuali dalam catatan panggilan AI di bawah. Pesan yang berisi kunci, token, atau kata sandi segera dihapus: pesan itu tidak disimpan atau diteruskan.",
+        "Perusahaan: nama, logo, dan situs web perusahaan, serta domain email yang digunakan untuk memverifikasinya; saat pemilik atau admin meminta verifikasi, alamat email di domain tersebut yang dikonfirmasinya dan nama perusahaan yang dikirimkannya untuk ditinjau.",
+        "Latihan: jika kamu mengikuti wawancara latihan gratis, jawabanmu, nilaimu, dan berapa lama setiap jawaban. Hanya kamu yang melihatnya, kecuali kamu mengaktifkan Terbuka untuk tawaran kerja.",
+        "Terbuka untuk tawaran kerja: jika kamu mengaktifkannya, alamat profil LinkedIn yang kamu berikan, namamu dari akun yang kamu pakai untuk masuk, kapan kamu mengaktifkannya, dan log setiap kali kamu mengaktifkan atau mematikannya, beserta versi teks yang kamu setujui.",
+        "Pesan kontak: nama, alamat email, dan pesan yang kamu kirim melalui halaman kontak.",
+        "Wawancara, jika perusahaan mengundangmu: email yang digunakan untuk mengundangmu, jawabanmu, berapa lama setiap jawaban, kapan kamu meninggalkan halaman wawancara (dan berapa lama), menyalin teks, atau menjawab terlalu cepat untuk sempat membaca soal, apakah waktu jawabanmu serta jawaban benar dan salahmu mengikuti panjang dan tingkat kesulitan soal seperti pada kandidat lain, kapan kamu mengonfirmasi, sebelum mulai, bahwa kamu akan menjawab sendiri, waktu tambahan yang diberikan perusahaan kepadamu (tanpa mencatat alasannya), serta penilaian dan laporanmu tentang soal. Kamu diberi tahu tentang hal ini sebelum mulai. Dalam wawancara yang diatur ke mode suara, apa yang kamu ucapkan saat menjawab diubah menjadi teks dan dicocokkan dengan opsi-opsinya: satu opsi yang kamu sebut dengan jelas langsung dicatat sebagai jawabanmu, sedangkan pilihan beberapa opsi kamu konfirmasi lebih dulu. testee tidak menyimpan apa yang kamu ucapkan, dan suaramu tidak dianalisis dengan cara lain apa pun. OpenAI, yang mengubahnya menjadi teks, dapat menyimpannya paling lama 30 hari, seperti dijelaskan di bawah.",
+        "Teknis: laporan kesalahan tanpa alamat IP atau email-mu, dan log server berumur pendek yang diperlukan untuk menjalankan dan mengamankan layanan, serta penghitung berumur pendek untuk batas laju, sebagian berdasarkan alamat IP-mu.",
+        "Pemeriksaan \"Saya bukan robot\": saat kamu mengirim formulir kontak, mengajukan pertanyaan pertama di chat bantuan, memulai wawancara melalui tautan iklan lowongan kerja, membuat perusahaan pertamamu, atau menyetujui topik perusahaan yang belum membayar, Cloudflare Turnstile memeriksa browser-mu (seperti jenisnya, perilakunya, dan alamat tempatnya terhubung) untuk membedakan manusia dari skrip. Kami hanya menerima apakah pemeriksaan itu lolos.",
+        "Aplikasi AI yang kamu hubungkan: nama aplikasi dan situs tujuan kembalinya, serta kapan kamu menghubungkannya dan terakhir menggunakannya. Aksesnya hanya disimpan sebagai hash satu arah.",
+        "Ketentuan yang kamu terima: versi ketentuan yang berlaku saat kamu mendaftar, dan kapan, sebagai bukti apa yang kamu setujui. Data ini dihapus bersama akunmu.",
+        "Alat yang dihubungkan perusahaan: kunci atau token yang dibuat oleh pemilik atau adminnya di sistem pelacakan pelamarnya (Workable, Greenhouse, Teamtailor, Recruitee, atau Breezy HR) atau di Slack, disimpan dalam bentuk terenkripsi; hash satu arah dari setiap kunci API testee, alamat IP yang boleh menggunakannya, dan alamat webhook-nya beserta siapa yang membuatnya; domain situs web tempat wawancara tersematnya dapat berjalan; serta, dari sistem pelacakan pelamarnya, email, nama, dan ID setiap kandidat yang dikirimkannya ke testee.",
+        "Pengaturan email: email opsional mana yang kamu terima, dan log setiap perubahannya: email yang mana, aktif atau nonaktif, kapan, di mana (saat masuk, di Pengaturan, atau melalui tautan berhenti berlangganan atau laporan spam), dan versi teks kotak centang yang kamu lihat.",
+        "Email kepada anggota perusahaan: catatan ringkasan aktivitas dan pengingat yang kami kirimkan kepadamu, dan tentang apa setiap pengingat, agar tidak ada yang terkirim dua kali.",
+        "Email kepada banyak pengguna (pemberitahuan perubahan ketentuan kami, pemberitahuan penting tentang layanan, pembaruan produk, penawaran): apakah setiap email terkirim kepadamu, dilewati, atau gagal, dan apakah kamu berhenti berlangganan darinya atau menandainya sebagai spam, agar tidak ada yang terkirim dua kali dan kami dapat melihat bagaimana setiap email diterima.",
+        "Alamat yang tidak lagi kami kirimi email: jika email ke suatu alamat terpental secara permanen, terpental sementara 3 kali dalam 14 hari, atau ditandai sebagai spam, hash satu arah dari alamat tersebut, alasannya, dan waktunya. Hash ini tidak dapat diubah kembali menjadi alamat email.",
+        "Kandidat yang menghentikan email dari suatu perusahaan: hash satu arah dari alamat email mereka, beserta perusahaannya dan, jika mereka hanya menghentikan pengingat untuk satu wawancara, undangan tersebut. Hash ini tidak dapat diubah kembali menjadi alamat email.",
+        "Referal: melalui tautan referal siapa kamu atau perusahaanmu datang, dan apakah referal itu sudah diberi imbalan.",
+        "Pembelian: untuk setiap isi ulang, perusahaan tujuannya, siapa yang membelinya, apa yang dibeli, total dan mata uangnya, ID transaksi Paddle, serta waktunya. Paddle, bukan kami, yang menyimpan detail kartu dan penagihan.",
+        "Kredit: saldo setiap perusahaan, entri yang menambah atau memakai kredit, kode referalnya dan mata uangnya, mata uang yang disimpan untuk akunmu sendiri, dan, jika isi ulang otomatis aktif, siapa yang menyalakannya, batas dan jumlah yang dipilih, referensi Paddle untuk itu, serta tanggal tagihan dan kegagalannya.",
+        "Log tindakan perusahaan: apa yang dilakukan anggotanya di perusahaan itu, seperti mengundang, melihat, atau menghapus kandidat, mengubah wawancara atau tim, melakukan isi ulang, atau menghubungkan alat, beserta siapa yang melakukannya, kapan, dan apakah asisten, aplikasi AI, atau API yang melakukannya untuk mereka. Pemilik perusahaan dapat melihatnya. Kandidat dan anggota hanya ditampilkan dengan namanya selama mereka masih berada di perusahaan: log menyimpan ID mereka, tidak pernah email mereka.",
+        "Penggunaan AI dan batasan: untuk setiap penggunaan AI, seperti menulis soal atau jawaban asisten, untuk apa penggunaan itu, modelnya, ukuran dan biayanya, serta akun dan perusahaan yang menjadi tujuannya; dan setiap kali suatu batasan menolak permintaan, batasan mana, kapan, serta akun dan perusahaan yang permintaannya ditolak. Tidak pernah teks yang dikirim ke AI atau jawabannya.",
+        "Catatan panggilan AI: apa yang dikirim testee ke AI dan apa yang dijawab AI setiap kali AI digunakan, seperti menulis soal dari deskripsi pekerjaan, atau jawaban asisten dan chat bantuan beserta apa yang dibacanya untuk menjawab (yang dapat mencakup hasil kandidat), serta penilaian atas jawaban tersebut. Catatan ini disimpan oleh Langfuse, lihat di bawah, hanya untuk memantau dan meningkatkan kualitas jawaban.",
+        "Statistik penggunaan: langkah-langkah seperti mendaftar, pembuatan perusahaan, undangan kandidat, atau isi ulang, dengan angka seperti skor atau jumlah. ID akunmu diganti dengan kode yang dibuat menggunakan kunci rahasia yang kami pegang, sehingga statistik tidak menyebut namamu, tetapi statistik itu berupa data pseudonim, bukan anonim: dengan kunci tersebut, kode itu cocok dengan ID akunmu. ID perusahaan disimpan apa adanya. Tidak ada nama, email, atau teks yang disertakan."
+      ]
+    },
+    {
+      "heading": "Mengapa kami menggunakannya",
+      "items": [
+        "Untuk menyediakan testee: membuat wawancara, menjalankannya untuk kandidat yang diundang, menampilkan hasil kepada perusahaan, dan mengirim email yang kamu minta (kontrak).",
+        "Email layanan, seperti undangan, laporan, masalah pembayaran, perubahan pada ketentuan kami, dan pemberitahuan penting tentang layanan (insiden keamanan, waktu henti terjadwal, atau perubahan cara kerjanya), yang selalu dikirim (kontrak).",
+        "Ringkasan aktivitas dan pengingat tentang perusahaanmu, seperti kredit yang hampir habis atau wawancara tanpa kandidat (kepentingan sah kami untuk membantumu menggunakan testee). Email ini aktif sampai kamu menonaktifkannya.",
+        "Pembaruan produk dan berita: bagi pengguna kami sendiri yang tidak mencentang “Jangan kirimi saya pembaruan produk dan berita” saat pertama kali opsi itu ditawarkan ketika masuk (Pasal 13 ayat (2) Directive ePrivacy dan § 103¹ Undang-Undang Komunikasi Elektronik Estonia). Kamu bisa menghentikannya kapan saja, tanpa biaya.",
+        "Penawaran dan promosi: hanya jika kamu setuju, dengan mencentang kotaknya saat masuk atau di Pengaturan (persetujuan). Kamu bisa menariknya kembali kapan saja.",
+        "Menentukan kepada siapa email untuk banyak pengguna dikirim: apakah akunmu termasuk dalam tim sebuah perusahaan (dan apakah sebagai pemilik atau admin), pernah mengikuti wawancara sebuah perusahaan, atau pernah menggunakan latihan gratis, agar pembaruan produk, penawaran, atau pemberitahuan penting hanya dikirim kepada orang yang berkepentingan. Yang digunakan hanyalah fakta bahwa akunmu melakukannya, tidak pernah jawabanmu, hasilmu, atau data yang disimpan perusahaan tentangmu (kepentingan sah kami untuk hanya mengirim email yang relevan). Pembaruan produk dan penawaran tetap hanya dikirim kepada mereka yang menerimanya berdasarkan dua poin di atas.",
+        "Mengingat bahwa seorang kandidat telah menghentikan email dari suatu perusahaan, agar testee tidak mengirim email kepadanya atas nama perusahaan itu lagi (menghormati keberatannya).",
+        "Untuk menjaga testee tetap aman dan berfungsi: mencegah penyalahgunaan, pembatasan laju (rate limit), laporan kesalahan, dan statistik yang meningkatkan kualitas soal (kepentingan sah kami).",
+        "Kualitas soal: kami menganalisis bagaimana soal dijawab dan dilaporkan untuk menemukan pola umum kualitas soal yang dianonimkan, yang meningkatkan pembuatan soal bagi semua orang; pola ini tidak berisi data pribadi (kepentingan sah kami).",
+        "Penggunaan kembali soal yang dibuat: soal yang dibuat testee dapat digunakan kembali dalam wawancara dan latihan pelanggan lain, tanpa data pribadi atau detail apa pun yang mengidentifikasi perusahaan atau orang. Perusahaan dapat mengecualikan soal suatu wawancara dari hal ini di pengaturannya.",
+        "Catatan panggilan AI memungkinkan kami memantau dan meningkatkan kualitas soal dan jawaban AI (kepentingan sah kami).",
+        "Pengendalian biaya dan pencegahan penyalahgunaan: catatan penggunaan AI dan batasan yang tercapai menunjukkan berapa biaya AI dan siapa yang mencapai batasan mana, agar kami bisa menjaga testee tetap terjangkau dan menghentikan penyalahgunaan (kepentingan sah kami).",
+        "Log tindakan perusahaan memungkinkan pemiliknya melihat siapa melakukan apa di perusahaan, dan tim dukungan kami memeriksanya saat perusahaan meminta bantuan (kepentingan sah perusahaan dan kami atas akuntabilitas).",
+        "Statistik penggunaan menunjukkan bagian mana dari testee yang membantu orang serta harga dan batasan mana yang berjalan baik, agar kami bisa memperbaikinya (kepentingan sah kami).",
+        "Catatan pembelian, disimpan untuk pembukuan sebagaimana diwajibkan oleh hukum akuntansi Estonia (kewajiban hukum).",
+        "Menampilkan perusahaan sebagai terverifikasi, dengan mencocokkan situs webnya dengan domain email pemilik dan adminnya (kepentingan sah kami).",
+        "Terbuka untuk tawaran kerja: hanya jika kamu mengaktifkannya (persetujuan), perusahaan yang merekrut lewat testee melihat namamu, profil LinkedIn-mu, dan hasil latihan berwaktu terbarumu di setiap topik yang kamu latih yang dicakup salah satu wawancara mereka di levelnya, agar mereka bisa mengundangmu ke wawancara itu. Kami tidak memeringkat atau merekomendasikanmu dan tidak mengambil keputusan apa pun tentangmu: perusahaanlah yang memutuskan siapa yang diundang. Kamu bisa menarik persetujuan kapan saja di Pengaturan, dan kamu langsung hilang dari daftar setiap perusahaan. Log pilihanmu disimpan sebagai bukti persetujuanmu (kewajiban hukum kami untuk menunjukkannya).",
+        "Hasil wawancara, waktu menjawab, dan sinyal integritas membantu perusahaan yang merekrut menilai jawabanmu secara adil (kepentingan sah perusahaan). Sinyal ini mencakup pola dalam jawabanmu: waktu yang hampir sama di setiap soal, atau soal sulit dijawab benar sementara soal mudah dijawab salah; berdasarkan sinyal ini, perusahaan ditunjukkan soal-soal yang bisa ditanyakan kepadamu dalam wawancara langsung. Orang-orang di perusahaan yang membuat keputusan perekrutan; testee tidak membuat keputusan apa pun tentangmu secara mandiri. Kamu bisa meminta perusahaan agar hasilmu ditinjau oleh manusia, dan meminta penyesuaian seperti waktu tambahan sebelum kamu mulai."
+      ]
+    },
+    {
+      "heading": "Dengan siapa kami membagikannya",
+      "paragraphs": [
+        "Kami membagikan data kepada penyedia layanan yang menjalankan testee untuk kami, berdasarkan perjanjian yang melindunginya, serta kepada Paddle, yang menjual isi ulang:"
+      ],
+      "items": [
+        "Google (Firebase Authentication; Google LLC, Amerika Serikat, berdasarkan EU-US Data Privacy Framework): proses masuk. LinkedIn dan GitHub hanya mengonfirmasi identitasmu saat kamu masuk dengan akun mereka; kami tidak menerima hal lain dari mereka.",
+        "OpenAI: menulis soal dari teks yang kamu berikan; jawaban asisten, dari pertanyaanmu dan data yang dibacanya dengan hak aksesmu untuk menjawabnya; mengubah pesan suara menjadi teks; dalam mode suara, mengubah jawaban lisan kandidat menjadi teks dan mencocokkannya dengan opsi (soal yang dibacakan tidak berisi data pribadi); dan memeriksa soal yang dilaporkan (hanya alasan yang diberikan, tidak pernah komentarnya). Jika API-nya menyediakan pilihan itu, kami meminta OpenAI untuk tidak menyimpannya. Berdasarkan ketentuan API-nya, OpenAI dapat menyimpan data ini paling lama 30 hari, hanya untuk memeriksa penyalahgunaan kecuali hukum mewajibkan lebih lama, dan tidak menggunakannya untuk melatih modelnya. (OpenAI Ireland Ltd, berdasarkan perjanjian pemrosesan data kami dengannya; OpenAI Ireland Ltd mentransfer data ke OpenAI di Amerika Serikat berdasarkan klausul kontrak standar Komisi Eropa.)",
+        "Resend: mengirim email: undangan dan pengingat kepada kandidat, laporan, email kepada anggota perusahaan seperti ringkasan aktivitas, dan pesan kontak (dikirim dari UE, Irlandia, dan disimpan di Amerika Serikat, berdasarkan klausul kontrak standar Komisi Eropa dan EU-US Data Privacy Framework).",
+        "Google Workspace: kotak masuk email kami, yang menerima pesan kontak dan email yang kamu kirim kepada kami (Google Ireland Ltd; email dapat disimpan di luar UE, berdasarkan EU-US Data Privacy Framework dan klausul kontrak standar).",
+        "Sentry: laporan kesalahan, dengan email dihapus (di UE).",
+        "Langfuse (Langfuse GmbH, Jerman, cloud UE-nya): catatan panggilan AI (apa yang dikirim ke AI dan jawabannya, yang dapat mencakup deskripsi pekerjaan, soal, pesan chat dan apa yang dibaca asisten untuk menjawabnya, serta penilaian atas jawaban asisten; dalam mode suara, hanya opsi mana yang cocok dengan sebuah jawaban, tidak pernah kata-katanya), untuk memantau dan meningkatkan kualitas jawaban (di UE).",
+        "Cloudflare (Turnstile; Cloudflare, Inc., Amerika Serikat, berdasarkan EU-US Data Privacy Framework): pemeriksaan \"Saya bukan robot\".",
+        "Google Cloud, penyedia hosting kami, yang menyimpan data (di UE, Belgia).",
+        "Upstash: penghitung berumur pendek untuk batas penggunaan, pembaruan langsung, hasil panggilan API (paling lama 24 jam, agar panggilan yang diulang tidak dijalankan dua kali), dan topik yang disusun dari deskripsi pekerjaan (paling lama 30 hari, agar teks yang sama tidak diproses dua kali) (di UE, Belgia).",
+        "Perusahaan, hanya jika kamu mengaktifkan Terbuka untuk tawaran kerja: perusahaan yang merekrut lewat testee melihat apa yang dijelaskan di atas. Setiap perusahaan bertanggung jawab atas cara ia menggunakan apa yang dilihatnya. Jika salah satunya mengundangmu, undangan dikirim ke email akunmu, dan perusahaan melihat email itu seperti email kandidat mana pun.",
+        "Paddle (Paddle.com Market Ltd, Inggris Raya) bukan salah satunya: Paddle menjual isi ulang sendiri, sebagai merchant of record, dan merupakan pengendali detail pembayaran, pajak, dan penagihan yang dikumpulkannya, berdasarkan kebijakan privasinya sendiri. Kami memberikan email anggota yang membeli kepada Paddle, dan Paddle memberi tahu kami apa yang dibeli dan dibayar.",
+        "YouTube (Google) juga bukan salah satunya: jika kamu membuka video di beranda, video diputar dari youtube-nocookie.com, dan Google menerima alamat IP-mu serta apa yang dikirim browser-mu, berdasarkan kebijakan privasinya sendiri. Tidak ada yang dikirim kepadanya kecuali kamu membuka video itu."
+      ]
+    },
+    {
+      "heading": "Alat yang dihubungkan perusahaan",
+      "paragraphs": [
+        "Perusahaan dapat menghubungkan alatnya sendiri ke testee, dan kemudian kami mengirimkan data kepada alat tersebut atas instruksinya, sebagai bagian dari layanan yang dimintanya: sistem pelacakan pelamarnya (Workable, Greenhouse, Teamtailor, Recruitee, atau Breezy HR) menerima nilaimu, apakah nilai itu mencapai nilai lulus, sinyal integritas, dan tautan ke hasilmu; kanal Slack yang dipilihnya menerima notifikasinya, seperti bahwa kamu sudah selesai dan nilaimu; dan sistemnya sendiri, melalui API atau webhook testee, menerima email, nama, kemajuan, dan nilaimu, apakah kamu mencapai nilai lulus, sinyal integritas, dan tautan undanganmu. Perusahaan memilih dan mengendalikan alat-alat ini, yang mungkin berada di luar UE, dan bertanggung jawab atas cara alat tersebut menggunakan datamu."
+      ]
+    },
+    {
+      "heading": "Aplikasi AI yang kamu hubungkan",
+      "paragraphs": [
+        "Kamu bisa menghubungkan aplikasi AI milikmu sendiri, seperti Claude (dari Anthropic) atau ChatGPT (dari OpenAI), ke akun testee-mu. Hanya jika kamu melakukannya, dan hanya untuk apa yang kamu minta, aplikasi itu membaca dan mengubah data perusahaanmu dengan hak aksesmu, termasuk hasil kandidat, dan data tersebut sampai ke penyedia aplikasi itu berdasarkan ketentuan dan kebijakan privasi aplikasi itu sendiri, bukan milik kami. Kamu memilih aplikasi-aplikasi ini dan bisa memutuskan sambungan salah satunya kapan saja di tab Integrasi perusahaan; menghapus akunmu memutuskan semuanya. Pemilik dan admin perusahaan dapat melarang aplikasi AI menggunakan data perusahaan itu."
+      ]
+    },
+    {
+      "heading": "Email dan berhenti berlangganan",
+      "paragraphs": [
+        "Email layanan, seperti undangan, laporan, masalah pembayaran, perubahan pada ketentuan kami, dan pemberitahuan penting tentang layanan, selalu dikirim. Kamu memilih email lainnya di Pengaturan, di bagian Email: ringkasan aktivitas, pengingat, pembaruan produk dan berita, serta penawaran dan promosi. Setiap email opsional memiliki tautan berhenti berlangganan yang berfungsi tanpa perlu masuk, dan menandai email opsional sebagai spam juga menonaktifkannya. Jika email kepadamu terpental secara permanen, atau kamu menandai salah satu email kami sebagai spam, kami berhenti mengirim email produk dan pemberitahuan ke alamat itu sampai kamu meminta kami memulainya lagi.",
+        "Undangan dan pengingat yang dikirim perusahaan kepada kandidat melalui testee memiliki tautan untuk menghentikan email dari perusahaan itu, atau pengingat untuk wawancara itu. Setelah itu testee tidak lagi mengirim email ke alamat tersebut atas nama perusahaan itu, dan perusahaan melihat undangannya sebagai tidak terkirim."
+      ]
+    },
+    {
+      "heading": "Transfer ke luar UE",
+      "paragraphs": [
+        "Empat dari penyedia ini menangani data di Amerika Serikat: Google, untuk proses masuk, OpenAI, Resend, yang menyimpan email di sana, dan Cloudflare, untuk pemeriksaan \"Saya bukan robot\". Email di kotak masuk Google Workspace kami juga dapat disimpan di luar UE. Transfer ini dilindungi oleh EU-US Data Privacy Framework atau klausul kontrak standar Komisi Eropa, sebagaimana disebutkan di atas. Bagi orang di Inggris, transfer ke Amerika Serikat berdasarkan UK Extension atas EU-US Data Privacy Framework (Google, Cloudflare) dan klausul kontrak standar dengan UK International Data Transfer Addendum (OpenAI, Resend). Tulis kepada kami untuk mendapatkan salinan perlindungan yang berlaku."
+      ]
+    },
+    {
+      "heading": "Berapa lama kami menyimpannya",
+      "items": [
+        "Akunmu dan semua isinya: sampai kamu menghapus akunmu.",
+        "Hasil wawancara, waktu menjawab, dan sinyal integritas: 12 bulan setelah undangan terakhir kali dikirim, lalu dihapus secara otomatis.",
+        "Kandidat yang dikirim oleh sistem pelacakan pelamar: email, nama, dan ID mereka di sistem tersebut, 12 bulan setelah mereka masuk.",
+        "Notifikasi di aplikasi, seperti bahwa seorang kandidat sudah selesai: 90 hari.",
+        "Aplikasi AI yang kamu hubungkan: sampai kamu memutuskan sambungannya atau menghapus akunmu; sambungan yang tidak digunakan selama 90 hari berakhir dengan sendirinya.",
+        "Percakapanmu dengan asisten: 90 hari setelah pesan terakhirnya. Kamu bisa menghapus percakapan kapan saja, dan percakapan dihapus bersama akunmu atau perusahaan yang dibahasnya.",
+        "Log tindakan perusahaan: siapa melakukan apa, disimpan selama 12 bulan.",
+        "Catatan yang kamu tulis di wawancara sebuah perusahaan: sampai kamu menghapus catatan itu atau perusahaan menghapus wawancaranya atau dirinya sendiri. Catatan itu milik perusahaan, jadi tetap ada di perusahaan, tanpa namamu, saat kamu keluar dari perusahaan itu atau menghapus akunmu.",
+        "Catatan penggunaan AI dan batasan yang tercapai: 13 bulan, tanpa ID akunmu setelah kamu menghapus akunmu.",
+        "Sesi latihan: sampai kamu menghapus akunmu.",
+        "Penilaian dan laporan tentang soal: sampai soal atau akunmu dihapus.",
+        "Terbuka untuk tawaran kerja: sampai kamu mematikannya atau menghapus akunmu, dan paling lama setahun setelah terakhir kali kamu mengaktifkannya atau menyimpan profil LinkedIn-mu; log pilihanmu, sampai kamu menghapus akunmu.",
+        "Laporan yang dikirim lewat email dari testee: PDF-nya hanya disimpan untuk mengirim email, dan dihapus paling lambat 7 hari kemudian.",
+        "Deskripsi pekerjaan yang ditempel dalam catatan pembuatan kami: 90 hari setelah pembuatan selesai. Wawancara yang dibuat darinya tetap ada di akun perusahaan sampai dihapus.",
+        "Pengaturan email-mu dan log perubahannya: sampai kamu menghapus akunmu.",
+        "Catatan ringkasan dan pengingat yang dikirimkan kepadamu: 30 hari, atau sampai kamu menghapus akunmu jika itu lebih cepat.",
+        "Catatan pemberitahuan, pembaruan produk, dan penawaran yang dikirimkan kepadamu: sampai kamu menghapus akunmu.",
+        "Alamat yang tidak lagi kami kirimi email, sebagai hash: sampai kamu meminta kami mengirim email ke alamat itu lagi, juga setelah kamu menghapus akunmu, agar alamat itu tidak dikirimi email lagi.",
+        "Email yang terpental sementara, sebagai hash dari alamatnya: 14 hari.",
+        "Permintaan kandidat untuk menghentikan email dari suatu perusahaan, sebagai hash dari email mereka: sampai perusahaan itu dihapus, bahkan jika perusahaan menghapus kandidat tersebut.",
+        "Pesan kontak: selama kami membutuhkannya untuk menjawabmu, paling lama 2 tahun.",
+        "Laporan kesalahan: hingga 90 hari.",
+        "Log server: 30 hari. Catatan penggunaan zona admin oleh staf kami, berdasarkan ID akun: setahun, dan tidak ada yang dapat mengubah atau menghapusnya lebih cepat.",
+        "Catatan panggilan AI di Langfuse: 30 hari, lalu dihapus secara otomatis.",
+        "Cadangan basis data: 14 hari, lalu ditimpa; apa pun yang telah dihapus sudah hilang dari cadangan pada saat itu.",
+        "Catatan akun yang dihapus, dengan email dan ID akunnya: 14 hari, selama cadangan masih ada, hanya agar cadangan yang dipulihkan tidak dapat mengembalikan datamu.",
+        "Pesan yang sedang dikirim antarlayanan kami, yang dapat berisi email dan laporan yang dikirim lewat email: paling lama 7 hari setelah dikirim. Event webhook yang gagal dan menunggu dikirim ulang: paling lama 3 hari.",
+        "Statistik penggunaan: 25 bulan, lalu dihapus secara otomatis.",
+        "Catatan pembelian: selama diwajibkan oleh hukum akuntansi (7 tahun di Estonia), tanpa ID akunmu setelah kamu menghapus akunmu.",
+        "Saldo dan entri kredit, serta mata uang dan isi ulang otomatis perusahaan: sampai perusahaan dihapus. Mata uang yang disimpan untuk akunmu sendiri: sampai kamu menghapus akunmu.",
+        "Hash satu arah dari email-mu setelah kamu menghapus akunmu, hanya agar mendaftar lagi tidak memberikan kredit sambutan untuk kedua kalinya. Hash ini tidak dapat diubah kembali menjadi email-mu."
+      ]
+    },
+    {
+      "heading": "Hak-hakmu",
+      "paragraphs": [
+        "Kamu bisa melihat, mengunduh, dan menghapus datamu sendiri: “Unduh dataku” dan “Hapus akun” ada di Pengaturan, di menu akunmu. Datamu mencakup jawaban dan nilaimu dalam wawancara perusahaan, tetapi tidak mencakup jawaban mana yang benar, karena hal itu akan mengungkap soal perusahaan. Kamu juga bisa meminta kami untuk memperbaiki datamu, membatasi atau menolak penggunaannya, atau memindahkannya ke layanan lain, melalui alamat di atas.",
+        "Kamu bisa mengajukan keluhan kepada kami di alamat di atas: kami mengonfirmasi penerimaan keluhan dalam 30 hari dan memberi tahu hasilnya tanpa penundaan yang tidak semestinya. Kamu juga bisa mengajukan keluhan kepada Inspektorat Perlindungan Data Estonia (Andmekaitse Inspektsioon, www.aki.ee) atau kepada otoritas di tempat tinggalmu; di Inggris, kepada Information Commissioner's Office (ico.org.uk)."
+      ]
+    },
+    {
+      "heading": "Jika kamu tinggal di Amerika Serikat",
+      "paragraphs": [
+        "Kami mengumpulkan kategori yang dijelaskan di atas: pengenal (nama, email, id akun), informasi profesional (hasil wawancara dan latihan), aktivitas internet (meninggalkan halaman, menyalin, dan waktu jawaban selama tes), audio (jawaban lisan dalam mode suara, yang tidak disimpan testee) dan, untuk perusahaan, informasi komersial (pembelian); dari kamu, dari perusahaan yang mengundangmu, dari sistem pelacakan pelamarnya, dan dari penyedia proses masukmu; untuk tujuan di atas. Kami tidak menjual informasi pribadimu atau membagikannya untuk iklan perilaku lintas konteks, dan kami tidak memakai informasi pribadi sensitif apa pun untuk menyimpulkan sesuatu tentangmu, jadi tidak ada yang perlu kamu tolak (opt out); sinyal Global Privacy Control tidak memerlukan tindakan apa pun. Kamu bisa meminta untuk mengetahui, mendapatkan salinan, mengoreksi, atau menghapus informasi pribadimu (“Unduh dataku” dan “Hapus akun” di Pengaturan, atau tulis kepada kami), juga melalui agen yang diberi kuasa, dan kami tidak akan memperlakukanmu secara berbeda karenanya. Untuk wawancara sebuah perusahaan, perusahaan itulah yang memutuskan dan kami meneruskan permintaanmu kepadanya, sebagai penyedia layanannya."
+      ]
+    },
+    {
+      "heading": "Cookie dan penyimpanan",
+      "paragraphs": [
+        "testee hanya menggunakan cookie dan penyimpanan browser yang diperlukan agar berfungsi atau yang mengingat pilihanmu sendiri. Tidak ada cookie iklan atau analitik.",
+        "Agar kamu tetap masuk: sebuah cookie (testee_token, diperbarui setiap jam selama kamu memakai testee, sampai kamu keluar) dan penyimpanan browser milik penyedia proses masuk kami, Google Firebase, yang juga menyimpan daftar singkat hari-hari saat layanan itu berjalan di browser ini, meskipun kamu tidak masuk. Saat kamu menghubungkan aplikasi AI, sebuah cookie (testee_connect) bertahan selama beberapa menit yang diperlukan.",
+        "Untuk mengingat pilihanmu: bahasamu (sebuah cookie, testee_locale, selama setahun, diatur saat kamu memilih bahasa atau membuka testee di alamat suatu bahasa), tema terang atau gelapmu, lebar panel asisten, apakah panel itu terbuka dan perusahaan mana yang kamu pilih di dalamnya (sampai kamu keluar), cara terakhir kamu mengundang kandidat, bahwa kamu pernah masuk di browser ini sebelumnya, periode yang terakhir kamu pilih untuk statistik, dan pemberitahuan perubahan dokumen hukum yang sudah kamu tutup. Semuanya tetap ada di browser-mu sampai kamu menghapusnya.",
+        "Hanya di tab ini, sampai kamu menutupnya: percakapanmu dengan asisten sampai kamu masuk, dan deskripsi pekerjaan yang sedang kamu ubah menjadi wawancara, agar proses berlanjut saat halaman dimuat ulang.",
+        "Tautan referal: hanya jika kamu memilih untuk menyimpannya, sebuah cookie (testee_ref) mengingat tautan yang kamu gunakan untuk datang selama 30 hari, agar kredit sampai ke kedua perusahaan.",
+        "Pemeriksaan \"Saya bukan robot\" berjalan dalam bingkai kecil dari Cloudflare saat sebuah formulir memerlukannya, dan tidak memasang cookie pelacakan.",
+        "Membayar membuka halaman checkout Paddle, dan video yang kamu buka di beranda diputar dari YouTube. Keduanya dapat menyimpan item di browser-mu berdasarkan kebijakannya sendiri, dan tidak ada yang dimuat sebelum kamu membukanya."
+      ]
+    },
+    {
+      "heading": "Anak-anak",
+      "paragraphs": [
+        "testee tidak ditujukan untuk siapa pun yang berusia di bawah 16 tahun."
+      ]
+    },
+    {
+      "heading": "Perubahan",
+      "paragraphs": [
+        "Kami memperbarui halaman ini saat praktik kami berubah, dan mengirimimu email tentang perubahan signifikan paling lambat 14 hari sebelum perubahan itu berlaku. Setiap versi sebelumnya tetap dapat dibaca di halaman ini."
+      ]
+    },
+    {
+      "heading": "Hubungi kami",
+      "paragraphs": [
+        "Pertanyaan tentang kebijakan ini atau datamu: tulis ke hello@testee.ai, atau gunakan halaman kontak yang ditautkan di bagian bawah setiap halaman."
+      ]
+    }
+  ]
+}

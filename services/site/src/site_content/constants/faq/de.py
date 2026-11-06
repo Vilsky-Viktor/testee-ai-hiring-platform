@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Können Kandidaten per Sprache antworten?",
-        "answer": "Ja, wenn das Unternehmen ein Interview auf den Sprachmodus stellt, in jeder der 23 Sprachen von testee; wie gut Mira vorliest und versteht, hängt von der Sprache ab (der Leitfaden „Sprachmodus in 23 Sprachen“ zeigt es für jede). Die Fragen werden vorgelesen und Kandidaten antworten laut; was sie sagen, wird in Text umgewandelt und einer Option zugeordnet und nie gespeichert. Stimmen werden nicht auf Tonfall oder Emotionen analysiert, und Kandidaten können jederzeit stattdessen antippen.",
+        "answer": "Ja, wenn das Unternehmen ein Interview auf den Sprachmodus stellt, in jeder der 23 Sprachen von testee; wie gut Mira vorliest und versteht, hängt von der Sprache ab (der Leitfaden „Sprachmodus in 23 Sprachen“ zeigt es für jede). Die Fragen werden vorgelesen und Kandidaten antworten laut; was sie sagen, wird in Text umgewandelt und einer Option zugeordnet. testee speichert es nicht; OpenAI, das dies für uns erledigt, darf es bis zu 30 Tage speichern, nur zur Missbrauchsprüfung, sofern das Gesetz nicht eine längere Speicherung verlangt. Stimmen werden nicht auf Tonfall oder Emotionen analysiert, und Kandidaten können jederzeit stattdessen antippen.",
     },
     {
         "key": "cost",
@@ -140,7 +140,7 @@ FAQ = [
     {
         "key": "delete",
         "question": "Kann ich mein Konto löschen?",
-        "answer": "Ja, in den Einstellungen. Dein Konto und deine Daten werden gelöscht, und vorher kannst du eine Kopie deiner Daten herunterladen.",
+        "answer": "Ja, in den Einstellungen, es sei denn, du bist Inhaber eines Unternehmens, dem andere beigetreten sind: Mach zuerst ein anderes Mitglied zum Inhaber oder lösche es. Dein Konto und deine Daten werden gelöscht, samt den Unternehmen, denen nur du angehörst, und ihren Credits, die nicht erstattet werden. Vorher kannst du eine Kopie deiner Daten herunterladen.",
     },
     {
         "key": "report",

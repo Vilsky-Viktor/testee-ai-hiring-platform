@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Kas kandidaadid saavad vastata häälega?",
-        "answer": "Jah, kui ettevõte seab intervjuu häälerežiimile, ükskõik millises testee 23 keelest; see, kui hästi see loeb ja kuuleb, oleneb keelest (juhend „Häälintervjuud 23 keeles“ näitab igaüht). Küsimused loetakse ette ja kandidaadid vastavad suuliselt; nende öeldu muudetakse tekstiks ja seotakse variandiga ning seda ei salvestata kunagi. Hääli ei analüüsita tooni ega emotsioonide suhtes ning kandidaadid saavad alati selle asemel varianti puudutada.",
+        "answer": "Jah, kui ettevõte seab intervjuu häälerežiimile, ükskõik millises testee 23 keelest; see, kui hästi see loeb ja kuuleb, oleneb keelest (juhend „Häälintervjuud 23 keeles“ näitab igaüht). Küsimused loetakse ette ja kandidaadid vastavad suuliselt; nende öeldu muudetakse tekstiks ja seotakse variandiga. testee seda ei salvesta; OpenAI, mis teeb seda meie eest, võib seda säilitada kuni 30 päeva, ainult kuritarvitamise kontrollimiseks, välja arvatud juhul, kui seadus nõuab pikemat säilitamist. Hääli ei analüüsita tooni ega emotsioonide suhtes ning kandidaadid saavad alati selle asemel varianti puudutada.",
     },
     {
         "key": "cost",
@@ -140,7 +140,7 @@ FAQ = [
     {
         "key": "delete",
         "question": "Kas saan oma konto kustutada?",
-        "answer": "Jah, seadetes. Sinu konto ja andmed kustutatakse ning enne seda saad oma andmetest koopia alla laadida.",
+        "answer": "Jah, seadetes, välja arvatud juhul, kui oled sellise ettevõtte omanik, millega on liitunud teisi liikmeid: tee esmalt selle omanikuks mõni teine liige või kustuta see. Sinu konto ja andmed kustutatakse koos ettevõtetega, mille ainus liige oled, ja nende krediitidega, mida ei hüvitata. Enne seda saad oma andmetest koopia alla laadida.",
     },
     {
         "key": "report",

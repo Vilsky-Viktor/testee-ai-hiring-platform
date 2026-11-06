@@ -42,11 +42,11 @@ Americans with Disabilities Act (Engelli Amerikalılar Yasası), testler dahil o
 
 ## New York City: Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), Department of Consumer and Worker Protection'ın kurallarıyla (6 RCNY §5-300 ve devamı) birlikte, bir işveren veya istihdam ajansı New York City'deki işler için işe alım kararlarına önemli ölçüde yardımcı olan otomatik bir istihdam karar aracı (AEDT) kullandığında uygulanır. Adayları puanlayan veya sıralayan ve kimin bir sonraki aşamaya geçeceğine karar vermek için kullanılan bir araç büyük olasılıkla bu kapsama girer. Böyle bir aracı kullanmadan önce şunlar gerekir:
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), Department of Consumer and Worker Protection'ın kurallarıyla (6 RCNY §5-300 ve devamı) birlikte, bir işveren veya istihdam ajansı şehirdeki işe alım kararlarına önemli ölçüde yardımcı olan otomatik bir istihdam karar aracı (AEDT) kullandığında uygulanır: en azından zamanın bir kısmında New York City'deki bir ofiste yapılan bir iş, böyle bir ofise bağlı tamamen uzaktan bir iş veya orada bulunan bir istihdam ajansının kullanımı. Adayları puanlayan veya sıralayan ve kimin bir sonraki aşamaya geçeceğine karar vermek için kullanılan bir araç büyük olasılıkla bu kapsama girer. Böyle bir aracı kullanmadan önce şunlar gerekir:
 
 - **Bağımsız bir denetçi tarafından yanlılık denetimi,** kullanımdan önceki bir yıl içinde yapılmış olmalı. Ne sağlayıcı ne de işveren olarak siz bağımsız denetçi olabilirsiniz.
 - **Denetimin yayımlanmış bir özeti:** cinsiyet, ırk/etnik köken ve kesişen kategoriler için seçilme veya puan oranları ve etki oranları, bilinmeyen kategorideki aday sayısı ve aracın dağıtım tarihi.
-- **Adaylara bildirim,** kullanımdan en az 10 iş günü önce; alternatif bir seçme süreci veya düzenleme nasıl talep edileceğine dair bilgiyle.
+- **New York City'de yaşayan adaylara bildirim,** kullanımdan en az 10 iş günü önce; alternatif bir seçme süreci veya düzenleme nasıl talep edileceğine dair bilgiyle.
 
 Denetimin nasıl hesaplandığı:
 
@@ -81,7 +81,7 @@ Colorado'nun yapay zekâ yasası, 14 Mayıs 2026'da imzalanan ve 1 Ocak 2027'den
 
 ## New Jersey ve Texas
 
-- **New Jersey.** Law Against Discrimination kapsamındaki orantısız etki kuralları (N.J.A.C. 13:16), 15 Aralık 2025'ten beri yürürlüktedir ve otomatik istihdam karar araçlarını kapsar. Aracı bir tedarikçi yapmış olsa bile işveren sorumlu olabilir.
+- **New Jersey.** Law Against Discrimination kapsamındaki orantısız etki kuralları (N.J.A.C. 13:16), 15 Aralık 2025'ten beri yürürlüktedir ve otomatik istihdam karar araçlarını orantısız etkiye yol açabilecek uygulamalar arasında sayar. Bir tedarikçinin ürününe güvenen işveren, ürünün kanuna uygun olduğundan emin olmak için makul adımlar atmalıdır; kullanımdan önce yeterince test edilmemiş bir aracın kendisi de orantısız etkiye yol açabilir.
 - **Texas.** 1 Ocak 2026'dan beri yürürlükte olan Responsible AI Governance Act (HB 149), hukuka aykırı ayrımcılık yapma niyetiyle kullanılan yapay zekâyı yasaklar. Orantısız etki tek başına bu niyeti göstermez.
 
 ## Tarihler
@@ -141,5 +141,5 @@ Bunun bugün üründeki karşılığı:
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), Public Act 103-0804 ile değiştirilmiş hâliyle.
 - Colorado SB 26-189.
 - California Code of Regulations, title 2, §11013(c); California Consumer Privacy Act'in otomatik karar verme teknolojisine ilişkin düzenlemeleri; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) tedarikçiler, §13:16-3.2(c) otomatik araçlar hakkında), [Morgan Lewis'in özetiyle](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

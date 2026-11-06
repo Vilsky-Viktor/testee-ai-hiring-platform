@@ -1316,7 +1316,7 @@
     "voiceDenied": "Micrófono bloqueado. Permítelo con el icono junto a la dirección y vuelve a intentarlo.",
     "voiceRetry": "Intentar de nuevo",
     "voiceUnsupported": "Este navegador no puede grabar tu voz. Abre esta página en una versión actual de Chrome, Edge, Firefox o Safari.",
-    "voice": "Mira, una entrevistadora de IA, lee cada pregunta en voz alta, y el tiempo de la pregunta corre mientras la lee. Responde con la voz o toca una opción. Una respuesta hablada clara a una pregunta de respuesta única se guarda al momento y no se puede cambiar. Tu voz solo se convierte en texto para leer tu respuesta; nunca se guarda ni se analiza.",
+    "voice": "Mira, una entrevistadora de IA, lee cada pregunta en voz alta, y el tiempo de la pregunta corre mientras la lee. Responde con la voz o toca una opción. Una respuesta hablada clara a una pregunta de respuesta única se guarda al momento y no se puede cambiar. Tu voz solo se convierte en texto para leer tu respuesta, y nunca se analiza. testee no la guarda; OpenAI, que hace esto por nosotros, puede conservarla hasta 30 días para detectar abusos, salvo que la ley exija más tiempo.",
     "unanswered": "Tienes un solo intento, y las preguntas sin responder cuentan como incorrectas.",
     "saved": "El progreso se guarda: vuelve a usar este enlace para continuar. La entrevista termina sola poco después de que pase todo su tiempo desde que empezaste.",
     "savedLink": "El progreso se guarda: te enviamos por correo un enlace para continuar. La entrevista termina sola poco después de que pase todo su tiempo desde que empezaste.",
@@ -2976,15 +2976,19 @@
       "contrast": "Los colores que una empresa elige para sus páginas de entrevista se rechazan si el texto sobre ellos fuera difícil de leer (por debajo del contraste de las WCAG).",
       "languages": "El sitio en 23 idiomas, de derecha a izquierda en los idiomas que se escriben así.",
       "phones": "Las páginas se adaptan a pantallas de móvil y funcionan al ampliar.",
-      "text": "Las preguntas de la entrevista son texto con opciones de respuesta: no hace falta audio ni vídeo.",
-      "extraTime": "Una empresa puede darte tiempo adicional en cada pregunta. Pídeselo a la empresa, o pide otro ajuste, antes de empezar; no tienes que decir por qué.",
+      "text": "Las preguntas de la entrevista se muestran como texto con opciones de respuesta, también en el modo de voz, donde puedes tocar una opción en lugar de hablar.",
+      "extraTime": "Una empresa puede darte tiempo adicional en cada pregunta. Pídeselo a la empresa, o pide otro ajuste, antes de empezar; no tienes que decir por qué. Si llegaste por un enlace para compartir, pide primero una invitación personal: no se puede añadir tiempo adicional a un enlace.",
       "keyboard": "Con el teclado: un enlace «Saltar al contenido» aparece primero en cada página, las pestañas se recorren con las teclas de flecha y los lectores de pantalla anuncian los errores de un formulario."
     },
     "limits": {
       "title": "Lo que aún no está a la altura",
       "timed": "Las preguntas de la entrevista tienen tiempo limitado, como exige la evaluación de la empresa. Si necesitas más tiempo, pide a la empresa tiempo adicional antes de empezar.",
       "audit": "testee aún no ha pasado una auditoría independiente, así que algunas partes podrían no cumplir las WCAG 2.2 AA.",
-      "providers": "El pago de créditos (la página de pago de Paddle) y la comprobación «No soy un robot» (Cloudflare Turnstile) los gestionan esos proveedores, con su propia accesibilidad."
+      "providers": "El pago de créditos (la página de pago de Paddle), la comprobación «No soy un robot» (Cloudflare Turnstile) y el vídeo de la página de inicio (YouTube) los gestionan esos proveedores, con su propia accesibilidad.",
+      "contrast": "En el tema claro, el texto blanco de los botones principales de testee tiene un contraste de 4.34:1, justo por debajo del 4.5:1 que piden las WCAG AA. El tema oscuro lo cumple.",
+      "motion": "Las imágenes en movimiento de la página de inicio y algunas animaciones pequeñas, como el botón de reproducción que late, el botón «preguntar a Mira» y la campana, siguen moviéndose sin botón de pausa. El ajuste de reducir movimiento de tu dispositivo las detiene.",
+      "contactForm": "El formulario de contacto muestra el nombre de cada campo solo como texto de ejemplo, que desaparece al escribir. Los lectores de pantalla siguen anunciando el nombre.",
+      "voice": "Una entrevista en modo de voz requiere que permitas el micrófono y el sonido antes de empezar, aunque vayas a tocar tus respuestas. Si no puedes usarlos, pide a la empresa que te configure para responder tocando."
     },
     "feedback": {
       "title": "Cuéntanoslo",
@@ -3013,8 +3017,8 @@
       "roles": "testee es responsable del tratamiento de las cuentas de quienes lo usan, y encargado del tratamiento de los datos de los candidatos, que pertenecen a la empresa que los invita.",
       "noSelling": "No vendemos datos personales ni los compartimos con fines publicitarios. No hay cookies de publicidad ni de analítica.",
       "noInference": "testee no recoge datos sobre el sexo, la edad, el origen o la discapacidad de los candidatos, ni deduce nada parecido.",
-      "voice": "En el modo de voz, la respuesta hablada de un candidato se convierte en texto y se compara con las opciones, y la opción elegida se le dice y se le muestra en pantalla; una elección de varias opciones se confirma primero. Lo que dice no se graba ni se guarda, y la voz no se analiza de ninguna otra forma.",
-      "ai": "OpenAI, que escribe las preguntas, tiene indicado no guardar lo que recibe; conserva los datos como máximo 30 días, solo para detectar abusos, y no los usa para entrenar sus modelos.",
+      "voice": "En el modo de voz, la respuesta hablada de un candidato se convierte en texto y se compara con las opciones, y la opción elegida se le dice y se le muestra en pantalla; una elección de varias opciones se confirma primero. testee no guarda lo que dice, y la voz no se analiza de ninguna otra forma. OpenAI, que lo convierte en texto, puede conservarlo hasta 30 días, como se indica abajo.",
+      "ai": "OpenAI, que escribe las preguntas, tiene indicado no guardar lo que recibe cuando su API ofrece esa opción; puede conservar los datos hasta 30 días, solo para detectar abusos salvo que la ley exija más tiempo, y no los usa para entrenar sus modelos.",
       "rights": "Cualquiera puede descargar o eliminar sus propios datos en Ajustes, sin escribirnos."
     },
     "compliance": {
@@ -3023,12 +3027,12 @@
       "humanReview": "testee no toma ninguna decisión sobre un candidato: las personas de la empresa revisan los resultados y deciden, y los candidatos pueden pedir que una persona revise su resultado.",
       "dpa": "El acuerdo de tratamiento de datos forma parte de los términos, sin nada que firmar. Cubre el RGPD, el UK GDPR y las leyes estatales de privacidad de EE. UU., como la de California, en las que testee es el proveedor de servicios de la empresa.",
       "documents": "Las empresas reciben <link>instrucciones de uso, una plantilla de EIPD y plantillas de aviso para candidatos</link>, con versiones para la ciudad de Nueva York, Illinois y Colorado.",
-      "nyc": "Ciudad de Nueva York: antes de usar testee para un puesto allí, el empleador cumple lo que le exige la Local Law 144: una auditoría de sesgos independiente en el año anterior a su uso, la publicación de su resumen y un aviso a los candidatos al menos 10 días hábiles antes de evaluarlos. La auditoría de sesgos independiente de testee se realiza antes del <time>{date}</time>, y después cada año."
+      "nyc": "Ciudad de Nueva York: antes de usar testee para un puesto allí, el empleador cumple lo que le exige la Local Law 144: una auditoría de sesgos independiente en el año anterior a su uso, la publicación de su resumen y un aviso a los candidatos que viven en la ciudad al menos 10 días hábiles antes de evaluarlos. La auditoría de sesgos independiente de testee se realiza antes del <time>{date}</time>, y después cada año."
     },
     "residency": {
       "title": "Dónde se almacenan los datos",
-      "storage": "testee funciona en Google Cloud en la UE, en Bélgica, donde se almacena su base de datos. Los contadores de límites de uso están en Upstash, también en Bélgica, y los correos se envían a través de Resend en Irlanda.",
-      "transfers": "Tres proveedores tratan datos en Estados Unidos: Google para el inicio de sesión, OpenAI, y Cloudflare para la comprobación «No soy un robot». Estas transferencias están cubiertas por el Marco de Privacidad de Datos UE-EE. UU. (EU-US Data Privacy Framework) o por las cláusulas contractuales tipo de la Comisión Europea, y para el Reino Unido por la UK Extension y el UK International Data Transfer Addendum."
+      "storage": "testee funciona en Google Cloud en la UE, en Bélgica, donde se almacena su base de datos. Los contadores de límites de uso están en Upstash, también en Bélgica. Los correos se envían desde Irlanda a través de Resend, que los almacena en Estados Unidos.",
+      "transfers": "Cuatro proveedores tratan datos en Estados Unidos: Google para el inicio de sesión, OpenAI, Resend para los correos y Cloudflare para la comprobación «No soy un robot». El correo de nuestra bandeja de entrada de Google Workspace también puede almacenarse fuera de la UE. Estas transferencias están cubiertas por el Marco de Privacidad de Datos UE-EE. UU. (EU-US Data Privacy Framework) o por las cláusulas contractuales tipo de la Comisión Europea, y para el Reino Unido por la UK Extension y el UK International Data Transfer Addendum."
     },
     "subprocessors": {
       "title": "Subencargados del tratamiento",
@@ -3327,7 +3331,7 @@
       "phone": "Funciona en el móvil igual que en el ordenador",
       "saved": "El progreso se guarda sobre la marcha",
       "tap": "Tocar una opción también funciona siempre",
-      "kept": "La voz solo se convierte en texto, nunca se guarda",
+      "kept": "testee no guarda ninguna voz: solo se convierte en texto",
       "voiceLanguages": "En los 23 idiomas, con una calidad que varía según el idioma",
       "contrast": "Se rechazan los colores difíciles de leer",
       "logo": "Tu logo en las invitaciones, la entrevista y los informes en PDF",
@@ -3459,7 +3463,7 @@
       },
       "privacy": {
         "title": "Privacidad desde el diseño",
-        "text": "Sin venta de datos, sin deducir nada sobre los candidatos, la voz nunca se guarda."
+        "text": "Sin venta de datos, sin deducir nada sobre los candidatos, testee no guarda ninguna voz."
       },
       "verified": {
         "title": "Empresas verificadas",
@@ -3475,7 +3479,7 @@
       },
       "expire": {
         "title": "Los créditos no caducan",
-        "text": "Las recargas mayores cuestan menos por candidato; los créditos pagados sin usar son reembolsables."
+        "text": "Las recargas mayores cuestan menos por candidato; los créditos pagados sin usar son reembolsables durante 14 días."
       },
       "autoTopUp": {
         "title": "Recarga automática",

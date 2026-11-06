@@ -42,11 +42,11 @@ updated: "2026-11-07"
 
 ## 뉴욕시: Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page)는 소비자·근로자보호국(Department of Consumer and Worker Protection)의 규칙(6 RCNY §5-300 이하)과 함께, 고용주나 채용 대행사가 뉴욕시 일자리의 채용 결정을 실질적으로 돕는 자동화된 고용 결정 도구(AEDT)를 사용할 때 적용됩니다. 지원자에게 점수나 순위를 매겨 다음 단계로 갈 사람을 정하는 데 쓰는 도구는 해당할 가능성이 매우 높습니다. 사용하기 전에 다음이 필요합니다.
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page)는 소비자·근로자보호국(Department of Consumer and Worker Protection)의 규칙(6 RCNY §5-300 이하)과 함께, 고용주나 채용 대행사가 뉴욕시에서의 채용 결정을 실질적으로 돕는 자동화된 고용 결정 도구(AEDT)를 사용할 때 적용됩니다. 대상은 최소한 파트타임으로 뉴욕시 사무실에서 일하는 일자리, 그런 사무실에 연계된 완전 원격 일자리, 또는 그곳에 소재한 채용 대행사의 사용입니다. 지원자에게 점수나 순위를 매겨 다음 단계로 갈 사람을 정하는 데 쓰는 도구는 해당할 가능성이 매우 높습니다. 사용하기 전에 다음이 필요합니다.
 
 - **편향 감사:** 사용 전 1년 이내에 독립 감사인이 수행해야 합니다. 공급업체도, 고용주인 여러분도 독립 감사인이 될 수 없습니다.
 - **감사 요약 공개:** 성별, 인종/민족, 교차 범주별 선발률 또는 점수율과 영향 비율, 알 수 없는 범주에 속한 지원자 수, 도구의 배포일.
-- **지원자 고지:** 사용 최소 영업일 10일 전에, 대체 선발 절차나 편의를 요청하는 방법에 관한 정보와 함께.
+- **뉴욕시에 거주하는 지원자 고지:** 사용 최소 영업일 10일 전에, 대체 선발 절차나 편의를 요청하는 방법에 관한 정보와 함께.
 
 감사 계산 방법은 다음과 같습니다.
 
@@ -81,7 +81,7 @@ updated: "2026-11-07"
 
 ## 뉴저지와 텍사스
 
-- **뉴저지.** Law Against Discrimination에 따른 차별적 영향 규정(N.J.A.C. 13:16)은 2025년 12월 15일부터 시행되었으며 자동화된 고용 결정 도구를 포함합니다. 공급업체가 도구를 만들었더라도 고용주가 책임을 질 수 있습니다.
+- **뉴저지.** Law Against Discrimination에 따른 차별적 영향 규정(N.J.A.C. 13:16)은 2025년 12월 15일부터 시행되었으며 자동화된 고용 결정 도구를 차별적 영향을 줄 수 있는 관행 중 하나로 명시합니다. 공급업체의 제품에 의존하는 고용주는 그 제품이 법에 부합하도록 합리적인 조치를 취해야 하며, 사용 전에 충분히 검증되지 않은 도구는 그 자체로 차별적 영향을 줄 수 있습니다.
 - **텍사스.** Responsible AI Governance Act(HB 149)는 2026년 1월 1일부터 시행되었으며, 불법적으로 차별할 의도로 AI를 사용하는 것을 금지합니다. 차별적 영향만으로는 그 의도가 입증되지 않습니다.
 
 ## 주요 일정
@@ -141,5 +141,5 @@ testee는 직무 설명을 바탕으로 AI가 작성한, 시간 제한이 있는
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), Public Act 103-0804로 개정.
 - Colorado SB 26-189.
 - California Code of Regulations, title 2, §11013(c); 자동화된 의사결정 기술에 관한 California Consumer Privacy Act 규정; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (공급업체는 §13:16-2.4(e), 자동화 도구는 §13:16-3.2(c)), [Morgan Lewis의 요약](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

@@ -42,11 +42,11 @@ Ustawa o Amerykanach z niepełnosprawnościami (Americans with Disabilities Act,
 
 ## Nowy Jork: Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) wraz z przepisami Departamentu Ochrony Konsumentów i Pracowników (DCWP) (6 RCNY §5-300 i nast.) ma zastosowanie, gdy pracodawca lub agencja zatrudnienia używa zautomatyzowanego narzędzia do decyzji o zatrudnieniu (AEDT), które w istotnym stopniu wspiera decyzje o zatrudnieniu na stanowiska w Nowym Jorku. Narzędzie, które punktuje kandydatów lub tworzy ich ranking i służy do decydowania, kto przechodzi dalej, bardzo prawdopodobnie się kwalifikuje. Przed jego użyciem potrzebujesz:
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) wraz z przepisami Departamentu Ochrony Konsumentów i Pracowników (DCWP) (6 RCNY §5-300 i nast.) ma zastosowanie, gdy pracodawca lub agencja zatrudnienia używa zautomatyzowanego narzędzia do decyzji o zatrudnieniu (AEDT), które w istotnym stopniu wspiera decyzje o zatrudnieniu w Nowym Jorku: stanowisko w tamtejszym biurze, co najmniej w niepełnym wymiarze, stanowisko w pełni zdalne powiązane z takim biurem lub użycie przez agencję zatrudnienia mającą tam siedzibę. Narzędzie, które punktuje kandydatów lub tworzy ich ranking i służy do decydowania, kto przechodzi dalej, bardzo prawdopodobnie się kwalifikuje. Przed jego użyciem potrzebujesz:
 
 - **Audytu stronniczości** przeprowadzonego przez niezależnego audytora w ciągu roku przed użyciem. Niezależnym audytorem nie może być ani dostawca, ani Ty jako pracodawca.
 - **Opublikowanego podsumowania** audytu: wskaźników selekcji lub wskaźników punktacji i współczynników wpływu według płci, rasy/pochodzenia etnicznego i kategorii krzyżowych, liczby kandydatów w kategorii nieznanej oraz daty udostępnienia narzędzia.
-- **Informacji dla kandydatów** co najmniej 10 dni roboczych przed użyciem, z informacją, jak poprosić o alternatywny proces selekcji lub usprawnienie.
+- **Informacji dla kandydatów mieszkających w Nowym Jorku** co najmniej 10 dni roboczych przed użyciem, z informacją, jak poprosić o alternatywny proces selekcji lub usprawnienie.
 
 Jak liczy się audyt:
 
@@ -81,7 +81,7 @@ Ustawa Kolorado o AI została uchylona i uchwalona na nowo przez SB 26-189, podp
 
 ## New Jersey i Teksas
 
-- **New Jersey.** Przepisy o dyskryminacji pośredniej na podstawie Law Against Discrimination (N.J.A.C. 13:16), obowiązujące od 15 grudnia 2025, obejmują zautomatyzowane narzędzia do decyzji o zatrudnieniu. Pracodawca może odpowiadać nawet wtedy, gdy narzędzie zbudował dostawca.
+- **New Jersey.** Przepisy o dyskryminacji pośredniej na podstawie Law Against Discrimination (N.J.A.C. 13:16), obowiązujące od 15 grudnia 2025, wymieniają zautomatyzowane narzędzia do decyzji o zatrudnieniu wśród praktyk, które mogą prowadzić do dyskryminacji pośredniej. Pracodawca, który polega na produkcie dostawcy, musi podjąć rozsądne kroki, aby upewnić się, że jest on zgodny z prawem, a narzędzie niewystarczająco przetestowane przed użyciem może samo prowadzić do dyskryminacji pośredniej.
 - **Teksas.** Responsible AI Governance Act (HB 149), obowiązująca od 1 stycznia 2026, zakazuje AI używanej z zamiarem bezprawnej dyskryminacji. Sama dyskryminacja pośrednia nie dowodzi takiego zamiaru.
 
 ## Daty
@@ -141,5 +141,5 @@ Jak to dziś wygląda w produkcie:
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), znowelizowana przez Public Act 103-0804.
 - Colorado SB 26-189.
 - California Code of Regulations, title 2, §11013(c); przepisy California Consumer Privacy Act o technologiach zautomatyzowanego podejmowania decyzji; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) o dostawcach, §13:16-3.2(c) o zautomatyzowanych narzędziach), wraz z [podsumowaniem Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Teksas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

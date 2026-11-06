@@ -1316,7 +1316,7 @@
     "voiceDenied": "Microfoon geblokkeerd. Sta hem toe via het pictogram naast het adres en probeer het opnieuw.",
     "voiceRetry": "Opnieuw proberen",
     "voiceUnsupported": "Deze browser kan je stem niet opnemen. Open deze pagina in een recente versie van Chrome, Edge, Firefox of Safari.",
-    "voice": "Mira, een AI-interviewer, leest elke vraag voor, en de tijd voor de vraag loopt al terwijl ze voorleest. Antwoord met je stem of tik op een optie. Een duidelijk gesproken antwoord op een vraag met één antwoord wordt meteen opgeslagen en kan niet meer worden gewijzigd. Je stem wordt alleen omgezet in tekst om je antwoord te lezen, en wordt nooit bewaard of geanalyseerd.",
+    "voice": "Mira, een AI-interviewer, leest elke vraag voor, en de tijd voor de vraag loopt al terwijl ze voorleest. Antwoord met je stem of tik op een optie. Een duidelijk gesproken antwoord op een vraag met één antwoord wordt meteen opgeslagen en kan niet meer worden gewijzigd. Je stem wordt alleen omgezet in tekst om je antwoord te lezen, en wordt nooit geanalyseerd. testee bewaart hem niet; OpenAI, dat dit voor ons doet, mag hem maximaal 30 dagen bewaren om op misbruik te controleren, tenzij de wet een langere termijn vereist.",
     "unanswered": "Je hebt één poging, en onbeantwoorde vragen tellen als fout.",
     "saved": "Je voortgang wordt bewaard: gebruik deze link opnieuw om verder te gaan. Het interview eindigt vanzelf kort nadat de hele interviewtijd sinds je start voorbij is.",
     "savedLink": "Je voortgang wordt bewaard: we mailen je een link om verder te gaan. Het interview eindigt vanzelf kort nadat de hele interviewtijd sinds je start voorbij is.",
@@ -2976,15 +2976,19 @@
       "contrast": "Kleuren die een bedrijf kiest voor zijn interviewpagina's worden geweigerd als tekst erop moeilijk leesbaar zou zijn (onder het WCAG-contrast).",
       "languages": "De site in 23 talen, van rechts naar links waar de taal zo wordt geschreven.",
       "phones": "Pagina's passen op telefoonschermen en werken als je inzoomt.",
-      "text": "Interviewvragen zijn tekst met antwoordopties: audio of video is niet nodig.",
-      "extraTime": "Een bedrijf kan je per vraag extra tijd geven. Vraag het bedrijf daarom, of om een andere aanpassing, voordat je begint; je hoeft niet te zeggen waarom.",
+      "text": "Interviewvragen worden getoond als tekst met antwoordopties, ook in spraakmodus, waar je kunt tikken in plaats van spreken.",
+      "extraTime": "Een bedrijf kan je per vraag extra tijd geven. Vraag het bedrijf daarom, of om een andere aanpassing, voordat je begint; je hoeft niet te zeggen waarom. Als je via een deelbare link bent gekomen, vraag dan eerst om een persoonlijke uitnodiging: extra tijd kan niet aan een link worden toegevoegd.",
       "keyboard": "Met het toetsenbord: op elke pagina komt eerst een link “Naar de inhoud springen”, tussen tabbladen ga je met de pijltjestoetsen, en schermlezers lezen de fouten in een formulier voor."
     },
     "limits": {
       "title": "Wat nog tekortschiet",
       "timed": "Interviewvragen hebben een tijdslimiet, zoals de beoordeling van het bedrijf vereist. Heb je meer tijd nodig, vraag het bedrijf dan om extra tijd voordat je begint.",
       "audit": "testee is nog niet onafhankelijk getoetst, dus sommige onderdelen voldoen mogelijk niet aan WCAG 2.2 AA.",
-      "providers": "Betalen voor credits (de betaalpagina van Paddle) en de controle “Ik ben geen robot” (Cloudflare Turnstile) worden door die aanbieders verzorgd, met hun eigen toegankelijkheid."
+      "providers": "Betalen voor credits (de betaalpagina van Paddle), de controle “Ik ben geen robot” (Cloudflare Turnstile) en de video op de startpagina (YouTube) worden door die aanbieders verzorgd, met hun eigen toegankelijkheid.",
+      "contrast": "In het lichte thema heeft de witte tekst op de primaire knoppen van testee een contrast van 4.34:1, net onder de 4.5:1 die WCAG AA vraagt. Het donkere thema voldoet eraan.",
+      "motion": "De bewegende beelden op de startpagina en een paar kleine animaties, zoals de pulserende afspeelknop, de knop “vraag Mira” en de bel, blijven bewegen zonder pauzeknop. De instelling voor minder beweging op je apparaat stopt ze.",
+      "contactForm": "Het contactformulier toont de naam van elk veld alleen als voorbeeldtekst, die verdwijnt zodra je typt. Schermlezers noemen de naam wel.",
+      "voice": "Voor een interview in spraakmodus moet je vóór het begin je microfoon en geluid toestaan, ook als je je antwoorden aantikt. Kun je ze niet gebruiken, vraag het bedrijf dan om je in te stellen op antwoorden door te tikken."
     },
     "feedback": {
       "title": "Laat het ons weten",
@@ -3013,8 +3017,8 @@
       "roles": "testee is verwerkingsverantwoordelijke voor de accounts van de mensen die het gebruiken, en verwerker van de gegevens van kandidaten, die toebehoren aan het bedrijf dat hen uitnodigt.",
       "noSelling": "We verkopen geen persoonsgegevens en delen ze niet voor advertenties. Er zijn geen advertentie- of analysecookies.",
       "noInference": "testee verzamelt geen gegevens over geslacht, leeftijd, afkomst of beperking van kandidaten, en leidt daar ook niets over af.",
-      "voice": "In de spraakmodus wordt het gesproken antwoord van een kandidaat omgezet in tekst en gekoppeld aan de opties, en de gekoppelde optie krijgt de kandidaat te horen en op het scherm te zien; een keuze van meerdere opties wordt eerst bevestigd. De spraak wordt niet opgenomen of opgeslagen, en de stem wordt op geen enkele andere manier geanalyseerd.",
-      "ai": "OpenAI, dat de vragen schrijft, krijgt de opdracht niets op te slaan van wat het ontvangt; het bewaart de gegevens hooguit 30 dagen, alleen om op misbruik te controleren, en gebruikt ze niet om zijn modellen te trainen.",
+      "voice": "In de spraakmodus wordt het gesproken antwoord van een kandidaat omgezet in tekst en gekoppeld aan de opties, en de gekoppelde optie krijgt de kandidaat te horen en op het scherm te zien; een keuze van meerdere opties wordt eerst bevestigd. testee slaat geen spraak op, en de stem wordt op geen enkele andere manier geanalyseerd. OpenAI, dat de spraak omzet in tekst, mag die maximaal 30 dagen bewaren, zoals hieronder staat.",
+      "ai": "OpenAI, dat de vragen schrijft, krijgt de opdracht niets op te slaan van wat het ontvangt waar zijn API die keuze biedt; het mag de gegevens maximaal 30 dagen bewaren, alleen om op misbruik te controleren, tenzij de wet een langere termijn vereist, en gebruikt ze niet om zijn modellen te trainen.",
       "rights": "Iedereen kan zijn eigen gegevens downloaden of verwijderen in Instellingen, zonder ons te hoeven schrijven."
     },
     "compliance": {
@@ -3023,12 +3027,12 @@
       "humanReview": "testee neemt geen besluit over een kandidaat: mensen bij het bedrijf beoordelen de resultaten en beslissen, en kandidaten kunnen vragen om een beoordeling van hun resultaat door een mens.",
       "dpa": "De verwerkersovereenkomst maakt deel uit van de voorwaarden; je hoeft niets te ondertekenen. Ze dekt de GDPR, de UK GDPR en privacywetten van Amerikaanse staten zoals die van Californië, waaronder testee de dienstverlener van het bedrijf is.",
       "documents": "Bedrijven krijgen <link>instructies voor gebruik, een DPIA-sjabloon en sjablonen voor kandidaatberichten</link>, met versies voor New York City, Illinois en Colorado.",
-      "nyc": "New York City: voordat de werkgever testee gebruikt voor een functie daar, doet hij wat Local Law 144 van hem vraagt: een onafhankelijke bias-audit binnen het jaar voor gebruik, de publicatie van de samenvatting ervan en een bericht aan kandidaten minstens 10 werkdagen voordat ze worden beoordeeld. De eigen onafhankelijke bias-audit van testee wordt uitgevoerd vóór <time>{date}</time>, en daarna elk jaar."
+      "nyc": "New York City: voordat de werkgever testee gebruikt voor een functie daar, doet hij wat Local Law 144 van hem vraagt: een onafhankelijke bias-audit binnen het jaar voor gebruik, de publicatie van de samenvatting ervan en een bericht aan kandidaten die in de stad wonen minstens 10 werkdagen voordat ze worden beoordeeld. De eigen onafhankelijke bias-audit van testee wordt uitgevoerd vóór <time>{date}</time>, en daarna elk jaar."
     },
     "residency": {
       "title": "Waar gegevens worden opgeslagen",
-      "storage": "testee draait op Google Cloud in de EU, in België, waar ook de database staat. Tellers voor snelheidslimieten staan bij Upstash, ook in België, en e-mails worden verstuurd via Resend in Ierland.",
-      "transfers": "Drie aanbieders verwerken gegevens in de Verenigde Staten: Google voor het inloggen, OpenAI en Cloudflare voor de controle “Ik ben geen robot”. Deze doorgiften vallen onder het EU-VS-kader voor gegevensbescherming (EU-US Data Privacy Framework) of de standaardcontractbepalingen van de Europese Commissie, en voor het VK onder de UK Extension en het Britse addendum voor internationale gegevensdoorgifte (UK International Data Transfer Addendum)."
+      "storage": "testee draait op Google Cloud in de EU, in België, waar ook de database staat. Tellers voor snelheidslimieten staan bij Upstash, ook in België. E-mails worden vanuit Ierland verstuurd via Resend, dat ze opslaat in de Verenigde Staten.",
+      "transfers": "Vier aanbieders verwerken gegevens in de Verenigde Staten: Google voor het inloggen, OpenAI, Resend voor e-mails en Cloudflare voor de controle “Ik ben geen robot”. E-mail in onze Google Workspace-inbox kan ook buiten de EU worden opgeslagen. Deze doorgiften vallen onder het EU-VS-kader voor gegevensbescherming (EU-US Data Privacy Framework) of de standaardcontractbepalingen van de Europese Commissie, en voor het VK onder de UK Extension en het Britse addendum voor internationale gegevensdoorgifte (UK International Data Transfer Addendum)."
     },
     "subprocessors": {
       "title": "Subverwerkers",
@@ -3327,7 +3331,7 @@
       "phone": "Werkt op een telefoon net zo goed als op een computer",
       "saved": "Voortgang wordt onderweg opgeslagen",
       "tap": "Een optie aantikken werkt ook altijd",
-      "kept": "De stem wordt alleen omgezet in tekst, nooit bewaard",
+      "kept": "testee bewaart geen stem: die wordt alleen omgezet in tekst",
       "voiceLanguages": "In alle 23 talen, met een kwaliteit die per taal verschilt",
       "contrast": "Kleuren die slecht leesbaar zijn, worden geweigerd",
       "logo": "Je logo op uitnodigingen, in het interview en op pdf-rapporten",
@@ -3459,7 +3463,7 @@
       },
       "privacy": {
         "title": "Privacy by design",
-        "text": "Geen verkoop van data, niets afgeleid over kandidaten, stem nooit bewaard."
+        "text": "Geen verkoop van data, niets afgeleid over kandidaten, geen stem bewaard door testee."
       },
       "verified": {
         "title": "Geverifieerde bedrijven",
@@ -3475,7 +3479,7 @@
       },
       "expire": {
         "title": "Credits verlopen nooit",
-        "text": "Grotere opwaarderingen kosten minder per kandidaat; ongebruikte betaalde credits krijg je terug."
+        "text": "Grotere opwaarderingen kosten minder per kandidaat; ongebruikte betaalde credits zijn binnen 14 dagen terug te vragen."
       },
       "autoTopUp": {
         "title": "Automatisch opwaarderen",

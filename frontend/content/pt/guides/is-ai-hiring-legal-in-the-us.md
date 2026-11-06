@@ -42,11 +42,11 @@ A Americans with Disabilities Act exige adaptações razoáveis para candidatos 
 
 ## Cidade de Nova York: Local Law 144
 
-A [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), com as regras do Department of Consumer and Worker Protection (6 RCNY §5-300 e seguintes), se aplica quando um empregador ou agência de emprego usa uma ferramenta automatizada de decisão de emprego (AEDT) para auxiliar de forma substancial as decisões de contratação para vagas na cidade de Nova York. Uma ferramenta que pontua ou ranqueia candidatos, usada para decidir quem avança, muito provavelmente se enquadra. Antes de usar uma, você precisa de:
+A [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), com as regras do Department of Consumer and Worker Protection (6 RCNY §5-300 e seguintes), se aplica quando um empregador ou agência de emprego usa uma ferramenta automatizada de decisão de emprego (AEDT) para auxiliar de forma substancial as decisões de contratação na cidade: uma vaga em um escritório na cidade de Nova York, pelo menos em meio período, uma vaga totalmente remota vinculada a esse escritório, ou o uso por uma agência de emprego localizada lá. Uma ferramenta que pontua ou ranqueia candidatos, usada para decidir quem avança, muito provavelmente se enquadra. Antes de usar uma, você precisa de:
 
 - **Uma auditoria de viés** feita por um auditor independente, realizada no ano anterior ao uso. Nem o fornecedor nem você, o empregador, podem ser o auditor independente.
 - **Um resumo publicado** da auditoria: as taxas de seleção ou de pontuação e as razões de impacto por sexo, raça/etnia e categorias interseccionais, o número de candidatos em categoria desconhecida e a data de distribuição da ferramenta.
-- **Um aviso aos candidatos** pelo menos 10 dias úteis antes do uso, com informações sobre como pedir um processo de seleção alternativo ou uma adaptação.
+- **Um aviso aos candidatos que moram na cidade de Nova York** pelo menos 10 dias úteis antes do uso, com informações sobre como pedir um processo de seleção alternativo ou uma adaptação.
 
 Como a auditoria calcula:
 
@@ -81,7 +81,7 @@ A lei de IA do Colorado foi revogada e promulgada de novo pela SB 26-189, sancio
 
 ## Nova Jersey e Texas
 
-- **Nova Jersey.** Regras sobre impacto desproporcional da Law Against Discrimination (N.J.A.C. 13:16), em vigor desde 15 de dezembro de 2025, abrangem ferramentas automatizadas de decisão de emprego. Um empregador pode ser responsabilizado mesmo que um fornecedor tenha criado a ferramenta.
+- **Nova Jersey.** Regras sobre impacto desproporcional da Law Against Discrimination (N.J.A.C. 13:16), em vigor desde 15 de dezembro de 2025, citam as ferramentas automatizadas de decisão de emprego entre as práticas que podem ter impacto desproporcional. Um empregador que se apoia no produto de um fornecedor deve tomar medidas razoáveis para garantir que ele esteja de acordo com a lei, e uma ferramenta não testada adequadamente antes do uso pode, por si só, ter impacto desproporcional.
 - **Texas.** A Responsible AI Governance Act (HB 149), em vigor desde 1º de janeiro de 2026, proíbe IA usada com a intenção de discriminar ilegalmente. Um impacto desproporcional, sozinho, não demonstra essa intenção.
 
 ## As datas
@@ -141,5 +141,5 @@ Como isso aparece no produto hoje:
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), alterada pela Public Act 103-0804.
 - Colorado SB 26-189.
 - California Code of Regulations, title 2, §11013(c); regulamentos da California Consumer Privacy Act sobre tecnologia de tomada de decisão automatizada; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- Nova Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- Nova Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) sobre fornecedores, §13:16-3.2(c) sobre ferramentas automatizadas), com o [resumo da Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

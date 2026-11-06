@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Kunnen kandidaten met hun stem antwoorden?",
-        "answer": "Ja, als het bedrijf een interview op spraakmodus zet, in elk van de 23 talen van testee; hoe goed die voorleest en verstaat, verschilt per taal (de gids 'Spraakmodus in 23 talen' laat het per taal zien). De vragen worden voorgelezen en kandidaten antwoorden hardop; wat ze zeggen, wordt omgezet in tekst en gekoppeld aan een optie, en wordt nooit opgeslagen. Stemmen worden niet geanalyseerd op toon of emotie, en kandidaten kunnen altijd in plaats daarvan tikken.",
+        "answer": "Ja, als het bedrijf een interview op spraakmodus zet, in elk van de 23 talen van testee; hoe goed die voorleest en verstaat, verschilt per taal (de gids 'Spraakmodus in 23 talen' laat het per taal zien). De vragen worden voorgelezen en kandidaten antwoorden hardop; wat ze zeggen, wordt omgezet in tekst en gekoppeld aan een optie. testee slaat het niet op; OpenAI, dat dit voor ons doet, mag het maximaal 30 dagen bewaren, alleen om op misbruik te controleren, tenzij de wet een langere termijn vereist. Stemmen worden niet geanalyseerd op toon of emotie, en kandidaten kunnen altijd in plaats daarvan tikken.",
     },
     {
         "key": "cost",
@@ -140,7 +140,7 @@ FAQ = [
     {
         "key": "delete",
         "question": "Kan ik mijn account verwijderen?",
-        "answer": "Ja, in Instellingen. Je account en je gegevens worden verwijderd, en vooraf kun je een kopie van je gegevens downloaden.",
+        "answer": "Ja, in Instellingen, tenzij je eigenaar bent van een bedrijf waar anderen lid van zijn geworden: maak eerst een ander lid eigenaar, of verwijder het bedrijf. Je account en je gegevens worden verwijderd, met de bedrijven waarvan alleen jij lid bent en hun credits, die niet worden terugbetaald. Vooraf kun je een kopie van je gegevens downloaden.",
     },
     {
         "key": "report",

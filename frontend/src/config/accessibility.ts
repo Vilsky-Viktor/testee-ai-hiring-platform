@@ -1,5 +1,5 @@
 // When the accessibility statement was last reviewed: the page shows it.
-export const ACCESSIBILITY_REVIEWED = "2026-10-16"
+export const ACCESSIBILITY_REVIEWED = "2026-11-07"
 // The statement's lists, by their message keys, in the order shown.
 export const ACCESSIBILITY_DONE = [
   "themes",
@@ -10,4 +10,12 @@ export const ACCESSIBILITY_DONE = [
   "extraTime",
   "keyboard",
 ] as const
-export const ACCESSIBILITY_LIMITS = ["timed", "audit", "providers"] as const
+export const ACCESSIBILITY_LIMITS = [
+  "timed",
+  "audit",
+  "contrast",
+  "motion",
+  "contactForm",
+  "voice",
+  "providers",
+] as const

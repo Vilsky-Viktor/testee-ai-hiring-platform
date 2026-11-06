@@ -1,0 +1,189 @@
+{
+  "intro": "Questa informativa spiega quali dati personali raccoglie testee, perché, per quanto tempo li conserviamo e quali diritti hai. testee è gestito da Arcolabs OÜ (codice di registro 17587452), Sepapaja tn 6, 15551 Tallinn, Harju maakond, Estonia. testee.ai mostra questo documento anche in altre lingue; solo questa versione inglese è vincolante e, in caso di discordanza con una traduzione, prevale la versione inglese.",
+  "sections": [
+    {
+      "heading": "Chi è responsabile",
+      "paragraphs": [
+        "Per il tuo account e per l'account della tua azienda, Arcolabs OÜ è titolare del trattamento dei tuoi dati. Scrivi a hello@testee.ai per qualsiasi domanda o richiesta.",
+        "Quando un'azienda ti invita a un colloquio su testee, è l'azienda a decidere perché e come vengono usati i tuoi risultati ed è titolare del loro trattamento; noi li trattiamo per suo conto. Puoi contattare direttamente l'azienda, oppure noi, e inoltreremo la tua richiesta."
+      ]
+    },
+    {
+      "heading": "Cosa raccogliamo",
+      "items": [
+        "Account: il tuo nome, indirizzo email, foto del profilo e ID dell'account, dall'account Google, LinkedIn o GitHub con cui accedi, e quali di questi sono collegati al tuo account.",
+        "Ciò che ci fornisci: le descrizioni del lavoro che incolli e i colloqui creati a partire da esse, le note che scrivi sui colloqui di un'azienda, le email dei candidati che inviti (e i loro nomi, se li indichi o li correggi), delle persone che inviti nel team della tua azienda e delle persone a cui invii un report, nonché le tue valutazioni e segnalazioni delle domande.",
+        "L'assistente: quando hai effettuato l'accesso, ciò che gli scrivi o dici (un messaggio vocale viene trasformato in testo, e testee non lo conserva) e le sue risposte, così puoi riprendere una chat. Non conserva ciò che ha letto per risponderti, come i risultati dei candidati, salvo nei registri delle chiamate all'IA indicati più avanti: quando riapri una chat, li recupera di nuovo con il tuo accesso attuale. Se non hai effettuato l'accesso, le tue domande sono usate solo per rispondere e non vengono conservate, salvo nei registri delle chiamate all'IA indicati più avanti. Un messaggio che contiene una chiave, un token o una password viene rimosso subito: non viene conservato né inoltrato.",
+        "Aziende: il nome, il logo e il sito web dell'azienda, e il dominio email con cui è stata verificata; quando un proprietario o un amministratore chiede la verifica, l'indirizzo email su quel dominio che ha confermato e il nome dell'azienda che ha inviato per la revisione.",
+        "Simulazioni: se svolgi simulazioni di colloquio gratuite, le tue risposte, i punteggi e quanto tempo ha richiesto ogni risposta. Solo tu li vedi, a meno che tu non attivi Aperto a nuove opportunità.",
+        "Aperto a nuove opportunità: se lo attivi, l'indirizzo del profilo LinkedIn che indichi, il tuo nome dall'account con cui accedi, quando lo hai attivato e un registro di ogni attivazione o disattivazione, con la versione del testo che hai accettato.",
+        "Messaggi di contatto: il nome, l'indirizzo email e il messaggio che invii tramite la pagina dei contatti.",
+        "Colloqui, se un'azienda ti invita: l'email con cui sei stato invitato, le tue risposte, quanto tempo ha richiesto ogni risposta, quando hai lasciato la pagina del colloquio (e per quanto tempo), copiato del testo o risposto troppo in fretta per aver letto la domanda, se i tuoi tempi di risposta e le tue risposte giuste e sbagliate seguono la lunghezza e la difficoltà delle domande come quelli degli altri candidati, quando hai confermato, prima di iniziare, che avresti risposto in autonomia, l'eventuale tempo extra concesso dall'azienda (senza registrarne il motivo), e le tue valutazioni e segnalazioni delle domande. Ne sei informato prima di iniziare. In un colloquio in modalità vocale, ciò che dici rispondendo viene trasformato in testo e abbinato alle opzioni: una sola opzione che indichi chiaramente viene presa subito come tua risposta, e una scelta di più opzioni la confermi prima. testee non conserva ciò che dici, e la tua voce non viene analizzata in nessun altro modo. OpenAI, che lo trasforma in testo, può conservarlo per un massimo di 30 giorni, come indicato più avanti.",
+        "Dati tecnici: report degli errori senza il tuo indirizzo IP né la tua email, log del server di breve durata necessari per far funzionare il servizio e proteggerlo, e contatori di breve durata per i limiti di utilizzo, alcuni legati al tuo indirizzo IP.",
+        "La verifica «Non sono un robot»: quando invii il modulo di contatto, fai una prima domanda alla chat di assistenza, inizi un colloquio dal link di un annuncio di lavoro, crei la tua prima azienda o approvi gli argomenti di un'azienda che non ha ancora pagato, Cloudflare Turnstile esamina il tuo browser (ad esempio il tipo, il modo in cui si comporta e l'indirizzo da cui si connette) per distinguere una persona da uno script. Riceviamo solo l'esito della verifica, cioè se è stata superata.",
+        "App di IA che colleghi: il nome dell'app e il sito a cui ritorna, e quando l'hai collegata e usata l'ultima volta. Il suo accesso è conservato solo come hash unidirezionale.",
+        "I termini che hai accettato: la versione dei termini in vigore quando ti sei registrato, e quando, come prova di ciò che hai accettato. Viene eliminata insieme al tuo account.",
+        "Strumenti collegati da un'azienda: le chiavi o i token che il suo proprietario o un amministratore crea nel suo sistema di gestione delle candidature (Workable, Greenhouse, Teamtailor, Recruitee o Breezy HR) o in Slack, conservati in forma cifrata; un hash unidirezionale di ogni chiave API di testee, gli indirizzi IP da cui può essere usata e gli indirizzi dei suoi webhook, con chi li ha creati; i domini dei siti web su cui può funzionare il suo colloquio integrato; e, dal suo sistema di gestione delle candidature, l'email, il nome e l'ID di ogni candidato che invia a testee.",
+        "Impostazioni email: quali email facoltative ricevi, e un registro di ogni modifica: quale email, attivata o disattivata, quando, dove (all'accesso, nelle Impostazioni, o tramite un link per annullare l'iscrizione o una segnalazione di spam) e quale versione del testo delle caselle hai visto.",
+        "Email ai membri delle aziende: un registro dei riepiloghi attività e dei promemoria che ti abbiamo inviato, e dell'oggetto di ciascun promemoria, così che nessuno venga inviato due volte.",
+        "Email a molti utenti (avvisi di modifiche ai nostri termini, avvisi importanti sul servizio, novità sul prodotto, offerte): se ciascuna ti è stata inviata, è stata saltata o non è riuscita, e se ne hai annullato l'iscrizione o l'hai segnalata come spam, così che nessuna venga inviata due volte e possiamo vedere come è stata accolta ciascuna.",
+        "Indirizzi a cui non inviamo più email: se un'email a un indirizzo viene respinta in modo permanente, viene respinta temporaneamente 3 volte in 14 giorni o viene segnalata come spam, un hash unidirezionale dell'indirizzo, il motivo e la data. Non può essere riconvertito nell'email.",
+        "Candidati che bloccano le email di un'azienda: un hash unidirezionale del loro indirizzo email, con l'azienda e, se hanno bloccato solo i promemoria di un colloquio, il relativo invito. Non può essere riconvertito nell'email.",
+        "Referral: il link referral tramite cui tu o la tua azienda siete arrivati, e se il referral è stato premiato.",
+        "Acquisti: per ogni ricarica, l'azienda a cui era destinata, chi l'ha acquistata, cosa è stato acquistato, il totale e la valuta, l'ID della transazione di Paddle e quando. I dati della carta e di fatturazione li conserva Paddle, non noi.",
+        "Crediti: il saldo di ogni azienda, le voci che hanno aggiunto o speso crediti, il suo codice referral e la sua valuta, la valuta salvata per il tuo account e, se la ricarica automatica è attiva, chi l'ha attivata, la soglia e l'importo scelti, il riferimento di Paddle e le date dei suoi addebiti e dei suoi errori.",
+        "Registro attività di un'azienda: ciò che i suoi membri vi fanno, come invitare, visualizzare o rimuovere un candidato, modificare un colloquio o il team, effettuare una ricarica o collegare uno strumento, con chi l'ha fatto, quando e se l'ha fatto per loro l'assistente, un'app di IA o l'API. Lo vede il proprietario dell'azienda. Candidati e membri sono indicati per nome solo finché fanno ancora parte dell'azienda: il registro conserva i loro ID, mai le loro email.",
+        "Utilizzo dell'IA e limiti: per ogni utilizzo dell'IA, come la scrittura delle domande o la risposta dell'assistente, a cosa serviva, il modello, la sua entità e il suo costo, e l'account e l'azienda per cui era; e ogni volta che un limite rifiuta una richiesta, quale limite, quando, e l'account e l'azienda a cui l'ha rifiutata. Mai il testo inviato all'IA né la sua risposta.",
+        "Registri delle chiamate all'IA: ciò che testee invia all'IA e ciò che questa risponde ogni volta che viene usata, come la scrittura delle domande a partire da una descrizione del lavoro, o le risposte dell'assistente e della chat di assistenza con ciò che hanno letto per rispondere (che può includere i risultati dei candidati), e i voti su tali risposte. Li conserva Langfuse (vedi più avanti), solo per monitorare e migliorare la qualità delle risposte.",
+        "Statistiche di utilizzo: passaggi come la registrazione, la creazione di un'azienda, l'invito di un candidato o una ricarica, con valori come un punteggio o un importo. L'ID del tuo account è sostituito da un codice generato con una chiave segreta in nostro possesso, così le statistiche non ti nominano, ma sono pseudonimizzate, non anonime: con la chiave, il codice corrisponde all'ID del tuo account. L'ID di un'azienda è conservato così com'è. Non sono inclusi nomi, email né testi."
+      ]
+    },
+    {
+      "heading": "Perché li usiamo",
+      "items": [
+        "Per fornire testee: generare colloqui, sottoporli ai candidati invitati, mostrare i risultati alle aziende e inviare le email che richiedi (contratto).",
+        "Email di servizio, come inviti, report, problemi di pagamento, modifiche ai nostri termini e avvisi importanti sul servizio (un incidente di sicurezza, un'interruzione programmata o un cambiamento nel suo funzionamento), che vengono sempre inviate (contratto).",
+        "Il riepilogo attività e i promemoria sulle tue aziende, come crediti in esaurimento o un colloquio senza candidati (nostro legittimo interesse ad aiutarti a usare testee). Sono attivi finché non li disattivi.",
+        "Novità sul prodotto e notizie: per i nostri utenti che non hanno spuntato \"Non inviarmi novità sul prodotto e notizie\" al primo accesso in cui è stato proposto (articolo 13, paragrafo 2, della direttiva relativa alla vita privata e alle comunicazioni elettroniche e § 103¹ della legge estone sulle comunicazioni elettroniche). Puoi interromperle in qualsiasi momento, gratuitamente.",
+        "Offerte e promozioni: solo se acconsenti, spuntando la casella all'accesso o nelle Impostazioni (consenso). Puoi revocarlo in qualsiasi momento.",
+        "Scegliere a chi va un'email inviata a molti utenti: se il tuo account fa parte del team di un'azienda (e se come proprietario o amministratore), ha sostenuto il colloquio di un'azienda o ha usato le simulazioni gratuite, così che una novità sul prodotto, un'offerta o un avviso importante arrivi solo a chi riguarda. Viene usato solo il fatto che il tuo account l'ha fatto, mai le tue risposte, i tuoi risultati o ciò che un'azienda conserva su di te (nostro legittimo interesse a inviare solo email pertinenti). Le novità sul prodotto e le offerte continuano ad andare solo a chi le riceve in base ai due punti precedenti.",
+        "Ricordare che un candidato ha bloccato le email di un'azienda, così che testee non gli scriva più per quell'azienda (rispetto della sua opposizione).",
+        "Per mantenere testee sicuro e funzionante: prevenzione degli abusi, limiti di frequenza, report degli errori e statistiche che migliorano la qualità delle domande (nostro legittimo interesse).",
+        "Qualità delle domande: analizziamo le risposte date alle domande e le relative segnalazioni per individuare tendenze generali e anonimizzate sulla qualità delle domande, che migliorano la generazione delle domande per tutti; queste tendenze non contengono dati personali (nostro legittimo interesse).",
+        "Riutilizzo delle domande generate: le domande che testee genera possono essere riutilizzate nei colloqui e nelle simulazioni di altri clienti, senza alcun dato personale né dettaglio che identifichi un'azienda o una persona. Un'azienda può escludere da questo riutilizzo le domande di un colloquio nelle sue impostazioni.",
+        "I registri delle chiamate all'IA ci permettono di monitorare e migliorare la qualità delle domande e delle risposte dell'IA (nostro legittimo interesse).",
+        "Controllo dei costi e prevenzione degli abusi: i registri dell'utilizzo dell'IA e dei limiti raggiunti mostrano quanto costa l'IA e chi raggiunge quale limite, così possiamo mantenere testee accessibile nei costi e fermare gli usi impropri (nostro legittimo interesse).",
+        "Il registro attività di un'azienda permette al suo proprietario di vedere chi ha fatto cosa nell'azienda, e al nostro supporto di consultarlo quando l'azienda chiede aiuto (legittimo interesse dell'azienda e nostro alla responsabilità delle azioni).",
+        "Le statistiche di utilizzo mostrano quali parti di testee aiutano le persone e quali prezzi e limiti funzionano, così possiamo migliorarli (nostro legittimo interesse).",
+        "Registrazioni degli acquisti, conservate per la contabilità come richiede la normativa contabile estone (obbligo legale).",
+        "Mostrare un'azienda come verificata, confrontando il suo sito web con i domini email dei suoi proprietari e amministratori (nostro legittimo interesse).",
+        "Aperto a nuove opportunità: solo se lo attivi (consenso), le aziende che assumono su testee vedono il tuo nome, il tuo profilo LinkedIn e il tuo ultimo risultato di simulazione a tempo in ogni argomento su cui ti sei esercitato e che uno dei loro colloqui copre al suo livello, per poterti invitare a quel colloquio. Non ti classifichiamo, non ti raccomandiamo e non prendiamo alcuna decisione su di te: è l'azienda a decidere chi invitare. Puoi revocare il consenso in qualsiasi momento nelle Impostazioni, e sparisci subito dall'elenco di ogni azienda. Il registro delle tue scelte viene conservato come prova del tuo consenso (nostro obbligo legale di dimostrarlo).",
+        "I risultati dei colloqui, i tempi e i segnali di integrità aiutano l'azienda che assume a valutare le tue risposte in modo equo (legittimo interesse dell'azienda). I segnali includono schemi nelle tue risposte: tempi pressoché uguali su ogni domanda, oppure domande difficili giuste mentre quelle facili erano sbagliate; in base a questi, all'azienda vengono mostrate domande da farti in merito durante un colloquio dal vivo. Sono le persone dell'azienda a prendere la decisione di assunzione; testee non prende da solo alcuna decisione su di te. Puoi chiedere all'azienda che una persona riesamini il tuo risultato e, prima di iniziare, un accomodamento come del tempo extra."
+      ]
+    },
+    {
+      "heading": "Con chi li condividiamo",
+      "paragraphs": [
+        "Condividiamo i dati con i fornitori di servizi che gestiscono testee per noi, in base ad accordi che li proteggono, e con Paddle, che vende le ricariche:"
+      ],
+      "items": [
+        "Google (Firebase Authentication; Google LLC, Stati Uniti, nell'ambito del quadro UE-USA per la protezione dei dati personali): accesso. LinkedIn e GitHub confermano solo chi sei quando accedi con loro; non riceviamo nient'altro da loro.",
+        "OpenAI: scrittura delle domande a partire dal testo che fornisci; le risposte dell'assistente, a partire dalle tue domande e dai dati che legge con il tuo accesso per rispondere; trasformazione dei messaggi vocali in testo; in modalità vocale, trasformazione in testo della risposta parlata di un candidato e suo abbinamento alle opzioni (le domande lette ad alta voce non contengono dati personali); e verifica delle domande segnalate (solo i motivi indicati, mai i commenti). Dove la sua API offre questa scelta, chiediamo a OpenAI di non conservarli. Secondo i termini della sua API può conservare questi dati per un massimo di 30 giorni, solo per controllare eventuali abusi salvo che la legge richieda un periodo più lungo, e non li usa per addestrare i suoi modelli. (OpenAI Ireland Ltd, in base al nostro accordo sul trattamento dei dati con essa; trasferisce i dati a OpenAI negli Stati Uniti sulla base delle clausole contrattuali tipo della Commissione europea.)",
+        "Resend: invio delle email: inviti e promemoria ai candidati, report, email ai membri delle aziende come il riepilogo attività, e messaggi di contatto (inviate dall'UE, Irlanda, e conservate negli Stati Uniti, sulla base delle clausole contrattuali tipo della Commissione europea e del quadro UE-USA per la protezione dei dati personali).",
+        "Google Workspace: la nostra casella email, che riceve i messaggi di contatto e le email che ci invii (Google Ireland Ltd; la posta può essere conservata al di fuori dell'UE, nell'ambito del quadro UE-USA per la protezione dei dati personali e delle clausole contrattuali tipo).",
+        "Sentry: report degli errori, senza email (nell'UE).",
+        "Langfuse (Langfuse GmbH, Germania, il suo cloud nell'UE): registri delle chiamate all'IA (ciò che viene inviato all'IA e le sue risposte, che possono includere descrizioni del lavoro, domande, messaggi delle chat e ciò che l'assistente ha letto per rispondere, e i voti sulle risposte dell'assistente; in modalità vocale, solo a quali opzioni è stata abbinata una risposta, mai le sue parole), per monitorare e migliorare la qualità delle risposte (nell'UE).",
+        "Cloudflare (Turnstile; Cloudflare, Inc., Stati Uniti, nell'ambito del quadro UE-USA per la protezione dei dati personali): la verifica «Non sono un robot».",
+        "Google Cloud, il nostro fornitore di hosting, che conserva i dati (nell'UE, Belgio).",
+        "Upstash: contatori di breve durata per i limiti di utilizzo e gli aggiornamenti in tempo reale, i risultati delle chiamate API (fino a 24 ore, così che una chiamata ripetuta non venga eseguita due volte) e gli argomenti ricavati da una descrizione del ruolo (fino a 30 giorni, così che lo stesso testo non venga elaborato due volte) (nell'UE, Belgio).",
+        "Aziende, solo se attivi Aperto a nuove opportunità: le aziende che assumono su testee vedono quanto descritto sopra. Ognuna è responsabile di come usa ciò che vede. Se una ti invita, l'invito arriva all'email del tuo account, e l'azienda vede quell'email come quella di qualsiasi candidato.",
+        "Paddle (Paddle.com Market Ltd, Regno Unito) non è uno di questi: vende direttamente le ricariche, come merchant of record, ed è titolare del trattamento dei dati di pagamento, fiscali e di fatturazione che raccoglie, secondo la propria informativa sulla privacy. Gli trasmettiamo l'email del membro che acquista, e ci comunica cosa è stato acquistato e pagato.",
+        "Nemmeno YouTube (Google) è uno di questi: se apri il video nella home page, viene riprodotto da youtube-nocookie.com, e Google riceve il tuo indirizzo IP e ciò che il tuo browser invia, secondo la propria informativa sulla privacy. Non gli viene inviato nulla se non apri il video."
+      ]
+    },
+    {
+      "heading": "Strumenti collegati da un'azienda",
+      "paragraphs": [
+        "Un'azienda può collegare i propri strumenti a testee, e in tal caso inviamo loro dati su sua istruzione, nell'ambito del servizio che ha richiesto: il suo sistema di gestione delle candidature (Workable, Greenhouse, Teamtailor, Recruitee o Breezy HR) riceve il tuo punteggio, se hai raggiunto la soglia di superamento, i segnali di integrità e un link ai tuoi risultati; un canale Slack da essa scelto riceve le sue notifiche, ad esempio che hai finito e il tuo punteggio; e i suoi sistemi, tramite l'API o i webhook di testee, ricevono la tua email, il tuo nome, i tuoi progressi, il tuo punteggio, se hai raggiunto la soglia di superamento, i segnali di integrità e il tuo link di invito. L'azienda sceglie e controlla questi strumenti, che possono trovarsi al di fuori dell'UE, ed è responsabile di come usano i tuoi dati."
+      ]
+    },
+    {
+      "heading": "App di IA che colleghi",
+      "paragraphs": [
+        "Puoi collegare al tuo account testee una tua app di IA, come Claude (di Anthropic) o ChatGPT (di OpenAI). Solo se lo fai, e solo per ciò che le chiedi, legge e modifica i dati delle tue aziende con il tuo accesso, inclusi i risultati dei candidati, e quei dati arrivano al fornitore dell'app secondo i termini e l'informativa sulla privacy dell'app stessa, non i nostri. Sei tu a scegliere queste app e puoi scollegarne una in qualsiasi momento nella scheda Integrazioni di un'azienda; eliminando il tuo account le scolleghi tutte. I proprietari e gli amministratori di un'azienda possono impedire alle app di IA di usare i dati di quell'azienda."
+      ]
+    },
+    {
+      "heading": "Email e annullamento dell'iscrizione",
+      "paragraphs": [
+        "Le email di servizio, come inviti, report, problemi di pagamento, modifiche ai nostri termini e avvisi importanti sul servizio, vengono sempre inviate. Le altre le scegli nelle Impostazioni, alla voce Email: il riepilogo attività, i promemoria, le novità sul prodotto e notizie, e le offerte e promozioni. Ogni email facoltativa ha un link per annullare l'iscrizione che funziona senza accedere, e anche segnalare come spam un'email facoltativa la disattiva. Se un'email a te viene respinta in modo permanente, o se segnali una delle nostre email come spam, smettiamo di inviare email sul prodotto e avvisi a quell'indirizzo finché non ci chiedi di riprendere.",
+        "Gli inviti e i promemoria che un'azienda invia ai candidati tramite testee contengono link per bloccare le email di quell'azienda, o i promemoria di quel colloquio. testee non scrive più a quell'indirizzo per conto dell'azienda, e l'azienda vede l'invito come non recapitato."
+      ]
+    },
+    {
+      "heading": "Trasferimenti al di fuori dell'UE",
+      "paragraphs": [
+        "Quattro di questi fornitori trattano dati negli Stati Uniti: Google, per l'accesso, OpenAI, Resend, che vi conserva le email, e Cloudflare, per la verifica «Non sono un robot». La posta della nostra casella Google Workspace può inoltre essere conservata al di fuori dell'UE. Questi trasferimenti sono coperti dal quadro UE-USA per la protezione dei dati personali o dalle clausole contrattuali tipo della Commissione europea, come indicato sopra. Per le persone nel Regno Unito, i trasferimenti verso gli Stati Uniti si basano sull'estensione britannica del quadro UE-USA per la protezione dei dati personali (UK Extension to the EU-US Data Privacy Framework; Google, Cloudflare) e sulle clausole contrattuali tipo con l'addendum britannico sui trasferimenti internazionali di dati (UK International Data Transfer Addendum; OpenAI, Resend). Scrivici per ottenere una copia delle garanzie applicabili."
+      ]
+    },
+    {
+      "heading": "Per quanto tempo li conserviamo",
+      "items": [
+        "Il tuo account e tutto ciò che contiene: finché non elimini il tuo account.",
+        "Risultati dei colloqui, tempi e segnali di integrità: 12 mesi dall'ultimo invio dell'invito, poi eliminati automaticamente.",
+        "Candidati inviati da un sistema di gestione delle candidature: la loro email, il nome e l'ID in tale sistema, 12 mesi dal loro arrivo.",
+        "Notifiche nell'app, ad esempio che un candidato ha finito: 90 giorni.",
+        "App di IA che colleghi: finché non le scolleghi o elimini il tuo account; un collegamento non usato per 90 giorni termina da solo.",
+        "Le tue chat con l'assistente: 90 giorni dal loro ultimo messaggio. Puoi eliminare una chat in qualsiasi momento, e vengono eliminate insieme al tuo account o all'azienda a cui si riferiscono.",
+        "Il registro attività di un'azienda: chi ha fatto cosa, conservato per 12 mesi.",
+        "Le note che scrivi sui colloqui di un'azienda: finché non elimini la nota o l'azienda non elimina il colloquio o sé stessa. Appartengono all'azienda, quindi restano all'azienda, senza il tuo nome, quando la lasci o elimini il tuo account.",
+        "I registri dell'utilizzo dell'IA e dei limiti raggiunti: 13 mesi, senza l'ID del tuo account dopo che elimini il tuo account.",
+        "Simulazioni: finché non elimini il tuo account.",
+        "Valutazioni e segnalazioni delle domande: finché non viene eliminata la domanda o il tuo account.",
+        "Aperto a nuove opportunità: finché non lo disattivi o non elimini il tuo account, e al massimo un anno dopo l'ultima volta che lo hai attivato o hai salvato il tuo profilo LinkedIn; il registro delle tue scelte, finché non elimini il tuo account.",
+        "Un report inviato via email da testee: il PDF è conservato solo per inviare l'email ed eliminato al più tardi 7 giorni dopo.",
+        "Descrizioni del lavoro incollate, nei nostri registri di generazione: 90 giorni dal termine della generazione. Il colloquio creato a partire da esse resta nell'account dell'azienda finché non viene eliminato.",
+        "Le tue impostazioni email e il registro delle loro modifiche: finché non elimini il tuo account.",
+        "Il registro dei riepiloghi e dei promemoria che ti sono stati inviati: 30 giorni, o fino all'eliminazione del tuo account se avviene prima.",
+        "Il registro degli avvisi, delle novità sul prodotto e delle offerte che ti sono stati inviati: fino all'eliminazione del tuo account.",
+        "Un indirizzo a cui non inviamo più email, come hash: finché non ci chiedi di scrivergli di nuovo, anche dopo l'eliminazione del tuo account, così che non riceva più email.",
+        "Un respingimento temporaneo, come hash dell'indirizzo: 14 giorni.",
+        "La richiesta di un candidato di bloccare le email di un'azienda, come hash della sua email: finché l'azienda non viene eliminata, anche se l'azienda cancella il candidato.",
+        "Messaggi di contatto: per il tempo necessario a risponderti, al massimo 2 anni.",
+        "Report degli errori: fino a 90 giorni.",
+        "Log del server: 30 giorni. Registri dell'uso dell'area admin da parte del nostro personale, per ID dell'account: un anno, e nessuno può modificarli o eliminarli prima.",
+        "Registri delle chiamate all'IA presso Langfuse: 30 giorni, poi eliminati automaticamente.",
+        "Backup del database: 14 giorni, poi sovrascritti; entro allora, ciò che è stato eliminato non è più presente nei backup.",
+        "Un record di un account eliminato, con la sua email e il suo ID: 14 giorni, per tutta la durata dei backup, solo per evitare che un backup ripristinato riporti indietro i tuoi dati.",
+        "Messaggi in transito tra i nostri servizi, che possono includere email e report inviati via email: fino a 7 giorni dopo l'invio. Un evento webhook non riuscito, in attesa di un nuovo invio: al massimo 3 giorni.",
+        "Statistiche di utilizzo: 25 mesi, poi eliminate automaticamente.",
+        "Registrazioni degli acquisti: per il tempo richiesto dalla normativa contabile (7 anni in Estonia), senza l'ID del tuo account una volta eliminato il tuo account.",
+        "Saldi e voci dei crediti, e la valuta e la ricarica automatica di un'azienda: finché l'azienda non viene eliminata. La valuta salvata per il tuo account: finché non lo elimini.",
+        "Un hash unidirezionale della tua email dopo l'eliminazione del tuo account, solo affinché una nuova registrazione non assegni di nuovo i crediti di benvenuto. Non può essere riconvertito nella tua email."
+      ]
+    },
+    {
+      "heading": "I tuoi diritti",
+      "paragraphs": [
+        "Puoi vedere, scaricare ed eliminare i tuoi dati da solo: \"Scarica i miei dati\" ed \"Elimina account\" si trovano nelle Impostazioni, nel menu del tuo account. I tuoi dati includono le tue risposte e i tuoi punteggi nei colloqui delle aziende, ma non quali risposte erano corrette, perché ciò rivelerebbe le domande dell'azienda. Puoi anche, all'indirizzo indicato sopra, chiederci di rettificare i tuoi dati, di limitarne il trattamento o di trasferirli a un altro servizio, oppure opporti al loro uso.",
+        "Puoi presentarci un reclamo all'indirizzo indicato sopra: confermiamo la ricezione del reclamo entro 30 giorni e ti comunichiamo l'esito senza ingiustificato ritardo. Puoi anche presentare un reclamo all'Ispettorato estone per la protezione dei dati (Andmekaitse Inspektsioon, www.aki.ee) o all'autorità del luogo in cui vivi; nel Regno Unito, all'Information Commissioner's Office (ico.org.uk)."
+      ]
+    },
+    {
+      "heading": "Se vivi negli Stati Uniti",
+      "paragraphs": [
+        "Raccogliamo le categorie descritte sopra: identificativi (nome, email, ID dell'account), informazioni professionali (risultati di colloqui e simulazioni), attività su internet (uscite dalla pagina, copie e tempi di risposta durante un test), audio (una risposta parlata in modalità vocale, che testee non conserva) e, per le aziende, informazioni commerciali (acquisti); da te, dall'azienda che ti invita, dal suo sistema di gestione delle candidature e dal tuo fornitore di accesso; per le finalità indicate sopra. Non vendiamo le tue informazioni personali né le condividiamo per pubblicità comportamentale tra contesti, e non usiamo informazioni personali sensibili per dedurre nulla su di te, quindi non c'è nulla da cui chiedere l'esclusione; un segnale Global Privacy Control non richiede alcuna azione. Puoi chiedere di sapere quali informazioni personali abbiamo su di te, di riceverne una copia, di correggerle o di eliminarle (\"Scarica i miei dati\" ed \"Elimina account\" nelle Impostazioni, oppure scrivici), anche tramite un agente autorizzato, e non ti tratteremo in modo diverso per questo. Per il colloquio di un'azienda, decide l'azienda e noi le inoltriamo la tua richiesta, in qualità di suo fornitore di servizi."
+      ]
+    },
+    {
+      "heading": "Cookie e archiviazione",
+      "paragraphs": [
+        "testee usa solo i cookie e l'archiviazione del browser necessari per funzionare o che ricordano le tue scelte. Non ci sono cookie pubblicitari né di analisi.",
+        "Per mantenere l'accesso: un cookie (testee_token, rinnovato ogni ora mentre usi testee, fino alla disconnessione) e l'archiviazione del browser del nostro fornitore di accesso, Google Firebase, che tiene inoltre un breve elenco dei giorni in cui è stato eseguito in questo browser, anche se non hai effettuato l'accesso. Mentre colleghi un'app di IA, un cookie (testee_connect) dura i pochi minuti necessari.",
+        "Per ricordare le tue scelte: la tua lingua (un cookie, testee_locale, per un anno, impostato quando scegli una lingua o apri testee all'indirizzo di una lingua), il tema chiaro o scuro, la larghezza del pannello dell'assistente, se era aperto e quale azienda hai scelto al suo interno (fino alla disconnessione), come hai invitato i candidati l'ultima volta, il fatto che hai già effettuato l'accesso su questo browser, il periodo scelto per ultimo per le statistiche e gli avvisi di modifica di un documento legale che hai chiuso. Restano nel tuo browser finché non li cancelli.",
+        "Solo in questa scheda, finché non la chiudi: la tua conversazione con l'assistente finché non accedi, e la descrizione del ruolo che stai trasformando in un colloquio, così che ricaricando la pagina si riprenda da dove eri.",
+        "Un link referral: solo se scegli di conservarlo, un cookie (testee_ref) ricorda per 30 giorni il link tramite cui sei arrivato, così che i crediti arrivino a entrambe le aziende.",
+        "La verifica «Non sono un robot» viene eseguita in un piccolo riquadro di Cloudflare quando un modulo ne ha bisogno, e non imposta cookie di tracciamento.",
+        "Il pagamento apre la pagina di pagamento di Paddle, e un video che apri nella home page viene riprodotto da YouTube. Ciascuno può salvare elementi nel tuo browser secondo la propria informativa, e nessuno dei due si carica prima che tu lo apra."
+      ]
+    },
+    {
+      "heading": "Minori",
+      "paragraphs": [
+        "testee non è destinato a chi ha meno di 16 anni."
+      ]
+    },
+    {
+      "heading": "Modifiche",
+      "paragraphs": [
+        "Aggiorniamo questa pagina quando le nostre pratiche cambiano, e ti informiamo via email di una modifica significativa almeno 14 giorni prima che si applichi. Ogni versione precedente resta consultabile in questa pagina."
+      ]
+    },
+    {
+      "heading": "Contattaci",
+      "paragraphs": [
+        "Domande su questa informativa o sui tuoi dati: scrivi a hello@testee.ai, oppure usa la pagina dei contatti indicata in fondo a ogni pagina."
+      ]
+    }
+  ]
+}

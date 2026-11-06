@@ -42,11 +42,11 @@ Der Americans with Disabilities Act (ADA) verlangt angemessene Vorkehrungen für
 
 ## New York City: Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) gilt zusammen mit den Regeln des Department of Consumer and Worker Protection (DCWP; 6 RCNY §5-300 ff.), wenn ein Arbeitgeber oder eine Personalvermittlung ein automatisiertes Tool für Beschäftigungsentscheidungen (automated employment decision tool, AEDT) einsetzt, das Einstellungsentscheidungen für Stellen in New York City wesentlich unterstützt. Ein Tool, das Kandidaten bewertet oder in eine Rangfolge bringt und darüber entscheidet, wer weiterkommt, zählt sehr wahrscheinlich dazu. Bevor du eines einsetzt, brauchst du:
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) gilt zusammen mit den Regeln des Department of Consumer and Worker Protection (DCWP; 6 RCNY §5-300 ff.), wenn ein Arbeitgeber oder eine Personalvermittlung ein automatisiertes Tool für Beschäftigungsentscheidungen (automated employment decision tool, AEDT) einsetzt, das Einstellungsentscheidungen in der Stadt wesentlich unterstützt: eine Stelle in einem Büro in New York City, mindestens in Teilzeit, eine vollständig remote ausgeübte Stelle, die einem solchen Büro zugeordnet ist, oder der Einsatz durch eine dort ansässige Personalvermittlung. Ein Tool, das Kandidaten bewertet oder in eine Rangfolge bringt und darüber entscheidet, wer weiterkommt, zählt sehr wahrscheinlich dazu. Bevor du eines einsetzt, brauchst du:
 
 - **Ein Bias-Audit** durch einen unabhängigen Prüfer, durchgeführt innerhalb eines Jahres vor dem Einsatz. Weder der Anbieter noch du als Arbeitgeber können der unabhängige Prüfer sein.
 - **Eine veröffentlichte Zusammenfassung** des Audits: die Auswahl- oder Bewertungsquoten und die Impact Ratios nach Geschlecht, ethnischer Herkunft und deren Kombinationen, die Zahl der Kandidaten in einer unbekannten Kategorie und das Datum, ab dem das Tool eingesetzt wird.
-- **Eine Information an Kandidaten** mindestens 10 Arbeitstage vor dem Einsatz, mit Hinweisen, wie sie ein alternatives Auswahlverfahren oder eine Vorkehrung beantragen können.
+- **Eine Information an Kandidaten, die in New York City wohnen,** mindestens 10 Arbeitstage vor dem Einsatz, mit Hinweisen, wie sie ein alternatives Auswahlverfahren oder eine Vorkehrung beantragen können.
 
 Wie das Audit rechnet:
 
@@ -81,7 +81,7 @@ Das KI-Gesetz von Colorado wurde durch SB 26-189 aufgehoben und neu erlassen, un
 
 ## New Jersey und Texas
 
-- **New Jersey.** Regeln zur mittelbaren Diskriminierung nach dem Law Against Discrimination (N.J.A.C. 13:16), in Kraft seit dem 15. Dezember 2025, erfassen automatisierte Tools für Beschäftigungsentscheidungen. Ein Arbeitgeber kann auch dann haften, wenn ein Anbieter das Tool entwickelt hat.
+- **New Jersey.** Regeln zur mittelbaren Diskriminierung nach dem Law Against Discrimination (N.J.A.C. 13:16), in Kraft seit dem 15. Dezember 2025, nennen automatisierte Tools für Beschäftigungsentscheidungen unter den Praktiken, die eine mittelbare Diskriminierung bewirken können. Ein Arbeitgeber, der sich auf das Produkt eines Anbieters stützt, muss angemessene Schritte unternehmen, um sicherzustellen, dass es mit dem Gesetz vereinbar ist, und ein vor dem Einsatz nicht ausreichend getestetes Tool kann selbst eine mittelbare Diskriminierung bewirken.
 - **Texas.** Der Responsible AI Governance Act (HB 149), in Kraft seit dem 1. Januar 2026, verbietet KI, die in der Absicht rechtswidriger Diskriminierung eingesetzt wird. Eine mittelbare Diskriminierung allein belegt diese Absicht nicht.
 
 ## Die Fristen
@@ -141,5 +141,5 @@ So sieht das heute im Produkt aus:
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), geändert durch Public Act 103-0804.
 - Colorado SB 26-189.
 - California Code of Regulations, Title 2, §11013(c); Verordnungen zum California Consumer Privacy Act über Technologien für automatisierte Entscheidungen; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) zu Anbietern, §13:16-3.2(c) zu automatisierten Tools), mit der [Zusammenfassung von Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

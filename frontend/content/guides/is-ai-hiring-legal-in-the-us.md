@@ -42,11 +42,11 @@ The Americans with Disabilities Act requires reasonable accommodation for qualif
 
 ## New York City: Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), with the Department of Consumer and Worker Protection's rules (6 RCNY §5-300 and following), applies when an employer or employment agency uses an automated employment decision tool (AEDT) to substantially assist hiring decisions for jobs in New York City. A tool that scores or ranks candidates, used to decide who moves on, very likely counts. Before using one, you need:
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), with the Department of Consumer and Worker Protection's rules (6 RCNY §5-300 and following), applies when an employer or employment agency uses an automated employment decision tool (AEDT) to substantially assist hiring decisions in the city: a job at a New York City office, at least part time, a fully remote job tied to such an office, or use by an employment agency located there. A tool that scores or ranks candidates, used to decide who moves on, very likely counts. Before using one, you need:
 
 - **A bias audit** by an independent auditor, done within one year before use. Neither the vendor nor you, the employer, can be the independent auditor.
 - **A published summary** of the audit: the selection or scoring rates and impact ratios for sex, race/ethnicity and intersectional categories, the number of candidates in an unknown category, and the tool's distribution date.
-- **A notice to candidates** at least 10 business days before use, with information on how to ask for an alternative selection process or an accommodation.
+- **A notice to candidates who live in New York City** at least 10 business days before use, with information on how to ask for an alternative selection process or an accommodation.
 
 How the audit calculates:
 
@@ -81,7 +81,7 @@ Colorado's AI law was repealed and re-enacted by SB 26-189, signed on 14 May 202
 
 ## New Jersey and Texas
 
-- **New Jersey.** Rules on disparate impact under the Law Against Discrimination (N.J.A.C. 13:16), in force since 15 December 2025, cover automated employment decision tools. An employer can be liable even if a vendor built the tool.
+- **New Jersey.** Rules on disparate impact under the Law Against Discrimination (N.J.A.C. 13:16), in force since 15 December 2025, name automated employment decision tools among the practices that may have a disparate impact. An employer that relies on a vendor's product must take reasonable steps to make sure it is consistent with the law, and a tool not adequately tested before use may itself have a disparate impact.
 - **Texas.** The Responsible AI Governance Act (HB 149), in force since 1 January 2026, bans AI used with the intent to discriminate unlawfully. A disparate impact alone doesn't show that intent.
 
 ## The dates
@@ -141,5 +141,5 @@ What that looks like in the product today:
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), as amended by Public Act 103-0804.
 - Colorado SB 26-189.
 - California Code of Regulations, title 2, §11013(c); California Consumer Privacy Act regulations on automated decision-making technology; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) on vendors, §13:16-3.2(c) on automated tools), with [Morgan Lewis's summary](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

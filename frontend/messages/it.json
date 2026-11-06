@@ -1316,7 +1316,7 @@
     "voiceDenied": "Microfono bloccato. Consentilo con l'icona accanto all'indirizzo, poi riprova.",
     "voiceRetry": "Riprova",
     "voiceUnsupported": "Questo browser non può registrare la tua voce. Apri questa pagina in una versione aggiornata di Chrome, Edge, Firefox o Safari.",
-    "voice": "Mira, un'intervistatrice IA, legge ogni domanda ad alta voce, e il tempo della domanda scorre mentre la legge. Rispondi a voce o tocca un'opzione. Una risposta a voce chiara a una domanda a risposta singola viene salvata subito e non si può cambiare. La tua voce viene solo trasformata in testo per leggere la risposta, e non viene mai conservata né analizzata.",
+    "voice": "Mira, un'intervistatrice IA, legge ogni domanda ad alta voce, e il tempo della domanda scorre mentre la legge. Rispondi a voce o tocca un'opzione. Una risposta a voce chiara a una domanda a risposta singola viene salvata subito e non si può cambiare. La tua voce viene trasformata in testo solo per leggere la risposta, e non viene mai analizzata. testee non la conserva; OpenAI, che lo fa per noi, può conservarla per un massimo di 30 giorni per controllare gli abusi, salvo che la legge richieda un periodo più lungo.",
     "unanswered": "Hai un solo tentativo, e le domande senza risposta contano come sbagliate.",
     "saved": "I progressi vengono salvati: usa di nuovo questo link per continuare. Il colloquio termina da solo poco dopo che è trascorso tutto il suo tempo dal momento in cui hai iniziato.",
     "savedLink": "I progressi vengono salvati: ti inviamo via email un link per continuare. Il colloquio termina da solo poco dopo che è trascorso tutto il suo tempo dal momento in cui hai iniziato.",
@@ -2976,15 +2976,19 @@
       "contrast": "I colori che un'azienda sceglie per le pagine del suo colloquio vengono rifiutati se il testo sopra risulterebbe difficile da leggere (contrasto sotto la soglia WCAG).",
       "languages": "Il sito in 23 lingue, da destra a sinistra per le lingue che si scrivono così.",
       "phones": "Le pagine si adattano agli schermi dei telefoni e funzionano anche con lo zoom.",
-      "text": "Le domande del colloquio sono testo con opzioni di risposta: non servono audio né video.",
-      "extraTime": "Un'azienda può darti tempo aggiuntivo per ogni domanda. Chiedilo all'azienda, oppure chiedi un altro accomodamento, prima di iniziare; non devi spiegare perché.",
+      "text": "Le domande del colloquio sono mostrate come testo con opzioni di risposta, anche in modalità vocale, dove puoi toccare un'opzione invece di parlare.",
+      "extraTime": "Un'azienda può darti tempo aggiuntivo per ogni domanda. Chiedilo all'azienda, oppure chiedi un altro accomodamento, prima di iniziare; non devi spiegare perché. Se sei arrivato tramite un link condivisibile, chiedi prima un invito personale: il tempo aggiuntivo non si può aggiungere a un link.",
       "keyboard": "Da tastiera: in ogni pagina viene per primo il link «Vai al contenuto», ti sposti tra le schede con i tasti freccia e gli screen reader annunciano gli errori di un modulo."
     },
     "limits": {
       "title": "Cosa non è ancora all'altezza",
       "timed": "Le domande del colloquio sono a tempo, come richiede la valutazione dell'azienda. Se ti serve più tempo, chiedi all'azienda tempo aggiuntivo prima di iniziare.",
       "audit": "testee non è ancora stato verificato da un ente indipendente, quindi alcune parti potrebbero non soddisfare le WCAG 2.2 AA.",
-      "providers": "Il pagamento dei crediti (la pagina di pagamento di Paddle) e la verifica «Non sono un robot» (Cloudflare Turnstile) sono gestiti da questi fornitori, con la loro accessibilità."
+      "providers": "Il pagamento dei crediti (la pagina di pagamento di Paddle), la verifica «Non sono un robot» (Cloudflare Turnstile) e il video nella home page (YouTube) sono gestiti da questi fornitori, con la loro accessibilità.",
+      "contrast": "Nel tema chiaro, il testo bianco sui pulsanti principali di testee ha un contrasto di 4.34:1, appena sotto il 4.5:1 richiesto da WCAG AA. Il tema scuro lo rispetta.",
+      "motion": "Le immagini in movimento della home page e alcune piccole animazioni, come il pulsante di riproduzione che pulsa, il pulsante «chiedi a Mira» e la campanella, continuano a muoversi senza un pulsante di pausa. L'impostazione di riduzione del movimento del tuo dispositivo le ferma.",
+      "contactForm": "Il modulo di contatto mostra il nome di ogni campo solo come segnaposto, che scompare mentre scrivi. Gli screen reader annunciano comunque il nome.",
+      "voice": "Un colloquio in modalità vocale richiede che tu consenta microfono e audio prima di iniziare, anche se toccherai le risposte. Se non puoi usarli, chiedi all'azienda di impostarti la risposta tramite tocco."
     },
     "feedback": {
       "title": "Scrivici",
@@ -3013,8 +3017,8 @@
       "roles": "testee è titolare del trattamento degli account delle persone che lo usano, e responsabile del trattamento dei dati dei candidati, che appartengono all'azienda che li invita.",
       "noSelling": "Non vendiamo dati personali né li condividiamo per pubblicità. Non ci sono cookie pubblicitari o di analisi.",
       "noInference": "testee non raccoglie dati su sesso, età, origine o disabilità dei candidati, e non deduce nulla del genere.",
-      "voice": "In modalità vocale, la risposta parlata di un candidato viene trascritta e abbinata alle opzioni, e l'opzione abbinata gli viene detta e mostrata sullo schermo; una scelta di più opzioni viene prima confermata. Il parlato non viene registrato né conservato, e la voce non viene analizzata in nessun altro modo.",
-      "ai": "OpenAI, che scrive le domande, ha l'istruzione di non conservare ciò che riceve; tiene i dati al massimo 30 giorni, solo per individuare abusi, e non li usa per addestrare i suoi modelli.",
+      "voice": "In modalità vocale, la risposta parlata di un candidato viene trascritta e abbinata alle opzioni, e l'opzione abbinata gli viene detta e mostrata sullo schermo; una scelta di più opzioni viene prima confermata. testee non conserva alcun parlato, e la voce non viene analizzata in nessun altro modo. OpenAI, che lo trascrive, può conservarlo per un massimo di 30 giorni, come indicato sotto.",
+      "ai": "OpenAI, che scrive le domande, ha l'istruzione di non conservare ciò che riceve dove la sua API offre questa scelta; può tenere i dati per un massimo di 30 giorni, solo per individuare abusi salvo che la legge richieda un periodo più lungo, e non li usa per addestrare i suoi modelli.",
       "rights": "Chiunque può scaricare o eliminare i propri dati nelle Impostazioni, senza doverci scrivere."
     },
     "compliance": {
@@ -3023,12 +3027,12 @@
       "humanReview": "testee non prende alcuna decisione su un candidato: sono le persone dell'azienda a esaminare i risultati e decidere, e i candidati possono chiedere che una persona riesamini il loro risultato.",
       "dpa": "L'accordo sul trattamento dei dati fa parte dei termini, senza nulla da firmare. Copre il GDPR, lo UK GDPR e le leggi statali statunitensi sulla privacy come quella della California, per le quali testee è il fornitore di servizi (service provider) dell'azienda.",
       "documents": "Le aziende ricevono <link>istruzioni per l'uso, un modello di DPIA e modelli di informativa per i candidati</link>, con versioni per New York City, l'Illinois e il Colorado.",
-      "nyc": "New York City: prima di usare testee per un ruolo in città, il datore di lavoro fa ciò che la Local Law 144 gli richiede: un audit sui bias indipendente nell'anno precedente all'uso, la pubblicazione della sua sintesi e un avviso ai candidati almeno 10 giorni lavorativi prima della valutazione. L'audit sui bias indipendente di testee viene svolto prima del <time>{date}</time>, e poi ogni anno."
+      "nyc": "New York City: prima di usare testee per un ruolo in città, il datore di lavoro fa ciò che la Local Law 144 gli richiede: un audit sui bias indipendente nell'anno precedente all'uso, la pubblicazione della sua sintesi e un avviso ai candidati che vivono in città almeno 10 giorni lavorativi prima della valutazione. L'audit sui bias indipendente di testee viene svolto prima del <time>{date}</time>, e poi ogni anno."
     },
     "residency": {
       "title": "Dove sono conservati i dati",
-      "storage": "testee funziona su Google Cloud nell'UE, in Belgio, dove è conservato il suo database. I contatori dei limiti di utilizzo sono tenuti da Upstash, sempre in Belgio, e le email vengono inviate tramite Resend in Irlanda.",
-      "transfers": "Tre fornitori trattano dati negli Stati Uniti: Google per l'accesso, OpenAI e Cloudflare per la verifica «Non sono un robot». Questi trasferimenti si basano sul quadro UE-USA per la protezione dei dati personali (EU-US Data Privacy Framework) o sulle clausole contrattuali tipo della Commissione europea e, per il Regno Unito, sull'estensione britannica (UK Extension) e sull'addendum britannico sui trasferimenti internazionali di dati (UK International Data Transfer Addendum)."
+      "storage": "testee funziona su Google Cloud nell'UE, in Belgio, dove è conservato il suo database. I contatori dei limiti di utilizzo sono tenuti da Upstash, sempre in Belgio. Le email vengono inviate dall'Irlanda tramite Resend, che le conserva negli Stati Uniti.",
+      "transfers": "Quattro fornitori trattano dati negli Stati Uniti: Google per l'accesso, OpenAI, Resend per le email e Cloudflare per la verifica «Non sono un robot». La posta della nostra casella Google Workspace può inoltre essere conservata al di fuori dell'UE. Questi trasferimenti si basano sul quadro UE-USA per la protezione dei dati personali (EU-US Data Privacy Framework) o sulle clausole contrattuali tipo della Commissione europea e, per il Regno Unito, sull'estensione britannica (UK Extension) e sull'addendum britannico sui trasferimenti internazionali di dati (UK International Data Transfer Addendum)."
     },
     "subprocessors": {
       "title": "Sub-responsabili del trattamento",
@@ -3327,7 +3331,7 @@
       "phone": "Funziona sul telefono come sul computer",
       "saved": "I progressi vengono salvati man mano",
       "tap": "Toccare un'opzione funziona sempre",
-      "kept": "La voce viene solo trasformata in testo, mai conservata",
+      "kept": "testee non conserva alcuna voce: viene solo trasformata in testo",
       "voiceLanguages": "In tutte le 23 lingue, con una qualità che varia da lingua a lingua",
       "contrast": "I colori difficili da leggere vengono rifiutati",
       "logo": "Il tuo logo su inviti, colloquio e report PDF",
@@ -3459,7 +3463,7 @@
       },
       "privacy": {
         "title": "Privacy fin dalla progettazione",
-        "text": "Nessuna vendita di dati, nulla dedotto sui candidati, la voce mai conservata."
+        "text": "Nessuna vendita di dati, nulla dedotto sui candidati, nessuna voce conservata da testee."
       },
       "verified": {
         "title": "Aziende verificate",
@@ -3475,7 +3479,7 @@
       },
       "expire": {
         "title": "I crediti non scadono mai",
-        "text": "Le ricariche più grandi costano meno per candidato; i crediti pagati non usati sono rimborsabili."
+        "text": "Le ricariche più grandi costano meno per candidato; i crediti pagati non usati sono rimborsabili entro 14 giorni."
       },
       "autoTopUp": {
         "title": "Ricarica automatica",

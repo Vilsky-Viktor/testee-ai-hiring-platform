@@ -70,4 +70,4 @@ Rakamlar bir garanti değil, bir yol göstericidir. Dil başına yirmi cevap, ik
 - Sesli bir mülakata başlamak için çalışan bir mikrofon gerekir; bu yüzden mikrofon kullanamayan bir adayın, başlamadan önce ayarlanmış tıklama moduna ihtiyacı vardır.
 - Modu tüm mülakat için mülakatın ayarlarından belirleyebilir, bir aday başlamadan önce yalnızca onun için değiştirebilirsiniz.
 
-Sesli modda adayların sesi yalnızca cevaplarını okumak için metne dönüştürülür, hiçbir zaman başka bir şekilde analiz edilmez ve testee bu sesi hiçbir zaman saklamaz. Konuşmayı metne dönüştüren OpenAI'a konuşmayı saklamaması söylenir; OpenAI, API verilerini yalnızca kötüye kullanımı denetlemek için en fazla 30 gün tutar.
+Sesli modda adayların sesi yalnızca cevaplarını okumak için metne dönüştürülür, hiçbir zaman başka bir şekilde analiz edilmez ve testee bu sesi hiçbir zaman saklamaz. Konuşmayı metne dönüştüren OpenAI, kanun daha uzun bir süre gerektirmedikçe konuşmayı yalnızca kötüye kullanımı denetlemek için 30 güne kadar saklayabilir.

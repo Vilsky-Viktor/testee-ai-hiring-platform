@@ -70,4 +70,4 @@ Os números são uma referência, não uma garantia. Com vinte respostas por idi
 - Iniciar uma entrevista por voz exige um microfone funcionando, então um candidato que não pode usar um precisa do modo clique, definido antes de ele começar.
 - Você pode definir o modo da entrevista inteira nas configurações dela e mudá-lo para um candidato antes que ele comece.
 
-No modo de voz, a voz dos candidatos só é convertida em texto para ler as respostas, nunca é analisada de nenhuma outra forma, e a testee nunca a armazena. A OpenAI, que transforma a fala em texto, é instruída a não armazená-la e guarda dados da API por no máximo 30 dias, só para verificar abusos.
+No modo de voz, a voz dos candidatos só é convertida em texto para ler as respostas, nunca é analisada de nenhuma outra forma, e a testee nunca a armazena. A OpenAI, que transforma a fala em texto, pode guardá-la por até 30 dias, só para verificar abusos, salvo se a lei exigir um prazo maior.

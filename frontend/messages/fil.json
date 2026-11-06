@@ -1316,7 +1316,7 @@
     "voiceDenied": "Naka-block ang mikropono. Payagan ito gamit ang icon sa tabi ng address, saka subukan ulit.",
     "voiceRetry": "Subukang muli",
     "voiceUnsupported": "Hindi kayang i-record ng browser na ito ang boses mo. Buksan ang page na ito sa bagong bersyon ng Chrome, Edge, Firefox o Safari.",
-    "voice": "Binabasa nang malakas ni Mira, isang AI interviewer, ang bawat tanong, at tumatakbo na ang oras ng tanong habang binabasa niya ito. Sumagot gamit ang boses o i-tap ang isang opsyon. Agad na nase-save at hindi na mababago ang malinaw na sagot na binigkas mo sa tanong na isang opsyon lang ang pipiliin. Ginagawang text lang ang boses mo para mabasa ang sagot mo, at hindi ito kailanman itinatago o sinusuri.",
+    "voice": "Binabasa nang malakas ni Mira, isang AI interviewer, ang bawat tanong, at tumatakbo na ang oras ng tanong habang binabasa niya ito. Sumagot gamit ang boses o i-tap ang isang opsyon. Agad na nase-save at hindi na mababago ang malinaw na sagot na binigkas mo sa tanong na isang opsyon lang ang pipiliin. Ginagawang text lang ang boses mo para mabasa ang sagot mo, at hindi ito kailanman sinusuri. Hindi ito itinatago ng testee; maaari itong itago ng OpenAI, na gumagawa nito para sa amin, nang hanggang 30 araw para tingnan kung may pang-aabuso, maliban kung mas matagal ang hinihingi ng batas.",
     "unanswered": "May isang pagkakataon ka lang, at ang mga hindi nasagot na tanong ay mabibilang na mali.",
     "saved": "Naka-save ang progreso: gamitin ulit ang link na ito para magpatuloy. Kusang magtatapos ang interview ilang sandali matapos lumipas ang buong oras nito mula nang magsimula ka.",
     "savedLink": "Naka-save ang progreso: ie-email namin sa iyo ang link para magpatuloy. Kusang magtatapos ang interview ilang sandali matapos lumipas ang buong oras nito mula nang magsimula ka.",
@@ -2976,15 +2976,19 @@
       "contrast": "Tinatanggihan ang mga kulay na pinipili ng kumpanya para sa mga page ng interview nito kapag mahirap basahin ang text sa mga ito (mas mababa sa WCAG contrast).",
       "languages": "Ang site sa 23 wika, mula kanan pakaliwa sa mga wikang ganoon isinusulat.",
       "phones": "Kasya ang mga page sa screen ng phone at gumagana kahit naka-zoom in.",
-      "text": "Ang mga tanong sa interview ay text na may mga pagpipiliang sagot: hindi kailangan ng audio o video.",
-      "extraTime": "Puwedeng bigyan ka ng kumpanya ng dagdag na oras sa bawat tanong. Hingin ito sa kumpanya, o ibang accommodation, bago ka magsimula; hindi mo kailangang sabihin kung bakit.",
+      "text": "Ipinapakita ang mga tanong sa interview bilang text na may mga pagpipiliang sagot, pati sa voice mode, kung saan puwede kang mag-tap sa halip na magsalita.",
+      "extraTime": "Puwedeng bigyan ka ng kumpanya ng dagdag na oras sa bawat tanong. Hingin ito sa kumpanya, o ibang accommodation, bago ka magsimula; hindi mo kailangang sabihin kung bakit. Kung dumaan ka sa isang shareable link, humingi muna ng personal na imbitasyon: hindi maidaragdag ang dagdag na oras sa link.",
       "keyboard": "Mula sa keyboard: nauuna sa bawat page ang link na “Lumaktaw sa nilalaman”, lumilipat ang mga tab gamit ang mga arrow key, at binabasa nang malakas ng mga screen reader ang mga error ng form."
     },
     "limits": {
       "title": "Ang kulang pa",
       "timed": "May takdang oras ang mga tanong sa interview, ayon sa hinihingi ng assessment ng kumpanya. Kung kailangan mo ng mas maraming oras, humingi ng dagdag na oras sa kumpanya bago ka magsimula.",
       "audit": "Hindi pa independiyenteng na-audit ang testee, kaya maaaring may mga bahaging hindi pa umaabot sa WCAG 2.2 AA.",
-      "providers": "Ang pagbabayad para sa credits (checkout ng Paddle) at ang “Hindi ako robot” na check (Cloudflare Turnstile) ay pinapatakbo ng mga provider na iyon, ayon sa sarili nilang accessibility."
+      "providers": "Ang pagbabayad para sa credits (checkout ng Paddle), ang “Hindi ako robot” na check (Cloudflare Turnstile) at ang video sa home page (YouTube) ay pinapatakbo ng mga provider na iyon, ayon sa sarili nilang accessibility.",
+      "contrast": "Sa light theme, may contrast na 4.34:1 ang puting text sa mga primary button ng testee, bahagyang mas mababa sa 4.5:1 na hinihingi ng WCAG AA. Naaabot ito ng dark theme.",
+      "motion": "Patuloy na gumagalaw nang walang pause button ang mga gumagalaw na larawan sa home page at ilang maliliit na animation, gaya ng pumipintig na play button, ang “magtanong kay Mira” na button at ang bell. Pinapahinto ang mga ito ng reduce-motion setting ng iyong device.",
+      "contactForm": "Ipinapakita lang ng contact form ang pangalan ng bawat field bilang placeholder, na nawawala habang nagta-type ka. Binabasa pa rin ng mga screen reader ang pangalan.",
+      "voice": "Kailangan ng interview na naka-voice mode na payagan mo ang mikropono at tunog bago ka magsimula, kahit mag-tap ka ng mga sagot mo. Kung hindi mo magagamit ang mga ito, hilingin sa kumpanya na itakda kang sumagot sa pamamagitan ng pag-tap."
     },
     "feedback": {
       "title": "Sabihin sa amin",
@@ -3013,8 +3017,8 @@
       "roles": "Ang testee ang controller ng mga account ng mga taong gumagamit nito, at processor ng data ng mga aplikante, na pag-aari ng kumpanyang nag-iimbita sa kanila.",
       "noSelling": "Hindi kami nagbebenta ng personal na data o nagbabahagi nito para sa advertising. Walang advertising o analytics cookie.",
       "noInference": "Walang kinokolektang data ang testee tungkol sa kasarian, edad, pinagmulan o kapansanan ng mga aplikante, at wala itong hinihinuha na ganoon.",
-      "voice": "Sa voice mode, ginagawang text ang binigkas na sagot ng aplikante at itinutugma sa mga opsyon, at sinasabi sa kanya at ipinapakita sa screen ang opsyong natugma; kinukumpirma muna ang pagpili ng ilang opsyon. Hindi nire-record o sine-save ang kanyang pananalita, at hindi sinusuri ang boses sa anumang ibang paraan.",
-      "ai": "Ang OpenAI, na sumusulat ng mga tanong, ay sinabihang huwag i-store ang natatanggap nito; iniingatan nito ang data nang hanggang 30 araw lang, para lang tingnan kung may pang-aabuso, at hindi ito ginagamit para i-train ang mga model nito.",
+      "voice": "Sa voice mode, ginagawang text ang binigkas na sagot ng aplikante at itinutugma sa mga opsyon, at sinasabi sa kanya at ipinapakita sa screen ang opsyong natugma; kinukumpirma muna ang pagpili ng ilang opsyon. Walang sine-save na pananalita ang testee, at hindi sinusuri ang boses sa anumang ibang paraan. Maaari itong itago ng OpenAI, na gumagawa nito bilang text, nang hanggang 30 araw, gaya ng nasa ibaba.",
+      "ai": "Ang OpenAI, na sumusulat ng mga tanong, ay sinabihang huwag i-store ang natatanggap nito kung saan nag-aalok ng ganitong pagpipilian ang API nito; maaari nitong ingatan ang data nang hanggang 30 araw, para lang tingnan kung may pang-aabuso maliban kung mas matagal ang hinihingi ng batas, at hindi ito ginagamit para i-train ang mga model nito.",
       "rights": "Kahit sino ay puwedeng mag-download o magbura ng sarili niyang data sa Mga setting, nang hindi na sumusulat sa amin."
     },
     "compliance": {
@@ -3023,12 +3027,12 @@
       "humanReview": "Walang desisyong ginagawa ang testee tungkol sa isang aplikante: ang mga tao sa kumpanya ang nagsusuri ng mga resulta at nagpapasya, at puwedeng humiling ang mga aplikante na suriin ng isang tao ang kanilang resulta.",
       "dpa": "Bahagi ng mga tuntunin ang data processing agreement, at walang kailangang pirmahan. Saklaw nito ang GDPR, ang UK GDPR at ang mga batas sa privacy ng mga estado ng US gaya ng sa California, kung saan ang testee ang service provider ng kumpanya.",
       "documents": "Nakakatanggap ang mga kumpanya ng <link>mga instructions for use, template ng DPIA at mga template ng abiso sa aplikante</link>, na may mga bersyon para sa New York City, Illinois at Colorado.",
-      "nyc": "New York City: bago gamitin ang testee para sa isang posisyon doon, ginagawa ng employer ang hinihingi sa kanya ng Local Law 144: isang independiyenteng bias audit sa loob ng isang taon bago ang paggamit, ang paglalathala ng buod nito, at abiso sa mga aplikante nang hindi bababa sa 10 business day bago sila i-assess. Ang sariling independiyenteng bias audit ng testee ay gagawin bago ang <time>{date}</time>, at taon-taon pagkatapos noon."
+      "nyc": "New York City: bago gamitin ang testee para sa isang posisyon doon, ginagawa ng employer ang hinihingi sa kanya ng Local Law 144: isang independiyenteng bias audit sa loob ng isang taon bago ang paggamit, ang paglalathala ng buod nito, at abiso sa mga aplikanteng nakatira sa lungsod nang hindi bababa sa 10 business day bago sila i-assess. Ang sariling independiyenteng bias audit ng testee ay gagawin bago ang <time>{date}</time>, at taon-taon pagkatapos noon."
     },
     "residency": {
       "title": "Kung saan naka-store ang data",
-      "storage": "Tumatakbo ang testee sa Google Cloud sa EU, sa Belgium, kung saan naka-store ang database nito. Ang mga rate-limit counter ay nasa Upstash, sa Belgium din, at ipinapadala ang mga email sa pamamagitan ng Resend sa Ireland.",
-      "transfers": "Tatlong provider ang humahawak ng data sa United States: ang Google para sa sign-in, ang OpenAI, at ang Cloudflare para sa “Hindi ako robot” na check. Saklaw ang mga paglilipat na ito ng EU-US Data Privacy Framework o ng standard contractual clauses ng European Commission, at para sa UK, ng UK Extension at ng UK International Data Transfer Addendum."
+      "storage": "Tumatakbo ang testee sa Google Cloud sa EU, sa Belgium, kung saan naka-store ang database nito. Ang mga rate-limit counter ay nasa Upstash, sa Belgium din. Ipinapadala ang mga email mula sa Ireland sa pamamagitan ng Resend, na nag-i-store ng mga ito sa United States.",
+      "transfers": "Apat na provider ang humahawak ng data sa United States: ang Google para sa sign-in, ang OpenAI, ang Resend para sa mga email, at ang Cloudflare para sa “Hindi ako robot” na check. Maaari ring ma-store sa labas ng EU ang mail sa aming Google Workspace inbox. Saklaw ang mga paglilipat na ito ng EU-US Data Privacy Framework o ng standard contractual clauses ng European Commission, at para sa UK, ng UK Extension at ng UK International Data Transfer Addendum."
     },
     "subprocessors": {
       "title": "Mga sub-processor",
@@ -3327,7 +3331,7 @@
       "phone": "Gumagana sa phone pati sa computer",
       "saved": "Sine-save ang progreso habang sumasagot",
       "tap": "Gumagana rin palagi ang pag-tap sa isang pagpipilian",
-      "kept": "Ginagawa lang na text ang boses, hindi kailanman itinatago",
+      "kept": "Walang itinatagong boses ang testee: ginagawa lang itong text",
       "voiceLanguages": "Sa lahat ng 23 wika, na iba-iba ang kalidad bawat wika",
       "contrast": "Tinatanggihan ang mga kulay na mahirap basahin",
       "logo": "Ang logo mo sa mga imbitasyon, sa interview at sa mga PDF report",
@@ -3459,7 +3463,7 @@
       },
       "privacy": {
         "title": "Pribado mula sa disenyo",
-        "text": "Walang pagbebenta ng data, walang hinuhulaan tungkol sa mga aplikante, hindi kailanman itinatago ang boses."
+        "text": "Walang pagbebenta ng data, walang hinuhulaan tungkol sa mga aplikante, walang boses na itinatago ang testee."
       },
       "verified": {
         "title": "Mga na-verify na kumpanya",
@@ -3475,7 +3479,7 @@
       },
       "expire": {
         "title": "Hindi nag-e-expire ang credits",
-        "text": "Mas mura bawat aplikante ang mas malalaking top-up; mare-refund ang hindi nagamit na binayarang credits."
+        "text": "Mas mura bawat aplikante ang mas malalaking top-up; mare-refund sa loob ng 14 na araw ang hindi nagamit na binayarang credits."
       },
       "autoTopUp": {
         "title": "Awtomatikong top-up",

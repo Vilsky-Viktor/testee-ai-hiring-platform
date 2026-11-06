@@ -42,11 +42,11 @@ Americans with Disabilities Act (ADA) nõuab mõistlikke kohandusi kvalifitseeri
 
 ## New York City: Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) koos Department of Consumer and Worker Protectioni (DCWP) reeglitega (6 RCNY §5-300 jj) kohaldub, kui tööandja või tööagentuur kasutab automatiseeritud töölevõtmisotsuste tööriista (automated employment decision tool, AEDT), mis oluliselt toetab värbamisotsuseid New York City töökohtadele. Tööriist, mis hindab või järjestab kandidaate ja mida kasutatakse otsustamiseks, kes liigub edasi, kuulub sinna väga tõenäoliselt. Enne sellise kasutamist vajad:
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) koos Department of Consumer and Worker Protectioni (DCWP) reeglitega (6 RCNY §5-300 jj) kohaldub, kui tööandja või tööagentuur kasutab automatiseeritud töölevõtmisotsuste tööriista (automated employment decision tool, AEDT), mis oluliselt toetab värbamisotsuseid linnas: töökoht New York City kontoris vähemalt osa ajast, täielikult kaugtöökoht, mis on sellise kontoriga seotud, või kasutamine seal asuva tööagentuuri poolt. Tööriist, mis hindab või järjestab kandidaate ja mida kasutatakse otsustamiseks, kes liigub edasi, kuulub sinna väga tõenäoliselt. Enne sellise kasutamist vajad:
 
 - **Kallutatuse auditit,** mille teeb sõltumatu audiitor kasutamisele eelneva aasta jooksul. Sõltumatu audiitor ei saa olla ei pakkuja ega sina kui tööandja.
 - **Auditi avaldatud kokkuvõtet:** valiku- või tulemusmäärad ja mõjusuhted (impact ratio) soo, rassi/etnilise päritolu ja nende kombinatsioonide kaupa, teadmata kategooriasse kuuluvate kandidaatide arv ja tööriista kasutuselevõtu kuupäev.
-- **Teadet kandidaatidele** vähemalt 10 tööpäeva enne kasutamist, koos teabega selle kohta, kuidas taotleda alternatiivset valikuprotsessi või kohandust.
+- **Teadet New York Citys elavatele kandidaatidele** vähemalt 10 tööpäeva enne kasutamist, koos teabega selle kohta, kuidas taotleda alternatiivset valikuprotsessi või kohandust.
 
 Kuidas audit arvutab:
 
@@ -81,7 +81,7 @@ Colorado AI seadus tunnistati kehtetuks ja võeti uuesti vastu SB 26-189-ga, mis
 
 ## New Jersey ja Texas
 
-- **New Jersey.** Law Against Discriminationi (N.J.A.C. 13:16) alusel kehtivad kaudse diskrimineerimise reeglid, jõus alates 15. detsembrist 2025, hõlmavad automatiseeritud töölevõtmisotsuste tööriistu. Tööandja võib vastutada ka siis, kui tööriista ehitas tarnija.
+- **New Jersey.** Law Against Discriminationi (N.J.A.C. 13:16) alusel kehtivad kaudse diskrimineerimise reeglid, jõus alates 15. detsembrist 2025, nimetavad automatiseeritud töölevõtmisotsuste tööriistu praktikate hulgas, millel võib olla kaudselt diskrimineeriv mõju. Tarnija tootele tuginev tööandja peab võtma mõistlikke meetmeid, et veenduda selle vastavuses seadusele, ja tööriistal, mida pole enne kasutamist piisavalt testitud, võib ise olla kaudselt diskrimineeriv mõju.
 - **Texas.** Responsible AI Governance Act (HB 149), jõus alates 1. jaanuarist 2026, keelab AI, mida kasutatakse kavatsusega ebaseaduslikult diskrimineerida. Kaudne diskrimineerimine üksi seda kavatsust ei näita.
 
 ## Kuupäevad
@@ -141,5 +141,5 @@ Kuidas see tootes täna välja näeb:
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), muudetud Public Act 103-0804-ga.
 - Colorado SB 26-189.
 - California Code of Regulations, title 2, §11013(c); California Consumer Privacy Acti määrused automatiseeritud otsustustehnoloogia kohta; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) tarnijate kohta, §13:16-3.2(c) automatiseeritud tööriistade kohta), koos [Morgan Lewise kokkuvõttega](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

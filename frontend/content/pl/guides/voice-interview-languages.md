@@ -70,4 +70,4 @@ Liczby są wskazówką, nie gwarancją. Dwadzieścia odpowiedzi na język oznacz
 - Rozpoczęcie rozmowy głosowej wymaga działającego mikrofonu, więc kandydat, który nie może z niego korzystać, potrzebuje trybu kliknięć, ustawionego przed startem.
 - Tryb ustawiasz dla całej rozmowy w jej ustawieniach i możesz go zmienić dla jednego kandydata, zanim zacznie.
 
-W trybie głosowym głos kandydatów jest zamieniany na tekst wyłącznie po to, by odczytać ich odpowiedzi, nigdy nie jest analizowany w żaden inny sposób, a testee nigdy go nie przechowuje. OpenAI, które zamienia mowę na tekst, ma polecenie jej nie przechowywać i trzyma dane API najwyżej 30 dni, wyłącznie w celu kontroli nadużyć.
+W trybie głosowym głos kandydatów jest zamieniany na tekst wyłącznie po to, by odczytać ich odpowiedzi, nigdy nie jest analizowany w żaden inny sposób, a testee nigdy go nie przechowuje. OpenAI, które zamienia mowę na tekst, może ją przechowywać maksymalnie 30 dni, wyłącznie w celu kontroli nadużyć, chyba że prawo wymaga dłuższego okresu.

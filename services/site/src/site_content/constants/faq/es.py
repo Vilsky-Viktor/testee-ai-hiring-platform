@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "¿Pueden los candidatos responder con la voz?",
-        "answer": "Sí, si la empresa configura una entrevista en modo de voz, en cualquiera de los 23 idiomas de testee; lo bien que lee y entiende depende del idioma (la guía «Entrevistas por voz en 23 idiomas» lo muestra para cada uno). Las preguntas se leen en voz alta y los candidatos responden hablando; lo que dicen se convierte en texto y se asocia a una opción, y nunca se guarda. Las voces no se analizan para detectar tono ni emociones, y los candidatos siempre pueden tocar una opción en su lugar.",
+        "answer": "Sí, si la empresa configura una entrevista en modo de voz, en cualquiera de los 23 idiomas de testee; lo bien que lee y entiende depende del idioma (la guía «Entrevistas por voz en 23 idiomas» lo muestra para cada uno). Las preguntas se leen en voz alta y los candidatos responden hablando; lo que dicen se convierte en texto y se asocia a una opción. testee no lo guarda; OpenAI, que hace esto por nosotros, puede conservarlo hasta 30 días, solo para detectar abusos salvo que la ley exija más tiempo. Las voces no se analizan para detectar tono ni emociones, y los candidatos siempre pueden tocar una opción en su lugar.",
     },
     {
         "key": "cost",
@@ -140,7 +140,7 @@ FAQ = [
     {
         "key": "delete",
         "question": "¿Puedo eliminar mi cuenta?",
-        "answer": "Sí, en Ajustes. Tu cuenta y tus datos se eliminan, y antes puedes descargar una copia de tus datos.",
+        "answer": "Sí, en Ajustes, salvo que seas propietario de una empresa a la que se hayan unido otras personas: primero haz propietario a otro miembro o elimínala. Tu cuenta y tus datos se eliminan, con las empresas de las que eres el único miembro y sus créditos, que no se reembolsan. Antes puedes descargar una copia de tus datos.",
     },
     {
         "key": "report",

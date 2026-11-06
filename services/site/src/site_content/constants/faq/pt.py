@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Os candidatos podem responder por voz?",
-        "answer": 'Sim, se a empresa definir uma entrevista no modo de voz, em qualquer um dos 23 idiomas da testee; o quanto ele lê e entende bem depende do idioma (o guia "Entrevistas por voz em 23 idiomas" mostra cada um). As questões são lidas em voz alta e os candidatos respondem falando; o que eles dizem é convertido em texto e associado a uma opção, e nunca é armazenado. As vozes não são analisadas quanto a tom ou emoção, e os candidatos sempre podem tocar em uma opção.',
+        "answer": 'Sim, se a empresa definir uma entrevista no modo de voz, em qualquer um dos 23 idiomas da testee; o quanto ele lê e entende bem depende do idioma (o guia "Entrevistas por voz em 23 idiomas" mostra cada um). As questões são lidas em voz alta e os candidatos respondem falando; o que eles dizem é convertido em texto e associado a uma opção. A testee não o armazena; a OpenAI, que faz isso para nós, pode guardá-lo por até 30 dias, apenas para verificar abusos, salvo se a lei exigir um prazo maior. As vozes não são analisadas quanto a tom ou emoção, e os candidatos sempre podem tocar em uma opção.',
     },
     {
         "key": "cost",
@@ -135,12 +135,12 @@ FAQ = [
     {
         "key": "emails",
         "question": "Quais e-mails a testee envia, e como faço para pará-los?",
-        "answer": 'E-mails de serviço, como convites, relatórios, problemas de pagamento e mudanças nos nossos termos, são sempre enviados. Os demais, como o resumo de atividades diário, os lembretes e as novidades do produto, você escolhe em Configurações, na seção E-mails, ou cancela pelo link "Cancelar inscrição" em cada e-mail. Os candidatos podem parar de receber os e-mails da sua empresa, ou os lembretes de uma entrevista, pelos links nos convites e lembretes.',
+        "answer": 'E-mails de serviço, como convites, relatórios, problemas de pagamento e mudanças nos nossos termos, são sempre enviados. Os demais, como o resumo de atividades diário, os lembretes e as novidades do produto, você escolhe em Configurações, na seção E-mails, ou cancela pelo link "Cancelar inscrição" em cada e-mail. Os candidatos podem parar de receber os e-mails da sua empresa, ou os lembretes de uma entrevista, pelos links nos convites e lembretes. As novidades da testee aparecem nas suas notificações, o sino no topo; as mais importantes também chegam por e-mail como novidade do produto, só enquanto essa configuração estiver ativada.',
     },
     {
         "key": "delete",
         "question": "Posso excluir minha conta?",
-        "answer": "Sim, nas Configurações. Sua conta e seus dados são excluídos, e antes você pode baixar uma cópia dos seus dados. As novidades da testee aparecem nas suas notificações, o sino no topo; as mais importantes também chegam por e-mail como novidade do produto, só enquanto essa configuração estiver ativada.",
+        "answer": "Sim, nas Configurações, a menos que você seja proprietário de uma empresa à qual outras pessoas tenham se juntado: primeiro torne outro membro proprietário dela ou exclua-a. Sua conta e seus dados são excluídos, com as empresas das quais você é o único membro e os créditos delas, que não são reembolsados. Antes você pode baixar uma cópia dos seus dados.",
     },
     {
         "key": "report",

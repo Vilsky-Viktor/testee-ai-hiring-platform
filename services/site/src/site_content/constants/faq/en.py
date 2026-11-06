@@ -39,7 +39,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Can candidates answer by voice?",
-        "answer": "Yes, if the company sets an interview to voice mode, in any of testee's 23 languages; how well it reads and hears varies by language (the guide \"Voice interviews in 23 languages\" shows each). The questions are read aloud and candidates answer aloud; what they say is turned into text and matched to an option, and it's never stored. Voices aren't analysed for tone or emotion, and candidates can always tap instead.",
+        "answer": "Yes, if the company sets an interview to voice mode, in any of testee's 23 languages; how well it reads and hears varies by language (the guide \"Voice interviews in 23 languages\" shows each). The questions are read aloud and candidates answer aloud; what they say is turned into text and matched to an option. testee doesn't store it; OpenAI, which does this for us, may keep it for up to 30 days, only to check for abuse unless the law requires longer. Voices aren't analysed for tone or emotion, and candidates can always tap instead.",
     },
     {
         "key": "cost",
@@ -139,7 +139,7 @@ FAQ = [
     {
         "key": "delete",
         "question": "Can I delete my account?",
-        "answer": "Yes, in Settings. Your account and your data are deleted, and you can download a copy of your data first.",
+        "answer": "Yes, in Settings, unless you own a company others have joined: first make another member its owner, or delete it. Your account and your data are deleted, with the companies you alone belong to and their credits, which aren't refunded. You can download a copy of your data first.",
     },
     {
         "key": "report",

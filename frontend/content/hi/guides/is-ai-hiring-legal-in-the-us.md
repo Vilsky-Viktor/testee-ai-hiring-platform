@@ -42,11 +42,11 @@ Americans with Disabilities Act योग्य दिव्यांग उम�
 
 ## New York City: Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), Department of Consumer and Worker Protection के नियमों (DCWP; 6 RCNY §5-300 और आगे) के साथ, तब लागू होता है जब कोई नियोक्ता या एम्प्लॉयमेंट एजेंसी New York City की नौकरियों के हायरिंग फ़ैसलों में काफ़ी हद तक मदद के लिए ऑटोमेटेड एम्प्लॉयमेंट डिसीज़न टूल (automated employment decision tool, AEDT) इस्तेमाल करती है। उम्मीदवारों को स्कोर या रैंक करने वाला टूल, जिसका इस्तेमाल यह तय करने में होता है कि कौन आगे बढ़ेगा, बहुत संभवतः इसमें आता है। इसे इस्तेमाल करने से पहले आपको चाहिए:
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), Department of Consumer and Worker Protection के नियमों (DCWP; 6 RCNY §5-300 और आगे) के साथ, तब लागू होता है जब कोई नियोक्ता या एम्प्लॉयमेंट एजेंसी शहर में हायरिंग फ़ैसलों में काफ़ी हद तक मदद के लिए ऑटोमेटेड एम्प्लॉयमेंट डिसीज़न टूल (automated employment decision tool, AEDT) इस्तेमाल करती है: New York City के किसी दफ़्तर में कोई नौकरी, कम से कम अंशकालिक रूप से, ऐसे दफ़्तर से जुड़ी पूरी तरह रिमोट नौकरी, या वहाँ स्थित किसी एम्प्लॉयमेंट एजेंसी द्वारा इस्तेमाल। उम्मीदवारों को स्कोर या रैंक करने वाला टूल, जिसका इस्तेमाल यह तय करने में होता है कि कौन आगे बढ़ेगा, बहुत संभवतः इसमें आता है। इसे इस्तेमाल करने से पहले आपको चाहिए:
 
 - **एक बायस ऑडिट** किसी स्वतंत्र ऑडिटर से, इस्तेमाल से पहले के एक साल के भीतर। न वेंडर और न आप, यानी नियोक्ता, स्वतंत्र ऑडिटर हो सकते हैं।
 - **ऑडिट का प्रकाशित सारांश:** लिंग, नस्ल/जातीयता और इंटरसेक्शनल श्रेणियों के हिसाब से चयन या स्कोरिंग दरें और इम्पैक्ट रेशियो, अज्ञात श्रेणी में उम्मीदवारों की संख्या, और टूल के इस्तेमाल की शुरुआत की तारीख़।
-- **उम्मीदवारों को नोटिस** इस्तेमाल से कम से कम 10 कार्य-दिवस पहले, जिसमें यह जानकारी हो कि वैकल्पिक चयन प्रक्रिया या सुविधा कैसे माँगें।
+- **New York City में रहने वाले उम्मीदवारों को नोटिस** इस्तेमाल से कम से कम 10 कार्य-दिवस पहले, जिसमें यह जानकारी हो कि वैकल्पिक चयन प्रक्रिया या सुविधा कैसे माँगें।
 
 ऑडिट कैसे गणना करता है:
 
@@ -81,7 +81,7 @@ Colorado का AI कानून SB 26-189 से रद्द करके �
 
 ## New Jersey और Texas
 
-- **New Jersey।** Law Against Discrimination (N.J.A.C. 13:16) के तहत असमान प्रभाव के नियम, जो 15 दिसंबर 2025 से लागू हैं, ऑटोमेटेड रोज़गार फ़ैसला टूल को कवर करते हैं। टूल वेंडर ने बनाया हो तब भी नियोक्ता ज़िम्मेदार हो सकता है।
+- **New Jersey।** Law Against Discrimination (N.J.A.C. 13:16) के तहत असमान प्रभाव के नियम, जो 15 दिसंबर 2025 से लागू हैं, ऑटोमेटेड रोज़गार फ़ैसला टूल को उन तरीकों में गिनाते हैं जिनका असमान प्रभाव हो सकता है। जो नियोक्ता किसी वेंडर के प्रोडक्ट पर निर्भर है, उसे यह सुनिश्चित करने के लिए उचित कदम उठाने होंगे कि वह कानून के अनुरूप हो, और इस्तेमाल से पहले पर्याप्त रूप से न परखा गया टूल खुद असमान प्रभाव डाल सकता है।
 - **Texas।** Responsible AI Governance Act (HB 149), जो 1 जनवरी 2026 से लागू है, ग़ैरक़ानूनी भेदभाव के इरादे से इस्तेमाल किए गए AI पर रोक लगाता है। सिर्फ़ असमान प्रभाव से वह इरादा साबित नहीं होता।
 
 ## तारीख़ें
@@ -141,5 +141,5 @@ testee जॉब डिस्क्रिप्शन से AI द्वार�
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), Public Act 103-0804 द्वारा संशोधित।
 - Colorado SB 26-189।
 - California Code of Regulations, title 2, §11013(c); ऑटोमेटेड डिसीज़न-मेकिंग टेक्नोलॉजी पर California Consumer Privacy Act के रेगुलेशन; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai)।
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules)।
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (वेंडरों पर §13:16-2.4(e), ऑटोमेटेड टूल पर §13:16-3.2(c)), साथ में [Morgan Lewis का सारांश](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules)।
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act)।

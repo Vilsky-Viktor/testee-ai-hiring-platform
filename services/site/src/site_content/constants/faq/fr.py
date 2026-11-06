@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Les candidats peuvent-ils répondre à l'oral ?",
-        "answer": "Oui, si l'entreprise passe un entretien en mode vocal, dans n'importe laquelle des 23 langues de testee ; la qualité de lecture et d'écoute varie selon la langue (le guide « Le mode vocal en 23 langues » la détaille pour chacune). Les questions sont lues à voix haute et les candidats répondent à l'oral ; ce qu'ils disent est transcrit en texte et rapproché d'une réponse, et n'est jamais conservé. Les voix ne sont pas analysées pour le ton ou les émotions, et les candidats peuvent toujours toucher une réponse à la place.",
+        "answer": "Oui, si l'entreprise passe un entretien en mode vocal, dans n'importe laquelle des 23 langues de testee ; la qualité de lecture et d'écoute varie selon la langue (le guide « Le mode vocal en 23 langues » la détaille pour chacune). Les questions sont lues à voix haute et les candidats répondent à l'oral ; ce qu'ils disent est transcrit en texte et rapproché d'une réponse. testee ne le conserve pas ; OpenAI, qui s'en charge pour nous, peut le conserver jusqu'à 30 jours, uniquement pour détecter les abus, sauf si la loi exige une durée plus longue. Les voix ne sont pas analysées pour le ton ou les émotions, et les candidats peuvent toujours toucher une réponse à la place.",
     },
     {
         "key": "cost",
@@ -140,7 +140,7 @@ FAQ = [
     {
         "key": "delete",
         "question": "Puis-je supprimer mon compte ?",
-        "answer": "Oui, dans les Paramètres. Votre compte et vos données sont supprimés, et vous pouvez d'abord télécharger une copie de vos données.",
+        "answer": "Oui, dans les Paramètres, sauf si vous êtes propriétaire d'une entreprise que d'autres ont rejointe : faites d'abord d'un autre membre son propriétaire, ou supprimez-la. Votre compte et vos données sont supprimés, avec les entreprises dont vous êtes le seul membre et leurs crédits, qui ne sont pas remboursés. Vous pouvez d'abord télécharger une copie de vos données.",
     },
     {
         "key": "report",

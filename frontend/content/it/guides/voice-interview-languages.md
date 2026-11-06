@@ -70,4 +70,4 @@ I numeri sono indicativi, non una garanzia. Con venti risposte per lingua, una d
 - Per iniziare un colloquio vocale serve un microfono funzionante, quindi un candidato che non può usarlo ha bisogno della modalità clic, impostata prima che inizi.
 - Puoi impostare la modalità per l'intero colloquio nelle sue impostazioni e cambiarla per un singolo candidato prima che inizi.
 
-In modalità vocale, la voce dei candidati viene solo trasformata in testo per leggere le risposte, non viene mai analizzata in nessun altro modo e testee non la conserva mai. OpenAI, che trasforma il parlato in testo, ha istruzione di non conservarlo e tiene i dati dell'API per al massimo 30 giorni, solo per controllare gli abusi.
+In modalità vocale, la voce dei candidati viene solo trasformata in testo per leggere le risposte, non viene mai analizzata in nessun altro modo e testee non la conserva mai. OpenAI, che trasforma il parlato in testo, può conservarlo per un massimo di 30 giorni, solo per controllare gli abusi salvo che la legge richieda un periodo più lungo.

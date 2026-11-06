@@ -42,11 +42,11 @@ Americans with Disabilities Act (ADA) mewajibkan akomodasi yang wajar bagi kandi
 
 ## New York City: Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), bersama aturan Department of Consumer and Worker Protection (DCWP; 6 RCNY §5-300 dan seterusnya), berlaku ketika pemberi kerja atau agen penyalur kerja memakai alat keputusan ketenagakerjaan otomatis (automated employment decision tool, AEDT) untuk membantu secara substansial keputusan perekrutan bagi pekerjaan di New York City. Alat yang memberi skor atau memeringkat kandidat, dan dipakai untuk memutuskan siapa yang lanjut, sangat mungkin termasuk. Sebelum memakainya, kamu memerlukan:
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), bersama aturan Department of Consumer and Worker Protection (DCWP; 6 RCNY §5-300 dan seterusnya), berlaku ketika pemberi kerja atau agen penyalur kerja memakai alat keputusan ketenagakerjaan otomatis (automated employment decision tool, AEDT) untuk membantu secara substansial keputusan perekrutan di kota itu: pekerjaan di kantor New York City, setidaknya paruh waktu, pekerjaan jarak jauh penuh yang terkait dengan kantor seperti itu, atau penggunaan oleh agen penyalur kerja yang berlokasi di sana. Alat yang memberi skor atau memeringkat kandidat, dan dipakai untuk memutuskan siapa yang lanjut, sangat mungkin termasuk. Sebelum memakainya, kamu memerlukan:
 
 - **Audit bias** oleh auditor independen, dilakukan dalam satu tahun sebelum dipakai. Baik vendor maupun kamu sebagai pemberi kerja tidak boleh menjadi auditor independennya.
 - **Ringkasan audit yang dipublikasikan:** tingkat seleksi atau tingkat skor dan rasio dampak menurut jenis kelamin, ras/etnis, dan kategori interseksional, jumlah kandidat dalam kategori yang tidak diketahui, dan tanggal mulai alat itu dipakai.
-- **Pemberitahuan kepada kandidat** setidaknya 10 hari kerja sebelum dipakai, berisi informasi cara meminta proses seleksi alternatif atau akomodasi.
+- **Pemberitahuan kepada kandidat yang tinggal di New York City** setidaknya 10 hari kerja sebelum dipakai, berisi informasi cara meminta proses seleksi alternatif atau akomodasi.
 
 Cara audit menghitung:
 
@@ -81,7 +81,7 @@ Undang-undang AI Colorado dicabut dan diberlakukan ulang melalui SB 26-189, dita
 
 ## New Jersey dan Texas
 
-- **New Jersey.** Aturan tentang dampak yang tidak setara berdasarkan Law Against Discrimination (N.J.A.C. 13:16), berlaku sejak 15 Desember 2025, mencakup alat keputusan ketenagakerjaan otomatis. Pemberi kerja bisa bertanggung jawab meskipun alatnya dibuat oleh vendor.
+- **New Jersey.** Aturan tentang dampak yang tidak setara berdasarkan Law Against Discrimination (N.J.A.C. 13:16), berlaku sejak 15 Desember 2025, menyebut alat keputusan ketenagakerjaan otomatis di antara praktik yang dapat menimbulkan dampak yang tidak setara. Pemberi kerja yang mengandalkan produk vendor harus mengambil langkah wajar untuk memastikan produk itu sesuai dengan hukum, dan alat yang tidak diuji secara memadai sebelum dipakai dapat dengan sendirinya menimbulkan dampak yang tidak setara.
 - **Texas.** Responsible AI Governance Act (HB 149), berlaku sejak 1 Januari 2026, melarang AI yang dipakai dengan niat untuk mendiskriminasi secara melanggar hukum. Dampak yang tidak setara saja tidak membuktikan niat itu.
 
 ## Tanggal-tanggalnya
@@ -141,5 +141,5 @@ Seperti apa wujudnya di produk saat ini:
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), sebagaimana diubah oleh Public Act 103-0804.
 - Colorado SB 26-189.
 - California Code of Regulations, title 2, §11013(c); peraturan California Consumer Privacy Act tentang teknologi pengambilan keputusan otomatis; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) tentang vendor, §13:16-3.2(c) tentang alat otomatis), dengan [ringkasan Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

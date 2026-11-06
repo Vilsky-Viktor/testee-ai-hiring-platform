@@ -70,4 +70,4 @@ De cijfers zijn een richtlijn, geen garantie. Bij twintig antwoorden per taal ka
 - Om een spraakinterview te starten is een werkende microfoon nodig, dus een kandidaat die er geen kan gebruiken, heeft de klikmodus nodig, ingesteld vóór de start.
 - Je kunt de modus voor het hele interview instellen in de instellingen ervan en hem voor één kandidaat wijzigen voordat die begint.
 
-In de spraakmodus worden de stemmen van kandidaten alleen omgezet in tekst om hun antwoorden te lezen, nooit op een andere manier geanalyseerd, en testee slaat ze nooit op. OpenAI, dat spraak omzet in tekst, krijgt de opdracht die niet op te slaan en bewaart API-gegevens maximaal 30 dagen, alleen om op misbruik te controleren.
+In de spraakmodus worden de stemmen van kandidaten alleen omgezet in tekst om hun antwoorden te lezen, nooit op een andere manier geanalyseerd, en testee slaat ze nooit op. OpenAI, dat spraak omzet in tekst, mag die maximaal 30 dagen bewaren, alleen om op misbruik te controleren, tenzij de wet een langere termijn vereist.

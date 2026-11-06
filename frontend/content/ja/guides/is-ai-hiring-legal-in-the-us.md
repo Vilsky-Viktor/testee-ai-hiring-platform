@@ -42,11 +42,11 @@ updated: "2026-11-07"
 
 ## ニューヨーク市：Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) は、消費者・労働者保護局（Department of Consumer and Worker Protection）の規則（6 RCNY §5-300 以下）とあわせて、雇用主または職業紹介事業者が、ニューヨーク市の仕事の採用判断を実質的に支援する自動雇用決定ツール（AEDT）を使う場合に適用されます。候補者を採点または順位づけし、誰を次に進めるかを決めるのに使うツールは、該当する可能性が非常に高いです。使用前に次のものが必要です。
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) は、消費者・労働者保護局（Department of Consumer and Worker Protection）の規則（6 RCNY §5-300 以下）とあわせて、雇用主または職業紹介事業者が、同市での採用判断を実質的に支援する自動雇用決定ツール（AEDT）を使う場合に適用されます。対象は、少なくともパートタイムでのニューヨーク市内のオフィスでの仕事、そのようなオフィスに紐づくフルリモートの仕事、または同市に所在する職業紹介事業者による使用です。候補者を採点または順位づけし、誰を次に進めるかを決めるのに使うツールは、該当する可能性が非常に高いです。使用前に次のものが必要です。
 
 - **バイアス監査：** 独立した監査人が、使用前の一年以内に実施したもの。ベンダーも、雇用主であるあなたも、独立した監査人にはなれません。
 - **監査の要約の公表：** 性別、人種／民族、交差するカテゴリーごとの選考率または得点率と影響比率、不明カテゴリーの候補者数、ツールの配布日。
-- **候補者への通知：** 使用の少なくとも 10 営業日前に、代替の選考手続や配慮を求める方法についての情報とともに。
+- **ニューヨーク市在住の候補者への通知：** 使用の少なくとも 10 営業日前に、代替の選考手続や配慮を求める方法についての情報とともに。
 
 監査の計算方法：
 
@@ -81,7 +81,7 @@ updated: "2026-11-07"
 
 ## ニュージャージー州とテキサス州
 
-- **ニュージャージー州。** Law Against Discrimination（N.J.A.C. 13:16）に基づく差別的効果に関する規則は、2025 年 12 月 15 日から施行されており、自動化された雇用判断ツールも対象です。ツールをベンダーが作った場合でも、雇用主が責任を問われることがあります。
+- **ニュージャージー州。** Law Against Discrimination（N.J.A.C. 13:16）に基づく差別的効果に関する規則は、2025 年 12 月 15 日から施行されており、差別的効果を生じ得る慣行の一つとして自動化された雇用判断ツールを挙げています。ベンダーの製品に依拠する雇用主は、それが法律に適合するよう合理的な措置を講じなければならず、使用前に十分にテストされていないツールはそれ自体が差別的効果を生じることがあります。
 - **テキサス州。** Responsible AI Governance Act（HB 149）は 2026 年 1 月 1 日から施行されており、違法に差別する意図で AI を使うことを禁じています。差別的効果だけでは、その意図は示されません。
 
 ## 日程
@@ -141,5 +141,5 @@ testee は、職務内容をもとに AI が作成した、時間制限付きの
 - Illinois Human Rights Act、775 ILCS 5/2-102(L)（Public Act 103-0804 による改正後）。
 - Colorado SB 26-189。
 - California Code of Regulations, title 2, §11013(c)、自動化された意思決定技術に関する California Consumer Privacy Act の規則、[SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai)。
-- New Jersey、[N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules)。
+- New Jersey、[N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf)（ベンダーについては §13:16-2.4(e)、自動化ツールについては §13:16-3.2(c)）、および [Morgan Lewis の要約](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules)。
 - Texas、[HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act)。

@@ -70,4 +70,4 @@ Die Zahlen sind ein Anhaltspunkt, keine Garantie. Bei zwanzig Antworten pro Spra
 - Ein Sprachinterview zu starten erfordert ein funktionierendes Mikrofon, ein Kandidat, der keines nutzen kann, braucht also den Klickmodus, eingestellt vor dem Start.
 - Du kannst den Modus für das ganze Interview in dessen Einstellungen festlegen und ihn für einen einzelnen Kandidaten ändern, bevor er beginnt.
 
-Im Sprachmodus werden die Stimmen der Kandidaten nur in Text umgewandelt, um ihre Antworten zu erkennen, nie auf andere Weise analysiert, und testee speichert sie nie. OpenAI, das Sprache in Text umwandelt, ist angewiesen, sie nicht zu speichern, und bewahrt API-Daten höchstens 30 Tage auf, nur zur Missbrauchskontrolle.
+Im Sprachmodus werden die Stimmen der Kandidaten nur in Text umgewandelt, um ihre Antworten zu erkennen, nie auf andere Weise analysiert, und testee speichert sie nie. OpenAI, das Sprache in Text umwandelt, darf sie bis zu 30 Tage aufbewahren, nur zur Missbrauchskontrolle, sofern das Gesetz nicht eine längere Aufbewahrung verlangt.

@@ -42,11 +42,11 @@ Hinihingi ng Americans with Disabilities Act ang reasonable accommodation para s
 
 ## New York City: Local Law 144
 
-Ang [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), kasama ang mga patakaran ng Department of Consumer and Worker Protection (6 RCNY §5-300 at mga kasunod), ay nalalapat kapag gumagamit ang isang employer o employment agency ng automated employment decision tool (AEDT) para malaking tulong sa mga hiring decision para sa mga trabaho sa New York City. Malamang na kasama rito ang tool na nag-i-score o nagra-rank ng mga aplikante, na ginagamit para magpasya kung sino ang uusad. Bago gumamit nito, kailangan mo ng:
+Ang [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), kasama ang mga patakaran ng Department of Consumer and Worker Protection (6 RCNY §5-300 at mga kasunod), ay nalalapat kapag gumagamit ang isang employer o employment agency ng automated employment decision tool (AEDT) para malaking tulong sa mga hiring decision sa lungsod: isang trabaho sa opisina sa New York City, kahit part time, isang ganap na remote na trabahong nakatali sa ganoong opisina, o paggamit ng employment agency na nakabase roon. Malamang na kasama rito ang tool na nag-i-score o nagra-rank ng mga aplikante, na ginagamit para magpasya kung sino ang uusad. Bago gumamit nito, kailangan mo ng:
 
 - **Isang bias audit** ng isang independent auditor, ginawa sa loob ng isang taon bago gamitin. Hindi puwedeng ang vendor o ikaw, ang employer, ang maging independent auditor.
 - **Isang inilathalang buod** ng audit: ang selection o scoring rates at impact ratios ayon sa kasarian, lahi/etnisidad at intersectional categories, ang bilang ng mga aplikante sa isang unknown category, at ang distribution date ng tool.
-- **Isang abiso sa mga aplikante** nang hindi bababa sa 10 business days bago gamitin, na may impormasyon kung paano humingi ng alternative selection process o accommodation.
+- **Isang abiso sa mga aplikanteng nakatira sa New York City** nang hindi bababa sa 10 business days bago gamitin, na may impormasyon kung paano humingi ng alternative selection process o accommodation.
 
 Paano nagkukuwenta ang audit:
 
@@ -81,7 +81,7 @@ Pinawalang-bisa at muling isinabatas ang AI law ng Colorado sa pamamagitan ng SB
 
 ## New Jersey at Texas
 
-- **New Jersey.** Saklaw ng mga patakaran sa disparate impact sa ilalim ng Law Against Discrimination (N.J.A.C. 13:16), na umiiral mula 15 Disyembre 2025, ang automated employment decision tools. Puwedeng managot ang employer kahit vendor ang gumawa ng tool.
+- **New Jersey.** Binabanggit ng mga patakaran sa disparate impact sa ilalim ng Law Against Discrimination (N.J.A.C. 13:16), na umiiral mula 15 Disyembre 2025, ang automated employment decision tools kabilang sa mga gawaing maaaring magkaroon ng disparate impact. Ang employer na umaasa sa produkto ng isang vendor ay dapat gumawa ng mga makatwirang hakbang para matiyak na sumusunod ito sa batas, at ang tool na hindi sapat na nasubok bago gamitin ay maaaring magkaroon mismo ng disparate impact.
 - **Texas.** Ipinagbabawal ng Responsible AI Governance Act (HB 149), na umiiral mula 1 Enero 2026, ang AI na ginagamit nang may layuning magdiskrimina nang labag sa batas. Hindi sapat ang disparate impact lang para ipakita ang layuning iyon.
 
 ## Ang mga petsa
@@ -141,5 +141,5 @@ Ang hitsura nito sa produkto ngayon:
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), ayon sa pagbabago ng Public Act 103-0804.
 - Colorado SB 26-189.
 - California Code of Regulations, title 2, §11013(c); mga regulation ng California Consumer Privacy Act sa automated decision-making technology; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) tungkol sa mga vendor, §13:16-3.2(c) tungkol sa automated tools), kasama ang [buod ng Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

@@ -70,4 +70,4 @@ Các con số là để tham khảo, không phải cam kết. Hai mươi câu tr
 - Bắt đầu một buổi phỏng vấn bằng giọng nói cần có micro hoạt động, nên ứng viên không dùng được micro cần chế độ nhấp, được đặt trước khi họ bắt đầu.
 - Bạn có thể đặt chế độ cho cả buổi phỏng vấn trong phần cài đặt và đổi riêng cho một ứng viên trước khi họ bắt đầu.
 
-Ở chế độ giọng nói, giọng của ứng viên chỉ được chuyển thành văn bản để đọc câu trả lời, không bao giờ được phân tích theo bất kỳ cách nào khác, và testee không bao giờ lưu giọng đó. OpenAI, bên chuyển lời nói thành văn bản, được yêu cầu không lưu giọng nói và giữ dữ liệu API tối đa 30 ngày, chỉ để kiểm tra lạm dụng.
+Ở chế độ giọng nói, giọng của ứng viên chỉ được chuyển thành văn bản để đọc câu trả lời, không bao giờ được phân tích theo bất kỳ cách nào khác, và testee không bao giờ lưu giọng đó. OpenAI, bên chuyển lời nói thành văn bản, có thể giữ giọng nói tối đa 30 ngày, chỉ để kiểm tra lạm dụng trừ khi pháp luật yêu cầu lâu hơn.

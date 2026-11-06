@@ -70,4 +70,4 @@ Las cifras son orientativas, no una garantía. Con veinte respuestas por idioma,
 - Empezar una entrevista por voz requiere un micrófono que funcione, así que un candidato que no pueda usarlo necesita el modo clic, configurado antes de que empiece.
 - Puedes fijar el modo de toda la entrevista en su configuración y cambiarlo para un candidato antes de que empiece.
 
-En el modo de voz, la voz de los candidatos solo se convierte en texto para leer sus respuestas, nunca se analiza de ninguna otra forma y testee nunca la guarda. A OpenAI, que convierte el habla en texto, se le indica que no la guarde, y conserva los datos de la API un máximo de 30 días, solo para detectar abusos.
+En el modo de voz, la voz de los candidatos solo se convierte en texto para leer sus respuestas, nunca se analiza de ninguna otra forma y testee nunca la guarda. OpenAI, que convierte el habla en texto, puede conservarla hasta 30 días, solo para detectar abusos salvo que la ley exija más tiempo.

@@ -42,11 +42,11 @@ De Americans with Disabilities Act verplicht tot redelijke aanpassingen voor gek
 
 ## New York City: Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) geldt, met de regels van het Department of Consumer and Worker Protection (6 RCNY §5-300 en volgende), wanneer een werkgever of uitzendbureau een automated employment decision tool (AEDT) gebruikt die wervingsbesluiten voor banen in New York City wezenlijk ondersteunt. Een tool die kandidaten scoort of rangschikt en wordt gebruikt om te beslissen wie doorgaat, telt zeer waarschijnlijk mee. Voordat je er een gebruikt, heb je nodig:
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) geldt, met de regels van het Department of Consumer and Worker Protection (6 RCNY §5-300 en volgende), wanneer een werkgever of uitzendbureau een automated employment decision tool (AEDT) gebruikt die wervingsbesluiten in de stad wezenlijk ondersteunt: een baan op een kantoor in New York City, ten minste parttime, een volledig externe baan die aan zo'n kantoor is verbonden, of gebruik door een uitzendbureau dat daar is gevestigd. Een tool die kandidaten scoort of rangschikt en wordt gebruikt om te beslissen wie doorgaat, telt zeer waarschijnlijk mee. Voordat je er een gebruikt, heb je nodig:
 
 - **Een bias-audit** door een onafhankelijke auditor, uitgevoerd binnen een jaar vóór gebruik. Noch de leverancier noch jij, de werkgever, kan de onafhankelijke auditor zijn.
 - **Een gepubliceerde samenvatting** van de audit: de selectie- of scorepercentages en impact ratios naar geslacht, ras/etniciteit en intersectionele categorieën, het aantal kandidaten in een onbekende categorie en de distributiedatum van de tool.
-- **Een melding aan kandidaten** minstens 10 werkdagen vóór gebruik, met informatie over hoe ze om een alternatieve selectieprocedure of een aanpassing kunnen vragen.
+- **Een melding aan kandidaten die in New York City wonen** minstens 10 werkdagen vóór gebruik, met informatie over hoe ze om een alternatieve selectieprocedure of een aanpassing kunnen vragen.
 
 Hoe de audit rekent:
 
@@ -81,7 +81,7 @@ De AI-wet van Colorado werd ingetrokken en opnieuw vastgesteld door SB 26-189, o
 
 ## New Jersey en Texas
 
-- **New Jersey.** Regels over indirecte discriminatie onder de Law Against Discrimination (N.J.A.C. 13:16), van kracht sinds 15 december 2025, gelden voor geautomatiseerde tools voor arbeidsbesluiten. Een werkgever kan aansprakelijk zijn, ook als een leverancier de tool heeft gebouwd.
+- **New Jersey.** Regels over indirecte discriminatie onder de Law Against Discrimination (N.J.A.C. 13:16), van kracht sinds 15 december 2025, noemen geautomatiseerde tools voor arbeidsbesluiten onder de praktijken die indirect discriminerend kunnen werken. Een werkgever die op het product van een leverancier vertrouwt, moet redelijke stappen zetten om te zorgen dat het met de wet in overeenstemming is, en een tool die vóór gebruik niet voldoende is getest, kan zelf indirect discriminerend werken.
 - **Texas.** De Responsible AI Governance Act (HB 149), van kracht sinds 1 januari 2026, verbiedt AI die wordt gebruikt met de bedoeling onrechtmatig te discrimineren. Indirecte discriminatie alleen bewijst die bedoeling niet.
 
 ## De data
@@ -141,5 +141,5 @@ Zo ziet dat er vandaag in het product uit:
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), zoals gewijzigd door Public Act 103-0804.
 - Colorado SB 26-189.
 - California Code of Regulations, title 2, §11013(c); de regels van de California Consumer Privacy Act over geautomatiseerde besluitvormingstechnologie; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) over leveranciers, §13:16-3.2(c) over geautomatiseerde tools), met de [samenvatting van Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

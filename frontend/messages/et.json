@@ -1316,7 +1316,7 @@
     "voiceDenied": "Mikrofon on blokeeritud. Luba see aadressi kõrval oleva ikooni kaudu ja proovi uuesti.",
     "voiceRetry": "Proovi uuesti",
     "voiceUnsupported": "See brauser ei saa sinu häält salvestada. Ava see leht Chrome'i, Edge'i, Firefoxi või Safari uuemas versioonis.",
-    "voice": "Tehisaru intervjueerija Mira loeb iga küsimuse ette ja küsimuse aeg jookseb juba ettelugemise ajal. Vasta häälega või puuduta varianti. Selge suuline vastus ühe valikuga küsimusele salvestatakse kohe ja seda ei saa muuta. Sinu hääl muudetakse tekstiks ainult vastuse lugemiseks ning seda ei säilitata ega analüüsita kunagi.",
+    "voice": "Tehisaru intervjueerija Mira loeb iga küsimuse ette ja küsimuse aeg jookseb juba ettelugemise ajal. Vasta häälega või puuduta varianti. Selge suuline vastus ühe valikuga küsimusele salvestatakse kohe ja seda ei saa muuta. Sinu hääl muudetakse tekstiks ainult vastuse lugemiseks ning seda ei analüüsita kunagi. testee seda ei säilita; OpenAI, mis teeb seda meie eest, võib seda kuritarvituste kontrollimiseks säilitada kuni 30 päeva, välja arvatud juhul, kui seadus nõuab pikemat säilitamist.",
     "unanswered": "Sul on üks katse ja vastamata küsimused loetakse valeks.",
     "saved": "Edenemine salvestatakse: jätkamiseks ava see link uuesti. Intervjuu lõpeb ise veidi pärast seda, kui kogu selle aeg sinu alustamisest on möödas.",
     "savedLink": "Edenemine salvestatakse: saadame sulle e-kirjaga lingi, et jätkata. Intervjuu lõpeb ise veidi pärast seda, kui kogu selle aeg sinu alustamisest on möödas.",
@@ -2976,15 +2976,19 @@
       "contrast": "Värvid, mille ettevõte oma intervjuulehtedele valib, lükatakse tagasi, kui neil olevat teksti oleks raske lugeda (kontrast alla WCAG nõude).",
       "languages": "Sait 23 keeles, paremalt vasakule neis keeltes, mida nii kirjutatakse.",
       "phones": "Lehed mahuvad telefoniekraanile ja toimivad ka suurendatult.",
-      "text": "Intervjuu küsimused on tekst koos vastusevariantidega: heli ega videot pole vaja.",
-      "extraTime": "Ettevõte võib anda sulle igale küsimusele lisaaega. Küsi ettevõttelt seda või mõnda muud kohandust enne alustamist; põhjust ei pea ütlema.",
+      "text": "Intervjuu küsimused on näidatud tekstina koos vastusevariantidega, ka häälerežiimis, kus saad rääkimise asemel varianti puudutada.",
+      "extraTime": "Ettevõte võib anda sulle igale küsimusele lisaaega. Küsi ettevõttelt seda või mõnda muud kohandust enne alustamist; põhjust ei pea ütlema. Kui tulid jagatava lingi kaudu, küsi esmalt isiklikku kutset: lingile ei saa lisaaega lisada.",
       "keyboard": "Klaviatuuriga: igal lehel on esimesena link „Liigu sisu juurde“, vahekaartide vahel liigud nooleklahvidega ja ekraanilugejad loevad ette vormi vead."
     },
     "limits": {
       "title": "Mis veel ei vasta ootustele",
       "timed": "Intervjuu küsimustel on ajapiirang, nagu ettevõtte hindamine nõuab. Kui vajad rohkem aega, küsi ettevõttelt enne alustamist lisaaega.",
       "audit": "testeed pole veel sõltumatult auditeeritud, seega ei pruugi mõned osad vastata WCAG 2.2 AA nõuetele.",
-      "providers": "Krediitide eest maksmist (Paddle'i makseleht) ja kontrolli „Ma ei ole robot” (Cloudflare Turnstile) haldavad need teenusepakkujad, oma ligipääsetavusega."
+      "providers": "Krediitide eest maksmist (Paddle'i makseleht), kontrolli „Ma ei ole robot” (Cloudflare Turnstile) ja avalehe videot (YouTube) haldavad need teenusepakkujad, oma ligipääsetavusega.",
+      "contrast": "Heledas teemas on valgel tekstil testee peamistel nuppudel kontrast 4.34:1, veidi alla WCAG AA nõutud 4.5:1. Tume teema vastab sellele nõudele.",
+      "motion": "Avalehe liikuvad pildid ja mõned väikesed animatsioonid, näiteks pulseeriv esitusnupp, nupp „küsi Miralt” ja kelluke, liiguvad edasi ning neil pole pausinuppu. Sinu seadme liikumise vähendamise seade peatab need.",
+      "contactForm": "Kontaktivormis on iga välja nimi näidatud ainult kohatäitena, mis kaob, kui hakkad kirjutama. Ekraanilugejad loevad nime siiski ette.",
+      "voice": "Häälerežiimis intervjuu jaoks pead enne alustamist lubama mikrofoni ja heli, isegi kui kavatsed vastuseid puudutada. Kui sa ei saa neid kasutada, palu ettevõttel määrata sulle puudutamisega vastamine."
     },
     "feedback": {
       "title": "Anna meile teada",
@@ -3013,8 +3017,8 @@
       "roles": "testee on vastutav töötleja nende inimeste kontode puhul, kes seda kasutavad, ning volitatud töötleja kandidaatide andmete puhul, mis kuuluvad neid kutsunud ettevõttele.",
       "noSelling": "Me ei müü isikuandmeid ega jaga neid reklaami jaoks. Reklaami- ega analüütikaküpsiseid ei ole.",
       "noInference": "testee ei kogu andmeid kandidaatide soo, vanuse, päritolu ega puude kohta ega tuleta midagi sellist.",
-      "voice": "Häälerežiimis muudetakse kandidaadi suuline vastus tekstiks ja sobitatakse valikutega ning sobitatud valik öeldakse talle välja ja näidatakse ekraanil; mitme valiku korral kinnitab ta selle kõigepealt. Tema kõnet ei salvestata ega säilitata ning häält ei analüüsita muul viisil.",
-      "ai": "OpenAI-l, mis küsimused kirjutab, on palutud saadud andmeid mitte säilitada; ta hoiab neid kõige rohkem 30 päeva, ainult kuritarvituste kontrollimiseks, ega kasuta neid oma mudelite treenimiseks.",
+      "voice": "Häälerežiimis muudetakse kandidaadi suuline vastus tekstiks ja sobitatakse valikutega ning sobitatud valik öeldakse talle välja ja näidatakse ekraanil; mitme valiku korral kinnitab ta selle kõigepealt. testee ei säilita kõnet ning häält ei analüüsita muul viisil. OpenAI, mis muudab selle tekstiks, võib seda säilitada kuni 30 päeva, nagu allpool kirjeldatud.",
+      "ai": "OpenAI-l, mis küsimused kirjutab, on palutud saadud andmeid mitte säilitada, kus tema API seda valikut pakub; ta võib neid hoida kuni 30 päeva, ainult kuritarvituste kontrollimiseks, välja arvatud juhul, kui seadus nõuab pikemat säilitamist, ega kasuta neid oma mudelite treenimiseks.",
       "rights": "Igaüks saab oma andmed seadetes alla laadida või kustutada, ilma meile kirjutamata."
     },
     "compliance": {
@@ -3023,12 +3027,12 @@
       "humanReview": "testee ei tee kandidaadi kohta ühtegi otsust: ettevõtte inimesed vaatavad tulemused üle ja otsustavad ning kandidaadid võivad paluda, et inimene nende tulemuse üle vaataks.",
       "dpa": "Andmetöötlusleping on osa tingimustest ja midagi ei pea allkirjastama. See hõlmab GDPR-i, UK GDPR-i ja USA osariikide privaatsusseadusi, näiteks California oma, mille järgi on testee ettevõtte teenusepakkuja (service provider).",
       "documents": "Ettevõtted saavad <link>kasutusjuhendi, andmekaitsealase mõjuhinnangu malli ja kandidaaditeate mallid</link>, sh versioonid New Yorgi, Illinoisi ja Colorado jaoks.",
-      "nyc": "New York: enne testee kasutamist seal asuva ametikoha jaoks teeb tööandja, mida Local Law 144 temalt nõuab: sõltumatu kallutatuse auditi kasutusele eelneva aasta jooksul, selle kokkuvõtte avaldamise ja teate kandidaatidele vähemalt 10 tööpäeva enne nende hindamist. testee enda sõltumatu kallutatuse audit tehakse enne <time>{date}</time> ja seejärel igal aastal."
+      "nyc": "New York: enne testee kasutamist seal asuva ametikoha jaoks teeb tööandja, mida Local Law 144 temalt nõuab: sõltumatu kallutatuse auditi kasutusele eelneva aasta jooksul, selle kokkuvõtte avaldamise ja teate linnas elavatele kandidaatidele vähemalt 10 tööpäeva enne nende hindamist. testee enda sõltumatu kallutatuse audit tehakse enne <time>{date}</time> ja seejärel igal aastal."
     },
     "residency": {
       "title": "Kus andmeid hoitakse",
-      "storage": "testee töötab Google Cloudis ELis, Belgias, kus asub ka selle andmebaas. Kasutuspiirangute loendureid hoitakse Upstashis, samuti Belgias, ja e-kirjad saadetakse Resendi kaudu Iirimaal.",
-      "transfers": "Kolm teenusepakkujat töötlevad andmeid Ameerika Ühendriikides: Google sisselogimiseks, OpenAI ning Cloudflare kontrolli „Ma ei ole robot” jaoks. Need edastamised põhinevad ELi–USA andmekaitseraamistikul (EU-US Data Privacy Framework) või Euroopa Komisjoni lepingu tüüptingimustel ning Ühendkuningriigi puhul Ühendkuningriigi laiendusel (UK Extension) ja Ühendkuningriigi rahvusvahelise andmeedastuse lisal (UK International Data Transfer Addendum)."
+      "storage": "testee töötab Google Cloudis ELis, Belgias, kus asub ka selle andmebaas. Kasutuspiirangute loendureid hoitakse Upstashis, samuti Belgias. E-kirjad saadetakse Iirimaalt Resendi kaudu, mis säilitab neid Ameerika Ühendriikides.",
+      "transfers": "Neli teenusepakkujat töötlevad andmeid Ameerika Ühendriikides: Google sisselogimiseks, OpenAI, Resend e-kirjade jaoks ning Cloudflare kontrolli „Ma ei ole robot” jaoks. Meie Google Workspace'i postkasti kirju võidakse samuti säilitada väljaspool ELi. Need edastamised põhinevad ELi–USA andmekaitseraamistikul (EU-US Data Privacy Framework) või Euroopa Komisjoni lepingu tüüptingimustel ning Ühendkuningriigi puhul Ühendkuningriigi laiendusel (UK Extension) ja Ühendkuningriigi rahvusvahelise andmeedastuse lisal (UK International Data Transfer Addendum)."
     },
     "subprocessors": {
       "title": "Alamtöötlejad",
@@ -3327,7 +3331,7 @@
       "phone": "Töötab nii telefonis kui ka arvutis",
       "saved": "Edenemine salvestatakse jooksvalt",
       "tap": "Vastusevarianti saab alati ka puudutada",
-      "kept": "Hääl muudetakse ainult tekstiks ja seda ei säilitata kunagi",
+      "kept": "testee ei säilita häält: see muudetakse ainult tekstiks",
       "voiceLanguages": "Kõigis 23 keeles, kvaliteet oleneb keelest",
       "contrast": "Raskesti loetavaid värve ei aktsepteerita",
       "logo": "Sinu logo kutsetel, intervjuul ja PDF-raportites",
@@ -3459,7 +3463,7 @@
       },
       "privacy": {
         "title": "Privaatsus algusest peale",
-        "text": "Andmeid ei müüda, kandidaatide kohta ei tehta järeldusi, häält ei säilitata kunagi."
+        "text": "Andmeid ei müüda, kandidaatide kohta ei tehta järeldusi, testee ei säilita häält."
       },
       "verified": {
         "title": "Kinnitatud ettevõtted",
@@ -3475,7 +3479,7 @@
       },
       "expire": {
         "title": "Krediidid ei aegu",
-        "text": "Suurema juurdelaadimise korral on kandidaat odavam; kasutamata ostetud krediidid saab tagasi."
+        "text": "Suurema juurdelaadimise korral on kandidaat odavam; kasutamata ostetud krediidid saab tagasi 14 päeva jooksul."
       },
       "autoTopUp": {
         "title": "Automaatne juurdelaadimine",

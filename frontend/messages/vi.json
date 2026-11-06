@@ -1316,7 +1316,7 @@
     "voiceDenied": "Micrô đã bị chặn. Hãy cho phép bằng biểu tượng cạnh địa chỉ, rồi thử lại.",
     "voiceRetry": "Thử lại",
     "voiceUnsupported": "Trình duyệt này không ghi âm được giọng nói của bạn. Hãy mở trang này bằng phiên bản mới của Chrome, Edge, Firefox hoặc Safari.",
-    "voice": "Mira, người phỏng vấn AI, đọc to từng câu hỏi, và thời gian của câu được tính ngay trong lúc đọc. Hãy trả lời bằng giọng nói hoặc chạm vào một phương án. Câu trả lời nói rõ ràng cho câu chọn một phương án được lưu ngay và không thể đổi. Giọng nói của bạn chỉ được chuyển thành văn bản để đọc câu trả lời, không bao giờ được lưu giữ hay phân tích.",
+    "voice": "Mira, người phỏng vấn AI, đọc to từng câu hỏi, và thời gian của câu được tính ngay trong lúc đọc. Hãy trả lời bằng giọng nói hoặc chạm vào một phương án. Câu trả lời nói rõ ràng cho câu chọn một phương án được lưu ngay và không thể đổi. Giọng nói của bạn chỉ được chuyển thành văn bản để đọc câu trả lời, và không bao giờ bị phân tích. testee không lưu giữ giọng nói; OpenAI, bên thực hiện việc này cho chúng tôi, có thể lưu giữ tối đa 30 ngày để kiểm tra lạm dụng, trừ khi pháp luật yêu cầu lâu hơn.",
     "unanswered": "Bạn chỉ có một lần làm bài, và câu chưa trả lời được tính là sai.",
     "saved": "Tiến độ được lưu: mở lại liên kết này để tiếp tục. Buổi phỏng vấn tự kết thúc ngay sau khi toàn bộ thời gian của nó trôi qua kể từ lúc bạn bắt đầu.",
     "savedLink": "Tiến độ được lưu: chúng tôi gửi email cho bạn một liên kết để tiếp tục. Buổi phỏng vấn tự kết thúc ngay sau khi toàn bộ thời gian của nó trôi qua kể từ lúc bạn bắt đầu.",
@@ -2980,15 +2980,19 @@
       "contrast": "Màu mà công ty chọn cho các trang phỏng vấn của mình sẽ bị từ chối nếu chữ trên đó khó đọc (độ tương phản dưới mức WCAG).",
       "languages": "Trang web có 23 ngôn ngữ, hiển thị từ phải sang trái với các ngôn ngữ viết theo cách đó.",
       "phones": "Các trang vừa với màn hình điện thoại và vẫn dùng được khi phóng to.",
-      "text": "Câu hỏi phỏng vấn là văn bản kèm các lựa chọn trả lời: không cần âm thanh hay video.",
-      "extraTime": "Công ty có thể cho bạn thêm thời gian ở mỗi câu hỏi. Hãy đề nghị công ty điều này, hoặc một sự điều chỉnh hỗ trợ khác, trước khi bắt đầu; bạn không cần nói lý do.",
+      "text": "Câu hỏi phỏng vấn được hiển thị dưới dạng văn bản kèm các lựa chọn trả lời, kể cả ở chế độ giọng nói, nơi bạn có thể chạm thay vì nói.",
+      "extraTime": "Công ty có thể cho bạn thêm thời gian ở mỗi câu hỏi. Hãy đề nghị công ty điều này, hoặc một sự điều chỉnh hỗ trợ khác, trước khi bắt đầu; bạn không cần nói lý do. Nếu bạn đến qua liên kết chia sẻ, trước tiên hãy xin một lời mời riêng: không thể thêm thời gian vào liên kết.",
       "keyboard": "Bằng bàn phím: liên kết “Chuyển đến nội dung” luôn đứng đầu mỗi trang, bạn chuyển giữa các thẻ bằng phím mũi tên, và trình đọc màn hình thông báo các lỗi của biểu mẫu."
     },
     "limits": {
       "title": "Những điểm còn thiếu sót",
       "timed": "Câu hỏi phỏng vấn có giới hạn thời gian, theo yêu cầu đánh giá của công ty. Nếu cần thêm thời gian, hãy đề nghị công ty cho thêm thời gian trước khi bắt đầu.",
       "audit": "testee chưa được kiểm định độc lập, nên một số phần có thể chưa đáp ứng WCAG 2.2 AA.",
-      "providers": "Việc thanh toán credit (trang thanh toán của Paddle) và bước kiểm tra “Tôi không phải là người máy” (Cloudflare Turnstile) do các nhà cung cấp đó vận hành, theo khả năng tiếp cận riêng của họ."
+      "providers": "Việc thanh toán credit (trang thanh toán của Paddle), bước kiểm tra “Tôi không phải là người máy” (Cloudflare Turnstile) và video trên trang chủ (YouTube) do các nhà cung cấp đó vận hành, theo khả năng tiếp cận riêng của họ.",
+      "contrast": "Ở giao diện sáng, chữ trắng trên các nút chính của testee có độ tương phản 4.34:1, thấp hơn một chút so với mức 4.5:1 mà WCAG AA yêu cầu. Giao diện tối đáp ứng mức này.",
+      "motion": "Các hình ảnh chuyển động trên trang chủ và một vài hiệu ứng động nhỏ, như nút phát nhấp nháy, nút “hỏi Mira” và chuông, vẫn chuyển động mà không có nút tạm dừng. Cài đặt giảm chuyển động trên thiết bị của bạn sẽ dừng chúng.",
+      "contactForm": "Biểu mẫu liên hệ chỉ hiển thị tên mỗi trường dưới dạng văn bản gợi ý, và văn bản này biến mất khi bạn nhập. Trình đọc màn hình vẫn đọc tên trường.",
+      "voice": "Buổi phỏng vấn ở chế độ giọng nói cần bạn cho phép micrô và âm thanh trước khi bắt đầu, ngay cả khi bạn sẽ chạm để trả lời. Nếu bạn không thể dùng chúng, hãy đề nghị công ty đặt cho bạn cách trả lời bằng chạm."
     },
     "feedback": {
       "title": "Báo cho chúng tôi",
@@ -3017,8 +3021,8 @@
       "roles": "testee là bên kiểm soát dữ liệu đối với tài khoản của những người sử dụng nó, và là bên xử lý dữ liệu của ứng viên, vốn thuộc về công ty mời họ.",
       "noSelling": "Chúng tôi không bán dữ liệu cá nhân hay chia sẻ nó cho quảng cáo. Không có cookie quảng cáo hay phân tích.",
       "noInference": "testee không thu thập dữ liệu về giới tính, tuổi, nguồn gốc hay khuyết tật của ứng viên, và không suy đoán bất kỳ điều gì như vậy.",
-      "voice": "Ở chế độ giọng nói, câu trả lời bằng lời của ứng viên được chuyển thành văn bản và khớp với các lựa chọn, lựa chọn khớp được đọc lại cho ứng viên và hiển thị trên màn hình; khi chọn nhiều lựa chọn thì phải xác nhận trước. Lời nói không được ghi âm hay lưu trữ, và giọng nói không được phân tích theo bất kỳ cách nào khác.",
-      "ai": "OpenAI, bên viết câu hỏi, được yêu cầu không lưu những gì nhận được; OpenAI giữ dữ liệu tối đa 30 ngày, chỉ để kiểm tra hành vi lạm dụng, và không dùng nó để huấn luyện mô hình.",
+      "voice": "Ở chế độ giọng nói, câu trả lời bằng lời của ứng viên được chuyển thành văn bản và khớp với các lựa chọn, lựa chọn khớp được đọc lại cho ứng viên và hiển thị trên màn hình; khi chọn nhiều lựa chọn thì phải xác nhận trước. testee không lưu trữ lời nói, và giọng nói không được phân tích theo bất kỳ cách nào khác. OpenAI, bên chuyển lời nói thành văn bản, có thể lưu giữ tối đa 30 ngày, như nêu dưới đây.",
+      "ai": "OpenAI, bên viết câu hỏi, được yêu cầu không lưu những gì nhận được ở những nơi API của OpenAI cho phép lựa chọn này; OpenAI có thể giữ dữ liệu tối đa 30 ngày, chỉ để kiểm tra hành vi lạm dụng trừ khi pháp luật yêu cầu lâu hơn, và không dùng nó để huấn luyện mô hình.",
       "rights": "Bất kỳ ai cũng có thể tải về hoặc xóa dữ liệu của chính mình trong Cài đặt mà không cần viết thư cho chúng tôi."
     },
     "compliance": {
@@ -3027,12 +3031,12 @@
       "humanReview": "testee không đưa ra quyết định nào về ứng viên: những người ở công ty xem xét kết quả và quyết định, và ứng viên có thể yêu cầu một người xem xét lại kết quả của mình.",
       "dpa": "Thỏa thuận xử lý dữ liệu là một phần của các điều khoản, không cần ký gì. Thỏa thuận bao gồm GDPR, UK GDPR và các luật về quyền riêng tư của các bang tại Hoa Kỳ như luật của California, theo đó testee là nhà cung cấp dịch vụ của công ty.",
       "documents": "Các công ty nhận được <link>hướng dẫn sử dụng, mẫu DPIA và các mẫu thông báo cho ứng viên</link>, có phiên bản cho Thành phố New York, Illinois và Colorado.",
-      "nyc": "Thành phố New York: trước khi dùng testee cho một vị trí tại đó, nhà tuyển dụng thực hiện những gì Local Law 144 yêu cầu: một cuộc kiểm toán thiên lệch độc lập trong vòng một năm trước khi sử dụng, công bố bản tóm tắt của nó và thông báo cho ứng viên ít nhất 10 ngày làm việc trước khi họ được đánh giá. Cuộc kiểm toán thiên lệch độc lập của chính testee được thực hiện trước <time>{date}</time>, và sau đó hằng năm."
+      "nyc": "Thành phố New York: trước khi dùng testee cho một vị trí tại đó, nhà tuyển dụng thực hiện những gì Local Law 144 yêu cầu: một cuộc kiểm toán thiên lệch độc lập trong vòng một năm trước khi sử dụng, công bố bản tóm tắt của nó và thông báo cho ứng viên sống tại thành phố này ít nhất 10 ngày làm việc trước khi họ được đánh giá. Cuộc kiểm toán thiên lệch độc lập của chính testee được thực hiện trước <time>{date}</time>, và sau đó hằng năm."
     },
     "residency": {
       "title": "Dữ liệu được lưu ở đâu",
-      "storage": "testee chạy trên Google Cloud tại EU, ở Bỉ, nơi lưu cơ sở dữ liệu. Bộ đếm giới hạn tần suất được giữ tại Upstash, cũng ở Bỉ, và email được gửi qua Resend tại Ireland.",
-      "transfers": "Ba nhà cung cấp xử lý dữ liệu tại Hoa Kỳ: Google cho việc đăng nhập, OpenAI và Cloudflare cho bước kiểm tra “Tôi không phải là người máy”. Các hoạt động chuyển dữ liệu này được bảo đảm bởi EU-US Data Privacy Framework hoặc các điều khoản hợp đồng tiêu chuẩn của Ủy ban châu Âu, và đối với Vương quốc Anh là UK Extension và UK International Data Transfer Addendum."
+      "storage": "testee chạy trên Google Cloud tại EU, ở Bỉ, nơi lưu cơ sở dữ liệu. Bộ đếm giới hạn tần suất được giữ tại Upstash, cũng ở Bỉ. Email được gửi từ Ireland qua Resend, bên lưu trữ email tại Hoa Kỳ.",
+      "transfers": "Bốn nhà cung cấp xử lý dữ liệu tại Hoa Kỳ: Google cho việc đăng nhập, OpenAI, Resend cho email và Cloudflare cho bước kiểm tra “Tôi không phải là người máy”. Thư trong hộp thư Google Workspace của chúng tôi cũng có thể được lưu trữ ngoài EU. Các hoạt động chuyển dữ liệu này được bảo đảm bởi EU-US Data Privacy Framework hoặc các điều khoản hợp đồng tiêu chuẩn của Ủy ban châu Âu, và đối với Vương quốc Anh là UK Extension và UK International Data Transfer Addendum."
     },
     "subprocessors": {
       "title": "Bên xử lý phụ",
@@ -3331,7 +3335,7 @@
       "phone": "Dùng được trên điện thoại cũng như máy tính",
       "saved": "Tiến độ được lưu trong khi làm",
       "tap": "Chạm vào phương án vẫn luôn dùng được",
-      "kept": "Giọng nói chỉ được chuyển thành văn bản, không bao giờ được lưu",
+      "kept": "testee không lưu giọng nói: giọng nói chỉ được chuyển thành văn bản",
       "voiceLanguages": "Trong cả 23 ngôn ngữ, với chất lượng khác nhau tùy ngôn ngữ",
       "contrast": "Màu khó đọc sẽ bị từ chối",
       "logo": "Logo của bạn trên lời mời, buổi phỏng vấn và báo cáo PDF",
@@ -3463,7 +3467,7 @@
       },
       "privacy": {
         "title": "Quyền riêng tư từ khâu thiết kế",
-        "text": "Không bán dữ liệu, không suy đoán gì về ứng viên, không bao giờ lưu giọng nói."
+        "text": "Không bán dữ liệu, không suy đoán gì về ứng viên, testee không lưu giọng nói."
       },
       "verified": {
         "title": "Công ty đã xác minh",
@@ -3479,7 +3483,7 @@
       },
       "expire": {
         "title": "Credit không bao giờ hết hạn",
-        "text": "Nạp nhiều hơn thì giá mỗi ứng viên thấp hơn; credit đã mua chưa dùng được hoàn tiền."
+        "text": "Nạp nhiều hơn thì giá mỗi ứng viên thấp hơn; credit đã mua chưa dùng được hoàn tiền trong vòng 14 ngày."
       },
       "autoTopUp": {
         "title": "Tự động nạp",

@@ -1316,7 +1316,7 @@
     "voiceDenied": "Mikrofon zablokowany. Zezwól na niego ikoną obok adresu, a potem spróbuj ponownie.",
     "voiceRetry": "Spróbuj ponownie",
     "voiceUnsupported": "Ta przeglądarka nie może nagrać Twojego głosu. Otwórz tę stronę w aktualnej wersji Chrome, Edge, Firefox lub Safari.",
-    "voice": "Mira, rekruterka AI, czyta każde pytanie na głos, a czas na pytanie płynie już w trakcie czytania. Odpowiadaj głosem albo dotknij odpowiedzi. Wyraźna odpowiedź głosowa na pytanie jednokrotnego wyboru zapisuje się od razu i nie można jej zmienić. Twój głos jest tylko zamieniany na tekst, aby odczytać odpowiedź, i nigdy nie jest przechowywany ani analizowany.",
+    "voice": "Mira, rekruterka AI, czyta każde pytanie na głos, a czas na pytanie płynie już w trakcie czytania. Odpowiadaj głosem albo dotknij odpowiedzi. Wyraźna odpowiedź głosowa na pytanie jednokrotnego wyboru zapisuje się od razu i nie można jej zmienić. Twój głos jest zamieniany na tekst tylko po to, aby odczytać odpowiedź, i nigdy nie jest analizowany. testee go nie przechowuje; OpenAI, które robi to dla nas, może go przechowywać maksymalnie 30 dni w celu kontroli nadużyć, chyba że prawo wymaga dłuższego okresu.",
     "unanswered": "Masz jedno podejście, a pytania bez odpowiedzi liczą się jako błędne.",
     "saved": "Postęp jest zapisywany: otwórz ten link ponownie, aby kontynuować. Rozmowa kończy się sama wkrótce po upływie całego jej czasu od chwili rozpoczęcia.",
     "savedLink": "Postęp jest zapisywany: wyślemy Ci e-mailem link, aby kontynuować. Rozmowa kończy się sama wkrótce po upływie całego jej czasu od chwili rozpoczęcia.",
@@ -2976,15 +2976,19 @@
       "contrast": "Kolory, które firma wybiera dla stron swojej rozmowy, są odrzucane, gdy tekst na nich byłby trudny do odczytania (kontrast poniżej wymagań WCAG).",
       "languages": "Strona w 23 językach, od prawej do lewej tam, gdzie język tak się zapisuje.",
       "phones": "Strony mieszczą się na ekranach telefonów i działają po powiększeniu.",
-      "text": "Pytania w rozmowie to tekst z opcjami odpowiedzi: nie trzeba audio ani wideo.",
-      "extraTime": "Firma może dać Ci dodatkowy czas na każde pytanie. Zanim zaczniesz, poproś firmę o niego albo o inne dostosowanie; nie musisz mówić dlaczego.",
+      "text": "Pytania w rozmowie są wyświetlane jako tekst z opcjami odpowiedzi, także w trybie głosowym, w którym możesz dotknąć odpowiedzi zamiast mówić.",
+      "extraTime": "Firma może dać Ci dodatkowy czas na każde pytanie. Zanim zaczniesz, poproś firmę o niego albo o inne dostosowanie; nie musisz mówić dlaczego. Jeśli trafiłeś tu przez link do udostępnienia, najpierw poproś o osobiste zaproszenie: do linku nie można dodać dodatkowego czasu.",
       "keyboard": "Z klawiatury: na każdej stronie najpierw jest link „Przejdź do treści”, między kartami przechodzisz klawiszami strzałek, a czytniki ekranu odczytują błędy formularza."
     },
     "limits": {
       "title": "Czego jeszcze brakuje",
       "timed": "Pytania w rozmowie mają limit czasu, bo wymaga tego ocena prowadzona przez firmę. Jeśli potrzebujesz więcej czasu, przed startem poproś firmę o dodatkowy czas.",
       "audit": "testee nie przeszła jeszcze niezależnego audytu, więc niektóre części mogą nie spełniać WCAG 2.2 AA.",
-      "providers": "Płatność za kredyty (strona płatności Paddle) i weryfikację „Nie jestem robotem” (Cloudflare Turnstile) obsługują ci dostawcy, z ich własną dostępnością."
+      "providers": "Płatność za kredyty (strona płatności Paddle), weryfikację „Nie jestem robotem” (Cloudflare Turnstile) i film na stronie głównej (YouTube) obsługują ci dostawcy, z ich własną dostępnością.",
+      "contrast": "W jasnym motywie biały tekst na głównych przyciskach testee ma kontrast 4.34:1, tuż poniżej 4.5:1 wymaganego przez WCAG AA. Ciemny motyw spełnia ten wymóg.",
+      "motion": "Ruchome obrazy na stronie głównej i kilka małych animacji, takich jak pulsujący przycisk odtwarzania, przycisk „zapytaj Mirę” i dzwonek, poruszają się dalej bez przycisku wstrzymania. Ustawienie ograniczania ruchu na Twoim urządzeniu je zatrzymuje.",
+      "contactForm": "Formularz kontaktowy pokazuje nazwę każdego pola tylko jako tekst zastępczy, który znika podczas pisania. Czytniki ekranu nadal odczytują nazwę.",
+      "voice": "Rozmowa w trybie głosowym wymaga, aby przed startem zezwolić na mikrofon i dźwięk, nawet jeśli zamierzasz dotykać odpowiedzi. Jeśli nie możesz z nich korzystać, poproś firmę o ustawienie odpowiadania przez dotknięcie."
     },
     "feedback": {
       "title": "Daj nam znać",
@@ -3013,8 +3017,8 @@
       "roles": "testee jest administratorem danych kont osób, które z niej korzystają, oraz podmiotem przetwarzającym dane kandydatów, które należą do firmy zapraszającej ich na rozmowę.",
       "noSelling": "Nie sprzedajemy danych osobowych ani nie udostępniamy ich w celach reklamowych. Nie używamy plików cookie reklamowych ani analitycznych.",
       "noInference": "testee nie zbiera danych o płci, wieku, pochodzeniu ani niepełnosprawności kandydatów i niczego takiego nie wnioskuje.",
-      "voice": "W trybie głosowym wypowiedziana odpowiedź kandydata jest zamieniana na tekst i dopasowywana do opcji, a dopasowaną opcję kandydat słyszy i widzi na ekranie; wybór kilku opcji jest najpierw potwierdzany. Jego wypowiedź nie jest nagrywana ani przechowywana, a głos nie jest analizowany w żaden inny sposób.",
-      "ai": "OpenAI, które pisze pytania, otrzymuje polecenie, aby nie przechowywać tego, co otrzymuje; przechowuje dane najwyżej 30 dni, wyłącznie w celu wykrywania nadużyć, i nie używa ich do trenowania swoich modeli.",
+      "voice": "W trybie głosowym wypowiedziana odpowiedź kandydata jest zamieniana na tekst i dopasowywana do opcji, a dopasowaną opcję kandydat słyszy i widzi na ekranie; wybór kilku opcji jest najpierw potwierdzany. testee nie przechowuje żadnych wypowiedzi, a głos nie jest analizowany w żaden inny sposób. OpenAI, które zamienia je na tekst, może je przechowywać maksymalnie 30 dni, jak opisano poniżej.",
+      "ai": "OpenAI, które pisze pytania, otrzymuje polecenie, aby nie przechowywać tego, co otrzymuje, tam, gdzie API daje taki wybór; może przechowywać dane maksymalnie 30 dni, wyłącznie w celu wykrywania nadużyć, chyba że prawo wymaga dłuższego okresu, i nie używa ich do trenowania swoich modeli.",
       "rights": "Każdy może pobrać lub usunąć swoje dane w Ustawieniach, bez pisania do nas."
     },
     "compliance": {
@@ -3023,12 +3027,12 @@
       "humanReview": "testee nie podejmuje żadnych decyzji o kandydacie: osoby w firmie przeglądają wyniki i decydują, a kandydaci mogą poprosić, aby ich wynik sprawdził człowiek.",
       "dpa": "Umowa powierzenia przetwarzania danych jest częścią regulaminu i nie trzeba niczego podpisywać. Obejmuje RODO, brytyjskie RODO (UK GDPR) oraz stanowe przepisy USA o prywatności, takie jak kalifornijskie, zgodnie z którymi testee jest usługodawcą firmy.",
       "documents": "Firmy otrzymują <link>instrukcję używania, szablon DPIA i szablony informacji dla kandydatów</link>, w wersjach także dla Nowego Jorku, Illinois i Kolorado.",
-      "nyc": "Nowy Jork: zanim pracodawca użyje testee do rekrutacji na stanowisko w tym mieście, robi to, czego wymaga od niego Local Law 144: przeprowadza niezależny audyt stronniczości w ciągu roku przed użyciem, publikuje jego podsumowanie i informuje kandydatów co najmniej 10 dni roboczych przed oceną. Własny niezależny audyt stronniczości testee zostanie przeprowadzony przed <time>{date}</time>, a potem co roku."
+      "nyc": "Nowy Jork: zanim pracodawca użyje testee do rekrutacji na stanowisko w tym mieście, robi to, czego wymaga od niego Local Law 144: przeprowadza niezależny audyt stronniczości w ciągu roku przed użyciem, publikuje jego podsumowanie i informuje kandydatów mieszkających w tym mieście co najmniej 10 dni roboczych przed oceną. Własny niezależny audyt stronniczości testee zostanie przeprowadzony przed <time>{date}</time>, a potem co roku."
     },
     "residency": {
       "title": "Gdzie są przechowywane dane",
-      "storage": "testee działa w Google Cloud w UE, w Belgii, gdzie przechowywana jest jej baza danych. Liczniki limitów częstotliwości znajdują się w Upstash, również w Belgii, a e-maile są wysyłane przez Resend w Irlandii.",
-      "transfers": "Trzech dostawców przetwarza dane w Stanach Zjednoczonych: Google przy logowaniu, OpenAI oraz Cloudflare przy weryfikacji „Nie jestem robotem”. Te przekazania danych opierają się na Ramach ochrony danych UE-USA (EU-US Data Privacy Framework) lub standardowych klauzulach umownych Komisji Europejskiej, a w przypadku Wielkiej Brytanii na brytyjskim rozszerzeniu (UK Extension) i brytyjskim aneksie w sprawie międzynarodowego przekazywania danych (UK International Data Transfer Addendum)."
+      "storage": "testee działa w Google Cloud w UE, w Belgii, gdzie przechowywana jest jej baza danych. Liczniki limitów częstotliwości znajdują się w Upstash, również w Belgii. E-maile są wysyłane z Irlandii przez Resend, który przechowuje je w Stanach Zjednoczonych.",
+      "transfers": "Czterech dostawców przetwarza dane w Stanach Zjednoczonych: Google przy logowaniu, OpenAI, Resend przy e-mailach oraz Cloudflare przy weryfikacji „Nie jestem robotem”. Poczta w naszej skrzynce Google Workspace może być też przechowywana poza UE. Te przekazania danych opierają się na Ramach ochrony danych UE-USA (EU-US Data Privacy Framework) lub standardowych klauzulach umownych Komisji Europejskiej, a w przypadku Wielkiej Brytanii na brytyjskim rozszerzeniu (UK Extension) i brytyjskim aneksie w sprawie międzynarodowego przekazywania danych (UK International Data Transfer Addendum)."
     },
     "subprocessors": {
       "title": "Dalsze podmioty przetwarzające",
@@ -3327,7 +3331,7 @@
       "phone": "Działa na telefonie i na komputerze",
       "saved": "Postęp zapisuje się na bieżąco",
       "tap": "Dotknięcie odpowiedzi zawsze też działa",
-      "kept": "Głos jest tylko zamieniany na tekst, nigdy nie jest przechowywany",
+      "kept": "testee nie przechowuje głosu: jest on tylko zamieniany na tekst",
       "voiceLanguages": "We wszystkich 23 językach, z jakością zależną od języka",
       "contrast": "Kolory trudne do odczytania są odrzucane",
       "logo": "Twoje logo w zaproszeniach, w rozmowie i w raportach PDF",
@@ -3459,7 +3463,7 @@
       },
       "privacy": {
         "title": "Prywatność w standardzie",
-        "text": "Bez sprzedaży danych, bez wnioskowania o kandydatach, głos nigdy nie jest przechowywany."
+        "text": "Bez sprzedaży danych, bez wnioskowania o kandydatach, testee nie przechowuje głosu."
       },
       "verified": {
         "title": "Zweryfikowane firmy",
@@ -3475,7 +3479,7 @@
       },
       "expire": {
         "title": "Kredyty nie wygasają",
-        "text": "Większe doładowania to niższa cena za kandydata; niewykorzystane opłacone kredyty podlegają zwrotowi."
+        "text": "Większe doładowania to niższa cena za kandydata; niewykorzystane opłacone kredyty podlegają zwrotowi przez 14 dni."
       },
       "autoTopUp": {
         "title": "Automatyczne doładowanie",

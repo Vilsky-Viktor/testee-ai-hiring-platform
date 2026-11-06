@@ -42,11 +42,11 @@ updated: "2026-11-07"
 
 ## 纽约市：Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) 连同消费者与劳动者保护局（Department of Consumer and Worker Protection）的规则（6 RCNY §5-300 及以下），适用于雇主或职业介绍机构使用自动化就业决策工具（AEDT）为纽约市的职位实质性地辅助录用决定的情形。给候选人打分或排名、并用于决定谁进入下一轮的工具，很可能属于此类。使用之前，你需要：
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) 连同消费者与劳动者保护局（Department of Consumer and Worker Protection）的规则（6 RCNY §5-300 及以下），适用于雇主或职业介绍机构使用自动化就业决策工具（AEDT）在该市实质性地辅助录用决定的情形：纽约市办公室的职位（至少兼职）、与此类办公室挂钩的完全远程职位，或位于当地的职业介绍机构的使用。给候选人打分或排名、并用于决定谁进入下一轮的工具，很可能属于此类。使用之前，你需要：
 
 - **偏见审计：** 由独立审计师在使用前一年内完成。供应商和作为雇主的你都不能担任独立审计师。
 - **公布审计摘要：** 按性别、种族/族裔及交叉类别列出的甄选率或得分率和影响比率、类别未知的候选人人数，以及工具的投用日期。
-- **告知候选人：** 至少在使用前 10 个工作日发出，并说明如何申请替代的甄选流程或便利。
+- **告知居住在纽约市的候选人：** 至少在使用前 10 个工作日发出，并说明如何申请替代的甄选流程或便利。
 
 审计的计算方式：
 
@@ -81,7 +81,7 @@ updated: "2026-11-07"
 
 ## 新泽西州和得克萨斯州
 
-- **新泽西州。** 依据《反歧视法》（Law Against Discrimination，N.J.A.C. 13:16）制定的差别影响规则自 2025 年 12 月 15 日起生效，涵盖自动化雇佣决策工具。即使工具由供应商开发，雇主也可能承担责任。
+- **新泽西州。** 依据《反歧视法》（Law Against Discrimination，N.J.A.C. 13:16）制定的差别影响规则自 2025 年 12 月 15 日起生效，将自动化雇佣决策工具列为可能产生差别影响的做法之一。依赖供应商产品的雇主必须采取合理措施确保其符合法律，未在使用前经过充分测试的工具本身也可能产生差别影响。
 - **得克萨斯州。** Responsible AI Governance Act（HB 149）自 2026 年 1 月 1 日起生效，禁止以非法歧视为目的使用 AI。仅有差别影响并不能证明这种目的。
 
 ## 关键日期
@@ -141,5 +141,5 @@ testee 根据职位描述，由 AI 编写限时的多项选择技能面试。它
 - Illinois Human Rights Act，775 ILCS 5/2-102(L)，经 Public Act 103-0804 修订。
 - Colorado SB 26-189。
 - California Code of Regulations, title 2, §11013(c)；California Consumer Privacy Act 关于自动化决策技术的法规；[SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai)。
-- New Jersey，[N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules)。
+- New Jersey，[N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf)（关于供应商的 §13:16-2.4(e)，关于自动化工具的 §13:16-3.2(c)），以及 [Morgan Lewis 的摘要](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules)。
 - Texas，[HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act)。

@@ -70,4 +70,4 @@ The numbers are a guide, not a guarantee. Twenty answers per language means a di
 - Starting a voice interview needs a working microphone, so a candidate who can't use one needs click mode, set before they start.
 - You can set the mode for the whole interview in its settings and change it for one candidate before they start.
 
-In voice mode, candidates' voices are only turned into text to read their answers, never analysed in any other way, and testee never stores them. OpenAI, which turns speech into text, is told not to store it and keeps API data for at most 30 days, only to check for abuse.
+In voice mode, candidates' voices are only turned into text to read their answers, never analysed in any other way, and testee never stores them. OpenAI, which turns speech into text, may keep it for up to 30 days, only to check for abuse unless the law requires longer.

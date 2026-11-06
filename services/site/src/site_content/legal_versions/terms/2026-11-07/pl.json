@@ -1,0 +1,97 @@
+{
+  "intro": "Niniejszy regulamin obowiązuje, gdy korzystasz z testee, usługi Arcolabs OÜ (numer rejestrowy 17587452), Sepapaja tn 6, 15551 Tallinn, Harju maakond, Estonia. Logując się, akceptujesz go. testee.ai pokazuje ten dokument także w innych językach; wiążąca jest wyłącznie wersja angielska, a jeśli tłumaczenie się od niej różni, obowiązuje wersja angielska.",
+  "sections": [
+    {
+      "heading": "Twoje konto",
+      "paragraphs": [
+        "Logujesz się przez Google, LinkedIn lub GitHub (jedno konto na adres e-mail, niezależnie od tego, z którego korzystasz) i odpowiadasz za to, co dzieje się na Twoim koncie. testee nie jest przeznaczona dla osób, które nie ukończyły 16 lat. Możesz usunąć swoje konto w Ustawieniach, chyba że jesteś właścicielem firmy, do której dołączyli inni: najpierw przekaż jej własność innemu członkowi albo ją usuń. Usunięcie konta usuwa też firmy, których jesteś jedynym członkiem, wraz z ich kredytami, które nie podlegają zwrotowi.",
+        "Wysyłamy Ci e-maile serwisowe, takie jak zaproszenia, raporty, problemy z płatnościami i zmiany niniejszego regulaminu. To, jakie inne e-maile otrzymujesz, wybierasz w Ustawieniach, w sekcji E-maile, a każdy z nich zawiera link do wypisania się."
+      ]
+    },
+    {
+      "heading": "Usługa i jej ograniczenia",
+      "items": [
+        "Pytania i odpowiedzi są pisane przez AI i mogą być błędne. Stale je sprawdzamy i ulepszamy, a firma przegląda swoje rozmowy przed zaproszeniem kandydatów, ale wynik jest tylko jedną z przesłanek decyzji rekrutacyjnej, a nie kwalifikacją.",
+        "Asystent i czat pomocy także odpowiadają z użyciem AI i mogą się mylić: zanim się na nich oprzesz, sprawdź to, co istotne. Asystent zmienia coś dopiero po Twoim potwierdzeniu. Podłączane przez Ciebie aplikacje AI, takie jak Claude czy ChatGPT, są obsługiwane przez ich własnych dostawców, którzy odpowiadają za to, co te aplikacje mówią i robią."
+      ]
+    },
+    {
+      "heading": "Twoje treści",
+      "paragraphs": [
+        "Zachowujesz prawa do tego, co wklejasz i tworzysz. Pozwalasz nam to przechowywać i przetwarzać w celu prowadzenia testee, w tym przesyłać to do usług AI, z których korzystamy. Udzielasz nam też ogólnoświatowej, nieodpłatnej, wolnej od opłat licencyjnych i nieodwołalnej licencji, na czas trwania jakichkolwiek praw do tych pytań, na korzystanie z pytań, które testee generuje dla Ciebie, tworzenie ich opracowań i ponowne wykorzystywanie w rozmowach i rozmowach ćwiczeniowych dla innych klientów, bez niczego, co identyfikuje Ciebie, Twoją firmę lub kogokolwiek innego; możesz wyłączyć z tego pytania danej rozmowy w jej ustawieniach, a pytania już ponownie wykorzystane pozostają tam, gdzie są. Ze wszystkich pytań wyodrębniamy także ogólne, zanonimizowane wzorce jakości pytań, aby ulepszać sposób ich generowania. Nie wklejaj do opisu stanowiska tajemnic przedsiębiorstwa ani danych osobowych."
+      ]
+    },
+    {
+      "heading": "Uczciwe korzystanie",
+      "items": [
+        "Nie używaj testee do wysyłania niechcianych e-maili, do automatycznego pobierania z niej danych (scrapingu) ani do jej przeciążania lub atakowania.",
+        "Nie próbuj obchodzić limitów, zabezpieczeń ani dostępu innego użytkownika.",
+        "W rozmowie odpowiadaj samodzielnie i przestrzegaj jej zasad; firma widzi, ile trwała każda odpowiedź, kiedy opuściłeś stronę i kiedy skopiowałeś tekst. Przed startem potwierdzasz, że odpowiesz samodzielnie, a firma widzi, że to potwierdziłeś."
+      ]
+    },
+    {
+      "heading": "Firmy",
+      "paragraphs": [
+        "Firma, która korzysta z testee do przeprowadzania rozmów z kandydatami, odpowiada za zgodne z prawem zapraszanie kandydatów, za informowanie ich, jak wykorzystywane są ich wyniki, oraz za swoje decyzje rekrutacyjne. Przetwarzamy dane kandydatów w imieniu firmy, na podstawie umowy powierzenia przetwarzania danych dostępnej pod adresem testee.ai/dpa."
+      ],
+      "items": [
+        "Firma może używać wyłącznie logo, do którego używania ma prawo.",
+        "Znaczek weryfikacji oznacza, że właściciel lub administrator firmy zalogował się służbowym adresem e-mail w domenie strony internetowej firmy. Nie oznacza, że ręczymy za firmę.",
+        "Każdy, kto ma link do udostępnienia rozmowy, może ją odbyć, a za każdą osobę, która to zrobi, pobierana jest opłata jak za zaproszonego kandydata. Firma decyduje, gdzie udostępnia link.",
+        "Firma, która wysyła raport, odpowiada za to, do kogo go wysyła.",
+        "Wyniki wspierają decyzję firmy; nie podejmują jej. Firma przegląda je przed podjęciem decyzji, nie odrzuca kandydata wyłącznie na podstawie wyniku punktowego i umożliwia kandydatowi wystąpienie o weryfikację jego wyniku przez człowieka.",
+        "Firma zapewnia kandydatowi, który tego potrzebuje, dostosowanie, takie jak dodatkowy czas, które może ustawić dla każdego kandydata, zanim zacznie on rozmowę.",
+        "Na rozmowę w trybie głosowym odpowiada się na głos: firma informuje o tym swoich kandydatów i pozwala kandydatowi, który tego potrzebuje, odpowiadać zamiast tego dotknięciem.",
+        "Firma, która podłącza własne narzędzia (system ATS, Slack lub swoje systemy przez API, webhooki i osadzoną rozmowę testee), wybiera, dokąd trafiają wyniki jej kandydatów, odpowiada za te narzędzia i nie konfiguruje ich tak, aby automatycznie odrzucały kandydatów na podstawie wyników z testee.",
+        "Klucze API i sekrety webhooków firma musi zachować w tajemnicy: wszystko, co zostanie zrobione przy użyciu ważnego klucza, jest robione w imieniu firmy przez ten klucz, w zakresie nadanych mu uprawnień, a dziennik działań firmy wskazuje ten klucz. Klucze i webhooki należą do firmy i pozostają w niej, gdy członek, który je utworzył, odchodzi. Klucz lub webhook, który mógł wyciec, należy natychmiast usunąć na stronie API firmy.",
+        "Umowa powierzenia przetwarzania danych dostępna pod adresem testee.ai/dpa stanowi część niniejszego regulaminu dla każdej firmy, która korzysta z testee w odniesieniu do kandydatów.",
+        "Firma wykorzystuje to, co widzi o osobach z włączoną opcją „Rozważam oferty pracy”, wyłącznie po to, by rozważyć je na własne stanowiska i je zaprosić. Ich wyniki to wyniki ćwiczeń, a nie kwalifikacje, a lista nie jest rekomendacją: kolejność pokazuje jedynie, kto ćwiczył ostatnio.",
+        "Firma, która zaprasza kogoś z karty „Odkrywaj”, informuje tę osobę, najpóźniej w zaproszeniu, kim jest, dlaczego się z nią skontaktowała, co widziała oraz o przysługujących jej prawach.",
+        "Firma używa testee do oceny kandydatów na stanowiska w Nowym Jorku dopiero wtedy, gdy wykona to, czego Local Law 144 wymaga od niej jako pracodawcy: audyt pod kątem stronniczości przeprowadzony przez niezależnego audytora w ciągu roku przed użyciem, opublikowanie jego podsumowania i powiadomienie kandydatów mieszkających w tym mieście co najmniej 10 dni roboczych przed ich oceną."
+      ]
+    },
+    {
+      "heading": "Ćwiczenia",
+      "items": [
+        "Rozmowy ćwiczeniowe są bezpłatne, a ich wyniki widzisz tylko Ty, chyba że włączysz „Rozważam oferty pracy”.",
+        "„Rozważam oferty pracy” to opcja dobrowolna, wyłączona, dopóki jej nie włączysz. Gdy jest włączona, firmy, które rekrutują przez testee, widzą Twoje imię i nazwisko, Twój profil LinkedIn i Twoje najnowsze wyniki ćwiczeń na czas z tematów ich rozmów oraz mogą zaprosić Cię na rozmowę; zaproszenie trafia na adres e-mail Twojego konta. testee nie tworzy rankingu ani Cię nie poleca. Możesz ją wyłączyć w każdej chwili w Ustawieniach i wtedy od razu znikasz z list wszystkich firm. Wyłącza się też sama rok po tym, jak ostatnio ją włączyłeś lub zapisałeś profil LinkedIn."
+      ]
+    },
+    {
+      "heading": "Kredyty i płatności",
+      "items": [
+        "Za testee płaci się kredytami: każde doładowanie daje liczbę kredytów pokazaną przed zapłatą, a przy większych doładowaniach otrzymujesz więcej kredytów za wydane pieniądze. Koszt każdej rzeczy w kredytach podany jest w cenniku i wyświetlany, zanim z niej skorzystasz.",
+        "Doładowania sprzedaje Paddle, który działa jako odsprzedawca (merchant of record): Paddle przyjmuje płatność, nalicza ewentualny VAT lub podatek od sprzedaży oraz wystawia potwierdzenie zakupu lub fakturę. Mogą je kupować zarówno przedsiębiorcy, jak i konsumenci. Ceny w cenniku nie zawierają VAT ani podatku od sprzedaży: tam, gdzie obowiązuje, Paddle dolicza go do podanej ceny przy płatności. Ceny są podane w walucie lokalnej w Kanadzie (dolary kanadyjskie), Australii (dolary australijskie), Izraelu (szekle), Polsce (złote), Szwajcarii (franki szwajcarskie), Japonii (jeny), Korei Południowej (wony), na Tajwanie (nowe dolary tajwańskie), w Hongkongu (dolary hongkońskie), Tajlandii (baty), Singapurze (dolary singapurskie) i Indiach (rupie); w euro w pozostałych krajach Unii Europejskiej oraz w Islandii, Liechtensteinie i Norwegii; w funtach szterlingach w Wielkiej Brytanii; a gdzie indziej w dolarach amerykańskich. Firma płaci we własnej walucie, ustalanej najpierw na podstawie kraju, w którym została utworzona lub po raz pierwszy użyta, i zmienialnej przez jej właściciela i administratorów; przed zapłatą strona płatności pokazuje ostateczną kwotę wraz z ewentualnym podatkiem. Jeśli Twoja karta jest w innej walucie, Twój bank lub wydawca karty może przeliczyć kwotę.",
+        "Kredyty należą do firmy i są wykorzystywane na jej kandydatów; mogą je doładowywać jej właściciel i administratorzy. Kredytów nie można przenosić między kontami ani firmami, sprzedawać ani wypłacać w formie pieniędzy.",
+        "Automatyczne doładowanie jest opcjonalne i wyłączone, dopóki go nie włączysz, a jego włączenie wymaga, abyś samodzielnie zaznaczył zgodę na jego warunki. Włączając je, upoważniasz Paddle do zapisania Twojej karty i obciążania jej wybraną przez Ciebie kwotą doładowania plus ewentualny VAT lub podatek od sprzedaży za każdym razem, gdy dostępne saldo firmy spadnie poniżej wybranego przez Ciebie poziomu, bez ponownego pytania, dopóki nie zostanie wyłączone. Wysyłamy e-mail do właściciela i administratorów firmy, gdy zostanie włączone, oraz po każdym obciążeniu, a Paddle wysyła e-mailem potwierdzenie każdego obciążenia. Możesz je w każdej chwili zmienić lub wyłączyć tam, gdzie je włączono, na stronie doładowania firmy, do której prowadzi link ze strony rozliczeń; wyłączenie działa natychmiast, anuluje upoważnienie dla zapisanej karty i wstrzymuje wszystkie dalsze obciążenia, podobnie jak anulowanie go przez e-maile od Paddle. Do obciążeń już dokonanych stosuje się poniższe zasady zwrotów.",
+        "Kredyty nie wygasają. Usunięcie firmy usuwa jej kredyty i nie są one zwracane: poproś o należny Ci zwrot, zanim ją usuniesz.",
+        "Polecenia: gdy firma utworzona przez link Twojej firmy, będąca pierwszą firmą na adres e-mail jej właściciela, po raz pierwszy dokona doładowania, na dowolną kwotę, obie firmy otrzymują kredyty za polecenie podane w cenniku, za maksymalnie 25 poleceń rocznie. Polecanie własnych firm się nie liczy, a kredyty za polecenie uzyskane w wyniku nadużycia możemy wstrzymać.",
+        "Niektóre kredyty są darmowe: kredyty powitalne, kredyty za polecenie i podobne prezenty. Przyznaje się je jednorazowo, zgodnie z opisem w cenniku, i nigdy nie są zwracane ani wypłacane. Przy zwrocie darmowe kredyty liczą się jako wykorzystane w pierwszej kolejności.",
+        "Kredyty są pobierane tylko za to, co działa: kandydat, który nigdy nie zacznie lub na nic nie odpowie, nic nie kosztuje, a kredyty zarezerwowane na niego wracają, gdy zaproszenie wygaśnie po 30 dniach lub zostanie wycofane albo gdy rozmowa zakończy się bez żadnej odpowiedzi. Generowanie rozmów jest bezpłatne.",
+        "Zwroty: możesz poprosić o zwrot kredytów kupionych w ciągu ostatnich 14 dni, których nie wykorzystałeś, przez Paddle lub pisząc do nas. Gdy zaczynasz korzystać z kupionych kredytów, zgadzasz się na natychmiastowe rozpoczęcie świadczenia usługi, a wykorzystane kredyty nie podlegają zwrotowi.",
+        "Jeśli płatność zostanie zwrócona lub cofnięta przez Twój bank, kupione za nią kredyty zostaną usunięte, a pełny zwrot lub cofnięcie pierwszego doładowania poleconej firmy usuwa też kredyty za polecenie obu firmom. Jeśli zostały już wykorzystane, saldo może spaść poniżej zera, a nie można rezerwować kredytów na nowych kandydatów, dopóki doładowanie go nie wyrówna.",
+        "Możemy zmieniać ceny, wyrażone w pieniądzu lub w kredytach, oraz kwoty doładowań dla przyszłych zakupów. Zmiany obowiązują od chwili ich wyświetlenia w cenniku i nigdy nie odbierają kredytów, które już masz. Jeśli zmiana wpływa na kwotę pobieraną przez automatyczne doładowanie, wysyłamy e-mail do właściciela i administratorów firmy co najmniej 30 dni przed jej wejściem w życie, a oni mogą wcześniej zmienić lub wyłączyć automatyczne doładowanie."
+      ]
+    },
+    {
+      "heading": "Dostępność i zmiany",
+      "paragraphs": [
+        "Dbamy o to, aby testee była dostępna i bezpieczna, ale nie możemy obiecać, że zawsze tak będzie. Możemy zmieniać lub wycofywać funkcje oraz zawieszać lub usuwać firmy i konta, które naruszają niniejszy regulamin. O istotnej zmianie niniejszego regulaminu informujemy Cię e-mailem co najmniej 14 dni przed jej wejściem w życie; korzystanie z testee po tym dniu oznacza akceptację nowego regulaminu. Każda wcześniejsza wersja pozostaje dostępna do odczytu na tej stronie."
+      ]
+    },
+    {
+      "heading": "Odpowiedzialność",
+      "paragraphs": [
+        "testee jest udostępniana w takim stanie, w jakim jest. W zakresie dozwolonym przez prawo nie odpowiadamy za szkody pośrednie, a nasza łączna odpowiedzialność jest ograniczona do kwoty, którą zapłaciłeś za kredyty w ciągu ostatnich 12 miesięcy, lub do 100 dolarów amerykańskich (albo równowartości tej kwoty w Twojej walucie), jeśli nic nie zapłaciłeś. Nic w niniejszym regulaminie nie ogranicza praw przysługujących Ci jako konsumentowi na mocy prawa Twojego kraju."
+      ]
+    },
+    {
+      "heading": "Prawo właściwe",
+      "paragraphs": [
+        "Obowiązuje prawo estońskie, bez pozbawiania Cię bezwzględnie obowiązującej ochrony kraju, w którym mieszkasz. Pytania dotyczące niniejszego regulaminu: hello@testee.ai.",
+        "Spory z przedsiębiorcami rozstrzyga Sąd Rejonowy w Harju (Harju Maakohus) w Tallinnie. Jako konsument możesz też zwrócić się do sądów w swoim miejscu zamieszkania.",
+        "Jeśli jesteś konsumentem, najpierw napisz do nas na adres hello@testee.ai: odpowiadamy w ciągu 15 dni. Jeśli nie dojdziemy do porozumienia, a mieszkasz w Estonii, możesz bezpłatnie skierować spór do Komisji ds. Sporów Konsumenckich (Tarbijavaidluste komisjon) przy Urzędzie Ochrony Konsumentów i Nadzoru Technicznego, ttja.ee."
+      ]
+    }
+  ]
+}

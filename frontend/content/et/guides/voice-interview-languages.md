@@ -70,4 +70,4 @@ Arvud on suunis, mitte garantii. Kakskümmend vastust keele kohta tähendab, et 
 - Häälintervjuu alustamiseks on vaja töötavat mikrofoni, nii et kandidaat, kes seda kasutada ei saa, vajab klõpsurežiimi, mis tuleb seada enne alustamist.
 - Režiimi saad määrata kogu intervjuule selle seadetes ja muuta ühe kandidaadi jaoks enne, kui ta alustab.
 
-Häälerežiimis muudetakse kandidaatide hääl tekstiks ainult nende vastuste lugemiseks, seda ei analüüsita kunagi muul viisil ja testee ei salvesta seda kunagi. OpenAI-l, mis muudab kõne tekstiks, on käsk seda mitte salvestada ning API andmeid hoiab ta kuni 30 päeva, ainult väärkasutuse kontrolliks.
+Häälerežiimis muudetakse kandidaatide hääl tekstiks ainult nende vastuste lugemiseks, seda ei analüüsita kunagi muul viisil ja testee ei salvesta seda kunagi. OpenAI, mis muudab kõne tekstiks, võib seda säilitada kuni 30 päeva, ainult väärkasutuse kontrolliks, välja arvatud juhul, kui seadus nõuab pikemat säilitamist.

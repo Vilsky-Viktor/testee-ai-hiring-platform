@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "voice",
         "question": "Adaylar sesle cevap verebilir mi?",
-        "answer": 'Evet, şirket bir mülakatı sesli moda ayarlarsa, testee\'nin 23 dilinden herhangi birinde; ne kadar iyi okuyup duyduğu dile göre değişir ("23 dilde sesli mülakatlar" rehberi her birini gösterir). Sorular sesli okunur ve adaylar sesli cevap verir; söyledikleri metne dönüştürülüp bir seçenekle eşleştirilir ve hiçbir zaman saklanmaz. Sesler ton veya duygu açısından analiz edilmez ve adaylar her zaman bunun yerine dokunarak cevap verebilir.',
+        "answer": 'Evet, şirket bir mülakatı sesli moda ayarlarsa, testee\'nin 23 dilinden herhangi birinde; ne kadar iyi okuyup duyduğu dile göre değişir ("23 dilde sesli mülakatlar" rehberi her birini gösterir). Sorular sesli okunur ve adaylar sesli cevap verir; söyledikleri metne dönüştürülüp bir seçenekle eşleştirilir. testee bunu saklamaz; bu işi bizim için yapan OpenAI, kanun daha uzun bir süre gerektirmedikçe yalnızca kötüye kullanımı denetlemek için 30 güne kadar saklayabilir. Sesler ton veya duygu açısından analiz edilmez ve adaylar her zaman bunun yerine dokunarak cevap verebilir.',
     },
     {
         "key": "cost",
@@ -135,12 +135,12 @@ FAQ = [
     {
         "key": "emails",
         "question": "testee hangi e-postaları gönderir ve bunları nasıl durdururum?",
-        "answer": 'Davetler, raporlar, ödeme sorunları ve koşullarımızdaki değişiklikler gibi hizmet e-postaları her zaman gönderilir. Günlük etkinlik özeti, hatırlatmalar ve ürün güncellemeleri gibi diğerlerini Ayarlar\'da, E-postalar bölümünde seçebilir ya da her e-postadaki "Abonelikten çık" bağlantısıyla durdurabilirsiniz. Adaylar, davet ve hatırlatma e-postalarındaki bağlantılarla şirketinizin e-postalarını ya da bir mülakatın hatırlatmalarını durdurabilir.',
+        "answer": "Davetler, raporlar, ödeme sorunları ve koşullarımızdaki değişiklikler gibi hizmet e-postaları her zaman gönderilir. Günlük etkinlik özeti, hatırlatmalar ve ürün güncellemeleri gibi diğerlerini Ayarlar'da, E-postalar bölümünde seçebilir ya da her e-postadaki \"Abonelikten çık\" bağlantısıyla durdurabilirsiniz. Adaylar, davet ve hatırlatma e-postalarındaki bağlantılarla şirketinizin e-postalarını ya da bir mülakatın hatırlatmalarını durdurabilir. testee'nin haberleri, üstteki zil simgesinde, yani bildirimlerinizde görünür; önemli haberler ayrıca ürün güncellemesi olarak e-postayla da gelir, ancak yalnızca bu ayar açıkken.",
     },
     {
         "key": "delete",
         "question": "Hesabımı silebilir miyim?",
-        "answer": "Evet, Ayarlar'dan. Hesabınız ve verileriniz silinir; öncesinde verilerinizin bir kopyasını indirebilirsiniz. testee'nin haberleri, üstteki zil simgesinde, yani bildirimlerinizde görünür; önemli haberler ayrıca ürün güncellemesi olarak e-postayla da gelir, ancak yalnızca bu ayar açıkken.",
+        "answer": "Evet, Ayarlar'dan; ancak başkalarının katıldığı bir şirketin sahibiyseniz önce başka bir üyeyi şirketin sahibi yapın veya şirketi silin. Hesabınız ve verileriniz, tek üyesi olduğunuz şirketlerle ve onların kredileriyle birlikte silinir; bu krediler iade edilmez. Öncesinde verilerinizin bir kopyasını indirebilirsiniz.",
     },
     {
         "key": "report",

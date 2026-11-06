@@ -42,11 +42,11 @@ Không điều nào trong số này thay đổi Title VII. Tác động khác bi
 
 ## Thành phố New York: Local Law 144
 
-[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), cùng các quy định của Department of Consumer and Worker Protection (6 RCNY §5-300 trở đi), áp dụng khi một bên tuyển dụng hoặc công ty môi giới việc làm dùng công cụ ra quyết định tuyển dụng tự động (AEDT) để hỗ trợ đáng kể các quyết định tuyển dụng cho công việc ở Thành phố New York. Một công cụ chấm điểm hoặc xếp hạng ứng viên, được dùng để quyết định ai đi tiếp, rất có thể thuộc diện này. Trước khi dùng, bạn cần:
+[Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page), cùng các quy định của Department of Consumer and Worker Protection (6 RCNY §5-300 trở đi), áp dụng khi một bên tuyển dụng hoặc công ty môi giới việc làm dùng công cụ ra quyết định tuyển dụng tự động (AEDT) để hỗ trợ đáng kể các quyết định tuyển dụng tại thành phố này: một công việc tại văn phòng ở Thành phố New York, ít nhất là bán thời gian, một công việc hoàn toàn từ xa gắn với một văn phòng như vậy, hoặc việc sử dụng bởi một công ty môi giới việc làm đặt tại đó. Một công cụ chấm điểm hoặc xếp hạng ứng viên, được dùng để quyết định ai đi tiếp, rất có thể thuộc diện này. Trước khi dùng, bạn cần:
 
 - **Một cuộc kiểm toán thiên lệch** do kiểm toán viên độc lập thực hiện, trong vòng một năm trước khi sử dụng. Cả nhà cung cấp lẫn bạn, bên tuyển dụng, đều không thể là kiểm toán viên độc lập.
 - **Một bản tóm tắt được công bố** của cuộc kiểm toán: tỷ lệ tuyển chọn hoặc tỷ lệ điểm và tỷ số tác động theo giới tính, chủng tộc/dân tộc và các nhóm giao thoa, số ứng viên thuộc nhóm không xác định, và ngày phân phối công cụ.
-- **Một thông báo cho ứng viên** ít nhất 10 ngày làm việc trước khi sử dụng, kèm thông tin về cách yêu cầu một quy trình tuyển chọn thay thế hoặc một điều chỉnh.
+- **Một thông báo cho ứng viên sống tại Thành phố New York** ít nhất 10 ngày làm việc trước khi sử dụng, kèm thông tin về cách yêu cầu một quy trình tuyển chọn thay thế hoặc một điều chỉnh.
 
 Cách cuộc kiểm toán tính toán:
 
@@ -81,7 +81,7 @@ Luật AI của Colorado đã bị bãi bỏ và ban hành lại bằng SB 26-18
 
 ## New Jersey và Texas
 
-- **New Jersey.** Các quy định về tác động khác biệt theo Law Against Discrimination (N.J.A.C. 13:16), có hiệu lực từ ngày 15/12/2025, bao gồm các công cụ ra quyết định tuyển dụng tự động. Bên tuyển dụng có thể phải chịu trách nhiệm ngay cả khi công cụ do nhà cung cấp tạo ra.
+- **New Jersey.** Các quy định về tác động khác biệt theo Law Against Discrimination (N.J.A.C. 13:16), có hiệu lực từ ngày 15/12/2025, nêu các công cụ ra quyết định tuyển dụng tự động trong số các hoạt động có thể gây tác động khác biệt. Bên tuyển dụng dựa vào sản phẩm của nhà cung cấp phải thực hiện các bước hợp lý để bảo đảm sản phẩm đó phù hợp với pháp luật, và một công cụ không được kiểm tra đầy đủ trước khi sử dụng tự nó có thể gây tác động khác biệt.
 - **Texas.** Responsible AI Governance Act (HB 149), có hiệu lực từ ngày 1/1/2026, cấm AI được dùng với ý định phân biệt đối xử trái pháp luật. Chỉ riêng tác động khác biệt không chứng minh được ý định đó.
 
 ## Các mốc thời gian
@@ -141,5 +141,5 @@ Hiện nay điều đó thể hiện trong sản phẩm như sau:
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), được sửa đổi bởi Public Act 103-0804.
 - Colorado SB 26-189.
 - California Code of Regulations, title 2, §11013(c); các quy định của California Consumer Privacy Act về công nghệ ra quyết định tự động; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
-- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) về nhà cung cấp, §13:16-3.2(c) về công cụ tự động), kèm [bản tóm tắt của Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).
