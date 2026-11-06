@@ -3280,7 +3280,7 @@
       "brand": {
         "title": "Merekmu, bukan merek kami",
         "text": "Atur logo, warna untuk mode terang dan gelap, font, dan sudut, dengan pratinjau langsung. Kandidat hanya melihat perusahaanmu, tanpa header atau footer testee.",
-        "alt": "Tab merek: logo, font, dan sudut, dengan pratinjau langsung wawancara."
+        "alt": "Warna halaman, tombol, dan isian di tab merek, dengan pratinjau langsung wawancara."
       },
       "candidates": {
         "title": "Bandingkan kandidat sekilas",
@@ -3319,18 +3319,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, other {# soal}} ditulis per topik; kamu memilih berapa banyak yang didapat setiap kandidat",
+      "questions": "{count, plural, other {# soal}} ditulis per topik; kamu memilih berapa banyak yang didapat setiap kandidat, sampai 60 per wawancara",
       "options": "Empat pilihan per soal, sebagian dengan lebih dari satu jawaban benar",
       "examples": "Kode, data, rumus, atau dokumen ditampilkan sebagai contoh jika posisinya membutuhkan",
       "names": "Baris yang tidak bisa diundang disebutkan, beserta alasannya",
       "credits": "Kredit kembali untuk siapa pun yang tidak pernah menjawab",
       "expire": "Undangan kedaluwarsa sendiri setelah sebulan",
+      "signIn": "Kandidat masuk dengan email yang kamu undang, jadi undangan yang diteruskan tidak berguna bagi orang lain",
       "linkOff": "Bisa dimatikan kapan saja, dan saat posisinya sudah terisi",
       "mode": "Mode klik atau suara dipilih di halaman yang sama",
       "settings": "Rata-rata waktu per soal dan nilai lulus ada di sebelahnya",
       "time": "Total waktu ditampilkan sebelum mulai",
       "phone": "Bisa di ponsel maupun komputer",
       "saved": "Progres tersimpan selama mengerjakan",
+      "onePass": "Satu kesempatan: tidak bisa kembali ke soal sebelumnya, tidak bisa mengulang",
       "tap": "Mengetuk pilihan jawaban juga selalu bisa",
       "kept": "testee tidak menyimpan suara: suara hanya diubah menjadi teks",
       "voiceLanguages": "Dalam ke-23 bahasa, dengan kualitas yang berbeda-beda per bahasa",
@@ -3343,7 +3345,7 @@
       "followUps": "Pertanyaan untuk dibahas dalam wawancara langsung",
       "pdf": "Laporan PDF dengan nilai dan setiap jawaban",
       "messengers": "Ringkasan di WhatsApp, Telegram, Viber, atau LINE",
-      "viewers": "Pelihat juga bisa berbagi, tanpa mengubah apa pun",
+      "viewers": "Pelihat juga bisa berbagi laporan",
       "everyone": "Setiap anggota bisa menulis, pelihat juga",
       "bell": "Catatan baru masuk ke ikon lonceng dan kanal Slack-mu",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee, dan Breezy HR",
@@ -3354,7 +3356,7 @@
       "askTime": "Siapa pun yang butuh waktu lebih diminta menghubungi sebelum mulai",
       "peopleDecide": "Diberi tahu bahwa orang di perusahaanmu meninjau hasilnya dan memutuskan",
       "digest": "Ringkasannya: siapa yang selesai, undangan yang tidak terkirim, kandidat ATS yang tidak diundang, catatan baru, dan wawancara yang siap",
-      "emailChoice": "Setiap jenis email bisa dinyalakan atau dimatikan di pengaturanmu",
+      "emailChoice": "Ringkasan, pengingat, berita, dan penawaran bisa dinyalakan atau dimatikan di pengaturanmu",
       "stopEmails": "Kandidat bisa berhenti menerima emailmu dengan satu klik"
     },
     "cards": {
@@ -3364,7 +3366,7 @@
       },
       "bank": {
         "title": "Bank soal bersama",
-        "text": "Wawancara baru memakai ulang soal yang sudah teruji di wawancara lain. Keluarkan soalmu dengan satu kotak centang."
+        "text": "Wawancara baru memakai ulang soal yang sudah teruji di wawancara lain. Keluarkan soal sebuah wawancara dari bank soal dengan satu sakelar."
       },
       "quality": {
         "title": "Soal yang memperbaiki diri",
@@ -3377,6 +3379,10 @@
       "preview": {
         "title": "Pratinjau dulu",
         "text": "Ikuti wawancaranya seperti kandidat, gratis, sebelum mengundang siapa pun."
+      },
+      "manage": {
+        "title": "Kelola soal",
+        "text": "Baca setiap soal, nonaktifkan, buat ulang, atau tandai jawabannya salah."
       },
       "ats": {
         "title": "Dari ATS-mu",
@@ -3409,6 +3415,10 @@
       "accessible": {
         "title": "Aksesibel",
         "text": "Dibangun untuk WCAG 2.2 AA, di setiap bahasa, mode terang dan gelap."
+      },
+      "practice": {
+        "title": "Latihan gratis",
+        "text": "Siapa pun bisa berlatih per posisi, gratis dan secara privat, lalu melihat semua jawaban benar di akhir."
       },
       "notifications": {
         "title": "Notifikasi",
@@ -3452,11 +3462,15 @@
       },
       "roles": {
         "title": "Peran tim",
-        "text": "Pemilik, admin, dan pelihat; pelihat melihat hasil tetapi tidak mengubah atau membelanjakan apa pun."
+        "text": "Anggota gratis. Hanya pemilik yang mengelola tim; pelihat melihat hasil, membagikan laporan, dan menulis catatan, tanpa memakai kredit."
+      },
+      "companies": {
+        "title": "Beberapa perusahaan",
+        "text": "Satu akun bisa memiliki beberapa perusahaan, masing-masing dengan tim dan kreditnya sendiri."
       },
       "log": {
         "title": "Log tindakan",
-        "text": "Pemilik melihat siapa melakukan apa, di aplikasi, lewat Mira, API, atau ATS."
+        "text": "Pemilik melihat siapa melakukan apa, di aplikasi, lewat Mira, aplikasi AI, API, atau ATS."
       },
       "documents": {
         "title": "Dokumen siap",
@@ -3466,9 +3480,17 @@
         "title": "Privasi sejak rancangan",
         "text": "Data tidak dijual, tidak ada yang disimpulkan tentang kandidat, testee tidak menyimpan suara."
       },
+      "location": {
+        "title": "Disimpan di Belgia",
+        "text": "Di Google Cloud di UE; halaman kepercayaan mencantumkan setiap penyedia."
+      },
+      "retention": {
+        "title": "Dihapus tepat waktu",
+        "text": "Hasil dihapus 12 bulan setelah undangan terakhir dikirim, atau langsung saat kamu mencabut undangan kandidat."
+      },
       "verified": {
         "title": "Perusahaan terverifikasi",
-        "text": "Tanda centang di samping nama perusahaanmu setelah situs webnya terverifikasi."
+        "text": "Tanda centang di samping nama perusahaanmu setelah email kerja dengan domain situs webnya dan tinjauan kami mengonfirmasinya."
       },
       "free": {
         "title": "{count, plural, other {# kandidat gratis}}",
@@ -3555,21 +3577,23 @@
         "points": {
           "proposed": "Topik usulan AI",
           "edit": "Ganti nama, tambah, atau hapus",
+          "ask": "Minta AI mengubahnya",
           "subtopics": "Subtopik untuk tiap topik",
-          "levels": "Dari dasar sampai lanjutan",
+          "levels": "Level dibaca dari deskripsi pekerjaan",
           "approve": "Setujui untuk membuat soal"
         },
-        "alt": "Topik sebuah wawancara, masing-masing dengan soalnya"
+        "alt": "Tinjauan topik: topik dengan subtopiknya, satu sedang diedit"
       },
       "questions": {
         "title": "Soal dibuat dan diperiksa",
         "text": "AI menulis kumpulan soal untuk tiap topik, AI kedua memeriksa sampel kunci jawaban tanpa melihat jawaban AI pertama, dan setiap kandidat mendapat set soal acaknya sendiri.",
         "points": {
-          "unique": "Soal unik per kandidat",
-          "checked": "Kunci jawaban diperiksa AI kedua",
+          "unique": "Set soal acak untuk tiap kandidat",
+          "checked": "Sampel kunci jawaban diperiksa AI kedua",
           "bank": "Soal teruji dari bank soal bersama",
           "multi": "Satu atau beberapa jawaban",
-          "preview": "Coba sebagai kandidat"
+          "preview": "Coba sebagai kandidat",
+          "manage": "Nonaktifkan atau buat ulang soal apa pun"
         },
         "alt": "Soal sebuah topik, masing-masing dengan kunci jawabannya"
       },
@@ -3579,6 +3603,7 @@
         "points": {
           "time": "Waktu per soal",
           "passMark": "Nilai lulus",
+          "count": "Soal per kandidat, sampai 60",
           "mode": "Mode klik atau suara",
           "brand": "Logo dan warnamu",
           "private": "Jaga soal tetap privat"
@@ -3587,7 +3612,7 @@
       },
       "invite": {
         "title": "Undang kandidat",
-        "text": "Datangkan kandidat dengan cara rekrutmenmu biasa berjalan. Untuk tiap orang, kredit seharga satu kandidat disisihkan, dan dikembalikan kalau mereka tidak pernah mulai.",
+        "text": "Datangkan kandidat dengan cara rekrutmenmu biasa berjalan. Untuk tiap orang, kredit seharga satu kandidat disisihkan, dan dikembalikan kalau mereka tidak pernah menjawab.",
         "points": {
           "names": "Nama dengan email",
           "reminder": "Satu pengingat setelah 3 hari",
@@ -3626,8 +3651,10 @@
         "title": "Kandidat mengikutinya",
         "text": "Kandidat melihat aturan dan waktunya sejak awal, berjanji menjawab sendiri, lalu menjawab satu soal berbatas waktu demi satu, dengan klik atau suara, di perangkat apa pun.",
         "points": {
+          "signIn": "Masuk dengan email yang diundang",
           "pledge": "Janji sebelum mulai",
           "timer": "Timer di setiap soal",
+          "onePass": "Satu kesempatan, tanpa mengulang",
           "click": "Mode klik",
           "voice": "Mode suara dengan Mira",
           "phone": "Bisa di ponsel",
@@ -3643,10 +3670,11 @@
           "answers": "Setiap jawaban dan waktunya",
           "signals": "Tanda integritas",
           "patterns": "Pola jawaban yang tidak biasa",
+          "followUps": "Pertanyaan untuk wawancara langsung",
           "notes": "Catatan timmu",
           "discover": "Orang yang terbuka untuk tawaran kerja"
         },
-        "alt": "Kandidat sebuah wawancara, yang terbaik di atas"
+        "alt": "Kandidat sebuah wawancara, dengan status dan nilainya"
       },
       "share": {
         "title": "Bagikan laporannya",

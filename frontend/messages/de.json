@@ -3280,7 +3280,7 @@
       "brand": {
         "title": "Deine Marke, nicht unsere",
         "text": "Lege dein Logo, Farben für hell und dunkel, Schriften und Ecken fest, mit Live-Vorschau. Kandidaten sehen nur dein Unternehmen, ohne Kopf- und Fußzeile von testee.",
-        "alt": "Der Marken-Tab: Logo, Schriften und Ecken, mit einer Live-Vorschau des Interviews."
+        "alt": "Der Marken-Tab: die Farben für Seite, Buttons und Flächen, mit einer Live-Vorschau des Interviews."
       },
       "candidates": {
         "title": "Kandidaten auf einen Blick vergleichen",
@@ -3319,18 +3319,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, one {# Frage} other {# Fragen}} pro Thema geschrieben; du wählst, wie viele jeder Kandidat bekommt",
+      "questions": "{count, plural, one {# Frage} other {# Fragen}} pro Thema geschrieben; du wählst, wie viele jeder Kandidat bekommt, bis zu 60 pro Interview",
       "options": "Vier Optionen pro Frage, manche mit mehr als einer richtigen Antwort",
       "examples": "Code, Daten, Formeln oder Dokumente als Beispiele, wo die Stelle sie braucht",
       "names": "Zeilen, die nicht eingeladen werden können, werden mit Grund genannt",
       "credits": "Credits kommen für alle zurück, die nie antworten",
       "expire": "Einladungen laufen nach einem Monat von selbst ab",
+      "signIn": "Kandidaten melden sich mit der E-Mail-Adresse an, an die du sie eingeladen hast, eine weitergeleitete Einladung nützt also niemand anderem",
       "linkOff": "Jederzeit abschaltbar, und sobald die Stelle besetzt ist",
       "mode": "Klick- oder Sprachmodus auf derselben Seite wählen",
       "settings": "Durchschnittliche Zeit pro Frage und Bestehensgrenze gleich daneben",
       "time": "Die Gesamtzeit wird vor dem Start angezeigt",
       "phone": "Funktioniert auf dem Handy wie am Computer",
       "saved": "Der Fortschritt wird laufend gespeichert",
+      "onePass": "Ein Versuch: kein Zurück, keine Wiederholung",
       "tap": "Eine Option antippen geht immer auch",
       "kept": "testee speichert keine Stimme: Sie wird nur in Text umgewandelt",
       "voiceLanguages": "In allen 23 Sprachen, mit je nach Sprache unterschiedlicher Qualität",
@@ -3343,7 +3345,7 @@
       "followUps": "Fragen zum Besprechen im Live-Interview",
       "pdf": "PDF-Berichte mit Ergebnissen und jeder Antwort",
       "messengers": "Zusammenfassungen per WhatsApp, Telegram, Viber oder LINE",
-      "viewers": "Auch Betrachter teilen, ohne etwas zu ändern",
+      "viewers": "Auch Betrachter können Berichte teilen",
       "everyone": "Jedes Mitglied schreibt, auch Betrachter",
       "bell": "Neue Notizen erscheinen unter der Glocke und in deinem Slack-Kanal",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee und Breezy HR",
@@ -3354,7 +3356,7 @@
       "askTime": "Wer mehr Zeit braucht, wird gebeten, vor dem Start Bescheid zu geben",
       "peopleDecide": "Kandidaten erfahren, dass Menschen in deinem Unternehmen die Ergebnisse prüfen und entscheiden",
       "digest": "Die Aktivitätsübersicht: wer fertig ist, nicht zugestellte Einladungen, nicht eingeladene Kandidaten aus dem ATS, neue Notizen und fertige Interviews",
-      "emailChoice": "Jede Art von E-Mail in deinen Einstellungen ein- oder ausschaltbar",
+      "emailChoice": "Aktivitätsübersicht, Erinnerungen, Neuigkeiten und Angebote in deinen Einstellungen ein- oder ausschaltbar",
       "stopEmails": "Kandidaten können deine E-Mails mit einem Klick abbestellen"
     },
     "cards": {
@@ -3364,7 +3366,7 @@
       },
       "bank": {
         "title": "Gemeinsamer Fragenpool",
-        "text": "Neue Interviews nutzen Fragen, die sich in anderen bewährt haben. Mit einem Häkchen hältst du deine heraus."
+        "text": "Neue Interviews nutzen Fragen, die sich in anderen bewährt haben. Mit einem Schalter hältst du die Fragen eines Interviews heraus."
       },
       "quality": {
         "title": "Fragen, die sich selbst verbessern",
@@ -3377,6 +3379,10 @@
       "preview": {
         "title": "Erst selbst ausprobieren",
         "text": "Mach das Interview kostenlos so, wie ein Kandidat es sieht, bevor du jemanden einlädst."
+      },
+      "manage": {
+        "title": "Fragen verwalten",
+        "text": "Lies jede Frage, deaktiviere sie, generiere sie neu oder markiere ihre Antwort als falsch."
       },
       "ats": {
         "title": "Aus deinem ATS",
@@ -3409,6 +3415,10 @@
       "accessible": {
         "title": "Barrierefrei",
         "text": "Gebaut für WCAG 2.2 AA, in jeder Sprache, hell und dunkel."
+      },
+      "practice": {
+        "title": "Kostenlos üben",
+        "text": "Alle können für eine Rolle üben, kostenlos und privat, und am Ende jede richtige Antwort sehen."
       },
       "notifications": {
         "title": "Benachrichtigungen",
@@ -3452,11 +3462,15 @@
       },
       "roles": {
         "title": "Teamrollen",
-        "text": "Inhaber, Admins und Betrachter; Betrachter sehen Ergebnisse, ändern aber nichts und geben nichts aus."
+        "text": "Teammitglieder sind kostenlos. Nur der Inhaber verwaltet das Team; Betrachter sehen Ergebnisse, teilen Berichte, schreiben Notizen und geben nichts aus."
+      },
+      "companies": {
+        "title": "Mehrere Unternehmen",
+        "text": "Ein Konto kann mehrere Unternehmen besitzen, jedes mit eigenem Team und eigenen Credits."
       },
       "log": {
         "title": "Aktionsprotokoll",
-        "text": "Der Inhaber sieht, wer was getan hat: in der App, über Mira, die API oder ein ATS."
+        "text": "Der Inhaber sieht, wer was getan hat: in der App, über Mira, eine KI-App, die API oder ein ATS."
       },
       "documents": {
         "title": "Dokumente bereit",
@@ -3466,9 +3480,17 @@
         "title": "Datenschutz von Anfang an",
         "text": "Kein Verkauf von Daten, keine Rückschlüsse über Kandidaten, keine Speicherung der Stimme durch testee."
       },
+      "location": {
+        "title": "In Belgien gespeichert",
+        "text": "Auf Google Cloud in der EU; die Vertrauensseite nennt jeden Anbieter."
+      },
+      "retention": {
+        "title": "Fristgerecht gelöscht",
+        "text": "Ergebnisse werden 12 Monate nach der letzten Einladung gelöscht, oder sofort, wenn du die Einladung eines Kandidaten widerrufst."
+      },
       "verified": {
         "title": "Verifizierte Unternehmen",
-        "text": "Ein Häkchen neben dem Namen deines Unternehmens, sobald seine Website verifiziert ist."
+        "text": "Ein Häkchen neben dem Namen deines Unternehmens, sobald eine geschäftliche E-Mail seiner Website und unsere Prüfung es bestätigen."
       },
       "free": {
         "title": "{count, plural, one {# kostenloser Kandidat} other {# kostenlose Kandidaten}}",
@@ -3555,21 +3577,23 @@
         "points": {
           "proposed": "Themen von der KI vorgeschlagen",
           "edit": "Umbenennen, hinzufügen oder entfernen",
+          "ask": "KI um Änderungen bitten",
           "subtopics": "Unterthemen für jedes Thema",
-          "levels": "Von grundlegend bis fortgeschritten",
+          "levels": "Niveau aus der Stellenbeschreibung",
           "approve": "Freigeben zum Generieren"
         },
-        "alt": "Die Themen eines Interviews, jedes mit seinen Fragen"
+        "alt": "Die Themenprüfung: Themen mit ihren Unterthemen, eines wird bearbeitet"
       },
       "questions": {
         "title": "Fragen werden erstellt und geprüft",
         "text": "Die KI schreibt für jedes Thema einen Pool an Fragen, eine zweite KI prüft blind eine Stichprobe der Lösungsschlüssel, und jeder Kandidat bekommt seine eigene zufällige Auswahl.",
         "points": {
-          "unique": "Eigene Fragen für jeden Kandidaten",
-          "checked": "Lösungsschlüssel von einer zweiten KI geprüft",
+          "unique": "Eine zufällige Auswahl für jeden Kandidaten",
+          "checked": "Stichprobe der Lösungsschlüssel von einer zweiten KI geprüft",
           "bank": "Bewährte Fragen aus dem gemeinsamen Fragenpool",
           "multi": "Eine oder mehrere richtige Antworten",
-          "preview": "Als Kandidat ausprobieren"
+          "preview": "Als Kandidat ausprobieren",
+          "manage": "Jede Frage deaktivieren oder neu generieren"
         },
         "alt": "Die Fragen eines Themas, jede mit ihrem Lösungsschlüssel"
       },
@@ -3579,6 +3603,7 @@
         "points": {
           "time": "Zeit pro Frage",
           "passMark": "Bestehensgrenze",
+          "count": "Fragen pro Kandidat, bis zu 60",
           "mode": "Klick- oder Sprachmodus",
           "brand": "Dein Logo und deine Farben",
           "private": "Fragen privat halten"
@@ -3587,7 +3612,7 @@
       },
       "invite": {
         "title": "Kandidaten einladen",
-        "text": "Hol Kandidaten so dazu, wie dein Recruiting schon funktioniert. Für jeden werden die Credits eines Kandidaten reserviert und zurückgegeben, falls er nie beginnt.",
+        "text": "Hol Kandidaten so dazu, wie dein Recruiting schon funktioniert. Für jeden werden die Credits eines Kandidaten reserviert und zurückgegeben, falls er nie antwortet.",
         "points": {
           "names": "Namen mit E-Mail-Adressen",
           "reminder": "Eine Erinnerung nach 3 Tagen",
@@ -3626,8 +3651,10 @@
         "title": "Kandidaten machen das Interview",
         "text": "Kandidaten sehen die Regeln und die Zeit vorab, geben ihr Wort und beantworten eine Frage mit Zeitlimit nach der anderen, per Klick oder per Sprache, auf jedem Gerät.",
         "points": {
+          "signIn": "Anmeldung mit der eingeladenen E-Mail-Adresse",
           "pledge": "Eine Zusage vor dem Start",
           "timer": "Ein Timer bei jeder Frage",
+          "onePass": "Ein Versuch, keine Wiederholung",
           "click": "Klickmodus",
           "voice": "Sprachmodus mit Mira",
           "phone": "Funktioniert auf dem Handy",
@@ -3643,10 +3670,11 @@
           "answers": "Jede Antwort und ihre Zeit",
           "signals": "Integritätshinweise",
           "patterns": "Ungewöhnliche Antwortmuster",
+          "followUps": "Fragen für ein Live-Interview",
           "notes": "Die Notizen deines Teams",
           "discover": "Personen, die offen für Angebote sind"
         },
-        "alt": "Die Kandidaten eines Interviews, die besten zuerst"
+        "alt": "Die Kandidaten eines Interviews mit Status und Ergebnis"
       },
       "share": {
         "title": "Berichte teilen",

@@ -3260,7 +3260,7 @@
       "link": {
         "title": "One link for your job ad",
         "text": "Turn on the interview's shareable link and put it in your job ad. Anyone can take it once, with a verified email.",
-        "alt": "An interview's settings tab: the shareable link, the click and voice mode switch, the time per question and the pass mark."
+        "alt": "An interview's settings tab: the shareable link, the click and voice mode switch, the time per question and the passing grade."
       },
       "start": {
         "title": "Clear rules up front",
@@ -3280,11 +3280,11 @@
       "brand": {
         "title": "Your brand, not ours",
         "text": "Set your logo, colors for light and dark, fonts and corners, with a live preview. Candidates see only your company, without testee's header or footer.",
-        "alt": "The brand tab: the logo, fonts and corners, with a live preview of the interview."
+        "alt": "The brand tab's colors for the page, buttons and fills, with a live preview of the interview."
       },
       "candidates": {
         "title": "Compare candidates at a glance",
-        "text": "Every candidate's status and grade against your pass mark, in one list. Sort by grade, search by name or email, filter by who passed or who's flagged.",
+        "text": "Every candidate's status and grade against your passing grade, in one list. Sort by grade, search by name or email, filter by who passed or who's flagged.",
         "alt": "An interview's candidates list with names, statuses, grades and a flagged candidate."
       },
       "signals": {
@@ -3319,31 +3319,33 @@
       }
     },
     "points": {
-      "questions": "{count, plural, one {# question} other {# questions}} written per topic; you choose how many each candidate gets",
+      "questions": "{count, plural, one {# question} other {# questions}} written per topic; you choose how many each candidate gets, up to 60 per interview",
       "options": "Four options per question, some with more than one right answer",
       "examples": "Code, data, formulas or documents shown as examples where the role needs them",
       "names": "Lines that can't be invited are named, with the reason",
       "credits": "Credits come back for anyone who never answers",
       "expire": "Invites expire on their own after a month",
+      "signIn": "Candidates sign in with the email you invited, so a forwarded invite is no use to anyone else",
       "linkOff": "Turned off at any time, and when the role is hired",
       "mode": "Click or voice mode chosen on the same page",
-      "settings": "Average time per question and pass mark beside it",
+      "settings": "Average time per question and passing grade beside it",
       "time": "The total time shown before they start",
       "phone": "Works on a phone as well as a computer",
       "saved": "Progress saved as they go",
+      "onePass": "One attempt: no going back, no retakes",
       "tap": "Tapping an option always works too",
       "kept": "testee keeps no voice: it's only turned into text",
       "voiceLanguages": "In all 23 languages, with quality that varies by language",
       "contrast": "Colors that would be hard to read are refused",
       "logo": "Your logo on invitations, the interview and PDF reports",
       "sort": "Best grades first in one click",
-      "status": "Invited, in process, finished, expired or not delivered",
+      "status": "Invited, in process, finished, expired or undelivered",
       "proof": "A reason to look closer, never proof",
       "camera": "No camera, screen recording or device tracking",
       "followUps": "Questions to talk through in a live interview",
       "pdf": "PDF reports with grades and every answer",
       "messengers": "Summaries on WhatsApp, Telegram, Viber or LINE",
-      "viewers": "Viewers share too, without changing anything",
+      "viewers": "Viewers can share reports too",
       "everyone": "Every member writes, viewers too",
       "bell": "New notes reach the bell and your Slack channel",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee and Breezy HR",
@@ -3353,8 +3355,8 @@
       "owner": "Only the owner exports, and it's in the action log",
       "askTime": "Anyone who needs more time is told to ask before starting",
       "peopleDecide": "Told that people at your company review the results and decide",
-      "digest": "The digest: who finished, invites that bounced, ATS candidates not invited, new notes and interviews ready",
-      "emailChoice": "Each kind of email turned on or off in your settings",
+      "digest": "The digest: who finished, undelivered invites, ATS candidates not invited, new notes and interviews ready",
+      "emailChoice": "The digest, reminders, news and offers turned on or off in your settings",
       "stopEmails": "Candidates can stop your emails in one click"
     },
     "cards": {
@@ -3364,7 +3366,7 @@
       },
       "bank": {
         "title": "Shared question bank",
-        "text": "New interviews reuse questions proven in others. Keep yours out with one checkbox."
+        "text": "New interviews reuse questions proven in others. Keep an interview's questions out with one switch."
       },
       "quality": {
         "title": "Questions that fix themselves",
@@ -3377,6 +3379,10 @@
       "preview": {
         "title": "Preview it first",
         "text": "Take the interview as a candidate would, for free, before inviting anyone."
+      },
+      "manage": {
+        "title": "Manage questions",
+        "text": "Read every question, disable one, re-generate it or mark its answer as wrong."
       },
       "ats": {
         "title": "From your ATS",
@@ -3409,6 +3415,10 @@
       "accessible": {
         "title": "Accessible",
         "text": "Built for WCAG 2.2 AA, in every language, light and dark."
+      },
+      "practice": {
+        "title": "Free practice",
+        "text": "Anyone can practise by role, free and in private, and see every right answer at the end."
       },
       "notifications": {
         "title": "Notifications",
@@ -3452,11 +3462,15 @@
       },
       "roles": {
         "title": "Team roles",
-        "text": "Owners, admins and viewers; viewers see results but change and spend nothing."
+        "text": "Members are free. Only the owner manages the team; viewers see results, share reports and write notes, and spend nothing."
+      },
+      "companies": {
+        "title": "Several companies",
+        "text": "One account can own several companies, each with its own team and credits."
       },
       "log": {
         "title": "Action log",
-        "text": "The owner sees who did what, in the app, through Mira, the API or an ATS."
+        "text": "The owner sees who did what, in the app, through Mira, an AI app, the API or an ATS."
       },
       "documents": {
         "title": "Documents ready",
@@ -3466,9 +3480,17 @@
         "title": "Private by design",
         "text": "No selling of data, nothing inferred about candidates, no voice kept by testee."
       },
+      "location": {
+        "title": "Stored in Belgium",
+        "text": "On Google Cloud in the EU; the trust page lists every provider."
+      },
+      "retention": {
+        "title": "Deleted on time",
+        "text": "Results go 12 months after the last invitation, or at once when you revoke a candidate."
+      },
       "verified": {
         "title": "Verified companies",
-        "text": "A check next to your company's name once its website is verified."
+        "text": "A check next to your company's name once a work email on its website and our review confirm it."
       },
       "free": {
         "title": "{count, plural, one {# free candidate} other {# free candidates}}",
@@ -3555,21 +3577,23 @@
         "points": {
           "proposed": "Topics proposed by AI",
           "edit": "Rename, add or remove",
+          "ask": "Ask AI to change them",
           "subtopics": "Subtopics for each",
-          "levels": "Basic to advanced",
+          "levels": "Level read from the job",
           "approve": "Approve to generate"
         },
-        "alt": "An interview's topics, each with its questions"
+        "alt": "The topic review: topics with their subtopics, one being edited"
       },
       "questions": {
         "title": "Questions are generated and checked",
         "text": "AI writes a pool of questions for each topic, a second AI checks a sample of answer keys blind, and each candidate gets their own random set.",
         "points": {
-          "unique": "Unique questions per candidate",
-          "checked": "Answer keys checked by a second AI",
+          "unique": "A random set for each candidate",
+          "checked": "A sample of answer keys checked by a second AI",
           "bank": "Proven questions from the shared bank",
           "multi": "Single and multiple answers",
-          "preview": "Try it as a candidate"
+          "preview": "Try it as a candidate",
+          "manage": "Disable or re-generate any question"
         },
         "alt": "A topic's questions, each with its answer key"
       },
@@ -3579,15 +3603,16 @@
         "points": {
           "time": "Time per question",
           "passMark": "Passing grade",
+          "count": "Questions per candidate, up to 60",
           "mode": "Click or voice mode",
-          "brand": "Your logo and colours",
+          "brand": "Your logo and colors",
           "private": "Keep questions private"
         },
         "alt": "An interview's settings"
       },
       "invite": {
         "title": "Invite candidates",
-        "text": "Bring candidates in the way your hiring already works. Each one is reserved a candidate's credits, given back if they never start.",
+        "text": "Bring candidates in the way your hiring already works. Each one is reserved a candidate's credits, given back if they never answer.",
         "points": {
           "names": "Names with emails",
           "reminder": "One reminder after 3 days",
@@ -3626,8 +3651,10 @@
         "title": "Candidates take it",
         "text": "Candidates see the rules and the time up front, give their word, and answer one timed question at a time, by click or by voice, on any device.",
         "points": {
+          "signIn": "Sign-in with the invited email",
           "pledge": "A pledge before starting",
           "timer": "A timer on every question",
+          "onePass": "One attempt, no retakes",
           "click": "Click mode",
           "voice": "Voice mode with Mira",
           "phone": "Works on a phone",
@@ -3643,10 +3670,11 @@
           "answers": "Every answer and its time",
           "signals": "Integrity signals",
           "patterns": "Unusual answer patterns",
+          "followUps": "Questions for a live interview",
           "notes": "Your team's notes",
           "discover": "People open to offers"
         },
-        "alt": "An interview's candidates, best first"
+        "alt": "An interview's candidates, with their statuses and grades"
       },
       "share": {
         "title": "Share the reports",

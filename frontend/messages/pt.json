@@ -3284,7 +3284,7 @@
       "brand": {
         "title": "A sua marca, não a nossa",
         "text": "Defina seu logo, cores para o tema claro e escuro, fontes e cantos, com prévia ao vivo. Os candidatos veem só a sua empresa, sem o cabeçalho nem o rodapé da testee.",
-        "alt": "A aba de marca: o logo, as fontes e os cantos, com uma prévia ao vivo da entrevista."
+        "alt": "A aba de marca: as cores da página, dos botões e dos preenchimentos, com uma prévia ao vivo da entrevista."
       },
       "candidates": {
         "title": "Compare candidatos num relance",
@@ -3323,18 +3323,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, one {# pergunta escrita} other {# perguntas escritas}} por tópico; você escolhe quantas cada candidato recebe",
+      "questions": "{count, plural, one {# pergunta escrita} other {# perguntas escritas}} por tópico; você escolhe quantas cada candidato recebe, até 60 por entrevista",
       "options": "Quatro opções por pergunta, algumas com mais de uma resposta certa",
       "examples": "Código, dados, fórmulas ou documentos mostrados como exemplos quando a vaga pede",
       "names": "As linhas que não podem ser convidadas são indicadas, com o motivo",
       "credits": "Os créditos voltam para quem nunca responde",
       "expire": "Os convites expiram sozinhos depois de um mês",
+      "signIn": "Os candidatos entram com o e-mail para o qual você os convidou, então um convite encaminhado não serve para mais ninguém",
       "linkOff": "Desativado a qualquer momento, e quando a vaga é preenchida",
       "mode": "Modo clique ou voz escolhido na mesma página",
       "settings": "Tempo médio por pergunta e nota de aprovação logo ao lado",
       "time": "O tempo total mostrado antes de começar",
       "phone": "Funciona no celular e no computador",
       "saved": "O progresso é salvo durante a entrevista",
+      "onePass": "Uma tentativa: sem voltar atrás, sem refazer",
       "tap": "Tocar em uma opção sempre funciona também",
       "kept": "A testee não guarda nenhuma voz: ela só é convertida em texto",
       "voiceLanguages": "Nos 23 idiomas, com qualidade que varia de idioma para idioma",
@@ -3347,7 +3349,7 @@
       "followUps": "Perguntas para conversar numa entrevista ao vivo",
       "pdf": "Relatórios em PDF com notas e todas as respostas",
       "messengers": "Resumos no WhatsApp, Telegram, Viber ou LINE",
-      "viewers": "Visualizadores também compartilham, sem alterar nada",
+      "viewers": "Visualizadores também compartilham relatórios",
       "everyone": "Todos os membros escrevem, visualizadores também",
       "bell": "Novas anotações chegam ao sino e ao seu canal do Slack",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee e Breezy HR",
@@ -3358,7 +3360,7 @@
       "askTime": "Quem precisar de mais tempo é orientado a pedir antes de começar",
       "peopleDecide": "Informados de que pessoas da sua empresa analisam os resultados e decidem",
       "digest": "O resumo: quem concluiu, convites não entregues, candidatos do ATS não convidados, novas anotações e entrevistas prontas",
-      "emailChoice": "Cada tipo de e-mail ativado ou desativado nas suas configurações",
+      "emailChoice": "O resumo, os lembretes, as novidades e as ofertas ativados ou desativados nas suas configurações",
       "stopEmails": "Os candidatos podem deixar de receber seus e-mails com um clique"
     },
     "cards": {
@@ -3368,7 +3370,7 @@
       },
       "bank": {
         "title": "Banco de perguntas compartilhado",
-        "text": "Novas entrevistas reutilizam perguntas aprovadas em outras. Deixe as suas de fora com uma caixa de seleção."
+        "text": "Novas entrevistas reutilizam perguntas aprovadas em outras. Deixe as de uma entrevista de fora com um único botão."
       },
       "quality": {
         "title": "Perguntas que se corrigem",
@@ -3381,6 +3383,10 @@
       "preview": {
         "title": "Experimente antes",
         "text": "Faça a entrevista como um candidato faria, de graça, antes de convidar alguém."
+      },
+      "manage": {
+        "title": "Gerenciar questões",
+        "text": "Leia cada questão, desative-a, gere-a novamente ou marque a resposta dela como errada."
       },
       "ats": {
         "title": "Do seu ATS",
@@ -3413,6 +3419,10 @@
       "accessible": {
         "title": "Acessível",
         "text": "Feito segundo as WCAG 2.2 AA, em todos os idiomas, no tema claro e escuro."
+      },
+      "practice": {
+        "title": "Prática gratuita",
+        "text": "Qualquer pessoa pode praticar por cargo, de graça e em privado, e ver todas as respostas certas no final."
       },
       "notifications": {
         "title": "Notificações",
@@ -3456,11 +3466,15 @@
       },
       "roles": {
         "title": "Funções da equipe",
-        "text": "Proprietários, administradores e visualizadores; visualizadores veem os resultados, mas não alteram nem gastam nada."
+        "text": "Adicionar membros é gratuito. Só o proprietário gerencia a equipe; visualizadores veem os resultados, compartilham relatórios, escrevem anotações e não gastam nada."
+      },
+      "companies": {
+        "title": "Várias empresas",
+        "text": "Uma conta pode ser proprietária de várias empresas, cada uma com sua equipe e seus créditos."
       },
       "log": {
         "title": "Registro de ações",
-        "text": "O proprietário vê quem fez o quê: no app, pela Mira, pela API ou por um ATS."
+        "text": "O proprietário vê quem fez o quê: no app, pela Mira, por um app de IA, pela API ou por um ATS."
       },
       "documents": {
         "title": "Documentos prontos",
@@ -3470,9 +3484,17 @@
         "title": "Privacidade desde a concepção",
         "text": "Nenhuma venda de dados, nada deduzido sobre os candidatos, nenhuma voz guardada pela testee."
       },
+      "location": {
+        "title": "Dados armazenados na Bélgica",
+        "text": "No Google Cloud na UE; a página de confiança lista todos os fornecedores."
+      },
+      "retention": {
+        "title": "Exclusão no prazo",
+        "text": "Os resultados são excluídos 12 meses após o último convite, ou na hora quando você revoga o convite de um candidato."
+      },
       "verified": {
         "title": "Empresas verificadas",
-        "text": "Um selo ao lado do nome da sua empresa assim que o site dela é verificado."
+        "text": "Um selo ao lado do nome da sua empresa assim que um e-mail corporativo do site dela e a nossa análise o confirmam."
       },
       "free": {
         "title": "{count, plural, one {# candidato grátis} other {# candidatos grátis}}",
@@ -3559,21 +3581,23 @@
         "points": {
           "proposed": "Tópicos sugeridos pela IA",
           "edit": "Renomeie, adicione ou remova",
+          "ask": "Peça à IA para alterá-los",
           "subtopics": "Subtópicos para cada um",
-          "levels": "Do básico ao avançado",
+          "levels": "Nível lido na descrição da vaga",
           "approve": "Aprove para gerar"
         },
-        "alt": "Os tópicos de uma entrevista, cada um com suas perguntas"
+        "alt": "A revisão de tópicos: tópicos com seus subtópicos, um sendo editado"
       },
       "questions": {
         "title": "As perguntas são geradas e verificadas",
         "text": "A IA escreve um conjunto de perguntas para cada tópico, uma segunda IA verifica às cegas uma amostra de gabaritos, e cada candidato recebe sua própria seleção aleatória.",
         "points": {
-          "unique": "Perguntas diferentes para cada candidato",
-          "checked": "Gabaritos verificados por uma segunda IA",
+          "unique": "Um conjunto aleatório para cada candidato",
+          "checked": "Uma amostra dos gabaritos verificada por uma segunda IA",
           "bank": "Perguntas aprovadas do banco compartilhado",
           "multi": "Uma ou várias respostas certas",
-          "preview": "Experimente como candidato"
+          "preview": "Experimente como candidato",
+          "manage": "Desative ou gere novamente qualquer pergunta"
         },
         "alt": "As perguntas de um tópico, cada uma com seu gabarito"
       },
@@ -3583,6 +3607,7 @@
         "points": {
           "time": "Tempo por pergunta",
           "passMark": "Nota de aprovação",
+          "count": "Perguntas por candidato, até 60",
           "mode": "Modo clique ou voz",
           "brand": "Seu logo e suas cores",
           "private": "Perguntas privadas"
@@ -3591,7 +3616,7 @@
       },
       "invite": {
         "title": "Convide candidatos",
-        "text": "Traga candidatos do jeito que a sua contratação já funciona. Para cada um, os créditos de um candidato ficam reservados e são devolvidos se ele nunca começar.",
+        "text": "Traga candidatos do jeito que a sua contratação já funciona. Para cada um, os créditos de um candidato ficam reservados e são devolvidos se ele nunca responder.",
         "points": {
           "names": "Nomes com e-mails",
           "reminder": "Um lembrete após 3 dias",
@@ -3630,8 +3655,10 @@
         "title": "Os candidatos fazem a entrevista",
         "text": "Os candidatos veem as regras e o tempo logo de início, dão a sua palavra e respondem a uma pergunta cronometrada por vez, com um clique ou por voz, em qualquer dispositivo.",
         "points": {
+          "signIn": "Entrada com o e-mail convidado",
           "pledge": "Um compromisso antes de começar",
           "timer": "Um cronômetro em cada pergunta",
+          "onePass": "Uma tentativa, sem refazer",
           "click": "Modo clique",
           "voice": "Modo de voz com a Mira",
           "phone": "Funciona no celular",
@@ -3647,10 +3674,11 @@
           "answers": "Cada resposta e seu tempo",
           "signals": "Alertas de integridade",
           "patterns": "Padrões de resposta incomuns",
+          "followUps": "Perguntas para uma entrevista ao vivo",
           "notes": "As anotações da sua equipe",
           "discover": "Pessoas abertas a propostas"
         },
-        "alt": "Os candidatos de uma entrevista, os melhores primeiro"
+        "alt": "Os candidatos de uma entrevista, com seus status e notas"
       },
       "share": {
         "title": "Compartilhe os relatórios",

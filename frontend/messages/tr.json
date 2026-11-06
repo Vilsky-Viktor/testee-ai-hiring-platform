@@ -3284,7 +3284,7 @@
       "brand": {
         "title": "Sizin markanız, bizimki değil",
         "text": "Logonuzu, açık ve koyu tema renklerini, yazı tiplerini ve köşeleri canlı önizlemeyle ayarlayın. Adaylar testee'nin üst ve alt bilgisi olmadan yalnızca şirketinizi görür.",
-        "alt": "Marka sekmesi: logo, yazı tipleri ve köşeler, mülakatın canlı önizlemesiyle."
+        "alt": "Marka sekmesinin sayfa, düğme ve dolgu renkleri, mülakatın canlı önizlemesiyle."
       },
       "candidates": {
         "title": "Adayları bir bakışta karşılaştırın",
@@ -3323,18 +3323,20 @@
       }
     },
     "points": {
-      "questions": "Konu başına {count, plural, one {# soru} other {# soru}} yazılır; her adayın kaç soru alacağını siz seçersiniz",
+      "questions": "Konu başına {count, plural, one {# soru} other {# soru}} yazılır; her adayın kaç soru alacağını siz seçersiniz, mülakat başına en fazla 60",
       "options": "Soru başına dört seçenek, bazılarında birden fazla doğru cevap",
       "examples": "Pozisyon gerektiriyorsa kod, veriler, formüller veya belgeler örnek olarak gösterilir",
       "names": "Davet edilemeyen satırlar nedeniyle birlikte belirtilir",
       "credits": "Hiç cevap vermeyenlerin kredileri geri gelir",
       "expire": "Davetlerin süresi bir ay sonra kendiliğinden dolar",
+      "signIn": "Adaylar davet ettiğiniz e-posta adresiyle giriş yapar, böylece iletilen bir davet başkasının işine yaramaz",
       "linkOff": "İstediğiniz zaman kapatılır, pozisyon dolduğunda da kapanır",
       "mode": "Tıklama veya sesli mod aynı sayfada seçilir",
       "settings": "Soru başına ortalama süre ve geçme notu hemen yanında",
       "time": "Toplam süre başlamadan önce gösterilir",
       "phone": "Bilgisayarda olduğu kadar telefonda da çalışır",
       "saved": "İlerleme ilerledikçe kaydedilir",
+      "onePass": "Tek deneme: geri dönüş yok, tekrar yok",
       "tap": "Bir seçeneğe dokunmak da her zaman işe yarar",
       "kept": "testee ses saklamaz: ses yalnızca metne çevrilir",
       "voiceLanguages": "23 dilin hepsinde, kalitesi dile göre değişir",
@@ -3347,7 +3349,7 @@
       "followUps": "Yüz yüze mülakatta konuşulacak sorular",
       "pdf": "Notlar ve tüm cevaplarla PDF raporlar",
       "messengers": "WhatsApp, Telegram, Viber veya LINE'da özetler",
-      "viewers": "Görüntüleyiciler de hiçbir şeyi değiştirmeden paylaşabilir",
+      "viewers": "Görüntüleyiciler de rapor paylaşabilir",
       "everyone": "Görüntüleyiciler dahil her üye yazabilir",
       "bell": "Yeni yorumlar zil simgesine ve Slack kanalınıza düşer",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee ve Breezy HR",
@@ -3358,7 +3360,7 @@
       "askTime": "Daha fazla süreye ihtiyacı olanlara başlamadan önce istemeleri söylenir",
       "peopleDecide": "Sonuçları şirketinizdeki kişilerin inceleyip karar verdiği belirtilir",
       "digest": "Özette: mülakatı tamamlayanlar, iletilemeyen davetler, davet edilmeyen ATS adayları, yeni yorumlar ve hazır mülakatlar",
-      "emailChoice": "Her e-posta türü ayarlarınızda açılıp kapatılır",
+      "emailChoice": "Özet, hatırlatmalar, haberler ve teklifler ayarlarınızda açılıp kapatılır",
       "stopEmails": "Adaylar e-postalarınızdan tek tıkla çıkabilir"
     },
     "cards": {
@@ -3368,7 +3370,7 @@
       },
       "bank": {
         "title": "Ortak soru bankası",
-        "text": "Yeni mülakatlar başka mülakatlarda kendini kanıtlamış soruları yeniden kullanır. Kendi sorularınızı tek bir onay kutusuyla dışarıda tutun."
+        "text": "Yeni mülakatlar başka mülakatlarda kendini kanıtlamış soruları yeniden kullanır. Bir mülakatın sorularını tek bir düğmeyle ortak soru bankasının dışında tutun."
       },
       "quality": {
         "title": "Kendini düzelten sorular",
@@ -3381,6 +3383,10 @@
       "preview": {
         "title": "Önce önizleyin",
         "text": "Kimseyi davet etmeden önce mülakatı bir aday gibi ücretsiz deneyin."
+      },
+      "manage": {
+        "title": "Soru yönetimi",
+        "text": "Her soruyu okuyun, birini devre dışı bırakın, yeniden oluşturun veya cevabını yanlış olarak işaretleyin."
       },
       "ats": {
         "title": "ATS'nizden",
@@ -3413,6 +3419,10 @@
       "accessible": {
         "title": "Erişilebilir",
         "text": "WCAG 2.2 AA'ya göre tasarlandı; her dilde, açık ve koyu temada."
+      },
+      "practice": {
+        "title": "Ücretsiz pratik",
+        "text": "Herkes pozisyona göre ücretsiz ve gizli pratik yapabilir, sonunda tüm doğru cevapları görür."
       },
       "notifications": {
         "title": "Bildirimler",
@@ -3456,11 +3466,15 @@
       },
       "roles": {
         "title": "Ekip rolleri",
-        "text": "Sahipler, yöneticiler ve görüntüleyiciler; görüntüleyiciler sonuçları görür ama hiçbir şeyi değiştirmez ve harcamaz."
+        "text": "Üyeler ücretsizdir. Ekibi yalnızca şirket sahibi yönetir; görüntüleyiciler sonuçları görür, raporları paylaşır ve yorum yazar, kredi harcamaz."
+      },
+      "companies": {
+        "title": "Birden fazla şirket",
+        "text": "Bir hesap, her birinin kendi ekibi ve kredisi olan birden fazla şirkete sahip olabilir."
       },
       "log": {
         "title": "İşlem kaydı",
-        "text": "Şirket sahibi uygulamada, Mira, API veya bir ATS üzerinden kimin ne yaptığını görür."
+        "text": "Şirket sahibi uygulamada, Mira, bir yapay zekâ uygulaması, API veya bir ATS üzerinden kimin ne yaptığını görür."
       },
       "documents": {
         "title": "Belgeler hazır",
@@ -3470,9 +3484,17 @@
         "title": "Tasarımdan gizlilik",
         "text": "Veri satışı yok, adaylar hakkında çıkarım yok, testee ses saklamaz."
       },
+      "location": {
+        "title": "Belçika'da saklanır",
+        "text": "AB'deki Google Cloud'da; güven sayfasında tüm sağlayıcılar listelenir."
+      },
+      "retention": {
+        "title": "Zamanında silinir",
+        "text": "Sonuçlar son davetten 12 ay sonra, bir adayın davetini geri aldığınızda ise hemen silinir."
+      },
       "verified": {
         "title": "Doğrulanmış şirketler",
-        "text": "Web siteniz doğrulandığında şirketinizin adının yanında bir onay işareti."
+        "text": "Şirketinizin web sitesi alan adındaki bir iş e-postası ve bizim incelememiz onayladığında, şirketinizin adının yanında bir onay işareti."
       },
       "free": {
         "title": "{count, plural, one {# ücretsiz aday} other {# ücretsiz aday}}",
@@ -3559,21 +3581,23 @@
         "points": {
           "proposed": "Yapay zekânın önerdiği konular",
           "edit": "Yeniden adlandırın, ekleyin ya da kaldırın",
+          "ask": "Yapay zekâdan değiştirmesini isteyin",
           "subtopics": "Her biri için alt konular",
-          "levels": "Temelden ileri seviyeye",
+          "levels": "Seviye iş tanımından okunur",
           "approve": "Soruları üretmek için onaylayın"
         },
-        "alt": "Bir mülakatın konuları ve her birinin soruları"
+        "alt": "Konu incelemesi: alt konularıyla birlikte konular, biri düzenleniyor"
       },
       "questions": {
         "title": "Sorular üretilir ve kontrol edilir",
         "text": "Yapay zekâ her konu için bir soru havuzu yazar, ikinci bir yapay zekâ cevap anahtarlarından bir örneklemi körlemesine kontrol eder ve her aday kendi rastgele soru setini alır.",
         "points": {
-          "unique": "Her adaya özgün sorular",
-          "checked": "İkinci bir yapay zekânın kontrol ettiği cevap anahtarları",
+          "unique": "Her adaya rastgele bir soru seti",
+          "checked": "Cevap anahtarlarından bir örneklemi ikinci bir yapay zekâ kontrol eder",
           "bank": "Ortak bankadan kendini kanıtlamış sorular",
           "multi": "Tek ve çok cevaplı sorular",
-          "preview": "Bir aday gibi deneyin"
+          "preview": "Bir aday gibi deneyin",
+          "manage": "Herhangi bir soruyu devre dışı bırakma veya yeniden oluşturma"
         },
         "alt": "Bir konunun soruları ve her birinin cevap anahtarı"
       },
@@ -3583,6 +3607,7 @@
         "points": {
           "time": "Soru başına süre",
           "passMark": "Geçme notu",
+          "count": "Aday başına soru, en fazla 60",
           "mode": "Tıklama ya da sesli mod",
           "brand": "Logonuz ve renkleriniz",
           "private": "Soruları gizli tutun"
@@ -3591,7 +3616,7 @@
       },
       "invite": {
         "title": "Adayları davet edin",
-        "text": "Adayları, işe alımınız nasıl işliyorsa öyle getirin. Her aday için bir adaylık kredi ayrılır; hiç başlamazsa iade edilir.",
+        "text": "Adayları, işe alımınız nasıl işliyorsa öyle getirin. Her aday için bir adaylık kredi ayrılır; hiç cevap vermezse iade edilir.",
         "points": {
           "names": "E-postalarla birlikte adlar",
           "reminder": "3 gün sonra bir hatırlatma",
@@ -3630,8 +3655,10 @@
         "title": "Adaylar mülakata girer",
         "text": "Adaylar kuralları ve süreyi baştan görür, söz verir ve süreli soruları tek tek, tıklayarak ya da sesle, her cihazda cevaplar.",
         "points": {
+          "signIn": "Davet edilen e-postayla giriş",
           "pledge": "Başlamadan önce taahhüt",
           "timer": "Her soruda bir süre sayacı",
+          "onePass": "Tek deneme, tekrar yok",
           "click": "Tıklama modu",
           "voice": "Mira ile sesli mod",
           "phone": "Telefonda çalışır",
@@ -3647,10 +3674,11 @@
           "answers": "Her cevap ve süresi",
           "signals": "Dürüstlük uyarıları",
           "patterns": "Olağandışı cevap örüntüleri",
+          "followUps": "Yüz yüze mülakat için sorular",
           "notes": "Ekibinizin yorumları",
           "discover": "İş tekliflerine açık kişiler"
         },
-        "alt": "Bir mülakatın adayları, en iyiler önce"
+        "alt": "Bir mülakatın adayları, durumları ve notlarıyla"
       },
       "share": {
         "title": "Raporları paylaşın",

@@ -3280,7 +3280,7 @@
       "brand": {
         "title": "Il tuo brand, non il nostro",
         "text": "Imposta il tuo logo, i colori per il tema chiaro e scuro, i caratteri e gli angoli, con un'anteprima dal vivo. I candidati vedono solo la tua azienda, senza l'intestazione né il piè di pagina di testee.",
-        "alt": "La scheda brand: il logo, i caratteri e gli angoli, con un'anteprima dal vivo del colloquio."
+        "alt": "La scheda brand: i colori di pagina, pulsanti e riempimenti, con un'anteprima dal vivo del colloquio."
       },
       "candidates": {
         "title": "Confronta i candidati a colpo d'occhio",
@@ -3319,18 +3319,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, one {# domanda scritta} other {# domande scritte}} per argomento; scegli tu quante ne riceve ogni candidato",
+      "questions": "{count, plural, one {# domanda scritta} other {# domande scritte}} per argomento; scegli tu quante ne riceve ogni candidato, fino a 60 per colloquio",
       "options": "Quattro opzioni per domanda, alcune con più di una risposta giusta",
       "examples": "Codice, dati, formule o documenti mostrati come esempi quando il ruolo li richiede",
       "names": "Le righe che non si possono invitare vengono indicate, con il motivo",
       "credits": "I crediti tornano indietro per chi non risponde mai",
       "expire": "Gli inviti scadono da soli dopo un mese",
+      "signIn": "I candidati accedono con l'email a cui li hai invitati, quindi un invito inoltrato non serve a nessun altro",
       "linkOff": "Si disattiva in qualsiasi momento, e quando il ruolo è coperto",
       "mode": "Modalità clic o vocale scelta nella stessa pagina",
       "settings": "Tempo medio per domanda e soglia di superamento lì accanto",
       "time": "Il tempo totale mostrato prima di iniziare",
       "phone": "Funziona sul telefono come sul computer",
       "saved": "I progressi vengono salvati man mano",
+      "onePass": "Un solo tentativo: niente ritorni indietro, niente ripetizioni",
       "tap": "Toccare un'opzione funziona sempre",
       "kept": "testee non conserva alcuna voce: viene solo trasformata in testo",
       "voiceLanguages": "In tutte le 23 lingue, con una qualità che varia da lingua a lingua",
@@ -3343,7 +3345,7 @@
       "followUps": "Domande da approfondire in un colloquio dal vivo",
       "pdf": "Report PDF con punteggi e ogni risposta",
       "messengers": "Riepiloghi su WhatsApp, Telegram, Viber o LINE",
-      "viewers": "Anche i visualizzatori condividono, senza modificare nulla",
+      "viewers": "Anche i visualizzatori condividono i report",
       "everyone": "Ogni membro scrive, anche i visualizzatori",
       "bell": "Le nuove note arrivano nella campanella e nel tuo canale Slack",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee e Breezy HR",
@@ -3354,7 +3356,7 @@
       "askTime": "Chi ha bisogno di più tempo viene invitato a chiederlo prima di iniziare",
       "peopleDecide": "Informati che sono persone della tua azienda a valutare i risultati e decidere",
       "digest": "Il riepilogo: chi ha finito, inviti non consegnati, candidati dall'ATS non invitati, nuove note e colloqui pronti",
-      "emailChoice": "Ogni tipo di email attivato o disattivato nelle tue impostazioni",
+      "emailChoice": "Il riepilogo, i promemoria, le novità e le offerte attivati o disattivati nelle tue impostazioni",
       "stopEmails": "I candidati possono disiscriversi dalle tue email con un clic"
     },
     "cards": {
@@ -3364,7 +3366,7 @@
       },
       "bank": {
         "title": "Banca domande condivisa",
-        "text": "I nuovi colloqui riutilizzano domande già collaudate in altri. Escludi le tue con una casella."
+        "text": "I nuovi colloqui riutilizzano domande già collaudate in altri. Escludi quelle di un colloquio con un interruttore."
       },
       "quality": {
         "title": "Domande che si correggono da sole",
@@ -3377,6 +3379,10 @@
       "preview": {
         "title": "Provalo prima",
         "text": "Svolgi il colloquio come lo farebbe un candidato, gratis, prima di invitare chiunque."
+      },
+      "manage": {
+        "title": "Gestisci domande",
+        "text": "Leggi ogni domanda, disattivala, rigenerala o segna la sua risposta come sbagliata."
       },
       "ats": {
         "title": "Dal tuo ATS",
@@ -3409,6 +3415,10 @@
       "accessible": {
         "title": "Accessibile",
         "text": "Realizzato secondo le WCAG 2.2 AA, in ogni lingua, con tema chiaro e scuro."
+      },
+      "practice": {
+        "title": "Simulazioni gratuite",
+        "text": "Chiunque può esercitarsi per ruolo, gratis e in privato, e vedere tutte le risposte giuste alla fine."
       },
       "notifications": {
         "title": "Notifiche",
@@ -3452,11 +3462,15 @@
       },
       "roles": {
         "title": "Ruoli del team",
-        "text": "Proprietari, amministratori e visualizzatori; i visualizzatori vedono i risultati ma non modificano né spendono nulla."
+        "text": "Aggiungere membri è gratis. Solo il proprietario gestisce il team; i visualizzatori vedono i risultati, condividono i report, scrivono note e non spendono nulla."
+      },
+      "companies": {
+        "title": "Più aziende",
+        "text": "Un account può possedere più aziende, ognuna con il proprio team e i propri crediti."
       },
       "log": {
         "title": "Registro attività",
-        "text": "Il proprietario vede chi ha fatto cosa: nell'app, tramite Mira, l'API o un ATS."
+        "text": "Il proprietario vede chi ha fatto cosa: nell'app, tramite Mira, un'app IA, l'API o un ATS."
       },
       "documents": {
         "title": "Documenti pronti",
@@ -3466,9 +3480,17 @@
         "title": "Privacy fin dalla progettazione",
         "text": "Nessuna vendita di dati, nulla dedotto sui candidati, nessuna voce conservata da testee."
       },
+      "location": {
+        "title": "Dati conservati in Belgio",
+        "text": "Su Google Cloud nell'UE; la pagina Fiducia elenca tutti i fornitori."
+      },
+      "retention": {
+        "title": "Eliminazione puntuale",
+        "text": "I risultati vengono eliminati 12 mesi dopo l'ultimo invito, o subito se revochi l'invito di un candidato."
+      },
       "verified": {
         "title": "Aziende verificate",
-        "text": "Un segno di spunta accanto al nome della tua azienda una volta verificato il suo sito web."
+        "text": "Un segno di spunta accanto al nome della tua azienda quando un'email di lavoro sul suo sito web e la nostra revisione lo confermano."
       },
       "free": {
         "title": "{count, plural, one {# candidato gratis} other {# candidati gratis}}",
@@ -3555,21 +3577,23 @@
         "points": {
           "proposed": "Argomenti proposti dall'IA",
           "edit": "Rinomina, aggiungi o togli",
+          "ask": "Chiedi all'IA di cambiarli",
           "subtopics": "Sottoargomenti per ciascuno",
-          "levels": "Dal livello base all'avanzato",
+          "levels": "Livello ricavato dalla descrizione del ruolo",
           "approve": "Approva per generare"
         },
-        "alt": "Gli argomenti di un colloquio, ognuno con le sue domande"
+        "alt": "La revisione degli argomenti: argomenti con i loro sottoargomenti, uno in modifica"
       },
       "questions": {
         "title": "Le domande vengono generate e verificate",
         "text": "L'IA scrive un insieme di domande per ogni argomento, una seconda IA verifica alla cieca un campione di chiavi di correzione, e ogni candidato riceve una serie casuale tutta sua.",
         "points": {
-          "unique": "Domande diverse per ogni candidato",
-          "checked": "Chiavi di correzione verificate da una seconda IA",
+          "unique": "Un set casuale per ogni candidato",
+          "checked": "Un campione di chiavi di correzione verificato da una seconda IA",
           "bank": "Domande collaudate dalla banca domande condivisa",
           "multi": "Una o più risposte giuste",
-          "preview": "Provalo come un candidato"
+          "preview": "Provalo come un candidato",
+          "manage": "Disattiva o rigenera qualsiasi domanda"
         },
         "alt": "Le domande di un argomento, ognuna con la sua chiave di correzione"
       },
@@ -3579,6 +3603,7 @@
         "points": {
           "time": "Tempo per domanda",
           "passMark": "Soglia di superamento",
+          "count": "Domande per candidato, fino a 60",
           "mode": "Modalità clic o vocale",
           "brand": "Il tuo logo e i tuoi colori",
           "private": "Domande riservate"
@@ -3587,7 +3612,7 @@
       },
       "invite": {
         "title": "Invita i candidati",
-        "text": "Fai entrare i candidati così come funziona già la tua selezione. Per ognuno vengono riservati i crediti di un candidato, restituiti se non inizia mai.",
+        "text": "Fai entrare i candidati così come funziona già la tua selezione. Per ognuno vengono riservati i crediti di un candidato, restituiti se non risponde mai.",
         "points": {
           "names": "Nomi con email",
           "reminder": "Un promemoria dopo 3 giorni",
@@ -3626,8 +3651,10 @@
         "title": "I candidati lo svolgono",
         "text": "I candidati vedono subito le regole e il tempo, danno la loro parola e rispondono a una domanda a tempo alla volta, con un clic o a voce, da qualsiasi dispositivo.",
         "points": {
+          "signIn": "Accesso con l'email invitata",
           "pledge": "Un impegno prima di iniziare",
           "timer": "Un timer su ogni domanda",
+          "onePass": "Un solo tentativo, nessuna ripetizione",
           "click": "Modalità clic",
           "voice": "Modalità vocale con Mira",
           "phone": "Funziona sul telefono",
@@ -3643,10 +3670,11 @@
           "answers": "Ogni risposta e il suo tempo",
           "signals": "Segnalazioni di integrità",
           "patterns": "Andamenti delle risposte insoliti",
+          "followUps": "Domande per un colloquio dal vivo",
           "notes": "Le note del tuo team",
           "discover": "Persone aperte a nuove opportunità"
         },
-        "alt": "I candidati di un colloquio, i migliori per primi"
+        "alt": "I candidati di un colloquio, con i loro stati e punteggi"
       },
       "share": {
         "title": "Condividi i report",

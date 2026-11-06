@@ -3280,7 +3280,7 @@
       "brand": {
         "title": "Jouw merk, niet het onze",
         "text": "Stel je logo, kleuren voor licht en donker, lettertypen en hoeken in, met een live voorbeeld. Kandidaten zien alleen jouw bedrijf, zonder de kop- en voettekst van testee.",
-        "alt": "Het tabblad merk: het logo, de lettertypen en de hoeken, met een live voorbeeld van het interview."
+        "alt": "De kleuren van het tabblad merk voor de pagina, knoppen en vlakken, met een live voorbeeld van het interview."
       },
       "candidates": {
         "title": "Vergelijk kandidaten in één oogopslag",
@@ -3319,18 +3319,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, one {# vraag} other {# vragen}} per onderwerp geschreven; jij kiest hoeveel elke kandidaat krijgt",
+      "questions": "{count, plural, one {# vraag} other {# vragen}} per onderwerp geschreven; jij kiest hoeveel elke kandidaat krijgt, tot 60 per interview",
       "options": "Vier opties per vraag, soms met meer dan één goed antwoord",
       "examples": "Code, gegevens, formules of documenten als voorbeeld waar de functie dat vraagt",
       "names": "Regels die niet uitgenodigd kunnen worden, worden genoemd, met de reden",
       "credits": "Credits komen terug voor wie nooit antwoordt",
       "expire": "Uitnodigingen verlopen vanzelf na een maand",
+      "signIn": "Kandidaten loggen in met het e-mailadres dat je hebt uitgenodigd, dus aan een doorgestuurde uitnodiging heeft niemand anders iets",
       "linkOff": "Op elk moment uit te zetten, en zodra de functie vervuld is",
       "mode": "Klik- of spraakmodus kies je op dezelfde pagina",
       "settings": "Gemiddelde tijd per vraag en slaaggrens ernaast",
       "time": "De totale tijd te zien voordat ze beginnen",
       "phone": "Werkt op een telefoon net zo goed als op een computer",
       "saved": "Voortgang wordt onderweg opgeslagen",
+      "onePass": "Eén poging: niet teruggaan, niet opnieuw afleggen",
       "tap": "Een optie aantikken werkt ook altijd",
       "kept": "testee bewaart geen stem: die wordt alleen omgezet in tekst",
       "voiceLanguages": "In alle 23 talen, met een kwaliteit die per taal verschilt",
@@ -3343,7 +3345,7 @@
       "followUps": "Vragen om door te nemen in een live gesprek",
       "pdf": "Pdf-rapporten met scores en elk antwoord",
       "messengers": "Samenvattingen via WhatsApp, Telegram, Viber of LINE",
-      "viewers": "Ook kijkers delen, zonder iets te wijzigen",
+      "viewers": "Ook kijkers kunnen rapporten delen",
       "everyone": "Elk teamlid schrijft, ook kijkers",
       "bell": "Nieuwe notities komen bij de bel en in je Slack-kanaal",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee en Breezy HR",
@@ -3354,7 +3356,7 @@
       "askTime": "Wie meer tijd nodig heeft, wordt gevraagd dat vóór de start te melden",
       "peopleDecide": "Ze horen dat mensen in je bedrijf de resultaten bekijken en beslissen",
       "digest": "Het overzicht: wie klaar is, niet-bezorgde uitnodigingen, niet-uitgenodigde kandidaten uit het ATS, nieuwe notities en interviews die klaar zijn",
-      "emailChoice": "Elk soort e-mail aan of uit te zetten in je instellingen",
+      "emailChoice": "Het overzicht, herinneringen, nieuws en aanbiedingen aan of uit te zetten in je instellingen",
       "stopEmails": "Kandidaten kunnen zich met één klik afmelden voor je e-mails"
     },
     "cards": {
@@ -3364,7 +3366,7 @@
       },
       "bank": {
         "title": "Gedeelde vragenbank",
-        "text": "Nieuwe interviews hergebruiken vragen die zich elders bewezen hebben. Houd de jouwe erbuiten met één vinkje."
+        "text": "Nieuwe interviews hergebruiken vragen die zich elders bewezen hebben. Houd de vragen van een interview buiten de gedeelde vragenbank met één schakelaar."
       },
       "quality": {
         "title": "Vragen die zichzelf verbeteren",
@@ -3377,6 +3379,10 @@
       "preview": {
         "title": "Probeer het eerst zelf",
         "text": "Doe het interview zoals een kandidaat, gratis, voordat je iemand uitnodigt."
+      },
+      "manage": {
+        "title": "Vragen beheren",
+        "text": "Lees elke vraag, schakel er een uit, genereer hem opnieuw of markeer het antwoord als fout."
       },
       "ats": {
         "title": "Vanuit je ATS",
@@ -3409,6 +3415,10 @@
       "accessible": {
         "title": "Toegankelijk",
         "text": "Gebouwd volgens WCAG 2.2 AA, in elke taal, licht en donker."
+      },
+      "practice": {
+        "title": "Gratis oefenen",
+        "text": "Iedereen kan per functie oefenen, gratis en privé, en ziet aan het eind elk juist antwoord."
       },
       "notifications": {
         "title": "Meldingen",
@@ -3452,11 +3462,15 @@
       },
       "roles": {
         "title": "Teamrollen",
-        "text": "Eigenaren, beheerders en kijkers; kijkers zien resultaten, maar wijzigen en besteden niets."
+        "text": "Teamleden zijn gratis. Alleen de eigenaar beheert het team; kijkers zien resultaten, delen rapporten en schrijven notities, en besteden niets."
+      },
+      "companies": {
+        "title": "Meerdere bedrijven",
+        "text": "Eén account kan eigenaar zijn van meerdere bedrijven, elk met een eigen team en credits."
       },
       "log": {
         "title": "Actielog",
-        "text": "De eigenaar ziet wie wat deed: in de app, via Mira, de API of een ATS."
+        "text": "De eigenaar ziet wie wat deed: in de app, via Mira, een AI-app, de API of een ATS."
       },
       "documents": {
         "title": "Documenten klaar",
@@ -3466,9 +3480,17 @@
         "title": "Privacy by design",
         "text": "Geen verkoop van data, niets afgeleid over kandidaten, geen stem bewaard door testee."
       },
+      "location": {
+        "title": "Opgeslagen in België",
+        "text": "Op Google Cloud in de EU; op de pagina Vertrouwen staat elke dienstverlener."
+      },
+      "retention": {
+        "title": "Op tijd verwijderd",
+        "text": "Resultaten worden 12 maanden na de laatste uitnodiging verwijderd, of meteen als je de uitnodiging van een kandidaat intrekt."
+      },
       "verified": {
         "title": "Geverifieerde bedrijven",
-        "text": "Een vinkje naast de naam van je bedrijf zodra de website geverifieerd is."
+        "text": "Een vinkje naast de naam van je bedrijf zodra een zakelijk e-mailadres op het domein van de website en onze beoordeling dat bevestigen."
       },
       "free": {
         "title": "{count, plural, one {# gratis kandidaat} other {# gratis kandidaten}}",
@@ -3555,21 +3577,23 @@
         "points": {
           "proposed": "Onderwerpen voorgesteld door AI",
           "edit": "Hernoemen, toevoegen of verwijderen",
+          "ask": "Vraag AI om ze te wijzigen",
           "subtopics": "Subonderwerpen per onderwerp",
-          "levels": "Van basis tot gevorderd",
+          "levels": "Niveau afgeleid uit de functieomschrijving",
           "approve": "Goedkeuren om te genereren"
         },
-        "alt": "De onderwerpen van een interview, elk met de vragen"
+        "alt": "De beoordeling van onderwerpen: onderwerpen met hun subonderwerpen, waarvan er één wordt bewerkt"
       },
       "questions": {
         "title": "Vragen worden gegenereerd en gecontroleerd",
         "text": "AI schrijft per onderwerp een pool van vragen, een tweede AI controleert blind een steekproef van de antwoordsleutels, en elke kandidaat krijgt een eigen willekeurige set.",
         "points": {
-          "unique": "Eigen vragen per kandidaat",
-          "checked": "Antwoordsleutels gecontroleerd door een tweede AI",
+          "unique": "Een willekeurige set voor elke kandidaat",
+          "checked": "Steekproef van antwoordsleutels gecontroleerd door een tweede AI",
           "bank": "Bewezen vragen uit de gedeelde vragenbank",
           "multi": "Eén of meer goede antwoorden",
-          "preview": "Probeer het als kandidaat"
+          "preview": "Probeer het als kandidaat",
+          "manage": "Elke vraag uitschakelen of opnieuw genereren"
         },
         "alt": "De vragen van een onderwerp, elk met de antwoordsleutel"
       },
@@ -3579,6 +3603,7 @@
         "points": {
           "time": "Tijd per vraag",
           "passMark": "Slaaggrens",
+          "count": "Vragen per kandidaat, tot 60",
           "mode": "Klik- of spraakmodus",
           "brand": "Je logo en kleuren",
           "private": "Vragen privé houden"
@@ -3587,7 +3612,7 @@
       },
       "invite": {
         "title": "Nodig kandidaten uit",
-        "text": "Haal kandidaten binnen zoals je werving al werkt. Voor elke kandidaat worden de credits gereserveerd, en teruggegeven als die nooit begint.",
+        "text": "Haal kandidaten binnen zoals je werving al werkt. Voor elke kandidaat worden de credits gereserveerd, en teruggegeven als die nooit antwoordt.",
         "points": {
           "names": "Namen met e-mailadressen",
           "reminder": "Eén herinnering na 3 dagen",
@@ -3626,8 +3651,10 @@
         "title": "Kandidaten doen het interview",
         "text": "Kandidaten zien vooraf de regels en de tijd, geven hun woord en beantwoorden één vraag met tijdslimiet tegelijk, met een klik of met hun stem, op elk apparaat.",
         "points": {
+          "signIn": "Inloggen met het uitgenodigde e-mailadres",
           "pledge": "Een belofte vóór de start",
           "timer": "Een timer bij elke vraag",
+          "onePass": "Eén poging, niet opnieuw af te leggen",
           "click": "Klikmodus",
           "voice": "Spraakmodus met Mira",
           "phone": "Werkt op een telefoon",
@@ -3643,10 +3670,11 @@
           "answers": "Elk antwoord en de tijd ervan",
           "signals": "Integriteitssignalen",
           "patterns": "Ongebruikelijke antwoordpatronen",
+          "followUps": "Vragen voor een live gesprek",
           "notes": "De notities van je team",
           "discover": "Mensen die openstaan voor nieuwe kansen"
         },
-        "alt": "De kandidaten van een interview, de beste eerst"
+        "alt": "De kandidaten van een interview, met hun status en score"
       },
       "share": {
         "title": "Deel de rapporten",

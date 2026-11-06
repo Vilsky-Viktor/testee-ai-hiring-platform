@@ -3280,7 +3280,7 @@
       "brand": {
         "title": "Twoja marka, nie nasza",
         "text": "Ustaw logo, kolory dla trybu jasnego i ciemnego, czcionki i narożniki, z podglądem na żywo. Kandydaci widzą tylko Twoją firmę, bez nagłówka i stopki testee.",
-        "alt": "Karta marki: logo, czcionki i narożniki z podglądem rozmowy na żywo."
+        "alt": "Karta marki: kolory strony, przycisków i wypełnień z podglądem rozmowy na żywo."
       },
       "candidates": {
         "title": "Porównuj kandydatów na pierwszy rzut oka",
@@ -3319,18 +3319,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} na każdy temat; Ty wybierasz, ile dostanie każdy kandydat",
+      "questions": "{count, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} na każdy temat; Ty wybierasz, ile dostanie każdy kandydat, maksymalnie 60 na rozmowę",
       "options": "Cztery odpowiedzi do wyboru w każdym pytaniu, czasem więcej niż jedna poprawna",
       "examples": "Kod, dane, wzory lub dokumenty jako przykłady, gdy wymaga tego stanowisko",
       "names": "Wiersze, których nie da się zaprosić, są wskazane wraz z powodem",
       "credits": "Kredyty wracają za każdego, kto nie odpowie",
       "expire": "Zaproszenia same wygasają po miesiącu",
+      "signIn": "Kandydaci logują się adresem e-mail, na który ich zaproszono, więc przekazane zaproszenie nie przyda się nikomu innemu",
       "linkOff": "Można go wyłączyć w każdej chwili, a wyłącza się sam po zatrudnieniu",
       "mode": "Tryb kliknięć lub głosowy wybierany na tej samej stronie",
       "settings": "Średni czas na pytanie i próg zaliczenia tuż obok",
       "time": "Łączny czas widoczny przed startem",
       "phone": "Działa na telefonie i na komputerze",
       "saved": "Postęp zapisuje się na bieżąco",
+      "onePass": "Jedno podejście: bez powrotu do pytań i bez powtórek",
       "tap": "Dotknięcie odpowiedzi zawsze też działa",
       "kept": "testee nie przechowuje głosu: jest on tylko zamieniany na tekst",
       "voiceLanguages": "We wszystkich 23 językach, z jakością zależną od języka",
@@ -3343,7 +3345,7 @@
       "followUps": "Pytania do omówienia na rozmowie na żywo",
       "pdf": "Raporty PDF z wynikami i każdą odpowiedzią",
       "messengers": "Podsumowania przez WhatsApp, Telegram, Viber lub LINE",
-      "viewers": "Obserwatorzy też udostępniają, niczego nie zmieniając",
+      "viewers": "Obserwatorzy też udostępniają raporty",
       "everyone": "Każdy członek zespołu pisze, obserwatorzy też",
       "bell": "Nowe notatki trafiają pod dzwonek i na Twój kanał Slack",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee i Breezy HR",
@@ -3354,7 +3356,7 @@
       "askTime": "Kto potrzebuje więcej czasu, dowiaduje się, że ma o to poprosić przed startem",
       "peopleDecide": "Kandydaci wiedzą, że wyniki sprawdzają i decyzję podejmują ludzie z Twojej firmy",
       "digest": "Podsumowanie: kto skończył, niedostarczone zaproszenia, niezaproszeni kandydaci z ATS, nowe notatki i gotowe rozmowy",
-      "emailChoice": "Każdy rodzaj e-maili włączany lub wyłączany w Twoich ustawieniach",
+      "emailChoice": "Podsumowanie, przypomnienia, nowości i oferty włączane lub wyłączane w Twoich ustawieniach",
       "stopEmails": "Kandydaci mogą wypisać się z Twoich e-maili jednym kliknięciem"
     },
     "cards": {
@@ -3364,7 +3366,7 @@
       },
       "bank": {
         "title": "Wspólna baza pytań",
-        "text": "Nowe rozmowy korzystają z pytań sprawdzonych w innych. Swoje możesz wyłączyć jednym polem wyboru."
+        "text": "Nowe rozmowy korzystają z pytań sprawdzonych w innych. Jeden przełącznik i pytania danej rozmowy nie trafią do bazy."
       },
       "quality": {
         "title": "Pytania, które same się poprawiają",
@@ -3377,6 +3379,10 @@
       "preview": {
         "title": "Najpierw wypróbuj",
         "text": "Przejdź rozmowę tak jak kandydat, za darmo, zanim kogokolwiek zaprosisz."
+      },
+      "manage": {
+        "title": "Zarządzanie pytaniami",
+        "text": "Czytaj każde pytanie, wyłączaj je, generuj ponownie lub oznaczaj jego odpowiedź jako błędną."
       },
       "ats": {
         "title": "Z Twojego ATS",
@@ -3409,6 +3415,10 @@
       "accessible": {
         "title": "Dostępność",
         "text": "Zgodnie z WCAG 2.2 AA, w każdym języku, w trybie jasnym i ciemnym."
+      },
+      "practice": {
+        "title": "Darmowe ćwiczenia",
+        "text": "Każdy może ćwiczyć pod kątem stanowiska, za darmo i prywatnie, a na końcu zobaczyć wszystkie poprawne odpowiedzi."
       },
       "notifications": {
         "title": "Powiadomienia",
@@ -3452,11 +3462,15 @@
       },
       "roles": {
         "title": "Role w zespole",
-        "text": "Właściciele, administratorzy i obserwatorzy; obserwatorzy widzą wyniki, ale niczego nie zmieniają ani nie wydają."
+        "text": "Dodawanie członków zespołu jest bezpłatne. Zespołem zarządza tylko właściciel; obserwatorzy widzą wyniki, udostępniają raporty i piszą notatki, niczego nie wydając."
+      },
+      "companies": {
+        "title": "Kilka firm",
+        "text": "Jedno konto może być właścicielem kilku firm, każda z własnym zespołem i kredytami."
       },
       "log": {
         "title": "Dziennik działań",
-        "text": "Właściciel widzi, kto co zrobił: w aplikacji, przez Mirę, API lub ATS."
+        "text": "Właściciel widzi, kto co zrobił: w aplikacji, przez Mirę, aplikację AI, API lub ATS."
       },
       "documents": {
         "title": "Gotowe dokumenty",
@@ -3466,9 +3480,17 @@
         "title": "Prywatność w standardzie",
         "text": "Bez sprzedaży danych, bez wnioskowania o kandydatach, testee nie przechowuje głosu."
       },
+      "location": {
+        "title": "Przechowywane w Belgii",
+        "text": "W Google Cloud w UE; strona zaufania wymienia wszystkich dostawców."
+      },
+      "retention": {
+        "title": "Usuwane na czas",
+        "text": "Wyniki są usuwane 12 miesięcy po ostatnim zaproszeniu albo od razu, gdy wycofasz zaproszenie kandydata."
+      },
       "verified": {
         "title": "Zweryfikowane firmy",
-        "text": "Znaczek obok nazwy Twojej firmy, gdy jej strona internetowa zostanie zweryfikowana."
+        "text": "Znaczek obok nazwy Twojej firmy po zalogowaniu się służbowym e-mailem w domenie jej strony i naszym sprawdzeniu."
       },
       "free": {
         "title": "{count, plural, one {# darmowy kandydat} few {# darmowi kandydaci} many {# darmowych kandydatów} other {# darmowego kandydata}}",
@@ -3555,21 +3577,23 @@
         "points": {
           "proposed": "Tematy zaproponowane przez AI",
           "edit": "Zmiana nazwy, dodawanie, usuwanie",
+          "ask": "Poproś AI o zmiany",
           "subtopics": "Podtematy w każdym temacie",
-          "levels": "Od podstawowego do zaawansowanego",
+          "levels": "Poziom odczytany z opisu stanowiska",
           "approve": "Zatwierdzenie uruchamia generowanie"
         },
-        "alt": "Tematy rozmowy, każdy z pytaniami"
+        "alt": "Przegląd tematów: tematy z podtematami, jeden w trakcie edycji"
       },
       "questions": {
         "title": "Pytania są generowane i sprawdzane",
         "text": "AI pisze pulę pytań do każdego tematu, druga AI sprawdza w ciemno próbkę kluczy odpowiedzi, a każdy kandydat dostaje własny losowy zestaw.",
         "points": {
-          "unique": "Inne pytania dla każdego kandydata",
-          "checked": "Klucze odpowiedzi sprawdzane przez drugą AI",
+          "unique": "Losowy zestaw dla każdego kandydata",
+          "checked": "Próbka kluczy odpowiedzi sprawdzana przez drugą AI",
           "bank": "Sprawdzone pytania ze wspólnej bazy",
           "multi": "Jedna lub kilka poprawnych odpowiedzi",
-          "preview": "Wypróbuj jako kandydat"
+          "preview": "Wypróbuj jako kandydat",
+          "manage": "Wyłącz lub wygeneruj ponownie dowolne pytanie"
         },
         "alt": "Pytania z tematu, każde z kluczem odpowiedzi"
       },
@@ -3579,6 +3603,7 @@
         "points": {
           "time": "Czas na pytanie",
           "passMark": "Próg zaliczenia",
+          "count": "Do 60 pytań na kandydata",
           "mode": "Tryb kliknięć lub głosowy",
           "brand": "Twoje logo i kolory",
           "private": "Pytania tylko dla Ciebie"
@@ -3587,7 +3612,7 @@
       },
       "invite": {
         "title": "Zaproś kandydatów",
-        "text": "Zapraszaj kandydatów tak, jak już prowadzisz rekrutację. Na każdego rezerwowane są kredyty za jednego kandydata, zwracane, jeśli nigdy nie zacznie.",
+        "text": "Zapraszaj kandydatów tak, jak już prowadzisz rekrutację. Na każdego rezerwowane są kredyty za jednego kandydata, zwracane, jeśli nigdy nie odpowie.",
         "points": {
           "names": "Imiona i nazwiska z e-mailami",
           "reminder": "Jedno przypomnienie po 3 dniach",
@@ -3626,8 +3651,10 @@
         "title": "Kandydaci przechodzą rozmowę",
         "text": "Kandydaci z góry widzą zasady i czas, dają słowo i odpowiadają na pytania po jednym, każde na czas, kliknięciem lub głosem, na dowolnym urządzeniu.",
         "points": {
+          "signIn": "Logowanie zaproszonym adresem e-mail",
           "pledge": "Zobowiązanie przed startem",
           "timer": "Limit czasu na każde pytanie",
+          "onePass": "Jedno podejście, bez powtórek",
           "click": "Tryb kliknięć",
           "voice": "Tryb głosowy z Mirą",
           "phone": "Działa na telefonie",
@@ -3643,10 +3670,11 @@
           "answers": "Każda odpowiedź i jej czas",
           "signals": "Ostrzeżenia o podejrzanych zachowaniach",
           "patterns": "Nietypowe wzorce odpowiedzi",
+          "followUps": "Pytania na rozmowę na żywo",
           "notes": "Notatki Twojego zespołu",
           "discover": "Osoby otwarte na oferty pracy"
         },
-        "alt": "Kandydaci w rozmowie, od najlepszego"
+        "alt": "Kandydaci w rozmowie, z ich statusami i wynikami"
       },
       "share": {
         "title": "Udostępnij raporty",

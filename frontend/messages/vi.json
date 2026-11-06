@@ -3284,7 +3284,7 @@
       "brand": {
         "title": "Thương hiệu của bạn, không phải của chúng tôi",
         "text": "Đặt logo, màu cho giao diện sáng và tối, phông chữ và góc bo, với bản xem trước trực tiếp. Ứng viên chỉ thấy công ty của bạn, không có đầu trang hay chân trang của testee.",
-        "alt": "Thẻ thương hiệu: logo, phông chữ và góc bo, với bản xem trước trực tiếp của buổi phỏng vấn."
+        "alt": "Màu trang, nút và phần tô trong thẻ thương hiệu, với bản xem trước trực tiếp của buổi phỏng vấn."
       },
       "candidates": {
         "title": "So sánh ứng viên trong nháy mắt",
@@ -3323,18 +3323,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, other {# câu hỏi}} được soạn cho mỗi chủ đề; bạn chọn mỗi ứng viên nhận bao nhiêu câu",
+      "questions": "{count, plural, other {# câu hỏi}} được soạn cho mỗi chủ đề; bạn chọn mỗi ứng viên nhận bao nhiêu câu, tối đa 60 câu mỗi buổi phỏng vấn",
       "options": "Bốn phương án mỗi câu, một số câu có nhiều hơn một đáp án đúng",
       "examples": "Mã, dữ liệu, công thức hoặc tài liệu được hiển thị làm ví dụ khi vị trí cần",
       "names": "Các dòng không mời được sẽ được nêu rõ, kèm lý do",
       "credits": "Credit được hoàn lại cho người không trả lời câu nào",
       "expire": "Lời mời tự hết hạn sau một tháng",
+      "signIn": "Ứng viên đăng nhập bằng email được bạn mời, nên lời mời được chuyển tiếp không dùng được cho người khác",
       "linkOff": "Tắt bất cứ lúc nào, và khi vị trí đã tuyển được người",
       "mode": "Chọn chế độ nhấp hoặc giọng nói ngay trên cùng trang",
       "settings": "Thời gian trung bình mỗi câu hỏi và điểm đạt ở ngay bên cạnh",
       "time": "Tổng thời gian hiển thị trước khi bắt đầu",
       "phone": "Dùng được trên điện thoại cũng như máy tính",
       "saved": "Tiến độ được lưu trong khi làm",
+      "onePass": "Chỉ một lần: không quay lại câu trước, không làm lại",
       "tap": "Chạm vào phương án vẫn luôn dùng được",
       "kept": "testee không lưu giọng nói: giọng nói chỉ được chuyển thành văn bản",
       "voiceLanguages": "Trong cả 23 ngôn ngữ, với chất lượng khác nhau tùy ngôn ngữ",
@@ -3347,7 +3349,7 @@
       "followUps": "Câu hỏi để trao đổi trong buổi phỏng vấn trực tiếp",
       "pdf": "Báo cáo PDF với điểm và mọi câu trả lời",
       "messengers": "Tóm tắt qua WhatsApp, Telegram, Viber hoặc LINE",
-      "viewers": "Người xem cũng chia sẻ được, mà không thay đổi gì",
+      "viewers": "Người xem cũng chia sẻ được báo cáo",
       "everyone": "Mọi thành viên đều viết được, kể cả người xem",
       "bell": "Ghi chú mới hiện ở biểu tượng chuông và kênh Slack của bạn",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee và Breezy HR",
@@ -3358,7 +3360,7 @@
       "askTime": "Ai cần thêm thời gian được nhắc liên hệ trước khi bắt đầu",
       "peopleDecide": "Ứng viên được biết nhân sự của công ty bạn xem xét kết quả và quyết định",
       "digest": "Bản tóm tắt: ai đã hoàn thành, lời mời chưa được gửi đến, ứng viên từ ATS chưa được mời, ghi chú mới và buổi phỏng vấn đã sẵn sàng",
-      "emailChoice": "Bật hoặc tắt từng loại email trong phần cài đặt của bạn",
+      "emailChoice": "Bật hoặc tắt bản tóm tắt, lời nhắc, tin tức và ưu đãi trong phần cài đặt của bạn",
       "stopEmails": "Ứng viên có thể ngừng nhận email của bạn chỉ với một cú nhấp"
     },
     "cards": {
@@ -3368,7 +3370,7 @@
       },
       "bank": {
         "title": "Ngân hàng câu hỏi dùng chung",
-        "text": "Buổi phỏng vấn mới dùng lại các câu hỏi đã được kiểm chứng ở buổi khác. Giữ câu hỏi của bạn ra ngoài chỉ với một ô đánh dấu."
+        "text": "Buổi phỏng vấn mới dùng lại các câu hỏi đã được kiểm chứng ở buổi khác. Giữ câu hỏi của một buổi phỏng vấn ra ngoài ngân hàng chỉ với một công tắc."
       },
       "quality": {
         "title": "Câu hỏi tự hoàn thiện",
@@ -3381,6 +3383,10 @@
       "preview": {
         "title": "Xem trước",
         "text": "Làm thử buổi phỏng vấn như ứng viên, miễn phí, trước khi mời ai."
+      },
+      "manage": {
+        "title": "Quản lý câu hỏi",
+        "text": "Đọc mọi câu hỏi, tắt, tạo lại hoặc đánh dấu đáp án sai."
       },
       "ats": {
         "title": "Từ ATS của bạn",
@@ -3413,6 +3419,10 @@
       "accessible": {
         "title": "Dễ tiếp cận",
         "text": "Xây dựng theo WCAG 2.2 AA, ở mọi ngôn ngữ, giao diện sáng và tối."
+      },
+      "practice": {
+        "title": "Luyện tập miễn phí",
+        "text": "Bất kỳ ai cũng có thể luyện tập theo vị trí, miễn phí và riêng tư, rồi xem mọi đáp án đúng ở cuối."
       },
       "notifications": {
         "title": "Thông báo",
@@ -3456,11 +3466,15 @@
       },
       "roles": {
         "title": "Vai trò trong nhóm",
-        "text": "Chủ sở hữu, quản trị viên và người xem; người xem thấy kết quả nhưng không thay đổi hay chi tiêu gì."
+        "text": "Thành viên miễn phí. Chỉ chủ sở hữu quản lý nhóm; người xem thấy kết quả, chia sẻ báo cáo và viết ghi chú, không tốn credit."
+      },
+      "companies": {
+        "title": "Nhiều công ty",
+        "text": "Một tài khoản có thể sở hữu nhiều công ty, mỗi công ty có nhóm và credit riêng."
       },
       "log": {
         "title": "Nhật ký thao tác",
-        "text": "Chủ sở hữu thấy ai đã làm gì, trong ứng dụng, qua Mira, API hay ATS."
+        "text": "Chủ sở hữu thấy ai đã làm gì, trong ứng dụng, qua Mira, ứng dụng AI, API hay ATS."
       },
       "documents": {
         "title": "Tài liệu sẵn sàng",
@@ -3470,9 +3484,17 @@
         "title": "Quyền riêng tư từ khâu thiết kế",
         "text": "Không bán dữ liệu, không suy đoán gì về ứng viên, testee không lưu giọng nói."
       },
+      "location": {
+        "title": "Lưu trữ tại Bỉ",
+        "text": "Trên Google Cloud ở EU; trang Tin cậy liệt kê mọi nhà cung cấp."
+      },
+      "retention": {
+        "title": "Xóa đúng hạn",
+        "text": "Kết quả bị xóa 12 tháng sau lần gửi lời mời cuối, hoặc ngay khi bạn thu hồi lời mời của ứng viên."
+      },
       "verified": {
         "title": "Công ty đã xác minh",
-        "text": "Dấu tích cạnh tên công ty khi trang web của công ty đã được xác minh."
+        "text": "Dấu tích cạnh tên công ty khi email công việc thuộc tên miền trang web của công ty và đánh giá của chúng tôi xác nhận."
       },
       "free": {
         "title": "{count, plural, other {# ứng viên miễn phí}}",
@@ -3559,21 +3581,23 @@
         "points": {
           "proposed": "Chủ đề do AI đề xuất",
           "edit": "Đổi tên, thêm hoặc xóa",
+          "ask": "Nhờ AI thay đổi",
           "subtopics": "Chủ đề con cho từng chủ đề",
-          "levels": "Từ cơ bản đến nâng cao",
+          "levels": "Cấp bậc đọc từ mô tả công việc",
           "approve": "Phê duyệt để tạo câu hỏi"
         },
-        "alt": "Các chủ đề của buổi phỏng vấn, mỗi chủ đề kèm câu hỏi"
+        "alt": "Màn hình duyệt chủ đề: các chủ đề với chủ đề con, một chủ đề đang được sửa"
       },
       "questions": {
         "title": "Câu hỏi được tạo và kiểm tra",
         "text": "AI soạn một bộ câu hỏi cho mỗi chủ đề, một AI thứ hai kiểm tra một phần đáp án mà không xem đáp án của AI thứ nhất, và mỗi ứng viên nhận một bộ câu hỏi ngẫu nhiên của riêng mình.",
         "points": {
-          "unique": "Câu hỏi riêng cho từng ứng viên",
-          "checked": "Đáp án được AI thứ hai kiểm tra",
+          "unique": "Bộ câu hỏi ngẫu nhiên cho mỗi ứng viên",
+          "checked": "Một mẫu đáp án được AI thứ hai kiểm tra",
           "bank": "Câu hỏi đã kiểm chứng từ ngân hàng dùng chung",
           "multi": "Một hoặc nhiều đáp án đúng",
-          "preview": "Làm thử như ứng viên"
+          "preview": "Làm thử như ứng viên",
+          "manage": "Tắt hoặc tạo lại câu hỏi bất kỳ"
         },
         "alt": "Câu hỏi của một chủ đề, mỗi câu kèm đáp án"
       },
@@ -3583,6 +3607,7 @@
         "points": {
           "time": "Thời gian mỗi câu",
           "passMark": "Điểm đạt",
+          "count": "Số câu hỏi mỗi ứng viên, tối đa 60",
           "mode": "Chế độ nhấp hoặc giọng nói",
           "brand": "Logo và màu sắc của bạn",
           "private": "Giữ câu hỏi riêng tư"
@@ -3591,7 +3616,7 @@
       },
       "invite": {
         "title": "Mời ứng viên",
-        "text": "Đưa ứng viên vào theo đúng cách bạn vẫn tuyển dụng. Mỗi người được giữ trước số credit cho một ứng viên, và được hoàn lại nếu họ không bao giờ bắt đầu.",
+        "text": "Đưa ứng viên vào theo đúng cách bạn vẫn tuyển dụng. Mỗi người được giữ trước số credit cho một ứng viên, và được hoàn lại nếu họ không bao giờ trả lời.",
         "points": {
           "names": "Tên kèm email",
           "reminder": "Một lời nhắc sau 3 ngày",
@@ -3630,8 +3655,10 @@
         "title": "Ứng viên làm bài",
         "text": "Ứng viên xem quy tắc và thời gian ngay từ đầu, cam kết tự làm bài, rồi trả lời từng câu hỏi có tính giờ, bằng cách nhấp hoặc bằng giọng nói, trên mọi thiết bị.",
         "points": {
+          "signIn": "Đăng nhập bằng email được mời",
           "pledge": "Cam kết trước khi bắt đầu",
           "timer": "Đồng hồ đếm giờ cho mỗi câu",
+          "onePass": "Chỉ một lần, không làm lại",
           "click": "Chế độ nhấp",
           "voice": "Chế độ giọng nói với Mira",
           "phone": "Dùng được trên điện thoại",
@@ -3647,10 +3674,11 @@
           "answers": "Mọi câu trả lời và thời gian của nó",
           "signals": "Cảnh báo hành vi bất thường",
           "patterns": "Kiểu trả lời bất thường",
+          "followUps": "Câu hỏi cho buổi phỏng vấn trực tiếp",
           "notes": "Ghi chú của nhóm bạn",
           "discover": "Người sẵn sàng nhận cơ hội việc làm"
         },
-        "alt": "Ứng viên của một buổi phỏng vấn, người giỏi nhất trước"
+        "alt": "Ứng viên của một buổi phỏng vấn, kèm trạng thái và điểm số"
       },
       "share": {
         "title": "Chia sẻ báo cáo",

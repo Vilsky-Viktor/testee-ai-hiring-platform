@@ -3280,7 +3280,7 @@
       "brand": {
         "title": "Votre marque, pas la nôtre",
         "text": "Définissez votre logo, vos couleurs pour les modes clair et sombre, vos polices et vos angles, avec un aperçu en direct. Les candidats ne voient que votre entreprise, sans l'en-tête ni le pied de page de testee.",
-        "alt": "L'onglet marque : le logo, les polices et les angles, avec un aperçu en direct de l'entretien."
+        "alt": "L'onglet marque : les couleurs de la page, des boutons et des aplats, avec un aperçu en direct de l'entretien."
       },
       "candidates": {
         "title": "Comparez les candidats d'un coup d'œil",
@@ -3319,18 +3319,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, one {# question rédigée} other {# questions rédigées}} par thème ; vous choisissez combien chaque candidat en reçoit",
+      "questions": "{count, plural, one {# question rédigée} other {# questions rédigées}} par thème ; vous choisissez combien chaque candidat en reçoit, jusqu'à 60 par entretien",
       "options": "Quatre options par question, certaines avec plusieurs bonnes réponses",
       "examples": "Code, données, formules ou documents présentés en exemples quand le poste l'exige",
       "names": "Les lignes impossibles à inviter sont indiquées, avec la raison",
       "credits": "Les crédits reviennent pour ceux qui ne répondent jamais",
       "expire": "Les invitations expirent d'elles-mêmes au bout d'un mois",
+      "signIn": "Les candidats se connectent avec l'adresse e-mail à laquelle vous les avez invités, si bien qu'une invitation transférée ne sert à personne d'autre",
       "linkOff": "Désactivable à tout moment, et quand le poste est pourvu",
       "mode": "Mode clic ou vocal choisi sur la même page",
       "settings": "Temps moyen par question et seuil de réussite juste à côté",
       "time": "La durée totale affichée avant de commencer",
       "phone": "Fonctionne sur téléphone comme sur ordinateur",
       "saved": "La progression est enregistrée au fur et à mesure",
+      "onePass": "Une seule tentative : ni retour en arrière, ni nouvel essai",
       "tap": "Toucher une option fonctionne toujours aussi",
       "kept": "testee ne conserve aucune voix : elle est seulement transcrite en texte",
       "voiceLanguages": "Dans les 23 langues, avec une qualité qui varie selon la langue",
@@ -3343,7 +3345,7 @@
       "followUps": "Des questions à approfondir lors d'un entretien en direct",
       "pdf": "Rapports PDF avec les notes et toutes les réponses",
       "messengers": "Résumés sur WhatsApp, Telegram, Viber ou LINE",
-      "viewers": "Les lecteurs partagent aussi, sans rien modifier",
+      "viewers": "Les lecteurs partagent aussi les rapports",
       "everyone": "Chaque membre écrit, les lecteurs aussi",
       "bell": "Les nouveaux commentaires arrivent sous la cloche et dans votre canal Slack",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee et Breezy HR",
@@ -3354,7 +3356,7 @@
       "askTime": "Quiconque a besoin de plus de temps est invité à le demander avant de commencer",
       "peopleDecide": "Informés que des personnes de votre entreprise examinent les résultats et décident",
       "digest": "Le récapitulatif : qui a terminé, invitations non remises, candidats de l'ATS non invités, nouveaux commentaires et entretiens prêts",
-      "emailChoice": "Chaque type d'e-mail activé ou désactivé dans vos paramètres",
+      "emailChoice": "Le récapitulatif, les rappels, les nouveautés et les offres activés ou désactivés dans vos paramètres",
       "stopEmails": "Les candidats peuvent se désabonner de vos e-mails en un clic"
     },
     "cards": {
@@ -3364,7 +3366,7 @@
       },
       "bank": {
         "title": "Banque de questions partagée",
-        "text": "Les nouveaux entretiens réutilisent des questions éprouvées ailleurs. Gardez les vôtres à l'écart d'une case à cocher."
+        "text": "Les nouveaux entretiens réutilisent des questions éprouvées ailleurs. Gardez celles d'un entretien à l'écart d'un simple interrupteur."
       },
       "quality": {
         "title": "Des questions qui se corrigent",
@@ -3377,6 +3379,10 @@
       "preview": {
         "title": "Testez-le d'abord",
         "text": "Passez l'entretien comme un candidat, gratuitement, avant d'inviter qui que ce soit."
+      },
+      "manage": {
+        "title": "Gérer les questions",
+        "text": "Lisez chaque question, désactivez-la, régénérez-la ou marquez sa réponse comme fausse."
       },
       "ats": {
         "title": "Depuis votre ATS",
@@ -3409,6 +3415,10 @@
       "accessible": {
         "title": "Accessible",
         "text": "Conçu pour les WCAG 2.2 AA, dans toutes les langues, en mode clair et sombre."
+      },
+      "practice": {
+        "title": "Entraînement gratuit",
+        "text": "Tout le monde peut s'entraîner par poste, gratuitement et en privé, et voir toutes les bonnes réponses à la fin."
       },
       "notifications": {
         "title": "Notifications",
@@ -3452,11 +3462,15 @@
       },
       "roles": {
         "title": "Rôles de l'équipe",
-        "text": "Propriétaires, admins et lecteurs ; les lecteurs voient les résultats mais ne modifient ni ne dépensent rien."
+        "text": "Ajouter des membres ne coûte rien. Seul le propriétaire gère l'équipe ; les lecteurs voient les résultats, partagent les rapports, écrivent des commentaires et ne dépensent rien."
+      },
+      "companies": {
+        "title": "Plusieurs entreprises",
+        "text": "Un compte peut posséder plusieurs entreprises, chacune avec son équipe et ses crédits."
       },
       "log": {
         "title": "Journal des actions",
-        "text": "Le propriétaire voit qui a fait quoi : dans l'application, via Mira, l'API ou un ATS."
+        "text": "Le propriétaire voit qui a fait quoi : dans l'application, via Mira, une app IA, l'API ou un ATS."
       },
       "documents": {
         "title": "Documents prêts",
@@ -3466,9 +3480,17 @@
         "title": "Confidentialité dès la conception",
         "text": "Aucune vente de données, rien de déduit sur les candidats, aucune voix conservée par testee."
       },
+      "location": {
+        "title": "Données stockées en Belgique",
+        "text": "Sur Google Cloud dans l'UE ; la page Confiance liste tous les prestataires."
+      },
+      "retention": {
+        "title": "Suppression dans les délais",
+        "text": "Les résultats sont supprimés 12 mois après la dernière invitation, ou aussitôt que vous révoquez l'invitation d'un candidat."
+      },
       "verified": {
         "title": "Entreprises vérifiées",
-        "text": "Une coche à côté du nom de votre entreprise une fois son site web vérifié."
+        "text": "Une coche à côté du nom de votre entreprise, après connexion avec un e-mail professionnel de son site web et notre examen."
       },
       "free": {
         "title": "{count, plural, one {# candidat gratuit} other {# candidats gratuits}}",
@@ -3555,21 +3577,23 @@
         "points": {
           "proposed": "Thèmes proposés par l'IA",
           "edit": "Renommer, ajouter ou retirer",
+          "ask": "Demander à l'IA de les modifier",
           "subtopics": "Des sous-thèmes pour chacun",
-          "levels": "Du niveau basique à avancé",
+          "levels": "Niveau déduit de la fiche de poste",
           "approve": "Valider pour générer"
         },
-        "alt": "Les thèmes d'un entretien, chacun avec ses questions"
+        "alt": "La revue des thèmes : les thèmes et leurs sous-thèmes, dont un en cours de modification"
       },
       "questions": {
         "title": "Les questions sont générées et vérifiées",
         "text": "L'IA rédige un ensemble de questions pour chaque thème, une seconde IA vérifie à l'aveugle un échantillon de corrigés, et chaque candidat reçoit sa propre série aléatoire.",
         "points": {
-          "unique": "Des questions propres à chaque candidat",
-          "checked": "Corrigés vérifiés par une seconde IA",
+          "unique": "Une sélection aléatoire pour chaque candidat",
+          "checked": "Un échantillon de corrigés vérifié par une seconde IA",
           "bank": "Des questions éprouvées de la banque partagée",
           "multi": "Une ou plusieurs bonnes réponses",
-          "preview": "Testez-le comme un candidat"
+          "preview": "Testez-le comme un candidat",
+          "manage": "Désactiver ou régénérer n'importe quelle question"
         },
         "alt": "Les questions d'un thème, chacune avec son corrigé"
       },
@@ -3579,6 +3603,7 @@
         "points": {
           "time": "Temps par question",
           "passMark": "Seuil de réussite",
+          "count": "Questions par candidat, jusqu'à 60",
           "mode": "Mode clic ou vocal",
           "brand": "Votre logo et vos couleurs",
           "private": "Garder les questions privées"
@@ -3587,7 +3612,7 @@
       },
       "invite": {
         "title": "Invitez des candidats",
-        "text": "Faites venir les candidats comme votre recrutement fonctionne déjà. Pour chacun, les crédits d'un candidat sont réservés, puis rendus s'il ne commence jamais.",
+        "text": "Faites venir les candidats comme votre recrutement fonctionne déjà. Pour chacun, les crédits d'un candidat sont réservés, puis rendus s'il ne répond jamais.",
         "points": {
           "names": "Noms et adresses e-mail",
           "reminder": "Un rappel au bout de 3 jours",
@@ -3626,8 +3651,10 @@
         "title": "Les candidats passent l'entretien",
         "text": "Les candidats voient les règles et la durée dès le départ, s'engagent sur l'honneur et répondent à une question chronométrée à la fois, d'un clic ou à l'oral, sur n'importe quel appareil.",
         "points": {
+          "signIn": "Connexion avec l'e-mail invité",
           "pledge": "Un engagement avant de commencer",
           "timer": "Un minuteur sur chaque question",
+          "onePass": "Une seule tentative, sans reprise",
           "click": "Mode clic",
           "voice": "Mode vocal avec Mira",
           "phone": "Fonctionne sur téléphone",
@@ -3643,10 +3670,11 @@
           "answers": "Chaque réponse et son temps",
           "signals": "Alertes d'intégrité",
           "patterns": "Schémas de réponse inhabituels",
+          "followUps": "Des questions pour un entretien en direct",
           "notes": "Les commentaires de votre équipe",
           "discover": "Des personnes ouvertes aux opportunités"
         },
-        "alt": "Les candidats d'un entretien, les meilleurs en premier"
+        "alt": "Les candidats d'un entretien, avec leurs statuts et leurs notes"
       },
       "share": {
         "title": "Partagez les rapports",

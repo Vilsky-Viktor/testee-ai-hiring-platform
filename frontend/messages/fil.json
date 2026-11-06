@@ -3260,7 +3260,7 @@
       "link": {
         "title": "Isang link para sa job ad mo",
         "text": "I-on ang shareable link ng interview at ilagay ito sa job ad mo. Puwede itong sagutan ng kahit sino nang isang beses, gamit ang na-verify na email.",
-        "alt": "Ang tab ng settings ng isang interview: ang shareable link, ang switch ng click at voice mode, ang oras bawat tanong at ang pass mark."
+        "alt": "Ang tab ng settings ng isang interview: ang shareable link, ang switch ng click at voice mode, ang oras bawat tanong at ang passing grade."
       },
       "start": {
         "title": "Malinaw na patakaran sa simula pa lang",
@@ -3280,11 +3280,11 @@
       "brand": {
         "title": "Ang brand mo, hindi amin",
         "text": "Itakda ang logo mo, mga kulay para sa light at dark, mga font at mga sulok, na may live preview. Ang kumpanya mo lang ang nakikita ng mga aplikante, walang header o footer ng testee.",
-        "alt": "Ang tab ng brand: ang logo, mga font at mga sulok, na may live preview ng interview."
+        "alt": "Ang mga kulay ng tab ng brand para sa page, mga button at mga fill, na may live preview ng interview."
       },
       "candidates": {
         "title": "Ikumpara ang mga aplikante sa isang tingin",
-        "text": "Ang status at grade ng bawat aplikante kumpara sa pass mark mo, sa iisang listahan. I-sort ayon sa grade, maghanap ayon sa pangalan o email, i-filter kung sino ang pumasa o naka-flag.",
+        "text": "Ang status at grade ng bawat aplikante kumpara sa passing grade mo, sa iisang listahan. I-sort ayon sa grade, maghanap ayon sa pangalan o email, i-filter kung sino ang pumasa o naka-flag.",
         "alt": "Listahan ng mga aplikante ng isang interview na may mga pangalan, status, grade at isang naka-flag na aplikante."
       },
       "signals": {
@@ -3319,18 +3319,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, one {# tanong} other {# tanong}} ang ginagawa bawat topic; ikaw ang pipili kung ilan ang makukuha ng bawat aplikante",
+      "questions": "{count, plural, one {# tanong} other {# tanong}} ang ginagawa bawat topic; ikaw ang pipili kung ilan ang makukuha ng bawat aplikante, hanggang 60 bawat interview",
       "options": "Apat na pagpipilian bawat tanong, may ilang may higit sa isang tamang sagot",
       "examples": "Ipinapakita bilang halimbawa ang code, data, formula o dokumento kapag kailangan ng role",
       "names": "Pinangangalanan ang mga linyang hindi ma-imbitahan, kasama ang dahilan",
       "credits": "Bumabalik ang credits para sa sinumang hindi kailanman sumagot",
       "expire": "Kusang nag-e-expire ang mga imbitasyon pagkalipas ng isang buwan",
+      "signIn": "Nagsa-sign in ang mga aplikante gamit ang email na inimbitahan mo, kaya walang silbi sa iba ang isang ipinasang imbitasyon",
       "linkOff": "Puwedeng i-off anumang oras, at kapag may na-hire na sa role",
       "mode": "Pinipili ang click o voice mode sa parehong page",
-      "settings": "Katabi ang average na oras bawat tanong at ang pass mark",
+      "settings": "Katabi ang average na oras bawat tanong at ang passing grade",
       "time": "Ipinapakita ang kabuuang oras bago sila magsimula",
       "phone": "Gumagana sa phone pati sa computer",
       "saved": "Sine-save ang progreso habang sumasagot",
+      "onePass": "Isang attempt: walang pagbalik, walang pag-ulit",
       "tap": "Gumagana rin palagi ang pag-tap sa isang pagpipilian",
       "kept": "Walang itinatagong boses ang testee: ginagawa lang itong text",
       "voiceLanguages": "Sa lahat ng 23 wika, na iba-iba ang kalidad bawat wika",
@@ -3343,7 +3345,7 @@
       "followUps": "Mga tanong na pag-uusapan sa isang live interview",
       "pdf": "Mga PDF report na may grade at bawat sagot",
       "messengers": "Mga buod sa WhatsApp, Telegram, Viber o LINE",
-      "viewers": "Nakakapag-share din ang mga viewer, nang walang binabago",
+      "viewers": "Nakakapag-share din ng mga report ang mga viewer",
       "everyone": "Nakakasulat ang bawat miyembro, pati ang mga viewer",
       "bell": "Dumarating ang mga bagong note sa bell at sa Slack channel mo",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee at Breezy HR",
@@ -3354,7 +3356,7 @@
       "askTime": "Sinasabihan ang sinumang nangangailangan ng mas maraming oras na magtanong bago magsimula",
       "peopleDecide": "Sinasabihan na mga tao sa kumpanya mo ang nagrerebyu ng resulta at nagpapasya",
       "digest": "Ang buod: sino ang nakatapos, mga imbitasyong hindi naihatid, mga aplikante mula sa ATS na hindi na-imbitahan, mga bagong note at mga interview na handa na",
-      "emailChoice": "Bawat uri ng email ay nabubuksan o napapatay sa settings mo",
+      "emailChoice": "Ang buod, mga paalala, balita at alok ay nabubuksan o napapatay sa settings mo",
       "stopEmails": "Mapapahinto ng mga aplikante ang mga email mo sa isang click"
     },
     "cards": {
@@ -3364,7 +3366,7 @@
       },
       "bank": {
         "title": "Shared question bank",
-        "text": "Ginagamit muli ng mga bagong interview ang mga tanong na napatunayan na sa iba. Huwag isama ang sa iyo gamit ang isang checkbox."
+        "text": "Ginagamit muli ng mga bagong interview ang mga tanong na napatunayan na sa iba. Huwag isama sa shared question bank ang mga tanong ng isang interview gamit ang isang switch."
       },
       "quality": {
         "title": "Mga tanong na kusang naaayos",
@@ -3377,6 +3379,10 @@
       "preview": {
         "title": "I-preview muna",
         "text": "Sagutan ang interview gaya ng isang aplikante, nang libre, bago mag-imbita ng sinuman."
+      },
+      "manage": {
+        "title": "Pamahalaan ang mga tanong",
+        "text": "Basahin ang bawat tanong, i-disable ang isa, i-regenerate ito o markahang mali ang sagot nito."
       },
       "ats": {
         "title": "Mula sa ATS mo",
@@ -3409,6 +3415,10 @@
       "accessible": {
         "title": "Accessible",
         "text": "Ginawa para sa WCAG 2.2 AA, sa bawat wika, light at dark."
+      },
+      "practice": {
+        "title": "Libreng practice",
+        "text": "Kahit sino ay puwedeng mag-practice ayon sa role, libre at pribado, at makita ang bawat tamang sagot sa dulo."
       },
       "notifications": {
         "title": "Mga notification",
@@ -3452,11 +3462,15 @@
       },
       "roles": {
         "title": "Mga role sa team",
-        "text": "Mga may-ari, admin at viewer; nakikita ng mga viewer ang mga resulta pero wala silang binabago o ginagastos."
+        "text": "Libre ang mga miyembro. May-ari lang ang namamahala sa team; nakikita ng mga viewer ang mga resulta, nagse-share ng mga report at nagsusulat ng mga note, at wala silang ginagastos."
+      },
+      "companies": {
+        "title": "Maraming kumpanya",
+        "text": "Puwedeng magmay-ari ng maraming kumpanya ang isang account, bawat isa may sariling team at credits."
       },
       "log": {
         "title": "Log ng aksyon",
-        "text": "Nakikita ng may-ari kung sino ang gumawa ng ano, sa app, sa pamamagitan ni Mira, ng API o ng ATS."
+        "text": "Nakikita ng may-ari kung sino ang gumawa ng ano, sa app, sa pamamagitan ni Mira, ng isang AI app, ng API o ng ATS."
       },
       "documents": {
         "title": "Handa ang mga dokumento",
@@ -3466,9 +3480,17 @@
         "title": "Pribado mula sa disenyo",
         "text": "Walang pagbebenta ng data, walang hinuhulaan tungkol sa mga aplikante, walang boses na itinatago ang testee."
       },
+      "location": {
+        "title": "Nakaimbak sa Belgium",
+        "text": "Sa Google Cloud sa EU; nakalista sa page ng Tiwala ang bawat provider."
+      },
+      "retention": {
+        "title": "Nabubura sa tamang oras",
+        "text": "Nabubura ang mga resulta 12 buwan pagkatapos ng huling imbitasyon, o agad kapag binawi mo ang imbitasyon ng aplikante."
+      },
       "verified": {
         "title": "Mga na-verify na kumpanya",
-        "text": "May check sa tabi ng pangalan ng kumpanya mo kapag na-verify na ang website nito."
+        "text": "May check sa tabi ng pangalan ng kumpanya mo kapag nakumpirma ito ng isang work email sa website nito at ng review namin."
       },
       "free": {
         "title": "{count, plural, one {# libreng aplikante} other {# libreng aplikante}}",
@@ -3555,21 +3577,23 @@
         "points": {
           "proposed": "Mga topic na mungkahi ng AI",
           "edit": "Palitan ang pangalan, magdagdag o mag-alis",
+          "ask": "Ipabago sa AI",
           "subtopics": "Mga subtopic sa bawat isa",
-          "levels": "Mula basic hanggang advanced",
+          "levels": "Level na binasa mula sa job description",
           "approve": "I-approve para gumawa ng mga tanong"
         },
-        "alt": "Ang mga topic ng isang interview, bawat isa may mga tanong"
+        "alt": "Ang pagsusuri ng mga topic: mga topic kasama ang mga subtopic nila, isa ang ine-edit"
       },
       "questions": {
         "title": "Ginagawa at sinusuri ang mga tanong",
         "text": "Sumusulat ang AI ng pool ng mga tanong para sa bawat topic, sinusuri ng pangalawang AI ang sample ng mga answer key nang hindi nakikita ang sagot ng una, at may sariling random na set ang bawat aplikante.",
         "points": {
-          "unique": "Natatanging mga tanong sa bawat aplikante",
-          "checked": "Answer key na sinuri ng pangalawang AI",
+          "unique": "Random na set para sa bawat aplikante",
+          "checked": "Sample ng mga answer key na sinuri ng pangalawang AI",
           "bank": "Mga napatunayang tanong mula sa shared bank",
           "multi": "Isa o maraming sagot",
-          "preview": "Subukan bilang aplikante"
+          "preview": "Subukan bilang aplikante",
+          "manage": "I-disable o i-regenerate ang anumang tanong"
         },
         "alt": "Ang mga tanong ng isang topic, bawat isa may answer key"
       },
@@ -3579,6 +3603,7 @@
         "points": {
           "time": "Oras bawat tanong",
           "passMark": "Passing grade",
+          "count": "Mga tanong bawat aplikante, hanggang 60",
           "mode": "Click o voice mode",
           "brand": "Ang logo at mga kulay mo",
           "private": "Panatilihing pribado ang mga tanong"
@@ -3587,7 +3612,7 @@
       },
       "invite": {
         "title": "Mag-imbita ng mga aplikante",
-        "text": "Dalhin ang mga aplikante sa paraang gumagana na ang hiring mo. Bawat isa ay pinagrereserbahan ng credits para sa isang aplikante, na ibinabalik kung hindi siya kailanman magsimula.",
+        "text": "Dalhin ang mga aplikante sa paraang gumagana na ang hiring mo. Bawat isa ay pinagrereserbahan ng credits para sa isang aplikante, na ibinabalik kung hindi siya kailanman sumagot.",
         "points": {
           "names": "Mga pangalan kasama ang email",
           "reminder": "Isang paalala pagkalipas ng 3 araw",
@@ -3626,8 +3651,10 @@
         "title": "Sumasagot ang mga aplikante",
         "text": "Nakikita agad ng mga aplikante ang mga patakaran at ang oras, nangangakong sasagot nang mag-isa, at sinasagot ang isang naka-time na tanong sa bawat pagkakataon, sa click o sa boses, sa anumang device.",
         "points": {
+          "signIn": "Pag-sign in gamit ang inimbitahang email",
           "pledge": "Isang pangako bago magsimula",
           "timer": "Timer sa bawat tanong",
+          "onePass": "Isang attempt, walang pag-ulit",
           "click": "Click mode",
           "voice": "Voice mode kasama si Mira",
           "phone": "Gumagana sa phone",
@@ -3643,10 +3670,11 @@
           "answers": "Bawat sagot at ang oras nito",
           "signals": "Mga integrity flag",
           "patterns": "Kakaibang pattern ng mga sagot",
+          "followUps": "Mga tanong para sa live interview",
           "notes": "Mga note ng team mo",
           "discover": "Mga taong open to offers"
         },
-        "alt": "Ang mga aplikante ng isang interview, nauuna ang pinakamagaling"
+        "alt": "Ang mga aplikante ng isang interview, kasama ang mga status at grade nila"
       },
       "share": {
         "title": "I-share ang mga report",

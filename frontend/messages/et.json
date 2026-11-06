@@ -3260,7 +3260,7 @@
       "link": {
         "title": "Üks link töökuulutuse jaoks",
         "text": "Lülita sisse intervjuu jagatav link ja pane see töökuulutusse. Igaüks saab intervjuu teha ühe korra, kinnitatud e-posti aadressiga.",
-        "alt": "Intervjuu seadete vahekaart: jagatav link, klõpsu- ja häälerežiimi lüliti, aeg küsimuse kohta ja läbimise piir."
+        "alt": "Intervjuu seadete vahekaart: jagatav link, klõpsu- ja häälerežiimi lüliti, aeg küsimuse kohta ja läbimise lävi."
       },
       "start": {
         "title": "Selged reeglid enne algust",
@@ -3280,11 +3280,11 @@
       "brand": {
         "title": "Sinu bränd, mitte meie oma",
         "text": "Määra logo, värvid heleda ja tumeda teema jaoks, fondid ja nurgad, otse eelvaatega. Kandidaadid näevad ainult sinu ettevõtet, ilma testee päise ja jaluseta.",
-        "alt": "Brändi vahekaart: logo, fondid ja nurgad koos intervjuu otse-eelvaatega."
+        "alt": "Brändi vahekaardi värvid lehele, nuppudele ja täidetele koos intervjuu otse-eelvaatega."
       },
       "candidates": {
         "title": "Võrdle kandidaate ühe pilguga",
-        "text": "Iga kandidaadi olek ja hinne võrreldes läbimise piiriga ühes nimekirjas. Sorteeri hinde järgi, otsi nime või e-posti järgi, filtreeri läbinud või märgitud kandidaadid.",
+        "text": "Iga kandidaadi olek ja hinne võrreldes läbimise lävega ühes nimekirjas. Sorteeri hinde järgi, otsi nime või e-posti järgi, filtreeri läbinud või märgitud kandidaadid.",
         "alt": "Intervjuu kandidaatide nimekiri nimede, olekute, hinnete ja ühe märgitud kandidaadiga."
       },
       "signals": {
@@ -3319,18 +3319,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, one {# küsimus} other {# küsimust}} iga teema kohta; sina valid, mitu iga kandidaat saab",
+      "questions": "{count, plural, one {# küsimus} other {# küsimust}} iga teema kohta; sina valid, mitu iga kandidaat saab, kuni 60 intervjuu kohta",
       "options": "Neli vastusevarianti küsimuse kohta, mõnel rohkem kui üks õige vastus",
       "examples": "Kood, andmed, valemid või dokumendid näidetena, kui ametikoht seda nõuab",
       "names": "Read, mida ei saa kutsuda, on nimetatud koos põhjusega",
       "credits": "Krediidid tulevad tagasi kõigi eest, kes kunagi ei vasta",
       "expire": "Kutsed aeguvad ise kuu aja pärast",
+      "signIn": "Kandidaadid logivad sisse e-postiga, millele kutse saatsid, nii et edasi saadetud kutsest pole kellelgi teisel kasu",
       "linkOff": "Saab igal ajal välja lülitada ja lülitub välja, kui töötaja on palgatud",
       "mode": "Klõpsu- või häälerežiim valitakse samal lehel",
-      "settings": "Keskmine aeg küsimuse kohta ja läbimise piir kõrval",
+      "settings": "Keskmine aeg küsimuse kohta ja läbimise lävi kõrval",
       "time": "Koguaeg on näha enne alustamist",
       "phone": "Töötab nii telefonis kui ka arvutis",
       "saved": "Edenemine salvestatakse jooksvalt",
+      "onePass": "Üks katse: tagasi minna ega uuesti teha ei saa",
       "tap": "Vastusevarianti saab alati ka puudutada",
       "kept": "testee ei säilita häält: see muudetakse ainult tekstiks",
       "voiceLanguages": "Kõigis 23 keeles, kvaliteet oleneb keelest",
@@ -3343,7 +3345,7 @@
       "followUps": "Küsimused, mida vestlusintervjuul läbi arutada",
       "pdf": "PDF-raportid hinnete ja kõigi vastustega",
       "messengers": "Kokkuvõtted WhatsAppis, Telegramis, Viberis või LINE-is",
-      "viewers": "Ka vaatajad saavad jagada, ilma midagi muutmata",
+      "viewers": "Ka vaatajad saavad aruandeid jagada",
       "everyone": "Kirjutada saab iga liige, ka vaatajad",
       "bell": "Uued märkmed jõuavad teavituskella alla ja sinu Slacki kanalisse",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee ja Breezy HR",
@@ -3354,7 +3356,7 @@
       "askTime": "Kes vajab rohkem aega, seda juhendatakse küsima enne alustamist",
       "peopleDecide": "Kandidaatidele öeldakse, et tulemused vaatavad üle ja otsustavad sinu ettevõtte inimesed",
       "digest": "Kokkuvõte: kes lõpetas, kohale jõudmata kutsed, kutsumata ATS-i kandidaadid, uued märkmed ja valmis intervjuud",
-      "emailChoice": "Iga e-kirja liiki saab seadetes sisse või välja lülitada",
+      "emailChoice": "Kokkuvõtte, meeldetuletused, uudised ja pakkumised saab seadetes sisse või välja lülitada",
       "stopEmails": "Kandidaadid saavad sinu e-kirjadest ühe klõpsuga loobuda"
     },
     "cards": {
@@ -3364,7 +3366,7 @@
       },
       "bank": {
         "title": "Ühine küsimustepank",
-        "text": "Uued intervjuud kasutavad küsimusi, mis on teistes end tõestanud. Jäta enda omad välja ühe linnukesega."
+        "text": "Uued intervjuud kasutavad küsimusi, mis on teistes end tõestanud. Hoia intervjuu küsimused ühe lülitiga ühisest küsimustepangast väljas."
       },
       "quality": {
         "title": "Küsimused, mis parandavad end ise",
@@ -3377,6 +3379,10 @@
       "preview": {
         "title": "Proovi enne ise",
         "text": "Tee intervjuu läbi nii, nagu kandidaat seda teeks, tasuta ja enne kellegi kutsumist."
+      },
+      "manage": {
+        "title": "Halda küsimusi",
+        "text": "Loe iga küsimust, lülita mõni välja, loo see uuesti või märgi selle vastus valeks."
       },
       "ats": {
         "title": "Sinu ATS-ist",
@@ -3409,6 +3415,10 @@
       "accessible": {
         "title": "Ligipääsetav",
         "text": "Loodud WCAG 2.2 AA järgi, kõigis keeltes, heledas ja tumedas teemas."
+      },
+      "practice": {
+        "title": "Tasuta harjutamine",
+        "text": "Igaüks saab ametikoha järgi harjutada, tasuta ja privaatselt, ning näeb lõpus kõiki õigeid vastuseid."
       },
       "notifications": {
         "title": "Teavitused",
@@ -3452,11 +3462,15 @@
       },
       "roles": {
         "title": "Meeskonna rollid",
-        "text": "Omanikud, administraatorid ja vaatajad; vaatajad näevad tulemusi, kuid ei muuda ega kuluta midagi."
+        "text": "Liikmed on tasuta. Meeskonda haldab ainult omanik; vaatajad näevad tulemusi, jagavad aruandeid ja kirjutavad märkmeid ega kuluta midagi."
+      },
+      "companies": {
+        "title": "Mitu ettevõtet",
+        "text": "Ühe konto alla võib kuuluda mitu ettevõtet, igaühel oma meeskond ja krediidid."
       },
       "log": {
         "title": "Toimingute logi",
-        "text": "Omanik näeb, kes mida tegi: rakenduses, Mira, API või ATS-i kaudu."
+        "text": "Omanik näeb, kes mida tegi: rakenduses, Mira, AI-rakenduse, API või ATS-i kaudu."
       },
       "documents": {
         "title": "Dokumendid valmis",
@@ -3466,9 +3480,17 @@
         "title": "Privaatsus algusest peale",
         "text": "Andmeid ei müüda, kandidaatide kohta ei tehta järeldusi, testee ei säilita häält."
       },
+      "location": {
+        "title": "Hoitakse Belgias",
+        "text": "Google Cloudis ELis; usalduse lehel on kõik teenusepakkujad."
+      },
+      "retention": {
+        "title": "Õigel ajal kustutatud",
+        "text": "Tulemused kustutatakse 12 kuud pärast viimast kutset või kohe, kui tühistad kandidaadi kutse."
+      },
       "verified": {
         "title": "Kinnitatud ettevõtted",
-        "text": "Linnuke sinu ettevõtte nime kõrval, kui selle veebisait on kinnitatud."
+        "text": "Linnuke sinu ettevõtte nime kõrval, kui selle veebisaidi domeeniga tööe-post ja meie kontroll on selle kinnitanud."
       },
       "free": {
         "title": "{count, plural, one {# tasuta kandidaat} other {# tasuta kandidaati}}",
@@ -3555,21 +3577,23 @@
         "points": {
           "proposed": "AI pakutud teemad",
           "edit": "Nimeta ümber, lisa või eemalda",
+          "ask": "Palu AI-l neid muuta",
           "subtopics": "Igal teemal alateemad",
-          "levels": "Lihtsast raskeni",
+          "levels": "Tase loetakse töökuulutusest",
           "approve": "Kinnita ja küsimused luuakse"
         },
-        "alt": "Intervjuu teemad, igaüks oma küsimustega"
+        "alt": "Teemade ülevaatus: teemad koos alateemadega, üks neist muutmisel"
       },
       "questions": {
         "title": "Küsimused luuakse ja kontrollitakse",
         "text": "AI kirjutab igale teemale küsimuste kogumi, teine AI kontrollib pimesi valimit vastusevõtmetest ja iga kandidaat saab oma juhusliku komplekti.",
         "points": {
-          "unique": "Igale kandidaadile oma küsimused",
-          "checked": "Vastusevõtmeid kontrollib teine AI",
+          "unique": "Igale kandidaadile juhuslik valik",
+          "checked": "Valimit vastusevõtmetest kontrollib teine AI",
           "bank": "Tõestatud küsimused ühisest pangast",
           "multi": "Üks või mitu õiget vastust",
-          "preview": "Proovi kandidaadina"
+          "preview": "Proovi kandidaadina",
+          "manage": "Lülita mis tahes küsimus välja või loo uuesti"
         },
         "alt": "Teema küsimused, igaüks oma vastusevõtmega"
       },
@@ -3579,6 +3603,7 @@
         "points": {
           "time": "Aeg küsimuse kohta",
           "passMark": "Läbimise lävi",
+          "count": "Küsimusi kandidaadi kohta, kuni 60",
           "mode": "Klõpsu- või häälerežiim",
           "brand": "Sinu logo ja värvid",
           "private": "Küsimused jäävad sinu omaks"
@@ -3587,7 +3612,7 @@
       },
       "invite": {
         "title": "Kutsu kandidaadid",
-        "text": "Too kandidaadid sisse nii, nagu su värbamine juba käib. Igaühe jaoks broneeritakse ühe kandidaadi krediidid, mis tulevad tagasi, kui ta ei alusta.",
+        "text": "Too kandidaadid sisse nii, nagu su värbamine juba käib. Igaühe jaoks broneeritakse ühe kandidaadi krediidid, mis tulevad tagasi, kui ta ei vasta.",
         "points": {
           "names": "Nimed koos e-posti aadressidega",
           "reminder": "Üks meeldetuletus 3 päeva pärast",
@@ -3626,8 +3651,10 @@
         "title": "Kandidaadid teevad intervjuu",
         "text": "Kandidaadid näevad reegleid ja aega juba enne, annavad oma sõna ning vastavad ajapiiranguga küsimustele ükshaaval, klõpsu või häälega, mis tahes seadmes.",
         "points": {
+          "signIn": "Sisselogimine kutsutud e-postiga",
           "pledge": "Lubadus enne alustamist",
           "timer": "Taimer igal küsimusel",
+          "onePass": "Üks katse, kordamist pole",
           "click": "Klõpsurežiim",
           "voice": "Häälerežiim Miraga",
           "phone": "Töötab telefonis",
@@ -3643,10 +3670,11 @@
           "answers": "Iga vastus ja selle aeg",
           "signals": "Märked kahtlase käitumise kohta",
           "patterns": "Ebatavalised vastuste mustrid",
+          "followUps": "Küsimused vestlusintervjuuks",
           "notes": "Sinu meeskonna märkmed",
           "discover": "Tööpakkumistele avatud inimesed"
         },
-        "alt": "Intervjuu kandidaadid, parimad eespool"
+        "alt": "Intervjuu kandidaadid koos nende olekute ja hinnetega"
       },
       "share": {
         "title": "Jaga aruandeid",

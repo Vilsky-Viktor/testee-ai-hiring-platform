@@ -3,6 +3,7 @@ import {
   BadgeCheckIcon,
   BellIcon,
   BotMessageSquareIcon,
+  Building2Icon,
   CalendarClockIcon,
   CodeXmlIcon,
   CoinsIcon,
@@ -10,11 +11,14 @@ import {
   EyeIcon,
   FileTextIcon,
   GiftIcon,
+  GraduationCapIcon,
   HandshakeIcon,
   HistoryIcon,
   LanguagesIcon,
   LayoutTemplateIcon,
   LibraryIcon,
+  ListChecksIcon,
+  MapPinIcon,
   PersonStandingIcon,
   RefreshCwIcon,
   ScaleIcon,
@@ -22,6 +26,7 @@ import {
   SparklesIcon,
   ThumbsUpIcon,
   TimerIcon,
+  Trash2Icon,
   UserCheckIcon,
   SearchIcon,
   UserSearchIcon,
@@ -87,12 +92,17 @@ export const FEATURE_GROUPS: readonly FeatureGroup[] = [
       { key: "quality", icon: RefreshCwIcon },
       { key: "languages", icon: LanguagesIcon },
       { key: "preview", icon: EyeIcon },
+      { key: "manage", icon: ListChecksIcon },
     ],
   },
   {
     id: "invite",
     rows: [
-      { key: "invite", shot: "invite", points: ["names", "credits", "expire"] },
+      {
+        key: "invite",
+        shot: "invite",
+        points: ["names", "credits", "expire", "signIn"],
+      },
       {
         key: "link",
         shot: "settings",
@@ -110,7 +120,11 @@ export const FEATURE_GROUPS: readonly FeatureGroup[] = [
     background: BAND,
     rows: [
       { key: "start", shot: "start", points: ["askTime", "peopleDecide"] },
-      { key: "click", shot: "question", points: ["time", "phone", "saved"] },
+      {
+        key: "click",
+        shot: "question",
+        points: ["time", "phone", "saved", "onePass"],
+      },
       {
         key: "voice",
         shot: "voice",
@@ -124,6 +138,7 @@ export const FEATURE_GROUPS: readonly FeatureGroup[] = [
       { key: "fair", icon: ScaleIcon },
       { key: "rate", icon: ThumbsUpIcon },
       { key: "accessible", icon: PersonStandingIcon },
+      { key: "practice", icon: GraduationCapIcon },
     ],
   },
   {
@@ -186,9 +201,12 @@ export const FEATURE_GROUPS: readonly FeatureGroup[] = [
     cards: [
       { key: "person", icon: UserCheckIcon },
       { key: "roles", icon: UsersIcon },
+      { key: "companies", icon: Building2Icon },
       { key: "log", icon: HistoryIcon },
       { key: "documents", icon: FileTextIcon },
       { key: "privacy", icon: ShieldCheckIcon },
+      { key: "location", icon: MapPinIcon },
+      { key: "retention", icon: Trash2Icon },
       { key: "verified", icon: BadgeCheckIcon },
     ],
     more: { href: "/trust", key: "trust" },

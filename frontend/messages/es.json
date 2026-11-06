@@ -3260,7 +3260,7 @@
       "link": {
         "title": "Un enlace para tu oferta de empleo",
         "text": "Activa el enlace para compartir de la entrevista y ponlo en tu oferta de empleo. Cualquiera puede hacerla una vez, con un correo verificado.",
-        "alt": "La pestaña de ajustes de una entrevista: el enlace para compartir, el selector de modo clic o voz, el tiempo por pregunta y la nota para aprobar."
+        "alt": "La pestaña de ajustes de una entrevista: el enlace para compartir, el selector de modo clic o voz, el tiempo por pregunta y la nota de aprobado."
       },
       "start": {
         "title": "Reglas claras desde el principio",
@@ -3280,11 +3280,11 @@
       "brand": {
         "title": "Tu marca, no la nuestra",
         "text": "Elige tu logo, colores para modo claro y oscuro, fuentes y esquinas, con vista previa en directo. Los candidatos solo ven tu empresa, sin la cabecera ni el pie de página de testee.",
-        "alt": "La pestaña de marca: el logo, las fuentes y las esquinas, con una vista previa en directo de la entrevista."
+        "alt": "La pestaña de marca: los colores de la página, los botones y los rellenos, con una vista previa en directo de la entrevista."
       },
       "candidates": {
         "title": "Compara candidatos de un vistazo",
-        "text": "El estado y la nota de cada candidato frente a tu nota para aprobar, en una sola lista. Ordena por nota, busca por nombre o correo, filtra quién aprobó o quién tiene alertas.",
+        "text": "El estado y la nota de cada candidato frente a tu nota de aprobado, en una sola lista. Ordena por nota, busca por nombre o correo, filtra quién aprobó o quién tiene alertas.",
         "alt": "La lista de candidatos de una entrevista con nombres, estados, notas y un candidato con alertas."
       },
       "signals": {
@@ -3319,18 +3319,20 @@
       }
     },
     "points": {
-      "questions": "{count, plural, one {# pregunta escrita} other {# preguntas escritas}} por tema; tú eliges cuántas recibe cada candidato",
+      "questions": "{count, plural, one {# pregunta escrita} other {# preguntas escritas}} por tema; tú eliges cuántas recibe cada candidato, hasta 60 por entrevista",
       "options": "Cuatro opciones por pregunta, algunas con más de una respuesta correcta",
       "examples": "Código, datos, fórmulas o documentos como ejemplos cuando el puesto los requiere",
       "names": "Las líneas que no se pueden invitar se indican, con el motivo",
       "credits": "Los créditos vuelven por quien nunca responde",
       "expire": "Las invitaciones caducan solas al cabo de un mes",
+      "signIn": "Los candidatos inician sesión con el correo al que los invitaste, así que una invitación reenviada no le sirve a nadie más",
       "linkOff": "Se desactiva cuando quieras, y cuando se cubre el puesto",
       "mode": "Modo clic o voz, elegido en la misma página",
-      "settings": "El tiempo medio por pregunta y la nota para aprobar, al lado",
+      "settings": "El tiempo medio por pregunta y la nota de aprobado, al lado",
       "time": "El tiempo total, visible antes de empezar",
       "phone": "Funciona en el móvil igual que en el ordenador",
       "saved": "El progreso se guarda sobre la marcha",
+      "onePass": "Un solo intento: sin volver atrás ni repetir",
       "tap": "Tocar una opción también funciona siempre",
       "kept": "testee no guarda ninguna voz: solo se convierte en texto",
       "voiceLanguages": "En los 23 idiomas, con una calidad que varía según el idioma",
@@ -3343,7 +3345,7 @@
       "followUps": "Preguntas para tratar en una entrevista en directo",
       "pdf": "Informes en PDF con notas y todas las respuestas",
       "messengers": "Resúmenes por WhatsApp, Telegram, Viber o LINE",
-      "viewers": "Los lectores también comparten, sin cambiar nada",
+      "viewers": "Los lectores también comparten informes",
       "everyone": "Todos los miembros escriben, también los lectores",
       "bell": "Los comentarios nuevos llegan a la campana y a tu canal de Slack",
       "atsList": "Workable, Greenhouse, Teamtailor, Recruitee y Breezy HR",
@@ -3354,7 +3356,7 @@
       "askTime": "A quien necesite más tiempo se le indica que lo pida antes de empezar",
       "peopleDecide": "Se les informa de que personas de tu empresa revisan los resultados y deciden",
       "digest": "El resumen: quién terminó, invitaciones no entregadas, candidatos del ATS no invitados, comentarios nuevos y entrevistas listas",
-      "emailChoice": "Cada tipo de correo se activa o desactiva en tus ajustes",
+      "emailChoice": "El resumen, los recordatorios, las novedades y las ofertas se activan o desactivan en tus ajustes",
       "stopEmails": "Los candidatos pueden dejar de recibir tus correos con un clic"
     },
     "cards": {
@@ -3364,7 +3366,7 @@
       },
       "bank": {
         "title": "Banco de preguntas compartido",
-        "text": "Las nuevas entrevistas reutilizan preguntas probadas en otras. Deja las tuyas fuera con una casilla."
+        "text": "Las nuevas entrevistas reutilizan preguntas probadas en otras. Deja fuera las de una entrevista con un interruptor."
       },
       "quality": {
         "title": "Preguntas que se corrigen solas",
@@ -3377,6 +3379,10 @@
       "preview": {
         "title": "Pruébala primero",
         "text": "Haz la entrevista como la haría un candidato, gratis, antes de invitar a nadie."
+      },
+      "manage": {
+        "title": "Gestionar preguntas",
+        "text": "Lee cada pregunta, desactívala, regenérala o marca su respuesta como incorrecta."
       },
       "ats": {
         "title": "Desde tu ATS",
@@ -3409,6 +3415,10 @@
       "accessible": {
         "title": "Accesible",
         "text": "Diseñado según WCAG 2.2 AA, en todos los idiomas, en modo claro y oscuro."
+      },
+      "practice": {
+        "title": "Práctica gratis",
+        "text": "Cualquiera puede practicar por puesto, gratis y en privado, y ver todas las respuestas correctas al final."
       },
       "notifications": {
         "title": "Notificaciones",
@@ -3452,11 +3462,15 @@
       },
       "roles": {
         "title": "Roles del equipo",
-        "text": "Propietarios, administradores y lectores; los lectores ven los resultados, pero no cambian ni gastan nada."
+        "text": "Añadir miembros es gratis. Solo el propietario gestiona el equipo; los lectores ven los resultados, comparten informes, escriben comentarios y no gastan nada."
+      },
+      "companies": {
+        "title": "Varias empresas",
+        "text": "Una cuenta puede ser propietaria de varias empresas, cada una con su equipo y sus créditos."
       },
       "log": {
         "title": "Registro de acciones",
-        "text": "El propietario ve quién hizo qué: en la app, a través de Mira, la API o un ATS."
+        "text": "El propietario ve quién hizo qué: en la app, a través de Mira, una app de IA, la API o un ATS."
       },
       "documents": {
         "title": "Documentos listos",
@@ -3466,9 +3480,17 @@
         "title": "Privacidad desde el diseño",
         "text": "Sin venta de datos, sin deducir nada sobre los candidatos, testee no guarda ninguna voz."
       },
+      "location": {
+        "title": "Datos almacenados en Bélgica",
+        "text": "En Google Cloud en la UE; la página de confianza enumera todos los proveedores."
+      },
+      "retention": {
+        "title": "Eliminación a tiempo",
+        "text": "Los resultados se eliminan 12 meses después de la última invitación, o al momento si revocas la invitación de un candidato."
+      },
       "verified": {
         "title": "Empresas verificadas",
-        "text": "Una marca de verificación junto al nombre de tu empresa cuando se verifica su sitio web."
+        "text": "Una marca de verificación junto al nombre de tu empresa cuando un correo de trabajo de su sitio web y nuestra revisión lo confirman."
       },
       "free": {
         "title": "{count, plural, one {# candidato gratis} other {# candidatos gratis}}",
@@ -3555,30 +3577,33 @@
         "points": {
           "proposed": "Temas propuestos por la IA",
           "edit": "Cambia el nombre, añade o quita",
+          "ask": "Pide a la IA que los cambie",
           "subtopics": "Subtemas para cada uno",
-          "levels": "De básico a avanzado",
+          "levels": "Nivel deducido de la descripción del puesto",
           "approve": "Aprueba para generar"
         },
-        "alt": "Los temas de una entrevista, cada uno con sus preguntas"
+        "alt": "La revisión de temas: temas con sus subtemas, uno en edición"
       },
       "questions": {
         "title": "Las preguntas se generan y se revisan",
         "text": "La IA escribe un conjunto de preguntas para cada tema, una segunda IA revisa a ciegas una muestra de claves de respuestas, y cada candidato recibe su propia serie aleatoria.",
         "points": {
-          "unique": "Preguntas distintas para cada candidato",
-          "checked": "Claves de respuestas revisadas por una segunda IA",
+          "unique": "Un conjunto aleatorio para cada candidato",
+          "checked": "Una muestra de claves de respuestas revisada por una segunda IA",
           "bank": "Preguntas probadas del banco compartido",
           "multi": "Una o varias respuestas correctas",
-          "preview": "Pruébala como candidato"
+          "preview": "Pruébala como candidato",
+          "manage": "Desactiva o regenera cualquier pregunta"
         },
         "alt": "Las preguntas de un tema, cada una con su clave de respuestas"
       },
       "settings": {
         "title": "Configúrala",
-        "text": "Elige cuánto dura cada pregunta, la nota para aprobar y cómo responden los candidatos, y pon la entrevista con tu marca.",
+        "text": "Elige cuánto dura cada pregunta, la nota de aprobado y cómo responden los candidatos, y pon la entrevista con tu marca.",
         "points": {
           "time": "Tiempo por pregunta",
-          "passMark": "Nota para aprobar",
+          "passMark": "Nota de aprobado",
+          "count": "Preguntas por candidato, hasta 60",
           "mode": "Modo clic o voz",
           "brand": "Tu logo y tus colores",
           "private": "Preguntas privadas"
@@ -3587,7 +3612,7 @@
       },
       "invite": {
         "title": "Invita a candidatos",
-        "text": "Trae a los candidatos como ya funciona tu proceso de selección. Para cada uno se reservan los créditos de un candidato, que se devuelven si nunca empieza.",
+        "text": "Trae a los candidatos como ya funciona tu proceso de selección. Para cada uno se reservan los créditos de un candidato, que se devuelven si nunca responde.",
         "points": {
           "names": "Nombres con correos",
           "reminder": "Un recordatorio a los 3 días",
@@ -3626,8 +3651,10 @@
         "title": "Los candidatos la hacen",
         "text": "Los candidatos ven las reglas y el tiempo desde el principio, dan su palabra y responden una pregunta cronometrada cada vez, con un clic o por voz, en cualquier dispositivo.",
         "points": {
+          "signIn": "Inicio de sesión con el correo invitado",
           "pledge": "Un compromiso antes de empezar",
           "timer": "Un temporizador en cada pregunta",
+          "onePass": "Un solo intento, sin repetir",
           "click": "Modo clic",
           "voice": "Modo de voz con Mira",
           "phone": "Funciona en el móvil",
@@ -3639,14 +3666,15 @@
         "title": "Descubre quién es el mejor",
         "text": "La nota y las respuestas de cada candidato en cuanto termina, con las alertas que merecen una revisión y los comentarios de tu equipo.",
         "points": {
-          "scorecard": "Puntuaciones y nota para aprobar",
+          "scorecard": "Puntuaciones y nota de aprobado",
           "answers": "Cada respuesta y su tiempo",
           "signals": "Alertas de integridad",
           "patterns": "Patrones de respuesta inusuales",
+          "followUps": "Preguntas para una entrevista en directo",
           "notes": "Los comentarios de tu equipo",
           "discover": "Personas abiertas a ofertas"
         },
-        "alt": "Los candidatos de una entrevista, los mejores primero"
+        "alt": "Los candidatos de una entrevista, con sus estados y notas"
       },
       "share": {
         "title": "Comparte los informes",
@@ -3688,7 +3716,7 @@
           "biasAudit": "Exportación para auditoría de sesgos",
           "log": "Registro de acciones"
         },
-        "alt": "El informe de un candidato con una nota por encima de la nota para aprobar"
+        "alt": "El informe de un candidato con una nota por encima de la nota de aprobado"
       }
     }
   }
