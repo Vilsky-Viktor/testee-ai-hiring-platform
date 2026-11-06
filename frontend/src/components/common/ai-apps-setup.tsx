@@ -20,6 +20,7 @@ import {
   MCP_PATH,
 } from "@/config/ai-apps"
 import { useOrigin } from "@/lib/origin"
+import { TEXT_LINK } from "@/config/links"
 
 // The apps with their own steps on the AI apps page; products' names stay as they are.
 const SETUP_APPS = [
@@ -49,10 +50,7 @@ export function AiAppsInstructions(
       <p className="text-base text-muted-foreground">
         {t.rich("moreApps", {
           link: (chunks) => (
-            <Link
-              href={MCP_DOCS_PATH}
-              className="text-foreground underline underline-offset-4"
-            >
+            <Link href={MCP_DOCS_PATH} className={TEXT_LINK}>
               {chunks}
             </Link>
           ),

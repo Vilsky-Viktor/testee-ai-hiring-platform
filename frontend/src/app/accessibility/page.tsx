@@ -12,6 +12,7 @@ import { timeTag } from "@/lib/time-tag"
 import { BackLink } from "@/components/common/back-link"
 import { BulletSection } from "@/components/common/bullet-section"
 import { PageKey } from "@/components/common/page-key"
+import { TEXT_LINK } from "@/config/links"
 
 export async function generateMetadata() {
   const t = await getTranslations("accessibility")
@@ -53,10 +54,7 @@ export default async function AccessibilityPage() {
         <p className="text-base leading-relaxed text-muted-foreground">
           {t.rich("feedback.text", {
             email: () => (
-              <a
-                href={`mailto:${OPERATOR.email}`}
-                className="text-foreground underline"
-              >
+              <a href={`mailto:${OPERATOR.email}`} className={TEXT_LINK}>
                 {OPERATOR.email}
               </a>
             ),

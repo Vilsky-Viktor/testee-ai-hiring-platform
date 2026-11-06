@@ -31,6 +31,7 @@ import {
 import { bdi, bdiText } from "@/lib/bidi"
 import { formatPercent } from "@/lib/format"
 import { graphemes } from "@/lib/graphemes"
+import { TEXT_LINK } from "@/config/links"
 
 // The promo's motion, with motion allowed: the person's message rising from the input into its
 // place; Mira's growing out of a dot at its tail (the bottom of its start side); each landing
@@ -137,9 +138,7 @@ export function AskAgentDemo() {
     question("q-help", help),
     answer(
       t.rich("answers.help", {
-        link: (chunks) => (
-          <span className="underline underline-offset-4">{chunks}</span>
-        ),
+        link: (chunks) => <span className={TEXT_LINK}>{chunks}</span>,
       })
     ),
     question("q-invite", invite),

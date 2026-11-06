@@ -20,6 +20,7 @@ import {
 import { apiFetch, serviceRefusal } from "@/lib/api"
 import { bdi } from "@/lib/bidi"
 import type { Verification, VerificationStatus } from "@/types/company"
+import { TEXT_LINK } from "@/config/links"
 
 /** "Verify" beside an unverified company's name (the pending clock while it's reviewed): its website, sent for a superadmin's review
  * once an owner or admin signs in with a work email on that domain (right away when it's
@@ -122,10 +123,7 @@ export function VerifyCompany({
             <p className="text-muted-foreground">
               {t.rich("tryAgain", {
                 contact: (chunks) => (
-                  <Link
-                    href="/contact"
-                    className="underline underline-offset-4"
-                  >
+                  <Link href="/contact" className={TEXT_LINK}>
                     {chunks}
                   </Link>
                 ),

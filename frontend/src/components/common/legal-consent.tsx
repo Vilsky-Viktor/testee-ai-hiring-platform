@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useTranslations } from "next-intl"
+import { TEXT_LINK } from "@/config/links"
 
 /** Shown wherever someone signs in: signing in accepts the terms. */
 export function LegalConsent() {
@@ -12,12 +13,12 @@ export function LegalConsent() {
       {/* Two even lines, in any language. */}
       {t.rich("consent", {
         terms: (chunks) => (
-          <Link href="/terms" className="underline underline-offset-4">
+          <Link href="/terms" className={TEXT_LINK}>
             {chunks}
           </Link>
         ),
         privacy: (chunks) => (
-          <Link href="/privacy" className="underline underline-offset-4">
+          <Link href="/privacy" className={TEXT_LINK}>
             {chunks}
           </Link>
         ),

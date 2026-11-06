@@ -14,6 +14,7 @@ import { hasMessage } from "@/lib/messages"
 import { notClosed, rememberClosed } from "@/lib/legal-banner"
 import { timeTag } from "@/lib/time-tag"
 import type { LegalChange } from "@/types/campaigns"
+import { TEXT_LINK } from "@/config/links"
 
 /** While a legal document's new version has been announced and doesn't apply yet, a thin
  * notice above the page says from when, with a link to it (the API says which concern the
@@ -80,10 +81,7 @@ export function LegalBanner() {
               date: formatDay(change.version, locale),
               ...timeTag(change.version),
             })}{" "}
-            <Link
-              href={`/${change.document}`}
-              className="font-medium text-foreground underline underline-offset-4"
-            >
+            <Link href={`/${change.document}`} className={TEXT_LINK}>
               {t("readLegal")}
             </Link>
           </InfoCard>

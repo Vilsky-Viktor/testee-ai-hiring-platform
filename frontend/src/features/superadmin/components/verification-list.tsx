@@ -16,6 +16,7 @@ import { hasMessage } from "@/lib/messages"
 import { decisionFailed } from "@/lib/verification"
 import type { VerificationRequest } from "@/types/superadmin"
 import { LIST_BOX } from "@/config/lists"
+import { TEXT_LINK } from "@/config/links"
 
 function rowKey(row: VerificationRequest) {
   return row.company_id
@@ -92,7 +93,7 @@ export function VerificationList({
                   href={`https://${row.domain}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline underline-offset-4 hover:text-foreground"
+                  className={TEXT_LINK}
                 >
                   {row.domain}
                 </a>

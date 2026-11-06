@@ -15,6 +15,7 @@ import { hasMessage } from "@/lib/messages"
 import { serverFetch } from "@/lib/server-api"
 import { translatedTitle } from "@/lib/site"
 import type { SupportCandidateRow, SupportInterview } from "@/types/superadmin"
+import { TEXT_LINK } from "@/config/links"
 
 export const generateMetadata = () => translatedTitle("superadmin", "zone")
 
@@ -80,7 +81,7 @@ export default async function SupportInterviewPage({
             <Link
               key="company"
               href={`/superadmin/support/companies/${interview.company_id}`}
-              className="normal-case underline underline-offset-4"
+              className={`${TEXT_LINK} normal-case`}
             >
               {interview.company_name}
             </Link>,

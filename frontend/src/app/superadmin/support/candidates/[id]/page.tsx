@@ -17,10 +17,11 @@ import { hasMessage } from "@/lib/messages"
 import { serverFetch } from "@/lib/server-api"
 import { translatedTitle } from "@/lib/site"
 import type { SupportCandidate } from "@/types/superadmin"
+import { TEXT_LINK } from "@/config/links"
 
 export const generateMetadata = () => translatedTitle("superadmin", "zone")
 
-const LINK = "underline underline-offset-4 normal-case"
+const LINK = `${TEXT_LINK} normal-case`
 
 /** A candidate in the admin zone's support tab: what happened to their invite (sent, started,
  * finished, graded, charged), never their questions or answers; and the company emails their

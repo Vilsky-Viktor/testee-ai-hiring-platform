@@ -8,8 +8,7 @@ import { useAdminName } from "@/hooks/use-admin-name"
 import { AmountRows } from "@/features/superadmin/components/amount-rows"
 import type { LimitHitLists as Hits, LimitHits } from "@/types/superadmin"
 import { bdi } from "@/lib/bidi"
-
-const LINK = "underline underline-offset-4 hover:text-foreground"
+import { TEXT_LINK } from "@/config/links"
 
 /** The limits hit in the period, ours and our providers' in two lists, most hit first: each
  * with its current value, and the companies and users that hit it most, opening their support
@@ -34,7 +33,7 @@ export function LimitHitLists({ hits }: { hits: Hits }) {
           <Link
             key={company.id}
             href={`/superadmin/support/companies/${company.id}`}
-            className={LINK}
+            className={TEXT_LINK}
           >
             {t.rich("limitHitter", {
               name: company.name ?? company.id,
@@ -47,7 +46,7 @@ export function LimitHitLists({ hits }: { hits: Hits }) {
           <Link
             key={user.id}
             href={`/superadmin/support/users/${user.id}`}
-            className={LINK}
+            className={TEXT_LINK}
           >
             {t.rich("limitHitter", {
               name: user.name ?? user.id,

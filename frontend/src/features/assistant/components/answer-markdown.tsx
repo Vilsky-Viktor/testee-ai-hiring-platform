@@ -5,6 +5,7 @@ import Markdown from "react-markdown"
 import { LocalizedLink } from "@/components/common/localized-link"
 import { MarkdownCode } from "@/components/common/markdown-code"
 import { ANSWER_MARKDOWN } from "@/lib/markdown"
+import { TEXT_LINK } from "@/config/links"
 
 /** An assistant's answer: its limited markdown (lib/markdown.ts), links to the app's own pages
  * only; `onNavigate` runs when one is followed. */
@@ -26,7 +27,7 @@ export function AnswerMarkdown({
               <LocalizedLink
                 href={href}
                 onClick={onNavigate}
-                className="underline underline-offset-4"
+                className={TEXT_LINK}
               >
                 {children}
               </LocalizedLink>
