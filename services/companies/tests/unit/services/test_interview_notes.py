@@ -7,6 +7,7 @@ import json
 import uuid
 
 import httpx
+import pytest
 from testee_common.auth.key_actor import key_actor
 from testee_common.http import http
 
@@ -19,6 +20,13 @@ ANN = Member(user_id="ann", invited_email="ann@example.com", role="owner")
 BOB = Member(user_id="bob", invited_email="bob@example.com", role="viewer")
 # A member's note: written by a membership, not an API key.
 BY_MEMBER = InterviewNote()
+# The real call: conftest replaces accounts.profiles for the other tests.
+PROFILES = accounts.profiles
+
+
+@pytest.fixture(autouse=True)
+def real_profiles(monkeypatch):
+    monkeypatch.setattr(accounts, "profiles", PROFILES)
 
 
 def accounts_answering(status: int, profiles: list[dict]):
