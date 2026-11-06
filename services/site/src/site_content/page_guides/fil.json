@@ -5,13 +5,15 @@
     "actions": [
       "I-paste ang job description sa box sa itaas, o pumili ng handang template; ayusin ang mga topic, at isusulat at susuriin ang mga tanong para sa iyo.",
       "Mag-imbita ng mga aplikante sa email, mula sa file, gamit ang share link sa iyong job ad, o mula sa iyong ATS, sarili mong platform o isang AI assistant.",
+      "Tingnan ang nakikita ng mga aplikante: isang interview na may oras at may brand mo, sinasagot sa isang click o sa boses.",
       "Basahin ang mga report: ang mga sagot, grade at integrity flag ng bawat aplikante, ishine-share sa email o chat sa isang click.",
-      "Ikonekta ang iyong platform, AI app at mga job board, makatanggap ng mga update sa Slack, o ipagawa kay Mira, ang AI assistant, ang trabaho para sa iyo."
+      "Ikonekta ang iyong ATS, platform at mga AI app, makatanggap ng mga update sa Slack, o ipagawa kay Mira, ang AI assistant, ang trabaho para sa iyo.",
+      "Ihambing ang testee sa mga phone screen at subscription, at tingnan kung paano sinusuri at pinapahusay ang mga tanong."
     ],
     "tips": [
-      "Libre ang paggawa ng interview. Magbabayad ka bawat aplikanteng sumasagot, sa presyong nasa ilalim ng pamagat at sa iyong currency, at libre ang mga una mong aplikante.",
+      "Libre ang paggawa ng interview. Magbabayad ka bawat aplikanteng sumasagot, sa mga presyong nasa ibaba ng page at sa iyong currency, at libre ang mga una mong aplikante.",
       "Subukan ang iyong interview bilang aplikante bago ka mag-imbita.",
-      "Panoorin ang video sa itaas para sa maikling tour; nasa ibaba ng page ang FAQ at ang mga gabay.",
+      "Panoorin ang video mula sa button sa itaas para sa maikling tour; nasa ibaba ng page ang FAQ at ang mga gabay.",
       "I-download ang mga halimbawang ulat sa ilalim ng mga ulat para makita kung ano ang hitsura ng totoong ulat."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "Gumawa ng kumpanya gamit ang “bagong kumpanya”. Natatangi sa buong testee ang pangalan nito.",
       "Buksan ang isang kumpanya para asikasuhin ang mga interview at aplikante nito.",
-      "Alisin ang kumpanyang pag-aari mo, kasama ang lahat ng interview at imbitasyon nito."
+      "Alisin ang kumpanyang pag-aari mo, kasama ang lahat ng interview at imbitasyon nito; mawawala ang credits nito at hindi ire-refund.",
+      "Buksan ang ⋮ menu ng kumpanya para sa team nito; doon din nagto-top up ang mga may-ari at admin at nagbubukas ng brand at billing nito."
     ],
     "tips": [
-      "Makikita ang iyong role sa tabi ng bawat kumpanyang hindi mo pag-aari: nagbabago ang mga admin, tumitingin lang ang mga viewer.",
+      "Makikita ang iyong role sa tabi ng bawat kumpanyang hindi mo pag-aari: nagbabago ang mga admin; karaniwang tumitingin lang ang mga viewer, at puwede rin silang magsulat ng note, mag-rate at mag-report ng tanong, sumubok ng interview at mag-share ng report.",
       "Sa kumpanya nakalaan ang credits, kaya hiwalay na nagto-top up ang bawat isa."
     ]
   },
@@ -36,22 +39,23 @@
       "Gumawa ng bagong kumpanya kung wala ka pa; doon magbubukas ang template."
     ],
     "tips": [
-      "Kapag nakopya na, sa kumpanya na ang interview: baguhin ang mga tanong at setting nito ayon sa gusto mo."
+      "Kapag nakopya na, sa kumpanya na ang interview: baguhin ang mga tanong at setting nito ayon sa gusto mo.",
+      "Mga may-ari at admin lang ang puwedeng gumamit ng template; wala ang button sa kumpanyang viewer ka."
     ]
   },
   "interviews": {
     "title": "Mga interview",
-    "text": "Lahat ng interview ng kumpanyang ito at ang credits nito para sa mga aplikante. Bawat interview ay pagsusulit na may oras, ginawa mula sa job description.",
+    "text": "Lahat ng interview ng kumpanyang ito at ang credits nito para sa mga aplikante. Bawat interview ay pagsusulit na may oras, ginawa mula sa job description o template.",
     "actions": [
-      "Gumawa ng interview mula sa job description gamit ang “bagong interview”.",
-      "Buksan ang isang interview para makita ang mga topic, aplikante, note at setting nito; lumalabas sa ilalim ng pangalan nito ang naka-pin na note.",
-      "Maghanap ng interview ayon sa pamagat nito.",
-      "Subukan ang interview bilang aplikante, o burahin ito.",
-      "Mag-top up ng credits mula sa balanse, o i-on ang awtomatikong top-up sa tab na Billing."
+      "Gumawa ng interview mula sa job description gamit ang “Bagong interview” (mga may-ari at admin).",
+      "Buksan ang isang interview para makita ang mga topic, aplikante at note nito, ang mga setting nito (mga may-ari at admin) at, kapag nakapag-top up na ang kumpanya, ang Discover; lumalabas sa ilalim ng pangalan nito ang naka-pin na note.",
+      "Maghanap ng interview ayon sa pamagat nito, o i-filter ayon sa status: bago, in progress o na-hire.",
+      "Subukan ang interview bilang aplikante mula sa ⋮ menu nito; puwede rin itong burahin doon ng mga may-ari at admin.",
+      "Mag-top up ng credits mula sa balanse, o i-on ang awtomatikong top-up sa tab na Billing (mga may-ari at admin)."
     ],
     "tips": [
       "Nagiging amber ang balanse kapag paubos na ang credits. Kapag walang credits, hindi naipapadala ang mga bagong imbitasyon.",
-      "Sa menu ng kumpanya makikita ang mga template, ang iyong team, mga integration, billing (para sa mga may-ari at admin) at referrals."
+      "Sa menu ng kumpanya makikita ang mga template, ang iyong team, mga integration, brand at billing (para sa mga may-ari at admin), ang log ng aksyon (para sa may-ari) at referrals."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Simulan ang interview mula sa job description. Babasahin ito ng testee, magmumungkahi ng mga topic na susubukin, at isusulat ang mga tanong kapag inaprubahan mo na.",
     "actions": [
       "I-paste ang job description: ang role, mga requirement nito at mga nice-to-have.",
+      "Kapag wala pang nai-type, pinupunan ng “Subukan ang halimbawa” ang box ng sample na description.",
       "Piliin ang wikang gagamitin sa interview.",
-      "Gawin ito, saka i-review ang mga iminungkahing topic."
+      "Gawin ito, saka i-review ang mga iminungkahing topic.",
+      "O magsimula sa template, o sa isang job sa iyong ATS kapag nakakonekta na ito.",
+      "Kung nagsimula ka sa home page, piliin ang kumpanyang para rito, o gumawa ng isa; ang mga kumpanyang pag-aari mo o admin ka lang ang nakalista."
     ],
     "tips": [
       "Kapag mas tiyak ang description, mas bagay sa role ang mga tanong.",
-      "Libre ang paggawa: magbabayad ka lang para sa mga aplikanteng sumasagot."
+      "Libre ang paggawa: magbabayad ka lang para sa mga aplikanteng sumasagot.",
+      "Iilang interview lang na wala pang aplikante ang puwedeng hawakan ng isang kumpanya at iilan lang ang puwede nitong simulan bawat araw; mas mataas ang mga limit kapag nakapag-top up na ito."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "Alisan ng check ang mga topic na hindi mo kailangan.",
       "I-edit ang pangalan at mga subtopic ng isang topic gamit ang lapis nito.",
+      "Magdagdag ng sarili mong topic gamit ang “Magdagdag ng topic”: lagyan ito ng pangalan at kahit 3 subtopic.",
       "Ilarawan ang mga pagbabago sa sarili mong salita at ilapat ang mga ito, halimbawa “magdagdag ng topic tungkol sa pamumuno ng team”.",
-      "Pindutin ang “aprubahan at gawin” para maisulat ang mga tanong."
+      "Pindutin ang “aprubahan at gawin” para maisulat ang mga tanong.",
+      "Mag-cancel para itapon ang interview; walang natitira sa mga nagawa na."
     ],
     "tips": [
       "Kung sobra ang mga topic, alisan ng check ang ilan o ilarawan kung paano pagsasamahin ang mga ito.",
-      "Isusulat lang ang mga tanong pagkatapos mong mag-apruba, kaya maglaan ng isang minuto rito."
+      "Isusulat lang ang mga tanong pagkatapos mong mag-apruba, kaya maglaan ng isang minuto rito.",
+      "Kinakansela ang review na naiwang bukas nang 14 na araw, at inaalis ang interview nito."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "Ginagawa ng testee ang iyong interview: una ang mga topic, saka ang mga tanong para sa bawat isa. Ilang minuto ito.",
     "actions": [
       "Puwede mong iwan ang page na ito: tuloy ang paggawa.",
-      "Kanselahin ang paggawa kung hindi mo na ito kailangan; walang matitira sa nagawa na."
+      "Kanselahin ang paggawa kung hindi mo na ito kailangan; walang matitira sa nagawa na.",
+      "Kapag handa na ang mga topic, ipinapakita ito ng page na ito para sa iyong review; isinusulat lang ang mga tanong pagkatapos mong i-approve.",
+      "Kung pumalya ang paggawa, piliin ang Ulitin, o Magsimula ulit."
     ],
     "tips": [
       "Makakatanggap ka ng notification kapag handa na ang interview.",
@@ -97,14 +110,14 @@
     "title": "Mga topic",
     "text": "Ang sinusubok ng interview na ito: ang mga topic nito, bawat isa may mga subtopic at sariling pool ng mga tanong. Bawat aplikante ay may random na set mula sa bawat pool.",
     "actions": [
-      "Buksan ang “pamahalaan ang mga tanong” para pumunta sa mga tanong ng isang topic: basahin, i-disable ang ilan, i-like, i-dislike o i-report ang mga ito.",
-      "I-regenerate ang mahinang tanong o markahan ang maling sagot sa page ng mga tanong ng isang topic.",
-      "Itakda kung ilang tanong mula sa isang topic ang makukuha ng bawat aplikante; sa 0, hindi na kasama ang topic para sa mga bagong aplikante. Hanggang 60 tanong lang ang makukuha ng isang aplikante sa lahat ng topic: bawasan ang isang topic para madagdagan ang iba.",
-      "Subukan ang interview bilang aplikante, o burahin ito."
+      "Magbukas ng topic para pumunta sa mga tanong nito: basahin, i-like, i-dislike o i-report ang mga ito, at, bilang may-ari o admin, i-disable ang ilan.",
+      "I-regenerate ang mahinang tanong o markahan ang maling sagot sa page ng mga tanong ng isang topic (mga may-ari at admin).",
+      "Itakda kung ilang tanong mula sa isang topic ang makukuha ng bawat aplikante (mga may-ari at admin); sa 0, hindi na kasama ang topic para sa mga bagong aplikante, pero dapat may natitirang tanong ang kahit isang topic. Hanggang 60 tanong lang ang makukuha ng isang aplikante sa lahat ng topic: bawasan ang isang topic para madagdagan ang iba.",
+      "Subukan ang interview bilang aplikante mula sa ⋮ menu; puwede rin itong burahin doon ng mga may-ari at admin."
     ],
     "tips": [
-      "Puwedeng mali ang mga tanong na isinulat ng AI: silipin ang bawat topic bago ka mag-imbita.",
-      "I-click ang pamagat para palitan ang pangalan ng interview.",
+      "Puwedeng mali ang mga tanong na isinulat ng AI, kahit may pangalawang AI na sumusuri sa sample ng mga sagot: silipin ang bawat topic bago ka mag-imbita.",
+      "I-click ang pamagat para palitan ang pangalan ng interview (mga may-ari at admin).",
       "Ipinapakita ng mga card sa itaas ang kabuuan ng makukuha ng bawat aplikante: kabuuang tanong, average na oras bawat tanong at oras ng buong interview. Sumusunod ang mga ito sa bawat pagbabago."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Mga tanong",
     "text": "Ang mga tanong ng isang topic kasama ang mga sagot, like, dislike at report. Bawat aplikante ay nakakakuha ng random na set mula sa mga aktibong tanong.",
     "actions": [
+      "Tingnan sa mga card sa itaas kung ilan ang mga tanong, ilan ang aktibo o naka-disable at ilan ang mga report nito; i-filter ang listahan ayon sa Lahat, Aktibo, Naka-disable o Naiulat.",
       "Alisin ang check sa isang tanong para i-disable ito: wala nang aplikanteng makakakuha nito mula ngayon. I-check ito para maging aktibo ulit (mga may-ari at admin).",
       "I-like o i-dislike ang isang tanong; i-click ulit ang pinili mo para bawiin ito.",
       "Buksan ang mga report ng isang tanong at idagdag ang sa iyo, isang beses bawat tanong.",
-      "I-regenerate ang mahinang tanong o markahan ang maling sagot (mga may-ari at admin)."
+      "I-regenerate ang mahinang tanong o markahan ang maling sagot mula sa ⋮ menu nito (mga may-ari at admin); sinusuri ang minarkahang sagot, at inaayos o pinapalitan kung mali."
     ],
     "tips": [
       "Puwedeng mali ang mga tanong na isinulat ng AI: basahin muna bago ka mag-imbita ng kahit sino.",
@@ -127,27 +141,31 @@
     "title": "Mga aplikante",
     "text": "Lahat ng inimbitahan sa interview na ito, kasama ang kanilang status, progreso at grade.",
     "actions": [
-      "Mag-imbita ng mga aplikante: isa-isa, listahan na hanggang 100, o CSV o TXT na file.",
+      "Mag-imbita ng mga aplikante gamit ang “Bagong aplikante” (mga may-ari at admin): isa-isa, listahan, o CSV o TXT na file.",
       "Maghanap ayon sa email o pangalan, i-filter ayon sa status, at i-sort ayon sa grade o petsa.",
-      "Buksan ang report ng isang aplikante, o i-download o i-share ang report ng lahat ng aplikante."
+      "Buksan ang report ng isang aplikante, o i-download o i-share ang report ng lahat ng aplikante.",
+      "Buksan ang ⋮ menu ng aplikante para ipadala muli ang imbitasyon, kopyahin ang link nito, bawiin ito o burahin ang aplikante (mga may-ari at admin)."
     ],
     "tips": [
       "Gumagamit ng credits ang bawat aplikanteng sumagot ng kahit isang tanong, kasama ang mga galing sa link.",
-      "Awtomatikong napapadalhan ng paalala ang mga aplikante.",
-      "Sa pag-imbita, piliin kung click mode o voice mode ang gagamitin nila; may icon ng mode niya ang aplikanteng iba ang mode sa mode ng interview."
+      "Ang aplikanteng hindi pa nagsisimula ay nakakatanggap ng isang paalala 3 araw pagkatapos ng imbitasyon. Nag-e-expire ang imbitasyong hindi nasimulan sa loob ng 30 araw; kapag ipinadala muli, gagana ulit ito.",
+      "Sumasagot ang mga aplikante sa mode ng interview; para baguhin ang sa isang aplikante, gamitin ang page niya. May icon ng mode niya ang aplikanteng iba ang mode sa mode ng interview.",
+      "Kapag nag-imbita, inirereserba ang credits ng aplikante; ibinabalik ang mga ito kung matapos ang aplikante nang hindi sumasagot.",
+      "Dito rin lumalabas ang mga aplikante mula sa link na puwedeng i-share, sa iyong ATS, sa API o sa Discover.",
+      "Ang report sa lahat ng aplikante ay ishine-share bilang PDF sa email, o bilang maikling buod sa WhatsApp, Telegram, Viber o LINE."
     ]
   },
   "interviewNotes": {
     "title": "Mga note",
-    "text": "Mga note ng team mo tungkol sa hiring na ito: ang napagkasunduan ninyo, sino ang susunod na tatawagan, o para kanino ang interview. Nakikita ito ng lahat sa kumpanya mo; hindi kailanman ng mga aplikante.",
+    "text": "Mga note ng team mo tungkol sa hiring na ito: ang napagkasunduan ninyo, sino ang susunod na tatawagan, o para kanino ang interview. Nakikita at puwedeng isulat ito ng lahat sa kumpanya mo, kasama ang mga viewer; hindi kailanman ng mga aplikante.",
     "actions": [
       "Magsulat ng note sa box sa itaas at piliin ang I-post, o pindutin ang ⌘/Ctrl+Enter. Nagiging clickable ang mga link dito.",
-      "I-edit o i-delete ang sarili mong mga note gamit ang mga button sa row nila; puwedeng mag-delete ng note ng kahit sino ang mga may-ari at admin.",
-      "I-pin ang isang note gamit ang bookmark (mga may-ari at admin): una itong lalabas dito, at sa ilalim ng pangalan ng interview sa page nito at sa listahan ng mga interview."
+      "I-edit o i-delete ang sarili mong mga note mula sa ⋮ menu sa row nila; puwedeng mag-delete ng note ng kahit sino ang mga may-ari at admin.",
+      "I-pin ang isang note gamit ang “I-pin sa itaas” sa ⋮ menu nito (mga may-ari at admin): isang note lang sa bawat pagkakataon ang unang lalabas dito, at sa ilalim ng pangalan ng interview sa page nito at sa listahan ng mga interview."
     ],
     "tips": [
       "Nagtatrabaho para sa mga kliyente? Mag-pin ng note gaya ng “Para sa Acme, Backend Developer” para makita agad kung para kanino ang bawat interview.",
-      "Tuluyan nang nawawala ang na-delete na note. Itinatala ng log ng aksyon kung sino ang sumulat, nagbago o nag-delete ng note, pero hindi kailanman ang text nito.",
+      "Tuluyan nang nawawala ang na-delete na note. Itinatala ng log ng aksyon kung sino ang sumulat, nagbago, nag-delete o nag-pin ng note, pero hindi kailanman ang text nito.",
       "Malalaman ng iba sa team mo ang bawat bagong note: sa mga notification, sa araw-araw na buod ng aktibidad at, kung naka-connect ang Slack, sa channel mo."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Mga setting",
-    "text": "Kung paano tumatakbo ang interview na ito para sa bawat aplikante.",
+    "text": "Kung paano tumatakbo ang interview na ito para sa bawat aplikante. Mga may-ari at admin lang ang nakakakita ng tab na ito.",
     "actions": [
-      "I-on ang link na puwedeng i-share para sa job ad: puwedeng sumagot sa interview ang sinumang may link.",
+      "I-on ang link na puwedeng i-share para sa job ad: puwedeng sumagot sa interview ang sinumang may link, at gumagamit ng credits ang bawat sumasagot dito gaya ng inimbitahang aplikante.",
       "Piliin ang mode ng interview: click mode, kung saan tina-tap ng mga aplikante ang sagot nila, o voice mode, kung saan binabasa nang malakas ni Mira, isang AI interviewer, ang bawat tanong at sumasagot ang mga aplikante gamit ang boses o pag-tap. Gumagana ang voice mode sa bawat wika; nag-iiba-iba sa bawat wika kung gaano ito kahusay magbasa at makinig, at binubuksan ng link sa ilalim ng setting ang gabay na may kalidad sa bawat wika.",
       "Itakda ang average na oras bawat tanong, sa segundo: may sariling oras ang bawat tanong batay sa haba nito at sa anumang code na ipinapakita nito, at hindi nagbabago ang kabuuang oras ng interview.",
       "Itakda ang passing grade: pasado ang mga aplikanteng aabot dito.",
@@ -175,22 +193,26 @@
       "Huwag isama ang mga tanong ng interview sa shared question bank ng testee; mananatili roon ang mga tanong na nagamit na sa ibang interview."
     ],
     "tips": [
-      "Nase-save ang bawat setting pagkaalis mo sa field nito.",
+      "Nase-save ang mga number field pagkaalis mo sa mga ito; agad namang nase-save ang mga switch at ang mode.",
       "Hindi nakikita ng mga aplikante ang kanilang score; ang team mo lang.",
-      "Para sa isang aplikanteng kailangan ng mas mahabang oras, magdagdag ng extra time sa kanyang page."
+      "Para sa isang aplikanteng kailangan ng mas mahabang oras, magdagdag ng extra time sa kanyang page.",
+      "Nalalapat ang bagong mode sa mga aplikanteng hindi pa nagsisimula, maliban sa mga binigyan ng sariling mode sa page nila.",
+      "Ang average na oras ay 10 hanggang 600 segundo; ang passing grade ay 1 hanggang 100%."
     ]
   },
   "tryInterview": {
     "title": "Subukan bilang aplikante",
     "text": "Preview ng interview na ito gaya ng nakikita ng mga aplikante: ang intro, saka ang mga tanong na may oras. Libre ito.",
     "actions": [
-      "Simulan ang preview at sumagot na parang aplikante.",
+      "I-check ang pangako, piliin ang “Tanggapin at simulan”, at sumagot na parang aplikante.",
       "Suriin ang oras, ang pagkakasulat at ang mga sagot bago ka mag-imbita."
     ],
     "tips": [
       "Manatili sa page habang sumasagot: para sa mga aplikante, naitatala ang pag-alis sa page, pagkopya at sobrang bilis na pagsagot.",
       "Sa voice mode na interview, hihingin muna ang iyong mikropono at tunog: payagan ang mga ito, at babasahin nang malakas ni Mira ang bawat tanong habang sumasagot ka gamit ang boses o pag-tap.",
-      "May bilang ng preview bawat araw ang bawat kumpanya, mas kaunti sa voice mode; kapag naubos na, sasabihin sa pagsisimula kung kailan ka puwedeng sumubok ulit."
+      "May bilang ng preview bawat araw ang bawat kumpanya, mas kaunti sa voice mode; kapag naubos na, sasabihin sa pagsisimula kung kailan ka puwedeng sumubok ulit.",
+      "Hindi kasama ang preview sa listahan ng mga aplikante at sa statistics ng mga tanong.",
+      "Puwede ring sumubok ng interview ang mga viewer."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Basahin ang bawat sagot, kasama ang mga integrity flag: pag-alis sa page, pagtatangkang kumopya at mabibilis na sagot.",
       "Kapag tapos na siya, tingnan ang anumang hindi karaniwang pattern sa kanyang mga sagot at oras, at ang mga tanong na tama ang sagot niya para itanong sa isang live na interview.",
-      "I-download ang report bilang PDF, o i-share ito sa email.",
-      "Magbigay ng extra time bago siya magsimula, halimbawa dahil sa kapansanan.",
+      "I-download ang report bilang PDF, o i-share ito: ang PDF sa email, o maikling buod sa WhatsApp, Telegram, Viber o LINE. Sa mga miyembro lang ng kumpanya ito puwedeng i-email ng mga viewer.",
+      "Magbigay ng +25%, +50% o +100% na extra time bago siya magsimula, halimbawa dahil sa kapansanan.",
       "Piliin kung click mode o voice mode ang gagamitin niya, anuman ang mode ng interview, hanggang magsimula siya.",
       "Idagdag o i-edit ang pangalan ng aplikante.",
-      "Kopyahin ang invite link niya para ikaw mismo ang magpadala kung hindi dumating ang email; nandiyan ito hanggang matapos siya.",
+      "Kopyahin ang invite link niya para ikaw mismo ang magpadala kung hindi dumating ang email; nandiyan ito hanggang matapos siya o mag-expire ang imbitasyon.",
       "Ipadala muli o bawiin ang imbitasyon, o burahin ang aplikante kasama ang kanyang resulta."
     ],
     "tips": [
       "Tumutulong ang score sa iyong desisyon; hindi ito ang nagdedesisyon. Kung hilingin ng aplikante, ipa-review sa isang tao ang kanyang resulta.",
       "Ipinapakita ng check mark sa ilalim ng grade na kinumpirma ng aplikante, bago magsimula, na sasagot siya nang mag-isa, nang walang AI tool o tulong ng ibang tao.",
-      "Ang grade ay ang porsiyento ng puntos na nakuha: bawat tanong ay isang puntos, at ang tanong na \"pumili ng higit sa isang opsyon\" ay nagbibigay ng bahagi nito sa bawat tamang opsyong na-check, at wala kung may na-check na mali."
+      "Ang grade ay ang porsiyento ng puntos na nakuha: bawat tanong ay isang puntos, at ang tanong na \"pumili ng higit sa isang opsyon\" ay nagbibigay ng bahagi nito sa bawat tamang opsyong na-check, at wala kung may na-check na mali.",
+      "Para sa mga may-ari at admin ang extra time, ang mode at pangalan ng aplikante, ang invite link, ang pagpapadala muli, ang pagbawi at ang pagbura."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Maghanap ayon sa role o topic, at i-filter ayon sa level at wika.",
       "Buksan ang isang template para makita ang mga topic nito at kung ilan ang tanong ng bawat isa.",
-      "Gamitin ang template para magsimula ng interview mula rito."
+      "Tingnan sa bawat row ang mga topic, tanong at minuto nito, at kung ilan sa iyong mga interview ang gumamit nito.",
+      "Gamitin ang template para magsimula ng interview mula rito (mga may-ari at admin)."
     ],
     "tips": [
       "Para mas bumagay, gumawa na lang ng interview mula sa sarili mong job description.",
-      "Kapag nakopya na, iyo na ang interview: baguhin ang mga tanong at setting nito ayon sa gusto mo."
+      "Kapag nakopya na, iyo na ang interview: baguhin ang mga tanong at setting nito ayon sa gusto mo.",
+      "Nagsisimula ang listahan sa iyong wika at sa English; piliin ang lahat ng wika para makita ang iba."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "Isang handang interview: ang mga topic nito, ang kanilang mga subtopic at kung ilan ang tanong ng bawat topic.",
     "actions": [
       "Tiyaking tugma ang mga topic sa role na hina-hire mo.",
-      "Gamitin ang template para makopya ito sa kumpanyang ito bilang bagong interview."
+      "Gamitin ang template para makopya ito sa kumpanyang ito bilang bagong interview (mga may-ari at admin)."
     ],
     "tips": [
       "Libre ang pagkopya; gumagamit ng credits ang mga aplikanteng sumasagot gaya ng dati.",
-      "Kung hindi bagay ang mga topic, gumawa na lang ng interview mula sa iyong job description."
+      "Kung hindi bagay ang mga topic, gumawa na lang ng interview mula sa iyong job description.",
+      "Nakatago ang mga tanong nito hanggang gamitin mo ito."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "Magdagdag ng miyembro sa email, bilang admin o viewer: ie-email sa kanila ang link para sumali.",
       "Palitan ang role ng miyembro mula admin patungong viewer o pabalik.",
+      "Ibigay ang kumpanya sa admin na nakasali na, gamit ang “Gawing may-ari” sa menu niya: magiging admin ka.",
       "Kopyahin ang link ng nakabinbing imbitasyon, o alisin ang isang miyembro o imbitasyon."
     ],
     "tips": [
-      "Gumagawa at nagbabago ng mga interview ang mga admin, nag-iimbita ng mga aplikante at nagto-top up. Nakikita ng mga viewer ang mga interview at resulta at nagse-share ng mga report, pero walang binabago.",
-      "Kapag inalis ang miyembrong ang card ang nagbabayad ng awtomatikong top-up, titigil ang mga top-up na iyon."
+      "Gumagawa at nagbabago ng mga interview ang mga admin, nag-iimbita ng mga aplikante at nagto-top up. Nakikita ng mga viewer ang mga interview at resulta, nagse-share ng mga report at nagsusulat ng mga note, pero wala nang ibang binabago.",
+      "Kapag inalis ang miyembrong ang card ang nagbabayad ng awtomatikong top-up, o ginawa siyang viewer, titigil ang mga top-up na iyon.",
+      "Ang may-ari lang ang nagdadagdag, nagbabago at nag-aalis ng mga miyembro; nakikita ng lahat sa kumpanya ang team."
     ]
   },
   "actions": {
     "title": "Log ng aksyon",
-    "text": "Lahat ng ginawa ng mga miyembro ng kumpanya, pinakabago muna: ano ang ginawa nila at saan, sino ang gumawa, kailan, at kung ang assistant, isang AI app, ang API o isang ATS ang gumawa nito para sa kanila. Ang may-ari lang ang nakakakita nito.",
+    "text": "Lahat ng ginawa ng mga miyembro ng kumpanya, pinakabago muna: ano ang ginawa nila at saan, sino ang gumawa, kailan, at kung ang AI assistant, isang AI app, ang API o isang ATS ang gumawa nito para sa kanila. Ang may-ari lang ang nakakakita nito.",
     "actions": [
       "Ipakita ang mga aksyon ng isang miyembro, o ng isang uri: mga interview, mga aplikante, team, kumpanya, billing o mga integration.",
       "Ipakita ang mga aksyon sa pagitan ng dalawang araw.",
-      "I-download ang bias-audit export: isang CSV file ng bawat aplikanteng natapos, para sa lahat ng interview o sa isa at, kung gusto mo, sa pagitan ng dalawang araw, kasama ang grade nila, ang passing grade, kung pumasa sila at kung lumampas sila sa median ng interview, ayon sa email."
+      "I-download ang log bilang CSV file mula sa ⋮ menu: lahat ng panahon, isang kamakailang yugto o sa pagitan ng dalawang araw. Hanggang 20 download bawat kumpanya kada araw.",
+      "I-download ang bias-audit export: isang CSV file ng bawat aplikanteng natapos at may grade, para sa lahat ng interview o sa isa at, kung gusto mo, sa pagitan ng dalawang araw, kasama ang grade nila, ang passing grade, kung pumasa sila at kung lumampas sila sa median ng interview, ayon sa email."
     ],
     "tips": [
       "Itinatago ang mga aksyon nang 12 buwan.",
@@ -271,12 +300,12 @@
     "text": "Ikonekta ang testee sa mga tool na ginagamit na ng iyong team. Bawat integration ay may sariling page na may mga hakbang sa pag-set up.",
     "actions": [
       "Slack: matanggap ang mga notification ng iyong kumpanya sa isang channel.",
-      "API: mga key at webhook para ikonekta ang sarili mong platform.",
+      "API: mga key, webhook at ang SDK para ikonekta ang sarili mong platform.",
       "Mga AI app: gamitin ang testee mula sa Claude, ChatGPT at iba pang AI app.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR): makakatanggap ng interview ang mga aplikanteng inilipat mo sa isang stage, at babalik doon ang kanilang resulta."
     ],
     "tips": [
-      "Nakikita ng lahat sa kumpanya ang mga integration; ang mga may-ari at admin ang nagbabago ng mga ito."
+      "Nakikita ng lahat sa kumpanya ang mga integration; ang mga may-ari at admin ang nagbabago ng mga ito. Sariling-sarili ng bawat tao ang mga AI app: puwedeng ikonekta o idiskonekta ng kahit sino ang sa kanya."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "Ikonekta ang iyong ATS ayon sa mga instruction nito.",
       "Mag-link ng job: piliin ang job, ang stage nito at isang interview, o gumawa ng bagong interview mula sa text ng job.",
+      "Tingnan kung ilang aplikante ang inimbitahan ng bawat naka-link na job, ilan ang naghihintay o ilan ang hindi maimbitahan.",
       "Imbitahan muli ang mga aplikanteng hindi naimbitahan, halimbawa kapag naubos ang credits.",
+      "Mag-reconnect kapag huminto sa paggana ang ATS: hindi naiimbitahan ang mga aplikante hangga't hindi mo ito ginagawa.",
       "I-unlink ang isang job, o idiskonekta ang ATS."
     ],
     "tips": [
       "Magdagdag ng stage para lang sa testee, gaya ng “testee skills test”, para hindi ito mahalo sa iba mong tool.",
-      "Hindi kailanman inililipat o nire-reject ng testee ang sinuman sa iyong ATS."
+      "Hindi kailanman inililipat o nire-reject ng testee ang sinuman sa iyong ATS.",
+      "Kung umalis o naging viewer ang miyembrong nagkonekta ng ATS, hihinto ang pag-imbita sa mga aplikante."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "Idagdag ang testee sa Slack at piliin ang channel, halimbawa #hiring.",
       "Piliin kung aling mga notification ang pupunta roon: may aplikanteng natapos, may imbitasyong hindi naihatid, may interview na handa na at iba pa.",
+      "Magpadala ng test message sa channel, at mag-reconnect kung huminto ang Slack sa pagtanggap ng mga mensahe.",
       "Idiskonekta para itigil ang mga ito at alisin ang app ng testee sa iyong Slack."
     ],
     "tips": [
       "Sa channel na iyon lang puwedeng mag-post ang testee; hindi nito nababasa ang iyong Slack.",
-      "Nakikita pa rin ng lahat ang bawat notification sa bell."
+      "Nakikita pa rin ng lahat ang bawat notification sa bell.",
+      "Kung umalis o naging viewer ang miyembrong nagkonekta ng Slack, hihinto ito hanggang i-reconnect ng may-ari o admin."
     ]
   },
   "api": {
     "title": "API",
     "text": "Ikonekta ang sarili mong platform, gaya ng iyong careers site, sa testee.",
     "actions": [
-      "Gumawa ng API key at i-check lang ang kailangan nito: basahin o gumawa ng mga interview; basahin, imbitahin, baguhin o alisin ang mga aplikante; basahin ang iyong credits; o gamitin sa mga AI agent (MCP). Kumikilos ito bilang ikaw.",
+      "Gumawa ng API key at i-check lang ang kailangan nito: basahin o gumawa ng mga interview; basahin, imbitahin, baguhin o alisin ang mga aplikante; basahin o magdagdag ng mga note; basahin ang iyong credits; o gamitin sa mga AI agent (MCP). Kumikilos ito para sa kumpanya bilang sarili nito, at patuloy na gumagana kapag umalis ang taong gumawa nito.",
       "Buksan ang isang key para baguhin ang puwede nitong gawin, na agad nase-save ang bawat pagbabago, at ang mga IP address na puwedeng gumamit nito.",
+      "Palitan ang pangalan ng key, gumawa ng kapalit kapag malapit na itong mag-expire, at, bilang may-ari, tingnan ang mga ginawa nito.",
       "Magdagdag ng webhook: sinasabihan ng testee ang iyong HTTPS address, may pirma, kapag nagsimula, natapos (kasama ang resulta), hindi naabot ng imbitasyon, nag-expire ang imbitasyon, o tinanggal ang isang aplikante, at kapag handa na ang isang interview.",
       "Padalhan ng test event ang isang webhook, at tingnan sa delivery log nito kung ano ang nangyari sa bawat padala.",
+      "Palitan ang secret ng webhook: sa loob ng 24 na oras, pareho ang dalawang secret na pumipirma sa bawat request.",
       "Sa tab na SDK, ilista ang mga site na puwedeng magpakita ng mga interview mo gamit ang SDK, at payagan ang localhost habang nagte-test ka.",
       "Burahin ang mga key at webhook na hindi mo na ginagamit.",
       "Buksan ang dokumentasyon para sa mga developer para sa bawat endpoint at event, at ang SDK."
@@ -321,7 +357,8 @@
     "tips": [
       "Isang beses lang ipinapakita ang bagong key at ang secret ng webhook: kopyahin agad.",
       "Pumili ng expiry para sa bawat key: magagamit pa rin ang na-leak na key na hindi nag-e-expire.",
-      "Puwede mong i-check o alisin ang check sa mga pahintulot ng key sa ibang pagkakataon; ibigay lang sa bawat key ang kailangan ng platform nito."
+      "Puwede mong i-check o alisin ang check sa mga pahintulot ng key sa ibang pagkakataon; ibigay lang sa bawat key ang kailangan ng platform nito.",
+      "Pino-pause ang webhook na hindi sumasagot nang 3 araw; muli itong magsisimula sa test event na nakapasok."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Kopyahin ang address ng server at idagdag ito sa Claude, Claude Code o ChatGPT, ayon sa mga hakbang; nasa dokumentasyon para sa mga developer ang iba pang app at sarili mong mga agent.",
       "Payagan ang app sa page ng testee na magbubukas.",
-      "I-disconnect ang app na hindi mo na ginagamit."
+      "Kapag nakakonekta na ang app, kopyahin ang halimbawa ng puwede mong itanong dito.",
+      "I-disconnect ang app na hindi mo na ginagamit.",
+      "Pinapayagan o pinapahinto ng mga may-ari at admin ang mga AI app sa kumpanyang ito: habang naka-off, walang mababasa o mababago ang mga app dito."
     ],
     "tips": [
-      "Kumikilos ang app bilang ikaw, sa bawat kumpanyang kasali ka. Karamihan sa mga app ay nagtatanong muna bago magbago ng anuman.",
+      "Kumikilos ang app bilang ikaw, sa bawat kumpanyang kasali ka na nagpapahintulot ng mga AI app. Karamihan sa mga app ay nagtatanong muna bago magbago ng anuman.",
       "Hindi nito makikita ang password o mga API key mo, at hindi nito mabubura ang account mo o ang isang kumpanya."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Referrals",
     "text": "Imbitahan ang ibang kumpanya sa testee gamit ang link ng kumpanyang ito, at pareho kayong makakakuha ng credits.",
     "actions": [
-      "Kopyahin o i-share ang iyong referral link.",
-      "Tingnan ang bawat reward na natanggap na ng kumpanyang ito."
+      "Kopyahin ang iyong referral link para i-share ito.",
+      "Tingnan ang mga kumpanyang dumaan sa iyong link at nag-top up, ang credits na naibigay ng bawat isa sa iyo, at kung ilang reward pa ang natitira ngayong taon."
     ],
     "tips": [
       "Pareho kayong makakakuha ng credits kapag nag-top up sa unang pagkakataon ang kumpanyang inimbitahan mo, anumang halaga.",
-      "Napupunta ang credits sa kumpanyang ito at hindi nag-e-expire."
+      "Napupunta ang credits sa kumpanyang ito at hindi nag-e-expire.",
+      "Bawat panig ay nakakakuha ng 1,000 credits. Hanggang 25 beses sa isang taon ito makukuha ng iyong kumpanya; lampas doon, makukuha pa rin ng kumpanyang inimbitahan mo ang credits nito.",
+      "Kapag buong na-refund o na-chargeback ang isang top-up, babawiin ang parehong reward."
     ]
   },
   "brand": {
     "title": "Brand",
-    "text": "Ang iyong logo at mga kulay sa imbitasyon, interview at pahina ng pagtatapos ng iyong mga aplikante.",
+    "text": "Ang iyong logo, mga kulay, font at pag-ikot ng mga kanto sa imbitasyon, interview at pahina ng pagtatapos ng iyong mga aplikante. Lumalabas din ang logo sa mga email nila.",
     "actions": [
-      "Maglagay o magpalit ng logo.",
+      "Maglagay, magpalit o mag-alis ng logo.",
       "Piliin ang mga font ng mga title at ng text, at kung gaano kabilog ang mga card at button.",
-      "Piliin ang mga kulay ng bawat grupo, at tingnan ang mga ito sa preview.",
-      "I-save ang mga ito, o bumalik sa mga kulay ng testee."
+      "Piliin ang mga kulay ng bawat grupo, isang set para sa light theme at isa para sa dark, at tingnan ang mga ito sa preview.",
+      "I-save ang mga ito, bawiin ang mga hindi pa naka-save na pagbabago gamit ang “I-reset”, o bumalik sa mga kulay, font at pag-ikot ng mga kanto ng testee gamit ang “I-reset sa mga default ng testee”."
     ],
     "tips": [
       "Hindi mase-save ang mga kulay na magpapahirap basahin ang text, para mabasa ng bawat aplikante ang mga tanong.",
-      "Nakikita rin ng mga miyembrong sumusubok ng interview ang iyong mga kulay."
+      "Nakikita rin ng mga miyembrong sumusubok ng interview ang iyong mga kulay.",
+      "Mga may-ari at admin lang ang nakakakita ng page na ito."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Mag-top up, o mag-set up ng awtomatikong top-up.",
       "Tingnan ang mga aplikanteng may naka-reserve na credits.",
-      "Buksan ang invoice ng anumang top-up."
+      "Buksan ang invoice ng anumang top-up.",
+      "Paliitin ang history sa mga top-up, singil o refund, o i-download ito bilang CSV file. Hanggang 20 download bawat kumpanya kada araw."
     ],
     "tips": [
       "Nire-reserve ang credits ng aplikante kapag inimbitahan siya, sinisingil kapag sumagot siya, at ibinabalik kung hindi.",
-      "Ang mga may-ari at admin lang ang nakakakita ng page na ito."
+      "Ang mga may-ari at admin lang ang nakakakita ng page na ito.",
+      "Puwede kang humiling ng refund ng credits na binili mo sa nakaraang 14 na araw at hindi pa nagagamit, sa pamamagitan ng Paddle o sa pagsulat sa amin."
     ]
   },
   "topUp": {
     "title": "Mag-top up",
     "text": "Bumili ng credits para sa kahit anong kumpanya kung saan ka may-ari o admin.",
     "actions": [
-      "Pumili ng kumpanya at top-up: mas mura bawat aplikante ang mas malalaking top-up.",
+      "Pumili ng kumpanya, tapos i-type kung ilang aplikante ang ito-top up, mula 10 hanggang 1,000, o pumili ng price step: mas mura bawat aplikante ang mas malalaking top-up.",
+      "Palitan ang currency ng kumpanya sa itaas ng page: mula noon, sa currency na iyon ipepresyo at sisingilin ang mga top-up nito, pati ang mga awtomatiko.",
       "Magbayad sa checkout ng Paddle; darating ang credits sa loob ng ilang segundo.",
-      "Buksan ang presyo para ikumpara ang mga top-up."
+      "Buksan ang presyo para ikumpara ang mga top-up.",
+      "I-set up ang awtomatikong top-up: pumili ng halaga at balanse, at i-check ang kasunduan. Nase-save ang card mo sa checkout ng Paddle at sinisingil ito tuwing bababa ang balanse sa antas na iyon."
     ],
     "tips": [
       "500 credits ang bawat aplikante: nire-reserve kapag inimbitahan siya, sinisingil kapag sumagot siya, at ibinabalik kung hindi.",
-      "Hindi nag-e-expire ang credits. Nasa tab na Billing ng kumpanya ang invoice ng bawat top-up."
+      "Hindi nag-e-expire ang credits. Nasa tab na Billing ng kumpanya ang invoice ng bawat top-up.",
+      "Hindi kasama sa mga presyo ang VAT o sales tax: kung saan ito nalalapat, idinadagdag ito sa checkout.",
+      "Puwede kang humiling ng refund ng credits na binili mo sa nakaraang 14 na araw at hindi pa nagagamit, sa pamamagitan ng Paddle o sa pagsulat sa amin.",
+      "Ang mga may-ari at admin ang nagse-set up ng awtomatikong top-up. Ang taong may-ari ng card na nagbabayad lang ang puwedeng magbago nito o mag-update ng card; agad itong mao-off ng kahit sinong may-ari o admin.",
+      "Sinusubukan ulit ang na-decline na card pagkalipas ng 1, 3 at 7 araw, tapos napo-pause ang awtomatikong top-up hanggang ma-update ang card. Agad itong napo-pause ng card na hindi makakabayad, gaya ng expired na card."
     ]
   },
   "settings": {
     "title": "Mga setting",
-    "text": "Ang sarili mong account: ang wikang gamit ng testee sa iyo, ang mga email na natatanggap mo, at ang iyong data.",
+    "text": "Ang sarili mong account: ang wikang gamit ng testee sa iyo, ang iyong currency, ang mga email na natatanggap mo, at ang iyong data.",
     "actions": [
-      "Piliin ang wika ng site, ng help chat at ng iyong mga email.",
+      "Piliin ang wika ng site, ng mga sagot ng AI assistant at ng iyong mga email; dito rin nagsisimula ang mga bagong interview.",
+      "Piliin ang currency ng mga ipinapakitang presyo, nasaan ka man. Ang mga top-up ng kumpanya ay nasa sariling currency ng kumpanya, na itinatakda sa top-up page nito.",
       "Piliin kung aling opsyonal na email ang matatanggap mo; laging ipinapadala ang mga email ng serbisyo, gaya ng mga imbitasyon, report at problema sa bayad.",
       "I-on o i-off ang Open to offers: habang naka-on ito, nakikita ng mga kumpanyang nagha-hire sa testee para sa mga topic na pinag-practice-an mo ang pangalan mo, LinkedIn profile at mga resulta ng practice, at puwede ka nilang imbitahan.",
-      "I-download ang lahat ng hawak ng testee tungkol sa iyo, o burahin ang iyong account."
+      "I-download ang lahat ng hawak ng testee tungkol sa iyo, o burahin ang iyong account.",
+      "Kopyahin ang iyong account ID para banggitin kapag sumulat ka sa amin."
     ],
     "tips": [
-      "Kapag binura mo ang iyong account, mabubura rin ang mga kumpanyang ikaw lang ang miyembro. Ang kumpanyang may iba nang sumali ay kailangan munang magkaroon ng ibang may-ari."
+      "Kapag binura mo ang iyong account, mabubura rin ang mga kumpanyang ikaw lang ang miyembro, at hindi ire-refund ang credits nila. Ang kumpanyang may iba nang sumali ay kailangan munang magkaroon ng ibang may-ari, o kailangang burahin.",
+      "Kailangan ng Open to offers ang iyong LinkedIn profile, at kusa itong nao-off isang taon pagkatapos mo itong huling i-on."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Naka-sign in gamit ang ibang email? Mag-sign out at mag-sign in gamit ang inimbitahang email; doon lang gumagana ang imbitasyon.",
-      "Ang iyong role, admin o viewer, ay ang pinili ng taong nag-imbita sa iyo."
+      "Ang iyong role, admin o viewer, ay ang pinili ng taong nag-imbita sa iyo.",
+      "Hindi na gumagana ang imbitasyong nagamit na, o inalis ng may-ari."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Mag-sign in, kung hindi ka pa naka-sign in, para makita kung aling app ang humihingi.",
       "Basahin kung ano ang kaya at hindi kaya ng app sa iyong account.",
+      "I-off ang “Payagan ang mga pagbabago” para makabasa lang ang app.",
       "Payagan o tanggihan ang app; alinman ang piliin mo, babalik ka sa app."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Sundan ang balita sa iyong feed reader gamit ang RSS link sa itaas."
     ],
     "tips": [
-      "Lumalabas ang balita sa iyong mga notification; i-on ang mga update tungkol sa produkto sa iyong mga setting para matanggap din sa email ang mga pangunahin."
+      "Lumalabas ang balita sa iyong mga notification; dumarating din sa email ang mga pangunahin habang naka-on ang “Mga update at balita tungkol sa produkto” sa iyong mga setting."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Hangga't hindi ka pumipili ng mga wika, ipinapakita ng listahan ang wika ng iyong site at Ingles.",
-      "Pribado ang practice: walang kumpanyang nakakakita ng iyong mga resulta.",
-      "Kapag naka-sign in, ang check pagkatapos ng pamagat ay nagpapakita ng practice na sinimulan mo na, at ang double check ng practice na natapos mo na; i-hover ito para makita kung ilang topic na ang natapos mo."
+      "Pribado ang practice: walang kumpanyang nakakakita ng iyong mga resulta maliban kung i-on mo ang Open to offers.",
+      "Kapag naka-sign in, ang check pagkatapos ng pamagat ay nagpapakita ng practice na sinimulan mo na, at ang double check ng practice na natapos mo na; i-hover ang check para makita kung ilang topic na ang natapos mo."
     ]
   },
   "practiceTest": {
     "title": "Practice interview",
     "text": "Isang libreng practice interview: ang level, wika, haba nito at ang mga topic na saklaw nito.",
     "actions": [
+      "Piliin ang oras bawat tanong bago ka magsimula: ang karaniwang oras, doble, o walang time limit.",
       "Magsimula ng practice round; mag-sign in muna kung hindi ka pa naka-sign in.",
       "Tingnan kung gaano kalayo ang naabot ng pinakahuli mong round sa bawat topic.",
-      "Buksan ang mga nakaraan mong round gamit ang history button sa tabi ng “simulan ang practice”.",
+      "Kapag naka-sign in, buksan ang mga nakaraan mong round gamit ang “Iyong mga round” sa tabi ng “Simulan ang practice”.",
       "Nagha-hire para sa role na ito? Gumawa ng interview mula rito para sa sarili mong mga aplikante."
     ],
     "tips": [
-      "May oras ang bawat round, gaya ng totoong interview; pagkatapos, makikita mo ang iyong grade at bawat tamang sagot.",
-      "Mag-practice nang kahit ilang beses mo gusto: libre ito."
+      "May oras ang bawat round maliban kung pipiliin mo ang walang time limit; pagkatapos, makikita mo ang iyong grade at bawat tamang sagot.",
+      "Mag-practice nang kahit ilang beses mo gusto, sa loob ng limit ng mga bagong round kada oras: libre ito."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "Bibilangin pa rin ang anumang pinili mo nang maubos ang oras ng isang tanong; ang tanong na walang napili, o hindi naabot, ay mabibilang na mali.",
       "Nagha-hire para sa role na ito? Gumawa ng interview mula rito para sa sarili mong mga aplikante.",
-      "Naghahanap ng trabaho? I-on ang Open to offers para makita ng mga kumpanyang nagha-hire para sa mga topic na ito ang pangalan mo, LinkedIn profile at mga resulta ng practice."
+      "Naghahanap ng trabaho? Pagkatapos ng natapos na round, ilagay ang iyong LinkedIn profile at i-on ang Open to offers para makita ng mga kumpanyang nagha-hire para sa mga topic na ito ang pangalan mo, profile at pinakabagong mga resulta ng practice at maimbitahan ka nila; naka-on ito nang isang taon maliban kung i-off mo."
     ]
   },
   "features": {
     "title": "Mga feature",
     "text": "Lahat ng ginagawa ng testee para sa isang kumpanya, mula sa job description hanggang sa hire: paggawa ng mga interview, pag-imbita ng mga aplikante, ang nakikita ng mga aplikante, mga report, mga integration, compliance at presyo.",
     "actions": [
+      "Pumunta sa box sa dulo ng page gamit ang “Gumawa ng interview” sa itaas, o buksan ang pricing.",
       "Pumunta sa isang grupo gamit ang mga tab sa itaas: gumawa, mag-imbita, interview, magpasya, kumonekta, tiwala at presyo.",
-      "Tingnan ang bawat feature katabi ng larawan ng totoong app.",
+      "Tingnan ang mga pangunahing feature katabi ng larawan ng totoong app, at ang iba bilang mga card sa ilalim ng mga ito.",
       "Mag-paste ng job description sa box sa dulo ng page para gumawa ng interview.",
-      "Buksan ang page ng presyo, ang dokumentasyon para sa developer o ang page ng tiwala mula sa mga grupo nila."
+      "Buksan ang page ng presyo, ang dokumentasyon para sa developer o ang page ng tiwala mula sa mga grupo nila.",
+      "Magtanong kay Mira, o buksan ang FAQ o ang mga gabay, sa dulo ng page."
     ],
     "tips": [
       "Kasama ang lahat ng feature: magbabayad ka lang para sa bawat aplikanteng sumagot ng kahit isang tanong."
@@ -512,8 +570,9 @@
     "actions": [
       "Mag-scroll pababa sa linya: ipinapakita ng bawat hakbang kung ano ang nangyayari, ang mga opsyon nito at isang larawan ng totoong app.",
       "Tingnan ang mga paraan ng pagpasok ng mga aplikante at ng paglabas ng mga report, sa ilalim ng mga hakbang na mag-imbita at mag-share.",
-      "Gumawa ng interview mula sa button sa itaas, o buksan ang lahat ng feature.",
-      "Mag-paste ng job description sa box sa dulo ng page para magsimula."
+      "Pumunta sa start box gamit ang “Gumawa ng interview” sa itaas, o buksan ang lahat ng feature.",
+      "Mag-paste ng job description sa box sa dulo ng page para magsimula.",
+      "Magtanong kay Mira, o buksan ang FAQ o ang mga gabay, sa dulo ng page."
     ],
     "tips": [
       "Libre ang paggawa ng mga interview: magbabayad ka lang para sa bawat aplikanteng sumagot ng kahit isang tanong."
@@ -525,12 +584,14 @@
     "actions": [
       "Tingnan ang kasalukuyang presyo bawat aplikante, at ang mas mababang presyo para sa mas malalaking top-up.",
       "Tingnan kung ilan sa mga una mong aplikante ang libre.",
+      "Tingnan kung ilang credits ang kailangan ng isang aplikante; idinadagdag ang tax sa checkout kung saan ito nalalapat.",
       "Tingnan ang credits na makukuha mo sa pag-imbita ng ibang kumpanya.",
       "Mag-top up ng credits ng isang kumpanya."
     ],
     "tips": [
       "Hindi nag-e-expire ang credits.",
-      "Walang bayad ang aplikanteng hindi sumagot ng kahit isang tanong."
+      "Walang bayad ang aplikanteng hindi sumagot ng kahit isang tanong.",
+      "Puwedeng i-refund ang hindi nagamit na binayarang credits sa loob ng 14 na araw."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "Ikumpara ang testee",
     "text": "Mga paghahambing ng testee sa ibang pre-employment testing tool, may mga source: paano ginagawa ang mga test, magkano ang mga ito at kailan mas bagay ang bawat isa.",
     "actions": [
-      "Buksan ang isang paghahambing para mabasa ito."
+      "Buksan ang isang paghahambing para mabasa ito.",
+      "Gumawa ng test para sa iyong mga aplikante mula sa card sa dulo."
     ],
     "tips": [
       "Ipinapakita ng bawat paghahambing kung kailan ito huling na-update."
@@ -574,8 +636,9 @@
     "text": "Paano ikinukumpara ang testee sa ibang tool sa isang tanong: paano ginagawa ang mga test, magkano ang mga ito at kailan mas bagay ang bawat isa.",
     "actions": [
       "Basahin ang paghahambing at sundan ang mga link nito papunta sa mga source.",
-      "Gumawa ng test para sa iyong mga aplikante mula sa card sa dulo.",
-      "Bumalik sa lahat ng paghahambing gamit ang link sa itaas ng pamagat."
+      "Pumunta sa isang section mula sa listahang “Sa page na ito”, sa mas mahahabang page.",
+      "Gumawa ng test para sa iyong mga aplikante mula sa button sa itaas o sa card sa dulo.",
+      "Bumalik sa lahat ng paghahambing gamit ang back arrow sa tabi ng pamagat."
     ],
     "tips": [
       "Nagbabago ang mga presyo at feature: ipinapakita ng petsa sa ilalim ng pamagat kung kailan huling na-update ang page."
@@ -585,6 +648,7 @@
     "title": "Mga gabay sa pag-hire",
     "text": "Mga praktikal na gabay para sa mga hiring manager: pag-screen ng mga aplikante, mga skills test, at patas at legal na paggamit ng AI sa pag-hire.",
     "actions": [
+      "Maghanap sa mga gabay.",
       "Buksan ang isang gabay para mabasa ito."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "Praktikal na gabay para sa mga hiring manager tungkol sa isang topic.",
     "actions": [
       "Basahin ang gabay at sundan ang mga link nito papunta sa mga source at kaugnay na page.",
-      "Gumawa ng test para sa iyong mga aplikante mula sa card sa dulo.",
-      "Bumalik sa lahat ng gabay gamit ang link sa itaas ng pamagat."
+      "Pumunta sa isang section mula sa listahang “Sa page na ito”, sa mas mahahabang page.",
+      "Gumawa ng test para sa iyong mga aplikante mula sa button sa itaas o sa card sa dulo.",
+      "Bumalik sa lahat ng gabay gamit ang back arrow sa tabi ng pamagat."
     ],
     "tips": [
-      "Buod lang ang mga legal na topic, hindi legal na payo: kumonsulta sa sarili mong abogado."
+      "May petsang buod lang ang mga legal na topic, hindi legal na payo: tingnan ang mga patakarang nalalapat kung saan ka nagha-hire."
     ]
   },
   "faq": {
     "title": "Mga madalas itanong",
     "text": "Mga sagot sa mga karaniwang tanong tungkol sa testee: mga interview, aplikante, presyo at credits, resulta, integration, wika at ang iyong data.",
     "actions": [
+      "Pumunta sa isang grupo ng mga tanong gamit ang mga button sa itaas.",
       "I-click ang isang tanong para buksan ang sagot nito."
     ],
     "tips": [
-      "Hindi mo nakita ang sagot? Magtanong kay Mira, ang AI assistant sa itaas ng page, o sumulat sa amin mula sa page na Makipag-ugnayan.",
+      "Hindi mo nakita ang sagot? Magtanong kay Mira, ang AI assistant, o sumulat sa amin, mula sa card sa dulo ng page.",
       "Laging kasalukuyan ang mga presyo sa mga sagot."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "Sino ang gumagawa ng testee at bakit: mga interview mula sa job description na kayang bayaran ng anumang team, at libreng practice para sa lahat.",
     "actions": [
       "Basahin kung bakit may testee at kung paano nito nilalapitan ang pag-hire.",
-      "Basahin ang mensahe ng founder, at buksan ang kanyang LinkedIn profile."
+      "Basahin ang mensahe ng founder, at buksan ang kanyang LinkedIn profile.",
+      "Gumawa ng test, o mag-practice nang libre, mula sa card sa dulo."
     ],
     "tips": [
       "Para sumulat sa team, gamitin ang page na Makipag-ugnayan."
@@ -630,7 +697,8 @@
     "text": "Sumulat sa team ng testee tungkol sa isang tanong, ideya, alok na partnership o bagay na hindi gumagana.",
     "actions": [
       "Ilagay ang iyong pangalan, email at mensahe, saka ipadala.",
-      "I-paste ang ID ng kumpanya, interview, aplikante o account na tinutukoy nito, para mahanap namin agad."
+      "I-paste sa iyong mensahe ang ID ng kumpanya, interview, aplikante o account na tinutukoy nito, para mahanap namin agad.",
+      "Tingnan kung sino ang nagpapatakbo ng testee: pangalan ng kumpanya, registry code, address at email."
     ],
     "tips": [
       "Nasa ilalim ng pangalan ng kumpanya, interview o aplikante ang link na “kopyahin ang ID”; nasa menu ng iyong account ang ID ng account mo.",
@@ -641,7 +709,7 @@
     "title": "Dokumentasyon para sa mga developer",
     "text": "Lahat ng kailangan mo para ikonekta ang sarili mong platform o AI agent sa testee, kinuha mula mismo sa API kaya laging tugma rito.",
     "actions": [
-      "API: paano mag-sign in, ang base URL at bawat endpoint kasama ang mga parameter, body, response at error nito.",
+      "API: paano mag-sign in, mga gabay gaya ng rate limit at ligtas na retry, ang base URL, bawat endpoint kasama ang mga parameter, body, response at error nito, ang listahan ng mga error at ang changelog.",
       "Webhook: ang mga event na ipinapadala ng testee sa iyong address at ang laman ng bawat isa.",
       "SDK: paano i-embed ang interview sa sarili mong site.",
       "MCP: paano ikonekta ang isang AI app o sarili mong agent, at ang mga tool na makukuha nito.",
@@ -661,7 +729,8 @@
       "Mag-email sa amin kung may mahirap gamitin o kailangan mo ito sa ibang anyo."
     ],
     "tips": [
-      "Sasagot ka ng interview ng isang kumpanya at kailangan mo ng mas mahabang oras? Humingi ng extra time sa kumpanya bago ka magsimula; hindi mo kailangang sabihin kung bakit."
+      "Sasagot ka ng interview ng isang kumpanya at kailangan mo ng mas mahabang oras? Humingi ng extra time sa kumpanya bago ka magsimula; hindi mo kailangang sabihin kung bakit.",
+      "Sumasagot kami sa loob ng 14 na araw; kung hindi ka nasiyahan, puwede kang makipag-ugnayan sa Estonian Consumer Protection and Technical Regulatory Authority (TTJA)."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "Tingnan kung paano pinoprotektahan ng testee ang data: pag-sign in, encryption, pagsusuri ng access, rate limit at backup.",
       "Tingnan kung ano ang ibinibigay ng testee para sa GDPR, sa EU AI Act, sa UK at sa US, kasama ang batas ng New York City sa bias audit.",
       "Tingnan kung saan naka-store ang data, aling mga sub-processor ang humahawak nito at gaano katagal itinatago ang bawat uri ng data.",
-      "Buksan ang terms, ang privacy policy, ang data processing agreement at ang mga dokumento para sa mga kumpanya."
+      "Buksan ang terms, ang privacy policy, ang data processing agreement at ang mga dokumento para sa mga kumpanya.",
+      "Buksan ang accessibility statement."
     ],
     "tips": [
       "Para sa tanong tungkol sa seguridad, privacy o compliance, o para mag-ulat ng problema sa seguridad, sumulat sa email sa dulo ng page."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Mag-unsubscribe",
-    "text": "Itigil ang isang uri ng email mula sa testee, gaya ng nakasaad sa page.",
+    "text": "Itigil ang isang uri ng email mula sa testee, o bawat email mula sa isang kumpanya, gaya ng nakasaad sa page.",
     "actions": [
       "Basahin kung aling mga email ang itinitigil ng link.",
       "Kumpirmahin para mag-unsubscribe; walang nababago sa pagbukas lang ng link.",
-      "Buksan pagkatapos ang iyong mga setting ng email para baguhin ang ibang email."
+      "Kapag naka-sign in, buksan pagkatapos ang iyong mga setting ng email para baguhin ang ibang email."
     ],
     "tips": [
-      "Ipinapadala pa rin ang mga email ng serbisyo, gaya ng mga imbitasyon sa team, report at problema sa bayad."
+      "Ipinapadala pa rin ang mga email ng serbisyo, gaya ng mga imbitasyon sa team, report at problema sa bayad; ang link na nagtitigil sa mga email ng isang kumpanya ay nagtitigil din sa mga imbitasyon nito sa iyo."
     ]
   }
 }

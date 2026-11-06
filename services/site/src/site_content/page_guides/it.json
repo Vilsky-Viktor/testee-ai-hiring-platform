@@ -5,13 +5,15 @@
     "actions": [
       "Incolla la descrizione del ruolo nel riquadro in alto, oppure scegli un modello pronto; regola gli argomenti, e le domande vengono scritte e verificate per te.",
       "Invita i candidati via email, da un file, con un link condivisibile nel tuo annuncio di lavoro, oppure dal tuo ATS, dalla tua piattaforma o da un assistente IA.",
+      "Guarda ciò che vedono i candidati: un colloquio a tempo con il tuo brand, a cui si risponde con un clic o a voce.",
       "Leggi i report: le risposte, i punteggi e le segnalazioni di integrità di ogni candidato, condivisi via email o in chat con un clic.",
-      "Collega la tua piattaforma, la tua app IA e i siti di annunci di lavoro, ricevi aggiornamenti in Slack o chiedi a Mira, l'assistente IA, di fare il lavoro per te."
+      "Collega il tuo ATS, la tua piattaforma e le app di IA, ricevi aggiornamenti in Slack o chiedi a Mira, l'assistente IA, di fare il lavoro per te.",
+      "Confronta testee con i colloqui telefonici e gli abbonamenti, e scopri come vengono controllate e migliorate le domande."
     ],
     "tips": [
-      "Creare colloqui è gratis. Paghi per ogni candidato che risponde, al prezzo indicato sotto il titolo e nella tua valuta, e i tuoi primi candidati sono gratis.",
+      "Creare colloqui è gratis. Paghi per ogni candidato che risponde, ai prezzi indicati più in basso nella pagina e nella tua valuta, e i tuoi primi candidati sono gratis.",
       "Prova il tuo colloquio come candidato prima di invitare qualcuno.",
-      "Guarda il video in alto per un breve tour; le FAQ e le guide sono in fondo alla pagina.",
+      "Guarda il video dal pulsante in alto per un breve tour; le FAQ e le guide sono in fondo alla pagina.",
       "Scarica i report di esempio sotto i report per vedere come sono i report veri."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "Crea un'azienda con «Nuova azienda». Il suo nome è unico in testee.",
       "Apri un'azienda per lavorare sui suoi colloqui e candidati.",
-      "Rimuovi un'azienda di cui sei proprietario, con tutti i suoi colloqui e inviti."
+      "Rimuovi un'azienda di cui sei proprietario, con tutti i suoi colloqui e inviti; i suoi crediti vanno persi e non vengono rimborsati.",
+      "Apri il menu ⋮ di un'azienda per il suo team; proprietari e amministratori lì possono anche ricaricare e aprire il suo brand e la sua fatturazione."
     ],
     "tips": [
-      "Accanto a ogni azienda di cui non sei proprietario compare il tuo ruolo: gli amministratori modificano, i visualizzatori possono solo guardare.",
+      "Accanto a ogni azienda di cui non sei proprietario compare il tuo ruolo: gli amministratori modificano; i visualizzatori soprattutto guardano, e possono anche scrivere note, valutare e segnalare domande, provare colloqui e condividere report.",
       "I crediti appartengono a un'azienda, quindi ognuna si ricarica separatamente."
     ]
   },
@@ -36,22 +39,23 @@
       "Crea una nuova azienda se non ne hai ancora una; il modello si apre lì."
     ],
     "tips": [
-      "Una volta copiato, il colloquio appartiene all'azienda: modifica domande e impostazioni come preferisci."
+      "Una volta copiato, il colloquio appartiene all'azienda: modifica domande e impostazioni come preferisci.",
+      "Solo proprietari e amministratori possono usare un modello; in un'azienda in cui sei visualizzatore, il pulsante non c'è."
     ]
   },
   "interviews": {
     "title": "Colloqui",
-    "text": "Tutti i colloqui di questa azienda e i suoi crediti per i candidati. Ogni colloquio è un test a tempo creato da una descrizione del ruolo.",
+    "text": "Tutti i colloqui di questa azienda e i suoi crediti per i candidati. Ogni colloquio è un test a tempo creato da una descrizione del ruolo o da un modello.",
     "actions": [
-      "Crea un colloquio da una descrizione del ruolo con «Nuovo colloquio».",
-      "Apri un colloquio per vederne argomenti, candidati, note e impostazioni; una nota fissata compare sotto il suo nome.",
-      "Cerca i colloqui per titolo.",
-      "Prova un colloquio come candidato, oppure eliminalo.",
-      "Ricarica i crediti dal saldo, o attiva la ricarica automatica nella scheda Fatturazione."
+      "Crea un colloquio da una descrizione del ruolo con «Nuovo colloquio» (proprietari e amministratori).",
+      "Apri un colloquio per vederne argomenti, candidati e note, le impostazioni (proprietari e amministratori) e, dopo la prima ricarica dell'azienda, Scopri; una nota fissata compare sotto il suo nome.",
+      "Cerca i colloqui per titolo, oppure filtrali per stato: nuovo, in corso o assunto.",
+      "Prova un colloquio come candidato dal suo menu ⋮; proprietari e amministratori possono anche eliminarlo da lì.",
+      "Ricarica i crediti dal saldo, o attiva la ricarica automatica nella scheda Fatturazione (proprietari e amministratori)."
     ],
     "tips": [
       "Il saldo diventa ambra quando i crediti stanno per finire. Senza crediti, i nuovi inviti non vengono inviati.",
-      "Il menu dell'azienda porta a modelli, team, integrazioni, fatturazione (proprietari e amministratori) e referral."
+      "Il menu dell'azienda porta a modelli, team, integrazioni, brand e fatturazione (proprietari e amministratori), registro attività (il proprietario) e referral."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Crea un colloquio dalla descrizione del ruolo. testee la legge, propone gli argomenti da valutare e scrive le domande dopo che li approvi.",
     "actions": [
       "Incolla la descrizione del ruolo: la posizione, i requisiti e i requisiti preferenziali.",
+      "Quando non hai ancora scritto nulla, «Prova un esempio» riempie il riquadro con una descrizione di esempio.",
       "Scegli la lingua in cui generare il colloquio.",
-      "Genera, poi rivedi gli argomenti proposti."
+      "Genera, poi rivedi gli argomenti proposti.",
+      "In alternativa parti da un modello, o da una posizione del tuo ATS una volta collegato.",
+      "Se hai iniziato dalla home page, scegli l'azienda a cui è destinato o creane una; sono elencate solo le aziende di cui sei proprietario o amministratore."
     ],
     "tips": [
       "Più la descrizione è specifica, più le domande si adattano al ruolo.",
-      "Generare è gratis: paghi solo per i candidati che rispondono."
+      "Generare è gratis: paghi solo per i candidati che rispondono.",
+      "Un'azienda può avere solo pochi colloqui ancora senza candidati e avviarne solo pochi al giorno; i limiti sono più alti dopo la prima ricarica."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "Deseleziona gli argomenti che non ti servono.",
       "Modifica il nome e i sottoargomenti di un argomento con la sua matita.",
+      "Aggiungi un argomento tuo con «Aggiungi un argomento»: dagli un nome e almeno 3 sottoargomenti.",
       "Descrivi le modifiche con parole tue e applicale, ad esempio «aggiungi un argomento sulla leadership del team».",
-      "Approva e genera per far scrivere le domande."
+      "Approva e genera per far scrivere le domande.",
+      "Annulla per scartare il colloquio; nulla di ciò che è stato generato finora viene conservato."
     ],
     "tips": [
       "Se gli argomenti sono troppi, deselezionane alcuni o descrivi come unirli.",
-      "Le domande vengono scritte solo dopo la tua approvazione, quindi prenditi un minuto qui."
+      "Le domande vengono scritte solo dopo la tua approvazione, quindi prenditi un minuto qui.",
+      "Una revisione lasciata aperta per 14 giorni viene annullata e il suo colloquio rimosso."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "testee sta creando il tuo colloquio: prima gli argomenti, poi le domande per ciascuno. Ci vuole qualche minuto.",
     "actions": [
       "Puoi lasciare questa pagina: la generazione continua.",
-      "Annulla la generazione se non ti serve più; nulla di quanto creato finora viene conservato."
+      "Annulla la generazione se non ti serve più; nulla di quanto creato finora viene conservato.",
+      "Quando gli argomenti sono pronti, questa pagina te li mostra per la revisione; le domande vengono scritte solo dopo la tua approvazione.",
+      "Se la generazione non riesce, seleziona Riprova o Ricomincia."
     ],
     "tips": [
       "Ricevi una notifica quando il colloquio è pronto.",
@@ -97,14 +110,14 @@
     "title": "Argomenti",
     "text": "Cosa valuta questo colloquio: i suoi argomenti, ognuno con sottoargomenti e un proprio insieme di domande. Ogni candidato riceve una selezione casuale da ciascun insieme.",
     "actions": [
-      "Apri «Gestisci domande» per andare alle domande di un argomento: leggile, disattivane alcune, metti mi piace o non mi piace, oppure segnalale.",
-      "Rigenera una domanda debole o segna una risposta sbagliata nella pagina delle domande di un argomento.",
-      "Stabilisci quante domande riceve ogni candidato da un argomento; con 0 l'argomento resta fuori per i nuovi candidati. Ogni candidato riceve al massimo 60 domande in tutto: abbassa un argomento per alzarne un altro.",
-      "Prova il colloquio come candidato, oppure eliminalo."
+      "Apri un argomento per andare alle sue domande: leggile, metti mi piace o non mi piace, segnalale e, come proprietario o amministratore, disattivane alcune.",
+      "Rigenera una domanda debole o segna una risposta sbagliata nella pagina delle domande di un argomento (proprietari e amministratori).",
+      "Stabilisci quante domande riceve ogni candidato da un argomento (proprietari e amministratori); con 0 l'argomento resta fuori per i nuovi candidati, ma almeno un argomento deve conservare delle domande. Ogni candidato riceve al massimo 60 domande in tutto: abbassa un argomento per alzarne un altro.",
+      "Prova il colloquio come candidato dal menu ⋮; proprietari e amministratori possono anche eliminarlo da lì."
     ],
     "tips": [
-      "Le domande scritte dall'IA possono essere sbagliate: scorri ogni argomento prima di invitare qualcuno.",
-      "Fai clic sul titolo per rinominare il colloquio.",
+      "Le domande scritte dall'IA possono essere sbagliate, anche se una seconda IA controlla un campione di risposte: scorri ogni argomento prima di invitare qualcuno.",
+      "Fai clic sul titolo per rinominare il colloquio (proprietari e amministratori).",
       "Le schede in alto sommano ciò che riceve ogni candidato: le domande totali, il tempo medio per domanda e la durata dell'intero colloquio. Si aggiornano a ogni modifica."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Domande",
     "text": "Le domande di un argomento con risposte, mi piace, non mi piace e segnalazioni. Ogni candidato riceve una selezione casuale tra quelle attive.",
     "actions": [
+      "Guarda nelle schede in alto quante domande ci sono, quante sono attive o disattivate e quante segnalazioni hanno; filtra l'elenco per Tutte, Attiva, Disattivata o Segnalate.",
       "Togli la spunta a una domanda per disattivarla: da ora nessun candidato la riceve. Rimetti la spunta per riattivarla (proprietari e amministratori).",
       "Metti mi piace o non mi piace a una domanda; clicca di nuovo sulla tua scelta per annullarla.",
       "Apri le segnalazioni di una domanda e aggiungi la tua, una per domanda.",
-      "Rigenera una domanda debole o segna una risposta sbagliata (proprietari e amministratori)."
+      "Rigenera una domanda debole o segna una risposta sbagliata dal suo menu ⋮ (proprietari e amministratori); una risposta segnata viene controllata e, se è sbagliata, corretta o sostituita."
     ],
     "tips": [
       "Le domande scritte dall'IA possono essere sbagliate: leggile prima di invitare qualcuno.",
@@ -127,27 +141,31 @@
     "title": "Candidati",
     "text": "Tutte le persone invitate a questo colloquio, con stato, avanzamento e punteggio.",
     "actions": [
-      "Invita i candidati: uno alla volta, un elenco fino a 100, o un file CSV o TXT.",
+      "Invita i candidati con «Nuovi candidati» (proprietari e amministratori): uno alla volta, un elenco, o un file CSV o TXT.",
       "Cerca per email o nome, filtra per stato e ordina per punteggio o data.",
-      "Apri il report di un candidato, oppure scarica o condividi il report su tutti i candidati."
+      "Apri il report di un candidato, oppure scarica o condividi il report su tutti i candidati.",
+      "Apri il menu ⋮ di un candidato per reinviare l'invito, copiarne il link, revocarlo o eliminare il candidato (proprietari e amministratori)."
     ],
     "tips": [
       "Ogni candidato che risponde ad almeno una domanda consuma crediti, compresi quelli arrivati dal link.",
-      "I promemoria vengono inviati ai candidati automaticamente.",
-      "Quando inviti, scegli se i candidati rispondono in modalità clic o in modalità vocale; un candidato in una modalità diversa da quella del colloquio mostra l'icona della sua modalità."
+      "Un candidato che non ha iniziato riceve un promemoria 3 giorni dopo l'invito. Un invito non iniziato entro 30 giorni scade; reinviandolo torna a funzionare.",
+      "I candidati lo sostengono nella modalità del colloquio; per cambiarla a un singolo candidato, usa la sua pagina. Un candidato in una modalità diversa da quella del colloquio mostra l'icona di quella modalità.",
+      "L'invito mette da parte i crediti di un candidato; vengono restituiti se il candidato finisce senza rispondere.",
+      "Qui compaiono anche i candidati arrivati dal link condivisibile, dal tuo ATS, dall'API o da Scopri.",
+      "Il report su tutti i candidati si condivide in PDF via email, oppure come breve riepilogo via WhatsApp, Telegram, Viber o LINE."
     ]
   },
   "interviewNotes": {
     "title": "Note",
-    "text": "Le note del tuo team su questa selezione: cosa avete deciso, chi chiamare dopo o per chi è il colloquio. Le vede chiunque nella tua azienda; i candidati mai.",
+    "text": "Le note del tuo team su questa selezione: cosa avete deciso, chi chiamare dopo o per chi è il colloquio. Chiunque nella tua azienda, visualizzatori compresi, le vede e può scriverle; i candidati mai.",
     "actions": [
       "Scrivi una nota nel riquadro in alto e seleziona Pubblica, oppure premi ⌘/Ctrl+Enter. I link al suo interno diventano cliccabili.",
-      "Modifica o elimina le tue note con i pulsanti sulla loro riga; proprietari e amministratori possono eliminare quelle di chiunque.",
-      "Fissa una nota con il segnalibro (proprietari e amministratori): compare per prima qui, e sotto il nome del colloquio nella sua pagina e nell'elenco dei colloqui."
+      "Modifica o elimina le tue note dal menu ⋮ sulla loro riga; proprietari e amministratori possono eliminare quelle di chiunque.",
+      "Fissa una nota con «Fissa in alto» nel suo menu ⋮ (proprietari e amministratori): una nota alla volta compare per prima qui, e sotto il nome del colloquio nella sua pagina e nell'elenco dei colloqui."
     ],
     "tips": [
       "Lavori per dei clienti? Fissa una nota come «Per Acme, sviluppatore backend» per vedere a colpo d'occhio per chi è ogni colloquio.",
-      "Una nota eliminata non si può recuperare. Il registro attività annota chi ha scritto, modificato o eliminato una nota, mai il suo testo.",
+      "Una nota eliminata non si può recuperare. Il registro attività annota chi ha scritto, modificato, eliminato o fissato una nota, mai il suo testo.",
       "Il resto del team viene avvisato di ogni nuova nota: nelle notifiche, nel riepilogo attività giornaliero e, con Slack collegato, nel vostro canale."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Impostazioni",
-    "text": "Come si svolge questo colloquio per ogni candidato.",
+    "text": "Come si svolge questo colloquio per ogni candidato. Solo proprietari e amministratori vedono questa scheda.",
     "actions": [
-      "Attiva il link condivisibile per un annuncio di lavoro: chiunque lo abbia può sostenere il colloquio.",
+      "Attiva il link condivisibile per un annuncio di lavoro: chiunque lo abbia può sostenere il colloquio, e ogni persona che risponde tramite il link usa crediti come un candidato invitato.",
       "Scegli la modalità del colloquio: la modalità clic, in cui i candidati toccano le risposte, o la modalità vocale, in cui Mira, un'intervistatrice IA, legge ogni domanda ad alta voce e i candidati rispondono a voce o con un tocco. La modalità vocale funziona in ogni lingua; quanto bene legge e capisce dipende dalla lingua, e il link sotto l'impostazione apre la guida con la qualità in ciascuna.",
       "Imposta il tempo medio per domanda, in secondi: ogni domanda ha un tempo suo in base alla lunghezza e al codice che mostra, e il tempo totale del colloquio resta lo stesso.",
       "Imposta la soglia di superamento: i candidati che la raggiungono superano il colloquio.",
@@ -175,22 +193,26 @@
       "Escludi le domande del colloquio dalla banca domande condivisa di testee; quelle già riutilizzate in altri colloqui restano lì."
     ],
     "tips": [
-      "Ogni impostazione viene salvata appena esci dal suo campo.",
+      "I campi numerici vengono salvati appena li lasci; gli interruttori e la modalità vengono salvati subito.",
       "I candidati non vedono mai i loro punteggi; li vede solo il tuo team.",
-      "Per un candidato che ha bisogno di più tempo, aggiungi tempo extra nella sua pagina."
+      "Per un candidato che ha bisogno di più tempo, aggiungi tempo extra nella sua pagina.",
+      "Una nuova modalità vale per i candidati che non hanno iniziato, tranne quelli a cui ne è stata assegnata una propria nella loro pagina.",
+      "Il tempo medio va da 10 a 600 secondi; la soglia di superamento va dall'1 al 100%."
     ]
   },
   "tryInterview": {
     "title": "Prova come candidato",
     "text": "Un'anteprima di questo colloquio esattamente come lo vedono i candidati: l'introduzione, poi le domande a tempo. È gratis.",
     "actions": [
-      "Avvia l'anteprima e rispondi come farebbe un candidato.",
+      "Spunta l'impegno a rispondere in autonomia, seleziona «Accetta e inizia» e rispondi come farebbe un candidato.",
       "Controlla i tempi, la formulazione e le risposte prima di invitare qualcuno."
     ],
     "tips": [
       "Resta sulla pagina mentre rispondi: per i candidati vengono registrati l'uscita dalla pagina, la copia e le risposte troppo veloci.",
       "Un colloquio in modalità vocale chiede prima il microfono e l'audio: consentili, e Mira legge ogni domanda ad alta voce mentre rispondi a voce o con un tocco.",
-      "Ogni azienda ha un numero di anteprime al giorno, meno in modalità vocale; una volta esaurite, all'avvio vedrai quando puoi riprovare."
+      "Ogni azienda ha un numero di anteprime al giorno, meno in modalità vocale; una volta esaurite, all'avvio vedrai quando puoi riprovare.",
+      "Un'anteprima resta fuori dall'elenco dei candidati e dalle statistiche delle domande.",
+      "Anche i visualizzatori possono provare un colloquio."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Leggi ogni risposta, con le segnalazioni di integrità: uscite dalla pagina, tentativi di copia e risposte troppo veloci.",
       "Quando ha finito, vedi eventuali andamenti insoliti nelle sue risposte e nei tempi, e le domande a cui ha risposto correttamente da approfondire in un colloquio dal vivo.",
-      "Scarica il report in PDF o condividilo via email.",
-      "Concedi tempo extra prima che inizi, ad esempio per una disabilità.",
+      "Scarica il report in PDF o condividilo: il PDF via email, oppure un breve riepilogo via WhatsApp, Telegram, Viber o LINE. I visualizzatori possono inviarlo via email solo ai membri dell'azienda.",
+      "Concedi il +25%, +50% o +100% di tempo extra prima che inizi, ad esempio per una disabilità.",
       "Scegli se risponde in modalità clic o in modalità vocale, qualunque sia la modalità del colloquio, finché non inizia.",
       "Aggiungi o modifica il nome del candidato.",
-      "Copia il suo link d'invito per inviarlo tu, se l'email non è arrivata; resta disponibile finché il candidato non ha finito.",
+      "Copia il suo link d'invito per inviarlo tu, se l'email non è arrivata; resta disponibile finché il candidato non ha finito o l'invito non scade.",
       "Invia di nuovo o revoca l'invito, oppure elimina il candidato con i suoi risultati."
     ],
     "tips": [
       "Il punteggio supporta la tua decisione, non la prende al posto tuo. Se il candidato lo chiede, fai rivedere il suo risultato da una persona.",
       "Un segno di spunta sotto il voto indica che il candidato ha confermato, prima di iniziare, che avrebbe risposto in autonomia, senza strumenti di IA né l'aiuto di altre persone.",
-      "Il punteggio è la percentuale di punti ottenuti: ogni domanda vale un punto, e una domanda in cui selezionare tutte le risposte corrette ne dà una parte per ogni opzione corretta selezionata, e niente se ne è selezionata una sbagliata."
+      "Il punteggio è la percentuale di punti ottenuti: ogni domanda vale un punto, e una domanda in cui selezionare tutte le risposte corrette ne dà una parte per ogni opzione corretta selezionata, e niente se ne è selezionata una sbagliata.",
+      "Tempo extra, modalità e nome del candidato, link d'invito, reinvio, revoca ed eliminazione spettano a proprietari e amministratori."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Cerca per ruolo o argomento, e filtra per livello e lingua.",
       "Apri un modello per vederne gli argomenti e quante domande ha ciascuno.",
-      "Usa un modello per avviare un colloquio a partire da esso."
+      "Guarda su ogni riga argomenti, domande e minuti, e quanti dei tuoi colloqui lo hanno usato.",
+      "Usa un modello per avviare un colloquio a partire da esso (proprietari e amministratori)."
     ],
     "tips": [
       "Per un risultato più mirato, crea invece un colloquio dalla tua descrizione del ruolo.",
-      "Una volta copiato, il colloquio è tuo: modifica domande e impostazioni come preferisci."
+      "Una volta copiato, il colloquio è tuo: modifica domande e impostazioni come preferisci.",
+      "L'elenco inizia con la tua lingua e l'inglese; scegli tutte le lingue per vedere il resto."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "Un colloquio pronto: i suoi argomenti, i loro sottoargomenti e quante domande ha ogni argomento.",
     "actions": [
       "Verifica che gli argomenti corrispondano al ruolo per cui stai assumendo.",
-      "Usa il modello per copiarlo in questa azienda come nuovo colloquio."
+      "Usa il modello per copiarlo in questa azienda come nuovo colloquio (proprietari e amministratori)."
     ],
     "tips": [
       "Copiare è gratis; i candidati che rispondono consumano crediti come sempre.",
-      "Se gli argomenti non vanno bene, crea invece un colloquio dalla tua descrizione del ruolo."
+      "Se gli argomenti non vanno bene, crea invece un colloquio dalla tua descrizione del ruolo.",
+      "Le sue domande restano nascoste finché non lo usi."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "Aggiungi un membro via email, come amministratore o visualizzatore: riceverà via email un link per unirsi.",
       "Cambia il ruolo di un membro tra amministratore e visualizzatore.",
+      "Cedi l'azienda a un amministratore che si è già unito, con «Rendi proprietario» nel suo menu: tu diventi amministratore.",
       "Copia il link di un invito in sospeso, oppure rimuovi un membro o un invito."
     ],
     "tips": [
-      "Gli amministratori creano e modificano i colloqui, invitano i candidati e ricaricano i crediti. I visualizzatori vedono colloqui e risultati e condividono i report, ma non modificano nulla.",
-      "Rimuovere un membro la cui carta paga le ricariche automatiche interrompe quelle ricariche."
+      "Gli amministratori creano e modificano i colloqui, invitano i candidati e ricaricano i crediti. I visualizzatori vedono colloqui e risultati, condividono i report e scrivono note, ma non modificano nient'altro.",
+      "Rimuovere un membro la cui carta paga le ricariche automatiche, o renderlo visualizzatore, interrompe quelle ricariche.",
+      "Solo il proprietario aggiunge, modifica e rimuove i membri; tutti nell'azienda vedono il team."
     ]
   },
   "actions": {
     "title": "Registro attività",
-    "text": "Tutto ciò che hanno fatto i membri dell'azienda, dal più recente: cosa hanno fatto e su cosa, chi l'ha fatto, quando e se l'hanno fatto per loro l'assistente, un'app di IA, l'API o un ATS. Lo vede solo il proprietario.",
+    "text": "Tutto ciò che hanno fatto i membri dell'azienda, dal più recente: cosa hanno fatto e su cosa, chi l'ha fatto, quando e se l'hanno fatto per loro l'assistente IA, un'app di IA, l'API o un ATS. Lo vede solo il proprietario.",
     "actions": [
       "Mostra le azioni di un membro o di un tipo: colloqui, candidati, team, azienda, fatturazione o integrazioni.",
       "Mostra le azioni tra due giorni.",
-      "Scarica un export per l'audit dei bias: un file CSV di ogni candidato che ha finito, per tutti i colloqui o per uno e, se vuoi, tra due giorni, con il suo punteggio, la soglia di superamento, se l'ha superata e se ha ottenuto più della mediana del colloquio, identificato dall'email."
+      "Scarica il registro come file CSV dal menu ⋮: tutto il periodo, un periodo recente o tra due giorni. Fino a 20 download per azienda al giorno.",
+      "Scarica un export per l'audit dei bias: un file CSV di ogni candidato che ha finito con un punteggio, per tutti i colloqui o per uno e, se vuoi, tra due giorni, con il suo punteggio, la soglia di superamento, se l'ha superata e se ha ottenuto più della mediana del colloquio, identificato dall'email."
     ],
     "tips": [
       "Le azioni vengono conservate per 12 mesi.",
@@ -271,12 +300,12 @@
     "text": "Collega testee agli strumenti che il tuo team usa già. Ogni integrazione apre una propria pagina con i passaggi di configurazione.",
     "actions": [
       "Slack: ricevi le notifiche della tua azienda in un canale.",
-      "API: chiavi e webhook per collegare la tua piattaforma.",
+      "API: chiavi, webhook e l'SDK per collegare la tua piattaforma.",
       "App IA: usa testee da Claude, ChatGPT e altre app di IA.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR): i candidati che sposti in una fase ricevono il colloquio, e i loro risultati tornano indietro."
     ],
     "tips": [
-      "Tutti nell'azienda vedono le integrazioni; proprietari e amministratori le modificano."
+      "Tutti nell'azienda vedono le integrazioni; proprietari e amministratori le modificano. Le app di IA sono di ciascuna persona: chiunque può collegare o scollegare le proprie."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "Collega il tuo ATS seguendo le sue istruzioni.",
       "Collega una posizione: scegli la posizione, la sua fase e un colloquio, oppure crea un nuovo colloquio dal testo della posizione.",
+      "Guarda quanti candidati ha invitato ogni posizione collegata, quanti ne ha in attesa e quanti non ha potuto invitare.",
       "Invita di nuovo i candidati che non sono stati invitati, ad esempio quando i crediti erano finiti.",
+      "Ricollega l'ATS quando smette di funzionare: finché non lo fai, i candidati non vengono invitati.",
       "Rimuovi il collegamento di una posizione, oppure scollega l'ATS."
     ],
     "tips": [
       "Aggiungi una fase solo per testee, come «Test delle competenze testee», così non si mescola mai con gli altri tuoi strumenti.",
-      "testee non sposta né scarta mai nessuno nel tuo ATS."
+      "testee non sposta né scarta mai nessuno nel tuo ATS.",
+      "Se il membro che ha collegato l'ATS se ne va o diventa visualizzatore, i candidati non vengono più invitati."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "Aggiungi testee a Slack e scegli il canale, ad esempio #hiring.",
       "Scegli quali notifiche arrivano lì: un candidato che finisce, un invito non consegnato, un colloquio pronto e altro.",
+      "Invia un messaggio di prova al canale e ricollega Slack se smette di accettare messaggi.",
       "Scollega per fermarle e rimuovere l'app di testee dal tuo Slack."
     ],
     "tips": [
       "testee può solo pubblicare in quel canale; non può leggere il tuo Slack.",
-      "Tutti continuano a vedere ogni notifica nella campanella."
+      "Tutti continuano a vedere ogni notifica nella campanella.",
+      "Se il membro che ha collegato Slack se ne va o diventa visualizzatore, Slack si ferma finché un proprietario o un amministratore non lo ricollega."
     ]
   },
   "api": {
     "title": "API",
     "text": "Collega a testee la tua piattaforma, ad esempio il tuo sito carriere.",
     "actions": [
-      "Crea una chiave API e spunta solo ciò che le serve: leggere o creare colloqui; leggere, invitare, modificare o rimuovere candidati; leggere i tuoi crediti; oppure l'uso con agenti IA (MCP). Agisce a tuo nome.",
+      "Crea una chiave API e spunta solo ciò che le serve: leggere o creare colloqui; leggere, invitare, modificare o rimuovere candidati; leggere o aggiungere note; leggere i tuoi crediti; oppure l'uso con agenti IA (MCP). Agisce per l'azienda con una propria identità e continua a funzionare quando la persona che l'ha creata se ne va.",
       "Apri una chiave per cambiare cosa può fare, con ogni modifica salvata subito, e gli indirizzi IP da cui può essere usata.",
+      "Rinomina una chiave, creane una sostitutiva quando sta per scadere e, come proprietario, guarda cosa ha fatto.",
       "Aggiungi un webhook: testee avvisa il tuo indirizzo HTTPS, con firma, quando un candidato inizia, termina (con i suoi risultati) o viene rimosso, quando il suo invito non gli arriva o scade, e quando un colloquio è pronto.",
       "Invia un evento di test a un webhook e guarda nel suo registro delle consegne com'è andato ogni invio.",
+      "Rinnova il segreto di un webhook: per 24 ore entrambi i segreti firmano ogni richiesta.",
       "Nella scheda SDK, elenca i siti che possono mostrare i tuoi colloqui con l'SDK, e consenti localhost mentre fai i test.",
       "Elimina le chiavi e i webhook che non usi più.",
       "Apri la documentazione per sviluppatori con ogni endpoint ed evento, e l'SDK."
@@ -321,7 +357,8 @@
     "tips": [
       "Una nuova chiave e il secret di un webhook vengono mostrati una sola volta: copiali subito.",
       "Scegli una scadenza per ogni chiave: una chiave trapelata che non scade mai resta utilizzabile.",
-      "In seguito puoi spuntare o togliere la spunta ai permessi di una chiave; dai a ogni chiave solo ciò che serve alla sua piattaforma."
+      "In seguito puoi spuntare o togliere la spunta ai permessi di una chiave; dai a ogni chiave solo ciò che serve alla sua piattaforma.",
+      "Un webhook che non risponde per 3 giorni viene sospeso; un evento di prova andato a buon fine lo fa ripartire."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Copia l'indirizzo del server e aggiungilo a Claude, Claude Code o ChatGPT seguendo i passaggi; la documentazione per sviluppatori copre le altre app e i tuoi agenti.",
       "Consenti l'accesso all'app nella pagina di testee che si apre.",
-      "Scollega un'app che non usi più."
+      "Una volta collegata un'app, copia un esempio di cosa chiederle.",
+      "Scollega un'app che non usi più.",
+      "Proprietari e amministratori consentono o bloccano le app di IA in questa azienda: mentre sono disattivate, le app non possono leggere né modificare nulla al suo interno."
     ],
     "tips": [
-      "Un'app agisce a tuo nome, in ogni azienda di cui fai parte. La maggior parte delle app ti chiede conferma prima di cambiare qualsiasi cosa.",
+      "Un'app agisce a tuo nome, in ogni azienda di cui fai parte che consente le app di IA. La maggior parte delle app ti chiede conferma prima di cambiare qualsiasi cosa.",
       "Non può vedere la tua password né le tue chiavi API, né eliminare il tuo account o un'azienda."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Referral",
     "text": "Invita altre aziende su testee con il link di questa azienda, e ricevete entrambi crediti.",
     "actions": [
-      "Copia o condividi il tuo link referral.",
-      "Vedi ogni premio ricevuto da questa azienda."
+      "Copia il tuo link referral per condividerlo.",
+      "Vedi le aziende arrivate dal tuo link che hanno ricaricato, i crediti che ti ha dato ciascuna e quanti premi restano quest'anno."
     ],
     "tips": [
       "Ricevete entrambi crediti quando l'azienda invitata fa la sua prima ricarica, di qualsiasi importo.",
-      "I crediti vanno a questa azienda e non scadono mai."
+      "I crediti vanno a questa azienda e non scadono mai.",
+      "Ogni parte riceve 1.000 crediti. La tua azienda li ottiene fino a 25 volte l'anno; oltre questo limite, l'azienda che hai invitato riceve comunque i suoi crediti.",
+      "Una ricarica rimborsata per intero o stornata annulla entrambi i premi."
     ]
   },
   "brand": {
     "title": "Brand",
-    "text": "Il tuo logo e i tuoi colori nell'invito, nel colloquio e nella pagina finale dei tuoi candidati.",
+    "text": "Il tuo logo, i tuoi colori, i caratteri e l'arrotondamento nell'invito, nel colloquio e nella pagina finale dei tuoi candidati. Il logo compare anche nelle loro email.",
     "actions": [
-      "Imposta o cambia il logo.",
+      "Imposta, cambia o rimuovi il logo.",
       "Scegli i caratteri dei titoli e del testo, e quanto sono arrotondati schede e pulsanti.",
-      "Scegli i colori di ogni gruppo e guardali nell'anteprima.",
-      "Salvali, o torna ai colori di testee."
+      "Scegli i colori di ogni gruppo, un set per il tema chiaro e uno per quello scuro, e guardali nell'anteprima.",
+      "Salvali, annulla le modifiche non salvate con «Ripristina», o torna a colori, caratteri e arrotondamento di testee con «Ripristina le impostazioni di testee»."
     ],
     "tips": [
       "I colori che renderebbero il testo difficile da leggere non si possono salvare, così ogni candidato può leggere le domande.",
-      "Anche i membri del team che provano un colloquio lo vedono con i tuoi colori."
+      "Anche i membri del team che provano un colloquio lo vedono con i tuoi colori.",
+      "Solo proprietari e amministratori vedono questa pagina."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Ricarica, o imposta la ricarica automatica.",
       "Vedi i candidati i cui crediti sono riservati.",
-      "Apri la fattura di qualsiasi ricarica."
+      "Apri la fattura di qualsiasi ricarica.",
+      "Restringi la cronologia a ricariche, addebiti o rimborsi, oppure scaricala come file CSV. Fino a 20 download per azienda al giorno."
     ],
     "tips": [
       "I crediti di un candidato vengono riservati quando lo inviti, addebitati quando risponde e restituiti se non risponde.",
-      "Solo proprietari e amministratori vedono questa pagina."
+      "Solo proprietari e amministratori vedono questa pagina.",
+      "Puoi chiedere il rimborso dei crediti acquistati negli ultimi 14 giorni e non spesi, tramite Paddle o scrivendoci."
     ]
   },
   "topUp": {
     "title": "Ricarica",
     "text": "Acquista crediti per qualsiasi azienda di cui sei proprietario o amministratore.",
     "actions": [
-      "Scegli un'azienda e una ricarica: quelle più grandi costano meno per candidato.",
+      "Scegli un'azienda, poi scrivi per quanti candidati ricaricare, da 10 a 1.000, o scegli una fascia di prezzo: le ricariche più grandi costano meno per candidato.",
+      "Cambia la valuta dell'azienda in cima alla pagina: da quel momento le sue ricariche, anche quelle automatiche, sono prezzate e addebitate in quella valuta.",
       "Paga sulla pagina di pagamento di Paddle; i crediti arrivano in pochi secondi.",
-      "Apri i prezzi per confrontare le ricariche."
+      "Apri i prezzi per confrontare le ricariche.",
+      "Configura la ricarica automatica: scegli un importo e un saldo e spunta l'accordo. La tua carta viene salvata nel checkout di Paddle e addebitata ogni volta che il saldo scende sotto quel livello."
     ],
     "tips": [
       "Un candidato costa 500 crediti: riservati quando lo inviti, addebitati quando risponde e restituiti se non risponde.",
-      "I crediti non scadono. La fattura di ogni ricarica è nella scheda Fatturazione dell'azienda."
+      "I crediti non scadono. La fattura di ogni ricarica è nella scheda Fatturazione dell'azienda.",
+      "I prezzi non includono IVA o imposta sulle vendite: dove si applica, viene aggiunta al checkout.",
+      "Puoi chiedere il rimborso dei crediti acquistati negli ultimi 14 giorni e non spesi, tramite Paddle o scrivendoci.",
+      "Proprietari e amministratori configurano la ricarica automatica. Solo la persona la cui carta paga può modificarla o aggiornare la carta; qualsiasi proprietario o amministratore può disattivarla subito.",
+      "Una carta rifiutata viene riprovata dopo 1, 3 e 7 giorni, poi la ricarica automatica si sospende finché la carta non viene aggiornata. Una carta che non può pagare, come una scaduta, la sospende subito."
     ]
   },
   "settings": {
     "title": "Impostazioni",
-    "text": "Il tuo account: la lingua in cui testee ti parla, le email che ricevi e i tuoi dati.",
+    "text": "Il tuo account: la lingua in cui testee ti parla, la tua valuta, le email che ricevi e i tuoi dati.",
     "actions": [
-      "Scegli la lingua del sito, della chat di assistenza e delle tue email.",
+      "Scegli la lingua del sito, delle risposte dell'assistente IA e delle tue email; anche i nuovi colloqui iniziano in questa lingua.",
+      "Scegli la valuta in cui vedere i prezzi, ovunque tu sia. Le ricariche di un'azienda sono nella valuta dell'azienda, impostata nella sua pagina di ricarica.",
       "Scegli quali email facoltative ricevere; le email di servizio, come inviti, report e problemi di pagamento, vengono sempre inviate.",
       "Attiva o disattiva Aperto a nuove opportunità: finché è attivo, le aziende che assumono su testee per gli argomenti su cui ti sei esercitato vedono il tuo nome, il tuo profilo LinkedIn e i risultati delle tue simulazioni, e possono invitarti.",
-      "Scarica tutto ciò che testee conserva su di te o elimina il tuo account."
+      "Scarica tutto ciò che testee conserva su di te o elimina il tuo account.",
+      "Copia il tuo ID account da indicare quando ci scrivi."
     ],
     "tips": [
-      "Eliminare il tuo account elimina le aziende in cui ci sei solo tu. Un'azienda a cui si sono uniti altri ha prima bisogno di un altro proprietario."
+      "Eliminare il tuo account elimina le aziende in cui ci sei solo tu, e i loro crediti non vengono rimborsati. Un'azienda a cui si sono uniti altri ha prima bisogno di un altro proprietario, o deve essere eliminata.",
+      "Aperto a nuove opportunità richiede il tuo profilo LinkedIn e si disattiva da solo un anno dopo l'ultima volta che l'hai attivato."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Hai effettuato l'accesso con un'altra email? Esci e accedi con quella invitata; l'invito vale solo per quella.",
-      "Il tuo ruolo, amministratore o visualizzatore, è quello scelto da chi ti ha invitato."
+      "Il tuo ruolo, amministratore o visualizzatore, è quello scelto da chi ti ha invitato.",
+      "Un invito già usato, o rimosso dal proprietario, non funziona più."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Accedi, se non l'hai ancora fatto, per vedere quale app lo chiede.",
       "Leggi cosa l'app può e non può fare con il tuo account.",
+      "Disattiva «Consenti modifiche» per lasciare che l'app possa solo leggere.",
       "Consenti o nega l'app; in entrambi i casi torni all'app."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Segui le novità nel tuo lettore di feed con il link RSS in alto."
     ],
     "tips": [
-      "Le novità compaiono nelle tue notifiche; attiva le novità sul prodotto nelle impostazioni per ricevere via email anche le principali."
+      "Le novità compaiono nelle tue notifiche; le principali arrivano anche via email finché «Novità sul prodotto e notizie» è attivo nelle impostazioni."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Finché non scegli le lingue, l'elenco mostra la lingua del sito e l'inglese.",
-      "Le simulazioni sono private: nessuna azienda vede i tuoi risultati.",
-      "Con l'accesso effettuato, una spunta dopo il titolo indica una simulazione che hai iniziato, e una doppia spunta una che hai finito; passaci sopra per vedere quanti argomenti hai completato."
+      "Le simulazioni sono private: nessuna azienda vede i tuoi risultati, a meno che tu non attivi Aperto a nuove opportunità.",
+      "Con l'accesso effettuato, una spunta dopo il titolo indica una simulazione che hai iniziato, e una doppia spunta una che hai finito; passa sopra la spunta per vedere quanti argomenti hai completato."
     ]
   },
   "practiceTest": {
     "title": "Simulazione di colloquio",
     "text": "Una simulazione di colloquio gratuita: il livello, la lingua, la durata e gli argomenti che copre.",
     "actions": [
+      "Scegli il tempo per domanda prima di iniziare: il tempo standard, il doppio o senza limite di tempo.",
       "Inizia una simulazione; prima accedi, se non l'hai ancora fatto.",
       "Guarda fin dove sei arrivato in ogni argomento nella tua ultima simulazione.",
-      "Apri le tue simulazioni precedenti con il pulsante della cronologia accanto a «Inizia la simulazione».",
+      "Con l'accesso effettuato, apri le tue simulazioni precedenti con «Le tue simulazioni» accanto a «Inizia la simulazione».",
       "Assumi per questo ruolo? Crea da qui un colloquio per i tuoi candidati."
     ],
     "tips": [
-      "Ogni simulazione è a tempo, come un vero colloquio; alla fine vedi il tuo punteggio e tutte le risposte corrette.",
-      "Esercitati quanto vuoi: è gratis."
+      "Ogni simulazione è a tempo, a meno che tu non scelga senza limite di tempo; alla fine vedi il tuo punteggio e tutte le risposte corrette.",
+      "Esercitati quanto vuoi, entro un limite orario di nuove simulazioni: è gratis."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "Quello che hai selezionato quando scade il tempo di una domanda conta comunque; una domanda senza nulla selezionato, o mai raggiunta, conta come sbagliata.",
       "Assumi per questo ruolo? Crea da qui un colloquio per i tuoi candidati.",
-      "Cerchi lavoro? Attiva Aperto a nuove opportunità per permettere alle aziende che assumono per questi argomenti di vedere il tuo nome, il tuo profilo LinkedIn e i risultati delle tue simulazioni."
+      "Cerchi lavoro? Dopo una simulazione finita, inserisci il tuo profilo LinkedIn e attiva Aperto a nuove opportunità per permettere alle aziende che assumono per questi argomenti di vedere il tuo nome, il tuo profilo e i risultati delle tue ultime simulazioni e di invitarti; resta attivo per un anno, se non lo disattivi."
     ]
   },
   "features": {
     "title": "Funzionalità",
     "text": "Tutto ciò che testee fa per un'azienda, dalla descrizione del ruolo all'assunzione: creare colloqui, invitare candidati, cosa vedono i candidati, report, integrazioni, conformità e prezzi.",
     "actions": [
+      "Vai al riquadro in fondo alla pagina con «Crea un colloquio» in alto, oppure apri i prezzi.",
       "Vai a un gruppo con le schede in alto: crea, invita, colloquio, decidi, collega, fiducia e prezzi.",
-      "Guarda ogni funzionalità accanto a un'immagine dell'app reale.",
+      "Guarda le funzionalità principali accanto a un'immagine dell'app reale, e le altre come schede sotto.",
       "Incolla una descrizione del ruolo nel riquadro in fondo alla pagina per creare un colloquio.",
-      "Apri la pagina dei prezzi, la documentazione per sviluppatori o la pagina fiducia dai rispettivi gruppi."
+      "Apri la pagina dei prezzi, la documentazione per sviluppatori o la pagina fiducia dai rispettivi gruppi.",
+      "Chiedi a Mira, oppure apri le FAQ o le guide, in fondo alla pagina."
     ],
     "tips": [
       "Tutte le funzionalità sono incluse: paghi solo per ogni candidato che risponde ad almeno una domanda."
@@ -512,8 +570,9 @@
     "actions": [
       "Scorri lungo la linea verso il basso: ogni fase mostra cosa succede, le sue opzioni e un'immagine dell'app reale.",
       "Sotto le fasi di invito e condivisione vedi i modi in cui i candidati possono arrivare e i report possono uscire.",
-      "Crea un colloquio con il pulsante in alto, oppure apri tutte le funzionalità.",
-      "Incolla una descrizione del ruolo nel riquadro in fondo alla pagina per iniziare."
+      "Vai al riquadro iniziale con «Crea un colloquio» in alto, oppure apri tutte le funzionalità.",
+      "Incolla una descrizione del ruolo nel riquadro in fondo alla pagina per iniziare.",
+      "Chiedi a Mira, oppure apri le FAQ o le guide, in fondo alla pagina."
     ],
     "tips": [
       "Creare colloqui è gratis: paghi solo per ogni candidato che risponde ad almeno una domanda."
@@ -525,12 +584,14 @@
     "actions": [
       "Guarda il prezzo attuale per candidato e i prezzi più bassi per le ricariche più grandi.",
       "Guarda quanti primi candidati sono gratis.",
+      "Guarda quanti crediti richiede un candidato; le imposte vengono aggiunte al checkout dove si applicano.",
       "Guarda i crediti che ottieni invitando un'altra azienda.",
       "Ricarica i crediti di un'azienda."
     ],
     "tips": [
       "I crediti non scadono mai.",
-      "Un candidato che non risponde a nessuna domanda non costa nulla."
+      "Un candidato che non risponde a nessuna domanda non costa nulla.",
+      "I crediti pagati e non usati possono essere rimborsati entro 14 giorni."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "testee a confronto",
     "text": "Confronti con fonti tra testee e altri strumenti di test pre-assunzione: come vengono creati i test, quanto costano e quando ciascuno è più adatto.",
     "actions": [
-      "Apri un confronto per leggerlo."
+      "Apri un confronto per leggerlo.",
+      "Crea un test per i tuoi candidati dalla scheda in fondo."
     ],
     "tips": [
       "Ogni confronto mostra quando è stato aggiornato l'ultima volta."
@@ -574,8 +636,9 @@
     "text": "Come si confronta testee con altri strumenti su una questione: come vengono creati i test, quanto costano e quando ciascuno è più adatto.",
     "actions": [
       "Leggi il confronto e segui i suoi link alle fonti.",
-      "Crea un test per i tuoi candidati dalla scheda in fondo.",
-      "Torna a tutti i confronti con il link sopra il titolo."
+      "Vai a una sezione dall'elenco «In questa pagina», nelle pagine più lunghe.",
+      "Crea un test per i tuoi candidati dal pulsante in alto o dalla scheda in fondo.",
+      "Torna a tutti i confronti con la freccia indietro vicino al titolo."
     ],
     "tips": [
       "Prezzi e funzionalità cambiano: la data sotto il titolo indica quando la pagina è stata aggiornata l'ultima volta."
@@ -585,6 +648,7 @@
     "title": "Guide per assumere",
     "text": "Guide pratiche per i responsabili delle assunzioni: selezionare le candidature, test di competenze e usare l'IA nelle assunzioni in modo equo e legale.",
     "actions": [
+      "Cerca nelle guide.",
       "Apri una guida per leggerla."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "Una guida pratica per i responsabili delle assunzioni su un argomento.",
     "actions": [
       "Leggi la guida e segui i suoi link alle fonti e alle pagine correlate.",
-      "Crea un test per i tuoi candidati dalla scheda in fondo.",
-      "Torna a tutte le guide con il link sopra il titolo."
+      "Vai a una sezione dall'elenco «In questa pagina», nelle pagine più lunghe.",
+      "Crea un test per i tuoi candidati dal pulsante in alto o dalla scheda in fondo.",
+      "Torna a tutte le guide con la freccia indietro vicino al titolo."
     ],
     "tips": [
-      "Gli argomenti legali sono sintesi, non consulenze legali: verifica con il tuo consulente legale."
+      "Gli argomenti legali sono sintesi datate, non consulenze legali: verifica le regole che si applicano dove assumi."
     ]
   },
   "faq": {
     "title": "Domande frequenti",
     "text": "Risposte alle domande più comuni su testee: colloqui, candidati, prezzi e crediti, risultati, integrazioni, lingue e i tuoi dati.",
     "actions": [
+      "Vai a un gruppo di domande con i pulsanti in alto.",
       "Fai clic su una domanda per aprirne la risposta."
     ],
     "tips": [
-      "Non hai trovato la risposta? Chiedi a Mira, l'assistente IA, in cima alla pagina, o scrivici dalla pagina dei contatti.",
+      "Non hai trovato la risposta? Chiedi a Mira, l'assistente IA, o scrivici, dalla scheda in fondo alla pagina.",
       "I prezzi nelle risposte sono sempre quelli attuali."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "Chi crea testee e perché: colloqui creati da una descrizione del ruolo che ogni team può permettersi, e simulazioni gratuite per tutti.",
     "actions": [
       "Leggi perché esiste testee e come affronta le assunzioni.",
-      "Leggi un messaggio del fondatore e apri il suo profilo LinkedIn."
+      "Leggi un messaggio del fondatore e apri il suo profilo LinkedIn.",
+      "Crea un test, o esercitati gratis, dalla scheda in fondo."
     ],
     "tips": [
       "Per scrivere al team, usa la pagina dei contatti."
@@ -630,7 +697,8 @@
     "text": "Scrivi al team di testee per una domanda, un'idea, una proposta di partnership o qualcosa che non funziona.",
     "actions": [
       "Inserisci il tuo nome, la tua email e il tuo messaggio, poi invialo.",
-      "Incolla l'ID dell'azienda, del colloquio, del candidato o dell'account in questione, così lo troviamo subito."
+      "Incolla nel messaggio l'ID dell'azienda, del colloquio, del candidato o dell'account in questione, così lo troviamo subito.",
+      "Guarda chi gestisce testee: ragione sociale, numero di registro, indirizzo ed email."
     ],
     "tips": [
       "Il link «Copia ID» si trova sotto il nome di un'azienda, di un colloquio o di un candidato; l'ID del tuo account è nel menu del tuo account.",
@@ -641,7 +709,7 @@
     "title": "Documentazione per sviluppatori",
     "text": "Tutto ciò che ti serve per collegare a testee la tua piattaforma o il tuo agente IA, letto direttamente dall'API così corrisponde sempre.",
     "actions": [
-      "API: come autenticarti, l'URL di base e ogni endpoint con parametri, body, risposta ed errori.",
+      "API: come autenticarti, guide come quelle sui limiti di frequenza e sui nuovi tentativi sicuri, l'URL di base, ogni endpoint con parametri, body, risposta ed errori, l'elenco degli errori e il changelog.",
       "Webhook: gli eventi che testee invia al tuo indirizzo e cosa contiene ciascuno.",
       "SDK: come incorporare il colloquio nel tuo sito.",
       "MCP: come collegare un'app IA o il tuo agente, e gli strumenti che ottiene.",
@@ -661,7 +729,8 @@
       "Scrivici via email se qualcosa è difficile da usare o ti serve in un'altra forma."
     ],
     "tips": [
-      "Stai facendo il colloquio di un'azienda e ti serve più tempo? Chiedi all'azienda tempo extra prima di iniziare; non devi spiegare perché."
+      "Stai facendo il colloquio di un'azienda e ti serve più tempo? Chiedi all'azienda tempo extra prima di iniziare; non devi spiegare perché.",
+      "Rispondiamo entro 14 giorni; se non sei soddisfatto, puoi rivolgerti all'Autorità estone per la tutela dei consumatori e la regolamentazione tecnica (TTJA)."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "Scopri come testee protegge i dati: accesso, crittografia, controlli sugli accessi, limiti di frequenza e backup.",
       "Scopri cosa fornisce testee per il GDPR, l'AI Act dell'UE, il Regno Unito e gli Stati Uniti, compresa la legge di New York City sugli audit dei bias.",
       "Scopri dove sono conservati i dati, quali sub-responsabili li trattano e per quanto tempo viene conservato ogni tipo di dato.",
-      "Apri i termini, l'informativa sulla privacy, l'accordo sul trattamento dei dati e i documenti per le aziende."
+      "Apri i termini, l'informativa sulla privacy, l'accordo sul trattamento dei dati e i documenti per le aziende.",
+      "Apri la dichiarazione di accessibilità."
     ],
     "tips": [
       "Per una domanda su sicurezza, privacy o conformità, o per segnalare un problema di sicurezza, scrivi all'indirizzo email in fondo alla pagina."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Annulla l'iscrizione",
-    "text": "Smetti di ricevere un tipo di email da testee, quello indicato nella pagina.",
+    "text": "Smetti di ricevere un tipo di email da testee, o tutte le email di un'azienda, come indicato nella pagina.",
     "actions": [
       "Leggi quali email interrompe il link.",
       "Conferma per annullare l'iscrizione; aprire il link da solo non cambia nulla.",
-      "Poi apri le impostazioni email per modificare le altre email."
+      "Con l'accesso effettuato, poi apri le impostazioni email per modificare le altre email."
     ],
     "tips": [
-      "Le email di servizio, come gli inviti al team, i report e i problemi di pagamento, continuano ad arrivare."
+      "Le email di servizio, come gli inviti al team, i report e i problemi di pagamento, continuano ad arrivare; un link che blocca le email di un'azienda blocca anche i suoi inviti a te."
     ]
   }
 }

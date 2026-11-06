@@ -5,13 +5,15 @@
     "actions": [
       "Wklej opis stanowiska w polu na górze albo wybierz gotowy szablon; dopasuj tematy, a pytania zostaną za Ciebie napisane i sprawdzone.",
       "Zaproś kandydatów e-mailem, z pliku, linkiem w ogłoszeniu o pracę albo przez swój ATS, swoją platformę lub asystenta AI.",
+      "Zobacz to, co widzą kandydaci: rozmowę na czas w Twojej marce, z odpowiedziami kliknięciem lub głosem.",
       "Czytaj raporty: odpowiedzi, wyniki i ostrzeżenia o podejrzanych zachowaniach każdego kandydata, udostępniane jednym kliknięciem e-mailem lub na czacie.",
-      "Połącz swoją platformę, aplikację AI i portale z ofertami pracy, otrzymuj powiadomienia na Slacku albo poproś Mirę, asystentkę AI, by zrobiła to za Ciebie."
+      "Połącz swój ATS, platformę i aplikacje AI, otrzymuj powiadomienia na Slacku albo poproś Mirę, asystentkę AI, by zrobiła to za Ciebie.",
+      "Porównaj testee z rozmowami telefonicznymi i abonamentami i zobacz, jak pytania są sprawdzane i ulepszane."
     ],
     "tips": [
-      "Tworzenie rozmów jest bezpłatne. Płacisz za każdego kandydata, który odpowiada, według ceny pod tytułem w swojej walucie, a pierwsi kandydaci są za darmo.",
+      "Tworzenie rozmów jest bezpłatne. Płacisz za każdego kandydata, który odpowiada, według cen podanych niżej na stronie w swojej walucie, a pierwsi kandydaci są za darmo.",
       "Wypróbuj rozmowę jako kandydat, zanim kogokolwiek zaprosisz.",
-      "Obejrzyj wideo na górze, by zobaczyć krótki przegląd; FAQ i poradniki są na dole strony.",
+      "Obejrzyj wideo z przycisku na górze, by zobaczyć krótki przegląd; FAQ i poradniki są na dole strony.",
       "Pobierz przykładowe raporty pod sekcją raportów, aby zobaczyć, jak wyglądają prawdziwe raporty."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "Utwórz firmę przyciskiem „Nowa firma”. Jej nazwa jest unikalna w całym testee.",
       "Otwórz firmę, by pracować nad jej rozmowami i kandydatami.",
-      "Usuń firmę, której jesteś właścicielem, razem ze wszystkimi rozmowami i zaproszeniami."
+      "Usuń firmę, której jesteś właścicielem, razem ze wszystkimi rozmowami i zaproszeniami; jej kredyty przepadają i nie są zwracane.",
+      "Otwórz menu ⋮ firmy, by przejść do jej zespołu; właściciele i administratorzy doładowują tam też kredyty oraz otwierają jej markę i rozliczenia."
     ],
     "tips": [
-      "Przy firmach, których nie jesteś właścicielem, widać Twoją rolę: administratorzy wprowadzają zmiany, obserwatorzy tylko przeglądają.",
+      "Przy firmach, których nie jesteś właścicielem, widać Twoją rolę: administratorzy wprowadzają zmiany; obserwatorzy głównie przeglądają, a także mogą pisać notatki, oceniać i zgłaszać pytania, wypróbowywać rozmowy i udostępniać raporty.",
       "Kredyty należą do firmy, więc każdą doładowuje się osobno."
     ]
   },
@@ -36,22 +39,23 @@
       "Utwórz nową firmę, jeśli jeszcze jej nie masz; szablon otworzy się w niej."
     ],
     "tips": [
-      "Po skopiowaniu rozmowa należy do firmy: zmieniaj jej pytania i ustawienia, jak chcesz."
+      "Po skopiowaniu rozmowa należy do firmy: zmieniaj jej pytania i ustawienia, jak chcesz.",
+      "Tylko właściciele i administratorzy mogą użyć szablonu; w firmie, w której jesteś obserwatorem, tego przycisku nie ma."
     ]
   },
   "interviews": {
     "title": "Rozmowy",
-    "text": "Wszystkie rozmowy tej firmy i jej kredyty na kandydatów. Każda rozmowa to test na czas utworzony z opisu stanowiska.",
+    "text": "Wszystkie rozmowy tej firmy i jej kredyty na kandydatów. Każda rozmowa to test na czas utworzony z opisu stanowiska lub szablonu.",
     "actions": [
-      "Utwórz rozmowę z opisu stanowiska przyciskiem „Nowa rozmowa”.",
-      "Otwórz rozmowę, by zobaczyć jej tematy, kandydatów, notatki i ustawienia; przypięta notatka wyświetla się pod jej nazwą.",
-      "Szukaj rozmów po ich tytule.",
-      "Wypróbuj rozmowę jako kandydat albo ją usuń.",
-      "Doładuj kredyty przy saldzie albo włącz automatyczne doładowanie na karcie Rozliczenia."
+      "Utwórz rozmowę z opisu stanowiska przyciskiem „Nowa rozmowa” (właściciele i administratorzy).",
+      "Otwórz rozmowę, by zobaczyć jej tematy, kandydatów i notatki, ustawienia (właściciele i administratorzy) oraz, po pierwszym doładowaniu firmy, Odkrywaj; przypięta notatka wyświetla się pod jej nazwą.",
+      "Szukaj rozmów po ich tytule albo filtruj je według statusu: nowa, w toku lub zatrudniono.",
+      "Wypróbuj rozmowę jako kandydat z jej menu ⋮; właściciele i administratorzy mogą ją tam też usunąć.",
+      "Doładuj kredyty przy saldzie albo włącz automatyczne doładowanie na karcie Rozliczenia (właściciele i administratorzy)."
     ],
     "tips": [
       "Saldo zmienia kolor na bursztynowy, gdy kredytów jest mało. Bez kredytów nowe zaproszenia nie są wysyłane.",
-      "Menu firmy prowadzi do szablonów, zespołu, integracji, rozliczeń (dla właścicieli i administratorów) i poleceń."
+      "Menu firmy prowadzi do szablonów, zespołu, integracji, marki i rozliczeń (dla właścicieli i administratorów), dziennika działań (dla właściciela) i poleceń."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Zacznij rozmowę od opisu stanowiska. testee go przeczyta, zaproponuje tematy do sprawdzenia i napisze pytania, gdy je zatwierdzisz.",
     "actions": [
       "Wklej opis stanowiska: rolę, wymagania i mile widziane umiejętności.",
+      "Gdy nic jeszcze nie wpisano, „Wypróbuj przykład” wypełnia pole przykładowym opisem.",
       "Wybierz język, w którym ma powstać rozmowa.",
-      "Wygeneruj, a potem przejrzyj proponowane tematy."
+      "Wygeneruj, a potem przejrzyj proponowane tematy.",
+      "Możesz też zacząć od szablonu albo, po połączeniu ATS, od oferty z Twojego ATS.",
+      "Jeśli zaczynasz ze strony głównej, wybierz firmę, której dotyczy rozmowa, albo utwórz nową; na liście są tylko firmy, których jesteś właścicielem lub administratorem."
     ],
     "tips": [
       "Im bardziej konkretny opis, tym lepiej pytania pasują do roli.",
-      "Generowanie jest bezpłatne: płacisz tylko za kandydatów, którzy odpowiadają."
+      "Generowanie jest bezpłatne: płacisz tylko za kandydatów, którzy odpowiadają.",
+      "Firma może mieć tylko kilka rozmów bez kandydatów i rozpoczynać tylko kilka dziennie; po doładowaniu limity są wyższe."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "Odznacz tematy, których nie potrzebujesz.",
       "Edytuj nazwę tematu i podtematy ołówkiem przy nim.",
+      "Dodaj własny temat przyciskiem „Dodaj temat”: nadaj mu nazwę i co najmniej 3 podtematy.",
       "Opisz zmiany własnymi słowami i je zastosuj, np. „dodaj temat o przywództwie w zespole”.",
-      "Zatwierdź i wygeneruj, by powstały pytania."
+      "Zatwierdź i wygeneruj, by powstały pytania.",
+      "Anuluj, by porzucić rozmowę; nic z dotąd wygenerowanych treści nie zostaje zachowane."
     ],
     "tips": [
       "Gdy tematów jest za dużo, odznacz część albo opisz, jak je połączyć.",
-      "Pytania powstają dopiero po zatwierdzeniu, więc poświęć tu chwilę."
+      "Pytania powstają dopiero po zatwierdzeniu, więc poświęć tu chwilę.",
+      "Przegląd pozostawiony otwarty przez 14 dni zostaje anulowany, a jego rozmowa usunięta."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "testee tworzy Twoją rozmowę: najpierw tematy, potem pytania do każdego z nich. To potrwa kilka minut.",
     "actions": [
       "Możesz opuścić tę stronę: generowanie trwa dalej.",
-      "Anuluj generowanie, jeśli już go nie potrzebujesz; nic z tego, co powstało, nie zostanie zachowane."
+      "Anuluj generowanie, jeśli już go nie potrzebujesz; nic z tego, co powstało, nie zostanie zachowane.",
+      "Gdy tematy będą gotowe, ta strona pokaże je do przeglądu; pytania powstają dopiero po Twojej akceptacji.",
+      "Jeśli generowanie się nie powiedzie, wybierz Ponów lub Zacznij od nowa."
     ],
     "tips": [
       "Dostaniesz powiadomienie, gdy rozmowa będzie gotowa.",
@@ -97,14 +110,14 @@
     "title": "Tematy",
     "text": "Co sprawdza ta rozmowa: jej tematy, każdy z podtematami i własną pulą pytań. Każdy kandydat dostaje losowy zestaw z każdej puli.",
     "actions": [
-      "Otwórz „Zarządzaj pytaniami”, by przejść do pytań tematu: przeczytaj je, wyłącz niektóre, polub, oceń negatywnie albo zgłoś.",
-      "Wygeneruj ponownie słabe pytanie albo oznacz błędną odpowiedź na stronie pytań tematu.",
-      "Ustaw, ile pytań z tematu dostaje każdy kandydat; 0 pomija temat dla nowych kandydatów. Kandydat dostaje łącznie najwyżej 60 pytań ze wszystkich tematów: zmniejsz jeden temat, aby zwiększyć inny.",
-      "Wypróbuj rozmowę jako kandydat albo ją usuń."
+      "Otwórz temat, by przejść do jego pytań: przeczytaj je, polub, oceń negatywnie, zgłoś, a jako właściciel lub administrator wyłącz niektóre.",
+      "Wygeneruj ponownie słabe pytanie albo oznacz błędną odpowiedź na stronie pytań tematu (właściciele i administratorzy).",
+      "Ustaw, ile pytań z tematu dostaje każdy kandydat (właściciele i administratorzy); 0 pomija temat dla nowych kandydatów, ale co najmniej jeden temat musi zachować pytania. Kandydat dostaje łącznie najwyżej 60 pytań ze wszystkich tematów: zmniejsz jeden temat, aby zwiększyć inny.",
+      "Wypróbuj rozmowę jako kandydat z menu ⋮; właściciele i administratorzy mogą ją tam też usunąć."
     ],
     "tips": [
-      "Pytania napisane przez AI mogą zawierać błędy: przejrzyj każdy temat, zanim kogokolwiek zaprosisz.",
-      "Kliknij tytuł, by zmienić nazwę rozmowy.",
+      "Pytania napisane przez AI mogą zawierać błędy, choć druga AI sprawdza próbkę odpowiedzi: przejrzyj każdy temat, zanim kogokolwiek zaprosisz.",
+      "Kliknij tytuł, by zmienić nazwę rozmowy (właściciele i administratorzy).",
       "Karty na górze sumują to, co dostaje każdy kandydat: łączną liczbę pytań, średni czas na pytanie i czas całej rozmowy. Zmieniają się po każdej zmianie."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Pytania",
     "text": "Pytania jednego tematu z odpowiedziami, polubieniami, negatywnymi ocenami i zgłoszeniami. Każdy kandydat dostaje losowy zestaw spośród aktywnych pytań.",
     "actions": [
+      "Na kartach u góry zobacz, ile jest pytań, ile jest aktywnych lub wyłączonych i ile mają zgłoszeń; filtruj listę według: Wszystkie, Aktywne, Wyłączone lub Zgłoszone.",
       "Odznacz pytanie, by je wyłączyć: od teraz nie dostanie go żaden kandydat. Zaznacz je, by znów było aktywne (właściciele i administratorzy).",
       "Polub pytanie lub oceń je negatywnie; kliknij swój wybór ponownie, by go cofnąć.",
       "Otwórz zgłoszenia do pytania i dodaj własne, jedno na pytanie.",
-      "Wygeneruj ponownie słabe pytanie albo oznacz błędną odpowiedź (właściciele i administratorzy)."
+      "Wygeneruj ponownie słabe pytanie albo oznacz błędną odpowiedź z jego menu ⋮ (właściciele i administratorzy); oznaczona odpowiedź jest sprawdzana, a jeśli jest błędna, poprawiana lub zastępowana."
     ],
     "tips": [
       "Pytania napisane przez AI mogą być błędne: przeczytaj je, zanim kogokolwiek zaprosisz.",
@@ -127,27 +141,31 @@
     "title": "Kandydaci",
     "text": "Wszyscy zaproszeni na tę rozmowę, z ich statusem, postępem i wynikiem.",
     "actions": [
-      "Zaproś kandydatów: pojedynczo, listą do 100 osób albo plikiem CSV lub TXT.",
+      "Zaproś kandydatów przyciskiem „Nowi kandydaci” (właściciele i administratorzy): pojedynczo, listą albo plikiem CSV lub TXT.",
       "Szukaj po e-mailu lub imieniu i nazwisku, filtruj po statusie i sortuj po wyniku lub dacie.",
-      "Otwórz raport kandydata albo pobierz lub udostępnij raport o wszystkich kandydatach."
+      "Otwórz raport kandydata albo pobierz lub udostępnij raport o wszystkich kandydatach.",
+      "Otwórz menu ⋮ kandydata, by ponownie wysłać zaproszenie, skopiować jego link, wycofać je lub usunąć kandydata (właściciele i administratorzy)."
     ],
     "tips": [
       "Każdy kandydat, który odpowie na co najmniej jedno pytanie, zużywa kredyty, także ten z linku.",
-      "Przypomnienia trafiają do kandydatów automatycznie.",
-      "Zapraszając, wybierz, czy kandydaci odpowiadają w trybie kliknięć, czy w trybie głosowym; przy kandydacie w innym trybie niż tryb rozmowy widać ikonę jego trybu."
+      "Kandydat, który nie zaczął, dostaje jedno przypomnienie 3 dni po zaproszeniu. Zaproszenie nierozpoczęte w ciągu 30 dni wygasa; ponowne wysłanie sprawia, że znów działa.",
+      "Kandydaci odpowiadają w trybie rozmowy; aby zmienić go jednemu kandydatowi, użyj jego strony. Przy kandydacie w innym trybie niż tryb rozmowy widać ikonę tego trybu.",
+      "Zaproszenie rezerwuje kredyty kandydata; wracają, jeśli kandydat zakończy bez odpowiedzi.",
+      "Tutaj widać też kandydatów z linku do udostępnienia, Twojego ATS, API lub Odkrywaj.",
+      "Raport o wszystkich kandydatach udostępnia się jako PDF e-mailem albo jako krótkie podsumowanie przez WhatsApp, Telegram, Viber lub LINE."
     ]
   },
   "interviewNotes": {
     "title": "Notatki",
-    "text": "Notatki Twojego zespołu o tej rekrutacji: co ustaliliście, do kogo zadzwonić w następnej kolejności albo dla kogo jest ta rozmowa. Widzą je wszyscy w Twojej firmie; kandydaci nigdy.",
+    "text": "Notatki Twojego zespołu o tej rekrutacji: co ustaliliście, do kogo zadzwonić w następnej kolejności albo dla kogo jest ta rozmowa. Widzą je i mogą je pisać wszyscy w Twojej firmie, także obserwatorzy; kandydaci nigdy.",
     "actions": [
       "Wpisz notatkę w polu na górze i wybierz Opublikuj albo naciśnij ⌘/Ctrl+Enter. Linki w niej stają się klikalne.",
-      "Edytuj lub usuwaj swoje notatki przyciskami w ich wierszu; właściciele i administratorzy mogą usunąć notatkę każdego.",
-      "Przypnij notatkę ikoną zakładki (właściciele i administratorzy): wyświetla się tu jako pierwsza, a także pod nazwą rozmowy na jej stronie i na liście rozmów."
+      "Edytuj lub usuwaj swoje notatki z menu ⋮ w ich wierszu; właściciele i administratorzy mogą usunąć notatkę każdego.",
+      "Przypnij notatkę opcją „Przypnij na górze” w jej menu ⋮ (właściciele i administratorzy): jedna notatka naraz wyświetla się tu jako pierwsza, a także pod nazwą rozmowy na jej stronie i na liście rozmów."
     ],
     "tips": [
       "Pracujesz dla klientów? Przypnij notatkę w rodzaju „Dla Acme, backend developer”, aby od razu widzieć, dla kogo jest każda rozmowa.",
-      "Usuniętej notatki nie da się przywrócić. Dziennik działań zapisuje, kto napisał, zmienił lub usunął notatkę, ale nigdy jej treści.",
+      "Usuniętej notatki nie da się przywrócić. Dziennik działań zapisuje, kto napisał, zmienił, usunął lub przypiął notatkę, ale nigdy jej treści.",
       "Reszta zespołu dowiaduje się o każdej nowej notatce: w powiadomieniach, w codziennym podsumowaniu aktywności i, jeśli Slack jest połączony, na waszym kanale."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Ustawienia",
-    "text": "Jak ta rozmowa przebiega dla każdego kandydata.",
+    "text": "Jak ta rozmowa przebiega dla każdego kandydata. Tę kartę widzą tylko właściciele i administratorzy.",
     "actions": [
-      "Włącz link do udostępnienia do ogłoszenia o pracę: każdy, kto go ma, może przejść rozmowę.",
+      "Włącz link do udostępnienia do ogłoszenia o pracę: każdy, kto go ma, może przejść rozmowę, a każda osoba, która odpowie przez ten link, zużywa kredyty tak jak zaproszony kandydat.",
       "Wybierz tryb rozmowy: tryb kliknięć, w którym kandydaci dotykają odpowiedzi, lub tryb głosowy, w którym Mira, rekruterka AI, czyta każde pytanie na głos, a kandydaci odpowiadają głosem lub dotknięciem. Tryb głosowy działa w każdym języku; to, jak dobrze czyta i słyszy, zależy od języka, a link pod ustawieniem otwiera poradnik z jakością w każdym z nich.",
       "Ustaw średni czas na pytanie, w sekundach: każde pytanie dostaje własny czas zależnie od długości i kodu, który pokazuje, a łączny czas rozmowy pozostaje taki sam.",
       "Ustaw próg zaliczenia: kandydaci, którzy go osiągną, przechodzą.",
@@ -175,22 +193,26 @@
       "Nie dodawaj pytań z rozmowy do wspólnej bazy pytań testee; pytania już użyte ponownie w innych rozmowach tam pozostaną."
     ],
     "tips": [
-      "Każde ustawienie zapisuje się, gdy tylko opuścisz jego pole.",
+      "Pola liczbowe zapisują się, gdy tylko je opuścisz; przełączniki i tryb zapisują się od razu.",
       "Kandydaci nigdy nie widzą swoich wyników; widzi je tylko Twój zespół.",
-      "Jeśli jeden kandydat potrzebuje więcej czasu, dodaj mu dodatkowy czas na jego stronie."
+      "Jeśli jeden kandydat potrzebuje więcej czasu, dodaj mu dodatkowy czas na jego stronie.",
+      "Nowy tryb dotyczy kandydatów, którzy nie zaczęli, z wyjątkiem tych, którzy dostali własny tryb na swojej stronie.",
+      "Średni czas to 10 do 600 sekund; próg zaliczenia to 1 do 100%."
     ]
   },
   "tryInterview": {
     "title": "Wypróbuj jako kandydat",
     "text": "Podgląd tej rozmowy dokładnie tak, jak widzą ją kandydaci: wstęp, a potem pytania na czas. Jest bezpłatny.",
     "actions": [
-      "Rozpocznij podgląd i odpowiadaj tak, jak zrobiłby to kandydat.",
+      "Zaznacz zobowiązanie do samodzielnych odpowiedzi, wybierz „Akceptuj i rozpocznij” i odpowiadaj tak, jak zrobiłby to kandydat.",
       "Sprawdź czas, sformułowania i odpowiedzi, zanim kogokolwiek zaprosisz."
     ],
     "tips": [
       "Nie opuszczaj strony podczas odpowiadania: u kandydatów opuszczenie strony, kopiowanie i zbyt szybkie odpowiedzi są rejestrowane.",
       "Rozmowa w trybie głosowym najpierw prosi o dostęp do mikrofonu i dźwięku: zezwól na nie, a Mira będzie czytać każde pytanie na głos, gdy Ty odpowiadasz głosem lub dotknięciem.",
-      "Każda firma ma dzienną liczbę podglądów, mniejszą w trybie głosowym; gdy się wyczerpią, przy próbie rozpoczęcia zobaczysz, kiedy możesz spróbować ponownie."
+      "Każda firma ma dzienną liczbę podglądów, mniejszą w trybie głosowym; gdy się wyczerpią, przy próbie rozpoczęcia zobaczysz, kiedy możesz spróbować ponownie.",
+      "Podgląd nie trafia na listę kandydatów ani do statystyk pytań.",
+      "Obserwatorzy też mogą wypróbować rozmowę."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Przeczytaj każdą odpowiedź z ostrzeżeniami o podejrzanych zachowaniach: opuszczeniami strony, próbami kopiowania i szybkimi odpowiedziami.",
       "Gdy kandydat skończy, zobacz nietypowe wzorce w jego odpowiedziach i czasach oraz pytania, na które odpowiedział poprawnie, by dopytać o nie na rozmowie na żywo.",
-      "Pobierz raport jako PDF albo udostępnij go e-mailem.",
-      "Daj dodatkowy czas, zanim kandydat zacznie, np. z powodu niepełnosprawności.",
+      "Pobierz raport jako PDF albo udostępnij go: PDF e-mailem lub krótkie podsumowanie przez WhatsApp, Telegram, Viber albo LINE. Obserwatorzy mogą wysłać go e-mailem tylko do członków firmy.",
+      "Daj +25%, +50% lub +100% dodatkowego czasu, zanim kandydat zacznie, np. z powodu niepełnosprawności.",
       "Wybierz, czy kandydat odpowiada w trybie kliknięć, czy w trybie głosowym, niezależnie od trybu rozmowy, dopóki nie zacznie.",
       "Dodaj lub edytuj imię i nazwisko kandydata.",
-      "Skopiuj link z zaproszeniem, aby wysłać go samodzielnie, jeśli e-mail nie dotarł; jest dostępny, dopóki kandydat nie skończy.",
+      "Skopiuj link z zaproszeniem, aby wysłać go samodzielnie, jeśli e-mail nie dotarł; jest dostępny, dopóki kandydat nie skończy lub zaproszenie nie wygaśnie.",
       "Wyślij zaproszenie ponownie lub je wycofaj albo usuń kandydata razem z jego wynikami."
     ],
     "tips": [
       "Wynik wspiera Twoją decyzję, ale jej nie podejmuje. Jeśli kandydat o to poprosi, niech jego wynik sprawdzi człowiek.",
       "Znacznik pod oceną pokazuje, że kandydat przed startem potwierdził, że odpowie samodzielnie, bez narzędzi AI i pomocy innych osób.",
-      "Wynik to odsetek zdobytych punktów: każde pytanie jest warte jeden punkt, a pytanie wielokrotnego wyboru („zaznacz kilka odpowiedzi”) daje jego część za każdą zaznaczoną poprawną odpowiedź i nic, jeśli zaznaczono błędną."
+      "Wynik to odsetek zdobytych punktów: każde pytanie jest warte jeden punkt, a pytanie wielokrotnego wyboru („zaznacz kilka odpowiedzi”) daje jego część za każdą zaznaczoną poprawną odpowiedź i nic, jeśli zaznaczono błędną.",
+      "Dodatkowy czas, tryb i imię kandydata, link z zaproszeniem, ponowne wysyłanie, wycofywanie i usuwanie są dla właścicieli i administratorów."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Szukaj według roli lub tematu i filtruj po poziomie i języku.",
       "Otwórz szablon, by zobaczyć jego tematy i liczbę pytań w każdym.",
-      "Użyj szablonu, by zacząć od niego rozmowę."
+      "Zobacz w każdym wierszu tematy, pytania i minuty szablonu oraz to, ile Twoich rozmów go użyło.",
+      "Użyj szablonu, by zacząć od niego rozmowę (właściciele i administratorzy)."
     ],
     "tips": [
       "Dla lepszego dopasowania utwórz raczej rozmowę z własnego opisu stanowiska.",
-      "Po skopiowaniu rozmowa jest Twoja: zmieniaj jej pytania i ustawienia, jak chcesz."
+      "Po skopiowaniu rozmowa jest Twoja: zmieniaj jej pytania i ustawienia, jak chcesz.",
+      "Lista zaczyna się od Twojego języka i angielskiego; wybierz wszystkie języki, by zobaczyć resztę."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "Gotowa rozmowa: jej tematy, ich podtematy i liczba pytań w każdym temacie.",
     "actions": [
       "Sprawdź, czy tematy pasują do roli, na którą rekrutujesz.",
-      "Użyj szablonu, by skopiować go do tej firmy jako nową rozmowę."
+      "Użyj szablonu, by skopiować go do tej firmy jako nową rozmowę (właściciele i administratorzy)."
     ],
     "tips": [
       "Kopiowanie jest bezpłatne; kandydaci, którzy odpowiadają, zużywają kredyty jak zwykle.",
-      "Jeśli tematy nie pasują, utwórz raczej rozmowę z opisu stanowiska."
+      "Jeśli tematy nie pasują, utwórz raczej rozmowę z opisu stanowiska.",
+      "Jego pytania pozostają ukryte, dopóki go nie użyjesz."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "Dodaj członka zespołu e-mailem jako administratora lub obserwatora: dostanie e-mailem link, by dołączyć.",
       "Zmień rolę członka zespołu między administratorem a obserwatorem.",
+      "Przekaż firmę administratorowi, który już dołączył, opcją „Uczyń właścicielem” w jego menu: Ty zostajesz administratorem.",
       "Skopiuj link oczekującego zaproszenia albo usuń członka zespołu lub zaproszenie."
     ],
     "tips": [
-      "Administratorzy tworzą i zmieniają rozmowy, zapraszają kandydatów i doładowują kredyty. Obserwatorzy widzą rozmowy i wyniki oraz udostępniają raporty, ale niczego nie zmieniają.",
-      "Usunięcie członka zespołu, którego karta opłaca automatyczne doładowania, wyłącza te doładowania."
+      "Administratorzy tworzą i zmieniają rozmowy, zapraszają kandydatów i doładowują kredyty. Obserwatorzy widzą rozmowy i wyniki, udostępniają raporty i piszą notatki, ale niczego więcej nie zmieniają.",
+      "Usunięcie członka zespołu, którego karta opłaca automatyczne doładowania, lub zmiana go na obserwatora wyłącza te doładowania.",
+      "Tylko właściciel dodaje, zmienia i usuwa członków; zespół widzą wszyscy w firmie."
     ]
   },
   "actions": {
     "title": "Dziennik działań",
-    "text": "Wszystko, co zrobili członkowie zespołu firmy, od najnowszych: co zrobili i z czym, kto to zrobił, kiedy oraz czy zrobił to za nich asystent, aplikacja AI, API lub ATS. Widzi go tylko właściciel.",
+    "text": "Wszystko, co zrobili członkowie zespołu firmy, od najnowszych: co zrobili i z czym, kto to zrobił, kiedy oraz czy zrobiła to za nich asystentka AI, aplikacja AI, API lub ATS. Widzi go tylko właściciel.",
     "actions": [
       "Pokaż działania jednego członka zespołu lub jednego rodzaju: rozmowy, kandydaci, zespół, firma, rozliczenia lub integracje.",
       "Pokaż działania z okresu między dwoma dniami.",
-      "Pobierz eksport do audytu stronniczości: plik CSV z każdym kandydatem, który skończył, ze wszystkich rozmów lub jednej i, jeśli chcesz, z okresu między dwoma dniami, z jego wynikiem, progiem zaliczenia, informacją, czy zaliczył, i czy uzyskał wynik powyżej mediany rozmowy, według adresu e-mail."
+      "Pobierz dziennik jako plik CSV z menu ⋮: cały okres, ostatni okres lub między dwoma dniami. Do 20 pobrań na firmę dziennie.",
+      "Pobierz eksport do audytu stronniczości: plik CSV z każdym kandydatem, który skończył z wynikiem, ze wszystkich rozmów lub jednej i, jeśli chcesz, z okresu między dwoma dniami, z jego wynikiem, progiem zaliczenia, informacją, czy zaliczył, i czy uzyskał wynik powyżej mediany rozmowy, według adresu e-mail."
     ],
     "tips": [
       "Działania są przechowywane przez 12 miesięcy.",
@@ -271,12 +300,12 @@
     "text": "Połącz testee z narzędziami, których Twój zespół już używa. Każda integracja ma własną stronę z instrukcją konfiguracji.",
     "actions": [
       "Slack: powiadomienia firmy na wybranym kanale.",
-      "API: klucze i webhooki do połączenia własnej platformy.",
+      "API: klucze, webhooki i SDK do połączenia własnej platformy.",
       "Aplikacje AI: korzystaj z testee w Claude, ChatGPT i innych aplikacjach AI.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR): kandydaci przeniesieni na wybrany etap dostają rozmowę, a ich wyniki wracają do ATS."
     ],
     "tips": [
-      "Integracje widzą wszyscy w firmie; zmieniać je mogą właściciele i administratorzy."
+      "Integracje widzą wszyscy w firmie; zmieniać je mogą właściciele i administratorzy. Aplikacje AI należą do każdej osoby z osobna: każdy może połączyć lub rozłączyć własne."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "Połącz swój ATS według jego instrukcji.",
       "Powiąż ofertę: wybierz ofertę, etap i rozmowę albo utwórz nową rozmowę z treści oferty.",
+      "Zobacz, ilu kandydatów każda połączona oferta zaprosiła, ilu czeka i ilu nie udało się zaprosić.",
       "Zaproś ponownie kandydatów, którzy nie zostali zaproszeni, np. gdy skończyły się kredyty.",
+      "Połącz ponownie, gdy ATS przestanie działać: dopóki tego nie zrobisz, kandydaci nie są zapraszani.",
       "Usuń powiązanie oferty albo odłącz ATS."
     ],
     "tips": [
       "Dodaj etap tylko dla testee, np. „Test umiejętności testee”, żeby nigdy nie mieszał się z innymi narzędziami.",
-      "testee nigdy nikogo nie przenosi ani nie odrzuca w Twoim ATS."
+      "testee nigdy nikogo nie przenosi ani nie odrzuca w Twoim ATS.",
+      "Jeśli członek, który połączył ATS, odejdzie lub zostanie obserwatorem, kandydaci przestają być zapraszani."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "Dodaj testee do Slacka i wybierz kanał, np. #hiring.",
       "Wybierz, które powiadomienia tam trafiają: kandydat kończy rozmowę, zaproszenie nie dotarło, rozmowa jest gotowa i inne.",
+      "Wyślij wiadomość testową na kanał i połącz ponownie, jeśli Slack przestanie przyjmować wiadomości.",
       "Odłącz, by je wyłączyć i usunąć aplikację testee ze Slacka."
     ],
     "tips": [
       "testee może tylko publikować na tym kanale; nie może czytać Twojego Slacka.",
-      "Wszyscy nadal widzą każde powiadomienie pod dzwonkiem."
+      "Wszyscy nadal widzą każde powiadomienie pod dzwonkiem.",
+      "Jeśli członek, który połączył Slacka, odejdzie lub zostanie obserwatorem, Slack przestaje działać, dopóki właściciel lub administrator nie połączy go ponownie."
     ]
   },
   "api": {
     "title": "API",
     "text": "Połącz z testee własną platformę, np. stronę kariery.",
     "actions": [
-      "Utwórz klucz API i zaznacz tylko to, czego potrzebuje: odczyt lub tworzenie rozmów; odczyt, zapraszanie, zmianę lub usuwanie kandydatów; odczyt Twoich kredytów; albo używanie z agentami AI (MCP). Działa w Twoim imieniu.",
+      "Utwórz klucz API i zaznacz tylko to, czego potrzebuje: odczyt lub tworzenie rozmów; odczyt, zapraszanie, zmianę lub usuwanie kandydatów; odczyt lub dodawanie notatek; odczyt Twoich kredytów; albo używanie z agentami AI (MCP). Działa dla firmy we własnym imieniu i nie przestaje działać, gdy osoba, która go utworzyła, odejdzie.",
       "Otwórz klucz, aby zmienić, co może robić – każda zmiana zapisuje się od razu – i z jakich adresów IP można go używać.",
+      "Zmień nazwę klucza, utwórz zastępczy, gdy ma wygasnąć, a jako właściciel zobacz, co zrobił.",
       "Dodaj webhook: testee powiadamia Twój adres HTTPS, z podpisem, gdy kandydat zaczyna lub kończy (wraz z wynikami), gdy zaproszenie do niego nie dotrze lub wygaśnie, gdy kandydat zostanie usunięty i gdy rozmowa jest gotowa.",
       "Wyślij do webhooka zdarzenie testowe i sprawdź w dzienniku dostarczeń, jak poszła każda wysyłka.",
+      "Wymień sekret webhooka: przez 24 godziny oba sekrety podpisują każde żądanie.",
       "Na karcie SDK wpisz witryny, które mogą wyświetlać Twoje rozmowy za pomocą SDK, a na czas testów zezwól na localhost.",
       "Usuń klucze i webhooki, których już nie używasz.",
       "Otwórz dokumentację dla deweloperów ze wszystkimi endpointami i zdarzeniami oraz SDK."
@@ -321,7 +357,8 @@
     "tips": [
       "Nowy klucz i sekret webhooka są pokazywane tylko raz: skopiuj je od razu.",
       "Ustaw termin ważności każdego klucza: wyciekły klucz bez terminu ważności można używać bez końca.",
-      "Uprawnienia klucza możesz później zaznaczyć lub odznaczyć; dawaj każdemu kluczowi tylko to, czego potrzebuje jego platforma."
+      "Uprawnienia klucza możesz później zaznaczyć lub odznaczyć; dawaj każdemu kluczowi tylko to, czego potrzebuje jego platforma.",
+      "Webhook, który nie odpowiada przez 3 dni, zostaje wstrzymany; udane zdarzenie testowe uruchamia go ponownie."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Skopiuj adres serwera i dodaj go do Claude, Claude Code lub ChatGPT zgodnie z instrukcją; inne aplikacje i własnych agentów opisuje dokumentacja dla deweloperów.",
       "Zezwól aplikacji na dostęp na stronie testee, która się otworzy.",
-      "Odłącz aplikację, której już nie używasz."
+      "Po połączeniu aplikacji skopiuj przykład tego, o co możesz ją poprosić.",
+      "Odłącz aplikację, której już nie używasz.",
+      "Właściciele i administratorzy zezwalają na aplikacje AI w tej firmie lub je zatrzymują: gdy są wyłączone, aplikacje nie mogą w niej niczego odczytać ani zmienić."
     ],
     "tips": [
-      "Aplikacja działa w Twoim imieniu, w każdej firmie, do której należysz. Większość aplikacji pyta Cię, zanim cokolwiek zmieni.",
+      "Aplikacja działa w Twoim imieniu, w każdej firmie, do której należysz i która zezwala na aplikacje AI. Większość aplikacji pyta Cię, zanim cokolwiek zmieni.",
       "Nie widzi Twojego hasła ani kluczy API i nie może usunąć Twojego konta ani firmy."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Polecenia",
     "text": "Zapraszaj inne firmy do testee linkiem tej firmy, a obie firmy dostaną kredyty.",
     "actions": [
-      "Skopiuj lub udostępnij swój link polecający.",
-      "Zobacz wszystkie nagrody, które ta firma otrzymała."
+      "Skopiuj swój link polecający, by go udostępnić.",
+      "Zobacz firmy, które przyszły przez Twój link i doładowały konto, kredyty, które dała Ci każda z nich, oraz ile nagród zostało w tym roku."
     ],
     "tips": [
       "Obie firmy dostają kredyty, gdy zaproszona firma zrobi pierwsze doładowanie, na dowolną kwotę.",
-      "Kredyty trafiają do tej firmy i nigdy nie wygasają."
+      "Kredyty trafiają do tej firmy i nigdy nie wygasają.",
+      "Każda strona dostaje 1 000 kredytów. Twoja firma zdobywa je do 25 razy w roku; powyżej tego zaproszona firma nadal dostaje swoje kredyty.",
+      "Doładowanie w pełni zwrócone lub objęte obciążeniem zwrotnym cofa obie nagrody."
     ]
   },
   "brand": {
     "title": "Marka",
-    "text": "Twoje logo i kolory w zaproszeniu, rozmowie i na stronie końcowej Twoich kandydatów.",
+    "text": "Twoje logo, kolory, czcionki i zaokrąglenie w zaproszeniu, rozmowie i na stronie końcowej Twoich kandydatów. Logo widać też w ich e-mailach.",
     "actions": [
-      "Ustaw lub zmień logo.",
+      "Ustaw, zmień lub usuń logo.",
       "Wybierz czcionki tytułów i tekstu oraz zaokrąglenie kart i przycisków.",
-      "Wybierz kolory każdej grupy i zobacz je w podglądzie.",
-      "Zapisz je albo wróć do kolorów testee."
+      "Wybierz kolory każdej grupy, jeden zestaw dla motywu jasnego i jeden dla ciemnego, i zobacz je w podglądzie.",
+      "Zapisz je, cofnij niezapisane zmiany przyciskiem „Resetuj” albo wróć do kolorów, czcionek i zaokrąglenia testee przyciskiem „Przywróć ustawienia domyślne testee”."
     ],
     "tips": [
       "Kolorów, przy których tekst byłby trudny do odczytania, nie da się zapisać, żeby każdy kandydat mógł przeczytać pytania.",
-      "Członkowie zespołu, którzy wypróbowują rozmowę, też widzą ją w Twoich kolorach."
+      "Członkowie zespołu, którzy wypróbowują rozmowę, też widzą ją w Twoich kolorach.",
+      "Tę stronę widzą tylko właściciele i administratorzy."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Doładuj albo ustaw automatyczne doładowanie.",
       "Zobacz kandydatów, dla których kredyty są zarezerwowane.",
-      "Otwórz fakturę dowolnego doładowania."
+      "Otwórz fakturę dowolnego doładowania.",
+      "Zawęź historię do doładowań, obciążeń lub zwrotów albo pobierz ją jako plik CSV. Do 20 pobrań na firmę dziennie."
     ],
     "tips": [
       "Kredyty kandydata są rezerwowane przy zaproszeniu, pobierane, gdy odpowie, i zwracane, jeśli nie odpowie.",
-      "Tę stronę widzą tylko właściciele i administratorzy."
+      "Tę stronę widzą tylko właściciele i administratorzy.",
+      "Możesz poprosić o zwrot kredytów kupionych w ciągu ostatnich 14 dni i niewykorzystanych, przez Paddle lub pisząc do nas."
     ]
   },
   "topUp": {
     "title": "Doładowanie",
     "text": "Kupuj kredyty dla każdej firmy, w której jesteś właścicielem lub administratorem.",
     "actions": [
-      "Wybierz firmę i doładowanie: większe kosztują mniej za kandydata.",
+      "Wybierz firmę, a potem wpisz, na ilu kandydatów chcesz doładować, od 10 do 1 000, albo wybierz próg cenowy: większe doładowania kosztują mniej za kandydata.",
+      "Zmień walutę firmy na górze strony: odtąd jej doładowania, także automatyczne, są w niej wyceniane i pobierane.",
       "Zapłać na stronie płatności Paddle; kredyty pojawią się w kilka sekund.",
-      "Otwórz cennik, by porównać doładowania."
+      "Otwórz cennik, by porównać doładowania.",
+      "Skonfiguruj automatyczne doładowanie: wybierz kwotę i saldo oraz zaznacz zgodę. Twoja karta zostaje zapisana w kasie Paddle i jest obciążana za każdym razem, gdy saldo spadnie poniżej tego poziomu."
     ],
     "tips": [
       "Kandydat kosztuje 500 kredytów: są rezerwowane przy zaproszeniu, pobierane, gdy odpowie, i zwracane, jeśli nie odpowie.",
-      "Kredyty nie wygasają. Faktura każdego doładowania jest na karcie Rozliczenia firmy."
+      "Kredyty nie wygasają. Faktura każdego doładowania jest na karcie Rozliczenia firmy.",
+      "Ceny nie obejmują VAT ani podatku od sprzedaży: tam, gdzie ma zastosowanie, jest doliczany przy płatności.",
+      "Możesz poprosić o zwrot kredytów kupionych w ciągu ostatnich 14 dni i niewykorzystanych, przez Paddle lub pisząc do nas.",
+      "Właściciele i administratorzy konfigurują automatyczne doładowanie. Tylko osoba, której karta płaci, może je zmienić lub zaktualizować kartę; każdy właściciel lub administrator może je natychmiast wyłączyć.",
+      "Odrzucona karta jest próbowana ponownie po 1, 3 i 7 dniach, a potem automatyczne doładowanie zostaje wstrzymane do aktualizacji karty. Karta, która nie może zapłacić, np. wygasła, wstrzymuje je od razu."
     ]
   },
   "settings": {
     "title": "Ustawienia",
-    "text": "Twoje własne konto: język, w którym testee się do Ciebie zwraca, e-maile, które dostajesz, i Twoje dane.",
+    "text": "Twoje własne konto: język, w którym testee się do Ciebie zwraca, Twoja waluta, e-maile, które dostajesz, i Twoje dane.",
     "actions": [
-      "Wybierz język strony, czatu pomocy i Twoich e-maili.",
+      "Wybierz język strony, odpowiedzi asystentki AI i Twoich e-maili; nowe rozmowy też zaczynają się w tym języku.",
+      "Wybierz walutę, w której wyświetlają się ceny, gdziekolwiek jesteś. Doładowania firmy są w jej własnej walucie, ustawionej na jej stronie doładowania.",
       "Wybierz, które opcjonalne e-maile dostajesz; e-maile serwisowe, takie jak zaproszenia, raporty i problemy z płatnościami, są wysyłane zawsze.",
       "Włącz lub wyłącz „Rozważam oferty pracy”: gdy jest włączone, firmy, które rekrutują przez testee w tematach Twoich ćwiczeń, widzą Twoje imię i nazwisko, profil LinkedIn i wyniki ćwiczeń oraz mogą Cię zaprosić.",
-      "Pobierz wszystko, co testee przechowuje na Twój temat, albo usuń konto."
+      "Pobierz wszystko, co testee przechowuje na Twój temat, albo usuń konto.",
+      "Skopiuj ID konta, by podać je, gdy do nas piszesz."
     ],
     "tips": [
-      "Usunięcie konta usuwa firmy, w których jesteś tylko Ty. Firma, do której dołączyli inni, potrzebuje najpierw innego właściciela."
+      "Usunięcie konta usuwa firmy, w których jesteś tylko Ty, a ich kredyty nie są zwracane. Firma, do której dołączyli inni, potrzebuje najpierw innego właściciela albo musi zostać usunięta.",
+      "„Rozważam oferty pracy” wymaga Twojego profilu LinkedIn i wyłącza się samo rok po ostatnim włączeniu."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Zalogowano Cię innym adresem e-mail? Wyloguj się i zaloguj adresem z zaproszenia; zaproszenie działa tylko dla niego.",
-      "Twoją rolę, administratora lub obserwatora, wybrała osoba, która Cię zaprosiła."
+      "Twoją rolę, administratora lub obserwatora, wybrała osoba, która Cię zaprosiła.",
+      "Zaproszenie już wykorzystane albo usunięte przez właściciela przestaje działać."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Zaloguj się, jeśli trzeba, by zobaczyć, która aplikacja prosi o dostęp.",
       "Przeczytaj, co aplikacja może, a czego nie może robić z Twoim kontem.",
+      "Wyłącz „Zezwól na zmiany”, by aplikacja mogła tylko odczytywać.",
       "Zezwól aplikacji albo odmów; w obu przypadkach wrócisz do aplikacji."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Śledź aktualności w czytniku RSS dzięki linkowi do kanału RSS na górze."
     ],
     "tips": [
-      "Aktualności pojawiają się w Twoich powiadomieniach; włącz w ustawieniach nowości o produkcie, by najważniejsze dostawać też e-mailem."
+      "Aktualności pojawiają się w Twoich powiadomieniach; najważniejsze przychodzą też e-mailem, dopóki w ustawieniach włączona jest opcja „Nowości o produkcie i aktualności”."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Dopóki nie wybierzesz języków, lista pokazuje język strony i angielski.",
-      "Ćwiczenia są prywatne: żadna firma nie widzi Twoich wyników.",
-      "Po zalogowaniu znacznik po tytule oznacza ćwiczenie, które zaczęto, a podwójny znacznik takie, które ukończono; najedź na niego kursorem, aby zobaczyć, ile tematów masz już ukończonych."
+      "Ćwiczenia są prywatne: żadna firma nie widzi Twoich wyników, chyba że włączysz „Rozważam oferty pracy”.",
+      "Po zalogowaniu znacznik po tytule oznacza ćwiczenie, które zaczęto, a podwójny znacznik takie, które ukończono; najedź kursorem na znacznik, aby zobaczyć, ile tematów masz już ukończonych."
     ]
   },
   "practiceTest": {
     "title": "Próbna rozmowa",
     "text": "Jedna darmowa próbna rozmowa: jej poziom, język, długość i tematy, które obejmuje.",
     "actions": [
+      "Przed startem wybierz czas na pytanie: czas standardowy, podwójny lub bez limitu czasu.",
       "Zacznij podejście; najpierw się zaloguj, jeśli trzeba.",
       "Zobacz swój postęp w każdym temacie w ostatnim podejściu.",
-      "Otwórz swoje poprzednie podejścia przyciskiem historii obok „Zacznij ćwiczyć”.",
+      "Po zalogowaniu otwórz swoje poprzednie podejścia przyciskiem „Twoje podejścia” obok „Zacznij ćwiczyć”.",
       "Rekrutujesz na to stanowisko? Utwórz na jej podstawie rozmowę dla swoich kandydatów."
     ],
     "tips": [
-      "Każde podejście jest na czas, jak prawdziwa rozmowa; po zakończeniu zobaczysz swój wynik i wszystkie poprawne odpowiedzi.",
-      "Ćwicz, ile chcesz: to nic nie kosztuje."
+      "Każde podejście jest na czas, chyba że wybierzesz brak limitu czasu; po zakończeniu zobaczysz swój wynik i wszystkie poprawne odpowiedzi.",
+      "Ćwicz, ile chcesz, w ramach godzinowego limitu nowych podejść: to nic nie kosztuje."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "To, co masz zaznaczone, gdy skończy się czas na pytanie, nadal się liczy; pytanie bez zaznaczonej odpowiedzi lub takie, do którego nie dotrzesz, liczy się jako błędne.",
       "Rekrutujesz na to stanowisko? Utwórz na jej podstawie rozmowę dla swoich kandydatów.",
-      "Szukasz pracy? Włącz „Rozważam oferty pracy”, aby firmy rekrutujące w tych tematach widziały Twoje imię i nazwisko, profil LinkedIn i wyniki ćwiczeń."
+      "Szukasz pracy? Po ukończonym podejściu podaj swój profil LinkedIn i włącz „Rozważam oferty pracy”, aby firmy rekrutujące w tych tematach widziały Twoje imię i nazwisko, profil i najnowsze wyniki ćwiczeń i mogły Cię zaprosić; opcja pozostaje włączona przez rok, chyba że ją wyłączysz."
     ]
   },
   "features": {
     "title": "Funkcje",
     "text": "Wszystko, co testee robi dla firmy, od opisu stanowiska do zatrudnienia: tworzenie rozmów, zapraszanie kandydatów, to, co widzą kandydaci, raporty, integracje, zgodność z przepisami i cennik.",
     "actions": [
+      "Przejdź do pola na końcu strony przyciskiem „Utwórz rozmowę” na górze albo otwórz cennik.",
       "Przejdź do grupy za pomocą kart na górze: tworzenie, zapraszanie, rozmowa, decyzja, integracje, zaufanie i cennik.",
-      "Zobacz każdą funkcję obok zrzutu prawdziwej aplikacji.",
+      "Zobacz główne funkcje obok zrzutu prawdziwej aplikacji, a pozostałe jako karty pod nimi.",
       "Wklej opis stanowiska w polu na dole strony, aby utworzyć rozmowę.",
-      "Otwórz cennik, dokumentację dla deweloperów lub stronę zaufania z ich grup."
+      "Otwórz cennik, dokumentację dla deweloperów lub stronę zaufania z ich grup.",
+      "Zapytaj Mirę albo otwórz FAQ lub poradniki na końcu strony."
     ],
     "tips": [
       "Wszystkie funkcje są w cenie: płacisz tylko za każdego kandydata, który odpowie na co najmniej jedno pytanie."
@@ -512,8 +570,9 @@
     "actions": [
       "Przewijaj w dół wzdłuż linii: każdy krok pokazuje, co się dzieje, jakie są opcje, i zrzut prawdziwej aplikacji.",
       "Przy krokach zapraszania i udostępniania zobacz, jakimi drogami mogą trafić kandydaci i jakimi mogą wyjść raporty.",
-      "Utwórz rozmowę przyciskiem na górze albo otwórz wszystkie funkcje.",
-      "Wklej opis stanowiska w polu na dole strony, aby zacząć."
+      "Przejdź do pola startowego przyciskiem „Utwórz rozmowę” na górze albo otwórz wszystkie funkcje.",
+      "Wklej opis stanowiska w polu na dole strony, aby zacząć.",
+      "Zapytaj Mirę albo otwórz FAQ lub poradniki na końcu strony."
     ],
     "tips": [
       "Tworzenie rozmów jest bezpłatne: płacisz tylko za każdego kandydata, który odpowie na co najmniej jedno pytanie."
@@ -525,12 +584,14 @@
     "actions": [
       "Zobacz aktualną cenę za kandydata i niższe ceny przy większych doładowaniach.",
       "Zobacz, ilu pierwszych kandydatów jest za darmo.",
+      "Zobacz, ile kredytów kosztuje kandydat; podatek jest doliczany przy płatności tam, gdzie ma zastosowanie.",
       "Zobacz kredyty, które dostajesz za zaproszenie innej firmy.",
       "Doładuj kredyty firmy."
     ],
     "tips": [
       "Kredyty nie wygasają.",
-      "Kandydat, który nie odpowie na żadne pytanie, nic nie kosztuje."
+      "Kandydat, który nie odpowie na żadne pytanie, nic nie kosztuje.",
+      "Niewykorzystane opłacone kredyty można zwrócić w ciągu 14 dni."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "Porównaj testee",
     "text": "Porównania testee z innymi narzędziami do testów rekrutacyjnych, ze źródłami: jak powstają testy, ile kosztują i kiedy które lepiej pasuje.",
     "actions": [
-      "Otwórz porównanie, by je przeczytać."
+      "Otwórz porównanie, by je przeczytać.",
+      "Utwórz test dla swoich kandydatów z karty na końcu."
     ],
     "tips": [
       "Przy każdym porównaniu widać datę ostatniej aktualizacji."
@@ -574,8 +636,9 @@
     "text": "Jak testee wypada na tle innych narzędzi w jednej kwestii: jak powstają testy, ile kosztują i kiedy które lepiej pasuje.",
     "actions": [
       "Przeczytaj porównanie i przejdź za linkami do źródeł.",
-      "Utwórz test dla swoich kandydatów z karty na końcu.",
-      "Wróć do wszystkich porównań linkiem nad tytułem."
+      "Na dłuższych stronach przejdź do sekcji z listy „Na tej stronie”.",
+      "Utwórz test dla swoich kandydatów przyciskiem na górze lub z karty na końcu.",
+      "Wróć do wszystkich porównań strzałką wstecz przy tytule."
     ],
     "tips": [
       "Ceny i funkcje się zmieniają: data pod tytułem pokazuje ostatnią aktualizację strony."
@@ -585,6 +648,7 @@
     "title": "Poradniki rekrutacyjne",
     "text": "Praktyczne poradniki dla menedżerów rekrutujących: selekcja kandydatów, testy umiejętności oraz uczciwe i zgodne z prawem korzystanie z AI w rekrutacji.",
     "actions": [
+      "Przeszukaj poradniki.",
       "Otwórz poradnik, by go przeczytać."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "Praktyczny poradnik dla menedżerów rekrutujących na jeden temat.",
     "actions": [
       "Przeczytaj poradnik i przejdź za linkami do źródeł i powiązanych stron.",
-      "Utwórz test dla swoich kandydatów z karty na końcu.",
-      "Wróć do wszystkich poradników linkiem nad tytułem."
+      "Na dłuższych stronach przejdź do sekcji z listy „Na tej stronie”.",
+      "Utwórz test dla swoich kandydatów przyciskiem na górze lub z karty na końcu.",
+      "Wróć do wszystkich poradników strzałką wstecz przy tytule."
     ],
     "tips": [
-      "Tematy prawne to podsumowania, a nie porada prawna: skonsultuj się z własnym prawnikiem."
+      "Tematy prawne to datowane podsumowania, a nie porada prawna: sprawdź przepisy obowiązujące tam, gdzie zatrudniasz."
     ]
   },
   "faq": {
     "title": "Często zadawane pytania",
     "text": "Odpowiedzi na częste pytania o testee: rozmowy, kandydaci, ceny i kredyty, wyniki, integracje, języki i Twoje dane.",
     "actions": [
+      "Przejdź do grupy pytań przyciskami na górze.",
       "Kliknij pytanie, by otworzyć odpowiedź."
     ],
     "tips": [
-      "Nie ma tu Twojej odpowiedzi? Zapytaj Mirę, asystentkę AI, na górze strony albo napisz do nas ze strony kontaktowej.",
+      "Nie ma tu Twojej odpowiedzi? Zapytaj Mirę, asystentkę AI, albo napisz do nas, korzystając z karty na końcu strony.",
       "Ceny w odpowiedziach są zawsze aktualne."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "Kto tworzy testee i po co: rozmowy z opisu stanowiska, na które stać każdy zespół, i darmowe ćwiczenia dla każdego.",
     "actions": [
       "Przeczytaj, po co istnieje testee i jakie ma podejście do rekrutacji.",
-      "Przeczytaj słowo od założyciela i otwórz jego profil na LinkedIn."
+      "Przeczytaj słowo od założyciela i otwórz jego profil na LinkedIn.",
+      "Utwórz test albo ćwicz za darmo z karty na końcu."
     ],
     "tips": [
       "Aby napisać do zespołu, skorzystaj ze strony kontaktowej."
@@ -630,7 +697,8 @@
     "text": "Napisz do zespołu testee z pytaniem, pomysłem, propozycją współpracy albo gdy coś nie działa.",
     "actions": [
       "Wpisz imię, adres e-mail i wiadomość, a potem ją wyślij.",
-      "Wklej ID firmy, rozmowy, kandydata lub konta, którego to dotyczy, byśmy od razu je znaleźli."
+      "Wklej do wiadomości ID firmy, rozmowy, kandydata lub konta, którego to dotyczy, byśmy od razu je znaleźli.",
+      "Zobacz, kto prowadzi testee: nazwa firmy, numer rejestrowy, adres i e-mail."
     ],
     "tips": [
       "Link „kopiuj id” jest pod nazwą firmy lub rozmowy i pod imieniem kandydata; ID Twojego konta jest w menu konta.",
@@ -641,7 +709,7 @@
     "title": "Dokumentacja dla deweloperów",
     "text": "Wszystko, czego potrzebujesz, by połączyć z testee własną platformę lub agenta AI. Dokumentacja powstaje z samego API, więc zawsze jest z nim zgodna.",
     "actions": [
-      "API: jak się uwierzytelnić, bazowy URL i każdy endpoint z parametrami, treścią żądania, odpowiedzią i błędami.",
+      "API: jak się uwierzytelnić, przewodniki m.in. o limitach zapytań i bezpiecznym ponawianiu, bazowy URL, każdy endpoint z parametrami, treścią żądania, odpowiedzią i błędami, lista błędów i dziennik zmian.",
       "Webhooki: zdarzenia, które testee wysyła na Twój adres, i co zawiera każde z nich.",
       "SDK: jak osadzić rozmowę na własnej stronie.",
       "MCP: jak połączyć aplikację AI lub własnego agenta i jakie narzędzia dostaje.",
@@ -661,7 +729,8 @@
       "Napisz do nas e-mailem, jeśli coś jest trudne w użyciu albo potrzebujesz tego w innej formie."
     ],
     "tips": [
-      "Masz przejść rozmowę firmy i potrzebujesz więcej czasu? Poproś firmę o dodatkowy czas przed rozpoczęciem; nie musisz podawać powodu."
+      "Masz przejść rozmowę firmy i potrzebujesz więcej czasu? Poproś firmę o dodatkowy czas przed rozpoczęciem; nie musisz podawać powodu.",
+      "Odpowiadamy w ciągu 14 dni; jeśli nie jesteś zadowolony, możesz zwrócić się do Estońskiego Urzędu Ochrony Konsumentów i Regulacji Technicznych (TTJA)."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "Zobacz, jak testee chroni dane: logowanie, szyfrowanie, kontrola dostępu, limity zapytań i kopie zapasowe.",
       "Zobacz, co testee zapewnia na potrzeby RODO, unijnego aktu o AI, Wielkiej Brytanii i USA, w tym nowojorskiej ustawy o audytach stronniczości.",
       "Zobacz, gdzie przechowywane są dane, którzy podprzetwarzający je obsługują i jak długo przechowywany jest każdy rodzaj danych.",
-      "Otwórz regulamin, politykę prywatności, umowę powierzenia przetwarzania danych i dokumenty dla firm."
+      "Otwórz regulamin, politykę prywatności, umowę powierzenia przetwarzania danych i dokumenty dla firm.",
+      "Otwórz deklarację dostępności."
     ],
     "tips": [
       "Jeśli masz pytanie o bezpieczeństwo, prywatność lub zgodność z przepisami albo chcesz zgłosić problem z bezpieczeństwem, napisz na adres e-mail na końcu strony."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Wypisz się",
-    "text": "Zrezygnuj z jednego rodzaju e-maili od testee, wskazanego na stronie.",
+    "text": "Zrezygnuj z jednego rodzaju e-maili od testee albo ze wszystkich e-maili od jednej firmy, wskazanych na stronie.",
     "actions": [
       "Sprawdź, które e-maile wyłącza link.",
       "Potwierdź, by się wypisać; samo otwarcie linku niczego nie zmienia.",
-      "Potem otwórz ustawienia e-maili, by zmienić inne e-maile."
+      "Po zalogowaniu otwórz potem ustawienia e-maili, by zmienić inne e-maile."
     ],
     "tips": [
-      "E-maile serwisowe, takie jak zaproszenia do zespołu, raporty i problemy z płatnościami, nadal będą wysyłane."
+      "E-maile serwisowe, takie jak zaproszenia do zespołu, raporty i problemy z płatnościami, nadal będą wysyłane; link, który zatrzymuje e-maile firmy, zatrzymuje też jej zaproszenia do Ciebie."
     ]
   }
 }

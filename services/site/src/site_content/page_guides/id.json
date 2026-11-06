@@ -5,13 +5,15 @@
     "actions": [
       "Tempel deskripsi pekerjaan di kotak paling atas, atau pilih templat siap pakai; sesuaikan topiknya, dan soalnya ditulis serta diperiksa untukmu.",
       "Undang kandidat lewat email, dari file, dengan tautan berbagi di iklan lowonganmu, atau dari ATS-mu, platformmu sendiri, atau asisten AI.",
+      "Lihat apa yang dilihat kandidat: wawancara berbatas waktu dengan brand-mu, dijawab dengan klik atau suara.",
       "Baca laporannya: jawaban, nilai, dan tanda integritas setiap kandidat, dibagikan lewat email atau chat dengan sekali klik.",
-      "Hubungkan platformmu, aplikasi AI, dan situs lowongan kerja, dapatkan kabar terbaru di Slack, atau minta Mira, asisten AI, mengerjakannya untukmu."
+      "Hubungkan ATS, platformmu, dan aplikasi AI, dapatkan kabar terbaru di Slack, atau minta Mira, asisten AI, mengerjakannya untukmu.",
+      "Bandingkan testee dengan penyaringan lewat telepon dan langganan, dan lihat cara soal diperiksa dan ditingkatkan."
     ],
     "tips": [
-      "Membuat wawancara gratis. Kamu membayar per kandidat yang menjawab, dengan harga di bawah judul dalam mata uangmu, dan kandidat pertamamu gratis.",
+      "Membuat wawancara gratis. Kamu membayar per kandidat yang menjawab, dengan harga di bagian bawah halaman dalam mata uangmu, dan kandidat pertamamu gratis.",
       "Coba wawancaramu sebagai kandidat sebelum mengundang siapa pun.",
-      "Tonton video di bagian atas untuk tur singkat; Tanya jawab dan panduan ada di bagian bawah halaman.",
+      "Tonton video dari tombol di bagian atas untuk tur singkat; Tanya jawab dan panduan ada di bagian bawah halaman.",
       "Unduh contoh laporan di bawah bagian laporan untuk melihat seperti apa laporan yang sebenarnya."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "Buat perusahaan dengan “Perusahaan baru”. Namanya unik di seluruh testee.",
       "Buka perusahaan untuk mengelola wawancara dan kandidatnya.",
-      "Hapus perusahaan milikmu, beserta semua wawancara dan undangannya."
+      "Hapus perusahaan milikmu, beserta semua wawancara dan undangannya; kreditnya hilang dan tidak dikembalikan.",
+      "Buka menu ⋮ perusahaan untuk melihat timnya; pemilik dan admin juga bisa mengisi ulang kredit serta membuka merek dan tagihan di sana."
     ],
     "tips": [
-      "Peranmu tampil di samping setiap perusahaan yang bukan milikmu: admin bisa mengubah, pelihat hanya melihat.",
+      "Peranmu tampil di samping setiap perusahaan yang bukan milikmu: admin bisa mengubah; pelihat sebagian besar hanya melihat, dan juga bisa menulis catatan, menilai dan melaporkan soal, mencoba wawancara, serta membagikan laporan.",
       "Kredit dimiliki perusahaan, jadi setiap perusahaan diisi ulang sendiri-sendiri."
     ]
   },
@@ -36,22 +39,23 @@
       "Buat perusahaan baru jika belum punya; templat akan terbuka di sana."
     ],
     "tips": [
-      "Setelah disalin, wawancara menjadi milik perusahaan: ubah soal dan pengaturannya sesukamu."
+      "Setelah disalin, wawancara menjadi milik perusahaan: ubah soal dan pengaturannya sesukamu.",
+      "Hanya pemilik dan admin yang bisa memakai templat; di perusahaan tempatmu menjadi pelihat, tombolnya tidak ada."
     ]
   },
   "interviews": {
     "title": "Wawancara",
-    "text": "Semua wawancara perusahaan ini dan kreditnya untuk kandidat. Setiap wawancara adalah tes berbatas waktu yang dibuat dari deskripsi pekerjaan.",
+    "text": "Semua wawancara perusahaan ini dan kreditnya untuk kandidat. Setiap wawancara adalah tes berbatas waktu yang dibuat dari deskripsi pekerjaan atau templat.",
     "actions": [
-      "Buat wawancara dari deskripsi pekerjaan dengan “Wawancara baru”.",
-      "Buka wawancara untuk melihat topik, kandidat, catatan, dan pengaturannya; catatan yang disematkan tampil di bawah namanya.",
-      "Cari wawancara berdasarkan judulnya.",
-      "Coba wawancara sebagai kandidat, atau hapus.",
-      "Isi ulang kredit dari saldo, atau aktifkan isi ulang otomatis di tab Tagihan."
+      "Buat wawancara dari deskripsi pekerjaan dengan “Wawancara baru” (pemilik dan admin).",
+      "Buka wawancara untuk melihat topik, kandidat, dan catatannya, pengaturannya (pemilik dan admin) dan, setelah perusahaan mengisi ulang kredit, Temukan; catatan yang disematkan tampil di bawah namanya.",
+      "Cari wawancara berdasarkan judulnya, atau saring berdasarkan status: baru, dalam proses, atau diterima.",
+      "Coba wawancara sebagai kandidat dari menu ⋮-nya; pemilik dan admin juga bisa menghapusnya di sana.",
+      "Isi ulang kredit dari saldo, atau aktifkan isi ulang otomatis di tab Tagihan (pemilik dan admin)."
     ],
     "tips": [
       "Saldo berubah kuning saat kredit hampir habis. Tanpa kredit, undangan baru tidak dikirim.",
-      "Menu perusahaan mengarah ke templat, tim, integrasi, tagihan (pemilik dan admin), dan referal."
+      "Menu perusahaan mengarah ke templat, tim, integrasi, merek dan tagihan (pemilik dan admin), log tindakan (pemilik), dan referal."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Mulai wawancara dari deskripsi pekerjaan. testee membacanya, mengusulkan topik yang akan diuji, dan menulis soal setelah kamu menyetujuinya.",
     "actions": [
       "Tempel deskripsi pekerjaan: posisinya, persyaratannya, dan nilai tambah yang diharapkan.",
+      "Selama belum ada yang diketik, “Coba contoh” mengisi kotak dengan contoh deskripsi.",
       "Pilih bahasa wawancara yang akan dibuat.",
-      "Buat, lalu tinjau topik yang diusulkan."
+      "Buat, lalu tinjau topik yang diusulkan.",
+      "Atau mulai dari templat, atau dari lowongan di ATS-mu setelah terhubung.",
+      "Jika memulai dari beranda, pilih perusahaannya atau buat yang baru; hanya perusahaan milikmu atau tempatmu menjadi admin yang tercantum."
     ],
     "tips": [
       "Makin spesifik deskripsinya, makin pas soalnya dengan posisi.",
-      "Pembuatan gratis: kamu hanya membayar untuk kandidat yang menjawab."
+      "Pembuatan gratis: kamu hanya membayar untuk kandidat yang menjawab.",
+      "Perusahaan hanya bisa memiliki beberapa wawancara yang belum punya kandidat dan hanya bisa memulai beberapa per hari; batasnya lebih tinggi setelah mengisi ulang kredit."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "Hapus centang topik yang tidak kamu perlukan.",
       "Ubah nama topik dan subtopiknya dengan ikon pensil.",
+      "Tambahkan topikmu sendiri dengan “Tambah topik”: beri nama dan setidaknya 3 subtopik.",
       "Jelaskan perubahan dengan kata-katamu sendiri lalu terapkan, misalnya “tambahkan topik tentang kepemimpinan tim”.",
-      "Setujui dan buat untuk menulis soalnya."
+      "Setujui dan buat untuk menulis soalnya.",
+      "Batalkan untuk membuang wawancara; tidak ada yang sudah dibuat sejauh ini yang disimpan."
     ],
     "tips": [
       "Jika topiknya terlalu banyak, hapus centang beberapa atau jelaskan cara menggabungkannya.",
-      "Soal baru ditulis setelah kamu menyetujui, jadi luangkan waktu sebentar di sini."
+      "Soal baru ditulis setelah kamu menyetujui, jadi luangkan waktu sebentar di sini.",
+      "Peninjauan yang dibiarkan terbuka selama 14 hari dibatalkan, dan wawancaranya dihapus."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "testee sedang membuat wawancaramu: pertama topik, lalu soal untuk tiap topik. Ini butuh beberapa menit.",
     "actions": [
       "Tinggalkan halaman ini jika mau: pembuatan tetap berjalan.",
-      "Batalkan pembuatan jika tidak diperlukan lagi; tidak ada yang disimpan dari yang sudah dibuat."
+      "Batalkan pembuatan jika tidak diperlukan lagi; tidak ada yang disimpan dari yang sudah dibuat.",
+      "Setelah topik siap, halaman ini menampilkannya untuk kamu tinjau; soal baru ditulis setelah kamu menyetujuinya.",
+      "Jika pembuatan gagal, pilih Ulangi, atau Mulai dari awal."
     ],
     "tips": [
       "Kamu akan mendapat notifikasi saat wawancara siap.",
@@ -97,14 +110,14 @@
     "title": "Topik",
     "text": "Yang diuji wawancara ini: topiknya, masing-masing dengan subtopik dan kumpulan soalnya sendiri. Setiap kandidat mendapat set acak dari tiap kumpulan.",
     "actions": [
-      "Buka “Kelola soal” untuk menuju soal sebuah topik: baca, nonaktifkan sebagian, beri suka, tidak suka, atau laporkan.",
-      "Buat ulang soal yang lemah atau tandai jawaban yang salah di halaman soal sebuah topik.",
-      "Atur berapa soal yang didapat setiap kandidat dari sebuah topik; 0 mengeluarkan topik itu untuk kandidat baru. Setiap kandidat mendapat paling banyak 60 soal dari semua topik: kurangi satu topik untuk menambah topik lain.",
-      "Coba wawancara sebagai kandidat, atau hapus."
+      "Buka topik untuk menuju soalnya: baca, beri suka, tidak suka, atau laporkan, dan, sebagai pemilik atau admin, nonaktifkan sebagian.",
+      "Buat ulang soal yang lemah atau tandai jawaban yang salah di halaman soal sebuah topik (pemilik dan admin).",
+      "Atur berapa soal yang didapat setiap kandidat dari sebuah topik (pemilik dan admin); 0 mengeluarkan topik itu untuk kandidat baru, tetapi setidaknya satu topik harus tetap punya soal. Setiap kandidat mendapat paling banyak 60 soal dari semua topik: kurangi satu topik untuk menambah topik lain.",
+      "Coba wawancara sebagai kandidat dari menu ⋮; pemilik dan admin juga bisa menghapusnya di sana."
     ],
     "tips": [
-      "Soal buatan AI bisa salah: periksa sekilas setiap topik sebelum mengundang siapa pun.",
-      "Klik judul untuk mengganti nama wawancara.",
+      "Soal buatan AI bisa salah, meskipun AI kedua memeriksa sebagian jawaban: periksa sekilas setiap topik sebelum mengundang siapa pun.",
+      "Klik judul untuk mengganti nama wawancara (pemilik dan admin).",
       "Kartu di atas menjumlahkan yang didapat setiap kandidat: total soal, rata-rata waktu per soal, dan waktu seluruh wawancara. Kartu ini ikut berubah setiap ada perubahan."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Soal",
     "text": "Soal satu topik beserta jawaban, suka, tidak suka, dan laporannya. Setiap kandidat mendapat kumpulan acak dari soal yang aktif.",
     "actions": [
+      "Lihat berapa jumlah soal, berapa yang aktif atau nonaktif, dan berapa laporannya di kartu bagian atas; saring daftar dengan Semua, Aktif, Nonaktif, atau Dilaporkan.",
       "Hapus centang sebuah soal untuk menonaktifkannya: mulai sekarang tidak ada kandidat yang mendapatkannya. Centang lagi untuk mengaktifkannya kembali (pemilik dan admin).",
       "Beri suka atau tidak suka pada soal; klik pilihanmu lagi untuk membatalkannya.",
       "Buka laporan sebuah soal dan tambahkan laporanmu sendiri, sekali per soal.",
-      "Buat ulang soal yang lemah atau tandai jawaban yang salah (pemilik dan admin)."
+      "Buat ulang soal yang lemah atau tandai jawaban yang salah dari menu ⋮-nya (pemilik dan admin); jawaban yang ditandai diperiksa, lalu diperbaiki atau diganti jika salah."
     ],
     "tips": [
       "Soal tulisan AI bisa salah: baca dulu sebelum mengundang siapa pun.",
@@ -127,27 +141,31 @@
     "title": "Kandidat",
     "text": "Semua yang diundang ke wawancara ini, dengan status, progres, dan nilainya.",
     "actions": [
-      "Undang kandidat: satu per satu, daftar hingga 100, atau file CSV atau TXT.",
+      "Undang kandidat dengan “Kandidat baru” (pemilik dan admin): satu per satu, daftar, atau file CSV atau TXT.",
       "Cari berdasarkan email atau nama, filter berdasarkan status, dan urutkan berdasarkan nilai atau tanggal.",
-      "Buka laporan kandidat, atau unduh atau bagikan laporan semua kandidat."
+      "Buka laporan kandidat, atau unduh atau bagikan laporan semua kandidat.",
+      "Buka menu ⋮ kandidat untuk mengirim ulang undangan, menyalin tautannya, mencabutnya, atau menghapus kandidat (pemilik dan admin)."
     ],
     "tips": [
       "Setiap kandidat yang menjawab setidaknya satu soal memakai kredit, termasuk yang datang dari tautan.",
-      "Pengingat dikirim ke kandidat secara otomatis.",
-      "Saat mengundang, pilih apakah kandidat menjawab dengan mode klik atau mode suara; kandidat dengan mode yang berbeda dari mode wawancara menampilkan ikon modenya."
+      "Kandidat yang belum mulai mendapat satu pengingat 3 hari setelah undangan. Undangan yang tidak dimulai dalam 30 hari kedaluwarsa; mengirim ulang membuatnya berlaku lagi.",
+      "Kandidat mengerjakannya dalam mode wawancara; untuk mengubah mode satu kandidat, gunakan halamannya. Kandidat dengan mode yang berbeda dari mode wawancara menampilkan ikon modenya.",
+      "Mengundang mencadangkan kredit kandidat; kredit dikembalikan jika kandidat selesai tanpa menjawab.",
+      "Kandidat dari tautan yang bisa dibagikan, ATS-mu, API, atau Temukan juga tampil di sini.",
+      "Laporan semua kandidat dibagikan sebagai PDF lewat email, atau sebagai ringkasan singkat lewat WhatsApp, Telegram, Viber, atau LINE."
     ]
   },
   "interviewNotes": {
     "title": "Catatan",
-    "text": "Catatan timmu tentang rekrutmen ini: apa yang sudah disepakati, siapa yang dihubungi berikutnya, atau untuk siapa wawancara ini. Semua orang di perusahaanmu bisa melihatnya; kandidat tidak pernah.",
+    "text": "Catatan timmu tentang rekrutmen ini: apa yang sudah disepakati, siapa yang dihubungi berikutnya, atau untuk siapa wawancara ini. Semua orang di perusahaanmu, termasuk pelihat, bisa melihat dan menulisnya; kandidat tidak pernah.",
     "actions": [
       "Tulis catatan di kotak paling atas lalu pilih Kirim, atau tekan ⌘/Ctrl+Enter. Tautan di dalamnya bisa diklik.",
-      "Edit atau hapus catatanmu sendiri dengan tombol di barisnya; pemilik dan admin bisa menghapus catatan siapa pun.",
-      "Sematkan catatan dengan ikon penanda (pemilik dan admin): catatan itu tampil paling atas di sini, serta di bawah nama wawancara di halamannya dan di daftar wawancara."
+      "Edit atau hapus catatanmu sendiri dari menu ⋮ di barisnya; pemilik dan admin bisa menghapus catatan siapa pun.",
+      "Sematkan catatan dengan “Sematkan di atas” di menu ⋮-nya (pemilik dan admin): satu catatan pada satu waktu tampil paling atas di sini, serta di bawah nama wawancara di halamannya dan di daftar wawancara."
     ],
     "tips": [
       "Bekerja untuk klien? Sematkan catatan seperti “Untuk Acme, Backend Developer” agar langsung terlihat untuk siapa setiap wawancara.",
-      "Catatan yang dihapus hilang selamanya. Log tindakan mencatat siapa yang menulis, mengubah, atau menghapus catatan, tetapi tidak pernah isinya.",
+      "Catatan yang dihapus hilang selamanya. Log tindakan mencatat siapa yang menulis, mengubah, menghapus, atau menyematkan catatan, tetapi tidak pernah isinya.",
       "Anggota tim lainnya tahu setiap ada catatan baru: di notifikasi, di ringkasan aktivitas harian, dan, jika Slack terhubung, di channel-mu."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Pengaturan",
-    "text": "Cara wawancara ini berjalan untuk setiap kandidat.",
+    "text": "Cara wawancara ini berjalan untuk setiap kandidat. Hanya pemilik dan admin yang melihat tab ini.",
     "actions": [
-      "Aktifkan tautan yang bisa dibagikan untuk iklan lowongan: siapa pun yang memilikinya bisa mengikuti wawancara.",
+      "Aktifkan tautan yang bisa dibagikan untuk iklan lowongan: siapa pun yang memilikinya bisa mengikuti wawancara, dan setiap orang yang menjawab lewat tautan itu memakai kredit seperti kandidat yang diundang.",
       "Pilih mode wawancara: mode klik, tempat kandidat mengetuk jawabannya, atau mode suara, tempat Mira, pewawancara AI, membacakan setiap soal dan kandidat menjawab dengan suara atau ketukan. Mode suara berfungsi di setiap bahasa; seberapa baik mode ini membaca dan mendengar berbeda-beda menurut bahasa, dan tautan di bawah pengaturan ini membuka panduan berisi kualitas di tiap bahasa.",
       "Atur rata-rata waktu per soal, dalam detik: setiap soal mendapat waktunya sendiri berdasarkan panjangnya dan kode yang ditampilkannya, dan total waktu wawancara tetap sama.",
       "Atur nilai lulus: kandidat yang mencapainya dinyatakan lulus.",
@@ -175,22 +193,26 @@
       "Jangan masukkan pertanyaan wawancara ke bank soal bersama testee; pertanyaan yang sudah dipakai ulang di wawancara lain tetap di sana."
     ],
     "tips": [
-      "Setiap pengaturan tersimpan begitu kamu meninggalkan kolomnya.",
+      "Kolom angka tersimpan begitu kamu meninggalkannya; sakelar dan mode langsung tersimpan.",
       "Kandidat tidak pernah melihat skornya; hanya timmu yang melihat.",
-      "Untuk kandidat yang butuh waktu lebih, tambahkan waktu ekstra di halamannya."
+      "Untuk kandidat yang butuh waktu lebih, tambahkan waktu ekstra di halamannya.",
+      "Mode baru berlaku untuk kandidat yang belum mulai, kecuali yang diberi mode sendiri di halamannya.",
+      "Waktu rata-rata 10 sampai 600 detik; nilai lulus 1 sampai 100%."
     ]
   },
   "tryInterview": {
     "title": "Coba sebagai kandidat",
     "text": "Pratinjau wawancara ini persis seperti yang dilihat kandidat: pengantar, lalu soal berbatas waktu. Gratis.",
     "actions": [
-      "Mulai pratinjau dan jawab seperti kandidat.",
+      "Centang janji, pilih “Terima dan mulai”, dan jawab seperti kandidat.",
       "Periksa waktu, kata-kata, dan jawabannya sebelum mengundang siapa pun."
     ],
     "tips": [
       "Tetap di halaman saat menjawab: untuk kandidat, meninggalkan halaman, menyalin, dan menjawab terlalu cepat akan dicatat.",
       "Wawancara mode suara pertama-tama meminta izin untuk mikrofon dan suara: izinkan, lalu Mira membacakan setiap soal sementara kamu menjawab dengan suara atau ketukan.",
-      "Setiap perusahaan punya sejumlah pratinjau per hari, lebih sedikit di mode suara; setelah habis, saat memulai akan tertera kapan kamu bisa mencoba lagi."
+      "Setiap perusahaan punya sejumlah pratinjau per hari, lebih sedikit di mode suara; setelah habis, saat memulai akan tertera kapan kamu bisa mencoba lagi.",
+      "Pratinjau tidak masuk ke daftar kandidat dan statistik soal.",
+      "Pelihat juga bisa mencoba wawancara."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Baca setiap jawaban, dengan tanda integritas: meninggalkan halaman, upaya menyalin, dan jawaban cepat.",
       "Setelah kandidat selesai, lihat pola tidak biasa dalam jawaban dan waktunya, serta soal yang dijawab benar untuk ditanyakan dalam wawancara langsung.",
-      "Unduh laporan sebagai PDF, atau bagikan lewat email.",
-      "Beri waktu ekstra sebelum kandidat mulai, misalnya karena disabilitas.",
+      "Unduh laporan sebagai PDF, atau bagikan: PDF lewat email, atau ringkasan singkat lewat WhatsApp, Telegram, Viber, atau LINE. Pelihat hanya bisa mengirim email ke anggota perusahaan.",
+      "Beri waktu ekstra +25%, +50%, atau +100% sebelum kandidat mulai, misalnya karena disabilitas.",
       "Pilih apakah kandidat menjawab dengan mode klik atau mode suara, apa pun mode wawancaranya, sampai kandidat mulai.",
       "Tambah atau ubah nama kandidat.",
-      "Salin tautan undangannya untuk kamu kirim sendiri jika email tidak sampai; tautan ini tersedia sampai kandidat selesai.",
+      "Salin tautan undangannya untuk kamu kirim sendiri jika email tidak sampai; tautan ini tersedia sampai kandidat selesai atau undangannya kedaluwarsa.",
       "Kirim ulang atau cabut undangan, atau hapus kandidat beserta hasilnya."
     ],
     "tips": [
       "Skor mendukung keputusanmu, bukan menggantikannya. Jika kandidat memintanya, minta seseorang meninjau hasilnya.",
       "Tanda centang di bawah nilai menunjukkan kandidat telah mengonfirmasi, sebelum mulai, bahwa ia akan menjawab sendiri, tanpa alat AI atau bantuan orang lain.",
-      "Nilai adalah persentase poin yang diperoleh: setiap soal bernilai satu poin, dan soal \"pilih lebih dari satu jawaban\" memberi sebagian poinnya untuk setiap opsi benar yang dicentang, dan nol jika ada opsi salah yang dicentang."
+      "Nilai adalah persentase poin yang diperoleh: setiap soal bernilai satu poin, dan soal \"pilih lebih dari satu jawaban\" memberi sebagian poinnya untuk setiap opsi benar yang dicentang, dan nol jika ada opsi salah yang dicentang.",
+      "Waktu tambahan, mode dan nama kandidat, tautan undangan, kirim ulang, pencabutan, dan penghapusan hanya untuk pemilik dan admin."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Cari berdasarkan posisi atau topik, dan filter berdasarkan level dan bahasa.",
       "Buka templat untuk melihat topiknya dan jumlah soal tiap topik.",
-      "Pakai templat untuk memulai wawancara darinya."
+      "Lihat di setiap baris topik, soal, dan menitnya, serta berapa wawancaramu yang memakainya.",
+      "Pakai templat untuk memulai wawancara darinya (pemilik dan admin)."
     ],
     "tips": [
       "Agar lebih pas, buat wawancara dari deskripsi pekerjaanmu sendiri.",
-      "Setelah disalin, wawancara itu milikmu: ubah soal dan pengaturannya sesukamu."
+      "Setelah disalin, wawancara itu milikmu: ubah soal dan pengaturannya sesukamu.",
+      "Daftar dimulai dengan bahasamu dan bahasa Inggris; pilih semua bahasa untuk melihat sisanya."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "Wawancara siap pakai: topiknya, subtopiknya, dan jumlah soal tiap topik.",
     "actions": [
       "Pastikan topiknya cocok dengan posisi yang sedang kamu rekrut.",
-      "Pakai templat untuk menyalinnya ke perusahaan ini sebagai wawancara baru."
+      "Pakai templat untuk menyalinnya ke perusahaan ini sebagai wawancara baru (pemilik dan admin)."
     ],
     "tips": [
       "Menyalin gratis; kandidat yang menjawab memakai kredit seperti biasa.",
-      "Jika topiknya tidak cocok, buat wawancara dari deskripsi pekerjaanmu sendiri."
+      "Jika topiknya tidak cocok, buat wawancara dari deskripsi pekerjaanmu sendiri.",
+      "Soalnya tetap tersembunyi sampai kamu memakainya."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "Tambah anggota lewat email, sebagai admin atau pelihat: mereka akan menerima email berisi tautan untuk bergabung.",
       "Ubah peran anggota antara admin dan pelihat.",
+      "Serahkan perusahaan kepada admin yang sudah bergabung, dengan “Jadikan pemilik” di menunya: kamu menjadi admin.",
       "Salin tautan undangan yang tertunda, atau hapus anggota atau undangan."
     ],
     "tips": [
-      "Admin membuat dan mengubah wawancara, mengundang kandidat, dan mengisi ulang kredit. Pelihat melihat wawancara dan hasil serta membagikan laporan, tetapi tidak mengubah apa pun.",
-      "Menghapus anggota yang kartunya membayar isi ulang otomatis akan menghentikan isi ulang tersebut."
+      "Admin membuat dan mengubah wawancara, mengundang kandidat, dan mengisi ulang kredit. Pelihat melihat wawancara dan hasil, membagikan laporan, dan menulis catatan, tetapi tidak mengubah hal lain.",
+      "Menghapus anggota yang kartunya membayar isi ulang otomatis, atau menjadikannya pelihat, akan menghentikan isi ulang tersebut.",
+      "Hanya pemilik yang menambah, mengubah, dan menghapus anggota; semua orang di perusahaan bisa melihat tim."
     ]
   },
   "actions": {
     "title": "Log tindakan",
-    "text": "Semua yang dilakukan anggota perusahaan, yang terbaru di atas: apa yang mereka lakukan dan pada apa, siapa yang melakukannya, kapan, dan apakah asisten, aplikasi AI, API, atau ATS yang melakukannya untuk mereka. Hanya pemilik yang bisa melihatnya.",
+    "text": "Semua yang dilakukan anggota perusahaan, yang terbaru di atas: apa yang mereka lakukan dan pada apa, siapa yang melakukannya, kapan, dan apakah asisten AI, aplikasi AI, API, atau ATS yang melakukannya untuk mereka. Hanya pemilik yang bisa melihatnya.",
     "actions": [
       "Tampilkan tindakan satu anggota, atau satu jenis: wawancara, kandidat, tim, perusahaan, tagihan, atau integrasi.",
       "Tampilkan tindakan di antara dua tanggal.",
-      "Unduh ekspor audit bias: file CSV berisi setiap kandidat yang sudah selesai, untuk semua wawancara atau satu wawancara dan, jika kamu mau, di antara dua tanggal, dengan nilai mereka, nilai lulus, apakah mereka lulus, dan apakah nilai mereka di atas median wawancara, berdasarkan email."
+      "Unduh log sebagai file CSV dari menu ⋮: semua waktu, periode terbaru, atau di antara dua tanggal. Maksimal 20 unduhan per perusahaan per hari.",
+      "Unduh ekspor audit bias: file CSV berisi setiap kandidat yang sudah selesai dan mendapat nilai, untuk semua wawancara atau satu wawancara dan, jika kamu mau, di antara dua tanggal, dengan nilai mereka, nilai lulus, apakah mereka lulus, dan apakah nilai mereka di atas median wawancara, berdasarkan email."
     ],
     "tips": [
       "Tindakan disimpan selama 12 bulan.",
@@ -271,12 +300,12 @@
     "text": "Hubungkan testee ke alat yang sudah dipakai timmu. Setiap integrasi membuka halamannya sendiri dengan langkah penyiapan.",
     "actions": [
       "Slack: terima notifikasi perusahaanmu di sebuah channel.",
-      "API: kunci dan webhook untuk menghubungkan platformmu sendiri.",
+      "API: kunci, webhook, dan SDK untuk menghubungkan platformmu sendiri.",
       "Aplikasi AI: pakai testee dari Claude, ChatGPT, dan aplikasi AI lainnya.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR): kandidat yang kamu pindahkan ke suatu tahap mendapat wawancara, dan hasilnya dikirim balik."
     ],
     "tips": [
-      "Semua orang di perusahaan bisa melihat integrasi; pemilik dan admin yang mengubahnya."
+      "Semua orang di perusahaan bisa melihat integrasi; pemilik dan admin yang mengubahnya. Aplikasi AI milik masing-masing orang: siapa pun bisa menghubungkan atau memutuskan aplikasinya sendiri."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "Hubungkan ATS-mu dengan mengikuti petunjuknya.",
       "Tautkan lowongan: pilih lowongan, tahapnya, dan wawancara, atau buat wawancara baru dari teks lowongan.",
+      "Lihat berapa kandidat yang diundang, sedang menunggu, atau tidak bisa diundang untuk setiap lowongan yang ditautkan.",
       "Undang ulang kandidat yang belum terundang, misalnya saat kredit habis.",
+      "Hubungkan ulang saat ATS berhenti bekerja: kandidat tidak diundang sampai kamu melakukannya.",
       "Lepas tautan lowongan, atau putuskan ATS."
     ],
     "tips": [
       "Tambahkan tahap khusus untuk testee, misalnya “Tes keterampilan testee”, supaya tidak pernah tercampur dengan alat lainmu.",
-      "testee tidak pernah memindahkan atau menolak siapa pun di ATS-mu."
+      "testee tidak pernah memindahkan atau menolak siapa pun di ATS-mu.",
+      "Jika anggota yang menghubungkan ATS keluar atau menjadi pelihat, kandidat tidak lagi diundang."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "Tambahkan testee ke Slack dan pilih channel-nya, misalnya #hiring.",
       "Pilih notifikasi yang dikirim ke sana: kandidat selesai, undangan yang tidak terkirim, wawancara siap, dan lainnya.",
+      "Kirim pesan uji ke channel, dan hubungkan ulang jika Slack berhenti menerima pesan.",
       "Putuskan untuk menghentikannya dan menghapus aplikasi testee dari Slack-mu."
     ],
     "tips": [
       "testee hanya bisa memposting ke channel itu; testee tidak bisa membaca Slack-mu.",
-      "Semua orang tetap melihat setiap notifikasi di ikon lonceng."
+      "Semua orang tetap melihat setiap notifikasi di ikon lonceng.",
+      "Jika anggota yang menghubungkan Slack keluar atau menjadi pelihat, Slack berhenti sampai pemilik atau admin menghubungkannya ulang."
     ]
   },
   "api": {
     "title": "API",
     "text": "Hubungkan platformmu sendiri, seperti situs karier, ke testee.",
     "actions": [
-      "Buat kunci API dan centang hanya yang dibutuhkannya: melihat atau membuat wawancara; melihat, mengundang, mengubah, atau menghapus kandidat; melihat kreditmu; atau pakai dengan agen AI (MCP). Kunci ini bertindak atas namamu.",
+      "Buat kunci API dan centang hanya yang dibutuhkannya: melihat atau membuat wawancara; melihat, mengundang, mengubah, atau menghapus kandidat; melihat atau menambah catatan; melihat kreditmu; atau pakai dengan agen AI (MCP). Kunci ini bertindak untuk perusahaan sebagai dirinya sendiri, dan tetap berfungsi saat orang yang membuatnya keluar.",
       "Buka kunci untuk mengubah apa yang boleh dilakukannya, setiap perubahan langsung tersimpan, dan alamat IP tempat kunci itu boleh dipakai.",
+      "Ganti nama kunci, buat pengganti saat hampir kedaluwarsa, dan, sebagai pemilik, lihat apa yang dilakukannya.",
       "Tambahkan webhook: testee memberi tahu alamat HTTPS-mu, dengan tanda tangan, saat kandidat mulai, selesai (beserta hasilnya), atau dihapus, saat undangannya tidak sampai atau kedaluwarsa, dan saat wawancara siap.",
       "Kirim event uji ke webhook, dan lihat hasil setiap pengiriman di log pengirimannya.",
+      "Ganti secret webhook: selama 24 jam, kedua secret menandatangani setiap permintaan.",
       "Di tab SDK, daftarkan situs yang boleh menampilkan wawancaramu dengan SDK, dan izinkan localhost selama kamu menguji.",
       "Hapus kunci dan webhook yang tidak lagi kamu pakai.",
       "Buka dokumentasi pengembang untuk setiap endpoint dan event, serta SDK."
@@ -321,7 +357,8 @@
     "tips": [
       "Kunci baru dan secret webhook hanya ditampilkan sekali: segera salin.",
       "Pilih masa berlaku untuk setiap kunci: kunci bocor yang tidak pernah kedaluwarsa tetap bisa dipakai.",
-      "Kamu bisa mencentang atau menghapus centang hak akses kunci nanti; beri setiap kunci hanya yang dibutuhkan platformnya."
+      "Kamu bisa mencentang atau menghapus centang hak akses kunci nanti; beri setiap kunci hanya yang dibutuhkan platformnya.",
+      "Webhook yang tidak merespons selama 3 hari dijeda; event uji yang berhasil menjalankannya lagi."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Salin alamat server dan tambahkan ke Claude, Claude Code, atau ChatGPT sesuai langkah-langkahnya; dokumentasi pengembang membahas aplikasi lain dan agenmu sendiri.",
       "Izinkan aplikasinya di halaman testee yang terbuka.",
-      "Putuskan aplikasi yang tidak kamu pakai lagi."
+      "Setelah aplikasi terhubung, salin contoh hal yang bisa kamu minta darinya.",
+      "Putuskan aplikasi yang tidak kamu pakai lagi.",
+      "Pemilik dan admin mengizinkan atau menghentikan aplikasi AI di perusahaan ini: selama nonaktif, aplikasi tidak bisa membaca atau mengubah apa pun di dalamnya."
     ],
     "tips": [
-      "Aplikasi bertindak sebagai kamu, di setiap perusahaan tempatmu bergabung. Sebagian besar aplikasi bertanya dulu sebelum mengubah apa pun.",
+      "Aplikasi bertindak sebagai kamu, di setiap perusahaan tempatmu bergabung yang mengizinkan aplikasi AI. Sebagian besar aplikasi bertanya dulu sebelum mengubah apa pun.",
       "Aplikasi tidak bisa melihat kata sandi atau kunci API-mu, dan tidak bisa menghapus akunmu atau perusahaan."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Referal",
     "text": "Undang perusahaan lain ke testee dengan tautan perusahaan ini, dan kalian berdua mendapat kredit.",
     "actions": [
-      "Salin atau bagikan tautan referalmu.",
-      "Lihat setiap hadiah yang sudah diterima perusahaan ini."
+      "Salin tautan referalmu untuk membagikannya.",
+      "Lihat perusahaan yang datang lewat tautanmu dan sudah mengisi ulang kredit, kredit yang kamu dapat dari masing-masing, dan berapa hadiah yang tersisa tahun ini."
     ],
     "tips": [
       "Kalian berdua mendapat kredit saat perusahaan yang kamu undang melakukan isi ulang pertamanya, berapa pun jumlahnya.",
-      "Kredit masuk ke perusahaan ini dan tidak pernah kedaluwarsa."
+      "Kredit masuk ke perusahaan ini dan tidak pernah kedaluwarsa.",
+      "Setiap pihak mendapat 1.000 kredit. Perusahaanmu mendapatkannya hingga 25 kali setahun; setelah itu, perusahaan yang kamu undang tetap mendapat kreditnya.",
+      "Isi ulang yang dikembalikan penuh atau kena chargeback menarik kembali kedua hadiah."
     ]
   },
   "brand": {
     "title": "Merek",
-    "text": "Logo dan warnamu di undangan, wawancara, dan halaman selesai kandidatmu.",
+    "text": "Logo, warna, font, dan kelengkungan milikmu di undangan, wawancara, dan halaman selesai kandidatmu. Logo juga tampil di email mereka.",
     "actions": [
-      "Pasang atau ganti logo.",
+      "Pasang, ganti, atau hapus logo.",
       "Pilih font judul dan font teks, serta seberapa lengkung kartu dan tombol.",
-      "Pilih warna tiap grup, dan lihat di pratinjau.",
-      "Simpan, atau kembali ke warna testee."
+      "Pilih warna tiap grup, satu set untuk tema terang dan satu untuk tema gelap, dan lihat di pratinjau.",
+      "Simpan, batalkan perubahan yang belum disimpan dengan “Atur ulang”, atau kembali ke warna, font, dan kelengkungan testee dengan “Kembalikan ke bawaan testee”."
     ],
     "tips": [
       "Warna yang membuat teks sulit dibaca tidak bisa disimpan, agar setiap kandidat bisa membaca pertanyaannya.",
-      "Anggota yang mencoba wawancara juga melihatnya dengan warnamu."
+      "Anggota yang mencoba wawancara juga melihatnya dengan warnamu.",
+      "Hanya pemilik dan admin yang melihat halaman ini."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Isi ulang, atau atur isi ulang otomatis.",
       "Lihat kandidat yang kreditnya dicadangkan.",
-      "Buka faktur dari isi ulang mana pun."
+      "Buka faktur dari isi ulang mana pun.",
+      "Persempit riwayat ke isi ulang, biaya, atau pengembalian dana, atau unduh sebagai file CSV. Maksimal 20 unduhan per perusahaan per hari."
     ],
     "tips": [
       "Kredit kandidat dicadangkan saat ia diundang, dipotong setelah ia menjawab, dan dikembalikan jika tidak.",
-      "Hanya pemilik dan admin yang bisa melihat halaman ini."
+      "Hanya pemilik dan admin yang bisa melihat halaman ini.",
+      "Kamu bisa meminta pengembalian dana untuk kredit yang dibeli dalam 14 hari terakhir dan belum terpakai, lewat Paddle atau dengan menulis kepada kami."
     ]
   },
   "topUp": {
     "title": "Isi ulang",
     "text": "Beli kredit untuk perusahaan mana pun tempat kamu menjadi pemilik atau admin.",
     "actions": [
-      "Pilih perusahaan dan paket isi ulang: paket yang lebih besar lebih murah per kandidat.",
+      "Pilih perusahaan, lalu ketik berapa kandidat yang akan diisi ulang, dari 10 hingga 1.000, atau pilih tingkat harga: isi ulang yang lebih besar lebih murah per kandidat.",
+      "Ubah mata uang perusahaan di bagian atas halaman: isi ulangnya, termasuk yang otomatis, dihargai dan ditagih dalam mata uang itu sejak saat itu.",
       "Bayar di halaman pembayaran Paddle; kredit masuk dalam hitungan detik.",
-      "Buka harga untuk membandingkan paket isi ulang."
+      "Buka harga untuk membandingkan paket isi ulang.",
+      "Siapkan isi ulang otomatis: pilih jumlah dan saldo, lalu centang persetujuan. Kartumu disimpan di checkout Paddle dan ditagih setiap kali saldo turun di bawah level itu."
     ],
     "tips": [
       "Satu kandidat memakan 500 kredit: dicadangkan saat ia diundang, dipotong setelah ia menjawab, dan dikembalikan jika tidak.",
-      "Kredit tidak pernah kedaluwarsa. Faktur setiap isi ulang ada di tab Tagihan perusahaan."
+      "Kredit tidak pernah kedaluwarsa. Faktur setiap isi ulang ada di tab Tagihan perusahaan.",
+      "Harga belum termasuk PPN atau pajak penjualan: jika berlaku, pajak ditambahkan saat checkout.",
+      "Kamu bisa meminta pengembalian dana untuk kredit yang dibeli dalam 14 hari terakhir dan belum terpakai, lewat Paddle atau dengan menulis kepada kami.",
+      "Pemilik dan admin menyiapkan isi ulang otomatis. Hanya orang yang kartunya membayar yang bisa mengubahnya atau memperbarui kartu; pemilik atau admin mana pun bisa langsung mematikannya.",
+      "Kartu yang ditolak dicoba lagi setelah 1, 3, dan 7 hari, lalu isi ulang otomatis dijeda sampai kartu diperbarui. Kartu yang tidak bisa membayar, seperti yang kedaluwarsa, langsung menjedanya."
     ]
   },
   "settings": {
     "title": "Pengaturan",
-    "text": "Akunmu sendiri: bahasa yang dipakai testee denganmu, email yang kamu terima, dan datamu.",
+    "text": "Akunmu sendiri: bahasa yang dipakai testee denganmu, mata uangmu, email yang kamu terima, dan datamu.",
     "actions": [
-      "Pilih bahasa untuk situs, chat bantuan, dan email yang kamu terima.",
+      "Pilih bahasa untuk situs, balasan asisten AI, dan email yang kamu terima; wawancara baru juga dimulai dalam bahasa itu.",
+      "Pilih mata uang untuk menampilkan harga, di mana pun kamu berada. Isi ulang perusahaan memakai mata uang perusahaan itu sendiri, yang diatur di halaman isi ulangnya.",
       "Pilih email opsional mana yang kamu terima; email layanan, seperti undangan, laporan, dan masalah pembayaran, selalu dikirim.",
       "Aktifkan atau matikan Terbuka untuk tawaran kerja: selama aktif, perusahaan yang merekrut lewat testee untuk topik yang kamu latih melihat nama, profil LinkedIn, dan hasil latihanmu, serta bisa mengundangmu.",
-      "Unduh semua yang disimpan testee tentangmu, atau hapus akunmu."
+      "Unduh semua yang disimpan testee tentangmu, atau hapus akunmu.",
+      "Salin ID akunmu untuk disebutkan saat menulis kepada kami."
     ],
     "tips": [
-      "Menghapus akunmu juga menghapus perusahaan yang hanya berisi kamu. Perusahaan yang sudah diikuti orang lain perlu pemilik lain terlebih dahulu."
+      "Menghapus akunmu juga menghapus perusahaan yang hanya berisi kamu, dan kreditnya tidak dikembalikan. Perusahaan yang sudah diikuti orang lain perlu pemilik lain terlebih dahulu, atau harus dihapus.",
+      "Terbuka untuk tawaran kerja memerlukan profil LinkedIn-mu, dan mati sendiri setahun setelah terakhir kali kamu mengaktifkannya."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Masuk dengan email lain? Keluar, lalu masuk dengan email yang diundang; undangan hanya berlaku untuk email itu.",
-      "Peranmu, admin atau pelihat, adalah yang dipilih oleh orang yang mengundangmu."
+      "Peranmu, admin atau pelihat, adalah yang dipilih oleh orang yang mengundangmu.",
+      "Undangan yang sudah dipakai, atau yang dihapus pemilik, tidak berlaku lagi."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Masuk, jika belum, untuk melihat aplikasi mana yang meminta.",
       "Baca apa yang bisa dan tidak bisa dilakukan aplikasi dengan akunmu.",
+      "Matikan “Izinkan perubahan” agar aplikasi hanya bisa membaca.",
       "Izinkan atau tolak aplikasinya; apa pun pilihanmu, kamu kembali ke aplikasi."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Ikuti berita di pembaca feed-mu lewat tautan RSS di atas."
     ],
     "tips": [
-      "Berita tampil di notifikasimu; aktifkan pembaruan produk di pengaturan untuk juga menerima berita penting lewat email."
+      "Berita tampil di notifikasimu; berita penting juga dikirim lewat email selama “Pembaruan produk dan berita” aktif di pengaturanmu."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Sampai kamu memilih bahasa, daftar menampilkan bahasa situsmu dan bahasa Inggris.",
-      "Latihan bersifat pribadi: tidak ada perusahaan yang melihat hasilmu.",
-      "Saat masuk, tanda centang setelah judul menandai latihan yang sudah kamu mulai, dan centang ganda latihan yang sudah kamu selesaikan; arahkan kursor ke tanda itu untuk melihat berapa topik yang sudah kamu selesaikan."
+      "Latihan bersifat pribadi: tidak ada perusahaan yang melihat hasilmu kecuali kamu mengaktifkan Terbuka untuk tawaran kerja.",
+      "Saat masuk, tanda centang setelah judul menandai latihan yang sudah kamu mulai, dan centang ganda latihan yang sudah kamu selesaikan; arahkan kursor ke tanda centang untuk melihat berapa topik yang sudah kamu selesaikan."
     ]
   },
   "practiceTest": {
     "title": "Latihan wawancara",
     "text": "Satu latihan wawancara gratis: level, bahasa, durasi, dan topik yang dicakupnya.",
     "actions": [
+      "Pilih waktu per soal sebelum mulai: waktu standar, dua kali lipat, atau tanpa batas waktu.",
       "Mulai sesi latihan; masuk dulu jika belum.",
       "Lihat sejauh mana sesi terakhirmu di setiap topik.",
-      "Buka sesi latihanmu sebelumnya dengan tombol riwayat di samping “Mulai latihan”.",
+      "Saat masuk, buka sesi latihanmu sebelumnya dengan “Sesi latihanmu” di samping “Mulai latihan”.",
       "Sedang merekrut untuk posisi ini? Buat wawancara darinya untuk kandidatmu sendiri."
     ],
     "tips": [
-      "Setiap sesi berbatas waktu, seperti wawancara sungguhan; setelah selesai, kamu melihat nilaimu dan setiap jawaban yang benar.",
-      "Berlatihlah sesering yang kamu mau: gratis."
+      "Setiap sesi berbatas waktu kecuali kamu memilih tanpa batas waktu; setelah selesai, kamu melihat nilaimu dan setiap jawaban yang benar.",
+      "Berlatihlah sesering yang kamu mau, dalam batas sesi baru per jam: gratis."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "Apa pun yang sudah kamu pilih saat waktu soal habis tetap dihitung; soal yang tidak dipilih jawabannya, atau tidak sempat dicapai, dihitung salah.",
       "Sedang merekrut untuk posisi ini? Buat wawancara darinya untuk kandidatmu sendiri.",
-      "Sedang cari kerja? Aktifkan Terbuka untuk tawaran kerja agar perusahaan yang merekrut untuk topik ini bisa melihat nama, profil LinkedIn, dan hasil latihanmu."
+      "Sedang cari kerja? Setelah sesi selesai, masukkan profil LinkedIn-mu dan aktifkan Terbuka untuk tawaran kerja agar perusahaan yang merekrut untuk topik ini bisa melihat nama, profil, dan hasil latihan terbarumu serta mengundangmu; pengaturan ini tetap aktif selama setahun kecuali kamu mematikannya."
     ]
   },
   "features": {
     "title": "Fitur",
     "text": "Semua yang dilakukan testee untuk perusahaan, dari deskripsi pekerjaan sampai merekrut: membuat wawancara, mengundang kandidat, yang dilihat kandidat, laporan, integrasi, kepatuhan, dan harga.",
     "actions": [
+      "Lompat ke kotak di akhir halaman dengan “Buat wawancara” di bagian atas, atau buka harga.",
       "Lompat ke sebuah grup lewat tab di bagian atas: buat, undang, wawancara, putuskan, hubungkan, kepercayaan, dan harga.",
-      "Lihat setiap fitur di samping gambar aplikasi yang sebenarnya.",
+      "Lihat fitur utama di samping gambar aplikasi yang sebenarnya, dan fitur lainnya sebagai kartu di bawahnya.",
       "Tempel deskripsi pekerjaan di kotak di akhir halaman untuk membuat wawancara.",
-      "Buka halaman harga, dokumentasi pengembang, atau halaman kepercayaan dari grupnya."
+      "Buka halaman harga, dokumentasi pengembang, atau halaman kepercayaan dari grupnya.",
+      "Tanyakan ke Mira, atau buka Tanya jawab atau panduan, di akhir halaman."
     ],
     "tips": [
       "Semua fitur sudah termasuk: kamu hanya membayar untuk setiap kandidat yang menjawab setidaknya satu soal."
@@ -512,8 +570,9 @@
     "actions": [
       "Gulir ke bawah mengikuti garis: setiap langkah menunjukkan apa yang terjadi, pilihannya, dan gambar aplikasi yang sebenarnya.",
       "Lihat cara kandidat bisa masuk dan cara laporan bisa dikirim keluar, di bawah langkah undang dan bagikan.",
-      "Buat wawancara dari tombol di bagian atas, atau buka semua fitur.",
-      "Tempel deskripsi pekerjaan di kotak di akhir halaman untuk memulai."
+      "Lompat ke kotak awal dengan “Buat wawancara” di bagian atas, atau buka semua fitur.",
+      "Tempel deskripsi pekerjaan di kotak di akhir halaman untuk memulai.",
+      "Tanyakan ke Mira, atau buka Tanya jawab atau panduan, di akhir halaman."
     ],
     "tips": [
       "Membuat wawancara itu gratis: kamu hanya membayar untuk setiap kandidat yang menjawab setidaknya satu soal."
@@ -525,12 +584,14 @@
     "actions": [
       "Lihat harga per kandidat saat ini, dan harga yang lebih murah untuk isi ulang yang lebih besar.",
       "Lihat berapa kandidat pertama yang gratis.",
+      "Lihat berapa kredit yang dipakai satu kandidat; pajak ditambahkan saat checkout jika berlaku.",
       "Lihat kredit yang kamu dapat dengan mengundang perusahaan lain.",
       "Isi ulang kredit perusahaan."
     ],
     "tips": [
       "Kredit tidak pernah kedaluwarsa.",
-      "Kandidat yang tidak menjawab satu soal pun tidak dikenai biaya."
+      "Kandidat yang tidak menjawab satu soal pun tidak dikenai biaya.",
+      "Kredit berbayar yang belum terpakai bisa dikembalikan dananya dalam 14 hari."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "Bandingkan testee",
     "text": "Perbandingan testee dengan alat tes seleksi karyawan lain, lengkap dengan sumbernya: cara tes dibuat, biayanya, dan kapan masing-masing lebih cocok.",
     "actions": [
-      "Buka perbandingan untuk membacanya."
+      "Buka perbandingan untuk membacanya.",
+      "Buat tes untuk kandidatmu dari kartu di bagian akhir."
     ],
     "tips": [
       "Setiap perbandingan menampilkan kapan terakhir diperbarui."
@@ -574,8 +636,9 @@
     "text": "Perbandingan testee dengan alat lain dalam satu hal: cara tes dibuat, biayanya, dan kapan masing-masing lebih cocok.",
     "actions": [
       "Baca perbandingannya dan ikuti tautannya ke sumber.",
-      "Buat tes untuk kandidatmu dari kartu di bagian akhir.",
-      "Kembali ke semua perbandingan lewat tautan di atas judul."
+      "Lompat ke suatu bagian dari daftar “Di halaman ini”, pada halaman yang lebih panjang.",
+      "Buat tes untuk kandidatmu dari tombol di bagian atas atau kartu di bagian akhir.",
+      "Kembali ke semua perbandingan lewat panah kembali di dekat judul."
     ],
     "tips": [
       "Harga dan fitur bisa berubah: tanggal di bawah judul menunjukkan kapan halaman terakhir diperbarui."
@@ -585,6 +648,7 @@
     "title": "Panduan rekrutmen",
     "text": "Panduan praktis untuk manajer perekrutan: menyaring pelamar, tes keterampilan, dan memakai AI dalam rekrutmen secara adil dan sesuai hukum.",
     "actions": [
+      "Cari panduan.",
       "Buka panduan untuk membacanya."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "Panduan praktis untuk manajer perekrutan tentang satu topik.",
     "actions": [
       "Baca panduannya dan ikuti tautannya ke sumber dan halaman terkait.",
-      "Buat tes untuk kandidatmu dari kartu di bagian akhir.",
-      "Kembali ke semua panduan lewat tautan di atas judul."
+      "Lompat ke suatu bagian dari daftar “Di halaman ini”, pada halaman yang lebih panjang.",
+      "Buat tes untuk kandidatmu dari tombol di bagian atas atau kartu di bagian akhir.",
+      "Kembali ke semua panduan lewat panah kembali di dekat judul."
     ],
     "tips": [
-      "Topik hukum berupa ringkasan, bukan nasihat hukum: konsultasikan dengan penasihat hukummu sendiri."
+      "Topik hukum berupa ringkasan bertanggal, bukan nasihat hukum: periksa aturan yang berlaku di tempatmu merekrut."
     ]
   },
   "faq": {
     "title": "Pertanyaan yang sering diajukan",
     "text": "Jawaban atas pertanyaan umum tentang testee: wawancara, kandidat, harga dan kredit, hasil, integrasi, bahasa, dan datamu.",
     "actions": [
+      "Lompat ke kelompok pertanyaan dengan tombol di bagian atas.",
       "Klik pertanyaan untuk membuka jawabannya."
     ],
     "tips": [
-      "Tidak menemukan jawabannya? Tanyakan ke Mira, asisten AI di bagian atas halaman, atau kirim pesan kepada kami dari halaman kontak.",
+      "Tidak menemukan jawabannya? Tanyakan ke Mira, asisten AI, atau kirim pesan kepada kami, dari kartu di akhir halaman.",
       "Harga dalam jawaban selalu harga saat ini."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "Siapa yang membuat testee dan mengapa: wawancara yang dibuat dari deskripsi pekerjaan dengan harga terjangkau untuk tim mana pun, dan latihan gratis untuk siapa saja.",
     "actions": [
       "Baca mengapa testee ada dan bagaimana pendekatannya terhadap rekrutmen.",
-      "Baca pesan dari pendirinya, dan buka profil LinkedIn-nya."
+      "Baca pesan dari pendirinya, dan buka profil LinkedIn-nya.",
+      "Buat tes, atau berlatih gratis, dari kartu di bagian akhir."
     ],
     "tips": [
       "Untuk mengirim pesan ke tim, gunakan halaman kontak."
@@ -630,7 +697,8 @@
     "text": "Kirim pesan ke tim testee berisi pertanyaan, ide, tawaran kemitraan, atau sesuatu yang tidak berfungsi.",
     "actions": [
       "Isi nama, email, dan pesanmu, lalu kirim.",
-      "Tempel ID perusahaan, wawancara, kandidat, atau akun yang dimaksud, agar kami bisa langsung menemukannya."
+      "Tempel ID perusahaan, wawancara, kandidat, atau akun yang dimaksud ke dalam pesanmu, agar kami bisa langsung menemukannya.",
+      "Lihat siapa yang menjalankan testee: nama perusahaan, kode registrasi, alamat, dan email."
     ],
     "tips": [
       "Tautan “Salin ID” ada di bawah nama perusahaan, wawancara, atau kandidat; ID akunmu ada di menu akunmu.",
@@ -641,7 +709,7 @@
     "title": "Dokumentasi pengembang",
     "text": "Semua yang kamu perlukan untuk menghubungkan platformmu sendiri atau agen AI ke testee, dibaca langsung dari API sehingga selalu sesuai dengannya.",
     "actions": [
-      "API: cara masuk, URL dasar, dan setiap endpoint beserta parameter, body, respons, dan error-nya.",
+      "API: cara masuk, panduan seperti batas laju dan percobaan ulang yang aman, URL dasar, setiap endpoint beserta parameter, body, respons, dan error-nya, daftar error, dan changelog.",
       "Webhook: event yang dikirim testee ke alamatmu dan isi masing-masing.",
       "SDK: cara menyematkan wawancara di situsmu sendiri.",
       "MCP: cara menghubungkan aplikasi AI atau agenmu sendiri, dan tool yang didapatnya.",
@@ -661,7 +729,8 @@
       "Kirim email kepada kami jika ada yang sulit dipakai atau kamu membutuhkannya dalam bentuk lain."
     ],
     "tips": [
-      "Mengikuti wawancara sebuah perusahaan dan butuh waktu lebih? Minta waktu ekstra kepada perusahaan sebelum mulai; kamu tidak perlu menjelaskan alasannya."
+      "Mengikuti wawancara sebuah perusahaan dan butuh waktu lebih? Minta waktu ekstra kepada perusahaan sebelum mulai; kamu tidak perlu menjelaskan alasannya.",
+      "Kami menjawab dalam 14 hari; jika kamu tidak puas, kamu bisa menghubungi Otoritas Perlindungan Konsumen dan Regulasi Teknis Estonia (TTJA)."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "Lihat cara testee melindungi data: login, enkripsi, pemeriksaan akses, batas permintaan, dan cadangan.",
       "Lihat apa yang disediakan testee untuk GDPR, EU AI Act, Inggris, dan AS, termasuk undang-undang audit bias New York City.",
       "Lihat tempat data disimpan, subprosesor yang menanganinya, dan berapa lama setiap jenis data disimpan.",
-      "Buka ketentuan, kebijakan privasi, perjanjian pemrosesan data, dan dokumen untuk perusahaan."
+      "Buka ketentuan, kebijakan privasi, perjanjian pemrosesan data, dan dokumen untuk perusahaan.",
+      "Buka pernyataan aksesibilitas."
     ],
     "tips": [
       "Untuk pertanyaan tentang keamanan, privasi, atau kepatuhan, atau untuk melaporkan masalah keamanan, kirim email ke alamat di bagian akhir halaman."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Berhenti berlangganan",
-    "text": "Hentikan satu jenis email dari testee, sesuai yang disebutkan di halaman.",
+    "text": "Hentikan satu jenis email dari testee, atau semua email dari satu perusahaan, sesuai yang disebutkan di halaman.",
     "actions": [
       "Baca email mana yang dihentikan oleh tautan ini.",
       "Konfirmasi untuk berhenti berlangganan; membuka tautannya saja tidak mengubah apa pun.",
-      "Setelah itu, buka pengaturan emailmu untuk mengubah email lainnya."
+      "Jika sudah masuk, buka pengaturan emailmu setelah itu untuk mengubah email lainnya."
     ],
     "tips": [
-      "Email layanan, seperti undangan tim, laporan, dan masalah pembayaran, tetap dikirim."
+      "Email layanan, seperti undangan tim, laporan, dan masalah pembayaran, tetap dikirim; tautan yang menghentikan email sebuah perusahaan juga menghentikan undangannya kepadamu."
     ]
   }
 }

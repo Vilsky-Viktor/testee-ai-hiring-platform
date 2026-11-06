@@ -5,13 +5,15 @@
     "actions": [
       "İş tanımını üstteki kutuya yapıştırın veya hazır bir şablon seçin; konuları düzenleyin, sorular sizin için yazılıp kontrol edilsin.",
       "Adayları e-postayla, bir dosyadan, iş ilanınızdaki paylaşım bağlantısıyla ya da ATS'nizden, kendi platformunuzdan veya bir yapay zekâ asistanından davet edin.",
+      "Adayların ne gördüğünü görün: kendi markanızla, tıklayarak veya sesle cevaplanan süreli bir mülakat.",
       "Raporları okuyun: her adayın cevapları, notları ve dürüstlük uyarıları, tek tıkla e-postayla ya da sohbette paylaşılır.",
-      "Platformunuzu, yapay zekâ uygulamanızı ve iş ilanı sitelerini bağlayın, güncellemeleri Slack'te alın ya da işi sizin yerinize yapmasını yapay zekâ asistanı Mira'dan isteyin."
+      "ATS'nizi, platformunuzu ve yapay zekâ uygulamalarınızı bağlayın, güncellemeleri Slack'te alın ya da işi sizin yerinize yapmasını yapay zekâ asistanı Mira'dan isteyin.",
+      "testee'yi telefonla ön görüşmeler ve aboneliklerle karşılaştırın, soruların nasıl kontrol edilip iyileştirildiğini görün."
     ],
     "tips": [
-      "Mülakat oluşturmak ücretsizdir. Cevap veren her aday için başlığın altındaki fiyatı kendi para biriminizde ödersiniz ve ilk adaylarınız ücretsizdir.",
+      "Mülakat oluşturmak ücretsizdir. Cevap veren her aday için sayfanın aşağısındaki fiyatları kendi para biriminizde ödersiniz ve ilk adaylarınız ücretsizdir.",
       "Kimseyi davet etmeden önce mülakatınızı aday olarak deneyin.",
-      "Kısa bir tanıtım için üstteki videoyu izleyin; SSS ve rehberler sayfanın altında.",
+      "Kısa bir tanıtım için üstteki düğmeden videoyu izleyin; SSS ve rehberler sayfanın altında.",
       "Gerçek raporların nasıl göründüğünü görmek için raporların altındaki örnek raporları indirin."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "“Yeni şirket” ile bir şirket oluşturun. Adı tüm testee'de benzersizdir.",
       "Mülakatları ve adayları üzerinde çalışmak için bir şirketi açın.",
-      "Sahibi olduğunuz bir şirketi tüm mülakatları ve davetleriyle birlikte kaldırın."
+      "Sahibi olduğunuz bir şirketi tüm mülakatları ve davetleriyle birlikte kaldırın; kredileri kaybolur ve iade edilmez.",
+      "Ekibi için bir şirketin ⋮ menüsünü açın; sahipler ve yöneticiler orada kredi yükleyebilir, şirketin markasını ve faturalandırmasını da açabilir."
     ],
     "tips": [
-      "Sahibi olmadığınız her şirketin yanında rolünüz görünür: yöneticiler değişiklik yapar, görüntüleyiciler yalnızca bakar.",
+      "Sahibi olmadığınız her şirketin yanında rolünüz görünür: yöneticiler değişiklik yapar; görüntüleyiciler çoğunlukla bakar, ayrıca yorum yazabilir, soruları puanlayıp bildirebilir, mülakatları deneyebilir ve raporları paylaşabilir.",
       "Krediler şirkete aittir; bu yüzden her şirkete ayrı kredi yüklenir."
     ]
   },
@@ -36,22 +39,23 @@
       "Henüz şirketiniz yoksa yeni bir şirket oluşturun; şablon orada açılır."
     ],
     "tips": [
-      "Kopyalandıktan sonra mülakat şirketindir: sorularını ve ayarlarını dilediğiniz gibi değiştirin."
+      "Kopyalandıktan sonra mülakat şirketindir: sorularını ve ayarlarını dilediğiniz gibi değiştirin.",
+      "Şablonu yalnızca sahipler ve yöneticiler kullanabilir; görüntüleyici olduğunuz bir şirkette bu düğme görünmez."
     ]
   },
   "interviews": {
     "title": "Mülakatlar",
-    "text": "Bu şirketin tüm mülakatları ve adaylar için kredileri. Her mülakat, bir iş tanımından oluşturulan süreli bir testtir.",
+    "text": "Bu şirketin tüm mülakatları ve adaylar için kredileri. Her mülakat, bir iş tanımından veya şablondan oluşturulan süreli bir testtir.",
     "actions": [
-      "“Yeni mülakat” ile bir iş tanımından mülakat oluşturun.",
-      "Konularını, adaylarını, yorumlarını ve ayarlarını görmek için bir mülakatı açın; sabitlenen yorum mülakatın adının altında görünür.",
-      "Mülakatları başlıklarına göre arayın.",
-      "Bir mülakatı aday olarak deneyin veya silin.",
-      "Bakiyeden kredi yükleyin veya Faturalandırma sekmesinde otomatik yüklemeyi açın."
+      "“Yeni mülakat” ile bir iş tanımından mülakat oluşturun (sahipler ve yöneticiler).",
+      "Konularını, adaylarını ve yorumlarını, ayarlarını (sahipler ve yöneticiler) ve şirket kredi yükledikten sonra “Keşfet”i görmek için bir mülakatı açın; sabitlenen yorum mülakatın adının altında görünür.",
+      "Mülakatları başlıklarına göre arayın veya duruma göre filtreleyin: yeni, süreçte veya işe alındı.",
+      "Bir mülakatı ⋮ menüsünden aday olarak deneyin; sahipler ve yöneticiler orada silebilir de.",
+      "Bakiyeden kredi yükleyin veya Faturalandırma sekmesinde otomatik yüklemeyi açın (sahipler ve yöneticiler)."
     ],
     "tips": [
       "Krediler azaldığında bakiye kehribar rengine döner. Kredi yoksa yeni davetler gönderilmez.",
-      "Şirketin menüsü şablonlara, ekibinize, entegrasyonlara, faturalandırmaya (sahipler ve yöneticiler) ve davetlere gider."
+      "Şirketin menüsü şablonlara, ekibinize, entegrasyonlara, markaya ve faturalandırmaya (sahipler ve yöneticiler), işlem kaydına (şirket sahibi) ve davetlere gider."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Mülakata iş tanımından başlayın. testee onu okur, ölçülecek konuları önerir ve siz onayladığınızda soruları yazar.",
     "actions": [
       "İş tanımını yapıştırın: pozisyon, gereksinimler ve tercih sebepleri.",
+      "Henüz bir şey yazmadıysanız, “Örnek deneyin” kutuyu örnek bir tanımla doldurur.",
       "Mülakatın oluşturulacağı dili seçin.",
-      "Oluşturun, ardından önerilen konuları inceleyin."
+      "Oluşturun, ardından önerilen konuları inceleyin.",
+      "Bunun yerine bir şablondan veya ATS bağlıysa ATS'nizdeki bir iş ilanından başlayın.",
+      "Ana sayfadan başladıysanız, mülakatın hangi şirket için olduğunu seçin veya yeni bir şirket oluşturun; yalnızca sahibi veya yöneticisi olduğunuz şirketler listelenir."
     ],
     "tips": [
       "Tanım ne kadar ayrıntılı olursa sorular pozisyona o kadar iyi uyar.",
-      "Oluşturmak ücretsizdir: yalnızca cevap veren adaylar için ödersiniz."
+      "Oluşturmak ücretsizdir: yalnızca cevap veren adaylar için ödersiniz.",
+      "Bir şirkette henüz adayı olmayan yalnızca birkaç mülakat bulunabilir ve günde yalnızca birkaç mülakat başlatılabilir; şirket kredi yükledikten sonra bu sınırlar yükselir."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "İhtiyacınız olmayan konuların işaretini kaldırın.",
       "Bir konunun adını ve alt konularını kalem simgesiyle düzenleyin.",
+      "“Konu ekle” ile kendi konunuzu ekleyin: bir ad ve en az 3 alt konu verin.",
       "Değişiklikleri kendi sözlerinizle anlatıp uygulayın, örneğin “ekip liderliği üzerine bir konu ekle”.",
-      "Soruların yazılması için onaylayıp oluşturun."
+      "Soruların yazılması için onaylayıp oluşturun.",
+      "Mülakattan vazgeçmek için iptal edin; o ana kadar oluşturulan hiçbir şey saklanmaz."
     ],
     "tips": [
       "Konu çok fazlaysa bazılarının işaretini kaldırın veya nasıl birleştirileceklerini anlatın.",
-      "Sorular yalnızca onayınızdan sonra yazılır; burada bir dakikanızı ayırın."
+      "Sorular yalnızca onayınızdan sonra yazılır; burada bir dakikanızı ayırın.",
+      "14 gün açık bırakılan inceleme iptal edilir ve mülakatı kaldırılır."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "testee mülakatınızı hazırlıyor: önce konular, sonra her birinin soruları. Birkaç dakika sürer.",
     "actions": [
       "İsterseniz bu sayfadan ayrılın: oluşturma devam eder.",
-      "Artık gerekmiyorsa oluşturmayı iptal edin; o ana kadar hazırlanan hiçbir şey saklanmaz."
+      "Artık gerekmiyorsa oluşturmayı iptal edin; o ana kadar hazırlanan hiçbir şey saklanmaz.",
+      "Konular hazır olduğunda bu sayfa onları incelemeniz için gösterir; sorular yalnızca siz onayladıktan sonra yazılır.",
+      "Oluşturma başarısız olursa “Yeniden dene” veya “Baştan başla” seçeneğini seçin."
     ],
     "tips": [
       "Mülakat hazır olduğunda bildirim alırsınız.",
@@ -97,14 +110,14 @@
     "title": "Konular",
     "text": "Bu mülakatın ölçtükleri: konuları, her birinin alt konuları ve kendi soru havuzu. Her aday her havuzdan rastgele bir set alır.",
     "actions": [
-      "Bir konunun sorularına gitmek için “Soruları yönet”i açın: soruları okuyun, bazılarını devre dışı bırakın, beğenin, beğenmeyin veya bildirin.",
-      "Bir konunun sorular sayfasında zayıf bir soruyu yeniden oluşturun veya yanlış bir cevabı işaretleyin.",
-      "Her adayın bir konudan kaç soru alacağını belirleyin; 0, konuyu yeni adaylar için dışarıda bırakır. Bir aday tüm konulardan toplam en fazla 60 soru alır: bir konuyu artırmak için başka birini azaltın.",
-      "Mülakatı aday olarak deneyin veya silin."
+      "Sorularına gitmek için bir konuyu açın: soruları okuyun, beğenin, beğenmeyin veya bildirin; sahip veya yöneticiyseniz bazılarını devre dışı bırakın.",
+      "Bir konunun sorular sayfasında zayıf bir soruyu yeniden oluşturun veya yanlış bir cevabı işaretleyin (sahipler ve yöneticiler).",
+      "Her adayın bir konudan kaç soru alacağını belirleyin (sahipler ve yöneticiler); 0, konuyu yeni adaylar için dışarıda bırakır, ancak en az bir konuda soru kalmalıdır. Bir aday tüm konulardan toplam en fazla 60 soru alır: bir konuyu artırmak için başka birini azaltın.",
+      "Mülakatı ⋮ menüsünden aday olarak deneyin; sahipler ve yöneticiler orada silebilir de."
     ],
     "tips": [
-      "Yapay zekânın yazdığı sorular hatalı olabilir: kimseyi davet etmeden önce her konuya göz atın.",
-      "Mülakatı yeniden adlandırmak için başlığa tıklayın.",
+      "İkinci bir yapay zekâ cevapların bir örneklemini kontrol etse de yapay zekânın yazdığı sorular hatalı olabilir: kimseyi davet etmeden önce her konuya göz atın.",
+      "Mülakatı yeniden adlandırmak için başlığa tıklayın (sahipler ve yöneticiler).",
       "Üstteki kartlar her adayın alacaklarını toplar: toplam soru, soru başına ortalama süre ve mülakatın tamamının süresi. Her değişiklikle güncellenir."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Sorular",
     "text": "Bir konunun soruları; cevapları, beğenileri, beğenmeyenleri ve bildirimleriyle. Her aday, etkin sorular arasından rastgele bir set alır.",
     "actions": [
+      "Üstteki kartlarda kaç soru olduğunu, kaçının etkin veya devre dışı olduğunu ve kaç bildirim aldığını görün; listeyi “Tümü”, “Etkin”, “Devre dışı” veya “Bildirilenler” ile filtreleyin.",
       "Bir soruyu devre dışı bırakmak için işaretini kaldırın: bundan sonra hiçbir aday onu almaz. Yeniden etkinleştirmek için işaretleyin (sahipler ve yöneticiler).",
       "Bir soruyu beğenin veya beğenmeyin; geri almak için seçiminize tekrar tıklayın.",
       "Bir sorunun bildirimlerini açın ve her soru için bir kez kendi bildiriminizi ekleyin.",
-      "Zayıf bir soruyu yeniden oluşturun veya yanlış bir cevabı işaretleyin (sahipler ve yöneticiler)."
+      "Zayıf bir soruyu yeniden oluşturun veya yanlış bir cevabı sorunun ⋮ menüsünden işaretleyin (sahipler ve yöneticiler); işaretlenen cevap kontrol edilir, yanlışsa düzeltilir veya değiştirilir."
     ],
     "tips": [
       "Yapay zekânın yazdığı sorular hatalı olabilir: kimseyi davet etmeden önce okuyun.",
@@ -127,27 +141,31 @@
     "title": "Adaylar",
     "text": "Bu mülakata davet edilen herkes; durumu, ilerlemesi ve notuyla birlikte.",
     "actions": [
-      "Adayları davet edin: tek tek, en fazla 100 kişilik bir listeyle ya da bir CSV veya TXT dosyasıyla.",
+      "“Yeni aday(lar)” ile adayları davet edin (sahipler ve yöneticiler): tek tek, bir listeyle ya da bir CSV veya TXT dosyasıyla.",
       "E-posta veya ada göre arayın, duruma göre filtreleyin, nota veya tarihe göre sıralayın.",
-      "Bir adayın raporunu açın ya da tüm adayların raporunu indirin veya paylaşın."
+      "Bir adayın raporunu açın ya da tüm adayların raporunu indirin veya paylaşın.",
+      "Daveti yeniden göndermek, bağlantısını kopyalamak, geri almak veya adayı silmek için adayın ⋮ menüsünü açın (sahipler ve yöneticiler)."
     ],
     "tips": [
       "En az bir soruyu cevaplayan her aday, bağlantıdan gelenler dahil, kredi kullanır.",
-      "Hatırlatmalar adaylara otomatik olarak gönderilir.",
-      "Davet ederken adayların tıklama modunda mı yoksa sesli modda mı cevap vereceğini seçin; modu mülakatınkinden farklı olan adayın yanında o modun simgesi görünür."
+      "Başlamamış bir aday, davetten 3 gün sonra bir hatırlatma alır. 30 gün içinde başlanmayan davetin süresi dolar; yeniden göndermek daveti tekrar çalışır hale getirir.",
+      "Adaylar mülakatın modunda cevap verir; tek bir adayın modunu değiştirmek için adayın sayfasını kullanın. Modu mülakatınkinden farklı olan adayın yanında o modun simgesi görünür.",
+      "Davet, adayın kredilerini ayırır; aday cevap vermeden bitirirse krediler iade edilir.",
+      "Paylaşılabilir bağlantıdan, ATS'nizden, API'den veya “Keşfet”ten gelen adaylar da burada görünür.",
+      "Tüm adayların raporu e-postayla PDF olarak ya da WhatsApp, Telegram, Viber veya LINE üzerinden kısa bir özet olarak paylaşılır."
     ]
   },
   "interviewNotes": {
     "title": "Yorumlar",
-    "text": "Ekibinizin bu işe alım süreciyle ilgili yorumları: ne üzerinde anlaştığınız, sırada kimi arayacağınız ya da mülakatın kimin için olduğu. Şirketinizdeki herkes görür; adaylar asla görmez.",
+    "text": "Ekibinizin bu işe alım süreciyle ilgili yorumları: ne üzerinde anlaştığınız, sırada kimi arayacağınız ya da mülakatın kimin için olduğu. Görüntüleyiciler dahil şirketinizdeki herkes görür ve yazabilir; adaylar asla görmez.",
     "actions": [
       "Üstteki kutuya bir yorum yazın ve Paylaş'ı seçin ya da ⌘/Ctrl+Enter'a basın. İçindeki bağlantılar tıklanabilir olur.",
-      "Kendi yorumlarınızı satırlarındaki düğmelerle düzenleyin veya silin; sahipler ve yöneticiler herkesin yorumunu silebilir.",
-      "Bir yorumu yer imi düğmesiyle sabitleyin (sahipler ve yöneticiler): burada en üstte, ayrıca mülakatın sayfasında ve mülakat listesinde mülakatın adının altında görünür."
+      "Kendi yorumlarınızı satırlarındaki ⋮ menüsünden düzenleyin veya silin; sahipler ve yöneticiler herkesin yorumunu silebilir.",
+      "Bir yorumu ⋮ menüsündeki “En üste sabitle” ile sabitleyin (sahipler ve yöneticiler): aynı anda bir yorum burada en üstte, ayrıca mülakatın sayfasında ve mülakat listesinde mülakatın adının altında görünür."
     ],
     "tips": [
       "Müşteriler için mi çalışıyorsunuz? Her mülakatın kimin için olduğunu bir bakışta görmek için “Acme için, Backend Developer” gibi bir yorumu sabitleyin.",
-      "Silinen bir yorum kalıcı olarak gider. İşlem kaydı, bir yorumu kimin yazdığını, değiştirdiğini veya sildiğini kaydeder, metnini asla kaydetmez.",
+      "Silinen bir yorum kalıcı olarak gider. İşlem kaydı, bir yorumu kimin yazdığını, değiştirdiğini, sildiğini veya sabitlediğini kaydeder, metnini asla kaydetmez.",
       "Ekibinizin geri kalanı her yeni yorumdan haberdar olur: bildirimlerde, günlük etkinlik özetinde ve Slack bağlıysa kanalınızda."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Ayarlar",
-    "text": "Bu mülakatın her aday için nasıl işlediği.",
+    "text": "Bu mülakatın her aday için nasıl işlediği. Bu sekmeyi yalnızca sahipler ve yöneticiler görür.",
     "actions": [
-      "İş ilanı için paylaşılabilir bağlantıyı açın: bağlantıya sahip herkes mülakata girebilir.",
+      "İş ilanı için paylaşılabilir bağlantıyı açın: bağlantıya sahip herkes mülakata girebilir ve bu bağlantıyla cevap veren her kişi, davet edilen bir aday gibi kredi kullanır.",
       "Mülakat modunu seçin: adayların cevaplarına dokunduğu tıklama modu ya da yapay zekâ mülakatçısı Mira'nın her soruyu sesli okuduğu ve adayların sesle veya dokunarak cevap verdiği sesli mod. Sesli mod her dilde çalışır; ne kadar iyi okuyup duyduğu dile göre değişir ve ayarın altındaki bağlantı, her dildeki kaliteyi gösteren rehberi açar.",
       "Soru başına ortalama süreyi saniye olarak belirleyin: her soru, uzunluğuna ve gösterdiği koda göre kendi süresini alır; mülakatın toplam süresi aynı kalır.",
       "Geçme notunu belirleyin: buna ulaşan adaylar geçer.",
@@ -175,22 +193,26 @@
       "Mülakatın sorularını testee'nin ortak soru bankasının dışında tutun; başka mülakatlarda zaten yeniden kullanılan sorular orada kalır."
     ],
     "tips": [
-      "Her ayar, alanından çıktığınız anda kaydedilir.",
+      "Sayı alanları, alandan çıktığınız anda kaydedilir; anahtarlar ve mod hemen kaydedilir.",
       "Adaylar puanlarını asla görmez; yalnızca ekibiniz görür.",
-      "Daha fazla süreye ihtiyacı olan bir aday için sayfasından ek süre verin."
+      "Daha fazla süreye ihtiyacı olan bir aday için sayfasından ek süre verin.",
+      "Yeni mod, sayfasında kendisine ayrı mod verilenler dışında henüz başlamamış adaylara uygulanır.",
+      "Ortalama süre 10 ile 600 saniye, geçme notu %1 ile %100 arasındadır."
     ]
   },
   "tryInterview": {
     "title": "Aday olarak dene",
     "text": "Bu mülakatın adayların gördüğü haliyle önizlemesi: giriş, ardından süreli sorular. Ücretsizdir.",
     "actions": [
-      "Önizlemeyi başlatın ve bir aday gibi cevaplayın.",
+      "Kendi başına cevaplama taahhüdünü işaretleyin, “Kabul et ve başla”yı seçin ve bir aday gibi cevaplayın.",
       "Kimseyi davet etmeden önce süreyi, ifadeleri ve cevapları kontrol edin."
     ],
     "tips": [
       "Cevaplarken sayfada kalın: adaylarda sayfadan ayrılma, kopyalama ve çok hızlı cevaplar kaydedilir.",
       "Sesli moddaki bir mülakat önce mikrofonunuza ve sese izin ister: izin verin; siz sesle veya dokunarak cevap verirken Mira her soruyu sesli okur.",
-      "Her şirketin günlük bir önizleme sayısı vardır, sesli modda daha azdır; bunlar bittiğinde, başlatırken ne zaman tekrar deneyebileceğiniz söylenir."
+      "Her şirketin günlük bir önizleme sayısı vardır, sesli modda daha azdır; bunlar bittiğinde, başlatırken ne zaman tekrar deneyebileceğiniz söylenir.",
+      "Önizleme, aday listesine ve soru istatistiklerine girmez.",
+      "Görüntüleyiciler de mülakatı deneyebilir."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Her cevabı dürüstlük uyarılarıyla okuyun: sayfadan ayrılmalar, kopyalama girişimleri ve hızlı cevaplar.",
       "Aday bitirdiğinde cevaplarındaki ve sürelerindeki olağan dışı örüntüleri ve canlı bir mülakatta sormak için doğru cevapladığı soruları görün.",
-      "Raporu PDF olarak indirin veya e-postayla paylaşın.",
-      "Başlamadan önce ek süre verin, örneğin bir engel durumu için.",
+      "Raporu PDF olarak indirin veya paylaşın: PDF'i e-postayla ya da kısa bir özeti WhatsApp, Telegram, Viber veya LINE üzerinden. Görüntüleyiciler e-postayı yalnızca şirket üyelerine gönderebilir.",
+      "Başlamadan önce +%25, +%50 veya +%100 ek süre verin, örneğin bir engel durumu için.",
       "Aday başlayana kadar, mülakatın modu ne olursa olsun, tıklama modunda mı yoksa sesli modda mı cevap vereceğini seçin.",
       "Adayın adını ekleyin veya düzenleyin.",
-      "E-posta ulaşmadıysa kendiniz göndermek için davet bağlantısını kopyalayın; aday bitirene kadar orada kalır.",
+      "E-posta ulaşmadıysa kendiniz göndermek için davet bağlantısını kopyalayın; aday bitirene veya davetin süresi dolana kadar orada kalır.",
       "Daveti yeniden gönderin veya geri alın ya da adayı sonuçlarıyla birlikte silin."
     ],
     "tips": [
       "Puan kararınızı destekler, kararı sizin yerinize vermez. Aday isterse sonucunu bir insana inceletin.",
       "Notun altındaki onay işareti, adayın başlamadan önce soruları yapay zekâ araçları veya başkalarının yardımı olmadan kendisinin yanıtlayacağını onayladığını gösterir.",
-      "Not, kazanılan puanların yüzdesidir: her soru bir puan değerindedir; \"birden fazla seçenek seçin\" sorusu işaretlenen her doğru seçenek için bu puanın bir kısmını verir, yanlış bir seçenek işaretlenirse hiç puan vermez."
+      "Not, kazanılan puanların yüzdesidir: her soru bir puan değerindedir; \"birden fazla seçenek seçin\" sorusu işaretlenen her doğru seçenek için bu puanın bir kısmını verir, yanlış bir seçenek işaretlenirse hiç puan vermez.",
+      "Ek süre, adayın modu ve adı, davet bağlantısı, yeniden gönderme, geri alma ve silme sahipler ve yöneticiler içindir."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Pozisyona veya konuya göre arayın, seviyeye ve dile göre filtreleyin.",
       "Konularını ve her birindeki soru sayısını görmek için bir şablonu açın.",
-      "Bir şablondan mülakat başlatmak için şablonu kullanın."
+      "Her satırda şablonun konularını, sorularını ve dakikalarını, ayrıca kaç mülakatınızda kullanıldığını görün.",
+      "Bir şablondan mülakat başlatmak için şablonu kullanın (sahipler ve yöneticiler)."
     ],
     "tips": [
       "Daha iyi bir uyum için mülakatı kendi iş tanımınızdan oluşturun.",
-      "Kopyalandıktan sonra mülakat sizindir: sorularını ve ayarlarını dilediğiniz gibi değiştirin."
+      "Kopyalandıktan sonra mülakat sizindir: sorularını ve ayarlarını dilediğiniz gibi değiştirin.",
+      "Liste sizin dilinizle ve İngilizceyle başlar; diğerlerini görmek için tüm dilleri seçin."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "Hazır bir mülakat: konuları, alt konuları ve her konudaki soru sayısı.",
     "actions": [
       "Konuların işe aldığınız pozisyona uyup uymadığını kontrol edin.",
-      "Şablonu bu şirkete yeni bir mülakat olarak kopyalamak için kullanın."
+      "Şablonu bu şirkete yeni bir mülakat olarak kopyalamak için kullanın (sahipler ve yöneticiler)."
     ],
     "tips": [
       "Kopyalamak ücretsizdir; cevap veren adaylar her zamanki gibi kredi kullanır.",
-      "Konular uymuyorsa mülakatı iş tanımınızdan oluşturun."
+      "Konular uymuyorsa mülakatı iş tanımınızdan oluşturun.",
+      "Soruları, siz kullanana kadar gizli kalır."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "E-postayla yönetici veya görüntüleyici olarak üye ekleyin: katılmaları için e-postayla bir bağlantı gönderilir.",
       "Bir üyenin rolünü yönetici ile görüntüleyici arasında değiştirin.",
+      "Şirketi, katılmış bir yöneticiye menüsündeki “Sahip yap” ile devredin: siz yönetici olursunuz.",
       "Bekleyen bir davetin bağlantısını kopyalayın ya da bir üyeyi veya daveti kaldırın."
     ],
     "tips": [
-      "Yöneticiler mülakat oluşturur ve değiştirir, aday davet eder ve kredi yükler. Görüntüleyiciler mülakatları ve sonuçları görür, raporları paylaşır ama hiçbir şeyi değiştirmez.",
-      "Kartı otomatik yüklemeleri ödeyen bir üyeyi kaldırmak bu yüklemeleri durdurur."
+      "Yöneticiler mülakat oluşturur ve değiştirir, aday davet eder ve kredi yükler. Görüntüleyiciler mülakatları ve sonuçları görür, raporları paylaşır ve yorum yazar ama başka hiçbir şeyi değiştirmez.",
+      "Kartı otomatik yüklemeleri ödeyen bir üyeyi kaldırmak veya görüntüleyici yapmak bu yüklemeleri durdurur.",
+      "Üyeleri yalnızca şirket sahibi ekler, değiştirir ve kaldırır; ekibi şirketteki herkes görür."
     ]
   },
   "actions": {
     "title": "İşlem kaydı",
-    "text": "Şirket üyelerinin yaptığı her şey, en yenisi önce: ne yaptıkları ve neye yaptıkları, kimin yaptığı, ne zaman ve bunu onlar adına asistanın, bir yapay zekâ uygulamasının, API'nin veya bir ATS'nin yapıp yapmadığı. Yalnızca şirket sahibi görür.",
+    "text": "Şirket üyelerinin yaptığı her şey, en yenisi önce: ne yaptıkları ve neye yaptıkları, kimin yaptığı, ne zaman ve bunu onlar adına yapay zekâ asistanının, bir yapay zekâ uygulamasının, API'nin veya bir ATS'nin yapıp yapmadığı. Yalnızca şirket sahibi görür.",
     "actions": [
       "Bir üyenin ya da bir türün işlemlerini gösterin: mülakatlar, adaylar, ekip, şirket, faturalandırma veya entegrasyonlar.",
       "İki gün arasındaki işlemleri gösterin.",
-      "Yanlılık denetimi dışa aktarımını indirin: tüm mülakatlar veya bir mülakat için ve isterseniz iki gün arasında, mülakatı bitiren her adayın notunu, geçme notunu, geçip geçmediğini ve mülakatın medyanının üzerinde not alıp almadığını e-postaya göre içeren bir CSV dosyası."
+      "Kaydı ⋮ menüsünden CSV dosyası olarak indirin: tüm zamanlar, yakın bir dönem veya iki gün arası. Şirket başına günde en fazla 20 indirme.",
+      "Yanlılık denetimi dışa aktarımını indirin: tüm mülakatlar veya bir mülakat için ve isterseniz iki gün arasında, mülakatı bir notla bitiren her adayın notunu, geçme notunu, geçip geçmediğini ve mülakatın medyanının üzerinde not alıp almadığını e-postaya göre içeren bir CSV dosyası."
     ],
     "tips": [
       "İşlemler 12 ay saklanır.",
@@ -271,12 +300,12 @@
     "text": "testee'yi ekibinizin zaten kullandığı araçlara bağlayın. Her entegrasyonun kurulum adımlarını içeren kendi sayfası vardır.",
     "actions": [
       "Slack: şirketinizin bildirimlerini bir kanalda alın.",
-      "API: kendi platformunuzu bağlamak için anahtarlar ve webhook'lar.",
+      "API: kendi platformunuzu bağlamak için anahtarlar, webhook'lar ve SDK.",
       "Yapay zekâ uygulamaları: testee'yi Claude, ChatGPT ve diğer yapay zekâ uygulamalarından kullanın.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR): bir aşamaya taşıdığınız adaylar mülakatı alır, sonuçları ATS'e geri döner."
     ],
     "tips": [
-      "Şirketteki herkes entegrasyonları görür; sahipler ve yöneticiler değiştirebilir."
+      "Şirketteki herkes entegrasyonları görür; sahipler ve yöneticiler değiştirebilir. Yapay zekâ uygulamaları kişiye özeldir: herkes kendi uygulamasını bağlayabilir veya bağlantısını kesebilir."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "ATS'nizi talimatlarını izleyerek bağlayın.",
       "Bir ilan bağlayın: ilanı, aşamasını ve bir mülakatı seçin ya da ilanın metninden yeni bir mülakat oluşturun.",
+      "Bağlı her iş ilanının kaç adayı davet ettiğini, kaçının beklediğini ve kaçını davet edemediğini görün.",
       "Davet edilemeyen adayları yeniden davet edin, örneğin krediler bittiğinde.",
+      "ATS çalışmayı durdurduğunda yeniden bağlayın: siz bağlayana kadar adaylar davet edilmez.",
       "Bir ilanın bağlantısını kaldırın veya ATS bağlantısını kesin."
     ],
     "tips": [
       "Yalnızca testee için bir aşama ekleyin, örneğin “testee beceri testi”; böylece diğer araçlarınızla hiç karışmaz.",
-      "testee ATS'nizde kimseyi asla taşımaz veya reddetmez."
+      "testee ATS'nizde kimseyi asla taşımaz veya reddetmez.",
+      "ATS'yi bağlayan üye ayrılırsa veya görüntüleyici olursa adaylar davet edilmemeye başlar."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "testee'yi Slack'e ekleyin ve kanalı seçin, örneğin #hiring.",
       "Oraya hangi bildirimlerin gideceğini seçin: bir adayın bitirmesi, teslim edilemeyen bir davet, bir mülakatın hazır olması ve daha fazlası.",
+      "Kanala bir test mesajı gönderin, Slack mesaj almayı bırakırsa yeniden bağlayın.",
       "Bildirimleri durdurmak ve testee uygulamasını Slack'inizden kaldırmak için bağlantıyı kesin."
     ],
     "tips": [
       "testee yalnızca o kanala mesaj gönderebilir; Slack'inizi okuyamaz.",
-      "Herkes her bildirimi zil simgesinde görmeye devam eder."
+      "Herkes her bildirimi zil simgesinde görmeye devam eder.",
+      "Slack'i bağlayan üye ayrılırsa veya görüntüleyici olursa, bir sahip veya yönetici yeniden bağlayana kadar durur."
     ]
   },
   "api": {
     "title": "API",
     "text": "Kariyer siteniz gibi kendi platformunuzu testee'ye bağlayın.",
     "actions": [
-      "Bir API anahtarı oluşturun ve yalnızca ihtiyaç duyduklarını işaretleyin: mülakatları okuma veya oluşturma; adayları okuma, davet etme, değiştirme veya kaldırma; kredilerinizi okuma; ya da yapay zekâ ajanlarıyla kullanma (MCP). Sizin adınıza çalışır.",
+      "Bir API anahtarı oluşturun ve yalnızca ihtiyaç duyduklarını işaretleyin: mülakatları okuma veya oluşturma; adayları okuma, davet etme, değiştirme veya kaldırma; yorumları okuma veya ekleme; kredilerinizi okuma; ya da yapay zekâ ajanlarıyla kullanma (MCP). Şirket adına kendi kimliğiyle çalışır ve oluşturan kişi ayrılsa da çalışmaya devam eder.",
       "Bir anahtarı açıp neler yapabileceğini (her değişiklik hemen kaydedilir) ve hangi IP adreslerinden kullanılabileceğini değiştirin.",
+      "Bir anahtarı yeniden adlandırın, süresi dolmak üzereyken yerine yenisini oluşturun ve şirket sahibiyseniz neler yaptığını görün.",
       "Bir webhook ekleyin: testee, bir aday başladığında, bitirdiğinde (sonuçlarıyla birlikte), daveti kendisine ulaşamadığında, davetinin süresi dolduğunda veya kaldırıldığında ve bir mülakat hazır olduğunda HTTPS adresinize imzalı olarak haber verir.",
       "Bir webhook'a test olayı gönderin ve her gönderimin sonucunu teslim günlüğünde görün.",
+      "Bir webhook'un gizli anahtarını yenileyin: 24 saat boyunca her isteği iki gizli anahtar da imzalar.",
       "SDK sekmesinde mülakatlarınızı SDK ile gösterebilecek siteleri listeleyin, test ederken de localhost'a izin verin.",
       "Artık kullanmadığınız anahtarları ve webhook'ları silin.",
       "Tüm uç noktalar ve olaylar için geliştirici belgelerini ve SDK'yı açın."
@@ -321,7 +357,8 @@
     "tips": [
       "Yeni bir anahtar ve webhook'un gizli anahtarı yalnızca bir kez gösterilir: hemen kopyalayın.",
       "Her anahtar için bir son geçerlilik tarihi seçin: sızdırılmış süresiz bir anahtar kullanılabilir kalır.",
-      "Bir anahtarın yetkilerini daha sonra işaretleyebilir veya işaretini kaldırabilirsiniz; her anahtara yalnızca platformunun ihtiyaç duyduğunu verin."
+      "Bir anahtarın yetkilerini daha sonra işaretleyebilir veya işaretini kaldırabilirsiniz; her anahtara yalnızca platformunun ihtiyaç duyduğunu verin.",
+      "3 gün boyunca yanıt vermeyen webhook duraklatılır; ulaşan bir test olayı onu yeniden başlatır."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Sunucu adresini kopyalayın ve adımları izleyerek Claude, Claude Code veya ChatGPT'ye ekleyin; diğer uygulamalar ve kendi ajanlarınız geliştirici belgelerinde anlatılır.",
       "Açılan testee sayfasında uygulamaya izin verin.",
-      "Artık kullanmadığınız bir uygulamanın bağlantısını kesin."
+      "Bir uygulama bağlandıktan sonra, ondan neler isteyebileceğinize dair bir örneği kopyalayın.",
+      "Artık kullanmadığınız bir uygulamanın bağlantısını kesin.",
+      "Sahipler ve yöneticiler bu şirkette yapay zekâ uygulamalarına izin verir veya durdurur: kapalıyken uygulamalar şirkette hiçbir şeyi okuyamaz veya değiştiremez."
     ],
     "tips": [
-      "Uygulama, üyesi olduğunuz her şirkette sizin adınıza hareket eder. Çoğu uygulama bir şeyi değiştirmeden önce size sorar.",
+      "Uygulama, üyesi olduğunuz ve yapay zekâ uygulamalarına izin veren her şirkette sizin adınıza hareket eder. Çoğu uygulama bir şeyi değiştirmeden önce size sorar.",
       "Şifrenizi veya API anahtarlarınızı göremez; hesabınızı veya bir şirketi silemez."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Davetler",
     "text": "Bu şirketin bağlantısıyla diğer şirketleri testee'ye davet edin, iki şirket de kredi kazansın.",
     "actions": [
-      "Davet bağlantınızı kopyalayın veya paylaşın.",
-      "Bu şirketin aldığı tüm ödülleri görün."
+      "Paylaşmak için davet bağlantınızı kopyalayın.",
+      "Bağlantınızla gelip kredi yükleyen şirketleri, her birinin size kazandırdığı kredileri ve bu yıl kaç ödül kaldığını görün."
     ],
     "tips": [
       "Davet ettiğiniz şirket, tutar ne olursa olsun ilk kredi yüklemesini yaptığında ikiniz de kredi kazanırsınız.",
-      "Krediler bu şirkete gider ve hiç sona ermez."
+      "Krediler bu şirkete gider ve hiç sona ermez.",
+      "Her iki taraf da 1.000 kredi alır. Şirketiniz bunu yılda en fazla 25 kez kazanır; bundan sonra davet ettiğiniz şirket yine kredilerini alır.",
+      "Tamamı iade edilen veya ters ibraz edilen bir yükleme her iki ödülü de geri alır."
     ]
   },
   "brand": {
     "title": "Marka",
-    "text": "Adaylarınızın davetinde, mülakatında ve bitiş sayfasında logonuz ve renkleriniz.",
+    "text": "Adaylarınızın davetinde, mülakatında ve bitiş sayfasında logonuz, renkleriniz, yazı tipleriniz ve yuvarlaklığınız. Logo, e-postalarında da görünür.",
     "actions": [
-      "Logoyu ekleyin veya değiştirin.",
+      "Logoyu ekleyin, değiştirin veya kaldırın.",
       "Başlıkların ve metnin yazı tiplerini, kartların ve düğmelerin ne kadar yuvarlak olacağını seçin.",
-      "Her grubun renklerini seçin ve önizlemede görün.",
-      "Kaydedin ya da testee renklerine dönün."
+      "Her grubun renklerini, biri açık tema biri koyu tema için olmak üzere seçin ve önizlemede görün.",
+      "Kaydedin, kaydedilmemiş değişiklikleri “Sıfırla” ile geri alın ya da “testee varsayılanlarına sıfırla” ile testee'nin renklerine, yazı tiplerine ve yuvarlaklığına dönün."
     ],
     "tips": [
       "Metni okumayı zorlaştıracak renkler kaydedilemez, böylece her aday soruları okuyabilir.",
-      "Bir mülakatı deneyen ekip üyeleri de onu sizin renklerinizle görür."
+      "Bir mülakatı deneyen ekip üyeleri de onu sizin renklerinizle görür.",
+      "Bu sayfayı yalnızca sahipler ve yöneticiler görür."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Kredi yükleyin veya otomatik yüklemeyi ayarlayın.",
       "Kredileri ayrılmış adayları görün.",
-      "Herhangi bir yüklemenin faturasını açın."
+      "Herhangi bir yüklemenin faturasını açın.",
+      "Geçmişi yüklemeler, ödemeler veya iadelerle sınırlayın ya da CSV dosyası olarak indirin. Şirket başına günde en fazla 20 indirme."
     ],
     "tips": [
       "Bir adayın kredileri davet edildiğinde ayrılır, yanıt verdiğinde düşülür, vermezse iade edilir.",
-      "Bu sayfayı yalnızca sahipler ve yöneticiler görür."
+      "Bu sayfayı yalnızca sahipler ve yöneticiler görür.",
+      "Son 14 günde satın aldığınız ve harcamadığınız kredilerin iadesini Paddle üzerinden veya bize yazarak isteyebilirsiniz."
     ]
   },
   "topUp": {
     "title": "Kredi yükle",
     "text": "Sahibi veya yöneticisi olduğunuz her şirket için kredi satın alın.",
     "actions": [
-      "Bir şirket ve bir yükleme seçin: büyük yüklemelerde aday başına maliyet daha düşüktür.",
+      "Bir şirket seçin, sonra kaç aday için yükleme yapacağınızı 10 ile 1.000 arasında yazın veya bir fiyat basamağı seçin: büyük yüklemelerde aday başına maliyet daha düşüktür.",
+      "Şirketin para birimini sayfanın üstünden değiştirin: otomatik olanlar dahil yüklemeleri bundan sonra bu para biriminde fiyatlandırılır ve tahsil edilir.",
       "Paddle'ın ödeme sayfasında ödeyin; krediler saniyeler içinde gelir.",
-      "Yüklemeleri karşılaştırmak için fiyatları açın."
+      "Yüklemeleri karşılaştırmak için fiyatları açın.",
+      "Otomatik yüklemeyi kurun: bir tutar ve bir bakiye seçin, sözleşmeyi işaretleyin. Kartınız Paddle ödeme sayfasında kaydedilir ve bakiye bu seviyenin altına her düştüğünde tahsilat yapılır."
     ],
     "tips": [
       "Bir aday 500 krediye mal olur: davet edildiğinde ayrılır, yanıt verdiğinde düşülür, vermezse iade edilir.",
-      "Krediler hiç sona ermez. Her yüklemenin faturası şirketin Faturalandırma sekmesindedir."
+      "Krediler hiç sona ermez. Her yüklemenin faturası şirketin Faturalandırma sekmesindedir.",
+      "Fiyatlara KDV veya satış vergisi dahil değildir: uygulandığı yerlerde ödeme sırasında eklenir.",
+      "Son 14 günde satın aldığınız ve harcamadığınız kredilerin iadesini Paddle üzerinden veya bize yazarak isteyebilirsiniz.",
+      "Otomatik yüklemeyi sahipler ve yöneticiler kurar. Yalnızca kartıyla ödeme yapan kişi onu değiştirebilir veya kartı güncelleyebilir; herhangi bir sahip veya yönetici onu hemen kapatabilir.",
+      "Reddedilen kart 1, 3 ve 7 gün sonra yeniden denenir, ardından kart güncellenene kadar otomatik yükleme duraklatılır. Süresi dolmuş kart gibi ödeme yapamayan bir kart onu hemen duraklatır."
     ]
   },
   "settings": {
     "title": "Ayarlar",
-    "text": "Kendi hesabınız: testee'nin sizinle konuştuğu dil, aldığınız e-postalar ve verileriniz.",
+    "text": "Kendi hesabınız: testee'nin sizinle konuştuğu dil, para biriminiz, aldığınız e-postalar ve verileriniz.",
     "actions": [
-      "Sitenin, yardım sohbetinin ve e-postalarınızın dilini seçin.",
+      "Sitenin, yapay zekâ asistanının cevaplarının ve e-postalarınızın dilini seçin; yeni mülakatlar da bu dilde başlar.",
+      "Nerede olursanız olun fiyatların gösterileceği para birimini seçin. Bir şirketin yüklemeleri, şirketin yükleme sayfasında belirlenen kendi para birimindedir.",
       "Hangi isteğe bağlı e-postaları alacağınızı seçin; davetler, raporlar ve ödeme sorunları gibi hizmet e-postaları her zaman gönderilir.",
       "\"İş tekliflerine açık\" seçeneğini açın veya kapatın: açıkken, pratik yaptığınız konularda testee üzerinden işe alım yapan şirketler adınızı, LinkedIn profilinizi ve pratik sonuçlarınızı görür ve sizi davet edebilir.",
-      "testee'nin sizin hakkınızda tuttuğu her şeyi indirin veya hesabınızı silin."
+      "testee'nin sizin hakkınızda tuttuğu her şeyi indirin veya hesabınızı silin.",
+      "Bize yazarken belirtmek için hesap kimliğinizi kopyalayın."
     ],
     "tips": [
-      "Hesabınızı silmek, yalnızca sizin bulunduğunuz şirketleri de siler. Başkalarının katıldığı bir şirkete önce başka bir sahip gerekir."
+      "Hesabınızı silmek, yalnızca sizin bulunduğunuz şirketleri de siler ve bu şirketlerin kredileri iade edilmez. Başkalarının katıldığı bir şirkete önce başka bir sahip gerekir ya da şirket silinmelidir.",
+      "\"İş tekliflerine açık\" için LinkedIn profiliniz gerekir ve son açtığınız tarihten bir yıl sonra kendiliğinden kapanır."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Başka bir e-postayla mı giriş yaptınız? Çıkış yapıp davet edilen e-postayla giriş yapın; davet yalnızca o e-posta için geçerlidir.",
-      "Rolünüzü, yönetici ya da görüntüleyici, sizi davet eden kişi seçti."
+      "Rolünüzü, yönetici ya da görüntüleyici, sizi davet eden kişi seçti.",
+      "Daha önce kullanılmış veya şirket sahibinin kaldırdığı bir davet artık çalışmaz."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Hangi uygulamanın istediğini görmek için henüz giriş yapmadıysanız giriş yapın.",
       "Uygulamanın hesabınızla neler yapabileceğini ve yapamayacağını okuyun.",
+      "Uygulamanın yalnızca okuyabilmesi için “Değişikliklere izin ver”i kapatın.",
       "Uygulamaya izin verin veya reddedin; her iki durumda da uygulamaya geri dönersiniz."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Üstteki RSS bağlantısıyla haberleri akış okuyucunuzda takip edin."
     ],
     "tips": [
-      "Haberler bildirimlerinizde görünür; önemli olanları e-postayla da almak için ayarlarınızda ürün güncellemelerini açın."
+      "Haberler bildirimlerinizde görünür; ayarlarınızda “Ürün güncellemeleri ve haberler” açık olduğu sürece önemli olanlar e-postayla da gelir."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Siz dil seçene kadar liste, sitenin dilini ve İngilizceyi gösterir.",
-      "Pratik gizlidir: hiçbir şirket sonuçlarınızı görmez.",
-      "Oturum açtığınızda, başlıktan sonraki onay işareti başladığınız bir pratiği, çift onay işareti ise bitirdiğiniz bir pratiği gösterir; kaç konuyu tamamladığınızı görmek için üzerine gelin."
+      "Pratik gizlidir: \"İş tekliflerine açık\" seçeneğini açmadığınız sürece hiçbir şirket sonuçlarınızı görmez.",
+      "Oturum açtığınızda, başlıktan sonraki onay işareti başladığınız bir pratiği, çift onay işareti ise bitirdiğiniz bir pratiği gösterir; kaç konuyu tamamladığınızı görmek için onay işaretinin üzerine gelin."
     ]
   },
   "practiceTest": {
     "title": "Pratik mülakat",
     "text": "Tek bir ücretsiz pratik mülakat: seviyesi, dili, süresi ve kapsadığı konular.",
     "actions": [
+      "Başlamadan önce soru başına süreyi seçin: standart süre, iki katı veya süre sınırı yok.",
       "Bir deneme başlatın; henüz giriş yapmadıysanız önce giriş yapın.",
       "Son denemenizde her konuda ne kadar ilerlediğinizi görün.",
-      "Geçmiş denemelerinizi “Pratiğe başla”nın yanındaki geçmiş düğmesiyle açın.",
+      "Oturum açtığınızda, geçmiş denemelerinizi “Pratiğe başla”nın yanındaki “Denemeleriniz” ile açın.",
       "Bu pozisyon için işe alım mı yapıyorsunuz? Bundan kendi adaylarınız için bir mülakat oluşturun."
     ],
     "tips": [
-      "Her deneme gerçek bir mülakat gibi sürelidir; bitirdiğinizde notunuzu ve tüm doğru cevapları görürsünüz.",
-      "İstediğiniz kadar pratik yapın: ücretsizdir."
+      "“Süre sınırı yok” seçmediğiniz sürece her deneme sürelidir; bitirdiğinizde notunuzu ve tüm doğru cevapları görürsünüz.",
+      "Yeni denemelerdeki saatlik sınır içinde istediğiniz kadar pratik yapın: ücretsizdir."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "Bir sorunun süresi dolduğunda seçili olanlar yine sayılır; hiçbir şey seçilmeden bırakılan veya hiç ulaşılmayan soru yanlış sayılır.",
       "Bu pozisyon için işe alım mı yapıyorsunuz? Bundan kendi adaylarınız için bir mülakat oluşturun.",
-      "İş mi arıyorsunuz? Bu konularda işe alım yapan şirketlerin adınızı, LinkedIn profilinizi ve pratik sonuçlarınızı görmesi için \"İş tekliflerine açık\" seçeneğini açın."
+      "İş mi arıyorsunuz? Biten bir denemeden sonra LinkedIn profilinizi girin ve bu konularda işe alım yapan şirketlerin adınızı, profilinizi ve en son pratik sonuçlarınızı görüp sizi davet edebilmesi için \"İş tekliflerine açık\" seçeneğini açın; siz kapatmadıkça bir yıl açık kalır."
     ]
   },
   "features": {
     "title": "Özellikler",
     "text": "testee'nin bir şirket için yaptığı her şey, iş tanımından işe alıma kadar: mülakat oluşturma, aday davet etme, adayların ne gördüğü, raporlar, entegrasyonlar, mevzuata uyum ve fiyatlar.",
     "actions": [
+      "Üstteki “Mülakat oluştur” ile sayfanın sonundaki kutuya gidin veya fiyatları açın.",
       "Üstteki sekmelerle bir gruba geçin: oluşturma, davet, mülakat, karar, entegrasyonlar, güven ve fiyatlar.",
-      "Her özelliği gerçek uygulamanın bir görüntüsünün yanında görün.",
+      "Ana özellikleri gerçek uygulamanın bir görüntüsünün yanında, diğerlerini altlarındaki kartlarda görün.",
       "Mülakat oluşturmak için sayfanın sonundaki kutuya bir iş tanımı yapıştırın.",
-      "Fiyatlar sayfasını, geliştirici belgelerini veya güven sayfasını ilgili gruplarından açın."
+      "Fiyatlar sayfasını, geliştirici belgelerini veya güven sayfasını ilgili gruplarından açın.",
+      "Mira'ya sorun ya da sayfanın sonundan SSS'yi veya rehberleri açın."
     ],
     "tips": [
       "Tüm özellikler dahil: yalnızca en az bir soruyu yanıtlayan her aday için ödeme yaparsınız."
@@ -512,8 +570,9 @@
     "actions": [
       "Çizgiyi takip ederek aşağı kaydırın: her adım ne olduğunu, seçeneklerini ve gerçek uygulamanın bir görüntüsünü gösterir.",
       "Davet ve paylaşım adımlarında adayların nasıl gelebileceğini ve raporların nereye gidebileceğini görün.",
-      "Üstteki düğmeyle bir mülakat oluşturun ya da tüm özellikleri açın.",
-      "Başlamak için sayfanın sonundaki kutuya bir iş tanımı yapıştırın."
+      "Üstteki “Mülakat oluştur” ile başlangıç kutusuna gidin ya da tüm özellikleri açın.",
+      "Başlamak için sayfanın sonundaki kutuya bir iş tanımı yapıştırın.",
+      "Mira'ya sorun ya da sayfanın sonundan SSS'yi veya rehberleri açın."
     ],
     "tips": [
       "Mülakat oluşturmak ücretsizdir: yalnızca en az bir soruyu cevaplayan her aday için ödeme yaparsınız."
@@ -525,12 +584,14 @@
     "actions": [
       "Bugünkü aday başı fiyatı ve büyük yüklemelerdeki daha düşük fiyatları görün.",
       "İlk kaç adayın ücretsiz olduğunu görün.",
+      "Bir adayın kaç kredi tuttuğunu görün; uygulandığı yerlerde vergi ödeme sırasında eklenir.",
       "Başka bir şirketi davet ederek kazandığınız kredileri görün.",
       "Bir şirkete kredi yükleyin."
     ],
     "tips": [
       "Krediler hiç sona ermez.",
-      "Hiçbir soruyu cevaplamayan aday için hiçbir ücret ödenmez."
+      "Hiçbir soruyu cevaplamayan aday için hiçbir ücret ödenmez.",
+      "Kullanılmamış ücretli krediler 14 gün içinde iade edilebilir."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "testee'yi karşılaştırın",
     "text": "testee'nin diğer işe alım öncesi test araçlarıyla kaynaklı karşılaştırmaları: testlerin nasıl hazırlandığı, ne kadara mal olduğu ve hangisinin ne zaman daha uygun olduğu.",
     "actions": [
-      "Okumak için bir karşılaştırmayı açın."
+      "Okumak için bir karşılaştırmayı açın.",
+      "Sondaki karttan adaylarınız için bir test oluşturun."
     ],
     "tips": [
       "Her karşılaştırma en son ne zaman güncellendiğini gösterir."
@@ -574,8 +636,9 @@
     "text": "testee'nin tek bir konuda diğer araçlarla karşılaştırması: testlerin nasıl hazırlandığı, ne kadara mal olduğu ve hangisinin ne zaman daha uygun olduğu.",
     "actions": [
       "Karşılaştırmayı okuyun ve kaynaklara giden bağlantıları izleyin.",
-      "Sondaki karttan adaylarınız için bir test oluşturun.",
-      "Başlığın üstündeki bağlantıyla tüm karşılaştırmalara geri dönün."
+      "Uzun sayfalarda “Bu sayfada” listesinden bir bölüme gidin.",
+      "Üstteki düğmeden veya sondaki karttan adaylarınız için bir test oluşturun.",
+      "Başlığın yanındaki geri okuyla tüm karşılaştırmalara geri dönün."
     ],
     "tips": [
       "Fiyatlar ve özellikler değişir: başlığın altındaki tarih, sayfanın en son ne zaman güncellendiğini gösterir."
@@ -585,6 +648,7 @@
     "title": "İşe alım rehberleri",
     "text": "İşe alım yöneticileri için pratik rehberler: başvuruları eleme, beceri testleri ve işe alımda yapay zekâyı adil ve yasal biçimde kullanma.",
     "actions": [
+      "Rehberlerde arama yapın.",
       "Okumak için bir rehberi açın."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "İşe alım yöneticileri için tek bir konuda pratik bir rehber.",
     "actions": [
       "Rehberi okuyun ve kaynaklara ve ilgili sayfalara giden bağlantıları izleyin.",
-      "Sondaki karttan adaylarınız için bir test oluşturun.",
-      "Başlığın üstündeki bağlantıyla tüm rehberlere geri dönün."
+      "Uzun sayfalarda “Bu sayfada” listesinden bir bölüme gidin.",
+      "Üstteki düğmeden veya sondaki karttan adaylarınız için bir test oluşturun.",
+      "Başlığın yanındaki geri okuyla tüm rehberlere geri dönün."
     ],
     "tips": [
-      "Hukuki konular özettir, hukuki tavsiye değildir: kendi hukuk danışmanınıza danışın."
+      "Hukuki konular tarihli özetlerdir, hukuki tavsiye değildir: işe alım yaptığınız yerde geçerli kuralları kontrol edin."
     ]
   },
   "faq": {
     "title": "Sıkça sorulan sorular",
     "text": "testee hakkında sık sorulan soruların cevapları: mülakatlar, adaylar, fiyatlar ve krediler, sonuçlar, entegrasyonlar, diller ve verileriniz.",
     "actions": [
+      "Üstteki düğmelerle bir soru grubuna gidin.",
       "Cevabını açmak için bir soruya tıklayın."
     ],
     "tips": [
-      "Cevabınızı bulamadınız mı? Sayfanın üstündeki yapay zekâ asistanı Mira'ya sorun veya iletişim sayfasından bize yazın.",
+      "Cevabınızı bulamadınız mı? Sayfanın sonundaki karttan yapay zekâ asistanı Mira'ya sorun veya bize yazın.",
       "Cevaplardaki fiyatlar her zaman günceldir."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "testee'yi kim ve neden yapıyor: her ekibin karşılayabileceği, iş tanımından hazırlanan mülakatlar ve herkes için ücretsiz pratik.",
     "actions": [
       "testee'nin neden var olduğunu ve işe alıma nasıl yaklaştığını okuyun.",
-      "Kurucunun mesajını okuyun ve LinkedIn profilini açın."
+      "Kurucunun mesajını okuyun ve LinkedIn profilini açın.",
+      "Sondaki karttan bir test oluşturun veya ücretsiz pratik yapın."
     ],
     "tips": [
       "Ekibe yazmak için iletişim sayfasını kullanın."
@@ -630,7 +697,8 @@
     "text": "Bir soru, fikir, iş birliği teklifi veya çalışmayan bir şey için testee ekibine yazın.",
     "actions": [
       "Adınızı, e-postanızı ve mesajınızı yazıp gönderin.",
-      "Hemen bulabilmemiz için ilgili şirketin, mülakatın, adayın veya hesabın ID'sini yapıştırın."
+      "Hemen bulabilmemiz için ilgili şirketin, mülakatın, adayın veya hesabın ID'sini mesajınıza yapıştırın.",
+      "testee'yi kimin işlettiğini görün: şirket adı, sicil numarası, adres ve e-posta."
     ],
     "tips": [
       "“id'yi kopyala” bağlantısı şirketin, mülakatın veya adayın adının altındadır; hesabınızın ID'si hesap menünüzdedir.",
@@ -641,7 +709,7 @@
     "title": "Geliştirici belgeleri",
     "text": "Kendi platformunuzu veya yapay zekâ ajanınızı testee'ye bağlamak için gereken her şey; doğrudan API'den okunur, bu yüzden her zaman API ile uyumludur.",
     "actions": [
-      "API: kimlik doğrulama, temel URL ve parametreleri, gövdesi, yanıtı ve hatalarıyla her uç nokta.",
+      "API: kimlik doğrulama, hız sınırları ve güvenli yeniden denemeler gibi rehberler, temel URL, parametreleri, gövdesi, yanıtı ve hatalarıyla her uç nokta, hata listesi ve değişiklik günlüğü.",
       "Webhook'lar: testee'nin adresinize gönderdiği olaylar ve her birinin içeriği.",
       "SDK: mülakatı kendi sitenize nasıl yerleştireceğiniz.",
       "MCP: bir yapay zekâ uygulamasını veya kendi ajanınızı nasıl bağlayacağınız ve hangi araçları alacağı.",
@@ -661,7 +729,8 @@
       "Bir şeyi kullanmak zorsa veya başka bir biçimde ihtiyacınız varsa bize e-postayla yazın."
     ],
     "tips": [
-      "Bir şirketin mülakatına girecek ve daha fazla süreye mi ihtiyacınız var? Başlamadan önce şirketten ek süre isteyin; nedenini söylemek zorunda değilsiniz."
+      "Bir şirketin mülakatına girecek ve daha fazla süreye mi ihtiyacınız var? Başlamadan önce şirketten ek süre isteyin; nedenini söylemek zorunda değilsiniz.",
+      "14 gün içinde cevap veririz; memnun kalmazsanız Estonya Tüketiciyi Koruma ve Teknik Düzenleme Kurumuna (TTJA) başvurabilirsiniz."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "testee'nin verileri nasıl koruduğunu görün: oturum açma, şifreleme, erişim denetimleri, istek sınırları ve yedekler.",
       "testee'nin GDPR, AB Yapay Zekâ Yasası, Birleşik Krallık ve ABD için sağladıklarını görün; New York City'nin yanlılık denetimi yasası da dahil.",
       "Verilerin nerede saklandığını, hangi alt işleyenlerin onları işlediğini ve her tür verinin ne kadar süre tutulduğunu görün.",
-      "Koşulları, gizlilik politikasını, veri işleme sözleşmesini ve şirketlere yönelik belgeleri açın."
+      "Koşulları, gizlilik politikasını, veri işleme sözleşmesini ve şirketlere yönelik belgeleri açın.",
+      "Erişilebilirlik beyanını açın."
     ],
     "tips": [
       "Güvenlik, gizlilik veya uyumla ilgili bir sorunuz varsa ya da bir güvenlik sorunu bildirmek istiyorsanız sayfanın sonundaki e-posta adresine yazın."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Abonelikten çık",
-    "text": "testee'den gelen, sayfada adı geçen bir tür e-postayı durdurun.",
+    "text": "testee'den gelen bir tür e-postayı veya bir şirketten gelen tüm e-postaları, sayfada belirtildiği gibi durdurun.",
     "actions": [
       "Bağlantının hangi e-postaları durdurduğunu okuyun.",
       "Abonelikten çıkmak için onaylayın; bağlantıyı açmak tek başına hiçbir şeyi değiştirmez.",
-      "Diğer e-postaları değiştirmek için ardından e-posta ayarlarınızı açın."
+      "Oturum açtıysanız, diğer e-postaları değiştirmek için ardından e-posta ayarlarınızı açın."
     ],
     "tips": [
-      "Ekip davetleri, raporlar ve ödeme sorunları gibi hizmet e-postaları yine gönderilir."
+      "Ekip davetleri, raporlar ve ödeme sorunları gibi hizmet e-postaları yine gönderilir; bir şirketin e-postalarını durduran bağlantı, o şirketin size gönderdiği davetleri de durdurur."
     ]
   }
 }

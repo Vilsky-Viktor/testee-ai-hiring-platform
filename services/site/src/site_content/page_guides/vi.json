@@ -5,13 +5,15 @@
     "actions": [
       "Dán mô tả công việc vào ô ở đầu trang, hoặc chọn một mẫu có sẵn; điều chỉnh các chủ đề, câu hỏi sẽ được soạn và kiểm tra giúp bạn.",
       "Mời ứng viên qua email, từ tệp, bằng liên kết chia sẻ trong tin tuyển dụng, hoặc từ ATS, nền tảng của riêng bạn hay trợ lý AI.",
+      "Xem những gì ứng viên thấy: một buổi phỏng vấn có giới hạn thời gian mang thương hiệu của bạn, trả lời bằng cú nhấp hoặc bằng giọng nói.",
       "Xem báo cáo: câu trả lời, điểm và cảnh báo hành vi bất thường của mọi ứng viên, chia sẻ qua email hoặc chat chỉ với một cú nhấp.",
-      "Kết nối nền tảng của bạn, ứng dụng AI và các trang tuyển dụng, nhận cập nhật trong Slack, hoặc nhờ Mira, trợ lý AI, làm thay bạn."
+      "Kết nối ATS, nền tảng của bạn và ứng dụng AI, nhận cập nhật trong Slack, hoặc nhờ Mira, trợ lý AI, làm thay bạn.",
+      "So sánh testee với sàng lọc qua điện thoại và các gói đăng ký, và xem câu hỏi được kiểm tra và cải thiện thế nào."
     ],
     "tips": [
-      "Tạo buổi phỏng vấn miễn phí. Bạn trả cho mỗi ứng viên trả lời, theo giá dưới tiêu đề bằng tiền tệ của bạn, và những ứng viên đầu tiên được miễn phí.",
+      "Tạo buổi phỏng vấn miễn phí. Bạn trả cho mỗi ứng viên trả lời, theo giá ở phần dưới của trang bằng tiền tệ của bạn, và những ứng viên đầu tiên được miễn phí.",
       "Hãy thử buổi phỏng vấn với vai trò ứng viên trước khi mời ai.",
-      "Xem video ở đầu trang để có phần giới thiệu ngắn; Câu hỏi thường gặp và hướng dẫn nằm ở cuối trang.",
+      "Xem video từ nút ở đầu trang để có phần giới thiệu ngắn; Câu hỏi thường gặp và hướng dẫn nằm ở cuối trang.",
       "Tải báo cáo mẫu bên dưới phần báo cáo để xem báo cáo thật trông như thế nào."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "Tạo công ty bằng “Công ty mới”. Tên công ty là duy nhất trên testee.",
       "Mở một công ty để làm việc với các buổi phỏng vấn và ứng viên của công ty đó.",
-      "Xóa công ty bạn sở hữu, cùng mọi buổi phỏng vấn và lời mời."
+      "Xóa công ty bạn sở hữu, cùng mọi buổi phỏng vấn và lời mời; credit của công ty sẽ mất và không được hoàn tiền.",
+      "Mở menu ⋮ của công ty để xem nhóm; chủ sở hữu và quản trị viên cũng nạp credit và mở thương hiệu và thanh toán ở đó."
     ],
     "tips": [
-      "Vai trò của bạn hiện bên cạnh mỗi công ty bạn không sở hữu: quản trị viên được thay đổi, người xem chỉ được xem.",
+      "Vai trò của bạn hiện bên cạnh mỗi công ty bạn không sở hữu: quản trị viên được thay đổi; người xem chủ yếu chỉ xem, và cũng có thể viết ghi chú, đánh giá và báo cáo câu hỏi, thử buổi phỏng vấn và chia sẻ báo cáo.",
       "Credit thuộc về từng công ty, nên mỗi công ty nạp credit riêng."
     ]
   },
@@ -36,22 +39,23 @@
       "Tạo công ty mới nếu bạn chưa có; mẫu sẽ mở ở đó."
     ],
     "tips": [
-      "Sau khi sao chép, buổi phỏng vấn thuộc về công ty: tùy ý thay đổi câu hỏi và cài đặt."
+      "Sau khi sao chép, buổi phỏng vấn thuộc về công ty: tùy ý thay đổi câu hỏi và cài đặt.",
+      "Chỉ chủ sở hữu và quản trị viên mới dùng được mẫu; ở công ty bạn là người xem, nút này không có."
     ]
   },
   "interviews": {
     "title": "Phỏng vấn",
-    "text": "Tất cả buổi phỏng vấn của công ty này và credit dành cho ứng viên. Mỗi buổi phỏng vấn là một bài kiểm tra có giới hạn thời gian, tạo từ mô tả công việc.",
+    "text": "Tất cả buổi phỏng vấn của công ty này và credit dành cho ứng viên. Mỗi buổi phỏng vấn là một bài kiểm tra có giới hạn thời gian, tạo từ mô tả công việc hoặc từ mẫu.",
     "actions": [
-      "Tạo buổi phỏng vấn từ mô tả công việc bằng “Buổi phỏng vấn mới”.",
-      "Mở một buổi phỏng vấn để xem chủ đề, ứng viên, ghi chú và cài đặt; ghi chú đã ghim hiện dưới tên của buổi phỏng vấn.",
-      "Tìm buổi phỏng vấn theo tiêu đề.",
-      "Thử buổi phỏng vấn với vai trò ứng viên, hoặc xóa nó.",
-      "Nạp credit từ số dư, hoặc bật tự động nạp ở thẻ Thanh toán."
+      "Tạo buổi phỏng vấn từ mô tả công việc bằng “Buổi phỏng vấn mới” (chủ sở hữu và quản trị viên).",
+      "Mở một buổi phỏng vấn để xem chủ đề, ứng viên và ghi chú, cài đặt (chủ sở hữu và quản trị viên) và, khi công ty đã nạp credit, Khám phá; ghi chú đã ghim hiện dưới tên của buổi phỏng vấn.",
+      "Tìm buổi phỏng vấn theo tiêu đề, hoặc lọc theo trạng thái: mới, đang tuyển hoặc đã tuyển.",
+      "Thử buổi phỏng vấn với vai trò ứng viên từ menu ⋮ của nó; chủ sở hữu và quản trị viên cũng có thể xóa nó ở đó.",
+      "Nạp credit từ số dư, hoặc bật tự động nạp ở thẻ Thanh toán (chủ sở hữu và quản trị viên)."
     ],
     "tips": [
       "Số dư chuyển màu cam khi sắp hết credit. Khi hết credit, lời mời mới sẽ không được gửi.",
-      "Menu của công ty dẫn tới mẫu, nhóm, tích hợp, thanh toán (chủ sở hữu và quản trị viên) và giới thiệu."
+      "Menu của công ty dẫn tới mẫu, nhóm, tích hợp, thương hiệu và thanh toán (chủ sở hữu và quản trị viên), nhật ký thao tác (chủ sở hữu) và giới thiệu."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Bắt đầu một buổi phỏng vấn từ mô tả công việc. testee đọc mô tả, đề xuất các chủ đề cần kiểm tra và viết câu hỏi khi bạn phê duyệt.",
     "actions": [
       "Dán mô tả công việc: vị trí, yêu cầu bắt buộc và điểm cộng.",
+      "Khi chưa nhập gì, “Thử một ví dụ” sẽ điền một mô tả mẫu vào ô.",
       "Chọn ngôn ngữ để tạo buổi phỏng vấn.",
-      "Tạo, rồi duyệt các chủ đề được đề xuất."
+      "Tạo, rồi duyệt các chủ đề được đề xuất.",
+      "Bạn cũng có thể bắt đầu từ một mẫu, hoặc từ một vị trí trong ATS của bạn sau khi đã kết nối.",
+      "Nếu bắt đầu từ trang chủ, hãy chọn công ty sẽ dùng buổi phỏng vấn, hoặc tạo một công ty; danh sách chỉ gồm các công ty bạn sở hữu hoặc quản trị."
     ],
     "tips": [
       "Mô tả càng cụ thể, câu hỏi càng sát với vị trí.",
-      "Tạo miễn phí: bạn chỉ trả cho ứng viên trả lời."
+      "Tạo miễn phí: bạn chỉ trả cho ứng viên trả lời.",
+      "Một công ty chỉ giữ được vài buổi phỏng vấn chưa có ứng viên và chỉ bắt đầu được vài buổi mỗi ngày; giới hạn cao hơn sau khi công ty đã nạp credit."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "Bỏ chọn các chủ đề bạn không cần.",
       "Sửa tên chủ đề và các chủ đề con bằng biểu tượng bút chì.",
+      "Thêm chủ đề của riêng bạn bằng “Thêm chủ đề”: đặt tên và ít nhất 3 chủ đề con.",
       "Mô tả thay đổi bằng lời của bạn rồi áp dụng, ví dụ “thêm một chủ đề về lãnh đạo nhóm”.",
-      "Phê duyệt và tạo để viết câu hỏi."
+      "Phê duyệt và tạo để viết câu hỏi.",
+      "Hủy để bỏ buổi phỏng vấn; những gì đã tạo đến lúc đó sẽ không được giữ lại."
     ],
     "tips": [
       "Nếu có quá nhiều chủ đề, hãy bỏ chọn bớt hoặc mô tả cách gộp chúng.",
-      "Câu hỏi chỉ được viết sau khi bạn phê duyệt, nên hãy dành một phút ở đây."
+      "Câu hỏi chỉ được viết sau khi bạn phê duyệt, nên hãy dành một phút ở đây.",
+      "Bước xem xét để mở 14 ngày sẽ bị hủy và buổi phỏng vấn của nó bị xóa."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "testee đang tạo buổi phỏng vấn của bạn: trước là các chủ đề, sau đó là câu hỏi cho từng chủ đề. Việc này mất vài phút.",
     "actions": [
       "Bạn có thể rời trang này: quá trình tạo vẫn tiếp tục.",
-      "Hủy quá trình tạo nếu không còn cần; những gì đã tạo sẽ không được giữ lại."
+      "Hủy quá trình tạo nếu không còn cần; những gì đã tạo sẽ không được giữ lại.",
+      "Khi các chủ đề sẵn sàng, trang này hiển thị chúng để bạn xem xét; câu hỏi chỉ được soạn sau khi bạn phê duyệt.",
+      "Nếu tạo thất bại, chọn Thử lại hoặc Làm lại từ đầu."
     ],
     "tips": [
       "Bạn sẽ nhận thông báo khi buổi phỏng vấn sẵn sàng.",
@@ -97,14 +110,14 @@
     "title": "Chủ đề",
     "text": "Những gì buổi phỏng vấn này kiểm tra: các chủ đề, mỗi chủ đề có các chủ đề con và ngân hàng câu hỏi riêng. Mỗi ứng viên nhận một bộ ngẫu nhiên từ từng ngân hàng.",
     "actions": [
-      "Mở “Quản lý câu hỏi” để đến các câu hỏi của một chủ đề: đọc, tắt một số câu, thích, không thích hoặc báo cáo chúng.",
-      "Tạo lại câu hỏi chưa tốt hoặc đánh dấu đáp án sai trên trang câu hỏi của một chủ đề.",
-      "Đặt số câu hỏi mỗi ứng viên nhận từ một chủ đề; đặt 0 để bỏ chủ đề đó với ứng viên mới. Mỗi ứng viên nhận tối đa 60 câu hỏi trên tất cả chủ đề: hãy giảm một chủ đề để tăng chủ đề khác.",
-      "Thử buổi phỏng vấn với vai trò ứng viên, hoặc xóa nó."
+      "Mở một chủ đề để đến các câu hỏi của nó: đọc, thích, không thích hoặc báo cáo chúng và, nếu là chủ sở hữu hoặc quản trị viên, tắt một số câu.",
+      "Tạo lại câu hỏi chưa tốt hoặc đánh dấu đáp án sai trên trang câu hỏi của một chủ đề (chủ sở hữu và quản trị viên).",
+      "Đặt số câu hỏi mỗi ứng viên nhận từ một chủ đề (chủ sở hữu và quản trị viên); đặt 0 để bỏ chủ đề đó với ứng viên mới, nhưng ít nhất một chủ đề phải còn câu hỏi. Mỗi ứng viên nhận tối đa 60 câu hỏi trên tất cả chủ đề: hãy giảm một chủ đề để tăng chủ đề khác.",
+      "Thử buổi phỏng vấn với vai trò ứng viên từ menu ⋮; chủ sở hữu và quản trị viên cũng có thể xóa nó ở đó."
     ],
     "tips": [
-      "Câu hỏi do AI viết có thể sai: hãy đọc lướt từng chủ đề trước khi mời ai.",
-      "Nhấp vào tiêu đề để đổi tên buổi phỏng vấn.",
+      "Câu hỏi do AI viết có thể sai, dù một AI thứ hai có kiểm tra một phần đáp án: hãy đọc lướt từng chủ đề trước khi mời ai.",
+      "Nhấp vào tiêu đề để đổi tên buổi phỏng vấn (chủ sở hữu và quản trị viên).",
       "Các thẻ ở trên cộng lại những gì mỗi ứng viên nhận được: tổng số câu hỏi, thời gian trung bình mỗi câu và thời gian của toàn bộ buổi phỏng vấn. Chúng thay đổi theo mỗi chỉnh sửa."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Câu hỏi",
     "text": "Các câu hỏi của một chủ đề cùng đáp án, lượt thích, không thích và báo cáo. Mỗi ứng viên nhận một bộ ngẫu nhiên từ các câu đang bật.",
     "actions": [
+      "Xem trong các thẻ ở đầu trang có bao nhiêu câu hỏi, bao nhiêu câu đang bật hoặc đã tắt và có bao nhiêu báo cáo; lọc danh sách theo Tất cả, Đang bật, Đã tắt hoặc Đã báo cáo.",
       "Bỏ chọn một câu hỏi để tắt nó: từ giờ không ứng viên nào nhận câu đó. Chọn lại để bật lại (chủ sở hữu và quản trị viên).",
       "Thích hoặc không thích một câu hỏi; bấm lại lựa chọn của bạn để hủy.",
       "Mở báo cáo của một câu hỏi và thêm báo cáo của bạn, một lần cho mỗi câu.",
-      "Tạo lại câu hỏi chưa tốt hoặc đánh dấu đáp án sai (chủ sở hữu và quản trị viên)."
+      "Tạo lại câu hỏi chưa tốt hoặc đánh dấu đáp án sai từ menu ⋮ của câu hỏi (chủ sở hữu và quản trị viên); đáp án được đánh dấu sẽ được kiểm tra, rồi sửa hoặc thay thế nếu sai."
     ],
     "tips": [
       "Câu hỏi do AI viết có thể sai: hãy đọc trước khi mời bất kỳ ai.",
@@ -127,27 +141,31 @@
     "title": "Ứng viên",
     "text": "Mọi người được mời vào buổi phỏng vấn này, cùng trạng thái, tiến độ và điểm của họ.",
     "actions": [
-      "Mời ứng viên: từng người một, danh sách tối đa 100 người, hoặc tệp CSV hay TXT.",
+      "Mời ứng viên bằng “Ứng viên mới” (chủ sở hữu và quản trị viên): từng người một, danh sách, hoặc tệp CSV hay TXT.",
       "Tìm theo email hoặc tên, lọc theo trạng thái, và sắp xếp theo điểm hoặc ngày.",
-      "Mở báo cáo của một ứng viên, hoặc tải xuống hay chia sẻ báo cáo về tất cả ứng viên."
+      "Mở báo cáo của một ứng viên, hoặc tải xuống hay chia sẻ báo cáo về tất cả ứng viên.",
+      "Mở menu ⋮ của ứng viên để gửi lại lời mời, sao chép liên kết, thu hồi lời mời hoặc xóa ứng viên (chủ sở hữu và quản trị viên)."
     ],
     "tips": [
       "Mỗi ứng viên trả lời ít nhất một câu sẽ dùng credit, kể cả ứng viên đến từ liên kết.",
-      "Lời nhắc được gửi tới ứng viên tự động.",
-      "Khi mời, chọn ứng viên làm bài ở chế độ nhấp hay chế độ giọng nói; ứng viên có chế độ khác với chế độ của buổi phỏng vấn sẽ hiện biểu tượng của chế độ đó."
+      "Ứng viên chưa bắt đầu nhận một lời nhắc 3 ngày sau lời mời. Lời mời không được bắt đầu trong 30 ngày sẽ hết hạn; gửi lại sẽ làm nó dùng được trở lại.",
+      "Ứng viên làm bài ở chế độ của buổi phỏng vấn; để đổi chế độ cho một ứng viên, hãy dùng trang của họ. Ứng viên có chế độ khác với chế độ của buổi phỏng vấn sẽ hiện biểu tượng của chế độ đó.",
+      "Khi mời, credit của ứng viên được giữ lại; credit được hoàn lại nếu ứng viên kết thúc mà không trả lời.",
+      "Ứng viên từ liên kết chia sẻ, ATS của bạn, API hoặc Khám phá cũng hiện ở đây.",
+      "Báo cáo về tất cả ứng viên được chia sẻ dưới dạng PDF qua email, hoặc bản tóm tắt ngắn qua WhatsApp, Telegram, Viber hoặc LINE."
     ]
   },
   "interviewNotes": {
     "title": "Ghi chú",
-    "text": "Ghi chú của nhóm bạn về đợt tuyển dụng này: những gì đã thống nhất, ai cần liên hệ tiếp theo, hoặc buổi phỏng vấn dành cho ai. Mọi người trong công ty bạn đều thấy; ứng viên thì không bao giờ.",
+    "text": "Ghi chú của nhóm bạn về đợt tuyển dụng này: những gì đã thống nhất, ai cần liên hệ tiếp theo, hoặc buổi phỏng vấn dành cho ai. Mọi người trong công ty bạn, kể cả người xem, đều thấy và viết được; ứng viên thì không bao giờ.",
     "actions": [
       "Viết ghi chú vào ô ở trên cùng và chọn Đăng, hoặc nhấn ⌘/Ctrl+Enter. Các liên kết trong đó có thể bấm được.",
-      "Sửa hoặc xóa ghi chú của chính bạn bằng các nút trên dòng của nó; chủ sở hữu và quản trị viên có thể xóa ghi chú của bất kỳ ai.",
-      "Ghim một ghi chú bằng nút dấu trang (chủ sở hữu và quản trị viên): ghi chú đó hiện đầu tiên ở đây, và dưới tên buổi phỏng vấn trên trang của nó và trong danh sách phỏng vấn."
+      "Sửa hoặc xóa ghi chú của chính bạn từ menu ⋮ trên dòng của nó; chủ sở hữu và quản trị viên có thể xóa ghi chú của bất kỳ ai.",
+      "Ghim một ghi chú bằng “Ghim lên đầu” trong menu ⋮ của nó (chủ sở hữu và quản trị viên): mỗi lần một ghi chú hiện đầu tiên ở đây, và dưới tên buổi phỏng vấn trên trang của nó và trong danh sách phỏng vấn."
     ],
     "tips": [
       "Bạn làm việc cho khách hàng? Ghim một ghi chú như “Cho Acme, Backend Developer” để biết ngay mỗi buổi phỏng vấn dành cho ai.",
-      "Ghi chú đã xóa sẽ mất vĩnh viễn. Nhật ký thao tác ghi lại ai đã viết, sửa hoặc xóa ghi chú, nhưng không bao giờ lưu nội dung của nó.",
+      "Ghi chú đã xóa sẽ mất vĩnh viễn. Nhật ký thao tác ghi lại ai đã viết, sửa, xóa hoặc ghim ghi chú, nhưng không bao giờ lưu nội dung của nó.",
       "Các thành viên khác trong nhóm sẽ biết mỗi ghi chú mới: trong thông báo, trong tóm tắt hoạt động hằng ngày và, nếu đã kết nối Slack, trong kênh của bạn."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Cài đặt",
-    "text": "Cách buổi phỏng vấn này diễn ra với mọi ứng viên.",
+    "text": "Cách buổi phỏng vấn này diễn ra với mọi ứng viên. Chỉ chủ sở hữu và quản trị viên thấy thẻ này.",
     "actions": [
-      "Bật liên kết chia sẻ cho tin tuyển dụng: bất kỳ ai có liên kết đều có thể làm bài phỏng vấn.",
+      "Bật liên kết chia sẻ cho tin tuyển dụng: bất kỳ ai có liên kết đều có thể làm bài phỏng vấn, và mỗi người trả lời qua liên kết sẽ dùng credit như một ứng viên được mời.",
       "Chọn chế độ phỏng vấn: chế độ nhấp, trong đó ứng viên chạm để chọn câu trả lời, hoặc chế độ giọng nói, trong đó Mira, người phỏng vấn AI, đọc to từng câu hỏi và ứng viên trả lời bằng giọng nói hoặc bằng cách chạm. Chế độ giọng nói dùng được ở mọi ngôn ngữ; mức độ đọc và nghe tốt khác nhau tùy ngôn ngữ, và liên kết bên dưới thiết lập này mở hướng dẫn với chất lượng ở từng ngôn ngữ.",
       "Đặt thời gian trung bình mỗi câu hỏi, tính bằng giây: mỗi câu hỏi có thời gian riêng dựa trên độ dài và đoạn mã mà nó hiển thị, còn tổng thời gian của buổi phỏng vấn vẫn giữ nguyên.",
       "Đặt điểm đạt: ứng viên đạt mức này là đậu.",
@@ -175,22 +193,26 @@
       "Không đưa câu hỏi của buổi phỏng vấn vào ngân hàng câu hỏi dùng chung của testee; các câu hỏi đã được dùng lại trong buổi phỏng vấn khác vẫn ở đó."
     ],
     "tips": [
-      "Mỗi cài đặt được lưu ngay khi bạn rời khỏi ô nhập.",
+      "Ô số được lưu ngay khi bạn rời khỏi ô; công tắc và chế độ được lưu tức thì.",
       "Ứng viên không bao giờ thấy điểm của mình; chỉ nhóm của bạn thấy.",
-      "Với ứng viên cần thêm thời gian, hãy thêm thời gian trên trang của họ."
+      "Với ứng viên cần thêm thời gian, hãy thêm thời gian trên trang của họ.",
+      "Chế độ mới áp dụng cho ứng viên chưa bắt đầu, trừ những người đã được đặt chế độ riêng trên trang của họ.",
+      "Thời gian trung bình từ 10 đến 600 giây; điểm đạt từ 1 đến 100%."
     ]
   },
   "tryInterview": {
     "title": "Thử với vai trò ứng viên",
     "text": "Bản xem trước buổi phỏng vấn đúng như ứng viên thấy: phần giới thiệu, rồi các câu hỏi có giới hạn thời gian. Miễn phí.",
     "actions": [
-      "Bắt đầu xem trước và trả lời như một ứng viên.",
+      "Đánh dấu cam kết, chọn “Chấp nhận và bắt đầu”, rồi trả lời như một ứng viên.",
       "Kiểm tra thời gian, cách diễn đạt và đáp án trước khi mời ai."
     ],
     "tips": [
       "Hãy ở lại trang khi trả lời: với ứng viên, việc rời trang, sao chép và trả lời quá nhanh đều được ghi lại.",
       "Buổi phỏng vấn ở chế độ giọng nói trước tiên sẽ xin quyền dùng micrô và âm thanh của bạn: hãy cho phép, rồi Mira sẽ đọc to từng câu hỏi trong khi bạn trả lời bằng giọng nói hoặc bằng cách chạm.",
-      "Mỗi công ty có một số lượt xem trước mỗi ngày, ít hơn ở chế độ giọng nói; khi dùng hết, lúc bắt đầu sẽ cho biết khi nào bạn có thể thử lại."
+      "Mỗi công ty có một số lượt xem trước mỗi ngày, ít hơn ở chế độ giọng nói; khi dùng hết, lúc bắt đầu sẽ cho biết khi nào bạn có thể thử lại.",
+      "Bản xem trước không tính vào danh sách ứng viên và thống kê câu hỏi.",
+      "Người xem cũng có thể thử buổi phỏng vấn."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Đọc từng câu trả lời, kèm cảnh báo hành vi bất thường: rời trang, thử sao chép và trả lời quá nhanh.",
       "Khi họ làm xong, xem những điểm bất thường trong câu trả lời và thời gian trả lời của họ, cùng những câu họ đã trả lời đúng để hỏi lại trong buổi phỏng vấn trực tiếp.",
-      "Tải báo cáo xuống dưới dạng PDF, hoặc chia sẻ qua email.",
-      "Cho thêm thời gian trước khi họ bắt đầu, ví dụ vì khuyết tật.",
+      "Tải báo cáo xuống dưới dạng PDF, hoặc chia sẻ: PDF qua email, hoặc bản tóm tắt ngắn qua WhatsApp, Telegram, Viber hoặc LINE. Người xem chỉ gửi email được cho các thành viên của công ty.",
+      "Cho thêm +25%, +50% hoặc +100% thời gian trước khi họ bắt đầu, ví dụ vì khuyết tật.",
       "Chọn ứng viên làm bài ở chế độ nhấp hay chế độ giọng nói, bất kể chế độ của buổi phỏng vấn, cho đến khi họ bắt đầu.",
       "Thêm hoặc sửa họ tên ứng viên.",
-      "Sao chép liên kết mời của ứng viên để tự gửi nếu email không đến; liên kết vẫn dùng được cho đến khi họ làm xong.",
+      "Sao chép liên kết mời của ứng viên để tự gửi nếu email không đến; liên kết vẫn ở đó cho đến khi họ làm xong hoặc lời mời hết hạn.",
       "Gửi lại hoặc thu hồi lời mời, hoặc xóa ứng viên cùng kết quả của họ."
     ],
     "tips": [
       "Điểm hỗ trợ quyết định của bạn chứ không thay bạn quyết định. Nếu ứng viên yêu cầu, hãy để một người xem xét lại kết quả của họ.",
       "Dấu tích dưới điểm cho thấy ứng viên đã xác nhận trước khi bắt đầu rằng sẽ tự trả lời, không dùng công cụ AI hay nhờ người khác.",
-      "Điểm là tỷ lệ phần trăm điểm đạt được: mỗi câu hỏi có một điểm, câu \"chọn nhiều phương án\" được một phần điểm cho mỗi đáp án đúng đã chọn, và không được điểm nào nếu chọn một đáp án sai."
+      "Điểm là tỷ lệ phần trăm điểm đạt được: mỗi câu hỏi có một điểm, câu \"chọn nhiều phương án\" được một phần điểm cho mỗi đáp án đúng đã chọn, và không được điểm nào nếu chọn một đáp án sai.",
+      "Thời gian thêm, chế độ và tên của ứng viên, liên kết mời, gửi lại, thu hồi và xóa dành cho chủ sở hữu và quản trị viên."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Tìm theo vị trí hoặc chủ đề, và lọc theo cấp bậc và ngôn ngữ.",
       "Mở một mẫu để xem các chủ đề và số câu hỏi của mỗi chủ đề.",
-      "Dùng mẫu để bắt đầu một buổi phỏng vấn từ mẫu đó."
+      "Xem trên mỗi dòng các chủ đề, câu hỏi và số phút của mẫu, và số buổi phỏng vấn của bạn đã dùng mẫu đó.",
+      "Dùng mẫu để bắt đầu một buổi phỏng vấn từ mẫu đó (chủ sở hữu và quản trị viên)."
     ],
     "tips": [
       "Để sát hơn, hãy tạo buổi phỏng vấn từ mô tả công việc của chính bạn.",
-      "Sau khi sao chép, buổi phỏng vấn là của bạn: tùy ý thay đổi câu hỏi và cài đặt."
+      "Sau khi sao chép, buổi phỏng vấn là của bạn: tùy ý thay đổi câu hỏi và cài đặt.",
+      "Danh sách bắt đầu với ngôn ngữ của bạn và tiếng Anh; chọn mọi ngôn ngữ để xem phần còn lại."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "Một buổi phỏng vấn soạn sẵn: các chủ đề, chủ đề con và số câu hỏi của mỗi chủ đề.",
     "actions": [
       "Kiểm tra xem các chủ đề có khớp với vị trí bạn đang tuyển không.",
-      "Dùng mẫu để sao chép nó vào công ty này thành một buổi phỏng vấn mới."
+      "Dùng mẫu để sao chép nó vào công ty này thành một buổi phỏng vấn mới (chủ sở hữu và quản trị viên)."
     ],
     "tips": [
       "Sao chép miễn phí; ứng viên trả lời vẫn dùng credit như thường lệ.",
-      "Nếu các chủ đề không phù hợp, hãy tạo buổi phỏng vấn từ mô tả công việc của bạn."
+      "Nếu các chủ đề không phù hợp, hãy tạo buổi phỏng vấn từ mô tả công việc của bạn.",
+      "Câu hỏi của mẫu được ẩn cho đến khi bạn dùng nó."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "Thêm thành viên qua email, với vai trò quản trị viên hoặc người xem: họ sẽ nhận email có liên kết để tham gia.",
       "Đổi vai trò của thành viên giữa quản trị viên và người xem.",
+      "Chuyển công ty cho một quản trị viên đã tham gia, bằng “Đặt làm chủ sở hữu” trong menu của họ: bạn trở thành quản trị viên.",
       "Sao chép liên kết của lời mời đang chờ, hoặc xóa thành viên hay lời mời."
     ],
     "tips": [
-      "Quản trị viên tạo và thay đổi buổi phỏng vấn, mời ứng viên và nạp credit. Người xem thấy buổi phỏng vấn và kết quả, chia sẻ báo cáo, nhưng không thay đổi được gì.",
-      "Xóa thành viên có thẻ đang dùng để tự động nạp sẽ dừng việc tự động nạp."
+      "Quản trị viên tạo và thay đổi buổi phỏng vấn, mời ứng viên và nạp credit. Người xem thấy buổi phỏng vấn và kết quả, chia sẻ báo cáo và viết ghi chú, nhưng không thay đổi được gì khác.",
+      "Xóa thành viên có thẻ đang dùng để tự động nạp, hoặc chuyển họ thành người xem, sẽ dừng việc tự động nạp.",
+      "Chỉ chủ sở hữu mới thêm, thay đổi và xóa thành viên; mọi người trong công ty đều thấy nhóm."
     ]
   },
   "actions": {
     "title": "Nhật ký thao tác",
-    "text": "Mọi việc các thành viên của công ty đã làm, mới nhất ở trên: họ đã làm gì và với cái gì, ai làm, khi nào, và việc đó có do trợ lý, một ứng dụng AI, API hay một ATS làm thay họ hay không. Chỉ chủ sở hữu thấy được.",
+    "text": "Mọi việc các thành viên của công ty đã làm, mới nhất ở trên: họ đã làm gì và với cái gì, ai làm, khi nào, và việc đó có do trợ lý AI, một ứng dụng AI, API hay một ATS làm thay họ hay không. Chỉ chủ sở hữu thấy được.",
     "actions": [
       "Hiện thao tác của một thành viên, hoặc của một loại: phỏng vấn, ứng viên, nhóm, công ty, thanh toán hoặc tích hợp.",
       "Hiện thao tác giữa hai ngày.",
-      "Tải bản xuất cho kiểm toán thiên lệch: một tệp CSV gồm mọi ứng viên đã hoàn thành, cho tất cả buổi phỏng vấn hoặc một buổi và, nếu muốn, giữa hai ngày, kèm điểm của họ, điểm đạt, họ có đạt không và họ có đạt điểm trên trung vị của buổi phỏng vấn không, theo email."
+      "Tải nhật ký xuống dưới dạng tệp CSV từ menu ⋮: toàn bộ thời gian, một khoảng gần đây hoặc giữa hai ngày. Tối đa 20 lần tải mỗi công ty mỗi ngày.",
+      "Tải bản xuất cho kiểm toán thiên lệch: một tệp CSV gồm mọi ứng viên đã hoàn thành và có điểm, cho tất cả buổi phỏng vấn hoặc một buổi và, nếu muốn, giữa hai ngày, kèm điểm của họ, điểm đạt, họ có đạt không và họ có đạt điểm trên trung vị của buổi phỏng vấn không, theo email."
     ],
     "tips": [
       "Thao tác được lưu trong 12 tháng.",
@@ -271,12 +300,12 @@
     "text": "Kết nối testee với các công cụ nhóm bạn đang dùng. Mỗi tích hợp có trang riêng với các bước thiết lập.",
     "actions": [
       "Slack: nhận thông báo của công ty trong một kênh.",
-      "API: khóa và webhook để kết nối nền tảng của riêng bạn.",
+      "API: khóa, webhook và SDK để kết nối nền tảng của riêng bạn.",
       "Ứng dụng AI: dùng testee từ Claude, ChatGPT và các ứng dụng AI khác.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR): ứng viên bạn chuyển sang một giai đoạn sẽ nhận buổi phỏng vấn, và kết quả được gửi ngược lại."
     ],
     "tips": [
-      "Mọi người trong công ty đều thấy các tích hợp; chủ sở hữu và quản trị viên thay đổi chúng."
+      "Mọi người trong công ty đều thấy các tích hợp; chủ sở hữu và quản trị viên thay đổi chúng. Ứng dụng AI là của riêng mỗi người: ai cũng có thể kết nối hoặc ngắt kết nối ứng dụng của mình."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "Kết nối ATS của bạn theo hướng dẫn.",
       "Liên kết tin tuyển dụng: chọn tin, giai đoạn và buổi phỏng vấn, hoặc tạo buổi phỏng vấn mới từ nội dung tin.",
+      "Xem mỗi vị trí đã liên kết đã mời bao nhiêu ứng viên, có bao nhiêu đang chờ hoặc không mời được.",
       "Mời lại những ứng viên chưa được mời, ví dụ khi hết credit.",
+      "Kết nối lại khi ATS ngừng hoạt động: ứng viên sẽ không được mời cho đến khi bạn làm vậy.",
       "Hủy liên kết tin tuyển dụng, hoặc ngắt kết nối ATS."
     ],
     "tips": [
       "Thêm một giai đoạn riêng cho testee, chẳng hạn “Kiểm tra kỹ năng testee”, để không bao giờ lẫn với các công cụ khác của bạn.",
-      "testee không bao giờ chuyển hay loại ai trong ATS của bạn."
+      "testee không bao giờ chuyển hay loại ai trong ATS của bạn.",
+      "Nếu thành viên đã kết nối ATS rời đi hoặc trở thành người xem, ứng viên sẽ không còn được mời."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "Thêm testee vào Slack và chọn kênh, ví dụ #hiring.",
       "Chọn những thông báo được gửi tới đó: ứng viên làm xong, lời mời không gửi được, buổi phỏng vấn đã sẵn sàng và hơn nữa.",
+      "Gửi một tin nhắn thử đến kênh, và kết nối lại nếu Slack ngừng nhận tin nhắn.",
       "Ngắt kết nối để dừng thông báo và gỡ ứng dụng testee khỏi Slack của bạn."
     ],
     "tips": [
       "testee chỉ có thể đăng vào kênh đó; nó không thể đọc Slack của bạn.",
-      "Mọi người vẫn thấy mọi thông báo ở biểu tượng chuông."
+      "Mọi người vẫn thấy mọi thông báo ở biểu tượng chuông.",
+      "Nếu thành viên đã kết nối Slack rời đi hoặc trở thành người xem, Slack sẽ ngừng hoạt động cho đến khi chủ sở hữu hoặc quản trị viên kết nối lại."
     ]
   },
   "api": {
     "title": "API",
     "text": "Kết nối nền tảng của riêng bạn, chẳng hạn trang tuyển dụng, với testee.",
     "actions": [
-      "Tạo khóa API và chỉ đánh dấu những gì nó cần: xem hoặc tạo buổi phỏng vấn; xem, mời, thay đổi hoặc xóa ứng viên; xem số credit của bạn; hoặc dùng với agent AI (MCP). Khóa thay mặt bạn.",
+      "Tạo khóa API và chỉ đánh dấu những gì nó cần: xem hoặc tạo buổi phỏng vấn; xem, mời, thay đổi hoặc xóa ứng viên; xem hoặc thêm ghi chú; xem số credit của bạn; hoặc dùng với agent AI (MCP). Khóa hoạt động cho công ty với tư cách của chính nó, và vẫn hoạt động khi người tạo ra nó rời đi.",
       "Mở một khóa để thay đổi những gì khóa được làm, mỗi thay đổi được lưu ngay, và các địa chỉ IP được dùng khóa đó.",
+      "Đổi tên khóa, tạo khóa thay thế khi nó sắp hết hạn và, nếu là chủ sở hữu, xem những gì nó đã làm.",
       "Thêm webhook: testee báo tới địa chỉ HTTPS của bạn, có chữ ký, khi ứng viên bắt đầu, làm xong (kèm kết quả), không nhận được lời mời, hết hạn lời mời hoặc bị xóa khỏi buổi phỏng vấn, và khi một buổi phỏng vấn sẵn sàng.",
       "Gửi sự kiện thử nghiệm tới một webhook và xem kết quả của từng lần gửi trong nhật ký gửi.",
+      "Đổi khóa bí mật của webhook: trong 24 giờ, cả hai khóa bí mật đều ký mỗi yêu cầu.",
       "Trong thẻ SDK, liệt kê các trang web được hiển thị buổi phỏng vấn của bạn bằng SDK, và cho phép localhost khi bạn đang thử nghiệm.",
       "Xóa các khóa và webhook bạn không dùng nữa.",
       "Mở tài liệu cho nhà phát triển để xem mọi endpoint, sự kiện và SDK."
@@ -321,7 +357,8 @@
     "tips": [
       "Khóa mới và khóa bí mật của webhook chỉ hiện một lần: hãy sao chép ngay.",
       "Đặt thời hạn cho mỗi khóa: khóa bị lộ mà không bao giờ hết hạn thì vẫn dùng được mãi.",
-      "Sau này bạn có thể chọn hoặc bỏ chọn quyền của khóa; chỉ cấp cho mỗi khóa những gì nền tảng của nó cần."
+      "Sau này bạn có thể chọn hoặc bỏ chọn quyền của khóa; chỉ cấp cho mỗi khóa những gì nền tảng của nó cần.",
+      "Webhook không phản hồi trong 3 ngày sẽ bị tạm dừng; một sự kiện thử thành công sẽ khởi động lại nó."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Sao chép địa chỉ máy chủ và thêm vào Claude, Claude Code hoặc ChatGPT theo các bước; tài liệu cho nhà phát triển hướng dẫn các ứng dụng khác và agent của riêng bạn.",
       "Cho phép ứng dụng trên trang testee vừa mở.",
-      "Ngắt kết nối ứng dụng bạn không còn dùng."
+      "Khi ứng dụng đã kết nối, hãy sao chép một ví dụ về điều có thể yêu cầu nó.",
+      "Ngắt kết nối ứng dụng bạn không còn dùng.",
+      "Chủ sở hữu và quản trị viên cho phép hoặc dừng ứng dụng AI trong công ty này: khi tắt, ứng dụng không đọc hay thay đổi được gì trong công ty."
     ],
     "tips": [
-      "Ứng dụng hành động thay mặt bạn, trong mọi công ty bạn tham gia. Hầu hết ứng dụng hỏi bạn trước khi thay đổi bất cứ điều gì.",
+      "Ứng dụng hành động thay mặt bạn, trong mọi công ty bạn tham gia có cho phép ứng dụng AI. Hầu hết ứng dụng hỏi bạn trước khi thay đổi bất cứ điều gì.",
       "Ứng dụng không thể xem mật khẩu hay khóa API của bạn, và không thể xóa tài khoản của bạn hay một công ty."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Giới thiệu",
     "text": "Mời các công ty khác dùng testee bằng liên kết của công ty này, và cả hai bên đều nhận credit.",
     "actions": [
-      "Sao chép hoặc chia sẻ liên kết giới thiệu của bạn.",
-      "Xem mọi phần thưởng công ty này đã nhận."
+      "Sao chép liên kết giới thiệu của bạn để chia sẻ.",
+      "Xem các công ty đến qua liên kết của bạn và đã nạp credit, số credit mỗi công ty mang lại cho bạn và số phần thưởng còn lại trong năm nay."
     ],
     "tips": [
       "Cả hai bên nhận credit khi công ty bạn mời nạp credit lần đầu, với bất kỳ số tiền nào.",
-      "Credit được cộng cho công ty này và không bao giờ hết hạn."
+      "Credit được cộng cho công ty này và không bao giờ hết hạn.",
+      "Mỗi bên nhận 1.000 credit. Công ty của bạn nhận được tối đa 25 lần một năm; sau đó, công ty bạn đã mời vẫn nhận credit của họ.",
+      "Lần nạp bị hoàn tiền toàn bộ hoặc bị bồi hoàn (chargeback) sẽ thu hồi cả hai phần thưởng."
     ]
   },
   "brand": {
     "title": "Thương hiệu",
-    "text": "Logo và màu của bạn trên lời mời, buổi phỏng vấn và trang hoàn tất của ứng viên.",
+    "text": "Logo, màu, phông chữ và độ bo góc của bạn trên lời mời, buổi phỏng vấn và trang hoàn tất của ứng viên. Logo cũng hiện trong email gửi họ.",
     "actions": [
-      "Đặt hoặc đổi logo.",
+      "Đặt, đổi hoặc xóa logo.",
       "Chọn phông chữ cho tiêu đề và cho nội dung, cùng độ bo góc của thẻ và nút.",
-      "Chọn màu cho từng nhóm và xem trong bản xem trước.",
-      "Lưu lại, hoặc quay về màu của testee."
+      "Chọn màu cho từng nhóm, một bộ cho giao diện sáng và một bộ cho giao diện tối, và xem trong bản xem trước.",
+      "Lưu lại, hoàn tác thay đổi chưa lưu bằng “Đặt lại”, hoặc quay về màu, phông chữ và độ bo góc của testee bằng “Đặt lại về mặc định của testee”."
     ],
     "tips": [
       "Không thể lưu những màu khiến chữ khó đọc, để mọi ứng viên đều đọc được câu hỏi.",
-      "Thành viên dùng thử buổi phỏng vấn cũng thấy màu của bạn."
+      "Thành viên dùng thử buổi phỏng vấn cũng thấy màu của bạn.",
+      "Chỉ chủ sở hữu và quản trị viên thấy trang này."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Nạp credit, hoặc thiết lập tự động nạp.",
       "Xem các ứng viên đang được giữ credit.",
-      "Mở hóa đơn của bất kỳ lần nạp nào."
+      "Mở hóa đơn của bất kỳ lần nạp nào.",
+      "Lọc lịch sử theo lần nạp, khoản trừ hoặc hoàn tiền, hoặc tải xuống dưới dạng tệp CSV. Tối đa 20 lần tải mỗi công ty mỗi ngày."
     ],
     "tips": [
       "Credit cho một ứng viên được giữ lại khi mời, bị trừ khi ứng viên trả lời và được hoàn lại nếu không.",
-      "Chỉ chủ sở hữu và quản trị viên thấy trang này."
+      "Chỉ chủ sở hữu và quản trị viên thấy trang này.",
+      "Bạn có thể yêu cầu hoàn tiền cho credit đã mua trong 14 ngày qua và chưa dùng, qua Paddle hoặc bằng cách viết cho chúng tôi."
     ]
   },
   "topUp": {
     "title": "Nạp credit",
     "text": "Mua credit cho bất kỳ công ty nào mà bạn là chủ sở hữu hoặc quản trị viên.",
     "actions": [
-      "Chọn công ty và gói nạp: gói càng lớn thì chi phí cho mỗi ứng viên càng thấp.",
+      "Chọn công ty, rồi nhập số ứng viên muốn nạp, từ 10 đến 1.000, hoặc chọn một mức giá: nạp càng nhiều thì chi phí cho mỗi ứng viên càng thấp.",
+      "Đổi tiền tệ của công ty ở đầu trang: các lần nạp của công ty, kể cả tự động, sẽ được định giá và tính phí bằng tiền tệ đó từ lúc ấy.",
       "Thanh toán trên trang thanh toán của Paddle; credit sẽ vào trong vài giây.",
-      "Mở bảng giá để so sánh các gói nạp."
+      "Mở bảng giá để so sánh các gói nạp.",
+      "Thiết lập tự động nạp: chọn số tiền và số dư, rồi đánh dấu thỏa thuận. Thẻ của bạn được lưu trong trang thanh toán của Paddle và bị trừ tiền mỗi khi số dư xuống dưới mức đó."
     ],
     "tips": [
       "Mỗi ứng viên tốn 500 credit: được giữ lại khi mời, bị trừ khi ứng viên trả lời và được hoàn lại nếu không.",
-      "Credit không bao giờ hết hạn. Hóa đơn của mỗi lần nạp nằm ở thẻ Thanh toán của công ty."
+      "Credit không bao giờ hết hạn. Hóa đơn của mỗi lần nạp nằm ở thẻ Thanh toán của công ty.",
+      "Giá chưa bao gồm VAT hoặc thuế bán hàng: nếu áp dụng, thuế được cộng khi thanh toán.",
+      "Bạn có thể yêu cầu hoàn tiền cho credit đã mua trong 14 ngày qua và chưa dùng, qua Paddle hoặc bằng cách viết cho chúng tôi.",
+      "Chủ sở hữu và quản trị viên thiết lập tự động nạp. Chỉ người có thẻ đang thanh toán mới thay đổi được hoặc cập nhật thẻ; bất kỳ chủ sở hữu hoặc quản trị viên nào cũng có thể tắt ngay.",
+      "Thẻ bị từ chối sẽ được thử lại sau 1, 3 và 7 ngày, rồi tự động nạp tạm dừng cho đến khi thẻ được cập nhật. Thẻ không thể thanh toán, như thẻ hết hạn, sẽ làm tạm dừng ngay."
     ]
   },
   "settings": {
     "title": "Cài đặt",
-    "text": "Tài khoản của riêng bạn: ngôn ngữ testee dùng với bạn, các email bạn nhận và dữ liệu của bạn.",
+    "text": "Tài khoản của riêng bạn: ngôn ngữ testee dùng với bạn, tiền tệ của bạn, các email bạn nhận và dữ liệu của bạn.",
     "actions": [
-      "Chọn ngôn ngữ của trang web, chat hỗ trợ và email của bạn.",
+      "Chọn ngôn ngữ của trang web, câu trả lời của trợ lý AI và email của bạn; các buổi phỏng vấn mới cũng bắt đầu bằng ngôn ngữ đó.",
+      "Chọn tiền tệ hiển thị giá, dù bạn ở đâu. Các lần nạp của công ty dùng tiền tệ riêng của công ty, đặt trên trang nạp credit của công ty.",
       "Chọn những email không bắt buộc bạn muốn nhận; email dịch vụ, như lời mời, báo cáo và sự cố thanh toán, luôn được gửi.",
       "Bật hoặc tắt Sẵn sàng nhận cơ hội việc làm: khi bật, các công ty tuyển dụng trên testee cho những chủ đề bạn đã luyện tập sẽ thấy tên, hồ sơ LinkedIn và kết quả luyện tập của bạn, và có thể mời bạn.",
-      "Tải xuống mọi thứ testee lưu về bạn, hoặc xóa tài khoản."
+      "Tải xuống mọi thứ testee lưu về bạn, hoặc xóa tài khoản.",
+      "Sao chép ID tài khoản để cung cấp khi viết cho chúng tôi."
     ],
     "tips": [
-      "Xóa tài khoản sẽ xóa các công ty chỉ có mình bạn. Công ty đã có người khác tham gia cần có chủ sở hữu khác trước."
+      "Xóa tài khoản sẽ xóa các công ty chỉ có mình bạn, và credit của chúng không được hoàn tiền. Công ty đã có người khác tham gia cần có chủ sở hữu khác trước, hoặc phải bị xóa.",
+      "Sẵn sàng nhận cơ hội việc làm cần hồ sơ LinkedIn của bạn, và tự tắt sau một năm kể từ lần bạn bật gần nhất."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Đã đăng nhập bằng email khác? Hãy đăng xuất rồi đăng nhập bằng email được mời; lời mời chỉ dùng được với email đó.",
-      "Vai trò của bạn, quản trị viên hoặc người xem, do người mời bạn chọn."
+      "Vai trò của bạn, quản trị viên hoặc người xem, do người mời bạn chọn.",
+      "Lời mời đã được dùng, hoặc đã bị chủ sở hữu xóa, sẽ không còn hoạt động."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Đăng nhập, nếu bạn chưa đăng nhập, để xem ứng dụng nào đang xin quyền.",
       "Đọc những gì ứng dụng có thể và không thể làm với tài khoản của bạn.",
+      "Tắt “Cho phép thay đổi” để ứng dụng chỉ được đọc.",
       "Cho phép hoặc từ chối ứng dụng; dù chọn gì, bạn cũng quay lại ứng dụng."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Theo dõi tin tức trong trình đọc tin của bạn bằng liên kết RSS ở đầu trang."
     ],
     "tips": [
-      "Tin tức hiện trong thông báo của bạn; bật cập nhật sản phẩm trong cài đặt để nhận cả những tin quan trọng qua email."
+      "Tin tức hiện trong thông báo của bạn; những tin quan trọng cũng được gửi qua email khi “Cập nhật sản phẩm và tin tức” đang bật trong cài đặt."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Cho đến khi bạn chọn ngôn ngữ, danh sách hiện ngôn ngữ trang web của bạn và tiếng Anh.",
-      "Luyện tập là riêng tư: không công ty nào thấy kết quả của bạn.",
-      "Khi đã đăng nhập, dấu tích sau tiêu đề cho biết bài luyện tập bạn đã bắt đầu, còn dấu tích kép là bài bạn đã hoàn thành; di chuột lên để xem bạn đã hoàn thành bao nhiêu chủ đề."
+      "Luyện tập là riêng tư: không công ty nào thấy kết quả của bạn trừ khi bạn bật Sẵn sàng nhận cơ hội việc làm.",
+      "Khi đã đăng nhập, dấu tích sau tiêu đề cho biết bài luyện tập bạn đã bắt đầu, còn dấu tích kép là bài bạn đã hoàn thành; di chuột lên dấu tích để xem bạn đã hoàn thành bao nhiêu chủ đề."
     ]
   },
   "practiceTest": {
     "title": "Phỏng vấn luyện tập",
     "text": "Một buổi phỏng vấn luyện tập miễn phí: cấp bậc, ngôn ngữ, độ dài và các chủ đề.",
     "actions": [
+      "Chọn thời gian cho mỗi câu hỏi trước khi bắt đầu: thời gian tiêu chuẩn, gấp đôi hoặc không giới hạn thời gian.",
       "Bắt đầu một lượt luyện tập; đăng nhập trước nếu bạn chưa đăng nhập.",
       "Xem lượt gần nhất của bạn đã làm được đến đâu ở từng chủ đề.",
-      "Mở các lượt trước bằng nút lịch sử bên cạnh “Bắt đầu luyện tập”.",
+      "Khi đã đăng nhập, mở các lượt trước bằng “Các lượt của bạn” bên cạnh “Bắt đầu luyện tập”.",
       "Đang tuyển cho vị trí này? Tạo buổi phỏng vấn từ đây cho ứng viên của bạn."
     ],
     "tips": [
-      "Mỗi lượt đều tính giờ, như một buổi phỏng vấn thật; khi làm xong, bạn thấy điểm và mọi đáp án đúng.",
-      "Luyện tập bao nhiêu lần tùy thích: hoàn toàn miễn phí."
+      "Mỗi lượt đều tính giờ trừ khi bạn chọn không giới hạn thời gian; khi làm xong, bạn thấy điểm và mọi đáp án đúng.",
+      "Luyện tập bao nhiêu lần tùy thích, trong giới hạn số lượt mới mỗi giờ: hoàn toàn miễn phí."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "Những gì bạn đã chọn khi hết giờ của câu hỏi vẫn được tính; câu hỏi chưa chọn gì, hoặc chưa làm tới, bị tính là sai.",
       "Đang tuyển cho vị trí này? Tạo buổi phỏng vấn từ đây cho ứng viên của bạn.",
-      "Đang tìm việc? Bật Sẵn sàng nhận cơ hội việc làm để các công ty tuyển dụng cho những chủ đề này thấy tên, hồ sơ LinkedIn và kết quả luyện tập của bạn."
+      "Đang tìm việc? Sau khi hoàn thành một lượt, hãy nhập hồ sơ LinkedIn và bật Sẵn sàng nhận cơ hội việc làm để các công ty tuyển dụng cho những chủ đề này thấy tên, hồ sơ và kết quả luyện tập mới nhất của bạn và mời bạn; tùy chọn này bật trong một năm trừ khi bạn tắt."
     ]
   },
   "features": {
     "title": "Tính năng",
     "text": "Mọi việc testee làm cho một công ty, từ mô tả công việc đến khi tuyển được người: tạo buổi phỏng vấn, mời ứng viên, những gì ứng viên thấy, báo cáo, tích hợp, tuân thủ và bảng giá.",
     "actions": [
+      "Đi đến ô ở cuối trang bằng “Tạo buổi phỏng vấn” ở đầu trang, hoặc mở bảng giá.",
       "Chuyển đến một nhóm bằng các thẻ ở trên cùng: tạo, mời, phỏng vấn, quyết định, kết nối, tin cậy và bảng giá.",
-      "Xem từng tính năng bên cạnh hình ảnh của ứng dụng thật.",
+      "Xem các tính năng chính bên cạnh hình ảnh của ứng dụng thật, và các tính năng khác dưới dạng thẻ ở bên dưới.",
       "Dán mô tả công việc vào ô ở cuối trang để tạo buổi phỏng vấn.",
-      "Mở trang bảng giá, tài liệu cho nhà phát triển hoặc trang tin cậy từ nhóm tương ứng."
+      "Mở trang bảng giá, tài liệu cho nhà phát triển hoặc trang tin cậy từ nhóm tương ứng.",
+      "Hỏi Mira, hoặc mở Câu hỏi thường gặp hay hướng dẫn, ở cuối trang."
     ],
     "tips": [
       "Mọi tính năng đều có sẵn: bạn chỉ trả tiền cho mỗi ứng viên đã trả lời ít nhất một câu hỏi."
@@ -512,8 +570,9 @@
     "actions": [
       "Cuộn xuống theo đường kẻ: mỗi bước cho thấy điều gì xảy ra, các lựa chọn và hình ảnh của ứng dụng thật.",
       "Xem các cách ứng viên có thể vào và các cách báo cáo có thể gửi đi, dưới bước mời và bước chia sẻ.",
-      "Tạo buổi phỏng vấn từ nút ở đầu trang, hoặc mở tất cả tính năng.",
-      "Dán mô tả công việc vào ô ở cuối trang để bắt đầu."
+      "Đi đến ô bắt đầu bằng “Tạo buổi phỏng vấn” ở đầu trang, hoặc mở tất cả tính năng.",
+      "Dán mô tả công việc vào ô ở cuối trang để bắt đầu.",
+      "Hỏi Mira, hoặc mở Câu hỏi thường gặp hay hướng dẫn, ở cuối trang."
     ],
     "tips": [
       "Tạo buổi phỏng vấn là miễn phí: bạn chỉ trả tiền cho mỗi ứng viên trả lời ít nhất một câu hỏi."
@@ -525,12 +584,14 @@
     "actions": [
       "Xem giá hiện tại cho mỗi ứng viên, và giá thấp hơn cho các gói nạp lớn hơn.",
       "Xem bao nhiêu ứng viên đầu tiên được miễn phí.",
+      "Xem một ứng viên tốn bao nhiêu credit; thuế được cộng khi thanh toán nếu áp dụng.",
       "Xem số credit bạn nhận được khi giới thiệu một công ty khác.",
       "Nạp credit cho một công ty."
     ],
     "tips": [
       "Credit không bao giờ hết hạn.",
-      "Ứng viên không trả lời câu hỏi nào thì không tốn gì."
+      "Ứng viên không trả lời câu hỏi nào thì không tốn gì.",
+      "Credit đã mua chưa dùng có thể được hoàn tiền trong vòng 14 ngày."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "So sánh testee",
     "text": "So sánh có dẫn nguồn giữa testee và các công cụ kiểm tra trước tuyển dụng khác: bài kiểm tra được tạo thế nào, chi phí bao nhiêu và khi nào công cụ nào phù hợp hơn.",
     "actions": [
-      "Mở một bài so sánh để đọc."
+      "Mở một bài so sánh để đọc.",
+      "Tạo bài kiểm tra cho ứng viên của bạn từ thẻ ở cuối trang."
     ],
     "tips": [
       "Mỗi bài so sánh đều ghi ngày cập nhật gần nhất."
@@ -574,8 +636,9 @@
     "text": "testee so với các công cụ khác ở một khía cạnh: bài kiểm tra được tạo thế nào, chi phí bao nhiêu và khi nào công cụ nào phù hợp hơn.",
     "actions": [
       "Đọc bài so sánh và theo các liên kết tới nguồn.",
-      "Tạo bài kiểm tra cho ứng viên của bạn từ thẻ ở cuối trang.",
-      "Quay lại danh sách mọi bài so sánh bằng liên kết phía trên tiêu đề."
+      "Đi đến một phần từ danh sách “Trên trang này”, trên các trang dài hơn.",
+      "Tạo bài kiểm tra cho ứng viên của bạn từ nút ở đầu trang hoặc thẻ ở cuối trang.",
+      "Quay lại danh sách mọi bài so sánh bằng mũi tên quay lại cạnh tiêu đề."
     ],
     "tips": [
       "Giá và tính năng có thể thay đổi: ngày dưới tiêu đề cho biết trang được cập nhật lần cuối khi nào."
@@ -585,6 +648,7 @@
     "title": "Hướng dẫn tuyển dụng",
     "text": "Hướng dẫn thực tế cho nhà quản lý tuyển dụng: sàng lọc ứng viên, bài kiểm tra kỹ năng và dùng AI trong tuyển dụng một cách công bằng, hợp pháp.",
     "actions": [
+      "Tìm kiếm trong các hướng dẫn.",
       "Mở một hướng dẫn để đọc."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "Một hướng dẫn thực tế cho nhà quản lý tuyển dụng về một chủ đề.",
     "actions": [
       "Đọc hướng dẫn và theo các liên kết tới nguồn và các trang liên quan.",
-      "Tạo bài kiểm tra cho ứng viên của bạn từ thẻ ở cuối trang.",
-      "Quay lại danh sách mọi hướng dẫn bằng liên kết phía trên tiêu đề."
+      "Đi đến một phần từ danh sách “Trên trang này”, trên các trang dài hơn.",
+      "Tạo bài kiểm tra cho ứng viên của bạn từ nút ở đầu trang hoặc thẻ ở cuối trang.",
+      "Quay lại danh sách mọi hướng dẫn bằng mũi tên quay lại cạnh tiêu đề."
     ],
     "tips": [
-      "Các chủ đề pháp lý chỉ là tóm tắt, không phải tư vấn pháp lý: hãy hỏi ý kiến luật sư của bạn."
+      "Các chủ đề pháp lý là bản tóm tắt có ghi ngày, không phải tư vấn pháp lý: hãy kiểm tra các quy định áp dụng tại nơi bạn tuyển dụng."
     ]
   },
   "faq": {
     "title": "Câu hỏi thường gặp",
     "text": "Giải đáp những câu hỏi thường gặp về testee: buổi phỏng vấn, ứng viên, giá và credit, kết quả, tích hợp, ngôn ngữ và dữ liệu của bạn.",
     "actions": [
+      "Đi đến một nhóm câu hỏi bằng các nút ở đầu trang.",
       "Nhấp vào một câu hỏi để mở câu trả lời."
     ],
     "tips": [
-      "Không tìm thấy câu trả lời? Hãy hỏi Mira, trợ lý AI ở đầu trang, hoặc viết cho chúng tôi từ trang liên hệ.",
+      "Không tìm thấy câu trả lời? Hãy hỏi Mira, trợ lý AI, hoặc viết cho chúng tôi, từ thẻ ở cuối trang.",
       "Giá trong các câu trả lời luôn là giá hiện tại."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "Ai làm ra testee và vì sao: buổi phỏng vấn tạo từ mô tả công việc mà đội nào cũng chi trả được, và luyện tập miễn phí cho mọi người.",
     "actions": [
       "Đọc lý do testee ra đời và cách testee tiếp cận việc tuyển dụng.",
-      "Đọc đôi lời từ nhà sáng lập, và mở hồ sơ LinkedIn của anh ấy."
+      "Đọc đôi lời từ nhà sáng lập, và mở hồ sơ LinkedIn của anh ấy.",
+      "Tạo bài kiểm tra, hoặc luyện tập miễn phí, từ thẻ ở cuối trang."
     ],
     "tips": [
       "Để viết cho nhóm testee, hãy dùng trang liên hệ."
@@ -630,7 +697,8 @@
     "text": "Viết cho nhóm testee khi bạn có câu hỏi, ý tưởng, đề xuất hợp tác hoặc điều gì đó không hoạt động.",
     "actions": [
       "Điền tên, email và tin nhắn của bạn, rồi gửi.",
-      "Dán ID của công ty, buổi phỏng vấn, ứng viên hoặc tài khoản liên quan, để chúng tôi tìm thấy ngay."
+      "Dán ID của công ty, buổi phỏng vấn, ứng viên hoặc tài khoản liên quan vào tin nhắn của bạn, để chúng tôi tìm thấy ngay.",
+      "Xem ai vận hành testee: tên công ty, mã số đăng ký, địa chỉ và email."
     ],
     "tips": [
       "Liên kết “Sao chép ID” nằm dưới tên của công ty, buổi phỏng vấn hoặc ứng viên; ID tài khoản của bạn nằm trong menu tài khoản.",
@@ -641,7 +709,7 @@
     "title": "Tài liệu cho nhà phát triển",
     "text": "Mọi thứ bạn cần để kết nối nền tảng hoặc agent AI của riêng bạn với testee, lấy trực tiếp từ API nên luôn khớp với API.",
     "actions": [
-      "API: cách đăng nhập, URL gốc và mọi endpoint kèm tham số, nội dung yêu cầu, phản hồi và lỗi.",
+      "API: cách đăng nhập, các hướng dẫn như giới hạn tốc độ và thử lại an toàn, URL gốc, mọi endpoint kèm tham số, nội dung yêu cầu, phản hồi và lỗi, danh sách lỗi và nhật ký thay đổi.",
       "Webhook: các sự kiện testee gửi tới địa chỉ của bạn và dữ liệu mỗi sự kiện mang theo.",
       "SDK: cách nhúng buổi phỏng vấn vào trang web của riêng bạn.",
       "MCP: cách kết nối ứng dụng AI hoặc agent của riêng bạn, và các công cụ nó nhận được.",
@@ -661,7 +729,8 @@
       "Gửi email cho chúng tôi nếu có gì khó dùng hoặc bạn cần nội dung ở dạng khác."
     ],
     "tips": [
-      "Làm bài phỏng vấn của một công ty và cần thêm thời gian? Hãy đề nghị công ty cho thêm thời gian trước khi bắt đầu; bạn không cần nêu lý do."
+      "Làm bài phỏng vấn của một công ty và cần thêm thời gian? Hãy đề nghị công ty cho thêm thời gian trước khi bắt đầu; bạn không cần nêu lý do.",
+      "Chúng tôi trả lời trong vòng 14 ngày; nếu không hài lòng, bạn có thể liên hệ Cơ quan Bảo vệ Người tiêu dùng và Quản lý Kỹ thuật Estonia (TTJA)."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "Xem testee bảo vệ dữ liệu thế nào: đăng nhập, mã hóa, kiểm tra quyền truy cập, giới hạn số yêu cầu và sao lưu.",
       "Xem testee cung cấp những gì cho GDPR, Đạo luật AI của EU, Vương quốc Anh và Hoa Kỳ, kể cả luật kiểm toán thiên lệch của Thành phố New York.",
       "Xem dữ liệu được lưu ở đâu, những bên xử lý phụ nào xử lý dữ liệu và mỗi loại dữ liệu được giữ trong bao lâu.",
-      "Mở điều khoản, chính sách quyền riêng tư, thỏa thuận xử lý dữ liệu và tài liệu dành cho công ty."
+      "Mở điều khoản, chính sách quyền riêng tư, thỏa thuận xử lý dữ liệu và tài liệu dành cho công ty.",
+      "Mở tuyên bố về khả năng tiếp cận."
     ],
     "tips": [
       "Nếu có câu hỏi về bảo mật, quyền riêng tư hay tuân thủ, hoặc muốn báo một vấn đề bảo mật, hãy gửi email đến địa chỉ ở cuối trang."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Hủy đăng ký",
-    "text": "Ngừng nhận một loại email từ testee, như được nêu trên trang.",
+    "text": "Ngừng nhận một loại email từ testee, hoặc mọi email từ một công ty, như được nêu trên trang.",
     "actions": [
       "Đọc những email mà liên kết sẽ dừng.",
       "Xác nhận để hủy đăng ký; chỉ mở liên kết thì không thay đổi gì.",
-      "Sau đó mở cài đặt email để thay đổi các email khác."
+      "Khi đã đăng nhập, sau đó mở cài đặt email để thay đổi các email khác."
     ],
     "tips": [
-      "Email dịch vụ, như lời mời vào nhóm, báo cáo và sự cố thanh toán, vẫn được gửi."
+      "Email dịch vụ, như lời mời vào nhóm, báo cáo và sự cố thanh toán, vẫn được gửi; liên kết dừng email của một công ty cũng dừng các lời mời của công ty đó gửi đến bạn."
     ]
   }
 }

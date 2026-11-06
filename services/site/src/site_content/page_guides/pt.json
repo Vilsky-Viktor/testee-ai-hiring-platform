@@ -5,13 +5,15 @@
     "actions": [
       "Cole a descrição da vaga na caixa no topo ou escolha um modelo pronto; ajuste os tópicos, e as questões são escritas e verificadas para você.",
       "Convide candidatos por e-mail, a partir de um arquivo, com um link compartilhável no seu anúncio de vaga, ou pelo seu ATS, pela sua própria plataforma ou por um assistente de IA.",
+      "Veja o que os candidatos veem: uma entrevista cronometrada com a sua marca, respondida com um clique ou por voz.",
       "Leia os relatórios: as respostas, as notas e os alertas de integridade de cada candidato, compartilhados por e-mail ou chat com um clique.",
-      "Conecte sua plataforma, seu app de IA e os sites de vagas, receba atualizações no Slack ou peça à Mira, a assistente de IA, para fazer o trabalho por você."
+      "Conecte seu ATS, sua plataforma e apps de IA, receba atualizações no Slack ou peça à Mira, a assistente de IA, para fazer o trabalho por você.",
+      "Compare a testee com a triagem por telefone e as assinaturas, e veja como as questões são verificadas e melhoradas."
     ],
     "tips": [
-      "Criar entrevistas é grátis. Você paga por candidato que responde, pelo preço mostrado sob o título e na sua moeda, e seus primeiros candidatos são grátis.",
+      "Criar entrevistas é grátis. Você paga por candidato que responde, pelos preços mostrados mais abaixo na página e na sua moeda, e seus primeiros candidatos são grátis.",
       "Experimente sua entrevista como candidato antes de convidar alguém.",
-      "Assista ao vídeo no topo para um tour rápido; as FAQ e os guias ficam no fim da página.",
+      "Assista ao vídeo pelo botão no topo para um tour rápido; as FAQ e os guias ficam no fim da página.",
       "Baixe os relatórios de exemplo abaixo dos relatórios para ver como são os relatórios reais."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "Crie uma empresa com “Nova empresa”. O nome dela é único na testee.",
       "Abra uma empresa para trabalhar nas entrevistas e nos candidatos dela.",
-      "Remova uma empresa da qual você é proprietário, com todas as entrevistas e convites."
+      "Remova uma empresa da qual você é proprietário, com todas as entrevistas e convites; os créditos dela são perdidos e não são reembolsados.",
+      "Abra o menu ⋮ de uma empresa para ver a equipe dela; proprietários e administradores também recarregam créditos e abrem a marca e o faturamento dela ali."
     ],
     "tips": [
-      "Seu papel aparece ao lado de cada empresa da qual você não é proprietário: administradores fazem alterações, visualizadores apenas veem.",
+      "Seu papel aparece ao lado de cada empresa da qual você não é proprietário: administradores fazem alterações; visualizadores sobretudo veem, e também podem escrever anotações, avaliar e reportar questões, experimentar entrevistas e compartilhar relatórios.",
       "Os créditos pertencem a uma empresa, então cada uma é recarregada separadamente."
     ]
   },
@@ -36,22 +39,23 @@
       "Crie uma nova empresa se ainda não tiver uma; o modelo abre nela."
     ],
     "tips": [
-      "Depois de copiada, a entrevista é da empresa: altere as questões e as configurações como quiser."
+      "Depois de copiada, a entrevista é da empresa: altere as questões e as configurações como quiser.",
+      "Só proprietários e administradores podem usar um modelo; numa empresa em que você é visualizador, o botão não aparece."
     ]
   },
   "interviews": {
     "title": "Entrevistas",
-    "text": "Todas as entrevistas desta empresa e seus créditos para candidatos. Cada entrevista é um teste cronometrado criado a partir de uma descrição de vaga.",
+    "text": "Todas as entrevistas desta empresa e seus créditos para candidatos. Cada entrevista é um teste cronometrado criado a partir de uma descrição de vaga ou de um modelo.",
     "actions": [
-      "Crie uma entrevista a partir de uma descrição de vaga com “Nova entrevista”.",
-      "Abra uma entrevista para ver os tópicos, candidatos, anotações e configurações; uma anotação fixada aparece abaixo do nome dela.",
-      "Busque entrevistas pelo título.",
-      "Experimente uma entrevista como candidato ou exclua-a.",
-      "Recarregue créditos pelo saldo, ou ative a recarga automática na aba Faturamento."
+      "Crie uma entrevista a partir de uma descrição de vaga com “Nova entrevista” (proprietários e administradores).",
+      "Abra uma entrevista para ver os tópicos, candidatos e anotações, as configurações (proprietários e administradores) e, depois que a empresa recarregar créditos, Descobrir; uma anotação fixada aparece abaixo do nome dela.",
+      "Busque entrevistas pelo título, ou filtre por status: nova, em andamento ou contratado.",
+      "Experimente uma entrevista como candidato pelo menu ⋮ dela; proprietários e administradores também podem excluí-la ali.",
+      "Recarregue créditos pelo saldo, ou ative a recarga automática na aba Faturamento (proprietários e administradores)."
     ],
     "tips": [
       "O saldo fica âmbar quando os créditos estão acabando. Sem créditos, novos convites não são enviados.",
-      "O menu da empresa leva a modelos, sua equipe, integrações, faturamento (proprietários e administradores) e indicações."
+      "O menu da empresa leva a modelos, sua equipe, integrações, marca e faturamento (proprietários e administradores), registro de ações (o proprietário) e indicações."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Comece uma entrevista a partir da descrição da vaga. A testee a lê, propõe os tópicos a avaliar e escreve as questões depois que você os aprova.",
     "actions": [
       "Cole a descrição da vaga: o cargo, os requisitos e os diferenciais.",
+      "Com nada digitado ainda, “Testar um exemplo” preenche a caixa com uma descrição de amostra.",
       "Escolha o idioma em que a entrevista será gerada.",
-      "Gere e depois revise os tópicos propostos."
+      "Gere e depois revise os tópicos propostos.",
+      "Comece por um modelo, ou por uma vaga do seu ATS depois de conectá-lo.",
+      "Se você começou pela página inicial, escolha a empresa para a qual ela é ou crie uma; só aparecem empresas das quais você é proprietário ou administrador."
     ],
     "tips": [
       "Quanto mais específica a descrição, mais as questões se ajustam ao cargo.",
-      "Gerar é grátis: você paga só pelos candidatos que respondem."
+      "Gerar é grátis: você paga só pelos candidatos que respondem.",
+      "Uma empresa só pode ter poucas entrevistas ainda sem candidatos e começar poucas por dia; os limites aumentam depois que ela recarrega créditos."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "Desmarque os tópicos de que você não precisa.",
       "Edite o nome e os subtópicos de um tópico com o lápis dele.",
+      "Adicione um tópico próprio com “Adicionar um tópico”: dê um nome e pelo menos 3 subtópicos.",
       "Descreva alterações com suas próprias palavras e aplique-as, por exemplo “adicione um tópico sobre liderança de equipes”.",
-      "Aprove e gere para escrever as questões."
+      "Aprove e gere para escrever as questões.",
+      "Cancele para descartar a entrevista; nada do que foi gerado até agora é mantido."
     ],
     "tips": [
       "Se houver tópicos demais, desmarque alguns ou descreva como juntá-los.",
-      "As questões só são escritas depois que você aprova, então reserve um minuto aqui."
+      "As questões só são escritas depois que você aprova, então reserve um minuto aqui.",
+      "Uma revisão deixada aberta por 14 dias é cancelada, e a entrevista dela é removida."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "A testee está criando sua entrevista: primeiro os tópicos, depois as questões de cada um. Leva alguns minutos.",
     "actions": [
       "Pode sair desta página se quiser: a geração continua.",
-      "Cancele a geração se não precisar mais dela; nada do que foi criado até agora é mantido."
+      "Cancele a geração se não precisar mais dela; nada do que foi criado até agora é mantido.",
+      "Quando os tópicos ficarem prontos, esta página os mostra para sua revisão; as questões só são escritas depois da sua aprovação.",
+      "Se a geração falhar, selecione Tentar novamente ou Recomeçar."
     ],
     "tips": [
       "Você recebe uma notificação quando a entrevista fica pronta.",
@@ -97,14 +110,14 @@
     "title": "Tópicos",
     "text": "O que esta entrevista avalia: seus tópicos, cada um com subtópicos e seu próprio banco de questões. Cada candidato recebe uma seleção aleatória de cada banco.",
     "actions": [
-      "Abra “Gerenciar questões” para ir às questões de um tópico: leia, desative algumas, curta, descurta ou reporte.",
-      "Gere novamente uma questão fraca ou marque uma resposta errada na página de questões de um tópico.",
-      "Defina quantas questões cada candidato recebe de um tópico; com 0, o tópico fica de fora para novos candidatos. Cada candidato recebe no máximo 60 questões somando todos os tópicos: diminua um tópico para aumentar outro.",
-      "Experimente a entrevista como candidato ou exclua-a."
+      "Abra um tópico para ir às questões dele: leia, curta, descurta ou reporte e, como proprietário ou administrador, desative algumas.",
+      "Gere novamente uma questão fraca ou marque uma resposta errada na página de questões de um tópico (proprietários e administradores).",
+      "Defina quantas questões cada candidato recebe de um tópico (proprietários e administradores); com 0, o tópico fica de fora para novos candidatos, mas pelo menos um tópico precisa manter questões. Cada candidato recebe no máximo 60 questões somando todos os tópicos: diminua um tópico para aumentar outro.",
+      "Experimente a entrevista como candidato pelo menu ⋮; proprietários e administradores também podem excluí-la ali."
     ],
     "tips": [
-      "Questões escritas por IA podem estar erradas: dê uma olhada em cada tópico antes de convidar alguém.",
-      "Clique no título para renomear a entrevista.",
+      "Questões escritas por IA podem estar erradas, mesmo com uma segunda IA verificando uma amostra de respostas: dê uma olhada em cada tópico antes de convidar alguém.",
+      "Clique no título para renomear a entrevista (proprietários e administradores).",
       "Os cartões no topo somam o que cada candidato recebe: o total de questões, o tempo médio por questão e o tempo da entrevista completa. Eles acompanham cada mudança."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Questões",
     "text": "As questões de um tópico com respostas, curtidas, descurtidas e reportes. Cada candidato recebe um conjunto aleatório das questões ativas.",
     "actions": [
+      "Veja nos cartões no topo quantas questões existem, quantas estão ativas ou desativadas e quantas denúncias elas têm; filtre a lista por Todas, Ativa, Desativada ou Denunciadas.",
       "Desmarque uma questão para desativá-la: a partir de agora nenhum candidato a recebe. Marque-a para ativá-la de novo (proprietários e administradores).",
       "Curta ou descurta uma questão; clique de novo na sua escolha para desfazê-la.",
       "Abra os reportes de uma questão e adicione o seu, um por questão.",
-      "Gere novamente uma questão fraca ou marque uma resposta errada (proprietários e administradores)."
+      "Gere novamente uma questão fraca ou marque uma resposta errada pelo menu ⋮ dela (proprietários e administradores); uma resposta marcada é verificada e, se estiver errada, corrigida ou substituída."
     ],
     "tips": [
       "Questões escritas por IA podem estar erradas: leia antes de convidar alguém.",
@@ -127,27 +141,31 @@
     "title": "Candidatos",
     "text": "Todos os convidados para esta entrevista, com status, progresso e nota.",
     "actions": [
-      "Convide candidatos: um de cada vez, uma lista de até 100 ou um arquivo CSV ou TXT.",
+      "Convide candidatos com “Novo(s) candidato(s)” (proprietários e administradores): um de cada vez, uma lista ou um arquivo CSV ou TXT.",
       "Busque por e-mail ou nome, filtre por status e ordene por nota ou data.",
-      "Abra o relatório de um candidato ou baixe ou compartilhe o relatório de todos os candidatos."
+      "Abra o relatório de um candidato ou baixe ou compartilhe o relatório de todos os candidatos.",
+      "Abra o menu ⋮ de um candidato para reenviar o convite, copiar o link, revogá-lo ou excluir o candidato (proprietários e administradores)."
     ],
     "tips": [
       "Cada candidato que responde pelo menos uma questão usa créditos, inclusive os que vêm pelo link.",
-      "Os lembretes são enviados aos candidatos automaticamente.",
-      "Ao convidar, escolha se os candidatos fazem a entrevista no modo clique ou no modo de voz; um candidato num modo diferente do da entrevista mostra o ícone do seu modo."
+      "Um candidato que não começou recebe um lembrete 3 dias após o convite. Um convite não iniciado em 30 dias expira; reenviá-lo faz com que funcione de novo.",
+      "Os candidatos fazem a entrevista no modo dela; para mudar o de um candidato, use a página dele. Um candidato num modo diferente do da entrevista mostra o ícone desse modo.",
+      "Convidar reserva os créditos de um candidato; eles são devolvidos se o candidato terminar sem responder.",
+      "Candidatos vindos do link compartilhável, do seu ATS, da API ou de Descobrir também aparecem aqui.",
+      "O relatório de todos os candidatos é compartilhado em PDF por e-mail, ou como um resumo curto por WhatsApp, Telegram, Viber ou LINE."
     ]
   },
   "interviewNotes": {
     "title": "Anotações",
-    "text": "As anotações da sua equipe sobre este processo seletivo: o que vocês combinaram, quem chamar em seguida ou para quem é a entrevista. Todos na sua empresa as veem; os candidatos, nunca.",
+    "text": "As anotações da sua equipe sobre este processo seletivo: o que vocês combinaram, quem chamar em seguida ou para quem é a entrevista. Todos na sua empresa, inclusive visualizadores, as veem e podem escrevê-las; os candidatos, nunca.",
     "actions": [
       "Escreva uma anotação na caixa no topo e selecione Publicar, ou pressione ⌘/Ctrl+Enter. Os links nela ficam clicáveis.",
-      "Edite ou exclua suas próprias anotações com os botões na linha delas; proprietários e administradores podem excluir as de qualquer pessoa.",
-      "Fixe uma anotação com o marcador (proprietários e administradores): ela aparece primeiro aqui e abaixo do nome da entrevista, na página dela e na lista de entrevistas."
+      "Edite ou exclua suas próprias anotações pelo menu ⋮ na linha delas; proprietários e administradores podem excluir as de qualquer pessoa.",
+      "Fixe uma anotação com “Fixar no topo” no menu ⋮ dela (proprietários e administradores): uma anotação por vez aparece primeiro aqui e abaixo do nome da entrevista, na página dela e na lista de entrevistas."
     ],
     "tips": [
       "Trabalha para clientes? Fixe uma anotação como “Para Acme, desenvolvedor backend” para ver de relance para quem é cada entrevista.",
-      "Uma anotação excluída some para sempre. O registro de ações guarda quem escreveu, alterou ou excluiu uma anotação, nunca o texto dela.",
+      "Uma anotação excluída some para sempre. O registro de ações guarda quem escreveu, alterou, excluiu ou fixou uma anotação, nunca o texto dela.",
       "O restante da equipe fica sabendo de cada anotação nova: nas notificações, no resumo diário de atividades e, com o Slack conectado, no seu canal."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Configurações",
-    "text": "Como esta entrevista funciona para cada candidato.",
+    "text": "Como esta entrevista funciona para cada candidato. Só proprietários e administradores veem esta aba.",
     "actions": [
-      "Ative o link compartilhável para um anúncio de vaga: qualquer pessoa com ele pode fazer a entrevista.",
+      "Ative o link compartilhável para um anúncio de vaga: qualquer pessoa com ele pode fazer a entrevista, e cada pessoa que responde por ele usa créditos como um candidato convidado.",
       "Escolha o modo da entrevista: o modo clique, em que os candidatos tocam nas respostas, ou o modo de voz, em que a Mira, uma entrevistadora de IA, lê cada questão em voz alta e os candidatos respondem por voz ou com um toque. O modo de voz funciona em todos os idiomas; o quanto ele lê e entende bem depende do idioma, e o link abaixo da configuração abre o guia com a qualidade em cada um.",
       "Defina o tempo médio por questão, em segundos: cada questão recebe seu próprio tempo de acordo com o tamanho e o código que mostra, e o tempo total da entrevista continua o mesmo.",
       "Defina a nota de aprovação: os candidatos que a atingem são aprovados.",
@@ -175,22 +193,26 @@
       "Mantenha as perguntas da entrevista fora do banco de perguntas compartilhado do testee; as já reutilizadas em outras entrevistas continuam lá."
     ],
     "tips": [
-      "Cada configuração é salva assim que você sai do campo.",
+      "Campos numéricos são salvos assim que você sai deles; os interruptores e o modo são salvos na hora.",
       "Os candidatos nunca veem suas pontuações; só a sua equipe vê.",
-      "Para um candidato que precisa de mais tempo, adicione tempo extra na página dele."
+      "Para um candidato que precisa de mais tempo, adicione tempo extra na página dele.",
+      "Um novo modo vale para candidatos que não começaram, exceto os que receberam um modo próprio na página deles.",
+      "O tempo médio vai de 10 a 600 segundos; a nota de aprovação vai de 1 a 100%."
     ]
   },
   "tryInterview": {
     "title": "Experimentar como candidato",
     "text": "Uma prévia desta entrevista exatamente como os candidatos a veem: a introdução e depois as questões cronometradas. É grátis.",
     "actions": [
-      "Comece a prévia e responda como um candidato responderia.",
+      "Marque o compromisso de responder por conta própria, selecione “Aceitar e começar” e responda como um candidato responderia.",
       "Confira o tempo, a redação e as respostas antes de convidar alguém."
     ],
     "tips": [
       "Fique na página enquanto responde: no caso dos candidatos, sair da página, copiar e responder rápido demais ficam registrados.",
       "Uma entrevista no modo de voz primeiro pede acesso ao seu microfone e ao som: permita, e a Mira lê cada questão em voz alta enquanto você responde por voz ou com um toque.",
-      "Cada empresa tem um número de prévias por dia, menos no modo de voz; quando acabam, ao iniciar você vê quando pode tentar de novo."
+      "Cada empresa tem um número de prévias por dia, menos no modo de voz; quando acabam, ao iniciar você vê quando pode tentar de novo.",
+      "Uma prévia fica fora da lista de candidatos e das estatísticas das questões.",
+      "Visualizadores também podem experimentar uma entrevista."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Leia cada resposta, com alertas de integridade: saídas da página, tentativas de cópia e respostas rápidas demais.",
       "Quando ele terminar, veja padrões incomuns nas respostas e nos tempos, e perguntas que ele acertou para explorar em uma entrevista ao vivo.",
-      "Baixe o relatório em PDF ou compartilhe-o por e-mail.",
-      "Dê tempo extra antes de começar, por exemplo por uma deficiência.",
+      "Baixe o relatório em PDF ou compartilhe-o: o PDF por e-mail, ou um resumo curto por WhatsApp, Telegram, Viber ou LINE. Visualizadores só podem enviá-lo por e-mail aos membros da empresa.",
+      "Dê +25%, +50% ou +100% de tempo extra antes de começar, por exemplo por uma deficiência.",
       "Escolha se ele faz a entrevista no modo clique ou no modo de voz, seja qual for o modo da entrevista, até começar.",
       "Adicione ou edite o nome do candidato.",
-      "Copie o link de convite para enviá-lo você mesmo, se o e-mail não chegou; ele fica disponível até o candidato terminar.",
+      "Copie o link de convite para enviá-lo você mesmo, se o e-mail não chegou; ele fica disponível até o candidato terminar ou o convite expirar.",
       "Reenvie ou revogue o convite, ou exclua o candidato com seus resultados."
     ],
     "tips": [
       "A pontuação apoia sua decisão, mas não decide por você. Se o candidato pedir, peça que uma pessoa revise o resultado dele.",
       "Uma marca de seleção abaixo da nota mostra que o candidato confirmou, antes de começar, que responderia por conta própria, sem ferramentas de IA nem ajuda de outras pessoas.",
-      "A nota é a porcentagem de pontos obtidos: cada pergunta vale um ponto, e uma de \"escolha várias opções\" dá uma parte dele por opção correta marcada, e nada se uma errada for marcada."
+      "A nota é a porcentagem de pontos obtidos: cada pergunta vale um ponto, e uma de \"escolha várias opções\" dá uma parte dele por opção correta marcada, e nada se uma errada for marcada.",
+      "Tempo extra, modo e nome do candidato, link de convite, reenvio, revogação e exclusão são para proprietários e administradores."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Busque por cargo ou tópico e filtre por nível e idioma.",
       "Abra um modelo para ver os tópicos e quantas questões cada um tem.",
-      "Use um modelo para começar uma entrevista a partir dele."
+      "Veja em cada linha os tópicos, questões e minutos, e quantas das suas entrevistas usaram o modelo.",
+      "Use um modelo para começar uma entrevista a partir dele (proprietários e administradores)."
     ],
     "tips": [
       "Para um resultado mais preciso, crie uma entrevista a partir da sua própria descrição de vaga.",
-      "Depois de copiada, a entrevista é sua: altere as questões e as configurações como quiser."
+      "Depois de copiada, a entrevista é sua: altere as questões e as configurações como quiser.",
+      "A lista começa com o seu idioma e o inglês; escolha todos os idiomas para ver o restante."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "Uma entrevista pronta: seus tópicos, os subtópicos e quantas questões cada tópico tem.",
     "actions": [
       "Confira se os tópicos correspondem ao cargo para o qual você está contratando.",
-      "Use o modelo para copiá-lo para esta empresa como uma nova entrevista."
+      "Use o modelo para copiá-lo para esta empresa como uma nova entrevista (proprietários e administradores)."
     ],
     "tips": [
       "Copiar é grátis; candidatos que respondem usam créditos normalmente.",
-      "Se os tópicos não servirem, crie uma entrevista a partir da sua descrição de vaga."
+      "Se os tópicos não servirem, crie uma entrevista a partir da sua descrição de vaga.",
+      "As questões dele ficam ocultas até você usá-lo."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "Adicione um membro por e-mail, como administrador ou visualizador: ele recebe por e-mail um link para entrar.",
       "Altere o papel de um membro entre administrador e visualizador.",
+      "Passe a empresa para um administrador que já entrou, com “Tornar proprietário” no menu dele: você passa a ser administrador.",
       "Copie o link de um convite pendente ou remova um membro ou um convite."
     ],
     "tips": [
-      "Administradores criam e alteram entrevistas, convidam candidatos e recarregam créditos. Visualizadores veem entrevistas e resultados e compartilham relatórios, mas não alteram nada.",
-      "Remover um membro cujo cartão paga as recargas automáticas interrompe essas recargas."
+      "Administradores criam e alteram entrevistas, convidam candidatos e recarregam créditos. Visualizadores veem entrevistas e resultados, compartilham relatórios e escrevem anotações, mas não alteram mais nada.",
+      "Remover um membro cujo cartão paga as recargas automáticas, ou torná-lo visualizador, interrompe essas recargas.",
+      "Só o proprietário adiciona, altera e remove membros; todos na empresa veem a equipe."
     ]
   },
   "actions": {
     "title": "Registro de ações",
-    "text": "Tudo o que os membros da empresa fizeram, do mais recente ao mais antigo: o que fizeram e em quê, quem fez, quando e se o assistente, um app de IA, a API ou um ATS fez por eles. Só o proprietário vê.",
+    "text": "Tudo o que os membros da empresa fizeram, do mais recente ao mais antigo: o que fizeram e em quê, quem fez, quando e se a assistente de IA, um app de IA, a API ou um ATS fez por eles. Só o proprietário vê.",
     "actions": [
       "Mostre as ações de um membro ou de um tipo: entrevistas, candidatos, equipe, empresa, faturamento ou integrações.",
       "Mostre as ações entre dois dias.",
-      "Baixe uma exportação para auditoria de viés: um arquivo CSV com cada candidato que terminou, de todas as entrevistas ou de uma e, se quiser, entre dois dias, com a nota, a nota de aprovação, se foi aprovado e se ficou acima da mediana da entrevista, identificado pelo e-mail."
+      "Baixe o registro como arquivo CSV pelo menu ⋮: todo o período, um período recente ou entre dois dias. Até 20 downloads por empresa por dia.",
+      "Baixe uma exportação para auditoria de viés: um arquivo CSV com cada candidato que terminou com nota, de todas as entrevistas ou de uma e, se quiser, entre dois dias, com a nota, a nota de aprovação, se foi aprovado e se ficou acima da mediana da entrevista, identificado pelo e-mail."
     ],
     "tips": [
       "As ações ficam guardadas por 12 meses.",
@@ -271,12 +300,12 @@
     "text": "Conecte a testee às ferramentas que sua equipe já usa. Cada integração abre sua própria página com as etapas de configuração.",
     "actions": [
       "Slack: receba as notificações da sua empresa em um canal.",
-      "API: chaves e webhooks para conectar sua própria plataforma.",
+      "API: chaves, webhooks e o SDK para conectar sua própria plataforma.",
       "Apps de IA: use a testee no Claude, no ChatGPT e em outros apps de IA.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR): os candidatos que você move para uma etapa recebem a entrevista, e os resultados voltam para o ATS."
     ],
     "tips": [
-      "Todos na empresa veem as integrações; proprietários e administradores as alteram."
+      "Todos na empresa veem as integrações; proprietários e administradores as alteram. Os apps de IA são de cada pessoa: qualquer um pode conectar ou desconectar os seus."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "Conecte seu ATS seguindo as instruções dele.",
       "Vincule uma vaga: escolha a vaga, a etapa e uma entrevista, ou crie uma nova entrevista a partir do texto da vaga.",
+      "Veja quantos candidatos cada vaga vinculada convidou, tem em espera ou não conseguiu convidar.",
       "Convide novamente candidatos que não foram convidados, por exemplo quando os créditos acabaram.",
+      "Reconecte quando o ATS parar de funcionar: os candidatos não são convidados até você fazer isso.",
       "Desvincule uma vaga ou desconecte o ATS."
     ],
     "tips": [
       "Adicione uma etapa só para a testee, como “Teste de habilidades testee”, para que ela nunca se misture com suas outras ferramentas.",
-      "A testee nunca move nem reprova ninguém no seu ATS."
+      "A testee nunca move nem reprova ninguém no seu ATS.",
+      "Se o membro que conectou o ATS sair ou virar visualizador, os candidatos deixam de ser convidados."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "Adicione a testee ao Slack e escolha o canal, por exemplo #hiring.",
       "Escolha quais notificações vão para lá: um candidato que termina, um convite que não foi entregue, uma entrevista pronta e mais.",
+      "Envie uma mensagem de teste ao canal e reconecte se o Slack parar de aceitar mensagens.",
       "Desconecte para interrompê-las e remover o app da testee do seu Slack."
     ],
     "tips": [
       "A testee só pode publicar nesse canal; ela não consegue ler seu Slack.",
-      "Todos continuam vendo cada notificação no sino."
+      "Todos continuam vendo cada notificação no sino.",
+      "Se o membro que conectou o Slack sair ou virar visualizador, ele para até um proprietário ou administrador reconectá-lo."
     ]
   },
   "api": {
     "title": "API",
     "text": "Conecte sua própria plataforma, como seu site de carreiras, à testee.",
     "actions": [
-      "Crie uma chave de API e marque só o que ela precisa: ver ou criar entrevistas; ver, convidar, alterar ou excluir candidatos; ver seus créditos; ou usar com agentes de IA (MCP). Ela age em seu nome.",
+      "Crie uma chave de API e marque só o que ela precisa: ver ou criar entrevistas; ver, convidar, alterar ou excluir candidatos; ver ou adicionar anotações; ver seus créditos; ou usar com agentes de IA (MCP). Ela age pela empresa com identidade própria e continua funcionando quando a pessoa que a criou sai.",
       "Abra uma chave para alterar o que ela pode fazer, com cada alteração salva na hora, e os endereços IP de onde ela pode ser usada.",
+      "Renomeie uma chave, crie uma substituta quando ela estiver para expirar e, como proprietário, veja o que ela fez.",
       "Adicione um webhook: a testee avisa o seu endereço HTTPS, com assinatura, quando um candidato começa ou termina (com os resultados), quando o convite não chega até ele ou expira, quando ele é removido e quando uma entrevista fica pronta.",
       "Envie um evento de teste a um webhook e veja no registro de entregas o resultado de cada envio.",
+      "Troque o segredo de um webhook: por 24 horas, os dois segredos assinam cada requisição.",
       "Na aba SDK, liste os sites que podem exibir suas entrevistas com o SDK, e permita localhost enquanto você testa.",
       "Exclua as chaves e os webhooks que você não usa mais.",
       "Abra a documentação para desenvolvedores com cada endpoint e evento, e o SDK."
@@ -321,7 +357,8 @@
     "tips": [
       "Uma chave nova e o segredo de um webhook aparecem só uma vez: copie-os na hora.",
       "Escolha uma validade para cada chave: uma chave vazada que nunca expira continua utilizável.",
-      "Depois você pode marcar ou desmarcar permissões de uma chave; dê a cada chave só o que a plataforma dela precisa."
+      "Depois você pode marcar ou desmarcar permissões de uma chave; dê a cada chave só o que a plataforma dela precisa.",
+      "Um webhook que não responde por 3 dias é pausado; um evento de teste bem-sucedido o reativa."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Copie o endereço do servidor e adicione-o ao Claude, ao Claude Code ou ao ChatGPT seguindo os passos; a documentação para desenvolvedores cobre outros apps e seus próprios agentes.",
       "Permita o app na página da testee que se abre.",
-      "Desconecte um app que você não usa mais."
+      "Depois de conectar um app, copie um exemplo do que pedir a ele.",
+      "Desconecte um app que você não usa mais.",
+      "Proprietários e administradores permitem ou interrompem os apps de IA nesta empresa: enquanto estão desligados, os apps não podem ver nem alterar nada nela."
     ],
     "tips": [
-      "Um app age em seu nome, em todas as empresas de que você participa. A maioria dos apps pergunta antes de alterar qualquer coisa.",
+      "Um app age em seu nome, em todas as empresas de que você participa que permitem apps de IA. A maioria dos apps pergunta antes de alterar qualquer coisa.",
       "Ele não pode ver sua senha nem suas chaves de API, nem excluir sua conta ou uma empresa."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Indicações",
     "text": "Convide outras empresas para a testee com o link desta empresa, e as duas ganham créditos.",
     "actions": [
-      "Copie ou compartilhe seu link de indicação.",
-      "Veja cada recompensa que esta empresa recebeu."
+      "Copie seu link de indicação para compartilhá-lo.",
+      "Veja as empresas que vieram pelo seu link e recarregaram créditos, os créditos que cada uma lhe rendeu e quantas recompensas restam neste ano."
     ],
     "tips": [
       "Vocês dois recebem créditos quando a empresa convidada faz a primeira recarga, de qualquer valor.",
-      "Os créditos vão para esta empresa e nunca expiram."
+      "Os créditos vão para esta empresa e nunca expiram.",
+      "Cada lado recebe 1.000 créditos. Sua empresa ganha isso até 25 vezes por ano; depois disso, a empresa que você convidou ainda recebe os créditos dela.",
+      "Uma recarga reembolsada integralmente ou estornada cancela as duas recompensas."
     ]
   },
   "brand": {
     "title": "Marca",
-    "text": "Seu logotipo e suas cores no convite, na entrevista e na página final dos seus candidatos.",
+    "text": "Seu logotipo, suas cores, fontes e arredondamento no convite, na entrevista e na página final dos seus candidatos. O logotipo também aparece nos e-mails deles.",
     "actions": [
-      "Defina ou troque o logotipo.",
+      "Defina, troque ou remova o logotipo.",
       "Escolha as fontes dos títulos e do texto, e o arredondamento dos cartões e botões.",
-      "Escolha as cores de cada grupo e veja-as na prévia.",
-      "Salve-as ou volte às cores da testee."
+      "Escolha as cores de cada grupo, um conjunto para o tema claro e outro para o escuro, e veja-as na prévia.",
+      "Salve-as, desfaça alterações não salvas com “Redefinir” ou volte às cores, fontes e arredondamento da testee com “Voltar ao padrão da testee”."
     ],
     "tips": [
       "Cores que deixariam o texto difícil de ler não podem ser salvas, para que todo candidato consiga ler as perguntas.",
-      "Os membros da equipe que testam uma entrevista também a veem nas suas cores."
+      "Os membros da equipe que testam uma entrevista também a veem nas suas cores.",
+      "Só proprietários e administradores veem esta página."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Recarregue ou configure a recarga automática.",
       "Veja os candidatos cujos créditos estão reservados.",
-      "Abra a fatura de qualquer recarga."
+      "Abra a fatura de qualquer recarga.",
+      "Restrinja o histórico a recargas, cobranças ou reembolsos, ou baixe-o como arquivo CSV. Até 20 downloads por empresa por dia."
     ],
     "tips": [
       "Os créditos de um candidato são reservados quando ele é convidado, cobrados quando ele responde e devolvidos se não responder.",
-      "Só proprietários e administradores veem esta página."
+      "Só proprietários e administradores veem esta página.",
+      "Você pode pedir o reembolso de créditos comprados nos últimos 14 dias e não gastos, pela Paddle ou escrevendo para nós."
     ]
   },
   "topUp": {
     "title": "Recarregar",
     "text": "Compre créditos para qualquer empresa da qual você é proprietário ou administrador.",
     "actions": [
-      "Escolha uma empresa e uma recarga: as maiores custam menos por candidato.",
+      "Escolha uma empresa e digite para quantos candidatos recarregar, de 10 a 1.000, ou escolha uma faixa de preço: recargas maiores custam menos por candidato.",
+      "Mude a moeda da empresa no topo da página: a partir daí, as recargas dela, inclusive as automáticas, têm preço e cobrança nessa moeda.",
       "Pague na página de pagamento da Paddle; os créditos chegam em segundos.",
-      "Abra os preços para comparar as recargas."
+      "Abra os preços para comparar as recargas.",
+      "Configure a recarga automática: escolha um valor e um saldo e marque o acordo. Seu cartão é salvo no checkout da Paddle e cobrado cada vez que o saldo fica abaixo desse nível."
     ],
     "tips": [
       "Um candidato custa 500 créditos: reservados quando ele é convidado, cobrados quando ele responde e devolvidos se não responder.",
-      "Os créditos não expiram. A fatura de cada recarga fica na aba Faturamento da empresa."
+      "Os créditos não expiram. A fatura de cada recarga fica na aba Faturamento da empresa.",
+      "Os preços não incluem IVA nem imposto sobre vendas: onde se aplica, é adicionado no checkout.",
+      "Você pode pedir o reembolso de créditos comprados nos últimos 14 dias e não gastos, pela Paddle ou escrevendo para nós.",
+      "Proprietários e administradores configuram a recarga automática. Só a pessoa cujo cartão paga pode alterá-la ou atualizar o cartão; qualquer proprietário ou administrador pode desativá-la na hora.",
+      "Um cartão recusado é tentado de novo após 1, 3 e 7 dias; depois, a recarga automática é pausada até o cartão ser atualizado. Um cartão que não pode pagar, como um vencido, a pausa na hora."
     ]
   },
   "settings": {
     "title": "Configurações",
-    "text": "Sua própria conta: o idioma em que a testee fala com você, os e-mails que você recebe e seus dados.",
+    "text": "Sua própria conta: o idioma em que a testee fala com você, sua moeda, os e-mails que você recebe e seus dados.",
     "actions": [
-      "Escolha o idioma do site, do chat de ajuda e dos seus e-mails.",
+      "Escolha o idioma do site, das respostas da assistente de IA e dos seus e-mails; novas entrevistas também começam nele.",
+      "Escolha a moeda em que os preços aparecem, onde quer que você esteja. As recargas de uma empresa ficam na moeda da própria empresa, definida na página de recarga dela.",
       "Escolha quais e-mails opcionais você recebe; e-mails de serviço, como convites, relatórios e problemas de pagamento, são sempre enviados.",
       "Ative ou desative Aberto a propostas: enquanto estiver ativado, empresas que contratam pela testee para os temas que você praticou veem seu nome, seu perfil do LinkedIn e seus resultados de prática, e podem convidar você.",
-      "Baixe tudo o que a testee guarda sobre você ou exclua sua conta."
+      "Baixe tudo o que a testee guarda sobre você ou exclua sua conta.",
+      "Copie o ID da sua conta para informar quando nos escrever."
     ],
     "tips": [
-      "Excluir sua conta exclui as empresas em que só você está. Uma empresa em que outras pessoas entraram precisa antes de outro proprietário."
+      "Excluir sua conta exclui as empresas em que só você está, e os créditos delas não são reembolsados. Uma empresa em que outras pessoas entraram precisa antes de outro proprietário, ou precisa ser excluída.",
+      "Aberto a propostas precisa do seu perfil do LinkedIn e se desativa sozinho um ano depois da última vez que você o ativou."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Entrou com outro e-mail? Saia e entre com o e-mail convidado; o convite só funciona para ele.",
-      "Seu papel, administrador ou visualizador, é o que a pessoa que convidou você escolheu."
+      "Seu papel, administrador ou visualizador, é o que a pessoa que convidou você escolheu.",
+      "Um convite já usado, ou removido pelo proprietário, não funciona mais."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Entre na sua conta, se ainda não entrou, para ver qual app está pedindo.",
       "Leia o que o app pode e não pode fazer com sua conta.",
+      "Desative “Permitir alterações” para deixar o app apenas ler.",
       "Permita ou recuse o app; em ambos os casos, você volta para o app."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Acompanhe as novidades no seu leitor de feeds com o link RSS no topo."
     ],
     "tips": [
-      "As novidades aparecem nas suas notificações; ative as novidades do produto nas suas configurações para receber também as principais por e-mail."
+      "As novidades aparecem nas suas notificações; as principais também chegam por e-mail enquanto “Novidades do produto e notícias” estiver ativado nas suas configurações."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Enquanto você não escolher idiomas, a lista mostra o idioma do site e o inglês.",
-      "A prática é privada: nenhuma empresa vê seus resultados.",
-      "Com a sessão iniciada, um visto após o título marca uma prática que você começou, e um visto duplo uma que você terminou; passe o cursor sobre ele para ver quantos tópicos você concluiu."
+      "A prática é privada: nenhuma empresa vê seus resultados, a menos que você ative Aberto a propostas.",
+      "Com a sessão iniciada, um visto após o título marca uma prática que você começou, e um visto duplo uma que você terminou; passe o cursor sobre o visto para ver quantos tópicos você concluiu."
     ]
   },
   "practiceTest": {
     "title": "Simulação de entrevista",
     "text": "Uma simulação de entrevista gratuita: o nível, o idioma, a duração e os tópicos que ela cobre.",
     "actions": [
+      "Escolha o tempo por questão antes de começar: o tempo padrão, o dobro ou sem limite de tempo.",
       "Comece uma rodada de prática; entre na sua conta antes, se ainda não entrou.",
       "Veja até onde você chegou em cada tópico na sua última rodada.",
-      "Abra suas rodadas anteriores com o botão de histórico ao lado de “Começar a prática”.",
+      "Com a sessão iniciada, abra suas rodadas anteriores com “Suas rodadas” ao lado de “Começar a prática”.",
       "Está contratando para este cargo? Crie a partir dela uma entrevista para seus próprios candidatos."
     ],
     "tips": [
-      "Cada rodada é cronometrada, como uma entrevista real; no fim, você vê sua nota e todas as respostas certas.",
-      "Pratique quantas vezes quiser: é grátis."
+      "Cada rodada é cronometrada, a menos que você escolha sem limite de tempo; no fim, você vê sua nota e todas as respostas certas.",
+      "Pratique quantas vezes quiser, dentro de um limite por hora de novas rodadas: é grátis."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "O que você marcou quando o tempo de uma questão acaba conta mesmo assim; uma questão sem nada marcado, ou que você não chegou a ver, conta como errada.",
       "Está contratando para este cargo? Crie a partir dela uma entrevista para seus próprios candidatos.",
-      "Procurando emprego? Ative Aberto a propostas para que empresas que contratam para esses temas vejam seu nome, seu perfil do LinkedIn e seus resultados de prática."
+      "Procurando emprego? Depois de uma rodada concluída, informe seu perfil do LinkedIn e ative Aberto a propostas para que empresas que contratam para esses temas vejam seu nome, seu perfil e seus resultados de prática mais recentes e possam convidar você; fica ativado por um ano, a menos que você desative."
     ]
   },
   "features": {
     "title": "Recursos",
     "text": "Tudo o que a testee faz por uma empresa, da descrição da vaga à contratação: criar entrevistas, convidar candidatos, o que os candidatos veem, relatórios, integrações, conformidade e preços.",
     "actions": [
+      "Vá até a caixa no fim da página com “Criar uma entrevista” no topo, ou abra os preços.",
       "Vá para um grupo com as abas no topo: criar, convidar, entrevista, decidir, conectar, confiança e preços.",
-      "Veja cada recurso ao lado de uma imagem do app real.",
+      "Veja os principais recursos ao lado de uma imagem do app real, e os demais como cartões abaixo deles.",
       "Cole uma descrição da vaga na caixa no fim da página para criar uma entrevista.",
-      "Abra a página de preços, a documentação para desenvolvedores ou a página de confiança a partir dos grupos delas."
+      "Abra a página de preços, a documentação para desenvolvedores ou a página de confiança a partir dos grupos delas.",
+      "Pergunte à Mira, ou abra as FAQ ou os guias, no fim da página."
     ],
     "tips": [
       "Todos os recursos estão incluídos: você paga só por cada candidato que responde a pelo menos uma pergunta."
@@ -512,8 +570,9 @@
     "actions": [
       "Role pela linha para baixo: cada etapa mostra o que acontece, suas opções e uma imagem do app real.",
       "Nas etapas de convite e compartilhamento, veja como os candidatos podem chegar e como os relatórios podem sair.",
-      "Crie uma entrevista pelo botão no topo, ou abra todos os recursos.",
-      "Cole uma descrição da vaga na caixa no fim da página para começar."
+      "Vá até a caixa inicial com “Criar uma entrevista” no topo, ou abra todos os recursos.",
+      "Cole uma descrição da vaga na caixa no fim da página para começar.",
+      "Pergunte à Mira, ou abra as FAQ ou os guias, no fim da página."
     ],
     "tips": [
       "Criar entrevistas é grátis: você paga só por cada candidato que responde a pelo menos uma pergunta."
@@ -525,12 +584,14 @@
     "actions": [
       "Veja o preço atual por candidato e os preços menores das recargas maiores.",
       "Veja quantos primeiros candidatos são grátis.",
+      "Veja quantos créditos um candidato usa; o imposto é adicionado no checkout onde se aplica.",
       "Veja os créditos que você ganha ao indicar outra empresa.",
       "Recarregue os créditos de uma empresa."
     ],
     "tips": [
       "Os créditos não expiram.",
-      "Um candidato que não responde nenhuma questão não custa nada."
+      "Um candidato que não responde nenhuma questão não custa nada.",
+      "Créditos pagos não usados podem ser reembolsados em até 14 dias."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "testee em comparação",
     "text": "Comparações com fontes entre a testee e outras ferramentas de testes pré-admissão: como os testes são criados, quanto custam e quando cada uma é mais adequada.",
     "actions": [
-      "Abra uma comparação para lê-la."
+      "Abra uma comparação para lê-la.",
+      "Crie um teste para seus candidatos pelo cartão no final."
     ],
     "tips": [
       "Cada comparação mostra quando foi atualizada pela última vez."
@@ -574,8 +636,9 @@
     "text": "Como a testee se compara a outras ferramentas em uma questão: como os testes são criados, quanto custam e quando cada uma é mais adequada.",
     "actions": [
       "Leia a comparação e siga os links para as fontes.",
-      "Crie um teste para seus candidatos pelo cartão no final.",
-      "Volte para todas as comparações com o link acima do título."
+      "Vá até uma seção pela lista “Nesta página”, nas páginas mais longas.",
+      "Crie um teste para seus candidatos pelo botão no topo ou pelo cartão no final.",
+      "Volte para todas as comparações com a seta de voltar junto ao título."
     ],
     "tips": [
       "Preços e recursos mudam: a data abaixo do título mostra quando a página foi atualizada pela última vez."
@@ -585,6 +648,7 @@
     "title": "Guias de contratação",
     "text": "Guias práticos para gestores de contratação: triagem de candidatos, testes de habilidades e uso da IA na contratação de forma justa e legal.",
     "actions": [
+      "Pesquise nos guias.",
       "Abra um guia para lê-lo."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "Um guia prático para gestores de contratação sobre um tema.",
     "actions": [
       "Leia o guia e siga os links para as fontes e páginas relacionadas.",
-      "Crie um teste para seus candidatos pelo cartão no final.",
-      "Volte para todos os guias com o link acima do título."
+      "Vá até uma seção pela lista “Nesta página”, nas páginas mais longas.",
+      "Crie um teste para seus candidatos pelo botão no topo ou pelo cartão no final.",
+      "Volte para todos os guias com a seta de voltar junto ao título."
     ],
     "tips": [
-      "Temas jurídicos são resumos, não aconselhamento jurídico: confirme com sua própria assessoria jurídica."
+      "Temas jurídicos são resumos datados, não aconselhamento jurídico: confira as regras que se aplicam onde você contrata."
     ]
   },
   "faq": {
     "title": "Perguntas frequentes",
     "text": "Respostas a perguntas comuns sobre a testee: entrevistas, candidatos, preços e créditos, resultados, integrações, idiomas e seus dados.",
     "actions": [
+      "Vá até um grupo de perguntas com os botões no topo.",
       "Clique em uma pergunta para abrir a resposta."
     ],
     "tips": [
-      "Não encontrou sua resposta? Pergunte à Mira, a assistente de IA, no topo da página, ou escreva para nós pela página de contato.",
+      "Não encontrou sua resposta? Pergunte à Mira, a assistente de IA, ou escreva para nós, pelo cartão no fim da página.",
       "Os preços nas respostas são sempre os atuais."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "Quem faz a testee e por quê: entrevistas criadas a partir de uma descrição de vaga que qualquer equipe pode pagar, e prática gratuita para todos.",
     "actions": [
       "Leia por que a testee existe e como ela aborda a contratação.",
-      "Leia uma mensagem do fundador e abra o perfil dele no LinkedIn."
+      "Leia uma mensagem do fundador e abra o perfil dele no LinkedIn.",
+      "Crie um teste, ou pratique de graça, pelo cartão no final."
     ],
     "tips": [
       "Para escrever para a equipe, use a página de contato."
@@ -630,7 +697,8 @@
     "text": "Escreva para a equipe da testee com uma pergunta, uma ideia, uma proposta de parceria ou algo que não está funcionando.",
     "actions": [
       "Preencha seu nome, seu e-mail e sua mensagem, e envie.",
-      "Cole o ID da empresa, entrevista, candidato ou conta em questão, para encontrarmos na hora."
+      "Cole na sua mensagem o ID da empresa, entrevista, candidato ou conta em questão, para encontrarmos na hora.",
+      "Veja quem administra a testee: nome da empresa, número de registro, endereço e e-mail."
     ],
     "tips": [
       "O link “Copiar ID” fica abaixo do nome de uma empresa, de uma entrevista ou de um candidato; o ID da sua conta fica no menu da sua conta.",
@@ -641,7 +709,7 @@
     "title": "Documentação para desenvolvedores",
     "text": "Tudo o que você precisa para conectar sua própria plataforma ou seu agente de IA à testee, lido da própria API para estar sempre de acordo com ela.",
     "actions": [
-      "API: como se autenticar, a URL base e cada endpoint com parâmetros, corpo, resposta e erros.",
+      "API: como se autenticar, guias como os de limites de taxa e novas tentativas seguras, a URL base, cada endpoint com parâmetros, corpo, resposta e erros, a lista de erros e o changelog.",
       "Webhooks: os eventos que a testee envia para o seu endereço e o que cada um traz.",
       "SDK: como incorporar a entrevista no seu próprio site.",
       "MCP: como conectar um app de IA ou seu próprio agente, e as ferramentas que ele recebe.",
@@ -661,7 +729,8 @@
       "Escreva para nós por e-mail se algo for difícil de usar ou se você precisar em outro formato."
     ],
     "tips": [
-      "Vai fazer a entrevista de uma empresa e precisa de mais tempo? Peça tempo extra à empresa antes de começar; você não precisa dizer por quê."
+      "Vai fazer a entrevista de uma empresa e precisa de mais tempo? Peça tempo extra à empresa antes de começar; você não precisa dizer por quê.",
+      "Respondemos em até 14 dias; se você não ficar satisfeito, pode entrar em contato com a Autoridade Estoniana de Proteção ao Consumidor e Regulação Técnica (TTJA)."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "Veja como a testee protege os dados: login, criptografia, verificações de acesso, limites de requisições e backups.",
       "Veja o que a testee oferece para o RGPD, a Lei de IA da UE, o Reino Unido e os EUA, incluindo a lei de auditoria de viés da cidade de Nova York.",
       "Veja onde os dados ficam armazenados, quais suboperadores os tratam e por quanto tempo cada tipo de dado é guardado.",
-      "Abra os termos, a política de privacidade, o acordo de tratamento de dados e os documentos para empresas."
+      "Abra os termos, a política de privacidade, o acordo de tratamento de dados e os documentos para empresas.",
+      "Abra a declaração de acessibilidade."
     ],
     "tips": [
       "Para dúvidas sobre segurança, privacidade ou conformidade, ou para relatar um problema de segurança, escreva para o e-mail no fim da página."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Cancelar inscrição",
-    "text": "Pare de receber um tipo de e-mail da testee, indicado na página.",
+    "text": "Pare de receber um tipo de e-mail da testee, ou todos os e-mails de uma empresa, conforme indicado na página.",
     "actions": [
       "Leia quais e-mails o link interrompe.",
       "Confirme para cancelar a inscrição; só abrir o link não muda nada.",
-      "Depois, abra suas configurações de e-mail para alterar outros e-mails."
+      "Com a sessão iniciada, abra depois suas configurações de e-mail para alterar outros e-mails."
     ],
     "tips": [
-      "E-mails de serviço, como convites para a equipe, relatórios e problemas de pagamento, continuam sendo enviados."
+      "E-mails de serviço, como convites para a equipe, relatórios e problemas de pagamento, continuam sendo enviados; um link que interrompe os e-mails de uma empresa também interrompe os convites dela para você."
     ]
   }
 }

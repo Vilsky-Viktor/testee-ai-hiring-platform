@@ -5,13 +5,15 @@
     "actions": [
       "Paste the job description in the box at the top, or pick a ready template; adjust the topics, and the questions are written and checked for you.",
       "Invite candidates by email, from a file, with a share link in your job ad, or from your ATS, your own platform or an AI assistant.",
+      "See what candidates see: a timed interview in your brand, answered with a click or by voice.",
       "Read the reports: every candidate's answers, grades and integrity signals, shared by email or chat in a click.",
-      "Connect your platform, AI app and job boards, get updates in Slack, or ask Mira, the AI assistant, to do the work for you."
+      "Connect your ATS, your platform and AI apps, get updates in Slack, or ask Mira, the AI assistant, to do the work for you.",
+      "Compare testee with phone screens and subscriptions, and see how questions are checked and improved."
     ],
     "tips": [
-      "Creating interviews is free. You pay per candidate who answers, at the price under the title, in your currency, and your first candidates are free.",
+      "Creating interviews is free. You pay per candidate who answers, at the prices further down the page, in your currency, and your first candidates are free.",
       "Try your interview as a candidate before you invite anyone.",
-      "Watch the video at the top for a short tour; the FAQ and the guides are at the bottom of the page.",
+      "Watch the video from the button at the top for a short tour; the FAQ and the guides are at the bottom of the page.",
       "Download the report samples under the reports to see what real reports look like."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "Create a company with “new company”. Its name is unique across testee.",
       "Open a company to work on its interviews and candidates.",
-      "Remove a company you own, with all its interviews and invites."
+      "Remove a company you own, with all its interviews and invites; its credits are lost and aren't refunded.",
+      "Open a company's ⋮ menu for its team; owners and admins also top up and open its brand and billing there."
     ],
     "tips": [
-      "Your role shows beside each company you don't own: admins change things, viewers only look.",
+      "Your role shows beside each company you don't own: admins change things; viewers mostly look, and can also write notes, rate and report questions, try interviews and share reports.",
       "Credits belong to a company, so each one tops up on its own."
     ]
   },
@@ -36,22 +39,23 @@
       "Create a new company if you don't have one yet; the template opens there."
     ],
     "tips": [
-      "Once copied, the interview is the company's own: change its questions and settings as you like."
+      "Once copied, the interview is the company's own: change its questions and settings as you like.",
+      "Only owners and admins can use a template; in a company where you're a viewer, the button isn't there."
     ]
   },
   "interviews": {
     "title": "Interviews",
-    "text": "All of this company's interviews and its credits for candidates. Each interview is a timed test made from a job description.",
+    "text": "All of this company's interviews and its credits for candidates. Each interview is a timed test made from a job description or a template.",
     "actions": [
-      "Create an interview from a job description with “new interview”.",
-      "Open an interview to see its topics, candidates, notes and settings; a pinned note shows under its name.",
-      "Search the interviews by title.",
-      "Try an interview as a candidate, or delete it.",
-      "Top up credits from the balance, or turn on automatic top-ups on the Billing tab."
+      "Create an interview from a job description with “new interview” (owners and admins).",
+      "Open an interview to see its topics, candidates and notes, its settings (owners and admins) and, once the company has topped up, Discover; a pinned note shows under its name.",
+      "Search the interviews by title, or filter them by status: new, in process or hired.",
+      "Try an interview as a candidate from its ⋮ menu; owners and admins can also delete it there.",
+      "Top up credits from the balance, or turn on automatic top-ups on the Billing tab (owners and admins)."
     ],
     "tips": [
       "The balance turns amber when credits run low. Without credits, new invites aren't sent.",
-      "The company's menu leads to templates, your team, integrations, billing (owners and admins) and referrals."
+      "The company's menu leads to templates, your team, integrations, brand and billing (owners and admins), the action log (the owner) and referrals."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Start an interview from the job description. testee reads it, proposes the topics to test, and writes the questions once you approve them.",
     "actions": [
       "Paste the job description: the role, its requirements and nice-to-haves.",
+      "With nothing typed yet, “try an example” fills the box with a sample description.",
       "Choose the language to generate the interview in.",
-      "Generate, then review the proposed topics."
+      "Generate, then review the proposed topics.",
+      "Start from a template instead, or from a job in your ATS once one is connected.",
+      "Started from the home page, choose the company it's for, or create one; only companies you own or admin are listed."
     ],
     "tips": [
       "The more specific the description, the closer the questions fit the role.",
-      "Generating is free: you pay only for candidates who answer."
+      "Generating is free: you pay only for candidates who answer.",
+      "A company can hold only a few interviews with no candidates yet and start only a few a day; the limits are higher once it has topped up."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "Uncheck the topics you don't need.",
       "Edit a topic's name and subtopics with its pencil.",
+      "Add a topic of your own with “add a topic”: give it a name and at least 3 subtopics.",
       "Describe changes in your own words and apply them, for example “add a topic on team leadership”.",
-      "Approve and generate to write the questions."
+      "Approve and generate to write the questions.",
+      "Cancel to drop the interview; nothing generated so far is kept."
     ],
     "tips": [
       "With too many topics, uncheck some or describe how to merge them.",
-      "Questions are written only after you approve, so take a minute here."
+      "Questions are written only after you approve, so take a minute here.",
+      "A review left open for 14 days is cancelled, and its interview removed."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "testee is making your interview: first the topics, then the questions for each one. It takes a few minutes.",
     "actions": [
       "Leave this page if you like: generation keeps going.",
-      "Cancel the generation if you no longer need it; nothing made so far is kept."
+      "Cancel the generation if you no longer need it; nothing made so far is kept.",
+      "Once the topics are ready, this page shows them for your review; questions are written only after you approve.",
+      "If generation fails, select Retry, or Start over."
     ],
     "tips": [
       "You get a notification when the interview is ready.",
@@ -97,14 +110,14 @@
     "title": "Topics",
     "text": "What this interview tests: its topics, each with subtopics and its own pool of questions. Every candidate gets a random set from each pool.",
     "actions": [
-      "Open “manage questions” to go to a topic's questions: read them, disable some, like, dislike or report them.",
-      "Re-generate a weak question or mark a wrong answer on a topic's questions page.",
-      "Set how many questions each candidate gets from a topic; 0 leaves the topic out for new candidates. A candidate gets at most 60 questions over all topics: lower one topic to raise another.",
-      "Try the interview as a candidate, or delete it."
+      "Open a topic to go to its questions: read them, like, dislike or report them, and, as an owner or admin, disable some.",
+      "Re-generate a weak question or mark a wrong answer on a topic's questions page (owners and admins).",
+      "Set how many questions each candidate gets from a topic (owners and admins); 0 leaves the topic out for new candidates, but at least one topic must keep questions. A candidate gets at most 60 questions over all topics: lower one topic to raise another.",
+      "Try the interview as a candidate from the ⋮ menu; owners and admins can also delete it there."
     ],
     "tips": [
-      "AI-written questions can be wrong: skim each topic before you invite anyone.",
-      "Click the title to rename the interview.",
+      "AI-written questions can be wrong, even though a second AI checks a sample of answers: skim each topic before you invite anyone.",
+      "Click the title to rename the interview (owners and admins).",
       "The cards at the top add up what each candidate gets: the total questions, the average time per question and the whole interview's time. They follow every change."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Questions",
     "text": "One topic's questions with their answers, likes, dislikes and reports. Every candidate gets a random set from the active ones.",
     "actions": [
+      "See how many questions there are, how many are active or disabled and how many reports they have in the cards at the top; filter the list by All, Active, Disabled or Reported.",
       "Untick a question to disable it: no candidate gets it from now on. Tick it to make it active again (owners and admins).",
       "Like or dislike a question; click your choice again to take it back.",
       "Open a question's reports and add your own, once per question.",
-      "Re-generate a weak question or mark a wrong answer (owners and admins)."
+      "Re-generate a weak question or mark a wrong answer from its ⋮ menu (owners and admins); a marked answer is checked, then fixed or replaced if it's wrong."
     ],
     "tips": [
       "AI-written questions can be wrong: read them before you invite anyone.",
@@ -127,27 +141,31 @@
     "title": "Candidates",
     "text": "Everyone invited to this interview, with their status, progress and grade.",
     "actions": [
-      "Invite candidates: one at a time, a list, or a CSV or TXT file.",
+      "Invite candidates with “new candidate(s)” (owners and admins): one at a time, a list, or a CSV or TXT file.",
       "Search by email or name, filter by status, and sort by grade or date.",
-      "Open a candidate's report, or download or share the report on all candidates."
+      "Open a candidate's report, or download or share the report on all candidates.",
+      "Open a candidate's ⋮ menu to resend the invite, copy its link, revoke it or delete the candidate (owners and admins)."
     ],
     "tips": [
       "Each candidate who answers at least one question uses credits, including those from the link.",
-      "Reminders go to candidates automatically.",
-      "Inviting, choose whether they take it by click or by voice; a candidate in another mode than the interview's shows that mode's icon."
+      "A candidate who hasn't started gets one reminder 3 days after the invite. An invite not started within 30 days expires; resending it makes it work again.",
+      "Candidates take it in the interview's mode; to change one candidate's, use their page. A candidate in another mode than the interview's shows that mode's icon.",
+      "Inviting sets a candidate's credits aside; they're given back if the candidate finishes without answering.",
+      "Candidates from the shareable link, your ATS, the API or Discover show here too.",
+      "The report on all candidates is shared as a PDF by email, or as a short summary by WhatsApp, Telegram, Viber or LINE."
     ]
   },
   "interviewNotes": {
     "title": "Notes",
-    "text": "Your team's notes on this hiring round: what you agreed, whom to call next, or whom the interview is for. Everyone in your company sees them; candidates never do.",
+    "text": "Your team's notes on this hiring round: what you agreed, whom to call next, or whom the interview is for. Everyone in your company, viewers included, sees them and can write them; candidates never do.",
     "actions": [
       "Write a note in the box at the top and select Post, or press ⌘/Ctrl+Enter. Links in it become clickable.",
-      "Edit or delete your own notes with the buttons on their row; owners and admins can delete anyone's.",
-      "Pin a note with the bookmark (owners and admins): it shows first here, and under the interview's name on its page and in the interviews list."
+      "Edit or delete your own notes from the ⋮ menu on their row; owners and admins can delete anyone's.",
+      "Pin a note with “pin to the top” in its ⋮ menu (owners and admins): one note at a time shows first here, and under the interview's name on its page and in the interviews list."
     ],
     "tips": [
       "Working for clients? Pin a note like “For Acme, Backend Developer” to see at a glance whom each interview is for.",
-      "A deleted note is gone for good. The action log records who wrote, changed or deleted a note, never its text.",
+      "A deleted note is gone for good. The action log records who wrote, changed, deleted or pinned a note, never its text.",
       "The rest of your team hears of each new note: in the bell, in the daily activity digest and, with Slack connected, in your channel."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Settings",
-    "text": "How this interview runs for every candidate.",
+    "text": "How this interview runs for every candidate. Only owners and admins see this tab.",
     "actions": [
-      "Turn on the shareable link for a job ad: anyone with it can take the interview.",
+      "Turn on the shareable link for a job ad: anyone with it can take the interview, and each person who answers through it uses credits like an invited candidate.",
       "Choose the interview mode: click mode, where candidates tap their answers, or voice mode, where Mira, an AI interviewer, reads each question aloud and candidates answer by voice or tap. Voice mode works in every language; how well it reads and hears varies by language, and the link under the setting opens the guide with the quality in each.",
       "Set the average time per question, in seconds: each question gets its own time from its length and any code it shows, and the interview's total time stays the same.",
       "Set the passing grade: candidates who reach it pass.",
@@ -175,22 +193,26 @@
       "Keep the interview's questions out of testee's shared question bank; questions already reused in other interviews stay there."
     ],
     "tips": [
-      "Each setting saves as soon as you leave its field.",
+      "Number fields save as soon as you leave them; switches and the mode save at once.",
       "Candidates never see their scores; only your team does.",
-      "For one candidate who needs more time, add extra time on their page."
+      "For one candidate who needs more time, add extra time on their page.",
+      "A new mode applies to candidates who haven't started, except those given their own on their page.",
+      "The average time is 10 to 600 seconds; the passing grade is 1 to 100%."
     ]
   },
   "tryInterview": {
     "title": "Try as a candidate",
     "text": "A preview of this interview just as candidates see it: the intro, then the timed questions. It's free.",
     "actions": [
-      "Start the preview and answer as a candidate would.",
+      "Tick the pledge, select “accept & start”, and answer as a candidate would.",
       "Check the timing, the wording and the answers before you invite anyone."
     ],
     "tips": [
       "Stay on the page while you answer: for candidates, leaving the page, copying and answering too fast are recorded.",
       "A voice mode interview first asks for your microphone and sound: allow them, and Mira reads each question aloud while you answer by voice or tap.",
-      "Each company has a number of previews a day, fewer in voice mode; once they're used up, starting one says when you can try again."
+      "Each company has a number of previews a day, fewer in voice mode; once they're used up, starting one says when you can try again.",
+      "A preview stays out of the candidates list and the questions' statistics.",
+      "Viewers can try an interview too."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Read each answer, with integrity flags: page leaves, copy attempts and fast answers.",
       "Once they finish, see any unusual patterns in their answers and times, and questions they got right to ask about in a live interview.",
-      "Download the report as a PDF, or share it by email.",
-      "Give extra time before they start, for example for a disability.",
+      "Download the report as a PDF, or share it: the PDF by email, or a short summary by WhatsApp, Telegram, Viber or LINE. Viewers can email it only to the company's members.",
+      "Give +25%, +50% or +100% extra time before they start, for example for a disability.",
       "Choose whether they take it by click or by voice, whatever the interview's mode, until they start.",
       "Add or edit the candidate's name.",
-      "Copy their invite link to send it yourself, if the email didn't arrive; it's there until they finish.",
+      "Copy their invite link to send it yourself, if the email didn't arrive; it's there until they finish or the invite expires.",
       "Resend or revoke the invite, or delete the candidate with their results."
     ],
     "tips": [
       "The score supports your decision; it doesn't make it. If the candidate asks, have a person review their result.",
       "A check mark under the grade shows the candidate confirmed, before starting, that they'd answer on their own, without AI tools or other people.",
-      "A grade is the percentage of points earned: each question is worth one point, and a \"pick multiple options\" question earns part of it for each right option ticked, and nothing if a wrong one is ticked."
+      "A grade is the percentage of points earned: each question is worth one point, and a \"pick multiple options\" question earns part of it for each right option ticked, and nothing if a wrong one is ticked.",
+      "Extra time, the candidate's mode and name, the invite link, resending, revoking and deleting are for owners and admins."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Search by role or topic, and filter by level and language.",
       "Open a template to see its topics and how many questions each has.",
-      "Use a template to start an interview from it."
+      "See on each row its topics, questions and minutes, and how many of your interviews used it.",
+      "Use a template to start an interview from it (owners and admins)."
     ],
     "tips": [
       "For a closer fit, create an interview from your own job description instead.",
-      "Once copied, the interview is yours: change its questions and settings as you like."
+      "Once copied, the interview is yours: change its questions and settings as you like.",
+      "The list starts with your language and English; choose all languages to see the rest."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "A ready-made interview: its topics, their subtopics and how many questions each topic has.",
     "actions": [
       "Check that the topics match the role you're hiring for.",
-      "Use the template to copy it into this company as a new interview."
+      "Use the template to copy it into this company as a new interview (owners and admins)."
     ],
     "tips": [
       "Copying is free; candidates who answer use credits as usual.",
-      "If the topics don't fit, create an interview from your job description instead."
+      "If the topics don't fit, create an interview from your job description instead.",
+      "Its questions stay hidden until you use it."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "Add a member by email, as an admin or a viewer: they're emailed a link to join.",
       "Change a member's role between admin and viewer.",
+      "Hand the company to an admin who has joined, with “make owner” in their menu: you become an admin.",
       "Copy a pending invite's link, or remove a member or an invite."
     ],
     "tips": [
-      "Admins create and change interviews, invite candidates and top up. Viewers see interviews and results and share reports, but change nothing.",
-      "Removing a member whose card pays for automatic top-ups stops those top-ups."
+      "Admins create and change interviews, invite candidates and top up. Viewers see interviews and results, share reports and write notes, but change nothing else.",
+      "Removing a member whose card pays for automatic top-ups, or making them a viewer, stops those top-ups.",
+      "Only the owner adds, changes and removes members; everyone in the company sees the team."
     ]
   },
   "actions": {
     "title": "Action log",
-    "text": "Everything the company's members did, newest first: what they did and to what, who did it, when, and whether the assistant, an AI app, the API or an ATS did it for them. Only the owner sees it.",
+    "text": "Everything the company's members did, newest first: what they did and to what, who did it, when, and whether the AI assistant, an AI app, the API or an ATS did it for them. Only the owner sees it.",
     "actions": [
       "Show one member's actions, or one kind: interviews, candidates, team, company, billing or integrations.",
       "Show the actions between two days.",
-      "Download a bias-audit export: a CSV file of every candidate who finished, for all interviews or one and, if you like, between two days, with their grade, the passing grade, whether they passed and whether they scored above the interview's median, keyed by email."
+      "Download the log as a CSV file from the ⋮ menu: all time, a recent period or between two days. Up to 20 downloads a company a day.",
+      "Download a bias-audit export: a CSV file of every candidate who finished with a grade, for all interviews or one and, if you like, between two days, with their grade, the passing grade, whether they passed and whether they scored above the interview's median, keyed by email."
     ],
     "tips": [
       "Actions are kept for 12 months.",
@@ -271,12 +300,12 @@
     "text": "Connect testee to the tools your team already uses. Each integration opens its own page with setup steps.",
     "actions": [
       "Slack: get your company's notifications in a channel.",
-      "API: keys and web hooks to connect your own platform.",
+      "API: keys, web hooks and the SDK to connect your own platform.",
       "AI apps: use testee from Claude, ChatGPT and other AI apps.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR): candidates you move to a stage get the interview, and their results go back."
     ],
     "tips": [
-      "Everyone in the company sees the integrations; owners and admins change them."
+      "Everyone in the company sees the integrations; owners and admins change them. AI apps are each person's own: anyone can connect or disconnect theirs."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "Connect your ATS by following its instructions.",
       "Link a job: choose the job, its stage and an interview, or make a new interview from the job's text.",
+      "See how many candidates each linked job invited, has waiting or couldn't invite.",
       "Invite again candidates who weren't invited, for example when credits ran out.",
+      "Reconnect when the ATS stops working: candidates aren't invited until you do.",
       "Unlink a job, or disconnect the ATS."
     ],
     "tips": [
       "Add a stage just for testee, like “testee skills test”, so it never mixes with your other tools.",
-      "testee never moves or rejects anyone in your ATS."
+      "testee never moves or rejects anyone in your ATS.",
+      "If the member who connected the ATS leaves or becomes a viewer, candidates stop being invited."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "Add testee to Slack and pick the channel, for example #hiring.",
       "Choose which notifications go there: a candidate finishing, an invite that wasn't delivered, an interview being ready and more.",
+      "Send a test message to the channel, and reconnect if Slack stops taking messages.",
       "Disconnect to stop them and remove testee's app from your Slack."
     ],
     "tips": [
       "testee can only post to that channel; it can't read your Slack.",
-      "Everyone still sees every notification in the bell."
+      "Everyone still sees every notification in the bell.",
+      "If the member who connected Slack leaves or becomes a viewer, it stops until an owner or admin reconnects it."
     ]
   },
   "api": {
     "title": "API",
     "text": "Connect your own platform, such as your careers site, to testee.",
     "actions": [
-      "Create an API key and tick only what it needs: reading or creating interviews; reading, inviting, changing or removing candidates; reading your credits; or use with AI agents (MCP). It acts as you.",
+      "Create an API key and tick only what it needs: reading or creating interviews; reading, inviting, changing or removing candidates; reading or adding notes; reading your credits; or use with AI agents (MCP). It acts for the company as itself, and keeps working when the person who made it leaves.",
       "Open a key to change what it may do, each change saved at once, and the IP addresses it may be used from.",
+      "Rename a key, create a replacement when it's about to expire, and, as the owner, see what it did.",
       "Add a web hook: testee tells your HTTPS address, signed, when a candidate starts, finishes (with their results), isn't reached, expires or is removed, and when an interview is ready.",
       "Send a web hook a test event, and see what each send got in its delivery log.",
+      "Roll a web hook's secret: for 24 hours both secrets sign each request.",
       "On the SDK tab, list the sites that may show your interviews with the SDK, and allow localhost while you test.",
       "Delete the keys and web hooks you no longer use.",
       "Open the developer docs for every endpoint and event, and the SDK."
@@ -321,7 +357,8 @@
     "tips": [
       "A new key and a web hook's secret show only once: copy them right away.",
       "Choose an expiry for each key: a leaked key that never expires stays usable.",
-      "You can tick or untick a key's permissions later; give each key only what its platform needs."
+      "You can tick or untick a key's permissions later; give each key only what its platform needs.",
+      "A web hook that doesn't answer for 3 days is paused; a test event that goes through starts it again."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Copy the server address and add it to Claude, Claude Code or ChatGPT, following the steps; the developer docs cover other apps and your own agents.",
       "Allow the app on the testee page that opens.",
-      "Disconnect an app you no longer use."
+      "Once an app is connected, copy an example of what to ask it.",
+      "Disconnect an app you no longer use.",
+      "Owners and admins allow or stop AI apps in this company: while they're off, apps can't read or change anything in it."
     ],
     "tips": [
-      "An app acts as you, in every company you're in. Most apps ask you before they change anything.",
+      "An app acts as you, in every company you're in that allows AI apps. Most apps ask you before they change anything.",
       "It can't see your password or API keys, and can't delete your account or a company."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Referrals",
     "text": "Invite other companies to testee with this company's link, and you both earn credits.",
     "actions": [
-      "Copy or share your referral link.",
-      "See every reward this company has received."
+      "Copy your referral link to share it.",
+      "See the companies that came through your link and topped up, the credits each one gave you, and how many rewards are left this year."
     ],
     "tips": [
       "You both get credits when the company you invited makes its first top-up, of any amount.",
-      "Credits go to this company and never expire."
+      "Credits go to this company and never expire.",
+      "Each side gets 1,000 credits. Your company earns this up to 25 times a year; past that, the company you invited still gets its credits.",
+      "A top-up that's refunded in full or charged back takes both rewards back."
     ]
   },
   "brand": {
     "title": "Brand",
-    "text": "Your logo and colors on your candidates' invitation, interview and finished page.",
+    "text": "Your logo, colors, fonts and rounding on your candidates' invitation, interview and finished page. The logo also shows in their emails.",
     "actions": [
-      "Set or change the logo.",
+      "Set, change or remove the logo.",
       "Pick the fonts for titles and for text, and how round the cards and buttons are.",
-      "Pick the colors of each group, and see them in the preview.",
-      "Save them, or go back to testee's colors."
+      "Pick the colors of each group, one set for the light theme and one for the dark, and see them in the preview.",
+      "Save them, undo unsaved changes with “reset”, or go back to testee's colors, fonts and rounding with “reset to testee defaults”."
     ],
     "tips": [
       "Colors whose text would be hard to read can't be saved, so every candidate can read the questions.",
-      "Members trying an interview see it in your colors too."
+      "Members trying an interview see it in your colors too.",
+      "Only owners and admins see this page."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Top up, or set up automatic top-ups.",
       "See the candidates whose credits are reserved.",
-      "Open the invoice of any top-up."
+      "Open the invoice of any top-up.",
+      "Narrow the history to top-ups, charges or refunds, or download it as a CSV file. Up to 20 downloads a company a day."
     ],
     "tips": [
       "A candidate's credits are reserved when they're invited, charged once they answer, and given back if they don't.",
-      "Only owners and admins see this page."
+      "Only owners and admins see this page.",
+      "You can ask for a refund of credits you bought in the last 14 days and haven't spent, through Paddle or by writing to us."
     ]
   },
   "topUp": {
     "title": "Top up",
     "text": "Buy credits for any company you belong to as an owner or admin.",
     "actions": [
-      "Pick a company and a top-up: larger ones cost less per candidate.",
+      "Pick a company, then type how many candidates to top up, from 10 to 1,000, or pick a price step: larger top-ups cost less per candidate.",
+      "Change the company's currency at the top of the page: its top-ups, automatic ones too, are priced and charged in it from then on.",
       "Pay in Paddle's checkout; the credits arrive within seconds.",
-      "Open pricing to compare the top-ups."
+      "Open pricing to compare the top-ups.",
+      "Set up automatic top-up: choose an amount and a balance, and tick the agreement. Your card is saved in Paddle's checkout and charged each time the balance falls under that level."
     ],
     "tips": [
       "A candidate costs 500 credits: reserved when they're invited, charged once they answer, and given back if they don't.",
-      "Credits never expire. Each top-up's invoice is on the company's billing tab."
+      "Credits never expire. Each top-up's invoice is on the company's billing tab.",
+      "Prices don't include VAT or sales tax: where it applies, it's added at checkout.",
+      "You can ask for a refund of credits you bought in the last 14 days and haven't spent, through Paddle or by writing to us.",
+      "Owners and admins set up automatic top-up. Only the person whose card pays can change it or update the card; any owner or admin can turn it off at once.",
+      "A declined card is tried again after 1, 3 and 7 days, then automatic top-up pauses until the card is updated. A card that can't pay, such as an expired one, pauses it at once."
     ]
   },
   "settings": {
     "title": "Settings",
-    "text": "Your own account: the language testee speaks to you, the emails you get, and your data.",
+    "text": "Your own account: the language testee speaks to you, your currency, the emails you get, and your data.",
     "actions": [
-      "Choose the language of the site, the help chat and your emails.",
+      "Choose the language of the site, the AI assistant's replies and your emails; new interviews start in it too.",
+      "Choose the currency prices show in, wherever you are. A company's top-ups are in the company's own currency, set on its top-up page.",
       "Choose which optional emails you get; service emails, such as invites, reports and billing problems, always go out.",
       "Turn Open to offers on or off: while it's on, companies hiring on testee for the subjects you practised see your name, LinkedIn profile and practice results, and may invite you.",
-      "Download everything testee holds about you, or delete your account."
+      "Download everything testee holds about you, or delete your account.",
+      "Copy your account ID to quote when you write to us."
     ],
     "tips": [
-      "Deleting your account deletes the companies only you are in. A company others have joined needs another owner first."
+      "Deleting your account deletes the companies only you are in, and their credits aren't refunded. A company others have joined needs another owner first, or must be deleted.",
+      "Open to offers needs your LinkedIn profile, and turns itself off a year after you last turned it on."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Signed in with another email? Sign out and sign in with the invited one; the invite only works for it.",
-      "Your role, admin or viewer, is the one the person who invited you chose."
+      "Your role, admin or viewer, is the one the person who invited you chose.",
+      "An invite that was already used, or that the owner removed, no longer works."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Sign in, if you aren't yet, to see which app is asking.",
       "Read what the app can and can't do with your account.",
+      "Turn off “allow changes” to let the app only read.",
       "Allow the app, or deny it; either way you go back to the app."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Follow the news in your feed reader with the RSS link at the top."
     ],
     "tips": [
-      "News shows in your notifications; turn on product updates in your settings to get the major ones by email too."
+      "News shows in your notifications; the major ones also come by email while “product updates and news” is on in your settings."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Until you choose languages, the list shows your site language and English.",
-      "Practice is private: no company sees your results.",
-      "Signed in, a check after a title marks a practice you've started, and a double check one you've finished; hover it to see how many topics you've completed."
+      "Practice is private: no company sees your results unless you turn on Open to offers.",
+      "Signed in, a check after a title marks a practice you've started, and a double check one you've finished; hover the check to see how many topics you've completed."
     ]
   },
   "practiceTest": {
     "title": "Practice interview",
     "text": "One free practice interview: its level, language, length and the topics it covers.",
     "actions": [
+      "Choose the time per question before you start: the standard time, double, or no time limit.",
       "Start a practice round; sign in first if you aren't yet.",
       "See how far your latest round got on each topic.",
-      "Open your past rounds with the history button beside “start practice”.",
+      "Signed in, open your past rounds with “your rounds” beside “start practice”.",
       "Hiring for this role? Create an interview from it for your own candidates."
     ],
     "tips": [
-      "Each round is timed, like a real interview; once done, you see your grade and every right answer.",
-      "Practise as often as you like: it's free."
+      "Each round is timed unless you choose no time limit; once done, you see your grade and every right answer.",
+      "Practise as often as you like, within an hourly limit on new rounds: it's free."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "Whatever you picked when a question's time runs out still counts; a question left with nothing picked, or never reached, counts as wrong.",
       "Hiring for this role? Create an interview from it for your own candidates.",
-      "Looking for a job? Turn on Open to offers to let companies hiring for these subjects see your name, LinkedIn profile and practice results."
+      "Looking for a job? After a finished round, enter your LinkedIn profile and turn on Open to offers to let companies hiring for these subjects see your name, profile and latest practice results and invite you; it stays on for a year unless you turn it off."
     ]
   },
   "features": {
     "title": "Features",
     "text": "Everything testee does for a company, from a job description to a hire: creating interviews, inviting candidates, what candidates see, reports, integrations, compliance and pricing.",
     "actions": [
+      "Jump to the box at the end of the page with “create an interview” at the top, or open pricing.",
       "Jump to a group with the tabs at the top: create, invite, interview, decide, connect, trust and pricing.",
-      "See each feature beside a picture of the real app.",
+      "See the main features beside a picture of the real app, and the others as cards under them.",
       "Paste a job description in the box at the end of the page to create an interview.",
-      "Open the pricing page, the developer docs or the trust page from their groups."
+      "Open the pricing page, the developer docs or the trust page from their groups.",
+      "Ask Mira, or open the FAQ or the guides, at the end of the page."
     ],
     "tips": [
       "Every feature is included: you pay only for each candidate who answers at least one question."
@@ -512,8 +570,9 @@
     "actions": [
       "Scroll down the line: each step shows what happens, its options and a picture of the real app.",
       "See the ways candidates can come in and the ways reports can go out, under the invite and share steps.",
-      "Create an interview from the button at the top, or open all features.",
-      "Paste a job description in the box at the end of the page to start."
+      "Jump to the start box with “create an interview” at the top, or open all features.",
+      "Paste a job description in the box at the end of the page to start.",
+      "Ask Mira, or open the FAQ or the guides, at the end of the page."
     ],
     "tips": [
       "Creating interviews is free: you pay only for each candidate who answers at least one question."
@@ -525,12 +584,14 @@
     "actions": [
       "See today's price per candidate, and the lower prices for larger top-ups.",
       "See how many first candidates are free.",
+      "See how many credits a candidate takes; tax is added at checkout where it applies.",
       "See the credits you earn by inviting another company.",
       "Top up a company's credits."
     ],
     "tips": [
       "Credits never expire.",
-      "A candidate who doesn't answer any question costs nothing."
+      "A candidate who doesn't answer any question costs nothing.",
+      "Unused paid credits can be refunded within 14 days."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "Compare testee",
     "text": "Sourced comparisons of testee with other pre-employment testing tools: how tests are made, what they cost and when each fits better.",
     "actions": [
-      "Open a comparison to read it."
+      "Open a comparison to read it.",
+      "Create a test for your candidates from the card at the end."
     ],
     "tips": [
       "Each comparison shows when it was last updated."
@@ -574,8 +636,9 @@
     "text": "How testee compares with other tools on one question: how tests are made, what they cost and when each one fits better.",
     "actions": [
       "Read the comparison and follow its links to the sources.",
-      "Create a test for your candidates from the card at the end.",
-      "Go back to every comparison with the link above the title."
+      "Jump to a section from the “on this page” list, on longer pages.",
+      "Create a test for your candidates from the button at the top or the card at the end.",
+      "Go back to every comparison with the back arrow by the title."
     ],
     "tips": [
       "Prices and features change: the date under the title shows when the page was last updated."
@@ -585,6 +648,7 @@
     "title": "Guides for hiring",
     "text": "Practical guides for hiring managers: screening applicants, skills tests, and using AI in hiring fairly and legally.",
     "actions": [
+      "Search the guides.",
       "Open a guide to read it."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "A practical guide for hiring managers on one topic.",
     "actions": [
       "Read the guide and follow its links to sources and related pages.",
-      "Create a test for your candidates from the card at the end.",
-      "Go back to every guide with the link above the title."
+      "Jump to a section from the “on this page” list, on longer pages.",
+      "Create a test for your candidates from the button at the top or the card at the end.",
+      "Go back to every guide with the back arrow by the title."
     ],
     "tips": [
-      "Legal topics are summaries, not legal advice: check with your own counsel."
+      "Legal topics are dated summaries, not legal advice: check the rules that apply where you hire."
     ]
   },
   "faq": {
     "title": "Frequently asked questions",
     "text": "Answers to common questions about testee: interviews, candidates, prices and credits, results, integrations, languages and your data.",
     "actions": [
+      "Jump to a group of questions with the buttons at the top.",
       "Click a question to open its answer."
     ],
     "tips": [
-      "Didn't find your answer? Ask Mira, the AI assistant, at the top of the page, or write to us from the contact page.",
+      "Didn't find your answer? Ask Mira, the AI assistant, or write to us, from the card at the end of the page.",
       "Prices in the answers are always today's."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "Who makes testee and why: interviews made from a job description that any team can afford, and free practice for anyone.",
     "actions": [
       "Read why testee exists and how it approaches hiring.",
-      "Read a word from the founder, and open his LinkedIn profile."
+      "Read a word from the founder, and open his LinkedIn profile.",
+      "Create a test, or practise for free, from the card at the end."
     ],
     "tips": [
       "To write to the team, use the contact page."
@@ -630,7 +697,8 @@
     "text": "Write to the testee team with a question, an idea, a partnership offer or something that isn't working.",
     "actions": [
       "Fill in your name, your email and your message, then send it.",
-      "Paste the ID of the company, interview, candidate or account it's about, so we find it at once."
+      "Paste the ID of the company, interview, candidate or account it's about into your message, so we find it at once.",
+      "See who runs testee: company name, registry code, address and email."
     ],
     "tips": [
       "The “copy id” link is under a company's, an interview's or a candidate's name; your account's ID is in your account menu.",
@@ -641,7 +709,7 @@
     "title": "Developer docs",
     "text": "Everything you need to connect your own platform or AI agent to testee, read from the API itself so it always matches it.",
     "actions": [
-      "API: how to sign in, the base URL and every endpoint with its parameters, body, response and errors.",
+      "API: how to sign in, guides such as rate limits and safe retries, the base URL, every endpoint with its parameters, body, response and errors, the error list and the changelog.",
       "Web hooks: the events testee sends to your address and what each one carries.",
       "SDK: how to embed the interview on your own site.",
       "MCP: how to connect an AI app or your own agent, and the tools it gets.",
@@ -661,7 +729,8 @@
       "Write to us by email if something is hard to use or you need it in another form."
     ],
     "tips": [
-      "Taking a company's interview and need more time? Ask the company for extra time before you start; you don't have to say why."
+      "Taking a company's interview and need more time? Ask the company for extra time before you start; you don't have to say why.",
+      "We answer within 14 days; if you aren't satisfied, you can contact the Estonian Consumer Protection and Technical Regulatory Authority (TTJA)."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "See how testee protects data: sign-in, encryption, access checks, rate limits and backups.",
       "See what testee provides for the GDPR, the EU AI Act, the UK and the US, New York City's bias-audit law included.",
       "See where data is stored, the sub-processors that handle it and how long each kind of data is kept.",
-      "Open the terms, the privacy policy, the data processing agreement and the documents for companies."
+      "Open the terms, the privacy policy, the data processing agreement and the documents for companies.",
+      "Open the accessibility statement."
     ],
     "tips": [
       "For a question about security, privacy or compliance, or to report a security problem, write to the email at the end of the page."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Unsubscribe",
-    "text": "Stop one kind of email from testee, as named on the page.",
+    "text": "Stop one kind of email from testee, or every email from one company, as named on the page.",
     "actions": [
       "Read which emails the link stops.",
       "Confirm to unsubscribe; opening the link alone changes nothing.",
-      "Open your email settings afterwards to change other emails."
+      "Signed in, open your email settings afterwards to change other emails."
     ],
     "tips": [
-      "Service emails, such as team invites, reports and billing problems, still go out."
+      "Service emails, such as team invites, reports and billing problems, still go out; a link that stops a company's emails also stops its invites to you."
     ]
   }
 }

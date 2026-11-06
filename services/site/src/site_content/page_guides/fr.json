@@ -5,13 +5,15 @@
     "actions": [
       "Collez la description du poste dans le champ en haut, ou choisissez un modèle prêt à l'emploi ; ajustez les thèmes, et les questions sont rédigées et vérifiées pour vous.",
       "Invitez des candidats par e-mail, à partir d'un fichier, avec un lien à partager dans votre annonce, ou depuis votre ATS, votre propre plateforme ou un assistant IA.",
+      "Voyez ce que voient les candidats : un entretien chronométré à votre image, avec des réponses par clic ou à la voix.",
       "Lisez les rapports : les réponses, les notes et les alertes d'intégrité de chaque candidat, partagées par e-mail ou par chat en un clic.",
-      "Connectez votre plateforme, votre app IA et les sites d'emploi, recevez les nouvelles dans Slack, ou demandez à Mira, l'assistante IA, de faire le travail pour vous."
+      "Connectez votre ATS, votre plateforme et vos apps d'IA, recevez les nouvelles dans Slack, ou demandez à Mira, l'assistante IA, de faire le travail pour vous.",
+      "Comparez testee aux entretiens téléphoniques et aux abonnements, et voyez comment les questions sont vérifiées et améliorées."
     ],
     "tips": [
-      "Créer des entretiens est gratuit. Vous payez par candidat qui répond, au prix indiqué sous le titre et dans votre devise, et vos premiers candidats sont gratuits.",
+      "Créer des entretiens est gratuit. Vous payez par candidat qui répond, aux prix indiqués plus bas sur la page et dans votre devise, et vos premiers candidats sont gratuits.",
       "Essayez votre entretien en tant que candidat avant d'inviter qui que ce soit.",
-      "Regardez la vidéo en haut pour une courte visite ; la FAQ et les guides sont en bas de la page.",
+      "Regardez la vidéo depuis le bouton en haut pour une courte visite ; la FAQ et les guides sont en bas de la page.",
       "Téléchargez les exemples de rapports sous les rapports pour voir à quoi ressemblent de vrais rapports."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "Créez une entreprise avec « Nouvelle entreprise ». Son nom est unique dans testee.",
       "Ouvrez une entreprise pour travailler sur ses entretiens et ses candidats.",
-      "Supprimez une entreprise dont vous êtes propriétaire, avec tous ses entretiens et invitations."
+      "Supprimez une entreprise dont vous êtes propriétaire, avec tous ses entretiens et invitations ; ses crédits sont perdus et ne sont pas remboursés.",
+      "Ouvrez le menu ⋮ d'une entreprise pour accéder à son équipe ; les propriétaires et les admins y rechargent aussi des crédits et y ouvrent sa marque et sa facturation."
     ],
     "tips": [
-      "Votre rôle s'affiche à côté de chaque entreprise dont vous n'êtes pas propriétaire : les admins modifient, les lecteurs consultent seulement.",
+      "Votre rôle s'affiche à côté de chaque entreprise dont vous n'êtes pas propriétaire : les admins modifient ; les lecteurs consultent surtout, et peuvent aussi écrire des commentaires, noter et signaler des questions, essayer des entretiens et partager des rapports.",
       "Les crédits appartiennent à une entreprise : chacune se recharge séparément."
     ]
   },
@@ -36,22 +39,23 @@
       "Créez une nouvelle entreprise si vous n'en avez pas encore ; le modèle s'y ouvre."
     ],
     "tips": [
-      "Une fois copié, l'entretien appartient à l'entreprise : modifiez ses questions et ses paramètres comme vous le souhaitez."
+      "Une fois copié, l'entretien appartient à l'entreprise : modifiez ses questions et ses paramètres comme vous le souhaitez.",
+      "Seuls les propriétaires et les admins peuvent utiliser un modèle ; dans une entreprise où vous êtes lecteur, le bouton n'apparaît pas."
     ]
   },
   "interviews": {
     "title": "Entretiens",
-    "text": "Tous les entretiens de cette entreprise et ses crédits pour les candidats. Chaque entretien est un test chronométré créé à partir d'une description de poste.",
+    "text": "Tous les entretiens de cette entreprise et ses crédits pour les candidats. Chaque entretien est un test chronométré créé à partir d'une description de poste ou d'un modèle.",
     "actions": [
-      "Créez un entretien à partir d'une description de poste avec « Nouvel entretien ».",
-      "Ouvrez un entretien pour voir ses thèmes, ses candidats, ses commentaires et ses paramètres ; un commentaire épinglé s'affiche sous son nom.",
-      "Recherchez des entretiens par leur titre.",
-      "Essayez un entretien en tant que candidat, ou supprimez-le.",
-      "Rechargez des crédits depuis le solde, ou activez la recharge automatique dans l'onglet Facturation."
+      "Créez un entretien à partir d'une description de poste avec « Nouvel entretien » (propriétaires et admins).",
+      "Ouvrez un entretien pour voir ses thèmes, ses candidats et ses commentaires, ses paramètres (propriétaires et admins) et, une fois que l'entreprise a rechargé des crédits, Découvrir ; un commentaire épinglé s'affiche sous son nom.",
+      "Recherchez des entretiens par leur titre, ou filtrez-les par statut : nouveau, en cours ou recruté.",
+      "Essayez un entretien en tant que candidat depuis son menu ⋮ ; les propriétaires et les admins peuvent aussi le supprimer à cet endroit.",
+      "Rechargez des crédits depuis le solde, ou activez la recharge automatique dans l'onglet Facturation (propriétaires et admins)."
     ],
     "tips": [
       "Le solde passe à l'orange quand les crédits s'épuisent. Sans crédits, les nouvelles invitations ne sont pas envoyées.",
-      "Le menu de l'entreprise mène aux modèles, à votre équipe, aux intégrations, à la facturation (propriétaires et administrateurs) et au parrainage."
+      "Le menu de l'entreprise mène aux modèles, à votre équipe, aux intégrations, à la marque et à la facturation (propriétaires et admins), au journal des actions (le propriétaire) et au parrainage."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Lancez un entretien à partir de la description du poste. testee la lit, propose les thèmes à évaluer et rédige les questions une fois que vous les validez.",
     "actions": [
       "Collez la description du poste : le rôle, ses exigences et les atouts appréciés.",
+      "Tant que rien n'est saisi, « Essayer un exemple » remplit le champ avec une description type.",
       "Choisissez la langue dans laquelle générer l'entretien.",
-      "Lancez la génération, puis relisez les thèmes proposés."
+      "Lancez la génération, puis relisez les thèmes proposés.",
+      "Partez plutôt d'un modèle, ou d'un poste de votre ATS une fois celui-ci connecté.",
+      "Si vous avez commencé depuis la page d'accueil, choisissez l'entreprise concernée ou créez-en une ; seules les entreprises dont vous êtes propriétaire ou admin sont listées."
     ],
     "tips": [
       "Plus la description est précise, plus les questions correspondent au poste.",
-      "La génération est gratuite : vous ne payez que pour les candidats qui répondent."
+      "La génération est gratuite : vous ne payez que pour les candidats qui répondent.",
+      "Une entreprise ne peut avoir que quelques entretiens encore sans candidats et n'en lancer que quelques-uns par jour ; les limites sont plus élevées une fois qu'elle a rechargé des crédits."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "Décochez les thèmes dont vous n'avez pas besoin.",
       "Modifiez le nom et les sous-thèmes d'un thème avec son crayon.",
+      "Ajoutez votre propre thème avec « Ajouter un thème » : donnez-lui un nom et au moins 3 sous-thèmes.",
       "Décrivez les changements avec vos propres mots et appliquez-les, par exemple « ajouter un thème sur le management d'équipe ».",
-      "Validez et lancez la génération pour faire rédiger les questions."
+      "Validez et lancez la génération pour faire rédiger les questions.",
+      "Annulez pour abandonner l'entretien ; rien de ce qui a été généré jusque-là n'est conservé."
     ],
     "tips": [
       "S'il y a trop de thèmes, décochez-en quelques-uns ou décrivez comment les fusionner.",
-      "Les questions ne sont rédigées qu'après votre validation : prenez une minute ici."
+      "Les questions ne sont rédigées qu'après votre validation : prenez une minute ici.",
+      "Une vérification laissée ouverte pendant 14 jours est annulée, et son entretien supprimé."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "testee crée votre entretien : d'abord les thèmes, puis les questions de chacun. Cela prend quelques minutes.",
     "actions": [
       "Vous pouvez quitter cette page : la génération continue.",
-      "Annulez la génération si vous n'en avez plus besoin ; rien de ce qui a été créé n'est conservé."
+      "Annulez la génération si vous n'en avez plus besoin ; rien de ce qui a été créé n'est conservé.",
+      "Une fois les thèmes prêts, cette page vous les montre pour que vous les vérifiiez ; les questions ne sont rédigées qu'après votre validation.",
+      "Si la génération échoue, sélectionnez Relancer ou Recommencer."
     ],
     "tips": [
       "Vous recevez une notification quand l'entretien est prêt.",
@@ -97,14 +110,14 @@
     "title": "Thèmes",
     "text": "Ce que cet entretien évalue : ses thèmes, chacun avec des sous-thèmes et sa propre banque de questions. Chaque candidat reçoit une sélection aléatoire de chaque banque.",
     "actions": [
-      "Ouvrez « Gérer les questions » pour accéder aux questions d'un thème : lisez-les, désactivez-en certaines, donnez-leur un « J'aime » ou un « Je n'aime pas », ou signalez-les.",
-      "Régénérez une question faible ou marquez une réponse erronée sur la page des questions d'un thème.",
-      "Définissez combien de questions chaque candidat reçoit d'un thème ; à 0, le thème est retiré pour les nouveaux candidats. Un candidat reçoit au plus 60 questions sur l'ensemble des thèmes : baissez un thème pour en augmenter un autre.",
-      "Essayez l'entretien en tant que candidat, ou supprimez-le."
+      "Ouvrez un thème pour accéder à ses questions : lisez-les, donnez-leur un « J'aime » ou un « Je n'aime pas », signalez-les et, en tant que propriétaire ou admin, désactivez-en certaines.",
+      "Régénérez une question faible ou marquez une réponse erronée sur la page des questions d'un thème (propriétaires et admins).",
+      "Définissez combien de questions chaque candidat reçoit d'un thème (propriétaires et admins) ; à 0, le thème est retiré pour les nouveaux candidats, mais au moins un thème doit garder des questions. Un candidat reçoit au plus 60 questions sur l'ensemble des thèmes : baissez un thème pour en augmenter un autre.",
+      "Essayez l'entretien en tant que candidat depuis le menu ⋮ ; les propriétaires et les admins peuvent aussi le supprimer à cet endroit."
     ],
     "tips": [
-      "Les questions rédigées par l'IA peuvent être fausses : parcourez chaque thème avant d'inviter qui que ce soit.",
-      "Cliquez sur le titre pour renommer l'entretien.",
+      "Les questions rédigées par l'IA peuvent être fausses, même si une seconde IA vérifie un échantillon de réponses : parcourez chaque thème avant d'inviter qui que ce soit.",
+      "Cliquez sur le titre pour renommer l'entretien (propriétaires et admins).",
       "Les cartes en haut additionnent ce que reçoit chaque candidat : le total des questions, le temps moyen par question et la durée de l'entretien complet. Elles suivent chaque changement."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Questions",
     "text": "Les questions d'un thème avec leurs réponses, leurs « J'aime », « Je n'aime pas » et signalements. Chaque candidat reçoit une sélection aléatoire parmi les questions actives.",
     "actions": [
+      "Voyez dans les cartes en haut combien il y a de questions, combien sont actives ou désactivées et combien de signalements elles ont ; filtrez la liste par Toutes, Active, Désactivée ou Signalées.",
       "Décochez une question pour la désactiver : désormais, aucun candidat ne la reçoit. Cochez-la pour la réactiver (propriétaires et admins).",
       "Donnez un « J'aime » ou un « Je n'aime pas » à une question ; cliquez à nouveau sur votre choix pour l'annuler.",
       "Ouvrez les signalements d'une question et ajoutez le vôtre, une fois par question.",
-      "Régénérez une question faible ou marquez une réponse erronée (propriétaires et admins)."
+      "Régénérez une question faible ou marquez une réponse erronée depuis son menu ⋮ (propriétaires et admins) ; une réponse marquée est vérifiée, puis corrigée ou remplacée si elle est fausse."
     ],
     "tips": [
       "Les questions rédigées par l'IA peuvent être fausses : lisez-les avant d'inviter qui que ce soit.",
@@ -127,27 +141,31 @@
     "title": "Candidats",
     "text": "Toutes les personnes invitées à cet entretien, avec leur statut, leur progression et leur note.",
     "actions": [
-      "Invitez des candidats : un par un, une liste de 100 au maximum, ou un fichier CSV ou TXT.",
+      "Invitez des candidats avec « Nouveau(x) candidat(s) » (propriétaires et admins) : un par un, une liste, ou un fichier CSV ou TXT.",
       "Recherchez par e-mail ou par nom, filtrez par statut et triez par note ou par date.",
-      "Ouvrez le rapport d'un candidat, ou téléchargez ou partagez le rapport sur tous les candidats."
+      "Ouvrez le rapport d'un candidat, ou téléchargez ou partagez le rapport sur tous les candidats.",
+      "Ouvrez le menu ⋮ d'un candidat pour renvoyer l'invitation, copier son lien, la révoquer ou supprimer le candidat (propriétaires et admins)."
     ],
     "tips": [
       "Chaque candidat qui répond à au moins une question consomme des crédits, y compris ceux venus par le lien.",
-      "Les rappels sont envoyés automatiquement aux candidats.",
-      "En invitant, choisissez si les candidats passent l'entretien en mode clic ou en mode vocal ; un candidat dans un autre mode que celui de l'entretien affiche l'icône de son mode."
+      "Un candidat qui n'a pas commencé reçoit un rappel 3 jours après l'invitation. Une invitation non commencée dans les 30 jours expire ; la renvoyer la rend de nouveau valable.",
+      "Les candidats passent l'entretien dans son mode ; pour le changer pour un candidat, utilisez sa page. Un candidat dans un autre mode que celui de l'entretien affiche l'icône de ce mode.",
+      "Inviter met de côté les crédits d'un candidat ; ils sont rendus si le candidat termine sans répondre.",
+      "Les candidats venus du lien de partage, de votre ATS, de l'API ou de Découvrir s'affichent aussi ici.",
+      "Le rapport sur tous les candidats se partage en PDF par e-mail, ou sous forme de court résumé par WhatsApp, Telegram, Viber ou LINE."
     ]
   },
   "interviewNotes": {
     "title": "Commentaires",
-    "text": "Les commentaires de votre équipe sur ce recrutement : ce que vous avez convenu, qui appeler ensuite ou pour qui est l'entretien. Toute votre entreprise les voit ; les candidats, jamais.",
+    "text": "Les commentaires de votre équipe sur ce recrutement : ce que vous avez convenu, qui appeler ensuite ou pour qui est l'entretien. Toute votre entreprise, lecteurs compris, les voit et peut en écrire ; les candidats, jamais.",
     "actions": [
       "Écrivez un commentaire dans le champ en haut et sélectionnez Publier, ou appuyez sur ⌘/Ctrl+Enter. Les liens qu'il contient deviennent cliquables.",
-      "Modifiez ou supprimez vos propres commentaires avec les boutons de leur ligne ; les propriétaires et les admins peuvent supprimer ceux de n'importe qui.",
-      "Épinglez un commentaire avec le marque-page (propriétaires et admins) : il s'affiche en premier ici, et sous le nom de l'entretien sur sa page et dans la liste des entretiens."
+      "Modifiez ou supprimez vos propres commentaires depuis le menu ⋮ de leur ligne ; les propriétaires et les admins peuvent supprimer ceux de n'importe qui.",
+      "Épinglez un commentaire avec « Épingler en haut » dans son menu ⋮ (propriétaires et admins) : un seul commentaire à la fois s'affiche en premier ici, et sous le nom de l'entretien sur sa page et dans la liste des entretiens."
     ],
     "tips": [
       "Vous travaillez pour des clients ? Épinglez un commentaire comme « Pour Acme, développeur backend » pour voir d'un coup d'œil pour qui est chaque entretien.",
-      "Un commentaire supprimé l'est définitivement. Le journal des actions enregistre qui a écrit, modifié ou supprimé un commentaire, jamais son texte.",
+      "Un commentaire supprimé l'est définitivement. Le journal des actions enregistre qui a écrit, modifié, supprimé ou épinglé un commentaire, jamais son texte.",
       "Le reste de votre équipe est prévenu de chaque nouveau commentaire : dans les notifications, dans le récapitulatif d'activité quotidien et, si Slack est connecté, dans votre canal."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Paramètres",
-    "text": "Le déroulement de cet entretien pour chaque candidat.",
+    "text": "Le déroulement de cet entretien pour chaque candidat. Seuls les propriétaires et les admins voient cet onglet.",
     "actions": [
-      "Activez le lien de partage pour une offre d'emploi : toute personne qui l'a peut passer l'entretien.",
+      "Activez le lien de partage pour une offre d'emploi : toute personne qui l'a peut passer l'entretien, et chaque personne qui répond par ce lien utilise des crédits comme un candidat invité.",
       "Choisissez le mode d'entretien : le mode clic, où les candidats touchent leurs réponses, ou le mode vocal, où Mira, une recruteuse IA, lit chaque question à voix haute et les candidats répondent à l'oral ou en touchant une réponse. Le mode vocal fonctionne dans toutes les langues ; sa qualité de lecture et d'écoute varie selon la langue, et le lien sous le réglage ouvre le guide qui la détaille pour chacune.",
       "Définissez le temps moyen par question, en secondes : chaque question reçoit son propre temps selon sa longueur et le code qu'elle affiche, et la durée totale de l'entretien reste la même.",
       "Définissez le seuil de réussite : les candidats qui l'atteignent réussissent.",
@@ -175,22 +193,26 @@
       "Gardez les questions de l'entretien hors de la banque de questions partagée de testee ; celles déjà réutilisées dans d'autres entretiens y restent."
     ],
     "tips": [
-      "Chaque paramètre est enregistré dès que vous quittez son champ.",
+      "Les champs numériques sont enregistrés dès que vous les quittez ; les interrupteurs et le mode sont enregistrés tout de suite.",
       "Les candidats ne voient jamais leurs scores ; seule votre équipe les voit.",
-      "Pour un candidat qui a besoin de plus de temps, ajoutez du temps supplémentaire sur sa page."
+      "Pour un candidat qui a besoin de plus de temps, ajoutez du temps supplémentaire sur sa page.",
+      "Un nouveau mode s'applique aux candidats qui n'ont pas commencé, sauf à ceux qui ont reçu le leur sur leur page.",
+      "Le temps moyen va de 10 à 600 secondes ; le seuil de réussite va de 1 à 100 %."
     ]
   },
   "tryInterview": {
     "title": "Essayer en tant que candidat",
     "text": "Un aperçu de cet entretien tel que le voient les candidats : l'introduction, puis les questions chronométrées. C'est gratuit.",
     "actions": [
-      "Lancez l'aperçu et répondez comme le ferait un candidat.",
+      "Cochez l'engagement de répondre par vous-même, sélectionnez « Accepter et commencer » et répondez comme le ferait un candidat.",
       "Vérifiez le minutage, la formulation et les réponses avant d'inviter qui que ce soit."
     ],
     "tips": [
       "Restez sur la page pendant que vous répondez : pour les candidats, quitter la page, copier et répondre trop vite sont enregistrés.",
       "Un entretien en mode vocal demande d'abord l'accès à votre micro et au son : autorisez-les, et Mira lit chaque question à voix haute pendant que vous répondez à l'oral ou en touchant une réponse.",
-      "Chaque entreprise dispose d'un nombre d'aperçus par jour, moins en mode vocal ; une fois épuisés, le démarrage indique quand réessayer."
+      "Chaque entreprise dispose d'un nombre d'aperçus par jour, moins en mode vocal ; une fois épuisés, le démarrage indique quand réessayer.",
+      "Un aperçu n'apparaît ni dans la liste des candidats ni dans les statistiques des questions.",
+      "Les lecteurs peuvent aussi essayer un entretien."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Lisez chaque réponse, avec les alertes d'intégrité : sorties de la page, tentatives de copie et réponses trop rapides.",
       "Une fois qu'il a terminé, voyez les éventuels schémas inhabituels dans ses réponses et ses temps, et les questions auxquelles il a bien répondu, à aborder lors d'un entretien en direct.",
-      "Téléchargez le rapport en PDF, ou partagez-le par e-mail.",
-      "Accordez du temps supplémentaire avant le début, par exemple en cas de handicap.",
+      "Téléchargez le rapport en PDF, ou partagez-le : le PDF par e-mail, ou un court résumé par WhatsApp, Telegram, Viber ou LINE. Les lecteurs ne peuvent l'envoyer par e-mail qu'aux membres de l'entreprise.",
+      "Accordez +25 %, +50 % ou +100 % de temps supplémentaire avant le début, par exemple en cas de handicap.",
       "Choisissez s'il passe l'entretien en mode clic ou en mode vocal, quel que soit le mode de l'entretien, jusqu'à ce qu'il commence.",
       "Ajoutez ou modifiez le nom du candidat.",
-      "Copiez son lien d'invitation pour l'envoyer vous-même si l'e-mail n'est pas arrivé ; il reste disponible jusqu'à ce que le candidat ait terminé.",
+      "Copiez son lien d'invitation pour l'envoyer vous-même si l'e-mail n'est pas arrivé ; il reste disponible jusqu'à ce que le candidat ait terminé ou que l'invitation expire.",
       "Renvoyez ou révoquez l'invitation, ou supprimez le candidat avec ses résultats."
     ],
     "tips": [
       "Le score éclaire votre décision ; il ne la prend pas. Si le candidat le demande, faites examiner son résultat par une personne.",
       "Une coche sous la note indique que le candidat a confirmé, avant de commencer, qu'il répondrait par lui-même, sans outils d'IA ni l'aide d'autres personnes.",
-      "La note est le pourcentage de points obtenus : chaque question vaut un point, et une question où il faut cocher toutes les bonnes réponses en rapporte une part pour chaque bonne réponse cochée, et rien si une mauvaise est cochée."
+      "La note est le pourcentage de points obtenus : chaque question vaut un point, et une question où il faut cocher toutes les bonnes réponses en rapporte une part pour chaque bonne réponse cochée, et rien si une mauvaise est cochée.",
+      "Le temps supplémentaire, le mode et le nom du candidat, le lien d'invitation, le renvoi, la révocation et la suppression sont réservés aux propriétaires et aux admins."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Recherchez par poste ou par thème, et filtrez par niveau et par langue.",
       "Ouvrez un modèle pour voir ses thèmes et le nombre de questions de chacun.",
-      "Utilisez un modèle pour lancer un entretien à partir de celui-ci."
+      "Voyez sur chaque ligne ses thèmes, ses questions et ses minutes, et combien de vos entretiens l'ont utilisé.",
+      "Utilisez un modèle pour lancer un entretien à partir de celui-ci (propriétaires et admins)."
     ],
     "tips": [
       "Pour un résultat plus ciblé, créez plutôt un entretien à partir de votre propre description de poste.",
-      "Une fois copié, l'entretien est à vous : modifiez ses questions et ses paramètres comme vous le souhaitez."
+      "Une fois copié, l'entretien est à vous : modifiez ses questions et ses paramètres comme vous le souhaitez.",
+      "La liste commence par votre langue et l'anglais ; choisissez toutes les langues pour voir le reste."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "Un entretien prêt à l'emploi : ses thèmes, leurs sous-thèmes et le nombre de questions de chaque thème.",
     "actions": [
       "Vérifiez que les thèmes correspondent au poste que vous voulez pourvoir.",
-      "Utilisez le modèle pour le copier dans cette entreprise comme nouvel entretien."
+      "Utilisez le modèle pour le copier dans cette entreprise comme nouvel entretien (propriétaires et admins)."
     ],
     "tips": [
       "La copie est gratuite ; les candidats qui répondent consomment des crédits comme d'habitude.",
-      "Si les thèmes ne conviennent pas, créez plutôt un entretien à partir de votre description de poste."
+      "Si les thèmes ne conviennent pas, créez plutôt un entretien à partir de votre description de poste.",
+      "Ses questions restent masquées jusqu'à ce que vous l'utilisiez."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "Ajoutez un membre par e-mail, comme admin ou lecteur : il reçoit par e-mail un lien pour rejoindre l'équipe.",
       "Changez le rôle d'un membre entre admin et lecteur.",
+      "Cédez l'entreprise à un admin qui l'a rejointe, avec « Faire propriétaire » dans son menu : vous devenez admin.",
       "Copiez le lien d'une invitation en attente, ou retirez un membre ou une invitation."
     ],
     "tips": [
-      "Les admins créent et modifient les entretiens, invitent des candidats et rechargent les crédits. Les lecteurs voient les entretiens et les résultats et partagent les rapports, mais ne modifient rien.",
-      "Retirer un membre dont la carte paie les recharges automatiques arrête ces recharges."
+      "Les admins créent et modifient les entretiens, invitent des candidats et rechargent les crédits. Les lecteurs voient les entretiens et les résultats, partagent les rapports et écrivent des commentaires, mais ne modifient rien d'autre.",
+      "Retirer un membre dont la carte paie les recharges automatiques, ou le faire passer lecteur, arrête ces recharges.",
+      "Seul le propriétaire ajoute, modifie et retire des membres ; tous les membres de l'entreprise voient l'équipe."
     ]
   },
   "actions": {
     "title": "Journal des actions",
-    "text": "Tout ce que les membres de l'entreprise ont fait, du plus récent au plus ancien : ce qu'ils ont fait et sur quoi, qui l'a fait, quand, et si l'assistant, une app d'IA, l'API ou un ATS l'a fait pour eux. Seul le propriétaire le voit.",
+    "text": "Tout ce que les membres de l'entreprise ont fait, du plus récent au plus ancien : ce qu'ils ont fait et sur quoi, qui l'a fait, quand, et si l'assistante IA, une app d'IA, l'API ou un ATS l'a fait pour eux. Seul le propriétaire le voit.",
     "actions": [
       "Affichez les actions d'un membre, ou d'un type : entretiens, candidats, équipe, entreprise, facturation ou intégrations.",
       "Affichez les actions entre deux dates.",
-      "Téléchargez un export pour audit de biais : un fichier CSV de chaque candidat qui a terminé, pour tous les entretiens ou un seul et, si vous le souhaitez, entre deux dates, avec sa note, le seuil de réussite, s'il a réussi et s'il a obtenu plus que la médiane de l'entretien, identifié par son e-mail."
+      "Téléchargez le journal en fichier CSV depuis le menu ⋮ : tout l'historique, une période récente ou entre deux dates. Jusqu'à 20 téléchargements par entreprise et par jour.",
+      "Téléchargez un export pour audit de biais : un fichier CSV de chaque candidat qui a terminé avec une note, pour tous les entretiens ou un seul et, si vous le souhaitez, entre deux dates, avec sa note, le seuil de réussite, s'il a réussi et s'il a obtenu plus que la médiane de l'entretien, identifié par son e-mail."
     ],
     "tips": [
       "Les actions sont conservées 12 mois.",
@@ -271,12 +300,12 @@
     "text": "Connectez testee aux outils que votre équipe utilise déjà. Chaque intégration ouvre sa propre page avec les étapes de configuration.",
     "actions": [
       "Slack : recevez les notifications de votre entreprise dans un canal.",
-      "API : des clés et des webhooks pour connecter votre propre plateforme.",
+      "API : des clés, des webhooks et le SDK pour connecter votre propre plateforme.",
       "Apps IA : utilisez testee depuis Claude, ChatGPT et d'autres applications d'IA.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR) : les candidats que vous passez à une étape reçoivent l'entretien, et leurs résultats y sont renvoyés."
     ],
     "tips": [
-      "Tous les membres de l'entreprise voient les intégrations ; les propriétaires et les admins les modifient."
+      "Tous les membres de l'entreprise voient les intégrations ; les propriétaires et les admins les modifient. Les apps d'IA sont propres à chaque personne : chacun peut connecter ou déconnecter les siennes."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "Connectez votre ATS en suivant ses instructions.",
       "Liez un poste : choisissez le poste, son étape et un entretien, ou créez un nouvel entretien à partir du texte du poste.",
+      "Voyez combien de candidats chaque poste lié a invités, a en attente ou n'a pas pu inviter.",
       "Invitez à nouveau les candidats qui n'ont pas été invités, par exemple quand les crédits étaient épuisés.",
+      "Reconnectez l'ATS quand il cesse de fonctionner : les candidats ne sont pas invités tant que vous ne l'avez pas fait.",
       "Déliez un poste, ou déconnectez l'ATS."
     ],
     "tips": [
       "Ajoutez une étape réservée à testee, comme « Test de compétences testee », pour qu'elle ne se mélange jamais avec vos autres outils.",
-      "testee ne déplace ni ne refuse jamais personne dans votre ATS."
+      "testee ne déplace ni ne refuse jamais personne dans votre ATS.",
+      "Si le membre qui a connecté l'ATS part ou devient lecteur, les candidats ne sont plus invités."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "Ajoutez testee à Slack et choisissez le canal, par exemple #hiring.",
       "Choisissez les notifications qui y arrivent : un candidat qui termine, une invitation non distribuée, un entretien prêt, et plus encore.",
+      "Envoyez un message de test au canal, et reconnectez Slack s'il n'accepte plus les messages.",
       "Déconnectez pour les arrêter et retirer l'application testee de votre Slack."
     ],
     "tips": [
       "testee peut seulement publier dans ce canal ; il ne peut pas lire votre Slack.",
-      "Tout le monde voit toujours chaque notification dans la cloche."
+      "Tout le monde voit toujours chaque notification dans la cloche.",
+      "Si le membre qui a connecté Slack part ou devient lecteur, Slack s'arrête jusqu'à ce qu'un propriétaire ou un admin le reconnecte."
     ]
   },
   "api": {
     "title": "API",
     "text": "Connectez votre propre plateforme, comme votre site carrière, à testee.",
     "actions": [
-      "Créez une clé API et cochez uniquement ce dont elle a besoin : lire ou créer des entretiens ; lire, inviter, modifier ou supprimer des candidats ; lire vos crédits ; ou l'utiliser avec des agents IA (MCP). Elle agit en votre nom.",
+      "Créez une clé API et cochez uniquement ce dont elle a besoin : lire ou créer des entretiens ; lire, inviter, modifier ou supprimer des candidats ; lire ou ajouter des commentaires ; lire vos crédits ; ou l'utiliser avec des agents IA (MCP). Elle agit pour l'entreprise en son propre nom, et continue de fonctionner quand la personne qui l'a créée part.",
       "Ouvrez une clé pour modifier ce qu'elle peut faire, chaque modification étant enregistrée immédiatement, et les adresses IP depuis lesquelles elle peut être utilisée.",
+      "Renommez une clé, créez-en une de remplacement quand elle est sur le point d'expirer et, en tant que propriétaire, voyez ce qu'elle a fait.",
       "Ajoutez un webhook : testee prévient votre adresse HTTPS, avec une signature, quand un candidat commence, termine (avec ses résultats) ou est retiré, quand son invitation n'a pas pu lui parvenir ou a expiré, et quand un entretien est prêt.",
       "Envoyez un événement de test à un webhook, et voyez dans son journal des envois le résultat de chaque envoi.",
+      "Renouvelez le secret d'un webhook : pendant 24 heures, les deux secrets signent chaque requête.",
       "Dans l'onglet SDK, indiquez les sites qui peuvent afficher vos entretiens avec le SDK, et autorisez localhost pendant vos tests.",
       "Supprimez les clés et les webhooks que vous n'utilisez plus.",
       "Ouvrez la documentation développeurs pour chaque endpoint et chaque événement, ainsi que le SDK."
@@ -321,7 +357,8 @@
     "tips": [
       "Une nouvelle clé et le secret d'un webhook ne s'affichent qu'une fois : copiez-les tout de suite.",
       "Choisissez une date d'expiration pour chaque clé : une clé divulguée qui n'expire jamais reste utilisable.",
-      "Vous pourrez cocher ou décocher plus tard des autorisations d'une clé ; ne donnez à chaque clé que ce dont sa plateforme a besoin."
+      "Vous pourrez cocher ou décocher plus tard des autorisations d'une clé ; ne donnez à chaque clé que ce dont sa plateforme a besoin.",
+      "Un webhook qui ne répond pas pendant 3 jours est mis en pause ; un événement de test qui passe le relance."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Copiez l'adresse du serveur et ajoutez-la à Claude, Claude Code ou ChatGPT en suivant les étapes ; la documentation développeurs couvre les autres applications et vos propres agents.",
       "Autorisez l'application sur la page testee qui s'ouvre.",
-      "Déconnectez une application que vous n'utilisez plus."
+      "Une fois une app connectée, copiez un exemple de ce que vous pouvez lui demander.",
+      "Déconnectez une application que vous n'utilisez plus.",
+      "Les propriétaires et les admins autorisent ou arrêtent les apps d'IA dans cette entreprise : quand elles sont désactivées, les apps ne peuvent rien y lire ni y modifier."
     ],
     "tips": [
-      "Une application agit en votre nom, dans chaque entreprise dont vous faites partie. La plupart des applications vous demandent avant de modifier quoi que ce soit.",
+      "Une application agit en votre nom, dans chaque entreprise dont vous faites partie et qui autorise les apps d'IA. La plupart des applications vous demandent avant de modifier quoi que ce soit.",
       "Elle ne peut pas voir votre mot de passe ni vos clés API, ni supprimer votre compte ou une entreprise."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Parrainage",
     "text": "Invitez d'autres entreprises sur testee avec le lien de cette entreprise, et vous gagnez tous les deux des crédits.",
     "actions": [
-      "Copiez ou partagez votre lien de parrainage.",
-      "Consultez chaque récompense reçue par cette entreprise."
+      "Copiez votre lien de parrainage pour le partager.",
+      "Voyez les entreprises venues par votre lien qui ont rechargé des crédits, les crédits que chacune vous a rapportés et le nombre de récompenses restantes cette année."
     ],
     "tips": [
       "Vous recevez chacun des crédits lors de la première recharge de l'entreprise invitée, quel que soit le montant.",
-      "Les crédits vont à cette entreprise et n'expirent jamais."
+      "Les crédits vont à cette entreprise et n'expirent jamais.",
+      "Chaque partie reçoit 1 000 crédits. Votre entreprise peut en bénéficier jusqu'à 25 fois par an ; au-delà, l'entreprise que vous avez invitée reçoit quand même ses crédits.",
+      "Une recharge remboursée en totalité ou rétrofacturée annule les deux récompenses."
     ]
   },
   "brand": {
     "title": "Marque",
-    "text": "Votre logo et vos couleurs sur l'invitation, l'entretien et la page de fin de vos candidats.",
+    "text": "Votre logo, vos couleurs, vos polices et votre arrondi sur l'invitation, l'entretien et la page de fin de vos candidats. Le logo s'affiche aussi dans leurs e-mails.",
     "actions": [
-      "Ajoutez ou changez le logo.",
+      "Ajoutez, changez ou retirez le logo.",
       "Choisissez les polices des titres et du texte, et l'arrondi des cartes et des boutons.",
-      "Choisissez les couleurs de chaque groupe et voyez-les dans l'aperçu.",
-      "Enregistrez-les, ou revenez aux couleurs de testee."
+      "Choisissez les couleurs de chaque groupe, un jeu pour le thème clair et un pour le thème sombre, et voyez-les dans l'aperçu.",
+      "Enregistrez-les, annulez les modifications non enregistrées avec « Réinitialiser », ou revenez aux couleurs, aux polices et à l'arrondi de testee avec « Revenir aux réglages de testee »."
     ],
     "tips": [
       "Les couleurs qui rendraient le texte difficile à lire ne peuvent pas être enregistrées, pour que chaque candidat puisse lire les questions.",
-      "Les membres de l'équipe qui essaient un entretien le voient aussi dans vos couleurs."
+      "Les membres de l'équipe qui essaient un entretien le voient aussi dans vos couleurs.",
+      "Seuls les propriétaires et les admins voient cette page."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Rechargez, ou configurez la recharge automatique.",
       "Consultez les candidats dont les crédits sont réservés.",
-      "Ouvrez la facture de n'importe quelle recharge."
+      "Ouvrez la facture de n'importe quelle recharge.",
+      "Limitez l'historique aux recharges, aux débits ou aux remboursements, ou téléchargez-le en fichier CSV. Jusqu'à 20 téléchargements par entreprise et par jour."
     ],
     "tips": [
       "Les crédits d'un candidat sont réservés à l'invitation, débités dès qu'il répond et rendus s'il ne répond pas.",
-      "Seuls les propriétaires et admins voient cette page."
+      "Seuls les propriétaires et admins voient cette page.",
+      "Vous pouvez demander le remboursement des crédits achetés au cours des 14 derniers jours et non utilisés, via Paddle ou en nous écrivant."
     ]
   },
   "topUp": {
     "title": "Recharger",
     "text": "Achetez des crédits pour toute entreprise dont vous êtes propriétaire ou admin.",
     "actions": [
-      "Choisissez une entreprise et une recharge : les plus grandes coûtent moins cher par candidat.",
+      "Choisissez une entreprise, puis saisissez pour combien de candidats recharger, de 10 à 1 000, ou choisissez un palier de prix : les recharges plus grandes coûtent moins cher par candidat.",
+      "Changez la devise de l'entreprise en haut de la page : ses recharges, automatiques comprises, sont dès lors tarifées et débitées dans cette devise.",
       "Payez sur la page de paiement de Paddle ; les crédits arrivent en quelques secondes.",
-      "Ouvrez les tarifs pour comparer les recharges."
+      "Ouvrez les tarifs pour comparer les recharges.",
+      "Configurez la recharge automatique : choisissez un montant et un solde, et cochez l'accord. Votre carte est enregistrée dans le paiement Paddle et débitée chaque fois que le solde passe sous ce niveau."
     ],
     "tips": [
       "Un candidat coûte 500 crédits : réservés à l'invitation, débités dès qu'il répond et rendus s'il ne répond pas.",
-      "Les crédits n'expirent jamais. La facture de chaque recharge se trouve dans l'onglet Facturation de l'entreprise."
+      "Les crédits n'expirent jamais. La facture de chaque recharge se trouve dans l'onglet Facturation de l'entreprise.",
+      "Les prix n'incluent pas la TVA ni la taxe de vente : là où elle s'applique, elle est ajoutée au paiement.",
+      "Vous pouvez demander le remboursement des crédits achetés au cours des 14 derniers jours et non utilisés, via Paddle ou en nous écrivant.",
+      "Les propriétaires et les admins configurent la recharge automatique. Seule la personne dont la carte paie peut la modifier ou mettre à jour la carte ; tout propriétaire ou admin peut la désactiver immédiatement.",
+      "Une carte refusée est de nouveau essayée après 1, 3 et 7 jours, puis la recharge automatique se met en pause jusqu'à la mise à jour de la carte. Une carte qui ne peut pas payer, par exemple une carte expirée, la met en pause immédiatement."
     ]
   },
   "settings": {
     "title": "Paramètres",
-    "text": "Votre propre compte : la langue dans laquelle testee s'adresse à vous, les e-mails que vous recevez et vos données.",
+    "text": "Votre propre compte : la langue dans laquelle testee s'adresse à vous, votre devise, les e-mails que vous recevez et vos données.",
     "actions": [
-      "Choisissez la langue du site, du chat d'aide et de vos e-mails.",
+      "Choisissez la langue du site, des réponses de l'assistante IA et de vos e-mails ; les nouveaux entretiens démarrent aussi dans cette langue.",
+      "Choisissez la devise d'affichage des prix, où que vous soyez. Les recharges d'une entreprise se font dans sa propre devise, définie sur sa page de recharge.",
       "Choisissez les e-mails facultatifs que vous recevez ; les e-mails de service, comme les invitations, les rapports et les problèmes de paiement, sont toujours envoyés.",
       "Activez ou désactivez Ouvert aux opportunités : tant que c'est activé, les entreprises qui recrutent sur testee sur les sujets sur lesquels vous vous êtes entraîné voient votre nom, votre profil LinkedIn et vos résultats d'entraînement, et peuvent vous inviter.",
-      "Téléchargez tout ce que testee conserve sur vous, ou supprimez votre compte."
+      "Téléchargez tout ce que testee conserve sur vous, ou supprimez votre compte.",
+      "Copiez votre ID de compte pour l'indiquer quand vous nous écrivez."
     ],
     "tips": [
-      "Supprimer votre compte supprime les entreprises dont vous êtes le seul membre. Une entreprise que d'autres ont rejointe a d'abord besoin d'un autre propriétaire."
+      "Supprimer votre compte supprime les entreprises dont vous êtes le seul membre, et leurs crédits ne sont pas remboursés. Une entreprise que d'autres ont rejointe a d'abord besoin d'un autre propriétaire, ou doit être supprimée.",
+      "Ouvert aux opportunités nécessite votre profil LinkedIn et se désactive de lui-même un an après votre dernière activation."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Connecté avec un autre e-mail ? Déconnectez-vous et connectez-vous avec celui qui a été invité ; l'invitation ne fonctionne que pour lui.",
-      "Votre rôle, admin ou lecteur, est celui qu'a choisi la personne qui vous a invité."
+      "Votre rôle, admin ou lecteur, est celui qu'a choisi la personne qui vous a invité.",
+      "Une invitation déjà utilisée, ou retirée par le propriétaire, ne fonctionne plus."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Connectez-vous, si ce n'est pas déjà fait, pour voir quelle app le demande.",
       "Lisez ce que l'app peut et ne peut pas faire avec votre compte.",
+      "Désactivez « Autoriser les modifications » pour que l'app puisse seulement lire.",
       "Autorisez l'app ou refusez-la ; dans les deux cas, vous revenez à l'app."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Suivez les actualités dans votre lecteur de flux avec le lien RSS en haut."
     ],
     "tips": [
-      "Les actualités s'affichent dans vos notifications ; activez les nouveautés du produit dans vos paramètres pour recevoir aussi les principales par e-mail."
+      "Les actualités s'affichent dans vos notifications ; les principales arrivent aussi par e-mail tant que « Nouveautés du produit et actualités » est activé dans vos paramètres."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Tant que vous ne choisissez pas de langues, la liste affiche la langue du site et l'anglais.",
-      "L'entraînement est privé : aucune entreprise ne voit vos résultats.",
-      "Une fois connecté, une coche après le titre signale un entraînement que vous avez commencé, et une double coche un entraînement terminé ; survolez-la pour voir combien de thèmes vous avez terminés."
+      "L'entraînement est privé : aucune entreprise ne voit vos résultats, sauf si vous activez Ouvert aux opportunités.",
+      "Une fois connecté, une coche après le titre signale un entraînement que vous avez commencé, et une double coche un entraînement terminé ; survolez la coche pour voir combien de thèmes vous avez terminés."
     ]
   },
   "practiceTest": {
     "title": "Simulation d'entretien",
     "text": "Une simulation d'entretien gratuite : son niveau, sa langue, sa durée et les thèmes qu'elle couvre.",
     "actions": [
+      "Choisissez le temps par question avant de commencer : le temps standard, le double ou sans limite de temps.",
       "Commencez une session d'entraînement ; connectez-vous d'abord si ce n'est pas déjà fait.",
       "Voyez jusqu'où vous êtes allé dans chaque thème lors de votre dernière session.",
-      "Ouvrez vos sessions passées avec le bouton d'historique à côté de « Commencer l'entraînement ».",
+      "Une fois connecté, ouvrez vos sessions passées avec « Vos sessions » à côté de « Commencer l'entraînement ».",
       "Vous recrutez pour ce poste ? Créez-en un entretien pour vos propres candidats."
     ],
     "tips": [
-      "Chaque session est chronométrée, comme un vrai entretien ; à la fin, vous voyez votre note et toutes les bonnes réponses.",
-      "Entraînez-vous autant que vous voulez : c'est gratuit."
+      "Chaque session est chronométrée, sauf si vous choisissez sans limite de temps ; à la fin, vous voyez votre note et toutes les bonnes réponses.",
+      "Entraînez-vous autant que vous voulez, dans la limite d'un nombre de nouvelles sessions par heure : c'est gratuit."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "Ce que vous avez coché quand le temps d'une question s'écoule compte quand même ; une question sans rien de coché, ou jamais atteinte, compte comme fausse.",
       "Vous recrutez pour ce poste ? Créez-en un entretien pour vos propres candidats.",
-      "Vous cherchez un emploi ? Activez Ouvert aux opportunités pour que les entreprises qui recrutent sur ces sujets voient votre nom, votre profil LinkedIn et vos résultats d'entraînement."
+      "Vous cherchez un emploi ? Après une session terminée, indiquez votre profil LinkedIn et activez Ouvert aux opportunités pour que les entreprises qui recrutent sur ces sujets voient votre nom, votre profil et vos derniers résultats d'entraînement et puissent vous inviter ; l'option reste active un an, sauf si vous la désactivez."
     ]
   },
   "features": {
     "title": "Fonctionnalités",
     "text": "Tout ce que testee fait pour une entreprise, de la fiche de poste au recrutement : créer des entretiens, inviter des candidats, ce que voient les candidats, les rapports, les intégrations, la conformité et les tarifs.",
     "actions": [
+      "Allez au champ en fin de page avec « Créer un entretien » en haut, ou ouvrez les tarifs.",
       "Accédez à un groupe avec les onglets en haut : créer, inviter, entretien, décider, connecter, confiance et tarifs.",
-      "Voyez chaque fonctionnalité à côté d'une image de l'application réelle.",
+      "Voyez les principales fonctionnalités à côté d'une image de l'application réelle, et les autres sous forme de cartes en dessous.",
       "Collez une fiche de poste dans le champ en bas de la page pour créer un entretien.",
-      "Ouvrez la page des tarifs, la documentation développeurs ou la page confiance depuis leurs groupes."
+      "Ouvrez la page des tarifs, la documentation développeurs ou la page confiance depuis leurs groupes.",
+      "Demandez à Mira, ou ouvrez la FAQ ou les guides, en fin de page."
     ],
     "tips": [
       "Toutes les fonctionnalités sont incluses : vous payez uniquement pour chaque candidat qui répond à au moins une question."
@@ -512,8 +570,9 @@
     "actions": [
       "Faites défiler la ligne vers le bas : chaque étape montre ce qui se passe, ses options et une image de l'application réelle.",
       "Sous les étapes d'invitation et de partage, voyez comment les candidats peuvent arriver et comment les rapports peuvent partir.",
-      "Créez un entretien avec le bouton en haut, ou ouvrez toutes les fonctionnalités.",
-      "Collez une fiche de poste dans le champ en bas de la page pour commencer."
+      "Allez au champ de démarrage avec « Créer un entretien » en haut, ou ouvrez toutes les fonctionnalités.",
+      "Collez une fiche de poste dans le champ en bas de la page pour commencer.",
+      "Demandez à Mira, ou ouvrez la FAQ ou les guides, en fin de page."
     ],
     "tips": [
       "La création d'entretiens est gratuite : vous payez uniquement pour chaque candidat qui répond à au moins une question."
@@ -525,12 +584,14 @@
     "actions": [
       "Consultez le prix actuel par candidat, et les prix plus bas des recharges plus importantes.",
       "Voyez combien de premiers candidats sont gratuits.",
+      "Voyez combien de crédits coûte un candidat ; la taxe est ajoutée au paiement là où elle s'applique.",
       "Voyez les crédits que vous gagnez en invitant une autre entreprise.",
       "Rechargez les crédits d'une entreprise."
     ],
     "tips": [
       "Les crédits n'expirent jamais.",
-      "Un candidat qui ne répond à aucune question ne coûte rien."
+      "Un candidat qui ne répond à aucune question ne coûte rien.",
+      "Les crédits payés non utilisés peuvent être remboursés sous 14 jours."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "testee comparé",
     "text": "Des comparatifs sourcés de testee avec d'autres outils de tests de pré-embauche : comment les tests sont créés, ce qu'ils coûtent et quand chacun convient le mieux.",
     "actions": [
-      "Ouvrez un comparatif pour le lire."
+      "Ouvrez un comparatif pour le lire.",
+      "Créez un test pour vos candidats depuis la carte à la fin."
     ],
     "tips": [
       "Chaque comparatif indique la date de sa dernière mise à jour."
@@ -574,8 +636,9 @@
     "text": "Comment testee se compare à d'autres outils sur une question : comment les tests sont créés, ce qu'ils coûtent et quand chacun convient le mieux.",
     "actions": [
       "Lisez le comparatif et suivez ses liens vers les sources.",
-      "Créez un test pour vos candidats depuis la carte à la fin.",
-      "Revenez à tous les comparatifs avec le lien au-dessus du titre."
+      "Allez à une section depuis la liste « Sur cette page », sur les pages plus longues.",
+      "Créez un test pour vos candidats avec le bouton en haut ou depuis la carte à la fin.",
+      "Revenez à tous les comparatifs avec la flèche de retour près du titre."
     ],
     "tips": [
       "Les prix et les fonctionnalités changent : la date sous le titre indique la dernière mise à jour de la page."
@@ -585,6 +648,7 @@
     "title": "Guides pour recruter",
     "text": "Des guides pratiques pour les responsables du recrutement : présélectionner les candidatures, les tests de compétences, et utiliser l'IA dans le recrutement de façon équitable et légale.",
     "actions": [
+      "Recherchez dans les guides.",
       "Ouvrez un guide pour le lire."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "Un guide pratique pour les responsables du recrutement sur un sujet.",
     "actions": [
       "Lisez le guide et suivez ses liens vers les sources et les pages liées.",
-      "Créez un test pour vos candidats depuis la carte à la fin.",
-      "Revenez à tous les guides avec le lien au-dessus du titre."
+      "Allez à une section depuis la liste « Sur cette page », sur les pages plus longues.",
+      "Créez un test pour vos candidats avec le bouton en haut ou depuis la carte à la fin.",
+      "Revenez à tous les guides avec la flèche de retour près du titre."
     ],
     "tips": [
-      "Les sujets juridiques sont des résumés, pas des avis juridiques : vérifiez auprès de votre propre conseil."
+      "Les sujets juridiques sont des résumés datés, pas des avis juridiques : vérifiez les règles qui s'appliquent là où vous recrutez."
     ]
   },
   "faq": {
     "title": "Questions fréquentes",
     "text": "Les réponses aux questions courantes sur testee : entretiens, candidats, prix et crédits, résultats, intégrations, langues et vos données.",
     "actions": [
+      "Allez à un groupe de questions avec les boutons en haut.",
       "Cliquez sur une question pour afficher sa réponse."
     ],
     "tips": [
-      "Vous n'avez pas trouvé votre réponse ? Demandez à Mira, l'assistante IA, en haut de la page, ou écrivez-nous depuis la page de contact.",
+      "Vous n'avez pas trouvé votre réponse ? Demandez à Mira, l'assistante IA, ou écrivez-nous, depuis la carte en fin de page.",
       "Les prix indiqués dans les réponses sont toujours ceux d'aujourd'hui."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "Qui fait testee et pourquoi : des entretiens créés à partir d'une description de poste, accessibles à toutes les équipes, et un entraînement gratuit pour tous.",
     "actions": [
       "Découvrez pourquoi testee existe et comment il aborde le recrutement.",
-      "Lisez le mot du fondateur, et ouvrez son profil LinkedIn."
+      "Lisez le mot du fondateur, et ouvrez son profil LinkedIn.",
+      "Créez un test, ou entraînez-vous gratuitement, depuis la carte à la fin."
     ],
     "tips": [
       "Pour écrire à l'équipe, utilisez la page de contact."
@@ -630,7 +697,8 @@
     "text": "Écrivez à l'équipe testee pour une question, une idée, une proposition de partenariat ou quelque chose qui ne fonctionne pas.",
     "actions": [
       "Saisissez votre nom, votre e-mail et votre message, puis envoyez-le.",
-      "Collez l'ID de l'entreprise, de l'entretien, du candidat ou du compte concerné, pour que nous le trouvions tout de suite."
+      "Collez dans votre message l'ID de l'entreprise, de l'entretien, du candidat ou du compte concerné, pour que nous le trouvions tout de suite.",
+      "Voyez qui exploite testee : nom de la société, numéro d'immatriculation, adresse et e-mail."
     ],
     "tips": [
       "Le lien « Copier l'ID » se trouve sous le nom d'une entreprise, d'un entretien ou d'un candidat ; l'ID de votre compte est dans le menu de votre compte.",
@@ -641,7 +709,7 @@
     "title": "Documentation développeurs",
     "text": "Tout ce qu'il faut pour connecter votre propre plateforme ou votre agent IA à testee, lu directement depuis l'API pour toujours lui correspondre.",
     "actions": [
-      "API : comment s'authentifier, l'URL de base et chaque endpoint avec ses paramètres, son corps, sa réponse et ses erreurs.",
+      "API : comment s'authentifier, des guides comme ceux sur les limites de débit et les nouvelles tentatives sûres, l'URL de base, chaque endpoint avec ses paramètres, son corps, sa réponse et ses erreurs, la liste des erreurs et le journal des modifications.",
       "Webhooks : les événements que testee envoie à votre adresse et ce que contient chacun.",
       "SDK : comment intégrer l'entretien à votre propre site.",
       "MCP : comment connecter une app IA ou votre propre agent, et les outils qu'il obtient.",
@@ -661,7 +729,8 @@
       "Écrivez-nous par e-mail si quelque chose est difficile à utiliser ou si vous en avez besoin sous une autre forme."
     ],
     "tips": [
-      "Vous passez l'entretien d'une entreprise et avez besoin de plus de temps ? Demandez du temps supplémentaire à l'entreprise avant de commencer ; vous n'avez pas à dire pourquoi."
+      "Vous passez l'entretien d'une entreprise et avez besoin de plus de temps ? Demandez du temps supplémentaire à l'entreprise avant de commencer ; vous n'avez pas à dire pourquoi.",
+      "Nous répondons sous 14 jours ; si vous n'êtes pas satisfait, vous pouvez contacter l'Autorité estonienne de protection des consommateurs et de régulation technique (TTJA)."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "Voyez comment testee protège les données : connexion, chiffrement, contrôles d'accès, limites de requêtes et sauvegardes.",
       "Voyez ce que testee fournit pour le RGPD, le règlement européen sur l'IA, le Royaume-Uni et les États-Unis, y compris la loi de la ville de New York sur les audits de biais.",
       "Voyez où les données sont stockées, quels sous-traitants les traitent et combien de temps chaque type de données est conservé.",
-      "Ouvrez les conditions, la politique de confidentialité, l'accord de traitement des données et les documents pour les entreprises."
+      "Ouvrez les conditions, la politique de confidentialité, l'accord de traitement des données et les documents pour les entreprises.",
+      "Ouvrez la déclaration d'accessibilité."
     ],
     "tips": [
       "Pour une question sur la sécurité, la confidentialité ou la conformité, ou pour signaler un problème de sécurité, écrivez à l'adresse e-mail en bas de la page."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Se désabonner",
-    "text": "Ne plus recevoir un type d'e-mails de testee, indiqué sur la page.",
+    "text": "Ne plus recevoir un type d'e-mails de testee, ou tous les e-mails d'une entreprise, comme indiqué sur la page.",
     "actions": [
       "Lisez quels e-mails le lien arrête.",
       "Confirmez pour vous désabonner ; ouvrir le lien seul ne change rien.",
-      "Ouvrez ensuite vos paramètres d'e-mail pour modifier les autres e-mails."
+      "Une fois connecté, ouvrez ensuite vos paramètres d'e-mail pour modifier les autres e-mails."
     ],
     "tips": [
-      "Les e-mails de service, comme les invitations à rejoindre une équipe, les rapports et les problèmes de facturation, continuent d'être envoyés."
+      "Les e-mails de service, comme les invitations à rejoindre une équipe, les rapports et les problèmes de facturation, continuent d'être envoyés ; un lien qui arrête les e-mails d'une entreprise arrête aussi ses invitations à votre intention."
     ]
   }
 }

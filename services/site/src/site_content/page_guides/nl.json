@@ -5,13 +5,15 @@
     "actions": [
       "Plak de functieomschrijving in het vak bovenaan of kies een kant-en-klaar sjabloon; pas de onderwerpen aan, en de vragen worden voor je geschreven en gecontroleerd.",
       "Nodig kandidaten uit per e-mail, vanuit een bestand, met een deelbare link in je vacature, of vanuit je ATS, je eigen platform of een AI-assistent.",
+      "Zie wat kandidaten zien: een interview met tijdslimiet in jouw huisstijl, beantwoord met een klik of met je stem.",
       "Lees de rapporten: de antwoorden, scores en integriteitssignalen van elke kandidaat, met één klik gedeeld per e-mail of chat.",
-      "Koppel je platform, je AI-app en vacaturesites, krijg updates in Slack, of vraag Mira, de AI-assistent, om het werk voor je te doen."
+      "Koppel je ATS, je platform en AI-apps, krijg updates in Slack, of vraag Mira, de AI-assistent, om het werk voor je te doen.",
+      "Vergelijk testee met telefonische screenings en abonnementen, en zie hoe vragen worden gecontroleerd en verbeterd."
     ],
     "tips": [
-      "Interviews maken is gratis. Je betaalt per kandidaat die antwoordt, tegen de prijs onder de titel in jouw valuta, en je eerste kandidaten zijn gratis.",
+      "Interviews maken is gratis. Je betaalt per kandidaat die antwoordt, tegen de prijzen verderop op de pagina in jouw valuta, en je eerste kandidaten zijn gratis.",
       "Probeer je interview als kandidaat voordat je iemand uitnodigt.",
-      "Bekijk de video bovenaan voor een korte rondleiding; de FAQ en de gidsen staan onderaan de pagina.",
+      "Bekijk de video via de knop bovenaan voor een korte rondleiding; de FAQ en de gidsen staan onderaan de pagina.",
       "Download onder de rapporten de voorbeeldrapporten om te zien hoe echte rapporten eruitzien."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "Maak een bedrijf aan met “Nieuw bedrijf”. De naam is uniek binnen testee.",
       "Open een bedrijf om aan de interviews en kandidaten te werken.",
-      "Verwijder een bedrijf waarvan je eigenaar bent, met al zijn interviews en uitnodigingen."
+      "Verwijder een bedrijf waarvan je eigenaar bent, met al zijn interviews en uitnodigingen; zijn credits gaan verloren en worden niet terugbetaald.",
+      "Open het ⋮-menu van een bedrijf voor zijn team; eigenaren en beheerders waarderen daar ook op en openen er het merk en de facturering."
     ],
     "tips": [
-      "Bij elk bedrijf waarvan je geen eigenaar bent, staat je rol: beheerders wijzigen dingen, kijkers kijken alleen.",
+      "Bij elk bedrijf waarvan je geen eigenaar bent, staat je rol: beheerders wijzigen dingen; kijkers kijken vooral, en kunnen ook notities schrijven, vragen beoordelen en melden, interviews proberen en rapporten delen.",
       "Credits horen bij een bedrijf, dus elk bedrijf waardeert apart op."
     ]
   },
@@ -36,22 +39,23 @@
       "Maak een nieuw bedrijf aan als je er nog geen hebt; het sjabloon opent daar."
     ],
     "tips": [
-      "Na het kopiëren is het interview van het bedrijf: pas de vragen en instellingen aan zoals je wilt."
+      "Na het kopiëren is het interview van het bedrijf: pas de vragen en instellingen aan zoals je wilt.",
+      "Alleen eigenaren en beheerders kunnen een sjabloon gebruiken; in een bedrijf waar je kijker bent, staat de knop er niet."
     ]
   },
   "interviews": {
     "title": "Interviews",
-    "text": "Alle interviews van dit bedrijf en zijn credits voor kandidaten. Elk interview is een test met tijdslimiet, gemaakt van een functieomschrijving.",
+    "text": "Alle interviews van dit bedrijf en zijn credits voor kandidaten. Elk interview is een test met tijdslimiet, gemaakt van een functieomschrijving of een sjabloon.",
     "actions": [
-      "Maak een interview van een functieomschrijving met “Nieuw interview”.",
-      "Open een interview om de onderwerpen, kandidaten, notities en instellingen te zien; een vastgezette notitie staat onder de naam ervan.",
-      "Zoek interviews op hun titel.",
-      "Probeer een interview als kandidaat, of verwijder het.",
-      "Waardeer credits op via het saldo, of zet automatisch opwaarderen aan op het tabblad Facturering."
+      "Maak een interview van een functieomschrijving met “Nieuw interview” (eigenaren en beheerders).",
+      "Open een interview om de onderwerpen, kandidaten en notities, de instellingen (eigenaren en beheerders) en, zodra het bedrijf heeft opgewaardeerd, Ontdekken te zien; een vastgezette notitie staat onder de naam ervan.",
+      "Zoek interviews op hun titel, of filter ze op status: nieuw, bezig of aangenomen.",
+      "Probeer een interview als kandidaat via het ⋮-menu; eigenaren en beheerders kunnen het daar ook verwijderen.",
+      "Waardeer credits op via het saldo, of zet automatisch opwaarderen aan op het tabblad Facturering (eigenaren en beheerders)."
     ],
     "tips": [
       "Het saldo wordt oranje als de credits bijna op zijn. Zonder credits worden nieuwe uitnodigingen niet verstuurd.",
-      "Het menu van het bedrijf leidt naar sjablonen, je team, integraties, facturering (eigenaren en beheerders) en doorverwijzingen."
+      "Het menu van het bedrijf leidt naar sjablonen, je team, integraties, merk en facturering (eigenaren en beheerders), het actielog (de eigenaar) en doorverwijzingen."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Begin een interview vanuit de functieomschrijving. testee leest die, stelt de onderwerpen voor en schrijft de vragen zodra je ze goedkeurt.",
     "actions": [
       "Plak de functieomschrijving: de functie, de eisen en wat een pre is.",
+      "Zolang er nog niets is getypt, vult “Probeer een voorbeeld” het vak met een voorbeeldomschrijving.",
       "Kies de taal waarin het interview wordt gegenereerd.",
-      "Genereer en controleer dan de voorgestelde onderwerpen."
+      "Genereer en controleer dan de voorgestelde onderwerpen.",
+      "Begin in plaats daarvan met een sjabloon, of met een vacature uit je ATS zodra dat gekoppeld is.",
+      "Ben je begonnen op de startpagina, kies dan het bedrijf waarvoor het is, of maak er een aan; alleen bedrijven waarvan je eigenaar of beheerder bent, staan in de lijst."
     ],
     "tips": [
       "Hoe specifieker de omschrijving, hoe beter de vragen bij de functie passen.",
-      "Genereren is gratis: je betaalt alleen voor kandidaten die antwoorden."
+      "Genereren is gratis: je betaalt alleen voor kandidaten die antwoorden.",
+      "Een bedrijf kan maar een paar interviews zonder kandidaten hebben en er maar een paar per dag starten; de limieten zijn hoger zodra het heeft opgewaardeerd."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "Vink de onderwerpen uit die je niet nodig hebt.",
       "Bewerk de naam en subonderwerpen van een onderwerp met het potloodje.",
+      "Voeg een eigen onderwerp toe met “Onderwerp toevoegen”: geef het een naam en minstens 3 subonderwerpen.",
       "Beschrijf wijzigingen in je eigen woorden en pas ze toe, bijvoorbeeld “voeg een onderwerp over teamleiderschap toe”.",
-      "Keur goed en genereer om de vragen te laten schrijven."
+      "Keur goed en genereer om de vragen te laten schrijven.",
+      "Annuleer om het interview te laten vallen; niets van wat tot nu toe is gegenereerd, blijft bewaard."
     ],
     "tips": [
       "Te veel onderwerpen? Vink er een paar uit of beschrijf hoe ze samengevoegd moeten worden.",
-      "De vragen worden pas geschreven nadat je goedkeurt, dus neem hier even de tijd."
+      "De vragen worden pas geschreven nadat je goedkeurt, dus neem hier even de tijd.",
+      "Een controle die 14 dagen openstaat, wordt geannuleerd en het interview ervan verwijderd."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "testee maakt je interview: eerst de onderwerpen, dan de vragen voor elk onderwerp. Dat duurt een paar minuten.",
     "actions": [
       "Je kunt deze pagina verlaten: het genereren gaat door.",
-      "Annuleer het genereren als je het niet meer nodig hebt; wat tot nu toe is gemaakt, wordt niet bewaard."
+      "Annuleer het genereren als je het niet meer nodig hebt; wat tot nu toe is gemaakt, wordt niet bewaard.",
+      "Zodra de onderwerpen klaar zijn, toont deze pagina ze ter controle; vragen worden pas geschreven nadat je ze hebt goedgekeurd.",
+      "Als het genereren mislukt, kies dan Opnieuw proberen of Opnieuw beginnen."
     ],
     "tips": [
       "Je krijgt een melding als het interview klaar is.",
@@ -97,14 +110,14 @@
     "title": "Onderwerpen",
     "text": "Wat dit interview test: de onderwerpen, elk met subonderwerpen en een eigen pool vragen. Elke kandidaat krijgt een willekeurige selectie uit elke pool.",
     "actions": [
-      "Open “Vragen beheren” om naar de vragen van een onderwerp te gaan: lees ze, schakel er een paar uit, geef ze een like of dislike, of meld ze.",
-      "Genereer een zwakke vraag opnieuw of markeer een fout antwoord op de vragenpagina van een onderwerp.",
-      "Stel in hoeveel vragen elke kandidaat uit een onderwerp krijgt; met 0 valt het onderwerp weg voor nieuwe kandidaten. Een kandidaat krijgt over alle onderwerpen samen hooguit 60 vragen: verlaag een onderwerp om een ander te verhogen.",
-      "Probeer het interview als kandidaat, of verwijder het."
+      "Open een onderwerp om naar de vragen ervan te gaan: lees ze, geef ze een like of dislike, meld ze en schakel er als eigenaar of beheerder een paar uit.",
+      "Genereer een zwakke vraag opnieuw of markeer een fout antwoord op de vragenpagina van een onderwerp (eigenaren en beheerders).",
+      "Stel in hoeveel vragen elke kandidaat uit een onderwerp krijgt (eigenaren en beheerders); met 0 valt het onderwerp weg voor nieuwe kandidaten, maar minstens één onderwerp moet vragen houden. Een kandidaat krijgt over alle onderwerpen samen hooguit 60 vragen: verlaag een onderwerp om een ander te verhogen.",
+      "Probeer het interview als kandidaat via het ⋮-menu; eigenaren en beheerders kunnen het daar ook verwijderen."
     ],
     "tips": [
-      "Door AI geschreven vragen kunnen fout zijn: loop elk onderwerp even door voordat je iemand uitnodigt.",
-      "Klik op de titel om het interview een andere naam te geven.",
+      "Door AI geschreven vragen kunnen fout zijn, ook al controleert een tweede AI een steekproef van de antwoorden: loop elk onderwerp even door voordat je iemand uitnodigt.",
+      "Klik op de titel om het interview een andere naam te geven (eigenaren en beheerders).",
       "De kaarten bovenaan tellen op wat elke kandidaat krijgt: het totaal aantal vragen, de gemiddelde tijd per vraag en de tijd van het hele interview. Ze volgen elke wijziging."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Vragen",
     "text": "De vragen van één onderwerp met hun antwoorden, likes, dislikes en meldingen. Elke kandidaat krijgt een willekeurige selectie uit de actieve vragen.",
     "actions": [
+      "Zie in de kaarten bovenaan hoeveel vragen er zijn, hoeveel er actief of uitgeschakeld zijn en hoeveel meldingen ze hebben; filter de lijst op Alle, Actief, Uitgeschakeld of Gemeld.",
       "Vink een vraag uit om die uit te schakelen: vanaf nu krijgt geen enkele kandidaat die nog. Vink haar weer aan om haar actief te maken (eigenaren en beheerders).",
       "Geef een vraag een like of dislike; klik nog eens op je keuze om die in te trekken.",
       "Open de meldingen bij een vraag en voeg je eigen melding toe, één per vraag.",
-      "Genereer een zwakke vraag opnieuw of markeer een fout antwoord (eigenaren en beheerders)."
+      "Genereer een zwakke vraag opnieuw of markeer een fout antwoord via het ⋮-menu ervan (eigenaren en beheerders); een gemarkeerd antwoord wordt gecontroleerd en, als het fout is, gecorrigeerd of vervangen."
     ],
     "tips": [
       "Door AI geschreven vragen kunnen fout zijn: lees ze voordat je iemand uitnodigt.",
@@ -127,27 +141,31 @@
     "title": "Kandidaten",
     "text": "Iedereen die voor dit interview is uitgenodigd, met status, voortgang en score.",
     "actions": [
-      "Nodig kandidaten uit: één voor één, een lijst van maximaal 100, of een CSV- of TXT-bestand.",
+      "Nodig kandidaten uit met “Nieuwe kandidaten” (eigenaren en beheerders): één voor één, een lijst, of een CSV- of TXT-bestand.",
       "Zoek op e-mailadres of naam, filter op status en sorteer op score of datum.",
-      "Open het rapport van een kandidaat, of download of deel het rapport over alle kandidaten."
+      "Open het rapport van een kandidaat, of download of deel het rapport over alle kandidaten.",
+      "Open het ⋮-menu van een kandidaat om de uitnodiging opnieuw te sturen, de link ervan te kopiëren, de uitnodiging in te trekken of de kandidaat te verwijderen (eigenaren en beheerders)."
     ],
     "tips": [
       "Elke kandidaat die minstens één vraag beantwoordt, gebruikt credits, ook kandidaten via de link.",
-      "Herinneringen gaan automatisch naar kandidaten.",
-      "Kies bij het uitnodigen of kandidaten in klikmodus of spraakmodus antwoorden; een kandidaat in een andere modus dan die van het interview toont het pictogram van die modus."
+      "Een kandidaat die nog niet is begonnen, krijgt 3 dagen na de uitnodiging één herinnering. Een uitnodiging die niet binnen 30 dagen is gestart, verloopt; als je haar opnieuw stuurt, werkt ze weer.",
+      "Kandidaten doen het in de modus van het interview; om die voor één kandidaat te wijzigen, gebruik je zijn pagina. Een kandidaat in een andere modus dan die van het interview toont het pictogram van die modus.",
+      "Bij het uitnodigen worden de credits van een kandidaat gereserveerd; ze worden teruggegeven als de kandidaat klaar is zonder te antwoorden.",
+      "Kandidaten via de deelbare link, je ATS, de API of Ontdekken staan hier ook.",
+      "Het rapport over alle kandidaten wordt gedeeld als PDF per e-mail, of als korte samenvatting via WhatsApp, Telegram, Viber of LINE."
     ]
   },
   "interviewNotes": {
     "title": "Notities",
-    "text": "De notities van je team over deze wervingsronde: wat jullie hebben afgesproken, wie jullie hierna bellen of voor wie het interview is. Iedereen in je bedrijf ziet ze; kandidaten nooit.",
+    "text": "De notities van je team over deze wervingsronde: wat jullie hebben afgesproken, wie jullie hierna bellen of voor wie het interview is. Iedereen in je bedrijf, ook kijkers, ziet ze en kan ze schrijven; kandidaten nooit.",
     "actions": [
       "Schrijf een notitie in het vak bovenaan en kies Plaatsen, of druk op ⌘/Ctrl+Enter. Links erin worden klikbaar.",
-      "Bewerk of verwijder je eigen notities met de knoppen op hun rij; eigenaren en beheerders kunnen die van iedereen verwijderen.",
-      "Zet een notitie vast met de bladwijzer (eigenaren en beheerders): ze staat hier bovenaan, en onder de naam van het interview op de pagina ervan en in de lijst met interviews."
+      "Bewerk of verwijder je eigen notities via het ⋮-menu op hun rij; eigenaren en beheerders kunnen die van iedereen verwijderen.",
+      "Zet een notitie vast met “Bovenaan vastzetten” in het ⋮-menu ervan (eigenaren en beheerders): één notitie tegelijk staat hier bovenaan, en onder de naam van het interview op de pagina ervan en in de lijst met interviews."
     ],
     "tips": [
       "Werk je voor klanten? Zet een notitie vast zoals “Voor Acme, backend developer” om in één oogopslag te zien voor wie elk interview is.",
-      "Een verwijderde notitie is voorgoed weg. Het actielog legt vast wie een notitie schreef, wijzigde of verwijderde, nooit de tekst ervan.",
+      "Een verwijderde notitie is voorgoed weg. Het actielog legt vast wie een notitie schreef, wijzigde, verwijderde of vastzette, nooit de tekst ervan.",
       "De rest van je team hoort van elke nieuwe notitie: in de meldingen, in het dagelijkse activiteitenoverzicht en, als Slack gekoppeld is, in jullie kanaal."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Instellingen",
-    "text": "Hoe dit interview verloopt voor elke kandidaat.",
+    "text": "Hoe dit interview verloopt voor elke kandidaat. Alleen eigenaren en beheerders zien dit tabblad.",
     "actions": [
-      "Zet de deelbare link aan voor een vacaturetekst: iedereen met de link kan het interview doen.",
+      "Zet de deelbare link aan voor een vacaturetekst: iedereen met de link kan het interview doen, en elke persoon die via de link antwoordt, gebruikt credits zoals een uitgenodigde kandidaat.",
       "Kies de interviewmodus: klikmodus, waarin kandidaten hun antwoorden aantikken, of spraakmodus, waarin Mira, een AI-interviewer, elke vraag voorleest en kandidaten antwoorden met hun stem of door te tikken. Spraakmodus werkt in elke taal; hoe goed die voorleest en verstaat, verschilt per taal, en de link onder de instelling opent de gids met de kwaliteit per taal.",
       "Stel de gemiddelde tijd per vraag in, in seconden: elke vraag krijgt een eigen tijd op basis van de lengte en de code die ze toont, en de totale tijd van het interview blijft gelijk.",
       "Stel de slaaggrens in: kandidaten die die halen, zijn geslaagd.",
@@ -175,22 +193,26 @@
       "Houd de vragen van het interview buiten de gedeelde vragenbank van testee; vragen die al in andere interviews worden hergebruikt, blijven daar."
     ],
     "tips": [
-      "Elke instelling wordt opgeslagen zodra je het veld verlaat.",
+      "Getalvelden worden opgeslagen zodra je ze verlaat; schakelaars en de modus worden meteen opgeslagen.",
       "Kandidaten zien hun scores nooit; alleen je team ziet ze.",
-      "Geef een kandidaat die meer tijd nodig heeft extra tijd op zijn of haar pagina."
+      "Geef een kandidaat die meer tijd nodig heeft extra tijd op zijn of haar pagina.",
+      "Een nieuwe modus geldt voor kandidaten die nog niet zijn begonnen, behalve wie op zijn eigen pagina een eigen modus heeft gekregen.",
+      "De gemiddelde tijd is 10 tot 600 seconden; de slaaggrens is 1 tot 100%."
     ]
   },
   "tryInterview": {
     "title": "Proberen als kandidaat",
     "text": "Een voorbeeld van dit interview precies zoals kandidaten het zien: de introductie, dan de vragen met tijdslimiet. Het is gratis.",
     "actions": [
-      "Start het voorbeeld en antwoord zoals een kandidaat zou doen.",
+      "Vink de belofte aan om zelf te antwoorden, kies “Accepteren en starten” en antwoord zoals een kandidaat zou doen.",
       "Controleer de timing, de formulering en de antwoorden voordat je iemand uitnodigt."
     ],
     "tips": [
       "Blijf op de pagina terwijl je antwoordt: bij kandidaten worden het verlaten van de pagina, kopiëren en te snel antwoorden vastgelegd.",
       "Een interview in spraakmodus vraagt eerst om je microfoon en geluid: sta ze toe, en Mira leest elke vraag voor terwijl je antwoordt met je stem of door te tikken.",
-      "Elk bedrijf heeft een aantal voorbeelden per dag, minder in spraakmodus; zijn ze op, dan zie je bij het starten wanneer je het opnieuw kunt proberen."
+      "Elk bedrijf heeft een aantal voorbeelden per dag, minder in spraakmodus; zijn ze op, dan zie je bij het starten wanneer je het opnieuw kunt proberen.",
+      "Een voorbeeld blijft buiten de kandidatenlijst en de statistieken van de vragen.",
+      "Ook kijkers kunnen een interview proberen."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Lees elk antwoord, met integriteitssignalen: pagina verlaten, kopieerpogingen en te snelle antwoorden.",
       "Bekijk zodra de kandidaat klaar is ongebruikelijke patronen in de antwoorden en antwoordtijden, en vragen die de kandidaat goed had om in een live gesprek op door te vragen.",
-      "Download het rapport als PDF, of deel het per e-mail.",
-      "Geef extra tijd voordat de kandidaat begint, bijvoorbeeld bij een beperking.",
+      "Download het rapport als PDF, of deel het: de PDF per e-mail, of een korte samenvatting via WhatsApp, Telegram, Viber of LINE. Kijkers kunnen het alleen naar leden van het bedrijf e-mailen.",
+      "Geef +25%, +50% of +100% extra tijd voordat de kandidaat begint, bijvoorbeeld bij een beperking.",
       "Kies of de kandidaat in klikmodus of spraakmodus antwoordt, ongeacht de modus van het interview, tot hij begint.",
       "Voeg de naam van de kandidaat toe of bewerk die.",
-      "Kopieer de uitnodigingslink om die zelf te sturen als de e-mail niet is aangekomen; hij blijft beschikbaar tot de kandidaat klaar is.",
+      "Kopieer de uitnodigingslink om die zelf te sturen als de e-mail niet is aangekomen; hij blijft beschikbaar tot de kandidaat klaar is of de uitnodiging verloopt.",
       "Verstuur de uitnodiging opnieuw of trek die in, of verwijder de kandidaat met de resultaten."
     ],
     "tips": [
       "De score ondersteunt je beslissing, maar neemt die niet. Als de kandidaat erom vraagt, laat dan een mens het resultaat beoordelen.",
       "Een vinkje onder het cijfer laat zien dat de kandidaat voor het begin heeft bevestigd de vragen zelf te beantwoorden, zonder AI-tools of hulp van anderen.",
-      "De score is het percentage behaalde punten: elke vraag is één punt waard, en een vraag waarbij je alle juiste opties aanvinkt levert een deel daarvan op voor elke aangevinkte juiste optie, en niets als er een foute is aangevinkt."
+      "De score is het percentage behaalde punten: elke vraag is één punt waard, en een vraag waarbij je alle juiste opties aanvinkt levert een deel daarvan op voor elke aangevinkte juiste optie, en niets als er een foute is aangevinkt.",
+      "Extra tijd, de modus en naam van de kandidaat, de uitnodigingslink, opnieuw sturen, intrekken en verwijderen zijn voor eigenaren en beheerders."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Zoek op functie of onderwerp, en filter op niveau en taal.",
       "Open een sjabloon om de onderwerpen te zien en hoeveel vragen elk onderwerp heeft.",
-      "Gebruik een sjabloon om er een interview mee te starten."
+      "Zie op elke rij de onderwerpen, vragen en minuten, en hoeveel van je interviews het hebben gebruikt.",
+      "Gebruik een sjabloon om er een interview mee te starten (eigenaren en beheerders)."
     ],
     "tips": [
       "Voor een betere match maak je liever een interview van je eigen functieomschrijving.",
-      "Na het kopiëren is het interview van jou: pas de vragen en instellingen aan zoals je wilt."
+      "Na het kopiëren is het interview van jou: pas de vragen en instellingen aan zoals je wilt.",
+      "De lijst begint met jouw taal en Engels; kies alle talen om de rest te zien."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "Een kant-en-klaar interview: de onderwerpen, hun subonderwerpen en hoeveel vragen elk onderwerp heeft.",
     "actions": [
       "Controleer of de onderwerpen passen bij de functie waarvoor je werft.",
-      "Gebruik het sjabloon om het als nieuw interview naar dit bedrijf te kopiëren."
+      "Gebruik het sjabloon om het als nieuw interview naar dit bedrijf te kopiëren (eigenaren en beheerders)."
     ],
     "tips": [
       "Kopiëren is gratis; kandidaten die antwoorden gebruiken zoals altijd credits.",
-      "Passen de onderwerpen niet, maak dan een interview van je functieomschrijving."
+      "Passen de onderwerpen niet, maak dan een interview van je functieomschrijving.",
+      "De vragen ervan blijven verborgen tot je het gebruikt."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "Voeg een lid toe per e-mail, als beheerder of kijker: die krijgt per e-mail een link om lid te worden.",
       "Wijzig de rol van een lid tussen beheerder en kijker.",
+      "Draag het bedrijf over aan een beheerder die lid is geworden, met “Eigenaar maken” in zijn menu: jij wordt dan beheerder.",
       "Kopieer de link van een openstaande uitnodiging, of verwijder een lid of een uitnodiging."
     ],
     "tips": [
-      "Beheerders maken en wijzigen interviews, nodigen kandidaten uit en waarderen op. Kijkers zien interviews en resultaten en delen rapporten, maar wijzigen niets.",
-      "Als je een lid verwijdert wiens kaart het automatisch opwaarderen betaalt, stopt het automatisch opwaarderen."
+      "Beheerders maken en wijzigen interviews, nodigen kandidaten uit en waarderen op. Kijkers zien interviews en resultaten, delen rapporten en schrijven notities, maar wijzigen verder niets.",
+      "Als je een lid verwijdert wiens kaart het automatisch opwaarderen betaalt, of diegene kijker maakt, stopt het automatisch opwaarderen.",
+      "Alleen de eigenaar voegt leden toe, wijzigt en verwijdert ze; iedereen in het bedrijf ziet het team."
     ]
   },
   "actions": {
     "title": "Actielog",
-    "text": "Alles wat de leden van het bedrijf deden, nieuwste eerst: wat ze deden en waaraan, wie het deed, wanneer, en of de assistent, een AI-app, de API of een ATS het voor hen deed. Alleen de eigenaar ziet het.",
+    "text": "Alles wat de leden van het bedrijf deden, nieuwste eerst: wat ze deden en waaraan, wie het deed, wanneer, en of de AI-assistent, een AI-app, de API of een ATS het voor hen deed. Alleen de eigenaar ziet het.",
     "actions": [
       "Toon de acties van één lid, of van één soort: interviews, kandidaten, team, bedrijf, facturering of integraties.",
       "Toon de acties tussen twee dagen.",
-      "Download een export voor een bias-audit: een CSV-bestand met elke kandidaat die klaar is, voor alle interviews of één en, als je wilt, tussen twee dagen, met hun score, de slaaggrens, of ze geslaagd zijn en of ze boven de mediaan van het interview scoorden, per e-mailadres."
+      "Download het log als CSV-bestand via het ⋮-menu: de hele periode, een recente periode of tussen twee dagen. Tot 20 downloads per bedrijf per dag.",
+      "Download een export voor een bias-audit: een CSV-bestand met elke kandidaat die met een score klaar is, voor alle interviews of één en, als je wilt, tussen twee dagen, met hun score, de slaaggrens, of ze geslaagd zijn en of ze boven de mediaan van het interview scoorden, per e-mailadres."
     ],
     "tips": [
       "Acties worden 12 maanden bewaard.",
@@ -271,12 +300,12 @@
     "text": "Koppel testee aan de tools die je team al gebruikt. Elke integratie opent een eigen pagina met de stappen om die in te stellen.",
     "actions": [
       "Slack: ontvang de meldingen van je bedrijf in een kanaal.",
-      "API: sleutels en webhooks om je eigen platform te koppelen.",
+      "API: sleutels, webhooks en de SDK om je eigen platform te koppelen.",
       "AI-apps: gebruik testee vanuit Claude, ChatGPT en andere AI-apps.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR): kandidaten die je naar een fase verplaatst krijgen het interview, en hun resultaten gaan terug."
     ],
     "tips": [
-      "Iedereen in het bedrijf ziet de integraties; eigenaren en beheerders wijzigen ze."
+      "Iedereen in het bedrijf ziet de integraties; eigenaren en beheerders wijzigen ze. AI-apps zijn van ieder persoonlijk: iedereen kan de eigen apps koppelen of ontkoppelen."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "Koppel je ATS volgens de instructies.",
       "Koppel een vacature: kies de vacature, de fase en een interview, of maak een nieuw interview van de vacaturetekst.",
+      "Zie hoeveel kandidaten elke gekoppelde vacature heeft uitgenodigd, in de wacht heeft of niet kon uitnodigen.",
       "Nodig kandidaten die niet zijn uitgenodigd opnieuw uit, bijvoorbeeld als de credits op waren.",
+      "Koppel opnieuw als het ATS niet meer werkt: tot die tijd worden kandidaten niet uitgenodigd.",
       "Verwijder de koppeling met een vacature, of ontkoppel het ATS."
     ],
     "tips": [
       "Voeg een fase toe alleen voor testee, zoals “testee-vaardighedentest”, zodat die nooit door je andere tools heen loopt.",
-      "testee verplaatst of wijst nooit iemand af in je ATS."
+      "testee verplaatst of wijst nooit iemand af in je ATS.",
+      "Als het lid dat het ATS heeft gekoppeld vertrekt of kijker wordt, worden er geen kandidaten meer uitgenodigd."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "Voeg testee toe aan Slack en kies het kanaal, bijvoorbeeld #hiring.",
       "Kies welke meldingen daar binnenkomen: een kandidaat die klaar is, een uitnodiging die niet is afgeleverd, een interview dat klaar is en meer.",
+      "Stuur een testbericht naar het kanaal, en koppel opnieuw als Slack geen berichten meer aanneemt.",
       "Ontkoppel om ze te stoppen en de app van testee uit je Slack te verwijderen."
     ],
     "tips": [
       "testee kan alleen in dat kanaal posten; je Slack lezen kan het niet.",
-      "Iedereen ziet elke melding nog steeds bij het belletje."
+      "Iedereen ziet elke melding nog steeds bij het belletje.",
+      "Als het lid dat Slack heeft gekoppeld vertrekt of kijker wordt, stopt het totdat een eigenaar of beheerder het opnieuw koppelt."
     ]
   },
   "api": {
     "title": "API",
     "text": "Koppel je eigen platform, zoals je vacaturesite, aan testee.",
     "actions": [
-      "Maak een API-sleutel aan en vink alleen aan wat hij nodig heeft: interviews lezen of maken; kandidaten lezen, uitnodigen, wijzigen of verwijderen; je credits lezen; of gebruiken met AI-agents (MCP). Hij handelt namens jou.",
+      "Maak een API-sleutel aan en vink alleen aan wat hij nodig heeft: interviews lezen of maken; kandidaten lezen, uitnodigen, wijzigen of verwijderen; notities lezen of toevoegen; je credits lezen; of gebruiken met AI-agents (MCP). Hij handelt zelfstandig voor het bedrijf en blijft werken als de persoon die hem maakte vertrekt.",
       "Open een sleutel om te wijzigen wat hij mag, waarbij elke wijziging meteen wordt opgeslagen, en vanaf welke IP-adressen hij gebruikt mag worden.",
+      "Hernoem een sleutel, maak een vervanging als hij bijna verloopt en zie als eigenaar wat hij heeft gedaan.",
       "Voeg een webhook toe: testee laat je HTTPS-adres ondertekend weten wanneer een kandidaat begint of klaar is (met de resultaten), wanneer de uitnodiging een kandidaat niet bereikt of verloopt, wanneer een kandidaat wordt verwijderd en wanneer een interview klaarstaat.",
       "Stuur een webhook een testgebeurtenis en zie in het afleverlogboek hoe elke verzending is verlopen.",
+      "Vernieuw het geheim van een webhook: 24 uur lang ondertekenen beide geheimen elk verzoek.",
       "Zet op het tabblad SDK de sites die je interviews met de SDK mogen tonen, en sta localhost toe zolang je test.",
       "Verwijder de sleutels en webhooks die je niet meer gebruikt.",
       "Open de ontwikkelaarsdocumentatie voor elk endpoint en elke gebeurtenis, en de SDK."
@@ -321,7 +357,8 @@
     "tips": [
       "Een nieuwe sleutel en het secret van een webhook worden maar één keer getoond: kopieer ze meteen.",
       "Kies voor elke sleutel een vervaldatum: een gelekte sleutel die nooit verloopt, blijft bruikbaar.",
-      "Je kunt de rechten van een sleutel later aan- of uitvinken; geef elke sleutel alleen wat zijn platform nodig heeft."
+      "Je kunt de rechten van een sleutel later aan- of uitvinken; geef elke sleutel alleen wat zijn platform nodig heeft.",
+      "Een webhook die 3 dagen niet antwoordt, wordt gepauzeerd; een testgebeurtenis die aankomt, start hem weer."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Kopieer het serveradres en voeg het volgens de stappen toe aan Claude, Claude Code of ChatGPT; andere apps en je eigen agents staan in de ontwikkelaarsdocumentatie.",
       "Sta de app toe op de testee-pagina die opent.",
-      "Ontkoppel een app die je niet meer gebruikt."
+      "Zodra een app is gekoppeld, kopieer je een voorbeeld van wat je eraan kunt vragen.",
+      "Ontkoppel een app die je niet meer gebruikt.",
+      "Eigenaren en beheerders staan AI-apps in dit bedrijf toe of stoppen ze: zolang ze uit staan, kunnen apps er niets lezen of wijzigen."
     ],
     "tips": [
-      "Een app handelt namens jou, in elk bedrijf waar je lid van bent. De meeste apps vragen het je voordat ze iets wijzigen.",
+      "Een app handelt namens jou, in elk bedrijf waar je lid van bent dat AI-apps toestaat. De meeste apps vragen het je voordat ze iets wijzigen.",
       "Hij kan je wachtwoord en API-sleutels niet zien, en kan je account of een bedrijf niet verwijderen."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Doorverwijzingen",
     "text": "Nodig andere bedrijven uit voor testee met de link van dit bedrijf, en jullie krijgen allebei credits.",
     "actions": [
-      "Kopieer of deel je doorverwijslink.",
-      "Bekijk elke beloning die dit bedrijf heeft ontvangen."
+      "Kopieer je doorverwijslink om hem te delen.",
+      "Bekijk de bedrijven die via je link kwamen en hebben opgewaardeerd, de credits die elk je opleverde en hoeveel beloningen er dit jaar nog over zijn."
     ],
     "tips": [
       "Jullie krijgen allebei credits wanneer het uitgenodigde bedrijf voor het eerst opwaardeert, met welk bedrag ook.",
-      "De credits gaan naar dit bedrijf en vervallen nooit."
+      "De credits gaan naar dit bedrijf en vervallen nooit.",
+      "Beide kanten krijgen 1.000 credits. Je bedrijf verdient dit tot 25 keer per jaar; daarna krijgt het bedrijf dat je hebt uitgenodigd nog steeds zijn credits.",
+      "Een opwaardering die volledig wordt terugbetaald of teruggeboekt, neemt beide beloningen terug."
     ]
   },
   "brand": {
     "title": "Merk",
-    "text": "Je logo en kleuren in de uitnodiging, het interview en de afsluitende pagina van je kandidaten.",
+    "text": "Je logo, kleuren, lettertypen en afronding in de uitnodiging, het interview en de afsluitende pagina van je kandidaten. Het logo staat ook in hun e-mails.",
     "actions": [
-      "Stel het logo in of wijzig het.",
+      "Stel het logo in, wijzig het of verwijder het.",
       "Kies de lettertypen voor titels en tekst, en hoe rond kaarten en knoppen zijn.",
-      "Kies de kleuren van elke groep en bekijk ze in het voorbeeld.",
-      "Sla ze op, of ga terug naar de testee-kleuren."
+      "Kies de kleuren van elke groep, één set voor het lichte thema en één voor het donkere, en bekijk ze in het voorbeeld.",
+      "Sla ze op, maak niet-opgeslagen wijzigingen ongedaan met “Herstellen”, of ga terug naar de kleuren, lettertypen en afronding van testee met “Terug naar de testee-standaard”."
     ],
     "tips": [
       "Kleuren waarbij tekst moeilijk leesbaar zou zijn, kunnen niet worden opgeslagen, zodat elke kandidaat de vragen kan lezen.",
-      "Teamleden die een interview uitproberen, zien het ook in jouw kleuren."
+      "Teamleden die een interview uitproberen, zien het ook in jouw kleuren.",
+      "Alleen eigenaren en beheerders zien deze pagina."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Waardeer op, of stel automatisch opwaarderen in.",
       "Bekijk de kandidaten van wie de credits gereserveerd zijn.",
-      "Open de factuur van elke opwaardering."
+      "Open de factuur van elke opwaardering.",
+      "Beperk de geschiedenis tot opwaarderingen, afschrijvingen of terugbetalingen, of download haar als CSV-bestand. Tot 20 downloads per bedrijf per dag."
     ],
     "tips": [
       "De credits van een kandidaat worden gereserveerd bij de uitnodiging, afgeschreven zodra die antwoordt en teruggegeven als dat niet gebeurt.",
-      "Alleen eigenaren en beheerders zien deze pagina."
+      "Alleen eigenaren en beheerders zien deze pagina.",
+      "Je kunt terugbetaling vragen van credits die je in de afgelopen 14 dagen hebt gekocht en niet hebt gebruikt, via Paddle of door ons te schrijven."
     ]
   },
   "topUp": {
     "title": "Opwaarderen",
     "text": "Koop credits voor elk bedrijf waarvan je eigenaar of beheerder bent.",
     "actions": [
-      "Kies een bedrijf en een opwaardering: grotere kosten minder per kandidaat.",
+      "Kies een bedrijf en typ daarna voor hoeveel kandidaten je wilt opwaarderen, van 10 tot 1.000, of kies een prijstrede: grotere opwaarderingen kosten minder per kandidaat.",
+      "Wijzig de valuta van het bedrijf bovenaan de pagina: zijn opwaarderingen, ook de automatische, worden vanaf dan daarin geprijsd en afgeschreven.",
       "Betaal op de betaalpagina van Paddle; de credits staan er binnen enkele seconden.",
-      "Open de prijzen om de opwaarderingen te vergelijken."
+      "Open de prijzen om de opwaarderingen te vergelijken.",
+      "Stel automatisch opwaarderen in: kies een bedrag en een saldo en vink de overeenkomst aan. Je kaart wordt opgeslagen in de Paddle-checkout en belast telkens als het saldo onder dat niveau zakt."
     ],
     "tips": [
       "Een kandidaat kost 500 credits: gereserveerd bij de uitnodiging, afgeschreven zodra die antwoordt en teruggegeven als dat niet gebeurt.",
-      "Credits verlopen nooit. De factuur van elke opwaardering staat op het tabblad Facturering van het bedrijf."
+      "Credits verlopen nooit. De factuur van elke opwaardering staat op het tabblad Facturering van het bedrijf.",
+      "Prijzen zijn exclusief btw of omzetbelasting: waar die van toepassing is, wordt ze bij het afrekenen toegevoegd.",
+      "Je kunt terugbetaling vragen van credits die je in de afgelopen 14 dagen hebt gekocht en niet hebt gebruikt, via Paddle of door ons te schrijven.",
+      "Eigenaren en beheerders stellen automatisch opwaarderen in. Alleen de persoon wiens kaart betaalt, kan het wijzigen of de kaart bijwerken; elke eigenaar of beheerder kan het meteen uitzetten.",
+      "Een geweigerde kaart wordt na 1, 3 en 7 dagen opnieuw geprobeerd; daarna pauzeert automatisch opwaarderen tot de kaart is bijgewerkt. Een kaart die niet kan betalen, zoals een verlopen kaart, pauzeert het meteen."
     ]
   },
   "settings": {
     "title": "Instellingen",
-    "text": "Je eigen account: de taal waarin testee tegen je praat, de e-mails die je krijgt en je gegevens.",
+    "text": "Je eigen account: de taal waarin testee tegen je praat, je valuta, de e-mails die je krijgt en je gegevens.",
     "actions": [
-      "Kies de taal van de site, de hulpchat en je e-mails.",
+      "Kies de taal van de site, de antwoorden van de AI-assistent en je e-mails; nieuwe interviews beginnen ook in die taal.",
+      "Kies de valuta waarin prijzen worden getoond, waar je ook bent. De opwaarderingen van een bedrijf gaan in de eigen valuta van het bedrijf, ingesteld op zijn opwaardeerpagina.",
       "Kies welke optionele e-mails je krijgt; service-e-mails, zoals uitnodigingen, rapporten en betalingsproblemen, worden altijd verstuurd.",
       "Zet Open voor nieuwe kansen aan of uit: zolang het aan staat, zien bedrijven die via testee werven voor de onderwerpen die je hebt geoefend je naam, je LinkedIn-profiel en je oefenresultaten, en kunnen ze je uitnodigen.",
-      "Download alles wat testee over je bewaart, of verwijder je account."
+      "Download alles wat testee over je bewaart, of verwijder je account.",
+      "Kopieer je account-ID om te vermelden als je ons schrijft."
     ],
     "tips": [
-      "Als je je account verwijdert, worden de bedrijven verwijderd waarin alleen jij zit. Een bedrijf waar anderen lid van zijn geworden, heeft eerst een andere eigenaar nodig."
+      "Als je je account verwijdert, worden de bedrijven verwijderd waarin alleen jij zit, en hun credits worden niet terugbetaald. Een bedrijf waar anderen lid van zijn geworden, heeft eerst een andere eigenaar nodig, of moet worden verwijderd.",
+      "Open voor nieuwe kansen vereist je LinkedIn-profiel en gaat vanzelf uit een jaar nadat je het voor het laatst hebt aangezet."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Ingelogd met een ander e-mailadres? Log uit en log in met het uitgenodigde adres; de uitnodiging werkt alleen daarvoor.",
-      "Je rol, beheerder of kijker, is gekozen door degene die je heeft uitgenodigd."
+      "Je rol, beheerder of kijker, is gekozen door degene die je heeft uitgenodigd.",
+      "Een uitnodiging die al is gebruikt, of die de eigenaar heeft verwijderd, werkt niet meer."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Log in, als je dat nog niet hebt gedaan, om te zien welke app het vraagt.",
       "Lees wat de app wel en niet met je account kan doen.",
+      "Zet “Wijzigingen toestaan” uit om de app alleen te laten lezen.",
       "Sta de app toe of weiger hem; in beide gevallen ga je terug naar de app."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Volg het nieuws in je feedreader met de RSS-link bovenaan."
     ],
     "tips": [
-      "Nieuws verschijnt in je meldingen; zet productupdates aan in je instellingen om de belangrijkste ook per e-mail te krijgen."
+      "Nieuws verschijnt in je meldingen; het belangrijkste komt ook per e-mail zolang “Productupdates en nieuws” aanstaat in je instellingen."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Zolang je geen talen kiest, toont de lijst de taal van de site en Engels.",
-      "Oefenen is privé: geen enkel bedrijf ziet je resultaten.",
-      "Als je bent ingelogd, markeert een vinkje na de titel een oefening die je bent begonnen, en een dubbel vinkje een die je hebt afgerond; ga erop staan met de muis om te zien hoeveel onderwerpen je hebt afgerond."
+      "Oefenen is privé: geen enkel bedrijf ziet je resultaten, tenzij je Open voor nieuwe kansen aanzet.",
+      "Als je bent ingelogd, markeert een vinkje na de titel een oefening die je bent begonnen, en een dubbel vinkje een die je hebt afgerond; ga met de muis op het vinkje staan om te zien hoeveel onderwerpen je hebt afgerond."
     ]
   },
   "practiceTest": {
     "title": "Oefeninterview",
     "text": "Eén gratis oefeninterview: het niveau, de taal, de lengte en de onderwerpen die het behandelt.",
     "actions": [
+      "Kies vóór de start de tijd per vraag: de standaardtijd, het dubbele of geen tijdslimiet.",
       "Start een oefenronde; log eerst in als je dat nog niet hebt gedaan.",
       "Zie hoe ver je in je laatste ronde per onderwerp bent gekomen.",
-      "Open je eerdere rondes met de geschiedenisknop naast “Oefenen starten”.",
+      "Als je bent ingelogd, open je je eerdere rondes met “Je rondes” naast “Oefenen starten”.",
       "Werf je voor deze functie? Maak er een interview van voor je eigen kandidaten."
     ],
     "tips": [
-      "Elke ronde heeft een tijdslimiet, net als een echt interview; daarna zie je je score en elk juist antwoord.",
-      "Oefen zo vaak als je wilt: het is gratis."
+      "Elke ronde heeft een tijdslimiet, tenzij je kiest voor geen tijdslimiet; daarna zie je je score en elk juist antwoord.",
+      "Oefen zo vaak als je wilt, binnen een limiet per uur voor nieuwe rondes: het is gratis."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "Wat je had aangevinkt toen de tijd van een vraag op was, telt gewoon mee; een vraag zonder iets aangevinkt, of die je nooit hebt bereikt, telt als fout.",
       "Werf je voor deze functie? Maak er een interview van voor je eigen kandidaten.",
-      "Op zoek naar een baan? Zet Open voor nieuwe kansen aan, zodat bedrijven die voor deze onderwerpen werven je naam, je LinkedIn-profiel en je oefenresultaten zien."
+      "Op zoek naar een baan? Vul na een afgeronde ronde je LinkedIn-profiel in en zet Open voor nieuwe kansen aan, zodat bedrijven die voor deze onderwerpen werven je naam, je profiel en je nieuwste oefenresultaten zien en je kunnen uitnodigen; het blijft een jaar aan, tenzij je het uitzet."
     ]
   },
   "features": {
     "title": "Functionaliteiten",
     "text": "Alles wat testee voor een bedrijf doet, van functieomschrijving tot aanname: interviews maken, kandidaten uitnodigen, wat kandidaten zien, rapporten, koppelingen, compliance en prijzen.",
     "actions": [
+      "Spring met “Maak een interview” bovenaan naar het vak aan het einde van de pagina, of open de prijzen.",
       "Spring naar een groep met de tabbladen bovenaan: maken, uitnodigen, interview, beslissen, koppelen, vertrouwen en prijzen.",
-      "Bekijk elke functionaliteit naast een afbeelding van de echte app.",
+      "Bekijk de belangrijkste functionaliteiten naast een afbeelding van de echte app, en de overige als kaarten eronder.",
       "Plak een functieomschrijving in het vak onderaan de pagina om een interview te maken.",
-      "Open de prijzenpagina, de ontwikkelaarsdocumentatie of de vertrouwenspagina vanuit hun groep."
+      "Open de prijzenpagina, de ontwikkelaarsdocumentatie of de vertrouwenspagina vanuit hun groep.",
+      "Vraag het Mira, of open de FAQ of de gidsen, aan het einde van de pagina."
     ],
     "tips": [
       "Alle functionaliteiten zijn inbegrepen: je betaalt alleen voor elke kandidaat die minstens één vraag beantwoordt."
@@ -512,8 +570,9 @@
     "actions": [
       "Scroll langs de lijn naar beneden: elke stap laat zien wat er gebeurt, de opties en een afbeelding van de echte app.",
       "Bij de stappen uitnodigen en delen zie je hoe kandidaten binnenkomen en hoe rapporten naar buiten kunnen.",
-      "Maak een interview met de knop bovenaan, of open alle functionaliteiten.",
-      "Plak een functieomschrijving in het vak onderaan de pagina om te beginnen."
+      "Spring met “Maak een interview” bovenaan naar het startvak, of open alle functionaliteiten.",
+      "Plak een functieomschrijving in het vak onderaan de pagina om te beginnen.",
+      "Vraag het Mira, of open de FAQ of de gidsen, aan het einde van de pagina."
     ],
     "tips": [
       "Interviews maken is gratis: je betaalt alleen voor elke kandidaat die minstens één vraag beantwoordt."
@@ -525,12 +584,14 @@
     "actions": [
       "Bekijk de huidige prijs per kandidaat, en de lagere prijzen bij grotere opwaarderingen.",
       "Bekijk hoeveel eerste kandidaten gratis zijn.",
+      "Zie hoeveel credits een kandidaat kost; belasting wordt bij het afrekenen toegevoegd waar die van toepassing is.",
       "Bekijk de credits die je verdient door een ander bedrijf uit te nodigen.",
       "Waardeer de credits van een bedrijf op."
     ],
     "tips": [
       "Credits verlopen nooit.",
-      "Een kandidaat die geen enkele vraag beantwoordt, kost niets."
+      "Een kandidaat die geen enkele vraag beantwoordt, kost niets.",
+      "Ongebruikte betaalde credits kunnen binnen 14 dagen worden terugbetaald."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "testee vergeleken",
     "text": "Vergelijkingen met bronnen van testee en andere tools voor selectietests: hoe tests worden gemaakt, wat ze kosten en wanneer welke beter past.",
     "actions": [
-      "Open een vergelijking om die te lezen."
+      "Open een vergelijking om die te lezen.",
+      "Maak een test voor je kandidaten met de kaart aan het einde."
     ],
     "tips": [
       "Elke vergelijking toont wanneer die voor het laatst is bijgewerkt."
@@ -574,8 +636,9 @@
     "text": "Hoe testee zich op één punt verhoudt tot andere tools: hoe tests worden gemaakt, wat ze kosten en wanneer welke beter past.",
     "actions": [
       "Lees de vergelijking en volg de links naar de bronnen.",
-      "Maak een test voor je kandidaten met de kaart aan het einde.",
-      "Ga terug naar alle vergelijkingen met de link boven de titel."
+      "Spring op langere pagina's naar een onderdeel via de lijst “Op deze pagina”.",
+      "Maak een test voor je kandidaten met de knop bovenaan of de kaart aan het einde.",
+      "Ga terug naar alle vergelijkingen met de terugpijl bij de titel."
     ],
     "tips": [
       "Prijzen en functies veranderen: de datum onder de titel toont wanneer de pagina voor het laatst is bijgewerkt."
@@ -585,6 +648,7 @@
     "title": "Gidsen voor werving",
     "text": "Praktische gidsen voor hiring managers: sollicitanten screenen, vaardigheidstests, en AI eerlijk en volgens de wet inzetten bij werving.",
     "actions": [
+      "Doorzoek de gidsen.",
       "Open een gids om die te lezen."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "Een praktische gids voor hiring managers over één onderwerp.",
     "actions": [
       "Lees de gids en volg de links naar bronnen en verwante pagina's.",
-      "Maak een test voor je kandidaten met de kaart aan het einde.",
-      "Ga terug naar alle gidsen met de link boven de titel."
+      "Spring op langere pagina's naar een onderdeel via de lijst “Op deze pagina”.",
+      "Maak een test voor je kandidaten met de knop bovenaan of de kaart aan het einde.",
+      "Ga terug naar alle gidsen met de terugpijl bij de titel."
     ],
     "tips": [
-      "Juridische onderwerpen zijn samenvattingen, geen juridisch advies: overleg met je eigen jurist."
+      "Juridische onderwerpen zijn gedateerde samenvattingen, geen juridisch advies: controleer de regels die gelden waar je werft."
     ]
   },
   "faq": {
     "title": "Veelgestelde vragen",
     "text": "Antwoorden op veelgestelde vragen over testee: interviews, kandidaten, prijzen en credits, resultaten, integraties, talen en je gegevens.",
     "actions": [
+      "Spring naar een groep vragen met de knoppen bovenaan.",
       "Klik op een vraag om het antwoord te openen."
     ],
     "tips": [
-      "Je antwoord niet gevonden? Vraag het Mira, de AI-assistent bovenaan de pagina, of schrijf ons via de contactpagina.",
+      "Je antwoord niet gevonden? Vraag het Mira, de AI-assistent, of schrijf ons, via de kaart aan het einde van de pagina.",
       "De prijzen in de antwoorden zijn altijd die van vandaag."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "Wie testee maakt en waarom: interviews op basis van een functieomschrijving die elk team kan betalen, en gratis oefenen voor iedereen.",
     "actions": [
       "Lees waarom testee bestaat en hoe het werving aanpakt.",
-      "Lees een woord van de oprichter, en open zijn LinkedIn-profiel."
+      "Lees een woord van de oprichter, en open zijn LinkedIn-profiel.",
+      "Maak een test, of oefen gratis, via de kaart aan het einde."
     ],
     "tips": [
       "Gebruik de contactpagina om het team te schrijven."
@@ -630,7 +697,8 @@
     "text": "Schrijf het testee-team met een vraag, een idee, een voorstel voor samenwerking of iets wat niet werkt.",
     "actions": [
       "Vul je naam, je e-mailadres en je bericht in, en verstuur het.",
-      "Plak de ID van het bedrijf, interview, de kandidaat of het account waar het om gaat, zodat we het meteen vinden."
+      "Plak de ID van het bedrijf, interview, de kandidaat of het account waar het om gaat in je bericht, zodat we het meteen vinden.",
+      "Zie wie testee beheert: bedrijfsnaam, registratienummer, adres en e-mail."
     ],
     "tips": [
       "De link “ID kopiëren” staat onder de naam van een bedrijf, een interview of een kandidaat; de ID van je account staat in je accountmenu.",
@@ -641,7 +709,7 @@
     "title": "Ontwikkelaarsdocumentatie",
     "text": "Alles wat je nodig hebt om je eigen platform of AI-agent aan testee te koppelen, rechtstreeks uit de API gelezen zodat het altijd klopt.",
     "actions": [
-      "API: hoe je inlogt, de basis-URL en elk endpoint met parameters, body, response en fouten.",
+      "API: hoe je inlogt, handleidingen zoals die over snelheidslimieten en veilig opnieuw proberen, de basis-URL, elk endpoint met parameters, body, response en fouten, de foutenlijst en de changelog.",
       "Webhooks: de gebeurtenissen die testee naar je adres stuurt en wat elke gebeurtenis bevat.",
       "SDK: hoe je het interview in je eigen site insluit.",
       "MCP: hoe je een AI-app of je eigen agent koppelt, en welke tools die krijgt.",
@@ -661,7 +729,8 @@
       "Mail ons als iets moeilijk te gebruiken is of als je het in een andere vorm nodig hebt."
     ],
     "tips": [
-      "Doe je het interview van een bedrijf en heb je meer tijd nodig? Vraag het bedrijf om extra tijd voordat je begint; je hoeft niet te zeggen waarom."
+      "Doe je het interview van een bedrijf en heb je meer tijd nodig? Vraag het bedrijf om extra tijd voordat je begint; je hoeft niet te zeggen waarom.",
+      "We antwoorden binnen 14 dagen; als je niet tevreden bent, kun je contact opnemen met de Estse Autoriteit voor Consumentenbescherming en Technische Regulering (TTJA)."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "Bekijk hoe testee gegevens beschermt: inloggen, versleuteling, toegangscontroles, limieten op verzoeken en back-ups.",
       "Bekijk wat testee biedt voor de AVG, de Europese AI-verordening, het Verenigd Koninkrijk en de VS, inclusief de wet van New York City over bias-audits.",
       "Bekijk waar gegevens worden opgeslagen, welke subverwerkers ze verwerken en hoe lang elke soort gegevens wordt bewaard.",
-      "Open de voorwaarden, het privacybeleid, de verwerkersovereenkomst en de documenten voor bedrijven."
+      "Open de voorwaarden, het privacybeleid, de verwerkersovereenkomst en de documenten voor bedrijven.",
+      "Open de toegankelijkheidsverklaring."
     ],
     "tips": [
       "Voor een vraag over beveiliging, privacy of naleving, of om een beveiligingsprobleem te melden, mail je naar het adres onderaan de pagina."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Afmelden",
-    "text": "Stop met één soort e-mail van testee, zoals op de pagina staat.",
+    "text": "Stop met één soort e-mail van testee, of met alle e-mails van één bedrijf, zoals op de pagina staat.",
     "actions": [
       "Lees welke e-mails de link stopt.",
       "Bevestig om je af te melden; alleen de link openen verandert niets.",
-      "Open daarna je e-mailinstellingen om andere e-mails te wijzigen."
+      "Als je bent ingelogd, open je daarna je e-mailinstellingen om andere e-mails te wijzigen."
     ],
     "tips": [
-      "Service-e-mails, zoals teamuitnodigingen, rapporten en betalingsproblemen, worden nog steeds verstuurd."
+      "Service-e-mails, zoals teamuitnodigingen, rapporten en betalingsproblemen, worden nog steeds verstuurd; een link die de e-mails van een bedrijf stopt, stopt ook zijn uitnodigingen aan jou."
     ]
   }
 }

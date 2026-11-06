@@ -5,13 +5,15 @@
     "actions": [
       "Füge die Stellenbeschreibung oben in das Feld ein oder wähle eine fertige Vorlage; passe die Themen an, und die Fragen werden für dich geschrieben und geprüft.",
       "Lade Kandidaten per E-Mail, aus einer Datei, mit einem teilbaren Link in deiner Stellenanzeige oder über dein ATS, deine eigene Plattform oder einen KI-Assistenten ein.",
+      "Sieh, was Kandidaten sehen: ein Interview mit Zeitlimit in deiner Marke, beantwortet per Klick oder per Sprache.",
       "Lies die Berichte: die Antworten, Ergebnisse und Integritätshinweise jedes Kandidaten, mit einem Klick per E-Mail oder Chat geteilt.",
-      "Verbinde deine Plattform, deine KI-App und Jobbörsen, erhalte Updates in Slack oder bitte Mira, die KI-Assistentin, die Arbeit für dich zu erledigen."
+      "Verbinde dein ATS, deine Plattform und KI-Apps, erhalte Updates in Slack oder bitte Mira, die KI-Assistentin, die Arbeit für dich zu erledigen.",
+      "Vergleiche testee mit Telefoninterviews und Abos und sieh, wie Fragen geprüft und verbessert werden."
     ],
     "tips": [
-      "Interviews zu erstellen ist kostenlos. Du zahlst pro Kandidat, der antwortet, zum Preis unter dem Titel in deiner Währung, und deine ersten Kandidaten sind kostenlos.",
+      "Interviews zu erstellen ist kostenlos. Du zahlst pro Kandidat, der antwortet, zu den Preisen weiter unten auf der Seite in deiner Währung, und deine ersten Kandidaten sind kostenlos.",
       "Probiere dein Interview als Kandidat aus, bevor du jemanden einlädst.",
-      "Sieh dir oben das Video für einen kurzen Rundgang an; die FAQ und die Ratgeber findest du unten auf der Seite.",
+      "Sieh dir über den Button oben das Video für einen kurzen Rundgang an; die FAQ und die Ratgeber findest du unten auf der Seite.",
       "Lade unter den Berichten die Beispielberichte herunter, um zu sehen, wie echte Berichte aussehen."
     ]
   },
@@ -21,10 +23,11 @@
     "actions": [
       "Erstelle ein Unternehmen mit „Neues Unternehmen“. Sein Name ist in testee eindeutig.",
       "Öffne ein Unternehmen, um an seinen Interviews und Kandidaten zu arbeiten.",
-      "Entferne ein Unternehmen, dessen Inhaber du bist, mit allen Interviews und Einladungen."
+      "Entferne ein Unternehmen, dessen Inhaber du bist, mit allen Interviews und Einladungen; seine Credits gehen verloren und werden nicht erstattet.",
+      "Öffne das ⋮-Menü eines Unternehmens für sein Team; Inhaber und Admins laden dort auch Credits auf und öffnen seine Marke und Abrechnung."
     ],
     "tips": [
-      "Bei Unternehmen, deren Inhaber du nicht bist, steht deine Rolle daneben: Admins ändern Dinge, Betrachter sehen nur zu.",
+      "Bei Unternehmen, deren Inhaber du nicht bist, steht deine Rolle daneben: Admins ändern Dinge; Betrachter sehen vor allem zu und können außerdem Notizen schreiben, Fragen bewerten und melden, Interviews ausprobieren und Berichte teilen.",
       "Credits gehören zu einem Unternehmen, daher wird jedes einzeln aufgeladen."
     ]
   },
@@ -36,22 +39,23 @@
       "Erstelle ein neues Unternehmen, falls du noch keins hast; die Vorlage öffnet sich dort."
     ],
     "tips": [
-      "Nach dem Kopieren gehört das Interview dem Unternehmen: Ändere seine Fragen und Einstellungen nach Belieben."
+      "Nach dem Kopieren gehört das Interview dem Unternehmen: Ändere seine Fragen und Einstellungen nach Belieben.",
+      "Nur Inhaber und Admins können eine Vorlage verwenden; in einem Unternehmen, in dem du Betrachter bist, gibt es den Button nicht."
     ]
   },
   "interviews": {
     "title": "Interviews",
-    "text": "Alle Interviews dieses Unternehmens und seine Credits für Kandidaten. Jedes Interview ist ein Test mit Zeitlimit, erstellt aus einer Stellenbeschreibung.",
+    "text": "Alle Interviews dieses Unternehmens und seine Credits für Kandidaten. Jedes Interview ist ein Test mit Zeitlimit, erstellt aus einer Stellenbeschreibung oder einer Vorlage.",
     "actions": [
-      "Erstelle mit „Neues Interview“ ein Interview aus einer Stellenbeschreibung.",
-      "Öffne ein Interview, um seine Themen, Kandidaten, Notizen und Einstellungen zu sehen; eine angeheftete Notiz steht unter seinem Namen.",
-      "Suche Interviews nach ihrem Titel.",
-      "Probiere ein Interview als Kandidat aus oder lösche es.",
-      "Lade Credits direkt beim Guthaben auf, oder schalte automatisches Aufladen im Tab „Abrechnung“ ein."
+      "Erstelle mit „Neues Interview“ ein Interview aus einer Stellenbeschreibung (Inhaber und Admins).",
+      "Öffne ein Interview, um seine Themen, Kandidaten und Notizen, seine Einstellungen (Inhaber und Admins) und, sobald das Unternehmen Credits aufgeladen hat, „Entdecken“ zu sehen; eine angeheftete Notiz steht unter seinem Namen.",
+      "Suche Interviews nach ihrem Titel oder filtere sie nach Status: „Neu“, „Läuft“ oder „Eingestellt“.",
+      "Probiere ein Interview über sein ⋮-Menü als Kandidat aus; Inhaber und Admins können es dort auch löschen.",
+      "Lade Credits direkt beim Guthaben auf, oder schalte automatisches Aufladen im Tab „Abrechnung“ ein (Inhaber und Admins)."
     ],
     "tips": [
       "Das Guthaben wird gelb, wenn die Credits knapp werden. Ohne Credits werden keine neuen Einladungen gesendet.",
-      "Das Menü des Unternehmens führt zu Vorlagen, deinem Team, Integrationen, der Abrechnung (für Inhaber und Admins) und Empfehlungen."
+      "Das Menü des Unternehmens führt zu Vorlagen, deinem Team, Integrationen, Marke und Abrechnung (für Inhaber und Admins), dem Aktionsprotokoll (für den Inhaber) und Empfehlungen."
     ]
   },
   "newInterview": {
@@ -59,12 +63,16 @@
     "text": "Starte ein Interview aus der Stellenbeschreibung. testee liest sie, schlägt die Themen vor und schreibt die Fragen, sobald du sie bestätigst.",
     "actions": [
       "Füge die Stellenbeschreibung ein: die Rolle, ihre Anforderungen und Wünschenswertes.",
+      "Solange noch nichts eingegeben ist, füllt „Beispiel ausprobieren“ das Feld mit einer Beispielbeschreibung.",
       "Wähle die Sprache, in der das Interview generiert wird.",
-      "Generiere und prüfe dann die vorgeschlagenen Themen."
+      "Generiere und prüfe dann die vorgeschlagenen Themen.",
+      "Starte stattdessen mit einer Vorlage oder, sobald ein ATS verbunden ist, mit einer Stelle aus deinem ATS.",
+      "Wenn du auf der Startseite begonnen hast, wähle das passende Unternehmen oder erstelle eines; aufgeführt sind nur Unternehmen, deren Inhaber oder Admin du bist."
     ],
     "tips": [
       "Je genauer die Beschreibung, desto besser passen die Fragen zur Rolle.",
-      "Das Generieren ist kostenlos: Du zahlst nur für Kandidaten, die antworten."
+      "Das Generieren ist kostenlos: Du zahlst nur für Kandidaten, die antworten.",
+      "Ein Unternehmen kann nur wenige Interviews ohne Kandidaten haben und nur wenige pro Tag starten; sobald es Credits aufgeladen hat, sind die Limits höher."
     ]
   },
   "reviewTopics": {
@@ -73,12 +81,15 @@
     "actions": [
       "Entferne das Häkchen bei Themen, die du nicht brauchst.",
       "Bearbeite den Namen und die Unterthemen eines Themas mit seinem Stift.",
+      "Füge mit „Thema hinzufügen“ ein eigenes Thema hinzu: Gib ihm einen Namen und mindestens 3 Unterthemen.",
       "Beschreibe Änderungen in deinen eigenen Worten und wende sie an, zum Beispiel „ein Thema zu Teamführung hinzufügen“.",
-      "Bestätige und generiere, damit die Fragen geschrieben werden."
+      "Bestätige und generiere, damit die Fragen geschrieben werden.",
+      "Brich ab, um das Interview zu verwerfen; nichts von dem, was bisher generiert wurde, bleibt erhalten."
     ],
     "tips": [
       "Bei zu vielen Themen entferne einige oder beschreibe, wie sie zusammengefasst werden sollen.",
-      "Die Fragen werden erst nach deiner Bestätigung geschrieben, nimm dir also hier eine Minute."
+      "Die Fragen werden erst nach deiner Bestätigung geschrieben, nimm dir also hier eine Minute.",
+      "Eine Prüfung, die 14 Tage offen bleibt, wird abgebrochen und ihr Interview entfernt."
     ]
   },
   "generating": {
@@ -86,7 +97,9 @@
     "text": "testee erstellt dein Interview: zuerst die Themen, dann die Fragen zu jedem. Das dauert ein paar Minuten.",
     "actions": [
       "Du kannst diese Seite verlassen: Die Generierung läuft weiter.",
-      "Brich die Generierung ab, wenn du sie nicht mehr brauchst; bisher Erstelltes wird nicht behalten."
+      "Brich die Generierung ab, wenn du sie nicht mehr brauchst; bisher Erstelltes wird nicht behalten.",
+      "Sobald die Themen fertig sind, zeigt diese Seite sie dir zur Prüfung; die Fragen werden erst geschrieben, wenn du zustimmst.",
+      "Wenn die Generierung fehlschlägt, wähle „Wiederholen“ oder „Neu beginnen“."
     ],
     "tips": [
       "Du bekommst eine Benachrichtigung, wenn das Interview fertig ist.",
@@ -97,14 +110,14 @@
     "title": "Themen",
     "text": "Was dieses Interview testet: seine Themen, jedes mit Unterthemen und einem eigenen Pool an Fragen. Jeder Kandidat bekommt eine zufällige Auswahl aus jedem Pool.",
     "actions": [
-      "Öffne „Fragen verwalten“, um zu den Fragen eines Themas zu gelangen: Lies sie, deaktiviere einzelne, bewerte sie positiv oder negativ oder melde sie.",
-      "Generiere eine schwache Frage neu oder markiere eine falsche Antwort auf der Fragenseite eines Themas.",
-      "Lege fest, wie viele Fragen jeder Kandidat aus einem Thema bekommt; mit 0 fällt das Thema für neue Kandidaten weg. Ein Kandidat bekommt über alle Themen höchstens 60 Fragen: Senke ein Thema, um ein anderes zu erhöhen.",
-      "Probiere das Interview als Kandidat aus oder lösche es."
+      "Öffne ein Thema, um zu seinen Fragen zu gelangen: Lies sie, bewerte sie positiv oder negativ, melde sie und deaktiviere als Inhaber oder Admin einzelne.",
+      "Generiere eine schwache Frage neu oder markiere eine falsche Antwort auf der Fragenseite eines Themas (Inhaber und Admins).",
+      "Lege fest, wie viele Fragen jeder Kandidat aus einem Thema bekommt (Inhaber und Admins); mit 0 fällt das Thema für neue Kandidaten weg, aber mindestens ein Thema muss Fragen behalten. Ein Kandidat bekommt über alle Themen höchstens 60 Fragen: Senke ein Thema, um ein anderes zu erhöhen.",
+      "Probiere das Interview über das ⋮-Menü als Kandidat aus; Inhaber und Admins können es dort auch löschen."
     ],
     "tips": [
-      "Von KI geschriebene Fragen können falsch sein: Überfliege jedes Thema, bevor du jemanden einlädst.",
-      "Klicke auf den Titel, um das Interview umzubenennen.",
+      "Von KI geschriebene Fragen können falsch sein, auch wenn eine zweite KI eine Stichprobe der Antworten prüft: Überfliege jedes Thema, bevor du jemanden einlädst.",
+      "Klicke auf den Titel, um das Interview umzubenennen (Inhaber und Admins).",
       "Die Karten oben zählen zusammen, was jeder Kandidat bekommt: Fragen insgesamt, durchschnittliche Zeit pro Frage und die Zeit des gesamten Interviews. Sie folgen jeder Änderung."
     ]
   },
@@ -112,10 +125,11 @@
     "title": "Fragen",
     "text": "Die Fragen eines Themas mit ihren Antworten, positiven und negativen Bewertungen und Meldungen. Jeder Kandidat erhält eine zufällige Auswahl aus den aktiven Fragen.",
     "actions": [
+      "Sieh in den Karten oben, wie viele Fragen es gibt, wie viele aktiv oder deaktiviert sind und wie viele Meldungen sie haben; filtere die Liste nach „Alle“, „Aktiv“, „Deaktiviert“ oder „Gemeldet“.",
       "Entferne das Häkchen bei einer Frage, um sie zu deaktivieren: Ab sofort erhält sie kein Kandidat mehr. Setze das Häkchen, um sie wieder zu aktivieren (Inhaber und Admins).",
       "Bewerte eine Frage positiv oder negativ; klicke erneut auf deine Wahl, um sie zurückzunehmen.",
       "Öffne die Meldungen zu einer Frage und füge deine eigene hinzu, einmal pro Frage.",
-      "Generiere eine schwache Frage neu oder markiere eine falsche Antwort (Inhaber und Admins)."
+      "Generiere eine schwache Frage neu oder markiere eine falsche Antwort über ihr ⋮-Menü (Inhaber und Admins); eine markierte Antwort wird geprüft und, falls sie falsch ist, korrigiert oder ersetzt."
     ],
     "tips": [
       "KI-generierte Fragen können falsch sein: Lies sie, bevor du jemanden einlädst.",
@@ -127,27 +141,31 @@
     "title": "Kandidaten",
     "text": "Alle, die zu diesem Interview eingeladen wurden, mit Status, Fortschritt und Ergebnis.",
     "actions": [
-      "Lade Kandidaten ein: einzeln, als Liste mit bis zu 100 oder aus einer CSV- oder TXT-Datei.",
+      "Lade Kandidaten mit „Neue(r) Kandidat(en)“ ein (Inhaber und Admins): einzeln, als Liste oder aus einer CSV- oder TXT-Datei.",
       "Suche nach E-Mail oder Name, filtere nach Status und sortiere nach Ergebnis oder Datum.",
-      "Öffne den Bericht eines Kandidaten oder lade den Bericht über alle Kandidaten herunter oder teile ihn."
+      "Öffne den Bericht eines Kandidaten oder lade den Bericht über alle Kandidaten herunter oder teile ihn.",
+      "Öffne das ⋮-Menü eines Kandidaten, um die Einladung erneut zu senden, ihren Link zu kopieren, sie zu widerrufen oder den Kandidaten zu löschen (Inhaber und Admins)."
     ],
     "tips": [
       "Jeder Kandidat, der mindestens eine Frage beantwortet, verbraucht Credits, auch über den Link.",
-      "Erinnerungen gehen automatisch an die Kandidaten.",
-      "Lege beim Einladen fest, ob Kandidaten per Klick oder per Sprache antworten; ein Kandidat in einem anderen Modus als dem des Interviews zeigt das Symbol seines Modus."
+      "Ein Kandidat, der noch nicht begonnen hat, bekommt 3 Tage nach der Einladung eine Erinnerung. Eine Einladung, die nicht innerhalb von 30 Tagen begonnen wird, läuft ab; wenn du sie erneut sendest, funktioniert sie wieder.",
+      "Kandidaten machen es im Modus des Interviews; um ihn für einen einzelnen Kandidaten zu ändern, nutze seine Seite. Ein Kandidat in einem anderen Modus als dem des Interviews zeigt das Symbol seines Modus.",
+      "Beim Einladen werden die Credits eines Kandidaten zurückgelegt; du bekommst sie zurück, wenn der Kandidat abschließt, ohne zu antworten.",
+      "Kandidaten über den Link zum Teilen, dein ATS, die API oder „Entdecken“ erscheinen ebenfalls hier.",
+      "Der Bericht über alle Kandidaten wird als PDF per E-Mail oder als kurze Zusammenfassung per WhatsApp, Telegram, Viber oder LINE geteilt."
     ]
   },
   "interviewNotes": {
     "title": "Notizen",
-    "text": "Die Notizen deines Teams zu diesem Einstellungsverfahren: was ihr vereinbart habt, wen ihr als Nächstes anruft oder für wen das Interview ist. Alle in deinem Unternehmen sehen sie, Kandidaten nie.",
+    "text": "Die Notizen deines Teams zu diesem Einstellungsverfahren: was ihr vereinbart habt, wen ihr als Nächstes anruft oder für wen das Interview ist. Alle in deinem Unternehmen, auch Betrachter, sehen sie und können sie schreiben, Kandidaten nie.",
     "actions": [
       "Schreib eine Notiz in das Feld oben und klicke auf Posten oder drücke ⌘/Ctrl+Enter. Links darin werden anklickbar.",
-      "Bearbeite oder lösche deine eigenen Notizen mit den Schaltflächen in ihrer Zeile; Inhaber und Admins können jede Notiz löschen.",
-      "Hefte eine Notiz mit dem Lesezeichen oben an (Inhaber und Admins): Sie steht hier an erster Stelle sowie unter dem Namen des Interviews auf seiner Seite und in der Liste der Interviews."
+      "Bearbeite oder lösche deine eigenen Notizen über das ⋮-Menü in ihrer Zeile; Inhaber und Admins können jede Notiz löschen.",
+      "Hefte eine Notiz mit „Oben anheften“ in ihrem ⋮-Menü an (Inhaber und Admins): Jeweils eine Notiz steht hier an erster Stelle sowie unter dem Namen des Interviews auf seiner Seite und in der Liste der Interviews."
     ],
     "tips": [
       "Du arbeitest für Kunden? Hefte eine Notiz wie „Für Acme, Backend-Entwickler“ an, um auf einen Blick zu sehen, für wen jedes Interview ist.",
-      "Eine gelöschte Notiz ist endgültig weg. Das Aktionsprotokoll hält fest, wer eine Notiz geschrieben, geändert oder gelöscht hat, aber nie ihren Text.",
+      "Eine gelöschte Notiz ist endgültig weg. Das Aktionsprotokoll hält fest, wer eine Notiz geschrieben, geändert, gelöscht oder angeheftet hat, aber nie ihren Text.",
       "Der Rest deines Teams erfährt von jeder neuen Notiz: in den Benachrichtigungen, in der täglichen Aktivitätsübersicht und, wenn Slack verbunden ist, in eurem Kanal."
     ]
   },
@@ -165,9 +183,9 @@
   },
   "interviewSettings": {
     "title": "Einstellungen",
-    "text": "Wie dieses Interview für jeden Kandidaten abläuft.",
+    "text": "Wie dieses Interview für jeden Kandidaten abläuft. Nur Inhaber und Admins sehen diesen Tab.",
     "actions": [
-      "Schalte den Link zum Teilen für eine Stellenanzeige ein: Jeder mit dem Link kann das Interview machen.",
+      "Schalte den Link zum Teilen für eine Stellenanzeige ein: Jeder mit dem Link kann das Interview machen, und jede Person, die darüber antwortet, verbraucht Credits wie ein eingeladener Kandidat.",
       "Wähle den Interviewmodus: den Klickmodus, in dem Kandidaten ihre Antworten antippen, oder den Sprachmodus, in dem Mira, eine KI-Interviewerin, jede Frage vorliest und Kandidaten per Sprache oder durch Antippen antworten. Der Sprachmodus funktioniert in jeder Sprache; wie gut er vorliest und versteht, hängt von der Sprache ab, und der Link unter der Einstellung öffnet den Leitfaden mit der Qualität in jeder Sprache.",
       "Lege die durchschnittliche Zeit pro Frage in Sekunden fest: Jede Frage bekommt ihre eigene Zeit, abhängig von ihrer Länge und dem Code, den sie zeigt; die Gesamtzeit des Interviews bleibt gleich.",
       "Lege die Bestehensgrenze fest: Kandidaten, die sie erreichen, bestehen.",
@@ -175,22 +193,26 @@
       "Halte die Fragen des Interviews aus dem gemeinsamen Fragenpool von testee heraus; Fragen, die bereits in anderen Interviews wiederverwendet werden, bleiben dort."
     ],
     "tips": [
-      "Jede Einstellung wird gespeichert, sobald du ihr Feld verlässt.",
+      "Zahlenfelder werden gespeichert, sobald du sie verlässt; Schalter und der Modus werden sofort gespeichert.",
       "Kandidaten sehen ihre Punktzahlen nie; nur dein Team sieht sie.",
-      "Für einen Kandidaten, der mehr Zeit braucht, füge auf seiner Seite zusätzliche Zeit hinzu."
+      "Für einen Kandidaten, der mehr Zeit braucht, füge auf seiner Seite zusätzliche Zeit hinzu.",
+      "Ein neuer Modus gilt für Kandidaten, die noch nicht begonnen haben, außer für jene, denen auf ihrer Seite ein eigener Modus zugewiesen wurde.",
+      "Die durchschnittliche Zeit beträgt 10 bis 600 Sekunden; die Bestehensgrenze liegt bei 1 bis 100 %."
     ]
   },
   "tryInterview": {
     "title": "Als Kandidat ausprobieren",
     "text": "Eine Vorschau dieses Interviews, genau so, wie Kandidaten es sehen: die Einleitung, dann die Fragen mit Zeitlimit. Sie ist kostenlos.",
     "actions": [
-      "Starte die Vorschau und antworte wie ein Kandidat.",
+      "Setze das Häkchen bei der Zusage, selbst zu antworten, wähle „Annehmen und starten“ und antworte wie ein Kandidat.",
       "Prüfe Zeit, Formulierungen und Antworten, bevor du jemanden einlädst."
     ],
     "tips": [
       "Bleib beim Antworten auf der Seite: Bei Kandidaten werden das Verlassen der Seite, Kopieren und zu schnelle Antworten erfasst.",
       "Ein Interview im Sprachmodus fragt zuerst nach deinem Mikrofon und dem Ton: Erlaube beides, dann liest Mira jede Frage vor, während du per Sprache oder durch Antippen antwortest.",
-      "Jedes Unternehmen hat eine bestimmte Zahl an Vorschauen pro Tag, im Sprachmodus weniger; sind sie aufgebraucht, sagt dir der Start, wann du es wieder versuchen kannst."
+      "Jedes Unternehmen hat eine bestimmte Zahl an Vorschauen pro Tag, im Sprachmodus weniger; sind sie aufgebraucht, sagt dir der Start, wann du es wieder versuchen kannst.",
+      "Eine Vorschau erscheint weder in der Kandidatenliste noch in der Statistik der Fragen.",
+      "Auch Betrachter können ein Interview ausprobieren."
     ]
   },
   "candidate": {
@@ -199,17 +221,18 @@
     "actions": [
       "Lies jede Antwort mit Integritätshinweisen: Verlassen der Seite, Kopierversuche und zu schnelle Antworten.",
       "Sieh dir nach Abschluss ungewöhnliche Muster in seinen Antworten und Antwortzeiten an, dazu richtig beantwortete Fragen, nach denen du in einem Live-Gespräch fragen kannst.",
-      "Lade den Bericht als PDF herunter oder teile ihn per E-Mail.",
-      "Gib vor dem Start zusätzliche Zeit, zum Beispiel bei einer Behinderung.",
+      "Lade den Bericht als PDF herunter oder teile ihn: das PDF per E-Mail oder eine kurze Zusammenfassung per WhatsApp, Telegram, Viber oder LINE. Betrachter können ihn per E-Mail nur an Mitglieder des Unternehmens senden.",
+      "Gib vor dem Start +25 %, +50 % oder +100 % zusätzliche Zeit, zum Beispiel bei einer Behinderung.",
       "Lege fest, ob er per Klick oder per Sprache antwortet, unabhängig vom Modus des Interviews, bis er startet.",
       "Füge den Namen des Kandidaten hinzu oder bearbeite ihn.",
-      "Kopiere den Einladungslink, um ihn selbst zu schicken, falls die E-Mail nicht angekommen ist; er bleibt verfügbar, bis der Kandidat fertig ist.",
+      "Kopiere den Einladungslink, um ihn selbst zu schicken, falls die E-Mail nicht angekommen ist; er bleibt verfügbar, bis der Kandidat fertig ist oder die Einladung abläuft.",
       "Sende die Einladung erneut, widerrufe sie oder lösche den Kandidaten mit seinen Ergebnissen."
     ],
     "tips": [
       "Das Ergebnis unterstützt deine Entscheidung, es trifft sie nicht. Wenn der Kandidat darum bittet, lass sein Ergebnis von einer Person prüfen.",
       "Ein Häkchen unter der Note zeigt, dass der Kandidat vor dem Start bestätigt hat, die Fragen selbst zu beantworten, ohne KI-Tools oder andere Personen.",
-      "Das Ergebnis ist der Anteil der erreichten Punkte: Jede Frage zählt einen Punkt, und eine Frage mit Mehrfachauswahl bringt einen Teil davon für jede angekreuzte richtige Option, aber nichts, wenn eine falsche angekreuzt ist."
+      "Das Ergebnis ist der Anteil der erreichten Punkte: Jede Frage zählt einen Punkt, und eine Frage mit Mehrfachauswahl bringt einen Teil davon für jede angekreuzte richtige Option, aber nichts, wenn eine falsche angekreuzt ist.",
+      "Zusätzliche Zeit, Modus und Name des Kandidaten, der Einladungslink, erneutes Senden, Widerrufen und Löschen sind Inhabern und Admins vorbehalten."
     ]
   },
   "templates": {
@@ -218,11 +241,13 @@
     "actions": [
       "Suche nach Rolle oder Thema und filtere nach Level und Sprache.",
       "Öffne eine Vorlage, um ihre Themen und die Anzahl der Fragen pro Thema zu sehen.",
-      "Verwende eine Vorlage, um daraus ein Interview zu starten."
+      "Sieh in jeder Zeile die Themen, Fragen und Minuten der Vorlage und wie viele deiner Interviews sie verwendet haben.",
+      "Verwende eine Vorlage, um daraus ein Interview zu starten (Inhaber und Admins)."
     ],
     "tips": [
       "Für eine genauere Passung erstelle stattdessen ein Interview aus deiner eigenen Stellenbeschreibung.",
-      "Nach dem Kopieren gehört das Interview dir: Ändere seine Fragen und Einstellungen nach Belieben."
+      "Nach dem Kopieren gehört das Interview dir: Ändere seine Fragen und Einstellungen nach Belieben.",
+      "Die Liste beginnt mit deiner Sprache und Englisch; wähle alle Sprachen, um den Rest zu sehen."
     ]
   },
   "template": {
@@ -230,11 +255,12 @@
     "text": "Ein fertiges Interview: seine Themen, ihre Unterthemen und wie viele Fragen jedes Thema hat.",
     "actions": [
       "Prüfe, ob die Themen zu der Rolle passen, für die du einstellst.",
-      "Verwende die Vorlage, um sie als neues Interview in dieses Unternehmen zu kopieren."
+      "Verwende die Vorlage, um sie als neues Interview in dieses Unternehmen zu kopieren (Inhaber und Admins)."
     ],
     "tips": [
       "Das Kopieren ist kostenlos; Kandidaten, die antworten, verbrauchen wie gewohnt Credits.",
-      "Wenn die Themen nicht passen, erstelle stattdessen ein Interview aus deiner Stellenbeschreibung."
+      "Wenn die Themen nicht passen, erstelle stattdessen ein Interview aus deiner Stellenbeschreibung.",
+      "Ihre Fragen bleiben verborgen, bis du sie verwendest."
     ]
   },
   "team": {
@@ -243,20 +269,23 @@
     "actions": [
       "Füge ein Mitglied per E-Mail hinzu, als Admin oder Betrachter: Die Person bekommt per E-Mail einen Link zum Beitreten.",
       "Ändere die Rolle eines Mitglieds zwischen Admin und Betrachter.",
+      "Übergib das Unternehmen an einen beigetretenen Admin, mit „Zum Inhaber machen“ in seinem Menü: Du wirst dann Admin.",
       "Kopiere den Link einer offenen Einladung oder entferne ein Mitglied oder eine Einladung."
     ],
     "tips": [
-      "Admins erstellen und ändern Interviews, laden Kandidaten ein und laden Credits auf. Betrachter sehen Interviews und Ergebnisse und teilen Berichte, ändern aber nichts.",
-      "Wenn du ein Mitglied entfernst, dessen Karte das automatische Aufladen bezahlt, endet das automatische Aufladen."
+      "Admins erstellen und ändern Interviews, laden Kandidaten ein und laden Credits auf. Betrachter sehen Interviews und Ergebnisse, teilen Berichte und schreiben Notizen, ändern aber sonst nichts.",
+      "Wenn du ein Mitglied entfernst, dessen Karte das automatische Aufladen bezahlt, oder es zum Betrachter machst, endet das automatische Aufladen.",
+      "Nur der Inhaber fügt Mitglieder hinzu, ändert und entfernt sie; alle im Unternehmen sehen das Team."
     ]
   },
   "actions": {
     "title": "Aktionsprotokoll",
-    "text": "Alles, was die Mitglieder des Unternehmens getan haben, das Neueste zuerst: was sie getan haben und woran, wer es war, wann und ob der Assistent, eine KI-App, die API oder ein ATS es für sie erledigt hat. Nur der Inhaber sieht es.",
+    "text": "Alles, was die Mitglieder des Unternehmens getan haben, das Neueste zuerst: was sie getan haben und woran, wer es war, wann und ob die KI-Assistentin, eine KI-App, die API oder ein ATS es für sie erledigt hat. Nur der Inhaber sieht es.",
     "actions": [
       "Zeige die Aktionen eines Mitglieds oder einer Art: Interviews, Kandidaten, Team, Unternehmen, Abrechnung oder Integrationen.",
       "Zeige die Aktionen zwischen zwei Tagen.",
-      "Lade einen Export für ein Bias-Audit herunter: eine CSV-Datei mit jedem Kandidaten, der fertig ist, für alle Interviews oder eines und auf Wunsch zwischen zwei Tagen, mit seinem Ergebnis, der Bestehensgrenze, ob er bestanden hat und ob er über dem Median des Interviews lag, zugeordnet über die E-Mail-Adresse."
+      "Lade das Protokoll über das ⋮-Menü als CSV-Datei herunter: gesamter Zeitraum, ein kürzlicher Zeitraum oder zwischen zwei Tagen. Bis zu 20 Downloads pro Unternehmen und Tag.",
+      "Lade einen Export für ein Bias-Audit herunter: eine CSV-Datei mit jedem Kandidaten, der mit einem Ergebnis abgeschlossen hat, für alle Interviews oder eines und auf Wunsch zwischen zwei Tagen, mit seinem Ergebnis, der Bestehensgrenze, ob er bestanden hat und ob er über dem Median des Interviews lag, zugeordnet über die E-Mail-Adresse."
     ],
     "tips": [
       "Aktionen werden 12 Monate lang aufbewahrt.",
@@ -271,12 +300,12 @@
     "text": "Verbinde testee mit den Tools, die dein Team schon nutzt. Jede Integration öffnet eine eigene Seite mit Einrichtungsschritten.",
     "actions": [
       "Slack: Erhalte die Benachrichtigungen deines Unternehmens in einem Kanal.",
-      "API: Schlüssel und Webhooks, um deine eigene Plattform anzubinden.",
+      "API: Schlüssel, Webhooks und das SDK, um deine eigene Plattform anzubinden.",
       "KI-Apps: Nutze testee in Claude, ChatGPT und anderen KI-Apps.",
       "ATS (Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR): Kandidaten, die du in eine Phase verschiebst, bekommen das Interview, und ihre Ergebnisse gehen zurück."
     ],
     "tips": [
-      "Alle im Unternehmen sehen die Integrationen; Inhaber und Admins ändern sie."
+      "Alle im Unternehmen sehen die Integrationen; Inhaber und Admins ändern sie. KI-Apps gehören jeder Person selbst: Alle können ihre eigenen verbinden oder trennen."
     ]
   },
   "ats": {
@@ -285,12 +314,15 @@
     "actions": [
       "Verbinde dein ATS anhand seiner Anleitung.",
       "Verknüpfe eine Stelle: Wähle die Stelle, ihre Phase und ein Interview oder erstelle ein neues Interview aus dem Text der Stelle.",
+      "Sieh, wie viele Kandidaten jede verknüpfte Stelle eingeladen hat, wie viele warten und wie viele nicht eingeladen werden konnten.",
       "Lade Kandidaten erneut ein, die nicht eingeladen wurden, zum Beispiel weil die Credits aufgebraucht waren.",
+      "Verbinde das ATS neu, wenn es nicht mehr funktioniert: Bis dahin werden keine Kandidaten eingeladen.",
       "Löse die Verknüpfung einer Stelle oder trenne das ATS."
     ],
     "tips": [
       "Füge eine Phase nur für testee hinzu, etwa „testee Skills-Test“, damit sie sich nie mit deinen anderen Tools vermischt.",
-      "testee verschiebt oder lehnt in deinem ATS nie jemanden ab."
+      "testee verschiebt oder lehnt in deinem ATS nie jemanden ab.",
+      "Wenn das Mitglied, das das ATS verbunden hat, das Unternehmen verlässt oder Betrachter wird, werden keine Kandidaten mehr eingeladen."
     ]
   },
   "slack": {
@@ -299,21 +331,25 @@
     "actions": [
       "Füge testee zu Slack hinzu und wähle den Kanal, zum Beispiel #hiring.",
       "Wähle, welche Benachrichtigungen dort ankommen: ein Kandidat ist fertig, eine Einladung wurde nicht zugestellt, ein Interview ist fertig und mehr.",
+      "Sende eine Testnachricht an den Kanal und verbinde neu, wenn Slack keine Nachrichten mehr annimmt.",
       "Trenne die Verbindung, um sie zu stoppen und die App von testee aus deinem Slack zu entfernen."
     ],
     "tips": [
       "testee kann nur in diesem Kanal posten; dein Slack lesen kann es nicht.",
-      "Alle sehen weiterhin jede Benachrichtigung in der Glocke."
+      "Alle sehen weiterhin jede Benachrichtigung in der Glocke.",
+      "Wenn das Mitglied, das Slack verbunden hat, das Unternehmen verlässt oder Betrachter wird, stoppt Slack, bis ein Inhaber oder Admin es neu verbindet."
     ]
   },
   "api": {
     "title": "API",
     "text": "Verbinde deine eigene Plattform, etwa deine Karriereseite, mit testee.",
     "actions": [
-      "Erstelle einen API-Schlüssel und setze nur die Häkchen, die er braucht: Interviews lesen oder erstellen; Kandidaten lesen, einladen, ändern oder entfernen; deine Credits lesen; oder mit KI-Agenten nutzen (MCP). Er handelt in deinem Namen.",
+      "Erstelle einen API-Schlüssel und setze nur die Häkchen, die er braucht: Interviews lesen oder erstellen; Kandidaten lesen, einladen, ändern oder entfernen; Notizen lesen oder hinzufügen; deine Credits lesen; oder mit KI-Agenten nutzen (MCP). Er handelt eigenständig für das Unternehmen und funktioniert weiter, wenn die Person, die ihn erstellt hat, geht.",
       "Öffne einen Schlüssel, um zu ändern, was er darf – jede Änderung wird sofort gespeichert –, und von welchen IP-Adressen er genutzt werden darf.",
+      "Benenne einen Schlüssel um, erstelle einen Ersatz, wenn er bald abläuft, und sieh als Inhaber, was er getan hat.",
       "Füge einen Webhook hinzu: testee benachrichtigt deine HTTPS-Adresse signiert, wenn ein Kandidat beginnt, fertig ist (mit seinen Ergebnissen), seine Einladung nicht zugestellt werden kann oder abläuft oder er entfernt wird, und wenn ein Interview bereit ist.",
       "Sende einem Webhook ein Testereignis und sieh im Zustellprotokoll, was aus jeder Sendung wurde.",
+      "Tausche das Secret eines Webhooks aus: 24 Stunden lang signieren beide Secrets jede Anfrage.",
       "Trage im Tab SDK die Websites ein, die deine Interviews mit dem SDK anzeigen dürfen, und erlaube localhost, solange du testest.",
       "Lösche Schlüssel und Webhooks, die du nicht mehr nutzt.",
       "Öffne die Entwicklerdokumentation mit jedem Endpunkt und jedem Ereignis sowie das SDK."
@@ -321,7 +357,8 @@
     "tips": [
       "Ein neuer Schlüssel und das Secret eines Webhooks werden nur einmal angezeigt: Kopiere sie sofort.",
       "Wähle für jeden Schlüssel ein Ablaufdatum: Ein geleakter Schlüssel ohne Ablauf bleibt nutzbar.",
-      "Berechtigungen eines Schlüssels kannst du später an- oder abwählen; gib jedem Schlüssel nur, was seine Plattform braucht."
+      "Berechtigungen eines Schlüssels kannst du später an- oder abwählen; gib jedem Schlüssel nur, was seine Plattform braucht.",
+      "Ein Webhook, der 3 Tage lang nicht antwortet, wird pausiert; ein erfolgreiches Testereignis startet ihn wieder."
     ]
   },
   "aiApps": {
@@ -330,10 +367,12 @@
     "actions": [
       "Kopiere die Serveradresse und füge sie nach den Schritten in Claude, Claude Code oder ChatGPT hinzu; andere Apps und eigene Agenten beschreibt die Entwicklerdokumentation.",
       "Lass die App auf der testee-Seite zu, die sich dann öffnet.",
-      "Trenne eine App, die du nicht mehr nutzt."
+      "Sobald eine App verbunden ist, kopiere ein Beispiel dafür, worum du sie bitten kannst.",
+      "Trenne eine App, die du nicht mehr nutzt.",
+      "Inhaber und Admins erlauben oder stoppen KI-Apps in diesem Unternehmen: Solange sie aus sind, können Apps darin nichts lesen oder ändern."
     ],
     "tips": [
-      "Eine App handelt in deinem Namen, in jedem Unternehmen, in dem du Mitglied bist. Die meisten Apps fragen dich, bevor sie etwas ändern.",
+      "Eine App handelt in deinem Namen, in jedem Unternehmen, in dem du Mitglied bist und das KI-Apps erlaubt. Die meisten Apps fragen dich, bevor sie etwas ändern.",
       "Sie sieht weder dein Passwort noch deine API-Schlüssel und kann weder dein Konto noch ein Unternehmen löschen."
     ]
   },
@@ -341,26 +380,29 @@
     "title": "Empfehlungen",
     "text": "Lade andere Unternehmen mit dem Link dieses Unternehmens zu testee ein, und ihr bekommt beide Credits.",
     "actions": [
-      "Kopiere oder teile deinen Empfehlungslink.",
-      "Sieh dir jede Prämie an, die dieses Unternehmen erhalten hat."
+      "Kopiere deinen Empfehlungslink, um ihn zu teilen.",
+      "Sieh die Unternehmen, die über deinen Link gekommen sind und Credits aufgeladen haben, die Credits, die dir jedes davon gebracht hat, und wie viele Prämien dieses Jahr noch übrig sind."
     ],
     "tips": [
       "Ihr bekommt beide Credits, wenn das eingeladene Unternehmen zum ersten Mal auflädt, egal mit welchem Betrag.",
-      "Die Credits gehen an dieses Unternehmen und verfallen nie."
+      "Die Credits gehen an dieses Unternehmen und verfallen nie.",
+      "Jede Seite bekommt 1.000 Credits. Dein Unternehmen erhält das bis zu 25-mal pro Jahr; darüber hinaus bekommt das eingeladene Unternehmen seine Credits trotzdem.",
+      "Eine Aufladung, die vollständig erstattet oder zurückgebucht wird, nimmt beide Prämien zurück."
     ]
   },
   "brand": {
     "title": "Marke",
-    "text": "Dein Logo und deine Farben in der Einladung, im Interview und auf der Abschlussseite deiner Kandidaten.",
+    "text": "Dein Logo, deine Farben, Schriftarten und Rundung in der Einladung, im Interview und auf der Abschlussseite deiner Kandidaten. Das Logo erscheint auch in ihren E-Mails.",
     "actions": [
-      "Lege das Logo fest oder ändere es.",
+      "Lege das Logo fest, ändere oder entferne es.",
       "Wähle die Schriftarten für Titel und Text und wie rund Karten und Buttons sind.",
-      "Wähle die Farben jeder Gruppe und sieh sie dir in der Vorschau an.",
-      "Speichere sie oder kehre zu den testee-Farben zurück."
+      "Wähle die Farben jeder Gruppe, einen Satz für das helle und einen für das dunkle Design, und sieh sie dir in der Vorschau an.",
+      "Speichere sie, mache ungespeicherte Änderungen mit „Zurücksetzen“ rückgängig oder kehre mit „Auf testee-Standard zurücksetzen“ zu den Farben, Schriftarten und der Rundung von testee zurück."
     ],
     "tips": [
       "Farben, bei denen Text schwer lesbar wäre, lassen sich nicht speichern, damit alle Kandidaten die Fragen lesen können.",
-      "Teammitglieder, die ein Interview ausprobieren, sehen es ebenfalls in deinen Farben."
+      "Teammitglieder, die ein Interview ausprobieren, sehen es ebenfalls in deinen Farben.",
+      "Nur Inhaber und Admins sehen diese Seite."
     ]
   },
   "billing": {
@@ -369,37 +411,48 @@
     "actions": [
       "Lade auf oder richte automatisches Aufladen ein.",
       "Sieh dir die Kandidaten an, für die Credits reserviert sind.",
-      "Öffne die Rechnung jeder Aufladung."
+      "Öffne die Rechnung jeder Aufladung.",
+      "Beschränke den Verlauf auf Aufladungen, Abbuchungen oder Erstattungen oder lade ihn als CSV-Datei herunter. Bis zu 20 Downloads pro Unternehmen und Tag."
     ],
     "tips": [
       "Die Credits eines Kandidaten werden bei der Einladung reserviert, abgebucht, sobald er antwortet, und zurückgegeben, wenn nicht.",
-      "Nur Inhaber und Admins sehen diese Seite."
+      "Nur Inhaber und Admins sehen diese Seite.",
+      "Du kannst für Credits, die du in den letzten 14 Tagen gekauft und nicht verbraucht hast, eine Erstattung verlangen, über Paddle oder indem du uns schreibst."
     ]
   },
   "topUp": {
     "title": "Aufladen",
     "text": "Kaufe Credits für jedes Unternehmen, in dem du Inhaber oder Admin bist.",
     "actions": [
-      "Wähle ein Unternehmen und eine Aufladung: Größere kosten pro Kandidat weniger.",
+      "Wähle ein Unternehmen und gib dann ein, für wie viele Kandidaten du aufladen willst, von 10 bis 1.000, oder wähle eine Preisstufe: Größere Aufladungen kosten pro Kandidat weniger.",
+      "Ändere die Währung des Unternehmens oben auf der Seite: Seine Aufladungen, auch die automatischen, werden von da an in ihr berechnet und abgebucht.",
       "Bezahle auf der Bezahlseite von Paddle; die Credits sind in wenigen Sekunden da.",
-      "Öffne die Preise, um die Aufladungen zu vergleichen."
+      "Öffne die Preise, um die Aufladungen zu vergleichen.",
+      "Richte automatisches Aufladen ein: Wähle einen Betrag und ein Guthaben und setze das Häkchen bei der Vereinbarung. Deine Karte wird im Paddle-Checkout gespeichert und jedes Mal belastet, wenn das Guthaben unter diesen Wert fällt."
     ],
     "tips": [
       "Ein Kandidat kostet 500 Credits: reserviert bei der Einladung, abgebucht, sobald er antwortet, und zurückgegeben, wenn nicht.",
-      "Credits verfallen nie. Die Rechnung jeder Aufladung findest du im Tab „Abrechnung“ des Unternehmens."
+      "Credits verfallen nie. Die Rechnung jeder Aufladung findest du im Tab „Abrechnung“ des Unternehmens.",
+      "Die Preise enthalten keine Mehrwert- oder Umsatzsteuer: Wo sie anfällt, wird sie an der Kasse hinzugerechnet.",
+      "Du kannst für Credits, die du in den letzten 14 Tagen gekauft und nicht verbraucht hast, eine Erstattung verlangen, über Paddle oder indem du uns schreibst.",
+      "Inhaber und Admins richten automatisches Aufladen ein. Nur die Person, deren Karte bezahlt, kann es ändern oder die Karte aktualisieren; jeder Inhaber oder Admin kann es sofort ausschalten.",
+      "Eine abgelehnte Karte wird nach 1, 3 und 7 Tagen erneut versucht, danach pausiert das automatische Aufladen, bis die Karte aktualisiert ist. Eine Karte, die nicht zahlen kann, zum Beispiel eine abgelaufene, pausiert es sofort."
     ]
   },
   "settings": {
     "title": "Einstellungen",
-    "text": "Dein eigenes Konto: die Sprache, in der testee mit dir spricht, die E-Mails, die du bekommst, und deine Daten.",
+    "text": "Dein eigenes Konto: die Sprache, in der testee mit dir spricht, deine Währung, die E-Mails, die du bekommst, und deine Daten.",
     "actions": [
-      "Wähle die Sprache der Website, des Hilfe-Chats und deiner E-Mails.",
+      "Wähle die Sprache der Website, der Antworten der KI-Assistentin und deiner E-Mails; auch neue Interviews beginnen in dieser Sprache.",
+      "Wähle die Währung, in der Preise angezeigt werden, egal wo du bist. Die Aufladungen eines Unternehmens laufen in dessen eigener Währung, die auf seiner Aufladeseite festgelegt wird.",
       "Wähle, welche optionalen E-Mails du bekommst; Service-E-Mails wie Einladungen, Berichte und Zahlungsprobleme werden immer gesendet.",
       "Schalte „Offen für Angebote“ ein oder aus: Solange es an ist, sehen Unternehmen, die über testee für die von dir geübten Themen einstellen, deinen Namen, dein LinkedIn-Profil und deine Übungsergebnisse und können dich einladen.",
-      "Lade alles herunter, was testee über dich speichert, oder lösche dein Konto."
+      "Lade alles herunter, was testee über dich speichert, oder lösche dein Konto.",
+      "Kopiere deine Konto-ID, um sie anzugeben, wenn du uns schreibst."
     ],
     "tips": [
-      "Wenn du dein Konto löschst, werden die Unternehmen gelöscht, in denen nur du bist. Ein Unternehmen, dem andere beigetreten sind, braucht zuerst einen anderen Inhaber."
+      "Wenn du dein Konto löschst, werden die Unternehmen gelöscht, in denen nur du bist, und ihre Credits werden nicht erstattet. Ein Unternehmen, dem andere beigetreten sind, braucht zuerst einen anderen Inhaber oder muss gelöscht werden.",
+      "„Offen für Angebote“ braucht dein LinkedIn-Profil und schaltet sich ein Jahr, nachdem du es zuletzt eingeschaltet hast, von selbst aus."
     ]
   },
   "join": {
@@ -412,7 +465,8 @@
     ],
     "tips": [
       "Mit einer anderen E-Mail-Adresse angemeldet? Melde dich ab und mit der eingeladenen wieder an; die Einladung gilt nur für sie.",
-      "Deine Rolle, Admin oder Betrachter, hat die Person gewählt, die dich eingeladen hat."
+      "Deine Rolle, Admin oder Betrachter, hat die Person gewählt, die dich eingeladen hat.",
+      "Eine Einladung, die schon benutzt oder vom Inhaber entfernt wurde, funktioniert nicht mehr."
     ]
   },
   "connect": {
@@ -421,6 +475,7 @@
     "actions": [
       "Melde dich an, falls noch nicht geschehen, um zu sehen, welche App fragt.",
       "Lies, was die App mit deinem Konto tun kann und was nicht.",
+      "Schalte „Änderungen erlauben“ aus, damit die App nur lesen kann.",
       "Erlaube die App oder lehne sie ab; so oder so kehrst du zur App zurück."
     ],
     "tips": [
@@ -437,7 +492,7 @@
       "Verfolge die Neuigkeiten in deinem Feedreader über den RSS-Link oben."
     ],
     "tips": [
-      "Neuigkeiten erscheinen in deinen Benachrichtigungen; schalte Produkt-Updates in deinen Einstellungen ein, um die wichtigsten auch per E-Mail zu bekommen."
+      "Neuigkeiten erscheinen in deinen Benachrichtigungen; die wichtigsten kommen auch per E-Mail, solange „Produkt-Updates und Neuigkeiten“ in deinen Einstellungen eingeschaltet ist."
     ]
   },
   "practice": {
@@ -449,22 +504,23 @@
     ],
     "tips": [
       "Solange du keine Sprachen wählst, zeigt die Liste die Sprache der Website und Englisch.",
-      "Üben ist privat: Kein Unternehmen sieht deine Ergebnisse.",
-      "Wenn du angemeldet bist, markiert ein Haken nach dem Titel ein Training, das du begonnen hast, und ein Doppelhaken eines, das du abgeschlossen hast; fahr mit der Maus darüber, um zu sehen, wie viele Themen du abgeschlossen hast."
+      "Üben ist privat: Kein Unternehmen sieht deine Ergebnisse, außer du schaltest „Offen für Angebote“ ein.",
+      "Wenn du angemeldet bist, markiert ein Haken nach dem Titel ein Training, das du begonnen hast, und ein Doppelhaken eines, das du abgeschlossen hast; fahr mit der Maus über den Haken, um zu sehen, wie viele Themen du abgeschlossen hast."
     ]
   },
   "practiceTest": {
     "title": "Übungsinterview",
     "text": "Ein kostenloses Übungsinterview: sein Level, seine Sprache, seine Länge und die Themen, die es abdeckt.",
     "actions": [
+      "Wähle vor dem Start die Zeit pro Frage: die Standardzeit, die doppelte Zeit oder ohne Zeitlimit.",
       "Starte eine Übungsrunde; melde dich vorher an, falls noch nicht geschehen.",
       "Sieh, wie weit du in deiner letzten Runde bei jedem Thema gekommen bist.",
-      "Öffne deine früheren Runden mit dem Verlaufsbutton neben „Übung starten“.",
+      "Wenn du angemeldet bist, öffne deine früheren Runden mit „Deine Übungsrunden“ neben „Übung starten“.",
       "Du stellst für diese Rolle ein? Erstelle daraus ein Interview für deine eigenen Kandidaten."
     ],
     "tips": [
-      "Jede Runde hat ein Zeitlimit wie ein echtes Interview; danach siehst du dein Ergebnis und jede richtige Antwort.",
-      "Übe so oft du willst: Es ist kostenlos."
+      "Jede Runde hat ein Zeitlimit, außer du wählst „Ohne Zeitlimit“; danach siehst du dein Ergebnis und jede richtige Antwort.",
+      "Übe so oft du willst, innerhalb eines Stundenlimits für neue Runden: Es ist kostenlos."
     ]
   },
   "practiceHistory": {
@@ -490,17 +546,19 @@
     "tips": [
       "Was du gewählt hast, wenn die Zeit einer Frage abläuft, zählt trotzdem; eine Frage ohne Auswahl oder eine, die du nicht erreicht hast, zählt als falsch.",
       "Du stellst für diese Rolle ein? Erstelle daraus ein Interview für deine eigenen Kandidaten.",
-      "Auf Jobsuche? Schalte „Offen für Angebote“ ein, damit Unternehmen, die für diese Themen einstellen, deinen Namen, dein LinkedIn-Profil und deine Übungsergebnisse sehen."
+      "Auf Jobsuche? Gib nach einer abgeschlossenen Runde dein LinkedIn-Profil an und schalte „Offen für Angebote“ ein, damit Unternehmen, die für diese Themen einstellen, deinen Namen, dein Profil und deine neuesten Übungsergebnisse sehen und dich einladen können; es bleibt ein Jahr lang eingeschaltet, sofern du es nicht ausschaltest."
     ]
   },
   "features": {
     "title": "Funktionen",
     "text": "Alles, was testee für ein Unternehmen tut, von der Stellenbeschreibung bis zur Einstellung: Interviews erstellen, Kandidaten einladen, was Kandidaten sehen, Berichte, Integrationen, Compliance und Preise.",
     "actions": [
+      "Springe mit „Interview erstellen“ oben zum Feld am Ende der Seite oder öffne die Preise.",
       "Spring mit den Tabs oben zu einer Gruppe: erstellen, einladen, interview, entscheiden, verbinden, vertrauen und preise.",
-      "Sieh jede Funktion neben einem Bild der echten App.",
+      "Sieh die wichtigsten Funktionen neben einem Bild der echten App und die übrigen als Karten darunter.",
       "Füge im Feld am Ende der Seite eine Stellenbeschreibung ein, um ein Interview zu erstellen.",
-      "Öffne die Preisseite, die Entwicklerdokumentation oder die Vertrauensseite aus ihren Gruppen."
+      "Öffne die Preisseite, die Entwicklerdokumentation oder die Vertrauensseite aus ihren Gruppen.",
+      "Frag Mira oder öffne die FAQ oder die Ratgeber am Ende der Seite."
     ],
     "tips": [
       "Alle Funktionen sind inklusive: Du zahlst nur für jeden Kandidaten, der mindestens eine Frage beantwortet."
@@ -512,8 +570,9 @@
     "actions": [
       "Scroll der Linie entlang nach unten: Jeder Schritt zeigt, was passiert, seine Optionen und ein Bild der echten App.",
       "Unter den Schritten Einladen und Teilen siehst du, wie Kandidaten hereinkommen und wie Berichte hinausgehen können.",
-      "Erstelle über den Button oben ein Interview oder öffne alle Funktionen.",
-      "Füge im Feld am Ende der Seite eine Stellenbeschreibung ein, um zu starten."
+      "Springe mit „Interview erstellen“ oben zum Startfeld oder öffne alle Funktionen.",
+      "Füge im Feld am Ende der Seite eine Stellenbeschreibung ein, um zu starten.",
+      "Frag Mira oder öffne die FAQ oder die Ratgeber am Ende der Seite."
     ],
     "tips": [
       "Interviews zu erstellen ist kostenlos: Du zahlst nur für jeden Kandidaten, der mindestens eine Frage beantwortet."
@@ -525,12 +584,14 @@
     "actions": [
       "Sieh dir den aktuellen Preis pro Kandidat an und die niedrigeren Preise für größere Aufladungen.",
       "Sieh, wie viele erste Kandidaten kostenlos sind.",
+      "Sieh, wie viele Credits ein Kandidat kostet; wo Steuern anfallen, werden sie an der Kasse hinzugerechnet.",
       "Sieh dir die Credits an, die du bekommst, wenn du ein anderes Unternehmen einlädst.",
       "Lade die Credits eines Unternehmens auf."
     ],
     "tips": [
       "Credits verfallen nie.",
-      "Ein Kandidat, der keine Frage beantwortet, kostet nichts."
+      "Ein Kandidat, der keine Frage beantwortet, kostet nichts.",
+      "Nicht verbrauchte bezahlte Credits können innerhalb von 14 Tagen erstattet werden."
     ]
   },
   "tests": {
@@ -563,7 +624,8 @@
     "title": "testee im Vergleich",
     "text": "Belegte Vergleiche von testee mit anderen Tools für Einstellungstests: wie Tests entstehen, was sie kosten und wann welches besser passt.",
     "actions": [
-      "Öffne einen Vergleich, um ihn zu lesen."
+      "Öffne einen Vergleich, um ihn zu lesen.",
+      "Erstelle über die Karte am Ende einen Test für deine Kandidaten."
     ],
     "tips": [
       "Jeder Vergleich zeigt, wann er zuletzt aktualisiert wurde."
@@ -574,8 +636,9 @@
     "text": "Wie testee bei einer Frage im Vergleich zu anderen Tools abschneidet: wie Tests entstehen, was sie kosten und wann welches besser passt.",
     "actions": [
       "Lies den Vergleich und folge seinen Links zu den Quellen.",
-      "Erstelle über die Karte am Ende einen Test für deine Kandidaten.",
-      "Kehre über den Link über dem Titel zu allen Vergleichen zurück."
+      "Springe auf längeren Seiten über die Liste „Auf dieser Seite“ zu einem Abschnitt.",
+      "Erstelle über den Button oben oder die Karte am Ende einen Test für deine Kandidaten.",
+      "Kehre über den Zurück-Pfeil beim Titel zu allen Vergleichen zurück."
     ],
     "tips": [
       "Preise und Funktionen ändern sich: Das Datum unter dem Titel zeigt, wann die Seite zuletzt aktualisiert wurde."
@@ -585,6 +648,7 @@
     "title": "Ratgeber für die Personalauswahl",
     "text": "Praktische Ratgeber für Hiring Manager: Bewerber vorauswählen, Einstellungstests und KI in der Personalauswahl fair und rechtssicher nutzen.",
     "actions": [
+      "Durchsuche die Ratgeber.",
       "Öffne einen Ratgeber, um ihn zu lesen."
     ],
     "tips": [
@@ -596,21 +660,23 @@
     "text": "Ein praktischer Ratgeber für Hiring Manager zu einem Thema.",
     "actions": [
       "Lies den Ratgeber und folge seinen Links zu Quellen und verwandten Seiten.",
-      "Erstelle über die Karte am Ende einen Test für deine Kandidaten.",
-      "Kehre über den Link über dem Titel zu allen Ratgebern zurück."
+      "Springe auf längeren Seiten über die Liste „Auf dieser Seite“ zu einem Abschnitt.",
+      "Erstelle über den Button oben oder die Karte am Ende einen Test für deine Kandidaten.",
+      "Kehre über den Zurück-Pfeil beim Titel zu allen Ratgebern zurück."
     ],
     "tips": [
-      "Rechtliche Themen sind Zusammenfassungen, keine Rechtsberatung: Kläre sie mit deiner eigenen Rechtsberatung."
+      "Rechtliche Themen sind datierte Zusammenfassungen, keine Rechtsberatung: Prüfe die Regeln, die dort gelten, wo du einstellst."
     ]
   },
   "faq": {
     "title": "Häufige Fragen",
     "text": "Antworten auf häufige Fragen zu testee: Interviews, Kandidaten, Preise und Credits, Ergebnisse, Integrationen, Sprachen und deine Daten.",
     "actions": [
+      "Springe mit den Schaltflächen oben zu einer Fragengruppe.",
       "Klicke auf eine Frage, um ihre Antwort zu öffnen."
     ],
     "tips": [
-      "Keine Antwort gefunden? Frag Mira, die KI-Assistentin, oben auf der Seite oder schreib uns über die Kontaktseite.",
+      "Keine Antwort gefunden? Frag Mira, die KI-Assistentin, oder schreib uns, über die Karte am Ende der Seite.",
       "Die Preise in den Antworten sind immer die aktuellen."
     ]
   },
@@ -619,7 +685,8 @@
     "text": "Wer testee macht und warum: Interviews aus einer Stellenbeschreibung, die sich jedes Team leisten kann, und kostenloses Üben für alle.",
     "actions": [
       "Lies, warum es testee gibt und wie es an die Personalauswahl herangeht.",
-      "Lies ein Wort des Gründers und öffne sein LinkedIn-Profil."
+      "Lies ein Wort des Gründers und öffne sein LinkedIn-Profil.",
+      "Erstelle einen Test oder übe kostenlos, über die Karte am Ende."
     ],
     "tips": [
       "Um dem Team zu schreiben, nutze die Kontaktseite."
@@ -630,7 +697,8 @@
     "text": "Schreib dem testee-Team mit einer Frage, einer Idee, einem Partnerschaftsangebot oder etwas, das nicht funktioniert.",
     "actions": [
       "Gib deinen Namen, deine E-Mail-Adresse und deine Nachricht ein und sende sie ab.",
-      "Füge die ID des Unternehmens, Interviews, Kandidaten oder Kontos ein, um das es geht, damit wir es sofort finden."
+      "Füge die ID des Unternehmens, Interviews, Kandidaten oder Kontos, um das es geht, in deine Nachricht ein, damit wir es sofort finden.",
+      "Sieh, wer testee betreibt: Firmenname, Registernummer, Adresse und E-Mail."
     ],
     "tips": [
       "Der Link „ID kopieren“ steht unter dem Namen eines Unternehmens, Interviews oder Kandidaten; die ID deines Kontos findest du in deinem Kontomenü.",
@@ -641,7 +709,7 @@
     "title": "Entwicklerdokumentation",
     "text": "Alles, was du brauchst, um deine eigene Plattform oder deinen KI-Agenten mit testee zu verbinden, direkt aus der API gelesen, damit es immer zu ihr passt.",
     "actions": [
-      "API: wie du dich anmeldest, die Basis-URL und jeder Endpunkt mit Parametern, Body, Antwort und Fehlern.",
+      "API: wie du dich anmeldest, Anleitungen etwa zu Ratenlimits und sicheren Wiederholungen, die Basis-URL, jeder Endpunkt mit Parametern, Body, Antwort und Fehlern, die Fehlerliste und das Änderungsprotokoll.",
       "Webhooks: die Ereignisse, die testee an deine Adresse sendet, und was jedes enthält.",
       "SDK: wie du das Interview in deine eigene Website einbettest.",
       "MCP: wie du eine KI-App oder deinen eigenen Agenten verbindest und welche Tools er bekommt.",
@@ -661,7 +729,8 @@
       "Schreib uns per E-Mail, wenn etwas schwer zu bedienen ist oder du es in einer anderen Form brauchst."
     ],
     "tips": [
-      "Du machst das Interview eines Unternehmens und brauchst mehr Zeit? Bitte das Unternehmen vor dem Start um zusätzliche Zeit; du musst nicht sagen, warum."
+      "Du machst das Interview eines Unternehmens und brauchst mehr Zeit? Bitte das Unternehmen vor dem Start um zusätzliche Zeit; du musst nicht sagen, warum.",
+      "Wir antworten innerhalb von 14 Tagen; wenn du nicht zufrieden bist, kannst du dich an die Estnische Verbraucherschutz- und Technische Regulierungsbehörde (TTJA) wenden."
     ]
   },
   "documents": {
@@ -684,7 +753,8 @@
       "Sieh, wie testee Daten schützt: Anmeldung, Verschlüsselung, Zugriffsprüfungen, Ratenbegrenzungen und Backups.",
       "Sieh, was testee für die DSGVO, den EU AI Act, das Vereinigte Königreich und die USA bereitstellt, einschließlich des Bias-Audit-Gesetzes von New York City.",
       "Sieh, wo Daten gespeichert sind, welche Unterauftragsverarbeiter sie verarbeiten und wie lange jede Art von Daten aufbewahrt wird.",
-      "Öffne die AGB, die Datenschutzerklärung, den Auftragsverarbeitungsvertrag und die Dokumente für Unternehmen."
+      "Öffne die AGB, die Datenschutzerklärung, den Auftragsverarbeitungsvertrag und die Dokumente für Unternehmen.",
+      "Öffne die Erklärung zur Barrierefreiheit."
     ],
     "tips": [
       "Für Fragen zu Sicherheit, Datenschutz oder Compliance oder um ein Sicherheitsproblem zu melden, schreib an die E-Mail-Adresse am Ende der Seite."
@@ -730,14 +800,14 @@
   },
   "unsubscribe": {
     "title": "Abmelden",
-    "text": "Bestelle eine Art von E-Mails von testee ab, wie auf der Seite genannt.",
+    "text": "Bestelle eine Art von E-Mails von testee oder alle E-Mails eines Unternehmens ab, wie auf der Seite genannt.",
     "actions": [
       "Lies, welche E-Mails der Link abbestellt.",
       "Bestätige die Abmeldung; das Öffnen des Links allein ändert nichts.",
-      "Öffne danach deine E-Mail-Einstellungen, um andere E-Mails zu ändern."
+      "Wenn du angemeldet bist, öffne danach deine E-Mail-Einstellungen, um andere E-Mails zu ändern."
     ],
     "tips": [
-      "Service-E-Mails wie Team-Einladungen, Berichte und Zahlungsprobleme werden weiterhin gesendet."
+      "Service-E-Mails wie Team-Einladungen, Berichte und Zahlungsprobleme werden weiterhin gesendet; ein Link, der die E-Mails eines Unternehmens stoppt, stoppt auch seine Einladungen an dich."
     ]
   }
 }
