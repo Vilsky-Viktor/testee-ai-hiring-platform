@@ -7,9 +7,8 @@ import { loaded } from "./helpers/waits";
 // downloaded and emailed, two candidates' pages shared to a chat, a note posted and the Slack
 // channel testee posts to. On phones, what it does as cards.
 
-// Steps the demo reaches, in order (frontend/src/config/reports-demo-steps.ts), each lasting
-// over a second and a half: the PDF downloaded, then emailed; each candidate's summary in the
-// chat; the note posted; Slack last.
+// Steps the demo reaches, in order (frontend/src/config/reports-demo-steps.ts): the PDF
+// downloaded, then emailed; each candidate's summary in the chat; the note posted; Slack last.
 const STEPS = ["downloaded", "sent", "summary0", "summary1", "posted", "slackScrolled"];
 
 test("the reports demo reaches sharing, the notes and Slack, and the frame never moves", async ({
@@ -22,33 +21,41 @@ test("the reports demo reaches sharing, the notes and Slack, and the frame never
   // Time stands still from here on, moving only as the test runs it.
   await pauseClock(page);
   const section = page.locator("#reports");
-  await section.scrollIntoViewIfNeeded();
   const demo = section.getByTestId("reports-demo");
-  const frame = demo.getByTestId("demo-panel");
-  const box = () =>
-    frame.evaluate((element) => {
-      const rect = element.getBoundingClientRect();
+  // Every step as it lands, in the page, with where the frame is then: a step can be over by the
+  // time the test could read it. The clock is stopped, so none has gone by; the step the demo
+  // rests on before it plays isn't one it reached, so only changes count.
+  const played = await demo.evaluateHandle((element) => {
+    const frame = element.querySelector('[data-testid="demo-panel"]')!;
+    const box = () => {
+      const rect = frame.getBoundingClientRect();
 
       return [rect.width, rect.height, rect.left, rect.top + window.scrollY].map(Math.round).join();
-    });
-  const boxes = new Set([await box()]);
-  const seen = new Set<string>();
+    };
+    const log = { steps: new Set<string>(), boxes: new Set([box()]) };
+    new MutationObserver(() => {
+      log.steps.add((element as HTMLElement).dataset.step!);
+      log.boxes.add(box());
+    }).observe(element, { attributes: true, attributeFilter: ["data-step"] });
 
-  // The clock runs a second and a half at a time, so none of those steps is passed unseen.
+    return log;
+  });
+  await section.scrollIntoViewIfNeeded();
+
+  // The page is heavy: a whole run of the demo takes minutes on a busy machine, so the test adds
+  // no time of its own between the clock's runs.
   await expect
     .poll(
       async () => {
-        await page.clock.runFor(1_500);
-        boxes.add(await box());
-        seen.add((await demo.getAttribute("data-step"))!);
+        await page.clock.runFor(5_000);
 
-        return STEPS.filter((step) => seen.has(step));
+        return played.evaluate(({ steps }, wanted) => wanted.filter((step) => steps.has(step)), STEPS);
       },
-      { timeout: 300_000 },
+      { timeout: 300_000, intervals: [0] },
     )
     .toEqual(STEPS);
 
-  expect([...boxes]).toHaveLength(1);
+  expect(await played.evaluate(({ boxes }) => [...boxes])).toHaveLength(1);
 });
 
 test("on a phone what it does shows as three cards in place of the demo", { tag: "@phone-only" }, async ({
