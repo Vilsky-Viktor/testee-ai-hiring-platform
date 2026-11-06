@@ -12,6 +12,7 @@ from companies.core.db import Session
 from companies.helpers.candidates import candidate_out, company_candidate_out, stored_results
 from companies.integrations import rounds
 from companies.repositories import candidates
+from companies.schemas.answer_patterns import PatternSignal
 from companies.schemas.invites import CandidateOut, CandidateSummaryOut, SectionGrade
 
 
@@ -157,7 +158,9 @@ async def one(interview, invite_id: UUID) -> CandidateOut:
         SectionGrade(title=section["topic_title"], grade=section["final_score"])
         for section in card or []
     ]
-    found.answer_signals = (patterns or {}).get("signals", [])
+    found.answer_signals = [
+        PatternSignal(**signal) for signal in (patterns or {}).get("signals", [])
+    ]
 
     return found
 

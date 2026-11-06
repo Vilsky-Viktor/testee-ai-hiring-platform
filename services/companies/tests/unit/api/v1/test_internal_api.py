@@ -125,6 +125,8 @@ def test_an_interview_and_its_candidates_newest_first(client, stored):
     assert stored == [("candidates", 0, 100, False, True)]
 
 
+# A raw dict in a typed field only warns: an error here keeps the output really typed.
+@pytest.mark.filterwarnings("error::UserWarning")
 def test_a_candidate_comes_with_their_results(client):
     found = client.get(f"{BASE}/{INTERVIEW.id}/candidates/{INVITE.id}", headers=HEADERS).json()
 
