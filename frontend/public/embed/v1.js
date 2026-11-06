@@ -18,14 +18,15 @@
  *       onReady: () => {},
  *       onStart: () => {},
  *       onFinish: ({ candidateId }) => {},
- *       // "timeout": the frame didn't load (not your verified domain, or the network);
+ *       // "timeout": the frame didn't load (not one of your allowed domains, or the network);
  *       // "invite_unavailable": the link expired or was revoked; "load_failed": try again.
  *       onError: ({ code }) => {},
  *     })
  *   </script>
  *
- * Only a candidate invited with sign_in false, and only on your company's verified website
- * domain (and its subdomains): anywhere else the frame stays empty and onError says "timeout".
+ * Only a candidate invited with sign_in false, and only on your company's allowed domains (a
+ * site, or "*.acme.com" for its subdomains): anywhere else the frame stays empty and onError
+ * says "timeout".
  * Within v1, options, callbacks and messages are only ever added.
  */
 ;(function () {

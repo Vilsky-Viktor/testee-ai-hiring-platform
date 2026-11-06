@@ -26,4 +26,4 @@ ACTION_COLUMNS = (
 ACTION_FILE_NAME = "testee-action-log-{day}.csv"
 
 # Why anyone but the owner is refused the audit and action logs.
-LOG_NOT_OWNER = "Only the owner can see the audit log"
+LOG_NOT_OWNER = "Only the owner can see the action log"

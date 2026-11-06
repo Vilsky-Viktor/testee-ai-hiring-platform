@@ -25,7 +25,7 @@ NEXT = "Moving on to the next question."
 TIME_UP = "Time's up. No answer. Moving on to the next question."
 # When the question's time ran out with an answer picked, which was saved.
 TIME_UP_SAVED = "Time's up. Your answer is saved. Moving on to the next question."
-END = "Thank you. Your answers are recorded, and the company will be in touch about the results."
+END = "Thank you. Your answers are recorded, and the company will review the results."
 
 
 class Phrase(StrEnum):
