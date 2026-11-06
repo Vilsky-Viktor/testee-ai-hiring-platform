@@ -2,6 +2,8 @@ import type { Field, OpenApi, Operation, Schema } from "@/types/openapi"
 
 // FastAPI's own schemas for its 422 answers: the docs describe errors in words instead.
 const HIDDEN_SCHEMAS = ["HTTPValidationError", "ValidationError"]
+// FastAPI's own 422 answer: left out, while a route's own description of its 422 shows.
+const VALIDATION_ERROR = "Validation Error"
 
 /** "#/components/schemas/Candidate" -> "Candidate". */
 export function refName(ref: string) {
@@ -70,7 +72,10 @@ export function bodySchema(operation: Operation): Schema | null {
 /** The error answers an operation lists (FastAPI's 422 left out), as code and description. */
 export function errorsOf(operation: Operation) {
   return Object.entries(operation.responses)
-    .filter(([code]) => !code.startsWith("2") && code !== "422")
+    .filter(
+      ([code, answer]) =>
+        !code.startsWith("2") && answer.description !== VALIDATION_ERROR
+    )
     .map(([code, answer]) => ({ code, description: answer.description }))
 }
 

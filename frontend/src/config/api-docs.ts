@@ -14,6 +14,7 @@ export const API_PAGES = [
       null,
       "Get an API key",
       "Authenticate",
+      "Permissions",
       "Limit a key to your servers",
       "Quickstart: invite a candidate",
     ],

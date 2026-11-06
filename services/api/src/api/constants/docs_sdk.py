@@ -43,7 +43,8 @@ page, is recorded as a page leave.
 
 The frame fits its height to the interview.
 
-- `element`: where the interview goes.
+- `element`: where the interview goes, as a CSS selector or an element. If it isn't on the page,
+  `Testee.embed` throws an error.
 - `url`: the candidate's `invite_url`.
 - `theme`: optional. `"light"` or `"dark"` always shows that theme, in your company's colors for
   it, set on the company's **Brand** page. `"default"`, or nothing, uses the candidate's own theme,
@@ -70,7 +71,7 @@ hash would stop it loading. It's served over HTTPS and may be loaded with
 
 ## Allowed domains
 
-Owners and admins list the sites that may embed your interviews on the API page's **SDK** tab:
+Owners and admins list up to 20 sites that may embed your interviews on the API page's **SDK** tab:
 
 - `jobs.acme.com` allows that site.
 - `*.acme.com` allows every subdomain of `acme.com`. Add `acme.com` too for the domain itself.

@@ -21,7 +21,9 @@ export const MCP_INTRO =
 
 export const MCP_SERVER = `The server speaks the Model Context Protocol over Streamable HTTP. It's stateless, so there are no sessions to keep.
 
-**Sign in as yourself.** An AI app, or an agent on your own computer, signs in with OAuth 2.1 (PKCE and dynamic client registration). It opens testee's consent page once, you choose Allow, and no key is pasted anywhere. The access token lasts an hour and the refresh token 90 days. Each refresh replaces both, so keep the new ones or the agent has to ask you again. Don't share a token between agents.
+**Sign in as yourself.** An AI app, or an agent on your own computer, signs in with OAuth 2.1 (PKCE, with a Client ID Metadata Document or dynamic client registration). It opens testee's consent page once, you choose Allow, and no key is pasted anywhere. The access token lasts an hour and the refresh token 90 days. Each refresh replaces both, so keep the new ones or the agent has to ask you again. Don't share a token between agents.
+
+**Read only.** An app asks for the scope \`testee\`, everything you may do, or \`testee:read\`, only reading. On the consent page you can turn off **Allow changes** to connect a full request as read only: the app then lists only the tools that read, and a change it tries anyway is refused.
 
 **Sign in with an API key.** An agent on a server, with no browser, sends a company API key instead: \`Authorization: Bearer te_...\`. The key needs the **mcp** permission. It acts as itself, not as the member who made it, in its company only, and gets only the tools its other permissions allow (see Tools). Its calls count against the company's API limit.`
 
@@ -47,7 +49,7 @@ export const MCP_OTHER_APPS = [
   {
     id: "le-chat",
     label: "Le Chat",
-    text: "In Le Chat, open **Intelligence → Connectors → Add connector → Custom MCP connector**, paste the server address, choose **Connect**, and allow it on the testee page that opens.",
+    text: "In Le Chat, open **Connectors**, choose **Add Connector** and the **Custom MCP Connector** tab, name it `testee`, paste the server address, choose **Connect**, and allow it on the testee page that opens. Only an administrator can add one.",
     code: null,
   },
 ]
@@ -112,7 +114,7 @@ export const MCP_TOOLS_TEXT =
 // {minute}, {day} and {writes}: the limits, from the server.
 export const MCP_RULES = `- **Limits:** a user's apps and agents together make up to {minute} calls a minute and {day} a day, and {writes} changes an hour, counted with those made in testee's assistant.
 - **Errors:** they come back as results with \`isError\` and the reason in the user's language, for the agent to explain.
-- **Turning it off:** a company can turn AI apps off on its AI apps page. Its data then answers \`403\` with the reason, to API keys too.
+- **Turning it off:** a company can turn AI apps off on its AI apps page. Its tools then refuse with the reason, for API keys too.
 - **Secrets:** passwords and API keys in a tool's arguments are refused before anything is sent.
 - **Links:** a result carries \`links\` to the testee pages that show it.`
 

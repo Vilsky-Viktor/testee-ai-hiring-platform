@@ -110,6 +110,67 @@ MCP_DESCRIPTIONS = {
         "The levels and languages the interview templates can be filtered by: the values "
         "search_templates takes when the user wants templates of a level or language."
     ),
+    "list_company_balances": (
+        "The companies the user may top up, as an owner or admin, with each one's available "
+        "credits and whether they're running low, in pages (offset, limit). Use it to compare "
+        "companies; get_credits gives one company's in full."
+    ),
+    "get_credits": (
+        "A company's credits by company_id: how many are available and set aside for candidates "
+        "who haven't finished, how many more candidates they pay for, and whether they're running "
+        "low. Any member may read them."
+    ),
+    "get_generation": (
+        "How an interview's making is going, by interview_id: its status, the topics testee "
+        "proposed (review_generation confirms them) and the questions' progress. Any member may "
+        "read it."
+    ),
+    "list_candidates": (
+        "One interview's candidates by interview_id, in pages (offset, limit): each one's status, "
+        "progress, grade, whether they passed and integrity signals. `q` narrows them to a name "
+        "or email, `status` to one status, and `sort` orders them. search_candidates looks "
+        "across a company's interviews."
+    ),
+    "search_candidates": (
+        "Finds candidates by name or email (`q`) across a company's interviews, by company_id, "
+        "newest first, in pages (offset, limit), each with its interview; list_candidates lists "
+        "one interview's. Any member, viewers too."
+    ),
+    "get_pause": (
+        "Whether testee's emergency pause is on (`paused`): while it is, changes through AI apps "
+        "are refused, and the invite and new interview pages say so."
+    ),
+    "list_question_reports": (
+        "The reports on one question, by interview_id and question_id, in pages (offset, limit): "
+        "each one's reason, comment and date, from candidates and the team. Any member may read "
+        "them."
+    ),
+    "list_copyable_templates": (
+        "The templates a company can start an interview from, in pages (offset, limit): each "
+        "one's id, title, level, language and topic count. `q`, `level` and `language` narrow "
+        "them. create_interview_from_template starts from one."
+    ),
+    "get_ats_job_text": (
+        "A job's title, description, requirements and benefits from a connected ATS as plain "
+        "text, by provider, job_id and company_id, to make an interview from with "
+        "create_interview."
+    ),
+    "list_practice_rounds": (
+        "The user's own free practice rounds on a template, by template_id, newest first: when "
+        "each started, whether it finished, its progress and grade."
+    ),
+    "get_practice_progress": (
+        "How far the user got on each topic of a template in their latest practice round, by "
+        "template_id: the questions answered of the total."
+    ),
+    "get_faq": (
+        "testee's FAQ in the user's language, with today's prices in the currency of `country` "
+        "(US dollars without one)."
+    ),
+    "create_webhook": (
+        "Add a web hook to a company: testee sends this HTTPS address a signed request for every "
+        "event, such as a candidate starting or finishing, or an interview being ready."
+    ),
     # The panel's names its `show` tool, which AI apps don't have.
     "get_guide": (
         "One guide article on hiring or on how testee works, by its slug from list_guides, in "

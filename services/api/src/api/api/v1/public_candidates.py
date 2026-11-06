@@ -81,9 +81,14 @@ async def remove_candidate(
     summary="Send the invitation again",
     responses={
         **NOT_FOUND,
+        402: refusal(
+            "The invitation expired and the company doesn't have enough credits to send it "
+            "again (`insufficient_credits`)"
+        ),
         409: refusal(
-            "The candidate already finished (`candidate_finished`), or was invited with "
-            "`sign_in` false, so testee doesn't email them (`invited_without_sign_in`)"
+            "The candidate already finished (`candidate_finished`), was invited with `sign_in` "
+            "false, so testee doesn't email them (`invited_without_sign_in`), or the company is "
+            "suspended (`company_suspended`)"
         ),
         429: {
             **refusal("The key reached its email limits (`rate_limited`)"),

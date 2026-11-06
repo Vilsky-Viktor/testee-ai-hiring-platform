@@ -207,10 +207,13 @@ async def create_interview(
     response: Response,
     idempotency_key: IdempotencyKey = None,
 ) -> Interview:
-    """Makes an interview from a job description, as the key (the action log names it). Its
-    questions take a few minutes: until `ready` is true, it can't take candidates; the `interview.ready` web
-    hook event says when it is. Retrying is safe: the same request from the same key within 15
-    minutes returns the interview the first one made, with `200`."""
+    """Starts an interview from a job description, as the key (the action log names it). testee
+    first proposes its topics, and nothing more happens until they're reviewed: by an owner or
+    admin on the interview's page in testee, or by an agent with `review_generation` over MCP.
+    The API has no route for it. Topics left unreviewed for 14 days cancel the interview. The
+    questions then take a few minutes: until `ready` is true, it can't take candidates; the
+    `interview.ready` web hook event says when it is. Retrying is safe: the same request from
+    the same key within 15 minutes returns the interview the first one made, with `200`."""
 
     created = False
 

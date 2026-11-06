@@ -168,7 +168,7 @@
      "Interviews"
     ],
     "summary": "Create an interview",
-    "description": "Makes an interview from a job description, as the key (the action log names it). Its\nquestions take a few minutes: until `ready` is true, it can't take candidates; the `interview.ready` web\nhook event says when it is. Retrying is safe: the same request from the same key within 15\nminutes returns the interview the first one made, with `200`.\n\nNeeds the `interviews:create` permission.",
+    "description": "Starts an interview from a job description, as the key (the action log names it). testee\nfirst proposes its topics, and nothing more happens until they're reviewed: by an owner or\nadmin on the interview's page in testee, or by an agent with `review_generation` over MCP.\nThe API has no route for it. Topics left unreviewed for 14 days cancel the interview. The\nquestions then take a few minutes: until `ready` is true, it can't take candidates; the\n`interview.ready` web hook event says when it is. Retrying is safe: the same request from\nthe same key within 15 minutes returns the interview the first one made, with `200`.\n\nNeeds the `interviews:create` permission.",
     "operationId": "create_interview",
     "security": [
      {
@@ -1173,8 +1173,18 @@
        }
       }
      },
+     "402": {
+      "description": "The invitation expired and the company doesn't have enough credits to send it again (`insufficient_credits`)",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Error"
+        }
+       }
+      }
+     },
      "409": {
-      "description": "The candidate already finished (`candidate_finished`), or was invited with `sign_in` false, so testee doesn't email them (`invited_without_sign_in`)",
+      "description": "The candidate already finished (`candidate_finished`), was invited with `sign_in` false, so testee doesn't email them (`invited_without_sign_in`), or the company is suspended (`company_suspended`)",
       "content": {
        "application/json": {
         "schema": {
@@ -2556,7 +2566,7 @@
        "deleted"
       ],
       "title": "Status",
-      "description": "`invited`; `undelivered` when the invite email bounced; `in_process` once they start; `finished`; `expired` when the invite went unused for 30 days; `deleted` when the candidate deleted their account"
+      "description": "`invited`; `undelivered` when the invite email bounced or was marked as spam; `in_process` once they start; `finished`; `expired` when the invite went unused for 30 days; `deleted` only on old records: a candidate who deletes their account now leaves the list, with a `candidate.removed` web hook event"
      },
      "progress": {
       "type": "integer",
@@ -2770,7 +2780,7 @@
        }
       ],
       "title": "Name",
-      "description": "The candidate's name, optional (at most 200 characters). It fills a name not known yet; inviting the same address again doesn't change a known one"
+      "description": "The candidate's name, optional (at most 200 characters). Inviting an address whose invite is still open returns it as it is, name included"
      },
      "return_url": {
       "anyOf": [
@@ -2816,7 +2826,7 @@
        }
       ],
       "title": "Mode",
-      "description": "How this candidate takes the interview, optional: `voice` (the questions are read aloud and may be answered by voice) or `click`; left out, the interview's mode. Voice only in the languages voice mode supports (English, Spanish, German, French, Portuguese and Italian). Inviting an address whose invite is still open returns it as it is, mode included"
+      "description": "How this candidate takes the interview, optional: `voice` (the questions are read aloud and may be answered by voice) or `click`; left out, the interview's mode. Inviting an address whose invite is still open returns it as it is, mode included"
      }
     },
     "type": "object",

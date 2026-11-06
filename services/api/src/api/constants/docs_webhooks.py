@@ -2,7 +2,7 @@
 WEBHOOKS_TAB = """# Web hooks
 
 Web hooks tell your server when something happens, so you don't have to keep asking. Owners and
-admins add them on the company's **API** page. Each endpoint must use HTTPS and be reachable from
+admins add up to 5 on the company's **API** page. Each endpoint must use HTTPS and be reachable from
 the public internet.
 
 Every endpoint gets every event below as a `POST` request: a candidate started, finished with
@@ -25,7 +25,8 @@ signature is the hex-encoded HMAC-SHA256 of `<timestamp>.<raw request body>`, ma
 hook's signing secret, which is shown once when you add it.
 
 Before processing an event, verify the signature and reject requests whose timestamp is more than
-a few minutes old. Use the raw request body, as received, before any JSON parsing.
+a few minutes old. Each send is signed afresh, so a retried event carries a new timestamp. Use the
+raw request body, as received, before any JSON parsing.
 
 ```python
 import hashlib
@@ -87,9 +88,11 @@ endpoint to the new secret. The old one stops signing when the 24 hours end.
 
 Respond with any `2xx` status within 10 seconds to confirm delivery. Other responses and timeouts
 are retried with growing, slightly random pauses, from 5 minutes up to 6 hours apart, for 3 days.
+Redirects aren't followed, so they count as failures.
 
-After that the web hook is paused: it gets no events, and the API page shows it as paused, until a
-test event sent from there goes through.
+After that the web hook is paused: the API page shows it as paused, and it gets no events until a
+test event sent from there goes through. Events from that time, and the retries that were waiting,
+aren't sent later, so [sync](/api-docs?page=guides) what you missed from the list endpoints.
 
 An event can occasionally arrive more than once, so use its `id` to ignore duplicates.
 
@@ -103,7 +106,8 @@ Each request body is a JSON object with:
 - `timestamp`: the same time, under the name many web hook tools read.
 - `data`: the event's details.
 
-A retried event can arrive after a later one, so order a candidate's events by `occurred_at`, not
-by when they arrive.
+Events can arrive out of order, so order a candidate's events by `occurred_at`, not by when they
+arrive. `data` shows the candidate and the interview as they were when the event was first sent,
+which can be later than `occurred_at`: a `candidate.started` event may already show them finished.
 
 """

@@ -90,6 +90,19 @@ describe("the API docs read the OpenAPI description", () => {
     expect(schemasOf(SPEC).map(([name]) => name)).toEqual(["Interview"])
   })
 
+  it("keeps a route's own description of its 422", () => {
+    const refused = { description: "Bad return address (`return_url_invalid`)" }
+
+    expect(
+      errorsOf({
+        responses: {
+          "201": { description: "Created" },
+          "422": refused,
+        },
+      })
+    ).toEqual([{ code: "422", description: refused.description }])
+  })
+
   it("splits a description into titled sections, steps and inline code", () => {
     const sections = richText(
       "Intro with `code`.\n\n## Keys\n\n1. Sign in.\n2. Open **Hiring**, then\n   a tab.\n\nAfter."

@@ -33,8 +33,8 @@ def candidate_started(event: CandidateWebhook) -> None:
 
 @webhooks.post(CANDIDATE_UNDELIVERED, summary="An invitation wasn't delivered")
 def candidate_undelivered(event: CandidateWebhook) -> None:
-    """Sent when a candidate's invitation email bounces. Send them their `invite_url` another
-    way, or invite them again with another address."""
+    """Sent when a candidate's invitation email bounces or is marked as spam. Send them their
+    `invite_url` another way, or invite them again with another address."""
 
 
 @webhooks.post(CANDIDATE_EXPIRED, summary="An invitation expired")
@@ -45,9 +45,10 @@ def candidate_expired(event: CandidateWebhook) -> None:
 
 @webhooks.post(CANDIDATE_REMOVED, summary="A candidate was removed")
 def candidate_removed(event: RemovedWebhook) -> None:
-    """Sent when a candidate is removed from one of your interviews (revoked, or with the
-    interview deleted). testee no longer has their results; delete what you keep of them if
-    you no longer need it."""
+    """Sent when a candidate is removed from one of your interviews: your company revoked their
+    invite or erased them, or they deleted their account. testee no longer has their results;
+    delete what you keep of them if you no longer need it. Deleting an interview sends no event
+    for its candidates."""
 
 
 @webhooks.post(INTERVIEW_READY, summary="An interview is ready")

@@ -21,17 +21,16 @@ export const MCP_NAME = "testee"
 
 // Claude's and ChatGPT's own menu names, as they show them (in English), shown in chips.
 export const CLAUDE_CONNECTOR_PATH = [
-  "Settings",
+  "Customize",
   "Connectors",
+  "+ Add",
   "Add custom connector",
 ]
-export const CHATGPT_DEVELOPER_PATH = [
-  "Settings",
-  "Apps & Connectors",
-  "Advanced settings",
-  "Developer mode",
+export const CHATGPT_ADD_PATH = ["Plugins", "+", "Add custom MCP server"]
+export const CHATGPT_CREATE_PATH = [
+  "I understand and want to continue",
+  "Create as a plugin",
 ]
-export const CHATGPT_CREATE = "Create"
 export const CHATGPT_AUTH = "OAuth"
 
 // The developer docs' MCP tab: other AI apps and one's own agents.

@@ -11,9 +11,9 @@ import { CopyValue } from "@/components/common/copy-field"
 import { InstructionsDialog } from "@/components/common/instructions-dialog"
 import { KeepAcronyms } from "@/components/common/keep-acronyms"
 import {
+  CHATGPT_ADD_PATH,
   CHATGPT_AUTH,
-  CHATGPT_CREATE,
-  CHATGPT_DEVELOPER_PATH,
+  CHATGPT_CREATE_PATH,
   CLAUDE_CONNECTOR_PATH,
   MCP_DOCS_PATH,
   MCP_NAME,
@@ -194,18 +194,18 @@ export function ChatGptSteps() {
   return (
     <ol className="list-decimal space-y-3 ps-5 text-base text-muted-foreground">
       <li className="space-y-1.5">
-        <span className="block">{t("chatgptDeveloper")}</span>
-        <Chips items={CHATGPT_DEVELOPER_PATH} path />
-      </li>
-      <li className="space-y-1.5">
-        <span className="block">{t("chatgptCreate")}</span>
-        <Chips items={[CHATGPT_CREATE]} />
+        <span className="block">{t("chatgptOpen")}</span>
+        <Chips items={CHATGPT_ADD_PATH} path />
       </li>
       <li className="space-y-1.5">
         <span className="block">{t("chatgptPaste", { name: MCP_NAME })}</span>
         <Chips items={[CHATGPT_AUTH]} />
       </li>
-      <li>{t("allowOnTestee")}</li>
+      <li className="space-y-1.5">
+        <span className="block">{t("chatgptCreate")}</span>
+        <Chips items={CHATGPT_CREATE_PATH} path />
+      </li>
+      <li>{t("chatgptInstall")}</li>
     </ol>
   )
 }

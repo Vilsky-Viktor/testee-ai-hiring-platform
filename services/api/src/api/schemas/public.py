@@ -80,9 +80,10 @@ class Candidate(BaseModel):
     status: Literal["invited", "undelivered", "in_process", "finished", "expired", "deleted"] = (
         Field(
             description=(
-                "`invited`; `undelivered` when the invite email bounced; `in_process` once they "
-                "start; `finished`; `expired` when the invite went unused for 30 days; `deleted` "
-                "when the candidate deleted their account"
+                "`invited`; `undelivered` when the invite email bounced or was marked as spam; "
+                "`in_process` once they start; `finished`; `expired` when the invite went unused "
+                "for 30 days; `deleted` only on old records: a candidate who deletes their "
+                "account now leaves the list, with a `candidate.removed` web hook event"
             )
         )
     )
@@ -160,8 +161,8 @@ class CandidateIn(BaseModel):
         default=None,
         max_length=200,
         description=(
-            "The candidate's name, optional (at most 200 characters). It fills a name not known "
-            "yet; inviting the same address again doesn't change a known one"
+            "The candidate's name, optional (at most 200 characters). Inviting an address whose "
+            "invite is still open returns it as it is, name included"
         ),
     )
     return_url: str | None = Field(
@@ -196,9 +197,7 @@ class CandidateIn(BaseModel):
         description=(
             "How this candidate takes the interview, optional: `voice` (the questions are read "
             "aloud and may be answered by voice) or `click`; left out, the interview's mode. "
-            "Voice only in the languages voice mode supports (English, Spanish, German, French, "
-            "Portuguese and Italian). Inviting an address whose invite is still open returns it "
-            "as it is, mode included"
+            "Inviting an address whose invite is still open returns it as it is, mode included"
         ),
     )
 

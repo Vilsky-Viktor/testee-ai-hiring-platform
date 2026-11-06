@@ -34,9 +34,32 @@ A key belongs to one company and acts as itself, not as the member who made it. 
 sent under the key's own email limits, and it keeps working after that member leaves. It stops
 only when it expires or is deleted.
 
+## Permissions
+
+A key can do only what its permissions allow. Each endpoint names the one it needs, and without it
+a request returns `403` (`missing_permission`).
+
+- `interviews:read`: list and read interviews.
+- `interviews:create`: create interviews.
+- `candidates:read`: list, read and find candidates.
+- `candidates:invite`: invite candidates and send their invitations again.
+- `candidates:change`: correct a candidate's name and give extra time.
+- `candidates:delete`: revoke an invite or erase a candidate.
+- `notes:read`: read an interview's notes.
+- `notes:add`: add notes.
+- `credits:read`: read your credits.
+- `mcp`: sign in to the [MCP server](/api-docs?tab=mcp) with this key, for AI agents.
+
+A new key starts as **Read only**: `interviews:read`, `candidates:read`, `notes:read` and
+`credits:read`. **Read & write** adds everything except `candidates:delete` and `mcp`, which you
+tick yourself under **Custom**. A permission that changes something always comes with the read it
+needs, such as `candidates:read` with `candidates:invite`.
+
+Owners and admins can change a key's permissions on its page, without replacing the key.
+
 ## Limit a key to your servers
 
-On a key's page, you can list the addresses your servers call from: IPv4 or IPv6 addresses, or
+On a key's page, you can list up to 50 addresses your servers call from: IPv4 or IPv6 addresses, or
 CIDR ranges such as `203.0.113.7` or `2001:db8::/32`. A request from any other address returns
 `403` (`ip_not_allowed`). A key with no list works from any address.
 
@@ -87,7 +110,7 @@ const response = await fetch(
 )
 
 if (!response.ok) {
-  throw new Error((await response.json()).detail)
+  throw new Error((await response.json()).code)
 }
 
 const candidate = await response.json()
@@ -96,12 +119,23 @@ console.log(candidate.invite_url)
 
 ## Rate limits
 
-All of a company's keys share a limit of requests per minute. Past it, requests return `429` with
-a `Retry-After` header giving the seconds to wait.
+All of a company's keys share a limit of 60 requests per minute by default, including their calls
+to the MCP server. Past it, requests return `429` (`rate_limited`) with a `Retry-After` header
+giving the seconds to wait.
+
+Some actions have daily or hourly limits of their own, with the same answer. By default:
+
+- Invitations: each key can invite 100 candidates an hour and 200 a day, and one address 3 times a
+  day for one interview. This counts with `sign_in` false too.
+- Interviews: a company can create 10 a day, or 3 until it first tops up. A company can also have
+  only 5 interviews without candidates, or 1 until it first tops up; past that, requests return
+  `409` (`interview_quota_reached`) until you invite someone.
+- Notes: each key can add 60 an hour.
 
 ## Pagination
 
-Lists return the newest items first and accept `offset` and `limit`, up to 100 items a request.
+Lists return the newest items first and accept `offset` and `limit`, up to 100 items a request,
+which is also the default.
 A full page comes with a `Link` header pointing to the next one:
 
 ```bash
@@ -113,7 +147,7 @@ Follow it until a response has none. The page after a full one can be empty.
 ## Sync changes
 
 Interviews and candidates carry `updated_at`, the time they last changed. To fetch only what
-changed, pass `updated_since` to a list. It returns items changed at that time or later, oldest
+changed, pass `updated_since` to the interview or candidate list. It returns items changed at that time or later, oldest
 change first.
 
 For the next page, pass the last item's `updated_at` as `updated_since` and its `id` as `after`,
@@ -121,7 +155,9 @@ so items changed at the same moment are neither repeated nor missed. The `Link` 
 page does this for you. Keep the last pair and start from it next time.
 
 A candidate's progress while they answer doesn't change `updated_at`. A removed candidate leaves
-the list, and the `candidate.removed` web hook event tells you so.
+the list, and the `candidate.removed` web hook event tells you so. A deleted interview leaves with
+its candidates, and a candidate is deleted 365 days after their invitation was last sent. Neither
+sends an event, so compare with a full list now and then if you keep your own copy.
 
 ## Retry safely
 
@@ -130,8 +166,8 @@ You can retry any request as it is, with nothing extra to send:
 - Inviting an address that's already invited, or has finished, returns that candidate as they are,
   with `200` instead of `201`. No email is sent and no credits are used. An expired invite is sent
   again.
-- Creating an interview with the same request from the same key within 15 minutes returns the
-  interview the first request made, with `200`. `201` only ever means something new was made.
+- Creating an interview or adding a note with the same request from the same key within 15 minutes
+  returns what the first request made, with `200`. `201` only ever means something new was made.
 - A retry while the first request is still running returns `409` (`request_in_progress`). Wait a
   moment and try again.
 
@@ -190,7 +226,7 @@ by its HTTP status.
 | `candidate_finished` | 409 | The candidate already finished |
 | `candidate_started` | 409 | Extra time only before the candidate starts |
 | `invited_without_sign_in` | 409 | testee doesn't email a candidate invited with `sign_in` false |
-| `company_suspended` | 409 | The company is suspended; its notes can be read, not added |
+| `company_suspended` | 409 | The company is suspended, so it can't invite candidates or add notes |
 | `interview_quota_reached` | 409 | As many interviews without candidates as allowed |
 | `request_in_progress` | 409 | The same request is still running |
 | `idempotency_key_reused` | 422 | An `Idempotency-Key` sent before with another request |
