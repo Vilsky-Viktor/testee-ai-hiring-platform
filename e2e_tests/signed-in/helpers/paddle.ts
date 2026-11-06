@@ -1,4 +1,4 @@
-import { expect, type Page, test } from "@playwright/test";
+import { expect, type Locator, type Page, test } from "@playwright/test";
 
 import { env } from "./env";
 import { visit } from "./navigation";
@@ -12,15 +12,33 @@ export const DECLINED_CARD = "4000000000000002";
 // out now and then); the next attempt on the same transaction goes through.
 const PROCESSOR_ERROR = "psp_error";
 
+/** The top-up page's price choices, one per price. */
+export function topUpTiers(page: Page) {
+  return page.getByRole("main").locator("button[aria-pressed]:visible");
+}
+
+/** Goes from a company's billing page to its top-up page, on the smallest top-up, and returns the
+ * button that pays. A price choice answering proves the page has hydrated, so the button works. */
+export async function openTopUpPage(page: Page, companyId: string): Promise<Locator> {
+  await visit(page, `/companies/${companyId}/billing`);
+  await page.getByTestId("top-up").first().click();
+  await expect(page).toHaveURL((url) => url.pathname === "/top-up");
+  const tiers = topUpTiers(page);
+
+  await expect(async () => {
+    await tiers.last().click();
+    await expect(tiers.last()).toHaveAttribute("aria-pressed", "true", { timeout: 1_000 });
+  }).toPass();
+  await tiers.first().click();
+  await expect(tiers.first()).toHaveAttribute("aria-pressed", "true");
+
+  return page.getByTestId("buy-top-up").filter({ visible: true });
+}
+
 /** Opens Paddle's sandbox checkout for the smallest top-up from a company's billing page, or
  * skips the test when Paddle's prices aren't set. Returns the checkout's Paddle transaction. */
 export async function openTopUpCheckout(page: Page, companyId: string): Promise<string> {
-  await visit(page, `/companies/${companyId}/billing`);
-  await page.getByTestId("top-up").first().click();
-  // Its prices come as it opens: the slider shows once they have.
-  await expect(page.getByTestId("top-up-dialog").getByRole("slider")).toBeVisible();
-  // The Top up button, for the slider's first count (it comes before the dialog's other buttons).
-  const buy = page.getByTestId("top-up-dialog").getByRole("button").first();
+  const buy = await openTopUpPage(page, companyId);
   test.skip(await buy.isDisabled(), "Paddle's prices aren't set");
   const made = page.waitForResponse(
     (response) =>

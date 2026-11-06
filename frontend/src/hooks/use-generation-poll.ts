@@ -4,7 +4,7 @@ import { useEffect, useEffectEvent } from "react"
 
 import { ACTIVE_STATUSES, POLL_MIN_MS } from "@/config/generation"
 import { ApiError, apiFetch } from "@/lib/api"
-import { nextPollDelay } from "@/lib/poll"
+import { isFinishing, nextPollDelay } from "@/lib/poll"
 import type { Generation } from "@/types/generation"
 
 type Polled = {
@@ -74,7 +74,10 @@ export function useGenerationPoll<T extends Polled>(
         last = seen
 
         if (next.status && ACTIVE_STATUSES.includes(next.status)) {
-          delay = nextPollDelay(delay, changed)
+          // Finishing brings no changes to back off for, and the page moves on as soon as it's done.
+          delay = isFinishing(next.progress)
+            ? POLL_MIN_MS
+            : nextPollDelay(delay, changed)
           schedule()
         }
       } catch (error) {

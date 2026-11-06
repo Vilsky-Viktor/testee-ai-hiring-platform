@@ -8,8 +8,7 @@ import { Button } from "@/components/ui/button"
 import { FEEDBACK_HOVER_CLASS } from "@/config/feedback"
 import type { Vote } from "@/types/assistant"
 
-/** Small thumbs up and down in a little card on the bottom edge of one of the assistant's
- * answers, at its end, as candidates rate a question
+/** Small thumbs up and down under one of the assistant's answers, as candidates rate a question
  * (QuestionRating): the vote given is filled. Clicking it again clears it; the other one
  * changes it. */
 export function AnswerVote({
@@ -26,10 +25,7 @@ export function AnswerVote({
   ]
 
   return (
-    <div
-      className="flex items-center gap-0.5 rounded-xl border bg-popover px-1"
-      data-testid="answer-vote"
-    >
+    <div className="-ms-1 flex items-center gap-0.5" data-testid="answer-vote">
       {thumbs.map(({ vote, label, Icon }) => (
         <Button
           key={vote}

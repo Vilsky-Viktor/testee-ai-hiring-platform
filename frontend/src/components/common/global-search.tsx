@@ -12,7 +12,9 @@ import { Dotted } from "@/components/common/dot"
 import { IconButton } from "@/components/common/icon-button"
 import { SearchProgress } from "@/components/common/search-progress"
 import { MAX_SEARCH_LENGTH } from "@/config/limits"
+import { useSearchShortcut } from "@/hooks/use-search-shortcut"
 import { SEARCH_DELAY_MS } from "@/config/lists"
+import { belowHeader } from "@/lib/header-line"
 import { localizeHref } from "@/lib/locale-path"
 import { searchSite } from "@/lib/search"
 import { useAuth } from "@/providers/auth-provider"
@@ -29,8 +31,11 @@ const RESULTS_SLOT = "search-results"
  * (PhoneSearch). */
 export function HeaderSearch() {
   return (
-    <div className="mx-6 hidden min-w-0 flex-1 self-stretch py-1.5 md:flex lg:mx-14">
-      <SearchBox className="h-full w-full rounded-xl border border-transparent focus-within:border-primary" />
+    <div className="mx-6 hidden min-w-0 flex-1 self-stretch lg:flex xl:mx-14">
+      <SearchBox
+        shortcut
+        className="relative h-full w-full border border-transparent focus-within:border-ring-gradient"
+      />
     </div>
   )
 }
@@ -65,7 +70,7 @@ export function PhoneSearch() {
 
   return (
     <>
-      <span ref={toggle} className="flex md:hidden">
+      <span ref={toggle} className="flex lg:hidden">
         <IconButton
           label={open ? t("close") : t("open")}
           pressed={open}
@@ -83,7 +88,7 @@ export function PhoneSearch() {
       {open && (
         <div
           ref={bar}
-          className="absolute inset-x-0 top-14 z-40 border-b bg-background md:hidden"
+          className="absolute inset-x-0 top-14 z-40 border-b bg-background lg:hidden"
         >
           <SearchBox
             className="h-14"
@@ -99,10 +104,13 @@ export function PhoneSearch() {
 function SearchBox({
   className,
   autoFocus,
+  shortcut = false,
   onOpened,
 }: {
   className?: string
   autoFocus?: boolean
+  // ⌘/Ctrl + K goes to the field, as its hint says.
+  shortcut?: boolean
   // After a result is picked (the phone's bar closes).
   onOpened?: () => void
 }) {
@@ -120,6 +128,10 @@ function SearchBox({
   const highlighted = useRef<SearchResult | undefined>(undefined)
   // The whole field, magnifier included, so the list is as wide as it.
   const field = useRef<HTMLDivElement>(null)
+  const input = useRef<HTMLInputElement>(null)
+
+  useSearchShortcut(shortcut, input)
+
   const [found, setFound] = useState<{ q: string; rows: SearchResult[] }>({
     q: "",
     rows: [],
@@ -196,6 +208,8 @@ function SearchBox({
         )}
       >
         <Combobox.Input
+          ref={input}
+          aria-keyshortcuts={shortcut ? "Meta+K Control+K" : undefined}
           onKeyDown={(event) => {
             if (event.key === "Enter" && highlighted.current) {
               event.preventDefault()
@@ -210,22 +224,32 @@ function SearchBox({
           className="h-full w-full min-w-0 bg-transparent text-lg outline-none placeholder:text-placeholder"
         />
         <SearchProgress loading={loading} />
+        {shortcut && !query && (
+          <kbd
+            aria-hidden
+            data-testid="search-shortcut"
+            className="shrink-0 rounded-md bg-background px-1.5 py-0.5 font-sans text-xs whitespace-nowrap text-muted-foreground max-xl:hidden max-lg:hidden"
+          >
+            ⌘/Ctrl K
+          </kbd>
+        )}
       </div>
       {/* Opens once something typed has been searched: what was found, or that nothing was. */}
       {q && found.q === q && (
         <Combobox.Portal>
           <Combobox.Positioner
             anchor={field}
-            // Straight under the header's border, as if the field opened downwards.
-            sideOffset={1}
+            // Hanging from the header's bottom line, as if the field opened downwards; under the
+            // phones' search bar, just below the field.
+            sideOffset={() => belowHeader(field.current, 1)}
             align="start"
             className="z-50"
           >
             <Combobox.Popup
               data-slot={RESULTS_SLOT}
-              className="w-(--anchor-width) overflow-hidden rounded-b-xl bg-popover text-popover-foreground shadow-md"
+              className={`w-(--anchor-width) overflow-hidden rounded-b-xl bg-popover text-popover-foreground shadow-md`}
             >
-              <Combobox.Empty className="px-4 py-3 text-sm text-muted-foreground empty:hidden">
+              <Combobox.Empty className="px-4 py-3 text-base text-muted-foreground empty:hidden">
                 {t("empty")}
               </Combobox.Empty>
               <Combobox.List className="p-1 empty:hidden">
@@ -233,7 +257,7 @@ function SearchBox({
                   <Combobox.Item
                     key={result.key}
                     value={result}
-                    className="flex cursor-default items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm outline-none select-none data-highlighted:bg-surface data-highlighted:text-accent-foreground"
+                    className="flex cursor-default items-center justify-between gap-3 rounded-lg px-4 py-2.5 text-base outline-none select-none data-highlighted:bg-surface data-highlighted:text-accent-foreground"
                   >
                     <span className="min-w-0">
                       <span className="block truncate normal-case" dir="auto">
@@ -249,7 +273,7 @@ function SearchBox({
                         </span>
                       )}
                     </span>
-                    <span className="shrink-0 rounded-full bg-surface px-2 py-0.5 text-xs text-muted-foreground in-data-highlighted:bg-background">
+                    <span className="shrink-0 rounded-full bg-surface px-3.5 py-1 text-sm text-muted-foreground in-data-highlighted:bg-background">
                       {t(`kinds.${result.kind}`)}
                     </span>
                   </Combobox.Item>

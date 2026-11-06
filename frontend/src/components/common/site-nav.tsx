@@ -41,7 +41,10 @@ export function SiteNav({
         }
 
         // Against the address in the page's language (/de/pricing).
-        const href = localizeHref(locale, link.href)
+        const href = localizeHref(
+          locale,
+          "section" in link ? link.section : link.href
+        )
         const current = link.exact
           ? pathname === href
           : pathname.startsWith(href)
@@ -53,11 +56,11 @@ export function SiteNav({
             aria-current={current ? "page" : undefined}
             onClick={onNavigate}
             className={cn(
-              "rounded-lg text-muted-foreground transition-colors hover:text-foreground active:bg-surface active:text-foreground",
+              "rounded-lg text-muted-foreground transition-colors hover:bg-surface hover:text-foreground active:bg-surface active:text-foreground",
               vertical
                 ? "px-3 py-2.5 font-heading text-3xl"
                 : "px-1.5 py-1.5 text-sm sm:px-2.5",
-              current && "text-foreground"
+              current && "bg-surface text-foreground"
             )}
           >
             {t(link.label)}

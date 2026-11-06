@@ -60,7 +60,7 @@ export default async function SupportCandidatePage({
               {candidate.name && (
                 <span className="normal-case">{candidate.name}</span>
               )}
-              <Badge variant="outline" className="h-7 px-3 text-sm font-light">
+              <Badge variant="outline" className="h-8 px-4 text-sm font-light">
                 {hasMessage(statuses, candidate.status)
                   ? statuses(candidate.status)
                   : candidate.status}

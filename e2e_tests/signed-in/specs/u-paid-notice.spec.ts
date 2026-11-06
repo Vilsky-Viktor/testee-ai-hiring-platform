@@ -23,10 +23,8 @@ test("a completed payment shows the success dialog in place", async ({
   await expect(paid).toBeVisible({ timeout: 60_000 });
   await expect(paid).toHaveAttribute("data-paid", "top_up");
   await expect(checkout).toBeHidden();
-  expect(new URL(owner.url()).pathname).toBe(
-    `/companies/${company.id}/billing`,
-  );
-  expect(new URL(owner.url()).search).toBe("");
+  expect(new URL(owner.url()).pathname).toBe("/top-up");
+  expect(new URL(owner.url()).search).toBe(`?company=${company.id}`);
   await shot(owner, "paid-notice");
 
   // Close, in the dialog's footer.

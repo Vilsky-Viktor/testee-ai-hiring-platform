@@ -1,19 +1,11 @@
-import { expect, test, type Locator, type Page } from "@playwright/test";
+import { expect, test, type Locator } from "@playwright/test";
 
-import { REQUEST_URL } from "./helpers/env";
 import { pauseClock } from "./helpers/clock";
 import { loaded } from "./helpers/waits";
 
 // The home page's "create an interview" section: one frame playing the four steps, a numbered
-// pill on its top edge naming the one shown; under it, short facts, one being how many questions
-// each topic gets, as generation's public sizes route says. On phones, the steps as cards. The last
-// step is the candidate's inbox, the invitation opened.
-
-async function questionsPerTopic(page: Page) {
-  const response = await page.request.get(`${REQUEST_URL}/api/generate/sizes`);
-
-  return ((await response.json()) as { questions_per_topic: number }).questions_per_topic;
-}
+// pill on its top edge naming the one shown; under it, short facts. On phones, the steps as cards.
+// The last step is the candidate's inbox, the invitation opened.
 
 /** Where `frame` is on the page, rounded: its size and its place from the page's top. */
 function frameBox(frame: Locator) {
@@ -44,7 +36,8 @@ test("with reduced motion the create section rests on the invitation the candida
 
   // The interview before it, unseen now, has its topic rows each showing how many questions were
   // written for the topic: DEMO_INTERVIEW.topicQuestions, not what one candidate gets.
-  const rows = section.getByTestId("demo-interview").locator("ul").last().locator("li");
+  // The list's header row aside, drawn only for sighted visitors.
+  const rows = section.getByTestId("demo-interview").locator("ul").last().locator("li:not([aria-hidden])");
   await expect(rows).not.toHaveCount(0);
 
   for (const row of await rows.all()) {
@@ -59,7 +52,6 @@ test("the create demo's pill names each step in turn and the frame never moves",
   page,
 }) => {
   test.setTimeout(360_000);
-  const count = await questionsPerTopic(page);
   await page.clock.install();
   await page.goto("/");
   await loaded(page);
@@ -67,7 +59,7 @@ test("the create demo's pill names each step in turn and the frame never moves",
   await pauseClock(page);
   const section = page.locator("#how");
   await section.scrollIntoViewIfNeeded();
-  await expect(section.getByTestId("notes")).toContainText(String(count));
+  await expect(section.getByTestId("notes").locator("li")).not.toHaveCount(0);
   const frame = section.getByTestId("demo-panel");
   await expect(frame).toHaveCount(1);
   const pills = section.getByTestId("create-step");
@@ -93,6 +85,94 @@ test("the create demo's pill names each step in turn and the frame never moves",
   }
 
   expect([...boxes]).toHaveLength(1);
+});
+
+// The first two stages, played a tenth of a second at a time: the company is asked on a screen
+// of its own (no dialog over the box), a topic's name and one of its subtopics are typed into in
+// place, and each thing clicked bumps (`data-clicked`) as the click lands. The frame never
+// magnifies: the screen shown is never wider than it. The typed words are the demo's English
+// texts (`landing.demoContent.create` in frontend/messages/en.json: the third topic's name and
+// its second subtopic, each with the words typed at their end).
+test("the create demo asks the company on its own screen, edits a topic in place and bumps what it clicks", async ({
+  page,
+}) => {
+  test.setTimeout(240_000);
+  await page.clock.install();
+  await page.goto("/");
+  await loaded(page);
+  await pauseClock(page);
+  const section = page.locator("#how");
+  const frame = section.getByTestId("demo-panel");
+  const shown = frame.locator("[data-shown=true]");
+  // Every element bumped, by the pointer's name for it, as the attribute lands.
+  await frame.evaluate((element) => {
+    const clicked: string[] = [];
+    (window as unknown as { clicked: string[] }).clicked = clicked;
+    new MutationObserver((changes) => {
+      // Added, not removed: a removal's old value is "".
+      for (const change of changes) {
+        if (change.oldValue === null) {
+          clicked.push((change.target as HTMLElement).dataset.demoTarget ?? "");
+        }
+      }
+    }).observe(element, {
+      attributes: true,
+      attributeFilter: ["data-clicked"],
+      attributeOldValue: true,
+      subtree: true,
+    });
+  });
+  await section.scrollIntoViewIfNeeded();
+  // Before it plays the frame rests on the last screen, so the first comes in from a little
+  // larger, cut off at the frame's edge, as a screen left behind does.
+  await expect
+    .poll(async () => {
+      await page.clock.runFor(100);
+
+      return shown.evaluate((element) => getComputedStyle(element).scale);
+    })
+    .toBe("none");
+  // From there the screen shown is never wider than the frame: nothing magnifies it. (Its height
+  // may grow past the frame for a moment as it rises into place; its width never does.)
+  const widths = new Set<boolean>();
+  // Plays the demo a tenth of a second at a time, so each step renders (a click among them),
+  // until `done`, for at most a minute of the demo's time.
+  const play = async (done: () => Promise<boolean>) => {
+    for (let tenths = 0; tenths < 600 && !(await done()); tenths++) {
+      await page.clock.runFor(100);
+      widths.add(
+        await frame.evaluate(
+          (element) =>
+            element.querySelector("[data-shown=true]")!.getBoundingClientRect().width <=
+            element.getBoundingClientRect().width,
+        ),
+      );
+    }
+
+    expect(await done()).toBe(true);
+  };
+
+  // The company's screen, in the first stage's place, with no dialog anywhere.
+  await play(() => shown.locator('[data-demo-target="continue"]').isVisible());
+  await expect(section.getByTestId("create-step").first()).toHaveAttribute("data-current", "true");
+  await expect(section.locator('[role="dialog"]')).toHaveCount(0);
+
+  // The topic's name and its subtopic as typed in place, in the list the pointer works on (an
+  // unseen copy under it keeps the list's room, with every text in full).
+  const typed = () =>
+    frame.evaluate((element) =>
+      [...element.querySelectorAll("[data-shown=true] [data-demo-target=edit], [data-shown=true] [data-demo-target=subtopic]")]
+        .map((part) => part.textContent)
+        .join("|"),
+    );
+  await play(async () => (await typed()) === "Python for ML systems at scale|Type hints and testing");
+  await expect(section.locator('[role="dialog"]')).toHaveCount(0);
+  expect([...widths]).toEqual([true]);
+
+  const clicked = await page.evaluate(() => (window as unknown as { clicked: string[] }).clicked);
+  expect(clicked).toEqual(
+    expect.arrayContaining(["paste", "send", "name", "continue", "edit", "subtopic"]),
+  );
 });
 
 test("on a phone the steps show as four cards in place of the frame", { tag: "@phone-only" }, async ({

@@ -1,8 +1,8 @@
 // The home page's "invite candidates from everywhere" picture: the interview candidates come
 // into, and the ways they come, each a card around it with a wire to it. Display only.
 
+// The interview's numbers (its title is a text of each language: `landing.demoContent.invite`).
 export const DEMO_INVITE_INTERVIEW = {
-  title: "B2B Account Executive",
   topics: 5,
   questions: 350,
 }
@@ -18,16 +18,16 @@ export const INVITE_SOURCES = [
   { key: "email", side: "start", x: 1, y: 33, delay: 1.4, sway: 6, phase: 2 },
   { key: "file", side: "start", x: 4, y: 58, delay: 0.6, sway: 8, phase: 5 },
   { key: "link", side: "start", x: 13, y: 83, delay: 2.1, sway: 6.5, phase: 1 },
-  { key: "api", side: "end", x: 13, y: 9, delay: 0.9, sway: 7.5, phase: 3 },
+  { key: "apps", side: "end", x: 13, y: 9, delay: 0.9, sway: 7.5, phase: 3 },
   { key: "sdk", side: "end", x: 3, y: 34, delay: 2.4, sway: 6, phase: 4 },
   { key: "agent", side: "end", x: 1, y: 59, delay: 0.3, sway: 8.5, phase: 2.5 },
-  { key: "apps", side: "end", x: 11, y: 84, delay: 1.8, sway: 7, phase: 6 },
+  { key: "api", side: "end", x: 11, y: 84, delay: 1.8, sway: 7, phase: 6 },
 ] as const
 
 export type InviteSource = (typeof INVITE_SOURCES)[number]
 
 // The distance between two wires where they meet the interview's card, in pixels.
-export const INVITE_WIRE_GAP = 18
+export const INVITE_WIRE_GAP = 34
 
 // How far into a card its wire starts, in pixels, so the card's float never shows its end.
 export const INVITE_WIRE_INSET = 14

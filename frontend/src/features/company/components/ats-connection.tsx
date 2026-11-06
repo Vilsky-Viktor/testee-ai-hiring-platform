@@ -8,10 +8,13 @@ import { toast } from "sonner"
 import { CandidateFlow } from "@/features/company/components/ats-candidate-flow"
 import { ConnectAts } from "@/features/company/components/ats-connect"
 import { AtsWebhook } from "@/features/company/components/ats-webhook"
-import { IntegrationRow } from "@/features/company/components/integration-row"
+import { ConnectionMenu } from "@/components/common/dots-menu"
+import {
+  IntegrationRow,
+  NeedsReconnecting,
+} from "@/features/company/components/integration-row"
 import { ConfirmDialog } from "@/components/common/confirm-dialog"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { WEBHOOKS, type AtsProvider } from "@/config/ats"
 import { INTEGRATION_ACTIONS } from "@/config/lists"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
@@ -33,19 +36,24 @@ export function AtsConnectionRow({
   connection: AtsConnection | null
   canEdit: boolean
 }) {
+  const t = useTranslations("ats")
+
   return (
     <IntegrationRow
       href={`/companies/${companyId}/integrations/${provider.id}`}
       logo={
-        // The ATS's own icon (public/ats), as the companies list shows a logo.
+        // The ATS's own icon (public/ats), as the companies list shows a logo; filling its tile, so
+        // a row taller than the icon leaves no gap above or below it.
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={provider.logo} alt="" className="size-full object-contain" />
+        <img src={provider.logo} alt="" className="size-full object-cover" />
       }
       name={provider.name}
       status={<AtsStatus connection={connection} />}
       text={
-        connection && (
+        connection ? (
           <AtsAccount connection={connection} companyName={companyName} />
+        ) : (
+          t("rowText", { ats: provider.name })
         )
       }
       actions={
@@ -78,8 +86,8 @@ export function AtsAccount({
   return <span className={className}>{connection.account || companyName}</span>
 }
 
-/** "connected" beside the ATS's name once it is, like an interview's status tag; nothing
- * otherwise (Connect or Reconnect says the rest). */
+/** "connected" beside the ATS's name once it is, like an interview's status tag; that it needs
+ * reconnecting when its key stopped working; nothing otherwise. */
 export function AtsStatus({
   connection,
 }: {
@@ -87,12 +95,16 @@ export function AtsStatus({
 }) {
   const t = useTranslations("ats")
 
+  if (connection?.status === "broken") {
+    return <NeedsReconnecting />
+  }
+
   if (connection?.status !== "connected") {
     return null
   }
 
   return (
-    <Badge className="h-7 shrink-0 px-3 text-sm font-light">
+    <Badge className="h-8 shrink-0 px-4 text-sm font-light">
       {t("statusConnected")}
     </Badge>
   )
@@ -101,25 +113,34 @@ export function AtsStatus({
 /** An ATS's buttons, on its row and its page: how candidates flow, and for owners and admins
  * Connect (or Reconnect when its key stopped working) and Disconnect. Greenhouse's and
  * Teamtailor's web hooks are set up by hand: their steps are in the info dialog, which opens
- * once it's connected. */
+ * once it's connected. Connect or Reconnect is a button, the rest in its "⋮" menu; `only` keeps
+ * one of the two, for a page placing them apart, and `connectClassName` sizes the button. */
 export function AtsActions({
   companyId,
   provider,
   connection,
   canEdit,
+  only,
+  connectClassName,
+  setup = false,
 }: {
   companyId: string
   provider: AtsProvider
   connection: AtsConnection | null
   canEdit: boolean
+  only?: "connect" | "menu"
+  connectClassName?: string
+  // Just connected from the page's own Connect: its instructions open.
+  setup?: boolean
 }) {
   const t = useTranslations("ats")
   const router = useRouter()
   const [confirming, setConfirming] = useState(false)
   const [busy, setBusy] = useState(false)
-  const [info, setInfo] = useState(false)
+  const [info, setInfo] = useState(setup)
   const broken = connection?.status === "broken"
   const hooked = provider.id in WEBHOOKS
+  const canDisconnect = canEdit && connection !== null
 
   async function disconnect() {
     setBusy(true)
@@ -141,7 +162,12 @@ export function AtsActions({
 
   return (
     <span className={INTEGRATION_ACTIONS} data-testid="integration-actions">
-      <CandidateFlow provider={provider} open={info} onOpenChange={setInfo}>
+      <CandidateFlow
+        provider={provider}
+        open={info}
+        onOpenChange={setInfo}
+        noButton
+      >
         {canEdit && hooked && connection?.status === "connected" && (
           <AtsWebhook
             companyId={companyId}
@@ -149,21 +175,23 @@ export function AtsActions({
           />
         )}
       </CandidateFlow>
-      {canEdit && connection && (
-        <Button
-          variant="outline"
-          className="h-10 px-5 text-base"
-          onClick={() => setConfirming(true)}
-        >
-          {t("disconnect")}
-        </Button>
-      )}
-      {canEdit && (connection === null || broken) && (
+      {canEdit && only !== "menu" && (connection === null || broken) && (
         <ConnectAts
           companyId={companyId}
           provider={provider}
           again={broken}
-          onConnected={() => hooked && setInfo(true)}
+          // The page's own Connect goes away once connected, so the menu's instructions open.
+          onConnected={() =>
+            hooked &&
+            (only === "connect" ? router.replace("?setup=1") : setInfo(true))
+          }
+          triggerClassName={connectClassName}
+        />
+      )}
+      {only !== "connect" && (
+        <ConnectionMenu
+          onInstructions={() => setInfo(true)}
+          onDisconnect={canDisconnect ? () => setConfirming(true) : undefined}
         />
       )}
       <ConfirmDialog

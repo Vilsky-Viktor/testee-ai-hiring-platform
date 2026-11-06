@@ -7,6 +7,7 @@ import { useState } from "react"
 import { DemoInterviewTabs } from "@/features/landing/components/demo-interview-tabs"
 import { DEMO_PRESSED } from "@/features/landing/components/demo-panel"
 import { InterviewHeader } from "@/features/landing/components/interview-header"
+import { DemoReportActions } from "@/features/landing/components/demo-share"
 import { NoteRow } from "@/features/company/components/note-row"
 import { SubmitHint } from "@/components/common/submit-hint"
 import { buttonVariants } from "@/components/ui/button"
@@ -18,6 +19,7 @@ import {
   DEMO_NOTE_COUNT,
   DEMO_REPORT_INTERVIEW,
 } from "@/config/reports-demo"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
 import type { InterviewNote } from "@/types/company"
 
 const HOUR = 3_600_000
@@ -57,10 +59,11 @@ export function DemoNotes({
   posted: string | null
 }) {
   const t = useTranslations("interviews")
+  const content = useDemoContent("reports")
   // Made once, so their times don't change as it plays.
   const [notes] = useState(() =>
     DEMO_NOTES.map((item, index) =>
-      note(`n${index}`, item.author, item.text, item.hoursAgo)
+      note(`n${index}`, item.author, content.notes[index], item.hoursAgo)
     )
   )
   // Newest first, as the real tab lists them; the posted note on top.
@@ -71,57 +74,72 @@ export function DemoNotes({
 
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-4">
-      <InterviewHeader {...DEMO_REPORT_INTERVIEW} status="in_process" />
-      <DemoInterviewTabs
-        current="notes"
-        counts={{
-          topics: DEMO_REPORT_INTERVIEW.topics,
-          candidates: DEMO_CANDIDATE_COUNT,
-          notes: DEMO_NOTE_COUNT + (posted ? 1 : 0),
-        }}
-      />
-      <div data-demo-target="noteBox" className="[&_textarea]:min-h-28">
-        <FloatingTextarea
-          label={t("noteLabel")}
-          placeholder={t("notePlaceholder")}
-          value={typed}
-          readOnly
-          onChange={NOTHING}
-          hint={<SubmitHint />}
-          action={
-            <span
-              data-demo-target="post"
-              className={buttonVariants({
-                className: cn(
-                  "h-10 shrink-0 rounded-lg px-5 text-base transition-all",
-                  !typed && "opacity-50",
-                  pressed && DEMO_PRESSED
-                ),
-              })}
-            >
-              {t("notePost")}
-            </span>
-          }
+      <InterviewHeader
+        {...DEMO_REPORT_INTERVIEW}
+        title={content.title}
+        status="in_process"
+      >
+        <DemoReportActions menu={false} pressed={null} />
+      </InterviewHeader>
+      <div className="flex min-h-0 flex-1 gap-5">
+        <DemoInterviewTabs
+          current="notes"
+          counts={{
+            topics: DEMO_REPORT_INTERVIEW.topics,
+            candidates: DEMO_CANDIDATE_COUNT,
+            notes: DEMO_NOTE_COUNT + (posted ? 1 : 0),
+          }}
         />
-      </div>
-      <ul className="min-h-0 divide-y overflow-hidden rounded-xl border">
-        {shown.map((item) => (
-          <li
-            key={item.id}
-            className={cn(
-              item.id === "new" &&
-                "motion-safe:animate-[promo-drop_0.6s_cubic-bezier(0.2,0.9,0.3,1.2)_both,promo-flash_1.8s_ease-out_0.4s]"
-            )}
+        <div className="flex min-h-0 min-w-0 flex-1 flex-col gap-4">
+          <div
+            data-demo-target="noteBox"
+            className="relative [&_textarea]:min-h-28"
           >
-            <NoteRow
-              note={item}
-              path=""
-              onChanged={NOTHING}
-              onRemoved={NOTHING}
+            <FloatingTextarea
+              label={t("noteLabel")}
+              placeholder={t("notePlaceholder")}
+              value={typed}
+              readOnly
+              onChange={NOTHING}
+              caret={Boolean(typed)}
+              boxClassName={cn(typed && "border-ring-gradient")}
+              hint={<SubmitHint />}
+              action={
+                <span
+                  data-demo-target="post"
+                  className={buttonVariants({
+                    className: cn(
+                      "h-10 shrink-0 rounded-lg px-5 text-base transition-all",
+                      !typed && "opacity-50",
+                      pressed && DEMO_PRESSED
+                    ),
+                  })}
+                >
+                  {t("notePost")}
+                </span>
+              }
             />
-          </li>
-        ))}
-      </ul>
+          </div>
+          <ul className="min-h-0 divide-y overflow-hidden rounded-xl border">
+            {shown.map((item) => (
+              <li
+                key={item.id}
+                className={cn(
+                  item.id === "new" &&
+                    "motion-safe:animate-[promo-drop_0.6s_cubic-bezier(0.2,0.9,0.3,1.2)_both,promo-flash_1.8s_ease-out_0.4s]"
+                )}
+              >
+                <NoteRow
+                  note={item}
+                  path=""
+                  onChanged={NOTHING}
+                  onRemoved={NOTHING}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   )
 }

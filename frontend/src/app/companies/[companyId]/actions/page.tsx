@@ -1,12 +1,15 @@
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
+import { getTranslations } from "next-intl/server"
 
 import { ActionFilters } from "@/features/company/components/action-filters"
 import { ActionList } from "@/features/company/components/action-list"
-import { BiasAuditExport } from "@/features/company/components/bias-audit-export"
+import { ActionsMenu } from "@/features/company/components/actions-menu"
 import { CompanyHeader } from "@/features/company/components/company-header"
+import { FilterPills } from "@/components/common/filter-pills"
 import { SignInPrompt } from "@/components/common/sign-in-prompt"
 import { TOKEN_COOKIE } from "@/config/auth"
+import { ACTION_GROUPS } from "@/config/action-log"
 import { PAGE_SIZE } from "@/config/lists"
 import { actionFilters } from "@/lib/action-log"
 import { serverFetch } from "@/lib/server-api"
@@ -21,6 +24,19 @@ import type {
 
 export const generateMetadata = () => translatedTitle("company", "actions")
 
+/** The address of the log with `group` chosen (all with none), keeping the other filters. */
+function withGroup(href: string, filters: URLSearchParams, group?: string) {
+  const params = new URLSearchParams(filters)
+
+  if (group) {
+    params.set("group", group)
+  } else {
+    params.delete("group")
+  }
+
+  return params.size ? `${href}?${params}` : href
+}
+
 /** The company's action log, for its owner only: every action its members took, newest first,
  * filtered by member, group of actions and days (the filters are in the address). */
 export default async function ActionsPage({
@@ -34,6 +50,7 @@ export default async function ActionsPage({
   const asked = await searchParams
   const filters = actionFilters(asked)
   const path = `/companies/companies/${companyId}/actions${filters.size ? `?${filters}` : ""}`
+  const t = await getTranslations("actionLog")
   const signedIn = (await cookies()).has(TOKEN_COOKIE)
   const company = signedIn
     ? await serverFetch<Company>(`/companies/companies/${companyId}`)
@@ -77,13 +94,20 @@ export default async function ActionsPage({
         {...companyHeaderProps(company)}
         companyId={companyId}
         current="actions"
+        smallAction
         action={
-          <BiasAuditExport
-            companyId={companyId}
-            interviews={interviews ?? []}
-          />
+          <ActionsMenu companyId={companyId} interviews={interviews ?? []} />
         }
       >
+        <FilterPills
+          testId="action-groups"
+          items={[undefined, ...ACTION_GROUPS].map((group) => ({
+            id: group ?? "all",
+            label: group ? t(`groups.${group}`) : t("anyAction"),
+            href: withGroup(`/companies/${companyId}/actions`, filters, group),
+            chosen: group === asked.group,
+          }))}
+        />
         <ActionFilters
           members={(members ?? []).filter((member) => member.joined)}
         />
@@ -91,6 +115,7 @@ export default async function ActionsPage({
           path={path}
           initial={first ?? []}
           narrowed={filters.size > 0}
+          companyId={companyId}
         />
       </CompanyHeader>
     </main>

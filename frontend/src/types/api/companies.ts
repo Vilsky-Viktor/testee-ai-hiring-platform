@@ -13,7 +13,9 @@ export interface paths {
     }
     /**
      * List Companies
-     * @description The user's companies; for an AI agent signed in with an API key, the key's only.
+     * @description The user's companies, the latest activity first, with their credits and what to know about
+     *     them now; `q` narrows them to names containing it. For an AI agent signed in with an API key,
+     *     the key's only.
      */
     get: operations["list_companies_companies_get"]
     put?: never
@@ -21,9 +23,31 @@ export interface paths {
      * Create Company
      * @description A company needs its owner's verified email, as the welcome credits come once per email. A
      *     person's first company, which gets them, needs them to show they're a person, on the site;
-     *     through the assistant or an AI app (no browser) it can't be asked.
+     *     through the assistant or an AI app (no browser) it can't be asked. With an Idempotency-Key,
+     *     the same request again gets the company the first made.
      */
     post: operations["create_company_companies_post"]
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/companies/{company_id}/templates": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * List Company Templates
+     * @description The templates the company can start an interview from, the most used first, each with
+     *     what it adds up to and how many of the company's interviews came from it.
+     */
+    get: operations["list_company_templates_companies__company_id__templates_get"]
+    put?: never
+    post?: never
     delete?: never
     options?: never
     head?: never
@@ -193,6 +217,27 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/companies/{company_id}/actions/export": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Export Actions
+     * @description The company's action log as a CSV, from `from` and before `to` when given; for the owner
+     *     only, counted per company a day.
+     */
+    get: operations["export_actions_companies__company_id__actions_export_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/companies/{company_id}/actions": {
     parameters: {
       query?: never
@@ -203,8 +248,8 @@ export interface paths {
     /**
      * List Actions
      * @description The company's action log, newest first, each action with who took it and what it was
-     *     about; for the owner only. Only one member's (`member_id`, a joined member), one group's, or
-     *     those from `from` and before `to`.
+     *     about; for the owner only. Only one member's (`member_id`, a joined member), one API key's,
+     *     one group's, or those from `from` and before `to`.
      */
     get: operations["list_actions_companies__company_id__actions_get"]
     put?: never
@@ -250,9 +295,51 @@ export interface paths {
     }
     /**
      * Get History
-     * @description Every movement of the company's credits, newest first, a page at a time.
+     * @description Every movement of the company's credits, newest first, a page at a time; `kind` narrows
+     *     them to one kind.
      */
     get: operations["get_history_companies__company_id__billing_history_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/companies/{company_id}/billing/history/export": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Export History
+     * @description The company's credit movements as a CSV, from `from` and before `to` when given; counted
+     *     per company a day.
+     */
+    get: operations["export_history_companies__company_id__billing_history_export_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/companies/{company_id}/billing/spent": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Get Spent
+     * @description The credits the company's candidates took this calendar month.
+     */
+    get: operations["get_spent_companies__company_id__billing_spent_get"]
     put?: never
     post?: never
     delete?: never
@@ -419,11 +506,15 @@ export interface paths {
     }
     /**
      * List Interviews
-     * @description The company's interviews, newest first; `q` narrows them to titles containing it.
+     * @description The company's interviews, newest first, or with `sort=activity` the latest activity first;
+     *     `q` narrows them to titles containing it, `status` to those in it.
      */
     get: operations["list_interviews_interviews_get"]
     put?: never
-    /** Create Interview */
+    /**
+     * Create Interview
+     * @description With an Idempotency-Key, the same request again gets the interview the first made.
+     */
     post: operations["create_interview_interviews_post"]
     delete?: never
     options?: never
@@ -445,6 +536,27 @@ export interface paths {
      * @description A test copied from a template: free and ready at once, so no generation limits apply.
      */
     post: operations["create_from_template_interviews_from_template_post"]
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/interviews/status-counts": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Interview Status Counts
+     * @description How many of the company's interviews (with `q` in their title) are in each status. Declared
+     *     before /{interview_id}, which would otherwise take it as an id.
+     */
+    get: operations["interview_status_counts_interviews_status_counts_get"]
+    put?: never
+    post?: never
     delete?: never
     options?: never
     head?: never
@@ -674,6 +786,26 @@ export interface paths {
      * @description What candidates can be filtered by.
      */
     get: operations["candidate_filters_interviews_candidates_filters_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/interviews/{interview_id}/candidates/summary": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Candidate Summary
+     * @description The interview's candidates at a glance (candidate_results.summary).
+     */
+    get: operations["candidate_summary_interviews__interview_id__candidates_summary_get"]
     put?: never
     post?: never
     delete?: never
@@ -2542,7 +2674,8 @@ export interface components {
      *     API key's name, a web hook's host, an integration's name; None for the company itself, or a
      *     person who's gone), and what it took away (`removed`: an API key's permissions). An API key
      *     that took it is named by `key_name`, its name now (None once it was deleted), instead of a
-     *     member.
+     *     member. `interview_id` is the interview it opens: its candidate's, or the one it was about,
+     *     while it's still there.
      */
     ActionOut: {
       /** User Id */
@@ -2577,6 +2710,8 @@ export interface components {
       removed?: string[] | null
       /** Key Name */
       key_name?: string | null
+      /** Interview Id */
+      interview_id?: string | null
     }
     /**
      * AdminInviteOut
@@ -3001,6 +3136,25 @@ export interface components {
      */
     CandidateSort: "grade" | "date"
     /**
+     * CandidateSummaryOut
+     * @description An interview's candidates at a glance: how many, how many finished and passed, the
+     *     finished ones' average grade (None until there's one), and how many each filter holds.
+     */
+    CandidateSummaryOut: {
+      /** Total */
+      total: number
+      /** Finished */
+      finished: number
+      /** Passed */
+      passed: number
+      /** Average Grade */
+      average_grade: number | null
+      /** Counts */
+      counts: {
+        [key: string]: number
+      }
+    }
+    /**
      * CandidateUpdateOut
      * @description One candidate's step: `kind` is candidate_started, candidate_finished (with the grade and
      *     whether it reached the interview's pass mark) or invite_undelivered; `link` is their page.
@@ -3076,7 +3230,7 @@ export interface components {
     }
     /**
      * CompanyBalanceOut
-     * @description A company the user can top up, with its credits.
+     * @description A company the user can top up, with its logo and credits.
      */
     CompanyBalanceOut: {
       /**
@@ -3086,6 +3240,8 @@ export interface components {
       id: string
       /** Name */
       name: string
+      /** Logo Url */
+      logo_url?: string | null
       /** Available */
       available: number
       /** Low */
@@ -3264,6 +3420,15 @@ export interface components {
        * @default 0
        */
       member_count: number
+      /** Credits */
+      credits?: number | null
+      /** Status */
+      status?: ("low" | "verify" | "finished") | null
+      /**
+       * Finished Count
+       * @default 0
+       */
+      finished_count: number
       /** Logo Url */
       logo_url?: string | null
       brand_colors?: components["schemas"]["SavedBrandColors"] | null
@@ -3319,6 +3484,51 @@ export interface components {
       title: string
     }
     /**
+     * CompanyTemplate
+     * @description A template as a company chooses from them: what an interview from it adds up to, and how
+     *     many of its interviews came from it.
+     */
+    CompanyTemplate: {
+      /**
+       * Id
+       * Format: uuid
+       */
+      id: string
+      /** Slug */
+      slug: string | null
+      /** Title */
+      title: string
+      /** Level */
+      level: string
+      /** Language */
+      language: string
+      /** Topic Count */
+      topic_count: number
+      /**
+       * Created At
+       * Format: date-time
+       */
+      created_at: string
+      /**
+       * Updated At
+       * Format: date-time
+       */
+      updated_at: string
+      /**
+       * Indexable
+       * @default false
+       */
+      indexable: boolean
+      /** Topic Titles */
+      topic_titles: string[]
+      /** Question Count */
+      question_count: number
+      /** Minutes */
+      minutes: number
+      /** Used Count */
+      used_count: number
+    }
+    /**
      * CreditCandidateOut
      * @description The candidate whose invite set credits aside or was charged for, and their interview.
      */
@@ -3363,6 +3573,11 @@ export interface components {
       linkedin_url: string
       /** Results */
       results: components["schemas"]["PracticeResultOut"][]
+      /**
+       * Invited
+       * @default false
+       */
+      invited: boolean
     }
     /** DraftTopic */
     DraftTopic: {
@@ -3425,6 +3640,8 @@ export interface components {
       max_topics: number
       /** Max Subtopics */
       max_subtopics: number
+      /** Min Added Subtopics */
+      min_added_subtopics: number
     }
     /** GenerationProgress */
     GenerationProgress: {
@@ -3436,6 +3653,8 @@ export interface components {
       topics?: number | null
       /** Topics Ready */
       topics_ready?: number | null
+      /** Topic States */
+      topic_states?: components["schemas"]["TopicState"][] | null
     }
     /** GuestTokenOut */
     GuestTokenOut: {
@@ -3472,6 +3691,8 @@ export interface components {
       created_at: string
       /** Total */
       total: string | null
+      /** Paid */
+      paid: string | null
       /** Currency */
       currency: string | null
       /** Automatic */
@@ -3581,6 +3802,29 @@ export interface components {
        */
       voice: boolean
       /**
+       * Finished Count
+       * @default 0
+       */
+      finished_count: number
+      /**
+       * Passed Count
+       * @default 0
+       */
+      passed_count: number
+      /**
+       * Undelivered Count
+       * @default 0
+       */
+      undelivered_count: number
+      /**
+       * Recent Count
+       * @default 0
+       */
+      recent_count: number
+      /** Row Status */
+      row_status?:
+        ("failed" | "generating" | "undelivered" | "finished" | "ready") | null
+      /**
        * Company Id
        * Format: uuid
        */
@@ -3665,6 +3909,29 @@ export interface components {
        * @default false
        */
       voice: boolean
+      /**
+       * Finished Count
+       * @default 0
+       */
+      finished_count: number
+      /**
+       * Passed Count
+       * @default 0
+       */
+      passed_count: number
+      /**
+       * Undelivered Count
+       * @default 0
+       */
+      undelivered_count: number
+      /**
+       * Recent Count
+       * @default 0
+       */
+      recent_count: number
+      /** Row Status */
+      row_status?:
+        ("failed" | "generating" | "undelivered" | "finished" | "ready") | null
     }
     /**
      * InterviewReportOut
@@ -3701,6 +3968,26 @@ export interface components {
       /** Voice */
       voice?: boolean | null
     }
+    /**
+     * InterviewStatus
+     * @description Where a test stands, as its lists show it (helpers/interviews.py decides).
+     * @enum {string}
+     */
+    InterviewStatus: "new" | "in_process" | "hired"
+    /**
+     * InterviewStatusCounts
+     * @description How many of a company's interviews are in each status, and in all.
+     */
+    InterviewStatusCounts: {
+      /** All */
+      all: number
+      /** New */
+      new: number
+      /** In Process */
+      in_process: number
+      /** Hired */
+      hired: number
+    }
     /** InviteStartOut */
     InviteStartOut: {
       /** Sessions */
@@ -3728,6 +4015,8 @@ export interface components {
        * @default false
        */
       matches: boolean
+      /** Progress */
+      progress?: number | null
       /** Status */
       status: string
       /** Question Seconds */
@@ -3910,6 +4199,12 @@ export interface components {
       role: string
       /** Joined */
       joined: boolean
+      /** Name */
+      name?: string | null
+      /** Photo Url */
+      photo_url?: string | null
+      /** Joined At */
+      joined_at?: string | null
       /** Token */
       token?: string | null
       /**
@@ -4223,8 +4518,16 @@ export interface components {
       code: string
       /** Reward */
       reward: number
+      /** Reward Candidates */
+      reward_candidates: number
       /** Rewarded */
       rewarded: number
+      /** Earned */
+      earned: number
+      /** Rewards Per Year */
+      rewards_per_year: number
+      /** Rewards Left */
+      rewards_left: number
       /** Rewards */
       rewards: components["schemas"]["ReferralRewardOut"][]
     }
@@ -4407,6 +4710,8 @@ export interface components {
       language: string
       /** Pledged At */
       pledged_at?: string | null
+      /** Time Taken Minutes */
+      time_taken_minutes?: number | null
       /** Sessions */
       sessions: components["schemas"]["ScorecardSection"][]
       /**
@@ -4532,6 +4837,14 @@ export interface components {
       email: string
       /** Reason */
       reason: string
+    }
+    /**
+     * SpentOut
+     * @description The credits the company's candidates took this calendar month.
+     */
+    SpentOut: {
+      /** Credits */
+      credits: number
     }
     /**
      * StartIn
@@ -4905,6 +5218,13 @@ export interface components {
       /** Question Limit */
       question_limit: number
     }
+    /** TopicState */
+    TopicState: {
+      /** Name */
+      name: string
+      /** Ready */
+      ready: boolean
+    }
     /**
      * UserCompaniesOut
      * @description Every company the user is a member of, for the notifications service.
@@ -5064,6 +5384,7 @@ export interface operations {
   list_companies_companies_get: {
     parameters: {
       query?: {
+        q?: string
         /** @description Number of items to skip */
         offset?: number
         /** @description Number of items to return, up to 100 */
@@ -5100,6 +5421,7 @@ export interface operations {
       query?: never
       header?: {
         "X-Client-Country"?: string | null
+        "idempotency-key"?: string | null
       }
       path?: never
       cookie?: never
@@ -5117,6 +5439,45 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["CompanyOut"]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  list_company_templates_companies__company_id__templates_get: {
+    parameters: {
+      query?: {
+        q?: string
+        level?: string | null
+        language?: string[] | null
+        /** @description Number of items to skip */
+        offset?: number
+        /** @description Number of items to return, up to 100 */
+        limit?: number
+      }
+      header?: never
+      path: {
+        company_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["CompanyTemplate"][]
         }
       }
       /** @description Validation Error */
@@ -5415,10 +5776,43 @@ export interface operations {
       }
     }
   }
+  export_actions_companies__company_id__actions_export_get: {
+    parameters: {
+      query?: {
+        from?: string | null
+        to?: string | null
+      }
+      header?: never
+      path: {
+        company_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
   list_actions_companies__company_id__actions_get: {
     parameters: {
       query?: {
         member_id?: string | null
+        key_id?: string | null
         group?: components["schemas"]["AuditGroup"] | null
         from?: string | null
         to?: string | null
@@ -5491,6 +5885,7 @@ export interface operations {
   get_history_companies__company_id__billing_history_get: {
     parameters: {
       query?: {
+        kind?: ("topups" | "charges" | "refunds") | null
         /** @description Number of items to skip */
         offset?: number
         /** @description Number of items to return, up to 100 */
@@ -5511,6 +5906,69 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["HistoryEntryOut"][]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  export_history_companies__company_id__billing_history_export_get: {
+    parameters: {
+      query?: {
+        from?: string | null
+        to?: string | null
+      }
+      header?: never
+      path: {
+        company_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  get_spent_companies__company_id__billing_spent_get: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        company_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["SpentOut"]
         }
       }
       /** @description Validation Error */
@@ -5792,6 +6250,8 @@ export interface operations {
       query: {
         company_id: string
         q?: string
+        status?: components["schemas"]["InterviewStatus"] | null
+        sort?: "newest" | "activity"
         /** @description Number of items to skip */
         offset?: number
         /** @description Number of items to return, up to 100 */
@@ -5828,7 +6288,9 @@ export interface operations {
       query: {
         company_id: string
       }
-      header?: never
+      header?: {
+        "idempotency-key"?: string | null
+      }
       path?: never
       cookie?: never
     }
@@ -5880,6 +6342,38 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["InterviewOut"]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  interview_status_counts_interviews_status_counts_get: {
+    parameters: {
+      query: {
+        company_id: string
+        q?: string
+      }
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["InterviewStatusCounts"]
         }
       }
       /** @description Validation Error */
@@ -6381,6 +6875,37 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["CandidateFiltersOut"]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  candidate_summary_interviews__interview_id__candidates_summary_get: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        interview_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["CandidateSummaryOut"]
         }
       }
       /** @description Validation Error */

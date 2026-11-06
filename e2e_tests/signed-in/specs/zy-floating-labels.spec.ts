@@ -78,22 +78,20 @@ test("a field's name stands on its edge, empty or filled", async ({
   await expect.poll(() => labelPlace(name, nameLabel)).toBe("up")
   await owner.keyboard.press("Escape")
 
-  // The action log's filters: two selects with a choice made and two empty date fields: all
-  // four labels are up.
+  // The action log's filters: a select with a choice made and two empty date fields: all three
+  // labels are up.
   await visit(owner, `/companies/${company.id}/actions`)
   const filters = owner.getByTestId("action-filters")
 
-  for (const nth of [0, 1]) {
-    const pill = filters.getByRole("button").nth(nth)
-    const pillLabel = owner.locator(`[id="${(await pill.getAttribute("aria-labelledby"))!.split(" ")[0]}"]`)
-    await expect
-      .poll(async () => {
-        const [outer, label] = [await box(pill), await box(pillLabel)]
+  const pill = filters.getByRole("button").first()
+  const pillLabel = owner.locator(`[id="${(await pill.getAttribute("aria-labelledby"))!.split(" ")[0]}"]`)
+  await expect
+    .poll(async () => {
+      const [outer, label] = [await box(pill), await box(pillLabel)]
 
-        return Math.abs((label.top + label.bottom) / 2 - outer.top)
-      })
-      .toBeLessThanOrEqual(4)
-  }
+      return Math.abs((label.top + label.bottom) / 2 - outer.top)
+    })
+    .toBeLessThanOrEqual(4)
 
   for (const day of await filters.locator('input[type="date"]').all()) {
     const dayLabel = await labelOf(day)

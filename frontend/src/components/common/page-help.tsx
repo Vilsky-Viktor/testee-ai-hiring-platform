@@ -1,7 +1,11 @@
 "use client"
 
 import { cn } from "cn"
-import { BadgeQuestionMarkIcon, MailIcon } from "lucide-react"
+import {
+  BadgeQuestionMarkIcon,
+  CircleQuestionMarkIcon,
+  MailIcon,
+} from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 
@@ -31,12 +35,15 @@ import { LoadingSpinner } from "@/components/common/loading-spinner"
 /** A page's info button: a muted icon that opens a short guide to the page, which rounds serves
  * (the assistant reads the same): what it's for, what you can do there, a tip or two and, on some
  * pages, a guide article to read more in. It also registers the page's key for the assistant.
- * `className` places it; BackLink puts it under its arrow. */
+ * `className` places it; BackLink puts it under its arrow. With `text`, the hero's button saying
+ * so (the home page's "how it works", styles/hero-buttons.css). */
 export function PageHelp({
   page,
+  text,
   className,
 }: {
   page: PageHelpKey
+  text?: string
   className?: string
 }) {
   const t = useTranslations("pageHelp")
@@ -63,17 +70,19 @@ export function PageHelp({
 
   return (
     <Dialog onOpenChange={load}>
-      <Tooltip>
+      <Tooltip disabled={Boolean(text)}>
         <TooltipTrigger
           render={
             <DialogTrigger
               render={
                 <button
                   type="button"
-                  aria-label={label}
+                  aria-label={text ? undefined : label}
                   data-testid="page-help"
                   className={cn(
-                    "inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-xl text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
+                    text
+                      ? "hero-pill"
+                      : "inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-xl text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
                     className
                   )}
                 />
@@ -81,7 +90,19 @@ export function PageHelp({
             />
           }
         >
-          <BadgeQuestionMarkIcon aria-hidden className="size-6" />
+          {text ? (
+            <>
+              <span aria-hidden className="hero-pill-disc">
+                <CircleQuestionMarkIcon
+                  strokeWidth={1.5}
+                  className="size-7.5 sm:size-9"
+                />
+              </span>
+              <span className="hero-pill-label">{text}</span>
+            </>
+          ) : (
+            <BadgeQuestionMarkIcon aria-hidden className="size-6" />
+          )}
         </TooltipTrigger>
         <TooltipContent>{label}</TooltipContent>
       </Tooltip>

@@ -7,6 +7,8 @@ import { LocalizedLink } from "@/components/common/localized-link"
 import { HighlightedCode } from "@/components/common/highlighted-code"
 import { markdownCode } from "@/components/common/markdown-code"
 import { TEXT_LINK } from "@/config/links"
+import { LIST_BOX } from "@/config/lists"
+import { headingId } from "@/lib/headings"
 import { endsWithQuestionMark } from "@/lib/question-mark"
 
 /** A link in the site's text: the site's own pages open in place, in the address's language;
@@ -33,6 +35,10 @@ export function SiteLink({
     </a>
   )
 }
+
+// An article's list as the site's rows.
+const ROWS =
+  "text-base leading-relaxed text-muted-foreground [&>li]:p-4 [&>li]:transition-colors [&>li]:hover:bg-surface sm:[&>li]:px-6"
 
 // The site's text styles for each Markdown element, as on the legal pages. Headings keep their
 // capitals (names such as TestGorilla or EU), unlike the site's lowercase headings.
@@ -99,10 +105,52 @@ const ELEMENTS: ComponentProps<typeof ReactMarkdown>["components"] = {
   ),
 }
 
-/** Markdown from the site's own content files, with tables. */
-export function Markdown({ text }: { text: string }) {
+// A long article: each section apart with an address to jump to, lists and steps as the site's
+// rows, and tables with a grey head.
+const ARTICLE_ELEMENTS: typeof ELEMENTS = {
+  ...ELEMENTS,
+  h2: ({ children }) => (
+    <h2
+      id={headingId(String(children))}
+      className={cn(
+        "mt-12 scroll-mt-24 border-t pt-10 font-heading text-2xl font-medium normal-case first:mt-0 first:border-t-0 first:pt-0",
+        endsWithQuestionMark(String(children)) && "no-dot"
+      )}
+    >
+      {children}
+    </h2>
+  ),
+  h3: ({ children }) => (
+    <h3 className="pt-3 text-xl font-medium normal-case">{children}</h3>
+  ),
+  ul: ({ children }) => (
+    <ul className={`${LIST_BOX} overflow-hidden ${ROWS}`}>{children}</ul>
+  ),
+  ol: ({ children }) => (
+    <ol
+      className={`${LIST_BOX} overflow-hidden ${ROWS} [counter-reset:step] [&>li]:relative [&>li]:ps-16 [&>li]:[counter-increment:step] [&>li]:before:absolute [&>li]:before:start-4 [&>li]:before:top-4 [&>li]:before:flex [&>li]:before:size-8 [&>li]:before:items-center [&>li]:before:justify-center [&>li]:before:rounded-lg [&>li]:before:bg-surface [&>li]:before:font-medium [&>li]:before:content-[counter(step)] [&>li]:hover:before:bg-input sm:[&>li]:ps-[4.5rem] sm:[&>li]:before:start-6`}
+    >
+      {children}
+    </ol>
+  ),
+  th: ({ children }) => (
+    <th className="bg-surface px-4 py-3 text-start font-medium">{children}</th>
+  ),
+}
+
+/** Markdown from the site's own content files, with tables; `article`, a long page's look. */
+export function Markdown({
+  text,
+  article = false,
+}: {
+  text: string
+  article?: boolean
+}) {
   return (
-    <ReactMarkdown remarkPlugins={[remarkGfm]} components={ELEMENTS}>
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={article ? ARTICLE_ELEMENTS : ELEMENTS}
+    >
       {text}
     </ReactMarkdown>
   )

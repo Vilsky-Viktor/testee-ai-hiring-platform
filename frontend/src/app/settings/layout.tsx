@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { cookies } from "next/headers"
 import { getTranslations } from "next-intl/server"
 
+import { BackLink } from "@/components/common/back-link"
 import { PageHeader } from "@/components/common/page-header"
 import { SignInPrompt } from "@/components/common/sign-in-prompt"
 import { TOKEN_COOKIE } from "@/config/auth"
@@ -19,11 +20,16 @@ export default async function SettingsLayout({
 }) {
   const signedIn = (await cookies()).has(TOKEN_COOKIE)
   const t = await getTranslations("settings")
+  const common = await getTranslations("common")
 
   return (
     <main className="mx-auto max-w-page space-y-8 px-6 py-12">
       <PageHeader
-        help="settings"
+        back={
+          <BackLink href="/" help="settings">
+            {common("home")}
+          </BackLink>
+        }
         title={
           <h1 className="font-heading text-3xl font-medium tracking-tight">
             {t("title")}

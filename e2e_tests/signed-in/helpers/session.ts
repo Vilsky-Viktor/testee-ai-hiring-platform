@@ -1,9 +1,9 @@
 import type { Page } from "@playwright/test"
 
-/** How many questions count as answered in the session's header ("3 / 10" beside the clock, its
- * `count`). */
+/** How many questions count as answered: one less than the question the session's header says is
+ * open ("Question 3 of 10", its `question-count`). */
 export async function answered(page: Page): Promise<string> {
-  const count = page.locator("p", { has: page.getByRole("timer") }).getByTestId("count")
+  const text = await page.getByTestId("question-count").textContent()
 
-  return ((await count.textContent()) ?? "").split("/")[0].trim()
+  return String(Number(text?.match(/\d+/)?.[0]) - 1)
 }

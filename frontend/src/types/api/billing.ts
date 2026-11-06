@@ -208,9 +208,30 @@ export interface paths {
     }
     /**
      * Company History
-     * @description Every movement of the company's credits, newest first.
+     * @description Every movement of the company's credits, newest first, or only those of one `kind`, from
+     *     `start` and before `end`.
      */
     get: operations["company_history_internal_companies__company_id__history_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/internal/companies/{company_id}/spent": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Company Spent
+     * @description The credits the company's candidates took this calendar month (UTC).
+     */
+    get: operations["company_spent_internal_companies__company_id__spent_get"]
     put?: never
     post?: never
     delete?: never
@@ -1100,8 +1121,9 @@ export interface components {
     /**
      * HistoryEntryOut
      * @description One movement of a wallet's credits. `total` (minor units, tax included) and `currency`
-     *     are what a top-up cost or an adjustment moved, when known; `transaction_id` is the Paddle
-     *     transaction of a top-up or adjustment, and `hold_key` the key of a candidate's credits.
+     *     are what a top-up cost or an adjustment moved, when known, and `paid` the same in whole
+     *     units; `transaction_id` is the Paddle transaction of a top-up or adjustment, and `hold_key`
+     *     the key of a candidate's credits.
      */
     HistoryEntryOut: {
       /**
@@ -1120,6 +1142,8 @@ export interface components {
       created_at: string
       /** Total */
       total: string | null
+      /** Paid */
+      paid: string | null
       /** Currency */
       currency: string | null
       /** Automatic */
@@ -1378,8 +1402,16 @@ export interface components {
       code: string
       /** Reward */
       reward: number
+      /** Reward Candidates */
+      reward_candidates: number
       /** Rewarded */
       rewarded: number
+      /** Earned */
+      earned: number
+      /** Rewards Per Year */
+      rewards_per_year: number
+      /** Rewards Left */
+      rewards_left: number
       /** Rewards */
       rewards: components["schemas"]["ReferralRewardOut"][]
     }
@@ -1408,6 +1440,11 @@ export interface components {
       id: string
       /** Name */
       name: string | null
+    }
+    /** SpentOut */
+    SpentOut: {
+      /** Credits */
+      credits: number
     }
     /** StatsOut */
     StatsOut: {
@@ -1886,6 +1923,9 @@ export interface operations {
   company_history_internal_companies__company_id__history_get: {
     parameters: {
       query?: {
+        kind?: ("topups" | "charges" | "refunds") | null
+        start?: string | null
+        end?: string | null
         /** @description Number of items to skip */
         offset?: number
         /** @description Number of items to return, up to 100 */
@@ -1906,6 +1946,37 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["HistoryEntryOut"][]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  company_spent_internal_companies__company_id__spent_get: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        company_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["SpentOut"]
         }
       }
       /** @description Validation Error */

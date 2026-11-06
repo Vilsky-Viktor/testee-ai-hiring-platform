@@ -1,12 +1,18 @@
 import { getLocale, getTranslations } from "next-intl/server"
 
-import { AccountData } from "@/features/settings/components/account-data"
+import {
+  DeleteAccountButton,
+  DownloadData,
+} from "@/features/settings/components/account-data"
 import { AccountId } from "@/features/settings/components/account-id"
 import { EmailPreferencesSetting } from "@/components/common/email-preferences"
 import { CurrencySetting } from "@/features/settings/components/currency-setting"
 import { LanguageSetting } from "@/features/settings/components/language-setting"
 import { OpenToOffersCard } from "@/features/practice/components/open-to-offers"
-import { SettingsSection } from "@/components/common/settings-section"
+import {
+  SettingRow,
+  SettingsGroup,
+} from "@/features/company/components/setting-rows"
 import type { Locale } from "@/config/i18n"
 import { currencyPath } from "@/lib/catalog"
 import { serverFetch } from "@/lib/server-api"
@@ -25,38 +31,37 @@ export default async function GeneralSettingsPage() {
 
   return (
     <>
-      {/* Side by side on desktop, one under the other otherwise. */}
-      <div className="grid gap-8 lg:grid-cols-2">
-        <SettingsSection title={t("language")} description={t("languageNote")}>
+      <SettingsGroup title={t("preferences")}>
+        <SettingRow label={t("language")} help={t("languageNote")}>
           <LanguageSetting current={locale} />
-        </SettingsSection>
+        </SettingRow>
         {currency && (
-          <SettingsSection
-            title={t("currency")}
-            description={t("currencyNote")}
-          >
+          <SettingRow label={t("currency")} help={t("currencyNote")}>
             <CurrencySetting initial={currency} />
-          </SettingsSection>
+          </SettingRow>
         )}
-      </div>
+      </SettingsGroup>
       {emails && (
-        <SettingsSection
+        <SettingsGroup
           title={t("emails.title")}
           description={t("emails.note")}
+          plain
         >
           <EmailPreferencesSetting initial={emails} />
-        </SettingsSection>
+        </SettingsGroup>
       )}
       {offers && <OpenToOffersCard initial={offers} />}
-      {/* Side by side on desktop, one under the other otherwise. */}
-      <div className="grid gap-8 lg:grid-cols-2">
-        <SettingsSection title={t("account")} description={t("accountNote")}>
+      <SettingsGroup title={t("account")}>
+        <SettingRow label={t("accountId")} help={t("accountNote")}>
           <AccountId />
-        </SettingsSection>
-        <SettingsSection title={t("yourData")} description={t("yourDataNote")}>
-          <AccountData />
-        </SettingsSection>
-      </div>
+        </SettingRow>
+        <SettingRow label={t("yourData")} help={t("yourDataNote")}>
+          <DownloadData />
+        </SettingRow>
+        <SettingRow label={t("deleteTitle")} help={t("deleteNote")}>
+          <DeleteAccountButton />
+        </SettingRow>
+      </SettingsGroup>
     </>
   )
 }

@@ -66,11 +66,13 @@ export function ConnectAts({
   provider,
   again,
   onConnected,
+  triggerClassName = "h-10 px-5 text-base",
 }: {
   companyId: string
   provider: AtsProvider
   again: boolean
   onConnected: () => void
+  triggerClassName?: string
 }) {
   const t = useTranslations("ats")
   const common = useTranslations("common")
@@ -108,7 +110,7 @@ export function ConnectAts({
 
   return (
     <Dialog open={open} onOpenChange={(next) => !saving && setOpen(next)}>
-      <DialogTrigger render={<Button className="h-10 px-5 text-base" />}>
+      <DialogTrigger render={<Button className={triggerClassName} />}>
         {again ? t("reconnect") : t("connect")}
       </DialogTrigger>
       <DialogContent showCloseButton={false} className="sm:max-w-2xl">

@@ -22,7 +22,7 @@ export function AssistantButton() {
   return (
     <Button
       variant="ghost"
-      className="agent-border gap-1.5 px-4 lowercase max-md:w-8 max-md:px-0"
+      className="agent-border h-10 gap-1.5 px-4 lowercase max-md:size-8 max-md:px-0"
       aria-label={t("askAgent")}
       onClick={toggle}
       data-assistant-toggle

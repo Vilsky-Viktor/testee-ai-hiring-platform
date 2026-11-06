@@ -1,8 +1,8 @@
 // The home page's "just ask the agent" picture: a chat with the assistant about one interview,
 // and the three things it does beside it. Display only.
 
-// The interview the chat is about, its results and the candidate invited to it.
-export const ASK_AGENT_INTERVIEW = "Data Analyst"
+// The interview the chat is about (its title is a text of each language:
+// `landing.demoContent.askAgent`), its results and the candidate invited to it.
 export const ASK_AGENT_RESULTS = {
   passed: 18,
   total: 42,

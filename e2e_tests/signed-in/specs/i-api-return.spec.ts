@@ -58,7 +58,7 @@ test("a candidate invited through the API goes back to the company's platform", 
   await candidate.getByRole("dialog").getByRole("button").last().click()
 
   // Finished: the one way on is back to the company's platform, naming the company.
-  const back = candidate.getByRole("main").locator("a")
+  const back = candidate.getByRole("main").locator('a[href^="https://jobs.acme-e2e.com"]')
   await expect(back).toHaveAttribute(
     "href",
     `https://jobs.acme-e2e.com/done?step=2&testee_invite=${candidateId}`

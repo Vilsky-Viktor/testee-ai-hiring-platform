@@ -1,0 +1,60 @@
+/* The "create an interview" promo's own entrances and accents (create-flow.tsx,
+   `data-create-promo`), beside its shared ones in promo.css. With reduced motion none of them
+   plays (and animations.css ends any at once). */
+
+/* The focal element floating gently up and down. */
+@keyframes promo-float {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-0.35rem);
+  }
+}
+
+/* A part of a group sliding up into place, after the ones before it. */
+@keyframes promo-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-create-promo] [data-float] {
+    animation: promo-float 3.2s ease-in-out infinite;
+  }
+
+  /* A group's parts slide up one after another as it shows: once its dialog opens or its screen
+     shows, or as it's added. */
+  [data-create-promo]
+    [data-stagger]:not([data-open="false"] *, [data-shown="false"] *)
+    > * {
+    animation: promo-slide-up 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  }
+
+  [data-create-promo] [data-stagger] > :nth-child(2) {
+    animation-delay: 90ms;
+  }
+
+  [data-create-promo] [data-stagger] > :nth-child(3) {
+    animation-delay: 180ms;
+  }
+
+  [data-create-promo] [data-stagger] > :nth-child(4) {
+    animation-delay: 270ms;
+  }
+
+  [data-create-promo] [data-stagger] > :nth-child(5) {
+    animation-delay: 360ms;
+  }
+
+  [data-create-promo] [data-stagger] > :nth-child(n + 6) {
+    animation-delay: 450ms;
+  }
+}

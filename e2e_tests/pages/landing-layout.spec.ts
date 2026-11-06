@@ -2,19 +2,18 @@ import { expect, test } from "@playwright/test";
 
 import { loaded } from "./helpers/waits";
 
-// The home page's layout: its sections in the order of a company's hiring, each fitting the
-// window on a desktop and on a phone, in every language, and its pictures holding still with
+// The home page's layout: its sections in order, each fitting the window on a desktop and on a phone, in every language, and its pictures holding still with
 // reduced motion.
 
 const SECTIONS = [
   "how",
-  "invite",
   "candidates",
   "reports",
-  "agent",
-  "trust",
   "compare",
   "pricing",
+  "invite",
+  "agent",
+  "trust",
   "help",
 ];
 

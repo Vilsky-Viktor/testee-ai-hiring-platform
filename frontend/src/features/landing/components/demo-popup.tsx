@@ -1,7 +1,7 @@
 import { cn } from "cn"
 import { CircleCheckIcon } from "lucide-react"
 
-import { Caret } from "@/features/landing/components/caret"
+import { Caret } from "@/components/common/caret"
 
 /** A dialog, small, over the whole panel (whose box must be `relative`) while `open`: the
  * panel dimmed and the dialog's card in its middle. */
@@ -57,8 +57,8 @@ export function DemoEmailField({
       ref={ref}
       data-demo-target={target}
       className={cn(
-        "flex h-12 items-center rounded-xl border bg-surface px-5",
-        typing || email ? "border-ring" : "border-input",
+        "relative flex h-12 items-center rounded-xl border border-transparent bg-surface px-5",
+        typing && "border-ring-gradient",
         className
       )}
     >

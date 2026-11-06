@@ -1,6 +1,8 @@
+import { ScaleIcon } from "lucide-react"
 import { getLocale, getTranslations } from "next-intl/server"
 
 import { ContentList } from "@/features/content/components/content-list"
+import { StartCard } from "@/features/content/components/start-card"
 import { contentPages } from "@/lib/content"
 import { pageMetadata } from "@/lib/site"
 import { PageKey } from "@/components/common/page-key"
@@ -26,7 +28,8 @@ export default async function HubPage() {
         </h1>
         <p className="text-base text-muted-foreground">{t("intro")}</p>
       </div>
-      <ContentList pages={pages} base="/compare" />
+      <ContentList pages={pages} base="/compare" icon={ScaleIcon} />
+      <StartCard />
     </main>
   )
 }

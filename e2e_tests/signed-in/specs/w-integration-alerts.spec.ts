@@ -6,13 +6,19 @@ import { visit } from "../helpers/navigation";
 import { shot } from "../helpers/screenshots";
 import { ownerEmail, randomId } from "../helpers/users";
 
-/** A new company made on the companies page, as its owner makes one: the bell knows it at once
+/** A first company made on the companies page, as its owner makes one: the bell knows it at once
  * (it asks for the user's companies again), not a minute later. */
 async function createCompanyHere(owner: Page) {
   await visit(owner, "/companies");
-  await owner.getByTestId("new-company").click();
-  await owner.getByRole("dialog").getByRole("textbox").fill(`E2E ${randomId()}`);
-  await owner.getByRole("dialog").locator('button[type="submit"]').click();
+  const form = owner.getByRole("main").locator("form");
+  const create = form.locator('button[type="submit"]');
+
+  // Typed before the page has hydrated, the name would be lost and the button stay disabled.
+  await expect(async () => {
+    await form.getByRole("textbox").fill(`E2E ${randomId()}`);
+    await expect(create).toBeEnabled({ timeout: 1_000 });
+  }).toPass();
+  await create.click();
   await expect(owner).toHaveURL(/\/companies\/[^/]+\/interviews$/);
 
   return { id: new URL(owner.url()).pathname.split("/")[2] };

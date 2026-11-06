@@ -2,7 +2,7 @@
 
 import { cn } from "cn"
 import { useTranslations } from "next-intl"
-import { useMemo, useRef, useState } from "react"
+import { useMemo, useState } from "react"
 
 import { DemoCandidates } from "@/features/landing/components/demo-candidates"
 import { DemoChat } from "@/features/landing/components/demo-chat"
@@ -16,6 +16,7 @@ import { DemoSharePopup } from "@/features/landing/components/demo-share"
 import { DemoSlackChannel } from "@/features/landing/components/demo-slack-channel"
 import { PromoBurst } from "@/features/landing/components/promo-burst"
 import { useSpotlight } from "@/features/landing/hooks/use-spotlight"
+import { useClickBump } from "@/features/landing/hooks/use-click-bump"
 import {
   litField,
   messagesAt,
@@ -24,19 +25,17 @@ import {
 import {
   DEMO_BEST,
   DEMO_FLAGGED,
-  DEMO_REPORT_CANDIDATES,
   DEMO_RUNNER_UP,
   DEMO_SHARE_EMAIL,
 } from "@/config/reports-demo"
+import { useReportCandidates } from "@/features/landing/hooks/use-demo-content"
 import {
   REPORT_BURSTS,
-  REPORT_PRESSES,
   REPORT_SCREEN_ORDER,
   REPORT_TARGETS,
   type ReportStep,
   reportSteps,
 } from "@/config/reports-demo-steps"
-import { useDemoCamera } from "@/hooks/use-demo-camera"
 import {
   countedAt,
   pointedAt,
@@ -51,13 +50,19 @@ const LIST_PRESSES: Record<string, "download" | "share"> = {
   share: "share",
 }
 
+// The menu item the pointer heads for at each step.
+const LIST_AIMS: Record<string, "download" | "share"> = {
+  aimDownload: "download",
+  aimShare: "share",
+}
+
 /** Reports and sharing, played by a pointer in one panel of a fixed size: the interview's
  * candidates, their PDF downloaded and emailed to the manager; the best candidate's page shared
  * to WhatsApp (its text summary, then a line typed); the flagged one's the same; then a note
  * posted on the interview's notes, and last the Slack channel with testee's messages. The share
  * dialog, the download and the notices lie over the screens. Played as a promo that stays
- * readable, as the create demo is (create-flow.tsx): the frame holds still, magnifying quickly
- * only as a press leads to the next screen (REPORT_PRESSES); a field's background lights up
+ * readable, as the create demo is (create-flow.tsx): the frame holds still, never magnifying;
+ * whatever is clicked jumps as the click lands (promo-click.css); a field's background lights up
  * before it's typed in; screens rise into place; the dialog and the notices fly up, rows fly in,
  * the report's parts pop in, its grade counts up, chat and Slack messages arrive, and a burst
  * marks the big moments (`data-promo`, `data-reports-promo`: promo-sections.css). With reduced motion,
@@ -65,10 +70,11 @@ const LIST_PRESSES: Record<string, "download" | "share"> = {
 export function ReportsDemo() {
   const t = useTranslations("landing.shareReports")
   const report = useTranslations("report")
+  const candidates = useReportCandidates()
   const lines: [string, string] = [t("chat.best"), t("chat.flagged")]
   const note = t("proceeding", {
-    first: DEMO_REPORT_CANDIDATES[DEMO_BEST].name,
-    second: DEMO_REPORT_CANDIDATES[DEMO_RUNNER_UP].name,
+    first: candidates[DEMO_BEST].name,
+    second: candidates[DEMO_RUNNER_UP].name,
   })
   const steps = useMemo(
     () => reportSteps(DEMO_BEST, DEMO_FLAGGED, lines, DEMO_SHARE_EMAIL, note),
@@ -101,15 +107,9 @@ export function ReportsDemo() {
   const turn = after("aimRow1") ? 1 : 0
   const typedTurn = countedAt(steps, at, `typing${turn}`, lines[turn].length)
   const chatTyped = after(`sent${turn}`) ? "" : lines[turn].slice(0, typedTurn)
-  const camera = useRef<HTMLDivElement>(null)
-  const view = useDemoCamera(
-    camera,
-    REPORT_PRESSES.has(step.name) ? target : null,
-    at.index,
-    { zoom: 1.35, follow: 0.85 }
-  )
-
   useSpotlight(targets[litField(step.name, point)], at.index)
+  // What the pointer clicks jumps as the click lands.
+  useClickBump(target, step.click === true, at.index)
 
   // A screen, shown while it's the step's: it rises into place from a little smaller and out of
   // focus, as the one before lifts away, growing and fading; by its place in the demo's order.
@@ -144,20 +144,13 @@ export function ReportsDemo() {
       data-step={step.name}
       data-promo
       data-reports-promo
-      className="mx-auto w-full max-w-5xl"
+      className="w-full"
     >
       <DemoPanel ref={ref}>
-        {/* The camera: the screens, what lies over them and the pointer magnify together, cut at
-            the frame. It fills the frame's padding, so the dialog's shade still reaches its
-            edges. */}
+        {/* The screens, what lies over them and the pointer, cut at the frame. It fills the
+            frame's padding, so the dialog's shade still reaches its edges. */}
         <div className="relative -m-3 flex flex-1 flex-col overflow-hidden rounded-[inherit]">
-          <div
-            ref={camera}
-            style={{
-              transform: `translate(${view.x}px, ${view.y}px) scale(${view.scale})`,
-            }}
-            className="relative flex flex-1 flex-col p-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none!"
-          >
+          <div className="relative flex flex-1 flex-col p-3">
             <DemoPointer
               target={target}
               clicking={step.click === true}
@@ -170,6 +163,8 @@ export function ReportsDemo() {
                 "list",
                 <DemoCandidates
                   shown={step.screen === "list"}
+                  menu={step.menu === true}
+                  aimed={LIST_AIMS[step.name] ?? null}
                   pressed={LIST_PRESSES[step.name] ?? null}
                   opened={
                     step.name.startsWith("openRow")
@@ -185,11 +180,14 @@ export function ReportsDemo() {
                   step.screen === "page" && step.candidate === candidate,
                   `page${candidate}`,
                   <DemoReport
-                    candidate={DEMO_REPORT_CANDIDATES[candidate]}
+                    candidate={candidates[candidate]}
                     active={step.candidate === candidate}
                     best={candidate === DEMO_BEST}
                     scrolled={step.scrolled ?? 0}
+                    menu={step.menu === true}
+                    aimed={step.name.startsWith("aimShare")}
                     pressed={step.name.startsWith("share")}
+                    expanded={step.expanded === true}
                   />
                 )
               )}
@@ -197,7 +195,7 @@ export function ReportsDemo() {
                 step.screen === "chat",
                 "chat",
                 <DemoChat
-                  messages={messagesAt(steps, at.index, lines)}
+                  messages={messagesAt(steps, at.index, lines, candidates)}
                   typed={chatTyped}
                   typing={step.name === `typing${turn}`}
                   pressed={step.name === `send${turn}`}
@@ -209,6 +207,7 @@ export function ReportsDemo() {
                 <DemoSlackChannel
                   shown={step.screen === "slack"}
                   scrolled={after("slackScrolled")}
+                  note={note}
                 />
               )}
               {screen(

@@ -53,14 +53,14 @@ export default async function SupportInterviewPage({
               {interview.generation_failed ? (
                 <Badge
                   variant="destructive"
-                  className="h-7 px-3 text-sm font-light"
+                  className="h-8 px-4 text-sm font-light"
                 >
                   {t("supportGenerationFailed")}
                 </Badge>
               ) : (
                 <Badge
                   variant="outline"
-                  className="h-7 px-3 text-sm font-light"
+                  className="h-8 px-4 text-sm font-light"
                 >
                   {hasMessage(statuses, interview.status)
                     ? statuses(interview.status)
@@ -109,7 +109,7 @@ export default async function SupportInterviewPage({
               <Badge
                 key={topic}
                 variant="outline"
-                className="h-auto min-h-7 px-3 py-1 text-sm font-light whitespace-normal normal-case"
+                className="h-auto min-h-8 px-4 py-1.5 text-sm font-light whitespace-normal normal-case"
               >
                 {topic}
               </Badge>

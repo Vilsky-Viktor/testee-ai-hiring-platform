@@ -1,8 +1,10 @@
 import { getTranslations } from "next-intl/server"
 
+import { RichLine } from "@/features/api-docs/components/rich-text"
 import { refName } from "@/lib/openapi"
 import type { Field } from "@/types/openapi"
-import { LIST_BOX } from "@/config/lists"
+import { TEXT_LINK } from "@/config/links"
+import { LIST_BOX, ROW_HOVER } from "@/config/lists"
 
 /** Fields in one list like the site's others: each name, its type (an object's links to it),
  * whether it's required and what it is. */
@@ -10,9 +12,9 @@ export async function Fields({ fields }: { fields: Field[] }) {
   const t = await getTranslations("apiDocs")
 
   return (
-    <ul className={LIST_BOX}>
+    <ul className={`${LIST_BOX} overflow-hidden max-sm:mx-0 max-sm:border-x`}>
       {fields.map((field) => (
-        <li key={field.name} className="space-y-1 px-5 py-4">
+        <li key={field.name} className={`space-y-1 px-5 py-4 ${ROW_HOVER}`}>
           <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <code className="font-mono text-base font-medium">
               {field.name}
@@ -23,7 +25,9 @@ export async function Fields({ fields }: { fields: Field[] }) {
             )}
           </p>
           {field.description && (
-            <p className="text-sm text-muted-foreground">{field.description}</p>
+            <p className="text-sm text-muted-foreground">
+              <RichLine text={field.description} />
+            </p>
           )}
         </li>
       ))}
@@ -40,7 +44,7 @@ export function TypeName({ type }: { type: string }) {
           <a
             key={index}
             href={`/api-docs?tab=objects#${refName(piece)}`}
-            className="underline underline-offset-4 hover:text-foreground"
+            className={TEXT_LINK}
           >
             {piece}
           </a>

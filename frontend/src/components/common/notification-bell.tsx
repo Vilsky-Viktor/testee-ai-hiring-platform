@@ -21,6 +21,7 @@ import {
   NOTIFICATION_LOOKS,
 } from "@/config/notifications"
 import { ROUND_ICON_BUTTON } from "@/config/buttons"
+import { belowHeader } from "@/lib/header-line"
 import { apiFetch } from "@/lib/api"
 import { bdi, bdiText } from "@/lib/bidi"
 import { formatDay, formatPercent, formatPrice } from "@/lib/format"
@@ -168,7 +169,7 @@ export function NotificationBell() {
           <Button
             variant="ghost"
             size="icon"
-            className={cn("relative", ROUND_ICON_BUTTON)}
+            className={cn("relative size-10 max-md:size-8", ROUND_ICON_BUTTON)}
             aria-label={
               unread > 0 ? t("unread", { count: unread }) : t("title")
             }
@@ -191,12 +192,19 @@ export function NotificationBell() {
       </DropdownMenuTrigger>
       {/* At most about four notifications tall, never most of the screen; the rest scrolls,
           with a thin, quiet scrollbar. */}
+      {/* It hangs from the header's bottom line, centred on its button, its top corners square. */}
       <DropdownMenuContent
-        align="end"
-        className="max-h-[min(26rem,70vh)] w-80 px-0 py-2"
+        align="center"
+        sideOffset={() =>
+          belowHeader(
+            document.querySelector('[data-testid="notifications"]'),
+            4
+          )
+        }
+        className={`max-h-[min(26rem,70vh)] w-96 rounded-t-none px-0 py-2 ring-0`}
       >
         {items.length === 0 && (
-          <p className="px-3 py-6 text-center text-sm text-muted-foreground">
+          <p className="px-3 py-6 text-center text-base text-muted-foreground">
             {t("empty")}
           </p>
         )}
@@ -212,7 +220,7 @@ export function NotificationBell() {
           return (
             <DropdownMenuItem
               key={item.id}
-              className="relative items-start gap-3 rounded-none py-2.5 ps-9 pe-4 whitespace-normal normal-case"
+              className="relative items-start gap-3 rounded-none py-3 ps-10 pe-5 whitespace-normal normal-case"
               render={<Link href={item.link} />}
               // An alert (a problem to act on), its sign in red; others in the brand colour.
               data-alert={look.alert || undefined}
@@ -231,10 +239,10 @@ export function NotificationBell() {
                 }}
               />
               <span className="min-w-0 space-y-1">
-                <span className="block text-sm leading-snug">{message}</span>
+                <span className="block text-base leading-snug">{message}</span>
                 <time
                   dateTime={item.created_at}
-                  className="block text-xs text-muted-foreground"
+                  className="block text-sm text-muted-foreground"
                 >
                   {format.relativeTime(new Date(item.created_at), now)}
                 </time>

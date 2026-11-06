@@ -1,17 +1,14 @@
 "use client"
 
-import { CircleAlertIcon, RefreshCwIcon } from "lucide-react"
-import { cn } from "cn"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
-import { Button } from "@/components/ui/button"
+import { DotsMenu } from "@/components/common/dots-menu"
 import { apiFetch } from "@/lib/api"
 
-/** An owner's or admin's fixes to a question: re-generate it, or say its marked answer is
- * wrong (the verifier checks it and fixes or replaces it). Under each other beside the
- * question; on one line, on phones. */
+/** An owner's or admin's fixes to a question, in its "⋮" menu: re-generate it, or say its marked
+ * answer is wrong (the verifier checks it and fixes or replaces it). */
 export function QuestionFixes({
   questionId,
   canRegenerate,
@@ -42,27 +39,26 @@ export function QuestionFixes({
     }
   }
 
-  return (
-    <span className="flex flex-col items-end gap-3 max-sm:flex-row">
-      {canRegenerate && (
-        <Button variant="outline" disabled={busy} onClick={onRegenerate}>
-          <RefreshCwIcon
-            data-icon="inline-start"
-            className={cn(regenerating && "animate-spin")}
-          />
-          {regenerating ? t("regenerating") : t("regenerate")}
-        </Button>
-      )}
-      {wrongPath && (
-        <Button
-          variant="outline"
-          disabled={busy || markedWrong}
-          onClick={markWrong}
-        >
-          <CircleAlertIcon data-icon="inline-start" />
-          {markedWrong ? t("checking") : t("wrongAnswer")}
-        </Button>
-      )}
-    </span>
-  )
+  const items = [
+    ...(canRegenerate
+      ? [
+          {
+            label: regenerating ? t("regenerating") : t("regenerate"),
+            onClick: onRegenerate,
+            disabled: busy,
+          },
+        ]
+      : []),
+    ...(wrongPath
+      ? [
+          {
+            label: markedWrong ? t("checking") : t("wrongAnswer"),
+            onClick: markWrong,
+            disabled: busy || markedWrong,
+          },
+        ]
+      : []),
+  ]
+
+  return items.length > 0 ? <DotsMenu items={items} /> : null
 }

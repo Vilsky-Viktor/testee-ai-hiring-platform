@@ -2,6 +2,7 @@ import { cn } from "cn"
 import { CheckIcon } from "lucide-react"
 
 import { InlineText } from "@/components/common/inline-text"
+import { PRIMARY_FILL } from "@/config/buttons"
 
 type ChoiceOptionsProps = {
   options: string[]
@@ -39,7 +40,7 @@ export function ChoiceOptions({
               aria-pressed={picked}
               onClick={() => onChoose(index)}
               className={cn(
-                "flex w-full items-start gap-3 rounded-xl border p-4 text-start text-lg leading-7 font-light normal-case transition-colors outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-default",
+                "group/option flex w-full items-start gap-3 rounded-xl border p-4 text-start text-lg leading-7 font-light normal-case transition-colors outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-default",
                 bleed && "max-sm:rounded-none max-sm:border-x-0 max-sm:px-6",
                 picked
                   ? "border-ring bg-surface"
@@ -61,7 +62,15 @@ export function ChoiceOptions({
                   {picked && <CheckIcon className="size-4" strokeWidth={3} />}
                 </span>
               )}
-              <span className="w-4 shrink-0 self-center text-muted-foreground">
+              <span
+                data-testid="option-letter"
+                className={cn(
+                  "flex size-8 shrink-0 items-center justify-center self-center rounded-lg text-base font-medium transition-colors",
+                  picked
+                    ? PRIMARY_FILL
+                    : "bg-surface text-muted-foreground group-hover/option:bg-background group-active/option:bg-background"
+                )}
+              >
                 {String.fromCharCode(65 + index)}
               </span>
               <span className="bidi-auto min-w-0 flex-1">

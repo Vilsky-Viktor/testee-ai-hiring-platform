@@ -4,42 +4,51 @@
    pure white and black, which glare. */
 :root,
 .light-scope {
-  --background: oklch(0.982 0 0);
-  --foreground: oklch(0.21 0 0);
-  --card: oklch(0.982 0 0);
-  --card-foreground: oklch(0.21 0 0);
-  --popover: oklch(0.982 0 0);
-  --popover-foreground: oklch(0.21 0 0);
-  /* Light enough to read as the brand's blue, dark enough for 4.5:1 on the muted gray (4.7:1). */
-  --primary: oklch(0.52 0.19 255);
+  --background: oklch(0.995 0.001 255);
+  --foreground: oklch(0.26 0.02 260);
+  --card: oklch(0.965 0.003 255);
+  --card-foreground: oklch(0.26 0.02 260);
+  --popover: oklch(0.965 0.003 255);
+  --popover-foreground: oklch(0.26 0.02 260);
+  /* The brand's blue, the dark theme's hue, deep enough for white text. */
+  --primary: oklch(0.57 0.185 255);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.945 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.945 0 0); /* grey enough to tell from the page at a glance */
-  /* 4.5:1 on the muted gray, not only on the page (WCAG AA): 5.1:1 and 5.7:1. */
-  --muted-foreground: oklch(0.5 0 0);
+  /* The blue as small text, which needs 4.5:1 on the page. */
+  --primary-text: oklch(0.5 0.17 255);
+  --secondary: oklch(0.935 0.004 255);
+  --secondary-foreground: oklch(0.26 0.02 260);
+  --muted: oklch(0.935 0.004 255);
+  /* 4.5:1 on the page's grey as well as on white. */
+  --muted-foreground: oklch(0.47 0.012 260);
   /* A field's placeholder and resting name: the muted text, which light has no room to dim. */
   --placeholder: var(--muted-foreground);
-  /* Every grey background (fields, hovered rows, grey buttons and cards): the search field's. */
-  --surface: var(--muted);
-  --accent: oklch(0.945 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.897 0 0);
-  --input: oklch(0.897 0 0);
-  --ring: oklch(0.56 0.19 255);
+  /* The dark theme inverted, step by step: the page; cards and menus a step darker; greys and lines
+     from the same see-through layers, black for white. What lightens in dark darkens here. */
+  --surface: color-mix(in oklab, var(--input) 30%, transparent);
+  --surface-tint: black 4.5%; /* the grey as a color-mix() stop, to lay it on any colour */
+  --surface-solid: color-mix(
+    in srgb,
+    var(--surface-tint),
+    var(--background)
+  ); /* the grey, never see-through */
+  --accent: oklch(0.935 0.004 255);
+  --accent-foreground: oklch(0.26 0.02 260);
+  --destructive: oklch(0.54 0.235 27.325);
+  --border: oklch(0 0 0 / 10%);
+  --input: oklch(0 0 0 / 15%);
+  --ring: oklch(0.68 0.16 255);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: oklch(0.965 0 0);
-  --sidebar-foreground: oklch(0.21 0 0);
+  --sidebar: oklch(0.965 0.003 255);
+  --sidebar-foreground: oklch(0.26 0.02 260);
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.945 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-accent: oklch(0.935 0.004 255);
+  --sidebar-accent-foreground: oklch(0.26 0.02 260);
   --sidebar-border: oklch(0.897 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
@@ -65,6 +74,7 @@
     var(--background)
   );
   --surface: color-mix(in oklab, var(--input) 30%, transparent);
+  --surface-tint: white 4.3%;
   --accent: oklch(0.29 0 0);
   --accent-foreground: oklch(0.93 0 0);
   --destructive: oklch(0.704 0.191 22.216);
@@ -84,4 +94,11 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* The blue is too light for small text on the light theme's page. */
+:root:not(.dark) .text-primary,
+:root:not(.dark) .hover\:text-primary:hover,
+.light-scope .text-primary {
+  color: var(--primary-text);
 }

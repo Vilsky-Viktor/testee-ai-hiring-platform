@@ -39,7 +39,8 @@ export function UseTemplate({
   return (
     <Button
       variant="outline"
-      className="h-10 shrink-0 px-5 text-base"
+      // Calm down a list of them: its row's hover brings out the one that row is about.
+      className="h-10 shrink-0 px-5 text-base group-hover/row:border-primary group-hover/row:text-primary"
       disabled={busy}
       onClick={use}
       data-testid="use-template"

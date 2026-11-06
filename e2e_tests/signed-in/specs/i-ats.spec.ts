@@ -1,7 +1,7 @@
 import { expect, test } from "../fixtures"
 import { api, createCompany, createInterview } from "../helpers/api"
 import { addAtsConnection } from "../helpers/db-integrations"
-import { integrationRow, openDialog, visit } from "../helpers/navigation"
+import { integrationRow, openFromMenu, visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { throwawayEmail } from "../helpers/users"
 
@@ -21,20 +21,20 @@ test("an owner sees how to connect Workable and manages its linked jobs", async 
   await owner.locator(`main nav a[href$="/integrations"]:visible`).click()
   // The tab compiles on its first visit (slow on the dev server).
   await expect(owner).toHaveURL(new RegExp(`${tab}$`), { timeout: 60_000 })
-  // Not connected yet: no tag; Instructions and Connect.
+  // Not connected yet: no tag; Connect and the "⋮" menu with Instructions.
   const row = integrationRow(owner, "/workable")
   const actions = row.getByTestId("integration-actions").getByRole("button")
   await expect(row.locator("[data-slot=badge]")).toHaveCount(0)
   await expect(actions).toHaveCount(2)
 
   // The candidate flow, explained before connecting.
-  await openDialog(owner, row.getByTestId("instructions"))
+  await openFromMenu(owner, row)
   await expect(owner.getByRole("dialog").getByRole("listitem")).toHaveCount(6)
   await shot(owner, "candidate-flow")
   await owner.keyboard.press("Escape")
 
   // The token's form: Connect waits for its fields.
-  await actions.last().click()
+  await actions.first().click()
   const connect = owner.getByRole("dialog")
   await expect(connect.getByRole("textbox").first()).toBeVisible()
   await expect(connect.locator("button[type=submit]")).toBeDisabled()
@@ -50,7 +50,7 @@ test("an owner sees how to connect Workable and manages its linked jobs", async 
   await row.getByRole("link").click()
   await expect(owner).toHaveURL(new RegExp(`${tab}/workable$`))
   const job = owner.getByRole("main").getByRole("listitem").filter({ hasText: "E2E Backend developer" })
-  await expect(job.getByTestId("invited-count")).toHaveText("3")
+  await expect(job.getByTestId("invited-count")).toContainText("3")
   await expect(job.getByTestId("not-invited")).toContainText("2")
   // Invite again, under the candidates who weren't invited.
   await expect(job.getByTestId("not-invited").getByRole("button")).toBeVisible()
@@ -100,10 +100,10 @@ test("an owner sees how to connect Workable and manages its linked jobs", async 
   await shot(owner, "new-interview-from-job")
   await owner.keyboard.press("Escape")
 
-  // Unlinking (the row's last button) asks first, then the job is gone. (The link dialog
+  // Unlinking (in the row's "⋮" menu) asks first, then the job is gone. (The link dialog
   // finishes closing first.)
   await expect(owner.getByRole("dialog")).toHaveCount(0)
-  await job.getByRole("button").last().click()
+  await openFromMenu(owner, job)
   await owner.getByRole("dialog").getByRole("button").last().click()
   await expect(job).toHaveCount(0)
 })

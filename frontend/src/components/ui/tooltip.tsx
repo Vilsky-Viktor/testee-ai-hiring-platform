@@ -21,7 +21,7 @@ function TooltipTrigger(props: TooltipPrimitive.Trigger.Props) {
 function TooltipContent({
   className,
   side = "top",
-  sideOffset = 6,
+  sideOffset = 8,
   children,
   ...props
 }: TooltipPrimitive.Popup.Props &
@@ -35,14 +35,16 @@ function TooltipContent({
       >
         <TooltipPrimitive.Popup
           className={cn(
-            // A quick fade in and out. Solid: the site's grey laid over the page's colour, as the
-            // dark theme's grey is see-through.
-            "rounded-xl bg-background bg-[linear-gradient(var(--surface),var(--surface))] px-2 py-1 text-xs text-foreground transition-opacity duration-150 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0",
+            // In the text's colour, inverted, so it stands out on the page, a card or a grey row
+            // in both themes. A quick fade and a slight rise in and out.
+            "max-w-xs rounded-lg bg-(--tooltip) px-3 py-1.5 text-sm text-balance text-foreground transition-[opacity,scale] duration-150 [--tooltip:color-mix(in_oklab,black_24%,var(--background))] data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 motion-reduce:transition-none dark:[--tooltip:color-mix(in_oklab,white_24%,var(--background))]",
             className
           )}
           {...props}
         >
           {children}
+          {/* Points at what it names. */}
+          <TooltipPrimitive.Arrow className="size-2 rotate-45 bg-(--tooltip) data-[side=bottom]:-top-1 data-[side=left]:-right-1 data-[side=right]:-left-1 data-[side=top]:-bottom-1" />
         </TooltipPrimitive.Popup>
       </TooltipPrimitive.Positioner>
     </TooltipPrimitive.Portal>

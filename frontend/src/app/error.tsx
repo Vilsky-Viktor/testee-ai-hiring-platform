@@ -1,34 +1,31 @@
 "use client"
 
 import * as Sentry from "@sentry/nextjs"
+import { TriangleAlertIcon } from "lucide-react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { useTranslations } from "next-intl"
-import { startTransition, useEffect } from "react"
+import { useEffect } from "react"
 
 import { ReportProblem } from "@/components/common/report-problem"
 import { Button } from "@/components/ui/button"
+import { WARNING_TONE } from "@/config/tones"
 
-/** A page that failed: what happened, Retry (the page's data read again, then shown) and the way
- * home, and a way to report it; the error goes to Sentry. global-error.tsx shows it too, when the
+/** A page that failed: what happened, Retry (the whole page loaded again, as a reload) and the way
+ * home, a way to report it, and the failure's reference when the server gave one; the error goes to Sentry. global-error.tsx shows it too, when the
  * root layout itself failed. */
 export default function ErrorPage({
   error,
-  reset,
 }: {
   error: Error & { digest?: string }
+  // Next.js's own retry: not used, as it keeps the browser's state that may have failed.
   reset: () => void
 }) {
   const t = useTranslations("errors")
   const common = useTranslations("common")
-  const router = useRouter()
 
-  // A server page's error comes from its data: read again, or reset() shows the same failure.
+  // A real reload: a failure in the browser's own code or state comes back otherwise.
   function retry() {
-    startTransition(() => {
-      router.refresh()
-      reset()
-    })
+    window.location.reload()
   }
 
   useEffect(() => {
@@ -40,12 +37,19 @@ export default function ErrorPage({
       data-testid="error-page"
       className="mx-auto flex w-full max-w-page flex-1 flex-col items-center justify-center px-6 py-12"
     >
-      <div className="w-full space-y-8 text-center">
-        <div className="space-y-4">
-          <h1 className="font-heading text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+      <div className="flex w-full flex-col items-center gap-8 text-center">
+        <TriangleAlertIcon
+          aria-hidden
+          strokeWidth={1.5}
+          className={`size-24 ${WARNING_TONE}`}
+        />
+        <div className="space-y-3">
+          <h1 className="font-heading text-3xl font-medium tracking-tight text-balance sm:text-4xl">
             {t("title")}
           </h1>
-          <p className="text-base text-muted-foreground">{t("text")}</p>
+          <p className="mx-auto max-w-md text-base text-balance text-muted-foreground">
+            {t("text")}
+          </p>
         </div>
         {/* Report beside the two; on phones on its own line under them. */}
         <div className="flex flex-wrap justify-center gap-3">
@@ -64,6 +68,12 @@ export default function ErrorPage({
             <ReportProblem />
           </div>
         </div>
+        {/* The server's reference for this failure, to quote when writing to testee. */}
+        {error.digest && (
+          <p className="text-xs text-muted-foreground" data-testid="error-ref">
+            {t("reference", { id: error.digest })}
+          </p>
+        )}
       </div>
     </main>
   )

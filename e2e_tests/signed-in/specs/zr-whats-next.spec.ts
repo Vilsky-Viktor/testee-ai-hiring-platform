@@ -43,18 +43,16 @@ test("a just generated interview shows what to do next", async ({ signInAs }) =>
   )
   const interviewPath = `/companies/${company.id}/interviews/${interviewId}`
   const dialog = owner.getByTestId("whats-next")
-  const steps = dialog.getByRole("listitem")
 
   // The generation page brings the user to the interview, marked as just generated.
   await finishGeneration(owner, company.id, interviewId)
   await expect(owner).toHaveURL(new RegExp(`${interviewPath}\\?ready=1$`))
   await expect(dialog).toBeVisible()
   await expect(dialog).toContainText(title)
-  await expect(steps).toHaveCount(3)
   await shot(owner, "dialog")
 
   // The first step closes it and puts the cursor in the first topic's question count.
-  await steps.nth(0).getByRole("button").click()
+  await owner.getByTestId("whats-next-limits").click()
   await expect(dialog).toBeHidden()
   await expect(owner).toHaveURL(new RegExp(`${interviewPath}$`))
   await expect(owner.locator("[data-topic-limit]").first()).toBeFocused()
@@ -63,19 +61,20 @@ test("a just generated interview shows what to do next", async ({ signInAs }) =>
   await expect(owner.getByRole("heading", { level: 1 })).toBeVisible()
   await expect(dialog).toHaveCount(0)
 
-  // The second opens the settings, the third the candidates.
+  // The second opens the settings, the main button trying it as a candidate.
   await visit(owner, `${interviewPath}?ready=1`)
-  await steps.nth(1).getByRole("link").click()
+  await owner.getByTestId("whats-next-time").click()
   await expect(owner).toHaveURL(new RegExp(`${interviewPath}\\?tab=settings$`))
   await expect(dialog).toBeHidden()
   await visit(owner, `${interviewPath}?ready=1`)
-  await steps.nth(2).getByRole("link").click()
-  await expect(owner).toHaveURL(new RegExp(`${interviewPath}\\?tab=candidates$`))
+  await expect(owner.getByTestId("whats-next-try")).toBeFocused()
+  await owner.getByTestId("whats-next-try").click()
+  await expect(owner).toHaveURL(new RegExp(`${interviewPath}/try$`))
   await expect(dialog).toBeHidden()
 
   // Its own button closes it too, taking the mark off.
   await visit(owner, `${interviewPath}?ready=1`)
-  await dialog.locator('[data-slot="dialog-footer"]').getByRole("button").click()
+  await dialog.locator('[data-slot="dialog-footer"]').getByRole("button").first().click()
   await expect(dialog).toBeHidden()
   await expect(owner).toHaveURL(new RegExp(`${interviewPath}$`))
 })

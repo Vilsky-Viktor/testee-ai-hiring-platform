@@ -2,15 +2,15 @@ import Link from "next/link"
 import { useTranslations } from "next-intl"
 
 import { SubtopicList } from "@/components/common/subtopic-list"
+import { TopicLimit, TopicsHeader } from "@/components/common/topic-limit"
 import { TopicQuestionLimit } from "@/components/common/topic-question-limit"
-import { Button } from "@/components/ui/button"
 import { LIST_BOX, ROW_HOVER } from "@/config/lists"
 import { languageOf } from "@/lib/locale"
 import type { InterviewDetail } from "@/types/company"
 
-/** An interview's topics, each with its questions and how many each candidate gets, in the
- * interview's `language`. Viewers read the questions; only owners and admins (`canEdit`) change
- * them. */
+/** An interview's topics, each opening its questions, with how many each candidate gets and how
+ * many were disabled, in the interview's `language`. Viewers read the questions; only owners and
+ * admins (`canEdit`) change them. */
 export function InterviewTopics({
   companyId,
   interviewId,
@@ -32,42 +32,50 @@ export function InterviewTopics({
 
   return (
     <ul className={`${LIST_BOX} overflow-hidden`}>
+      {canEdit && <TopicsHeader className="px-6" />}
       {topics.map((topic) => (
-        // On phones the questions' button and their number take the line under the topic.
+        // The title's link fills the row; the number stays above it, and on phones takes the
+        // line under the topic.
         <li
           key={topic.id}
-          className={`flex items-center justify-between gap-6 p-4 ${ROW_HOVER} max-sm:flex-col max-sm:items-stretch max-sm:gap-6 max-sm:px-6 max-sm:py-8 sm:p-6`}
+          className={`group/topic relative flex items-center justify-between gap-6 p-6 ${ROW_HOVER} max-sm:flex-col max-sm:items-stretch`}
         >
-          <span className="max-w-3xl min-w-0 space-y-3">
-            <span {...languageOf(language)} className="block space-y-3">
-              <span className="block text-lg font-medium">{topic.title}</span>
-              <SubtopicList subtopics={topic.subtopics} />
-            </span>
-          </span>
-          <span className="flex shrink-0 flex-col items-center gap-3 max-sm:flex-row max-sm:flex-wrap">
-            {/* The topic's questions have a page of their own. */}
-            <Button
-              variant="outline"
-              className="h-9 shrink-0 px-4"
+          <span
+            {...languageOf(language)}
+            className="max-w-3xl min-w-0 space-y-3"
+          >
+            <Link
+              href={`/companies/${companyId}/interviews/${interviewId}/topics/${topic.id}`}
               data-testid="manage-questions"
-              nativeButton={false}
-              render={
-                <Link
-                  href={`/companies/${companyId}/interviews/${interviewId}/topics/${topic.id}`}
-                />
-              }
+              className="block text-lg font-medium after:absolute after:inset-0"
             >
-              {t("manage")}
-            </Button>
-            <TopicQuestionLimit
-              count={topic.question_count}
-              limit={topic.question_limit}
-              limitPath={
-                canEdit
-                  ? `/companies/interviews/${interviewId}/topics/${topic.id}/limit`
-                  : undefined
-              }
-            />
+              {topic.title}
+            </Link>
+            <SubtopicList subtopics={topic.subtopics} />
+            {topic.excluded_count > 0 && (
+              <span
+                data-testid="excluded-count"
+                className="block text-sm text-muted-foreground"
+              >
+                {t("disabledCount", { count: topic.excluded_count })}
+              </span>
+            )}
+          </span>
+          <span className="relative z-10 shrink-0">
+            {canEdit ? (
+              // Remounts with the saved value after each change.
+              <TopicLimit
+                key={topic.question_limit}
+                path={`/companies/interviews/${interviewId}/topics/${topic.id}/limit`}
+                count={topic.question_count}
+                limit={topic.question_limit}
+              />
+            ) : (
+              <TopicQuestionLimit
+                count={topic.question_count}
+                limit={topic.question_limit}
+              />
+            )}
           </span>
         </li>
       ))}

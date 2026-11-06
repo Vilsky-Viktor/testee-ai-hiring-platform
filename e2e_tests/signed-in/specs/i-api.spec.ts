@@ -22,9 +22,8 @@ test("an owner makes an API key and adds a web hook", async ({ signInAs }) => {
   await visit(owner, `${tab}/api`)
   await shot(owner, "empty")
 
-  // The open tab's action beside the docs: a new key, or a new web hook.
-  const action = owner.getByTestId("integration-actions").locator("button")
-  await openDialog(owner, action)
+  // With no key yet, the way to make the first ends its card.
+  await openDialog(owner, owner.getByTestId("no-keys").getByRole("button").last())
   await owner.getByRole("dialog").getByRole("textbox").fill("Careers site")
   // When it expires: nothing picked yet, so the key can't be made; the menu doesn't move the dialog.
   const create = owner.getByRole("dialog").locator('button[type="submit"]')
@@ -47,9 +46,14 @@ test("an owner makes an API key and adds a web hook", async ({ signInAs }) => {
   await expiries.nth(3).click()
   await expect(warning).toHaveCount(0)
   await expect(create).toBeEnabled()
-  // What the key may do: "Select all", then every permission the API lists. A new key starts
-  // with the API's defaults (the reads); ticking Invite ticks Candidates read and keeps it ticked.
+  // What the key may do: read only at first, or Custom: "Select all", then every permission the
+  // API lists. A new key starts with the API's defaults (the reads); ticking Invite ticks
+  // Candidates read and keeps it ticked. Credits read unticked, for the refusal below.
   const form = owner.getByRole("dialog")
+  const presets = form.getByTestId("key-presets").getByRole("button")
+  await expect(presets.first()).toHaveAttribute("aria-pressed", "true")
+  await expect(form.getByRole("checkbox")).toHaveCount(0)
+  await presets.last().click()
   const { all: ticks, count, defaults, tick } = await permissionTicks(owner, company.id, form)
   const checked = owner.getByRole("dialog").locator('[role=checkbox][aria-checked="true"]')
   await expect(ticks).toHaveCount(count)
@@ -63,6 +67,9 @@ test("an owner makes an API key and adds a web hook", async ({ signInAs }) => {
   await expect(tick("candidates:invite")).toBeChecked()
   await expect(tick("candidates:read")).toBeChecked()
   await expect(tick("candidates:read")).toBeDisabled()
+  await tick("credits:read").click()
+  await expect(tick("credits:read")).not.toBeChecked()
+  const given = await checked.count()
   await shot(owner, "new-key")
   await create.click()
   // The key, shown this once in a field to copy.
@@ -95,23 +102,24 @@ test("an owner makes an API key and adds a web hook", async ({ signInAs }) => {
     code: "missing_permission",
   })
 
-  // Its row shows its permissions as tags: interviews read, candidates read and invite.
-  const tags = owner.getByTestId("key-permissions").first().locator("[data-slot=badge]")
-  await expect(tags).toHaveCount(3)
+  // Its row says what it may do.
+  await expect(owner.getByTestId("key-access")).toBeVisible()
   await shot(owner, "keys-tab")
 
-  // The row opens the key's own page, where its permissions and allowed IPs change
-  // (i-api-key.spec.ts); deleting stays on the row.
+  // The row opens the key's own page, with the permissions it was given; they and its allowed
+  // IPs change there (i-api-key.spec.ts).
   await owner.getByRole("main").getByRole("link", { name: "Careers site" }).click()
   await expect(owner).toHaveURL(/\/integrations\/api\/keys\/[0-9a-f-]+$/)
+  await expect(owner.getByRole("main").locator('[role=checkbox][aria-checked="true"]')).toHaveCount(given)
   await visit(owner, `${tab}/api`)
 
-  // The web hooks have a tab of their own, with its own button: a dialog with no expiry.
+  // The web hooks have a tab of their own, the first one's button ending its card: a dialog with
+  // no expiry.
   await owner.locator('main nav a[href$="?tab=webhooks"]:visible').click()
   await expect(owner).toHaveURL(/\?tab=webhooks$/)
 
   // Only HTTPS addresses on the internet: anything else is refused, in a red toast.
-  await openDialog(owner, action)
+  await openDialog(owner, owner.getByTestId("no-webhooks").getByRole("button").last())
   await expect(expiry).toHaveCount(0)
   await owner.getByRole("dialog").getByRole("textbox").fill("http://example.com/testee")
   await create.click()
@@ -130,9 +138,13 @@ test("an owner makes an API key and adds a web hook", async ({ signInAs }) => {
   await visit(owner, tab)
   await shot(owner, "list-filled")
 
-  // A web hook that stopped taking events, after days of retries, is paused, and says so.
+  // A web hook that stopped taking events, after days of retries, is paused, and its page says
+  // so in a warning.
   await markWebhookFailing("https://example.com/testee", company.id)
   await visit(owner, `${tab}/api?tab=webhooks`)
-  await expect(owner.getByText(/^Paused: it didn't answer for 3 days/).filter({ visible: true })).toBeVisible()
+  const hook = owner.getByTestId("webhook")
+  await expect(hook).toHaveAttribute("data-state", "paused")
+  await hook.getByRole("link").click()
+  await expect(owner.getByRole("main").getByRole("status")).toBeVisible()
   await shot(owner, "webhook-failing")
 })

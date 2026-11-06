@@ -14,6 +14,7 @@ export function LanguagePicker({
   label,
   disabled = false,
   compact = false,
+  saved,
 }: {
   languages: readonly Locale[]
   value: Locale
@@ -21,6 +22,7 @@ export function LanguagePicker({
   label: string
   disabled?: boolean
   compact?: boolean
+  saved?: string | null
 }) {
   const t = useTranslations("settings")
 
@@ -36,6 +38,7 @@ export function LanguagePicker({
       empty={t("noLanguage")}
       disabled={disabled}
       compact={compact}
+      saved={saved}
     />
   )
 }

@@ -14,14 +14,29 @@
   }
 }
 
-/* The voice screen's line while Mira thinks: a light a third of its length glides from its start
-   to its end (and back, run alternately). */
+/* The voice screen's line while Mira thinks, and a progress bar with nothing to count: a light a
+   third of its length glides from its start to its end (and back, run alternately); in the
+   languages written the other way, `--sweep-to` is -200%. */
+@keyframes question-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.25rem);
+  }
+}
+
+@keyframes finish-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
 @keyframes line-sweep {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(200%);
+    transform: translateX(var(--sweep-to, 200%));
   }
 }
 
@@ -98,5 +113,22 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Anything clickable as it's pressed, all over the site (components/common/click-jump.tsx) and in
+   the landing's promos: up, a small squash as it lands, and settled. */
+@keyframes jump {
+  35% {
+    transform: translateY(-0.4rem) scale(1.06);
+  }
+  70% {
+    transform: translateY(0.1rem) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-jumping] {
+    animation: jump 0.45s ease-out;
   }
 }

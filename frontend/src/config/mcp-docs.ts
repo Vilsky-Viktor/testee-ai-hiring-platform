@@ -17,13 +17,13 @@ export const MCP_TITLES = {
 }
 
 export const MCP_INTRO =
-  "Connect testee to an AI app or to your own agent through its MCP server. The server offers the tools of testee's own assistant: the agent asks about your companies, interviews and candidates, and makes changes, as you, with exactly your roles, in every company you're in. No model runs on testee's side."
+  "Connect testee to an AI app or your own agent through its MCP server. The agent can ask about your companies, interviews and candidates and make changes, as you, with exactly your roles in every company you're in. It uses the same tools as testee's assistant, and no model runs on testee's side."
 
-export const MCP_SERVER = `The server speaks the Model Context Protocol over Streamable HTTP, statelessly: no sessions to keep, and any request can go to any instance.
+export const MCP_SERVER = `The server speaks the Model Context Protocol over Streamable HTTP. It's stateless, so there are no sessions to keep.
 
-**Signing in as you.** An AI app, or an agent you run on your own computer, signs in with OAuth 2.1 (PKCE and dynamic client registration): it opens testee's consent page once, you choose Allow, and no key is pasted anywhere. The access token lasts an hour and the refresh token 90 days. Each refresh replaces both, so keep the new ones, or the agent has to ask you again. One token never serves two agents at once.
+**Sign in as yourself.** An AI app, or an agent on your own computer, signs in with OAuth 2.1 (PKCE and dynamic client registration). It opens testee's consent page once, you choose Allow, and no key is pasted anywhere. The access token lasts an hour and the refresh token 90 days. Each refresh replaces both, so keep the new ones or the agent has to ask you again. Don't share a token between agents.
 
-**Signing in with an API key.** An agent on a server, with no browser, sends a company API key instead: \`Authorization: Bearer te_...\`. The key needs the **mcp** permission, ticked when it's made on the company's API page. It acts as the member who made it, in its company only, and gets only the tools its other permissions allow (see Tools). Its calls count against the company's API limit.`
+**Sign in with an API key.** An agent on a server, with no browser, sends a company API key instead: \`Authorization: Bearer te_...\`. The key needs the **mcp** permission. It acts as itself, not as the member who made it, in its company only, and gets only the tools its other permissions allow (see Tools). Its calls count against the company's API limit.`
 
 export const MCP_OTHER_APPS = [
   {
@@ -107,21 +107,17 @@ export const MCP_EXAMPLES = [
 ]
 
 export const MCP_TOOLS_TEXT =
-  "What an agent can call, and whether each tool only reads or changes something (`readOnlyHint`, `destructiveHint`), so you know what to allow. Deleting an account or a company is done in testee only. An API key gets a tool only with the permission it names."
+  "What an agent can call, and whether each tool only reads or changes something (`readOnlyHint`, `destructiveHint`), so you know what to allow. An API key gets a tool only with the permission it names. Deleting an account or a company can only be done in testee."
 
 // {minute}, {day} and {writes}: the limits, from the server.
-export const MCP_RULES = `**Limits.** A user's apps and agents together make up to {minute} calls a minute and {day} a day, and {writes} changes an hour, counted with those made in testee's assistant.
-
-**Errors** come back as results with \`isError\` and the reason in the user's language, for the agent to explain.
-
-**A company can turn AI apps off** on its AI apps page: its data then answers \`403\` with the reason, to API keys too.
-
-**Secrets** such as passwords and API keys in a tool's arguments are refused before anything is sent.
-
-**Links.** A result carries \`links\` to the testee pages that show it.`
+export const MCP_RULES = `- **Limits:** a user's apps and agents together make up to {minute} calls a minute and {day} a day, and {writes} changes an hour, counted with those made in testee's assistant.
+- **Errors:** they come back as results with \`isError\` and the reason in the user's language, for the agent to explain.
+- **Turning it off:** a company can turn AI apps off on its AI apps page. Its data then answers \`403\` with the reason, to API keys too.
+- **Secrets:** passwords and API keys in a tool's arguments are refused before anything is sent.
+- **Links:** a result carries \`links\` to the testee pages that show it.`
 
 export const MCP_CONNECTIONS =
-  "Every company's Integrations → AI apps page lists the apps you connected; Disconnect stops one at once. To stop an agent signed in with an API key, delete the key on the company's API page."
+  "Each company's **Integrations → AI apps** page lists the apps you connected, and disconnecting one stops it at once. To stop an agent that uses an API key, delete the key on the company's API page."
 
 // The tool list's labels.
 export const MCP_TOOL_LABELS = {

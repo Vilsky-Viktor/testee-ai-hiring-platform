@@ -7,10 +7,14 @@ export type ReportStep = DemoStep & {
   screen: "list" | "page" | "chat" | "notes" | "slack"
   candidate?: number
   popup?: boolean
+  // The report's "⋮" menu open.
+  menu?: boolean
   notice?: boolean
   download?: boolean
   // How far a candidate's page is scrolled down, in pixels.
   scrolled?: number
+  // Their first topic clicked open.
+  expanded?: boolean
 }
 
 // How far each candidate's page scrolls to show its lower parts, in pixels.
@@ -24,23 +28,33 @@ const TYPE_MS = 60
 function shareTurn(at: number, candidate: number, line: string): ReportStep[] {
   const page = { screen: "page" as const, candidate }
   const chat = { screen: "chat" as const, candidate }
+  const read = { ...page, expanded: at === 0 }
 
   return [
     { name: `aimRow${at}`, ms: 900, point: `row${candidate}`, screen: "list" },
     { name: `openRow${at}`, ms: 450, click: true, screen: "list" },
     { name: `page${at}`, ms: 1400, point: "none", ...page },
-    { name: `scrollDown${at}`, ms: 2600, scrolled: SCROLL, ...page },
-    { name: `scrollUp${at}`, ms: 2000, ...page },
-    { name: `aimShare${at}`, ms: 800, point: "share", ...page },
-    { name: `share${at}`, ms: 450, click: true, popup: true, ...page },
+    // The best candidate's first topic clicked open, to show their answers.
+    ...(at === 0
+      ? [
+          { name: "aimTopic", ms: 800, point: "topic0", ...page },
+          { name: "openTopic", ms: 700, click: true, ...read },
+        ]
+      : []),
+    { name: `scrollDown${at}`, ms: 2600, scrolled: SCROLL, ...read },
+    { name: `scrollUp${at}`, ms: 2000, ...read },
+    { name: `aimDots${at}`, ms: 800, point: "dots", ...read },
+    { name: `openMenu${at}`, ms: 350, click: true, ...read },
+    { name: `aimShare${at}`, ms: 500, point: "share", menu: true, ...read },
+    { name: `share${at}`, ms: 500, click: true, menu: true, ...read },
     {
       name: `aimWhatsApp${at}`,
       ms: 800,
       point: "whatsApp",
       popup: true,
-      ...page,
+      ...read,
     },
-    { name: `whatsApp${at}`, ms: 450, click: true, popup: true, ...page },
+    { name: `whatsApp${at}`, ms: 450, click: true, popup: true, ...read },
     { name: `summary${at}`, ms: 1500, point: "none", ...chat },
     { name: `typing${at}`, ms: TYPE_MS, repeat: line.length, ...chat },
     { name: `aimSend${at}`, ms: 700, point: "chatSend", ...chat },
@@ -63,11 +77,21 @@ export function reportSteps(
 ): ReportStep[] {
   return [
     { name: "list", ms: 1000, point: "none", screen: "list" },
-    { name: "aimDownload", ms: 800, point: "download", screen: "list" },
-    { name: "download", ms: 450, click: true, screen: "list" },
+    { name: "aimDots", ms: 800, point: "dots", screen: "list" },
+    { name: "openMenu", ms: 350, click: true, screen: "list" },
+    {
+      name: "aimDownload",
+      ms: 500,
+      point: "download",
+      screen: "list",
+      menu: true,
+    },
+    { name: "download", ms: 500, click: true, screen: "list", menu: true },
     { name: "downloaded", ms: 900, screen: "list", download: true },
-    { name: "aimShare", ms: 800, point: "share", screen: "list" },
-    { name: "share", ms: 450, click: true, screen: "list", popup: true },
+    { name: "aimDots2", ms: 800, point: "dots", screen: "list" },
+    { name: "openMenu2", ms: 350, click: true, screen: "list" },
+    { name: "aimShare", ms: 500, point: "share", screen: "list", menu: true },
+    { name: "share", ms: 500, click: true, screen: "list", menu: true },
     { name: "aimEmail", ms: 700, point: "email", screen: "list", popup: true },
     { name: "focusEmail", ms: 300, click: true, screen: "list", popup: true },
     {
@@ -99,6 +123,8 @@ export function reportSteps(
 
 // What the pointer moves to, found in the demo by these selectors.
 export const REPORT_TARGETS = [
+  "topic0",
+  "dots",
   "download",
   "share",
   "email",
@@ -128,17 +154,7 @@ export const REPORT_SCREEN_ORDER: Record<ReportStep["screen"], number> = {
 
 // The big moments, each marked by a burst: the PDF emailed, the best candidate's page, and each
 // report shared to the chat.
-export const REPORT_BURSTS = new Set(["sent", "page0", "summary0", "summary1"])
-
-// The presses that lead to the next screen: the frame magnifies on each. A row opening a
-// candidate's page, WhatsApp opening the chat, the notes tab.
-export const REPORT_PRESSES = new Set([
-  "openRow0",
-  "openRow1",
-  "whatsApp0",
-  "whatsApp1",
-  "openNotes",
-])
+export const REPORT_BURSTS = new Set(["sent"])
 
 // The fields typed in that the pointer heads for: each lights up from then.
 export const REPORT_FIELDS = new Set(["email", "noteBox"])

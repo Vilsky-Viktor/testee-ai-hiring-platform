@@ -12,7 +12,7 @@ import { useSignIn } from "@/components/common/sign-in-dialog"
 import { Button } from "@/components/ui/button"
 import { WarningCard } from "@/components/common/warning-card"
 import { apiErrorMessage, apiFetch, serviceRefusal } from "@/lib/api"
-import { refreshVerification, signInAsGuest } from "@/lib/auth"
+import { refreshVerification, signInAsGuest, signOut } from "@/lib/auth"
 import { useBrandColors } from "@/hooks/use-brand-colors"
 import { useLinkData } from "@/hooks/use-link-data"
 import type { InviteView as Invite, SessionSummary } from "@/types/company"
@@ -130,6 +130,7 @@ export function InviteView({
       totalMinutes={invite.total_minutes}
       voice={invite.voice}
       finished={invite.status === "finished"}
+      progress={invite.progress}
       fillScreen={!onStarted}
       action={
         <InviteAction
@@ -140,6 +141,10 @@ export function InviteView({
           voice={invite.voice}
           starting={starting}
           onSignIn={() => signIn()}
+          onSwitch={async () => {
+            await signOut()
+            signIn()
+          }}
           onStart={start}
         />
       }
@@ -157,6 +162,7 @@ function InviteAction({
   voice,
   starting,
   onSignIn,
+  onSwitch,
   onStart,
 }: {
   guest: boolean | undefined
@@ -167,15 +173,19 @@ function InviteAction({
   voice: boolean
   starting: boolean
   onSignIn: () => void
+  onSwitch: () => void
   onStart: (pledged: boolean) => void
 }) {
   const t = useTranslations("invite")
 
   if (!guest && !signedIn) {
     return (
-      <Button className={START_BUTTON} onClick={onSignIn}>
-        {t("signInToStart")}
-      </Button>
+      <div className="space-y-2">
+        <Button className={START_BUTTON} onClick={onSignIn}>
+          {t("signInToStart")}
+        </Button>
+        <p className="text-sm text-muted-foreground">{t("signInAs")}</p>
+      </div>
     )
   }
 
@@ -191,5 +201,21 @@ function InviteAction({
     )
   }
 
-  return <WarningCard className="text-start">{t("mismatch")}</WarningCard>
+  return (
+    <WarningCard
+      className="text-start max-sm:flex-wrap"
+      action={
+        <Button
+          variant="outline"
+          className="h-10 px-5 text-base"
+          data-testid="invite-switch-account"
+          onClick={onSwitch}
+        >
+          {t("switchAccount")}
+        </Button>
+      }
+    >
+      {t("mismatch")}
+    </WarningCard>
+  )
 }

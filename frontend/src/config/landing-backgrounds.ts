@@ -18,17 +18,10 @@ export const DOT_GRID = `${LAYER} before:inset-y-0 before:bg-[radial-gradient(va
 // strength in both themes.
 export const GLOW = `${LAYER} before:inset-y-0 before:bg-[radial-gradient(ellipse_closest-side,color-mix(in_oklch,var(--primary)_16%,transparent),transparent)] dark:before:bg-[radial-gradient(ellipse_closest-side,color-mix(in_oklch,var(--primary)_16%,transparent),transparent)]`
 
-// A card the section's background shows through faintly: the site's grey at 75%, no blur (the
-// interview card among the ways in).
+// The interview card among the ways in: the section's background shows through it faintly.
 export const SEE_THROUGH_CARD =
-  "bg-[color-mix(in_oklab,var(--muted)_75%,transparent)] dark:bg-[color-mix(in_oklab,color-mix(in_oklab,var(--muted)_40%,var(--background))_75%,transparent)]"
+  "bg-[color-mix(in_oklab,color-mix(in_oklab,var(--muted)_40%,var(--background))_75%,transparent)]"
 
-// A grey card the glow shows through a little, in light only (the dark grey is see-through
-// already): the Mira section's chat and cards.
-export const GLOW_CARD =
-  "bg-[color-mix(in_oklab,var(--muted)_70%,transparent)] dark:bg-surface"
-
-// A bar that stays at the top of the window (the features page's tabs): the page's own colour
-// across the window, so the bands scroll away beneath it, with a line of the borders' grey under
-// it across the window, fading out only near its sides.
-export const STICKY_BAR = `${LAYER} before:inset-y-0 before:bg-background after:pointer-events-none after:absolute after:start-[calc(50%-50cqw)] after:bottom-0 after:h-px after:w-[100cqw] after:bg-[linear-gradient(to_right,transparent,var(--border)_5%,var(--border)_95%,transparent)]`
+// The features page's tabs bar: the page's own colour across the window, with a line of the
+// borders' grey under it across the window, fading out only near its sides.
+export const TAB_BAR = `${LAYER} before:inset-y-0 before:bg-background after:pointer-events-none after:absolute after:start-[calc(50%-50cqw)] after:bottom-0 after:h-px after:w-[100cqw] after:bg-[linear-gradient(to_right,transparent,var(--border)_5%,var(--border)_95%,transparent)]`

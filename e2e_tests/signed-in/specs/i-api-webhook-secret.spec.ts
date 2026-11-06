@@ -1,7 +1,7 @@
 import { expect, test } from "../fixtures"
 import { api, createCompany } from "../helpers/api"
 import { PHONE } from "../helpers/layout"
-import { openDialog, visit } from "../helpers/navigation"
+import { openFromMenu, visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { ownerEmail } from "../helpers/users"
 
@@ -18,8 +18,8 @@ test("an owner rolls a web hook's secret and sees the new one once", async ({ si
 
   await visit(owner, `/companies/${company.id}/integrations/api?tab=webhooks`)
   await shot(owner, "webhooks")
-  // The web hook's icon button, named for screen readers.
-  await openDialog(owner, owner.getByRole("button", { name: "Roll secret" }))
+  // In its row's menu, after the delivery log.
+  await openFromMenu(owner, owner.getByTestId("webhook"), 1)
   await shot(owner, "asked")
   await owner.getByRole("dialog").getByRole("button").last().click()
 

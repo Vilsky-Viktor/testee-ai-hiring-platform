@@ -3,6 +3,7 @@
 import { ChevronDownIcon } from "lucide-react"
 import { useFormatter, useTranslations } from "next-intl"
 
+import { SELECT_FOCUS } from "@/config/menu-pill"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
@@ -61,7 +62,7 @@ export function StatsPicker({
               type="button"
               variant="ghost"
               aria-label={t("statsPeriod")}
-              className="relative h-14 w-60 justify-start rounded-xl bg-surface px-6 pe-16 text-lg font-normal normal-case hover:bg-surface"
+              className={`h-14 w-60 justify-start rounded-xl bg-surface px-6 pe-16 text-lg font-normal normal-case hover:bg-surface ${SELECT_FOCUS}`}
             />
           }
         >

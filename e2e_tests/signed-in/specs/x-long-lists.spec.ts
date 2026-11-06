@@ -31,7 +31,7 @@ test("an interview deleted past the first page leaves the list at once", async (
 
   await visit(owner, `/companies/${company.id}/interviews`)
   await expect(owner.getByText("E2E 22").filter({ visible: true })).toBeVisible()
-  // The oldest's row; its last button deletes it.
+  // The oldest's row; its last button opens its menu, where deleting comes last.
   const oldest = owner
     .getByRole("main")
     .getByRole("listitem")
@@ -44,6 +44,7 @@ test("an interview deleted past the first page leaves the list at once", async (
   }).toPass({ timeout: 30_000 })
 
   await oldest.click()
+  await owner.getByRole("menu").getByRole("menuitem").last().click()
   await owner.getByRole("dialog").getByRole("button").last().click()
   await expect(owner.getByRole("dialog")).toHaveCount(0)
   await expect(owner.getByText("E2E 01", { exact: true })).toHaveCount(0)

@@ -4,12 +4,14 @@ import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
+import { SavedCheck } from "@/components/common/saved-check"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import type { QuestionStats } from "@/types/feedback"
 
@@ -35,6 +37,7 @@ export function QuestionInclude({
 }) {
   const t = useTranslations("questions")
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark()
   const out = Boolean(question.excluded)
 
   async function setIncluded(included: boolean) {
@@ -50,6 +53,7 @@ export function QuestionInclude({
         method: "PUT",
         body: JSON.stringify({ excluded: !included }),
       })
+      markSaved()
     } catch (error) {
       onChange(question)
       toast.error(apiErrorMessage(error, t("excludeFailed")))
@@ -62,7 +66,7 @@ export function QuestionInclude({
     <Tooltip>
       <TooltipTrigger
         render={
-          <label className="flex cursor-pointer items-center gap-2 has-disabled:cursor-default" />
+          <label className="relative flex cursor-pointer items-center has-disabled:cursor-default" />
         }
       >
         <Checkbox
@@ -73,18 +77,12 @@ export function QuestionInclude({
           // A name that stays put; ticked or not says whether it is active.
           aria-label={t("active")}
         />
-        {/* On phones its state is written beside it. */}
-        <span
-          aria-hidden
-          data-testid="question-state"
-          className="text-sm sm:hidden"
-        >
-          {out ? t("disabled") : t("active")}
-        </span>
+        <SavedCheck
+          text={savedText()}
+          className="absolute start-full top-1/2 ms-1 -translate-y-1/2"
+        />
       </TooltipTrigger>
-      <TooltipContent className="max-w-xs">
-        {t(hintKey(Boolean(excludePath), out))}
-      </TooltipContent>
+      <TooltipContent>{t(hintKey(Boolean(excludePath), out))}</TooltipContent>
     </Tooltip>
   )
 }

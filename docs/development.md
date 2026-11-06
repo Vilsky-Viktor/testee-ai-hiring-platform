@@ -13,9 +13,13 @@ How to run testee locally, the settings it reads, and the everyday commands.
 ## Running locally
 
 Requirements: Docker with Compose (on a Mac, Docker Desktop with VirtioFS file sharing and at
-least 12 GB of memory), and an OpenAI API key. The frontend runs Next.js's dev server with
-Turbopack and picks up file changes from the bind mount through VirtioFS's file events, without
-polling.
+least 12 GB of memory), and an OpenAI API key. The frontend runs as a production build, as
+Next.js's dev server grew too large to run in the stack, so frontend changes show once it's rebuilt
+(about 2 minutes; the services' code still reloads on save):
+
+```bash
+docker compose up -d --build --wait frontend
+```
 
 ```bash
 cp .env.example .env
@@ -32,7 +36,7 @@ docker compose up --build
 | http://localhost:8125 | Mailpit: every email sent locally, when `RESEND_API_KEY` is empty |
 | `http://localhost:8090/api/<service>/docs` | Each service's Swagger UI, through the gateway: `accounts`, `assistant`, `ats`, `billing`, `companies`, `generate` (generation), `library`, `notifications`, `rounds`, `site`, and `v1` for the public API. "Try it out" sends requests through the gateway; signed-in routes need a Firebase ID token under Authorize. Only where `API_DOCS` is on (compose sets it; production never) |
 
-To try the app on a phone, connect it to the same Wi-Fi and open `http://<your computer's local IP>:8090` (on a Mac, `ipconfig getifaddr en0` prints it). Signing in works there too: the page reaches the sign-in emulator on the host it was opened from, and the dev server serves its scripts to local-network addresses (`allowedDevOrigins` in `frontend/next.config.ts`).
+To try the app on a phone, connect it to the same Wi-Fi and open `http://<your computer's local IP>:8090` (on a Mac, `ipconfig getifaddr en0` prints it). Signing in works there too: the page reaches the sign-in emulator on the host it was opened from.
 
 Without `RESEND_API_KEY`, emails go to Mailpit instead of real inboxes. To send real ones, see [Notifications and emails](features/notifications.md#sending-real-emails).
 

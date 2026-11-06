@@ -10,56 +10,57 @@ test("owner creates a company, an interview from a template and invites a candid
 }) => {
   // Through the site's sign-in, as a new owner would.
   const owner = await signInAs(ownerEmail(), { ui: true })
-  // No company yet: the list has no rows.
-  await expect(owner.getByTestId("new-company").filter({ visible: true })).toBeVisible()
+  // No company yet: no rows, and the page itself asks for the first one's name.
+  const firstCompany = owner.getByRole("main").locator("form")
+  await expect(firstCompany.getByRole("textbox")).toBeVisible()
+  await expect(owner.getByTestId("new-company")).toHaveCount(0)
   await expect(owner.getByRole("main").getByRole("listitem")).toHaveCount(0)
   await shot(owner, "companies-empty")
 
-  // The home page's start: the description, then which company. Going on would generate the
-  // interview with OpenAI, so the company is created from the companies page instead.
+  // The home page's start: the description, then which company, on a page of its own. Going on
+  // would generate the interview with OpenAI, so the company is created from the companies page
+  // instead.
   await visit(owner, "/")
   const start = owner.getByRole("main").locator("form").first()
   await start.getByRole("textbox").fill("Backend developer: SQL basics and indexes.")
   await start.locator('button[type="submit"]').click()
-  // A window over the box asks which company; with none yet, only the new company's name.
-  const companyStep = owner.getByRole("dialog")
-  await expect(companyStep).toBeVisible()
-  await expect(companyStep.getByRole("radiogroup")).toHaveCount(0)
-  await expect(companyStep.getByRole("textbox")).toBeVisible()
-  // Cancel closes it, the description kept as typed.
-  await companyStep.getByRole("button").first().click()
-  await expect(companyStep).toHaveCount(0)
-  await expect(start.getByRole("textbox")).toHaveValue("Backend developer: SQL basics and indexes.")
-  await start.locator('button[type="submit"]').click()
+  // With none yet, it asks only for the new company's name.
+  const companyStep = owner.getByRole("main")
+  const backHome = companyStep.locator('a[href="/"]')
+  await expect(owner).toHaveURL(/\/generate\/company$/)
+  await expect(companyStep.getByRole("group")).toHaveCount(0)
   await expect(companyStep.getByRole("textbox")).toBeVisible()
   await shot(owner, "home-company-step", false)
+  // The way back: the description kept as typed.
+  await backHome.click()
+  await expect(start.getByRole("textbox")).toHaveValue("Backend developer: SQL basics and indexes.")
 
   const name = `E2E Owner ${randomId()}`
   await visit(owner, "/companies")
-  await owner.getByTestId("new-company").click()
-  await owner.getByRole("dialog").getByRole("textbox").fill(name)
-  await shot(owner, "new-company-dialog")
-  await owner.getByRole("dialog").locator('button[type="submit"]').click()
+  await firstCompany.getByRole("textbox").fill(name)
+  await shot(owner, "first-company")
+  await firstCompany.locator('button[type="submit"]').click()
   await expect(owner).toHaveURL(/\/companies\/[^/]+\/interviews$/)
   const companyUrl = new URL(owner.url()).pathname.replace(/\/interviews$/, "")
   await expect(owner.getByRole("heading", { name })).toBeVisible()
   await expect(owner.getByRole("main").getByRole("listitem")).toHaveCount(0)
   await shot(owner, "interviews-empty")
 
-  // With a company, the window lists it, chosen at first, before "a new company"; Cancel
-  // keeps the description again.
+  // With a company, the page lists it, its name asked only once "a new company" is chosen; the
+  // way back keeps the description again.
   await visit(owner, "/")
+  // The earlier description is back in the box first: a fill before it would land after it.
+  await expect(start.getByRole("textbox")).toHaveValue("Backend developer: SQL basics and indexes.")
   await start.getByRole("textbox").fill("Data analyst: SQL joins.")
   await start.locator('button[type="submit"]').click()
-  const choices = companyStep.getByRole("radiogroup").getByRole("radio")
-  await expect(choices).toHaveCount(2)
-  await expect(choices.first()).toContainText(name)
-  await expect(choices.first()).toHaveAttribute("aria-checked", "true")
-  await expect(choices.last()).toHaveAttribute("aria-checked", "false")
+  const choices = companyStep.getByRole("group").getByRole("button")
+  await expect(choices).toHaveCount(1)
+  await expect(choices).toContainText(name)
   await expect(companyStep.getByRole("textbox")).toHaveCount(0)
-  // Cancel, the first of the window's buttons (the companies are radios).
-  await companyStep.getByRole("button").first().click()
-  await expect(companyStep).toHaveCount(0)
+  // "A new company", the last of the page's buttons.
+  await companyStep.getByRole("button").last().click()
+  await expect(companyStep.getByRole("textbox")).toBeVisible()
+  await backHome.click()
   await expect(start.getByRole("textbox")).toHaveValue("Data analyst: SQL joins.")
 
   // Templates tab: "Use template" on each row. Only templates a company can
@@ -111,7 +112,7 @@ test("owner creates a company, an interview from a template and invites a candid
   await expect(questions.getByRole("img", { name: "Correct answer" }).first()).toBeVisible()
   await expect(questions.getByRole("img", { name: "Wrong answer" }).first()).toBeVisible()
   await expect(questions.getByTestId("page-loading")).toHaveCount(0)
-  await expect(questions.getByRole("status")).toBeVisible()
+  await expect(questions.getByRole("status").first()).toBeVisible()
   // `inline code` in an option shows as code, as in the question, without its backticks.
   await expect(questions.locator("li code").first()).toHaveText("if is_member:")
   await expect(questions.getByText("`if is_member:`")).toHaveCount(0)

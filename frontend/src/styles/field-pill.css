@@ -1,0 +1,119 @@
+/* A field's name on its box's top edge (FLOAT_LABEL_UP), a bubble moulded into the box: a groove
+   under the pill and round its ends, thin under it and gradually thicker up its ends, where the box's
+   edge curves down into the groove. `--bubble` is half the pill's height, when it isn't the usual
+   12px. Clipped rather than hidden, so a long name still ends in dots while the groove reaches past
+   the pill.
+
+   The groove is the colour behind the box, `--shown`: the page's, or `--groove`, set by whatever
+   the box sits on (below), on a hovered row (ROW_HOVER) that colour with the row's
+   grey over it. Fading with the row, as it's a registered colour. */
+@property --shown {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+.bg-background {
+  --groove: var(--background);
+}
+
+.bg-popover {
+  --groove: var(--popover);
+}
+
+.bg-card {
+  --groove: var(--card);
+}
+
+.row-hover:is(:hover, :active) {
+  --groove-hover: color-mix(
+    in srgb,
+    var(--surface-tint),
+    var(--groove, var(--background))
+  );
+}
+
+.field-pill {
+  --shown: var(--groove-hover, var(--groove, var(--background)));
+  overflow: clip;
+  overflow-clip-margin: 1.5rem;
+}
+
+.field-pill::after {
+  position: absolute;
+  inset: -2px -6px -3px;
+  border-style: solid;
+  border-width: 2px 6px 3px;
+  border-color: var(--shown);
+  border-radius: calc(var(--bubble, 12px) + 6px) /
+    calc(var(--bubble, 12px) + 3px);
+  clip-path: inset(calc(var(--bubble, 12px) + 2px) 0 0 0);
+  content: "";
+}
+
+.field-pill::before {
+  position: absolute;
+  inset-inline: -12px;
+  top: 50%;
+  height: 8px;
+  background:
+    radial-gradient(circle 8px at 0 100%, transparent 7.5px, var(--shown) 8px)
+      0 0 / 8px 8px no-repeat,
+    radial-gradient(
+        circle 8px at 100% 100%,
+        transparent 7.5px,
+        var(--shown) 8px
+      )
+      100% 0 / 8px 8px no-repeat;
+  content: "";
+}
+
+/* The same bubble on a frame without a line, on a grey band (the landing's create demo): the band's
+   colour shows inside the dip. On an empty element the size of the pill, under it, on the frame's
+   top edge. */
+.field-pill-line::after {
+  inset: -3px -6px -4px;
+  border-width: 1px;
+  border-color: transparent;
+  border-radius: calc(var(--bubble, 12px) + 6px) /
+    calc(var(--bubble, 12px) + 4px);
+  background: var(--surface-solid);
+  clip-path: inset(calc(var(--bubble, 12px) + 12px) 0 0 0);
+}
+
+.field-pill-line::before {
+  inset-inline: -13px;
+  height: 9px;
+  background:
+    radial-gradient(
+        circle 9px at 0 100%,
+        transparent 8px,
+        transparent 8px 9px,
+        var(--surface-solid) 9px
+      )
+      0 0 / 9px 9px no-repeat,
+    radial-gradient(
+        circle 9px at 100% 100%,
+        transparent 8px,
+        transparent 8px 9px,
+        var(--surface-solid) 9px
+      )
+      100% 0 / 9px 9px no-repeat,
+    linear-gradient(var(--surface-solid), var(--surface-solid)) center /
+      calc(100% - 18px) 100% no-repeat;
+}
+
+/* A question count's field (`count-field`): a line between the number and its "of N", fading out at
+   both ends. */
+.count-field .field-unit::before {
+  position: absolute;
+  inset-block: -0.25rem;
+  inset-inline-start: -0.625rem;
+  width: 1px;
+  background: linear-gradient(
+    transparent,
+    color-mix(in oklab, var(--foreground) 30%, transparent),
+    transparent
+  );
+  content: "";
+}

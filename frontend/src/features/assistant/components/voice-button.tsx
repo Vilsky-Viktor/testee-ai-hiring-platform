@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl"
 import { useEffect, useEffectEvent, useRef, useState } from "react"
 
 import { Count } from "@/components/common/count"
+import { VoiceBars } from "@/components/common/voice-bars"
 import { Button } from "@/components/ui/button"
 import { CANCEL_DISTANCE_PX } from "@/config/assistant"
 import { ROUND_ICON_BUTTON } from "@/config/buttons"
@@ -21,9 +22,11 @@ import {
   type VoiceEvent,
   type VoicePhase,
 } from "@/lib/voice"
+import type { Meter } from "@/lib/voice-meters"
+import { useVoiceWaves } from "@/hooks/use-voice-waves"
 
-/** Push to talk: hold to record, let go to send what was said as a message; sliding away or
- * Esc cancels. From the keyboard, Enter or Space starts and stops. Stops by itself after
+/** Push to talk: hold to record (the voice's wave moving over the field meanwhile), let go to
+ * send what was said as a message; sliding away or Esc cancels. From the keyboard, Enter or Space starts and stops. Stops by itself after
  * `maxSeconds`. Not shown where the browser can't record. Its status (recording, transcribing,
  * an error) shows above the input row it sits in. */
 export function VoiceButton({
@@ -48,6 +51,9 @@ export function VoiceButton({
   const origin = useRef<{ x: number; y: number } | null>(null)
   // Let go before the microphone started (its permission prompt, say).
   const released = useRef(false)
+  // What the microphone hears while recording, moving the voice's wave (flat otherwise).
+  const meter = useRef<Meter | null>(null)
+  const waves = useVoiceWaves(meter, false)
 
   function step(event: VoiceEvent) {
     current.current = nextPhase(current.current, event)
@@ -73,6 +79,7 @@ export function VoiceButton({
       }
 
       recording.current = started
+      meter.current = { speaker: () => 0, mic: started.level }
       setElapsed(0)
       step("start")
     } catch (failure) {
@@ -93,6 +100,7 @@ export function VoiceButton({
     }
 
     step("stop")
+    meter.current = null
     const audio = await recording.current.stop()
     recording.current = null
 
@@ -120,6 +128,7 @@ export function VoiceButton({
 
     recording.current?.cancel()
     recording.current = null
+    meter.current = null
     step("cancel")
   }
 
@@ -222,6 +231,18 @@ export function VoiceButton({
 
   return (
     <>
+      {/* While recording, the voice's wave over the field, before the buttons, moving with what
+          the microphone hears. */}
+      <span
+        aria-hidden
+        data-recording={recordingNow || undefined}
+        className={cn(
+          "me-auto h-10 flex-1 items-center rounded-lg bg-surface ps-3",
+          recordingNow ? "flex" : "hidden"
+        )}
+      >
+        <VoiceBars waveRef={waves.you} shown className="h-8" />
+      </span>
       <p
         role="status"
         className={cn(
@@ -244,12 +265,11 @@ export function VoiceButton({
       <Button
         type="button"
         size="icon"
-        variant="ghost"
+        // Held: the site's primary button while it records.
+        variant={recordingNow ? "default" : "ghost"}
         className={cn(
-          ROUND_ICON_BUTTON,
-          "size-10 touch-none select-none",
-          recordingNow &&
-            "bg-destructive text-white hover:bg-destructive hover:text-white"
+          recordingNow ? "rounded-xl" : ROUND_ICON_BUTTON,
+          "size-10 touch-none select-none"
         )}
         disabled={disabled || phase === "transcribing"}
         aria-pressed={recordingNow}

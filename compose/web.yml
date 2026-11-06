@@ -22,6 +22,34 @@ x-site-source: &site-source
   # The site's guide articles, which the help routes serve too.
   - ./frontend/content:/frontend/content:ro
 
+# A production build of the frontend. NEXT_PUBLIC_* values are baked in at build time.
+x-frontend-build: &frontend-build
+  restart: unless-stopped
+  build:
+    context: frontend
+    target: prod
+    args:
+      NEXT_PUBLIC_FIREBASE_API_KEY: ${NEXT_PUBLIC_FIREBASE_API_KEY}
+      NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN}
+      NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${NEXT_PUBLIC_FIREBASE_PROJECT_ID}
+      NEXT_PUBLIC_FIREBASE_AUTH_EMULATOR_URL: ${NEXT_PUBLIC_FIREBASE_AUTH_EMULATOR_URL}
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${NEXT_PUBLIC_TURNSTILE_SITE_KEY:-}
+      NEXT_PUBLIC_ENVIRONMENT: ${ENVIRONMENT:-development}
+      FRONTEND_SENTRY_DSN: ${FRONTEND_SENTRY_DSN:-}
+  environment:
+    # Server-side rendering calls the API through the gateway.
+    API_URL: http://gateway:8081
+    SITE_URL: ${SITE_URL:-http://localhost:8090}
+    PREVIEW_SECRET: ${PREVIEW_SECRET}
+    GOOGLE_SITE_VERIFICATION: ${GOOGLE_SITE_VERIFICATION:-}
+    BING_SITE_VERIFICATION: ${BING_SITE_VERIFICATION:-}
+  # Ready once it serves a page (`up --wait` waits for this).
+  healthcheck:
+    test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:3000/robots.txt"]
+    interval: 2s
+    timeout: 5s
+    retries: 30
+
 services:
   site-migrate:
     extends: {file: compose/base.yml, service: migrate}
@@ -46,61 +74,20 @@ services:
       redis:
         condition: service_healthy
 
+  # The site you browse (http://localhost:8090): a production build, as dev mode grew too large to
+  # run. Changes show once it's rebuilt: `docker compose up -d --build --wait frontend`.
   frontend:
-    restart: unless-stopped
-    build:
-      context: frontend
-      target: dev
-    environment:
-      # Server-side rendering calls the API through the gateway.
-      API_URL: http://gateway:8081
-      SITE_URL: ${SITE_URL:-http://localhost:8090}
-      PREVIEW_SECRET: ${PREVIEW_SECRET}
-      GOOGLE_SITE_VERIFICATION: ${GOOGLE_SITE_VERIFICATION:-}
-      BING_SITE_VERIFICATION: ${BING_SITE_VERIFICATION:-}
-      NEXT_PUBLIC_FIREBASE_API_KEY: ${NEXT_PUBLIC_FIREBASE_API_KEY}
-      NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN}
-      NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${NEXT_PUBLIC_FIREBASE_PROJECT_ID}
-      NEXT_PUBLIC_FIREBASE_AUTH_EMULATOR_URL: ${NEXT_PUBLIC_FIREBASE_AUTH_EMULATOR_URL}
-      NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${NEXT_PUBLIC_TURNSTILE_SITE_KEY:-}
-      FRONTEND_SENTRY_DSN: ${FRONTEND_SENTRY_DSN:-}
-      NEXT_PUBLIC_ENVIRONMENT: ${ENVIRONMENT:-development}
-    volumes:
-      - ./frontend:/frontend
-      - frontend-modules:/frontend/node_modules
-      - frontend-next:/frontend/.next
+    <<: *frontend-build
 
-  # The site the browser tests open (the gateway's port 8082): a production build of the frontend,
-  # so tests never wait on the dev server above compiling pages, and never slow it down. Only the
-  # test scripts start it (e2e_tests/test_frontend.sh), rebuilt when the frontend's files change;
-  # the label names the files it was built from. NEXT_PUBLIC_* values are baked in at build time.
+  # The site the browser tests open (the gateway's port 8082): the same build, of the files as the
+  # tests start, so a run never rebuilds or slows down the site above. Only the test scripts start
+  # it (e2e_tests/test_frontend.sh), rebuilt when the frontend's files change; the label names the
+  # files it was built from.
   frontend-test:
+    <<: *frontend-build
     profiles: [test]
-    restart: unless-stopped
-    build:
-      context: frontend
-      target: prod
-      args:
-        NEXT_PUBLIC_FIREBASE_API_KEY: ${NEXT_PUBLIC_FIREBASE_API_KEY}
-        NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN}
-        NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${NEXT_PUBLIC_FIREBASE_PROJECT_ID}
-        NEXT_PUBLIC_FIREBASE_AUTH_EMULATOR_URL: ${NEXT_PUBLIC_FIREBASE_AUTH_EMULATOR_URL}
-        NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${NEXT_PUBLIC_TURNSTILE_SITE_KEY:-}
-        NEXT_PUBLIC_ENVIRONMENT: ${ENVIRONMENT:-development}
     labels:
       testee.frontend-source: ${FRONTEND_TEST_SOURCE:-}
-    environment:
-      API_URL: http://gateway:8081
-      SITE_URL: ${SITE_URL:-http://localhost:8090}
-      PREVIEW_SECRET: ${PREVIEW_SECRET}
-      GOOGLE_SITE_VERIFICATION: ${GOOGLE_SITE_VERIFICATION:-}
-      BING_SITE_VERIFICATION: ${BING_SITE_VERIFICATION:-}
-    # Ready once it serves a page (`up --wait` waits for this).
-    healthcheck:
-      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:3000/robots.txt"]
-      interval: 2s
-      timeout: 5s
-      retries: 30
 
   gateway:
     restart: unless-stopped
@@ -134,7 +121,3 @@ services:
         condition: service_healthy
       companies:
         condition: service_healthy
-
-volumes:
-  frontend-modules:
-  frontend-next:

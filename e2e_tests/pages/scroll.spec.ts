@@ -2,25 +2,30 @@ import { expect, test } from "@playwright/test";
 
 import { loaded, scrollAtRest } from "./helpers/waits";
 
-// The home page's "how it works" link scrolls smoothly to its section, not in one jump.
+// The home page's "create an interview" buttons scroll smoothly back up to the box, not in one
+// jump; and so does every link within the page.
 
-test("how it works scrolls smoothly", async ({ page }) => {
+test("create an interview scrolls smoothly up to the box", async ({ page }) => {
+  test.setTimeout(120_000)
   await page.goto("/")
   await loaded(page)
   expect(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior)).toBe("smooth")
+  const button = page.locator("#reports").getByTestId("start-button")
+  await button.scrollIntoViewIfNeeded()
+  await scrollAtRest(page)
+  const start = await page.evaluate(() => window.scrollY)
+  expect(start).toBeGreaterThan(0)
   // Every place the page scrolls through on its way.
   await page.evaluate(() => {
     const passed: number[] = []
     Object.assign(window, { passed })
     window.addEventListener("scroll", () => passed.push(window.scrollY))
   })
-  await page.locator('main a[href="#how"]').click()
-  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0)
-  await scrollAtRest(page)
+  await button.click()
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
   const passed = await page.evaluate(() => (window as unknown as { passed: number[] }).passed)
-  const end = passed[passed.length - 1]
-  // A jump lands at once; a smooth scroll passes places between the top and the section.
-  expect(passed.some((place) => place > 0 && place < end)).toBe(true)
+  // A jump lands at once; a smooth scroll passes places between the section and the top.
+  expect(passed.some((place) => place > 0 && place < start)).toBe(true)
 })
 
 // On a long page, "back to top" shows once it's scrolled down, and goes back to the top.

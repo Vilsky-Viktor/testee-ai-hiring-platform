@@ -1,46 +1,34 @@
-"use client"
-
-import { useTranslations } from "next-intl"
-import { useState } from "react"
-
 import { Badge } from "@/components/ui/badge"
 
-// Tags shown before "+N more".
-const SHOWN = 2
-const TAG = "h-7 px-3 text-sm font-light text-muted-foreground"
+// A subtopic's pill, and the same a size down, for the landing's previews.
+export const SUBTOPIC_TAG =
+  "h-8 px-4 text-sm font-light text-muted-foreground normal-case"
+export const SUBTOPIC_TAG_SMALL =
+  "h-7 px-3 text-sm font-light text-muted-foreground normal-case"
 
-/** A topic's subtopics as quiet tags: the first few, then a "+N more" tag that shows the rest. */
-export function SubtopicList({ subtopics }: { subtopics: string[] }) {
-  const t = useTranslations("questions")
-  const [expanded, setExpanded] = useState(false)
-  const hidden = subtopics.length - SHOWN
-  const shown = expanded || hidden <= 0 ? subtopics : subtopics.slice(0, SHOWN)
-
+/** A topic's subtopics as quiet pills, every one of them; `small` a size down. */
+export function SubtopicList({
+  subtopics,
+  small = false,
+}: {
+  subtopics: string[]
+  small?: boolean
+}) {
   if (subtopics.length === 0) {
     return null
   }
 
   return (
     <span className="flex flex-wrap gap-2">
-      {shown.map((subtopic) => (
+      {subtopics.map((subtopic) => (
         <Badge
           key={subtopic}
           variant="outline"
-          className={`${TAG} normal-case`}
+          className={small ? SUBTOPIC_TAG_SMALL : SUBTOPIC_TAG}
         >
           {subtopic}
         </Badge>
       ))}
-      {hidden > 0 && (
-        <button
-          type="button"
-          className="h-7 cursor-pointer px-1 text-sm text-primary transition-opacity hover:opacity-70"
-          aria-expanded={expanded}
-          onClick={() => setExpanded((current) => !current)}
-        >
-          {expanded ? t("showLess") : t("more", { count: hidden })}
-        </button>
-      )}
     </span>
   )
 }

@@ -12,10 +12,15 @@ import { SCROLL_TOP_AFTER_PX } from "@/config/layout"
 export function ScrollTopButton() {
   const t = useTranslations("common")
   const [shown, setShown] = useState(false)
+  const [lift, setLift] = useState(0)
 
   useEffect(() => {
     function update() {
       setShown(window.scrollY > SCROLL_TOP_AFTER_PX)
+      // It rises as the footer's bottom bar scrolls in, so it never covers the bar's links.
+      const bar = document.querySelector("[data-footer-bar]")
+      const top = bar?.getBoundingClientRect().top ?? window.innerHeight
+      setLift(Math.max(window.innerHeight - top, 0))
     }
 
     update()
@@ -36,7 +41,8 @@ export function ScrollTopButton() {
       data-testid="back-to-top"
       // Smooth unless the visitor asked for less motion (the page's scroll-smooth).
       onClick={() => window.scrollTo({ top: 0 })}
-      className="fixed end-6 bottom-6 z-30 size-12 rounded-xl bg-background [body:has([data-round-footer])_&]:hidden"
+      style={{ bottom: `calc(1.5rem + ${lift}px)` }}
+      className="fixed end-6 z-30 size-12 rounded-xl bg-background [body:has([data-round-footer])_&]:hidden"
     >
       <ArrowUpIcon className="size-6" />
     </Button>

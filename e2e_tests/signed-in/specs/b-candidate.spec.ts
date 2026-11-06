@@ -5,7 +5,7 @@ import {
   inviteCandidate,
 } from "../helpers/api";
 import { inviteToken } from "../helpers/db";
-import { openDialog, visit } from "../helpers/navigation";
+import { openDialog, openMenu, visit } from "../helpers/navigation";
 import { shot } from "../helpers/screenshots";
 import { answered } from "../helpers/session";
 import { ownerEmail, throwawayEmail } from "../helpers/users";
@@ -105,10 +105,10 @@ test("candidate takes the interview from the invite link", async ({
   // A company's interview shows the company only: no testee header or footer, finished too.
   await expect(candidate.locator("header, footer")).toHaveCount(0);
 
-  // The invite link now says the interview is finished, in an info card instead of the start.
+  // The invite link now says the interview is finished: the company, and no start.
   await visit(candidate, invitePath);
   await expect(candidate.getByText(company.name).first()).toBeVisible();
-  await expect(candidate.getByRole("status")).toBeVisible();
+  await expect(candidate.getByTestId("start-pledge")).toHaveCount(0);
   await expect(candidate.getByRole("main").getByRole("button")).toHaveCount(0);
   await shot(candidate, "invite-finished");
 
@@ -120,11 +120,14 @@ test("candidate takes the interview from the invite link", async ({
   await expect(owner.getByText(email, { exact: true }).first()).toBeVisible();
   await shot(owner, "owner-candidates");
 
-  // Their report lists the questions they answered, without numbers.
-  await owner.getByText(email, { exact: true }).first().click();
+  // Their report lists the questions they answered, without numbers, once the topic is opened.
+  // The whole row is the link.
+  await owner.getByRole("main").locator('a[href*="/candidates/"]').click();
+  await owner.getByTestId("topic-toggle").first().click();
   await expect(owner.getByText(first ?? "").first()).toBeVisible();
   await expect(owner.getByText(/^\d+\.$/)).toHaveCount(0);
-  // A finished candidate's invite isn't sent again.
+  // A finished candidate's invite isn't sent again: their menu doesn't offer it.
+  await openMenu(owner, owner.getByRole("main").getByTestId("integration-menu"));
   await expect(owner.getByTestId("resend-invite")).toHaveCount(0);
   await shot(owner, "owner-report");
 });
@@ -164,7 +167,10 @@ test("an invitation asks a visitor to sign in, and warns another email", async (
   await expect(other.getByRole("status")).toContainText(
     "The email does not match. Sign in with the invitation email to start.",
   );
-  await expect(other.getByRole("main").getByRole("button")).toHaveCount(0);
+  // No start, only the way to switch accounts.
+  await expect(other.getByRole("main").getByRole("button")).toHaveCount(1);
+  await expect(other.getByTestId("invite-switch-account")).toBeVisible();
+  await expect(other.getByTestId("start-pledge")).toHaveCount(0);
   await shot(other, "invite-other-email");
 });
 
@@ -187,6 +193,8 @@ test("a candidate's page has their invite link to copy", async ({
   await expect(owner.getByRole("main").getByRole("textbox")).toHaveValue(
     new RegExp(`/invite/${await inviteToken(email)}$`),
   );
-  await expect(owner.getByTestId("resend-invite").filter({ visible: true })).toBeVisible();
+  // Their menu sends it again.
+  await openMenu(owner, owner.getByRole("main").getByTestId("integration-menu"));
+  await expect(owner.getByTestId("resend-invite")).toBeVisible();
   await shot(owner, "candidate-invite-link");
 });

@@ -8,10 +8,11 @@ import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { isChatNewLine, isChatSend } from "@/lib/keys"
 
-/** A chat's input row: a round text field with Send at its end; Enter sends and ⌘/Ctrl + Enter
- * adds a new line, as the small hint under it says (not on touch screens). While
- * an answer streams, Send is off, or is Stop when `onStop` is given. `children` sit before it
- * (the assistant's voice button). */
+/** A chat's input row: a round text field with one button at its end: `children` (the assistant's
+ * voice button) while it's empty, Send once something is typed, or with no `children`. Enter
+ * sends and ⌘/Ctrl + Enter adds a new line, as the small hint under it says until something is
+ * typed (not on touch screens). While an answer streams, Send is off, or is Stop when `onStop`
+ * is given. */
 export function ChatInput({
   value,
   onChange,
@@ -38,6 +39,7 @@ export function ChatInput({
   inputRef?: React.Ref<HTMLTextAreaElement>
 }) {
   const common = useTranslations("common")
+  const typing = Boolean(value.trim())
 
   function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -84,13 +86,17 @@ export function ChatInput({
           aria-label={label}
           className={cn(
             "max-h-40 min-h-16 resize-none overscroll-contain rounded-xl border-0 bg-surface px-6 py-4 pe-20 text-lg shadow-none focus-visible:border-transparent focus-visible:ring-0 md:text-lg",
-            children && "pe-32"
+            // While the voice button records, its wave alone shows in the field.
+            "in-[form:has([data-recording])]:text-transparent in-[form:has([data-recording])]:placeholder:text-transparent"
           )}
         />
         {/* The width of the field, so what the buttons show above it (the voice button's status)
           centers on it; clicks pass through to the field. */}
         <div className="pointer-events-none absolute inset-x-3 top-3 flex items-center justify-end gap-2 *:pointer-events-auto">
-          {children}
+          {/* Hidden, not removed: a recording going on keeps running. */}
+          <div className={typing || streaming ? "hidden" : "contents"}>
+            {children}
+          </div>
           {streaming && onStop ? (
             <Button
               type="button"
@@ -102,19 +108,26 @@ export function ChatInput({
               <SquareIcon className="size-4 fill-current" />
             </Button>
           ) : (
-            <Button
-              type="submit"
-              size="icon"
-              className="size-10 rounded-lg"
-              disabled={!value.trim() || streaming}
-              aria-label={common("send")}
-            >
-              <ArrowUpIcon className="size-5" />
-            </Button>
+            (typing || streaming || !children) && (
+              <Button
+                type="submit"
+                size="icon"
+                className="size-10 rounded-lg"
+                disabled={!typing || streaming}
+                aria-label={common("send")}
+              >
+                <ArrowUpIcon className="size-5" />
+              </Button>
+            )
           )}
         </div>
       </form>
-      <p className="mt-2 text-center text-xs text-muted-foreground pointer-coarse:hidden">
+      <p
+        className={cn(
+          "mt-2 text-center text-xs text-muted-foreground pointer-coarse:hidden",
+          typing && "invisible"
+        )}
+      >
         {common("chatKeysHint")}
       </p>
     </div>

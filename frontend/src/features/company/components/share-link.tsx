@@ -1,16 +1,17 @@
 "use client"
 
 import { cn } from "cn"
-import { LinkIcon } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
 import { CopyField } from "@/components/common/copy-field"
-import { CornerSign } from "@/components/common/corner-sign"
+import { SavedCheck } from "@/components/common/saved-check"
 import { Switch } from "@/components/ui/switch"
-import { SIGN_CARD } from "@/config/cards"
+import { CARD_PADDING } from "@/config/cards"
+import { ROW_HOVER } from "@/config/lists"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 
 /** One link for many candidates, for a job ad: on or off, and the link to copy while it's on.
@@ -27,7 +28,9 @@ export function ShareLink({
   const t = useTranslations("interviews")
   const router = useRouter()
   const [token, setToken] = useState(linkToken)
+  const [shown, setShown] = useState(linkToken)
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark()
 
   async function toggle(on: boolean) {
     setSaving(true)
@@ -38,6 +41,8 @@ export function ShareLink({
         { method: "PUT", body: JSON.stringify({ on }) }
       )
       setToken(saved.link_token)
+      setShown(saved.link_token ?? shown)
+      markSaved()
       router.refresh()
     } catch (error) {
       toast.error(apiErrorMessage(error, t("linkFailed")))
@@ -47,26 +52,39 @@ export function ShareLink({
   }
 
   return (
-    <div
-      className={cn(SIGN_CARD, "space-y-4 max-sm:-mx-6 max-sm:rounded-none")}
-    >
-      <CornerSign>
-        <LinkIcon className="text-primary" />
-      </CornerSign>
-      <label className="flex cursor-pointer items-center gap-4 text-base">
+    // One hover across the row and the link it opens.
+    <div className={ROW_HOVER}>
+      <label
+        className={`flex cursor-pointer items-center gap-4 ${CARD_PADDING}`}
+      >
         <span className="min-w-0 flex-1 space-y-1">
-          <span className="block font-medium lowercase">{t("linkTitle")}</span>
+          <span className="block text-lg font-light">{t("linkTitle")}</span>
           <span className="block text-sm text-muted-foreground">
             {t("linkText")}
           </span>
         </span>
+        <SavedCheck text={savedText()} />
         <Switch
           checked={token !== null}
           disabled={saving || !canEdit}
           onCheckedChange={toggle}
         />
       </label>
-      {token && <CopyField path={`/apply/${token}`} />}
+      {/* Opens smoothly, and closes with the link still in it. */}
+      <div
+        className={cn(
+          "grid transition-[grid-template-rows,opacity] duration-200 motion-reduce:transition-none",
+          token ? "grid-rows-[1fr]" : "invisible grid-rows-[0fr] opacity-0"
+        )}
+      >
+        <div className="min-h-0 overflow-hidden">
+          {shown && (
+            <div className="px-6 pb-6">
+              <CopyField path={`/apply/${shown}`} />
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   )
 }

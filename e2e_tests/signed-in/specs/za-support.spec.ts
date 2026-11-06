@@ -63,7 +63,7 @@ test("superadmin adjusts a company's credits from its page", async ({
 
   await expect(superadmin.getByRole("heading", { level: 1 })).toHaveText(name)
   // The history: the welcome credits; held: the invited candidate; members: the owner.
-  await expect(superadmin.getByRole("main").getByText("+1,500").filter({ visible: true })).toBeVisible()
+  await expect(superadmin.getByRole("main").getByText("+1.5K").filter({ visible: true })).toBeVisible()
   await shot(superadmin, "company")
   // The company's sections are pages under Support in the admin zone's menu: credits at the
   // company's own address, the open one marked.

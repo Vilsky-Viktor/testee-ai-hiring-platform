@@ -1,5 +1,6 @@
 "use client"
 
+import { cn } from "cn"
 import { useTranslations } from "next-intl"
 import { type FormEvent, useState } from "react"
 import { toast } from "sonner"
@@ -20,6 +21,7 @@ export function NoteEditor({
   busyLabel,
   save,
   onCancel,
+  compact = false,
 }: {
   initial?: string
   submitLabel: string
@@ -27,11 +29,14 @@ export function NoteEditor({
   save: (text: string) => Promise<void>
   // Editing a note: a Cancel button, and the box gets the focus at once.
   onCancel?: () => void
+  // One line until it's clicked, and again when left empty, growing and shrinking smoothly.
+  compact?: boolean
 }) {
   const t = useTranslations("interviews")
   const common = useTranslations("common")
   const [text, setText] = useState(initial)
   const [busy, setBusy] = useState(false)
+  const [opened, setOpened] = useState(!compact)
 
   function focusAtEnd(box: HTMLTextAreaElement | null) {
     if (!box || document.activeElement === box) {
@@ -54,6 +59,11 @@ export function NoteEditor({
     try {
       await save(text)
       setText("")
+
+      if (compact) {
+        ;(document.activeElement as HTMLElement | null)?.blur()
+        setOpened(false)
+      }
     } catch (error) {
       toast.error(
         serviceRefusal(error, [403, 404]) ??
@@ -63,6 +73,12 @@ export function NoteEditor({
       setBusy(false)
     }
   }
+
+  // What opens with the box fades in, kept in place so the box needs no other room.
+  const fade = cn(
+    "transition-opacity duration-200 motion-reduce:transition-none",
+    !opened && "invisible opacity-0"
+  )
 
   return (
     <form onSubmit={submit}>
@@ -74,8 +90,14 @@ export function NoteEditor({
         dir="auto"
         // Editing a note: focused at once, the cursor at the note's end, not its start.
         ref={onCancel ? focusAtEnd : undefined}
-        className="min-h-36"
+        data-testid={compact ? "note-box" : undefined}
+        className={cn(
+          "min-h-36 transition-[min-height,padding] duration-200 motion-reduce:transition-none",
+          !opened && "min-h-14 pb-4"
+        )}
+        onFocus={() => setOpened(true)}
         onChange={(event) => setText(event.target.value)}
+        onBlur={() => compact && !text.trim() && setOpened(false)}
         onKeyDown={(event) => {
           if (isSubmitShortcut(event)) {
             event.preventDefault()
@@ -86,9 +108,13 @@ export function NoteEditor({
             onCancel()
           }
         }}
-        hint={<SubmitHint />}
+        hint={
+          <span className={fade}>
+            <SubmitHint />
+          </span>
+        }
         action={
-          <>
+          <div className={cn("flex items-center gap-2", fade)}>
             {onCancel && (
               <Button
                 type="button"
@@ -107,7 +133,7 @@ export function NoteEditor({
             >
               {busy ? busyLabel : submitLabel}
             </Button>
-          </>
+          </div>
         }
       />
     </form>

@@ -1,11 +1,13 @@
 "use client"
 
+import { CalendarDaysIcon } from "lucide-react"
 import Link from "next/link"
 import { useLocale, useTranslations } from "next-intl"
 
 import { useLocalTime } from "@/hooks/use-local-time"
 import { VirtualList } from "@/components/common/virtual-list"
-import { LIST_BOX, ROW_HOVER } from "@/config/lists"
+import { Progress } from "@/components/ui/progress"
+import { LIST_BOX, ROW_HOVER, ROW_ICON } from "@/config/lists"
 import { usePagedList } from "@/hooks/use-paged-list"
 import type { PracticeRoundSummary } from "@/types/round"
 import { formatPercent } from "@/lib/format"
@@ -44,44 +46,49 @@ export function PracticeRoundList({
       getKey={byRound}
       estimateSize={97}
       onEndReached={loadMore}
-      className={LIST_BOX}
+      className={`${LIST_BOX} overflow-hidden`}
       renderItem={(round) => (
         <Link
           href={`/practice/rounds/${round.round_id}`}
-          className={`flex items-center justify-between gap-4 p-6 ${ROW_HOVER}`}
+          className={`group/row flex items-center gap-4 p-6 ${ROW_HOVER}`}
         >
-          <time
-            dateTime={round.started_at}
-            className="text-lg"
-            suppressHydrationWarning
-          >
-            {localTime.date(round.started_at)}
-          </time>
-          {/* Progress and grade, labelled like the candidate list's numbers. */}
-          <span className="flex shrink-0 items-center gap-6 sm:gap-10">
-            <span className="w-20 text-center sm:w-24">
-              <span className="block text-2xl font-light tabular-nums">
-                {formatPercent(round.progress, locale)}
-              </span>
-              <span className="block text-sm text-muted-foreground">
-                {t("progressLabel")}
-              </span>
-            </span>
-            <span className="w-20 text-center sm:w-24">
-              <span
-                className={
-                  round.grade == null
-                    ? "block text-2xl font-light text-muted-foreground"
-                    : "block text-2xl font-light tabular-nums"
-                }
-              >
-                {formatPercent(round.grade, locale)}
-              </span>
-              <span className="block text-sm text-muted-foreground">
-                {t("gradeLabel")}
-              </span>
+          <span aria-hidden className={ROW_ICON}>
+            <CalendarDaysIcon className="size-5" />
+          </span>
+          <span className="min-w-0 flex-1 space-y-1">
+            <time
+              dateTime={round.started_at}
+              className="block text-lg font-medium"
+              suppressHydrationWarning
+            >
+              {localTime.date(round.started_at)}
+            </time>
+            <span className="block text-sm text-muted-foreground">
+              {round.finished ? t("finished") : t("notFinished")}
             </span>
           </span>
+          {/* The grade once finished; how far it got until then. */}
+          {round.finished ? (
+            <span
+              data-testid="round-grade"
+              className="shrink-0 text-2xl font-light tabular-nums"
+            >
+              <span className="sr-only">{t("gradeLabel")} </span>
+              {formatPercent(round.grade, locale)}
+            </span>
+          ) : (
+            <span
+              data-testid="round-progress"
+              className="flex shrink-0 items-center gap-2 text-sm text-muted-foreground tabular-nums"
+            >
+              <Progress
+                value={round.progress}
+                aria-label={t("progressLabel")}
+                className="w-16"
+              />
+              {formatPercent(round.progress, locale)}
+            </span>
+          )}
         </Link>
       )}
     />

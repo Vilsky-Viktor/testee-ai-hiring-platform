@@ -924,6 +924,8 @@ export interface components {
       topics: components["schemas"]["SessionTopicOut"][]
       /** Done */
       done: boolean
+      /** Minutes Taken */
+      minutes_taken?: number | null
     }
     /** InviteIdsIn */
     InviteIdsIn: {

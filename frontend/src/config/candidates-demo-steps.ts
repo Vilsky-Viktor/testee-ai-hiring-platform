@@ -1,6 +1,9 @@
 // The home page's "what candidates see" demo: its steps, in click mode and then in voice mode,
 // and where its pointer's targets are.
-import { CLICK_QUESTIONS, type DemoQuestion } from "@/config/candidates-demo"
+import {
+  CLICK_QUESTIONS,
+  type DemoQuestionPlay,
+} from "@/config/candidates-demo"
 import type { DemoStep } from "@/hooks/use-demo-steps"
 
 // A step's mode, its screen (the start page, a click-mode question by its place, or the voice
@@ -25,15 +28,18 @@ const voice = (step: DemoStep, screen: string) => ({
 })
 
 /** A click-mode question's steps: read, each pick aimed at and clicked, then Next. */
-function questionSteps(question: DemoQuestion, at: number): CandidateStep[] {
+function questionSteps(
+  question: DemoQuestionPlay,
+  at: number
+): CandidateStep[] {
   const screen = `q${at}`
-  const read = question.example ? 3000 : 1800
+  const read = question.example ? 1800 : 1000
   const picks = question.picks.flatMap((option, index) => {
     const before = question.picks.slice(0, index)
 
     return [
       click(
-        { name: `aim${at}-${index}`, ms: 900, point: `option${option}` },
+        { name: `aim${at}-${index}`, ms: 600, point: `option${option}` },
         screen,
         before
       ),

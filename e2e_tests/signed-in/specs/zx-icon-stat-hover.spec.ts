@@ -15,7 +15,7 @@ function colors(stat: Locator) {
   })
 }
 
-// A stat icon (an interview's candidate count) isn't a button, but hovered it reacts like one: its
+// A stat icon (an interview's answer mode) isn't a button, but hovered it reacts like one: its
 // background and colour change, light and dark; it stays out of the tab order.
 test("a stat icon reacts on hover like an icon button", async ({ signInAs }) => {
   const owner = await signInAs(ownerEmail())
@@ -25,8 +25,8 @@ test("a stat icon reacts on hover like an icon button", async ({ signInAs }) => 
   for (const scheme of ["light", "dark"] as const) {
     await setScheme(owner, scheme)
     await visit(owner, `/companies/${company.id}/interviews`)
-    const stat = owner.getByRole("main").getByTestId("candidate-count")
-    await expect(stat).toHaveText("0")
+    const stat = owner.getByRole("main").getByTestId("answer-mode").first()
+    await expect(stat).toBeVisible()
     await expect(stat).not.toHaveAttribute("tabindex", /.*/)
     await owner.mouse.move(0, 0)
     const idle = await colors(stat)

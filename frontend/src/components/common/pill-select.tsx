@@ -14,6 +14,7 @@ export function PillSelect({
   disabled,
   className,
   pillClassName,
+  saved,
 }: {
   // Shown inside the select; without it, `ariaLabel` names it.
   label?: string
@@ -36,6 +37,8 @@ export function PillSelect({
   className?: string
   // The pill's own classes: a width that stays as the choice changes, say.
   pillClassName?: string
+  // MenuPill's `saved`.
+  saved?: string | null
 }) {
   return (
     <div className={className}>
@@ -48,6 +51,7 @@ export function PillSelect({
         placeholder={placeholder}
         disabled={disabled}
         className={pillClassName}
+        saved={saved}
       />
     </div>
   )

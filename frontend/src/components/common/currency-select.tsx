@@ -16,6 +16,7 @@ export function CurrencySelect({
   disabled,
   triggerClassName,
   short,
+  saved,
 }: {
   label: string
   value: string
@@ -25,6 +26,7 @@ export function CurrencySelect({
   triggerClassName?: string
   // The trigger shows the code only (the list still names each).
   short?: boolean
+  saved?: string | null
 }) {
   const t = useTranslations("settings")
   const locale = useLocale()
@@ -48,6 +50,7 @@ export function CurrencySelect({
       disabled={disabled}
       triggerClassName={triggerClassName}
       valueLabel={short ? (currency) => currency : undefined}
+      saved={saved}
     />
   )
 }

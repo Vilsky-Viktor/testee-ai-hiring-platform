@@ -15,13 +15,13 @@ import type { CodeToken } from "@/lib/code-tokens"
 const NO_TAP = () => {}
 
 // As its screen comes in: the question pops in, then its options fly in one after another from
-// the start side; an option as it's picked, a small bump (promo-pop, promo-fly-in, promo-tick:
-// promo.css). Only with motion allowed.
+// the start side (promo-pop, promo-fly-in: promo.css); a picked option jumps as it's clicked
+// (promo-click.css). Only with motion allowed.
 const POP =
   "motion-safe:animate-[promo-pop_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both]"
 const QUESTION_APPEAR = `${POP} [animation-delay:250ms]`
 const OPTIONS_APPEAR =
-  "motion-safe:[&_li]:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both] rtl:[&_li]:[--fly-from:1] [&_li]:[animation-delay:400ms] [&_li:nth-child(2)]:[animation-delay:500ms] [&_li:nth-child(3)]:[animation-delay:600ms] [&_li:nth-child(4)]:[animation-delay:700ms] motion-safe:[&_[aria-pressed=true]]:animate-[promo-tick_0.4s_ease-out]"
+  "motion-safe:[&_li]:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both] rtl:[&_li]:[--fly-from:1] [&_li]:[animation-delay:400ms] [&_li:nth-child(2)]:[animation-delay:500ms] [&_li:nth-child(3)]:[animation-delay:600ms] [&_li:nth-child(4)]:[animation-delay:700ms]"
 
 /** A question and its options as a candidate plays it (features/company/components/
  * session-play.tsx), for the landing: the grey card, with the multi-answer tag on a multi-answer

@@ -14,6 +14,9 @@ export type ApiKey = {
   permissions: string[]
   // The addresses it may be used from (IPv4, IPv6, CIDR ranges); empty: any.
   allowed_ips: string[]
+  // How it stands, and the preset its permissions match, as the api service decides them.
+  state: "expired" | "expiring" | "never_used" | "active"
+  access: "read" | "write" | "custom"
 }
 
 export type ApiWebhook = {
@@ -22,6 +25,9 @@ export type ApiWebhook = {
   created_at: string
   // Events stopped reaching it after days of retries; the next one it takes clears this.
   failing: boolean
+  // How it stands, as the api service decides it, and the last event it took.
+  state: "paused" | "unused" | "active"
+  last_delivered_at: string | null
 }
 
 // A send in a web hook's delivery log; `result` is "delivered", "skipped", the status the
@@ -41,6 +47,7 @@ export type ApiSettings = {
   // The permissions a key can have by group, in order; the read each permission that changes
   // something comes with; and what a new key starts with.
   permission_groups: Record<string, string[]>
+  permission_presets: Record<"read" | "write", string[]>
   implied: Record<string, string>
   default_permissions: string[]
 }
@@ -48,5 +55,5 @@ export type ApiSettings = {
 // What the key permission checkboxes need from the API page's settings.
 export type PermissionOptions = Pick<
   ApiSettings,
-  "permission_groups" | "implied"
+  "permission_groups" | "implied" | "permission_presets"
 >

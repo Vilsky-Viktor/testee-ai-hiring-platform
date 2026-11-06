@@ -80,7 +80,7 @@ test("superadmin writes, edits and deletes a news post", { tag: "@global" }, asy
     });
     await visit(superadmin, "/news");
     const post = superadmin.locator("article", { hasText: title });
-    await expect(post.getByRole("heading", { level: 2 })).toHaveText(
+    await expect(post.getByRole("heading", { level: 3 })).toHaveText(
       `${title}.`,
     );
     await expect(

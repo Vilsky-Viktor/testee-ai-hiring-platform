@@ -5,8 +5,11 @@ import { useTranslations } from "next-intl"
 import { Fragment, useState } from "react"
 import { toast } from "sonner"
 
+import { SavedCheck } from "@/components/common/saved-check"
+import { PillChoice } from "@/components/common/pill-choice"
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage, apiFetch, serviceRefusal } from "@/lib/api"
 import { lockedReads, permissionsByGroup, tick } from "@/lib/api-permissions"
 import { hasMessage } from "@/lib/messages"
@@ -135,7 +138,7 @@ export function PermissionTags({
               <Badge
                 key={item}
                 variant="outline"
-                className="h-6 px-2.5 text-xs font-light normal-case"
+                className="h-7 px-3.5 text-xs font-light normal-case"
               >
                 {named(t, "permissionLine", item)}
               </Badge>
@@ -147,8 +150,66 @@ export function PermissionTags({
   )
 }
 
-/** A key's permissions on its page: its checkboxes, any of which can be ticked or unticked. Each
- * change saves at once, confirmed by a toast; one the API refuses (unticking the last) is undone. */
+const PRESETS = ["read", "write"] as const
+type Preset = (typeof PRESETS)[number] | "custom"
+
+/** What a key may do: a preset, starting on `initial`, or Custom with every permission to tick. */
+export function KeyAccess({
+  options,
+  ticked,
+  onChange,
+  initial = "read",
+  disabled = false,
+  saved,
+}: {
+  options: PermissionOptions
+  ticked: string[]
+  onChange: (ticked: string[]) => void
+  initial?: Preset
+  disabled?: boolean
+  // SavedCheck's text, for permissions that save themselves.
+  saved?: string | null
+}) {
+  const t = useTranslations("api")
+  const [preset, setPreset] = useState<Preset>(initial)
+
+  function choose(next: Preset) {
+    setPreset(next)
+
+    if (next !== "custom") {
+      onChange(options.permission_presets[next])
+    }
+  }
+
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center gap-3">
+        <PillChoice
+          testId="key-presets"
+          options={([...PRESETS, "custom"] as const).map((item) => ({
+            value: item,
+            label: t(`access.${item}`),
+          }))}
+          value={preset}
+          onChange={choose}
+          disabled={disabled}
+        />
+        <SavedCheck text={saved} />
+      </div>
+      {preset === "custom" && (
+        <PermissionTicks
+          options={options}
+          ticked={ticked}
+          onChange={onChange}
+          disabled={disabled}
+        />
+      )}
+    </div>
+  )
+}
+
+/** A key's permissions on its page: a preset, or Custom with its checkboxes. Each change saves at
+ * once, confirmed by a check; one the API refuses (unticking the last) is undone. */
 export function KeyPermissions({
   companyId,
   apiKey,
@@ -162,6 +223,7 @@ export function KeyPermissions({
   const router = useRouter()
   const [ticked, setTicked] = useState(apiKey.permissions)
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark()
 
   async function change(next: string[]) {
     const before = ticked
@@ -173,7 +235,7 @@ export function KeyPermissions({
         method: "PATCH",
         body: JSON.stringify({ permissions: next }),
       })
-      toast.success(t("permissionsSaved"))
+      markSaved()
       router.refresh()
     } catch (error) {
       setTicked(before)
@@ -187,11 +249,13 @@ export function KeyPermissions({
   }
 
   return (
-    <PermissionTicks
+    <KeyAccess
       options={options}
       ticked={ticked}
       onChange={change}
+      initial={apiKey.access}
       disabled={saving}
+      saved={savedText()}
     />
   )
 }

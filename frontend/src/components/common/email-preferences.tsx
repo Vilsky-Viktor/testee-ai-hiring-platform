@@ -4,8 +4,10 @@ import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
+import { SavedCheck } from "@/components/common/saved-check"
 import { Checkbox } from "@/components/ui/checkbox"
 import { DIGEST_KINDS, OTHER_EMAILS } from "@/config/emails"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage } from "@/lib/api"
 import { saveEmailPreferences } from "@/lib/emails"
 import type { EmailChanges, EmailPreferences } from "@/types/emails"
@@ -26,12 +28,15 @@ export function EmailPreferencesSetting({
   const t = useTranslations("settings.emails")
   const [saved, setSaved] = useState(initial)
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark<string>()
 
-  async function save(changes: EmailChanges) {
+  // `key` names the row whose check shows.
+  async function save(changes: EmailChanges, key: string) {
     setSaving(true)
 
     try {
       setSaved(await onSave(changes))
+      markSaved(key)
     } catch (error) {
       toast.error(apiErrorMessage(error, t("failed")))
     } finally {
@@ -45,15 +50,17 @@ export function EmailPreferencesSetting({
     checkbox: React.ReactNode,
     title: string,
     note: string,
+    key: string,
     className = ""
   ) {
     return (
       <label className={`flex cursor-pointer items-start gap-4 ${className}`}>
         {checkbox}
-        <span className="space-y-1">
+        <span className="min-w-0 flex-1 space-y-1">
           <span className="block text-lg font-light">{title}</span>
           <span className="block text-sm text-muted-foreground">{note}</span>
         </span>
+        <SavedCheck text={savedText(key)} />
       </label>
     )
   }
@@ -72,11 +79,15 @@ export function EmailPreferencesSetting({
               indeterminate={digestOn > 0 && digestOn < DIGEST_KINDS.length}
               disabled={saving}
               onCheckedChange={(on) =>
-                save(Object.fromEntries(DIGEST_KINDS.map((kind) => [kind, on])))
+                save(
+                  Object.fromEntries(DIGEST_KINDS.map((kind) => [kind, on])),
+                  "digest"
+                )
               }
             />,
             t("digest"),
-            t("digestNote")
+            t("digestNote"),
+            "digest"
           )}
           {/* Lined up with the digest's title. */}
           <div className="space-y-3 ps-11">
@@ -89,9 +100,10 @@ export function EmailPreferencesSetting({
                   className="size-6 shrink-0 [&_[data-slot=checkbox-indicator]>svg]:size-4"
                   checked={saved[kind]}
                   disabled={saving}
-                  onCheckedChange={(on) => save({ [kind]: on })}
+                  onCheckedChange={(on) => save({ [kind]: on }, kind)}
                 />
-                {t(`kinds.${kind}`)}
+                <span className="min-w-0 flex-1">{t(`kinds.${kind}`)}</span>
+                <SavedCheck text={savedText(kind)} />
               </label>
             ))}
           </div>
@@ -103,10 +115,11 @@ export function EmailPreferencesSetting({
                 className={BIG}
                 checked={saved[setting]}
                 disabled={saving}
-                onCheckedChange={(on) => save({ [setting]: on })}
+                onCheckedChange={(on) => save({ [setting]: on }, setting)}
               />,
               t(setting),
               t(`${setting}Note`),
+              setting,
               "p-4 sm:p-6"
             )}
           </div>

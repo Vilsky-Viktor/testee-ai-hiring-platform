@@ -9,6 +9,7 @@ import { useLocalTime } from "@/hooks/use-local-time"
 import { useUrlLocale } from "@/components/common/localized-link"
 import { UseTemplate } from "@/features/templates/components/use-template"
 import { IconStat } from "@/components/common/icon-stat"
+import { SubtopicList } from "@/components/common/subtopic-list"
 import { Badge } from "@/components/ui/badge"
 import { VirtualList } from "@/components/common/virtual-list"
 import { usePagedList } from "@/hooks/use-paged-list"
@@ -17,8 +18,50 @@ import { byId } from "@/lib/paged-list"
 import { hasMessage } from "@/lib/messages"
 import { localizedPath } from "@/lib/locale-path"
 import type { PracticeStatus } from "@/types/round"
+import type { CompanyTemplate } from "@/types/company"
 import type { TemplateSummary } from "@/types/superadmin"
 import { LIST_BOX, LIST_EMPTY, ROW_HOVER } from "@/config/lists"
+
+// The company's list says more about each one (features/templates/components/template-list.tsx).
+type ListedTemplate = TemplateSummary & Partial<CompanyTemplate>
+// Topic names a row shows, for an idea of what's inside.
+const TOPICS_SHOWN = 3
+
+/** What a company's interview from a template adds up to, its first topics, and how many of its
+ * interviews came from it. */
+function TemplateContents({ template }: { template: ListedTemplate }) {
+  const t = useTranslations("templates")
+  const used = template.used_count ?? 0
+
+  return (
+    <>
+      <span
+        className="block text-sm text-muted-foreground"
+        data-testid="template-contents"
+      >
+        {t("contents", {
+          topics: template.topic_count,
+          questions: template.question_count ?? 0,
+          minutes: template.minutes ?? 0,
+        })}
+      </span>
+      <span className="block pt-2">
+        <SubtopicList
+          subtopics={template.topic_titles?.slice(0, TOPICS_SHOWN) ?? []}
+          small
+        />
+      </span>
+      {used > 0 && (
+        <span
+          className="block text-sm text-primary"
+          data-testid="template-used"
+        >
+          {t("usedIn", { count: used })}
+        </span>
+      )}
+    </>
+  )
+}
 
 /** The templates at `path`, newest first, a page at a time; `initial` is the server's first
  * page, and `empty` shows when there are none. A row opens the template under `openBase` (by its
@@ -34,14 +77,16 @@ export function TemplateList({
   companyId,
   bySlug,
   statuses,
+  topicsLine = false,
 }: {
   path: string
-  initial: TemplateSummary[]
+  initial: ListedTemplate[]
   empty: string
   openBase: string
   companyId?: string
   bySlug?: boolean
   statuses?: PracticeStatus[]
+  topicsLine?: boolean
 }) {
   const t = useTranslations("templates")
   const localTime = useLocalTime()
@@ -98,34 +143,47 @@ export function TemplateList({
                     />
                   ))}
               </span>
-              <span className="block text-sm text-muted-foreground">
-                <time dateTime={template.created_at} suppressHydrationWarning>
-                  {localTime.date(template.created_at)}
-                </time>
-              </span>
+              {template.topic_titles ? (
+                <TemplateContents template={template} />
+              ) : topicsLine ? (
+                <span
+                  data-testid="template-topics"
+                  className="block text-sm text-muted-foreground"
+                >
+                  {t("topics", { count: template.topic_count })}
+                </span>
+              ) : (
+                <span className="block text-sm text-muted-foreground">
+                  <time dateTime={template.created_at} suppressHydrationWarning>
+                    {localTime.date(template.created_at)}
+                  </time>
+                </span>
+              )}
             </span>
             {/* Their own column, so the tags line up whatever the title's length. */}
             <span className="flex shrink-0 gap-2">
-              <Badge variant="outline" className="h-7 px-3 text-sm font-light">
+              <Badge variant="outline" className="h-8 px-4 text-sm font-light">
                 {hasMessage(t, level) ? t(level) : template.level}
               </Badge>
               <Badge
                 variant="outline"
-                className="h-7 px-3 text-sm font-light uppercase"
+                className="h-8 px-4 text-sm font-light uppercase"
               >
                 {template.language}
               </Badge>
             </span>
             {/* A fixed column on every row; the hover background only around the icon and count. */}
-            <span className="ms-auto flex w-12 shrink-0 justify-end sm:-ms-2">
-              <IconStat
-                label={t("topics", { count: template.topic_count })}
-                icon={<LayersIcon aria-hidden className="size-5" />}
-                className="text-sm"
-              >
-                {template.topic_count}
-              </IconStat>
-            </span>
+            {!template.topic_titles && !topicsLine && (
+              <span className="ms-auto flex w-12 shrink-0 justify-end sm:-ms-2">
+                <IconStat
+                  label={t("topics", { count: template.topic_count })}
+                  icon={<LayersIcon aria-hidden className="size-5" />}
+                  className="text-sm"
+                >
+                  {template.topic_count}
+                </IconStat>
+              </span>
+            )}
           </>
         )
 
@@ -135,7 +193,7 @@ export function TemplateList({
         // on phones it takes its own line, at full width.
         return (
           <div
-            className={`relative flex items-center gap-6 p-6 ${ROW_HOVER} max-sm:flex-wrap max-sm:gap-4`}
+            className={`group/row relative flex items-center gap-6 p-6 ${ROW_HOVER} max-sm:flex-wrap max-sm:gap-4`}
           >
             <Link
               // On a language's address (/de/tests), a template in that language opens there

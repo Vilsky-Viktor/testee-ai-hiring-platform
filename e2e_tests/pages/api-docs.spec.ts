@@ -3,8 +3,8 @@ import { expect, type Page, test } from "@playwright/test";
 import { shot } from "./helpers/screenshots";
 
 // The footer's developer docs open the reference, read from the API itself, in five tabs: the
-// API (how to get a key, every route with what it returns), its web hooks, the SDK that embeds
-// the interview, the MCP server (with pages of its own) and the objects. Names the API defines (routes, events, headers, fields) are
+// API (with pages of its own: how to get a key, every route with what it returns), its web hooks,
+// the SDK that embeds the interview, the MCP server (with pages of its own) and the objects. Names the API defines (routes, events, headers, fields) are
 // its data, so they're matched; the page's own wording isn't. One test per tab, each opening its
 // own pages, so none runs out of time behind another's.
 test("the developer docs show the API with its routes", async ({ page }) => {
@@ -23,6 +23,10 @@ test("the developer docs show the API with its routes", async ({ page }) => {
   expect(hrefs).toEqual([
     "/api-docs",
     "/api-docs?tab=webhooks",
+    "/api-docs?page=guides",
+    "/api-docs?page=endpoints",
+    "/api-docs?page=errors",
+    "/api-docs?page=changelog",
     "/api-docs?tab=sdk",
     "/api-docs?tab=mcp",
     "/api-docs?tab=objects",
@@ -31,10 +35,20 @@ test("the developer docs show the API with its routes", async ({ page }) => {
 
   // The steps to a key, as a numbered list.
   expect(await page.locator("main ol").first().locator("li").count()).toBeGreaterThan(1);
-  // The base URL to copy and the routes, each with its method.
+  // A link is checked, then opened directly (in the tests below), so a click before the page is
+  // ready can't miss: a mention of the web hook, in the API's text, opens its tab.
+  await expect(page.locator('main div[lang] a[href="/api-docs?tab=webhooks"]').first()).toBeVisible();
+
+  // The endpoints' page: the base URL to copy and the routes, each with its method.
+  await page.goto("/api-docs?page=endpoints");
+  await expect(page.locator('main nav a[aria-current="page"]:visible')).toHaveAttribute(
+    "href",
+    "/api-docs?page=endpoints",
+  );
   await expect(page.getByRole("main").getByRole("textbox").first()).toHaveValue(/\/api\/v1$/);
-  const routes = page.locator("main article").filter({ has: page.getByText(/^(GET|POST|PATCH|DELETE)$/) });
-  // Every operation the public API defines, in its order: the spec is the source of truth.
+  const routes = page.getByTestId("operation");
+  // Every operation the public API defines: the spec is the source of truth (the page groups them
+  // by what they're about).
   const spec = (await page.evaluate(() =>
     fetch("/api/v1/openapi.json").then((response) => response.json()),
   )) as { paths: Record<string, Record<string, unknown>> };
@@ -45,24 +59,23 @@ test("the developer docs show the API with its routes", async ({ page }) => {
   await expect(routes).toHaveCount(operations.length);
   const shown = await routes.evaluateAll((articles) =>
     articles.map((article) => {
-      const method = [...article.querySelectorAll("header *")].find((part) =>
+      const method = [...article.querySelectorAll("summary *")].find((part) =>
         /^(GET|POST|PATCH|DELETE)$/.test(part.textContent?.trim() ?? ""),
       );
 
-      return `${method?.textContent?.trim()} ${article.querySelector("header code")?.textContent?.trim()}`;
+      return `${method?.textContent?.trim()} ${article.querySelector("summary code")?.textContent?.trim()}`;
     }),
   );
-  expect(shown).toEqual(operations);
+  expect(shown.toSorted()).toEqual(operations.toSorted());
   await expect(
-    routes.locator("header code").filter({ hasText: /^\/interviews\/\{interview_id\}\/candidates$/ }).first(),
+    routes.locator("summary code").filter({ hasText: /^\/interviews\/\{interview_id\}\/candidates$/ }).first(),
   ).toBeVisible();
   await shot(page, "api", true);
 
-  // Links are checked, then opened directly (in the tests below), so a click before the page is
-  // ready can't miss: a mention of the web hook, in the API's text, opens its tab, and a type
-  // its object on the objects tab.
-  await expect(page.locator('main div[lang] a[href="/api-docs?tab=webhooks"]').first()).toBeVisible();
-  await expect(page.locator('main a[href="/api-docs?tab=objects#Candidate"]').first()).toBeVisible();
+  // A route opens to what it returns: a type there links to its object on the objects tab.
+  const route = routes.filter({ has: page.locator('a[href="/api-docs?tab=objects#Candidate"]') }).first();
+  await route.locator("summary").click();
+  await expect(route.locator('a[href="/api-docs?tab=objects#Candidate"]').first()).toBeVisible();
 });
 
 // How to check a request, and the events.

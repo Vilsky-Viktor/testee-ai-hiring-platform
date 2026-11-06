@@ -1,6 +1,8 @@
+import { cn } from "cn"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import { getTranslations } from "next-intl/server"
+import { Fragment, type ReactNode } from "react"
 
 import { AiAppsRow } from "@/features/company/components/ai-apps-row"
 import { ApiRow } from "@/features/company/components/api-row"
@@ -22,9 +24,56 @@ import { CARD } from "@/config/cards"
 
 export const generateMetadata = () => translatedTitle("company", "integrations")
 
-/** The company's integrations: Slack, then the API and AI apps (MCP) together, then its ATSs, a
- * row each laid out like the companies list, in three groups in that order; each opens its own
- * page. Everyone in the company sees them; owners and admins change them. */
+/** Where a row belongs: `status`, when it has one, says whether a connection still works. */
+function stateOf(connected: boolean, status?: string | null): State {
+  if (!connected) {
+    return "available"
+  }
+
+  return status && status !== "connected" ? "broken" : "connected"
+}
+
+// A row's state decides its place: what's connected on top, what stopped working first of all.
+type State = "broken" | "connected" | "available"
+type Row = { key: string; group: string; state: State; node: ReactNode }
+
+/** Rows under a title, in the site's list. */
+function IntegrationGroup({
+  title,
+  keepCase = false,
+  rows,
+}: {
+  title: string
+  // An acronym: its capitals stay, though titles are lowercase.
+  keepCase?: boolean
+  rows: Row[]
+}) {
+  if (rows.length === 0) {
+    return null
+  }
+
+  return (
+    <section className="space-y-6">
+      <h2
+        className={cn(
+          "font-heading text-2xl font-medium",
+          keepCase && "normal-case"
+        )}
+      >
+        {title}
+      </h2>
+      <ul className={`${LIST_BOX} overflow-hidden`}>
+        {rows.map(({ key, node }) => (
+          <Fragment key={key}>{node}</Fragment>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+/** The company's integrations: those connected first, what stopped working on top, then the rest
+ * by kind (Slack; the API and AI apps; the ATSs), a row each laid out like the companies list;
+ * each opens its own page. Everyone in the company sees them; owners and admins change them. */
 export default async function IntegrationsPage({
   params,
 }: {
@@ -60,6 +109,66 @@ export default async function IntegrationsPage({
     redirect("/companies")
   }
 
+  const rows: Row[] = [
+    ...(slack
+      ? [
+          {
+            key: "slack",
+            group: "messaging",
+            state: stateOf(slack.connected, slack.status),
+            node: (
+              <SlackRow
+                companyId={companyId}
+                slack={slack}
+                canEdit={company.can_edit}
+              />
+            ),
+          },
+        ]
+      : []),
+    ...(api
+      ? [
+          {
+            key: "api",
+            group: "api",
+            state: stateOf(api.keys.length > 0),
+            node: <ApiRow companyId={companyId} settings={api} />,
+          },
+        ]
+      : []),
+    {
+      key: "ai",
+      group: "api",
+      state: stateOf(Boolean(connections?.length)),
+      node: <AiAppsRow companyId={companyId} connections={connections ?? []} />,
+    },
+    ...(integrations?.available
+      ? ATS_PROVIDERS.map((provider) => {
+          const connection =
+            integrations.connections.find(
+              (item) => item.provider === provider.id
+            ) ?? null
+
+          return {
+            key: provider.id,
+            group: "ats",
+            state: stateOf(connection !== null, connection?.status),
+            node: (
+              <AtsConnectionRow
+                companyId={companyId}
+                companyName={company.name}
+                provider={provider}
+                connection={connection}
+                canEdit={company.can_edit}
+              />
+            ),
+          }
+        })
+      : []),
+  ]
+  const available = (group: string) =>
+    rows.filter((row) => row.group === group && row.state === "available")
+
   return (
     <main className="mx-auto max-w-page space-y-8 px-6 py-12">
       <CompanyHeader
@@ -67,61 +176,33 @@ export default async function IntegrationsPage({
         companyId={companyId}
         current="integrations"
       >
-        {slack && (
-          <section className="space-y-6">
-            <h2 className="font-heading text-2xl font-medium">
-              {t("messagingGroup")}
-            </h2>
-            <ul className={`${LIST_BOX} overflow-hidden`}>
-              <SlackRow
-                companyId={companyId}
-                slack={slack}
-                canEdit={company.can_edit}
-              />
-            </ul>
-          </section>
+        <IntegrationGroup
+          title={t("connectedGroup")}
+          rows={[
+            ...rows.filter((row) => row.state === "broken"),
+            ...rows.filter((row) => row.state === "connected"),
+          ]}
+        />
+        <IntegrationGroup
+          title={t("messagingGroup")}
+          rows={available("messaging")}
+        />
+        <IntegrationGroup
+          title={t("apiAiAppsGroup")}
+          keepCase
+          rows={available("api")}
+        />
+        <IntegrationGroup
+          title={t("atsGroup")}
+          keepCase
+          rows={available("ats")}
+        />
+        {!integrations?.available && (
+          <p className={`${CARD} text-muted-foreground`}>
+            {/* Not loaded (its service failed), or not offered yet. */}
+            {integrations === null ? t("connectionsFailed") : t("unavailable")}
+          </p>
         )}
-        <section className="space-y-6">
-          {/* Acronyms: their capitals stay, though titles are lowercase. */}
-          <h2 className="font-heading text-2xl font-medium normal-case">
-            {t("apiAiAppsGroup")}
-          </h2>
-          <ul className={`${LIST_BOX} overflow-hidden`}>
-            {api && <ApiRow companyId={companyId} settings={api} />}
-            <AiAppsRow companyId={companyId} connections={connections ?? []} />
-          </ul>
-        </section>
-        <section className="space-y-6">
-          {/* An acronym: its capitals stay, though titles are lowercase. */}
-          <h2 className="font-heading text-2xl font-medium normal-case">
-            {t("atsGroup")}
-          </h2>
-          {integrations?.available ? (
-            <ul className={`${LIST_BOX} overflow-hidden`}>
-              {ATS_PROVIDERS.map((provider) => (
-                <AtsConnectionRow
-                  key={provider.id}
-                  companyId={companyId}
-                  companyName={company.name}
-                  provider={provider}
-                  connection={
-                    integrations.connections.find(
-                      (item) => item.provider === provider.id
-                    ) ?? null
-                  }
-                  canEdit={company.can_edit}
-                />
-              ))}
-            </ul>
-          ) : (
-            <p className={`${CARD} text-muted-foreground`}>
-              {/* Not loaded (its service failed), or not offered yet. */}
-              {integrations === null
-                ? t("connectionsFailed")
-                : t("unavailable")}
-            </p>
-          )}
-        </section>
       </CompanyHeader>
     </main>
   )

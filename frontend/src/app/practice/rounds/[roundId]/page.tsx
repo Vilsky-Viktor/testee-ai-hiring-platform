@@ -3,13 +3,14 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getLocale, getTranslations } from "next-intl/server"
 
-import { GradeBlock, GradeCard } from "@/components/common/grade-card"
+import { LocalDate } from "@/components/common/local-date"
+import { SummaryCards } from "@/components/common/summary-cards"
 import { BackLink } from "@/components/common/back-link"
 import { PageHeader } from "@/components/common/page-header"
 import { HireWithTemplate } from "@/features/practice/components/hire-with-template"
 import { OpenToOffersCard } from "@/features/practice/components/open-to-offers"
 import { PracticeActions } from "@/features/practice/components/practice-actions"
-import { PracticeReview } from "@/features/practice/components/practice-review"
+import { PracticeTopics } from "@/features/practice/components/practice-review"
 import { SignInPrompt } from "@/components/common/sign-in-prompt"
 import { Button } from "@/components/ui/button"
 import { TOKEN_COOKIE } from "@/config/auth"
@@ -21,8 +22,8 @@ import { PageKey } from "@/components/common/page-key"
 
 export const generateMetadata = () => translatedTitle("practice", "results")
 
-/** A talent's practice round: the grade, each topic's score, and every question with the
- * right answer and their own pick. An unfinished round offers to continue it. */
+/** A talent's practice round: the result at a glance, and each topic with its score, opening to
+ * every question with the right answer and their own pick. An unfinished round offers to continue it. */
 export default async function PracticeRoundPage({
   params,
 }: {
@@ -101,46 +102,31 @@ export default async function PracticeRoundPage({
           {/* Having just finished a round, a talent can let companies hiring for it find them:
               first, where they see it. */}
           {round.finished && offers && <OpenToOffersCard initial={offers} />}
-          {/* The grade, and how many the talent picked an answer for. */}
-          <GradeCard>
-            <GradeBlock
-              value={formatPercent(round.grade ?? 0, locale)}
-              label={t("grade")}
-            />
-            <GradeBlock
-              value={
-                <>
-                  {round.answered}
-                  {/* The total smaller, so the answered count stands out. */}
-                  <span className="text-3xl">/{round.total}</span>
-                </>
-              }
-              label={t("answeredLabel")}
-            />
-          </GradeCard>
-          {round.topics.map((topic) => (
-            <section key={topic.title} className="space-y-4">
-              {/* On phones the topic, then its grade under it, centered. */}
-              <div className="flex items-center justify-between gap-4 max-sm:flex-col max-sm:text-center">
-                <h2 className="font-heading text-2xl font-medium normal-case">
-                  {topic.title}
-                </h2>
-                <p className="w-24 text-center">
-                  <span className="block text-4xl font-light tabular-nums">
-                    {formatPercent(topic.score, locale)}
-                  </span>
-                  <span className="block text-sm text-muted-foreground">
-                    {t("gradeLabel")}
-                  </span>
-                </p>
-              </div>
-              <PracticeReview
-                sessionId={topic.session_id}
-                items={topic.review}
-                language={round.language}
-              />
-            </section>
-          ))}
+          <SummaryCards
+            testId="round-summary"
+            className="max-sm:*:last:col-span-2 lg:grid-cols-3"
+            rows={[
+              {
+                id: "grade",
+                label: t("gradeLabel"),
+                value: formatPercent(round.grade ?? 0, locale),
+              },
+              {
+                id: "answered",
+                label: t("answeredCard"),
+                value: t("answeredOf", {
+                  done: round.answered,
+                  total: round.total,
+                }),
+              },
+              {
+                id: "started",
+                label: t("startedCard"),
+                value: <LocalDate iso={round.started_at} />,
+              },
+            ]}
+          />
+          <PracticeTopics topics={round.topics} language={round.language} />
         </>
       )}
 

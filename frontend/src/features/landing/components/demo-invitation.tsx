@@ -3,28 +3,23 @@
 import { cn } from "cn"
 import { useTranslations } from "next-intl"
 
-import { TimeFact } from "@/components/common/invite-intro"
+import { SummaryCards } from "@/components/common/summary-cards"
 import { DemoLogo } from "@/features/landing/components/demo-logo"
 import {
   DEMO_COMPANY,
   DEMO_QUESTION_SECONDS,
-  DEMO_TITLE,
   DEMO_TOTAL_MINUTES,
 } from "@/config/candidates-demo"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
 import { bdi } from "@/lib/bidi"
 
-// The real page's rules, shortened; phones show the first few.
-const RULES = [
-  "pick",
-  "change",
-  "time",
-  "unanswered",
-  "saved",
-  "extraTime",
-  "people",
-  "stay",
-] as const
-const PHONE_RULES = 4
+// The real page's rules, shortened, in its groups (`invite.groups`); by voice, its rule comes last
+// in the first group. Phones show the first group only.
+const GROUPS = {
+  how: ["pick", "change", "unanswered"],
+  time: ["time", "saved", "extraTime"],
+  rights: ["people", "stay"],
+} as const
 
 /** A candidate's start page, small, for the landing: the company's logo and who invited them,
  * the interview's title and times, its start (`action`), and the rules on a gray area beside them
@@ -40,6 +35,8 @@ export function DemoInvitation({
 }) {
   const t = useTranslations("invite")
   const rules = useTranslations("landing.candidates.rules")
+  const { title } = useDemoContent("candidates")
+  let number = 0
 
   return (
     <div className="grid flex-1 gap-6 text-center md:grid-cols-[5fr_6fr] md:gap-8">
@@ -61,48 +58,64 @@ export function DemoInvitation({
             data-demo-target="title"
             className="font-heading text-2xl leading-tight font-medium tracking-tight text-balance"
           >
-            {DEMO_TITLE}
+            {title}
           </p>
         </div>
-        <div className="flex justify-center gap-10">
-          <TimeFact
-            label={t("timePerQuestion")}
-            value={DEMO_QUESTION_SECONDS}
-            unit={t("secondsUnit")}
-          />
-          <TimeFact
-            label={t("wholeInterview")}
-            value={DEMO_TOTAL_MINUTES}
-            unit={t("minutesUnit")}
-          />
-        </div>
+        <SummaryCards
+          className="text-start sm:grid-cols-2!"
+          rows={[
+            {
+              id: "time-per-question",
+              label: t("timePerQuestion"),
+              value: `${DEMO_QUESTION_SECONDS} ${t("secondsUnit")}`,
+            },
+            {
+              id: "total-minutes",
+              label: t("wholeInterview"),
+              value: `${DEMO_TOTAL_MINUTES} ${t("minutesUnit")}`,
+            },
+          ]}
+        />
         <div className="max-md:order-last">{action}</div>
       </div>
-      {/* The rules, numbered in the brand colour, on a gray area as on the real page: out to the
-          frame's edges, the full height of its end side from tablets up; across it on phones. */}
-      <ol className="-mx-5 flex flex-col justify-center gap-3 bg-surface px-5 py-6 text-start text-sm text-muted-foreground sm:-mx-8 sm:px-8 md:-my-8 md:ms-0 md:rounded-e-[calc(var(--radius-xl)-1px)] md:py-8">
-        {[
-          ...(voice ? [t("voice")] : []),
-          ...RULES.map((rule) =>
-            rules.rich(rule, { company: DEMO_COMPANY, ...bdi })
-          ),
-        ].map((rule, index) => (
-          <li
-            key={index}
-            className={cn(
-              "flex items-baseline gap-3",
-              index >= PHONE_RULES && "max-md:hidden",
-              // By voice, its rule leaves out the last ones, so both pages are as tall.
-              voice && index >= RULES.length - 1 && "md:hidden"
-            )}
+      {/* The rules by what they're about, numbered on through them in the brand colour, on a gray
+          area as on the real page: out to the frame's edges, the full height of its end side from
+          tablets up; across it on phones. */}
+      <div className="-mx-5 flex flex-col justify-center gap-5 bg-surface px-5 py-6 text-start text-sm text-muted-foreground sm:-mx-8 sm:px-8 md:-my-8 md:ms-0 md:rounded-e-[calc(var(--radius-xl)-1px)] md:py-8">
+        {Object.entries(GROUPS).map(([group, keys], place) => (
+          <div
+            key={group}
+            className={cn("space-y-2", place > 0 && "max-md:hidden")}
           >
-            <span className="w-5 shrink-0 text-base font-medium text-primary tabular-nums">
-              {index + 1}.
-            </span>
-            <span>{rule}</span>
-          </li>
+            <p className="font-heading text-base font-medium text-foreground">
+              {t(`groups.${group as keyof typeof GROUPS}`)}
+            </p>
+            <ol className="space-y-2">
+              {[
+                ...keys
+                  .slice(0, group === "how" && voice ? 2 : undefined)
+                  .map((rule) =>
+                    rules.rich(rule, { company: DEMO_COMPANY, ...bdi })
+                  ),
+                ...(group === "how" && voice
+                  ? [t("voice"), rules.rich("unanswered")]
+                  : []),
+              ].map((rule, index) => {
+                number += 1
+
+                return (
+                  <li key={index} className="flex items-baseline gap-3">
+                    <span className="w-5 shrink-0 text-base font-medium text-primary tabular-nums">
+                      {number}.
+                    </span>
+                    <span>{rule}</span>
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
         ))}
-      </ol>
+      </div>
     </div>
   )
 }

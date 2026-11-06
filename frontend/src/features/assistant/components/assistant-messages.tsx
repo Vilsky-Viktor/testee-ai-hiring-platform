@@ -1,5 +1,7 @@
 "use client"
 
+import { cn } from "cn"
+import { ArrowRightIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { AnswerBlocks } from "@/features/assistant/components/answer-blocks"
@@ -8,6 +10,7 @@ import { AnswerMarkdown } from "@/features/assistant/components/answer-markdown"
 import { AnswerVote } from "@/features/assistant/components/answer-vote"
 import { ChatBubble, ThinkingDots } from "@/components/common/chat-bubble"
 import { KeepAcronyms } from "@/components/common/keep-acronyms"
+import { MiraName } from "@/components/common/mira-name"
 import { Button } from "@/components/ui/button"
 import { WELCOME_QUESTIONS } from "@/config/assistant"
 import { hasMessage } from "@/lib/messages"
@@ -16,8 +19,8 @@ import type { ChatMessage, Vote } from "@/types/assistant"
 /** The conversation in the panel: questions, answers with what their tools found, the tools
  * at work while one is written, and a failed answer's error with Try again. With no messages
  * yet, a welcome for the user's stage: what the assistant helps with there, and questions to
- * tap, first "What can I do on this page?" on a page with a guide (`onPage`). Under each written
- * answer, thumbs up and down. */
+ * tap, first "What can I do on this page?" on a page with a guide (`onPage`). Under the latest
+ * answer and any voted on, thumbs up and down; under the others, on hover. */
 export function AssistantMessages({
   messages,
   streaming,
@@ -80,11 +83,15 @@ export function AssistantMessages({
           {asks.map((question) => (
             <li key={question}>
               <Button
-                variant="outline"
-                className="h-auto w-full justify-start rounded-xl border-0 px-4 py-3 text-start text-sm whitespace-normal normal-case"
+                variant="ghost"
+                className="h-auto w-full justify-between gap-3 rounded-xl bg-surface px-4 py-3 text-start text-base whitespace-normal normal-case hover:bg-input"
                 onClick={() => onAsk(question)}
               >
                 {question}
+                <ArrowRightIcon
+                  data-icon="inline-end"
+                  className="text-muted-foreground rtl:-scale-x-100"
+                />
               </Button>
             </li>
           ))}
@@ -111,7 +118,7 @@ export function AssistantMessages({
           </Button>
         </div>
       )}
-      <ul className="space-y-3">
+      <ul className="space-y-6">
         {messages.map((message, index) => {
           if (message.removed) {
             return (
@@ -167,9 +174,10 @@ export function AssistantMessages({
   )
 }
 
-/** One answer's card: the tools at work and the dots while it's written, its text, and its
- * error (with Try again on the last one). A written answer, saved by the assistant or signed
- * by the help chat, can be voted on, right under it. */
+/** One answer: Mira's name, then what she's doing now, one line replaced as she goes (dots before
+ * the first step), until her text starts, and its error (with Try again on the last one). A
+ * written answer, saved by the assistant or signed by the help chat, can be voted on, right under
+ * it. */
 function AssistantAnswer({
   message,
   writing,
@@ -186,35 +194,30 @@ function AssistantAnswer({
   onNavigate: () => void
 }) {
   const common = useTranslations("common")
+  const working = writing && !message.content
 
   return (
     <ChatBubble
       role="assistant"
-      className="space-y-2 border bg-transparent p-4 whitespace-normal"
+      className="space-y-2 whitespace-normal"
       after={
         !writing &&
         message.content &&
         !message.error &&
         (message.id || message.helpAnswer) && (
-          <AnswerVote value={message.vote ?? null} onVote={onVote} />
+          <QuietVote
+            quiet={!last && !message.vote}
+            value={message.vote ?? null}
+            onVote={onVote}
+          />
         )
       }
       content={
         <>
-          {writing &&
-            message.progress?.map((label) => (
-              <p key={label} className="text-xs text-muted-foreground">
-                {label}
-              </p>
-            ))}
-          {message.content ? (
+          <MiraName working={working} />
+          {working && <AnswerStep step={message.progress?.at(-1)} />}
+          {message.content && (
             <AnswerMarkdown text={message.content} onNavigate={onNavigate} />
-          ) : (
-            writing && (
-              <span className="flex h-5 items-center gap-1">
-                <ThinkingDots label={common("thinking")} />
-              </span>
-            )
           )}
           {message.error && (
             <span className="flex flex-wrap items-center gap-3 text-destructive">
@@ -229,5 +232,43 @@ function AssistantAnswer({
         </>
       }
     />
+  )
+}
+
+/** What Mira is doing before her text starts: the `step` she's on, or dots before the first. */
+function AnswerStep({ step }: { step?: string }) {
+  const common = useTranslations("common")
+
+  return step ? (
+    <p key={step} className="animate-in text-sm text-muted-foreground fade-in">
+      {step}
+    </p>
+  ) : (
+    <span className="flex h-5 items-center gap-1">
+      <ThinkingDots label={common("thinking")} />
+    </span>
+  )
+}
+
+/** An answer's votes; `quiet`, they show only while it's hovered or they're focused (always on
+ * touch screens). */
+function QuietVote({
+  quiet,
+  value,
+  onVote,
+}: {
+  quiet: boolean
+  value: Vote | null
+  onVote: (value: Vote | null) => void
+}) {
+  return (
+    <div
+      className={cn(
+        quiet &&
+          "opacity-0 transition-opacity group-hover/answer:opacity-100 focus-within:opacity-100 pointer-coarse:opacity-100"
+      )}
+    >
+      <AnswerVote value={value} onVote={onVote} />
+    </div>
   )
 }

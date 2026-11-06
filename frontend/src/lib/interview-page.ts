@@ -6,6 +6,7 @@ import { serverFetch } from "@/lib/server-api"
 import type {
   Candidate,
   CandidateFilters,
+  CandidateSummary,
   DiscoverPerson,
   InterviewDetail,
   InterviewNote,
@@ -53,12 +54,17 @@ export async function loadInterviewPage(id: string, query: InterviewQuery) {
   const search = query.q?.trim() ?? ""
   const shownCandidates = query.tab === "candidates"
   const firstPath = candidatesPath(id, sort, search, query.status ?? null)
-  const [interview, filters, firstPage, limits, notes, people] =
+  const [interview, filters, summary, firstPage, limits, notes, people] =
     await Promise.all([
       serverFetch<InterviewDetail>(`/companies/interviews/${id}`),
       shownCandidates
         ? serverFetch<CandidateFilters>(
             "/companies/interviews/candidates/filters"
+          )
+        : null,
+      shownCandidates
+        ? serverFetch<CandidateSummary>(
+            `/companies/interviews/${id}/candidates/summary`
           )
         : null,
       shownCandidates
@@ -87,6 +93,7 @@ export async function loadInterviewPage(id: string, query: InterviewQuery) {
   return {
     interview,
     filters,
+    summary,
     candidates,
     limits,
     sort,

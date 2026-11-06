@@ -46,8 +46,6 @@ test("the hero's box asks a visitor to sign in to start an interview", async ({
   const form = page.locator("main form").first();
   const submit = form.locator('button[type="submit"]');
   await expect(submit).toBeDisabled();
-  // The box shows the send shortcut.
-  await expect(form.getByTestId("submit-hint")).toBeVisible();
   await form.locator("textarea").fill("A backend developer who knows Python and Postgres");
 
   await expect(async () => {
@@ -157,7 +155,7 @@ test("the comparison shows testee's price range from the catalog", async ({ page
   await expect(section.getByRole("link")).toHaveAttribute("href", "/compare");
 });
 
-test("the closing buttons lead to Mira, the videos, the FAQ, the guides, the features and the flow", async ({
+test("the closing buttons lead to Mira, the videos and the FAQ", async ({
   page,
 }) => {
   test.setTimeout(120_000);
@@ -166,28 +164,13 @@ test("the closing buttons lead to Mira, the videos, the FAQ, the guides, the fea
   const closing = page.locator("#help");
   await closing.scrollIntoViewIfNeeded();
   const buttons = closing.locator("div:has(> a[href='/faq']) > *");
-  await expect(buttons).toHaveCount(4);
+  await expect(buttons).toHaveCount(3);
   await expect(buttons.nth(0)).toHaveAttribute("data-assistant-toggle");
   await expect(buttons.nth(1)).toHaveAttribute("href", DEMOS);
   await expect(buttons.nth(1)).toHaveAttribute("target", "_blank");
   await expect(buttons.nth(1)).toHaveAttribute("rel", /noopener/);
   await expect(buttons.nth(2)).toHaveAttribute("href", "/faq");
-  await expect(buttons.nth(3)).toHaveAttribute("href", "/guides");
-  // The row under them: the features and the hiring flow pages.
-  const more = closing.locator("div:has(> a[href='/hiring-flow']) > *");
-  await expect(more).toHaveCount(2);
-  await expect(more.nth(0)).toHaveAttribute("href", "/features");
-  await expect(more.nth(1)).toHaveAttribute("href", "/hiring-flow");
 
   await buttons.nth(0).click();
   await expect(page.getByRole("dialog")).toBeVisible();
-});
-
-test("the guides button opens the guides", async ({ page }) => {
-  test.setTimeout(120_000);
-  await page.goto("/");
-  await loaded(page);
-  await page.locator("#help a[href='/guides']").click();
-  // The local dev server compiles the guides on first open.
-  await expect(page).toHaveURL(/\/guides$/, { timeout: 30_000 });
 });

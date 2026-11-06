@@ -1,20 +1,27 @@
 "use client"
 
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
-import { MakeOwner } from "@/features/company/components/make-owner"
-import { RemoveMember } from "@/features/company/components/remove-member"
-import { RolePicker } from "@/features/company/components/role-picker"
-import { CopyField } from "@/components/common/copy-field"
-import { Badge } from "@/components/ui/badge"
+import { CopyLinkButton } from "@/components/common/copy-field"
 import { WrappedEmail } from "@/components/common/wrapped-email"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
+import { ROW_HOVER } from "@/config/lists"
 import type { MemberRole } from "@/config/roles"
+import { MemberMenu } from "@/features/company/components/member-menu"
+import { RolePicker } from "@/features/company/components/role-picker"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
+import { formatDay } from "@/lib/format"
+import { firstGrapheme } from "@/lib/graphemes"
 import { hasMessage } from "@/lib/messages"
 import type { CompanyMember } from "@/types/company"
 
+/** A member or a pending invite: their picture or first letter, name and email, when they joined
+ * or were invited, their role (a choice for the owner) and their menu; an invite also has the way
+ * to copy its link. On phones the role and menu take their own line. */
 export function MemberRow({
   companyId,
   member,
@@ -26,9 +33,10 @@ export function MemberRow({
 }) {
   const t = useTranslations("members")
   const roles = useTranslations("roles")
+  const locale = useLocale()
   const [role, setRole] = useState(member.role)
   const [saving, setSaving] = useState(false)
-  const [makingOwner, setMakingOwner] = useState(false)
+  const { markSaved, savedText } = useSavedMark()
 
   // The owner changes an admin to a viewer or back; the row shows the new role once saved.
   async function changeRole(next: MemberRole) {
@@ -44,6 +52,7 @@ export function MemberRow({
         { method: "PUT", body: JSON.stringify({ role: next }) }
       )
       setRole(next)
+      markSaved()
     } catch (error) {
       toast.error(apiErrorMessage(error, t("roleFailed")))
     } finally {
@@ -51,58 +60,63 @@ export function MemberRow({
     }
   }
 
+  const since = member.joined ? member.joined_at : member.created_at
+
   return (
-    <div className="space-y-3 p-6">
-      {/* On phones the role, or choosing it and removing the member, take their own line under
-          the email. */}
-      <div className="flex items-center justify-between gap-4 max-sm:flex-wrap max-sm:gap-3">
-        <span className="min-w-0 max-sm:basis-full">
+    <div
+      className={`group/row flex items-center justify-between gap-4 p-6 max-sm:flex-wrap max-sm:gap-3 ${ROW_HOVER}`}
+    >
+      <span className="flex min-w-0 items-center gap-4 max-sm:basis-full">
+        <Avatar size="lg">
+          {member.photo_url && <AvatarImage src={member.photo_url} alt="" />}
+          <AvatarFallback>
+            {firstGrapheme(member.name ?? member.email).toUpperCase()}
+          </AvatarFallback>
+        </Avatar>
+        <span className="min-w-0">
           <span className="block text-lg font-medium">
-            <WrappedEmail email={member.email} />
+            {member.name ?? <WrappedEmail email={member.email} />}
           </span>
-          <span className="text-sm text-muted-foreground">
-            {member.joined ? t("joined") : t("invited")}
+          {member.name && (
+            <span className="block text-sm text-muted-foreground">
+              <WrappedEmail email={member.email} />
+            </span>
+          )}
+          <span className="block text-sm text-muted-foreground">
+            {since
+              ? t(member.joined ? "joinedOn" : "invitedOn", {
+                  date: formatDay(since, locale),
+                })
+              : t(member.joined ? "joined" : "invited")}
           </span>
         </span>
-        <span className="flex items-center gap-2 max-sm:basis-full">
-          {/* The owner manages every row but their own: its role and removing it. */}
-          {member.removable ? (
+      </span>
+      <span className="flex items-center gap-2 max-sm:basis-full">
+        {!member.joined && member.token && (
+          <CopyLinkButton path={`/join/${member.token}`} />
+        )}
+        {/* The owner manages every row but their own: its role, and its menu. */}
+        {member.removable ? (
+          <>
             <RolePicker
               role={role as MemberRole}
               onChange={changeRole}
               disabled={saving}
               className="w-44"
-              // Choosing "owner" asks to confirm handing the company over first.
-              onMakeOwner={
-                member.can_own ? () => setMakingOwner(true) : undefined
-              }
+              saved={savedText()}
             />
-          ) : (
-            <Badge variant="secondary" className="h-7 px-3 text-sm font-light">
-              {hasMessage(roles, role) ? roles(role) : role}
-            </Badge>
-          )}
-          {member.removable && (
-            <RemoveMember
+            <MemberMenu
               companyId={companyId}
               member={member}
               onRemoved={onRemoved}
             />
-          )}
-        </span>
-      </div>
-      {member.can_own && (
-        <MakeOwner
-          companyId={companyId}
-          member={member}
-          open={makingOwner}
-          onOpenChange={setMakingOwner}
-        />
-      )}
-      {/* The join link in the site's copy field, like the test's shareable link. */}
-      {!member.joined && member.token && (
-        <CopyField path={`/join/${member.token}`} />
-      )}
+          </>
+        ) : (
+          <Badge variant="secondary" className="h-8 px-4 text-sm font-light">
+            {hasMessage(roles, role) ? roles(role) : role}
+          </Badge>
+        )}
+      </span>
     </div>
   )
 }

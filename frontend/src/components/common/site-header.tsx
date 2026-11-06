@@ -1,25 +1,29 @@
 "use client"
 
+import { usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
 
 import { AssistantButton } from "@/features/assistant/components/assistant-button"
+import { HeaderCreate } from "@/components/common/header-create"
 import { HeaderSearch, PhoneSearch } from "@/components/common/global-search"
 import { useAuth } from "@/providers/auth-provider"
-import { LocalizedLink } from "@/components/common/localized-link"
+import { LocalizedLink, useUrlLocale } from "@/components/common/localized-link"
 import { NotificationBell } from "@/components/common/notification-bell"
 import { SiteMenu } from "@/components/common/site-menu"
 import { SiteNav } from "@/components/common/site-nav"
-import { ThemeModes } from "@/components/common/theme-toggle"
 import { UserMenu } from "@/components/common/user-menu"
 import { Wordmark } from "@/components/common/wordmark"
+import { localizeHref } from "@/lib/locale-path"
 
 export function SiteHeader() {
   const tc = useTranslations("common")
   const { user, loading } = useAuth()
+  const pathname = usePathname()
+  const home = pathname === localizeHref(useUrlLocale(), "/")
 
   return (
-    // Exactly 3.5rem including the border.
-    <header className="relative h-14 border-b">
+    // Exactly 3.5rem including the border; it stays at the top as the page scrolls.
+    <header className="sticky top-0 z-30 h-14 border-b bg-background/80 backdrop-blur">
       {/* Both sides are h-8 boxes centered in the row, so they share one center line. */}
       <div className="mx-auto flex h-full max-w-page items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6">
         {/* The logo and links share a text baseline; the separator stays centered. */}
@@ -45,15 +49,9 @@ export function SiteHeader() {
         <HeaderSearch />
         <div className="flex h-8 items-center gap-3 max-[359px]:gap-1.5">
           <PhoneSearch />
-          {/* Hidden on phones, where it doesn't fit next to Sign in; signed-in users have it in
-              their menu. */}
-          {!loading && !user && (
-            <div className="hidden w-32 sm:block">
-              <ThemeModes />
-            </div>
-          )}
           <AssistantButton />
           <NotificationBell />
+          {!loading && !user && <HeaderCreate home={home} />}
           <UserMenu />
         </div>
       </div>

@@ -3,13 +3,16 @@ import { redirect } from "next/navigation"
 import { getTranslations } from "next-intl/server"
 
 import { BackLink } from "@/components/common/back-link"
-import { AiAppsInstructions } from "@/components/common/ai-apps-setup"
+import { AiAppsSetup } from "@/components/common/ai-apps-setup"
+import { InfoCard } from "@/components/common/warning-card"
+import { AiAppsPrompts } from "@/features/company/components/ai-apps-prompts"
+import { DotsMenu } from "@/components/common/dots-menu"
 import { AiAppsSwitch } from "@/features/company/components/ai-apps-switch"
 import { ConnectedApps } from "@/features/company/components/connected-apps"
 import { PageHeader } from "@/components/common/page-header"
 import { SignInPrompt } from "@/components/common/sign-in-prompt"
 import { Badge } from "@/components/ui/badge"
-import { MCP_MARK } from "@/config/ai-apps"
+import { MCP_DOCS_PATH, MCP_MARK } from "@/config/ai-apps"
 import { TOKEN_COOKIE } from "@/config/auth"
 import { serverFetch } from "@/lib/server-api"
 import type { Company } from "@/types/company"
@@ -32,6 +35,7 @@ export default async function AiAppsPage({
   const t = await getTranslations("company")
   const ai = await getTranslations("aiApps")
   const ats = await getTranslations("ats")
+  const api = await getTranslations("api")
   // Asked together: the connections are the person's own.
   const [company, connections] = signedIn
     ? await Promise.all([
@@ -63,8 +67,7 @@ export default async function AiAppsPage({
           </BackLink>
         }
         title={
-          // On phones the Instructions go on their own line, full width.
-          <div className="flex items-start justify-between gap-4 max-sm:flex-col max-sm:items-stretch">
+          <div className="flex items-start justify-between gap-4">
             <div className="flex min-w-0 items-center gap-4">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-surface">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -80,34 +83,41 @@ export default async function AiAppsPage({
                     {ai("title")}
                   </h1>
                   {connections.length > 0 && (
-                    <Badge className="h-7 shrink-0 px-3 text-sm font-light max-sm:hidden">
+                    <Badge className="h-8 shrink-0 px-4 text-sm font-light max-sm:hidden">
                       {ats("statusConnected")}
                     </Badge>
                   )}
                 </div>
-                <p className="text-base text-muted-foreground">
-                  {ai("subtitle")}
-                </p>
                 {/* On phones "connected" goes under the title and subtitle. */}
                 {connections.length > 0 && (
-                  <Badge className="mt-2 h-7 px-3 text-sm font-light sm:hidden">
+                  <Badge className="mt-2 h-8 px-4 text-sm font-light sm:hidden">
                     {ats("statusConnected")}
                   </Badge>
                 )}
               </div>
             </div>
-            <div className="max-sm:mt-4 max-sm:*:w-full">
-              <AiAppsInstructions />
-            </div>
+            <DotsMenu
+              items={[{ label: api("docs"), href: MCP_DOCS_PATH }]}
+            />
           </div>
         }
       />
+      <InfoCard className="max-sm:-mx-6 max-sm:rounded-none">
+        {ai("subtitle")}
+      </InfoCard>
       <AiAppsSwitch
         companyId={companyId}
+        companyName={company.name}
         allowed={company.ai_apps_allowed ?? true}
         canEdit={company.can_edit}
       />
-      <ConnectedApps connections={connections} />
+      {connections.length > 0 && (
+        <>
+          <ConnectedApps connections={connections} />
+          <AiAppsPrompts />
+        </>
+      )}
+      <AiAppsSetup />
     </main>
   )
 }

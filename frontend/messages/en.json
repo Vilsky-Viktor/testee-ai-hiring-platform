@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "Settings",
+    "preferences": "Preferences",
+    "accountId": "Account ID",
+    "deleteTitle": "Delete account",
+    "deleteNote": "Permanently removes your account and your data.",
     "language": "Language",
     "languageNote": "For the interface and the help chat's replies, and the language new interviews start in. You can create an interview in any supported language.",
     "languageFailed": "Couldn't change the language. Please try again.",
@@ -12,7 +16,7 @@
     "account": "Your account",
     "accountNote": "Quote this ID when you write to us about your account.",
     "yourData": "Your data",
-    "yourDataNote": "Download everything testee. holds about you, or delete your account.",
+    "yourDataNote": "Download everything testee holds about you.",
     "download": "Download my data",
     "downloadFailed": "Couldn't prepare your data. Please try again.",
     "delete": "Delete account",
@@ -50,7 +54,8 @@
     "system": "System",
     "light": "Light",
     "dark": "Dark",
-    "topUp": "Top up"
+    "topUp": "Top up",
+    "workspace": "My workspace"
   },
   "nav": {
     "main": "Main",
@@ -60,15 +65,19 @@
     "terms": "Terms",
     "docs": "Legal docs",
     "back": "Back",
-    "hiring": "dashboard",
+    "hiring": "workspace",
     "pricingLink": "pricing",
     "faq": "FAQ",
     "contact": "Contact us",
     "about": "About us",
     "practice": "Free practice",
     "tests": "Skills tests",
-    "preEmploymentTesting": "Pre-employment testing",
-    "aiInterviews": "AI interviews",
+    "createTest": "Create a test",
+    "footerProduct": "Product",
+    "footerResources": "Resources",
+    "footerCompany": "Company",
+    "footerLegal": "Legal",
+    "footerTagline": "Fair, timed interviews made from your job description.",
     "compare": "Compare",
     "guides": "Guides",
     "apiDocs": "Developer docs",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "Back to top",
     "morePages": "More pages",
+    "moreActions": "More actions",
     "copyLink": "Copy link",
     "linkCopied": "Link copied",
     "home": "Home",
     "cancel": "Cancel",
     "save": "Save",
     "saving": "Saving…",
+    "saved": "Saved",
     "close": "Close",
     "delete": "Delete",
     "deleting": "Deleting…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "Something went wrong",
     "text": "Please try again. If it keeps happening, come back later.",
+    "reference": "Reference: {id}",
     "notFound": "Page not found",
     "notFoundText": "That page doesn't exist or was removed.",
     "report": "Report",
@@ -152,16 +164,16 @@
   },
   "home": {
     "title": "Test everyone\nHire the best",
-    "text": "AI turns your job description into a professional timed interview.",
-    "price": "Just {price} per candidate."
+    "text": "AI turns your job description into a professional timed interview."
   },
   "start": {
     "placeholder": "Paste your job description here…",
     "description": "Job description",
-    "submit": "Create an interview",
+    "submit": "Create",
+    "newInterview": "Your new interview",
     "whichCompany": "Which company is this interview for?",
     "firstCompany": "What's your company called?",
-    "newCompany": "A new company",
+    "newCompany": "New company",
     "companyName": "Company name",
     "freeCandidates": "Your first company interviews its first {count, plural, one {candidate} other {# candidates}} free.",
     "continue": "Continue",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "Starts through one interview's link an hour",
       "LINK_STARTS_PER_IP_HOUR": "Link starts per address an hour",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "Bias-audit exports per company a day",
+      "ACTION_LOG_EXPORTS_PER_DAY": "Action log downloads per company a day",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "Credit history downloads per company a day",
       "MAX_BULK_INVITES": "Candidates in one list or file",
       "MAX_PENDING_INVITES": "Pending team invites per company",
       "MEMBER_INVITES_PER_UNPAID_DAY": "Team invites per unpaid company a day",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "Calls to a company's ATS per company a minute",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "ATS web hooks per sending address a minute",
       "ATS_CONNECTS_PER_HOUR": "ATS connections per company an hour",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "Slack test messages per company an hour",
       "RESEND_DAILY_LIMIT": "Emails a day through Resend",
       "RESEND_RESERVE_PERCENT": "Share of the Resend emails a day kept from bulk sends",
       "CAMPAIGNS_PER_KIND_DAY": "Campaigns of each kind a day",
@@ -775,7 +790,9 @@
     "useFailed": "Couldn't start an interview from this template. Please try again.",
     "inProgress": "in progress: {done}/{total, plural, one {# topic} other {# topics}}",
     "completed": "completed",
-    "warningText": "<b>Templates are ready-made for common roles.</b> For a closer fit, create an interview from your job description."
+    "warningText": "<b>Want a closer fit?</b> Create an interview from your job description.",
+    "contents": "{topics, plural, one {# topic} other {# topics}}, {questions, plural, one {# question} other {# questions}}, {minutes, plural, one {# min} other {# min}}",
+    "usedIn": "{count, plural, one {Used in # interview} other {Used in # interviews}}"
   },
   "billing": {
     "paidTitle": "Payment received",
@@ -808,6 +825,10 @@
     "paysInChange": "Change currency",
     "candidates": "{count, plural, one {# candidate} other {# candidates}}",
     "perCandidate": "{price}<unit>/candidate</unit>",
+    "enough": "Enough for {count, plural, one {# candidate} other {# candidates}}",
+    "pay": "Pay {price}",
+    "quote": "{count, plural, one {# candidate} other {# candidates}} at {price} each, {credits, number} credits",
+    "nextPrice": "{count, plural, one {# more candidate} other {# more candidates}} and each costs {price}",
     "howMany": "Candidates to top up",
     "credits": "{count, plural, one {# credit} other {# credits}}",
     "candidatesWord": "{count, plural, one {candidate} other {candidates}}",
@@ -863,6 +884,19 @@
     "markedWrong": "Thanks. It's being checked, and will be fixed or replaced.",
     "markWrongFailed": "Couldn't send it for checking. Please try again.",
     "ofCount": "of {count, number}",
+    "perCandidate": "Number of questions per candidate",
+    "limitShort": "Questions per candidate",
+    "topicsColumn": "Topics & subtopics",
+    "limitLine": "{limit, number} of {count, number} questions per candidate",
+    "noMatches": "No questions here.",
+    "summary": {
+      "total": "Questions"
+    },
+    "filters": {
+      "all": "All",
+      "reported": "Reported"
+    },
+    "disabledCount": "{count, plural, one {# question disabled} other {# questions disabled}}",
     "per": "per",
     "candidate": "candidate",
     "correct": "Correct answer",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "Your turn",
     "voiceThinking": "Thinking",
     "miraLabel": "AI interviewer",
+    "voiceHeardAnswer": "I heard {answer}.",
+    "questionOf": "Question {number, number} of {count, number}",
+    "answeredOf": "{done, number} of {total, number}",
+    "keysHint": "Press A–{last} to pick, Enter for the next question.",
     "voiceStatus": {
       "off": "Mira is getting ready…",
       "starting": "Mira is getting ready…",
@@ -962,9 +1000,11 @@
     "cancelling": "Cancelling…",
     "cancelFailed": "Couldn't cancel the generation. Please try again.",
     "writing": "Generating your questions",
-    "drafting": "Drafting your topics",
-    "writingNote": "This takes a few minutes. You can leave this page; we keep going.",
-    "draftingNote": "Reading your goal and planning what to cover.",
+    "drafting": "Generating your topics",
+    "writingNote": "This takes a few minutes. You can leave this page; we'll notify you when it's ready.",
+    "draftingNote": "We're reading your job description. You'll review the topics before any questions are written. You can leave this page; we keep going.",
+    "finishing": "Checking and saving the questions…",
+    "goToInterviews": "Go to interviews",
     "topicsReady": "{ready, number} of {count, plural, one {# topic} other {# topics}} ready",
     "reviewFailed": "Couldn't submit your review. Please try again.",
     "retryFailed": "Couldn't retry the generation. Please try again.",
@@ -982,13 +1022,18 @@
     "add": "Add",
     "done": "Done",
     "reviewTitle": "Review your topics",
-    "reviewText": "Uncheck topics you don't need, edit them, or describe changes. Each topic gets its own set of questions with answers.",
+    "reviewText": "Each topic gets its own set of questions with answers.",
     "editTopic": "Edit <bdi>{topic}</bdi>",
-    "changesPlaceholder": "Optional: describe changes, e.g. “Add a topic on team leadership”",
-    "changes": "Changes to the topics",
+    "changesPlaceholder": "e.g. “Add a topic on team leadership”",
+    "changes": "Ask AI to change the topics",
     "tooMany": "Choose at most {max, plural, one {# topic} other {# topics}}, or describe how to merge them.",
     "apply": "Apply changes",
     "approve": "Approve and generate",
+    "topicsChosen": "{chosen, number} of {count, plural, one {# topic} other {# topics}}",
+    "applyFirst": "Apply your change first, or clear the box.",
+    "subtopicsNeeded": "Add at least {count, plural, one {# subtopic} other {# subtopics}}.",
+    "addTopic": "Add a topic",
+    "removeTopic": "Remove",
     "topicNameNeeded": "Give the topic a name."
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "Companies",
     "empty": "No companies yet.",
     "owner": "Owner",
+    "search": "Search companies",
+    "interviewsShort": "{count, plural, one {<n></n> interview} other {<n></n> interviews}}",
+    "membersShort": "{count, plural, one {<n></n> member} other {<n></n> members}}",
+    "status": {
+      "low": "Running low on credits",
+      "verify": "Finish verifying your company",
+      "finished": "{count, plural, one {<n></n> candidate} other {<n></n> candidates}} finished this week"
+    },
     "interviewCount": "{count, plural, one {# interview} other {# interviews}}",
     "memberCount": "{count, plural, one {# member} other {# members}}",
     "interviews": "Interviews",
@@ -1024,6 +1077,8 @@
     "brand": "Brand",
     "billing": "Billing",
     "new": "New company",
+    "newText": "Each company has its own interviews, team and credits.",
+    "namePlaceholder": "e.g. Acme",
     "name": "Company name",
     "create": "Create",
     "createFailed": "Couldn't create the company. Please try again.",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, one {# page leave} other {# page leaves}}",
     "copies": "{count, plural, one {# copy attempt} other {# copy attempts}}",
     "fastAnswers": "{count, plural, one {# fast answer} other {# fast answers}}",
+    "extraTimeLabel": "Extra time",
+    "summary": {
+      "result": "Result",
+      "timeTaken": "Time taken",
+      "signals": "Integrity signals",
+      "invited": "Invited",
+      "finished": "Finished",
+      "passed": "Passed",
+      "average": "Average grade"
+    },
+    "copyLinkFailed": "We couldn't copy the link. Please try again.",
     "empty": "No candidates invited yet.",
     "noMatches": "No candidates match.",
     "search": "Search candidates by email or name",
     "status": "Status: {status}",
     "anyStatus": "any status",
+    "allStatuses": "All",
     "progress": "Progress",
     "grade": "Grade",
     "resend": "Resend invite",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "Interviews",
+    "allStatuses": "All",
+    "candidatesShort": "{count, plural, one {<n></n> candidate} other {<n></n> candidates}}",
+    "finishedShort": "<n></n> finished",
+    "passedShort": "<n></n> passed",
+    "rowStatus": {
+      "failed": "Open it to try again",
+      "generating": "Being created",
+      "undelivered": "{count, plural, one {<n></n> invite} other {<n></n> invites}} undelivered",
+      "finished": "{count, plural, one {<n></n> candidate} other {<n></n> candidates}} finished this week",
+      "ready": "Ready: invite your first candidates"
+    },
     "interview": "Interview",
     "topicsTab": "Topics",
     "candidates": "Candidates",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "No notes yet. Write the first one for your team.",
     "discover": "Discover",
     "discoverLinkedIn": "{name}'s LinkedIn profile",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "People appear here as they practise these subjects and choose to be open to offers.",
     "discoverText": "People open to offers who practised this interview's subjects. Most recent first, not ranked.",
     "discoverEmpty": "Nobody open to offers has practised this interview's subjects yet.",
     "discoverResults": "Practice results",
@@ -1130,6 +1210,8 @@
     "notePosting": "Posting…",
     "noteEdited": "edited",
     "notePinned": "Pinned",
+    "noteShowMore": "Show more",
+    "noteShowLess": "Show less",
     "notePin": "Pin to the top",
     "noteUnpin": "Unpin",
     "noteFormerMember": "Former member",
@@ -1139,8 +1221,20 @@
     "noteFailed": "Couldn't save the note. Please try again.",
     "new": "New interview",
     "createTitle": "Create an interview",
+    "createIntro": "Paste a job description. You'll review the topics before the questions are written, and it's free.",
+    "steps": {
+      "describe": "Describe the role",
+      "review": "Review topics",
+      "invite": "Invite candidates"
+    },
+    "startTemplate": "Start from a template",
+    "startAts": "Start from a job in your ATS",
+    "tryExample": "Try an example",
     "try": "Try as a candidate",
     "newCandidate": "New candidate(s)",
+    "settingsSharing": "Sharing",
+    "settingsRuns": "How it runs",
+    "settingsAfter": "After and privacy",
     "linkTitle": "Shareable link",
     "linkText": "For a job ad: anyone with the link can take the interview. Each person is charged like an invited candidate.",
     "linkFailed": "Couldn't change the link. Please try again.",
@@ -1160,7 +1254,7 @@
     "generating": "Generating…",
     "generationFailed": "Generation failed",
     "fallbackTitle": "interview",
-    "continueGeneration": "Continue generation",
+    "continueGeneration": "Continue",
     "empty": "No interviews yet. Create your first one.",
     "noMatches": "No interviews match.",
     "search": "Search interviews by title",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "Candidate email",
     "inviteTab": {
       "one": "one",
-      "many": "many",
-      "file": "upload"
+      "many": "list",
+      "file": "file"
     },
-    "manyHint": "One candidate per line, with or without a name,\nup to {count, number} at once:",
-    "manyHintNoLimit": "One candidate per line, with or without a name:",
-    "example": "example",
+    "inviteTitle": "Invite candidates",
+    "manyHint": "One candidate per line, with or without a name, up to {count, number} at once.",
+    "manyHintNoLimit": "One candidate per line, with or without a name.",
     "uploadFile": "Upload a file",
     "fileFormats": "CSV or TXT, up to {count, plural, one {# candidate} other {# candidates}}. Names can go in a name column or beside each email.",
     "fileFormatsNoLimit": "CSV or TXT. Names can go in a name column or beside each email.",
@@ -1203,8 +1297,7 @@
       "unclear_name": "Write the name as Name '<email>': <bdi>{line}</bdi>",
       "more": "and {count, number} more"
     },
-    "exampleCsv": "example .csv",
-    "exampleTxt": "example .txt",
+    "exampleFiles": "Download an example: <csv>.csv</csv> or <txt>.txt</txt>",
     "candidateName": "Name (optional)",
     "invitedMany": "Invited {count, plural, one {# candidate} other {# candidates}}",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "Congrats, your interview is ready",
-      "text": "<name><bdi>{title}</bdi></name> is ready for candidates. Here's what to do next:",
-      "limits": "Set how many questions each candidate gets per topic.",
+      "text": "<name><bdi>{title}</bdi></name> is ready. Try it yourself before inviting anyone, and adjust it if you need to.",
+      "limits": "How many each candidate gets per topic.",
       "limitsAction": "Set questions",
-      "time": "Adjust the average time per question if needed.",
-      "timeAction": "Open settings",
-      "invite": "Invite candidates.",
-      "inviteAction": "Go to candidates",
+      "time": "The average time per question.",
+      "timeAction": "Adjust the time",
       "done": "Got it"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "Need more time, for example because of a disability? Ask <bdi>{company}</bdi> for a personal invite before you start: extra time can't be added here.",
     "people": "The questions are written by AI. People at <bdi>{company}</bdi> review the results and decide; you can ask them to review yours.",
     "stay": "Stay on this page: leaving it, copying and answering too fast to have read the question are recorded, and the company sees when your answer times or answers don't follow the questions' difficulty (<link>privacy</link>).",
-    "finished": "This interview is already finished.",
+    "finishedTitle": "You're done",
+    "finished": "Your answers are with <bdi>{company}</bdi>. They review the results and decide on next steps.",
+    "finishedPreview": "That's what your candidates see. This free try isn't on your candidate list, and its answers don't count in the questions' statistics.",
+    "finishedRights": "You can ask <bdi>{company}</bdi> to have a person review your result. <link>Privacy</link>",
+    "finishedAnswered": "Questions answered",
+    "finishedTime": "Time taken",
+    "signInAs": "Use the email this invite was sent to.",
+    "switchAccount": "Switch account",
+    "progress": "You're {percent} of the way through.",
+    "progressLabel": "Your progress",
+    "groups": {
+      "how": "How it works",
+      "time": "Your time",
+      "rights": "Your rights and privacy"
+    },
     "continue": "Continue",
     "start": "Accept & Start",
     "pledge": "I'll answer on my own, without AI tools or other people.",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "Joined",
     "invited": "Invited",
+    "joinedOn": "Joined {date}",
+    "invitedOn": "Invited {date}",
+    "pendingTitle": "Pending invites",
+    "firstTitle": "Invite your first teammate",
     "role": "Role",
     "roleFailed": "Couldn't change the role.",
     "inviteTitle": "Company invite",
@@ -1281,6 +1390,11 @@
     "madeOwner": "<bdi>{email}</bdi> is now the owner."
   },
   "scorecard": {
+    "filters": {
+      "all": "All",
+      "correct": "Correct",
+      "wrong": "Wrong"
+    },
     "timeOut": "Time out",
     "leftPage": "Left the page {count, plural, one {# time} other {# times}}",
     "answeredIn": "Answered in <b>{time}</b>",
@@ -1298,7 +1412,7 @@
     "test": "Generating an interview",
     "free": "Free",
     "candidate": "Each candidate who answers at least one question",
-    "candidateVolume": "With credits from a top-up of {from} or more",
+    "candidateVolume": "On top-ups of {from} or more",
     "perCandidate": "{price} a candidate",
     "welcome": "Your first {count, plural, one {candidate} other {# candidates}}",
     "credits": "A candidate takes {credits, number} credits, and credits never expire.",
@@ -1306,6 +1420,10 @@
     "referralsNote": "Share your company's link from its referrals tab.",
     "companyReferral": "A company you invited makes its first top-up",
     "each": "{count, number} credits each",
+    "fromPrice": "from {price}",
+    "anyTopUp": "On any top-up",
+    "volumeTitle": "A candidate costs less with larger top-ups",
+    "volumeText": "The bigger the top-up, the less each candidate costs.",
     "topUp": "Top up"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "Hiring compliance documents",
     "intro": "Documents for companies that assess candidates with testee: instructions, templates and the data processing agreement.",
     "englishOnly": "",
-    "download": "Download {format}",
+    "download": "Download <type>{format}</type>",
     "readOnline": "Read it online",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "Generate in"
   },
   "referral": {
+    "title": "You both get <n></n> credits",
+    "text": "That's enough for {count, plural, one {# candidate} other {# candidates}}. Share your link with another company.",
+    "empty": "No rewards yet. Share your link to earn your first.",
+    "steps": {
+      "share": "Share your link with another company.",
+      "create": "They create their company through it.",
+      "reward": "After their first top-up, of any amount, you both get the credits."
+    },
+    "summary": {
+      "referred": "Companies referred",
+      "earned": "Credits earned",
+      "left": "Rewards left this year",
+      "leftValue": "{left, number} of {total, number}"
+    },
     "companyNote": "You both get {reward, number} credits when they make their first top-up, of any amount.",
     "deletedCompany": "A deleted company",
     "credits": "+{count, number} credits",
@@ -1398,53 +1530,39 @@
     "intro": "A candidate takes {credits, number} credits, and credits never expire.",
     "noCompany": "Credits belong to a company. Create your company first, then top it up here.",
     "createCompany": "Create a company",
+    "allCompanies": "All companies",
     "pricing": "Pricing"
   },
   "landing": {
-    "more": "How it works",
     "demos": "Video",
-    "videoTooltip": "Watch how testee works",
     "watchVideo": "Watch video",
     "howItWorks": "How it works",
     "askAgent": "ask Mira",
     "create": {
+      "draftingNote": "Reading your job description.",
       "title": "Create an interview in minutes",
       "text": "Paste a job description, adjust the topics, and your interview is ready in minutes.",
       "notes": {
-        "questions": "{count, plural, one {# question} other {# questions}} per topic",
         "templates": "ready-made templates available",
         "expert": "no expert needed"
       },
-      "describe": "<n>1.</n> Paste your description",
+      "describe": "<n>1.</n> Paste description",
       "adjust": "<n>2.</n> Adjust the topics",
       "menu": {
-        "cut": "Cut",
-        "copy": "Copy",
         "paste": "Paste"
       },
-      "ready": "<n>3.</n> Your interview is ready",
-      "invited": "<n>4.</n> The candidate gets the invite",
+      "ready": "<n>3.</n> Interview is ready",
+      "invited": "<n>4.</n> The invite received",
       "status": "Ready",
       "email": {
-        "search": "Search mail",
-        "compose": "Compose",
         "inbox": "Inbox",
-        "starred": "Starred",
-        "sent": "Sent",
-        "drafts": "Drafts",
         "from": "testee.",
-        "toMe": "to me",
         "now": "now",
         "subject": "Interview invite from {company}",
-        "preheader": "Take “{title}” on testee. Sign in with {email} to start.",
         "heading": "Interview invitation",
         "invited": "<b>{company}</b> invited you to the “{title}” interview on testee.",
         "signIn": "Sign in with {email} to start. Only this address can take the interview, and you get one attempt.",
-        "button": "Open the invite",
-        "pasteLink": "Or paste this link into your browser",
-        "footer": "This email was sent to {email} because someone invited this address on testee. If you weren't expecting it, you can ignore it.",
-        "stopCompany": "Don't email me for {company}",
-        "operator": "testee is run by {name}, {address}."
+        "button": "Open the invite"
       },
       "phone": {
         "describe": "Paste a job description, or write a few words about the role.",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "A person decides",
-          "text": "The score supports your decision; it doesn't make it. Integrity signals are a reason to look closer, not proof."
+          "text": "The score informs your decision. Integrity signals are a reason to look closer, not proof."
         },
         "fair": {
           "title": "Fair to every candidate",
-          "text": "The same timer and mix of question kinds, questions drawn at random for each person, extra time for those who need it."
+          "text": "The same timer and question mix for everyone, questions drawn at random, extra time for those who need it."
         },
         "laws": {
           "title": "Built for compliance",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "Every action on record",
-          "text": "An owner sees who did what in the company, kept safely for 12 months on EU servers."
+          "text": "An owner sees who did what, kept for 12 months on EU servers."
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "More questions?",
       "videos": "videos",
       "faq": "FAQ",
-      "guides": "guides",
-      "features": "features",
-      "hiringFlow": "hiring flow"
+      "guides": "guides"
     },
     "closing": {
       "title": "Create your first interview\nIt's free",
@@ -1672,7 +1788,8 @@
         "time": "~10 min per role, none per candidate",
         "cost": "{price} per candidate who answers"
       },
-      "more": "Compare with other tools"
+      "more": "Compare with other tools",
+      "best": "Best choice"
     },
     "freeToStart": {
       "title": "Everything is free\nPay per candidate",
@@ -1689,6 +1806,7 @@
       "each": "({price} per candidate)",
       "free": "{count, plural, one {# free candidate} other {# free candidates}} to start",
       "perCandidate": "per candidate",
+      "bestPrice": "Best price",
       "pack": "{count, number} for {price}",
       "see": "See pricing",
       "notes": {
@@ -1698,11 +1816,159 @@
         "refund": "unused paid credits refundable"
       },
       "currencies": "{count, plural, one {# currency} other {# currencies}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Acme helps online shops answer their customers with AI.\nWe're hiring an AI Engineer to build our LLM features.\n• 3+ years of Python\n• LLM apps, RAG and vector search\n• Evaluating and monitoring models\nRemote, flexible hours, a learning budget.",
+        "title": "AI Engineer",
+        "topics": {
+          "llm": {
+            "name": "LLM fundamentals",
+            "subtopics": ["Tokens", "Prompting", "Context windows"]
+          },
+          "rag": {
+            "name": "Retrieval-augmented generation",
+            "subtopics": ["Embeddings", "Chunking", "Vector search"]
+          },
+          "python": {
+            "name": "Python for ML systems",
+            "subtopics": ["asyncio", "Type hints"]
+          }
+        },
+        "renamed": " at scale",
+        "subtopicAdded": " and testing",
+        "change": "Add a topic on evaluating LLM output",
+        "newTopic": {
+          "name": "LLM evaluation",
+          "subtopics": ["Test sets", "LLM as judge", "Metrics"]
+        }
+      },
+      "candidates": {
+        "title": "Data Analyst",
+        "questions": {
+          "median": {
+            "topic": "Statistics",
+            "text": "A few very large orders are skewing your average order value. Which measure describes a typical order best?",
+            "options": [
+              "The mean order value",
+              "The median order value",
+              "The range of order values",
+              "The standard deviation of order values"
+            ]
+          },
+          "revenue": {
+            "topic": "Statistics",
+            "text": "Weekly revenue on your dashboard dropped 20% right after a data pipeline change. Which checks would you run first?",
+            "options": [
+              "Compare row counts before and after the change",
+              "Look for duplicated or missing dates",
+              "Change the dashboard's colour scheme",
+              "Ask sales whether customers stopped buying"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "Marketing wants the regions whose total sales pass 100. What does this query return?",
+            "options": [
+              "North only",
+              "South only",
+              "North and South",
+              "No rows"
+            ]
+          },
+          "chart": {
+            "topic": "Visualisation",
+            "text": "You need to show how monthly sign-ups changed over the last two years. Which chart shows that trend best?",
+            "options": [
+              "A pie chart of sign-ups by month",
+              "A line chart of sign-ups by month",
+              "A scatter plot of sign-ups against revenue",
+              "A histogram of monthly sign-up counts"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "Product Manager",
+        "topics": [
+          "Product strategy",
+          "Metrics",
+          "Stakeholders",
+          "Roadmapping",
+          "User research",
+          "Prioritisation",
+          "Experimentation",
+          "Pricing",
+          "Go-to-market",
+          "Communication"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "What should come first before building a new feature?",
+            "options": [
+              "Checking the problem with users",
+              "Writing the technical spec",
+              "Setting the launch date",
+              "Designing the screens"
+            ]
+          },
+          "metrics": {
+            "text": "Conversion fell from 4% to 3%. How much is that, relative to before?",
+            "options": ["1%", "25%", "33%", "75%"]
+          },
+          "stakeholders": {
+            "text": "A partner team disagrees with your priorities. What do you do first?",
+            "options": [
+              "Escalate to your manager",
+              "Ask what they need and why",
+              "Keep your plan as it is",
+              "Drop your priorities"
+            ]
+          }
+        },
+        "chat": {
+          "name": "Hiring team",
+          "initials": "HT"
+        },
+        "notes": [
+          "Hiring manager wants a shortlist of two by Friday.",
+          "Daniel was strong on stakeholders in the phone screen; weaker on metrics.",
+          "Sofia asked for more time; I'll check in tomorrow."
+        ],
+        "pdf": "product-manager-candidates.pdf"
+      },
+      "slack": {
+        "channels": ["general", "hiring", "engineering"],
+        "channelsTitle": "Channels",
+        "peopleTitle": "Direct messages",
+        "appsTitle": "Apps",
+        "app": "APP",
+        "composer": "Message #{channel}",
+        "finished": "{name} ({email}) finished “{title}”: {grade}%.",
+        "noted": "{author} added a note on “{title}”:",
+        "button": "Open in testee"
+      },
+      "invite": {
+        "title": "B2B Account Executive"
+      },
+      "askAgent": {
+        "interview": "Data Analyst"
+      }
     }
   },
   "faq": {
     "title": "Frequently asked questions",
-    "intro": "Can't find your answer? Ask Mira, the AI assistant (the button at the top of the page), or write to us at the address in the privacy policy.",
+    "intro": "Answers about testee, from your first interview to your data.",
+    "groups": {
+      "start": "Getting started",
+      "candidates": "Candidates",
+      "pricing": "Pricing and credits",
+      "results": "Results and your team",
+      "tools": "Integrations",
+      "privacy": "Privacy and your account"
+    },
+    "closingTitle": "Still have a question?",
+    "closingText": "Ask Mira, our AI assistant, or write to us.",
     "description": "Answers about testee: how interviews are made from a job description, what candidates see, prices and credits, results, ATS integrations, languages and your data."
   },
   "contact": {
@@ -1731,9 +1997,20 @@
     "description": "testee turns a job description into a fair, timed interview in minutes, at a price any team can afford, and lets anyone practise for interviews for free.",
     "company": {
       "title": "Why we exist",
+      "titles": {
+        "problem": "Hiring is hard to get right",
+        "approach": "A fair interview in minutes",
+        "practice": "Free practice for everyone"
+      },
       "problem": "Hiring often rests on a CV and a good conversation, and both can mislead. The assessment tools that help are priced for big companies, with annual plans and seat fees, so most teams go without.",
       "approach": "testee turns a job description into a timed interview in minutes, for any role. Every candidate gets their own questions, you see who knows the job and why, and you pay only for candidates who actually take it.",
       "practice": "We also want preparing for an interview to be free for everyone. Anyone can take our practice interviews for a role, see their grade and every right answer, and practise again, at no cost."
+    },
+    "closing": {
+      "title": "See it for yourself",
+      "text": "Create an interview from your job description, or practise for a role for free.",
+      "create": "Create a test",
+      "practice": "Practise free"
     },
     "founder": {
       "quote": "Hiring well shouldn't be a privilege of big companies with big budgets. I built testee so that any team can turn a job description into a fair interview in minutes, see who really knows the job, and pay only for the candidates who take it. I hope it helps you find the right people faster.",
@@ -1801,7 +2078,7 @@
     "send": "Send <name>PDF</name>",
     "sent": "Report sent to <bdi>{email}</bdi>",
     "sendFailed": "Couldn't send the report.",
-    "orSummary": "Or send via",
+    "orSummary": "Or send a short summary by chat",
     "via": "Sent from testee",
     "candidatesFileName": "Candidates {title}",
     "candidateCount": "{count, plural, one {# candidate} other {# candidates}}",
@@ -1833,6 +2110,10 @@
     "results": "Practice results",
     "grade": "of the possible points",
     "notFinished": "not finished",
+    "finished": "Finished",
+    "answeredCard": "Questions answered",
+    "answeredOf": "{done, number} of {total, number}",
+    "startedCard": "Started",
     "noRounds": "No rounds yet.",
     "startFailed": "Couldn't start the practice. Please try again.",
     "gradeLabel": "Grade",
@@ -1844,7 +2125,13 @@
     "hireButton": "Create interview",
     "timingPerQuestion": "{time} per question on average",
     "timingNone": "No time limit",
-    "timingNote": "Practice isn't compared with anyone, so take more time, or none, if you need it."
+    "timingNote": "Practice isn't compared with anyone, so take more time, or none, if you need it.",
+    "facts": {
+      "topics": "Topics",
+      "questions": "Questions",
+      "level": "Level",
+      "language": "Language"
+    }
   },
   "openToOffers": {
     "title": "Open to offers",
@@ -1887,6 +2174,7 @@
     "englishOnly": "This page is in English only.",
     "startTitle": "Test your candidates",
     "startText": "Create a timed skills test from your job description.{priced, select, yes { {price} per candidate, no subscription.} other {}}",
+    "contents": "On this page",
     "startButton": "Create a test"
   },
   "compare": {
@@ -1912,7 +2200,16 @@
     "topics": "What it tests",
     "questions": "Sample interview questions",
     "questionsText": "Questions like these, with the right answers. Your candidates get their own, never shown in public.",
-    "faq": "Questions companies ask"
+    "faq": "Questions companies ask",
+    "createOwn": "Create your own test",
+    "facts": {
+      "topics": "Topics",
+      "level": "Level",
+      "language": "Language",
+      "price": "Per candidate"
+    },
+    "closingTitle": "Ready to test your candidates?",
+    "closingText": "Paste a job description and get a test like this in minutes, free to create."
   },
   "ats": {
     "statusConnected": "connected",
@@ -1998,6 +2295,25 @@
     "bzStepCreate": "Create an API key as an admin who sees every position: it acts as you, and results are written as you. Breezy's API and web hooks come with its Pro plan.",
     "bzStepPaste": "Paste the key below. We add the web hook in Breezy HR ourselves.",
     "atsGroup": "ATS",
+    "firstJobTitle": "Link your first job",
+    "brokenText": "{ats} stopped working, so candidates aren't being invited. Reconnect it to start again.",
+    "stripMove": "A candidate reaches the stage you chose in {ats}",
+    "stripInvite": "testee invites them to the linked interview",
+    "stripResults": "Their results go back to their {ats} profile",
+    "rowStage": "Stage: <bdi>{stage}</bdi>",
+    "rowInterview": "Interview: <link><bdi>{interview}</bdi></link>",
+    "invitedShort": "<n></n> invited",
+    "waitingShort": "<n></n> waiting",
+    "notInvitedShort": "<n></n> not invited",
+    "summary": {
+      "status": "Status",
+      "account": "Account",
+      "jobs": "Jobs linked",
+      "invited": "Candidates invited"
+    },
+    "connectedGroup": "Connected",
+    "statusBroken": "Needs reconnecting",
+    "rowText": "Invite candidates from {ats} and send their results back.",
     "messagingGroup": "Messaging",
     "apiAiAppsGroup": "API & AI apps",
     "searchInterview": "Search interviews",
@@ -2005,6 +2321,29 @@
   },
   "slack": {
     "add": "Add to Slack",
+    "rowText": "Get notified in Slack when candidates finish.",
+    "brokenText": "Slack stopped taking messages, so your channel isn't getting notifications. Reconnect it to start again.",
+    "pointChannel": "Pick the channel your team should see them in.",
+    "pointKinds": "Choose which notifications go there.",
+    "pointPrivacy": "testee can only post to that channel. It can't read your Slack.",
+    "test": "Send a test",
+    "testSent": "Test message sent to your channel.",
+    "testFailed": "Couldn't send the test message.",
+    "groups": {
+      "candidates": "Candidates",
+      "interviews": "Interviews",
+      "billing": "Billing",
+      "team": "Team"
+    },
+    "samples": {
+      "candidate_finished": "Ann Lee (ann@example.com) finished “Data Analyst”: 82%.",
+      "ats_not_invited": "Ben Ortiz came from your ATS but wasn't invited to “Data Analyst”.",
+      "invite_undelivered": "The invite to ben@example.com for “Data Analyst” wasn't delivered.",
+      "interview_ready": "“Data Analyst” is ready.",
+      "auto_top_up_charged": "Your automatic top-up was charged.",
+      "auto_top_up_failed": "Your automatic top-up failed. Update your card to keep it running.",
+      "note_added": "Maya added a note on “Data Analyst”: strong SQL, worth a call."
+    },
     "connectFailed": "Couldn't connect Slack.",
     "connected": "Slack is connected.",
     "disconnectFailed": "Couldn't disconnect Slack.",
@@ -2030,13 +2369,67 @@
     "stepPrivacy": "testee can only post to that channel. It can't read your Slack, and disconnecting removes it."
   },
   "api": {
+    "firstKeyTitle": "Create your first key",
+    "sdkDocs": "View SDK docs",
+    "sdkReady": "Ready: {count, plural, one {# site} other {# sites}} can show your interviews.",
+    "sdkNotReady": "Not set up yet: add a site below so it can show your interviews.",
+    "sdkRules": "Pages must use HTTPS. Add one site, or every subdomain of it:",
+    "stepSite": "Add your site",
+    "stepCode": "Paste this code into your page",
+    "stepSend": "Send candidates to it",
+    "stepSendText": "Your server invites a candidate with sign_in false and passes the invite_url it gets back to your page. Never put your API key in a page.",
+    "thisSite": "This site",
+    "allSubdomains": "All subdomains",
+    "localhostOn": "On: turn it off before you go live.",
+    "firstWebhookTitle": "Add your first web hook",
+    "webhookSampleText": "testee sends a signed request like this when something happens:",
+    "lastDelivered": "last delivered <time>{date}</time>",
+    "webhookStates": {
+      "paused": "Paused",
+      "unused": "Not used yet",
+      "active": "Active"
+    },
+    "webhookEvents": {
+      "started": "Candidate started",
+      "finished": "Candidate finished",
+      "undelivered": "Candidate not reached",
+      "expired": "Invite expired",
+      "removed": "Candidate removed",
+      "ready": "Interview ready"
+    },
+    "replaceKey": "Create a replacement",
+    "activityTitle": "Activity",
+    "ipOpen": "Any IP address can use this key. Limit it to your servers' addresses to keep it safer.",
+    "summary": {
+      "status": "Status",
+      "access": "Access",
+      "lastUsed": "Last used",
+      "expires": "Expires",
+      "created": "Created"
+    },
+    "warnings": {
+      "expired": "This key has expired, so requests with it are refused. Create a replacement to carry on.",
+      "expiring": "This key expires soon. Create a replacement and move to it before it stops working."
+    },
+    "exampleText": "Try it with this request, which reads your credits:",
+    "access": {
+      "read": "Read only",
+      "write": "Read & write",
+      "custom": "Custom"
+    },
+    "states": {
+      "expired": "Expired",
+      "expiring": "Expires soon",
+      "never_used": "Never used",
+      "active": "Active"
+    },
     "name": "API",
     "rowName": "API, SDK, webhooks",
     "rowText": "Keys and web hooks to connect your own platform.",
     "counts": "{keys, plural, one {# key} other {# keys}} · {webhooks, plural, one {# web hook} other {# web hooks}}",
     "docs": "Developer docs",
     "keysTitle": "API keys",
-    "keysText": "A key acts as the person who made it, and can do only what its permissions allow.",
+    "keysText": "A key acts for your company, as itself, and can do only what its permissions allow.\nIt keeps working when the person who made it leaves.",
     "noKeys": "No keys yet.",
     "newKey": "New key",
     "newKeyTitle": "New API key",
@@ -2064,7 +2457,7 @@
     "removeKeyTitle": "Delete this key?",
     "removeKeyText": "Anything using “<bdi>{name}</bdi>” stops working at once.",
     "webhooksTitle": "Web hooks",
-    "webhooksText": "testee tells these addresses when a candidate starts, finishes (with their results), isn't reached, expires or is removed, and when an interview is ready, each request signed with the address's secret.",
+    "webhooksText": "testee tells these addresses when any of these happen, each request signed with the address's secret.",
     "noWebhooks": "No web hooks yet.",
     "failing": "Paused: it didn't answer for 3 days, so no events are sent to it. A test event that goes through starts it again.",
     "addWebhook": "Add web hook",
@@ -2151,7 +2544,6 @@
     "localhostText": "For testing on your own computer, any port. Turn it off once you're live.",
     "permissionsTitle": "Permissions",
     "permissionsText": "What this key may do. Changes save at once.",
-    "permissionsSaved": "Permissions saved.",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2631,15 @@
       "tools": "Tools",
       "frameworks": "Agent frameworks"
     },
+    "intro": "Connect testee to your own platform, your server or an AI agent.",
+    "endpointsText": "Every route, by what it works on. Open one to see what it takes, what it returns and its errors.",
+    "apiPages": {
+      "start": "Get started",
+      "guides": "Guides",
+      "endpoints": "Endpoints",
+      "errors": "Errors",
+      "changelog": "Changelog"
+    },
     "englishOnly": "This page is in English only.",
     "baseUrl": "Base URL",
     "copyBaseUrl": "Copy URL",
@@ -2275,6 +2676,7 @@
   },
   "assistant": {
     "title": "Mira · AI assistant",
+    "name": "Mira",
     "company": "Company",
     "allCompanies": "All companies",
     "newChat": "New chat",
@@ -2331,7 +2733,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "How testee works, what it costs and what candidates see, answered from testee's FAQ. Sign in to ask about your companies and candidates.",
+        "text": "Sign in to ask about your companies and candidates.",
         "questions": {
           "what": "What is testee?",
           "pricing": "How much does it cost?",
@@ -2340,7 +2742,7 @@
         }
       },
       "no_company": {
-        "text": "Let's get you started: your first interview, your company and getting it verified.",
+        "text": "Let's get your first interview going.",
         "questions": {
           "firstInterview": "Create my first interview",
           "createCompany": "Create a company for me",
@@ -2348,7 +2750,7 @@
         }
       },
       "unverified": {
-        "text": "Verify your company so candidates see who's inviting them, and create your interviews.",
+        "text": "Verify your company and create your interviews.",
         "questions": {
           "verify": "Verify my company",
           "whyVerify": "Why verify my company?",
@@ -2356,7 +2758,7 @@
         }
       },
       "no_interviews": {
-        "text": "Create an interview from a job description: its questions are written for the role.",
+        "text": "Let's create your first interview.",
         "questions": {
           "fromDescription": "Create an interview from a job description",
           "template": "Create an interview from a template",
@@ -2364,7 +2766,7 @@
         }
       },
       "no_candidates": {
-        "text": "Invite candidates by email, with a shareable link or from your ATS.",
+        "text": "Let's invite your first candidates.",
         "questions": {
           "invite": "Invite candidates",
           "shareLink": "Turn on the shareable link",
@@ -2372,7 +2774,7 @@
         }
       },
       "has_candidates": {
-        "text": "Ask about your candidates: who passed, how they compare, and what their results mean.",
+        "text": "Ask about your candidates and their results.",
         "questions": {
           "passed": "Who passed this week?",
           "compare": "Compare my best candidates",
@@ -2494,7 +2896,27 @@
     "feedbackLink": "Contact us"
   },
   "companyBilling": {
-    "reservedTab": "Reserved ({count, number})",
+    "reservedTab": "Reserved",
+    "download": {
+      "open": "Download history",
+      "title": "Download history",
+      "description": "Choose a period for your CSV file.",
+      "save": "Download",
+      "failed": "We couldn't make the file. Please try again."
+    },
+    "lowText": "Your credits are running low. Top up so candidates can keep being invited.",
+    "summary": {
+      "available": "Credits available",
+      "candidates": "Candidates covered",
+      "reserved": "Credits reserved",
+      "spent": "Credits spent this month"
+    },
+    "kinds": {
+      "all": "All",
+      "topups": "Top-ups",
+      "charges": "Charges",
+      "refunds": "Refunds"
+    },
     "reservedEmpty": "No candidates are holding credits.",
     "reservedNote": "Candidates who haven't finished yet. Their credits are reserved: charged if they answer, returned if not.",
     "history": "History",
@@ -2521,7 +2943,19 @@
     "name": "MCP server",
     "rowText": "Connect Claude, ChatGPT and other AI apps to testee.",
     "title": "AI apps",
-    "subtitle": "They act as you, in every company you're in, with your permissions.",
+    "subtitle": "They act as you, in every company you're in, with your permissions. You allow each one on testee: no key is pasted anywhere.",
+    "connectedTitle": "Your apps",
+    "otherApps": "Others",
+    "allowIn": "Allow AI apps in <bdi>{company}</bdi>",
+    "allowOn": "Members can use this company's interviews and candidates from the AI apps they connected.",
+    "allowOff": "Off: AI apps can't read or change anything in this company.",
+    "promptsTitle": "Try asking",
+    "promptCopied": "Copied",
+    "prompts": {
+      "passed": "Who passed this week?",
+      "compare": "Compare my best candidates for the Data Analyst interview.",
+      "invite": "Invite ann@example.com to the Data Analyst interview."
+    },
     "instructionsTitle": "Connect an AI app to testee",
     "serverTitle": "Server address",
     "serverText": "Paste it into your AI app as a custom connector (an MCP server).",
@@ -2679,6 +3113,10 @@
     "failed": "Couldn't export the file. Try again."
   },
   "actionLog": {
+    "period": "Period",
+    "periodAll": "All time",
+    "periodDays": "Last {days, number} days",
+    "periodCustom": "Custom",
     "empty": "No actions yet.",
     "noMatches": "No actions match these filters.",
     "formerMember": "A former member",
@@ -2686,7 +3124,15 @@
     "deletedApiKey": "{via, select, mcp {Through MCP with a deleted key} other {Through API with a deleted key}}",
     "deletedCandidate": "a deleted candidate",
     "anyMember": "Anyone",
-    "anyAction": "All actions",
+    "anyAction": "All",
+    "clear": "Clear",
+    "download": {
+      "open": "Download log",
+      "title": "Download log",
+      "description": "Choose a period for your CSV file.",
+      "save": "Download",
+      "failed": "We couldn't make the file. Please try again."
+    },
     "member": "Member",
     "action": "Action",
     "from": "From",
@@ -2751,6 +3197,7 @@
       "slack_notifications_changed": "Changed Slack's notifications",
       "api_key_created": "Created an API key",
       "api_key_deleted": "Deleted an API key",
+      "api_key_renamed": "Renamed an API key",
       "api_key_permissions_changed": "Changed an API key's permissions",
       "api_key_ips_changed": "Changed an API key's allowed IPs",
       "embed_domains_changed": "Changed the allowed domains",

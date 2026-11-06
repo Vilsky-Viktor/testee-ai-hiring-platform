@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { AREA_STEPS, candidatesAt, customTopUp, positionOf } from "@/lib/top-up"
+import { customTopUp } from "@/lib/top-up"
 import type { Catalog } from "@/types/billing"
 
 // Billing's catalog: four levels, the next one bought instead from `upgrade_from`.
@@ -15,29 +15,6 @@ const custom: Catalog["custom"] = {
     { from_candidates: 500, cents: 200, upgrade_from: null },
   ],
 }
-
-describe("the slider", () => {
-  it("gives each level an equal part of the track", () => {
-    expect(positionOf(custom, 10)).toBe(0)
-    expect(positionOf(custom, 50)).toBe(AREA_STEPS)
-    expect(positionOf(custom, 200)).toBe(2 * AREA_STEPS)
-    expect(positionOf(custom, 500)).toBe(3 * AREA_STEPS)
-    expect(positionOf(custom, 1000)).toBe(4 * AREA_STEPS)
-  })
-
-  it("counts evenly within a level and keeps to the range", () => {
-    expect(candidatesAt(custom, AREA_STEPS / 2)).toBe(30)
-    expect(candidatesAt(custom, 2.5 * AREA_STEPS)).toBe(350)
-    expect(candidatesAt(custom, -5)).toBe(10)
-    expect(candidatesAt(custom, 4 * AREA_STEPS)).toBe(1000)
-  })
-
-  it("lands on the count it shows", () => {
-    for (const count of [10, 39, 49, 50, 149, 199, 333, 499, 500, 777, 1000]) {
-      expect(candidatesAt(custom, positionOf(custom, count))).toBe(count)
-    }
-  })
-})
 
 describe("what a count buys", () => {
   it.each([

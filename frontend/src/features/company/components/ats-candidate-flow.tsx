@@ -20,11 +20,13 @@ export function CandidateFlow({
   provider,
   open,
   onOpenChange,
+  noButton,
   children,
 }: {
   provider: AtsProvider
   open: boolean
   onOpenChange: (open: boolean) => void
+  noButton?: boolean
   children?: React.ReactNode
 }) {
   const t = useTranslations("ats")
@@ -36,6 +38,7 @@ export function CandidateFlow({
       stepsTitle={t("flowHow")}
       open={open}
       onOpenChange={onOpenChange}
+      noButton={noButton}
     >
       {children}
     </InstructionsDialog>

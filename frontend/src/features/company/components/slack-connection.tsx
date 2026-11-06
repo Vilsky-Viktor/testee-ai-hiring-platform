@@ -5,7 +5,11 @@ import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
-import { IntegrationRow } from "@/features/company/components/integration-row"
+import { ConnectionMenu } from "@/components/common/dots-menu"
+import {
+  IntegrationRow,
+  NeedsReconnecting,
+} from "@/features/company/components/integration-row"
 import { ConfirmDialog } from "@/components/common/confirm-dialog"
 import { InstructionsDialog } from "@/components/common/instructions-dialog"
 import { Badge } from "@/components/ui/badge"
@@ -30,6 +34,8 @@ export function SlackRow({
   slack: SlackOverview
   canEdit: boolean
 }) {
+  const t = useTranslations("slack")
+
   return (
     <IntegrationRow
       href={`/companies/${companyId}/integrations/slack`}
@@ -40,7 +46,13 @@ export function SlackRow({
       }
       name={SLACK.name}
       status={<SlackStatus slack={slack} />}
-      text={slack.connected && <Dotted items={[slack.team, slack.channel]} />}
+      text={
+        slack.connected ? (
+          <Dotted items={[slack.team, slack.channel]} />
+        ) : (
+          t("rowText")
+        )
+      }
       actions={
         <SlackActions companyId={companyId} slack={slack} canEdit={canEdit} />
       }
@@ -48,37 +60,38 @@ export function SlackRow({
   )
 }
 
-/** "connected" beside Slack's name once it works, like an ATS's tag; nothing otherwise. */
+/** "connected" beside Slack's name once it works, like an ATS's tag; that it needs reconnecting
+ * when Slack stopped taking messages; nothing otherwise. */
 export function SlackStatus({ slack }: { slack: SlackOverview }) {
   const t = useTranslations("ats")
+
+  if (slack.connected && slack.status !== "connected") {
+    return <NeedsReconnecting />
+  }
 
   if (slack.status !== "connected") {
     return null
   }
 
   return (
-    <Badge className="h-7 shrink-0 px-3 text-sm font-light">
+    <Badge className="h-8 shrink-0 px-4 text-sm font-light">
       {t("statusConnected")}
     </Badge>
   )
 }
 
-/** Slack's buttons, on its row and its page: its Instructions, and for owners and admins Add to
- * Slack (or Reconnect when Slack stopped taking messages), which goes to Slack to pick a channel
- * and comes back, and Disconnect. */
-export function SlackActions({
+/** Add to Slack (Reconnect, with `again`): goes to Slack to pick a channel and comes back. */
+export function SlackConnectButton({
   companyId,
-  slack,
-  canEdit,
+  again = false,
+  className = "h-10 px-5 text-base",
 }: {
   companyId: string
-  slack: SlackOverview
-  canEdit: boolean
+  again?: boolean
+  className?: string
 }) {
   const t = useTranslations("slack")
   const ats = useTranslations("ats")
-  const router = useRouter()
-  const [confirming, setConfirming] = useState(false)
   const [busy, setBusy] = useState(false)
 
   async function connect() {
@@ -94,6 +107,34 @@ export function SlackActions({
       setBusy(false)
     }
   }
+
+  return (
+    <Button className={className} disabled={busy} onClick={connect}>
+      {again ? ats("reconnect") : t("add")}
+    </Button>
+  )
+}
+
+/** Slack's actions: its Instructions, and for owners and admins Disconnect in its "⋮" menu, with
+ * Add to Slack or Reconnect beside it, unless `noConnect` (its page has its own). */
+export function SlackActions({
+  companyId,
+  slack,
+  canEdit,
+  noConnect = false,
+}: {
+  companyId: string
+  slack: SlackOverview
+  canEdit: boolean
+  noConnect?: boolean
+}) {
+  const t = useTranslations("slack")
+  const ats = useTranslations("ats")
+  const router = useRouter()
+  const [confirming, setConfirming] = useState(false)
+  const [busy, setBusy] = useState(false)
+  const [info, setInfo] = useState(false)
+  const canDisconnect = canEdit && slack.connected
 
   async function disconnect() {
     setBusy(true)
@@ -116,25 +157,19 @@ export function SlackActions({
       <InstructionsDialog
         title={t("instructionsTitle")}
         steps={STEPS.map((step) => t(step))}
+        open={info}
+        onOpenChange={setInfo}
+        noButton
       />
-      {canEdit && slack.connected && (
-        <Button
-          variant="outline"
-          className="h-10 px-5 text-base"
-          onClick={() => setConfirming(true)}
-        >
-          {ats("disconnect")}
-        </Button>
-      )}
-      {canEdit && (!slack.connected || slack.status !== "connected") && (
-        <Button
-          className="h-10 px-5 text-base"
-          disabled={busy}
-          onClick={connect}
-        >
-          {slack.connected ? ats("reconnect") : t("add")}
-        </Button>
-      )}
+      {canEdit &&
+        !noConnect &&
+        (!slack.connected || slack.status !== "connected") && (
+          <SlackConnectButton companyId={companyId} again={slack.connected} />
+        )}
+      <ConnectionMenu
+        onInstructions={() => setInfo(true)}
+        onDisconnect={canDisconnect ? () => setConfirming(true) : undefined}
+      />
       <ConfirmDialog
         open={confirming}
         onOpenChange={setConfirming}

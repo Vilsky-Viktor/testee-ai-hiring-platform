@@ -44,6 +44,18 @@ describe("movedAway and clock", () => {
 function fakeRecorder(types: string[]) {
   const tracks = [{ stop: vi.fn() }]
 
+  vi.stubGlobal(
+    "AudioContext",
+    class {
+      createAnalyser = () => ({
+        fftSize: 0,
+        getFloatTimeDomainData: vi.fn(),
+      })
+      createMediaStreamSource = () => ({ connect: vi.fn() })
+      close = vi.fn()
+    }
+  )
+
   class FakeRecorder {
     static isTypeSupported = (type: string) => types.includes(type)
     state = "inactive"

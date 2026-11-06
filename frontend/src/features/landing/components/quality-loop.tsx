@@ -271,6 +271,7 @@ export function QualityLoop({
       {QUALITY_STEPS.map((key, at) => (
         <QualityStepCard
           key={key}
+          step={at + 1}
           x={PLACES[at].x}
           y={PLACES[at].y}
           icon={QUALITY_ICONS[key]}

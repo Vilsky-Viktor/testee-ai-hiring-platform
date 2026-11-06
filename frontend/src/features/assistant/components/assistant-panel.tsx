@@ -112,10 +112,11 @@ export function AssistantPanel({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open])
 
-  // The latest message stays in view as the answer streams.
+  // The latest message stays in view as the answer streams, as the panel opens and back from the
+  // history.
   useEffect(() => {
     scroller.current?.scrollTo({ top: scroller.current.scrollHeight })
-  }, [chat.messages])
+  }, [chat.messages, popup, history])
 
   const names = Object.fromEntries(
     companies.map((company) => [company.id, company.name])

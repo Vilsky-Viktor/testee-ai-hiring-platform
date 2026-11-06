@@ -10,3 +10,27 @@ export const PUBLIC_TIMEOUT_MS = 5000
 // A signed-in page's calls give up after this long, so a service that hangs fails the page (or
 // leaves out what it adds) in seconds rather than holding it for a minute.
 export const SERVER_TIMEOUT_MS = 10000
+
+// What a web hook gets, shortened, shown before the first one is added.
+export const WEBHOOK_SAMPLE = `{
+  "id": "6f1c…",
+  "type": "candidate.finished",
+  "occurred_at": "2026-11-05T10:14:00+00:00",
+  "data": { "interview": { … }, "candidate": { … } }
+}`
+
+// The developer docs' SDK tab.
+export const SDK_DOCS_PATH = `${API_DOCS_PATH}?tab=sdk`
+
+/** The shortest embed, from the SDK tab of the developer docs (api's constants/docs_sdk.py), which
+ * has every option: `origin` is the site serving the script. */
+export function embedSnippet(origin: string) {
+  return `<div id="interview"></div>
+<script>
+  window.Testee = window.Testee || { q: [], embed: function (o) { this.q.push(o) } }
+  // The candidate's invite_url, which your server got when it invited them.
+  const candidateInviteUrl = "${origin}/invite/3fTq9xLk2VbN7wZr8YcP1mHd5sJ4gAe6uQo0RiKtEy"
+  Testee.embed({ element: "#interview", url: candidateInviteUrl })
+</script>
+<script async src="${origin}/embed/v1.js"></script>`
+}

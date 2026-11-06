@@ -1,6 +1,5 @@
 "use client"
 
-import { KeyRoundIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
@@ -8,7 +7,6 @@ import { toast } from "sonner"
 import { useLocalTime } from "@/hooks/use-local-time"
 import { ConfirmDialog } from "@/components/common/confirm-dialog"
 import { CopyValue } from "@/components/common/copy-field"
-import { IconButton } from "@/components/common/icon-button"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -25,11 +23,18 @@ import { timeTag } from "@/lib/time-tag"
 /** Rolling a web hook's signing secret, for owners and admins: asked first, then the new secret,
  * shown this once to copy, as when the web hook was added. The api service keeps the old one
  * signing too for a while, and says until when. */
-export function RollSecret({ path }: { path: string }) {
+export function RollSecret({
+  path,
+  asking,
+  onAskingChange,
+}: {
+  path: string
+  asking: boolean
+  onAskingChange: (asking: boolean) => void
+}) {
   const t = useTranslations("api")
   const common = useTranslations("common")
   const localTime = useLocalTime()
-  const [asking, setAsking] = useState(false)
   const [busy, setBusy] = useState(false)
   const [rolled, setRolled] = useState<{
     secret: string
@@ -41,7 +46,7 @@ export function RollSecret({ path }: { path: string }) {
 
     try {
       setRolled(await apiFetch(path, { method: "POST" }))
-      setAsking(false)
+      onAskingChange(false)
     } catch (error) {
       toast.error(apiErrorMessage(error, t("rollSecretFailed")))
     } finally {
@@ -51,12 +56,9 @@ export function RollSecret({ path }: { path: string }) {
 
   return (
     <>
-      <IconButton label={t("rollSecret")} onClick={() => setAsking(true)}>
-        <KeyRoundIcon className="size-6" />
-      </IconButton>
       <ConfirmDialog
         open={asking}
-        onOpenChange={setAsking}
+        onOpenChange={onAskingChange}
         title={t("rollSecretTitle")}
         text={t("rollSecretText")}
         confirm={t("rollSecret")}

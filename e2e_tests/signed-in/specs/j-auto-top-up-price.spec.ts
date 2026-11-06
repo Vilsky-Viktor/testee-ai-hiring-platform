@@ -8,7 +8,7 @@ import {
   setAutoTopUp,
 } from "../helpers/auto-top-up";
 import { mailText, mailsTo } from "../helpers/mailpit";
-import { openDialog, visit } from "../helpers/navigation";
+import { visit } from "../helpers/navigation";
 import { shot } from "../helpers/screenshots";
 import { uidOf } from "../helpers/sign-in";
 import { throwawayEmail } from "../helpers/users";
@@ -49,13 +49,6 @@ test("an announced new price shows beside the automatic top-up", async ({
   await expect(next).toContainText("$60");
   await expect(next).toContainText(SHOWN_DAY);
   await shot(page, "top-up-page");
-
-  await visit(page, `/companies/${id}/billing`);
-  await openDialog(page, page.getByTestId("top-up").first());
-  await expect(
-    page.getByTestId("auto-top-up").getByTestId("next-price"),
-  ).toContainText("$60");
-  await shot(page, "top-up-dialog");
 });
 
 // Choosing another currency applies at once: what each charge now costs in it, from billing, and
@@ -70,7 +63,7 @@ test("choosing another currency says what automatic top-up now charges", async (
     nextFrom: NEXT_DAY,
   });
 
-  await visit(page, `/companies/${id}/billing`);
+  await visit(page, "/top-up");
   await expect(page.getByTestId("next-price").filter({ visible: true })).toBeVisible();
   const currency = page.getByTestId("company-currency");
   await currency.getByRole("combobox").click();

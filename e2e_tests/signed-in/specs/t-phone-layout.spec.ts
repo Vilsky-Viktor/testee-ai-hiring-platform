@@ -76,7 +76,7 @@ test("a company's pages on a phone", async ({ signInAs }) => {
     await user.keyboard.press("Escape");
 
     // A company's interviews: the back arrow above the name, "new interview" under it, and
-    // rows with only the title and date.
+    // rows with the numbers under the title and date.
     await visit(user, `/companies/${company.id}/interviews`);
     const back = await box(user.locator('main a[href="/companies"]'));
     const name = await box(user.getByRole("heading", { level: 1 }));
@@ -88,7 +88,8 @@ test("a company's pages on a phone", async ({ signInAs }) => {
     expect((await box(newInterview)).width).toBeGreaterThan(width - 60);
     const row = user.locator("main .divide-y > *").first();
     await expect(row.locator('a[href$="/try"]')).toBeHidden();
-    await expect(row.locator("[data-slot=interview-stats]")).toBeHidden();
+    const dated = await box(row.locator("time"));
+    expect((await box(row.locator("[data-slot=interview-stats]"))).top).toBeGreaterThanOrEqual(dated.bottom);
 
     // A template: "use template" under its title, across the page, however long the title.
     const [template] = await templatesBySize(user);
@@ -98,9 +99,10 @@ test("a company's pages on a phone", async ({ signInAs }) => {
     expect(use.top).toBeGreaterThan(templateTitle.bottom);
     expect(use.width).toBeGreaterThan(width - 60);
 
-    // The team: each member's role on the line under their email.
+    // The team: each member's role on the line under their email (the owner's row, under the
+    // pending invite).
     await visit(user, `/companies/${company.id}/members`);
-    const member = user.locator("main .divide-y > *").first();
+    const member = user.locator("main .divide-y > *").last();
     const email = await box(member.getByText(/@/).first());
     const role = await box(member.locator("[data-slot=badge]").first());
     expect(role.top).toBeGreaterThanOrEqual(email.bottom);
@@ -118,17 +120,23 @@ test("a company's pages on a phone", async ({ signInAs }) => {
       }, company.id);
     await expect.poll(shown).toBe(true);
 
-    // Integrations: a small logo beside the name, the buttons on the line under both.
+    // Integrations: a small logo beside the name, the "⋮" at the end of that line, and Add to
+    // Slack on the line under both.
     await visit(user, `/companies/${company.id}/integrations`);
     const slack = integrationRow(user, "/slack");
     // The link's two parts: the logo, then the name and its text.
     const slackName = await box(slack.getByRole("link").locator("> span").nth(1));
     const logo = await box(slack.getByRole("link").locator("span").first());
-    const instructions = await box(slack.getByTestId("instructions"));
+    const menu = await box(slack.getByTestId("integration-menu"));
+    const add = await box(
+      slack.locator("[data-testid=integration-actions] button:not([data-testid=integration-menu])"),
+    );
     expect(logo.width).toBe(48);
     expect(slackName.left).toBeGreaterThan(logo.right);
-    expect(instructions.top).toBeGreaterThan(logo.bottom);
-    expect(instructions.left).toBeLessThan(logo.right);
+    expect(menu.left).toBeGreaterThanOrEqual(slackName.right);
+    expect(menu.top).toBeLessThan(slackName.bottom);
+    expect(add.top).toBeGreaterThan(logo.bottom);
+    expect(add.left).toBeLessThan(logo.right);
 
     // A finished candidate's page: a long email has no spaces to wrap at, so it breaks before the
     // @ rather than running off the screen, and the note under the results spans the screen.

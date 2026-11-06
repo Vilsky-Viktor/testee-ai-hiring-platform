@@ -29,7 +29,7 @@ export function AskAgentCards({ lit }: { lit?: string }) {
           title={t(`cards.${key}.title`)}
           lit={lit === key}
           className={cn(
-            "bg-popover/60 ring-1 ring-foreground/10 dark:bg-surface dark:ring-0",
+            "bg-surface ring-1 ring-foreground/10 dark:ring-0",
             lit === key && "motion-safe:animate-[promo-tick_0.4s_ease-out]"
           )}
         >

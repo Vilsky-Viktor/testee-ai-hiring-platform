@@ -3,24 +3,15 @@ import { expect, test } from "@playwright/test";
 import { REQUEST_URL } from "./helpers/env";
 import { loaded, settled } from "./helpers/waits";
 
-// The home page's info button, beside the demos (under the promise on phones), opens a guide to
+// The home page's "how it works" button, beside the video's under the title, opens a guide to
 // how testee works in a dialog that closes again.
-test("the home page's info button opens its guide", async ({ page }) => {
+test("the home page's how it works button opens its guide", async ({ page }) => {
   // The local dev server compiles the home page on first open.
   test.setTimeout(120_000);
   await page.goto("/");
   await loaded(page);
   const button = page.getByTestId("page-help").filter({ visible: true });
   await expect(button).toHaveCount(1);
-  // An icon alone: its label is what screen readers read.
-  await expect(button).toHaveAccessibleName(/.+/);
-
-  // Hovering opens its tooltip (again if the first hover came before the page was ready).
-  await expect(async () => {
-    await page.mouse.move(0, 0);
-    await button.hover();
-    await expect(button).toHaveAttribute("data-popup-open", { timeout: 2_000 });
-  }).toPass();
 
   // While the guide loads, the dialog shows the loading mark; the guide's reply is held until
   // the mark has been seen.

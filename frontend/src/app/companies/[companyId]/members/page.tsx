@@ -43,6 +43,9 @@ export default async function MembersPage({
     redirect("/companies")
   }
 
+  // Only its owner so far: the page itself invites the first teammate.
+  const alone = company.can_manage_members && members?.length === 1
+
   return (
     <main className="mx-auto max-w-page space-y-8 px-6 py-12">
       <CompanyHeader
@@ -50,12 +53,16 @@ export default async function MembersPage({
         companyId={companyId}
         current="members"
         action={
-          company.can_manage_members ? (
+          company.can_manage_members && !alone ? (
             <InviteAdmin companyId={companyId} />
           ) : undefined
         }
       >
-        <MemberList companyId={companyId} initial={members ?? []} />
+        <MemberList
+          companyId={companyId}
+          initial={members ?? []}
+          alone={alone}
+        />
       </CompanyHeader>
     </main>
   )

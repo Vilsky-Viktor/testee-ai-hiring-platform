@@ -92,6 +92,17 @@ test("the companies list's info button and back arrow", async ({ signInAs }) => 
     expect(right).toBeLessThanOrEqual(1280)
   }
 
+  // An icon alone: its label is what screen readers read, and hovering opens its tooltip (again
+  // if the first hover came before the page was ready).
+  const info = back.getByTestId("page-help")
+  await expect(info).toHaveAccessibleName(/.+/)
+  await expect(async () => {
+    await owner.mouse.move(0, 0)
+    await info.hover()
+    await expect(info).toHaveAttribute("data-popup-open", { timeout: 2_000 })
+  }).toPass()
+  await owner.mouse.move(0, 0)
+
   const guide = await api<{ title: string }>(owner, "GET", "/site/help/pages/companies")
   expect(await checkHelp(owner, "companies")).toBe(guide.title)
   await back.getByRole("link").click()

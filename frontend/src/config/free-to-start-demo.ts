@@ -19,10 +19,26 @@ export const DEMO_INVITED = 500
 // the receipt then stays finished until it's scrolled back into view.
 export const RECEIPT_STEPS: DemoStep[] = [
   { name: "blank", ms: 400 },
-  { name: "free", ms: 280, repeat: FREE_LINES.length },
-  { name: "pause", ms: 900 },
+  { name: "free", ms: 170, repeat: FREE_LINES.length },
+  { name: "pause", ms: 500 },
   { name: "paid", ms: 86_400_000 },
 ]
 
 // The small print under the prices, by its text's key.
 export const NOTES = ["subscription", "unanswered", "expire", "refund"] as const
+
+// The two previews' one card: the receipt and the prices beside it, alike. On phones it spans the
+// screen, out of the page's side padding, with square corners.
+export const PRICING_CARD =
+  "relative -mx-6 flex w-[calc(100%+3rem)] flex-col overflow-hidden bg-background p-7 sm:mx-0 sm:w-full sm:rounded-xl sm:p-9"
+
+// The prices' card, as it comes into view: blank, its rows flying in one after another, then the
+// cheapest per candidate lit with its tag; it then stays until scrolled back into view.
+export function priceSteps(rows: number): DemoStep[] {
+  return [
+    { name: "blank", ms: 400 },
+    { name: "rows", ms: 160, repeat: rows },
+    { name: "pause", ms: 700 },
+    { name: "best", ms: 86_400_000 },
+  ]
+}

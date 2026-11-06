@@ -16,6 +16,7 @@ import { ScrollTopButton } from "@/components/common/scroll-top-button"
 import { SignInProvider } from "@/components/common/sign-in-dialog"
 import { NotOnTimedPage } from "@/components/common/not-on-timed-page"
 import { SiteFooter } from "@/components/common/site-footer"
+import { ClickJump } from "@/components/common/click-jump"
 import { SiteHeader } from "@/components/common/site-header"
 import { ThemeProvider } from "@/providers/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
@@ -85,6 +86,8 @@ export default async function RootLayout({
           flex column would otherwise shrink them to their content. */}
       <body className="flex min-h-svh flex-col">
         {CJK_LOCALES.includes(locale as Locale) && <CjkFonts />}
+        {/* Everything clickable jumps as it's pressed. */}
+        <ClickJump />
         {/* Base UI's sliders, menus and popups follow the page's direction (right to left in
             Arabic, Hebrew and Persian), arrow keys included. */}
         <DirectionProvider direction={textDirection(locale)}>
@@ -112,8 +115,12 @@ export default async function RootLayout({
                         <div
                           id="content"
                           tabIndex={-1}
-                          className="flex flex-1 flex-col outline-none [&>*]:w-full"
+                          className="relative flex flex-1 flex-col outline-none [&>*]:w-full"
                         >
+                          {/* Bare squares in the page's corners (hero-corners.css). */}
+                          <NotOnTimedPage>
+                            <div aria-hidden className="page-corners" />
+                          </NotOnTimedPage>
                           <MaintenanceNotice />
                           <NotOnTimedPage>
                             <LegalBanner />

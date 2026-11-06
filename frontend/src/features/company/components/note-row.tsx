@@ -1,28 +1,20 @@
 "use client"
 
-import {
-  BookmarkIcon,
-  BookmarkXIcon,
-  KeyRoundIcon,
-  PencilIcon,
-  Trash2Icon,
-  UserIcon,
-} from "lucide-react"
-import { useFormatter, useNow, useTranslations } from "next-intl"
+import { KeyRoundIcon, UserIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
 import { NoteEditor } from "@/features/company/components/note-editor"
+import { NoteText } from "@/features/company/components/note-text"
 import { ConfirmDialog } from "@/components/common/confirm-dialog"
-import { IconButton } from "@/components/common/icon-button"
+import { DotsMenu } from "@/components/common/dots-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { TEXT_LINK } from "@/config/links"
 import { ROW_HOVER } from "@/config/lists"
+import { useLocalTime } from "@/hooks/use-local-time"
 import { apiErrorMessage, apiFetch, serviceRefusal } from "@/lib/api"
 import { firstGrapheme } from "@/lib/graphemes"
 import { noteAuthorName } from "@/lib/interview-notes"
-import { linkParts } from "@/lib/linkify"
 import type { InterviewNote } from "@/types/company"
 
 /** The avatar's mark without a picture: a key for an API key, the name's first letter, or a
@@ -42,15 +34,18 @@ function AuthorMark({
 }
 
 /** One note in an interview's notes: its author's picture and name ("former member" once
- * they've left), when it was written and whether it was edited, its text with its addresses as
- * links; and what the member may do with it, as the backend says: edit, delete, pin. */
+ * they've left), whether it was edited, when it was written (with its day when `dated`, the list
+ * saying it otherwise), its text; and a menu of what the member may do with it, as the backend
+ * says: edit, delete, pin. */
 export function NoteRow({
   note,
   path,
+  dated = false,
   onChanged,
   onRemoved,
 }: {
   note: InterviewNote
+  dated?: boolean
   // The note's own address in the API.
   path: string
   onChanged: (note: InterviewNote) => void
@@ -58,8 +53,7 @@ export function NoteRow({
 }) {
   const t = useTranslations("interviews")
   const common = useTranslations("common")
-  const format = useFormatter()
-  const now = useNow({ updateInterval: 60000 })
+  const localTime = useLocalTime()
   const [editing, setEditing] = useState(false)
   const [deleting, setDeleting] = useState(false)
   const [confirming, setConfirming] = useState(false)
@@ -109,11 +103,42 @@ export function NoteRow({
     }
   }
 
+  const items = [
+    ...(note.can_pin
+      ? [
+          {
+            label: t(note.pinned ? "noteUnpin" : "notePin"),
+            onClick: pin,
+            testId: "note-pin",
+          },
+        ]
+      : []),
+    ...(note.can_edit
+      ? [
+          {
+            label: common("edit"),
+            onClick: () => setEditing(true),
+            testId: "note-edit",
+          },
+        ]
+      : []),
+    ...(note.can_delete
+      ? [
+          {
+            label: common("delete"),
+            onClick: () => setConfirming(true),
+            destructive: true,
+            testId: "note-delete",
+          },
+        ]
+      : []),
+  ]
+
   return (
     <div
       data-testid="note"
       data-pinned={note.pinned || undefined}
-      className={`flex gap-4 p-6 pe-3 max-sm:flex-wrap max-sm:pe-6 ${ROW_HOVER}`}
+      className={`group/row flex gap-4 p-6 ${ROW_HOVER}`}
     >
       <Avatar size="lg">
         {note.author.photo_url && (
@@ -123,37 +148,33 @@ export function NoteRow({
           <AuthorMark apiKey={note.author.api_key} name={name} />
         </AvatarFallback>
       </Avatar>
-      <div className="min-w-0 flex-1 space-y-4">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-          {/* On phones the name has its line; when, "edited" and "pinned" go under it. */}
-          <bdi
-            className="font-medium max-sm:basis-full"
-            data-testid="note-author"
-          >
-            {name}
-          </bdi>
-          <time
-            dateTime={note.created_at}
-            title={format.dateTime(new Date(note.created_at), {
-              dateStyle: "medium",
-              timeStyle: "short",
-            })}
-            className="text-muted-foreground"
-            suppressHydrationWarning
-          >
-            {format.relativeTime(new Date(note.created_at), now)}
-          </time>
-          {note.edited_at && (
-            <span className="text-muted-foreground" data-testid="note-edited">
-              {t("noteEdited")}
-            </span>
-          )}
-          {note.pinned && (
-            <Badge variant="outline">
-              <BookmarkIcon aria-hidden />
-              {t("notePinned")}
-            </Badge>
-          )}
+      <div className="min-w-0 flex-1 space-y-3">
+        <div className="flex items-start justify-between gap-3">
+          <p className="flex min-h-10 min-w-0 flex-1 flex-wrap items-center gap-x-3 text-sm">
+            <bdi
+              className="min-w-0 font-medium [overflow-wrap:anywhere]"
+              data-testid="note-author"
+            >
+              {name}
+            </bdi>
+            {note.edited_at && (
+              <span className="text-muted-foreground" data-testid="note-edited">
+                {t("noteEdited")}
+              </span>
+            )}
+          </p>
+          <span className="flex shrink-0 items-center gap-3">
+            <time
+              dateTime={note.created_at}
+              className="text-sm text-muted-foreground tabular-nums"
+              suppressHydrationWarning
+            >
+              {dated
+                ? localTime.dateTime(note.created_at)
+                : localTime.time(note.created_at)}
+            </time>
+            {!editing && items.length > 0 && <DotsMenu items={items} />}
+          </span>
         </div>
         {/* On phones the text starts under the picture, not beside it (its size-10 and the gap-4). */}
         {editing ? (
@@ -167,60 +188,9 @@ export function NoteRow({
             />
           </div>
         ) : (
-          <p
-            dir="auto"
-            className="text-base break-words whitespace-pre-wrap max-sm:-ms-14"
-            data-testid="note-text"
-          >
-            {linkParts(note.text).map((part, index) =>
-              part.url ? (
-                <a
-                  key={index}
-                  href={part.url}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  dir="ltr"
-                  className={`${TEXT_LINK} break-all`}
-                >
-                  {part.text}
-                </a>
-              ) : (
-                part.text
-              )
-            )}
-          </p>
+          <NoteText text={note.text} />
         )}
       </div>
-      {!editing && (
-        <div className="flex shrink-0 items-center self-center max-sm:w-full max-sm:justify-center">
-          {note.can_pin && (
-            <IconButton
-              label={note.pinned ? t("noteUnpin") : t("notePin")}
-              onClick={pin}
-            >
-              {note.pinned ? (
-                <BookmarkXIcon className="size-6" />
-              ) : (
-                <BookmarkIcon className="size-6" />
-              )}
-            </IconButton>
-          )}
-          {note.can_edit && (
-            <IconButton label={common("edit")} onClick={() => setEditing(true)}>
-              <PencilIcon className="size-6" />
-            </IconButton>
-          )}
-          {note.can_delete && (
-            <IconButton
-              label={common("delete")}
-              className="hover:text-destructive"
-              onClick={() => setConfirming(true)}
-            >
-              <Trash2Icon className="size-6" />
-            </IconButton>
-          )}
-        </div>
-      )}
       <ConfirmDialog
         open={confirming}
         onOpenChange={setConfirming}

@@ -19,7 +19,8 @@ type InputActionProps = ComponentProps<typeof Input> & {
 }
 
 /** The site's big field with its action button inside; without an `action`, a search as you type
- * (SearchField): no button and no focus border, its `icon` (a magnifier) at the start instead. */
+ * (SearchField): no button, its `icon` (a magnifier) at the start instead. Focused, either shows the
+ * site's focus line along its bottom. */
 export function InputAction({ addon, ...props }: InputActionProps) {
   return addon ? (
     <FieldWithControls addon={addon} {...props} />
@@ -89,7 +90,7 @@ function FieldWithControls({
     <div
       className={cn(
         "relative -mx-6 flex min-w-0 flex-1 flex-wrap items-center gap-2 border border-transparent bg-surface ps-3 pe-3 pb-3 transition-colors sm:mx-0 sm:flex-nowrap sm:rounded-xl sm:ps-0 sm:pb-0",
-        action !== undefined && "focus-within:border-ring-gradient",
+        "focus-within:border-ring-gradient",
         SEARCH_OVER_LIST
       )}
     >
@@ -133,7 +134,7 @@ function Field({
     <div
       className={cn(
         "relative min-w-0 flex-1 rounded-xl border border-transparent transition-colors searched:max-sm:-mx-6",
-        action !== undefined && "focus-within:border-ring-gradient",
+        "focus-within:border-ring-gradient",
         SEARCH_OVER_LIST
       )}
     >

@@ -1,4 +1,3 @@
-import { ArrowRightIcon } from "lucide-react"
 import Link from "next/link"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
@@ -52,7 +51,7 @@ export default async function CompanyTemplatesPage({
   const browser = await TemplateBrowser({
     base: `/companies/${companyId}/templates`,
     // Only templates a company can copy, so "use template" never fails.
-    listPath: "/library/templates/copyable",
+    listPath: `/companies/companies/${companyId}/templates`,
     params: await searchParams,
     openBase: `/companies/${companyId}/templates`,
     // Using a template creates a test: not for viewers.
@@ -68,21 +67,18 @@ export default async function CompanyTemplatesPage({
       >
         {/* Templates are generic; an interview from the job description fits the role closer. */}
         <InfoCard
+          className="max-sm:-mx-6 max-sm:flex-wrap max-sm:rounded-none"
           action={
             company.can_edit && (
               <Button
-                size="icon"
-                aria-label={interviewsText("new")}
+                variant="outline"
+                className="h-10 px-5 text-base"
                 render={
                   <Link href={`/companies/${companyId}/interviews/new`} />
                 }
                 nativeButton={false}
-                className="size-10 shrink-0"
               >
-                <ArrowRightIcon
-                  aria-hidden
-                  className="size-5 rtl:-scale-x-100"
-                />
+                {interviewsText("new")}
               </Button>
             )
           }

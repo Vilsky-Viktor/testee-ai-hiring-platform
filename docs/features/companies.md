@@ -21,7 +21,7 @@ Some pages show how many things they hold in a small badge after their name, non
 - Company names are unique across testee, ignoring case.
 - A company can be renamed.
 - A user's companies are listed by name, alphabetically, ignoring case, as rows in one list on the companies page (`features/company/components/company-row.tsx`), laid out like a company's interviews. A row starts with the company's logo in a square tile the row's full height, shown whole, or its first letter without one (not on phones, where the row starts with the name); then the name on one line (the full name in its tooltip) with the verified or pending badge and the owner's icon or the member's role; then its counts of interviews and of its team (members and pending invites, as the Team tab lists them), both from the list's response (`interview_count`, `member_count`), and Remove for the owner, which asks to confirm first. On phones the counts go under the name. The whole row opens the company. Choosing a company for a template shows the same rows, without Remove.
-- One person can own at most 3 companies (`MAX_OWNED_COMPANIES`, by default; see [Admin zone](admin-zone.md#limits)).
+- One person can own at most 10 companies (`MAX_OWNED_COMPANIES`, by default; see [Admin zone](admin-zone.md#limits)).
 
 ## Team
 
@@ -37,7 +37,7 @@ The companies service enforces the roles: `require_editor` answers 403 to a view
 
 ### Handing the company on
 
-The owner can make an admin who has joined the owner: the role picker on that admin's row has an **owner** choice (`can_own` in the team list says who), which asks to confirm first (`POST /companies/members/{id}/owner`). In one transaction the admin becomes the owner and the owner an admin, only while both are still what was read, so a company never has two owners or none. Someone who already owns 3 companies can't become an owner of another (409). The new owner gets a bell notification (`ownership_received`), and the [action log](#action-log) records it (`ownership_transferred`). An automatic top-up keeps charging the card of whoever set it up. It isn't one of the assistant's or AI apps' tools.
+The owner can make an admin who has joined the owner: the role picker on that admin's row has an **owner** choice (`can_own` in the team list says who), which asks to confirm first (`POST /companies/members/{id}/owner`). In one transaction the admin becomes the owner and the owner an admin, only while both are still what was read, so a company never has two owners or none. Someone who already owns as many companies as one person may can't become an owner of another (409). The new owner gets a bell notification (`ownership_received`), and the [action log](#action-log) records it (`ownership_transferred`). An automatic top-up keeps charging the card of whoever set it up. It isn't one of the assistant's or AI apps' tools.
 
 ### Deleting an account that owns companies
 

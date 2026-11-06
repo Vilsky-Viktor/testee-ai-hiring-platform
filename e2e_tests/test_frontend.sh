@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# The browser tests' site: a production build of the frontend (compose's `frontend-test`, behind
-# the gateway's port 8082), so tests never wait on the dev server compiling pages and never slow
-# down the site the developer browses (port 8090). Only the browser test scripts call this.
+# The browser tests' site: a production build of the frontend's current files (compose's
+# `frontend-test`, behind the gateway's port 8082), so a run tests them without rebuilding the site
+# the developer browses (port 8090). Only the browser test scripts call this.
 #
 #   e2e_tests/test_frontend.sh --source    prints a hash of the frontend's files as they are now
 #                                          (uncommitted changes too) and the settings baked in

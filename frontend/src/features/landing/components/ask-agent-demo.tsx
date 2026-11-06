@@ -5,27 +5,32 @@ import { HistoryIcon, SparklesIcon, SquarePenIcon, XIcon } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 import { Fragment, useEffect, useRef, useState } from "react"
 
-import { ChatBubble, ThinkingDots } from "@/components/common/chat-bubble"
+import { ChatBubble } from "@/components/common/chat-bubble"
+import { MiraName } from "@/components/common/mira-name"
 import { AskAgentCards } from "@/features/landing/components/ask-agent-cards"
-import {
-  DemoActionCard,
-  type DemoCardState,
-} from "@/features/landing/components/demo-action-card"
+import { DemoActionCard } from "@/features/landing/components/demo-action-card"
 import { DemoChatInput } from "@/features/landing/components/demo-chat-input"
 import { DemoPointer } from "@/features/landing/components/demo-pointer"
 import { PromoBurst } from "@/features/landing/components/promo-burst"
+import { useClickBump } from "@/features/landing/hooks/use-click-bump"
+import { useSpotlight } from "@/features/landing/hooks/use-spotlight"
+import { useDemoMeter } from "@/features/landing/hooks/use-demo-meter"
+import { useVoiceWaves } from "@/hooks/use-voice-waves"
 import {
   ASK_AGENT_EMAIL,
-  ASK_AGENT_INTERVIEW,
   ASK_AGENT_QUESTIONS,
   ASK_AGENT_RESULTS,
-  type AskAgentCard,
   type AskAgentQuestion,
 } from "@/config/ask-agent-demo"
-import { type DemoStep, pointedAt, useDemoSteps } from "@/hooks/use-demo-steps"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
+import { pointedAt, useDemoSteps } from "@/hooks/use-demo-steps"
+import {
+  demoSteps,
+  inputText,
+} from "@/features/landing/utils/ask-agent-demo-steps"
 import { bdi, bdiText } from "@/lib/bidi"
 import { formatPercent } from "@/lib/format"
-import { graphemes, sliceGraphemes } from "@/lib/graphemes"
+import { graphemes } from "@/lib/graphemes"
 
 // The promo's motion, with motion allowed: the person's message rising from the input into its
 // place; Mira's growing out of a dot at its tail (the bottom of its start side); each landing
@@ -37,84 +42,6 @@ const GROW =
   "motion-safe:animate-[promo-grow_0.5s_cubic-bezier(0.2,0.9,0.3,1)_both] origin-bottom-left rtl:origin-bottom-right"
 const SEND =
   "motion-safe:[&_.demo-pressed]:overflow-hidden motion-safe:[&_.demo-pressed_svg]:animate-[promo-lift_0.4s_ease-in-out] motion-safe:[&_.truncate]:animate-[promo-leave_0.3s_ease-in_forwards]"
-
-// A step and what it shows: how many of the chat's items (each question, its answer, and the
-// action card before the last answer), the question in the input, the tool at work, the action
-// card's state and the card beside the chat that's lit.
-type Step = DemoStep & {
-  upTo: number
-  asking?: AskAgentQuestion
-  working?: AskAgentQuestion
-  card?: DemoCardState
-  lit?: AskAgentCard
-}
-
-// One question asked: the pointer clicks into the input, it's typed and sent, and the tool
-// reads while the answer is written; `before` items are in the chat already.
-function asked(
-  question: AskAgentQuestion,
-  letters: number,
-  before: number,
-  lit: AskAgentCard
-): Step[] {
-  const shared = { upTo: before, lit, asking: question }
-
-  return [
-    { name: `aim-${question}`, ms: 800, point: "input", upTo: before, lit },
-    { name: `focus-${question}`, ms: 300, click: true, ...shared },
-    { name: `type-${question}`, ms: 45, repeat: letters, ...shared },
-    { name: `aimSend-${question}`, ms: 600, point: "send", ...shared },
-    { name: `send-${question}`, ms: 400, click: true, ...shared },
-    {
-      name: `work-${question}`,
-      ms: 700,
-      point: "none",
-      upTo: before + 1,
-      lit,
-      working: question,
-    },
-  ]
-}
-
-/** The whole conversation: the three questions, typed in `letters` each, with their answers,
- * the last after its action's card is confirmed; then a pause on the complete frame. */
-function demoSteps(letters: Record<AskAgentQuestion, number>): Step[] {
-  return [
-    { name: "start", ms: 300, point: "none", upTo: 0 },
-    ...asked("stats", letters.stats, 0, "info"),
-    { name: "answer-stats", ms: 1400, upTo: 2, lit: "info" },
-    ...asked("help", letters.help, 2, "help"),
-    { name: "answer-help", ms: 2000, upTo: 4, lit: "help" },
-    ...asked("invite", letters.invite, 4, "actions"),
-    { name: "card", ms: 500, upTo: 6, card: "pending", lit: "actions" },
-    {
-      name: "aimConfirm",
-      ms: 800,
-      point: "confirm",
-      upTo: 6,
-      card: "pending",
-      lit: "actions",
-    },
-    {
-      name: "confirm",
-      ms: 400,
-      click: true,
-      upTo: 6,
-      card: "pending",
-      lit: "actions",
-    },
-    {
-      name: "running",
-      ms: 400,
-      point: "none",
-      upTo: 6,
-      card: "running",
-      lit: "actions",
-    },
-    { name: "done", ms: 1500, upTo: 7, lit: "actions" },
-    { name: "end", ms: 400, upTo: 7 },
-  ]
-}
 
 /** The assistant's panel answering three questions in turn, played while on screen: how many
  * candidates passed an interview (from its report), how to give extra time (from a guide), and
@@ -129,8 +56,8 @@ export function AskAgentDemo() {
   const t = useTranslations("landing.justAsk")
   const locale = useLocale()
   const assistant = useTranslations("assistant")
-  const common = useTranslations("common")
-  const values = { interview: ASK_AGENT_INTERVIEW, email: ASK_AGENT_EMAIL }
+  const { interview } = useDemoContent("askAgent")
+  const values = { interview, email: ASK_AGENT_EMAIL }
   const questions = Object.fromEntries(
     ASK_AGENT_QUESTIONS.map((key) => [
       key,
@@ -152,22 +79,45 @@ export function AskAgentDemo() {
   const inputRef = useRef<HTMLDivElement>(null)
   const sendRef = useRef<HTMLSpanElement>(null)
   const confirmRef = useRef<HTMLSpanElement>(null)
-  const targets = { input: inputRef, send: sendRef, confirm: confirmRef }
+  const micRef = useRef<HTMLSpanElement>(null)
+  const targets = {
+    input: inputRef,
+    send: sendRef,
+    confirm: confirmRef,
+    mic: micRef,
+  }
+  // The voice heard while the microphone is held, moving the input's wave.
+  const meter = useDemoMeter(false, step.listening === true)
+  const waves = useVoiceWaves(meter, false)
   const point = pointedAt(steps, index)
   const target =
     point && point in targets ? targets[point as keyof typeof targets] : null
+
+  // The input lights up as the pointer heads for it, until the question is sent; what the
+  // pointer clicks jumps as the click lands.
+  useSpotlight(
+    step.name.startsWith("aim-") ||
+      step.name.startsWith("focus-") ||
+      step.name.startsWith("type-")
+      ? inputRef
+      : null,
+    index
+  )
+  useClickBump(target, step.click === true, index)
   const asking = step.asking ? questions[step.asking] : null
-  const typed = step.name.startsWith("type-")
-    ? sliceGraphemes(asking!, n)
-    : step.name.startsWith("focus-")
-      ? ""
-      : asking
+  const spoken = step.listening || step.transcribing
+  const typed = inputText(step, asking, n)
   const { passed, total, passMark, best } = ASK_AGENT_RESULTS
   const answer = (text: React.ReactNode) => (
     <ChatBubble
       role="assistant"
-      className={cn("border bg-transparent p-4 whitespace-normal", GROW)}
-      content={text}
+      className={cn("space-y-1 whitespace-normal", GROW)}
+      content={
+        <>
+          <MiraName />
+          {text}
+        </>
+      }
     />
   )
   const question = (key: string, text: string) => (
@@ -215,13 +165,14 @@ export function AskAgentDemo() {
   return (
     <div
       data-promo
+      data-ask-promo
       className="mx-auto grid w-full max-w-4xl gap-4 md:grid-cols-[minmax(0,1fr)_16rem] lg:grid-cols-[minmax(0,1fr)_19rem]"
     >
       <div
         ref={ref}
         aria-hidden
         data-testid="agent-chat"
-        className="relative flex h-120 flex-col overflow-hidden rounded-xl bg-popover/60 text-popover-foreground ring-1 ring-foreground/10 motion-reduce:h-auto max-sm:hidden dark:bg-surface"
+        className="relative flex h-120 flex-col overflow-hidden rounded-xl bg-surface text-popover-foreground ring-1 ring-foreground/10 motion-reduce:h-auto max-sm:hidden"
       >
         <DemoPointer
           target={target}
@@ -243,7 +194,7 @@ export function AskAgentDemo() {
             ref={scroller}
             className="flex-1 overflow-hidden px-4 pt-4 pb-6 text-start"
           >
-            <ul className="space-y-3">
+            <ul className="space-y-5">
               {/* Mira's welcome, there from the start. */}
               {answer(t("welcome"))}
               {items.slice(0, step.upTo).map((item, at) => (
@@ -252,18 +203,16 @@ export function AskAgentDemo() {
               {step.working && (
                 <ChatBubble
                   role="assistant"
-                  className={cn(
-                    "space-y-2 border bg-transparent p-4 whitespace-normal",
-                    GROW
-                  )}
+                  className={cn("space-y-1 whitespace-normal", GROW)}
                   content={
                     <>
-                      <p className="text-xs text-muted-foreground">
+                      <MiraName working />
+                      <p
+                        key={step.working}
+                        className="animate-in text-sm text-muted-foreground fade-in"
+                      >
                         {t(`steps.${step.working}`)}
                       </p>
-                      <span className="flex h-5 items-center gap-1">
-                        <ThinkingDots label={common("thinking")} />
-                      </span>
                     </>
                   }
                 />
@@ -281,9 +230,15 @@ export function AskAgentDemo() {
             <DemoChatInput
               ref={inputRef}
               sendRef={sendRef}
+              micRef={micRef}
+              waveRef={waves.you}
+              listening={step.listening}
+              transcribing={step.transcribing}
               text={typed}
               typing={
-                step.asking !== undefined && !step.name.startsWith("send-")
+                step.asking !== undefined &&
+                !spoken &&
+                !step.name.startsWith("send-")
               }
               placeholder={assistant("placeholder")}
               pressed={step.name.startsWith("send-")}

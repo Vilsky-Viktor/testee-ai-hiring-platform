@@ -2,11 +2,11 @@ import { expect, test, type Page } from "@playwright/test";
 
 import { loaded } from "./helpers/waits";
 
-// The site's theme: the device's light or dark setting until a visitor picks one; the header's
+// The site's theme: the device's light or dark setting until a visitor picks one; the footer's
 // theme buttons (system, light, dark, in that order) keep the choice.
 
 const html = (page: Page) => page.locator("html");
-const modes = (page: Page) => page.getByRole("banner").getByRole("group").getByRole("button");
+const modes = (page: Page) => page.getByRole("contentinfo").getByRole("group").getByRole("button");
 
 for (const scheme of ["light", "dark"] as const) {
   test(`a new visitor on a ${scheme} device gets the ${scheme} theme`, async ({ page }) => {
@@ -20,7 +20,7 @@ for (const scheme of ["light", "dark"] as const) {
       await expect(html(page)).not.toHaveClass(/\bdark\b/);
     }
 
-    // The header's system button shows as picked.
+    // The footer's system button shows as picked.
     await expect(modes(page).first()).toHaveAttribute("aria-pressed", "true");
   });
 }

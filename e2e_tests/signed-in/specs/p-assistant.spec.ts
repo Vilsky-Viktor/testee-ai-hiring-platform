@@ -110,12 +110,12 @@ test("the assistant welcomes by stage, answers, takes voice, keeps history and s
   // Its width: wider with the arrow keys, no narrower than 360px however far it's dragged.
   const handle = panel.getByRole("separator");
   const width = async () => (await panel.boundingBox())!.width;
-  await expect.poll(width).toBe(448);
+  await expect.poll(width).toBe(496);
   await shot(owner, "width-default");
   await handle.focus();
   await owner.keyboard.press("ArrowLeft");
   await owner.keyboard.press("ArrowLeft");
-  await expect.poll(width).toBe(480);
+  await expect.poll(width).toBe(528);
   const box = (await handle.boundingBox())!;
   await owner.mouse.move(box.x + box.width / 2, box.y + 300);
   await owner.mouse.down();

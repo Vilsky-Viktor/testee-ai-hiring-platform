@@ -2,16 +2,13 @@
 
 import { DownloadIcon, Share2Icon } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { useState } from "react"
-import { toast } from "sonner"
 
-import { ShareReport } from "@/features/company/components/share-report"
 import { IconButton } from "@/components/common/icon-button"
-import { reportPdf } from "@/lib/report-pdf"
+import { ShareReport } from "@/features/company/components/share-report"
+import { useReportActions } from "@/features/company/hooks/use-report-actions"
 
-/** Download a PDF report, or share it by email or chat. It's made from the hidden element
- * `reportId` (over several pages with `pages`), which `load`, when given, renders first;
- * `emailPath` emails it, `summary` is the chat message. Icons like the page's other actions; their tooltips name them. */
+/** Download a PDF report, or share it by email or chat (useReportActions); `emailPath` emails it,
+ * `summary` is the chat message. Icons like the page's other actions; their tooltips name them. */
 export function ReportActions({
   reportId,
   fileName,
@@ -29,51 +26,8 @@ export function ReportActions({
   load?: () => Promise<void>
 }) {
   const t = useTranslations("report")
-  const [busy, setBusy] = useState(false)
-  const [sharing, setSharing] = useState(false)
-
-  // Made from the hidden report on the page.
-  async function makePdf() {
-    const node = document.getElementById(reportId)
-
-    return node ? reportPdf(node, `${fileName}.pdf`, pages) : null
-  }
-
-  async function download() {
-    setBusy(true)
-
-    try {
-      await load?.()
-      const file = await makePdf()
-
-      if (file) {
-        const url = URL.createObjectURL(file)
-        const link = document.createElement("a")
-        link.href = url
-        link.download = file.name
-        link.click()
-        // Released once the browser has started saving it.
-        setTimeout(() => URL.revokeObjectURL(url), 1000)
-      }
-    } catch {
-      toast.error(t("failed"))
-    } finally {
-      setBusy(false)
-    }
-  }
-
-  async function share() {
-    setBusy(true)
-
-    try {
-      await load?.()
-      setSharing(true)
-    } catch {
-      toast.error(t("failed"))
-    } finally {
-      setBusy(false)
-    }
-  }
+  const { busy, sharing, setSharing, makePdf, download, share } =
+    useReportActions({ reportId, fileName, pages, load })
 
   return (
     <>

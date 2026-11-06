@@ -1,30 +1,20 @@
 // The home page's "see who's best" picture's last screen: the Slack channel testee posts to.
 // Display only.
 
-// The channel testee posts to in Slack, and the candidates' "finished" messages there (the only
-// kind of this flow Slack gets: services/notifications/helpers/slack.py), oldest first, by
-// their place in the list and when each came.
-export const DEMO_SLACK_CHANNEL = "hiring"
-// The app's name there and its button, as testee posts them (in English, whatever the page's
-// language).
+// The channel testee posts to in Slack (its place among the workspace's channels, whose names,
+// like Slack's own words, testee's message and its button, are texts in each language:
+// `landing.demoContent.slack`), and the candidates' "finished" messages there
+// (services/notifications/helpers/slack.py), oldest first, by their place in the list and when
+// each came; last, the note posted on the interview's notes, as Slack gets every note, and when.
+export const DEMO_SLACK_CHANNEL = 1
+// The app's name there, and how many members the channel has.
 export const DEMO_SLACK_APP = "testee"
-export const DEMO_SLACK_BUTTON = "Open in testee"
-// Slack's own words around them, in English as in an English workspace: the app tag, the
-// channel's members and its message box.
-export const DEMO_SLACK_UI = {
-  app: "APP",
-  members: 12,
-  composer: "Message #hiring",
-  channelsTitle: "Channels",
-  peopleTitle: "Direct messages",
-  appsTitle: "Apps",
-}
+export const DEMO_SLACK_MEMBERS = 12
 
-// The workspace's side menu: its name, its channels (the current one is DEMO_SLACK_CHANNEL),
-// teammates to message, whether each is active, and Slack's sidebar colours.
+// The workspace's side menu: its name, teammates to message, whether each is active, and Slack's
+// sidebar colours.
 export const DEMO_SLACK_SIDEBAR = {
   workspace: "Acme",
-  channels: ["general", "hiring", "engineering"],
   people: [
     { name: "Maya Patel", active: true },
     { name: "Tom Becker", active: false },
@@ -35,6 +25,7 @@ export const DEMO_SLACK_SIDEBAR = {
   current: "#1164a3",
   active: "#2bac76",
 }
+export const DEMO_SLACK_NOTE_TIME = "10:14"
 export const DEMO_SLACK_FINISHED = [
   { candidate: 3, time: "09:12" },
   { candidate: 2, time: "09:40" },

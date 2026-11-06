@@ -41,6 +41,7 @@ export default async function PracticePage({
     openBase: "/practice",
     bySlug: true,
     statuses: statuses ?? undefined,
+    topicsLine: true,
   })
 
   return (

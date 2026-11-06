@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises"
 
 import { expect, test } from "../fixtures"
 import { createCompany, createInterview, inviteCandidate } from "../helpers/api"
-import { visit } from "../helpers/navigation"
+import { openMenu, visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { ownerEmail, throwawayEmail } from "../helpers/users"
 
@@ -15,23 +15,23 @@ test("owner downloads and shares the report of all candidates", async ({ signInA
   await visit(owner, `/companies/${company.id}/interviews/${interviewId}?tab=candidates`)
   await shot(owner, "candidates")
 
+  // The page's menu, the first of the "⋮" (each candidate's row has its own): download, share.
+  const menu = owner.getByRole("main").getByTestId("integration-menu").first()
+  const items = owner.getByRole("menu").getByRole("menuitem")
   const downloaded = owner.waitForEvent("download")
-  // The report's icon buttons, named for screen readers.
-  await owner.getByRole("button", { name: "Download PDF" }).click()
+  await openMenu(owner, menu)
+  await items.first().click()
   const file = await downloaded
   expect(file.suggestedFilename()).toMatch(/^Candidates .*\.pdf$/)
   const path = test.info().outputPath(file.suggestedFilename())
   await file.saveAs(path)
   expect((await readFile(path)).subarray(0, 5).toString()).toBe("%PDF-")
 
-  await owner.getByRole("button", { name: "Share report" }).click()
+  await openMenu(owner, menu)
+  await items.nth(1).click()
   const dialog = owner.getByRole("dialog")
   await expect(dialog.locator('input[type="email"]')).toBeVisible()
-  // The summary goes to each chat app with its own link (icon links named after the app), after
-  // a lowercase label.
-  await expect(
-    dialog.getByRole("link", { name: "WhatsApp" }).locator("xpath=preceding-sibling::span")
-  ).toHaveCSS("text-transform", "lowercase")
+  // The summary goes to each chat app with its own link, named after the app.
   await expect(dialog.getByRole("link", { name: "WhatsApp" })).toHaveAttribute("href", /^https:\/\/wa\.me\/\?text=/)
   await expect(dialog.getByRole("link", { name: "Telegram" })).toHaveAttribute("href", /^https:\/\/t\.me\/share\/url\?/)
   await expect(dialog.getByRole("link", { name: "Viber" })).toHaveAttribute("href", /^viber:\/\/forward\?text=/)

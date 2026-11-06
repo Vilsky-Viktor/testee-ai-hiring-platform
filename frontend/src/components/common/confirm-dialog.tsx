@@ -1,5 +1,6 @@
 "use client"
 
+import { LoaderCircleIcon, TriangleAlertIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
@@ -13,8 +14,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 
-/** Asks before something that can't be undone: a title, what happens, "keep" and the red
- * `confirm` button. Closing is off while `busy`. `children` go under the text (a box to tick
+/** Asks before something that can't be undone, the one dialog for it across the site: a warning
+ * sign beside the title, what happens, "keep" and the red `confirm` button. Closing is off while `busy`. `children` go under the text (a box to tick
  * first), and `confirmDisabled` holds the button until then. */
 export function ConfirmDialog({
   open,
@@ -43,8 +44,19 @@ export function ConfirmDialog({
     <Dialog open={open} onOpenChange={(next) => !busy && onOpenChange(next)}>
       <DialogContent showCloseButton={false}>
         <DialogHeader className="gap-4">
-          <DialogTitle className="no-dot mb-2">{title}</DialogTitle>
-          <DialogDescription>{text}</DialogDescription>
+          <div className="flex items-center gap-4">
+            <span
+              aria-hidden
+              className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-destructive/10 text-destructive"
+            >
+              <TriangleAlertIcon className="size-6" />
+            </span>
+            {/* A name in the title keeps its capitals. */}
+            <DialogTitle className="no-dot [&_bdi]:normal-case">
+              {title}
+            </DialogTitle>
+          </div>
+          <DialogDescription className="space-y-2">{text}</DialogDescription>
         </DialogHeader>
         {children}
         <DialogFooter>
@@ -65,6 +77,7 @@ export function ConfirmDialog({
             disabled={busy || confirmDisabled}
             onClick={onConfirm}
           >
+            {busy && <LoaderCircleIcon className="animate-spin" />}
             {confirm}
           </Button>
         </DialogFooter>

@@ -13,7 +13,8 @@ export async function settled(locator: Locator) {
       element
         .getAnimations({ subtree: true })
         .filter((animation) => animation.effect?.getComputedTiming().endTime !== Infinity)
-        .map((animation) => animation.finished),
+        // One replaced meanwhile by another (a transition restarted) ended too.
+        .map((animation) => animation.finished.catch(() => undefined)),
     ),
   );
 }

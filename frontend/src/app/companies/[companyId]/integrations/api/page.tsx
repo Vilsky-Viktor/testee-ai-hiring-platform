@@ -1,22 +1,20 @@
 import { CodeXmlIcon } from "lucide-react"
 import { cookies } from "next/headers"
-import Link from "next/link"
 import { redirect } from "next/navigation"
 import { getTranslations } from "next-intl/server"
 
 import { BackLink } from "@/components/common/back-link"
 import { AllowedDomains } from "@/features/company/components/allowed-domains"
 import { ApiNav, type ApiTab } from "@/features/company/components/api-nav"
+import { ApiKeys, NewKey } from "@/features/company/components/api-keys"
 import {
   AddWebhook,
-  ApiKeys,
   ApiWebhooks,
-  NewKey,
-} from "@/features/company/components/api-settings"
+} from "@/features/company/components/api-webhooks"
+import { DotsMenu } from "@/components/common/dots-menu"
 import { PageHeader } from "@/components/common/page-header"
 import { SignInPrompt } from "@/components/common/sign-in-prompt"
-import { Button } from "@/components/ui/button"
-import { API_DOCS_PATH } from "@/config/api"
+import { API_DOCS_PATH, SDK_DOCS_PATH } from "@/config/api"
 import { TOKEN_COOKIE } from "@/config/auth"
 import { serverFetch } from "@/lib/server-api"
 import type { ApiSettings } from "@/types/api-access"
@@ -73,8 +71,7 @@ export default async function ApiPage({
             </BackLink>
           }
           title={
-            // On phones the buttons go on their own line, full width, sharing it equally.
-            <div className="flex items-start justify-between gap-4 max-sm:flex-col max-sm:items-stretch">
+            <div className="flex items-start justify-between gap-4">
               <div className="flex min-w-0 items-center gap-4">
                 <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-surface">
                   <CodeXmlIcon className="size-6" />
@@ -85,32 +82,25 @@ export default async function ApiPage({
                   </h1>
                 </div>
               </div>
-              {/* The docs, and the open tab's action for owners and admins. */}
+              {/* The open tab's action for owners and admins, and the docs in the "⋮" menu. */}
               <div
-                className="flex shrink-0 items-center gap-3 max-sm:mt-4 max-sm:*:flex-1"
+                className="flex shrink-0 items-center justify-end gap-3"
                 data-testid="integration-actions"
               >
-                <Button
-                  variant="outline"
-                  className="h-10 px-5 text-base"
-                  render={<Link href={API_DOCS_PATH} />}
-                  nativeButton={false}
-                >
-                  {api("docs")}
-                </Button>
-                {company.can_edit &&
-                  (current === "keys" ? (
-                    <NewKey
-                      companyId={companyId}
-                      expiries={settings.expiries}
-                      options={settings}
-                      defaults={settings.default_permissions}
-                    />
-                  ) : (
-                    current === "webhooks" && (
-                      <AddWebhook companyId={companyId} />
-                    )
-                  ))}
+                {company.can_edit && (
+                  <TabAction
+                    current={current}
+                    companyId={companyId}
+                    settings={settings}
+                  />
+                )}
+                <DotsMenu
+                  items={[
+                    current === "domains"
+                      ? { label: api("sdkDocs"), href: SDK_DOCS_PATH }
+                      : { label: api("docs"), href: API_DOCS_PATH },
+                  ]}
+                />
               </div>
             </div>
           }
@@ -120,7 +110,9 @@ export default async function ApiPage({
             <ApiKeys
               companyId={companyId}
               keys={settings.keys}
+              expiries={settings.expiries}
               options={settings}
+              defaults={settings.default_permissions}
               canEdit={company.can_edit}
             />
           ) : current === "webhooks" ? (
@@ -141,4 +133,33 @@ export default async function ApiPage({
       </div>
     </main>
   )
+}
+
+/** The open tab's main action, in the title row: none until the tab has something listed, as its
+ * empty state has it then. */
+function TabAction({
+  current,
+  companyId,
+  settings,
+}: {
+  current: ApiTab
+  companyId: string
+  settings: ApiSettings
+}) {
+  if (current === "keys" && settings.keys.length > 0) {
+    return (
+      <NewKey
+        companyId={companyId}
+        expiries={settings.expiries}
+        options={settings}
+        defaults={settings.default_permissions}
+      />
+    )
+  }
+
+  if (current === "webhooks" && settings.webhooks.length > 0) {
+    return <AddWebhook companyId={companyId} />
+  }
+
+  return null
 }

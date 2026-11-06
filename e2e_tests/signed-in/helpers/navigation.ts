@@ -9,6 +9,31 @@ export async function openDialog(page: Page, button: Locator) {
   }).toPass()
 }
 
+/** Opens the dialog the `item`th entry of the "⋮" menu in `scope` opens (0, an integration's
+ * Instructions; -1, the last, such as Disconnect), trying again if a click came before the page
+ * was ready for it. */
+export async function openFromMenu(page: Page, scope: Locator, item = 0) {
+  const menu = scope.getByTestId("integration-menu").filter({ visible: true })
+
+  await expect(async () => {
+    if (await page.getByRole("menu").isHidden()) {
+      await menu.click()
+    }
+
+    await page.getByRole("menuitem").nth(item).click({ timeout: 2_000 })
+    await expect(page.getByRole("dialog")).toBeVisible({ timeout: 2_000 })
+  }).toPass()
+}
+
+/** Opens the menu `button` opens (a "⋮"), clicking again if the first click came before the page
+ * was ready for it. */
+export async function openMenu(page: Page, button: Locator) {
+  await expect(async () => {
+    await button.click()
+    await expect(page.getByRole("menu")).toBeVisible({ timeout: 2_000 })
+  }).toPass()
+}
+
 /** Opens one of a page's tabs (a company's, the admin zone's) by where it leads (`path`, the
  * end of its address, such as "/billing" or "?tab=reserved"), clicking again if the first click
  * came before the page was ready for it. */
@@ -56,6 +81,11 @@ export async function visitUntil(page: Page, path: string, status: number) {
     const response = await page.goto(path)
     expect(response?.status(), path).toBe(status)
   }).toPass({ timeout: 60_000, intervals: [2_000] })
+}
+
+/** A candidate's row in a list, by the name or email it shows. */
+export function candidateRow(page: Page, text: string) {
+  return page.locator("[data-row]").filter({ hasText: text, visible: true })
 }
 
 /** An integration's row on a company's integrations tab, by the page it opens (`path`, such as

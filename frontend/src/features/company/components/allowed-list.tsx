@@ -1,13 +1,13 @@
 "use client"
 
-import { XIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { type FormEvent, useState } from "react"
 import { toast } from "sonner"
 
-import { IconButton } from "@/components/common/icon-button"
 import { Button } from "@/components/ui/button"
 import { FloatingInput } from "@/components/ui/floating-field"
+import { LIST_BOX, ROW_HOVER } from "@/config/lists"
+import { DotsMenu } from "@/components/common/dots-menu"
 import { apiErrorMessage } from "@/lib/api"
 
 /** A list owners and admins add entries to and take them off (a key's allowed IPs, the
@@ -23,6 +23,7 @@ export function AllowedList({
   failed,
   canEdit,
   save,
+  tag,
 }: {
   entries: string[]
   // The field's name, such as "IP address or range".
@@ -36,6 +37,8 @@ export function AllowedList({
   canEdit: boolean
   // Saves the whole list; resolves to the list as the API kept it.
   save: (entries: string[]) => Promise<string[]>
+  // What to say about an entry, at its end (a domain's reach).
+  tag?: (entry: string) => React.ReactNode
 }) {
   const t = useTranslations("api")
   const [list, setList] = useState(entries)
@@ -94,24 +97,31 @@ export function AllowedList({
         </form>
       )}
       {list.length ? (
-        <ul className="divide-y rounded-xl border">
+        <ul className={`${LIST_BOX} overflow-hidden`}>
           {list.map((entry) => (
             <li
               key={entry}
-              className="flex items-center gap-3 py-1 ps-5 pe-1"
+              className={`group/row flex min-h-14 items-center gap-3 py-2 ps-5 pe-2 ${ROW_HOVER}`}
               data-testid="allowed-entry"
             >
-              <span className="min-w-0 flex-1 font-mono text-sm break-all normal-case">
+              <span
+                data-testid="allowed-value"
+                className="min-w-0 flex-1 font-mono text-sm break-all normal-case"
+              >
                 {entry}
               </span>
+              {tag?.(entry)}
               {canEdit && (
-                <IconButton
-                  label={removeLabel(entry)}
-                  disabled={saving}
-                  onClick={() => change(list.filter((item) => item !== entry))}
-                >
-                  <XIcon className="size-5" />
-                </IconButton>
+                <DotsMenu
+                  items={[
+                    {
+                      label: removeLabel(entry),
+                      onClick: () =>
+                        change(list.filter((item) => item !== entry)),
+                      destructive: true,
+                    },
+                  ]}
+                />
               )}
             </li>
           ))}

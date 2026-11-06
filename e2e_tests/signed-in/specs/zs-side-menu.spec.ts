@@ -88,8 +88,8 @@ test("a company's side menu lists its pages, scrolls on its own and stays in vie
   await expect(nav.getByRole("link").last()).toBeInViewport()
   await shot(owner, "menu-scrolled", false)
 
-  // Scrolled past where the menu starts, it holds 24px under the window's top (sticky's
-  // top-6), where it would otherwise have gone above it.
+  // Scrolled past where the menu starts, it holds 80px under the window's top (sticky's top-20,
+  // below the page's sticky header), where it would otherwise have gone above it.
   await owner.setViewportSize({ width: 1280, height: 500 })
   await visit(owner, `/companies/${company.id}/interviews/${interview}`)
   await expect(nav.locator('a[aria-current="page"]')).toBeVisible()
@@ -99,12 +99,12 @@ test("a company's side menu lists its pages, scrolls on its own and stays in vie
     const box = element.getBoundingClientRect()
     const room = element.parentElement!.getBoundingClientRect().bottom - box.bottom
 
-    return box.top + window.scrollY - 24 + Math.min(100, room - 1)
+    return box.top + window.scrollY - 80 + Math.min(100, room - 1)
   })
   await owner.evaluate((top) => window.scrollTo(0, top), scroll)
   await expect
     .poll(() => nav.evaluate((element) => Math.round(element.getBoundingClientRect().top)))
-    .toBe(24)
+    .toBe(80)
   await expect(nav.locator('a[aria-current="page"]')).toBeInViewport()
   await shot(owner, "menu-in-view", false)
 })

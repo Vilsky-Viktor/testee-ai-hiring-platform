@@ -39,10 +39,9 @@ test("a candidate sees their extra time and pledges to answer on their own befor
   await expect(owner.getByTestId("pledged")).toHaveCount(0)
 
   await visit(candidate, `/invite/${token}`)
-  // The seconds per question: the first of the time facts above the start (the whole
-  // interview's minutes come after it; the rules are a list).
-  const seconds = candidate.getByRole("main").locator("p span.tabular-nums").first()
-  await expect(seconds).toHaveText(String(MIN_QUESTION_SECONDS * 2))
+  // The seconds per question.
+  const seconds = candidate.getByTestId("time-per-question").filter({ visible: true }).locator("dd")
+  await expect(seconds).toHaveText(new RegExp(`^${MIN_QUESTION_SECONDS * 2}\\D`))
   const start = candidate.getByRole("main").getByRole("button")
   const pledge = candidate.getByRole("checkbox")
   await expect(pledge).not.toBeChecked()

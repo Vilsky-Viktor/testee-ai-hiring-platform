@@ -10,10 +10,9 @@ suites are in [Testing](testing.md).
 
 ## The browser tests' site
 
-Browser tests (`pages.sh`, `signed-in.sh`) never open the dev server you browse at
-http://localhost:8090: it compiles each page on its first visit, grows past several GB under a
-test run, and a run would slow it down for you. They open a production build of the frontend
-instead, compose's `frontend-test` service (the `test` profile; `frontend/Dockerfile`'s `prod`
+Browser tests (`pages.sh`, `signed-in.sh`) never open the site you browse at
+http://localhost:8090, which stays as it was last rebuilt. They open a production build of the
+frontend's current files instead, compose's `frontend-test` service (the `test` profile; `frontend/Dockerfile`'s `prod`
 target with the local stack's `NEXT_PUBLIC_*` settings), behind the gateway's port 8082. That
 port has the same API routes and services and the same Auth emulator as port 80; only its pages
 come from the test build, and like port 8081 it isn't counted by the gateway's per-IP limit (every
@@ -26,7 +25,7 @@ has its browser slot, rebuilds and restarts the test site only when it was built
 (the hash is the container's `testee.frontend-source` label). A rebuild takes about 2 minutes on a
 laptop, as Next's build cache stays in a BuildKit cache mount between builds (6 to 10 minutes
 with that cache empty, the first time); with the files
-unchanged a run starts at once. Pages only the dev server has (`/report-samples`) aren't there.
+unchanged a run starts at once.
 The build is production's but for the local settings it's built with: with the sign-in emulator
 set (never in production) its pages don't ask the browser to upgrade requests to https, which
 Safari would do even on `http://localhost`.

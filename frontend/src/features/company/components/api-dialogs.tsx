@@ -1,12 +1,10 @@
 "use client"
 
-import { Trash2Icon } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
-import { ConfirmDialog } from "@/components/common/confirm-dialog"
 import { CopyValue } from "@/components/common/copy-field"
 import { KeepAcronyms } from "@/components/common/keep-acronyms"
 import { FloatingInput } from "@/components/ui/floating-field"
@@ -25,6 +23,37 @@ import {
 import { WarningCard } from "@/components/common/warning-card"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 
+type Shown = {
+  value: string
+  title: string
+  text: string
+  copy: string
+  copied: string
+  // More to say about it, under it (a key's example).
+  after?: (value: string) => React.ReactNode
+}
+
+/** What the API made, to copy this once. */
+function CreatedStep({ value, shown }: { value: string; shown: Shown }) {
+  const common = useTranslations("common")
+
+  return (
+    <>
+      <DialogHeader>
+        <DialogTitle>{shown.title}</DialogTitle>
+        <DialogDescription>{shown.text}</DialogDescription>
+      </DialogHeader>
+      <CopyValue value={value} label={shown.copy} copied={shown.copied} />
+      {shown.after?.(value)}
+      <DialogFooter>
+        <DialogClose render={<Button className="h-10 px-5 text-base" />}>
+          {common("close")}
+        </DialogClose>
+      </DialogFooter>
+    </>
+  )
+}
+
 /** Making a key or a web hook: one field (and a key's expiry and permissions), then what the API
  * made, shown this once to copy. */
 export function CreateDialog({
@@ -39,6 +68,8 @@ export function CreateDialog({
   shown,
   choice,
   ticks,
+  triggerClassName = "h-10 shrink-0 px-5 text-base",
+  initialValue = "",
 }: {
   // The /manage route that makes it, and the field it takes.
   path: string
@@ -51,13 +82,10 @@ export function CreateDialog({
   title: string
   failed: string
   // What's shown once it's made: which of the answer's values, and the texts around it.
-  shown: {
-    value: string
-    title: string
-    text: string
-    copy: string
-    copied: string
-  }
+  shown: Shown
+  triggerClassName?: string
+  // What the field starts with.
+  initialValue?: string
   // A second field to pick from, if any (a key's expiry): its name in the body, what it asks
   // (shown until something is picked) and its options; nothing is picked at first.
   choice?: {
@@ -81,11 +109,17 @@ export function CreateDialog({
   const common = useTranslations("common")
   const router = useRouter()
   const [open, setOpen] = useState(false)
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState(initialValue)
   const [picked, setPicked] = useState<string | null>(null)
   const [ticked, setTicked] = useState(ticks?.initial ?? [])
   const [saving, setSaving] = useState(false)
   const [created, setCreated] = useState<string | null>(null)
+
+  const filled = [
+    value.trim(),
+    !choice || picked,
+    !ticks || ticked.length,
+  ].every(Boolean)
 
   async function create(event: React.FormEvent) {
     event.preventDefault()
@@ -100,8 +134,9 @@ export function CreateDialog({
           ...(ticks ? { [ticks.field]: ticked } : {}),
         }),
       })
+      // The page reads it again as this closes: a refresh now could take the dialog away with what
+      // it shows only this once (the first key's dialog lives in the empty list).
       setCreated(answer[shown.value])
-      router.refresh()
     } catch (error) {
       toast.error(apiErrorMessage(error, failed))
     } finally {
@@ -117,38 +152,25 @@ export function CreateDialog({
     setOpen(next)
 
     if (!next) {
-      setValue("")
+      setValue(initialValue)
       setPicked(null)
       setTicked(ticks?.initial ?? [])
       setCreated(null)
+
+      if (created) {
+        router.refresh()
+      }
     }
   }
 
   return (
     <Dialog open={open} onOpenChange={changeOpen}>
-      <DialogTrigger
-        render={<Button className="h-10 shrink-0 px-5 text-base" />}
-      >
+      <DialogTrigger render={<Button className={triggerClassName} />}>
         {label}
       </DialogTrigger>
       <DialogContent showCloseButton={false} className="sm:max-w-xl">
         {created ? (
-          <>
-            <DialogHeader>
-              <DialogTitle>{shown.title}</DialogTitle>
-              <DialogDescription>{shown.text}</DialogDescription>
-            </DialogHeader>
-            <CopyValue
-              value={created}
-              label={shown.copy}
-              copied={shown.copied}
-            />
-            <DialogFooter>
-              <DialogClose render={<Button className="h-10 px-5 text-base" />}>
-                {common("close")}
-              </DialogClose>
-            </DialogFooter>
-          </>
+          <CreatedStep value={created} shown={shown} />
         ) : (
           <>
             <DialogHeader>
@@ -200,12 +222,7 @@ export function CreateDialog({
                 type="submit"
                 form={`create-${field}`}
                 className="h-10 px-5 text-base"
-                disabled={
-                  saving ||
-                  !value.trim() ||
-                  (!!choice && !picked) ||
-                  (!!ticks && !ticked.length)
-                }
+                disabled={saving || !filled}
               >
                 {label}
               </Button>
@@ -214,63 +231,5 @@ export function CreateDialog({
         )}
       </DialogContent>
     </Dialog>
-  )
-}
-
-/** The bin icon, like removing a member, asking first; `path` is the /manage route to delete. */
-export function RemoveButton({
-  path,
-  label,
-  title,
-  text,
-  failed,
-}: {
-  path: string
-  label: string
-  title: string
-  text: React.ReactNode
-  failed: string
-}) {
-  const common = useTranslations("common")
-  const router = useRouter()
-  const [confirming, setConfirming] = useState(false)
-  const [busy, setBusy] = useState(false)
-
-  async function remove() {
-    setBusy(true)
-
-    try {
-      await apiFetch(path, { method: "DELETE" })
-      setConfirming(false)
-      router.refresh()
-    } catch (error) {
-      toast.error(apiErrorMessage(error, failed))
-    } finally {
-      setBusy(false)
-    }
-  }
-
-  return (
-    <>
-      <Button
-        variant="ghost"
-        size="icon"
-        className="size-12 shrink-0 text-muted-foreground hover:text-destructive"
-        aria-label={label}
-        disabled={busy}
-        onClick={() => setConfirming(true)}
-      >
-        <Trash2Icon className="size-6" />
-      </Button>
-      <ConfirmDialog
-        open={confirming}
-        onOpenChange={setConfirming}
-        title={title}
-        text={text}
-        confirm={common("delete")}
-        busy={busy}
-        onConfirm={remove}
-      />
-    </>
   )
 }

@@ -61,7 +61,7 @@ for (const scheme of ["light", "dark"] as const) {
     await finishOneAnswer(await signInAs(candidate), candidate)
 
     await visit(owner, `/companies/${company.id}/interviews/${interviewId}?tab=candidates`)
-    const row = owner.getByRole("main").getByRole("link").filter({ hasText: candidate })
+    const row = owner.getByRole("main").getByRole("listitem").filter({ hasText: candidate }).getByRole("link")
     await expect(row).toBeVisible()
     await expectAccessible(owner, "candidates")
 

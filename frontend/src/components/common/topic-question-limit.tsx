@@ -6,25 +6,22 @@ import type { ReactNode } from "react"
 
 import { IconStat } from "@/components/common/icon-stat"
 import { QuestionMarkIcon } from "@/components/icons/question-mark-icon"
-import { TopicLimit } from "@/components/common/topic-limit"
 
-/** A topic's question count, in one short line under its "manage questions" button: how many
- * each candidate gets (editable with `limitPath`) of how many the topic has; just the count
- * when there's no limit. `field` shows in the editable number's place (the landing's picture). */
+/** A topic's question count, in one short line: how many each candidate gets of how many the
+ * topic has; just the count when there's no limit. `field` shows in the number's place (the
+ * landing's picture). */
 export function TopicQuestionLimit({
   count,
   limit,
-  limitPath,
   field,
 }: {
   count: number
   limit: number | null
-  limitPath?: string
   field?: ReactNode
 }) {
   const t = useTranslations("questions")
 
-  if (!limitPath && !field && limit == null) {
+  if (!field && limit == null) {
     return (
       <p className="shrink-0 text-sm whitespace-nowrap text-muted-foreground tabular-nums">
         {count} {t("count", { count })}
@@ -34,18 +31,7 @@ export function TopicQuestionLimit({
 
   return (
     <p className="flex shrink-0 items-center gap-2 text-sm whitespace-nowrap text-muted-foreground tabular-nums">
-      {field ??
-        (limitPath ? (
-          // Remounts with the saved value after each change.
-          <TopicLimit
-            key={limit ?? "all"}
-            path={limitPath}
-            count={count}
-            limit={limit}
-          />
-        ) : (
-          <span className="text-foreground">{limit}</span>
-        ))}
+      {field ?? <span className="text-foreground">{limit}</span>}
       <span className="flex items-center gap-1.5">
         {/* "of 100 ? per 👤": icons stand for questions and candidate, named in tooltips. */}
         {t("ofCount", { count })}

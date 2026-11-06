@@ -16,6 +16,7 @@ export type SideMenuItem = TabItem & {
     href: string
     label: string
     keepCase?: boolean
+    count?: number
   }[]
 }
 
@@ -43,9 +44,10 @@ export function SideMenuLayout({
       <div className="lg:hidden">
         <PhoneTabs items={items} current={current} currentSub={currentSub} />
       </div>
-      {/* The padding keeps the rows' focus rings inside the scrolling box. Links straight in the
-          nav, as the tabs have them, so the page's own lists stay the only lists in it. */}
-      <nav className="sticky top-6 -m-1 flex max-h-[calc(100dvh-3rem)] [scrollbar-color:transparent_transparent] flex-col gap-1.5 overflow-y-auto overscroll-contain p-1 focus-within:[scrollbar-color:var(--border)_transparent] hover:[scrollbar-color:var(--border)_transparent] max-lg:hidden">
+      {/* The padding keeps the rows' focus rings inside the scrolling box; a clicked row's jump
+          never makes it scroll sideways. Links straight in the nav, as the tabs have them, so the
+          page's own lists stay the only lists in it. */}
+      <nav className="sticky top-20 -m-1 flex max-h-[calc(100dvh-6.5rem)] [scrollbar-color:transparent_transparent] flex-col gap-1.5 overflow-x-hidden overflow-y-auto overscroll-contain p-1 focus-within:[scrollbar-color:var(--border)_transparent] hover:[scrollbar-color:var(--border)_transparent] max-lg:hidden">
         {items.map((item) => (
           <Fragment key={item.id}>
             <MenuLink
@@ -65,6 +67,7 @@ export function SideMenuLayout({
                   href={sub.href}
                   label={sub.label}
                   keepCase={sub.keepCase}
+                  count={sub.count}
                   open={sub.id === currentSub}
                   marked={sub.id === currentSub}
                   nested

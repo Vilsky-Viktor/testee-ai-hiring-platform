@@ -121,7 +121,7 @@ export function VerificationList({
               )}
             </div>
             <div className="flex shrink-0 flex-col items-end gap-2 max-sm:flex-row max-sm:flex-wrap max-sm:items-center max-sm:justify-center max-sm:gap-4">
-              <Badge variant="outline" className="h-7 px-3 text-sm font-light">
+              <Badge variant="outline" className="h-8 px-4 text-sm font-light">
                 {hasMessage(t, status) ? t(status) : row.status}
               </Badge>
               {row.status === "pending" && (

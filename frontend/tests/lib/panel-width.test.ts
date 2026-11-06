@@ -32,12 +32,12 @@ describe("the panel's width", () => {
       getItem: (key: string) => items.get(key) ?? null,
       setItem: (key: string, value: string) => void items.set(key, value),
     })
-    expect(savedPanelWidth()).toBe(448)
+    expect(savedPanelWidth()).toBe(496)
     savePanelWidth(600)
     expect(savedPanelWidth()).toBe(600)
 
     vi.stubGlobal("localStorage", undefined)
-    expect(savedPanelWidth()).toBe(448)
+    expect(savedPanelWidth()).toBe(496)
     expect(() => savePanelWidth(500)).not.toThrow()
   })
 })

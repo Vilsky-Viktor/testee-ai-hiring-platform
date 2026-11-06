@@ -47,15 +47,32 @@
   }
 }
 
-/* A focused field's border: the same in the focus colour. */
+/* A focused field: no border round it, only a line in the focus colour along its bottom, fading
+   out softly towards both ends and stopping short of the rounded corners. The element must be
+   positioned (relative or absolute). */
 @utility border-ring-gradient {
-  --gradient-edge: var(--ring);
-  @apply border-primary-gradient;
+  border-color: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset-inline: var(--radius-xl);
+    bottom: -1px;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--ring) 30%,
+      var(--ring) 70%,
+      transparent
+    );
+  }
 }
 
-/* For an <input> or <textarea>, which can't draw ::before: the gradient as the border box's
-   background under the field's own fill (--field-fill, the grey by default, over the page, as
-   the grey is see-through in dark). A field inside a box (border-0) leaves it to the box. */
+/* The same for an <input> or <textarea>, which can't draw ::before: the line as a background on
+   its bottom border, the field's own fill (--field-fill, the grey by default) above it. A field
+   inside a box (border-0) leaves it to the box. */
 @utility border-ring-gradient-field {
   &:not(.border-0) {
     border-color: transparent;
@@ -65,14 +82,14 @@
           var(--field-fill, var(--surface))
         )
         padding-box,
-      linear-gradient(var(--background), var(--background)) padding-box,
       linear-gradient(
           90deg,
-          color-mix(in oklch, var(--ring) var(--gradient-depth, 78%), black),
-          var(--ring),
-          color-mix(in oklch, var(--ring) var(--gradient-depth, 78%), black)
+          transparent,
+          var(--ring) 30%,
+          var(--ring) 70%,
+          transparent
         )
-        border-box;
+        bottom / calc(100% - 2 * var(--radius-xl)) 1px no-repeat border-box;
   }
 }
 

@@ -45,7 +45,9 @@ function ProgressIndicator({
     <ProgressPrimitive.Indicator
       data-slot="progress-indicator"
       className={cn(
-        "h-full bg-primary-gradient transition-all gradient-soft",
+        "h-full rounded-full bg-primary-gradient transition-all gradient-soft",
+        // With nothing to count, a light a third of the bar long glides to and fro.
+        "data-indeterminate:absolute data-indeterminate:inset-y-0 data-indeterminate:start-0 data-indeterminate:w-1/3 data-indeterminate:animate-[line-sweep_2.4s_ease-in-out_infinite_alternate] rtl:data-indeterminate:[--sweep-to:-200%]",
         className
       )}
       {...props}

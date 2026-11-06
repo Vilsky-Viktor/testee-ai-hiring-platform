@@ -5,6 +5,7 @@ import { useState } from "react"
 import { toast } from "sonner"
 
 import { CurrencySelect } from "@/components/common/currency-select"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import type { CurrencyChoice } from "@/types/billing"
 
@@ -13,6 +14,7 @@ export function CurrencySetting({ initial }: { initial: CurrencyChoice }) {
   const t = useTranslations("settings")
   const [currency, setCurrency] = useState(initial.currency)
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark()
 
   async function choose(next: string) {
     const before = currency
@@ -24,6 +26,7 @@ export function CurrencySetting({ initial }: { initial: CurrencyChoice }) {
         method: "PUT",
         body: JSON.stringify({ currency: next }),
       })
+      markSaved()
     } catch (error) {
       setCurrency(before)
       toast.error(apiErrorMessage(error, t("currencyFailed")))
@@ -40,6 +43,7 @@ export function CurrencySetting({ initial }: { initial: CurrencyChoice }) {
         currencies={initial.currencies}
         onChange={choose}
         disabled={saving}
+        saved={savedText()}
       />
     </div>
   )

@@ -103,7 +103,8 @@ test("features page: the company's screens", async ({ signInAs }) => {
   await expect(patterns.locator("[data-signal]").first()).toBeVisible()
   await patterns.scrollIntoViewIfNeeded()
   await pair(owner, "signals")
-  await openDialog(owner, owner.getByRole("main").getByRole("button", { name: /share/i }).last())
+  await owner.getByRole("main").getByTestId("integration-menu").first().click()
+  await openDialog(owner, owner.getByRole("menuitem", { name: /share/i }))
   await pair(owner, "share")
   await owner.keyboard.press("Escape")
 
@@ -124,7 +125,8 @@ test("features page: the company's screens", async ({ signInAs }) => {
   await pair(owner, "brand")
 
   await visit(owner, `/companies/${company.id}/actions`)
-  await openDialog(owner, owner.getByTestId("bias-audit-export"))
+  await owner.getByRole("main").getByTestId("integration-menu").first().click()
+  await openDialog(owner, owner.getByRole("menuitem").last())
   await pair(owner, "bias-audit")
 })
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "cn"
-import { useRef, useState } from "react"
+import { useMemo, useState } from "react"
 
 import { CreateDescribe } from "@/features/landing/components/create-describe"
 import { CreateEmail } from "@/features/landing/components/create-email"
@@ -17,9 +17,11 @@ import {
   TARGETS,
   TOPICS,
   WRITING,
+  createSteps,
 } from "@/config/create-demo-steps"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
 import { useSpotlight } from "@/features/landing/hooks/use-spotlight"
-import { useDemoCamera } from "@/hooks/use-demo-camera"
+import { useClickBump } from "@/features/landing/hooks/use-click-bump"
 import { pointedAt, useDemoSteps } from "@/hooks/use-demo-steps"
 
 /** How an interview is created, played in one frame, each screen taking the last one's place: a
@@ -28,24 +30,17 @@ import { pointedAt, useDemoSteps } from "@/hooks/use-demo-steps"
  * then the interview ready, its questions per candidate changed and a candidate invited; last,
  * the candidate's inbox, the invitation opened and its button clicked. A
  * numbered pill on the frame's top edge names the stage. The frame keeps one size as it plays.
- * Played as a promo that stays readable: the frame holds still, magnifying quickly and close
- * only as a press leads to the next slide (PRESSES); a field's background lights up before it's
- * typed in (FIELDS); dialogs and the "sent" notice fly up, menus unfold, topics fly in, the email
- * drops in, screens rise into place, and a burst marks the interview ready and the candidate
- * invited (`data-promo`, `data-create-promo`: promo.css). With reduced motion, none of it moves. */
-// The presses that lead to another page or the next slide: the frame magnifies on each. Company
-// named (continue), topics approved (go), the settings tab opened and left by the back arrow,
-// invite sent (sendInvite).
-const PRESSES = new Set([
-  "continue",
-  "go",
-  "openSettings",
-  "back",
-  "sendInvite",
-])
+ * Played as a promo that stays readable: the frame holds still, never magnifying; whatever is
+ * clicked bumps as the click lands; a field's background lights up before it's typed in (FIELDS)
+ * and a button glows softly as the pointer heads for it; each screen shows only what its step is
+ * about, its parts sliding up one after another; dialogs and the "sent" notice fly up, menus
+ * unfold, topics fly in, the email drops in, the focal element floats, screens rise into place,
+ * and a burst marks the interview ready and the candidate invited (`data-promo`,
+ * `data-create-promo`: promo.css, promo-create.css). With reduced motion, none of it moves. */
 // The fields typed in: each lights up from when the pointer heads for it.
 const FIELDS = new Set([
   "name",
+  "edit",
   "subtopic",
   "ask",
   "seconds",
@@ -62,7 +57,10 @@ export function CreateFlow({
     status: string
   }
 }) {
-  const { ref, ...at } = useDemoSteps<HTMLDivElement>(STEPS)
+  const content = useDemoContent("create")
+  // The texts typed, in the page's language, decide how long their steps last.
+  const steps = useMemo(() => createSteps(content), [content])
+  const { ref, ...at } = useDemoSteps<HTMLDivElement>(steps)
   const stage =
     at.index < TOPICS ? 0 : at.index < WRITING ? 1 : at.index < INBOX ? 2 : 3
   // What the pointer moves to: the element named so in the screen shown, found as the pointer
@@ -85,16 +83,15 @@ export function CreateFlow({
   )
   const point = pointedAt(STEPS, at.index)
   const step = STEPS[at.index].name
-  const camera = useRef<HTMLDivElement>(null)
-  const view = useDemoCamera(
-    camera,
-    PRESSES.has(step) ? (targets[point ?? ""] ?? null) : null,
-    at.index,
-    { zoom: 1.35, follow: 0.85 }
-  )
 
   // The field about to be typed in, lit until the pointer moves on.
   useSpotlight(FIELDS.has(point ?? "") ? targets[point!] : null, at.index)
+  // What the pointer clicks bumps as the click lands, as a picked answer does.
+  useClickBump(
+    targets[point ?? ""] ?? null,
+    STEPS[at.index].click === true,
+    at.index
+  )
 
   // A screen, shown while it's the stage's: it rises into place from a little smaller and out of
   // focus, as the one before lifts away, growing and fading.
@@ -103,7 +100,7 @@ export function CreateFlow({
       <div
         data-shown={stage === number}
         className={cn(
-          "relative flex min-h-0 flex-col overflow-hidden transition-[opacity,translate,scale,filter,visibility] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none motion-reduce:filter-none",
+          "relative flex min-h-0 flex-col overflow-hidden p-5 transition-[opacity,translate,scale,filter,visibility] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none motion-reduce:filter-none sm:p-8",
           stage === number
             ? "delay-200 duration-700"
             : cn(
@@ -120,17 +117,21 @@ export function CreateFlow({
   }
 
   return (
-    // The stage's title sits on the frame's top edge, a third of it over it, so it never moves
-    // the frame; the titles lie on top of each other, crossfading, as wide as the widest.
+    // The stage's title is a bubble moulded into the frame's top edge (styles/field-pill.css), so it
+    // never moves the frame; the titles lie on top of each other, crossfading, as wide as the widest.
     <div data-promo data-create-promo className="relative">
-      <div className="absolute start-1/2 top-0 z-20 grid -translate-x-1/2 -translate-y-2/3 *:[grid-area:1/1] rtl:translate-x-1/2">
+      <div className="absolute start-1/2 top-0 z-20 grid -translate-x-1/2 -translate-y-1/2 *:[grid-area:1/1] rtl:translate-x-1/2">
+        <span
+          aria-hidden
+          className="field-pill field-pill-line relative [--bubble:27px]"
+        />
         {labels.steps.map((title, index) => (
           <p
             key={index}
             data-testid="create-step"
             data-current={index === stage}
             className={cn(
-              "rounded-full border bg-background px-6 py-3 text-center font-heading text-lg font-medium whitespace-nowrap transition-opacity duration-300 sm:text-xl",
+              "relative overflow-hidden rounded-full bg-[color-mix(in_oklab,var(--input)_10%,var(--background))] py-3.25 ps-18 pe-6.25 text-center font-heading text-lg font-medium whitespace-nowrap lowercase transition-opacity duration-300 sm:text-xl",
               index !== stage && "opacity-0"
             )}
           >
@@ -138,23 +139,16 @@ export function CreateFlow({
           </p>
         ))}
       </div>
-      <DemoPanel ref={ref}>
-        {/* The camera: the screens and the pointer magnify together, cut at the frame. */}
-        <div className="relative flex flex-1 flex-col overflow-hidden rounded-lg">
-          <div
-            ref={camera}
-            style={{
-              transform: `translate(${view.x}px, ${view.y}px) scale(${view.scale})`,
-            }}
-            className="relative flex flex-1 flex-col transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none!"
-          >
+      <DemoPanel ref={ref} className="border-transparent">
+        <div className="relative -m-3 flex flex-1 flex-col overflow-hidden rounded-[inherit]">
+          <div className="relative flex flex-1 flex-col">
             <DemoPointer
               target={targets[point ?? ""] ?? null}
               clicking={STEPS[at.index].click === true}
               click={at.index}
             />
             {/* One size for every screen, so nothing moves as they change. */}
-            <div className="grid h-[44rem] grid-cols-[minmax(0,1fr)] grid-rows-[minmax(0,1fr)] p-2 *:min-w-0 *:[grid-area:1/1] max-sm:h-[40rem] sm:p-5 lg:h-[38rem]">
+            <div className="grid h-[46.5rem] grid-cols-[minmax(0,1fr)] grid-rows-[minmax(0,1fr)] *:min-w-0 *:[grid-area:1/1] max-sm:h-[42.5rem] lg:h-[40.5rem]">
               {screen(0, <CreateDescribe at={at} />)}
               {screen(
                 1,

@@ -36,6 +36,7 @@ export async function TemplateBrowser({
   bySlug,
   allLanguages,
   statuses,
+  topicsLine,
 }: {
   base: string
   listPath: string
@@ -45,6 +46,8 @@ export async function TemplateBrowser({
   bySlug?: boolean
   allLanguages?: boolean
   statuses?: PracticeStatus[]
+  // Rows say how many topics each has in words, not when it was made.
+  topicsLine?: boolean
 }) {
   const t = await getTranslations("templates")
   // The filters are the same for everyone: kept a while.
@@ -99,6 +102,7 @@ export async function TemplateBrowser({
         companyId={companyId}
         bySlug={bySlug}
         statuses={statuses}
+        topicsLine={topicsLine}
       />
     </SearchedList>
   )

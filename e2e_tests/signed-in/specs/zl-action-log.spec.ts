@@ -9,11 +9,11 @@ import { randomId, throwawayEmail } from "../helpers/users"
 
 type Member = { id: string; email: string; token: string | null }
 
-/** Opens a filter's menu (`nth`: member, then action), clicking again if the first click came
- * before the page was ready for it. */
-async function openFilter(page: Page, nth: number) {
+/** Opens the member filter's menu, clicking again if the first click came before the page was
+ * ready for it. */
+async function openFilter(page: Page) {
   await expect(async () => {
-    await page.getByTestId("action-filters").getByRole("button").nth(nth).click()
+    await page.getByTestId("action-filters").getByRole("button").first().click()
     await expect(page.getByRole("menu")).toBeVisible({ timeout: 2_000 })
   }).toPass()
 
@@ -69,18 +69,18 @@ test("the owner reads and filters the company's action log; admins and viewers h
   await shot(ann, "action-log")
 
   // Bob's actions only: his joining and his rename.
-  await (await openFilter(ann, 0)).filter({ hasText: bobEmail }).click()
+  await (await openFilter(ann)).filter({ hasText: bobEmail }).click()
   await expect(ann).toHaveURL(/member_id=/)
   await expect(rows).toHaveCount(2)
   await expect(rows.filter({ hasText: vicEmail })).toHaveCount(0)
   await expect(rows.filter({ hasText: annEmail })).toHaveCount(0)
   await shot(ann, "action-log-member")
 
-  // Everyone again, then only the team's actions (the fourth choice: after "all", interviews and
+  // Everyone again, then only the team's actions (the fourth pill: after "all", interviews and
   // candidates): the rename, a company action, goes.
-  await (await openFilter(ann, 0)).first().click()
+  await (await openFilter(ann)).first().click()
   await expect(ann).not.toHaveURL(/member_id=/)
-  await (await openFilter(ann, 1)).nth(3).click()
+  await ann.getByTestId("action-groups").getByRole("link").nth(3).click()
   await expect(ann).toHaveURL(/group=team/)
   await expect(rows).toHaveCount(4)
   await expect(rows.filter({ hasText: renamed })).toHaveCount(0)

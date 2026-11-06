@@ -6,12 +6,14 @@ import { visit } from "../helpers/navigation";
 import { shot } from "../helpers/screenshots";
 import { ownerEmail } from "../helpers/users";
 
-/** The Remove button on a company's row in the companies list, the row's one button. */
-function removeButton(page: Page, companyId: string) {
-  return page
+/** Opens the Remove dialog from the "⋮" menu on a company's row in the companies list. */
+async function openRemove(page: Page, companyId: string) {
+  await page
     .getByRole("listitem")
     .filter({ has: page.locator(`a[href="/companies/${companyId}/interviews"]`) })
-    .getByRole("button");
+    .getByTestId("company-menu")
+    .click();
+  await page.getByTestId("remove-company").click();
 }
 
 // Removing a company deletes its credits: the dialog says how many are lost (and the
@@ -29,7 +31,7 @@ test("removing a company warns about the credits it loses", async ({ signInAs })
   const empty = await createCompany(owner);
   await visit(owner, "/companies");
 
-  await removeButton(owner, funded.id).click();
+  await openRemove(owner, funded.id);
   let dialog = owner.getByRole("dialog");
   const credits = dialog.getByTestId("remove-credits");
   await expect(credits).toContainText(catalog.welcome_company.toLocaleString("en-US"));
@@ -39,7 +41,7 @@ test("removing a company warns about the credits it loses", async ({ signInAs })
   await dialog.getByRole("button").first().click();
   await expect(dialog).toHaveCount(0);
 
-  await removeButton(owner, empty.id).click();
+  await openRemove(owner, empty.id);
   dialog = owner.getByRole("dialog");
   await expect(dialog).toBeVisible();
   await expect(dialog.getByTestId("remove-credits")).toHaveCount(0);

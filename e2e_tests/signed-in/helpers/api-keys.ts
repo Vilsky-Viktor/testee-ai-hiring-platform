@@ -2,6 +2,7 @@ import { expect, type Locator, type Page } from "@playwright/test"
 
 import { API_URL, FRONTEND_URL } from "../constants"
 import { api } from "./api"
+import { openMenu } from "./navigation"
 
 /** A company's new API key with `permissions`: its id and the whole key. */
 export async function createKey(
@@ -34,6 +35,12 @@ export async function permissionTicks(page: Page, companyId: string, form: Locat
     defaults: settings.default_permissions,
     tick: (permission: string) => all.nth(permissions.indexOf(permission) + 1),
   }
+}
+
+/** Takes `entry` off an allowed list (a key's IPs, the company's domains), in its "⋮" menu. */
+export async function removeEntry(page: Page, entry: Locator) {
+  await openMenu(page, entry.getByTestId("integration-menu"))
+  await page.getByRole("menu").getByRole("menuitem").click()
 }
 
 /** Deletes a company's API key. */

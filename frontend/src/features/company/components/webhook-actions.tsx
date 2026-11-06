@@ -1,56 +1,85 @@
 "use client"
 
-import { HistoryIcon, SendIcon } from "lucide-react"
+import { cn } from "cn"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
-import { useLocalTime } from "@/hooks/use-local-time"
-import { IconButton } from "@/components/common/icon-button"
-import { RollSecret } from "@/features/company/components/webhook-secret"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
+import { LIST_BOX, ROW_HOVER } from "@/config/lists"
+import { WARNING_TONE } from "@/config/tones"
+import { RemoveButton } from "@/features/company/components/api-remove-button"
+import { DotsMenu } from "@/components/common/dots-menu"
+import { RollSecret } from "@/features/company/components/webhook-secret"
+import { useLocalTime } from "@/hooks/use-local-time"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import { bdi } from "@/lib/bidi"
 import type { ApiWebhook, WebhookAttempt } from "@/types/api-access"
 
-/** A web hook's own actions on the API page: owners and admins send it a signed test event and
- * roll its signing secret; anyone sees its delivery log, its latest sends and how they went. */
-export function WebhookActions({
+/** What came of a send, in words. */
+function useResultText() {
+  const t = useTranslations("api")
+
+  return (result: string) => {
+    if (result === "delivered" || result === "skipped") {
+      return t(`results.${result}`)
+    }
+
+    // Our key can't read its secret: nothing the company can fix, and retried once it's back.
+    if (result === "secret unreadable") {
+      return t("results.unreadable")
+    }
+
+    // The status the endpoint answered, or what went wrong on the way.
+    return /^\d{3}$/.test(result)
+      ? t("results.answered", { status: result })
+      : t("results.error", { error: result })
+  }
+}
+
+/** How a web hook stands, as a pill; amber while it's paused. */
+export function WebhookState({ hook }: { hook: ApiWebhook }) {
+  const t = useTranslations("api")
+
+  return (
+    <Badge
+      variant="outline"
+      className={cn(
+        "h-8 px-4 text-sm font-light max-sm:order-3",
+        hook.state === "paused" && WARNING_TONE
+      )}
+    >
+      {t(`webhookStates.${hook.state}`)}
+    </Badge>
+  )
+}
+
+/** Sends a web hook a signed test event, and says what came of it before the button. */
+export function WebhookTest({
   companyId,
-  hook,
-  canEdit,
+  hookId,
 }: {
   companyId: string
-  hook: ApiWebhook
-  canEdit: boolean
+  hookId: string
 }) {
   const t = useTranslations("api")
-  const path = `/v1/manage/webhooks/${hook.id}`
+  const text = useResultText()
   const [testing, setTesting] = useState(false)
+  const [answer, setAnswer] = useState<{ ok: boolean; result: string } | null>(
+    null
+  )
 
   async function test() {
     setTesting(true)
 
     try {
-      const { ok } = await apiFetch<{ ok: boolean }>(
-        `${path}/test?company_id=${companyId}`,
-        { method: "POST" }
+      setAnswer(
+        await apiFetch(
+          `/v1/manage/webhooks/${hookId}/test?company_id=${companyId}`,
+          { method: "POST" }
+        )
       )
-
-      if (ok) {
-        toast.success(t("testSent"))
-      } else {
-        toast.error(t("testNotTaken"))
-      }
     } catch (error) {
       toast.error(apiErrorMessage(error, t("testFailed")))
     } finally {
@@ -59,110 +88,117 @@ export function WebhookActions({
   }
 
   return (
+    <span className="flex flex-wrap items-center justify-end gap-3">
+      {answer && (
+        <span
+          role="status"
+          data-testid="test-result"
+          data-ok={answer.ok}
+          className={cn(
+            "text-sm",
+            answer.ok ? "text-muted-foreground" : "text-destructive"
+          )}
+        >
+          {text(answer.result)}
+        </span>
+      )}
+      <Button
+        className="h-10 px-5 text-base"
+        disabled={testing}
+        data-testid="webhook-test"
+        onClick={test}
+      >
+        {t("sendTest")}
+      </Button>
+    </span>
+  )
+}
+
+/** A web hook's "⋮" menu, for owners and admins: its delivery log (`logHref`, on its page, which
+ * doesn't list it), a new signing secret, and deleting it. */
+export function WebhookMenu({
+  companyId,
+  hook,
+  logHref,
+}: {
+  companyId: string
+  hook: ApiWebhook
+  logHref?: string
+}) {
+  const t = useTranslations("api")
+  const [rolling, setRolling] = useState(false)
+  const [removing, setRemoving] = useState(false)
+  const path = `/v1/manage/webhooks/${hook.id}`
+
+  return (
     <>
-      {canEdit && (
-        <IconButton label={t("sendTest")} disabled={testing} onClick={test}>
-          <SendIcon className="size-6 rtl:-scale-x-100" />
-        </IconButton>
-      )}
-      {canEdit && (
-        <RollSecret path={`${path}/secret?company_id=${companyId}`} />
-      )}
-      <WebhookLog path={`${path}/log?company_id=${companyId}`} url={hook.url} />
+      <DotsMenu
+        items={[
+          ...(logHref ? [{ label: t("log"), href: logHref }] : []),
+          { label: t("rollSecret"), onClick: () => setRolling(true) },
+          {
+            label: t("removeWebhook"),
+            onClick: () => setRemoving(true),
+            destructive: true,
+          },
+        ]}
+      />
+      <RollSecret
+        path={`${path}/secret?company_id=${companyId}`}
+        asking={rolling}
+        onAskingChange={setRolling}
+      />
+      <RemoveButton
+        path={`${path}?company_id=${companyId}`}
+        label={t("removeWebhook")}
+        title={t("removeWebhookTitle")}
+        text={t.rich("removeWebhookText", { url: hook.url, ...bdi })}
+        failed={t("removeFailed")}
+        opened={removing}
+        onOpenedChange={setRemoving}
+      />
     </>
   )
 }
 
-/** The delivery log, read when it opens: newest first. */
-function WebhookLog({ path, url }: { path: string; url: string }) {
+/** A web hook's latest sends, newest first. */
+export function DeliveryLog({ attempts }: { attempts: WebhookAttempt[] }) {
   const t = useTranslations("api")
-  const common = useTranslations("common")
+  const text = useResultText()
   const localTime = useLocalTime()
-  const [open, setOpen] = useState(false)
-  const [attempts, setAttempts] = useState<WebhookAttempt[] | null>(null)
 
-  async function show() {
-    setOpen(true)
-    setAttempts(null)
-
-    try {
-      setAttempts(await apiFetch<WebhookAttempt[]>(path))
-    } catch (error) {
-      setOpen(false)
-      toast.error(apiErrorMessage(error, t("logFailed")))
-    }
-  }
-
-  function result(attempt: WebhookAttempt) {
-    if (attempt.result === "delivered" || attempt.result === "skipped") {
-      return t(`results.${attempt.result}`)
-    }
-
-    // Our key can't read its secret: nothing the company can fix, and retried once it's back.
-    if (attempt.result === "secret unreadable") {
-      return t("results.unreadable")
-    }
-
-    // The status the endpoint answered, or what went wrong on the way.
-    return /^\d{3}$/.test(attempt.result)
-      ? t("results.answered", { status: attempt.result })
-      : t("results.error", { error: attempt.result })
+  if (attempts.length === 0) {
+    return <p className="text-muted-foreground">{t("logEmpty")}</p>
   }
 
   return (
-    <>
-      <IconButton label={t("log")} onClick={show}>
-        <HistoryIcon className="size-6" />
-      </IconButton>
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent showCloseButton={false} className="sm:max-w-xl">
-          <DialogHeader>
-            <DialogTitle>{t("log")}</DialogTitle>
-            <DialogDescription className="break-all">
-              {t.rich("logText", { url, ...bdi })}
-            </DialogDescription>
-          </DialogHeader>
-          {attempts?.length === 0 && (
-            <p className="text-muted-foreground">{t("logEmpty")}</p>
-          )}
-          {!!attempts?.length && (
-            <ul className="max-h-96 divide-y overflow-y-auto rounded-xl border">
-              {attempts.map((attempt, index) => (
-                <li
-                  key={index}
-                  className="flex items-baseline justify-between gap-4 px-4 py-3"
-                >
-                  <span className="min-w-0 space-y-0.5">
-                    <span className="block font-mono text-sm break-all">
-                      {attempt.event_type}
-                    </span>
-                    <time
-                      suppressHydrationWarning
-                      className="block text-sm text-muted-foreground"
-                    >
-                      {localTime.dateTime(attempt.at)}
-                    </time>
-                  </span>
-                  <span
-                    className={
-                      attempt.ok
-                        ? "shrink-0 text-sm text-muted-foreground"
-                        : "shrink-0 text-sm text-destructive"
-                    }
-                  >
-                    {result(attempt)}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          )}
-          <DialogFooter>
-            <DialogClose render={<Button className="h-10 px-5 text-base" />}>
-              {common("close")}
-            </DialogClose>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    </>
+    <ul className={`${LIST_BOX} overflow-hidden`} data-testid="delivery-log">
+      {attempts.map((attempt, index) => (
+        <li
+          key={index}
+          className={`flex items-baseline justify-between gap-4 px-6 py-4 ${ROW_HOVER}`}
+        >
+          <span className="min-w-0 space-y-0.5">
+            <span className="block font-mono text-sm break-all">
+              {attempt.event_type}
+            </span>
+            <time
+              suppressHydrationWarning
+              className="block text-sm text-muted-foreground"
+            >
+              {localTime.dateTime(attempt.at)}
+            </time>
+          </span>
+          <span
+            className={cn(
+              "shrink-0 text-sm",
+              attempt.ok ? "text-muted-foreground" : "text-destructive"
+            )}
+          >
+            {text(attempt.result)}
+          </span>
+        </li>
+      ))}
+    </ul>
   )
 }

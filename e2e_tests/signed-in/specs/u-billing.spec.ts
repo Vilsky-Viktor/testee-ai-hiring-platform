@@ -45,7 +45,7 @@ test("owner sees the company's billing, a viewer doesn't", async ({
     .getByRole("main")
     .getByRole("list")
     .getByRole("listitem");
-  const reserved = owner.getByTestId("reserved-credits");
+  const reserved = owner.getByTestId("reserved").locator("dd");
 
   // The company's tabs include billing for its owner.
   await visit(owner, `/companies/${company.id}/interviews`);
@@ -53,15 +53,16 @@ test("owner sees the company's billing, a viewer doesn't", async ({
   // A new company's history: the welcome gift's credits.
   await openTab(owner, "/billing");
   await expect(history).toHaveCount(1);
-  await expect(history).toContainText("+1,500");
-  await expect(reservedTab(owner)).toHaveText(/\b0\b/);
+  await expect(history).toContainText("+1.5K");
+  // None reserved: its menu entry counts nothing.
+  await expect(reservedTab(owner)).not.toHaveText(/\d/);
   // The history is billing's first page in the menu, open; billing itself is listed above it.
   await expect(openSub(owner)).toHaveAttribute(
     "href",
     `/companies/${company.id}/billing`,
   );
-  // Nothing reserved yet: no "0 reserved" under the balance.
-  await expect(reserved).toHaveCount(0);
+  // Nothing reserved yet.
+  await expect(reserved).toHaveText("0");
   await shot(owner, "history");
 
   // An invited candidate holds credits until they finish.
@@ -69,7 +70,7 @@ test("owner sees the company's billing, a viewer doesn't", async ({
   const candidate = throwawayEmail("billing-candidate");
   await inviteCandidate(owner, interviewId, candidate);
   await visit(owner, `/companies/${company.id}/billing`);
-  await expect(reserved).toContainText("500");
+  await expect(reserved).toHaveText("500");
   await expect(reservedTab(owner)).toHaveText(/\b1\b/);
   await openTab(owner, "?tab=reserved");
   await expect(owner.getByText(candidate).filter({ visible: true })).toBeVisible();
@@ -96,7 +97,7 @@ test("owner sees the company's billing, a viewer doesn't", async ({
     "href",
     `/companies/${company.id}/billing?tab=reserved`,
   );
-  await expect(subMenu.getByRole("menuitem").last()).toHaveText(/\b1\b/);
+  await expect(subMenu.getByRole("menuitem").last()).toHaveText(/1$/);
   await shot(owner, "phone-sub-pages");
   await subMenu.getByRole("menuitem").first().click();
   await expect(owner).toHaveURL(new RegExp(`/companies/${company.id}/billing$`));
@@ -147,7 +148,7 @@ test("the history lists a top-up and a candidate's charge", async ({
   await finishOneAnswer(candidate, email);
 
   // The top-up: the credits and the price the test paid.
-  const topUp = owner.getByRole("listitem").filter({ hasText: "+2,500" });
+  const topUp = owner.getByRole("listitem").filter({ hasText: "+2.5K" });
   const charge = owner.getByRole("link").filter({ hasText: email });
 
   // The charge comes once the scorecard is made.
@@ -158,8 +159,8 @@ test("the history lists a top-up and a candidate's charge", async ({
   await expect(topUp).toContainText("$50");
   // Its invoice, the row's only button.
   await expect(topUp.getByRole("button")).toHaveCount(1);
-  await expect(charge).toContainText("-500");
-  await expect(reservedTab(owner)).toHaveText(/\b0\b/);
+  await expect(charge).toContainText("−500");
+  await expect(reservedTab(owner)).not.toHaveText(/\d/);
   await shot(owner, "history-top-up-and-charge");
 
   await charge.click();

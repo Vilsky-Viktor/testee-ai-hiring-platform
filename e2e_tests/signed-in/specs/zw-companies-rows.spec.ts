@@ -1,4 +1,4 @@
-import type { Page } from "@playwright/test"
+import type { Locator, Page } from "@playwright/test"
 
 import { expect, test } from "../fixtures"
 import { api, createCompany, createInterview, templatesBySize } from "../helpers/api"
@@ -27,8 +27,9 @@ async function uploadLogo(page: Page, companyId: string, width: number, height: 
 
 // The companies page lists a row per company: its logo whole in a tile the row's full height
 // from its start border (its first letter without one; no logo on phones), its name with the
-// owner's icon or the member's role, its counts of interviews and of its team, and Remove for
-// the owner, which asks to confirm without opening the company. The whole row opens it.
+// member's role (nothing for the owner), its counts of interviews and of its team, and a "⋮" menu
+// with Remove for the owner, which asks to confirm without opening the company. The whole row
+// opens it.
 test("companies are rows that open their company", async ({ signInAs }) => {
   const ownerAddress = ownerEmail()
   const owner = await signInAs(ownerAddress)
@@ -96,28 +97,39 @@ test("companies are rows that open their company", async ({ signInAs }) => {
     [noLogo, "0", "1"],
     [joined, "0", "2"],
   ] as const) {
-    await expect(row(company.id).getByTestId("interview-count")).toHaveText(interviews)
-    await expect(row(company.id).getByTestId("member-count")).toHaveText(members)
+    await expect(row(company.id).getByTestId("interview-count")).toHaveText(new RegExp(`^${interviews}\\D`))
+    await expect(row(company.id).getByTestId("member-count")).toHaveText(new RegExp(`^${members}\\D`))
   }
 
-  // The owner's icon on the companies they own; a member's role, with nothing to remove.
-  await expect(row(withLogo.id).getByRole("img")).toHaveCount(1)
-  await expect(row(joined.id).getByRole("img")).toHaveCount(0)
-  await expect(row(joined.id)).toContainText("viewer")
-  await expect(row(joined.id).getByRole("button")).toHaveCount(0)
-  await shot(owner, "rows")
+  /** Opens the row's "⋮" menu, clicking again if the first click came before the page was ready
+   * for it. */
+  const openMenu = async (button: Locator) => {
+    await expect(async () => {
+      await button.click()
+      await expect(owner.getByRole("menu")).toBeVisible({ timeout: 2_000 })
+    }).toPass()
+  }
 
-  // Remove, always shown, asks to confirm and stays on the page; Cancel keeps the row.
-  const remove = row(withLogo.id).getByRole("button")
-  await expect(remove).toHaveCount(1)
-  await expect(remove).toBeVisible()
-  await openDialog(owner, remove)
+  // A member's role, with nothing to remove; no role on the companies they own.
+  await expect(row(withLogo.id)).not.toContainText("viewer")
+  await expect(row(joined.id)).toContainText("viewer")
+  await shot(owner, "rows")
+  await openMenu(row(joined.id).getByTestId("company-menu"))
+  await expect(owner.getByTestId("remove-company")).toHaveCount(0)
+  await owner.keyboard.press("Escape")
+  await expect(owner.getByRole("menu")).toHaveCount(0)
+
+  // Remove, in the menu, asks to confirm and stays on the page; Cancel keeps the row.
+  const menu = row(withLogo.id).getByTestId("company-menu")
+  await expect(menu).toBeVisible()
+  await openMenu(menu)
+  await openDialog(owner, owner.getByTestId("remove-company"))
   await expect(owner).toHaveURL(/\/companies$/)
   await owner.getByRole("dialog").getByRole("button").first().click()
   await expect(owner.getByRole("dialog")).toHaveCount(0)
   await expect(rows).toHaveCount(3)
 
-  // On a phone: no logo, the name at the row's padding, the counts under it, Remove on screen.
+  // On a phone: no logo, the name at the row's padding, the counts under it, the menu on screen.
   await owner.setViewportSize(PHONE)
   await visit(owner, "/companies")
   await expect(tile).toBeHidden()
@@ -126,7 +138,7 @@ test("companies are rows that open their company", async ({ signInAs }) => {
   const countBox = (await row(withLogo.id).getByTestId("interview-count").boundingBox())!
   expect(Math.abs(nameBox.x - phoneRow.x - 24)).toBeLessThan(1)
   expect(countBox.y).toBeGreaterThanOrEqual(nameBox.y + nameBox.height - 1)
-  await expect(remove).toBeInViewport({ ratio: 1 })
+  await expect(menu).toBeInViewport({ ratio: 1 })
   await shot(owner, "rows-phone")
 
   // Choosing a company for a template: the same rows, each opening the template, without Remove.

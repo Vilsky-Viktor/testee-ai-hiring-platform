@@ -3,7 +3,7 @@ import type { Page } from "@playwright/test"
 import { expect, test } from "../fixtures"
 import { createCompany } from "../helpers/api"
 import { PHONE } from "../helpers/layout"
-import { openDialog, visit } from "../helpers/navigation"
+import { visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { setScheme } from "../helpers/theme"
 import { throwawayEmail } from "../helpers/users"
@@ -64,55 +64,46 @@ test("a person sees prices in their own saved currency", async ({ signInAs }) =>
   await expect(mine).toHaveAttribute("data-currency", "USD")
 
   await visit(page, "/")
-  await expect(page.getByTestId("hero-price")).toContainText("$")
+  await expect(page.locator("main #pricing")).toContainText("$")
   await shots(page, "home-eu-visitor-usd")
   await visit(page, "/pricing")
   await shots(page, "pricing-eu-visitor-usd", true)
 })
 
-// A company pays in its own currency whoever pays and wherever they are: its billing page sets
-// it, and its top-up dialog prices in it and says so, even for someone who sees euros elsewhere.
+// A company pays in its own currency whoever pays and wherever they are: its top-up page sets it
+// and prices in it, even for someone who sees euros elsewhere.
 test("a company's top-up is in the company's currency", async ({ signInAs }) => {
   const owner = await signInAs(throwawayEmail("currency-company"))
   await fromCountry(owner, "DE")
   const company = await createCompany(owner)
-  await visit(owner, `/companies/${company.id}/billing`)
-  const currency = owner.getByTestId("company-currency")
+  const topUp = `/top-up?company=${company.id}`
+  await visit(owner, topUp)
+  const currency = owner.getByTestId("company-currency").filter({ visible: true })
   await expect(currency).toHaveAttribute("data-currency", "EUR")
   // The pill comes with the page, so nothing beside it moves later (the balance moved from
   // under the pointer, closing its tooltip).
-  await expect(servedPill(owner, `/companies/${company.id}/billing`)).resolves.toBe("EUR")
+  await expect(servedPill(owner, topUp)).resolves.toBe("EUR")
+  await expect(owner.getByTestId("custom-quote")).toContainText("€")
   await currency.getByRole("combobox").click()
   await shots(owner, "company-currency-list")
   await owner.locator("input:focus").fill("USD")
   await owner.getByRole("option").first().click()
   await expect(currency).toHaveAttribute("data-currency", "USD")
-  await shots(owner, "billing-usd-company", true)
-
-  await openDialog(owner, owner.getByTestId("top-up").first())
-  await expect(owner.getByTestId("pays-in")).toHaveAttribute("data-currency", "USD")
+  await expect(owner.getByTestId("custom-quote")).toContainText("$")
   await shots(owner, "top-up-usd-company-eur-person", true)
-  await owner.keyboard.press("Escape")
 
   // Elsewhere the person's own euros.
   await visit(owner, "/pricing")
   await expect(owner.getByRole("main")).toContainText("€")
   await shots(owner, "pricing-eur-person", true)
 
-  // The top-up page has the same pill beside each company's Top up.
-  await visit(owner, "/top-up")
-  await expect(servedPill(owner, "/top-up")).resolves.toBe("USD")
-  await expect(owner.getByTestId("company-currency").first()).toHaveAttribute(
-    "data-currency",
-    "USD",
-    { timeout: 30_000 }
-  )
+  // The company's top-up keeps its own dollars.
+  await visit(owner, topUp)
+  await expect(servedPill(owner, topUp)).resolves.toBe("USD")
+  await expect(currency).toHaveAttribute("data-currency", "USD", { timeout: 30_000 })
   await shots(owner, "top-up-page", true)
   await owner.setViewportSize(PHONE)
   await shots(owner, "top-up-page-phone", true)
-  await visit(owner, `/companies/${company.id}/billing`)
-  await expect(currency).toHaveAttribute("data-currency", "USD")
-  await shots(owner, "billing-phone")
 })
 
 // Each currency's prices (whole yen included) and the checkout's currency are billing's unit

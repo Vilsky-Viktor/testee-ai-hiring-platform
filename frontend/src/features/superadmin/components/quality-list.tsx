@@ -130,7 +130,7 @@ export function QualityList({
               {row.flag && (
                 <Badge
                   variant="outline"
-                  className="h-7 px-3 text-sm font-light"
+                  className="h-8 px-4 text-sm font-light"
                 >
                   {named("flags", row.flag)}
                 </Badge>

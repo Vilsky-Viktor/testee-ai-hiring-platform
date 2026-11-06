@@ -1,11 +1,10 @@
 "use client"
 
-import { useRouter } from "next/navigation"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
-import { toast } from "sonner"
 
 import { RolePicker } from "@/features/company/components/role-picker"
+import { useInviteMember } from "@/features/company/hooks/use-invite-member"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -18,48 +17,17 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { MAX_EMAIL_LENGTH } from "@/config/limits"
-import { MEMBER_ROLES, type MemberRole } from "@/config/roles"
-import { apiErrorMessage, apiFetch, serviceRefusal } from "@/lib/api"
-import type { CompanyMember } from "@/types/company"
 
 /** "Add member" beside the page title, opening a dialog for the email and the role (admin by
  * default), as "new company" does. */
 export function InviteAdmin({ companyId }: { companyId: string }) {
   const t = useTranslations("interviews")
   const common = useTranslations("common")
-  const router = useRouter()
   const [open, setOpen] = useState(false)
-  const [email, setEmail] = useState("")
-  const [role, setRole] = useState<MemberRole>(MEMBER_ROLES[0])
-  const [sending, setSending] = useState(false)
-
-  async function send(event: React.FormEvent) {
-    event.preventDefault()
-    setSending(true)
-
-    try {
-      await apiFetch<CompanyMember>(
-        `/companies/members?company_id=${companyId}`,
-        {
-          method: "POST",
-          body: JSON.stringify({ email, role }),
-        }
-      )
-      setEmail("")
-      setRole(MEMBER_ROLES[0])
-      setOpen(false)
-      router.refresh()
-    } catch (error) {
-      // The service says why: already invited or a member already, too many invites waiting
-      // (409), the email limits (429).
-      toast.error(
-        serviceRefusal(error, [403, 409]) ??
-          apiErrorMessage(error, t("memberFailed"))
-      )
-    } finally {
-      setSending(false)
-    }
-  }
+  const { email, setEmail, role, setRole, sending, send } = useInviteMember(
+    companyId,
+    () => setOpen(false)
+  )
 
   return (
     <Dialog open={open} onOpenChange={(next) => !sending && setOpen(next)}>

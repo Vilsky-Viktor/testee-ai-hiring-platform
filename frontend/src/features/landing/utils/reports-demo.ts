@@ -4,7 +4,7 @@ import {
   DEMO_BEST,
   DEMO_CHAT_TIMES,
   DEMO_FLAGGED,
-  DEMO_REPORT_CANDIDATES,
+  type DemoCandidate,
 } from "@/config/reports-demo"
 import { REPORT_FIELDS, type ReportStep } from "@/config/reports-demo-steps"
 import { stepIndex } from "@/hooks/use-demo-steps"
@@ -28,12 +28,13 @@ export function litField(name: string, point: string | undefined) {
   return /^(summary|typing)\d$/.test(name) ? "chatBox" : ""
 }
 
-/** The chat's messages at step `index`: each turn's summary once it arrives, then its line once
- * sent. */
+/** The chat's messages at step `index`: each turn's summary (of `candidates`) once it arrives,
+ * then its line once sent. */
 export function messagesAt(
   steps: ReportStep[],
   index: number,
-  lines: [string, string]
+  lines: [string, string],
+  candidates: DemoCandidate[]
 ): DemoMessage[] {
   const after = (name: string) => index >= stepIndex(steps, name)
   const messages: DemoMessage[] = []
@@ -41,7 +42,7 @@ export function messagesAt(
   ;[DEMO_BEST, DEMO_FLAGGED].forEach((candidate, at) => {
     if (after(`summary${at}`)) {
       messages.push({
-        summary: DEMO_REPORT_CANDIDATES[candidate],
+        summary: candidates[candidate],
         time: DEMO_CHAT_TIMES[at * 2],
       })
     }

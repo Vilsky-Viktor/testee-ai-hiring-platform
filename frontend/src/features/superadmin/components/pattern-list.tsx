@@ -92,7 +92,7 @@ export function PatternList({
           <div className="flex shrink-0 flex-col items-end gap-2 text-sm text-muted-foreground tabular-nums max-sm:items-start">
             {/* On phones the problem and the count share a line, the buttons on the right. */}
             <span className="flex flex-col items-end gap-2 max-sm:flex-row max-sm:items-center max-sm:gap-3">
-              <Badge variant="outline" className="h-7 px-3 text-sm font-light">
+              <Badge variant="outline" className="h-8 px-4 text-sm font-light">
                 {named("flags", row.flag)}
               </Badge>
               <span>

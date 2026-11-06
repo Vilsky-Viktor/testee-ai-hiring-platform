@@ -6,6 +6,7 @@ import { toast } from "sonner"
 
 import { LanguagePicker } from "@/components/common/language-picker"
 import { LOCALES, type Locale } from "@/config/i18n"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import { firebaseAuth } from "@/lib/firebase"
 
@@ -13,6 +14,7 @@ import { firebaseAuth } from "@/lib/firebase"
 export function LanguageSetting({ current }: { current: Locale }) {
   const t = useTranslations("settings")
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark()
 
   async function choose(language: Locale) {
     setSaving(true)
@@ -24,6 +26,7 @@ export function LanguageSetting({ current }: { current: Locale }) {
       })
       // The new token carries the language; auth-provider.tsx switches the interface to it.
       await (await firebaseAuth()).currentUser?.getIdToken(true)
+      markSaved()
     } catch (error) {
       toast.error(apiErrorMessage(error, t("languageFailed")))
     } finally {
@@ -38,6 +41,7 @@ export function LanguageSetting({ current }: { current: Locale }) {
       onChange={choose}
       label={t("language")}
       disabled={saving}
+      saved={savedText()}
     />
   )
 }

@@ -1,7 +1,7 @@
 import { cn } from "cn"
 
-/** One message of a chat with the AI: the person's on the end side, the AI's on the start;
- * `after` (such as the answer's votes) sits on its bottom edge, at its end. */
+/** One message of a chat with the AI: the person's a grey bubble on the end side, the AI's plain
+ * text across the chat; `after` (such as the answer's votes) sits under it. */
 export function ChatBubble({
   role,
   content,
@@ -15,19 +15,17 @@ export function ChatBubble({
   after?: React.ReactNode
 }) {
   const bubble = cn(
-    "bidi-auto rounded-xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap",
-    role === "user" ? "bg-surface" : "bg-card",
+    "bidi-auto text-sm leading-relaxed whitespace-pre-wrap",
+    role === "user" && "rounded-xl bg-surface px-4 py-3",
     className
   )
-  const place = cn("w-fit max-w-[85%]", role === "user" && "ms-auto")
+  const place = role === "user" ? "ms-auto w-fit max-w-[85%]" : "w-full"
 
   if (after) {
-    // `after` sits on the message's bottom edge, at its end, half over the border; the room
-    // under the message keeps it off the next one.
     return (
-      <li className={cn(place, "relative pb-3")}>
+      <li className={cn(place, "group/answer space-y-1")}>
         <div className={bubble}>{content}</div>
-        <div className="absolute end-3 bottom-0">{after}</div>
+        {after}
       </li>
     )
   }

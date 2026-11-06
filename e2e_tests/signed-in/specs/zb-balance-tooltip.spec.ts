@@ -18,7 +18,8 @@ test("a balance shows its whole amount on hover", async ({ signInAs }) => {
 
   // On the billing page.
   await visit(owner, `/companies/${company.id}/billing`)
-  await hoverFor(owner, owner.locator("span.font-heading.tabular-nums").first(), tooltip)
-  await expect(tooltip).toContainText("1,500")
+  const whole = owner.getByTestId("short-number-tooltip")
+  await hoverFor(owner, owner.getByTestId("available").locator("dd span"), whole)
+  await expect(whole).toHaveText("1,500")
   await shot(owner, "billing")
 })

@@ -16,13 +16,15 @@ import {
 
 /** An integration's one Instructions button, beside Connect: a dialog with everything to know,
  * connected or not: `steps`, numbered (when it has a simple list), after any setup still to do (`children`, with the steps
- * then under their own `stepsTitle`). Open by itself after connecting when the caller says so. */
+ * then under their own `stepsTitle`). Open by itself after connecting when the caller says so;
+ * `noButton`, the caller opens it (from a row's menu). */
 export function InstructionsDialog({
   title,
   steps,
   stepsTitle,
   open,
   onOpenChange,
+  noButton = false,
   children,
 }: {
   title: string
@@ -30,6 +32,7 @@ export function InstructionsDialog({
   stepsTitle?: string
   open?: boolean
   onOpenChange?: (open: boolean) => void
+  noButton?: boolean
   children?: React.ReactNode
 }) {
   const t = useTranslations("ats")
@@ -39,14 +42,19 @@ export function InstructionsDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogTrigger
-        data-testid="instructions"
-        render={
-          <Button variant="outline" className="h-10 shrink-0 px-5 text-base" />
-        }
-      >
-        {t("instructions")}
-      </DialogTrigger>
+      {!noButton && (
+        <DialogTrigger
+          data-testid="instructions"
+          render={
+            <Button
+              variant="outline"
+              className="h-10 shrink-0 px-5 text-base"
+            />
+          }
+        >
+          {t("instructions")}
+        </DialogTrigger>
+      )}
       <DialogContent
         ref={popup}
         initialFocus={popup}

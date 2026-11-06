@@ -1,70 +1,72 @@
-import type { Page } from "@playwright/test"
-
 import { expect, test } from "../fixtures"
 import { api, createCompany } from "../helpers/api"
-import { openDialog, visit } from "../helpers/navigation"
+import { openTopUpPage, topUpTiers } from "../helpers/paddle"
 import { shot } from "../helpers/screenshots"
 import { throwawayEmail } from "../helpers/users"
 
-/** The company's top-up dialog, from its billing tab. */
-async function openTopUp(page: Page, companyId: string) {
-  await visit(page, `/companies/${companyId}/billing`)
-  await openDialog(page, page.getByTestId("top-up").first())
-
-  return page.getByRole("dialog")
-}
-
-// Any number of candidates, priced from billing's catalog: price, credits and candidates, and
-// the next level instead where it costs no more.
-test("the top-up dialog prices any number of candidates", async ({ signInAs }) => {
+// Any number of candidates, typed or chosen by where each price starts, priced from billing's
+// catalog: the price to pay, credits and candidates, how far the next price is, and the next
+// level instead where it costs no more.
+test("the top-up page prices any number of candidates", async ({ signInAs }) => {
   const owner = await signInAs(throwawayEmail("custom-top-up"))
   const company = await createCompany(owner)
-  const dialog = await openTopUp(owner, company.id)
-  const slider = dialog.getByRole("slider")
-  const count = dialog.getByTestId("custom-count")
-  const cards = dialog.getByTestId("custom-quote").locator("p")
+  const buy = await openTopUpPage(owner, company.id)
+  const count = owner.getByTestId("custom-count").filter({ visible: true })
+  const quote = owner.getByTestId("custom-quote").filter({ visible: true })
+  const next = owner.getByTestId("custom-next").filter({ visible: true })
+  const upgraded = owner.getByTestId("custom-upgraded").filter({ visible: true })
+  const tiers = topUpTiers(owner)
 
-  await slider.focus()
-  await owner.keyboard.press("Home")
-  await expect(count).toHaveText("10")
-  await expect(cards.nth(0)).toHaveText("$50")
-  await expect(cards.nth(1)).toContainText("5K")
-  await expect(cards.nth(2)).toContainText("10")
-  await expect(dialog.getByTestId("custom-upgraded")).toHaveCount(0)
+  await expect(count).toHaveValue("10")
+  await expect(buy).toContainText("$50")
+  await expect(quote).toContainText("10")
+  await expect(quote).toContainText("5,000")
+  await expect(upgraded).toHaveCount(0)
 
-  // Arrow keys move one candidate, in the small first level too.
-  for (let step = 0; step < 29; step++) {
-    await owner.keyboard.press("ArrowRight")
-  }
-
-  await expect(count).toHaveText("39")
-  await expect(cards.nth(0)).toHaveText("$195")
-  await expect(dialog.getByTestId("custom-upgraded")).toHaveCount(0)
+  // Any count in the first level, at its price, with how many more reach the next.
+  await count.fill("39")
+  await expect(buy).toContainText("$195")
+  await expect(tiers.first()).toHaveAttribute("aria-pressed", "true")
+  await expect(next).toContainText("11")
+  await expect(next).toContainText("$4")
+  await expect(upgraded).toHaveCount(0)
 
   // 40 at $5 would cost $200, what 50 at $4 cost: those 50 it is.
-  await owner.keyboard.press("ArrowRight")
-  await expect(count).toHaveText("40")
-  await expect(slider).toHaveAttribute("aria-valuetext", /40/)
-  await expect(cards.nth(0)).toHaveText("$200")
-  await expect(cards.nth(1)).toContainText("25K")
-  await expect(cards.nth(2)).toContainText("50")
-  await expect(dialog.getByTestId("custom-upgraded")).toContainText("50")
+  await count.fill("40")
+  await expect(buy).toContainText("$200")
+  await expect(quote).toContainText("50")
+  await expect(quote).toContainText("25,000")
+  await expect(upgraded).toContainText("50")
+  await expect(tiers.nth(1)).toHaveAttribute("aria-pressed", "true")
   await shot(owner, "next-level")
 
-  await owner.keyboard.press("End")
-  await expect(count).toHaveText("1,000")
-  await expect(cards.nth(0)).toHaveText("$2,000")
-  await expect(cards.nth(2)).toContainText("1K")
+  await count.fill("1000")
+  await expect(buy).toContainText("$2,000")
+  await expect(tiers.last()).toHaveAttribute("aria-pressed", "true")
+
+  // A choice sets the count to where its price starts.
+  await tiers.nth(1).click()
+  await expect(count).toHaveValue("50")
+  await expect(buy).toContainText("$200")
+
+  test.skip(await buy.isDisabled(), "Paddle's per-candidate prices aren't set")
+
+  // Only digits go in. Out of range it can't be bought while typed, and comes back in range.
+  await count.fill("5000")
+  await expect(buy).toBeDisabled()
+  await expect(buy).toContainText("$2,000")
+  await count.blur()
+  await expect(count).toHaveValue("1000")
+  await expect(buy).toBeEnabled()
+  await count.fill("3")
+  await expect(buy).toBeDisabled()
+  await count.blur()
+  await expect(count).toHaveValue("10")
 
   // The button asks billing for the count shown; billing sets the price.
-  await owner.keyboard.press("Home")
-
-  for (let step = 0; step < 35; step++) {
-    await owner.keyboard.press("ArrowRight")
-  }
-
-  const buy = dialog.getByRole("button").first()
-  test.skip(await buy.isDisabled(), "Paddle's per-candidate prices aren't set")
+  await count.fill("4x5")
+  await expect(count).toHaveValue("45")
+  await expect(buy).toContainText("$200")
 
   const sent: unknown[] = []
   await owner.route("**/billing/checkout", (route) => {
@@ -86,35 +88,25 @@ const AUTO_TOP_UP = {
   prices: { topup_50: 5000, topup_200: 20000 },
 }
 
-// Under the button, the automatic top-up as a card; its dialog saves only a change.
-// Right to left (Arabic) the slider is mirrored: it starts on the right, so ArrowLeft adds and
-// the knob moves left.
-test("the top-up slider runs right to left in Arabic", async ({ signInAs, signInWith }) => {
+// Right to left (Arabic) the prices run from the right, and the count stays a number written left
+// to right.
+test("the top-up page runs right to left in Arabic", async ({ signInAs, signInWith }) => {
   const email = throwawayEmail("custom-top-up-rtl")
   const owner = await signInAs(email)
   const company = await createCompany(owner)
   // A new sign-in's token carries the account's new language.
   await api(owner, "PUT", "/accounts/me/settings", { language: "ar" })
   const arabic = await signInWith(email, false)
-  const dialog = await openTopUp(arabic, company.id)
+  await openTopUpPage(arabic, company.id)
   await expect(arabic.locator("html")).toHaveAttribute("dir", "rtl")
-  const slider = dialog.getByRole("slider")
+  await expect(arabic.getByTestId("custom-count").filter({ visible: true })).toHaveAttribute("dir", "ltr")
+  const tiers = topUpTiers(arabic)
 
-  await slider.focus()
-  await arabic.keyboard.press("Home")
-  const start = Number(await slider.inputValue())
-  const before = (await slider.boundingBox())!
-
-  for (let step = 0; step < 5; step++) {
-    await arabic.keyboard.press("ArrowLeft")
-  }
-
-  await expect(slider).not.toHaveValue(String(start))
-  expect(Number(await slider.inputValue())).toBeGreaterThan(start)
-  expect((await slider.boundingBox())!.x).toBeLessThan(before.x)
-  await shot(arabic, "rtl-slider")
+  expect((await tiers.first().boundingBox())!.x).toBeGreaterThan((await tiers.last().boundingBox())!.x)
+  await shot(arabic, "rtl-top-up")
 })
 
+// Under the button, the automatic top-up as a card; its dialog saves only a change.
 test("the automatic top-up card changes the setting it shows", async ({ signInAs }) => {
   const owner = await signInAs(throwawayEmail("custom-top-up-auto"))
   const company = await createCompany(owner)
@@ -123,15 +115,15 @@ test("the automatic top-up card changes the setting it shows", async ({ signInAs
       json: { ...AUTO_TOP_UP, on: true, product: "topup_50", threshold: 500 },
     })
   )
-  const dialog = await openTopUp(owner, company.id)
-  const card = dialog.getByTestId("auto-top-up")
+  await openTopUpPage(owner, company.id)
+  const card = owner.getByTestId("auto-top-up").filter({ visible: true })
 
   await expect(card.getByTestId("auto-top-up-on")).toContainText("$50")
   await expect(card.getByTestId("auto-top-up-on")).toContainText("500")
   // On, it's the setting as text with its edit icon, not the button that sets it up.
   await expect(card.getByTestId("set-up-auto-top-up")).toHaveCount(0)
   await card.getByRole("button").click()
-  // The setup's dialog, over the top-up's (which is then hidden from the accessibility tree).
+  // The setup's dialog.
   const setup = owner.getByRole("dialog")
   await expect(setup.locator("form")).toBeVisible()
   const footer = setup.locator("[data-slot=dialog-footer]").getByRole("button")
@@ -177,9 +169,9 @@ test("an automatic top-up that's off is set up from its card", async ({ signInAs
       json: { ...AUTO_TOP_UP, on: false, product: null, threshold: null },
     })
   )
-  const dialog = await openTopUp(owner, company.id)
+  await openTopUpPage(owner, company.id)
 
-  await dialog.getByTestId("set-up-auto-top-up").click()
+  await owner.getByTestId("set-up-auto-top-up").filter({ visible: true }).click()
   const setup = owner.getByRole("dialog")
   await expect(setup.locator("form")).toBeVisible()
 

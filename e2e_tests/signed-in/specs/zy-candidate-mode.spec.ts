@@ -40,7 +40,11 @@ test("a candidate takes the interview in their own mode, set until they start", 
 
   // Only the candidate in another mode than the interview's shows a mode icon: voice.
   const row = (id: string) =>
-    owner.getByRole("main").locator(`a[href$="/candidates/${id}"]`).filter({ visible: true })
+    owner
+      .getByRole("main")
+      .getByRole("listitem")
+      .filter({ has: owner.locator(`a[href$="/candidates/${id}"]`) })
+      .filter({ visible: true })
   await expect(row(voiced.id).getByTestId("answer-mode")).toHaveAttribute("data-mode", "voice")
   await expect(row(clicked.id)).toBeVisible()
   await expect(row(clicked.id).getByTestId("answer-mode")).toHaveCount(0)

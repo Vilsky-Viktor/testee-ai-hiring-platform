@@ -36,10 +36,12 @@ export function LinkJob({
   companyId,
   provider,
   interviews,
+  triggerClassName = "h-12 px-6 text-base",
 }: {
   companyId: string
   provider: AtsProvider
   interviews: Interview[]
+  triggerClassName?: string
 }) {
   const t = useTranslations("ats")
   const common = useTranslations("common")
@@ -185,7 +187,7 @@ export function LinkJob({
     <Dialog open={open} onOpenChange={openDialog}>
       <DialogTrigger
         data-testid="link-job"
-        render={<Button className="h-12 px-6 text-base" />}
+        render={<Button className={triggerClassName} />}
       >
         {t("linkJob")}
       </DialogTrigger>

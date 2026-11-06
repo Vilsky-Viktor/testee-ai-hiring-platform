@@ -6,6 +6,7 @@ import { useState } from "react"
 import { toast } from "sonner"
 
 import { CornerSign } from "@/components/common/corner-sign"
+import { SavedCheck } from "@/components/common/saved-check"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -18,6 +19,7 @@ import {
 } from "@/components/ui/dialog"
 import { Switch } from "@/components/ui/switch"
 import { SIGN_CARD } from "@/config/cards"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import type { MaintenanceSwitchState } from "@/types/company"
 
@@ -30,6 +32,7 @@ export function MaintenanceSwitch({ on: initial }: { on: boolean }) {
   const common = useTranslations("common")
   const [on, setOn] = useState(initial)
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark()
   // Set while the dialog asks to confirm: the candidates in an interview, null if not counted.
   const [confirming, setConfirming] = useState<{ running: number | null }>()
 
@@ -42,6 +45,7 @@ export function MaintenanceSwitch({ on: initial }: { on: boolean }) {
         body: JSON.stringify({ on: next }),
       })
       setOn(saved.on)
+      markSaved()
       setConfirming(undefined)
     } catch (error) {
       toast.error(apiErrorMessage(error, t("maintenanceFailed")))
@@ -81,6 +85,7 @@ export function MaintenanceSwitch({ on: initial }: { on: boolean }) {
             {t("maintenanceText")}
           </span>
         </span>
+        <SavedCheck text={savedText()} />
         <Switch checked={on} disabled={saving} onCheckedChange={toggle} />
       </label>
       <Dialog

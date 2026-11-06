@@ -5,6 +5,7 @@ import { ChevronDownIcon } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useLocale, useTranslations } from "next-intl"
 
+import { SELECT_FOCUS } from "@/config/menu-pill"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -25,7 +26,7 @@ const ANY = "any"
 // "All languages" in the address, so a list that starts in the visitor's languages can show
 // every language once that's chosen.
 export const ALL_LANGUAGES = "all"
-const TRIGGER = "h-10 gap-1.5 px-3 text-sm"
+const TRIGGER = `h-10 gap-1.5 px-3 text-sm ${SELECT_FOCUS}`
 
 export type TemplateChoice = {
   q: string

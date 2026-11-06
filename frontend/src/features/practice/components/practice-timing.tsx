@@ -3,6 +3,7 @@
 import { ChevronDownIcon, TimerIcon } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 
+import { SELECT_FOCUS } from "@/config/menu-pill"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -45,7 +46,7 @@ export function PracticeTiming({
         render={
           <Button
             variant="outline"
-            className="h-12 gap-1.5 px-4 text-base"
+            className={`h-12 gap-1.5 px-4 text-base ${SELECT_FOCUS}`}
             disabled={disabled}
             data-testid="practice-timing"
           />

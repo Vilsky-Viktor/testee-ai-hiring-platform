@@ -2,8 +2,12 @@ import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import { getTranslations } from "next-intl/server"
 
-import { BalanceRow } from "@/features/billing/components/balance-row"
-import { CompanyCurrencySetting } from "@/features/billing/components/company-currency"
+import { FilterPills } from "@/components/common/filter-pills"
+import {
+  Balance,
+  TopUpLink,
+} from "@/features/billing/components/billing-balance"
+import { HistoryMenu } from "@/features/billing/components/history-menu"
 import { CreditHistory } from "@/features/billing/components/credit-history"
 import { RefreshOnFocus } from "@/components/common/refresh-on-focus"
 import { ReservedList } from "@/features/billing/components/reserved-list"
@@ -11,58 +15,76 @@ import { CompanyHeader } from "@/features/company/components/company-header"
 import { SignInPrompt } from "@/components/common/sign-in-prompt"
 import { InfoCard } from "@/components/common/warning-card"
 import { TOKEN_COOKIE } from "@/config/auth"
-import { LIST_BOX, PAGE_SIZE } from "@/config/lists"
+import { PAGE_SIZE } from "@/config/lists"
 import { optionalFetch, serverFetch } from "@/lib/server-api"
 import { translatedTitle } from "@/lib/site"
 import { companyHeaderProps } from "@/lib/company-header"
-import { companyCurrencyPath, visitorCatalog } from "@/lib/catalog"
-import type { Catalog, CompanyCredits, CompanyCurrency } from "@/types/billing"
+import type { CompanyCredits } from "@/types/billing"
 import type {
   Company,
   CreditCandidate,
   CreditHistoryEntry,
 } from "@/types/company"
 
+// The kinds of movement the history can be narrowed to.
+const HISTORY_KINDS = ["topups", "charges", "refunds"] as const
+
+// What anyone but an owner or admin gets.
+const EMPTY_DATA = {
+  credits: null,
+  reserved: null,
+  history: null,
+  spent: null,
+}
+
 export const generateMetadata = () => translatedTitle("company", "billing")
+
+/** The balance, and the open sub-page's first page of rows. */
+async function billingData(
+  companyId: string,
+  tab: "history" | "reserved",
+  kind?: string
+) {
+  const api = `/companies/companies/${companyId}/billing`
+  const [credits, reserved, history, spent] = await Promise.all([
+    serverFetch<CompanyCredits>(`/companies/companies/${companyId}/credits`),
+    tab === "reserved"
+      ? serverFetch<CreditCandidate[]>(`${api}/reserved?limit=${PAGE_SIZE}`)
+      : null,
+    tab === "history"
+      ? serverFetch<CreditHistoryEntry[]>(
+          `${api}/history?limit=${PAGE_SIZE}${kind ? `&kind=${kind}` : ""}`
+        )
+      : null,
+    optionalFetch<{ credits: number }>(`${api}/spent`),
+  ])
+
+  return { credits, reserved, history, spent }
+}
 
 export default async function BillingPage({
   params,
   searchParams,
 }: {
   params: Promise<{ companyId: string }>
-  searchParams: Promise<{ tab?: string }>
+  searchParams: Promise<{ tab?: string; kind?: string }>
 }) {
   const { companyId } = await params
   // History opens first; the reserved candidates have their own tab, so a long list of them
   // never pushes the history out of sight.
-  const tab = (await searchParams).tab === "reserved" ? "reserved" : "history"
+  const query = await searchParams
+  const tab = query.tab === "reserved" ? "reserved" : "history"
+  const kind = HISTORY_KINDS.find((item) => item === query.kind)
   const t = await getTranslations("companyBilling")
+  const topUp = await getTranslations("billing")
   const signedIn = (await cookies()).has(TOKEN_COOKIE)
   const company = signedIn
     ? await serverFetch<Company>(`/companies/companies/${companyId}`)
     : null
-  const billing = `/companies/companies/${companyId}/billing`
   const href = `/companies/${companyId}/billing`
-  const [credits, catalog, currency, reserved, history] = company?.can_edit
-    ? await Promise.all([
-        serverFetch<CompanyCredits>(
-          `/companies/companies/${companyId}/credits`
-        ),
-        visitorCatalog(),
-        optionalFetch<CompanyCurrency>(await companyCurrencyPath(companyId)),
-        // Only the open tab's first page.
-        tab === "reserved"
-          ? serverFetch<CreditCandidate[]>(
-              `${billing}/reserved?limit=${PAGE_SIZE}`
-            )
-          : null,
-        tab === "history"
-          ? serverFetch<CreditHistoryEntry[]>(
-              `${billing}/history?limit=${PAGE_SIZE}`
-            )
-          : null,
-      ])
-    : [null, null, null, null, null]
+  const { credits, reserved, history, spent } = company?.can_edit
+    ? await billingData(companyId, tab, kind)
+    : EMPTY_DATA
 
   if (!signedIn) {
     return (
@@ -94,29 +116,70 @@ export default async function BillingPage({
           {
             id: "reserved",
             href: `${href}?tab=reserved`,
-            label: t("reservedTab", {
-              count: credits?.reserved_candidates ?? 0,
-            }),
+            label: t("reservedTab"),
+            count: credits?.reserved_candidates ?? 0,
           },
         ]}
         currentSub={tab}
-        className="space-y-12"
+        className="space-y-8"
+        action={
+          // On a phone, Top up takes the line and the dots stay beside it.
+          <div className="flex items-center gap-3 max-sm:[&>a]:flex-1">
+            <TopUpLink companyId={companyId} label={topUp("topUp")} />
+            {tab === "history" && <HistoryMenu companyId={companyId} />}
+          </div>
+        }
       >
-        <Balance
-          credits={credits}
-          catalog={catalog}
-          currency={currency}
-          name={company.name}
-          companyId={companyId}
-          canEdit={company.can_edit}
-        />
+        {credits && (
+          <Balance credits={credits} spent={spent} companyId={companyId} />
+        )}
         {tab === "reserved" ? (
           <ReservedTab companyId={companyId} reserved={reserved} />
         ) : (
-          <CreditHistory companyId={companyId} initial={history ?? []} />
+          <HistoryTab
+            companyId={companyId}
+            href={href}
+            kind={kind}
+            history={history}
+          />
         )}
       </CompanyHeader>
     </main>
+  )
+}
+
+/** The history, narrowed to one `kind` of movement or not. */
+async function HistoryTab({
+  companyId,
+  href,
+  kind,
+  history,
+}: {
+  companyId: string
+  href: string
+  kind?: (typeof HISTORY_KINDS)[number]
+  history: CreditHistoryEntry[] | null
+}) {
+  const t = await getTranslations("companyBilling")
+
+  return (
+    <div className="space-y-4">
+      <FilterPills
+        testId="history-filter"
+        items={[undefined, ...HISTORY_KINDS].map((item) => ({
+          id: item ?? "all",
+          label: t(`kinds.${item ?? "all"}`),
+          href: item ? `${href}?kind=${item}` : href,
+          chosen: item === kind,
+        }))}
+      />
+      <CreditHistory
+        key={kind ?? "all"}
+        companyId={companyId}
+        initial={history ?? []}
+        kind={kind}
+      />
+    </div>
   )
 }
 
@@ -142,49 +205,6 @@ async function ReservedTab({
           {t("reservedEmpty")}
         </p>
       )}
-    </div>
-  )
-}
-
-/** The balance with its top-up, once both the credits and the prices could be read. */
-function Balance({
-  credits,
-  catalog,
-  currency,
-  name,
-  companyId,
-  canEdit,
-}: {
-  credits: CompanyCredits | null
-  catalog: Catalog | null
-  currency: CompanyCurrency | null
-  name: string
-  companyId: string
-  canEdit: boolean
-}) {
-  if (!credits || !catalog) {
-    return null
-  }
-
-  return (
-    <div className={LIST_BOX}>
-      <BalanceRow
-        catalog={catalog}
-        name={name}
-        available={credits.available}
-        reserved={credits.reserved}
-        low={credits.low}
-        companyId={companyId}
-        currency={
-          currency && (
-            <CompanyCurrencySetting
-              companyId={companyId}
-              canEdit={canEdit}
-              initial={currency}
-            />
-          )
-        }
-      />
     </div>
   )
 }

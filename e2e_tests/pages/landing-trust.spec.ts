@@ -1,7 +1,7 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
 
 import { pauseClock } from "./helpers/clock";
-import { loaded } from "./helpers/waits";
+import { loaded, settled } from "./helpers/waits";
 
 // The home page's "trust, quality and compliance" section: five steps of one size spaced evenly
 // round an ellipse, a question running round them and lighting each in turn, the AI chip with light running out of it through the net in
@@ -55,6 +55,13 @@ test("the steps are one size round the ring and light up one at a time, in order
   await pauseClock(page);
   const steps = section.getByTestId("quality-step");
   await expect(steps).toHaveCount(5);
+  // Measured once they've popped in, which the lit step shows they have started to.
+  const first = await litStep(page, steps);
+
+  for (const step of await steps.all()) {
+    await settled(step);
+  }
+
   const before = await Promise.all((await steps.all()).map(centre));
   const [top, right, lowerRight, lowerLeft, left] = before;
   const middle = (left.x + right.x) / 2;
@@ -69,11 +76,11 @@ test("the steps are one size round the ring and light up one at a time, in order
   expect(lowerLeft.y).toBeCloseTo(lowerRight.y, 0);
   expect(middle - lowerLeft.x).toBeCloseTo(lowerRight.x - middle, 0);
 
-  const first = await litStep(page, steps);
-  const shown = await centre(steps.nth(first));
-  expect([shown.width, shown.height]).toEqual([before[first].width, before[first].height]);
   const next = await litStep(page, steps, first);
   expect(next).toBe((first + 1) % 5);
+  await settled(steps.nth(next));
+  const shown = await centre(steps.nth(next));
+  expect([shown.width, shown.height]).toEqual([before[next].width, before[next].height]);
   await expect(section.getByTestId("ai-chip")).toBeVisible();
   await expect(section.getByTestId("net-wave")).toHaveCount(1);
 });

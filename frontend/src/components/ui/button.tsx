@@ -1,6 +1,8 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
+
+import { PRIMARY_FILL } from "@/config/buttons"
 import type { ReactNode } from "react"
 
 import {
@@ -20,8 +22,7 @@ const buttonVariants = cva(
         // top inside edge, so it reads as slightly raised; a touch brighter on hover. The gradient
         // look it replaces:
         // "bg-primary-gradient text-primary-foreground transition-[filter] hover:brightness-110".
-        default:
-          "bg-primary bg-[linear-gradient(to_bottom,color-mix(in_oklch,var(--primary)_88%,white),var(--primary))] text-primary-foreground shadow-[inset_0_1px_0_rgb(255_255_255/0.25)] transition-[filter] hover:brightness-110 aria-expanded:brightness-110",
+        default: `${PRIMARY_FILL} transition-[filter] hover:brightness-90 aria-expanded:brightness-90 dark:hover:brightness-110 dark:aria-expanded:brightness-110`,
         outline:
           "border-border bg-transparent hover:bg-surface hover:text-foreground aria-expanded:bg-surface aria-expanded:text-foreground dark:border-input",
         // The site's grey with the primary's light top line, fainter; a step lighter on hover.

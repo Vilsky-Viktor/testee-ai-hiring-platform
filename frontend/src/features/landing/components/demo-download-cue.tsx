@@ -1,11 +1,13 @@
 import { cn } from "cn"
 import { CircleCheckIcon, FileTextIcon } from "lucide-react"
 
-import { DEMO_PDF } from "@/config/reports-demo"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
 
 /** The browser's sign that a file was saved, small, at the picture's top end corner where a
  * browser shows its downloads: the PDF's name and a check. Shown while `shown`, dropping in. */
 export function DemoDownloadCue({ shown }: { shown: boolean }) {
+  const { pdf } = useDemoContent("reports")
+
   return (
     <div
       className={cn(
@@ -16,7 +18,7 @@ export function DemoDownloadCue({ shown }: { shown: boolean }) {
       )}
     >
       <FileTextIcon className="size-5 shrink-0 text-muted-foreground" />
-      <span className="truncate">{DEMO_PDF}</span>
+      <span className="truncate">{pdf}</span>
       <CircleCheckIcon className="size-5 shrink-0 text-primary" />
     </div>
   )

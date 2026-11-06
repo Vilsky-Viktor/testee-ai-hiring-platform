@@ -142,8 +142,7 @@ export function EditableTitle({
 
   if (!editing) {
     const edit = editLabel ?? t("editTitle")
-    // A title's last word goes in one unbreakable piece with its dot and the pencil, so they
-    // wrap together.
+    // A title's last word keeps its dot and the pencil, so they wrap together.
     // A title is text: its last word is split off to wrap with the dot and the pencil.
     const split = title.lastIndexOf(" ")
     const head = title.slice(0, split + 1)
@@ -172,8 +171,10 @@ export function EditableTitle({
           ) : (
             <>
               {head}
+              {last}
+              {/* The word joiner keeps them on the word, which may itself have to break. */}
+              {"\u2060"}
               <span className="whitespace-nowrap">
-                {last}
                 <span className="inline-block w-[0.4em] text-start text-primary">
                   .
                 </span>
@@ -196,7 +197,8 @@ export function EditableTitle({
       aria-label={label ?? t("title")}
       disabled={saving}
       value={value}
-      className={`${textClass} w-full min-w-0 rounded-xl border border-ring bg-transparent px-4 py-1 outline-none`}
+      // Being edited: the site's grey field, with its focus line along the bottom.
+      className={`${textClass} w-full min-w-0 rounded-xl border border-ring-gradient-field bg-surface px-5 py-2.5 outline-none`}
       onChange={(event) => setValue(event.target.value)}
       onBlur={() => {
         if (skipSave.current) {
@@ -228,7 +230,7 @@ export function EditableTitle({
   return (
     <div className="space-y-1">
       {input}
-      <p className="px-4 text-sm text-muted-foreground">{hint}</p>
+      <p className="px-4 text-xs text-muted-foreground">{hint}</p>
     </div>
   )
 }

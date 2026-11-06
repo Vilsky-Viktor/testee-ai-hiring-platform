@@ -260,8 +260,16 @@ test("each question has its own time, adding up to the whole interview", async (
 
     // The report: each answer's time out of its question's own.
     await visit(owner, `/companies/${company.id}/interviews/${interview.id}?tab=candidates`)
-    await owner.getByText(email, { exact: true }).first().click()
-    // The list renders the answers near the screen only: the first ones, in the order shown.
+    await owner.getByRole("main").getByRole("link", { name: email.split("@")[0] }).click()
+    // The topic opens to its answers, in the order shown.
+    const topic = owner.getByTestId("topic-toggle").first()
+    await expect(async () => {
+      if ((await topic.getAttribute("aria-expanded")) !== "true") {
+        await topic.click()
+      }
+
+      await expect(topic).toHaveAttribute("aria-expanded", "true", { timeout: 2_000 })
+    }).toPass()
     const lines = owner.getByTestId("answer-time").filter({ visible: true })
 
     for (const [index, time] of times.slice(0, 3).entries()) {

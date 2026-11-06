@@ -1,0 +1,38 @@
+/* The promos played by a pointer (create-flow.tsx, candidates-demo.tsx, reports-demo.tsx,
+   ask-agent-demo.tsx): what the pointer clicks jumps as the click lands (use-click-bump.ts; the
+   site's own jump, animations.css), and a pressed button shows only that jump, no glow. */
+
+@media (prefers-reduced-motion: no-preference) {
+  :is(
+      [data-create-promo],
+      [data-candidates-promo],
+      [data-reports-promo],
+      [data-ask-promo]
+    )
+    [data-clicked] {
+    animation: jump 0.45s ease-out;
+  }
+
+  :is(
+      [data-create-promo],
+      [data-candidates-promo],
+      [data-reports-promo],
+      [data-ask-promo]
+    )
+    .demo-pressed:not([data-clicked]) {
+    animation: none;
+  }
+
+  /* A box lit as it's typed in keeps its light as it jumps. */
+  :is(
+      [data-create-promo],
+      [data-candidates-promo],
+      [data-reports-promo],
+      [data-ask-promo]
+    )
+    [data-clicked][data-spotlight]:not(:has(input, textarea)) {
+    animation:
+      jump 0.45s ease-out,
+      promo-spotlight 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+}

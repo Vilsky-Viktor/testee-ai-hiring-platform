@@ -42,9 +42,10 @@ test("an owner changes an interview's settings on its settings tab", async ({ si
   await seconds.press("Enter")
   await mark.fill("70")
   await mark.press("Enter")
-  // Hired, then keeping the questions out of the shared question bank: shared by default.
-  const hired = owner.getByRole("main").getByRole("checkbox").first()
-  const keepPrivate = owner.getByRole("main").getByRole("checkbox").nth(1)
+  // Hired, then keeping the questions out of the shared question bank: shared by default. The
+  // page's first switch is the shareable link.
+  const hired = owner.getByRole("main").getByRole("switch").nth(1)
+  const keepPrivate = owner.getByRole("main").getByRole("switch").nth(2)
   await expect(keepPrivate).not.toBeChecked()
   await hired.click()
   await expect(hired).toBeChecked()
@@ -86,13 +87,12 @@ test("an owner turns on the shareable link on the settings tab", async ({ signIn
   const interviewUrl = `/companies/${company.id}/interviews/${interviewId}`
 
   await visit(owner, `${interviewUrl}?tab=candidates`)
-  // Loaded: the candidates' search is there.
-  await expect(owner.getByRole("main").getByRole("searchbox")).toHaveCount(1)
+  // Loaded: nobody invited yet, the way to invite is there.
+  await expect(owner.getByTestId("new-candidate").filter({ visible: true })).toBeVisible()
   await expect(owner.getByRole("main").getByRole("switch")).toHaveCount(0)
 
   await visit(owner, `${interviewUrl}?tab=settings`)
-  const share = owner.getByRole("main").getByRole("switch")
-  await expect(share).toHaveCount(1)
+  const share = owner.getByRole("main").getByRole("switch").first()
   await share.click()
   await expect(share).toBeChecked()
   await expect(owner.getByRole("main").locator('input[readonly]')).toHaveValue(/\/apply\/\S+$/)

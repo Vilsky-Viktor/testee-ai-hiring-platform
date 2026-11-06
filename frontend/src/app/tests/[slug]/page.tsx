@@ -1,14 +1,14 @@
 import Link from "next/link"
 import { notFound, permanentRedirect } from "next/navigation"
-import { getTranslations } from "next-intl/server"
+import { getLocale, getTranslations } from "next-intl/server"
 
 import { BackLink } from "@/components/common/back-link"
 import { FaqList } from "@/components/common/faq-list"
 import { JsonLd } from "@/components/common/json-ld"
 import { PageHeader } from "@/components/common/page-header"
 import { SubtopicList } from "@/components/common/subtopic-list"
+import { SummaryCards } from "@/components/common/summary-cards"
 import { SampleQuestions } from "@/features/tests/components/sample-questions"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { DEFAULT_LOCALE } from "@/config/i18n"
 import { ROLE_PAGE_FAQ } from "@/config/role-tests"
@@ -27,7 +27,8 @@ import {
 } from "@/lib/catalog"
 import type { FaqItem } from "@/types/help"
 import type { SampleQuestion, Template } from "@/types/superadmin"
-import { LIST_BOX, ROW_HOVER } from "@/config/lists"
+import { CARD } from "@/config/cards"
+import { LIST_BOX, ROW_HOVER, ROW_ICON } from "@/config/lists"
 import { PageKey } from "@/components/common/page-key"
 
 type Params = { params: Promise<{ slug: string }> }
@@ -60,8 +61,8 @@ export async function generateMetadata({ params }: Params) {
   }
 }
 
-/** A role's skills test for companies hiring for it, made from its template: what it checks,
- * the way to test candidates, and sample questions (which also answer candidates' searches,
+/** A role's skills test for companies hiring for it, made from its template: its facts, what it
+ * checks, the way to test candidates, and sample questions (which also answer candidates' searches,
  * with a link to free practice). Its address is the template's slug. */
 export default async function RoleTestPage({ params }: Params) {
   const { slug: key } = await params
@@ -79,6 +80,7 @@ export default async function RoleTestPage({ params }: Params) {
   ])
 
   const locale = await urlLocale()
+  const pageLocale = await getLocale()
 
   // Links stay in the language of the page's address (/de/tests/… leads to /de/…).
   const at = (path: string) => localizedPath(locale ?? DEFAULT_LOCALE, path)
@@ -112,21 +114,6 @@ export default async function RoleTestPage({ params }: Params) {
       />
       <PageHeader
         back={<BackLink href="/tests">{t("title")}</BackLink>}
-        tags={
-          <>
-            <Badge variant="outline" className="h-7 px-3 text-sm font-light">
-              {hasMessage(tLevel, template.level)
-                ? tLevel(template.level)
-                : template.level}
-            </Badge>
-            <Badge
-              variant="outline"
-              className="h-7 px-3 text-sm font-light uppercase"
-            >
-              {template.language}
-            </Badge>
-          </>
-        }
         title={
           <h1 className="font-heading text-3xl font-medium tracking-tight text-balance normal-case">
             {t.rich("heading", { role: template.title, ...bdi })}
@@ -134,8 +121,10 @@ export default async function RoleTestPage({ params }: Params) {
         }
       />
       <div className="space-y-6">
-        <p className="text-lg text-muted-foreground">{t("lead", prices)}</p>
-        <div className="flex flex-wrap items-center gap-3">
+        <p className="max-w-4xl text-lg text-muted-foreground">
+          {t("lead", prices)}
+        </p>
+        <div className="flex flex-wrap items-center gap-3 max-sm:*:w-full">
           <Button
             className="h-12 px-6 text-base"
             render={<Link href={at("/")} />}
@@ -152,6 +141,41 @@ export default async function RoleTestPage({ params }: Params) {
             {t("practise")}
           </Button>
         </div>
+        <SummaryCards
+          testId="test-facts"
+          className="max-sm:*:last:col-span-1 lg:grid-cols-4"
+          rows={[
+            {
+              id: "topics",
+              label: t("facts.topics"),
+              value: template.topics.length,
+            },
+            {
+              id: "level",
+              label: t("facts.level"),
+              value: hasMessage(tLevel, template.level)
+                ? tLevel(template.level)
+                : template.level,
+            },
+            {
+              id: "language",
+              label: t("facts.language"),
+              value:
+                new Intl.DisplayNames(pageLocale, { type: "language" }).of(
+                  template.language
+                ) ?? template.language,
+            },
+            ...(prices.price
+              ? [
+                  {
+                    id: "price",
+                    label: t("facts.price"),
+                    value: prices.price,
+                  },
+                ]
+              : []),
+          ]}
+        />
       </div>
 
       <section className="space-y-4">
@@ -161,13 +185,18 @@ export default async function RoleTestPage({ params }: Params) {
           dir={textDirection(template.language)}
           className={`${LIST_BOX} overflow-hidden`}
         >
-          {template.topics.map((topic) => (
+          {template.topics.map((topic, index) => (
             <li
               key={topic.id}
-              className={`space-y-3 p-4 ${ROW_HOVER} max-sm:px-6 max-sm:py-8 sm:p-6`}
+              className={`group/row flex items-start gap-4 p-6 ${ROW_HOVER}`}
             >
-              <span className="block text-lg font-medium">{topic.title}</span>
-              <SubtopicList subtopics={topic.subtopics} />
+              <span aria-hidden className={`${ROW_ICON} font-medium`}>
+                {index + 1}
+              </span>
+              <span className="min-w-0 flex-1 space-y-3">
+                <span className="block text-lg font-medium">{topic.title}</span>
+                <SubtopicList subtopics={topic.subtopics} />
+              </span>
             </li>
           ))}
         </ul>
@@ -183,6 +212,26 @@ export default async function RoleTestPage({ params }: Params) {
           <FaqList items={faq} />
         </section>
       )}
+
+      {/* Having read all that, the way to go on. */}
+      <section
+        data-testid="test-closing"
+        className={`flex items-center justify-between gap-6 max-sm:-mx-6 max-sm:flex-col max-sm:items-stretch max-sm:rounded-none ${CARD}`}
+      >
+        <div className="min-w-0 space-y-1">
+          <h2 className="no-dot font-heading text-2xl font-medium">
+            {t("closingTitle")}
+          </h2>
+          <p className="text-base text-muted-foreground">{t("closingText")}</p>
+        </div>
+        <Button
+          className="h-12 shrink-0 px-6 text-base"
+          render={<Link href={at("/")} />}
+          nativeButton={false}
+        >
+          {t("create")}
+        </Button>
+      </section>
     </main>
   )
 }

@@ -646,6 +646,11 @@ export interface components {
        * @default 0
        */
       max_subtopics: number
+      /**
+       * Min Added Subtopics
+       * @default 0
+       */
+      min_added_subtopics: number
     }
     /**
      * GenerationProgress
@@ -660,6 +665,8 @@ export interface components {
       topics?: number | null
       /** Topics Ready */
       topics_ready?: number | null
+      /** Topic States */
+      topic_states?: components["schemas"]["TopicState"][] | null
     }
     /** GenerationStatusOut */
     GenerationStatusOut: {
@@ -936,6 +943,13 @@ export interface components {
             | "et"
           )
         | null
+    }
+    /** TopicState */
+    TopicState: {
+      /** Name */
+      name: string
+      /** Ready */
+      ready: boolean
     }
     /** ValidationError */
     ValidationError: {

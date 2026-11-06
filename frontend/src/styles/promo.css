@@ -50,7 +50,9 @@
   }
 }
 
-/* A big moment: a soft glow swelling and fading, and sparks flying out to (--dx, --dy). */
+/* A big moment: a soft glow swelling and fading, never past its full size (its colour ends short
+   of the preview's sides), and sparks flying out to (--dx, --dy), gone by half the way,
+   well before the preview's edges. */
 @keyframes promo-glow {
   0% {
     opacity: 0;
@@ -61,7 +63,7 @@
   }
   100% {
     opacity: 0;
-    transform: scale(1.6);
+    transform: scale(1);
   }
 }
 
@@ -72,6 +74,9 @@
   }
   20% {
     opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
@@ -105,62 +110,6 @@
 @keyframes promo-tick {
   50% {
     transform: scale(1.06);
-  }
-}
-
-/* The "just ask Mira" promo (ask-agent-demo.tsx). The person's message rising from the input
-   into its place, landing with a small settle. */
-@keyframes promo-rise {
-  0% {
-    opacity: 0;
-    transform: translateY(4rem) scale(0.85);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-0.2rem) scale(1.02);
-  }
-  100% {
-    transform: none;
-  }
-}
-
-/* Mira's message growing out of a small round dot, settling as it lands. */
-@keyframes promo-grow {
-  0% {
-    opacity: 0;
-    transform: scale(0.1);
-    border-radius: 9999px;
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.03);
-  }
-  100% {
-    transform: none;
-  }
-}
-
-/* Typed text leaving the input as it's sent: up, fading. */
-@keyframes promo-leave {
-  to {
-    opacity: 0;
-    transform: translateY(-0.75rem);
-  }
-}
-
-/* The send arrow flying up out of its button and coming back in from below. */
-@keyframes promo-lift {
-  45% {
-    opacity: 0;
-    transform: translateY(-1rem);
-  }
-  55% {
-    opacity: 0;
-    transform: translateY(0.75rem);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
   }
 }
 
@@ -243,6 +192,13 @@
   }
 }
 
+/* A field no longer lit: from the colour its pulse had reached (use-spotlight.ts) back to its own. */
+@keyframes promo-spotlight-out {
+  from {
+    background-color: var(--spotlight-from);
+  }
+}
+
 /* Something just added or changed: a short wash of the primary colour, fading. */
 @keyframes promo-flash {
   from {
@@ -265,9 +221,27 @@
     animation: promo-unfold 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
   }
 
+  /* Any promo's field that was lit fades back smoothly. */
+  [data-promo] [data-spotlight-out] :is(input, textarea),
+  [data-promo] [data-spotlight-out]:not(:has(input, textarea)) {
+    animation: promo-spotlight-out 0.6s ease-out;
+  }
+
   /* The field's own box: its input or text box, or the target itself when it's the box. */
-  [data-create-promo] [data-spotlight] :is(input, textarea),
-  [data-create-promo] [data-spotlight]:not(:has(input, textarea)) {
+  :is([data-create-promo], [data-ask-promo])
+    [data-spotlight]
+    :is(input, textarea),
+  :is([data-create-promo], [data-ask-promo])
+    [data-spotlight]:not(:has(input, textarea)) {
+    animation: promo-spotlight 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  /* A field with a button inside it: its whole box lights up, under the button too. */
+  [data-create-promo] [data-spotlight]:has([data-demo-target="apply"]) input {
+    animation: none;
+  }
+
+  [data-create-promo] [data-spotlight]:has([data-demo-target="apply"]) > div {
     animation: promo-spotlight 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 }

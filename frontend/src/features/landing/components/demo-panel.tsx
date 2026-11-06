@@ -1,3 +1,5 @@
+import { cn } from "cn"
+
 // A button in a demo as the pointer clicks it: the real button's pressed look
 // (components/ui/button.tsx), shrunk and dimmed a little.
 // `demo-pressed` marks it for the create promo's glow (promo.css); elsewhere it does nothing.
@@ -23,10 +25,12 @@ export const SOURCE_CARD =
 export function DemoPanel({
   ref,
   label,
+  className,
   children,
 }: {
   ref?: React.Ref<HTMLDivElement>
   label?: string
+  className?: string
   children: React.ReactNode
 }) {
   return (
@@ -41,7 +45,10 @@ export function DemoPanel({
       <div
         aria-hidden
         inert
-        className="relative flex flex-1 flex-col rounded-xl border bg-background p-3 text-start text-sm max-sm:-mx-6 max-sm:rounded-none max-sm:border-x-0"
+        className={cn(
+          "relative flex flex-1 flex-col rounded-xl border bg-background p-3 text-start text-sm max-sm:-mx-6 max-sm:rounded-none max-sm:border-x-0",
+          className
+        )}
       >
         {children}
       </div>

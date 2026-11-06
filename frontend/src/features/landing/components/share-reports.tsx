@@ -2,6 +2,7 @@ import { cn } from "cn"
 import { DownloadIcon, NotebookPenIcon, Share2Icon } from "lucide-react"
 import { getTranslations } from "next-intl/server"
 
+import { DemoFit } from "@/features/landing/components/demo-fit"
 import { DEMO_GROUP } from "@/features/landing/components/demo-panel"
 import { NotesLine } from "@/features/landing/components/notes-line"
 import { PhoneSteps } from "@/features/landing/components/phone-steps"
@@ -36,7 +37,9 @@ export async function ShareReportsSection() {
     >
       <div className="flex flex-col gap-8">
         <div className={`${DEMO_GROUP} max-sm:hidden`}>
-          <ReportsDemo />
+          <DemoFit>
+            <ReportsDemo />
+          </DemoFit>
         </div>
         <PhoneSteps
           className="bg-background"

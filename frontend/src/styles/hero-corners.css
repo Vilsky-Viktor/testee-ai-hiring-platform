@@ -1,0 +1,100 @@
+/* The hero's corners (hero-nets.tsx): bare squares on the same grid as the nets of people (32px,
+   HERO_NET), fading out gradually from the top left, bottom left and bottom right; the left ones
+   reach further along the edge, and all of them less far up on shorter screens, so they stay off
+   the content. From laptops up. */
+.hero-corners {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  mask-image:
+    radial-gradient(
+      ellipse 36rem min(22rem, 38vh) at left top,
+      black,
+      transparent
+    ),
+    radial-gradient(
+      ellipse min(19rem, 33vh) min(26rem, 45vh) at right bottom,
+      black,
+      transparent
+    );
+}
+
+/* The bottom left: an uneven edge of squares along the hero's bottom, fading out by the wire going
+   down from the box, in the middle of the box's column. */
+.hero-corner-bottom {
+  inset-inline-end: auto;
+  width: calc(50cqw + 2rem + (min(100cqw, 80rem) - 7rem) / 4);
+  mask-image:
+    radial-gradient(
+      ellipse 34rem min(23rem, 40vh) at left bottom,
+      black,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 20rem min(12rem, 21vh) at 36% bottom,
+      black,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 38% min(17rem, 28vh) at 62% bottom,
+      black,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 16% min(10rem, 18vh) at 84% bottom,
+      black,
+      transparent
+    );
+}
+
+.hero-corner-bottom:dir(rtl) {
+  scale: -1 1;
+}
+
+/* The net of people on the features, hiring flow and pricing pages (corner-net.tsx): out of the top right,
+   spread as the home page's top left. */
+.hero-corner-right {
+  mask-image: radial-gradient(
+    ellipse 36rem min(19rem, 33vh) at right top,
+    black,
+    transparent
+  );
+}
+
+/* Every other page: the same squares fading out quickly in the four corners of its content, between
+   the header and the footer. The pages with nets of their own (`data-own-net`) go without. */
+.page-corners {
+  position: absolute;
+  z-index: -10;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  pointer-events: none;
+  mask-image:
+    radial-gradient(circle 10rem at left top, black, transparent),
+    radial-gradient(circle 10rem at right top, black, transparent),
+    radial-gradient(circle 10rem at left bottom, black, transparent),
+    radial-gradient(circle 10rem at right bottom, black, transparent);
+}
+
+html:has([data-own-net]) .page-corners {
+  display: none;
+}
+
+@media print {
+  .page-corners {
+    display: none;
+  }
+}
+
+@media (width < 64rem) {
+  .hero-corners,
+  .page-corners {
+    display: none;
+  }
+}

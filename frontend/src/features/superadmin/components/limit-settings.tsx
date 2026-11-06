@@ -124,7 +124,7 @@ export function LimitSettings({
                       {limit.audience === "unpaid" && !limit.unpaid && (
                         <Badge
                           variant="outline"
-                          className="h-6 px-2 text-xs font-light"
+                          className="h-7 px-3 text-xs font-light"
                         >
                           {t("limitUnpaid")}
                         </Badge>

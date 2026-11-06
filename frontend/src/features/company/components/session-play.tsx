@@ -41,6 +41,9 @@ export type SessionPlayProps = {
   brand?: ReactNode
 }
 
+// The key of an option's letter, wherever a keyboard's layout puts it.
+const LETTER_KEY = /^Key([A-Z])$/
+
 export function SessionPlay({
   session,
   progress,
@@ -70,6 +73,35 @@ export function SessionPlay({
 
   const sendAndAdvance = () => sendThen(onAdvance)
 
+  // Only while focus is in the question, which is where it lands: letters pick its options, and
+  // Enter goes on from the question itself (on a button it presses the button).
+  function onKey(event: React.KeyboardEvent) {
+    if (
+      !question ||
+      sending ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.altKey
+    ) {
+      return
+    }
+
+    const option = LETTER_KEY.exec(event.code)?.[1]
+    const index = option ? option.charCodeAt(0) - 65 : -1
+
+    if (index >= 0 && index < question.options.length) {
+      event.preventDefault()
+      choose(question.question_id, index)
+    } else if (
+      event.key === "Enter" &&
+      chosen.length > 0 &&
+      !(event.target as Element).closest("button, a")
+    ) {
+      event.preventDefault()
+      void sendAndAdvance()
+    }
+  }
+
   return (
     <div className="space-y-8 pb-28">
       <SessionTop
@@ -95,7 +127,8 @@ export function SessionPlay({
         <div
           key={question.question_id}
           ref={questionRef}
-          className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start lg:gap-8"
+          onKeyDown={onKey}
+          className="grid grid-cols-1 gap-6 motion-safe:animate-[question-in_0.2s_ease-out] lg:grid-cols-2 lg:items-start lg:gap-8"
         >
           {/* The question and its rating stay in view together; on phones the
               rating moves under the options. */}
@@ -170,6 +203,15 @@ export function SessionPlay({
               bleed
               onChoose={(option) => choose(question.question_id, option)}
             />
+            <p
+              {...languageOf(locale)}
+              data-testid="keys-hint"
+              className="text-xs text-muted-foreground pointer-coarse:hidden"
+            >
+              {t("keysHint", {
+                last: String.fromCharCode(64 + question.options.length),
+              })}
+            </p>
           </div>
         </div>
       )}

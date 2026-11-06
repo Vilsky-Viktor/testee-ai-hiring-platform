@@ -45,8 +45,8 @@ test("a candidate allows the microphone before a voice interview starts", async 
     // Listening starts once the speech detector's WebAssembly is compiled: slow on a busy stack.
     await expect(turn).toHaveAttribute("data-turn", "candidate", { timeout: LISTENING_MS })
     expect(mira.asked).toContain("question")
-    const you = candidate.getByTestId("voice-heard").getByTestId("talking-dot")
-    await expect(you).toHaveAttribute("data-talking", "true")
+    await expect(candidate.getByTestId("you-wave")).toBeVisible()
+    await expect(candidate.getByTestId("mira-wave")).toBeHidden()
     await shot(candidate, "listening")
   })
 })

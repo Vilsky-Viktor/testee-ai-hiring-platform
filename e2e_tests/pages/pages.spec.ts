@@ -21,16 +21,16 @@ const PAGES = [
   "/tests",
   "/compare",
   "/guides",
-  "/pre-employment-testing",
-  "/ai-interviews",
+  "/guides/pre-employment-testing",
+  "/guides/ai-interviews",
   "/compare/testgorilla",
   "/guides/hiring-engineers",
   "/de/pricing",
 ];
 // Articles keep their headings' capitals (names such as TestGorilla or EU).
 const ARTICLES = [
-  "/pre-employment-testing",
-  "/ai-interviews",
+  "/guides/pre-employment-testing",
+  "/guides/ai-interviews",
   "/compare/testgorilla",
   "/guides/hiring-engineers",
 ];

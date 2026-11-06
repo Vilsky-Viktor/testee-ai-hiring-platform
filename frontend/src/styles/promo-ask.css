@@ -1,0 +1,55 @@
+/* The "just ask Mira" promo (ask-agent-demo.tsx). The person's message rising from the input
+   into its place, landing with a small settle. */
+@keyframes promo-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem) scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-0.2rem) scale(1.02);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* Mira's message growing out of a small round dot, settling as it lands. */
+@keyframes promo-grow {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+    border-radius: 9999px;
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* Typed text leaving the input as it's sent: up, fading. */
+@keyframes promo-leave {
+  to {
+    opacity: 0;
+    transform: translateY(-0.75rem);
+  }
+}
+
+/* The send arrow flying up out of its button and coming back in from below. */
+@keyframes promo-lift {
+  45% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  55% {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

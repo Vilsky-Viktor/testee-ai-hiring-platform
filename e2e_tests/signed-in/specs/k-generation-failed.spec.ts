@@ -42,7 +42,7 @@ test("an unpaid company with a generated interview waiting is asked to invite or
   await description.press("ControlOrMeta+Enter")
   await expect(
     owner.getByText(
-      "Invite a candidate to one of your interviews, or delete one, before generating another: until your first top-up, your company's limit of generated interviews waiting without candidates is 1."
+      "You've reached your limit of interviews without candidates (1 until your first top-up). Invite a candidate or delete an interview to create a new one."
     )
   ).toBeVisible()
   await expect(owner).toHaveURL(/\/interviews\/new$/)

@@ -18,6 +18,8 @@ export function NewInterview({
   const t = useTranslations("interviews")
   const start = useTranslations("start")
   const router = useRouter()
+  // A sample description: the landing's, already in every language.
+  const sample = useTranslations("landing.demoContent.create")
 
   async function create(text: string, generateIn: string) {
     try {
@@ -46,6 +48,7 @@ export function NewInterview({
       submitLabel={t("generate")}
       onSubmit={create}
       disabled={disabled}
+      example={{ label: t("tryExample"), text: sample("description") }}
     />
   )
 }

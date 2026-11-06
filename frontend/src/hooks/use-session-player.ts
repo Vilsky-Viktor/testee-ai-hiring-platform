@@ -165,6 +165,7 @@ export function useSessionPlayer(id: string) {
     session: step?.session ?? null,
     question: step?.question ?? null,
     topics: step?.topics ?? [],
+    minutesTaken: step?.minutes_taken,
     done: step?.done ?? false,
     missing,
     failed,

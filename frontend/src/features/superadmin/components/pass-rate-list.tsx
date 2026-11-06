@@ -62,7 +62,7 @@ export function PassRateList({
           </div>
           <div className="flex shrink-0 flex-col items-end gap-2 text-sm text-muted-foreground tabular-nums max-sm:items-start">
             {row.outside_triggers && (
-              <Badge variant="outline" className="h-7 px-3 text-sm font-light">
+              <Badge variant="outline" className="h-8 px-4 text-sm font-light">
                 {t("outsideTriggers")}
               </Badge>
             )}

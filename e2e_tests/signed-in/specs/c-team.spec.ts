@@ -7,7 +7,7 @@ import {
   createInterview,
   inviteCandidate,
 } from "../helpers/api";
-import { openTab, visit } from "../helpers/navigation";
+import { openMenu, openTab, visit } from "../helpers/navigation";
 import { shot } from "../helpers/screenshots";
 import { ownerEmail, throwawayEmail } from "../helpers/users";
 
@@ -25,7 +25,9 @@ async function pickRole(page: Page, role: (typeof ROLES)[number]) {
 
 /** The member invited as `email`, as the API lists the company's members. */
 async function member(page: Page, companyId: string, email: string) {
-  const members = await api<{ email: string; role: string; joined: boolean }[]>(
+  const members = await api<
+    { email: string; role: string; joined: boolean; token: string }[]
+  >(
     page,
     "GET",
     `/companies/members?company_id=${companyId}`,
@@ -50,22 +52,26 @@ test("owner adds a viewer, who sees the company read-only", async ({
   await inviteCandidate(owner, interviewId, throwawayEmail("candidate"));
   const viewer = throwawayEmail("viewer");
 
-  // Only the owner removes the company: its row's one button.
+  // Only the owner removes the company: in its row's menu.
   await visit(owner, "/companies");
   const companyRow = (page: Page) =>
     page.getByRole("listitem").filter({ hasText: company.name });
-  await expect(companyRow(owner).getByRole("button")).toHaveCount(1);
+  await openMenu(owner, companyRow(owner).getByTestId("company-menu"));
+  await expect(owner.getByTestId("remove-company")).toBeVisible();
   await shot(owner, "owner-companies");
 
   await visit(owner, `/companies/${company.id}/interviews`);
   await openTab(owner, "/members");
   await shot(owner, "team");
-  await owner.getByTestId("add-member").click();
-  const dialog = owner.getByRole("dialog");
-  await dialog.locator('input[type="email"]').fill(viewer);
-  // The role select: a gray pill opening a menu of roles, the default one picked.
-  const rolePill = (scope: Locator) => scope.locator('[aria-haspopup="menu"]');
-  await rolePill(dialog).click();
+  // With only its owner, the page itself invites the first teammate.
+  await expect(owner.getByTestId("add-member")).toHaveCount(0);
+  const form = owner.getByRole("main").locator("form");
+  await form.locator('input[type="email"]').fill(viewer);
+  // The role select: a gray pill opening a menu of roles, the default one picked; the first
+  // menu in a row, before the row's own.
+  const rolePill = (scope: Locator) =>
+    scope.locator('[aria-haspopup="menu"]').first();
+  await rolePill(form).click();
   const menu = owner.getByRole("menu");
   await expect(menu.getByRole("menuitemradio")).toHaveCount(ROLES.length);
   await expect(menu.getByRole("menuitemradio").first()).toHaveAttribute(
@@ -74,20 +80,19 @@ test("owner adds a viewer, who sees the company read-only", async ({
   );
   await shot(owner, "role-menu");
   await pickRole(owner, "viewer");
-  await shot(owner, "add-member-dialog");
-  await dialog.locator('button[type="submit"]').click();
+  await shot(owner, "first-member-form");
+  await form.locator('button[type="submit"]').click();
 
-  // The new row: invited as a viewer, its role select, the trash icon and the join link.
-  const row = owner.getByRole("listitem").filter({ hasText: viewer });
+  // The new row, among the invites waiting: invited as a viewer, its role select, its menu and
+  // the way to copy the join link.
+  const row = owner.getByTestId("pending-invites").filter({ hasText: viewer });
   await expect(row).toBeVisible();
   expect(await member(owner, company.id, viewer)).toMatchObject({
     role: "viewer",
     joined: false,
   });
   await expect(rolePill(row)).toBeVisible();
-  // The trash icon, named for screen readers.
-  const remove = row.getByRole("button", { name: "Remove" });
-  await expect(remove).toBeVisible();
+  await expect(row.getByTestId("copy-invite")).toBeVisible();
   await shot(owner, "member-row");
 
   // Inviting the same email again says why it isn't sent.
@@ -127,22 +132,23 @@ test("owner adds a viewer, who sees the company read-only", async ({
     .poll(async () => (await member(owner, company.id, viewer))?.role)
     .toBe("viewer");
 
-  // The trash icon asks first, naming the member; kept here.
-  await remove.click();
+  // Removing them, in the row's menu, asks first, naming the member; kept here.
+  await openMenu(owner, row.getByTestId("member-menu"));
+  await owner.getByTestId("remove-member").click();
   await expect(owner.getByRole("dialog")).toContainText(viewer);
   await shot(owner, "remove-confirm");
   await owner.getByRole("dialog").getByRole("button").first().click();
   await expect(owner.getByRole("dialog")).toHaveCount(0);
   await expect(row).toBeVisible();
 
-  const joinLink = await row.getByRole("textbox").inputValue();
+  const joinPath = `/join/${(await member(owner, company.id, viewer))?.token}`;
 
   // Before signing in, the link shows what it's for and a button to sign in, not the email.
   const context = await browser.newContext();
 
   try {
     const visitor = await context.newPage();
-    await visit(visitor, new URL(joinLink).pathname);
+    await visit(visitor, joinPath);
     await expect(
       visitor.getByRole("heading", { name: company.name }),
     ).toBeVisible();
@@ -156,7 +162,7 @@ test("owner adds a viewer, who sees the company read-only", async ({
   }
 
   const page = await signInAs(viewer);
-  await visit(page, new URL(joinLink).pathname);
+  await visit(page, joinPath);
   await shot(page, "join");
   await page.getByRole("main").getByRole("button").click();
   await expect(page).toHaveURL(/\/companies$/);
@@ -166,7 +172,7 @@ test("owner adds a viewer, who sees the company read-only", async ({
   });
 
   // Reopening the used link opens the company, rather than "invalid".
-  await visit(page, new URL(joinLink).pathname);
+  await visit(page, joinPath);
   await expect(page.getByRole("heading", { name: company.name })).toBeVisible();
   await shot(page, "join-used-member");
   await page.getByRole("main").getByRole("button").click();
@@ -175,7 +181,7 @@ test("owner adds a viewer, who sees the company read-only", async ({
   });
   // Anyone else signed in is told it was used.
   const stranger = await signInAs(throwawayEmail("stranger"));
-  await visit(stranger, new URL(joinLink).pathname);
+  await visit(stranger, joinPath);
   // A new browser loads the whole page's code from the local dev server first: it can be slow.
   await expect(stranger.getByText("This invite has already been used.").filter({ visible: true })).toBeVisible({
     timeout: 60_000,
@@ -198,11 +204,13 @@ test("owner adds a viewer, who sees the company read-only", async ({
   await expect(owner).toHaveURL(
     new RegExp(`/companies/${company.id}/members$`),
   );
-  // The viewer's companies: the row, without the owner's remove button.
+  // The viewer's companies: the row, its menu without the owner's remove.
   await visit(page, "/companies");
-  await expect(companyRow(page)).toBeVisible();
-  await expect(companyRow(page).getByRole("button")).toHaveCount(0);
+  await openMenu(page, companyRow(page).getByTestId("company-menu"));
+  await expect(page.getByRole("menu").getByRole("menuitem").first()).toBeVisible();
+  await expect(page.getByTestId("remove-company")).toHaveCount(0);
   await shot(page, "viewer-companies");
+  await page.keyboard.press("Escape");
   await page.getByText(company.name).first().click();
 
   // Read-only: no New interview, the name isn't a button to rename it, no verify.
@@ -228,13 +236,11 @@ test("owner adds a viewer, who sees the company read-only", async ({
     page,
     `/companies/${company.id}/interviews/${interviewId}?tab=candidates`,
   );
-  // The report's icon buttons, named for screen readers.
-  await expect(
-    page.getByRole("button", { name: "Download PDF" }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("button", { name: "Share report" }),
-  ).toBeVisible();
+  // The page's menu keeps downloading and sharing the report (and trying the interview), with
+  // no delete; the rows have no menu.
+  await openMenu(page, page.getByRole("main").getByTestId("integration-menu"));
+  await expect(page.getByRole("menu").getByRole("menuitem")).toHaveCount(3);
+  await page.keyboard.press("Escape");
   await expect(page.getByTestId("new-candidate")).toHaveCount(0);
   await shot(page, "viewer-candidates");
   // A sort menu (the search's last menu: date, then grade) closes on the pick too.
@@ -270,28 +276,4 @@ test("owner adds a viewer, who sees the company read-only", async ({
     page.getByRole("main").getByRole("listitem").locator('[aria-haspopup="menu"]'),
   ).toHaveCount(0);
   await shot(page, "viewer-team");
-});
-
-// A join link opened by someone signed in with another email: a warning to sign in with the
-// invited one, and no Join button.
-test("a join link warns a user signed in with another email", async ({
-  signInAs,
-}) => {
-  const owner = await signInAs(ownerEmail());
-  const company = await createCompany(owner);
-  const member = await api<{ token: string }>(
-    owner,
-    "POST",
-    `/companies/members?company_id=${company.id}`,
-    { email: throwawayEmail("invited"), role: "viewer" },
-  );
-
-  const other = await signInAs(throwawayEmail("other"), { ui: true });
-  await visit(other, `/join/${member.token}`);
-  await expect(other.getByRole("heading", { name: company.name })).toBeVisible();
-  await expect(other.getByRole("main").getByRole("status")).toContainText(
-    "The email does not match. Sign in with the invitation email to join.",
-  );
-  await expect(other.getByRole("main").getByRole("button")).toHaveCount(0);
-  await shot(other, "join-other-email");
 });

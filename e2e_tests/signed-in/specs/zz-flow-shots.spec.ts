@@ -123,7 +123,8 @@ test("hiring flow: an accountant's interview", async ({ signInAs }) => {
   })
   await pair(owner, "flow-report")
   await owner.setViewportSize(SHOT_VIEWPORT)
-  await openDialog(owner, owner.getByRole("main").getByRole("button", { name: /share/i }).last())
+  await owner.getByRole("main").getByTestId("integration-menu").first().click()
+  await openDialog(owner, owner.getByRole("menuitem", { name: /share/i }))
   await pair(owner, "flow-share")
   await owner.keyboard.press("Escape")
 

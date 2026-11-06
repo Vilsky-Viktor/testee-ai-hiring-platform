@@ -1,14 +1,15 @@
 "use client"
 
 import { cn } from "cn"
-import { CheckIcon } from "lucide-react"
+import { ArrowLeftIcon, CheckIcon } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 
 import { DemoAnswerPatterns } from "@/features/landing/components/demo-answer-patterns"
 import { PROMO_POP } from "@/features/landing/components/demo-panel"
 import { DemoReportActions } from "@/features/landing/components/demo-share"
 import { Dot } from "@/components/common/dot"
-import { GradeBlock, GradeCard } from "@/components/common/grade-card"
+import { SummaryCards } from "@/components/common/summary-cards"
+import { TopicDisclosure } from "@/components/common/topic-disclosure"
 import { PassStatus } from "@/components/common/pass-status"
 import { ScorecardItem } from "@/components/common/scorecard-review"
 import { InfoCard } from "@/components/common/warning-card"
@@ -16,6 +17,7 @@ import { Badge } from "@/components/ui/badge"
 import { LIST_BOX } from "@/config/lists"
 import {
   DEMO_PASS_MARK,
+  DEMO_TIME_TAKEN,
   type DemoCandidate,
   type DemoTopic,
 } from "@/config/reports-demo"
@@ -30,15 +32,12 @@ import type { ReviewItem } from "@/types/round"
 const LANGUAGE = "en"
 
 /** A topic's question as the scorecard gives it (types/round.ts). */
-function reviewItem(topic: DemoTopic): ReviewItem | null {
-  const question = topic.question
-
-  if (!question) {
-    return null
-  }
-
+function reviewItem(
+  topic: DemoTopic,
+  question: NonNullable<DemoTopic["question"]>
+): ReviewItem {
   return {
-    question_id: topic.title,
+    question_id: question.text,
     number: 1,
     text: question.text,
     options: question.options,
@@ -46,7 +45,7 @@ function reviewItem(topic: DemoTopic): ReviewItem | null {
     limit_seconds: 60,
     correct_option_index: question.right,
     answer: {
-      answer_id: topic.title,
+      answer_id: question.text,
       option_index: question.pick,
       picks: [question.pick],
       timed_out: false,
@@ -61,26 +60,33 @@ function reviewItem(topic: DemoTopic): ReviewItem | null {
 
 /** A candidate's page (app/companies/[companyId]/interviews/[id]/candidates/[inviteId]), for
  * the landing, scrolled down `scrolled` pixels (gliding there and back) inside the picture:
- * their email, name and status with the report's actions (the share `pressed` in); the grade
- * card with whether they passed and their pledge; the note that people decide; what their
- * answers show, when anything stood out; then each topic with its signals and grade, and one of
- * its questions as they answered it. Once `active`, its parts pop in one after another and the
- * grade counts up to the candidate's (the `best` one's then flashing); back at 0 when not. */
+ * their name, email and status with the report's "⋮" menu (open while `menu`, share `pressed`
+ * in); the result's cards and their pledge; the note that people decide; what their answers
+ * show, when anything stood out; then each topic as a closed row with its signals and grade. Once `active`, its parts pop in one after another and the
+ * grade counts up to the candidate's ; back at 0 when not. */
 export function DemoReport({
   candidate,
   active,
   best,
   scrolled,
+  menu,
+  aimed,
   pressed,
+  expanded,
 }: {
   candidate: DemoCandidate
   active: boolean
   best: boolean
   scrolled: number
+  menu: boolean
+  aimed: boolean
   pressed: boolean
+  // The `best` one's first topic clicked open.
+  expanded: boolean
 }) {
   const t = useTranslations("candidates")
   const report = useTranslations("report")
+  const invite = useTranslations("invite")
   const statuses = useTranslations("candidateStatus")
   const locale = useLocale()
   const { ref: windowRef, size: windowSize } = useElementSize<HTMLDivElement>()
@@ -109,77 +115,128 @@ export function DemoReport({
         <div
           style={pop(0).style}
           className={cn(
-            "flex flex-wrap items-center justify-between gap-4",
+            // Over the cards that pop in after it, for its menu.
+            "relative z-20 flex items-start justify-between gap-3",
             pop(0).className
           )}
         >
-          <div className="min-w-0 space-y-1">
-            <p className="font-heading text-3xl font-medium tracking-tight break-all">
-              {candidate.email}
+          <ArrowLeftIcon
+            aria-hidden
+            className="mt-1.5 size-6 shrink-0 text-muted-foreground rtl:-scale-x-100"
+          />
+          <div className="min-w-0 flex-1 space-y-1">
+            <p className="font-heading text-3xl font-medium tracking-tight">
+              {candidate.name}
             </p>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-              <span className="text-lg">{candidate.name}</span>
+              <span className="text-sm break-all text-muted-foreground">
+                {candidate.email}
+              </span>
               <Badge variant="outline" className="h-7 px-3 text-sm font-light">
                 {statuses(candidate.status)}
               </Badge>
             </div>
           </div>
-          <DemoReportActions pressed={pressed ? "share" : null} />
+          <DemoReportActions
+            menu={menu}
+            aimed={aimed ? "share" : null}
+            pressed={pressed ? "share" : null}
+          />
         </div>
-        <div
-          style={pop(1).style}
-          // The card's wash once the grade has counted up.
+        <div style={pop(1).style} className={pop(1).className}>
+          <SummaryCards
+            className="lg:grid-cols-4"
+            rows={[
+              {
+                id: "grade",
+                label: t("grade"),
+                value: (
+                  <span className={gradeTone(candidate.passed)}>
+                    {formatPercent(
+                      candidate.grade == null ? null : grade,
+                      locale
+                    )}
+                  </span>
+                ),
+              },
+              {
+                id: "result",
+                label: t("summary.result"),
+                value: (
+                  <PassStatus
+                    passed={candidate.passed}
+                    passMark={DEMO_PASS_MARK}
+                  />
+                ),
+              },
+              {
+                id: "time-taken",
+                label: t("summary.timeTaken"),
+                value: `${DEMO_TIME_TAKEN} ${invite("minutesUnit")}`,
+              },
+              {
+                id: "signals",
+                label: t("summary.signals"),
+                value: (
+                  <span className={cn(signals > 0 && WARNING_TONE)}>
+                    {signals}
+                  </span>
+                ),
+              },
+            ]}
+          />
+        </div>
+        <p
+          style={pop(2).style}
           className={cn(
-            pop(1).className,
-            active &&
-              best &&
-              "*:motion-safe:animate-[promo-flash_1.6s_ease-out_1.3s]"
+            "flex items-center gap-1.5 text-sm text-muted-foreground",
+            pop(2).className
           )}
         >
-          <GradeCard>
-            <GradeBlock
-              value={formatPercent(
-                candidate.grade == null ? null : grade,
-                locale
-              )}
-              label={t("grade")}
-              tone={gradeTone(candidate.passed)}
-            />
-            <div className="flex flex-col justify-center gap-1 px-8 py-6 text-base max-sm:items-center">
-              <PassStatus passed={candidate.passed} passMark={DEMO_PASS_MARK} />
-              <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                <CheckIcon aria-hidden className="size-4 shrink-0" />
-                {report("pledged")}
-              </p>
-            </div>
-          </GradeCard>
-        </div>
-        <div {...pop(2)}>
+          <CheckIcon aria-hidden className="size-4 shrink-0" />
+          {report("pledged")}
+        </p>
+        <div {...pop(3)}>
           <InfoCard className="text-sm">
             {signals ? report("humanReviewSignals") : report("humanReview")}
           </InfoCard>
         </div>
         {candidate.patterns && (
-          <div {...pop(3)}>
+          <div {...pop(4)}>
             <DemoAnswerPatterns patterns={candidate.patterns} />
           </div>
         )}
-        {candidate.topics?.map((topic, index) => (
-          <div key={topic.title} {...pop(4 + index)}>
-            <DemoTopicSection topic={topic} />
-          </div>
-        ))}
+        <ul {...pop(5)} className={cn(LIST_BOX, pop(5).className)}>
+          {candidate.topics?.map((topic, index) => (
+            <DemoTopicRow
+              key={topic.title}
+              topic={topic}
+              open={best && index === 0 && expanded}
+              target={index === 0 ? "topic0" : undefined}
+            />
+          ))}
+        </ul>
       </div>
     </div>
   )
 }
 
-/** A topic on the page: its heading, its integrity line (features/company/components/
- * integrity-line.tsx) and grade, then its question as answered, in the real scorecard's row. */
-function DemoTopicSection({ topic }: { topic: DemoTopic }) {
+/** A topic on the page, as the real report's expandable row: its grade and bar, and its integrity
+ * line under its title; `open`, with its questions as answered, right and wrong. */
+function DemoTopicRow({
+  topic,
+  open,
+  target,
+}: {
+  topic: DemoTopic
+  open: boolean
+  // The pointer's name for it.
+  target?: string
+}) {
   const t = useTranslations("candidates")
-  const locale = useLocale()
-  const item = reviewItem(topic)
+  const items = [topic.question, ...(topic.more ?? [])].flatMap((question) =>
+    question ? [reviewItem(topic, question)] : []
+  )
   const signals = [
     [t("pageLeaves", { count: topic.tab_leaves }), topic.tab_leaves],
     [t("copies", { count: topic.copies }), topic.copies],
@@ -187,33 +244,27 @@ function DemoTopicSection({ topic }: { topic: DemoTopic }) {
   ] as const
 
   return (
-    <section className="space-y-4">
-      <div className="flex items-center justify-between gap-4">
-        <div className="min-w-0 space-y-1">
-          <p className="font-heading text-2xl font-medium">{topic.title}</p>
-          <p className="flex flex-wrap items-center gap-x-1.5 text-sm text-muted-foreground tabular-nums">
-            {signals.map(([signal, count], index) => (
-              <span key={signal} className="flex items-center gap-x-1.5">
-                {index > 0 && <Dot className="mx-0" />}
-                <span className={cn(count > 0 && WARNING_TONE)}>{signal}</span>
-              </span>
-            ))}
-          </p>
-        </div>
-        <p
-          className={cn(
-            "text-5xl font-light tabular-nums",
-            gradeTone(topic.grade >= DEMO_PASS_MARK)
-          )}
-        >
-          {formatPercent(topic.grade, locale)}
-        </p>
-      </div>
-      {item && (
-        <div className={LIST_BOX}>
-          <ScorecardItem item={item} language={LANGUAGE} />
-        </div>
+    <TopicDisclosure
+      title={topic.title}
+      language={LANGUAGE}
+      score={topic.grade}
+      passed={topic.grade >= DEMO_PASS_MARK}
+      meta={
+        <span className="flex flex-wrap items-center gap-x-1.5 text-sm text-muted-foreground tabular-nums">
+          {signals.map(([signal, count], index) => (
+            <span key={signal} className="flex items-center gap-x-1.5">
+              {index > 0 && <Dot className="mx-0" />}
+              <span className={cn(count > 0 && WARNING_TONE)}>{signal}</span>
+            </span>
+          ))}
+        </span>
+      }
+      items={items}
+      opened={open}
+      target={target}
+      renderItem={(answered) => (
+        <ScorecardItem item={answered} language={LANGUAGE} />
       )}
-    </section>
+    />
   )
 }

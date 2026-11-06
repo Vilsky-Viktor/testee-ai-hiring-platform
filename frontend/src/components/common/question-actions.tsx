@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl"
 import { QuestionRating } from "@/components/common/question-rating"
 import { ReportDialog } from "@/components/common/report-dialog"
 
+/** Rating a question and reporting it, small: the answers come first. */
 export function QuestionActions({
   basePath,
 }: {
@@ -14,9 +15,9 @@ export function QuestionActions({
   const t = useTranslations("questions")
 
   return (
-    <div className="space-y-2 text-center">
-      <p className="text-sm text-muted-foreground">{t("goodQuestion")}</p>
-      <div className="mx-auto grid h-14 w-60 grid-cols-3 overflow-hidden rounded-xl border">
+    <div className="flex items-center justify-center gap-3 text-muted-foreground">
+      <p className="text-xs">{t("goodQuestion")}</p>
+      <div className="grid h-9 w-28 grid-cols-3 overflow-hidden rounded-lg border [&_svg]:size-4!">
         <QuestionRating basePath={basePath} />
         <ReportDialog basePath={basePath} />
       </div>

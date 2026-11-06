@@ -8,16 +8,15 @@ import {
 } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 
-import { Caret } from "@/features/landing/components/caret"
+import { Caret } from "@/components/common/caret"
 import { DEMO_PRESSED } from "@/features/landing/components/demo-panel"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import {
-  DEMO_CHAT,
   DEMO_PASS_MARK,
   DEMO_REPORT_COMPANY,
-  DEMO_REPORT_INTERVIEW,
   type DemoCandidate,
 } from "@/config/reports-demo"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
 import { useReportTranslate } from "@/hooks/use-report-translate"
 import { reportSummary } from "@/lib/report-summary"
 
@@ -29,12 +28,12 @@ export type DemoMessage = {
 }
 
 /** A candidate's report as the app gives it to the chat summary (lib/report-summary.ts). */
-function summaryOf(candidate: DemoCandidate) {
+function summaryOf(candidate: DemoCandidate, title: string) {
   return {
     company: DEMO_REPORT_COMPANY,
     logoUrl: null,
     verifiedDomain: null,
-    title: DEMO_REPORT_INTERVIEW.title,
+    title,
     email: candidate.email,
     name: candidate.name,
     grade: candidate.grade,
@@ -70,6 +69,7 @@ export function DemoChat({
   const t = useTranslations("landing.shareReports.chat")
   const translate = useReportTranslate()
   const locale = useLocale()
+  const { title, chat } = useDemoContent("reports")
 
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-3">
@@ -78,10 +78,10 @@ export function DemoChat({
         <span className="text-sm text-muted-foreground">{t("app")}</span>
         <Avatar>
           <AvatarFallback className="bg-surface text-xs">
-            {DEMO_CHAT.initials}
+            {chat.initials}
           </AvatarFallback>
         </Avatar>
-        <p className="font-medium">{DEMO_CHAT.name}</p>
+        <p className="font-medium">{chat.name}</p>
       </div>
       <div className="flex min-h-0 flex-1 flex-col justify-end gap-2 overflow-hidden rounded-xl bg-surface p-3 sm:p-5">
         {messages.map((message, index) => (
@@ -97,7 +97,11 @@ export function DemoChat({
           >
             <p className="text-sm leading-relaxed whitespace-pre-line">
               {message.summary
-                ? reportSummary(summaryOf(message.summary), translate, locale)
+                ? reportSummary(
+                    summaryOf(message.summary, title),
+                    translate,
+                    locale
+                  )
                 : message.text}
             </p>
             <p className="flex items-center justify-end gap-1 text-xs text-muted-foreground">
@@ -110,7 +114,10 @@ export function DemoChat({
         <div className="mt-1 flex shrink-0 items-center gap-2">
           <span
             data-demo-target="chatBox"
-            className="flex h-10 min-w-0 flex-1 items-center rounded-full bg-background px-4 text-sm"
+            className={cn(
+              "relative flex h-10 min-w-0 flex-1 items-center rounded-full bg-background px-4 text-sm",
+              typing && "border-ring-gradient"
+            )}
           >
             {typed || typing ? (
               <>

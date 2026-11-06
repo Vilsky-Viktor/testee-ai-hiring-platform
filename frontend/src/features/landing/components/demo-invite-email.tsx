@@ -5,35 +5,29 @@ import { useTranslations } from "next-intl"
 
 import { DemoLogo } from "@/features/landing/components/demo-logo"
 import { DEMO_PRESSED } from "@/features/landing/components/demo-panel"
-import {
-  DEMO_COMPANY,
-  DEMO_INTERVIEW,
-  DEMO_INVITE_EMAIL,
-} from "@/config/create-demo"
-import { OPERATOR } from "@/config/operator"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
+import { DEMO_COMPANY, DEMO_INVITE_EMAIL } from "@/config/create-demo"
 import { bdi } from "@/lib/bidi"
 
-// The invite's address, as the email shows it under its button.
-const INVITE_LINK = "https://testee.ai/invite/x8Kf2mQ9pL"
-
-/** The invitation email exactly as testee sends it (the notifications service's
+/** The invitation email as testee sends it (the notifications service's
  * templates/layout.py and the "candidate" texts): its own light colours whatever the site's theme,
  * as mail clients show it; testee's name, the white card with the heading and its blue dot beside
  * the company's logo (Acme's, DemoLogo), who
- * invited them to what, the address to sign in with, the button (`pressed`, the pointer's
- * `openInvite`), the link to paste, and the footer. */
+ * invited them to what, the address to sign in with and the button (`pressed`, the pointer's
+ * `openInvite`); simplified for the promo, without the link to paste and the footer. */
 export function DemoInviteEmail({ pressed }: { pressed: boolean }) {
   const t = useTranslations("landing.create.email")
+  const { title } = useDemoContent("create")
   const values = {
     company: DEMO_COMPANY,
-    title: DEMO_INTERVIEW.title,
+    title,
     email: DEMO_INVITE_EMAIL,
   }
 
   return (
     <div
       data-testid="demo-invite-email"
-      className="bg-[#f5f5f5] px-4 py-5 text-start text-[#0a0a0a]"
+      className="rounded-xl bg-[#f5f5f5] px-4 py-6 text-start text-[#0a0a0a]"
     >
       <div className="mx-auto max-w-[560px]">
         <p
@@ -68,28 +62,13 @@ export function DemoInviteEmail({ pressed }: { pressed: boolean }) {
           <span
             data-demo-target="openInvite"
             className={cn(
-              "mt-2 mb-8 inline-block rounded-[10px] bg-[#0071e0] px-7 py-3.5 text-base leading-5 font-semibold text-white transition-transform",
+              "mt-2 inline-block rounded-[10px] bg-[#0071e0] px-7 py-3.5 text-base leading-5 font-semibold text-white transition-transform",
               pressed && DEMO_PRESSED
             )}
           >
             {t("button")}
           </span>
-          <p className="text-sm leading-5 text-[#737373]">
-            {t("pasteLink")}
-            <br />
-            <span dir="ltr" className="break-all text-[#0071e0]">
-              {INVITE_LINK}
-            </span>
-          </p>
         </div>
-        <p className="px-2 pt-6 text-[13px] leading-5 text-[#6b6b6b]">
-          {t.rich("footer", { ...values, ...bdi })}
-          <br />
-          <span className="underline">{t("stopCompany", values)}</span>
-          <br />
-          <br />
-          {t("operator", { name: OPERATOR.name, address: OPERATOR.address })}
-        </p>
       </div>
     </div>
   )

@@ -9,20 +9,21 @@ import { byId } from "@/lib/paged-list"
 import type { Company } from "@/types/company"
 import { LIST_BOX, LIST_EMPTY } from "@/config/lists"
 
-const PATH = "/companies/companies"
-
 /** The companies the user belongs to as a list of rows, a page at a time; `initial` is the
- * server's first page. With `templateId`, each row opens that template in the company instead
- * (choosing where to use a free test), without Remove. */
+ * server's first page, of `path` (the list, narrowed by a search). With `templateId`, each row
+ * opens that template in the company instead (choosing where to use a free test), without
+ * the row's menu. */
 export function CompanyList({
   initial,
+  path = "/companies/companies",
   templateId,
 }: {
   initial: Company[]
+  path?: string
   templateId?: string
 }) {
   const t = useTranslations("company")
-  const { items, setItems, loadMore } = usePagedList(PATH, byId, initial)
+  const { items, setItems, loadMore } = usePagedList(path, byId, initial)
 
   if (items.length === 0) {
     return <p className={LIST_EMPTY}>{t("empty")}</p>
@@ -44,7 +45,7 @@ export function CompanyList({
               ? `/companies/${company.id}/templates/${templateId}`
               : `/companies/${company.id}/interviews`
           }
-          removable={company.can_delete && !templateId}
+          picking={Boolean(templateId)}
           onRemoved={() =>
             setItems((current) =>
               current.filter((item) => item.id !== company.id)

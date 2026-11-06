@@ -3,8 +3,8 @@ import { expect, test, type Page } from "@playwright/test";
 import { shot } from "./helpers/screenshots";
 import { setScheme } from "./helpers/theme";
 
-// A signed-out visitor sees prices in their country's currency, the hero's price per candidate and
-// the pricing page's list alike, as English writes them. Locally the gateway takes the country
+// A signed-out visitor sees prices in their country's currency, the home page's price list and
+// the pricing page's alike, as English writes them. Locally the gateway takes the country
 // from a cookie, as the load balancer does from the address. Two countries here, one with a
 // symbol and one written with its code; billing's unit tests (test_credits.py) map every country
 // to its currency and frontend/tests/lib/format.test.ts writes each currency.
@@ -24,7 +24,7 @@ for (const { country, symbol } of COUNTRIES) {
   test(`a visitor from ${country} sees prices in ${symbol}`, async ({ page }) => {
     await fromCountry(page, country);
     await page.goto("/");
-    await expect(page.getByTestId("hero-price")).toContainText(symbol);
+    await expect(page.getByTestId("price-list")).toContainText(symbol);
 
     for (const scheme of ["light", "dark"] as const) {
       await setScheme(page, scheme);

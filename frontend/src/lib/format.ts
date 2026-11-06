@@ -19,6 +19,36 @@ export function formatDateTime(iso: string, locale: string, timeZone?: string) {
   }).format(new Date(iso))
 }
 
+/** A moment's short time in the language asked, in `timeZone` (the runtime's when none). */
+export function formatTime(iso: string, locale: string, timeZone?: string) {
+  return new Intl.DateTimeFormat(locale, {
+    timeStyle: "short",
+    timeZone,
+  }).format(new Date(iso))
+}
+
+/** The day of a moment as a list's heading: today and yesterday in words in the language asked,
+ * a medium date before that. */
+export function formatRecentDay(
+  iso: string,
+  locale: string,
+  timeZone?: string
+) {
+  const day = new Intl.DateTimeFormat("en-CA", { timeZone })
+  const daysAgo = Math.round(
+    (Date.parse(day.format(new Date())) -
+      Date.parse(day.format(new Date(iso)))) /
+      86_400_000
+  )
+
+  return daysAgo < 2
+    ? new Intl.RelativeTimeFormat(locale, { numeric: "auto" }).format(
+        -daysAgo,
+        "day"
+      )
+    : formatDate(iso, locale, timeZone)
+}
+
 /** A calendar day ("2026-10-08") as a medium date in the language asked: the same day in every
  * time zone. */
 export function formatDay(day: string, locale: string) {

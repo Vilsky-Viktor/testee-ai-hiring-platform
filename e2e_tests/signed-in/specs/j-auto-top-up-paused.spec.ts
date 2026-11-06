@@ -29,8 +29,8 @@ const test = base.extend<{ owned: { page: Page; email: string; id: string } }>({
   },
 });
 
-// A card that declined for good, or too often: the company's billing says it's paused, in red,
-// with the button that updates the card; only the card's owner may.
+// A card that declined for good, or too often: the top-up page says it's paused, in red, with the
+// button that updates the card; only the card's owner may.
 test("a paused automatic top-up says so and offers to update the card", async ({
   owned,
 }) => {
@@ -39,18 +39,12 @@ test("a paused automatic top-up says so and offers to update the card", async ({
   await setAutoTopUp(id, "someone-else", { paused: true });
 
   await visit(page, "/top-up");
-  const line = page.getByTestId("auto-top-up-on");
-  await expect(line).toHaveAttribute("data-paused", "true");
-  await shot(page, "top-up-page");
-
-  await visit(page, `/companies/${id}/billing`);
-  await openDialog(page, page.getByTestId("top-up").first());
   const card = page.getByTestId("auto-top-up");
   await expect(card).toHaveAttribute("data-paused", "true");
-  await shot(page, "top-up-dialog");
+  await shot(page, "top-up-page");
   await page.setViewportSize(PHONE);
   await card.scrollIntoViewIfNeeded();
-  await shot(page, "top-up-dialog-phone");
+  await shot(page, "top-up-page-phone");
 
   await card.getByTestId("update-card").click();
   await expect(
@@ -64,7 +58,7 @@ test("a running automatic top-up offers no card update", async ({ owned }) => {
 
   await visit(page, "/top-up");
   await expect(page.getByTestId("auto-top-up-on").filter({ visible: true })).toBeVisible();
-  await expect(page.getByTestId("auto-top-up-on")).not.toHaveAttribute(
+  await expect(page.getByTestId("auto-top-up")).not.toHaveAttribute(
     "data-paused",
   );
   await expect(page.getByTestId("update-card")).toHaveCount(0);
@@ -100,9 +94,8 @@ test("only the card's owner changes a running automatic top-up", async ({
   const { page, id } = owned;
   await setAutoTopUp(id, "someone-else", {});
 
-  await visit(page, `/companies/${id}/billing`);
-  await openDialog(page, page.getByTestId("top-up").first());
-  await page.getByTestId("auto-top-up").getByRole("button").last().click();
+  await visit(page, "/top-up");
+  await openDialog(page, page.getByTestId("auto-top-up").getByRole("button"));
   const form = page.locator("#auto-top-up-form");
   // The level's pill: its last choice, the tick on its terms, then Save.
   await form.getByRole("button").last().click();

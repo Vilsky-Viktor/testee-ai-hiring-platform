@@ -1,9 +1,9 @@
 import { expect, test } from "../fixtures"
 import { API_URL } from "../constants"
 import { api, createCompany } from "../helpers/api"
-import { permissionTicks } from "../helpers/api-keys"
+import { permissionTicks, removeEntry } from "../helpers/api-keys"
 import { PHONE } from "../helpers/layout"
-import { openDialog, visit } from "../helpers/navigation"
+import { openFromMenu, visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { ownerEmail } from "../helpers/users"
 
@@ -32,13 +32,14 @@ test("an owner changes a key's permissions and allowed IPs on its page", async (
   await owner.getByRole("main").getByRole("link", { name: "Careers site" }).click()
   await expect(owner).toHaveURL(/\/integrations\/api\/keys\/[0-9a-f-]+$/)
   const keyPage = new URL(owner.url()).pathname
-  await expect(owner.getByRole("heading", { level: 1 })).toHaveText("Careers site")
+  await expect(owner.getByRole("heading", { level: 1 })).toContainText("Careers site")
 
-  // "Select all", then every permission the API lists: only interviews read ticked.
+  // Not a preset, so Custom: "Select all", then every permission the API lists, only interviews
+  // read ticked.
   const form = owner.getByRole("main")
   const { all: ticks, count, tick } = await permissionTicks(owner, company.id, form)
   const checked = owner.getByRole("main").locator('[role=checkbox][aria-checked="true"]')
-  const success = owner.locator('[data-sonner-toast][data-type="success"]')
+  const success = owner.getByTestId("field-saved")
   const error = owner.locator('[data-sonner-toast][data-type="error"]')
   await expect(ticks).toHaveCount(count)
   await expect(checked).toHaveCount(1)
@@ -98,9 +99,9 @@ test("an owner changes a key's permissions and allowed IPs on its page", async (
   await expect(entries).toHaveText(["203.0.113.0/24", "2001:db8::1"])
 
   // Both taken off: any address may use it again.
-  await entries.first().getByRole("button").click()
+  await removeEntry(owner, entries.first())
   await expect(entries).toHaveText(["2001:db8::1"])
-  await entries.first().getByRole("button").click()
+  await removeEntry(owner, entries.first())
   await expect(entries).toHaveCount(0)
   await visit(owner, keyPage)
   await expect(entries).toHaveCount(0)
@@ -111,8 +112,8 @@ test("an owner changes a key's permissions and allowed IPs on its page", async (
   await owner.setViewportSize(PHONE)
   await shot(owner, "key-page-phone")
 
-  // Deleted from its page: back to the API page, where it's gone.
-  await openDialog(owner, owner.getByRole("button", { name: "Delete key" }))
+  // Deleted from its page, in its menu: back to the API page, where it's gone.
+  await openFromMenu(owner, owner.getByRole("main"))
   await owner.getByRole("dialog").getByRole("button").last().click()
   await expect(owner).toHaveURL(new RegExp(`${apiPage}$`))
   await expect(owner.getByRole("main").getByRole("link", { name: "Careers site" })).toHaveCount(0)
@@ -145,12 +146,12 @@ test("a viewer sees a key's page without changing it", async ({ signInAs }) => {
   await api(viewer, "POST", `/companies/members/invites/${invited.token}/accept`)
 
   await visit(viewer, `/companies/${company.id}/integrations/api/keys/${id}`)
-  await expect(viewer.getByRole("heading", { level: 1 })).toHaveText("Dashboard")
+  await expect(viewer.getByRole("heading", { level: 1 })).toContainText("Dashboard")
   await expect(viewer.getByTestId("key-permissions").locator("[data-slot=badge]")).toHaveCount(1)
   await expect(viewer.getByTestId("allowed-entry")).toHaveText(["203.0.113.0/24"])
   await expect(viewer.getByRole("main").getByRole("checkbox")).toHaveCount(0)
   await expect(viewer.getByRole("main").getByRole("textbox")).toHaveCount(0)
   await expect(viewer.getByTestId("allowed-entry").getByRole("button")).toHaveCount(0)
-  await expect(viewer.getByRole("button", { name: "Delete key" })).toHaveCount(0)
+  await expect(viewer.getByRole("main").getByTestId("integration-menu")).toHaveCount(0)
   await shot(viewer, "viewer")
 })

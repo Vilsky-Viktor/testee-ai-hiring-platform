@@ -6,7 +6,7 @@ import { expect, test } from "../fixtures"
 import { createCompany } from "../helpers/api"
 import { addAiConnections, deleteAiConnections } from "../helpers/db-integrations"
 import { box, PHONE, settled } from "../helpers/layout"
-import { integrationRow, openDialog, visit } from "../helpers/navigation"
+import { integrationRow, openFromMenu, visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { uidOf } from "../helpers/sign-in"
 import { setScheme } from "../helpers/theme"
@@ -48,7 +48,7 @@ test("an owner sees the MCP server's instructions and disconnects AI apps", asyn
 
     // The address to copy (the server's own), then Claude's and ChatGPT's steps with Claude
     // Code's command, which adds that address.
-    await openDialog(owner, row.getByTestId("instructions"))
+    await openFromMenu(owner, row)
     const dialog = owner.getByRole("dialog")
     const copies = dialog.getByRole("textbox")
     await expect(copies.first()).toHaveValue(/\/mcp$/)
@@ -61,8 +61,9 @@ test("an owner sees the MCP server's instructions and disconnects AI apps", asyn
     await expect(dialog).toHaveCount(0)
 
     await visit(owner, `${tab}/ai`)
-    const apps = owner.getByRole("main").getByRole("listitem")
-    await expect(owner.getByRole("main").getByTestId("instructions").filter({ visible: true })).toBeVisible()
+    const connected = owner.getByTestId("connected-apps")
+    const apps = connected.getByRole("listitem")
+    await expect(owner.getByTestId("ai-apps-setup").getByRole("textbox").first()).toHaveValue(/\/mcp$/)
     await expect(apps).toHaveCount(0)
     await shot(owner, "no-apps")
 
@@ -75,19 +76,19 @@ test("an owner sees the MCP server's instructions and disconnects AI apps", asyn
     await expect(row.locator("span[aria-hidden].rounded-full.bg-primary").filter({ visible: true })).toHaveCount(1)
     await shot(owner, "row-connected")
 
-    // The row opens the apps' page: each with Disconnect, which asks first.
+    // The row opens the apps' page: each with Disconnect in its "⋮" menu, which asks first.
     await row.getByRole("link").click()
     await expect(owner).toHaveURL(new RegExp(`${tab}/ai$`))
     await expect(apps).toHaveCount(2)
     await expect(apps.getByRole("button")).toHaveCount(2)
     await shot(owner, "apps")
     const claude = apps.filter({ hasText: "Claude" })
-    await openDialog(owner, claude.getByRole("button"))
+    await openFromMenu(owner, claude)
     await expect(owner.getByRole("dialog")).toContainText("Claude")
     await owner.getByRole("dialog").getByRole("button").last().click()
     await expect(apps).toHaveCount(1)
     await expect(apps).toContainText("ChatGPT")
-    await expect(owner.getByText("Claude", { exact: true })).toHaveCount(0)
+    await expect(connected.getByText("Claude", { exact: true })).toHaveCount(0)
   } finally {
     await deleteAiConnections(uid)
   }
@@ -99,8 +100,8 @@ test("the MCP server's instructions fill a phone's screen", async ({ signInAs })
   const company = await createCompany(owner)
   await owner.setViewportSize(PHONE)
 
-  await visit(owner, `/companies/${company.id}/integrations/ai`)
-  await openDialog(owner, owner.getByRole("main").getByTestId("instructions"))
+  await visit(owner, `/companies/${company.id}/integrations`)
+  await openFromMenu(owner, integrationRow(owner, "/ai"))
   await settled(owner.getByRole("dialog"))
   const dialog = await box(owner.getByRole("dialog"))
   expect(Math.abs(dialog.height - PHONE.height)).toBeLessThanOrEqual(2)

@@ -57,7 +57,7 @@ export async function FlowStageRow({
               <li
                 key={point}
                 style={{ transitionDelay: `${300 + index * 80}ms` }}
-                className="rounded-full bg-surface px-3 py-1.5 text-sm transition-[opacity,scale] duration-500 group-data-ready/flow:not-group-data-shown/flow:scale-90 group-data-ready/flow:not-group-data-shown/flow:opacity-0"
+                className="rounded-full bg-surface px-4 py-2 text-sm transition-[opacity,scale] duration-500 group-data-ready/flow:not-group-data-shown/flow:scale-90 group-data-ready/flow:not-group-data-shown/flow:opacity-0"
               >
                 {t(`points.${point}`)}
               </li>

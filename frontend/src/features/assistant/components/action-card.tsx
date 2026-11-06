@@ -22,8 +22,8 @@ export type CardActions = {
 }
 
 /** An action the assistant prepared: what will happen, with exactly the values it runs with
- * (and a warning when it can't be undone), Confirm and Cancel; then how it ended, with the page
- * it made. */
+ * (and a warning when it can't be undone), a large Confirm and a quiet Cancel; once done or
+ * cancelled, one line with how it ended and the page it made. */
 export function ActionCard({
   card,
   actions,
@@ -41,13 +41,24 @@ export function ActionCard({
   const named = card.company_id && actions.companyNames[card.company_id]
   const company = named !== card.subject ? named : null
   const fields = Object.entries(card.preview ?? {})
+  const heading = hasMessage(t, title) ? t(title) : t("generic")
+
+  if (state === "done" || state === "cancelled") {
+    return (
+      <div
+        className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 rounded-xl border px-4 py-3 text-sm"
+        data-testid="action-card"
+      >
+        <p className="min-w-0 truncate font-medium">{heading}</p>
+        <ActionOutcome card={card} state={state} onNavigate={onNavigate} />
+      </div>
+    )
+  }
 
   return (
-    <div className={`space-y-3 ${CARD} text-sm`} data-testid="action-card">
+    <div className={`space-y-4 ${CARD} text-sm`} data-testid="action-card">
       <div className="space-y-0.5">
-        <p className="font-medium">
-          {hasMessage(t, title) ? t(title) : t("generic")}
-        </p>
+        <p className="text-base font-medium">{heading}</p>
         {card.subject && (
           <p className="bidi-auto break-words">{card.subject}</p>
         )}
@@ -139,18 +150,18 @@ function ActionButtons({
   const running = card.state === "running"
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex gap-2">
       <Button
         variant={card.destructive ? "destructive" : "default"}
-        className="h-9 px-4"
+        className="h-11 flex-1 px-4 text-base"
         disabled={running || actions.busy}
         onClick={() => actions.onConfirm(card.action_id!)}
       >
         {running ? t("running") : t("confirm")}
       </Button>
       <Button
-        variant="outline"
-        className="h-9 px-4"
+        variant="ghost"
+        className="h-11 px-4 text-base hover:bg-destructive/10 hover:text-destructive dark:hover:bg-destructive/20"
         disabled={running || actions.busy}
         onClick={() => actions.onCancel(card.action_id!)}
       >

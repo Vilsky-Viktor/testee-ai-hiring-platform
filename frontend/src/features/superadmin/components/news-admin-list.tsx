@@ -104,7 +104,7 @@ export function NewsAdminList({ initial }: { initial: AdminNewsPost[] }) {
             </div>
             <Badge
               variant="outline"
-              className="h-7 shrink-0 px-3 text-sm font-light"
+              className="h-8 shrink-0 px-4 text-sm font-light"
             >
               {post.translated ? t("translated") : t("translating")}
             </Badge>

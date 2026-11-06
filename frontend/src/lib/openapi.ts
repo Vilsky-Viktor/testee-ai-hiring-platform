@@ -101,9 +101,32 @@ export function descriptionTabs(text: string): Record<string, string> {
   return tabs
 }
 
+const LIST = /^- /
+
+/** A heading's address on its page: "Allowed domains" -> "allowed-domains". */
+export function slugOf(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+}
+
+/** The operations of `paths` by their tag, in the API's order. */
+export function operationGroups(paths: OpenApi["paths"]) {
+  const groups = new Map<string, ReturnType<typeof operationsOf>>()
+
+  for (const item of operationsOf(paths)) {
+    const tag = item.operation.tags?.[0] ?? ""
+    groups.set(tag, [...(groups.get(tag) ?? []), item])
+  }
+
+  return [...groups]
+}
+
 /** A description's sections: its text up to the first "## " title (title null), then each
  * title with the blocks under it. A block is a paragraph, numbered steps when every line
- * starts a step ("1. ", "2. ") or goes on with one (indented), or code between "```" lines, kept
+ * starts a step ("1. ", "2. ") or goes on with one (indented), a list ("- "), a table ("| "), or
+ * code between "```" lines, kept
  * as written, with its language ("```python"; blocks that follow each other are one example in
  * several languages); text comes as text, bold, code and link pieces ("**", "`", "[text](href)"). */
 export function richText(text: string) {
@@ -112,6 +135,9 @@ export function richText(text: string) {
     blocks: {
       steps: Pieces[] | null
       pieces: Pieces
+      // A list's items, and a table's cells, its first row the headings.
+      list?: Pieces[]
+      table?: Pieces[][]
       // One example in its languages: code blocks that follow each other.
       code?: { code: string; language?: string }[]
     }[]
@@ -135,6 +161,27 @@ export function richText(text: string) {
       }
     } else if (block.startsWith("## ")) {
       sections.push({ title: block.slice(3).trim(), blocks: [] })
+    } else if (lines.every((line) => line.startsWith("|"))) {
+      sections[sections.length - 1].blocks.push({
+        steps: null,
+        pieces: [],
+        table: lines
+          .filter((line) => !/^\|[\s|:-]+\|$/.test(line))
+          .map((line) =>
+            line
+              .slice(1, -1)
+              .split("|")
+              .map((cell) => pieces(cell.trim()))
+          ),
+      })
+    } else if (lines.every((line) => LIST.test(line) || /^\s/.test(line))) {
+      sections[sections.length - 1].blocks.push({
+        steps: null,
+        pieces: [],
+        list: block
+          .split(/\n(?=- )/)
+          .map((item) => pieces(item.replace(LIST, ""))),
+      })
     } else if (lines.every((line) => STEP.test(line) || /^\s/.test(line))) {
       sections[sections.length - 1].blocks.push({
         steps: block

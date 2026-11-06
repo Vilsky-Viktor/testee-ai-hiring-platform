@@ -1,7 +1,7 @@
 import { expect, test } from "../fixtures"
 import { createCompany, createInterview, inviteCandidate } from "../helpers/api"
 import { EMAIL_BOXES, emailBoxes } from "../helpers/emails"
-import { visit } from "../helpers/navigation"
+import { candidateRow, visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { tokenOf } from "../helpers/sign-in"
 import {
@@ -61,7 +61,7 @@ test("a candidate stops a company's emails", async ({ signInAs, browser }) => {
 
   await inviteCandidate(owner, interviewId, candidate)
   await visit(owner, `/companies/${company.id}/interviews/${interviewId}?tab=candidates`)
-  const row = owner.getByRole("link").filter({ hasText: candidate })
+  const row = candidateRow(owner, candidate)
 
   // The invite event reaches notifications, which reports it back: it takes a moment. An
   // undelivered invite's status is the list's red one.

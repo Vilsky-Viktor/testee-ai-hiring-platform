@@ -20,7 +20,7 @@ Shared test rules are in `testing.md`; CLAUDE.md wins on any conflict.
 `e2e_tests/`: `pages/` (signed out), `signed-in/` (Auth emulator, `fixtures.ts`, `teardown.ts`),
 `load/` (k6, never against production), `smoke.sh` (read-only, any environment), `flow.py` and
 `mcp.py`; each suite runs in its Docker image through its script. Browser suites open a
-production build of the frontend (`frontend-test`, the gateway's port 8082), never the dev server.
+production build of the frontend's current files (`frontend-test`, the gateway's port 8082).
 
 - One spec per screen or flow, named after it. Tests run in parallel, in any order, and each
   passes on its own; a test that changes what every page sees (maintenance mode, the pause, a

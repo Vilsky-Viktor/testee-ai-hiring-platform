@@ -87,11 +87,11 @@ export const CANCEL_DISTANCE_PX = 40
 export const SAVED_CHAT_KEY = "testee:assistant"
 export const SAVED_VISITOR_CHAT_KEY = "testee:assistant:visitor"
 
-// The panel's width on wider screens, which the user drags: the default (28rem), the narrowest,
+// The panel's width on wider screens, which the user drags: the default (31rem), the narrowest,
 // and the widest (900px, or 70% of the window when that's less); a key press moves it this far.
 // Kept per browser.
 export const PANEL_WIDTH = {
-  default: 448,
+  default: 496,
   min: 360,
   max: 900,
   maxShare: 0.7,

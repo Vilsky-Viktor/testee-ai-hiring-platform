@@ -37,6 +37,7 @@ export default async function InterviewPage({
   const {
     interview,
     filters,
+    summary,
     candidates,
     limits,
     sort,
@@ -62,6 +63,8 @@ export default async function InterviewPage({
     Boolean(interview.discover)
   )
 
+  const maxInvites = limits?.max_bulk_invites ?? null
+
   return (
     <main className="mx-auto max-w-page space-y-8 px-6 py-12">
       {/* Just generated: what to do next, for those who can do it. */}
@@ -75,7 +78,7 @@ export default async function InterviewPage({
         interview={interview}
         companyId={companyId}
         current={current}
-        maxInvites={limits?.max_bulk_invites ?? null}
+        maxInvites={maxInvites}
       >
         {current === "settings" ? (
           <InterviewSettingsTab interview={interview} canEdit={canEdit} />
@@ -88,7 +91,9 @@ export default async function InterviewPage({
             search={search}
             status={status}
             filters={filters}
+            summary={summary}
             candidates={candidates}
+            maxInvites={maxInvites}
           />
         ) : current === "notes" ? (
           <InterviewNotesTab interviewId={interview.id} initial={notes ?? []} />

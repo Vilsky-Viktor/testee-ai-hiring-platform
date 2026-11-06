@@ -1,7 +1,8 @@
-// `exact`: current only on that page itself.
+// `exact`: current only on that page itself; `section`: current across these pages, not `href`'s.
 export const NAV_LINKS = [
   {
-    href: "/companies",
+    href: "/dashboard",
+    section: "/companies",
     label: "hiring",
     signedInOnly: false,
     exact: false,
@@ -26,31 +27,43 @@ export const NAV_LINKS = [
   },
 ] as const
 
-// The footer's links in three columns: the product, the features page and resources to read,
-// and the company; `label` is the nav message.
+// The footer's links in three titled columns: the product, resources to read, and the company;
+// `title` and `label` are nav messages.
 export const FOOTER_COLUMNS = [
-  [
-    { href: "/hiring-flow", label: "hiringFlow" },
-    { href: "/tests", label: "tests" },
-    { href: "/pre-employment-testing", label: "preEmploymentTesting" },
-    { href: "/ai-interviews", label: "aiInterviews" },
-    { href: "/practice", label: "practice" },
-    { href: "/compare", label: "compare" },
-  ],
-  [
-    { href: "/features", label: "features" },
-    { href: "/guides", label: "guides" },
-    { href: "/faq", label: "faq" },
-    { href: "/documents", label: "docs" },
-    { href: "/api-docs", label: "apiDocs" },
-    { href: "/news", label: "news" },
-  ],
-  [
-    { href: "/about", label: "about" },
-    { href: "/contact", label: "contact" },
-    { href: "/trust", label: "trust" },
-    { href: "/privacy", label: "privacy" },
-    { href: "/terms", label: "terms" },
-    { href: "/accessibility", label: "accessibility" },
-  ],
+  {
+    title: "footerProduct",
+    links: [
+      { href: "/features", label: "features" },
+      { href: "/hiring-flow", label: "hiringFlow" },
+      { href: "/tests", label: "tests" },
+      { href: "/practice", label: "practice" },
+      { href: "/pricing", label: "pricingLink" },
+    ],
+  },
+  {
+    title: "footerResources",
+    links: [
+      { href: "/guides", label: "guides" },
+      { href: "/compare", label: "compare" },
+      { href: "/faq", label: "faq" },
+      { href: "/api-docs", label: "apiDocs" },
+    ],
+  },
+  {
+    title: "footerCompany",
+    links: [
+      { href: "/about", label: "about" },
+      { href: "/contact", label: "contact" },
+      { href: "/news", label: "news" },
+    ],
+  },
+] as const
+
+// The legal links, in the footer's bottom bar.
+export const FOOTER_LEGAL = [
+  { href: "/privacy", label: "privacy" },
+  { href: "/terms", label: "terms" },
+  { href: "/trust", label: "trust" },
+  { href: "/accessibility", label: "accessibility" },
+  { href: "/documents", label: "docs" },
 ] as const

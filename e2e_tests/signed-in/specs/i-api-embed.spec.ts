@@ -136,10 +136,11 @@ test("a company's own site embeds a candidate's interview and hears it finish", 
   await frame.getByTestId("finish-interview").click()
   // The confirmation is the dialog's last button.
   await frame.getByRole("dialog").getByRole("button").last().click()
-  // Finished: the interview's title, and no way back anywhere (the site goes on itself).
+  // Finished: the interview's title, and no way back anywhere (the site goes on itself): the one
+  // link left is the privacy policy's.
   await expect(frame.getByRole("heading", { level: 1 })).toBeVisible()
   await expect(frame.getByTestId("finish-interview")).toHaveCount(0)
-  await expect(frame.getByRole("main").locator("a")).toHaveCount(0)
+  await expect(frame.getByRole("main").locator('a:not([href$="/privacy"])')).toHaveCount(0)
   // One frame (the second copy of the script did nothing), each event once, in order; every
   // message names its version.
   await expect(site.locator("iframe")).toHaveCount(1)

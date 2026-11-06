@@ -3,12 +3,13 @@ import { firebaseAuth } from "@/lib/firebase"
 
 /** A refused request. `fromService`: the message is the service's own (in the user's language);
  * otherwise the load balancer or the platform answered (an HTML 429, 502 or 503) and the message
- * is only for the logs. */
+ * is only for the logs. `code`: the service's machine-readable reason, when it gave one. */
 export class ApiError extends Error {
   constructor(
     public status: number,
     message: string,
-    public fromService = false
+    public fromService = false,
+    public code: string | null = null
   ) {
     super(message)
   }
@@ -51,12 +52,15 @@ export async function authHeaders(): Promise<Record<string, string>> {
 /** The response when it's a success; otherwise its refusal, as an ApiError. */
 export async function checkedResponse(response: Response) {
   if (!response.ok) {
-    const detail = errorDetail(await response.json().catch(() => null))
+    const body = await response.json().catch(() => null)
+    const detail = errorDetail(body)
+    const code = (body as { code?: unknown } | null)?.code
 
     throw new ApiError(
       response.status,
       detail ?? `Request failed with status ${response.status}`,
-      detail !== null
+      detail !== null,
+      typeof code === "string" ? code : null
     )
   }
 

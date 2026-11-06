@@ -34,9 +34,8 @@ test("a change is saved with the buyer's tick on its terms, which the action log
   const { page, id } = owned;
   await setAutoTopUp(id, await uidOf(page), {});
 
-  await visit(page, `/companies/${id}/billing`);
-  const line = page.getByTestId("auto-top-up-on").filter({ visible: true });
-  await openDialog(page, line.getByRole("button"));
+  await visit(page, "/top-up");
+  await openDialog(page, page.getByTestId("auto-top-up").getByRole("button"));
   const setup = page.getByRole("dialog");
   const level = setup.locator("form").getByRole("button").nth(1);
   await level.click();

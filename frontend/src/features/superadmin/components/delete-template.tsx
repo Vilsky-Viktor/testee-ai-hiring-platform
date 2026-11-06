@@ -6,16 +6,8 @@ import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
+import { ConfirmDialog } from "@/components/common/confirm-dialog"
 import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import { bdiText } from "@/lib/bidi"
 
@@ -59,44 +51,15 @@ export function DeleteTemplate({
       >
         <Trash2Icon className="size-6" />
       </Button>
-      <Dialog
+      <ConfirmDialog
         open={open}
-        onOpenChange={(next) => {
-          if (!deleting) {
-            setOpen(next)
-          }
-        }}
-      >
-        <DialogContent showCloseButton={false}>
-          <DialogHeader className="gap-4">
-            <DialogTitle className="no-dot mb-2">
-              {t("deleteTitle")}
-            </DialogTitle>
-            <DialogDescription>{t("deleteText")}</DialogDescription>
-          </DialogHeader>
-          <DialogFooter>
-            <DialogClose
-              render={
-                <Button
-                  variant="outline"
-                  className="h-10 px-5 text-base"
-                  disabled={deleting}
-                />
-              }
-            >
-              {common("keep")}
-            </DialogClose>
-            <Button
-              variant="destructive"
-              className="h-10 px-5 text-base"
-              disabled={deleting}
-              onClick={remove}
-            >
-              {deleting ? common("deleting") : common("delete")}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+        onOpenChange={setOpen}
+        title={t("deleteTitle")}
+        text={t("deleteText")}
+        confirm={common("delete")}
+        busy={deleting}
+        onConfirm={remove}
+      />
     </>
   )
 }

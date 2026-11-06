@@ -1,17 +1,17 @@
-import { InfoIcon } from "lucide-react"
 import { cookies } from "next/headers"
 import { notFound, permanentRedirect } from "next/navigation"
-import { getTranslations } from "next-intl/server"
+import { getLocale, getTranslations } from "next-intl/server"
 
 import { BackLink } from "@/components/common/back-link"
 import { Count } from "@/components/common/count"
-import { CornerSign } from "@/components/common/corner-sign"
 import { JsonLd } from "@/components/common/json-ld"
 import { PageHeader } from "@/components/common/page-header"
 import { HireWithTemplate } from "@/features/practice/components/hire-with-template"
 import { PracticeActions } from "@/features/practice/components/practice-actions"
+import { ShortNumber } from "@/components/common/short-number"
 import { SubtopicList } from "@/components/common/subtopic-list"
-import { Badge } from "@/components/ui/badge"
+import { SummaryCards } from "@/components/common/summary-cards"
+import { InfoCard } from "@/components/common/warning-card"
 import { Progress } from "@/components/ui/progress"
 import { TOKEN_COOKIE } from "@/config/auth"
 import { DEFAULT_LOCALE } from "@/config/i18n"
@@ -23,7 +23,7 @@ import { publicFetch, serverFetch } from "@/lib/server-api"
 import { breadcrumbData } from "@/lib/structured-data"
 import type { PracticeSize, PracticeTopicProgress } from "@/types/round"
 import type { Template } from "@/types/superadmin"
-import { LIST_BOX, ROW_HOVER } from "@/config/lists"
+import { LIST_BOX, ROW_HOVER, ROW_ICON } from "@/config/lists"
 import { PageKey } from "@/components/common/page-key"
 
 export async function generateMetadata({
@@ -58,8 +58,8 @@ export async function generateMetadata({
   }
 }
 
-/** One free practice test, public for search engines: the role, its level and language, and
- * the topics it covers. Its questions are never shown here. Its address is the template's slug;
+/** One free practice test, public for search engines: the role, its facts, and the topics it
+ * covers. Its questions are never shown here. Its address is the template's slug;
  * an old address by id moves there for good. */
 export default async function PracticeTestPage({
   params,
@@ -73,6 +73,7 @@ export default async function PracticeTestPage({
   const template = await publicFetch<Template>(`/library/templates/${key}`)
 
   const locale = await urlLocale()
+  const pageLocale = await getLocale()
 
   // Links stay in the language of the page's address (/de/practice/… leads to /de/…).
   const at = (path: string) => localizedPath(locale ?? DEFAULT_LOCALE, path)
@@ -112,30 +113,13 @@ export default async function PracticeTestPage({
       />
       <PageHeader
         back={<BackLink href="/practice">{t("title")}</BackLink>}
-        // The level and language under the title; on phones the actions come after them, on a
-        // line of their own, centered.
+        // On phones the actions come after the title, on a line of their own.
         title={
           <div className="flex items-start justify-between gap-4 max-sm:flex-wrap">
-            <div className="min-w-0 flex-1 space-y-2">
+            <div className="min-w-0 flex-1">
               <h1 className="font-heading text-3xl font-medium tracking-tight text-balance normal-case">
                 {template.title}
               </h1>
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge
-                  variant="outline"
-                  className="h-7 px-3 text-sm font-light"
-                >
-                  {hasMessage(tLevel, template.level)
-                    ? tLevel(template.level)
-                    : template.level}
-                </Badge>
-                <Badge
-                  variant="outline"
-                  className="h-7 px-3 text-sm font-light uppercase"
-                >
-                  {template.language}
-                </Badge>
-              </div>
             </div>
             <div className="max-sm:flex max-sm:basis-full max-sm:justify-center max-sm:pt-2">
               <PracticeActions
@@ -148,37 +132,62 @@ export default async function PracticeTestPage({
         }
       />
 
-      {/* One full-width card: the note on gray with its sign in the corner, as the info card's,
-          continued by a round's length on the transparent part at the end. */}
-      <div className="flex flex-wrap items-stretch overflow-hidden rounded-xl border text-base text-muted-foreground">
-        <div className="relative flex flex-1 items-center bg-surface p-5 ps-20">
-          <CornerSign>
-            <InfoIcon className="text-primary" />
-          </CornerSign>
-          <p>{t("about")}</p>
-        </div>
-        {size && (
-          // On phones on its own line, centered, in larger type.
-          <p className="flex items-center px-5 py-4 max-sm:basis-full max-sm:justify-center max-sm:text-xl">
-            {t("questions", { count: size.questions })}
-          </p>
-        )}
-      </div>
+      <SummaryCards
+        testId="practice-facts"
+        className="max-sm:*:last:col-span-1 lg:grid-cols-4"
+        rows={[
+          {
+            id: "topics",
+            label: t("facts.topics"),
+            value: template.topics.length,
+          },
+          ...(size
+            ? [
+                {
+                  id: "questions",
+                  label: t("facts.questions"),
+                  value: <ShortNumber value={size.questions} />,
+                },
+              ]
+            : []),
+          {
+            id: "level",
+            label: t("facts.level"),
+            value: hasMessage(tLevel, template.level)
+              ? tLevel(template.level)
+              : template.level,
+          },
+          {
+            id: "language",
+            label: t("facts.language"),
+            value:
+              new Intl.DisplayNames(pageLocale, { type: "language" }).of(
+                template.language
+              ) ?? template.language,
+          },
+        ]}
+      />
+      <InfoCard className="max-sm:-mx-6 max-sm:rounded-none">
+        {t("about")}
+      </InfoCard>
 
       <ul
         lang={template.language}
         dir={textDirection(template.language)}
         className={`${LIST_BOX} overflow-hidden`}
       >
-        {template.topics.map((topic) => {
+        {template.topics.map((topic, index) => {
           const step = reached.get(topic.id)
 
           return (
             <li
               key={topic.id}
-              className={`p-4 ${ROW_HOVER} max-sm:px-6 max-sm:py-8 sm:p-6`}
+              className={`group/row flex items-start gap-4 p-6 ${ROW_HOVER}`}
             >
-              <span className="block min-w-0 space-y-3">
+              <span aria-hidden className={`${ROW_ICON} font-medium`}>
+                {index + 1}
+              </span>
+              <span className="block min-w-0 flex-1 space-y-3">
                 <span className="block text-lg font-medium">{topic.title}</span>
                 <SubtopicList subtopics={topic.subtopics} />
                 {/* Signed in: how far their latest round got on the topic, 0 of the topic's

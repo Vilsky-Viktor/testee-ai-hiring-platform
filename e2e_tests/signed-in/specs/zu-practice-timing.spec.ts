@@ -59,3 +59,35 @@ test("a practice round takes the time per question the talent picks", async ({
     await deleteTemplate(templateId)
   }
 })
+
+// A "done / total" counter keeps its numbers in order on right-to-left pages too, never mirrored
+// to "3 / 0": the answered number sits to the left of the total.
+test("a practice topic's counter reads answered, then total, in Arabic", async ({
+  signInAs,
+}) => {
+  const talent = await signInAs(throwawayEmail("practice-rtl"))
+  // Only a template's own language has its page in that language.
+  const templateId = await addTemplate("E2E practice counter", 3, "practice", "basic", "ar")
+
+  try {
+    await visit(talent, `/ar/practice/${templateId}`)
+    await expect(talent.locator("html")).toHaveAttribute("dir", "rtl")
+    const count = talent.getByRole("main").getByTestId("count")
+    await expect(count).toHaveText("0 / 3")
+    // Where each number starts on screen.
+    const [answered, total] = await count.evaluate((element) => {
+      const numbers = [...element.childNodes].filter((node) => node.textContent?.trim())
+      const left = (node: Node) => {
+        const range = document.createRange()
+        range.selectNodeContents(node)
+
+        return range.getBoundingClientRect().left
+      }
+
+      return [left(numbers[0]), left(numbers[numbers.length - 1])]
+    })
+    expect(answered).toBeLessThan(total)
+  } finally {
+    await deleteTemplate(templateId)
+  }
+})

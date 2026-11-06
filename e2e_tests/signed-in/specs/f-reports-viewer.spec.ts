@@ -1,6 +1,6 @@
 import { expect, test } from "../fixtures"
 import { api, createCompany, createInterview, inviteCandidate } from "../helpers/api"
-import { visit } from "../helpers/navigation"
+import { openMenu, visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { ownerEmail, throwawayEmail } from "../helpers/users"
 
@@ -31,7 +31,9 @@ test("a viewer emails reports only to the company's members", async ({ signInAs 
   await visit(viewer, `/companies/${company.id}/interviews/${interviewId}?tab=candidates`)
 
   async function share(email: string) {
-    await viewer.getByRole("button", { name: "Share report" }).click()
+    // In the page's menu, after downloading.
+    await openMenu(viewer, viewer.getByRole("main").getByTestId("integration-menu"))
+    await viewer.getByRole("menu").getByRole("menuitem").nth(1).click()
     const dialog = viewer.getByRole("dialog")
     await dialog.locator('input[type="email"]').fill(email)
     await dialog.locator('input[type="email"]').press("Enter")

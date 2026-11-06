@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl"
 import { useId } from "react"
 
 import type { SideMenuItem } from "@/components/common/side-menu"
+import { MenuCount } from "@/components/common/menu-count"
 import { TabNav } from "@/components/common/tab-nav"
 import { Button } from "@/components/ui/button"
 import {
@@ -134,6 +135,7 @@ function SubPages({
               render={<Link href={item.href} />}
             >
               {item.label}
+              <MenuCount count={item.count} />
               {item.id === chosen.id && (
                 <CheckIcon aria-hidden className="absolute end-2" />
               )}

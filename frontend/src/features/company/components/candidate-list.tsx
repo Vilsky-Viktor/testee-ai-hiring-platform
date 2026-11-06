@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl"
 
 import { CandidateRow } from "@/components/common/candidate-row"
 import { AnswerModeIcon } from "@/features/company/components/answer-mode-icon"
+import { CandidateMenu } from "@/features/company/components/candidate-menu"
 import { VirtualList } from "@/components/common/virtual-list"
 import { usePagedList } from "@/hooks/use-paged-list"
 import { byId } from "@/lib/paged-list"
@@ -17,6 +18,7 @@ candidate who takes it in another mode than the interview's (`voice`) shows that
 the rest show none, to keep the rows calm. */
 export function CandidateList({
   path,
+  interviewId,
   interviewHref,
   narrowed,
   initial,
@@ -24,6 +26,7 @@ export function CandidateList({
   voice,
 }: {
   path: string
+  interviewId: string
   interviewHref: string
   narrowed: boolean
   initial: Candidate[]
@@ -32,7 +35,7 @@ export function CandidateList({
   voice: boolean
 }) {
   const t = useTranslations("candidates")
-  const { items, loadMore } = usePagedList(path, byId, initial)
+  const { items, setItems, loadMore } = usePagedList(path, byId, initial)
 
   if (items.length === 0) {
     return (
@@ -55,6 +58,20 @@ export function CandidateList({
           mode={
             (candidate.voice ?? false) !== voice && (
               <AnswerModeIcon voice={!voice} />
+            )
+          }
+          menu={
+            canEdit &&
+            candidate.status !== "deleted" && (
+              <CandidateMenu
+                interviewId={interviewId}
+                candidate={candidate}
+                onRemoved={() =>
+                  setItems((current) =>
+                    current.filter((item) => item.id !== candidate.id)
+                  )
+                }
+              />
             )
           }
         />

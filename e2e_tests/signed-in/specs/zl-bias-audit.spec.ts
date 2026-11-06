@@ -31,10 +31,22 @@ test("the owner exports finished candidates' outcomes for a bias audit", async (
 
   const path = `/companies/${company.id}/actions`
   await visit(owner, path)
-  await owner.getByTestId("bias-audit-export").click()
+  // The page's "⋮" menu: the log's download, then this export.
+  const menu = owner.getByRole("main").getByTestId("integration-menu").first()
+  await expect(async () => {
+    await menu.click()
+    await expect(owner.getByRole("menu")).toBeVisible({ timeout: 2_000 })
+  }).toPass()
+  await owner.getByRole("menuitem").nth(1).click()
   const dialog = owner.getByRole("dialog")
+  // Of all time at first; the chosen days only for a custom period, the last choice.
+  const periods = dialog.getByTestId("download-period").getByRole("button")
+  await expect(periods.first()).toHaveAttribute("aria-pressed", "true")
+  await expect(dialog.locator('input[type="date"]')).toHaveCount(0)
+  await periods.last().click()
   await expect(dialog.locator('input[type="date"]')).toHaveCount(2)
   await shot(owner, "bias-audit-export")
+  await periods.first().click()
 
   const downloaded = owner.waitForEvent("download")
   await dialog.locator('button[type="submit"]').click()
@@ -72,5 +84,4 @@ test("the owner exports finished candidates' outcomes for a bias audit", async (
   await api(admin, "POST", `/companies/members/invites/${token}/accept`)
   await visit(admin, path)
   await expect(admin).toHaveURL((url) => url.pathname.endsWith(`/companies/${company.id}/interviews`))
-  await expect(admin.getByTestId("bias-audit-export")).toHaveCount(0)
 })

@@ -11,13 +11,7 @@ import { ownerEmail, randomId } from "../helpers/users"
 // An interview's notes tab: every member writes notes (with the button or ⌘/Ctrl + Enter), the
 // author edits their own, the author, the owner and admins delete, and the owner and admins pin
 // one, which then shows under the interview's title and in the interviews list. The menu counts
-// the notes.
-
-// A note's actions, by their icons: pin (or unpin), edit, delete.
-const PIN = "button:has(svg.lucide-bookmark)"
-const UNPIN = "button:has(svg.lucide-bookmark-x)"
-const EDIT = "button:has(svg.lucide-pencil)"
-const DELETE = "button:has(svg.lucide-trash-2)"
+// the notes. A note's actions are in its "⋮" menu.
 
 /** The notes tab's address. */
 function notesTab(companyId: string, interviewId: string) {
@@ -57,6 +51,22 @@ function note(page: Page, text: string): Locator {
   return notes(page).filter({ has: page.getByTestId("note-text").filter({ hasText: text }) })
 }
 
+/** Opens the note's "⋮" menu. */
+async function openMenu(row: Locator) {
+  const menu = row.page().getByRole("menu")
+  await expect(async () => {
+    await row.getByRole("button").click()
+    await expect(menu).toBeVisible({ timeout: 2_000 })
+  }).toPass()
+
+  return menu
+}
+
+/** Picks one of the note's actions: `pin` (or unpin), `edit` or `delete`. */
+async function act(row: Locator, action: "pin" | "edit" | "delete") {
+  await (await openMenu(row)).getByTestId(`note-${action}`).click()
+}
+
 test("the team writes, edits, pins and deletes an interview's notes", async ({ signInAs }) => {
   test.setTimeout(180_000)
   const name = `E2E Anna ${randomId()}`
@@ -75,7 +85,8 @@ test("the team writes, edits, pins and deletes an interview's notes", async ({ s
   await expect(countOf(owner, `/interviews/${interviewId}`)).toHaveText(String(topics.length))
   await expect(countOf(owner, "?tab=candidates")).toHaveCount(0)
   await expect(countOf(owner, "?tab=notes")).toHaveCount(0)
-  await expect(newNote(owner).getByTestId("submit-hint")).toBeVisible()
+  // In the page; a browser without a mouse, as here, hides it.
+  await expect(newNote(owner).getByTestId("submit-hint")).toHaveCount(1)
 
   // Posted with the button: the author's name, the text with its address as a link (without
   // the sentence's full stop), the box empty again and the menu counting it.
@@ -99,7 +110,7 @@ test("the team writes, edits, pins and deletes an interview's notes", async ({ s
 
   // Editing: the box takes the focus with the cursor at the note's end; ⌘/Ctrl + Enter saves,
   // and the note is marked edited.
-  await note(owner, second).locator(EDIT).click()
+  await act(note(owner, second), "edit")
   const editBox = notes(owner).first().locator("textarea")
   await expect(editBox).toBeFocused()
   expect(
@@ -116,14 +127,14 @@ test("the team writes, edits, pins and deletes an interview's notes", async ({ s
   await expect(notes(owner).first().getByTestId("note-edited")).toBeVisible()
 
   // Escape leaves the note as it was.
-  await note(owner, edited).locator(EDIT).click()
+  await act(note(owner, edited), "edit")
   await owner.keyboard.type(" (draft)")
   await owner.keyboard.press("Escape")
   await expect(notes(owner).first().locator("textarea")).toHaveCount(0)
   await expect(notes(owner).first().getByTestId("note-text")).toHaveText(edited)
 
   // Pinning the older note: it goes first, shows under the title and in the interviews list.
-  await note(owner, first).locator(PIN).click()
+  await act(note(owner, first), "pin")
   await expect(note(owner, first)).toHaveAttribute("data-pinned", "true")
   await owner.reload()
   await expect(notes(owner).first()).toHaveAttribute("data-pinned", "true")
@@ -133,7 +144,7 @@ test("the team writes, edits, pins and deletes an interview's notes", async ({ s
   await shot(owner, "note-pinned")
 
   // One pinned at a time: pinning the other unpins the first.
-  await note(owner, edited).locator(PIN).click()
+  await act(note(owner, edited), "pin")
   await expect(note(owner, edited)).toHaveAttribute("data-pinned", "true")
   await expect(owner.locator("[data-testid=note][data-pinned]")).toHaveCount(1)
   await expect(pinnedLine).toHaveText(edited)
@@ -143,12 +154,12 @@ test("the team writes, edits, pins and deletes an interview's notes", async ({ s
 
   // Unpinned, no line under the title.
   await visit(owner, notesTab(company.id, interviewId))
-  await note(owner, edited).locator(UNPIN).click()
+  await act(note(owner, edited), "pin")
   await expect(owner.locator("[data-testid=note][data-pinned]")).toHaveCount(0)
   await expect(pinnedLine).toHaveCount(0)
 
   // Deleting asks first (the dialog's last button deletes); the menu counts one again.
-  await note(owner, first).locator(DELETE).click()
+  await act(note(owner, first), "delete")
   await owner.getByRole("dialog").getByRole("button").last().click()
   await expect(notes(owner)).toHaveCount(1)
   await expect(countOf(owner, "?tab=notes")).toHaveText("1")
@@ -182,16 +193,18 @@ test("a viewer writes notes but pins none", async ({ signInAs }) => {
   const viewerText = `Viewer's note ${randomId()}`
   await post(viewer, viewerText)
   const own = note(viewer, viewerText)
-  await expect(own.locator(EDIT)).toHaveCount(1)
-  await expect(own.locator(DELETE)).toHaveCount(1)
-  await expect(own.locator(PIN)).toHaveCount(0)
+  const mine = await openMenu(own)
+  await expect(mine.getByTestId("note-edit")).toHaveCount(1)
+  await expect(mine.getByTestId("note-delete")).toHaveCount(1)
+  await expect(mine.getByTestId("note-pin")).toHaveCount(0)
   await shot(viewer, "viewer-notes")
 
   await visit(owner, notesTab(company.id, interviewId))
   const theirs = note(owner, viewerText)
-  await expect(theirs.locator(PIN)).toHaveCount(1)
-  await expect(theirs.locator(DELETE)).toHaveCount(1)
-  await expect(theirs.locator(EDIT)).toHaveCount(0)
+  const actions = await openMenu(theirs)
+  await expect(actions.getByTestId("note-pin")).toHaveCount(1)
+  await expect(actions.getByTestId("note-delete")).toHaveCount(1)
+  await expect(actions.getByTestId("note-edit")).toHaveCount(0)
 })
 
 // A note an API key wrote names the key with a key for its avatar; once the key is deleted, its
@@ -224,8 +237,8 @@ test("a note written by an API key names the key", async ({ signInAs }) => {
   await shot(owner, "key-notes")
 })
 
-// On a phone the menu shows two tabs, the open notes tab from under "…" in the second place;
-// a note's actions take a centred line of their own under its text.
+// On a phone the menu shows two tabs, the open notes tab from under "…" in the second place; a
+// note's text starts under the picture, its "⋮" above it.
 test("the notes tab on a phone", async ({ signInAs }) => {
   const owner = await signInAs(ownerEmail())
   const company = await createCompany(owner)
@@ -242,15 +255,11 @@ test("the notes tab on a phone", async ({ signInAs }) => {
   await expect(menu(owner).getByRole("button")).toHaveCount(1)
 
   const row = note(owner, text)
-  const actions = row.getByRole("button")
-  await expect(actions).toHaveCount(3)
   const textBox = await box(row.getByTestId("note-text"))
-  const first = await box(actions.first())
-  const last = await box(actions.last())
-  const whole = await box(row)
-  expect(first.top).toBeGreaterThan(textBox.bottom)
-  expect(last.top).toBe(first.top)
-  // Centred in the row: as much room on either side.
-  expect(Math.abs(first.left - whole.left - (whole.right - last.right))).toBeLessThanOrEqual(2)
+  const picture = await box(row.locator("[data-slot=avatar]"))
+  expect(textBox.left).toBeLessThanOrEqual(picture.left)
+  expect(textBox.top).toBeGreaterThanOrEqual(picture.bottom)
+  expect((await box(row.getByRole("button"))).bottom).toBeLessThanOrEqual(textBox.top)
+  await expect((await openMenu(row)).getByRole("menuitem")).toHaveCount(3)
   await shot(owner, "notes-phone")
 })

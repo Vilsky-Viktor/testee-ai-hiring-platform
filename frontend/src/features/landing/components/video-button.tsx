@@ -1,5 +1,6 @@
 "use client"
 
+import { cn } from "cn"
 import { PlayIcon, XIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 
@@ -11,46 +12,38 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { PRIMARY_FILL } from "@/config/buttons"
 import { HERO_VIDEO_ID } from "@/config/landing"
 
-/** A play icon, named in its tooltip, that opens testee's video in a window on the page, played
- * by YouTube's no-cookie player, which loads only once the window opens. The size of the page's
- * info button beside it; a blue ring keeps pulsing out of it to draw the eye (hidden with reduced
- * motion), and it grows a little on hover, as the footer's social icons do. */
+/** "Watch video": the hero's button (styles/hero-buttons.css) that opens testee's video in a window on the page, played by
+ * YouTube's no-cookie player, which loads only once the window opens. A blue ring keeps pulsing
+ * out of its round play icon to draw the eye (hidden with reduced motion). */
 export function VideoButton() {
   const t = useTranslations("landing")
   const common = useTranslations("common")
 
   return (
     <Dialog>
-      <Tooltip>
-        <TooltipTrigger
-          render={
-            <DialogTrigger
-              render={
-                <button
-                  type="button"
-                  aria-label={t("videoTooltip")}
-                  data-testid="video-button"
-                  className="relative inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full text-primary transition-[color,background-color,scale] duration-200 outline-none hover:scale-110 hover:bg-surface focus-visible:ring-3 focus-visible:ring-ring/50"
-                />
-              }
-            />
-          }
-        >
-          <span
-            aria-hidden
-            className="absolute inset-1 animate-ping rounded-full border-2 border-primary/60 [animation-duration:2s] motion-reduce:hidden"
+      <DialogTrigger
+        render={
+          <button
+            type="button"
+            data-testid="video-button"
+            className="hero-pill hero-pill-video"
           />
-          <PlayIcon aria-hidden className="size-6 fill-current" />
-        </TooltipTrigger>
-        <TooltipContent>{t("videoTooltip")}</TooltipContent>
-      </Tooltip>
+        }
+      >
+        <span
+          aria-hidden
+          className="absolute inset-0 overflow-hidden rounded-full"
+        >
+          <span className="hero-pill-ring animate-ping border-2 border-primary/60 [animation-duration:2s] motion-reduce:hidden" />
+        </span>
+        <span aria-hidden className={cn("hero-pill-disc", PRIMARY_FILL)}>
+          <PlayIcon className="ms-0.5 size-3.5 fill-current sm:size-4" />
+        </span>
+        <span className="hero-pill-label">{t("watchVideo")}</span>
+      </DialogTrigger>
       {/* The close button sits on the window's corner, over its edge; on phones, where the
           window spans the screen, inside it. */}
       <DialogContent

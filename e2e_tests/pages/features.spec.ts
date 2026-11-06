@@ -32,7 +32,7 @@ test("the header links the features page, whose tabs open each group and stay in
   );
 
   // A tab per group, each leading to its section on the page.
-  const tabs = page.getByRole("main").locator('[data-sticky-tabs] a[href^="#"]');
+  const tabs = page.getByRole("main").locator('[data-feature-tabs] a[href^="#"]');
   const ids = await tabs.evaluateAll((links) =>
     links.map((link) => link.getAttribute("href")!.slice(1)),
   );
@@ -42,15 +42,12 @@ test("the header links the features page, whose tabs open each group and stay in
     await expect(page.locator(`main section#${id}`)).toHaveCount(1);
   }
 
-  // The last group opened from its tab: it's the current one, its section in view under the
-  // tabs, which stay at the top of the window.
-  const last = tabs.last();
-  await last.click();
-  await expect(last).toHaveAttribute("aria-current", "page");
+  // The last group opened from its tab: its section in view under the header, and the tabs,
+  // which aren't sticky, scrolled away.
+  await tabs.last().click();
   await scrollAtRest(page);
   await expect(page.locator(`main section#${ids.at(-1)}`)).toBeInViewport();
-  const bar = await page.locator("[data-sticky-tabs]").boundingBox();
-  expect(bar?.y).toBe(0);
+  await expect(page.locator("[data-feature-tabs]")).not.toBeInViewport();
 });
 
 test("each feature shows the picture of the page's theme", { tag: "@phone" }, async ({ page }) => {

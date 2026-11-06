@@ -1,20 +1,22 @@
 "use client"
 
+import Link from "next/link"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useTranslations } from "next-intl"
 
-import { FloatingInput } from "@/components/ui/floating-field"
+import { DayField } from "@/components/common/day-field"
 import { PillSelect } from "@/components/common/pill-select"
-import { ACTION_GROUPS } from "@/config/action-log"
+import { Button } from "@/components/ui/button"
+import { ACTION_FILTERS } from "@/config/action-log"
 import { dayStart, today } from "@/lib/format"
 import type { CompanyMember } from "@/types/company"
 
-// "Anyone" and "All actions" in the menus.
+// "Anyone" in the menu.
 const ANY = "any"
 
-/** The action log's filters: a member, a group of actions, and the days from and to (the
- * viewer's own days, sent as the moments they start and end). The choice lives in the address,
- * so the server renders the first page filtered. */
+/** The action log's filters: a member and the days from and to (the viewer's own days, sent as
+ * the moments they start and end), and Clear while any filter is on, the group's pills too. The
+ * choice lives in the address, so the server renders the first page filtered. */
 export function ActionFilters({ members }: { members: CompanyMember[] }) {
   const t = useTranslations("actionLog")
   const router = useRouter()
@@ -38,7 +40,7 @@ export function ActionFilters({ members }: { members: CompanyMember[] }) {
 
   return (
     <div
-      className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+      className="grid gap-4 sm:grid-cols-[1fr_1fr_1fr_auto]"
       data-testid="action-filters"
     >
       <PillSelect
@@ -53,18 +55,6 @@ export function ActionFilters({ members }: { members: CompanyMember[] }) {
         ]}
         onChange={(value) => choose("member_id", value)}
       />
-      <PillSelect
-        label={t("action")}
-        value={searchParams.get("group") ?? ANY}
-        options={[
-          { value: ANY, label: t("anyAction") },
-          ...ACTION_GROUPS.map((group) => ({
-            value: group,
-            label: t(`groups.${group}`),
-          })),
-        ]}
-        onChange={(value) => choose("group", value)}
-      />
       <DayField
         label={t("from")}
         value={from ? today(new Date(from)) : ""}
@@ -75,26 +65,17 @@ export function ActionFilters({ members }: { members: CompanyMember[] }) {
         value={to ? today(new Date(new Date(to).getTime() - 1)) : ""}
         onChange={(day) => choose("to", day ? dayStart(day, 1) : null)}
       />
+      {ACTION_FILTERS.some((name) => searchParams.has(name)) && (
+        <Button
+          variant="ghost"
+          className="h-14 px-4 text-base"
+          data-testid="clear-filters"
+          render={<Link href={pathname} scroll={false} />}
+          nativeButton={false}
+        >
+          {t("clear")}
+        </Button>
+      )}
     </div>
-  )
-}
-
-/** A day picked in a floating-label date field. */
-export function DayField({
-  label,
-  value,
-  onChange,
-}: {
-  label: string
-  value: string
-  onChange: (day: string) => void
-}) {
-  return (
-    <FloatingInput
-      label={label}
-      type="date"
-      value={value}
-      onChange={(event) => onChange(event.target.value)}
-    />
   )
 }

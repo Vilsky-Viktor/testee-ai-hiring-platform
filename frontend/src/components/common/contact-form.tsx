@@ -1,6 +1,5 @@
 "use client"
 
-import { ForwardIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useId, useState } from "react"
 import { toast } from "sonner"
@@ -9,6 +8,7 @@ import { SubmitHint } from "@/components/common/submit-hint"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { CARD } from "@/config/cards"
 import {
   MAX_CONTACT_MESSAGE_LENGTH,
   MAX_CONTACT_NAME_LENGTH,
@@ -62,7 +62,7 @@ export function ContactForm() {
 
   if (sentTo) {
     return (
-      <div role="status" className="space-y-2">
+      <div role="status" className={`space-y-2 ${CARD}`}>
         <p className="font-heading text-3xl font-medium tracking-tight">
           {t("thanks")}
         </p>
@@ -119,12 +119,11 @@ export function ContactForm() {
         <SubmitHint className="pointer-events-none absolute start-6 bottom-6" />
         <Button
           type="submit"
-          size="icon-lg"
-          className="absolute end-3 bottom-3 size-12 rounded-lg"
+          className="absolute end-3 bottom-3 h-12 rounded-lg px-6 text-base"
           disabled={sending}
-          aria-label={t("send")}
+          data-testid="contact-send"
         >
-          <ForwardIcon className="size-6 rtl:-scale-x-100" />
+          {t("send")}
         </Button>
       </div>
     </form>

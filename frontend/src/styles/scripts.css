@@ -11,12 +11,12 @@
 /* Arabic, Persian, Hindi, Thai and Vietnamese carry marks above and below their letters: headings
    get room for them on every line. */
 :is(h1, h2, h3, [role="heading"]):is(
-    :lang(ar),
-    :lang(fa),
-    :lang(hi),
-    :lang(th),
-    :lang(vi)
-  ) {
+  :lang(ar),
+  :lang(fa),
+  :lang(hi),
+  :lang(th),
+  :lang(vi)
+) {
   line-height: 1.4;
 }
 

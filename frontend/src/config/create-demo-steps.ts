@@ -1,38 +1,52 @@
 // The home page's "create an interview" demo: its steps, and what its pointer moves to in each
 // panel.
 import {
-  DEMO_ADDED_SUBTOPIC,
   DEMO_COMPANY,
-  DEMO_CHANGE,
   DEMO_EDITED,
+  DEMO_EDITED_SUBTOPIC,
   DEMO_INVITE_EMAIL,
   DEMO_INVITE_NAME,
-  DEMO_NEW_TOPIC,
   DEMO_QUESTION_SECONDS,
-  DEMO_TOPICS,
 } from "@/config/create-demo"
+import type { CreateContent } from "@/features/landing/types/demo-content"
 import { type DemoStep, stepIndex } from "@/hooks/use-demo-steps"
 
-// The topics the questions are written for: the adjusted ones, the edited one with its added
-// subtopic.
-export const ADJUSTED = [...DEMO_TOPICS, DEMO_NEW_TOPIC].map((topic) =>
-  topic.name === DEMO_EDITED
-    ? { ...topic, subtopics: [...topic.subtopics, DEMO_ADDED_SUBTOPIC] }
-    : topic
-)
-export const WRITTEN = ADJUSTED.map(({ name }) => name)
+// How many topics are proposed, and how many the questions are written for (the AI adds one).
+export const PROPOSED = 3
+export const WRITTEN = PROPOSED + 1
+
+/** The topics the questions are written for, in `content`'s language: the adjusted ones, the
+ * edited one with its name and subtopic as typed. */
+export function adjusted(content: CreateContent) {
+  return [
+    ...Object.values(content.topics).slice(0, PROPOSED),
+    content.newTopic,
+  ].map((topic, place) =>
+    place === DEMO_EDITED
+      ? {
+          name: topic.name + content.renamed,
+          subtopics: topic.subtopics.map((subtopic, at) =>
+            at === DEMO_EDITED_SUBTOPIC
+              ? subtopic + content.subtopicAdded
+              : subtopic
+          ),
+        }
+      : topic
+  )
+}
 
 // The pointer right-clicks the empty box, picks paste from its menu and the whole description
-// shows, then it clicks send; the window asking which company it's for opens with the user's
-// company chosen, it picks a new one, types its name and clicks continue; the loading
+// shows, then it clicks send; the screen asking for the company's name slides in, it types
+// the name and clicks continue; the loading
 // mark stands for the interview being made until it's ready. The topics show
-// one by one; it opens a topic's editor, types a subtopic, adds it and closes the editor, then
-// types into the request for changes and clicks apply, and a topic is added; then it clicks
+// one by one; it clicks a topic's name and types at its end, then one of its subtopics, editing
+// both in place, then types into the request for changes and clicks apply, and a topic is added; then it clicks
 // approve, the questions are written, topic by topic, and the interview is ready: it changes the
 // questions each candidate gets on two topics, opens the settings tab, sets the time per question
 // and clicks the back arrow to the interview, clicks to invite, the invite dialog opens, a
 // candidate's email and name are typed and sent, and the "sent" notice shows. Then the inbox:
 // the invitation arrives, the pointer opens it, and clicks its button. Last, the still frame.
+// The steps typing a text of the page's language get its length in createSteps.
 export const STEPS: DemoStep[] = [
   { name: "empty", ms: 500, point: "field" },
   { name: "menu", ms: 300, click: true },
@@ -41,40 +55,37 @@ export const STEPS: DemoStep[] = [
   { name: "pasted", ms: 400 },
   { name: "aim", ms: 1000, point: "send" },
   { name: "send", ms: 500, click: true },
-  // The window opens while the pointer rests on send; each move then glides (700 ms) and rests
-  // a moment before its click.
+  // The company's screen slides in while the pointer rests on send; each move then glides
+  // (700 ms) and rests a moment before its click.
   { name: "company", ms: 700 },
-  { name: "aimNew", ms: 1000, point: "newCompany" },
-  { name: "chooseNew", ms: 500, click: true },
   { name: "aimName", ms: 1000, point: "name" },
   { name: "focusName", ms: 300, click: true },
-  { name: "naming", ms: 180, repeat: DEMO_COMPANY.length },
+  { name: "naming", ms: 90, repeat: DEMO_COMPANY.length },
   { name: "named", ms: 250 },
   { name: "aimContinue", ms: 1000, point: "continue" },
   { name: "continue", ms: 500, click: true },
-  // The window fades out, then the topics come.
+  // The company's screen stays a moment, then the topics come.
   { name: "closing", ms: 500, point: "none" },
-  { name: "sent", ms: 400 },
-  { name: "topics", ms: 400, repeat: DEMO_TOPICS.length },
+  // The generating page, long enough to read, before the first topic shows.
+  { name: "sent", ms: 2600 },
+  { name: "topics", ms: 400, repeat: PROPOSED },
+  // A topic's name, then one of its subtopics, clicked and typed at their end in place.
   { name: "review", ms: 600, point: "edit" },
-  { name: "open", ms: 400, click: true },
+  { name: "open", ms: 300, click: true },
+  { name: "renaming", ms: 90 },
   { name: "aimSubtopic", ms: 700, point: "subtopic" },
   { name: "focusSubtopic", ms: 300, click: true },
-  { name: "adding", ms: 90, repeat: DEMO_ADDED_SUBTOPIC.length },
-  { name: "aimAdd", ms: 600, point: "add" },
-  { name: "add", ms: 400, click: true },
-  { name: "aimDone", ms: 600, point: "done" },
-  { name: "done", ms: 400, click: true },
-  { name: "edited", ms: 600, point: "ask" },
+  { name: "adding", ms: 90 },
+  { name: "edited", ms: 700, point: "ask" },
   { name: "ask", ms: 300, click: true },
-  { name: "asking", ms: 50, repeat: DEMO_CHANGE.length },
+  { name: "asking", ms: 50 },
   { name: "aimApply", ms: 800, point: "apply" },
   { name: "apply", ms: 500, click: true },
   { name: "applying", ms: 500, point: "none" },
   { name: "applied", ms: 600 },
-  { name: "aimGo", ms: 800, point: "apply" },
+  { name: "aimGo", ms: 800, point: "go" },
   { name: "go", ms: 500, click: true },
-  { name: "writing", ms: 700, repeat: WRITTEN.length, point: "none" },
+  { name: "writing", ms: 700, repeat: WRITTEN, point: "none" },
   { name: "written", ms: 700 },
   { name: "ready", ms: 1200 },
   { name: "aimLimit0", ms: 800, point: "limit0" },
@@ -96,10 +107,10 @@ export const STEPS: DemoStep[] = [
   { name: "invite", ms: 500, click: true },
   { name: "aimEmail", ms: 700, point: "email" },
   { name: "focusEmail", ms: 300, click: true },
-  { name: "typingEmail", ms: 70, repeat: DEMO_INVITE_EMAIL.length },
+  { name: "typingEmail", ms: 35, repeat: DEMO_INVITE_EMAIL.length },
   { name: "aimInviteName", ms: 700, point: "inviteName" },
   { name: "focusInviteName", ms: 300, click: true },
-  { name: "typingName", ms: 70, repeat: DEMO_INVITE_NAME.length },
+  { name: "typingName", ms: 35, repeat: DEMO_INVITE_NAME.length },
   { name: "aimSendInvite", ms: 700, point: "sendInvite" },
   { name: "sendInvite", ms: 450, click: true },
   { name: "invited", ms: 1600, point: "none" },
@@ -111,6 +122,23 @@ export const STEPS: DemoStep[] = [
   { name: "openInvite", ms: 500, click: true },
   { name: "rest", ms: 600 },
 ]
+
+// The steps that type a text of the page's language, a letter each, and the text each types.
+const TYPED: Record<string, (content: CreateContent) => string> = {
+  renaming: (content) => content.renamed,
+  adding: (content) => content.subtopicAdded,
+  asking: (content) => content.change,
+}
+
+/** The steps with each typed text's length from `content` (in the page's language). Every step
+ * keeps its place, so the places below hold whatever the language. */
+export function createSteps(content: CreateContent): DemoStep[] {
+  return STEPS.map((step) =>
+    step.name in TYPED
+      ? { ...step, repeat: TYPED[step.name](content).length }
+      : step
+  )
+}
 
 // The steps the invite dialog is open for.
 export const INVITING = [
@@ -134,10 +162,9 @@ export const TARGETS = [
   "continue",
   "edit",
   "subtopic",
-  "add",
-  "done",
   "ask",
   "apply",
+  "go",
   "limit0",
   "limit1",
   "settingsTab",
@@ -162,7 +189,5 @@ export const INBOX = stepIndex(STEPS, "inbox")
 export const OPENED = stepIndex(STEPS, "opened")
 export const PASTED = stepIndex(STEPS, "pasted")
 export const CHOOSING = stepIndex(STEPS, "company")
-export const ADDING = stepIndex(STEPS, "chooseNew")
-export const CLOSING = stepIndex(STEPS, "closing")
 export const TOPICS = stepIndex(STEPS, "sent")
-export const ADDED = stepIndex(STEPS, "aimDone")
+export const EDITED = stepIndex(STEPS, "edited")

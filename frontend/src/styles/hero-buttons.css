@@ -1,0 +1,105 @@
+/* The hero's two buttons: a pill with a round icon at its start, the job description box's grey,
+   solid, as the dark theme's grey is see-through. On hover another colour fills the pill from its
+   start to its end, and the icon grows a little. On a click they jump, as everything on the site
+   does (click-jump.tsx). */
+.hero-pill {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  height: 3rem;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 9999px;
+  background:
+    linear-gradient(var(--surface), var(--surface)), var(--background);
+  color: var(--foreground);
+  font-size: 1rem;
+  white-space: nowrap;
+  text-transform: lowercase;
+  outline: none;
+
+  &:focus-visible {
+    box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 50%, transparent);
+  }
+}
+
+/* The colour filling the pill on hover: a step further from the page than the pill; the video's a light tint of its blue. */
+.hero-pill::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  background: color-mix(in oklab, black 5%, var(--background));
+  clip-path: inset(0 100% 0 0 round 9999px);
+  content: "";
+  transition: clip-path 350ms ease;
+}
+
+.dark .hero-pill::before {
+  background: color-mix(in oklab, white 9%, var(--background));
+}
+
+.hero-pill-video::before,
+.dark .hero-pill-video::before {
+  background: color-mix(in oklab, var(--primary) 18%, var(--background));
+}
+
+.hero-pill:dir(rtl)::before {
+  clip-path: inset(0 0 0 100% round 9999px);
+}
+
+.hero-pill-disc,
+.hero-pill-ring {
+  position: absolute;
+  inset-block-start: 0.375rem;
+  inset-inline-start: 0.375rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+}
+
+.hero-pill-disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: scale 200ms ease;
+}
+
+.hero-pill-label {
+  padding-inline: 3.25rem 1.25rem;
+}
+
+@media (hover: hover) {
+  .hero-pill:hover::before {
+    clip-path: inset(0 0 0 0 round 9999px);
+  }
+
+  .hero-pill:hover .hero-pill-disc {
+    scale: 1.2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pill::before,
+  .hero-pill-disc {
+    transition: none;
+  }
+}
+
+/* A little smaller on phones. */
+@media (width < 40rem) {
+  .hero-pill {
+    height: 2.625rem;
+    font-size: 0.9375rem;
+  }
+
+  .hero-pill-disc,
+  .hero-pill-ring {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  .hero-pill-label {
+    padding-inline: 2.75rem 1rem;
+  }
+}

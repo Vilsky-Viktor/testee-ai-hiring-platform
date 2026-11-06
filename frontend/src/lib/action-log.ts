@@ -1,4 +1,5 @@
 import { ACTION_FILTERS } from "@/config/action-log"
+import { candidateHref } from "@/lib/candidate-links"
 import type { CompanyAction } from "@/types/company"
 
 /** Who took an action, as the log names them: a member by email, a former member, an API key
@@ -25,6 +26,33 @@ export function actionFilters(
   }
 
   return filters
+}
+
+/** What a row of the log opens: the candidate, the interview or the team page, while it's still
+ * there; nothing for the others. */
+export function actionHref(
+  action: Pick<
+    CompanyAction,
+    "interview_id" | "target" | "target_id" | "target_kind"
+  >,
+  companyId: string
+) {
+  const { interview_id: interviewId, target_id: targetId } = action
+
+  if (action.target_kind === "candidate" && interviewId && targetId) {
+    return candidateHref("company", companyId, {
+      interview_id: interviewId,
+      invite_id: targetId,
+    })
+  }
+
+  if (action.target_kind === "interview" && interviewId) {
+    return `/companies/${companyId}/interviews/${interviewId}`
+  }
+
+  return action.target_kind === "member" && action.target
+    ? `/companies/${companyId}/members`
+    : null
 }
 
 /** Who took `action` (see `ActionAuthor`). */

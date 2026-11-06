@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl"
 import { toast } from "sonner"
 
 import { InputAction } from "@/components/common/input-action"
+import { Button } from "@/components/ui/button"
 import { useOrigin } from "@/lib/origin"
 
 /** A link on this site (`path`), in a read-only field with a copy button. */
@@ -18,6 +19,29 @@ export function CopyField({ path }: { path: string }) {
       label={common("copyLink")}
       copied={common("linkCopied")}
     />
+  )
+}
+
+/** The same link as an icon button, for a row with no room for the field. */
+export function CopyLinkButton({ path }: { path: string }) {
+  const common = useTranslations("common")
+  const origin = useOrigin()
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      className="size-10 shrink-0 text-muted-foreground hover:text-foreground"
+      aria-label={common("copyLink")}
+      tooltip={common("copyLink")}
+      data-testid="copy-invite"
+      onClick={async () => {
+        await navigator.clipboard.writeText(`${origin}${path}`)
+        toast.success(common("linkCopied"))
+      }}
+    >
+      <CopyIcon className="size-5" />
+    </Button>
   )
 }
 

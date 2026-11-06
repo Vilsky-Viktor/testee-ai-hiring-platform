@@ -1,9 +1,10 @@
+"use client"
+
 import { CodeXmlIcon } from "lucide-react"
-import Link from "next/link"
 import { useTranslations } from "next-intl"
 
+import { DotsMenu } from "@/components/common/dots-menu"
 import { IntegrationRow } from "@/features/company/components/integration-row"
-import { Button } from "@/components/ui/button"
 import { DottedText } from "@/components/common/dot"
 import { API_DOCS_PATH } from "@/config/api"
 import { INTEGRATION_ACTIONS } from "@/config/lists"
@@ -40,14 +41,9 @@ export function ApiRow({
       }
       actions={
         <span className={INTEGRATION_ACTIONS}>
-          <Button
-            variant="outline"
-            className="h-10 px-5 text-base"
-            render={<Link href={API_DOCS_PATH} />}
-            nativeButton={false}
-          >
-            {t("docs")}
-          </Button>
+          <DotsMenu
+            items={[{ label: t("docs"), href: API_DOCS_PATH }]}
+          />
         </span>
       }
     />

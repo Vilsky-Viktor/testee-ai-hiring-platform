@@ -368,6 +368,26 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/internal/templates/copyable": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * List Copyable Templates
+     * @description For companies: the templates it can copy, with what a copy keeps.
+     */
+    get: operations["list_copyable_templates_internal_templates_copyable_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/internal/templates/{template_id}/copy": {
     parameters: {
       query?: never
@@ -1110,6 +1130,51 @@ export interface components {
       options: components["schemas"]["OptionIn"][]
       /** Difficulty */
       difficulty?: number | null
+    }
+    /**
+     * CopyableTemplate
+     * @description A template a company can copy, with the topics a copy keeps.
+     */
+    CopyableTemplate: {
+      /**
+       * Id
+       * Format: uuid
+       */
+      id: string
+      /** Slug */
+      slug: string | null
+      /** Title */
+      title: string
+      /** Level */
+      level: string
+      /** Language */
+      language: string
+      /** Topic Count */
+      topic_count: number
+      /**
+       * Created At
+       * Format: date-time
+       */
+      created_at: string
+      /**
+       * Updated At
+       * Format: date-time
+       */
+      updated_at: string
+      /**
+       * Indexable
+       * @default false
+       */
+      indexable: boolean
+      /** Topics */
+      topics: components["schemas"]["CopyableTopic"][]
+    }
+    /** CopyableTopic */
+    CopyableTopic: {
+      /** Title */
+      title: string
+      /** Size */
+      size: number
     }
     /** CreatedOut */
     CreatedOut: {
@@ -2605,6 +2670,69 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["CreatedOut"]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  list_copyable_templates_internal_templates_copyable_get: {
+    parameters: {
+      query?: {
+        q?: string
+        level?: ("basic" | "medium" | "hard") | null
+        language?:
+          | (
+              | "en"
+              | "ru"
+              | "uk"
+              | "es"
+              | "pt"
+              | "de"
+              | "fr"
+              | "it"
+              | "pl"
+              | "nl"
+              | "tr"
+              | "ar"
+              | "he"
+              | "fa"
+              | "ja"
+              | "zh"
+              | "ko"
+              | "hi"
+              | "id"
+              | "th"
+              | "vi"
+              | "fil"
+              | "et"
+            )[]
+          | null
+        /** @description Number of items to skip */
+        offset?: number
+        /** @description Number of items to return, up to 100 */
+        limit?: number
+      }
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["CopyableTemplate"][]
         }
       }
       /** @description Validation Error */

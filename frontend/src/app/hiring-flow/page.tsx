@@ -1,9 +1,11 @@
 import { getTranslations } from "next-intl/server"
 
+import { CornerNet } from "@/features/landing/components/corner-net"
 import { FeaturesClosing } from "@/features/features/components/features-closing"
 import { FlowHero } from "@/features/hiring-flow/components/flow-hero"
 import { FlowLine } from "@/features/hiring-flow/components/flow-line"
 import { FlowStageRow } from "@/features/hiring-flow/components/flow-stage"
+import { HeroBack } from "@/components/common/hero-back"
 import { PageKey } from "@/components/common/page-key"
 import { FLOW_STAGES } from "@/config/hiring-flow"
 import { visitorCatalog } from "@/lib/catalog"
@@ -23,9 +25,11 @@ export default async function HiringFlowPage() {
   const freeCandidates = catalog?.free_candidates ?? null
 
   return (
-    <div className="@container">
+    <div className="@container relative">
+      <CornerNet />
       <main className="mx-auto max-w-page px-6">
         <PageKey page="hiringFlow" />
+        <HeroBack />
         <FlowHero />
         <FlowLine>
           {FLOW_STAGES.map((stage, index) => (

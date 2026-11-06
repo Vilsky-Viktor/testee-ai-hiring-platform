@@ -1,64 +1,81 @@
 "use client"
 
 import { cn } from "cn"
-import { SquarePenIcon } from "lucide-react"
 
-import { DEMO_PRESSED } from "@/features/landing/components/demo-panel"
-import { Dot } from "@/components/common/dot"
-import { buttonVariants } from "@/components/ui/button"
+import { Caret } from "@/components/common/caret"
+import { SUBTOPIC_TAG_SMALL } from "@/components/common/subtopic-list"
+import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
 
+// A name edited in place: its own field look, set close around the text.
+const IN_PLACE =
+  "-mx-3 -my-1 inline-block rounded-lg px-3 py-1 transition-colors"
+
 /** A topic as the topic review shows it (features/generation/components/topic-review.tsx),
- * small, as a row of its list: its checkbox, its name and its subtopics under it, and its edit
- * button at the end (the pointer's "edit" while `aimed`), pressed in while `pressed`. `hidden` keeps its
- * place unseen. */
+ * simplified for the promo, as a row of its list: ticked, its name and its subtopics under it. Its name
+ * (the pointer's "edit" while `aimed`) and the subtopic at `subtopic` (the pointer's "subtopic"),
+ * are edited in place: the one `editing` ("name" or "subtopic") shows as a field with a caret. */
 export function TopicCard({
   name,
   subtopics,
-  hidden = false,
   aimed = false,
-  pressed = false,
+  subtopic,
+  editing = null,
 }: {
   name: string
   subtopics: string[]
-  hidden?: boolean
   aimed?: boolean
-  pressed?: boolean
+  // The place of the subtopic edited in place.
+  subtopic?: number
+  editing?: string | null
 }) {
+  function field(text: string, key: string, target?: string) {
+    return (
+      <span
+        data-demo-target={aimed ? target : undefined}
+        className={cn(
+          IN_PLACE,
+          // Being typed in: highlighted, without a border.
+          editing === key && "bg-surface"
+        )}
+      >
+        {text}
+        {editing === key && <Caret />}
+      </span>
+    )
+  }
+
   return (
-    <span
-      className={cn(
-        "relative flex items-center gap-3 py-2.5 ps-3 pe-11 transition-opacity duration-300",
-        hidden && "opacity-0"
-      )}
-    >
+    <span className="flex items-center gap-4 px-5 py-4">
       <Checkbox
         checked
-        className="size-5 shrink-0 [&_[data-slot=checkbox-indicator]>svg]:size-3.5"
+        className="size-6 shrink-0 [&_[data-slot=checkbox-indicator]>svg]:size-4"
       />
-      <span className="min-w-0 space-y-0.5">
-        <span className="block font-medium">{name}</span>
-        <span className="block text-xs text-muted-foreground">
-          {subtopics.map((subtopic, position) => (
-            <span key={subtopic}>
-              {position > 0 && <Dot />}
-              {subtopic}
-            </span>
-          ))}
+      <span className="flex min-w-0 flex-1 flex-col gap-1">
+        <span className="text-base font-medium">
+          {field(name, "name", "edit")}
         </span>
-      </span>
-      <span
-        data-demo-target={aimed ? "edit" : undefined}
-        className={buttonVariants({
-          variant: "ghost",
-          size: "icon-sm",
-          className: cn(
-            "absolute end-2 top-1/2 -translate-y-1/2",
-            pressed && DEMO_PRESSED
-          ),
-        })}
-      >
-        <SquarePenIcon />
+        {/* The site's subtopic tags; the one edited in place highlighted as it's typed in. */}
+        <span className="flex flex-wrap gap-2">
+          {subtopics.map((item, position) => {
+            const edited = position === subtopic
+
+            return (
+              <Badge
+                key={position}
+                variant="outline"
+                data-demo-target={edited && aimed ? "subtopic" : undefined}
+                className={cn(
+                  SUBTOPIC_TAG_SMALL,
+                  edited && editing === "subtopic" && "bg-surface"
+                )}
+              >
+                {item}
+                {edited && editing === "subtopic" && <Caret />}
+              </Badge>
+            )
+          })}
+        </span>
       </span>
     </span>
   )

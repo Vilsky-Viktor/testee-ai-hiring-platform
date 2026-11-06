@@ -5,11 +5,20 @@ import { useTranslations } from "next-intl"
 import { useRef } from "react"
 
 import { Button } from "@/components/ui/button"
+import { TEXT_LINK } from "@/config/links"
 import { INVITE_EXAMPLES } from "@/config/invites"
 import { MAX_BULK_TEXT_LENGTH } from "@/config/limits"
 
+function example(href: string, name: React.ReactNode) {
+  return (
+    <a href={href} download className={TEXT_LINK}>
+      {name}
+    </a>
+  )
+}
+
 /** The invite dialog's file tab: the button that picks a CSV or TXT file, what it may hold, and
- * the example files to download. `onChoose` gets the file, or null with why when it's too large
+ * links to the example files. `onChoose` gets the file, or null with why when it's too large
  * to send (it isn't read: the service would refuse it the same way); "" when it's fine. */
 export function InviteFileTab({
   file,
@@ -57,24 +66,17 @@ export function InviteFileTab({
           event.target.value = ""
         }}
       />
-      <p className="px-6 py-2 text-center text-sm text-muted-foreground">
+      <p className="text-center text-sm text-muted-foreground">
         {maxInvites === null
           ? t("fileFormatsNoLimit")
           : t("fileFormats", { count: maxInvites })}
       </p>
-      <div className="flex flex-wrap justify-center gap-3">
-        {INVITE_EXAMPLES.map((example) => (
-          <Button
-            key={example.href}
-            variant="outline"
-            className="h-10 px-5 text-base"
-            render={<a href={example.href} download />}
-            nativeButton={false}
-          >
-            {t(example.label)}
-          </Button>
-        ))}
-      </div>
+      <p className="text-center text-sm text-muted-foreground">
+        {t.rich("exampleFiles", {
+          csv: (chunks) => example(INVITE_EXAMPLES.csv, chunks),
+          txt: (chunks) => example(INVITE_EXAMPLES.txt, chunks),
+        })}
+      </p>
     </>
   )
 }

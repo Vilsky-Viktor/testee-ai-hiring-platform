@@ -1,17 +1,20 @@
 "use client"
 
 import { cn } from "cn"
-import Link from "next/link"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import type { ReactNode } from "react"
 
+import { CandidateFinished } from "@/components/common/candidate-finished"
 import { CompanyLogo } from "@/components/common/company-logo"
 import { VerifiedBadge } from "@/components/common/verified-badge"
-import { InfoCard } from "@/components/common/warning-card"
+import { SummaryCards } from "@/components/common/summary-cards"
+import { Progress } from "@/components/ui/progress"
+import { InviteRules } from "@/components/common/invite-rules"
 import { bdi } from "@/lib/bidi"
+import { formatPercent } from "@/lib/format"
 
-/** What a candidate sees before starting: who invited them, the test, the time per question and
- * the rules, then `action` (the start button). A company member's preview shows the same. */
+/** What a candidate sees before starting: who invited them, the test, the time per question, how
+ * far they got on their way back and the rules, then `action` (the start button). A company member's preview shows the same. */
 export function InviteIntro({
   company,
   logoUrl,
@@ -20,6 +23,7 @@ export function InviteIntro({
   questionSeconds,
   totalMinutes,
   finished,
+  progress,
   voice = false,
   viaLink = false,
   fillScreen,
@@ -36,6 +40,8 @@ export function InviteIntro({
   // The whole interview at that pace, in minutes; left out while it isn't known.
   totalMinutes?: number | null
   finished: boolean
+  // How far they got, in percent, on their way back.
+  progress?: number | null
   // Taken by voice: a rule says the questions are read aloud and the voice is never kept.
   voice?: boolean
   // Opened from the test's shareable link: their own link comes by email, and extra time needs
@@ -51,11 +57,125 @@ export function InviteIntro({
   action: ReactNode
 }) {
   const t = useTranslations("invite")
+  const locale = useLocale()
   const height = screenHeight(fillScreen !== false)
-  // Taken by voice: read aloud, the voice only turned into text.
-  const voiceRule = voiceRules(voice, t("voice"))
+  // Its own page on a phone, where the start stays in reach; a preview, an embedded page and the
+  // voice step (too tall to pin) leave it in the flow.
+  const pinned = fillScreen !== false && !back && !voice
 
   const header = (
+    <InviteHeader
+      company={company}
+      logoUrl={logoUrl}
+      verifiedDomain={verifiedDomain}
+      title={title}
+      back={back}
+    />
+  )
+
+  if (finished) {
+    return (
+      <CandidateFinished
+        company={company}
+        logoUrl={logoUrl}
+        title={title ?? t("fallbackTitle")}
+      />
+    )
+  }
+
+  // The test and its start on the left, the rules on the right; stacked on phones, the start
+  // after the rules.
+  return (
+    // From md up the grid fills the screen (these pages have no header), so the rules can run its
+    // full height.
+    <div
+      className={cn(
+        "grid w-full items-center gap-10 max-md:text-center md:grid-cols-[5fr_6fr] md:gap-16",
+        height.grid
+      )}
+    >
+      <div className="space-y-8 text-center max-md:contents">
+        {header}
+        {/* The time per question and, when known, the whole interview's, side by side. */}
+        <SummaryCards
+          className={cn(
+            "text-start",
+            totalMinutes ? "sm:grid-cols-2!" : "grid-cols-1! sm:grid-cols-1!"
+          )}
+          rows={[
+            {
+              id: "time-per-question",
+              label: t("timePerQuestion"),
+              value: `${questionSeconds} ${t("secondsUnit")}`,
+            },
+            ...(totalMinutes
+              ? [
+                  {
+                    id: "total-minutes",
+                    label: t("wholeInterview"),
+                    value: `${totalMinutes} ${t("minutesUnit")}`,
+                  },
+                ]
+              : []),
+          ]}
+        />
+        {/* How far they got, on their way back. */}
+        {Boolean(progress) && (
+          <div data-testid="invite-progress" className="space-y-2">
+            <p className="text-sm text-muted-foreground">
+              {t("progress", {
+                percent: formatPercent(progress ?? 0, locale),
+              })}
+            </p>
+            <Progress value={progress ?? 0} aria-label={t("progressLabel")} />
+          </div>
+        )}
+        {/* On phones it stays at the bottom of the screen, whatever's being read above it. */}
+        <div
+          data-testid="invite-action"
+          className={cn(
+            "max-md:order-last",
+            pinned &&
+              "z-20 border-t bg-background p-4 max-md:fixed max-md:inset-x-0 max-md:bottom-0 md:border-t-0 md:bg-transparent md:p-0 max-md:[&_[data-slot=button]]:w-full"
+          )}
+        >
+          {action}
+        </div>
+      </div>
+      <InviteRules
+        company={company}
+        voice={voice}
+        viaLink={viaLink}
+        className={cn(pinned && "max-md:mb-36", height.rules)}
+      />
+    </div>
+  )
+}
+
+/** From md up the page fills the screen and the rules scroll within it; embedded, neither. */
+function screenHeight(fill: boolean) {
+  return fill
+    ? { grid: "md:min-h-dvh", rules: "md:max-h-dvh" }
+    : { grid: "", rules: "" }
+}
+
+/** Who invited them, whether testee has checked that company, and the test. */
+function InviteHeader({
+  company,
+  logoUrl,
+  verifiedDomain,
+  title,
+  back,
+}: {
+  company: string
+  logoUrl?: string | null
+  verifiedDomain?: string | null
+  title: string | null
+  back?: ReactNode
+}) {
+  const t = useTranslations("invite")
+
+  return (
     <div className="space-y-4">
       {back}
       {/* The logo, with who invited them under it, centered together. */}
@@ -101,132 +221,4 @@ export function InviteIntro({
       </h1>
     </div>
   )
-
-  if (finished) {
-    return (
-      <div className="w-full space-y-8 text-center">
-        {header}
-        <InfoCard className="mx-auto w-fit text-start">
-          {t("finished")}
-        </InfoCard>
-      </div>
-    )
-  }
-
-  // The test and its start on the left, the rules on the right; stacked on phones, the start
-  // after the rules.
-  return (
-    // From md up the grid fills the screen (these pages have no header), so the rules can run its
-    // full height.
-    <div
-      className={cn(
-        "grid w-full items-center gap-10 max-md:text-center md:grid-cols-[5fr_6fr] md:gap-16",
-        height.grid
-      )}
-    >
-      <div className="space-y-8 text-center max-md:contents">
-        {header}
-        {/* The time per question and, when known, the whole interview's, side by side. */}
-        <div className="flex justify-center gap-12">
-          <TimeFact
-            label={t("timePerQuestion")}
-            value={questionSeconds}
-            unit={t("secondsUnit")}
-          />
-          {totalMinutes ? (
-            <TimeFact
-              label={t("wholeInterview")}
-              value={totalMinutes}
-              unit={t("minutesUnit")}
-              testId="total-minutes"
-            />
-          ) : null}
-        </div>
-        <div className="max-md:order-last">{action}</div>
-      </div>
-      {/* The rules in a gray card, numbered in the brand color; on phones it spans the screen,
-          with square corners. Beside the start (md up) it runs the screen's full height, square,
-          scrolling inside when the rules don't fit. */}
-      <ol
-        data-testid="invite-rules"
-        className={cn(
-          "-mx-6 space-y-4 bg-surface p-8 text-start text-base text-muted-foreground sm:mx-0 sm:rounded-xl sm:p-10 md:flex md:flex-col md:self-stretch md:overflow-y-auto md:rounded-none md:[&>li:first-child]:mt-auto md:[&>li:last-child]:mb-auto",
-          height.rules
-        )}
-      >
-        {[
-          t("pickOne"),
-          t("changePick"),
-          t("timeRunsOut"),
-          ...voiceRule,
-          t("unanswered"),
-          viaLink ? t("savedLink") : t("saved"),
-          // Accommodations, and the human decision behind the score.
-          t.rich(viaLink ? "extraTimeLink" : "extraTime", {
-            company: company || t("theCompany"),
-            ...bdi,
-          }),
-          t.rich("people", { company: company || t("theCompany"), ...bdi }),
-          t.rich("stay", {
-            link: (chunks) => (
-              // In a new tab: the interview stays open, also inside a company's site, whose
-              // frame shows nothing else of testee.
-              <Link
-                href="/privacy"
-                target="_blank"
-                rel="noopener"
-                className="underline underline-offset-4"
-              >
-                {chunks}
-              </Link>
-            ),
-          }),
-        ].map((rule, index) => (
-          <li key={index} className="flex items-baseline gap-4">
-            <span className="w-6 shrink-0 text-xl font-medium text-primary tabular-nums">
-              {index + 1}.
-            </span>
-            <span>{rule}</span>
-          </li>
-        ))}
-      </ol>
-    </div>
-  )
-}
-
-/** One time before the start: its label over a large number and its unit. */
-export function TimeFact({
-  label,
-  value,
-  unit,
-  testId,
-}: {
-  label: string
-  value: number
-  unit: string
-  testId?: string
-}) {
-  return (
-    <p className="text-base text-muted-foreground" data-testid={testId}>
-      <span className="text-sm">{label}</span>
-      <span className="block">
-        <span className="text-3xl font-medium text-foreground tabular-nums">
-          {value}
-        </span>{" "}
-        {unit}
-      </span>
-    </p>
-  )
-}
-
-/** The rule a voice interview adds, or none. */
-function voiceRules(voice: boolean, rule: string) {
-  return voice ? [rule] : []
-}
-
-/** From md up the page fills the screen and the rules scroll within it; embedded, neither. */
-function screenHeight(fill: boolean) {
-  return fill
-    ? { grid: "md:min-h-dvh", rules: "md:max-h-dvh" }
-    : { grid: "", rules: "" }
 }

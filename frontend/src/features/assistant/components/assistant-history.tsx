@@ -112,7 +112,7 @@ export function AssistantHistory({
                   )}
                 </span>
               </TooltipTrigger>
-              <TooltipContent className="bidi-auto max-w-xs">
+              <TooltipContent className="bidi-auto">
                 {item.title}
               </TooltipContent>
             </Tooltip>

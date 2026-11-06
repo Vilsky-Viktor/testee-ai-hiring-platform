@@ -1,7 +1,7 @@
 import { expect, test } from "../fixtures"
 import { api, createCompany, createInterview, inviteCandidate } from "../helpers/api"
 import { inviteToken } from "../helpers/db"
-import { hoverFor, visit } from "../helpers/navigation"
+import { candidateRow, hoverFor, visit } from "../helpers/navigation"
 import { searchFor } from "../helpers/search"
 import { shot } from "../helpers/screenshots"
 import { ownerEmail, throwawayEmail } from "../helpers/users"
@@ -51,8 +51,7 @@ test("owner invites candidates with names three ways and finds one by name", asy
   await expect(dialog).toBeHidden({ timeout: 60_000 })
   await visit(owner, list)
   await expect(owner.getByText("Bob Stone", { exact: true }).filter({ visible: true })).toBeVisible()
-  const plainRow = owner.getByRole("link").filter({ hasText: plain })
-  const noName = plainRow.getByTestId("no-name")
+  const noName = candidateRow(owner, plain).getByTestId("no-name")
   await expect(noName).toBeVisible()
   // Its tooltip says when it's filled in, and that an owner can enter it (the tooltip has no
   // ARIA role).
@@ -110,7 +109,7 @@ test("the sign-in fills a name once and an owner's correction stays", async ({ s
   await inviteCandidate(owner, interviewId, email)
   const list = `/companies/${company.id}/interviews/${interviewId}?tab=candidates`
   await visit(owner, list)
-  await expect(owner.getByRole("link").filter({ hasText: email }).getByTestId("no-name").filter({ visible: true })).toBeVisible()
+  await expect(candidateRow(owner, email).getByTestId("no-name")).toBeVisible()
 
   const candidate = await signInAs(email, { ui: true }, "Maria Kowalska")
   const start = `/companies/invites/${await inviteToken(email)}/start`
@@ -119,16 +118,19 @@ test("the sign-in fills a name once and an owner's correction stays", async ({ s
   await visit(owner, list)
   await owner.getByText("Maria Kowalska", { exact: true }).filter({ visible: true }).click()
   await expect(owner).toHaveURL(/\/candidates\/[^/?]+$/, { timeout: 90_000 })
-  await expect(owner.getByRole("heading", { name: email })).toBeVisible()
-  // The name's line under the email, with its pencil for an owner: the visible one, as the page
-  // can hold a hidden copy of it while it renders again.
-  const nameLine = owner.locator("main h1 + div > p").filter({ visible: true })
+  // The name is the title, with its pencil for an owner and the email under it: the visible one,
+  // as the page can hold a hidden copy of it while it renders again.
+  const nameLine = owner
+    .getByRole("main")
+    .getByRole("heading", { level: 1 })
+    .filter({ visible: true })
   await expect(nameLine).toContainText("Maria Kowalska")
+  await expect(owner.getByRole("main").locator("span", { hasText: email }).filter({ visible: true })).toBeVisible()
   await expect(nameLine.getByRole("button")).toBeVisible()
   await shot(owner, "report-name")
 
   await nameLine.getByRole("button").click()
-  const field = owner.locator("main h1 + div input")
+  const field = owner.locator("main input:focus")
   await field.fill("Maria Nowak")
   await field.press("Enter")
   await expect(nameLine).toContainText("Maria Nowak")

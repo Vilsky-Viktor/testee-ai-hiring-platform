@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
+import { SELECT_FOCUS } from "@/config/menu-pill"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -69,7 +70,11 @@ export function ExtraTime({
     <DropdownMenu>
       <DropdownMenuTrigger
         render={
-          <Button variant="outline" className="gap-1.5" disabled={busy} />
+          <Button
+            variant="outline"
+            className={`gap-1.5 ${SELECT_FOCUS}`}
+            disabled={busy}
+          />
         }
       >
         <TimerIcon aria-hidden />

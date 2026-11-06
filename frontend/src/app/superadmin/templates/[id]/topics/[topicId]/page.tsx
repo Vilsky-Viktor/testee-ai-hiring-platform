@@ -6,7 +6,6 @@ import { PageHeader } from "@/components/common/page-header"
 import { SubtopicList } from "@/components/common/subtopic-list"
 import { TopicQuestionList } from "@/components/common/topic-question-list"
 import { WarningCard } from "@/components/common/warning-card"
-import { LIST_BOX } from "@/config/lists"
 import { languageOf } from "@/lib/locale"
 import { serverFetch } from "@/lib/server-api"
 import { translatedTitle } from "@/lib/site"
@@ -57,15 +56,13 @@ export default async function TemplateTopicPage({
       <WarningCard className="max-sm:-mx-6 max-sm:rounded-none">
         {t("aiWritten")}
       </WarningCard>
-      <div className={`${LIST_BOX} overflow-hidden`}>
-        <TopicQuestionList
-          language={template.language}
-          path={`${base}/topics/${topicId}/questions`}
-          regeneratePath={`/generate/superadmin/templates/${id}/questions`}
-          wrongPath={`${base}/questions`}
-          reportsPath={`${base}/questions`}
-        />
-      </div>
+      <TopicQuestionList
+        language={template.language}
+        path={`${base}/topics/${topicId}/questions`}
+        regeneratePath={`/generate/superadmin/templates/${id}/questions`}
+        wrongPath={`${base}/questions`}
+        reportsPath={`${base}/questions`}
+      />
     </main>
   )
 }

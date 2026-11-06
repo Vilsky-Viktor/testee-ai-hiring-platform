@@ -6,6 +6,7 @@ import { CheckIcon, ChevronDownIcon, SearchIcon } from "lucide-react"
 
 import { useId } from "react"
 
+import { SavedCheck } from "@/components/common/saved-check"
 import { PILL_FILL } from "@/config/floating-label"
 import { MAX_PICKER_SEARCH_LENGTH } from "@/config/limits"
 import { languageOf } from "@/lib/locale"
@@ -13,7 +14,8 @@ import { languageOf } from "@/lib/locale"
 /** A dropdown of choices with a search field above them, matching what each is called
  * (`labelOf`), each in its own language when `langOf` gives one (a language's own name).
  * `compact` is the small trigger that sits next to a text box's send button; `triggerClassName`
- * sizes the trigger to sit beside other controls. */
+ * sizes the trigger to sit beside other controls. `saved`, on a choice that saves itself: the
+ * check (SavedCheck) in the chevron's place. */
 export function SearchPicker<T extends string>({
   items,
   value,
@@ -27,6 +29,7 @@ export function SearchPicker<T extends string>({
   compact = false,
   triggerClassName,
   valueLabel,
+  saved,
 }: {
   items: readonly T[]
   value: T
@@ -42,6 +45,7 @@ export function SearchPicker<T extends string>({
   triggerClassName?: string
   // What the trigger shows for the chosen item, when not its label (a currency's code).
   valueLabel?: (item: T) => string
+  saved?: string | null
 }) {
   // Named by its label and the value it shows, so the visible text is in its name (WCAG 2.5.3).
   const labelId = useId()
@@ -62,10 +66,10 @@ export function SearchPicker<T extends string>({
       <Combobox.Trigger
         aria-labelledby={`${labelId} ${valueId}`}
         className={cn(
-          "relative flex items-center justify-between gap-3 rounded-xl border border-transparent normal-case transition-colors outline-none hover:bg-surface focus-visible:border-ring-gradient disabled:opacity-50",
-          // Compact, it sits inside a grey input card, a bit lighter than the card.
+          "relative flex items-center justify-between gap-3 rounded-xl border border-transparent normal-case transition-colors outline-none hover:bg-surface focus-visible:border-ring-gradient disabled:opacity-50 data-popup-open:border-ring-gradient",
+          // Compact, it sits inside a grey input card, in the pill's fill (config/floating-label.ts).
           compact
-            ? // On a grey field: hovered a step darker than the field, not the field's own grey.
+            ? // Hovered a step darker than that, not the field's own grey.
               cn(PILL_FILL, "h-9 w-48 bg-(--pill) px-4 text-sm hover:bg-input")
             : "h-12 w-full max-w-xs bg-surface px-5 text-base",
           triggerClassName
@@ -79,14 +83,23 @@ export function SearchPicker<T extends string>({
             {valueLabel ? (item: T) => valueLabel(item) : undefined}
           </Combobox.Value>
         </span>
-        <ChevronDownIcon
-          className={cn("text-muted-foreground", compact ? "size-4" : "size-5")}
-        />
+        {/* One item at the end, however many it holds, so the chevron stays at the edge. */}
+        <span className="flex shrink-0 items-center">
+          {!saved && (
+            <ChevronDownIcon
+              className={cn(
+                "text-muted-foreground",
+                compact ? "size-4" : "size-5"
+              )}
+            />
+          )}
+          <SavedCheck text={saved} className={cn(!saved && "size-0")} />
+        </span>
       </Combobox.Trigger>
       <Combobox.Portal>
         <Combobox.Positioner sideOffset={6} align="start" className="z-50">
           <Combobox.Popup className="w-max max-w-[calc(100vw-2rem)] min-w-(--anchor-width) overflow-hidden rounded-xl bg-popover text-popover-foreground shadow-md ring-1 ring-foreground/10">
-            <div className="flex items-center gap-2 border-b px-3 focus-within:border-ring">
+            <div className="relative flex items-center gap-2 border-b px-3 focus-within:border-ring-gradient">
               <SearchIcon className="size-4 text-muted-foreground" />
               <Combobox.Input
                 maxLength={MAX_PICKER_SEARCH_LENGTH}

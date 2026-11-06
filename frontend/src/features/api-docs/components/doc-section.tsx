@@ -1,3 +1,5 @@
+import { KeepAcronyms } from "@/components/common/keep-acronyms"
+
 /** A part of the developer docs under its title, like the page's others ("Base URL"). */
 export function DocSection({
   title,
@@ -8,7 +10,9 @@ export function DocSection({
 }) {
   return (
     <section className="space-y-6">
-      <h2 className="font-heading text-2xl font-medium">{title}</h2>
+      <h2 className="font-heading text-2xl font-medium">
+        {typeof title === "string" ? <KeepAcronyms text={title} /> : title}
+      </h2>
       {children}
     </section>
   )

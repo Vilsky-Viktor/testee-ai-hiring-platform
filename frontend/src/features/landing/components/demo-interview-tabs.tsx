@@ -1,50 +1,73 @@
 "use client"
 
 import { cn } from "cn"
+import {
+  CompassIcon,
+  ListChecksIcon,
+  NotebookPenIcon,
+  SettingsIcon,
+  UsersIcon,
+} from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { MenuCount } from "@/components/common/menu-count"
-import { CURRENT_TAB } from "@/config/tab-nav"
 
-const TABS = ["topics", "candidates", "notes", "settings"] as const
+const TABS = ["topics", "candidates", "notes", "discover", "settings"] as const
+const ICONS = {
+  topics: ListChecksIcon,
+  candidates: UsersIcon,
+  notes: NotebookPenIcon,
+  discover: CompassIcon,
+  settings: SettingsIcon,
+}
 
-/** An interview's tabs as the site's tabs show them (components/common/tab-nav.tsx), for the
- * landing: topics, candidates and notes with their `counts`, and settings with `settings`, the
- * `current` one open; each is the pointer's "<tab>Tab" ("notesTab"). */
+/** An interview's menu as the site's side menu shows it (components/common/side-menu.tsx), every
+ * page of it, for the landing: the `current` one on a grey row, with their `counts`; each is the
+ * pointer's "<tab>Tab" ("notesTab"). */
 export function DemoInterviewTabs({
   current,
   counts,
-  settings = false,
 }: {
   current: (typeof TABS)[number]
   counts: Partial<Record<(typeof TABS)[number], number>>
-  settings?: boolean
 }) {
   const t = useTranslations("interviews")
   const labels = {
     topics: t("topicsTab"),
     candidates: t("candidates"),
     notes: t("notes"),
+    discover: t("discover"),
     settings: t("settings"),
   }
 
   return (
-    <span className="flex gap-6 border-b px-1">
-      {TABS.filter((tab) => settings || tab !== "settings").map((tab) => (
-        <span
-          key={tab}
-          data-demo-target={`${tab}Tab`}
-          className={cn(
-            "-mb-px flex items-center gap-2 border-b-2 pb-2 text-base whitespace-nowrap lowercase",
-            tab === current
-              ? CURRENT_TAB
-              : "border-transparent text-muted-foreground"
-          )}
-        >
-          {labels[tab]}
-          <MenuCount count={counts[tab]} />
-        </span>
-      ))}
+    <span className="flex w-48 shrink-0 flex-col gap-1">
+      {TABS.map((tab) => {
+        const Icon = ICONS[tab]
+        const open = tab === current
+
+        return (
+          <span
+            key={tab}
+            data-demo-target={`${tab}Tab`}
+            aria-current={open ? "page" : undefined}
+            className={cn(
+              "flex items-center gap-2.5 rounded-xl px-3 py-2 text-base lowercase",
+              open ? "bg-surface text-foreground" : "text-muted-foreground"
+            )}
+          >
+            <Icon
+              aria-hidden
+              className={cn("size-5 shrink-0", open && "text-primary")}
+            />
+            <span className="min-w-0 flex-1 whitespace-nowrap">
+              {labels[tab]}
+              <span className="blue-dot">.</span>
+            </span>
+            <MenuCount count={counts[tab]} />
+          </span>
+        )
+      })}
     </span>
   )
 }

@@ -1,22 +1,10 @@
 /* The other landing sections' own promo effects (the shared ones and create's: promo.css). */
 
-/* The "what candidates see" promo's own effects (candidates-demo.tsx, `data-candidates-promo`).
-   The pledge's check box as the pointer heads for it: a soft ring of the primary colour swelling
-   around it and back. */
-@keyframes promo-halo {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 transparent;
-  }
-  50% {
-    box-shadow: 0 0 0 0.4rem
-      color-mix(in oklab, var(--primary) 25%, transparent);
-  }
-}
-
+/* The "what candidates see" promo's own effects (candidates-demo.tsx, `data-candidates-promo`):
+   the pledge's check box, as the pointer heads for it, lights up as a field does (promo.css). */
 @media (prefers-reduced-motion: no-preference) {
   [data-candidates-promo] [data-spotlight] > [data-slot="checkbox"] {
-    animation: promo-halo 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    animation: promo-spotlight 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 }
 

@@ -20,6 +20,7 @@ import {
   type InviteSource,
   INVITE_SPEED,
 } from "@/config/invite-demo"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
 import { SEE_THROUGH_CARD } from "@/config/landing-backgrounds"
 import { ON_SCREEN, useDemoSteps } from "@/hooks/use-demo-steps"
 import { boxOf, sourceWires } from "@/lib/source-wires"
@@ -50,6 +51,7 @@ export function InviteStage({
   // The pill on the interview card's top edge.
   interview: string
 }) {
+  const { title } = useDemoContent("invite")
   const { ref, index } = useDemoSteps<HTMLDivElement>(ON_SCREEN)
   const playing = ON_SCREEN[index].name === "playing"
   // The cards as laid out now, by their place (the sources, then the interview's and Slack's),
@@ -251,7 +253,7 @@ export function InviteStage({
         <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-background px-4 py-1 text-sm text-muted-foreground lowercase">
           {interview}
         </span>
-        <InterviewHeader {...DEMO_INVITE_INTERVIEW} large />
+        <InterviewHeader {...DEMO_INVITE_INTERVIEW} title={title} card />
         <ArrivingCandidates arrived={arrived} />
       </div>
       {/* The middle column stays empty on tablets, for Slack's wire (phones have no wires). */}

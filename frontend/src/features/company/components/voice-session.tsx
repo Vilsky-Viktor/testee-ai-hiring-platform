@@ -9,12 +9,10 @@ import { RoundFooter } from "@/components/common/round-footer"
 import { Button } from "@/components/ui/button"
 import { CARD_PADDING } from "@/config/cards"
 import { ChoiceOptions } from "@/features/company/components/choice-options"
-import { MiraWave } from "@/features/company/components/mira-wave"
 import { FinishDialog } from "@/features/company/components/session-finish"
 import { SessionTop } from "@/features/company/components/session-header"
 import type { SessionPlayProps } from "@/features/company/components/session-play"
-import { VoiceHeard } from "@/features/company/components/voice-heard"
-import { VoiceTurn } from "@/features/company/components/voice-turn"
+import { VoiceStatusCard } from "@/features/company/components/voice-status"
 import { useIntegritySignals } from "@/hooks/use-integrity-signals"
 import {
   useQuestionFocus,
@@ -22,13 +20,29 @@ import {
 } from "@/hooks/use-session-answers"
 import { useVoiceInterviewer } from "@/hooks/use-voice-interviewer"
 import { useVoiceWaves } from "@/hooks/use-voice-waves"
+import { formatList } from "@/lib/format"
 import { languageOf } from "@/lib/locale"
 import { proseAndCode } from "@/lib/question-text"
 import type { VoiceAnnouncement } from "@/types/round"
 
-/** A voice interview's screen: the session's header on top; on one side Mira (the AI
- * interviewer) with the wave her voice moves and her status, then the candidate's own wave and the
- * answer she heard; on the other the question she reads and its options as the same cards as in click mode; at the
+/** What she understood of the open question's answer, by its letters; nothing yet otherwise. */
+function heardLetters(
+  heard: { question: string; options: number[] } | null,
+  questionId: string | undefined,
+  locale: string
+) {
+  if (heard?.question !== questionId || !heard?.options.length) {
+    return null
+  }
+
+  return formatList(
+    heard.options.map((option) => String.fromCharCode(65 + option)),
+    locale
+  )
+}
+
+/** A voice interview's screen: the session's header on top; on one side the status card (Mira, the
+ * AI interviewer, one wave, what's happening and the answer she heard); on the other the question she reads and its options as the same cards as in click mode; at the
  * bottom only End (and Next once an option is tapped, for anyone answering without their
  * voice). She starts speaking as it
  * opens: the start page allowed the microphone and sound. */
@@ -50,6 +64,10 @@ export function VoiceSession({
   const [confirmFinish, setConfirmFinish] = useState(false)
   // The question whose clock ran out, announced to screen readers; the screen moves on quietly.
   const [timedOut, setTimedOut] = useState<string | null>(null)
+  const [heard, setHeard] = useState<{
+    question: string
+    options: number[]
+  } | null>(null)
   useIntegritySignals(session.id, session.status === "in_progress")
   const questionId = question?.question_id
   const multi = Boolean(question?.multi)
@@ -69,8 +87,10 @@ export function VoiceSession({
   const sendAndAdvance = () => sendThen(() => moveOn("next"))
   // A clear spoken answer is saved at once: Mira says so ("B, saved.", the last question's too),
   // then the next question opens without "Moving on".
-  const saveAndAdvance = (picks: number[]) =>
-    sendThen(
+  const saveAndAdvance = (picks: number[]) => {
+    setHeard({ question: questionId ?? "", options: picks })
+
+    return sendThen(
       async () => {
         await voice.announceSaved(picks)
         await onAdvance()
@@ -78,11 +98,15 @@ export function VoiceSession({
       false,
       picks
     )
+  }
   // Spoken answers pick options as taps do, and a spoken yes sends them as Next does.
   // Mira's "{letter}, saved." is said only on a single-answer question.
   const letters = multi ? 0 : (question?.options.length ?? 0)
   const voice = useVoiceInterviewer(session.id, questionId, chosen, letters, {
-    onPick: (question, options) => setPick({ question, options }),
+    onPick: (question, options) => {
+      setPick({ question, options })
+      setHeard({ question, options })
+    },
     onConfirm: sendAndAdvance,
     onSave: saveAndAdvance,
     failedMessage: t("voiceFailed"),
@@ -90,6 +114,7 @@ export function VoiceSession({
   // The candidate's wave stays flat while Mira speaks: the microphone hears her from the speakers
   // too, and it isn't listening then.
   const waves = useVoiceWaves(voice.meter, voice.status === "speaking")
+  const heardNow = heardLetters(heard, questionId, locale)
 
   // Mira starts as the screen opens.
   useEffect(() => {
@@ -136,31 +161,18 @@ export function VoiceSession({
           })
         }}
       />
-      {/* Two parts, 30% and 70%, stacked on phones: the voices (Mira's, then the candidate's with
-          the answer heard, a fading line between with whose turn it is) on the start side, the
-          question and its options on the other. */}
-      <div className="grid grid-cols-1 gap-10 max-sm:gap-5 lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:items-start lg:gap-12">
-        <section
-          // On phones Mira and the candidate side by side, whose turn under them, so the
-          // question shows sooner.
-          aria-label={t("voiceInterviewer")}
-          data-testid="voice-interviewer"
-          data-status={voice.status}
-          className="flex flex-col items-center gap-12 text-center max-sm:grid max-sm:grid-cols-2 max-sm:items-start max-sm:gap-x-4 max-sm:gap-y-2 lg:sticky lg:top-6 [&>*]:w-full max-sm:[&>[data-testid=voice-turn]]:order-last max-sm:[&>[data-testid=voice-turn]]:col-span-2"
-        >
-          <MiraWave
-            waveRef={waves.mira}
-            status={voice.status}
-            picked={chosen.length > 0}
-            onSoundOn={() => void voice.start()}
-          />
-          <VoiceTurn status={voice.status} />
-          <VoiceHeard
-            waveRef={waves.you}
-            problem={voice.problem}
-            status={voice.status}
-          />
-        </section>
+      {/* Two parts, 30% and 70%, stacked below that: the one status card, then the question and
+          its options. */}
+      <div className="grid grid-cols-1 gap-6 max-sm:gap-4 lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:items-start lg:gap-8">
+        <VoiceStatusCard
+          miraRef={waves.mira}
+          youRef={waves.you}
+          status={voice.status}
+          picked={chosen.length > 0}
+          heard={heardNow}
+          problem={voice.problem}
+          onSoundOn={() => void voice.start()}
+        />
         {question && (
           // The question and the options in the interview's own language, so screen readers read
           // them with the right voice; the tag is the site's.
@@ -168,7 +180,7 @@ export function VoiceSession({
             key={question.question_id}
             ref={questionRef}
             {...languageOf(session.language)}
-            className="flex w-full flex-col gap-6"
+            className="flex w-full flex-col gap-6 motion-safe:animate-[question-in_0.2s_ease-out]"
           >
             {/* The question in its grey card, as in click mode; its code examples under it. */}
             <div
@@ -205,17 +217,17 @@ export function VoiceSession({
       <RoundFooter>
         <Button
           variant="ghost"
-          className="h-12 px-6 text-base"
+          className="h-12 shrink-0 px-6 text-base text-muted-foreground max-sm:px-3"
           disabled={finishing || sending}
           onClick={() => setConfirmFinish(true)}
           data-testid="finish-interview"
         >
           {finishing ? rounds("finishing") : t("voiceEnd")}
         </Button>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 max-sm:flex-1">
           {chosen.length > 0 && (
             <Button
-              className="h-12 px-6 text-base"
+              className="h-12 px-8 text-base max-sm:w-full"
               disabled={sending}
               onClick={sendAndAdvance}
               data-testid="next-question"

@@ -1,10 +1,12 @@
 import { expect, test } from "./helpers/templates";
 import { loaded, settled } from "./helpers/waits";
 
-// How the public pages fit a phone: wider previews, a centered footer in one column, popups
+// How the public pages fit a phone: wider previews, a footer menu in two columns, popups
 // across the screen, no keyboard hint on a touch screen. Desktop keeps its layout.
 
 const isPhone = (name: string) => name === "phone";
+// The page's side padding (px-6, CLAUDE.md's rule 6).
+const GUTTER = 24;
 
 // The home page's title: its two lines close together, as on desktop.
 test("the home page's title lines sit close together", { tag: "@phone" }, async ({ page }) => {
@@ -19,11 +21,11 @@ test("the home page's title lines sit close together", { tag: "@phone" }, async 
   expect(lineHeight).toBe(fontSize);
 });
 
-// On phones the footer is one centered column; on desktop its links stand in three columns.
-test("the footer is one centered column on phones", { tag: "@phone" }, async ({ page }, info) => {
+// On desktop the footer's menu stands in three columns; on phones in two, so the footer stays short.
+test("the footer's menu is two columns on phones", { tag: "@phone" }, async ({ page }, info) => {
   await page.goto("/faq");
   const footer = page.getByRole("contentinfo");
-  const links = footer.getByRole("navigation").getByRole("link");
+  const links = footer.getByRole("navigation").first().getByRole("link");
   const lefts = await links.evaluateAll((elements) =>
     elements.map((element) => Math.round(element.getBoundingClientRect().left)),
   );
@@ -35,22 +37,10 @@ test("the footer is one centered column on phones", { tag: "@phone" }, async ({ 
     return;
   }
 
-  const width = page.viewportSize()!.width;
-  const centers = await links.evaluateAll((elements) =>
-    elements.map((element) => {
-      const box = element.getBoundingClientRect();
-
-      return box.left + box.width / 2;
-    }),
-  );
-
-  for (const center of centers) {
-    expect(Math.abs(center - width / 2)).toBeLessThan(4);
-  }
-
+  expect(columns).toBe(2);
   const icon = footer.locator('[role="img"] svg').first();
   expect((await icon.boundingBox())!.width).toBe(32);
-  await expect(footer.locator("[data-assistant-toggle]")).toHaveCSS(
+  await expect(page.getByRole("main").locator("[data-assistant-toggle]")).toHaveCSS(
     "height",
     "48px",
   );
@@ -98,8 +88,9 @@ test("the send shortcut hint shows only without a touch screen", { tag: "@phone"
   }
 });
 
-// On phones the home page's box to start in and the price lists reach the screen's edges.
-test("the home page's box and the prices span a phone's width", { tag: "@phone-only" }, async ({
+// On phones the home page's box to start in reaches the screen's edges; the pricing page's cards
+// fill the room inside the page's gutters.
+test("the home page's box spans a phone's width and the prices the page's", { tag: "@phone-only" }, async ({
   page,
 }) => {
   test.setTimeout(120_000);
@@ -113,8 +104,8 @@ test("the home page's box and the prices span a phone's width", { tag: "@phone-o
 
   await page.goto("/pricing");
   const prices = (await page.locator("main ul").first().boundingBox())!;
-  expect(Math.round(prices.x)).toBe(0);
-  expect(Math.round(prices.width)).toBe(width);
+  expect(Math.round(prices.x)).toBe(GUTTER);
+  expect(Math.round(prices.width)).toBe(width - 2 * GUTTER);
 });
 
 // Opening the home page doesn't put the cursor in its box: on a phone the keyboard would cover
@@ -126,20 +117,19 @@ test("the home page's box isn't focused on load", { tag: "@phone" }, async ({ pa
   await expect(page.locator("main textarea").first()).not.toBeFocused();
 });
 
-// On phones a test's practice page has its level and language under the title, then its start.
-test("a practice page starts under its tags on a phone", { tag: "@phone-only" }, async ({
+// On phones a test's practice page has its start under the title, then its facts.
+test("a practice page starts under its title on a phone", { tag: "@phone-only" }, async ({
   page,
   addTemplate,
 }) => {
   test.setTimeout(120_000);
   const template = await addTemplate();
   await page.goto(`/practice/${template.slug}`);
-  const tags = (await page
-    .locator("main [data-slot=badge]")
-    .first()
-    .boundingBox())!;
+  const title = (await page.locator("h1").boundingBox())!;
   const start = (await page.getByTestId("start-practice").boundingBox())!;
-  expect(start.y).toBeGreaterThan(tags.y + tags.height);
+  const facts = (await page.getByTestId("practice-facts").boundingBox())!;
+  expect(start.y).toBeGreaterThanOrEqual(title.y + title.height);
+  expect(facts.y).toBeGreaterThanOrEqual(start.y + start.height);
 });
 
 // The header's logo link is named by what it shows ("t." on a phone, the whole logo on a wider
@@ -165,7 +155,7 @@ test("on a phone the header's links are in the menu left of the logo", { tag: "@
   await expect(banner.getByRole("navigation")).toHaveCount(0);
   const burger = banner.getByRole("button").first();
   await expect(burger).toHaveAccessibleName(/.+/);
-  const [burgerBox, logoBox] = [await burger.boundingBox(), await banner.locator('a[href="/"]').boundingBox()];
+  const [burgerBox, logoBox] = [await burger.boundingBox(), await banner.getByRole("link").first().boundingBox()];
   expect(burgerBox!.x + burgerBox!.width).toBeLessThanOrEqual(logoBox!.x);
 
   const menu = page.getByRole("dialog");
@@ -173,7 +163,7 @@ test("on a phone the header's links are in the menu left of the logo", { tag: "@
   const links = menu.getByRole("navigation").getByRole("link");
   await expect(links.first()).toBeVisible();
   expect(await links.evaluateAll((items) => items.map((item) => item.getAttribute("href")))).toEqual([
-    "/companies",
+    "/dashboard",
     "/features",
     "/hiring-flow",
     "/pricing",

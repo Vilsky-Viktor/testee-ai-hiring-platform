@@ -1,7 +1,11 @@
+"use client"
+
 import { useTranslations } from "next-intl"
+import { useState } from "react"
 
 import { AiAppsInstructions } from "@/components/common/ai-apps-setup"
 import { Dotted } from "@/components/common/dot"
+import { DotsMenu } from "@/components/common/dots-menu"
 import { IntegrationRow } from "@/features/company/components/integration-row"
 import { Badge } from "@/components/ui/badge"
 import { MCP_MARK } from "@/config/ai-apps"
@@ -20,6 +24,7 @@ export function AiAppsRow({
 }) {
   const t = useTranslations("aiApps")
   const ats = useTranslations("ats")
+  const [info, setInfo] = useState(false)
   const names = [...new Set(connections.map((item) => item.client_name))]
 
   return (
@@ -34,10 +39,10 @@ export function AiAppsRow({
           className="size-full object-contain dark:brightness-0 dark:invert"
         />
       }
-      name={t("name")}
+      name={t("title")}
       status={
         names.length > 0 && (
-          <Badge className="h-7 shrink-0 px-3 text-sm font-light">
+          <Badge className="h-8 shrink-0 px-4 text-sm font-light">
             {ats("statusConnected")}
           </Badge>
         )
@@ -45,7 +50,12 @@ export function AiAppsRow({
       text={names.length > 0 ? <Dotted items={names} /> : t("rowText")}
       actions={
         <span className={INTEGRATION_ACTIONS}>
-          <AiAppsInstructions />
+          <AiAppsInstructions open={info} onOpenChange={setInfo} noButton />
+          <DotsMenu
+            items={[
+              { label: ats("instructions"), onClick: () => setInfo(true) },
+            ]}
+          />
         </span>
       }
     />

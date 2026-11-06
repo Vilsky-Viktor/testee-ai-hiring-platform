@@ -10,10 +10,11 @@ import { byId } from "@/lib/paged-list"
 import type { NewsPost } from "@/types/news"
 import { LIST_BOX, ROW_HOVER } from "@/config/lists"
 
-/** The news page's posts, newest first, one after another. `initial` is the server's first
+/** The news page's posts, newest first, by month. `initial` is the server's first
  * page; the next loads near the end. */
 export function NewsList({ initial }: { initial: NewsPost[] }) {
   const t = useTranslations("news")
+  const locale = useLocale()
   const { items, loadMore } = usePagedList("/site/news", byId, initial)
 
   if (items.length === 0) {
@@ -22,6 +23,14 @@ export function NewsList({ initial }: { initial: NewsPost[] }) {
     )
   }
 
+  // The calendar month a post's day is in, the same in every time zone.
+  const month = (post: NewsPost) =>
+    new Intl.DateTimeFormat(locale, {
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    }).format(new Date(post.published_on))
+
   return (
     <VirtualList
       items={items}
@@ -29,33 +38,50 @@ export function NewsList({ initial }: { initial: NewsPost[] }) {
       estimateSize={160}
       onEndReached={loadMore}
       className={`${LIST_BOX} overflow-hidden`}
-      renderItem={(post) => <Post post={post} />}
+      renderItem={(post, index) => (
+        <>
+          {/* A month's first post carries the month. */}
+          {(index === 0 || month(items[index - 1]) !== month(post)) && (
+            <h2
+              data-testid="news-month"
+              className="no-dot bg-surface px-6 py-2 text-sm text-muted-foreground"
+            >
+              {month(post)}
+            </h2>
+          )}
+          <Post post={post} />
+        </>
+      )}
     />
   )
 }
 
-/** One post: its title with the site's blue dot, as an article's section heading, its day just
- * under it, and its text as plain text with its line breaks. Its id is the feed's link to it. */
+/** One post: its day in a column of its own (above it, on phones), its title with the site's blue
+ * dot, and its text as plain text with its line breaks, kept to a readable width. Its id is the
+ * feed's link to it. */
 function Post({ post }: { post: NewsPost }) {
   const locale = useLocale()
   const heading = postHeading(post.title)
 
   return (
-    <article id={post.id} className={`space-y-3 p-6 ${ROW_HOVER} max-sm:py-9`}>
-      <div className="space-y-1">
-        <h2 className="no-dot font-heading text-2xl font-medium break-words normal-case">
+    <article
+      id={post.id}
+      className={`grid gap-x-8 gap-y-2 p-6 ${ROW_HOVER} md:grid-cols-[9rem_minmax(0,1fr)]`}
+    >
+      <p className="text-sm text-muted-foreground italic md:pt-1.5">
+        <time dateTime={post.published_on}>
+          {formatDay(post.published_on, locale)}
+        </time>
+      </p>
+      <div className="max-w-3xl min-w-0 space-y-3">
+        <h3 className="no-dot font-heading text-2xl font-medium break-words normal-case">
           {heading.text}
           {heading.dot && <span className="blue-dot">.</span>}
-        </h2>
-        <p className="text-sm text-muted-foreground italic">
-          <time dateTime={post.published_on}>
-            {formatDay(post.published_on, locale)}
-          </time>
+        </h3>
+        <p className="text-base leading-relaxed break-words whitespace-pre-line text-muted-foreground">
+          {post.text}
         </p>
       </div>
-      <p className="text-base leading-relaxed break-words whitespace-pre-line">
-        {post.text}
-      </p>
     </article>
   )
 }

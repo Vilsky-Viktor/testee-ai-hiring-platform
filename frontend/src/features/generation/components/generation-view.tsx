@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
@@ -8,12 +7,16 @@ import { toast } from "sonner"
 
 import { useAuth } from "@/providers/auth-provider"
 import { BackLink } from "@/components/common/back-link"
-import { CancelGeneration } from "@/features/generation/components/cancel-generation"
-import { GenerationProgress } from "@/features/generation/components/generation-progress"
+import { CancelGeneration } from "@/components/common/cancel-generation"
+import {
+  Message,
+  WithBack,
+} from "@/features/generation/components/generation-message"
+import { GenerationProgress } from "@/components/common/generation-progress"
 import { TopicReview } from "@/features/generation/components/topic-review"
 import { SignInPrompt } from "@/components/common/sign-in-prompt"
-import { Button } from "@/components/ui/button"
 import { useGenerationPoll } from "@/hooks/use-generation-poll"
+import { useMadeFrom } from "@/hooks/use-draft"
 import { useHumanCheck } from "@/hooks/use-human-check"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import { humanHeaders } from "@/lib/human-check"
@@ -25,19 +28,27 @@ export function GenerationView({
   next,
   backHref,
   backLabel,
+  leaveLabel,
+  company,
 }: {
   path: string
   // Where to go once the test is ready.
   next: string
   backHref: string
   backLabel: string
+  // The button away from the questions being written; none without it.
+  leaveLabel?: string
+  company?: string
 }) {
   const t = useTranslations("generation")
   useHumanCheck()
   const billing = useTranslations("billing")
+  const common = useTranslations("common")
   const { user, loading } = useAuth()
   const router = useRouter()
   const [generation, setGeneration] = useState<Generation | null>(null)
+  const job = useMadeFrom(generation?.id)
+  const status = generation?.status
   const [missing, setMissing] = useState(false)
   // Bumped after a review so polling starts again.
   const [round, setRound] = useState(0)
@@ -47,10 +58,10 @@ export function GenerationView({
   )
 
   useEffect(() => {
-    if (generation?.status === "done") {
+    if (status === "done") {
       router.replace(next)
     }
-  }, [generation, next, router])
+  }, [status, next, router])
 
   async function submitReview(
     selected: number[],
@@ -106,7 +117,7 @@ export function GenerationView({
     )
   }
 
-  if (generation?.status === "cancelled") {
+  if (status === "cancelled") {
     return (
       <WithBack href={backHref} label={backLabel}>
         <Message back={backHref} text={t("cancelled")} />
@@ -116,7 +127,7 @@ export function GenerationView({
 
   const cancel = <CancelGeneration path={path} leaveTo={backHref} />
 
-  if (generation?.status === "failed") {
+  if (status === "failed") {
     return (
       <WithBack href={backHref} label={backLabel}>
         <Message back={backHref} text={t("failed")} onRetry={retry} />
@@ -132,18 +143,25 @@ export function GenerationView({
         topics={generation.topics}
         maxTopics={generation.max_topics}
         maxSubtopics={generation.max_subtopics}
+        minAddedSubtopics={generation.min_added_subtopics}
         back={
           <BackLink href={backHref} help="reviewTopics">
             {backLabel}
           </BackLink>
         }
-        cancel={cancel}
+        cancel={
+          <CancelGeneration
+            path={path}
+            leaveTo={backHref}
+            label={common("cancel")}
+          />
+        }
         onSubmit={submitReview}
       />
     )
   }
 
-  if (!generation || generation.status === "done") {
+  if (status === "done") {
     return null
   }
 
@@ -152,69 +170,10 @@ export function GenerationView({
       generation={generation}
       backHref={backHref}
       backLabel={backLabel}
-      action={cancel}
+      leaveLabel={leaveLabel}
+      company={company}
+      job={job}
+      action={generation && cancel}
     />
-  )
-}
-
-function WithBack({
-  href,
-  label,
-  children,
-}: {
-  href: string
-  label: string
-  children: React.ReactNode
-}) {
-  return (
-    <div className="relative">
-      <BackLink href={href}>{label}</BackLink>
-      {children}
-    </div>
-  )
-}
-
-function Message({
-  back,
-  text,
-  onRetry,
-}: {
-  // The company's tests, where a new one can be started.
-  back: string
-  text: string
-  onRetry?: () => Promise<void>
-}) {
-  const t = useTranslations("generation")
-  const [retrying, setRetrying] = useState(false)
-
-  async function retry() {
-    setRetrying(true)
-    await onRetry?.()
-    setRetrying(false)
-  }
-
-  return (
-    <div className="flex flex-col items-center gap-8 py-24 text-center">
-      <p className="text-base text-muted-foreground">{text}</p>
-      <div className="flex flex-wrap justify-center gap-3">
-        {onRetry && (
-          <Button
-            className="h-12 px-6 text-base"
-            disabled={retrying}
-            onClick={retry}
-          >
-            {retrying ? t("retrying") : t("retry")}
-          </Button>
-        )}
-        <Button
-          variant="outline"
-          className="h-12 px-6 text-base"
-          render={<Link href={back} />}
-          nativeButton={false}
-        >
-          {t("startOver")}
-        </Button>
-      </div>
-    </div>
   )
 }

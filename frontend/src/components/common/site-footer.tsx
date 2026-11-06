@@ -6,11 +6,12 @@ import {
   XIcon,
   YouTubeIcon,
 } from "@/components/icons/brand-icons"
-import { AskAgentButton } from "@/components/common/ask-agent-button"
+import { FooterLink } from "@/components/common/footer-link"
 import { LanguageSwitch } from "@/components/common/language-switch"
 import { LocalizedLink } from "@/components/common/localized-link"
+import { ThemeModes } from "@/components/common/theme-toggle"
 import { Wordmark } from "@/components/common/wordmark"
-import { FOOTER_COLUMNS } from "@/config/navigation"
+import { FOOTER_COLUMNS, FOOTER_LEGAL } from "@/config/navigation"
 import { OPERATOR } from "@/config/operator"
 
 // A social icon: the text colour (white in dark) and a little larger on hover.
@@ -23,60 +24,77 @@ export async function SiteFooter() {
 
   return (
     <footer className="border-t">
-      {/* On phones: everything centered in one column, with bigger icons, button and links. */}
-      <div className="mx-auto flex max-w-page flex-wrap justify-between gap-8 px-6 py-8 text-sm text-muted-foreground max-sm:flex-col max-sm:items-center max-sm:gap-10 max-sm:py-12 max-sm:text-center sm:gap-x-16">
-        <div className="space-y-6 max-sm:flex max-sm:flex-col max-sm:items-center">
-          {/* The logo, as in the header, leading home. */}
-          <LocalizedLink href="/" className="inline-flex text-foreground">
-            <Wordmark className="text-2xl leading-none" />
-            <span className="sr-only"> {tc("home")}</span>
-          </LocalizedLink>
-          {/* The legal operator, as EU rules want it within reach of every page. */}
-          {/* The language menu sits beside it, wrapping under it on narrow phones. */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 max-sm:justify-center">
+      <div className="mx-auto max-w-page space-y-8 px-6 pt-10 pb-6 text-sm text-muted-foreground">
+        <div className="flex flex-wrap justify-between gap-x-16 gap-y-8">
+          <div className="max-w-xs space-y-4">
+            {/* The logo, as in the header, leading home. */}
+            <LocalizedLink href="/" className="inline-flex text-foreground">
+              <Wordmark className="text-2xl leading-none" />
+              <span className="sr-only"> {tc("home")}</span>
+            </LocalizedLink>
+            <p className="text-base">{t("footerTagline")}</p>
+            {/* testee's social accounts; links come once the accounts exist. */}
+            <div className="flex items-center gap-5 max-sm:gap-8">
+              <span role="img" aria-label="LinkedIn" className={SOCIAL}>
+                <LinkedInIcon className="size-6 max-sm:size-8" />
+              </span>
+              <span role="img" aria-label="X" className={SOCIAL}>
+                <XIcon className="size-6 max-sm:size-8" />
+              </span>
+              <span role="img" aria-label="YouTube" className={SOCIAL}>
+                <YouTubeIcon className="size-6 max-sm:size-8" />
+              </span>
+              <span role="img" aria-label="Facebook" className={SOCIAL}>
+                <FacebookIcon className="size-6 max-sm:size-8" />
+              </span>
+            </div>
+          </div>
+          {/* Lowercase with the blue dot, like the header's menu (globals.css, by data-slot); on
+              phones two columns, so the footer stays short. */}
+          <nav
+            data-slot="footer-nav"
+            aria-label={t("footer")}
+            className="grid min-w-0 flex-1 grid-cols-2 gap-x-6 gap-y-8 [overflow-wrap:anywhere] hyphens-auto sm:max-w-3xl sm:grid-cols-3 lg:gap-x-10"
+          >
+            {FOOTER_COLUMNS.map((column) => (
+              <div key={column.title} className="space-y-3">
+                <p className="font-medium text-foreground">{t(column.title)}</p>
+                <ul className="space-y-2">
+                  {column.links.map((link) => (
+                    <li key={link.href}>
+                      <FooterLink href={link.href}>{t(link.label)}</FooterLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
+        </div>
+        {/* The operator, as EU rules want it within reach of every page, the page's language and
+            theme, and the legal links. */}
+        <div
+          data-footer-bar
+          className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t pt-5"
+        >
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <span>
               © {new Date().getFullYear()} {OPERATOR.name}
             </span>
             <LanguageSwitch />
+            <div className="w-32">
+              <ThemeModes />
+            </div>
           </div>
-          {/* testee's social accounts; links come once the accounts exist. */}
-          <div className="flex items-center gap-5 max-sm:gap-8">
-            <span role="img" aria-label="LinkedIn" className={SOCIAL}>
-              <LinkedInIcon className="size-6 max-sm:size-8" />
-            </span>
-            <span role="img" aria-label="X" className={SOCIAL}>
-              <XIcon className="size-6 max-sm:size-8" />
-            </span>
-            <span role="img" aria-label="YouTube" className={SOCIAL}>
-              <YouTubeIcon className="size-6 max-sm:size-8" />
-            </span>
-            <span role="img" aria-label="Facebook" className={SOCIAL}>
-              <FacebookIcon className="size-6 max-sm:size-8" />
-            </span>
-          </div>
-          <AskAgentButton className="h-10 px-5 text-sm max-sm:h-12 max-sm:px-6 max-sm:text-base" />
-        </div>
-        {/* Lowercase with the blue dot, like the header's menu (globals.css, by data-slot). */}
-        <nav
-          data-slot="footer-nav"
-          aria-label={t("footer")}
-          className="grid grid-cols-3 gap-x-6 [overflow-wrap:anywhere] hyphens-auto max-sm:grid-cols-1 max-sm:gap-y-3 max-sm:text-lg sm:max-w-3xl sm:min-w-0 sm:flex-1 sm:grid-cols-[repeat(3,auto)] sm:justify-between sm:gap-x-6 lg:gap-x-10"
-        >
-          {FOOTER_COLUMNS.map((column) => (
-            <ul key={column[0].href} className="space-y-2 max-sm:space-y-3">
-              {column.map((link) => (
+          <nav data-slot="footer-nav" aria-label={t("footerLegal")}>
+            <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              {FOOTER_LEGAL.map((link) => (
                 <li key={link.href}>
-                  <LocalizedLink
-                    href={link.href}
-                    className="-mx-1.5 rounded-lg px-1.5 py-0.5 transition-colors hover:text-foreground active:bg-surface active:text-foreground"
-                  >
-                    {t(link.label)}
-                  </LocalizedLink>
+                  <FooterLink href={link.href}>{t(link.label)}</FooterLink>
                 </li>
               ))}
             </ul>
-          ))}
-        </nav>
+          </nav>
+        </div>
       </div>
     </footer>
   )

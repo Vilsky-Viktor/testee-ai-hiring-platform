@@ -32,8 +32,9 @@ export async function InterviewTitle({
           after={mode}
         />
       ) : (
+        // Its blue dot drawn here (.no-dot), so how it's answered comes after it, as on a title.
         <h1
-          className="font-heading text-3xl font-medium tracking-tight text-balance"
+          className="no-dot font-heading text-3xl font-medium tracking-tight text-balance"
           data-testid={
             interview.generation_failed ? "generation-failed" : undefined
           }
@@ -42,6 +43,9 @@ export async function InterviewTitle({
             ? t("generationFailed")
             : t("generating")}
           {"\u2060"}
+          <span className="inline-block w-[0.4em] text-start text-primary">
+            .
+          </span>
           {mode}
         </h1>
       )}

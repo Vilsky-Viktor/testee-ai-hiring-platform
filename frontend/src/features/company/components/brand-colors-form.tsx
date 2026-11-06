@@ -243,7 +243,7 @@ export function BrandColorsForm({
           )}
           {actions(true)}
         </div>
-        <div className="space-y-3 lg:sticky lg:top-6">
+        <div className="space-y-3 lg:sticky lg:top-20">
           {/* "Preview" on the preview's top border, as the landing's invite stage names its card. */}
           <div className="relative">
             <span

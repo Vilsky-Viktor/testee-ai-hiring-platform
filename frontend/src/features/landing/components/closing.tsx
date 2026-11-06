@@ -1,8 +1,8 @@
 import { cn } from "cn"
-import { GiftIcon } from "lucide-react"
 import { getTranslations } from "next-intl/server"
 
 import { AskAgentButton } from "@/components/common/ask-agent-button"
+import { FreeNote } from "@/components/common/free-note"
 import { DemosButton } from "@/features/landing/components/demos-button"
 import { MoreLink } from "@/components/common/more-link"
 import { StartButton } from "@/features/landing/components/start-button"
@@ -10,12 +10,12 @@ import { GLOW } from "@/config/landing-backgrounds"
 
 // "More questions?"'s buttons in the light theme: filled with the page's colour at 60%, so what's
 // behind them shows; clear in the dark, as outline buttons are.
-const SEE_THROUGH = "bg-popover/60 dark:bg-transparent"
+const SEE_THROUGH = "bg-transparent hover:bg-surface"
 
 /** The landing page's last screen: a two-line call to create the first interview, each line
  * ending with the logo's blue dot, the button back up to the job description box and the free
  * candidates from billing's catalog; under it, "more questions?" with a row of buttons to the
- * agent, the demo videos, the FAQ and the guides. */
+ * agent, the demo videos and the FAQ. */
 export async function Closing({
   freeCandidates,
 }: {
@@ -45,10 +45,9 @@ export async function Closing({
         <div className="flex flex-col items-center gap-4">
           <StartButton label={t("closing.start")} />
           {freeCandidates !== null && (
-            <p className="flex items-center gap-2 text-sm text-muted-foreground">
-              <GiftIcon aria-hidden className="size-4 text-primary" />
+            <FreeNote>
               {t("freeToStart.free", { count: freeCandidates })}
-            </p>
+            </FreeNote>
           )}
         </div>
       </div>
@@ -64,17 +63,6 @@ export async function Closing({
           />
           <MoreLink href="/faq" keepCase className={cn("h-12", SEE_THROUGH)}>
             {t("moreQuestions.faq")}
-          </MoreLink>
-          <MoreLink href="/guides" className={cn("h-12", SEE_THROUGH)}>
-            {t("moreQuestions.guides")}
-          </MoreLink>
-        </div>
-        <div className="flex flex-wrap justify-center gap-3">
-          <MoreLink href="/features" className={cn("h-12", SEE_THROUGH)}>
-            {t("moreQuestions.features")}
-          </MoreLink>
-          <MoreLink href="/hiring-flow" className={cn("h-12", SEE_THROUGH)}>
-            {t("moreQuestions.hiringFlow")}
           </MoreLink>
         </div>
       </div>

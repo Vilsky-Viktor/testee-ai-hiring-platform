@@ -1,3 +1,4 @@
+import { BookOpenIcon } from "lucide-react"
 import { getLocale, getTranslations } from "next-intl/server"
 
 import { ContentList } from "@/features/content/components/content-list"
@@ -60,7 +61,7 @@ export default async function HubPage({
           maxLength={MAX_SITE_SEARCH_LENGTH}
         />
         {shown.length > 0 ? (
-          <ContentList pages={shown} base="/guides" />
+          <ContentList pages={shown} base="/guides" icon={BookOpenIcon} />
         ) : (
           <p className={LIST_EMPTY}>{t("noMatches")}</p>
         )}

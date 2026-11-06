@@ -3,7 +3,7 @@ import type { Locator, Page } from "@playwright/test"
 import { expect, test } from "../fixtures"
 import { api, createCompany } from "../helpers/api"
 import { addTemplate, deleteTemplate } from "../helpers/db-library"
-import { box, PHONE } from "../helpers/layout"
+import { PHONE } from "../helpers/layout"
 import { visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { ownerEmail, randomId } from "../helpers/users"
@@ -74,8 +74,7 @@ async function addReport(page: Page, row: Locator, details: string) {
 }
 
 // An owner opens a topic's questions on their page: leaves a question out of the interview and
-// brings it back, likes, takes back and dislikes it, and reports it; on phones the checkbox's
-// state is written beside it.
+// brings it back, likes, takes back and dislikes it, and reports it.
 test("an owner manages a topic's questions on their page", async ({ signInAs }) => {
   const template = await addTemplate(`E2E topic page ${randomId()}`, 12)
 
@@ -155,15 +154,9 @@ test("an owner manages a topic's questions on their page", async ({ signInAs }) 
     await addReport(owner, row, `Owner details ${randomId()}`)
     await shot(owner, "question-reported")
 
-    // Phone: the checkbox's state is written beside it; on a desktop only the box shows.
-    const state = row.getByTestId("question-state")
-    await expect(state).toBeHidden()
+    // Phone: the checkbox stays on screen, at its row's side.
     await owner.setViewportSize(PHONE)
-    await expect(state).toBeVisible()
-    const [checkbox, label] = [await box(include), await box(state)]
-    expect(label.left).toBeGreaterThanOrEqual(checkbox.right)
-    expect(label.top).toBeLessThan(checkbox.bottom)
-    expect(label.bottom).toBeGreaterThan(checkbox.top)
+    await expect(include).toBeInViewport()
     await shot(owner, "topic-questions-phone")
   } finally {
     await deleteTemplate(template)

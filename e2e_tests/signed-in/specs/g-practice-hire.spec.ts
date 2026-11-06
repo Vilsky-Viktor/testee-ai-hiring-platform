@@ -60,7 +60,9 @@ test("a finished practice lists its questions without numbers", async ({ signInA
   await api(user, "POST", `/rounds/sessions/${result.topics[0].session_id}/finish-interview`)
 
   await visit(user, `/practice/rounds/${round.round_id}`)
-  // Each question with its feedback: the report flag, named for screen readers.
+  // A topic opens to its questions, each with its feedback: the report flag, named for screen
+  // readers.
+  await user.getByTestId("topic-toggle").first().click()
   await expect(user.getByRole("button", { name: "Report question" }).first()).toBeVisible()
   await expect(user.getByText(/^\d+\.$/)).toHaveCount(0)
   await shot(user, "practice-review")

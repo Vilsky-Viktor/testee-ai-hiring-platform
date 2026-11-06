@@ -52,7 +52,7 @@ its text only when it's an error.
 
 ## The browser tests' site
 
-Browser tests never open the dev server the user browses (port 8090). `pages.sh` and
+Browser tests never open the site the user browses (port 8090). `pages.sh` and
 `signed-in.sh` open a production build of the frontend (compose's `frontend-test`, the
 gateway's port 8082), with the same services and Auth emulator:
 
@@ -60,7 +60,6 @@ gateway's port 8082), with the same services and Auth emulator:
   changes too): about 2 minutes (up to 10 with a cold build cache), then every run of the same
   files starts at once. A change to the frontend is tested only after that rebuild, which the
   script does by itself.
-- Development-only pages (`/report-samples`) don't exist there.
 - Tests run in parallel (`WORKERS`, default 3). Tests tagged `@global`
   (maintenance mode, the pause, a limit) run after the others, alone.
 - Up to `BROWSER_RUNS` runs (default 2) share the stack when they test the same frontend files;
@@ -74,5 +73,4 @@ gateway's port 8082), with the same services and Auth emulator:
 
 ## Report
 
-Say which suites ran and their counts, and name anything not checked (for example a path only
-the dev server has).
+Say which suites ran and their counts, and name anything not checked.

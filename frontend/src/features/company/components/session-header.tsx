@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl"
 import type { ReactNode } from "react"
 
-import { Count } from "@/components/common/count"
 import { Countdown } from "@/features/company/components/countdown"
 import { Progress } from "@/components/ui/progress"
 import type { InterviewSession } from "@/types/company"
@@ -17,6 +16,8 @@ type HeaderProps = {
   question: NextQuestion | null
   // The pick is being sent: the clock runs on, but moves on only once that's done.
   sending: boolean
+  // The clock stands still (the landing's picture, with reduced motion).
+  frozen?: boolean
   // Called when the question's clock reaches zero: the server counts it as wrong, and the
   // next one opens.
   onTimeUp: () => void
@@ -49,8 +50,8 @@ export function SessionTop({
   )
 }
 
-/** The interview's header: the company's logo, the section's title and place, the question's
- * clock and the progress. */
+/** The interview's header: the company's logo, the section's title and place, which question it
+ * is and the progress, and the question's clock as a ring. */
 export function SessionHeader({
   brand,
   session,
@@ -58,6 +59,7 @@ export function SessionHeader({
   section,
   question,
   sending,
+  frozen,
   onTimeUp,
 }: HeaderProps) {
   const t = useTranslations("session")
@@ -68,44 +70,50 @@ export function SessionHeader({
   return (
     <div className="flex items-center gap-4 max-sm:contents">
       {brand}
-      <div className="min-w-0 flex-1 space-y-3 max-sm:basis-full">
-        <div className="flex min-w-0 items-center justify-between gap-4">
-          <p className="flex min-w-0 items-center text-sm text-muted-foreground">
-            <span className="truncate">{session.topic_title}</span>
-            {section.count > 1 && (
-              <>
-                <Dot />
-                <span className="shrink-0 tabular-nums">
-                  {t("section", {
-                    number: section.number,
-                    count: section.count,
-                  })}
-                </span>
-              </>
-            )}
-          </p>
-          <p className="flex shrink-0 items-center text-sm text-muted-foreground tabular-nums">
-            {question?.seconds_left != null && (
-              <>
-                <Countdown
-                  key={question.question_id}
-                  seconds={question.seconds_left}
-                  questionSeconds={question.seconds ?? question.seconds_left}
-                  paused={sending}
-                  onExpire={onTimeUp}
-                />
-                <Dot />
-              </>
-            )}
-            <Count done={progress.answered} total={progress.total} />
-          </p>
+      <div className="flex min-w-0 flex-1 items-center gap-4 max-sm:basis-full">
+        <div className="min-w-0 flex-1 space-y-3">
+          <div className="flex min-w-0 items-center justify-between gap-4">
+            <p className="flex min-w-0 items-center text-sm text-muted-foreground">
+              <span className="truncate">{session.topic_title}</span>
+              {section.count > 1 && (
+                <>
+                  <Dot />
+                  <span className="shrink-0 tabular-nums">
+                    {t("section", {
+                      number: section.number,
+                      count: section.count,
+                    })}
+                  </span>
+                </>
+              )}
+            </p>
+            <p
+              data-testid="question-count"
+              className="shrink-0 text-base font-medium tabular-nums"
+            >
+              {t("questionOf", {
+                number: Math.min(progress.answered + 1, progress.total),
+                count: progress.total,
+              })}
+            </p>
+          </div>
+          <Progress
+            aria-label={candidates("progress")}
+            value={
+              progress.total ? (progress.answered / progress.total) * 100 : 0
+            }
+          />
         </div>
-        <Progress
-          aria-label={candidates("progress")}
-          value={
-            progress.total ? (progress.answered / progress.total) * 100 : 0
-          }
-        />
+        {question?.seconds_left != null && (
+          <Countdown
+            key={question.question_id}
+            seconds={question.seconds_left}
+            questionSeconds={question.seconds ?? question.seconds_left}
+            paused={sending}
+            frozen={frozen}
+            onExpire={onTimeUp}
+          />
+        )}
       </div>
     </div>
   )

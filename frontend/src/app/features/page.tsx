@@ -1,9 +1,11 @@
 import { getTranslations } from "next-intl/server"
 
+import { CornerNet } from "@/features/landing/components/corner-net"
 import { FeatureGroupBody } from "@/features/features/components/feature-group"
 import { FeaturesClosing } from "@/features/features/components/features-closing"
 import { FeaturesHero } from "@/features/features/components/features-hero"
 import { FeaturesNav } from "@/features/features/components/features-nav"
+import { HeroBack } from "@/components/common/hero-back"
 import { PageKey } from "@/components/common/page-key"
 import { LandingSection } from "@/features/landing/components/section"
 import { FEATURE_GROUPS } from "@/config/features-page"
@@ -34,9 +36,11 @@ export default async function FeaturesPage() {
 
   return (
     // As wide as the page's box, for the sections' window-wide backgrounds.
-    <div className="@container">
+    <div className="@container relative">
+      <CornerNet />
       <main className="mx-auto max-w-page px-6">
         <PageKey page="features" />
+        <HeroBack />
         <FeaturesHero />
         <FeaturesNav
           items={FEATURE_GROUPS.map((group) => ({

@@ -1,12 +1,13 @@
 "use client"
 
+import { UserRoundIcon } from "lucide-react"
 import Link from "next/link"
 
 import { NoName } from "@/components/common/no-name"
 import { VirtualList } from "@/components/common/virtual-list"
 import { WrappedEmail } from "@/components/common/wrapped-email"
 import { Dot } from "@/components/common/dot"
-import { LIST_BOX, ROW_HOVER } from "@/config/lists"
+import { LIST_BOX, ROW_HOVER, ROW_ICON } from "@/config/lists"
 import { usePagedList } from "@/hooks/use-paged-list"
 import { candidateHref, type CandidateLinks } from "@/lib/candidate-links"
 import type { CreditCandidate } from "@/types/company"
@@ -40,29 +41,28 @@ export function ReservedList({
       onEndReached={loadMore}
       className={LIST_BOX}
       renderItem={(candidate) => {
-        const content = (
-          <>
-            <span className="block text-lg font-medium">
-              <WrappedEmail email={candidate.email} />
-            </span>
-            <span className="block text-sm break-all text-muted-foreground">
-              {candidate.name ?? <NoName hint="list" />}
-              {candidate.interview_title && (
-                <span className="normal-case">
-                  <Dot />
-                  {candidate.interview_title}
-                </span>
-              )}
-            </span>
-          </>
-        )
-
         return (
           <Link
             href={candidateHref(links, companyId, candidate)}
-            className={`block space-y-1 p-6 ${ROW_HOVER}`}
+            className={`group/row flex items-center gap-4 p-6 ${ROW_HOVER}`}
           >
-            {content}
+            <span aria-hidden className={ROW_ICON}>
+              <UserRoundIcon className="size-5" />
+            </span>
+            <span className="min-w-0 space-y-1">
+              <span className="block text-lg font-medium">
+                <WrappedEmail email={candidate.email} />
+              </span>
+              <span className="block text-sm break-all text-muted-foreground">
+                {candidate.name ?? <NoName hint="list" />}
+                {candidate.interview_title && (
+                  <span className="normal-case">
+                    <Dot />
+                    {candidate.interview_title}
+                  </span>
+                )}
+              </span>
+            </span>
           </Link>
         )
       }}

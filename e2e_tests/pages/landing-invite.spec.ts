@@ -5,7 +5,7 @@ import { loaded } from "./helpers/waits";
 // The home page's "invite candidates" picture: every way in and Slack around the interview, each
 // joined to it by a wire, and the link to the developer docs above it.
 
-const WAYS_IN = ["ats", "email", "file", "link", "api", "sdk", "agent", "apps"];
+const WAYS_IN = ["ats", "email", "file", "link", "apps", "sdk", "agent", "api"];
 
 async function openPicture(page: Page) {
   await page.goto("/");

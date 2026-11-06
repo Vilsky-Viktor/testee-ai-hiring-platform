@@ -15,7 +15,6 @@ import {
   DEMO_QUESTION_SECONDS,
 } from "@/config/create-demo"
 import {
-  ADJUSTED,
   INVITING,
   READY,
   SECONDS_TYPED,
@@ -23,27 +22,33 @@ import {
   SETTINGS_OPEN,
   STEPS,
   WRITTEN,
+  adjusted,
 } from "@/config/create-demo-steps"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
 import { countedAt, stepIndex } from "@/hooks/use-demo-steps"
 import { bdi } from "@/lib/bidi"
 
-// The topics whose questions per candidate are changed, in turn.
-const CHANGED = DEMO_LIMITS.map(({ topic }) => topic)
-
-/** How many questions each candidate gets of each topic at step `index`: the interview's default,
- * then each of DEMO_LIMITS once its step (`limit<n>`) is reached. */
-function limitsAt(index: number) {
+/** How many questions each candidate gets of each of `names` (the topics) at step `index`: the
+ * interview's default, then each of DEMO_LIMITS once its step (`limit<n>`) is reached. */
+function limitsAt(index: number, names: string[]) {
   const limits: Record<string, number> = Object.fromEntries(
-    WRITTEN.map((topic) => [topic, DEMO_INTERVIEW.perCandidate])
+    names.map((name) => [name, DEMO_INTERVIEW.perCandidate])
   )
 
   DEMO_LIMITS.forEach(({ topic, limit }, position) => {
     if (index >= stepIndex(STEPS, `limit${position}`)) {
-      limits[topic] = limit
+      limits[names[topic]] = limit
     }
   })
 
   return limits
+}
+
+// The steps that show a topic's number just saved, by its place among the changed ones.
+const SAVED_AT: Record<string, number> = {
+  aimLimit1: 0,
+  focusLimit1: 0,
+  aimSettings: 1,
 }
 
 /** The create demo's last screen at step `at`: the generation page while the questions are
@@ -59,6 +64,10 @@ export function CreateReady({
   labels: { status: string }
 }) {
   const share = useTranslations("share")
+  const topics = adjusted(useDemoContent("create"))
+  const names = topics.map(({ name }) => name)
+  // The topics whose questions per candidate are changed, in turn.
+  const changed = DEMO_LIMITS.map(({ topic }) => names[topic])
   const step = STEPS[at.index].name
   const emailed = countedAt(STEPS, at, "typingEmail", DEMO_INVITE_EMAIL.length)
   const named = countedAt(STEPS, at, "typingName", DEMO_INVITE_NAME.length)
@@ -72,7 +81,7 @@ export function CreateReady({
         )
   // The topic whose number is being changed: from its click until the next step moves on.
   const focused =
-    CHANGED.find((_, position) =>
+    changed.find((_, position) =>
       [`focusLimit${position}`, `limit${position}`].includes(step)
     ) ?? null
 
@@ -89,13 +98,14 @@ export function CreateReady({
           )}
         >
           <DemoGeneration
-            topics={WRITTEN.length}
-            ready={countedAt(STEPS, at, "writing", WRITTEN.length)}
-            questions={DEMO_INTERVIEW.topicQuestions}
+            topics={names}
+            ready={countedAt(STEPS, at, "writing", WRITTEN)}
           />
         </div>
         <div
           data-testid="demo-interview"
+          // Closed until ready, so its parts slide in as it shows (promo-create.css).
+          data-open={at.index >= READY}
           // Its own layer, so its raised icons stay under the dialog.
           className={cn(
             "isolate flex min-h-0 min-w-0",
@@ -103,11 +113,14 @@ export function CreateReady({
           )}
         >
           <DemoInterview
-            topics={ADJUSTED}
+            topics={topics}
             status={labels.status}
-            limits={limitsAt(at.index)}
-            changed={CHANGED}
+            limits={limitsAt(at.index, names)}
+            changed={changed}
             focused={focused}
+            savedTopic={
+              SAVED_AT[step] === undefined ? null : changed[SAVED_AT[step]]
+            }
             pressed={step === "invite"}
             backPressed={step === "back"}
             tab={
@@ -116,6 +129,8 @@ export function CreateReady({
                 : "topics"
             }
             seconds={seconds}
+            typingSeconds={step === "focusSeconds" || step === "typingSeconds"}
+            secondsSaved={step === "secondsSet"}
           />
         </div>
       </div>

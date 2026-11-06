@@ -15,7 +15,7 @@ export function CampaignStatus({ campaign }: { campaign: CampaignRow }) {
     <Badge
       variant="outline"
       data-status={campaign.status}
-      className="h-7 shrink-0 px-3 text-sm font-light"
+      className="h-8 shrink-0 px-4 text-sm font-light"
     >
       {translating ? t("translating") : t(`campaignStatus.${campaign.status}`)}
     </Badge>

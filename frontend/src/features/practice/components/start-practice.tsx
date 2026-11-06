@@ -53,7 +53,7 @@ export function StartPractice({
   }
 
   return (
-    <div className="flex items-center gap-3 max-sm:*:flex-1">
+    <div className="flex items-center gap-3 max-sm:flex-col max-sm:items-stretch">
       <PracticeTiming
         timings={timings}
         value={timing}

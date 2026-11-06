@@ -14,7 +14,7 @@ function buttonLinks(page: import("@playwright/test").Page) {
 }
 
 // The two ways on are links drawn as the site's buttons: creating a test first, practising it
-// second; each topic shows two subtopics and the rest on a click.
+// second, and the page closes with creating one again; each topic shows all its subtopics.
 test("a role test page is for hiring, with the way to practise second", async ({
   page,
   addTemplate,
@@ -23,17 +23,9 @@ test("a role test page is for hiring, with the way to practise second", async ({
   await page.goto(`/tests/${template.slug}`);
 
   await expect(page.locator("h1")).toContainText(template.title);
-  expect(await buttonLinks(page)).toEqual(["/", `/practice/${template.slug}`]);
-  // A topic's first two subtopics, then a button that shows the rest.
+  expect(await buttonLinks(page)).toEqual(["/", `/practice/${template.slug}`, "/"]);
   const topic = page.locator("main li").filter({ hasText: "E2E topic 1" });
-  const tags = topic.locator("[data-slot=badge]").filter({ hasText: /^E2E / });
-  await expect(tags).toHaveText(SUBTOPICS.slice(0, 2));
-  const more = topic.locator("button[aria-expanded]");
-  await expect(more).toHaveAttribute("aria-expanded", "false");
-  await expect(more).toContainText(String(SUBTOPICS.length - 2));
-  await more.click();
-  await expect(tags).toHaveText(SUBTOPICS);
-  await expect(more).toHaveAttribute("aria-expanded", "true");
+  await expect(topic.locator("[data-slot=badge]")).toHaveText(SUBTOPICS);
   const data = await page
     .locator('script[type="application/ld+json"]')
     .allTextContents();
@@ -113,7 +105,7 @@ test("robots.txt and the sitemap list what should be found", async ({
     "/tests",
     "/compare/testgorilla",
     "/guides/hiring-engineers",
-    "/pre-employment-testing",
+    "/guides/pre-employment-testing",
     "/de/guides/hiring-engineers",
     "/ja/compare/testgorilla",
   ]) {
@@ -155,7 +147,7 @@ test("a template's page in its language keeps its links and level in it", async 
   addTemplate,
 }) => {
   const template = await addTemplate("de");
-  const level = page.locator("main [data-slot=badge]").first();
+  const level = page.getByTestId("level").filter({ visible: true }).locator("dd");
 
   await page.goto(`/tests/${template.slug}`);
   const english = { heading: await page.locator("h1").textContent(), level: await level.textContent() };
@@ -166,7 +158,7 @@ test("a template's page in its language keeps its links and level in it", async 
   await expect(page.locator("h1")).not.toHaveText(english.heading!);
   await expect(level).not.toHaveText(english.level!);
   await expect(page.locator('main a[href="/de/tests"]')).toHaveCount(1);
-  expect(await buttonLinks(page)).toEqual(["/de", `/de/practice/${template.slug}`]);
+  expect(await buttonLinks(page)).toEqual(["/de", `/de/practice/${template.slug}`, "/de"]);
 
   await page.goto("/de/tests");
   await expect(page.locator(`a[href="/de/tests/${template.slug}"]`)).toHaveCount(1);

@@ -6,8 +6,10 @@ import { useState } from "react"
 import { toast } from "sonner"
 
 import { CornerSign } from "@/components/common/corner-sign"
+import { SavedCheck } from "@/components/common/saved-check"
 import { Switch } from "@/components/ui/switch"
 import { SIGN_CARD } from "@/config/cards"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 
 /** The emergency pause, as the share link's switch: while on, every service refuses new
@@ -16,6 +18,7 @@ export function PauseSwitch({ paused }: { paused: boolean }) {
   const t = useTranslations("superadmin")
   const [on, setOn] = useState(paused)
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark()
 
   async function toggle(next: boolean) {
     setSaving(true)
@@ -26,6 +29,7 @@ export function PauseSwitch({ paused }: { paused: boolean }) {
         { method: "PUT", body: JSON.stringify({ paused: next }) }
       )
       setOn(saved.paused)
+      markSaved()
     } catch (error) {
       toast.error(apiErrorMessage(error, t("pauseFailed")))
     } finally {
@@ -45,6 +49,7 @@ export function PauseSwitch({ paused }: { paused: boolean }) {
             {t("pauseText")}
           </span>
         </span>
+        <SavedCheck text={savedText()} />
         <Switch checked={on} disabled={saving} onCheckedChange={toggle} />
       </label>
     </div>

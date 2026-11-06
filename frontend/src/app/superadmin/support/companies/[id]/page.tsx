@@ -132,7 +132,7 @@ export default async function SupportCompanyPage({
                 {company.suspended && (
                   <Badge
                     variant="destructive"
-                    className="h-7 px-3 text-sm font-light"
+                    className="h-8 px-4 text-sm font-light"
                   >
                     {t("suspended")}
                   </Badge>
@@ -226,7 +226,7 @@ async function Members({ members }: { members: SupportCompany["members"] }) {
                 {member.user_id ? t("supportJoined") : t("supportInvited")}
                 <Badge
                   variant="outline"
-                  className="h-7 px-3 text-sm font-light sm:hidden"
+                  className="h-8 px-4 text-sm font-light sm:hidden"
                 >
                   {hasMessage(roles, member.role)
                     ? roles(member.role)
@@ -236,7 +236,7 @@ async function Members({ members }: { members: SupportCompany["members"] }) {
             </span>
             <Badge
               variant="outline"
-              className="h-7 px-3 text-sm font-light max-sm:hidden"
+              className="h-8 px-4 text-sm font-light max-sm:hidden"
             >
               {hasMessage(roles, member.role)
                 ? roles(member.role)

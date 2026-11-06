@@ -1,16 +1,14 @@
-import { DownloadIcon } from "lucide-react"
+import { DownloadIcon, FileTextIcon } from "lucide-react"
 import Link from "next/link"
 import { getLocale, getTranslations } from "next-intl/server"
 
-import { Badge } from "@/components/ui/badge"
-import { IconButton } from "@/components/common/icon-button"
+import { Button } from "@/components/ui/button"
 import { DOCUMENTS } from "@/config/documents"
 import { DEFAULT_LOCALE } from "@/config/i18n"
 import { pageMetadata } from "@/lib/site"
-import { LIST_BOX, ROW_HOVER } from "@/config/lists"
+import { LIST_BOX, ROW_HOVER, ROW_ICON } from "@/config/lists"
 import { PageKey } from "@/components/common/page-key"
 
-// Like the report's download button (features/company/components/report-actions.tsx).
 export async function generateMetadata() {
   const t = await getTranslations("docs")
 
@@ -25,7 +23,7 @@ export default async function DocsPage() {
   return (
     <main className="mx-auto max-w-page space-y-8 px-6 py-12">
       <PageKey page="documents" />
-      <header className="space-y-4">
+      <header className="space-y-2">
         <h1 className="font-heading text-3xl font-medium tracking-tight">
           {t("title")}
         </h1>
@@ -37,45 +35,49 @@ export default async function DocsPage() {
           )}
         </p>
       </header>
-      <ul className={`${LIST_BOX} overflow-hidden`}>
+      <ul className={`${LIST_BOX} overflow-hidden`} data-testid="documents">
         {DOCUMENTS.map((item) => (
+          // On phones the buttons take their own line, across the row.
           <li
             key={item.key}
-            className={`flex items-center justify-between gap-4 py-6 ps-6 pe-3 ${ROW_HOVER}`}
+            className={`group/row flex items-center gap-4 p-6 ${ROW_HOVER} max-sm:flex-wrap`}
           >
-            <div className="min-w-0 space-y-1">
-              <span className="block text-xl font-medium">
+            <span aria-hidden className={ROW_ICON}>
+              <FileTextIcon className="size-5" />
+            </span>
+            <div className="min-w-0 flex-1 space-y-1 max-sm:basis-[calc(100%-3.5rem)]">
+              <span className="block text-lg font-medium">
                 {t(`items.${item.key}.title`)}
               </span>
               <p className="text-sm text-muted-foreground">
                 {t(`items.${item.key}.description`)}
-                {"online" in item && (
-                  <>
-                    {" "}
-                    <Link
-                      href={item.online}
-                      className="underline underline-offset-4 hover:text-foreground"
-                    >
-                      {t("readOnline")}
-                    </Link>
-                  </>
-                )}
               </p>
             </div>
-            {/* The format beside the download button; above it, on phones. */}
-            <div className="flex shrink-0 items-center gap-2 max-sm:flex-col max-sm:gap-1">
-              <Badge
-                variant="secondary"
-                className="h-7 px-3 text-sm font-light"
-              >
-                {item.format}
-              </Badge>
-              <IconButton
-                label={t("download", { format: item.format })}
+            <div className="flex shrink-0 items-center gap-2 max-sm:w-full max-sm:*:flex-1">
+              {"online" in item && (
+                <Button
+                  variant="outline"
+                  className="h-10 px-4 text-base"
+                  render={<Link href={item.online} />}
+                  nativeButton={false}
+                >
+                  {t("readOnline")}
+                </Button>
+              )}
+              <Button
+                variant="outline"
+                className="h-10 px-4 text-base"
+                data-testid="document-download"
                 render={<a href={item.href} download />}
+                nativeButton={false}
               >
-                <DownloadIcon className="size-6" />
-              </IconButton>
+                <DownloadIcon aria-hidden />
+                {t.rich("download", {
+                  format: item.format,
+                  // The site's buttons are lowercase; a file type isn't.
+                  type: (chunks) => <span className="uppercase">{chunks}</span>,
+                })}
+              </Button>
             </div>
           </li>
         ))}

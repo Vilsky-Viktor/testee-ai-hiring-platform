@@ -5,21 +5,23 @@ import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
-import { Checkbox } from "@/components/ui/checkbox"
-import { Input } from "@/components/ui/input"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import type { InterviewSettingsData } from "@/types/company"
-import { LIST_BOX } from "@/config/lists"
-import { CARD_PADDING } from "@/config/cards"
 import { TEXT_LINK } from "@/config/links"
 import { VOICE_GUIDE_PATH } from "@/config/voice"
 import { LocalizedLink } from "@/components/common/localized-link"
 import { AnswerModeSetting } from "@/features/company/components/answer-mode-switch"
+import {
+  NumberSetting,
+  SettingsGroup,
+  SwitchSetting,
+} from "@/features/company/components/setting-rows"
 
 /** The interview's settings tab: whether it's taken in click mode or voice mode (with the guide
 to voice mode's quality in each language), the average time per question (each question gets its own, fitted
 to it by rounds), the pass mark, whether the company hired, and whether its questions stay out of
-testee's shared question bank, one row each in a list like the topics'.
+testee's shared question bank, grouped, saving as they change and saying so on the row.
 Every interview is timed, and candidates never see their scores. */
 export function InterviewSettings({
   interviewId,
@@ -49,6 +51,7 @@ export function InterviewSettings({
   const [seconds, setSeconds] = useState(String(questionSeconds))
   const [mark, setMark] = useState(String(passMark))
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark<keyof InterviewSettingsData>()
 
   // Every setting goes together, so saving one never resets the others. The API checks the
   // ranges; its message shows if a value doesn't fit, and the field goes back.
@@ -67,6 +70,7 @@ export function InterviewSettings({
         body: JSON.stringify(next),
       })
       setSaved(next)
+      markSaved((Object.keys(change) as (keyof InterviewSettingsData)[])[0])
       router.refresh()
     } catch (error) {
       setSeconds(String(saved.question_seconds))
@@ -78,151 +82,61 @@ export function InterviewSettings({
   }
 
   return (
-    <div className={LIST_BOX}>
-      <AnswerModeSetting
-        label={t("answerMode")}
-        help={t.rich("answerModeHelp", {
-          link: (chunks) => (
-            <LocalizedLink href={VOICE_GUIDE_PATH} className={TEXT_LINK}>
-              {chunks}
-            </LocalizedLink>
-          ),
-        })}
-        voice={saved.voice}
-        disabled={saving}
-        onChange={(on) => save({ voice: on })}
-      />
-      <NumberSetting
-        label={t("timePerQuestion")}
-        help={t("timePerQuestionHelp")}
-        fieldLabel={t("secondsLabel")}
-        unit={t("secondsUnit")}
-        value={seconds}
-        disabled={saving}
-        onChange={setSeconds}
-        onSave={() => save({ question_seconds: Number(seconds) })}
-      />
-      <NumberSetting
-        label={t("passMark")}
-        fieldLabel={t("passMarkLabel")}
-        unit="%"
-        value={mark}
-        disabled={saving}
-        onChange={setMark}
-        onSave={() => save({ pass_mark: Number(mark) })}
-      />
-      <CheckSetting
-        label={t("markHired")}
-        checked={saved.hired}
-        disabled={saving}
-        onChange={(checked) => save({ hired: checked })}
-      />
-      <CheckSetting
-        label={t("keepPrivate")}
-        help={t("keepPrivateHelp")}
-        checked={saved.keep_private}
-        disabled={saving}
-        onChange={(checked) => save({ keep_private: checked })}
-      />
-    </div>
-  )
-}
-
-/** A yes-or-no setting: its name, an optional line under it, and a checkbox. */
-export function CheckSetting({
-  label,
-  help,
-  checked,
-  disabled,
-  onChange,
-}: {
-  label: string
-  help?: string
-  checked: boolean
-  disabled: boolean
-  onChange: (checked: boolean) => void
-}) {
-  return (
-    <label
-      className={`flex cursor-pointer items-center justify-between gap-4 ${CARD_PADDING}`}
-    >
-      <span className="min-w-0 space-y-1">
-        <span className="block text-lg font-light">{label}</span>
-        {help && (
-          <span className="block text-sm text-muted-foreground">{help}</span>
-        )}
-      </span>
-      {/* Centred under the fields above. */}
-      <span className="flex w-36 shrink-0 justify-center">
-        <Checkbox
-          className="size-7 shrink-0 [&_[data-slot=checkbox-indicator]>svg]:size-5"
-          checked={checked}
-          disabled={disabled}
-          onCheckedChange={onChange}
+    <>
+      <SettingsGroup title={t("settingsRuns")}>
+        <AnswerModeSetting
+          label={t("answerMode")}
+          help={t.rich("answerModeHelp", {
+            link: (chunks) => (
+              <LocalizedLink href={VOICE_GUIDE_PATH} className={TEXT_LINK}>
+                {chunks}
+              </LocalizedLink>
+            ),
+          })}
+          voice={saved.voice}
+          saved={savedText("voice")}
+          disabled={saving}
+          onChange={(on) => save({ voice: on })}
         />
-      </span>
-    </label>
-  )
-}
-
-/** A number setting: its name, an optional line under it, and a field with its unit that saves
- * when left. `target` names the field for a landing demo's pointer. */
-export function NumberSetting({
-  label,
-  help,
-  fieldLabel,
-  unit,
-  value,
-  disabled,
-  onChange,
-  onSave,
-  target,
-}: {
-  label: string
-  help?: string
-  fieldLabel: string
-  unit: string
-  value: string
-  disabled: boolean
-  onChange: (value: string) => void
-  onSave: () => void
-  target?: string
-}) {
-  return (
-    // On phones the field takes its own line.
-    <label
-      className={`flex items-center justify-between gap-4 max-sm:flex-col max-sm:items-start ${CARD_PADDING}`}
-    >
-      <span className="min-w-0 space-y-1">
-        <span className="block text-lg font-light">{label}</span>
-        {help && (
-          <span className="block text-sm text-muted-foreground">{help}</span>
-        )}
-      </span>
-      {/* Same look as the app's other fields (library search, candidate invite). */}
-      <span
-        data-demo-target={target}
-        className="relative w-36 shrink-0 rounded-xl border border-transparent transition-colors focus-within:border-ring-gradient"
-      >
-        <Input
-          type="number"
-          inputMode="numeric"
-          value={value}
-          disabled={disabled}
-          aria-label={fieldLabel}
-          className="h-14 [appearance:textfield] border-0 ps-5 pe-14 text-lg focus-visible:ring-0 md:text-lg [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-          onChange={(event) => onChange(event.target.value)}
-          onBlur={onSave}
-          onKeyDown={(event) => {
-            if (event.key === "Enter") {
-              event.currentTarget.blur()
-            }
-          }}
+        <NumberSetting
+          label={t("timePerQuestion")}
+          help={t("timePerQuestionHelp")}
+          fieldName={t("secondsLabel")}
+          unit={t("secondsUnit")}
+          value={seconds}
+          saved={savedText("question_seconds")}
+          disabled={saving}
+          onChange={setSeconds}
+          onSave={() => save({ question_seconds: Number(seconds) })}
         />
-        <span className="pointer-events-none absolute end-5 top-1/2 -translate-y-1/2 text-lg text-muted-foreground">
-          {unit}
-        </span>
-      </span>
-    </label>
+        <NumberSetting
+          label={t("passMark")}
+          fieldName={t("passMarkLabel")}
+          unit="%"
+          value={mark}
+          saved={savedText("pass_mark")}
+          disabled={saving}
+          onChange={setMark}
+          onSave={() => save({ pass_mark: Number(mark) })}
+        />
+      </SettingsGroup>
+      <SettingsGroup title={t("settingsAfter")}>
+        <SwitchSetting
+          label={t("markHired")}
+          checked={saved.hired}
+          saved={savedText("hired")}
+          disabled={saving}
+          onChange={(checked) => save({ hired: checked })}
+        />
+        <SwitchSetting
+          label={t("keepPrivate")}
+          help={t("keepPrivateHelp")}
+          checked={saved.keep_private}
+          saved={savedText("keep_private")}
+          disabled={saving}
+          onChange={(checked) => save({ keep_private: checked })}
+        />
+      </SettingsGroup>
+    </>
   )
 }

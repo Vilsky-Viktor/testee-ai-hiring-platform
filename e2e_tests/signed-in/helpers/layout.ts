@@ -22,7 +22,7 @@ export async function box(locator: Locator) {
 
 /** Waits until `locator` has opened (Base UI's starting style gone) and its transitions and
  * animations, and its children's, have ended, so its size and place are final. Endless ones
- * (a spinner) are left out. */
+ * (a spinner) are left out, and one cancelled meanwhile (its promise rejects) counts as ended. */
 export async function settled(locator: Locator) {
   await expect(locator).not.toHaveAttribute("data-starting-style")
   await locator.evaluate((element) =>
@@ -30,7 +30,7 @@ export async function settled(locator: Locator) {
       element
         .getAnimations({ subtree: true })
         .filter((animation) => animation.effect?.getComputedTiming().endTime !== Infinity)
-        .map((animation) => animation.finished)
+        .map((animation) => animation.finished.catch(() => undefined))
     )
   )
 }

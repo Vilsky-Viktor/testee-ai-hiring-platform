@@ -1,11 +1,14 @@
 import { cn } from "cn"
-import { GiftIcon } from "lucide-react"
 import { getTranslations } from "next-intl/server"
 
 import { AskAgentButton } from "@/components/common/ask-agent-button"
 import { MoreLink } from "@/components/common/more-link"
+import { FreeNote } from "@/components/common/free-note"
 import { StartTest } from "@/components/common/start-test"
-import { GLOW } from "@/config/landing-backgrounds"
+import { DOT_GRID } from "@/config/landing-backgrounds"
+
+// The links over the dots: solid, the site's grey on hover.
+const SOLID_LINK = "h-12 bg-background hover:bg-(--surface-solid)"
 
 /** The features page's last screen, like the landing's: a two-line call to create the first
  * interview, each line ending with the logo's blue dot, and the home page's start box right
@@ -23,7 +26,7 @@ export async function FeaturesClosing({
     <section
       id="start"
       className={cn(
-        GLOW,
+        DOT_GRID,
         "flex min-h-[calc(100svh-3.5rem)] scroll-mt-16 flex-col items-center justify-center gap-24 py-24"
       )}
     >
@@ -39,12 +42,11 @@ export async function FeaturesClosing({
             ))}
         </h2>
         <div className="w-full max-w-176 space-y-4">
-          <StartTest freeCandidates={freeCandidates} />
+          <StartTest />
           {freeCandidates !== null && (
-            <p className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-              <GiftIcon aria-hidden className="size-4 text-primary" />
+            <FreeNote>
               {landing("freeToStart.free", { count: freeCandidates })}
-            </p>
+            </FreeNote>
           )}
         </div>
       </div>
@@ -54,10 +56,10 @@ export async function FeaturesClosing({
         </h3>
         <div className="flex flex-wrap justify-center gap-3">
           <AskAgentButton />
-          <MoreLink href="/faq" keepCase className="h-12">
+          <MoreLink href="/faq" keepCase className={SOLID_LINK}>
             {landing("moreQuestions.faq")}
           </MoreLink>
-          <MoreLink href="/guides" className="h-12">
+          <MoreLink href="/guides" className={SOLID_LINK}>
             {landing("moreQuestions.guides")}
           </MoreLink>
         </div>

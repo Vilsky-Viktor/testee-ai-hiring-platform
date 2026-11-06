@@ -6,6 +6,7 @@ import { useEffect } from "react"
 
 import { useAuth } from "@/providers/auth-provider"
 import { BackLink } from "@/components/common/back-link"
+import { CandidateFinished } from "@/components/common/candidate-finished"
 import { CompanyLogo } from "@/components/common/company-logo"
 import { LoadingSpinner } from "@/components/common/loading-spinner"
 import {
@@ -53,6 +54,7 @@ export function SessionView({
     missing,
     failed,
     retry,
+    minutesTaken,
     finishing,
     answer,
     advance,
@@ -106,6 +108,9 @@ export function SessionView({
       <SessionFinished
         brand={brand}
         title={session.interview_title ?? session.topic_title}
+        answered={{ done: progress.answered, total: progress.total }}
+        minutes={minutesTaken}
+        preview={Boolean(testHref)}
         embedded={Boolean(onFinished)}
         testHref={testHref}
       />
@@ -147,60 +152,62 @@ function SessionScreen(props: SessionPlayProps) {
   )
 }
 
-/** A company's interview once finished: the company's logo over the title, as on the
- * invitation, between the header and footer, which are back. Sent from the company's own
- * platform, a button back there; a member's preview, a button to the test. */
+/** A company's interview once finished, between the header and footer, which are back. Sent from
+ * the company's own platform, a button back there; a member's preview, a button to the test. */
 function SessionFinished({
   brand,
   title,
+  answered,
+  minutes,
+  preview,
   embedded,
   testHref,
 }: {
   brand: Brand | null
   title: string
+  answered: { done: number; total: number }
+  minutes?: number | null
+  preview: boolean
   embedded: boolean
   testHref?: string
 }) {
   const t = useTranslations("session")
 
   return (
-    <div className="flex flex-col items-center gap-8 py-24 text-center">
-      <SessionLogo
-        brand={brand}
-        className="h-20 w-auto max-w-40 rounded-xl object-contain"
-      />
-      <div className="space-y-3">
-        <h1 className="font-heading text-3xl font-medium tracking-tight text-balance normal-case">
-          {title}
-        </h1>
-        <p className="text-muted-foreground">{t("done")}</p>
-      </div>
-      {embedded ? null : brand?.return_url ? (
-        <Button
-          className="h-12 px-6 text-base"
-          render={<a href={brand.return_url} />}
-          nativeButton={false}
-        >
-          {t.rich("backTo", { company: brand.company, ...bdi })}
-        </Button>
-      ) : (
-        testHref && (
+    <CandidateFinished
+      company={brand?.company}
+      logoUrl={brand?.logo_url}
+      title={title}
+      answered={answered}
+      minutes={minutes}
+      preview={preview}
+      action={
+        embedded ? null : brand?.return_url ? (
           <Button
             className="h-12 px-6 text-base"
-            render={
-              <Link href={testHref.slice(0, testHref.lastIndexOf("/"))} />
-            }
+            render={<a href={brand.return_url} />}
             nativeButton={false}
           >
-            {t("toTest")}
+            {t.rich("backTo", { company: brand.company, ...bdi })}
           </Button>
+        ) : (
+          testHref && (
+            <Button
+              className="h-12 px-6 text-base"
+              render={
+                <Link href={testHref.slice(0, testHref.lastIndexOf("/"))} />
+              }
+              nativeButton={false}
+            >
+              {t("toTest")}
+            </Button>
+          )
         )
-      )}
-    </div>
+      }
+    />
   )
 }
 
-/** The company's logo, when it has one. */
 function SessionLogo({
   brand,
   className,

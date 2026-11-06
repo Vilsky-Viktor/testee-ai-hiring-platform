@@ -1,5 +1,6 @@
 "use client"
 
+import { LoaderCircleIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
@@ -14,18 +15,15 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
+import { FloatingInput } from "@/components/ui/floating-field"
 import { MAX_EMAIL_LENGTH } from "@/config/limits"
 import { apiFetch, serviceRefusal } from "@/lib/api"
 import { bdi } from "@/lib/bidi"
 import { fileBase64 } from "@/lib/files"
 import { useOrigin } from "@/lib/origin"
 
-const CHAT_BUTTON =
-  "size-12 shrink-0 text-muted-foreground hover:text-foreground"
-
 /** Sends a PDF report by email from testee (a reply goes to the member), or a text
- * summary through a chat app (WhatsApp, Telegram, Viber, LINE), which can't carry a file. Laid out like "new candidate". */
+ * summary through a chat app (WhatsApp, Telegram, Viber, LINE), which can't carry a file. */
 export function ShareReport({
   open,
   onOpenChange,
@@ -76,23 +74,51 @@ export function ShareReport({
 
   return (
     <Dialog open={open} onOpenChange={(next) => !sending && onOpenChange(next)}>
-      <DialogContent showCloseButton={false} className="sm:max-w-xl">
-        {/* The title on the left; the chat apps at the end of its row. */}
-        <DialogHeader className="flex-row items-center justify-between gap-4 max-sm:flex-col max-sm:items-stretch">
+      <DialogContent showCloseButton={false} className="sm:max-w-lg">
+        <DialogHeader>
           <DialogTitle>{t("shareTitle")}</DialogTitle>
-          {/* Chats can't carry the PDF, so they get a text summary. On phones "or send via" sits
-              above the apps, both centered, the icons a little smaller. */}
-          <div className="flex items-center gap-1 max-sm:flex-wrap max-sm:justify-center">
-            <span className="me-2 text-sm text-muted-foreground lowercase max-sm:me-0 max-sm:basis-full max-sm:text-center">
-              {t("orSummary")}
-            </span>
+        </DialogHeader>
+        <form id="share-report-form" onSubmit={send} className="flow-root">
+          <FloatingInput
+            label={t("recipient")}
+            type="email"
+            required
+            autoComplete="off"
+            maxLength={MAX_EMAIL_LENGTH}
+            placeholder="manager@example.com"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            action={
+              <Button
+                type="submit"
+                className="h-10 shrink-0 rounded-lg px-4 text-base"
+                disabled={sending || !email}
+              >
+                {sending && <LoaderCircleIcon className="animate-spin" />}
+                {/* PDF keeps its capitals inside the lowercase button; one span keeps the
+                    spacing. */}
+                <span>
+                  {t.rich("send", {
+                    name: (chunks) => (
+                      <span className="normal-case">{chunks}</span>
+                    ),
+                  })}
+                </span>
+              </Button>
+            }
+          />
+        </form>
+        {/* Chats can't carry the PDF, so they get a text summary. */}
+        <div className="space-y-3">
+          <p className="text-center text-sm text-muted-foreground">
+            {t("orSummary")}
+          </p>
+          <div className="grid grid-cols-2 gap-3">
             {CHAT_APPS.map(({ name, Icon, link }) => (
               <Button
                 key={name}
-                variant="ghost"
-                size="icon"
-                className={CHAT_BUTTON}
-                aria-label={name}
+                variant="outline"
+                className="h-12 gap-2 px-2 text-base normal-case"
                 render={
                   <a
                     href={link(summary, origin)}
@@ -102,25 +128,12 @@ export function ShareReport({
                 }
                 nativeButton={false}
               >
-                <Icon className="size-8 max-sm:size-7" />
+                <Icon className="size-6" />
+                {name}
               </Button>
             ))}
           </div>
-        </DialogHeader>
-        <form id="share-report-form" onSubmit={send}>
-          <div className="relative rounded-xl border border-transparent transition-colors focus-within:border-ring-gradient">
-            <Input
-              type="email"
-              required
-              maxLength={MAX_EMAIL_LENGTH}
-              placeholder="manager@example.com"
-              aria-label={t("recipient")}
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              className="h-16 border-0 px-6 text-lg focus-visible:ring-0 md:text-lg"
-            />
-          </div>
-        </form>
+        </div>
         <DialogFooter>
           <DialogClose
             render={
@@ -133,19 +146,6 @@ export function ShareReport({
           >
             {common("cancel")}
           </DialogClose>
-          <Button
-            type="submit"
-            form="share-report-form"
-            className="h-10 px-5 text-base"
-            disabled={sending || !email}
-          >
-            {/* PDF keeps its capitals inside the lowercase button; one span keeps the spacing. */}
-            <span>
-              {t.rich("send", {
-                name: (chunks) => <span className="normal-case">{chunks}</span>,
-              })}
-            </span>
-          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

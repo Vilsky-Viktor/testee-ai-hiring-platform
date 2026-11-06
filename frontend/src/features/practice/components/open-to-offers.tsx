@@ -7,11 +7,13 @@ import { type FormEvent, useId, useState } from "react"
 import { toast } from "sonner"
 
 import { CornerSign } from "@/components/common/corner-sign"
+import { SavedCheck } from "@/components/common/saved-check"
 import { Button } from "@/components/ui/button"
 import { FloatingInput } from "@/components/ui/floating-field"
 import { Switch } from "@/components/ui/switch"
 import { SIGN_CARD } from "@/config/cards"
 import { useLocalTime } from "@/hooks/use-local-time"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiFetch, serviceRefusal } from "@/lib/api"
 import { bdiText } from "@/lib/bidi"
 import type { OpenToOffers } from "@/types/round"
@@ -51,6 +53,7 @@ export function OpenToOffersCard({ initial }: { initial: OpenToOffers }) {
   const [status, setStatus] = useState(initial)
   const [draft, setDraft] = useState(initial.linkedin_url ?? "")
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark()
   const [error, setError] = useState<string | null>(null)
   // A profile to save: a new one, or the first one while it's off (saving it turns it on).
   const changed = !status.on || draft.trim() !== status.linkedin_url
@@ -69,6 +72,7 @@ export function OpenToOffersCard({ initial }: { initial: OpenToOffers }) {
       })
       setStatus(saved)
       setDraft(saved.linkedin_url ?? draft)
+      markSaved()
     } catch (failure) {
       const refusal = serviceRefusal(failure, [409, 422])
 
@@ -88,6 +92,7 @@ export function OpenToOffersCard({ initial }: { initial: OpenToOffers }) {
     try {
       await apiFetch(PATH, { method: "DELETE" })
       setStatus({ ...status, on: false, name: null, until: null })
+      markSaved()
     } catch {
       toast.error(t("failed"))
     } finally {
@@ -124,6 +129,7 @@ export function OpenToOffersCard({ initial }: { initial: OpenToOffers }) {
             {t("text")}
           </span>
         </span>
+        <SavedCheck text={savedText()} />
         <Switch
           checked={status.on}
           disabled={saving || (!status.on && !draft.trim())}

@@ -38,9 +38,9 @@ export const NET_WAVES = 2
 // right mirror each other.
 export const QUALITY_ELLIPSE = { x: 36, y: 34 }
 
-// A step card's padding and border from laptops up, top and bottom together, in pixels (pt-9
-// under the icon on its edge, pb-5, border).
-export const QUALITY_CARD_PADDING = 58
+// A step card's padding and border from laptops up, top and bottom together, in pixels (p-4 and
+// the border).
+export const QUALITY_CARD_PADDING = 34
 
 // The net's mesh, in pixels.
 export const NET_CELL = 22

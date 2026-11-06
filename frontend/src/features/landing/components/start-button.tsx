@@ -3,6 +3,7 @@
 import { cn } from "cn"
 
 import { Button } from "@/components/ui/button"
+import { goToStart } from "@/lib/start-box"
 
 /** Back up to the job description box at the top of the home page, ready to type. */
 export function StartButton({
@@ -12,16 +13,11 @@ export function StartButton({
   label: string
   className?: string
 }) {
-  function start() {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-    document.querySelector("textarea")?.focus({ preventScroll: true })
-  }
-
   return (
     <Button
       data-testid="start-button"
       className={cn("h-14 px-10 text-lg", className)}
-      onClick={start}
+      onClick={goToStart}
     >
       {label}
     </Button>

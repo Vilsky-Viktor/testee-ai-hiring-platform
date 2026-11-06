@@ -40,10 +40,13 @@ test("the owner makes an admin the owner, and an account owning a shared company
 
   await visit(ann, `/companies/${company.id}/members`)
   const row = ann.getByRole("listitem").filter({ hasText: bobEmail })
-  // The row's first button picks the role; "owner" is the menu's last choice.
-  await row.getByRole("button").first().click()
+  // Handing the company over is in the row's menu.
+  await expect(async () => {
+    await row.getByTestId("member-menu").click()
+    await expect(ann.getByTestId("make-owner")).toBeVisible({ timeout: 2_000 })
+  }).toPass()
   await shot(ann, "owner-choice")
-  await ann.getByRole("menu").getByRole("menuitemradio").last().click()
+  await ann.getByTestId("make-owner").click()
   const dialog = ann.getByRole("dialog")
   await expect(dialog).toContainText(bobEmail)
   await shot(ann, "make-owner")

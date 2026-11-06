@@ -118,14 +118,14 @@ export function CampaignView({
         }
         tags={
           <>
-            <Badge variant="outline" className="h-7 px-3 text-sm font-light">
+            <Badge variant="outline" className="h-8 px-4 text-sm font-light">
               {t(`campaignKinds.${campaign.kind}`)}
             </Badge>
             {audience.map((label) => (
               <Badge
                 key={label}
                 variant="outline"
-                className="h-7 px-3 text-sm font-light"
+                className="h-8 px-4 text-sm font-light"
                 data-testid="campaign-audience"
               >
                 {label}
@@ -134,7 +134,7 @@ export function CampaignView({
             {companies && (
               <Badge
                 variant="outline"
-                className="h-7 px-3 text-sm font-light normal-case"
+                className="h-8 px-4 text-sm font-light normal-case"
                 data-testid="campaign-companies"
               >
                 {companies}

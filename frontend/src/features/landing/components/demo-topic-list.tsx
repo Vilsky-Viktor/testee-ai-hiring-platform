@@ -1,93 +1,88 @@
 "use client"
 
 import { cn } from "cn"
+import { PlusIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
 
-import { DemoTopicEditor } from "@/features/landing/components/demo-topic-editor"
 import { TopicCard } from "@/features/landing/components/topic-card"
-import {
-  DEMO_ADDED_SUBTOPIC,
-  DEMO_EDITED,
-  DEMO_NEW_TOPIC,
-  DEMO_TOPICS,
-} from "@/config/create-demo"
+import { DEMO_EDITED, DEMO_EDITED_SUBTOPIC } from "@/config/create-demo"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
 
-/** The topic review's list (features/generation/components/topic-review.tsx), small: the first
- * `shown` topics, the edited one with its subtopic once `added` and its editor in its place
- * while `editing` (`typed` so far, `typing`, the button `pressed`), and the topic the AI added
- * once `applied`. Each topic flies in from the start side as it shows, and the AI's added one
- * also flashes in the primary colour (promo-fly-in, promo-flash: promo.css). */
+// A row flying in from the start side (promo-fly-in, promo.css).
+const FLY_IN =
+  "motion-safe:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both] rtl:[--fly-from:1]"
+
+/** The topic review's list (features/generation/components/topic-review.tsx), simplified for the
+ * promo: the first `shown` topics, the edited one with its name and subtopic as typed so far
+ * (`renamed`, `retyped`), lifted out of the list, a little larger, while one of them is
+ * `editing` in place; the topic the AI added once `applied`, flashing in the primary colour. Each topic flies in as it shows. */
 export function DemoTopicList({
   aimed = false,
   shown,
-  added,
   applied,
+  renamed,
+  retyped,
   editing,
-  typed,
-  typing,
-  pressed,
 }: {
-  // Whether its buttons and fields are the pointer's targets.
+  // Whether its names are the pointer's targets.
   aimed?: boolean
   shown: number
-  added: boolean
   applied: boolean
-  editing: boolean
-  typed: string
-  typing: boolean
-  pressed: string | null
+  renamed: string
+  retyped: string
+  editing: string | null
 }) {
+  const t = useTranslations("generation")
+  const content = useDemoContent("create")
+
   return (
     <ul className="divide-y rounded-xl border">
-      {DEMO_TOPICS.slice(0, shown).map((topic) => {
-        if (topic.name !== DEMO_EDITED) {
+      {Object.values(content.topics)
+        .slice(0, shown)
+        .map((topic, place) => {
+          if (place !== DEMO_EDITED) {
+            return (
+              <li key={topic.name} className={FLY_IN}>
+                <TopicCard name={topic.name} subtopics={topic.subtopics} />
+              </li>
+            )
+          }
+
+          const subtopics = topic.subtopics.map((subtopic, position) =>
+            position === DEMO_EDITED_SUBTOPIC ? subtopic + retyped : subtopic
+          )
+
           return (
             <li
               key={topic.name}
-              className="motion-safe:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both] rtl:[--fly-from:1]"
+              className={cn(
+                "relative rounded-xl bg-background transition-[scale,box-shadow] duration-300",
+                FLY_IN,
+                editing && "z-10 scale-[1.03] ring-1 ring-ring"
+              )}
             >
-              <TopicCard name={topic.name} subtopics={topic.subtopics} />
+              <TopicCard
+                name={topic.name + renamed}
+                subtopics={subtopics}
+                aimed={aimed}
+                subtopic={DEMO_EDITED_SUBTOPIC}
+                editing={editing}
+              />
             </li>
           )
-        }
-
-        const subtopics = added
-          ? [...topic.subtopics, DEMO_ADDED_SUBTOPIC]
-          : topic.subtopics
-
-        // The edited topic: its row and its editor in one place, as tall as the taller.
-        return (
-          <li
-            key={topic.name}
-            className="grid *:[grid-area:1/1] motion-safe:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both] rtl:[--fly-from:1]"
-          >
-            <span className={cn("grid items-center", editing && "invisible")}>
-              <TopicCard
-                name={topic.name}
-                subtopics={subtopics}
-                aimed={aimed}
-                pressed={pressed === "open"}
-              />
-            </span>
-            <span className={cn(!editing && "invisible")}>
-              <DemoTopicEditor
-                aimed={aimed}
-                subtopics={subtopics}
-                typed={typed}
-                typing={typing}
-                pressed={pressed}
-              />
-            </span>
-          </li>
-        )
-      })}
+        })}
       {applied && (
-        <li className="rounded-b-xl motion-safe:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both,promo-flash_1.6s_ease-out_0.3s] rtl:[--fly-from:1]">
+        <li className="motion-safe:animate-[promo-fly-in_0.5s_cubic-bezier(0.2,0.9,0.3,1.2)_both,promo-flash_1.6s_ease-out_0.3s] rtl:[--fly-from:1]">
           <TopicCard
-            name={DEMO_NEW_TOPIC.name}
-            subtopics={DEMO_NEW_TOPIC.subtopics}
+            name={content.newTopic.name}
+            subtopics={content.newTopic.subtopics}
           />
         </li>
       )}
+      <li className="flex items-center gap-4 px-5 py-3 font-medium text-primary lowercase">
+        <PlusIcon aria-hidden className="size-6 shrink-0" />
+        {t("addTopic")}
+      </li>
     </ul>
   )
 }

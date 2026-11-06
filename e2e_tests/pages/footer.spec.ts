@@ -14,39 +14,43 @@ async function hrefs(links: import("@playwright/test").Locator) {
 }
 
 // The footer's links in three columns: the product, the features page and resources to read,
-// and the company.
+// and the company; the legal ones in the bar under them.
 test("the footer groups its links by product, resources and company", { tag: "@phone" }, async ({ page }) => {
   await page.goto("/faq");
-  const columns = page.getByRole("contentinfo").getByRole("navigation").getByRole("list");
+  const menus = page.getByRole("contentinfo").getByRole("navigation");
+  await expect(menus).toHaveCount(2);
+  const columns = menus.first().getByRole("list");
   await expect(columns).toHaveCount(3);
   expect(await hrefs(columns.nth(0).getByRole("link"))).toEqual([
+    "/features",
     "/hiring-flow",
     "/tests",
-    "/pre-employment-testing",
-    "/ai-interviews",
     "/practice",
-    "/compare",
+    "/pricing",
   ]);
   expect(await hrefs(columns.nth(1).getByRole("link"))).toEqual([
-    "/features",
     "/guides",
+    "/compare",
     "/faq",
-    "/documents",
     "/api-docs",
-    "/news",
   ]);
   expect(await hrefs(columns.nth(2).getByRole("link"))).toEqual([
     "/about",
     "/contact",
-    "/trust",
+    "/news",
+  ]);
+  expect(await hrefs(menus.last().getByRole("link"))).toEqual([
     "/privacy",
     "/terms",
+    "/trust",
     "/accessibility",
+    "/documents",
   ]);
 
-  // The menu is named for screen readers, and so is each social icon; the icons aren't links.
+  // The menus are named for screen readers, and so is each social icon; the icons aren't links.
   const footer = page.getByRole("contentinfo");
-  await expect(footer.getByRole("navigation")).toHaveAccessibleName(/.+/);
+  await expect(menus.first()).toHaveAccessibleName(/.+/);
+  await expect(menus.last()).toHaveAccessibleName(/.+/);
 
   for (const name of ["LinkedIn", "X", "YouTube", "Facebook"]) {
     await expect(footer.getByRole("img", { name, exact: true })).toBeVisible();
@@ -55,7 +59,7 @@ test("the footer groups its links by product, resources and company", { tag: "@p
   await expect(footer.locator('[role="img"]')).toHaveCount(4);
   await expect(footer.locator('a [role="img"]')).toHaveCount(0);
 
-  // The logo, the one link outside the menu, leads home.
+  // The logo, the one link outside the menus, leads home.
   const logo = footer.locator("a:not(nav a)");
   await expect(logo).toHaveCount(1);
   await expect(logo).toHaveAttribute("href", "/");

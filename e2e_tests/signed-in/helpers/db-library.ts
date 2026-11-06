@@ -12,15 +12,16 @@ export async function addTemplate(
   questions: number,
   pool: "company" | "practice" = "company",
   level: "basic" | "medium" | "hard" = "basic",
+  language = "de",
 ): Promise<string> {
   return withDatabase("library", async (client) => {
     const set = await client.query(
       `INSERT INTO sets (id, kind, owner_type, owner_id, title, source_text, level, language,
          requirements, topic_count, created_at)
-       VALUES (gen_random_uuid(), 'template', 'platform', 'testee', $1, 'E2E', $2, 'de',
+       VALUES (gen_random_uuid(), 'template', 'platform', 'testee', $1, 'E2E', $2, $3,
          '[]', 1, now())
        RETURNING id`,
-      [title, level],
+      [title, level, language],
     );
     const id = set.rows[0].id;
     const topic = await client.query(

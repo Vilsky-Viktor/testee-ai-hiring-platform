@@ -21,11 +21,11 @@ const Toaster = ({ ...props }: ToasterProps) => {
       theme={theme as ToasterProps["theme"]}
       className="toaster group"
       icons={{
-        success: <CircleCheckIcon className="size-7" />,
-        info: <InfoIcon className="size-7" />,
-        warning: <TriangleAlertIcon className="size-7" />,
-        error: <OctagonXIcon className="size-7" />,
-        loading: <Loader2Icon className="size-7 animate-spin" />,
+        success: <CircleCheckIcon className="size-5" />,
+        info: <InfoIcon className="size-5" />,
+        warning: <TriangleAlertIcon className="size-5" />,
+        error: <OctagonXIcon className="size-5" />,
+        loading: <Loader2Icon className="size-5 animate-spin" />,
       }}
       style={
         {
@@ -39,15 +39,16 @@ const Toaster = ({ ...props }: ToasterProps) => {
       duration={TOAST_SECONDS * 1000}
       toastOptions={{
         classNames: {
-          // Larger than the library's 13px, with more room around it, for every kind of toast; the icon
-          // too, in a box its size (the library's is 16px).
+          // A compact card: the icon in a tinted tile, the text beside it, for every kind of toast.
           toast:
-            "cn-toast gap-4! p-5! text-[17px]! [&_[data-button]]:text-sm! [&_[data-icon]]:size-7!",
-          // The level shows in the border and the icon only, on the popover's own background:
-          // errors red, warnings orange (the site's amber, as in the warning card).
-          error: "border-destructive! [&_[data-icon]]:text-destructive",
+            "cn-toast items-center! gap-3! rounded-xl! p-3! pe-4! text-base! shadow-lg! [&_[data-button]]:text-sm! [&_[data-icon]]:m-0! [&_[data-icon]]:flex! [&_[data-icon]]:size-10! [&_[data-icon]]:items-center! [&_[data-icon]]:justify-center! [&_[data-icon]]:rounded-lg!",
+          // The level shows in the tile, on the popover's own background.
+          success: "[&_[data-icon]]:bg-primary/10 [&_[data-icon]]:text-primary",
+          info: "[&_[data-icon]]:bg-surface [&_[data-icon]]:text-muted-foreground",
+          error:
+            "[&_[data-icon]]:bg-destructive/10 [&_[data-icon]]:text-destructive",
           warning:
-            "border-amber-500! [&_[data-icon]]:text-amber-600 dark:[&_[data-icon]]:text-amber-400",
+            "[&_[data-icon]]:bg-amber-500/10 [&_[data-icon]]:text-amber-600 dark:[&_[data-icon]]:text-amber-400",
         },
       }}
       {...props}

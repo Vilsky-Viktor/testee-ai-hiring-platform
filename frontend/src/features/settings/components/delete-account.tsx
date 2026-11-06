@@ -6,17 +6,9 @@ import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
-import { Button } from "@/components/ui/button"
+import { ConfirmDialog } from "@/components/common/confirm-dialog"
+import { TEXT_LINK } from "@/config/links"
 import { Dot } from "@/components/common/dot"
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import { signOut } from "@/lib/auth"
 import type { AccountDeletion } from "@/types/company"
@@ -29,7 +21,6 @@ export function DeleteAccount({
   onOpenChange: (open: boolean) => void
 }) {
   const t = useTranslations("deleteAccount")
-  const common = useTranslations("common")
   const router = useRouter()
   const [deleting, setDeleting] = useState(false)
   // What happens to the companies the user owns; null until read, or when it couldn't be.
@@ -62,74 +53,58 @@ export function DeleteAccount({
   }
 
   return (
-    <Dialog
+    <ConfirmDialog
       open={open}
-      onOpenChange={(next) => !deleting && onOpenChange(next)}
+      onOpenChange={onOpenChange}
+      title={t("title")}
+      text={
+        <>
+          <span className="block">{t("everything")}</span>
+          {owned === null && <span className="block">{t("company")}</span>}
+        </>
+      }
+      confirm={t("confirm")}
+      busy={deleting}
+      onConfirm={remove}
+      confirmDisabled={blocked}
     >
-      <DialogContent showCloseButton={false} className="sm:max-w-lg">
-        <DialogHeader className="gap-4">
-          <DialogTitle className="no-dot mb-2">{t("title")}</DialogTitle>
-          <DialogDescription className="space-y-2 text-base">
-            <span className="block">{t("everything")}</span>
-            {owned === null && <span className="block">{t("company")}</span>}
-          </DialogDescription>
-        </DialogHeader>
-        {/* A company others joined blocks it: another member becomes its owner first. */}
-        {blocked && (
-          <div className="space-y-2 text-base">
-            <p className="text-destructive">{t("blocked")}</p>
-            <ul className="list-disc space-y-1 ps-5">
-              {owned?.blocked.map((company) => (
-                <li key={company.id}>
-                  <Link
-                    href={`/companies/${company.id}/members`}
-                    className="underline underline-offset-4"
-                    onClick={() => onOpenChange(false)}
-                  >
-                    {company.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        {Boolean(owned?.deleted.length) && (
-          <div className="space-y-2 text-base text-muted-foreground">
-            <p>{t("deletedWith")}</p>
-            <ul className="list-disc space-y-1 ps-5">
-              {owned?.deleted.map((company) => (
-                <li key={company.id}>
+      {/* A company others joined blocks it: another member becomes its owner first. */}
+      {blocked && (
+        <div className="space-y-2 text-base">
+          <p className="text-destructive">{t("blocked")}</p>
+          <ul className="list-disc space-y-1 ps-5">
+            {owned?.blocked.map((company) => (
+              <li key={company.id}>
+                <Link
+                  href={`/companies/${company.id}/members`}
+                  className={TEXT_LINK}
+                  onClick={() => onOpenChange(false)}
+                >
                   {company.name}
-                  {company.credits !== null && (
-                    <>
-                      <Dot />
-                      {t("credits", { count: company.credits })}
-                    </>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        <DialogFooter>
-          <DialogClose
-            render={
-              <Button variant="outline" className="h-12 px-6 text-base" />
-            }
-            disabled={deleting}
-          >
-            {common("keep")}
-          </DialogClose>
-          <Button
-            variant="destructive"
-            className="h-12 px-6 text-base"
-            disabled={deleting || blocked}
-            onClick={remove}
-          >
-            {deleting ? common("deleting") : t("confirm")}
-          </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {Boolean(owned?.deleted.length) && (
+        <div className="space-y-2 text-base text-muted-foreground">
+          <p>{t("deletedWith")}</p>
+          <ul className="list-disc space-y-1 ps-5">
+            {owned?.deleted.map((company) => (
+              <li key={company.id}>
+                {company.name}
+                {company.credits !== null && (
+                  <>
+                    <Dot />
+                    {t("credits", { count: company.credits })}
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </ConfirmDialog>
   )
 }

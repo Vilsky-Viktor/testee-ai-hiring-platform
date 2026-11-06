@@ -1,19 +1,20 @@
 "use client"
 
-import { SquarePenIcon } from "lucide-react"
+import { cn } from "cn"
+import { PlusIcon, SquarePenIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 import type { ReactNode } from "react"
 import { useState } from "react"
 
+import { TopicChanges } from "@/features/generation/components/topic-changes"
 import { TopicEditor } from "@/features/generation/components/topic-editor"
 import { RoundFooter } from "@/components/common/round-footer"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Textarea } from "@/components/ui/textarea"
-import { MAX_INSTRUCTIONS_LENGTH } from "@/config/limits"
+import { ROW_MENU_BUTTON } from "@/config/buttons"
 import type { DraftTopic } from "@/types/generation"
-import { LIST_BOX } from "@/config/lists"
-import { Dot } from "@/components/common/dot"
+import { LIST_BOX, ROW_HOVER } from "@/config/lists"
+import { SubtopicList } from "@/components/common/subtopic-list"
 import { bdiText } from "@/lib/bidi"
 
 type TopicReviewProps = {
@@ -21,6 +22,8 @@ type TopicReviewProps = {
   maxTopics: number
   // Subtopics a topic may have when edited by hand.
   maxSubtopics: number
+  // Subtopics a topic added by hand needs at least.
+  minAddedSubtopics: number
   back: ReactNode
   // Shown at the left of the submit row.
   cancel?: ReactNode
@@ -36,6 +39,7 @@ export function TopicReview({
   topics,
   maxTopics,
   maxSubtopics,
+  minAddedSubtopics,
   back,
   cancel,
   onSubmit,
@@ -51,10 +55,14 @@ export function TopicReview({
   const [submitting, setSubmitting] = useState(false)
   const edited = JSON.stringify(draft) !== JSON.stringify(topics)
   const unnamed = draft.some((topic) => !topic.main_topic.trim())
-  const revising =
-    instructions.trim().length > 0 || selected.length !== topics.length
-  // Without instructions the selection is approved as is, so it must fit the limit.
-  const tooMany = !instructions.trim() && selected.length > maxTopics
+  const unfinished =
+    unnamed ||
+    draft
+      .slice(topics.length)
+      .some((topic) => topic.subtopics.length < minAddedSubtopics)
+  const asking = instructions.trim().length > 0
+  // Approved as it is, the selection must fit the limit; asking the AI, it may merge them.
+  const tooMany = !asking && selected.length > maxTopics
 
   function toggle(index: number, checked: boolean) {
     setSelected((current) =>
@@ -64,16 +72,43 @@ export function TopicReview({
     )
   }
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+  function addTopic() {
+    setDraft([...draft, { main_topic: "", subtopics: [] }])
+    setSelected([...selected, draft.length])
+    setEditing(draft.length)
+  }
+
+  function removeTopic(index: number) {
+    setDraft(draft.filter((_, item) => item !== index))
+    setSelected(
+      selected
+        .filter((item) => item !== index)
+        .map((item) => (item > index ? item - 1 : item))
+    )
+    setEditing(null)
+  }
+
+  // With `words`, the AI revises the chosen topics; without them, they're approved.
+  async function send(words: string) {
     setSubmitting(true)
-    await onSubmit(selected, instructions.trim(), edited ? draft : null)
+    await onSubmit(selected, words, edited ? draft : null)
     setSubmitting(false)
   }
 
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    if (!asking) {
+      void send("")
+    }
+  }
+
+  const applyDisabled =
+    !asking || selected.length === 0 || unfinished || submitting
+
   return (
-    // pb-28 keeps the last field clear of the sticky footer.
-    <form onSubmit={handleSubmit} className="space-y-8 pb-28">
+    // The bottom padding keeps the last field clear of the sticky footer.
+    <form onSubmit={handleSubmit} className="space-y-8 pb-28 max-sm:pb-36">
       <div className="space-y-2">
         <div className="relative">
           {back}
@@ -84,13 +119,24 @@ export function TopicReview({
         <p className="text-muted-foreground">{t("reviewText")}</p>
       </div>
 
-      <ul className={LIST_BOX}>
+      {/* Above the list, in view however many topics there are: one line until it's used. */}
+      <TopicChanges
+        value={instructions}
+        onChange={setInstructions}
+        disabled={applyDisabled}
+        onApply={() => send(instructions.trim())}
+      />
+
+      <ul className={`${LIST_BOX} overflow-hidden`}>
         {draft.map((topic, index) =>
           editing === index ? (
             <li key={index}>
               <TopicEditor
                 topic={topic}
                 maxSubtopics={maxSubtopics}
+                minSubtopics={
+                  index >= topics.length ? minAddedSubtopics : undefined
+                }
                 onChange={(changed) =>
                   setDraft((current) =>
                     current.map((item, itemIndex) =>
@@ -99,33 +145,34 @@ export function TopicReview({
                   )
                 }
                 onDone={() => setEditing(null)}
+                onRemove={
+                  index >= topics.length ? () => removeTopic(index) : undefined
+                }
               />
             </li>
           ) : (
-            <li key={index} className="relative">
-              <label className="flex cursor-pointer items-center gap-5 p-6 pe-16">
+            <li key={index} className={`group/row relative ${ROW_HOVER}`}>
+              <label className="flex cursor-pointer items-center gap-5 p-6 pe-20">
                 <Checkbox
                   className="size-6 shrink-0 [&_[data-slot=checkbox-indicator]>svg]:size-4"
                   checked={selected.includes(index)}
                   onCheckedChange={(checked) => toggle(index, checked)}
                 />
-                <span className="space-y-1">
+                <span
+                  className={cn(
+                    "space-y-2 transition-opacity",
+                    !selected.includes(index) && "opacity-50"
+                  )}
+                >
                   <span className="block font-medium">{topic.main_topic}</span>
-                  <span className="block text-sm text-muted-foreground">
-                    {topic.subtopics.map((subtopic, subtopicIndex) => (
-                      <span key={subtopic}>
-                        {subtopicIndex > 0 && <Dot />}
-                        {subtopic}
-                      </span>
-                    ))}
-                  </span>
+                  <SubtopicList subtopics={topic.subtopics} />
                 </span>
               </label>
               <Button
                 type="button"
                 variant="ghost"
                 size="icon"
-                className="absolute end-4 top-1/2 size-11 -translate-y-1/2"
+                className={`absolute end-5 top-1/2 -translate-y-1/2 ${ROW_MENU_BUTTON}`}
                 aria-label={t.markup("editTopic", {
                   topic: topic.main_topic,
                   ...bdiText,
@@ -133,40 +180,57 @@ export function TopicReview({
                 tooltip={common("edit")}
                 onClick={() => setEditing(index)}
               >
-                <SquarePenIcon className="size-6" />
+                <SquarePenIcon />
               </Button>
             </li>
           )
         )}
+        <li>
+          <button
+            type="button"
+            onClick={addTopic}
+            disabled={editing !== null}
+            className={`flex w-full items-center gap-5 p-6 text-start font-medium text-primary disabled:opacity-50 ${ROW_HOVER}`}
+          >
+            <PlusIcon aria-hidden className="size-6 shrink-0" />
+            {t("addTopic")}
+          </button>
+        </li>
       </ul>
 
-      {/* Same card as the goal input on the home page. */}
-      <div className="relative w-full rounded-xl border border-transparent bg-surface p-3 transition-colors focus-within:border-ring-gradient">
-        <Textarea
-          maxLength={MAX_INSTRUCTIONS_LENGTH}
-          value={instructions}
-          onChange={(event) => setInstructions(event.target.value)}
-          placeholder={t("changesPlaceholder")}
-          aria-label={t("changes")}
-          className="max-h-72 min-h-24 resize-none border-0 bg-transparent p-2 text-base shadow-none focus-visible:ring-0 md:text-base dark:bg-transparent"
-        />
-      </div>
-
-      <RoundFooter>
+      <RoundFooter className="max-sm:flex-wrap max-sm:gap-y-2">
         <div>{cancel}</div>
-        <div className="flex items-center gap-4">
-          {/* Always there, so a screen reader hears why Approve stopped working. */}
-          <p role="status" className="text-sm text-destructive">
-            {tooMany && t("tooMany", { max: maxTopics })}
-          </p>
-          <Button
-            type="submit"
-            className="h-12 px-6 text-base"
-            disabled={selected.length === 0 || tooMany || unnamed || submitting}
-          >
-            {revising ? t("apply") : t("approve")}
-          </Button>
-        </div>
+        {/* Always there, so a screen reader hears why Approve stopped working. */}
+        <p
+          role="status"
+          data-testid="topics-chosen"
+          className={cn(
+            "ms-auto text-sm text-muted-foreground max-sm:order-first max-sm:w-full max-sm:text-center",
+            (tooMany || asking) && "text-destructive"
+          )}
+        >
+          {tooMany
+            ? t("tooMany", { max: maxTopics })
+            : asking
+              ? t("applyFirst")
+              : t("topicsChosen", {
+                  chosen: selected.length,
+                  count: draft.length,
+                })}
+        </p>
+        <Button
+          type="submit"
+          className="h-12 px-6 text-base"
+          disabled={
+            selected.length === 0 ||
+            tooMany ||
+            asking ||
+            unfinished ||
+            submitting
+          }
+        >
+          {t("approve")}
+        </Button>
       </RoundFooter>
     </form>
   )

@@ -1,19 +1,21 @@
 "use client"
 
+import { useRouter } from "next/navigation"
 import { useLocale, useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
 import { CurrencySelect } from "@/components/common/currency-select"
 import { BILLING_REFRESHED } from "@/config/billing"
+import { useSavedMark } from "@/hooks/use-saved-mark"
 import { apiErrorMessage, apiFetch } from "@/lib/api"
 import { formatPrice } from "@/lib/format"
 import type { CompanyCurrency } from "@/types/billing"
 
-/** The currency the company's top-ups are priced and paid in, wherever the buyer is, as a small
- * pill beside its Top up button: owners and admins change it (saved at once), others see the
- * code. Automatic top-up follows it too. Read by the page's server (`initial`), so it's there
- * as the page shows and nothing beside it moves. */
+/** The currency the company's top-ups are priced and paid in, wherever the buyer is, as a pill at
+ * the top of the top-up page: owners and admins change it (saved at once), others see the code.
+ * The page's prices and the automatic top-up follow it. Read by the page's server (`initial`), so
+ * it's there as the page shows and nothing beside it moves. */
 export function CompanyCurrencySetting({
   companyId,
   canEdit,
@@ -26,9 +28,11 @@ export function CompanyCurrencySetting({
   const t = useTranslations("companyBilling")
   const autoTopUp = useTranslations("autoTopUp")
   const locale = useLocale()
+  const router = useRouter()
   const path = `/companies/companies/${companyId}/billing/currency`
   const [setting, setSetting] = useState(initial)
   const [saving, setSaving] = useState(false)
+  const { markSaved, savedText } = useSavedMark()
 
   async function choose(currency: string) {
     setSaving(true)
@@ -39,6 +43,9 @@ export function CompanyCurrencySetting({
         body: JSON.stringify({ currency }),
       })
       setSetting(chosen)
+      markSaved()
+      // The page's prices come from its server.
+      router.refresh()
       // What reads its own billing data (the automatic top-up) reads it again, in the new
       // currency.
       window.dispatchEvent(new Event(BILLING_REFRESHED))
@@ -71,7 +78,8 @@ export function CompanyCurrencySetting({
           currencies={setting.currencies}
           onChange={choose}
           disabled={saving}
-          triggerClassName="h-10 w-auto max-w-none gap-2 px-5"
+          saved={savedText()}
+          triggerClassName="h-12 w-auto max-w-none gap-2 px-6"
           short
         />
       ) : (

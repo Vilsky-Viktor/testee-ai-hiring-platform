@@ -24,17 +24,16 @@ export function PracticeActions({
   const { user } = useAuth()
 
   return (
-    <div className="flex shrink-0 items-center gap-3">
+    <div className="flex shrink-0 items-center gap-3 max-sm:w-full max-sm:flex-col max-sm:items-stretch">
       {user && (
         <Button
-          variant="ghost"
-          size="icon"
-          className="size-12 shrink-0 text-muted-foreground hover:text-foreground"
-          aria-label={t("history")}
+          variant="outline"
+          className="h-12 shrink-0 px-5 text-base"
           render={<Link href={`/practice/history/${templateId}`} />}
           nativeButton={false}
         >
-          <HistoryIcon className="size-6" />
+          <HistoryIcon aria-hidden />
+          {t("history")}
         </Button>
       )}
       <StartPractice

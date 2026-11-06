@@ -4,7 +4,7 @@ import { GREENHOUSE_E2E_SECRET } from "../constants"
 import { expect, test } from "../fixtures"
 import { createCompany, createInterview } from "../helpers/api"
 import { addAtsConnection } from "../helpers/db-integrations"
-import { integrationRow, openDialog, visit } from "../helpers/navigation"
+import { integrationRow, openDialog, openFromMenu, visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { throwawayEmail } from "../helpers/users"
 
@@ -33,6 +33,7 @@ async function openAtsPage(signInAs: (email: string) => Promise<Page>, ats: Ats)
     interviewId,
     tab,
     main,
+    header: main.getByTestId("integration-actions"),
     actions: main.getByTestId("integration-actions").getByRole("button"),
   }
 }
@@ -81,15 +82,15 @@ async function webhookSection(owner: Page, ats: Ats) {
 }
 
 // Greenhouse: the info dialog has no web hook until connected; then it opens by itself with the
-// web hook's address and secret key to copy. Greenhouse names no account: under the title is the
-// company's own name, on the page and the tab's row.
+// web hook's address and secret key to copy. Greenhouse names no account: the company's own name
+// stands for it, on the page and the tab's row.
 test("an owner connects Greenhouse and finds its web hook in the info dialog", async ({
   signInAs,
 }) => {
   const page = await openAtsPage(signInAs, "greenhouse")
-  const { owner, main, actions, company, tab } = page
+  const { owner, main, header, actions, company, tab } = page
 
-  await openDialog(owner, main.getByTestId("instructions"))
+  await openFromMenu(owner, header)
   await expect(owner.getByRole("dialog").getByRole("listitem")).toHaveCount(6)
   await expect(owner.getByRole("dialog").locator("section")).toHaveCount(0)
   await owner.keyboard.press("Escape")
@@ -101,16 +102,14 @@ test("an owner connects Greenhouse and finds its web hook in the info dialog", a
   await shot(owner, "info")
   await owner.keyboard.press("Escape")
 
-  // The tag, Instructions and Disconnect (no other setup button), and the linked job with its two
-  // invited.
+  // The tag, only the "⋮" menu (no other setup button), and the linked job with its two invited.
   await expect(main.locator("[data-slot=badge]").filter({ visible: true })).toBeVisible()
-  await expect(actions).toHaveCount(2)
+  await expect(actions).toHaveCount(1)
   const job = main.getByRole("listitem").filter({ hasText: "E2E Backend developer" })
-  await expect(job.getByTestId("invited-count")).toHaveText("2")
+  await expect(job.getByTestId("invited-count")).toContainText("2")
   await shot(owner, "page")
 
-  const header = owner.getByRole("heading", { level: 1 }).locator("xpath=../..")
-  await expect(header.getByText(company.name, { exact: true }).filter({ visible: true })).toBeVisible()
+  await expect(main.getByTestId("ats-summary")).toContainText(company.name)
   await visit(owner, tab)
   await expect(
     integrationRow(owner, "/greenhouse").getByText(company.name, { exact: true })
@@ -125,11 +124,11 @@ for (const { ats, fields, key } of [
 ]) {
   test(`an owner connects ${ats} and saves its web hook's secret`, async ({ signInAs }) => {
     const page = await openAtsPage(signInAs, ats)
-    const { owner, main, actions, tab } = page
+    const { owner, main, header, actions, tab } = page
 
-    // Not connected yet: no tag and no linked jobs; Instructions and Connect.
+    // Not connected yet: no tag and no linked jobs; the "⋮" menu and Connect.
     await expect(main.locator("[data-slot=badge]")).toHaveCount(0)
-    await expect(main.getByRole("listitem")).toHaveCount(0)
+    await expect(main.getByText("E2E Backend developer")).toHaveCount(0)
     await expect(owner.getByTestId("link-job")).toHaveCount(0)
     await expect(actions).toHaveCount(2)
 
@@ -153,7 +152,7 @@ for (const { ats, fields, key } of [
     await expect(
       main.getByRole("listitem").filter({ hasText: "E2E Backend developer" })
     ).toBeVisible()
-    await openDialog(owner, main.getByTestId("instructions"))
+    await openFromMenu(owner, header)
     await expect(owner.getByRole("dialog").locator('section input[type="password"]')).toHaveValue(
       key
     )
@@ -164,9 +163,9 @@ for (const { ats, fields, key } of [
 // without a dialog to follow, and its Instructions are the candidate flow alone.
 test("an owner connects Breezy HR with one key", async ({ signInAs }) => {
   const page = await openAtsPage(signInAs, "breezy")
-  const { owner, main, actions } = page
+  const { owner, main, header, actions } = page
   await expect(main.locator("[data-slot=badge]")).toHaveCount(0)
-  await expect(main.getByRole("listitem")).toHaveCount(0)
+  await expect(main.getByText("E2E Backend developer")).toHaveCount(0)
   await expect(actions).toHaveCount(2)
 
   await connect(page, "breezy", ["e2e"])
@@ -177,7 +176,7 @@ test("an owner connects Breezy HR with one key", async ({ signInAs }) => {
   await expect(owner.getByText("E2E Backend developer").filter({ visible: true })).toBeVisible()
   await shot(owner, "page")
 
-  await openDialog(owner, main.getByTestId("instructions"))
+  await openFromMenu(owner, header)
   await expect(owner.getByRole("dialog").getByRole("listitem")).toHaveCount(6)
   await expect(owner.getByRole("dialog").locator("section")).toHaveCount(0)
 })

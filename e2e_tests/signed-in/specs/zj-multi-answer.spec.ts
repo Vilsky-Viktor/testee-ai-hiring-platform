@@ -48,24 +48,25 @@ async function stepToMulti(page: Page, sessionId: string): Promise<Step> {
   }
 }
 
-/** The answered multi-answer question's row on a scorecard or a practice review, scrolled to.
- * Both are virtual lists: only the rows near the screen are in the page, and once the list has
- * measured them the server's first ones may go, so the page is scrolled until the row shows. */
-async function scrolledToMulti(page: Page) {
-  const rows = page.getByRole("main").getByRole("listitem")
-  const row = rows
-    .filter({ has: page.getByTestId("multi-choice") })
-    .filter({ has: page.locator('[data-verdict="partlyCorrect"]') })
-    .first()
-  await expect(rows.first()).toBeVisible()
+/** The answered multi-answer question's row on a scorecard or a practice review, its topic
+ * opened: each topic opens to its questions, closed at first. The last row that matches, as the
+ * topic's own row holds the question's too. */
+async function openedMulti(page: Page) {
+  const topic = page.getByTestId("topic-toggle").first()
   await expect(async () => {
-    if ((await row.count()) === 0) {
-      await page.mouse.move(640, 400)
-      await page.mouse.wheel(0, 400)
+    if ((await topic.getAttribute("aria-expanded")) !== "true") {
+      await topic.click()
     }
 
-    await row.scrollIntoViewIfNeeded({ timeout: 1_000 })
-  }).toPass({ timeout: 60_000 })
+    await expect(topic).toHaveAttribute("aria-expanded", "true", { timeout: 2_000 })
+  }).toPass()
+  const row = page
+    .getByRole("main")
+    .getByRole("listitem")
+    .filter({ has: page.getByTestId("multi-choice") })
+    .filter({ has: page.locator('[data-verdict="partlyCorrect"]') })
+    .last()
+  await expect(row).toBeVisible()
 
   return row
 }
@@ -169,7 +170,7 @@ test("a multi-answer question is ticked, scored in part and shown", async ({ sig
     )
     await visit(owner, `/companies/${company.id}/interviews/${interview.id}/candidates/${row.id}`)
     // The ticked multi-answer question, tagged, is partly correct with two thirds of the point.
-    const drawnMulti = await scrolledToMulti(owner)
+    const drawnMulti = await openedMulti(owner)
     await expect(drawnMulti).toContainText(MULTI_QUESTION)
     await expect(drawnMulti.getByTestId("answer-points")).toContainText("0.67")
     await shots(owner, "scorecard")
@@ -193,7 +194,7 @@ test("a multi-answer question is ticked, scored in part and shown", async ({ sig
     })
     await api(learner, "POST", `/rounds/sessions/${practiceStep.session.id}/finish-interview`)
     await visit(learner, `/practice/rounds/${round.round_id}`)
-    const practiceMulti = await scrolledToMulti(learner)
+    const practiceMulti = await openedMulti(learner)
     await expect(practiceMulti).toContainText(MULTI_QUESTION)
     await expect(practiceMulti.getByTestId("answer-points")).toContainText("0.67")
     await shots(learner, "practice-review")

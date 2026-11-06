@@ -12,7 +12,7 @@ test("the sections' backgrounds run across the whole page, top to bottom", async
 
   // The grey bands, the dot grid and the glows: each section's layer under its content, from the
   // page's left edge to its right one (a scrollbar's gutter aside), as tall as the section.
-  for (const id of ["how", "invite", "reports", "agent", "compare", "help"]) {
+  for (const id of ["how", "reports", "pricing", "invite", "agent", "help"]) {
     const section = page.locator(`#${id}`);
     await section.scrollIntoViewIfNeeded();
     const layer = await section.evaluate((element) => {
@@ -50,20 +50,26 @@ test("nothing on the home page reaches past the page's edges, so it never scroll
 
   for (const width of [390, 1280, 1440, 1920]) {
     await page.setViewportSize({ width, height: 900 });
-    // The hero's wires run out to the page's edges, never over a scrollbar's gutter; once the
-    // pictures have redrawn for the new width.
+    // A picture running past the page's edges (the hero's nets) is cut off inside them, never
+    // over a scrollbar's gutter; once the pictures have redrawn for the new width.
     await expect
       .poll(
         () =>
           page.locator("main svg").evaluateAll((all) => {
             const body = document.body.getBoundingClientRect();
+            const beyond = (box: DOMRect) => box.left < body.left - 1 || box.right > body.right + 1;
+            const clipped = (svg: Element) => {
+              for (let box = svg.parentElement; box && box !== document.body; box = box.parentElement) {
+                if (/hidden|clip/.test(getComputedStyle(box).overflowX) && !beyond(box.getBoundingClientRect())) {
+                  return true;
+                }
+              }
+
+              return false;
+            };
 
             return all
-              .filter((svg) => {
-                const box = svg.getBoundingClientRect();
-
-                return box.width > 0 && (box.left < body.left - 1 || box.right > body.right + 1);
-              })
+              .filter((svg) => svg.getBoundingClientRect().width > 0 && beyond(svg.getBoundingClientRect()) && !clipped(svg))
               .map((svg) => svg.outerHTML.slice(0, 80));
           }),
         { message: String(width) },

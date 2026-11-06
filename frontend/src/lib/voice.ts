@@ -1,4 +1,5 @@
 import { MIN_RECORDING_MS, RECORDING_TYPES } from "@/config/assistant"
+import { level } from "@/lib/voice-listening"
 
 // The voice button's steps: idle, recording while held, then transcribing what was recorded.
 export type VoicePhase = "idle" | "recording" | "transcribing"
@@ -62,6 +63,8 @@ export type Recording = {
   // The recording, or null when it was shorter than MIN_RECORDING_MS.
   stop: () => Promise<Blob | null>
   cancel: () => void
+  // How loud the microphone is now, 0 to 1, for the voice's wave.
+  level: () => number
 }
 
 /** Starts recording the microphone (asking for it the first time). Stopping or cancelling
@@ -71,6 +74,12 @@ export async function startRecording(type: string): Promise<Recording> {
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
   const recorder = new MediaRecorder(stream, { mimeType: type })
   const chunks: Blob[] = []
+  // What the microphone hears, measured for the wave only.
+  const context = new AudioContext()
+  const analyser = context.createAnalyser()
+  analyser.fftSize = 512
+  context.createMediaStreamSource(stream).connect(analyser)
+  const samples = new Float32Array(analyser.fftSize)
   const started = Date.now()
 
   recorder.ondataavailable = (event) => {
@@ -85,6 +94,7 @@ export async function startRecording(type: string): Promise<Recording> {
     return new Promise<Blob | null>((resolve) => {
       recorder.onstop = () => {
         stream.getTracks().forEach((track) => track.stop())
+        void context.close()
         const long = Date.now() - started >= MIN_RECORDING_MS
         // The service reads the format without its codec.
         const format = (recorder.mimeType || type).split(";")[0]
@@ -102,5 +112,13 @@ export async function startRecording(type: string): Promise<Recording> {
     })
   }
 
-  return { stop: () => finish(true), cancel: () => void finish(false) }
+  return {
+    stop: () => finish(true),
+    cancel: () => void finish(false),
+    level: () => {
+      analyser.getFloatTimeDomainData(samples)
+
+      return level(samples)
+    },
+  }
 }

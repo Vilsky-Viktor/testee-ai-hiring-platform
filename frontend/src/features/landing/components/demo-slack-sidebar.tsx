@@ -6,8 +6,8 @@ import {
   DEMO_SLACK_APP,
   DEMO_SLACK_CHANNEL,
   DEMO_SLACK_SIDEBAR,
-  DEMO_SLACK_UI,
 } from "@/config/reports-slack-demo"
+import { useDemoContent } from "@/features/landing/hooks/use-demo-content"
 
 const ROW = "flex items-center gap-2 rounded-md px-2 py-1 truncate"
 
@@ -15,8 +15,8 @@ const ROW = "flex items-center gap-2 rounded-md px-2 py-1 truncate"
  * one highlighted, teammates with their status dots and the testee app, white on Slack's
  * aubergine. Not on phones, where Slack shows the channel alone. */
 export function DemoSlackSidebar() {
-  const { workspace, channels, people, background, current, active } =
-    DEMO_SLACK_SIDEBAR
+  const { workspace, people, background, current, active } = DEMO_SLACK_SIDEBAR
+  const slack = useDemoContent("slack")
 
   return (
     <div
@@ -25,16 +25,16 @@ export function DemoSlackSidebar() {
     >
       <p className="px-2 text-base font-bold text-white">{workspace}</p>
       <div className="space-y-0.5">
-        <p className="px-2 pb-1 text-xs">{DEMO_SLACK_UI.channelsTitle}</p>
-        {channels.map((channel) => (
+        <p className="px-2 pb-1 text-xs">{slack.channelsTitle}</p>
+        {slack.channels.map((channel, place) => (
           <p
             key={channel}
             style={
-              channel === DEMO_SLACK_CHANNEL
+              place === DEMO_SLACK_CHANNEL
                 ? { backgroundColor: current }
                 : undefined
             }
-            className={cn(ROW, channel === DEMO_SLACK_CHANNEL && "text-white")}
+            className={cn(ROW, place === DEMO_SLACK_CHANNEL && "text-white")}
           >
             <HashIcon className="size-4 shrink-0" />
             {channel}
@@ -42,7 +42,7 @@ export function DemoSlackSidebar() {
         ))}
       </div>
       <div className="space-y-0.5">
-        <p className="px-2 pb-1 text-xs">{DEMO_SLACK_UI.peopleTitle}</p>
+        <p className="px-2 pb-1 text-xs">{slack.peopleTitle}</p>
         {people.map((person) => (
           <p key={person.name} className={ROW}>
             <span
@@ -57,7 +57,7 @@ export function DemoSlackSidebar() {
         ))}
       </div>
       <div className="space-y-0.5">
-        <p className="px-2 pb-1 text-xs">{DEMO_SLACK_UI.appsTitle}</p>
+        <p className="px-2 pb-1 text-xs">{slack.appsTitle}</p>
         <p className={ROW}>
           <span className="flex size-4 shrink-0 items-center justify-center rounded-sm bg-white text-foreground">
             <Wordmark short className="text-xs leading-none" />

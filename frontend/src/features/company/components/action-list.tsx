@@ -1,76 +1,34 @@
 "use client"
 
-import { useFormatter, useTranslations } from "next-intl"
+import { useTranslations } from "next-intl"
 
-import { Dot, Dotted } from "@/components/common/dot"
 import { VirtualList } from "@/components/common/virtual-list"
 import { LIST_BOX } from "@/config/lists"
+import { ActionRow } from "@/features/company/components/action-row"
 import { useLocalTime } from "@/hooks/use-local-time"
 import { usePagedList } from "@/hooks/use-paged-list"
-import { actionAuthor } from "@/lib/action-log"
-import { bdi } from "@/lib/bidi"
-import { hasMessage } from "@/lib/messages"
 import { byId } from "@/lib/paged-list"
 import type { CompanyAction } from "@/types/company"
 
-/** A company's action log from `path` (the API list with its filters), newest first, loading
- * more as it scrolls; `initial` is the server's first page, if it rendered one. Each row: what a
- * member did and about what, then when to the minute, who, and through what (the assistant, an
- * AI app, the API or an ATS). An API key is its own author: its row names the key (by its name
- * now) and the way it came, instead of a member. The owner's tab and the admin zone's support
- * page show the same rows. `narrowed` when a filter is on. */
+/** A company's action log from `path` (the API list with its filters), newest first, by day,
+ * loading more as it scrolls; `initial` is the server's first page, if it rendered one. The
+ * owner's tab and the admin zone's support page show the same rows; with a `companyId` they open
+ * what they're about. `narrowed` when a filter is on. */
 export function ActionList({
   path,
   initial,
   narrowed = false,
+  companyId,
 }: {
   path: string
   initial?: CompanyAction[]
   narrowed?: boolean
+  companyId?: string
 }) {
   const t = useTranslations("actionLog")
-  const format = useFormatter()
   const localTime = useLocalTime()
   const { items, loaded, loadMore } = usePagedList(path, byId, initial)
-
-  // A person who's gone (people are never kept in the log) reads as such.
-  function target(action: CompanyAction) {
-    if (action.target) {
-      return action.target
-    }
-
-    if (action.target_kind === "candidate") {
-      return t("deletedCandidate")
-    }
-
-    return action.target_kind === "member" ? t("formerMember") : null
-  }
-
-  // Who took it: a member (or a former one), or an API key with the way it came.
-  function author(action: CompanyAction) {
-    const who = actionAuthor(action)
-
-    if (who.kind === "member") {
-      return who.email
-    }
-
-    if (who.kind === "former") {
-      return t("formerMember")
-    }
-
-    if (who.kind === "key") {
-      return t.rich("apiKey", { via: who.via, name: who.name, ...bdi })
-    }
-
-    return t("deletedApiKey", { via: who.via })
-  }
-
-  // A value from the API by its name in `group`, or as it is when the log has no name for it.
-  function named(group: "actions" | "permissions" | "via", value: string) {
-    const key = `${group}.${value}` as const
-
-    return hasMessage(t, key) ? t(key) : value
-  }
+  const day = (action: CompanyAction) => localTime.recentDay(action.created_at)
 
   if (!loaded) {
     return null
@@ -88,42 +46,23 @@ export function ActionList({
     <VirtualList
       items={items}
       getKey={byId}
-      estimateSize={89}
+      estimateSize={105}
       onEndReached={loadMore}
-      className={LIST_BOX}
-      renderItem={(action) => (
-        <div className="space-y-1 p-6" data-via={action.via ?? undefined}>
-          <p className="text-lg font-medium">
-            {named("actions", action.action)}
-            {target(action) && (
-              <span className="font-normal break-words normal-case">
-                <Dot />
-                {target(action)}
-              </span>
-            )}
-            {action.removed && action.removed.length > 0 && (
-              <span className="font-normal normal-case">
-                <Dot />
-                {t("removed", {
-                  permissions: format.list(
-                    action.removed.map((item) => named("permissions", item))
-                  ),
-                })}
-              </span>
-            )}
-          </p>
-          <p className="text-sm break-words text-muted-foreground">
-            <Dotted
-              items={[
-                <time key="created" dateTime={action.created_at}>
-                  {localTime.dateTime(action.created_at)}
-                </time>,
-                author(action),
-                !action.key_id && action.via && named("via", action.via),
-              ]}
-            />
-          </p>
-        </div>
+      className={`${LIST_BOX} overflow-hidden`}
+      renderItem={(action, index) => (
+        <>
+          {/* A day's first row carries the day. */}
+          {(index === 0 || day(items[index - 1]) !== day(action)) && (
+            <h3
+              suppressHydrationWarning
+              data-testid="action-day"
+              className="bg-surface px-6 py-2 text-sm text-muted-foreground"
+            >
+              {day(action)}
+            </h3>
+          )}
+          <ActionRow action={action} companyId={companyId} />
+        </>
       )}
     />
   )

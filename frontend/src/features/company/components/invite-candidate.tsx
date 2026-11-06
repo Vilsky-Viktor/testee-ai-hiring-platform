@@ -5,10 +5,9 @@ import { useTranslations } from "next-intl"
 import { useId, useState } from "react"
 import { toast } from "sonner"
 
-import { InviteExample } from "@/features/company/components/invite-example"
 import { InviteFileTab } from "@/features/company/components/invite-file-tab"
 import { InviteProblems } from "@/features/company/components/invite-problems"
-import { FloatingInput } from "@/components/ui/floating-field"
+import { FloatingInput, FloatingTextarea } from "@/components/ui/floating-field"
 import { TabNav, TabPanel } from "@/components/common/tab-nav"
 import { INVITE_TAB_ICONS } from "@/features/company/components/invite-tab-icons"
 import { Button } from "@/components/ui/button"
@@ -21,8 +20,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Textarea } from "@/components/ui/textarea"
-import { INVITE_TAB_KEY, INVITE_TABS, type InviteTab } from "@/config/invites"
+import {
+  INVITE_EXAMPLE_LINES,
+  INVITE_TAB_KEY,
+  INVITE_TABS,
+  type InviteTab,
+} from "@/config/invites"
 import {
   MAX_BULK_TEXT_LENGTH,
   MAX_CANDIDATE_NAME_LENGTH,
@@ -155,14 +158,14 @@ export function InviteCandidate({
       <DialogTrigger
         data-testid="new-candidate"
         render={
-          <Button className="h-12 shrink-0 px-6 text-base max-sm:basis-full" />
+          <Button className="h-12 shrink-0 px-6 text-base max-sm:flex-1" />
         }
       >
         {t("newCandidate")}
       </DialogTrigger>
       <DialogContent showCloseButton={false} className="sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle>{t("newCandidate")}</DialogTitle>
+          <DialogTitle>{t("inviteTitle")}</DialogTitle>
         </DialogHeader>
         <TabNav
           items={INVITE_TABS.map((id) => ({
@@ -178,10 +181,11 @@ export function InviteCandidate({
           <form
             id="invite-candidate-form"
             onSubmit={send}
-            className="space-y-3"
+            // Every tab as tall, so the dialog holds still as they change.
+            className="flow-root min-h-48 space-y-3"
           >
             {tab === "one" && (
-              <>
+              <div className="space-y-6">
                 <FloatingInput
                   label={t("candidateEmail")}
                   type="email"
@@ -197,24 +201,27 @@ export function InviteCandidate({
                   value={name}
                   onChange={(event) => setName(event.target.value)}
                 />
-              </>
+              </div>
             )}
             {tab === "many" && (
               <>
-                {/* A list: it grows as one is pasted. */}
-                <Textarea
-                  rows={3}
+                {/* A list: it grows as one is pasted; the placeholder shows how it's written. */}
+                <FloatingTextarea
+                  label={t("candidateEmails")}
                   maxLength={MAX_BULK_TEXT_LENGTH}
-                  placeholder="candidate@example.com"
-                  aria-label={t("candidateEmails")}
+                  placeholder={INVITE_EXAMPLE_LINES.join("\n")}
                   value={text}
                   onChange={(event) => {
                     setText(event.target.value)
                     setSkipped([])
                   }}
-                  className="max-h-64 min-h-28 resize-none rounded-xl border-transparent px-6 py-[18px] text-lg focus-visible:border-ring-gradient-field focus-visible:ring-0 md:text-lg"
+                  className="max-h-64 placeholder:normal-case"
                 />
-                <InviteExample maxInvites={maxInvites} />
+                <p className="text-center text-sm text-muted-foreground">
+                  {maxInvites === null
+                    ? t("manyHintNoLimit")
+                    : t("manyHint", { count: maxInvites })}
+                </p>
               </>
             )}
             {tab === "file" && (

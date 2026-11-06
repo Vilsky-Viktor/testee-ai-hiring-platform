@@ -4,6 +4,7 @@ import { cn } from "cn"
 import { ChevronDownIcon } from "lucide-react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
+import { SELECT_FOCUS } from "@/config/menu-pill"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -45,7 +46,11 @@ export function SortMenu({
           <Button
             type="button"
             variant="ghost"
-            className={cn("h-10 shrink-0 gap-1.5 px-3 text-sm", className)}
+            className={cn(
+              "h-10 shrink-0 gap-1.5 px-3 text-sm",
+              SELECT_FOCUS,
+              className
+            )}
           />
         }
       >

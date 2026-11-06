@@ -1,10 +1,6 @@
 "use client"
 
-import { useSyncExternalStore } from "react"
-
-function subscribe() {
-  return () => {}
-}
+import { useInBrowser } from "@/hooks/use-in-browser"
 
 /** An email address put together only in the browser: the server's HTML doesn't hold it, so
 bots that read pages without running scripts don't find it. */
@@ -15,11 +11,7 @@ export function ProtectedEmail({
   user: string
   domain: string
 }) {
-  const browser = useSyncExternalStore(
-    subscribe,
-    () => true,
-    () => false
-  )
+  const browser = useInBrowser()
 
   if (!browser) {
     return null

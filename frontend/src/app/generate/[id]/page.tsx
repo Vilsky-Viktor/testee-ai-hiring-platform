@@ -5,7 +5,8 @@ import { getTranslations } from "next-intl/server"
 import { GenerationView } from "@/features/generation/components/generation-view"
 import { SignInPage } from "@/components/common/sign-in-page"
 import { READY_PARAM } from "@/config/interviews"
-import { signedIn } from "@/lib/server-api"
+import { serverFetch, signedIn } from "@/lib/server-api"
+import type { Company } from "@/types/company"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("generation")
@@ -50,6 +51,8 @@ export default async function GeneratePage({
     notFound()
   }
 
+  const shown = await serverFetch<Company>(`/companies/companies/${company[1]}`)
+
   return (
     <main className="mx-auto flex w-full max-w-page flex-1 flex-col space-y-8 px-6 py-12">
       <GenerationView
@@ -59,6 +62,8 @@ export default async function GeneratePage({
         next={`${next}${next.includes("?") ? "&" : "?"}${READY_PARAM}=1`}
         backHref={`/companies/${company[1]}/interviews`}
         backLabel={t("interviews")}
+        leaveLabel={t("goToInterviews")}
+        company={shown?.name}
       />
     </main>
   )

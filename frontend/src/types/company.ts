@@ -15,12 +15,15 @@ export type CompanyBalance = Schemas["CompanyBalanceOut"]
 export type CompanyMember = Schemas["MemberOut"]
 // A row of a company's action log: what a member did, about what, when and through what.
 export type CompanyAction = Schemas["ActionOut"]
+export type CandidateSummary = Schemas["CandidateSummaryOut"]
 export type ActionGroup = Schemas["AuditGroup"]
 // What deleting the account does to the companies the user owns.
 export type AccountDeletion = Schemas["AccountDeletionOut"]
 export type AdminInvite = Schemas["AdminInviteOut"]
 export type Interview = Schemas["InterviewOut"]
 export type InterviewDetail = Schemas["InterviewDetail"]
+export type CompanyTemplate = Schemas["CompanyTemplate"]
+export type InterviewStatusCounts = Schemas["InterviewStatusCounts"]
 // A note on an interview, with what the signed-in member may do with it.
 export type InterviewNote = Schemas["NoteOut"]
 // A person open to offers on an interview's Discover tab.
@@ -125,6 +128,7 @@ export type Scorecard = {
   // When the candidate confirmed they'd answer on their own; null before they start (and for
   // candidates from before it was asked).
   pledged_at: string | null
+  time_taken_minutes?: number | null
   answer_patterns: AnswerPatterns
   sessions: {
     id: string

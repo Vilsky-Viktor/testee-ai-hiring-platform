@@ -2,13 +2,18 @@ import { cn } from "cn"
 import { getLocale, getTranslations } from "next-intl/server"
 
 import { BackLink } from "@/components/common/back-link"
+import { LocalizedLink } from "@/components/common/localized-link"
 import { Markdown } from "@/components/common/markdown"
 import { StartCard } from "@/features/content/components/start-card"
 import { JsonLd } from "@/components/common/json-ld"
 import { PageKey } from "@/components/common/page-key"
+import { Button } from "@/components/ui/button"
+import { CARD } from "@/config/cards"
 import { DEFAULT_LOCALE } from "@/config/i18n"
+import { TEXT_LINK } from "@/config/links"
 import type { ContentPage } from "@/lib/content"
 import { formatDay } from "@/lib/format"
+import { headingId, sectionTitles } from "@/lib/headings"
 import { textDirection } from "@/lib/locale"
 import { localizeHref } from "@/lib/locale-path"
 import { endsWithQuestionMark } from "@/lib/question-mark"
@@ -16,8 +21,11 @@ import { previewImage, siteUrl, urlLocale } from "@/lib/site"
 import { articleData, breadcrumbData } from "@/lib/structured-data"
 import type { PageHelpKey } from "@/types/page-help"
 
-/** One content page (a category page, a comparison or a guide): its heading, date and text,
- * then the way to a first test, in the language it's written in (English where it has no
+// How many sections an article has before it lists them at its top.
+const MIN_CONTENTS = 3
+
+/** One content page (a category page, a comparison or a guide): its heading, the way to a first
+ * test, its date, the list of its sections and its text, then that way to a first test again, in the language it's written in (English where it has no
  * translation yet, with a note). `section` is the hub it belongs to, for the back link and the
  * breadcrumb; `pageKey`, its guide's key. */
 export async function ContentArticle({
@@ -33,6 +41,7 @@ export async function ContentArticle({
 }) {
   const t = await getTranslations("content")
   const locale = await getLocale()
+  const titles = sectionTitles(page.body)
   const address = await urlLocale()
   // The breadcrumb names the addresses in the page's own language.
   const steps = [
@@ -79,6 +88,14 @@ export async function ContentArticle({
           </h1>
         </div>
         <p className="text-lg text-muted-foreground">{page.description}</p>
+        <Button
+          className="h-12 px-6 text-base max-sm:w-full"
+          data-testid="article-start"
+          render={<LocalizedLink href="/" />}
+          nativeButton={false}
+        >
+          {t("startButton")}
+        </Button>
         <p className="text-sm text-muted-foreground">
           {page.language !== locale && (
             <span className="block pb-2">{t("englishOnly")}</span>
@@ -93,12 +110,34 @@ export async function ContentArticle({
           </span>
         </p>
       </header>
+      {titles.length >= MIN_CONTENTS && (
+        <nav
+          aria-label={t("contents")}
+          data-testid="article-contents"
+          className={`mx-auto max-w-5xl space-y-3 ${CARD}`}
+        >
+          <h2 className="font-heading text-lg font-medium">{t("contents")}</h2>
+          <ul
+            lang={page.language}
+            dir={textDirection(page.language)}
+            className="grid gap-x-8 gap-y-2 sm:grid-cols-2"
+          >
+            {titles.map((title) => (
+              <li key={title}>
+                <a href={`#${headingId(title)}`} className={TEXT_LINK}>
+                  {title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
       <article
         lang={page.language}
         dir={textDirection(page.language)}
         className="mx-auto max-w-5xl space-y-5"
       >
-        <Markdown text={page.body} />
+        <Markdown text={page.body} article />
       </article>
       <StartCard />
     </main>

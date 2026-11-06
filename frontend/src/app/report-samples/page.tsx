@@ -10,9 +10,9 @@ import {
 } from "@/config/report-samples-fixture"
 
 /** The landing's sample reports, made from made-up data by the same reports and download
- * buttons as a company's pages: scripts/report-samples.sh clicks both. Development only. */
+ * buttons as a company's pages: scripts/report-samples.sh clicks both. Local builds only. */
 export default function ReportSamplesPage() {
-  if (process.env.NODE_ENV !== "development") {
+  if (process.env.NEXT_PUBLIC_ENVIRONMENT !== "development") {
     notFound()
   }
 

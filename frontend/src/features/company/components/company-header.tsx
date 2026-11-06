@@ -34,6 +34,7 @@ export function CompanyHeader({
   declineReason,
   current,
   action,
+  smallAction,
   canEdit,
   canSeeActions = false,
   sub,
@@ -52,6 +53,8 @@ export function CompanyHeader({
   declineReason: string | null
   current: CompanyTab
   action?: ReactNode
+  // The action is small (a "⋮" menu) and stays on the name's line on phones.
+  smallAction?: boolean
   // Owners and admins change the logo, name and website; viewers only see them.
   canEdit: boolean
   // The owner sees the action log's tab.
@@ -133,7 +136,13 @@ export function CompanyHeader({
           <EntityId id={companyId} />
         </div>
         {action && (
-          <div className="max-sm:my-4 max-sm:basis-full max-sm:*:w-full">
+          <div
+            className={
+              smallAction
+                ? undefined
+                : "max-sm:my-4 max-sm:basis-full max-sm:*:w-full"
+            }
+          >
             {action}
           </div>
         )}

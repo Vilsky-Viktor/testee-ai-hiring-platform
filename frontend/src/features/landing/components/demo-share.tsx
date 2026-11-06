@@ -1,53 +1,74 @@
 "use client"
 
 import { cn } from "cn"
-import { DownloadIcon, Share2Icon } from "lucide-react"
+import { EllipsisVerticalIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { DEMO_PRESSED } from "@/features/landing/components/demo-panel"
 import { CHAT_APPS } from "@/components/common/chat-apps"
+import { PRIMARY_FILL } from "@/config/buttons"
+import { OUTLINE_BUTTON } from "@/components/common/more-link"
 import {
   DemoEmailField,
   DemoPopup,
 } from "@/features/landing/components/demo-popup"
 import { buttonVariants } from "@/components/ui/button"
 
-/** A report's two actions (features/company/components/report-actions.tsx), as the page's icon
- * buttons (components/common/icon-button.tsx) for the landing: download its PDF and share it,
- * the pointer's "download" and "share", the one `pressed` pressed in. */
+/** A report's "⋮" menu (components/common/dots-menu.tsx) for the landing, the pointer's "dots":
+ * while `menu`, open with its two items, downloading its PDF and sharing it (the pointer's
+ * "download" and "share"): grey as the pointer heads for one (`aimed`), blue as it's `pressed`. */
 export function DemoReportActions({
+  menu,
+  aimed = null,
   pressed,
 }: {
+  menu: boolean
+  aimed?: "download" | "share" | null
   pressed: "download" | "share" | null
 }) {
-  const action = (name: "download" | "share", icon: React.ReactNode) => (
+  const t = useTranslations("report")
+  const item = (name: "download" | "share", label: string) => (
     <span
       data-demo-target={name}
-      className={buttonVariants({
-        variant: "ghost",
-        size: "icon",
-        className: cn(
-          "size-12 shrink-0 text-muted-foreground",
-          pressed === name && `bg-surface text-foreground ${DEMO_PRESSED}`
-        ),
-      })}
+      className={cn(
+        "block rounded-lg px-3 py-2 text-sm whitespace-nowrap transition-colors",
+        aimed === name && "bg-surface",
+        pressed === name && `${PRIMARY_FILL} ${DEMO_PRESSED}`
+      )}
     >
-      {icon}
+      {label}
     </span>
   )
 
   return (
-    <span className="flex shrink-0 items-center">
-      {action("download", <DownloadIcon className="size-6" />)}
-      {action("share", <Share2Icon className="size-6" />)}
+    <span className="relative shrink-0">
+      <span
+        data-demo-target="dots"
+        className={buttonVariants({
+          variant: "ghost",
+          size: "icon",
+          className: cn(
+            "size-10 rounded-xl bg-surface text-muted-foreground",
+            menu && "bg-input"
+          ),
+        })}
+      >
+        <EllipsisVerticalIcon className="size-5" />
+      </span>
+      {menu && (
+        <span className="absolute end-0 top-full z-10 mt-1 block rounded-xl bg-popover p-1 shadow-md ring-1 ring-foreground/10">
+          {item("download", t("download"))}
+          {item("share", t("share"))}
+        </span>
+      )}
     </span>
   )
 }
 
-/** The share popup, small, over the whole panel while `open`: its title and the chat apps that
- * get a text summary, the recipient's email (`email` as typed so far, a caret while `typing`),
- * then cancel and "send PDF" (the pointer's "whatsApp", "email" and "send"). `pressed` names what's
- * being clicked. */
+/** The share popup, small, over the whole panel while `open`: its title, the recipient's email
+ * (`email` as typed so far, a caret while `typing`) with "send PDF" inside it, then the chat apps
+ * that get a text summary and cancel (the pointer's "email", "send" and "whatsApp"). `pressed`
+ * names what's being clicked. */
 export function DemoSharePopup({
   open,
   email,
@@ -64,60 +85,71 @@ export function DemoSharePopup({
 
   return (
     <DemoPopup open={open}>
-      <div className="flex items-center justify-between gap-3 max-sm:flex-col">
-        <p className="font-heading text-xl leading-none font-medium">
-          {t("shareTitle")}
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-0.5">
-          <span className="me-1.5 text-sm text-muted-foreground lowercase max-sm:basis-full max-sm:text-center">
-            {t("orSummary")}
+      <p className="font-heading text-xl leading-none font-medium lowercase">
+        {t("shareTitle")}
+      </p>
+      <span className="relative block">
+        <DemoEmailField
+          target="email"
+          email={email}
+          typing={typing}
+          placeholder="manager@example.com"
+        />
+        {/* Placed by its wrapper: pressing it replaces its own translate. */}
+        <span className="absolute inset-y-0 end-1.5 flex items-center">
+          <span
+            data-demo-target="send"
+            className={buttonVariants({
+              className: cn(
+                "h-9 rounded-lg px-3 text-sm transition-opacity",
+                !email && "opacity-50",
+                pressed === "send" && DEMO_PRESSED
+              ),
+            })}
+          >
+            <span>
+              {t.rich("send", {
+                name: (chunks) => <span className="normal-case">{chunks}</span>,
+              })}
+            </span>
           </span>
+        </span>
+      </span>
+      <div className="space-y-2">
+        <p className="text-center text-sm text-muted-foreground">
+          {t("orSummary")}
+        </p>
+        <div className="grid grid-cols-2 gap-2">
           {CHAT_APPS.map(({ name, Icon }, index) => (
             <span
               key={name}
               data-demo-target={index === 0 ? "whatsApp" : undefined}
-              className={cn(
-                "flex size-10 items-center justify-center rounded-xl text-muted-foreground transition-shadow",
-                index === 0 &&
-                  pressed === "whatsApp" &&
-                  `bg-surface text-foreground ${DEMO_PRESSED}`
-              )}
+              className={buttonVariants({
+                variant: "outline",
+                className: cn(
+                  OUTLINE_BUTTON,
+                  "h-10 gap-2 border-foreground/20! px-2 text-sm normal-case dark:border-input!",
+                  index === 0 && pressed === "whatsApp" && DEMO_PRESSED
+                ),
+              })}
             >
-              <Icon className="size-6" />
+              <Icon className="size-5" />
+              {name}
             </span>
           ))}
         </div>
       </div>
-      <DemoEmailField
-        target="email"
-        email={email}
-        typing={typing}
-        placeholder="manager@example.com"
-      />
-      <div className="flex justify-end gap-2">
+      <div className="flex justify-end">
         <span
           className={buttonVariants({
             variant: "outline",
-            className: "h-9 px-4 text-base",
-          })}
-        >
-          {common("cancel")}
-        </span>
-        <span
-          data-demo-target="send"
-          className={buttonVariants({
             className: cn(
-              "h-9 px-4 text-base transition-opacity",
-              !email && "opacity-50",
-              pressed === "send" && DEMO_PRESSED
+              OUTLINE_BUTTON,
+              "h-9 border-foreground/20! px-4 text-base dark:border-input!"
             ),
           })}
         >
-          <span>
-            {t.rich("send", {
-              name: (chunks) => <span className="normal-case">{chunks}</span>,
-            })}
-          </span>
+          {common("cancel")}
         </span>
       </div>
     </DemoPopup>

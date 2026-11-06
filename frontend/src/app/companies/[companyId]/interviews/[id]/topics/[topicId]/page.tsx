@@ -7,7 +7,6 @@ import { SignInPage } from "@/components/common/sign-in-page"
 import { SubtopicList } from "@/components/common/subtopic-list"
 import { TopicQuestionList } from "@/components/common/topic-question-list"
 import { WarningCard } from "@/components/common/warning-card"
-import { LIST_BOX } from "@/config/lists"
 import { languageOf } from "@/lib/locale"
 import { serverFetch, signedIn } from "@/lib/server-api"
 import { translatedTitle } from "@/lib/site"
@@ -56,11 +55,22 @@ export default async function TopicQuestionsPage({
           </BackLink>
         }
         title={
-          <div {...languageOf(interview.language)} className="space-y-3">
-            <h1 className="font-heading text-3xl font-medium tracking-tight normal-case">
-              {topic.title}
-            </h1>
-            <SubtopicList subtopics={topic.subtopics} />
+          <div className="space-y-3">
+            <div {...languageOf(interview.language)} className="space-y-3">
+              <h1 className="font-heading text-3xl font-medium tracking-tight normal-case">
+                {topic.title}
+              </h1>
+              <SubtopicList subtopics={topic.subtopics} />
+            </div>
+            <p
+              data-testid="topic-limit-line"
+              className="text-sm text-muted-foreground"
+            >
+              {t("limitLine", {
+                limit: topic.question_limit,
+                count: topic.question_count,
+              })}
+            </p>
           </div>
         }
       />
@@ -68,17 +78,15 @@ export default async function TopicQuestionsPage({
       <WarningCard className="max-sm:-mx-6 max-sm:rounded-none">
         {t("aiWritten")}
       </WarningCard>
-      <div className={`${LIST_BOX} overflow-hidden`}>
-        <TopicQuestionList
-          language={interview.language}
-          path={topicPath}
-          regeneratePath={canEdit ? questionsPath : undefined}
-          wrongPath={canEdit ? questionsPath : undefined}
-          reportsPath={questionsPath}
-          feedbackPath={questionsPath}
-          excludePath={canEdit ? topicPath : undefined}
-        />
-      </div>
+      <TopicQuestionList
+        language={interview.language}
+        path={topicPath}
+        regeneratePath={canEdit ? questionsPath : undefined}
+        wrongPath={canEdit ? questionsPath : undefined}
+        reportsPath={questionsPath}
+        feedbackPath={questionsPath}
+        excludePath={canEdit ? topicPath : undefined}
+      />
     </main>
   )
 }

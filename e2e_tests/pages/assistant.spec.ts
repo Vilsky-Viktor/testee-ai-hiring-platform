@@ -21,8 +21,9 @@ function askAgent(page: Page) {
   return page.getByRole("banner").locator("[data-assistant-toggle]");
 }
 
+// On a page without the home page's moving pictures, which keep a browser busy.
 async function openPanel(page: Page) {
-  await page.goto("/");
+  await page.goto("/faq");
   await loaded(page);
   await askAgent(page).click();
   const panel = page.getByRole("dialog");
@@ -252,7 +253,7 @@ test("the assistant's name keeps its capital in the welcome only", async ({ page
   await loaded(page);
   const name = (place: Locator) => place.locator(".normal-case").first();
 
-  for (const place of ["contentinfo", "banner"] as const) {
+  for (const place of ["main", "banner"] as const) {
     const button = page.getByRole(place).locator("[data-assistant-toggle]");
     await expect(button).toBeVisible();
     await expect(button).toHaveCSS("text-transform", "lowercase");
@@ -265,12 +266,12 @@ test("the assistant's name keeps its capital in the welcome only", async ({ page
   await expect(name(welcome)).toHaveCSS("text-transform", "none");
 });
 
-// On a phone the header's button is the icon alone: its name is the footer button's label.
-test("the header's icon-only assistant button is named like the footer's", { tag: "@phone-only" }, async ({ page }) => {
-  await page.goto("/");
+// On a phone the header's button is the icon alone: its name is the FAQ page's button's label.
+test("the header's icon-only assistant button is named like the page's", { tag: "@phone-only" }, async ({ page }) => {
+  await page.goto("/faq");
   await loaded(page);
   // Its text as written, not as shown: the button shows it in lowercase.
-  const label = await page.getByRole("contentinfo").locator("[data-assistant-toggle]").textContent();
+  const label = await page.getByRole("main").locator("[data-assistant-toggle]").textContent();
 
   await expect(askAgent(page)).toHaveAccessibleName(label!.trim());
 });

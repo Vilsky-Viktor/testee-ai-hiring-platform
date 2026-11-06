@@ -33,18 +33,18 @@ export function SessionFooter({
     <RoundFooter>
       <Button
         variant="ghost"
-        className="h-12 px-6 text-base"
+        className="h-12 shrink-0 px-6 text-base text-muted-foreground max-sm:px-3"
         disabled={finishing || sending}
         onClick={onFinish}
         data-testid="finish-interview"
       >
         {finishing ? rounds("finishing") : t("finish")}
       </Button>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 max-sm:flex-1">
         {picked && (
           // Focus stays on the pick, so it can still be changed; Next is the following stop.
           <Button
-            className="h-12 px-6 text-base"
+            className="h-12 px-8 text-base max-sm:w-full"
             disabled={sending}
             onClick={onNext}
             data-testid="next-question"

@@ -9,33 +9,11 @@ import { AnswerPoints } from "@/components/common/answer-points"
 import { InlineText } from "@/components/common/inline-text"
 import { MultiChoiceTag } from "@/components/common/multi-choice-tag"
 import { QuestionText } from "@/components/common/question-text"
-import { VirtualList } from "@/components/common/virtual-list"
 import { languageOf } from "@/lib/locale"
 import { verdict } from "@/lib/rounds"
 import type { ReviewItem } from "@/types/round"
-import { LIST_BOX } from "@/config/lists"
 import { WARNING_TONE } from "@/config/tones"
 import { Dot } from "@/components/common/dot"
-
-/** A section's questions as the candidate answered them; the questions and options in the
- * interview's `language`, the marks and signals in the page's. */
-export function ScorecardReview({
-  items,
-  language,
-}: {
-  items: ReviewItem[]
-  language: string
-}) {
-  return (
-    <VirtualList
-      items={items}
-      getKey={(item) => item.question_id}
-      estimateSize={160}
-      className={LIST_BOX}
-      renderItem={(item) => <ScorecardItem item={item} language={language} />}
-    />
-  )
-}
 
 /** One question of a section as the candidate answered it: the question, whether it was right,
  * what they picked and how fast, and the signals while it was open. */

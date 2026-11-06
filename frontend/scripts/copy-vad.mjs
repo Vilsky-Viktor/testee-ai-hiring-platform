@@ -1,7 +1,7 @@
 // Copies voice mode's speech detector files (lib/voice-vad.ts) from their packages into
 // public/vad/<vad-web version>-<onnxruntime-web version>/, which config/voice.ts's VAD_FILES
 // names: the Silero model and ONNX Runtime's WebAssembly with its loader. Run before the site is
-// built or started (package.json's build and dev, the Dockerfile's dev server); public/vad is
+// built or started (package.json's build and dev); public/vad is
 // not committed. Safe to run twice.
 // Usage: node scripts/copy-vad.mjs
 import { copyFileSync, mkdirSync, readFileSync, rmSync } from "node:fs"

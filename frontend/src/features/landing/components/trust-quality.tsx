@@ -53,11 +53,11 @@ export async function TrustQualitySection() {
             key,
             content: (
               <>
-                <h3 className="font-heading text-xl font-medium lowercase">
+                <h3 className="font-heading text-lg font-medium lowercase sm:text-xl">
                   <KeepAcronyms text={t(`cards.${key}.title`)} />
                   <span className="blue-dot">.</span>
                 </h3>
-                <p className="text-base leading-relaxed text-muted-foreground">
+                <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                   {key === "laws"
                     ? t.rich("cards.laws.text", {
                         documents: link("/documents"),
