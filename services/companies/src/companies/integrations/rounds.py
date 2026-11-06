@@ -1,3 +1,4 @@
+import logging
 from datetime import timedelta
 from uuid import UUID
 
@@ -7,6 +8,8 @@ from testee_common.http.http import bearer
 
 from companies.config import settings
 from companies.core.security import service_token
+
+logger = logging.getLogger(__name__)
 
 
 async def create_sessions(payload: dict) -> list[dict]:
@@ -35,6 +38,17 @@ async def invite_scores(invite_ids: list[UUID]) -> dict[str, dict]:
     response.raise_for_status()
 
     return response.json()
+
+
+async def invite_scores_if_up(invite_ids: list[UUID]) -> dict[str, dict] | None:
+    """The scores for a page that can show without them: None while rounds doesn't answer, so a
+    slow service never takes the whole page down."""
+    try:
+        return await invite_scores(invite_ids)
+    except httpx.HTTPError as error:
+        logger.warning("Rounds gave no scores: %s", type(error).__name__)
+
+        return None
 
 
 async def answer_counts(set_ids: list[UUID]) -> dict[str, list[int]]:

@@ -42,6 +42,19 @@ async def sync(listed: list, totals: dict[str, dict]) -> None:
             invite.grade, invite.flagged = results[invite.id]
 
 
+async def listed_totals(listed: list) -> dict[str, dict]:
+    """The listed candidates' results from rounds; while it doesn't answer, the grades stored on
+    their invites, so the list still shows, without progress and signals for this page."""
+    totals = await rounds.invite_scores_if_up([invite.id for invite in listed])
+
+    if totals is not None:
+        return totals
+
+    return {
+        str(invite.id): {"grade": invite.grade} for invite in listed if invite.grade is not None
+    }
+
+
 async def backfill(interview_id) -> None:
     """Stores the results of the interview's finished candidates that don't have them: finished
     before results were stored, or rounds didn't answer then. Usually there are none."""
@@ -97,7 +110,7 @@ async def page(
             since,
             after,
         )
-    totals = await rounds.invite_scores([invite.id for invite in listed])
+    totals = await listed_totals(listed)
     await sync(listed, totals)
 
     return [
@@ -115,7 +128,7 @@ async def company_page(
     async with Session() as session:
         listed = await candidates.company_page(session, company_id, offset, limit, q, email)
     found = [invite for invite, _ in listed]
-    totals = await rounds.invite_scores([invite.id for invite in found])
+    totals = await listed_totals(found)
     await sync(found, totals)
 
     return [

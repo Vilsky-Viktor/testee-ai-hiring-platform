@@ -31,11 +31,12 @@ async def company_of(interview: Interview):
 
 
 async def progress_of(invite) -> int | None:
-    """How far a candidate on their way through it got, in percent."""
+    """How far a candidate on their way through it got, in percent; unknown while rounds doesn't
+    answer, so a candidate's page still opens."""
     if invite.status != InviteStatus.IN_PROCESS:
         return None
 
-    scores = await rounds.invite_scores([invite.id])
+    scores = await rounds.invite_scores_if_up([invite.id]) or {}
 
     return (scores.get(str(invite.id)) or {}).get("progress")
 
