@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "Impostazioni",
+    "preferences": "Preferenze",
+    "accountId": "ID account",
+    "deleteTitle": "Elimina account",
+    "deleteNote": "Elimina definitivamente il tuo account e i tuoi dati.",
     "language": "Lingua",
     "languageNote": "Per l'interfaccia e le risposte della chat di assistenza, e la lingua in cui partono i nuovi colloqui. Puoi creare un colloquio in qualsiasi lingua supportata.",
     "languageFailed": "Impossibile cambiare la lingua. Riprova.",
@@ -12,7 +16,7 @@
     "account": "Il tuo account",
     "accountNote": "Indica questo ID quando ci scrivi riguardo al tuo account.",
     "yourData": "I tuoi dati",
-    "yourDataNote": "Scarica tutto ciò che testee. conserva su di te o elimina il tuo account.",
+    "yourDataNote": "Scarica tutto ciò che testee conserva su di te.",
     "download": "Scarica i miei dati",
     "downloadFailed": "Impossibile preparare i tuoi dati. Riprova.",
     "delete": "Elimina account",
@@ -50,7 +54,8 @@
     "system": "Sistema",
     "light": "Chiaro",
     "dark": "Scuro",
-    "topUp": "Ricarica"
+    "topUp": "Ricarica",
+    "workspace": "Il mio spazio"
   },
   "nav": {
     "main": "Principale",
@@ -67,8 +72,12 @@
     "about": "Chi siamo",
     "practice": "Simulazioni gratuite",
     "tests": "Test di competenze",
-    "preEmploymentTesting": "Test pre-assunzione",
-    "aiInterviews": "Colloqui con IA",
+    "createTest": "Crea un colloquio",
+    "footerProduct": "Prodotto",
+    "footerResources": "Risorse",
+    "footerCompany": "Azienda",
+    "footerLegal": "Note legali",
+    "footerTagline": "Colloqui equi e a tempo, creati a partire dalla tua descrizione del ruolo.",
     "compare": "Confronta",
     "guides": "Guide",
     "apiDocs": "Documentazione per sviluppatori",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "Torna su",
     "morePages": "Altre pagine",
+    "moreActions": "Altre azioni",
     "copyLink": "Copia link",
     "linkCopied": "Link copiato",
     "home": "Home",
     "cancel": "Annulla",
     "save": "Salva",
     "saving": "Salvataggio…",
+    "saved": "Salvato",
     "close": "Chiudi",
     "delete": "Elimina",
     "deleting": "Eliminazione…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "Qualcosa è andato storto",
     "text": "Riprova. Se continua a succedere, torna più tardi.",
+    "reference": "Riferimento: {id}",
     "notFound": "Pagina non trovata",
     "notFoundText": "Questa pagina non esiste o è stata rimossa.",
     "report": "Segnala",
@@ -152,16 +164,16 @@
   },
   "home": {
     "title": "Metti alla prova tutti\nAssumi i migliori",
-    "text": "L'IA trasforma la tua descrizione del ruolo in un colloquio a tempo professionale.",
-    "price": "Solo {price} per candidato."
+    "text": "L'IA trasforma la tua descrizione del ruolo in un colloquio a tempo professionale."
   },
   "start": {
     "placeholder": "Incolla qui la descrizione del ruolo…",
     "description": "Descrizione del ruolo",
-    "submit": "Crea un colloquio",
+    "submit": "Crea",
+    "newInterview": "Il tuo nuovo colloquio",
     "whichCompany": "Per quale azienda è questo colloquio?",
     "firstCompany": "Come si chiama la tua azienda?",
-    "newCompany": "Una nuova azienda",
+    "newCompany": "Nuova azienda",
     "companyName": "Nome dell'azienda",
     "freeCandidates": "La tua prima azienda fa il colloquio gratis a {count, plural, one {il suo primo candidato} other {i suoi primi # candidati}}.",
     "continue": "Continua",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "Avvii tramite il link di un colloquio all'ora",
       "LINK_STARTS_PER_IP_HOUR": "Avvii tramite link per indirizzo all'ora",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "Esportazioni per audit sui bias per azienda al giorno",
+      "ACTION_LOG_EXPORTS_PER_DAY": "Download del registro delle azioni per azienda al giorno",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "Download dello storico dei crediti per azienda al giorno",
       "MAX_BULK_INVITES": "Candidati in una lista o in un file",
       "MAX_PENDING_INVITES": "Inviti al team in sospeso per azienda",
       "MEMBER_INVITES_PER_UNPAID_DAY": "Inviti al team per azienda non pagante al giorno",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "Chiamate all'ATS dell'azienda per azienda al minuto",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "Webhook degli ATS per indirizzo di invio al minuto",
       "ATS_CONNECTS_PER_HOUR": "Connessioni ATS per azienda all'ora",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "Messaggi di prova su Slack per azienda all'ora",
       "RESEND_DAILY_LIMIT": "Email al giorno tramite Resend",
       "RESEND_RESERVE_PERCENT": "Quota delle email giornaliere tramite Resend tenuta fuori dagli invii massivi",
       "CAMPAIGNS_PER_KIND_DAY": "Campagne di ciascun tipo al giorno",
@@ -775,7 +790,9 @@
     "useFailed": "Impossibile avviare un colloquio da questo modello. Riprova.",
     "inProgress": "in corso: {done}/{total, plural, one {# argomento} other {# argomenti}}",
     "completed": "completato",
-    "warningText": "<b>I modelli sono pronti per i ruoli più comuni.</b> Per un risultato più mirato, crea un colloquio dalla tua descrizione del ruolo."
+    "warningText": "<b>Vuoi qualcosa di più su misura?</b> Crea un colloquio a partire dalla tua descrizione del ruolo.",
+    "contents": "{topics, plural, one {# argomento} other {# argomenti}}, {questions, plural, one {# domanda} other {# domande}}, {minutes, plural, one {# min} other {# min}}",
+    "usedIn": "{count, plural, one {Usato in # colloquio} other {Usato in # colloqui}}"
   },
   "billing": {
     "paidTitle": "Pagamento ricevuto",
@@ -808,6 +825,10 @@
     "paysInChange": "Cambia valuta",
     "candidates": "{count, plural, one {# candidato} other {# candidati}}",
     "perCandidate": "{price}<unit>/candidato</unit>",
+    "enough": "Bastano per {count, plural, one {# candidato} other {# candidati}}",
+    "pay": "Paga {price}",
+    "quote": "{count, plural, one {# candidato} other {# candidati}} a {price} ciascuno, {credits, number} crediti",
+    "nextPrice": "{count, plural, one {# candidato in più} other {# candidati in più}} e ciascuno costa {price}",
     "howMany": "Candidati da ricaricare",
     "credits": "{count, plural, one {# credito} other {# crediti}}",
     "candidatesWord": "{count, plural, one {candidato} other {candidati}}",
@@ -863,6 +884,19 @@
     "markedWrong": "Grazie. È in verifica e verrà corretta o sostituita.",
     "markWrongFailed": "Impossibile inviarla in verifica. Riprova.",
     "ofCount": "di {count, number}",
+    "perCandidate": "Numero di domande per candidato",
+    "limitShort": "Domande per candidato",
+    "topicsColumn": "Argomenti e sottoargomenti",
+    "limitLine": "{limit, number} domande su {count, number} per candidato",
+    "noMatches": "Nessuna domanda qui.",
+    "summary": {
+      "total": "Domande"
+    },
+    "filters": {
+      "all": "Tutte",
+      "reported": "Segnalate"
+    },
+    "disabledCount": "{count, plural, one {# domanda disattivata} other {# domande disattivate}}",
     "per": "per",
     "candidate": "candidato",
     "correct": "Risposta corretta",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "Tocca a te",
     "voiceThinking": "Sta pensando",
     "miraLabel": "Intervistatrice IA",
+    "voiceHeardAnswer": "Ho sentito {answer}.",
+    "questionOf": "Domanda {number, number} di {count, number}",
+    "answeredOf": "{done, number} di {total, number}",
+    "keysHint": "Premi A–{last} per scegliere, Invio per la domanda successiva.",
     "voiceStatus": {
       "off": "Mira si sta preparando…",
       "starting": "Mira si sta preparando…",
@@ -962,9 +1000,11 @@
     "cancelling": "Annullamento…",
     "cancelFailed": "Impossibile annullare la generazione. Riprova.",
     "writing": "Stiamo generando le tue domande",
-    "drafting": "Stiamo abbozzando i tuoi argomenti",
-    "writingNote": "Ci vogliono alcuni minuti. Puoi lasciare questa pagina: continuiamo noi.",
-    "draftingNote": "Leggiamo il tuo obiettivo e pianifichiamo cosa coprire.",
+    "drafting": "Generazione dei tuoi argomenti",
+    "writingNote": "Ci vogliono alcuni minuti. Puoi lasciare questa pagina; ti avviseremo quando sarà pronto.",
+    "draftingNote": "Stiamo leggendo la descrizione del ruolo. Rivedrai gli argomenti prima che vengano scritte le domande. Puoi lasciare questa pagina; noi andiamo avanti.",
+    "finishing": "Controllo e salvataggio delle domande…",
+    "goToInterviews": "Vai ai colloqui",
     "topicsReady": "{ready, number} di {count, plural, one {# argomento} other {# argomenti}} pronti",
     "reviewFailed": "Impossibile inviare la revisione. Riprova.",
     "retryFailed": "Impossibile ripetere la generazione. Riprova.",
@@ -982,13 +1022,18 @@
     "add": "Aggiungi",
     "done": "Fatto",
     "reviewTitle": "Rivedi i tuoi argomenti",
-    "reviewText": "Deseleziona gli argomenti che non ti servono, modificali o descrivi le modifiche. Ogni argomento riceve il proprio set di domande con risposte.",
+    "reviewText": "Ogni argomento ha il suo gruppo di domande con le risposte.",
     "editTopic": "Modifica <bdi>{topic}</bdi>",
-    "changesPlaceholder": "Facoltativo: descrivi le modifiche, ad es. «Aggiungi un argomento sulla leadership del team»",
-    "changes": "Modifiche agli argomenti",
+    "changesPlaceholder": "es. «Aggiungi un argomento sulla leadership di team»",
+    "changes": "Chiedi all'IA di cambiare gli argomenti",
     "tooMany": "Scegli al massimo {max, plural, one {# argomento} other {# argomenti}} o descrivi come unirli.",
     "apply": "Applica le modifiche",
     "approve": "Approva e genera",
+    "topicsChosen": "{chosen, number} di {count, plural, one {# argomento} other {# argomenti}}",
+    "applyFirst": "Applica prima la tua modifica oppure svuota il campo.",
+    "subtopicsNeeded": "Aggiungi almeno {count, plural, one {# sottoargomento} other {# sottoargomenti}}.",
+    "addTopic": "Aggiungi un argomento",
+    "removeTopic": "Rimuovi",
     "topicNameNeeded": "Dai un nome all'argomento."
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "Aziende",
     "empty": "Ancora nessuna azienda.",
     "owner": "Proprietario",
+    "search": "Cerca aziende",
+    "interviewsShort": "{count, plural, one {<n></n> colloquio} other {<n></n> colloqui}}",
+    "membersShort": "{count, plural, one {<n></n> membro} other {<n></n> membri}}",
+    "status": {
+      "low": "Crediti in esaurimento",
+      "verify": "Completa la verifica della tua azienda",
+      "finished": "{count, plural, one {<n></n> candidato ha terminato} other {<n></n> candidati hanno terminato}} questa settimana"
+    },
     "interviewCount": "{count, plural, one {# colloquio} other {# colloqui}}",
     "memberCount": "{count, plural, one {# membro} other {# membri}}",
     "interviews": "Colloqui",
@@ -1024,6 +1077,8 @@
     "brand": "Brand",
     "billing": "Fatturazione",
     "new": "Nuova azienda",
+    "newText": "Ogni azienda ha i propri colloqui, il proprio team e i propri crediti.",
+    "namePlaceholder": "es. Acme",
     "name": "Nome dell'azienda",
     "create": "Crea",
     "createFailed": "Impossibile creare l'azienda. Riprova.",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, one {# uscita dalla pagina} other {# uscite dalla pagina}}",
     "copies": "{count, plural, one {# tentativo di copia} other {# tentativi di copia}}",
     "fastAnswers": "{count, plural, one {# risposta rapida} other {# risposte rapide}}",
+    "extraTimeLabel": "Tempo extra",
+    "summary": {
+      "result": "Risultato",
+      "timeTaken": "Tempo impiegato",
+      "signals": "Segnali di integrità",
+      "invited": "Invitati",
+      "finished": "Terminati",
+      "passed": "Superati",
+      "average": "Voto medio"
+    },
+    "copyLinkFailed": "Non siamo riusciti a copiare il link. Riprova.",
     "empty": "Ancora nessun candidato invitato.",
     "noMatches": "Nessun candidato corrisponde.",
     "search": "Cerca candidati per email o nome",
     "status": "Stato: {status}",
     "anyStatus": "qualsiasi stato",
+    "allStatuses": "Tutti",
     "progress": "Progresso",
     "grade": "Punteggio",
     "resend": "Invia di nuovo l'invito",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "Colloqui",
+    "allStatuses": "Tutti",
+    "candidatesShort": "{count, plural, one {<n></n> candidato} other {<n></n> candidati}}",
+    "finishedShort": "<n></n> terminati",
+    "passedShort": "<n></n> superati",
+    "rowStatus": {
+      "failed": "Aprilo per riprovare",
+      "generating": "In creazione",
+      "undelivered": "{count, plural, one {<n></n> invito non consegnato} other {<n></n> inviti non consegnati}}",
+      "finished": "{count, plural, one {<n></n> candidato ha terminato} other {<n></n> candidati hanno terminato}} questa settimana",
+      "ready": "Pronto: invita i tuoi primi candidati"
+    },
     "interview": "Colloquio",
     "topicsTab": "Argomenti",
     "candidates": "Candidati",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "Ancora nessuna nota. Scrivi la prima per il tuo team.",
     "discover": "Scopri",
     "discoverLinkedIn": "Profilo LinkedIn di {name}",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "Le persone compaiono qui quando si esercitano su questi argomenti e scelgono di essere aperte a nuove opportunità.",
     "discoverText": "Persone aperte a nuove opportunità che si sono esercitate sugli argomenti di questo colloquio. Le più recenti prima, senza classifica.",
     "discoverEmpty": "Nessuno aperto a nuove opportunità si è ancora esercitato sugli argomenti di questo colloquio.",
     "discoverResults": "Risultati della simulazione",
@@ -1130,6 +1210,8 @@
     "notePosting": "Pubblicazione…",
     "noteEdited": "modificata",
     "notePinned": "Fissata",
+    "noteShowMore": "Mostra di più",
+    "noteShowLess": "Mostra meno",
     "notePin": "Fissa in alto",
     "noteUnpin": "Non fissare più",
     "noteFormerMember": "Ex membro",
@@ -1139,8 +1221,20 @@
     "noteFailed": "Impossibile salvare la nota. Riprova.",
     "new": "Nuovo colloquio",
     "createTitle": "Crea un colloquio",
+    "createIntro": "Incolla una descrizione del ruolo. Rivedrai gli argomenti prima che vengano scritte le domande, ed è gratis.",
+    "steps": {
+      "describe": "Descrivi il ruolo",
+      "review": "Rivedi gli argomenti",
+      "invite": "Invita i candidati"
+    },
+    "startTemplate": "Parti da un modello",
+    "startAts": "Parti da una posizione del tuo ATS",
+    "tryExample": "Prova un esempio",
     "try": "Prova come candidato",
     "newCandidate": "Nuovi candidati",
+    "settingsSharing": "Condivisione",
+    "settingsRuns": "Come si svolge",
+    "settingsAfter": "Dopo e privacy",
     "linkTitle": "Link condivisibile",
     "linkText": "Per un annuncio di lavoro: chiunque abbia il link può svolgere il colloquio. Ogni persona ti costa quanto un candidato invitato.",
     "linkFailed": "Impossibile modificare il link. Riprova.",
@@ -1160,7 +1254,7 @@
     "generating": "In generazione…",
     "generationFailed": "Generazione non riuscita",
     "fallbackTitle": "colloquio",
-    "continueGeneration": "Continua la generazione",
+    "continueGeneration": "Continua",
     "empty": "Ancora nessun colloquio. Crea il primo.",
     "noMatches": "Nessun colloquio corrisponde.",
     "search": "Cerca colloqui per titolo",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "Email del candidato",
     "inviteTab": {
       "one": "uno",
-      "many": "più",
-      "file": "carica"
+      "many": "elenco",
+      "file": "file"
     },
-    "manyHint": "Un candidato per riga, con o senza nome,\nfino a {count, number} alla volta:",
-    "manyHintNoLimit": "Un candidato per riga, con o senza nome:",
-    "example": "esempio",
+    "inviteTitle": "Invita i candidati",
+    "manyHint": "Un candidato per riga, con o senza nome, fino a {count, number} alla volta.",
+    "manyHintNoLimit": "Un candidato per riga, con o senza nome.",
     "uploadFile": "Carica un file",
     "fileFormats": "CSV o TXT, fino a {count, plural, one {# candidato} other {# candidati}}. I nomi possono stare in una colonna del nome o accanto a ogni email.",
     "fileFormatsNoLimit": "CSV o TXT. I nomi possono stare in una colonna del nome o accanto a ogni email.",
@@ -1203,8 +1297,7 @@
       "unclear_name": "Scrivi il nome come Nome '<email>': <bdi>{line}</bdi>",
       "more": "e altre {count, number}"
     },
-    "exampleCsv": "esempio .csv",
-    "exampleTxt": "esempio .txt",
+    "exampleFiles": "Scarica un esempio: <csv>.csv</csv> o <txt>.txt</txt>",
     "candidateName": "Nome (facoltativo)",
     "invitedMany": "{count, plural, one {# candidato invitato} other {# candidati invitati}}",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "Complimenti, il tuo colloquio è pronto",
-      "text": "<name><bdi>{title}</bdi></name> è pronto per i candidati. Ecco cosa fare ora:",
-      "limits": "Scegli quante domande riceve ogni candidato per argomento.",
+      "text": "<name><bdi>{title}</bdi></name> è pronto. Provalo tu prima di invitare qualcuno e modificalo se serve.",
+      "limits": "Quante domande riceve ogni candidato per argomento.",
       "limitsAction": "Imposta domande",
-      "time": "Modifica il tempo medio per domanda, se serve.",
-      "timeAction": "Apri impostazioni",
-      "invite": "Invita i candidati.",
-      "inviteAction": "Vai ai candidati",
+      "time": "Il tempo medio per domanda.",
+      "timeAction": "Modifica il tempo",
       "done": "Ho capito"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "Ti serve più tempo, ad esempio a causa di una disabilità? Chiedi a <bdi>{company}</bdi> un invito personale prima di iniziare: qui non si può aggiungere tempo.",
     "people": "Le domande sono scritte dall'IA. I risultati vengono esaminati da persone e decide <bdi>{company}</bdi>; puoi chiedere che il tuo venga riesaminato.",
     "stay": "Resta su questa pagina: uscire, copiare e rispondere troppo in fretta per aver letto la domanda viene registrato, e l'azienda vede quando i tuoi tempi di risposta o le tue risposte non seguono la difficoltà delle domande (<link>privacy</link>).",
-    "finished": "Questo colloquio è già terminato.",
+    "finishedTitle": "Hai finito",
+    "finished": "Le tue risposte sono arrivate a <bdi>{company}</bdi>. L'azienda esamina i risultati e decide i prossimi passi.",
+    "finishedPreview": "Questo è ciò che vedono i tuoi candidati. Questa prova gratuita non è nel tuo elenco di candidati e le sue risposte non contano nelle statistiche delle domande.",
+    "finishedRights": "Puoi chiedere a <bdi>{company}</bdi> che una persona riveda il tuo risultato. <link>Privacy</link>",
+    "finishedAnswered": "Domande risposte",
+    "finishedTime": "Tempo impiegato",
+    "signInAs": "Usa l'email a cui è stato inviato questo invito.",
+    "switchAccount": "Cambia account",
+    "progress": "Sei a {percent} del percorso.",
+    "progressLabel": "I tuoi progressi",
+    "groups": {
+      "how": "Come funziona",
+      "time": "Il tuo tempo",
+      "rights": "I tuoi diritti e la tua privacy"
+    },
     "continue": "Continua",
     "start": "Accetta e inizia",
     "pledge": "Risponderò in autonomia, senza strumenti di IA né l'aiuto di altre persone.",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "Entrato",
     "invited": "Invitato",
+    "joinedOn": "Si è unito il {date}",
+    "invitedOn": "Invitato il {date}",
+    "pendingTitle": "Inviti in sospeso",
+    "firstTitle": "Invita il tuo primo collega",
     "role": "Ruolo",
     "roleFailed": "Impossibile cambiare il ruolo.",
     "inviteTitle": "Invito nell'azienda",
@@ -1281,6 +1390,11 @@
     "madeOwner": "<bdi>{email}</bdi> è ora il proprietario."
   },
   "scorecard": {
+    "filters": {
+      "all": "Tutte",
+      "correct": "Corrette",
+      "wrong": "Sbagliate"
+    },
     "timeOut": "Tempo scaduto",
     "leftPage": "Ha lasciato la pagina {count, plural, one {# volta} other {# volte}}",
     "answeredIn": "Risposta in <b>{time}</b>",
@@ -1298,7 +1412,7 @@
     "test": "Generare un colloquio",
     "free": "Gratis",
     "candidate": "Ogni candidato che risponde ad almeno una domanda",
-    "candidateVolume": "Con crediti da una ricarica di {from} o più",
+    "candidateVolume": "Con ricariche da {from} in su",
     "perCandidate": "{price} a candidato",
     "welcome": "{count, plural, one {Il tuo primo candidato} other {I tuoi primi # candidati}}",
     "credits": "Un candidato costa {credits, number} crediti, e i crediti non scadono.",
@@ -1306,6 +1420,10 @@
     "referralsNote": "Condividi il link della tua azienda dalla sua scheda Referral.",
     "companyReferral": "Un'azienda che hai invitato fa la sua prima ricarica",
     "each": "{count, number} crediti ciascuno",
+    "fromPrice": "da {price}",
+    "anyTopUp": "Con qualsiasi ricarica",
+    "volumeTitle": "Un candidato costa meno con ricariche più grandi",
+    "volumeText": "Più grande è la ricarica, meno costa ogni candidato.",
     "topUp": "Ricarica"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "Documenti di conformità per le assunzioni",
     "intro": "Documenti per le aziende che valutano i candidati con testee: istruzioni, modelli e l'accordo sul trattamento dei dati.",
     "englishOnly": "Questi documenti sono disponibili solo in inglese.",
-    "download": "Scarica {format}",
+    "download": "Scarica <type>{format}</type>",
     "readOnline": "Leggi online",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "Genera in"
   },
   "referral": {
+    "title": "Ogni azienda riceve <n></n> crediti",
+    "text": "Bastano per {count, plural, one {# candidato} other {# candidati}}. Condividi il tuo link con un'altra azienda.",
+    "empty": "Ancora nessun premio. Condividi il tuo link per ottenere il primo.",
+    "steps": {
+      "share": "Condividi il tuo link con un'altra azienda.",
+      "create": "Quell'azienda crea la propria attraverso il link.",
+      "reward": "Dopo la sua prima ricarica, di qualsiasi importo, entrambe le aziende ricevono i crediti."
+    },
+    "summary": {
+      "referred": "Aziende presentate",
+      "earned": "Crediti guadagnati",
+      "left": "Premi rimasti quest'anno",
+      "leftValue": "{left, number} su {total, number}"
+    },
     "companyNote": "Ricevete entrambi {reward, number} crediti quando fa la sua prima ricarica, di qualsiasi importo.",
     "deletedCompany": "Un'azienda eliminata",
     "credits": "+{count, number} crediti",
@@ -1398,53 +1530,39 @@
     "intro": "Un candidato costa {credits, number} crediti, e i crediti non scadono.",
     "noCompany": "I crediti appartengono a un'azienda. Crea prima la tua azienda, poi ricaricala qui.",
     "createCompany": "Crea un'azienda",
+    "allCompanies": "Tutte le aziende",
     "pricing": "Prezzi"
   },
   "landing": {
-    "more": "Come funziona",
     "demos": "Video",
-    "videoTooltip": "Guarda come funziona testee",
     "watchVideo": "Guarda il video",
     "howItWorks": "Come funziona",
     "askAgent": "chiedi a Mira",
     "create": {
+      "draftingNote": "Lettura della descrizione del ruolo.",
       "title": "Crea un colloquio in pochi minuti",
       "text": "Incolla una descrizione del ruolo, regola gli argomenti e il tuo colloquio è pronto in pochi minuti.",
       "notes": {
-        "questions": "{count, plural, one {# domanda} other {# domande}} per argomento",
         "templates": "modelli pronti disponibili",
         "expert": "nessun esperto della materia necessario"
       },
       "describe": "<n>1.</n> Incolla la descrizione",
       "adjust": "<n>2.</n> Regola gli argomenti",
       "menu": {
-        "cut": "Taglia",
-        "copy": "Copia",
         "paste": "Incolla"
       },
-      "ready": "<n>3.</n> Il tuo colloquio è pronto",
-      "invited": "<n>4.</n> Il candidato riceve l'invito",
+      "ready": "<n>3.</n> Il colloquio è pronto",
+      "invited": "<n>4.</n> L'invito è ricevuto",
       "status": "Pronto",
       "email": {
-        "search": "Cerca nella posta",
-        "compose": "Scrivi",
         "inbox": "Posta in arrivo",
-        "starred": "Speciali",
-        "sent": "Inviati",
-        "drafts": "Bozze",
         "from": "testee.",
-        "toMe": "a me",
         "now": "ora",
         "subject": "Invito a un colloquio da {company}",
-        "preheader": "Svolgi «{title}» su testee. Accedi con {email} per iniziare.",
         "heading": "Invito a un colloquio",
         "invited": "<b>{company}</b> ti invita al colloquio «{title}» su testee.",
         "signIn": "Accedi con {email} per iniziare. Solo questo indirizzo può svolgere il colloquio, e hai un solo tentativo.",
-        "button": "Apri l'invito",
-        "pasteLink": "Oppure incolla questo link nel tuo browser",
-        "footer": "Questa email è stata inviata a {email} perché qualcuno ha invitato questo indirizzo su testee. Se non te l'aspettavi, puoi ignorarla.",
-        "stopCompany": "Non inviarmi email da parte di {company}",
-        "operator": "testee è gestita da {name}, {address}."
+        "button": "Apri l'invito"
       },
       "phone": {
         "describe": "Incolla una descrizione del ruolo, oppure scrivi due parole sul ruolo.",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "Decide una persona",
-          "text": "Il punteggio supporta la tua decisione, non la prende al posto tuo. Le segnalazioni di integrità sono un motivo per guardare meglio, non una prova."
+          "text": "Il punteggio supporta la tua decisione. I segnali di integrità sono un motivo per guardare meglio, non una prova."
         },
         "fair": {
           "title": "Equo per ogni candidato",
-          "text": "Lo stesso timer e lo stesso mix di tipi di domanda, domande estratte a caso per ogni persona, tempo extra per chi ne ha bisogno."
+          "text": "Lo stesso timer e lo stesso mix di domande per tutti, domande estratte a caso, tempo extra per chi ne ha bisogno."
         },
         "laws": {
           "title": "Pensato per la conformità",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "Ogni azione registrata",
-          "text": "Il proprietario vede chi ha fatto cosa nell'azienda, conservato in sicurezza per 12 mesi su server nell'UE."
+          "text": "Un proprietario vede chi ha fatto cosa, conservato per 12 mesi su server UE."
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "Altre domande?",
       "videos": "video",
       "faq": "FAQ",
-      "guides": "guide",
-      "features": "funzionalità",
-      "hiringFlow": "processo di selezione"
+      "guides": "guide"
     },
     "closing": {
       "title": "Crea il tuo primo colloquio\nÈ gratis",
@@ -1672,7 +1788,8 @@
         "time": "~10 min per ruolo, nessuno per candidato",
         "cost": "{price} per candidato che risponde"
       },
-      "more": "Confronta con altri strumenti"
+      "more": "Confronta con altri strumenti",
+      "best": "La scelta migliore"
     },
     "freeToStart": {
       "title": "Tutto è gratis\nPaghi per candidato",
@@ -1689,6 +1806,7 @@
       "each": "({price} per candidato)",
       "free": "{count, plural, one {# candidato gratuito} other {# candidati gratuiti}} per iniziare",
       "perCandidate": "per candidato",
+      "bestPrice": "Il miglior prezzo",
       "pack": "{count, number} per {price}",
       "see": "Vedi i prezzi",
       "notes": {
@@ -1698,11 +1816,159 @@
         "refund": "crediti pagati non usati rimborsabili"
       },
       "currencies": "{count, plural, one {# valuta} many {# valute} other {# valute}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Acme aiuta i negozi online a rispondere ai propri clienti con l'IA.\nCerchiamo un AI Engineer per sviluppare le nostre funzionalità basate su LLM.\n• Almeno 3 anni di esperienza con Python\n• App LLM, RAG e ricerca vettoriale\n• Valutazione e monitoraggio dei modelli\nFull remote, orari flessibili e budget per la formazione.",
+        "title": "AI Engineer",
+        "topics": {
+          "llm": {
+            "name": "Fondamenti di LLM",
+            "subtopics": ["Token", "Prompting", "Finestra di contesto"]
+          },
+          "rag": {
+            "name": "Generazione aumentata dal recupero (RAG)",
+            "subtopics": ["Embedding", "Chunking", "Ricerca vettoriale"]
+          },
+          "python": {
+            "name": "Python per sistemi di ML",
+            "subtopics": ["asyncio", "Type hint"]
+          }
+        },
+        "renamed": " su larga scala",
+        "subtopicAdded": " e test",
+        "change": "Aggiungi un argomento sulla valutazione dell'output degli LLM",
+        "newTopic": {
+          "name": "Valutazione degli LLM",
+          "subtopics": ["Set di test", "LLM come giudice", "Metriche"]
+        }
+      },
+      "candidates": {
+        "title": "Data Analyst",
+        "questions": {
+          "median": {
+            "topic": "Statistica",
+            "text": "Alcuni ordini molto grandi falsano il valore medio degli ordini. Quale misura descrive meglio un ordine tipico?",
+            "options": [
+              "La media del valore degli ordini",
+              "La mediana del valore degli ordini",
+              "Il campo di variazione del valore degli ordini",
+              "La deviazione standard del valore degli ordini"
+            ]
+          },
+          "revenue": {
+            "topic": "Statistica",
+            "text": "Il fatturato settimanale nella tua dashboard è calato del 20% subito dopo una modifica alla pipeline dei dati. Quali controlli faresti per primi?",
+            "options": [
+              "Confrontare il numero di righe prima e dopo la modifica",
+              "Cercare date duplicate o mancanti",
+              "Cambiare la palette di colori della dashboard",
+              "Chiedere alle vendite se i clienti hanno smesso di comprare"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "Il marketing vuole le regioni con vendite totali superiori a 100. Cosa restituisce questa query?",
+            "options": [
+              "Solo North",
+              "Solo South",
+              "North e South",
+              "Nessuna riga"
+            ]
+          },
+          "chart": {
+            "topic": "Visualizzazione",
+            "text": "Devi mostrare come sono cambiate le iscrizioni mensili negli ultimi due anni. Quale grafico mostra meglio questo andamento?",
+            "options": [
+              "Un grafico a torta delle iscrizioni per mese",
+              "Un grafico a linee delle iscrizioni per mese",
+              "Un grafico a dispersione delle iscrizioni rispetto al fatturato",
+              "Un istogramma del numero di iscrizioni mensili"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "Product Manager",
+        "topics": [
+          "Strategia di prodotto",
+          "Metriche",
+          "Stakeholder",
+          "Roadmap",
+          "Ricerca sugli utenti",
+          "Prioritizzazione",
+          "Sperimentazione",
+          "Pricing",
+          "Go-to-market",
+          "Comunicazione"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "Cosa va fatto per prima cosa prima di sviluppare una nuova funzionalità?",
+            "options": [
+              "Verificare il problema con gli utenti",
+              "Scrivere le specifiche tecniche",
+              "Fissare la data di lancio",
+              "Progettare le schermate"
+            ]
+          },
+          "metrics": {
+            "text": "La conversione è scesa dal 4% al 3%. Di quanto è calata rispetto a prima?",
+            "options": ["1%", "25%", "33%", "75%"]
+          },
+          "stakeholders": {
+            "text": "Un team partner non è d'accordo con le tue priorità. Cosa fai per prima cosa?",
+            "options": [
+              "Coinvolgi il tuo responsabile",
+              "Chiedi di cosa hanno bisogno e perché",
+              "Mantieni il tuo piano così com'è",
+              "Rinunci alle tue priorità"
+            ]
+          }
+        },
+        "chat": {
+          "name": "Team selezione",
+          "initials": "TS"
+        },
+        "notes": [
+          "L'hiring manager vuole una shortlist di due candidati entro venerdì.",
+          "Daniel è andato bene sugli stakeholder nel colloquio telefonico; più debole sulle metriche.",
+          "Sofia ha chiesto più tempo; la risento domani."
+        ],
+        "pdf": "candidati-product-manager.pdf"
+      },
+      "slack": {
+        "channels": ["generale", "selezione", "sviluppo"],
+        "channelsTitle": "Canali",
+        "peopleTitle": "Messaggi diretti",
+        "appsTitle": "App",
+        "app": "APP",
+        "composer": "Invia un messaggio a #{channel}",
+        "finished": "{name} ({email}) ha completato «{title}»: {grade}%.",
+        "noted": "{author} ha aggiunto una nota su «{title}»:",
+        "button": "Apri in testee"
+      },
+      "invite": {
+        "title": "Account Executive B2B"
+      },
+      "askAgent": {
+        "interview": "Data Analyst"
+      }
     }
   },
   "faq": {
     "title": "Domande frequenti",
-    "intro": "Non trovi la risposta? Chiedi a Mira, l’assistente IA (il pulsante in alto nella pagina), o scrivici all’indirizzo indicato nell’informativa sulla privacy.",
+    "intro": "Risposte su testee, dal tuo primo colloquio ai tuoi dati.",
+    "groups": {
+      "start": "Per iniziare",
+      "candidates": "Candidati",
+      "pricing": "Prezzi e crediti",
+      "results": "Risultati e il tuo team",
+      "tools": "Integrazioni",
+      "privacy": "Privacy e il tuo account"
+    },
+    "closingTitle": "Hai ancora una domanda?",
+    "closingText": "Chiedi a Mira, la nostra assistente IA, oppure scrivici.",
     "description": "Risposte su testee: come i colloqui nascono da un annuncio di lavoro, cosa vedono i candidati, prezzi e crediti, risultati, integrazioni con gli ATS, lingue e i tuoi dati."
   },
   "contact": {
@@ -1731,9 +1997,20 @@
     "description": "testee trasforma un annuncio di lavoro in un colloquio equo e a tempo in pochi minuti, a un prezzo alla portata di ogni team, e permette a chiunque di esercitarsi gratis per i colloqui.",
     "company": {
       "title": "Perché esistiamo",
+      "titles": {
+        "problem": "Selezionare bene è difficile",
+        "approach": "Un colloquio equo in pochi minuti",
+        "practice": "Simulazioni gratuite per tutti"
+      },
       "problem": "Le assunzioni si basano spesso su un CV e una buona conversazione, ed entrambi possono ingannare. Gli strumenti di valutazione che aiutano hanno prezzi pensati per le grandi aziende, con piani annuali e costi per utente, così la maggior parte dei team ne fa a meno.",
       "approach": "testee trasforma una descrizione del ruolo in un colloquio a tempo in pochi minuti, per qualsiasi ruolo. Ogni candidato riceve domande tutte sue, vedi chi conosce il lavoro e perché, e paghi solo per i candidati che lo svolgono davvero.",
       "practice": "Vogliamo anche che prepararsi a un colloquio sia gratis per tutti. Chiunque può fare le nostre simulazioni di colloquio per un ruolo, vedere il proprio punteggio e ogni risposta corretta, ed esercitarsi di nuovo, senza costi."
+    },
+    "closing": {
+      "title": "Vedilo con i tuoi occhi",
+      "text": "Crea un colloquio a partire dalla tua descrizione del ruolo, oppure esercitati gratis per un ruolo.",
+      "create": "Crea un colloquio",
+      "practice": "Esercitati gratis"
     },
     "founder": {
       "quote": "Assumere bene non dovrebbe essere un privilegio delle grandi aziende con grandi budget. Ho creato testee perché qualsiasi team possa trasformare una descrizione del ruolo in un colloquio equo in pochi minuti, vedere chi conosce davvero il lavoro e pagare solo per i candidati che lo svolgono. Spero che ti aiuti a trovare prima le persone giuste.",
@@ -1751,20 +2028,18 @@
     "title": "Notifiche",
     "unread": "{count, plural, one {# notifica non letta} other {# notifiche non lette}}",
     "empty": "Ancora niente di nuovo.",
-    "formerAuthor": "un ex membro",
     "kinds": {
       "question_flagged": "{count, plural, one {Una domanda su «<bdi>{topic}</bdi>» in {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}} è stata segnalata per la revisione.} other {# domande in {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}} sono state segnalate per la revisione.}}",
       "question_fixed": "{count, plural, one {L'IA ha corretto una domanda segnalata su «<bdi>{topic}</bdi>» in {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}}.} other {L'IA ha corretto # domande segnalate in {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}}.}}",
       "referral_rewarded": "Una persona che hai invitato ha ricaricato. Hai ricevuto {credits, plural, one {# credito} other {# crediti}}.",
-      "auto_top_up_on": "La ricarica automatica è attiva: {price} più imposte quando i crediti disponibili scendono sotto {threshold, number}.",
       "auto_top_up_charged": "La ricarica automatica ha aggiunto {credits, plural, one {# credito} other {# crediti}}.",
       "auto_top_up_failed": "La ricarica automatica non è riuscita ad addebitare la carta. Ricarica per non restare senza saldo.",
+      "auto_top_up_on": "La ricarica automatica è attiva: {price} più imposte quando i crediti disponibili scendono sotto {threshold, number}.",
       "auto_top_up_paused": "La ricarica automatica è in pausa: la carta è stata rifiutata. Aggiorna la carta per riattivarla.",
       "auto_top_up_price_change": "Dal <time>{date}</time>, ogni ricarica automatica costa {newPrice} invece di {price}.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> ha completato {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}}{grade, select, none {.} other {: {grade}.}}} other {# candidati hanno completato {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}}.}}",
       "invite_undelivered": "{count, plural, one {L'invito a <bdi>{email}</bdi> per {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}} non è stato consegnato.} other {# inviti per {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}} non sono stati consegnati.}}",
       "interview_ready": "{title, select, none {Un colloquio è pronto.} other {Il colloquio «<bdi>{title}</bdi>» è pronto.}}",
-      "note_added": "{count, plural, =1 {Nuova nota su {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}} di <bdi>{authors}</bdi>.} other {# nuove note su {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}}, le ultime di <bdi>{authors}</bdi>.}}",
       "interview_cancelled": "{title, select, none {Un colloquio} other {Il colloquio «<bdi>{title}</bdi>»}} è stato annullato: la revisione degli argomenti ha atteso troppo.",
       "verification_approved": "«<bdi>{name}</bdi>» è verificata per <bdi>{domain}</bdi>.",
       "verification_declined": "{reason, select, none {La verifica di «<bdi>{name}</bdi>» è stata rifiutata.} other {La verifica di «<bdi>{name}</bdi>» è stata rifiutata: <bdi>{reason}</bdi>}}",
@@ -1776,8 +2051,10 @@
       "news": "Novità: <bdi>{title}</bdi>",
       "legal_terms": "I nuovi termini si applicano dal <time>{date}</time>.",
       "legal_privacy": "Una nuova informativa sulla privacy si applica dal <time>{date}</time>.",
-      "legal_dpa": "Un nuovo accordo sul trattamento dei dati si applica dal <time>{date}</time>."
+      "legal_dpa": "Un nuovo accordo sul trattamento dei dati si applica dal <time>{date}</time>.",
+      "note_added": "{count, plural, =1 {Nuova nota su {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}} di <bdi>{authors}</bdi>.} other {# nuove note su {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}}, le ultime di <bdi>{authors}</bdi>.}}"
     },
+    "formerAuthor": "un ex membro",
     "legalBanner": {
       "terms": "I termini di testee cambiano il <time>{date}</time>.",
       "privacy": "L'informativa sulla privacy di testee cambia il <time>{date}</time>.",
@@ -1801,7 +2078,7 @@
     "send": "Invia <name>PDF</name>",
     "sent": "Report inviato a <bdi>{email}</bdi>",
     "sendFailed": "Impossibile inviare il report.",
-    "orSummary": "Oppure invia tramite",
+    "orSummary": "Oppure invia un breve riepilogo in chat",
     "via": "Inviato da testee",
     "candidatesFileName": "Candidati {title}",
     "candidateCount": "{count, plural, one {# candidato} other {# candidati}}",
@@ -1833,6 +2110,10 @@
     "results": "Risultati della simulazione",
     "grade": "dei punti possibili",
     "notFinished": "non terminato",
+    "finished": "Terminato",
+    "answeredCard": "Domande risposte",
+    "answeredOf": "{done, number} di {total, number}",
+    "startedCard": "Iniziato",
     "noRounds": "Ancora nessuna simulazione.",
     "startFailed": "Impossibile avviare la simulazione. Riprova.",
     "gradeLabel": "Punteggio",
@@ -1844,7 +2125,13 @@
     "hireButton": "Crea un colloquio",
     "timingPerQuestion": "{time} per domanda in media",
     "timingNone": "Senza limite di tempo",
-    "timingNote": "La simulazione non viene confrontata con nessuno: prenditi più tempo, o nessun limite, se ti serve."
+    "timingNote": "La simulazione non viene confrontata con nessuno: prenditi più tempo, o nessun limite, se ti serve.",
+    "facts": {
+      "topics": "Argomenti",
+      "questions": "Domande",
+      "level": "Livello",
+      "language": "Lingua"
+    }
   },
   "openToOffers": {
     "title": "Aperto a nuove opportunità",
@@ -1887,6 +2174,7 @@
     "englishOnly": "Questa pagina è solo in inglese.",
     "startTitle": "Metti alla prova i tuoi candidati",
     "startText": "Crea un test di competenze a tempo dalla tua descrizione del ruolo.{priced, select, yes { {price} per candidato, senza abbonamento.} other {}}",
+    "contents": "In questa pagina",
     "startButton": "Crea un test"
   },
   "compare": {
@@ -1912,7 +2200,16 @@
     "topics": "Cosa verifica",
     "questions": "Esempi di domande del colloquio",
     "questionsText": "Domande come queste, con le risposte corrette. I tuoi candidati ricevono le proprie, mai mostrate in pubblico.",
-    "faq": "Domande che fanno le aziende"
+    "faq": "Domande che fanno le aziende",
+    "createOwn": "Crea il tuo colloquio",
+    "facts": {
+      "topics": "Argomenti",
+      "level": "Livello",
+      "language": "Lingua",
+      "price": "Per candidato"
+    },
+    "closingTitle": "Pronto a valutare i tuoi candidati?",
+    "closingText": "Incolla una descrizione del ruolo e ottieni un colloquio come questo in pochi minuti; crearlo è gratis."
   },
   "ats": {
     "statusConnected": "collegato",
@@ -1998,6 +2295,25 @@
     "bzStepCreate": "Crea una chiave API come amministratore che vede tutte le posizioni: agisce a tuo nome, e i risultati vengono scritti a tuo nome. L'API e i webhook di Breezy sono inclusi nel suo piano Pro.",
     "bzStepPaste": "Incolla qui sotto la chiave. Il webhook in Breezy HR lo aggiungiamo noi.",
     "atsGroup": "ATS",
+    "firstJobTitle": "Collega la tua prima posizione",
+    "brokenText": "{ats} ha smesso di funzionare, quindi i candidati non vengono invitati. Ricollegalo per riprendere.",
+    "stripMove": "Un candidato raggiunge la fase che hai scelto in {ats}",
+    "stripInvite": "testee lo invita al colloquio collegato",
+    "stripResults": "I suoi risultati tornano al suo profilo {ats}",
+    "rowStage": "Fase: <bdi>{stage}</bdi>",
+    "rowInterview": "Colloquio: <link><bdi>{interview}</bdi></link>",
+    "invitedShort": "<n></n> invitati",
+    "waitingShort": "<n></n> in attesa",
+    "notInvitedShort": "<n></n> non invitati",
+    "summary": {
+      "status": "Stato",
+      "account": "Account",
+      "jobs": "Posizioni collegate",
+      "invited": "Candidati invitati"
+    },
+    "connectedGroup": "Collegati",
+    "statusBroken": "Da ricollegare",
+    "rowText": "Invita i candidati da {ats} e rimanda lì i loro risultati.",
     "messagingGroup": "Messaggistica",
     "apiAiAppsGroup": "API e app IA",
     "searchInterview": "Cerca colloqui",
@@ -2005,6 +2321,29 @@
   },
   "slack": {
     "add": "Aggiungi a Slack",
+    "rowText": "Ricevi una notifica su Slack quando i candidati terminano.",
+    "brokenText": "Slack ha smesso di accettare messaggi, quindi il tuo canale non riceve notifiche. Ricollegalo per riprendere.",
+    "pointChannel": "Scegli il canale in cui il tuo team deve vederle.",
+    "pointKinds": "Scegli quali notifiche arrivano lì.",
+    "pointPrivacy": "testee può pubblicare solo in quel canale. Non può leggere il tuo Slack.",
+    "test": "Invia una prova",
+    "testSent": "Messaggio di prova inviato al tuo canale.",
+    "testFailed": "Impossibile inviare il messaggio di prova.",
+    "groups": {
+      "candidates": "Candidati",
+      "interviews": "Colloqui",
+      "billing": "Fatturazione",
+      "team": "Team"
+    },
+    "samples": {
+      "candidate_finished": "Ann Lee (ann@example.com) ha terminato «Data Analyst»: 82%.",
+      "ats_not_invited": "Ben Ortiz arriva dal tuo ATS ma non è stato invitato a «Data Analyst».",
+      "invite_undelivered": "L'invito a ben@example.com per «Data Analyst» non è stato consegnato.",
+      "interview_ready": "«Data Analyst» è pronto.",
+      "auto_top_up_charged": "La tua ricarica automatica è stata addebitata.",
+      "auto_top_up_failed": "La tua ricarica automatica non è riuscita. Aggiorna la carta per mantenerla attiva.",
+      "note_added": "Maya ha aggiunto una nota su «Data Analyst»: ottimo SQL, vale una chiamata."
+    },
     "connectFailed": "Impossibile collegare Slack.",
     "connected": "Slack è collegato.",
     "disconnectFailed": "Impossibile scollegare Slack.",
@@ -2019,9 +2358,9 @@
       "ats_not_invited": "Un candidato dal tuo ATS non è stato invitato",
       "invite_undelivered": "Un'email di invito non è stata consegnata",
       "interview_ready": "Un colloquio è pronto",
-      "note_added": "Un membro del team ha scritto una nota, con il suo testo",
       "auto_top_up_charged": "È stata addebitata una ricarica automatica",
-      "auto_top_up_failed": "Una ricarica automatica non è riuscita"
+      "auto_top_up_failed": "Una ricarica automatica non è riuscita",
+      "note_added": "Un membro del team ha scritto una nota, con il suo testo"
     },
     "instructionsTitle": "Come Slack riceve le tue notifiche",
     "stepAdd": "Clicca su «Aggiungi a Slack»: Slack si apre e ti chiede di autorizzare testee nel tuo workspace.",
@@ -2030,13 +2369,67 @@
     "stepPrivacy": "testee può pubblicare solo in quel canale. Non può leggere il tuo Slack e, se lo scolleghi, viene rimosso."
   },
   "api": {
+    "firstKeyTitle": "Crea la tua prima chiave",
+    "sdkDocs": "Vedi la documentazione dell'SDK",
+    "sdkReady": "Pronto: {count, plural, one {# sito può mostrare} other {# siti possono mostrare}} i tuoi colloqui.",
+    "sdkNotReady": "Non ancora configurato: aggiungi un sito qui sotto perché possa mostrare i tuoi colloqui.",
+    "sdkRules": "Le pagine devono usare HTTPS. Aggiungi un sito, o tutti i suoi sottodomini:",
+    "stepSite": "Aggiungi il tuo sito",
+    "stepCode": "Incolla questo codice nella tua pagina",
+    "stepSend": "Mandagli i candidati",
+    "stepSendText": "Il tuo server invita un candidato con sign_in false e passa alla tua pagina l'invite_url che riceve. Non mettere mai la tua chiave API in una pagina.",
+    "thisSite": "Questo sito",
+    "allSubdomains": "Tutti i sottodomini",
+    "localhostOn": "Attivo: disattivalo prima di andare online.",
+    "firstWebhookTitle": "Aggiungi il tuo primo webhook",
+    "webhookSampleText": "testee invia una richiesta firmata come questa quando succede qualcosa:",
+    "lastDelivered": "ultima consegna il <time>{date}</time>",
+    "webhookStates": {
+      "paused": "In pausa",
+      "unused": "Non ancora usato",
+      "active": "Attivo"
+    },
+    "webhookEvents": {
+      "started": "Candidato ha iniziato",
+      "finished": "Candidato ha terminato",
+      "undelivered": "Candidato non raggiunto",
+      "expired": "Invito scaduto",
+      "removed": "Candidato rimosso",
+      "ready": "Colloquio pronto"
+    },
+    "replaceKey": "Crea una chiave sostitutiva",
+    "activityTitle": "Attività",
+    "ipOpen": "Qualsiasi indirizzo IP può usare questa chiave. Limitala agli indirizzi dei tuoi server per renderla più sicura.",
+    "summary": {
+      "status": "Stato",
+      "access": "Accesso",
+      "lastUsed": "Ultimo utilizzo",
+      "expires": "Scade",
+      "created": "Creata"
+    },
+    "warnings": {
+      "expired": "Questa chiave è scaduta, quindi le richieste che la usano vengono rifiutate. Crea una chiave sostitutiva per continuare.",
+      "expiring": "Questa chiave scade presto. Crea una chiave sostitutiva e passa a quella prima che smetta di funzionare."
+    },
+    "exampleText": "Provalo con questa richiesta, che legge i tuoi crediti:",
+    "access": {
+      "read": "Sola lettura",
+      "write": "Lettura e scrittura",
+      "custom": "Personalizzato"
+    },
+    "states": {
+      "expired": "Scaduta",
+      "expiring": "Scade presto",
+      "never_used": "Mai usata",
+      "active": "Attiva"
+    },
     "name": "API",
     "rowName": "API, SDK, webhook",
     "rowText": "Chiavi e webhook per collegare la tua piattaforma.",
     "counts": "{keys, plural, one {# chiave} other {# chiavi}} · {webhooks, plural, one {# webhook} other {# webhook}}",
     "docs": "Documentazione per sviluppatori",
     "keysTitle": "Chiavi API",
-    "keysText": "Una chiave agisce come la persona che l'ha creata e può fare solo ciò che i suoi permessi consentono.",
+    "keysText": "Una chiave agisce per la tua azienda, a nome proprio, e può fare solo ciò che i suoi permessi consentono.\nContinua a funzionare anche quando la persona che l'ha creata se ne va.",
     "noKeys": "Ancora nessuna chiave.",
     "newKey": "Nuova chiave",
     "newKeyTitle": "Nuova chiave API",
@@ -2064,7 +2457,7 @@
     "removeKeyTitle": "Eliminare questa chiave?",
     "removeKeyText": "Tutto ciò che usa «<bdi>{name}</bdi>» smette subito di funzionare.",
     "webhooksTitle": "Webhook",
-    "webhooksText": "testee avvisa questi indirizzi quando un candidato inizia, termina (con i suoi risultati) o viene rimosso, quando il suo invito non gli arriva o scade, e quando un colloquio è pronto. Ogni richiesta è firmata con il secret dell'indirizzo.",
+    "webhooksText": "testee avvisa questi indirizzi quando succede una di queste cose, con ogni richiesta firmata con il segreto dell'indirizzo.",
     "noWebhooks": "Ancora nessun webhook.",
     "failing": "In pausa: non ha risposto per 3 giorni, quindi non gli vengono inviati eventi. Un evento di test accettato lo riattiva.",
     "addWebhook": "Aggiungi webhook",
@@ -2151,7 +2544,6 @@
     "localhostText": "Per i test sul tuo computer, su qualsiasi porta. Disattivalo quando vai in produzione.",
     "permissionsTitle": "Permessi",
     "permissionsText": "Cosa può fare questa chiave. Le modifiche si salvano subito.",
-    "permissionsSaved": "Permessi salvati.",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2631,15 @@
       "tools": "Strumenti",
       "frameworks": "Framework per agenti"
     },
+    "intro": "Collega testee alla tua piattaforma, al tuo server o a un agente IA.",
+    "endpointsText": "Ogni route, in base a ciò su cui agisce. Aprine una per vedere cosa richiede, cosa restituisce e i suoi errori.",
+    "apiPages": {
+      "start": "Per iniziare",
+      "guides": "Guide",
+      "endpoints": "Endpoint",
+      "errors": "Errori",
+      "changelog": "Novità e modifiche"
+    },
     "englishOnly": "Questa pagina è disponibile solo in inglese.",
     "baseUrl": "URL di base",
     "copyBaseUrl": "Copia URL",
@@ -2275,6 +2676,7 @@
   },
   "assistant": {
     "title": "Mira · assistente IA",
+    "name": "Mira",
     "company": "Azienda",
     "allCompanies": "Tutte le aziende",
     "newChat": "Nuova chat",
@@ -2331,7 +2733,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "Come funziona testee, quanto costa e cosa vedono i candidati, con risposte dalle domande frequenti di testee. Accedi per chiedere delle tue aziende e dei tuoi candidati.",
+        "text": "Accedi per fare domande sulle tue aziende e sui tuoi candidati.",
         "questions": {
           "what": "Che cos'è testee?",
           "pricing": "Quanto costa?",
@@ -2340,7 +2742,7 @@
         }
       },
       "no_company": {
-        "text": "Iniziamo: il tuo primo colloquio, la tua azienda e la sua verifica.",
+        "text": "Mettiamo in moto il tuo primo colloquio.",
         "questions": {
           "firstInterview": "Crea il mio primo colloquio",
           "createCompany": "Crea un'azienda per me",
@@ -2348,7 +2750,7 @@
         }
       },
       "unverified": {
-        "text": "Verifica la tua azienda così i candidati vedono chi li invita, e crea i tuoi colloqui.",
+        "text": "Verifica la tua azienda e crea i tuoi colloqui.",
         "questions": {
           "verify": "Verifica la mia azienda",
           "whyVerify": "Perché verificare la mia azienda?",
@@ -2356,7 +2758,7 @@
         }
       },
       "no_interviews": {
-        "text": "Crea un colloquio da una descrizione del lavoro: le domande sono scritte per il ruolo.",
+        "text": "Creiamo il tuo primo colloquio.",
         "questions": {
           "fromDescription": "Crea un colloquio da una descrizione del lavoro",
           "template": "Crea un colloquio da un modello",
@@ -2364,7 +2766,7 @@
         }
       },
       "no_candidates": {
-        "text": "Invita i candidati via email, con un link condivisibile o dal tuo ATS.",
+        "text": "Invitiamo i tuoi primi candidati.",
         "questions": {
           "invite": "Invita candidati",
           "shareLink": "Attiva il link condivisibile",
@@ -2372,7 +2774,7 @@
         }
       },
       "has_candidates": {
-        "text": "Chiedi dei tuoi candidati: chi ha superato il colloquio, come si confrontano e cosa significano i loro risultati.",
+        "text": "Chiedi dei tuoi candidati e dei loro risultati.",
         "questions": {
           "passed": "Chi ha superato il colloquio questa settimana?",
           "compare": "Confronta i miei candidati migliori",
@@ -2494,7 +2896,27 @@
     "feedbackLink": "Contattaci"
   },
   "companyBilling": {
-    "reservedTab": "Riservati ({count, number})",
+    "reservedTab": "Riservati",
+    "download": {
+      "open": "Scarica lo storico",
+      "title": "Scarica lo storico",
+      "description": "Scegli un periodo per il tuo file CSV.",
+      "save": "Scarica",
+      "failed": "Non siamo riusciti a creare il file. Riprova."
+    },
+    "lowText": "I tuoi crediti stanno finendo. Ricarica per poter continuare a invitare candidati.",
+    "summary": {
+      "available": "Crediti disponibili",
+      "candidates": "Candidati coperti",
+      "reserved": "Crediti riservati",
+      "spent": "Crediti spesi questo mese"
+    },
+    "kinds": {
+      "all": "Tutti",
+      "topups": "Ricariche",
+      "charges": "Addebiti",
+      "refunds": "Rimborsi"
+    },
     "reservedEmpty": "Nessun candidato ha crediti riservati.",
     "reservedNote": "Candidati che non hanno ancora finito. I loro crediti sono riservati: addebitati se rispondono, restituiti se no.",
     "history": "Cronologia",
@@ -2521,7 +2943,19 @@
     "name": "Server MCP",
     "rowText": "Collega Claude, ChatGPT e altre app di IA a testee.",
     "title": "App IA",
-    "subtitle": "Agiscono a tuo nome, in ogni azienda di cui fai parte, con i tuoi permessi.",
+    "subtitle": "Agiscono come te, in ogni azienda di cui fai parte, con i tuoi permessi. Autorizzi ognuna su testee: nessuna chiave viene incollata da nessuna parte.",
+    "connectedTitle": "Le tue app",
+    "otherApps": "Altre",
+    "allowIn": "Consenti le app IA in <bdi>{company}</bdi>",
+    "allowOn": "I membri possono usare i colloqui e i candidati di questa azienda dalle app IA che hanno collegato.",
+    "allowOff": "Disattivato: le app IA non possono leggere né modificare nulla in questa azienda.",
+    "promptsTitle": "Prova a chiedere",
+    "promptCopied": "Copiato",
+    "prompts": {
+      "passed": "Chi ha superato il colloquio questa settimana?",
+      "compare": "Confronta i miei migliori candidati per il colloquio Data Analyst.",
+      "invite": "Invita ann@example.com al colloquio Data Analyst."
+    },
     "instructionsTitle": "Collega un'app di IA a testee",
     "serverTitle": "Indirizzo del server",
     "serverText": "Incollalo nella tua app di IA come connettore personalizzato (un server MCP).",
@@ -2679,6 +3113,10 @@
     "failed": "Impossibile esportare il file. Riprova."
   },
   "actionLog": {
+    "period": "Periodo",
+    "periodAll": "Sempre",
+    "periodDays": "Ultimi {days, number} giorni",
+    "periodCustom": "Personalizzato",
     "empty": "Ancora nessuna azione.",
     "noMatches": "Nessuna azione corrisponde a questi filtri.",
     "formerMember": "Un ex membro",
@@ -2686,7 +3124,15 @@
     "deletedApiKey": "{via, select, mcp {Tramite MCP con una chiave eliminata} other {Tramite l'API con una chiave eliminata}}",
     "deletedCandidate": "un candidato eliminato",
     "anyMember": "Chiunque",
-    "anyAction": "Tutte le azioni",
+    "anyAction": "Tutte",
+    "clear": "Cancella",
+    "download": {
+      "open": "Scarica il registro",
+      "title": "Scarica il registro",
+      "description": "Scegli un periodo per il tuo file CSV.",
+      "save": "Scarica",
+      "failed": "Non siamo riusciti a creare il file. Riprova."
+    },
     "member": "Membro",
     "action": "Azione",
     "from": "Dal",
@@ -2722,13 +3168,13 @@
       "candidate_deleted": "Ha eliminato un candidato",
       "candidate_renamed": "Ha cambiato il nome di un candidato",
       "extra_time_set": "Ha dato tempo extra a un candidato",
-      "candidate_mode_set": "Ha cambiato la modalità del colloquio di un candidato",
       "results_viewed": "Ha visto i risultati di un candidato",
       "report_emailed": "Ha inviato un report via email",
       "bias_audit_exported": "Ha esportato i dati per un audit sui bias",
       "member_invited": "Ha invitato un membro",
       "member_joined": "Si è unito all'azienda",
       "member_removed": "Ha rimosso un membro",
+      "candidate_mode_set": "Ha cambiato la modalità del colloquio di un candidato",
       "member_role_changed": "Ha cambiato il ruolo di un membro",
       "ownership_transferred": "Ha ceduto l'azienda a un altro proprietario",
       "company_renamed": "Ha rinominato l'azienda",
@@ -2751,6 +3197,7 @@
       "slack_notifications_changed": "Ha cambiato le notifiche di Slack",
       "api_key_created": "Ha creato una chiave API",
       "api_key_deleted": "Ha eliminato una chiave API",
+      "api_key_renamed": "Chiave API rinominata",
       "api_key_permissions_changed": "Ha modificato i permessi di una chiave API",
       "api_key_ips_changed": "Ha modificato gli IP consentiti di una chiave API",
       "embed_domains_changed": "Ha modificato i domini consentiti",

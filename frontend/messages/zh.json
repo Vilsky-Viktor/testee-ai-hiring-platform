@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "设置",
+    "preferences": "偏好设置",
+    "accountId": "账户 ID",
+    "deleteTitle": "删除账户",
+    "deleteNote": "永久删除你的账户和数据。",
     "language": "语言",
     "languageNote": "用于界面和帮助聊天的回复，以及新面试的默认语言。你可以用任何支持的语言创建面试。",
     "languageFailed": "无法更改语言，请重试。",
@@ -12,7 +16,7 @@
     "account": "你的账户",
     "accountNote": "就账户问题联系我们时，请提供这个 ID。",
     "yourData": "你的数据",
-    "yourDataNote": "下载 testee. 保存的所有关于你的数据，或删除你的账户。",
+    "yourDataNote": "下载 testee 保存的关于你的所有信息。",
     "download": "下载我的数据",
     "downloadFailed": "无法准备你的数据，请重试。",
     "delete": "删除账户",
@@ -50,7 +54,8 @@
     "system": "跟随系统",
     "light": "浅色",
     "dark": "深色",
-    "topUp": "充值"
+    "topUp": "充值",
+    "workspace": "我的工作区"
   },
   "nav": {
     "main": "主菜单",
@@ -60,15 +65,19 @@
     "terms": "条款",
     "docs": "法律文件",
     "back": "返回",
-    "hiring": "仪表板",
+    "hiring": "工作区",
     "pricingLink": "价格",
     "faq": "常见问题",
     "contact": "联系我们",
     "about": "关于我们",
     "practice": "免费练习",
     "tests": "技能测试",
-    "preEmploymentTesting": "招聘前测评",
-    "aiInterviews": "AI 面试",
+    "createTest": "创建测试",
+    "footerProduct": "产品",
+    "footerResources": "资源",
+    "footerCompany": "公司",
+    "footerLegal": "法律",
+    "footerTagline": "根据职位描述生成的公平限时面试。",
     "compare": "对比",
     "guides": "指南",
     "apiDocs": "开发者文档",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "返回顶部",
     "morePages": "更多页面",
+    "moreActions": "更多操作",
     "copyLink": "复制链接",
     "linkCopied": "链接已复制",
     "home": "首页",
     "cancel": "取消",
     "save": "保存",
     "saving": "正在保存…",
+    "saved": "已保存",
     "close": "关闭",
     "delete": "删除",
     "deleting": "正在删除…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "出了点问题",
     "text": "请重试。如果问题持续，请稍后再来。",
+    "reference": "参考编号：{id}",
     "notFound": "找不到页面",
     "notFoundText": "该页面不存在或已被删除。",
     "report": "报告",
@@ -152,13 +164,13 @@
   },
   "home": {
     "title": "测试每一位候选人\n招到最优秀的人才",
-    "text": "AI 根据你的职位描述生成专业的限时面试。",
-    "price": "每位候选人仅需 {price}。"
+    "text": "AI 根据你的职位描述生成专业的限时面试。"
   },
   "start": {
     "placeholder": "在此粘贴职位描述…",
     "description": "职位描述",
-    "submit": "创建面试",
+    "submit": "创建",
+    "newInterview": "你的新面试",
     "whichCompany": "这个面试是为哪家公司创建的？",
     "firstCompany": "你的公司叫什么？",
     "newCompany": "新公司",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "每小时通过同一面试链接开始的次数",
       "LINK_STARTS_PER_IP_HOUR": "每个 IP 地址每小时通过链接开始的次数",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "每家公司每天的偏见审计导出次数",
+      "ACTION_LOG_EXPORTS_PER_DAY": "每家公司每天的操作日志下载次数",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "每家公司每天的点数记录下载次数",
       "MAX_BULK_INVITES": "一个列表或文件中的候选人数",
       "MAX_PENDING_INVITES": "每家公司待接受的团队邀请数",
       "MEMBER_INVITES_PER_UNPAID_DAY": "每家未付费公司每天的团队邀请数",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "每家公司每分钟调用其招聘管理系统的次数",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "每个发送 IP 地址每分钟的招聘管理系统 Webhook 数",
       "ATS_CONNECTS_PER_HOUR": "每家公司每小时的 ATS 连接数",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "每家公司每小时的 Slack 测试消息数",
       "RESEND_DAILY_LIMIT": "每天通过 Resend 发送的邮件数",
       "RESEND_RESERVE_PERCENT": "每天通过 Resend 发送的邮件中不供群发使用的保留比例",
       "CAMPAIGNS_PER_KIND_DAY": "每种类型每天的群发次数",
@@ -775,7 +790,9 @@
     "useFailed": "无法从此模板开始面试，请重试。",
     "inProgress": "进行中：{done}/{total, plural, other {# 个主题}}",
     "completed": "已完成",
-    "warningText": "<b>模板是为常见职位准备好的面试。</b>想要更贴合，请根据你的职位描述创建面试。"
+    "warningText": "<b>想要更贴合需求？</b>根据你的职位描述创建面试。",
+    "contents": "{topics, plural, other {# 个主题}}，{questions, plural, other {# 道题}}，{minutes, plural, other {# 分钟}}",
+    "usedIn": "{count, plural, other {已用于 # 场面试}}"
   },
   "billing": {
     "paidTitle": "已收到付款",
@@ -808,6 +825,10 @@
     "paysInChange": "更改货币",
     "candidates": "{count, plural, other {# 位候选人}}",
     "perCandidate": "{price}<unit>/人</unit>",
+    "enough": "足够 {count, plural, other {# 位候选人}}使用",
+    "pay": "支付 {price}",
+    "quote": "{count, plural, other {# 位候选人}}，每位 {price}，共 {credits, number} 点数",
+    "nextPrice": "再增加 {count, plural, other {# 位候选人}}，每位 {price}",
     "howMany": "充值的候选人数",
     "credits": "{count, plural, other {# 点数}}",
     "candidatesWord": "{count, plural, other {位候选人}}",
@@ -863,6 +884,19 @@
     "markedWrong": "谢谢。我们正在检查，之后会修正或替换。",
     "markWrongFailed": "无法提交检查，请重试。",
     "ofCount": "/ {count, number}",
+    "perCandidate": "每位候选人的题目数",
+    "limitShort": "每位候选人的题目数",
+    "topicsColumn": "主题和子主题",
+    "limitLine": "每位候选人答 {count, number} 道题中的 {limit, number} 道",
+    "noMatches": "没有符合条件的题目。",
+    "summary": {
+      "total": "题目"
+    },
+    "filters": {
+      "all": "全部",
+      "reported": "已被举报"
+    },
+    "disabledCount": "{count, plural, other {已停用 # 道题}}",
     "per": "每",
     "candidate": "候选人",
     "correct": "正确答案",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "轮到你",
     "voiceThinking": "思考中",
     "miraLabel": "AI 面试官",
+    "voiceHeardAnswer": "我听到的是 {answer}。",
+    "questionOf": "第 {number, number} 题，共 {count, number} 题",
+    "answeredOf": "{done, number} / {total, number}",
+    "keysHint": "按 A–{last} 选择，按 Enter 进入下一题。",
     "voiceStatus": {
       "off": "米拉正在准备…",
       "starting": "米拉正在准备…",
@@ -962,9 +1000,11 @@
     "cancelling": "正在取消…",
     "cancelFailed": "无法取消生成，请重试。",
     "writing": "正在生成你的题目",
-    "drafting": "正在拟定你的主题",
-    "writingNote": "这需要几分钟。你可以离开此页面，我们会继续生成。",
-    "draftingNote": "正在阅读你的目标并规划要涵盖的内容。",
+    "drafting": "正在生成主题",
+    "writingNote": "这需要几分钟。你可以离开此页面，准备好后我们会通知你。",
+    "draftingNote": "我们正在阅读你的职位描述。在编写题目之前，你会先审阅这些主题。你可以离开此页面，我们会继续处理。",
+    "finishing": "正在检查并保存题目…",
+    "goToInterviews": "前往面试列表",
     "topicsReady": "{count, plural, other {# 个主题}}中已完成 {ready, number} 个",
     "reviewFailed": "无法提交你的审阅，请重试。",
     "retryFailed": "无法重试生成，请重试。",
@@ -982,13 +1022,18 @@
     "add": "添加",
     "done": "完成",
     "reviewTitle": "审阅你的主题",
-    "reviewText": "取消勾选不需要的主题、编辑它们，或描述需要的修改。每个主题都会生成一组带答案的题目。",
+    "reviewText": "每个主题都有各自的一组题目和答案。",
     "editTopic": "编辑 <bdi>{topic}</bdi>",
-    "changesPlaceholder": "可选：描述修改，例如“添加一个关于团队领导力的主题”",
-    "changes": "主题修改",
+    "changesPlaceholder": "例如：“添加团队领导力主题”",
+    "changes": "让 AI 修改主题",
     "tooMany": "最多选择 {max, number} 个主题，或描述如何合并它们。",
     "apply": "应用修改",
     "approve": "确认并生成",
+    "topicsChosen": "已选 {chosen, number} / {count, plural, other {# 个主题}}",
+    "applyFirst": "请先应用你的修改，或清空输入框。",
+    "subtopicsNeeded": "请至少添加 {count, plural, other {# 个子主题}}。",
+    "addTopic": "添加主题",
+    "removeTopic": "移除",
     "topicNameNeeded": "请为主题命名。"
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "公司",
     "empty": "还没有公司。",
     "owner": "所有者",
+    "search": "搜索公司",
+    "interviewsShort": "{count, plural, other {<n></n> 场面试}}",
+    "membersShort": "{count, plural, other {<n></n> 位成员}}",
+    "status": {
+      "low": "点数不足",
+      "verify": "请完成公司验证",
+      "finished": "本周 {count, plural, other {<n></n> 位候选人}}已完成"
+    },
     "interviewCount": "{count, plural, other {# 场面试}}",
     "memberCount": "{count, plural, other {# 名成员}}",
     "interviews": "面试",
@@ -1024,6 +1077,8 @@
     "brand": "品牌",
     "billing": "账单",
     "new": "新公司",
+    "newText": "每家公司都有各自的面试、团队和点数。",
+    "namePlaceholder": "例如：Acme",
     "name": "公司名称",
     "create": "创建",
     "createFailed": "无法创建公司，请重试。",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, other {离开页面 # 次}}",
     "copies": "{count, plural, other {尝试复制 # 次}}",
     "fastAnswers": "{count, plural, other {过快作答 # 次}}",
+    "extraTimeLabel": "额外时间",
+    "summary": {
+      "result": "结果",
+      "timeTaken": "用时",
+      "signals": "诚信信号",
+      "invited": "已邀请",
+      "finished": "已完成",
+      "passed": "已通过",
+      "average": "平均分"
+    },
+    "copyLinkFailed": "无法复制链接，请重试。",
     "empty": "还没有邀请候选人。",
     "noMatches": "没有匹配的候选人。",
     "search": "按邮箱或姓名搜索候选人",
     "status": "状态：{status}",
     "anyStatus": "所有状态",
+    "allStatuses": "全部",
     "progress": "进度",
     "grade": "成绩",
     "resend": "重新发送邀请",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "面试",
+    "allStatuses": "全部",
+    "candidatesShort": "{count, plural, other {<n></n> 位候选人}}",
+    "finishedShort": "<n></n> 位已完成",
+    "passedShort": "<n></n> 位已通过",
+    "rowStatus": {
+      "failed": "打开后重试",
+      "generating": "创建中",
+      "undelivered": "{count, plural, other {<n></n> 封邀请}}未送达",
+      "finished": "本周 {count, plural, other {<n></n> 位候选人}}已完成",
+      "ready": "已就绪：邀请你的第一批候选人"
+    },
     "interview": "面试",
     "topicsTab": "主题",
     "candidates": "候选人",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "还没有备注。为团队写下第一条吧。",
     "discover": "发现人才",
     "discoverLinkedIn": "{name} 的 LinkedIn 个人资料",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "练习这些科目并选择接受工作机会的人，会显示在这里。",
     "discoverText": "接受工作邀约、并练习过这场面试主题的人。按最近练习排列，不是排名。",
     "discoverEmpty": "还没有接受工作邀约的人练习过这场面试的主题。",
     "discoverResults": "练习结果",
@@ -1130,6 +1210,8 @@
     "notePosting": "正在发布…",
     "noteEdited": "已编辑",
     "notePinned": "已置顶",
+    "noteShowMore": "展开",
+    "noteShowLess": "收起",
     "notePin": "置顶",
     "noteUnpin": "取消置顶",
     "noteFormerMember": "前成员",
@@ -1139,8 +1221,20 @@
     "noteFailed": "无法保存备注，请重试。",
     "new": "新面试",
     "createTitle": "创建面试",
+    "createIntro": "粘贴职位描述。在编写题目之前，你可以先审阅主题，且免费。",
+    "steps": {
+      "describe": "描述职位",
+      "review": "审阅主题",
+      "invite": "邀请候选人"
+    },
+    "startTemplate": "从模板开始",
+    "startAts": "从招聘管理系统中的职位开始",
+    "tryExample": "试试示例",
     "try": "以候选人身份试用",
     "newCandidate": "新候选人",
+    "settingsSharing": "分享",
+    "settingsRuns": "进行方式",
+    "settingsAfter": "结束后与隐私",
     "linkTitle": "分享链接",
     "linkText": "用于招聘广告：任何拥有链接的人都可以参加面试。每人的收费与受邀候选人相同。",
     "linkFailed": "无法更改链接，请重试。",
@@ -1160,7 +1254,7 @@
     "generating": "正在生成…",
     "generationFailed": "生成失败",
     "fallbackTitle": "面试",
-    "continueGeneration": "继续生成",
+    "continueGeneration": "继续",
     "empty": "还没有面试。创建第一场吧。",
     "noMatches": "没有匹配的面试。",
     "search": "按标题搜索面试",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "候选人邮箱",
     "inviteTab": {
       "one": "单个",
-      "many": "多个",
-      "file": "上传"
+      "many": "列表",
+      "file": "文件"
     },
-    "manyHint": "每行一位候选人，可带姓名，也可不带，\n每次最多 {count, number} 位：",
-    "manyHintNoLimit": "每行一位候选人，可带姓名，也可不带：",
-    "example": "示例",
+    "inviteTitle": "邀请候选人",
+    "manyHint": "每行一位候选人，可带姓名，也可不带，每次最多 {count, number} 位。",
+    "manyHintNoLimit": "每行一位候选人，可带姓名，也可不带。",
     "uploadFile": "上传文件",
     "fileFormats": "CSV 或 TXT，最多 {count, number} 位候选人。姓名可放在姓名列中，或写在每个邮箱旁边。",
     "fileFormatsNoLimit": "CSV 或 TXT。姓名可放在姓名列中，或写在每个邮箱旁边。",
@@ -1203,8 +1297,7 @@
       "unclear_name": "请按“姓名 '<邮箱>'”格式填写：<bdi>{line}</bdi>",
       "more": "还有 {count, number} 行"
     },
-    "exampleCsv": "示例 .csv",
-    "exampleTxt": "示例 .txt",
+    "exampleFiles": "下载示例：<csv>.csv</csv> 或 <txt>.txt</txt>",
     "candidateName": "姓名（选填）",
     "invitedMany": "已邀请 {count, number} 位候选人",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "恭喜，你的面试已准备就绪",
-      "text": "<name><bdi>{title}</bdi></name> 已可以发给候选人。接下来：",
-      "limits": "设置每位候选人在每个主题下的题目数量。",
+      "text": "<name><bdi>{title}</bdi></name> 已就绪。邀请任何人之前，请先亲自试一遍，必要时再调整。",
+      "limits": "每位候选人在每个主题下答多少题。",
       "limitsAction": "设置题目",
-      "time": "如有需要，调整每题平均时间。",
-      "timeAction": "打开设置",
-      "invite": "邀请候选人。",
-      "inviteAction": "前往候选人",
+      "time": "每道题的平均用时。",
+      "timeAction": "调整时间",
       "done": "知道了"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "需要更多时间吗，例如因残障原因？请在开始前向 <bdi>{company}</bdi> 申请个人邀请：这里无法增加时间。",
     "people": "题目由 AI 编写。<bdi>{company}</bdi> 的工作人员会审核结果并做出决定；你可以请他们审核你的结果。",
     "stay": "请停留在此页面：离开页面、复制内容以及快到来不及读题的作答都会被记录；如果你的作答时间或答案与题目难度不相符，公司也会看到（<link>隐私</link>）。",
-    "finished": "此面试已结束。",
+    "finishedTitle": "你已完成",
+    "finished": "你的答案已提交给 <bdi>{company}</bdi>。对方会审阅结果并决定后续安排。",
+    "finishedPreview": "这就是你的候选人看到的画面。这次免费试用不会计入你的候选人名单，其答案也不计入题目统计。",
+    "finishedRights": "你可以请 <bdi>{company}</bdi> 安排专人复核你的结果。<link>隐私</link>",
+    "finishedAnswered": "已回答的题目",
+    "finishedTime": "用时",
+    "signInAs": "请使用收到此邀请的邮箱。",
+    "switchAccount": "切换账户",
+    "progress": "你已完成 {percent}。",
+    "progressLabel": "你的进度",
+    "groups": {
+      "how": "进行方式",
+      "time": "你的时间",
+      "rights": "你的权利与隐私"
+    },
     "continue": "继续",
     "start": "接受并开始",
     "pledge": "我会独立作答，不借助 AI 工具或他人帮助。",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "已加入",
     "invited": "已邀请",
+    "joinedOn": "{date} 加入",
+    "invitedOn": "{date} 邀请",
+    "pendingTitle": "待处理的邀请",
+    "firstTitle": "邀请你的第一位队友",
     "role": "角色",
     "roleFailed": "无法更改角色。",
     "inviteTitle": "公司邀请",
@@ -1281,6 +1390,11 @@
     "madeOwner": "<bdi>{email}</bdi> 现在是所有者。"
   },
   "scorecard": {
+    "filters": {
+      "all": "全部",
+      "correct": "正确",
+      "wrong": "错误"
+    },
     "timeOut": "超时",
     "leftPage": "离开页面 {count, plural, other {# 次}}",
     "answeredIn": "用时 <b>{time}</b>",
@@ -1298,7 +1412,7 @@
     "test": "生成面试",
     "free": "免费",
     "candidate": "每位至少回答一道题的候选人",
-    "candidateVolume": "使用 {from} 及以上充值所得的点数",
+    "candidateVolume": "单次充值满 {from} 时",
     "perCandidate": "每位候选人 {price}",
     "welcome": "你的前 {count, plural, other {# 位候选人}}",
     "credits": "每位候选人需 {credits, number} 点数，点数永不过期。",
@@ -1306,6 +1420,10 @@
     "referralsNote": "在公司的推荐标签页中分享公司链接。",
     "companyReferral": "你推荐的公司首次充值",
     "each": "每方 {count, number} 点数",
+    "fromPrice": "{price} 起",
+    "anyTopUp": "任意金额的充值",
+    "volumeTitle": "充值越多，每位候选人越便宜",
+    "volumeText": "单次充值越多，每位候选人的费用越低。",
     "topUp": "充值"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "招聘合规文档",
     "intro": "供使用 testee 评估候选人的公司使用的文档：使用说明、模板和数据处理协议。",
     "englishOnly": "这些文档仅提供英文版本。",
-    "download": "下载 {format}",
+    "download": "下载 <type>{format}</type>",
     "readOnline": "在线阅读",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "生成语言"
   },
   "referral": {
+    "title": "你们双方都能获得 <n></n> 点数",
+    "text": "足够 {count, plural, other {# 位候选人}}使用。把你的链接分享给另一家公司。",
+    "empty": "还没有奖励。分享你的链接，赢取第一份奖励。",
+    "steps": {
+      "share": "把你的链接分享给另一家公司。",
+      "create": "对方通过该链接创建公司。",
+      "reward": "对方首次充值后（不限金额），你们双方都会获得点数。"
+    },
+    "summary": {
+      "referred": "已推荐的公司",
+      "earned": "已获得点数",
+      "left": "今年剩余奖励",
+      "leftValue": "{left, number} / {total, number}"
+    },
     "companyNote": "对方首次充值（任意金额）后，你们双方各得 {reward, number} 点数。",
     "deletedCompany": "已删除的公司",
     "credits": "+{count, number} 点数",
@@ -1398,53 +1530,39 @@
     "intro": "每位候选人需 {credits, number} 点数，点数永不过期。",
     "noCompany": "点数属于公司。请先创建公司，再在这里充值。",
     "createCompany": "创建公司",
+    "allCompanies": "所有公司",
     "pricing": "价格"
   },
   "landing": {
-    "more": "如何运作",
     "demos": "视频",
-    "videoTooltip": "了解 testee 如何运作",
     "watchVideo": "观看视频",
     "howItWorks": "使用方式",
     "askAgent": "问问米拉",
     "create": {
+      "draftingNote": "正在阅读你的职位描述。",
       "title": "几分钟创建一场面试",
       "text": "粘贴职位描述并调整主题，几分钟内即可完成面试。",
       "notes": {
-        "questions": "每个主题 {count, number} 道题",
         "templates": "提供现成模板",
         "expert": "无需专业领域专家"
       },
       "describe": "<n>1.</n> 粘贴职位描述",
       "adjust": "<n>2.</n> 调整主题",
       "menu": {
-        "cut": "剪切",
-        "copy": "复制",
         "paste": "粘贴"
       },
-      "ready": "<n>3.</n> 你的面试已就绪",
-      "invited": "<n>4.</n> 候选人收到邀请",
+      "ready": "<n>3.</n> 面试已就绪",
+      "invited": "<n>4.</n> 收到邀请",
       "status": "就绪",
       "email": {
-        "search": "搜索邮件",
-        "compose": "写邮件",
         "inbox": "收件箱",
-        "starred": "已加星标",
-        "sent": "已发送",
-        "drafts": "草稿",
         "from": "testee.",
-        "toMe": "发送至我",
         "now": "刚刚",
         "subject": "{company} 的面试邀请",
-        "preheader": "在 testee 上完成“{title}”。使用 {email} 登录即可开始。",
         "heading": "面试邀请",
         "invited": "<b>{company}</b> 邀请你在 testee 上参加“{title}”面试。",
         "signIn": "使用 {email} 登录即可开始。只有这个邮箱地址可以参加面试，并且只有一次机会。",
-        "button": "打开邀请",
-        "pasteLink": "或者将此链接粘贴到浏览器中",
-        "footer": "这封邮件发送到 {email}，因为有人在 testee 上邀请了这个地址。如果这封邮件与你无关，可以忽略。",
-        "stopCompany": "不再给我发送来自 {company} 的邮件",
-        "operator": "testee 由 {name}（{address}）运营。"
+        "button": "打开邀请"
       },
       "phone": {
         "describe": "粘贴职位描述，或简单写几句关于这个职位的介绍。",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "由人做决定",
-          "text": "分数为你的决定提供依据，但不替你做决定。诚信标记提示你需要细看，而不是证据。"
+          "text": "分数只是辅助你决策的参考。诚信信号是需要进一步查看的理由，而不是证据。"
         },
         "fair": {
           "title": "对每位候选人都公平",
-          "text": "相同的计时和题型组合，为每个人随机抽题，有需要的人可获得额外时间。"
+          "text": "所有人使用相同的计时和相同的题型组合，题目随机抽取，需要的人可获得额外时间。"
         },
         "laws": {
           "title": "为合规而设计",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "每项操作都有记录",
-          "text": "所有者可以查看公司里谁做了什么，记录在欧盟服务器上安全保存 12 个月。"
+          "text": "所有者可以看到谁做了什么，记录在欧盟服务器上保存 12 个月。"
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "还有疑问？",
       "videos": "视频",
       "faq": "常见问题",
-      "guides": "指南",
-      "features": "功能",
-      "hiringFlow": "招聘流程"
+      "guides": "指南"
     },
     "closing": {
       "title": "创建你的第一场面试\n完全免费",
@@ -1672,7 +1788,8 @@
         "time": "每个职位约 10 分钟，候选人零耗时",
         "cost": "每位作答的候选人 {price}"
       },
-      "more": "与其他工具比较"
+      "more": "与其他工具比较",
+      "best": "最佳选择"
     },
     "freeToStart": {
       "title": "所有功能免费\n按候选人付费",
@@ -1689,6 +1806,7 @@
       "each": "（每位候选人 {price}）",
       "free": "{count, plural, other {前 # 位候选人免费}}",
       "perCandidate": "每位候选人",
+      "bestPrice": "最优价格",
       "pack": "{count, number} 位 {price}",
       "see": "查看价格",
       "notes": {
@@ -1698,11 +1816,159 @@
         "refund": "未使用的付费点数可退款"
       },
       "currencies": "{count, plural, other {# 种货币}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Acme 用 AI 帮助网店回复顾客咨询。\n我们正在招聘 AI 工程师，负责开发 LLM 相关功能。\n• 3 年以上 Python 开发经验\n• LLM 应用、RAG 与向量检索\n• 模型评估与监控\n远程办公，弹性工作时间，提供学习预算。",
+        "title": "AI 工程师",
+        "topics": {
+          "llm": {
+            "name": "LLM 基础",
+            "subtopics": ["Token", "提示词设计", "上下文窗口"]
+          },
+          "rag": {
+            "name": "检索增强生成（RAG）",
+            "subtopics": ["嵌入向量", "文本分块", "向量检索"]
+          },
+          "python": {
+            "name": "Python 机器学习系统",
+            "subtopics": ["asyncio", "类型注解"]
+          }
+        },
+        "renamed": "的规模化",
+        "subtopicAdded": "与测试",
+        "change": "添加一个关于评估 LLM 输出的主题",
+        "newTopic": {
+          "name": "LLM 评估",
+          "subtopics": ["测试集", "LLM 作为评审", "评估指标"]
+        }
+      },
+      "candidates": {
+        "title": "数据分析师",
+        "questions": {
+          "median": {
+            "topic": "统计",
+            "text": "少数几笔超大订单拉高了你的平均客单价。哪个指标最能描述一笔典型订单？",
+            "options": [
+              "订单金额的平均值",
+              "订单金额的中位数",
+              "订单金额的极差",
+              "订单金额的标准差"
+            ]
+          },
+          "revenue": {
+            "topic": "统计",
+            "text": "数据管道变更后，看板上的周收入立刻下降了 20%。你会先做哪些检查？",
+            "options": [
+              "对比变更前后的行数",
+              "查找重复或缺失的日期",
+              "更改看板的配色方案",
+              "问销售团队客户是否不再购买"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "市场部想要总销售额超过 100 的地区。这条查询会返回什么？",
+            "options": [
+              "只有 North",
+              "只有 South",
+              "North 和 South",
+              "没有任何行"
+            ]
+          },
+          "chart": {
+            "topic": "可视化",
+            "text": "你需要展示过去两年每月注册量的变化。哪种图表最能体现这一趋势？",
+            "options": [
+              "按月份的注册量饼图",
+              "按月份的注册量折线图",
+              "注册量与收入的散点图",
+              "每月注册量的直方图"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "产品经理",
+        "topics": [
+          "产品战略",
+          "指标",
+          "利益相关方",
+          "路线图规划",
+          "用户研究",
+          "优先级排序",
+          "实验",
+          "定价",
+          "市场进入",
+          "沟通"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "在开发新功能之前，首先应该做什么？",
+            "options": [
+              "和用户验证问题",
+              "撰写技术规格",
+              "确定上线日期",
+              "设计页面"
+            ]
+          },
+          "metrics": {
+            "text": "转化率从 4% 降到 3%。相对于之前，下降了多少？",
+            "options": ["1%", "25%", "33%", "75%"]
+          },
+          "stakeholders": {
+            "text": "合作团队不认同你的优先级。你首先会怎么做？",
+            "options": [
+              "上报给你的经理",
+              "询问他们需要什么以及原因",
+              "坚持原计划不变",
+              "放弃你的优先级"
+            ]
+          }
+        },
+        "chat": {
+          "name": "招聘团队",
+          "initials": "招聘"
+        },
+        "notes": [
+          "用人经理希望周五前拿到两人的候选名单。",
+          "Daniel 在电话初筛中利益相关方方面表现很好；指标方面较弱。",
+          "Sofia 申请了更多时间，我明天跟进。"
+        ],
+        "pdf": "产品经理-候选人.pdf"
+      },
+      "slack": {
+        "channels": ["综合", "招聘", "研发"],
+        "channelsTitle": "频道",
+        "peopleTitle": "私信",
+        "appsTitle": "应用",
+        "app": "应用",
+        "composer": "发送消息到 #{channel}",
+        "finished": "{name}（{email}）已完成“{title}”：{grade}%。",
+        "noted": "{author} 在“{title}”下添加了备注：",
+        "button": "在 testee 中打开"
+      },
+      "invite": {
+        "title": "B2B 客户经理"
+      },
+      "askAgent": {
+        "interview": "数据分析师"
+      }
     }
   },
   "faq": {
     "title": "常见问题",
-    "intro": "没找到答案？问问 AI 助手米拉（页面顶部的按钮），或发邮件到隐私政策中列出的地址。",
+    "intro": "从你的第一场面试到你的数据，这里解答关于 testee 的问题。",
+    "groups": {
+      "start": "快速入门",
+      "candidates": "候选人",
+      "pricing": "费用与点数",
+      "results": "结果与团队",
+      "tools": "集成",
+      "privacy": "隐私与账户"
+    },
+    "closingTitle": "还有疑问？",
+    "closingText": "询问我们的 AI 助手 Mira，或直接联系我们。",
     "description": "关于 testee 的解答：如何根据职位描述生成面试、候选人会看到什么、价格与点数、结果、ATS 集成、支持的语言以及你的数据。"
   },
   "contact": {
@@ -1731,9 +1997,20 @@
     "description": "testee 几分钟内就能把职位描述变成公平、限时的面试，价格任何团队都负担得起；任何人都可以免费练习面试。",
     "company": {
       "title": "我们为何而做",
+      "titles": {
+        "problem": "招聘很难做好",
+        "approach": "几分钟完成一场公平的面试",
+        "practice": "人人可用的免费练习"
+      },
       "problem": "招聘往往依赖一份简历和一次愉快的交谈，而两者都可能误导人。真正有用的测评工具按大公司定价，要签年度套餐、按席位收费，所以大多数团队只能放弃。",
       "approach": "testee 能在几分钟内把任何职位的职位描述变成限时面试。每位候选人都有自己的题目，你能看出谁懂这份工作以及原因，而且只为真正参加面试的候选人付费。",
       "practice": "我们也希望每个人都能免费准备面试。任何人都可以参加我们针对某个职位的练习面试，查看自己的成绩和所有正确答案，并免费再次练习。"
+    },
+    "closing": {
+      "title": "亲自体验一下",
+      "text": "根据你的职位描述创建面试，或免费练习某个职位。",
+      "create": "创建测试",
+      "practice": "免费练习"
     },
     "founder": {
       "quote": "好的招聘不应该是预算充足的大公司的特权。我做 testee，是为了让任何团队都能在几分钟内把职位描述变成公平的面试，看出谁真正懂这份工作，并且只为参加面试的候选人付费。希望它能帮你更快找到合适的人。",
@@ -1751,20 +2028,18 @@
     "title": "通知",
     "unread": "{count, plural, other {# 条未读通知}}",
     "empty": "暂无新消息。",
-    "formerAuthor": "前成员",
     "kinds": {
       "question_flagged": "{count, plural, =1 {{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}中关于“<bdi>{topic}</bdi>”的一道题目被标记待审核。} other {{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}中有 # 道题目被标记待审核。}}",
       "question_fixed": "{count, plural, =1 {AI 修正了{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}中关于“<bdi>{topic}</bdi>”的被标记题目。} other {AI 修正了{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}中 # 道被标记的题目。}}",
       "referral_rewarded": "你邀请的人完成了充值，你获得了 {credits, number} 点数。",
-      "auto_top_up_on": "自动充值已开启：可用点数低于 {threshold, number} 时充值 {price}，另加税费。",
       "auto_top_up_charged": "自动充值已添加 {credits, number} 点数。",
       "auto_top_up_failed": "自动充值无法从银行卡扣款。请充值，以免余额不足。",
+      "auto_top_up_on": "自动充值已开启：可用点数低于 {threshold, number} 时充值 {price}，另加税费。",
       "auto_top_up_paused": "自动充值已暂停：银行卡被拒。请更新银行卡以重新开启。",
       "auto_top_up_price_change": "自 <time>{date}</time> 起，每次自动充值的价格从 {price} 调整为 {newPrice}。",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> 已完成{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}{grade, select, none {。} other {，得分 {grade}。}}} other {# 位候选人已完成{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}。}}",
       "invite_undelivered": "{count, plural, =1 {发送给 <bdi>{email}</bdi> 的{title, select, none {面试} other {“<bdi>{title}</bdi>”}}邀请未能送达。} other {{title, select, none {面试} other {“<bdi>{title}</bdi>”}}的 # 份邀请未能送达。}}",
       "interview_ready": "{title, select, none {一场面试已就绪。} other {面试“<bdi>{title}</bdi>”已就绪。}}",
-      "note_added": "{count, plural, =1 {{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}有一条来自 <bdi>{authors}</bdi> 的新备注。} other {{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}有 # 条新备注，最新来自 <bdi>{authors}</bdi>。}}",
       "interview_cancelled": "{title, select, none {一场面试} other {面试“<bdi>{title}</bdi>”}}已取消：主题审核等待时间过长。",
       "verification_approved": "“<bdi>{name}</bdi>”已通过 <bdi>{domain}</bdi> 验证。",
       "verification_declined": "{reason, select, none {“<bdi>{name}</bdi>”的验证已被拒绝。} other {“<bdi>{name}</bdi>”的验证已被拒绝：<bdi>{reason}</bdi>}}",
@@ -1776,8 +2051,10 @@
       "news": "新闻：<bdi>{title}</bdi>",
       "legal_terms": "新条款自 <time>{date}</time> 起适用。",
       "legal_privacy": "新隐私政策自 <time>{date}</time> 起适用。",
-      "legal_dpa": "新数据处理协议自 <time>{date}</time> 起适用。"
+      "legal_dpa": "新数据处理协议自 <time>{date}</time> 起适用。",
+      "note_added": "{count, plural, =1 {{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}有一条来自 <bdi>{authors}</bdi> 的新备注。} other {{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}有 # 条新备注，最新来自 <bdi>{authors}</bdi>。}}"
     },
+    "formerAuthor": "前成员",
     "legalBanner": {
       "terms": "testee 的条款将于 <time>{date}</time> 变更。",
       "privacy": "testee 的隐私政策将于 <time>{date}</time> 变更。",
@@ -1801,7 +2078,7 @@
     "send": "发送 <name>PDF</name>",
     "sent": "报告已发送至 <bdi>{email}</bdi>",
     "sendFailed": "无法发送报告。",
-    "orSummary": "或通过以下方式发送",
+    "orSummary": "或通过聊天发送简短摘要",
     "via": "由 testee 发送",
     "candidatesFileName": "候选人 {title}",
     "candidateCount": "{count, plural, other {# 位候选人}}",
@@ -1833,6 +2110,10 @@
     "results": "练习结果",
     "grade": "得分率",
     "notFinished": "未完成",
+    "finished": "已完成",
+    "answeredCard": "已回答的题目",
+    "answeredOf": "{done, number} / {total, number}",
+    "startedCard": "开始时间",
     "noRounds": "还没有练习记录。",
     "startFailed": "无法开始练习，请重试。",
     "gradeLabel": "成绩",
@@ -1844,7 +2125,13 @@
     "hireButton": "创建面试",
     "timingPerQuestion": "平均每题 {time}",
     "timingNone": "不限时",
-    "timingNote": "练习不与任何人比较，如有需要，可以延长时间或不限时。"
+    "timingNote": "练习不与任何人比较，如有需要，可以延长时间或不限时。",
+    "facts": {
+      "topics": "主题",
+      "questions": "题目",
+      "level": "级别",
+      "language": "语言"
+    }
   },
   "openToOffers": {
     "title": "接受工作邀约",
@@ -1887,6 +2174,7 @@
     "englishOnly": "本页面仅提供英文版。",
     "startTitle": "测试你的候选人",
     "startText": "根据你的职位描述创建限时技能测试。{priced, select, yes {每位候选人 {price}，无需订阅。} other {}}",
+    "contents": "本页内容",
     "startButton": "创建测试"
   },
   "compare": {
@@ -1912,7 +2200,16 @@
     "topics": "测试内容",
     "questions": "面试题示例",
     "questionsText": "类似这样的题目，附正确答案。你的候选人会拿到自己的题目，绝不会公开展示。",
-    "faq": "企业常问的问题"
+    "faq": "企业常问的问题",
+    "createOwn": "创建你自己的测试",
+    "facts": {
+      "topics": "主题",
+      "level": "级别",
+      "language": "语言",
+      "price": "每位候选人"
+    },
+    "closingTitle": "准备好测试你的候选人了吗？",
+    "closingText": "粘贴职位描述，几分钟内即可获得这样的测试，创建免费。"
   },
   "ats": {
     "statusConnected": "已连接",
@@ -1998,6 +2295,25 @@
     "bzStepCreate": "以能看到所有职位的管理员身份创建 API 密钥：密钥以你的身份操作，结果也以你的名义写入。Breezy 的 API 和 Webhook 包含在其 Pro 套餐中。",
     "bzStepPaste": "将密钥粘贴到下方。我们会自行在 Breezy HR 中添加 Webhook。",
     "atsGroup": "ATS",
+    "firstJobTitle": "关联你的第一个职位",
+    "brokenText": "{ats} 已停止工作，因此无法邀请候选人。重新连接即可恢复。",
+    "stripMove": "候选人进入你在 {ats} 中选定的阶段",
+    "stripInvite": "testee 邀请其参加已关联的面试",
+    "stripResults": "其结果回传到 {ats} 中的个人档案",
+    "rowStage": "阶段：<bdi>{stage}</bdi>",
+    "rowInterview": "面试：<link><bdi>{interview}</bdi></link>",
+    "invitedShort": "<n></n> 位已邀请",
+    "waitingShort": "<n></n> 位等待中",
+    "notInvitedShort": "<n></n> 位未邀请",
+    "summary": {
+      "status": "状态",
+      "account": "账户",
+      "jobs": "已关联的职位",
+      "invited": "已邀请的候选人"
+    },
+    "connectedGroup": "已连接",
+    "statusBroken": "需要重新连接",
+    "rowText": "从 {ats} 邀请候选人，并回传他们的结果。",
     "messagingGroup": "消息应用",
     "apiAiAppsGroup": "API 与 AI 应用",
     "searchInterview": "搜索面试",
@@ -2005,6 +2321,29 @@
   },
   "slack": {
     "add": "添加到 Slack",
+    "rowText": "候选人完成时在 Slack 中收到通知。",
+    "brokenText": "Slack 已不再接收消息，因此你的频道收不到通知。重新连接即可恢复。",
+    "pointChannel": "选择团队查看通知的频道。",
+    "pointKinds": "选择哪些通知发送到该频道。",
+    "pointPrivacy": "testee 只能向该频道发帖，无法读取你的 Slack。",
+    "test": "发送测试",
+    "testSent": "测试消息已发送到你的频道。",
+    "testFailed": "无法发送测试消息。",
+    "groups": {
+      "candidates": "候选人",
+      "interviews": "面试",
+      "billing": "账单",
+      "team": "团队"
+    },
+    "samples": {
+      "candidate_finished": "Ann Lee（ann@example.com）完成了“Data Analyst”：82%。",
+      "ats_not_invited": "Ben Ortiz 来自你的招聘管理系统，但未被邀请参加“Data Analyst”。",
+      "invite_undelivered": "发给 ben@example.com 的“Data Analyst”邀请未能送达。",
+      "interview_ready": "“Data Analyst”已就绪。",
+      "auto_top_up_charged": "你的自动充值已扣款。",
+      "auto_top_up_failed": "你的自动充值失败。请更新银行卡以保持其继续运行。",
+      "note_added": "Maya 在“Data Analyst”下添加了备注：SQL 很强，值得约聊。"
+    },
     "connectFailed": "无法连接 Slack。",
     "connected": "Slack 已连接。",
     "disconnectFailed": "无法断开 Slack。",
@@ -2019,9 +2358,9 @@
       "ats_not_invited": "来自你的 ATS 的候选人未被邀请",
       "invite_undelivered": "邀请邮件未能送达",
       "interview_ready": "面试已就绪",
-      "note_added": "团队成员写了一条备注（附内容）",
       "auto_top_up_charged": "自动充值已扣款",
-      "auto_top_up_failed": "自动充值失败"
+      "auto_top_up_failed": "自动充值失败",
+      "note_added": "团队成员写了一条备注（附内容）"
     },
     "instructionsTitle": "Slack 如何接收你的通知",
     "stepAdd": "点击“添加到 Slack”：Slack 会打开，并请你允许 testee 访问你的工作区。",
@@ -2030,13 +2369,67 @@
     "stepPrivacy": "testee 只能在该频道发消息。它无法读取你的 Slack，断开连接后即会被移除。"
   },
   "api": {
+    "firstKeyTitle": "创建你的第一个密钥",
+    "sdkDocs": "查看 SDK 文档",
+    "sdkReady": "已就绪：{count, plural, other {# 个网站}}可以展示你的面试。",
+    "sdkNotReady": "尚未设置：请在下方添加一个网站，以便它展示你的面试。",
+    "sdkRules": "页面必须使用 HTTPS。添加一个网站，或添加它的所有子域名：",
+    "stepSite": "添加你的网站",
+    "stepCode": "将这段代码粘贴到你的页面中",
+    "stepSend": "把候选人送到该页面",
+    "stepSendText": "你的服务器以 sign_in 为 false 邀请候选人，并把返回的 invite_url 传给你的页面。切勿把你的 API 密钥放进页面。",
+    "thisSite": "此网站",
+    "allSubdomains": "所有子域名",
+    "localhostOn": "已开启：上线前请关闭。",
+    "firstWebhookTitle": "添加你的第一个 Webhook",
+    "webhookSampleText": "发生事件时，testee 会发送这样一个带签名的请求：",
+    "lastDelivered": "上次送达 <time>{date}</time>",
+    "webhookStates": {
+      "paused": "已暂停",
+      "unused": "尚未使用",
+      "active": "已启用"
+    },
+    "webhookEvents": {
+      "started": "候选人已开始",
+      "finished": "候选人已完成",
+      "undelivered": "未能联系到候选人",
+      "expired": "邀请已过期",
+      "removed": "候选人已移除",
+      "ready": "面试已就绪"
+    },
+    "replaceKey": "创建替换密钥",
+    "activityTitle": "活动",
+    "ipOpen": "任何 IP 地址都可以使用此密钥。将其限制为你的服务器地址会更安全。",
+    "summary": {
+      "status": "状态",
+      "access": "访问权限",
+      "lastUsed": "上次使用",
+      "expires": "到期时间",
+      "created": "创建时间"
+    },
+    "warnings": {
+      "expired": "此密钥已过期，使用它的请求会被拒绝。请创建替换密钥以继续使用。",
+      "expiring": "此密钥即将过期。请在它失效前创建替换密钥并切换过去。"
+    },
+    "exampleText": "用这个读取你点数的请求试一试：",
+    "access": {
+      "read": "只读",
+      "write": "读写",
+      "custom": "自定义"
+    },
+    "states": {
+      "expired": "已过期",
+      "expiring": "即将过期",
+      "never_used": "从未使用",
+      "active": "已启用"
+    },
     "name": "API",
     "rowName": "API、SDK、Webhook",
     "rowText": "用于连接你自己平台的密钥和 Webhook。",
     "counts": "{keys, plural, other {# 个密钥}} · {webhooks, plural, other {# 个 Webhook}}",
     "docs": "开发者文档",
     "keysTitle": "API 密钥",
-    "keysText": "密钥以创建者的身份操作，只能做其权限允许的事。",
+    "keysText": "密钥代表你的公司，以其自身的身份操作，只能做其权限允许的事。\n创建它的人离开后，它仍可继续使用。",
     "noKeys": "还没有密钥。",
     "newKey": "新建密钥",
     "newKeyTitle": "新建 API 密钥",
@@ -2064,7 +2457,7 @@
     "removeKeyTitle": "删除此密钥？",
     "removeKeyText": "所有使用“<bdi>{name}</bdi>”的地方都会立即停止工作。",
     "webhooksTitle": "Webhook",
-    "webhooksText": "当候选人开始、完成（附带结果）、邀请未能送达、邀请过期或被移除时，以及面试准备就绪时，testee 会通知这些地址，每个请求都用该地址的签名密钥签名。",
+    "webhooksText": "发生以下任一事件时，testee 会通知这些地址，每个请求都用该地址的密钥签名。",
     "noWebhooks": "还没有 Webhook。",
     "failing": "已暂停：3 天未响应，因此不再向其发送事件。测试事件被接受后即恢复。",
     "addWebhook": "添加 Webhook",
@@ -2151,7 +2544,6 @@
     "localhostText": "用于在你自己的电脑上测试，任意端口。正式上线后请关闭。",
     "permissionsTitle": "权限",
     "permissionsText": "此密钥可以做的事。更改会立即保存。",
-    "permissionsSaved": "权限已保存。",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2631,15 @@
       "tools": "工具",
       "frameworks": "智能体框架"
     },
+    "intro": "将 testee 连接到你自己的平台、服务器或 AI 智能体。",
+    "endpointsText": "所有路由，按其操作的对象分类。打开任意一个，即可查看它需要什么、返回什么以及可能的错误。",
+    "apiPages": {
+      "start": "快速入门",
+      "guides": "指南",
+      "endpoints": "端点",
+      "errors": "错误",
+      "changelog": "更新日志"
+    },
     "englishOnly": "此页面仅提供英文版。",
     "baseUrl": "基础 URL",
     "copyBaseUrl": "复制 URL",
@@ -2275,6 +2676,7 @@
   },
   "assistant": {
     "title": "米拉 · AI 助手",
+    "name": "Mira",
     "company": "公司",
     "allCompanies": "所有公司",
     "newChat": "新对话",
@@ -2331,7 +2733,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "testee 如何运作、费用多少、候选人会看到什么，依据 testee 的常见问题作答。登录后可询问你的公司和候选人。",
+        "text": "登录后即可询问你的公司和候选人。",
         "questions": {
           "what": "testee 是什么？",
           "pricing": "费用是多少？",
@@ -2340,7 +2742,7 @@
         }
       },
       "no_company": {
-        "text": "我们开始吧：你的第一场面试、你的公司以及公司认证。",
+        "text": "让我们开始你的第一场面试。",
         "questions": {
           "firstInterview": "帮我创建第一场面试",
           "createCompany": "帮我创建一家公司",
@@ -2348,7 +2750,7 @@
         }
       },
       "unverified": {
-        "text": "认证公司后，候选人能看到是谁邀请了他们。你也可以开始创建面试。",
+        "text": "验证你的公司并创建面试。",
         "questions": {
           "verify": "认证我的公司",
           "whyVerify": "为什么要认证公司？",
@@ -2356,7 +2758,7 @@
         }
       },
       "no_interviews": {
-        "text": "根据职位描述创建面试：题目会针对该职位编写。",
+        "text": "让我们创建你的第一场面试。",
         "questions": {
           "fromDescription": "根据职位描述创建面试",
           "template": "从模板创建面试",
@@ -2364,7 +2766,7 @@
         }
       },
       "no_candidates": {
-        "text": "通过邮件、分享链接或你的 ATS 邀请候选人。",
+        "text": "让我们邀请你的第一批候选人。",
         "questions": {
           "invite": "邀请候选人",
           "shareLink": "开启分享链接",
@@ -2372,7 +2774,7 @@
         }
       },
       "has_candidates": {
-        "text": "询问你的候选人：谁通过了、他们之间如何比较、结果意味着什么。",
+        "text": "询问你的候选人及其结果。",
         "questions": {
           "passed": "本周谁通过了？",
           "compare": "比较我最好的几位候选人",
@@ -2494,7 +2896,27 @@
     "feedbackLink": "联系我们"
   },
   "companyBilling": {
-    "reservedTab": "已预留 ({count, number})",
+    "reservedTab": "已预留",
+    "download": {
+      "open": "下载记录",
+      "title": "下载记录",
+      "description": "选择 CSV 文件的时间范围。",
+      "save": "下载",
+      "failed": "无法生成文件，请重试。"
+    },
+    "lowText": "你的点数不足。请充值，以便继续邀请候选人。",
+    "summary": {
+      "available": "可用点数",
+      "candidates": "可覆盖的候选人",
+      "reserved": "已预留点数",
+      "spent": "本月已用点数"
+    },
+    "kinds": {
+      "all": "全部",
+      "topups": "充值",
+      "charges": "扣费",
+      "refunds": "退款"
+    },
     "reservedEmpty": "没有候选人占用点数。",
     "reservedNote": "尚未完成的候选人。他们的点数已预留：作答则扣除，未作答则退回。",
     "history": "记录",
@@ -2521,7 +2943,19 @@
     "name": "MCP 服务器",
     "rowText": "将 Claude、ChatGPT 等 AI 应用连接到 testee。",
     "title": "AI 应用",
-    "subtitle": "它们以你的身份、按你的权限，在你所在的每家公司中操作。",
+    "subtitle": "它们以你的身份、按你的权限，在你所在的每家公司中操作。你在 testee 上逐个授权，无需在任何地方粘贴密钥。",
+    "connectedTitle": "你的应用",
+    "otherApps": "其他",
+    "allowIn": "在 <bdi>{company}</bdi> 中允许 AI 应用",
+    "allowOn": "成员可以通过自己连接的 AI 应用使用本公司的面试和候选人。",
+    "allowOff": "已关闭：AI 应用无法读取或更改本公司的任何内容。",
+    "promptsTitle": "试着问问",
+    "promptCopied": "已复制",
+    "prompts": {
+      "passed": "本周谁通过了？",
+      "compare": "比较一下 Data Analyst 面试中表现最好的候选人。",
+      "invite": "邀请 ann@example.com 参加 Data Analyst 面试。"
+    },
     "instructionsTitle": "将 AI 应用连接到 testee",
     "serverTitle": "服务器地址",
     "serverText": "在你的 AI 应用中把它粘贴为自定义连接器（MCP 服务器）。",
@@ -2679,6 +3113,10 @@
     "failed": "无法导出文件，请重试。"
   },
   "actionLog": {
+    "period": "时间范围",
+    "periodAll": "全部时间",
+    "periodDays": "最近 {days, number} 天",
+    "periodCustom": "自定义",
     "empty": "还没有操作记录。",
     "noMatches": "没有符合这些筛选条件的操作。",
     "formerMember": "前成员",
@@ -2686,7 +3124,15 @@
     "deletedApiKey": "{via, select, mcp {通过 MCP 使用已删除的密钥} other {通过 API 使用已删除的密钥}}",
     "deletedCandidate": "已删除的候选人",
     "anyMember": "所有人",
-    "anyAction": "所有操作",
+    "anyAction": "全部",
+    "clear": "清除",
+    "download": {
+      "open": "下载日志",
+      "title": "下载日志",
+      "description": "选择 CSV 文件的时间范围。",
+      "save": "下载",
+      "failed": "无法生成文件，请重试。"
+    },
     "member": "成员",
     "action": "操作",
     "from": "开始",
@@ -2722,13 +3168,13 @@
       "candidate_deleted": "删除了一位候选人",
       "candidate_renamed": "更改了一位候选人的姓名",
       "extra_time_set": "给了一位候选人额外时间",
-      "candidate_mode_set": "更改了一位候选人的面试模式",
       "results_viewed": "查看了一位候选人的结果",
       "report_emailed": "通过邮件发送了一份报告",
       "bias_audit_exported": "导出了用于偏见审计的数据",
       "member_invited": "邀请了一位成员",
       "member_joined": "加入了公司",
       "member_removed": "移除了一位成员",
+      "candidate_mode_set": "更改了一位候选人的面试模式",
       "member_role_changed": "更改了一位成员的角色",
       "ownership_transferred": "将公司转交给了另一位所有者",
       "company_renamed": "重命名了公司",
@@ -2751,6 +3197,7 @@
       "slack_notifications_changed": "更改了 Slack 通知",
       "api_key_created": "创建了 API 密钥",
       "api_key_deleted": "删除了 API 密钥",
+      "api_key_renamed": "重命名了一个 API 密钥",
       "api_key_permissions_changed": "更改了 API 密钥的权限",
       "api_key_ips_changed": "更改了 API 密钥允许的 IP",
       "embed_domains_changed": "更改了允许的域名",

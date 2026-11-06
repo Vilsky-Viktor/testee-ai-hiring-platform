@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "הגדרות",
+    "preferences": "העדפות",
+    "accountId": "מזהה חשבון",
+    "deleteTitle": "מחיקת החשבון",
+    "deleteNote": "מסיר לצמיתות את החשבון והנתונים שלך.",
     "language": "שפה",
     "languageNote": "לממשק ולתשובות של צ׳אט העזרה, ולשפה שבה ראיונות חדשים מתחילים. אפשר ליצור ראיון בכל שפה נתמכת.",
     "languageFailed": "לא ניתן לשנות את השפה. נסו שוב.",
@@ -12,7 +16,7 @@
     "account": "החשבון שלך",
     "accountNote": "כדאי לציין את המזהה הזה כשכותבים לנו על החשבון.",
     "yourData": "הנתונים שלך",
-    "yourDataNote": "אפשר להוריד את כל מה ש-testee. שומרת עליך, או למחוק את החשבון.",
+    "yourDataNote": "הורידו את כל מה ש-testee שומרת עליכם.",
     "download": "הורדת הנתונים שלי",
     "downloadFailed": "לא ניתן להכין את הנתונים. נסו שוב.",
     "delete": "מחיקת החשבון",
@@ -50,7 +54,8 @@
     "system": "מערכת",
     "light": "בהירה",
     "dark": "כהה",
-    "topUp": "טעינה"
+    "topUp": "טעינה",
+    "workspace": "מרחב העבודה שלי"
   },
   "nav": {
     "main": "תפריט ראשי",
@@ -60,15 +65,19 @@
     "terms": "תנאי שימוש",
     "docs": "מסמכים משפטיים",
     "back": "חזרה",
-    "hiring": "לוח בקרה",
+    "hiring": "מרחב עבודה",
     "pricingLink": "מחירים",
     "faq": "שאלות נפוצות",
     "contact": "צור קשר",
     "about": "אודות",
     "practice": "תרגול חינם",
     "tests": "מבחני מיומנויות",
-    "preEmploymentTesting": "מבחנים לפני גיוס",
-    "aiInterviews": "ראיונות AI",
+    "createTest": "יצירת מבחן",
+    "footerProduct": "מוצר",
+    "footerResources": "משאבים",
+    "footerCompany": "חברה",
+    "footerLegal": "משפטי",
+    "footerTagline": "ראיונות הוגנים ומוגבלי זמן שנוצרים מתיאור המשרה שלכם.",
     "compare": "השוואה",
     "guides": "מדריכים",
     "apiDocs": "תיעוד למפתחים",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "חזרה למעלה",
     "morePages": "עמודים נוספים",
+    "moreActions": "פעולות נוספות",
     "copyLink": "העתקת קישור",
     "linkCopied": "הקישור הועתק",
     "home": "דף הבית",
     "cancel": "ביטול",
     "save": "שמירה",
     "saving": "שומר…",
+    "saved": "נשמר",
     "close": "סגירה",
     "delete": "מחיקה",
     "deleting": "מוחק…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "משהו השתבש",
     "text": "נסו שוב. אם זה חוזר, חזרו מאוחר יותר.",
+    "reference": "מספר אסמכתא: {id}",
     "notFound": "הדף לא נמצא",
     "notFoundText": "הדף הזה לא קיים או שהוסר.",
     "report": "דיווח",
@@ -152,13 +164,13 @@
   },
   "home": {
     "title": "בחנו את כולם\nגייסו את הטובים ביותר",
-    "text": "ה-AI הופך את תיאור המשרה שלכם לראיון מקצועי עם הגבלת זמן.",
-    "price": "רק {price} למועמד."
+    "text": "ה-AI הופך את תיאור המשרה שלכם לראיון מקצועי עם הגבלת זמן."
   },
   "start": {
     "placeholder": "הדביקו כאן את תיאור המשרה…",
     "description": "תיאור המשרה",
-    "submit": "יצירת ראיון",
+    "submit": "יצירה",
+    "newInterview": "הראיון החדש שלך",
     "whichCompany": "לאיזו חברה הראיון הזה?",
     "firstCompany": "איך קוראים לחברה שלכם?",
     "newCompany": "חברה חדשה",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "התחלות דרך הקישור של ראיון אחד בשעה",
       "LINK_STARTS_PER_IP_HOUR": "התחלות דרך קישור לכתובת IP בשעה",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "ייצואים לביקורת הטיה לחברה ביום",
+      "ACTION_LOG_EXPORTS_PER_DAY": "הורדות יומן פעולות לחברה ביום",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "הורדות היסטוריית קרדיטים לחברה ביום",
       "MAX_BULK_INVITES": "מועמדים ברשימה או בקובץ אחד",
       "MAX_PENDING_INVITES": "הזמנות לצוות שממתינות, לחברה",
       "MEMBER_INVITES_PER_UNPAID_DAY": "הזמנות לצוות לחברה שלא שילמה ביום",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "קריאות למערכת הגיוס של החברה לחברה בדקה",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "וובהוקים ממערכות גיוס לכתובת שולחת בדקה",
       "ATS_CONNECTS_PER_HOUR": "חיבורי ATS לחברה בשעה",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "הודעות בדיקה ב-Slack לחברה בשעה",
       "RESEND_DAILY_LIMIT": "אימיילים ביום דרך Resend",
       "RESEND_RESERVE_PERCENT": "החלק מהאימיילים היומיים דרך Resend שנשמר מחוץ לשליחות המוניות",
       "CAMPAIGNS_PER_KIND_DAY": "קמפיינים מכל סוג ביום",
@@ -775,7 +790,9 @@
     "useFailed": "לא ניתן להתחיל ראיון מהתבנית הזו. נסו שוב.",
     "inProgress": "בתהליך: {done}/{total, plural, one {# נושא} two {# נושאים} other {# נושאים}}",
     "completed": "הושלם",
-    "warningText": "<b>התבניות מוכנות לתפקידים נפוצים.</b> להתאמה מדויקת יותר, צרו ראיון מתיאור המשרה שלכם."
+    "warningText": "<b>רוצים התאמה טובה יותר?</b> צרו ראיון מתיאור המשרה שלכם.",
+    "contents": "{topics, plural, one {נושא אחד} two {# נושאים} other {# נושאים}}, {questions, plural, one {שאלה אחת} two {# שאלות} other {# שאלות}}, {minutes, plural, one {# דק׳} two {# דק׳} other {# דק׳}}",
+    "usedIn": "{count, plural, one {משמשת בראיון אחד} two {משמשת ב-# ראיונות} other {משמשת ב-# ראיונות}}"
   },
   "billing": {
     "paidTitle": "התשלום התקבל",
@@ -808,6 +825,10 @@
     "paysInChange": "שינוי מטבע",
     "candidates": "{count, plural, one {מועמד אחד} two {# מועמדים} other {# מועמדים}}",
     "perCandidate": "{price}<unit>/מועמד</unit>",
+    "enough": "{count, plural, one {מספיק עבור מועמד אחד} two {מספיק עבור # מועמדים} other {מספיק עבור # מועמדים}}",
+    "pay": "לתשלום {price}",
+    "quote": "{count, plural, one {מועמד אחד ב-{price} כל אחד} two {# מועמדים ב-{price} כל אחד} other {# מועמדים ב-{price} כל אחד}}, {credits, number} קרדיטים",
+    "nextPrice": "{count, plural, one {עוד מועמד אחד, והוא יעלה {price}} two {עוד # מועמדים, וכל אחד יעלה {price}} other {עוד # מועמדים, וכל אחד יעלה {price}}}",
     "howMany": "מספר מועמדים לטעינה",
     "credits": "{count, plural, one {קרדיט אחד} two {# קרדיטים} other {# קרדיטים}}",
     "candidatesWord": "{count, plural, one {מועמד} two {מועמדים} other {מועמדים}}",
@@ -863,6 +884,19 @@
     "markedWrong": "תודה. זה נבדק, ויתוקן או יוחלף.",
     "markWrongFailed": "לא ניתן לשלוח לבדיקה. נסו שוב.",
     "ofCount": "מתוך {count, number}",
+    "perCandidate": "מספר השאלות לכל מועמד",
+    "limitShort": "שאלות לכל מועמד",
+    "topicsColumn": "נושאים ותת-נושאים",
+    "limitLine": "{limit, number} מתוך {count, number} שאלות לכל מועמד",
+    "noMatches": "אין כאן שאלות.",
+    "summary": {
+      "total": "שאלות"
+    },
+    "filters": {
+      "all": "הכול",
+      "reported": "שדווחו"
+    },
+    "disabledCount": "{count, plural, one {שאלה אחת מושבתת} two {# שאלות מושבתות} other {# שאלות מושבתות}}",
     "per": "לכל",
     "candidate": "מועמד",
     "correct": "תשובה נכונה",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "התור שלכם",
     "voiceThinking": "חושבת",
     "miraLabel": "מראיינת AI",
+    "voiceHeardAnswer": "שמעתי {answer}.",
+    "questionOf": "שאלה {number, number} מתוך {count, number}",
+    "answeredOf": "{done, number} מתוך {total, number}",
+    "keysHint": "לחצו על A–{last} לבחירה ועל Enter לשאלה הבאה.",
     "voiceStatus": {
       "off": "מירה מתכוננת…",
       "starting": "מירה מתכוננת…",
@@ -962,9 +1000,11 @@
     "cancelling": "מבטל…",
     "cancelFailed": "לא ניתן לבטל את היצירה. נסו שוב.",
     "writing": "יוצרים את השאלות שלכם",
-    "drafting": "מנסחים את הנושאים שלך",
-    "writingNote": "זה לוקח כמה דקות. אפשר לעזוב את הדף, אנחנו ממשיכים.",
-    "draftingNote": "קוראים את המטרה שלך ומתכננים מה לכסות.",
+    "drafting": "מכינים את הנושאים שלכם",
+    "writingNote": "זה לוקח כמה דקות. אפשר לעזוב את הדף, ונעדכן אתכם כשהכול יהיה מוכן.",
+    "draftingNote": "אנחנו קוראים את תיאור המשרה שלכם. תעברו על הנושאים לפני שייכתבו שאלות. אפשר לעזוב את הדף, אנחנו ממשיכים.",
+    "finishing": "בודקים ושומרים את השאלות…",
+    "goToInterviews": "מעבר לראיונות",
     "topicsReady": "{ready, number} מתוך {count, plural, one {נושא אחד} two {# נושאים} other {# נושאים}} מוכנים",
     "reviewFailed": "לא ניתן לשלוח את הבדיקה. נסו שוב.",
     "retryFailed": "לא ניתן לנסות שוב את היצירה. נסו שוב.",
@@ -982,13 +1022,18 @@
     "add": "הוספה",
     "done": "סיום",
     "reviewTitle": "בדקו את הנושאים",
-    "reviewText": "בטלו את הסימון של נושאים מיותרים, ערכו אותם או תארו שינויים. כל נושא מקבל סט שאלות משלו עם תשובות.",
+    "reviewText": "לכל נושא יש מערך שאלות משלו, עם תשובות.",
     "editTopic": "עריכת <bdi>{topic}</bdi>",
-    "changesPlaceholder": "רשות: תארו שינויים, למשל \"הוסיפו נושא על הובלת צוות\"",
-    "changes": "שינויים בנושאים",
+    "changesPlaceholder": "למשל: ״הוסיפו נושא על ניהול צוות״",
+    "changes": "בקשו מה-AI לשנות את הנושאים",
     "tooMany": "בחרו לכל היותר {max, plural, one {נושא אחד} two {# נושאים} other {# נושאים}}, או תארו איך לאחד אותם.",
     "apply": "החלת השינויים",
     "approve": "אישור ויצירה",
+    "topicsChosen": "{chosen, number} מתוך {count, plural, one {נושא אחד} two {# נושאים} other {# נושאים}}",
+    "applyFirst": "החילו קודם את השינוי, או נקו את התיבה.",
+    "subtopicsNeeded": "{count, plural, one {הוסיפו לפחות תת-נושא אחד.} two {הוסיפו לפחות # תת-נושאים.} other {הוסיפו לפחות # תת-נושאים.}}",
+    "addTopic": "הוספת נושא",
+    "removeTopic": "הסרה",
     "topicNameNeeded": "תנו שם לנושא."
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "חברות",
     "empty": "עדיין אין חברות.",
     "owner": "בעלים",
+    "search": "חיפוש חברות",
+    "interviewsShort": "{count, plural, one {<n></n> ראיון} two {<n></n> ראיונות} other {<n></n> ראיונות}}",
+    "membersShort": "{count, plural, one {<n></n> חבר צוות} two {<n></n> חברי צוות} other {<n></n> חברי צוות}}",
+    "status": {
+      "low": "הקרדיטים אוזלים",
+      "verify": "סיימו לאמת את החברה שלכם",
+      "finished": "{count, plural, one {<n></n> מועמד סיים השבוע} two {<n></n> מועמדים סיימו השבוע} other {<n></n> מועמדים סיימו השבוע}}"
+    },
     "interviewCount": "{count, plural, one {ראיון אחד} two {# ראיונות} other {# ראיונות}}",
     "memberCount": "{count, plural, one {חבר צוות אחד} two {# חברי צוות} other {# חברי צוות}}",
     "interviews": "ראיונות",
@@ -1024,6 +1077,8 @@
     "brand": "מותג",
     "billing": "חיובים",
     "new": "חברה חדשה",
+    "newText": "לכל חברה יש ראיונות, צוות וקרדיטים משלה.",
+    "namePlaceholder": "למשל: Acme",
     "name": "שם החברה",
     "create": "יצירה",
     "createFailed": "לא ניתן ליצור את החברה. נסו שוב.",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, one {יציאה אחת מהדף} two {# יציאות מהדף} other {# יציאות מהדף}}",
     "copies": "{count, plural, one {ניסיון העתקה אחד} two {# ניסיונות העתקה} other {# ניסיונות העתקה}}",
     "fastAnswers": "{count, plural, one {תשובה מהירה אחת} two {# תשובות מהירות} other {# תשובות מהירות}}",
+    "extraTimeLabel": "זמן נוסף",
+    "summary": {
+      "result": "תוצאה",
+      "timeTaken": "זמן שנדרש",
+      "signals": "אותות יושרה",
+      "invited": "הוזמנו",
+      "finished": "סיימו",
+      "passed": "עברו",
+      "average": "ציון ממוצע"
+    },
+    "copyLinkFailed": "לא הצלחנו להעתיק את הקישור. נסו שוב.",
     "empty": "עדיין לא הוזמנו מועמדים.",
     "noMatches": "אין מועמדים תואמים.",
     "search": "חיפוש מועמדים לפי אימייל או שם",
     "status": "סטטוס: {status}",
     "anyStatus": "כל סטטוס",
+    "allStatuses": "הכול",
     "progress": "התקדמות",
     "grade": "ציון",
     "resend": "שליחה חוזרת של ההזמנה",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "ראיונות",
+    "allStatuses": "הכול",
+    "candidatesShort": "{count, plural, one {<n></n> מועמד} two {<n></n> מועמדים} other {<n></n> מועמדים}}",
+    "finishedShort": "<n></n> סיימו",
+    "passedShort": "<n></n> עברו",
+    "rowStatus": {
+      "failed": "פתחו כדי לנסות שוב",
+      "generating": "בהכנה",
+      "undelivered": "{count, plural, one {<n></n> הזמנה לא נמסרה} two {<n></n> הזמנות לא נמסרו} other {<n></n> הזמנות לא נמסרו}}",
+      "finished": "{count, plural, one {<n></n> מועמד סיים השבוע} two {<n></n> מועמדים סיימו השבוע} other {<n></n> מועמדים סיימו השבוע}}",
+      "ready": "מוכן: הזמינו את המועמדים הראשונים"
+    },
     "interview": "ראיון",
     "topicsTab": "נושאים",
     "candidates": "מועמדים",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "אין עדיין הערות. כתבו את הראשונה לצוות שלכם.",
     "discover": "גילוי",
     "discoverLinkedIn": "פרופיל ה־LinkedIn של {name}",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "אנשים יופיעו כאן כשיתרגלו את הנושאים האלה ויבחרו להיות פתוחים להצעות.",
     "discoverText": "אנשים שפתוחים להצעות עבודה ותרגלו את הנושאים של הראיון הזה. האחרונים קודם, בלי דירוג.",
     "discoverEmpty": "עדיין אף אחד מהפתוחים להצעות עבודה לא תרגל את הנושאים של הראיון הזה.",
     "discoverResults": "תוצאות תרגול",
@@ -1130,6 +1210,8 @@
     "notePosting": "מפרסמים…",
     "noteEdited": "נערכה",
     "notePinned": "מוצמדת",
+    "noteShowMore": "הצגת עוד",
+    "noteShowLess": "הצגת פחות",
     "notePin": "הצמדה למעלה",
     "noteUnpin": "ביטול הצמדה",
     "noteFormerMember": "חבר צוות לשעבר",
@@ -1139,8 +1221,20 @@
     "noteFailed": "לא ניתן לשמור את ההערה. נסו שוב.",
     "new": "ראיון חדש",
     "createTitle": "יצירת ראיון",
+    "createIntro": "הדביקו תיאור משרה. תעברו על הנושאים לפני שייכתבו השאלות, וזה בחינם.",
+    "steps": {
+      "describe": "תיאור התפקיד",
+      "review": "סקירת נושאים",
+      "invite": "הזמנת מועמדים"
+    },
+    "startTemplate": "התחלה מתבנית",
+    "startAts": "התחלה ממשרה במערכת הגיוס (ATS)",
+    "tryExample": "נסו דוגמה",
     "try": "ניסיון כמועמד",
     "newCandidate": "מועמדים חדשים",
+    "settingsSharing": "שיתוף",
+    "settingsRuns": "אופן ההרצה",
+    "settingsAfter": "אחרי הראיון ופרטיות",
     "linkTitle": "קישור לשיתוף",
     "linkText": "למודעת דרושים: כל מי שיש לו את הקישור יכול לגשת לראיון. כל אדם מחויב כמו מועמד שהוזמן.",
     "linkFailed": "לא ניתן לשנות את הקישור. נסו שוב.",
@@ -1160,7 +1254,7 @@
     "generating": "נוצר…",
     "generationFailed": "היצירה נכשלה",
     "fallbackTitle": "ראיון",
-    "continueGeneration": "המשך היצירה",
+    "continueGeneration": "המשך",
     "empty": "עדיין אין ראיונות. צרו את הראשון.",
     "noMatches": "אין ראיונות תואמים.",
     "search": "חיפוש ראיונות לפי כותרת",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "אימייל המועמד",
     "inviteTab": {
       "one": "אחד",
-      "many": "כמה",
-      "file": "העלאה"
+      "many": "רשימה",
+      "file": "קובץ"
     },
-    "manyHint": "מועמד אחד בכל שורה, עם שם או בלי,\nעד {count, number} בבת אחת:",
-    "manyHintNoLimit": "מועמד אחד בכל שורה, עם שם או בלי:",
-    "example": "דוגמה",
+    "inviteTitle": "הזמנת מועמדים",
+    "manyHint": "מועמד אחד בכל שורה, עם שם או בלי, עד {count, number} בבת אחת.",
+    "manyHintNoLimit": "מועמד אחד בכל שורה, עם שם או בלי.",
     "uploadFile": "העלאת קובץ",
     "fileFormats": "CSV או TXT, עד {count, plural, one {מועמד אחד} two {# מועמדים} other {# מועמדים}}. אפשר לכתוב שמות בעמודת שם או ליד כל אימייל.",
     "fileFormatsNoLimit": "CSV או TXT. אפשר לכתוב שמות בעמודת שם או ליד כל אימייל.",
@@ -1203,8 +1297,7 @@
       "unclear_name": "יש לכתוב את השם כך: שם '<אימייל>': <bdi>{line}</bdi>",
       "more": "ועוד {count, number}"
     },
-    "exampleCsv": "דוגמה ‎.csv",
-    "exampleTxt": "דוגמה ‎.txt",
+    "exampleFiles": "הורידו דוגמה: <csv>.csv</csv> או <txt>.txt</txt>",
     "candidateName": "שם (לא חובה)",
     "invitedMany": "{count, plural, one {הוזמן מועמד אחד} two {הוזמנו # מועמדים} other {הוזמנו # מועמדים}}",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "כל הכבוד, הראיון שלכם מוכן",
-      "text": "<name><bdi>{title}</bdi></name> מוכן למועמדים. אלה הצעדים הבאים:",
-      "limits": "קבעו כמה שאלות כל מועמד יקבל בכל נושא.",
+      "text": "<name><bdi>{title}</bdi></name> מוכן. נסו אותו בעצמכם לפני שאתם מזמינים מישהו, והתאימו אותו לפי הצורך.",
+      "limits": "כמה שאלות יקבל כל מועמד בכל נושא.",
       "limitsAction": "קביעת שאלות",
-      "time": "התאימו את הזמן הממוצע לכל שאלה במידת הצורך.",
-      "timeAction": "פתיחת ההגדרות",
-      "invite": "הזמינו מועמדים.",
-      "inviteAction": "מעבר למועמדים",
+      "time": "הזמן הממוצע לשאלה.",
+      "timeAction": "שינוי הזמן",
       "done": "הבנתי"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "צריכים יותר זמן, למשל בגלל מוגבלות? בקשו מ-<bdi>{company}</bdi> הזמנה אישית לפני שאתם מתחילים: כאן אי אפשר להוסיף זמן.",
     "people": "את השאלות כותב AI. אנשים מטעם <bdi>{company}</bdi> בודקים את התוצאות ומחליטים; אפשר לבקש מהם לבדוק את התוצאה שלכם.",
     "stay": "כדאי להישאר בדף הזה: יציאה ממנו, העתקה ותשובה מהירה מכדי לקרוא את השאלה נרשמות, והחברה רואה כשזמני התשובה או התשובות שלכם לא תואמים את רמת הקושי של השאלות (<link>פרטיות</link>).",
-    "finished": "הראיון הזה כבר הסתיים.",
+    "finishedTitle": "סיימתם",
+    "finished": "התשובות שלכם הגיעו אל <bdi>{company}</bdi>. החברה תעבור על התוצאות ותחליט על הצעדים הבאים.",
+    "finishedPreview": "זה מה שהמועמדים שלכם רואים. הניסיון החינמי הזה לא מופיע ברשימת המועמדים שלכם, והתשובות בו לא נספרות בסטטיסטיקות של השאלות.",
+    "finishedRights": "אפשר לבקש מ-<bdi>{company}</bdi> שאדם יבחן את התוצאה שלכם. <link>פרטיות</link>",
+    "finishedAnswered": "שאלות שנענו",
+    "finishedTime": "זמן שנדרש",
+    "signInAs": "השתמשו באימייל שאליו נשלחה ההזמנה.",
+    "switchAccount": "החלפת חשבון",
+    "progress": "עברתם {percent} מהדרך.",
+    "progressLabel": "ההתקדמות שלכם",
+    "groups": {
+      "how": "איך זה עובד",
+      "time": "הזמן שלכם",
+      "rights": "הזכויות והפרטיות שלכם"
+    },
     "continue": "המשך",
     "start": "אישור והתחלה",
     "pledge": "אענה בעצמי, בלי כלי AI ובלי עזרה מאנשים אחרים.",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "הצטרפו",
     "invited": "הוזמנו",
+    "joinedOn": "הצטרף ב-{date}",
+    "invitedOn": "הוזמן ב-{date}",
+    "pendingTitle": "הזמנות ממתינות",
+    "firstTitle": "הזמינו את חבר הצוות הראשון",
     "role": "תפקיד",
     "roleFailed": "לא ניתן לשנות את התפקיד.",
     "inviteTitle": "הזמנה לחברה",
@@ -1281,6 +1390,11 @@
     "madeOwner": "<bdi>{email}</bdi> הם עכשיו הבעלים."
   },
   "scorecard": {
+    "filters": {
+      "all": "הכול",
+      "correct": "נכונות",
+      "wrong": "שגויות"
+    },
     "timeOut": "הזמן נגמר",
     "leftPage": "יצא/ה מהדף {count, plural, one {פעם אחת} two {פעמיים} other {# פעמים}}",
     "answeredIn": "ענה/תה תוך <b>{time}</b>",
@@ -1298,7 +1412,7 @@
     "test": "יצירת ראיון",
     "free": "חינם",
     "candidate": "כל מועמד שעונה על שאלה אחת לפחות",
-    "candidateVolume": "עם קרדיטים מטעינה של {from} ומעלה",
+    "candidateVolume": "בטעינה של {from} ומעלה",
     "perCandidate": "{price} למועמד",
     "welcome": "{count, plural, one {המועמד הראשון שלכם} two {# המועמדים הראשונים שלכם} other {# המועמדים הראשונים שלכם}}",
     "credits": "מועמד אחד עולה {credits, number} קרדיטים, והקרדיטים לא פגים לעולם.",
@@ -1306,6 +1420,10 @@
     "referralsNote": "שתפו את הקישור של החברה מלשונית ההפניות שלה.",
     "companyReferral": "חברה שהזמנתם מבצעת את הטעינה הראשונה שלה",
     "each": "{count, number} קרדיטים לכל אחד",
+    "fromPrice": "החל מ-{price}",
+    "anyTopUp": "בכל טעינה",
+    "volumeTitle": "מועמד עולה פחות בטעינות גדולות יותר",
+    "volumeText": "ככל שהטעינה גדולה יותר, כל מועמד עולה פחות.",
     "topUp": "טעינה"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "מסמכי ציות לגיוס עובדים",
     "intro": "מסמכים לחברות שמעריכות מועמדים עם testee: הנחיות, תבניות והסכם עיבוד הנתונים.",
     "englishOnly": "המסמכים האלה זמינים באנגלית בלבד.",
-    "download": "הורדת {format}",
+    "download": "הורדת <type>{format}</type>",
     "readOnline": "קריאה באתר",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "יצירה בשפה"
   },
   "referral": {
+    "title": "שניכם מקבלים <n></n> קרדיטים",
+    "text": "{count, plural, one {זה מספיק עבור מועמד אחד. שתפו את הקישור עם חברה אחרת.} two {זה מספיק עבור # מועמדים. שתפו את הקישור עם חברה אחרת.} other {זה מספיק עבור # מועמדים. שתפו את הקישור עם חברה אחרת.}}",
+    "empty": "עדיין אין תגמולים. שתפו את הקישור כדי לזכות בראשון.",
+    "steps": {
+      "share": "שתפו את הקישור עם חברה אחרת.",
+      "create": "היא יוצרת את החברה שלה דרכו.",
+      "reward": "אחרי הטעינה הראשונה שלה, בכל סכום, שניכם מקבלים את הקרדיטים."
+    },
+    "summary": {
+      "referred": "חברות שהופנו",
+      "earned": "קרדיטים שנצברו",
+      "left": "תגמולים שנותרו השנה",
+      "leftValue": "{left, number} מתוך {total, number}"
+    },
     "companyNote": "שניכם מקבלים {reward, number} קרדיטים כשהיא מבצעת את הטעינה הראשונה, בכל סכום.",
     "deletedCompany": "חברה שנמחקה",
     "credits": "+{count, number} קרדיטים",
@@ -1398,53 +1530,39 @@
     "intro": "מועמד אחד עולה {credits, number} קרדיטים, והקרדיטים לא פגים לעולם.",
     "noCompany": "הקרדיטים שייכים לחברה. צרו קודם את החברה שלכם, ואז טענו אותה כאן.",
     "createCompany": "יצירת חברה",
+    "allCompanies": "כל החברות",
     "pricing": "מחירים"
   },
   "landing": {
-    "more": "איך זה עובד",
     "demos": "וידאו",
-    "videoTooltip": "צפו איך testee עובד",
     "watchVideo": "צפייה בסרטון",
     "howItWorks": "איך זה עובד",
     "askAgent": "לשאול את מירה",
     "create": {
+      "draftingNote": "קוראים את תיאור המשרה שלכם.",
       "title": "צרו ראיון בתוך דקות",
       "text": "הדביקו תיאור משרה, התאימו את הנושאים, והראיון שלכם מוכן תוך דקות.",
       "notes": {
-        "questions": "{count, plural, one {שאלה אחת} two {# שאלות} other {# שאלות}} לכל נושא",
         "templates": "תבניות מוכנות זמינות",
         "expert": "בלי צורך במומחה בתחום"
       },
-      "describe": "<n>1.</n> הדביקו את התיאור",
+      "describe": "<n>1.</n> הדבקת התיאור",
       "adjust": "<n>2.</n> התאימו את הנושאים",
       "menu": {
-        "cut": "גזור",
-        "copy": "העתק",
         "paste": "הדבק"
       },
-      "ready": "<n>3.</n> הראיון שלכם מוכן",
-      "invited": "<n>4.</n> המועמד מקבל את ההזמנה",
+      "ready": "<n>3.</n> הראיון מוכן",
+      "invited": "<n>4.</n> ההזמנה התקבלה",
       "status": "מוכן",
       "email": {
-        "search": "חיפוש בדואר",
-        "compose": "כתיבה",
         "inbox": "דואר נכנס",
-        "starred": "מסומנים בכוכב",
-        "sent": "נשלחו",
-        "drafts": "טיוטות",
         "from": "testee.",
-        "toMe": "אליי",
         "now": "עכשיו",
         "subject": "הזמנה לראיון מ-{company}",
-        "preheader": "ראיון \"{title}\" ב-testee. יש להתחבר עם {email} כדי להתחיל.",
         "heading": "הזמנה לראיון",
         "invited": "קיבלת הזמנה מ-<b>{company}</b> לראיון \"{title}\" ב-testee.",
         "signIn": "יש להתחבר עם {email} כדי להתחיל. רק כתובת זו יכולה לגשת לראיון, ויש ניסיון אחד בלבד.",
-        "button": "פתיחת ההזמנה",
-        "pasteLink": "או להדביק את הקישור הזה בדפדפן",
-        "footer": "הודעה זו נשלחה אל {email} כי מישהו הזמין את הכתובת הזו ב-testee. אם לא ציפית לה, אפשר להתעלם ממנה.",
-        "stopCompany": "לא לשלוח לי אימיילים מטעם {company}",
-        "operator": "testee מופעלת על ידי {name}, {address}."
+        "button": "פתיחת ההזמנה"
       },
       "phone": {
         "describe": "הדביקו תיאור משרה, או כתבו כמה מילים על התפקיד.",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "אדם מחליט",
-          "text": "הציון תומך בהחלטה שלכם, הוא לא מקבל אותה. סימני יושרה הם סיבה לבדוק לעומק, לא הוכחה."
+          "text": "הציון מסייע להחלטה שלכם. אותות יושרה הם סיבה להתבונן מקרוב, לא הוכחה."
         },
         "fair": {
           "title": "הוגן לכל מועמד",
-          "text": "אותו טיימר ואותו שילוב של סוגי שאלות, שאלות שנבחרות באקראי לכל אדם, וזמן נוסף למי שצריך."
+          "text": "אותו טיימר ואותו מבחר שאלות לכולם, שאלות שנבחרות באקראי, וזמן נוסף למי שצריך."
         },
         "laws": {
           "title": "בנוי לתאימות",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "כל פעולה מתועדת",
-          "text": "הבעלים רואה מי עשה מה בחברה, והתיעוד נשמר בבטחה 12 חודשים בשרתים באיחוד האירופי."
+          "text": "הבעלים רואים מי עשה מה, והמידע נשמר 12 חודשים בשרתים באיחוד האירופי."
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "עוד שאלות?",
       "videos": "סרטונים",
       "faq": "שאלות נפוצות",
-      "guides": "מדריכים",
-      "features": "תכונות",
-      "hiringFlow": "תהליך הגיוס"
+      "guides": "מדריכים"
     },
     "closing": {
       "title": "צרו את הראיון הראשון שלכם\nזה בחינם",
@@ -1672,7 +1788,8 @@
         "time": "~10 דק׳ לתפקיד, אף דקה למועמד",
         "cost": "{price} לכל מועמד שעונה"
       },
-      "more": "השוואה לכלים אחרים"
+      "more": "השוואה לכלים אחרים",
+      "best": "הבחירה הטובה ביותר"
     },
     "freeToStart": {
       "title": "הכול בחינם\nמשלמים לפי מועמד",
@@ -1689,6 +1806,7 @@
       "each": "({price} למועמד)",
       "free": "{count, plural, one {מועמד אחד בחינם} two {# מועמדים בחינם} other {# מועמדים בחינם}} להתחלה",
       "perCandidate": "למועמד",
+      "bestPrice": "המחיר הטוב ביותר",
       "pack": "{count, number} ב-{price}",
       "see": "למחירים",
       "notes": {
@@ -1698,11 +1816,154 @@
         "refund": "קרדיטים ששולמו ולא נוצלו ניתנים להחזר"
       },
       "currencies": "{count, plural, one {מטבע אחד} two {# מטבעות} other {# מטבעות}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Acme עוזרת לחנויות אונליין לענות ללקוחות שלהן בעזרת AI.\nאנחנו מגייסים מהנדס/ת AI לפיתוח פיצ'רים מבוססי LLM.\n• 3+ שנות ניסיון ב-Python\n• אפליקציות LLM, RAG וחיפוש וקטורי\n• הערכה וניטור של מודלים\nעבודה מרחוק, שעות גמישות ותקציב ללמידה.",
+        "title": "מהנדס/ת AI",
+        "topics": {
+          "llm": {
+            "name": "יסודות LLM",
+            "subtopics": ["טוקנים", "כתיבת פרומפטים", "חלון הקשר"]
+          },
+          "rag": {
+            "name": "RAG – יצירה מועשרת באחזור",
+            "subtopics": ["Embeddings", "חלוקה למקטעים", "חיפוש וקטורי"]
+          },
+          "python": {
+            "name": "Python למערכות ML",
+            "subtopics": ["asyncio", "רמזי טיפוסים"]
+          }
+        },
+        "renamed": " בקנה מידה גדול",
+        "subtopicAdded": " ובדיקות",
+        "change": "הוסף נושא על הערכת פלט של LLM",
+        "newTopic": {
+          "name": "הערכת LLM",
+          "subtopics": ["סטים לבדיקה", "LLM כשופט", "מדדים"]
+        }
+      },
+      "candidates": {
+        "title": "אנליסט/ית נתונים",
+        "questions": {
+          "median": {
+            "topic": "סטטיסטיקה",
+            "text": "כמה הזמנות גדולות מאוד מעוותות את ערך ההזמנה הממוצע. איזה מדד מתאר הכי טוב הזמנה טיפוסית?",
+            "options": [
+              "ממוצע ערך ההזמנה",
+              "חציון ערך ההזמנה",
+              "טווח ערכי ההזמנות",
+              "סטיית התקן של ערכי ההזמנות"
+            ]
+          },
+          "revenue": {
+            "topic": "סטטיסטיקה",
+            "text": "ההכנסות השבועיות בדשבורד ירדו ב-20% מיד אחרי שינוי ב-data pipeline. אילו בדיקות תריצו קודם?",
+            "options": [
+              "השוואת מספר השורות לפני השינוי ואחריו",
+              "חיפוש תאריכים כפולים או חסרים",
+              "שינוי ערכת הצבעים של הדשבורד",
+              "לשאול את המכירות אם הלקוחות הפסיקו לקנות"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "השיווק רוצה את האזורים שסך המכירות שלהם עובר את 100. מה השאילתה הזו מחזירה?",
+            "options": ["רק North", "רק South", "North ו-South", "אף שורה"]
+          },
+          "chart": {
+            "topic": "ויזואליזציה",
+            "text": "צריך להראות איך השתנו ההרשמות החודשיות בשנתיים האחרונות. איזה תרשים מציג את המגמה הכי טוב?",
+            "options": [
+              "תרשים עוגה של הרשמות לפי חודש",
+              "תרשים קו של הרשמות לפי חודש",
+              "תרשים פיזור של הרשמות מול הכנסות",
+              "היסטוגרמה של מספר ההרשמות החודשי"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "מנהל/ת מוצר",
+        "topics": [
+          "אסטרטגיית מוצר",
+          "מדדים",
+          "בעלי עניין",
+          "בניית רודמפ",
+          "מחקר משתמשים",
+          "תעדוף",
+          "ניסויים",
+          "תמחור",
+          "יציאה לשוק",
+          "תקשורת"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "מה צריך לבוא קודם לפני פיתוח פיצ'ר חדש?",
+            "options": [
+              "לבדוק את הבעיה מול משתמשים",
+              "לכתוב את האפיון הטכני",
+              "לקבוע תאריך השקה",
+              "לעצב את המסכים"
+            ]
+          },
+          "metrics": {
+            "text": "ההמרה ירדה מ-4% ל-3%. בכמה זה ירד ביחס למה שהיה?",
+            "options": ["1%", "25%", "33%", "75%"]
+          },
+          "stakeholders": {
+            "text": "צוות שותף לא מסכים עם סדרי העדיפויות שלכם. מה עושים קודם?",
+            "options": [
+              "להסלים למנהל/ת",
+              "לשאול מה הם צריכים ולמה",
+              "להשאיר את התוכנית כמו שהיא",
+              "לוותר על סדרי העדיפויות שלכם"
+            ]
+          }
+        },
+        "chat": {
+          "name": "צוות הגיוס",
+          "initials": "צג"
+        },
+        "notes": [
+          "מנהל הגיוס רוצה רשימה קצרה של שני מועמדים עד יום שישי.",
+          "Daniel היה חזק בעבודה מול בעלי עניין בשיחת הסינון הטלפונית; חלש יותר במדדים.",
+          "Sofia ביקשה עוד זמן; אבדוק איתה מחר."
+        ],
+        "pdf": "מועמדים-מנהל-מוצר.pdf"
+      },
+      "slack": {
+        "channels": ["כללי", "גיוס", "פיתוח"],
+        "channelsTitle": "ערוצים",
+        "peopleTitle": "הודעות ישירות",
+        "appsTitle": "אפליקציות",
+        "app": "אפליקציה",
+        "composer": "הודעה ל-#{channel}",
+        "finished": "{name} ({email}) סיים/ה את \"{title}\": {grade}%.",
+        "noted": "{author} הוסיף/ה הערה על ״{title}״:",
+        "button": "פתיחה ב-testee"
+      },
+      "invite": {
+        "title": "מנהל/ת חשבונות B2B"
+      },
+      "askAgent": {
+        "interview": "אנליסט/ית נתונים"
+      }
     }
   },
   "faq": {
     "title": "שאלות נפוצות",
-    "intro": "לא מצאתם תשובה? שאלו את מירה, עוזרת ה-AI (הכפתור בראש העמוד), או כתבו לנו לכתובת שבמדיניות הפרטיות.",
+    "intro": "תשובות על testee, מהראיון הראשון ועד הנתונים שלכם.",
+    "groups": {
+      "start": "תחילת עבודה",
+      "candidates": "מועמדים",
+      "pricing": "מחירים וקרדיטים",
+      "results": "תוצאות והצוות שלכם",
+      "tools": "אינטגרציות",
+      "privacy": "פרטיות והחשבון שלכם"
+    },
+    "closingTitle": "עדיין יש לכם שאלה?",
+    "closingText": "שאלו את Mira, העוזרת הדיגיטלית שלנו מבוססת ה-AI, או כתבו לנו.",
     "description": "תשובות על testee: איך נוצרים ראיונות מתיאור משרה, מה המועמדים רואים, מחירים וקרדיטים, תוצאות, חיבור למערכות ATS, שפות והנתונים שלך."
   },
   "contact": {
@@ -1731,9 +1992,20 @@
     "description": "testee הופכת תיאור משרה לראיון הוגן עם הגבלת זמן תוך דקות, במחיר שכל צוות יכול לעמוד בו, ומאפשרת לכל אחד להתאמן לראיונות בחינם.",
     "company": {
       "title": "למה אנחנו כאן",
+      "titles": {
+        "problem": "קשה לגייס נכון",
+        "approach": "ראיון הוגן תוך דקות",
+        "practice": "תרגול חינמי לכולם"
+      },
       "problem": "גיוס נשען לעיתים קרובות על קורות חיים ושיחה טובה, ושניהם עלולים להטעות. כלי ההערכה שעוזרים מתומחרים לחברות גדולות, עם תוכניות שנתיות ותשלום לפי משתמש, ולכן רוב הצוותים מוותרים עליהם.",
       "approach": "testee הופכת תיאור משרה לראיון עם הגבלת זמן תוך דקות, לכל תפקיד. כל מועמד מקבל שאלות משלו, אתם רואים מי מכיר את העבודה ולמה, ומשלמים רק על מועמדים שבאמת ניגשים לראיון.",
       "practice": "אנחנו גם רוצים שההכנה לראיון תהיה בחינם לכולם. כל אחד יכול לגשת לראיונות התרגול שלנו לתפקיד, לראות את הציון שלו ואת כל התשובות הנכונות, ולתרגל שוב, בלי שום עלות."
+    },
+    "closing": {
+      "title": "ראו בעצמכם",
+      "text": "צרו ראיון מתיאור המשרה שלכם, או תרגלו תפקיד בחינם.",
+      "create": "יצירת מבחן",
+      "practice": "תרגול בחינם"
     },
     "founder": {
       "quote": "גיוס טוב לא צריך להיות פריבילגיה של חברות גדולות עם תקציבים גדולים. בניתי את testee כדי שכל צוות יוכל להפוך תיאור משרה לראיון הוגן תוך דקות, לראות מי באמת מכיר את העבודה, ולשלם רק על המועמדים שניגשים אליו. אני מקווה שזה יעזור לכם למצוא את האנשים הנכונים מהר יותר.",
@@ -1751,20 +2023,18 @@
     "title": "התראות",
     "unread": "{count, plural, one {התראה אחת שלא נקראה} two {# התראות שלא נקראו} other {# התראות שלא נקראו}}",
     "empty": "אין עדיין שום דבר חדש.",
-    "formerAuthor": "חבר/ה לשעבר",
     "kinds": {
       "question_flagged": "{count, plural, one {שאלה בנושא \"<bdi>{topic}</bdi>\" {title, select, none {בראיון} other {ב\"<bdi>{title}</bdi>\"}} סומנה לבדיקה.} two {שתי שאלות {title, select, none {בראיון} other {ב\"<bdi>{title}</bdi>\"}} סומנו לבדיקה.} other {# שאלות {title, select, none {בראיון} other {ב\"<bdi>{title}</bdi>\"}} סומנו לבדיקה.}}",
       "question_fixed": "{count, plural, one {ה-AI תיקן שאלה שסומנה בנושא \"<bdi>{topic}</bdi>\" {title, select, none {בראיון} other {ב\"<bdi>{title}</bdi>\"}}.} two {ה-AI תיקן שתי שאלות שסומנו {title, select, none {בראיון} other {ב\"<bdi>{title}</bdi>\"}}.} other {ה-AI תיקן # שאלות שסומנו {title, select, none {בראיון} other {ב\"<bdi>{title}</bdi>\"}}.}}",
       "referral_rewarded": "מישהו שהזמנתם טען קרדיטים. קיבלתם {credits, plural, one {קרדיט אחד} two {# קרדיטים} other {# קרדיטים}}.",
-      "auto_top_up_on": "הטעינה האוטומטית פעילה: {price} בתוספת מס כשהקרדיטים הזמינים יורדים מתחת ל-{threshold, number}.",
       "auto_top_up_charged": "הטעינה האוטומטית הוסיפה {credits, plural, one {קרדיט אחד} two {# קרדיטים} other {# קרדיטים}}.",
       "auto_top_up_failed": "הטעינה האוטומטית לא הצליחה לחייב את הכרטיס. טענו קרדיטים כדי שהיתרה לא תיגמר.",
+      "auto_top_up_on": "הטעינה האוטומטית פעילה: {price} בתוספת מס כשהקרדיטים הזמינים יורדים מתחת ל-{threshold, number}.",
       "auto_top_up_paused": "הטעינה האוטומטית מושהית: הכרטיס נדחה. עדכנו את הכרטיס כדי להפעיל אותה מחדש.",
       "auto_top_up_price_change": "החל מ-<time>{date}</time>, כל טעינה אוטומטית תעלה {newPrice} במקום {price}.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> השלים/ה {title, select, none {ראיון} other {את \"<bdi>{title}</bdi>\"}}{grade, select, none {.} other {: {grade}.}}} two {שני מועמדים השלימו {title, select, none {ראיון} other {את \"<bdi>{title}</bdi>\"}}.} other {# מועמדים השלימו {title, select, none {ראיון} other {את \"<bdi>{title}</bdi>\"}}.}}",
       "invite_undelivered": "{count, plural, one {ההזמנה ל-<bdi>{email}</bdi> עבור {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}} לא נמסרה.} two {שתי הזמנות עבור {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}} לא נמסרו.} other {# הזמנות עבור {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}} לא נמסרו.}}",
       "interview_ready": "{title, select, none {ראיון מוכן.} other {הראיון \"<bdi>{title}</bdi>\" מוכן.}}",
-      "note_added": "{count, plural, =1 {הערה חדשה על {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}} מאת <bdi>{authors}</bdi>.} two {שתי הערות חדשות על {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}}, האחרונות מאת <bdi>{authors}</bdi>.} other {# הערות חדשות על {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}}, האחרונות מאת <bdi>{authors}</bdi>.}}",
       "interview_cancelled": "{title, select, none {ראיון בוטל} other {הראיון \"<bdi>{title}</bdi>\" בוטל}}: בדיקת הנושאים שלו חיכתה יותר מדי זמן.",
       "verification_approved": "\"<bdi>{name}</bdi>\" מאומתת עבור <bdi>{domain}</bdi>.",
       "verification_declined": "{reason, select, none {האימות של \"<bdi>{name}</bdi>\" נדחה.} other {האימות של \"<bdi>{name}</bdi>\" נדחה: <bdi>{reason}</bdi>}}",
@@ -1776,8 +2046,10 @@
       "news": "חדשות: <bdi>{title}</bdi>",
       "legal_terms": "תנאי שימוש חדשים חלים מ-<time>{date}</time>.",
       "legal_privacy": "מדיניות פרטיות חדשה חלה מ-<time>{date}</time>.",
-      "legal_dpa": "הסכם עיבוד נתונים חדש חל מ-<time>{date}</time>."
+      "legal_dpa": "הסכם עיבוד נתונים חדש חל מ-<time>{date}</time>.",
+      "note_added": "{count, plural, =1 {הערה חדשה על {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}} מאת <bdi>{authors}</bdi>.} two {שתי הערות חדשות על {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}}, האחרונות מאת <bdi>{authors}</bdi>.} other {# הערות חדשות על {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}}, האחרונות מאת <bdi>{authors}</bdi>.}}"
     },
+    "formerAuthor": "חבר/ה לשעבר",
     "legalBanner": {
       "terms": "תנאי השימוש של testee משתנים ב-<time>{date}</time>.",
       "privacy": "מדיניות הפרטיות של testee משתנה ב-<time>{date}</time>.",
@@ -1801,7 +2073,7 @@
     "send": "שליחת <name>PDF</name>",
     "sent": "הדוח נשלח אל <bdi>{email}</bdi>",
     "sendFailed": "לא ניתן לשלוח את הדוח.",
-    "orSummary": "או לשלוח דרך",
+    "orSummary": "או שלחו סיכום קצר בצ׳אט",
     "via": "נשלח מ-testee",
     "candidatesFileName": "מועמדים {title}",
     "candidateCount": "{count, plural, one {מועמד אחד} two {# מועמדים} other {# מועמדים}}",
@@ -1833,6 +2105,10 @@
     "results": "תוצאות התרגול",
     "grade": "מהנקודות האפשריות",
     "notFinished": "לא הסתיים",
+    "finished": "הסתיים",
+    "answeredCard": "שאלות שנענו",
+    "answeredOf": "{done, number} מתוך {total, number}",
+    "startedCard": "התחיל",
     "noRounds": "עדיין אין סבבים.",
     "startFailed": "לא ניתן להתחיל את התרגול. נסו שוב.",
     "gradeLabel": "ציון",
@@ -1844,7 +2120,13 @@
     "hireButton": "יצירת ראיון",
     "timingPerQuestion": "{time} לכל שאלה בממוצע",
     "timingNone": "ללא הגבלת זמן",
-    "timingNote": "תרגול לא מושווה לאף אחד, אז קחו יותר זמן, או בלי הגבלה, אם צריך."
+    "timingNote": "תרגול לא מושווה לאף אחד, אז קחו יותר זמן, או בלי הגבלה, אם צריך.",
+    "facts": {
+      "topics": "נושאים",
+      "questions": "שאלות",
+      "level": "רמה",
+      "language": "שפה"
+    }
   },
   "openToOffers": {
     "title": "פתוח/ה להצעות עבודה",
@@ -1887,6 +2169,7 @@
     "englishOnly": "הדף הזה זמין באנגלית בלבד.",
     "startTitle": "בחנו את המועמדים שלכם",
     "startText": "צרו מבחן מיומנויות עם הגבלת זמן מתיאור המשרה שלכם.{priced, select, yes { {price} למועמד, בלי מנוי.} other {}}",
+    "contents": "בדף הזה",
     "startButton": "יצירת מבחן"
   },
   "compare": {
@@ -1912,7 +2195,16 @@
     "topics": "מה הוא בודק",
     "questions": "דוגמאות לשאלות ראיון",
     "questionsText": "שאלות כמו אלה, עם התשובות הנכונות. המועמדים שלכם מקבלים שאלות משלהם, שלעולם לא מוצגות בפומבי.",
-    "faq": "שאלות שחברות שואלות"
+    "faq": "שאלות שחברות שואלות",
+    "createOwn": "צרו מבחן משלכם",
+    "facts": {
+      "topics": "נושאים",
+      "level": "רמה",
+      "language": "שפה",
+      "price": "לכל מועמד"
+    },
+    "closingTitle": "מוכנים לבחון את המועמדים שלכם?",
+    "closingText": "הדביקו תיאור משרה וקבלו תוך דקות מבחן כזה, ויצירתו בחינם."
   },
   "ats": {
     "statusConnected": "מחובר",
@@ -1998,6 +2290,25 @@
     "bzStepCreate": "צרו מפתח API כמנהלים שרואים את כל המשרות: הוא פועל בשמכם, והתוצאות נכתבות בשמכם. ה-API והוובהוקים של Breezy כלולים בתוכנית Pro שלה.",
     "bzStepPaste": "הדביקו את המפתח למטה. את הוובהוק ב-Breezy HR נוסיף בעצמנו.",
     "atsGroup": "ATS",
+    "firstJobTitle": "קשרו את המשרה הראשונה",
+    "brokenText": "{ats} הפסיק לעבוד, ולכן מועמדים לא מוזמנים. חברו אותו מחדש כדי להמשיך.",
+    "stripMove": "מועמד מגיע לשלב שבחרתם ב-{ats}",
+    "stripInvite": "testee מזמינה אותו לראיון המקושר",
+    "stripResults": "התוצאות שלו חוזרות לפרופיל שלו ב-{ats}",
+    "rowStage": "שלב: <bdi>{stage}</bdi>",
+    "rowInterview": "ראיון: <link><bdi>{interview}</bdi></link>",
+    "invitedShort": "<n></n> הוזמנו",
+    "waitingShort": "<n></n> ממתינים",
+    "notInvitedShort": "<n></n> לא הוזמנו",
+    "summary": {
+      "status": "סטטוס",
+      "account": "חשבון",
+      "jobs": "משרות מקושרות",
+      "invited": "מועמדים שהוזמנו"
+    },
+    "connectedGroup": "מחוברים",
+    "statusBroken": "נדרש חיבור מחדש",
+    "rowText": "הזמינו מועמדים מ-{ats} ושלחו אליו בחזרה את התוצאות שלהם.",
     "messagingGroup": "אפליקציות הודעות",
     "apiAiAppsGroup": "API ואפליקציות AI",
     "searchInterview": "חיפוש ראיונות",
@@ -2005,6 +2316,29 @@
   },
   "slack": {
     "add": "הוספה ל-Slack",
+    "rowText": "קבלו התראה ב-Slack כשמועמדים מסיימים.",
+    "brokenText": "Slack הפסיק לקבל הודעות, ולכן הערוץ שלכם לא מקבל התראות. חברו אותו מחדש כדי להמשיך.",
+    "pointChannel": "בחרו את הערוץ שבו הצוות שלכם יראה אותן.",
+    "pointKinds": "בחרו אילו התראות יגיעו אליו.",
+    "pointPrivacy": "testee יכולה לפרסם רק באותו ערוץ. היא לא יכולה לקרוא את ה-Slack שלכם.",
+    "test": "שליחת הודעת בדיקה",
+    "testSent": "הודעת בדיקה נשלחה לערוץ שלכם.",
+    "testFailed": "לא ניתן לשלוח את הודעת הבדיקה.",
+    "groups": {
+      "candidates": "מועמדים",
+      "interviews": "ראיונות",
+      "billing": "חיוב",
+      "team": "צוות"
+    },
+    "samples": {
+      "candidate_finished": "Ann Lee (ann@example.com) סיימה את ״Data Analyst״: 82%.",
+      "ats_not_invited": "Ben Ortiz הגיע ממערכת הגיוס שלכם אך לא הוזמן ל-״Data Analyst״.",
+      "invite_undelivered": "ההזמנה אל ben@example.com ל-״Data Analyst״ לא נמסרה.",
+      "interview_ready": "״Data Analyst״ מוכן.",
+      "auto_top_up_charged": "הטעינה האוטומטית שלכם חויבה.",
+      "auto_top_up_failed": "הטעינה האוטומטית שלכם נכשלה. עדכנו את הכרטיס כדי שהיא תמשיך לפעול.",
+      "note_added": "Maya הוסיפה הערה על ״Data Analyst״: SQL חזק, שווה שיחה."
+    },
     "connectFailed": "לא ניתן לחבר את Slack.",
     "connected": "Slack מחובר.",
     "disconnectFailed": "לא ניתן לנתק את Slack.",
@@ -2019,9 +2353,9 @@
       "ats_not_invited": "מועמד/ת ממערכת ה-ATS שלכם לא הוזמן/ה",
       "invite_undelivered": "מייל הזמנה לא נמסר",
       "interview_ready": "ראיון מוכן",
-      "note_added": "חבר/ת צוות כתב/ה הערה, עם הטקסט שלה",
       "auto_top_up_charged": "בוצע חיוב של טעינה אוטומטית",
-      "auto_top_up_failed": "טעינה אוטומטית נכשלה"
+      "auto_top_up_failed": "טעינה אוטומטית נכשלה",
+      "note_added": "חבר/ת צוות כתב/ה הערה, עם הטקסט שלה"
     },
     "instructionsTitle": "איך Slack מקבל את ההתראות שלכם",
     "stepAdd": "לחצו על \"הוספה ל-Slack\": Slack ייפתח ויבקש מכם לאשר את testee בסביבת העבודה שלכם.",
@@ -2030,13 +2364,67 @@
     "stepPrivacy": "testee יכולה לפרסם רק בערוץ הזה. היא לא יכולה לקרוא את ה-Slack שלכם, וניתוק מסיר אותה."
   },
   "api": {
+    "firstKeyTitle": "צרו את המפתח הראשון",
+    "sdkDocs": "צפייה בתיעוד ה-SDK",
+    "sdkReady": "{count, plural, one {מוכן: אתר אחד יכול להציג את הראיונות שלכם.} two {מוכן: # אתרים יכולים להציג את הראיונות שלכם.} other {מוכן: # אתרים יכולים להציג את הראיונות שלכם.}}",
+    "sdkNotReady": "עדיין לא הוגדר: הוסיפו למטה אתר כדי שיוכל להציג את הראיונות שלכם.",
+    "sdkRules": "הדפים חייבים להשתמש ב-HTTPS. הוסיפו אתר אחד, או כל תת-דומיין שלו:",
+    "stepSite": "הוספת האתר",
+    "stepCode": "הדביקו את הקוד הזה בדף שלכם",
+    "stepSend": "שלחו אליו מועמדים",
+    "stepSendText": "השרת שלכם מזמין מועמד עם sign_in false ומעביר לדף את invite_url שהוא מקבל. לעולם אל תשימו את מפתח ה-API בדף.",
+    "thisSite": "האתר הזה",
+    "allSubdomains": "כל תתי-הדומיינים",
+    "localhostOn": "פעיל: כבו אותו לפני העלייה לאוויר.",
+    "firstWebhookTitle": "הוסיפו את הוובהוק הראשון",
+    "webhookSampleText": "testee שולחת בקשה חתומה כזו כשמשהו קורה:",
+    "lastDelivered": "נמסר לאחרונה <time>{date}</time>",
+    "webhookStates": {
+      "paused": "מושהה",
+      "unused": "עדיין לא בשימוש",
+      "active": "פעיל"
+    },
+    "webhookEvents": {
+      "started": "מועמד התחיל",
+      "finished": "מועמד סיים",
+      "undelivered": "לא הצלחנו להגיע למועמד",
+      "expired": "ההזמנה פגה",
+      "removed": "מועמד הוסר",
+      "ready": "הראיון מוכן"
+    },
+    "replaceKey": "יצירת מפתח חלופי",
+    "activityTitle": "פעילות",
+    "ipOpen": "כל כתובת IP יכולה להשתמש במפתח הזה. הגבילו אותו לכתובות של השרתים שלכם כדי להגן עליו יותר.",
+    "summary": {
+      "status": "סטטוס",
+      "access": "גישה",
+      "lastUsed": "שימוש אחרון",
+      "expires": "תוקף עד",
+      "created": "נוצר"
+    },
+    "warnings": {
+      "expired": "תוקף המפתח הזה פג, ולכן בקשות איתו נדחות. צרו מפתח חלופי כדי להמשיך.",
+      "expiring": "תוקף המפתח הזה יפוג בקרוב. צרו מפתח חלופי ועברו אליו לפני שהמפתח הזה יפסיק לעבוד."
+    },
+    "exampleText": "נסו אותו עם הבקשה הזו, שקוראת את הקרדיטים שלכם:",
+    "access": {
+      "read": "קריאה בלבד",
+      "write": "קריאה וכתיבה",
+      "custom": "מותאם אישית"
+    },
+    "states": {
+      "expired": "פג תוקף",
+      "expiring": "יפוג בקרוב",
+      "never_used": "לא היה בשימוש",
+      "active": "פעיל"
+    },
     "name": "API",
     "rowName": "API, SDK, וובהוקים",
     "rowText": "מפתחות ו-וובהוקים לחיבור הפלטפורמה שלכם.",
     "counts": "{keys, plural, one {מפתח אחד} two {שני מפתחות} other {# מפתחות}} · {webhooks, plural, one {וובהוק אחד} two {שני וובהוקים} other {# וובהוקים}}",
     "docs": "תיעוד למפתחים",
     "keysTitle": "מפתחות API",
-    "keysText": "מפתח פועל בשם מי שיצר אותו, ויכול לעשות רק מה שההרשאות שלו מתירות.",
+    "keysText": "מפתח פועל בשם החברה שלכם, כעצמו, ויכול לעשות רק מה שההרשאות שלו מתירות.\nהוא ממשיך לעבוד גם כשמי שיצר אותו עוזב.",
     "noKeys": "עדיין אין מפתחות.",
     "newKey": "מפתח חדש",
     "newKeyTitle": "מפתח API חדש",
@@ -2064,7 +2452,7 @@
     "removeKeyTitle": "למחוק את המפתח הזה?",
     "removeKeyText": "כל מה שמשתמש ב-\"<bdi>{name}</bdi>\" יפסיק לעבוד מיד.",
     "webhooksTitle": "וובהוקים",
-    "webhooksText": "testee מודיעה לכתובות האלה כשמועמד מתחיל, מסיים (עם התוצאות שלו) או מוסר, כשההזמנה לא הגיעה אליו או שתוקפה פג, וכשראיון מוכן. כל בקשה חתומה בסוד של הכתובת.",
+    "webhooksText": "testee מודיעה לכתובות האלה כשקורה אחד מהאירועים האלה, וכל בקשה נחתמת בסוד של הכתובת.",
     "noWebhooks": "עדיין אין וובהוקים.",
     "failing": "מושהה: הוא לא ענה במשך 3 ימים, ולכן לא נשלחים אליו אירועים. אירוע בדיקה שמתקבל מפעיל אותו מחדש.",
     "addWebhook": "הוספת וובהוק",
@@ -2151,7 +2539,6 @@
     "localhostText": "לבדיקות במחשב שלכם, בכל פורט. כבו את זה כשאתם עולים לאוויר.",
     "permissionsTitle": "הרשאות",
     "permissionsText": "מה המפתח הזה יכול לעשות. השינויים נשמרים מיד.",
-    "permissionsSaved": "ההרשאות נשמרו.",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2626,15 @@
       "tools": "כלים",
       "frameworks": "פריימוורקים לסוכנים"
     },
+    "intro": "חברו את testee לפלטפורמה שלכם, לשרת שלכם או לסוכן AI.",
+    "endpointsText": "כל הנתיבים, לפי מה שהם עובדים עליו. פתחו נתיב כדי לראות מה הוא דורש, מה הוא מחזיר ואילו שגיאות הוא נותן.",
+    "apiPages": {
+      "start": "תחילת עבודה",
+      "guides": "מדריכים",
+      "endpoints": "נקודות קצה",
+      "errors": "שגיאות",
+      "changelog": "יומן שינויים"
+    },
     "englishOnly": "הדף הזה זמין באנגלית בלבד.",
     "baseUrl": "כתובת URL בסיסית",
     "copyBaseUrl": "העתקת הכתובת",
@@ -2275,6 +2671,7 @@
   },
   "assistant": {
     "title": "מירה · עוזרת AI",
+    "name": "Mira",
     "company": "חברה",
     "allCompanies": "כל החברות",
     "newChat": "שיחה חדשה",
@@ -2331,7 +2728,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "איך testee עובד, כמה הוא עולה ומה המועמדים רואים, עם תשובות מהשאלות הנפוצות של testee. יש להתחבר כדי לשאול על החברות והמועמדים שלך.",
+        "text": "התחברו כדי לשאול על החברות והמועמדים שלכם.",
         "questions": {
           "what": "מה זה testee?",
           "pricing": "כמה זה עולה?",
@@ -2340,7 +2737,7 @@
         }
       },
       "no_company": {
-        "text": "בואו נתחיל: הראיון הראשון שלך, החברה שלך והאימות שלה.",
+        "text": "בואו נתחיל את הראיון הראשון שלכם.",
         "questions": {
           "firstInterview": "צור את הראיון הראשון שלי",
           "createCompany": "צור לי חברה",
@@ -2348,7 +2745,7 @@
         }
       },
       "unverified": {
-        "text": "כדאי לאמת את החברה כדי שמועמדים יראו מי מזמין אותם, וליצור ראיונות.",
+        "text": "אמתו את החברה שלכם וצרו ראיונות.",
         "questions": {
           "verify": "אמת את החברה שלי",
           "whyVerify": "למה לאמת את החברה?",
@@ -2356,7 +2753,7 @@
         }
       },
       "no_interviews": {
-        "text": "אפשר ליצור ראיון מתיאור משרה: השאלות נכתבות בשביל התפקיד.",
+        "text": "בואו ניצור את הראיון הראשון שלכם.",
         "questions": {
           "fromDescription": "צור ראיון מתיאור משרה",
           "template": "צור ראיון מתבנית",
@@ -2364,7 +2761,7 @@
         }
       },
       "no_candidates": {
-        "text": "אפשר להזמין מועמדים במייל, בקישור לשיתוף או מה-ATS שלך.",
+        "text": "בואו נזמין את המועמדים הראשונים.",
         "questions": {
           "invite": "הזמן מועמדים",
           "shareLink": "הפעל את הקישור לשיתוף",
@@ -2372,7 +2769,7 @@
         }
       },
       "has_candidates": {
-        "text": "אפשר לשאול על המועמדים: מי עבר, איך הם בהשוואה זה לזה ומה המשמעות של התוצאות.",
+        "text": "שאלו על המועמדים שלכם ועל התוצאות שלהם.",
         "questions": {
           "passed": "מי עבר השבוע?",
           "compare": "השווה בין המועמדים הטובים שלי",
@@ -2494,7 +2891,27 @@
     "feedbackLink": "צרו קשר"
   },
   "companyBilling": {
-    "reservedTab": "שמורים ({count, number})",
+    "reservedTab": "שמורים",
+    "download": {
+      "open": "הורדת ההיסטוריה",
+      "title": "הורדת ההיסטוריה",
+      "description": "בחרו תקופה לקובץ ה-CSV.",
+      "save": "הורדה",
+      "failed": "לא הצלחנו ליצור את הקובץ. נסו שוב."
+    },
+    "lowText": "הקרדיטים שלכם אוזלים. טענו קרדיטים כדי שאפשר יהיה להמשיך להזמין מועמדים.",
+    "summary": {
+      "available": "קרדיטים זמינים",
+      "candidates": "מועמדים שמכוסים",
+      "reserved": "קרדיטים שמורים",
+      "spent": "קרדיטים שנוצלו החודש"
+    },
+    "kinds": {
+      "all": "הכול",
+      "topups": "טעינות",
+      "charges": "חיובים",
+      "refunds": "החזרים"
+    },
     "reservedEmpty": "אין מועמדים שמחזיקים קרדיטים.",
     "reservedNote": "מועמדים שעדיין לא סיימו. הקרדיטים שלהם שמורים: מחויבים אם הם עונים, ומוחזרים אם לא.",
     "history": "היסטוריה",
@@ -2521,7 +2938,19 @@
     "name": "שרת MCP",
     "rowText": "חברו ל-testee את Claude, את ChatGPT ואפליקציות AI אחרות.",
     "title": "אפליקציות AI",
-    "subtitle": "הן פועלות בשמכם, בכל חברה שאתם חברים בה, עם ההרשאות שלכם.",
+    "subtitle": "הן פועלות בשמכם, בכל חברה שאתם חברים בה, עם ההרשאות שלכם. אתם מאשרים כל אחת ב-testee: אין צורך להדביק מפתח בשום מקום.",
+    "connectedTitle": "האפליקציות שלכם",
+    "otherApps": "אחרות",
+    "allowIn": "אפשור אפליקציות AI ב-<bdi>{company}</bdi>",
+    "allowOn": "חברי הצוות יכולים להשתמש בראיונות ובמועמדים של החברה הזו מאפליקציות ה-AI שחיברו.",
+    "allowOff": "כבוי: אפליקציות AI לא יכולות לקרוא או לשנות דבר בחברה הזו.",
+    "promptsTitle": "נסו לשאול",
+    "promptCopied": "הועתק",
+    "prompts": {
+      "passed": "מי עבר השבוע?",
+      "compare": "השווה בין המועמדים הטובים ביותר שלי לראיון Data Analyst.",
+      "invite": "הזמן את ann@example.com לראיון Data Analyst."
+    },
     "instructionsTitle": "חיבור אפליקציית AI ל-testee",
     "serverTitle": "כתובת השרת",
     "serverText": "הדביקו אותה באפליקציית ה-AI שלכם כמחבר מותאם אישית (שרת MCP).",
@@ -2679,6 +3108,10 @@
     "failed": "לא ניתן לייצא את הקובץ. נסו שוב."
   },
   "actionLog": {
+    "period": "תקופה",
+    "periodAll": "כל הזמן",
+    "periodDays": "{days, plural, one {היום האחרון} two {# הימים האחרונים} other {# הימים האחרונים}}",
+    "periodCustom": "מותאמת אישית",
     "empty": "עדיין אין פעולות.",
     "noMatches": "אין פעולות שמתאימות למסננים האלה.",
     "formerMember": "חבר צוות לשעבר",
@@ -2686,7 +3119,15 @@
     "deletedApiKey": "{via, select, mcp {דרך MCP עם מפתח שנמחק} other {דרך ה-API עם מפתח שנמחק}}",
     "deletedCandidate": "מועמד שנמחק",
     "anyMember": "כולם",
-    "anyAction": "כל הפעולות",
+    "anyAction": "הכול",
+    "clear": "ניקוי",
+    "download": {
+      "open": "הורדת היומן",
+      "title": "הורדת היומן",
+      "description": "בחרו תקופה לקובץ ה-CSV.",
+      "save": "הורדה",
+      "failed": "לא הצלחנו ליצור את הקובץ. נסו שוב."
+    },
     "member": "חבר צוות",
     "action": "פעולה",
     "from": "מ-",
@@ -2722,13 +3163,13 @@
       "candidate_deleted": "מחק/ה מועמד",
       "candidate_renamed": "שינה/תה שם של מועמד",
       "extra_time_set": "נתן/ה למועמד זמן נוסף",
-      "candidate_mode_set": "שינה/תה את מצב הראיון של מועמד",
       "results_viewed": "צפה/תה בתוצאות של מועמד",
       "report_emailed": "שלח/ה דוח באימייל",
       "bias_audit_exported": "ייצא/ה נתונים לביקורת הטיה",
       "member_invited": "הזמין/ה חבר צוות",
       "member_joined": "הצטרף/ה לחברה",
       "member_removed": "הסיר/ה חבר צוות",
+      "candidate_mode_set": "שינה/תה את מצב הראיון של מועמד",
       "member_role_changed": "שינה/תה תפקיד של חבר צוות",
       "ownership_transferred": "העביר/ה את החברה לבעלים אחרים",
       "company_renamed": "שינה/תה את שם החברה",
@@ -2751,6 +3192,7 @@
       "slack_notifications_changed": "שינה/תה את ההתראות של Slack",
       "api_key_created": "יצר/ה מפתח API",
       "api_key_deleted": "מחק/ה מפתח API",
+      "api_key_renamed": "שם של מפתח API שונה",
       "api_key_permissions_changed": "שינה/תה את ההרשאות של מפתח API",
       "api_key_ips_changed": "שינה/תה את כתובות ה-IP המורשות של מפתח API",
       "embed_domains_changed": "שינה/תה את הדומיינים המורשים",

@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "Einstellungen",
+    "preferences": "Einstellungen",
+    "accountId": "Konto-ID",
+    "deleteTitle": "Konto löschen",
+    "deleteNote": "Entfernt dein Konto und deine Daten dauerhaft.",
     "language": "Sprache",
     "languageNote": "Für die Oberfläche und die Antworten im Hilfe-Chat sowie die Sprache, in der neue Interviews starten. Du kannst ein Interview in jeder unterstützten Sprache erstellen.",
     "languageFailed": "Die Sprache konnte nicht geändert werden. Bitte versuche es erneut.",
@@ -12,7 +16,7 @@
     "account": "Dein Konto",
     "accountNote": "Gib diese ID an, wenn du uns wegen deines Kontos schreibst.",
     "yourData": "Deine Daten",
-    "yourDataNote": "Lade alles herunter, was testee. über dich speichert, oder lösche dein Konto.",
+    "yourDataNote": "Lade alles herunter, was testee über dich gespeichert hat.",
     "download": "Meine Daten herunterladen",
     "downloadFailed": "Deine Daten konnten nicht vorbereitet werden. Bitte versuche es erneut.",
     "delete": "Konto löschen",
@@ -50,7 +54,8 @@
     "system": "System",
     "light": "Hell",
     "dark": "Dunkel",
-    "topUp": "Aufladen"
+    "topUp": "Aufladen",
+    "workspace": "Mein Arbeitsbereich"
   },
   "nav": {
     "main": "Hauptmenü",
@@ -60,15 +65,19 @@
     "terms": "Nutzungsbedingungen",
     "docs": "Rechtliche Dokumente",
     "back": "Zurück",
-    "hiring": "dashboard",
+    "hiring": "Arbeitsbereich",
     "pricingLink": "preise",
     "faq": "FAQ",
     "contact": "Kontakt",
     "about": "Über uns",
     "practice": "Kostenlos üben",
     "tests": "Einstellungstests nach Rolle",
-    "preEmploymentTesting": "Einstellungstests",
-    "aiInterviews": "KI-Interviews",
+    "createTest": "Test erstellen",
+    "footerProduct": "Produkt",
+    "footerResources": "Ressourcen",
+    "footerCompany": "Unternehmen",
+    "footerLegal": "Rechtliches",
+    "footerTagline": "Faire Interviews mit Zeitlimit, erstellt aus deiner Stellenbeschreibung.",
     "compare": "Vergleich",
     "guides": "Ratgeber",
     "apiDocs": "Entwicklerdokumentation",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "Nach oben",
     "morePages": "Weitere Seiten",
+    "moreActions": "Weitere Aktionen",
     "copyLink": "Link kopieren",
     "linkCopied": "Link kopiert",
     "home": "Startseite",
     "cancel": "Abbrechen",
     "save": "Speichern",
     "saving": "Wird gespeichert…",
+    "saved": "Gespeichert",
     "close": "Schließen",
     "delete": "Löschen",
     "deleting": "Wird gelöscht…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "Etwas ist schiefgelaufen",
     "text": "Bitte versuche es erneut. Wenn es weiterhin passiert, komm später wieder.",
+    "reference": "Referenz: {id}",
     "notFound": "Seite nicht gefunden",
     "notFoundText": "Diese Seite existiert nicht oder wurde entfernt.",
     "report": "Melden",
@@ -152,16 +164,16 @@
   },
   "home": {
     "title": "Teste jeden\nStelle die Besten ein",
-    "text": "KI macht aus deiner Stellenbeschreibung ein professionelles Interview mit Zeitlimit.",
-    "price": "Nur {price} pro Kandidat."
+    "text": "KI macht aus deiner Stellenbeschreibung ein professionelles Interview mit Zeitlimit."
   },
   "start": {
     "placeholder": "Füge hier deine Stellenbeschreibung ein…",
     "description": "Stellenbeschreibung",
-    "submit": "Interview erstellen",
+    "submit": "Erstellen",
+    "newInterview": "Dein neues Interview",
     "whichCompany": "Für welches Unternehmen ist dieses Interview?",
     "firstCompany": "Wie heißt dein Unternehmen?",
-    "newCompany": "Ein neues Unternehmen",
+    "newCompany": "Neues Unternehmen",
     "companyName": "Name des Unternehmens",
     "freeCandidates": "Bei deinem ersten Unternehmen {count, plural, one {ist der erste Kandidat} other {sind die ersten # Kandidaten}} kostenlos.",
     "continue": "Weiter",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "Starts über den Link eines Interviews pro Stunde",
       "LINK_STARTS_PER_IP_HOUR": "Starts über Links pro Adresse und Stunde",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "Exporte für Bias-Audits pro Unternehmen und Tag",
+      "ACTION_LOG_EXPORTS_PER_DAY": "Downloads des Aktionsprotokolls pro Unternehmen und Tag",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "Downloads des Credit-Verlaufs pro Unternehmen und Tag",
       "MAX_BULK_INVITES": "Kandidaten in einer Liste oder Datei",
       "MAX_PENDING_INVITES": "Offene Team-Einladungen pro Unternehmen",
       "MEMBER_INVITES_PER_UNPAID_DAY": "Team-Einladungen pro nicht zahlendem Unternehmen und Tag",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "Aufrufe an das Bewerbermanagementsystem pro Unternehmen und Minute",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "Webhooks aus Bewerbermanagementsystemen pro Absenderadresse und Minute",
       "ATS_CONNECTS_PER_HOUR": "ATS-Verbindungen pro Unternehmen und Stunde",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "Slack-Testnachrichten pro Unternehmen und Stunde",
       "RESEND_DAILY_LIMIT": "E-Mails pro Tag über Resend",
       "RESEND_RESERVE_PERCENT": "Anteil der täglichen E-Mails über Resend, der für Massenversand gesperrt bleibt",
       "CAMPAIGNS_PER_KIND_DAY": "Kampagnen pro Art und Tag",
@@ -775,7 +790,9 @@
     "useFailed": "Mit dieser Vorlage konnte kein Interview gestartet werden. Bitte versuche es erneut.",
     "inProgress": "in Bearbeitung: {done}/{total, plural, one {# Thema} other {# Themen}}",
     "completed": "abgeschlossen",
-    "warningText": "<b>Vorlagen sind fertige Interviews für gängige Rollen.</b> Für eine genauere Passung erstelle ein Interview aus deiner Stellenbeschreibung."
+    "warningText": "<b>Etwas Passenderes gewünscht?</b> Erstelle ein Interview aus deiner Stellenbeschreibung.",
+    "contents": "{topics, plural, one {# Thema} other {# Themen}}, {questions, plural, one {# Frage} other {# Fragen}}, {minutes, plural, one {# Min.} other {# Min.}}",
+    "usedIn": "{count, plural, one {In # Interview verwendet} other {In # Interviews verwendet}}"
   },
   "billing": {
     "paidTitle": "Zahlung erhalten",
@@ -808,6 +825,10 @@
     "paysInChange": "Währung ändern",
     "candidates": "{count, plural, one {# Kandidat} other {# Kandidaten}}",
     "perCandidate": "{price}<unit>/Kandidat</unit>",
+    "enough": "Reicht für {count, plural, one {# Kandidaten} other {# Kandidaten}}",
+    "pay": "{price} bezahlen",
+    "quote": "{count, plural, one {# Kandidat} other {# Kandidaten}} zu je {price}, {credits, number} Credits",
+    "nextPrice": "{count, plural, one {# weiterer Kandidat} other {# weitere Kandidaten}} und jeder kostet {price}",
     "howMany": "Kandidaten zum Aufladen",
     "credits": "{count, plural, one {# Credit} other {# Credits}}",
     "candidatesWord": "{count, plural, one {Kandidat} other {Kandidaten}}",
@@ -863,6 +884,19 @@
     "markedWrong": "Danke. Sie wird geprüft und korrigiert oder ersetzt.",
     "markWrongFailed": "Konnte nicht zur Prüfung gesendet werden. Bitte versuche es erneut.",
     "ofCount": "von {count, number}",
+    "perCandidate": "Anzahl der Fragen pro Kandidat",
+    "limitShort": "Fragen pro Kandidat",
+    "topicsColumn": "Themen und Unterthemen",
+    "limitLine": "{limit, number} von {count, number} Fragen pro Kandidat",
+    "noMatches": "Hier gibt es keine Fragen.",
+    "summary": {
+      "total": "Fragen"
+    },
+    "filters": {
+      "all": "Alle",
+      "reported": "Gemeldet"
+    },
+    "disabledCount": "{count, plural, one {# Frage deaktiviert} other {# Fragen deaktiviert}}",
     "per": "pro",
     "candidate": "Kandidat",
     "correct": "Richtige Antwort",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "Du bist dran",
     "voiceThinking": "Denkt nach",
     "miraLabel": "KI-Interviewerin",
+    "voiceHeardAnswer": "Ich habe {answer} verstanden.",
+    "questionOf": "Frage {number, number} von {count, number}",
+    "answeredOf": "{done, number} von {total, number}",
+    "keysHint": "Mit A–{last} auswählen, mit Enter zur nächsten Frage.",
     "voiceStatus": {
       "off": "Mira macht sich bereit…",
       "starting": "Mira macht sich bereit…",
@@ -962,9 +1000,11 @@
     "cancelling": "Wird abgebrochen…",
     "cancelFailed": "Die Generierung konnte nicht abgebrochen werden. Bitte versuche es erneut.",
     "writing": "Deine Fragen werden generiert",
-    "drafting": "Deine Themen werden entworfen",
-    "writingNote": "Das dauert ein paar Minuten. Du kannst die Seite verlassen; wir arbeiten weiter.",
-    "draftingNote": "Wir lesen dein Ziel und planen, was abgedeckt wird.",
+    "drafting": "Deine Themen werden generiert",
+    "writingNote": "Das dauert ein paar Minuten. Du kannst die Seite verlassen; wir benachrichtigen dich, sobald es fertig ist.",
+    "draftingNote": "Wir lesen deine Stellenbeschreibung. Du prüfst die Themen, bevor Fragen geschrieben werden. Du kannst die Seite verlassen; wir machen weiter.",
+    "finishing": "Die Fragen werden geprüft und gespeichert…",
+    "goToInterviews": "Zu den Interviews",
     "topicsReady": "{ready, number} von {count, plural, one {# Thema} other {# Themen}} fertig",
     "reviewFailed": "Deine Prüfung konnte nicht gesendet werden. Bitte versuche es erneut.",
     "retryFailed": "Die Generierung konnte nicht wiederholt werden. Bitte versuche es erneut.",
@@ -982,13 +1022,18 @@
     "add": "Hinzufügen",
     "done": "Fertig",
     "reviewTitle": "Prüfe deine Themen",
-    "reviewText": "Entferne den Haken bei Themen, die du nicht brauchst, bearbeite sie oder beschreibe Änderungen. Jedes Thema bekommt eigene Fragen mit Antworten.",
+    "reviewText": "Jedes Thema bekommt eigene Fragen mit Antworten.",
     "editTopic": "<bdi>{topic}</bdi> bearbeiten",
-    "changesPlaceholder": "Optional: Beschreibe Änderungen, z. B. „Füge ein Thema zu Teamführung hinzu“",
-    "changes": "Änderungen an den Themen",
+    "changesPlaceholder": "z. B. „Ein Thema zu Teamführung hinzufügen“",
+    "changes": "KI bitten, die Themen zu ändern",
     "tooMany": "Wähle höchstens {max, plural, one {# Thema} other {# Themen}} oder beschreibe, wie sie zusammengefasst werden sollen.",
     "apply": "Änderungen übernehmen",
     "approve": "Freigeben und generieren",
+    "topicsChosen": "{chosen, number} von {count, plural, one {# Thema} other {# Themen}}",
+    "applyFirst": "Übernimm zuerst deine Änderung oder leere das Feld.",
+    "subtopicsNeeded": "Füge mindestens {count, plural, one {# Unterthema} other {# Unterthemen}} hinzu.",
+    "addTopic": "Thema hinzufügen",
+    "removeTopic": "Entfernen",
     "topicNameNeeded": "Gib dem Thema einen Namen."
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "Unternehmen",
     "empty": "Noch keine Unternehmen.",
     "owner": "Inhaber",
+    "search": "Unternehmen suchen",
+    "interviewsShort": "{count, plural, one {<n></n> Interview} other {<n></n> Interviews}}",
+    "membersShort": "{count, plural, one {<n></n> Mitglied} other {<n></n> Mitglieder}}",
+    "status": {
+      "low": "Credits werden knapp",
+      "verify": "Schließe die Verifizierung deines Unternehmens ab",
+      "finished": "{count, plural, one {<n></n> Kandidat hat} other {<n></n> Kandidaten haben}} diese Woche abgeschlossen"
+    },
     "interviewCount": "{count, plural, one {# Interview} other {# Interviews}}",
     "memberCount": "{count, plural, one {# Mitglied} other {# Mitglieder}}",
     "interviews": "Interviews",
@@ -1024,6 +1077,8 @@
     "brand": "Marke",
     "billing": "Abrechnung",
     "new": "Neues Unternehmen",
+    "newText": "Jedes Unternehmen hat eigene Interviews, ein eigenes Team und eigene Credits.",
+    "namePlaceholder": "z. B. Acme",
     "name": "Name des Unternehmens",
     "create": "Erstellen",
     "createFailed": "Das Unternehmen konnte nicht erstellt werden. Bitte versuche es erneut.",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, one {# Seitenwechsel} other {# Seitenwechsel}}",
     "copies": "{count, plural, one {# Kopierversuch} other {# Kopierversuche}}",
     "fastAnswers": "{count, plural, one {# schnelle Antwort} other {# schnelle Antworten}}",
+    "extraTimeLabel": "Zusatzzeit",
+    "summary": {
+      "result": "Ergebnis",
+      "timeTaken": "Benötigte Zeit",
+      "signals": "Integritätssignale",
+      "invited": "Eingeladen",
+      "finished": "Abgeschlossen",
+      "passed": "Bestanden",
+      "average": "Durchschnittsnote"
+    },
+    "copyLinkFailed": "Der Link konnte nicht kopiert werden. Bitte versuche es erneut.",
     "empty": "Noch keine Kandidaten eingeladen.",
     "noMatches": "Keine passenden Kandidaten.",
     "search": "Kandidaten nach E-Mail oder Name suchen",
     "status": "Status: {status}",
     "anyStatus": "jeder Status",
+    "allStatuses": "Alle",
     "progress": "Fortschritt",
     "grade": "Ergebnis",
     "resend": "Einladung erneut senden",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "Interviews",
+    "allStatuses": "Alle",
+    "candidatesShort": "{count, plural, one {<n></n> Kandidat} other {<n></n> Kandidaten}}",
+    "finishedShort": "<n></n> abgeschlossen",
+    "passedShort": "<n></n> bestanden",
+    "rowStatus": {
+      "failed": "Öffnen und erneut versuchen",
+      "generating": "Wird erstellt",
+      "undelivered": "{count, plural, one {<n></n> Einladung} other {<n></n> Einladungen}} nicht zugestellt",
+      "finished": "{count, plural, one {<n></n> Kandidat hat} other {<n></n> Kandidaten haben}} diese Woche abgeschlossen",
+      "ready": "Bereit: lade deine ersten Kandidaten ein"
+    },
     "interview": "Interview",
     "topicsTab": "Themen",
     "candidates": "Kandidaten",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "Noch keine Notizen. Schreib die erste für dein Team.",
     "discover": "Entdecken",
     "discoverLinkedIn": "LinkedIn-Profil von {name}",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "Personen erscheinen hier, sobald sie diese Themen üben und sich für Angebote öffnen.",
     "discoverText": "Personen, die offen für Angebote sind und die Themen dieses Interviews geübt haben. Neueste zuerst, ohne Rangfolge.",
     "discoverEmpty": "Noch hat niemand, der offen für Angebote ist, die Themen dieses Interviews geübt.",
     "discoverResults": "Übungsergebnisse",
@@ -1130,6 +1210,8 @@
     "notePosting": "Wird gepostet…",
     "noteEdited": "bearbeitet",
     "notePinned": "Angeheftet",
+    "noteShowMore": "Mehr anzeigen",
+    "noteShowLess": "Weniger anzeigen",
     "notePin": "Oben anheften",
     "noteUnpin": "Lösen",
     "noteFormerMember": "Ehemaliges Mitglied",
@@ -1139,8 +1221,20 @@
     "noteFailed": "Die Notiz konnte nicht gespeichert werden. Bitte versuche es erneut.",
     "new": "Neues Interview",
     "createTitle": "Interview erstellen",
+    "createIntro": "Füge eine Stellenbeschreibung ein. Du prüfst die Themen, bevor die Fragen geschrieben werden, und es ist kostenlos.",
+    "steps": {
+      "describe": "Rolle beschreiben",
+      "review": "Themen prüfen",
+      "invite": "Kandidaten einladen"
+    },
+    "startTemplate": "Mit einer Vorlage starten",
+    "startAts": "Mit einer Stelle aus deinem ATS starten",
+    "tryExample": "Beispiel ausprobieren",
     "try": "Als Kandidat ausprobieren",
     "newCandidate": "Neue(r) Kandidat(en)",
+    "settingsSharing": "Teilen",
+    "settingsRuns": "Ablauf",
+    "settingsAfter": "Danach und Datenschutz",
     "linkTitle": "Link zum Teilen",
     "linkText": "Für eine Stellenanzeige: Jeder mit dem Link kann das Interview machen. Jede Person wird wie ein eingeladener Kandidat berechnet.",
     "linkFailed": "Der Link konnte nicht geändert werden. Bitte versuche es erneut.",
@@ -1160,7 +1254,7 @@
     "generating": "Wird generiert…",
     "generationFailed": "Die Generierung ist fehlgeschlagen",
     "fallbackTitle": "interview",
-    "continueGeneration": "Generierung fortsetzen",
+    "continueGeneration": "Weiter",
     "empty": "Noch keine Interviews. Erstelle dein erstes.",
     "noMatches": "Keine passenden Interviews.",
     "search": "Interviews nach Titel suchen",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "E-Mail des Kandidaten",
     "inviteTab": {
       "one": "einzeln",
-      "many": "mehrere",
-      "file": "hochladen"
+      "many": "Liste",
+      "file": "Datei"
     },
-    "manyHint": "Ein Kandidat pro Zeile, mit oder ohne Namen,\nbis zu {count, number} auf einmal:",
-    "manyHintNoLimit": "Ein Kandidat pro Zeile, mit oder ohne Namen:",
-    "example": "Beispiel",
+    "inviteTitle": "Kandidaten einladen",
+    "manyHint": "Ein Kandidat pro Zeile, mit oder ohne Namen, bis zu {count, number} auf einmal.",
+    "manyHintNoLimit": "Ein Kandidat pro Zeile, mit oder ohne Namen.",
     "uploadFile": "Datei hochladen",
     "fileFormats": "CSV oder TXT, bis zu {count, plural, one {# Kandidat} other {# Kandidaten}}. Namen können in einer Namensspalte oder neben jeder E-Mail stehen.",
     "fileFormatsNoLimit": "CSV oder TXT. Namen können in einer Namensspalte oder neben jeder E-Mail stehen.",
@@ -1203,8 +1297,7 @@
       "unclear_name": "Namen als Name '<E-Mail>' schreiben: <bdi>{line}</bdi>",
       "more": "und {count, number} weitere"
     },
-    "exampleCsv": "Beispiel .csv",
-    "exampleTxt": "Beispiel .txt",
+    "exampleFiles": "Beispiel herunterladen: <csv>.csv</csv> oder <txt>.txt</txt>",
     "candidateName": "Name (optional)",
     "invitedMany": "{count, plural, one {# Kandidat} other {# Kandidaten}} eingeladen",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "Glückwunsch, dein Interview ist fertig",
-      "text": "<name><bdi>{title}</bdi></name> ist bereit für Kandidaten. So geht es weiter:",
-      "limits": "Lege fest, wie viele Fragen jeder Kandidat pro Thema bekommt.",
+      "text": "<name><bdi>{title}</bdi></name> ist bereit. Probiere es selbst aus, bevor du jemanden einlädst, und passe es bei Bedarf an.",
+      "limits": "Wie viele Fragen jeder Kandidat pro Thema bekommt.",
       "limitsAction": "Fragen festlegen",
-      "time": "Passe bei Bedarf die durchschnittliche Zeit pro Frage an.",
-      "timeAction": "Einstellungen öffnen",
-      "invite": "Lade Kandidaten ein.",
-      "inviteAction": "Zu den Kandidaten",
+      "time": "Die durchschnittliche Zeit pro Frage.",
+      "timeAction": "Zeit anpassen",
       "done": "Verstanden"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "Brauchst du mehr Zeit, zum Beispiel wegen einer Behinderung? Bitte <bdi>{company}</bdi> vor dem Start um eine persönliche Einladung: Hier kann keine Zeit hinzugefügt werden.",
     "people": "Die Fragen werden von KI geschrieben. Mitarbeitende von <bdi>{company}</bdi> prüfen die Ergebnisse und entscheiden; du kannst sie bitten, deines zu prüfen.",
     "stay": "Bleib auf dieser Seite: Verlassen, Kopieren und Antworten, die zu schnell kommen, um die Frage gelesen zu haben, werden erfasst, und das Unternehmen sieht, wenn deine Antwortzeiten oder Antworten nicht zur Schwierigkeit der Fragen passen (<link>Datenschutz</link>).",
-    "finished": "Dieses Interview ist bereits beendet.",
+    "finishedTitle": "Geschafft",
+    "finished": "Deine Antworten liegen bei <bdi>{company}</bdi>. Das Unternehmen prüft die Ergebnisse und entscheidet über die nächsten Schritte.",
+    "finishedPreview": "So sehen es deine Kandidaten. Dieser kostenlose Test erscheint nicht in deiner Kandidatenliste, und seine Antworten zählen nicht in die Statistik der Fragen.",
+    "finishedRights": "Du kannst <bdi>{company}</bdi> bitten, dein Ergebnis von einer Person prüfen zu lassen. <link>Datenschutz</link>",
+    "finishedAnswered": "Beantwortete Fragen",
+    "finishedTime": "Benötigte Zeit",
+    "signInAs": "Verwende die E-Mail-Adresse, an die diese Einladung gesendet wurde.",
+    "switchAccount": "Konto wechseln",
+    "progress": "Du hast {percent} geschafft.",
+    "progressLabel": "Dein Fortschritt",
+    "groups": {
+      "how": "So funktioniert es",
+      "time": "Deine Zeit",
+      "rights": "Deine Rechte und dein Datenschutz"
+    },
     "continue": "Fortsetzen",
     "start": "Annehmen und starten",
     "pledge": "Ich beantworte die Fragen selbst, ohne KI-Tools oder andere Personen.",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "Beigetreten",
     "invited": "Eingeladen",
+    "joinedOn": "Beigetreten am {date}",
+    "invitedOn": "Eingeladen am {date}",
+    "pendingTitle": "Offene Einladungen",
+    "firstTitle": "Lade dein erstes Teammitglied ein",
     "role": "Rolle",
     "roleFailed": "Die Rolle konnte nicht geändert werden.",
     "inviteTitle": "Einladung ins Unternehmen",
@@ -1281,6 +1390,11 @@
     "madeOwner": "<bdi>{email}</bdi> ist jetzt Inhaber."
   },
   "scorecard": {
+    "filters": {
+      "all": "Alle",
+      "correct": "Richtig",
+      "wrong": "Falsch"
+    },
     "timeOut": "Zeit abgelaufen",
     "leftPage": "Hat die Seite {count, plural, one {# Mal} other {# Mal}} verlassen",
     "answeredIn": "Beantwortet in <b>{time}</b>",
@@ -1298,7 +1412,7 @@
     "test": "Ein Interview generieren",
     "free": "Kostenlos",
     "candidate": "Jeder Kandidat, der mindestens eine Frage beantwortet",
-    "candidateVolume": "Mit Credits aus einer Aufladung ab {from}",
+    "candidateVolume": "Bei Aufladungen ab {from}",
     "perCandidate": "{price} pro Kandidat",
     "welcome": "{count, plural, one {Dein erster Kandidat} other {Deine ersten # Kandidaten}}",
     "credits": "Ein Kandidat kostet {credits, number} Credits, und Credits verfallen nie.",
@@ -1306,6 +1420,10 @@
     "referralsNote": "Teile den Link deines Unternehmens im Tab Empfehlungen.",
     "companyReferral": "Ein von dir eingeladenes Unternehmen lädt zum ersten Mal auf",
     "each": "je {count, number} Credits",
+    "fromPrice": "ab {price}",
+    "anyTopUp": "Bei jeder Aufladung",
+    "volumeTitle": "Mit größeren Aufladungen kostet ein Kandidat weniger",
+    "volumeText": "Je größer die Aufladung, desto weniger kostet jeder Kandidat.",
     "topUp": "Aufladen"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "Compliance-Dokumente für die Personalauswahl",
     "intro": "Dokumente für Unternehmen, die Kandidaten mit testee bewerten: Anleitung, Vorlagen und der Auftragsverarbeitungsvertrag.",
     "englishOnly": "Diese Dokumente sind nur auf Englisch verfügbar.",
-    "download": "{format} herunterladen",
+    "download": "<type>{format}</type> herunterladen",
     "readOnline": "Online lesen",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "Erstellen auf"
   },
   "referral": {
+    "title": "Ihr bekommt beide <n></n> Credits",
+    "text": "Das reicht für {count, plural, one {# Kandidaten} other {# Kandidaten}}. Teile deinen Link mit einem anderen Unternehmen.",
+    "empty": "Noch keine Prämien. Teile deinen Link, um deine erste zu verdienen.",
+    "steps": {
+      "share": "Teile deinen Link mit einem anderen Unternehmen.",
+      "create": "Es erstellt sein Unternehmen darüber.",
+      "reward": "Nach seiner ersten Aufladung, egal in welcher Höhe, bekommt ihr beide die Credits."
+    },
+    "summary": {
+      "referred": "Empfohlene Unternehmen",
+      "earned": "Verdiente Credits",
+      "left": "Verbleibende Prämien in diesem Jahr",
+      "leftValue": "{left, number} von {total, number}"
+    },
     "companyNote": "Ihr bekommt beide {reward, number} Credits, wenn es zum ersten Mal auflädt, egal mit welchem Betrag.",
     "deletedCompany": "Ein gelöschtes Unternehmen",
     "credits": "+{count, number} Credits",
@@ -1398,53 +1530,39 @@
     "intro": "Ein Kandidat kostet {credits, number} Credits, und Credits verfallen nie.",
     "noCompany": "Credits gehören einem Unternehmen. Erstelle zuerst dein Unternehmen und lade es dann hier auf.",
     "createCompany": "Unternehmen erstellen",
+    "allCompanies": "Alle Unternehmen",
     "pricing": "Preise"
   },
   "landing": {
-    "more": "So funktioniert's",
     "demos": "Video",
-    "videoTooltip": "Sieh dir an, wie testee funktioniert",
     "watchVideo": "Video ansehen",
     "howItWorks": "So funktioniert’s",
     "askAgent": "Mira fragen",
     "create": {
+      "draftingNote": "Deine Stellenbeschreibung wird gelesen.",
       "title": "Ein Interview in Minuten erstellen",
       "text": "Füge eine Stellenbeschreibung ein, passe die Themen an, und dein Interview ist in Minuten fertig.",
       "notes": {
-        "questions": "{count, plural, one {# Frage} other {# Fragen}} pro Thema",
         "templates": "fertige Vorlagen verfügbar",
         "expert": "kein Fachexperte nötig"
       },
       "describe": "<n>1.</n> Beschreibung einfügen",
       "adjust": "<n>2.</n> Themen anpassen",
       "menu": {
-        "cut": "Ausschneiden",
-        "copy": "Kopieren",
         "paste": "Einfügen"
       },
-      "ready": "<n>3.</n> Dein Interview ist fertig",
-      "invited": "<n>4.</n> Der Kandidat erhält die Einladung",
+      "ready": "<n>3.</n> Das Interview ist fertig",
+      "invited": "<n>4.</n> Die Einladung ist angekommen",
       "status": "Bereit",
       "email": {
-        "search": "In E-Mails suchen",
-        "compose": "Schreiben",
         "inbox": "Posteingang",
-        "starred": "Markiert",
-        "sent": "Gesendet",
-        "drafts": "Entwürfe",
         "from": "testee.",
-        "toMe": "an mich",
         "now": "jetzt",
         "subject": "Interview-Einladung von {company}",
-        "preheader": "Absolviere „{title}“ auf testee. Melde dich mit {email} an, um zu beginnen.",
         "heading": "Einladung zum Interview",
         "invited": "<b>{company}</b> lädt dich zum Interview „{title}“ auf testee ein.",
         "signIn": "Melde dich mit {email} an, um zu beginnen. Nur diese Adresse kann das Interview absolvieren, und du hast einen Versuch.",
-        "button": "Einladung öffnen",
-        "pasteLink": "Oder füge diesen Link in deinen Browser ein",
-        "footer": "Diese E-Mail wurde an {email} gesendet, weil jemand diese Adresse auf testee eingeladen hat. Wenn du sie nicht erwartet hast, kannst du sie ignorieren.",
-        "stopCompany": "Keine E-Mails mehr von {company}",
-        "operator": "testee wird von {name} betrieben, {address}."
+        "button": "Einladung öffnen"
       },
       "phone": {
         "describe": "Füge eine Stellenbeschreibung ein oder schreib ein paar Worte zur Rolle.",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "Ein Mensch entscheidet",
-          "text": "Das Ergebnis unterstützt deine Entscheidung, trifft sie aber nicht. Integritätshinweise sind ein Grund, genauer hinzusehen, kein Beweis."
+          "text": "Der Score unterstützt deine Entscheidung. Integritätssignale sind ein Grund, genauer hinzusehen, kein Beweis."
         },
         "fair": {
           "title": "Fair zu jedem Kandidaten",
-          "text": "Derselbe Timer und dieselbe Mischung an Fragetypen, zufällig gezogene Fragen für jede Person, zusätzliche Zeit für alle, die sie brauchen."
+          "text": "Derselbe Timer und dieselbe Fragenmischung für alle, zufällig gezogene Fragen, Zusatzzeit für alle, die sie brauchen."
         },
         "laws": {
           "title": "Für Compliance gebaut",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "Jede Aktion protokolliert",
-          "text": "Ein Inhaber sieht, wer im Unternehmen was getan hat, sicher 12 Monate lang auf EU-Servern gespeichert."
+          "text": "Ein Inhaber sieht, wer was getan hat, 12 Monate lang auf EU-Servern gespeichert."
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "Noch Fragen?",
       "videos": "videos",
       "faq": "FAQ",
-      "guides": "ratgeber",
-      "features": "funktionen",
-      "hiringFlow": "recruiting-ablauf"
+      "guides": "ratgeber"
     },
     "closing": {
       "title": "Erstelle dein erstes Interview\nEs ist kostenlos",
@@ -1672,7 +1788,8 @@
         "time": "~10 Min. pro Rolle, keine pro Kandidat",
         "cost": "{price} pro Kandidat, der antwortet"
       },
-      "more": "Mit anderen Tools vergleichen"
+      "more": "Mit anderen Tools vergleichen",
+      "best": "Beste Wahl"
     },
     "freeToStart": {
       "title": "Alles ist kostenlos\nDu zahlst pro Kandidat",
@@ -1689,6 +1806,7 @@
       "each": "({price} pro Kandidat)",
       "free": "{count, plural, one {# kostenloser Kandidat} other {# kostenlose Kandidaten}} zum Start",
       "perCandidate": "pro Kandidat",
+      "bestPrice": "Bester Preis",
       "pack": "{count, number} für {price}",
       "see": "Preise ansehen",
       "notes": {
@@ -1698,11 +1816,159 @@
         "refund": "ungenutzte bezahlte credits erstattbar"
       },
       "currencies": "{count, plural, one {# Währung} other {# Währungen}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Acme hilft Onlineshops, ihren Kunden mit KI zu antworten.\nWir suchen einen AI Engineer (m/w/d), der unsere LLM-Features entwickelt.\n• 3+ Jahre Erfahrung mit Python\n• LLM-Anwendungen, RAG und Vektorsuche\n• Evaluierung und Monitoring von Modellen\nRemote, flexible Arbeitszeiten, Weiterbildungsbudget.",
+        "title": "AI Engineer",
+        "topics": {
+          "llm": {
+            "name": "LLM-Grundlagen",
+            "subtopics": ["Tokens", "Prompting", "Kontextfenster"]
+          },
+          "rag": {
+            "name": "Retrieval-Augmented Generation",
+            "subtopics": ["Embeddings", "Chunking", "Vektorsuche"]
+          },
+          "python": {
+            "name": "Python für ML-Systeme",
+            "subtopics": ["asyncio", "Type Hints"]
+          }
+        },
+        "renamed": " im großen Maßstab",
+        "subtopicAdded": " und Tests",
+        "change": "Füge ein Thema zur Bewertung von LLM-Ausgaben hinzu",
+        "newTopic": {
+          "name": "LLM-Evaluierung",
+          "subtopics": ["Testsets", "LLM als Bewerter", "Metriken"]
+        }
+      },
+      "candidates": {
+        "title": "Data Analyst",
+        "questions": {
+          "median": {
+            "topic": "Statistik",
+            "text": "Ein paar sehr große Bestellungen verzerren deinen durchschnittlichen Bestellwert. Welche Kennzahl beschreibt eine typische Bestellung am besten?",
+            "options": [
+              "Der Mittelwert der Bestellwerte",
+              "Der Median der Bestellwerte",
+              "Die Spannweite der Bestellwerte",
+              "Die Standardabweichung der Bestellwerte"
+            ]
+          },
+          "revenue": {
+            "topic": "Statistik",
+            "text": "Der Wochenumsatz in deinem Dashboard ist direkt nach einer Änderung an der Datenpipeline um 20 % gefallen. Was prüfst du zuerst?",
+            "options": [
+              "Zeilenanzahl vor und nach der Änderung vergleichen",
+              "Nach doppelten oder fehlenden Datumswerten suchen",
+              "Das Farbschema des Dashboards ändern",
+              "Den Vertrieb fragen, ob Kunden nicht mehr kaufen"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "Das Marketing möchte die Regionen, deren Gesamtumsatz über 100 liegt. Was liefert diese Abfrage?",
+            "options": [
+              "Nur North",
+              "Nur South",
+              "North und South",
+              "Keine Zeilen"
+            ]
+          },
+          "chart": {
+            "topic": "Visualisierung",
+            "text": "Du sollst zeigen, wie sich die monatlichen Registrierungen in den letzten zwei Jahren entwickelt haben. Welches Diagramm zeigt diesen Trend am besten?",
+            "options": [
+              "Ein Kreisdiagramm der Registrierungen pro Monat",
+              "Ein Liniendiagramm der Registrierungen pro Monat",
+              "Ein Streudiagramm der Registrierungen gegenüber dem Umsatz",
+              "Ein Histogramm der monatlichen Registrierungszahlen"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "Product Manager",
+        "topics": [
+          "Produktstrategie",
+          "Kennzahlen",
+          "Stakeholder",
+          "Roadmap-Planung",
+          "User Research",
+          "Priorisierung",
+          "Experimente",
+          "Preisgestaltung",
+          "Go-to-Market",
+          "Kommunikation"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "Was kommt zuerst, bevor du ein neues Feature entwickelst?",
+            "options": [
+              "Das Problem mit Nutzern prüfen",
+              "Die technische Spezifikation schreiben",
+              "Das Launch-Datum festlegen",
+              "Die Screens gestalten"
+            ]
+          },
+          "metrics": {
+            "text": "Die Conversion-Rate fiel von 4 % auf 3 %. Wie stark ist das im Verhältnis zu vorher?",
+            "options": ["1 %", "25 %", "33 %", "75 %"]
+          },
+          "stakeholders": {
+            "text": "Ein Partnerteam ist mit deinen Prioritäten nicht einverstanden. Was tust du zuerst?",
+            "options": [
+              "An deine Führungskraft eskalieren",
+              "Fragen, was sie brauchen und warum",
+              "Deinen Plan unverändert lassen",
+              "Deine Prioritäten aufgeben"
+            ]
+          }
+        },
+        "chat": {
+          "name": "Recruiting-Team",
+          "initials": "RT"
+        },
+        "notes": [
+          "Der Hiring Manager will bis Freitag eine Shortlist mit zwei Kandidaten.",
+          "Daniel war im Telefoninterview stark bei Stakeholdern, schwächer bei Kennzahlen.",
+          "Sofia hat um mehr Zeit gebeten; ich melde mich morgen bei ihr."
+        ],
+        "pdf": "product-manager-kandidaten.pdf"
+      },
+      "slack": {
+        "channels": ["allgemein", "recruiting", "engineering"],
+        "channelsTitle": "Channels",
+        "peopleTitle": "Direktnachrichten",
+        "appsTitle": "Apps",
+        "app": "APP",
+        "composer": "Nachricht an #{channel}",
+        "finished": "{name} ({email}) hat „{title}“ abgeschlossen: {grade} %.",
+        "noted": "{author} hat eine Notiz zu „{title}“ hinzugefügt:",
+        "button": "In testee öffnen"
+      },
+      "invite": {
+        "title": "B2B Account Executive"
+      },
+      "askAgent": {
+        "interview": "Data Analyst"
+      }
     }
   },
   "faq": {
     "title": "Häufige Fragen",
-    "intro": "Keine Antwort gefunden? Frag Mira, die KI-Assistentin (die Schaltfläche oben auf der Seite), oder schreib uns an die Adresse in der Datenschutzerklärung.",
+    "intro": "Antworten zu testee, vom ersten Interview bis zu deinen Daten.",
+    "groups": {
+      "start": "Erste Schritte",
+      "candidates": "Kandidaten",
+      "pricing": "Preise und Credits",
+      "results": "Ergebnisse und dein Team",
+      "tools": "Integrationen",
+      "privacy": "Datenschutz und dein Konto"
+    },
+    "closingTitle": "Noch eine Frage?",
+    "closingText": "Frag Mira, unseren KI-Assistenten, oder schreib uns.",
     "description": "Antworten zu testee: wie Interviews aus einer Stellenbeschreibung entstehen, was Kandidaten sehen, Preise und Credits, Ergebnisse, ATS-Integrationen, Sprachen und deine Daten."
   },
   "contact": {
@@ -1731,9 +1997,20 @@
     "description": "testee macht aus einer Stellenbeschreibung in wenigen Minuten ein faires Interview mit Zeitlimit, zu einem Preis, den sich jedes Team leisten kann. Und jeder kann kostenlos für Interviews üben.",
     "company": {
       "title": "Warum es uns gibt",
+      "titles": {
+        "problem": "Einstellen ist schwer zu meistern",
+        "approach": "Ein faires Interview in Minuten",
+        "practice": "Kostenlos üben für alle"
+      },
       "problem": "Einstellungen stützen sich oft auf einen Lebenslauf und ein gutes Gespräch, und beides kann täuschen. Die Bewertungstools, die helfen, sind für große Unternehmen bepreist, mit Jahresverträgen und Lizenzgebühren pro Nutzer, also verzichten die meisten Teams darauf.",
       "approach": "testee macht aus einer Stellenbeschreibung in wenigen Minuten ein Interview mit Zeitlimit, für jede Rolle. Jeder Kandidat bekommt eigene Fragen, du siehst, wer den Job beherrscht und warum, und du zahlst nur für Kandidaten, die es wirklich machen.",
       "practice": "Außerdem wollen wir, dass die Vorbereitung auf ein Interview für alle kostenlos ist. Jeder kann unsere Übungsinterviews für eine Rolle machen, sein Ergebnis und jede richtige Antwort sehen und erneut üben, ohne Kosten."
+    },
+    "closing": {
+      "title": "Überzeuge dich selbst",
+      "text": "Erstelle ein Interview aus deiner Stellenbeschreibung oder übe kostenlos für eine Rolle.",
+      "create": "Test erstellen",
+      "practice": "Kostenlos üben"
     },
     "founder": {
       "quote": "Gut einzustellen sollte kein Privileg großer Unternehmen mit großen Budgets sein. Ich habe testee gebaut, damit jedes Team aus einer Stellenbeschreibung in wenigen Minuten ein faires Interview machen, sehen kann, wer den Job wirklich beherrscht, und nur für die Kandidaten zahlt, die es machen. Ich hoffe, es hilft dir, schneller die richtigen Leute zu finden.",
@@ -1751,20 +2028,18 @@
     "title": "Benachrichtigungen",
     "unread": "{count, plural, one {# ungelesene Benachrichtigung} other {# ungelesene Benachrichtigungen}}",
     "empty": "Noch nichts Neues.",
-    "formerAuthor": "einem ehemaligen Mitglied",
     "kinds": {
       "question_flagged": "{count, plural, one {Eine Frage zu „<bdi>{topic}</bdi>“ {title, select, none {in einem Interview} other {in „<bdi>{title}</bdi>“}} wurde zur Prüfung gemeldet.} other {# Fragen {title, select, none {in einem Interview} other {in „<bdi>{title}</bdi>“}} wurden zur Prüfung gemeldet.}}",
       "question_fixed": "{count, plural, one {Die KI hat eine gemeldete Frage zu „<bdi>{topic}</bdi>“ {title, select, none {in einem Interview} other {in „<bdi>{title}</bdi>“}} korrigiert.} other {Die KI hat # gemeldete Fragen {title, select, none {in einem Interview} other {in „<bdi>{title}</bdi>“}} korrigiert.}}",
       "referral_rewarded": "Jemand, den du eingeladen hast, hat aufgeladen. Du hast {credits, plural, one {# Credit} other {# Credits}} bekommen.",
-      "auto_top_up_on": "Automatisches Aufladen ist an: {price} zzgl. Steuern, wenn die verfügbaren Credits unter {threshold, number} fallen.",
       "auto_top_up_charged": "Automatisches Aufladen hat {credits, plural, one {# Credit} other {# Credits}} hinzugefügt.",
       "auto_top_up_failed": "Automatisches Aufladen konnte die Karte nicht belasten. Lade auf, damit dein Guthaben nicht ausgeht.",
+      "auto_top_up_on": "Automatisches Aufladen ist an: {price} zzgl. Steuern, wenn die verfügbaren Credits unter {threshold, number} fallen.",
       "auto_top_up_paused": "Automatisches Aufladen ist pausiert: Die Karte wurde abgelehnt. Aktualisiere die Karte, um es wieder einzuschalten.",
       "auto_top_up_price_change": "Ab <time>{date}</time> kostet jedes automatische Aufladen {newPrice} statt {price}.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> hat {title, select, none {ein Interview} other {„<bdi>{title}</bdi>“}} abgeschlossen{grade, select, none {.} other {: {grade}.}}} other {# Kandidaten haben {title, select, none {ein Interview} other {„<bdi>{title}</bdi>“}} abgeschlossen.}}",
       "invite_undelivered": "{count, plural, one {Die Einladung an <bdi>{email}</bdi> für {title, select, none {ein Interview} other {„<bdi>{title}</bdi>“}} wurde nicht zugestellt.} other {# Einladungen für {title, select, none {ein Interview} other {„<bdi>{title}</bdi>“}} wurden nicht zugestellt.}}",
       "interview_ready": "{title, select, none {Ein Interview ist fertig.} other {Das Interview „<bdi>{title}</bdi>“ ist fertig.}}",
-      "note_added": "{count, plural, =1 {Neue Notiz zu {title, select, none {einem Interview} other {„<bdi>{title}</bdi>“}} von <bdi>{authors}</bdi>.} other {# neue Notizen zu {title, select, none {einem Interview} other {„<bdi>{title}</bdi>“}}, die neuesten von <bdi>{authors}</bdi>.}}",
       "interview_cancelled": "{title, select, none {Ein Interview} other {Das Interview „<bdi>{title}</bdi>“}} wurde abgebrochen: Die Themen wurden zu lange nicht freigegeben.",
       "verification_approved": "„<bdi>{name}</bdi>“ ist für <bdi>{domain}</bdi> verifiziert.",
       "verification_declined": "{reason, select, none {Die Verifizierung von „<bdi>{name}</bdi>“ wurde abgelehnt.} other {Die Verifizierung von „<bdi>{name}</bdi>“ wurde abgelehnt: <bdi>{reason}</bdi>}}",
@@ -1776,8 +2051,10 @@
       "news": "Neuigkeiten: <bdi>{title}</bdi>",
       "legal_terms": "Neue Nutzungsbedingungen gelten ab <time>{date}</time>.",
       "legal_privacy": "Eine neue Datenschutzerklärung gilt ab <time>{date}</time>.",
-      "legal_dpa": "Ein neuer Auftragsverarbeitungsvertrag gilt ab <time>{date}</time>."
+      "legal_dpa": "Ein neuer Auftragsverarbeitungsvertrag gilt ab <time>{date}</time>.",
+      "note_added": "{count, plural, =1 {Neue Notiz zu {title, select, none {einem Interview} other {„<bdi>{title}</bdi>“}} von <bdi>{authors}</bdi>.} other {# neue Notizen zu {title, select, none {einem Interview} other {„<bdi>{title}</bdi>“}}, die neuesten von <bdi>{authors}</bdi>.}}"
     },
+    "formerAuthor": "einem ehemaligen Mitglied",
     "legalBanner": {
       "terms": "Die Nutzungsbedingungen von testee ändern sich am <time>{date}</time>.",
       "privacy": "Die Datenschutzerklärung von testee ändert sich am <time>{date}</time>.",
@@ -1801,7 +2078,7 @@
     "send": "<name>PDF</name> senden",
     "sent": "Bericht an <bdi>{email}</bdi> gesendet",
     "sendFailed": "Der Bericht konnte nicht gesendet werden.",
-    "orSummary": "Oder senden über",
+    "orSummary": "Oder sende eine kurze Zusammenfassung per Chat",
     "via": "Gesendet von testee",
     "candidatesFileName": "Kandidaten {title}",
     "candidateCount": "{count, plural, one {# Kandidat} other {# Kandidaten}}",
@@ -1833,6 +2110,10 @@
     "results": "Übungsergebnisse",
     "grade": "der möglichen Punkte",
     "notFinished": "nicht beendet",
+    "finished": "Abgeschlossen",
+    "answeredCard": "Beantwortete Fragen",
+    "answeredOf": "{done, number} von {total, number}",
+    "startedCard": "Gestartet",
     "noRounds": "Noch keine Übungsrunden.",
     "startFailed": "Die Übung konnte nicht gestartet werden. Bitte versuche es erneut.",
     "gradeLabel": "Ergebnis",
@@ -1844,7 +2125,13 @@
     "hireButton": "Interview erstellen",
     "timingPerQuestion": "Durchschnittlich {time} pro Frage",
     "timingNone": "Ohne Zeitlimit",
-    "timingNote": "Übungen werden mit niemandem verglichen: Nimm dir mehr Zeit oder gar kein Limit, wenn du es brauchst."
+    "timingNote": "Übungen werden mit niemandem verglichen: Nimm dir mehr Zeit oder gar kein Limit, wenn du es brauchst.",
+    "facts": {
+      "topics": "Themen",
+      "questions": "Fragen",
+      "level": "Level",
+      "language": "Sprache"
+    }
   },
   "openToOffers": {
     "title": "Offen für Angebote",
@@ -1887,6 +2174,7 @@
     "englishOnly": "Diese Seite gibt es nur auf Englisch.",
     "startTitle": "Teste deine Kandidaten",
     "startText": "Erstelle einen Einstellungstest mit Zeitlimit aus deiner Stellenbeschreibung.{priced, select, yes { {price} pro Kandidat, ohne Abo.} other {}}",
+    "contents": "Auf dieser Seite",
     "startButton": "Test erstellen"
   },
   "compare": {
@@ -1912,7 +2200,16 @@
     "topics": "Was getestet wird",
     "questions": "Beispielfragen aus dem Interview",
     "questionsText": "Fragen wie diese, mit den richtigen Antworten. Deine Kandidaten bekommen eigene, die nie öffentlich gezeigt werden.",
-    "faq": "Fragen, die Unternehmen stellen"
+    "faq": "Fragen, die Unternehmen stellen",
+    "createOwn": "Eigenen Test erstellen",
+    "facts": {
+      "topics": "Themen",
+      "level": "Level",
+      "language": "Sprache",
+      "price": "Pro Kandidat"
+    },
+    "closingTitle": "Bereit, deine Kandidaten zu testen?",
+    "closingText": "Füge eine Stellenbeschreibung ein und erhalte in Minuten einen Test wie diesen, kostenlos zu erstellen."
   },
   "ats": {
     "statusConnected": "verbunden",
@@ -1998,6 +2295,25 @@
     "bzStepCreate": "Erstelle einen API-Schlüssel als Admin, der alle Stellen sieht: Er handelt in deinem Namen, und Ergebnisse werden unter deinem Namen eingetragen. Die API und Webhooks von Breezy gibt es im Pro-Tarif.",
     "bzStepPaste": "Füge den Schlüssel unten ein. Den Webhook in Breezy HR richten wir selbst ein.",
     "atsGroup": "ATS",
+    "firstJobTitle": "Verknüpfe deine erste Stelle",
+    "brokenText": "{ats} funktioniert nicht mehr, deshalb werden keine Kandidaten eingeladen. Verbinde es neu, um fortzufahren.",
+    "stripMove": "Ein Kandidat erreicht in {ats} die von dir gewählte Phase",
+    "stripInvite": "testee lädt ihn zum verknüpften Interview ein",
+    "stripResults": "Seine Ergebnisse gehen zurück in sein {ats}-Profil",
+    "rowStage": "Phase: <bdi>{stage}</bdi>",
+    "rowInterview": "Interview: <link><bdi>{interview}</bdi></link>",
+    "invitedShort": "<n></n> eingeladen",
+    "waitingShort": "<n></n> wartend",
+    "notInvitedShort": "<n></n> nicht eingeladen",
+    "summary": {
+      "status": "Status",
+      "account": "Konto",
+      "jobs": "Verknüpfte Stellen",
+      "invited": "Eingeladene Kandidaten"
+    },
+    "connectedGroup": "Verbunden",
+    "statusBroken": "Neu verbinden nötig",
+    "rowText": "Lade Kandidaten aus {ats} ein und sende ihre Ergebnisse zurück.",
     "messagingGroup": "Messenger",
     "apiAiAppsGroup": "API & KI-Apps",
     "searchInterview": "Interviews suchen",
@@ -2005,6 +2321,29 @@
   },
   "slack": {
     "add": "Zu Slack hinzufügen",
+    "rowText": "Lass dich in Slack benachrichtigen, wenn Kandidaten fertig sind.",
+    "brokenText": "Slack nimmt keine Nachrichten mehr an, deshalb erhält dein Kanal keine Benachrichtigungen. Verbinde es neu, um fortzufahren.",
+    "pointChannel": "Wähle den Kanal, in dem dein Team sie sehen soll.",
+    "pointKinds": "Wähle, welche Benachrichtigungen dorthin gehen.",
+    "pointPrivacy": "testee kann nur in diesen Kanal posten. Dein Slack kann es nicht lesen.",
+    "test": "Test senden",
+    "testSent": "Testnachricht an deinen Kanal gesendet.",
+    "testFailed": "Die Testnachricht konnte nicht gesendet werden.",
+    "groups": {
+      "candidates": "Kandidaten",
+      "interviews": "Interviews",
+      "billing": "Abrechnung",
+      "team": "Team"
+    },
+    "samples": {
+      "candidate_finished": "Ann Lee (ann@example.com) hat „Data Analyst“ abgeschlossen: 82 %.",
+      "ats_not_invited": "Ben Ortiz kam aus deinem ATS, wurde aber nicht zu „Data Analyst“ eingeladen.",
+      "invite_undelivered": "Die Einladung an ben@example.com zu „Data Analyst“ wurde nicht zugestellt.",
+      "interview_ready": "„Data Analyst“ ist bereit.",
+      "auto_top_up_charged": "Deine automatische Aufladung wurde abgebucht.",
+      "auto_top_up_failed": "Deine automatische Aufladung ist fehlgeschlagen. Aktualisiere deine Karte, damit sie weiterläuft.",
+      "note_added": "Maya hat eine Notiz zu „Data Analyst“ hinzugefügt: starkes SQL, einen Anruf wert."
+    },
     "connectFailed": "Slack konnte nicht verbunden werden.",
     "connected": "Slack ist verbunden.",
     "disconnectFailed": "Slack konnte nicht getrennt werden.",
@@ -2019,9 +2358,9 @@
       "ats_not_invited": "Ein Kandidat aus deinem ATS wurde nicht eingeladen",
       "invite_undelivered": "Eine Einladungs-E-Mail wurde nicht zugestellt",
       "interview_ready": "Ein Interview ist fertig",
-      "note_added": "Ein Teammitglied hat eine Notiz geschrieben, mit ihrem Text",
       "auto_top_up_charged": "Ein automatisches Aufladen wurde abgebucht",
-      "auto_top_up_failed": "Ein automatisches Aufladen ist fehlgeschlagen"
+      "auto_top_up_failed": "Ein automatisches Aufladen ist fehlgeschlagen",
+      "note_added": "Ein Teammitglied hat eine Notiz geschrieben, mit ihrem Text"
     },
     "instructionsTitle": "So bekommt Slack deine Benachrichtigungen",
     "stepAdd": "Klicke auf „Zu Slack hinzufügen“: Slack öffnet sich und bittet dich, testee in deinem Workspace zuzulassen.",
@@ -2030,13 +2369,67 @@
     "stepPrivacy": "testee kann nur in diesem Kanal posten. Es kann dein Slack nicht lesen, und beim Trennen wird es entfernt."
   },
   "api": {
+    "firstKeyTitle": "Erstelle deinen ersten Schlüssel",
+    "sdkDocs": "SDK-Dokumentation ansehen",
+    "sdkReady": "Bereit: {count, plural, one {# Website kann} other {# Websites können}} deine Interviews anzeigen.",
+    "sdkNotReady": "Noch nicht eingerichtet: Füge unten eine Website hinzu, damit sie deine Interviews anzeigen kann.",
+    "sdkRules": "Seiten müssen HTTPS verwenden. Füge eine Website oder alle ihre Subdomains hinzu:",
+    "stepSite": "Website hinzufügen",
+    "stepCode": "Diesen Code in deine Seite einfügen",
+    "stepSend": "Kandidaten dorthin schicken",
+    "stepSendText": "Dein Server lädt einen Kandidaten mit sign_in false ein und übergibt die zurückgegebene invite_url an deine Seite. Setze deinen API-Schlüssel nie in eine Seite.",
+    "thisSite": "Diese Website",
+    "allSubdomains": "Alle Subdomains",
+    "localhostOn": "An: Schalte es aus, bevor du live gehst.",
+    "firstWebhookTitle": "Füge deinen ersten Webhook hinzu",
+    "webhookSampleText": "testee sendet eine signierte Anfrage wie diese, wenn etwas passiert:",
+    "lastDelivered": "zuletzt zugestellt <time>{date}</time>",
+    "webhookStates": {
+      "paused": "Pausiert",
+      "unused": "Noch nicht verwendet",
+      "active": "Aktiv"
+    },
+    "webhookEvents": {
+      "started": "Kandidat hat begonnen",
+      "finished": "Kandidat hat abgeschlossen",
+      "undelivered": "Kandidat nicht erreicht",
+      "expired": "Einladung abgelaufen",
+      "removed": "Kandidat entfernt",
+      "ready": "Interview bereit"
+    },
+    "replaceKey": "Ersatz erstellen",
+    "activityTitle": "Aktivität",
+    "ipOpen": "Jede IP-Adresse kann diesen Schlüssel verwenden. Beschränke ihn auf die Adressen deiner Server, um ihn sicherer zu machen.",
+    "summary": {
+      "status": "Status",
+      "access": "Zugriff",
+      "lastUsed": "Zuletzt verwendet",
+      "expires": "Läuft ab",
+      "created": "Erstellt"
+    },
+    "warnings": {
+      "expired": "Dieser Schlüssel ist abgelaufen, deshalb werden Anfragen damit abgelehnt. Erstelle einen Ersatz, um weiterzumachen.",
+      "expiring": "Dieser Schlüssel läuft bald ab. Erstelle einen Ersatz und wechsle darauf, bevor er nicht mehr funktioniert."
+    },
+    "exampleText": "Probiere es mit dieser Anfrage aus, die deine Credits abruft:",
+    "access": {
+      "read": "Nur lesen",
+      "write": "Lesen und schreiben",
+      "custom": "Benutzerdefiniert"
+    },
+    "states": {
+      "expired": "Abgelaufen",
+      "expiring": "Läuft bald ab",
+      "never_used": "Nie verwendet",
+      "active": "Aktiv"
+    },
     "name": "API",
     "rowName": "API, SDK, Webhooks",
     "rowText": "Schlüssel und Webhooks, um deine eigene Plattform anzubinden.",
     "counts": "{keys, plural, one {# Schlüssel} other {# Schlüssel}} · {webhooks, plural, one {# Webhook} other {# Webhooks}}",
     "docs": "Entwicklerdokumentation",
     "keysTitle": "API-Schlüssel",
-    "keysText": "Ein Schlüssel handelt als die Person, die ihn erstellt hat, und kann nur, was seine Berechtigungen erlauben.",
+    "keysText": "Ein Schlüssel handelt für dein Unternehmen, als er selbst, und kann nur, was seine Berechtigungen erlauben.\nEr funktioniert weiter, auch wenn die Person, die ihn erstellt hat, geht.",
     "noKeys": "Noch keine Schlüssel.",
     "newKey": "Neuer Schlüssel",
     "newKeyTitle": "Neuer API-Schlüssel",
@@ -2064,7 +2457,7 @@
     "removeKeyTitle": "Diesen Schlüssel löschen?",
     "removeKeyText": "Alles, was „<bdi>{name}</bdi>“ nutzt, funktioniert sofort nicht mehr.",
     "webhooksTitle": "Webhooks",
-    "webhooksText": "testee benachrichtigt diese Adressen, wenn ein Kandidat beginnt, fertig ist (mit seinen Ergebnissen), seine Einladung nicht zugestellt werden kann oder abläuft oder er entfernt wird, und wenn ein Interview bereit ist – jede Anfrage signiert mit dem Secret der Adresse.",
+    "webhooksText": "testee benachrichtigt diese Adressen, wenn eines dieser Ereignisse eintritt; jede Anfrage wird mit dem Secret der Adresse signiert.",
     "noWebhooks": "Noch keine Webhooks.",
     "failing": "Pausiert: Er hat 3 Tage lang nicht geantwortet, daher werden keine Ereignisse an ihn gesendet. Ein angenommenes Testereignis startet ihn wieder.",
     "addWebhook": "Webhook hinzufügen",
@@ -2151,7 +2544,6 @@
     "localhostText": "Zum Testen auf deinem eigenen Computer, beliebiger Port. Schalte es aus, sobald du live bist.",
     "permissionsTitle": "Berechtigungen",
     "permissionsText": "Was dieser Schlüssel darf. Änderungen werden sofort gespeichert.",
-    "permissionsSaved": "Berechtigungen gespeichert.",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2631,15 @@
       "tools": "Tools",
       "frameworks": "Agent-Frameworks"
     },
+    "intro": "Verbinde testee mit deiner eigenen Plattform, deinem Server oder einem KI-Agenten.",
+    "endpointsText": "Jede Route, nach dem, worauf sie wirkt. Öffne eine, um zu sehen, was sie braucht, was sie zurückgibt und welche Fehler sie liefert.",
+    "apiPages": {
+      "start": "Erste Schritte",
+      "guides": "Anleitungen",
+      "endpoints": "Endpunkte",
+      "errors": "Fehler",
+      "changelog": "Änderungsprotokoll"
+    },
     "englishOnly": "Diese Seite gibt es nur auf Englisch.",
     "baseUrl": "Basis-URL",
     "copyBaseUrl": "URL kopieren",
@@ -2275,6 +2676,7 @@
   },
   "assistant": {
     "title": "Mira · KI-Assistentin",
+    "name": "Mira",
     "company": "Unternehmen",
     "allCompanies": "Alle Unternehmen",
     "newChat": "Neuer Chat",
@@ -2331,7 +2733,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "Wie testee funktioniert, was es kostet und was Kandidaten sehen – beantwortet aus den FAQ von testee. Melde dich an, um zu deinen Unternehmen und Kandidaten zu fragen.",
+        "text": "Melde dich an, um zu deinen Unternehmen und Kandidaten zu fragen.",
         "questions": {
           "what": "Was ist testee?",
           "pricing": "Was kostet es?",
@@ -2340,7 +2742,7 @@
         }
       },
       "no_company": {
-        "text": "Los geht's: dein erstes Interview, dein Unternehmen und seine Verifizierung.",
+        "text": "Bringen wir dein erstes Interview auf den Weg.",
         "questions": {
           "firstInterview": "Erstelle mein erstes Interview",
           "createCompany": "Lege ein Unternehmen für mich an",
@@ -2348,7 +2750,7 @@
         }
       },
       "unverified": {
-        "text": "Verifiziere dein Unternehmen, damit Kandidaten sehen, wer sie einlädt, und erstelle deine Interviews.",
+        "text": "Verifiziere dein Unternehmen und erstelle deine Interviews.",
         "questions": {
           "verify": "Verifiziere mein Unternehmen",
           "whyVerify": "Warum mein Unternehmen verifizieren?",
@@ -2356,7 +2758,7 @@
         }
       },
       "no_interviews": {
-        "text": "Erstelle ein Interview aus einer Stellenbeschreibung: Die Fragen werden für die Rolle geschrieben.",
+        "text": "Erstellen wir dein erstes Interview.",
         "questions": {
           "fromDescription": "Erstelle ein Interview aus einer Stellenbeschreibung",
           "template": "Erstelle ein Interview aus einer Vorlage",
@@ -2364,7 +2766,7 @@
         }
       },
       "no_candidates": {
-        "text": "Lade Kandidaten per E-Mail, über einen teilbaren Link oder aus deinem ATS ein.",
+        "text": "Laden wir deine ersten Kandidaten ein.",
         "questions": {
           "invite": "Lade Kandidaten ein",
           "shareLink": "Schalte den teilbaren Link ein",
@@ -2372,7 +2774,7 @@
         }
       },
       "has_candidates": {
-        "text": "Frag zu deinen Kandidaten: wer bestanden hat, wie sie im Vergleich abschneiden und was ihre Ergebnisse bedeuten.",
+        "text": "Frag zu deinen Kandidaten und ihren Ergebnissen.",
         "questions": {
           "passed": "Wer hat diese Woche bestanden?",
           "compare": "Vergleiche meine besten Kandidaten",
@@ -2494,7 +2896,27 @@
     "feedbackLink": "Kontaktiere uns"
   },
   "companyBilling": {
-    "reservedTab": "Reserviert ({count, number})",
+    "reservedTab": "Reserviert",
+    "download": {
+      "open": "Verlauf herunterladen",
+      "title": "Verlauf herunterladen",
+      "description": "Wähle einen Zeitraum für deine CSV-Datei.",
+      "save": "Herunterladen",
+      "failed": "Die Datei konnte nicht erstellt werden. Bitte versuche es erneut."
+    },
+    "lowText": "Deine Credits werden knapp. Lade auf, damit weiter Kandidaten eingeladen werden können.",
+    "summary": {
+      "available": "Verfügbare Credits",
+      "candidates": "Abgedeckte Kandidaten",
+      "reserved": "Reservierte Credits",
+      "spent": "In diesem Monat ausgegebene Credits"
+    },
+    "kinds": {
+      "all": "Alle",
+      "topups": "Aufladungen",
+      "charges": "Abbuchungen",
+      "refunds": "Erstattungen"
+    },
     "reservedEmpty": "Für keinen Kandidaten sind Credits reserviert.",
     "reservedNote": "Kandidaten, die noch nicht fertig sind. Ihre Credits sind reserviert: abgebucht, wenn sie antworten, sonst zurückgegeben.",
     "history": "Verlauf",
@@ -2521,7 +2943,19 @@
     "name": "MCP-Server",
     "rowText": "Verbinde Claude, ChatGPT und andere KI-Apps mit testee.",
     "title": "KI-Apps",
-    "subtitle": "Sie handeln in deinem Namen, in jedem Unternehmen, in dem du Mitglied bist, mit deinen Berechtigungen.",
+    "subtitle": "Sie handeln als du, in jedem Unternehmen, in dem du bist, mit deinen Berechtigungen. Du erlaubst jede auf testee: Es wird nirgends ein Schlüssel eingefügt.",
+    "connectedTitle": "Deine Apps",
+    "otherApps": "Weitere",
+    "allowIn": "KI-Apps in <bdi>{company}</bdi> erlauben",
+    "allowOn": "Mitglieder können die Interviews und Kandidaten dieses Unternehmens über die KI-Apps nutzen, die sie verbunden haben.",
+    "allowOff": "Aus: KI-Apps können in diesem Unternehmen nichts lesen oder ändern.",
+    "promptsTitle": "Probiere zu fragen",
+    "promptCopied": "Kopiert",
+    "prompts": {
+      "passed": "Wer hat diese Woche bestanden?",
+      "compare": "Vergleiche meine besten Kandidaten für das Interview Data Analyst.",
+      "invite": "Lade ann@example.com zum Interview Data Analyst ein."
+    },
     "instructionsTitle": "KI-App mit testee verbinden",
     "serverTitle": "Serveradresse",
     "serverText": "Füge sie in deiner KI-App als eigenen Konnektor (einen MCP-Server) ein.",
@@ -2679,6 +3113,10 @@
     "failed": "Die Datei konnte nicht exportiert werden. Versuche es erneut."
   },
   "actionLog": {
+    "period": "Zeitraum",
+    "periodAll": "Gesamte Zeit",
+    "periodDays": "Letzte {days, number} Tage",
+    "periodCustom": "Benutzerdefiniert",
     "empty": "Noch keine Aktionen.",
     "noMatches": "Keine Aktionen passen zu diesen Filtern.",
     "formerMember": "Ein ehemaliges Mitglied",
@@ -2686,7 +3124,15 @@
     "deletedApiKey": "{via, select, mcp {Über MCP mit einem gelöschten Schlüssel} other {Über die API mit einem gelöschten Schlüssel}}",
     "deletedCandidate": "ein gelöschter Kandidat",
     "anyMember": "Alle",
-    "anyAction": "Alle Aktionen",
+    "anyAction": "Alle",
+    "clear": "Zurücksetzen",
+    "download": {
+      "open": "Protokoll herunterladen",
+      "title": "Protokoll herunterladen",
+      "description": "Wähle einen Zeitraum für deine CSV-Datei.",
+      "save": "Herunterladen",
+      "failed": "Die Datei konnte nicht erstellt werden. Bitte versuche es erneut."
+    },
     "member": "Mitglied",
     "action": "Aktion",
     "from": "Von",
@@ -2722,13 +3168,13 @@
       "candidate_deleted": "Hat einen Kandidaten gelöscht",
       "candidate_renamed": "Hat den Namen eines Kandidaten geändert",
       "extra_time_set": "Hat einem Kandidaten zusätzliche Zeit gegeben",
-      "candidate_mode_set": "Hat den Interviewmodus eines Kandidaten geändert",
       "results_viewed": "Hat die Ergebnisse eines Kandidaten angesehen",
       "report_emailed": "Hat einen Bericht per E-Mail gesendet",
       "bias_audit_exported": "Hat Daten für ein Bias-Audit exportiert",
       "member_invited": "Hat ein Mitglied eingeladen",
       "member_joined": "Ist dem Unternehmen beigetreten",
       "member_removed": "Hat ein Mitglied entfernt",
+      "candidate_mode_set": "Hat den Interviewmodus eines Kandidaten geändert",
       "member_role_changed": "Hat die Rolle eines Mitglieds geändert",
       "ownership_transferred": "Hat das Unternehmen an einen anderen Inhaber übergeben",
       "company_renamed": "Hat das Unternehmen umbenannt",
@@ -2751,6 +3197,7 @@
       "slack_notifications_changed": "Hat die Slack-Benachrichtigungen geändert",
       "api_key_created": "Hat einen API-Schlüssel erstellt",
       "api_key_deleted": "Hat einen API-Schlüssel gelöscht",
+      "api_key_renamed": "Hat einen API-Schlüssel umbenannt",
       "api_key_permissions_changed": "Hat die Berechtigungen eines API-Schlüssels geändert",
       "api_key_ips_changed": "Hat die erlaubten IPs eines API-Schlüssels geändert",
       "embed_domains_changed": "Hat die erlaubten Domains geändert",

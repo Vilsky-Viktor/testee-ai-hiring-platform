@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "Pengaturan",
+    "preferences": "Preferensi",
+    "accountId": "ID akun",
+    "deleteTitle": "Hapus akun",
+    "deleteNote": "Menghapus akun dan datamu secara permanen.",
     "language": "Bahasa",
     "languageNote": "Untuk antarmuka dan balasan chat bantuan, serta bahasa awal wawancara baru. Kamu bisa membuat wawancara dalam bahasa apa pun yang didukung.",
     "languageFailed": "Bahasa tidak bisa diubah. Coba lagi.",
@@ -12,7 +16,7 @@
     "account": "Akunmu",
     "accountNote": "Sebutkan ID ini saat kamu menulis kepada kami tentang akunmu.",
     "yourData": "Datamu",
-    "yourDataNote": "Unduh semua yang disimpan testee. tentangmu, atau hapus akunmu.",
+    "yourDataNote": "Unduh semua yang disimpan testee tentangmu.",
     "download": "Unduh dataku",
     "downloadFailed": "Datamu tidak bisa disiapkan. Coba lagi.",
     "delete": "Hapus akun",
@@ -50,7 +54,8 @@
     "system": "Sistem",
     "light": "Terang",
     "dark": "Gelap",
-    "topUp": "Isi ulang"
+    "topUp": "Isi ulang",
+    "workspace": "Ruang kerjaku"
   },
   "nav": {
     "main": "Menu utama",
@@ -67,8 +72,12 @@
     "about": "Tentang kami",
     "practice": "Latihan gratis",
     "tests": "Tes keterampilan",
-    "preEmploymentTesting": "Tes seleksi karyawan",
-    "aiInterviews": "Wawancara AI",
+    "createTest": "Buat tes",
+    "footerProduct": "Produk",
+    "footerResources": "Sumber daya",
+    "footerCompany": "Perusahaan",
+    "footerLegal": "Legal",
+    "footerTagline": "Wawancara berwaktu yang adil, dibuat dari deskripsi pekerjaanmu.",
     "compare": "Bandingkan",
     "guides": "Panduan",
     "apiDocs": "Dokumentasi pengembang",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "Kembali ke atas",
     "morePages": "Halaman lainnya",
+    "moreActions": "Aksi lainnya",
     "copyLink": "Salin tautan",
     "linkCopied": "Tautan disalin",
     "home": "Beranda",
     "cancel": "Batal",
     "save": "Simpan",
     "saving": "Menyimpan…",
+    "saved": "Tersimpan",
     "close": "Tutup",
     "delete": "Hapus",
     "deleting": "Menghapus…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "Terjadi kesalahan",
     "text": "Coba lagi. Jika terus terjadi, kembali lagi nanti.",
+    "reference": "Referensi: {id}",
     "notFound": "Halaman tidak ditemukan",
     "notFoundText": "Halaman itu tidak ada atau sudah dihapus.",
     "report": "Laporkan",
@@ -152,13 +164,13 @@
   },
   "home": {
     "title": "Uji semua orang\nRekrut yang terbaik",
-    "text": "AI mengubah deskripsi pekerjaanmu menjadi wawancara berbatas waktu yang profesional.",
-    "price": "Hanya {price} per kandidat."
+    "text": "AI mengubah deskripsi pekerjaanmu menjadi wawancara berbatas waktu yang profesional."
   },
   "start": {
     "placeholder": "Tempel deskripsi pekerjaanmu di sini…",
     "description": "Deskripsi pekerjaan",
     "submit": "Buat wawancara",
+    "newInterview": "Wawancara barumu",
     "whichCompany": "Wawancara ini untuk perusahaan mana?",
     "firstCompany": "Apa nama perusahaanmu?",
     "newCompany": "Perusahaan baru",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "Mulai lewat tautan satu wawancara per jam",
       "LINK_STARTS_PER_IP_HOUR": "Mulai lewat tautan per alamat per jam",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "Ekspor audit bias per perusahaan per hari",
+      "ACTION_LOG_EXPORTS_PER_DAY": "Unduhan log aksi per perusahaan per hari",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "Unduhan riwayat kredit per perusahaan per hari",
       "MAX_BULK_INVITES": "Kandidat dalam satu daftar atau file",
       "MAX_PENDING_INVITES": "Undangan tim yang tertunda per perusahaan",
       "MEMBER_INVITES_PER_UNPAID_DAY": "Undangan tim per perusahaan yang belum membayar per hari",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "Panggilan ke ATS perusahaan per perusahaan per menit",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "Webhook ATS per alamat pengirim per menit",
       "ATS_CONNECTS_PER_HOUR": "Koneksi ATS per perusahaan per jam",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "Pesan uji Slack per perusahaan per jam",
       "RESEND_DAILY_LIMIT": "Email per hari lewat Resend",
       "RESEND_RESERVE_PERCENT": "Porsi email per hari lewat Resend yang disisihkan dari pengiriman massal",
       "CAMPAIGNS_PER_KIND_DAY": "Kampanye tiap jenis per hari",
@@ -775,7 +790,9 @@
     "useFailed": "Wawancara tidak bisa dimulai dari templat ini. Coba lagi.",
     "inProgress": "sedang berjalan: {done}/{total, plural, other {# topik}}",
     "completed": "selesai",
-    "warningText": "<b>Templat dibuat siap pakai untuk posisi yang umum.</b> Agar lebih sesuai, buat wawancara dari deskripsi pekerjaanmu."
+    "warningText": "<b>Butuh yang lebih pas?</b> Buat wawancara dari deskripsi pekerjaanmu.",
+    "contents": "{topics, plural, other {# topik}}, {questions, plural, other {# soal}}, {minutes, plural, other {# mnt}}",
+    "usedIn": "{count, plural, other {Dipakai di # wawancara}}"
   },
   "billing": {
     "paidTitle": "Pembayaran diterima",
@@ -808,6 +825,10 @@
     "paysInChange": "Ubah mata uang",
     "candidates": "{count, plural, other {# kandidat}}",
     "perCandidate": "{price}<unit>/kandidat</unit>",
+    "enough": "Cukup untuk {count, plural, other {# kandidat}}",
+    "pay": "Bayar {price}",
+    "quote": "{count, plural, other {# kandidat}} dengan harga {price} per kandidat, {credits, number} kredit",
+    "nextPrice": "{count, plural, other {# kandidat}} lagi, dan harga tiap kandidat menjadi {price}",
     "howMany": "Kandidat yang diisi ulang",
     "credits": "{count, plural, other {# kredit}}",
     "candidatesWord": "{count, plural, other {kandidat}}",
@@ -863,6 +884,19 @@
     "markedWrong": "Terima kasih. Soal ini sedang diperiksa dan akan diperbaiki atau diganti.",
     "markWrongFailed": "Tidak bisa dikirim untuk diperiksa. Coba lagi.",
     "ofCount": "dari {count, number}",
+    "perCandidate": "Jumlah soal per kandidat",
+    "limitShort": "Soal per kandidat",
+    "topicsColumn": "Topik & subtopik",
+    "limitLine": "{limit, number} dari {count, number} soal per kandidat",
+    "noMatches": "Tidak ada soal di sini.",
+    "summary": {
+      "total": "Soal"
+    },
+    "filters": {
+      "all": "Semua",
+      "reported": "Dilaporkan"
+    },
+    "disabledCount": "{count, plural, other {# soal dinonaktifkan}}",
     "per": "per",
     "candidate": "kandidat",
     "correct": "Jawaban benar",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "Giliranmu",
     "voiceThinking": "Berpikir",
     "miraLabel": "Pewawancara AI",
+    "voiceHeardAnswer": "Saya mendengar {answer}.",
+    "questionOf": "Soal {number, number} dari {count, number}",
+    "answeredOf": "{done, number} dari {total, number}",
+    "keysHint": "Tekan A–{last} untuk memilih, Enter untuk soal berikutnya.",
     "voiceStatus": {
       "off": "Mira sedang bersiap…",
       "starting": "Mira sedang bersiap…",
@@ -962,9 +1000,11 @@
     "cancelling": "Membatalkan…",
     "cancelFailed": "Pembuatan tidak bisa dibatalkan. Coba lagi.",
     "writing": "Membuat soal-soalmu",
-    "drafting": "Menyusun topik-topikmu",
-    "writingNote": "Ini butuh beberapa menit. Kamu boleh meninggalkan halaman ini; kami tetap bekerja.",
-    "draftingNote": "Membaca tujuanmu dan merencanakan apa yang akan dibahas.",
+    "drafting": "Menyusun topikmu",
+    "writingNote": "Proses ini butuh beberapa menit. Kamu boleh meninggalkan halaman ini; kami akan memberi tahu saat sudah siap.",
+    "draftingNote": "Kami sedang membaca deskripsi pekerjaanmu. Kamu akan meninjau topik sebelum soal ditulis. Kamu boleh meninggalkan halaman ini; kami tetap melanjutkan.",
+    "finishing": "Memeriksa dan menyimpan soal…",
+    "goToInterviews": "Buka daftar wawancara",
     "topicsReady": "{ready, number} dari {count, plural, other {# topik}} siap",
     "reviewFailed": "Tinjauanmu tidak bisa dikirim. Coba lagi.",
     "retryFailed": "Pembuatan tidak bisa diulang. Coba lagi.",
@@ -982,13 +1022,18 @@
     "add": "Tambah",
     "done": "Selesai",
     "reviewTitle": "Tinjau topikmu",
-    "reviewText": "Hapus centang topik yang tidak kamu perlukan, ubah, atau jelaskan perubahannya. Setiap topik mendapat kumpulan soal beserta jawabannya.",
+    "reviewText": "Setiap topik punya kumpulan soal beserta jawabannya sendiri.",
     "editTopic": "Ubah <bdi>{topic}</bdi>",
-    "changesPlaceholder": "Opsional: jelaskan perubahan, mis. “Tambahkan topik tentang kepemimpinan tim”",
-    "changes": "Perubahan topik",
+    "changesPlaceholder": "mis. “Tambahkan topik kepemimpinan tim”",
+    "changes": "Minta AI mengubah topik",
     "tooMany": "Pilih maksimal {max, number} topik, atau jelaskan cara menggabungkannya.",
     "apply": "Terapkan perubahan",
     "approve": "Setujui dan buat",
+    "topicsChosen": "{chosen, number} dari {count, plural, other {# topik}}",
+    "applyFirst": "Terapkan perubahanmu dulu, atau kosongkan kolomnya.",
+    "subtopicsNeeded": "Tambahkan setidaknya {count, plural, other {# subtopik}}.",
+    "addTopic": "Tambah topik",
+    "removeTopic": "Hapus",
     "topicNameNeeded": "Beri nama topiknya."
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "Perusahaan",
     "empty": "Belum ada perusahaan.",
     "owner": "Pemilik",
+    "search": "Cari perusahaan",
+    "interviewsShort": "{count, plural, other {<n></n> wawancara}}",
+    "membersShort": "{count, plural, other {<n></n> anggota}}",
+    "status": {
+      "low": "Kredit hampir habis",
+      "verify": "Selesaikan verifikasi perusahaanmu",
+      "finished": "{count, plural, other {<n></n> kandidat}} selesai minggu ini"
+    },
     "interviewCount": "{count, plural, other {# wawancara}}",
     "memberCount": "{count, plural, other {# anggota}}",
     "interviews": "Wawancara",
@@ -1024,6 +1077,8 @@
     "brand": "Merek",
     "billing": "Tagihan",
     "new": "Perusahaan baru",
+    "newText": "Setiap perusahaan punya wawancara, tim, dan kredit sendiri.",
+    "namePlaceholder": "mis. Acme",
     "name": "Nama perusahaan",
     "create": "Buat",
     "createFailed": "Perusahaan tidak bisa dibuat. Coba lagi.",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, other {# kali meninggalkan halaman}}",
     "copies": "{count, plural, other {# percobaan menyalin}}",
     "fastAnswers": "{count, plural, other {# jawaban terlalu cepat}}",
+    "extraTimeLabel": "Waktu tambahan",
+    "summary": {
+      "result": "Hasil",
+      "timeTaken": "Waktu pengerjaan",
+      "signals": "Sinyal integritas",
+      "invited": "Diundang",
+      "finished": "Selesai",
+      "passed": "Lulus",
+      "average": "Nilai rata-rata"
+    },
+    "copyLinkFailed": "Kami tidak bisa menyalin tautannya. Coba lagi.",
     "empty": "Belum ada kandidat yang diundang.",
     "noMatches": "Tidak ada kandidat yang cocok.",
     "search": "Cari kandidat berdasarkan email atau nama",
     "status": "Status: {status}",
     "anyStatus": "semua status",
+    "allStatuses": "Semua",
     "progress": "Kemajuan",
     "grade": "Nilai",
     "resend": "Kirim ulang undangan",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "Wawancara",
+    "allStatuses": "Semua",
+    "candidatesShort": "{count, plural, other {<n></n> kandidat}}",
+    "finishedShort": "<n></n> selesai",
+    "passedShort": "<n></n> lulus",
+    "rowStatus": {
+      "failed": "Buka untuk mencoba lagi",
+      "generating": "Sedang dibuat",
+      "undelivered": "{count, plural, other {<n></n> undangan}} tidak terkirim",
+      "finished": "{count, plural, other {<n></n> kandidat}} selesai minggu ini",
+      "ready": "Siap: undang kandidat pertamamu"
+    },
     "interview": "Wawancara",
     "topicsTab": "Topik",
     "candidates": "Kandidat",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "Belum ada catatan. Tulis yang pertama untuk timmu.",
     "discover": "Temukan",
     "discoverLinkedIn": "Profil LinkedIn {name}",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "Orang-orang muncul di sini saat mereka berlatih topik ini dan memilih terbuka untuk tawaran kerja.",
     "discoverText": "Orang yang terbuka untuk tawaran kerja dan sudah berlatih topik wawancara ini. Terbaru lebih dulu, tanpa peringkat.",
     "discoverEmpty": "Belum ada orang yang terbuka untuk tawaran kerja yang berlatih topik wawancara ini.",
     "discoverResults": "Hasil latihan",
@@ -1130,6 +1210,8 @@
     "notePosting": "Mengirim…",
     "noteEdited": "diedit",
     "notePinned": "Disematkan",
+    "noteShowMore": "Tampilkan lebih banyak",
+    "noteShowLess": "Tampilkan lebih sedikit",
     "notePin": "Sematkan di atas",
     "noteUnpin": "Lepas sematan",
     "noteFormerMember": "Mantan anggota",
@@ -1139,8 +1221,20 @@
     "noteFailed": "Catatan tidak bisa disimpan. Coba lagi.",
     "new": "Wawancara baru",
     "createTitle": "Buat wawancara",
+    "createIntro": "Tempel deskripsi pekerjaan. Kamu akan meninjau topik sebelum soal ditulis, dan ini gratis.",
+    "steps": {
+      "describe": "Jelaskan posisinya",
+      "review": "Tinjau topik",
+      "invite": "Undang kandidat"
+    },
+    "startTemplate": "Mulai dari templat",
+    "startAts": "Mulai dari lowongan di ATS-mu",
+    "tryExample": "Coba contoh",
     "try": "Coba sebagai kandidat",
     "newCandidate": "Kandidat baru",
+    "settingsSharing": "Berbagi",
+    "settingsRuns": "Cara berjalan",
+    "settingsAfter": "Setelahnya dan privasi",
     "linkTitle": "Tautan yang bisa dibagikan",
     "linkText": "Untuk iklan lowongan: siapa pun yang punya tautan bisa mengikuti wawancara. Setiap orang dikenai biaya seperti kandidat yang diundang.",
     "linkFailed": "Tautan tidak bisa diubah. Coba lagi.",
@@ -1160,7 +1254,7 @@
     "generating": "Sedang dibuat…",
     "generationFailed": "Pembuatan gagal",
     "fallbackTitle": "wawancara",
-    "continueGeneration": "Lanjutkan pembuatan",
+    "continueGeneration": "Lanjutkan",
     "empty": "Belum ada wawancara. Buat yang pertama.",
     "noMatches": "Tidak ada wawancara yang cocok.",
     "search": "Cari wawancara berdasarkan judul",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "Email kandidat",
     "inviteTab": {
       "one": "satu",
-      "many": "banyak",
-      "file": "unggah"
+      "many": "daftar",
+      "file": "file"
     },
-    "manyHint": "Satu kandidat per baris, dengan atau tanpa nama,\nhingga {count, number} sekaligus:",
-    "manyHintNoLimit": "Satu kandidat per baris, dengan atau tanpa nama:",
-    "example": "contoh",
+    "inviteTitle": "Undang kandidat",
+    "manyHint": "Satu kandidat per baris, dengan atau tanpa nama, hingga {count, number} sekaligus.",
+    "manyHintNoLimit": "Satu kandidat per baris, dengan atau tanpa nama.",
     "uploadFile": "Unggah file",
     "fileFormats": "CSV atau TXT, hingga {count, number} kandidat. Nama bisa ditulis di kolom nama atau di samping setiap email.",
     "fileFormatsNoLimit": "CSV atau TXT. Nama bisa ditulis di kolom nama atau di samping setiap email.",
@@ -1203,8 +1297,7 @@
       "unclear_name": "Tulis nama sebagai Nama '<email>': <bdi>{line}</bdi>",
       "more": "dan {count, number} lainnya"
     },
-    "exampleCsv": "contoh .csv",
-    "exampleTxt": "contoh .txt",
+    "exampleFiles": "Unduh contoh: <csv>.csv</csv> atau <txt>.txt</txt>",
     "candidateName": "Nama (opsional)",
     "invitedMany": "{count, number} kandidat diundang",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "Selamat, wawancaramu sudah siap",
-      "text": "<name><bdi>{title}</bdi></name> sudah siap untuk kandidat. Ini langkah berikutnya:",
-      "limits": "Atur berapa soal yang didapat setiap kandidat per topik.",
+      "text": "<name><bdi>{title}</bdi></name> sudah siap. Coba sendiri sebelum mengundang siapa pun, dan sesuaikan jika perlu.",
+      "limits": "Berapa banyak soal yang didapat tiap kandidat per topik.",
       "limitsAction": "Atur soal",
-      "time": "Sesuaikan rata-rata waktu per soal jika perlu.",
-      "timeAction": "Buka pengaturan",
-      "invite": "Undang kandidat.",
-      "inviteAction": "Ke kandidat",
+      "time": "Rata-rata waktu per soal.",
+      "timeAction": "Atur waktu",
       "done": "Oke"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "Butuh waktu lebih, misalnya karena disabilitas? Minta undangan pribadi ke <bdi>{company}</bdi> sebelum kamu mulai: waktu tidak bisa ditambah di sini.",
     "people": "Soal-soalnya ditulis oleh AI. Orang-orang di <bdi>{company}</bdi> meninjau hasilnya dan memutuskan; kamu bisa meminta mereka meninjau hasilmu.",
     "stay": "Tetap di halaman ini: meninggalkannya, menyalin, dan menjawab terlalu cepat untuk sempat membaca soal akan dicatat, dan perusahaan dapat melihat jika waktu menjawab atau jawabanmu tidak sesuai dengan tingkat kesulitan soal (<link>privasi</link>).",
-    "finished": "Wawancara ini sudah selesai.",
+    "finishedTitle": "Kamu sudah selesai",
+    "finished": "Jawabanmu sudah diterima <bdi>{company}</bdi>. Mereka akan meninjau hasilnya dan menentukan langkah selanjutnya.",
+    "finishedPreview": "Inilah yang dilihat kandidatmu. Percobaan gratis ini tidak masuk ke daftar kandidatmu, dan jawabannya tidak dihitung dalam statistik soal.",
+    "finishedRights": "Kamu bisa meminta <bdi>{company}</bdi> agar hasilmu ditinjau oleh seorang manusia. <link>Privasi</link>",
+    "finishedAnswered": "Soal terjawab",
+    "finishedTime": "Waktu pengerjaan",
+    "signInAs": "Gunakan email tempat undangan ini dikirim.",
+    "switchAccount": "Ganti akun",
+    "progress": "Kamu sudah menyelesaikan {percent}.",
+    "progressLabel": "Kemajuanmu",
+    "groups": {
+      "how": "Cara kerjanya",
+      "time": "Waktumu",
+      "rights": "Hak dan privasimu"
+    },
     "continue": "Lanjutkan",
     "start": "Terima dan mulai",
     "pledge": "Saya akan menjawab sendiri, tanpa alat AI atau bantuan orang lain.",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "Bergabung",
     "invited": "Diundang",
+    "joinedOn": "Bergabung {date}",
+    "invitedOn": "Diundang {date}",
+    "pendingTitle": "Undangan tertunda",
+    "firstTitle": "Undang rekan timmu yang pertama",
     "role": "Peran",
     "roleFailed": "Peran tidak bisa diubah.",
     "inviteTitle": "Undangan perusahaan",
@@ -1281,6 +1390,11 @@
     "madeOwner": "<bdi>{email}</bdi> sekarang pemiliknya."
   },
   "scorecard": {
+    "filters": {
+      "all": "Semua",
+      "correct": "Benar",
+      "wrong": "Salah"
+    },
     "timeOut": "Waktu habis",
     "leftPage": "Meninggalkan halaman {count, plural, other {# kali}}",
     "answeredIn": "Dijawab dalam <b>{time}</b>",
@@ -1298,7 +1412,7 @@
     "test": "Membuat wawancara",
     "free": "Gratis",
     "candidate": "Setiap kandidat yang menjawab minimal satu soal",
-    "candidateVolume": "Dengan kredit dari isi ulang {from} atau lebih",
+    "candidateVolume": "Untuk isi ulang {from} atau lebih",
     "perCandidate": "{price} per kandidat",
     "welcome": "{count, plural, other {# kandidat}} pertamamu",
     "credits": "Satu kandidat memakai {credits, number} kredit, dan kredit tidak pernah kedaluwarsa.",
@@ -1306,6 +1420,10 @@
     "referralsNote": "Bagikan tautan perusahaanmu dari tab Referal perusahaan.",
     "companyReferral": "Perusahaan yang kamu undang melakukan isi ulang pertama",
     "each": "masing-masing {count, number} kredit",
+    "fromPrice": "mulai {price}",
+    "anyTopUp": "Untuk isi ulang berapa pun",
+    "volumeTitle": "Isi ulang lebih besar, biaya per kandidat lebih murah",
+    "volumeText": "Makin besar isi ulangnya, makin murah biaya tiap kandidat.",
     "topUp": "Isi ulang"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "Dokumen kepatuhan untuk rekrutmen",
     "intro": "Dokumen untuk perusahaan yang menilai kandidat dengan testee: petunjuk, templat, dan perjanjian pemrosesan data.",
     "englishOnly": "Dokumen ini hanya tersedia dalam bahasa Inggris.",
-    "download": "Unduh {format}",
+    "download": "Unduh <type>{format}</type>",
     "readOnline": "Baca online",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "Buat dalam"
   },
   "referral": {
+    "title": "Kalian berdua mendapat <n></n> kredit",
+    "text": "Itu cukup untuk {count, plural, other {# kandidat}}. Bagikan tautanmu ke perusahaan lain.",
+    "empty": "Belum ada hadiah. Bagikan tautanmu untuk mendapat yang pertama.",
+    "steps": {
+      "share": "Bagikan tautanmu ke perusahaan lain.",
+      "create": "Mereka membuat perusahaan lewat tautan itu.",
+      "reward": "Setelah isi ulang pertama mereka, berapa pun jumlahnya, kalian berdua mendapat kreditnya."
+    },
+    "summary": {
+      "referred": "Perusahaan yang diajak",
+      "earned": "Kredit yang didapat",
+      "left": "Sisa hadiah tahun ini",
+      "leftValue": "{left, number} dari {total, number}"
+    },
     "companyNote": "Kalian berdua mendapat {reward, number} kredit saat mereka melakukan isi ulang pertama, berapa pun jumlahnya.",
     "deletedCompany": "Perusahaan yang dihapus",
     "credits": "+{count, number} kredit",
@@ -1398,53 +1530,39 @@
     "intro": "Satu kandidat memakai {credits, number} kredit, dan kredit tidak pernah kedaluwarsa.",
     "noCompany": "Kredit milik perusahaan. Buat perusahaanmu dulu, lalu isi ulang di sini.",
     "createCompany": "Buat perusahaan",
+    "allCompanies": "Semua perusahaan",
     "pricing": "Harga"
   },
   "landing": {
-    "more": "Cara kerjanya",
     "demos": "Video",
-    "videoTooltip": "Lihat cara kerja testee",
     "watchVideo": "Tonton video",
     "howItWorks": "Cara kerjanya",
     "askAgent": "tanya Mira",
     "create": {
+      "draftingNote": "Membaca deskripsi pekerjaanmu.",
       "title": "Buat wawancara dalam hitungan menit",
       "text": "Tempel deskripsi pekerjaan, sesuaikan topiknya, dan wawancaramu siap dalam hitungan menit.",
       "notes": {
-        "questions": "{count, number} pertanyaan per topik",
         "templates": "templat siap pakai tersedia",
         "expert": "tanpa perlu ahli di bidangnya"
       },
-      "describe": "<n>1.</n> Tempel deskripsimu",
+      "describe": "<n>1.</n> Tempel deskripsi",
       "adjust": "<n>2.</n> Sesuaikan topiknya",
       "menu": {
-        "cut": "Potong",
-        "copy": "Salin",
         "paste": "Tempel"
       },
-      "ready": "<n>3.</n> Wawancaramu sudah siap",
-      "invited": "<n>4.</n> Kandidat menerima undangan",
+      "ready": "<n>3.</n> Wawancara siap",
+      "invited": "<n>4.</n> Undangan diterima",
       "status": "Siap",
       "email": {
-        "search": "Telusuri email",
-        "compose": "Tulis",
         "inbox": "Kotak Masuk",
-        "starred": "Berbintang",
-        "sent": "Terkirim",
-        "drafts": "Draf",
         "from": "testee.",
-        "toMe": "kepada saya",
         "now": "sekarang",
         "subject": "Undangan wawancara dari {company}",
-        "preheader": "Ikuti “{title}” di testee. Masuk dengan {email} untuk mulai.",
         "heading": "Undangan wawancara",
         "invited": "<b>{company}</b> mengundangmu mengikuti wawancara “{title}” di testee.",
         "signIn": "Masuk dengan {email} untuk mulai. Hanya alamat ini yang bisa mengikuti wawancara, dan kamu punya satu kesempatan.",
-        "button": "Buka undangan",
-        "pasteLink": "Atau tempel tautan ini di browsermu",
-        "footer": "Email ini dikirim ke {email} karena seseorang mengundang alamat ini di testee. Jika kamu tidak mengharapkannya, abaikan saja.",
-        "stopCompany": "Jangan kirimi saya email dari {company}",
-        "operator": "testee dijalankan oleh {name}, {address}."
+        "button": "Buka undangan"
       },
       "phone": {
         "describe": "Tempel deskripsi pekerjaan, atau tulis beberapa kata tentang posisinya.",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "Manusia yang memutuskan",
-          "text": "Skor mendukung keputusanmu; skor tidak membuat keputusan. Tanda integritas adalah alasan untuk melihat lebih teliti, bukan bukti."
+          "text": "Skor membantu keputusanmu. Sinyal integritas adalah alasan untuk memeriksa lebih dekat, bukan bukti."
         },
         "fair": {
           "title": "Adil bagi setiap kandidat",
-          "text": "Timer dan campuran jenis soal yang sama, soal yang diambil acak untuk setiap orang, dan waktu tambahan bagi yang membutuhkannya."
+          "text": "Timer dan campuran soal yang sama untuk semua orang, soal diacak, dan waktu tambahan bagi yang membutuhkan."
         },
         "laws": {
           "title": "Dibuat untuk kepatuhan",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "Setiap tindakan tercatat",
-          "text": "Pemilik melihat siapa melakukan apa di perusahaan, disimpan dengan aman selama 12 bulan di server Uni Eropa."
+          "text": "Pemilik bisa melihat siapa melakukan apa, disimpan selama 12 bulan di server UE."
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "Ada pertanyaan lain?",
       "videos": "video",
       "faq": "Tanya jawab",
-      "guides": "panduan",
-      "features": "fitur",
-      "hiringFlow": "alur rekrutmen"
+      "guides": "panduan"
     },
     "closing": {
       "title": "Buat wawancara pertamamu\nGratis",
@@ -1672,7 +1788,8 @@
         "time": "~10 mnt per posisi, tanpa waktu per kandidat",
         "cost": "{price} per kandidat yang menjawab"
       },
-      "more": "Bandingkan dengan alat lain"
+      "more": "Bandingkan dengan alat lain",
+      "best": "Pilihan terbaik"
     },
     "freeToStart": {
       "title": "Semuanya gratis\nBayar per kandidat",
@@ -1689,6 +1806,7 @@
       "each": "({price} per kandidat)",
       "free": "{count, plural, other {# kandidat gratis}} untuk memulai",
       "perCandidate": "per kandidat",
+      "bestPrice": "Harga terbaik",
       "pack": "{count, number} seharga {price}",
       "see": "Lihat harga",
       "notes": {
@@ -1698,11 +1816,159 @@
         "refund": "kredit berbayar sisa bisa di-refund"
       },
       "currencies": "{count, plural, other {# mata uang}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Acme membantu toko online menjawab pertanyaan pelanggan mereka dengan AI.\nKami mencari AI Engineer untuk membangun fitur-fitur LLM kami.\n• Pengalaman minimal 3 tahun dengan Python\n• Aplikasi LLM, RAG, dan vector search\n• Evaluasi dan monitoring model\nRemote, jam kerja fleksibel, dan anggaran belajar.",
+        "title": "AI Engineer",
+        "topics": {
+          "llm": {
+            "name": "Dasar-dasar LLM",
+            "subtopics": ["Token", "Prompting", "Context window"]
+          },
+          "rag": {
+            "name": "Retrieval-augmented generation",
+            "subtopics": ["Embedding", "Chunking", "Vector search"]
+          },
+          "python": {
+            "name": "Python untuk sistem ML",
+            "subtopics": ["asyncio", "Type hints"]
+          }
+        },
+        "renamed": " berskala besar",
+        "subtopicAdded": " dan pengujian",
+        "change": "Tambahkan topik tentang evaluasi output LLM",
+        "newTopic": {
+          "name": "Evaluasi LLM",
+          "subtopics": ["Set uji", "LLM sebagai juri", "Metrik"]
+        }
+      },
+      "candidates": {
+        "title": "Data Analyst",
+        "questions": {
+          "median": {
+            "topic": "Statistik",
+            "text": "Beberapa pesanan yang sangat besar membuat nilai rata-rata pesananmu jadi bias. Ukuran mana yang paling menggambarkan pesanan pada umumnya?",
+            "options": [
+              "Rata-rata (mean) nilai pesanan",
+              "Median nilai pesanan",
+              "Rentang nilai pesanan",
+              "Simpangan baku nilai pesanan"
+            ]
+          },
+          "revenue": {
+            "topic": "Statistik",
+            "text": "Pendapatan mingguan di dashboard-mu turun 20% tepat setelah ada perubahan pada data pipeline. Apa yang akan kamu cek lebih dulu?",
+            "options": [
+              "Bandingkan jumlah baris sebelum dan sesudah perubahan",
+              "Cari tanggal yang duplikat atau hilang",
+              "Ganti skema warna dashboard",
+              "Tanya tim sales apakah pelanggan berhenti membeli"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "Tim marketing ingin daftar wilayah yang total penjualannya lebih dari 100. Apa hasil query ini?",
+            "options": [
+              "Hanya North",
+              "Hanya South",
+              "North dan South",
+              "Tidak ada baris"
+            ]
+          },
+          "chart": {
+            "topic": "Visualisasi",
+            "text": "Kamu perlu menunjukkan perubahan jumlah pendaftaran bulanan selama dua tahun terakhir. Grafik mana yang paling tepat menunjukkan tren itu?",
+            "options": [
+              "Diagram lingkaran pendaftaran per bulan",
+              "Grafik garis pendaftaran per bulan",
+              "Scatter plot pendaftaran terhadap pendapatan",
+              "Histogram jumlah pendaftaran bulanan"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "Manajer Produk",
+        "topics": [
+          "Strategi produk",
+          "Metrik",
+          "Pemangku kepentingan",
+          "Penyusunan roadmap",
+          "Riset pengguna",
+          "Prioritisasi",
+          "Eksperimen",
+          "Penetapan harga",
+          "Go-to-market",
+          "Komunikasi"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "Apa yang harus dilakukan pertama kali sebelum membangun fitur baru?",
+            "options": [
+              "Memvalidasi masalahnya dengan pengguna",
+              "Menulis spesifikasi teknis",
+              "Menentukan tanggal peluncuran",
+              "Mendesain tampilannya"
+            ]
+          },
+          "metrics": {
+            "text": "Konversi turun dari 4% ke 3%. Berapa besar penurunannya dibanding sebelumnya?",
+            "options": ["1%", "25%", "33%", "75%"]
+          },
+          "stakeholders": {
+            "text": "Tim mitra tidak setuju dengan prioritasmu. Apa yang kamu lakukan pertama kali?",
+            "options": [
+              "Eskalasi ke atasanmu",
+              "Tanya apa yang mereka butuhkan dan alasannya",
+              "Tetap jalankan rencanamu apa adanya",
+              "Lepaskan prioritasmu"
+            ]
+          }
+        },
+        "chat": {
+          "name": "Tim rekrutmen",
+          "initials": "TR"
+        },
+        "notes": [
+          "Hiring manager minta shortlist dua kandidat paling lambat Jumat.",
+          "Daniel kuat soal pemangku kepentingan di phone screen; lebih lemah di metrik.",
+          "Sofia minta waktu tambahan; besok aku tindak lanjuti."
+        ],
+        "pdf": "kandidat-product-manager.pdf"
+      },
+      "slack": {
+        "channels": ["umum", "rekrutmen", "engineering"],
+        "channelsTitle": "Saluran",
+        "peopleTitle": "Pesan langsung",
+        "appsTitle": "Aplikasi",
+        "app": "APLIKASI",
+        "composer": "Kirim pesan ke #{channel}",
+        "finished": "{name} ({email}) telah menyelesaikan “{title}”: {grade}%.",
+        "noted": "{author} menambahkan catatan di “{title}”:",
+        "button": "Buka di testee"
+      },
+      "invite": {
+        "title": "Account Executive B2B"
+      },
+      "askAgent": {
+        "interview": "Data Analyst"
+      }
     }
   },
   "faq": {
     "title": "Pertanyaan yang sering diajukan",
-    "intro": "Tidak menemukan jawabannya? Tanyakan ke Mira, asisten AI (tombol di bagian atas halaman), atau kirim pesan ke alamat di kebijakan privasi.",
+    "intro": "Jawaban seputar testee, dari wawancara pertamamu sampai datamu.",
+    "groups": {
+      "start": "Memulai",
+      "candidates": "Kandidat",
+      "pricing": "Harga dan kredit",
+      "results": "Hasil dan timmu",
+      "tools": "Integrasi",
+      "privacy": "Privasi dan akunmu"
+    },
+    "closingTitle": "Masih ada pertanyaan?",
+    "closingText": "Tanyakan ke Mira, asisten AI kami, atau tulis kepada kami.",
     "description": "Jawaban tentang testee: cara wawancara dibuat dari deskripsi pekerjaan, apa yang dilihat kandidat, harga dan kredit, hasil, integrasi ATS, bahasa, dan data Anda."
   },
   "contact": {
@@ -1731,9 +1997,20 @@
     "description": "testee mengubah deskripsi pekerjaan menjadi wawancara yang adil dan berbatas waktu dalam hitungan menit, dengan harga terjangkau bagi tim mana pun. Siapa saja juga bisa berlatih wawancara gratis.",
     "company": {
       "title": "Mengapa kami ada",
+      "titles": {
+        "problem": "Merekrut itu sulit dilakukan dengan benar",
+        "approach": "Wawancara yang adil dalam hitungan menit",
+        "practice": "Latihan gratis untuk semua orang"
+      },
       "problem": "Rekrutmen sering bergantung pada CV dan percakapan yang menyenangkan, dan keduanya bisa menyesatkan. Alat asesmen yang membantu dipatok dengan harga untuk perusahaan besar, dengan paket tahunan dan biaya per pengguna, sehingga kebanyakan tim tidak memakainya.",
       "approach": "testee mengubah deskripsi pekerjaan menjadi wawancara berbatas waktu dalam hitungan menit, untuk posisi apa pun. Setiap kandidat mendapat soalnya sendiri, kamu melihat siapa yang menguasai pekerjaan dan alasannya, dan kamu hanya membayar untuk kandidat yang benar-benar mengikutinya.",
       "practice": "Kami juga ingin persiapan wawancara gratis untuk semua orang. Siapa pun bisa mengikuti wawancara latihan kami untuk suatu posisi, melihat nilainya dan semua jawaban yang benar, lalu berlatih lagi, tanpa biaya."
+    },
+    "closing": {
+      "title": "Lihat sendiri",
+      "text": "Buat wawancara dari deskripsi pekerjaanmu, atau berlatih untuk sebuah posisi secara gratis.",
+      "create": "Buat tes",
+      "practice": "Latihan gratis"
     },
     "founder": {
       "quote": "Merekrut dengan baik seharusnya bukan hak istimewa perusahaan besar dengan anggaran besar. Aku membangun testee agar tim mana pun bisa mengubah deskripsi pekerjaan menjadi wawancara yang adil dalam hitungan menit, melihat siapa yang benar-benar menguasai pekerjaan, dan hanya membayar untuk kandidat yang mengikutinya. Semoga testee membantumu menemukan orang yang tepat lebih cepat.",
@@ -1751,20 +2028,18 @@
     "title": "Notifikasi",
     "unread": "{count, plural, other {# notifikasi belum dibaca}}",
     "empty": "Belum ada yang baru.",
-    "formerAuthor": "mantan anggota",
     "kinds": {
       "question_flagged": "{count, plural, =1 {Sebuah soal tentang “<bdi>{topic}</bdi>” di {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}} ditandai untuk ditinjau.} other {# soal di {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}} ditandai untuk ditinjau.}}",
       "question_fixed": "{count, plural, =1 {AI memperbaiki soal yang ditandai tentang “<bdi>{topic}</bdi>” di {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}}.} other {AI memperbaiki # soal yang ditandai di {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}}.}}",
       "referral_rewarded": "Seseorang yang kamu undang sudah isi ulang. Kamu dapat {credits, number} kredit.",
-      "auto_top_up_on": "Isi ulang otomatis menyala: {price} ditambah pajak saat kredit tersedia turun di bawah {threshold, number}.",
       "auto_top_up_charged": "Isi ulang otomatis menambahkan {credits, number} kredit.",
       "auto_top_up_failed": "Isi ulang otomatis gagal menagih kartu. Isi ulang agar saldomu tidak habis.",
+      "auto_top_up_on": "Isi ulang otomatis menyala: {price} ditambah pajak saat kredit tersedia turun di bawah {threshold, number}.",
       "auto_top_up_paused": "Isi ulang otomatis dijeda: kartu ditolak. Perbarui kartu untuk menyalakannya lagi.",
       "auto_top_up_price_change": "Mulai <time>{date}</time>, setiap isi ulang otomatis berharga {newPrice}, bukan {price}.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> menyelesaikan {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# kandidat menyelesaikan {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}}.}}",
       "invite_undelivered": "{count, plural, =1 {Undangan {title, select, none {wawancara} other {“<bdi>{title}</bdi>”}} ke <bdi>{email}</bdi> tidak terkirim.} other {# undangan {title, select, none {wawancara} other {“<bdi>{title}</bdi>”}} tidak terkirim.}}",
       "interview_ready": "{title, select, none {Sebuah wawancara sudah siap.} other {Wawancara “<bdi>{title}</bdi>” sudah siap.}}",
-      "note_added": "{count, plural, =1 {Catatan baru di {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}} dari <bdi>{authors}</bdi>.} other {# catatan baru di {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}}, yang terbaru dari <bdi>{authors}</bdi>.}}",
       "interview_cancelled": "{title, select, none {Sebuah wawancara} other {Wawancara “<bdi>{title}</bdi>”}} dibatalkan: tinjauan topiknya menunggu terlalu lama.",
       "verification_approved": "“<bdi>{name}</bdi>” terverifikasi untuk <bdi>{domain}</bdi>.",
       "verification_declined": "{reason, select, none {Verifikasi “<bdi>{name}</bdi>” ditolak.} other {Verifikasi “<bdi>{name}</bdi>” ditolak: <bdi>{reason}</bdi>}}",
@@ -1776,8 +2051,10 @@
       "news": "Berita: <bdi>{title}</bdi>",
       "legal_terms": "Ketentuan baru berlaku mulai <time>{date}</time>.",
       "legal_privacy": "Kebijakan privasi baru berlaku mulai <time>{date}</time>.",
-      "legal_dpa": "Perjanjian pemrosesan data baru berlaku mulai <time>{date}</time>."
+      "legal_dpa": "Perjanjian pemrosesan data baru berlaku mulai <time>{date}</time>.",
+      "note_added": "{count, plural, =1 {Catatan baru di {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}} dari <bdi>{authors}</bdi>.} other {# catatan baru di {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}}, yang terbaru dari <bdi>{authors}</bdi>.}}"
     },
+    "formerAuthor": "mantan anggota",
     "legalBanner": {
       "terms": "Ketentuan testee berubah pada <time>{date}</time>.",
       "privacy": "Kebijakan privasi testee berubah pada <time>{date}</time>.",
@@ -1801,7 +2078,7 @@
     "send": "Kirim <name>PDF</name>",
     "sent": "Laporan dikirim ke <bdi>{email}</bdi>",
     "sendFailed": "Laporan tidak bisa dikirim.",
-    "orSummary": "Atau kirim lewat",
+    "orSummary": "Atau kirim ringkasan singkat lewat chat",
     "via": "Dikirim dari testee",
     "candidatesFileName": "Kandidat {title}",
     "candidateCount": "{count, plural, other {# kandidat}}",
@@ -1833,6 +2110,10 @@
     "results": "Hasil latihan",
     "grade": "dari poin maksimal",
     "notFinished": "belum selesai",
+    "finished": "Selesai",
+    "answeredCard": "Soal terjawab",
+    "answeredOf": "{done, number} dari {total, number}",
+    "startedCard": "Dimulai",
     "noRounds": "Belum ada sesi latihan.",
     "startFailed": "Latihan tidak bisa dimulai. Coba lagi.",
     "gradeLabel": "Nilai",
@@ -1844,7 +2125,13 @@
     "hireButton": "Buat wawancara",
     "timingPerQuestion": "Rata-rata {time} per pertanyaan",
     "timingNone": "Tanpa batas waktu",
-    "timingNote": "Latihan tidak dibandingkan dengan siapa pun, jadi ambil waktu lebih lama, atau tanpa batas, jika perlu."
+    "timingNote": "Latihan tidak dibandingkan dengan siapa pun, jadi ambil waktu lebih lama, atau tanpa batas, jika perlu.",
+    "facts": {
+      "topics": "Topik",
+      "questions": "Soal",
+      "level": "Level",
+      "language": "Bahasa"
+    }
   },
   "openToOffers": {
     "title": "Terbuka untuk tawaran kerja",
@@ -1887,6 +2174,7 @@
     "englishOnly": "Halaman ini hanya tersedia dalam bahasa Inggris.",
     "startTitle": "Uji kandidatmu",
     "startText": "Buat tes keterampilan berbatas waktu dari deskripsi pekerjaanmu.{priced, select, yes { {price} per kandidat, tanpa langganan.} other {}}",
+    "contents": "Di halaman ini",
     "startButton": "Buat tes"
   },
   "compare": {
@@ -1912,7 +2200,16 @@
     "topics": "Yang diuji",
     "questions": "Contoh soal wawancara",
     "questionsText": "Soal seperti ini, lengkap dengan jawaban yang benar. Kandidatmu mendapat soal sendiri yang tidak pernah ditampilkan ke publik.",
-    "faq": "Pertanyaan yang diajukan perusahaan"
+    "faq": "Pertanyaan yang diajukan perusahaan",
+    "createOwn": "Buat tesmu sendiri",
+    "facts": {
+      "topics": "Topik",
+      "level": "Level",
+      "language": "Bahasa",
+      "price": "Per kandidat"
+    },
+    "closingTitle": "Siap menguji kandidatmu?",
+    "closingText": "Tempel deskripsi pekerjaan dan dapatkan tes seperti ini dalam hitungan menit, gratis dibuat."
   },
   "ats": {
     "statusConnected": "terhubung",
@@ -1998,6 +2295,25 @@
     "bzStepCreate": "Buat kunci API sebagai admin yang bisa melihat semua lowongan: kunci ini bertindak atas namamu, dan hasilnya ditulis atas namamu. API dan webhook Breezy tersedia di paket Pro-nya.",
     "bzStepPaste": "Tempel kunci di bawah. Webhook di Breezy HR kami tambahkan sendiri.",
     "atsGroup": "ATS",
+    "firstJobTitle": "Hubungkan lowongan pertamamu",
+    "brokenText": "{ats} berhenti bekerja, sehingga kandidat tidak diundang. Hubungkan kembali agar berjalan lagi.",
+    "stripMove": "Seorang kandidat mencapai tahap yang kamu pilih di {ats}",
+    "stripInvite": "testee mengundangnya ke wawancara yang terhubung",
+    "stripResults": "Hasilnya dikirim kembali ke profilnya di {ats}",
+    "rowStage": "Tahap: <bdi>{stage}</bdi>",
+    "rowInterview": "Wawancara: <link><bdi>{interview}</bdi></link>",
+    "invitedShort": "<n></n> diundang",
+    "waitingShort": "<n></n> menunggu",
+    "notInvitedShort": "<n></n> belum diundang",
+    "summary": {
+      "status": "Status",
+      "account": "Akun",
+      "jobs": "Lowongan terhubung",
+      "invited": "Kandidat diundang"
+    },
+    "connectedGroup": "Terhubung",
+    "statusBroken": "Perlu dihubungkan kembali",
+    "rowText": "Undang kandidat dari {ats} dan kirim hasilnya kembali.",
     "messagingGroup": "Aplikasi pesan",
     "apiAiAppsGroup": "API & aplikasi AI",
     "searchInterview": "Cari wawancara",
@@ -2005,6 +2321,29 @@
   },
   "slack": {
     "add": "Tambahkan ke Slack",
+    "rowText": "Dapatkan notifikasi di Slack saat kandidat selesai.",
+    "brokenText": "Slack berhenti menerima pesan, sehingga channel-mu tidak mendapat notifikasi. Hubungkan kembali agar berjalan lagi.",
+    "pointChannel": "Pilih channel tempat timmu akan melihatnya.",
+    "pointKinds": "Pilih notifikasi mana yang dikirim ke sana.",
+    "pointPrivacy": "testee hanya bisa memposting ke channel itu. testee tidak bisa membaca Slack-mu.",
+    "test": "Kirim tes",
+    "testSent": "Pesan uji dikirim ke channel-mu.",
+    "testFailed": "Pesan uji tidak bisa dikirim.",
+    "groups": {
+      "candidates": "Kandidat",
+      "interviews": "Wawancara",
+      "billing": "Tagihan",
+      "team": "Tim"
+    },
+    "samples": {
+      "candidate_finished": "Ann Lee (ann@example.com) menyelesaikan “Data Analyst”: 82%.",
+      "ats_not_invited": "Ben Ortiz berasal dari ATS-mu tetapi tidak diundang ke “Data Analyst”.",
+      "invite_undelivered": "Undangan ke ben@example.com untuk “Data Analyst” tidak terkirim.",
+      "interview_ready": "“Data Analyst” sudah siap.",
+      "auto_top_up_charged": "Isi ulang otomatismu telah ditagihkan.",
+      "auto_top_up_failed": "Isi ulang otomatismu gagal. Perbarui kartumu agar tetap berjalan.",
+      "note_added": "Maya menambahkan catatan di “Data Analyst”: SQL kuat, layak ditelepon."
+    },
     "connectFailed": "Slack tidak bisa dihubungkan.",
     "connected": "Slack sudah terhubung.",
     "disconnectFailed": "Slack tidak bisa diputuskan.",
@@ -2019,9 +2358,9 @@
       "ats_not_invited": "Kandidat dari ATS-mu tidak diundang",
       "invite_undelivered": "Email undangan tidak terkirim",
       "interview_ready": "Wawancara sudah siap",
-      "note_added": "Anggota tim menulis catatan, beserta teksnya",
       "auto_top_up_charged": "Isi ulang otomatis berhasil ditagih",
-      "auto_top_up_failed": "Isi ulang otomatis gagal"
+      "auto_top_up_failed": "Isi ulang otomatis gagal",
+      "note_added": "Anggota tim menulis catatan, beserta teksnya"
     },
     "instructionsTitle": "Cara Slack menerima notifikasimu",
     "stepAdd": "Klik “Tambahkan ke Slack”: Slack terbuka dan memintamu mengizinkan testee di workspace-mu.",
@@ -2030,13 +2369,67 @@
     "stepPrivacy": "testee hanya bisa memposting ke channel itu. testee tidak bisa membaca Slack-mu, dan memutuskannya akan menghapus testee."
   },
   "api": {
+    "firstKeyTitle": "Buat kunci pertamamu",
+    "sdkDocs": "Lihat dokumentasi SDK",
+    "sdkReady": "Siap: {count, plural, other {# situs}} bisa menampilkan wawancaramu.",
+    "sdkNotReady": "Belum diatur: tambahkan situs di bawah agar bisa menampilkan wawancaramu.",
+    "sdkRules": "Halaman harus memakai HTTPS. Tambahkan satu situs, atau semua subdomainnya:",
+    "stepSite": "Tambahkan situsmu",
+    "stepCode": "Tempel kode ini ke halamanmu",
+    "stepSend": "Arahkan kandidat ke sana",
+    "stepSendText": "Servermu mengundang kandidat dengan sign_in false dan meneruskan invite_url yang diterimanya ke halamanmu. Jangan pernah menaruh kunci API di halaman.",
+    "thisSite": "Situs ini",
+    "allSubdomains": "Semua subdomain",
+    "localhostOn": "Aktif: matikan sebelum go live.",
+    "firstWebhookTitle": "Tambahkan webhook pertamamu",
+    "webhookSampleText": "testee mengirim permintaan bertanda tangan seperti ini saat sesuatu terjadi:",
+    "lastDelivered": "terakhir terkirim <time>{date}</time>",
+    "webhookStates": {
+      "paused": "Dijeda",
+      "unused": "Belum dipakai",
+      "active": "Aktif"
+    },
+    "webhookEvents": {
+      "started": "Kandidat mulai",
+      "finished": "Kandidat selesai",
+      "undelivered": "Kandidat tidak terjangkau",
+      "expired": "Undangan kedaluwarsa",
+      "removed": "Kandidat dihapus",
+      "ready": "Wawancara siap"
+    },
+    "replaceKey": "Buat pengganti",
+    "activityTitle": "Aktivitas",
+    "ipOpen": "Alamat IP mana pun bisa memakai kunci ini. Batasi ke alamat server-mu agar lebih aman.",
+    "summary": {
+      "status": "Status",
+      "access": "Akses",
+      "lastUsed": "Terakhir dipakai",
+      "expires": "Kedaluwarsa",
+      "created": "Dibuat"
+    },
+    "warnings": {
+      "expired": "Kunci ini sudah kedaluwarsa, sehingga permintaan dengan kunci ini ditolak. Buat penggantinya agar bisa melanjutkan.",
+      "expiring": "Kunci ini segera kedaluwarsa. Buat penggantinya dan beralihlah sebelum kunci ini berhenti berfungsi."
+    },
+    "exampleText": "Coba dengan permintaan ini, yang membaca kreditmu:",
+    "access": {
+      "read": "Hanya baca",
+      "write": "Baca & tulis",
+      "custom": "Kustom"
+    },
+    "states": {
+      "expired": "Kedaluwarsa",
+      "expiring": "Segera kedaluwarsa",
+      "never_used": "Belum pernah dipakai",
+      "active": "Aktif"
+    },
     "name": "API",
     "rowName": "API, SDK, webhook",
     "rowText": "Kunci dan webhook untuk menghubungkan platformmu sendiri.",
     "counts": "{keys, plural, other {# kunci}} · {webhooks, plural, other {# webhook}}",
     "docs": "Dokumentasi pengembang",
     "keysTitle": "Kunci API",
-    "keysText": "Kunci bertindak sebagai orang yang membuatnya, dan hanya bisa melakukan apa yang diizinkan hak aksesnya.",
+    "keysText": "Kunci bertindak atas nama perusahaanmu, sebagai dirinya sendiri, dan hanya bisa melakukan apa yang diizinkan hak aksesnya.\nKunci tetap berfungsi saat orang yang membuatnya pergi.",
     "noKeys": "Belum ada kunci.",
     "newKey": "Kunci baru",
     "newKeyTitle": "Kunci API baru",
@@ -2064,7 +2457,7 @@
     "removeKeyTitle": "Hapus kunci ini?",
     "removeKeyText": "Semua yang memakai “<bdi>{name}</bdi>” akan langsung berhenti berfungsi.",
     "webhooksTitle": "Webhook",
-    "webhooksText": "testee memberi tahu alamat-alamat ini saat kandidat mulai, selesai (beserta hasilnya), atau dihapus, saat undangannya tidak sampai atau kedaluwarsa, dan saat wawancara siap. Setiap permintaan ditandatangani dengan secret alamat tersebut.",
+    "webhooksText": "testee memberi tahu alamat-alamat ini saat salah satu hal berikut terjadi, dan tiap permintaan ditandatangani dengan secret alamat itu.",
     "noWebhooks": "Belum ada webhook.",
     "failing": "Dijeda: alamat ini tidak merespons selama 3 hari, jadi tidak ada event yang dikirim ke sini. Event uji yang diterima akan mengaktifkannya lagi.",
     "addWebhook": "Tambah webhook",
@@ -2151,7 +2544,6 @@
     "localhostText": "Untuk pengujian di komputermu sendiri, port apa pun. Matikan setelah kamu live.",
     "permissionsTitle": "Hak akses",
     "permissionsText": "Apa yang boleh dilakukan kunci ini. Perubahan langsung tersimpan.",
-    "permissionsSaved": "Hak akses tersimpan.",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2631,15 @@
       "tools": "Tool",
       "frameworks": "Framework agen"
     },
+    "intro": "Hubungkan testee ke platformmu sendiri, servermu, atau agen AI.",
+    "endpointsText": "Setiap rute, menurut objek yang diurusnya. Buka salah satu untuk melihat apa yang dibutuhkan, apa yang dikembalikan, dan error-nya.",
+    "apiPages": {
+      "start": "Mulai",
+      "guides": "Panduan",
+      "endpoints": "Endpoint",
+      "errors": "Error",
+      "changelog": "Catatan perubahan"
+    },
     "englishOnly": "Halaman ini hanya tersedia dalam bahasa Inggris.",
     "baseUrl": "URL dasar",
     "copyBaseUrl": "Salin URL",
@@ -2275,6 +2676,7 @@
   },
   "assistant": {
     "title": "Mira · asisten AI",
+    "name": "Mira",
     "company": "Perusahaan",
     "allCompanies": "Semua perusahaan",
     "newChat": "Obrolan baru",
@@ -2331,7 +2733,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "Cara kerja testee, biayanya, dan apa yang dilihat kandidat, dijawab dari tanya jawab testee. Masuk untuk bertanya tentang perusahaan dan kandidatmu.",
+        "text": "Masuk untuk bertanya tentang perusahaan dan kandidatmu.",
         "questions": {
           "what": "Apa itu testee?",
           "pricing": "Berapa biayanya?",
@@ -2340,7 +2742,7 @@
         }
       },
       "no_company": {
-        "text": "Ayo mulai: wawancara pertamamu, perusahaanmu, dan verifikasinya.",
+        "text": "Ayo mulai wawancara pertamamu.",
         "questions": {
           "firstInterview": "Buat wawancara pertamaku",
           "createCompany": "Buatkan perusahaan untukku",
@@ -2348,7 +2750,7 @@
         }
       },
       "unverified": {
-        "text": "Verifikasi perusahaanmu agar kandidat tahu siapa yang mengundang mereka, lalu buat wawancaramu.",
+        "text": "Verifikasi perusahaanmu dan buat wawancaramu.",
         "questions": {
           "verify": "Verifikasi perusahaanku",
           "whyVerify": "Kenapa perlu verifikasi perusahaan?",
@@ -2356,7 +2758,7 @@
         }
       },
       "no_interviews": {
-        "text": "Buat wawancara dari deskripsi pekerjaan: pertanyaannya ditulis untuk peran itu.",
+        "text": "Ayo buat wawancara pertamamu.",
         "questions": {
           "fromDescription": "Buat wawancara dari deskripsi pekerjaan",
           "template": "Buat wawancara dari templat",
@@ -2364,7 +2766,7 @@
         }
       },
       "no_candidates": {
-        "text": "Undang kandidat lewat email, tautan yang bisa dibagikan, atau dari ATS-mu.",
+        "text": "Ayo undang kandidat pertamamu.",
         "questions": {
           "invite": "Undang kandidat",
           "shareLink": "Nyalakan tautan berbagi",
@@ -2372,7 +2774,7 @@
         }
       },
       "has_candidates": {
-        "text": "Tanyakan tentang kandidatmu: siapa yang lulus, bagaimana perbandingannya, dan apa arti hasilnya.",
+        "text": "Tanyakan tentang kandidatmu dan hasil mereka.",
         "questions": {
           "passed": "Siapa yang lulus minggu ini?",
           "compare": "Bandingkan kandidat terbaik saya",
@@ -2494,7 +2896,27 @@
     "feedbackLink": "Hubungi kami"
   },
   "companyBilling": {
-    "reservedTab": "Dicadangkan ({count, number})",
+    "reservedTab": "Dicadangkan",
+    "download": {
+      "open": "Unduh riwayat",
+      "title": "Unduh riwayat",
+      "description": "Pilih periode untuk file CSV-mu.",
+      "save": "Unduh",
+      "failed": "Kami tidak bisa membuat file-nya. Coba lagi."
+    },
+    "lowText": "Kreditmu hampir habis. Isi ulang agar kandidat tetap bisa diundang.",
+    "summary": {
+      "available": "Kredit tersedia",
+      "candidates": "Kandidat yang tercakup",
+      "reserved": "Kredit dicadangkan",
+      "spent": "Kredit terpakai bulan ini"
+    },
+    "kinds": {
+      "all": "Semua",
+      "topups": "Isi ulang",
+      "charges": "Biaya",
+      "refunds": "Pengembalian dana"
+    },
     "reservedEmpty": "Tidak ada kandidat yang memegang kredit.",
     "reservedNote": "Kandidat yang belum selesai. Kredit mereka dicadangkan: dipotong jika mereka menjawab, dikembalikan jika tidak.",
     "history": "Riwayat",
@@ -2521,7 +2943,19 @@
     "name": "Server MCP",
     "rowText": "Hubungkan Claude, ChatGPT, dan aplikasi AI lainnya ke testee.",
     "title": "Aplikasi AI",
-    "subtitle": "Aplikasi bertindak sebagai kamu, di setiap perusahaan tempatmu bergabung, dengan hak aksesmu.",
+    "subtitle": "Aplikasi ini bertindak sebagai kamu, di setiap perusahaan tempatmu bergabung, dengan hak aksesmu. Kamu mengizinkan masing-masing di testee: tidak ada kunci yang ditempel di mana pun.",
+    "connectedTitle": "Aplikasimu",
+    "otherApps": "Lainnya",
+    "allowIn": "Izinkan aplikasi AI di <bdi>{company}</bdi>",
+    "allowOn": "Anggota bisa memakai wawancara dan kandidat perusahaan ini dari aplikasi AI yang mereka hubungkan.",
+    "allowOff": "Nonaktif: aplikasi AI tidak bisa membaca atau mengubah apa pun di perusahaan ini.",
+    "promptsTitle": "Coba tanyakan",
+    "promptCopied": "Disalin",
+    "prompts": {
+      "passed": "Siapa yang lulus minggu ini?",
+      "compare": "Bandingkan kandidat terbaikku untuk wawancara Data Analyst.",
+      "invite": "Undang ann@example.com ke wawancara Data Analyst."
+    },
     "instructionsTitle": "Hubungkan aplikasi AI ke testee",
     "serverTitle": "Alamat server",
     "serverText": "Tempel di aplikasi AI-mu sebagai custom connector (server MCP).",
@@ -2679,6 +3113,10 @@
     "failed": "File tidak bisa diekspor. Coba lagi."
   },
   "actionLog": {
+    "period": "Periode",
+    "periodAll": "Sepanjang waktu",
+    "periodDays": "{days, number} hari terakhir",
+    "periodCustom": "Kustom",
     "empty": "Belum ada tindakan.",
     "noMatches": "Tidak ada tindakan yang cocok dengan filter ini.",
     "formerMember": "Mantan anggota",
@@ -2686,7 +3124,15 @@
     "deletedApiKey": "{via, select, mcp {Lewat MCP dengan kunci yang sudah dihapus} other {Lewat API dengan kunci yang sudah dihapus}}",
     "deletedCandidate": "kandidat yang sudah dihapus",
     "anyMember": "Siapa saja",
-    "anyAction": "Semua tindakan",
+    "anyAction": "Semua",
+    "clear": "Hapus",
+    "download": {
+      "open": "Unduh log",
+      "title": "Unduh log",
+      "description": "Pilih periode untuk file CSV-mu.",
+      "save": "Unduh",
+      "failed": "Kami tidak bisa membuat file-nya. Coba lagi."
+    },
     "member": "Anggota",
     "action": "Tindakan",
     "from": "Dari",
@@ -2722,13 +3168,13 @@
       "candidate_deleted": "Menghapus kandidat",
       "candidate_renamed": "Mengubah nama kandidat",
       "extra_time_set": "Memberi kandidat waktu tambahan",
-      "candidate_mode_set": "Mengubah mode wawancara kandidat",
       "results_viewed": "Melihat hasil kandidat",
       "report_emailed": "Mengirim laporan lewat email",
       "bias_audit_exported": "Mengekspor data untuk audit bias",
       "member_invited": "Mengundang anggota",
       "member_joined": "Bergabung dengan perusahaan",
       "member_removed": "Menghapus anggota",
+      "candidate_mode_set": "Mengubah mode wawancara kandidat",
       "member_role_changed": "Mengubah peran anggota",
       "ownership_transferred": "Menyerahkan perusahaan ke pemilik lain",
       "company_renamed": "Mengganti nama perusahaan",
@@ -2751,6 +3197,7 @@
       "slack_notifications_changed": "Mengubah notifikasi Slack",
       "api_key_created": "Membuat kunci API",
       "api_key_deleted": "Menghapus kunci API",
+      "api_key_renamed": "Mengganti nama kunci API",
       "api_key_permissions_changed": "Mengubah hak akses kunci API",
       "api_key_ips_changed": "Mengubah IP yang diizinkan untuk kunci API",
       "embed_domains_changed": "Mengubah domain yang diizinkan",

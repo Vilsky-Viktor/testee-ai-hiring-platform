@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "Cài đặt",
+    "preferences": "Tùy chọn",
+    "accountId": "ID tài khoản",
+    "deleteTitle": "Xóa tài khoản",
+    "deleteNote": "Xóa vĩnh viễn tài khoản và dữ liệu của bạn.",
     "language": "Ngôn ngữ",
     "languageNote": "Dùng cho giao diện và câu trả lời của chat hỗ trợ, cùng ngôn ngữ mặc định của buổi phỏng vấn mới. Bạn có thể tạo buổi phỏng vấn bằng bất kỳ ngôn ngữ nào được hỗ trợ.",
     "languageFailed": "Không thể đổi ngôn ngữ. Vui lòng thử lại.",
@@ -12,7 +16,7 @@
     "account": "Tài khoản của bạn",
     "accountNote": "Hãy ghi ID này khi bạn viết cho chúng tôi về tài khoản của mình.",
     "yourData": "Dữ liệu của bạn",
-    "yourDataNote": "Tải xuống mọi thứ testee. lưu về bạn, hoặc xóa tài khoản.",
+    "yourDataNote": "Tải xuống mọi thứ testee lưu về bạn.",
     "download": "Tải dữ liệu của tôi",
     "downloadFailed": "Không thể chuẩn bị dữ liệu của bạn. Vui lòng thử lại.",
     "delete": "Xóa tài khoản",
@@ -50,7 +54,8 @@
     "system": "Hệ thống",
     "light": "Sáng",
     "dark": "Tối",
-    "topUp": "Nạp credit"
+    "topUp": "Nạp credit",
+    "workspace": "Không gian làm việc của tôi"
   },
   "nav": {
     "main": "Menu chính",
@@ -60,15 +65,19 @@
     "terms": "Điều khoản",
     "docs": "Tài liệu pháp lý",
     "back": "Quay lại",
-    "hiring": "bảng điều khiển",
+    "hiring": "không gian làm việc",
     "pricingLink": "bảng giá",
     "faq": "Câu hỏi thường gặp",
     "contact": "Liên hệ",
     "about": "Về chúng tôi",
     "practice": "Luyện tập miễn phí",
     "tests": "Bài kiểm tra kỹ năng",
-    "preEmploymentTesting": "Kiểm tra trước tuyển dụng",
-    "aiInterviews": "Phỏng vấn AI",
+    "createTest": "Tạo buổi phỏng vấn",
+    "footerProduct": "Sản phẩm",
+    "footerResources": "Tài nguyên",
+    "footerCompany": "Công ty",
+    "footerLegal": "Pháp lý",
+    "footerTagline": "Buổi phỏng vấn công bằng, có giới hạn thời gian, tạo từ mô tả công việc của bạn.",
     "compare": "So sánh",
     "guides": "Hướng dẫn",
     "apiDocs": "Tài liệu cho nhà phát triển",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "Lên đầu trang",
     "morePages": "Trang khác",
+    "moreActions": "Thêm thao tác",
     "copyLink": "Sao chép liên kết",
     "linkCopied": "Đã sao chép liên kết",
     "home": "Trang chủ",
     "cancel": "Hủy",
     "save": "Lưu",
     "saving": "Đang lưu…",
+    "saved": "Đã lưu",
     "close": "Đóng",
     "delete": "Xóa",
     "deleting": "Đang xóa…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "Đã xảy ra lỗi",
     "text": "Vui lòng thử lại. Nếu vẫn tiếp diễn, hãy quay lại sau.",
+    "reference": "Mã tham chiếu: {id}",
     "notFound": "Không tìm thấy trang",
     "notFoundText": "Trang này không tồn tại hoặc đã bị xóa.",
     "report": "Báo lỗi",
@@ -152,16 +164,16 @@
   },
   "home": {
     "title": "Kiểm tra mọi ứng viên\nTuyển người giỏi nhất",
-    "text": "AI biến mô tả công việc của bạn thành một buổi phỏng vấn có tính giờ chuyên nghiệp.",
-    "price": "Chỉ {price} mỗi ứng viên."
+    "text": "AI biến mô tả công việc của bạn thành một buổi phỏng vấn có tính giờ chuyên nghiệp."
   },
   "start": {
     "placeholder": "Dán mô tả công việc vào đây…",
     "description": "Mô tả công việc",
-    "submit": "Tạo buổi phỏng vấn",
+    "submit": "Tạo",
+    "newInterview": "Buổi phỏng vấn mới của bạn",
     "whichCompany": "Buổi phỏng vấn này dành cho công ty nào?",
     "firstCompany": "Công ty của bạn tên là gì?",
-    "newCompany": "Một công ty mới",
+    "newCompany": "Công ty mới",
     "companyName": "Tên công ty",
     "freeCandidates": "Công ty đầu tiên của bạn được phỏng vấn miễn phí {count, plural, other {# ứng viên}} đầu tiên.",
     "continue": "Tiếp tục",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "Lượt bắt đầu qua liên kết của một buổi phỏng vấn mỗi giờ",
       "LINK_STARTS_PER_IP_HOUR": "Lượt bắt đầu qua liên kết mỗi địa chỉ mỗi giờ",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "Lượt xuất dữ liệu cho kiểm toán thiên lệch mỗi công ty mỗi ngày",
+      "ACTION_LOG_EXPORTS_PER_DAY": "Số lần tải nhật ký thao tác mỗi công ty mỗi ngày",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "Số lần tải lịch sử credit mỗi công ty mỗi ngày",
       "MAX_BULK_INVITES": "Ứng viên trong một danh sách hoặc tệp",
       "MAX_PENDING_INVITES": "Lời mời vào nhóm đang chờ mỗi công ty",
       "MEMBER_INVITES_PER_UNPAID_DAY": "Lời mời vào nhóm mỗi công ty chưa thanh toán mỗi ngày",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "Lượt gọi tới ATS của công ty mỗi công ty mỗi phút",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "Webhook ATS mỗi địa chỉ gửi mỗi phút",
       "ATS_CONNECTS_PER_HOUR": "Kết nối ATS mỗi công ty mỗi giờ",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "Số tin nhắn thử Slack mỗi công ty mỗi giờ",
       "RESEND_DAILY_LIMIT": "Email mỗi ngày qua Resend",
       "RESEND_RESERVE_PERCENT": "Phần email mỗi ngày qua Resend được giữ lại, không dùng cho gửi hàng loạt",
       "CAMPAIGNS_PER_KIND_DAY": "Chiến dịch mỗi loại mỗi ngày",
@@ -775,7 +790,9 @@
     "useFailed": "Không thể tạo buổi phỏng vấn từ mẫu này. Vui lòng thử lại.",
     "inProgress": "đang làm: {done}/{total, plural, other {# chủ đề}}",
     "completed": "đã hoàn thành",
-    "warningText": "<b>Mẫu được soạn sẵn cho các vị trí phổ biến.</b> Để phù hợp hơn, hãy tạo buổi phỏng vấn từ mô tả công việc của bạn."
+    "warningText": "<b>Muốn sát hơn với vị trí của bạn?</b> Hãy tạo buổi phỏng vấn từ mô tả công việc của bạn.",
+    "contents": "{topics, plural, other {# chủ đề}}, {questions, plural, other {# câu hỏi}}, {minutes, plural, other {# phút}}",
+    "usedIn": "{count, plural, other {Được dùng trong # buổi phỏng vấn}}"
   },
   "billing": {
     "paidTitle": "Đã nhận thanh toán",
@@ -808,6 +825,10 @@
     "paysInChange": "Đổi tiền tệ",
     "candidates": "{count, plural, other {# ứng viên}}",
     "perCandidate": "{price}<unit>/ứng viên</unit>",
+    "enough": "Đủ cho {count, plural, other {# ứng viên}}",
+    "pay": "Thanh toán {price}",
+    "quote": "{count, plural, other {# ứng viên}} với giá {price} mỗi người, {credits, number} credit",
+    "nextPrice": "Thêm {count, plural, other {# ứng viên}} nữa, mỗi người sẽ có giá {price}",
     "howMany": "Số ứng viên cần nạp",
     "credits": "{count, plural, other {# credit}}",
     "candidatesWord": "{count, plural, other {ứng viên}}",
@@ -863,6 +884,19 @@
     "markedWrong": "Cảm ơn bạn. Câu hỏi đang được kiểm tra và sẽ được sửa hoặc thay thế.",
     "markWrongFailed": "Không thể gửi đi kiểm tra. Vui lòng thử lại.",
     "ofCount": "trên {count, number}",
+    "perCandidate": "Số câu hỏi cho mỗi ứng viên",
+    "limitShort": "Câu hỏi cho mỗi ứng viên",
+    "topicsColumn": "Chủ đề và chủ đề con",
+    "limitLine": "{limit, number} trên {count, number} câu hỏi cho mỗi ứng viên",
+    "noMatches": "Chưa có câu hỏi nào.",
+    "summary": {
+      "total": "Câu hỏi"
+    },
+    "filters": {
+      "all": "Tất cả",
+      "reported": "Đã báo cáo"
+    },
+    "disabledCount": "{count, plural, other {# câu hỏi đã tắt}}",
     "per": "mỗi",
     "candidate": "ứng viên",
     "correct": "Đáp án đúng",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "Lượt của bạn",
     "voiceThinking": "Đang suy nghĩ",
     "miraLabel": "Người phỏng vấn AI",
+    "voiceHeardAnswer": "Tôi nghe thấy {answer}.",
+    "questionOf": "Câu hỏi {number, number}/{count, number}",
+    "answeredOf": "{done, number}/{total, number}",
+    "keysHint": "Nhấn A–{last} để chọn, Enter để sang câu hỏi tiếp theo.",
     "voiceStatus": {
       "off": "Mira đang chuẩn bị…",
       "starting": "Mira đang chuẩn bị…",
@@ -962,9 +1000,11 @@
     "cancelling": "Đang hủy…",
     "cancelFailed": "Không thể hủy việc tạo. Vui lòng thử lại.",
     "writing": "Đang tạo câu hỏi của bạn",
-    "drafting": "Đang soạn các chủ đề của bạn",
-    "writingNote": "Việc này mất vài phút. Bạn có thể rời trang này; chúng tôi vẫn tiếp tục.",
-    "draftingNote": "Đang đọc mục tiêu của bạn và lên kế hoạch nội dung cần bao quát.",
+    "drafting": "Đang tạo các chủ đề của bạn",
+    "writingNote": "Việc này mất vài phút. Bạn có thể rời khỏi trang này; chúng tôi sẽ báo khi xong.",
+    "draftingNote": "Chúng tôi đang đọc mô tả công việc của bạn. Bạn sẽ duyệt các chủ đề trước khi các câu hỏi được viết. Bạn có thể rời khỏi trang này; chúng tôi vẫn tiếp tục.",
+    "finishing": "Đang kiểm tra và lưu các câu hỏi…",
+    "goToInterviews": "Đến phần phỏng vấn",
     "topicsReady": "Đã xong {ready, number}/{count, plural, other {# chủ đề}}",
     "reviewFailed": "Không thể gửi phần duyệt. Vui lòng thử lại.",
     "retryFailed": "Không thể tạo lại. Vui lòng thử lại.",
@@ -982,13 +1022,18 @@
     "add": "Thêm",
     "done": "Xong",
     "reviewTitle": "Duyệt các chủ đề",
-    "reviewText": "Bỏ chọn chủ đề không cần, chỉnh sửa hoặc mô tả thay đổi. Mỗi chủ đề có bộ câu hỏi riêng kèm đáp án.",
+    "reviewText": "Mỗi chủ đề có bộ câu hỏi riêng kèm đáp án.",
     "editTopic": "Sửa <bdi>{topic}</bdi>",
-    "changesPlaceholder": "Không bắt buộc: mô tả thay đổi, ví dụ “Thêm một chủ đề về lãnh đạo nhóm”",
-    "changes": "Thay đổi chủ đề",
+    "changesPlaceholder": "ví dụ: “Thêm chủ đề về lãnh đạo nhóm”",
+    "changes": "Nhờ AI thay đổi các chủ đề",
     "tooMany": "Chọn tối đa {max, number} chủ đề, hoặc mô tả cách gộp chúng.",
     "apply": "Áp dụng thay đổi",
     "approve": "Duyệt và tạo",
+    "topicsChosen": "Đã chọn {chosen, number}/{count, plural, other {# chủ đề}}",
+    "applyFirst": "Hãy áp dụng thay đổi của bạn trước, hoặc xóa nội dung trong ô.",
+    "subtopicsNeeded": "Thêm ít nhất {count, plural, other {# chủ đề con}}.",
+    "addTopic": "Thêm chủ đề",
+    "removeTopic": "Xóa",
     "topicNameNeeded": "Hãy đặt tên cho chủ đề."
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "Công ty",
     "empty": "Chưa có công ty nào.",
     "owner": "Chủ sở hữu",
+    "search": "Tìm công ty",
+    "interviewsShort": "{count, plural, other {<n></n> buổi phỏng vấn}}",
+    "membersShort": "{count, plural, other {<n></n> thành viên}}",
+    "status": {
+      "low": "Sắp hết credit",
+      "verify": "Hoàn tất xác minh công ty của bạn",
+      "finished": "{count, plural, other {<n></n> ứng viên}} đã hoàn thành trong tuần này"
+    },
     "interviewCount": "{count, plural, other {# buổi phỏng vấn}}",
     "memberCount": "{count, plural, other {# thành viên}}",
     "interviews": "Phỏng vấn",
@@ -1024,6 +1077,8 @@
     "brand": "Thương hiệu",
     "billing": "Thanh toán",
     "new": "Công ty mới",
+    "newText": "Mỗi công ty có các buổi phỏng vấn, nhóm và credit riêng.",
+    "namePlaceholder": "ví dụ: Acme",
     "name": "Tên công ty",
     "create": "Tạo",
     "createFailed": "Không thể tạo công ty. Vui lòng thử lại.",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, other {# lần rời trang}}",
     "copies": "{count, plural, other {# lần thử sao chép}}",
     "fastAnswers": "{count, plural, other {# câu trả lời quá nhanh}}",
+    "extraTimeLabel": "Thời gian thêm",
+    "summary": {
+      "result": "Kết quả",
+      "timeTaken": "Thời gian làm bài",
+      "signals": "Dấu hiệu về tính trung thực",
+      "invited": "Đã mời",
+      "finished": "Đã hoàn thành",
+      "passed": "Đạt",
+      "average": "Điểm trung bình"
+    },
+    "copyLinkFailed": "Chúng tôi không thể sao chép liên kết. Vui lòng thử lại.",
     "empty": "Chưa mời ứng viên nào.",
     "noMatches": "Không có ứng viên phù hợp.",
     "search": "Tìm ứng viên theo email hoặc tên",
     "status": "Trạng thái: {status}",
     "anyStatus": "mọi trạng thái",
+    "allStatuses": "Tất cả",
     "progress": "Tiến độ",
     "grade": "Điểm",
     "resend": "Gửi lại lời mời",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "Phỏng vấn",
+    "allStatuses": "Tất cả",
+    "candidatesShort": "{count, plural, other {<n></n> ứng viên}}",
+    "finishedShort": "<n></n> đã hoàn thành",
+    "passedShort": "<n></n> đạt",
+    "rowStatus": {
+      "failed": "Mở ra để thử lại",
+      "generating": "Đang được tạo",
+      "undelivered": "{count, plural, other {<n></n> lời mời}} chưa gửi được",
+      "finished": "{count, plural, other {<n></n> ứng viên}} đã hoàn thành trong tuần này",
+      "ready": "Đã sẵn sàng: hãy mời những ứng viên đầu tiên của bạn"
+    },
     "interview": "Phỏng vấn",
     "topicsTab": "Chủ đề",
     "candidates": "Ứng viên",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "Chưa có ghi chú nào. Hãy viết ghi chú đầu tiên cho nhóm của bạn.",
     "discover": "Khám phá",
     "discoverLinkedIn": "Hồ sơ LinkedIn của {name}",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "Mọi người sẽ xuất hiện ở đây khi họ luyện tập các chủ đề này và chọn mở để nhận lời mời làm việc.",
     "discoverText": "Những người sẵn sàng nhận cơ hội việc làm đã luyện tập các chủ đề của buổi phỏng vấn này. Mới nhất trước, không xếp hạng.",
     "discoverEmpty": "Chưa có ai sẵn sàng nhận cơ hội việc làm luyện tập các chủ đề của buổi phỏng vấn này.",
     "discoverResults": "Kết quả luyện tập",
@@ -1130,6 +1210,8 @@
     "notePosting": "Đang đăng…",
     "noteEdited": "đã sửa",
     "notePinned": "Đã ghim",
+    "noteShowMore": "Xem thêm",
+    "noteShowLess": "Thu gọn",
     "notePin": "Ghim lên đầu",
     "noteUnpin": "Bỏ ghim",
     "noteFormerMember": "Cựu thành viên",
@@ -1139,8 +1221,20 @@
     "noteFailed": "Không lưu được ghi chú. Vui lòng thử lại.",
     "new": "Buổi phỏng vấn mới",
     "createTitle": "Tạo buổi phỏng vấn",
+    "createIntro": "Dán mô tả công việc. Bạn sẽ duyệt các chủ đề trước khi các câu hỏi được viết, và việc này miễn phí.",
+    "steps": {
+      "describe": "Mô tả vị trí",
+      "review": "Duyệt chủ đề",
+      "invite": "Mời ứng viên"
+    },
+    "startTemplate": "Bắt đầu từ một mẫu",
+    "startAts": "Bắt đầu từ một công việc trong ATS của bạn",
+    "tryExample": "Thử một ví dụ",
     "try": "Thử với vai trò ứng viên",
     "newCandidate": "Ứng viên mới",
+    "settingsSharing": "Chia sẻ",
+    "settingsRuns": "Cách diễn ra",
+    "settingsAfter": "Sau phỏng vấn và quyền riêng tư",
     "linkTitle": "Liên kết chia sẻ",
     "linkText": "Dành cho tin tuyển dụng: bất kỳ ai có liên kết đều có thể tham gia buổi phỏng vấn. Mỗi người được tính phí như một ứng viên được mời.",
     "linkFailed": "Không thể thay đổi liên kết. Vui lòng thử lại.",
@@ -1160,7 +1254,7 @@
     "generating": "Đang tạo…",
     "generationFailed": "Tạo không thành công",
     "fallbackTitle": "phỏng vấn",
-    "continueGeneration": "Tiếp tục tạo",
+    "continueGeneration": "Tiếp tục",
     "empty": "Chưa có buổi phỏng vấn nào. Hãy tạo buổi đầu tiên.",
     "noMatches": "Không có buổi phỏng vấn phù hợp.",
     "search": "Tìm buổi phỏng vấn theo tiêu đề",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "Email ứng viên",
     "inviteTab": {
       "one": "một người",
-      "many": "nhiều người",
-      "file": "tải lên"
+      "many": "danh sách",
+      "file": "tệp"
     },
-    "manyHint": "Mỗi dòng một ứng viên, có hoặc không kèm họ tên,\ntối đa {count, number} người mỗi lần:",
-    "manyHintNoLimit": "Mỗi dòng một ứng viên, có hoặc không kèm họ tên:",
-    "example": "ví dụ",
+    "inviteTitle": "Mời ứng viên",
+    "manyHint": "Mỗi dòng một ứng viên, có hoặc không có tên, tối đa {count, number} người mỗi lần.",
+    "manyHintNoLimit": "Mỗi dòng một ứng viên, có hoặc không có tên.",
     "uploadFile": "Tải tệp lên",
     "fileFormats": "CSV hoặc TXT, tối đa {count, number} ứng viên. Họ tên có thể nằm trong cột tên hoặc cạnh mỗi email.",
     "fileFormatsNoLimit": "CSV hoặc TXT. Họ tên có thể nằm trong cột tên hoặc cạnh mỗi email.",
@@ -1203,8 +1297,7 @@
       "unclear_name": "Hãy viết họ tên theo dạng Họ tên '<email>': <bdi>{line}</bdi>",
       "more": "và {count, number} dòng khác"
     },
-    "exampleCsv": "tệp mẫu .csv",
-    "exampleTxt": "tệp mẫu .txt",
+    "exampleFiles": "Tải xuống ví dụ: <csv>.csv</csv> hoặc <txt>.txt</txt>",
     "candidateName": "Họ tên (không bắt buộc)",
     "invitedMany": "Đã mời {count, number} ứng viên",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "Chúc mừng, buổi phỏng vấn của bạn đã sẵn sàng",
-      "text": "<name><bdi>{title}</bdi></name> đã sẵn sàng cho ứng viên. Đây là việc cần làm tiếp:",
-      "limits": "Đặt số câu hỏi mỗi ứng viên nhận được cho từng chủ đề.",
+      "text": "<name><bdi>{title}</bdi></name> đã sẵn sàng. Hãy tự làm thử trước khi mời ai, và chỉnh sửa nếu cần.",
+      "limits": "Số câu hỏi mỗi ứng viên nhận được cho mỗi chủ đề.",
       "limitsAction": "Đặt câu hỏi",
-      "time": "Điều chỉnh thời gian trung bình mỗi câu nếu cần.",
-      "timeAction": "Mở cài đặt",
-      "invite": "Mời ứng viên.",
-      "inviteAction": "Đến ứng viên",
+      "time": "Thời gian trung bình cho mỗi câu hỏi.",
+      "timeAction": "Điều chỉnh thời gian",
       "done": "Đã hiểu"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "Bạn cần thêm thời gian, ví dụ vì khuyết tật? Hãy xin <bdi>{company}</bdi> một lời mời riêng trước khi bắt đầu: không thể thêm thời gian ở đây.",
     "people": "Các câu hỏi do AI viết. Người của <bdi>{company}</bdi> sẽ xem xét kết quả và đưa ra quyết định; bạn có thể yêu cầu họ xem xét kết quả của bạn.",
     "stay": "Hãy ở lại trang này: việc rời trang, sao chép và trả lời quá nhanh để kịp đọc câu hỏi sẽ được ghi nhận, và công ty sẽ thấy khi thời gian trả lời hoặc câu trả lời của bạn không tương ứng với độ khó của câu hỏi (<link>quyền riêng tư</link>).",
-    "finished": "Buổi phỏng vấn này đã kết thúc.",
+    "finishedTitle": "Bạn đã hoàn thành",
+    "finished": "Câu trả lời của bạn đã được gửi đến <bdi>{company}</bdi>. Họ sẽ xem xét kết quả và quyết định các bước tiếp theo.",
+    "finishedPreview": "Đây là những gì ứng viên của bạn nhìn thấy. Lượt thử miễn phí này không nằm trong danh sách ứng viên của bạn, và các câu trả lời không được tính vào thống kê của câu hỏi.",
+    "finishedRights": "Bạn có thể đề nghị <bdi>{company}</bdi> cho một người xem xét kết quả của bạn. <link>Quyền riêng tư</link>",
+    "finishedAnswered": "Câu hỏi đã trả lời",
+    "finishedTime": "Thời gian làm bài",
+    "signInAs": "Hãy dùng email mà lời mời này được gửi tới.",
+    "switchAccount": "Đổi tài khoản",
+    "progress": "Bạn đã hoàn thành {percent}.",
+    "progressLabel": "Tiến độ của bạn",
+    "groups": {
+      "how": "Cách hoạt động",
+      "time": "Thời gian của bạn",
+      "rights": "Quyền và quyền riêng tư của bạn"
+    },
     "continue": "Tiếp tục",
     "start": "Chấp nhận và bắt đầu",
     "pledge": "Tôi sẽ tự trả lời, không dùng công cụ AI hay nhờ người khác.",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "Đã tham gia",
     "invited": "Đã mời",
+    "joinedOn": "Tham gia {date}",
+    "invitedOn": "Được mời {date}",
+    "pendingTitle": "Lời mời đang chờ",
+    "firstTitle": "Mời đồng đội đầu tiên của bạn",
     "role": "Vai trò",
     "roleFailed": "Không thể thay đổi vai trò.",
     "inviteTitle": "Lời mời vào công ty",
@@ -1281,6 +1390,11 @@
     "madeOwner": "<bdi>{email}</bdi> giờ là chủ sở hữu."
   },
   "scorecard": {
+    "filters": {
+      "all": "Tất cả",
+      "correct": "Đúng",
+      "wrong": "Sai"
+    },
     "timeOut": "Hết giờ",
     "leftPage": "Đã rời trang {count, plural, other {# lần}}",
     "answeredIn": "Trả lời trong <b>{time}</b>",
@@ -1298,7 +1412,7 @@
     "test": "Tạo một buổi phỏng vấn",
     "free": "Miễn phí",
     "candidate": "Mỗi ứng viên trả lời ít nhất một câu hỏi",
-    "candidateVolume": "Với credit từ lần nạp {from} trở lên",
+    "candidateVolume": "Khi nạp từ {from} trở lên",
     "perCandidate": "{price} mỗi ứng viên",
     "welcome": "{count, plural, other {# ứng viên}} đầu tiên của bạn",
     "credits": "Mỗi ứng viên tốn {credits, number} credit, và credit không bao giờ hết hạn.",
@@ -1306,6 +1420,10 @@
     "referralsNote": "Chia sẻ liên kết của công ty bạn từ thẻ Giới thiệu của công ty.",
     "companyReferral": "Một công ty bạn mời nạp credit lần đầu",
     "each": "mỗi bên {count, number} credit",
+    "fromPrice": "từ {price}",
+    "anyTopUp": "Với mọi lần nạp",
+    "volumeTitle": "Nạp càng nhiều, mỗi ứng viên càng rẻ",
+    "volumeText": "Nạp càng nhiều, giá mỗi ứng viên càng thấp.",
     "topUp": "Nạp credit"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "Tài liệu tuân thủ trong tuyển dụng",
     "intro": "Tài liệu cho các công ty đánh giá ứng viên bằng testee: hướng dẫn, mẫu và thỏa thuận xử lý dữ liệu.",
     "englishOnly": "Các tài liệu này chỉ có bằng tiếng Anh.",
-    "download": "Tải {format}",
+    "download": "Tải xuống <type>{format}</type>",
     "readOnline": "Đọc trực tuyến",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "Tạo bằng"
   },
   "referral": {
+    "title": "Cả hai bên đều nhận <n></n> credit",
+    "text": "Đủ cho {count, plural, other {# ứng viên}}. Hãy chia sẻ liên kết của bạn với một công ty khác.",
+    "empty": "Chưa có phần thưởng nào. Hãy chia sẻ liên kết để nhận phần thưởng đầu tiên.",
+    "steps": {
+      "share": "Chia sẻ liên kết của bạn với một công ty khác.",
+      "create": "Họ tạo công ty qua liên kết đó.",
+      "reward": "Sau lần nạp đầu tiên của họ, với bất kỳ số tiền nào, cả hai bên đều nhận credit."
+    },
+    "summary": {
+      "referred": "Công ty đã giới thiệu",
+      "earned": "Credit đã nhận",
+      "left": "Phần thưởng còn lại trong năm nay",
+      "leftValue": "{left, number}/{total, number}"
+    },
     "companyNote": "Cả hai bên đều nhận {reward, number} credit khi họ nạp credit lần đầu, với bất kỳ số tiền nào.",
     "deletedCompany": "Một công ty đã xóa",
     "credits": "+{count, number} credit",
@@ -1398,53 +1530,39 @@
     "intro": "Mỗi ứng viên tốn {credits, number} credit, và credit không bao giờ hết hạn.",
     "noCompany": "Credit thuộc về công ty. Hãy tạo công ty trước, rồi nạp credit tại đây.",
     "createCompany": "Tạo công ty",
+    "allCompanies": "Tất cả công ty",
     "pricing": "Bảng giá"
   },
   "landing": {
-    "more": "Cách hoạt động",
     "demos": "Video",
-    "videoTooltip": "Xem testee hoạt động thế nào",
     "watchVideo": "Xem video",
     "howItWorks": "Cách hoạt động",
     "askAgent": "hỏi Mira",
     "create": {
+      "draftingNote": "Đang đọc mô tả công việc của bạn.",
       "title": "Tạo buổi phỏng vấn trong vài phút",
       "text": "Dán mô tả công việc, điều chỉnh các chủ đề, và buổi phỏng vấn của bạn sẵn sàng sau vài phút.",
       "notes": {
-        "questions": "{count, number} câu hỏi cho mỗi chủ đề",
         "templates": "có sẵn các mẫu dùng ngay",
         "expert": "không cần chuyên gia trong lĩnh vực"
       },
-      "describe": "<n>1.</n> Dán mô tả công việc",
+      "describe": "<n>1.</n> Dán mô tả",
       "adjust": "<n>2.</n> Điều chỉnh chủ đề",
       "menu": {
-        "cut": "Cắt",
-        "copy": "Sao chép",
         "paste": "Dán"
       },
-      "ready": "<n>3.</n> Buổi phỏng vấn của bạn đã sẵn sàng",
-      "invited": "<n>4.</n> Ứng viên nhận được lời mời",
+      "ready": "<n>3.</n> Buổi phỏng vấn đã sẵn sàng",
+      "invited": "<n>4.</n> Đã nhận lời mời",
       "status": "Sẵn sàng",
       "email": {
-        "search": "Tìm kiếm thư",
-        "compose": "Soạn thư",
         "inbox": "Hộp thư đến",
-        "starred": "Có gắn dấu sao",
-        "sent": "Đã gửi",
-        "drafts": "Thư nháp",
         "from": "testee.",
-        "toMe": "tới tôi",
         "now": "bây giờ",
         "subject": "Lời mời phỏng vấn từ {company}",
-        "preheader": "Tham gia phỏng vấn “{title}” trên testee. Đăng nhập bằng {email} để bắt đầu.",
         "heading": "Lời mời phỏng vấn",
         "invited": "<b>{company}</b> mời bạn tham gia buổi phỏng vấn “{title}” trên testee.",
         "signIn": "Đăng nhập bằng {email} để bắt đầu. Chỉ địa chỉ này mới có thể tham gia phỏng vấn và bạn chỉ có một lần làm bài.",
-        "button": "Mở lời mời",
-        "pasteLink": "Hoặc dán liên kết này vào trình duyệt của bạn",
-        "footer": "Email này được gửi đến {email} vì có người đã mời địa chỉ này trên testee. Nếu bạn không mong đợi email này, bạn có thể bỏ qua.",
-        "stopCompany": "Đừng gửi email từ {company} cho tôi",
-        "operator": "testee do {name}, {address} vận hành."
+        "button": "Mở lời mời"
       },
       "phone": {
         "describe": "Dán mô tả công việc, hoặc viết vài dòng về vị trí.",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "Con người quyết định",
-          "text": "Điểm số hỗ trợ quyết định của bạn, không quyết định thay bạn. Cảnh báo hành vi bất thường là lý do để xem kỹ hơn, không phải bằng chứng."
+          "text": "Điểm số hỗ trợ quyết định của bạn. Dấu hiệu về tính trung thực là lý do để xem xét kỹ hơn, không phải bằng chứng."
         },
         "fair": {
           "title": "Công bằng với mọi ứng viên",
-          "text": "Cùng đồng hồ và cùng tỷ lệ các loại câu hỏi, câu hỏi chọn ngẫu nhiên cho từng người, thêm thời gian cho người cần."
+          "text": "Cùng một bộ đếm giờ và cơ cấu câu hỏi cho mọi người, câu hỏi được chọn ngẫu nhiên, thêm thời gian cho người cần."
         },
         "laws": {
           "title": "Xây dựng để tuân thủ",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "Mọi thao tác đều được ghi lại",
-          "text": "Chủ sở hữu thấy ai đã làm gì trong công ty, dữ liệu được lưu an toàn 12 tháng trên máy chủ tại EU."
+          "text": "Chủ sở hữu xem được ai đã làm gì, lưu trong 12 tháng trên máy chủ ở EU."
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "Còn câu hỏi khác?",
       "videos": "video",
       "faq": "Câu hỏi thường gặp",
-      "guides": "hướng dẫn",
-      "features": "tính năng",
-      "hiringFlow": "quy trình tuyển dụng"
+      "guides": "hướng dẫn"
     },
     "closing": {
       "title": "Tạo buổi phỏng vấn đầu tiên\nHoàn toàn miễn phí",
@@ -1672,7 +1788,8 @@
         "time": "~10 phút mỗi vị trí, 0 phút mỗi ứng viên",
         "cost": "{price} mỗi ứng viên đã trả lời"
       },
-      "more": "So sánh với công cụ khác"
+      "more": "So sánh với công cụ khác",
+      "best": "Lựa chọn tốt nhất"
     },
     "freeToStart": {
       "title": "Mọi thứ đều miễn phí\nTrả tiền theo ứng viên",
@@ -1689,6 +1806,7 @@
       "each": "({price} mỗi ứng viên)",
       "free": "{count, plural, other {# ứng viên đầu tiên miễn phí}}",
       "perCandidate": "mỗi ứng viên",
+      "bestPrice": "Giá tốt nhất",
       "pack": "{count, number} ứng viên giá {price}",
       "see": "Xem bảng giá",
       "notes": {
@@ -1698,11 +1816,163 @@
         "refund": "credit đã mua chưa dùng được hoàn tiền"
       },
       "currencies": "{count, plural, other {# loại tiền tệ}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Acme giúp các cửa hàng trực tuyến trả lời khách hàng bằng AI.\nChúng tôi đang tuyển Kỹ sư AI để phát triển các tính năng LLM.\n• Tối thiểu 3 năm kinh nghiệm Python\n• Ứng dụng LLM, RAG và tìm kiếm vector\n• Đánh giá và giám sát mô hình\nLàm việc từ xa, giờ giấc linh hoạt, có ngân sách học tập.",
+        "title": "Kỹ sư AI",
+        "topics": {
+          "llm": {
+            "name": "Kiến thức nền tảng về LLM",
+            "subtopics": ["Token", "Viết prompt", "Cửa sổ ngữ cảnh"]
+          },
+          "rag": {
+            "name": "Sinh văn bản tăng cường truy xuất (RAG)",
+            "subtopics": ["Embedding", "Chia chunk", "Tìm kiếm vector"]
+          },
+          "python": {
+            "name": "Python cho hệ thống ML",
+            "subtopics": ["asyncio", "Type hint"]
+          }
+        },
+        "renamed": " quy mô lớn",
+        "subtopicAdded": " và kiểm thử",
+        "change": "Thêm một chủ đề về đánh giá đầu ra của LLM",
+        "newTopic": {
+          "name": "Đánh giá LLM",
+          "subtopics": [
+            "Bộ dữ liệu kiểm thử",
+            "LLM làm giám khảo",
+            "Chỉ số đo lường"
+          ]
+        }
+      },
+      "candidates": {
+        "title": "Chuyên viên Phân tích Dữ liệu",
+        "questions": {
+          "median": {
+            "topic": "Thống kê",
+            "text": "Một vài đơn hàng rất lớn đang làm lệch giá trị đơn hàng trung bình của bạn. Chỉ số nào mô tả một đơn hàng điển hình tốt nhất?",
+            "options": [
+              "Giá trị trung bình của đơn hàng",
+              "Giá trị trung vị của đơn hàng",
+              "Khoảng biến thiên của giá trị đơn hàng",
+              "Độ lệch chuẩn của giá trị đơn hàng"
+            ]
+          },
+          "revenue": {
+            "topic": "Thống kê",
+            "text": "Doanh thu theo tuần trên dashboard của bạn giảm 20% ngay sau một thay đổi trong data pipeline. Bạn sẽ kiểm tra gì trước tiên?",
+            "options": [
+              "So sánh số dòng trước và sau thay đổi",
+              "Tìm các ngày bị trùng hoặc bị thiếu",
+              "Đổi bảng màu của dashboard",
+              "Hỏi bộ phận kinh doanh xem khách hàng có ngừng mua không"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "Bộ phận marketing muốn biết những khu vực có tổng doanh số vượt 100. Truy vấn này trả về gì?",
+            "options": [
+              "Chỉ North",
+              "Chỉ South",
+              "North và South",
+              "Không có dòng nào"
+            ]
+          },
+          "chart": {
+            "topic": "Trực quan hóa",
+            "text": "Bạn cần thể hiện số lượt đăng ký hằng tháng đã thay đổi thế nào trong hai năm qua. Biểu đồ nào thể hiện xu hướng đó tốt nhất?",
+            "options": [
+              "Biểu đồ tròn lượt đăng ký theo tháng",
+              "Biểu đồ đường lượt đăng ký theo tháng",
+              "Biểu đồ phân tán lượt đăng ký theo doanh thu",
+              "Biểu đồ histogram số lượt đăng ký hằng tháng"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "Quản lý sản phẩm",
+        "topics": [
+          "Chiến lược sản phẩm",
+          "Chỉ số",
+          "Các bên liên quan",
+          "Lộ trình sản phẩm",
+          "Nghiên cứu người dùng",
+          "Sắp xếp ưu tiên",
+          "Thử nghiệm",
+          "Định giá",
+          "Go-to-market",
+          "Giao tiếp"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "Trước khi xây dựng một tính năng mới, việc gì nên làm đầu tiên?",
+            "options": [
+              "Kiểm chứng vấn đề với người dùng",
+              "Viết đặc tả kỹ thuật",
+              "Chốt ngày ra mắt",
+              "Thiết kế màn hình"
+            ]
+          },
+          "metrics": {
+            "text": "Tỷ lệ chuyển đổi giảm từ 4% xuống 3%. So với trước đó, mức giảm này là bao nhiêu?",
+            "options": ["1%", "25%", "33%", "75%"]
+          },
+          "stakeholders": {
+            "text": "Một nhóm đối tác không đồng ý với các ưu tiên của bạn. Bạn làm gì đầu tiên?",
+            "options": [
+              "Báo lên quản lý của bạn",
+              "Hỏi họ cần gì và vì sao",
+              "Giữ nguyên kế hoạch của bạn",
+              "Bỏ các ưu tiên của bạn"
+            ]
+          }
+        },
+        "chat": {
+          "name": "Nhóm tuyển dụng",
+          "initials": "NT"
+        },
+        "notes": [
+          "Quản lý tuyển dụng muốn có danh sách rút gọn gồm hai người trước thứ Sáu.",
+          "Daniel làm tốt phần các bên liên quan ở vòng phỏng vấn qua điện thoại; yếu hơn về chỉ số.",
+          "Sofia xin thêm thời gian; mai mình sẽ hỏi lại."
+        ],
+        "pdf": "ung-vien-product-manager.pdf"
+      },
+      "slack": {
+        "channels": ["chung", "tuyen-dung", "ky-thuat"],
+        "channelsTitle": "Kênh",
+        "peopleTitle": "Tin nhắn trực tiếp",
+        "appsTitle": "Ứng dụng",
+        "app": "ỨNG DỤNG",
+        "composer": "Nhắn tin tới #{channel}",
+        "finished": "{name} ({email}) đã hoàn thành “{title}”: {grade}%.",
+        "noted": "{author} đã thêm ghi chú về “{title}”:",
+        "button": "Mở trong testee"
+      },
+      "invite": {
+        "title": "Chuyên viên Kinh doanh B2B"
+      },
+      "askAgent": {
+        "interview": "Chuyên viên Phân tích Dữ liệu"
+      }
     }
   },
   "faq": {
     "title": "Câu hỏi thường gặp",
-    "intro": "Không tìm thấy câu trả lời? Hãy hỏi Mira, trợ lý AI (nút ở đầu trang), hoặc viết cho chúng tôi theo địa chỉ trong chính sách quyền riêng tư.",
+    "intro": "Giải đáp về testee, từ buổi phỏng vấn đầu tiên đến dữ liệu của bạn.",
+    "groups": {
+      "start": "Bắt đầu",
+      "candidates": "Ứng viên",
+      "pricing": "Giá và credit",
+      "results": "Kết quả và nhóm của bạn",
+      "tools": "Tích hợp",
+      "privacy": "Quyền riêng tư và tài khoản của bạn"
+    },
+    "closingTitle": "Vẫn còn thắc mắc?",
+    "closingText": "Hãy hỏi Mira, trợ lý AI của chúng tôi, hoặc nhắn cho chúng tôi.",
     "description": "Giải đáp về testee: cách tạo buổi phỏng vấn từ mô tả công việc, ứng viên thấy gì, giá và credit, kết quả, tích hợp ATS, ngôn ngữ và dữ liệu của bạn."
   },
   "contact": {
@@ -1731,9 +2001,20 @@
     "description": "testee biến mô tả công việc thành một buổi phỏng vấn công bằng, có giới hạn thời gian chỉ trong vài phút, với mức giá đội nào cũng chi trả được, và ai cũng có thể luyện phỏng vấn miễn phí.",
     "company": {
       "title": "Vì sao chúng tôi tồn tại",
+      "titles": {
+        "problem": "Tuyển dụng đúng người rất khó",
+        "approach": "Buổi phỏng vấn công bằng trong vài phút",
+        "practice": "Luyện tập miễn phí cho mọi người"
+      },
       "problem": "Tuyển dụng thường dựa vào CV và một cuộc trò chuyện tốt, và cả hai đều có thể gây hiểu lầm. Các công cụ đánh giá hữu ích lại có giá dành cho công ty lớn, với gói năm và phí theo người dùng, nên phần lớn các nhóm đành bỏ qua.",
       "approach": "testee biến mô tả công việc thành buổi phỏng vấn có tính giờ chỉ trong vài phút, cho mọi vị trí. Mỗi ứng viên nhận bộ câu hỏi riêng, bạn thấy ai thạo việc và vì sao, và bạn chỉ trả tiền cho những ứng viên thật sự tham gia.",
       "practice": "Chúng tôi cũng muốn việc chuẩn bị phỏng vấn là miễn phí cho tất cả mọi người. Ai cũng có thể làm các buổi phỏng vấn luyện tập của chúng tôi cho một vị trí, xem điểm và mọi đáp án đúng, rồi luyện tập lại, hoàn toàn miễn phí."
+    },
+    "closing": {
+      "title": "Tự mình trải nghiệm",
+      "text": "Tạo buổi phỏng vấn từ mô tả công việc của bạn, hoặc luyện tập miễn phí cho một vị trí.",
+      "create": "Tạo buổi phỏng vấn",
+      "practice": "Luyện tập miễn phí"
     },
     "founder": {
       "quote": "Tuyển dụng tốt không nên là đặc quyền của các công ty lớn với ngân sách lớn. Tôi xây dựng testee để bất kỳ nhóm nào cũng có thể biến mô tả công việc thành một buổi phỏng vấn công bằng trong vài phút, thấy ai thật sự thạo việc và chỉ trả tiền cho những ứng viên tham gia. Mong rằng nó giúp bạn tìm được đúng người nhanh hơn.",
@@ -1751,20 +2032,18 @@
     "title": "Thông báo",
     "unread": "{count, plural, other {# thông báo chưa đọc}}",
     "empty": "Chưa có gì mới.",
-    "formerAuthor": "một cựu thành viên",
     "kinds": {
       "question_flagged": "{count, plural, =1 {Một câu hỏi về “<bdi>{topic}</bdi>” trong {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}} đã bị đánh dấu để xem xét.} other {# câu hỏi trong {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}} đã bị đánh dấu để xem xét.}}",
       "question_fixed": "{count, plural, =1 {AI đã sửa một câu hỏi bị đánh dấu về “<bdi>{topic}</bdi>” trong {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}}.} other {AI đã sửa # câu hỏi bị đánh dấu trong {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}}.}}",
       "referral_rewarded": "Một người bạn mời đã nạp credit. Bạn nhận được {credits, number} credit.",
-      "auto_top_up_on": "Tự động nạp đang bật: {price} cộng thuế khi credit khả dụng xuống dưới {threshold, number}.",
       "auto_top_up_charged": "Tự động nạp đã thêm {credits, number} credit.",
       "auto_top_up_failed": "Tự động nạp không trừ tiền được từ thẻ. Hãy nạp credit để không bị hết số dư.",
+      "auto_top_up_on": "Tự động nạp đang bật: {price} cộng thuế khi credit khả dụng xuống dưới {threshold, number}.",
       "auto_top_up_paused": "Tự động nạp đã tạm dừng: thẻ bị từ chối. Hãy cập nhật thẻ để bật lại.",
       "auto_top_up_price_change": "Từ <time>{date}</time>, mỗi lần tự động nạp có giá {newPrice} thay vì {price}.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> đã hoàn thành {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# ứng viên đã hoàn thành {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}}.}}",
       "invite_undelivered": "{count, plural, =1 {Lời mời gửi tới <bdi>{email}</bdi> cho {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}} chưa được chuyển đến.} other {# lời mời cho {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}} chưa được chuyển đến.}}",
       "interview_ready": "{title, select, none {Một buổi phỏng vấn đã sẵn sàng.} other {Buổi phỏng vấn “<bdi>{title}</bdi>” đã sẵn sàng.}}",
-      "note_added": "{count, plural, other {# ghi chú mới cho {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}}, mới nhất từ <bdi>{authors}</bdi>.}}",
       "interview_cancelled": "{title, select, none {Một buổi phỏng vấn} other {Buổi phỏng vấn “<bdi>{title}</bdi>”}} đã bị hủy: phần xem xét chủ đề phải chờ quá lâu.",
       "verification_approved": "“<bdi>{name}</bdi>” đã được xác minh cho <bdi>{domain}</bdi>.",
       "verification_declined": "{reason, select, none {Yêu cầu xác minh “<bdi>{name}</bdi>” đã bị từ chối.} other {Yêu cầu xác minh “<bdi>{name}</bdi>” đã bị từ chối: <bdi>{reason}</bdi>}}",
@@ -1776,8 +2055,10 @@
       "news": "Tin tức: <bdi>{title}</bdi>",
       "legal_terms": "Điều khoản mới áp dụng từ <time>{date}</time>.",
       "legal_privacy": "Chính sách quyền riêng tư mới áp dụng từ <time>{date}</time>.",
-      "legal_dpa": "Thỏa thuận xử lý dữ liệu mới áp dụng từ <time>{date}</time>."
+      "legal_dpa": "Thỏa thuận xử lý dữ liệu mới áp dụng từ <time>{date}</time>.",
+      "note_added": "{count, plural, other {# ghi chú mới cho {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}}, mới nhất từ <bdi>{authors}</bdi>.}}"
     },
+    "formerAuthor": "một cựu thành viên",
     "legalBanner": {
       "terms": "Điều khoản của testee thay đổi vào <time>{date}</time>.",
       "privacy": "Chính sách quyền riêng tư của testee thay đổi vào <time>{date}</time>.",
@@ -1801,7 +2082,7 @@
     "send": "Gửi <name>PDF</name>",
     "sent": "Đã gửi báo cáo tới <bdi>{email}</bdi>",
     "sendFailed": "Không thể gửi báo cáo.",
-    "orSummary": "Hoặc gửi qua",
+    "orSummary": "Hoặc gửi bản tóm tắt ngắn qua chat",
     "via": "Gửi từ testee",
     "candidatesFileName": "Ứng viên {title}",
     "candidateCount": "{count, plural, other {# ứng viên}}",
@@ -1833,6 +2114,10 @@
     "results": "Kết quả luyện tập",
     "grade": "số điểm tối đa",
     "notFinished": "chưa hoàn thành",
+    "finished": "Đã xong",
+    "answeredCard": "Câu hỏi đã trả lời",
+    "answeredOf": "{done, number}/{total, number}",
+    "startedCard": "Đã bắt đầu",
     "noRounds": "Chưa có lượt nào.",
     "startFailed": "Không thể bắt đầu luyện tập. Vui lòng thử lại.",
     "gradeLabel": "Điểm",
@@ -1844,7 +2129,13 @@
     "hireButton": "Tạo buổi phỏng vấn",
     "timingPerQuestion": "Trung bình {time} mỗi câu hỏi",
     "timingNone": "Không giới hạn thời gian",
-    "timingNote": "Bài luyện tập không được so sánh với ai, nên nếu cần, bạn có thể dùng thêm thời gian hoặc bỏ giới hạn."
+    "timingNote": "Bài luyện tập không được so sánh với ai, nên nếu cần, bạn có thể dùng thêm thời gian hoặc bỏ giới hạn.",
+    "facts": {
+      "topics": "Chủ đề",
+      "questions": "Câu hỏi",
+      "level": "Cấp độ",
+      "language": "Ngôn ngữ"
+    }
   },
   "openToOffers": {
     "title": "Sẵn sàng nhận cơ hội việc làm",
@@ -1887,6 +2178,7 @@
     "englishOnly": "Trang này chỉ có bằng tiếng Anh.",
     "startTitle": "Kiểm tra ứng viên của bạn",
     "startText": "Tạo bài kiểm tra kỹ năng có giới hạn thời gian từ mô tả công việc của bạn.{priced, select, yes { {price} mỗi ứng viên, không cần gói đăng ký.} other {}}",
+    "contents": "Trên trang này",
     "startButton": "Tạo bài kiểm tra"
   },
   "compare": {
@@ -1912,7 +2204,16 @@
     "topics": "Nội dung kiểm tra",
     "questions": "Câu hỏi phỏng vấn mẫu",
     "questionsText": "Những câu hỏi như thế này, kèm đáp án đúng. Ứng viên của bạn nhận câu hỏi riêng, không bao giờ được công khai.",
-    "faq": "Câu hỏi các công ty thường hỏi"
+    "faq": "Câu hỏi các công ty thường hỏi",
+    "createOwn": "Tạo buổi phỏng vấn của riêng bạn",
+    "facts": {
+      "topics": "Chủ đề",
+      "level": "Cấp độ",
+      "language": "Ngôn ngữ",
+      "price": "Mỗi ứng viên"
+    },
+    "closingTitle": "Sẵn sàng đánh giá ứng viên của bạn?",
+    "closingText": "Dán mô tả công việc và nhận một buổi phỏng vấn như thế này trong vài phút, tạo miễn phí."
   },
   "ats": {
     "statusConnected": "đã kết nối",
@@ -1998,6 +2299,25 @@
     "bzStepCreate": "Tạo khóa API bằng tài khoản quản trị viên xem được mọi tin tuyển dụng: khóa hoạt động thay mặt bạn, và kết quả được ghi dưới tên bạn. API và webhook của Breezy có trong gói Pro.",
     "bzStepPaste": "Dán khóa bên dưới. Chúng tôi tự thêm webhook trong Breezy HR.",
     "atsGroup": "ATS",
+    "firstJobTitle": "Liên kết công việc đầu tiên của bạn",
+    "brokenText": "{ats} đã ngừng hoạt động nên ứng viên không được mời. Hãy kết nối lại để bắt đầu lại.",
+    "stripMove": "Ứng viên đến giai đoạn bạn đã chọn trong {ats}",
+    "stripInvite": "testee mời họ vào buổi phỏng vấn đã liên kết",
+    "stripResults": "Kết quả của họ được gửi về hồ sơ của họ trong {ats}",
+    "rowStage": "Giai đoạn: <bdi>{stage}</bdi>",
+    "rowInterview": "Phỏng vấn: <link><bdi>{interview}</bdi></link>",
+    "invitedShort": "<n></n> đã mời",
+    "waitingShort": "<n></n> đang chờ",
+    "notInvitedShort": "<n></n> chưa được mời",
+    "summary": {
+      "status": "Trạng thái",
+      "account": "Tài khoản",
+      "jobs": "Công việc đã liên kết",
+      "invited": "Ứng viên đã mời"
+    },
+    "connectedGroup": "Đã kết nối",
+    "statusBroken": "Cần kết nối lại",
+    "rowText": "Mời ứng viên từ {ats} và gửi kết quả của họ về.",
     "messagingGroup": "Nhắn tin",
     "apiAiAppsGroup": "API và ứng dụng AI",
     "searchInterview": "Tìm buổi phỏng vấn",
@@ -2005,6 +2325,29 @@
   },
   "slack": {
     "add": "Thêm vào Slack",
+    "rowText": "Nhận thông báo trong Slack khi ứng viên hoàn thành.",
+    "brokenText": "Slack đã ngừng nhận tin nhắn nên kênh của bạn không nhận được thông báo. Hãy kết nối lại để bắt đầu lại.",
+    "pointChannel": "Chọn kênh mà nhóm của bạn sẽ xem.",
+    "pointKinds": "Chọn loại thông báo được gửi đến đó.",
+    "pointPrivacy": "testee chỉ có thể đăng vào kênh đó. testee không thể đọc Slack của bạn.",
+    "test": "Gửi tin nhắn thử",
+    "testSent": "Đã gửi tin nhắn thử đến kênh của bạn.",
+    "testFailed": "Không thể gửi tin nhắn thử.",
+    "groups": {
+      "candidates": "Ứng viên",
+      "interviews": "Phỏng vấn",
+      "billing": "Thanh toán",
+      "team": "Nhóm"
+    },
+    "samples": {
+      "candidate_finished": "Ann Lee (ann@example.com) đã hoàn thành “Data Analyst”: 82%.",
+      "ats_not_invited": "Ben Ortiz đến từ ATS của bạn nhưng chưa được mời vào “Data Analyst”.",
+      "invite_undelivered": "Lời mời gửi tới ben@example.com cho “Data Analyst” chưa được gửi đi.",
+      "interview_ready": "“Data Analyst” đã sẵn sàng.",
+      "auto_top_up_charged": "Lần nạp tự động của bạn đã được trừ tiền.",
+      "auto_top_up_failed": "Lần nạp tự động của bạn không thành công. Hãy cập nhật thẻ để tiếp tục.",
+      "note_added": "Maya đã thêm ghi chú về “Data Analyst”: SQL tốt, nên gọi trao đổi."
+    },
     "connectFailed": "Không thể kết nối Slack.",
     "connected": "Slack đã được kết nối.",
     "disconnectFailed": "Không thể ngắt kết nối Slack.",
@@ -2019,9 +2362,9 @@
       "ats_not_invited": "Một ứng viên từ ATS của bạn chưa được mời",
       "invite_undelivered": "Một email mời chưa được gửi đến",
       "interview_ready": "Một buổi phỏng vấn đã sẵn sàng",
-      "note_added": "Một thành viên trong nhóm đã viết ghi chú, kèm nội dung",
       "auto_top_up_charged": "Đã trừ tiền cho một lần tự động nạp",
-      "auto_top_up_failed": "Một lần tự động nạp không thành công"
+      "auto_top_up_failed": "Một lần tự động nạp không thành công",
+      "note_added": "Một thành viên trong nhóm đã viết ghi chú, kèm nội dung"
     },
     "instructionsTitle": "Cách Slack nhận thông báo của bạn",
     "stepAdd": "Nhấp “Thêm vào Slack”: Slack sẽ mở ra và yêu cầu bạn cho phép testee trong không gian làm việc của bạn.",
@@ -2030,13 +2373,67 @@
     "stepPrivacy": "testee chỉ có thể đăng vào kênh đó. testee không thể đọc Slack của bạn, và ngắt kết nối sẽ gỡ testee."
   },
   "api": {
+    "firstKeyTitle": "Tạo khóa đầu tiên của bạn",
+    "sdkDocs": "Xem tài liệu SDK",
+    "sdkReady": "Đã sẵn sàng: {count, plural, other {# trang web}} có thể hiển thị các buổi phỏng vấn của bạn.",
+    "sdkNotReady": "Chưa thiết lập: hãy thêm một trang web bên dưới để nó hiển thị các buổi phỏng vấn của bạn.",
+    "sdkRules": "Các trang phải dùng HTTPS. Thêm một trang web, hoặc mọi tên miền phụ của nó:",
+    "stepSite": "Thêm trang web của bạn",
+    "stepCode": "Dán đoạn mã này vào trang của bạn",
+    "stepSend": "Gửi ứng viên đến đó",
+    "stepSendText": "Máy chủ của bạn mời ứng viên với sign_in false và chuyển invite_url nhận được cho trang của bạn. Không bao giờ đặt khóa API của bạn vào một trang.",
+    "thisSite": "Trang web này",
+    "allSubdomains": "Mọi tên miền phụ",
+    "localhostOn": "Đang bật: hãy tắt trước khi đưa vào hoạt động.",
+    "firstWebhookTitle": "Thêm webhook đầu tiên của bạn",
+    "webhookSampleText": "testee gửi một yêu cầu có chữ ký như sau khi có sự kiện xảy ra:",
+    "lastDelivered": "gửi lần cuối <time>{date}</time>",
+    "webhookStates": {
+      "paused": "Tạm dừng",
+      "unused": "Chưa dùng",
+      "active": "Đang hoạt động"
+    },
+    "webhookEvents": {
+      "started": "Ứng viên đã bắt đầu",
+      "finished": "Ứng viên đã hoàn thành",
+      "undelivered": "Không liên lạc được ứng viên",
+      "expired": "Lời mời đã hết hạn",
+      "removed": "Ứng viên đã bị xóa",
+      "ready": "Buổi phỏng vấn đã sẵn sàng"
+    },
+    "replaceKey": "Tạo khóa thay thế",
+    "activityTitle": "Hoạt động",
+    "ipOpen": "Mọi địa chỉ IP đều có thể dùng khóa này. Hãy giới hạn ở địa chỉ máy chủ của bạn để an toàn hơn.",
+    "summary": {
+      "status": "Trạng thái",
+      "access": "Quyền truy cập",
+      "lastUsed": "Dùng lần cuối",
+      "expires": "Hết hạn",
+      "created": "Đã tạo"
+    },
+    "warnings": {
+      "expired": "Khóa này đã hết hạn nên các yêu cầu dùng nó bị từ chối. Hãy tạo khóa thay thế để tiếp tục.",
+      "expiring": "Khóa này sắp hết hạn. Hãy tạo khóa thay thế và chuyển sang dùng trước khi nó ngừng hoạt động."
+    },
+    "exampleText": "Hãy thử với yêu cầu này, nó đọc credit của bạn:",
+    "access": {
+      "read": "Chỉ đọc",
+      "write": "Đọc và ghi",
+      "custom": "Tùy chỉnh"
+    },
+    "states": {
+      "expired": "Đã hết hạn",
+      "expiring": "Sắp hết hạn",
+      "never_used": "Chưa từng dùng",
+      "active": "Đang hoạt động"
+    },
     "name": "API",
     "rowName": "API, SDK, webhook",
     "rowText": "Khóa và webhook để kết nối nền tảng của riêng bạn.",
     "counts": "{keys, plural, other {# khóa}} · {webhooks, plural, other {# webhook}}",
     "docs": "Tài liệu cho nhà phát triển",
     "keysTitle": "Khóa API",
-    "keysText": "Khóa hoạt động với tư cách người đã tạo khóa và chỉ làm được những gì quyền của khóa cho phép.",
+    "keysText": "Khóa hoạt động thay mặt công ty của bạn, dưới tên riêng của nó, và chỉ làm được những gì quyền của nó cho phép.\nKhóa vẫn hoạt động khi người tạo ra nó rời đi.",
     "noKeys": "Chưa có khóa nào.",
     "newKey": "Khóa mới",
     "newKeyTitle": "Khóa API mới",
@@ -2064,7 +2461,7 @@
     "removeKeyTitle": "Xóa khóa này?",
     "removeKeyText": "Mọi thứ đang dùng “<bdi>{name}</bdi>” sẽ ngừng hoạt động ngay lập tức.",
     "webhooksTitle": "Webhook",
-    "webhooksText": "testee báo cho các địa chỉ này khi ứng viên bắt đầu, hoàn thành (kèm kết quả), không nhận được lời mời, hết hạn lời mời hoặc bị xóa khỏi buổi phỏng vấn, và khi một buổi phỏng vấn sẵn sàng; mỗi yêu cầu được ký bằng khóa bí mật của địa chỉ đó.",
+    "webhooksText": "testee thông báo cho các địa chỉ này khi có bất kỳ sự kiện nào trong số đó xảy ra, mỗi yêu cầu được ký bằng khóa bí mật của địa chỉ.",
     "noWebhooks": "Chưa có webhook nào.",
     "failing": "Đã tạm dừng: không phản hồi trong 3 ngày nên không có sự kiện nào được gửi tới. Một sự kiện thử nghiệm được nhận sẽ kích hoạt lại.",
     "addWebhook": "Thêm webhook",
@@ -2151,7 +2548,6 @@
     "localhostText": "Để thử nghiệm trên máy tính của bạn, cổng nào cũng được. Hãy tắt khi bạn đã chạy chính thức.",
     "permissionsTitle": "Quyền",
     "permissionsText": "Những gì khóa này được làm. Thay đổi được lưu ngay.",
-    "permissionsSaved": "Đã lưu quyền.",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2635,15 @@
       "tools": "Công cụ",
       "frameworks": "Framework cho agent"
     },
+    "intro": "Kết nối testee với nền tảng, máy chủ của riêng bạn hoặc một AI agent.",
+    "endpointsText": "Mọi route, theo đối tượng mà nó xử lý. Mở một route để xem nó nhận gì, trả về gì và các lỗi của nó.",
+    "apiPages": {
+      "start": "Bắt đầu",
+      "guides": "Hướng dẫn",
+      "endpoints": "Endpoint",
+      "errors": "Lỗi",
+      "changelog": "Nhật ký thay đổi"
+    },
     "englishOnly": "Trang này chỉ có bằng tiếng Anh.",
     "baseUrl": "URL gốc",
     "copyBaseUrl": "Sao chép URL",
@@ -2275,6 +2680,7 @@
   },
   "assistant": {
     "title": "Mira · trợ lý AI",
+    "name": "Mira",
     "company": "Công ty",
     "allCompanies": "Tất cả công ty",
     "newChat": "Cuộc trò chuyện mới",
@@ -2331,7 +2737,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "testee hoạt động thế nào, chi phí bao nhiêu và ứng viên thấy gì, trả lời từ câu hỏi thường gặp của testee. Đăng nhập để hỏi về công ty và ứng viên của bạn.",
+        "text": "Đăng nhập để hỏi về các công ty và ứng viên của bạn.",
         "questions": {
           "what": "testee là gì?",
           "pricing": "Chi phí bao nhiêu?",
@@ -2340,7 +2746,7 @@
         }
       },
       "no_company": {
-        "text": "Cùng bắt đầu nhé: buổi phỏng vấn đầu tiên, công ty của bạn và việc xác minh công ty.",
+        "text": "Hãy bắt đầu buổi phỏng vấn đầu tiên của bạn.",
         "questions": {
           "firstInterview": "Tạo buổi phỏng vấn đầu tiên của tôi",
           "createCompany": "Tạo công ty cho tôi",
@@ -2348,7 +2754,7 @@
         }
       },
       "unverified": {
-        "text": "Xác minh công ty để ứng viên biết ai đang mời họ, và tạo các buổi phỏng vấn.",
+        "text": "Xác minh công ty của bạn và tạo các buổi phỏng vấn.",
         "questions": {
           "verify": "Xác minh công ty của tôi",
           "whyVerify": "Vì sao nên xác minh công ty?",
@@ -2356,7 +2762,7 @@
         }
       },
       "no_interviews": {
-        "text": "Tạo buổi phỏng vấn từ mô tả công việc: câu hỏi được viết cho đúng vị trí.",
+        "text": "Hãy tạo buổi phỏng vấn đầu tiên của bạn.",
         "questions": {
           "fromDescription": "Tạo phỏng vấn từ mô tả công việc",
           "template": "Tạo phỏng vấn từ mẫu",
@@ -2364,7 +2770,7 @@
         }
       },
       "no_candidates": {
-        "text": "Mời ứng viên qua email, bằng liên kết chia sẻ hoặc từ ATS của bạn.",
+        "text": "Hãy mời những ứng viên đầu tiên của bạn.",
         "questions": {
           "invite": "Mời ứng viên",
           "shareLink": "Bật liên kết chia sẻ",
@@ -2372,7 +2778,7 @@
         }
       },
       "has_candidates": {
-        "text": "Hỏi về ứng viên của bạn: ai đạt, họ so với nhau thế nào và kết quả có ý nghĩa gì.",
+        "text": "Hỏi về ứng viên của bạn và kết quả của họ.",
         "questions": {
           "passed": "Tuần này ai đạt?",
           "compare": "So sánh các ứng viên tốt nhất của tôi",
@@ -2494,7 +2900,27 @@
     "feedbackLink": "Liên hệ với chúng tôi"
   },
   "companyBilling": {
-    "reservedTab": "Đang giữ ({count, number})",
+    "reservedTab": "Đã giữ chỗ",
+    "download": {
+      "open": "Tải xuống lịch sử",
+      "title": "Tải xuống lịch sử",
+      "description": "Chọn khoảng thời gian cho tệp CSV của bạn.",
+      "save": "Tải xuống",
+      "failed": "Chúng tôi không thể tạo tệp. Vui lòng thử lại."
+    },
+    "lowText": "Credit của bạn sắp hết. Hãy nạp thêm để tiếp tục mời ứng viên.",
+    "summary": {
+      "available": "Credit khả dụng",
+      "candidates": "Ứng viên được bao phủ",
+      "reserved": "Credit đã giữ chỗ",
+      "spent": "Credit đã dùng trong tháng này"
+    },
+    "kinds": {
+      "all": "Tất cả",
+      "topups": "Nạp credit",
+      "charges": "Khoản trừ",
+      "refunds": "Hoàn tiền"
+    },
     "reservedEmpty": "Không có ứng viên nào đang được giữ credit.",
     "reservedNote": "Các ứng viên chưa hoàn thành. Credit của họ đang được giữ: bị trừ nếu họ trả lời, được hoàn lại nếu không.",
     "history": "Lịch sử",
@@ -2521,7 +2947,19 @@
     "name": "Máy chủ MCP",
     "rowText": "Kết nối Claude, ChatGPT và các ứng dụng AI khác với testee.",
     "title": "Ứng dụng AI",
-    "subtitle": "Chúng hành động thay mặt bạn, trong mọi công ty bạn tham gia, với quyền của bạn.",
+    "subtitle": "Chúng hoạt động thay mặt bạn, trong mọi công ty bạn tham gia, với quyền của bạn. Bạn cho phép từng ứng dụng trên testee: không cần dán khóa ở bất cứ đâu.",
+    "connectedTitle": "Ứng dụng của bạn",
+    "otherApps": "Khác",
+    "allowIn": "Cho phép ứng dụng AI trong <bdi>{company}</bdi>",
+    "allowOn": "Thành viên có thể dùng các buổi phỏng vấn và ứng viên của công ty này từ các ứng dụng AI mà họ đã kết nối.",
+    "allowOff": "Tắt: các ứng dụng AI không thể đọc hay thay đổi bất cứ thứ gì trong công ty này.",
+    "promptsTitle": "Thử hỏi",
+    "promptCopied": "Đã sao chép",
+    "prompts": {
+      "passed": "Ai đã đạt trong tuần này?",
+      "compare": "So sánh những ứng viên tốt nhất của tôi cho buổi phỏng vấn Data Analyst.",
+      "invite": "Mời ann@example.com tham gia buổi phỏng vấn Data Analyst."
+    },
     "instructionsTitle": "Kết nối ứng dụng AI với testee",
     "serverTitle": "Địa chỉ máy chủ",
     "serverText": "Dán vào ứng dụng AI của bạn dưới dạng custom connector (máy chủ MCP).",
@@ -2679,6 +3117,10 @@
     "failed": "Không thể xuất tệp. Vui lòng thử lại."
   },
   "actionLog": {
+    "period": "Khoảng thời gian",
+    "periodAll": "Mọi lúc",
+    "periodDays": "{days, number} ngày qua",
+    "periodCustom": "Tùy chỉnh",
     "empty": "Chưa có thao tác nào.",
     "noMatches": "Không có thao tác nào khớp với các bộ lọc này.",
     "formerMember": "Một cựu thành viên",
@@ -2686,7 +3128,15 @@
     "deletedApiKey": "{via, select, mcp {Qua MCP bằng một khóa đã bị xóa} other {Qua API bằng một khóa đã bị xóa}}",
     "deletedCandidate": "một ứng viên đã bị xóa",
     "anyMember": "Bất kỳ ai",
-    "anyAction": "Tất cả thao tác",
+    "anyAction": "Tất cả",
+    "clear": "Xóa",
+    "download": {
+      "open": "Tải xuống nhật ký",
+      "title": "Tải xuống nhật ký",
+      "description": "Chọn khoảng thời gian cho tệp CSV của bạn.",
+      "save": "Tải xuống",
+      "failed": "Chúng tôi không thể tạo tệp. Vui lòng thử lại."
+    },
     "member": "Thành viên",
     "action": "Thao tác",
     "from": "Từ",
@@ -2722,13 +3172,13 @@
       "candidate_deleted": "Đã xóa một ứng viên",
       "candidate_renamed": "Đã đổi tên một ứng viên",
       "extra_time_set": "Đã cho một ứng viên thêm thời gian",
-      "candidate_mode_set": "Đã đổi chế độ phỏng vấn của một ứng viên",
       "results_viewed": "Đã xem kết quả của một ứng viên",
       "report_emailed": "Đã gửi báo cáo qua email",
       "bias_audit_exported": "Đã xuất dữ liệu cho kiểm toán thiên lệch",
       "member_invited": "Đã mời một thành viên",
       "member_joined": "Đã tham gia công ty",
       "member_removed": "Đã xóa một thành viên",
+      "candidate_mode_set": "Đã đổi chế độ phỏng vấn của một ứng viên",
       "member_role_changed": "Đã đổi vai trò của một thành viên",
       "ownership_transferred": "Đã chuyển giao công ty cho chủ sở hữu khác",
       "company_renamed": "Đã đổi tên công ty",
@@ -2751,6 +3201,7 @@
       "slack_notifications_changed": "Đã đổi thông báo Slack",
       "api_key_created": "Đã tạo một khóa API",
       "api_key_deleted": "Đã xóa một khóa API",
+      "api_key_renamed": "Đã đổi tên một khóa API",
       "api_key_permissions_changed": "Đã thay đổi quyền của một khóa API",
       "api_key_ips_changed": "Đã thay đổi IP được phép của một khóa API",
       "embed_domains_changed": "Đã thay đổi các tên miền được phép",

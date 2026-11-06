@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "Mga setting",
+    "preferences": "Mga kagustuhan",
+    "accountId": "Account ID",
+    "deleteTitle": "Burahin ang account",
+    "deleteNote": "Permanenteng buburahin ang iyong account at data.",
     "language": "Wika",
     "languageNote": "Para sa interface at mga sagot ng help chat, at ang wikang unang gagamitin ng mga bagong interview. Puwede kang gumawa ng interview sa kahit anong suportadong wika.",
     "languageFailed": "Hindi mabago ang wika. Pakisubukang muli.",
@@ -12,7 +16,7 @@
     "account": "Ang iyong account",
     "accountNote": "Ibigay ang ID na ito kapag sumulat ka sa amin tungkol sa iyong account.",
     "yourData": "Ang iyong data",
-    "yourDataNote": "I-download ang lahat ng hawak ng testee. tungkol sa iyo, o burahin ang iyong account.",
+    "yourDataNote": "I-download ang lahat ng hawak ng testee tungkol sa iyo.",
     "download": "I-download ang aking data",
     "downloadFailed": "Hindi maihanda ang iyong data. Pakisubukang muli.",
     "delete": "Burahin ang account",
@@ -50,7 +54,8 @@
     "system": "System",
     "light": "Maliwanag",
     "dark": "Madilim",
-    "topUp": "Mag-top up"
+    "topUp": "Mag-top up",
+    "workspace": "Aking workspace"
   },
   "nav": {
     "main": "Pangunahing menu",
@@ -67,8 +72,12 @@
     "about": "Tungkol sa amin",
     "practice": "Libreng practice",
     "tests": "Skills tests",
-    "preEmploymentTesting": "Pre-employment testing",
-    "aiInterviews": "AI interviews",
+    "createTest": "Gumawa ng test",
+    "footerProduct": "Produkto",
+    "footerResources": "Mga resource",
+    "footerCompany": "Kumpanya",
+    "footerLegal": "Legal",
+    "footerTagline": "Patas at may takdang oras na mga interview mula sa iyong job description.",
     "compare": "Ikumpara",
     "guides": "Mga gabay",
     "apiDocs": "Dokumentasyon para sa mga developer",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "Bumalik sa itaas",
     "morePages": "Iba pang pahina",
+    "moreActions": "Iba pang aksyon",
     "copyLink": "Kopyahin ang link",
     "linkCopied": "Nakopya ang link",
     "home": "Home",
     "cancel": "Kanselahin",
     "save": "I-save",
     "saving": "Sine-save…",
+    "saved": "Na-save",
     "close": "Isara",
     "delete": "Burahin",
     "deleting": "Binubura…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "Nagkaproblema",
     "text": "Pakisubukang muli. Kung patuloy itong mangyari, bumalik mamaya.",
+    "reference": "Reference: {id}",
     "notFound": "Hindi nahanap ang page",
     "notFoundText": "Wala ang page na iyon o inalis na.",
     "report": "I-report",
@@ -152,13 +164,13 @@
   },
   "home": {
     "title": "I-test ang lahat\nI-hire ang pinakamahusay",
-    "text": "Ginagawang propesyonal na timed interview ng AI ang iyong job description.",
-    "price": "{price} lang bawat aplikante."
+    "text": "Ginagawang propesyonal na timed interview ng AI ang iyong job description."
   },
   "start": {
     "placeholder": "I-paste dito ang iyong job description…",
     "description": "Job description",
     "submit": "Gumawa ng interview",
+    "newInterview": "Ang bago mong interview",
     "whichCompany": "Para sa aling kumpanya ang interview na ito?",
     "firstCompany": "Ano ang pangalan ng iyong kumpanya?",
     "newCompany": "Bagong kumpanya",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "Mga pagsisimula sa link ng isang interview kada oras",
       "LINK_STARTS_PER_IP_HOUR": "Mga pagsisimula sa link bawat address kada oras",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "Mga bias audit export bawat kumpanya kada araw",
+      "ACTION_LOG_EXPORTS_PER_DAY": "Mga download ng action log bawat kumpanya bawat araw",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "Mga download ng credit history bawat kumpanya bawat araw",
       "MAX_BULK_INVITES": "Mga aplikante sa isang listahan o file",
       "MAX_PENDING_INVITES": "Mga nakabinbing team invite bawat kumpanya",
       "MEMBER_INVITES_PER_UNPAID_DAY": "Mga team invite bawat hindi bayad na kumpanya kada araw",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "Mga tawag sa ATS ng kumpanya bawat kumpanya kada minuto",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "Mga ATS webhook bawat nagpapadalang address kada minuto",
       "ATS_CONNECTS_PER_HOUR": "Mga koneksyon sa ATS bawat kumpanya kada oras",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "Mga test message sa Slack bawat kumpanya bawat oras",
       "RESEND_DAILY_LIMIT": "Mga email kada araw sa pamamagitan ng Resend",
       "RESEND_RESERVE_PERCENT": "Bahagi ng mga email kada araw sa Resend na nakalaan at hindi para sa maramihang pagpapadala",
       "CAMPAIGNS_PER_KIND_DAY": "Mga campaign ng bawat uri kada araw",
@@ -775,7 +790,9 @@
     "useFailed": "Hindi makapagsimula ng interview mula sa template na ito. Pakisubukang muli.",
     "inProgress": "ginagawa pa: {done}/{total, plural, one {# topic} other {# topic}}",
     "completed": "tapos na",
-    "warningText": "<b>Handa na ang mga template para sa mga karaniwang role.</b> Para mas tumugma, gumawa ng interview mula sa iyong job description."
+    "warningText": "<b>Gusto ng mas akmang test?</b> Gumawa ng interview mula sa iyong job description.",
+    "contents": "{topics, plural, one {# topic} other {# topic}}, {questions, plural, one {# tanong} other {# tanong}}, {minutes, plural, one {# min} other {# min}}",
+    "usedIn": "{count, plural, one {Ginamit sa # interview} other {Ginamit sa # interview}}"
   },
   "billing": {
     "paidTitle": "Natanggap ang bayad",
@@ -808,6 +825,10 @@
     "paysInChange": "Palitan ang currency",
     "candidates": "{count, plural, one {# aplikante} other {# aplikante}}",
     "perCandidate": "{price}<unit>/aplikante</unit>",
+    "enough": "Sapat para sa {count, plural, one {# aplikante} other {# aplikante}}",
+    "pay": "Bayaran ang {price}",
+    "quote": "{count, plural, one {# aplikante} other {# aplikante}} sa halagang {price} bawat isa, {credits, number} credit",
+    "nextPrice": "{count, plural, one {# pang aplikante} other {# pang aplikante}} at magiging {price} ang bawat isa",
     "howMany": "Mga aplikanteng ito-top up",
     "credits": "{count, plural, one {# credit} other {# credits}}",
     "candidatesWord": "{count, plural, one {aplikante} other {aplikante}}",
@@ -863,6 +884,19 @@
     "markedWrong": "Salamat. Sinusuri na ito, at aayusin o papalitan.",
     "markWrongFailed": "Hindi maipadala para suriin. Pakisubukang muli.",
     "ofCount": "sa {count, number}",
+    "perCandidate": "Bilang ng tanong bawat aplikante",
+    "limitShort": "Mga tanong bawat aplikante",
+    "topicsColumn": "Mga topic at subtopic",
+    "limitLine": "{limit, number} sa {count, number} tanong bawat aplikante",
+    "noMatches": "Walang tanong dito.",
+    "summary": {
+      "total": "Mga tanong"
+    },
+    "filters": {
+      "all": "Lahat",
+      "reported": "Naiulat"
+    },
+    "disabledCount": "{count, plural, one {# tanong ang naka-disable} other {# tanong ang naka-disable}}",
     "per": "bawat",
     "candidate": "aplikante",
     "correct": "Tamang sagot",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "Turno mo",
     "voiceThinking": "Nag-iisip",
     "miraLabel": "AI interviewer",
+    "voiceHeardAnswer": "Narinig ko ang {answer}.",
+    "questionOf": "Tanong {number, number} sa {count, number}",
+    "answeredOf": "{done, number} sa {total, number}",
+    "keysHint": "Pindutin ang A–{last} para pumili, Enter para sa susunod na tanong.",
     "voiceStatus": {
       "off": "Naghahanda si Mira…",
       "starting": "Naghahanda si Mira…",
@@ -963,8 +1001,10 @@
     "cancelFailed": "Hindi makansela ang paggawa. Pakisubukang muli.",
     "writing": "Ginagawa ang iyong mga tanong",
     "drafting": "Binubuo ang iyong mga topic",
-    "writingNote": "Ilang minuto ito. Puwede kang umalis sa page na ito; tuloy kami.",
-    "draftingNote": "Binabasa ang iyong layunin at pinaplano kung ano ang sasakupin.",
+    "writingNote": "Aabutin ito ng ilang minuto. Maaari kang umalis sa page na ito; aabisuhan ka namin kapag handa na.",
+    "draftingNote": "Binabasa namin ang iyong job description. Susuriin mo ang mga topic bago isulat ang mga tanong. Maaari kang umalis sa page na ito; magpapatuloy kami.",
+    "finishing": "Sinusuri at sine-save ang mga tanong…",
+    "goToInterviews": "Pumunta sa mga interview",
     "topicsReady": "Handa na ang {ready, number} sa {count, plural, one {# topic} other {# topic}}",
     "reviewFailed": "Hindi maipadala ang iyong review. Pakisubukang muli.",
     "retryFailed": "Hindi maulit ang paggawa. Pakisubukang muli.",
@@ -982,13 +1022,18 @@
     "add": "Idagdag",
     "done": "Tapos na",
     "reviewTitle": "I-review ang iyong mga topic",
-    "reviewText": "Alisin ang check sa mga topic na hindi mo kailangan, i-edit sila, o ilarawan ang mga pagbabago. Bawat topic ay may sariling set ng tanong na may sagot.",
+    "reviewText": "Bawat topic ay may sariling set ng mga tanong na may sagot.",
     "editTopic": "I-edit ang <bdi>{topic}</bdi>",
-    "changesPlaceholder": "Opsyonal: ilarawan ang mga pagbabago, hal. “Magdagdag ng topic tungkol sa team leadership”",
-    "changes": "Mga pagbabago sa topic",
+    "changesPlaceholder": "hal. “Magdagdag ng topic tungkol sa team leadership”",
+    "changes": "Ipabago sa AI ang mga topic",
     "tooMany": "Pumili ng hanggang {max, number} topic, o ilarawan kung paano sila pagsasamahin.",
     "apply": "Ilapat ang mga pagbabago",
     "approve": "Aprubahan at gawin",
+    "topicsChosen": "{chosen, number} sa {count, plural, one {# topic} other {# topic}}",
+    "applyFirst": "Ilapat muna ang pagbabago mo, o i-clear ang kahon.",
+    "subtopicsNeeded": "Magdagdag ng kahit {count, plural, one {# subtopic} other {# subtopic}}.",
+    "addTopic": "Magdagdag ng topic",
+    "removeTopic": "Alisin",
     "topicNameNeeded": "Bigyan ng pangalan ang topic."
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "Mga kumpanya",
     "empty": "Wala pang kumpanya.",
     "owner": "May-ari",
+    "search": "Maghanap ng kumpanya",
+    "interviewsShort": "{count, plural, one {<n></n> interview} other {<n></n> interview}}",
+    "membersShort": "{count, plural, one {<n></n> miyembro} other {<n></n> miyembro}}",
+    "status": {
+      "low": "Paubos na ang mga credit",
+      "verify": "Tapusin ang pag-verify ng iyong kumpanya",
+      "finished": "{count, plural, one {<n></n> aplikante} other {<n></n> aplikante}} ang natapos ngayong linggo"
+    },
     "interviewCount": "{count, plural, one {# interview} other {# interview}}",
     "memberCount": "{count, plural, one {# miyembro} other {# miyembro}}",
     "interviews": "Mga interview",
@@ -1024,6 +1077,8 @@
     "brand": "Brand",
     "billing": "Billing",
     "new": "Bagong kumpanya",
+    "newText": "Bawat kumpanya ay may sariling mga interview, team at credit.",
+    "namePlaceholder": "hal. Acme",
     "name": "Pangalan ng kumpanya",
     "create": "Gumawa",
     "createFailed": "Hindi magawa ang kumpanya. Pakisubukang muli.",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, one {# beses umalis sa page} other {# beses umalis sa page}}",
     "copies": "{count, plural, one {# pagtatangkang kumopya} other {# pagtatangkang kumopya}}",
     "fastAnswers": "{count, plural, one {# mabilis na sagot} other {# mabilis na sagot}}",
+    "extraTimeLabel": "Dagdag na oras",
+    "summary": {
+      "result": "Resulta",
+      "timeTaken": "Oras na ginugol",
+      "signals": "Mga integrity signal",
+      "invited": "Inimbitahan",
+      "finished": "Natapos",
+      "passed": "Pumasa",
+      "average": "Average na grado"
+    },
+    "copyLinkFailed": "Hindi namin makopya ang link. Pakisubukang muli.",
     "empty": "Wala pang inimbitahang aplikante.",
     "noMatches": "Walang tugmang aplikante.",
     "search": "Maghanap ng aplikante ayon sa email o pangalan",
     "status": "Status: {status}",
     "anyStatus": "kahit anong status",
+    "allStatuses": "Lahat",
     "progress": "Progreso",
     "grade": "Grade",
     "resend": "Ipadala muli ang imbitasyon",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "Mga interview",
+    "allStatuses": "Lahat",
+    "candidatesShort": "{count, plural, one {<n></n> aplikante} other {<n></n> aplikante}}",
+    "finishedShort": "<n></n> ang natapos",
+    "passedShort": "<n></n> ang pumasa",
+    "rowStatus": {
+      "failed": "Buksan para subukang muli",
+      "generating": "Ginagawa pa",
+      "undelivered": "{count, plural, one {<n></n> imbitasyon} other {<n></n> imbitasyon}} ang hindi naihatid",
+      "finished": "{count, plural, one {<n></n> aplikante} other {<n></n> aplikante}} ang natapos ngayong linggo",
+      "ready": "Handa na: imbitahan ang iyong mga unang aplikante"
+    },
     "interview": "Interview",
     "topicsTab": "Mga topic",
     "candidates": "Mga aplikante",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "Wala pang note. Isulat ang una para sa team mo.",
     "discover": "Discover",
     "discoverLinkedIn": "LinkedIn profile ni {name}",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "Lalabas dito ang mga taong nagpa-practice sa mga paksang ito at piniling bukas sa mga alok.",
     "discoverText": "Mga taong open to offers na nag-practice ng mga topic ng interview na ito. Pinakabago muna, walang ranking.",
     "discoverEmpty": "Wala pang open to offers na nag-practice ng mga topic ng interview na ito.",
     "discoverResults": "Mga resulta ng practice",
@@ -1130,6 +1210,8 @@
     "notePosting": "Pino-post…",
     "noteEdited": "na-edit",
     "notePinned": "Naka-pin",
+    "noteShowMore": "Magpakita ng higit pa",
+    "noteShowLess": "Magpakita ng mas kaunti",
     "notePin": "I-pin sa itaas",
     "noteUnpin": "I-unpin",
     "noteFormerMember": "Dating miyembro",
@@ -1139,8 +1221,20 @@
     "noteFailed": "Hindi ma-save ang note. Pakisubukang muli.",
     "new": "Bagong interview",
     "createTitle": "Gumawa ng interview",
+    "createIntro": "I-paste ang job description. Susuriin mo ang mga topic bago isulat ang mga tanong, at libre ito.",
+    "steps": {
+      "describe": "Ilarawan ang role",
+      "review": "Suriin ang mga topic",
+      "invite": "Imbitahan ang mga aplikante"
+    },
+    "startTemplate": "Magsimula sa template",
+    "startAts": "Magsimula sa isang job sa iyong ATS",
+    "tryExample": "Subukan ang halimbawa",
     "try": "Subukan bilang aplikante",
     "newCandidate": "Bagong aplikante",
+    "settingsSharing": "Pagbabahagi",
+    "settingsRuns": "Paano ito tumatakbo",
+    "settingsAfter": "Pagkatapos at privacy",
     "linkTitle": "Link na puwedeng i-share",
     "linkText": "Para sa job ad: puwedeng sagutan ng sinumang may link ang interview. Sinisingil ang bawat tao tulad ng isang inimbitahang aplikante.",
     "linkFailed": "Hindi mabago ang link. Pakisubukang muli.",
@@ -1160,7 +1254,7 @@
     "generating": "Ginagawa…",
     "generationFailed": "Nabigo ang paggawa",
     "fallbackTitle": "interview",
-    "continueGeneration": "Ituloy ang paggawa",
+    "continueGeneration": "Magpatuloy",
     "empty": "Wala pang interview. Gumawa ng una.",
     "noMatches": "Walang tugmang interview.",
     "search": "Maghanap ng interview ayon sa pamagat",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "Email ng aplikante",
     "inviteTab": {
       "one": "isa",
-      "many": "marami",
-      "file": "i-upload"
+      "many": "listahan",
+      "file": "file"
     },
-    "manyHint": "Isang aplikante bawat linya, may pangalan man o wala,\nhanggang {count, number} nang sabay-sabay:",
-    "manyHintNoLimit": "Isang aplikante bawat linya, may pangalan man o wala:",
-    "example": "halimbawa",
+    "inviteTitle": "Imbitahan ang mga aplikante",
+    "manyHint": "Isang aplikante bawat linya, may pangalan man o wala, hanggang {count, number} nang sabay-sabay.",
+    "manyHintNoLimit": "Isang aplikante bawat linya, may pangalan man o wala.",
     "uploadFile": "Mag-upload ng file",
     "fileFormats": "CSV o TXT, hanggang {count, number} aplikante. Puwedeng ilagay ang pangalan sa isang column o katabi ng bawat email.",
     "fileFormatsNoLimit": "CSV o TXT. Puwedeng ilagay ang pangalan sa isang column o katabi ng bawat email.",
@@ -1203,8 +1297,7 @@
       "unclear_name": "Isulat ang pangalan bilang Pangalan '<email>': <bdi>{line}</bdi>",
       "more": "at {count, number} pa"
     },
-    "exampleCsv": "halimbawang .csv",
-    "exampleTxt": "halimbawang .txt",
+    "exampleFiles": "Mag-download ng halimbawa: <csv>.csv</csv> o <txt>.txt</txt>",
     "candidateName": "Pangalan (opsyonal)",
     "invitedMany": "Naimbitahan ang {count, number} aplikante",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "Congrats, handa na ang interview mo",
-      "text": "Handa na ang <name><bdi>{title}</bdi></name> para sa mga aplikante. Ito ang susunod na gagawin:",
-      "limits": "Itakda kung ilang tanong ang matatanggap ng bawat aplikante sa bawat topic.",
+      "text": "Handa na ang <name><bdi>{title}</bdi></name>. Subukan mo muna ito bago mag-imbita ng sinuman, at ayusin kung kinakailangan.",
+      "limits": "Ilan ang makukuha ng bawat aplikante sa bawat topic.",
       "limitsAction": "Itakda ang mga tanong",
-      "time": "Ayusin ang average na oras bawat tanong kung kailangan.",
-      "timeAction": "Buksan ang mga setting",
-      "invite": "Imbitahan ang mga aplikante.",
-      "inviteAction": "Pumunta sa mga aplikante",
+      "time": "Ang average na oras bawat tanong.",
+      "timeAction": "Ayusin ang oras",
       "done": "Sige"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "Kailangan mo ba ng mas maraming oras, halimbawa dahil sa kapansanan? Humingi sa <bdi>{company}</bdi> ng personal na imbitasyon bago ka magsimula: hindi madadagdagan ang oras dito.",
     "people": "AI ang sumusulat ng mga tanong. Mga tao sa <bdi>{company}</bdi> ang nagre-review ng mga resulta at nagpapasya; puwede mo silang hilingin na i-review ang sa iyo.",
     "stay": "Manatili sa page na ito: nire-record ang pag-alis dito, pagkopya, at pagsagot nang masyadong mabilis para mabasa ang tanong, at nakikita ng kumpanya kapag hindi tugma ang oras ng pagsagot o mga sagot mo sa hirap ng mga tanong (<link>privacy</link>).",
-    "finished": "Tapos na ang interview na ito.",
+    "finishedTitle": "Tapos ka na",
+    "finished": "Nasa <bdi>{company}</bdi> na ang iyong mga sagot. Sila ang magsusuri ng mga resulta at magpapasya sa susunod na hakbang.",
+    "finishedPreview": "Ito ang nakikita ng iyong mga aplikante. Wala ang libreng subok na ito sa listahan ng iyong mga aplikante, at hindi binibilang ang mga sagot nito sa istatistika ng mga tanong.",
+    "finishedRights": "Maaari mong hilingin sa <bdi>{company}</bdi> na ipasuri sa isang tao ang iyong resulta. <link>Privacy</link>",
+    "finishedAnswered": "Mga nasagot na tanong",
+    "finishedTime": "Oras na ginugol",
+    "signInAs": "Gamitin ang email kung saan ipinadala ang imbitasyong ito.",
+    "switchAccount": "Magpalit ng account",
+    "progress": "Natapos mo na ang {percent}.",
+    "progressLabel": "Ang iyong progreso",
+    "groups": {
+      "how": "Paano ito gumagana",
+      "time": "Ang iyong oras",
+      "rights": "Ang iyong mga karapatan at privacy"
+    },
     "continue": "Magpatuloy",
     "start": "Tanggapin at simulan",
     "pledge": "Sasagot ako nang mag-isa, nang walang AI tool o tulong ng ibang tao.",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "Sumali na",
     "invited": "Inimbitahan",
+    "joinedOn": "Sumali noong {date}",
+    "invitedOn": "Inimbitahan noong {date}",
+    "pendingTitle": "Mga nakabinbing imbitasyon",
+    "firstTitle": "Imbitahan ang una mong kasamahan",
     "role": "Tungkulin",
     "roleFailed": "Hindi mapalitan ang tungkulin.",
     "inviteTitle": "Imbitasyon sa kumpanya",
@@ -1281,6 +1390,11 @@
     "madeOwner": "Si <bdi>{email}</bdi> na ang may-ari."
   },
   "scorecard": {
+    "filters": {
+      "all": "Lahat",
+      "correct": "Tama",
+      "wrong": "Mali"
+    },
     "timeOut": "Ubos na ang oras",
     "leftPage": "Umalis sa page nang {count, plural, one {# beses} other {# beses}}",
     "answeredIn": "Sumagot sa loob ng <b>{time}</b>",
@@ -1298,7 +1412,7 @@
     "test": "Paggawa ng interview",
     "free": "Libre",
     "candidate": "Bawat aplikanteng sumagot ng kahit isang tanong",
-    "candidateVolume": "Gamit ang credits mula sa top-up na {from} o higit pa",
+    "candidateVolume": "Sa mga top-up na {from} pataas",
     "perCandidate": "{price} bawat aplikante",
     "welcome": "{count, plural, =1 {Ang iyong unang aplikante} other {Ang iyong unang # aplikante}}",
     "credits": "Ang bawat aplikante ay {credits, number} credits, at hindi nag-e-expire ang credits.",
@@ -1306,6 +1420,10 @@
     "referralsNote": "I-share ang link ng iyong kumpanya mula sa tab na Referrals nito.",
     "companyReferral": "Unang top-up ng kumpanyang inimbitahan mo",
     "each": "{count, number} credits bawat isa",
+    "fromPrice": "mula {price}",
+    "anyTopUp": "Sa anumang top-up",
+    "volumeTitle": "Mas mura ang aplikante sa mas malalaking top-up",
+    "volumeText": "Habang lumalaki ang top-up, bumababa ang halaga ng bawat aplikante.",
     "topUp": "Mag-top up"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "Mga dokumento sa compliance para sa hiring",
     "intro": "Mga dokumento para sa mga kumpanyang nag-a-assess ng mga aplikante gamit ang testee: mga tagubilin, mga template at ang data processing agreement.",
     "englishOnly": "Available lang ang mga dokumentong ito sa English.",
-    "download": "I-download ang {format}",
+    "download": "I-download ang <type>{format}</type>",
     "readOnline": "Basahin online",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "Gawin sa wikang"
   },
   "referral": {
+    "title": "Pareho kayong makakakuha ng <n></n> credit",
+    "text": "Sapat na iyan para sa {count, plural, one {# aplikante} other {# aplikante}}. Ibahagi ang iyong link sa ibang kumpanya.",
+    "empty": "Wala pang gantimpala. Ibahagi ang iyong link para makuha ang una.",
+    "steps": {
+      "share": "Ibahagi ang iyong link sa ibang kumpanya.",
+      "create": "Gagawa sila ng kanilang kumpanya gamit ito.",
+      "reward": "Pagkatapos ng una nilang top-up, anuman ang halaga, parehong kayong makakakuha ng mga credit."
+    },
+    "summary": {
+      "referred": "Mga naimbitahang kumpanya",
+      "earned": "Mga nakuhang credit",
+      "left": "Natitirang gantimpala ngayong taon",
+      "leftValue": "{left, number} sa {total, number}"
+    },
     "companyNote": "Pareho kayong makakakuha ng {reward, number} credits kapag ginawa nila ang kanilang unang top-up, anumang halaga.",
     "deletedCompany": "Binurang kumpanya",
     "credits": "+{count, number} credits",
@@ -1398,53 +1530,39 @@
     "intro": "Ang bawat aplikante ay {credits, number} credits, at hindi nag-e-expire ang credits.",
     "noCompany": "Ang credits ay pag-aari ng isang kumpanya. Gumawa muna ng iyong kumpanya, saka ito i-top up dito.",
     "createCompany": "Gumawa ng kumpanya",
+    "allCompanies": "Lahat ng kumpanya",
     "pricing": "Presyo"
   },
   "landing": {
-    "more": "Paano ito gumagana",
     "demos": "Video",
-    "videoTooltip": "Panoorin kung paano gumagana ang testee",
     "watchVideo": "Panoorin ang video",
     "howItWorks": "Paano ito gumagana",
     "askAgent": "magtanong kay Mira",
     "create": {
+      "draftingNote": "Binabasa ang iyong job description.",
       "title": "Gumawa ng interview sa loob ng ilang minuto",
       "text": "I-paste ang job description, ayusin ang mga topic, at handa na ang interview mo sa loob ng ilang minuto.",
       "notes": {
-        "questions": "{count, number} tanong sa bawat topic",
         "templates": "may mga handang template",
         "expert": "hindi kailangan ng eksperto sa larangan"
       },
-      "describe": "<n>1.</n> I-paste ang iyong description",
+      "describe": "<n>1.</n> I-paste ang description",
       "adjust": "<n>2.</n> Ayusin ang mga topic",
       "menu": {
-        "cut": "I-cut",
-        "copy": "Kopyahin",
         "paste": "I-paste"
       },
-      "ready": "<n>3.</n> Handa na ang interview mo",
-      "invited": "<n>4.</n> Natatanggap ng aplikante ang imbitasyon",
+      "ready": "<n>3.</n> Handa na ang interview",
+      "invited": "<n>4.</n> Natanggap ang imbitasyon",
       "status": "Handa na",
       "email": {
-        "search": "Maghanap sa mail",
-        "compose": "Mag-compose",
         "inbox": "Inbox",
-        "starred": "Naka-star",
-        "sent": "Naipadala",
-        "drafts": "Mga Draft",
         "from": "testee.",
-        "toMe": "sa akin",
         "now": "ngayon",
         "subject": "Imbitasyon sa interview mula sa {company}",
-        "preheader": "Sagutan ang “{title}” sa testee. Mag-sign in gamit ang {email} para magsimula.",
         "heading": "Imbitasyon sa interview",
         "invited": "Iniimbitahan ka ng <b>{company}</b> sa interview na “{title}” sa testee.",
         "signIn": "Mag-sign in gamit ang {email} para magsimula. Ang address na ito lang ang puwedeng sumagot sa interview, at may isang pagkakataon ka lang.",
-        "button": "Buksan ang imbitasyon",
-        "pasteLink": "O i-paste ang link na ito sa iyong browser",
-        "footer": "Ipinadala ang email na ito sa {email} dahil may nag-imbita sa address na ito sa testee. Kung hindi mo ito inaasahan, puwede mo itong balewalain.",
-        "stopCompany": "Huwag na akong padalhan ng email para sa {company}",
-        "operator": "Ang testee ay pinapatakbo ng {name}, {address}."
+        "button": "Buksan ang imbitasyon"
       },
       "phone": {
         "describe": "Mag-paste ng job description, o magsulat ng ilang salita tungkol sa role.",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "Tao ang nagpapasya",
-          "text": "Sinusuportahan ng score ang iyong desisyon; hindi ito ang nagpapasya. Ang mga integrity flag ay dahilan para tingnan nang mas mabuti, hindi patunay."
+          "text": "Ang score ay tulong sa iyong desisyon. Ang mga integrity signal ay dahilan para tingnang mabuti, hindi patunay."
         },
         "fair": {
           "title": "Patas sa bawat aplikante",
-          "text": "Parehong timer at halo ng uri ng tanong, mga tanong na random na pinipili para sa bawat tao, at dagdag na oras para sa mga nangangailangan."
+          "text": "Pare-parehong timer at halo ng mga tanong para sa lahat, random ang pagpili ng mga tanong, at may dagdag na oras para sa mga nangangailangan."
         },
         "laws": {
           "title": "Ginawa para sa compliance",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "Nakatala ang bawat aksyon",
-          "text": "Nakikita ng owner kung sino ang gumawa ng ano sa kumpanya, at ligtas itong itinatabi nang 12 buwan sa mga server sa EU."
+          "text": "Nakikita ng owner kung sino ang gumawa ng ano, at itinatago ito sa loob ng 12 buwan sa mga server sa EU."
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "May iba pang tanong?",
       "videos": "mga video",
       "faq": "FAQ",
-      "guides": "mga gabay",
-      "features": "mga feature",
-      "hiringFlow": "hiring flow"
+      "guides": "mga gabay"
     },
     "closing": {
       "title": "Gawin ang iyong unang interview\nLibre ito",
@@ -1672,7 +1788,8 @@
         "time": "~10 min bawat role, wala bawat aplikante",
         "cost": "{price} bawat aplikanteng sumasagot"
       },
-      "more": "Ikumpara sa ibang tool"
+      "more": "Ikumpara sa ibang tool",
+      "best": "Pinakamainam na pagpipilian"
     },
     "freeToStart": {
       "title": "Libre ang lahat\nMagbayad bawat aplikante",
@@ -1689,6 +1806,7 @@
       "each": "({price} bawat aplikante)",
       "free": "{count, plural, one {# libreng aplikante} other {# libreng aplikante}} para magsimula",
       "perCandidate": "bawat aplikante",
+      "bestPrice": "Pinakamagandang presyo",
       "pack": "{count, number} sa halagang {price}",
       "see": "Tingnan ang presyo",
       "notes": {
@@ -1698,11 +1816,159 @@
         "refund": "mare-refund ang hindi nagamit na binayarang credits"
       },
       "currencies": "{count, plural, one {# uri ng pera} other {# uri ng pera}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Tinutulungan ng Acme ang mga online shop na sagutin ang mga customer nila gamit ang AI.\nNaghahanap kami ng AI Engineer na bubuo ng mga LLM feature namin.\n• 3+ taon ng karanasan sa Python\n• LLM apps, RAG at vector search\n• Pag-evaluate at pag-monitor ng mga model\nRemote, flexible na oras, may learning budget.",
+        "title": "AI Engineer",
+        "topics": {
+          "llm": {
+            "name": "Mga batayan ng LLM",
+            "subtopics": ["Tokens", "Prompting", "Context windows"]
+          },
+          "rag": {
+            "name": "Retrieval-augmented generation",
+            "subtopics": ["Embeddings", "Chunking", "Vector search"]
+          },
+          "python": {
+            "name": "Python para sa ML systems",
+            "subtopics": ["asyncio", "Type hints"]
+          }
+        },
+        "renamed": " sa malawakang saklaw",
+        "subtopicAdded": " at testing",
+        "change": "Magdagdag ng topic tungkol sa pag-evaluate ng output ng LLM",
+        "newTopic": {
+          "name": "Pag-evaluate ng LLM",
+          "subtopics": ["Test sets", "LLM bilang judge", "Metrics"]
+        }
+      },
+      "candidates": {
+        "title": "Data Analyst",
+        "questions": {
+          "median": {
+            "topic": "Statistics",
+            "text": "Ilang napakalaking order ang nagpapalihis sa average order value mo. Aling sukatan ang pinakamahusay na naglalarawan sa karaniwang order?",
+            "options": [
+              "Ang mean ng order value",
+              "Ang median ng order value",
+              "Ang range ng mga order value",
+              "Ang standard deviation ng mga order value"
+            ]
+          },
+          "revenue": {
+            "topic": "Statistics",
+            "text": "Bumaba nang 20% ang lingguhang revenue sa dashboard mo pagkatapos mismo ng pagbabago sa data pipeline. Ano ang una mong susuriin?",
+            "options": [
+              "Ikumpara ang bilang ng rows bago at pagkatapos ng pagbabago",
+              "Hanapin ang mga doble o nawawalang petsa",
+              "Palitan ang color scheme ng dashboard",
+              "Tanungin ang sales kung tumigil nang bumili ang mga customer"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "Gusto ng marketing ang mga region na lampas sa 100 ang kabuuang benta. Ano ang ibinabalik ng query na ito?",
+            "options": [
+              "North lang",
+              "South lang",
+              "North at South",
+              "Walang rows"
+            ]
+          },
+          "chart": {
+            "topic": "Visualization",
+            "text": "Kailangan mong ipakita kung paano nagbago ang buwanang sign-ups sa nakaraang dalawang taon. Aling chart ang pinakamahusay na nagpapakita ng trend na iyon?",
+            "options": [
+              "Pie chart ng sign-ups bawat buwan",
+              "Line chart ng sign-ups bawat buwan",
+              "Scatter plot ng sign-ups laban sa revenue",
+              "Histogram ng bilang ng buwanang sign-ups"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "Product Manager",
+        "topics": [
+          "Product strategy",
+          "Metrics",
+          "Stakeholders",
+          "Roadmapping",
+          "User research",
+          "Prioritization",
+          "Experimentation",
+          "Pricing",
+          "Go-to-market",
+          "Komunikasyon"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "Ano ang dapat unahin bago gumawa ng bagong feature?",
+            "options": [
+              "Suriin ang problema kasama ang mga user",
+              "Isulat ang technical spec",
+              "Itakda ang launch date",
+              "I-design ang mga screen"
+            ]
+          },
+          "metrics": {
+            "text": "Bumaba ang conversion mula 4% patungong 3%. Gaano kalaki iyon kumpara sa dati?",
+            "options": ["1%", "25%", "33%", "75%"]
+          },
+          "stakeholders": {
+            "text": "Hindi sang-ayon ang isang partner team sa mga priority mo. Ano ang una mong gagawin?",
+            "options": [
+              "I-escalate sa manager mo",
+              "Tanungin kung ano ang kailangan nila at bakit",
+              "Panatilihin ang plano mo",
+              "Bitawan ang mga priority mo"
+            ]
+          }
+        },
+        "chat": {
+          "name": "Hiring team",
+          "initials": "HT"
+        },
+        "notes": [
+          "Gusto ng hiring manager ng shortlist na dalawang aplikante bago mag-Biyernes.",
+          "Malakas si Daniel sa stakeholders sa phone screen; mas mahina sa metrics.",
+          "Humingi si Sofia ng dagdag na oras; kukumustahin ko siya bukas."
+        ],
+        "pdf": "product-manager-mga-aplikante.pdf"
+      },
+      "slack": {
+        "channels": ["general", "hiring", "engineering"],
+        "channelsTitle": "Channels",
+        "peopleTitle": "Mga direktang mensahe",
+        "appsTitle": "Apps",
+        "app": "APP",
+        "composer": "Mensahe sa #{channel}",
+        "finished": "Natapos ni {name} ({email}) ang “{title}”: {grade}%.",
+        "noted": "Nagdagdag si {author} ng note sa “{title}”:",
+        "button": "Buksan sa testee"
+      },
+      "invite": {
+        "title": "B2B Account Executive"
+      },
+      "askAgent": {
+        "interview": "Data Analyst"
+      }
     }
   },
   "faq": {
     "title": "Mga madalas itanong",
-    "intro": "Hindi mo makita ang sagot? Itanong kay Mira, ang AI assistant (ang button sa itaas ng page), o sumulat sa amin sa address na nasa privacy policy.",
+    "intro": "Mga sagot tungkol sa testee, mula sa una mong interview hanggang sa iyong data.",
+    "groups": {
+      "start": "Pagsisimula",
+      "candidates": "Mga aplikante",
+      "pricing": "Presyo at mga credit",
+      "results": "Mga resulta at ang iyong team",
+      "tools": "Mga integration",
+      "privacy": "Privacy at ang iyong account"
+    },
+    "closingTitle": "May tanong ka pa ba?",
+    "closingText": "Magtanong kay Mira, ang aming AI assistant, o sumulat sa amin.",
     "description": "Mga sagot tungkol sa testee: paano ginagawa ang interview mula sa job description, ano ang nakikita ng mga aplikante, presyo at credits, resulta, ATS integration, mga wika at ang data mo."
   },
   "contact": {
@@ -1731,9 +1997,20 @@
     "description": "Ginagawa ng testee ang job description na patas at may orasang interview sa loob ng ilang minuto, sa presyong kaya ng anumang team. Libre ring mag-practice ng interview ang kahit sino.",
     "company": {
       "title": "Bakit kami narito",
+      "titles": {
+        "problem": "Mahirap gawing tama ang pag-hire",
+        "approach": "Isang patas na interview sa loob ng ilang minuto",
+        "practice": "Libreng practice para sa lahat"
+      },
       "problem": "Madalas nakasalalay ang hiring sa isang CV at isang magandang usapan, at puwedeng makapanlinlang ang dalawa. Ang mga assessment tool na nakakatulong ay naka-presyo para sa malalaking kumpanya, may annual plan at bayad bawat seat, kaya karamihan ng team ay wala nito.",
       "approach": "Ginagawang timed interview ng testee ang isang job description sa loob ng ilang minuto, para sa kahit anong role. Bawat aplikante ay may sariling mga tanong, nakikita mo kung sino ang marunong sa trabaho at bakit, at magbabayad ka lang para sa mga aplikanteng talagang sumagot nito.",
       "practice": "Gusto rin naming maging libre para sa lahat ang paghahanda para sa interview. Kahit sino ay puwedeng sumagot ng aming mga practice interview para sa isang role, makita ang kanilang grade at bawat tamang sagot, at mag-practice ulit, nang walang bayad."
+    },
+    "closing": {
+      "title": "Subukan mo mismo",
+      "text": "Gumawa ng interview mula sa iyong job description, o mag-practice nang libre para sa isang role.",
+      "create": "Gumawa ng test",
+      "practice": "Mag-practice nang libre"
     },
     "founder": {
       "quote": "Hindi dapat pribilehiyo lang ng malalaking kumpanya na may malaking budget ang mahusay na hiring. Ginawa ko ang testee para kahit anong team ay magawang patas na interview ang isang job description sa loob ng ilang minuto, makita kung sino ang talagang marunong sa trabaho, at magbayad lang para sa mga aplikanteng sumagot nito. Sana ay matulungan ka nitong mahanap nang mas mabilis ang mga tamang tao.",
@@ -1751,20 +2028,18 @@
     "title": "Mga notification",
     "unread": "{count, plural, one {# hindi pa nababasang notification} other {# hindi pa nababasang notification}}",
     "empty": "Wala pang bago.",
-    "formerAuthor": "isang dating miyembro",
     "kinds": {
       "question_flagged": "{count, plural, =1 {Na-flag para i-review ang isang tanong tungkol sa “<bdi>{topic}</bdi>” sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.} other {Na-flag para i-review ang # tanong sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.}}",
       "question_fixed": "{count, plural, =1 {Inayos ng AI ang na-flag na tanong tungkol sa “<bdi>{topic}</bdi>” sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.} other {Inayos ng AI ang # na-flag na tanong sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.}}",
       "referral_rewarded": "Nag-top up ang isang inimbitahan mo. Nakatanggap ka ng {credits, plural, =1 {# credit} other {# credits}}.",
-      "auto_top_up_on": "Naka-on ang awtomatikong top-up: {price} dagdag ang buwis kapag bumaba ang available na credits sa ilalim ng {threshold, number}.",
       "auto_top_up_charged": "Nagdagdag ang awtomatikong top-up ng {credits, plural, =1 {# credit} other {# credits}}.",
       "auto_top_up_failed": "Hindi ma-charge ng awtomatikong top-up ang card. Mag-top up para hindi maubos ang iyong balance.",
+      "auto_top_up_on": "Naka-on ang awtomatikong top-up: {price} dagdag ang buwis kapag bumaba ang available na credits sa ilalim ng {threshold, number}.",
       "auto_top_up_paused": "Naka-pause ang awtomatikong top-up: tinanggihan ang card. I-update ang card para i-on ito ulit.",
       "auto_top_up_price_change": "Simula <time>{date}</time>, {newPrice} na ang bawat awtomatikong top-up sa halip na {price}.",
       "candidate_finished": "{count, plural, =1 {Natapos ni <bdi>{email}</bdi> ang {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# aplikante ang nakatapos ng {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.}}",
       "invite_undelivered": "{count, plural, =1 {Hindi naihatid ang imbitasyon kay <bdi>{email}</bdi> para sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.} other {Hindi naihatid ang # imbitasyon para sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.}}",
       "interview_ready": "{title, select, none {Handa na ang isang interview.} other {Handa na ang interview na “<bdi>{title}</bdi>”.}}",
-      "note_added": "{count, plural, =1 {Bagong note sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}} mula kay <bdi>{authors}</bdi>.} other {# bagong note sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}, ang pinakabago mula kay <bdi>{authors}</bdi>.}}",
       "interview_cancelled": "{title, select, none {Kinansela ang isang interview} other {Kinansela ang interview na “<bdi>{title}</bdi>”}}: masyadong natagal ang paghihintay sa review ng mga topic.",
       "verification_approved": "Verified na ang “<bdi>{name}</bdi>” para sa <bdi>{domain}</bdi>.",
       "verification_declined": "{reason, select, none {Tinanggihan ang verification ng “<bdi>{name}</bdi>”.} other {Tinanggihan ang verification ng “<bdi>{name}</bdi>”: <bdi>{reason}</bdi>}}",
@@ -1776,8 +2051,10 @@
       "news": "Balita: <bdi>{title}</bdi>",
       "legal_terms": "Magkakabisa ang bagong mga tuntunin sa <time>{date}</time>.",
       "legal_privacy": "Magkakabisa ang bagong patakaran sa privacy sa <time>{date}</time>.",
-      "legal_dpa": "Magkakabisa ang bagong kasunduan sa pagproseso ng data sa <time>{date}</time>."
+      "legal_dpa": "Magkakabisa ang bagong kasunduan sa pagproseso ng data sa <time>{date}</time>.",
+      "note_added": "{count, plural, =1 {Bagong note sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}} mula kay <bdi>{authors}</bdi>.} other {# bagong note sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}, ang pinakabago mula kay <bdi>{authors}</bdi>.}}"
     },
+    "formerAuthor": "isang dating miyembro",
     "legalBanner": {
       "terms": "Magbabago ang mga tuntunin ng testee sa <time>{date}</time>.",
       "privacy": "Magbabago ang patakaran sa privacy ng testee sa <time>{date}</time>.",
@@ -1801,7 +2078,7 @@
     "send": "Ipadala ang <name>PDF</name>",
     "sent": "Naipadala ang report sa <bdi>{email}</bdi>",
     "sendFailed": "Hindi maipadala ang report.",
-    "orSummary": "O ipadala gamit ang",
+    "orSummary": "O magpadala ng maikling buod sa chat",
     "via": "Ipinadala mula sa testee",
     "candidatesFileName": "Mga aplikante {title}",
     "candidateCount": "{count, plural, one {# aplikante} other {# aplikante}}",
@@ -1833,6 +2110,10 @@
     "results": "Resulta ng practice",
     "grade": "ng posibleng puntos",
     "notFinished": "hindi tapos",
+    "finished": "Natapos",
+    "answeredCard": "Mga nasagot na tanong",
+    "answeredOf": "{done, number} sa {total, number}",
+    "startedCard": "Nagsimula",
     "noRounds": "Wala pang round.",
     "startFailed": "Hindi masimulan ang practice. Pakisubukang muli.",
     "gradeLabel": "Grade",
@@ -1844,7 +2125,13 @@
     "hireButton": "Gumawa ng interview",
     "timingPerQuestion": "{time} bawat tanong sa average",
     "timingNone": "Walang time limit",
-    "timingNote": "Hindi ikinukumpara sa iba ang practice, kaya kumuha ng mas maraming oras, o alisin ang limit, kung kailangan mo."
+    "timingNote": "Hindi ikinukumpara sa iba ang practice, kaya kumuha ng mas maraming oras, o alisin ang limit, kung kailangan mo.",
+    "facts": {
+      "topics": "Mga topic",
+      "questions": "Mga tanong",
+      "level": "Antas",
+      "language": "Wika"
+    }
   },
   "openToOffers": {
     "title": "Open to offers",
@@ -1887,6 +2174,7 @@
     "englishOnly": "Nasa English lang ang page na ito.",
     "startTitle": "I-test ang mga aplikante mo",
     "startText": "Gumawa ng timed skills test mula sa job description mo.{priced, select, yes { {price} bawat aplikante, walang subscription.} other {}}",
+    "contents": "Sa page na ito",
     "startButton": "Gumawa ng test"
   },
   "compare": {
@@ -1912,7 +2200,16 @@
     "topics": "Ano ang tine-test nito",
     "questions": "Mga halimbawang tanong sa interview",
     "questionsText": "Mga tanong na tulad nito, kasama ang mga tamang sagot. May sariling mga tanong ang mga aplikante mo, na hindi kailanman ipinapakita sa publiko.",
-    "faq": "Mga tanong ng mga kumpanya"
+    "faq": "Mga tanong ng mga kumpanya",
+    "createOwn": "Gumawa ng sarili mong test",
+    "facts": {
+      "topics": "Mga topic",
+      "level": "Antas",
+      "language": "Wika",
+      "price": "Bawat aplikante"
+    },
+    "closingTitle": "Handa nang subukin ang iyong mga aplikante?",
+    "closingText": "I-paste ang job description at makakuha ng ganitong test sa loob ng ilang minuto, libre itong gawin."
   },
   "ats": {
     "statusConnected": "naka-connect",
@@ -1998,6 +2295,25 @@
     "bzStepCreate": "Gumawa ng API key bilang admin na nakikita ang lahat ng job: kikilos ito bilang ikaw, at sa pangalan mo isusulat ang mga resulta. Kasama sa Pro plan ng Breezy ang API at webhooks nito.",
     "bzStepPaste": "I-paste ang key sa ibaba. Kami na ang magdadagdag ng webhook sa Breezy HR.",
     "atsGroup": "ATS",
+    "firstJobTitle": "I-link ang una mong job",
+    "brokenText": "Tumigil sa paggana ang {ats}, kaya hindi naiimbitahan ang mga aplikante. I-reconnect ito para magsimulang muli.",
+    "stripMove": "Naabot ng isang aplikante ang stage na pinili mo sa {ats}",
+    "stripInvite": "Iniimbitahan sila ng testee sa naka-link na interview",
+    "stripResults": "Ibabalik ang kanilang mga resulta sa kanilang profile sa {ats}",
+    "rowStage": "Stage: <bdi>{stage}</bdi>",
+    "rowInterview": "Interview: <link><bdi>{interview}</bdi></link>",
+    "invitedShort": "<n></n> ang inimbitahan",
+    "waitingShort": "<n></n> ang naghihintay",
+    "notInvitedShort": "<n></n> ang hindi inimbitahan",
+    "summary": {
+      "status": "Status",
+      "account": "Account",
+      "jobs": "Mga naka-link na job",
+      "invited": "Mga inimbitahang aplikante"
+    },
+    "connectedGroup": "Nakakonekta",
+    "statusBroken": "Kailangang i-reconnect",
+    "rowText": "Mag-imbita ng mga aplikante mula sa {ats} at ibalik ang kanilang mga resulta.",
     "messagingGroup": "Mga messaging app",
     "apiAiAppsGroup": "API at mga AI app",
     "searchInterview": "Maghanap ng interview",
@@ -2005,6 +2321,29 @@
   },
   "slack": {
     "add": "Idagdag sa Slack",
+    "rowText": "Makatanggap ng abiso sa Slack kapag natapos ang mga aplikante.",
+    "brokenText": "Tumigil ang Slack sa pagtanggap ng mga mensahe, kaya walang abisong natatanggap ang iyong channel. I-reconnect ito para magsimulang muli.",
+    "pointChannel": "Piliin ang channel kung saan dapat makita ng iyong team ang mga ito.",
+    "pointKinds": "Piliin kung aling mga abiso ang ipapadala doon.",
+    "pointPrivacy": "Makakapag-post lang ang testee sa channel na iyon. Hindi nito mababasa ang iyong Slack.",
+    "test": "Magpadala ng test",
+    "testSent": "Naipadala na ang test message sa iyong channel.",
+    "testFailed": "Hindi naipadala ang test message.",
+    "groups": {
+      "candidates": "Mga aplikante",
+      "interviews": "Mga interview",
+      "billing": "Billing",
+      "team": "Team"
+    },
+    "samples": {
+      "candidate_finished": "Natapos ni Ann Lee (ann@example.com) ang “Data Analyst”: 82%.",
+      "ats_not_invited": "Galing si Ben Ortiz sa iyong ATS pero hindi siya naimbitahan sa “Data Analyst”.",
+      "invite_undelivered": "Hindi naihatid ang imbitasyon kay ben@example.com para sa “Data Analyst”.",
+      "interview_ready": "Handa na ang “Data Analyst”.",
+      "auto_top_up_charged": "Nasingil ang iyong awtomatikong top-up.",
+      "auto_top_up_failed": "Nabigo ang iyong awtomatikong top-up. I-update ang iyong card para magpatuloy ito.",
+      "note_added": "Nagdagdag si Maya ng note sa “Data Analyst”: malakas sa SQL, sulit tawagan."
+    },
     "connectFailed": "Hindi ma-connect ang Slack.",
     "connected": "Naka-connect na ang Slack.",
     "disconnectFailed": "Hindi ma-disconnect ang Slack.",
@@ -2019,9 +2358,9 @@
       "ats_not_invited": "May aplikante mula sa ATS mo na hindi na-imbitahan",
       "invite_undelivered": "May email ng imbitasyon na hindi naihatid",
       "interview_ready": "May interview na handa na",
-      "note_added": "May miyembro ng team na nagsulat ng note, kasama ang text nito",
       "auto_top_up_charged": "Na-charge ang isang awtomatikong top-up",
-      "auto_top_up_failed": "Pumalya ang isang awtomatikong top-up"
+      "auto_top_up_failed": "Pumalya ang isang awtomatikong top-up",
+      "note_added": "May miyembro ng team na nagsulat ng note, kasama ang text nito"
     },
     "instructionsTitle": "Paano natatanggap ng Slack ang mga notification mo",
     "stepAdd": "I-click ang “Idagdag sa Slack”: magbubukas ang Slack at hihilingin sa iyong payagan ang testee sa workspace mo.",
@@ -2030,13 +2369,67 @@
     "stepPrivacy": "Sa channel na iyon lang makakapag-post ang testee. Hindi nito mababasa ang Slack mo, at maaalis ito kapag nag-disconnect ka."
   },
   "api": {
+    "firstKeyTitle": "Gawin ang una mong key",
+    "sdkDocs": "Tingnan ang SDK docs",
+    "sdkReady": "Handa na: {count, plural, one {# site} other {# site}} ang maaaring magpakita ng iyong mga interview.",
+    "sdkNotReady": "Hindi pa naka-set up: magdagdag ng site sa ibaba para maipakita nito ang iyong mga interview.",
+    "sdkRules": "Dapat gumamit ng HTTPS ang mga page. Magdagdag ng isang site, o ng lahat ng subdomain nito:",
+    "stepSite": "Idagdag ang iyong site",
+    "stepCode": "I-paste ang code na ito sa iyong page",
+    "stepSend": "Ipadala ang mga aplikante rito",
+    "stepSendText": "Nag-iimbita ang iyong server ng aplikante gamit ang sign_in false at ipinapasa sa iyong page ang invite_url na natatanggap nito. Huwag kailanman ilagay ang iyong API key sa isang page.",
+    "thisSite": "Ang site na ito",
+    "allSubdomains": "Lahat ng subdomain",
+    "localhostOn": "Naka-on: i-off ito bago mag-go live.",
+    "firstWebhookTitle": "Idagdag ang una mong webhook",
+    "webhookSampleText": "Nagpapadala ang testee ng naka-sign na request na ganito kapag may nangyari:",
+    "lastDelivered": "huling naihatid <time>{date}</time>",
+    "webhookStates": {
+      "paused": "Naka-pause",
+      "unused": "Hindi pa nagagamit",
+      "active": "Aktibo"
+    },
+    "webhookEvents": {
+      "started": "Nagsimula ang aplikante",
+      "finished": "Natapos ang aplikante",
+      "undelivered": "Hindi naabot ang aplikante",
+      "expired": "Nag-expire ang imbitasyon",
+      "removed": "Inalis ang aplikante",
+      "ready": "Handa na ang interview"
+    },
+    "replaceKey": "Gumawa ng kapalit",
+    "activityTitle": "Aktibidad",
+    "ipOpen": "Anumang IP address ay maaaring gumamit ng key na ito. Limitahan ito sa mga address ng iyong mga server para mas ligtas.",
+    "summary": {
+      "status": "Status",
+      "access": "Access",
+      "lastUsed": "Huling ginamit",
+      "expires": "Mag-e-expire",
+      "created": "Ginawa"
+    },
+    "warnings": {
+      "expired": "Nag-expire na ang key na ito, kaya tinatanggihan ang mga request na gumagamit nito. Gumawa ng kapalit para magpatuloy.",
+      "expiring": "Malapit nang mag-expire ang key na ito. Gumawa ng kapalit at lumipat dito bago ito tumigil sa paggana."
+    },
+    "exampleText": "Subukan ito gamit ang request na ito, na bumabasa ng iyong mga credit:",
+    "access": {
+      "read": "Basa lang",
+      "write": "Basa at sulat",
+      "custom": "Custom"
+    },
+    "states": {
+      "expired": "Nag-expire na",
+      "expiring": "Malapit nang mag-expire",
+      "never_used": "Hindi pa nagagamit",
+      "active": "Aktibo"
+    },
     "name": "API",
     "rowName": "API, SDK, mga webhook",
     "rowText": "Mga key at webhook para ikonekta ang sarili mong platform.",
     "counts": "{keys, plural, one {# key} other {# key}} · {webhooks, plural, one {# webhook} other {# webhook}}",
     "docs": "Dokumentasyon para sa mga developer",
     "keysTitle": "Mga API key",
-    "keysText": "Kumikilos ang key bilang taong gumawa nito, at magagawa lang nito ang pinapayagan ng mga pahintulot nito.",
+    "keysText": "Kumikilos ang isang key para sa iyong kumpanya, bilang sarili nito, at magagawa lang nito ang pinapayagan ng mga pahintulot nito.\nPatuloy itong gumagana kahit umalis ang taong gumawa nito.",
     "noKeys": "Wala pang key.",
     "newKey": "Bagong key",
     "newKeyTitle": "Bagong API key",
@@ -2064,7 +2457,7 @@
     "removeKeyTitle": "Burahin ang key na ito?",
     "removeKeyText": "Agad na hihinto ang anumang gumagamit ng “<bdi>{name}</bdi>”.",
     "webhooksTitle": "Mga webhook",
-    "webhooksText": "Sinasabihan ng testee ang mga address na ito kapag nagsimula, natapos (kasama ang mga resulta niya), hindi naabot ng imbitasyon, nag-expire ang imbitasyon, o tinanggal ang isang aplikante, at kapag handa na ang isang interview; naka-sign ang bawat request gamit ang secret ng address.",
+    "webhooksText": "Sinasabihan ng testee ang mga address na ito kapag may alinman sa mga ito ang nangyari, at pinipirmahan ang bawat request gamit ang secret ng address.",
     "noWebhooks": "Wala pang webhook.",
     "failing": "Naka-pause: hindi ito sumagot nang 3 araw, kaya walang event na ipinapadala rito. Kapag tinanggap nito ang isang test event, aandar itong muli.",
     "addWebhook": "Magdagdag ng webhook",
@@ -2151,7 +2544,6 @@
     "localhostText": "Para sa pag-test sa sarili mong computer, kahit anong port. I-off ito kapag live ka na.",
     "permissionsTitle": "Mga pahintulot",
     "permissionsText": "Ang puwedeng gawin ng key na ito. Agad na nase-save ang mga pagbabago.",
-    "permissionsSaved": "Na-save ang mga pahintulot.",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2631,15 @@
       "tools": "Mga tool",
       "frameworks": "Mga agent framework"
     },
+    "intro": "Ikonekta ang testee sa sarili mong platform, server o AI agent.",
+    "endpointsText": "Bawat route, ayon sa ginagalawan nito. Buksan ang isa para makita kung ano ang kailangan nito, ano ang ibinabalik at ang mga error nito.",
+    "apiPages": {
+      "start": "Magsimula",
+      "guides": "Mga gabay",
+      "endpoints": "Mga endpoint",
+      "errors": "Mga error",
+      "changelog": "Changelog"
+    },
     "englishOnly": "English lang ang page na ito.",
     "baseUrl": "Base URL",
     "copyBaseUrl": "Kopyahin ang URL",
@@ -2275,6 +2676,7 @@
   },
   "assistant": {
     "title": "Mira · AI assistant",
+    "name": "Mira",
     "company": "Kumpanya",
     "allCompanies": "Lahat ng kumpanya",
     "newChat": "Bagong chat",
@@ -2331,7 +2733,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "Kung paano gumagana ang testee, magkano ito at ano ang nakikita ng mga aplikante, na sinasagot mula sa FAQ ng testee. Mag-sign in para magtanong tungkol sa mga kumpanya at aplikante mo.",
+        "text": "Mag-sign in para magtanong tungkol sa iyong mga kumpanya at aplikante.",
         "questions": {
           "what": "Ano ang testee?",
           "pricing": "Magkano ito?",
@@ -2340,7 +2742,7 @@
         }
       },
       "no_company": {
-        "text": "Simulan na natin: ang una mong interview, ang kumpanya mo at ang pag-verify nito.",
+        "text": "Simulan na natin ang una mong interview.",
         "questions": {
           "firstInterview": "Gawin ang una kong interview",
           "createCompany": "Gumawa ka ng kumpanya para sa akin",
@@ -2348,7 +2750,7 @@
         }
       },
       "unverified": {
-        "text": "I-verify ang kumpanya mo para makita ng mga aplikante kung sino ang nag-iimbita sa kanila, at gumawa ng mga interview.",
+        "text": "I-verify ang iyong kumpanya at gawin ang iyong mga interview.",
         "questions": {
           "verify": "I-verify ang kumpanya ko",
           "whyVerify": "Bakit dapat i-verify ang kumpanya ko?",
@@ -2356,7 +2758,7 @@
         }
       },
       "no_interviews": {
-        "text": "Gumawa ng interview mula sa job description: isinusulat ang mga tanong para sa role.",
+        "text": "Gawin na natin ang una mong interview.",
         "questions": {
           "fromDescription": "Gumawa ng interview mula sa job description",
           "template": "Gumawa ng interview mula sa template",
@@ -2364,7 +2766,7 @@
         }
       },
       "no_candidates": {
-        "text": "Mag-imbita ng mga aplikante sa email, gamit ang shareable link o mula sa ATS mo.",
+        "text": "Imbitahan na natin ang una mong mga aplikante.",
         "questions": {
           "invite": "Mag-imbita ng mga aplikante",
           "shareLink": "I-on ang shareable link",
@@ -2372,7 +2774,7 @@
         }
       },
       "has_candidates": {
-        "text": "Magtanong tungkol sa mga aplikante mo: sino ang pumasa, paano sila nagkukumpara at ano ang ibig sabihin ng mga resulta nila.",
+        "text": "Magtanong tungkol sa iyong mga aplikante at sa kanilang mga resulta.",
         "questions": {
           "passed": "Sino ang pumasa ngayong linggo?",
           "compare": "Ikumpara ang pinakamahuhusay kong aplikante",
@@ -2494,7 +2896,27 @@
     "feedbackLink": "Makipag-ugnayan sa amin"
   },
   "companyBilling": {
-    "reservedTab": "Naka-reserve ({count, number})",
+    "reservedTab": "Nakareserba",
+    "download": {
+      "open": "I-download ang history",
+      "title": "I-download ang history",
+      "description": "Pumili ng panahon para sa iyong CSV file.",
+      "save": "I-download",
+      "failed": "Hindi namin nagawa ang file. Pakisubukang muli."
+    },
+    "lowText": "Paubos na ang iyong mga credit. Mag-top up para patuloy na maimbitahan ang mga aplikante.",
+    "summary": {
+      "available": "Magagamit na credit",
+      "candidates": "Mga aplikanteng sakop",
+      "reserved": "Nakareserbang credit",
+      "spent": "Credit na nagastos ngayong buwan"
+    },
+    "kinds": {
+      "all": "Lahat",
+      "topups": "Mga top-up",
+      "charges": "Mga singil",
+      "refunds": "Mga refund"
+    },
     "reservedEmpty": "Walang aplikanteng may naka-reserve na credits.",
     "reservedNote": "Mga aplikanteng hindi pa tapos. Naka-reserve ang credits nila: sisingilin kung sasagot sila, ibabalik kung hindi.",
     "history": "History",
@@ -2521,7 +2943,19 @@
     "name": "MCP server",
     "rowText": "Ikonekta ang Claude, ChatGPT at iba pang AI app sa testee.",
     "title": "Mga AI app",
-    "subtitle": "Kumikilos sila bilang ikaw, sa bawat kumpanyang kasali ka, gamit ang mga pahintulot mo.",
+    "subtitle": "Kumikilos sila bilang ikaw, sa bawat kumpanyang kinabibilangan mo, gamit ang iyong mga pahintulot. Ikaw ang nagpapahintulot sa bawat isa sa testee: walang key na ipa-paste kahit saan.",
+    "connectedTitle": "Ang iyong mga app",
+    "otherApps": "Iba pa",
+    "allowIn": "Payagan ang mga AI app sa <bdi>{company}</bdi>",
+    "allowOn": "Magagamit ng mga miyembro ang mga interview at aplikante ng kumpanyang ito mula sa mga AI app na ikinonekta nila.",
+    "allowOff": "Naka-off: hindi makakabasa o makakapagbago ng anuman sa kumpanyang ito ang mga AI app.",
+    "promptsTitle": "Subukang itanong",
+    "promptCopied": "Nakopya",
+    "prompts": {
+      "passed": "Sino ang pumasa ngayong linggo?",
+      "compare": "Ihambing ang pinakamahuhusay kong aplikante para sa interview ng Data Analyst.",
+      "invite": "Imbitahan si ann@example.com sa interview ng Data Analyst."
+    },
     "instructionsTitle": "Ikonekta ang isang AI app sa testee",
     "serverTitle": "Address ng server",
     "serverText": "I-paste ito sa AI app mo bilang custom connector (isang MCP server).",
@@ -2679,6 +3113,10 @@
     "failed": "Hindi ma-export ang file. Subukang muli."
   },
   "actionLog": {
+    "period": "Panahon",
+    "periodAll": "Sa lahat ng panahon",
+    "periodDays": "Nakaraang {days, number} araw",
+    "periodCustom": "Custom",
     "empty": "Wala pang aksyon.",
     "noMatches": "Walang aksyong tugma sa mga filter na ito.",
     "formerMember": "Dating miyembro",
@@ -2686,7 +3124,15 @@
     "deletedApiKey": "{via, select, mcp {Sa pamamagitan ng MCP gamit ang na-delete na key} other {Sa pamamagitan ng API gamit ang na-delete na key}}",
     "deletedCandidate": "isang na-delete na aplikante",
     "anyMember": "Kahit sino",
-    "anyAction": "Lahat ng aksyon",
+    "anyAction": "Lahat",
+    "clear": "I-clear",
+    "download": {
+      "open": "I-download ang log",
+      "title": "I-download ang log",
+      "description": "Pumili ng panahon para sa iyong CSV file.",
+      "save": "I-download",
+      "failed": "Hindi namin nagawa ang file. Pakisubukang muli."
+    },
     "member": "Miyembro",
     "action": "Aksyon",
     "from": "Mula",
@@ -2722,13 +3168,13 @@
       "candidate_deleted": "Nag-delete ng aplikante",
       "candidate_renamed": "Pinalitan ang pangalan ng isang aplikante",
       "extra_time_set": "Binigyan ng dagdag na oras ang isang aplikante",
-      "candidate_mode_set": "Binago ang mode ng interview ng isang aplikante",
       "results_viewed": "Tiningnan ang mga resulta ng isang aplikante",
       "report_emailed": "Nag-email ng report",
       "bias_audit_exported": "Nag-export ng data para sa bias audit",
       "member_invited": "Nag-imbita ng miyembro",
       "member_joined": "Sumali sa kumpanya",
       "member_removed": "Nag-alis ng miyembro",
+      "candidate_mode_set": "Binago ang mode ng interview ng isang aplikante",
       "member_role_changed": "Binago ang role ng isang miyembro",
       "ownership_transferred": "Ibinigay ang kumpanya sa ibang may-ari",
       "company_renamed": "Pinalitan ang pangalan ng kumpanya",
@@ -2751,6 +3197,7 @@
       "slack_notifications_changed": "Binago ang mga notification ng Slack",
       "api_key_created": "Gumawa ng API key",
       "api_key_deleted": "Nag-delete ng API key",
+      "api_key_renamed": "Pinalitan ang pangalan ng isang API key",
       "api_key_permissions_changed": "Binago ang mga pahintulot ng isang API key",
       "api_key_ips_changed": "Binago ang mga pinapayagang IP ng isang API key",
       "embed_domains_changed": "Binago ang mga pinapayagang domain",

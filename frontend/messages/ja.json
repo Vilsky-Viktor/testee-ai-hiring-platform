@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "設定",
+    "preferences": "環境設定",
+    "accountId": "アカウントID",
+    "deleteTitle": "アカウントを削除",
+    "deleteNote": "アカウントとデータを完全に削除します。",
     "language": "言語",
     "languageNote": "画面表示とヘルプチャットの回答、新しい面接の初期言語に使われます。面接は対応しているどの言語でも作成できます。",
     "languageFailed": "言語を変更できませんでした。もう一度お試しください。",
@@ -12,7 +16,7 @@
     "account": "あなたのアカウント",
     "accountNote": "アカウントについてお問い合わせの際は、このIDをお伝えください。",
     "yourData": "あなたのデータ",
-    "yourDataNote": "testee. が保存しているあなたのデータをすべてダウンロードするか、アカウントを削除できます。",
+    "yourDataNote": "testee が保有するあなたの情報をすべてダウンロードします。",
     "download": "データをダウンロード",
     "downloadFailed": "データを準備できませんでした。もう一度お試しください。",
     "delete": "アカウントを削除",
@@ -50,7 +54,8 @@
     "system": "システム",
     "light": "ライト",
     "dark": "ダーク",
-    "topUp": "チャージ"
+    "topUp": "チャージ",
+    "workspace": "マイワークスペース"
   },
   "nav": {
     "main": "メインメニュー",
@@ -60,15 +65,19 @@
     "terms": "利用規約",
     "docs": "法的文書",
     "back": "戻る",
-    "hiring": "ダッシュボード",
+    "hiring": "ワークスペース",
     "pricingLink": "料金",
     "faq": "よくある質問",
     "contact": "お問い合わせ",
     "about": "私たちについて",
     "practice": "無料の練習",
     "tests": "スキルテスト",
-    "preEmploymentTesting": "採用前テスト",
-    "aiInterviews": "AI 面接",
+    "createTest": "テストを作成",
+    "footerProduct": "製品",
+    "footerResources": "リソース",
+    "footerCompany": "会社情報",
+    "footerLegal": "法務",
+    "footerTagline": "求人票から作る、公平な時間制限付き面接。",
     "compare": "比較",
     "guides": "ガイド",
     "apiDocs": "開発者向けドキュメント",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "ページの先頭へ",
     "morePages": "その他のページ",
+    "moreActions": "その他の操作",
     "copyLink": "リンクをコピー",
     "linkCopied": "リンクをコピーしました",
     "home": "ホーム",
     "cancel": "キャンセル",
     "save": "保存",
     "saving": "保存中…",
+    "saved": "保存しました",
     "close": "閉じる",
     "delete": "削除",
     "deleting": "削除中…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "問題が発生しました",
     "text": "もう一度お試しください。繰り返し発生する場合は、時間をおいてからお越しください。",
+    "reference": "参照番号：{id}",
     "notFound": "ページが見つかりません",
     "notFoundText": "このページは存在しないか、削除されました。",
     "report": "報告",
@@ -152,13 +164,13 @@
   },
   "home": {
     "title": "全員をテストし\n最高の人材を採用",
-    "text": "AI が求人票をもとに、時間制限付きの本格的な面接を作成。",
-    "price": "候補者 1 人あたりわずか {price}。"
+    "text": "AI が求人票をもとに、時間制限付きの本格的な面接を作成。"
   },
   "start": {
     "placeholder": "ここに求人票を貼り付けてください…",
     "description": "求人票",
-    "submit": "面接を作成",
+    "submit": "作成",
+    "newInterview": "新しい面接",
     "whichCompany": "どの会社の面接ですか？",
     "firstCompany": "会社名を教えてください",
     "newCompany": "新しい会社",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "1 つの面接リンクからの 1 時間あたりの開始数",
       "LINK_STARTS_PER_IP_HOUR": "IP アドレスごとの 1 時間あたりのリンクからの開始数",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "会社ごとの 1 日あたりのバイアス監査用エクスポート数",
+      "ACTION_LOG_EXPORTS_PER_DAY": "1社あたり1日のアクションログのダウンロード数",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "1社あたり1日のクレジット履歴のダウンロード数",
       "MAX_BULK_INVITES": "1 つのリストまたはファイルの候補者数",
       "MAX_PENDING_INVITES": "会社ごとの保留中のチーム招待数",
       "MEMBER_INVITES_PER_UNPAID_DAY": "無料の会社ごとの 1 日あたりのチーム招待数",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "会社ごとの 1 分あたりの採用管理システムへの呼び出し数",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "送信元 IP アドレスごとの 1 分あたりの採用管理システムの Webhook 数",
       "ATS_CONNECTS_PER_HOUR": "会社ごとの 1 時間あたりの ATS 接続数",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "1社あたり1時間の Slack テストメッセージ数",
       "RESEND_DAILY_LIMIT": "Resend 経由の 1 日あたりのメール数",
       "RESEND_RESERVE_PERCENT": "一括送信に使わず確保しておく、Resend 経由の 1 日あたりのメールの割合",
       "CAMPAIGNS_PER_KIND_DAY": "種類ごとの 1 日あたりの配信数",
@@ -775,7 +790,9 @@
     "useFailed": "このテンプレートから面接を開始できませんでした。もう一度お試しください。",
     "inProgress": "進行中：{done}/{total, plural, other {# トピック}}",
     "completed": "完了",
-    "warningText": "<b>テンプレートは一般的な職種向けの既製の面接です。</b>より合った面接にするには、求人票から面接を作成しましょう。"
+    "warningText": "<b>もっと合わせたい場合は？</b> 求人票から面接を作成できます。",
+    "contents": "{topics, plural, other {トピック # 件}}、{questions, plural, other {質問 # 件}}、{minutes, plural, other {# 分}}",
+    "usedIn": "{count, plural, other {# 件の面接で使用}}"
   },
   "billing": {
     "paidTitle": "お支払いを受け付けました",
@@ -808,6 +825,10 @@
     "paysInChange": "通貨を変更",
     "candidates": "{count, plural, other {候補者 # 人}}",
     "perCandidate": "{price}<unit>/人</unit>",
+    "enough": "{count, plural, other {# 人の候補者}}に十分な残高",
+    "pay": "{price} を支払う",
+    "quote": "{count, plural, other {# 人の候補者}}、1人あたり {price}、{credits, number} クレジット",
+    "nextPrice": "あと{count, plural, other {# 人の候補者}}で、1人あたり {price} になります",
     "howMany": "チャージする候補者数",
     "credits": "{count, plural, other {# クレジット}}",
     "candidatesWord": "{count, plural, other {人の候補者}}",
@@ -863,6 +884,19 @@
     "markedWrong": "ありがとうございます。確認のうえ、修正または差し替えます。",
     "markWrongFailed": "確認に送れませんでした。もう一度お試しください。",
     "ofCount": "/ {count, number}",
+    "perCandidate": "候補者ごとの質問数",
+    "limitShort": "候補者ごとの質問数",
+    "topicsColumn": "トピックとサブトピック",
+    "limitLine": "候補者ごとに {count, number} 問中 {limit, number} 問",
+    "noMatches": "該当する質問はありません。",
+    "summary": {
+      "total": "質問"
+    },
+    "filters": {
+      "all": "すべて",
+      "reported": "報告あり"
+    },
+    "disabledCount": "{count, plural, other {# 件の質問を無効化}}",
     "per": "/",
     "candidate": "候補者",
     "correct": "正解",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "あなたの番",
     "voiceThinking": "考え中",
     "miraLabel": "AI 面接官",
+    "voiceHeardAnswer": "{answer} と聞き取りました。",
+    "questionOf": "{count, number} 問中 {number, number} 問目",
+    "answeredOf": "{total, number} 問中 {done, number} 問",
+    "keysHint": "A〜{last} キーで選択し、Enter キーで次の質問へ進みます。",
     "voiceStatus": {
       "off": "ミラが準備しています…",
       "starting": "ミラが準備しています…",
@@ -962,9 +1000,11 @@
     "cancelling": "キャンセル中…",
     "cancelFailed": "作成をキャンセルできませんでした。もう一度お試しください。",
     "writing": "問題を生成しています",
-    "drafting": "トピックを考えています",
-    "writingNote": "数分かかります。このページを離れても作成は続きます。",
-    "draftingNote": "目標を読み取り、扱う内容を計画しています。",
+    "drafting": "トピックを作成しています",
+    "writingNote": "数分かかります。このページを離れても構いません。完了したらお知らせします。",
+    "draftingNote": "求人票を読み込んでいます。質問を作成する前に、トピックを確認していただきます。このページを離れても処理は続きます。",
+    "finishing": "質問を確認して保存しています…",
+    "goToInterviews": "面接一覧へ",
     "topicsReady": "{count, plural, other {# トピック}}中 {ready, number} 件が完成",
     "reviewFailed": "確認内容を送信できませんでした。もう一度お試しください。",
     "retryFailed": "作成を再試行できませんでした。もう一度お試しください。",
@@ -982,13 +1022,18 @@
     "add": "追加",
     "done": "完了",
     "reviewTitle": "トピックを確認",
-    "reviewText": "不要なトピックのチェックを外す、編集する、または変更内容を書いてください。各トピックに解答付きの問題セットが作られます。",
+    "reviewText": "トピックごとに、解答付きの質問セットが作成されます。",
     "editTopic": "<bdi>{topic}</bdi> を編集",
-    "changesPlaceholder": "任意：変更内容を書いてください（例：「チームリーダーシップのトピックを追加して」）",
-    "changes": "トピックの変更",
+    "changesPlaceholder": "例：「チームリーダーシップのトピックを追加」",
+    "changes": "AIにトピックの変更を依頼",
     "tooMany": "トピックは最大 {max, number} 件まで選ぶか、まとめ方を書いてください。",
     "apply": "変更を反映",
     "approve": "承認して作成",
+    "topicsChosen": "{chosen, number} / {count, plural, other {# トピック}}",
+    "applyFirst": "先に変更を適用するか、入力欄を空にしてください。",
+    "subtopicsNeeded": "{count, plural, other {# 件以上のサブトピック}}を追加してください。",
+    "addTopic": "トピックを追加",
+    "removeTopic": "削除",
     "topicNameNeeded": "トピックに名前を付けてください。"
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "会社",
     "empty": "会社はまだありません。",
     "owner": "所有者",
+    "search": "会社を検索",
+    "interviewsShort": "{count, plural, other {面接 <n></n> 件}}",
+    "membersShort": "{count, plural, other {メンバー <n></n> 人}}",
+    "status": {
+      "low": "クレジットが残りわずか",
+      "verify": "会社の認証を完了してください",
+      "finished": "今週の完了者：{count, plural, other {<n></n> 人}}"
+    },
     "interviewCount": "{count, plural, other {面接 # 件}}",
     "memberCount": "{count, plural, other {メンバー # 人}}",
     "interviews": "面接",
@@ -1024,6 +1077,8 @@
     "brand": "ブランド",
     "billing": "請求",
     "new": "新しい会社",
+    "newText": "会社ごとに、面接、チーム、クレジットが分かれています。",
+    "namePlaceholder": "例：Acme",
     "name": "会社名",
     "create": "作成",
     "createFailed": "会社を作成できませんでした。もう一度お試しください。",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, other {ページ離脱 # 回}}",
     "copies": "{count, plural, other {コピー試行 # 回}}",
     "fastAnswers": "{count, plural, other {速すぎる回答 # 件}}",
+    "extraTimeLabel": "追加時間",
+    "summary": {
+      "result": "結果",
+      "timeTaken": "所要時間",
+      "signals": "不正の兆候",
+      "invited": "招待済み",
+      "finished": "完了",
+      "passed": "合格",
+      "average": "平均評点"
+    },
+    "copyLinkFailed": "リンクをコピーできませんでした。もう一度お試しください。",
     "empty": "まだ候補者を招待していません。",
     "noMatches": "一致する候補者はいません。",
     "search": "メールアドレスまたは氏名で候補者を検索",
     "status": "ステータス: {status}",
     "anyStatus": "すべてのステータス",
+    "allStatuses": "すべて",
     "progress": "進捗",
     "grade": "スコア",
     "resend": "招待を再送",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "面接",
+    "allStatuses": "すべて",
+    "candidatesShort": "{count, plural, other {候補者 <n></n> 人}}",
+    "finishedShort": "完了 <n></n> 人",
+    "passedShort": "合格 <n></n> 人",
+    "rowStatus": {
+      "failed": "開いて再試行してください",
+      "generating": "作成中",
+      "undelivered": "{count, plural, other {招待 <n></n> 件}}が未達",
+      "finished": "今週の完了者：{count, plural, other {<n></n> 人}}",
+      "ready": "準備完了：最初の候補者を招待しましょう"
+    },
     "interview": "面接",
     "topicsTab": "トピック",
     "candidates": "候補者",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "メモはまだありません。チームに向けて最初のメモを書きましょう。",
     "discover": "人材を探す",
     "discoverLinkedIn": "{name}さんの LinkedIn プロフィール",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "これらのスキルを練習し、オファーを受け付ける設定にした人が、ここに表示されます。",
     "discoverText": "スカウトを受け付けていて、この面接のトピックを練習した人です。新しい順に表示され、順位付けはしていません。",
     "discoverEmpty": "スカウトを受け付けている人で、この面接のトピックを練習した人はまだいません。",
     "discoverResults": "練習の結果",
@@ -1130,6 +1210,8 @@
     "notePosting": "投稿中…",
     "noteEdited": "編集済み",
     "notePinned": "固定中",
+    "noteShowMore": "もっと見る",
+    "noteShowLess": "表示を減らす",
     "notePin": "上部に固定",
     "noteUnpin": "固定を解除",
     "noteFormerMember": "以前のメンバー",
@@ -1139,8 +1221,20 @@
     "noteFailed": "メモを保存できませんでした。もう一度お試しください。",
     "new": "新しい面接",
     "createTitle": "面接を作成",
+    "createIntro": "求人票を貼り付けてください。質問を作成する前にトピックを確認でき、無料です。",
+    "steps": {
+      "describe": "職種を入力",
+      "review": "トピックを確認",
+      "invite": "候補者を招待"
+    },
+    "startTemplate": "テンプレートから始める",
+    "startAts": "ATS の求人から始める",
+    "tryExample": "例を試す",
     "try": "候補者として試す",
     "newCandidate": "新しい候補者",
+    "settingsSharing": "共有",
+    "settingsRuns": "進め方",
+    "settingsAfter": "終了後とプライバシー",
     "linkTitle": "共有リンク",
     "linkText": "求人広告用: リンクを知っている人は誰でも面接を受けられます。1 人ごとに、招待した候補者と同じ料金がかかります。",
     "linkFailed": "リンクを変更できませんでした。もう一度お試しください。",
@@ -1160,7 +1254,7 @@
     "generating": "作成中…",
     "generationFailed": "作成に失敗しました",
     "fallbackTitle": "面接",
-    "continueGeneration": "作成を続ける",
+    "continueGeneration": "続ける",
     "empty": "面接はまだありません。最初の面接を作成しましょう。",
     "noMatches": "一致する面接はありません。",
     "search": "タイトルで面接を検索",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "候補者のメールアドレス",
     "inviteTab": {
       "one": "1人",
-      "many": "複数",
-      "file": "アップロード"
+      "many": "リスト",
+      "file": "ファイル"
     },
-    "manyHint": "1行に1人。氏名は省略できます。\n一度に{count, number}人まで：",
-    "manyHintNoLimit": "1行に1人。氏名は省略できます：",
-    "example": "例",
+    "inviteTitle": "候補者を招待",
+    "manyHint": "1行に1人。氏名は省略できます。一度に{count, number}人まで。",
+    "manyHintNoLimit": "1行に1人。氏名は省略できます。",
     "uploadFile": "ファイルをアップロード",
     "fileFormats": "CSV または TXT、最大{count, number}人。氏名は氏名の列か、各メールアドレスの横に入力できます。",
     "fileFormatsNoLimit": "CSV または TXT。氏名は氏名の列か、各メールアドレスの横に入力できます。",
@@ -1203,8 +1297,7 @@
       "unclear_name": "氏名は「氏名 '<メールアドレス>'」の形で入力してください：<bdi>{line}</bdi>",
       "more": "ほか {count, number} 件"
     },
-    "exampleCsv": "サンプル .csv",
-    "exampleTxt": "サンプル .txt",
+    "exampleFiles": "サンプルをダウンロード：<csv>.csv</csv> または <txt>.txt</txt>",
     "candidateName": "氏名（任意）",
     "invitedMany": "{count, number} 人の候補者を招待しました",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "おめでとうございます。面接の準備ができました",
-      "text": "<name><bdi>{title}</bdi></name> を候補者に送る準備ができました。次の手順に進みましょう：",
-      "limits": "各候補者にトピックごとに出す問題数を設定します。",
+      "text": "<name><bdi>{title}</bdi></name> の準備ができました。誰かを招待する前にご自身で試し、必要に応じて調整してください。",
+      "limits": "トピックごとに各候補者へ出題する数です。",
       "limitsAction": "問題数を設定",
-      "time": "必要に応じて 1 問あたりの平均時間を調整します。",
-      "timeAction": "設定を開く",
-      "invite": "候補者を招待します。",
-      "inviteAction": "候補者へ移動",
+      "time": "1問あたりの平均時間です。",
+      "timeAction": "時間を調整",
       "done": "OK"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "障がいなどの理由で、もっと時間が必要ですか？開始する前に<bdi>{company}</bdi>に個別の招待を依頼してください。ここからは時間を延長できません。",
     "people": "問題は AI が作成しています。結果は<bdi>{company}</bdi>の担当者が確認して判断します。あなたの結果の確認を依頼することもできます。",
     "stay": "このページから離れないでください。ページの離脱、コピー、問題を読めないほど速い回答は記録されます。また、回答時間や回答が問題の難しさに見合っていない場合は、企業に表示されます（<link>プライバシー</link>）。",
-    "finished": "この面接はすでに終了しています。",
+    "finishedTitle": "お疲れさまでした",
+    "finished": "回答を <bdi>{company}</bdi> に送信しました。結果は同社が確認し、次のステップを決定します。",
+    "finishedPreview": "これが候補者に表示される画面です。この無料の試行は候補者リストに含まれず、回答は質問の統計にも反映されません。",
+    "finishedRights": "<bdi>{company}</bdi> に、結果を担当者が確認するよう依頼できます。<link>プライバシー</link>",
+    "finishedAnswered": "回答した質問数",
+    "finishedTime": "所要時間",
+    "signInAs": "この招待が届いたメールアドレスを使用してください。",
+    "switchAccount": "アカウントを切り替える",
+    "progress": "全体の {percent} まで進みました。",
+    "progressLabel": "進捗",
+    "groups": {
+      "how": "進め方",
+      "time": "あなたの時間",
+      "rights": "あなたの権利とプライバシー"
+    },
     "continue": "続ける",
     "start": "承諾して開始",
     "pledge": "AI ツールや他の人の助けを借りず、自分で回答します。",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "参加済み",
     "invited": "招待済み",
+    "joinedOn": "{date} に参加",
+    "invitedOn": "{date} に招待",
+    "pendingTitle": "保留中の招待",
+    "firstTitle": "最初のチームメンバーを招待",
     "role": "役割",
     "roleFailed": "役割を変更できませんでした。",
     "inviteTitle": "会社への招待",
@@ -1281,6 +1390,11 @@
     "madeOwner": "<bdi>{email}</bdi> がオーナーになりました。"
   },
   "scorecard": {
+    "filters": {
+      "all": "すべて",
+      "correct": "正解",
+      "wrong": "不正解"
+    },
     "timeOut": "時間切れ",
     "leftPage": "ページを離れた回数：{count, plural, other {# 回}}",
     "answeredIn": "<b>{time}</b>で回答",
@@ -1298,7 +1412,7 @@
     "test": "面接の生成",
     "free": "無料",
     "candidate": "1 問以上回答した候補者 1 人ごと",
-    "candidateVolume": "{from} 以上のチャージによるクレジットの場合",
+    "candidateVolume": "{from} 以上のチャージの場合",
     "perCandidate": "候補者 1 人あたり {price}",
     "welcome": "最初の {count, plural, other {# 人の候補者}}",
     "credits": "候補者 1 人あたり {credits, number} クレジット。クレジットに有効期限はありません。",
@@ -1306,6 +1420,10 @@
     "referralsNote": "会社の紹介タブから会社のリンクを共有できます。",
     "companyReferral": "紹介した会社が初めてチャージしたとき",
     "each": "それぞれ {count, number} クレジット",
+    "fromPrice": "{price} から",
+    "anyTopUp": "どの金額のチャージでも",
+    "volumeTitle": "大きくチャージするほど、候補者1人あたりが割安に",
+    "volumeText": "チャージが大きいほど、候補者1人あたりの料金が安くなります。",
     "topUp": "チャージ"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "採用のコンプライアンス資料",
     "intro": "testee で候補者を評価する会社向けの資料です。利用ガイド、テンプレート、データ処理契約があります。",
     "englishOnly": "これらの資料は英語版のみです。",
-    "download": "{format} をダウンロード",
+    "download": "<type>{format}</type> をダウンロード",
     "readOnline": "オンラインで読む",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "生成する言語"
   },
   "referral": {
+    "title": "お二人とも <n></n> クレジットを獲得",
+    "text": "{count, plural, other {# 人の候補者}}に十分な量です。リンクを別の会社に共有しましょう。",
+    "empty": "特典はまだありません。リンクを共有して、最初の特典を獲得しましょう。",
+    "steps": {
+      "share": "リンクを別の会社に共有します。",
+      "create": "相手がそのリンクから会社を作成します。",
+      "reward": "相手が最初にチャージすると（金額は問いません）、お二人にクレジットが付与されます。"
+    },
+    "summary": {
+      "referred": "紹介した会社",
+      "earned": "獲得したクレジット",
+      "left": "今年の残り特典",
+      "leftValue": "{total, number} 件中 {left, number} 件"
+    },
     "companyNote": "相手が金額を問わず初めてチャージすると、双方に {reward, number} クレジットが付与されます。",
     "deletedCompany": "削除された会社",
     "credits": "+{count, number} クレジット",
@@ -1398,53 +1530,39 @@
     "intro": "候補者 1 人あたり {credits, number} クレジット。クレジットに有効期限はありません。",
     "noCompany": "クレジットは会社に属します。まず会社を作成してから、ここでチャージしてください。",
     "createCompany": "会社を作成",
+    "allCompanies": "すべての会社",
     "pricing": "料金"
   },
   "landing": {
-    "more": "使い方",
     "demos": "動画",
-    "videoTooltip": "testee の使い方を見る",
     "watchVideo": "動画を見る",
     "howItWorks": "使い方",
     "askAgent": "ミラに質問",
     "create": {
+      "draftingNote": "求人票を読み込んでいます。",
       "title": "数分で面接を作成",
       "text": "求人票を貼り付けてトピックを調整すれば、数分で面接が完成します。",
       "notes": {
-        "questions": "トピックごとに{count, number}問",
         "templates": "すぐ使えるテンプレートあり",
         "expert": "専門家がいなくても作成可能"
       },
       "describe": "<n>1.</n> 求人票を貼り付け",
       "adjust": "<n>2.</n> トピックを調整",
       "menu": {
-        "cut": "切り取り",
-        "copy": "コピー",
         "paste": "貼り付け"
       },
-      "ready": "<n>3.</n> 面接が完成しました",
-      "invited": "<n>4.</n> 候補者に招待が届きます",
+      "ready": "<n>3.</n> 面接の完成",
+      "invited": "<n>4.</n> 招待が届く",
       "status": "準備完了",
       "email": {
-        "search": "メールを検索",
-        "compose": "作成",
         "inbox": "受信トレイ",
-        "starred": "スター付き",
-        "sent": "送信済み",
-        "drafts": "下書き",
         "from": "testee.",
-        "toMe": "To 自分",
         "now": "たった今",
         "subject": "{company}から面接の招待",
-        "preheader": "testee で「{title}」を受けてください。開始するには {email} でサインインしてください。",
         "heading": "面接のご案内",
         "invited": "<b>{company}</b>が、testee の面接「{title}」にあなたを招待しています。",
         "signIn": "開始するには {email} でサインインしてください。このアドレスでのみ、1回だけ面接を受けられます。",
-        "button": "招待を開く",
-        "pasteLink": "または、このリンクをブラウザに貼り付けてください",
-        "footer": "このメールは、testee で誰かがこのアドレスを招待したため {email} に送信されました。心当たりがない場合は無視してください。",
-        "stopCompany": "{company}からのメールを受け取らない",
-        "operator": "testee は {name}（{address}）が運営しています。"
+        "button": "招待を開く"
       },
       "phone": {
         "describe": "求人票を貼り付けるか、職種について簡単に書いてください。",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "判断するのは人",
-          "text": "スコアは判断を支えるもので、判断を下すものではありません。不正行為の兆候は詳しく確認するきっかけであり、証拠ではありません。"
+          "text": "スコアは判断の参考です。不正の兆候は、より注意深く確認すべき理由であり、証拠ではありません。"
         },
         "fair": {
           "title": "すべての候補者に公平",
-          "text": "同じタイマーと同じ問題形式の構成、一人ひとりにランダムに選ばれる問題、必要な人には追加時間。"
+          "text": "全員に同じタイマーと同じ出題構成、質問はランダムに出題、必要な人には追加時間を設定できます。"
         },
         "laws": {
           "title": "コンプライアンスに対応",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "すべての操作を記録",
-          "text": "所有者は社内で誰が何をしたかを確認できます。記録は EU のサーバーで 12 か月間安全に保管されます。"
+          "text": "オーナーは誰が何をしたかを確認でき、記録は EU のサーバーに12か月間保管されます。"
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "ほかにご質問は？",
       "videos": "動画",
       "faq": "よくある質問",
-      "guides": "ガイド",
-      "features": "機能",
-      "hiringFlow": "採用の流れ"
+      "guides": "ガイド"
     },
     "closing": {
       "title": "最初の面接を作成\n無料です",
@@ -1672,7 +1788,8 @@
         "time": "職種ごとに約 10 分、候補者ごとには 0 分",
         "cost": "回答した候補者 1 人あたり {price}"
       },
-      "more": "他のツールと比較"
+      "more": "他のツールと比較",
+      "best": "おすすめ"
     },
     "freeToStart": {
       "title": "すべて無料\n支払いは候補者ごと",
@@ -1689,6 +1806,7 @@
       "each": "（候補者 1 人あたり {price}）",
       "free": "{count, plural, other {最初の候補者 # 人は無料}}",
       "perCandidate": "候補者 1 人あたり",
+      "bestPrice": "最安値",
       "pack": "{count, number} 人分で {price}",
       "see": "料金を見る",
       "notes": {
@@ -1698,11 +1816,167 @@
         "refund": "未使用の有料クレジットは返金可能"
       },
       "currencies": "{count, plural, other {#種類の通貨}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Acme は、AI でオンラインショップの顧客対応を支援しています。\nLLM 機能の開発を担う AI エンジニアを募集します。\n• Python の実務経験 3 年以上\n• LLM アプリ、RAG、ベクトル検索の経験\n• モデルの評価・モニタリングの経験\nフルリモート、フレックスタイム制、学習支援制度あり。",
+        "title": "AI エンジニア",
+        "topics": {
+          "llm": {
+            "name": "LLM の基礎",
+            "subtopics": [
+              "トークン",
+              "プロンプト設計",
+              "コンテキストウィンドウ"
+            ]
+          },
+          "rag": {
+            "name": "検索拡張生成（RAG）",
+            "subtopics": ["埋め込み", "チャンク分割", "ベクトル検索"]
+          },
+          "python": {
+            "name": "Python による ML システム",
+            "subtopics": ["asyncio", "型ヒント"]
+          }
+        },
+        "renamed": "の大規模運用",
+        "subtopicAdded": "とテスト",
+        "change": "LLM の出力評価についてのトピックを追加して",
+        "newTopic": {
+          "name": "LLM の評価",
+          "subtopics": [
+            "テストセット",
+            "LLM による評価（LLM-as-a-Judge）",
+            "評価指標"
+          ]
+        }
+      },
+      "candidates": {
+        "title": "データアナリスト",
+        "questions": {
+          "median": {
+            "topic": "統計",
+            "text": "ごく少数の非常に大きな注文が、平均注文額を押し上げています。典型的な注文を最もよく表す指標はどれですか？",
+            "options": [
+              "注文額の平均値",
+              "注文額の中央値",
+              "注文額の範囲",
+              "注文額の標準偏差"
+            ]
+          },
+          "revenue": {
+            "topic": "統計",
+            "text": "データパイプラインの変更直後、ダッシュボード上の週次売上が 20% 減少しました。まず何を確認しますか？",
+            "options": [
+              "変更前後の行数を比較する",
+              "重複や欠落している日付を探す",
+              "ダッシュボードの配色を変える",
+              "顧客が購入をやめたか営業に聞く"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "マーケティング部門が、売上合計が 100 を超える地域を知りたがっています。このクエリは何を返しますか？",
+            "options": [
+              "North のみ",
+              "South のみ",
+              "North と South",
+              "該当行なし"
+            ]
+          },
+          "chart": {
+            "topic": "可視化",
+            "text": "過去 2 年間の月間登録者数の推移を示す必要があります。その傾向を最もよく表すグラフはどれですか？",
+            "options": [
+              "月別登録者数の円グラフ",
+              "月別登録者数の折れ線グラフ",
+              "登録者数と売上の散布図",
+              "月間登録者数のヒストグラム"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "プロダクトマネージャー",
+        "topics": [
+          "プロダクト戦略",
+          "指標",
+          "ステークホルダー",
+          "ロードマップ策定",
+          "ユーザーリサーチ",
+          "優先順位付け",
+          "実験・検証",
+          "価格設定",
+          "市場投入（GTM）",
+          "コミュニケーション"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "新機能を開発する前に、まず何をすべきですか？",
+            "options": [
+              "ユーザーと課題を検証する",
+              "技術仕様書を書く",
+              "リリース日を決める",
+              "画面をデザインする"
+            ]
+          },
+          "metrics": {
+            "text": "コンバージョン率が 4% から 3% に下がりました。以前と比べて何%の減少ですか？",
+            "options": ["1%", "25%", "33%", "75%"]
+          },
+          "stakeholders": {
+            "text": "連携するチームがあなたの優先順位に反対しています。まず何をしますか？",
+            "options": [
+              "上司にエスカレーションする",
+              "相手が何を必要としていて、なぜなのかを聞く",
+              "計画をそのまま進める",
+              "自分の優先順位を取り下げる"
+            ]
+          }
+        },
+        "chat": {
+          "name": "採用チーム",
+          "initials": "採"
+        },
+        "notes": [
+          "採用責任者は金曜までに候補者を 2 名に絞りたいとのこと。",
+          "Daniel は電話面接でステークホルダー対応が強かった。指標はやや弱め。",
+          "Sofia から時間の延長依頼あり。明日フォローします。"
+        ],
+        "pdf": "プロダクトマネージャー-候補者.pdf"
+      },
+      "slack": {
+        "channels": ["general", "採用", "開発"],
+        "channelsTitle": "チャンネル",
+        "peopleTitle": "ダイレクトメッセージ",
+        "appsTitle": "アプリ",
+        "app": "アプリ",
+        "composer": "#{channel} へのメッセージ",
+        "finished": "{name}（{email}）さんが「{title}」を終了しました：{grade}%",
+        "noted": "{author} さんが「{title}」にメモを追加しました：",
+        "button": "testee で開く"
+      },
+      "invite": {
+        "title": "アカウントエグゼクティブ（B2B）"
+      },
+      "askAgent": {
+        "interview": "データアナリスト"
+      }
     }
   },
   "faq": {
     "title": "よくある質問",
-    "intro": "答えが見つからない場合は、AI アシスタントのミラ（ページ上部のボタン）に質問するか、プライバシーポリシーに記載のアドレスまでご連絡ください。",
+    "intro": "最初の面接からデータの扱いまで、testee についての回答です。",
+    "groups": {
+      "start": "はじめに",
+      "candidates": "候補者",
+      "pricing": "料金とクレジット",
+      "results": "結果とチーム",
+      "tools": "連携",
+      "privacy": "プライバシーとアカウント"
+    },
+    "closingTitle": "まだ疑問がありますか？",
+    "closingText": "AIアシスタントの Mira に聞くか、お問い合わせください。",
     "description": "testee についての回答：求人票から面接を作る仕組み、候補者に表示される内容、料金とクレジット、結果、ATS 連携、対応言語、データの扱い。"
   },
   "contact": {
@@ -1731,9 +2005,20 @@
     "description": "testee は求人票を数分で公平な時間制限付きの面接に変えます。どんなチームでも払える価格で。そして誰でも無料で面接の練習ができます。",
     "company": {
       "title": "testee が存在する理由",
+      "titles": {
+        "problem": "採用は正しく行うのが難しい",
+        "approach": "数分でできる公平な面接",
+        "practice": "誰でも無料で練習できる"
+      },
       "problem": "採用は履歴書と好印象の会話に頼りがちですが、どちらも判断を誤らせることがあります。役に立つ適性検査ツールは、年間プランやユーザーごとの料金など大企業向けの価格設定で、ほとんどのチームは使えずにいます。",
       "approach": "testee は、どんな職種でも求人票を数分で時間制限付きの面接に変えます。候補者一人ひとりに専用の問題が出され、誰が仕事をわかっているかとその理由がわかり、お支払いは実際に受けた候補者の分だけです。",
       "practice": "面接の準備も、誰もが無料でできるようにしたいと考えています。誰でも職種ごとの練習面接を受け、スコアとすべての正解を確認し、無料で何度でも練習できます。"
+    },
+    "closing": {
+      "title": "ご自身で体験してみてください",
+      "text": "求人票から面接を作成するか、職種別の練習を無料でお試しください。",
+      "create": "テストを作成",
+      "practice": "無料で練習"
     },
     "founder": {
       "quote": "良い採用は、大きな予算を持つ大企業だけの特権であってはなりません。私が testee を作ったのは、どんなチームでも求人票を数分で公平な面接に変え、本当に仕事をわかっている人を見極め、受けた候補者の分だけ支払えるようにするためです。あなたがふさわしい人をより早く見つける助けになれば幸いです。",
@@ -1751,20 +2036,18 @@
     "title": "お知らせ",
     "unread": "{count, plural, other {未読のお知らせ # 件}}",
     "empty": "新しいお知らせはまだありません。",
-    "formerAuthor": "元メンバー",
     "kinds": {
       "question_flagged": "{count, plural, =1 {{title, select, none {面接} other {「<bdi>{title}</bdi>」}}の「<bdi>{topic}</bdi>」に関する問題がレビュー対象として報告されました。} other {{title, select, none {面接} other {「<bdi>{title}</bdi>」}}の問題 # 件がレビュー対象として報告されました。}}",
       "question_fixed": "{count, plural, =1 {AI が{title, select, none {面接} other {「<bdi>{title}</bdi>」}}の「<bdi>{topic}</bdi>」に関する報告された問題を修正しました。} other {AI が{title, select, none {面接} other {「<bdi>{title}</bdi>」}}の報告された問題 # 件を修正しました。}}",
       "referral_rewarded": "紹介した相手がチャージしました。{credits, number} クレジットを獲得しました。",
-      "auto_top_up_on": "自動チャージはオンです：利用可能なクレジットが {threshold, number} を下回ると {price}（税別）を請求します。",
       "auto_top_up_charged": "自動チャージで {credits, number} クレジットが追加されました。",
       "auto_top_up_failed": "自動チャージでカードに請求できませんでした。残高が不足しないようチャージしてください。",
+      "auto_top_up_on": "自動チャージはオンです：利用可能なクレジットが {threshold, number} を下回ると {price}（税別）を請求します。",
       "auto_top_up_paused": "カードが承認されなかったため、自動チャージを一時停止しています。再開するにはカードを更新してください。",
       "auto_top_up_price_change": "<time>{date}</time> から、自動チャージ 1 回あたりの料金は {price} から {newPrice} に変わります。",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> さんが{title, select, none {面接} other {「<bdi>{title}</bdi>」}}を完了しました{grade, select, none {。} other {（{grade}）。}}} other {# 人の候補者が{title, select, none {面接} other {「<bdi>{title}</bdi>」}}を完了しました。}}",
       "invite_undelivered": "{count, plural, =1 {<bdi>{email}</bdi> さんへの{title, select, none {面接} other {「<bdi>{title}</bdi>」}}の招待を届けられませんでした。} other {{title, select, none {面接} other {「<bdi>{title}</bdi>」}}の招待 # 件を届けられませんでした。}}",
       "interview_ready": "{title, select, none {面接の準備ができました。} other {面接「<bdi>{title}</bdi>」の準備ができました。}}",
-      "note_added": "{count, plural, =1 {{title, select, none {面接} other {「<bdi>{title}</bdi>」}}に <bdi>{authors}</bdi> さんの新しいメモがあります。} other {{title, select, none {面接} other {「<bdi>{title}</bdi>」}}に新しいメモが # 件あります（最新は <bdi>{authors}</bdi> さん）。}}",
       "interview_cancelled": "{title, select, none {面接} other {面接「<bdi>{title}</bdi>」}}はキャンセルされました：トピックの確認待ちが長すぎました。",
       "verification_approved": "「<bdi>{name}</bdi>」は <bdi>{domain}</bdi> で認証されました。",
       "verification_declined": "{reason, select, none {「<bdi>{name}</bdi>」の認証は却下されました。} other {「<bdi>{name}</bdi>」の認証は却下されました：<bdi>{reason}</bdi>}}",
@@ -1776,8 +2059,10 @@
       "news": "お知らせ：<bdi>{title}</bdi>",
       "legal_terms": "新しい利用規約が <time>{date}</time> から適用されます。",
       "legal_privacy": "新しいプライバシーポリシーが <time>{date}</time> から適用されます。",
-      "legal_dpa": "新しいデータ処理契約が <time>{date}</time> から適用されます。"
+      "legal_dpa": "新しいデータ処理契約が <time>{date}</time> から適用されます。",
+      "note_added": "{count, plural, =1 {{title, select, none {面接} other {「<bdi>{title}</bdi>」}}に <bdi>{authors}</bdi> さんの新しいメモがあります。} other {{title, select, none {面接} other {「<bdi>{title}</bdi>」}}に新しいメモが # 件あります（最新は <bdi>{authors}</bdi> さん）。}}"
     },
+    "formerAuthor": "元メンバー",
     "legalBanner": {
       "terms": "testee の利用規約は <time>{date}</time> に変わります。",
       "privacy": "testee のプライバシーポリシーは <time>{date}</time> に変わります。",
@@ -1801,7 +2086,7 @@
     "send": "<name>PDF</name> を送信",
     "sent": "<bdi>{email}</bdi> にレポートを送信しました",
     "sendFailed": "レポートを送信できませんでした。",
-    "orSummary": "または次で送信",
+    "orSummary": "または、短い概要をチャットで送信",
     "via": "testee から送信",
     "candidatesFileName": "候補者 {title}",
     "candidateCount": "{count, plural, other {候補者 # 人}}",
@@ -1833,6 +2118,10 @@
     "results": "練習の結果",
     "grade": "得点率",
     "notFinished": "未完了",
+    "finished": "完了",
+    "answeredCard": "回答した質問数",
+    "answeredOf": "{total, number} 問中 {done, number} 問",
+    "startedCard": "開始日時",
     "noRounds": "練習の履歴はまだありません。",
     "startFailed": "練習を開始できませんでした。もう一度お試しください。",
     "gradeLabel": "スコア",
@@ -1844,7 +2133,13 @@
     "hireButton": "面接を作成",
     "timingPerQuestion": "1問あたり平均 {time}",
     "timingNone": "時間制限なし",
-    "timingNote": "練習は誰とも比較されません。必要なら時間を延ばすか、制限なしにできます。"
+    "timingNote": "練習は誰とも比較されません。必要なら時間を延ばすか、制限なしにできます。",
+    "facts": {
+      "topics": "トピック",
+      "questions": "質問",
+      "level": "レベル",
+      "language": "言語"
+    }
   },
   "openToOffers": {
     "title": "スカウト受付中",
@@ -1887,6 +2182,7 @@
     "englishOnly": "このページは英語のみです。",
     "startTitle": "候補者をテストする",
     "startText": "求人票から時間制限付きのスキルテストを作成。{priced, select, yes {候補者 1 人あたり {price}、サブスクリプション不要。} other {}}",
+    "contents": "このページの内容",
     "startButton": "テストを作成"
   },
   "compare": {
@@ -1912,7 +2208,16 @@
     "topics": "テスト内容",
     "questions": "面接の質問例",
     "questionsText": "このような質問と、その正解です。候補者には別の質問が出題され、公開されることはありません。",
-    "faq": "企業からよくある質問"
+    "faq": "企業からよくある質問",
+    "createOwn": "独自のテストを作成",
+    "facts": {
+      "topics": "トピック",
+      "level": "レベル",
+      "language": "言語",
+      "price": "候補者1人あたり"
+    },
+    "closingTitle": "候補者のテストを始めませんか？",
+    "closingText": "求人票を貼り付けるだけで、このようなテストが数分で完成します。作成は無料です。"
   },
   "ats": {
     "statusConnected": "接続済み",
@@ -1998,6 +2303,25 @@
     "bzStepCreate": "すべての求人を閲覧できる管理者として API キーを作成します。キーはあなたとして動作し、結果もあなたの名前で書き込まれます。Breezy の API と Webhook は Pro プランで利用できます。",
     "bzStepPaste": "下にキーを貼り付けてください。Breezy HR の Webhook はこちらで追加します。",
     "atsGroup": "ATS",
+    "firstJobTitle": "最初の求人を連携",
+    "brokenText": "{ats} が動作を停止したため、候補者を招待できません。再接続すると再開します。",
+    "stripMove": "候補者が {ats} で選んだ選考段階に到達",
+    "stripInvite": "testee が連携した面接に候補者を招待",
+    "stripResults": "結果が {ats} の候補者プロフィールに戻る",
+    "rowStage": "選考段階：<bdi>{stage}</bdi>",
+    "rowInterview": "面接：<link><bdi>{interview}</bdi></link>",
+    "invitedShort": "招待済み <n></n> 人",
+    "waitingShort": "待機中 <n></n> 人",
+    "notInvitedShort": "未招待 <n></n> 人",
+    "summary": {
+      "status": "ステータス",
+      "account": "アカウント",
+      "jobs": "連携した求人",
+      "invited": "招待した候補者"
+    },
+    "connectedGroup": "接続済み",
+    "statusBroken": "再接続が必要",
+    "rowText": "{ats} から候補者を招待し、結果を送り返します。",
     "messagingGroup": "メッセージアプリ",
     "apiAiAppsGroup": "API と AI アプリ",
     "searchInterview": "面接を検索",
@@ -2005,6 +2329,29 @@
   },
   "slack": {
     "add": "Slack に追加",
+    "rowText": "候補者が面接を完了したら Slack で通知します。",
+    "brokenText": "Slack がメッセージを受け付けなくなったため、チャンネルに通知が届いていません。再接続すると再開します。",
+    "pointChannel": "チームが確認するチャンネルを選びます。",
+    "pointKinds": "送信する通知の種類を選びます。",
+    "pointPrivacy": "testee は、そのチャンネルに投稿することしかできません。Slack の内容は読み取れません。",
+    "test": "テストを送信",
+    "testSent": "チャンネルにテストメッセージを送信しました。",
+    "testFailed": "テストメッセージを送信できませんでした。",
+    "groups": {
+      "candidates": "候補者",
+      "interviews": "面接",
+      "billing": "請求",
+      "team": "チーム"
+    },
+    "samples": {
+      "candidate_finished": "Ann Lee（ann@example.com）さんが「Data Analyst」を完了しました：82%。",
+      "ats_not_invited": "Ben Ortiz さんは ATS から取り込まれましたが、「Data Analyst」には招待されていません。",
+      "invite_undelivered": "「Data Analyst」の ben@example.com への招待が届きませんでした。",
+      "interview_ready": "「Data Analyst」の準備ができました。",
+      "auto_top_up_charged": "自動チャージが実行されました。",
+      "auto_top_up_failed": "自動チャージに失敗しました。継続するにはカードを更新してください。",
+      "note_added": "Maya さんが「Data Analyst」にメモを追加しました：SQL に強く、連絡する価値あり。"
+    },
     "connectFailed": "Slack に接続できませんでした。",
     "connected": "Slack に接続済みです。",
     "disconnectFailed": "Slack の接続を解除できませんでした。",
@@ -2019,9 +2366,9 @@
       "ats_not_invited": "ATS から来た候補者が招待されなかった",
       "invite_undelivered": "招待メールが届かなかった",
       "interview_ready": "面接の準備ができた",
-      "note_added": "チームのメンバーがメモを書いた（本文付き）",
       "auto_top_up_charged": "自動チャージで請求された",
-      "auto_top_up_failed": "自動チャージに失敗した"
+      "auto_top_up_failed": "自動チャージに失敗した",
+      "note_added": "チームのメンバーがメモを書いた（本文付き）"
     },
     "instructionsTitle": "Slack にお知らせが届くしくみ",
     "stepAdd": "「Slack に追加」をクリックします。Slack が開き、ワークスペースで testee を許可するよう求められます。",
@@ -2030,13 +2377,67 @@
     "stepPrivacy": "testee が投稿できるのはそのチャンネルだけです。Slack の内容を読むことはできず、接続を解除すると削除されます。"
   },
   "api": {
+    "firstKeyTitle": "最初のキーを作成",
+    "sdkDocs": "SDK ドキュメントを見る",
+    "sdkReady": "準備完了：{count, plural, other {# 件のサイト}}で面接を表示できます。",
+    "sdkNotReady": "まだ設定されていません。面接を表示するサイトを下に追加してください。",
+    "sdkRules": "ページは HTTPS である必要があります。サイトを1つ追加するか、そのすべてのサブドメインを追加します：",
+    "stepSite": "サイトを追加",
+    "stepCode": "このコードをページに貼り付け",
+    "stepSend": "候補者をそこへ誘導",
+    "stepSendText": "サーバーが sign_in を false にして候補者を招待し、返ってきた invite_url をページに渡します。API キーをページに含めないでください。",
+    "thisSite": "このサイト",
+    "allSubdomains": "すべてのサブドメイン",
+    "localhostOn": "オン：本番公開前にオフにしてください。",
+    "firstWebhookTitle": "最初の Webhook を追加",
+    "webhookSampleText": "何かが起きると、testee は次のような署名付きリクエストを送信します：",
+    "lastDelivered": "最終配信 <time>{date}</time>",
+    "webhookStates": {
+      "paused": "一時停止中",
+      "unused": "未使用",
+      "active": "有効"
+    },
+    "webhookEvents": {
+      "started": "候補者が開始",
+      "finished": "候補者が完了",
+      "undelivered": "候補者に届かず",
+      "expired": "招待の期限切れ",
+      "removed": "候補者を削除",
+      "ready": "面接の準備完了"
+    },
+    "replaceKey": "代わりのキーを作成",
+    "activityTitle": "アクティビティ",
+    "ipOpen": "どの IP アドレスからでもこのキーを使えます。安全のため、サーバーのアドレスに限定してください。",
+    "summary": {
+      "status": "ステータス",
+      "access": "アクセス権",
+      "lastUsed": "最終使用",
+      "expires": "有効期限",
+      "created": "作成日"
+    },
+    "warnings": {
+      "expired": "このキーは期限切れのため、このキーでのリクエストは拒否されます。代わりのキーを作成して続行してください。",
+      "expiring": "このキーはまもなく期限切れになります。使えなくなる前に、代わりのキーを作成して切り替えてください。"
+    },
+    "exampleText": "クレジットを取得する次のリクエストで試せます：",
+    "access": {
+      "read": "読み取り専用",
+      "write": "読み取りと書き込み",
+      "custom": "カスタム"
+    },
+    "states": {
+      "expired": "期限切れ",
+      "expiring": "まもなく期限切れ",
+      "never_used": "未使用",
+      "active": "有効"
+    },
     "name": "API",
     "rowName": "API・SDK・Webhook",
     "rowText": "自社のプラットフォームと連携するためのキーと Webhook。",
     "counts": "{keys, plural, other {キー # 件}} · {webhooks, plural, other {Webhook # 件}}",
     "docs": "開発者向けドキュメント",
     "keysTitle": "API キー",
-    "keysText": "キーは作成した人として動作し、権限で許可されたことだけを行えます。",
+    "keysText": "キーはあなたの会社として動作し、権限で許可されたことだけを行えます。\n作成した人が退職しても、キーは引き続き使えます。",
     "noKeys": "キーはまだありません。",
     "newKey": "新しいキー",
     "newKeyTitle": "新しい API キー",
@@ -2064,7 +2465,7 @@
     "removeKeyTitle": "このキーを削除しますか？",
     "removeKeyText": "「<bdi>{name}</bdi>」を使っているものはすべて、すぐに動作しなくなります。",
     "webhooksTitle": "Webhook",
-    "webhooksText": "候補者が受験を開始・完了（結果付き）したとき、招待が届かなかったとき、招待の期限が切れたとき、削除されたとき、そして面接の準備ができたときに、testee はこれらのアドレスに通知します。各リクエストはアドレスごとのシークレットで署名されます。",
+    "webhooksText": "次のいずれかが発生すると、testee がこれらのアドレスに通知します。各リクエストにはアドレスのシークレットで署名されます。",
     "noWebhooks": "Webhook はまだありません。",
     "failing": "一時停止中：3日間応答がなかったため、イベントは送信されていません。テストイベントが受け付けられると再開します。",
     "addWebhook": "Webhook を追加",
@@ -2151,7 +2552,6 @@
     "localhostText": "自分のパソコンでのテスト用です（ポートは任意）。本番運用を始めたらオフにしてください。",
     "permissionsTitle": "権限",
     "permissionsText": "このキーでできることです。変更はすぐに保存されます。",
-    "permissionsSaved": "権限を保存しました。",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2639,15 @@
       "tools": "ツール",
       "frameworks": "エージェントフレームワーク"
     },
+    "intro": "testee を、自社のプラットフォーム、サーバー、AI エージェントに接続します。",
+    "endpointsText": "すべてのルートを、対象ごとに掲載しています。開くと、必要な入力、戻り値、エラーを確認できます。",
+    "apiPages": {
+      "start": "はじめに",
+      "guides": "ガイド",
+      "endpoints": "エンドポイント",
+      "errors": "エラー",
+      "changelog": "変更履歴"
+    },
     "englishOnly": "このページは英語のみです。",
     "baseUrl": "ベース URL",
     "copyBaseUrl": "URL をコピー",
@@ -2275,6 +2684,7 @@
   },
   "assistant": {
     "title": "ミラ · AI アシスタント",
+    "name": "Mira",
     "company": "会社",
     "allCompanies": "すべての会社",
     "newChat": "新しいチャット",
@@ -2331,7 +2741,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "testee の仕組み、料金、候補者に見える画面について、testee のよくある質問をもとに答えます。会社や候補者について質問するにはログインしてください。",
+        "text": "ログインすると、会社や候補者について質問できます。",
         "questions": {
           "what": "testee とは？",
           "pricing": "料金はいくら？",
@@ -2340,7 +2750,7 @@
         }
       },
       "no_company": {
-        "text": "さあ始めましょう。最初の面接、会社の作成、会社の認証についてお手伝いします。",
+        "text": "最初の面接を始めましょう。",
         "questions": {
           "firstInterview": "最初の面接を作成して",
           "createCompany": "会社を作成して",
@@ -2348,7 +2758,7 @@
         }
       },
       "unverified": {
-        "text": "会社を認証すると、候補者は誰から招待されたかがわかります。面接の作成もお手伝いします。",
+        "text": "会社を認証して、面接を作成しましょう。",
         "questions": {
           "verify": "会社を認証して",
           "whyVerify": "会社を認証する理由は？",
@@ -2356,7 +2766,7 @@
         }
       },
       "no_interviews": {
-        "text": "求人内容から面接を作成できます。質問はその職種に合わせて作られます。",
+        "text": "最初の面接を作成しましょう。",
         "questions": {
           "fromDescription": "求人内容から面接を作成して",
           "template": "テンプレートから面接を作成して",
@@ -2364,7 +2774,7 @@
         }
       },
       "no_candidates": {
-        "text": "候補者はメール、共有リンク、または ATS から招待できます。",
+        "text": "最初の候補者を招待しましょう。",
         "questions": {
           "invite": "候補者を招待して",
           "shareLink": "共有リンクをオンにして",
@@ -2372,7 +2782,7 @@
         }
       },
       "has_candidates": {
-        "text": "候補者について質問できます。合格者、候補者の比較、結果の読み方など。",
+        "text": "候補者とその結果について質問できます。",
         "questions": {
           "passed": "今週合格したのは誰？",
           "compare": "上位の候補者を比較して",
@@ -2494,7 +2904,27 @@
     "feedbackLink": "お問い合わせ"
   },
   "companyBilling": {
-    "reservedTab": "確保中 ({count, number})",
+    "reservedTab": "確保済み",
+    "download": {
+      "open": "履歴をダウンロード",
+      "title": "履歴をダウンロード",
+      "description": "CSV ファイルの期間を選択してください。",
+      "save": "ダウンロード",
+      "failed": "ファイルを作成できませんでした。もう一度お試しください。"
+    },
+    "lowText": "クレジットが残りわずかです。候補者を引き続き招待できるよう、チャージしてください。",
+    "summary": {
+      "available": "利用可能なクレジット",
+      "candidates": "対応可能な候補者数",
+      "reserved": "確保済みクレジット",
+      "spent": "今月使用したクレジット"
+    },
+    "kinds": {
+      "all": "すべて",
+      "topups": "チャージ",
+      "charges": "利用",
+      "refunds": "返金"
+    },
     "reservedEmpty": "クレジットを確保している候補者はいません。",
     "reservedNote": "まだ回答を終えていない候補者です。クレジットは確保されており、回答すれば消費され、回答しなければ返却されます。",
     "history": "履歴",
@@ -2521,7 +2951,19 @@
     "name": "MCP サーバー",
     "rowText": "Claude や ChatGPT などの AI アプリを testee に接続します。",
     "title": "AI アプリ",
-    "subtitle": "あなたとして、所属するすべての会社で、あなたの権限で動作します。",
+    "subtitle": "あなたとして、所属するすべての会社で、あなたの権限で動作します。各アプリは testee 上で許可します。キーをどこにも貼り付ける必要はありません。",
+    "connectedTitle": "あなたのアプリ",
+    "otherApps": "その他",
+    "allowIn": "<bdi>{company}</bdi> で AI アプリを許可",
+    "allowOn": "メンバーは、接続した AI アプリからこの会社の面接と候補者を利用できます。",
+    "allowOff": "オフ：AI アプリはこの会社の情報を読み取ることも変更することもできません。",
+    "promptsTitle": "質問例",
+    "promptCopied": "コピーしました",
+    "prompts": {
+      "passed": "今週の合格者は？",
+      "compare": "Data Analyst の面接で、上位の候補者を比較して。",
+      "invite": "ann@example.com を Data Analyst の面接に招待して。"
+    },
     "instructionsTitle": "AI アプリを testee に接続",
     "serverTitle": "サーバーのアドレス",
     "serverText": "AI アプリにカスタムコネクタ（MCP サーバー）として貼り付けます。",
@@ -2679,6 +3121,10 @@
     "failed": "ファイルをエクスポートできませんでした。もう一度お試しください。"
   },
   "actionLog": {
+    "period": "期間",
+    "periodAll": "全期間",
+    "periodDays": "過去 {days, number} 日間",
+    "periodCustom": "カスタム",
     "empty": "まだ操作はありません。",
     "noMatches": "この条件に一致する操作はありません。",
     "formerMember": "以前のメンバー",
@@ -2686,7 +3132,15 @@
     "deletedApiKey": "{via, select, mcp {MCP 経由（削除されたキー）} other {API 経由（削除されたキー）}}",
     "deletedCandidate": "削除された候補者",
     "anyMember": "全員",
-    "anyAction": "すべての操作",
+    "anyAction": "すべて",
+    "clear": "クリア",
+    "download": {
+      "open": "ログをダウンロード",
+      "title": "ログをダウンロード",
+      "description": "CSV ファイルの期間を選択してください。",
+      "save": "ダウンロード",
+      "failed": "ファイルを作成できませんでした。もう一度お試しください。"
+    },
     "member": "メンバー",
     "action": "操作",
     "from": "開始日",
@@ -2722,13 +3176,13 @@
       "candidate_deleted": "候補者を削除しました",
       "candidate_renamed": "候補者の名前を変更しました",
       "extra_time_set": "候補者に追加時間を付与しました",
-      "candidate_mode_set": "候補者の面接モードを変更しました",
       "results_viewed": "候補者の結果を閲覧しました",
       "report_emailed": "レポートをメールで送信しました",
       "bias_audit_exported": "バイアス監査用のデータをエクスポートしました",
       "member_invited": "メンバーを招待しました",
       "member_joined": "会社に参加しました",
       "member_removed": "メンバーを削除しました",
+      "candidate_mode_set": "候補者の面接モードを変更しました",
       "member_role_changed": "メンバーの役割を変更しました",
       "ownership_transferred": "会社をほかの所有者に引き継ぎました",
       "company_renamed": "会社名を変更しました",
@@ -2751,6 +3205,7 @@
       "slack_notifications_changed": "Slack の通知を変更しました",
       "api_key_created": "API キーを作成しました",
       "api_key_deleted": "API キーを削除しました",
+      "api_key_renamed": "API キーの名前を変更しました",
       "api_key_permissions_changed": "API キーの権限を変更しました",
       "api_key_ips_changed": "API キーの許可 IP を変更しました",
       "embed_domains_changed": "許可するドメインを変更しました",

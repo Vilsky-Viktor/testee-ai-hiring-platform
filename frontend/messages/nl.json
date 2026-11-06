@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "Instellingen",
+    "preferences": "Voorkeuren",
+    "accountId": "Account-ID",
+    "deleteTitle": "Account verwijderen",
+    "deleteNote": "Verwijdert je account en je gegevens definitief.",
     "language": "Taal",
     "languageNote": "Voor de interface en de antwoorden van de hulpchat, en de taal waarin nieuwe interviews starten. Je kunt een interview in elke ondersteunde taal maken.",
     "languageFailed": "De taal kon niet worden gewijzigd. Probeer het opnieuw.",
@@ -12,7 +16,7 @@
     "account": "Je account",
     "accountNote": "Vermeld deze ID als je ons over je account schrijft.",
     "yourData": "Je gegevens",
-    "yourDataNote": "Download alles wat testee. over je bewaart, of verwijder je account.",
+    "yourDataNote": "Download alles wat testee over jou bewaart.",
     "download": "Mijn gegevens downloaden",
     "downloadFailed": "Je gegevens konden niet worden voorbereid. Probeer het opnieuw.",
     "delete": "Account verwijderen",
@@ -50,7 +54,8 @@
     "system": "Systeem",
     "light": "Licht",
     "dark": "Donker",
-    "topUp": "Opwaarderen"
+    "topUp": "Opwaarderen",
+    "workspace": "Mijn werkruimte"
   },
   "nav": {
     "main": "Hoofdmenu",
@@ -60,15 +65,19 @@
     "terms": "Voorwaarden",
     "docs": "Juridische documenten",
     "back": "Terug",
-    "hiring": "dashboard",
+    "hiring": "werkruimte",
     "pricingLink": "prijzen",
     "faq": "Veelgestelde vragen",
     "contact": "Contact",
     "about": "Over ons",
     "practice": "Gratis oefenen",
     "tests": "Selectietesten per functie",
-    "preEmploymentTesting": "Selectietests",
-    "aiInterviews": "AI-interviews",
+    "createTest": "Test maken",
+    "footerProduct": "Product",
+    "footerResources": "Bronnen",
+    "footerCompany": "Bedrijf",
+    "footerLegal": "Juridisch",
+    "footerTagline": "Eerlijke interviews met tijdslimiet, gemaakt op basis van je functieomschrijving.",
     "compare": "Vergelijken",
     "guides": "Gidsen",
     "apiDocs": "Ontwikkelaarsdocumentatie",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "Terug naar boven",
     "morePages": "Meer pagina's",
+    "moreActions": "Meer acties",
     "copyLink": "Link kopiëren",
     "linkCopied": "Link gekopieerd",
     "home": "Home",
     "cancel": "Annuleren",
     "save": "Opslaan",
     "saving": "Opslaan…",
+    "saved": "Opgeslagen",
     "close": "Sluiten",
     "delete": "Verwijderen",
     "deleting": "Verwijderen…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "Er ging iets mis",
     "text": "Probeer het opnieuw. Als het blijft gebeuren, kom dan later terug.",
+    "reference": "Referentie: {id}",
     "notFound": "Pagina niet gevonden",
     "notFoundText": "Deze pagina bestaat niet of is verwijderd.",
     "report": "Melden",
@@ -152,16 +164,16 @@
   },
   "home": {
     "title": "Test iedereen\nNeem de besten aan",
-    "text": "AI maakt van je functieomschrijving een professioneel interview met tijdslimiet.",
-    "price": "Slechts {price} per kandidaat."
+    "text": "AI maakt van je functieomschrijving een professioneel interview met tijdslimiet."
   },
   "start": {
     "placeholder": "Plak hier je functieomschrijving…",
     "description": "Functieomschrijving",
-    "submit": "Interview maken",
+    "submit": "Maken",
+    "newInterview": "Je nieuwe interview",
     "whichCompany": "Voor welk bedrijf is dit interview?",
     "firstCompany": "Hoe heet je bedrijf?",
-    "newCompany": "Een nieuw bedrijf",
+    "newCompany": "Nieuw bedrijf",
     "companyName": "Bedrijfsnaam",
     "freeCandidates": "Je eerste bedrijf test {count, plural, one {de eerste kandidaat} other {de eerste # kandidaten}} gratis.",
     "continue": "Doorgaan",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "Starts via de link van één interview per uur",
       "LINK_STARTS_PER_IP_HOUR": "Starts via een link per adres per uur",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "Exports voor een bias-audit per bedrijf per dag",
+      "ACTION_LOG_EXPORTS_PER_DAY": "Downloads van het actielog per bedrijf per dag",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "Downloads van de creditgeschiedenis per bedrijf per dag",
       "MAX_BULK_INVITES": "Kandidaten in één lijst of bestand",
       "MAX_PENDING_INVITES": "Openstaande teamuitnodigingen per bedrijf",
       "MEMBER_INVITES_PER_UNPAID_DAY": "Teamuitnodigingen per niet-betalend bedrijf per dag",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "Aanroepen naar het ATS van het bedrijf per bedrijf per minuut",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "ATS-webhooks per verzendadres per minuut",
       "ATS_CONNECTS_PER_HOUR": "ATS-koppelingen per bedrijf per uur",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "Slack-testberichten per bedrijf per uur",
       "RESEND_DAILY_LIMIT": "E-mails per dag via Resend",
       "RESEND_RESERVE_PERCENT": "Deel van de e-mails per dag via Resend dat buiten bulkverzendingen blijft",
       "CAMPAIGNS_PER_KIND_DAY": "Campagnes per soort per dag",
@@ -775,7 +790,9 @@
     "useFailed": "Er kon geen interview vanuit dit sjabloon worden gestart. Probeer het opnieuw.",
     "inProgress": "bezig: {done}/{total, plural, one {# onderwerp} other {# onderwerpen}}",
     "completed": "afgerond",
-    "warningText": "<b>Sjablonen zijn kant-en-klaar voor veelvoorkomende functies.</b> Voor een betere match maak je een interview op basis van je functieomschrijving."
+    "warningText": "<b>Liever iets dat beter past?</b> Maak een interview op basis van je functieomschrijving.",
+    "contents": "{topics, plural, one {# onderwerp} other {# onderwerpen}}, {questions, plural, one {# vraag} other {# vragen}}, {minutes, plural, one {# min} other {# min}}",
+    "usedIn": "{count, plural, one {Gebruikt in # interview} other {Gebruikt in # interviews}}"
   },
   "billing": {
     "paidTitle": "Betaling ontvangen",
@@ -808,6 +825,10 @@
     "paysInChange": "Valuta wijzigen",
     "candidates": "{count, plural, one {# kandidaat} other {# kandidaten}}",
     "perCandidate": "{price}<unit>/kandidaat</unit>",
+    "enough": "Genoeg voor {count, plural, one {# kandidaat} other {# kandidaten}}",
+    "pay": "{price} betalen",
+    "quote": "{count, plural, one {# kandidaat} other {# kandidaten}} à {price} per stuk, {credits, number} credits",
+    "nextPrice": "{count, plural, one {# kandidaat} other {# kandidaten}} extra en elke kandidaat kost {price}",
     "howMany": "Kandidaten om op te waarderen",
     "credits": "{count, plural, one {# credit} other {# credits}}",
     "candidatesWord": "{count, plural, one {kandidaat} other {kandidaten}}",
@@ -863,6 +884,19 @@
     "markedWrong": "Bedankt. Het wordt gecontroleerd en daarna hersteld of vervangen.",
     "markWrongFailed": "Kon niet ter controle worden verzonden. Probeer het opnieuw.",
     "ofCount": "van {count, number}",
+    "perCandidate": "Aantal vragen per kandidaat",
+    "limitShort": "Vragen per kandidaat",
+    "topicsColumn": "Onderwerpen en subonderwerpen",
+    "limitLine": "{limit, number} van {count, number} vragen per kandidaat",
+    "noMatches": "Hier zijn geen vragen.",
+    "summary": {
+      "total": "Vragen"
+    },
+    "filters": {
+      "all": "Alle",
+      "reported": "Gemeld"
+    },
+    "disabledCount": "{count, plural, one {# vraag uitgeschakeld} other {# vragen uitgeschakeld}}",
     "per": "per",
     "candidate": "kandidaat",
     "correct": "Juist antwoord",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "Jouw beurt",
     "voiceThinking": "Denkt na",
     "miraLabel": "AI-interviewer",
+    "voiceHeardAnswer": "Ik hoorde {answer}.",
+    "questionOf": "Vraag {number, number} van {count, number}",
+    "answeredOf": "{done, number} van {total, number}",
+    "keysHint": "Druk op A–{last} om te kiezen, op Enter voor de volgende vraag.",
     "voiceStatus": {
       "off": "Mira maakt zich klaar…",
       "starting": "Mira maakt zich klaar…",
@@ -962,9 +1000,11 @@
     "cancelling": "Annuleren…",
     "cancelFailed": "Het genereren kon niet worden geannuleerd. Probeer het opnieuw.",
     "writing": "Je vragen worden gegenereerd",
-    "drafting": "Je onderwerpen worden opgesteld",
-    "writingNote": "Dit duurt een paar minuten. Je kunt deze pagina verlaten; wij gaan door.",
-    "draftingNote": "We lezen je doel en plannen wat er aan bod komt.",
+    "drafting": "Je onderwerpen worden gegenereerd",
+    "writingNote": "Dit duurt een paar minuten. Je kunt deze pagina verlaten; we sturen je een melding als het klaar is.",
+    "draftingNote": "We lezen je functieomschrijving. Je bekijkt de onderwerpen voordat er vragen worden geschreven. Je kunt deze pagina verlaten; we gaan door.",
+    "finishing": "De vragen worden gecontroleerd en opgeslagen…",
+    "goToInterviews": "Naar interviews",
     "topicsReady": "{ready, number} van {count, plural, one {# onderwerp} other {# onderwerpen}} klaar",
     "reviewFailed": "Je controle kon niet worden verzonden. Probeer het opnieuw.",
     "retryFailed": "Het genereren kon niet opnieuw worden geprobeerd. Probeer het opnieuw.",
@@ -982,13 +1022,18 @@
     "add": "Toevoegen",
     "done": "Klaar",
     "reviewTitle": "Controleer je onderwerpen",
-    "reviewText": "Vink onderwerpen uit die je niet nodig hebt, bewerk ze of beschrijf wijzigingen. Elk onderwerp krijgt een eigen set vragen met antwoorden.",
+    "reviewText": "Elk onderwerp krijgt zijn eigen vragen met antwoorden.",
     "editTopic": "<bdi>{topic}</bdi> bewerken",
-    "changesPlaceholder": "Optioneel: beschrijf wijzigingen, bijv. “Voeg een onderwerp over teamleiderschap toe”",
-    "changes": "Wijzigingen in de onderwerpen",
+    "changesPlaceholder": "bijv. “Voeg een onderwerp over teamleiderschap toe”",
+    "changes": "Vraag de AI om de onderwerpen aan te passen",
     "tooMany": "Kies maximaal {max, plural, one {# onderwerp} other {# onderwerpen}} of beschrijf hoe ze samengevoegd moeten worden.",
     "apply": "Wijzigingen toepassen",
     "approve": "Goedkeuren en genereren",
+    "topicsChosen": "{chosen, number} van {count, plural, one {# onderwerp} other {# onderwerpen}}",
+    "applyFirst": "Pas eerst je wijziging toe of maak het vak leeg.",
+    "subtopicsNeeded": "Voeg minstens {count, plural, one {# subonderwerp} other {# subonderwerpen}} toe.",
+    "addTopic": "Onderwerp toevoegen",
+    "removeTopic": "Verwijderen",
     "topicNameNeeded": "Geef het onderwerp een naam."
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "Bedrijven",
     "empty": "Nog geen bedrijven.",
     "owner": "Eigenaar",
+    "search": "Bedrijven zoeken",
+    "interviewsShort": "{count, plural, one {<n></n> interview} other {<n></n> interviews}}",
+    "membersShort": "{count, plural, one {<n></n> lid} other {<n></n> leden}}",
+    "status": {
+      "low": "Credits raken op",
+      "verify": "Rond de verificatie van je bedrijf af",
+      "finished": "{count, plural, one {<n></n> kandidaat heeft} other {<n></n> kandidaten hebben}} deze week afgerond"
+    },
     "interviewCount": "{count, plural, one {# interview} other {# interviews}}",
     "memberCount": "{count, plural, one {# lid} other {# leden}}",
     "interviews": "Interviews",
@@ -1024,6 +1077,8 @@
     "brand": "Merk",
     "billing": "Facturering",
     "new": "Nieuw bedrijf",
+    "newText": "Elk bedrijf heeft zijn eigen interviews, team en credits.",
+    "namePlaceholder": "bijv. Acme",
     "name": "Bedrijfsnaam",
     "create": "Aanmaken",
     "createFailed": "Het bedrijf kon niet worden aangemaakt. Probeer het opnieuw.",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, one {# keer pagina verlaten} other {# keer pagina verlaten}}",
     "copies": "{count, plural, one {# kopieerpoging} other {# kopieerpogingen}}",
     "fastAnswers": "{count, plural, one {# snel antwoord} other {# snelle antwoorden}}",
+    "extraTimeLabel": "Extra tijd",
+    "summary": {
+      "result": "Resultaat",
+      "timeTaken": "Benodigde tijd",
+      "signals": "Integriteitssignalen",
+      "invited": "Uitgenodigd",
+      "finished": "Afgerond",
+      "passed": "Geslaagd",
+      "average": "Gemiddeld cijfer"
+    },
+    "copyLinkFailed": "De link kon niet worden gekopieerd. Probeer het opnieuw.",
     "empty": "Nog geen kandidaten uitgenodigd.",
     "noMatches": "Geen kandidaten gevonden.",
     "search": "Kandidaten zoeken op e-mailadres of naam",
     "status": "Status: {status}",
     "anyStatus": "elke status",
+    "allStatuses": "Alle",
     "progress": "Voortgang",
     "grade": "Score",
     "resend": "Uitnodiging opnieuw verzenden",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "Interviews",
+    "allStatuses": "Alle",
+    "candidatesShort": "{count, plural, one {<n></n> kandidaat} other {<n></n> kandidaten}}",
+    "finishedShort": "<n></n> afgerond",
+    "passedShort": "<n></n> geslaagd",
+    "rowStatus": {
+      "failed": "Open het om het opnieuw te proberen",
+      "generating": "Wordt gemaakt",
+      "undelivered": "{count, plural, one {<n></n> uitnodiging} other {<n></n> uitnodigingen}} niet bezorgd",
+      "finished": "{count, plural, one {<n></n> kandidaat heeft} other {<n></n> kandidaten hebben}} deze week afgerond",
+      "ready": "Klaar: nodig je eerste kandidaten uit"
+    },
     "interview": "Interview",
     "topicsTab": "Onderwerpen",
     "candidates": "Kandidaten",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "Nog geen notities. Schrijf de eerste voor je team.",
     "discover": "Ontdekken",
     "discoverLinkedIn": "LinkedIn-profiel van {name}",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "Mensen verschijnen hier zodra ze deze onderwerpen oefenen en openstaan voor aanbiedingen.",
     "discoverText": "Mensen die openstaan voor nieuwe kansen en de onderwerpen van dit interview hebben geoefend. Nieuwste eerst, niet gerangschikt.",
     "discoverEmpty": "Nog niemand die openstaat voor nieuwe kansen heeft de onderwerpen van dit interview geoefend.",
     "discoverResults": "Oefenresultaten",
@@ -1130,6 +1210,8 @@
     "notePosting": "Plaatsen…",
     "noteEdited": "bewerkt",
     "notePinned": "Vastgezet",
+    "noteShowMore": "Meer tonen",
+    "noteShowLess": "Minder tonen",
     "notePin": "Bovenaan vastzetten",
     "noteUnpin": "Losmaken",
     "noteFormerMember": "Voormalig lid",
@@ -1139,8 +1221,20 @@
     "noteFailed": "De notitie kon niet worden opgeslagen. Probeer het opnieuw.",
     "new": "Nieuw interview",
     "createTitle": "Interview maken",
+    "createIntro": "Plak een functieomschrijving. Je bekijkt de onderwerpen voordat de vragen worden geschreven, en het is gratis.",
+    "steps": {
+      "describe": "Beschrijf de functie",
+      "review": "Onderwerpen bekijken",
+      "invite": "Kandidaten uitnodigen"
+    },
+    "startTemplate": "Beginnen met een sjabloon",
+    "startAts": "Beginnen met een vacature uit je ATS",
+    "tryExample": "Probeer een voorbeeld",
     "try": "Proberen als kandidaat",
     "newCandidate": "Nieuwe kandidaten",
+    "settingsSharing": "Delen",
+    "settingsRuns": "Hoe het verloopt",
+    "settingsAfter": "Daarna en privacy",
     "linkTitle": "Deelbare link",
     "linkText": "Voor een vacature: iedereen met de link kan het interview doen. Je betaalt per persoon hetzelfde als voor een uitgenodigde kandidaat.",
     "linkFailed": "De link kon niet worden gewijzigd. Probeer het opnieuw.",
@@ -1160,7 +1254,7 @@
     "generating": "Wordt gegenereerd…",
     "generationFailed": "Genereren mislukt",
     "fallbackTitle": "interview",
-    "continueGeneration": "Genereren voortzetten",
+    "continueGeneration": "Doorgaan",
     "empty": "Nog geen interviews. Maak je eerste interview.",
     "noMatches": "Geen interviews gevonden.",
     "search": "Interviews zoeken op titel",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "E-mailadres van de kandidaat",
     "inviteTab": {
       "one": "één",
-      "many": "meerdere",
-      "file": "uploaden"
+      "many": "lijst",
+      "file": "bestand"
     },
-    "manyHint": "Eén kandidaat per regel, met of zonder naam,\ntot {count, number} tegelijk:",
-    "manyHintNoLimit": "Eén kandidaat per regel, met of zonder naam:",
-    "example": "voorbeeld",
+    "inviteTitle": "Kandidaten uitnodigen",
+    "manyHint": "Eén kandidaat per regel, met of zonder naam, tot {count, number} tegelijk.",
+    "manyHintNoLimit": "Eén kandidaat per regel, met of zonder naam.",
     "uploadFile": "Bestand uploaden",
     "fileFormats": "CSV of TXT, tot {count, plural, one {# kandidaat} other {# kandidaten}}. Namen kunnen in een naamkolom of naast elk e-mailadres staan.",
     "fileFormatsNoLimit": "CSV of TXT. Namen kunnen in een naamkolom of naast elk e-mailadres staan.",
@@ -1203,8 +1297,7 @@
       "unclear_name": "Schrijf de naam als Naam '<e-mail>': <bdi>{line}</bdi>",
       "more": "en nog {count, number}"
     },
-    "exampleCsv": "voorbeeld .csv",
-    "exampleTxt": "voorbeeld .txt",
+    "exampleFiles": "Download een voorbeeld: <csv>.csv</csv> of <txt>.txt</txt>",
     "candidateName": "Naam (optioneel)",
     "invitedMany": "{count, plural, one {# kandidaat} other {# kandidaten}} uitgenodigd",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "Gefeliciteerd, je interview staat klaar",
-      "text": "<name><bdi>{title}</bdi></name> staat klaar voor kandidaten. Dit is de volgende stap:",
-      "limits": "Stel in hoeveel vragen elke kandidaat per onderwerp krijgt.",
+      "text": "<name><bdi>{title}</bdi></name> is klaar. Probeer het zelf uit voordat je iemand uitnodigt, en pas het zo nodig aan.",
+      "limits": "Hoeveel vragen elke kandidaat per onderwerp krijgt.",
       "limitsAction": "Vragen instellen",
-      "time": "Pas zo nodig de gemiddelde tijd per vraag aan.",
-      "timeAction": "Instellingen openen",
-      "invite": "Nodig kandidaten uit.",
-      "inviteAction": "Naar kandidaten",
+      "time": "De gemiddelde tijd per vraag.",
+      "timeAction": "Tijd aanpassen",
       "done": "Begrepen"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "Heb je meer tijd nodig, bijvoorbeeld door een beperking? Vraag <bdi>{company}</bdi> om een persoonlijke uitnodiging voordat je begint: hier kan geen tijd worden toegevoegd.",
     "people": "De vragen zijn door AI geschreven. Mensen bij <bdi>{company}</bdi> bekijken de resultaten en beslissen; je kunt hen vragen jouw resultaat te beoordelen.",
     "stay": "Blijf op deze pagina: weggaan, kopiëren en antwoorden die te snel komen om de vraag gelezen te hebben, worden vastgelegd, en het bedrijf ziet wanneer je antwoordtijden of antwoorden niet passen bij de moeilijkheid van de vragen (<link>privacy</link>).",
-    "finished": "Dit interview is al afgerond.",
+    "finishedTitle": "Je bent klaar",
+    "finished": "Je antwoorden zijn bij <bdi>{company}</bdi>. Zij bekijken de resultaten en beslissen over de volgende stappen.",
+    "finishedPreview": "Dit is wat je kandidaten zien. Deze gratis proef staat niet in je kandidatenlijst en de antwoorden tellen niet mee in de statistieken van de vragen.",
+    "finishedRights": "Je kunt <bdi>{company}</bdi> vragen je resultaat door een mens te laten beoordelen. <link>Privacy</link>",
+    "finishedAnswered": "Beantwoorde vragen",
+    "finishedTime": "Benodigde tijd",
+    "signInAs": "Gebruik het e-mailadres waarnaar deze uitnodiging is gestuurd.",
+    "switchAccount": "Van account wisselen",
+    "progress": "Je bent {percent} onderweg.",
+    "progressLabel": "Je voortgang",
+    "groups": {
+      "how": "Hoe het werkt",
+      "time": "Jouw tijd",
+      "rights": "Jouw rechten en privacy"
+    },
     "continue": "Doorgaan",
     "start": "Accepteren en starten",
     "pledge": "Ik beantwoord de vragen zelf, zonder AI-tools of hulp van anderen.",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "Lid",
     "invited": "Uitgenodigd",
+    "joinedOn": "Lid geworden op {date}",
+    "invitedOn": "Uitgenodigd op {date}",
+    "pendingTitle": "Openstaande uitnodigingen",
+    "firstTitle": "Nodig je eerste teamgenoot uit",
     "role": "Rol",
     "roleFailed": "De rol kon niet worden gewijzigd.",
     "inviteTitle": "Uitnodiging voor het bedrijf",
@@ -1281,6 +1390,11 @@
     "madeOwner": "<bdi>{email}</bdi> is nu de eigenaar."
   },
   "scorecard": {
+    "filters": {
+      "all": "Alle",
+      "correct": "Goed",
+      "wrong": "Fout"
+    },
     "timeOut": "Tijd om",
     "leftPage": "Heeft de pagina {count, plural, one {# keer} other {# keer}} verlaten",
     "answeredIn": "Beantwoord in <b>{time}</b>",
@@ -1298,7 +1412,7 @@
     "test": "Een interview genereren",
     "free": "Gratis",
     "candidate": "Elke kandidaat die minstens één vraag beantwoordt",
-    "candidateVolume": "Met credits uit een opwaardering van {from} of meer",
+    "candidateVolume": "Bij opwaarderingen van {from} of meer",
     "perCandidate": "{price} per kandidaat",
     "welcome": "{count, plural, one {Je eerste kandidaat} other {Je eerste # kandidaten}}",
     "credits": "Een kandidaat kost {credits, number} credits, en credits verlopen nooit.",
@@ -1306,6 +1420,10 @@
     "referralsNote": "Deel de link van je bedrijf via het tabblad Doorverwijzingen.",
     "companyReferral": "Een bedrijf dat je hebt uitgenodigd, waardeert voor het eerst op",
     "each": "elk {count, number} credits",
+    "fromPrice": "vanaf {price}",
+    "anyTopUp": "Bij elke opwaardering",
+    "volumeTitle": "Een kandidaat kost minder bij grotere opwaarderingen",
+    "volumeText": "Hoe groter de opwaardering, hoe minder elke kandidaat kost.",
     "topUp": "Opwaarderen"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "Compliancedocumenten voor werving en selectie",
     "intro": "Documenten voor bedrijven die kandidaten beoordelen met testee: instructies, sjablonen en de verwerkersovereenkomst.",
     "englishOnly": "Deze documenten zijn alleen in het Engels beschikbaar.",
-    "download": "{format} downloaden",
+    "download": "<type>{format}</type> downloaden",
     "readOnline": "Online lezen",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "Genereren in"
   },
   "referral": {
+    "title": "Jullie krijgen allebei <n></n> credits",
+    "text": "Dat is genoeg voor {count, plural, one {# kandidaat} other {# kandidaten}}. Deel je link met een ander bedrijf.",
+    "empty": "Nog geen beloningen. Deel je link om je eerste te verdienen.",
+    "steps": {
+      "share": "Deel je link met een ander bedrijf.",
+      "create": "Zij maken hun bedrijf aan via de link.",
+      "reward": "Na hun eerste opwaardering, met welk bedrag ook, krijgen jullie allebei de credits."
+    },
+    "summary": {
+      "referred": "Doorverwezen bedrijven",
+      "earned": "Verdiende credits",
+      "left": "Resterende beloningen dit jaar",
+      "leftValue": "{left, number} van {total, number}"
+    },
     "companyNote": "Jullie krijgen allebei {reward, number} credits wanneer zij voor het eerst opwaarderen, met welk bedrag ook.",
     "deletedCompany": "Een verwijderd bedrijf",
     "credits": "+{count, number} credits",
@@ -1398,53 +1530,39 @@
     "intro": "Een kandidaat kost {credits, number} credits, en credits verlopen nooit.",
     "noCompany": "Credits horen bij een bedrijf. Maak eerst je bedrijf aan en waardeer het dan hier op.",
     "createCompany": "Bedrijf aanmaken",
+    "allCompanies": "Alle bedrijven",
     "pricing": "Prijzen"
   },
   "landing": {
-    "more": "Hoe het werkt",
     "demos": "Video",
-    "videoTooltip": "Bekijk hoe testee werkt",
     "watchVideo": "Video bekijken",
     "howItWorks": "Hoe het werkt",
     "askAgent": "vraag Mira",
     "create": {
+      "draftingNote": "Je functieomschrijving wordt gelezen.",
       "title": "Maak een interview in enkele minuten",
       "text": "Plak een functieomschrijving, pas de onderwerpen aan en je interview is binnen enkele minuten klaar.",
       "notes": {
-        "questions": "{count, plural, one {# vraag} other {# vragen}} per onderwerp",
         "templates": "kant-en-klare sjablonen beschikbaar",
         "expert": "geen vakexpert nodig"
       },
-      "describe": "<n>1.</n> Plak je omschrijving",
+      "describe": "<n>1.</n> Plak de omschrijving",
       "adjust": "<n>2.</n> Pas de onderwerpen aan",
       "menu": {
-        "cut": "Knippen",
-        "copy": "Kopiëren",
         "paste": "Plakken"
       },
-      "ready": "<n>3.</n> Je interview is klaar",
-      "invited": "<n>4.</n> De kandidaat krijgt de uitnodiging",
+      "ready": "<n>3.</n> Het interview is klaar",
+      "invited": "<n>4.</n> De uitnodiging is ontvangen",
       "status": "Klaar",
       "email": {
-        "search": "Zoeken in mail",
-        "compose": "Opstellen",
         "inbox": "Inbox",
-        "starred": "Met ster",
-        "sent": "Verzonden",
-        "drafts": "Concepten",
         "from": "testee.",
-        "toMe": "aan mij",
         "now": "nu",
         "subject": "Uitnodiging voor een interview van {company}",
-        "preheader": "Doe “{title}” op testee. Log in met {email} om te beginnen.",
         "heading": "Uitnodiging voor een interview",
         "invited": "<b>{company}</b> nodigt je uit voor het interview “{title}” op testee.",
         "signIn": "Log in met {email} om te beginnen. Alleen dit adres kan het interview doen, en je hebt één poging.",
-        "button": "Uitnodiging openen",
-        "pasteLink": "Of plak deze link in je browser",
-        "footer": "Deze e-mail is naar {email} gestuurd omdat iemand dit adres op testee heeft uitgenodigd. Verwachtte je hem niet, dan kun je hem negeren.",
-        "stopCompany": "Stuur me geen e-mails meer namens {company}",
-        "operator": "testee wordt beheerd door {name}, {address}."
+        "button": "Uitnodiging openen"
       },
       "phone": {
         "describe": "Plak een functieomschrijving, of schrijf een paar woorden over de functie.",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "Een mens beslist",
-          "text": "De score ondersteunt je beslissing, maar neemt die niet. Integriteitssignalen zijn een reden om beter te kijken, geen bewijs."
+          "text": "De score ondersteunt je beslissing. Integriteitssignalen zijn een reden om beter te kijken, geen bewijs."
         },
         "fair": {
           "title": "Eerlijk voor elke kandidaat",
-          "text": "Dezelfde timer en dezelfde mix van vraagsoorten, willekeurig gekozen vragen voor elke persoon, extra tijd voor wie dat nodig heeft."
+          "text": "Dezelfde timer en vraagmix voor iedereen, willekeurig getrokken vragen, extra tijd voor wie dat nodig heeft."
         },
         "laws": {
           "title": "Gebouwd voor compliance",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "Elke actie vastgelegd",
-          "text": "Een eigenaar ziet wie wat heeft gedaan in het bedrijf, 12 maanden veilig bewaard op servers in de EU."
+          "text": "Een eigenaar ziet wie wat heeft gedaan, 12 maanden bewaard op servers in de EU."
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "Nog vragen?",
       "videos": "video's",
       "faq": "FAQ",
-      "guides": "gidsen",
-      "features": "functionaliteiten",
-      "hiringFlow": "wervingsproces"
+      "guides": "gidsen"
     },
     "closing": {
       "title": "Maak je eerste interview\nHet is gratis",
@@ -1672,7 +1788,8 @@
         "time": "~10 min per functie, niets per kandidaat",
         "cost": "{price} per kandidaat die antwoordt"
       },
-      "more": "Vergelijk met andere tools"
+      "more": "Vergelijk met andere tools",
+      "best": "Beste keuze"
     },
     "freeToStart": {
       "title": "Alles is gratis\nBetaal per kandidaat",
@@ -1689,6 +1806,7 @@
       "each": "({price} per kandidaat)",
       "free": "{count, plural, one {# gratis kandidaat} other {# gratis kandidaten}} om te beginnen",
       "perCandidate": "per kandidaat",
+      "bestPrice": "Beste prijs",
       "pack": "{count, number} voor {price}",
       "see": "Bekijk de prijzen",
       "notes": {
@@ -1698,11 +1816,159 @@
         "refund": "ongebruikte betaalde credits terug te krijgen"
       },
       "currencies": "{count, plural, one {# valuta} other {# valuta's}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Acme helpt webshops hun klanten te woord te staan met AI.\nWe zoeken een AI Engineer om onze LLM-functies te bouwen.\n• 3+ jaar ervaring met Python\n• LLM-apps, RAG en vector search\n• Modellen evalueren en monitoren\nRemote, flexibele werktijden en een opleidingsbudget.",
+        "title": "AI Engineer",
+        "topics": {
+          "llm": {
+            "name": "Basis van LLM's",
+            "subtopics": ["Tokens", "Prompting", "Contextvensters"]
+          },
+          "rag": {
+            "name": "Retrieval-augmented generation",
+            "subtopics": ["Embeddings", "Chunking", "Vector search"]
+          },
+          "python": {
+            "name": "Python voor ML-systemen",
+            "subtopics": ["asyncio", "Type hints"]
+          }
+        },
+        "renamed": " op schaal",
+        "subtopicAdded": " en testen",
+        "change": "Voeg een onderwerp toe over het evalueren van LLM-output",
+        "newTopic": {
+          "name": "LLM-evaluatie",
+          "subtopics": ["Testsets", "LLM als beoordelaar", "Metrics"]
+        }
+      },
+      "candidates": {
+        "title": "Data Analyst",
+        "questions": {
+          "median": {
+            "topic": "Statistiek",
+            "text": "Een paar zeer grote bestellingen vertekenen je gemiddelde orderwaarde. Welke maat beschrijft een typische bestelling het best?",
+            "options": [
+              "Het gemiddelde van de orderwaarde",
+              "De mediaan van de orderwaarde",
+              "De spreiding (range) van de orderwaarden",
+              "De standaarddeviatie van de orderwaarden"
+            ]
+          },
+          "revenue": {
+            "topic": "Statistiek",
+            "text": "De wekelijkse omzet op je dashboard daalde met 20% direct na een wijziging in de datapipeline. Wat controleer je als eerste?",
+            "options": [
+              "Het aantal rijen voor en na de wijziging vergelijken",
+              "Zoeken naar dubbele of ontbrekende datums",
+              "Het kleurenschema van het dashboard aanpassen",
+              "Sales vragen of klanten gestopt zijn met kopen"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "Marketing wil de regio's waarvan de totale verkoop boven de 100 ligt. Wat geeft deze query terug?",
+            "options": [
+              "Alleen North",
+              "Alleen South",
+              "North en South",
+              "Geen rijen"
+            ]
+          },
+          "chart": {
+            "topic": "Visualisatie",
+            "text": "Je moet laten zien hoe het aantal maandelijkse aanmeldingen de afgelopen twee jaar is veranderd. Welke grafiek laat die trend het best zien?",
+            "options": [
+              "Een cirkeldiagram van aanmeldingen per maand",
+              "Een lijngrafiek van aanmeldingen per maand",
+              "Een spreidingsdiagram van aanmeldingen tegenover omzet",
+              "Een histogram van het aantal aanmeldingen per maand"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "Product Manager",
+        "topics": [
+          "Productstrategie",
+          "Metrics",
+          "Stakeholders",
+          "Roadmapping",
+          "Gebruikersonderzoek",
+          "Prioriteren",
+          "Experimenteren",
+          "Pricing",
+          "Go-to-market",
+          "Communicatie"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "Wat moet er als eerste gebeuren voordat je een nieuwe feature bouwt?",
+            "options": [
+              "Het probleem toetsen bij gebruikers",
+              "De technische specificatie schrijven",
+              "De lanceerdatum vastleggen",
+              "De schermen ontwerpen"
+            ]
+          },
+          "metrics": {
+            "text": "De conversie daalde van 4% naar 3%. Hoeveel is dat ten opzichte van eerst?",
+            "options": ["1%", "25%", "33%", "75%"]
+          },
+          "stakeholders": {
+            "text": "Een partnerteam is het niet eens met je prioriteiten. Wat doe je als eerste?",
+            "options": [
+              "Escaleren naar je manager",
+              "Vragen wat ze nodig hebben en waarom",
+              "Je plan houden zoals het is",
+              "Je prioriteiten laten vallen"
+            ]
+          }
+        },
+        "chat": {
+          "name": "Recruitmentteam",
+          "initials": "RT"
+        },
+        "notes": [
+          "De hiring manager wil vrijdag een shortlist van twee.",
+          "Daniel was sterk op stakeholders in het telefonische gesprek; zwakker op metrics.",
+          "Sofia vroeg om meer tijd; ik check morgen even bij haar."
+        ],
+        "pdf": "kandidaten-product-manager.pdf"
+      },
+      "slack": {
+        "channels": ["algemeen", "recruitment", "development"],
+        "channelsTitle": "Kanalen",
+        "peopleTitle": "Directe berichten",
+        "appsTitle": "Apps",
+        "app": "APP",
+        "composer": "Bericht aan #{channel}",
+        "finished": "{name} ({email}) heeft “{title}” afgerond: {grade}%.",
+        "noted": "{author} heeft een notitie toegevoegd bij “{title}”:",
+        "button": "Openen in testee"
+      },
+      "invite": {
+        "title": "B2B Account Executive"
+      },
+      "askAgent": {
+        "interview": "Data Analyst"
+      }
     }
   },
   "faq": {
     "title": "Veelgestelde vragen",
-    "intro": "Staat je antwoord er niet bij? Vraag het Mira, de AI-assistent (de knop bovenaan de pagina), of schrijf ons op het adres in het privacybeleid.",
+    "intro": "Antwoorden over testee, van je eerste interview tot je gegevens.",
+    "groups": {
+      "start": "Aan de slag",
+      "candidates": "Kandidaten",
+      "pricing": "Prijzen en credits",
+      "results": "Resultaten en je team",
+      "tools": "Integraties",
+      "privacy": "Privacy en je account"
+    },
+    "closingTitle": "Nog een vraag?",
+    "closingText": "Vraag het aan Mira, onze AI-assistent, of schrijf ons.",
     "description": "Antwoorden over testee: hoe interviews uit een vacaturetekst ontstaan, wat kandidaten zien, prijzen en credits, resultaten, ATS-koppelingen, talen en je gegevens."
   },
   "contact": {
@@ -1731,9 +1997,20 @@
     "description": "testee maakt van een vacaturetekst in een paar minuten een eerlijk interview met tijdslimiet, voor een prijs die elk team kan betalen, en iedereen kan gratis oefenen voor sollicitatiegesprekken.",
     "company": {
       "title": "Waarom we bestaan",
+      "titles": {
+        "problem": "Aannemen is lastig goed te doen",
+        "approach": "Een eerlijk interview in minuten",
+        "practice": "Gratis oefenen voor iedereen"
+      },
       "problem": "Werving leunt vaak op een cv en een goed gesprek, en allebei kunnen ze misleiden. De beoordelingstools die wel helpen, zijn geprijsd voor grote bedrijven, met jaarabonnementen en kosten per gebruiker, dus de meeste teams doen het zonder.",
       "approach": "testee maakt in een paar minuten van een functieomschrijving een interview met tijdslimiet, voor elke functie. Elke kandidaat krijgt eigen vragen, je ziet wie het vak kent en waarom, en je betaalt alleen voor kandidaten die het interview echt doen.",
       "practice": "We willen ook dat voorbereiden op een sollicitatiegesprek voor iedereen gratis is. Iedereen kan onze oefeninterviews voor een functie doen, de eigen score en elk juist antwoord zien en opnieuw oefenen, zonder kosten."
+    },
+    "closing": {
+      "title": "Zie het zelf",
+      "text": "Maak een interview op basis van je functieomschrijving, of oefen gratis voor een functie.",
+      "create": "Test maken",
+      "practice": "Gratis oefenen"
     },
     "founder": {
       "quote": "Goed aannemen zou geen voorrecht moeten zijn van grote bedrijven met grote budgetten. Ik heb testee gebouwd zodat elk team in een paar minuten van een functieomschrijving een eerlijk interview kan maken, kan zien wie het vak echt kent en alleen betaalt voor de kandidaten die het interview doen. Ik hoop dat het je helpt sneller de juiste mensen te vinden.",
@@ -1751,20 +2028,18 @@
     "title": "Meldingen",
     "unread": "{count, plural, one {# ongelezen melding} other {# ongelezen meldingen}}",
     "empty": "Nog niets nieuws.",
-    "formerAuthor": "een voormalig lid",
     "kinds": {
       "question_flagged": "{count, plural, one {Een vraag over “<bdi>{topic}</bdi>” in {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} is gemarkeerd voor controle.} other {# vragen in {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} zijn gemarkeerd voor controle.}}",
       "question_fixed": "{count, plural, one {De AI heeft een gemarkeerde vraag over “<bdi>{topic}</bdi>” in {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} verbeterd.} other {De AI heeft # gemarkeerde vragen in {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} verbeterd.}}",
       "referral_rewarded": "Iemand die je hebt uitgenodigd heeft opgewaardeerd. Je hebt {credits, plural, one {# credit} other {# credits}} gekregen.",
-      "auto_top_up_on": "Automatisch opwaarderen staat aan: {price} plus belasting als de beschikbare credits onder {threshold, number} zakken.",
       "auto_top_up_charged": "Automatisch opwaarderen heeft {credits, plural, one {# credit} other {# credits}} toegevoegd.",
       "auto_top_up_failed": "Automatisch opwaarderen kon de kaart niet belasten. Waardeer op zodat je saldo niet opraakt.",
+      "auto_top_up_on": "Automatisch opwaarderen staat aan: {price} plus belasting als de beschikbare credits onder {threshold, number} zakken.",
       "auto_top_up_paused": "Automatisch opwaarderen is gepauzeerd: de kaart is geweigerd. Werk de kaart bij om het weer aan te zetten.",
       "auto_top_up_price_change": "Vanaf <time>{date}</time> kost elke automatische opwaardering {newPrice} in plaats van {price}.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> heeft {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} afgerond{grade, select, none {.} other {: {grade}.}}} other {# kandidaten hebben {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} afgerond.}}",
       "invite_undelivered": "{count, plural, one {De uitnodiging voor {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} aan <bdi>{email}</bdi> is niet bezorgd.} other {# uitnodigingen voor {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} zijn niet bezorgd.}}",
       "interview_ready": "{title, select, none {Een interview is klaar.} other {Het interview “<bdi>{title}</bdi>” is klaar.}}",
-      "note_added": "{count, plural, =1 {Nieuwe notitie bij {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} van <bdi>{authors}</bdi>.} other {# nieuwe notities bij {title, select, none {een interview} other {“<bdi>{title}</bdi>”}}, de laatste van <bdi>{authors}</bdi>.}}",
       "interview_cancelled": "{title, select, none {Een interview} other {Het interview “<bdi>{title}</bdi>”}} is geannuleerd: de controle van de onderwerpen bleef te lang liggen.",
       "verification_approved": "“<bdi>{name}</bdi>” is geverifieerd voor <bdi>{domain}</bdi>.",
       "verification_declined": "{reason, select, none {De verificatie van “<bdi>{name}</bdi>” is afgewezen.} other {De verificatie van “<bdi>{name}</bdi>” is afgewezen: <bdi>{reason}</bdi>}}",
@@ -1776,8 +2051,10 @@
       "news": "Nieuws: <bdi>{title}</bdi>",
       "legal_terms": "Nieuwe voorwaarden gelden vanaf <time>{date}</time>.",
       "legal_privacy": "Een nieuw privacybeleid geldt vanaf <time>{date}</time>.",
-      "legal_dpa": "Een nieuwe verwerkersovereenkomst geldt vanaf <time>{date}</time>."
+      "legal_dpa": "Een nieuwe verwerkersovereenkomst geldt vanaf <time>{date}</time>.",
+      "note_added": "{count, plural, =1 {Nieuwe notitie bij {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} van <bdi>{authors}</bdi>.} other {# nieuwe notities bij {title, select, none {een interview} other {“<bdi>{title}</bdi>”}}, de laatste van <bdi>{authors}</bdi>.}}"
     },
+    "formerAuthor": "een voormalig lid",
     "legalBanner": {
       "terms": "De voorwaarden van testee veranderen op <time>{date}</time>.",
       "privacy": "Het privacybeleid van testee verandert op <time>{date}</time>.",
@@ -1801,7 +2078,7 @@
     "send": "<name>PDF</name> versturen",
     "sent": "Rapport verstuurd naar <bdi>{email}</bdi>",
     "sendFailed": "Het rapport kon niet worden verstuurd.",
-    "orSummary": "Of verstuur via",
+    "orSummary": "Of stuur een korte samenvatting via chat",
     "via": "Verstuurd vanuit testee",
     "candidatesFileName": "Kandidaten {title}",
     "candidateCount": "{count, plural, one {# kandidaat} other {# kandidaten}}",
@@ -1833,6 +2110,10 @@
     "results": "Oefenresultaten",
     "grade": "van de mogelijke punten",
     "notFinished": "niet afgerond",
+    "finished": "Afgerond",
+    "answeredCard": "Beantwoorde vragen",
+    "answeredOf": "{done, number} van {total, number}",
+    "startedCard": "Gestart",
     "noRounds": "Nog geen rondes.",
     "startFailed": "Het oefenen kon niet worden gestart. Probeer het opnieuw.",
     "gradeLabel": "Score",
@@ -1844,7 +2125,13 @@
     "hireButton": "Interview maken",
     "timingPerQuestion": "Gemiddeld {time} per vraag",
     "timingNone": "Geen tijdslimiet",
-    "timingNote": "Oefenen wordt met niemand vergeleken: neem meer tijd, of geen limiet, als je dat nodig hebt."
+    "timingNote": "Oefenen wordt met niemand vergeleken: neem meer tijd, of geen limiet, als je dat nodig hebt.",
+    "facts": {
+      "topics": "Onderwerpen",
+      "questions": "Vragen",
+      "level": "Niveau",
+      "language": "Taal"
+    }
   },
   "openToOffers": {
     "title": "Open voor nieuwe kansen",
@@ -1887,6 +2174,7 @@
     "englishOnly": "Deze pagina is alleen in het Engels.",
     "startTitle": "Test je kandidaten",
     "startText": "Maak een selectietest met tijdslimiet op basis van je vacaturetekst.{priced, select, yes { {price} per kandidaat, zonder abonnement.} other {}}",
+    "contents": "Op deze pagina",
     "startButton": "Test maken"
   },
   "compare": {
@@ -1912,7 +2200,16 @@
     "topics": "Wat er getest wordt",
     "questions": "Voorbeeldvragen",
     "questionsText": "Vragen zoals deze, met de juiste antwoorden. Je kandidaten krijgen hun eigen vragen, die nooit openbaar worden getoond.",
-    "faq": "Vragen die bedrijven stellen"
+    "faq": "Vragen die bedrijven stellen",
+    "createOwn": "Maak je eigen test",
+    "facts": {
+      "topics": "Onderwerpen",
+      "level": "Niveau",
+      "language": "Taal",
+      "price": "Per kandidaat"
+    },
+    "closingTitle": "Klaar om je kandidaten te testen?",
+    "closingText": "Plak een functieomschrijving en krijg binnen enkele minuten een test als deze, gratis te maken."
   },
   "ats": {
     "statusConnected": "gekoppeld",
@@ -1998,6 +2295,25 @@
     "bzStepCreate": "Maak een API-sleutel aan als beheerder die alle vacatures ziet: die handelt namens jou, en resultaten worden op jouw naam geschreven. De API en webhooks van Breezy horen bij het Pro-abonnement.",
     "bzStepPaste": "Plak de sleutel hieronder. De webhook in Breezy HR voegen we zelf toe.",
     "atsGroup": "ATS",
+    "firstJobTitle": "Koppel je eerste vacature",
+    "brokenText": "{ats} werkt niet meer, dus er worden geen kandidaten uitgenodigd. Verbind het opnieuw om weer te starten.",
+    "stripMove": "Een kandidaat bereikt de fase die je in {ats} hebt gekozen",
+    "stripInvite": "testee nodigt hem of haar uit voor het gekoppelde interview",
+    "stripResults": "De resultaten gaan terug naar het {ats}-profiel",
+    "rowStage": "Fase: <bdi>{stage}</bdi>",
+    "rowInterview": "Interview: <link><bdi>{interview}</bdi></link>",
+    "invitedShort": "<n></n> uitgenodigd",
+    "waitingShort": "<n></n> wachtend",
+    "notInvitedShort": "<n></n> niet uitgenodigd",
+    "summary": {
+      "status": "Status",
+      "account": "Account",
+      "jobs": "Gekoppelde vacatures",
+      "invited": "Uitgenodigde kandidaten"
+    },
+    "connectedGroup": "Verbonden",
+    "statusBroken": "Opnieuw verbinden nodig",
+    "rowText": "Nodig kandidaten uit {ats} uit en stuur hun resultaten terug.",
     "messagingGroup": "Berichtenapps",
     "apiAiAppsGroup": "API & AI-apps",
     "searchInterview": "Interviews zoeken",
@@ -2005,6 +2321,29 @@
   },
   "slack": {
     "add": "Toevoegen aan Slack",
+    "rowText": "Krijg een melding in Slack als kandidaten klaar zijn.",
+    "brokenText": "Slack accepteert geen berichten meer, dus je kanaal krijgt geen meldingen. Verbind het opnieuw om weer te starten.",
+    "pointChannel": "Kies het kanaal waarin je team ze moet zien.",
+    "pointKinds": "Kies welke meldingen daarheen gaan.",
+    "pointPrivacy": "testee kan alleen in dat kanaal posten. Je Slack kan het niet lezen.",
+    "test": "Test versturen",
+    "testSent": "Testbericht naar je kanaal verstuurd.",
+    "testFailed": "Het testbericht kon niet worden verstuurd.",
+    "groups": {
+      "candidates": "Kandidaten",
+      "interviews": "Interviews",
+      "billing": "Facturering",
+      "team": "Team"
+    },
+    "samples": {
+      "candidate_finished": "Ann Lee (ann@example.com) heeft “Data Analyst” afgerond: 82%.",
+      "ats_not_invited": "Ben Ortiz kwam uit je ATS maar is niet uitgenodigd voor “Data Analyst”.",
+      "invite_undelivered": "De uitnodiging aan ben@example.com voor “Data Analyst” is niet bezorgd.",
+      "interview_ready": "“Data Analyst” is klaar.",
+      "auto_top_up_charged": "Je automatische opwaardering is afgeschreven.",
+      "auto_top_up_failed": "Je automatische opwaardering is mislukt. Werk je kaart bij om hem actief te houden.",
+      "note_added": "Maya heeft een notitie toegevoegd bij “Data Analyst”: sterke SQL, een telefoontje waard."
+    },
     "connectFailed": "Slack kon niet worden gekoppeld.",
     "connected": "Slack is gekoppeld.",
     "disconnectFailed": "Slack kon niet worden ontkoppeld.",
@@ -2019,9 +2358,9 @@
       "ats_not_invited": "Een kandidaat uit je ATS is niet uitgenodigd",
       "invite_undelivered": "Een uitnodigingsmail is niet bezorgd",
       "interview_ready": "Een interview is klaar",
-      "note_added": "Een teamlid schreef een notitie, met de tekst ervan",
       "auto_top_up_charged": "Een automatische opwaardering is afgeschreven",
-      "auto_top_up_failed": "Een automatische opwaardering is mislukt"
+      "auto_top_up_failed": "Een automatische opwaardering is mislukt",
+      "note_added": "Een teamlid schreef een notitie, met de tekst ervan"
     },
     "instructionsTitle": "Zo krijgt Slack je meldingen",
     "stepAdd": "Klik op “Toevoegen aan Slack”: Slack opent en vraagt je testee toe te staan in je workspace.",
@@ -2030,13 +2369,67 @@
     "stepPrivacy": "testee kan alleen in dat kanaal posten. Het kan je Slack niet lezen, en ontkoppelen verwijdert het."
   },
   "api": {
+    "firstKeyTitle": "Maak je eerste sleutel",
+    "sdkDocs": "SDK-documentatie bekijken",
+    "sdkReady": "Klaar: {count, plural, one {# site kan} other {# sites kunnen}} je interviews tonen.",
+    "sdkNotReady": "Nog niet ingesteld: voeg hieronder een site toe zodat die je interviews kan tonen.",
+    "sdkRules": "Pagina's moeten HTTPS gebruiken. Voeg één site toe, of al haar subdomeinen:",
+    "stepSite": "Voeg je site toe",
+    "stepCode": "Plak deze code in je pagina",
+    "stepSend": "Stuur kandidaten ernaartoe",
+    "stepSendText": "Je server nodigt een kandidaat uit met sign_in false en geeft de invite_url die hij terugkrijgt door aan je pagina. Zet je API-sleutel nooit in een pagina.",
+    "thisSite": "Deze site",
+    "allSubdomains": "Alle subdomeinen",
+    "localhostOn": "Aan: zet het uit voordat je live gaat.",
+    "firstWebhookTitle": "Voeg je eerste webhook toe",
+    "webhookSampleText": "testee stuurt een ondertekend verzoek als dit wanneer er iets gebeurt:",
+    "lastDelivered": "laatst bezorgd <time>{date}</time>",
+    "webhookStates": {
+      "paused": "Gepauzeerd",
+      "unused": "Nog niet gebruikt",
+      "active": "Actief"
+    },
+    "webhookEvents": {
+      "started": "Kandidaat is begonnen",
+      "finished": "Kandidaat is klaar",
+      "undelivered": "Kandidaat niet bereikt",
+      "expired": "Uitnodiging verlopen",
+      "removed": "Kandidaat verwijderd",
+      "ready": "Interview klaar"
+    },
+    "replaceKey": "Vervanger maken",
+    "activityTitle": "Activiteit",
+    "ipOpen": "Elk IP-adres kan deze sleutel gebruiken. Beperk hem tot de adressen van je servers om hem veiliger te maken.",
+    "summary": {
+      "status": "Status",
+      "access": "Toegang",
+      "lastUsed": "Laatst gebruikt",
+      "expires": "Verloopt",
+      "created": "Gemaakt"
+    },
+    "warnings": {
+      "expired": "Deze sleutel is verlopen, dus verzoeken ermee worden geweigerd. Maak een vervanger om door te gaan.",
+      "expiring": "Deze sleutel verloopt binnenkort. Maak een vervanger en stap over voordat hij niet meer werkt."
+    },
+    "exampleText": "Probeer het met dit verzoek, dat je credits opvraagt:",
+    "access": {
+      "read": "Alleen lezen",
+      "write": "Lezen en schrijven",
+      "custom": "Aangepast"
+    },
+    "states": {
+      "expired": "Verlopen",
+      "expiring": "Verloopt binnenkort",
+      "never_used": "Nooit gebruikt",
+      "active": "Actief"
+    },
     "name": "API",
     "rowName": "API, SDK, webhooks",
     "rowText": "Sleutels en webhooks om je eigen platform te koppelen.",
     "counts": "{keys, plural, one {# sleutel} other {# sleutels}} · {webhooks, plural, one {# webhook} other {# webhooks}}",
     "docs": "Ontwikkelaarsdocumentatie",
     "keysTitle": "API-sleutels",
-    "keysText": "Een sleutel handelt als de persoon die hem heeft gemaakt, en kan alleen wat zijn rechten toestaan.",
+    "keysText": "Een sleutel handelt namens je bedrijf, als zichzelf, en kan alleen wat zijn rechten toestaan.\nHij blijft werken wanneer de persoon die hem heeft gemaakt vertrekt.",
     "noKeys": "Nog geen sleutels.",
     "newKey": "Nieuwe sleutel",
     "newKeyTitle": "Nieuwe API-sleutel",
@@ -2064,7 +2457,7 @@
     "removeKeyTitle": "Deze sleutel verwijderen?",
     "removeKeyText": "Alles wat “<bdi>{name}</bdi>” gebruikt, werkt meteen niet meer.",
     "webhooksTitle": "Webhooks",
-    "webhooksText": "testee laat deze adressen weten wanneer een kandidaat begint of klaar is (met de resultaten), wanneer de uitnodiging een kandidaat niet bereikt of verloopt, wanneer een kandidaat wordt verwijderd en wanneer een interview klaarstaat. Elk verzoek is ondertekend met het secret van het adres.",
+    "webhooksText": "testee laat deze adressen weten wanneer een van deze gebeurtenissen plaatsvindt; elk verzoek is ondertekend met het geheim van het adres.",
     "noWebhooks": "Nog geen webhooks.",
     "failing": "Gepauzeerd: hij reageerde 3 dagen niet, dus er worden geen gebeurtenissen naar verstuurd. Een aangenomen testgebeurtenis zet hem weer aan.",
     "addWebhook": "Webhook toevoegen",
@@ -2151,7 +2544,6 @@
     "localhostText": "Om te testen op je eigen computer, elke poort. Zet het uit zodra je live bent.",
     "permissionsTitle": "Rechten",
     "permissionsText": "Wat deze sleutel mag. Wijzigingen worden meteen opgeslagen.",
-    "permissionsSaved": "Rechten opgeslagen.",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2631,15 @@
       "tools": "Tools",
       "frameworks": "Agentframeworks"
     },
+    "intro": "Verbind testee met je eigen platform, je server of een AI-agent.",
+    "endpointsText": "Elke route, naar wat hij bewerkt. Open er een om te zien wat hij nodig heeft, wat hij teruggeeft en welke fouten hij geeft.",
+    "apiPages": {
+      "start": "Aan de slag",
+      "guides": "Gidsen",
+      "endpoints": "Endpoints",
+      "errors": "Fouten",
+      "changelog": "Changelog"
+    },
     "englishOnly": "Deze pagina is alleen in het Engels.",
     "baseUrl": "Basis-URL",
     "copyBaseUrl": "URL kopiëren",
@@ -2275,6 +2676,7 @@
   },
   "assistant": {
     "title": "Mira · AI-assistent",
+    "name": "Mira",
     "company": "Bedrijf",
     "allCompanies": "Alle bedrijven",
     "newChat": "Nieuwe chat",
@@ -2331,7 +2733,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "Hoe testee werkt, wat het kost en wat kandidaten zien, beantwoord vanuit de veelgestelde vragen van testee. Log in om vragen te stellen over je bedrijven en kandidaten.",
+        "text": "Log in om vragen te stellen over je bedrijven en kandidaten.",
         "questions": {
           "what": "Wat is testee?",
           "pricing": "Wat kost het?",
@@ -2340,7 +2742,7 @@
         }
       },
       "no_company": {
-        "text": "Aan de slag: je eerste interview, je bedrijf en de verificatie ervan.",
+        "text": "Laten we je eerste interview op gang brengen.",
         "questions": {
           "firstInterview": "Maak mijn eerste interview",
           "createCompany": "Maak een bedrijf voor me aan",
@@ -2348,7 +2750,7 @@
         }
       },
       "unverified": {
-        "text": "Verifieer je bedrijf zodat kandidaten zien wie hen uitnodigt, en maak je interviews.",
+        "text": "Verifieer je bedrijf en maak je interviews.",
         "questions": {
           "verify": "Verifieer mijn bedrijf",
           "whyVerify": "Waarom mijn bedrijf verifiëren?",
@@ -2356,7 +2758,7 @@
         }
       },
       "no_interviews": {
-        "text": "Maak een interview van een vacaturetekst: de vragen worden voor de functie geschreven.",
+        "text": "Laten we je eerste interview maken.",
         "questions": {
           "fromDescription": "Maak een interview van een vacaturetekst",
           "template": "Maak een interview van een sjabloon",
@@ -2364,7 +2766,7 @@
         }
       },
       "no_candidates": {
-        "text": "Nodig kandidaten uit per e-mail, met een deelbare link of vanuit je ATS.",
+        "text": "Laten we je eerste kandidaten uitnodigen.",
         "questions": {
           "invite": "Nodig kandidaten uit",
           "shareLink": "Zet de deelbare link aan",
@@ -2372,7 +2774,7 @@
         }
       },
       "has_candidates": {
-        "text": "Vraag naar je kandidaten: wie er geslaagd is, hoe ze zich verhouden en wat hun resultaten betekenen.",
+        "text": "Vraag naar je kandidaten en hun resultaten.",
         "questions": {
           "passed": "Wie is deze week geslaagd?",
           "compare": "Vergelijk mijn beste kandidaten",
@@ -2494,7 +2896,27 @@
     "feedbackLink": "Neem contact op"
   },
   "companyBilling": {
-    "reservedTab": "Gereserveerd ({count, number})",
+    "reservedTab": "Gereserveerd",
+    "download": {
+      "open": "Geschiedenis downloaden",
+      "title": "Geschiedenis downloaden",
+      "description": "Kies een periode voor je CSV-bestand.",
+      "save": "Downloaden",
+      "failed": "Het bestand kon niet worden gemaakt. Probeer het opnieuw."
+    },
+    "lowText": "Je credits raken op. Waardeer op zodat er kandidaten kunnen blijven worden uitgenodigd.",
+    "summary": {
+      "available": "Beschikbare credits",
+      "candidates": "Gedekte kandidaten",
+      "reserved": "Gereserveerde credits",
+      "spent": "Deze maand uitgegeven credits"
+    },
+    "kinds": {
+      "all": "Alle",
+      "topups": "Opwaarderingen",
+      "charges": "Afschrijvingen",
+      "refunds": "Terugbetalingen"
+    },
     "reservedEmpty": "Er zijn geen kandidaten met gereserveerde credits.",
     "reservedNote": "Kandidaten die nog niet klaar zijn. Hun credits zijn gereserveerd: afgeschreven als ze antwoorden, anders teruggegeven.",
     "history": "Geschiedenis",
@@ -2521,7 +2943,19 @@
     "name": "MCP-server",
     "rowText": "Koppel Claude, ChatGPT en andere AI-apps aan testee.",
     "title": "AI-apps",
-    "subtitle": "Ze handelen namens jou, in elk bedrijf waar je lid van bent, met jouw rechten.",
+    "subtitle": "Ze handelen als jij, in elk bedrijf waar je lid van bent, met jouw rechten. Je geeft elke app toestemming op testee: er wordt nergens een sleutel geplakt.",
+    "connectedTitle": "Je apps",
+    "otherApps": "Overige",
+    "allowIn": "AI-apps toestaan in <bdi>{company}</bdi>",
+    "allowOn": "Leden kunnen de interviews en kandidaten van dit bedrijf gebruiken vanuit de AI-apps die ze hebben verbonden.",
+    "allowOff": "Uit: AI-apps kunnen niets lezen of wijzigen in dit bedrijf.",
+    "promptsTitle": "Probeer te vragen",
+    "promptCopied": "Gekopieerd",
+    "prompts": {
+      "passed": "Wie is er deze week geslaagd?",
+      "compare": "Vergelijk mijn beste kandidaten voor het interview Data Analyst.",
+      "invite": "Nodig ann@example.com uit voor het interview Data Analyst."
+    },
     "instructionsTitle": "Een AI-app aan testee koppelen",
     "serverTitle": "Serveradres",
     "serverText": "Plak het in je AI-app als aangepaste connector (een MCP-server).",
@@ -2679,6 +3113,10 @@
     "failed": "Het bestand kon niet worden geëxporteerd. Probeer het opnieuw."
   },
   "actionLog": {
+    "period": "Periode",
+    "periodAll": "Alle tijd",
+    "periodDays": "Laatste {days, number} dagen",
+    "periodCustom": "Aangepast",
     "empty": "Nog geen acties.",
     "noMatches": "Geen acties komen overeen met deze filters.",
     "formerMember": "Een voormalig lid",
@@ -2686,7 +3124,15 @@
     "deletedApiKey": "{via, select, mcp {Via MCP met een verwijderde sleutel} other {Via de API met een verwijderde sleutel}}",
     "deletedCandidate": "een verwijderde kandidaat",
     "anyMember": "Iedereen",
-    "anyAction": "Alle acties",
+    "anyAction": "Alle",
+    "clear": "Wissen",
+    "download": {
+      "open": "Log downloaden",
+      "title": "Log downloaden",
+      "description": "Kies een periode voor je CSV-bestand.",
+      "save": "Downloaden",
+      "failed": "Het bestand kon niet worden gemaakt. Probeer het opnieuw."
+    },
     "member": "Lid",
     "action": "Actie",
     "from": "Van",
@@ -2722,13 +3168,13 @@
       "candidate_deleted": "Verwijderde een kandidaat",
       "candidate_renamed": "Wijzigde de naam van een kandidaat",
       "extra_time_set": "Gaf een kandidaat extra tijd",
-      "candidate_mode_set": "Wijzigde de interviewmodus van een kandidaat",
       "results_viewed": "Bekeek de resultaten van een kandidaat",
       "report_emailed": "Mailde een rapport",
       "bias_audit_exported": "Exporteerde gegevens voor een bias-audit",
       "member_invited": "Nodigde een lid uit",
       "member_joined": "Werd lid van het bedrijf",
       "member_removed": "Verwijderde een lid",
+      "candidate_mode_set": "Wijzigde de interviewmodus van een kandidaat",
       "member_role_changed": "Wijzigde de rol van een lid",
       "ownership_transferred": "Droeg het bedrijf over aan een andere eigenaar",
       "company_renamed": "Hernoemde het bedrijf",
@@ -2751,6 +3197,7 @@
       "slack_notifications_changed": "Wijzigde de meldingen van Slack",
       "api_key_created": "Maakte een API-sleutel",
       "api_key_deleted": "Verwijderde een API-sleutel",
+      "api_key_renamed": "Hernoemde een API-sleutel",
       "api_key_permissions_changed": "Wijzigde de rechten van een API-sleutel",
       "api_key_ips_changed": "Wijzigde de toegestane IP's van een API-sleutel",
       "embed_domains_changed": "Wijzigde de toegestane domeinen",

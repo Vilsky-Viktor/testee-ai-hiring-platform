@@ -1,6 +1,10 @@
 {
   "settings": {
     "title": "Ayarlar",
+    "preferences": "Tercihler",
+    "accountId": "Hesap kimliği",
+    "deleteTitle": "Hesabı sil",
+    "deleteNote": "Hesabınızı ve verilerinizi kalıcı olarak siler.",
     "language": "Dil",
     "languageNote": "Arayüz ve yardım sohbetinin yanıtları için, ayrıca yeni mülakatların başladığı dil. Mülakatı desteklenen herhangi bir dilde oluşturabilirsiniz.",
     "languageFailed": "Dil değiştirilemedi. Lütfen tekrar deneyin.",
@@ -12,7 +16,7 @@
     "account": "Hesabınız",
     "accountNote": "Hesabınızla ilgili bize yazarken bu ID'yi belirtin.",
     "yourData": "Verileriniz",
-    "yourDataNote": "testee.'nın sizin hakkınızda tuttuğu her şeyi indirin veya hesabınızı silin.",
+    "yourDataNote": "testee'nin sizin hakkınızda tuttuğu her şeyi indirin.",
     "download": "Verilerimi indir",
     "downloadFailed": "Verileriniz hazırlanamadı. Lütfen tekrar deneyin.",
     "delete": "Hesabı sil",
@@ -50,7 +54,8 @@
     "system": "Sistem",
     "light": "Açık",
     "dark": "Koyu",
-    "topUp": "Kredi yükle"
+    "topUp": "Kredi yükle",
+    "workspace": "Çalışma alanım"
   },
   "nav": {
     "main": "Ana menü",
@@ -67,8 +72,12 @@
     "about": "Hakkımızda",
     "practice": "Ücretsiz pratik",
     "tests": "Beceri testleri",
-    "preEmploymentTesting": "İşe alım öncesi testler",
-    "aiInterviews": "Yapay zekâ mülakatları",
+    "createTest": "Test oluştur",
+    "footerProduct": "Ürün",
+    "footerResources": "Kaynaklar",
+    "footerCompany": "Şirket",
+    "footerLegal": "Yasal",
+    "footerTagline": "İş tanımınızdan hazırlanan adil, süreli mülakatlar.",
     "compare": "Karşılaştır",
     "guides": "Rehberler",
     "apiDocs": "Geliştirici belgeleri",
@@ -98,12 +107,14 @@
   "common": {
     "backToTop": "Başa dön",
     "morePages": "Diğer sayfalar",
+    "moreActions": "Diğer işlemler",
     "copyLink": "Bağlantıyı kopyala",
     "linkCopied": "Bağlantı kopyalandı",
     "home": "Ana sayfa",
     "cancel": "İptal",
     "save": "Kaydet",
     "saving": "Kaydediliyor…",
+    "saved": "Kaydedildi",
     "close": "Kapat",
     "delete": "Sil",
     "deleting": "Siliniyor…",
@@ -141,6 +152,7 @@
   "errors": {
     "title": "Bir şeyler ters gitti",
     "text": "Lütfen tekrar deneyin. Sorun sürerse daha sonra tekrar gelin.",
+    "reference": "Referans: {id}",
     "notFound": "Sayfa bulunamadı",
     "notFoundText": "Bu sayfa yok ya da kaldırıldı.",
     "report": "Bildir",
@@ -152,16 +164,16 @@
   },
   "home": {
     "title": "Herkesi test edin\nEn iyisini işe alın",
-    "text": "Yapay zekâ, iş tanımınızı profesyonel, süreli bir mülakata dönüştürür.",
-    "price": "Aday başına yalnızca {price}."
+    "text": "Yapay zekâ, iş tanımınızı profesyonel, süreli bir mülakata dönüştürür."
   },
   "start": {
     "placeholder": "İş tanımınızı buraya yapıştırın…",
     "description": "İş tanımı",
     "submit": "Mülakat oluştur",
+    "newInterview": "Yeni mülakatınız",
     "whichCompany": "Bu mülakat hangi şirket için?",
     "firstCompany": "Şirketinizin adı ne?",
-    "newCompany": "Yeni bir şirket",
+    "newCompany": "Yeni şirket",
     "companyName": "Şirket adı",
     "freeCandidates": "İlk şirketiniz {count, plural, one {ilk adayıyla} other {ilk # adayıyla}} ücretsiz mülakat yapar.",
     "continue": "Devam et",
@@ -632,6 +644,8 @@
       "LINK_STARTS_PER_HOUR": "Bir mülakatın bağlantısıyla saatlik başlatma",
       "LINK_STARTS_PER_IP_HOUR": "Adres başına saatlik bağlantıyla başlatma",
       "BIAS_AUDIT_EXPORTS_PER_DAY": "Şirket başına günlük yanlılık denetimi dışa aktarımı",
+      "ACTION_LOG_EXPORTS_PER_DAY": "Şirket başına günlük işlem günlüğü indirme sayısı",
+      "CREDIT_HISTORY_EXPORTS_PER_DAY": "Şirket başına günlük kredi geçmişi indirme sayısı",
       "MAX_BULK_INVITES": "Tek liste veya dosyadaki aday sayısı",
       "MAX_PENDING_INVITES": "Şirket başına bekleyen ekip davetleri",
       "MEMBER_INVITES_PER_UNPAID_DAY": "Ödeme yapmayan şirket başına günlük ekip daveti",
@@ -673,6 +687,7 @@
       "ATS_CALLS_PER_COMPANY_MINUTE": "Şirket başına dakikalık şirketin ATS'sine yapılan çağrı",
       "ATS_WEBHOOKS_PER_IP_MINUTE": "Gönderen adres başına dakikalık ATS webhook'u",
       "ATS_CONNECTS_PER_HOUR": "Şirket başına saatlik ATS bağlantısı",
+      "SLACK_TESTS_PER_COMPANY_HOUR": "Şirket başına saatlik Slack test mesajı sayısı",
       "RESEND_DAILY_LIMIT": "Resend üzerinden günlük e-posta",
       "RESEND_RESERVE_PERCENT": "Resend üzerinden günlük e-postaların toplu gönderimlere ayrılmayan payı",
       "CAMPAIGNS_PER_KIND_DAY": "Her türden günlük kampanya",
@@ -775,7 +790,9 @@
     "useFailed": "Bu şablondan mülakat başlatılamadı. Lütfen tekrar deneyin.",
     "inProgress": "devam ediyor: {done}/{total, plural, one {# konu} other {# konu}}",
     "completed": "tamamlandı",
-    "warningText": "<b>Şablonlar yaygın pozisyonlar için hazırdır.</b> Daha iyi bir uyum için iş tanımınızdan bir mülakat oluşturun."
+    "warningText": "<b>Daha uygun bir test mi istiyorsunuz?</b> İş tanımınızdan bir mülakat oluşturun.",
+    "contents": "{topics, plural, one {# konu} other {# konu}}, {questions, plural, one {# soru} other {# soru}}, {minutes, plural, one {# dk} other {# dk}}",
+    "usedIn": "{count, plural, one {# mülakatta kullanıldı} other {# mülakatta kullanıldı}}"
   },
   "billing": {
     "paidTitle": "Ödeme alındı",
@@ -808,6 +825,10 @@
     "paysInChange": "Para birimini değiştir",
     "candidates": "{count, plural, one {# aday} other {# aday}}",
     "perCandidate": "{price}<unit>/aday</unit>",
+    "enough": "{count, plural, one {# aday} other {# aday}} için yeterli",
+    "pay": "{price} öde",
+    "quote": "{count, plural, one {# aday} other {# aday}}, aday başına {price}, {credits, number} kredi",
+    "nextPrice": "{count, plural, one {# aday} other {# aday}} daha ve her biri {price}",
     "howMany": "Yüklenecek aday sayısı",
     "credits": "{count, plural, one {# kredi} other {# kredi}}",
     "candidatesWord": "{count, plural, one {aday} other {aday}}",
@@ -863,6 +884,19 @@
     "markedWrong": "Teşekkürler. Kontrol ediliyor; düzeltilecek veya değiştirilecek.",
     "markWrongFailed": "Kontrole gönderilemedi. Lütfen tekrar deneyin.",
     "ofCount": "/ {count, number}",
+    "perCandidate": "Aday başına soru sayısı",
+    "limitShort": "Aday başına soru",
+    "topicsColumn": "Konular ve alt konular",
+    "limitLine": "Aday başına {count, number} sorudan {limit, number} tanesi",
+    "noMatches": "Burada soru yok.",
+    "summary": {
+      "total": "Sorular"
+    },
+    "filters": {
+      "all": "Tümü",
+      "reported": "Bildirilenler"
+    },
+    "disabledCount": "{count, plural, one {# soru devre dışı} other {# soru devre dışı}}",
     "per": "her",
     "candidate": "aday",
     "correct": "Doğru cevap",
@@ -920,6 +954,10 @@
     "voiceYourTurn": "Sıra sizde",
     "voiceThinking": "Düşünüyor",
     "miraLabel": "Yapay zekâ mülakatçısı",
+    "voiceHeardAnswer": "{answer} duydum.",
+    "questionOf": "Soru {number, number} / {count, number}",
+    "answeredOf": "{done, number} / {total, number}",
+    "keysHint": "Seçmek için A–{last} tuşlarına, sonraki soru için Enter'a basın.",
     "voiceStatus": {
       "off": "Mira hazırlanıyor…",
       "starting": "Mira hazırlanıyor…",
@@ -962,9 +1000,11 @@
     "cancelling": "İptal ediliyor…",
     "cancelFailed": "Oluşturma iptal edilemedi. Lütfen tekrar deneyin.",
     "writing": "Sorularınız oluşturuluyor",
-    "drafting": "Konularınız taslak hâline getiriliyor",
-    "writingNote": "Bu birkaç dakika sürer. Bu sayfadan çıkabilirsiniz; biz devam ederiz.",
-    "draftingNote": "Hedefinizi okuyup neyin ele alınacağını planlıyoruz.",
+    "drafting": "Konularınız hazırlanıyor",
+    "writingNote": "Bu birkaç dakika sürer. Bu sayfadan ayrılabilirsiniz; hazır olduğunda size haber vereceğiz.",
+    "draftingNote": "İş tanımınızı okuyoruz. Sorular yazılmadan önce konuları gözden geçireceksiniz. Bu sayfadan ayrılabilirsiniz; biz devam ediyoruz.",
+    "finishing": "Sorular kontrol edilip kaydediliyor…",
+    "goToInterviews": "Mülakatlara git",
     "topicsReady": "{count, plural, one {# konudan} other {# konudan}} {ready, number} tanesi hazır",
     "reviewFailed": "İncelemeniz gönderilemedi. Lütfen tekrar deneyin.",
     "retryFailed": "Oluşturma yeniden denenemedi. Lütfen tekrar deneyin.",
@@ -982,13 +1022,18 @@
     "add": "Ekle",
     "done": "Tamam",
     "reviewTitle": "Konularınızı inceleyin",
-    "reviewText": "İhtiyacınız olmayan konuların işaretini kaldırın, düzenleyin veya değişiklikleri anlatın. Her konunun cevaplı kendi soru seti olur.",
+    "reviewText": "Her konu için cevaplarıyla birlikte ayrı bir soru seti hazırlanır.",
     "editTopic": "<bdi>{topic}</bdi> öğesini düzenle",
-    "changesPlaceholder": "İsteğe bağlı: değişiklikleri anlatın, ör. “Ekip liderliği hakkında bir konu ekle”",
-    "changes": "Konulardaki değişiklikler",
+    "changesPlaceholder": "ör. “Takım liderliği konusu ekle”",
+    "changes": "Yapay zekadan konuları değiştirmesini isteyin",
     "tooMany": "En fazla {max, number} konu seçin veya nasıl birleştirileceklerini anlatın.",
     "apply": "Değişiklikleri uygula",
     "approve": "Onayla ve oluştur",
+    "topicsChosen": "{count, plural, one {# konudan} other {# konudan}} {chosen, number} tanesi seçildi",
+    "applyFirst": "Önce değişikliğinizi uygulayın veya kutuyu temizleyin.",
+    "subtopicsNeeded": "En az {count, plural, one {# alt konu} other {# alt konu}} ekleyin.",
+    "addTopic": "Konu ekle",
+    "removeTopic": "Kaldır",
     "topicNameNeeded": "Konuya bir ad verin."
   },
   "candidateStatus": {
@@ -1013,6 +1058,14 @@
     "title": "Şirketler",
     "empty": "Henüz şirket yok.",
     "owner": "Sahibi",
+    "search": "Şirket ara",
+    "interviewsShort": "{count, plural, one {<n></n> mülakat} other {<n></n> mülakat}}",
+    "membersShort": "{count, plural, one {<n></n> üye} other {<n></n> üye}}",
+    "status": {
+      "low": "Krediler azalıyor",
+      "verify": "Şirketinizin doğrulamasını tamamlayın",
+      "finished": "Bu hafta {count, plural, one {<n></n> aday} other {<n></n> aday}} bitirdi"
+    },
     "interviewCount": "{count, plural, one {# mülakat} other {# mülakat}}",
     "memberCount": "{count, plural, one {# üye} other {# üye}}",
     "interviews": "Mülakatlar",
@@ -1024,6 +1077,8 @@
     "brand": "Marka",
     "billing": "Faturalandırma",
     "new": "Yeni şirket",
+    "newText": "Her şirketin kendi mülakatları, ekibi ve kredileri vardır.",
+    "namePlaceholder": "ör. Acme",
     "name": "Şirket adı",
     "create": "Oluştur",
     "createFailed": "Şirket oluşturulamadı. Lütfen tekrar deneyin.",
@@ -1066,11 +1121,23 @@
     "pageLeaves": "{count, plural, one {# sayfadan ayrılma} other {# sayfadan ayrılma}}",
     "copies": "{count, plural, one {# kopyalama girişimi} other {# kopyalama girişimi}}",
     "fastAnswers": "{count, plural, one {# hızlı cevap} other {# hızlı cevap}}",
+    "extraTimeLabel": "Ek süre",
+    "summary": {
+      "result": "Sonuç",
+      "timeTaken": "Geçen süre",
+      "signals": "Bütünlük sinyalleri",
+      "invited": "Davet edildi",
+      "finished": "Bitirdi",
+      "passed": "Geçti",
+      "average": "Ortalama not"
+    },
+    "copyLinkFailed": "Bağlantı kopyalanamadı. Lütfen tekrar deneyin.",
     "empty": "Henüz davet edilen aday yok.",
     "noMatches": "Eşleşen aday yok.",
     "search": "Adayları e-postaya veya ada göre ara",
     "status": "Durum: {status}",
     "anyStatus": "her durum",
+    "allStatuses": "Tümü",
     "progress": "İlerleme",
     "grade": "Not",
     "resend": "Daveti yeniden gönder",
@@ -1107,6 +1174,17 @@
   },
   "interviews": {
     "title": "Mülakatlar",
+    "allStatuses": "Tümü",
+    "candidatesShort": "{count, plural, one {<n></n> aday} other {<n></n> aday}}",
+    "finishedShort": "<n></n> bitirdi",
+    "passedShort": "<n></n> geçti",
+    "rowStatus": {
+      "failed": "Tekrar denemek için açın",
+      "generating": "Oluşturuluyor",
+      "undelivered": "{count, plural, one {<n></n> davet} other {<n></n> davet}} iletilemedi",
+      "finished": "Bu hafta {count, plural, one {<n></n> aday} other {<n></n> aday}} bitirdi",
+      "ready": "Hazır: ilk adaylarınızı davet edin"
+    },
     "interview": "Mülakat",
     "topicsTab": "Konular",
     "candidates": "Adaylar",
@@ -1114,6 +1192,8 @@
     "notesEmpty": "Henüz yorum yok. Ekibiniz için ilkini yazın.",
     "discover": "Keşfet",
     "discoverLinkedIn": "LinkedIn profili: {name}",
+    "discoverLinkedInLabel": "LinkedIn",
+    "discoverEmptyHint": "İnsanlar bu konularda pratik yaptıkça ve tekliflere açık olmayı seçtikçe burada görünür.",
     "discoverText": "Bu mülakatın konularında pratik yapmış, iş tekliflerine açık kişiler. En yeniler önce; derecelendirme yapılmaz.",
     "discoverEmpty": "İş tekliflerine açık kimse henüz bu mülakatın konularında pratik yapmadı.",
     "discoverResults": "Pratik sonuçları",
@@ -1130,6 +1210,8 @@
     "notePosting": "Paylaşılıyor…",
     "noteEdited": "düzenlendi",
     "notePinned": "Sabitlendi",
+    "noteShowMore": "Daha fazla göster",
+    "noteShowLess": "Daha az göster",
     "notePin": "En üste sabitle",
     "noteUnpin": "Sabitlemeyi kaldır",
     "noteFormerMember": "Eski üye",
@@ -1139,8 +1221,20 @@
     "noteFailed": "Yorum kaydedilemedi. Lütfen tekrar deneyin.",
     "new": "Yeni mülakat",
     "createTitle": "Mülakat oluştur",
+    "createIntro": "Bir iş tanımı yapıştırın. Sorular yazılmadan önce konuları gözden geçirirsiniz ve bu ücretsizdir.",
+    "steps": {
+      "describe": "Pozisyonu tanımlayın",
+      "review": "Konuları gözden geçirin",
+      "invite": "Adayları davet edin"
+    },
+    "startTemplate": "Şablondan başla",
+    "startAts": "ATS'nizdeki bir ilandan başla",
+    "tryExample": "Örnek deneyin",
     "try": "Aday olarak dene",
     "newCandidate": "Yeni aday(lar)",
+    "settingsSharing": "Paylaşım",
+    "settingsRuns": "Nasıl çalışır",
+    "settingsAfter": "Sonrası ve gizlilik",
     "linkTitle": "Paylaşılabilir bağlantı",
     "linkText": "İş ilanı için: bağlantıya sahip herkes mülakata girebilir. Her kişi, davet edilen bir aday gibi ücretlendirilir.",
     "linkFailed": "Bağlantı değiştirilemedi. Lütfen tekrar deneyin.",
@@ -1160,7 +1254,7 @@
     "generating": "Oluşturuluyor…",
     "generationFailed": "Oluşturma başarısız oldu",
     "fallbackTitle": "mülakat",
-    "continueGeneration": "Oluşturmaya devam et",
+    "continueGeneration": "Devam et",
     "empty": "Henüz mülakat yok. İlkini oluşturun.",
     "noMatches": "Eşleşen mülakat yok.",
     "search": "Mülakatları başlığa göre ara",
@@ -1187,12 +1281,12 @@
     "candidateEmail": "Adayın e-postası",
     "inviteTab": {
       "one": "tek",
-      "many": "çoklu",
-      "file": "yükle"
+      "many": "liste",
+      "file": "dosya"
     },
-    "manyHint": "Her satıra bir aday, ad soyadlı ya da adsız,\ntek seferde en fazla {count, number}:",
-    "manyHintNoLimit": "Her satıra bir aday, ad soyadlı ya da adsız:",
-    "example": "örnek",
+    "inviteTitle": "Adayları davet edin",
+    "manyHint": "Her satıra bir aday, adla veya adsız, tek seferde en fazla {count, number} kişi.",
+    "manyHintNoLimit": "Her satıra bir aday, adla veya adsız.",
     "uploadFile": "Dosya yükle",
     "fileFormats": "CSV veya TXT, en fazla {count, number} aday. Ad soyadlar ayrı bir sütunda ya da her e-postanın yanında olabilir.",
     "fileFormatsNoLimit": "CSV veya TXT. Ad soyadlar ayrı bir sütunda ya da her e-postanın yanında olabilir.",
@@ -1203,8 +1297,7 @@
       "unclear_name": "Adı Ad Soyad '<e-posta>' biçiminde yazın: <bdi>{line}</bdi>",
       "more": "ve {count, number} tane daha"
     },
-    "exampleCsv": "örnek .csv",
-    "exampleTxt": "örnek .txt",
+    "exampleFiles": "Örnek indirin: <csv>.csv</csv> veya <txt>.txt</txt>",
     "candidateName": "Ad soyad (isteğe bağlı)",
     "invitedMany": "{count, number} aday davet edildi",
     "skip": {
@@ -1216,13 +1309,11 @@
     },
     "whatsNext": {
       "title": "Tebrikler, mülakatınız hazır",
-      "text": "<name><bdi>{title}</bdi></name> adaylar için hazır. Sıradaki adımlar:",
-      "limits": "Her adayın konu başına kaç soru alacağını belirleyin.",
+      "text": "<name><bdi>{title}</bdi></name> hazır. Kimseyi davet etmeden önce kendiniz deneyin, gerekirse düzenleyin.",
+      "limits": "Her aday her konudan kaç soru alır.",
       "limitsAction": "Soruları belirle",
-      "time": "Gerekirse soru başına ortalama süreyi ayarlayın.",
-      "timeAction": "Ayarları aç",
-      "invite": "Adayları davet edin.",
-      "inviteAction": "Adaylara git",
+      "time": "Soru başına ortalama süre.",
+      "timeAction": "Süreyi ayarla",
       "done": "Anladım"
     }
   },
@@ -1252,7 +1343,21 @@
     "extraTimeLink": "Örneğin bir engel nedeniyle daha fazla süreye mi ihtiyacınız var? Başlamadan önce <bdi>{company}</bdi> ekibinden kişisel bir davet isteyin: burada süre eklenemez.",
     "people": "Sorular yapay zekâ tarafından yazılır. Sonuçları <bdi>{company}</bdi> ekibindeki kişiler inceler ve karar verir; sizinkini incelemelerini isteyebilirsiniz.",
     "stay": "Bu sayfada kalın: sayfadan ayrılmak, kopyalamak ve soruyu okuyamayacak kadar hızlı cevap vermek kaydedilir; şirket de cevap süreleriniz veya cevaplarınız soruların zorluğuyla uyuşmadığında bunu görür (<link>gizlilik</link>).",
-    "finished": "Bu mülakat zaten bitti.",
+    "finishedTitle": "Tamamladınız",
+    "finished": "Cevaplarınız <bdi>{company}</bdi> şirketine ulaştı. Sonuçları inceleyip sonraki adımlara karar verecekler.",
+    "finishedPreview": "Adaylarınız bunu görür. Bu ücretsiz deneme aday listenizde yer almaz ve cevapları soruların istatistiklerine sayılmaz.",
+    "finishedRights": "<bdi>{company}</bdi> şirketinden sonucunuzun bir insan tarafından incelenmesini isteyebilirsiniz. <link>Gizlilik</link>",
+    "finishedAnswered": "Cevaplanan sorular",
+    "finishedTime": "Geçen süre",
+    "signInAs": "Bu davetin gönderildiği e-postayı kullanın.",
+    "switchAccount": "Hesap değiştir",
+    "progress": "Sürecin {percent} kadarını tamamladınız.",
+    "progressLabel": "İlerlemeniz",
+    "groups": {
+      "how": "Nasıl işler",
+      "time": "Süreniz",
+      "rights": "Haklarınız ve gizlilik"
+    },
     "continue": "Devam et",
     "start": "Kabul et ve başla",
     "pledge": "Soruları yapay zekâ araçları veya başkalarının yardımı olmadan kendim yanıtlayacağım.",
@@ -1264,6 +1369,10 @@
   "members": {
     "joined": "Katıldı",
     "invited": "Davet edildi",
+    "joinedOn": "Katılma tarihi: {date}",
+    "invitedOn": "Davet tarihi: {date}",
+    "pendingTitle": "Bekleyen davetler",
+    "firstTitle": "İlk ekip arkadaşınızı davet edin",
     "role": "Rol",
     "roleFailed": "Rol değiştirilemedi.",
     "inviteTitle": "Şirket daveti",
@@ -1281,6 +1390,11 @@
     "madeOwner": "<bdi>{email}</bdi> artık şirketin sahibi."
   },
   "scorecard": {
+    "filters": {
+      "all": "Tümü",
+      "correct": "Doğru",
+      "wrong": "Yanlış"
+    },
     "timeOut": "Süre doldu",
     "leftPage": "Sayfadan {count, plural, one {# kez} other {# kez}} ayrıldı",
     "answeredIn": "<b>{time}</b> içinde cevapladı",
@@ -1298,7 +1412,7 @@
     "test": "Mülakat oluşturma",
     "free": "Ücretsiz",
     "candidate": "En az bir soruyu cevaplayan her aday",
-    "candidateVolume": "{from} veya üzeri bir yüklemeden gelen kredilerle",
+    "candidateVolume": "{from} ve üzeri yüklemelerde",
     "perCandidate": "Aday başına {price}",
     "welcome": "{count, plural, one {İlk adayınız} other {İlk # adayınız}}",
     "credits": "Bir aday {credits, number} kredi tutar ve krediler hiç sona ermez.",
@@ -1306,6 +1420,10 @@
     "referralsNote": "Şirketinizin bağlantısını şirketin davetler sekmesinden paylaşın.",
     "companyReferral": "Davet ettiğiniz bir şirket ilk yüklemesini yapar",
     "each": "her birine {count, number} kredi",
+    "fromPrice": "{price} değerinden başlayan",
+    "anyTopUp": "Her yüklemede",
+    "volumeTitle": "Büyük yüklemelerde aday daha ucuza gelir",
+    "volumeText": "Yükleme büyüdükçe aday başına maliyet düşer.",
     "topUp": "Kredi yükle"
   },
   "site": {
@@ -1330,7 +1448,7 @@
     "metaTitle": "İşe alım için mevzuata uyum belgeleri",
     "intro": "Adayları testee ile değerlendiren şirketler için belgeler: talimatlar, şablonlar ve veri işleme sözleşmesi.",
     "englishOnly": "Bu belgeler yalnızca İngilizce olarak mevcuttur.",
-    "download": "{format} indir",
+    "download": "<type>{format}</type> indir",
     "readOnline": "Çevrimiçi oku",
     "items": {
       "instructions": {
@@ -1384,6 +1502,20 @@
     "label": "Oluşturma dili"
   },
   "referral": {
+    "title": "İkiniz de <n></n> kredi kazanırsınız",
+    "text": "Bu, {count, plural, one {# aday} other {# aday}} için yeterli. Bağlantınızı başka bir şirketle paylaşın.",
+    "empty": "Henüz ödül yok. İlkini kazanmak için bağlantınızı paylaşın.",
+    "steps": {
+      "share": "Bağlantınızı başka bir şirketle paylaşın.",
+      "create": "Şirketlerini bu bağlantıyla oluştururlar.",
+      "reward": "İlk kredi yüklemelerinden sonra, tutarı ne olursa olsun, ikiniz de kredileri kazanırsınız."
+    },
+    "summary": {
+      "referred": "Davet edilen şirketler",
+      "earned": "Kazanılan krediler",
+      "left": "Bu yıl kalan ödüller",
+      "leftValue": "{total, number} ödülden {left, number} tanesi"
+    },
     "companyNote": "İlk yüklemelerini yaptıklarında, tutar ne olursa olsun, ikiniz de {reward, number} kredi kazanırsınız.",
     "deletedCompany": "Silinmiş bir şirket",
     "credits": "+{count, number} kredi",
@@ -1398,53 +1530,39 @@
     "intro": "Bir aday {credits, number} kredi tutar ve krediler hiç sona ermez.",
     "noCompany": "Krediler bir şirkete aittir. Önce şirketinizi oluşturun, sonra burada kredi yükleyin.",
     "createCompany": "Şirket oluştur",
+    "allCompanies": "Tüm şirketler",
     "pricing": "Fiyatlar"
   },
   "landing": {
-    "more": "Nasıl çalışır",
     "demos": "Video",
-    "videoTooltip": "testee'nin nasıl çalıştığını izleyin",
     "watchVideo": "Videoyu izle",
     "howItWorks": "Nasıl çalışır",
     "askAgent": "Mira'ya sor",
     "create": {
+      "draftingNote": "İş tanımınız okunuyor.",
       "title": "Dakikalar içinde mülakat oluşturun",
       "text": "Bir iş tanımı yapıştırın, konuları düzenleyin; mülakatınız dakikalar içinde hazır.",
       "notes": {
-        "questions": "konu başına {count, number} soru",
         "templates": "hazır şablonlar mevcut",
         "expert": "alan uzmanı gerekmez"
       },
-      "describe": "<n>1.</n> İş tanımınızı yapıştırın",
+      "describe": "<n>1.</n> Tanımı yapıştırın",
       "adjust": "<n>2.</n> Konuları düzenleyin",
       "menu": {
-        "cut": "Kes",
-        "copy": "Kopyala",
         "paste": "Yapıştır"
       },
-      "ready": "<n>3.</n> Mülakatınız hazır",
-      "invited": "<n>4.</n> Aday daveti alır",
+      "ready": "<n>3.</n> Mülakat hazır",
+      "invited": "<n>4.</n> Davet ulaştı",
       "status": "Hazır",
       "email": {
-        "search": "Postalarda ara",
-        "compose": "Oluştur",
         "inbox": "Gelen Kutusu",
-        "starred": "Yıldızlı",
-        "sent": "Gönderilenler",
-        "drafts": "Taslaklar",
         "from": "testee.",
-        "toMe": "bana",
         "now": "şimdi",
         "subject": "{company} mülakat daveti",
-        "preheader": "testee'de “{title}” mülakatına katılın. Başlamak için {email} ile giriş yapın.",
         "heading": "Mülakat daveti",
         "invited": "<b>{company}</b> sizi testee'deki “{title}” mülakatına davet ediyor.",
         "signIn": "Başlamak için {email} ile giriş yapın. Mülakata yalnızca bu adres katılabilir ve tek bir hakkınız var.",
-        "button": "Daveti aç",
-        "pasteLink": "Ya da bu bağlantıyı tarayıcınıza yapıştırın",
-        "footer": "Bu e-posta {email} adresine, biri bu adresi testee'ye davet ettiği için gönderildi. Beklemiyorsanız görmezden gelebilirsiniz.",
-        "stopCompany": "{company} adına bana e-posta gönderme",
-        "operator": "testee, {name} tarafından işletilir, {address}."
+        "button": "Daveti aç"
       },
       "phone": {
         "describe": "Bir iş tanımı yapıştırın ya da pozisyon hakkında birkaç kelime yazın.",
@@ -1620,11 +1738,11 @@
       "cards": {
         "person": {
           "title": "Kararı bir insan verir",
-          "text": "Puan kararınızı destekler, kararı vermez. Dürüstlük uyarıları kanıt değil, daha yakından bakmak için bir nedendir."
+          "text": "Puan kararınıza yardımcı olur. Bütünlük sinyalleri daha yakından bakmak için bir nedendir, kanıt değildir."
         },
         "fair": {
           "title": "Her adaya adil",
-          "text": "Aynı süre ve aynı soru türü karışımı, her kişi için rastgele seçilen sorular, ihtiyacı olanlara ek süre."
+          "text": "Herkes için aynı zamanlayıcı ve soru dağılımı, rastgele seçilen sorular, ihtiyacı olanlar için ek süre."
         },
         "laws": {
           "title": "Uyumluluk için tasarlandı",
@@ -1632,7 +1750,7 @@
         },
         "log": {
           "title": "Her işlem kayıt altında",
-          "text": "Şirket sahibi, şirkette kimin ne yaptığını görür; kayıtlar AB sunucularında 12 ay boyunca güvenle saklanır."
+          "text": "Bir sahip kimin ne yaptığını görür; kayıtlar AB sunucularında 12 ay saklanır."
         }
       }
     },
@@ -1640,9 +1758,7 @@
       "title": "Başka sorunuz mu var?",
       "videos": "videolar",
       "faq": "SSS",
-      "guides": "rehberler",
-      "features": "özellikler",
-      "hiringFlow": "işe alım süreci"
+      "guides": "rehberler"
     },
     "closing": {
       "title": "İlk mülakatınızı oluşturun\nÜcretsiz",
@@ -1672,7 +1788,8 @@
         "time": "Pozisyon başına ~10 dk, aday başına sıfır",
         "cost": "Yanıt veren aday başına {price}"
       },
-      "more": "Diğer araçlarla karşılaştırın"
+      "more": "Diğer araçlarla karşılaştırın",
+      "best": "En iyi seçim"
     },
     "freeToStart": {
       "title": "Her şey ücretsiz\nAday başına ödeyin",
@@ -1689,6 +1806,7 @@
       "each": "(aday başına {price})",
       "free": "Başlangıç için {count, plural, one {# ücretsiz aday} other {# ücretsiz aday}}",
       "perCandidate": "aday başına",
+      "bestPrice": "En iyi fiyat",
       "pack": "{count, number} aday: {price}",
       "see": "Fiyatları görün",
       "notes": {
@@ -1698,11 +1816,163 @@
         "refund": "kullanılmayan ücretli krediler iade edilebilir"
       },
       "currencies": "{count, plural, one {# para birimi} other {# para birimi}}"
+    },
+    "demoContent": {
+      "create": {
+        "description": "Acme, online mağazaların müşterilerine yapay zekâ ile cevap vermesine yardımcı oluyor.\nLLM özelliklerimizi geliştirecek bir Yapay Zekâ Mühendisi arıyoruz.\n• En az 3 yıl Python deneyimi\n• LLM uygulamaları, RAG ve vektör arama\n• Model değerlendirme ve izleme\nUzaktan çalışma, esnek saatler, eğitim bütçesi.",
+        "title": "Yapay Zekâ Mühendisi",
+        "topics": {
+          "llm": {
+            "name": "LLM temelleri",
+            "subtopics": ["Token'lar", "Prompt yazımı", "Bağlam penceresi"]
+          },
+          "rag": {
+            "name": "Bilgi getirme destekli üretim (RAG)",
+            "subtopics": [
+              "Embedding'ler",
+              "Parçalama (chunking)",
+              "Vektör arama"
+            ]
+          },
+          "python": {
+            "name": "Python ile ML sistemleri",
+            "subtopics": ["asyncio", "Tip ipuçları"]
+          }
+        },
+        "renamed": " ve ölçeklenebilirlik",
+        "subtopicAdded": " ve test",
+        "change": "LLM çıktılarını değerlendirme üzerine bir konu ekleyin",
+        "newTopic": {
+          "name": "LLM değerlendirmesi",
+          "subtopics": ["Test setleri", "Hakem olarak LLM", "Metrikler"]
+        }
+      },
+      "candidates": {
+        "title": "Veri Analisti",
+        "questions": {
+          "median": {
+            "topic": "İstatistik",
+            "text": "Birkaç çok büyük sipariş ortalama sipariş tutarınızı çarpıtıyor. Tipik bir siparişi en iyi hangi ölçü tanımlar?",
+            "options": [
+              "Sipariş tutarlarının ortalaması",
+              "Sipariş tutarlarının medyanı",
+              "Sipariş tutarlarının açıklığı",
+              "Sipariş tutarlarının standart sapması"
+            ]
+          },
+          "revenue": {
+            "topic": "İstatistik",
+            "text": "Panonuzdaki haftalık gelir, bir veri hattı (pipeline) değişikliğinin hemen ardından %20 düştü. İlk olarak hangi kontrolleri yaparsınız?",
+            "options": [
+              "Değişiklikten önceki ve sonraki satır sayılarını karşılaştırmak",
+              "Tekrarlanan veya eksik tarihleri aramak",
+              "Panonun renk düzenini değiştirmek",
+              "Satış ekibine müşterilerin alışverişi bırakıp bırakmadığını sormak"
+            ]
+          },
+          "sql": {
+            "topic": "SQL",
+            "text": "Pazarlama ekibi, toplam satışı 100'ü geçen bölgeleri istiyor. Bu sorgu ne döndürür?",
+            "options": [
+              "Yalnızca North",
+              "Yalnızca South",
+              "North ve South",
+              "Hiç satır dönmez"
+            ]
+          },
+          "chart": {
+            "topic": "Görselleştirme",
+            "text": "Son iki yılda aylık kayıtların nasıl değiştiğini göstermeniz gerekiyor. Bu eğilimi en iyi hangi grafik gösterir?",
+            "options": [
+              "Aylara göre kayıtların pasta grafiği",
+              "Aylara göre kayıtların çizgi grafiği",
+              "Kayıtların gelire göre dağılım grafiği",
+              "Aylık kayıt sayılarının histogramı"
+            ]
+          }
+        }
+      },
+      "reports": {
+        "title": "Ürün Yöneticisi",
+        "topics": [
+          "Ürün stratejisi",
+          "Metrikler",
+          "Paydaşlar",
+          "Yol haritası",
+          "Kullanıcı araştırması",
+          "Önceliklendirme",
+          "Deneyler",
+          "Fiyatlandırma",
+          "Pazara giriş",
+          "İletişim"
+        ],
+        "questions": {
+          "strategy": {
+            "text": "Yeni bir özellik geliştirmeden önce ilk ne yapılmalı?",
+            "options": [
+              "Problemi kullanıcılarla doğrulamak",
+              "Teknik şartnameyi yazmak",
+              "Lansman tarihini belirlemek",
+              "Ekranları tasarlamak"
+            ]
+          },
+          "metrics": {
+            "text": "Dönüşüm oranı %4'ten %3'e düştü. Bu, önceki değere göre ne kadarlık bir düşüş?",
+            "options": ["%1", "%25", "%33", "%75"]
+          },
+          "stakeholders": {
+            "text": "Paydaş bir ekip önceliklerinize katılmıyor. İlk olarak ne yaparsınız?",
+            "options": [
+              "Konuyu yöneticinize taşırsınız",
+              "Neye ihtiyaç duyduklarını ve nedenini sorarsınız",
+              "Planınızı olduğu gibi korursunuz",
+              "Önceliklerinizden vazgeçersiniz"
+            ]
+          }
+        },
+        "chat": {
+          "name": "İşe alım ekibi",
+          "initials": "İE"
+        },
+        "notes": [
+          "İşe alım yöneticisi cumaya kadar iki kişilik kısa liste istiyor.",
+          "Daniel telefon görüşmesinde paydaş yönetiminde güçlüydü; metriklerde daha zayıf.",
+          "Sofia ek süre istedi; yarın kendisiyle görüşeceğim."
+        ],
+        "pdf": "urun-yoneticisi-adaylari.pdf"
+      },
+      "slack": {
+        "channels": ["genel", "ise-alim", "muhendislik"],
+        "channelsTitle": "Kanallar",
+        "peopleTitle": "Doğrudan mesajlar",
+        "appsTitle": "Uygulamalar",
+        "app": "UYGULAMA",
+        "composer": "#{channel} kanalına mesaj gönder",
+        "finished": "{name} ({email}) “{title}” mülakatını tamamladı: %{grade}.",
+        "noted": "{author}, “{title}” için bir yorum ekledi:",
+        "button": "testee'de aç"
+      },
+      "invite": {
+        "title": "B2B Satış Uzmanı"
+      },
+      "askAgent": {
+        "interview": "Veri Analisti"
+      }
     }
   },
   "faq": {
     "title": "Sıkça sorulan sorular",
-    "intro": "Yanıtınızı bulamadınız mı? Yapay zekâ asistanı Mira'ya sorun (sayfanın üstündeki düğme) ya da gizlilik politikasındaki adrese yazın.",
+    "intro": "testee hakkında, ilk mülakatınızdan verilerinize kadar yanıtlar.",
+    "groups": {
+      "start": "Başlarken",
+      "candidates": "Adaylar",
+      "pricing": "Fiyatlar ve krediler",
+      "results": "Sonuçlar ve ekibiniz",
+      "tools": "Entegrasyonlar",
+      "privacy": "Gizlilik ve hesabınız"
+    },
+    "closingTitle": "Hâlâ sorunuz mu var?",
+    "closingText": "Yapay zeka asistanımız Mira'ya sorun ya da bize yazın.",
     "description": "testee hakkında yanıtlar: mülakatlar iş tanımından nasıl hazırlanır, adaylar ne görür, fiyatlar ve krediler, sonuçlar, ATS entegrasyonları, diller ve verileriniz."
   },
   "contact": {
@@ -1731,9 +2001,20 @@
     "description": "testee, iş tanımınızı dakikalar içinde adil ve süreli bir mülakata dönüştürür, her ekibin karşılayabileceği bir fiyata. Herkes de mülakatlara ücretsiz pratik yapabilir.",
     "company": {
       "title": "Neden varız",
+      "titles": {
+        "problem": "İşe alımı doğru yapmak zor",
+        "approach": "Dakikalar içinde adil bir mülakat",
+        "practice": "Herkes için ücretsiz pratik"
+      },
       "problem": "İşe alım çoğu zaman bir özgeçmişe ve iyi geçen bir sohbete dayanır; ikisi de yanıltabilir. İşe yarayan değerlendirme araçları ise yıllık planlar ve kullanıcı başı ücretlerle büyük şirketlere göre fiyatlanır, bu yüzden çoğu ekip onlarsız idare eder.",
       "approach": "testee, bir iş tanımını dakikalar içinde her pozisyon için süreli bir mülakata dönüştürür. Her aday kendi sorularını alır, işi kimin bildiğini ve nedenini görürsünüz ve yalnızca mülakata gerçekten giren adaylar için ödersiniz.",
       "practice": "Mülakata hazırlanmanın da herkes için ücretsiz olmasını istiyoruz. Herkes bir pozisyon için pratik mülakatlarımıza girebilir, notunu ve tüm doğru cevapları görebilir ve hiçbir ücret ödemeden tekrar pratik yapabilir."
+    },
+    "closing": {
+      "title": "Kendiniz görün",
+      "text": "İş tanımınızdan bir mülakat oluşturun ya da bir pozisyon için ücretsiz pratik yapın.",
+      "create": "Test oluştur",
+      "practice": "Ücretsiz pratik yap"
     },
     "founder": {
       "quote": "İyi işe alım, büyük bütçeli büyük şirketlerin ayrıcalığı olmamalı. testee'yi, her ekip bir iş tanımını dakikalar içinde adil bir mülakata dönüştürebilsin, işi gerçekten kimin bildiğini görebilsin ve yalnızca mülakata giren adaylar için ödesin diye geliştirdim. Umarım doğru kişileri daha hızlı bulmanıza yardımcı olur.",
@@ -1751,20 +2032,18 @@
     "title": "Bildirimler",
     "unread": "{count, plural, one {# okunmamış bildirim} other {# okunmamış bildirim}}",
     "empty": "Henüz yeni bir şey yok.",
-    "formerAuthor": "eski bir üye",
     "kinds": {
       "question_flagged": "{count, plural, one {{title, select, none {Bir mülakatta} other {“<bdi>{title}</bdi>” setinde}} “<bdi>{topic}</bdi>” konusundaki bir soru inceleme için işaretlendi.} other {{title, select, none {Bir mülakatta} other {“<bdi>{title}</bdi>” setinde}}ki # soru inceleme için işaretlendi.}}",
       "question_fixed": "{count, plural, one {Yapay zekâ {title, select, none {bir mülakatta} other {“<bdi>{title}</bdi>” setinde}} “<bdi>{topic}</bdi>” konusundaki işaretlenen bir soruyu düzeltti.} other {Yapay zekâ {title, select, none {bir mülakatta} other {“<bdi>{title}</bdi>” setinde}}ki işaretlenen # soruyu düzeltti.}}",
       "referral_rewarded": "Davet ettiğiniz biri yükleme yaptı. {credits, number} kredi kazandınız.",
-      "auto_top_up_on": "Otomatik yükleme açık: kullanılabilir krediler {threshold, number} altına düştüğünde {price} artı vergi.",
       "auto_top_up_charged": "Otomatik yükleme {credits, number} kredi ekledi.",
       "auto_top_up_failed": "Otomatik yükleme karttan ödeme alamadı. Bakiyenizin bitmemesi için kredi yükleyin.",
+      "auto_top_up_on": "Otomatik yükleme açık: kullanılabilir krediler {threshold, number} altına düştüğünde {price} artı vergi.",
       "auto_top_up_paused": "Otomatik yükleme duraklatıldı: kart reddedildi. Yeniden açmak için kartı güncelleyin.",
       "auto_top_up_price_change": "<time>{date}</time> itibarıyla her otomatik yüklemenin ücreti {price} yerine {newPrice} olacak.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi>, {title, select, none {bir mülakatı} other {“<bdi>{title}</bdi>” mülakatını}} tamamladı{grade, select, none {.} other {: {grade}.}}} other {# aday {title, select, none {bir mülakatı} other {“<bdi>{title}</bdi>” mülakatını}} tamamladı.}}",
       "invite_undelivered": "{count, plural, one {<bdi>{email}</bdi> adresine gönderilen {title, select, none {mülakat daveti} other {“<bdi>{title}</bdi>” daveti}} iletilemedi.} other {{title, select, none {Bir mülakat için} other {“<bdi>{title}</bdi>” için}} gönderilen # davet iletilemedi.}}",
       "interview_ready": "{title, select, none {Bir mülakat hazır.} other {“<bdi>{title}</bdi>” mülakatı hazır.}}",
-      "note_added": "{count, plural, =1 {<bdi>{authors}</bdi>, {title, select, none {bir mülakata} other {“<bdi>{title}</bdi>” mülakatına}} yeni bir yorum yazdı.} other {{title, select, none {bir mülakata} other {“<bdi>{title}</bdi>” mülakatına}} # yeni yorum var, en sonuncular <bdi>{authors}</bdi> tarafından.}}",
       "interview_cancelled": "{title, select, none {Bir mülakat} other {“<bdi>{title}</bdi>” mülakatı}} iptal edildi: konu incelemesi çok uzun süre bekledi.",
       "verification_approved": "“<bdi>{name}</bdi>”, <bdi>{domain}</bdi> için doğrulandı.",
       "verification_declined": "{reason, select, none {“<bdi>{name}</bdi>” doğrulaması reddedildi.} other {“<bdi>{name}</bdi>” doğrulaması reddedildi: <bdi>{reason}</bdi>}}",
@@ -1776,8 +2055,10 @@
       "news": "Haberler: <bdi>{title}</bdi>",
       "legal_terms": "Yeni koşullar <time>{date}</time> tarihinden itibaren geçerlidir.",
       "legal_privacy": "Yeni gizlilik politikası <time>{date}</time> tarihinden itibaren geçerlidir.",
-      "legal_dpa": "Yeni veri işleme sözleşmesi <time>{date}</time> tarihinden itibaren geçerlidir."
+      "legal_dpa": "Yeni veri işleme sözleşmesi <time>{date}</time> tarihinden itibaren geçerlidir.",
+      "note_added": "{count, plural, =1 {<bdi>{authors}</bdi>, {title, select, none {bir mülakata} other {“<bdi>{title}</bdi>” mülakatına}} yeni bir yorum yazdı.} other {{title, select, none {bir mülakata} other {“<bdi>{title}</bdi>” mülakatına}} # yeni yorum var, en sonuncular <bdi>{authors}</bdi> tarafından.}}"
     },
+    "formerAuthor": "eski bir üye",
     "legalBanner": {
       "terms": "testee'nin koşulları <time>{date}</time> tarihinde değişiyor.",
       "privacy": "testee'nin gizlilik politikası <time>{date}</time> tarihinde değişiyor.",
@@ -1801,7 +2082,7 @@
     "send": "<name>PDF</name> gönder",
     "sent": "Rapor <bdi>{email}</bdi> adresine gönderildi",
     "sendFailed": "Rapor gönderilemedi.",
-    "orSummary": "Ya da şununla gönderin",
+    "orSummary": "Ya da sohbetten kısa bir özet gönderin",
     "via": "testee'den gönderildi",
     "candidatesFileName": "Adaylar {title}",
     "candidateCount": "{count, plural, one {# aday} other {# aday}}",
@@ -1833,6 +2114,10 @@
     "results": "Pratik sonuçları",
     "grade": "puan oranı",
     "notFinished": "bitmedi",
+    "finished": "Bitti",
+    "answeredCard": "Cevaplanan sorular",
+    "answeredOf": "{done, number} / {total, number}",
+    "startedCard": "Başlangıç",
     "noRounds": "Henüz deneme yok.",
     "startFailed": "Pratik başlatılamadı. Lütfen tekrar deneyin.",
     "gradeLabel": "Not",
@@ -1844,7 +2129,13 @@
     "hireButton": "Mülakat oluştur",
     "timingPerQuestion": "Soru başına ortalama {time}",
     "timingNone": "Süre sınırı yok",
-    "timingNote": "Pratik kimseyle karşılaştırılmaz; gerekirse daha fazla süre alın ya da süre sınırını kaldırın."
+    "timingNote": "Pratik kimseyle karşılaştırılmaz; gerekirse daha fazla süre alın ya da süre sınırını kaldırın.",
+    "facts": {
+      "topics": "Konular",
+      "questions": "Sorular",
+      "level": "Seviye",
+      "language": "Dil"
+    }
   },
   "openToOffers": {
     "title": "İş tekliflerine açık",
@@ -1887,6 +2178,7 @@
     "englishOnly": "Bu sayfa yalnızca İngilizcedir.",
     "startTitle": "Adaylarınızı test edin",
     "startText": "İş tanımınızdan süreli bir beceri testi oluşturun.{priced, select, yes { Aday başına {price}, abonelik yok.} other {}}",
+    "contents": "Bu sayfada",
     "startButton": "Test oluştur"
   },
   "compare": {
@@ -1912,7 +2204,16 @@
     "topics": "Neyi ölçer",
     "questions": "Örnek mülakat soruları",
     "questionsText": "Bunun gibi sorular, doğru cevaplarıyla. Adaylarınız kendi sorularını alır; bunlar asla herkese açık gösterilmez.",
-    "faq": "Şirketlerin sorduğu sorular"
+    "faq": "Şirketlerin sorduğu sorular",
+    "createOwn": "Kendi testinizi oluşturun",
+    "facts": {
+      "topics": "Konular",
+      "level": "Seviye",
+      "language": "Dil",
+      "price": "Aday başına"
+    },
+    "closingTitle": "Adaylarınızı test etmeye hazır mısınız?",
+    "closingText": "Bir iş tanımı yapıştırın, dakikalar içinde buna benzer bir test alın; oluşturması ücretsiz."
   },
   "ats": {
     "statusConnected": "bağlı",
@@ -1998,6 +2299,25 @@
     "bzStepCreate": "API anahtarını tüm ilanları gören bir yönetici olarak oluşturun: anahtar sizin adınıza işlem yapar ve sonuçlar sizin adınıza yazılır. Breezy'nin API'si ve webhook'ları Pro planıyla gelir.",
     "bzStepPaste": "Anahtarı aşağıya yapıştırın. Breezy HR'daki webhook'u kendimiz ekleriz.",
     "atsGroup": "ATS",
+    "firstJobTitle": "İlk ilanınızı bağlayın",
+    "brokenText": "{ats} çalışmayı durdurdu, bu yüzden adaylar davet edilmiyor. Yeniden başlatmak için tekrar bağlayın.",
+    "stripMove": "Bir aday {ats} içinde seçtiğiniz aşamaya ulaşır",
+    "stripInvite": "testee onu bağlı mülakata davet eder",
+    "stripResults": "Sonuçları {ats} profiline geri gönderilir",
+    "rowStage": "Aşama: <bdi>{stage}</bdi>",
+    "rowInterview": "Mülakat: <link><bdi>{interview}</bdi></link>",
+    "invitedShort": "<n></n> davet edildi",
+    "waitingShort": "<n></n> bekliyor",
+    "notInvitedShort": "<n></n> davet edilmedi",
+    "summary": {
+      "status": "Durum",
+      "account": "Hesap",
+      "jobs": "Bağlı ilanlar",
+      "invited": "Davet edilen adaylar"
+    },
+    "connectedGroup": "Bağlı",
+    "statusBroken": "Yeniden bağlanmalı",
+    "rowText": "Adayları {ats} üzerinden davet edin ve sonuçlarını geri gönderin.",
     "messagingGroup": "Mesajlaşma",
     "apiAiAppsGroup": "API ve yapay zekâ uygulamaları",
     "searchInterview": "Mülakat ara",
@@ -2005,6 +2325,29 @@
   },
   "slack": {
     "add": "Slack'e ekle",
+    "rowText": "Adaylar bitirdiğinde Slack'te bildirim alın.",
+    "brokenText": "Slack mesaj almayı durdurdu, bu yüzden kanalınıza bildirim gelmiyor. Yeniden başlatmak için tekrar bağlayın.",
+    "pointChannel": "Ekibinizin bildirimleri göreceği kanalı seçin.",
+    "pointKinds": "Hangi bildirimlerin oraya gideceğini seçin.",
+    "pointPrivacy": "testee yalnızca o kanala mesaj gönderebilir. Slack'inizi okuyamaz.",
+    "test": "Test gönder",
+    "testSent": "Test mesajı kanalınıza gönderildi.",
+    "testFailed": "Test mesajı gönderilemedi.",
+    "groups": {
+      "candidates": "Adaylar",
+      "interviews": "Mülakatlar",
+      "billing": "Faturalama",
+      "team": "Ekip"
+    },
+    "samples": {
+      "candidate_finished": "Ann Lee (ann@example.com) “Data Analyst” mülakatını bitirdi: %82.",
+      "ats_not_invited": "Ben Ortiz ATS'nizden geldi ama “Data Analyst” mülakatına davet edilmedi.",
+      "invite_undelivered": "“Data Analyst” için ben@example.com adresine gönderilen davet iletilemedi.",
+      "interview_ready": "“Data Analyst” hazır.",
+      "auto_top_up_charged": "Otomatik kredi yüklemeniz tahsil edildi.",
+      "auto_top_up_failed": "Otomatik kredi yüklemeniz başarısız oldu. Çalışmaya devam etmesi için kartınızı güncelleyin.",
+      "note_added": "Maya “Data Analyst” için bir yorum ekledi: güçlü SQL, aramaya değer."
+    },
     "connectFailed": "Slack bağlanamadı.",
     "connected": "Slack bağlı.",
     "disconnectFailed": "Slack bağlantısı kesilemedi.",
@@ -2019,9 +2362,9 @@
       "ats_not_invited": "ATS sisteminizden gelen bir aday davet edilmedi",
       "invite_undelivered": "Bir davet e-postası iletilemedi",
       "interview_ready": "Bir mülakat hazır",
-      "note_added": "Bir ekip üyesi yorum yazdı, metniyle birlikte",
       "auto_top_up_charged": "Otomatik yükleme ücreti tahsil edildi",
-      "auto_top_up_failed": "Otomatik yükleme başarısız oldu"
+      "auto_top_up_failed": "Otomatik yükleme başarısız oldu",
+      "note_added": "Bir ekip üyesi yorum yazdı, metniyle birlikte"
     },
     "instructionsTitle": "Slack bildirimlerinizi nasıl alır",
     "stepAdd": "“Slack'e ekle” düğmesine tıklayın: Slack açılır ve çalışma alanınızda testee'ye izin vermenizi ister.",
@@ -2030,13 +2373,67 @@
     "stepPrivacy": "testee yalnızca o kanala gönderi yapabilir. Slack'inizi okuyamaz ve bağlantıyı kesmek onu kaldırır."
   },
   "api": {
+    "firstKeyTitle": "İlk anahtarınızı oluşturun",
+    "sdkDocs": "SDK belgelerini görüntüle",
+    "sdkReady": "Hazır: {count, plural, one {# site} other {# site}} mülakatlarınızı gösterebilir.",
+    "sdkNotReady": "Henüz kurulmadı: mülakatlarınızı gösterebilmesi için aşağıya bir site ekleyin.",
+    "sdkRules": "Sayfalar HTTPS kullanmalı. Bir site ekleyin ya da tüm alt alan adlarını ekleyin:",
+    "stepSite": "Sitenizi ekleyin",
+    "stepCode": "Bu kodu sayfanıza yapıştırın",
+    "stepSend": "Adayları oraya yönlendirin",
+    "stepSendText": "Sunucunuz bir adayı sign_in false ile davet eder ve aldığı invite_url değerini sayfanıza iletir. API anahtarınızı asla bir sayfaya koymayın.",
+    "thisSite": "Bu site",
+    "allSubdomains": "Tüm alt alan adları",
+    "localhostOn": "Açık: canlıya geçmeden önce kapatın.",
+    "firstWebhookTitle": "İlk webhook'unuzu ekleyin",
+    "webhookSampleText": "Bir şey olduğunda testee buna benzer imzalı bir istek gönderir:",
+    "lastDelivered": "son iletim <time>{date}</time>",
+    "webhookStates": {
+      "paused": "Duraklatıldı",
+      "unused": "Henüz kullanılmadı",
+      "active": "Etkin"
+    },
+    "webhookEvents": {
+      "started": "Aday başladı",
+      "finished": "Aday bitirdi",
+      "undelivered": "Adaya ulaşılamadı",
+      "expired": "Davetin süresi doldu",
+      "removed": "Aday kaldırıldı",
+      "ready": "Mülakat hazır"
+    },
+    "replaceKey": "Yenisini oluştur",
+    "activityTitle": "Etkinlik",
+    "ipOpen": "Bu anahtarı her IP adresi kullanabilir. Daha güvenli olması için sunucularınızın adresleriyle sınırlayın.",
+    "summary": {
+      "status": "Durum",
+      "access": "Erişim",
+      "lastUsed": "Son kullanım",
+      "expires": "Bitiş",
+      "created": "Oluşturulma"
+    },
+    "warnings": {
+      "expired": "Bu anahtarın süresi doldu, bu yüzden bununla yapılan istekler reddediliyor. Devam etmek için yenisini oluşturun.",
+      "expiring": "Bu anahtarın süresi yakında dolacak. Çalışmayı bırakmadan önce yenisini oluşturup ona geçin."
+    },
+    "exampleText": "Kredilerinizi okuyan şu istekle deneyin:",
+    "access": {
+      "read": "Salt okunur",
+      "write": "Okuma ve yazma",
+      "custom": "Özel"
+    },
+    "states": {
+      "expired": "Süresi doldu",
+      "expiring": "Yakında dolacak",
+      "never_used": "Hiç kullanılmadı",
+      "active": "Etkin"
+    },
     "name": "API",
     "rowName": "API, SDK, webhook'lar",
     "rowText": "Kendi platformunuzu bağlamak için anahtarlar ve webhook'lar.",
     "counts": "{keys, plural, one {# anahtar} other {# anahtar}} · {webhooks, plural, one {# webhook} other {# webhook}}",
     "docs": "Geliştirici belgeleri",
     "keysTitle": "API anahtarları",
-    "keysText": "Bir anahtar, onu oluşturan kişi olarak çalışır ve yalnızca yetkilerinin izin verdiklerini yapabilir.",
+    "keysText": "Bir anahtar şirketiniz adına, kendi kimliğiyle çalışır ve yalnızca yetkilerinin izin verdiklerini yapabilir.\nOnu oluşturan kişi ayrılsa bile çalışmaya devam eder.",
     "noKeys": "Henüz anahtar yok.",
     "newKey": "Yeni anahtar",
     "newKeyTitle": "Yeni API anahtarı",
@@ -2064,7 +2461,7 @@
     "removeKeyTitle": "Bu anahtar silinsin mi?",
     "removeKeyText": "“<bdi>{name}</bdi>” kullanan her şey hemen çalışmayı bırakır.",
     "webhooksTitle": "Webhook'lar",
-    "webhooksText": "testee bu adreslere bir aday başladığında, bitirdiğinde (sonuçlarıyla birlikte), daveti kendisine ulaşamadığında, davetinin süresi dolduğunda veya kaldırıldığında ve bir mülakat hazır olduğunda haber verir; her istek adresin gizli anahtarıyla imzalanır.",
+    "webhooksText": "Bunlardan biri olduğunda testee bu adreslere haber verir; her istek adresin gizli anahtarıyla imzalanır.",
     "noWebhooks": "Henüz webhook yok.",
     "failing": "Duraklatıldı: 3 gün boyunca yanıt vermediği için ona olay gönderilmiyor. Kabul edilen bir test olayı onu yeniden başlatır.",
     "addWebhook": "Webhook ekle",
@@ -2151,7 +2548,6 @@
     "localhostText": "Kendi bilgisayarınızda test için, herhangi bir port. Canlıya geçtiğinizde kapatın.",
     "permissionsTitle": "Yetkiler",
     "permissionsText": "Bu anahtarın yapabilecekleri. Değişiklikler hemen kaydedilir.",
-    "permissionsSaved": "Yetkiler kaydedildi.",
     "sdkTitle": "SDK"
   },
   "brand": {
@@ -2239,6 +2635,15 @@
       "tools": "Araçlar",
       "frameworks": "Ajan framework'leri"
     },
+    "intro": "testee'yi kendi platformunuza, sunucunuza veya bir yapay zeka ajanına bağlayın.",
+    "endpointsText": "Her rota, üzerinde çalıştığı konuya göre. Neye ihtiyaç duyduğunu, ne döndürdüğünü ve hatalarını görmek için birini açın.",
+    "apiPages": {
+      "start": "Başlayın",
+      "guides": "Kılavuzlar",
+      "endpoints": "Uç noktalar",
+      "errors": "Hatalar",
+      "changelog": "Değişiklik günlüğü"
+    },
     "englishOnly": "Bu sayfa yalnızca İngilizce.",
     "baseUrl": "Temel URL",
     "copyBaseUrl": "URL'yi kopyala",
@@ -2275,6 +2680,7 @@
   },
   "assistant": {
     "title": "Mira · yapay zekâ asistanı",
+    "name": "Mira",
     "company": "Şirket",
     "allCompanies": "Tüm şirketler",
     "newChat": "Yeni sohbet",
@@ -2331,7 +2737,7 @@
     },
     "welcome": {
       "signed_out": {
-        "text": "testee'nin nasıl çalıştığı, ne kadar tuttuğu ve adayların ne gördüğü, testee'nin SSS'sinden yanıtlanır. Şirketlerin ve adayların hakkında sormak için giriş yap.",
+        "text": "Şirketleriniz ve adaylarınız hakkında soru sormak için giriş yapın.",
         "questions": {
           "what": "testee nedir?",
           "pricing": "Ne kadar tutuyor?",
@@ -2340,7 +2746,7 @@
         }
       },
       "no_company": {
-        "text": "Haydi başlayalım: ilk mülakatın, şirketin ve şirketinin doğrulanması.",
+        "text": "İlk mülakatınızı başlatalım.",
         "questions": {
           "firstInterview": "İlk mülakatımı oluştur",
           "createCompany": "Benim için bir şirket oluştur",
@@ -2348,7 +2754,7 @@
         }
       },
       "unverified": {
-        "text": "Adaylar onları kimin davet ettiğini görsün diye şirketini doğrula ve mülakatlarını oluştur.",
+        "text": "Şirketinizi doğrulayın ve mülakatlarınızı oluşturun.",
         "questions": {
           "verify": "Şirketimi doğrula",
           "whyVerify": "Şirketimi neden doğrulamalıyım?",
@@ -2356,7 +2762,7 @@
         }
       },
       "no_interviews": {
-        "text": "Bir iş tanımından mülakat oluştur: sorular o rol için yazılır.",
+        "text": "İlk mülakatınızı oluşturalım.",
         "questions": {
           "fromDescription": "İş tanımından bir mülakat oluştur",
           "template": "Şablondan bir mülakat oluştur",
@@ -2364,7 +2770,7 @@
         }
       },
       "no_candidates": {
-        "text": "Adayları e-postayla, paylaşılabilir bir bağlantıyla ya da ATS'inden davet et.",
+        "text": "İlk adaylarınızı davet edelim.",
         "questions": {
           "invite": "Adayları davet et",
           "shareLink": "Paylaşılabilir bağlantıyı aç",
@@ -2372,7 +2778,7 @@
         }
       },
       "has_candidates": {
-        "text": "Adayların hakkında sor: kim geçti, birbirleriyle nasıl karşılaştırılıyorlar ve sonuçları ne anlama geliyor.",
+        "text": "Adaylarınız ve sonuçları hakkında soru sorun.",
         "questions": {
           "passed": "Bu hafta kim geçti?",
           "compare": "En iyi adaylarımı karşılaştır",
@@ -2494,7 +2900,27 @@
     "feedbackLink": "Bize ulaşın"
   },
   "companyBilling": {
-    "reservedTab": "Ayrılan ({count, number})",
+    "reservedTab": "Ayrılan",
+    "download": {
+      "open": "Geçmişi indir",
+      "title": "Geçmişi indir",
+      "description": "CSV dosyanız için bir dönem seçin.",
+      "save": "İndir",
+      "failed": "Dosya oluşturulamadı. Lütfen tekrar deneyin."
+    },
+    "lowText": "Kredileriniz azalıyor. Adaylar davet edilmeye devam edebilsin diye kredi yükleyin.",
+    "summary": {
+      "available": "Kullanılabilir kredi",
+      "candidates": "Karşılanan adaylar",
+      "reserved": "Ayrılan krediler",
+      "spent": "Bu ay harcanan krediler"
+    },
+    "kinds": {
+      "all": "Tümü",
+      "topups": "Yüklemeler",
+      "charges": "Ücretler",
+      "refunds": "İadeler"
+    },
     "reservedEmpty": "Kredisi ayrılmış aday yok.",
     "reservedNote": "Henüz bitirmemiş adaylar. Kredileri ayrıldı: yanıt verirlerse düşülür, vermezlerse iade edilir.",
     "history": "Geçmiş",
@@ -2521,7 +2947,19 @@
     "name": "MCP sunucusu",
     "rowText": "Claude, ChatGPT ve diğer yapay zekâ uygulamalarını testee'ye bağlayın.",
     "title": "Yapay zekâ uygulamaları",
-    "subtitle": "Üyesi olduğunuz her şirkette, sizin yetkilerinizle, sizin adınıza hareket ederler.",
+    "subtitle": "Sizin adınıza, dahil olduğunuz her şirkette, yetkilerinizle çalışırlar. Her birine testee üzerinden izin verirsiniz: hiçbir yere anahtar yapıştırılmaz.",
+    "connectedTitle": "Uygulamalarınız",
+    "otherApps": "Diğerleri",
+    "allowIn": "<bdi>{company}</bdi> şirketinde yapay zeka uygulamalarına izin ver",
+    "allowOn": "Üyeler, bağladıkları yapay zeka uygulamalarından bu şirketin mülakatlarını ve adaylarını kullanabilir.",
+    "allowOff": "Kapalı: yapay zeka uygulamaları bu şirkette hiçbir şeyi okuyamaz veya değiştiremez.",
+    "promptsTitle": "Şunu sormayı deneyin",
+    "promptCopied": "Kopyalandı",
+    "prompts": {
+      "passed": "Bu hafta kimler geçti?",
+      "compare": "Data Analyst mülakatı için en iyi adaylarımı karşılaştır.",
+      "invite": "ann@example.com adresini Data Analyst mülakatına davet et."
+    },
     "instructionsTitle": "Yapay zekâ uygulamasını testee'ye bağla",
     "serverTitle": "Sunucu adresi",
     "serverText": "Bunu yapay zekâ uygulamanıza özel bağlayıcı (MCP sunucusu) olarak yapıştırın.",
@@ -2679,6 +3117,10 @@
     "failed": "Dosya dışa aktarılamadı. Lütfen tekrar deneyin."
   },
   "actionLog": {
+    "period": "Dönem",
+    "periodAll": "Tüm zamanlar",
+    "periodDays": "Son {days, number} gün",
+    "periodCustom": "Özel",
     "empty": "Henüz işlem yok.",
     "noMatches": "Bu filtrelere uyan işlem yok.",
     "formerMember": "Eski bir üye",
@@ -2686,7 +3128,15 @@
     "deletedApiKey": "{via, select, mcp {MCP üzerinden silinmiş bir anahtarla} other {API üzerinden silinmiş bir anahtarla}}",
     "deletedCandidate": "silinmiş bir aday",
     "anyMember": "Herkes",
-    "anyAction": "Tüm işlemler",
+    "anyAction": "Tümü",
+    "clear": "Temizle",
+    "download": {
+      "open": "Günlüğü indir",
+      "title": "Günlüğü indir",
+      "description": "CSV dosyanız için bir dönem seçin.",
+      "save": "İndir",
+      "failed": "Dosya oluşturulamadı. Lütfen tekrar deneyin."
+    },
     "member": "Üye",
     "action": "İşlem",
     "from": "Başlangıç",
@@ -2722,13 +3172,13 @@
       "candidate_deleted": "Bir adayı sildi",
       "candidate_renamed": "Bir adayın adını değiştirdi",
       "extra_time_set": "Bir adaya ek süre verdi",
-      "candidate_mode_set": "Bir adayın mülakat modunu değiştirdi",
       "results_viewed": "Bir adayın sonuçlarını görüntüledi",
       "report_emailed": "Bir raporu e-postayla gönderdi",
       "bias_audit_exported": "Yanlılık denetimi için veri dışa aktardı",
       "member_invited": "Bir üyeyi davet etti",
       "member_joined": "Şirkete katıldı",
       "member_removed": "Bir üyeyi kaldırdı",
+      "candidate_mode_set": "Bir adayın mülakat modunu değiştirdi",
       "member_role_changed": "Bir üyenin rolünü değiştirdi",
       "ownership_transferred": "Şirketi başka bir sahibe devretti",
       "company_renamed": "Şirketin adını değiştirdi",
@@ -2751,6 +3201,7 @@
       "slack_notifications_changed": "Slack bildirimlerini değiştirdi",
       "api_key_created": "Bir API anahtarı oluşturdu",
       "api_key_deleted": "Bir API anahtarını sildi",
+      "api_key_renamed": "Bir API anahtarını yeniden adlandırdı",
       "api_key_permissions_changed": "Bir API anahtarının yetkilerini değiştirdi",
       "api_key_ips_changed": "Bir API anahtarının izin verilen IP'lerini değiştirdi",
       "embed_domains_changed": "İzin verilen alan adlarını değiştirdi",
