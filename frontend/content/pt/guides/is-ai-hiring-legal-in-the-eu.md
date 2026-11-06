@@ -2,14 +2,14 @@
 title: "O uso de IA no recrutamento é legal na UE? O que as empresas precisam saber"
 seoTitle: "IA no recrutamento é legal na UE? AI Act e GDPR"
 description: "Usar IA no recrutamento é legal na UE, com regras. O que a categoria de alto risco do Regulamento de IA significa, as datas até 2027 e o básico do GDPR."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # O uso de IA no recrutamento é legal na UE? O que as empresas precisam saber
 
 Em geral, sim: usar IA no recrutamento e seleção é legal na UE. Mas a maioria das ferramentas de IA que avaliam candidatos se enquadra na categoria de alto risco do Regulamento de IA da UE (EU AI Act), o que traz obrigações para o fornecedor e para você, o empregador. Algumas práticas são simplesmente proibidas. E o Regulamento Geral sobre a Proteção de Dados (GDPR) se aplica aos dados dos candidatos, como sempre.
 
-Este guia explica as regras em linhas gerais, as datas que importam, o que os empregadores precisam fazer e como a testee lida com isso. **Não é aconselhamento jurídico.** Ele reflete as regras de outubro de 2026. As regras são novas, as orientações ainda estão sendo finalizadas e a legislação nacional acrescenta seus próprios requisitos. Consulte o seu próprio advogado antes de se basear em qualquer parte deste texto.
+Este guia explica as regras em linhas gerais, as datas que importam, o que os empregadores precisam fazer e como a testee lida com isso. **Não é aconselhamento jurídico.** Ele reflete as regras de novembro de 2026. As regras são novas, as orientações ainda estão sendo finalizadas e a legislação nacional acrescenta seus próprios requisitos.
 
 ## A resposta curta
 
@@ -34,7 +34,7 @@ Isso abrange uma grande variedade de ferramentas: filtros de currículo, sistema
 
 Normalmente, não. O [artigo 6.º, n.º 3](https://artificialintelligenceact.eu/article/6/), do Regulamento de IA permite que alguns sistemas do Anexo III fiquem fora da categoria de alto risco, por exemplo quando executam uma tarefa processual restrita ou apenas preparam uma avaliação humana. Mas um sistema do Anexo III que faz definição de perfis de pessoas é sempre de alto risco, e pontuar ou ranquear candidatos pelas suas capacidades provavelmente conta como definição de perfis.
 
-O rascunho de diretrizes da Comissão Europeia sobre a classificação de alto risco (publicado em 19 de maio de 2026 para consulta; não definitivo em outubro de 2026) adota uma visão ampla. Ele descreve a seleção como algo que abrange "a pré-seleção, a classificação, o ranqueamento ou a aplicação de testes aos candidatos" e, conforme resumido pelo [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), trata como de alto risco os sistemas que geram pontuações de adequação "mesmo que a decisão final de contratação seja tomada por um recrutador humano".
+O rascunho de diretrizes da Comissão Europeia sobre a classificação de alto risco (publicado em 19 de maio de 2026 para consulta; não definitivo em novembro de 2026) adota uma visão ampla. Ele descreve a seleção como algo que abrange "a pré-seleção, a classificação, o ranqueamento ou a aplicação de testes aos candidatos" e, conforme resumido pelo [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), trata como de alto risco os sistemas que geram pontuações de adequação "mesmo que a decisão final de contratação seja tomada por um recrutador humano".
 
 Ou seja, uma ferramenta que dá a cada candidato uma pontuação e uma posição num ranking é muito provavelmente de alto risco, mesmo que sejam pessoas que decidem quem é contratado.
 
@@ -47,7 +47,7 @@ Ou seja, uma ferramenta que dá a cada candidato uma pontuação e uma posição
 | 2 de dezembro de 2027 | Obrigações de alto risco para sistemas do Anexo III, incluindo ferramentas de recrutamento |
 | 2 de agosto de 2028 | Obrigações de alto risco para IA em produtos abrangidos pelo Anexo I |
 
-A data de alto risco para o Anexo III era originalmente 2 de agosto de 2026. O Omnibus Digital sobre IA (Regulamento (UE) 2026/1744, em vigor desde 27 de julho de 2026) a adiou para 2 de dezembro de 2027 ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Datas conforme o [AI Act Explorer, artigo 113.º](https://artificialintelligenceact.eu/article/113/), em outubro de 2026.
+A data de alto risco para o Anexo III era originalmente 2 de agosto de 2026. O Omnibus Digital sobre IA (Regulamento (UE) 2026/1744, em vigor desde 27 de julho de 2026) a adiou para 2 de dezembro de 2027 ([Jornal Oficial](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). Ele também reescreveu a obrigação de letramento em IA do artigo 4.º, a partir de 27 de julho de 2026: fornecedores e responsáveis pela implantação agora precisam tomar medidas para apoiar o letramento em IA da sua equipe, sem um nível definido a garantir. Datas de novembro de 2026.
 
 O prazo extra serve para preparação, não é motivo para ignorar as regras. O GDPR e as leis antidiscriminação já se aplicam integralmente.
 
@@ -86,7 +86,7 @@ O artigo 26.º define as obrigações do empregador. Em resumo ([artigo 26.º](h
 - **Informar os representantes dos trabalhadores e os trabalhadores afetados** antes de usar um sistema de alto risco no trabalho.
 - **Informar os candidatos** de que estão sujeitos ao uso de um sistema de IA de alto risco.
 
-Órgãos públicos e algumas organizações privadas também precisam fazer uma avaliação de impacto sobre os direitos fundamentais (artigo 27.º). E a obrigação de letramento em IA do artigo 4.º já vale: as pessoas que usam ferramentas de IA no seu recrutamento devem entender o que essas ferramentas fazem e o que não fazem.
+Órgãos públicos e algumas organizações privadas também precisam fazer uma avaliação de impacto sobre os direitos fundamentais (artigo 27.º). E o artigo 4.º já vale: tome medidas para apoiar o letramento em IA das pessoas que usam ferramentas de IA no seu recrutamento, para que entendam o que essas ferramentas fazem e o que não fazem.
 
 ## O básico do GDPR
 
@@ -117,7 +117,7 @@ A testee aplica entrevistas de habilidades de múltipla escolha cronometradas, e
 
 Como isso aparece no produto hoje:
 
-- **A IA escreve as perguntas e os gabaritos; a correção segue regras fixas.** Nenhuma IA lê ou julga a resposta de um candidato, e não há análise de vídeo, voz ou rosto. Se a IA corrigir um gabarito depois, a correção vale para os candidatos que começarem depois dela; os resultados anteriores não mudam.
+- **A IA escreve as perguntas e os gabaritos; a correção segue regras fixas.** Nenhuma IA julga a resposta de um candidato, e não há análise de vídeo ou rosto. No modo de voz, a fala é transformada em texto e associada a uma opção, que é dita ao candidato e mostrada na tela: uma única opção dita com clareza é registrada na hora, e uma escolha de várias opções é confirmada primeiro. A testee nunca armazena a fala, e a voz nunca é analisada. Se a IA corrigir um gabarito depois, a correção vale para os candidatos que começarem depois dela; os resultados anteriores não mudam.
 - **Você aprova os tópicos** antes de qualquer pergunta ser escrita, e pode ver todas as perguntas.
 - **Pessoas decidem.** A página de resultados e os relatórios em PDF lembram a sua equipe de revisar os resultados; a testee não reprova candidatos nem envia mensagens de reprovação.
 - **Os candidatos são informados** antes de começar de que as perguntas são escritas por IA, de que pessoas da sua empresa revisam os resultados e decidem, e de que eles podem pedir uma revisão.

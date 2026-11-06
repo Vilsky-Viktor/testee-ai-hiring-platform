@@ -2,7 +2,7 @@
 title: "AI-agendid, MCP ja API-d: mis need on ja kuidas neid värbamisel kasutada"
 seoTitle: "AI-agendid, MCP ja API-d värbamisel: kuidas neid kasutada"
 description: "Mis on AI-agent, MCP ja API, kuidas neid värbamisel turvaliselt kasutada ja testeed juhtida selle AI-assistendi, Claude'i, ChatGPT või oma platvormi kaudu."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # AI-agendid, MCP ja API-d: mis need on ja kuidas neid värbamisel kasutada
@@ -96,7 +96,7 @@ Kui sinu meeskond juba töötab Claude'is või ChatGPT-s, saad testee sinna tuua
 **Ühendamiseks:**
 
 1. Ava testees ettevõtte vahekaart **Integratsioonid** ja vali **AI-rakendused**. Kopeeri serveri aadress: `https://testee.ai/mcp`.
-2. **Claude'is:** ava Seaded, siis Konnektorid, ja lisa selle aadressiga kohandatud konnektor. **Claude Code'is:** käivita `claude mcp add --transport http testee https://testee.ai/mcp`. **ChatGPT-s:** lisa see kohandatud konnektorina rakenduste ja konnektorite seadetes.
+2. **Claude'is:** ava Kohanda, siis Konnektorid, ja lisa selle aadressiga kohandatud konnektor; Team- ja Enterprise-paketis lisab omanik selle esmalt organisatsiooni seadetes. **Claude Code'is:** käivita `claude mcp add --transport http testee https://testee.ai/mcp`. **ChatGPT-s:** lisa see kohandatud MCP-serverina. Koht sõltub sinu paketist ja võib-olla peab sinu administraator selle lubama.
 3. Sinu AI-rakendus avab testee sisselogimise. Logi sisse, kontrolli, milline rakendus luba küsib, ja vali **Luba**. Kui see tohib ainult lugeda, lülita enne välja **Luba muudatused**.
 
 Edaspidi küsi oma vestluses nii, nagu küsiksid kolleegilt: „Kes on testees kolm parimat kandidaati Product designeri ametikohale?“ Enamik AI-rakendusi küsib sinult enne muudatust ja hoiatab enne kõike, mida ei saa tagasi võtta: testee ütleb neile, millised toimingud midagi muudavad või kustutavad.
@@ -106,7 +106,7 @@ Edaspidi küsi oma vestluses nii, nagu küsiksid kolleegilt: „Kes on testees k
 - **Sinu õigused.** Ta tegutseb sinu nimel igas ettevõttes, kuhu kuulud, sinu rolliga igas neist.
 - **Krediidid ja piirangud.** Kandidaadi kutsumine maksab sama palju kui rakenduses ja kehtivad samad e-kirjade piirangud.
 - **Logi.** Kõik, mida tehisintellekti rakendus sinu eest teeb, kuvatakse ettevõtte toimingute logis tehisintellekti rakenduse kaudu tehtuna, alates teemade kinnitamisest ja tulemuste vaatamisest kuni lisaaja andmise või kandidaadi tühistamiseni. Ettevõtte omanik loeb seda ettevõtte vahekaardil **Toimingute logi**.
-- **Ettevõte otsustab.** Omanikud ja administraatorid saavad keelata tehisintellekti rakendustel ettevõtte andmete kasutamise valikuga **Luba selles ettevõttes tehisintellekti rakendused** ettevõtte tehisintellekti rakenduste lehel.
+- **Ettevõte otsustab.** Omanikud ja administraatorid saavad keelata tehisintellekti rakendustel ettevõtte andmete kasutamise lülitiga **Luba AI-rakendused** ettevõtte tehisintellekti rakenduste lehel.
 - **Mida ta teha ei saa.** Ta ei näe sinu parooli ega API-võtmeid ning ei saa kustutada sinu kontot ega ettevõtet. Need jäävad rakendusse.
 
 **Ühenduse katkestamiseks** eemalda konnektor oma AI-rakenduses või vali selle kõrval **Katkesta ühendus** vahekaardi Integratsioonid jaotises **AI-rakendused**. See lakkab kohe töötamast.
@@ -117,7 +117,7 @@ Edaspidi küsi oma vestluses nii, nagu küsiksid kolleegilt: „Kes on testees k
 
 Automaatikaks ilma AI-ta on testeel API, mida kirjeldab selle [arendajate dokumentatsioon](/api-docs).
 
-1. Omanik või administraator avab ettevõtte vahekaardi **Integratsioonid**, siis **API**, ja valib **Uus võti**. Pane sellele nimeks platvorm, mis seda kasutama hakkab, vali, millal see aegub, ja märgi ainult see, mida see vajab: töölaua võti ainult loeb, karjäärilehe võti ka kutsub. Õigusi saad hiljem lisada või ära võtta. Võtit näidatakse ainult üks kord; hoia seda turvalises kohas.
+1. Omanik või administraator avab ettevõtte vahekaardi **Integratsioonid**, siis **API, SDK, webhookid**, ja valib **Uus võti**. Pane sellele nimeks platvorm, mis seda kasutama hakkab, vali, millal see aegub, ja märgi ainult see, mida see vajab: töölaua võti ainult loeb, karjäärilehe võti ka kutsub. Õigusi saad hiljem lisada või ära võtta. Võtit näidatakse ainult üks kord; hoia seda turvalises kohas.
 2. Sinu platvorm saadab selle võtmega päringuid: näitab ettevõtte intervjuusid, näitab või loeb kandidaate koos nende hinde, läbimise ja aususe märgetega ning kutsub kandidaadi.
 3. Lisa **webhook**: aadress sinu platvormil, mida testee kutsub allkirjastatult kui kandidaat alustab, lõpetab, kutse ei jõua temani, tema kutse aegub või ta eemaldatakse, ning kui intervjuu on valmis, et sa ei peaks pidevalt järele küsima. API lehelt saad sellele saata testsündmuse ja näha selle saatmislogi.
 

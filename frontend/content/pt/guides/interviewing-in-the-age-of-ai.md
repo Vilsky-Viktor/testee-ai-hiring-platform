@@ -2,7 +2,7 @@
 title: "Entrevistando engenheiros na era da IA: o que avaliar agora"
 seoTitle: "Entrevista técnica na era da IA: o que avaliar agora"
 description: "Assistentes de IA já fazem parte do dia a dia da engenharia. Como isso muda o que as entrevistas devem avaliar e onde entram os testes de conhecimentos."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Entrevistando engenheiros na era da IA: o que avaliar agora
@@ -25,7 +25,7 @@ Juntos, esses números descrevem uma mudança no próprio trabalho. Produzir um 
 
 Ainda não existe uma resposta única no setor. As abordagens divulgadas vão em direções diferentes:
 
-- **Permitir ou exigir IA na entrevista.** Em junho de 2025, a Canva disse que agora espera que candidatos de backend, machine learning e frontend usem ferramentas de IA como Copilot, Cursor e Claude numa nova etapa de "programação assistida por IA". Ela avalia se os candidatos conseguem "decompor requisitos complexos e ambíguos", "identificar e corrigir problemas em código gerado por IA" e "garantir que as soluções geradas por IA atendam aos padrões de produção" ([Canva Engineering, junho de 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
+- **Permitir ou exigir IA na entrevista.** Em junho de 2025, a Canva disse que agora espera que candidatos de backend, machine learning e frontend usem ferramentas de IA como Copilot, Cursor e Claude em entrevistas técnicas, com uma nova etapa de "programação assistida por IA" que substitui sua etapa de fundamentos de ciência da computação para funções de backend e frontend. Ela avalia se os candidatos conseguem "decompor requisitos complexos e ambíguos", "identificar e corrigir problemas em código gerado por IA" e "garantir que as soluções geradas por IA atendam aos padrões de produção" ([Canva Engineering, junho de 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
 - **Testar etapas de programação assistida por IA.** Em julho de 2025, o Business Today, citando o 404 Media, noticiou que a Meta estava criando uma entrevista de programação em que os candidatos têm um assistente de IA. O texto citava a Meta dizendo que isso é "mais representativo do ambiente de desenvolvimento em que nossos futuros funcionários vão trabalhar, e também torna a cola baseada em LLM menos eficaz" ([Business Today, julho de 2025](https://www.businesstoday.in/amp/technology/news/story/meta-to-test-job-applicants-with-ai-assisted-coding-interviews-amid-ai-expansion-plans-487200-2025-07-31)).
 - **Restringir ferramentas e voltar ao presencial.** Em março de 2025, a CNBC noticiou uma ferramenta criada para ajudar candidatos a usar IA sem serem notados em entrevistas remotas de programação. Na mesma reportagem, a Amazon disse que os candidatos precisam declarar que não vão usar ferramentas não autorizadas, o CEO do Google sugeriu que gestores contratantes considerem algumas entrevistas presenciais, e a Deloitte tinha voltado a fazer entrevistas presenciais no seu programa de trainees no Reino Unido ([CNBC via NBC New York, março de 2025](https://www.nbcnewyork.com/news/business/money-report/meet-the-21-year-old-helping-coders-use-ai-to-cheat-in-google-and-other-tech-job-interviews/6178911/?amp=1)).
 
@@ -74,7 +74,7 @@ A testee é bem adequada para o passo 2. Ela transforma a sua descrição da vag
 - **Perguntas de leitura de código:** um pequeno trecho de código com perguntas sobre o que ele imprime ou retorna, o que faz, por que falha ou qual mudança o corrige. É a mesma habilidade de revisão de que depende o trabalho assistido por IA.
 - **Um cronômetro em cada pergunta:** cada pergunta tem sua própria contagem regressiva, controlada pelo servidor, e cada candidato recebe seu próprio conjunto aleatório de perguntas. Isso dificulta pesquisar as respostas, inclusive perguntando a um assistente de IA. Não torna impossível.
 - **Sinais de integridade:** as fichas de avaliação sinalizam respostas rápidas demais para a pergunta ter sido lida, as vezes em que o candidato saiu da página e as tentativas de cópia. Quando o candidato termina, o relatório também aponta padrões de resposta que costumam aparecer quando alguém repassa as perguntas a uma IA e copia as respostas dela: mais ou menos o mesmo tempo em cada pergunta, independentemente da extensão ou da dificuldade, ou perguntas difíceis certas enquanto as fáceis estavam erradas. Um alerta ou padrão é um motivo para olhar com mais atenção, não prova de cola.
-- **Perguntas para a entrevista ao vivo:** o relatório sugere até 3 perguntas que o candidato acertou, dos seus temas mais fortes, para discutir em uma entrevista ao vivo, onde nenhuma IA pode responder por ele.
+- **Perguntas para a entrevista ao vivo:** a página do candidato sugere até 3 perguntas que ele acertou, dos seus temas mais fortes, para discutir em uma entrevista ao vivo, onde nenhuma IA pode responder por ele.
 
 O que a testee não faz: os candidatos não escrevem, executam nem depuram código na testee, e ela não observa como eles usam um assistente de IA. Isso fica para a etapa prática, feita internamente ou numa plataforma para desenvolvedores, que complementa a triagem de conhecimentos. Veja os [testes de habilidades por cargo](/tests) para começar com testes prontos, e [Entrevistas com IA](/guides/ai-interviews) para ver como a testee usa a IA e o que deixa para as pessoas.
 

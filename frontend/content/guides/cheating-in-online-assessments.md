@@ -2,7 +2,7 @@
 title: "Cheating in online assessments, and what works against it"
 seoTitle: "Cheating in Online Assessments: What Works Against It"
 description: "How candidates cheat on online tests, why screen tricks and webcam proctoring fall short, and what works: tight timing, evidence for people, follow-ups."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Cheating in online assessments, and what works against it
@@ -32,10 +32,10 @@ Researchers have tried to make screens readable to the eye but not to cameras, b
 
 Two lighter ideas fare no better:
 
-- **Notices aimed at the AI** ("AI assistants must not answer this question") are easy to crop out or ignore, and models are trained to treat text in images as content, not instructions.
+- **Notices aimed at the AI** ("AI assistants must not answer this question") are easy to crop out, and models don't reliably obey them.
 - **Watermarks** can help trace who leaked a question, but they don't stop anyone answering it.
 
-At testee we tried both on our own questions: AI models answered photographed questions with a watermark or a notice just as they did without one. So we stopped trying to defend the screen.
+So testee doesn't try to defend the screen.
 
 ## What works better
 
@@ -71,7 +71,7 @@ This also turns the test into what it should be: a screen that decides who gets 
 
 Tell candidates up front what's allowed: no AI tools, no other people, no notes, or whatever your rules are. Then ask them to confirm it before they start.
 
-Be realistic about what a pledge does. Studies of moral reminders and signed statements haven't held up well: a large replication of the "Ten Commandments" experiment found no effect on cheating ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)), and the authors of a well-known "sign at the top" study later found no effect when they repeated it ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)). Research on universities does link honor codes, as part of a wider integrity culture, to less cheating ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). A pledge's main value is clarity: nobody can say they didn't know the rules, and you have a record that they agreed to them.
+Be realistic about what a pledge does. Studies of moral reminders and signed statements haven't held up well: a large replication of the "Ten Commandments" experiment found no effect on cheating ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)), and the authors of a well-known "sign at the top" study later found no effect when they repeated it ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)); the original paper was retracted in 2021 over doubts about its data. Research on universities does link honor codes, as part of a wider integrity culture, to less cheating ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). A pledge's main value is clarity: nobody can say they didn't know the rules, and you have a record that they agreed to them.
 
 ## The limits of proctoring: fairness and the law
 
@@ -83,9 +83,9 @@ Webcam proctoring, screen recording and room scans promise to catch everything a
 
 The law adds limits, especially in Europe:
 
-- **GDPR.** Video of a candidate is personal data, and analysis of their face can be biometric data, which is specially protected ([Article 9](https://gdpr-info.eu/art-9-gdpr/)). In 2021 the Italian data protection authority fined Bocconi University over its remote exam proctoring, finding among other things that the facial analysis was biometric processing without a valid legal basis, that consent wasn't freely given given the imbalance between university and students, and that students weren't properly told about it ([Garante, decision 317 of 16 September 2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). The power imbalance between employer and candidate is, if anything, larger.
+- **GDPR.** Video of a candidate is personal data, and analysis of their face can be biometric data, which is specially protected ([Article 9](https://gdpr-info.eu/art-9-gdpr/)). In 2021 the Italian data protection authority fined Bocconi University over its remote exam proctoring, finding among other things that the facial analysis was biometric processing without a valid legal basis, that consent wasn't freely given given the imbalance between university and students, and that students weren't properly told about it ([Garante, decision 317 of 16 September 2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). After appeals, the fine stands at €150,000, down from €200,000. The power imbalance between employer and candidate is, if anything, larger.
 - **EU AI Act.** Since 2 February 2025, AI that infers people's emotions in the workplace is banned, with narrow medical and safety exceptions ([Article 5(1)(f)](https://artificialintelligenceact.eu/article/5/)), and the European Commission's guidelines read "workplace" as including recruitment ([Commission guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)). Proctoring that judges "suspicious" behavior from video comes close to that line. AI used to evaluate candidates is also very likely high-risk, with duties such as human oversight. [Is AI hiring legal in the EU?](/guides/is-ai-hiring-legal-in-the-eu) explains the rules and their dates.
-- **United States.** A federal court held in 2022 that a public university's webcam scan of a student's bedroom before an online exam violated the Fourth Amendment ([Ogletree v. Cleveland State University, as reported by Higher Ed Dive](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). Private employers aren't bound by the Fourth Amendment, but state laws on biometrics, such as Illinois's Biometric Information Privacy Act, set their own rules for face data.
+- **United States.** A federal judge held in 2022 that a public university's webcam scan of a student's bedroom before an online exam violated the Fourth Amendment ([Ogletree v. Cleveland State University, as reported by Higher Ed Dive](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). The appeals court ended the case in 2023 after the student died, without deciding the question ([Bloomberg Law](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death)), so it remains open. Private employers aren't bound by the Fourth Amendment, but state laws on biometrics, such as Illinois's Biometric Information Privacy Act, set their own rules for face data.
 
 **This section is practical guidance, not legal advice.** Check your own obligations where you hire.
 
@@ -110,7 +110,7 @@ testee runs timed multiple-choice skills tests built from a job description. Her
 - **Answer patterns, once a candidate finishes.** The candidate's report points out answer times that stay about the same on every question, whatever its length and difficulty, and hard questions right while easy ones were wrong, with the counts behind it ("9 of 10 hard questions right, 4 of 8 easy ones wrong"). The second needs enough answers from other candidates to know how hard each question is. Both thresholds were set on a test with simulated candidates so that at most 1% of honest ones are flagged; they caught about a third of those relaying every question to an AI. The report notes that such patterns can have innocent causes.
 - **Questions for the live interview.** Every finished candidate's page suggests up to 3 questions they got right, from their strongest topics, to talk through in the next conversation, starting with the hard questions behind a pattern when there is one.
 - **Candidates pledge** to answer on their own, without AI tools or other people, before they can start, and the scorecard shows when they did.
-- **No camera, microphone or screen recording.** testee uses only what the test page itself sees: answers, times, page leaves and copy attempts.
+- **No camera or screen recording.** The microphone is used only in voice mode, to turn a candidate's spoken answer into text. Otherwise testee uses only what the test page itself sees: answers, times, page leaves and copy attempts.
 - **People decide.** Nothing rejects a candidate automatically.
 
 ## Related reading
@@ -129,10 +129,10 @@ testee runs timed multiple-choice skills tests built from a job description. Her
 - van der Linden, W. J., & Guo, F. (2008). Bayesian procedures for identifying aberrant response-time patterns in adaptive testing. *Psychometrika, 73*(3), 365–384. [doi:10.1007/s11336-007-9046-8](https://doi.org/10.1007/s11336-007-9046-8)
 - Meijer, R. R., & Sijtsma, K. (2001). Methodology review: Evaluating person fit. *Applied Psychological Measurement, 25*(2), 107–135. [doi:10.1177/01466210122031957](https://doi.org/10.1177/01466210122031957)
 - Verschuere, B., et al. (2018). Registered replication report on Mazar, Amir, and Ariely (2008). *Advances in Methods and Practices in Psychological Science, 1*(3), 299–317. [doi:10.1177/2515245918781032](https://doi.org/10.1177/2515245918781032)
-- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107. [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
+- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107 (corrected 2026). [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
 - McCabe, D. L., Treviño, L. K., & Butterfield, K. D. (2001). Cheating in academic institutions: A decade of research. *Ethics & Behavior, 11*(3), 219–232. [doi:10.1207/S15327019EB1103_2](https://doi.org/10.1207/S15327019EB1103_2)
 - Yoder-Himes, D. R., et al. (2022). Racial, skin tone, and sex disparities in automated proctoring software. *Frontiers in Education, 7*. [doi:10.3389/feduc.2022.881449](https://doi.org/10.3389/feduc.2022.881449)
 - Garante per la protezione dei dati personali, [decision no. 317 of 16 September 2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988) (Università Bocconi).
-- Regulation (EU) 2024/1689 (AI Act), [Article 5](https://artificialintelligenceact.eu/article/5/); European Commission, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), 4 February 2025.
+- Regulation (EU) 2024/1689 (AI Act), [Article 5](https://artificialintelligenceact.eu/article/5/); European Commission, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), published 4 February 2025, adopted 29 July 2025.
 - GDPR, [Article 9](https://gdpr-info.eu/art-9-gdpr/) and [Article 22](https://gdpr-info.eu/art-22-gdpr/).
-- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), August 2022 (Ogletree v. Cleveland State University, N.D. Ohio).
+- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), August 2022 (Ogletree v. Cleveland State University, N.D. Ohio); Bloomberg Law, [Cleveland State dodges room-scan order after plaintiff's death](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death), December 2023.

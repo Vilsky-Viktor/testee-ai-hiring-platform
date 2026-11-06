@@ -2,7 +2,7 @@
 title: "Pruebas de habilidades frente a filtrado de CV: qué predice el desempeño laboral"
 seoTitle: "Pruebas de habilidades vs. filtrado de CV: qué predice más"
 description: "Qué dicen décadas de investigación sobre pruebas de conocimientos, muestras de trabajo, entrevistas y años de experiencia, y cómo aplicarlo al seleccionar."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Pruebas de habilidades frente a filtrado de CV: qué predice el desempeño laboral
@@ -64,7 +64,7 @@ Los autores señalan también una segunda condición: las muestras de trabajo y 
 - **Son promedios de muchos puestos y estudios.** Tu puesto, tu prueba y tus candidatos pueden ser distintos.
 - **Las estimaciones de validez corresponden a métodos bien diseñados.** Una prueba mal redactada o una entrevista descuidada no alcanzarán estas cifras.
 - **Un solo método rara vez basta.** Los investigadores suelen aconsejar combinar métodos, por ejemplo una prueba de conocimientos al principio y una entrevista estructurada más adelante.
-- **La equidad necesita sus propias comprobaciones.** Sackett et al. presentan la validez junto a las diferencias medias de puntuación entre candidatos negros y blancos. Las pruebas de conocimientos del puesto, las muestras de trabajo y las pruebas cognitivas muestran diferencias considerables; las entrevistas estructuradas, diferencias menores. Combinar métodos puede reducirlas. Uses lo que uses, vigila las tasas de aprobados entre grupos. En EE. UU., la regla orientativa de los cuatro quintos de las [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) es el punto de partida habitual.
+- **La equidad necesita sus propias comprobaciones.** Sackett et al. presentan la validez junto a las diferencias medias de puntuación entre candidatos negros y blancos. Las pruebas de conocimientos del puesto, las muestras de trabajo y las pruebas cognitivas muestran diferencias considerables; las entrevistas estructuradas, diferencias menores. Combinar métodos puede reducirlas. Uses lo que uses, vigila las tasas de aprobados entre grupos. En EE. UU., la regla orientativa de los cuatro quintos de las [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) es el punto de partida habitual, aunque la EEOC esté en vías de derogar las partes interpretativas de las Guidelines.
 - **Una puntuación respalda una decisión; no la toma.** Una persona debe mirar las respuestas antes de decidir.
 
 ## Un proceso de selección basado en la investigación
@@ -85,7 +85,7 @@ testee cubre el paso 2: una prueba de conocimientos del puesto de opción múlti
 - **Las mismas condiciones para todos.** Los mismos temas y número de preguntas, y una cuenta atrás en cada pregunta. Puedes dar tiempo extra a los candidatos que lo pidan.
 - **Cada candidato recibe sus propias preguntas,** un conjunto aleatorio del banco de cada tema, así que es más difícil compartir respuestas.
 - **Resultados fáciles de leer.** Una ficha de evaluación por candidato con cada respuesta y su tiempo, ordenada por puntuación, con alertas de respuestas demasiado rápidas, salidas de la página, intentos de copiar y patrones de respuesta inusuales.
-- **Respuestas corregidas con una clave de respuestas** que redacta la IA; una muestra de las claves de cada tema se revisa antes de publicarse, y el resto cuando se marca una pregunta. Ninguna IA lee ni juzga la respuesta de un candidato.
+- **Respuestas corregidas con una clave de respuestas** que redacta la IA; una muestra de las claves de cada tema se revisa antes de publicarse, y el resto cuando se marca una pregunta. Ninguna IA juzga la respuesta de un candidato.
 
 testee no hace entrevistas estructuradas, muestras de trabajo ni pruebas cognitivas. Úsalo junto con ellas. Para saber más sobre tipos de pruebas y equidad, lee [Pruebas de selección de personal](/guides/pre-employment-testing).
 

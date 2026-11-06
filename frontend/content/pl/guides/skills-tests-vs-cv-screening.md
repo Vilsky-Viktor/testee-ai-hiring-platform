@@ -2,7 +2,7 @@
 title: "Testy umiejętności a selekcja CV: co przewiduje efektywność w pracy"
 seoTitle: "Testy umiejętności a selekcja CV: co przewiduje wyniki"
 description: "Co dekady badań nad rekrutacją mówią o testach wiedzy, próbkach pracy, rozmowach i stażu pracy oraz jak wykorzystać to w selekcji kandydatów."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Testy umiejętności a selekcja CV: co przewiduje efektywność w pracy
@@ -64,7 +64,7 @@ Autorzy zwracają też uwagę na drugi warunek: próbki pracy i testy wiedzy pas
 - **To średnie z wielu stanowisk i badań.** Twoja rola, Twój test i Twoi kandydaci mogą się różnić.
 - **Szacunki trafności dotyczą dobrze zbudowanych metod.** Źle napisany test lub niedbała rozmowa nie osiągną tych wartości.
 - **Jedna metoda rzadko wystarcza.** Badacze zwykle zalecają łączenie metod, na przykład test wiedzy na wczesnym etapie, a później ustrukturyzowaną rozmowę kwalifikacyjną.
-- **Uczciwość wymaga osobnej kontroli.** Sackett i in. zestawiają trafność ze średnimi różnicami wyników między kandydatami czarnoskórymi i białymi. Testy wiedzy zawodowej, próbki pracy i testy poznawcze wykazują znaczne różnice; ustrukturyzowane rozmowy mniejsze. Łączenie metod może je zmniejszyć. Niezależnie od tego, czego używasz, monitoruj zdawalność w poszczególnych grupach. W USA zwykłym punktem wyjścia jest reguła czterech piątych z [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4).
+- **Uczciwość wymaga osobnej kontroli.** Sackett i in. zestawiają trafność ze średnimi różnicami wyników między kandydatami czarnoskórymi i białymi. Testy wiedzy zawodowej, próbki pracy i testy poznawcze wykazują znaczne różnice; ustrukturyzowane rozmowy mniejsze. Łączenie metod może je zmniejszyć. Niezależnie od tego, czego używasz, monitoruj zdawalność w poszczególnych grupach. W USA zwykłym punktem wyjścia jest reguła czterech piątych z [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4), nawet gdy EEOC zamierza uchylić ich interpretacyjne części.
 - **Wynik wspiera decyzję, ale jej nie podejmuje.** Zanim zdecydujesz, człowiek powinien przejrzeć odpowiedzi.
 
 ## Proces selekcji oparty na badaniach
@@ -85,7 +85,7 @@ testee obejmuje krok 2: test wiedzy zawodowej w formie testu wyboru z limitem cz
 - **Te same warunki dla wszystkich.** Te same tematy i liczba pytań oraz odliczanie przy każdym pytaniu. Kandydatom, którzy o to poproszą, możesz dać dodatkowy czas.
 - **Każdy kandydat dostaje własne pytania,** losowy zestaw z puli każdego tematu, więc trudniej dzielić się odpowiedziami.
 - **Czytelne wyniki.** Karta wyników dla każdego kandydata z każdą odpowiedzią i czasem jej udzielenia, ranking według punktacji, z oznaczeniami zbyt szybkich odpowiedzi, opuszczenia strony, prób kopiowania i nietypowych wzorców odpowiedzi.
-- **Odpowiedzi oceniane według klucza odpowiedzi,** który pisze AI; próbka kluczy z każdego tematu jest sprawdzana przed udostępnieniem, a pozostałe, gdy pytanie zostanie oznaczone. Żadna AI nie czyta ani nie ocenia odpowiedzi kandydata.
+- **Odpowiedzi oceniane według klucza odpowiedzi,** który pisze AI; próbka kluczy z każdego tematu jest sprawdzana przed udostępnieniem, a pozostałe, gdy pytanie zostanie oznaczone. Żadna AI nie ocenia odpowiedzi kandydata.
 
 testee nie prowadzi ustrukturyzowanych rozmów kwalifikacyjnych, próbek pracy ani testów poznawczych. Używaj jej razem z nimi. Więcej o rodzajach testów i uczciwości przeczytasz w poradniku [Testy rekrutacyjne](/guides/pre-employment-testing).
 

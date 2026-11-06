@@ -2,14 +2,14 @@
 title: "AI interviews: ano ang mga ito at paano gamitin nang patas"
 seoTitle: "AI in Recruitment: AI Interview Tools, Panganib at Gamit"
 description: "AI in recruitment: ano ang AI interview tools, chatbot, video analysis at generated tests, paano gumagana ang timed test ng testee, at compliance."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # AI interviews: ano ang mga ito at paano gamitin nang patas
 
 Ibang-iba ang ibig sabihin ng "AI interview" depende sa vendor. May mga tool na nakikipag-usap sa aplikante. May mga nagre-record ng video at nag-i-score nito. May mga gumagamit ng AI para lang isulat ang mga tanong, saka nag-i-score ng mga sagot ayon sa nakapirming patakaran. Para sa isang hiring team, mahalaga ang pagkakaiba: binabago nito kung ano ang kaya mong ipaliwanag sa aplikante, kung ano ang puwedeng magkamali, at kung ano ang inaasahan sa iyo ng batas.
 
-Inaayos ng pahinang ito ang mga pangunahing uri ng AI interview tools, ipinapaliwanag ang paraan ng testee, at tinatalakay ang compliance basics.
+Inaayos ng gabay na ito ang mga pangunahing uri ng AI interview tools, ipinapaliwanag ang paraan ng testee, at tinatalakay ang compliance basics.
 
 ## Tatlong uri ng AI interview tools
 
@@ -38,13 +38,13 @@ Gumagamit ang testee ng AI para sumulat ng skills interview mula sa iyong job de
 1. **Binabasa ng AI ang iyong job description** at kinukuha ang dapat malaman ng aplikante: ang mga requirement, ang level at isang set ng mga topic na may mga subtopic.
 2. **Nire-review mo ang mga topic.** Panatilihin, i-uncheck, palitan ang pangalan o i-edit ang mga ito, o sabihin sa AI sa simpleng text kung ano ang babaguhin. Walang tanong na isinusulat hangga't hindi mo inaaprubahan.
 3. **Isinusulat ng AI ang mga tanong.** Bawat topic ay may bank ng multiple-choice questions na may tig-apat na opsyon: karamihan ay may isang tamang opsyon at tatlong kapani-paniwalang maling opsyon, at mga 1 sa bawat 10 ay "piliin ang lahat ng tama", na may 2 o 3 tamang opsyon. Para sa mga technical topic, maraming tanong ang nagpapakita ng maikling code example at nagtatanong kung ano ang output nito, ano ang ginagawa nito, bakit ito pumapalya o aling pagbabago ang aayos dito. Mabubuksan mo ang bawat tanong at ang mga opsyon nito, at puwede mong i-generate ulit ang alinmang hindi mo gusto.
-4. **Sumasagot ang mga aplikante sa mga timed na tanong.** Bawat aplikante ay may sariling random na set mula sa bank ng bawat topic, sa sarili nitong pagkakasunod-sunod, na may countdown sa bawat tanong.
-5. **Mina-mark ang mga sagot ayon sa answer key.** AI ang sumusulat ng mga key; chine-check ang ilan sa bawat topic bago i-release, at ang iba kapag na-flag ang tanong. Sumusunod ang pagmamarka mismo sa nakapirming patakaran, at walang AI na bumabasa o humuhusga sa sagot ng aplikante. Kung maitama ang isang key sa ibang pagkakataon, para lang sa mga aplikanteng magsisimula pagkatapos nito ang pagtatama; hindi nagbabago ang mga naunang resulta. Ipinapakita sa iyo bilang signal ang bilis, pag-alis sa pahina at pagtatangkang mag-copy; hindi nila binabago ang score.
+4. **Sumasagot ang mga aplikante sa mga timed na tanong.** Bawat aplikante ay may sariling random na set mula sa bank ng bawat topic, sa sarili nitong pagkakasunod-sunod, na may countdown sa bawat tanong. Bilang default, tina-tap nila ang mga sagot nila; sa voice mode, binabasa nang malakas ni Mira, ang AI interviewer ng testee, ang bawat tanong at sinasabi o tina-tap ng aplikante ang sagot.
+5. **Mina-mark ang mga sagot ayon sa answer key.** AI ang sumusulat ng mga key; chine-check ang ilan sa bawat topic bago i-release, at ang iba kapag na-flag ang tanong. Sumusunod ang pagmamarka mismo sa nakapirming patakaran, at walang AI na humuhusga sa sagot ng aplikante. Sa voice mode, ginagawang text lang ng AI ang pananalita at itinutugma ito sa isang option. Kung maitama ang isang key sa ibang pagkakataon, para lang sa mga aplikanteng magsisimula pagkatapos nito ang pagtatama; hindi nagbabago ang mga naunang resulta. Ipinapakita sa iyo bilang signal ang bilis, pag-alis sa pahina at pagtatangkang mag-copy; hindi nila binabago ang score.
 6. **Tao ang nagdedesisyon.** Makikita mo ang naka-rank na listahan at scorecard bawat aplikante, kasama ang bawat sagot at oras nito. Isang tao sa iyong kumpanya ang nagre-review ng resulta at gumagawa ng hiring decision.
 
 Ang hindi ginagawa ng testee:
 
-- Walang video, voice o face analysis.
+- Walang video o face analysis, at walang pagsusuri sa boses ng aplikante. Ginagawang text lang ng voice mode ang pananalita para mahanap ang option na binanggit nila.
 - Walang paghihinuha ng personality o emosyon.
 - Walang awtomatikong rejection. Hindi nagre-reject ng aplikante o nagpapadala ng rejection message ang testee; ang team mo ang nagdedesisyon.
 - Hindi ginagamit ang iyong data para mag-train ng AI models. Ang AI provider ng testee, ang OpenAI, ay hindi nagte-train gamit ang API data ayon sa mga tuntunin nito.
@@ -63,7 +63,7 @@ Puwede mo ring i-preview ang sarili mong interview bilang aplikante bago ka mag-
 
 **Halos pareho ang kondisyon ng lahat.** Parehong mga topic, parehong bilang ng tanong bawat topic, parehong average na oras bawat tanong at parehong kabuuang oras. Random na kinukuha ang mga tanong ng bawat aplikante, kaya bahagyang nagkakaiba sa hirap ang mga set. Puwedeng mabigyan ng mas maraming oras ang mga aplikanteng nangangailangan nito: puwede kang magdagdag ng oras bawat aplikante.
 
-**Mas kaunting walang-kaugnayang signal.** Walang dalang accent, mukha, background o istilo ng pagsulat ang isang multiple-choice na sagot, kaya hindi nakadepende ang score sa itsura o boses ng isang tao. Hindi nito inaalis ang posibilidad ng bias: puwedeng magpakita ng pagkakaiba sa score sa pagitan ng mga grupo ang knowledge tests, at puwedeng mahirapan ang aplikante sa test na nasa ikalawa niyang wika. Bantayan ang mga resulta sa iba't ibang grupo.
+**Mas kaunting walang-kaugnayang signal.** Walang dalang accent, mukha, background o istilo ng pagsulat ang isang multiple-choice na sagot, kaya hindi nakadepende ang score sa itsura o boses ng isang tao. Sa voice mode, nag-iiba ayon sa wika at accent kung gaano kahusay naririnig ang pananalita, kaya puwedeng mag-tap ang mga aplikante sa halip ([Voice interview sa 23 wika](/guides/voice-interview-languages)). Wala sa mga iyon ang nag-aalis ng posibilidad ng bias: puwedeng magpakita ng pagkakaiba sa score sa pagitan ng mga grupo ang knowledge tests, at puwedeng mahirapan ang aplikante sa test na nasa ikalawa niyang wika. Bantayan ang mga resulta sa iba't ibang grupo.
 
 **Mas mahirap magpasahan ng sagot.** Dahil may sariling random na set ng tanong ang bawat aplikante at may timer ang bawat tanong, mas maraming effort ang kailangan para magpasahan ng sagot o maghanap ng sagot. Tinutulungan ka ng integrity signals na magpasya kung saan titingin nang mas mabuti; hindi sila patunay ng pandaraya.
 
@@ -75,7 +75,7 @@ Maging malinaw sa mga limitasyon. Kaalaman ang sinusuri ng multiple-choice test.
 
 ## Compliance basics para sa AI interview tools
 
-Ito ay buod noong Oktubre 2026, hindi legal advice. Kumonsulta sa sarili mong abogado.
+Ito ay buod noong Nobyembre 2026, hindi legal advice.
 
 ### EU AI Act
 
@@ -94,7 +94,7 @@ Personal data ang mga resulta ng interview, sa ilalim ng EU GDPR at ng UK GDPR. 
 
 ### United States
 
-Saklaw ng parehong mga anti-discrimination rule ang AI tools na ginagamit sa hiring gaya ng anumang selection method. Bantayan ang selection rates sa iba't ibang grupo (ang four-fifths rule of thumb sa [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)), mag-alok ng accommodations, at tingnan ang mga patakaran ng estado at lokal na pamahalaan. Halimbawa, ang [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) ng New York City ay nag-aatas ng bias audit sa loob ng isang taon bago gumamit ng automated employment decision tool, pampublikong buod nito, at abiso sa mga aplikante. Tingnan ang [Pre-employment testing](/guides/pre-employment-testing) para sa overview.
+Saklaw ng parehong mga anti-discrimination rule ang AI tools na ginagamit sa hiring gaya ng anumang selection method. Bantayan ang selection rates sa iba't ibang grupo (ang four-fifths rule of thumb sa [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4), na kumikilos ang EEOC para bawiin habang nananatili ang adverse impact rule ng Title VII), mag-alok ng accommodations, at tingnan ang mga patakaran ng estado at lokal na pamahalaan. Halimbawa, ang [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) ng New York City ay nag-aatas ng bias audit sa loob ng isang taon bago gumamit ng automated employment decision tool, pampublikong buod nito, at abiso sa mga aplikante. Tingnan ang [Pre-employment testing](/guides/pre-employment-testing) para sa overview.
 
 ## Paano suriin ang isang AI interview tool
 

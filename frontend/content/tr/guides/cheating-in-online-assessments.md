@@ -2,7 +2,7 @@
 title: "Online değerlendirmelerde kopya ve buna karşı işe yarayanlar"
 seoTitle: "Online İşe Alım Testlerinde Kopya: Ne İşe Yarar"
 description: "Adaylar online testlerde nasıl kopya çeker, ekran önlemleri ve kamerayla gözetim neden yetmez, ne işe yarar: sıkı süre, insana kanıt, takip soruları."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Online değerlendirmelerde kopya ve buna karşı işe yarayanlar
@@ -32,10 +32,10 @@ Araştırmacılar ekranları göz için okunabilir ama kamera için okunamaz hâ
 
 Daha hafif iki fikir de daha iyi sonuç vermiyor:
 
-- **Yapay zekâya yönelik uyarılar** ("Yapay zekâ asistanları bu soruyu yanıtlamamalıdır") kolayca kırpılabilir veya yok sayılabilir; modeller de görüntülerdeki metni talimat olarak değil içerik olarak ele almak üzere eğitilir.
+- **Yapay zekâya yönelik uyarılar** ("Yapay zekâ asistanları bu soruyu yanıtlamamalıdır") kolayca kırpılabilir; modeller de bunlara güvenilir biçimde uymaz.
 - **Filigranlar** bir soruyu kimin sızdırdığını izlemeye yardımcı olabilir ama kimsenin onu yanıtlamasını engellemez.
 
-testee'de ikisini de kendi sorularımızda denedik: yapay zekâ modelleri filigranlı veya uyarılı fotoğraflanmış soruları, bunlar olmadan nasıl yanıtlıyorsa öyle yanıtladı. Bu yüzden ekranı korumaya çalışmayı bıraktık.
+Bu yüzden testee ekranı korumaya çalışmaz.
 
 ## Daha iyi işleyenler
 
@@ -71,7 +71,7 @@ Bu, testi olması gereken şeye de dönüştürür: nihai karar değil, kiminle 
 
 Adaylara neyin serbest olduğunu baştan söyleyin: yapay zekâ aracı yok, başka kişiler yok, not yok ya da kurallarınız neyse. Ardından başlamadan önce bunu onaylamalarını isteyin.
 
-Bir taahhüdün ne işe yaradığı konusunda gerçekçi olun. Ahlaki hatırlatmalar ve imzalı beyanlarla ilgili çalışmalar pek dayanıklı çıkmadı: "On Emir" deneyinin büyük bir tekrarı kopya üzerinde hiçbir etki bulmadı ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)) ve bilinen bir "en üstte imza" çalışmasının yazarları, onu tekrarladıklarında daha sonra hiçbir etki bulmadı ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)). Üniversitelerdeki araştırmalar ise onur kodlarını, daha geniş bir dürüstlük kültürünün parçası olarak, daha az kopyayla ilişkilendiriyor ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). Bir taahhüdün asıl değeri netliktir: kimse kuralları bilmediğini söyleyemez ve kurallara uymayı kabul ettiklerine dair bir kaydınız olur.
+Bir taahhüdün ne işe yaradığı konusunda gerçekçi olun. Ahlaki hatırlatmalar ve imzalı beyanlarla ilgili çalışmalar pek dayanıklı çıkmadı: "On Emir" deneyinin büyük bir tekrarı kopya üzerinde hiçbir etki bulmadı ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)) ve bilinen bir "en üstte imza" çalışmasının yazarları, onu tekrarladıklarında daha sonra hiçbir etki bulmadı ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)); özgün makale, verilerine ilişkin şüpheler nedeniyle 2021'de geri çekildi. Üniversitelerdeki araştırmalar ise onur kodlarını, daha geniş bir dürüstlük kültürünün parçası olarak, daha az kopyayla ilişkilendiriyor ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). Bir taahhüdün asıl değeri netliktir: kimse kuralları bilmediğini söyleyemez ve kurallara uymayı kabul ettiklerine dair bir kaydınız olur.
 
 ## Gözetimin sınırları: adalet ve hukuk
 
@@ -83,9 +83,9 @@ Web kamerasıyla gözetim, ekran kaydı ve oda taramaları yukarıdakilerin heps
 
 Hukuk, özellikle Avrupa'da, ek sınırlar koyar:
 
-- **GDPR.** Bir adayın videosu kişisel veridir ve yüzünün analizi, özel olarak korunan biyometrik veri olabilir ([Madde 9](https://gdpr-info.eu/art-9-gdpr/)). 2021'de İtalyan veri koruma otoritesi, Bocconi Üniversitesi'ne uzaktan sınav gözetimi nedeniyle para cezası verdi; diğer bulguların yanı sıra yüz analizinin geçerli bir hukuki dayanak olmadan yapılan biyometrik işleme olduğunu, üniversite ile öğrenciler arasındaki dengesizlik nedeniyle rızanın özgürce verilmediğini ve öğrencilerin bu konuda gerektiği gibi bilgilendirilmediğini tespit etti ([Garante, 16 Eylül 2021 tarihli 317 sayılı karar](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). İşveren ile aday arasındaki güç dengesizliği ise belki daha da büyüktür.
+- **GDPR.** Bir adayın videosu kişisel veridir ve yüzünün analizi, özel olarak korunan biyometrik veri olabilir ([Madde 9](https://gdpr-info.eu/art-9-gdpr/)). 2021'de İtalyan veri koruma otoritesi, Bocconi Üniversitesi'ne uzaktan sınav gözetimi nedeniyle para cezası verdi; diğer bulguların yanı sıra yüz analizinin geçerli bir hukuki dayanak olmadan yapılan biyometrik işleme olduğunu, üniversite ile öğrenciler arasındaki dengesizlik nedeniyle rızanın özgürce verilmediğini ve öğrencilerin bu konuda gerektiği gibi bilgilendirilmediğini tespit etti ([Garante, 16 Eylül 2021 tarihli 317 sayılı karar](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). İtirazların ardından ceza €200.000'den €150.000'e indi. İşveren ile aday arasındaki güç dengesizliği ise belki daha da büyüktür.
 - **AB Yapay Zekâ Yasası (AI Act).** 2 Şubat 2025'ten bu yana, dar tıbbi ve güvenlik istisnaları dışında, işyerinde kişilerin duygularını çıkarsayan yapay zekâ yasaktır ([Madde 5(1)(f)](https://artificialintelligenceact.eu/article/5/)) ve Avrupa Komisyonu'nun kılavuzu "işyeri" kavramını işe alımı da kapsayacak şekilde yorumlar ([Komisyonun yasaklı yapay zekâ uygulamalarına ilişkin kılavuzu](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)). Videodan "şüpheli" davranışa hükmeden gözetim bu çizgiye çok yaklaşır. Adayları değerlendirmek için kullanılan yapay zekâ da büyük olasılıkla yüksek risklidir ve insan gözetimi gibi yükümlülükler taşır. [AB'de yapay zekâ ile işe alım yasal mı?](/guides/is-ai-hiring-legal-in-the-eu) kuralları ve tarihlerini açıklıyor.
-- **Amerika Birleşik Devletleri.** Bir federal mahkeme 2022'de, bir devlet üniversitesinin online sınav öncesinde bir öğrencinin yatak odasını web kamerasıyla taramasının Dördüncü Değişiklik'i ihlal ettiğine hükmetti ([Ogletree v. Cleveland State University, Higher Ed Dive'ın aktardığına göre](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). Özel işverenler Dördüncü Değişiklik'le bağlı değildir, ancak Illinois'in Biyometrik Bilgi Gizliliği Yasası (BIPA) gibi eyalet biyometri yasaları yüz verileri için kendi kurallarını koyar.
+- **Amerika Birleşik Devletleri.** Bir federal yargıç 2022'de, bir devlet üniversitesinin online sınav öncesinde bir öğrencinin yatak odasını web kamerasıyla taramasının Dördüncü Değişiklik'i ihlal ettiğine hükmetti ([Ogletree v. Cleveland State University, Higher Ed Dive'ın aktardığına göre](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). İstinaf mahkemesi, öğrenci öldükten sonra 2023'te soruya karar vermeden davayı sonlandırdı ([Bloomberg Law](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death)), dolayısıyla soru hâlâ açıktır. Özel işverenler Dördüncü Değişiklik'le bağlı değildir, ancak Illinois'in Biyometrik Bilgi Gizliliği Yasası (BIPA) gibi eyalet biyometri yasaları yüz verileri için kendi kurallarını koyar.
 
 **Bu bölüm pratik bir rehberdir, hukuki tavsiye değildir.** İşe alım yaptığınız yerdeki yükümlülüklerinizi kontrol edin.
 
@@ -110,7 +110,7 @@ testee, bir iş tanımından oluşturulan süreli, çoktan seçmeli beceri testl
 - **Aday bitirdiğinde cevap örüntüleri.** Adayın raporu, uzunluğu ve zorluğu ne olursa olsun her soruda yaklaşık aynı kalan cevap sürelerini ve kolay sorular yanlışken zor soruların doğru olmasını, dayandığı sayılarla birlikte gösterir ("10 zor sorudan 9 tanesi doğru, 8 kolay sorudan 4 tanesi yanlış"). İkincisi, her sorunun ne kadar zor olduğunu bilmek için diğer adaylardan yeterli cevap gerektirir. İki eşik de simüle edilmiş adaylarla yapılan bir testte, dürüst adayların en fazla %1'i işaretlenecek şekilde ayarlandı; her soruyu bir yapay zekâya aktaranların yaklaşık üçte birini yakaladılar. Rapor, bu tür örüntülerin masum nedenleri olabileceğini belirtir.
 - **Canlı mülakat için sorular.** Testi bitiren her adayın sayfası, en güçlü konularından doğru yanıtladığı en fazla 3 soruyu bir sonraki görüşmede konuşmak için önerir; bir örüntü varsa onun arkasındaki zor sorularla başlar.
 - **Adaylar başlayabilmek için** soruları yapay zekâ araçları veya başkalarının yardımı olmadan kendileri yanıtlayacaklarını **taahhüt eder** ve değerlendirme kartı bunu ne zaman yaptıklarını gösterir.
-- **Kamera, mikrofon veya ekran kaydı yok.** testee yalnızca test sayfasının kendisinin gördüklerini kullanır: cevaplar, süreler, sayfadan ayrılmalar ve kopyalama girişimleri.
+- **Kamera veya ekran kaydı yok.** Mikrofon yalnızca sesli modda, adayın sözlü cevabını metne dönüştürmek için kullanılır. Bunun dışında testee yalnızca test sayfasının kendisinin gördüklerini kullanır: cevaplar, süreler, sayfadan ayrılmalar ve kopyalama girişimleri.
 - **Kararı insanlar verir.** Hiçbir şey bir adayı otomatik olarak reddetmez.
 
 ## İlgili yazılar
@@ -129,10 +129,10 @@ testee, bir iş tanımından oluşturulan süreli, çoktan seçmeli beceri testl
 - van der Linden, W. J., & Guo, F. (2008). Bayesian procedures for identifying aberrant response-time patterns in adaptive testing. *Psychometrika, 73*(3), 365–384. [doi:10.1007/s11336-007-9046-8](https://doi.org/10.1007/s11336-007-9046-8)
 - Meijer, R. R., & Sijtsma, K. (2001). Methodology review: Evaluating person fit. *Applied Psychological Measurement, 25*(2), 107–135. [doi:10.1177/01466210122031957](https://doi.org/10.1177/01466210122031957)
 - Verschuere, B., et al. (2018). Registered replication report on Mazar, Amir, and Ariely (2008). *Advances in Methods and Practices in Psychological Science, 1*(3), 299–317. [doi:10.1177/2515245918781032](https://doi.org/10.1177/2515245918781032)
-- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107. [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
+- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107 (2026'da düzeltildi). [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
 - McCabe, D. L., Treviño, L. K., & Butterfield, K. D. (2001). Cheating in academic institutions: A decade of research. *Ethics & Behavior, 11*(3), 219–232. [doi:10.1207/S15327019EB1103_2](https://doi.org/10.1207/S15327019EB1103_2)
 - Yoder-Himes, D. R., et al. (2022). Racial, skin tone, and sex disparities in automated proctoring software. *Frontiers in Education, 7*. [doi:10.3389/feduc.2022.881449](https://doi.org/10.3389/feduc.2022.881449)
 - Garante per la protezione dei dati personali, [16 Eylül 2021 tarihli 317 sayılı karar](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988) (Università Bocconi).
-- Regulation (EU) 2024/1689 (AI Act), [Madde 5](https://artificialintelligenceact.eu/article/5/); Avrupa Komisyonu, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), 4 Şubat 2025.
+- Regulation (EU) 2024/1689 (AI Act), [Madde 5](https://artificialintelligenceact.eu/article/5/); Avrupa Komisyonu, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), 4 Şubat 2025'te yayımlandı, 29 Temmuz 2025'te kabul edildi.
 - GDPR, [Madde 9](https://gdpr-info.eu/art-9-gdpr/) ve [Madde 22](https://gdpr-info.eu/art-22-gdpr/).
-- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), Ağustos 2022 (Ogletree v. Cleveland State University, N.D. Ohio).
+- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), Ağustos 2022 (Ogletree v. Cleveland State University, N.D. Ohio); Bloomberg Law, [Cleveland State dodges room-scan order after plaintiff's death](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death), Aralık 2023.

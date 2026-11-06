@@ -2,7 +2,7 @@
 title: "Tes seleksi karyawan: panduan praktis untuk tim kecil dan menengah"
 seoTitle: "Tes Seleksi Karyawan: Jenis, Keadilan, dan Cara Memilih Alat"
 description: "Apa itu tes seleksi karyawan, jenisnya, kapan dipakai, dasar keadilan dan hukumnya, serta cara memilih alat tes rekrutmen. Panduan ringkas untuk tim HR."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Tes seleksi karyawan: panduan praktis untuk tim kecil dan menengah
@@ -48,11 +48,11 @@ Letakkan tes tepat setelah melamar (lewat tautan di lowongan kerja) atau setelah
 
 ## Keadilan dan hukum: dasar-dasarnya
 
-Bagian ini adalah gambaran umum per Oktober 2026, bukan nasihat hukum. Aturannya tergantung negaramu, industrimu, dan cara kamu memakai hasilnya. Konsultasikan dengan penasihat hukummu sendiri.
+Bagian ini adalah gambaran umum per November 2026, bukan nasihat hukum. Aturannya tergantung negaramu, industrimu, dan cara kamu memakai hasilnya.
 
 ### Amerika Serikat: EEOC dan aturan empat per lima
 
-Pemberi kerja di AS yang memakai tes untuk keputusan rekrutmen tunduk pada undang-undang federal antidiskriminasi yang ditegakkan oleh EEOC. Uniform Guidelines on Employee Selection Procedures memuat patokan praktis untuk dampak merugikan (adverse impact): "Tingkat seleksi untuk kelompok ras, jenis kelamin, atau etnis mana pun yang kurang dari empat per lima (4/5) (atau delapan puluh persen) dari tingkat kelompok dengan tingkat tertinggi umumnya akan dianggap oleh lembaga penegak Federal sebagai bukti adanya dampak merugikan" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+Pemberi kerja di AS yang memakai tes untuk keputusan rekrutmen tunduk pada undang-undang federal antidiskriminasi yang ditegakkan oleh EEOC. Uniform Guidelines on Employee Selection Procedures memuat patokan praktis untuk dampak merugikan (adverse impact): "Tingkat seleksi untuk kelompok ras, jenis kelamin, atau etnis mana pun yang kurang dari empat per lima (4/5) (atau delapan puluh persen) dari tingkat kelompok dengan tingkat tertinggi umumnya akan dianggap oleh lembaga penegak Federal sebagai bukti adanya dampak merugikan" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). Pada Oktober 2026, EEOC mengirim ke Gedung Putih aturan final untuk mencabut bagian interpretatif dari Guidelines ini, dengan target Januari 2027. Aturan Title VII tentang dampak merugikan tetap berlaku, dan pemeriksaan empat per lima tetap menjadi uji awal yang berguna.
 
 Dalam praktiknya: uji hanya pengetahuan yang dibutuhkan pekerjaan, pantau tingkat kelulusan antarkelompok, sediakan akomodasi seperti tambahan waktu, dan periksa aturan negara bagian dan kota tentang alat rekrutmen otomatis. Misalnya, [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) Kota New York mewajibkan audit bias, ringkasan publik atas audit tersebut, dan pemberitahuan kepada kandidat sebelum alat keputusan ketenagakerjaan otomatis dipakai.
 
@@ -98,9 +98,9 @@ testee mengubah deskripsi pekerjaan menjadi wawancara keterampilan pilihan ganda
 
 - **Setiap kandidat mendapat set acaknya sendiri** dari bank soal tiap topik, dengan hitung mundur yang ditegakkan server di setiap soal. Kamu bisa memberi tambahan waktu kepada siapa pun yang memintanya.
 - **Scorecard** menampilkan setiap jawaban, apakah benar, dan berapa lama waktunya, dengan tanda untuk jawaban yang terlalu cepat, meninggalkan halaman, percobaan menyalin, dan pola jawaban yang tidak biasa, plus soal untuk ditanyakan dalam wawancara langsung. Tanda-tanda ini tidak mengubah skor.
-- **Jawaban dinilai berdasarkan kunci jawaban** yang ditulis AI; sebagian kunci di tiap topik diperiksa sebelum dirilis, sisanya saat soalnya ditandai. Tidak ada AI yang membaca atau menilai jawaban kandidat. Laporan PDF mencakup satu kandidat atau seluruh daftar.
+- **Jawaban dinilai berdasarkan kunci jawaban** yang ditulis AI; sebagian kunci di tiap topik diperiksa sebelum dirilis, sisanya saat soalnya ditandai. Tidak ada AI yang menilai jawaban kandidat. Laporan PDF mencakup satu kandidat atau seluruh daftar.
 - **Bekerja dengan alat yang kamu pakai:** kandidat yang kamu pindahkan ke suatu tahap di Workable, Greenhouse, Teamtailor, Recruitee, atau Breezy HR menerima wawancaranya, dan hasilnya kembali ke ATS. Slack diberi tahu saat kandidat selesai, dan [API](/api-docs) menghubungkan platformmu sendiri. Lihat [cara menghubungkan tes keterampilan ke ATS-mu](/guides/ats-integration-skills-tests).
 
-Harga dihitung per kandidat yang menjawab, tanpa langganan: $2–5 per kandidat tergantung besar isi ulangmu (dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, India, bagian Eropa lainnya, dan Inggris Raya), dan 3 kandidat pertamamu gratis. Data di-hosting di UE (beberapa sub-pemroses ada di AS; lihat [kebijakan privasi](/privacy)), dan perjanjian pemrosesan data serta petunjuk untuk perusahaan sudah termasuk.
+Harga dihitung per kandidat yang menjawab, tanpa langganan: $2–5 per kandidat tergantung besar isi ulangmu (dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, India, negara UE lainnya, Norwegia, Islandia, Liechtenstein, dan Inggris Raya), dan 3 kandidat pertama dari perusahaan pertamamu gratis. Data di-hosting di UE (beberapa sub-pemroses ada di AS; lihat [kebijakan privasi](/privacy)), dan perjanjian pemrosesan data serta petunjuk untuk perusahaan sudah termasuk.
 
 testee bukan paket psikometri, bukan platform untuk menulis dan menjalankan kode, dan bukan alat wawancara video, dan testee bisa dipakai berdampingan dengan semua itu. Untuk perbandingannya dengan alat rekrutmen AI lain, baca [Wawancara AI](/guides/ai-interviews). Untuk posisi engineering, lihat [Cara merekrut engineer](/guides/hiring-engineers).

@@ -2,7 +2,7 @@
 title: "在线测评中的作弊行为，以及真正有效的应对方法"
 seoTitle: "在线测评作弊：哪些防范方法真正有效"
 description: "候选人如何在在线测评中作弊，为什么屏幕限制和摄像头监考不够用，以及真正有效的做法：紧凑的计时、交给人判断的线索和追问。"
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # 在线测评中的作弊行为，以及真正有效的应对方法
@@ -32,10 +32,10 @@ updated: "2026-10-29"
 
 两种更轻量的办法也好不到哪里去：
 
-- **针对 AI 的提示语**（“AI 助手不得回答此题”）很容易被裁掉或忽略，而且模型经过训练，会把图片中的文字当作内容，而不是指令。
+- **针对 AI 的提示语**（“AI 助手不得回答此题”）很容易被裁掉，而且模型并不会可靠地遵守。
 - **水印**有助于追查是谁泄露了题目，但并不能阻止任何人回答它。
 
-在 testee，我们用自己的题目试过这两种方法：无论加不加水印或提示语，AI 模型回答拍下来的题目都一样。所以我们不再试图守住屏幕。
+所以 testee 不试图守住屏幕。
 
 ## 更有效的做法
 
@@ -71,7 +71,7 @@ updated: "2026-10-29"
 
 提前告诉候选人允许什么：不得使用 AI 工具、不得找他人帮忙、不得查看笔记，或者你的其他规则。然后请他们在开始前确认。
 
-对承诺能起的作用要有现实的预期。关于道德提醒和签署声明的研究，结果并不稳固：对“十诫”实验的一项大规模重复研究发现，它对作弊没有影响（[Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)）；一项著名的“在开头签名”研究的作者们后来重复实验时，也没有发现效果（[Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)）。关于大学的研究确实把荣誉准则（作为更广泛的诚信文化的一部分）与更少的作弊联系在一起（[McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)）。承诺的主要价值在于清晰：没有人能说自己不知道规则，而你也有他们同意规则的记录。
+对承诺能起的作用要有现实的预期。关于道德提醒和签署声明的研究，结果并不稳固：对“十诫”实验的一项大规模重复研究发现，它对作弊没有影响（[Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)）；一项著名的“在开头签名”研究的作者们后来重复实验时，也没有发现效果（[Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)）；原论文因数据存疑已于 2021 年被撤稿。关于大学的研究确实把荣誉准则（作为更广泛的诚信文化的一部分）与更少的作弊联系在一起（[McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)）。承诺的主要价值在于清晰：没有人能说自己不知道规则，而你也有他们同意规则的记录。
 
 ## 监考的局限：公平性与法律
 
@@ -83,9 +83,9 @@ updated: "2026-10-29"
 
 法律还设置了更多限制，尤其是在欧洲：
 
-- **GDPR。** 候选人的视频属于个人数据，对其面部的分析可能属于受特殊保护的生物识别数据（[第 9 条](https://gdpr-info.eu/art-9-gdpr/)）。2021 年，意大利数据保护机构因远程考试监考对博科尼大学处以罚款，认定的问题包括：面部分析属于没有有效法律依据的生物识别数据处理；鉴于大学与学生之间的地位不平等，同意并非自由作出；学生也没有得到充分告知（[Garante，2021 年 9 月 16 日第 317 号决定](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)）。雇主与候选人之间的地位不平等，可以说只会更大。
+- **GDPR。** 候选人的视频属于个人数据，对其面部的分析可能属于受特殊保护的生物识别数据（[第 9 条](https://gdpr-info.eu/art-9-gdpr/)）。2021 年，意大利数据保护机构因远程考试监考对博科尼大学处以罚款，认定的问题包括：面部分析属于没有有效法律依据的生物识别数据处理；鉴于大学与学生之间的地位不平等，同意并非自由作出；学生也没有得到充分告知（[Garante，2021 年 9 月 16 日第 317 号决定](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)）。经过上诉，罚款现为 €150,000，低于原来的 €200,000。雇主与候选人之间的地位不平等，可以说只会更大。
 - **欧盟《人工智能法案》。** 自 2025 年 2 月 2 日起，在工作场所推断人们情绪的 AI 被禁止，仅有医疗和安全方面的少数例外（[第 5 条第 1 款 (f) 项](https://artificialintelligenceact.eu/article/5/)），而欧盟委员会的指南将“工作场所”解释为包括招聘（[欧盟委员会关于禁止的 AI 做法的指南](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)）。根据视频判断“可疑”行为的监考，已经接近这条界线。用于评估候选人的 AI 也很可能属于高风险，需要履行人工监督等义务。[在欧盟用 AI 招聘合法吗？](/guides/is-ai-hiring-legal-in-the-eu)解释了相关规则及其日期。
-- **美国。** 2022 年，一家联邦法院裁定，一所公立大学在在线考试前用摄像头扫描学生卧室的做法违反了美国宪法第四修正案（[Ogletree v. Cleveland State University，据 Higher Ed Dive 报道](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)）。私营雇主不受第四修正案约束，但各州的生物识别法律（例如伊利诺伊州的《生物识别信息隐私法》）对面部数据有各自的规定。
+- **美国。** 2022 年，一位联邦法官裁定，一所公立大学在在线考试前用摄像头扫描学生卧室的做法违反了美国宪法第四修正案（[Ogletree v. Cleveland State University，据 Higher Ed Dive 报道](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)）。该学生去世后，上诉法院于 2023 年结束了此案，未就这一问题作出裁决（[Bloomberg Law](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death)），因此问题仍未解决。私营雇主不受第四修正案约束，但各州的生物识别法律（例如伊利诺伊州的《生物识别信息隐私法》）对面部数据有各自的规定。
 
 **本节是实务指导，不构成法律意见。** 请核实你在招聘所在地的义务。
 
@@ -110,7 +110,7 @@ testee 运行根据职位描述生成的限时选择题技能测试。目前它�
 - **候选人完成后的作答模式。** 候选人的报告会指出：无论题目长短和难易，作答时间都差不多；以及难题答对而简单题答错，并附上背后的数字（“10 道难题中答对 9 道，8 道简单题中答错 4 道”）。第二种需要足够多其他候选人的作答，才能知道每道题有多难。两个阈值都是在一次模拟候选人的测试中设定的，使诚实的候选人最多只有 1% 被标记；在这些阈值下，把每道题都转给 AI 的候选人中约有三分之一被识别出来。报告会注明，这类模式也可能有正当原因。
 - **供真人面试使用的问题。** 每位已完成测试的候选人页面上，都会从其最强的主题中推荐最多 3 道其答对的题目，供下一次面谈时深入讨论；如果发现了某种模式，就从构成该模式的难题开始。
 - **候选人必须先承诺**独立作答、不借助 AI 工具或他人帮助，才能开始测试，成绩单会显示他们承诺的时间。
-- **不使用摄像头、麦克风或屏幕录制。** testee 只使用测试页面本身能看到的信息：答案、时间、离开页面和复制尝试。
+- **不使用摄像头或屏幕录制。** 麦克风仅在语音模式下使用，用于把候选人说出的答案转成文字。除此之外，testee 只使用测试页面本身能看到的信息：答案、时间、离开页面和复制尝试。
 - **由人来做决定。** 没有任何环节会自动淘汰候选人。
 
 ## 延伸阅读
@@ -129,10 +129,10 @@ testee 运行根据职位描述生成的限时选择题技能测试。目前它�
 - van der Linden, W. J., & Guo, F. (2008). Bayesian procedures for identifying aberrant response-time patterns in adaptive testing. *Psychometrika, 73*(3), 365–384. [doi:10.1007/s11336-007-9046-8](https://doi.org/10.1007/s11336-007-9046-8)
 - Meijer, R. R., & Sijtsma, K. (2001). Methodology review: Evaluating person fit. *Applied Psychological Measurement, 25*(2), 107–135. [doi:10.1177/01466210122031957](https://doi.org/10.1177/01466210122031957)
 - Verschuere, B., et al. (2018). Registered replication report on Mazar, Amir, and Ariely (2008). *Advances in Methods and Practices in Psychological Science, 1*(3), 299–317. [doi:10.1177/2515245918781032](https://doi.org/10.1177/2515245918781032)
-- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107. [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
+- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107（2026 年更正）。[doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
 - McCabe, D. L., Treviño, L. K., & Butterfield, K. D. (2001). Cheating in academic institutions: A decade of research. *Ethics & Behavior, 11*(3), 219–232. [doi:10.1207/S15327019EB1103_2](https://doi.org/10.1207/S15327019EB1103_2)
 - Yoder-Himes, D. R., et al. (2022). Racial, skin tone, and sex disparities in automated proctoring software. *Frontiers in Education, 7*. [doi:10.3389/feduc.2022.881449](https://doi.org/10.3389/feduc.2022.881449)
 - Garante per la protezione dei dati personali，[2021 年 9 月 16 日第 317 号决定](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)（Università Bocconi）。
-- Regulation (EU) 2024/1689 (AI Act)，[第 5 条](https://artificialintelligenceact.eu/article/5/)；European Commission，[Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)，2025 年 2 月 4 日。
+- Regulation (EU) 2024/1689 (AI Act)，[第 5 条](https://artificialintelligenceact.eu/article/5/)；European Commission，[Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)，2025 年 2 月 4 日发布，2025 年 7 月 29 日通过。
 - GDPR [第 9 条](https://gdpr-info.eu/art-9-gdpr/)和[第 22 条](https://gdpr-info.eu/art-22-gdpr/)。
-- Higher Ed Dive，[Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)，2022 年 8 月（Ogletree v. Cleveland State University，美国俄亥俄州北区联邦地区法院）。
+- Higher Ed Dive，[Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)，2022 年 8 月（Ogletree v. Cleveland State University，美国俄亥俄州北区联邦地区法院）；Bloomberg Law，[Cleveland State dodges room-scan order after plaintiff's death](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death)，2023 年 12 月。

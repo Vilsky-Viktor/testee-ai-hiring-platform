@@ -2,7 +2,7 @@
 title: "Cara menghubungkan tes keterampilan ke ATS-mu"
 seoTitle: "Cara Menghubungkan Tes Keterampilan ke ATS: Panduan Praktis"
 description: "Kirim tes keterampilan dan terima hasilnya lewat ATS-mu secara otomatis, biarkan manusia yang memutuskan, dan ketahui apa yang perlu dicek dulu."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Cara menghubungkan tes keterampilan ke ATS-mu
@@ -90,15 +90,15 @@ testee terhubung dengan **Workable, Greenhouse, Teamtailor, Recruitee, dan Breez
 - **Kuncimu, kendalimu.** Pemilik atau admin menghubungkan ATS di tab Integrasi perusahaan dengan kunci yang dibuat perusahaanmu di ATS. testee mengeceknya sebelum menyimpan, menyimpannya dalam bentuk terenkripsi, dan tidak pernah menampilkannya lagi. Memutus koneksi langsung menghapus kunci dan lowongan yang ditautkan.
 - **Tautkan lowongan ke wawancara.** Pilih lowongan di ATS dan tahap yang memicu undangan, lalu tautkan ke wawancara testee yang sudah ada atau buat yang baru dari teks lowongan di ATS. Kamu meninjau topiknya sebelum satu soal pun ditulis.
 - **Pindahkan kandidat, undangan terkirim.** Setiap kandidat diundang sekali per wawancara, meskipun ATS mengirim peristiwa yang sama dua kali.
-- **Hasil kembali ke ATS.** Saat kandidat selesai, testee menambahkan catatan atau komentar padanya di ATS berisi nilainya, lulus atau tidak, tanda integritas jika ada (meninggalkan halaman, upaya menyalin, jawaban yang dipilih terlalu cepat untuk sempat membaca soal), dan tautan ke scorecard-nya beserta semua jawaban.
-- **Kegagalan tidak luput dari perhatian.** Jika kandidat tidak bisa diundang, misalnya karena kredit perusahaan habis, batas email tercapai, atau undangan dijeda sementara oleh testee, semua anggota perusahaan mendapat notifikasi yang menyebut nama ATS-nya. Kandidat yang tidak terundang karena kredit habis akan diundang otomatis setelah isi ulang, dan kandidat yang menunggu di lowongan mana pun bisa diundang lagi dengan satu klik.
+- **Hasil kembali ke ATS.** Saat kandidat selesai, testee menambahkan catatan atau komentar padanya di ATS berisi nilainya, lulus atau tidak, ada atau tidaknya tanda integritas, dan tautan ke scorecard-nya beserta semua jawaban dan tanda.
+- **Kegagalan tidak luput dari perhatian.** Jika kandidat tidak bisa diundang, misalnya karena kredit perusahaan habis, batas email tercapai, atau undangan dijeda sementara oleh testee, semua anggota perusahaan mendapat notifikasi yang menyebut nama ATS-nya. Kandidat yang dikirim ATS dalam 30 hari terakhir dan tidak terundang karena kredit habis akan diundang otomatis setelah isi ulang, dan kandidat yang menunggu di lowongan mana pun bisa diundang lagi dengan satu klik.
 - **Slack, jika kamu memakainya.** testee bisa mengirim notifikasi, misalnya kandidat yang sudah selesai atau kandidat dari ATS yang tidak bisa diundang, ke channel Slack pilihanmu.
 - **Platformmu sendiri.** Jika ATS-mu tidak ada di daftar, [API](/api-docs) testee memungkinkanmu mengundang kandidat dengan kunci API dan menerima webhook bertanda tangan saat kandidat mulai, selesai, atau dihapus, saat undangannya tidak sampai atau kedaluwarsa, dan saat wawancara siap.
 - **Data disimpan untuk jangka waktu tertentu.** Kandidat yang disimpan dari ATS dihapus setelah 365 hari, atau lebih awal bersama wawancara atau perusahaannya.
 
-Beberapa ATS memerlukan satu langkah di sisi mereka. Greenhouse, Teamtailor, dan Recruitee memintamu menambahkan webhook secara manual; dialog Petunjuk di testee menampilkan alamatnya dan tempat menempel secret-nya. testee mengatur sendiri webhook Workable dan Breezy HR.
+Beberapa ATS memerlukan satu langkah di sisi mereka. Greenhouse, Teamtailor, dan Recruitee memintamu menambahkan webhook secara manual; dialog Petunjuk di testee menampilkan alamatnya dan tempat menempel secret-nya. testee mengatur sendiri webhook Workable dan Breezy HR. API dan webhook Breezy HR tersedia di paket Pro-nya, dan webhook Teamtailor adalah add-on Teamtailor.
 
-Harganya per kandidat, tanpa langganan: kamu hanya membayar untuk kandidat yang menjawab setidaknya satu soal, $5 per kandidat pada isi ulang $50, $4 mulai dari isi ulang $200, $3 mulai dari isi ulang $600, dan $2 mulai dari isi ulang $1.000. Harga di sini dalam dolar AS, dan dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, India, bagian Eropa lainnya, dan Inggris Raya; PPN (VAT) atau pajak penjualan ditangani saat checkout. Menghubungkan ATS dan membuat wawancara gratis, dan 3 kandidat pertama dari perusahaan pertamamu gratis. Lihat [harga](/pricing).
+Harganya per kandidat, tanpa langganan: kamu hanya membayar untuk kandidat yang menjawab setidaknya satu soal, $5 per kandidat pada isi ulang $50, $4 mulai dari isi ulang $200, $3 mulai dari isi ulang $600, dan $2 mulai dari isi ulang $1.000. Harga di sini dalam dolar AS, dan dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, India, negara UE lainnya, Norwegia, Islandia, Liechtenstein, dan Inggris Raya; PPN (VAT) atau pajak penjualan ditangani saat checkout. Menghubungkan ATS dan membuat wawancara gratis, dan 3 kandidat pertama dari perusahaan pertamamu gratis. Lihat [harga](/pricing).
 
 ## Bacaan terkait
 

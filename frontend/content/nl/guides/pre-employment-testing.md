@@ -2,7 +2,7 @@
 title: "Selectietests: een praktische gids voor kleine en middelgrote teams"
 seoTitle: "Selectietesten en assessments: soorten, eerlijkheid en tools"
 description: "Wat een selectietest of assessment is, welke soorten er zijn, wanneer je ze inzet bij werving en selectie, eerlijkheid, wetgeving en hoe je een tool kiest."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Selectietests: een praktische gids voor kleine en middelgrote teams
@@ -48,11 +48,11 @@ Zet de test direct na de sollicitatie (via een link in de vacature) of na een sn
 
 ## Eerlijkheid en wetgeving: de basis
 
-Deze sectie is een globaal overzicht per oktober 2026, geen juridisch advies. Regels hangen af van je land, je sector en hoe je de resultaten gebruikt. Overleg met je eigen juridisch adviseur.
+Deze sectie is een globaal overzicht per november 2026, geen juridisch advies. Regels hangen af van je land, je sector en hoe je de resultaten gebruikt.
 
 ### Verenigde Staten: de EEOC en de vier-vijfderegel
 
-Amerikaanse werkgevers die tests gebruiken voor wervingsbesluiten vallen onder de federale antidiscriminatiewetten die de EEOC handhaaft. De Uniform Guidelines on Employee Selection Procedures bevatten een vuistregel voor adverse impact: "A selection rate for any race, sex, or ethnic group which is less than four-fifths (4/5) (or eighty percent) of the rate for the group with the highest rate will generally be regarded by the Federal enforcement agencies as evidence of adverse impact" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+Amerikaanse werkgevers die tests gebruiken voor wervingsbesluiten vallen onder de federale antidiscriminatiewetten die de EEOC handhaaft. De Uniform Guidelines on Employee Selection Procedures bevatten een vuistregel voor adverse impact: "A selection rate for any race, sex, or ethnic group which is less than four-fifths (4/5) (or eighty percent) of the rate for the group with the highest rate will generally be regarded by the Federal enforcement agencies as evidence of adverse impact" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). De EEOC stuurde het Witte Huis in oktober 2026 een definitieve regel om de interpretatieve delen van deze Guidelines in te trekken, met januari 2027 als doel. De regel van Title VII over adverse impact blijft, en de vier-vijfdencheck blijft een nuttige eerste test.
 
 In de praktijk: toets alleen kennis die de functie nodig heeft, volg slagingspercentages per groep, bied aanpassingen aan zoals extra tijd, en check regels van staten en steden voor geautomatiseerde selectietools. Zo eist [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) van New York City een bias-audit, een openbare samenvatting daarvan en een bericht aan kandidaten voordat een automated employment decision tool wordt gebruikt.
 
@@ -98,9 +98,9 @@ testee maakt van een functieomschrijving een interview over vaardigheden, met ti
 
 - **Elke kandidaat krijgt een eigen willekeurige set** uit de vragenbank van elk onderwerp, met een aftelklok bij elke vraag die de server afdwingt. Je kunt iedereen die erom vraagt extra tijd geven.
 - **Scorekaarten** tonen elk antwoord, of het goed was en hoe lang het duurde, met signalen bij te snelle antwoorden, het verlaten van de pagina, kopieerpogingen en ongebruikelijke antwoordpatronen, plus vragen om in een live gesprek op door te vragen. Signalen veranderen de score niet.
-- **Antwoorden worden nagekeken met een antwoordsleutel** die AI schrijft; een steekproef van de sleutels van elk onderwerp wordt vóór vrijgave gecontroleerd, de rest zodra een vraag wordt gemarkeerd. Geen AI leest of beoordeelt het antwoord van een kandidaat. Een pdf-rapport behandelt één kandidaat of de hele lijst.
+- **Antwoorden worden nagekeken met een antwoordsleutel** die AI schrijft; een steekproef van de sleutels van elk onderwerp wordt vóór vrijgave gecontroleerd, de rest zodra een vraag wordt gemarkeerd. Geen AI beoordeelt het antwoord van een kandidaat. Een pdf-rapport behandelt één kandidaat of de hele lijst.
 - **Werkt met je tools:** kandidaten die je in Workable, Greenhouse, Teamtailor, Recruitee of Breezy HR naar een fase verplaatst, krijgen het interview, en hun resultaten gaan terug naar het ATS. Slack laat weten wanneer een kandidaat klaar is, en de [API](/api-docs) koppelt je eigen platform. Zie [Zo koppel je vaardigheidstests aan je ATS](/guides/ats-integration-skills-tests).
 
-Je betaalt per kandidaat die antwoordt, zonder abonnement: $2–5 per kandidaat, afhankelijk van de grootte van je opwaardering (in de lokale valuta in Canada, Australië, Israël, Polen, Zwitserland, Japan, Zuid-Korea, Taiwan, Hongkong, Thailand, Singapore, India, de rest van Europa en het Verenigd Koninkrijk), en je eerste 3 kandidaten zijn gratis. Gegevens worden gehost in de EU (sommige subverwerkers zitten in de VS; zie het [privacybeleid](/privacy)), en de verwerkersovereenkomst en instructies voor bedrijven zijn inbegrepen.
+Je betaalt per kandidaat die antwoordt, zonder abonnement: $2–5 per kandidaat, afhankelijk van de grootte van je opwaardering (in de lokale valuta in Canada, Australië, Israël, Polen, Zwitserland, Japan, Zuid-Korea, Taiwan, Hongkong, Thailand, Singapore, India, de rest van de EU, Noorwegen, IJsland, Liechtenstein en het Verenigd Koninkrijk), en de eerste 3 kandidaten van je eerste bedrijf zijn gratis. Gegevens worden gehost in de EU (sommige subverwerkers zitten in de VS; zie het [privacybeleid](/privacy)), en de verwerkersovereenkomst en instructies voor bedrijven zijn inbegrepen.
 
 testee is geen psychometrische suite, geen platform om code te schrijven en te draaien, en geen tool voor video-interviews, en werkt er wel naast. Hoe het zich verhoudt tot andere AI-tools voor werving lees je in [AI-interviews](/guides/ai-interviews). Voor technische functies, zie [Developers werven](/guides/hiring-engineers).

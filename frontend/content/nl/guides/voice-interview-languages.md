@@ -2,14 +2,14 @@
 title: "Spraakmodus in 23 talen: hoe goed Mira in elke taal voorleest en verstaat"
 seoTitle: "Spraakmodus in 23 talen: de kwaliteit per taal"
 description: "Hoe goed de spraakmodus van testee in elk van de 23 talen vragen voorleest en antwoorden verstaat, hoe we dat hebben gemeten en wanneer tikken beter is."
-updated: "2026-11-04"
+updated: "2026-11-07"
 ---
 
 # Spraakmodus in 23 talen: hoe goed Mira in elke taal voorleest en verstaat
 
 In de spraakmodus leest Mira, de AI-interviewer van testee, elke vraag en de antwoordopties voor, en de kandidaat antwoordt hardop: 'B', 'optie C', 'de mediaan' of 'A en D' bij een vraag met meerdere juiste antwoorden. De spraakmodus werkt in alle 23 talen van testee, maar spraaktechnologie is niet in elke taal even goed. Deze gids laat zien hoe goed het in elke taal werkt, zodat je de modus kiest die bij je kandidaten past.
 
-In welke taal dan ook kunnen kandidaten altijd een optie aantikken in plaats van te spreken, en de optie die Mira heeft verstaan, staat op het scherm terwijl ze die herhaalt.
+Zodra het interview is begonnen, kunnen kandidaten in welke taal dan ook altijd een optie aantikken in plaats van te spreken, en de optie die Mira heeft verstaan, staat op het scherm terwijl ze die herhaalt. De tijd van een vraag loopt terwijl ze die voorleest.
 
 ## De korte versie
 
@@ -53,9 +53,9 @@ Gemeten op 4 november 2026.
 
 - **Hebreeuws, Arabisch en Perzisch:** Mira noemt de opties soms met de letters van het eigen alfabet van de taal (alef, bet, gimel) in plaats van met A, B, C en D zoals ze op het scherm staan. De volgorde is dezelfde, dus de eerste optie blijft de eerste, maar kandidaten kunnen het best antwoorden met de letters die ze zien.
 - **Ests:** een kort 'ei' (nee) kan klinken als de letter A, waardoor een kandidaat die een door Mira herhaalde keuze afwijst, af en toe wordt vastgelegd alsof hij optie A koos.
-- **Thai:** een uitgesproken letter wordt soms gehoord als een Thais getal ('ข้อ C' als 'ข้อ สี่', optie vier), waardoor de verkeerde optie kan worden vastgelegd, en opties die bij hun positie worden genoemd, worden vaak niet verstaan. Tikken is veiliger.
+- **Thai:** een uitgesproken letter wordt soms gehoord als een Thais getal ('ข้อ C' als 'ข้อ สี่', optie vier), waardoor de verkeerde optie kan worden vastgelegd. Tikken is veiliger.
 - **Japans:** '選択肢C' (optie C) werd soms als een ander woord gehoord en als de verkeerde optie vastgelegd; een losse letter werkt beter.
-- **Russisch, Oekraïens en Pools:** het 'en' tussen twee letters ('A и C') wordt soms als een derde letter gehoord, en dan vraagt Mira het opnieuw.
+- **Russisch en Pools:** het 'en' tussen twee letters ('A и C') wordt soms als een derde letter gehoord, en dan vraagt Mira het opnieuw.
 
 ## Hoe we het hebben gemeten
 
@@ -67,6 +67,7 @@ De cijfers zijn een richtlijn, geen garantie. Bij twintig antwoorden per taal ka
 
 - **De spraakmodus** past bij functies waarin spreken belangrijk is, bij kandidaten die liever niet typen of tikken, en bij toegankelijkheidsbehoeften. Hij werkt het best in de talen met zeer goed en goed.
 - **De klikmodus** is de standaard en werkt in elke taal hetzelfde. Kies hem bij voorkeur voor cruciale functies in een taal met redelijk.
+- Om een spraakinterview te starten is een werkende microfoon nodig, dus een kandidaat die er geen kan gebruiken, heeft de klikmodus nodig, ingesteld vóór de start.
 - Je kunt de modus voor het hele interview instellen in de instellingen ervan en hem voor één kandidaat wijzigen voordat die begint.
 
-In de spraakmodus worden de stemmen van kandidaten alleen omgezet in tekst om hun antwoorden te lezen, en nooit opgeslagen of op een andere manier geanalyseerd.
+In de spraakmodus worden de stemmen van kandidaten alleen omgezet in tekst om hun antwoorden te lezen, nooit op een andere manier geanalyseerd, en testee slaat ze nooit op. OpenAI, dat spraak omzet in tekst, krijgt de opdracht die niet op te slaan en bewaart API-gegevens maximaal 30 dagen, alleen om op misbruik te controleren.

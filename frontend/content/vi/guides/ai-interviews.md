@@ -2,14 +2,14 @@
 title: "Phỏng vấn AI: là gì và cách dùng công bằng"
 seoTitle: "AI trong tuyển dụng: phỏng vấn AI, rủi ro và cách dùng"
 description: "Ứng dụng AI trong tuyển dụng: chatbot phỏng vấn AI, phân tích video, bài kiểm tra tạo tự động. Cách testee dùng trắc nghiệm tính giờ và điều cần tuân thủ."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Phỏng vấn AI: là gì và cách dùng công bằng
 
 "Phỏng vấn AI" mang những ý nghĩa rất khác nhau tùy nhà cung cấp. Một số công cụ trò chuyện với ứng viên. Một số quay video và chấm điểm. Một số chỉ dùng AI để viết câu hỏi, rồi chấm câu trả lời theo quy tắc cố định. Với nhóm tuyển dụng, sự khác biệt này quan trọng: nó thay đổi những gì bạn có thể giải thích với ứng viên, những gì có thể sai sót, và những gì pháp luật yêu cầu ở bạn.
 
-Trang này phân loại các loại công cụ phỏng vấn AI chính, giải thích cách tiếp cận của testee và trình bày những điều cơ bản về tuân thủ.
+Hướng dẫn này phân loại các loại công cụ phỏng vấn AI chính, giải thích cách tiếp cận của testee và trình bày những điều cơ bản về tuân thủ.
 
 ## Ba loại công cụ phỏng vấn AI
 
@@ -38,13 +38,13 @@ testee dùng AI để viết một buổi phỏng vấn kỹ năng từ mô tả
 1. **AI đọc mô tả công việc của bạn** và chọn ra những gì ứng viên phải biết: các yêu cầu, cấp độ và một bộ chủ đề kèm chủ đề con.
 2. **Bạn duyệt các chủ đề.** Giữ, bỏ chọn, đổi tên hoặc chỉnh sửa, hoặc bảo AI bằng lời cần thay đổi gì. Không câu hỏi nào được viết cho đến khi bạn duyệt.
 3. **AI viết câu hỏi.** Mỗi chủ đề có một ngân hàng câu hỏi trắc nghiệm, mỗi câu có bốn phương án: phần lớn có một đáp án đúng và ba đáp án sai nhưng hợp lý, còn khoảng 1 trong 10 câu là dạng "chọn tất cả đáp án đúng", với 2 hoặc 3 đáp án đúng. Với chủ đề kỹ thuật, nhiều câu hỏi đưa ra một đoạn code ngắn và hỏi nó in ra gì, làm gì, vì sao lỗi hoặc thay đổi nào sửa được nó. Bạn có thể mở mọi câu hỏi và các phương án, và tạo lại bất kỳ câu nào bạn không thích.
-4. **Ứng viên trả lời câu hỏi có tính giờ.** Mỗi ứng viên nhận bộ câu hỏi ngẫu nhiên của riêng mình từ ngân hàng của mỗi chủ đề, theo thứ tự riêng, với đồng hồ đếm ngược cho mọi câu hỏi.
-5. **Câu trả lời được chấm theo đáp án.** AI viết đáp án. Một phần đáp án của mỗi chủ đề được kiểm tra trước khi phát hành, phần còn lại được kiểm tra khi câu hỏi bị đánh dấu. Bản thân việc chấm điểm theo quy tắc cố định, và không có AI nào đọc hay đánh giá câu trả lời của ứng viên. Nếu sau này một đáp án được sửa, bản sửa áp dụng cho các ứng viên bắt đầu sau đó; kết quả trước đó không thay đổi. Tốc độ, việc rời trang và các lần cố sao chép được hiển thị cho bạn như các tín hiệu; chúng không làm thay đổi điểm số.
+4. **Ứng viên trả lời câu hỏi có tính giờ.** Mỗi ứng viên nhận bộ câu hỏi ngẫu nhiên của riêng mình từ ngân hàng của mỗi chủ đề, theo thứ tự riêng, với đồng hồ đếm ngược cho mọi câu hỏi. Mặc định, ứng viên chạm để trả lời; ở chế độ giọng nói, Mira, người phỏng vấn AI của testee, đọc to từng câu hỏi và ứng viên nói hoặc chạm để trả lời.
+5. **Câu trả lời được chấm theo đáp án.** AI viết đáp án. Một phần đáp án của mỗi chủ đề được kiểm tra trước khi phát hành, phần còn lại được kiểm tra khi câu hỏi bị đánh dấu. Bản thân việc chấm điểm theo quy tắc cố định, và không có AI nào đánh giá câu trả lời của ứng viên. Ở chế độ giọng nói, AI chỉ chuyển lời nói thành văn bản và khớp với một lựa chọn. Nếu sau này một đáp án được sửa, bản sửa áp dụng cho các ứng viên bắt đầu sau đó; kết quả trước đó không thay đổi. Tốc độ, việc rời trang và các lần cố sao chép được hiển thị cho bạn như các tín hiệu; chúng không làm thay đổi điểm số.
 6. **Con người quyết định.** Bạn thấy một danh sách xếp hạng và bảng điểm cho từng ứng viên, với mọi câu trả lời và thời gian trả lời. Một người ở công ty bạn xem kết quả và đưa ra quyết định tuyển dụng.
 
 Những gì testee không làm:
 
-- Không phân tích video, giọng nói hay khuôn mặt.
+- Không phân tích video hay khuôn mặt, và không phân tích giọng của ứng viên. Chế độ giọng nói chỉ chuyển lời nói thành văn bản để tìm lựa chọn mà họ nêu.
 - Không suy đoán tính cách hay cảm xúc.
 - Không tự động loại ứng viên. testee không loại ứng viên và không gửi thư từ chối; nhóm của bạn quyết định.
 - Dữ liệu của bạn không được dùng để huấn luyện mô hình AI. Nhà cung cấp AI của testee, OpenAI, không huấn luyện trên dữ liệu API theo điều khoản của họ.
@@ -63,7 +63,7 @@ Bạn cũng có thể xem trước buổi phỏng vấn của mình với tư c�
 
 **Mọi người gặp điều kiện tương tự nhau.** Cùng chủ đề, cùng số câu hỏi mỗi chủ đề, cùng thời gian trung bình mỗi câu và cùng tổng thời gian. Câu hỏi của mỗi ứng viên được chọn ngẫu nhiên, nên các bộ câu hỏi có độ khó hơi khác nhau. Ứng viên cần thêm thời gian có thể được cấp: bạn có thể thêm thời gian cho từng ứng viên.
 
-**Ít tín hiệu không liên quan hơn.** Một câu trả lời trắc nghiệm không mang theo giọng nói, khuôn mặt, xuất thân hay văn phong, nên điểm số không phụ thuộc vào ngoại hình hay giọng nói của ai đó. Điều đó không loại trừ thiên lệch: bài kiểm tra kiến thức có thể cho thấy chênh lệch điểm giữa các nhóm, và một bài kiểm tra bằng ngôn ngữ thứ hai của ứng viên có thể gây bất lợi cho họ. Hãy theo dõi kết quả giữa các nhóm.
+**Ít tín hiệu không liên quan hơn.** Một câu trả lời trắc nghiệm không mang theo giọng nói, khuôn mặt, xuất thân hay văn phong, nên điểm số không phụ thuộc vào ngoại hình hay giọng nói của ai đó. Ở chế độ giọng nói, mức độ nghe rõ lời nói khác nhau theo ngôn ngữ và giọng, nên ứng viên có thể chạm thay vì nói ([Phỏng vấn bằng giọng nói trong 23 ngôn ngữ](/guides/voice-interview-languages)). Tất cả những điều đó không loại trừ thiên lệch: bài kiểm tra kiến thức có thể cho thấy chênh lệch điểm giữa các nhóm, và một bài kiểm tra bằng ngôn ngữ thứ hai của ứng viên có thể gây bất lợi cho họ. Hãy theo dõi kết quả giữa các nhóm.
 
 **Chia sẻ đáp án khó hơn.** Với bộ câu hỏi ngẫu nhiên riêng cho mỗi ứng viên và đồng hồ cho mọi câu hỏi, việc chia sẻ đáp án hay tra cứu tốn nhiều công sức hơn. Các tín hiệu cảnh báo giúp bạn quyết định cần xem kỹ ở đâu; chúng không phải bằng chứng gian lận.
 
@@ -75,7 +75,7 @@ Hãy rõ ràng về các giới hạn. Một bài kiểm tra trắc nghiệm ki�
 
 ## Những điều cơ bản về tuân thủ cho công cụ phỏng vấn AI
 
-Đây là bản tóm tắt tính đến tháng 10/2026, không phải tư vấn pháp lý. Hãy hỏi ý kiến luật sư của bạn.
+Đây là bản tóm tắt tính đến tháng 11/2026, không phải tư vấn pháp lý.
 
 ### Đạo luật AI của EU
 
@@ -94,7 +94,7 @@ Kết quả phỏng vấn là dữ liệu cá nhân, theo cả GDPR của EU l�
 
 ### Hoa Kỳ
 
-Các công cụ AI dùng trong tuyển dụng chịu cùng các quy định chống phân biệt đối xử như mọi phương pháp tuyển chọn khác. Hãy theo dõi tỷ lệ tuyển chọn giữa các nhóm (quy tắc kinh nghiệm bốn phần năm trong [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)), điều chỉnh hợp lý cho ứng viên, và kiểm tra quy định của tiểu bang và địa phương. Ví dụ, [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) của thành phố New York yêu cầu kiểm toán thiên lệch trong vòng một năm trước khi dùng một công cụ ra quyết định tuyển dụng tự động, công bố bản tóm tắt kết quả, và thông báo cho ứng viên. Xem [Kiểm tra trước tuyển dụng](/guides/pre-employment-testing) để có cái nhìn tổng quan.
+Các công cụ AI dùng trong tuyển dụng chịu cùng các quy định chống phân biệt đối xử như mọi phương pháp tuyển chọn khác. Hãy theo dõi tỷ lệ tuyển chọn giữa các nhóm (quy tắc kinh nghiệm bốn phần năm trong [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4), mà EEOC đang tiến hành hủy bỏ trong khi quy tắc về tác động bất lợi của Title VII vẫn giữ nguyên), điều chỉnh hợp lý cho ứng viên, và kiểm tra quy định của tiểu bang và địa phương. Ví dụ, [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) của thành phố New York yêu cầu kiểm toán thiên lệch trong vòng một năm trước khi dùng một công cụ ra quyết định tuyển dụng tự động, công bố bản tóm tắt kết quả, và thông báo cho ứng viên. Xem [Kiểm tra trước tuyển dụng](/guides/pre-employment-testing) để có cái nhìn tổng quan.
 
 ## Cách đánh giá một công cụ phỏng vấn AI
 

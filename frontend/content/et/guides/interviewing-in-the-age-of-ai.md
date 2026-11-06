@@ -2,7 +2,7 @@
 title: "Inseneride intervjueerimine AI ajastul: mida nüüd testida"
 seoTitle: "Tehniline intervjuu AI ajastul: mida nüüd testida"
 description: "AI-assistendid on igapäevase arendustöö osa. Kuidas see muudab seda, mida intervjuud peaksid testima, ja kuhu sobivad teadmiste testid."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Inseneride intervjueerimine AI ajastul: mida nüüd testida
@@ -25,7 +25,7 @@ Kokku kirjeldavad need arvud nihet töös endas. Koodi esimese mustandi tootmine
 
 Valdkonnas ühtset vastust veel pole. Kirjeldatud lähenemised lähevad eri suundades:
 
-- **AI lubamine või nõudmine intervjuul.** 2025. aasta juunis teatas Canva, et ootab nüüd backend-, masinõppe- ja frontend-kandidaatidelt AI-tööriistade, nagu Copilot, Cursor ja Claude, kasutamist uues „AI-Assisted Coding“ voorus. Ettevõte hindab, kas kandidaadid suudavad „jaotada keerulisi, mitmetähenduslikke nõudeid osadeks“, „leida ja parandada AI loodud koodi probleeme“ ja „tagada, et AI loodud lahendused vastavad tootmiskeskkonna standarditele“ ([Canva Engineering, juuni 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
+- **AI lubamine või nõudmine intervjuul.** 2025. aasta juunis teatas Canva, et ootab nüüd backend-, masinõppe- ja frontend-kandidaatidelt AI-tööriistade, nagu Copilot, Cursor ja Claude, kasutamist tehnilistel intervjuudel: uus „AI-Assisted Coding“ voor asendab backend- ja frontend-rollides arvutiteaduse aluste vooru. Ettevõte hindab, kas kandidaadid suudavad „jaotada keerulisi, mitmetähenduslikke nõudeid osadeks“, „leida ja parandada AI loodud koodi probleeme“ ja „tagada, et AI loodud lahendused vastavad tootmiskeskkonna standarditele“ ([Canva Engineering, juuni 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
 - **AI-toega programmeerimisvoorude katsetamine.** 2025. aasta juulis teatas Business Today, viidates 404 Mediale, et Meta loob programmeerimisintervjuud, kus kandidaatidel on AI-assistent. Väljaanne tsiteeris Metat, kelle sõnul on see „esinduslikum arenduskeskkonna suhtes, kus meie tulevased töötajad töötavad, ning muudab ka LLM-põhise spikerdamise vähem tõhusaks“ ([Business Today, juuli 2025](https://www.businesstoday.in/amp/technology/news/story/meta-to-test-job-applicants-with-ai-assisted-coding-interviews-amid-ai-expansion-plans-487200-2025-07-31)).
 - **Tööriistade piiramine ja kohtumine silmast silma.** 2025. aasta märtsis kirjutas CNBC tööriistast, mis loodi selleks, et aidata kandidaatidel kaugteel toimuvatel programmeerimisintervjuudel AI-d märkamatult kasutada. Samas loos ütles Amazon, et kandidaadid peavad kinnitama, et nad ei kasuta lubamata tööriistu, Google'i tegevjuht soovitas värbavatel juhtidel kaaluda osa intervjuude pidamist silmast silma ja Deloitte oli oma Ühendkuningriigi vilistlaste programmis taas kasutusele võtnud silmast silma intervjuud ([CNBC NBC New Yorki kaudu, märts 2025](https://www.nbcnewyork.com/news/business/money-report/meet-the-21-year-old-helping-coders-use-ai-to-cheat-in-google-and-other-tech-job-interviews/6178911/?amp=1)).
 
@@ -74,7 +74,7 @@ testee sobib hästi 2. sammu jaoks. See muudab sinu töökuulutuse ajapiiranguga
 - **Koodi lugemise küsimused:** lühike koodilõik ja küsimused selle kohta, mida see prindib või tagastab, mida see teeb, miks see ebaõnnestub või milline muudatus selle parandab. See on sama ülevaatamise oskus, millest AI-toega töö sõltub.
 - **Taimer igal küsimusel:** igal küsimusel on oma taimer, mille jõustab server, ja iga kandidaat saab oma juhusliku küsimuste komplekti. See muudab vastuste otsimise, sh AI-assistendilt küsimise, raskemaks. Võimatuks see seda ei tee.
 - **Aususe signaalid:** hindamislehed märgivad vastused, mis on liiga kiired, et küsimust lugeda jõuaks, korrad, kui kandidaat lehelt lahkus, ja kopeerimiskatsed. Kui kandidaat on lõpetanud, toob tema aruanne välja ka vastuste mustrid, mis on tüüpilised, kui küsimusi AI-le edasi antakse: igale küsimusele kulub umbes sama palju aega, olenemata selle pikkusest või raskusest, või rasketele küsimustele on vastatud õigesti, lihtsatele aga valesti. Märge või muster on põhjus lähemalt vaadata, mitte spikerdamise tõend.
-- **Küsimused reaalajas intervjuuks:** aruanne soovitab kuni 3 küsimust, millele kandidaat vastas õigesti, tema tugevaimatest teemadest, et neid arutada reaalajas intervjuul, kus AI ei saa tema eest vastata.
+- **Küsimused reaalajas intervjuuks:** kandidaadi leht soovitab kuni 3 küsimust, millele ta vastas õigesti, tema tugevaimatest teemadest, et neid arutada reaalajas intervjuul, kus AI ei saa tema eest vastata.
 
 Mida testee ei tee: kandidaadid ei kirjuta, käivita ega siluta testees koodi ja testee ei jälgi, kuidas nad AI-assistenti kasutavad. See kuulub praktilisse etappi, mis tehakse ise või arendajate platvormil ja mis täiendab teadmiste kontrolli. Valmis teste, millest alustada, leiad lehelt [oskustestid rollide kaupa](/tests) ning seda, kuidas testee AI-d kasutab ja mida inimestele jätab, lehelt [AI-intervjuud](/guides/ai-interviews).
 

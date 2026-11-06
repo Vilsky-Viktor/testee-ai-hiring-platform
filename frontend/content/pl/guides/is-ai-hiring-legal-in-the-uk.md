@@ -2,14 +2,14 @@
 title: "Czy rekrutacja z AI jest legalna w Wielkiej Brytanii? Co musi wiedzieć pracodawca"
 seoTitle: "Rekrutacja z AI w Wielkiej Brytanii: równość i dane"
 description: "AI w rekrutacji jest w Wielkiej Brytanii legalna, z zasadami: Equality Act, nowe przepisy UK GDPR o decyzjach automatycznych od lutego 2026 i wnioski ICO."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Czy rekrutacja z AI jest legalna w Wielkiej Brytanii? Co musi wiedzieć pracodawca
 
 Co do zasady tak: korzystanie z AI w rekrutacji jest w Wielkiej Brytanii legalne. Wielka Brytania nie ma jednej ustawy o AI, takiej jak unijny AI Act. Zamiast tego do narzędzi AI, tak jak do każdego testu, stosuje się ustawę o równości z 2010 roku (Equality Act 2010) i brytyjskie RODO (UK GDPR), a od 5 lutego 2026 UK GDPR zawiera nowe przepisy o decyzjach podejmowanych wyłącznie w sposób zautomatyzowany.
 
-Ten poradnik w ogólnym zarysie wyjaśnia zasady, obowiązki pracodawców oraz podejście testee. **To nie jest porada prawna.** Opisuje przepisy według stanu na październik 2026; część z nich jest nowa, a wytyczne regulatora w ich sprawie wciąż są aktualizowane.
+Ten poradnik w ogólnym zarysie wyjaśnia zasady, obowiązki pracodawców oraz podejście testee. **To nie jest porada prawna.** Opisuje przepisy według stanu na listopad 2026; część z nich jest nowa, a wytyczne regulatora w ich sprawie wciąż są aktualizowane.
 
 ## Krótka odpowiedź
 
@@ -83,6 +83,8 @@ Siedem kluczowych zaleceń, zarówno dla dostawców, jak i dla rekrutujących:
 
 ICO zaleca też rzeczywistą weryfikację wyników AI przez ludzi i prowadzenie zapisów z przeprowadzonych weryfikacji.
 
+W marcu 2026 ICO opublikowało drugi raport, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), oparty na pracy z ponad 30 pracodawcami. Wynika z niego, że wielu traktuje swoje narzędzia jako wsparcie decyzji, choć rzeczywisty udział człowieka jest niewielki, że zabezpieczenia pozwalające zakwestionować decyzję są stosowane nierówno, że kandydaci często nie dowiadują się jasno, jak używana jest automatyzacja, i że DPIA często nie ma albo są słabe. Zaktualizowane wytyczne ICO o zautomatyzowanych decyzjach były konsultowane do 29 maja 2026 i według stanu na listopad 2026 nie są ostateczne, a w przygotowaniu jest ustawowy kodeks postępowania dotyczący AI i zautomatyzowanego podejmowania decyzji. Od 30 września 2026 regulatorem jest Information Commission, która nadal używa nazwy ICO.
+
 ## Przekazywanie danych do USA
 
 Jeśli dostawca przesyła dane brytyjskich kandydatów do Stanów Zjednoczonych, może to objąć brytyjsko-amerykański „pomost danych” (UK–US data bridge): [The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents), obowiązujące od 12 października 2023, w przypadku amerykańskich firm certyfikowanych w ramach brytyjskiego rozszerzenia (UK Extension) programu EU–US Data Privacy Framework. Pozostałe wymagają zabezpieczeń, takich jak standardowe klauzule umowne z brytyjskim aneksem (UK addendum).
@@ -105,7 +107,7 @@ testee prowadzi rozmowy rekrutacyjne sprawdzające umiejętności w formie test�
 
 Jak to dziś wygląda w produkcie:
 
-- **AI pisze pytania i klucze odpowiedzi; ocenianie odbywa się według stałych reguł.** Żadna AI nie czyta ani nie ocenia odpowiedzi kandydata i nie jest używana analiza wideo ani twarzy. W trybie głosowym mowa jest zamieniana na tekst i dopasowywana do odpowiedzi, którą kandydat słyszy i widzi na ekranie: jedna wyraźnie wskazana odpowiedź jest zapisywana od razu, a wybór kilku odpowiedzi jest najpierw potwierdzany. Mowa nigdy nie jest przechowywana, a głos nigdy nie jest analizowany.
+- **AI pisze pytania i klucze odpowiedzi; ocenianie odbywa się według stałych reguł.** Żadna AI nie ocenia odpowiedzi kandydata i nie jest używana analiza wideo ani twarzy. W trybie głosowym mowa jest zamieniana na tekst i dopasowywana do odpowiedzi, którą kandydat słyszy i widzi na ekranie: jedna wyraźnie wskazana odpowiedź jest zapisywana od razu, a wybór kilku odpowiedzi jest najpierw potwierdzany. testee nigdy nie przechowuje mowy, a głos nigdy nie jest analizowany.
 - **Zatwierdzasz tematy,** zanim powstanie jakiekolwiek pytanie, i to Ty wybierasz próg zaliczenia.
 - **Decydują ludzie.** Strona wyników i raporty PDF przypominają Twojemu zespołowi o przejrzeniu wyników; testee nie odrzuca kandydatów ani nie wysyła wiadomości z odmową.
 - **Kandydaci są informowani,** zanim zaczną, że pytania pisze AI, że wyniki przeglądają i decyzje podejmują ludzie w Twojej firmie oraz że mogą poprosić o weryfikację.
@@ -128,4 +130,5 @@ Jak to dziś wygląda w produkcie:
 - Data (Use and Access) Act 2025, [sekcja 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80), dodająca do UK GDPR art. 22A–22D ([art. 22C](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, przepis 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [listopad 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), marzec 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

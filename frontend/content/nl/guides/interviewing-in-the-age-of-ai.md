@@ -2,7 +2,7 @@
 title: "Developers interviewen in het tijdperk van AI: wat je nu moet toetsen"
 seoTitle: "Sollicitatiegesprekken in het AI-tijdperk: wat toets je?"
 description: "AI-assistenten horen bij het dagelijkse werk van developers. Wat dat verandert aan wat je in sollicitatiegesprekken toetst, en waar kennistests passen."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Developers interviewen in het tijdperk van AI: wat je nu moet toetsen
@@ -25,7 +25,7 @@ Samen beschrijven deze cijfers een verschuiving in het werk zelf. Een eerste ver
 
 Er is nog geen eenduidig antwoord vanuit de sector. De gemelde aanpakken gaan verschillende kanten op:
 
-- **AI toestaan of verplichten in het gesprek.** In juni 2025 zei Canva dat het nu van backend-, machine learning- en frontendkandidaten verwacht dat ze AI-tools als Copilot, Cursor en Claude gebruiken in een nieuwe ronde "AI-Assisted Coding". Het beoordeelt of kandidaten "complexe, dubbelzinnige eisen kunnen opsplitsen", "problemen in door AI gegenereerde code kunnen vinden en oplossen" en "ervoor kunnen zorgen dat door AI gegenereerde oplossingen aan productiestandaarden voldoen" ([Canva Engineering, juni 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
+- **AI toestaan of verplichten in het gesprek.** In juni 2025 zei Canva dat het nu van backend-, machine learning- en frontendkandidaten verwacht dat ze AI-tools als Copilot, Cursor en Claude gebruiken in technische interviews, met een nieuwe ronde "AI-Assisted Coding" die de ronde over informaticabasiskennis vervangt voor backend- en frontendfuncties. Het beoordeelt of kandidaten "complexe, dubbelzinnige eisen kunnen opsplitsen", "problemen in door AI gegenereerde code kunnen vinden en oplossen" en "ervoor kunnen zorgen dat door AI gegenereerde oplossingen aan productiestandaarden voldoen" ([Canva Engineering, juni 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
 - **Proeven met AI-ondersteunde codingrondes.** In juli 2025 meldde Business Today, met 404 Media als bron, dat Meta een codinginterview ontwikkelde waarin kandidaten een AI-assistent hebben. Het citeerde Meta dat dit "representatiever is voor de ontwikkelomgeving waarin onze toekomstige medewerkers zullen werken, en ook valsspelen met LLM's minder effectief maakt" ([Business Today, juli 2025](https://www.businesstoday.in/amp/technology/news/story/meta-to-test-job-applicants-with-ai-assisted-coding-interviews-amid-ai-expansion-plans-487200-2025-07-31)).
 - **Tools beperken en fysiek afspreken.** In maart 2025 berichtte CNBC over een tool die kandidaten moest helpen ongemerkt AI te gebruiken in codinginterviews op afstand. In hetzelfde bericht zei Amazon dat kandidaten moeten verklaren geen ongeautoriseerde tools te gebruiken, opperde de CEO van Google dat hiring managers sommige gesprekken weer fysiek zouden kunnen voeren, en had Deloitte fysieke gesprekken teruggebracht voor zijn Britse traineeprogramma ([CNBC via NBC New York, maart 2025](https://www.nbcnewyork.com/news/business/money-report/meet-the-21-year-old-helping-coders-use-ai-to-cheat-in-google-and-other-tech-job-interviews/6178911/?amp=1)).
 
@@ -74,7 +74,7 @@ testee past goed bij stap 2. Het maakt van je functieomschrijving een getimede m
 - **Vragen over code lezen:** een kort stuk code met vragen over wat het print of teruggeeft, wat het doet, waarom het faalt of welke wijziging het oplost. Dat is dezelfde reviewvaardigheid waar AI-ondersteund werk op leunt.
 - **Een timer bij elke vraag:** elke vraag heeft een eigen aftelklok, afgedwongen door de server, en elke kandidaat krijgt een eigen willekeurige set vragen. Dat maakt antwoorden opzoeken, ook via een AI-assistent, lastiger. Het maakt het niet onmogelijk.
 - **Integriteitssignalen:** scorekaarten markeren antwoorden die te snel waren om de vraag te hebben gelezen, momenten waarop de kandidaat de pagina verliet, en kopieerpogingen. Zodra een kandidaat klaar is, wijst het rapport ook op antwoordpatronen die vaak ontstaan als iemand de vragen aan een AI doorgeeft en de antwoorden overneemt: ongeveer even lang bij elke vraag, ongeacht de lengte of moeilijkheid, of moeilijke vragen goed terwijl makkelijke fout waren. Een signaal of patroon is een reden om beter te kijken, geen bewijs van valsspelen.
-- **Vragen voor het live gesprek:** het rapport stelt tot 3 vragen voor die de kandidaat goed had, uit de sterkste onderwerpen, om door te nemen in een live gesprek, waar geen AI het antwoord kan geven.
+- **Vragen voor het live gesprek:** de pagina van de kandidaat stelt tot 3 vragen voor die hij of zij goed had, uit de sterkste onderwerpen, om door te nemen in een live gesprek, waar geen AI het antwoord kan geven.
 
 Wat testee niet doet: kandidaten schrijven, draaien of debuggen geen code in testee, en testee kijkt niet mee terwijl ze een AI-assistent gebruiken. Dat hoort in de praktijkfase, intern of op een developerplatform, die de kennistest aanvult. Zie [vaardigheidstests per functie](/tests) voor kant-en-klare tests om mee te beginnen, en [AI-interviews](/guides/ai-interviews) voor hoe testee AI gebruikt en wat het aan mensen overlaat.
 

@@ -2,7 +2,7 @@
 title: "Test di competenze o screening dei CV: cosa predice la performance lavorativa"
 seoTitle: "Test di competenze o screening dei CV: cosa funziona"
 description: "Cosa dicono decenni di ricerca sulla selezione su test di conoscenze, prove pratiche, colloqui e anni di esperienza, e come usarlo nel tuo screening."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Test di competenze o screening dei CV: cosa predice la performance lavorativa
@@ -64,7 +64,7 @@ Gli autori notano anche una seconda condizione: le prove pratiche e i test di co
 - **Sono medie su molti lavori e studi.** Il tuo ruolo, il tuo test e i tuoi candidati possono essere diversi.
 - **Le stime di validità valgono per metodi ben costruiti.** Un test scritto male o un colloquio approssimativo non raggiungeranno questi numeri.
 - **Un metodo raramente basta.** I ricercatori in genere consigliano di combinare i metodi, ad esempio un test di conoscenze all'inizio e un colloquio strutturato più avanti.
-- **L'equità richiede verifiche proprie.** Sackett et al. affiancano alla validità le differenze medie di punteggio tra candidati neri e bianchi. I test di conoscenze professionali, le prove pratiche e i test cognitivi mostrano differenze sostanziali; i colloqui strutturati differenze minori. Combinare i metodi può ridurle. Qualunque cosa usi, monitora i tassi di superamento tra i gruppi. Negli Stati Uniti, la regola empirica dei quattro quinti delle [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) è il consueto punto di partenza.
+- **L'equità richiede verifiche proprie.** Sackett et al. affiancano alla validità le differenze medie di punteggio tra candidati neri e bianchi. I test di conoscenze professionali, le prove pratiche e i test cognitivi mostrano differenze sostanziali; i colloqui strutturati differenze minori. Combinare i metodi può ridurle. Qualunque cosa usi, monitora i tassi di superamento tra i gruppi. Negli Stati Uniti, la regola empirica dei quattro quinti delle [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) è il consueto punto di partenza, anche se l'EEOC si sta muovendo per abrogare le parti interpretative delle Guidelines.
 - **Un punteggio supporta una decisione; non la prende.** Una persona dovrebbe guardare le risposte prima di decidere.
 
 ## Un processo di screening basato sulla ricerca
@@ -85,7 +85,7 @@ testee copre il passo 2: un test di conoscenze professionali a scelta multipla e
 - **Le stesse condizioni per tutti.** Stessi argomenti e stesso numero di domande, e un conto alla rovescia su ogni domanda. Puoi dare più tempo ai candidati che lo chiedono.
 - **Ogni candidato riceve le proprie domande,** un set casuale dalla banca di ogni argomento, così le risposte sono più difficili da condividere.
 - **Risultati leggibili.** Una scheda di valutazione per candidato con ogni risposta e il relativo tempo, in classifica per punteggio, con segnalazioni per risposte troppo rapide, uscite dalla pagina, tentativi di copia e andamenti insoliti delle risposte.
-- **Risposte corrette in base a una chiave di correzione** che l'IA scrive; un campione delle chiavi di ogni argomento viene verificato prima della pubblicazione, le altre quando una domanda viene segnalata. Nessuna IA legge o giudica la risposta di un candidato.
+- **Risposte corrette in base a una chiave di correzione** che l'IA scrive; un campione delle chiavi di ogni argomento viene verificato prima della pubblicazione, le altre quando una domanda viene segnalata. Nessuna IA giudica la risposta di un candidato.
 
 testee non conduce colloqui strutturati, prove pratiche o test cognitivi. Usalo insieme a questi. Per saperne di più sui tipi di test e sull'equità, leggi [Test pre-assunzione](/guides/pre-employment-testing).
 

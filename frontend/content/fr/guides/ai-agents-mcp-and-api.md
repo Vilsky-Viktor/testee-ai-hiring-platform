@@ -2,7 +2,7 @@
 title: "Agents IA, MCP et API : ce que c'est et comment s'en servir dans le recrutement"
 seoTitle: "Agents IA, MCP et API en recrutement : définition et usages"
 description: "Agent IA, MCP et API : définitions, usage sûr dans le recrutement et pilotage de testee depuis son assistante IA, Claude, ChatGPT ou votre plateforme."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # Agents IA, MCP et API : ce que c'est et comment s'en servir dans le recrutement
@@ -96,7 +96,7 @@ Si votre équipe travaille déjà dans Claude ou ChatGPT, vous pouvez y faire ve
 **Pour vous connecter :**
 
 1. Dans testee, ouvrez l'onglet **Intégrations** d'une entreprise et sélectionnez **Apps IA**. Copiez l'adresse du serveur : `https://testee.ai/mcp`.
-2. **Dans Claude :** ouvrez les paramètres, puis Connecteurs, et ajoutez un connecteur personnalisé avec cette adresse. **Dans Claude Code :** exécutez `claude mcp add --transport http testee https://testee.ai/mcp`. **Dans ChatGPT :** ajoutez-le comme connecteur personnalisé dans ses paramètres d'applications et de connecteurs.
+2. **Dans Claude :** ouvrez Personnaliser, puis Connecteurs, et ajoutez un connecteur personnalisé avec cette adresse ; avec les offres Team et Enterprise, un propriétaire l'ajoute d'abord dans les paramètres de l'organisation. **Dans Claude Code :** exécutez `claude mcp add --transport http testee https://testee.ai/mcp`. **Dans ChatGPT :** ajoutez-le comme serveur MCP personnalisé. L'endroit dépend de votre offre, et votre administrateur devra peut-être l'autoriser.
 3. Votre application d'IA ouvre la page de connexion de testee. Connectez-vous, vérifiez quelle application fait la demande et sélectionnez **Autoriser**. Pour qu'elle puisse seulement lire, désactivez d'abord **Autoriser les modifications**.
 
 Ensuite, posez vos questions dans la conversation comme vous le feriez à un collègue : « Dans testee, quels sont les trois meilleurs candidats pour Product designer ? » La plupart des applications d'IA vous demandent votre accord avant une modification et vous avertissent avant toute action irréversible : testee leur indique quelles actions modifient ou suppriment quelque chose.
@@ -106,7 +106,7 @@ Ensuite, posez vos questions dans la conversation comme vous le feriez à un col
 - **Vos permissions.** Il agit en votre nom, dans chaque entreprise dont vous êtes membre, avec votre rôle dans chacune.
 - **Crédits et limites.** Inviter un candidat coûte la même chose que dans l'application, et les mêmes limites d'e-mails s'appliquent.
 - **La traçabilité.** Tout ce qu'une app d'IA fait pour vous apparaît dans le journal des actions de l'entreprise comme fait via une app d'IA, de la validation des thèmes et la consultation des résultats à l'octroi de temps supplémentaire ou la révocation d'un candidat. Le propriétaire de l'entreprise le consulte dans l'onglet **Journal des actions** de l'entreprise.
-- **L'entreprise décide.** Les propriétaires et administrateurs peuvent empêcher les apps d'IA d'utiliser les données d'une entreprise avec **Autoriser les apps d'IA dans cette entreprise** sur sa page des apps d'IA.
+- **L'entreprise décide.** Les propriétaires et administrateurs peuvent empêcher les apps d'IA d'utiliser les données d'une entreprise avec le bouton **Autoriser les applications IA** sur sa page des apps d'IA.
 - **Ce qu'il ne peut pas faire.** Il ne peut pas voir votre mot de passe ni vos clés API, et il ne peut pas supprimer votre compte ni une entreprise. Ces actions restent dans l'application.
 
 **Pour vous déconnecter,** supprimez le connecteur dans votre application d'IA, ou sélectionnez **Déconnecter** à côté de celui-ci sous **Apps IA**, dans l'onglet Intégrations. Il cesse de fonctionner immédiatement.
@@ -117,7 +117,7 @@ Ensuite, posez vos questions dans la conversation comme vous le feriez à un col
 
 Pour une automatisation sans IA, testee propose une API, décrite dans sa [documentation développeurs](/api-docs).
 
-1. Un propriétaire ou un admin ouvre l'onglet **Intégrations** d'une entreprise, puis **API**, et sélectionne **Nouvelle clé**. Donnez-lui le nom de la plateforme qui l'utilisera, choisissez sa date d'expiration et cochez uniquement ce dont elle a besoin : la clé d'un tableau de bord ne fait que lire, celle d'un site carrières invite aussi. Vous pourrez ajouter ou retirer des autorisations plus tard. La clé ne s'affiche qu'une fois ; conservez-la en lieu sûr.
+1. Un propriétaire ou un admin ouvre l'onglet **Intégrations** d'une entreprise, puis **API, SDK, webhooks**, et sélectionne **Nouvelle clé**. Donnez-lui le nom de la plateforme qui l'utilisera, choisissez sa date d'expiration et cochez uniquement ce dont elle a besoin : la clé d'un tableau de bord ne fait que lire, celle d'un site carrières invite aussi. Vous pourrez ajouter ou retirer des autorisations plus tard. La clé ne s'affiche qu'une fois ; conservez-la en lieu sûr.
 2. Votre plateforme envoie des requêtes avec cette clé : lister les entretiens de l'entreprise, lister ou consulter les candidats avec leur note, s'ils ont réussi et leurs alertes d'intégrité, et inviter un candidat.
 3. Ajoutez un **webhook** : une adresse sur votre plateforme que testee appelle, avec une signature, quand un candidat commence, termine ou est retiré, quand son invitation n'a pas pu lui parvenir ou a expiré, et quand un entretien est prêt, pour ne pas avoir à demander sans cesse. La page API peut lui envoyer un événement de test et affiche son journal des envois.
 

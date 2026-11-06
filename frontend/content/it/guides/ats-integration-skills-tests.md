@@ -2,7 +2,7 @@
 title: "Come collegare i test di competenze al tuo ATS"
 seoTitle: "Collegare i test di competenze all'ATS: guida pratica"
 description: "Invia i test di competenze e ricevi i risultati nel tuo ATS in automatico, lascia le decisioni alle persone e scopri cosa controllare per primo."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Come collegare i test di competenze al tuo ATS
@@ -90,15 +90,15 @@ testee si collega a **Workable, Greenhouse, Teamtailor, Recruitee e Breezy HR** 
 - **La tua chiave, il tuo controllo.** Un proprietario o un amministratore collega l'ATS nella scheda Integrazioni dell'azienda con una chiave che la tua azienda crea nell'ATS. testee la verifica prima di salvarla, la conserva cifrata e non la mostra mai più. Scollegando l'ATS, la chiave e le posizioni collegate vengono eliminate subito.
 - **Collega una posizione a un colloquio.** Scegli una posizione dell'ATS e la fase che fa partire l'invito, e collegala a un colloquio testee esistente o creane uno nuovo dal testo della posizione nell'ATS. Rivedi gli argomenti prima che venga scritta qualsiasi domanda.
 - **Sposti il candidato, l'invito parte.** Ogni candidato viene invitato una sola volta per colloquio, anche se l'ATS invia lo stesso evento due volte.
-- **Risultati di nuovo nell'ATS.** Quando un candidato termina, testee gli aggiunge nell'ATS una nota o un commento con il suo punteggio, se ha superato il test, eventuali segnalazioni di integrità (uscita dalla pagina, tentativi di copia, risposte scelte troppo in fretta per aver letto la domanda) e un link alla sua scheda di valutazione con tutte le risposte.
-- **Gli errori non passano inosservati.** Se un candidato non può essere invitato, ad esempio perché l'azienda ha esaurito i crediti, ha raggiunto un limite di email, o perché testee ha messo temporaneamente in pausa gli inviti, tutti i membri dell'azienda ricevono una notifica che indica l'ATS. I candidati non invitati per mancanza di crediti vengono invitati automaticamente dopo una ricarica, e i candidati in attesa di qualsiasi posizione possono essere invitati di nuovo con un clic.
+- **Risultati di nuovo nell'ATS.** Quando un candidato termina, testee gli aggiunge nell'ATS una nota o un commento con il suo punteggio, se ha superato il test, se sono state sollevate segnalazioni di integrità e un link alla sua scheda di valutazione con tutte le risposte e le segnalazioni.
+- **Gli errori non passano inosservati.** Se un candidato non può essere invitato, ad esempio perché l'azienda ha esaurito i crediti, ha raggiunto un limite di email, o perché testee ha messo temporaneamente in pausa gli inviti, tutti i membri dell'azienda ricevono una notifica che indica l'ATS. I candidati inviati dall'ATS negli ultimi 30 giorni e non invitati per mancanza di crediti vengono invitati automaticamente dopo una ricarica, e i candidati in attesa di qualsiasi posizione possono essere invitati di nuovo con un clic.
 - **Slack, se lo usi.** testee può pubblicare notifiche, come un candidato che ha finito o un candidato dell'ATS che non è stato possibile invitare, in un canale Slack a tua scelta.
 - **La tua piattaforma.** Se il tuo ATS non è nell'elenco, l'[API](/api-docs) di testee ti permette di invitare candidati con una chiave API e di ricevere un webhook firmato quando un candidato inizia, termina o viene rimosso, quando il suo invito non gli arriva o scade, e quando un colloquio è pronto.
 - **Dati conservati per un periodo stabilito.** I candidati arrivati da un ATS vengono eliminati dopo 365 giorni, o prima insieme al loro colloquio o alla loro azienda.
 
-Alcuni ATS richiedono un passaggio dal loro lato. Greenhouse, Teamtailor e Recruitee ti chiedono di aggiungere un webhook a mano; la finestra Istruzioni di testee mostra l'indirizzo e dove incollare il suo secret. I webhook di Workable e Breezy HR li configura testee da solo.
+Alcuni ATS richiedono un passaggio dal loro lato. Greenhouse, Teamtailor e Recruitee ti chiedono di aggiungere un webhook a mano; la finestra Istruzioni di testee mostra l'indirizzo e dove incollare il suo secret. I webhook di Workable e Breezy HR li configura testee da solo. L'API e i webhook di Breezy HR sono inclusi nel suo piano Pro, e i webhook di Teamtailor sono un componente aggiuntivo di Teamtailor.
 
-Il prezzo è per candidato, senza abbonamento: paghi solo per i candidati che rispondono ad almeno una domanda, $5 ciascuno con la ricarica da $50, $4 da una ricarica di $200, $3 da una ricarica di $600 e $2 da una ricarica di $1.000. I prezzi sono qui in dollari statunitensi, e nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore, India, nel resto d'Europa e nel Regno Unito; IVA o sales tax vengono gestite al pagamento. Collegare un ATS e creare colloqui è gratuito, e i primi 3 candidati della tua prima azienda sono gratis. Vedi i [prezzi](/pricing).
+Il prezzo è per candidato, senza abbonamento: paghi solo per i candidati che rispondono ad almeno una domanda, $5 ciascuno con la ricarica da $50, $4 da una ricarica di $200, $3 da una ricarica di $600 e $2 da una ricarica di $1.000. I prezzi sono qui in dollari statunitensi, e nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore, India, nel resto dell'UE, in Norvegia, Islanda, Liechtenstein e nel Regno Unito; IVA o sales tax vengono gestite al pagamento. Collegare un ATS e creare colloqui è gratuito, e i primi 3 candidati della tua prima azienda sono gratis. Vedi i [prezzi](/pricing).
 
 ## Letture correlate
 

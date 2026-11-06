@@ -2,14 +2,14 @@
 title: "Legal ba ang AI hiring sa EU? Ang dapat malaman ng mga employer"
 seoTitle: "Legal ba ang AI Hiring sa EU? Basics ng AI Act at GDPR"
 description: "Legal ang AI sa hiring sa EU, may patakaran. Ano ang high-risk sa AI Act para sa employer, mga petsa hanggang Disyembre 2027, at ang GDPR basics."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Legal ba ang AI hiring sa EU? Ang dapat malaman ng mga employer
 
 Sa pangkalahatan, oo: legal ang paggamit ng AI sa hiring sa EU. Pero karamihan sa AI tools na nag-e-evaluate ng mga aplikante ay pasok sa high-risk na kategorya ng AI Act, na may dalang mga obligasyon para sa vendor at para sa iyo, ang employer. May ilang practice na tahasang ipinagbabawal. At nalalapat ang GDPR sa data ng aplikante, gaya ng dati.
 
-Ipinapaliwanag ng gabay na ito ang mga patakaran sa pangkalahatang antas, ang mahahalagang petsa, ang dapat gawin ng mga employer, at ang paraan ng testee. **Hindi ito legal advice.** Sinasalamin nito ang mga patakaran noong Oktubre 2026. Bago pa ang mga patakaran, tinatapos pa ang guidance, at nagdadagdag ng sariling requirement ang pambansang batas. Kumonsulta sa sarili mong abogado bago umasa sa alinman dito.
+Ipinapaliwanag ng gabay na ito ang mga patakaran sa pangkalahatang antas, ang mahahalagang petsa, ang dapat gawin ng mga employer, at ang paraan ng testee. **Hindi ito legal advice.** Sinasalamin nito ang mga patakaran noong Nobyembre 2026. Bago pa ang mga patakaran, tinatapos pa ang guidance, at nagdadagdag ng sariling requirement ang pambansang batas.
 
 ## Ang maikling sagot
 
@@ -36,7 +36,7 @@ Malawak na hanay ng tools ang saklaw nito: CV filters, ranking systems, AI inter
 
 Kadalasan, hindi. Pinapayagan ng [Article 6(3)](https://artificialintelligenceact.eu/article/6/) ng AI Act na makalabas sa high-risk na kategorya ang ilang Annex III system, halimbawa kapag gumagawa sila ng makitid na procedural task o naghahanda lang ng assessment ng tao. Pero laging high-risk ang Annex III system na nagpo-profile ng mga tao, at malamang na maituturing na profiling ang pag-i-score o pag-rank sa mga aplikante batay sa kanilang kakayahan.
 
-Malawak ang pananaw ng draft guidelines ng European Commission tungkol sa high-risk classification (inilathala noong 19 Mayo 2026 para sa konsultasyon; hindi pa final noong Oktubre 2026). Inilalarawan nito ang selection bilang sumasaklaw sa "shortlisting, pag-grade, pag-rank, o pag-test ng mga aplikante", at, ayon sa buod ng [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), itinuturing na high-risk ang mga system na gumagawa ng suitability scores "kahit isang taong recruiter ang gumawa ng huling hiring decision."
+Malawak ang pananaw ng draft guidelines ng European Commission tungkol sa high-risk classification (inilathala noong 19 Mayo 2026 para sa konsultasyon; hindi pa final noong Nobyembre 2026). Inilalarawan nito ang selection bilang sumasaklaw sa "shortlisting, pag-grade, pag-rank, o pag-test ng mga aplikante", at, ayon sa buod ng [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), itinuturing na high-risk ang mga system na gumagawa ng suitability scores "kahit isang taong recruiter ang gumawa ng huling hiring decision."
 
 Kaya malamang na high-risk ang tool na nagbibigay sa bawat aplikante ng score at ranking, kahit mga tao ang nagdedesisyon kung sino ang iha-hire.
 
@@ -49,7 +49,7 @@ Kaya malamang na high-risk ang tool na nagbibigay sa bawat aplikante ng score at
 | 2 Disyembre 2027 | High-risk obligations para sa Annex III systems, kasama ang hiring tools |
 | 2 Agosto 2028 | High-risk obligations para sa AI sa mga produktong saklaw ng Annex I |
 
-Ang orihinal na high-risk date para sa Annex III ay 2 Agosto 2026. Inilipat ito ng Digital Omnibus on AI (Regulation (EU) 2026/1744, umiiral mula 27 Hulyo 2026) sa 2 Disyembre 2027 ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Mga petsa ayon sa [AI Act Explorer, Article 113](https://artificialintelligenceact.eu/article/113/), noong Oktubre 2026.
+Ang orihinal na high-risk date para sa Annex III ay 2 Agosto 2026. Inilipat ito ng Digital Omnibus on AI (Regulation (EU) 2026/1744, umiiral mula 27 Hulyo 2026) sa 2 Disyembre 2027 ([Official Journal](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). Binago rin nito ang AI literacy duty sa Article 4, mula 27 Hulyo 2026: dapat nang gumawa ng mga hakbang ang mga provider at deployer para suportahan ang AI literacy ng kanilang staff, nang walang itinakdang antas na kailangang garantiyahan. Mga petsa noong Nobyembre 2026.
 
 Ang dagdag na panahon ay para sa paghahanda, hindi dahilan para balewalain ang mga patakaran. Buo nang nalalapat ang GDPR at ang mga batas laban sa diskriminasyon.
 
@@ -88,7 +88,7 @@ Itinatakda ng Article 26 ang mga obligasyon ng employer. Sa buod ([Article 26](h
 - **Abisuhan ang mga kinatawan ng manggagawa at ang mga apektadong manggagawa** bago gumamit ng high-risk system sa trabaho.
 - **Sabihan ang mga aplikante** na saklaw sila ng paggamit ng isang high-risk AI system.
 
-Kailangan ding magsagawa ng fundamental rights impact assessment (Article 27) ang mga pampublikong ahensya at ilang pribadong organisasyon. At nalalapat na ang AI literacy duty sa Article 4: dapat maintindihan ng mga taong gumagamit ng AI tools sa iyong hiring kung ano ang ginagawa at hindi ginagawa ng mga tool na iyon.
+Kailangan ding magsagawa ng fundamental rights impact assessment (Article 27) ang mga pampublikong ahensya at ilang pribadong organisasyon. At nalalapat na ang Article 4: gumawa ng mga hakbang para suportahan ang AI literacy ng mga taong gumagamit ng AI tools sa iyong hiring, para maintindihan nila kung ano ang ginagawa at hindi ginagawa ng mga tool na iyon.
 
 ## Ang GDPR basics
 
@@ -119,7 +119,7 @@ Nagpapatakbo ang testee ng timed multiple-choice skills interviews na isinulat n
 
 Ang hitsura nito sa produkto ngayon:
 
-- **AI ang sumusulat ng mga tanong at ng answer keys nito; sumusunod sa nakapirming patakaran ang pagmamarka.** Walang AI na bumabasa o humuhusga sa sagot ng aplikante, at walang video, voice o face analysis. Kung itama ng AI ang isang key sa ibang pagkakataon, para lang sa mga aplikanteng magsisimula pagkatapos nito ang pagtatama; hindi nagbabago ang mga naunang resulta.
+- **AI ang sumusulat ng mga tanong at ng answer keys nito; sumusunod sa nakapirming patakaran ang pagmamarka.** Walang AI na humuhusga sa sagot ng aplikante, at walang video o face analysis. Sa voice mode, ginagawang text ang pananalita at itinutugma sa isang option, na sinasabi sa aplikante at ipinapakita sa screen: agad na itinatala ang iisang option na malinaw na binanggit, at kinukumpirma muna ang pagpili ng ilang option. Hindi kailanman iniimbak ng testee ang pananalita, at hindi kailanman ina-analyze ang boses. Kung itama ng AI ang isang key sa ibang pagkakataon, para lang sa mga aplikanteng magsisimula pagkatapos nito ang pagtatama; hindi nagbabago ang mga naunang resulta.
 - **Ikaw ang nag-aapruba ng mga topic** bago maisulat ang kahit isang tanong, at nakikita mo ang bawat tanong.
 - **Tao ang nagdedesisyon.** Pinapaalalahanan ng results page at ng PDF reports ang iyong team na i-review ang mga resulta; hindi nagre-reject ng aplikante o nagpapadala ng rejection message ang testee.
 - **Sinasabihan ang mga aplikante** bago sila magsimula na AI ang sumulat ng mga tanong, na mga tao sa iyong kumpanya ang nagre-review ng resulta at nagdedesisyon, at na puwede silang humingi ng review.

@@ -2,14 +2,14 @@
 title: "¿Es legal usar IA en la selección de personal en el Reino Unido? Lo que deben saber las empresas"
 seoTitle: "¿Es legal la IA en selección de personal en el Reino Unido?"
 description: "Usar IA en selección de personal es legal en el Reino Unido, con reglas: la Equality Act, las normas del RGPD británico de 2026 y las conclusiones del ICO."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # ¿Es legal usar IA en la selección de personal en el Reino Unido? Lo que deben saber las empresas
 
 En general, sí: usar IA en la selección de personal es legal en el Reino Unido. El Reino Unido no tiene una ley única de IA como el Reglamento de IA de la UE (EU AI Act). En su lugar, la Equality Act 2010 y el RGPD británico (UK GDPR) se aplican a las herramientas de IA igual que a cualquier prueba, y desde el 5 de febrero de 2026 el RGPD británico tiene nuevas normas sobre las decisiones basadas únicamente en el tratamiento automatizado.
 
-Esta guía explica las normas a grandes rasgos, lo que deben hacer los empleadores y cómo lo aborda testee. **No es asesoramiento jurídico.** Refleja las normas a fecha de octubre de 2026; algunas son nuevas y las orientaciones del regulador sobre ellas aún se están actualizando.
+Esta guía explica las normas a grandes rasgos, lo que deben hacer los empleadores y cómo lo aborda testee. **No es asesoramiento jurídico.** Refleja las normas a fecha de noviembre de 2026; algunas son nuevas y las orientaciones del regulador sobre ellas aún se están actualizando.
 
 ## La respuesta corta
 
@@ -83,6 +83,8 @@ Sus siete recomendaciones clave, tanto para proveedores como para reclutadores:
 
 El ICO también recomienda revisiones humanas significativas de los resultados de la IA, con registros de las revisiones hechas.
 
+En marzo de 2026 el ICO publicó un segundo informe, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), fruto de su trabajo con más de 30 empleadores. Concluye que muchos tratan sus herramientas como apoyo a la decisión cuando hay poca intervención humana real, que las garantías para impugnar una decisión se aplican de forma desigual, que a menudo no se explica con claridad a los candidatos cómo se usa la automatización y que las EIPD a menudo faltan o son débiles. Sus orientaciones actualizadas sobre decisiones automatizadas estuvieron en consulta hasta el 29 de mayo de 2026 y no eran definitivas a fecha de noviembre de 2026, y está en camino un código de prácticas legal sobre IA y toma de decisiones automatizada. Desde el 30 de septiembre de 2026, el regulador es la Information Commission, que sigue usando el nombre ICO.
+
 ## Transferencias a Estados Unidos
 
 Si un proveedor envía datos de candidatos del Reino Unido a Estados Unidos, el puente de datos Reino Unido–EE. UU. (UK–US data bridge) puede cubrirlo: [The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents), en vigor desde el 12 de octubre de 2023, para las empresas estadounidenses certificadas en la extensión británica del Marco de Privacidad de Datos UE–EE. UU. (Data Privacy Framework). Las demás necesitan garantías, como cláusulas contractuales tipo con el anexo británico (UK addendum).
@@ -105,7 +107,7 @@ testee ofrece entrevistas de habilidades de opción múltiple con tiempo límite
 
 Cómo se refleja hoy en el producto:
 
-- **La IA redacta las preguntas y sus claves de respuestas; la corrección sigue reglas fijas.** Ninguna IA lee ni juzga la respuesta de un candidato, y no se analiza video ni rostros. En el modo de voz, el habla se convierte en texto y se asocia a una opción, que se le dice al candidato y se muestra en pantalla: una sola opción nombrada con claridad se registra al instante, y una elección de varias opciones se confirma primero. El habla nunca se guarda y la voz nunca se analiza.
+- **La IA redacta las preguntas y sus claves de respuestas; la corrección sigue reglas fijas.** Ninguna IA juzga la respuesta de un candidato, y no se analiza video ni rostros. En el modo de voz, el habla se convierte en texto y se asocia a una opción, que se le dice al candidato y se muestra en pantalla: una sola opción nombrada con claridad se registra al instante, y una elección de varias opciones se confirma primero. testee nunca guarda el habla, y la voz nunca se analiza.
 - **Tú apruebas los temas** antes de que se redacte ninguna pregunta, y tú eliges la nota de aprobado.
 - **Deciden las personas.** La página de resultados y los informes PDF recuerdan a tu equipo que revise los resultados; testee no rechaza candidatos ni envía mensajes de rechazo.
 - **Se informa a los candidatos** antes de empezar de que las preguntas las redacta la IA, de que personas de tu empresa revisan los resultados y deciden, y de que pueden pedir una revisión.
@@ -128,4 +130,5 @@ Cómo se refleja hoy en el producto:
 - Data (Use and Access) Act 2025, [sección 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80), que introduce los artículos 22A a 22D en el RGPD británico ([artículo 22C](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [noviembre de 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), marzo de 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

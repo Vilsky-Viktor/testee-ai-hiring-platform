@@ -2,14 +2,14 @@
 title: "L'IA dans le recrutement est-elle légale au Royaume-Uni ? Ce que les employeurs doivent savoir"
 seoTitle: "IA et recrutement : légal au Royaume-Uni ? Égalité, données"
 description: "L'IA dans le recrutement est légale au Royaume-Uni, sous conditions : l'Equality Act, les règles du RGPD britannique de février 2026, l'ICO."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # L'IA dans le recrutement est-elle légale au Royaume-Uni ? Ce que les employeurs doivent savoir
 
 En règle générale, oui : utiliser l'IA dans le recrutement est légal au Royaume-Uni. Le Royaume-Uni n'a pas de loi unique sur l'IA comparable au Règlement sur l'IA (AI Act) de l'UE. Ce sont l'Equality Act 2010 et le RGPD britannique (UK GDPR) qui s'appliquent aux outils d'IA comme à n'importe quel test, et depuis le 5 février 2026 le RGPD britannique contient de nouvelles règles sur les décisions fondées exclusivement sur un traitement automatisé.
 
-Ce guide présente les règles dans leurs grandes lignes, ce que les employeurs doivent faire et la façon dont testee aborde le sujet. **Il ne constitue pas un conseil juridique.** Il reflète les règles en vigueur en octobre 2026 ; certaines sont récentes et les lignes directrices de l'autorité de contrôle à leur sujet sont encore en cours de mise à jour.
+Ce guide présente les règles dans leurs grandes lignes, ce que les employeurs doivent faire et la façon dont testee aborde le sujet. **Il ne constitue pas un conseil juridique.** Il reflète les règles en vigueur en novembre 2026 ; certaines sont récentes et les lignes directrices de l'autorité de contrôle à leur sujet sont encore en cours de mise à jour.
 
 ## La réponse courte
 
@@ -83,6 +83,8 @@ Ses sept recommandations clés, pour les fournisseurs comme pour les recruteurs 
 
 L'ICO recommande aussi des examens humains significatifs des résultats de l'IA, avec une trace des examens réalisés.
 
+En mars 2026, l'ICO a publié un second rapport, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), issu de son travail avec plus de 30 employeurs. Il constate que beaucoup traitent leurs outils comme une aide à la décision alors que l'intervention humaine réelle est faible, que les garanties permettant de contester une décision sont appliquées de façon inégale, que les candidats ne sont souvent pas clairement informés de l'usage de l'automatisation, et que les AIPD manquent souvent ou sont insuffisantes. Ses lignes directrices actualisées sur les décisions automatisées ont été soumises à consultation jusqu'au 29 mai 2026 et n'étaient pas définitives en novembre 2026, et un code de pratique légal sur l'IA et la prise de décision automatisée est en préparation. Depuis le 30 septembre 2026, l'autorité de contrôle est l'Information Commission, qui garde le nom d'ICO.
+
 ## Transferts vers les États-Unis
 
 Si un fournisseur envoie les données de candidats britanniques aux États-Unis, la passerelle de données Royaume-Uni–États-Unis (UK–US data bridge) peut les couvrir : [The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents), en vigueur depuis le 12 octobre 2023, pour les entreprises américaines certifiées au titre de l'extension britannique du cadre de protection des données UE–États-Unis (Data Privacy Framework). Les autres ont besoin de garanties, comme des clauses contractuelles types avec l'avenant britannique (UK addendum).
@@ -105,7 +107,7 @@ testee fait passer des entretiens de compétences chronométrés à choix multip
 
 Ce que cela donne aujourd'hui dans le produit :
 
-- **L'IA rédige les questions et leurs corrigés ; la notation suit des règles fixes.** Aucune IA ne lit ni ne juge la réponse d'un candidat, et aucune analyse vidéo ou faciale n'est utilisée. En mode vocal, la parole est transcrite en texte et associée à une option, annoncée au candidat et affichée à l'écran : une seule option clairement nommée est enregistrée aussitôt, un choix de plusieurs options est d'abord confirmé. La parole n'est jamais conservée et la voix n'est jamais analysée.
+- **L'IA rédige les questions et leurs corrigés ; la notation suit des règles fixes.** Aucune IA ne juge la réponse d'un candidat, et aucune analyse vidéo ou faciale n'est utilisée. En mode vocal, la parole est transcrite en texte et associée à une option, annoncée au candidat et affichée à l'écran : une seule option clairement nommée est enregistrée aussitôt, un choix de plusieurs options est d'abord confirmé. testee ne conserve jamais la parole, et la voix n'est jamais analysée.
 - **Vous validez les thèmes** avant qu'une question ne soit rédigée, et vous choisissez le seuil de réussite.
 - **Des personnes décident.** La page de résultats et les rapports PDF rappellent à votre équipe d'examiner les résultats ; testee ne rejette pas de candidats et n'envoie pas de messages de refus.
 - **Les candidats sont informés** avant de commencer que les questions sont rédigées par l'IA, que des personnes de votre entreprise examinent les résultats et décident, et qu'ils peuvent demander un réexamen.
@@ -128,4 +130,5 @@ Ce que cela donne aujourd'hui dans le produit :
 - Data (Use and Access) Act 2025, [section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80), qui insère les articles 22A à 22D dans le RGPD britannique ([article 22C](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [novembre 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), mars 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

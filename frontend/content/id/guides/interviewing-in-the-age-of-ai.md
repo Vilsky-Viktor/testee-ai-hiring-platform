@@ -2,7 +2,7 @@
 title: "Mewawancarai engineer di era AI: apa yang perlu diuji sekarang"
 seoTitle: "Wawancara Teknis di Era AI: Apa yang Perlu Diuji"
 description: "Asisten AI kini bagian dari kerja engineering sehari-hari. Dampaknya pada isi wawancara teknis, cara perusahaan beradaptasi, dan peran tes pengetahuan."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Mewawancarai engineer di era AI: apa yang perlu diuji sekarang
@@ -25,7 +25,7 @@ Jika digabungkan, angka-angka ini menggambarkan pergeseran dalam pekerjaan itu s
 
 Belum ada satu jawaban yang seragam di industri. Pendekatan yang dilaporkan bergerak ke arah yang berbeda-beda:
 
-- **Mengizinkan atau mewajibkan AI dalam wawancara.** Pada Juni 2025, Canva mengatakan kini mengharapkan kandidat backend, machine learning, dan frontend memakai alat AI seperti Copilot, Cursor, dan Claude dalam ronde baru "AI-Assisted Coding". Canva menilai apakah kandidat bisa "menguraikan kebutuhan yang kompleks dan ambigu", "menemukan dan memperbaiki masalah dalam kode buatan AI", dan "memastikan solusi buatan AI memenuhi standar produksi" ([Canva Engineering, Juni 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
+- **Mengizinkan atau mewajibkan AI dalam wawancara.** Pada Juni 2025, Canva mengatakan kini mengharapkan kandidat backend, machine learning, dan frontend memakai alat AI seperti Copilot, Cursor, dan Claude dalam wawancara teknis, dengan ronde baru "AI-Assisted Coding" yang menggantikan ronde dasar-dasar ilmu komputer untuk peran backend dan frontend. Canva menilai apakah kandidat bisa "menguraikan kebutuhan yang kompleks dan ambigu", "menemukan dan memperbaiki masalah dalam kode buatan AI", dan "memastikan solusi buatan AI memenuhi standar produksi" ([Canva Engineering, Juni 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
 - **Menguji coba ronde coding berbantuan AI.** Pada Juli 2025, Business Today, mengutip 404 Media, melaporkan bahwa Meta sedang membangun wawancara coding di mana kandidat didampingi asisten AI. Laporan itu mengutip Meta yang menyebut hal ini "lebih mewakili lingkungan developer tempat calon karyawan kami akan bekerja, dan juga membuat kecurangan berbasis LLM kurang efektif" ([Business Today, Juli 2025](https://www.businesstoday.in/amp/technology/news/story/meta-to-test-job-applicants-with-ai-assisted-coding-interviews-amid-ai-expansion-plans-487200-2025-07-31)).
 - **Membatasi alat dan bertemu langsung.** Pada Maret 2025, CNBC memberitakan sebuah alat yang dibuat untuk membantu kandidat memakai AI tanpa ketahuan dalam wawancara coding jarak jauh. Dalam laporan yang sama, Amazon mengatakan kandidat harus menyatakan bahwa mereka tidak akan memakai alat yang tidak diizinkan, CEO Google menyarankan hiring manager mempertimbangkan sebagian wawancara secara tatap muka, dan Deloitte telah kembali menerapkan wawancara tatap muka untuk program lulusan barunya di Inggris ([CNBC via NBC New York, Maret 2025](https://www.nbcnewyork.com/news/business/money-report/meet-the-21-year-old-helping-coders-use-ai-to-cheat-in-google-and-other-tech-job-interviews/6178911/?amp=1)).
 
@@ -74,7 +74,7 @@ testee sangat cocok untuk langkah 2. testee mengubah deskripsi pekerjaanmu menja
 - **Soal membaca kode:** potongan kode singkat dengan pertanyaan tentang apa yang dicetak atau dikembalikannya, apa fungsinya, kenapa gagal, atau perubahan mana yang memperbaikinya. Itu adalah keterampilan meninjau yang sama yang diandalkan kerja berbantuan AI.
 - **Timer di setiap soal:** setiap soal punya hitung mundurnya sendiri, ditegakkan oleh server, dan setiap kandidat mendapat set soal acaknya sendiri. Itu membuat mencari jawaban, termasuk bertanya kepada asisten AI, lebih sulit. Tetapi tidak membuatnya mustahil.
 - **Tanda peringatan:** scorecard menandai jawaban yang terlalu cepat untuk sempat membaca soalnya, saat kandidat meninggalkan halaman, dan percobaan menyalin. Setelah kandidat selesai, laporannya juga menunjukkan pola jawaban yang biasanya muncul saat soal diteruskan ke AI dan jawabannya disalin: waktu yang kira-kira sama di setiap soal, berapa pun panjang atau tingkat kesulitannya, atau soal sulit dijawab benar sementara soal mudah salah. Tanda atau pola adalah alasan untuk melihat lebih teliti, bukan bukti kecurangan.
-- **Soal untuk wawancara langsung:** laporannya menyarankan hingga 3 soal yang dijawab benar oleh kandidat, dari topik terkuatnya, untuk dibahas dalam wawancara langsung, tempat tidak ada AI yang bisa menjawab untuknya.
+- **Soal untuk wawancara langsung:** halaman kandidat menyarankan hingga 3 soal yang dijawabnya dengan benar, dari topik terkuatnya, untuk dibahas dalam wawancara langsung, tempat tidak ada AI yang bisa menjawab untuknya.
 
 Yang tidak dilakukan testee: kandidat tidak menulis, menjalankan, atau men-debug kode di testee, dan testee tidak mengamati mereka memakai asisten AI. Itu masuk ke tahap praktik langsung, yang dijalankan sendiri oleh timmu atau di platform developer, dan melengkapi tes pengetahuan. Lihat [tes keterampilan per posisi](/tests) untuk tes siap pakai sebagai titik awal, dan [Wawancara AI](/guides/ai-interviews) untuk cara testee memakai AI dan apa yang diserahkannya kepada manusia.
 

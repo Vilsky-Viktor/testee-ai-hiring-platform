@@ -2,7 +2,7 @@
 title: "Pre-employment testing: praktikal na gabay para sa maliliit at katamtamang team"
 seoTitle: "Pre-Employment Assessment Test: Mga Uri, Pagkapatas at Tools"
 description: "Ano ang pre-employment assessment test, mga uri nito, kailan gagamitin, basics ng pagkapatas at batas, at paano pumili ng tool para sa hiring team."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Pre-employment testing: praktikal na gabay para sa maliliit at katamtamang team
@@ -48,11 +48,11 @@ Ilagay ang test kaagad pagkatapos mag-apply (sa pamamagitan ng link sa job ad) o
 
 ## Pagkapatas at ang batas: ang basics
 
-Ang seksyong ito ay pangkalahatang overview noong Oktubre 2026, hindi legal advice. Nakadepende ang mga patakaran sa iyong bansa, industriya at kung paano mo ginagamit ang mga resulta. Kumonsulta sa sarili mong abogado.
+Ang seksyong ito ay pangkalahatang overview noong Nobyembre 2026, hindi legal advice. Nakadepende ang mga patakaran sa iyong bansa, industriya at kung paano mo ginagamit ang mga resulta.
 
 ### United States: EEOC at ang four-fifths rule
 
-Saklaw ng mga pederal na batas laban sa diskriminasyon na ipinapatupad ng EEOC ang mga employer sa US na gumagamit ng test sa hiring decisions. Kasama sa Uniform Guidelines on Employee Selection Procedures ang isang rule of thumb para sa adverse impact: "Ang selection rate para sa anumang lahi, kasarian o etnikong grupo na mas mababa sa apat na ikalima (4/5) (o walumpung porsyento) ng rate ng grupong may pinakamataas na rate ay karaniwang ituturing ng mga Federal enforcement agency bilang ebidensya ng adverse impact" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+Saklaw ng mga pederal na batas laban sa diskriminasyon na ipinapatupad ng EEOC ang mga employer sa US na gumagamit ng test sa hiring decisions. Kasama sa Uniform Guidelines on Employee Selection Procedures ang isang rule of thumb para sa adverse impact: "Ang selection rate para sa anumang lahi, kasarian o etnikong grupo na mas mababa sa apat na ikalima (4/5) (o walumpung porsyento) ng rate ng grupong may pinakamataas na rate ay karaniwang ituturing ng mga Federal enforcement agency bilang ebidensya ng adverse impact" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). Noong Oktubre 2026, nagpadala ang EEOC sa White House ng final rule para bawiin ang mga interpretive na bahagi ng Guidelines na ito, na target ang Enero 2027. Nananatili ang patakaran ng Title VII sa adverse impact, at nananatiling kapaki-pakinabang na unang test ang four-fifths check.
 
 Sa praktika: i-test lang ang kaalamang kailangan ng trabaho, bantayan ang pass rates sa iba't ibang grupo, mag-alok ng accommodations gaya ng dagdag na oras, at tingnan ang mga patakaran ng estado at lungsod para sa automated hiring tools. Halimbawa, ang [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) ng New York City ay nag-aatas ng bias audit, pampublikong buod nito at abiso sa mga aplikante bago gamitin ang isang automated employment decision tool.
 
@@ -98,9 +98,9 @@ Ginagawang timed multiple-choice skills interview ng testee ang isang job descri
 
 - **Sariling random na set ang bawat aplikante** mula sa bank ng bawat topic, na may countdown na ipinapatupad ng server sa bawat tanong. Puwede kang magbigay ng dagdag na oras sa sinumang humingi.
 - **Ipinapakita ng scorecards** ang bawat sagot, kung tama ito at gaano katagal ito, na may flag para sa sobrang bilis na sagot, pag-alis sa pahina, pagtatangkang mag-copy at hindi karaniwang pattern ng sagot, kasama ang mga tanong na itatanong sa isang live na interview. Hindi binabago ng mga flag ang score.
-- **Mina-mark ang mga sagot ayon sa answer key** na isinusulat ng AI; chine-check ang ilan sa bawat topic bago i-release, at ang iba kapag na-flag ang tanong. Walang AI na bumabasa o humuhusga sa sagot ng aplikante. Sinasaklaw ng isang PDF report ang isang aplikante o ang buong listahan.
+- **Mina-mark ang mga sagot ayon sa answer key** na isinusulat ng AI; chine-check ang ilan sa bawat topic bago i-release, at ang iba kapag na-flag ang tanong. Walang AI na humuhusga sa sagot ng aplikante. Sinasaklaw ng isang PDF report ang isang aplikante o ang buong listahan.
 - **Gumagana sa mga tool mo:** natatanggap ang interview ng mga aplikanteng inililipat mo sa isang stage sa Workable, Greenhouse, Teamtailor, Recruitee o Breezy HR, at bumabalik sa ATS ang kanilang mga resulta. Nalalaman ng Slack kapag may aplikanteng natapos, at ikinokonekta ng [API](/api-docs) ang sarili mong platform. Tingnan ang [paano ikonekta ang skills tests sa iyong ATS](/guides/ats-integration-skills-tests).
 
-Bawat aplikanteng sumasagot ang presyo, walang subscription: $2–5 bawat aplikante depende sa laki ng iyong top-up (nasa lokal na currency sa Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, iba pang bahagi ng Europe at UK), at libre ang unang 3 aplikante mo. Naka-host ang data sa EU (may ilang sub-processor sa US; tingnan ang [privacy policy](/privacy)), at kasama ang data processing agreement at ang mga instruksyon para sa mga kumpanya.
+Bawat aplikanteng sumasagot ang presyo, walang subscription: $2–5 bawat aplikante depende sa laki ng iyong top-up (nasa lokal na currency sa Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, iba pang bahagi ng EU, Norway, Iceland, Liechtenstein at UK), at libre ang unang 3 aplikante ng iyong unang kumpanya. Naka-host ang data sa EU (may ilang sub-processor sa US; tingnan ang [privacy policy](/privacy)), at kasama ang data processing agreement at ang mga instruksyon para sa mga kumpanya.
 
 Ang testee ay hindi psychometric suite, hindi platform para sa pagsulat at pagpapatakbo ng code, at hindi video interview tool, at gumagana ito kasabay ng mga iyon. Para sa paghahambing nito sa ibang AI hiring tools, basahin ang [AI interviews](/guides/ai-interviews). Para sa mga engineering role, tingnan ang [Paano mag-hire ng mga engineer](/guides/hiring-engineers).

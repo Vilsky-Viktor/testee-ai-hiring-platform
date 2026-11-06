@@ -2,14 +2,14 @@
 title: "Ist KI im Recruiting in den USA erlaubt? Was Arbeitgeber wissen müssen"
 seoTitle: "KI im Recruiting in den USA erlaubt? Bund und Bundesstaaten"
 description: "KI im Recruiting ist in den USA erlaubt, mit Regeln: Adverse Impact und Vorkehrungen nach Bundesrecht, Bias-Audits in NYC, Illinois, Colorado, Kalifornien."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Ist KI im Recruiting in den USA erlaubt? Was Arbeitgeber wissen müssen
 
-Grundsätzlich ja: KI in der Personalauswahl einzusetzen ist in den USA erlaubt. Es gibt kein Bundesgesetz zu KI im Recruiting. Stattdessen gilt das Antidiskriminierungsrecht des Bundes für KI-Tools genauso wie für jeden anderen Test, und einige Orte haben eigene Regeln: New York City, Illinois, Colorado und Kalifornien.
+Grundsätzlich ja: KI in der Personalauswahl einzusetzen ist in den USA erlaubt. Es gibt kein Bundesgesetz zu KI im Recruiting. Stattdessen gilt das Antidiskriminierungsrecht des Bundes für KI-Tools genauso wie für jeden anderen Test, und einige Orte haben eigene Regeln: New York City, Illinois, Colorado, Kalifornien, New Jersey und Texas. Eine Executive Order vom Dezember 2025 hat eine Taskforce des Justizministeriums eingerichtet, die gegen KI-Gesetze der Bundesstaaten vorgehen soll ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), aber eine solche Anordnung hebt sie nicht auf: Sie gelten, bis der Kongress oder ein Gericht etwas anderes entscheidet.
 
-Dieser Leitfaden erklärt die Regeln im Überblick, die wichtigen Fristen, was Arbeitgeber tun müssen und wie testee damit umgeht. **Er ist keine Rechtsberatung.** Er gibt den Stand der Regeln im Oktober 2026 wieder; mehrere davon sind neu oder werden noch fertiggestellt.
+Dieser Leitfaden erklärt die Regeln im Überblick, die wichtigen Fristen, was Arbeitgeber tun müssen und wie testee damit umgeht. **Er ist keine Rechtsberatung.** Er gibt den Stand der Regeln im November 2026 wieder; mehrere davon sind neu oder werden noch fertiggestellt.
 
 ## Die Kurzantwort
 
@@ -20,7 +20,7 @@ Dieser Leitfaden erklärt die Regeln im Überblick, die wichtigen Fristen, was A
 | Muss ich Kandidaten informieren? | In New York City und Illinois ja; in Colorado und Kalifornien ab dem 1. Januar 2027 |
 | Muss ich zusätzliche Zeit anbieten? | Kandidaten mit Behinderung, die sie brauchen: als angemessene Vorkehrung (reasonable accommodation) |
 | Wie lange muss ich Unterlagen aufbewahren? | Vier Jahre in Kalifornien, drei in Colorado |
-| Wer trifft die Einstellungsentscheidung? | Ein Mensch. Alle Regelwerke hier setzen eine menschliche Prüfung voraus |
+| Wer trifft die Einstellungsentscheidung? | Ein Mensch. Colorado und Kalifornien sehen eine menschliche Prüfung vor, und überall ist sie der sicherste Weg |
 
 ## Bundesrecht
 
@@ -32,7 +32,9 @@ Title VII des Civil Rights Act von 1964 verbietet Diskriminierung im Arbeitslebe
 
 Ein Beispiel: Wenn 60 % der einen Gruppe deinen Test bestehen und 42 % einer anderen, beträgt das Verhältnis 42 ÷ 60 = 0,70, also unter 0,80: ein Warnzeichen, dem du nachgehen solltest. Es ist kein Beweis für Diskriminierung, und bei kleinen Zahlen kann das Verhältnis stark schwanken.
 
-Die technischen Hinweise der EEOC von 2023 zu KI in der Personalauswahl wurden im Januar 2025 zurückgezogen. Die Uniform Guidelines sind eine Verordnung, keine Leitlinie, und gelten weiterhin. Die Verantwortung für Adverse Impact bleibt beim Arbeitgeber, egal wer den Test entwickelt hat.
+Die Durchsetzung auf Bundesebene hat sich geändert. Die technischen Hinweise der EEOC von 2023 zu KI in der Personalauswahl wurden im Januar 2025 zurückgezogen. Ihr National Enforcement Plan vom Juni 2026 besagt, dass sie Theorien der mittelbaren Diskriminierung (Disparate Impact) bei Untersuchungen „im größtmöglichen Umfang“ vermeiden und keine solchen Fälle vor Gericht bringen wird ([EEOC](https://www.eeoc.gov/sites/default/files/2026-06/NEP_-_signed.pdf), Zitat aus dem Englischen übersetzt). Das Arbeitsministerium hat seine Fassung der Uniform Guidelines am 26. Oktober 2026 entfernt, und die EEOC hat dem Weißen Haus am 16. Oktober 2026 eine endgültige Regelung zugeleitet, die die auslegenden Teile ihrer eigenen Fassung aufheben soll, mit Ziel Januar 2027 ([Ogletree](https://ogletree.com/insights-resources/blog-posts/eeoc-sends-oira-final-rule-rescinding-uniform-guidelines-on-employee-selection-procedures/)). Bis diese Regelung veröffentlicht ist und in Kraft tritt, bleiben die Guidelines im Code of Federal Regulations.
+
+Nichts davon ändert Title VII. Die mittelbare Diskriminierung steht im Gesetz ([42 U.S.C. §2000e-2(k)](https://www.law.cornell.edu/uscode/text/42/2000e-2)), Kandidaten können weiterhin klagen, und die Bundesstaaten setzen ihre eigenen Gesetze durch. Die Vier-Fünftel-Regel bleibt ein nützlicher erster Check, was auch immer mit den Guidelines geschieht, und die Verantwortung für Adverse Impact bleibt beim Arbeitgeber, egal wer den Test entwickelt hat.
 
 ### Der ADA und angemessene Vorkehrungen
 
@@ -64,7 +66,7 @@ Und sie müssen Kandidaten informieren, wenn KI bei Recruiting- und Einstellungs
 
 ## Colorado
 
-Das KI-Gesetz von Colorado wurde durch SB 26-189 aufgehoben und neu erlassen, unterzeichnet am 14. Mai 2026 und in Kraft ab dem 1. Januar 2027. Die Regeln des Attorney General sind vorgeschlagen (eine Anhörung fand am 26. Oktober 2026 statt) und sollen vor diesem Datum kommen. Für Betreiber von Hochrisiko-KI, die bei Beschäftigungsentscheidungen eingesetzt wird, gelten diese Pflichten:
+Das KI-Gesetz von Colorado wurde durch SB 26-189 aufgehoben und neu erlassen, unterzeichnet am 14. Mai 2026 und in Kraft ab dem 1. Januar 2027. Die Regeln des Attorney General sind vorgeschlagen (mit einer für den 26. Oktober 2026 angesetzten Anhörung), im November 2026 noch nicht verabschiedet und sollen bis zum 1. Januar 2027 kommen. Für Betreiber von Technologien für automatisierte Entscheidungen, die eine Beschäftigungsentscheidung maßgeblich beeinflussen, gelten diese Pflichten:
 
 - **Information vor dem Einsatz** an den Kandidaten.
 - **Eine Erklärung einer nachteiligen Entscheidung,** etwa einer Nichteinstellung oder wenn jemand nicht weiterkommt.
@@ -75,6 +77,12 @@ Das KI-Gesetz von Colorado wurde durch SB 26-189 aufgehoben und neu erlassen, un
 
 - **Verordnungen des Civil Rights Council zu automatisierten Entscheidungssystemen,** in Kraft seit dem 1. Oktober 2025: Antidiskriminierungsrecht gilt für automatisierte Tools im Recruiting genauso wie für jedes andere Auswahlverfahren. Arbeitgeber müssen Beschäftigungsunterlagen, einschließlich der Daten automatisierter Entscheidungssysteme, vier Jahre lang aufbewahren (Cal. Code Regs. tit. 2, §11013(c)).
 - **Die Regeln des CCPA zu Technologien für automatisierte Entscheidungen** gelten ab dem 1. Januar 2027 für Beschäftigungsentscheidungen: eine Information vor dem Einsatz, das Recht auf Opt-out oder Widerspruch und das Recht auf Auskunft darüber, wie die Technologie eingesetzt wurde.
+- **Der No Robo Bosses Act (SB 947),** unterzeichnet am 30. September 2026, gilt ab dem 1. Juli 2027 für Disziplinarmaßnahmen und Kündigungen, nicht für die Einstellung.
+
+## New Jersey und Texas
+
+- **New Jersey.** Regeln zur mittelbaren Diskriminierung nach dem Law Against Discrimination (N.J.A.C. 13:16), in Kraft seit dem 15. Dezember 2025, erfassen automatisierte Tools für Beschäftigungsentscheidungen. Ein Arbeitgeber kann auch dann haften, wenn ein Anbieter das Tool entwickelt hat.
+- **Texas.** Der Responsible AI Governance Act (HB 149), in Kraft seit dem 1. Januar 2026, verbietet KI, die in der Absicht rechtswidriger Diskriminierung eingesetzt wird. Eine mittelbare Diskriminierung allein belegt diese Absicht nicht.
 
 ## Die Fristen
 
@@ -82,12 +90,13 @@ Das KI-Gesetz von Colorado wurde durch SB 26-189 aufgehoben und neu erlassen, un
 | --- | --- |
 | 5. Juli 2023 | Durchsetzung von Local Law 144 in New York City |
 | 1. Oktober 2025 | Regeln des Civil Rights Council in Kalifornien zu automatisierten Entscheidungssystemen |
-| 1. Januar 2026 | Illinois: Information über KI-Einsatz, keine diskriminierende KI, keine Postleitzahlen als Ersatzmerkmal |
+| 15. Dezember 2025 | Regeln New Jerseys zur mittelbaren Diskriminierung |
+| 1. Januar 2026 | Illinois: Information über KI-Einsatz, keine diskriminierende KI, keine Postleitzahlen als Ersatzmerkmal; Texas: keine KI in Diskriminierungsabsicht |
 | 1. Januar 2027 | KI-Gesetz von Colorado; CCPA-Regeln Kaliforniens zu automatisierten Entscheidungen im Beschäftigungsbereich |
 
 ## Eine praktische Checkliste für Arbeitgeber
 
-1. **Liste die Stellen und Orte auf,** für die du einstellst: New York City, Illinois, Colorado, Kalifornien, andere Orte in den USA.
+1. **Liste die Stellen und Orte auf,** für die du einstellst: New York City, Illinois, Colorado, Kalifornien, New Jersey, Texas, andere Orte in den USA.
 2. **Prüfe nur, was die Stelle braucht.** Wähle Themen und eine Bestehensgrenze, die du für die Rolle begründen kannst.
 3. **Aktualisiere deine Kandidateninformation,** sodass sie den KI-Einsatz erwähnt, erklärt, wie Ergebnisse verwendet werden, und wie man eine Vorkehrung und eine Prüfung durch einen Menschen beantragt. Ergänze die Formulierungen für Illinois und Colorado, wo sie gelten.
 4. **Biete Vorkehrungen an,** etwa zusätzliche Zeit, und vereinbare sie, bevor der Kandidat beginnt.
@@ -103,12 +112,12 @@ testee führt zeitlich begrenzte Multiple-Choice-Interviews zu Fachkenntnissen d
 
 So sieht das heute im Produkt aus:
 
-- **KI schreibt die Fragen und ihre Lösungsschlüssel; die Bewertung folgt festen Regeln.** Keine KI liest oder beurteilt die Antwort eines Kandidaten, und es wird keine Video- oder Gesichtsanalyse eingesetzt. Im Sprachmodus wird Sprache in Text umgewandelt und einer Antwortoption zugeordnet, die dem Kandidaten genannt und auf dem Bildschirm angezeigt wird: Eine eindeutig genannte einzelne Option wird sofort übernommen, eine Auswahl mehrerer Optionen wird zuerst bestätigt. Die Sprache wird nie gespeichert, und die Stimme wird nie analysiert.
+- **KI schreibt die Fragen und ihre Lösungsschlüssel; die Bewertung folgt festen Regeln.** Keine KI beurteilt die Antwort eines Kandidaten, und es wird keine Video- oder Gesichtsanalyse eingesetzt. Im Sprachmodus wird Sprache in Text umgewandelt und einer Antwortoption zugeordnet, die dem Kandidaten genannt und auf dem Bildschirm angezeigt wird: Eine eindeutig genannte einzelne Option wird sofort übernommen, eine Auswahl mehrerer Optionen wird zuerst bestätigt. testee speichert Sprache nie, und die Stimme wird nie analysiert.
 - **Du gibst die Themen frei,** bevor eine Frage geschrieben wird, und du wählst die Bestehensgrenze.
 - **Menschen entscheiden.** testee lehnt keine Kandidaten ab und verschickt keine Absagen.
 - **Keine geschützten Merkmale.** testee fragt nie nach Geschlecht, ethnischer Herkunft, Alter, Behinderung, Postleitzahl oder anderen geschützten Merkmalen von Kandidaten, leitet sie nicht ab und speichert sie nicht.
 - **Ein Export für ein Bias-Audit.** Auf der Seite „Aktionsprotokoll“ des Unternehmens kann der Inhaber eine CSV-Datei der Kandidaten herunterladen, die fertig sind, für das ganze Unternehmen oder ein Interview und zwischen zwei Daten: die Note jedes Kandidaten, die Bestehensgrenze, ob er bestanden hat und ob er über dem Median des Interviews lag. Jede Zeile ist über die E-Mail-Adresse des Kandidaten zugeordnet, sodass du sie mit den selbst angegebenen Kategorien verknüpfen kannst, die du selbst erhoben hast; entferne dann die Spalte mit der E-Mail-Adresse und gib die Datei deinem unabhängigen Prüfer, der die Auswahl- und Bewertungsquoten und die Impact Ratios berechnet. Mit derselben Datei kannst du die Vier-Fünftel-Prüfung selbst durchführen.
-- **Zusätzliche Zeit** von +25 %, +50 % oder +100 % bei jeder Frage kann jedem Kandidaten gewährt werden, der darum bittet, bevor er beginnt. testee speichert nur den Umfang, nie den Grund. Im Sprachmodus kann ein Kandidat stattdessen immer eine Option antippen, und du kannst ein Interview so einstellen, dass nur durch Antippen geantwortet wird.
+- **Zusätzliche Zeit** von +25 %, +50 % oder +100 % bei jeder Frage kann jedem Kandidaten gewährt werden, der darum bittet, bevor er beginnt. testee speichert nur den Umfang, nie den Grund. Im Sprachmodus kann ein Kandidat eine Option antippen, statt zu sprechen. Ein Sprachinterview zu starten erfordert ein Mikrofon, stelle einen Kandidaten, der keines nutzen kann, also vor dem Start auf Antworten durch Antippen um. Du kannst auch das ganze Interview so einstellen.
 - **Vorlagen für die Kandidateninformation,** eine allgemeine und Fassungen für New York City, Illinois und Colorado, findest du auf der [Dokumente-Seite](/documents), zusammen mit der Anleitung für Unternehmen.
 - **New York City.** testee hatte noch kein eigenes unabhängiges Bias-Audit. Setze testee nicht für Stellen in New York City ein, bevor du getan hast, was Local Law 144 von dir als Arbeitgeber verlangt: ein unabhängiges Bias-Audit innerhalb des Jahres vor dem Einsatz, seine veröffentlichte Zusammenfassung und eine Information an Kandidaten 10 Arbeitstage vorher.
 - **Daten.** Nach dem CCPA ist dein Unternehmen das Unternehmen (business) und testee sein Dienstleister (service provider), gemäß dem [Auftragsverarbeitungsvertrag](/dpa) und seinem Abschnitt zu den USA. Die Daten werden in der EU gehostet, einige Unterauftragsverarbeiter sitzen in den USA (siehe die [Datenschutzerklärung](/privacy)), und sie werden nicht zum Training von KI-Modellen genutzt.
@@ -124,8 +133,13 @@ So sieht das heute im Produkt aus:
 ## Quellen
 
 - Uniform Guidelines on Employee Selection Procedures, [29 CFR §1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4).
+- Title VII des Civil Rights Act von 1964, [42 U.S.C. §2000e-2(k)](https://www.law.cornell.edu/uscode/text/42/2000e-2).
+- EEOC, [National Enforcement Plan](https://www.eeoc.gov/sites/default/files/2026-06/NEP_-_signed.pdf), Juni 2026; Ogletree, [EEOC sends OIRA final rule rescinding the Uniform Guidelines](https://ogletree.com/insights-resources/blog-posts/eeoc-sends-oira-final-rule-rescinding-uniform-guidelines-on-employee-selection-procedures/), Oktober 2026.
+- [Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm), 11. Dezember 2025.
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 und 6 RCNY §5-300 ff.; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) und die zugehörigen FAQ.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), geändert durch Public Act 103-0804.
 - Colorado SB 26-189.
-- California Code of Regulations, Title 2, §11013(c); Verordnungen zum California Consumer Privacy Act über Technologien für automatisierte Entscheidungen.
+- California Code of Regulations, Title 2, §11013(c); Verordnungen zum California Consumer Privacy Act über Technologien für automatisierte Entscheidungen; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
+- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

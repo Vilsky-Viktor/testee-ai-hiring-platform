@@ -2,7 +2,7 @@
 title: "Rédiger une fiche de poste qui donne un bon test de recrutement"
 seoTitle: "Rédiger une fiche de poste qui donne un bon test"
 description: "Ce qu'une fiche de poste doit contenir pour qu'un test de compétences évalue ce qu'il faut : compétences et outils concrets, niveau, missions, à omettre."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Rédiger une fiche de poste qui donne un bon test de recrutement
@@ -15,7 +15,7 @@ Ce guide porte sur le second rôle : rédiger une fiche à partir de laquelle on
 
 Un test de connaissances est utile quand il évalue ce dont le poste a réellement besoin. La recherche sur le recrutement classe les tests de connaissances métier parmi les meilleurs prédicteurs de la performance au travail en moyenne, mais cette estimation vaut pour des tests conçus pour le poste concerné ; les tests de connaissances sans rapport avec le poste prédisent moins bien (voir [Tests de compétences ou tri de CV](/guides/skills-tests-vs-cv-screening)).
 
-Le droit du travail américain dit la même chose sous l'angle juridique. Les Uniform Guidelines on Employee Selection Procedures attendent qu'un test justifié par son contenu repose sur une analyse du poste, centrée sur « le ou les comportements de travail et les tâches qui y sont associées » ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). En pratique, pour la plupart des équipes, la fiche de poste est cette analyse mise par écrit. Et selon l'Americans with Disabilities Act, une description écrite préparée avant la publication de l'offre ou les entretiens est considérée comme une preuve des fonctions essentielles d'un poste ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+Le droit du travail américain dit la même chose sous l'angle juridique. Les Uniform Guidelines on Employee Selection Procedures attendent qu'un test justifié par son contenu repose sur une analyse du poste, centrée sur « le ou les comportements de travail et les tâches qui y sont associées » ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). En pratique, pour la plupart des équipes, la fiche de poste est cette analyse mise par écrit. (En octobre 2026, l'EEOC a engagé l'abrogation des parties interprétatives de ces Guidelines, avec janvier 2027 pour objectif. Le Title VII exige toujours qu'un test ayant un impact défavorable soit lié au poste.) Et selon l'Americans with Disabilities Act, une description écrite préparée avant la publication de l'offre ou les entretiens est considérée comme une preuve des fonctions essentielles d'un poste ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 La fiche de poste mérite donc une demi-heure de plus. Tout ce qu'elle dit, le test le demandera.
 
@@ -48,7 +48,7 @@ Les années d'expérience ne sont qu'une approximation grossière du niveau, et 
 
 Les missions sont les lignes les plus utiles pour un test. « Prépare la déclaration de TVA mensuelle » ou « trie les bugs entrants et les reproduit » indique à la personne qui rédige le test quelles connaissances sont utilisées, et dans quelles situations. Rédigez les missions sous la forme d'un verbe et d'un complément, comme vous décririez le travail à un nouveau collègue.
 
-Si vous ne savez pas bien ce qu'un poste implique habituellement, [O*NET OnLine](https://www.onetonline.org/) recense les tâches, technologies et connaissances typiques de centaines de métiers. Servez-vous-en comme liste de contrôle, puis ne gardez que ce que votre poste fait vraiment.
+Si vous ne savez pas bien ce qu'un poste implique habituellement, [O*NET OnLine](https://www.onetonline.org/) recense les tâches, technologies et connaissances typiques d'environ 1 000 métiers. Servez-vous-en comme liste de contrôle, puis ne gardez que ce que votre poste fait vraiment.
 
 ### 4. Une frontière nette entre l'indispensable et le « plus »
 

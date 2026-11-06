@@ -2,7 +2,7 @@
 title: "İyi bir test çıkaran iş tanımı nasıl yazılır"
 seoTitle: "İyi Bir Test Çıkaran İş Tanımı Nasıl Yazılır"
 description: "Ondan oluşturulan beceri testinin doğru şeyleri ölçmesi için iş tanımında ne olmalı: somut beceriler ve araçlar, seviye, günlük işler ve çıkarılacaklar."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # İyi bir test çıkaran iş tanımı nasıl yazılır
@@ -15,7 +15,7 @@ Bu rehber ikinci görevle ilgilidir: beceri testi oluşturulabilecek bir tanım 
 
 Bir bilgi testi, işin gerçekten ihtiyaç duyduğu şeyi ölçtüğünde işe yarar. İşe alım araştırmaları, mesleki bilgi testlerini ortalamada iş performansının daha iyi öngörücüleri arasında sayar; ancak bu tahmin söz konusu iş için oluşturulmuş testlere aittir; işle ilgisi olmayan bilgi testleri daha az öngörür (bkz. [Beceri testleri ve CV taraması](/guides/skills-tests-vs-cv-screening)).
 
-ABD istihdam kuralları aynı şeyi hukuki açıdan söyler. Personel Seçim Prosedürlerine İlişkin Tek Tip Yönergeler (Uniform Guidelines on Employee Selection Procedures), içeriğiyle desteklenen bir testin, “iş davranış(lar)ına ve bunlarla ilişkili görevlere” odaklanan bir iş analizine dayanmasını bekler ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Uygulamada çoğu ekip için iş tanımı, bu analizin yazıya dökülmüş hâlidir. Engelli Amerikalılar Yasası (ADA) kapsamında da ilan veya mülakattan önce hazırlanan yazılı bir tanım, işin temel işlevlerinin kanıtı sayılır ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+ABD istihdam kuralları aynı şeyi hukuki açıdan söyler. Personel Seçim Prosedürlerine İlişkin Tek Tip Yönergeler (Uniform Guidelines on Employee Selection Procedures), içeriğiyle desteklenen bir testin, “iş davranış(lar)ına ve bunlarla ilişkili görevlere” odaklanan bir iş analizine dayanmasını bekler ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Uygulamada çoğu ekip için iş tanımı, bu analizin yazıya dökülmüş hâlidir. (Ekim 2026'da EEOC, Ocak 2027'yi hedefleyerek bu Yönergelerin yorumlayıcı bölümlerini yürürlükten kaldırma adımını attı. Title VII, olumsuz etkisi olan bir testin işle ilgili olmasını hâlâ şart koşar.) Engelli Amerikalılar Yasası (ADA) kapsamında da ilan veya mülakattan önce hazırlanan yazılı bir tanım, işin temel işlevlerinin kanıtı sayılır ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 Yani tanıma fazladan yarım saat ayırmaya değer. Tanımda ne yazıyorsa test onu soracaktır.
 
@@ -48,7 +48,7 @@ Deneyim yılı, seviyenin kaba ve zayıf bir göstergesidir: yukarıdaki araşt�
 
 Görevler, bir test için en faydalı satırlardır. “Aylık KDV beyannamesini hazırlar” ya da “gelen hataları önceliklendirir ve yeniden üretir”, test yazan kişiye hangi bilginin hangi durumlarda kullanıldığını söyler. Görevleri bir fiil ve bir nesne olarak yazın; işi yeni bir iş arkadaşınıza anlatır gibi.
 
-Bir pozisyonun genellikle neleri kapsadığından emin değilseniz, [O*NET OnLine](https://www.onetonline.org/) yüzlerce meslek için tipik görevleri, teknolojileri ve bilgileri listeler. Bunu bir kontrol listesi olarak kullanın, sonra yalnızca sizin pozisyonunuzda gerçekten yapılanları bırakın.
+Bir pozisyonun genellikle neleri kapsadığından emin değilseniz, [O*NET OnLine](https://www.onetonline.org/) yaklaşık 1.000 meslek için tipik görevleri, teknolojileri ve bilgileri listeler. Bunu bir kontrol listesi olarak kullanın, sonra yalnızca sizin pozisyonunuzda gerçekten yapılanları bırakın.
 
 ### 4. Olmazsa olmazlar ile tercih sebepleri arasında net bir çizgi
 

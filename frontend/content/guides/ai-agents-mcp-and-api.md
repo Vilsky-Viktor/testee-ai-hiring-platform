@@ -2,7 +2,7 @@
 title: "AI agents, MCP and APIs: what they are and how to use them in hiring"
 seoTitle: "AI Agents, MCP and APIs in Hiring: How to Use Them"
 description: "What an AI agent, MCP and an API are, how to use them safely in hiring, and how to run testee from its AI assistant, Claude, ChatGPT or your own platform."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # AI agents, MCP and APIs: what they are and how to use them in hiring
@@ -96,7 +96,7 @@ If your team already works in Claude or ChatGPT, you can bring testee there. tes
 **To connect:**
 
 1. In testee, open a company's **Integrations** tab and select **AI apps**. Copy the server address: `https://testee.ai/mcp`.
-2. **In Claude:** open Settings, then Connectors, and add a custom connector with that address. **In Claude Code:** run `claude mcp add --transport http testee https://testee.ai/mcp`. **In ChatGPT:** add it as a custom connector in its settings for apps and connectors.
+2. **In Claude:** open Customize, then Connectors, and add a custom connector with that address; on Team and Enterprise plans, an owner adds it first in Organization settings. **In Claude Code:** run `claude mcp add --transport http testee https://testee.ai/mcp`. **In ChatGPT:** add it as a custom MCP server. Where that sits depends on your plan, and your admin may need to allow it.
 3. Your AI app opens testee's sign-in. Sign in, check which app is asking, and select **Allow**. To let it only read, turn off **Allow changes** first.
 
 From then on, ask in your chat as you would ask a colleague: "In testee, who are the top three candidates for Product designer?" Most AI apps ask you before a change and warn you before anything that can't be undone: testee tells them which actions change or delete something.
@@ -106,7 +106,7 @@ From then on, ask in your chat as you would ask a colleague: "In testee, who are
 - **Your permissions.** It acts as you, in every company you're in, with your role in each.
 - **Credits and limits.** Inviting a candidate costs the same as in the app, and the same email limits apply.
 - **The record.** Everything an AI app does for you shows in the company's action log as done through an AI app, from approving topics and viewing results to giving extra time or revoking a candidate. The company's owner reads it on the company's **Action log** tab.
-- **The company decides.** Owners and admins can stop AI apps from using a company's data with **Allow AI apps in this company** on its AI apps page.
+- **The company decides.** Owners and admins can stop AI apps from using a company's data with the **Allow AI apps** switch on its AI apps page.
 - **What it can't do.** It can't see your password or API keys, and it can't delete your account or a company. Those stay in the app.
 
 **To disconnect,** remove the connector in your AI app, or select **Disconnect** next to it under **AI apps** on the Integrations tab. It stops working at once.
@@ -117,7 +117,7 @@ From then on, ask in your chat as you would ask a colleague: "In testee, who are
 
 For automation without AI, testee has an API, described in its [developer docs](/api-docs).
 
-1. An owner or admin opens a company's **Integrations** tab, then **API**, and selects **New key**. Name it after the platform that will use it, choose when it expires, and tick only what it needs: a dashboard's key only reads, a careers site's key also invites. You can add or take away permissions later. The key is shown once; store it somewhere safe.
+1. An owner or admin opens a company's **Integrations** tab, then **API, SDK, webhooks**, and selects **New key**. Name it after the platform that will use it, choose when it expires, and tick only what it needs: a dashboard's key only reads, a careers site's key also invites. You can add or take away permissions later. The key is shown once; store it somewhere safe.
 2. Your platform sends requests with that key: list the company's interviews, list or read candidates with their grade, whether they passed and their integrity signals, and invite a candidate.
 3. Add a **web hook**: an address on your platform that testee calls, signed, when a candidate starts, finishes, isn't reached, expires or is removed, and when an interview is ready, so you don't have to keep asking. The API page can send it a test event and shows its delivery log.
 

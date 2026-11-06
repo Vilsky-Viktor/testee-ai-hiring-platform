@@ -2,7 +2,7 @@
 title: "Agent AI, MCP và API: là gì và cách dùng trong tuyển dụng"
 seoTitle: "Agent AI, MCP và API trong tuyển dụng: là gì và cách dùng"
 description: "Agent AI, MCP và API là gì, cách dùng an toàn trong tuyển dụng, và cách vận hành testee từ trợ lý AI của nó, từ Claude, ChatGPT hoặc nền tảng của bạn."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # Agent AI, MCP và API: là gì và cách dùng trong tuyển dụng
@@ -96,7 +96,7 @@ Nếu bạn đã làm việc trong Claude hoặc ChatGPT, bạn có thể đưa 
 **Cách kết nối:**
 
 1. Trong testee, mở tab **Tích hợp** của một công ty và chọn **Ứng dụng AI**. Sao chép địa chỉ máy chủ: `https://testee.ai/mcp`.
-2. **Trong Claude:** mở Settings, rồi Connectors, và thêm một custom connector với địa chỉ đó. **Trong Claude Code:** chạy `claude mcp add --transport http testee https://testee.ai/mcp`. **Trong ChatGPT:** thêm nó dưới dạng custom connector trong phần cài đặt ứng dụng và connector.
+2. **Trong Claude:** mở Customize, rồi Connectors, và thêm một custom connector với địa chỉ đó; với gói Team và Enterprise, chủ sở hữu phải thêm trước trong Organization settings. **Trong Claude Code:** chạy `claude mcp add --transport http testee https://testee.ai/mcp`. **Trong ChatGPT:** thêm nó dưới dạng custom MCP server. Vị trí phụ thuộc vào gói của bạn, và có thể quản trị viên cần cho phép.
 3. Ứng dụng AI của bạn mở trang đăng nhập của testee. Đăng nhập, kiểm tra ứng dụng nào đang yêu cầu, rồi chọn **Cho phép**. Để ứng dụng chỉ có thể đọc, hãy tắt **Cho phép thay đổi** trước.
 
 Từ đó trở đi, hãy hỏi trong chat như khi hỏi một đồng nghiệp: "Trong testee, ba ứng viên hàng đầu cho Product designer là ai?" Hầu hết ứng dụng AI sẽ hỏi bạn trước khi thay đổi, và cảnh báo trước bất kỳ thao tác nào không thể hoàn tác: testee cho chúng biết thao tác nào thay đổi hoặc xóa dữ liệu.
@@ -106,7 +106,7 @@ Từ đó trở đi, hãy hỏi trong chat như khi hỏi một đồng nghiệp
 - **Quyền của bạn.** Nó hành động dưới danh nghĩa của bạn, ở mọi công ty bạn tham gia, với vai trò của bạn ở từng nơi.
 - **Credit và giới hạn.** Mời một ứng viên tốn đúng như trong ứng dụng, và áp dụng cùng các giới hạn email.
 - **Ghi nhận.** Mọi việc một ứng dụng AI làm thay bạn đều hiện trong nhật ký thao tác của công ty là đã thực hiện qua ứng dụng AI, từ duyệt chủ đề và xem kết quả đến cho thêm thời gian hay thu hồi ứng viên. Chủ sở hữu công ty xem nhật ký này trong thẻ **Nhật ký thao tác** của công ty.
-- **Công ty quyết định.** Chủ sở hữu và quản trị viên có thể ngăn ứng dụng AI dùng dữ liệu của công ty bằng **Cho phép ứng dụng AI trong công ty này** trên trang ứng dụng AI của công ty.
+- **Công ty quyết định.** Chủ sở hữu và quản trị viên có thể ngăn ứng dụng AI dùng dữ liệu của công ty bằng công tắc **Cho phép ứng dụng AI** trên trang ứng dụng AI của công ty.
 - **Những gì nó không làm được.** Nó không thấy mật khẩu hay khóa API của bạn, và không thể xóa tài khoản của bạn hoặc một công ty. Những việc đó vẫn nằm trong ứng dụng.
 
 **Để ngắt kết nối,** hãy gỡ connector trong ứng dụng AI của bạn, hoặc chọn **Ngắt kết nối** bên cạnh nó trong mục **Ứng dụng AI** ở tab Tích hợp. Kết nối dừng ngay lập tức.
@@ -117,7 +117,7 @@ Từ đó trở đi, hãy hỏi trong chat như khi hỏi một đồng nghiệp
 
 Để tự động hóa không cần AI, testee có API, được mô tả trong [tài liệu cho nhà phát triển](/api-docs).
 
-1. Chủ sở hữu hoặc quản trị viên mở tab **Tích hợp** của một công ty, rồi **API**, và chọn **Khóa mới**. Đặt tên theo nền tảng sẽ dùng nó, chọn thời điểm hết hạn và chỉ đánh dấu những gì nó cần: khóa của bảng điều khiển chỉ đọc, khóa của trang tuyển dụng còn mời ứng viên. Sau này bạn có thể thêm hoặc bớt quyền. Khóa chỉ hiển thị một lần; hãy lưu ở nơi an toàn.
+1. Chủ sở hữu hoặc quản trị viên mở tab **Tích hợp** của một công ty, rồi **API, SDK, webhook**, và chọn **Khóa mới**. Đặt tên theo nền tảng sẽ dùng nó, chọn thời điểm hết hạn và chỉ đánh dấu những gì nó cần: khóa của bảng điều khiển chỉ đọc, khóa của trang tuyển dụng còn mời ứng viên. Sau này bạn có thể thêm hoặc bớt quyền. Khóa chỉ hiển thị một lần; hãy lưu ở nơi an toàn.
 2. Nền tảng của bạn gửi yêu cầu bằng khóa đó: liệt kê các buổi phỏng vấn của công ty, liệt kê hoặc xem ứng viên cùng điểm, kết quả đạt hay không và các cảnh báo về tính trung thực, và mời ứng viên.
 3. Thêm một **webhook**: một địa chỉ trên nền tảng của bạn mà testee gọi tới, có chữ ký, khi một ứng viên bắt đầu, làm xong, không nhận được lời mời, hết hạn lời mời hoặc bị xóa khỏi buổi phỏng vấn, và khi một buổi phỏng vấn sẵn sàng, để bạn không phải hỏi đi hỏi lại. Trang API có thể gửi cho webhook này một sự kiện thử nghiệm và hiển thị nhật ký gửi của nó.
 

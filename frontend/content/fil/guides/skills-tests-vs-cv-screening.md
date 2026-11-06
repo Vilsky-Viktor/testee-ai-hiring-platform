@@ -2,7 +2,7 @@
 title: "Skills tests vs CV screening: ano ang nagpapahiwatig ng job performance"
 seoTitle: "Skills Test vs CV Screening: Alin ang Mas Tumpak?"
 description: "Ang sinasabi ng ilang dekadang hiring research sa job knowledge tests, work samples, interviews at taon ng karanasan, at paano ito gamitin sa screening."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Skills tests vs CV screening: ano ang nagpapahiwatig ng job performance
@@ -64,7 +64,7 @@ Binanggit din ng mga may-akda ang ikalawang kondisyon: bagay ang work samples at
 - **Mga average ito mula sa maraming trabaho at pag-aaral.** Puwedeng iba ang iyong role, test at mga aplikante.
 - **Para sa mahusay na pagkakagawa ng mga method ang mga validity estimate.** Hindi maaabot ng isang test na pangit ang pagkakasulat o ng isang pabayang interview ang mga numerong ito.
 - **Bihirang sapat ang iisang method.** Karaniwang ipinapayo ng mga researcher na pagsamahin ang mga method, halimbawa isang knowledge test sa simula at isang structured interview pagkatapos.
-- **May sariling mga check ang pagkapatas.** Ipinapares nina Sackett et al. ang validity sa average na pagkakaiba ng score sa pagitan ng mga Black at White na aplikante. Malaki ang pagkakaibang ipinapakita ng job knowledge tests, work samples at cognitive tests; mas maliit sa structured interviews. Mababawasan ito ng pagsasama ng mga method. Anuman ang gamitin mo, bantayan ang pass rates sa iba't ibang grupo. Sa US, ang four-fifths rule of thumb sa [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) ang karaniwang panimulang batayan.
+- **May sariling mga check ang pagkapatas.** Ipinapares nina Sackett et al. ang validity sa average na pagkakaiba ng score sa pagitan ng mga Black at White na aplikante. Malaki ang pagkakaibang ipinapakita ng job knowledge tests, work samples at cognitive tests; mas maliit sa structured interviews. Mababawasan ito ng pagsasama ng mga method. Anuman ang gamitin mo, bantayan ang pass rates sa iba't ibang grupo. Sa US, ang four-fifths rule of thumb sa [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) ang karaniwang panimulang batayan, kahit kumikilos ang EEOC para bawiin ang mga interpretive na bahagi ng Guidelines.
 - **Sinusuportahan ng score ang desisyon; hindi ito ang gumagawa nito.** Dapat tingnan ng isang tao ang mga sagot bago magdesisyon.
 
 ## Isang screening process na gumagamit ng research
@@ -85,7 +85,7 @@ Sinasaklaw ng testee ang hakbang 2: isang timed multiple-choice na job knowledge
 - **Parehong kondisyon para sa lahat.** Parehong mga topic at bilang ng tanong, at countdown sa bawat tanong. Puwede kang magbigay ng dagdag na oras sa mga aplikanteng humihingi.
 - **May sariling mga tanong ang bawat aplikante,** isang random na set mula sa bank ng bawat topic, kaya mas mahirap ipasa sa iba ang mga sagot.
 - **Madaling basahing resulta.** Scorecard bawat aplikante na may bawat sagot at oras nito, naka-rank ayon sa score, na may flag para sa sobrang bilis na sagot, pag-alis sa pahina, pagtatangkang mag-copy at hindi karaniwang pattern ng sagot.
-- **Mina-mark ang mga sagot ayon sa answer key** na isinusulat ng AI; chine-check ang ilan sa bawat topic bago i-release, at ang iba kapag na-flag ang tanong. Walang AI na bumabasa o humuhusga sa sagot ng aplikante.
+- **Mina-mark ang mga sagot ayon sa answer key** na isinusulat ng AI; chine-check ang ilan sa bawat topic bago i-release, at ang iba kapag na-flag ang tanong. Walang AI na humuhusga sa sagot ng aplikante.
 
 Hindi nagpapatakbo ang testee ng structured interviews, work samples o cognitive tests. Gamitin ito kasabay ng mga iyon. Para sa higit pa tungkol sa mga uri ng test at pagkapatas, basahin ang [Pre-employment testing](/guides/pre-employment-testing).
 

@@ -2,14 +2,14 @@
 title: "Is AI hiring legal in the EU? What employers need to know"
 seoTitle: "Is AI Hiring Legal in the EU? AI Act and GDPR Basics"
 description: "AI in hiring is legal in the EU, with rules. What the AI Act's high-risk category means for employers, the key dates to December 2027, and the GDPR basics."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Is AI hiring legal in the EU? What employers need to know
 
 In general, yes: using AI in hiring is legal in the EU. But most AI tools that evaluate candidates fall into the AI Act's high-risk category, which brings duties for the vendor and for you, the employer. A few practices are banned outright. And the GDPR applies to candidate data, as it always has.
 
-This guide explains the rules at a high level, the dates that matter, what employers have to do, and how testee approaches it. **It is not legal advice.** It reflects the rules as of October 2026. The rules are new, guidance is still being finalized, and national law adds its own requirements. Check with your own counsel before relying on any of this.
+This guide explains the rules at a high level, the dates that matter, what employers have to do, and how testee approaches it. **It is not legal advice.** It reflects the rules as of November 2026. The rules are new, guidance is still being finalized, and national law adds its own requirements.
 
 ## The short answer
 
@@ -34,7 +34,7 @@ That covers a wide range of tools: CV filters, ranking systems, AI interviewers,
 
 Usually not. [Article 6(3)](https://artificialintelligenceact.eu/article/6/) of the AI Act lets some Annex III systems out of the high-risk category, for example when they perform a narrow procedural task or only prepare a human assessment. But an Annex III system that profiles people is always high-risk, and scoring or ranking candidates on their abilities is likely to count as profiling.
 
-The European Commission's draft guidelines on high-risk classification (published 19 May 2026 for consultation; not final as of October 2026) take a broad view. They describe selection as covering "shortlisting, grading, ranking, or testing of candidates", and, as summarized by [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), treat systems that generate suitability scores as high-risk "even if the final hiring decision is made by a human recruiter."
+The European Commission's draft guidelines on high-risk classification (published 19 May 2026 for consultation; not final as of November 2026) take a broad view. They describe selection as covering "shortlisting, grading, ranking, or testing of candidates", and, as summarized by [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), treat systems that generate suitability scores as high-risk "even if the final hiring decision is made by a human recruiter."
 
 So a tool that gives each candidate a score and a ranking is very likely high-risk, even though people decide who gets hired.
 
@@ -47,7 +47,7 @@ So a tool that gives each candidate a score and a ranking is very likely high-ri
 | 2 December 2027 | High-risk obligations for Annex III systems, including hiring tools |
 | 2 August 2028 | High-risk obligations for AI in products covered by Annex I |
 
-The high-risk date for Annex III was originally 2 August 2026. The Digital Omnibus on AI (Regulation (EU) 2026/1744, in force since 27 July 2026) moved it to 2 December 2027 ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Dates as shown on the [AI Act Explorer, Article 113](https://artificialintelligenceact.eu/article/113/), as of October 2026.
+The high-risk date for Annex III was originally 2 August 2026. The Digital Omnibus on AI (Regulation (EU) 2026/1744, in force since 27 July 2026) moved it to 2 December 2027 ([Official Journal](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). It also rewrote the AI literacy duty in Article 4, from 27 July 2026: providers and deployers must now take measures to support their staff's AI literacy, with no set level to guarantee. Dates as of November 2026.
 
 The extra time is for preparation, not a reason to ignore the rules. The GDPR and anti-discrimination laws already apply in full.
 
@@ -86,7 +86,7 @@ Article 26 sets the employer's duties. In summary ([Article 26](https://artifici
 - **Inform workers' representatives and affected workers** before using a high-risk system at work.
 - **Tell candidates** that they are subject to the use of a high-risk AI system.
 
-Public bodies and some private organizations must also run a fundamental rights impact assessment (Article 27). And the AI literacy duty in Article 4 already applies: the people using AI tools in your hiring should understand what those tools do and don't do.
+Public bodies and some private organizations must also run a fundamental rights impact assessment (Article 27). And Article 4 already applies: take measures to support the AI literacy of the people using AI tools in your hiring, so that they understand what those tools do and don't do.
 
 ## The GDPR basics
 
@@ -117,7 +117,7 @@ testee runs timed multiple-choice skills interviews written by AI from a job des
 
 What that looks like in the product today:
 
-- **AI writes the questions and their answer keys; marking follows fixed rules.** No AI reads or judges a candidate's answer, and no video, voice or face analysis is used. If AI corrects a key later, the fix applies to candidates who start after it; past results don't change.
+- **AI writes the questions and their answer keys; marking follows fixed rules.** No AI judges a candidate's answer, and no video or face analysis is used. In voice mode, speech is turned into text and matched to an option, which is said back to the candidate and shown on screen: one clearly named option is saved at once, and a choice of several options is confirmed first. testee never stores speech, and the voice is never analysed. If AI corrects a key later, the fix applies to candidates who start after it; past results don't change.
 - **You approve the topics** before any question is written, and you can see every question.
 - **People decide.** The results page and PDF reports remind your team to review results; testee doesn't reject candidates or send rejection messages.
 - **Candidates are told** before they start that questions are written by AI, that people at your company review results and decide, and that they can ask for a review.

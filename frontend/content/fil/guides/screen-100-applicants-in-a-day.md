@@ -2,7 +2,7 @@
 title: "Paano mag-screen ng 100 aplikante sa isang araw"
 seoTitle: "Paano Mag-screen ng 100 Aplikante sa Isang Araw"
 description: "Hakbang-hakbang na plano para patas na ma-screen ang 100 aplikante sa isang araw: mahigpit na requirement, maikling skills test, ranking at review ng tao."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Paano mag-screen ng 100 aplikante sa isang araw
@@ -103,7 +103,7 @@ Isulat kung bakit napasama sa listahan ang bawat tao. Isang minuto lang ito bawa
 
 ## Magkano ito
 
-Sa testee, nagbabayad ka lang para sa mga aplikanteng sumagot ng kahit isang tanong: $5 bawat isa sa $50 na top-up, $4 simula sa $200 na top-up, $3 simula sa $600 na top-up at $2 simula sa $1,000 na top-up. Para sa 100 aplikante, $500 iyon sa $5 bawat isa, o $400 sa dalawang $200 na top-up sa $4 bawat isa, walang subscription. Nasa US dollars ang mga presyo rito, at nasa lokal na currency sa Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, iba pang bahagi ng Europe at UK (tingnan ang [presyo](/pricing)); hinahawakan sa checkout ang VAT o sales tax. Libre ang paggawa ng test, at libre ang unang 3 aplikante ng iyong unang kumpanya.
+Sa testee, nagbabayad ka lang para sa mga aplikanteng sumagot ng kahit isang tanong: $5 bawat isa sa $50 na top-up, $4 simula sa $200 na top-up, $3 simula sa $600 na top-up at $2 simula sa $1,000 na top-up. Para sa 100 aplikante, $400 iyon sa isang top-up para sa 100 aplikante sa $4 bawat isa, walang subscription. Nasa US dollars ang mga presyo rito, at nasa lokal na currency sa Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, iba pang bahagi ng EU, Norway, Iceland, Liechtenstein at UK (tingnan ang [presyo](/pricing)); hinahawakan sa checkout ang VAT o sales tax. Libre ang paggawa ng test, at libre ang unang 3 aplikante ng iyong unang kumpanya.
 
 ## Kaugnay na babasahin
 

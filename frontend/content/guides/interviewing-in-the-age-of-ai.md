@@ -2,7 +2,7 @@
 title: "Interviewing engineers in the age of AI: what to test now"
 seoTitle: "Interviewing in the Age of AI: What to Test Now"
 description: "AI assistants are part of everyday engineering work. How that changes what interviews should test, how companies adapt, and where knowledge tests fit."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Interviewing engineers in the age of AI: what to test now
@@ -25,7 +25,7 @@ Put together, these numbers describe a shift in the work itself. Producing a fir
 
 There is no single industry answer yet. Reported approaches go in different directions:
 
-- **Allowing or requiring AI in the interview.** In June 2025, Canva said it now expects backend, machine learning and frontend candidates to use AI tools such as Copilot, Cursor and Claude in a new "AI-Assisted Coding" round. It assesses whether candidates can "break down complex, ambiguous requirements", "identify and fix issues in AI-generated code" and "ensure AI-generated solutions meet production standards" ([Canva Engineering, June 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
+- **Allowing or requiring AI in the interview.** In June 2025, Canva said it now expects backend, machine learning and frontend candidates to use AI tools such as Copilot, Cursor and Claude in technical interviews, with a new "AI-Assisted Coding" round replacing its computer science fundamentals round for backend and frontend roles. It assesses whether candidates can "break down complex, ambiguous requirements", "identify and fix issues in AI-generated code" and "ensure AI-generated solutions meet production standards" ([Canva Engineering, June 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
 - **Piloting AI-assisted coding rounds.** In July 2025, Business Today, citing 404 Media, reported that Meta was building a coding interview in which candidates have an AI assistant. It quoted Meta saying this is "more representative of the developer environment that our future employees will work in, and also makes LLM-based cheating less effective" ([Business Today, July 2025](https://www.businesstoday.in/amp/technology/news/story/meta-to-test-job-applicants-with-ai-assisted-coding-interviews-amid-ai-expansion-plans-487200-2025-07-31)).
 - **Restricting tools and meeting in person.** In March 2025, CNBC reported on a tool built to help candidates use AI unnoticed in remote coding interviews. In the same report, Amazon said candidates must acknowledge they won't use unauthorized tools, Google's CEO suggested hiring managers consider some in-person interviews, and Deloitte had brought back in-person interviews for its UK graduate program ([CNBC via NBC New York, March 2025](https://www.nbcnewyork.com/news/business/money-report/meet-the-21-year-old-helping-coders-use-ai-to-cheat-in-google-and-other-tech-job-interviews/6178911/?amp=1)).
 
@@ -74,7 +74,7 @@ testee is well suited to step 2. It turns your job description into a timed mult
 - **Code-reading questions:** a short piece of code with questions about what it prints or returns, what it does, why it fails or which change fixes it. That's the same reviewing skill AI-assisted work depends on.
 - **A timer on every question:** each question has its own countdown, enforced by the server, and each candidate gets their own random set of questions. That makes looking answers up, including asking an AI assistant, harder. It doesn't make it impossible.
 - **Integrity signals:** scorecards flag answers too fast to have read the question, times the candidate left the page, and copy attempts. Once a candidate finishes, their report also points out answer patterns that relaying questions to an AI tends to leave: about the same time on every question whatever its length or difficulty, or hard questions right while easy ones were wrong. A flag or a pattern is a reason to look closer, not proof of cheating.
-- **Questions for the live interview:** the report suggests up to 3 questions the candidate got right, from their strongest topics, to talk through in a live interview, where no AI can answer for them.
+- **Questions for the live interview:** the candidate's page suggests up to 3 questions they got right, from their strongest topics, to talk through in a live interview, where no AI can answer for them.
 
 What testee doesn't do: candidates don't write, run or debug code in testee, and it doesn't watch them use an AI assistant. That belongs in the hands-on stage, run in-house or on a developer platform, which complements the knowledge screen. See [skills tests by role](/tests) for ready-made tests to start from, and [AI interviews](/guides/ai-interviews) for how testee uses AI and what it leaves to people.
 

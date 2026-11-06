@@ -2,7 +2,7 @@
 title: "AI agents, MCP at APIs: ano ang mga ito at paano gamitin sa hiring"
 seoTitle: "AI Agents, MCP at APIs sa Hiring: Paano Gamitin"
 description: "Ano ang AI agent, MCP at API, paano gamitin nang ligtas sa hiring, at paano patakbuhin ang testee mula sa AI assistant nito, Claude, ChatGPT o platform mo."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # AI agents, MCP at APIs: ano ang mga ito at paano gamitin sa hiring
@@ -96,7 +96,7 @@ Kung nagtatrabaho ka na sa Claude o ChatGPT, puwede mong dalhin doon ang testee.
 **Para kumonekta:**
 
 1. Sa testee, buksan ang tab na **Mga integration** ng isang kumpanya at piliin ang **Mga AI app**. Kopyahin ang address ng server: `https://testee.ai/mcp`.
-2. **Sa Claude:** buksan ang Settings, pagkatapos ang Connectors, at magdagdag ng custom connector gamit ang address na iyon. **Sa Claude Code:** patakbuhin ang `claude mcp add --transport http testee https://testee.ai/mcp`. **Sa ChatGPT:** idagdag ito bilang custom connector sa settings nito para sa apps at connectors.
+2. **Sa Claude:** buksan ang Customize, pagkatapos ang Connectors, at magdagdag ng custom connector gamit ang address na iyon; sa Team at Enterprise plans, idinadagdag muna ito ng owner sa Organization settings. **Sa Claude Code:** patakbuhin ang `claude mcp add --transport http testee https://testee.ai/mcp`. **Sa ChatGPT:** idagdag ito bilang custom MCP server. Nakadepende sa plan mo kung nasaan iyon, at baka kailangang payagan ito ng admin mo.
 3. Bubuksan ng AI app mo ang sign-in ng testee. Mag-sign in, i-check kung aling app ang humihingi ng access, at piliin ang **Payagan**. Para makapagbasa lang ito, i-off muna ang **Payagan ang mga pagbabago**.
 
 Mula noon, magtanong sa chat mo gaya ng pagtatanong mo sa isang katrabaho: "Sa testee, sino ang top three na aplikante para sa Product designer?" Karamihan sa mga AI app ay nagtatanong muna sa iyo bago ang isang pagbabago, at nagbababala bago ang anumang hindi na maibabalik: sinasabi sa kanila ng testee kung aling mga aksyon ang nagbabago o nagbubura ng isang bagay.
@@ -106,7 +106,7 @@ Mula noon, magtanong sa chat mo gaya ng pagtatanong mo sa isang katrabaho: "Sa t
 - **Ang mga permission mo.** Kumikilos ito bilang ikaw, sa bawat kumpanyang kinabibilangan mo, gamit ang role mo sa bawat isa.
 - **Credits at mga limitasyon.** Pareho ang gastos ng pag-imbita ng aplikante gaya ng sa app, at pareho ang mga email limit na nalalapat.
 - **Ang tala.** Lahat ng ginagawa ng isang AI app para sa iyo ay lumalabas sa log ng aksyon ng kumpanya bilang ginawa sa pamamagitan ng AI app, mula sa pag-apruba ng mga topic at pagtingin ng resulta hanggang sa pagbibigay ng dagdag na oras o pagbawi sa isang aplikante. Binabasa ito ng may-ari ng kumpanya sa tab na **Log ng aksyon** ng kumpanya.
-- **Ang kumpanya ang magpapasya.** Mapipigilan ng mga may-ari at admin ang mga AI app sa paggamit ng data ng kumpanya gamit ang **Payagan ang mga AI app sa kumpanyang ito** sa page ng mga AI app nito.
+- **Ang kumpanya ang magpapasya.** Mapipigilan ng mga may-ari at admin ang mga AI app sa paggamit ng data ng kumpanya gamit ang switch na **Payagan ang mga AI app** sa page ng mga AI app nito.
 - **Ang hindi nito kayang gawin.** Hindi nito nakikita ang password o mga API key mo, at hindi nito kayang burahin ang account mo o ang isang kumpanya. Nananatili ang mga iyon sa app.
 
 **Para mag-disconnect,** alisin ang connector sa AI app mo, o piliin ang **I-disconnect** sa tabi nito sa ilalim ng **Mga AI app** sa tab na Mga integration. Agad itong titigil sa paggana.
@@ -117,7 +117,7 @@ Mula noon, magtanong sa chat mo gaya ng pagtatanong mo sa isang katrabaho: "Sa t
 
 Para sa automation na walang AI, may API ang testee, na inilalarawan sa [dokumentasyon nito para sa mga developer](/api-docs).
 
-1. Bubuksan ng isang may-ari o admin ang tab na **Mga integration** ng isang kumpanya, pagkatapos ang **API**, at pipiliin ang **Bagong key**. Pangalanan ito ayon sa platform na gagamit nito, piliin kung kailan ito mag-e-expire, at i-check lang ang kailangan nito: nagbabasa lang ang key ng isang dashboard, at nag-iimbita rin ang key ng isang careers site. Puwede kang magdagdag o mag-alis ng mga pahintulot sa ibang pagkakataon. Isang beses lang ipinapakita ang key; itago ito sa ligtas na lugar.
+1. Bubuksan ng isang may-ari o admin ang tab na **Mga integration** ng isang kumpanya, pagkatapos ang **API, SDK, mga webhook**, at pipiliin ang **Bagong key**. Pangalanan ito ayon sa platform na gagamit nito, piliin kung kailan ito mag-e-expire, at i-check lang ang kailangan nito: nagbabasa lang ang key ng isang dashboard, at nag-iimbita rin ang key ng isang careers site. Puwede kang magdagdag o mag-alis ng mga pahintulot sa ibang pagkakataon. Isang beses lang ipinapakita ang key; itago ito sa ligtas na lugar.
 2. Nagpapadala ang platform mo ng mga request gamit ang key na iyon: ilista ang mga interview ng kumpanya, ilista o basahin ang mga aplikante kasama ang grade nila, kung pumasa sila at ang mga integrity flag nila, at mag-imbita ng aplikante.
 3. Magdagdag ng **webhook**: isang address sa platform mo na tinatawagan ng testee, na may signature, kapag nagsimula, natapos, hindi naabot ng imbitasyon, nag-expire ang imbitasyon, o tinanggal ang isang aplikante, at kapag handa na ang isang interview, para hindi mo na kailangang paulit-ulit na magtanong. Sa API page, puwede mo itong padalhan ng test event at makikita mo ang delivery log nito.
 

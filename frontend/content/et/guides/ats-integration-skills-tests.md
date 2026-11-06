@@ -2,7 +2,7 @@
 title: "Kuidas ühendada oskustestid oma ATS-süsteemiga"
 seoTitle: "Oskustestide ühendamine ATS-süsteemiga: praktiline juhend"
 description: "Saada oskustestid ja saa tulemused automaatselt oma ATS-süsteemi kaudu, jäta värbamisotsused inimestele ja tea, mida kõigepealt kontrollida."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Kuidas ühendada oskustestid oma ATS-süsteemiga
@@ -90,15 +90,15 @@ testee ühendub süsteemidega **Workable, Greenhouse, Teamtailor, Recruitee ja B
 - **Sinu võti, sinu kontroll.** Omanik või administraator ühendab ATS-i ettevõtte vahekaardil Integratsioonid võtmega, mille sinu ettevõte ATS-is loob. testee kontrollib seda enne salvestamist, hoiab seda krüpteeritult ega näita seda enam kunagi. Ühenduse katkestamine kustutab võtme ja seotud töökuulutused kohe.
 - **Seo töökuulutus intervjuuga.** Vali ATS-i töökuulutus ja kutse käivitav etapp ning seo see olemasoleva testee intervjuuga või loo uus intervjuu töökuulutuse ATS-is oleva teksti põhjal. Vaatad teemad üle enne, kui ühtki küsimust kirjutatakse.
 - **Liiguta kandidaati, kutse läheb välja.** Iga kandidaat kutsutakse intervjuule üks kord, isegi kui ATS saadab sama sündmuse kaks korda.
-- **Tulemused tagasi ATS-is.** Kui kandidaat lõpetab, lisab testee talle ATS-is märkme või kommentaari tema hinde, läbimise, võimalike aususe märgetega (lehelt lahkumine, kopeerimiskatsed, vastused, mis valiti liiga kiiresti, et küsimust lugeda) ja lingiga hindamislehele, kus on kõik vastused.
-- **Tõrked ei jää märkamata.** Kui kandidaati ei saa kutsuda, näiteks sest ettevõttel on krediit otsas, e-kirjade limiit täis või testee on kutsed peatanud, saavad kõik ettevõtte liikmed teate, kus on ATS-i nimi. Krediidi puudumise tõttu kutsumata jäänud kandidaadid kutsutakse pärast juurdelaadimist automaatselt ja iga töökuulutuse ootel kandidaate saab ühe klikiga uuesti kutsuda.
+- **Tulemused tagasi ATS-is.** Kui kandidaat lõpetab, lisab testee talle ATS-is märkme või kommentaari tema hinde, läbimise, teabega, kas tekkis aususe märkeid, ja lingiga hindamislehele, kus on kõik vastused ja märked.
+- **Tõrked ei jää märkamata.** Kui kandidaati ei saa kutsuda, näiteks sest ettevõttel on krediit otsas, e-kirjade limiit täis või testee on kutsed peatanud, saavad kõik ettevõtte liikmed teate, kus on ATS-i nimi. Kandidaadid, kelle ATS viimase 30 päeva jooksul saatis ja kes jäid krediidi puudumise tõttu kutsumata, kutsutakse pärast juurdelaadimist automaatselt ja iga töökuulutuse ootel kandidaate saab ühe klikiga uuesti kutsuda.
 - **Slack, kui sa seda kasutad.** testee saab postitada teateid, näiteks lõpetanud kandidaadist või ATS-i kandidaadist, keda ei õnnestunud kutsuda, sinu valitud Slacki kanalisse.
 - **Sinu oma platvorm.** Kui sinu ATS-i nimekirjas pole, saad testee [API](/api-docs) abil kutsuda kandidaate API-võtmega ja saada allkirjastatud webhooki, kui kandidaat alustab, lõpetab, kutse ei jõua temani, tema kutse aegub või ta eemaldatakse, ning kui intervjuu on valmis.
 - **Andmeid hoitakse kindla aja.** ATS-ist salvestatud kandidaadid kustutatakse 365 päeva pärast või varem koos nende intervjuu või ettevõttega.
 
-Mõni ATS vajab sammu enda poolel. Greenhouse, Teamtailor ja Recruitee paluvad lisada webhooki käsitsi; testee dialoog Juhised näitab aadressi ja kuhu selle saladus kleepida. Workable'i ja Breezy HR-i webhookid seadistab testee ise.
+Mõni ATS vajab sammu enda poolel. Greenhouse, Teamtailor ja Recruitee paluvad lisada webhooki käsitsi; testee dialoog Juhised näitab aadressi ja kuhu selle saladus kleepida. Workable'i ja Breezy HR-i webhookid seadistab testee ise. Breezy HR-i API ja webhookid kuuluvad selle Pro-paketti ning Teamtailori webhookid on Teamtailori lisateenus.
 
-Hind on kandidaadipõhine, ilma tellimuseta: maksad ainult kandidaatide eest, kes vastavad vähemalt ühele küsimusele, 50 $ juurdelaadimise puhul 5 $ kandidaadi kohta, alates 200 $ juurdelaadimisest 4 $, alates 600 $ juurdelaadimisest 3 $ ja alates 1000 $ juurdelaadimisest 2 $. Hinnad on siin USA dollarites, Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris, Indias, ülejäänud Euroopas ja Ühendkuningriigis aga kohalikus valuutas; käibemaksu või müügimaksu arvestatakse maksmise ajal. ATS-i ühendamine ja intervjuude loomine on tasuta ning sinu esimese ettevõtte esimesed 3 kandidaati on tasuta. Vaata [hindu](/pricing).
+Hind on kandidaadipõhine, ilma tellimuseta: maksad ainult kandidaatide eest, kes vastavad vähemalt ühele küsimusele, 50 $ juurdelaadimise puhul 5 $ kandidaadi kohta, alates 200 $ juurdelaadimisest 4 $, alates 600 $ juurdelaadimisest 3 $ ja alates 1000 $ juurdelaadimisest 2 $. Hinnad on siin USA dollarites, Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris, Indias, ülejäänud ELis, Norras, Islandil, Liechtensteinis ja Ühendkuningriigis aga kohalikus valuutas; käibemaksu või müügimaksu arvestatakse maksmise ajal. ATS-i ühendamine ja intervjuude loomine on tasuta ning sinu esimese ettevõtte esimesed 3 kandidaati on tasuta. Vaata [hindu](/pricing).
 
 ## Loe ka
 

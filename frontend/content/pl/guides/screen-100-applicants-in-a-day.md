@@ -2,7 +2,7 @@
 title: "Jak przeprowadzić selekcję 100 kandydatów w jeden dzień"
 seoTitle: "Selekcja 100 kandydatów w jeden dzień: praktyczny plan"
 description: "Plan krok po kroku, jak uczciwie przeprowadzić selekcję 100 kandydatów w jeden dzień roboczy: wymogi, krótki test umiejętności, ranking i decyzja ludzi."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Jak przeprowadzić selekcję 100 kandydatów w jeden dzień
@@ -103,7 +103,7 @@ Zapisz, dlaczego każda osoba trafiła na listę. Zajmuje to minutę na kandydat
 
 ## Ile to kosztuje
 
-W testee płacisz tylko za kandydatów, którzy odpowiedzą na co najmniej jedno pytanie: $5 za kandydata przy doładowaniu $50, $4 od doładowania $200, $3 od doładowania $600 i $2 od doładowania $1000. Przy 100 kandydatach to $500 po $5 za kandydata albo $400 z dwóch doładowań po $200, po $4 za kandydata, bez subskrypcji. Ceny są tu w dolarach amerykańskich, a w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze, Indiach, pozostałej części Europy i Wielkiej Brytanii w walucie lokalnej (zobacz [cennik](/pricing)); VAT lub podatek od sprzedaży jest naliczany przy płatności. Wygenerowanie testu jest bezpłatne, a pierwszych 3 kandydatów Twojej pierwszej firmy jest za darmo.
+W testee płacisz tylko za kandydatów, którzy odpowiedzą na co najmniej jedno pytanie: $5 za kandydata przy doładowaniu $50, $4 od doładowania $200, $3 od doładowania $600 i $2 od doładowania $1000. Przy 100 kandydatach to $400 z jednego doładowania na 100 kandydatów, po $4 za kandydata, bez subskrypcji. Ceny są tu w dolarach amerykańskich, a w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze, Indiach, pozostałej części UE, Norwegii, Islandii, Liechtensteinie i Wielkiej Brytanii w walucie lokalnej (zobacz [cennik](/pricing)); VAT lub podatek od sprzedaży jest naliczany przy płatności. Wygenerowanie testu jest bezpłatne, a pierwszych 3 kandydatów Twojej pierwszej firmy jest za darmo.
 
 ## Przeczytaj też
 

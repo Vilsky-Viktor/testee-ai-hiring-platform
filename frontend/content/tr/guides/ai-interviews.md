@@ -2,14 +2,14 @@
 title: "Yapay zekâ mülakatları: nedir ve adil şekilde nasıl kullanılır"
 seoTitle: "Yapay Zekâ ile İşe Alım ve Mülakat: Riskler, Adil Kullanım"
 description: "Yapay zekâ ile işe alım: mülakat araçları, sohbet botları, video analizi ve otomatik testler ne yapar; riskler, uyum esasları ve testee'nin yaklaşımı."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Yapay zekâ mülakatları: nedir ve adil şekilde nasıl kullanılır
 
 “Yapay zekâ mülakatı”, sağlayıcıya göre çok farklı şeyler ifade eder. Bazı araçlar adayla sohbet eder. Bazıları video kaydedip puanlar. Bazıları ise yapay zekâyı yalnızca soruları yazmak için kullanır, ardından yanıtları sabit kurallara göre puanlar. Bir işe alım ekibi için bu fark önemlidir: adaya neyi açıklayabileceğinizi, neyin ters gidebileceğini ve yasanın sizden ne beklediğini değiştirir.
 
-Bu sayfa başlıca yapay zekâ mülakat aracı türlerini sınıflandırır, testee'nin benimsediği yaklaşımı açıklar ve uyumla ilgili temel konuları ele alır.
+Bu rehber başlıca yapay zekâ mülakat aracı türlerini sınıflandırır, testee'nin benimsediği yaklaşımı açıklar ve uyumla ilgili temel konuları ele alır.
 
 ## Üç tür yapay zekâ mülakat aracı
 
@@ -38,13 +38,13 @@ testee, iş tanımınızdan bir beceri mülakatı yazmak için yapay zekâ kulla
 1. **Yapay zekâ iş tanımınızı okur** ve adayın bilmesi gerekenleri çıkarır: gereklilikler, seviye ve alt konularıyla birlikte bir konu seti.
 2. **Konuları siz gözden geçirirsiniz.** Tutun, işaretini kaldırın, yeniden adlandırın veya düzenleyin ya da neyin değişeceğini yapay zekâya düz metinle söyleyin. Siz onaylamadan hiçbir soru yazılmaz.
 3. **Soruları yapay zekâ yazar.** Her konu için dört seçenekli çoktan seçmeli sorulardan oluşan bir havuz hazırlanır: çoğunda bir doğru ve üç akla yatkın yanlış seçenek bulunur, yaklaşık 10 sorudan 1'i ise 2 ya da 3 doğru seçeneği olan "doğru olanların hepsini seçin" sorusudur. Teknik konularda birçok soru kısa bir kod örneği gösterir ve bunun ne çıktı verdiğini, ne yaptığını, neden hata verdiğini ya da hangi değişikliğin sorunu düzelttiğini sorar. Her soruyu ve seçeneklerini açabilir, beğenmediklerinizi yeniden oluşturabilirsiniz.
-4. **Adaylar süreli soruları yanıtlar.** Her aday, her konunun havuzundan kendi sırasıyla, kendine ait rastgele bir set alır; her soruda geri sayım vardır.
-5. **Yanıtlar cevap anahtarına göre değerlendirilir.** Anahtarları yapay zekâ yazar; her konudan bir örneklem yayından önce kontrol edilir, diğerleri ise bir soru bildirildiğinde. Değerlendirmenin kendisi sabit kurallara göre yapılır ve hiçbir yapay zekâ adayın yanıtını okumaz veya yargılamaz. Bir anahtar sonradan düzeltilirse düzeltme, sonrasında başlayan adaylar için geçerli olur; geçmiş sonuçlar değişmez. Hız, sayfadan ayrılmalar ve kopyalama girişimleri size sinyal olarak gösterilir; puanı değiştirmez.
+4. **Adaylar süreli soruları yanıtlar.** Her aday, her konunun havuzundan kendi sırasıyla, kendine ait rastgele bir set alır; her soruda geri sayım vardır. Varsayılan olarak adaylar cevaplarına dokunur; sesli modda testee'nin yapay zekâ mülakatçısı Mira her soruyu sesli okur ve aday cevabını söyler veya dokunur.
+5. **Yanıtlar cevap anahtarına göre değerlendirilir.** Anahtarları yapay zekâ yazar; her konudan bir örneklem yayından önce kontrol edilir, diğerleri ise bir soru bildirildiğinde. Değerlendirmenin kendisi sabit kurallara göre yapılır ve hiçbir yapay zekâ adayın yanıtını yargılamaz. Sesli modda yapay zekâ yalnızca konuşmayı metne dönüştürür ve bir seçenekle eşleştirir. Bir anahtar sonradan düzeltilirse düzeltme, sonrasında başlayan adaylar için geçerli olur; geçmiş sonuçlar değişmez. Hız, sayfadan ayrılmalar ve kopyalama girişimleri size sinyal olarak gösterilir; puanı değiştirmez.
 6. **Kararı insanlar verir.** Sıralı bir liste ve her aday için her yanıtı ve süresini gösteren bir değerlendirme kartı görürsünüz. Şirketinizden bir kişi sonuçları inceler ve işe alım kararını verir.
 
 testee'nin yapmadıkları:
 
-- Video, ses veya yüz analizi yok.
+- Video veya yüz analizi yok, adayın sesi de analiz edilmez. Sesli mod, konuşmayı yalnızca adayın söylediği seçeneği bulmak için metne dönüştürür.
 - Kişilik veya duygu çıkarımı yok.
 - Otomatik ret yok. testee adayları reddetmez veya ret mesajı göndermez; kararı ekibiniz verir.
 - Verileriniz yapay zekâ modellerini eğitmek için kullanılmaz. testee'nin yapay zekâ sağlayıcısı OpenAI, kendi koşulları gereği API verileriyle model eğitmez.
@@ -63,7 +63,7 @@ Kimseyi davet etmeden önce kendi mülakatınızı aday gözüyle de önizleyebi
 
 **Herkes benzer koşullarla karşılaşır.** Aynı konular, konu başına aynı sayıda soru, soru başına aynı ortalama süre ve aynı toplam süre. Her adayın soruları rastgele seçilir, bu nedenle setler zorluk açısından biraz farklılık gösterir. Daha fazla süreye ihtiyaç duyan adaylara bu süre verilebilir: aday başına ek süre ekleyebilirsiniz.
 
-**Daha az alakasız sinyal.** Çoktan seçmeli bir yanıt aksan, yüz, arka plan veya yazı üslubu taşımaz; bu nedenle puan, kişinin nasıl göründüğüne veya nasıl konuştuğuna bağlı değildir. Bu, yanlılığı ortadan kaldırmaz: bilgi testleri gruplar arasında puan farkları gösterebilir ve adayın ikinci dilindeki bir test onu geride bırakabilir. Sonuçları gruplar genelinde izleyin.
+**Daha az alakasız sinyal.** Çoktan seçmeli bir yanıt aksan, yüz, arka plan veya yazı üslubu taşımaz; bu nedenle puan, kişinin nasıl göründüğüne veya nasıl konuştuğuna bağlı değildir. Sesli modda konuşmanın ne kadar iyi duyulduğu dile ve aksana göre değişir, bu yüzden adaylar bunun yerine dokunabilir ([23 dilde sesli mülakatlar](/guides/voice-interview-languages)). Bunların hiçbiri yanlılığı ortadan kaldırmaz: bilgi testleri gruplar arasında puan farkları gösterebilir ve adayın ikinci dilindeki bir test onu geride bırakabilir. Sonuçları gruplar genelinde izleyin.
 
 **Yanıtları paylaşmak daha zordur.** Her adayın kendine ait rastgele soru seti ve her soruda bir zamanlayıcı olduğunda, yanıtları paylaşmak veya bir şeyleri araştırmak daha fazla çaba gerektirir. Güvenilirlik sinyalleri nereye daha yakından bakmanız gerektiğine karar vermenize yardımcı olur; kopya çekildiğinin kanıtı değildir.
 
@@ -75,7 +75,7 @@ Sınırlar konusunda net olun. Çoktan seçmeli bir test bilgiyi ölçer. Kod ok
 
 ## Yapay zekâ mülakat araçları için uyum esasları
 
-Bu, Ekim 2026 itibarıyla bir özettir, hukuki tavsiye değildir. Kendi hukuk danışmanınıza danışın.
+Bu, Kasım 2026 itibarıyla bir özettir, hukuki tavsiye değildir.
 
 ### AB Yapay Zekâ Yasası (EU AI Act)
 
@@ -94,7 +94,7 @@ Mülakat sonuçları, hem AB GDPR'ı hem de Birleşik Krallık GDPR'ı (UK GDPR)
 
 ### Amerika Birleşik Devletleri
 
-İşe alımda kullanılan yapay zekâ araçları, diğer tüm seçme yöntemleriyle aynı ayrımcılık karşıtı kurallara tabidir. Gruplar arasındaki seçilme oranlarını izleyin ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4) içindeki beşte dört pratik kuralı), makul düzenlemeler sunun ve eyalet ile yerel kuralları kontrol edin. Örneğin New York City'nin [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) düzenlemesi, otomatik bir istihdam karar aracını kullanmadan önceki bir yıl içinde bir yanlılık denetimi yapılmasını, bunun kamuya açık bir özetini ve adaylara bildirim yapılmasını şart koşar. Genel bir bakış için [İşe alım öncesi testler](/guides/pre-employment-testing) sayfasına bakın.
+İşe alımda kullanılan yapay zekâ araçları, diğer tüm seçme yöntemleriyle aynı ayrımcılık karşıtı kurallara tabidir. Gruplar arasındaki seçilme oranlarını izleyin ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4) içindeki beşte dört pratik kuralı; EEOC bu kuralı yürürlükten kaldırmaya hazırlanırken Title VII'nin olumsuz etki kuralı yerinde kalıyor), makul düzenlemeler sunun ve eyalet ile yerel kuralları kontrol edin. Örneğin New York City'nin [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) düzenlemesi, otomatik bir istihdam karar aracını kullanmadan önceki bir yıl içinde bir yanlılık denetimi yapılmasını, bunun kamuya açık bir özetini ve adaylara bildirim yapılmasını şart koşar. Genel bir bakış için [İşe alım öncesi testler](/guides/pre-employment-testing) sayfasına bakın.
 
 ## Bir yapay zekâ mülakat aracı nasıl değerlendirilir
 

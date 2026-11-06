@@ -2,7 +2,7 @@
 title: "Jak napisać opis stanowiska, z którego powstanie dobry test"
 seoTitle: "Opis stanowiska, z którego powstanie dobry test rekrutacyjny"
 description: "Czego potrzebuje opis stanowiska, żeby test rekrutacyjny sprawdzał właściwe rzeczy: konkretne umiejętności i narzędzia, poziom, codzienna praca."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Jak napisać opis stanowiska, z którego powstanie dobry test
@@ -15,7 +15,7 @@ Ten poradnik dotyczy drugiego zadania: pisania opisu, na podstawie którego da s
 
 Test wiedzy jest przydatny, gdy sprawdza to, czego stanowisko naprawdę wymaga. Badania nad rekrutacją plasują testy wiedzy zawodowej średnio wśród lepszych predyktorów efektywności w pracy, ale ta ocena dotyczy testów przygotowanych pod konkretne stanowisko; testy wiedzy niezwiązane ze stanowiskiem przewidują słabiej (zobacz [Testy umiejętności a selekcja CV](/guides/skills-tests-vs-cv-screening)).
 
-Amerykańskie przepisy o zatrudnieniu mówią to samo od strony prawnej. Uniform Guidelines on Employee Selection Procedures oczekują, że test uzasadniany swoją treścią będzie opierał się na analizie stanowiska skupionej na „zachowaniach w pracy i związanych z nimi zadaniach” ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). W praktyce dla większości zespołów opis stanowiska jest właśnie taką analizą spisaną na papierze. A zgodnie z Americans with Disabilities Act pisemny opis przygotowany przed publikacją ogłoszenia lub rozmowami uznaje się za dowód podstawowych funkcji stanowiska ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+Amerykańskie przepisy o zatrudnieniu mówią to samo od strony prawnej. Uniform Guidelines on Employee Selection Procedures oczekują, że test uzasadniany swoją treścią będzie opierał się na analizie stanowiska skupionej na „zachowaniach w pracy i związanych z nimi zadaniach” ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). W praktyce dla większości zespołów opis stanowiska jest właśnie taką analizą spisaną na papierze. (W październiku 2026 EEOC rozpoczęła uchylanie interpretacyjnych części tych wytycznych, z celem na styczeń 2027. Title VII nadal wymaga, by test o niekorzystnym wpływie był związany ze stanowiskiem.) A zgodnie z Americans with Disabilities Act pisemny opis przygotowany przed publikacją ogłoszenia lub rozmowami uznaje się za dowód podstawowych funkcji stanowiska ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 Opis jest więc wart dodatkowego pół godziny. Cokolwiek w nim napiszesz, o to zapyta test.
 
@@ -48,7 +48,7 @@ Lata doświadczenia to przybliżony zamiennik poziomu, i to słaby: w badaniach 
 
 Obowiązki to najbardziej przydatne linijki dla testu. „Przygotowuje miesięczną deklarację VAT” albo „segreguje zgłaszane błędy i je odtwarza” mówi autorowi testu, jaka wiedza jest używana i w jakich sytuacjach. Zapisuj obowiązki jako czasownik i dopełnienie, tak jak opisałbyś pracę nowemu współpracownikowi.
 
-Jeśli nie wiesz, co zwykle obejmuje dane stanowisko, [O*NET OnLine](https://www.onetonline.org/) wymienia typowe zadania, technologie i wiedzę dla setek zawodów. Użyj go jako listy kontrolnej, a potem zostaw tylko to, co Twoje stanowisko faktycznie robi.
+Jeśli nie wiesz, co zwykle obejmuje dane stanowisko, [O*NET OnLine](https://www.onetonline.org/) wymienia typowe zadania, technologie i wiedzę dla około 1000 zawodów. Użyj go jako listy kontrolnej, a potem zostaw tylko to, co Twoje stanowisko faktycznie robi.
 
 ### 4. Wyraźna granica między wymaganiami a „mile widzianymi”
 

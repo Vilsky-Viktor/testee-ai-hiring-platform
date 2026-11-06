@@ -2,14 +2,14 @@
 title: "Voice interviews in 23 languages: how well Mira reads and hears each"
 seoTitle: "Voice Interviews in 23 Languages: Quality by Language"
 description: "How well testee's voice mode reads questions and understands spoken answers in each of its 23 languages, how we measured it, and when to tap instead."
-updated: "2026-11-04"
+updated: "2026-11-07"
 ---
 
 # Voice interviews in 23 languages: how well Mira reads and hears each
 
 In voice mode, Mira, testee's AI interviewer, reads each question and its options aloud, and the candidate answers by speaking: "B", "option C", "the median", or "A and D" on a question with several right answers. Voice mode works in all 23 languages testee speaks, but speech technology isn't equally good in every language. This guide shows how well it works in each, so you can choose the mode that suits your candidates.
 
-Whatever the language, candidates can always tap an option instead of speaking, and the option Mira took is shown on screen as she says it back.
+Once the interview has started, candidates can always tap an option instead of speaking, whatever the language, and the option Mira took is shown on screen as she says it back. A question's time runs while she reads it.
 
 ## The short version
 
@@ -53,9 +53,9 @@ Measured on 4 November 2026.
 
 - **Hebrew, Arabic and Persian:** Mira sometimes names the options with the letters of the language's own alphabet (alef, bet, gimel) instead of A, B, C and D as they appear on screen. The order is the same, so the first option is still the first, but candidates should answer with the letters they see.
 - **Estonian:** a short "ei" (no) can sound like the letter A, so a candidate turning down a choice Mira repeats back is occasionally recorded as choosing option A.
-- **Thai:** a spoken letter is sometimes heard as a Thai number ("ข้อ C" as "ข้อ สี่", option four), which can record the wrong option, and options named by position are often not understood. Tapping is safer.
+- **Thai:** a spoken letter is sometimes heard as a Thai number ("ข้อ C" as "ข้อ สี่", option four), which can record the wrong option. Tapping is safer.
 - **Japanese:** "選択肢C" (option C) was sometimes heard as another word and recorded as the wrong option; a letter on its own works better.
-- **Russian, Ukrainian and Polish:** "and" between two letters ("A и C") is sometimes heard as a third letter, and Mira asks again.
+- **Russian and Polish:** "and" between two letters ("A и C") is sometimes heard as a third letter, and Mira asks again.
 
 ## How we measured it
 
@@ -67,6 +67,7 @@ The numbers are a guide, not a guarantee. Twenty answers per language means a di
 
 - **Voice mode** suits roles where speaking matters, candidates who prefer not to type or tap, and accessibility needs. It's best in the very good and good languages.
 - **Click mode** is the default and works the same in every language. Prefer it for high-stakes roles in a language rated fair.
+- Starting a voice interview needs a working microphone, so a candidate who can't use one needs click mode, set before they start.
 - You can set the mode for the whole interview in its settings and change it for one candidate before they start.
 
-In voice mode, candidates' voices are only turned into text to read their answers, never stored or analysed in any other way.
+In voice mode, candidates' voices are only turned into text to read their answers, never analysed in any other way, and testee never stores them. OpenAI, which turns speech into text, is told not to store it and keeps API data for at most 30 days, only to check for abuse.

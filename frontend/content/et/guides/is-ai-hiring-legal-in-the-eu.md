@@ -2,14 +2,14 @@
 title: "Kas AI kasutamine värbamisel on ELis seaduslik? Mida tööandjad peavad teadma"
 seoTitle: "AI värbamisel ELis: tehisintellekti määrus ja GDPR"
 description: "AI kasutamine värbamisel on ELis seaduslik, kuid reeglitega. Mida tähendab tehisintellekti määruse suure riski kategooria tööandjale, tähtajad ja GDPR."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Kas AI kasutamine värbamisel on ELis seaduslik? Mida tööandjad peavad teadma
 
 Üldiselt jah: AI kasutamine värbamisel on ELis seaduslik. Kuid enamik kandidaate hindavaid AI-tööriistu kuulub ELi tehisintellekti määruse (AI Act) suure riski kategooriasse, mis toob kohustusi nii pakkujale kui ka sulle kui tööandjale. Mõned praktikad on täielikult keelatud. Ja kandidaatide andmetele kohaldub, nagu alati, isikuandmete kaitse üldmäärus (GDPR).
 
-See juhend selgitab üldjoontes reegleid, olulisi kuupäevi, seda, mida tööandjad peavad tegema, ja kuidas testee sellele läheneb. **See ei ole õigusnõuanne.** See kajastab reegleid 2026. aasta oktoobri seisuga. Reeglid on uued, juhised alles valmivad ja riiklik õigus lisab omad nõuded. Enne millelegi siin toetumist konsulteeri oma juristiga.
+See juhend selgitab üldjoontes reegleid, olulisi kuupäevi, seda, mida tööandjad peavad tegema, ja kuidas testee sellele läheneb. **See ei ole õigusnõuanne.** See kajastab reegleid 2026. aasta novembri seisuga. Reeglid on uued, juhised alles valmivad ja riiklik õigus lisab omad nõuded.
 
 ## Lühike vastus
 
@@ -34,7 +34,7 @@ See hõlmab laia valikut tööriistu: CV-filtrid, järjestamissüsteemid, AI-int
 
 Tavaliselt mitte. Tehisintellekti määruse [artikli 6 lõige 3](https://artificialintelligenceact.eu/article/6/) laseb mõned III lisa süsteemid suure riski kategooriast välja, näiteks kui need täidavad kitsast menetluslikku ülesannet või ainult valmistavad ette inimese hinnangut. Kuid III lisa süsteem, mis teeb inimeste profiilianalüüsi, on alati suure riskiga ning kandidaatide hindamine või järjestamine nende võimete järgi loetakse tõenäoliselt profiilianalüüsiks.
 
-Euroopa Komisjoni suure riski klassifitseerimise suuniste kavand (avaldati konsultatsiooniks 19. mail 2026; 2026. aasta oktoobri seisuga mitte lõplik) võtab laia vaate. See kirjeldab valikut kui „kandidaatide lõppvalikusse arvamist, hindamist, järjestamist või testimist“ ja, nagu [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update) kokku võtab, käsitleb sobivusskoore genereerivaid süsteeme suure riskiga süsteemidena „isegi kui lõpliku värbamisotsuse teeb inimesest värbaja“.
+Euroopa Komisjoni suure riski klassifitseerimise suuniste kavand (avaldati konsultatsiooniks 19. mail 2026; 2026. aasta novembri seisuga mitte lõplik) võtab laia vaate. See kirjeldab valikut kui „kandidaatide lõppvalikusse arvamist, hindamist, järjestamist või testimist“ ja, nagu [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update) kokku võtab, käsitleb sobivusskoore genereerivaid süsteeme suure riskiga süsteemidena „isegi kui lõpliku värbamisotsuse teeb inimesest värbaja“.
 
 Seega on tööriist, mis annab igale kandidaadile tulemuse ja koha pingereas, väga tõenäoliselt suure riskiga, kuigi selle, kes tööle võetakse, otsustavad inimesed.
 
@@ -47,7 +47,7 @@ Seega on tööriist, mis annab igale kandidaadile tulemuse ja koha pingereas, v�
 | 2. detsember 2027 | III lisa süsteemide, sh värbamistööriistade suure riski kohustused |
 | 2. august 2028 | I lisaga hõlmatud toodetes kasutatava AI suure riski kohustused |
 
-III lisa suure riski kuupäev oli algselt 2. august 2026. Digital Omnibus on AI (määrus (EL) 2026/1744, jõus alates 27. juulist 2026) lükkas selle edasi 2. detsembrile 2027 ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Kuupäevad [AI Act Exploreri artikli 113](https://artificialintelligenceact.eu/article/113/) järgi 2026. aasta oktoobri seisuga.
+III lisa suure riski kuupäev oli algselt 2. august 2026. Digital Omnibus on AI (määrus (EL) 2026/1744, jõus alates 27. juulist 2026) lükkas selle edasi 2. detsembrile 2027 ([Euroopa Liidu Teataja](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). Samuti kirjutas see alates 27. juulist 2026 ümber artikli 4 tehisintellekti kirjaoskuse kohustuse: pakkujad ja juurutajad peavad nüüd võtma meetmeid, et toetada oma töötajate tehisintellekti kirjaoskust, kindlat taset tagamata. Kuupäevad 2026. aasta novembri seisuga.
 
 Lisaaeg on ettevalmistuseks, mitte põhjus reegleid eirata. Isikuandmete kaitse üldmäärus ja diskrimineerimisvastased seadused kehtivad juba täies ulatuses.
 
@@ -86,7 +86,7 @@ Tööandja kohustused on sätestatud artiklis 26. Kokkuvõttes ([artikkel 26](ht
 - **Teavita töötajate esindajaid ja mõjutatud töötajaid** enne suure riskiga süsteemi kasutamist töökohal.
 - **Teavita kandidaate,** et nende suhtes kasutatakse suure riskiga AI-süsteemi.
 
-Avalik-õiguslikud asutused ja mõned eraõiguslikud organisatsioonid peavad tegema ka põhiõigustele avaldatava mõju hindamise (artikkel 27). Ja artikli 4 tehisintellekti kirjaoskuse kohustus kehtib juba: inimesed, kes sinu värbamises AI-tööriistu kasutavad, peaksid mõistma, mida need tööriistad teevad ja mida mitte.
+Avalik-õiguslikud asutused ja mõned eraõiguslikud organisatsioonid peavad tegema ka põhiõigustele avaldatava mõju hindamise (artikkel 27). Ja artikkel 4 kehtib juba: võta meetmeid, et toetada nende inimeste tehisintellekti kirjaoskust, kes sinu värbamises AI-tööriistu kasutavad, et nad mõistaksid, mida need tööriistad teevad ja mida mitte.
 
 ## Isikuandmete kaitse üldmääruse põhitõed
 
@@ -117,7 +117,7 @@ testee viib läbi ajapiiranguga valikvastustega oskuste intervjuusid, mille AI k
 
 Kuidas see tootes täna välja näeb:
 
-- **AI kirjutab küsimused ja nende vastusevõtmed; hindamine käib kindlate reeglite järgi.** Ükski AI ei loe ega hinda kandidaadi vastust ning video-, hääle- ega näoanalüüsi ei kasutata. Kui AI hiljem võtit parandab, kehtib parandus kandidaatidele, kes alustavad pärast seda; varasemad tulemused ei muutu.
+- **AI kirjutab küsimused ja nende vastusevõtmed; hindamine käib kindlate reeglite järgi.** Ükski AI ei hinda kandidaadi vastust ning video- ega näoanalüüsi ei kasutata. Häälerežiimis muudetakse kõne tekstiks ja sobitatakse vastusevariandiga, mis kandidaadile välja öeldakse ja ekraanil näidatakse: üks selgelt nimetatud variant võetakse vastuseks kohe, mitme variandi valik kinnitatakse kõigepealt. testee ei salvesta kõnet kunagi ja häält ei analüüsita kunagi. Kui AI hiljem võtit parandab, kehtib parandus kandidaatidele, kes alustavad pärast seda; varasemad tulemused ei muutu.
 - **Sina kiidad teemad heaks** enne, kui ühtegi küsimust kirjutatakse, ja näed iga küsimust.
 - **Otsustavad inimesed.** Hindamislehed ja PDF-aruanded tuletavad sinu meeskonnale meelde tulemused üle vaadata; testee ei lükka kandidaate tagasi ega saada äraütlemiskirju.
 - **Kandidaatidele öeldakse** enne alustamist, et küsimused on kirjutanud AI, et tulemused vaatavad üle ja otsuse teevad inimesed sinu ettevõttest ning et nad võivad taotleda ülevaatust.

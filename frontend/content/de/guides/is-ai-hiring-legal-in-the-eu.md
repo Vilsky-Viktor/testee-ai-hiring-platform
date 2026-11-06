@@ -2,14 +2,14 @@
 title: "Ist KI im Recruiting in der EU erlaubt? Was Arbeitgeber wissen müssen"
 seoTitle: "KI im Recruiting erlaubt? KI-Verordnung und DSGVO"
 description: "KI im Recruiting ist in der EU erlaubt, mit Regeln: was die Hochrisiko-Kategorie der KI-Verordnung bedeutet, Fristen bis Dezember 2027, DSGVO-Grundlagen."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Ist KI im Recruiting in der EU erlaubt? Was Arbeitgeber wissen müssen
 
 Grundsätzlich ja: KI in der Personalauswahl einzusetzen ist in der EU erlaubt. Die meisten KI-Tools, die Kandidaten bewerten, fallen aber in die Hochrisiko-Kategorie der KI-Verordnung (AI Act), und das bringt Pflichten für den Anbieter und für dich als Arbeitgeber mit sich. Einige Praktiken sind ganz verboten. Und für Kandidatendaten gilt die DSGVO (GDPR), wie schon immer.
 
-Dieser Leitfaden erklärt die Regeln im Überblick, die wichtigen Fristen, was Arbeitgeber tun müssen und wie testee damit umgeht. **Er ist keine Rechtsberatung.** Er gibt den Stand der Regeln im Oktober 2026 wieder. Die Regeln sind neu, Leitlinien werden noch fertiggestellt, und nationales Recht stellt eigene Anforderungen. Kläre Einzelheiten mit deiner eigenen Rechtsberatung, bevor du dich auf etwas davon verlässt.
+Dieser Leitfaden erklärt die Regeln im Überblick, die wichtigen Fristen, was Arbeitgeber tun müssen und wie testee damit umgeht. **Er ist keine Rechtsberatung.** Er gibt den Stand der Regeln im November 2026 wieder. Die Regeln sind neu, Leitlinien werden noch fertiggestellt, und nationales Recht stellt eigene Anforderungen.
 
 ## Die Kurzantwort
 
@@ -34,7 +34,7 @@ Das umfasst ein breites Spektrum an Tools: Lebenslauf-Filter, Ranking-Systeme, K
 
 Meist nicht. [Artikel 6 Absatz 3](https://artificialintelligenceact.eu/article/6/) der KI-Verordnung nimmt einige Systeme nach Anhang III von der Hochrisiko-Kategorie aus, etwa wenn sie eine eng gefasste Verfahrensaufgabe erfüllen oder nur eine menschliche Bewertung vorbereiten. Ein System nach Anhang III, das Profiling von Personen vornimmt, gilt jedoch immer als Hochrisiko-System, und Kandidaten nach ihren Fähigkeiten zu bewerten oder zu ranken, zählt wahrscheinlich als Profiling.
 
-Die Entwürfe der Leitlinien der Europäischen Kommission zur Hochrisiko-Einstufung (am 19. Mai 2026 zur Konsultation veröffentlicht; im Oktober 2026 noch nicht endgültig) legen den Begriff weit aus. Sie beschreiben die Auswahl als „Erstellung von Shortlists, Benotung, Ranking oder Testen von Kandidaten“ und behandeln, wie [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update) zusammenfasst, Systeme, die Eignungswerte erzeugen, als Hochrisiko-Systeme, „selbst wenn die endgültige Einstellungsentscheidung von einem menschlichen Recruiter getroffen wird“ (Zitate aus dem Englischen übersetzt).
+Die Entwürfe der Leitlinien der Europäischen Kommission zur Hochrisiko-Einstufung (am 19. Mai 2026 zur Konsultation veröffentlicht; im November 2026 noch nicht endgültig) legen den Begriff weit aus. Sie beschreiben die Auswahl als „Erstellung von Shortlists, Benotung, Ranking oder Testen von Kandidaten“ und behandeln, wie [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update) zusammenfasst, Systeme, die Eignungswerte erzeugen, als Hochrisiko-Systeme, „selbst wenn die endgültige Einstellungsentscheidung von einem menschlichen Recruiter getroffen wird“ (Zitate aus dem Englischen übersetzt).
 
 Ein Tool, das jedem Kandidaten eine Punktzahl und einen Rangplatz gibt, ist also sehr wahrscheinlich ein Hochrisiko-System, auch wenn Menschen entscheiden, wer eingestellt wird.
 
@@ -47,7 +47,7 @@ Ein Tool, das jedem Kandidaten eine Punktzahl und einen Rangplatz gibt, ist also
 | 2. Dezember 2027 | Hochrisiko-Pflichten für Systeme nach Anhang III, einschließlich Recruiting-Tools |
 | 2. August 2028 | Hochrisiko-Pflichten für KI in Produkten nach Anhang I |
 
-Die Hochrisiko-Frist für Anhang III war ursprünglich der 2. August 2026. Der Digital-Omnibus zur KI (Digital Omnibus on AI, Verordnung (EU) 2026/1744, in Kraft seit dem 27. Juli 2026) hat sie auf den 2. Dezember 2027 verschoben ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Daten laut [AI Act Explorer, Artikel 113](https://artificialintelligenceact.eu/article/113/), Stand Oktober 2026.
+Die Hochrisiko-Frist für Anhang III war ursprünglich der 2. August 2026. Der Digital-Omnibus zur KI (Digital Omnibus on AI, Verordnung (EU) 2026/1744, in Kraft seit dem 27. Juli 2026) hat sie auf den 2. Dezember 2027 verschoben ([Amtsblatt](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). Er hat außerdem die Pflicht zur KI-Kompetenz in Artikel 4 neu gefasst, ab dem 27. Juli 2026: Anbieter und Betreiber müssen nun Maßnahmen ergreifen, um die KI-Kompetenz ihres Personals zu fördern, ohne ein bestimmtes Niveau gewährleisten zu müssen. Daten mit Stand November 2026.
 
 Die zusätzliche Zeit dient der Vorbereitung und ist kein Grund, die Regeln zu ignorieren. DSGVO und Antidiskriminierungsrecht gelten bereits vollumfänglich.
 
@@ -86,7 +86,7 @@ Artikel 26 legt die Pflichten des Arbeitgebers fest. Zusammengefasst ([Artikel 2
 - **Arbeitnehmervertreter und betroffene Arbeitnehmer informieren,** bevor ein Hochrisiko-System am Arbeitsplatz eingesetzt wird.
 - **Kandidaten informieren,** dass sie der Verwendung eines Hochrisiko-KI-Systems unterliegen.
 
-Öffentliche Stellen und bestimmte private Organisationen müssen zudem eine Grundrechte-Folgenabschätzung durchführen (Artikel 27). Und die Pflicht zur KI-Kompetenz aus Artikel 4 gilt bereits: Die Menschen, die in deiner Personalauswahl KI-Tools nutzen, sollten verstehen, was diese Tools tun und was nicht.
+Öffentliche Stellen und bestimmte private Organisationen müssen zudem eine Grundrechte-Folgenabschätzung durchführen (Artikel 27). Und Artikel 4 gilt bereits: Ergreife Maßnahmen, um die KI-Kompetenz der Menschen zu fördern, die in deiner Personalauswahl KI-Tools nutzen, damit sie verstehen, was diese Tools tun und was nicht.
 
 ## DSGVO-Grundlagen
 
@@ -117,7 +117,7 @@ testee führt zeitlich begrenzte Multiple-Choice-Interviews zu Fachkenntnissen d
 
 So sieht das heute im Produkt aus:
 
-- **KI schreibt die Fragen und ihre Lösungsschlüssel; die Bewertung folgt festen Regeln.** Keine KI liest oder beurteilt die Antwort eines Kandidaten, und es wird keine Video-, Stimm- oder Gesichtsanalyse eingesetzt. Korrigiert die KI später einen Schlüssel, gilt die Korrektur für Kandidaten, die danach beginnen; frühere Ergebnisse ändern sich nicht.
+- **KI schreibt die Fragen und ihre Lösungsschlüssel; die Bewertung folgt festen Regeln.** Keine KI beurteilt die Antwort eines Kandidaten, und es wird keine Video- oder Gesichtsanalyse eingesetzt. Im Sprachmodus wird Sprache in Text umgewandelt und einer Antwortoption zugeordnet, die dem Kandidaten genannt und auf dem Bildschirm angezeigt wird: Eine eindeutig genannte einzelne Option wird sofort übernommen, eine Auswahl mehrerer Optionen wird zuerst bestätigt. testee speichert Sprache nie, und die Stimme wird nie analysiert. Korrigiert die KI später einen Schlüssel, gilt die Korrektur für Kandidaten, die danach beginnen; frühere Ergebnisse ändern sich nicht.
 - **Du gibst die Themen frei,** bevor eine Frage geschrieben wird, und du kannst jede Frage sehen.
 - **Menschen entscheiden.** Die Ergebnisseite und die PDF-Berichte erinnern dein Team daran, die Ergebnisse zu prüfen; testee lehnt keine Kandidaten ab und verschickt keine Absagen.
 - **Kandidaten werden informiert,** bevor sie beginnen: dass die Fragen von KI geschrieben sind, dass Menschen in deinem Unternehmen die Ergebnisse prüfen und entscheiden und dass sie eine Überprüfung verlangen können.

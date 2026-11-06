@@ -2,7 +2,7 @@
 title: "Oskustestid vs CV-de sõelumine: mis ennustab töösooritust"
 seoTitle: "Oskustestid vs CV-de sõelumine: mis ennustab paremini"
 description: "Mida ütlevad aastakümnete värbamisuuringud erialaste teadmiste testide, proovitööde, intervjuude ja töökogemuse kohta ning kuidas seda eelvalikus kasutada."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Oskustestid vs CV-de sõelumine: mis ennustab töösooritust
@@ -41,7 +41,7 @@ Silma paistab mõni asi:
 - **Struktureeritud intervjuud edestavad struktureerimata intervjuusid suure vahega.** Sama vestlus kindlate küsimuste ja hindamisjuhendiga ennustab palju paremini.
 - **Kognitiivsed võimed ei ole enam selge liider.** 2022. aasta autorid pakuvad võrdluspunktiks, mille järgi teisi meetodeid hinnata, struktureeritud intervjuusid, mitte kognitiivseid teste.
 
-2022. aasta autorid toovad välja ka mustri: nende uue analüüsi tugevaimad ennustajad, „struktureeritud intervjuud, erialaste teadmiste testid, empiiriliselt võtmestatud biograafilised andmed ja proovitööd“, „on kõik tööspetsiifilised meetodid“.
+Sama uuringu autorid toovad välja ka mustri: nende uue analüüsi tugevaimad ennustajad, „struktureeritud intervjuud, erialaste teadmiste testid, empiiriliselt võtmestatud biograafilised andmed ja proovitööd“, „on kõik tööspetsiifilised meetodid“.
 
 ## Mida see ütleb CV-de sõelumise kohta
 
@@ -64,7 +64,7 @@ Autorid märgivad ka teist tingimust: proovitööd ja teadmiste testid sobivad v
 - **Need on keskmised paljude ametite ja uuringute lõikes.** Sinu roll, sinu test ja sinu kandidaadid võivad erineda.
 - **Valiidsuse hinnangud kehtivad hästi üles ehitatud meetodite kohta.** Halvasti kirjutatud test või lohakas intervjuu nende arvudeni ei jõua.
 - **Üks meetod on harva piisav.** Uurijad soovitavad üldiselt meetodeid kombineerida, näiteks teadmiste test varakult ja struktureeritud intervjuu hiljem.
-- **Õiglus vajab omaette kontrolle.** Sackett et al. toovad valiidsuse kõrval mustanahaliste ja valgenahaliste kandidaatide keskmised tulemuste erinevused. Erialaste teadmiste testid, proovitööd ja kognitiivsed testid näitavad märkimisväärseid erinevusi; struktureeritud intervjuud väiksemaid. Meetodite kombineerimine võib neid vähendada. Mida iganes kasutad, jälgi läbimise määrasid rühmade lõikes. USAs on tavaline lähtepunkt [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4)'i nelja viiendiku rusikareegel.
+- **Õiglus vajab omaette kontrolle.** Sackett et al. toovad valiidsuse kõrval mustanahaliste ja valgenahaliste kandidaatide keskmised tulemuste erinevused. Erialaste teadmiste testid, proovitööd ja kognitiivsed testid näitavad märkimisväärseid erinevusi; struktureeritud intervjuud väiksemaid. Meetodite kombineerimine võib neid vähendada. Mida iganes kasutad, jälgi läbimise määrasid rühmade lõikes. USAs on tavaline lähtepunkt [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4)'i nelja viiendiku rusikareegel, kuigi EEOC kavatseb Guidelinesi tõlgendavad osad kehtetuks tunnistada.
 - **Tulemus toetab otsust, kuid ei tee seda.** Enne otsustamist peaks inimene vastuseid vaatama.
 
 ## Uuringutele tuginev eelvalikuprotsess
@@ -85,7 +85,7 @@ testee katab 2. sammu: ajapiiranguga valikvastustega erialaste teadmiste test, m
 - **Kõigile samad tingimused.** Samad teemad ja küsimuste arv ning igal küsimusel taimer. Kandidaatidele, kes seda paluvad, saad anda lisaaega.
 - **Iga kandidaat saab oma küsimused,** juhusliku komplekti iga teema pangast, nii et vastuseid on raskem jagada.
 - **Loetavad tulemused.** Iga kandidaadi hindamisleht kõigi vastuste ja nende ajakuluga, järjestatud tulemuse järgi, märgetega liiga kiirete vastuste, lehelt lahkumise, kopeerimiskatsete ja ebatavaliste vastuste mustrite kohta.
-- **Vastuseid kontrollitakse vastusevõtme järgi,** mille AI kirjutab; igast teemast kontrollitakse enne avaldamist valim võtmeid, ülejäänuid siis, kui küsimusest teatatakse; ükski AI ei loe ega hinda kandidaadi vastust.
+- **Vastuseid kontrollitakse vastusevõtme järgi,** mille AI kirjutab; igast teemast kontrollitakse enne avaldamist valim võtmeid, ülejäänuid siis, kui küsimusest teatatakse; ükski AI ei hinda kandidaadi vastust.
 
 testee ei korralda struktureeritud intervjuusid, proovitöid ega kognitiivseid teste. Kasuta seda nende kõrval. Testiliikide ja õigluse kohta loe lähemalt lehelt [Kandidaatide testimine värbamisel](/guides/pre-employment-testing).
 

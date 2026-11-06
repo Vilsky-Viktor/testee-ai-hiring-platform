@@ -2,14 +2,14 @@
 title: "Is AI bij werving en selectie legaal in de VS? Wat werkgevers moeten weten"
 seoTitle: "AI bij werving en selectie: legaal in de VS?"
 description: "AI bij werving is legaal in de VS, met regels: federaal recht over adverse impact en aanpassingen, bias-audits in NYC, en Illinois, Colorado en Californië."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Is AI bij werving en selectie legaal in de VS? Wat werkgevers moeten weten
 
-Over het algemeen wel: AI gebruiken bij werving en selectie is legaal in de VS. Er is geen federale AI-wet voor werving. In plaats daarvan geldt het federale antidiscriminatierecht voor AI-tools zoals voor elke test, en een paar plaatsen voegen eigen regels toe: New York City, Illinois, Colorado en Californië.
+Over het algemeen wel: AI gebruiken bij werving en selectie is legaal in de VS. Er is geen federale AI-wet voor werving. In plaats daarvan geldt het federale antidiscriminatierecht voor AI-tools zoals voor elke test, en een paar plaatsen voegen eigen regels toe: New York City, Illinois, Colorado, Californië, New Jersey en Texas. Een presidentieel decreet van december 2025 stelde een taskforce van het ministerie van Justitie in om AI-wetten van staten aan te vechten ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), maar een decreet trekt ze niet in: ze gelden tot het Congres of een rechter anders beslist.
 
-Deze gids legt de regels op hoofdlijnen uit, de data die ertoe doen, wat werkgevers moeten doen en hoe testee ermee omgaat. **Dit is geen juridisch advies.** Het geeft de regels weer zoals ze in oktober 2026 gelden; een aantal daarvan is nieuw of wordt nog afgerond.
+Deze gids legt de regels op hoofdlijnen uit, de data die ertoe doen, wat werkgevers moeten doen en hoe testee ermee omgaat. **Dit is geen juridisch advies.** Het geeft de regels weer zoals ze in november 2026 gelden; een aantal daarvan is nieuw of wordt nog afgerond.
 
 ## Het korte antwoord
 
@@ -20,7 +20,7 @@ Deze gids legt de regels op hoofdlijnen uit, de data die ertoe doen, wat werkgev
 | Moet ik het kandidaten vertellen? | In New York City en Illinois wel; in Colorado en Californië vanaf 1 januari 2027 |
 | Moet ik extra tijd geven? | Aan kandidaten met een beperking die het nodig hebben: een redelijke aanpassing |
 | Hoe lang moet ik gegevens bewaren? | Vier jaar in Californië, drie in Colorado |
-| Wie neemt het besluit om iemand aan te nemen? | Een mens. Alle regels hier gaan uit van menselijke beoordeling |
+| Wie neemt het besluit om iemand aan te nemen? | Een mens. Colorado en Californië voorzien in menselijke beoordeling, en dat is overal de veiligste aanpak |
 
 ## Federaal recht
 
@@ -32,7 +32,9 @@ Title VII van de Civil Rights Act van 1964 verbiedt discriminatie in werk op gro
 
 Als bijvoorbeeld 60% van de ene groep voor je test slaagt en 42% van een andere, is de verhouding 42 ÷ 60 = 0,70, onder 0,80: een waarschuwingssignaal om uit te zoeken. Het is geen bewijs van discriminatie, en bij kleine aantallen kan de verhouding flink schommelen.
 
-De technische toelichting van de EEOC uit 2023 over AI bij selectie werd in januari 2025 offline gehaald. De Uniform Guidelines zijn regelgeving, geen richtsnoer, en gelden nog steeds. De verantwoordelijkheid voor adverse impact blijft bij de werkgever, wie de test ook heeft gebouwd.
+De federale handhaving is veranderd. De technische toelichting van de EEOC uit 2023 over AI bij selectie werd in januari 2025 offline gehaald. Haar National Enforcement Plan van juni 2026 zegt dat ze theorieën over indirecte discriminatie (disparate impact) bij onderzoeken "in de grootst mogelijke mate" zal vermijden en geen zaken over indirecte discriminatie zal aanspannen ([EEOC](https://www.eeoc.gov/sites/default/files/2026-06/NEP_-_signed.pdf)). Het ministerie van Arbeid verwijderde zijn exemplaar van de Uniform Guidelines op 26 oktober 2026, en op 16 oktober 2026 stuurde de EEOC het Witte Huis een definitieve regel om de interpretatieve delen van die van haarzelf in te trekken, met januari 2027 als doel ([Ogletree](https://ogletree.com/insights-resources/blog-posts/eeoc-sends-oira-final-rule-rescinding-uniform-guidelines-on-employee-selection-procedures/)). Tot die regel is gepubliceerd en van kracht wordt, blijven de Guidelines in de Code of Federal Regulations staan.
+
+Niets hiervan verandert Title VII. Indirecte discriminatie staat in de wet ([42 U.S.C. §2000e-2(k)](https://www.law.cornell.edu/uscode/text/42/2000e-2)), kandidaten kunnen nog steeds naar de rechter en staten handhaven hun eigen wetten. De vier-vijfdenregel blijft een nuttige eerste check, wat er ook met de Guidelines gebeurt, en de verantwoordelijkheid voor adverse impact blijft bij de werkgever, wie de test ook heeft gebouwd.
 
 ### De ADA en aanpassingen
 
@@ -64,7 +66,7 @@ En ze moeten kandidaten vertellen wanneer AI wordt gebruikt bij wervings- en aan
 
 ## Colorado
 
-De AI-wet van Colorado werd ingetrokken en opnieuw vastgesteld door SB 26-189, ondertekend op 14 mei 2026 en van kracht vanaf 1 januari 2027. De regels van de Attorney General zijn voorgesteld (op 26 oktober 2026 was er een hoorzitting) en moeten vóór die datum klaar zijn. Voor gebruikers (deployers) van hoogrisico-AI die bij arbeidsbesluiten wordt ingezet, zijn de plichten:
+De AI-wet van Colorado werd ingetrokken en opnieuw vastgesteld door SB 26-189, ondertekend op 14 mei 2026 en van kracht vanaf 1 januari 2027. De regels van de Attorney General zijn voorgesteld (met een hoorzitting gepland op 26 oktober 2026), in november 2026 nog niet vastgesteld en moeten uiterlijk op 1 januari 2027 klaar zijn. Voor gebruikers (deployers) van geautomatiseerde besluitvormingstechnologie die een arbeidsbesluit wezenlijk beïnvloedt, zijn de plichten:
 
 - **Melding vóór gebruik** aan de kandidaat.
 - **Uitleg van een ongunstig besluit,** zoals niet worden aangenomen of niet doorgaan.
@@ -75,6 +77,12 @@ De AI-wet van Colorado werd ingetrokken en opnieuw vastgesteld door SB 26-189, o
 
 - **Regels van de Civil Rights Council over geautomatiseerde besluitvormingssystemen,** van kracht sinds 1 oktober 2025: het antidiscriminatierecht geldt voor geautomatiseerde tools bij werving zoals voor elke andere selectiemethode. Werkgevers moeten personeelsgegevens, inclusief gegevens van geautomatiseerde besluitvormingssystemen, vier jaar bewaren (Cal. Code Regs. tit. 2, §11013(c)).
 - **De regels van de CCPA over geautomatiseerde besluitvormingstechnologie** gelden vanaf 1 januari 2027 voor arbeidsbesluiten: een melding vóór gebruik, het recht om bezwaar te maken (opt-out) of in beroep te gaan, en het recht op inzage in hoe de technologie is gebruikt.
+- **De No Robo Bosses Act (SB 947),** ondertekend op 30 september 2026, geldt vanaf 1 juli 2027 voor disciplinaire maatregelen en ontslag, niet voor werving.
+
+## New Jersey en Texas
+
+- **New Jersey.** Regels over indirecte discriminatie onder de Law Against Discrimination (N.J.A.C. 13:16), van kracht sinds 15 december 2025, gelden voor geautomatiseerde tools voor arbeidsbesluiten. Een werkgever kan aansprakelijk zijn, ook als een leverancier de tool heeft gebouwd.
+- **Texas.** De Responsible AI Governance Act (HB 149), van kracht sinds 1 januari 2026, verbiedt AI die wordt gebruikt met de bedoeling onrechtmatig te discrimineren. Indirecte discriminatie alleen bewijst die bedoeling niet.
 
 ## De data
 
@@ -82,12 +90,13 @@ De AI-wet van Colorado werd ingetrokken en opnieuw vastgesteld door SB 26-189, o
 | --- | --- |
 | 5 juli 2023 | Handhaving van Local Law 144 in New York City |
 | 1 oktober 2025 | Regels van de Californische Civil Rights Council over geautomatiseerde besluitvormingssystemen |
-| 1 januari 2026 | Illinois: melding van AI-gebruik, geen discriminerende AI, geen postcodes als proxy |
+| 15 december 2025 | Regels van New Jersey over indirecte discriminatie |
+| 1 januari 2026 | Illinois: melding van AI-gebruik, geen discriminerende AI, geen postcodes als proxy; Texas: geen AI gebruikt met de bedoeling te discrimineren |
 | 1 januari 2027 | De AI-wet van Colorado; de Californische CCPA-regels over geautomatiseerde besluitvorming bij werk |
 
 ## Een praktische checklist voor werkgevers
 
-1. **Maak een lijst van de functies en plaatsen** waarvoor je werft: New York City, Illinois, Colorado, Californië, elders in de VS.
+1. **Maak een lijst van de functies en plaatsen** waarvoor je werft: New York City, Illinois, Colorado, Californië, New Jersey, Texas, elders in de VS.
 2. **Test alleen wat de functie vraagt.** Kies onderwerpen en een slaaggrens die je voor de rol kunt verantwoorden.
 3. **Werk je informatie voor kandidaten bij** met dat AI wordt gebruikt, hoe resultaten worden gebruikt en hoe ze om een aanpassing en een menselijke beoordeling kunnen vragen. Voeg de formuleringen voor Illinois en Colorado toe waar die gelden.
 4. **Bied aanpassingen aan,** zoals extra tijd, en spreek ze af voordat de kandidaat begint.
@@ -103,12 +112,12 @@ testee neemt getimede meerkeuze-vaardigheidstests af die door AI worden geschrev
 
 Zo ziet dat er vandaag in het product uit:
 
-- **AI schrijft de vragen en de antwoordsleutels; het nakijken volgt vaste regels.** Geen AI leest of beoordeelt het antwoord van een kandidaat, en er wordt geen video- of gezichtsanalyse gebruikt. In de spraakmodus wordt spraak omgezet in tekst en gekoppeld aan een antwoordoptie, die de kandidaat te horen krijgt en op het scherm ziet: één duidelijk genoemde optie wordt meteen vastgelegd, een keuze van meerdere opties wordt eerst bevestigd. De spraak wordt nooit opgeslagen en de stem wordt nooit geanalyseerd.
+- **AI schrijft de vragen en de antwoordsleutels; het nakijken volgt vaste regels.** Geen AI beoordeelt het antwoord van een kandidaat, en er wordt geen video- of gezichtsanalyse gebruikt. In de spraakmodus wordt spraak omgezet in tekst en gekoppeld aan een antwoordoptie, die de kandidaat te horen krijgt en op het scherm ziet: één duidelijk genoemde optie wordt meteen vastgelegd, een keuze van meerdere opties wordt eerst bevestigd. testee slaat spraak nooit op, en de stem wordt nooit geanalyseerd.
 - **Jij keurt de onderwerpen goed** voordat er ook maar één vraag wordt geschreven, en jij kiest de slaaggrens.
 - **Mensen beslissen.** testee wijst geen kandidaten af en stuurt geen afwijzingsberichten.
 - **Geen beschermde kenmerken.** testee vraagt, leidt af of bewaart nooit het geslacht, het ras, de leeftijd, een beperking, de postcode of andere beschermde kenmerken van kandidaten.
 - **Een export voor een bias-audit.** Op de pagina Actielog van het bedrijf kan de eigenaar een csv-bestand downloaden van de kandidaten die klaar zijn, voor het hele bedrijf of één interview en tussen twee data: per kandidaat het cijfer, de slaaggrens, of de kandidaat geslaagd is en of die boven de mediaan van het interview scoorde. Elke rij heeft het e-mailadres van de kandidaat als sleutel, zodat je hem kunt koppelen aan de zelfgerapporteerde categorieën die je zelf hebt verzameld; verwijder daarna de kolom met e-mailadressen en geef het bestand aan je onafhankelijke auditor, die de selectie- en scorepercentages en de impact ratios berekent. Met hetzelfde bestand kun je de vier-vijfdencheck zelf uitvoeren.
-- **Extra tijd** van +25%, +50% of +100% per vraag kan worden gegeven aan elke kandidaat die erom vraagt, voordat die begint. testee bewaart alleen de hoeveelheid, nooit de reden. In de spraakmodus kan een kandidaat altijd in plaats daarvan op een optie tikken, en je kunt een interview instellen op alleen antwoorden door te tikken.
+- **Extra tijd** van +25%, +50% of +100% per vraag kan worden gegeven aan elke kandidaat die erom vraagt, voordat die begint. testee bewaart alleen de hoeveelheid, nooit de reden. In de spraakmodus kan een kandidaat op een optie tikken in plaats van te spreken. Om een spraakinterview te starten is een microfoon nodig, dus stel een kandidaat die er geen kan gebruiken vóór de start in op antwoorden door te tikken. Je kunt ook het hele interview zo instellen.
 - **Sjablonen voor de informatie aan kandidaten,** een algemene en versies voor New York City, Illinois en Colorado, staan op de [documentenpagina](/documents), samen met de instructies voor bedrijven.
 - **New York City.** testee heeft nog geen eigen onafhankelijke bias-audit gehad. Gebruik testee niet voor banen in New York City totdat je hebt gedaan wat Local Law 144 van jou als werkgever vraagt: een onafhankelijke bias-audit binnen het jaar vóór gebruik, de samenvatting gepubliceerd en een melding aan kandidaten 10 werkdagen vooraf.
 - **Gegevens.** Je bedrijf is onder de CCPA de business en testee zijn service provider, onder de [verwerkersovereenkomst](/dpa) en het Amerikaanse deel daarvan. Gegevens worden gehost in de EU, met sommige subverwerkers in de VS (zie het [privacybeleid](/privacy)), en worden niet gebruikt om AI-modellen te trainen.
@@ -124,8 +133,13 @@ Zo ziet dat er vandaag in het product uit:
 ## Bronnen
 
 - Uniform Guidelines on Employee Selection Procedures, [29 CFR §1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4).
+- Title VII van de Civil Rights Act van 1964, [42 U.S.C. §2000e-2(k)](https://www.law.cornell.edu/uscode/text/42/2000e-2).
+- EEOC, [National Enforcement Plan](https://www.eeoc.gov/sites/default/files/2026-06/NEP_-_signed.pdf), juni 2026; Ogletree, [EEOC sends OIRA final rule rescinding the Uniform Guidelines](https://ogletree.com/insights-resources/blog-posts/eeoc-sends-oira-final-rule-rescinding-uniform-guidelines-on-employee-selection-procedures/), oktober 2026.
+- [Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm), 11 december 2025.
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 en 6 RCNY §5-300 en volgende; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) en de bijbehorende FAQ.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), zoals gewijzigd door Public Act 103-0804.
 - Colorado SB 26-189.
-- California Code of Regulations, title 2, §11013(c); de regels van de California Consumer Privacy Act over geautomatiseerde besluitvormingstechnologie.
+- California Code of Regulations, title 2, §11013(c); de regels van de California Consumer Privacy Act over geautomatiseerde besluitvormingstechnologie; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
+- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

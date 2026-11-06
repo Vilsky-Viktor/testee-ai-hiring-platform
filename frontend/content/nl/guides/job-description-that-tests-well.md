@@ -2,7 +2,7 @@
 title: "Zo schrijf je een functieomschrijving waar een goede test uit komt"
 seoTitle: "Functieomschrijving schrijven waar een goede test uit komt"
 description: "Wat een functieomschrijving nodig heeft voor een selectietest die het juiste toetst: concrete vaardigheden en tools, het niveau, het dagelijks werk."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Zo schrijf je een functieomschrijving waar een goede test uit komt
@@ -15,7 +15,7 @@ Deze gids gaat over de tweede taak: een omschrijving schrijven waar een vaardigh
 
 Een kennistest is nuttig als hij toetst wat de functie echt vraagt. Onderzoek naar personeelsselectie rekent vakkennistests gemiddeld tot de betere voorspellers van werkprestaties, maar die schatting geldt voor tests die voor de betreffende functie zijn gemaakt; kennistests die los staan van de functie voorspellen minder (zie [Vaardigheidstests vs. cv-screening](/guides/skills-tests-vs-cv-screening)).
 
-De Amerikaanse arbeidsregels zeggen hetzelfde vanuit de juridische kant. De Uniform Guidelines on Employee Selection Procedures verwachten dat een test die op zijn inhoud steunt, berust op een functieanalyse die zich richt op "het werkgedrag en de taken die daarbij horen" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). In de praktijk is voor de meeste teams de functieomschrijving die analyse op papier. En onder de Americans with Disabilities Act geldt een schriftelijke omschrijving die is opgesteld vóór het plaatsen van de vacature of de gesprekken als bewijs van de wezenlijke taken van een functie ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+De Amerikaanse arbeidsregels zeggen hetzelfde vanuit de juridische kant. De Uniform Guidelines on Employee Selection Procedures verwachten dat een test die op zijn inhoud steunt, berust op een functieanalyse die zich richt op "het werkgedrag en de taken die daarbij horen" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). In de praktijk is voor de meeste teams de functieomschrijving die analyse op papier. (In oktober 2026 zette de EEOC een stap om de interpretatieve delen van deze Guidelines in te trekken, met januari 2027 als doel. Title VII eist nog steeds dat een test met adverse impact verband houdt met de functie.) En onder de Americans with Disabilities Act geldt een schriftelijke omschrijving die is opgesteld vóór het plaatsen van de vacature of de gesprekken als bewijs van de wezenlijke taken van een functie ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 De omschrijving is dus een extra halfuur waard. Wat erin staat, daar vraagt de test naar.
 
@@ -48,7 +48,7 @@ Jaren ervaring zijn een ruwe vervanger voor niveau, en een zwakke: in het onderz
 
 Taken zijn de nuttigste regels voor een test. "Verzorgt de maandelijkse btw-aangifte" of "beoordeelt binnenkomende bugs en reproduceert ze" vertelt wie de test schrijft welke kennis wordt gebruikt en in welke situaties. Schrijf taken als werkwoord met lijdend voorwerp, zoals je het werk aan een nieuwe collega zou uitleggen.
 
-Weet je niet zeker wat een functie meestal inhoudt, dan vind je op [O*NET OnLine](https://www.onetonline.org/) de gebruikelijke taken, technologie en kennis van honderden beroepen. Gebruik het als checklist en houd alleen over wat jouw functie echt doet.
+Weet je niet zeker wat een functie meestal inhoudt, dan vind je op [O*NET OnLine](https://www.onetonline.org/) de gebruikelijke taken, technologie en kennis van zo'n 1.000 beroepen. Gebruik het als checklist en houd alleen over wat jouw functie echt doet.
 
 ### 4. Een duidelijke grens tussen eisen en pluspunten
 

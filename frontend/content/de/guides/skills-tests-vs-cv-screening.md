@@ -2,7 +2,7 @@
 title: "Fachtests vs. Lebenslauf-Screening: was Berufserfolg vorhersagt"
 seoTitle: "Fachtests oder Lebenslauf: was Berufserfolg vorhersagt"
 description: "Was die Forschung zur Personalauswahl über Fachwissenstests, Arbeitsproben, Interviews und Berufsjahre sagt, und wie du das bei der Vorauswahl nutzt."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Fachtests vs. Lebenslauf-Screening: was Berufserfolg vorhersagt
@@ -64,7 +64,7 @@ Die Autoren nennen noch eine zweite Bedingung: Arbeitsproben und Wissenstests pa
 - **Das sind Durchschnittswerte über viele Stellen und Studien.** Deine Stelle, dein Test und deine Kandidaten können abweichen.
 - **Validitätsschätzungen gelten für gut gemachte Methoden.** Ein schlecht geschriebener Test oder ein nachlässiges Interview erreicht diese Werte nicht.
 - **Eine Methode reicht selten aus.** Forscher empfehlen in der Regel, Methoden zu kombinieren, zum Beispiel früh einen Wissenstest und später ein strukturiertes Interview.
-- **Fairness braucht eigene Prüfungen.** Sackett et al. stellen der Validität die durchschnittlichen Punktunterschiede zwischen Schwarzen und weißen Kandidaten gegenüber. Fachwissenstests, Arbeitsproben und kognitive Tests zeigen erhebliche Unterschiede; strukturierte Interviews kleinere. Methoden zu kombinieren kann sie verringern. Was auch immer du nutzt: Beobachte die Bestehensquoten über Gruppen hinweg. In den USA ist die Vier-Fünftel-Faustregel der [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) der übliche Ausgangspunkt.
+- **Fairness braucht eigene Prüfungen.** Sackett et al. stellen der Validität die durchschnittlichen Punktunterschiede zwischen Schwarzen und weißen Kandidaten gegenüber. Fachwissenstests, Arbeitsproben und kognitive Tests zeigen erhebliche Unterschiede; strukturierte Interviews kleinere. Methoden zu kombinieren kann sie verringern. Was auch immer du nutzt: Beobachte die Bestehensquoten über Gruppen hinweg. In den USA ist die Vier-Fünftel-Faustregel der [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) der übliche Ausgangspunkt, auch wenn die EEOC die auslegenden Teile der Guidelines aufheben will.
 - **Eine Punktzahl stützt eine Entscheidung; sie trifft sie nicht.** Ein Mensch sollte sich die Antworten ansehen, bevor er entscheidet.
 
 ## Ein Vorauswahlprozess, der die Forschung nutzt
@@ -85,7 +85,7 @@ testee deckt Schritt 2 ab: einen zeitlich begrenzten Multiple-Choice-Test zum Fa
 - **Gleiche Bedingungen für alle.** Gleiche Themen und gleiche Anzahl Fragen sowie ein Countdown bei jeder Frage. Kandidaten, die darum bitten, kannst du zusätzliche Zeit geben.
 - **Jeder Kandidat erhält eigene Fragen,** einen zufälligen Satz aus dem Pool jedes Themas, sodass Antworten schwerer weiterzugeben sind.
 - **Lesbare Ergebnisse.** Eine Auswertung pro Kandidat mit jeder Antwort und ihrer Dauer, nach Punktzahl sortiert, mit Hinweisen auf zu schnelle Antworten, das Verlassen der Seite, Kopierversuche und ungewöhnliche Antwortmuster.
-- **Antworten werden anhand eines Lösungsschlüssels bewertet,** den KI schreibt; eine Stichprobe der Schlüssel jedes Themas wird vor der Freigabe geprüft, die übrigen, sobald eine Frage markiert wird. Keine KI liest oder beurteilt die Antwort eines Kandidaten.
+- **Antworten werden anhand eines Lösungsschlüssels bewertet,** den KI schreibt; eine Stichprobe der Schlüssel jedes Themas wird vor der Freigabe geprüft, die übrigen, sobald eine Frage markiert wird. Keine KI beurteilt die Antwort eines Kandidaten.
 
 testee führt keine strukturierten Interviews, Arbeitsproben oder kognitiven Tests durch. Nutze es daneben. Mehr zu Testarten und Fairness liest du unter [Einstellungstests](/guides/pre-employment-testing).
 

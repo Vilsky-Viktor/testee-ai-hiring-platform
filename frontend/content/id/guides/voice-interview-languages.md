@@ -2,14 +2,14 @@
 title: "Wawancara suara dalam 23 bahasa: seberapa baik Mira membaca dan mendengar di tiap bahasa"
 seoTitle: "Wawancara Suara dalam 23 Bahasa: Kualitas per Bahasa"
 description: "Seberapa baik mode suara testee membacakan soal dan memahami jawaban lisan di tiap 23 bahasanya, cara kami mengukurnya, dan kapan lebih baik mengetuk."
-updated: "2026-11-04"
+updated: "2026-11-07"
 ---
 
 # Wawancara suara dalam 23 bahasa: seberapa baik Mira membaca dan mendengar di tiap bahasa
 
 Dalam mode suara, Mira, pewawancara AI testee, membacakan setiap soal beserta opsinya, dan kandidat menjawab secara lisan: "B", "opsi C", "median", atau "A dan D" pada soal dengan lebih dari satu jawaban benar. Mode suara berfungsi di ke-23 bahasa testee, tetapi teknologi suara tidak sama baiknya di setiap bahasa. Panduan ini menunjukkan seberapa baik mode suara bekerja di tiap bahasa, supaya kamu bisa memilih mode yang cocok untuk kandidatmu.
 
-Apa pun bahasanya, kandidat selalu bisa mengetuk opsi alih-alih berbicara, dan opsi yang ditangkap Mira ditampilkan di layar saat ia mengulanginya.
+Setelah wawancara dimulai, kandidat selalu bisa mengetuk opsi alih-alih berbicara, apa pun bahasanya, dan opsi yang ditangkap Mira ditampilkan di layar saat ia mengulanginya. Waktu soal berjalan saat ia membacakannya.
 
 ## Versi singkatnya
 
@@ -53,9 +53,9 @@ Diukur pada 4 November 2026.
 
 - **Ibrani, Arab, dan Persia:** Mira terkadang menyebut opsi dengan huruf abjad bahasa itu sendiri (alef, bet, gimel), bukan A, B, C, dan D seperti yang tampil di layar. Urutannya sama, jadi opsi pertama tetap yang pertama, tetapi kandidat sebaiknya menjawab dengan huruf yang mereka lihat.
 - **Estonia:** "ei" (tidak) yang pendek bisa terdengar seperti huruf A, sehingga kandidat yang menolak pilihan yang diulang Mira sesekali tercatat memilih opsi A.
-- **Thai:** huruf yang diucapkan terkadang terdengar sebagai angka Thai ("ข้อ C" sebagai "ข้อ สี่", opsi empat), yang bisa mencatat opsi yang salah, dan opsi yang disebut berdasarkan urutannya sering tidak dipahami. Mengetuk lebih aman.
+- **Thai:** huruf yang diucapkan terkadang terdengar sebagai angka Thai ("ข้อ C" sebagai "ข้อ สี่", opsi empat), yang bisa mencatat opsi yang salah. Mengetuk lebih aman.
 - **Jepang:** "選択肢C" (opsi C) terkadang terdengar sebagai kata lain dan tercatat sebagai opsi yang salah; huruf saja bekerja lebih baik.
-- **Rusia, Ukraina, dan Polandia:** kata "dan" di antara dua huruf ("A и C") terkadang terdengar sebagai huruf ketiga, lalu Mira bertanya lagi.
+- **Rusia dan Polandia:** kata "dan" di antara dua huruf ("A и C") terkadang terdengar sebagai huruf ketiga, lalu Mira bertanya lagi.
 
 ## Cara kami mengukurnya
 
@@ -67,6 +67,7 @@ Angka-angka ini adalah gambaran, bukan jaminan. Dua puluh jawaban per bahasa ber
 
 - **Mode suara** cocok untuk posisi yang menuntut kemampuan berbicara, kandidat yang lebih suka tidak mengetik atau mengetuk, dan kebutuhan aksesibilitas. Mode ini paling baik dalam bahasa berkualitas sangat baik dan baik.
 - **Mode klik** adalah default dan bekerja sama di setiap bahasa. Utamakan mode ini untuk posisi yang krusial dalam bahasa berkualitas cukup.
+- Memulai wawancara suara butuh mikrofon yang berfungsi, jadi kandidat yang tidak bisa memakainya perlu mode klik, yang diatur sebelum ia mulai.
 - Kamu bisa mengatur mode untuk seluruh wawancara di pengaturannya dan mengubahnya untuk satu kandidat sebelum ia mulai.
 
-Dalam mode suara, suara kandidat hanya diubah menjadi teks untuk membaca jawaban mereka, tidak pernah disimpan atau dianalisis dengan cara lain apa pun.
+Dalam mode suara, suara kandidat hanya diubah menjadi teks untuk membaca jawaban mereka, tidak pernah dianalisis dengan cara lain apa pun, dan testee tidak pernah menyimpannya. OpenAI, yang mengubah ucapan menjadi teks, diminta untuk tidak menyimpannya dan menyimpan data API paling lama 30 hari, hanya untuk memeriksa penyalahgunaan.

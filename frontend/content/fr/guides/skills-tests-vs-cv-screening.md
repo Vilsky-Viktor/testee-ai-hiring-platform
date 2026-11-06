@@ -2,7 +2,7 @@
 title: "Tests de compétences ou tri de CV : ce qui prédit la performance au travail"
 seoTitle: "Test de compétences ou tri de CV : que dit la recherche ?"
 description: "Ce que des décennies de recherche disent des tests de connaissances, mises en situation, entretiens et années d'expérience, et comment l'appliquer au tri."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Tests de compétences ou tri de CV : ce qui prédit la performance au travail
@@ -64,7 +64,7 @@ Les auteurs notent aussi une seconde condition : les mises en situation et les t
 - **Ce sont des moyennes sur de nombreux postes et études.** Votre poste, votre test et vos candidats peuvent différer.
 - **Les estimations de validité concernent des méthodes bien construites.** Un test mal rédigé ou un entretien bâclé n'atteindra pas ces chiffres.
 - **Une seule méthode suffit rarement.** Les chercheurs conseillent en général de combiner les méthodes, par exemple un test de connaissances au début et un entretien structuré plus tard.
-- **L'équité demande ses propres vérifications.** Sackett et al. mettent en regard de la validité les écarts de score moyens entre candidats noirs et blancs. Les tests de connaissances métier, les mises en situation et les tests cognitifs montrent des écarts importants ; les entretiens structurés, des écarts plus faibles. Combiner les méthodes peut les réduire. Quel que soit l'outil, surveillez les taux de réussite selon les groupes. Aux États-Unis, la règle empirique des quatre cinquièmes des [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) est le point de départ habituel.
+- **L'équité demande ses propres vérifications.** Sackett et al. mettent en regard de la validité les écarts de score moyens entre candidats noirs et blancs. Les tests de connaissances métier, les mises en situation et les tests cognitifs montrent des écarts importants ; les entretiens structurés, des écarts plus faibles. Combiner les méthodes peut les réduire. Quel que soit l'outil, surveillez les taux de réussite selon les groupes. Aux États-Unis, la règle empirique des quatre cinquièmes des [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) est le point de départ habituel, même si l'EEOC s'apprête à abroger les parties interprétatives des Guidelines.
 - **Un score étaye une décision ; il ne la prend pas.** Une personne doit regarder les réponses avant de décider.
 
 ## Un processus de présélection fondé sur la recherche
@@ -85,7 +85,7 @@ testee couvre l'étape 2 : un test chronométré à choix multiples sur les conn
 - **Les mêmes conditions pour tous.** Les mêmes thèmes et le même nombre de questions, et un compte à rebours pour chaque question. Vous pouvez accorder du temps supplémentaire aux candidats qui le demandent.
 - **Chaque candidat reçoit ses propres questions,** une série aléatoire tirée de la banque de chaque thème, pour que les réponses soient plus difficiles à partager.
 - **Des résultats lisibles.** Une fiche d'évaluation par candidat avec chaque réponse et son temps, classée par score, avec des alertes pour les réponses trop rapides, les sorties de la page, les tentatives de copie et les schémas de réponse inhabituels.
-- **Des réponses notées d'après un corrigé** que l'IA rédige ; un échantillon des corrigés de chaque thème est vérifié avant la mise en ligne, les autres dès qu'une question est signalée. Aucune IA ne lit ni ne juge la réponse d'un candidat.
+- **Des réponses notées d'après un corrigé** que l'IA rédige ; un échantillon des corrigés de chaque thème est vérifié avant la mise en ligne, les autres dès qu'une question est signalée. Aucune IA ne juge la réponse d'un candidat.
 
 testee ne mène pas d'entretiens structurés, de mises en situation ni de tests cognitifs. Utilisez-le en complément. Pour en savoir plus sur les types de tests et l'équité, lisez [Tests de recrutement](/guides/pre-employment-testing).
 

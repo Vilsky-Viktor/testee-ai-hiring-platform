@@ -2,14 +2,14 @@
 title: "Entrevistas por voz en 23 idiomas: lo bien que Mira lee y entiende en cada uno"
 seoTitle: "Entrevistas por voz en 23 idiomas: calidad por idioma"
 description: "Lo bien que el modo de voz de testee lee las preguntas y entiende las respuestas en cada uno de sus 23 idiomas, cómo lo medimos y cuándo conviene tocar."
-updated: "2026-11-04"
+updated: "2026-11-07"
 ---
 
 # Entrevistas por voz en 23 idiomas: lo bien que Mira lee y entiende en cada uno
 
 En el modo de voz, Mira, la entrevistadora de IA de testee, lee en voz alta cada pregunta y sus opciones, y el candidato responde hablando: «B», «opción C», «la mediana» o «A y D» en una pregunta con varias respuestas correctas. El modo de voz funciona en los 23 idiomas de testee, pero la tecnología de voz no es igual de buena en todos. Esta guía muestra cómo funciona en cada uno, para que elijas el modo que mejor se adapte a tus candidatos.
 
-Sea cual sea el idioma, los candidatos siempre pueden tocar una opción en lugar de hablar, y la opción que ha entendido Mira aparece en pantalla mientras la repite.
+Una vez empezada la entrevista, los candidatos siempre pueden tocar una opción en lugar de hablar, sea cual sea el idioma, y la opción que ha entendido Mira aparece en pantalla mientras la repite. El tiempo de una pregunta corre mientras Mira la lee.
 
 ## En resumen
 
@@ -53,9 +53,9 @@ Medido el 4 de noviembre de 2026.
 
 - **Hebreo, árabe y persa:** a veces Mira nombra las opciones con las letras del alfabeto del propio idioma (álef, bet, guímel) en lugar de A, B, C y D, como aparecen en pantalla. El orden es el mismo, así que la primera opción sigue siendo la primera, pero los candidatos deben responder con las letras que ven.
 - **Estonio:** un «ei» (no) corto puede sonar como la letra A, así que un candidato que rechaza una opción que Mira repite se registra de vez en cuando como si eligiera la opción A.
-- **Tailandés:** una letra hablada a veces se oye como un número tailandés («ข้อ C» como «ข้อ สี่», opción cuatro), lo que puede registrar la opción equivocada, y las opciones nombradas por su posición a menudo no se entienden. Es más seguro tocar.
+- **Tailandés:** una letra hablada a veces se oye como un número tailandés («ข้อ C» como «ข้อ สี่», opción cuatro), lo que puede registrar la opción equivocada. Es más seguro tocar.
 - **Japonés:** «選択肢C» (opción C) a veces se oyó como otra palabra y se registró como la opción equivocada; una letra sola funciona mejor.
-- **Ruso, ucraniano y polaco:** la «y» entre dos letras («A и C») a veces se oye como una tercera letra, y Mira vuelve a preguntar.
+- **Ruso y polaco:** la «y» entre dos letras («A и C») a veces se oye como una tercera letra, y Mira vuelve a preguntar.
 
 ## Cómo lo medimos
 
@@ -67,6 +67,7 @@ Las cifras son orientativas, no una garantía. Con veinte respuestas por idioma,
 
 - **El modo de voz** encaja en puestos donde hablar es importante, con candidatos que prefieren no escribir ni tocar la pantalla y para necesidades de accesibilidad. Funciona mejor en los idiomas con calidad muy buena y buena.
 - **El modo clic** es el predeterminado y funciona igual en todos los idiomas. Elígelo para puestos críticos en un idioma con calidad aceptable.
+- Empezar una entrevista por voz requiere un micrófono que funcione, así que un candidato que no pueda usarlo necesita el modo clic, configurado antes de que empiece.
 - Puedes fijar el modo de toda la entrevista en su configuración y cambiarlo para un candidato antes de que empiece.
 
-En el modo de voz, la voz de los candidatos solo se convierte en texto para leer sus respuestas; nunca se guarda ni se analiza de ninguna otra forma.
+En el modo de voz, la voz de los candidatos solo se convierte en texto para leer sus respuestas, nunca se analiza de ninguna otra forma y testee nunca la guarda. A OpenAI, que convierte el habla en texto, se le indica que no la guarde, y conserva los datos de la API un máximo de 30 días, solo para detectar abusos.

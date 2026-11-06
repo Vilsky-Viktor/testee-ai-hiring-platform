@@ -2,7 +2,7 @@
 title: "Pruebas de selección de personal: guía práctica para pymes"
 seoTitle: "Pruebas de selección de personal: tipos, equidad y legalidad"
 description: "Qué son las pruebas de selección de personal, sus tipos (técnicas, psicotécnicas, de habilidades), equidad, legalidad y cómo elegir una herramienta."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Pruebas de selección de personal: guía práctica para pymes
@@ -48,11 +48,11 @@ Coloca la prueba justo después de la candidatura (mediante un enlace en la ofer
 
 ## Equidad y ley: lo básico
 
-Esta sección es una visión general a fecha de octubre de 2026, no asesoramiento jurídico. Las normas dependen de tu país, tu sector y cómo uses los resultados. Consúltalo con tu propio asesor legal.
+Esta sección es una visión general a fecha de noviembre de 2026, no asesoramiento jurídico. Las normas dependen de tu país, tu sector y cómo uses los resultados.
 
 ### Estados Unidos: la EEOC y la regla de los cuatro quintos
 
-Los empleadores estadounidenses que usan pruebas para decisiones de contratación están sujetos a las leyes federales contra la discriminación que aplica la EEOC. Las Uniform Guidelines on Employee Selection Procedures incluyen una regla orientativa sobre el impacto adverso: «Una tasa de selección para cualquier raza, sexo o grupo étnico que sea inferior a cuatro quintos (4/5) (u ochenta por ciento) de la tasa del grupo con la tasa más alta será considerada generalmente por las agencias federales encargadas de aplicar la ley como evidencia de impacto adverso» ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+Los empleadores estadounidenses que usan pruebas para decisiones de contratación están sujetos a las leyes federales contra la discriminación que aplica la EEOC. Las Uniform Guidelines on Employee Selection Procedures incluyen una regla orientativa sobre el impacto adverso: «Una tasa de selección para cualquier raza, sexo o grupo étnico que sea inferior a cuatro quintos (4/5) (u ochenta por ciento) de la tasa del grupo con la tasa más alta será considerada generalmente por las agencias federales encargadas de aplicar la ley como evidencia de impacto adverso» ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). La EEOC envió a la Casa Blanca en octubre de 2026 una norma final para derogar las partes interpretativas de estas Guidelines, con enero de 2027 como objetivo. La norma del Title VII sobre impacto adverso se mantiene, y la comprobación de los cuatro quintos sigue siendo una primera prueba útil.
 
 En la práctica: evalúa solo los conocimientos que el puesto necesita, vigila las tasas de aprobados entre grupos, ofrece adaptaciones como tiempo extra y revisa las normas estatales y municipales sobre herramientas automatizadas de contratación. Por ejemplo, la [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) de la ciudad de Nueva York exige una auditoría de sesgos, un resumen público de esa auditoría y un aviso a los candidatos antes de usar una herramienta automatizada de decisión de empleo.
 
@@ -98,9 +98,9 @@ testee convierte una descripción del puesto en una entrevista de habilidades de
 
 - **Cada candidato recibe su propio conjunto aleatorio** del banco de cada tema, con una cuenta atrás controlada por el servidor en cada pregunta. Puedes dar tiempo extra a quien lo pida.
 - **Las fichas de evaluación** muestran cada respuesta, si fue correcta y cuánto tardó, con alertas de respuestas demasiado rápidas, salidas de la página, intentos de copiar y patrones de respuesta inusuales, además de preguntas para hacerle en una entrevista en directo. Las alertas no cambian la puntuación.
-- **Las respuestas se corrigen con una clave de respuestas** que redacta la IA; una muestra de las claves de cada tema se revisa antes de publicarse, y el resto cuando se marca una pregunta. Ninguna IA lee ni juzga la respuesta de un candidato. Un informe en PDF cubre a un candidato o a toda la lista.
+- **Las respuestas se corrigen con una clave de respuestas** que redacta la IA; una muestra de las claves de cada tema se revisa antes de publicarse, y el resto cuando se marca una pregunta. Ninguna IA juzga la respuesta de un candidato. Un informe en PDF cubre a un candidato o a toda la lista.
 - **Funciona con tus herramientas:** los candidatos que mueves a una etapa en Workable, Greenhouse, Teamtailor, Recruitee o Breezy HR reciben la entrevista, y sus resultados vuelven al ATS. Slack te avisa cuando un candidato termina, y la [API](/api-docs) conecta tu propia plataforma. Consulta [Cómo conectar las pruebas de habilidades a tu ATS](/guides/ats-integration-skills-tests).
 
-El precio es por candidato que responde, sin suscripción: $2–5 por candidato según el tamaño de tu recarga (en la moneda local en Canadá, Australia, Israel, Polonia, Suiza, Japón, Corea del Sur, Taiwán, Hong Kong, Tailandia, Singapur, India, el resto de Europa y el Reino Unido), y tus 3 primeros candidatos son gratis. Los datos se alojan en la UE (algunos subencargados están en EE. UU.; consulta la [política de privacidad](/privacy)), y se incluyen el contrato de encargo del tratamiento y las instrucciones para empresas.
+El precio es por candidato que responde, sin suscripción: $2–5 por candidato según el tamaño de tu recarga (en la moneda local en Canadá, Australia, Israel, Polonia, Suiza, Japón, Corea del Sur, Taiwán, Hong Kong, Tailandia, Singapur, India, el resto de la UE, Noruega, Islandia, Liechtenstein y el Reino Unido), y los 3 primeros candidatos de tu primera empresa son gratis. Los datos se alojan en la UE (algunos subencargados están en EE. UU.; consulta la [política de privacidad](/privacy)), y se incluyen el contrato de encargo del tratamiento y las instrucciones para empresas.
 
 testee no es una suite psicométrica, ni una plataforma para escribir y ejecutar código, ni una herramienta de entrevistas en video, y funciona junto a ellas. Para ver cómo se compara con otras herramientas de contratación con IA, lee [Entrevistas con IA](/guides/ai-interviews). Para puestos de ingeniería, consulta [Cómo contratar ingenieros](/guides/hiring-engineers).

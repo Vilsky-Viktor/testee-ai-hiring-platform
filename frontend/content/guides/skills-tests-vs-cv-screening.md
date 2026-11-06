@@ -2,7 +2,7 @@
 title: "Skills tests vs CV screening: what predicts job performance"
 seoTitle: "Skills Tests vs CV Screening: What Predicts Performance"
 description: "What decades of hiring research say about job knowledge tests, work samples, interviews and years of experience, and how to use that in your screening."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Skills tests vs CV screening: what predicts job performance
@@ -64,7 +64,7 @@ The authors also note a second condition: work samples and knowledge tests suit 
 - **These are averages across many jobs and studies.** Your role, your test and your candidates may differ.
 - **Validity estimates are for well-built methods.** A badly written test or a sloppy interview won't reach these numbers.
 - **One method is rarely enough.** Researchers generally advise combining methods, for example a knowledge test early and a structured interview later.
-- **Fairness needs its own checks.** Sackett et al. pair validity with average score differences between Black and White candidates. Job knowledge tests, work samples and cognitive tests show substantial differences; structured interviews show smaller ones. Combining methods can reduce them. Whatever you use, monitor pass rates across groups. In the US, the four-fifths rule of thumb in the [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) is the usual starting point.
+- **Fairness needs its own checks.** Sackett et al. pair validity with average score differences between Black and White candidates. Job knowledge tests, work samples and cognitive tests show substantial differences; structured interviews show smaller ones. Combining methods can reduce them. Whatever you use, monitor pass rates across groups. In the US, the four-fifths rule of thumb in the [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) is the usual starting point, even as the EEOC moves to rescind the Guidelines' interpretive parts.
 - **A score supports a decision; it doesn't make it.** A person should look at the answers before deciding.
 
 ## A screening process that uses the research
@@ -85,7 +85,7 @@ testee covers step 2: a timed multiple-choice job knowledge test, written from y
 - **The same conditions for everyone.** The same topics and number of questions, and a countdown on every question. You can give extra time to candidates who ask.
 - **Each candidate gets their own questions,** a random set from each topic's bank, so answers are harder to share.
 - **Readable results.** A scorecard per candidate with every answer and its timing, ranked by score, with flags for too-fast answers, leaving the page, copy attempts and unusual answer patterns.
-- **Answers marked against an answer key** that AI writes; a sample of each topic's keys is checked before release, the rest when a question is flagged. No AI reads or judges a candidate's answer.
+- **Answers marked against an answer key** that AI writes; a sample of each topic's keys is checked before release, the rest when a question is flagged. No AI judges a candidate's answer.
 
 testee doesn't run structured interviews, work samples or cognitive tests. Use it alongside them. For more on testing types and fairness, read [Pre-employment testing](/guides/pre-employment-testing).
 

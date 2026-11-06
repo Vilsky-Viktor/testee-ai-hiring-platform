@@ -2,7 +2,7 @@
 title: "Zo stel je de tijd van een vaardigheidstest in: timer per vraag, lengte en extra tijd"
 seoTitle: "Tijdslimiet vaardigheidstest: timer per vraag en extra tijd"
 description: "Hoeveel tijd per vraag, hoeveel vragen, welke totale duur werkt en hoe je kandidaten die het nodig hebben op een eerlijke manier extra tijd geeft."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Zo stel je de tijd van een vaardigheidstest in: timer per vraag, lengte en extra tijd
@@ -101,7 +101,7 @@ In testee is een interview een meerkeuze-vaardigheidstest met tijdslimiet, gemaa
 
 ### Tijd per vraag
 
-- **Elke vraag heeft een eigen aftelling,** bijgehouden door de server, dus het tabblad sluiten of de pagina herladen houdt hem niet tegen.
+- **Elke vraag heeft een eigen aftelling,** bijgehouden door de server, dus het tabblad sluiten of de pagina herladen houdt hem niet tegen. In de spraakmodus loopt hij terwijl Mira de vraag voorleest.
 - **De standaard hangt af van het niveau van het interview,** dat bij een gegenereerd interview volgt uit het senioriteitsniveau dat de functieomschrijving vraagt: 60 seconden voor een basis- of gemiddeld interview, 75 seconden voor een moeilijk interview.
 - **Dit is een gemiddelde: elke vraag krijgt daaruit een eigen tijd** wanneer de vragen van een kandidaat worden getrokken, naar hoe lang lezen en antwoorden duurt: de woorden, eventuele code of een voorbeeld (dat langzamer wordt gelezen) en tijd om het antwoord te bedenken. Korte vragen krijgen minder, langere vragen en code krijgen meer, elk tussen de helft en het dubbele van het gemiddelde, en samen komen ze precies uit op het aantal vragen maal het gemiddelde. De afteltimer toont de eigen tijd van elke vraag, en de scorekaart laat zien hoeveel daarvan elk antwoord kostte.
 - **Je kunt het gemiddelde per interview wijzigen,** in de instellingen, van 10 tot 600 seconden. Een wijziging geldt voor kandidaten die daarna beginnen; de tijd van een kandidaat ligt vast zodra die begint.
@@ -115,7 +115,7 @@ In een interview in het Arabisch, Chinees, Japans, Perzisch, Russisch, Thai of O
 ### Aantal vragen
 
 - **Elk onderwerp van een gegenereerd interview heeft een vragenbank van 70 vragen,** en een interview heeft hooguit 10 onderwerpen, die je goedkeurt voordat er ook maar één vraag wordt geschreven.
-- **Elke kandidaat krijgt standaard 10 vragen per onderwerp,** een willekeurige set uit de vragenbank in een eigen volgorde, met hetzelfde aandeel vragen met "Kies alle juiste opties". Je kunt per onderwerp een ander aantal instellen. Zet het op 0 om een onderwerp weg te laten; minstens één onderwerp houdt zijn vragen.
+- **Elke kandidaat krijgt standaard 10 vragen per onderwerp,** een willekeurige set uit de vragenbank in een eigen volgorde, met hetzelfde aandeel vragen met "Kies alle juiste opties". Een interview heeft maximaal 60 vragen, dus bij meer onderwerpen daalt de standaard: 8 per onderwerp bij 7 onderwerpen, 7 bij 8 en 6 bij 9 of 10. Je kunt per onderwerp een ander aantal instellen, binnen die grens. Zet het op 0 om een onderwerp weg te laten; minstens één onderwerp houdt zijn vragen.
 
 ### Totale duur
 

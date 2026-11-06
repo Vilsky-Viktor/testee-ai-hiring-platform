@@ -2,7 +2,7 @@
 title: "How to screen 100 applicants in a day"
 seoTitle: "How to Screen 100 Applicants in a Day: A Practical Plan"
 description: "A step-by-step plan to screen 100 job applicants in one working day, fairly: hard requirements, a short skills test, a ranked list and human review."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # How to screen 100 applicants in a day
@@ -103,7 +103,7 @@ Write down why each person made the list. It takes a minute per candidate and he
 
 ## What it costs
 
-With testee, you pay only for candidates who answer at least one question: $5 each on the $50 top-up, $4 from a $200 top-up, $3 from a $600 top-up and $2 from a $1,000 top-up. For 100 applicants that's $500 at $5 each, or $400 in two $200 top-ups at $4 each, with no subscription. Prices are in US dollars here, and in the local currency in Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, the rest of Europe and the UK (see [pricing](/pricing)); VAT or sales tax is handled at checkout. Generating the test is free, and your first company's first 3 candidates are free.
+With testee, you pay only for candidates who answer at least one question: $5 each on the $50 top-up, $4 from a $200 top-up, $3 from a $600 top-up and $2 from a $1,000 top-up. For 100 applicants that's $400 in one top-up of 100 candidates at $4 each, with no subscription. Prices are in US dollars here, and in the local currency in Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, the rest of the EU, Norway, Iceland, Liechtenstein and the UK (see [pricing](/pricing)); VAT or sales tax is handled at checkout. Generating the test is free, and your first company's first 3 candidates are free.
 
 ## Related reading
 

@@ -2,14 +2,14 @@
 title: "Czy rekrutacja z AI jest legalna w UE? Co musi wiedzieć pracodawca"
 seoTitle: "Czy rekrutacja z AI jest legalna w UE? AI Act i RODO"
 description: "AI w rekrutacji jest w UE legalna, ale z zasadami. Co dla pracodawców oznacza kategoria wysokiego ryzyka w AI Act, kluczowe daty do grudnia 2027 i RODO."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Czy rekrutacja z AI jest legalna w UE? Co musi wiedzieć pracodawca
 
 Co do zasady tak: korzystanie z AI w rekrutacji jest w UE legalne. Jednak większość narzędzi AI, które oceniają kandydatów, należy do kategorii wysokiego ryzyka w akcie w sprawie sztucznej inteligencji (AI Act), co nakłada obowiązki na dostawcę i na Ciebie jako pracodawcę. Niektóre praktyki są całkowicie zakazane. A do danych kandydatów, jak zawsze, stosuje się RODO (GDPR).
 
-Ten poradnik w ogólnym zarysie wyjaśnia zasady, ważne daty, obowiązki pracodawców oraz podejście testee. **To nie jest porada prawna.** Opisuje przepisy według stanu na październik 2026. Przepisy są nowe, wytyczne wciąż są dopracowywane, a prawo krajowe dodaje własne wymogi. Zanim oprzesz się na czymkolwiek z tego tekstu, skonsultuj się z własnym prawnikiem.
+Ten poradnik w ogólnym zarysie wyjaśnia zasady, ważne daty, obowiązki pracodawców oraz podejście testee. **To nie jest porada prawna.** Opisuje przepisy według stanu na listopad 2026. Przepisy są nowe, wytyczne wciąż są dopracowywane, a prawo krajowe dodaje własne wymogi.
 
 ## Krótka odpowiedź
 
@@ -34,7 +34,7 @@ Obejmuje to szeroki zakres narzędzi: filtry CV, systemy rankingowe, rozmowy rek
 
 Zwykle nie. [Art. 6 ust. 3](https://artificialintelligenceact.eu/article/6/) aktu w sprawie AI wyłącza niektóre systemy z załącznika III z kategorii wysokiego ryzyka, na przykład gdy wykonują wąskie zadanie proceduralne albo jedynie przygotowują ocenę dokonywaną przez człowieka. Jednak system z załącznika III, który profiluje osoby, zawsze jest systemem wysokiego ryzyka, a punktowanie lub ranking kandydatów pod kątem ich umiejętności najpewniej zostanie uznane za profilowanie.
 
-Projekt wytycznych Komisji Europejskiej w sprawie klasyfikacji systemów wysokiego ryzyka (opublikowany 19 maja 2026 do konsultacji; stan na październik 2026 – nieostateczny) przyjmuje szerokie podejście. Opisuje wybór kandydatów jako obejmujący „tworzenie krótkiej listy, ocenianie, ranking lub testowanie kandydatów” i, jak podsumowuje [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), traktuje systemy generujące oceny dopasowania jako systemy wysokiego ryzyka „nawet jeśli ostateczną decyzję o zatrudnieniu podejmuje rekruter”.
+Projekt wytycznych Komisji Europejskiej w sprawie klasyfikacji systemów wysokiego ryzyka (opublikowany 19 maja 2026 do konsultacji; stan na listopad 2026 – nieostateczny) przyjmuje szerokie podejście. Opisuje wybór kandydatów jako obejmujący „tworzenie krótkiej listy, ocenianie, ranking lub testowanie kandydatów” i, jak podsumowuje [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), traktuje systemy generujące oceny dopasowania jako systemy wysokiego ryzyka „nawet jeśli ostateczną decyzję o zatrudnieniu podejmuje rekruter”.
 
 Narzędzie, które przypisuje każdemu kandydatowi wynik i miejsce w rankingu, jest więc bardzo prawdopodobnie systemem wysokiego ryzyka, mimo że o zatrudnieniu decydują ludzie.
 
@@ -47,7 +47,7 @@ Narzędzie, które przypisuje każdemu kandydatowi wynik i miejsce w rankingu, j
 | 2 grudnia 2027 | Obowiązki dotyczące systemów wysokiego ryzyka z załącznika III, w tym narzędzi rekrutacyjnych |
 | 2 sierpnia 2028 | Obowiązki dotyczące systemów wysokiego ryzyka w produktach objętych załącznikiem I |
 
-Termin dla systemów wysokiego ryzyka z załącznika III pierwotnie przypadał na 2 sierpnia 2026. Omnibus cyfrowy w zakresie AI (Digital Omnibus on AI; rozporządzenie (UE) 2026/1744, obowiązujące od 27 lipca 2026) przesunął go na 2 grudnia 2027 ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Daty według [AI Act Explorer, art. 113](https://artificialintelligenceact.eu/article/113/), stan na październik 2026.
+Termin dla systemów wysokiego ryzyka z załącznika III pierwotnie przypadał na 2 sierpnia 2026. Omnibus cyfrowy w zakresie AI (Digital Omnibus on AI; rozporządzenie (UE) 2026/1744, obowiązujące od 27 lipca 2026) przesunął go na 2 grudnia 2027 ([Dziennik Urzędowy](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). Zmienił też brzmienie wymogu kompetencji w zakresie AI z art. 4, od 27 lipca 2026: dostawcy i podmioty stosujące muszą teraz podejmować działania wspierające kompetencje w zakresie AI swoich pracowników, bez określonego poziomu do zagwarantowania. Daty według stanu na listopad 2026.
 
 Dodatkowy czas jest na przygotowanie, a nie powodem, by ignorować przepisy. RODO i przepisy antydyskryminacyjne już obowiązują w pełni.
 
@@ -86,7 +86,7 @@ Obowiązki pracodawcy określa art. 26. W skrócie ([art. 26](https://artificial
 - **Poinformuj przedstawicieli pracowników i pracowników, których to dotyczy,** zanim zaczniesz używać systemu wysokiego ryzyka w miejscu pracy.
 - **Poinformuj kandydatów,** że podlegają wykorzystaniu systemu AI wysokiego ryzyka.
 
-Podmioty publiczne i niektóre organizacje prywatne muszą też przeprowadzić ocenę skutków dla praw podstawowych (art. 27). Ponadto już obowiązuje wymóg kompetencji w zakresie AI z art. 4: osoby korzystające z narzędzi AI w Twojej rekrutacji powinny rozumieć, co te narzędzia robią, a czego nie.
+Podmioty publiczne i niektóre organizacje prywatne muszą też przeprowadzić ocenę skutków dla praw podstawowych (art. 27). Ponadto już obowiązuje art. 4: podejmij działania wspierające kompetencje w zakresie AI osób korzystających z narzędzi AI w Twojej rekrutacji, tak by rozumiały, co te narzędzia robią, a czego nie.
 
 ## Podstawy RODO
 
@@ -117,7 +117,7 @@ testee prowadzi rozmowy rekrutacyjne sprawdzające umiejętności w formie test�
 
 Jak to dziś wygląda w produkcie:
 
-- **AI pisze pytania i klucze odpowiedzi; ocenianie odbywa się według stałych reguł.** Żadna AI nie czyta ani nie ocenia odpowiedzi kandydata i nie jest używana analiza wideo, głosu ani twarzy. Jeśli AI później poprawi klucz, poprawka dotyczy kandydatów, którzy zaczną po niej; wcześniejsze wyniki się nie zmieniają.
+- **AI pisze pytania i klucze odpowiedzi; ocenianie odbywa się według stałych reguł.** Żadna AI nie ocenia odpowiedzi kandydata i nie jest używana analiza wideo ani twarzy. W trybie głosowym mowa jest zamieniana na tekst i dopasowywana do odpowiedzi, którą kandydat słyszy i widzi na ekranie: jedna wyraźnie wskazana odpowiedź jest zapisywana od razu, a wybór kilku odpowiedzi jest najpierw potwierdzany. testee nigdy nie przechowuje mowy, a głos nigdy nie jest analizowany. Jeśli AI później poprawi klucz, poprawka dotyczy kandydatów, którzy zaczną po niej; wcześniejsze wyniki się nie zmieniają.
 - **Zatwierdzasz tematy,** zanim powstanie jakiekolwiek pytanie, i widzisz każde pytanie.
 - **Decydują ludzie.** Strona wyników i raporty PDF przypominają Twojemu zespołowi o przejrzeniu wyników; testee nie odrzuca kandydatów ani nie wysyła wiadomości z odmową.
 - **Kandydaci są informowani,** zanim zaczną, że pytania pisze AI, że wyniki przeglądają i decyzje podejmują ludzie w Twojej firmie oraz że mogą poprosić o weryfikację.

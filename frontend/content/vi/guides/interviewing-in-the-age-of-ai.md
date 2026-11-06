@@ -2,7 +2,7 @@
 title: "Phỏng vấn kỹ sư trong thời đại AI: nên kiểm tra gì bây giờ"
 seoTitle: "Phỏng vấn kỹ thuật thời AI: nên đánh giá ứng viên ra sao"
 description: "Trợ lý AI đã là một phần công việc hằng ngày của kỹ sư. Điều đó thay đổi nội dung phỏng vấn, cách công ty thích ứng và vai trò của bài kiểm tra kiến thức."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Phỏng vấn kỹ sư trong thời đại AI: nên kiểm tra gì bây giờ
@@ -25,7 +25,7 @@ Gộp lại, các con số này mô tả một sự dịch chuyển trong chính
 
 Ngành vẫn chưa có một câu trả lời chung. Các cách làm được công bố đi theo những hướng khác nhau:
 
-- **Cho phép hoặc yêu cầu dùng AI trong phỏng vấn.** Tháng 6/2025, Canva cho biết họ giờ kỳ vọng ứng viên backend, machine learning và frontend dùng các công cụ AI như Copilot, Cursor và Claude trong một vòng mới "Lập trình có AI hỗ trợ" (AI-Assisted Coding). Vòng này đánh giá ứng viên có thể "chia nhỏ các yêu cầu phức tạp, mơ hồ", "phát hiện và sửa lỗi trong code do AI tạo ra" và "bảo đảm giải pháp do AI tạo ra đạt chuẩn production" hay không ([Canva Engineering, tháng 6/2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
+- **Cho phép hoặc yêu cầu dùng AI trong phỏng vấn.** Tháng 6/2025, Canva cho biết họ giờ kỳ vọng ứng viên backend, machine learning và frontend dùng các công cụ AI như Copilot, Cursor và Claude trong phỏng vấn kỹ thuật, với một vòng mới "Lập trình có AI hỗ trợ" (AI-Assisted Coding) thay cho vòng kiến thức nền tảng về khoa học máy tính ở các vị trí backend và frontend. Vòng này đánh giá ứng viên có thể "chia nhỏ các yêu cầu phức tạp, mơ hồ", "phát hiện và sửa lỗi trong code do AI tạo ra" và "bảo đảm giải pháp do AI tạo ra đạt chuẩn production" hay không ([Canva Engineering, tháng 6/2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
 - **Thử nghiệm vòng lập trình có AI hỗ trợ.** Tháng 7/2025, Business Today, dẫn nguồn 404 Media, đưa tin Meta đang xây dựng một vòng phỏng vấn lập trình trong đó ứng viên có trợ lý AI. Bài báo trích lời Meta rằng cách này "phản ánh sát hơn môi trường phát triển mà nhân viên tương lai của chúng tôi sẽ làm việc, đồng thời khiến việc gian lận bằng LLM kém hiệu quả hơn" ([Business Today, tháng 7/2025](https://www.businesstoday.in/amp/technology/news/story/meta-to-test-job-applicants-with-ai-assisted-coding-interviews-amid-ai-expansion-plans-487200-2025-07-31)).
 - **Hạn chế công cụ và gặp mặt trực tiếp.** Tháng 3/2025, CNBC đưa tin về một công cụ được tạo ra để giúp ứng viên dùng AI mà không bị phát hiện trong các buổi phỏng vấn lập trình từ xa. Cũng trong bài báo đó, Amazon cho biết ứng viên phải cam kết không dùng công cụ trái phép, CEO của Google gợi ý hiring manager cân nhắc một số buổi phỏng vấn trực tiếp, và Deloitte đã khôi phục phỏng vấn trực tiếp cho chương trình tuyển sinh viên mới tốt nghiệp tại Anh ([CNBC qua NBC New York, tháng 3/2025](https://www.nbcnewyork.com/news/business/money-report/meet-the-21-year-old-helping-coders-use-ai-to-cheat-in-google-and-other-tech-job-interviews/6178911/?amp=1)).
 
@@ -74,7 +74,7 @@ testee rất phù hợp với bước 2. testee biến mô tả công việc c�
 - **Câu hỏi đọc code:** một đoạn code ngắn kèm câu hỏi nó in ra hoặc trả về gì, nó làm gì, vì sao nó lỗi, hoặc thay đổi nào sửa được nó. Đó chính là kỹ năng review mà công việc có AI hỗ trợ phụ thuộc vào.
 - **Đồng hồ cho từng câu hỏi:** mỗi câu có đồng hồ đếm ngược riêng, do máy chủ áp dụng, và mỗi ứng viên nhận bộ câu hỏi ngẫu nhiên của riêng mình. Điều đó khiến việc tra cứu đáp án, kể cả hỏi trợ lý AI, khó hơn. Nó không khiến việc đó trở nên bất khả thi.
 - **Tín hiệu cảnh báo:** bảng điểm đánh dấu các câu trả lời quá nhanh để kịp đọc câu hỏi, số lần ứng viên rời khỏi trang và các lần cố sao chép. Khi ứng viên làm xong, báo cáo của họ còn chỉ ra những mẫu trả lời thường xuất hiện khi ai đó chuyển câu hỏi cho AI rồi chép lại đáp án: mọi câu hỏi tốn gần như cùng một khoảng thời gian bất kể độ dài hay độ khó, hoặc câu khó thì đúng trong khi câu dễ lại sai. Một cảnh báo hay một mẫu trả lời là lý do để xem kỹ hơn, không phải bằng chứng gian lận.
-- **Câu hỏi cho buổi phỏng vấn trực tiếp:** báo cáo gợi ý tối đa 3 câu ứng viên đã trả lời đúng, thuộc những chủ đề họ mạnh nhất, để trao đổi trong buổi phỏng vấn trực tiếp, nơi không AI nào có thể trả lời thay họ.
+- **Câu hỏi cho buổi phỏng vấn trực tiếp:** trang của ứng viên gợi ý tối đa 3 câu họ đã trả lời đúng, thuộc những chủ đề họ mạnh nhất, để trao đổi trong buổi phỏng vấn trực tiếp, nơi không AI nào có thể trả lời thay họ.
 
 Những gì testee không làm: ứng viên không viết, chạy hay debug code trong testee, và testee không quan sát họ dùng trợ lý AI. Phần đó thuộc giai đoạn thực hành, tổ chức nội bộ hoặc trên một nền tảng dành cho lập trình viên, bổ sung cho bài kiểm tra kiến thức. Xem [bài kiểm tra kỹ năng theo vị trí](/tests) để có sẵn bài kiểm tra làm điểm xuất phát, và [phỏng vấn AI](/guides/ai-interviews) để biết testee dùng AI thế nào và để lại những gì cho con người.
 

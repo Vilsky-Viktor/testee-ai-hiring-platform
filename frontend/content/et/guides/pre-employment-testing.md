@@ -2,7 +2,7 @@
 title: "Kandidaatide testimine värbamisel: praktiline juhend väikestele ja keskmise suurusega meeskondadele"
 seoTitle: "Värbamistestid: kandidaatide testimine, reeglid, tööriistad"
 description: "Kandidaatide testimine värbamisel: millised testid on olemas, millal neid kasutada, õigluse ja seaduse põhitõed ning kuidas tööriista valida."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Kandidaatide testimine värbamisel: praktiline juhend väikestele ja keskmise suurusega meeskondadele
@@ -48,11 +48,11 @@ Pane test kohe kandideerimise järele (töökuulutuses oleva lingi kaudu) või p
 
 ## Õiglus ja seadus: põhitõed
 
-See jaotis on üldine ülevaade 2026. aasta oktoobri seisuga, mitte õigusnõuanne. Reeglid sõltuvad sinu riigist, valdkonnast ja sellest, kuidas tulemusi kasutad. Konsulteeri oma juristiga.
+See jaotis on üldine ülevaade 2026. aasta novembri seisuga, mitte õigusnõuanne. Reeglid sõltuvad sinu riigist, valdkonnast ja sellest, kuidas tulemusi kasutad.
 
 ### Ameerika Ühendriigid: EEOC ja nelja viiendiku reegel
 
-USA tööandjad, kes kasutavad värbamisotsustes teste, peavad järgima föderaalseid diskrimineerimisvastaseid seadusi, mille täitmist jälgib EEOC. Uniform Guidelines on Employee Selection Procedures sisaldab ebasoodsa mõju (adverse impact) rusikareeglit: „Mis tahes rassi, soo või etnilise rühma valikumäära, mis on väiksem kui neli viiendikku (4/5) (ehk kaheksakümmend protsenti) kõrgeima määraga rühma omast, käsitavad föderaalsed järelevalveasutused üldjuhul ebasoodsa mõju tõendina“ ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+USA tööandjad, kes kasutavad värbamisotsustes teste, peavad järgima föderaalseid diskrimineerimisvastaseid seadusi, mille täitmist jälgib EEOC. Uniform Guidelines on Employee Selection Procedures sisaldab ebasoodsa mõju (adverse impact) rusikareeglit: „Mis tahes rassi, soo või etnilise rühma valikumäära, mis on väiksem kui neli viiendikku (4/5) (ehk kaheksakümmend protsenti) kõrgeima määraga rühma omast, käsitavad föderaalsed järelevalveasutused üldjuhul ebasoodsa mõju tõendina“ ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). EEOC saatis 2026. aasta oktoobris Valgesse Majja lõpliku määruse nende juhiste tõlgendavate osade kehtetuks tunnistamiseks, sihiks 2027. aasta jaanuar. Title VII ebasoodsa mõju reegel jääb ja neli viiendikku kontroll on endiselt kasulik esimene test.
 
 Praktikas: testi ainult teadmisi, mida töö vajab, jälgi läbimise määrasid rühmade lõikes, paku kohandusi, näiteks lisaaega, ning kontrolli automatiseeritud värbamistööriistade kohta osariigi ja linna reegleid. Näiteks New Yorgi linna [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) nõuab enne automatiseeritud töölevõtmisotsuste tööriista kasutamist kallutatuse auditit, selle avalikku kokkuvõtet ja kandidaatide teavitamist.
 
@@ -98,9 +98,9 @@ testee muudab töökuulutuse ajapiiranguga valikvastustega oskuste intervjuuks.
 
 - **Iga kandidaat saab oma juhusliku komplekti** iga teema pangast ja iga küsimuse juures on serveri jõustatud taimer. Igaühele, kes palub, saad anda lisaaega.
 - **Hindamislehed** näitavad iga vastust, kas see oli õige ja kui kaua see aega võttis, koos märgetega liiga kiirete vastuste, lehelt lahkumise, kopeerimiskatsete ja ebatavaliste vastuste mustrite kohta ning küsimustega, mida reaalajas intervjuul küsida. Märked tulemust ei muuda.
-- **Vastuseid kontrollitakse vastusevõtme järgi**, mille AI kirjutab; igast teemast kontrollitakse enne avaldamist valim võtmeid, ülejäänuid siis, kui küsimusest teatatakse; ükski AI ei loe ega hinda kandidaadi vastust. PDF-aruanne hõlmab ühte kandidaati või kogu nimekirja.
+- **Vastuseid kontrollitakse vastusevõtme järgi**, mille AI kirjutab; igast teemast kontrollitakse enne avaldamist valim võtmeid, ülejäänuid siis, kui küsimusest teatatakse; ükski AI ei hinda kandidaadi vastust. PDF-aruanne hõlmab ühte kandidaati või kogu nimekirja.
 - **Töötab sinu tööriistadega:** kandidaadid, keda viid Workable'is, Greenhouse'is, Teamtailoris, Recruitee's või Breezy HR-is mõnda etappi, saavad intervjuu ja nende tulemused jõuavad tagasi ATS-i. Slack annab teada, kui kandidaat lõpetab, ja [API](/api-docs) ühendab sinu enda platvormi. Vaata [Kuidas ühendada oskustestid oma ATS-süsteemiga](/guides/ats-integration-skills-tests).
 
-Maksad iga vastanud kandidaadi eest, ilma tellimuseta: 2–5 $ kandidaadi kohta sõltuvalt juurdelaadimise suurusest (Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris, Indias, ülejäänud Euroopas ja Ühendkuningriigis kohalikus valuutas), ja sinu esimesed 3 kandidaati on tasuta. Andmeid hoitakse ELis (mõned volitatud alamtöötlejad asuvad USAs; vaata [privaatsuspoliitikat](/privacy)) ning andmetöötlusleping ja juhised ettevõtetele on hinnas.
+Maksad iga vastanud kandidaadi eest, ilma tellimuseta: 2–5 $ kandidaadi kohta sõltuvalt juurdelaadimise suurusest (Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris, Indias, ülejäänud ELis, Norras, Islandil, Liechtensteinis ja Ühendkuningriigis kohalikus valuutas), ja sinu esimese ettevõtte esimesed 3 kandidaati on tasuta. Andmeid hoitakse ELis (mõned volitatud alamtöötlejad asuvad USAs; vaata [privaatsuspoliitikat](/privacy)) ning andmetöötlusleping ja juhised ettevõtetele on hinnas.
 
 testee ei ole psühhomeetriliste testide komplekt, koodi kirjutamise ja käivitamise platvorm ega videointervjuu tööriist ning töötab nende kõrval. Kuidas see võrreldes teiste värbamise AI-tööriistadega välja näeb, loe lehelt [AI-intervjuud](/guides/ai-interviews). Inseneride värbamise kohta vaata [Kuidas värvata insenere](/guides/hiring-engineers).

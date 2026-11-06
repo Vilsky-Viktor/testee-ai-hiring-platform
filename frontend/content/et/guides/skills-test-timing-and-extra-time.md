@@ -2,7 +2,7 @@
 title: "Kuidas ajastada oskustesti: küsimuse taimer, pikkus ja lisaaeg"
 seoTitle: "Oskustesti ajapiirang: taimer küsimuse kohta ja lisaaeg"
 description: "Kui palju aega anda igale küsimusele, mitu küsimust esitada, milline kogupikkus toimib ja kuidas anda õiglaselt lisaaega kandidaatidele, kes seda vajavad."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Kuidas ajastada oskustesti: küsimuse taimer, pikkus ja lisaaeg
@@ -101,7 +101,7 @@ testees on intervjuu ajapiiranguga valikvastustega oskustest, mis luuakse sinu t
 
 ### Aeg küsimuse kohta
 
-- **Igal küsimusel on oma pöördloendus,** mida peab server, nii et vahelehe sulgemine või lehe uuesti laadimine seda ei peata.
+- **Igal küsimusel on oma pöördloendus,** mida peab server, nii et vahelehe sulgemine või lehe uuesti laadimine seda ei peata. Häälerežiimis käib see ka siis, kui Mira küsimust loeb.
 - **Vaikeväärtus sõltub intervjuu tasemest,** mis loodud intervjuu puhul tuleneb töökuulutuses nõutud kogemustasemest: lihtsa või keskmise intervjuu puhul 60 sekundit, raske puhul 75 sekundit.
 - **See on keskmine: iga küsimus saab sellest oma aja,** kui kandidaadi küsimused valitakse, selle järgi, kui kaua selle lugemine ja vastamine võtab: selle sõnad, kood või näide (mida loetakse aeglasemalt) ja aeg vastuse leidmiseks. Lühikesed küsimused saavad vähem, pikemad ja koodiga küsimused rohkem, igaüks pool kuni kaks korda keskmisest, ja kokku annavad need täpselt küsimuste arv korda keskmine. Taimer näitab iga küsimuse enda aega ja tulemuste kaart näitab, kui palju sellest iga vastus võttis.
 - **Saad keskmist muuta intervjuu kaupa** selle seadetes, 10 kuni 600 sekundit. Muudatus kehtib kandidaatidele, kes alustavad pärast seda; kandidaadi aeg lukustub, kui ta alustab.
@@ -115,7 +115,7 @@ Araabia-, hiina-, jaapani-, pärsia-, vene-, tai- või ukrainakeelses intervjuus
 ### Küsimuste arv
 
 - **Loodud intervjuu igal teemal on 70 küsimusega pank** ja intervjuus on kuni 10 teemat, mille sa kinnitad enne, kui ühtegi küsimust kirjutatakse.
-- **Iga kandidaat saab vaikimisi 10 küsimust teema kohta,** juhusliku valiku pangast oma järjekorras, sama osakaaluga „vali kõik sobivad variandid“ küsimusi. Igale teemale saad määrata erineva arvu. Teema väljajätmiseks määra 0; vähemalt ühel teemal jäävad küsimused alles.
+- **Iga kandidaat saab vaikimisi 10 küsimust teema kohta,** juhusliku valiku pangast oma järjekorras, sama osakaaluga „vali kõik sobivad variandid“ küsimusi. Intervjuus on kõige rohkem 60 küsimust, nii et rohkemate teemade puhul vaikearv langeb: 7 teema puhul 8 teema kohta, 8 teema puhul 7 ning 9 või 10 teema puhul 6. Igale teemale saad määrata erineva arvu selle piiri sees. Teema väljajätmiseks määra 0; vähemalt ühel teemal jäävad küsimused alles.
 
 ### Kogupikkus
 

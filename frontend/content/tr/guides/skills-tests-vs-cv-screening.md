@@ -2,7 +2,7 @@
 title: "Beceri testleri ve CV taraması: iş performansını ne öngörür"
 seoTitle: "Beceri Testi mi CV Taraması mı? Performansı Ne Öngörür"
 description: "Onlarca yıllık araştırma mesleki bilgi testleri, iş örnekleri, mülakatlar ve deneyim yılı hakkında ne diyor; bunu aday elemede nasıl kullanırsınız."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Beceri testleri ve CV taraması: iş performansını ne öngörür
@@ -64,7 +64,7 @@ Yazarlar ikinci bir koşula da dikkat çeker: iş örnekleri ve bilgi testleri, 
 - **Bunlar birçok iş ve çalışmanın ortalamalarıdır.** Sizin pozisyonunuz, testiniz ve adaylarınız farklı olabilir.
 - **Geçerlik tahminleri iyi kurgulanmış yöntemler içindir.** Kötü yazılmış bir test veya özensiz bir mülakat bu rakamlara ulaşmaz.
 - **Tek bir yöntem nadiren yeterlidir.** Araştırmacılar genellikle yöntemleri birleştirmeyi önerir; örneğin erken aşamada bir bilgi testi, daha sonra yapılandırılmış bir mülakat.
-- **Adillik kendi kontrollerini gerektirir.** Sackett vd., geçerliği siyahi ve beyaz adaylar arasındaki ortalama puan farklarıyla birlikte ele alır. Mesleki bilgi testleri, iş örnekleri ve bilişsel testler önemli farklar gösterir; yapılandırılmış mülakatlar daha küçük farklar gösterir. Yöntemleri birleştirmek bu farkları azaltabilir. Ne kullanırsanız kullanın, gruplar arasındaki geçme oranlarını izleyin. ABD'de [Tek Tip Yönergeler](https://www.law.cornell.edu/cfr/text/29/1607.4) (Uniform Guidelines) içindeki beşte dört pratik kuralı olağan başlangıç noktasıdır.
+- **Adillik kendi kontrollerini gerektirir.** Sackett vd., geçerliği siyahi ve beyaz adaylar arasındaki ortalama puan farklarıyla birlikte ele alır. Mesleki bilgi testleri, iş örnekleri ve bilişsel testler önemli farklar gösterir; yapılandırılmış mülakatlar daha küçük farklar gösterir. Yöntemleri birleştirmek bu farkları azaltabilir. Ne kullanırsanız kullanın, gruplar arasındaki geçme oranlarını izleyin. ABD'de [Tek Tip Yönergeler](https://www.law.cornell.edu/cfr/text/29/1607.4) (Uniform Guidelines) içindeki beşte dört pratik kuralı, EEOC bu Yönergelerin yorumlayıcı bölümlerini yürürlükten kaldırmaya hazırlanırken bile olağan başlangıç noktasıdır.
 - **Puan bir kararı destekler; kararı vermez.** Karar vermeden önce bir kişinin yanıtlara bakması gerekir.
 
 ## Araştırmadan yararlanan bir eleme süreci
@@ -85,7 +85,7 @@ testee 2. adımı kapsar: iş tanımınızdan yazılmış süreli, çoktan seçm
 - **Herkes için aynı koşullar.** Aynı konular ve soru sayısı, her soruda bir geri sayım. İsteyen adaylara ek süre verebilirsiniz.
 - **Her aday kendi sorularını alır;** her konunun havuzundan rastgele bir set, böylece yanıtları paylaşmak zorlaşır.
 - **Okunabilir sonuçlar.** Her aday için her yanıtı ve süresini gösteren, puana göre sıralanmış bir değerlendirme kartı; çok hızlı yanıtlar, sayfadan ayrılma, kopyalama girişimleri ve olağan dışı yanıt örüntüleri için işaretlerle.
-- **Yanıtlar, yapay zekânın yazdığı bir cevap anahtarına göre değerlendirilir;** her konudaki anahtarlardan bir örneklem yayından önce kontrol edilir, diğerleri bir soru bildirildiğinde; hiçbir yapay zekâ adayın yanıtını okumaz veya yargılamaz.
+- **Yanıtlar, yapay zekânın yazdığı bir cevap anahtarına göre değerlendirilir;** her konudaki anahtarlardan bir örneklem yayından önce kontrol edilir, diğerleri bir soru bildirildiğinde; hiçbir yapay zekâ adayın yanıtını yargılamaz.
 
 testee yapılandırılmış mülakatlar, iş örnekleri veya bilişsel testler yürütmez. Onlarla birlikte kullanın. Test türleri ve adillik hakkında daha fazlası için [İşe alım öncesi testler](/guides/pre-employment-testing) sayfasını okuyun.
 

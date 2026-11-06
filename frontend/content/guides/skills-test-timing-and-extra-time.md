@@ -2,7 +2,7 @@
 title: "How to time a skills test: question timers, length and extra time"
 seoTitle: "Skills Test Time Limits: Per-Question Timers and Extra Time"
 description: "How long to give each question, how many questions to ask, what total length works, and how to give extra time fairly to candidates who need it."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # How to time a skills test: question timers, length and extra time
@@ -101,7 +101,7 @@ In testee, an interview is a timed multiple-choice skills test created from your
 
 ### Time per question
 
-- **Every question has its own countdown,** kept by the server, so closing the tab or reloading the page doesn't stop it.
+- **Every question has its own countdown,** kept by the server, so closing the tab or reloading the page doesn't stop it. In voice mode, it runs while Mira reads the question.
 - **The default depends on the interview's level,** which for a generated interview comes from the seniority the job description asks for: 60 seconds for a basic or medium interview, 75 seconds for a hard one.
 - **This is an average: each question gets its own time** from it when a candidate's questions are drawn, by how long it takes to read and answer: its words, any code or example (read more slowly), and time to work out the answer. Short questions get less, longer ones and code get more, each between half and twice the average, and together they add up to exactly the number of questions times the average. The countdown shows each question's own time, and the scorecard shows how long each answer took out of it.
 - **You can change the average per interview,** in its settings, from 10 to 600 seconds. A change applies to candidates who start after it; a candidate's time is fixed when they start.
@@ -115,7 +115,7 @@ In an interview in Arabic, Chinese, Japanese, Persian, Russian, Thai or Ukrainia
 ### Number of questions
 
 - **Each topic of a generated interview has a bank of 70 questions,** and an interview has at most 10 topics, which you approve before any question is written.
-- **Each candidate gets 10 questions per topic by default,** a random set from the bank in their own order, with the same share of "select all that apply" questions. You can set a different number for each topic. Set it to 0 to leave a topic out; at least one topic keeps its questions.
+- **Each candidate gets 10 questions per topic by default,** a random set from the bank in their own order, with the same share of "select all that apply" questions. An interview has at most 60 questions, so with more topics the default drops: 8 each with 7 topics, 7 with 8, and 6 with 9 or 10. You can set a different number for each topic, within that limit. Set it to 0 to leave a topic out; at least one topic keeps its questions.
 
 ### Total length
 

@@ -2,14 +2,14 @@
 title: "Ist KI im Recruiting im Vereinigten Königreich erlaubt? Was Arbeitgeber wissen müssen"
 seoTitle: "KI im Recruiting im UK erlaubt? Equality Act und UK-DSGVO"
 description: "KI im Recruiting ist im UK erlaubt, mit Regeln: Equality Act, neue UK-DSGVO-Regeln zu automatisierten Entscheidungen ab Februar 2026, ICO-Befunde."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Ist KI im Recruiting im Vereinigten Königreich erlaubt? Was Arbeitgeber wissen müssen
 
 Grundsätzlich ja: KI in der Personalauswahl einzusetzen ist im Vereinigten Königreich erlaubt. Das Vereinigte Königreich hat kein einheitliches KI-Gesetz wie die KI-Verordnung (AI Act) der EU. Stattdessen gelten der Equality Act 2010 und die UK-DSGVO (UK GDPR) für KI-Tools genauso wie für jeden anderen Test, und seit dem 5. Februar 2026 enthält die UK-DSGVO neue Regeln für Entscheidungen, die ausschließlich automatisiert getroffen werden.
 
-Dieser Leitfaden erklärt die Regeln im Überblick, was Arbeitgeber tun müssen und wie testee damit umgeht. **Er ist keine Rechtsberatung.** Er gibt den Stand der Regeln im Oktober 2026 wieder; einige davon sind neu, und die Leitlinien der Aufsichtsbehörde dazu werden noch überarbeitet.
+Dieser Leitfaden erklärt die Regeln im Überblick, was Arbeitgeber tun müssen und wie testee damit umgeht. **Er ist keine Rechtsberatung.** Er gibt den Stand der Regeln im November 2026 wieder; einige davon sind neu, und die Leitlinien der Aufsichtsbehörde dazu werden noch überarbeitet.
 
 ## Die Kurzantwort
 
@@ -83,6 +83,8 @@ Seine sieben zentralen Empfehlungen, für Anbieter und Recruiter gleichermaßen:
 
 Das ICO empfiehlt außerdem bedeutsame menschliche Prüfungen der KI-Ergebnisse, mit Aufzeichnungen über die durchgeführten Prüfungen.
 
+Im März 2026 veröffentlichte das ICO einen zweiten Bericht, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), aus seiner Arbeit mit mehr als 30 Arbeitgebern. Demnach behandeln viele ihre Tools als Entscheidungshilfe, obwohl kaum echte menschliche Beteiligung stattfindet, Schutzmaßnahmen zum Anfechten einer Entscheidung werden uneinheitlich angewendet, Kandidaten erfahren oft nicht klar, wie Automatisierung eingesetzt wird, und DSFAs fehlen oft oder sind schwach. Seine aktualisierten Leitlinien zu automatisierten Entscheidungen waren bis zum 29. Mai 2026 in der Konsultation und im November 2026 noch nicht endgültig, und ein gesetzlicher Verhaltenskodex zu KI und automatisierten Entscheidungen ist in Arbeit. Seit dem 30. September 2026 ist die Aufsichtsbehörde die Information Commission, die weiterhin als ICO auftritt.
+
 ## Übermittlungen in die USA
 
 Wenn ein Anbieter Daten britischer Kandidaten in die Vereinigten Staaten übermittelt, kann die britisch-amerikanische Datenbrücke (UK–US data bridge) das abdecken: [The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents), in Kraft seit dem 12. Oktober 2023, für US-Unternehmen, die unter der UK-Erweiterung des EU-US-Datenschutzrahmens (Data Privacy Framework) zertifiziert sind. Andere brauchen Garantien wie Standardvertragsklauseln mit dem britischen Zusatz (UK addendum).
@@ -105,7 +107,7 @@ testee führt zeitlich begrenzte Multiple-Choice-Interviews zu Fachkenntnissen d
 
 So sieht das heute im Produkt aus:
 
-- **KI schreibt die Fragen und ihre Lösungsschlüssel; die Bewertung folgt festen Regeln.** Keine KI liest oder beurteilt die Antwort eines Kandidaten, und es wird keine Video- oder Gesichtsanalyse eingesetzt. Im Sprachmodus wird Sprache in Text umgewandelt und einer Antwortoption zugeordnet, die dem Kandidaten genannt und auf dem Bildschirm angezeigt wird: Eine eindeutig genannte einzelne Option wird sofort übernommen, eine Auswahl mehrerer Optionen wird zuerst bestätigt. Die Sprache wird nie gespeichert, und die Stimme wird nie analysiert.
+- **KI schreibt die Fragen und ihre Lösungsschlüssel; die Bewertung folgt festen Regeln.** Keine KI beurteilt die Antwort eines Kandidaten, und es wird keine Video- oder Gesichtsanalyse eingesetzt. Im Sprachmodus wird Sprache in Text umgewandelt und einer Antwortoption zugeordnet, die dem Kandidaten genannt und auf dem Bildschirm angezeigt wird: Eine eindeutig genannte einzelne Option wird sofort übernommen, eine Auswahl mehrerer Optionen wird zuerst bestätigt. testee speichert Sprache nie, und die Stimme wird nie analysiert.
 - **Du gibst die Themen frei,** bevor eine Frage geschrieben wird, und du wählst die Bestehensgrenze.
 - **Menschen entscheiden.** Die Ergebnisseite und die PDF-Berichte erinnern dein Team daran, die Ergebnisse zu prüfen; testee lehnt keine Kandidaten ab und verschickt keine Absagen.
 - **Kandidaten werden informiert,** bevor sie beginnen: dass die Fragen von KI geschrieben sind, dass Menschen in deinem Unternehmen die Ergebnisse prüfen und entscheiden und dass sie eine Überprüfung verlangen können.
@@ -128,4 +130,5 @@ So sieht das heute im Produkt aus:
 - Data (Use and Access) Act 2025, [Section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80), mit der die Artikel 22A bis 22D in die UK-DSGVO eingefügt werden ([Artikel 22C](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, Regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [November 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), März 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

@@ -2,7 +2,7 @@
 title: "Paano sumulat ng job description na madaling gawan ng test"
 seoTitle: "Paano Sumulat ng Job Description na Bagay sa Skills Test"
 description: "Ang kailangan ng job description para tama ang i-check ng skills test mula rito: kongkretong skills at tools, level, araw-araw na trabaho, ang aalisin."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Paano sumulat ng job description na madaling gawan ng test
@@ -15,7 +15,7 @@ Tungkol ang gabay na ito sa ikalawang trabaho: ang pagsulat ng job description n
 
 Kapaki-pakinabang ang knowledge test kapag tine-test nito ang talagang kailangan ng trabaho. Sa hiring research, kabilang ang job knowledge tests sa mas mahuhusay na predictor ng job performance sa karaniwan, pero para sa mga test na ginawa para mismo sa trabahong iyon ang tantiyang ito; mas mahina ang prediksyon ng mga knowledge test na walang kinalaman sa trabaho (tingnan ang [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)).
 
-Ganoon din ang sinasabi ng mga patakaran sa empleyo sa US mula sa legal na panig. Inaasahan ng Uniform Guidelines on Employee Selection Procedures na ang test na sinusuportahan ng content nito ay nakabatay sa isang job analysis, na nakatuon sa "mga work behavior at ang mga task na kaugnay ng mga ito" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Sa praktika, para sa karamihan ng team, ang job description ang analysis na iyon na nakasulat. At sa ilalim ng Americans with Disabilities Act, ang nakasulat na job description na inihanda bago mag-advertise o mag-interview ay itinuturing na ebidensya ng mga essential function ng trabaho ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+Ganoon din ang sinasabi ng mga patakaran sa empleyo sa US mula sa legal na panig. Inaasahan ng Uniform Guidelines on Employee Selection Procedures na ang test na sinusuportahan ng content nito ay nakabatay sa isang job analysis, na nakatuon sa "mga work behavior at ang mga task na kaugnay ng mga ito" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Sa praktika, para sa karamihan ng team, ang job description ang analysis na iyon na nakasulat. (Noong Oktubre 2026, kumilos ang EEOC para bawiin ang mga interpretive na bahagi ng Guidelines na ito, na target ang Enero 2027. Hinihiling pa rin ng Title VII na job-related ang isang test na may adverse impact.) At sa ilalim ng Americans with Disabilities Act, ang nakasulat na job description na inihanda bago mag-advertise o mag-interview ay itinuturing na ebidensya ng mga essential function ng trabaho ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 Kaya sulit ang dagdag na kalahating oras sa job description. Anuman ang nakasulat dito, iyon ang itatanong ng test.
 
@@ -48,7 +48,7 @@ Magaspang na pamalit sa level ang taon ng karanasan, at mahina pa: sa research s
 
 Ang mga duty ang pinakakapaki-pakinabang na linya para sa test. Ang "Inihahanda ang buwanang VAT return" o "Tina-triage ang mga pumapasok na bug at nire-reproduce ang mga ito" ay nagsasabi sa gumagawa ng test kung aling kaalaman ang ginagamit at sa anong sitwasyon. Isulat ang mga duty bilang verb at object, gaya ng paglalarawan mo ng trabaho sa isang bagong katrabaho.
 
-Kung hindi ka sigurado kung ano ang karaniwang ginagawa ng isang role, nakalista sa [O*NET OnLine](https://www.onetonline.org/) ang mga karaniwang task, technology at kaalaman para sa daan-daang trabaho. Gamitin ito bilang checklist, saka itira lang ang talagang ginagawa ng role mo.
+Kung hindi ka sigurado kung ano ang karaniwang ginagawa ng isang role, nakalista sa [O*NET OnLine](https://www.onetonline.org/) ang mga karaniwang task, technology at kaalaman para sa humigit-kumulang 1,000 trabaho. Gamitin ito bilang checklist, saka itira lang ang talagang ginagawa ng role mo.
 
 ### 4. Malinaw na hati sa pagitan ng must-have at nice to have
 

@@ -2,7 +2,7 @@
 title: "Pre-employment testing: a practical guide for small and mid-size teams"
 seoTitle: "Pre-Employment Testing: Types, Fairness and Tools"
 description: "What pre-employment tests are, which types exist, when to use them, the fairness and legal basics, and how to choose a tool. Plain guide for hiring teams."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Pre-employment testing: a practical guide for small and mid-size teams
@@ -48,11 +48,11 @@ Put the test right after applying (through a link in the job ad) or after a quic
 
 ## Fairness and the law: the basics
 
-This section is a high-level overview as of October 2026, not legal advice. Rules depend on your country, your industry and how you use the results. Check with your own counsel.
+This section is a high-level overview as of November 2026, not legal advice. Rules depend on your country, your industry and how you use the results.
 
 ### United States: EEOC and the four-fifths rule
 
-US employers who use tests for hiring decisions fall under the federal anti-discrimination laws that the EEOC enforces. The Uniform Guidelines on Employee Selection Procedures include a rule of thumb for adverse impact: "A selection rate for any race, sex, or ethnic group which is less than four-fifths (4/5) (or eighty percent) of the rate for the group with the highest rate will generally be regarded by the Federal enforcement agencies as evidence of adverse impact" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+US employers who use tests for hiring decisions fall under the federal anti-discrimination laws that the EEOC enforces. The Uniform Guidelines on Employee Selection Procedures include a rule of thumb for adverse impact: "A selection rate for any race, sex, or ethnic group which is less than four-fifths (4/5) (or eighty percent) of the rate for the group with the highest rate will generally be regarded by the Federal enforcement agencies as evidence of adverse impact" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). The EEOC sent the White House a final rule in October 2026 to rescind the interpretive parts of these Guidelines, aiming for January 2027. Title VII's rule on adverse impact stays, and the four-fifths check remains a useful first test.
 
 In practice: test only knowledge the job needs, watch pass rates across groups, offer accommodations such as extra time, and check state and city rules for automated hiring tools. For example, New York City's [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) requires a bias audit, a public summary of it and notice to candidates before an automated employment decision tool is used.
 
@@ -98,9 +98,9 @@ testee turns a job description into a timed multiple-choice skills interview.
 
 - **Each candidate gets their own random set** from each topic's bank, with a server-enforced countdown on every question. You can give extra time to anyone who asks.
 - **Scorecards** show every answer, whether it was right and how long it took, with flags for too-fast answers, leaving the page, copy attempts and unusual answer patterns, plus questions to ask about in a live interview. Flags don't change the score.
-- **Answers are marked against an answer key** that AI writes; a sample of each topic's keys is checked before release, the rest when a question is flagged. No AI reads or judges a candidate's answer. A PDF report covers one candidate or the whole list.
+- **Answers are marked against an answer key** that AI writes; a sample of each topic's keys is checked before release, the rest when a question is flagged. No AI judges a candidate's answer. A PDF report covers one candidate or the whole list.
 - **Works with your tools:** candidates you move to a stage in Workable, Greenhouse, Teamtailor, Recruitee or Breezy HR get the interview, and their results go back to the ATS. Slack hears when a candidate finishes, and the [API](/api-docs) connects your own platform. See [how to connect skills tests to your ATS](/guides/ats-integration-skills-tests).
 
-Pricing is per candidate who answers, with no subscription: $2–5 per candidate depending on your top-up size (in the local currency in Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, the rest of Europe and the UK), and your first 3 candidates are free. Data is hosted in the EU (some sub-processors are in the US; see the [privacy policy](/privacy)), and the data processing agreement and instructions for companies are included.
+Pricing is per candidate who answers, with no subscription: $2–5 per candidate depending on your top-up size (in the local currency in Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, the rest of the EU, Norway, Iceland, Liechtenstein and the UK), and your first company's first 3 candidates are free. Data is hosted in the EU (some sub-processors are in the US; see the [privacy policy](/privacy)), and the data processing agreement and instructions for companies are included.
 
 testee is not a psychometric suite, a platform for writing and running code, or a video interview tool, and it works alongside them. For how it compares with other AI hiring tools, read [AI interviews](/guides/ai-interviews). For engineering roles, see [How to hire engineers](/guides/hiring-engineers).

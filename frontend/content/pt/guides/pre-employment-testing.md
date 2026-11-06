@@ -2,7 +2,7 @@
 title: "Teste de seleção: guia prático para pequenas e médias empresas"
 seoTitle: "Testes de recrutamento e seleção: tipos e ferramentas"
 description: "O que são testes de recrutamento e seleção, quais tipos existem, quando usar, imparcialidade e legislação, e como escolher uma ferramenta para o seu RH."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Teste de seleção: guia prático para pequenas e médias empresas
@@ -48,11 +48,11 @@ Coloque o teste logo após a candidatura (por meio de um link no anúncio da vag
 
 ## Imparcialidade e legislação: o básico
 
-Esta seção é uma visão geral de outubro de 2026, não aconselhamento jurídico. As regras dependem do seu país, do seu setor e de como você usa os resultados. Consulte o seu próprio advogado.
+Esta seção é uma visão geral de novembro de 2026, não aconselhamento jurídico. As regras dependem do seu país, do seu setor e de como você usa os resultados.
 
 ### Estados Unidos: a EEOC e a regra dos quatro quintos
 
-Empregadores americanos que usam testes em decisões de contratação estão sujeitos às leis federais antidiscriminação aplicadas pela EEOC. As Uniform Guidelines on Employee Selection Procedures incluem uma regra prática para impacto adverso: "Uma taxa de seleção para qualquer raça, sexo ou grupo étnico que seja inferior a quatro quintos (4/5) (ou oitenta por cento) da taxa do grupo com a maior taxa será geralmente considerada pelas agências federais de fiscalização como evidência de impacto adverso" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+Empregadores americanos que usam testes em decisões de contratação estão sujeitos às leis federais antidiscriminação aplicadas pela EEOC. As Uniform Guidelines on Employee Selection Procedures incluem uma regra prática para impacto adverso: "Uma taxa de seleção para qualquer raça, sexo ou grupo étnico que seja inferior a quatro quintos (4/5) (ou oitenta por cento) da taxa do grupo com a maior taxa será geralmente considerada pelas agências federais de fiscalização como evidência de impacto adverso" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). A EEOC enviou à Casa Branca em outubro de 2026 uma regra final para revogar as partes interpretativas dessas Guidelines, com meta em janeiro de 2027. A regra do Title VII sobre impacto adverso continua, e a checagem dos quatro quintos segue sendo um primeiro teste útil.
 
 Na prática: teste apenas o conhecimento que a vaga exige, acompanhe as taxas de aprovação entre grupos, ofereça adaptações como tempo extra e verifique as regras estaduais e municipais sobre ferramentas automatizadas de contratação. Por exemplo, a [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) da cidade de Nova York exige uma auditoria de viés, um resumo público dessa auditoria e um aviso aos candidatos antes do uso de uma ferramenta automatizada de decisão de contratação.
 
@@ -98,9 +98,9 @@ A testee transforma uma descrição da vaga em uma entrevista de habilidades de 
 
 - **Cada candidato recebe seu próprio conjunto aleatório** do banco de cada tópico, com contagem regressiva controlada pelo servidor em cada pergunta. Você pode dar tempo extra a quem pedir.
 - **As fichas de avaliação** mostram cada resposta, se estava certa e quanto tempo levou, com alertas para respostas rápidas demais, saídas da página, tentativas de cópia e padrões de resposta incomuns, além de perguntas para explorar em uma entrevista ao vivo. Os alertas não mudam a pontuação.
-- **As respostas são corrigidas com base em um gabarito** que a IA escreve; uma amostra dos gabaritos de cada tópico é verificada antes da liberação, e os demais quando uma pergunta é sinalizada. Nenhuma IA lê ou julga a resposta de um candidato. Um relatório em PDF cobre um candidato ou a lista inteira.
+- **As respostas são corrigidas com base em um gabarito** que a IA escreve; uma amostra dos gabaritos de cada tópico é verificada antes da liberação, e os demais quando uma pergunta é sinalizada. Nenhuma IA julga a resposta de um candidato. Um relatório em PDF cobre um candidato ou a lista inteira.
 - **Funciona com as suas ferramentas:** os candidatos que você move para uma etapa no Workable, Greenhouse, Teamtailor, Recruitee ou Breezy HR recebem a entrevista, e os resultados deles voltam para o ATS. O Slack avisa quando um candidato termina, e a [API](/api-docs) conecta a sua própria plataforma. Veja [Como integrar testes de habilidades ao seu ATS](/guides/ats-integration-skills-tests).
 
-A cobrança é por candidato que responde, sem assinatura: $2–5 por candidato, dependendo do tamanho da recarga (na moeda local no Canadá, na Austrália, em Israel, na Polônia, na Suíça, no Japão, na Coreia do Sul, em Taiwan, em Hong Kong, na Tailândia, em Singapura, na Índia, no restante da Europa e no Reino Unido), e os seus 3 primeiros candidatos são gratuitos. Os dados ficam hospedados na UE (alguns suboperadores estão nos EUA; veja a [política de privacidade](/privacy)), e o acordo de tratamento de dados e as instruções para empresas estão incluídos.
+A cobrança é por candidato que responde, sem assinatura: $2–5 por candidato, dependendo do tamanho da recarga (na moeda local no Canadá, na Austrália, em Israel, na Polônia, na Suíça, no Japão, na Coreia do Sul, em Taiwan, em Hong Kong, na Tailândia, em Singapura, na Índia, no restante da UE, na Noruega, na Islândia, em Liechtenstein e no Reino Unido), e os 3 primeiros candidatos da sua primeira empresa são gratuitos. Os dados ficam hospedados na UE (alguns suboperadores estão nos EUA; veja a [política de privacidade](/privacy)), e o acordo de tratamento de dados e as instruções para empresas estão incluídos.
 
 A testee não é uma suíte psicométrica, nem uma plataforma para escrever e executar código, nem uma ferramenta de entrevista em vídeo, e funciona junto com elas. Para ver como ela se compara a outras ferramentas de contratação com IA, leia [Entrevistas com IA](/guides/ai-interviews). Para vagas de engenharia, veja [Como contratar engenheiros](/guides/hiring-engineers).

@@ -2,14 +2,14 @@
 title: "Wawancara AI: apa itu dan cara memakainya secara adil"
 seoTitle: "AI dalam Rekrutmen: Wawancara AI, Risiko, dan Cara Adil"
 description: "AI dalam rekrutmen: fungsi AI interview, chatbot, analisis video, dan tes buatan AI, risikonya, serta cara kerja tes pilihan ganda berwaktu testee."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Wawancara AI: apa itu dan cara memakainya secara adil
 
 "Wawancara AI" punya arti yang sangat berbeda tergantung vendornya. Ada alat yang bercakap-cakap dengan kandidat. Ada yang merekam video lalu menilainya. Ada yang memakai AI hanya untuk menulis soal, lalu menilai jawaban dengan aturan tetap. Bagi tim rekrutmen, perbedaan ini penting: perbedaan itu mengubah apa yang bisa kamu jelaskan kepada kandidat, apa yang bisa salah, dan apa yang dituntut hukum darimu.
 
-Halaman ini memilah jenis-jenis utama alat wawancara AI, menjelaskan pendekatan testee, dan membahas dasar-dasar kepatuhannya.
+Panduan ini memilah jenis-jenis utama alat wawancara AI, menjelaskan pendekatan testee, dan membahas dasar-dasar kepatuhannya.
 
 ## Tiga jenis alat wawancara AI
 
@@ -38,13 +38,13 @@ testee memakai AI untuk menulis wawancara keterampilan dari deskripsi pekerjaanm
 1. **AI membaca deskripsi pekerjaanmu** dan mengambil apa yang wajib diketahui kandidat: persyaratan, level, dan sekumpulan topik beserta subtopiknya.
 2. **Kamu meninjau topiknya.** Pertahankan, hapus centang, ganti nama, atau ubah topik, atau beri tahu AI dengan teks biasa apa yang perlu diubah. Tidak ada soal yang ditulis sebelum kamu menyetujuinya.
 3. **AI menulis soalnya.** Setiap topik mendapat bank soal pilihan ganda dengan empat opsi per soal: sebagian besar punya satu opsi benar dan tiga opsi salah yang masuk akal, dan sekitar 1 dari 10 soal berjenis "pilih semua yang benar", dengan 2 atau 3 opsi benar. Untuk topik teknis, banyak soal menampilkan contoh kode singkat dan menanyakan apa hasilnya, apa fungsinya, kenapa gagal, atau perubahan mana yang memperbaikinya. Kamu bisa membuka setiap soal beserta opsinya, dan membuat ulang soal yang tidak kamu sukai.
-4. **Kandidat menjawab soal berbatas waktu.** Setiap kandidat mendapat set acaknya sendiri dari bank soal tiap topik, dengan urutannya sendiri, dan hitung mundur di setiap soal.
-5. **Jawaban dinilai berdasarkan kunci jawaban.** AI menulis kunci jawaban; sebagian kunci di tiap topik diperiksa sebelum dirilis, sisanya diperiksa saat soalnya ditandai. Penilaiannya sendiri mengikuti aturan tetap, dan tidak ada AI yang membaca atau menilai jawaban kandidat. Kalau sebuah kunci jawaban dikoreksi belakangan, koreksinya berlaku untuk kandidat yang mulai setelahnya; hasil sebelumnya tidak berubah. Kecepatan, meninggalkan halaman, dan percobaan menyalin ditampilkan kepadamu sebagai sinyal; semua itu tidak mengubah skor.
+4. **Kandidat menjawab soal berbatas waktu.** Setiap kandidat mendapat set acaknya sendiri dari bank soal tiap topik, dengan urutannya sendiri, dan hitung mundur di setiap soal. Secara default kandidat mengetuk jawabannya; dalam mode suara, Mira, pewawancara AI testee, membacakan setiap soal dan kandidat mengucapkan atau mengetuk jawaban.
+5. **Jawaban dinilai berdasarkan kunci jawaban.** AI menulis kunci jawaban; sebagian kunci di tiap topik diperiksa sebelum dirilis, sisanya diperiksa saat soalnya ditandai. Penilaiannya sendiri mengikuti aturan tetap, dan tidak ada AI yang menilai jawaban kandidat. Dalam mode suara, AI hanya mengubah ucapan menjadi teks dan mencocokkannya dengan sebuah pilihan. Kalau sebuah kunci jawaban dikoreksi belakangan, koreksinya berlaku untuk kandidat yang mulai setelahnya; hasil sebelumnya tidak berubah. Kecepatan, meninggalkan halaman, dan percobaan menyalin ditampilkan kepadamu sebagai sinyal; semua itu tidak mengubah skor.
 6. **Manusia yang memutuskan.** Kamu melihat daftar peringkat dan scorecard per kandidat, lengkap dengan setiap jawaban dan waktunya. Orang di perusahaanmu meninjau hasilnya dan membuat keputusan rekrutmen.
 
 Yang tidak dilakukan testee:
 
-- Tidak ada analisis video, suara, atau wajah.
+- Tidak ada analisis video atau wajah, dan tidak ada analisis suara kandidat. Mode suara hanya mengubah ucapan menjadi teks untuk menemukan pilihan yang mereka sebut.
 - Tidak ada penyimpulan kepribadian atau emosi.
 - Tidak ada penolakan otomatis. testee tidak menolak kandidat atau mengirim pesan penolakan; timmu yang memutuskan.
 - Datamu tidak dipakai untuk melatih model AI. Penyedia AI testee, OpenAI, tidak melatih modelnya dengan data API berdasarkan ketentuannya.
@@ -63,7 +63,7 @@ Kamu juga bisa melihat pratinjau wawancaramu sendiri sebagai kandidat sebelum me
 
 **Semua orang menghadapi kondisi yang serupa.** Topik yang sama, jumlah soal per topik yang sama, rata-rata waktu per soal yang sama, dan total waktu yang sama. Soal tiap kandidat diambil secara acak, jadi tingkat kesulitan setnya sedikit berbeda. Kandidat yang butuh waktu lebih bisa mendapatkannya: kamu bisa menambah waktu per kandidat.
 
-**Lebih sedikit sinyal yang tidak relevan.** Jawaban pilihan ganda tidak membawa aksen, wajah, latar belakang, atau gaya menulis, jadi skornya tidak bergantung pada penampilan atau suara seseorang. Ini tidak menghapus kemungkinan bias: tes pengetahuan bisa menunjukkan perbedaan skor antarkelompok, dan tes dalam bahasa kedua kandidat bisa menghambatnya. Pantau hasil antarkelompok.
+**Lebih sedikit sinyal yang tidak relevan.** Jawaban pilihan ganda tidak membawa aksen, wajah, latar belakang, atau gaya menulis, jadi skornya tidak bergantung pada penampilan atau suara seseorang. Dalam mode suara, seberapa baik ucapan tertangkap berbeda menurut bahasa dan aksen, jadi kandidat bisa mengetuk sebagai gantinya ([Wawancara suara dalam 23 bahasa](/guides/voice-interview-languages)). Semua itu tidak menghapus kemungkinan bias: tes pengetahuan bisa menunjukkan perbedaan skor antarkelompok, dan tes dalam bahasa kedua kandidat bisa menghambatnya. Pantau hasil antarkelompok.
 
 **Membagikan jawaban lebih sulit.** Dengan set soal acak untuk setiap kandidat dan timer di setiap soal, membagikan jawaban atau mencari jawaban butuh usaha lebih. Tanda peringatan membantumu memutuskan di mana perlu melihat lebih teliti; tanda itu bukan bukti kecurangan.
 
@@ -75,7 +75,7 @@ Pahami batasannya dengan jelas. Tes pilihan ganda memeriksa pengetahuan. Soal me
 
 ## Dasar kepatuhan untuk alat wawancara AI
 
-Ini adalah ringkasan per Oktober 2026, bukan nasihat hukum. Konsultasikan dengan penasihat hukummu sendiri.
+Ini adalah ringkasan per November 2026, bukan nasihat hukum.
 
 ### AI Act UE
 
@@ -94,7 +94,7 @@ Hasil wawancara adalah data pribadi, baik menurut GDPR UE maupun UK GDPR. Harapk
 
 ### Amerika Serikat
 
-Alat AI yang dipakai dalam rekrutmen tunduk pada aturan antidiskriminasi yang sama seperti metode seleksi lainnya. Pantau tingkat seleksi antarkelompok (patokan empat per lima dalam [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)), sediakan akomodasi, dan periksa aturan negara bagian dan lokal. Misalnya, [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) Kota New York mewajibkan audit bias dalam satu tahun sebelum memakai alat keputusan ketenagakerjaan otomatis, ringkasan publik atas audit itu, dan pemberitahuan kepada kandidat. Lihat [Tes seleksi karyawan](/guides/pre-employment-testing) untuk gambaran umumnya.
+Alat AI yang dipakai dalam rekrutmen tunduk pada aturan antidiskriminasi yang sama seperti metode seleksi lainnya. Pantau tingkat seleksi antarkelompok (patokan empat per lima dalam [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4), yang sedang diupayakan EEOC untuk dicabut, sementara aturan dampak merugikan dalam Title VII tetap berlaku), sediakan akomodasi, dan periksa aturan negara bagian dan lokal. Misalnya, [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) Kota New York mewajibkan audit bias dalam satu tahun sebelum memakai alat keputusan ketenagakerjaan otomatis, ringkasan publik atas audit itu, dan pemberitahuan kepada kandidat. Lihat [Tes seleksi karyawan](/guides/pre-employment-testing) untuk gambaran umumnya.
 
 ## Cara menilai alat wawancara AI
 

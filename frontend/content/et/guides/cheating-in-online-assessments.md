@@ -2,7 +2,7 @@
 title: "Spikerdamine veebitestides ja mis selle vastu aitab"
 seoTitle: "Spikerdamine kandidaatide veebitestides: mis aitab"
 description: "Kuidas kandidaadid veebitestides spikerdavad, miks ekraanikaitse ja kaamerajärelevalve ei aita ning mis toimib: lühike ajapiirang, märked, lisaküsimused."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Spikerdamine veebitestides ja mis selle vastu aitab
@@ -32,10 +32,10 @@ Teadlased on püüdnud teha ekraani silmale loetavaks, kuid kaamerale mitte, jag
 
 Kaks kergemat ideed ei toimi paremini:
 
-- **AI-le suunatud teated** („AI-assistendid ei tohi sellele küsimusele vastata“) on lihtne välja lõigata või eirata ning mudeleid on õpetatud käsitlema piltidel olevat teksti sisuna, mitte juhistena.
+- **AI-le suunatud teated** („AI-assistendid ei tohi sellele küsimusele vastata“) on lihtne välja lõigata ja mudelid ei järgi neid usaldusväärselt.
 - **Vesimärgid** võivad aidata jälgida, kes küsimuse lekitas, kuid ei takista kellelgi sellele vastamast.
 
-testees proovisime mõlemat oma küsimustel: AI-mudelid vastasid vesimärgi või teatega pildistatud küsimustele täpselt samamoodi nagu ilma selleta. Seega loobusime ekraani kaitsmisest.
+Seega ei püüa testee ekraani kaitsta.
 
 ## Mis toimib paremini
 
@@ -71,7 +71,7 @@ Nii muutub test ka selleks, mis ta olema peab: sõelaks, mis otsustab, kellega v
 
 Ütle kandidaatidele ette, mis on lubatud: ei AI-tööriistu, ei teisi inimesi, ei märkmeid või mis iganes sinu reeglid on. Seejärel palu neil seda enne alustamist kinnitada.
 
-Ole realistlik selles, mida lubadus teeb. Uuringud moraalsete meeldetuletuste ja allkirjastatud kinnituste kohta pole hästi vastu pidanud: „kümne käsu“ katse suur kordusuuring ei leidnud spikerdamisele mingit mõju ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)) ja tuntud „allkiri ülal“ uuringu autorid ei leidnud seda korrates hiljem mingit mõju ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)). Ülikoolide uuringud seovad aususkoodeksid, laiema akadeemilise aususe kultuuri osana, väiksema spikerdamisega ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). Lubaduse peamine väärtus on selgus: keegi ei saa öelda, et ta reegleid ei teadnud, ja sul on kirje, et ta nõustus nendega.
+Ole realistlik selles, mida lubadus teeb. Uuringud moraalsete meeldetuletuste ja allkirjastatud kinnituste kohta pole hästi vastu pidanud: „kümne käsu“ katse suur kordusuuring ei leidnud spikerdamisele mingit mõju ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)) ja tuntud „allkiri ülal“ uuringu autorid ei leidnud seda korrates hiljem mingit mõju ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)); algne artikkel võeti 2021. aastal andmetega seotud kahtluste tõttu tagasi. Ülikoolide uuringud seovad aususkoodeksid, laiema akadeemilise aususe kultuuri osana, väiksema spikerdamisega ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). Lubaduse peamine väärtus on selgus: keegi ei saa öelda, et ta reegleid ei teadnud, ja sul on kirje, et ta nõustus nendega.
 
 ## Järelevalve piirid: õiglus ja seadus
 
@@ -83,9 +83,9 @@ Veebikaameraga järelevalve, ekraani salvestamine ja ruumi skaneerimine lubavad 
 
 Seadus lisab piiranguid, eriti Euroopas:
 
-- **GDPR.** Kandidaadi video on isikuandmed ja tema näo analüüs võib olla biomeetriliste andmete töötlemine, mis on eriliselt kaitstud ([artikkel 9](https://gdpr-info.eu/art-9-gdpr/)). 2021. aastal trahvis Itaalia andmekaitseasutus Bocconi ülikooli kaugeksamite järelevalve eest, leides muu hulgas, et näoanalüüs oli biomeetriliste andmete töötlemine ilma kehtiva õigusliku aluseta, et nõusolek ei olnud ülikooli ja üliõpilaste ebavõrdse jõuvahekorra tõttu vabatahtlik ja et üliõpilasi ei teavitatud sellest korralikult ([Garante, 16. septembri 2021. aasta otsus nr 317](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). Tööandja ja kandidaadi jõuvahekord on pigem veelgi ebavõrdsem.
+- **GDPR.** Kandidaadi video on isikuandmed ja tema näo analüüs võib olla biomeetriliste andmete töötlemine, mis on eriliselt kaitstud ([artikkel 9](https://gdpr-info.eu/art-9-gdpr/)). 2021. aastal trahvis Itaalia andmekaitseasutus Bocconi ülikooli kaugeksamite järelevalve eest, leides muu hulgas, et näoanalüüs oli biomeetriliste andmete töötlemine ilma kehtiva õigusliku aluseta, et nõusolek ei olnud ülikooli ja üliõpilaste ebavõrdse jõuvahekorra tõttu vabatahtlik ja et üliõpilasi ei teavitatud sellest korralikult ([Garante, 16. septembri 2021. aasta otsus nr 317](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). Pärast edasikaebamisi on trahv 150 000 €, varasema 200 000 € asemel. Tööandja ja kandidaadi jõuvahekord on pigem veelgi ebavõrdsem.
 - **ELi tehisintellekti määrus (AI Act).** Alates 2. veebruarist 2025 on keelatud AI, mis tuletab inimeste emotsioone töökohal, kitsaste meditsiiniliste ja ohutusega seotud eranditega ([artikli 5 lõike 1 punkt f](https://artificialintelligenceact.eu/article/5/)), ning Euroopa Komisjoni suunised loevad „töökoha“ alla ka värbamise ([Komisjoni suunised keelatud AI-tavade kohta](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)). Järelevalve, mis hindab videost „kahtlast“ käitumist, jõuab selle piiri lähedale. Kandidaatide hindamiseks kasutatav AI on ka väga tõenäoliselt suure riskiga, koos kohustustega nagu inimjärelevalve. [Kas AI kasutamine värbamisel on ELis seaduslik?](/guides/is-ai-hiring-legal-in-the-eu) selgitab reegleid ja nende tähtaegu.
-- **Ameerika Ühendriigid.** Föderaalkohus leidis 2022. aastal, et avaliku ülikooli tehtud veebikaamera-skaneerimine üliõpilase magamistoast enne veebieksamit rikkus USA põhiseaduse neljandat parandust ([Ogletree v. Cleveland State University, Higher Ed Dive'i vahendusel](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). Erasektori tööandjaid neljas parandus ei seo, kuid osariikide biomeetriaseadused, näiteks Illinoisi Biometric Information Privacy Act, seavad näoandmetele oma reeglid.
+- **Ameerika Ühendriigid.** Föderaalkohtunik leidis 2022. aastal, et avaliku ülikooli tehtud veebikaamera-skaneerimine üliõpilase magamistoast enne veebieksamit rikkus USA põhiseaduse neljandat parandust ([Ogletree v. Cleveland State University, Higher Ed Dive'i vahendusel](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). Apellatsioonikohus lõpetas asja 2023. aastal pärast üliõpilase surma küsimust otsustamata ([Bloomberg Law](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death)), nii et see jääb avatuks. Erasektori tööandjaid neljas parandus ei seo, kuid osariikide biomeetriaseadused, näiteks Illinoisi Biometric Information Privacy Act, seavad näoandmetele oma reeglid.
 
 **See osa on praktiline juhis, mitte õigusnõuanne.** Kontrolli oma kohustusi seal, kus sa värbad.
 
@@ -110,7 +110,7 @@ testee viib läbi ajapiiranguga valikvastustega oskusteste, mis koostatakse tö�
 - **Vastuste mustrid, kui kandidaat on lõpetanud.** Kandidaadi aruanne toob välja vastamisajad, mis jäävad igal küsimusel umbes samaks olenemata selle pikkusest ja raskusest, ning rasked küsimused õigesti, kui lihtsad olid valesti, koos numbritega, millel see põhineb („10 raskest küsimusest 9 õigesti, 8 lihtsast 4 valesti“). Teine vajab piisavalt teiste kandidaatide vastuseid, et teada, kui raske iga küsimus on. Mõlemad lävendid seati simuleeritud kandidaatidega testil nii, et märgitakse kõige rohkem 1% ausatest; need tabasid umbes kolmandiku neist, kes edastasid iga küsimuse AI-le. Aruanne märgib, et sellistel mustritel võib olla süütu seletus.
 - **Küsimused reaalajas intervjuuks.** Iga lõpetanud kandidaadi lehel soovitatakse kuni 3 küsimust, millele ta vastas õigesti, tema tugevaimatest teemadest, et neid järgmises vestluses arutada, alustades mustri taga olevatest rasketest küsimustest, kui muster on olemas.
 - **Kandidaadid lubavad** enne alustamist vastata ise, ilma AI-tööriistade ja teiste inimesteta, ning hindamisleht näitab, millal nad seda tegid.
-- **Ei kaamerat, mikrofoni ega ekraanisalvestust.** testee kasutab ainult seda, mida testileht ise näeb: vastuseid, aegu, lehelt lahkumisi ja kopeerimiskatseid.
+- **Ei kaamerat ega ekraanisalvestust.** Mikrofoni kasutatakse ainult häälerežiimis, et muuta kandidaadi suuline vastus tekstiks. Muidu kasutab testee ainult seda, mida testileht ise näeb: vastuseid, aegu, lehelt lahkumisi ja kopeerimiskatseid.
 - **Otsustavad inimesed.** Miski ei lükka kandidaati automaatselt tagasi.
 
 ## Loe ka
@@ -129,10 +129,10 @@ testee viib läbi ajapiiranguga valikvastustega oskusteste, mis koostatakse tö�
 - van der Linden, W. J., & Guo, F. (2008). Bayesian procedures for identifying aberrant response-time patterns in adaptive testing. *Psychometrika, 73*(3), 365–384. [doi:10.1007/s11336-007-9046-8](https://doi.org/10.1007/s11336-007-9046-8)
 - Meijer, R. R., & Sijtsma, K. (2001). Methodology review: Evaluating person fit. *Applied Psychological Measurement, 25*(2), 107–135. [doi:10.1177/01466210122031957](https://doi.org/10.1177/01466210122031957)
 - Verschuere, B., et al. (2018). Registered replication report on Mazar, Amir, and Ariely (2008). *Advances in Methods and Practices in Psychological Science, 1*(3), 299–317. [doi:10.1177/2515245918781032](https://doi.org/10.1177/2515245918781032)
-- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107. [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
+- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107 (parandatud 2026). [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
 - McCabe, D. L., Treviño, L. K., & Butterfield, K. D. (2001). Cheating in academic institutions: A decade of research. *Ethics & Behavior, 11*(3), 219–232. [doi:10.1207/S15327019EB1103_2](https://doi.org/10.1207/S15327019EB1103_2)
 - Yoder-Himes, D. R., et al. (2022). Racial, skin tone, and sex disparities in automated proctoring software. *Frontiers in Education, 7*. [doi:10.3389/feduc.2022.881449](https://doi.org/10.3389/feduc.2022.881449)
 - Garante per la protezione dei dati personali, [16. septembri 2021. aasta otsus nr 317](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988) (Università Bocconi).
-- Regulation (EU) 2024/1689 (AI Act), [artikkel 5](https://artificialintelligenceact.eu/article/5/); Euroopa Komisjon, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), 4. veebruar 2025.
+- Regulation (EU) 2024/1689 (AI Act), [artikkel 5](https://artificialintelligenceact.eu/article/5/); Euroopa Komisjon, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), avaldatud 4. veebruaril 2025, vastu võetud 29. juulil 2025.
 - GDPR, [artikkel 9](https://gdpr-info.eu/art-9-gdpr/) ja [artikkel 22](https://gdpr-info.eu/art-22-gdpr/).
-- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), august 2022 (Ogletree v. Cleveland State University, N.D. Ohio).
+- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), august 2022 (Ogletree v. Cleveland State University, N.D. Ohio); Bloomberg Law, [Cleveland State dodges room-scan order after plaintiff's death](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death), detsember 2023.

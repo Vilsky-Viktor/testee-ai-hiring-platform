@@ -2,7 +2,7 @@
 title: "Cara menulis deskripsi pekerjaan yang bisa diuji dengan baik"
 seoTitle: "Cara Menulis Deskripsi Pekerjaan untuk Tes Seleksi Karyawan"
 description: "Isi deskripsi pekerjaan agar tes keterampilan darinya menguji hal yang tepat: skill dan tool konkret, level, pekerjaan harian, dan yang perlu dibuang."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Cara menulis deskripsi pekerjaan yang bisa diuji dengan baik
@@ -15,7 +15,7 @@ Panduan ini membahas tugas kedua: menulis deskripsi yang bisa dijadikan dasar te
 
 Tes pengetahuan berguna kalau ia menguji apa yang benar-benar dibutuhkan pekerjaan. Riset rekrutmen menempatkan tes pengetahuan kerja di antara prediktor kinerja kerja yang lebih baik secara rata-rata, tetapi perkiraan itu berlaku untuk tes yang dibuat khusus untuk pekerjaan tersebut; tes pengetahuan yang tidak terkait pekerjaan memprediksi lebih lemah (lihat [Tes keterampilan vs penyaringan CV](/guides/skills-tests-vs-cv-screening)).
 
-Aturan ketenagakerjaan AS mengatakan hal yang sama dari sisi hukum. Uniform Guidelines on Employee Selection Procedures (pedoman seragam tentang prosedur seleksi karyawan) mengharapkan tes yang didukung oleh validitas isi berpijak pada analisis jabatan, yaitu analisis yang berfokus pada "perilaku kerja dan tugas-tugas yang terkait dengannya" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Dalam praktiknya, bagi kebanyakan tim, deskripsi pekerjaan adalah analisis itu dalam bentuk tertulis. Dan menurut Americans with Disabilities Act (ADA), deskripsi tertulis yang disiapkan sebelum lowongan diiklankan atau wawancara dimulai dianggap sebagai bukti fungsi esensial suatu pekerjaan ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+Aturan ketenagakerjaan AS mengatakan hal yang sama dari sisi hukum. Uniform Guidelines on Employee Selection Procedures (pedoman seragam tentang prosedur seleksi karyawan) mengharapkan tes yang didukung oleh validitas isi berpijak pada analisis jabatan, yaitu analisis yang berfokus pada "perilaku kerja dan tugas-tugas yang terkait dengannya" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Dalam praktiknya, bagi kebanyakan tim, deskripsi pekerjaan adalah analisis itu dalam bentuk tertulis. (Pada Oktober 2026, EEOC bergerak mencabut bagian interpretatif Guidelines ini, dengan target Januari 2027. Title VII tetap mewajibkan tes yang berdampak merugikan untuk berkaitan dengan pekerjaan.) Dan menurut Americans with Disabilities Act (ADA), deskripsi tertulis yang disiapkan sebelum lowongan diiklankan atau wawancara dimulai dianggap sebagai bukti fungsi esensial suatu pekerjaan ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 Jadi deskripsi pekerjaan layak diberi setengah jam ekstra. Apa pun isinya, itulah yang akan ditanyakan tes.
 
@@ -48,7 +48,7 @@ Lama pengalaman hanyalah pengganti kasar untuk level, dan pengganti yang lemah: 
 
 Uraian tugas adalah baris yang paling berguna untuk tes. "Menyiapkan SPT Masa PPN bulanan" atau "memilah bug yang masuk dan mereproduksinya" memberi tahu penulis soal pengetahuan apa yang dipakai dan dalam situasi apa. Tulis tugas sebagai kata kerja dan objek, seperti saat kamu menjelaskan pekerjaan kepada rekan kerja baru.
 
-Kalau kamu tidak yakin apa yang biasanya dikerjakan suatu posisi, [O*NET OnLine](https://www.onetonline.org/) mencantumkan tugas, teknologi, dan pengetahuan yang umum untuk ratusan jenis pekerjaan. Pakai sebagai checklist, lalu simpan hanya yang benar-benar dikerjakan posisimu.
+Kalau kamu tidak yakin apa yang biasanya dikerjakan suatu posisi, [O*NET OnLine](https://www.onetonline.org/) mencantumkan tugas, teknologi, dan pengetahuan yang umum untuk sekitar 1.000 jenis pekerjaan. Pakai sebagai checklist, lalu simpan hanya yang benar-benar dikerjakan posisimu.
 
 ### 4. Garis yang jelas antara syarat wajib dan nilai tambah
 

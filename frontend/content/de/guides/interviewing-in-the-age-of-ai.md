@@ -2,7 +2,7 @@
 title: "Entwickler interviewen im KI-Zeitalter: was du jetzt testen solltest"
 seoTitle: "Technische Interviews im KI-Zeitalter: was jetzt zählt"
 description: "KI-Assistenten gehören zum Entwickleralltag. Was das für technische Interviews bedeutet, wie Unternehmen reagieren und wo Wissenstests ihren Platz haben."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Entwickler interviewen im KI-Zeitalter: was du jetzt testen solltest
@@ -25,7 +25,7 @@ Zusammengenommen beschreiben diese Zahlen eine Verschiebung in der Arbeit selbst
 
 Eine einheitliche Antwort der Branche gibt es noch nicht. Die berichteten Ansätze gehen in verschiedene Richtungen (Zitate aus dem Englischen übersetzt):
 
-- **KI im Interview erlauben oder verlangen.** Im Juni 2025 erklärte Canva, dass es von Kandidaten für Backend, Machine Learning und Frontend nun erwartet, in einer neuen Runde namens „AI-Assisted Coding“ KI-Tools wie Copilot, Cursor und Claude zu nutzen. Bewertet wird, ob Kandidaten „komplexe, mehrdeutige Anforderungen aufschlüsseln“, „Probleme in KI-generiertem Code erkennen und beheben“ und „sicherstellen können, dass KI-generierte Lösungen Produktionsstandards erfüllen“ ([Canva Engineering, Juni 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
+- **KI im Interview erlauben oder verlangen.** Im Juni 2025 erklärte Canva, dass es von Kandidaten für Backend, Machine Learning und Frontend nun erwartet, in technischen Interviews KI-Tools wie Copilot, Cursor und Claude zu nutzen; eine neue Runde namens „AI-Assisted Coding“ ersetzt bei Backend- und Frontend-Stellen die Runde zu Informatikgrundlagen. Bewertet wird, ob Kandidaten „komplexe, mehrdeutige Anforderungen aufschlüsseln“, „Probleme in KI-generiertem Code erkennen und beheben“ und „sicherstellen können, dass KI-generierte Lösungen Produktionsstandards erfüllen“ ([Canva Engineering, Juni 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
 - **KI-gestützte Coding-Runden erproben.** Im Juli 2025 berichtete Business Today unter Berufung auf 404 Media, dass Meta ein Coding-Interview entwickle, in dem Kandidaten einen KI-Assistenten haben. Zitiert wurde Meta mit der Aussage, dies sei „repräsentativer für die Entwicklerumgebung, in der unsere künftigen Mitarbeitenden arbeiten werden, und macht zudem Schummeln mit LLMs weniger wirksam“ ([Business Today, Juli 2025](https://www.businesstoday.in/amp/technology/news/story/meta-to-test-job-applicants-with-ai-assisted-coding-interviews-amid-ai-expansion-plans-487200-2025-07-31)).
 - **Tools einschränken und sich persönlich treffen.** Im März 2025 berichtete CNBC über ein Tool, das Kandidaten helfen soll, KI in Remote-Coding-Interviews unbemerkt zu nutzen. Im selben Bericht erklärte Amazon, dass Kandidaten bestätigen müssen, keine unerlaubten Tools zu verwenden, der CEO von Google regte an, dass Hiring Manager einige Interviews vor Ort in Betracht ziehen, und Deloitte hatte für sein britisches Absolventenprogramm wieder Präsenzinterviews eingeführt ([CNBC via NBC New York, März 2025](https://www.nbcnewyork.com/news/business/money-report/meet-the-21-year-old-helping-coders-use-ai-to-cheat-in-google-and-other-tech-job-interviews/6178911/?amp=1)).
 
@@ -74,7 +74,7 @@ testee eignet sich gut für Schritt 2. Es macht aus deiner Stellenbeschreibung e
 - **Fragen zum Lesen von Code:** ein kurzes Stück Code mit Fragen dazu, was es ausgibt oder zurückgibt, was es tut, warum es fehlschlägt oder welche Änderung es behebt. Das ist dieselbe Review-Fähigkeit, von der KI-gestützte Arbeit abhängt.
 - **Ein Timer bei jeder Frage:** Jede Frage hat ihren eigenen Countdown, serverseitig erzwungen, und jeder Kandidat erhält einen eigenen zufälligen Fragensatz. Das erschwert das Nachschlagen von Antworten, auch das Fragen eines KI-Assistenten. Unmöglich macht es das nicht.
 - **Hinweise auf Auffälligkeiten:** Auswertungen markieren Antworten, die zu schnell kamen, um die Frage gelesen zu haben, Momente, in denen der Kandidat die Seite verlassen hat, und Kopierversuche. Sobald ein Kandidat fertig ist, weist sein Bericht außerdem auf Antwortmuster hin, die das Weitergeben von Fragen an eine KI oft hinterlässt: ungefähr gleich viel Zeit bei jeder Frage, egal wie lang oder schwierig sie ist, oder schwere Fragen richtig, während leichte falsch waren. Ein Hinweis oder ein Muster ist ein Grund, genauer hinzusehen, kein Beweis für Schummeln.
-- **Fragen für das Live-Gespräch:** Der Bericht schlägt bis zu 3 Fragen vor, die der Kandidat richtig beantwortet hat, aus seinen stärksten Themen, um sie in einem Live-Gespräch durchzugehen, wo keine KI für ihn antworten kann.
+- **Fragen für das Live-Gespräch:** Die Seite des Kandidaten schlägt bis zu 3 Fragen vor, die er richtig beantwortet hat, aus seinen stärksten Themen, um sie in einem Live-Gespräch durchzugehen, wo keine KI für ihn antworten kann.
 
 Was testee nicht tut: Kandidaten schreiben, starten oder debuggen in testee keinen Code, und testee beobachtet nicht, wie sie einen KI-Assistenten nutzen. Das gehört in die praktische Phase, intern oder auf einer Entwicklerplattform durchgeführt, die den Wissenstest ergänzt. Unter [Fachtests nach Stelle](/tests) findest du fertige Tests als Ausgangspunkt, und unter [KI-Interviews](/guides/ai-interviews), wie testee KI nutzt und was es Menschen überlässt.
 

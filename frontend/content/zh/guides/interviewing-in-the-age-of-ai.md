@@ -2,7 +2,7 @@
 title: "AI 时代如何面试工程师：现在应该考察什么"
 seoTitle: "AI 时代的技术面试：现在应该考察什么"
 description: "AI 编程助手已成为工程师日常工作的一部分。这如何改变技术面试应考察的内容、企业如何应对，以及知识笔试在流程中的位置。"
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # AI 时代如何面试工程师：现在应该考察什么
@@ -25,7 +25,7 @@ AI 助手如今已是许多开发者日常工作的一部分。在 2025 年 Stac
 
 整个行业目前还没有统一的答案。公开报道的做法方向各异：
 
-- **允许甚至要求在面试中使用 AI。** 2025 年 6 月，Canva 表示，现在希望后端、机器学习和前端岗位的候选人在一个新的“AI 辅助编程”(AI-Assisted Coding) 环节中使用 Copilot、Cursor 和 Claude 等 AI 工具。它评估候选人能否“拆解复杂、模糊的需求”“发现并修复 AI 生成代码中的问题”，以及“确保 AI 生成的方案达到生产标准”（[Canva Engineering，2025 年 6 月](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)）。
+- **允许甚至要求在面试中使用 AI。** 2025 年 6 月，Canva 表示，现在希望后端、机器学习和前端岗位的候选人在技术面试中使用 Copilot、Cursor 和 Claude 等 AI 工具，新的“AI 辅助编程”(AI-Assisted Coding) 环节取代了后端和前端岗位的计算机科学基础环节。它评估候选人能否“拆解复杂、模糊的需求”“发现并修复 AI 生成代码中的问题”，以及“确保 AI 生成的方案达到生产标准”（[Canva Engineering，2025 年 6 月](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)）。
 - **试行 AI 辅助编程面试。** 2025 年 7 月，Business Today 援引 404 Media 报道称，Meta 正在打造一种候选人可以使用 AI 助手的编程面试，并引用 Meta 的说法：这“更能代表我们未来员工将要工作的开发环境，也会让基于大语言模型的作弊不那么有效”（[Business Today，2025 年 7 月](https://www.businesstoday.in/amp/technology/news/story/meta-to-test-job-applicants-with-ai-assisted-coding-interviews-amid-ai-expansion-plans-487200-2025-07-31)）。
 - **限制工具并改为线下面试。** 2025 年 3 月，CNBC 报道了一款帮助候选人在远程编程面试中悄悄使用 AI 的工具。在同一篇报道中，Amazon 表示候选人必须确认不会使用未经授权的工具，Google 的 CEO 建议招聘经理考虑安排一些线下面试，Deloitte 则已在其英国应届生项目中恢复了线下面试（[CNBC，经 NBC New York 转载，2025 年 3 月](https://www.nbcnewyork.com/news/business/money-report/meet-the-21-year-old-helping-coders-use-ai-to-cheat-in-google-and-other-tech-job-interviews/6178911/?amp=1)）。
 
@@ -74,7 +74,7 @@ testee 非常适合第 2 步。它会把你的职位描述变成一场限时选�
 - **代码阅读题：** 给出一小段代码，问它会打印或返回什么、它做了什么、为什么出错，或者哪处修改能修复它。这正是 AI 辅助工作所依赖的审查能力。
 - **每道题都有计时：** 每道题有自己的倒计时，由服务器强制执行，每位候选人拿到自己的一组随机题目。这会让查答案（包括询问 AI 助手）变得更难，但并非不可能。
 - **诚信信号：** 评分卡会标记快到不可能读完题目的回答、候选人离开页面的次数以及尝试复制的情况。候选人完成后，报告还会指出把题目交给 AI、再照抄其答案时常留下的作答模式：无论题目长短或难易，每道题用时都差不多；或者难题答对，简单题却答错。标记或模式只是值得仔细查看的理由，不能证明作弊。
-- **供真人面试追问的题目：** 报告会从候选人最擅长的主题中，推荐最多 3 道其答对的题目，供你在真人面试中深入讨论，在那里没有 AI 能替候选人作答。
+- **供真人面试追问的题目：** 候选人的页面会从其最擅长的主题中，推荐最多 3 道其答对的题目，供你在真人面试中深入讨论，在那里没有 AI 能替候选人作答。
 
 testee 不做的事：候选人不会在 testee 中编写、运行或调试代码，testee 也不会观察他们如何使用 AI 助手。这些属于动手练习阶段，可以在内部进行，也可以使用开发者测评平台，与知识笔试形成互补。可以从[按岗位分类的技能测试](/tests)中挑选现成的测试作为起点；关于 testee 如何使用 AI、哪些事情留给人来做，请参阅 [AI 面试](/guides/ai-interviews)。
 

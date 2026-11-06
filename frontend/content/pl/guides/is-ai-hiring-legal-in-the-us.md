@@ -2,14 +2,14 @@
 title: "Czy rekrutacja z AI jest legalna w USA? Co musi wiedzieć pracodawca"
 seoTitle: "Rekrutacja z AI w USA: prawo federalne i stanowe"
 description: "AI w rekrutacji jest w USA legalna, ale z zasadami: federalne prawo o dyskryminacji i usprawnieniach, audyt w Nowym Jorku, Illinois, Kolorado, Kalifornia."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Czy rekrutacja z AI jest legalna w USA? Co musi wiedzieć pracodawca
 
-Co do zasady tak: korzystanie z AI w rekrutacji jest w USA legalne. Nie ma federalnej ustawy o AI w rekrutacji. Zamiast tego do narzędzi AI, tak jak do każdego testu, stosuje się federalne prawo antydyskryminacyjne, a kilka miejsc dodaje własne przepisy: Nowy Jork, Illinois, Kolorado i Kalifornia.
+Co do zasady tak: korzystanie z AI w rekrutacji jest w USA legalne. Nie ma federalnej ustawy o AI w rekrutacji. Zamiast tego do narzędzi AI, tak jak do każdego testu, stosuje się federalne prawo antydyskryminacyjne, a kilka miejsc dodaje własne przepisy: Nowy Jork, Illinois, Kolorado, Kalifornia, New Jersey i Teksas. Rozporządzenie wykonawcze prezydenta z grudnia 2025 powołało w Departamencie Sprawiedliwości zespół do podważania stanowych ustaw o AI ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), ale takie rozporządzenie ich nie uchyla: obowiązują, dopóki Kongres lub sąd nie postanowi inaczej.
 
-Ten poradnik w ogólnym zarysie wyjaśnia zasady, ważne daty, obowiązki pracodawców oraz podejście testee. **To nie jest porada prawna.** Opisuje przepisy według stanu na październik 2026; kilka z nich jest nowych lub wciąż dopracowywanych.
+Ten poradnik w ogólnym zarysie wyjaśnia zasady, ważne daty, obowiązki pracodawców oraz podejście testee. **To nie jest porada prawna.** Opisuje przepisy według stanu na listopad 2026; kilka z nich jest nowych lub wciąż dopracowywanych.
 
 ## Krótka odpowiedź
 
@@ -20,7 +20,7 @@ Ten poradnik w ogólnym zarysie wyjaśnia zasady, ważne daty, obowiązki pracod
 | Czy muszę informować kandydatów? | W Nowym Jorku i Illinois tak; w Kolorado i Kalifornii od 1 stycznia 2027 |
 | Czy muszę dawać dodatkowy czas? | Kandydatom z niepełnosprawnościami, którzy go potrzebują: to racjonalne usprawnienie |
 | Jak długo muszę przechowywać dokumentację? | Cztery lata w Kalifornii, trzy w Kolorado |
-| Kto podejmuje decyzję o zatrudnieniu? | Człowiek. Każdy z tych zbiorów przepisów zakłada weryfikację przez człowieka |
+| Kto podejmuje decyzję o zatrudnieniu? | Człowiek. Kolorado i Kalifornia przewidują weryfikację przez człowieka i wszędzie jest to najbezpieczniejsze podejście |
 
 ## Prawo federalne
 
@@ -32,7 +32,9 @@ Title VII ustawy o prawach obywatelskich z 1964 roku (Civil Rights Act) zakazuje
 
 Na przykład jeśli Twój test zalicza 60% jednej grupy i 42% innej, stosunek wynosi 42 ÷ 60 = 0,70, poniżej 0,80: to sygnał ostrzegawczy, który warto zbadać. Nie jest to dowód dyskryminacji, a przy małych liczbach stosunek może mocno się wahać.
 
-Wytyczne techniczne EEOC z 2023 roku dotyczące AI w selekcji zostały wycofane w styczniu 2025. Jednolite wytyczne są rozporządzeniem, a nie wytycznymi, i nadal obowiązują. Odpowiedzialność za niekorzystny wpływ spoczywa na pracodawcy, niezależnie od tego, kto zbudował test.
+Egzekwowanie prawa na poziomie federalnym się zmieniło. Wytyczne techniczne EEOC z 2023 roku dotyczące AI w selekcji zostały wycofane w styczniu 2025. Jej National Enforcement Plan z czerwca 2026 mówi, że w postępowaniach będzie unikać teorii dyskryminacji pośredniej (disparate impact) „w największym możliwym stopniu” i nie będzie wnosić spraw o dyskryminację pośrednią ([EEOC](https://www.eeoc.gov/sites/default/files/2026-06/NEP_-_signed.pdf)). Departament Pracy usunął swoją kopię Jednolitych wytycznych 26 października 2026, a 16 października 2026 EEOC wysłała do Białego Domu ostateczny przepis uchylający interpretacyjne części własnej kopii, z celem na styczeń 2027 ([Ogletree](https://ogletree.com/insights-resources/blog-posts/eeoc-sends-oira-final-rule-rescinding-uniform-guidelines-on-employee-selection-procedures/)). Dopóki ten przepis nie zostanie opublikowany i nie wejdzie w życie, Jednolite wytyczne pozostają w Code of Federal Regulations.
+
+Nic z tego nie zmienia Title VII. Dyskryminacja pośrednia jest w ustawie ([42 U.S.C. §2000e-2(k)](https://www.law.cornell.edu/uscode/text/42/2000e-2)), kandydaci nadal mogą pozywać, a stany egzekwują własne przepisy. Reguła czterech piątych pozostaje przydatnym pierwszym sprawdzeniem, cokolwiek stanie się z Jednolitymi wytycznymi, a odpowiedzialność za niekorzystny wpływ spoczywa na pracodawcy, niezależnie od tego, kto zbudował test.
 
 ### ADA i usprawnienia
 
@@ -64,7 +66,7 @@ Muszą też informować kandydatów, gdy AI jest używana przy decyzjach rekruta
 
 ## Kolorado
 
-Ustawa Kolorado o AI została uchylona i uchwalona na nowo przez SB 26-189, podpisaną 14 maja 2026 i obowiązującą od 1 stycznia 2027. Przepisy prokuratora generalnego są na etapie projektu (wysłuchanie odbyło się 26 października 2026) i mają zostać przyjęte przed tą datą. Podmioty wdrażające AI wysokiego ryzyka używaną w decyzjach o zatrudnieniu mają następujące obowiązki:
+Ustawa Kolorado o AI została uchylona i uchwalona na nowo przez SB 26-189, podpisaną 14 maja 2026 i obowiązującą od 1 stycznia 2027. Przepisy prokuratora generalnego są na etapie projektu (z wysłuchaniem wyznaczonym na 26 października 2026), według stanu na listopad 2026 nie zostały przyjęte i mają zostać przyjęte do 1 stycznia 2027. Podmioty wdrażające technologię zautomatyzowanego podejmowania decyzji, która istotnie wpływa na decyzję o zatrudnieniu, mają następujące obowiązki:
 
 - **Informacja przed użyciem** dla kandydata.
 - **Wyjaśnienie niekorzystnej decyzji,** takiej jak niezatrudnienie lub nieprzejście do kolejnego etapu.
@@ -75,6 +77,12 @@ Ustawa Kolorado o AI została uchylona i uchwalona na nowo przez SB 26-189, podp
 
 - **Przepisy Rady Praw Obywatelskich (Civil Rights Council) o systemach zautomatyzowanego podejmowania decyzji,** obowiązujące od 1 października 2025: prawo antydyskryminacyjne stosuje się do narzędzi zautomatyzowanych w rekrutacji tak samo jak do każdej innej metody selekcji. Pracodawcy muszą przechowywać dokumentację zatrudnienia, w tym dane systemów zautomatyzowanego podejmowania decyzji, przez cztery lata (Cal. Code Regs. tit. 2, §11013(c)).
 - **Przepisy CCPA o technologiach zautomatyzowanego podejmowania decyzji** mają zastosowanie do decyzji o zatrudnieniu od 1 stycznia 2027: informacja przed użyciem, prawo do rezygnacji lub odwołania oraz prawo dostępu do informacji o tym, jak technologia została użyta.
+- **No Robo Bosses Act (SB 947),** podpisana 30 września 2026, ma zastosowanie od 1 lipca 2027 do kar dyscyplinarnych i zwolnień, a nie do rekrutacji.
+
+## New Jersey i Teksas
+
+- **New Jersey.** Przepisy o dyskryminacji pośredniej na podstawie Law Against Discrimination (N.J.A.C. 13:16), obowiązujące od 15 grudnia 2025, obejmują zautomatyzowane narzędzia do decyzji o zatrudnieniu. Pracodawca może odpowiadać nawet wtedy, gdy narzędzie zbudował dostawca.
+- **Teksas.** Responsible AI Governance Act (HB 149), obowiązująca od 1 stycznia 2026, zakazuje AI używanej z zamiarem bezprawnej dyskryminacji. Sama dyskryminacja pośrednia nie dowodzi takiego zamiaru.
 
 ## Daty
 
@@ -82,12 +90,13 @@ Ustawa Kolorado o AI została uchylona i uchwalona na nowo przez SB 26-189, podp
 | --- | --- |
 | 5 lipca 2023 | Egzekwowanie Local Law 144 w Nowym Jorku |
 | 1 października 2025 | Przepisy kalifornijskiej Rady Praw Obywatelskich o systemach zautomatyzowanego podejmowania decyzji |
-| 1 stycznia 2026 | Illinois: informacja o użyciu AI, zakaz dyskryminującej AI, zakaz kodów pocztowych jako zamiennika |
+| 15 grudnia 2025 | Przepisy New Jersey o dyskryminacji pośredniej |
+| 1 stycznia 2026 | Illinois: informacja o użyciu AI, zakaz dyskryminującej AI, zakaz kodów pocztowych jako zamiennika; Teksas: zakaz AI używanej z zamiarem dyskryminacji |
 | 1 stycznia 2027 | Ustawa Kolorado o AI; kalifornijskie przepisy CCPA o zautomatyzowanym podejmowaniu decyzji w zatrudnieniu |
 
 ## Praktyczna lista kontrolna dla pracodawców
 
-1. **Spisz stanowiska i miejsca,** na które rekrutujesz: Nowy Jork, Illinois, Kolorado, Kalifornia, inne miejsca w USA.
+1. **Spisz stanowiska i miejsca,** na które rekrutujesz: Nowy Jork, Illinois, Kolorado, Kalifornia, New Jersey, Teksas, inne miejsca w USA.
 2. **Sprawdzaj tylko to, czego wymaga praca.** Wybierz tematy i próg zaliczenia, które potrafisz uzasadnić dla danego stanowiska.
 3. **Zaktualizuj informację dla kandydatów,** podając, że używasz AI, jak wykorzystujesz wyniki i jak poprosić o usprawnienie oraz weryfikację przez człowieka. Dodaj sformułowania wymagane w Illinois i Kolorado tam, gdzie mają zastosowanie.
 4. **Oferuj usprawnienia,** takie jak dodatkowy czas, i uzgadniaj je, zanim kandydat zacznie.
@@ -103,12 +112,12 @@ testee prowadzi rozmowy rekrutacyjne sprawdzające umiejętności w formie test�
 
 Jak to dziś wygląda w produkcie:
 
-- **AI pisze pytania i klucze odpowiedzi; ocenianie odbywa się według stałych reguł.** Żadna AI nie czyta ani nie ocenia odpowiedzi kandydata i nie jest używana analiza wideo ani twarzy. W trybie głosowym mowa jest zamieniana na tekst i dopasowywana do odpowiedzi, którą kandydat słyszy i widzi na ekranie: jedna wyraźnie wskazana odpowiedź jest zapisywana od razu, a wybór kilku odpowiedzi jest najpierw potwierdzany. Mowa nigdy nie jest przechowywana, a głos nigdy nie jest analizowany.
+- **AI pisze pytania i klucze odpowiedzi; ocenianie odbywa się według stałych reguł.** Żadna AI nie ocenia odpowiedzi kandydata i nie jest używana analiza wideo ani twarzy. W trybie głosowym mowa jest zamieniana na tekst i dopasowywana do odpowiedzi, którą kandydat słyszy i widzi na ekranie: jedna wyraźnie wskazana odpowiedź jest zapisywana od razu, a wybór kilku odpowiedzi jest najpierw potwierdzany. testee nigdy nie przechowuje mowy, a głos nigdy nie jest analizowany.
 - **Zatwierdzasz tematy,** zanim powstanie jakiekolwiek pytanie, i to Ty wybierasz próg zaliczenia.
 - **Decydują ludzie.** testee nie odrzuca kandydatów ani nie wysyła wiadomości z odmową.
 - **Żadnych cech chronionych.** testee nigdy nie pyta o płeć, rasę, wiek, niepełnosprawność, kod pocztowy ani inne cechy chronione kandydatów, nie wnioskuje ich i ich nie przechowuje.
 - **Eksport do audytu stronniczości.** Na stronie „Dziennik działań” firmy właściciel może pobrać plik CSV z kandydatami, którzy ukończyli rozmowę, dla całej firmy lub jednej rozmowy i za okres między dwiema datami: wynik każdego kandydata, próg zaliczenia, to, czy zaliczył, i czy uzyskał wynik powyżej mediany rozmowy. Kluczem każdego wiersza jest adres e-mail kandydata, więc możesz połączyć go z kategoriami, które kandydaci sami podali i które zebrała Twoja firma; potem usuń kolumnę z adresem e-mail i przekaż plik niezależnemu audytorowi, który obliczy wskaźniki selekcji i punktacji oraz współczynniki wpływu. Ten sam plik pozwala Ci samodzielnie przeprowadzić test czterech piątych.
-- **Dodatkowy czas** +25%, +50% lub +100% na każde pytanie można przyznać każdemu kandydatowi, który o to poprosi, zanim zacznie. testee przechowuje tylko wymiar dodatkowego czasu, nigdy powód. W trybie głosowym kandydat zawsze może zamiast tego dotknąć odpowiedzi, a Ty możesz ustawić rozmowę tak, by odpowiadało się wyłącznie dotknięciem.
+- **Dodatkowy czas** +25%, +50% lub +100% na każde pytanie można przyznać każdemu kandydatowi, który o to poprosi, zanim zacznie. testee przechowuje tylko wymiar dodatkowego czasu, nigdy powód. W trybie głosowym kandydat może dotknąć odpowiedzi zamiast mówić. Rozpoczęcie rozmowy głosowej wymaga mikrofonu, więc kandydatowi, który nie może z niego korzystać, ustaw przed startem odpowiadanie dotknięciem. Tak samo możesz ustawić całą rozmowę.
 - **Wzory informacji dla kandydatów,** ogólny oraz wersje dla Nowego Jorku, Illinois i Kolorado, są na [stronie dokumentów](/documents) wraz z instrukcjami dla firm.
 - **Nowy Jork.** testee nie przeszła jeszcze własnego niezależnego audytu stronniczości. Nie używaj testee do stanowisk w Nowym Jorku, dopóki nie wykonasz tego, czego Local Law 144 wymaga od Ciebie jako pracodawcy: niezależnego audytu stronniczości w ciągu roku przed użyciem, publikacji jego podsumowania i informacji dla kandydatów 10 dni roboczych wcześniej.
 - **Dane.** Na gruncie CCPA Twoja firma jest przedsiębiorstwem (business), a testee jej usługodawcą (service provider) na podstawie [umowy powierzenia przetwarzania danych](/dpa) i jej sekcji dotyczącej USA. Dane są hostowane w UE, część podmiotów podprzetwarzających jest w USA (zobacz [politykę prywatności](/privacy)), i nie są używane do trenowania modeli AI.
@@ -124,8 +133,13 @@ Jak to dziś wygląda w produkcie:
 ## Źródła
 
 - Uniform Guidelines on Employee Selection Procedures, [29 CFR §1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4).
+- Title VII ustawy Civil Rights Act z 1964 roku, [42 U.S.C. §2000e-2(k)](https://www.law.cornell.edu/uscode/text/42/2000e-2).
+- EEOC, [National Enforcement Plan](https://www.eeoc.gov/sites/default/files/2026-06/NEP_-_signed.pdf), czerwiec 2026; Ogletree, [EEOC sends OIRA final rule rescinding the Uniform Guidelines](https://ogletree.com/insights-resources/blog-posts/eeoc-sends-oira-final-rule-rescinding-uniform-guidelines-on-employee-selection-procedures/), październik 2026.
+- [Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm), 11 grudnia 2025.
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 i 6 RCNY §5-300 i nast.; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) i jego FAQ.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), znowelizowana przez Public Act 103-0804.
 - Colorado SB 26-189.
-- California Code of Regulations, title 2, §11013(c); przepisy California Consumer Privacy Act o technologiach zautomatyzowanego podejmowania decyzji.
+- California Code of Regulations, title 2, §11013(c); przepisy California Consumer Privacy Act o technologiach zautomatyzowanego podejmowania decyzji; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
+- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- Teksas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

@@ -2,7 +2,7 @@
 title: "Cách đặt thời gian cho bài kiểm tra kỹ năng: thời gian mỗi câu, độ dài và thời gian cộng thêm"
 seoTitle: "Thời gian bài kiểm tra kỹ năng: mỗi câu và thêm giờ"
 description: "Nên cho mỗi câu bao nhiêu thời gian, hỏi bao nhiêu câu, tổng thời lượng bao nhiêu là hợp lý, và cách cho thêm thời gian công bằng với ứng viên cần điều đó."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Cách đặt thời gian cho bài kiểm tra kỹ năng: thời gian mỗi câu, độ dài và thời gian cộng thêm
@@ -101,7 +101,7 @@ Trong testee, một buổi phỏng vấn là một bài kiểm tra kỹ năng tr
 
 ### Thời gian mỗi câu
 
-- **Mỗi câu hỏi có đồng hồ đếm ngược riêng,** do máy chủ giữ, nên đóng tab hay tải lại trang cũng không làm nó dừng.
+- **Mỗi câu hỏi có đồng hồ đếm ngược riêng,** do máy chủ giữ, nên đóng tab hay tải lại trang cũng không làm nó dừng. Ở chế độ giọng nói, đồng hồ chạy trong khi Mira đọc câu hỏi.
 - **Mặc định phụ thuộc vào cấp độ của buổi phỏng vấn,** với buổi phỏng vấn được tạo tự động thì cấp độ lấy từ mức thâm niên mà mô tả công việc yêu cầu: 60 giây cho buổi phỏng vấn cơ bản hoặc trung bình, 75 giây cho buổi phỏng vấn khó.
 - **Đây là mức trung bình: mỗi câu hỏi nhận thời gian riêng từ mức này** khi các câu hỏi của một ứng viên được rút ra, tùy theo thời gian cần để đọc và trả lời: số từ, đoạn mã hoặc ví dụ nếu có (đọc chậm hơn) và thời gian để nghĩ ra câu trả lời. Câu hỏi ngắn có ít thời gian hơn, câu dài hơn và câu có mã có nhiều thời gian hơn, mỗi câu từ một nửa đến gấp đôi mức trung bình, và cộng lại đúng bằng số câu hỏi nhân mức trung bình. Đồng hồ đếm ngược hiển thị thời gian riêng của từng câu, và bảng điểm cho thấy mỗi câu trả lời đã dùng bao nhiêu trong thời gian đó.
 - **Bạn có thể đổi mức trung bình cho từng buổi phỏng vấn,** trong phần cài đặt của nó, từ 10 đến 600 giây. Thay đổi áp dụng cho ứng viên bắt đầu sau đó; thời gian của một ứng viên được cố định khi họ bắt đầu.
@@ -115,7 +115,7 @@ Trong buổi phỏng vấn bằng tiếng Ả Rập, Trung, Nhật, Ba Tư, Nga,
 ### Số câu hỏi
 
 - **Mỗi chủ đề của một buổi phỏng vấn được tạo tự động có ngân hàng 70 câu hỏi,** và một buổi phỏng vấn có tối đa 10 chủ đề, do bạn duyệt trước khi bất kỳ câu hỏi nào được viết.
-- **Mặc định mỗi ứng viên nhận 10 câu mỗi chủ đề,** một bộ ngẫu nhiên từ ngân hàng theo thứ tự riêng của họ, với cùng tỷ lệ câu "chọn tất cả phương án đúng". Bạn có thể đặt số câu khác cho từng chủ đề. Đặt 0 để bỏ một chủ đề; ít nhất một chủ đề vẫn giữ câu hỏi.
+- **Mặc định mỗi ứng viên nhận 10 câu mỗi chủ đề,** một bộ ngẫu nhiên từ ngân hàng theo thứ tự riêng của họ, với cùng tỷ lệ câu "chọn tất cả phương án đúng". Một buổi phỏng vấn có tối đa 60 câu, nên khi có nhiều chủ đề hơn, số mặc định giảm xuống: 8 câu mỗi chủ đề với 7 chủ đề, 7 câu với 8 chủ đề, và 6 câu với 9 hoặc 10 chủ đề. Bạn có thể đặt số câu khác cho từng chủ đề, trong giới hạn đó. Đặt 0 để bỏ một chủ đề; ít nhất một chủ đề vẫn giữ câu hỏi.
 
 ### Tổng thời lượng
 

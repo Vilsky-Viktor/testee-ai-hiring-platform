@@ -2,7 +2,7 @@
 title: "Come impostare i tempi di un test di competenze: timer per domanda, durata e tempo extra"
 seoTitle: "Tempi del test di competenze: timer e tempo extra"
 description: "Quanto tempo dare a ogni domanda, quante domande fare, quale durata totale funziona e come concedere tempo extra equo ai candidati che ne hanno bisogno."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Come impostare i tempi di un test di competenze: timer per domanda, durata e tempo extra
@@ -101,7 +101,7 @@ In testee, un colloquio è un test di competenze a scelta multipla e a tempo, cr
 
 ### Tempo per domanda
 
-- **Ogni domanda ha il proprio conto alla rovescia,** gestito dal server, quindi chiudere la scheda o ricaricare la pagina non lo ferma.
+- **Ogni domanda ha il proprio conto alla rovescia,** gestito dal server, quindi chiudere la scheda o ricaricare la pagina non lo ferma. Nella modalità vocale, scorre mentre Mira legge la domanda.
 - **Il valore predefinito dipende dal livello del colloquio,** che per un colloquio generato deriva dall'anzianità richiesta dalla descrizione del ruolo: 60 secondi per un colloquio base o intermedio, 75 secondi per uno difficile.
 - **È una media: ogni domanda riceve da essa il suo tempo** quando vengono estratte le domande di un candidato, in base a quanto serve per leggerla e rispondere: le sue parole, il codice o l'esempio che contiene (letto più lentamente) e il tempo per trovare la risposta. Le domande brevi hanno meno tempo, quelle più lunghe e quelle con codice ne hanno di più, ciascuna tra la metà e il doppio della media, e insieme fanno esattamente il numero di domande per la media. Il conto alla rovescia mostra il tempo di ogni domanda, e la scheda dei risultati mostra quanto ne ha richiesto ogni risposta.
 - **Puoi cambiare la media per ogni colloquio,** nelle sue impostazioni, da 10 a 600 secondi. Una modifica vale per i candidati che iniziano dopo; il tempo di un candidato è fissato quando inizia.
@@ -115,7 +115,7 @@ In un colloquio in arabo, cinese, giapponese, persiano, russo, thailandese o ucr
 ### Numero di domande
 
 - **Ogni argomento di un colloquio generato ha una banca di 70 domande,** e un colloquio ha al massimo 10 argomenti, che approvi tu prima che venga scritta qualsiasi domanda.
-- **Ogni candidato riceve 10 domande per argomento come impostazione predefinita,** un set casuale dalla banca nel proprio ordine, con la stessa quota di domande «Seleziona tutte le opzioni corrette». Puoi impostare un numero diverso per ogni argomento. Impostalo a 0 per escludere un argomento; almeno un argomento mantiene le sue domande.
+- **Ogni candidato riceve 10 domande per argomento come impostazione predefinita,** un set casuale dalla banca nel proprio ordine, con la stessa quota di domande «Seleziona tutte le opzioni corrette». Un colloquio ha al massimo 60 domande, quindi con più argomenti il valore predefinito scende: 8 per argomento con 7 argomenti, 7 con 8 e 6 con 9 o 10. Puoi impostare un numero diverso per ogni argomento, entro quel limite. Impostalo a 0 per escludere un argomento; almeno un argomento mantiene le sue domande.
 
 ### Durata totale
 

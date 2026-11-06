@@ -2,7 +2,7 @@
 title: "Kuidas kirjutada töökuulutus, mille põhjal saab hea testi"
 seoTitle: "Kuidas kirjutada töökuulutus, mille põhjal saab testida"
 description: "Mida vajab töökuulutus, et selle põhjal loodud oskustest kontrolliks õigeid asju: konkreetsed oskused ja tööriistad, tase, igapäevatöö ja mida välja jätta."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Kuidas kirjutada töökuulutus, mille põhjal saab hea testi
@@ -15,7 +15,7 @@ See juhend on teisest ülesandest: kuidas kirjutada kuulutus, mille põhjal saab
 
 Teadmiste test on kasulik, kui see kontrollib seda, mida töö tegelikult vajab. Värbamisuuringud paigutavad tööalaste teadmiste testid keskmiselt töösoorituse paremate ennustajate hulka, kuid see hinnang kehtib konkreetse töö jaoks loodud testide kohta; tööga mitteseotud teadmiste testid ennustavad vähem (vt [Oskustestid vs CV-de sõelumine](/guides/skills-tests-vs-cv-screening)).
 
-USA tööhõivereeglid ütlevad õiguslikust küljest sama. Ühtsed töötajate valiku juhised (Uniform Guidelines on Employee Selection Procedures) eeldavad, et sisu kaudu põhjendatud test toetub tööanalüüsile, mis keskendub „töökäitumisele ja sellega seotud ülesannetele“ ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Praktikas on enamiku meeskondade jaoks töökuulutus just see kirja pandud analüüs. Ja ameeriklaste puuetega inimeste seaduse (ADA) järgi loetakse enne kuulutamist või intervjuusid koostatud kirjalikku ametikirjeldust tõendiks töö olemuslike ülesannete kohta ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+USA tööhõivereeglid ütlevad õiguslikust küljest sama. Ühtsed töötajate valiku juhised (Uniform Guidelines on Employee Selection Procedures) eeldavad, et sisu kaudu põhjendatud test toetub tööanalüüsile, mis keskendub „töökäitumisele ja sellega seotud ülesannetele“ ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Praktikas on enamiku meeskondade jaoks töökuulutus just see kirja pandud analüüs. (2026. aasta oktoobris asus EEOC nende juhiste tõlgendavaid osi kehtetuks tunnistama, sihiks 2027. aasta jaanuar. Title VII nõuab endiselt, et ebasoodsa mõjuga test oleks tööga seotud.) Ja ameeriklaste puuetega inimeste seaduse (ADA) järgi loetakse enne kuulutamist või intervjuusid koostatud kirjalikku ametikirjeldust tõendiks töö olemuslike ülesannete kohta ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 Seega tasub kuulutusele kulutada pool tundi rohkem. Mida iganes see ütleb, selle kohta test küsibki.
 
@@ -48,7 +48,7 @@ Tööaastad on taseme umbkaudne ja nõrk asendaja: eespool nimetatud uuringutes 
 
 Tööülesanded on testi jaoks kõige kasulikumad read. „Koostab igakuise käibedeklaratsiooni“ või „sorteerib sissetulevad vead ja taasesitab neid“ ütleb testi koostajale, milliseid teadmisi ja millistes olukordades kasutatakse. Kirjuta ülesanded tegusõna ja objektina, nii nagu kirjeldaksid tööd uuele kolleegile.
 
-Kui sa pole kindel, mida roll tavaliselt hõlmab, loetleb [O*NET OnLine](https://www.onetonline.org/) sadade ametite tüüpilised ülesanded, tehnoloogiad ja teadmised. Kasuta seda kontrollnimekirjana ja jäta alles ainult see, mida sinu rollis tegelikult tehakse.
+Kui sa pole kindel, mida roll tavaliselt hõlmab, loetleb [O*NET OnLine](https://www.onetonline.org/) umbes 1000 ameti tüüpilised ülesanded, tehnoloogiad ja teadmised. Kasuta seda kontrollnimekirjana ja jäta alles ainult see, mida sinu rollis tegelikult tehakse.
 
 ### 4. Selge piir kohustusliku ja selle vahel, mis tuleb kasuks
 

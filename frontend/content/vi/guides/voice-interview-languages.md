@@ -2,14 +2,14 @@
 title: "Phỏng vấn bằng giọng nói trong 23 ngôn ngữ: Mira đọc và nghe tốt đến đâu ở từng ngôn ngữ"
 seoTitle: "Phỏng vấn bằng giọng nói: chất lượng theo 23 ngôn ngữ"
 description: "Chế độ giọng nói của testee đọc câu hỏi và hiểu câu trả lời nói tốt đến đâu ở mỗi ngôn ngữ trong 23 ngôn ngữ, cách chúng tôi đo và khi nào nên chọn chạm."
-updated: "2026-11-04"
+updated: "2026-11-07"
 ---
 
 # Phỏng vấn bằng giọng nói trong 23 ngôn ngữ: Mira đọc và nghe tốt đến đâu ở từng ngôn ngữ
 
 Ở chế độ giọng nói, Mira, người phỏng vấn AI của testee, đọc to từng câu hỏi và các phương án, còn ứng viên trả lời bằng lời nói: "B", "phương án C", "số trung vị", hoặc "A và D" với câu hỏi có nhiều đáp án đúng. Chế độ giọng nói dùng được trong cả 23 ngôn ngữ của testee, nhưng công nghệ giọng nói không tốt như nhau ở mọi ngôn ngữ. Hướng dẫn này cho thấy chế độ giọng nói hoạt động tốt đến đâu ở từng ngôn ngữ, để bạn chọn chế độ phù hợp với ứng viên của mình.
 
-Dù là ngôn ngữ nào, ứng viên luôn có thể chạm vào một phương án thay vì nói, và phương án Mira ghi nhận sẽ hiện trên màn hình khi cô ấy nhắc lại.
+Sau khi buổi phỏng vấn bắt đầu, ứng viên luôn có thể chạm vào một phương án thay vì nói, dù là ngôn ngữ nào, và phương án Mira ghi nhận sẽ hiện trên màn hình khi cô ấy nhắc lại. Thời gian của câu hỏi vẫn chạy trong khi cô ấy đọc.
 
 ## Tóm tắt
 
@@ -53,9 +53,9 @@ Dù là ngôn ngữ nào, ứng viên luôn có thể chạm vào một phương
 
 - **Tiếng Do Thái, tiếng Ả Rập và tiếng Ba Tư:** đôi khi Mira gọi các phương án bằng chữ cái của chính ngôn ngữ đó (alef, bet, gimel) thay vì A, B, C và D như trên màn hình. Thứ tự vẫn giữ nguyên, nên phương án đầu tiên vẫn là phương án đầu tiên, nhưng ứng viên nên trả lời bằng các chữ cái họ thấy.
 - **Tiếng Estonia:** tiếng "ei" (không) ngắn gọn có thể nghe giống chữ A, nên một ứng viên từ chối lựa chọn mà Mira nhắc lại đôi khi bị ghi là chọn phương án A.
-- **Tiếng Thái:** một chữ cái được nói đôi khi bị nghe thành số tiếng Thái ("ข้อ C" thành "ข้อ สี่", tức phương án thứ tư), có thể khiến phương án sai được ghi lại, và các phương án gọi theo vị trí thường không được hiểu. Chạm để chọn an toàn hơn.
+- **Tiếng Thái:** một chữ cái được nói đôi khi bị nghe thành số tiếng Thái ("ข้อ C" thành "ข้อ สี่", tức phương án thứ tư), có thể khiến phương án sai được ghi lại. Chạm để chọn an toàn hơn.
 - **Tiếng Nhật:** "選択肢C" (phương án C) đôi khi bị nghe thành một từ khác và ghi thành phương án sai; chỉ nói chữ cái thì hiệu quả hơn.
-- **Tiếng Nga, tiếng Ukraina và tiếng Ba Lan:** chữ "và" giữa hai chữ cái ("A и C") đôi khi bị nghe thành chữ cái thứ ba, và Mira sẽ hỏi lại.
+- **Tiếng Nga và tiếng Ba Lan:** chữ "và" giữa hai chữ cái ("A и C") đôi khi bị nghe thành chữ cái thứ ba, và Mira sẽ hỏi lại.
 
 ## Cách chúng tôi đo
 
@@ -67,6 +67,7 @@ Các con số là để tham khảo, không phải cam kết. Hai mươi câu tr
 
 - **Chế độ giọng nói** phù hợp với những vị trí mà khả năng nói quan trọng, ứng viên không thích gõ hay chạm, và nhu cầu hỗ trợ tiếp cận. Chế độ này tốt nhất ở các ngôn ngữ được đánh giá rất tốt và tốt.
 - **Chế độ nhấp** là mặc định và hoạt động như nhau ở mọi ngôn ngữ. Hãy ưu tiên chế độ này cho các vị trí quan trọng ở ngôn ngữ được đánh giá tạm được.
+- Bắt đầu một buổi phỏng vấn bằng giọng nói cần có micro hoạt động, nên ứng viên không dùng được micro cần chế độ nhấp, được đặt trước khi họ bắt đầu.
 - Bạn có thể đặt chế độ cho cả buổi phỏng vấn trong phần cài đặt và đổi riêng cho một ứng viên trước khi họ bắt đầu.
 
-Ở chế độ giọng nói, giọng của ứng viên chỉ được chuyển thành văn bản để đọc câu trả lời, không bao giờ được lưu hay phân tích theo bất kỳ cách nào khác.
+Ở chế độ giọng nói, giọng của ứng viên chỉ được chuyển thành văn bản để đọc câu trả lời, không bao giờ được phân tích theo bất kỳ cách nào khác, và testee không bao giờ lưu giọng đó. OpenAI, bên chuyển lời nói thành văn bản, được yêu cầu không lưu giọng nói và giữ dữ liệu API tối đa 30 ngày, chỉ để kiểm tra lạm dụng.

@@ -2,7 +2,7 @@
 title: "Beceri testleri ATS'nize nasıl bağlanır"
 seoTitle: "Beceri testlerini ATS'ye bağlamak: pratik bir rehber"
 description: "Beceri testlerini ATS'niz üzerinden otomatik gönderin ve sonuçları alın, işe alım kararlarını insanlarda bırakın ve önce neyi kontrol edeceğinizi öğrenin."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Beceri testleri ATS'nize nasıl bağlanır
@@ -90,15 +90,15 @@ testee **Workable, Greenhouse, Teamtailor, Recruitee ve Breezy HR**'a bağlanır
 - **Anahtar sizin, kontrol sizde.** Bir sahip veya yönetici, şirketinizin ATS'de oluşturduğu bir anahtarla ATS'yi şirketin Entegrasyonlar sekmesinden bağlar. testee anahtarı kaydetmeden önce kontrol eder, şifreli saklar ve bir daha asla göstermez. Bağlantıyı kesmek anahtarı ve bağlı ilanları anında siler.
 - **Bir ilanı bir mülakata bağlayın.** Bir ATS ilanını ve daveti tetikleyen aşamayı seçin, ardından onu testee'deki mevcut bir mülakata bağlayın ya da ATS'deki ilan metninden yeni bir mülakat oluşturun. Tek bir soru yazılmadan önce konuları siz incelersiniz.
 - **Adayı taşıyın, davet gitsin.** ATS aynı olayı iki kez gönderse bile her aday her mülakat için bir kez davet edilir.
-- **Sonuçlar ATS'ye geri döner.** Aday bitirdiğinde testee, ATS'de adaya notunu, geçip geçmediğini, varsa dürüstlük uyarılarını (sayfadan ayrılma, kopyalama girişimleri, soruyu okumaya yetmeyecek kadar hızlı seçilen cevaplar) ve tüm cevapları içeren değerlendirme kartının bağlantısını içeren bir not veya yorum ekler.
-- **Başarısızlıklar gözden kaçmaz.** Bir aday davet edilemezse, örneğin şirketin kredisi bittiği, e-posta sınırına ulaştığı veya testee davetleri duraklattığı için, şirketin tüm üyeleri ATS'nin adını belirten bir bildirim alır. Kredi yetersizliği yüzünden davet edilemeyen adaylar kredi yüklendikten sonra otomatik olarak davet edilir ve herhangi bir ilanın bekleyen adayları tek tıkla yeniden davet edilebilir.
+- **Sonuçlar ATS'ye geri döner.** Aday bitirdiğinde testee, ATS'de adaya notunu, geçip geçmediğini, dürüstlük uyarısı verilip verilmediğini ve tüm cevapları ve uyarıları içeren değerlendirme kartının bağlantısını içeren bir not veya yorum ekler.
+- **Başarısızlıklar gözden kaçmaz.** Bir aday davet edilemezse, örneğin şirketin kredisi bittiği, e-posta sınırına ulaştığı veya testee davetleri duraklattığı için, şirketin tüm üyeleri ATS'nin adını belirten bir bildirim alır. ATS'nin son 30 günde gönderdiği ve kredi yetersizliği yüzünden davet edilemeyen adaylar kredi yüklendikten sonra otomatik olarak davet edilir ve herhangi bir ilanın bekleyen adayları tek tıkla yeniden davet edilebilir.
 - **Kullanıyorsanız Slack.** testee, testi bitiren bir aday ya da davet edilemeyen bir ATS adayı gibi bildirimleri seçtiğiniz bir Slack kanalına gönderebilir.
 - **Kendi platformunuz.** ATS'niz listede yoksa testee'nin [API](/api-docs)'si, bir API anahtarıyla aday davet etmenize ve bir aday başladığında, bitirdiğinde, daveti kendisine ulaşamadığında, davetinin süresi dolduğunda veya kaldırıldığında ve bir mülakat hazır olduğunda imzalı bir webhook almanıza olanak tanır.
 - **Veriler belirli bir süre saklanır.** Bir ATS'den kaydedilen adaylar 365 gün sonra ya da daha önce, mülakatları veya şirketleriyle birlikte silinir.
 
-Bazı ATS'ler kendi tarafında bir adım gerektirir. Greenhouse, Teamtailor ve Recruitee webhook'u elle eklemenizi ister; testee'nin Talimatlar penceresi adresi ve gizli anahtarın nereye yapıştırılacağını gösterir. Workable ve Breezy HR'ın webhook'larını testee kendisi kurar.
+Bazı ATS'ler kendi tarafında bir adım gerektirir. Greenhouse, Teamtailor ve Recruitee webhook'u elle eklemenizi ister; testee'nin Talimatlar penceresi adresi ve gizli anahtarın nereye yapıştırılacağını gösterir. Workable ve Breezy HR'ın webhook'larını testee kendisi kurar. Breezy HR'ın API'si ve webhook'ları Pro planıyla gelir, Teamtailor'ın webhook'ları ise bir Teamtailor eklentisidir.
 
-Fiyatlandırma aday başınadır ve abonelik yoktur: yalnızca en az bir soruyu yanıtlayan adaylar için ödeme yaparsınız; $50'lık yüklemede aday başına $5, $200'lık yüklemeden itibaren $4, $600'lık yüklemeden itibaren $3 ve $1.000'lık yüklemeden itibaren $2. Fiyatlar burada ABD doları, Kanada, Avustralya, İsrail, Polonya, İsviçre, Japonya, Güney Kore, Tayvan, Hong Kong, Tayland, Singapur, Hindistan, Avrupa'nın geri kalanı ve Birleşik Krallık'ta ise yerel para birimi cinsindendir; KDV veya satış vergisi ödeme adımında hesaplanır. ATS bağlamak ve mülakat oluşturmak ücretsizdir ve ilk şirketinizin ilk 3 adayı ücretsizdir. Bkz. [fiyatlar](/pricing).
+Fiyatlandırma aday başınadır ve abonelik yoktur: yalnızca en az bir soruyu yanıtlayan adaylar için ödeme yaparsınız; $50'lık yüklemede aday başına $5, $200'lık yüklemeden itibaren $4, $600'lık yüklemeden itibaren $3 ve $1.000'lık yüklemeden itibaren $2. Fiyatlar burada ABD doları, Kanada, Avustralya, İsrail, Polonya, İsviçre, Japonya, Güney Kore, Tayvan, Hong Kong, Tayland, Singapur, Hindistan, AB'nin geri kalanı, Norveç, İzlanda, Lihtenştayn ve Birleşik Krallık'ta ise yerel para birimi cinsindendir; KDV veya satış vergisi ödeme adımında hesaplanır. ATS bağlamak ve mülakat oluşturmak ücretsizdir ve ilk şirketinizin ilk 3 adayı ücretsizdir. Bkz. [fiyatlar](/pricing).
 
 ## İlgili yazılar
 

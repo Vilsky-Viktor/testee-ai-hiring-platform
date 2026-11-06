@@ -2,7 +2,7 @@
 title: "Agen AI, MCP, dan API: apa itu dan cara memakainya dalam rekrutmen"
 seoTitle: "Agen AI, MCP, dan API dalam Rekrutmen: Cara Memakainya"
 description: "Apa itu agen AI, MCP, dan API, cara memakainya dengan aman di rekrutmen, dan cara menjalankan testee dari asisten AI-nya, Claude, ChatGPT, atau platformmu."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # Agen AI, MCP, dan API: apa itu dan cara memakainya dalam rekrutmen
@@ -96,7 +96,7 @@ Kalau kamu sudah bekerja di Claude atau ChatGPT, kamu bisa membawa testee ke san
 **Cara menghubungkan:**
 
 1. Di testee, buka tab **Integrasi** sebuah perusahaan dan pilih **Aplikasi AI**. Salin alamat servernya: `https://testee.ai/mcp`.
-2. **Di Claude:** buka Settings, lalu Connectors, dan tambahkan custom connector dengan alamat itu. **Di Claude Code:** jalankan `claude mcp add --transport http testee https://testee.ai/mcp`. **Di ChatGPT:** tambahkan sebagai custom connector di pengaturan aplikasi dan konektornya.
+2. **Di Claude:** buka Customize, lalu Connectors, dan tambahkan custom connector dengan alamat itu; pada paket Team dan Enterprise, pemilik menambahkannya lebih dulu di Organization settings. **Di Claude Code:** jalankan `claude mcp add --transport http testee https://testee.ai/mcp`. **Di ChatGPT:** tambahkan sebagai custom MCP server. Letaknya tergantung paketmu, dan admin mungkin perlu mengizinkannya.
 3. Aplikasi AI-mu membuka halaman masuk testee. Masuk, cek aplikasi mana yang meminta akses, lalu pilih **Izinkan**. Agar aplikasi ini hanya bisa membaca, matikan dulu **Izinkan perubahan**.
 
 Setelah itu, bertanyalah di chat seperti kamu bertanya kepada rekan kerja: "Di testee, siapa tiga kandidat teratas untuk Product designer?" Sebagian besar aplikasi AI bertanya kepadamu sebelum melakukan perubahan, dan memperingatkanmu sebelum melakukan apa pun yang tidak bisa dibatalkan: testee memberi tahu aplikasi tersebut tindakan mana yang mengubah atau menghapus sesuatu.
@@ -106,7 +106,7 @@ Setelah itu, bertanyalah di chat seperti kamu bertanya kepada rekan kerja: "Di t
 - **Izinmu.** Ia bertindak atas namamu, di setiap perusahaan tempatmu bergabung, dengan peranmu di masing-masing.
 - **Kredit dan batas.** Mengundang kandidat biayanya sama seperti di aplikasi, dan batas email yang sama berlaku.
 - **Catatan.** Semua yang dilakukan aplikasi AI untukmu muncul di log tindakan perusahaan sebagai dilakukan melalui aplikasi AI, mulai dari menyetujui topik dan melihat hasil hingga memberi waktu tambahan atau mencabut kandidat. Pemilik perusahaan membacanya di tab **Log tindakan** perusahaan.
-- **Perusahaan yang menentukan.** Pemilik dan admin bisa menghentikan aplikasi AI memakai data perusahaan dengan **Izinkan aplikasi AI di perusahaan ini** di halaman aplikasi AI perusahaan.
+- **Perusahaan yang menentukan.** Pemilik dan admin bisa menghentikan aplikasi AI memakai data perusahaan dengan sakelar **Izinkan aplikasi AI** di halaman aplikasi AI perusahaan.
 - **Yang tidak bisa dilakukannya.** Ia tidak bisa melihat kata sandi atau kunci API-mu, dan tidak bisa menghapus akunmu atau perusahaan. Hal-hal itu tetap di aplikasi.
 
 **Untuk memutuskan,** hapus konektornya di aplikasi AI-mu, atau pilih **Putuskan** di sebelahnya di bagian **Aplikasi AI** pada tab Integrasi. Koneksinya langsung berhenti.
@@ -117,7 +117,7 @@ Setelah itu, bertanyalah di chat seperti kamu bertanya kepada rekan kerja: "Di t
 
 Untuk otomatisasi tanpa AI, testee punya API, yang dijelaskan di [dokumentasi pengembang](/api-docs)-nya.
 
-1. Pemilik atau admin membuka tab **Integrasi** sebuah perusahaan, lalu **API**, dan memilih **Kunci baru**. Beri nama sesuai platform yang akan memakainya, pilih kapan kunci itu kedaluwarsa, dan centang hanya yang dibutuhkannya: kunci dasbor hanya membaca, kunci situs karier juga mengundang. Hak akses bisa ditambah atau dikurangi nanti. Kunci hanya ditampilkan sekali; simpan di tempat yang aman.
+1. Pemilik atau admin membuka tab **Integrasi** sebuah perusahaan, lalu **API, SDK, webhook**, dan memilih **Kunci baru**. Beri nama sesuai platform yang akan memakainya, pilih kapan kunci itu kedaluwarsa, dan centang hanya yang dibutuhkannya: kunci dasbor hanya membaca, kunci situs karier juga mengundang. Hak akses bisa ditambah atau dikurangi nanti. Kunci hanya ditampilkan sekali; simpan di tempat yang aman.
 2. Platformmu mengirim permintaan dengan kunci itu: menampilkan daftar wawancara perusahaan, menampilkan daftar atau membaca kandidat beserta nilainya, lulus atau tidak, dan tanda integritasnya, serta mengundang kandidat.
 3. Tambahkan **webhook**: alamat di platformmu yang dipanggil testee, dengan tanda tangan, saat kandidat mulai, selesai, atau dihapus, saat undangannya tidak sampai atau kedaluwarsa, dan saat wawancara siap, sehingga kamu tidak perlu terus-menerus bertanya. Halaman API dapat mengirim event uji ke webhook ini dan menampilkan log pengirimannya.
 

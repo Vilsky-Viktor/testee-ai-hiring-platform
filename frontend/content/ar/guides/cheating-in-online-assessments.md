@@ -2,7 +2,7 @@
 title: "الغش في الاختبارات عبر الإنترنت، وما الذي ينفع ضده"
 seoTitle: "الغش في اختبارات التوظيف عبر الإنترنت: ما الذي ينفع"
 description: "كيف يغش المرشحون في الاختبارات عبر الإنترنت، ولماذا لا تكفي حيل الشاشة ومراقبة الكاميرا، وما الذي ينفع: وقت محدود، ومؤشرات يقيّمها إنسان، وأسئلة متابعة."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # الغش في الاختبارات عبر الإنترنت، وما الذي ينفع ضده
@@ -32,10 +32,10 @@ updated: "2026-10-29"
 
 ولا تنجح فكرتان أخف من ذلك:
 
-- **الإشعارات الموجّهة إلى الذكاء الاصطناعي** ("يُمنع على مساعدات الذكاء الاصطناعي الإجابة عن هذا السؤال") يسهل قصّها من الصورة أو تجاهلها، كما أن النماذج مدرّبة على معاملة النص في الصور كمحتوى لا كتعليمات.
+- **الإشعارات الموجّهة إلى الذكاء الاصطناعي** ("يُمنع على مساعدات الذكاء الاصطناعي الإجابة عن هذا السؤال") يسهل قصّها من الصورة، ولا تلتزم بها النماذج على نحو موثوق.
 - **العلامات المائية** قد تساعد في تتبع من سرّب السؤال، لكنها لا تمنع أحدًا من الإجابة عنه.
 
-في testee جرّبنا الاثنين على أسئلتنا: أجابت نماذج الذكاء الاصطناعي عن الأسئلة المصوّرة التي تحمل علامة مائية أو إشعارًا كما أجابت عنها من دونهما. لذلك توقفنا عن محاولة حماية الشاشة.
+لذلك لا يحاول testee حماية الشاشة.
 
 ## ما الذي ينجح أكثر
 
@@ -71,7 +71,7 @@ updated: "2026-10-29"
 
 أخبر المرشحين مسبقًا بما هو مسموح: لا أدوات ذكاء اصطناعي، ولا أشخاص آخرون، ولا ملاحظات، أو أيًا كانت قواعدك. ثم اطلب منهم تأكيد ذلك قبل أن يبدؤوا.
 
-كن واقعيًا بشأن ما يفعله التعهّد. فالدراسات عن التذكير الأخلاقي والإقرارات الموقّعة لم تصمد جيدًا: لم تجد إعادة كبيرة لتجربة "الوصايا العشر" أي أثر على الغش ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032))، ولم يجد مؤلفو دراسة شهيرة عن "التوقيع في أعلى النموذج" أي أثر حين أعادوها لاحقًا ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)). غير أن الأبحاث في الجامعات تربط مواثيق الشرف، بوصفها جزءًا من ثقافة نزاهة أوسع، بغش أقل ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). والقيمة الأساسية للتعهّد هي الوضوح: لا يستطيع أحد أن يقول إنه لم يكن يعرف القواعد، ولديك سجل بأنه وافق عليها.
+كن واقعيًا بشأن ما يفعله التعهّد. فالدراسات عن التذكير الأخلاقي والإقرارات الموقّعة لم تصمد جيدًا: لم تجد إعادة كبيرة لتجربة "الوصايا العشر" أي أثر على الغش ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032))، ولم يجد مؤلفو دراسة شهيرة عن "التوقيع في أعلى النموذج" أي أثر حين أعادوها لاحقًا ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117))؛ وقد سُحبت الورقة الأصلية في عام 2021 بسبب شكوك حول بياناتها. غير أن الأبحاث في الجامعات تربط مواثيق الشرف، بوصفها جزءًا من ثقافة نزاهة أوسع، بغش أقل ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). والقيمة الأساسية للتعهّد هي الوضوح: لا يستطيع أحد أن يقول إنه لم يكن يعرف القواعد، ولديك سجل بأنه وافق عليها.
 
 ## حدود المراقبة: الإنصاف والقانون
 
@@ -83,9 +83,9 @@ updated: "2026-10-29"
 
 ويضيف القانون حدودًا، خاصة في أوروبا:
 
-- **اللائحة العامة لحماية البيانات (GDPR).** فيديو المرشح بيانات شخصية، وتحليل وجهه قد يكون بيانات بيومترية تحظى بحماية خاصة ([المادة 9](https://gdpr-info.eu/art-9-gdpr/)). وفي عام 2021 غرّمت هيئة حماية البيانات الإيطالية جامعة بوكوني بسبب مراقبتها الامتحانات عن بُعد، وخلصت من بين أمور أخرى إلى أن تحليل الوجه كان معالجة بيومترية دون أساس قانوني صالح، وأن الموافقة لم تُمنح بحرية بسبب اختلال التوازن بين الجامعة والطلاب، وأن الطلاب لم يُبلَّغوا بها على النحو الصحيح ([Garante، القرار رقم 317 الصادر في 16 سبتمبر 2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). أما اختلال موازين القوة بين صاحب العمل والمرشح فهو، إن صح القول، أكبر من ذلك.
+- **اللائحة العامة لحماية البيانات (GDPR).** فيديو المرشح بيانات شخصية، وتحليل وجهه قد يكون بيانات بيومترية تحظى بحماية خاصة ([المادة 9](https://gdpr-info.eu/art-9-gdpr/)). وفي عام 2021 غرّمت هيئة حماية البيانات الإيطالية جامعة بوكوني بسبب مراقبتها الامتحانات عن بُعد، وخلصت من بين أمور أخرى إلى أن تحليل الوجه كان معالجة بيومترية دون أساس قانوني صالح، وأن الموافقة لم تُمنح بحرية بسبب اختلال التوازن بين الجامعة والطلاب، وأن الطلاب لم يُبلَّغوا بها على النحو الصحيح ([Garante، القرار رقم 317 الصادر في 16 سبتمبر 2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). وبعد الطعون، استقرت الغرامة عند €150,000، بعد أن كانت €200,000. أما اختلال موازين القوة بين صاحب العمل والمرشح فهو، إن صح القول، أكبر من ذلك.
 - **قانون الذكاء الاصطناعي للاتحاد الأوروبي (AI Act).** منذ 2 فبراير 2025، يُحظر الذكاء الاصطناعي الذي يستنتج مشاعر الأشخاص في مكان العمل، مع استثناءات ضيقة لأسباب طبية وتتعلق بالسلامة ([المادة 5(1)(f)](https://artificialintelligenceact.eu/article/5/))، وتقرأ إرشادات المفوضية الأوروبية "مكان العمل" على أنه يشمل التوظيف ([إرشادات المفوضية بشأن ممارسات الذكاء الاصطناعي المحظورة](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)). والمراقبة التي تحكم على السلوك "المريب" من الفيديو تقترب كثيرًا من هذا الخط. كما أن الذكاء الاصطناعي المستخدم لتقييم المرشحين عالي المخاطر على الأرجح جدًا، مع التزامات مثل الإشراف البشري. ويشرح دليل [هل التوظيف بالذكاء الاصطناعي قانوني في الاتحاد الأوروبي؟](/guides/is-ai-hiring-legal-in-the-eu) القواعد ومواعيدها.
-- **الولايات المتحدة.** قضت محكمة فيدرالية في عام 2022 بأن مسح جامعة حكومية لغرفة نوم طالب بكاميرا الويب قبل امتحان عبر الإنترنت انتهك التعديل الرابع للدستور ([Ogletree v. Cleveland State University، كما أوردها Higher Ed Dive](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). أصحاب العمل في القطاع الخاص غير ملزمين بالتعديل الرابع، لكن قوانين الولايات بشأن البيانات البيومترية، مثل قانون خصوصية المعلومات البيومترية في إلينوي (BIPA)، تضع قواعدها الخاصة لبيانات الوجه.
+- **الولايات المتحدة.** قضى قاضٍ فيدرالي في عام 2022 بأن مسح جامعة حكومية لغرفة نوم طالب بكاميرا الويب قبل امتحان عبر الإنترنت انتهك التعديل الرابع للدستور ([Ogletree v. Cleveland State University، كما أوردها Higher Ed Dive](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). وأنهت محكمة الاستئناف القضية في عام 2023 بعد وفاة الطالب، دون الفصل في المسألة ([Bloomberg Law](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death))، فبقيت مفتوحة. أصحاب العمل في القطاع الخاص غير ملزمين بالتعديل الرابع، لكن قوانين الولايات بشأن البيانات البيومترية، مثل قانون خصوصية المعلومات البيومترية في إلينوي (BIPA)، تضع قواعدها الخاصة لبيانات الوجه.
 
 **هذا القسم إرشاد عملي، وليس استشارة قانونية.** تحقّق من التزاماتك حيث توظّف.
 
@@ -110,7 +110,7 @@ updated: "2026-10-29"
 - **أنماط الإجابة، بعد أن ينهي المرشح.** يشير تقرير المرشح إلى أوقات إجابة تبقى متقاربة في كل سؤال مهما كان طوله وصعوبته، وإلى إجابات صحيحة عن الأسئلة الصعبة مع إجابات خاطئة عن السهلة، مع الأرقام التي يستند إليها ذلك ("9 من 10 أسئلة صعبة صحيحة، و4 من 8 أسئلة سهلة خاطئة"). ويحتاج الثاني إلى عدد كافٍ من إجابات المرشحين الآخرين لمعرفة مدى صعوبة كل سؤال. وقد ضُبطت العتبتان على اختبار بمرشحين محاكَين بحيث لا يُنبَّه على أكثر من 1% من النزهاء؛ ورصدتا نحو ثلث من كانوا يمرّرون كل سؤال إلى ذكاء اصطناعي. ويذكر التقرير أن لأنماط كهذه أسبابًا بريئة محتملة.
 - **أسئلة للمقابلة المباشرة.** تقترح صفحة كل مرشح أنهى الاختبار حتى 3 أسئلة أجاب عنها إجابة صحيحة، من أقوى مواضيعه، لمناقشتها في المحادثة التالية، بدءًا بالأسئلة الصعبة التي يقوم عليها النمط إن وُجد.
 - **يتعهّد المرشحون** بالإجابة بأنفسهم، دون أدوات ذكاء اصطناعي أو أشخاص آخرين، قبل أن يتمكنوا من البدء، وتُظهر بطاقة التقييم متى فعلوا ذلك.
-- **لا كاميرا ولا ميكروفون ولا تسجيل للشاشة.** يستخدم testee فقط ما تراه صفحة الاختبار نفسها: الإجابات، والأوقات، ومغادرات الصفحة، ومحاولات النسخ.
+- **لا كاميرا ولا تسجيل للشاشة.** يُستخدم الميكروفون في النمط الصوتي فقط، لتحويل إجابة المرشح المنطوقة إلى نص. وفي غير ذلك، يستخدم testee فقط ما تراه صفحة الاختبار نفسها: الإجابات، والأوقات، ومغادرات الصفحة، ومحاولات النسخ.
 - **البشر يقررون.** لا شيء يرفض مرشحًا تلقائيًا.
 
 ## قراءات ذات صلة
@@ -129,10 +129,10 @@ updated: "2026-10-29"
 - van der Linden, W. J., & Guo, F. (2008). Bayesian procedures for identifying aberrant response-time patterns in adaptive testing. *Psychometrika, 73*(3), 365–384. [doi:10.1007/s11336-007-9046-8](https://doi.org/10.1007/s11336-007-9046-8)
 - Meijer, R. R., & Sijtsma, K. (2001). Methodology review: Evaluating person fit. *Applied Psychological Measurement, 25*(2), 107–135. [doi:10.1177/01466210122031957](https://doi.org/10.1177/01466210122031957)
 - Verschuere, B., et al. (2018). Registered replication report on Mazar, Amir, and Ariely (2008). *Advances in Methods and Practices in Psychological Science, 1*(3), 299–317. [doi:10.1177/2515245918781032](https://doi.org/10.1177/2515245918781032)
-- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107. [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
+- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107 (صُحّحت عام 2026). [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
 - McCabe, D. L., Treviño, L. K., & Butterfield, K. D. (2001). Cheating in academic institutions: A decade of research. *Ethics & Behavior, 11*(3), 219–232. [doi:10.1207/S15327019EB1103_2](https://doi.org/10.1207/S15327019EB1103_2)
 - Yoder-Himes, D. R., et al. (2022). Racial, skin tone, and sex disparities in automated proctoring software. *Frontiers in Education, 7*. [doi:10.3389/feduc.2022.881449](https://doi.org/10.3389/feduc.2022.881449)
 - Garante per la protezione dei dati personali، [القرار رقم 317 الصادر في 16 سبتمبر 2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988) (Università Bocconi).
-- Regulation (EU) 2024/1689 (AI Act)، [المادة 5](https://artificialintelligenceact.eu/article/5/)؛ المفوضية الأوروبية، [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)، 4 فبراير 2025.
+- Regulation (EU) 2024/1689 (AI Act)، [المادة 5](https://artificialintelligenceact.eu/article/5/)؛ المفوضية الأوروبية، [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)، نُشرت في 4 فبراير 2025، واعتُمدت في 29 يوليو 2025.
 - GDPR، [المادة 9](https://gdpr-info.eu/art-9-gdpr/) و[المادة 22](https://gdpr-info.eu/art-22-gdpr/).
-- Higher Ed Dive، [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)، أغسطس 2022 (Ogletree v. Cleveland State University, N.D. Ohio).
+- Higher Ed Dive، [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)، أغسطس 2022 (Ogletree v. Cleveland State University, N.D. Ohio)؛ Bloomberg Law، [Cleveland State dodges room-scan order after plaintiff's death](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death)، ديسمبر 2023.

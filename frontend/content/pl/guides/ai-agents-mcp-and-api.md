@@ -2,7 +2,7 @@
 title: "Agenci AI, MCP i API: czym są i jak wykorzystać je w rekrutacji"
 seoTitle: "Agenci AI, MCP i API w rekrutacji: jak z nich korzystać"
 description: "Czym są agent AI, MCP i API, jak bezpiecznie używać ich w rekrutacji i jak obsługiwać testee przez jej asystentkę AI, Claude, ChatGPT lub własną platformę."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # Agenci AI, MCP i API: czym są i jak wykorzystać je w rekrutacji
@@ -96,7 +96,7 @@ Jeśli Twój zespół już pracuje w Claude lub ChatGPT, możesz przenieść tam
 **Jak połączyć:**
 
 1. W testee otwórz zakładkę **Integracje** firmy i wybierz **Aplikacje AI**. Skopiuj adres serwera: `https://testee.ai/mcp`.
-2. **W Claude:** otwórz Ustawienia, potem Konektory, i dodaj własny konektor z tym adresem. **W Claude Code:** uruchom `claude mcp add --transport http testee https://testee.ai/mcp`. **W ChatGPT:** dodaj go jako własny konektor w ustawieniach aplikacji i konektorów.
+2. **W Claude:** otwórz Dostosuj, potem Konektory, i dodaj własny konektor z tym adresem; w planach Team i Enterprise właściciel najpierw dodaje go w ustawieniach organizacji. **W Claude Code:** uruchom `claude mcp add --transport http testee https://testee.ai/mcp`. **W ChatGPT:** dodaj go jako własny serwer MCP. Miejsce zależy od Twojego planu, a administrator może musieć na to zezwolić.
 3. Twoja aplikacja AI otworzy logowanie do testee. Zaloguj się, sprawdź, która aplikacja prosi o dostęp, i wybierz **Zezwól**. Aby aplikacja mogła tylko odczytywać, najpierw wyłącz **Zezwól na zmiany**.
 
 Od tej chwili pytaj w czacie tak, jak pytasz współpracownika: „Kto w testee jest w pierwszej trójce kandydatów na Product designer?” Większość aplikacji AI pyta Cię przed zmianą i ostrzega przed wszystkim, czego nie da się cofnąć: testee informuje je, które działania coś zmieniają lub usuwają.
@@ -106,7 +106,7 @@ Od tej chwili pytaj w czacie tak, jak pytasz współpracownika: „Kto w testee 
 - **Twoje uprawnienia.** Działa jako Ty, w każdej firmie, do której należysz, z Twoją rolą w każdej z nich.
 - **Kredyty i limity.** Zaproszenie kandydata kosztuje tyle samo co w aplikacji i obowiązują te same limity e-maili.
 - **Ślad.** Wszystko, co aplikacja AI robi za Ciebie, pojawia się w dzienniku działań firmy jako zrobione przez aplikację AI, od zatwierdzania tematów i przeglądania wyników po przyznanie dodatkowego czasu czy wycofanie kandydata. Właściciel firmy czyta go na karcie **Dziennik działań** firmy.
-- **Decyduje firma.** Właściciele i administratorzy mogą zabronić aplikacjom AI korzystania z danych firmy opcją **Zezwól na aplikacje AI w tej firmie** na stronie aplikacji AI firmy.
+- **Decyduje firma.** Właściciele i administratorzy mogą zabronić aplikacjom AI korzystania z danych firmy przełącznikiem **Zezwól na aplikacje AI** na stronie aplikacji AI firmy.
 - **Czego nie może.** Nie widzi Twojego hasła ani kluczy API i nie może usunąć Twojego konta ani firmy. To pozostaje w aplikacji.
 
 **Aby odłączyć,** usuń konektor w swojej aplikacji AI albo wybierz **Odłącz** obok niego w sekcji **Aplikacje AI** w zakładce Integracje. Przestaje działać od razu.
@@ -117,7 +117,7 @@ Od tej chwili pytaj w czacie tak, jak pytasz współpracownika: „Kto w testee 
 
 Do automatyzacji bez AI testee ma API, opisane w [dokumentacji dla deweloperów](/api-docs).
 
-1. Właściciel lub administrator otwiera zakładkę **Integracje** firmy, potem **API**, i wybiera **Nowy klucz**. Nazwij go tak jak platformę, która będzie z niego korzystać, wybierz, kiedy wygaśnie, i zaznacz tylko to, czego potrzebuje: klucz pulpitu tylko odczytuje, a klucz strony kariery także zaprasza. Uprawnienia możesz później dodać lub odebrać. Klucz jest wyświetlany tylko raz; przechowuj go w bezpiecznym miejscu.
+1. Właściciel lub administrator otwiera zakładkę **Integracje** firmy, potem **API, SDK, webhooki**, i wybiera **Nowy klucz**. Nazwij go tak jak platformę, która będzie z niego korzystać, wybierz, kiedy wygaśnie, i zaznacz tylko to, czego potrzebuje: klucz pulpitu tylko odczytuje, a klucz strony kariery także zaprasza. Uprawnienia możesz później dodać lub odebrać. Klucz jest wyświetlany tylko raz; przechowuj go w bezpiecznym miejscu.
 2. Twoja platforma wysyła żądania z tym kluczem: pobiera listę rozmów firmy, pobiera listę kandydatów lub dane pojedynczego kandydata z wynikiem, informacją, czy zaliczył, i sygnałami nieuczciwości, oraz zaprasza kandydata.
 3. Dodaj **webhook**: adres na Twojej platformie, który testee wywołuje z podpisem, gdy kandydat zaczyna lub kończy, gdy zaproszenie do niego nie dotrze lub wygaśnie, gdy kandydat zostanie usunięty i gdy rozmowa jest gotowa, więc nie musisz ciągle dopytywać. Na stronie API możesz wysłać do niego zdarzenie testowe i zobaczyć jego dziennik dostarczeń.
 

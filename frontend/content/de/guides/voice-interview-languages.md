@@ -2,14 +2,14 @@
 title: "Sprachmodus in 23 Sprachen: wie gut Mira in jeder vorliest und versteht"
 seoTitle: "Sprachmodus in 23 Sprachen: Qualität je Sprache"
 description: "Wie gut der Sprachmodus von testee in allen 23 Sprachen Fragen vorliest und Antworten versteht, wie wir das gemessen haben und wann Antippen besser ist."
-updated: "2026-11-04"
+updated: "2026-11-07"
 ---
 
 # Sprachmodus in 23 Sprachen: wie gut Mira in jeder vorliest und versteht
 
 Im Sprachmodus liest Mira, die KI-Interviewerin von testee, jede Frage und ihre Optionen vor, und der Kandidat antwortet mündlich: „B“, „Option C“, „der Median“ oder „A und D“ bei einer Frage mit mehreren richtigen Antworten. Der Sprachmodus funktioniert in allen 23 Sprachen von testee, aber Sprachtechnologie ist nicht in jeder Sprache gleich gut. Dieser Leitfaden zeigt, wie gut sie in jeder Sprache funktioniert, damit du den Modus wählen kannst, der zu deinen Kandidaten passt.
 
-In jeder Sprache können Kandidaten statt zu sprechen immer eine Option antippen, und die Option, die Mira verstanden hat, erscheint auf dem Bildschirm, während sie sie wiederholt.
+Sobald das Interview begonnen hat, können Kandidaten in jeder Sprache statt zu sprechen immer eine Option antippen, und die Option, die Mira verstanden hat, erscheint auf dem Bildschirm, während sie sie wiederholt. Die Zeit einer Frage läuft, während Mira sie vorliest.
 
 ## Das Wichtigste in Kürze
 
@@ -53,9 +53,9 @@ Gemessen am 4. November 2026.
 
 - **Hebräisch, Arabisch und Persisch:** Mira benennt die Optionen manchmal mit den Buchstaben des eigenen Alphabets der Sprache (Alef, Bet, Gimel) statt mit A, B, C und D, wie sie auf dem Bildschirm stehen. Die Reihenfolge bleibt gleich, die erste Option ist also weiterhin die erste, aber Kandidaten sollten mit den Buchstaben antworten, die sie sehen.
 - **Estnisch:** Ein kurzes „ei“ (nein) kann wie der Buchstabe A klingen. Lehnt ein Kandidat eine Auswahl ab, die Mira wiederholt, wird deshalb gelegentlich Option A erfasst.
-- **Thai:** Ein gesprochener Buchstabe wird manchmal als thailändische Zahl verstanden („ข้อ C“ als „ข้อ สี่“, Option vier), wodurch die falsche Option erfasst werden kann, und Optionen, die über ihre Position genannt werden, werden oft nicht verstanden. Antippen ist sicherer.
+- **Thai:** Ein gesprochener Buchstabe wird manchmal als thailändische Zahl verstanden („ข้อ C“ als „ข้อ สี่“, Option vier), wodurch die falsche Option erfasst werden kann. Antippen ist sicherer.
 - **Japanisch:** „選択肢C“ (Option C) wurde manchmal als anderes Wort verstanden und als falsche Option erfasst; ein Buchstabe allein funktioniert besser.
-- **Russisch, Ukrainisch und Polnisch:** Das „und“ zwischen zwei Buchstaben („A и C“) wird manchmal als dritter Buchstabe verstanden, und Mira fragt nach.
+- **Russisch und Polnisch:** Das „und“ zwischen zwei Buchstaben („A и C“) wird manchmal als dritter Buchstabe verstanden, und Mira fragt nach.
 
 ## Wie wir gemessen haben
 
@@ -67,6 +67,7 @@ Die Zahlen sind ein Anhaltspunkt, keine Garantie. Bei zwanzig Antworten pro Spra
 
 - **Der Sprachmodus** eignet sich für Stellen, bei denen es aufs Sprechen ankommt, für Kandidaten, die lieber nicht tippen oder antippen, und für Barrierefreiheit. Am besten funktioniert er in den Sprachen mit „sehr gut“ und „gut“.
 - **Der Klickmodus** ist der Standard und funktioniert in jeder Sprache gleich. Bevorzuge ihn für kritische Besetzungen in einer Sprache mit „befriedigend“.
+- Ein Sprachinterview zu starten erfordert ein funktionierendes Mikrofon, ein Kandidat, der keines nutzen kann, braucht also den Klickmodus, eingestellt vor dem Start.
 - Du kannst den Modus für das ganze Interview in dessen Einstellungen festlegen und ihn für einen einzelnen Kandidaten ändern, bevor er beginnt.
 
-Im Sprachmodus werden die Stimmen der Kandidaten nur in Text umgewandelt, um ihre Antworten zu erkennen, und nie gespeichert oder auf andere Weise analysiert.
+Im Sprachmodus werden die Stimmen der Kandidaten nur in Text umgewandelt, um ihre Antworten zu erkennen, nie auf andere Weise analysiert, und testee speichert sie nie. OpenAI, das Sprache in Text umwandelt, ist angewiesen, sie nicht zu speichern, und bewahrt API-Daten höchstens 30 Tage auf, nur zur Missbrauchskontrolle.

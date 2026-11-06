@@ -2,14 +2,14 @@
 title: "Birleşik Krallık'ta yapay zekâ ile işe alım yasal mı? İşverenlerin bilmesi gerekenler"
 seoTitle: "Birleşik Krallık'ta Yapay Zekâ ile İşe Alım Yasal mı?"
 description: "Birleşik Krallık'ta işe alımda yapay zekâ kurallarla yasaldır: Equality Act, Şubat 2026'dan beri UK GDPR'ın otomatik karar kuralları ve ICO bulguları."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Birleşik Krallık'ta yapay zekâ ile işe alım yasal mı? İşverenlerin bilmesi gerekenler
 
 Genel olarak evet: Birleşik Krallık'ta işe alımda yapay zekâ kullanmak yasaldır. Birleşik Krallık'ın AB'nin Yapay Zekâ Yasası gibi tek bir yapay zekâ yasası yoktur. Bunun yerine 2010 Eşitlik Yasası (Equality Act 2010) ve UK GDPR, her test gibi yapay zekâ araçlarına da uygulanır; 5 Şubat 2026'dan bu yana UK GDPR'da yalnızca otomatik yollarla verilen kararlara ilişkin yeni kurallar vardır.
 
-Bu rehber kuralları üst düzeyde, işverenlerin yapması gerekenleri ve testee'nin konuya yaklaşımını açıklar. **Hukuki tavsiye değildir.** Ekim 2026 itibarıyla geçerli kuralları yansıtır; bazıları yenidir ve düzenleyici kurumun bunlara ilişkin kılavuzları hâlâ güncellenmektedir.
+Bu rehber kuralları üst düzeyde, işverenlerin yapması gerekenleri ve testee'nin konuya yaklaşımını açıklar. **Hukuki tavsiye değildir.** Kasım 2026 itibarıyla geçerli kuralları yansıtır; bazıları yenidir ve düzenleyici kurumun bunlara ilişkin kılavuzları hâlâ güncellenmektedir.
 
 ## Kısa yanıt
 
@@ -83,6 +83,8 @@ Hem sağlayıcılar hem işe alım yapanlar için yedi temel önerisi:
 
 ICO ayrıca yapay zekâ çıktılarının insanlar tarafından anlamlı biçimde incelenmesini ve yapılan incelemelerin kayıt altına alınmasını önerir.
 
+ICO, Mart 2026'da 30'dan fazla işverenle yaptığı çalışmaya dayanan ikinci bir rapor yayımladı: [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/). Rapora göre birçok işveren, gerçekte çok az insan katılımı olmasına rağmen araçlarını karar desteği olarak görüyor; bir karara itiraz için öngörülen güvenceler eşit uygulanmıyor; adaylara otomasyonun nasıl kullanıldığı çoğu zaman açıkça söylenmiyor; DPIA'lar ise çoğu zaman yok veya zayıf. ICO'nun otomatik kararlara ilişkin güncellenmiş kılavuzu 29 Mayıs 2026'ya kadar görüşe açıldı ve Kasım 2026 itibarıyla kesinleşmedi; yapay zekâ ve otomatik karar verme konusunda yasal dayanağı olan bir uygulama kodu da yolda. Düzenleyici kurum 30 Eylül 2026'dan beri Information Commission olarak anılıyor, ancak hâlâ ICO adını kullanıyor.
+
 ## ABD'ye aktarımlar
 
 Bir sağlayıcı Birleşik Krallık'taki adayların verilerini Amerika Birleşik Devletleri'ne gönderirse, bu Birleşik Krallık–ABD veri köprüsü (UK–US data bridge) kapsamında olabilir: 12 Ekim 2023'ten beri yürürlükte olan [The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents), EU–US Data Privacy Framework'ün Birleşik Krallık uzantısı (UK Extension) kapsamında sertifikalı ABD şirketleri için. Diğerleri için Birleşik Krallık eki (UK addendum) ile birlikte standart sözleşme hükümleri gibi güvenceler gerekir.
@@ -105,7 +107,7 @@ testee, bir iş tanımından yapay zekâ tarafından yazılmış süreli, çokta
 
 Bunun bugün üründeki karşılığı:
 
-- **Soruları ve cevap anahtarlarını yapay zekâ yazar; değerlendirme sabit kurallara göre yapılır.** Hiçbir yapay zekâ adayın yanıtını okumaz veya yargılamaz; video veya yüz analizi kullanılmaz. Sesli modda konuşma metne dönüştürülür ve bir seçenekle eşleştirilir; bu seçenek adaya söylenir ve ekranda gösterilir: açıkça söylenen tek bir seçenek hemen cevap olarak kaydedilir, birden çok seçenekli bir seçim ise önce onaylatılır. Konuşma asla saklanmaz ve ses asla analiz edilmez.
+- **Soruları ve cevap anahtarlarını yapay zekâ yazar; değerlendirme sabit kurallara göre yapılır.** Hiçbir yapay zekâ adayın yanıtını yargılamaz; video veya yüz analizi kullanılmaz. Sesli modda konuşma metne dönüştürülür ve bir seçenekle eşleştirilir; bu seçenek adaya söylenir ve ekranda gösterilir: açıkça söylenen tek bir seçenek hemen cevap olarak kaydedilir, birden çok seçenekli bir seçim ise önce onaylatılır. testee konuşmayı asla saklamaz ve ses asla analiz edilmez.
 - **Konuları siz onaylarsınız;** bu, herhangi bir soru yazılmadan önce olur ve geçme notunu siz seçersiniz.
 - **Kararı insanlar verir.** Sonuçlar sayfası ve PDF raporlar ekibinize sonuçları incelemesini hatırlatır; testee adayları reddetmez veya ret mesajı göndermez.
 - **Adaylar başlamadan önce bilgilendirilir:** soruların yapay zekâ tarafından yazıldığı, sonuçları şirketinizdeki kişilerin inceleyip karar verdiği ve yeniden inceleme talep edebilecekleri.
@@ -128,4 +130,5 @@ Bunun bugün üründeki karşılığı:
 - Data (Use and Access) Act 2025, UK GDPR'a 22A ila 22D maddelerini ekleyen [80. bölüm](https://www.legislation.gov.uk/ukpga/2025/18/section/80) ([22C maddesi](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [Kasım 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), Mart 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

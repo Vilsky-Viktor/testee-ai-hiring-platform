@@ -2,7 +2,7 @@
 title: "KI-Agenten, MCP und APIs: was sie sind und wie du sie im Recruiting nutzt"
 seoTitle: "KI-Agenten, MCP und APIs im Recruiting: so nutzt du sie"
 description: "Was KI-Agenten, MCP und APIs sind, wie du sie im Recruiting sicher nutzt und testee über seine KI-Assistentin, Claude, ChatGPT oder dein System steuerst."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # KI-Agenten, MCP und APIs: was sie sind und wie du sie im Recruiting nutzt
@@ -96,7 +96,7 @@ Wenn dein Team schon in Claude oder ChatGPT arbeitet, kannst du testee dorthin h
 **So verbindest du:**
 
 1. Öffne in testee den Tab **Integrationen** eines Unternehmens und wähle **KI-Apps**. Kopiere die Serveradresse: `https://testee.ai/mcp`.
-2. **In Claude:** Öffne die Einstellungen, dann Konnektoren, und füge einen eigenen Konnektor mit dieser Adresse hinzu. **In Claude Code:** Führe `claude mcp add --transport http testee https://testee.ai/mcp` aus. **In ChatGPT:** Füge ihn als eigenen Konnektor in den Einstellungen für Apps und Konnektoren hinzu.
+2. **In Claude:** Öffne Anpassen, dann Konnektoren, und füge einen eigenen Konnektor mit dieser Adresse hinzu; bei Team- und Enterprise-Tarifen fügt ihn zuerst ein Inhaber in den Organisationseinstellungen hinzu. **In Claude Code:** Führe `claude mcp add --transport http testee https://testee.ai/mcp` aus. **In ChatGPT:** Füge ihn als eigenen MCP-Server hinzu. Wo das geht, hängt von deinem Tarif ab, und dein Admin muss es eventuell erlauben.
 3. Deine KI-App öffnet die Anmeldung von testee. Melde dich an, prüfe, welche App anfragt, und wähle **Zulassen**. Soll sie nur lesen können, schalte vorher **Änderungen erlauben** aus.
 
 Ab dann fragst du in deinem Chat so, wie du einen Kollegen fragen würdest: „Wer sind in testee die drei besten Kandidaten für Product designer?“ Die meisten KI-Apps fragen dich vor einer Änderung und warnen dich vor allem, was sich nicht rückgängig machen lässt: testee teilt ihnen mit, welche Aktionen etwas ändern oder löschen.
@@ -106,7 +106,7 @@ Ab dann fragst du in deinem Chat so, wie du einen Kollegen fragen würdest: „W
 - **Deine Berechtigungen.** Er handelt als du, in jedem Unternehmen, in dem du bist, mit deiner Rolle in jedem davon.
 - **Credits und Limits.** Einen Kandidaten einzuladen kostet dasselbe wie in der App, und es gelten dieselben E-Mail-Limits.
 - **Die Nachvollziehbarkeit.** Alles, was eine KI-App für dich tut, erscheint im Aktionsprotokoll des Unternehmens als über eine KI-App erledigt, vom Freigeben von Themen und Ansehen von Ergebnissen bis zum Geben von Zusatzzeit oder Widerrufen eines Kandidaten. Der Inhaber des Unternehmens liest es im Tab **Aktionsprotokoll** des Unternehmens.
-- **Das Unternehmen entscheidet.** Inhaber und Admins können KI-Apps mit **KI-Apps in diesem Unternehmen erlauben** auf der Seite „KI-Apps“ des Unternehmens von dessen Daten ausschließen.
+- **Das Unternehmen entscheidet.** Inhaber und Admins können KI-Apps mit dem Schalter **KI-Apps erlauben** auf der Seite „KI-Apps“ des Unternehmens von dessen Daten ausschließen.
 - **Was er nicht kann.** Er sieht weder dein Passwort noch deine API-Schlüssel und kann weder dein Konto noch ein Unternehmen löschen. Das bleibt in der App.
 
 **Zum Trennen** entferne den Konnektor in deiner KI-App oder wähle **Trennen** daneben unter **KI-Apps** im Tab Integrationen. Er funktioniert sofort nicht mehr.
@@ -117,7 +117,7 @@ Ab dann fragst du in deinem Chat so, wie du einen Kollegen fragen würdest: „W
 
 Für Automatisierung ohne KI hat testee eine API, beschrieben in der [Entwicklerdokumentation](/api-docs).
 
-1. Ein Inhaber oder Admin öffnet den Tab **Integrationen** eines Unternehmens, dann **API**, und wählt **Neuer Schlüssel**. Benenne ihn nach der Plattform, die ihn nutzen wird, wähle, wann er abläuft, und setze nur die Häkchen, die er braucht: Der Schlüssel eines Dashboards liest nur, der einer Karriereseite lädt auch ein. Berechtigungen kannst du später hinzufügen oder entziehen. Der Schlüssel wird nur einmal angezeigt; bewahre ihn sicher auf.
+1. Ein Inhaber oder Admin öffnet den Tab **Integrationen** eines Unternehmens, dann **API, SDK, Webhooks**, und wählt **Neuer Schlüssel**. Benenne ihn nach der Plattform, die ihn nutzen wird, wähle, wann er abläuft, und setze nur die Häkchen, die er braucht: Der Schlüssel eines Dashboards liest nur, der einer Karriereseite lädt auch ein. Berechtigungen kannst du später hinzufügen oder entziehen. Der Schlüssel wird nur einmal angezeigt; bewahre ihn sicher auf.
 2. Deine Plattform sendet Anfragen mit diesem Schlüssel: die Interviews des Unternehmens auflisten, Kandidaten mit ihrem Ergebnis, ob sie bestanden haben, und ihren Hinweisen zur Integrität auflisten oder abrufen und einen Kandidaten einladen.
 3. Füge einen **Webhook** hinzu: eine Adresse auf deiner Plattform, die testee signiert aufruft, wenn ein Kandidat beginnt, fertig ist, seine Einladung nicht zugestellt werden kann oder abläuft oder er entfernt wird, und wenn ein Interview bereit ist, damit du nicht ständig nachfragen musst. Auf der API-Seite kannst du ihm ein Testereignis senden und sein Zustellprotokoll sehen.
 

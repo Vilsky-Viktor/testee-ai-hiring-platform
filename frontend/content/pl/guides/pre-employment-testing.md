@@ -2,7 +2,7 @@
 title: "Testy rekrutacyjne: praktyczny przewodnik dla małych i średnich zespołów"
 seoTitle: "Testy rekrutacyjne: rodzaje, uczciwość i wybór narzędzia"
 description: "Czym są testy rekrutacyjne i testy kompetencji, jakie są ich rodzaje, kiedy ich używać, jak zadbać o uczciwość i zgodność z prawem i jak wybrać narzędzie."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Testy rekrutacyjne: praktyczny przewodnik dla małych i średnich zespołów
@@ -48,11 +48,11 @@ Umieść test zaraz po złożeniu aplikacji (przez link w ogłoszeniu o pracę) 
 
 ## Uczciwość i prawo: podstawy
 
-Ta sekcja to ogólny przegląd według stanu na październik 2026. To nie jest porada prawna. Przepisy zależą od kraju, branży i sposobu wykorzystania wyników. Skonsultuj się z własnym prawnikiem.
+Ta sekcja to ogólny przegląd według stanu na listopad 2026. To nie jest porada prawna. Przepisy zależą od kraju, branży i sposobu wykorzystania wyników.
 
 ### Stany Zjednoczone: EEOC i reguła czterech piątych
 
-Pracodawcy w USA, którzy używają testów przy decyzjach o zatrudnieniu, podlegają federalnym przepisom antydyskryminacyjnym egzekwowanym przez EEOC. Uniform Guidelines on Employee Selection Procedures zawierają praktyczną regułę dotyczącą niekorzystnego wpływu (adverse impact): „A selection rate for any race, sex, or ethnic group which is less than four-fifths (4/5) (or eighty percent) of the rate for the group with the highest rate will generally be regarded by the Federal enforcement agencies as evidence of adverse impact” ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+Pracodawcy w USA, którzy używają testów przy decyzjach o zatrudnieniu, podlegają federalnym przepisom antydyskryminacyjnym egzekwowanym przez EEOC. Uniform Guidelines on Employee Selection Procedures zawierają praktyczną regułę dotyczącą niekorzystnego wpływu (adverse impact): „A selection rate for any race, sex, or ethnic group which is less than four-fifths (4/5) (or eighty percent) of the rate for the group with the highest rate will generally be regarded by the Federal enforcement agencies as evidence of adverse impact” ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). EEOC wysłała do Białego Domu w październiku 2026 ostateczny przepis uchylający interpretacyjne części tych wytycznych, z celem na styczeń 2027. Zasada Title VII dotycząca niekorzystnego wpływu pozostaje, a sprawdzenie czterech piątych nadal jest przydatnym pierwszym testem.
 
 W praktyce: sprawdzaj tylko wiedzę potrzebną w pracy, obserwuj odsetek zdających w poszczególnych grupach, zapewniaj racjonalne usprawnienia, takie jak dodatkowy czas, i sprawdzaj przepisy stanowe oraz miejskie dotyczące zautomatyzowanych narzędzi rekrutacyjnych. Na przykład nowojorskie [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) wymaga audytu stronniczości, publicznego podsumowania tego audytu i powiadomienia kandydatów, zanim zostanie użyte zautomatyzowane narzędzie do decyzji o zatrudnieniu.
 
@@ -98,9 +98,9 @@ testee zamienia opis stanowiska w rozmowę sprawdzającą umiejętności z pytan
 
 - **Każdy kandydat dostaje własny losowy zestaw** z puli każdego tematu, z odliczaniem czasu kontrolowanym po stronie serwera przy każdym pytaniu. Każdemu, kto o to poprosi, możesz dać dodatkowy czas.
 - **Karty wyników** pokazują każdą odpowiedź, to, czy była poprawna, i ile czasu zajęła, z oznaczeniami zbyt szybkich odpowiedzi, opuszczenia strony, prób kopiowania i nietypowych wzorców odpowiedzi, a także pytania, o które warto dopytać na rozmowie na żywo. Oznaczenia nie zmieniają wyniku.
-- **Odpowiedzi są oceniane według klucza odpowiedzi**, który pisze AI; próbka kluczy z każdego tematu jest sprawdzana przed udostępnieniem, a pozostałe, gdy pytanie zostanie oznaczone. Żadna AI nie czyta ani nie ocenia odpowiedzi kandydata. Raport PDF obejmuje jednego kandydata lub całą listę.
+- **Odpowiedzi są oceniane według klucza odpowiedzi**, który pisze AI; próbka kluczy z każdego tematu jest sprawdzana przed udostępnieniem, a pozostałe, gdy pytanie zostanie oznaczone. Żadna AI nie ocenia odpowiedzi kandydata. Raport PDF obejmuje jednego kandydata lub całą listę.
 - **Współpracuje z Twoimi narzędziami:** kandydaci, których przenosisz na etap w Workable, Greenhouse, Teamtailor, Recruitee lub Breezy HR, dostają rozmowę, a ich wyniki wracają do ATS. Slack powiadamia, gdy kandydat skończy test, a [API](/api-docs) łączy testee z Twoją własną platformą. Zobacz [Jak połączyć testy umiejętności z ATS](/guides/ats-integration-skills-tests).
 
-Cena naliczana jest za kandydata, który odpowiada, bez subskrypcji: $2–5 za kandydata w zależności od wielkości doładowania (w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze, Indiach, pozostałej części Europy i Wielkiej Brytanii w walucie lokalnej), a pierwszych 3 kandydatów masz za darmo. Dane są hostowane w UE (niektórzy podprzetwarzający są w USA; zobacz [politykę prywatności](/privacy)), a umowa powierzenia przetwarzania danych i instrukcje dla firm są w cenie.
+Cena naliczana jest za kandydata, który odpowiada, bez subskrypcji: $2–5 za kandydata w zależności od wielkości doładowania (w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze, Indiach, pozostałej części UE, Norwegii, Islandii, Liechtensteinie i Wielkiej Brytanii w walucie lokalnej), a pierwszych 3 kandydatów Twojej pierwszej firmy jest za darmo. Dane są hostowane w UE (niektórzy podprzetwarzający są w USA; zobacz [politykę prywatności](/privacy)), a umowa powierzenia przetwarzania danych i instrukcje dla firm są w cenie.
 
 testee nie jest pakietem testów psychometrycznych, platformą do pisania i uruchamiania kodu ani narzędziem do rozmów wideo i działa obok nich. Jak wypada na tle innych narzędzi rekrutacyjnych z AI, przeczytasz w artykule [Rozmowy rekrutacyjne z AI](/guides/ai-interviews). W przypadku stanowisk inżynierskich zobacz [Jak zatrudniać inżynierów](/guides/hiring-engineers).

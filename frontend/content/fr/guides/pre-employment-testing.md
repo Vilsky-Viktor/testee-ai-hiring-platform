@@ -2,7 +2,7 @@
 title: "Tests de recrutement : guide pratique pour les PME"
 seoTitle: "Test de recrutement : types, équité et choix d'un outil"
 description: "Test de recrutement et test d'aptitude : types, usages, équité, cadre légal et choix d'un logiciel d'évaluation des candidats. Guide pour recruteurs."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Tests de recrutement : guide pratique pour les PME
@@ -48,11 +48,11 @@ Placez le test juste après la candidature (via un lien dans l'offre d'emploi) o
 
 ## Équité et droit : les bases
 
-Cette section est une vue d'ensemble générale à jour en octobre 2026, et ne constitue pas un conseil juridique. Les règles dépendent de votre pays, de votre secteur et de la façon dont vous utilisez les résultats. Vérifiez auprès de votre propre conseil juridique.
+Cette section est une vue d'ensemble générale à jour en novembre 2026, et ne constitue pas un conseil juridique. Les règles dépendent de votre pays, de votre secteur et de la façon dont vous utilisez les résultats.
 
 ### États-Unis : l'EEOC et la règle des quatre cinquièmes
 
-Les employeurs américains qui utilisent des tests pour leurs décisions d'embauche relèvent des lois fédérales anti-discrimination que fait appliquer l'EEOC. Les Uniform Guidelines on Employee Selection Procedures contiennent une règle empirique pour l'impact défavorable (adverse impact) : "A selection rate for any race, sex, or ethnic group which is less than four-fifths (4/5) (or eighty percent) of the rate for the group with the highest rate will generally be regarded by the Federal enforcement agencies as evidence of adverse impact" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). (En substance : un taux de sélection inférieur aux quatre cinquièmes, soit 80 %, de celui du groupe le mieux sélectionné est généralement considéré par les autorités fédérales comme un indice d'impact défavorable.)
+Les employeurs américains qui utilisent des tests pour leurs décisions d'embauche relèvent des lois fédérales anti-discrimination que fait appliquer l'EEOC. Les Uniform Guidelines on Employee Selection Procedures contiennent une règle empirique pour l'impact défavorable (adverse impact) : "A selection rate for any race, sex, or ethnic group which is less than four-fifths (4/5) (or eighty percent) of the rate for the group with the highest rate will generally be regarded by the Federal enforcement agencies as evidence of adverse impact" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). (En substance : un taux de sélection inférieur aux quatre cinquièmes, soit 80 %, de celui du groupe le mieux sélectionné est généralement considéré par les autorités fédérales comme un indice d'impact défavorable.) L'EEOC a transmis à la Maison-Blanche en octobre 2026 une règle finale pour abroger les parties interprétatives de ces Guidelines, avec janvier 2027 pour objectif. La règle du Title VII sur l'impact défavorable demeure, et le contrôle des quatre cinquièmes reste un premier test utile.
 
 En pratique : ne testez que les connaissances nécessaires au poste, surveillez les taux de réussite selon les groupes, proposez des aménagements comme du temps supplémentaire et vérifiez les règles des États et des villes sur les outils de recrutement automatisés. Par exemple, la [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) de la ville de New York impose un audit des biais, un résumé public de cet audit et une information des candidats avant l'utilisation d'un outil automatisé de décision d'embauche.
 
@@ -98,9 +98,9 @@ testee transforme une fiche de poste en entretien de compétences chronométré 
 
 - **Chaque candidat reçoit sa propre série aléatoire** tirée de la banque de questions de chaque thème, avec un compte à rebours imposé par le serveur pour chaque question. Vous pouvez accorder du temps supplémentaire à quiconque le demande.
 - **Les fiches d'évaluation** montrent chaque réponse, si elle était juste et le temps qu'elle a pris, avec des alertes pour les réponses trop rapides, les sorties de la page, les tentatives de copie et les schémas de réponse inhabituels, ainsi que des questions à aborder lors d'un entretien en direct. Les alertes ne modifient pas le score.
-- **Les réponses sont notées d'après un corrigé** que l'IA rédige ; un échantillon des corrigés de chaque thème est vérifié avant la mise en ligne, les autres dès qu'une question est signalée. Aucune IA ne lit ni ne juge la réponse d'un candidat. Un rapport PDF couvre un candidat ou toute la liste.
+- **Les réponses sont notées d'après un corrigé** que l'IA rédige ; un échantillon des corrigés de chaque thème est vérifié avant la mise en ligne, les autres dès qu'une question est signalée. Aucune IA ne juge la réponse d'un candidat. Un rapport PDF couvre un candidat ou toute la liste.
 - **Fonctionne avec vos outils :** les candidats que vous déplacez vers une étape dans Workable, Greenhouse, Teamtailor, Recruitee ou Breezy HR reçoivent l'entretien, et leurs résultats reviennent dans l'ATS. Slack vous prévient quand un candidat termine, et l'[API](/api-docs) connecte votre propre plateforme. Voir [Comment connecter vos tests de compétences à votre ATS](/guides/ats-integration-skills-tests).
 
-La tarification se fait par candidat qui répond, sans abonnement : 2 à 5 $ par candidat selon le montant de votre recharge (dans la devise locale au Canada, en Australie, en Israël, en Pologne, en Suisse, au Japon, en Corée du Sud, à Taïwan, à Hong Kong, en Thaïlande, à Singapour, en Inde, dans le reste de l'Europe et au Royaume-Uni), et vos 3 premiers candidats sont gratuits. Les données sont hébergées dans l'UE (certains sous-traitants ultérieurs sont aux États-Unis ; voir la [politique de confidentialité](/privacy)), et l'accord de traitement des données ainsi que les instructions pour les entreprises sont inclus.
+La tarification se fait par candidat qui répond, sans abonnement : 2 à 5 $ par candidat selon le montant de votre recharge (dans la devise locale au Canada, en Australie, en Israël, en Pologne, en Suisse, au Japon, en Corée du Sud, à Taïwan, à Hong Kong, en Thaïlande, à Singapour, en Inde, dans le reste de l'UE, en Norvège, en Islande, au Liechtenstein et au Royaume-Uni), et les 3 premiers candidats de votre première entreprise sont gratuits. Les données sont hébergées dans l'UE (certains sous-traitants ultérieurs sont aux États-Unis ; voir la [politique de confidentialité](/privacy)), et l'accord de traitement des données ainsi que les instructions pour les entreprises sont inclus.
 
 testee n'est ni une suite psychométrique, ni une plateforme pour écrire et exécuter du code, ni un outil d'entretien vidéo, et fonctionne à leurs côtés. Pour sa comparaison avec d'autres outils de recrutement par IA, lisez [Entretiens IA](/guides/ai-interviews). Pour les postes d'ingénieurs, voir [Comment recruter des développeurs](/guides/hiring-engineers).

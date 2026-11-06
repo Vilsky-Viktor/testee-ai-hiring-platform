@@ -2,7 +2,7 @@
 title: "Vaardigheidstests vs. cv-screening: wat voorspelt werkprestaties?"
 seoTitle: "Vaardigheidstest of cv-screening: wat voorspelt beter?"
 description: "Wat decennia aan selectieonderzoek zeggen over vakkennistests, werkproeven, interviews en jaren ervaring, en hoe je dat gebruikt bij het screenen."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Vaardigheidstests vs. cv-screening: wat voorspelt werkprestaties?
@@ -64,7 +64,7 @@ De auteurs noemen ook een tweede voorwaarde: werkproeven en kennistests passen b
 - **Dit zijn gemiddelden over veel functies en studies.** Jouw functie, jouw test en jouw kandidaten kunnen verschillen.
 - **Validiteitsschattingen gelden voor goed opgezette methoden.** Een slecht geschreven test of een slordig interview haalt deze cijfers niet.
 - **Eén methode is zelden genoeg.** Onderzoekers raden doorgaans aan methoden te combineren, bijvoorbeeld een kennistest vroeg en een gestructureerd interview later.
-- **Eerlijkheid vraagt eigen controles.** Sackett et al. zetten validiteit naast gemiddelde scoreverschillen tussen zwarte en witte kandidaten. Vakkennistests, werkproeven en cognitieve tests laten aanzienlijke verschillen zien; gestructureerde interviews kleinere. Methoden combineren kan ze verkleinen. Wat je ook gebruikt, monitor de slagingspercentages per groep. In de VS is de vuistregel van vier vijfde uit de [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) het gebruikelijke vertrekpunt.
+- **Eerlijkheid vraagt eigen controles.** Sackett et al. zetten validiteit naast gemiddelde scoreverschillen tussen zwarte en witte kandidaten. Vakkennistests, werkproeven en cognitieve tests laten aanzienlijke verschillen zien; gestructureerde interviews kleinere. Methoden combineren kan ze verkleinen. Wat je ook gebruikt, monitor de slagingspercentages per groep. In de VS is de vuistregel van vier vijfde uit de [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) het gebruikelijke vertrekpunt, ook al wil de EEOC de interpretatieve delen van de Guidelines intrekken.
 - **Een score ondersteunt een besluit; hij neemt het niet.** Een mens hoort naar de antwoorden te kijken voordat hij of zij beslist.
 
 ## Een screeningsproces dat het onderzoek benut
@@ -85,7 +85,7 @@ testee dekt stap 2: een getimede meerkeuze-vakkennistest, geschreven op basis va
 - **Dezelfde omstandigheden voor iedereen.** Dezelfde onderwerpen en hetzelfde aantal vragen, en een aftelklok bij elke vraag. Je kunt extra tijd geven aan kandidaten die erom vragen.
 - **Elke kandidaat krijgt eigen vragen,** een willekeurige set uit de vragenbank van elk onderwerp, zodat antwoorden lastiger te delen zijn.
 - **Leesbare resultaten.** Een scorekaart per kandidaat met elk antwoord en de tijd ervan, gerangschikt op score, met signalen bij te snelle antwoorden, het verlaten van de pagina, kopieerpogingen en ongebruikelijke antwoordpatronen.
-- **Antwoorden nagekeken met een antwoordsleutel** die AI schrijft; een steekproef van de sleutels van elk onderwerp wordt vóór vrijgave gecontroleerd, de rest zodra een vraag wordt gemarkeerd. Geen AI leest of beoordeelt het antwoord van een kandidaat.
+- **Antwoorden nagekeken met een antwoordsleutel** die AI schrijft; een steekproef van de sleutels van elk onderwerp wordt vóór vrijgave gecontroleerd, de rest zodra een vraag wordt gemarkeerd. Geen AI beoordeelt het antwoord van een kandidaat.
 
 testee neemt geen gestructureerde interviews, werkproeven of cognitieve tests af. Gebruik het daarnaast. Lees [Selectietests](/guides/pre-employment-testing) voor meer over soorten tests en eerlijkheid.
 

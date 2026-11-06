@@ -2,7 +2,7 @@
 title: "Comment présélectionner 100 candidats en une journée"
 seoTitle: "Trier 100 candidatures en une journée : méthode pratique"
 description: "Un plan étape par étape pour présélectionner 100 candidats en une journée, équitablement : critères impératifs, court test, liste classée et examen humain."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Comment présélectionner 100 candidats en une journée
@@ -103,7 +103,7 @@ Notez pourquoi chaque personne figure sur la liste. Cela prend une minute par ca
 
 ## Combien ça coûte
 
-Avec testee, vous ne payez que pour les candidats qui répondent à au moins une question : 5 $ chacun avec la recharge de 50 $, 4 $ à partir d'une recharge de 200 $, 3 $ à partir d'une recharge de 600 $ et 2 $ à partir d'une recharge de 1 000 $. Pour 100 candidats, cela fait 500 $ à 5 $ l'unité, ou 400 $ en deux recharges de 200 $ à 4 $ l'unité, sans abonnement. Les prix sont ici en dollars américains, et dans la devise locale au Canada, en Australie, en Israël, en Pologne, en Suisse, au Japon, en Corée du Sud, à Taïwan, à Hong Kong, en Thaïlande, à Singapour, en Inde, dans le reste de l'Europe et au Royaume-Uni (voir les [tarifs](/pricing)) ; la TVA ou la sales tax est gérée au moment du paiement. Générer le test est gratuit, et les 3 premiers candidats de votre première entreprise sont gratuits.
+Avec testee, vous ne payez que pour les candidats qui répondent à au moins une question : 5 $ chacun avec la recharge de 50 $, 4 $ à partir d'une recharge de 200 $, 3 $ à partir d'une recharge de 600 $ et 2 $ à partir d'une recharge de 1 000 $. Pour 100 candidats, cela fait 400 $ en une recharge de 100 candidats à 4 $ l'unité, sans abonnement. Les prix sont ici en dollars américains, et dans la devise locale au Canada, en Australie, en Israël, en Pologne, en Suisse, au Japon, en Corée du Sud, à Taïwan, à Hong Kong, en Thaïlande, à Singapour, en Inde, dans le reste de l'UE, en Norvège, en Islande, au Liechtenstein et au Royaume-Uni (voir les [tarifs](/pricing)) ; la TVA ou la sales tax est gérée au moment du paiement. Générer le test est gratuit, et les 3 premiers candidats de votre première entreprise sont gratuits.
 
 ## À lire aussi
 

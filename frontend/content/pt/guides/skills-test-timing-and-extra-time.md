@@ -2,7 +2,7 @@
 title: "Como definir o tempo de um teste de habilidades: tempo por pergunta, duração e tempo extra"
 seoTitle: "Tempo no teste de habilidades: por pergunta e tempo extra"
 description: "Quanto tempo dar a cada pergunta, quantas perguntas fazer, qual duração total funciona e como dar tempo extra de forma justa aos candidatos que precisam."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Como definir o tempo de um teste de habilidades: tempo por pergunta, duração e tempo extra
@@ -101,7 +101,7 @@ Na testee, uma entrevista é um teste de habilidades de múltipla escolha cronom
 
 ### Tempo por pergunta
 
-- **Cada pergunta tem sua própria contagem regressiva,** controlada pelo servidor, então fechar a aba ou recarregar a página não a interrompe.
+- **Cada pergunta tem sua própria contagem regressiva,** controlada pelo servidor, então fechar a aba ou recarregar a página não a interrompe. No modo de voz, ela corre enquanto a Mira lê a pergunta.
 - **O padrão depende do nível da entrevista,** que, em uma entrevista gerada, vem da senioridade pedida na descrição da vaga: 60 segundos para uma entrevista básica ou intermediária, 75 segundos para uma difícil.
 - **É uma média: cada pergunta recebe dela o seu próprio tempo** quando as perguntas de um candidato são sorteadas, conforme o tempo que leva para lê-la e respondê-la: suas palavras, o código ou exemplo que tiver (lido mais devagar) e o tempo para pensar na resposta. Perguntas curtas recebem menos, e as mais longas e com código recebem mais, cada uma entre metade e o dobro da média, e juntas somam exatamente o número de perguntas vezes a média. A contagem regressiva mostra o tempo de cada pergunta, e o boletim mostra quanto dele cada resposta levou.
 - **Você pode alterar a média em cada entrevista,** nas configurações dela, de 10 a 600 segundos. A alteração vale para os candidatos que começarem depois dela; o tempo de um candidato fica fixo quando ele começa.
@@ -115,7 +115,7 @@ Em uma entrevista em árabe, chinês, japonês, persa, russo, tailandês ou ucra
 ### Número de perguntas
 
 - **Cada tópico de uma entrevista gerada tem um banco de 70 perguntas,** e uma entrevista tem no máximo 10 tópicos, que você aprova antes de qualquer pergunta ser escrita.
-- **Cada candidato recebe 10 perguntas por tópico por padrão,** um conjunto aleatório do banco em uma ordem própria, com a mesma proporção de perguntas de "Marque todas as opções corretas". Você pode definir um número diferente para cada tópico. Coloque 0 para deixar um tópico de fora; pelo menos um tópico mantém suas questões.
+- **Cada candidato recebe 10 perguntas por tópico por padrão,** um conjunto aleatório do banco em uma ordem própria, com a mesma proporção de perguntas de "Marque todas as opções corretas". Uma entrevista tem no máximo 60 perguntas, então, com mais tópicos, o padrão cai: 8 cada com 7 tópicos, 7 com 8, e 6 com 9 ou 10. Você pode definir um número diferente para cada tópico, dentro desse limite. Coloque 0 para deixar um tópico de fora; pelo menos um tópico mantém suas questões.
 
 ### Duração total
 

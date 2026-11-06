@@ -2,7 +2,7 @@
 title: "Test pre-assunzione: guida pratica per piccole e medie aziende"
 seoTitle: "Test di selezione del personale: tipi, regole e strumenti"
 description: "Test di selezione del personale e test per assunzione: tipi, quando usarli, equità e basi di legge, come scegliere uno strumento. Guida per i recruiter."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Test pre-assunzione: guida pratica per piccole e medie aziende
@@ -48,11 +48,11 @@ Metti il test subito dopo la candidatura (con un link nell'annuncio di lavoro) o
 
 ## Equità e legge: le basi
 
-Questa sezione è una panoramica generale aggiornata a ottobre 2026, non una consulenza legale. Le regole dipendono dal tuo paese, dal tuo settore e da come usi i risultati. Verifica con il tuo consulente legale.
+Questa sezione è una panoramica generale aggiornata a novembre 2026, non una consulenza legale. Le regole dipendono dal tuo paese, dal tuo settore e da come usi i risultati.
 
 ### Stati Uniti: EEOC e la regola dei quattro quinti
 
-I datori di lavoro statunitensi che usano test per le decisioni di assunzione sono soggetti alle leggi federali antidiscriminazione applicate dall'EEOC. Le Uniform Guidelines on Employee Selection Procedures includono una regola empirica sull'impatto sfavorevole (adverse impact): "un tasso di selezione per qualsiasi gruppo razziale, di sesso o etnico inferiore ai quattro quinti (4/5) (o all'ottanta per cento) del tasso del gruppo con il tasso più alto sarà generalmente considerato dalle agenzie federali di controllo come prova di impatto sfavorevole" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+I datori di lavoro statunitensi che usano test per le decisioni di assunzione sono soggetti alle leggi federali antidiscriminazione applicate dall'EEOC. Le Uniform Guidelines on Employee Selection Procedures includono una regola empirica sull'impatto sfavorevole (adverse impact): "un tasso di selezione per qualsiasi gruppo razziale, di sesso o etnico inferiore ai quattro quinti (4/5) (o all'ottanta per cento) del tasso del gruppo con il tasso più alto sarà generalmente considerato dalle agenzie federali di controllo come prova di impatto sfavorevole" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). A ottobre 2026 l'EEOC ha inviato alla Casa Bianca una norma finale per abrogare le parti interpretative di queste Guidelines, con l'obiettivo di gennaio 2027. La regola del Title VII sull'impatto sfavorevole resta, e il controllo dei quattro quinti rimane un primo test utile.
 
 In pratica: verifica solo le conoscenze che il lavoro richiede, tieni d'occhio i tassi di superamento tra i gruppi, offri adattamenti come tempo extra e controlla le norme statali e cittadine sugli strumenti di assunzione automatizzati. Ad esempio, la [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) di New York City richiede un audit sui bias, una sintesi pubblica dell'audit e un avviso ai candidati prima di usare uno strumento automatizzato per le decisioni di assunzione.
 
@@ -98,9 +98,9 @@ testee trasforma una descrizione del ruolo in un colloquio sulle competenze a sc
 
 - **Ogni candidato riceve un proprio set casuale** dalla serie di domande di ciascun argomento, con un conto alla rovescia gestito dal server su ogni domanda. Puoi dare tempo extra a chiunque lo chieda.
 - **Le schede di valutazione** mostrano ogni risposta, se era giusta e quanto tempo ha richiesto, con segnalazioni per risposte troppo rapide, uscite dalla pagina, tentativi di copia e andamenti insoliti delle risposte, più domande da approfondire in un colloquio dal vivo. Le segnalazioni non cambiano il punteggio.
-- **Le risposte vengono corrette in base a una chiave di correzione** che l'IA scrive; un campione delle chiavi di ogni argomento viene controllato prima della pubblicazione, le altre quando una domanda viene segnalata. Nessuna IA legge o giudica la risposta di un candidato. Un report PDF copre un singolo candidato o l'intero elenco.
+- **Le risposte vengono corrette in base a una chiave di correzione** che l'IA scrive; un campione delle chiavi di ogni argomento viene controllato prima della pubblicazione, le altre quando una domanda viene segnalata. Nessuna IA giudica la risposta di un candidato. Un report PDF copre un singolo candidato o l'intero elenco.
 - **Funziona con i tuoi strumenti:** i candidati che sposti in una fase su Workable, Greenhouse, Teamtailor, Recruitee o Breezy HR ricevono il colloquio, e i loro risultati tornano nell'ATS. Slack ti avvisa quando un candidato finisce, e l'[API](/api-docs) collega la tua piattaforma. Vedi [Come collegare i test di competenze al tuo ATS](/guides/ats-integration-skills-tests).
 
-Il prezzo è per candidato che risponde, senza abbonamento: $2–5 per candidato a seconda dell'importo della ricarica (nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore, India, nel resto d'Europa e nel Regno Unito), e i tuoi primi 3 candidati sono gratis. I dati sono ospitati nell'UE (alcuni sub-responsabili si trovano negli Stati Uniti; vedi l'[informativa sulla privacy](/privacy)), e l'accordo sul trattamento dei dati e le istruzioni per le aziende sono inclusi.
+Il prezzo è per candidato che risponde, senza abbonamento: $2–5 per candidato a seconda dell'importo della ricarica (nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore, India, nel resto dell'UE, in Norvegia, Islanda, Liechtenstein e nel Regno Unito), e i primi 3 candidati della tua prima azienda sono gratis. I dati sono ospitati nell'UE (alcuni sub-responsabili si trovano negli Stati Uniti; vedi l'[informativa sulla privacy](/privacy)), e l'accordo sul trattamento dei dati e le istruzioni per le aziende sono inclusi.
 
 testee non è una suite psicometrica, una piattaforma per scrivere ed eseguire codice né uno strumento di videocolloqui, e funziona insieme a questi. Per capire come si confronta con altri strumenti di assunzione basati sull'IA, leggi [Colloqui con IA](/guides/ai-interviews). Per i ruoli di ingegneria, vedi [Come assumere sviluppatori](/guides/hiring-engineers).

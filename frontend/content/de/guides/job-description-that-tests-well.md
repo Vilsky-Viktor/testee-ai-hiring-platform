@@ -2,7 +2,7 @@
 title: "So schreibst du eine Stellenbeschreibung, die sich gut testen lässt"
 seoTitle: "Stellenbeschreibung, die sich gut testen lässt: So geht's"
 description: "Was eine Stellenbeschreibung braucht, damit ein Fachtest daraus das Richtige prüft: konkrete Fähigkeiten und Tools, das Niveau, die tägliche Arbeit."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # So schreibst du eine Stellenbeschreibung, die sich gut testen lässt
@@ -15,7 +15,7 @@ Dieser Leitfaden behandelt die zweite Aufgabe: eine Beschreibung zu schreiben, a
 
 Ein Wissenstest ist nützlich, wenn er prüft, was die Stelle tatsächlich verlangt. Die Personalauswahlforschung zählt Fachwissenstests im Durchschnitt zu den besseren Prädiktoren für Arbeitsleistung, doch dieser Wert gilt für Tests, die für die jeweilige Stelle erstellt wurden; Wissenstests ohne Bezug zur Stelle sagen weniger voraus (siehe [Fachtests vs. Lebenslauf-Screening](/guides/skills-tests-vs-cv-screening)).
 
-Das US-Arbeitsrecht sagt dasselbe von der rechtlichen Seite. Die Uniform Guidelines on Employee Selection Procedures erwarten, dass ein Test, der sich auf seinen Inhalt stützt, auf einer Arbeitsplatzanalyse beruht, die sich auf „das Arbeitsverhalten und die damit verbundenen Aufgaben“ konzentriert ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). In der Praxis ist für die meisten Teams die Stellenbeschreibung genau diese Analyse, schriftlich festgehalten. Und nach dem Americans with Disabilities Act gilt eine schriftliche Beschreibung, die vor der Ausschreibung oder den Interviews erstellt wurde, als Nachweis der wesentlichen Funktionen einer Stelle ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+Das US-Arbeitsrecht sagt dasselbe von der rechtlichen Seite. Die Uniform Guidelines on Employee Selection Procedures erwarten, dass ein Test, der sich auf seinen Inhalt stützt, auf einer Arbeitsplatzanalyse beruht, die sich auf „das Arbeitsverhalten und die damit verbundenen Aufgaben“ konzentriert ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). In der Praxis ist für die meisten Teams die Stellenbeschreibung genau diese Analyse, schriftlich festgehalten. (Im Oktober 2026 hat die EEOC einen Schritt zur Aufhebung der auslegenden Teile dieser Guidelines getan, mit Ziel Januar 2027. Title VII verlangt weiterhin, dass ein Test mit Adverse Impact einen Bezug zur Stelle hat.) Und nach dem Americans with Disabilities Act gilt eine schriftliche Beschreibung, die vor der Ausschreibung oder den Interviews erstellt wurde, als Nachweis der wesentlichen Funktionen einer Stelle ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 Die Beschreibung ist also eine zusätzliche halbe Stunde wert. Was in ihr steht, danach fragt der Test.
 
@@ -48,7 +48,7 @@ Berufsjahre sind ein grober Ersatz für das Niveau, und ein schwacher: In der ob
 
 Aufgaben sind die nützlichsten Zeilen für einen Test. „Erstellt die monatliche Umsatzsteuer-Voranmeldung“ oder „sichtet eingehende Bugs und reproduziert sie“ sagt dem Verfasser eines Tests, welches Wissen gebraucht wird und in welchen Situationen. Schreib Aufgaben als Verb und Objekt, so wie du die Arbeit einer neuen Kollegin beschreiben würdest.
 
-Wenn du unsicher bist, was eine Stelle üblicherweise umfasst, listet [O*NET OnLine](https://www.onetonline.org/) die typischen Aufgaben, Technologien und Kenntnisse für Hunderte von Berufen auf. Nutze es als Checkliste und behalte nur, was deine Stelle tatsächlich macht.
+Wenn du unsicher bist, was eine Stelle üblicherweise umfasst, listet [O*NET OnLine](https://www.onetonline.org/) die typischen Aufgaben, Technologien und Kenntnisse für rund 1.000 Berufe auf. Nutze es als Checkliste und behalte nur, was deine Stelle tatsächlich macht.
 
 ### 4. Eine klare Trennung zwischen Muss- und Kann-Kriterien
 

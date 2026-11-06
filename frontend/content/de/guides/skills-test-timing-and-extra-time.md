@@ -2,7 +2,7 @@
 title: "Zeit im Fachtest richtig festlegen: Timer pro Frage, Länge und zusätzliche Zeit"
 seoTitle: "Zeitlimit im Fachtest: Timer pro Frage und zusätzliche Zeit"
 description: "Wie viel Zeit pro Frage, wie viele Fragen, welche Gesamtdauer sinnvoll ist und wie du Kandidaten, die sie brauchen, fair zusätzliche Zeit gibst."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Zeit im Fachtest richtig festlegen: Timer pro Frage, Länge und zusätzliche Zeit
@@ -101,7 +101,7 @@ In testee ist ein Interview ein Multiple-Choice-Fachtest mit Zeitlimit, erstellt
 
 ### Zeit pro Frage
 
-- **Jede Frage hat einen eigenen Countdown,** den der Server führt; den Tab zu schließen oder die Seite neu zu laden hält ihn nicht an.
+- **Jede Frage hat einen eigenen Countdown,** den der Server führt; den Tab zu schließen oder die Seite neu zu laden hält ihn nicht an. Im Sprachmodus läuft er, während Mira die Frage vorliest.
 - **Der Standard hängt vom Level des Interviews ab,** das bei einem generierten Interview aus der Erfahrungsstufe kommt, die die Stellenbeschreibung verlangt: 60 Sekunden für ein grundlegendes oder mittleres Interview, 75 Sekunden für ein schweres.
 - **Das ist ein Durchschnitt: Jede Frage bekommt ihre eigene Zeit** daraus, wenn die Fragen eines Kandidaten gezogen werden, je nachdem, wie lange Lesen und Antworten dauern: ihre Wörter, Code oder ein Beispiel (langsamer gelesen) und Zeit, um die Antwort zu finden. Kurze Fragen bekommen weniger, längere Fragen und Code mehr, jede zwischen der Hälfte und dem Doppelten des Durchschnitts, und zusammen ergeben sie genau die Anzahl der Fragen mal den Durchschnitt. Der Countdown zeigt die eigene Zeit jeder Frage, und die Auswertung zeigt, wie viel davon jede Antwort gebraucht hat.
 - **Du kannst den Durchschnitt pro Interview ändern,** in dessen Einstellungen, von 10 bis 600 Sekunden. Eine Änderung gilt für Kandidaten, die danach beginnen; die Zeit eines Kandidaten steht fest, sobald er beginnt.
@@ -115,7 +115,7 @@ In einem Interview auf Arabisch, Chinesisch, Japanisch, Persisch, Russisch, Thai
 ### Anzahl der Fragen
 
 - **Jedes Thema eines generierten Interviews hat einen Pool von 70 Fragen,** und ein Interview hat höchstens 10 Themen, die du freigibst, bevor eine Frage geschrieben wird.
-- **Jeder Kandidat erhält standardmäßig 10 Fragen pro Thema,** einen zufälligen Satz aus dem Pool in eigener Reihenfolge, mit demselben Anteil an Fragen mit „Alle zutreffenden Optionen auswählen“. Du kannst für jedes Thema eine andere Anzahl festlegen. Mit 0 lässt du ein Thema weg; mindestens ein Thema behält seine Fragen.
+- **Jeder Kandidat erhält standardmäßig 10 Fragen pro Thema,** einen zufälligen Satz aus dem Pool in eigener Reihenfolge, mit demselben Anteil an Fragen mit „Alle zutreffenden Optionen auswählen“. Ein Interview hat höchstens 60 Fragen, daher sinkt der Standardwert bei mehr Themen: 8 pro Thema bei 7 Themen, 7 bei 8 und 6 bei 9 oder 10. Du kannst für jedes Thema eine andere Anzahl festlegen, innerhalb dieser Grenze. Mit 0 lässt du ein Thema weg; mindestens ein Thema behält seine Fragen.
 
 ### Gesamtdauer
 

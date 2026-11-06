@@ -2,7 +2,7 @@
 title: "Como escrever uma descrição de vaga que rende um bom teste"
 seoTitle: "Como escrever uma descrição de vaga que rende um bom teste"
 description: "O que uma descrição de vaga precisa para o teste de seleção avaliar o que importa: habilidades e ferramentas concretas, o nível, o dia a dia, o que omitir."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Como escrever uma descrição de vaga que rende um bom teste
@@ -15,7 +15,7 @@ Este guia trata da segunda função: escrever uma descrição a partir da qual d
 
 Um teste de conhecimentos é útil quando avalia o que a função realmente exige. A pesquisa sobre seleção coloca os testes de conhecimentos da função entre os melhores preditores de desempenho no trabalho, em média, mas essa estimativa vale para testes criados para a função em questão; testes de conhecimentos sem relação com a função preveem menos (veja [Testes de habilidades x triagem de currículos](/guides/skills-tests-vs-cv-screening)).
 
-As regras trabalhistas dos EUA dizem o mesmo pelo lado jurídico. As Uniform Guidelines on Employee Selection Procedures esperam que um teste sustentado pelo seu conteúdo se baseie em uma análise do cargo focada "no(s) comportamento(s) de trabalho e nas tarefas associadas a eles" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Na prática, para a maioria das equipes, a descrição da vaga é essa análise por escrito. E pela Americans with Disabilities Act, uma descrição escrita preparada antes de anunciar a vaga ou de entrevistar é considerada evidência das funções essenciais de um cargo ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+As regras trabalhistas dos EUA dizem o mesmo pelo lado jurídico. As Uniform Guidelines on Employee Selection Procedures esperam que um teste sustentado pelo seu conteúdo se baseie em uma análise do cargo focada "no(s) comportamento(s) de trabalho e nas tarefas associadas a eles" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Na prática, para a maioria das equipes, a descrição da vaga é essa análise por escrito. (Em outubro de 2026, a EEOC deu início à revogação das partes interpretativas dessas Guidelines, com meta em janeiro de 2027. O Title VII continua exigindo que um teste com impacto adverso seja relacionado à função.) E pela Americans with Disabilities Act, uma descrição escrita preparada antes de anunciar a vaga ou de entrevistar é considerada evidência das funções essenciais de um cargo ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 Então a descrição vale meia hora a mais. O que ela disser, o teste vai perguntar.
 
@@ -48,7 +48,7 @@ Anos de experiência são um substituto aproximado do nível, e fraco: na pesqui
 
 As atividades são as linhas mais úteis para um teste. "Prepara a apuração mensal do ICMS" ou "faz a triagem dos bugs recebidos e os reproduz" diz a quem escreve o teste quais conhecimentos são usados e em quais situações. Escreva as atividades como verbo e objeto, do jeito que você descreveria o trabalho a um novo colega.
 
-Se você não tem certeza do que uma função costuma envolver, o [O*NET OnLine](https://www.onetonline.org/) lista as tarefas, tecnologias e conhecimentos típicos de centenas de ocupações. Use-o como checklist e fique só com o que a sua vaga realmente faz.
+Se você não tem certeza do que uma função costuma envolver, o [O*NET OnLine](https://www.onetonline.org/) lista as tarefas, tecnologias e conhecimentos típicos de cerca de 1.000 ocupações. Use-o como checklist e fique só com o que a sua vaga realmente faz.
 
 ### 4. Uma linha clara entre requisito obrigatório e diferencial
 

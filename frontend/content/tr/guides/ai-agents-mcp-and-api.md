@@ -2,7 +2,7 @@
 title: "Yapay zekâ ajanları, MCP ve API'ler: nedir ve işe alımda nasıl kullanılır"
 seoTitle: "İşe Alımda Yapay Zekâ Ajanları, MCP ve API'ler"
 description: "Yapay zekâ ajanı, MCP, API nedir, işe alımda güvenle nasıl kullanılır, testee yapay zekâ asistanıyla, Claude, ChatGPT veya platformunuzla nasıl yönetilir."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # Yapay zekâ ajanları, MCP ve API'ler: nedir ve işe alımda nasıl kullanılır
@@ -96,7 +96,7 @@ Ekibiniz zaten Claude veya ChatGPT'de çalışıyorsa testee'yi oraya taşıyabi
 **Bağlamak için:**
 
 1. testee'de bir şirketin **Entegrasyonlar** sekmesini açın ve **Yapay zekâ uygulamaları**'nı seçin. Sunucu adresini kopyalayın: `https://testee.ai/mcp`.
-2. **Claude'da:** Ayarlar'ı, ardından Bağlayıcılar'ı açın ve bu adresle özel bir bağlayıcı ekleyin. **Claude Code'da:** `claude mcp add --transport http testee https://testee.ai/mcp` komutunu çalıştırın. **ChatGPT'de:** uygulama ve bağlayıcı ayarlarında özel bir bağlayıcı olarak ekleyin.
+2. **Claude'da:** Özelleştir'i, ardından Bağlayıcılar'ı açın ve bu adresle özel bir bağlayıcı ekleyin; Team ve Enterprise planlarında önce bir sahibin bunu Kuruluş ayarlarından eklemesi gerekir. **Claude Code'da:** `claude mcp add --transport http testee https://testee.ai/mcp` komutunu çalıştırın. **ChatGPT'de:** özel bir MCP sunucusu olarak ekleyin. Bunun nerede olduğu planınıza bağlıdır ve yöneticinizin izin vermesi gerekebilir.
 3. Yapay zekâ uygulamanız testee'nin giriş sayfasını açar. Giriş yapın, hangi uygulamanın izin istediğini kontrol edin ve **İzin ver**'i seçin. Yalnızca okuyabilmesi için önce **Değişikliklere izin ver** seçeneğini kapatın.
 
 Bundan sonra sohbetinizde bir iş arkadaşınıza sorar gibi sorun: "testee'de Ürün tasarımcısı için en iyi üç aday kim?" Çoğu yapay zekâ uygulaması bir değişiklikten önce size sorar ve geri alınamayacak her şeyden önce uyarır: testee onlara hangi işlemlerin bir şeyi değiştirdiğini veya sildiğini bildirir.
@@ -106,7 +106,7 @@ Bundan sonra sohbetinizde bir iş arkadaşınıza sorar gibi sorun: "testee'de �
 - **Yetkileriniz.** Bağlantı, üyesi olduğunuz her şirkette, her birindeki rolünüzle sizin adınıza çalışır.
 - **Krediler ve sınırlar.** Bir adayı davet etmek uygulamadakiyle aynı tutardadır ve aynı e-posta sınırları geçerlidir.
 - **Kayıt.** Bir yapay zekâ uygulamasının sizin için yaptığı her şey, konuları onaylamaktan sonuçları görüntülemeye, ek süre vermekten bir adayı iptal etmeye kadar, şirketin işlem kaydında bir yapay zekâ uygulaması üzerinden yapılmış olarak görünür. Şirketin sahibi bunu şirketin **İşlem kaydı** sekmesinde okur.
-- **Karar şirketin.** Sahipler ve yöneticiler, şirketin yapay zekâ uygulamaları sayfasındaki **Bu şirkette yapay zekâ uygulamalarına izin ver** ile bu uygulamaların şirket verilerini kullanmasını durdurabilir.
+- **Karar şirketin.** Sahipler ve yöneticiler, şirketin yapay zekâ uygulamaları sayfasındaki **Yapay zekâ uygulamalarına izin ver** anahtarıyla bu uygulamaların şirket verilerini kullanmasını durdurabilir.
 - **Yapamadıkları.** Şifrenizi veya API anahtarlarınızı göremez, hesabınızı veya bir şirketi silemez. Bunlar uygulamada kalır.
 
 **Bağlantıyı kaldırmak için** yapay zekâ uygulamanızda bağlayıcıyı silin ya da Entegrasyonlar sekmesindeki **Yapay zekâ uygulamaları** altında yanındaki **Bağlantıyı kes**'i seçin. Hemen çalışmayı bırakır.
@@ -117,7 +117,7 @@ Bundan sonra sohbetinizde bir iş arkadaşınıza sorar gibi sorun: "testee'de �
 
 Yapay zekâ olmadan otomasyon için testee'nin [geliştirici belgelerinde](/api-docs) açıklanan bir API'si vardır.
 
-1. Bir sahip veya yönetici, bir şirketin **Entegrasyonlar** sekmesini, ardından **API**'yi açar ve **Yeni anahtar**'ı seçer. Anahtara onu kullanacak platformun adını verin, ne zaman sona ereceğini seçin ve yalnızca ihtiyaç duyduklarını işaretleyin: bir panonun anahtarı yalnızca okur, bir kariyer sitesinin anahtarı davet de eder. Yetkileri daha sonra ekleyebilir veya kaldırabilirsiniz. Anahtar yalnızca bir kez gösterilir; güvenli bir yerde saklayın.
+1. Bir sahip veya yönetici, bir şirketin **Entegrasyonlar** sekmesini, ardından **API, SDK, webhook'lar** bölümünü açar ve **Yeni anahtar**'ı seçer. Anahtara onu kullanacak platformun adını verin, ne zaman sona ereceğini seçin ve yalnızca ihtiyaç duyduklarını işaretleyin: bir panonun anahtarı yalnızca okur, bir kariyer sitesinin anahtarı davet de eder. Yetkileri daha sonra ekleyebilir veya kaldırabilirsiniz. Anahtar yalnızca bir kez gösterilir; güvenli bir yerde saklayın.
 2. Platformunuz bu anahtarla istek gönderir: şirketin mülakatlarını listeler, adayları notları, geçip geçmedikleri ve dürüstlük uyarılarıyla birlikte listeler veya okur ve bir adayı davet eder.
 3. Bir **webhook** ekleyin: bir aday başladığında, bitirdiğinde, daveti kendisine ulaşamadığında, davetinin süresi dolduğunda veya kaldırıldığında ve bir mülakat hazır olduğunda testee'nin imzalı olarak çağırdığı, platformunuzdaki bir adres; böylece sürekli sormanız gerekmez. API sayfası ona bir test olayı gönderebilir ve teslim günlüğünü gösterir.
 

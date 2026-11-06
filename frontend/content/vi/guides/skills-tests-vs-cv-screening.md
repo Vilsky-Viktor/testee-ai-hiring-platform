@@ -2,7 +2,7 @@
 title: "Bài kiểm tra kỹ năng và sàng lọc CV: điều gì dự báo hiệu suất công việc"
 seoTitle: "Bài kiểm tra kỹ năng hay sàng lọc CV: cách nào tốt hơn?"
 description: "Nhiều thập kỷ nghiên cứu tuyển dụng nói gì về bài kiểm tra kiến thức, mẫu công việc, phỏng vấn, số năm kinh nghiệm và cách áp dụng khi đánh giá ứng viên."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Bài kiểm tra kỹ năng và sàng lọc CV: điều gì dự báo hiệu suất công việc
@@ -64,7 +64,7 @@ Các tác giả cũng nêu một điều kiện thứ hai: mẫu công việc v�
 - **Đây là các con số trung bình trên nhiều công việc và nghiên cứu.** Vị trí, bài kiểm tra và ứng viên của bạn có thể khác.
 - **Ước tính độ hiệu lực là cho các phương pháp được xây dựng tốt.** Một bài kiểm tra viết kém hay một buổi phỏng vấn cẩu thả sẽ không đạt được các con số này.
 - **Một phương pháp hiếm khi đủ.** Các nhà nghiên cứu thường khuyên kết hợp các phương pháp, chẳng hạn bài kiểm tra kiến thức ở đầu và phỏng vấn có cấu trúc về sau.
-- **Công bằng cần được kiểm tra riêng.** Sackett và cộng sự đặt độ hiệu lực cạnh chênh lệch điểm trung bình giữa ứng viên da đen và da trắng. Bài kiểm tra kiến thức chuyên môn, mẫu công việc và bài kiểm tra nhận thức cho thấy chênh lệch đáng kể; phỏng vấn có cấu trúc cho thấy chênh lệch nhỏ hơn. Kết hợp các phương pháp có thể giảm chênh lệch. Dù dùng gì, hãy theo dõi tỷ lệ đạt giữa các nhóm. Ở Mỹ, quy tắc kinh nghiệm bốn phần năm trong [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) là điểm khởi đầu thông thường.
+- **Công bằng cần được kiểm tra riêng.** Sackett và cộng sự đặt độ hiệu lực cạnh chênh lệch điểm trung bình giữa ứng viên da đen và da trắng. Bài kiểm tra kiến thức chuyên môn, mẫu công việc và bài kiểm tra nhận thức cho thấy chênh lệch đáng kể; phỏng vấn có cấu trúc cho thấy chênh lệch nhỏ hơn. Kết hợp các phương pháp có thể giảm chênh lệch. Dù dùng gì, hãy theo dõi tỷ lệ đạt giữa các nhóm. Ở Mỹ, quy tắc kinh nghiệm bốn phần năm trong [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) là điểm khởi đầu thông thường, ngay cả khi EEOC đang tiến hành hủy bỏ các phần diễn giải của Guidelines.
 - **Điểm số hỗ trợ một quyết định; nó không đưa ra quyết định.** Một người nên xem các câu trả lời trước khi quyết định.
 
 ## Quy trình sàng lọc dựa trên nghiên cứu
@@ -85,7 +85,7 @@ testee đảm nhận bước 2: một bài kiểm tra kiến thức chuyên môn
 - **Điều kiện như nhau cho mọi người.** Cùng chủ đề và số câu hỏi, và đồng hồ đếm ngược cho mọi câu hỏi. Bạn có thể cho thêm thời gian với ứng viên có yêu cầu.
 - **Mỗi ứng viên nhận câu hỏi của riêng mình,** một bộ ngẫu nhiên từ ngân hàng câu hỏi của mỗi chủ đề, nên khó chia sẻ đáp án hơn.
 - **Kết quả dễ đọc.** Một bảng điểm cho mỗi ứng viên với từng câu trả lời và thời gian, xếp hạng theo điểm, kèm cảnh báo về trả lời quá nhanh, rời khỏi trang, cố sao chép và mẫu trả lời bất thường.
-- **Câu trả lời được chấm theo đáp án** do AI viết; một phần đáp án của mỗi chủ đề được kiểm tra trước khi phát hành, phần còn lại khi câu hỏi bị đánh dấu. Không có AI nào đọc hay đánh giá câu trả lời của ứng viên.
+- **Câu trả lời được chấm theo đáp án** do AI viết; một phần đáp án của mỗi chủ đề được kiểm tra trước khi phát hành, phần còn lại khi câu hỏi bị đánh dấu. Không có AI nào đánh giá câu trả lời của ứng viên.
 
 testee không tổ chức phỏng vấn có cấu trúc, mẫu công việc hay bài kiểm tra nhận thức. Hãy dùng testee cùng với các phương pháp đó. Để tìm hiểu thêm về các loại bài kiểm tra và tính công bằng, đọc [Kiểm tra trước tuyển dụng](/guides/pre-employment-testing).
 

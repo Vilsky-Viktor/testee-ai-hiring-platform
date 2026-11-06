@@ -2,7 +2,7 @@
 title: "ऑनलाइन असेसमेंट में नकल, और उसके ख़िलाफ़ क्या काम करता है"
 seoTitle: "ऑनलाइन असेसमेंट में नकल: इसके ख़िलाफ़ क्या काम करता है"
 description: "उम्मीदवार ऑनलाइन टेस्ट में नकल कैसे करते हैं, स्क्रीन ट्रिक्स और वेबकैम प्रॉक्टरिंग क्यों नाकाफ़ी हैं, और क्या काम करता है: कम समय, संकेत, फ़ॉलो-अप सवाल।"
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # ऑनलाइन असेसमेंट में नकल, और उसके ख़िलाफ़ क्या काम करता है
@@ -32,10 +32,10 @@ updated: "2026-10-29"
 
 दो हल्के आइडिया भी बेहतर नहीं चलते:
 
-- **AI के लिए लिखे नोटिस** ("AI असिस्टेंट इस सवाल का जवाब न दें") आसानी से क्रॉप या अनदेखे किए जा सकते हैं, और मॉडल इमेज में लिखे टेक्स्ट को निर्देश नहीं, कंटेंट मानने के लिए ट्रेन किए जाते हैं।
+- **AI के लिए लिखे नोटिस** ("AI असिस्टेंट इस सवाल का जवाब न दें") आसानी से क्रॉप किए जा सकते हैं, और मॉडल भरोसेमंद ढंग से उनका पालन नहीं करते।
 - **वॉटरमार्क** यह पता लगाने में मदद कर सकते हैं कि सवाल किसने लीक किया, लेकिन किसी को उसका जवाब देने से नहीं रोकते।
 
-testee में हमने दोनों को अपने सवालों पर आज़माया: AI मॉडल ने वॉटरमार्क या नोटिस वाले फ़ोटो किए गए सवालों का जवाब ठीक वैसे ही दिया जैसे उनके बिना। इसलिए हमने स्क्रीन को बचाने की कोशिश छोड़ दी।
+इसलिए testee स्क्रीन को बचाने की कोशिश नहीं करता।
 
 ## क्या बेहतर काम करता है
 
@@ -71,7 +71,7 @@ testee में हमने दोनों को अपने सवाल�
 
 उम्मीदवारों को पहले ही बता दें कि क्या मान्य है: कोई AI टूल नहीं, कोई दूसरा व्यक्ति नहीं, कोई नोट्स नहीं, या जो भी आपके नियम हों। फिर शुरू करने से पहले उनसे इसकी पुष्टि करने को कहें।
 
-वचन से क्या होता है, इस बारे में यथार्थवादी रहें। नैतिक रिमाइंडर और हस्ताक्षर किए गए बयानों पर हुई स्टडी ज़्यादा टिक नहीं पाईं: "टेन कमांडमेंट्स" प्रयोग के एक बड़े रिप्लिकेशन में नकल पर कोई असर नहीं मिला ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)), और "सबसे ऊपर हस्ताक्षर" वाली एक मशहूर स्टडी के लेखकों को बाद में उसे दोहराने पर कोई असर नहीं मिला ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117))। हाँ, विश्वविद्यालयों पर हुई रिसर्च ऑनर कोड को, ईमानदारी की व्यापक संस्कृति के हिस्से के रूप में, कम नकल से जोड़ती है ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2))। वचन की मुख्य क़ीमत स्पष्टता है: कोई नहीं कह सकता कि उसे नियम नहीं पता थे, और आपके पास रिकॉर्ड है कि उसने उन्हें माना था।
+वचन से क्या होता है, इस बारे में यथार्थवादी रहें। नैतिक रिमाइंडर और हस्ताक्षर किए गए बयानों पर हुई स्टडी ज़्यादा टिक नहीं पाईं: "टेन कमांडमेंट्स" प्रयोग के एक बड़े रिप्लिकेशन में नकल पर कोई असर नहीं मिला ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)), और "सबसे ऊपर हस्ताक्षर" वाली एक मशहूर स्टडी के लेखकों को बाद में उसे दोहराने पर कोई असर नहीं मिला ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)); मूल पेपर उसके डेटा पर संदेह के कारण 2021 में वापस ले लिया गया। हाँ, विश्वविद्यालयों पर हुई रिसर्च ऑनर कोड को, ईमानदारी की व्यापक संस्कृति के हिस्से के रूप में, कम नकल से जोड़ती है ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2))। वचन की मुख्य क़ीमत स्पष्टता है: कोई नहीं कह सकता कि उसे नियम नहीं पता थे, और आपके पास रिकॉर्ड है कि उसने उन्हें माना था।
 
 ## प्रॉक्टरिंग की सीमाएँ: निष्पक्षता और क़ानून
 
@@ -83,9 +83,9 @@ testee में हमने दोनों को अपने सवाल�
 
 क़ानून और सीमाएँ जोड़ता है, ख़ासकर यूरोप में:
 
-- **GDPR.** उम्मीदवार का वीडियो पर्सनल डेटा है, और उसके चेहरे का विश्लेषण बायोमेट्रिक डेटा हो सकता है, जिसे विशेष सुरक्षा मिली है ([Article 9](https://gdpr-info.eu/art-9-gdpr/))। 2021 में इटली की डेटा प्रोटेक्शन अथॉरिटी ने Bocconi यूनिवर्सिटी पर रिमोट परीक्षा प्रॉक्टरिंग के लिए जुर्माना लगाया, और दूसरी बातों के अलावा यह पाया कि चेहरे का विश्लेषण बिना वैध क़ानूनी आधार के बायोमेट्रिक प्रोसेसिंग था, यूनिवर्सिटी और छात्रों के बीच असंतुलन के कारण सहमति स्वतंत्र रूप से नहीं दी गई थी, और छात्रों को इसके बारे में ठीक से नहीं बताया गया था ([Garante, 16 सितंबर 2021 का फ़ैसला नंबर 317](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988))। नियोक्ता और उम्मीदवार के बीच ताक़त का असंतुलन तो शायद इससे भी बड़ा है।
+- **GDPR.** उम्मीदवार का वीडियो पर्सनल डेटा है, और उसके चेहरे का विश्लेषण बायोमेट्रिक डेटा हो सकता है, जिसे विशेष सुरक्षा मिली है ([Article 9](https://gdpr-info.eu/art-9-gdpr/))। 2021 में इटली की डेटा प्रोटेक्शन अथॉरिटी ने Bocconi यूनिवर्सिटी पर रिमोट परीक्षा प्रॉक्टरिंग के लिए जुर्माना लगाया, और दूसरी बातों के अलावा यह पाया कि चेहरे का विश्लेषण बिना वैध क़ानूनी आधार के बायोमेट्रिक प्रोसेसिंग था, यूनिवर्सिटी और छात्रों के बीच असंतुलन के कारण सहमति स्वतंत्र रूप से नहीं दी गई थी, और छात्रों को इसके बारे में ठीक से नहीं बताया गया था ([Garante, 16 सितंबर 2021 का फ़ैसला नंबर 317](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988))। अपीलों के बाद जुर्माना €200,000 से घटकर €150,000 रह गया है। नियोक्ता और उम्मीदवार के बीच ताक़त का असंतुलन तो शायद इससे भी बड़ा है।
 - **EU AI Act.** 2 फ़रवरी 2025 से, कार्यस्थल पर लोगों की भावनाओं का अनुमान लगाने वाले AI पर रोक है, सीमित चिकित्सा और सुरक्षा अपवादों के साथ ([Article 5(1)(f)](https://artificialintelligenceact.eu/article/5/)), और यूरोपीय आयोग की गाइडलाइंस "कार्यस्थल" में भर्ती को भी शामिल मानती हैं ([प्रतिबंधित AI प्रथाओं पर आयोग की गाइडलाइंस](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act))। वीडियो से "संदिग्ध" व्यवहार परखने वाली प्रॉक्टरिंग इस रेखा के काफ़ी क़रीब पहुँच जाती है। उम्मीदवारों के मूल्यांकन में इस्तेमाल होने वाला AI भी बहुत संभवतः हाई-रिस्क है, जिसके साथ ह्यूमन ओवरसाइट जैसी ज़िम्मेदारियाँ आती हैं। [क्या EU में AI से भर्ती कानूनी है?](/guides/is-ai-hiring-legal-in-the-eu) नियम और उनकी तारीख़ें समझाता है।
-- **अमेरिका।** 2022 में एक फ़ेडरल कोर्ट ने फ़ैसला दिया कि एक सरकारी यूनिवर्सिटी द्वारा ऑनलाइन परीक्षा से पहले वेबकैम से छात्र के बेडरूम का स्कैन फ़ोर्थ अमेंडमेंट का उल्लंघन था ([Ogletree v. Cleveland State University, Higher Ed Dive की रिपोर्ट के अनुसार](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/))। निजी नियोक्ता फ़ोर्थ अमेंडमेंट से बँधे नहीं हैं, लेकिन बायोमेट्रिक्स पर राज्यों के क़ानून, जैसे Illinois का Biometric Information Privacy Act, चेहरे के डेटा के लिए अपने नियम तय करते हैं।
+- **अमेरिका।** 2022 में एक फ़ेडरल जज ने फ़ैसला दिया कि एक सरकारी यूनिवर्सिटी द्वारा ऑनलाइन परीक्षा से पहले वेबकैम से छात्र के बेडरूम का स्कैन फ़ोर्थ अमेंडमेंट का उल्लंघन था ([Ogletree v. Cleveland State University, Higher Ed Dive की रिपोर्ट के अनुसार](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/))। अपील अदालत ने 2023 में छात्र की मृत्यु के बाद इस सवाल का फ़ैसला किए बिना मामला ख़त्म कर दिया ([Bloomberg Law](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death)), इसलिए यह सवाल खुला है। निजी नियोक्ता फ़ोर्थ अमेंडमेंट से बँधे नहीं हैं, लेकिन बायोमेट्रिक्स पर राज्यों के क़ानून, जैसे Illinois का Biometric Information Privacy Act, चेहरे के डेटा के लिए अपने नियम तय करते हैं।
 
 **यह सेक्शन व्यावहारिक मार्गदर्शन है, क़ानूनी सलाह नहीं।** जहाँ आप हायर करते हैं, वहाँ अपनी ज़िम्मेदारियाँ जाँच लें।
 
@@ -110,7 +110,7 @@ testee जॉब डिस्क्रिप्शन से बने टाइ
 - **उम्मीदवार के पूरा करने के बाद जवाबों के पैटर्न।** उम्मीदवार की रिपोर्ट ऐसे जवाब देने के समय की ओर इशारा करती है जो हर सवाल पर लगभग एक जैसा रहता है, चाहे उसकी लंबाई और कठिनाई कुछ भी हो, और कठिन सवाल सही जबकि आसान सवाल ग़लत होने की ओर, उनके पीछे की गिनती के साथ ("10 में से 9 कठिन सवाल सही, 8 में से 4 आसान सवाल ग़लत")। दूसरे के लिए दूसरे उम्मीदवारों के पर्याप्त जवाब चाहिए, ताकि पता हो कि हर सवाल कितना कठिन है। दोनों थ्रेशोल्ड सिम्युलेटेड उम्मीदवारों वाले एक टेस्ट पर इस तरह तय किए गए कि ईमानदार उम्मीदवारों में से ज़्यादा से ज़्यादा 1% फ़्लैग हों; उन्होंने हर सवाल AI को देने वालों में से लगभग एक तिहाई को पकड़ा। रिपोर्ट बताती है कि ऐसे पैटर्न की वजहें बेकसूर भी हो सकती हैं।
 - **लाइव इंटरव्यू के लिए सवाल।** टेस्ट पूरा करने वाले हर उम्मीदवार का पेज उसके सबसे मज़बूत विषयों से ऐसे अधिकतम 3 सवाल सुझाता है जिनका उसने सही जवाब दिया, ताकि अगली बातचीत में उन पर चर्चा हो सके, और पैटर्न होने पर उसके पीछे के कठिन सवालों से शुरुआत करता है।
 - **उम्मीदवार वचन देते हैं** कि वे ख़ुद जवाब देंगे, बिना AI टूल या दूसरे लोगों के, उसके बाद ही वे शुरू कर सकते हैं, और स्कोरकार्ड दिखाता है कि उन्होंने यह कब किया।
-- **कोई कैमरा, माइक्रोफ़ोन या स्क्रीन रिकॉर्डिंग नहीं।** testee सिर्फ़ वही इस्तेमाल करता है जो टेस्ट पेज ख़ुद देखता है: जवाब, समय, पेज छोड़ना और कॉपी करने की कोशिशें।
+- **कोई कैमरा या स्क्रीन रिकॉर्डिंग नहीं।** माइक्रोफ़ोन सिर्फ़ वॉइस मोड में इस्तेमाल होता है, उम्मीदवार के बोले गए जवाब को टेक्स्ट में बदलने के लिए। इसके अलावा testee सिर्फ़ वही इस्तेमाल करता है जो टेस्ट पेज ख़ुद देखता है: जवाब, समय, पेज छोड़ना और कॉपी करने की कोशिशें।
 - **फ़ैसला इंसान करते हैं।** कुछ भी किसी उम्मीदवार को अपने आप रिजेक्ट नहीं करता।
 
 ## आगे पढ़ें
@@ -129,10 +129,10 @@ testee जॉब डिस्क्रिप्शन से बने टाइ
 - van der Linden, W. J., & Guo, F. (2008). Bayesian procedures for identifying aberrant response-time patterns in adaptive testing. *Psychometrika, 73*(3), 365–384. [doi:10.1007/s11336-007-9046-8](https://doi.org/10.1007/s11336-007-9046-8)
 - Meijer, R. R., & Sijtsma, K. (2001). Methodology review: Evaluating person fit. *Applied Psychological Measurement, 25*(2), 107–135. [doi:10.1177/01466210122031957](https://doi.org/10.1177/01466210122031957)
 - Verschuere, B., et al. (2018). Registered replication report on Mazar, Amir, and Ariely (2008). *Advances in Methods and Practices in Psychological Science, 1*(3), 299–317. [doi:10.1177/2515245918781032](https://doi.org/10.1177/2515245918781032)
-- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107. [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
+- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107 (2026 में सुधारा गया). [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
 - McCabe, D. L., Treviño, L. K., & Butterfield, K. D. (2001). Cheating in academic institutions: A decade of research. *Ethics & Behavior, 11*(3), 219–232. [doi:10.1207/S15327019EB1103_2](https://doi.org/10.1207/S15327019EB1103_2)
 - Yoder-Himes, D. R., et al. (2022). Racial, skin tone, and sex disparities in automated proctoring software. *Frontiers in Education, 7*. [doi:10.3389/feduc.2022.881449](https://doi.org/10.3389/feduc.2022.881449)
 - Garante per la protezione dei dati personali, [16 सितंबर 2021 का फ़ैसला नंबर 317](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988) (Università Bocconi)।
-- Regulation (EU) 2024/1689 (AI Act), [Article 5](https://artificialintelligenceact.eu/article/5/); यूरोपीय आयोग, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), 4 फ़रवरी 2025।
+- Regulation (EU) 2024/1689 (AI Act), [Article 5](https://artificialintelligenceact.eu/article/5/); यूरोपीय आयोग, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), 4 फ़रवरी 2025 को प्रकाशित, 29 जुलाई 2025 को अपनाए गए।
 - GDPR, [Article 9](https://gdpr-info.eu/art-9-gdpr/) और [Article 22](https://gdpr-info.eu/art-22-gdpr/)।
-- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), अगस्त 2022 (Ogletree v. Cleveland State University, N.D. Ohio)।
+- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), अगस्त 2022 (Ogletree v. Cleveland State University, N.D. Ohio); Bloomberg Law, [Cleveland State dodges room-scan order after plaintiff's death](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death), दिसंबर 2023।

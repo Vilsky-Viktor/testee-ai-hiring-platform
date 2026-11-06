@@ -2,7 +2,7 @@
 title: "Cómo redactar una descripción del puesto que sirva para evaluar"
 seoTitle: "Cómo redactar una descripción del puesto evaluable"
 description: "Qué necesita una descripción del puesto para que una prueba de selección evalúe lo correcto: habilidades y herramientas concretas, nivel, tareas diarias."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Cómo redactar una descripción del puesto que sirva para evaluar
@@ -15,7 +15,7 @@ Esta guía trata de la segunda función: redactar una descripción a partir de l
 
 Una prueba de conocimientos es útil cuando evalúa lo que el puesto necesita de verdad. La investigación sobre selección sitúa las pruebas de conocimientos del puesto entre los mejores predictores del desempeño laboral en promedio, pero esa estimación corresponde a pruebas creadas para el puesto en cuestión; las pruebas de conocimientos sin relación con el puesto predicen menos (consulta [Pruebas de habilidades frente a filtrado de CV](/guides/skills-tests-vs-cv-screening)).
 
-Las normas laborales de EE. UU. dicen lo mismo desde el punto de vista legal. Las Uniform Guidelines on Employee Selection Procedures esperan que una prueba respaldada por su contenido se base en un análisis del puesto centrado en «la conducta o conductas de trabajo y las tareas asociadas a ellas» ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). En la práctica, para la mayoría de los equipos, la descripción del puesto es ese análisis por escrito. Y según la Americans with Disabilities Act, una descripción escrita preparada antes de publicar la oferta o de entrevistar se considera prueba de las funciones esenciales de un puesto ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+Las normas laborales de EE. UU. dicen lo mismo desde el punto de vista legal. Las Uniform Guidelines on Employee Selection Procedures esperan que una prueba respaldada por su contenido se base en un análisis del puesto centrado en «la conducta o conductas de trabajo y las tareas asociadas a ellas» ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). En la práctica, para la mayoría de los equipos, la descripción del puesto es ese análisis por escrito. (En octubre de 2026, la EEOC inició la derogación de las partes interpretativas de estas Guidelines, con enero de 2027 como objetivo. El Title VII sigue exigiendo que una prueba con impacto adverso esté relacionada con el puesto.) Y según la Americans with Disabilities Act, una descripción escrita preparada antes de publicar la oferta o de entrevistar se considera prueba de las funciones esenciales de un puesto ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 Así que la descripción merece media hora más. Lo que diga es lo que preguntará la prueba.
 
@@ -48,7 +48,7 @@ Los años de experiencia son un sustituto aproximado del nivel, y uno débil: en
 
 Las tareas son las líneas más útiles para una prueba. «Prepara la declaración mensual del IVA» o «clasifica los bugs entrantes y los reproduce» le dice a quien redacta la prueba qué conocimientos se usan y en qué situaciones. Escribe las tareas como un verbo y un complemento, como describirías el trabajo a un nuevo compañero.
 
-Si no tienes claro qué suele implicar un puesto, [O*NET OnLine](https://www.onetonline.org/) recoge las tareas, tecnologías y conocimientos típicos de cientos de ocupaciones. Úsalo como lista de comprobación y quédate solo con lo que tu puesto hace de verdad.
+Si no tienes claro qué suele implicar un puesto, [O*NET OnLine](https://www.onetonline.org/) recoge las tareas, tecnologías y conocimientos típicos de unas 1000 ocupaciones. Úsalo como lista de comprobación y quédate solo con lo que tu puesto hace de verdad.
 
 ### 4. Una separación clara entre lo imprescindible y lo que se valora
 

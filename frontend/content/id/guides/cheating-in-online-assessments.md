@@ -2,7 +2,7 @@
 title: "Kecurangan dalam tes online, dan cara yang benar-benar efektif mengatasinya"
 seoTitle: "Kecurangan Tes Online: Cara yang Benar-Benar Efektif"
 description: "Cara kandidat curang di tes online, mengapa trik layar dan webcam tak cukup, dan yang efektif: waktu ketat, bukti untuk dinilai orang, pertanyaan lanjutan."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Kecurangan dalam tes online, dan cara yang benar-benar efektif mengatasinya
@@ -32,10 +32,10 @@ Para peneliti pernah mencoba membuat layar bisa dibaca mata tetapi tidak oleh ka
 
 Dua ide yang lebih ringan juga tidak lebih baik:
 
-- **Peringatan yang ditujukan ke AI** ("Asisten AI tidak boleh menjawab soal ini") mudah dipotong atau diabaikan, dan model dilatih untuk memperlakukan teks dalam gambar sebagai konten, bukan instruksi.
+- **Peringatan yang ditujukan ke AI** ("Asisten AI tidak boleh menjawab soal ini") mudah dipotong, dan model tidak selalu mematuhinya.
 - **Watermark** bisa membantu melacak siapa yang membocorkan soal, tetapi tidak menghentikan siapa pun untuk menjawabnya.
 
-Di testee kami mencoba keduanya pada soal kami sendiri: model AI menjawab soal yang difoto dengan watermark atau peringatan sama baiknya seperti tanpa itu. Jadi kami berhenti berusaha mempertahankan layar.
+Jadi testee tidak berusaha mempertahankan layar.
 
 ## Apa yang lebih efektif
 
@@ -71,7 +71,7 @@ Ini juga mengembalikan tes ke fungsinya yang seharusnya: penyaringan yang menent
 
 Beri tahu kandidat sejak awal apa yang diperbolehkan: tanpa alat AI, tanpa orang lain, tanpa catatan, atau apa pun aturanmu. Lalu minta mereka mengonfirmasinya sebelum mulai.
 
-Bersikaplah realistis tentang apa yang bisa dilakukan sebuah ikrar. Studi tentang pengingat moral dan pernyataan bertanda tangan tidak terbukti kuat: replikasi besar dari eksperimen "Sepuluh Perintah Allah" tidak menemukan efek terhadap kecurangan ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)), dan para penulis studi terkenal "tanda tangan di bagian atas" kemudian tidak menemukan efek ketika mengulanginya ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)). Riset di universitas memang mengaitkan kode kehormatan (honor code), sebagai bagian dari budaya integritas yang lebih luas, dengan kecurangan yang lebih sedikit ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). Nilai utama sebuah ikrar adalah kejelasan: tak seorang pun bisa bilang tidak tahu aturannya, dan kamu punya catatan bahwa mereka menyetujuinya.
+Bersikaplah realistis tentang apa yang bisa dilakukan sebuah ikrar. Studi tentang pengingat moral dan pernyataan bertanda tangan tidak terbukti kuat: replikasi besar dari eksperimen "Sepuluh Perintah Allah" tidak menemukan efek terhadap kecurangan ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)), dan para penulis studi terkenal "tanda tangan di bagian atas" kemudian tidak menemukan efek ketika mengulanginya ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)); makalah aslinya ditarik pada 2021 karena keraguan atas datanya. Riset di universitas memang mengaitkan kode kehormatan (honor code), sebagai bagian dari budaya integritas yang lebih luas, dengan kecurangan yang lebih sedikit ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). Nilai utama sebuah ikrar adalah kejelasan: tak seorang pun bisa bilang tidak tahu aturannya, dan kamu punya catatan bahwa mereka menyetujuinya.
 
 ## Batas pengawasan ujian (proctoring): keadilan dan hukum
 
@@ -83,9 +83,9 @@ Pengawasan lewat webcam, perekaman layar, dan pemindaian ruangan menjanjikan bis
 
 Hukum menambah batasan, terutama di Eropa:
 
-- **GDPR.** Video kandidat adalah data pribadi, dan analisis wajahnya bisa termasuk data biometrik, yang dilindungi secara khusus ([Pasal 9](https://gdpr-info.eu/art-9-gdpr/)). Pada 2021, otoritas perlindungan data Italia mendenda Universitas Bocconi atas pengawasan ujian jarak jauhnya, dengan temuan antara lain bahwa analisis wajah itu merupakan pemrosesan biometrik tanpa dasar hukum yang sah, bahwa persetujuan tidak diberikan secara bebas mengingat ketimpangan antara universitas dan mahasiswa, dan bahwa mahasiswa tidak diberi tahu dengan semestinya ([Garante, keputusan 317 tanggal 16 September 2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). Ketimpangan kuasa antara pemberi kerja dan kandidat, bisa dibilang, malah lebih besar.
+- **GDPR.** Video kandidat adalah data pribadi, dan analisis wajahnya bisa termasuk data biometrik, yang dilindungi secara khusus ([Pasal 9](https://gdpr-info.eu/art-9-gdpr/)). Pada 2021, otoritas perlindungan data Italia mendenda Universitas Bocconi atas pengawasan ujian jarak jauhnya, dengan temuan antara lain bahwa analisis wajah itu merupakan pemrosesan biometrik tanpa dasar hukum yang sah, bahwa persetujuan tidak diberikan secara bebas mengingat ketimpangan antara universitas dan mahasiswa, dan bahwa mahasiswa tidak diberi tahu dengan semestinya ([Garante, keputusan 317 tanggal 16 September 2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). Setelah banding, dendanya menjadi €150.000, turun dari €200.000. Ketimpangan kuasa antara pemberi kerja dan kandidat, bisa dibilang, malah lebih besar.
 - **AI Act UE.** Sejak 2 Februari 2025, AI yang menyimpulkan emosi orang di tempat kerja dilarang, dengan pengecualian sempit untuk alasan medis dan keselamatan ([Pasal 5(1)(f)](https://artificialintelligenceact.eu/article/5/)), dan pedoman Komisi Eropa menafsirkan "tempat kerja" mencakup rekrutmen ([pedoman Komisi tentang praktik AI yang dilarang](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)). Pengawasan yang menilai perilaku "mencurigakan" dari video sudah mendekati batas itu. AI yang dipakai untuk mengevaluasi kandidat juga sangat mungkin berisiko tinggi, dengan kewajiban seperti pengawasan oleh manusia. [Apakah rekrutmen dengan AI legal di UE?](/guides/is-ai-hiring-legal-in-the-eu) menjelaskan aturan dan tanggalnya.
-- **Amerika Serikat.** Pada 2022, sebuah pengadilan federal memutuskan bahwa pemindaian kamar tidur mahasiswa lewat webcam oleh universitas negeri sebelum ujian online melanggar Amandemen Keempat ([Ogletree v. Cleveland State University, seperti dilaporkan Higher Ed Dive](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). Pemberi kerja swasta tidak terikat Amandemen Keempat, tetapi undang-undang negara bagian tentang biometrik, seperti Biometric Information Privacy Act di Illinois, menetapkan aturannya sendiri untuk data wajah.
+- **Amerika Serikat.** Pada 2022, seorang hakim federal memutuskan bahwa pemindaian kamar tidur mahasiswa lewat webcam oleh universitas negeri sebelum ujian online melanggar Amandemen Keempat ([Ogletree v. Cleveland State University, seperti dilaporkan Higher Ed Dive](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). Pengadilan banding mengakhiri perkara itu pada 2023 setelah mahasiswa tersebut meninggal, tanpa memutus pertanyaannya ([Bloomberg Law](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death)), jadi pertanyaan itu masih terbuka. Pemberi kerja swasta tidak terikat Amandemen Keempat, tetapi undang-undang negara bagian tentang biometrik, seperti Biometric Information Privacy Act di Illinois, menetapkan aturannya sendiri untuk data wajah.
 
 **Bagian ini adalah panduan praktis, bukan nasihat hukum.** Periksa kewajibanmu sendiri di tempat kamu merekrut.
 
@@ -110,7 +110,7 @@ testee menjalankan tes keterampilan pilihan ganda berbatas waktu yang dibuat dar
 - **Pola jawaban, setelah kandidat selesai.** Laporan kandidat menunjukkan waktu menjawab yang kira-kira sama untuk setiap soal, berapa pun panjang dan tingkat kesulitannya, serta soal sulit yang benar sementara soal mudah salah, beserta angka di baliknya ("9 dari 10 soal sulit benar, 4 dari 8 soal mudah salah"). Pola kedua membutuhkan cukup jawaban dari kandidat lain untuk mengetahui seberapa sulit setiap soal. Kedua ambang batas ditetapkan pada pengujian dengan kandidat simulasi sehingga paling banyak 1% kandidat yang jujur ditandai; ambang itu menangkap sekitar sepertiga kandidat yang meneruskan setiap soal ke AI. Laporan mencatat bahwa pola seperti ini bisa punya penyebab yang wajar.
 - **Pertanyaan untuk wawancara langsung.** Halaman setiap kandidat yang sudah selesai menyarankan hingga 3 soal yang dijawabnya dengan benar, dari topik terkuatnya, untuk dibahas di percakapan berikutnya, dimulai dari soal sulit yang menjadi dasar sebuah pola jika ada.
 - **Kandidat berikrar** akan menjawab sendiri, tanpa alat AI atau bantuan orang lain, sebelum bisa mulai, dan kartu nilai menunjukkan kapan mereka melakukannya.
-- **Tanpa kamera, mikrofon, atau perekaman layar.** testee hanya memakai apa yang dilihat halaman tes itu sendiri: jawaban, waktu, keluar halaman, dan upaya menyalin.
+- **Tanpa kamera atau perekaman layar.** Mikrofon hanya dipakai dalam mode suara, untuk mengubah jawaban lisan kandidat menjadi teks. Selain itu, testee hanya memakai apa yang dilihat halaman tes itu sendiri: jawaban, waktu, keluar halaman, dan upaya menyalin.
 - **Manusia yang memutuskan.** Tidak ada yang menolak kandidat secara otomatis.
 
 ## Bacaan terkait
@@ -129,10 +129,10 @@ testee menjalankan tes keterampilan pilihan ganda berbatas waktu yang dibuat dar
 - van der Linden, W. J., & Guo, F. (2008). Bayesian procedures for identifying aberrant response-time patterns in adaptive testing. *Psychometrika, 73*(3), 365–384. [doi:10.1007/s11336-007-9046-8](https://doi.org/10.1007/s11336-007-9046-8)
 - Meijer, R. R., & Sijtsma, K. (2001). Methodology review: Evaluating person fit. *Applied Psychological Measurement, 25*(2), 107–135. [doi:10.1177/01466210122031957](https://doi.org/10.1177/01466210122031957)
 - Verschuere, B., et al. (2018). Registered replication report on Mazar, Amir, and Ariely (2008). *Advances in Methods and Practices in Psychological Science, 1*(3), 299–317. [doi:10.1177/2515245918781032](https://doi.org/10.1177/2515245918781032)
-- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107. [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
+- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107 (dikoreksi 2026). [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
 - McCabe, D. L., Treviño, L. K., & Butterfield, K. D. (2001). Cheating in academic institutions: A decade of research. *Ethics & Behavior, 11*(3), 219–232. [doi:10.1207/S15327019EB1103_2](https://doi.org/10.1207/S15327019EB1103_2)
 - Yoder-Himes, D. R., et al. (2022). Racial, skin tone, and sex disparities in automated proctoring software. *Frontiers in Education, 7*. [doi:10.3389/feduc.2022.881449](https://doi.org/10.3389/feduc.2022.881449)
 - Garante per la protezione dei dati personali, [keputusan no. 317 tanggal 16 September 2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988) (Università Bocconi).
-- Regulation (EU) 2024/1689 (AI Act), [Pasal 5](https://artificialintelligenceact.eu/article/5/); European Commission, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), 4 Februari 2025.
+- Regulation (EU) 2024/1689 (AI Act), [Pasal 5](https://artificialintelligenceact.eu/article/5/); European Commission, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), diterbitkan 4 Februari 2025, diadopsi 29 Juli 2025.
 - GDPR, [Pasal 9](https://gdpr-info.eu/art-9-gdpr/) dan [Pasal 22](https://gdpr-info.eu/art-22-gdpr/).
-- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), Agustus 2022 (Ogletree v. Cleveland State University, N.D. Ohio).
+- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), Agustus 2022 (Ogletree v. Cleveland State University, N.D. Ohio); Bloomberg Law, [Cleveland State dodges room-scan order after plaintiff's death](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death), Desember 2023.

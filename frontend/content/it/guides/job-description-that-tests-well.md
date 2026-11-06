@@ -2,7 +2,7 @@
 title: "Come scrivere una descrizione del ruolo da cui nasce un buon test"
 seoTitle: "Descrizione del ruolo da cui nasce un buon test di selezione"
 description: "Cosa serve a una descrizione del ruolo perché il test di competenze verifichi ciò che conta: competenze e strumenti concreti, livello, attività quotidiane."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Come scrivere una descrizione del ruolo da cui nasce un buon test
@@ -15,7 +15,7 @@ Questa guida riguarda il secondo compito: scrivere una descrizione da cui si pos
 
 Un test di conoscenze è utile quando verifica ciò di cui il ruolo ha davvero bisogno. La ricerca sulla selezione colloca i test di conoscenze professionali tra i migliori predittori della performance lavorativa in media, ma la stima vale per test costruiti per il ruolo in questione; i test di conoscenze non legati al ruolo predicono meno (vedi [Test di competenze o screening dei CV](/guides/skills-tests-vs-cv-screening)).
 
-Le norme statunitensi sul lavoro dicono lo stesso dal punto di vista legale. Le Uniform Guidelines on Employee Selection Procedures richiedono che un test giustificato dal suo contenuto si basi su un'analisi del ruolo incentrata su "il comportamento o i comportamenti lavorativi e le attività ad essi associate" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). In pratica, per la maggior parte dei team, la descrizione del ruolo è quell'analisi messa per iscritto. E secondo l'Americans with Disabilities Act, una descrizione scritta preparata prima di pubblicare l'annuncio o di fare i colloqui è considerata una prova delle funzioni essenziali di un ruolo ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+Le norme statunitensi sul lavoro dicono lo stesso dal punto di vista legale. Le Uniform Guidelines on Employee Selection Procedures richiedono che un test giustificato dal suo contenuto si basi su un'analisi del ruolo incentrata su "il comportamento o i comportamenti lavorativi e le attività ad essi associate" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). In pratica, per la maggior parte dei team, la descrizione del ruolo è quell'analisi messa per iscritto. (A ottobre 2026 l'EEOC si è mossa per abrogare le parti interpretative di queste Guidelines, con l'obiettivo di gennaio 2027. Il Title VII richiede ancora che un test con un impatto sfavorevole sia legato al ruolo.) E secondo l'Americans with Disabilities Act, una descrizione scritta preparata prima di pubblicare l'annuncio o di fare i colloqui è considerata una prova delle funzioni essenziali di un ruolo ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 Quindi la descrizione vale una mezz'ora in più. Qualunque cosa dica, il test la chiederà.
 
@@ -48,7 +48,7 @@ Gli anni di esperienza sono un sostituto approssimativo del livello, e debole: n
 
 Le attività sono le righe più utili per un test. "Prepara la liquidazione IVA mensile" o "smista i bug in arrivo e li riproduce" dice a chi scrive il test quali conoscenze si usano e in quali situazioni. Scrivi le attività come verbo e oggetto, come descriveresti il lavoro a un nuovo collega.
 
-Se non sai bene cosa comporta di solito un ruolo, [O*NET OnLine](https://www.onetonline.org/) elenca attività, tecnologie e conoscenze tipiche di centinaia di professioni. Usalo come checklist, poi tieni solo ciò che il tuo ruolo fa davvero.
+Se non sai bene cosa comporta di solito un ruolo, [O*NET OnLine](https://www.onetonline.org/) elenca attività, tecnologie e conoscenze tipiche di circa 1.000 professioni. Usalo come checklist, poi tieni solo ciò che il tuo ruolo fa davvero.
 
 ### 4. Una linea netta tra requisiti indispensabili e preferenziali
 

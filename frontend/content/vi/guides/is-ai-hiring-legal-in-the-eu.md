@@ -2,14 +2,14 @@
 title: "Dùng AI trong tuyển dụng có hợp pháp ở EU không? Những điều nhà tuyển dụng cần biết"
 seoTitle: "Tuyển dụng bằng AI ở EU: Đạo luật AI và GDPR cơ bản"
 description: "Dùng AI trong tuyển dụng ở EU là hợp pháp, nhưng có quy định. Nhóm rủi ro cao của Đạo luật AI nghĩa là gì, các mốc đến 12/2027 và GDPR cơ bản."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Dùng AI trong tuyển dụng có hợp pháp ở EU không? Những điều nhà tuyển dụng cần biết
 
 Nói chung là có: dùng AI trong tuyển dụng là hợp pháp ở EU. Nhưng phần lớn công cụ AI đánh giá ứng viên thuộc nhóm rủi ro cao của Đạo luật AI của EU (EU AI Act), kéo theo nghĩa vụ cho nhà cung cấp và cho bạn, bên tuyển dụng. Một số cách làm bị cấm hoàn toàn. Và GDPR áp dụng cho dữ liệu ứng viên, như từ trước đến nay.
 
-Hướng dẫn này giải thích các quy định ở mức tổng quan, các mốc thời gian quan trọng, những gì bên tuyển dụng phải làm, và cách testee tiếp cận vấn đề. **Đây không phải tư vấn pháp lý.** Nội dung phản ánh các quy định tính đến tháng 10/2026. Các quy định còn mới, hướng dẫn vẫn đang được hoàn thiện, và luật của từng quốc gia có thêm yêu cầu riêng. Hãy hỏi ý kiến luật sư của bạn trước khi dựa vào bất kỳ nội dung nào ở đây.
+Hướng dẫn này giải thích các quy định ở mức tổng quan, các mốc thời gian quan trọng, những gì bên tuyển dụng phải làm, và cách testee tiếp cận vấn đề. **Đây không phải tư vấn pháp lý.** Nội dung phản ánh các quy định tính đến tháng 11/2026. Các quy định còn mới, hướng dẫn vẫn đang được hoàn thiện, và luật của từng quốc gia có thêm yêu cầu riêng.
 
 ## Câu trả lời ngắn
 
@@ -36,7 +36,7 @@ Phạm vi này bao trùm nhiều loại công cụ: bộ lọc CV, hệ thống 
 
 Thường là không. [Điều 6(3)](https://artificialintelligenceact.eu/article/6/) của Đạo luật AI cho phép một số hệ thống thuộc Phụ lục III ra khỏi nhóm rủi ro cao, chẳng hạn khi chúng thực hiện một tác vụ thủ tục hẹp hoặc chỉ chuẩn bị cho một đánh giá của con người. Nhưng một hệ thống thuộc Phụ lục III có lập hồ sơ cá nhân (profiling) thì luôn là rủi ro cao, và việc chấm điểm hoặc xếp hạng ứng viên theo năng lực nhiều khả năng được coi là lập hồ sơ cá nhân.
 
-Dự thảo hướng dẫn của Ủy ban châu Âu về phân loại rủi ro cao (công bố ngày 19/5/2026 để lấy ý kiến; chưa phải bản cuối tính đến tháng 10/2026) có cách hiểu rộng. Dự thảo mô tả tuyển chọn là bao gồm "lập danh sách rút gọn, phân hạng, xếp hạng hoặc kiểm tra ứng viên", và, theo tóm tắt của [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), coi các hệ thống tạo ra điểm mức độ phù hợp là rủi ro cao "ngay cả khi quyết định tuyển dụng cuối cùng do một nhà tuyển dụng là con người đưa ra."
+Dự thảo hướng dẫn của Ủy ban châu Âu về phân loại rủi ro cao (công bố ngày 19/5/2026 để lấy ý kiến; chưa phải bản cuối tính đến tháng 11/2026) có cách hiểu rộng. Dự thảo mô tả tuyển chọn là bao gồm "lập danh sách rút gọn, phân hạng, xếp hạng hoặc kiểm tra ứng viên", và, theo tóm tắt của [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), coi các hệ thống tạo ra điểm mức độ phù hợp là rủi ro cao "ngay cả khi quyết định tuyển dụng cuối cùng do một nhà tuyển dụng là con người đưa ra."
 
 Vì vậy, một công cụ cho mỗi ứng viên một điểm số và một thứ hạng rất có thể thuộc nhóm rủi ro cao, dù con người quyết định ai được tuyển.
 
@@ -49,7 +49,7 @@ Vì vậy, một công cụ cho mỗi ứng viên một điểm số và một t
 | 2/12/2027 | Nghĩa vụ đối với hệ thống rủi ro cao thuộc Phụ lục III, bao gồm công cụ tuyển dụng |
 | 2/8/2028 | Nghĩa vụ đối với AI rủi ro cao trong các sản phẩm thuộc Phụ lục I |
 
-Mốc áp dụng quy định rủi ro cao cho Phụ lục III ban đầu là ngày 2/8/2026. Gói Digital Omnibus về AI (Quy định (EU) 2026/1744, có hiệu lực từ ngày 27/7/2026) đã lùi mốc này sang ngày 2/12/2027 ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Các mốc theo [AI Act Explorer, Điều 113](https://artificialintelligenceact.eu/article/113/), tính đến tháng 10/2026.
+Mốc áp dụng quy định rủi ro cao cho Phụ lục III ban đầu là ngày 2/8/2026. Gói Digital Omnibus về AI (Quy định (EU) 2026/1744, có hiệu lực từ ngày 27/7/2026) đã lùi mốc này sang ngày 2/12/2027 ([Official Journal](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). Gói này cũng viết lại nghĩa vụ về hiểu biết AI tại Điều 4, từ ngày 27/7/2026: nhà cung cấp và bên triển khai (deployer) nay phải có biện pháp hỗ trợ hiểu biết AI của nhân viên, không có mức cụ thể nào phải bảo đảm. Các mốc tính đến tháng 11/2026.
 
 Thời gian thêm là để chuẩn bị, không phải lý do để phớt lờ quy định. GDPR và luật chống phân biệt đối xử đã áp dụng đầy đủ.
 
@@ -88,7 +88,7 @@ Với công cụ tuyển dụng, nhà cung cấp tự đánh giá sự phù hợ
 - **Thông báo cho đại diện người lao động và người lao động bị ảnh hưởng** trước khi dùng hệ thống rủi ro cao tại nơi làm việc.
 - **Thông báo cho ứng viên** rằng họ chịu tác động của việc sử dụng một hệ thống AI rủi ro cao.
 
-Các cơ quan công quyền và một số tổ chức tư nhân còn phải thực hiện đánh giá tác động đến các quyền cơ bản (Điều 27). Và nghĩa vụ về hiểu biết AI tại Điều 4 đã được áp dụng: những người dùng công cụ AI trong tuyển dụng của bạn cần hiểu các công cụ đó làm được gì và không làm được gì.
+Các cơ quan công quyền và một số tổ chức tư nhân còn phải thực hiện đánh giá tác động đến các quyền cơ bản (Điều 27). Và Điều 4 đã được áp dụng: hãy có biện pháp hỗ trợ hiểu biết AI của những người dùng công cụ AI trong tuyển dụng của bạn, để họ hiểu các công cụ đó làm được gì và không làm được gì.
 
 ## Những điều cơ bản về GDPR
 
@@ -119,7 +119,7 @@ testee tổ chức các buổi phỏng vấn kỹ năng trắc nghiệm có tín
 
 Hiện nay điều đó thể hiện trong sản phẩm như sau:
 
-- **AI viết câu hỏi và đáp án; việc chấm điểm theo quy tắc cố định.** Không có AI nào đọc hay đánh giá câu trả lời của ứng viên, và không dùng phân tích video, giọng nói hay khuôn mặt. Nếu sau này AI sửa một đáp án, bản sửa áp dụng cho các ứng viên bắt đầu sau đó; kết quả trước đó không thay đổi.
+- **AI viết câu hỏi và đáp án; việc chấm điểm theo quy tắc cố định.** Không có AI nào đánh giá câu trả lời của ứng viên, và không dùng phân tích video hay khuôn mặt. Ở chế độ giọng nói, lời nói được chuyển thành văn bản và khớp với một lựa chọn, lựa chọn đó được đọc lại cho ứng viên và hiển thị trên màn hình: một lựa chọn duy nhất được nói rõ sẽ được ghi nhận ngay, còn khi chọn nhiều lựa chọn thì phải xác nhận trước. testee không bao giờ lưu lời nói, và giọng nói không bao giờ bị phân tích. Nếu sau này AI sửa một đáp án, bản sửa áp dụng cho các ứng viên bắt đầu sau đó; kết quả trước đó không thay đổi.
 - **Bạn duyệt các chủ đề** trước khi bất kỳ câu hỏi nào được viết, và bạn xem được mọi câu hỏi.
 - **Con người quyết định.** Trang kết quả và báo cáo PDF nhắc nhóm của bạn xem xét kết quả; testee không loại ứng viên và không gửi thư từ chối.
 - **Ứng viên được thông báo** trước khi bắt đầu rằng câu hỏi do AI viết, rằng người của công ty bạn xem xét kết quả và quyết định, và rằng họ có thể yêu cầu xem xét lại.

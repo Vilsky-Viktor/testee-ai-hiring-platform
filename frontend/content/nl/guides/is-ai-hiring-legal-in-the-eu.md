@@ -2,14 +2,14 @@
 title: "Is AI bij werving en selectie legaal in de EU? Wat werkgevers moeten weten"
 seoTitle: "AI bij werving en selectie: legaal in de EU?"
 description: "AI bij werving is legaal in de EU, met regels. Wat de hoogrisicocategorie van de AI-verordening betekent, de data tot december 2027 en de basis van de AVG."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Is AI bij werving en selectie legaal in de EU? Wat werkgevers moeten weten
 
 Over het algemeen wel: AI gebruiken bij werving en selectie is legaal in de EU. Maar de meeste AI-tools die kandidaten beoordelen vallen onder de hoogrisicocategorie van de AI-verordening (EU AI Act), en dat brengt verplichtingen mee voor de leverancier en voor jou, de werkgever. Een paar praktijken zijn helemaal verboden. En de AVG (GDPR) is van toepassing op kandidaatgegevens, zoals altijd.
 
-Deze gids legt de regels op hoofdlijnen uit, de data die ertoe doen, wat werkgevers moeten doen en hoe testee ermee omgaat. **Dit is geen juridisch advies.** Het geeft de regels weer zoals ze in oktober 2026 gelden. De regels zijn nieuw, richtsnoeren worden nog afgerond en nationaal recht voegt eigen eisen toe. Overleg met je eigen jurist voordat je hierop vertrouwt.
+Deze gids legt de regels op hoofdlijnen uit, de data die ertoe doen, wat werkgevers moeten doen en hoe testee ermee omgaat. **Dit is geen juridisch advies.** Het geeft de regels weer zoals ze in november 2026 gelden. De regels zijn nieuw, richtsnoeren worden nog afgerond en nationaal recht voegt eigen eisen toe.
 
 ## Het korte antwoord
 
@@ -34,7 +34,7 @@ Dat dekt een breed scala aan tools: cv-filters, rangschikkingssystemen, AI-inter
 
 Meestal niet. [Artikel 6, lid 3](https://artificialintelligenceact.eu/article/6/), van de AI-verordening haalt sommige systemen uit bijlage III uit de hoogrisicocategorie, bijvoorbeeld als ze een beperkte procedurele taak uitvoeren of alleen een menselijke beoordeling voorbereiden. Maar een systeem uit bijlage III dat profilering van personen uitvoert is altijd hoog risico, en kandidaten scoren of rangschikken op hun vaardigheden geldt waarschijnlijk als profilering.
 
-De conceptrichtsnoeren van de Europese Commissie over de indeling als hoog risico (gepubliceerd op 19 mei 2026 voor consultatie; in oktober 2026 nog niet definitief) kiezen een ruime uitleg. Ze beschrijven selectie als het omvatten van "het opstellen van shortlists, het beoordelen, rangschikken of testen van kandidaten", en behandelen, zoals samengevat door [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), systemen die geschiktheidsscores genereren als hoog risico "ook als het uiteindelijke aannamebesluit door een menselijke recruiter wordt genomen."
+De conceptrichtsnoeren van de Europese Commissie over de indeling als hoog risico (gepubliceerd op 19 mei 2026 voor consultatie; in november 2026 nog niet definitief) kiezen een ruime uitleg. Ze beschrijven selectie als het omvatten van "het opstellen van shortlists, het beoordelen, rangschikken of testen van kandidaten", en behandelen, zoals samengevat door [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), systemen die geschiktheidsscores genereren als hoog risico "ook als het uiteindelijke aannamebesluit door een menselijke recruiter wordt genomen."
 
 Een tool die elke kandidaat een score en een plek in een ranglijst geeft, is dus zeer waarschijnlijk hoog risico, ook al beslissen mensen wie wordt aangenomen.
 
@@ -47,7 +47,7 @@ Een tool die elke kandidaat een score en een plek in een ranglijst geeft, is dus
 | 2 december 2027 | Verplichtingen voor hoogrisicosystemen uit bijlage III, waaronder selectietools |
 | 2 augustus 2028 | Verplichtingen voor hoogrisico-AI in producten die onder bijlage I vallen |
 
-De hoogrisicodatum voor bijlage III was oorspronkelijk 2 augustus 2026. De Digital Omnibus over AI (Verordening (EU) 2026/1744, van kracht sinds 27 juli 2026) verschoof die naar 2 december 2027 ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Data zoals weergegeven in de [AI Act Explorer, artikel 113](https://artificialintelligenceact.eu/article/113/), per oktober 2026.
+De hoogrisicodatum voor bijlage III was oorspronkelijk 2 augustus 2026. De Digital Omnibus over AI (Verordening (EU) 2026/1744, van kracht sinds 27 juli 2026) verschoof die naar 2 december 2027 ([Publicatieblad](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). Ook herschreef die de plicht tot AI-geletterdheid in artikel 4, vanaf 27 juli 2026: aanbieders en gebruiksverantwoordelijken moeten nu maatregelen nemen om de AI-geletterdheid van hun personeel te ondersteunen, zonder een vast niveau te hoeven garanderen. Data per november 2026.
 
 De extra tijd is bedoeld om je voor te bereiden, geen reden om de regels te negeren. De AVG en de antidiscriminatiewetgeving gelden nu al volledig.
 
@@ -86,7 +86,7 @@ Artikel 26 legt de verplichtingen van de werkgever vast. Samengevat ([artikel 26
 - **Informeer werknemersvertegenwoordigers en betrokken werknemers** voordat je een hoogrisicosysteem op de werkplek gebruikt.
 - **Vertel kandidaten** dat er een AI-systeem met een hoog risico op hen wordt toegepast.
 
-Overheidsinstanties en sommige private organisaties moeten ook een effectbeoordeling op het gebied van grondrechten uitvoeren (artikel 27). En de plicht tot AI-geletterdheid uit artikel 4 geldt al: de mensen die AI-tools in je werving gebruiken moeten begrijpen wat die tools wel en niet doen.
+Overheidsinstanties en sommige private organisaties moeten ook een effectbeoordeling op het gebied van grondrechten uitvoeren (artikel 27). En artikel 4 geldt al: neem maatregelen om de AI-geletterdheid te ondersteunen van de mensen die AI-tools in je werving gebruiken, zodat ze begrijpen wat die tools wel en niet doen.
 
 ## De basis van de AVG
 
@@ -117,7 +117,7 @@ testee neemt getimede meerkeuze-vaardigheidstests af die door AI worden geschrev
 
 Zo ziet dat er vandaag in het product uit:
 
-- **AI schrijft de vragen en de antwoordsleutels; het nakijken volgt vaste regels.** Geen AI leest of beoordeelt het antwoord van een kandidaat, en er wordt geen video-, stem- of gezichtsanalyse gebruikt. Als AI later een sleutel corrigeert, geldt de correctie voor kandidaten die daarna beginnen; eerdere resultaten veranderen niet.
+- **AI schrijft de vragen en de antwoordsleutels; het nakijken volgt vaste regels.** Geen AI beoordeelt het antwoord van een kandidaat, en er wordt geen video- of gezichtsanalyse gebruikt. In de spraakmodus wordt spraak omgezet in tekst en gekoppeld aan een antwoordoptie, die de kandidaat te horen krijgt en op het scherm ziet: één duidelijk genoemde optie wordt meteen vastgelegd, een keuze van meerdere opties wordt eerst bevestigd. testee slaat spraak nooit op, en de stem wordt nooit geanalyseerd. Als AI later een sleutel corrigeert, geldt de correctie voor kandidaten die daarna beginnen; eerdere resultaten veranderen niet.
 - **Jij keurt de onderwerpen goed** voordat er ook maar één vraag wordt geschreven, en je kunt elke vraag zien.
 - **Mensen beslissen.** De resultatenpagina en de pdf-rapporten herinneren je team eraan de resultaten te beoordelen; testee wijst geen kandidaten af en stuurt geen afwijzingsberichten.
 - **Kandidaten krijgen te horen,** voordat ze beginnen, dat de vragen door AI zijn geschreven, dat mensen bij jouw bedrijf de resultaten beoordelen en beslissen, en dat ze om een herbeoordeling kunnen vragen.

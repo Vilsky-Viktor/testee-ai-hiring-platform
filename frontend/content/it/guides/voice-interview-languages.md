@@ -2,14 +2,14 @@
 title: "Colloqui vocali in 23 lingue: quanto bene Mira legge e capisce in ciascuna"
 seoTitle: "Colloqui vocali in 23 lingue: la qualità lingua per lingua"
 description: "Quanto bene la modalità vocale di testee legge le domande e capisce le risposte nelle sue 23 lingue, come l'abbiamo misurato e quando è meglio toccare."
-updated: "2026-11-04"
+updated: "2026-11-07"
 ---
 
 # Colloqui vocali in 23 lingue: quanto bene Mira legge e capisce in ciascuna
 
 In modalità vocale Mira, l'intervistatrice IA di testee, legge ad alta voce ogni domanda e le sue opzioni, e il candidato risponde a voce: «B», «opzione C», «la mediana» oppure «A e D» in una domanda con più risposte corrette. La modalità vocale funziona in tutte le 23 lingue di testee, ma le tecnologie vocali non sono ugualmente valide in ogni lingua. Questa guida mostra quanto funziona bene in ciascuna, così puoi scegliere la modalità più adatta ai tuoi candidati.
 
-In qualunque lingua i candidati possono sempre toccare un'opzione invece di parlare, e l'opzione capita da Mira compare sullo schermo mentre lei la ripete.
+Una volta iniziato il colloquio, in qualunque lingua i candidati possono sempre toccare un'opzione invece di parlare, e l'opzione capita da Mira compare sullo schermo mentre lei la ripete. Il tempo di una domanda scorre mentre Mira la legge.
 
 ## In breve
 
@@ -53,9 +53,9 @@ Misurato il 4 novembre 2026.
 
 - **Ebraico, arabo e persiano:** a volte Mira chiama le opzioni con le lettere dell'alfabeto della lingua (alef, bet, ghimel) invece che con A, B, C e D come compaiono sullo schermo. L'ordine è lo stesso, quindi la prima opzione resta la prima, ma i candidati dovrebbero rispondere con le lettere che vedono.
 - **Estone:** un breve «ei» (no) può sembrare la lettera A, quindi un candidato che rifiuta una scelta ripetuta da Mira viene talvolta registrato come se avesse scelto l'opzione A.
-- **Thailandese:** una lettera pronunciata a volte viene sentita come un numero thailandese («ข้อ C» come «ข้อ สี่», opzione quattro), e così può essere registrata l'opzione sbagliata; inoltre le opzioni indicate per posizione spesso non vengono capite. Toccare è più sicuro.
+- **Thailandese:** una lettera pronunciata a volte viene sentita come un numero thailandese («ข้อ C» come «ข้อ สี่», opzione quattro), e così può essere registrata l'opzione sbagliata. Toccare è più sicuro.
 - **Giapponese:** «選択肢C» (opzione C) a volte è stato sentito come un'altra parola e registrato come l'opzione sbagliata; una lettera da sola funziona meglio.
-- **Russo, ucraino e polacco:** la «e» tra due lettere («A и C») a volte viene sentita come una terza lettera, e Mira chiede di nuovo.
+- **Russo e polacco:** la «e» tra due lettere («A и C») a volte viene sentita come una terza lettera, e Mira chiede di nuovo.
 
 ## Come l'abbiamo misurato
 
@@ -67,6 +67,7 @@ I numeri sono indicativi, non una garanzia. Con venti risposte per lingua, una d
 
 - **La modalità vocale** è adatta ai ruoli in cui conta saper parlare, ai candidati che preferiscono non scrivere o toccare lo schermo e alle esigenze di accessibilità. Rende al meglio nelle lingue con qualità ottima e buona.
 - **La modalità clic** è quella predefinita e funziona allo stesso modo in ogni lingua. Preferiscila per le posizioni critiche in una lingua con qualità discreta.
+- Per iniziare un colloquio vocale serve un microfono funzionante, quindi un candidato che non può usarlo ha bisogno della modalità clic, impostata prima che inizi.
 - Puoi impostare la modalità per l'intero colloquio nelle sue impostazioni e cambiarla per un singolo candidato prima che inizi.
 
-In modalità vocale, la voce dei candidati viene solo trasformata in testo per leggere le risposte, e non viene mai conservata né analizzata in nessun altro modo.
+In modalità vocale, la voce dei candidati viene solo trasformata in testo per leggere le risposte, non viene mai analizzata in nessun altro modo e testee non la conserva mai. OpenAI, che trasforma il parlato in testo, ha istruzione di non conservarlo e tiene i dati dell'API per al massimo 30 giorni, solo per controllare gli abusi.

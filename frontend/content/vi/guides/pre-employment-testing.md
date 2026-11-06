@@ -2,7 +2,7 @@
 title: "Bài kiểm tra trước tuyển dụng: hướng dẫn thực tế cho doanh nghiệp vừa và nhỏ"
 seoTitle: "Bài kiểm tra tuyển dụng: các loại, tính công bằng và công cụ"
 description: "Bài kiểm tra tuyển dụng là gì, có những loại nào, khi nào nên dùng, cơ bản về công bằng và pháp lý, và cách chọn công cụ đánh giá năng lực ứng viên."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Bài kiểm tra trước tuyển dụng: hướng dẫn thực tế cho doanh nghiệp vừa và nhỏ
@@ -48,11 +48,11 @@ Bài kiểm tra ít hữu ích hơn khi công việc chủ yếu phụ thuộc v
 
 ## Công bằng và pháp luật: những điều cơ bản
 
-Phần này là tổng quan ở mức cao, tính đến tháng 10/2026, không phải tư vấn pháp lý. Quy định phụ thuộc vào quốc gia, ngành nghề và cách bạn sử dụng kết quả. Hãy hỏi ý kiến luật sư của bạn.
+Phần này là tổng quan ở mức cao, tính đến tháng 11/2026, không phải tư vấn pháp lý. Quy định phụ thuộc vào quốc gia, ngành nghề và cách bạn sử dụng kết quả.
 
 ### Hoa Kỳ: EEOC và quy tắc bốn phần năm
 
-Các nhà tuyển dụng tại Mỹ dùng bài kiểm tra cho quyết định tuyển dụng chịu sự điều chỉnh của các luật liên bang về chống phân biệt đối xử do EEOC thực thi. Uniform Guidelines on Employee Selection Procedures có một quy tắc kinh nghiệm về tác động bất lợi: "Tỷ lệ tuyển chọn của bất kỳ nhóm chủng tộc, giới tính hoặc sắc tộc nào thấp hơn bốn phần năm (4/5) (hay tám mươi phần trăm) tỷ lệ của nhóm có tỷ lệ cao nhất thường sẽ được các cơ quan thực thi liên bang coi là bằng chứng của tác động bất lợi" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+Các nhà tuyển dụng tại Mỹ dùng bài kiểm tra cho quyết định tuyển dụng chịu sự điều chỉnh của các luật liên bang về chống phân biệt đối xử do EEOC thực thi. Uniform Guidelines on Employee Selection Procedures có một quy tắc kinh nghiệm về tác động bất lợi: "Tỷ lệ tuyển chọn của bất kỳ nhóm chủng tộc, giới tính hoặc sắc tộc nào thấp hơn bốn phần năm (4/5) (hay tám mươi phần trăm) tỷ lệ của nhóm có tỷ lệ cao nhất thường sẽ được các cơ quan thực thi liên bang coi là bằng chứng của tác động bất lợi" ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). Tháng 10/2026, EEOC đã gửi Nhà Trắng một quy định cuối cùng nhằm hủy bỏ các phần diễn giải của Guidelines này, với mục tiêu tháng 1/2027. Quy tắc của Title VII về tác động bất lợi vẫn giữ nguyên, và phép kiểm tra bốn phần năm vẫn là bước kiểm tra đầu tiên hữu ích.
 
 Trên thực tế: chỉ kiểm tra kiến thức mà công việc cần, theo dõi tỷ lệ đạt giữa các nhóm, điều chỉnh hợp lý như cho thêm thời gian, và kiểm tra quy định của tiểu bang và thành phố về công cụ tuyển dụng tự động. Ví dụ, [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) của thành phố New York yêu cầu kiểm toán thiên lệch, công bố bản tóm tắt kết quả và thông báo cho ứng viên trước khi dùng một công cụ ra quyết định tuyển dụng tự động.
 
@@ -98,9 +98,9 @@ testee biến mô tả công việc thành một buổi phỏng vấn kỹ năng
 
 - **Mỗi ứng viên nhận bộ câu hỏi ngẫu nhiên của riêng mình** từ ngân hàng của mỗi chủ đề, với đồng hồ đếm ngược do máy chủ áp dụng cho mọi câu hỏi. Bạn có thể cho thêm thời gian với bất kỳ ai yêu cầu.
 - **Bảng điểm** hiển thị mọi câu trả lời, đúng hay sai và mất bao lâu, kèm cảnh báo về trả lời quá nhanh, rời khỏi trang, cố sao chép và mẫu trả lời bất thường, cùng những câu nên hỏi trong buổi phỏng vấn trực tiếp. Cảnh báo không làm thay đổi điểm số.
-- **Câu trả lời được chấm theo đáp án** do AI viết; một phần đáp án của mỗi chủ đề được kiểm tra trước khi phát hành, phần còn lại khi câu hỏi bị đánh dấu. Không có AI nào đọc hay đánh giá câu trả lời của ứng viên. Báo cáo PDF bao gồm một ứng viên hoặc cả danh sách.
+- **Câu trả lời được chấm theo đáp án** do AI viết; một phần đáp án của mỗi chủ đề được kiểm tra trước khi phát hành, phần còn lại khi câu hỏi bị đánh dấu. Không có AI nào đánh giá câu trả lời của ứng viên. Báo cáo PDF bao gồm một ứng viên hoặc cả danh sách.
 - **Hoạt động với các công cụ của bạn:** ứng viên bạn chuyển sang một giai đoạn trong Workable, Greenhouse, Teamtailor, Recruitee hoặc Breezy HR sẽ được mời làm buổi phỏng vấn, và kết quả của họ được gửi về ATS. Slack được báo khi một ứng viên làm xong, và [API](/api-docs) kết nối nền tảng riêng của bạn. Xem [cách kết nối bài kiểm tra kỹ năng với ATS](/guides/ats-integration-skills-tests).
 
-Giá tính theo ứng viên có trả lời, không có gói đăng ký: $2–5 mỗi ứng viên tùy mức nạp (bằng đồng tiền địa phương ở Canada, Úc, Israel, Ba Lan, Thụy Sĩ, Nhật Bản, Hàn Quốc, Đài Loan, Hồng Kông, Thái Lan, Singapore, Ấn Độ, phần còn lại của châu Âu và Vương quốc Anh), và 3 ứng viên đầu tiên của bạn được miễn phí. Dữ liệu được lưu trữ tại EU (một số bên xử lý phụ ở Mỹ; xem [chính sách quyền riêng tư](/privacy)), có kèm thỏa thuận xử lý dữ liệu và hướng dẫn cho công ty.
+Giá tính theo ứng viên có trả lời, không có gói đăng ký: $2–5 mỗi ứng viên tùy mức nạp (bằng đồng tiền địa phương ở Canada, Úc, Israel, Ba Lan, Thụy Sĩ, Nhật Bản, Hàn Quốc, Đài Loan, Hồng Kông, Thái Lan, Singapore, Ấn Độ, phần còn lại của EU, Na Uy, Iceland, Liechtenstein và Vương quốc Anh), và 3 ứng viên đầu tiên của công ty đầu tiên của bạn được miễn phí. Dữ liệu được lưu trữ tại EU (một số bên xử lý phụ ở Mỹ; xem [chính sách quyền riêng tư](/privacy)), có kèm thỏa thuận xử lý dữ liệu và hướng dẫn cho công ty.
 
 testee không phải bộ công cụ trắc nghiệm tâm lý, nền tảng để viết và chạy code, hay công cụ phỏng vấn video, và testee hoạt động song song với các công cụ đó. Để xem testee so với các công cụ tuyển dụng AI khác ra sao, đọc [Phỏng vấn AI](/guides/ai-interviews). Với vị trí kỹ thuật, xem [Cách tuyển kỹ sư phần mềm](/guides/hiring-engineers).

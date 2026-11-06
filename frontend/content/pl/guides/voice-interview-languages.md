@@ -2,14 +2,14 @@
 title: "Rozmowy głosowe w 23 językach: jak dobrze Mira czyta i słyszy w każdym z nich"
 seoTitle: "Rozmowy głosowe w 23 językach: jakość w każdym języku"
 description: "Jak dobrze tryb głosowy testee czyta pytania na głos i rozumie odpowiedzi ustne w każdym z 23 języków, jak to zmierzyliśmy i kiedy lepiej wybrać dotykanie."
-updated: "2026-11-04"
+updated: "2026-11-07"
 ---
 
 # Rozmowy głosowe w 23 językach: jak dobrze Mira czyta i słyszy w każdym z nich
 
 W trybie głosowym Mira, rekruterka AI testee, czyta na głos każde pytanie i odpowiedzi do wyboru, a kandydat odpowiada, mówiąc: „B”, „odpowiedź C”, „mediana” albo „A i D” przy pytaniu z kilkoma poprawnymi odpowiedziami. Tryb głosowy działa we wszystkich 23 językach testee, ale technologia mowy nie jest równie dobra w każdym z nich. Ten poradnik pokazuje, jak dobrze działa w każdym języku, żeby łatwiej było wybrać tryb odpowiedni dla Twoich kandydatów.
 
-Niezależnie od języka kandydaci zawsze mogą zamiast mówić dotknąć odpowiedzi, a odpowiedź, którą Mira przyjęła, pojawia się na ekranie, gdy Mira ją powtarza.
+Po rozpoczęciu rozmowy kandydaci, niezależnie od języka, zawsze mogą zamiast mówić dotknąć odpowiedzi, a odpowiedź, którą Mira przyjęła, pojawia się na ekranie, gdy Mira ją powtarza. Czas na pytanie biegnie, gdy Mira je czyta.
 
 ## W skrócie
 
@@ -53,9 +53,9 @@ Zmierzono 4 listopada 2026 r.
 
 - **Hebrajski, arabski i perski:** Mira czasem nazywa odpowiedzi literami alfabetu danego języka (alef, bet, gimel) zamiast literami A, B, C i D widocznymi na ekranie. Kolejność jest ta sama, więc pierwsza odpowiedź to nadal pierwsza, ale kandydaci powinni odpowiadać literami, które widzą.
 - **Estoński:** krótkie „ei” (nie) może brzmieć jak litera A, więc kandydat, który odrzuca odpowiedź powtórzoną przez Mirę, bywa czasem zapisany jako wybierający odpowiedź A.
-- **Tajski:** wypowiedziana litera bywa słyszana jako tajska liczba („ข้อ C” jako „ข้อ สี่”, odpowiedź czwarta), przez co może zostać zapisana zła odpowiedź, a odpowiedzi wskazane przez ich pozycję często nie są rozumiane. Bezpieczniej jest dotykać.
+- **Tajski:** wypowiedziana litera bywa słyszana jako tajska liczba („ข้อ C” jako „ข้อ สี่”, odpowiedź czwarta), przez co może zostać zapisana zła odpowiedź. Bezpieczniej jest dotykać.
 - **Japoński:** „選択肢C” (odpowiedź C) bywał słyszany jako inne słowo i zapisywany jako zła odpowiedź; sama litera działa lepiej.
-- **Rosyjski, ukraiński i polski:** „i” między dwiema literami („A и C”) bywa słyszane jako trzecia litera i wtedy Mira pyta ponownie.
+- **Rosyjski i polski:** „i” między dwiema literami („A и C”) bywa słyszane jako trzecia litera i wtedy Mira pyta ponownie.
 
 ## Jak to zmierzyliśmy
 
@@ -67,6 +67,7 @@ Liczby są wskazówką, nie gwarancją. Dwadzieścia odpowiedzi na język oznacz
 
 - **Tryb głosowy** sprawdza się na stanowiskach, na których liczy się mówienie, u kandydatów, którzy wolą nie pisać ani nie dotykać ekranu, oraz gdy wymaga tego dostępność. Najlepiej działa w językach o bardzo dobrej i dobrej jakości.
 - **Tryb kliknięć** jest domyślny i działa tak samo w każdym języku. Wybierz go przy kluczowych stanowiskach w języku o przeciętnej jakości.
+- Rozpoczęcie rozmowy głosowej wymaga działającego mikrofonu, więc kandydat, który nie może z niego korzystać, potrzebuje trybu kliknięć, ustawionego przed startem.
 - Tryb ustawiasz dla całej rozmowy w jej ustawieniach i możesz go zmienić dla jednego kandydata, zanim zacznie.
 
-W trybie głosowym głos kandydatów jest zamieniany na tekst wyłącznie po to, by odczytać ich odpowiedzi; nigdy nie jest zapisywany ani analizowany w żaden inny sposób.
+W trybie głosowym głos kandydatów jest zamieniany na tekst wyłącznie po to, by odczytać ich odpowiedzi, nigdy nie jest analizowany w żaden inny sposób, a testee nigdy go nie przechowuje. OpenAI, które zamienia mowę na tekst, ma polecenie jej nie przechowywać i trzyma dane API najwyżej 30 dni, wyłącznie w celu kontroli nadużyć.

@@ -2,7 +2,7 @@
 title: "Rozmowy z programistami w erze AI: co teraz sprawdzać"
 seoTitle: "Rekrutacja programistów w erze AI: co sprawdzać"
 description: "Asystenci AI są częścią codziennej pracy programistów. Jak zmienia to rozmowy rekrutacyjne, jak dostosowują się firmy i gdzie pasują testy wiedzy."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Rozmowy z programistami w erze AI: co teraz sprawdzać
@@ -25,7 +25,7 @@ Razem te liczby opisują zmianę samej pracy. Stworzenie pierwszej wersji kodu s
 
 Nie ma jeszcze jednej odpowiedzi całej branży. Opisywane podejścia idą w różnych kierunkach:
 
-- **Dopuszczanie lub wymaganie AI na rozmowie.** W czerwcu 2025 Canva ogłosiła, że oczekuje teraz od kandydatów na stanowiska backend, machine learning i frontend używania narzędzi AI, takich jak Copilot, Cursor i Claude, w nowym etapie „AI-Assisted Coding”. Ocenia, czy kandydaci potrafią „rozłożyć złożone, niejednoznaczne wymagania na części”, „znaleźć i naprawić problemy w kodzie wygenerowanym przez AI” oraz „zapewnić, że rozwiązania wygenerowane przez AI spełniają standardy produkcyjne” ([Canva Engineering, czerwiec 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
+- **Dopuszczanie lub wymaganie AI na rozmowie.** W czerwcu 2025 Canva ogłosiła, że oczekuje teraz od kandydatów na stanowiska backend, machine learning i frontend używania narzędzi AI, takich jak Copilot, Cursor i Claude, na rozmowach technicznych, a nowy etap „AI-Assisted Coding” zastępuje etap z podstaw informatyki na stanowiskach backend i frontend. Ocenia, czy kandydaci potrafią „rozłożyć złożone, niejednoznaczne wymagania na części”, „znaleźć i naprawić problemy w kodzie wygenerowanym przez AI” oraz „zapewnić, że rozwiązania wygenerowane przez AI spełniają standardy produkcyjne” ([Canva Engineering, czerwiec 2025](https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews)).
 - **Pilotażowe etapy programowania z AI.** W lipcu 2025 Business Today, powołując się na 404 Media, podał, że Meta przygotowuje rozmowę programistyczną, w której kandydaci mają do dyspozycji asystenta AI. Przytoczył wypowiedź Meta, że jest to „bardziej reprezentatywne dla środowiska programistycznego, w którym będą pracować nasi przyszli pracownicy, a także sprawia, że oszukiwanie z użyciem LLM jest mniej skuteczne” ([Business Today, lipiec 2025](https://www.businesstoday.in/amp/technology/news/story/meta-to-test-job-applicants-with-ai-assisted-coding-interviews-amid-ai-expansion-plans-487200-2025-07-31)).
 - **Ograniczanie narzędzi i spotkania na miejscu.** W marcu 2025 CNBC opisało narzędzie stworzone, by pomagać kandydatom niepostrzeżenie korzystać z AI podczas zdalnych rozmów programistycznych. W tym samym materiale Amazon podał, że kandydaci muszą potwierdzić, iż nie będą korzystać z niedozwolonych narzędzi, CEO Google zasugerował menedżerom rekrutującym rozważenie części rozmów na miejscu, a Deloitte przywrócił rozmowy na miejscu w swoim brytyjskim programie dla absolwentów ([CNBC via NBC New York, marzec 2025](https://www.nbcnewyork.com/news/business/money-report/meet-the-21-year-old-helping-coders-use-ai-to-cheat-in-google-and-other-tech-job-interviews/6178911/?amp=1)).
 
@@ -74,7 +74,7 @@ testee dobrze sprawdza się w kroku 2. Zamienia Twój opis stanowiska w rozmowę
 - **Pytania o czytanie kodu:** krótki fragment kodu i pytania o to, co wypisze lub zwróci, co robi, dlaczego nie działa albo która zmiana go naprawi. To ta sama umiejętność przeglądania kodu, od której zależy praca z AI.
 - **Limit czasu na każde pytanie:** każde pytanie ma własne odliczanie, pilnowane przez serwer, a każdy kandydat dostaje własny, losowy zestaw pytań. To utrudnia wyszukiwanie odpowiedzi, w tym pytanie asystenta AI. Nie uniemożliwia tego.
 - **Sygnały dotyczące rzetelności:** karty wyników oznaczają odpowiedzi zbyt szybkie, by kandydat zdążył przeczytać pytanie, momenty opuszczenia strony i próby kopiowania. Gdy kandydat skończy, jego raport wskazuje też wzorce odpowiedzi, jakie zwykle zostawia przekazywanie pytań AI i przepisywanie jej odpowiedzi: mniej więcej tyle samo czasu przy każdym pytaniu bez względu na jego długość czy trudność albo poprawne odpowiedzi na trudne pytania przy błędnych na łatwe. Oznaczenie czy wzorzec to powód, by przyjrzeć się bliżej, a nie dowód oszustwa.
-- **Pytania na rozmowę na żywo:** raport podsuwa do 3 pytań, na które kandydat odpowiedział poprawnie, z jego najmocniejszych tematów, do omówienia na rozmowie na żywo, gdzie AI nie odpowie za niego.
+- **Pytania na rozmowę na żywo:** strona kandydata podsuwa do 3 pytań, na które odpowiedział poprawnie, z jego najmocniejszych tematów, do omówienia na rozmowie na żywo, gdzie AI nie odpowie za niego.
 
 Czego testee nie robi: kandydaci nie piszą, nie uruchamiają ani nie debugują kodu w testee, a testee nie obserwuje, jak korzystają z asystenta AI. To należy do etapu praktycznego, prowadzonego we własnym zakresie lub na platformie dla programistów, który uzupełnia test wiedzy. Gotowe testy na start znajdziesz w [testach umiejętności według roli](/tests), a o tym, jak testee korzysta z AI i co zostawia ludziom, przeczytasz na stronie [Rozmowy rekrutacyjne z AI](/guides/ai-interviews).
 

@@ -2,14 +2,14 @@
 title: "AI-intervjuud: mis need on ja kuidas neid õiglaselt kasutada"
 seoTitle: "Tehisintellekt värbamisel: AI-intervjuud, riskid, reeglid"
 description: "Tehisintellekt (AI) värbamisel: mida teevad AI-intervjuud, vestlusrobotid, videoanalüüs ja loodud testid, millised on riskid ja seaduse nõuded."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # AI-intervjuud: mis need on ja kuidas neid õiglaselt kasutada
 
 „AI-intervjuu“ tähendab eri pakkujate juures väga erinevaid asju. Mõni tööriist peab kandidaadiga vestlust. Mõni salvestab video ja hindab seda. Mõni kasutab AI-d ainult küsimuste kirjutamiseks ja hindab vastuseid kindlate reeglite järgi. Värbamismeeskonnale on vahe oluline: sellest sõltub, mida saad kandidaadile selgitada, mis võib valesti minna ja mida seadus sinult ootab.
 
-Sellel lehel jagame AI-intervjuu tööriistad põhiliikideks, selgitame testee lähenemist ja võtame kokku õiguslikud põhitõed.
+Selles juhendis jagame AI-intervjuu tööriistad põhiliikideks, selgitame testee lähenemist ja võtame kokku õiguslikud põhitõed.
 
 ## Kolm liiki AI-intervjuu tööriistu
 
@@ -38,13 +38,13 @@ testee kirjutab AI abil sinu töökuulutuse põhjal oskuste intervjuu. Mida test
 1. **AI loeb sinu töökuulutust** ja toob välja, mida kandidaat peab teadma: nõuded, taseme ning teemad koos alateemadega.
 2. **Sina vaatad teemad üle.** Jäta alles, eemalda linnuke, nimeta ümber või muuda neid või kirjuta AI-le tavalise tekstiga, mida muuta. Ühtegi küsimust ei kirjutata enne, kui oled teemad heaks kiitnud.
 3. **AI kirjutab küsimused.** Iga teema jaoks luuakse valikvastustega küsimuste pank, igas küsimuses neli vastusevarianti: enamikus üks õige ja kolm usutavat valet, umbes iga kümnes on „vali kõik õiged“ küsimus, milles on 2 või 3 õiget varianti. Tehnilistes teemades näitavad paljud küsimused lühikest koodinäidet ja küsivad, mida see väljastab, mida see teeb, miks see ebaõnnestub või milline muudatus selle parandab. Saad iga küsimuse koos vastusevariantidega avada ja need, mis ei meeldi, uuesti luua.
-4. **Kandidaadid vastavad ajapiiranguga küsimustele.** Iga kandidaat saab iga teema pangast oma juhusliku valiku, oma järjekorras ja iga küsimuse juures on taimer.
-5. **Vastuseid kontrollitakse vastusevõtme järgi.** AI kirjutab võtmed; igast teemast kontrollitakse enne avaldamist valim võtmeid, ülejäänuid siis, kui küsimusest teatatakse. Hindamine ise käib kindlate reeglite järgi ja ükski AI ei loe ega hinda kandidaadi vastust. Kui võtit hiljem parandatakse, kehtib parandus kandidaatidele, kes alustavad pärast seda; varasemad tulemused ei muutu. Kiirust, lehelt lahkumisi ja kopeerimiskatseid näidatakse sulle signaalidena; tulemust need ei muuda.
+4. **Kandidaadid vastavad ajapiiranguga küsimustele.** Iga kandidaat saab iga teema pangast oma juhusliku valiku, oma järjekorras ja iga küsimuse juures on taimer. Vaikimisi puudutab ta vastuseid; häälerežiimis loeb testee AI-intervjueerija Mira iga küsimuse ette ning kandidaat ütleb või puudutab vastust.
+5. **Vastuseid kontrollitakse vastusevõtme järgi.** AI kirjutab võtmed; igast teemast kontrollitakse enne avaldamist valim võtmeid, ülejäänuid siis, kui küsimusest teatatakse. Hindamine ise käib kindlate reeglite järgi ja ükski AI ei hinda kandidaadi vastust. Häälerežiimis muudab AI kõne ainult tekstiks ja sobitab selle vastusevariandiga. Kui võtit hiljem parandatakse, kehtib parandus kandidaatidele, kes alustavad pärast seda; varasemad tulemused ei muutu. Kiirust, lehelt lahkumisi ja kopeerimiskatseid näidatakse sulle signaalidena; tulemust need ei muuda.
 6. **Otsustavad inimesed.** Näed järjestatud nimekirja ja iga kandidaadi hindamislehte koos kõigi vastuste ja ajakuluga. Tulemused vaatab üle ja värbamisotsuse teeb inimene sinu ettevõttest.
 
 Mida testee ei tee:
 
-- Ei analüüsi videot, häält ega nägu.
+- Ei analüüsi videot ega nägu ega kandidaadi häält. Häälerežiim ainult muudab kõne tekstiks, et leida nimetatud variant.
 - Ei tee järeldusi isiksuse ega emotsioonide kohta.
 - Ei lükka kandidaate automaatselt tagasi. testee ei lükka kandidaate tagasi ega saada äraütlemiskirju; otsustab sinu meeskond.
 - Sinu andmeid ei kasutata AI-mudelite treenimiseks. testee AI-teenuse pakkuja OpenAI ei treeni oma tingimuste kohaselt mudeleid API kaudu saadud andmetel.
@@ -63,7 +63,7 @@ Enne kellegi kutsumist saad oma intervjuu ka ise kandidaadina läbi teha: samad 
 
 **Kõigil on sarnased tingimused.** Samad teemad, sama arv küsimusi teema kohta, sama keskmine aeg küsimuse kohta ja sama koguaeg. Iga kandidaadi küsimused valitakse juhuslikult, nii et komplektide raskus erineb veidi. Kandidaadid, kes vajavad rohkem aega, saavad seda: saad lisada aega konkreetsele kandidaadile.
 
-**Vähem asjasse mittepuutuvaid signaale.** Valikvastuses pole aktsenti, nägu, tausta ega kirjutamisstiili, nii et tulemus ei sõltu sellest, kuidas keegi välja näeb või kõlab. Kallutatust see ei välista: teadmiste testides võib rühmade tulemustes olla erinevusi ja test kandidaadi teises keeles võib teda takistada. Jälgi tulemusi rühmade lõikes.
+**Vähem asjasse mittepuutuvaid signaale.** Valikvastuses pole aktsenti, nägu, tausta ega kirjutamisstiili, nii et tulemus ei sõltu sellest, kuidas keegi välja näeb või kõlab. Häälerežiimis sõltub keelest ja aktsendist, kui hästi kõnet mõistetakse, nii et kandidaadid saavad selle asemel puudutada ([Häälintervjuud 23 keeles](/guides/voice-interview-languages)). Kallutatust see kõik ei välista: teadmiste testides võib rühmade tulemustes olla erinevusi ja test kandidaadi teises keeles võib teda takistada. Jälgi tulemusi rühmade lõikes.
 
 **Vastuste jagamine on raskem.** Kui igal kandidaadil on oma juhuslik küsimuste komplekt ja igal küsimusel taimer, nõuab vastuste jagamine või otsimine rohkem vaeva. Aususe signaalid aitavad otsustada, mida lähemalt vaadata; need ei tõesta spikerdamist.
 
@@ -75,7 +75,7 @@ Ole piirangutest teadlik. Valikvastustega test kontrollib teadmisi. Koodi lugemi
 
 ## AI-intervjuu tööriistade õiguslikud põhitõed
 
-See on kokkuvõte 2026. aasta oktoobri seisuga, mitte õigusnõuanne. Konsulteeri oma juristiga.
+See on kokkuvõte 2026. aasta novembri seisuga, mitte õigusnõuanne.
 
 ### ELi tehisintellekti määrus (AI Act)
 
@@ -94,7 +94,7 @@ Intervjuu tulemused on isikuandmed nii ELi isikuandmete kaitse üldmääruse kui
 
 ### Ameerika Ühendriigid
 
-Värbamisel kasutatavatele AI-tööriistadele kehtivad samad diskrimineerimisvastased reeglid kui igale valikumeetodile. Jälgi valikumäärasid rühmade lõikes (nelja viiendiku rusikareegel [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4) järgi), paku mõistlikke kohandusi ning kontrolli osariigi ja kohalikke reegleid. Näiteks New Yorgi linna [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) nõuab, et automatiseeritud töölevõtmisotsuste tööriistale oleks enne kasutamist viimase aasta jooksul tehtud kallutatuse audit, et selle kokkuvõte oleks avalik ja et kandidaate teavitataks. Ülevaate leiad lehelt [Kandidaatide testimine värbamisel](/guides/pre-employment-testing).
+Värbamisel kasutatavatele AI-tööriistadele kehtivad samad diskrimineerimisvastased reeglid kui igale valikumeetodile. Jälgi valikumäärasid rühmade lõikes (nelja viiendiku rusikareegel [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4) järgi, mida EEOC kavatseb kehtetuks tunnistada, samas kui Title VII ebasoodsa mõju reegel jääb), paku mõistlikke kohandusi ning kontrolli osariigi ja kohalikke reegleid. Näiteks New Yorgi linna [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) nõuab, et automatiseeritud töölevõtmisotsuste tööriistale oleks enne kasutamist viimase aasta jooksul tehtud kallutatuse audit, et selle kokkuvõte oleks avalik ja et kandidaate teavitataks. Ülevaate leiad lehelt [Kandidaatide testimine värbamisel](/guides/pre-employment-testing).
 
 ## Kuidas AI-intervjuu tööriista hinnata
 

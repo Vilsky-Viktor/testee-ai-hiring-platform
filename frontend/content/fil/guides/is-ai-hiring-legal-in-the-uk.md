@@ -2,14 +2,14 @@
 title: "Legal ba ang AI hiring sa UK? Ang dapat malaman ng mga employer"
 seoTitle: "Legal ba ang AI Hiring sa UK? Equality at Data Law"
 description: "Legal ang AI sa hiring sa UK, may patakaran: ang Equality Act, ang bagong automated-decision rules ng UK GDPR mula Pebrero 2026, at ang findings ng ICO."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Legal ba ang AI hiring sa UK? Ang dapat malaman ng mga employer
 
 Sa pangkalahatan, oo: legal ang paggamit ng AI sa hiring sa UK. Walang iisang AI law ang UK na gaya ng AI Act ng EU. Sa halip, nalalapat ang Equality Act 2010 at ang UK GDPR sa AI tools gaya ng sa anumang test, at mula 5 Pebrero 2026 may mga bagong patakaran ang UK GDPR sa mga desisyong ginawa nang puro automated.
 
-Ipinapaliwanag ng gabay na ito ang mga patakaran sa pangkalahatang antas, ang dapat gawin ng mga employer, at ang paraan ng testee. **Hindi ito legal advice.** Sinasalamin nito ang mga patakaran noong Oktubre 2026; bago pa ang ilan sa mga ito at ina-update pa ang guidance ng regulator tungkol dito.
+Ipinapaliwanag ng gabay na ito ang mga patakaran sa pangkalahatang antas, ang dapat gawin ng mga employer, at ang paraan ng testee. **Hindi ito legal advice.** Sinasalamin nito ang mga patakaran noong Nobyembre 2026; bago pa ang ilan sa mga ito at ina-update pa ang guidance ng regulator tungkol dito.
 
 ## Ang maikling sagot
 
@@ -83,6 +83,8 @@ Ang pito nitong pangunahing rekomendasyon, para sa mga provider at mga recruiter
 
 Inirerekomenda rin ng ICO ang makabuluhang human review ng AI outputs, na may record ng mga review na ginawa.
 
+Noong Marso 2026, inilathala ng ICO ang ikalawang ulat, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), mula sa trabaho nito kasama ang mahigit 30 employer. Nakita nito na itinuturing ng marami ang kanilang tools bilang decision support kahit kakaunti ang tunay na partisipasyon ng tao, na hindi pantay ang paglalapat ng mga safeguard para sa paghamon sa isang desisyon, na madalas hindi malinaw na sinasabi sa mga aplikante kung paano ginagamit ang automation, at na madalas wala o mahina ang mga DPIA. Isinailalim sa konsultasyon hanggang 29 Mayo 2026 ang updated guidance nito sa automated decisions at hindi pa final noong Nobyembre 2026, at paparating ang isang statutory code of practice sa AI at automated decision-making. Mula 30 Setyembre 2026, Information Commission na ang regulator, na ICO pa rin ang gamit na pangalan.
+
 ## Mga transfer sa US
 
 Kung ipinapadala ng isang provider ang data ng mga aplikante sa UK papunta sa United States, puwede itong saklawin ng UK–US data bridge: [The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents), ipinapatupad mula 12 Oktubre 2023, para sa mga kumpanya sa US na certified sa ilalim ng UK Extension sa EU–US Data Privacy Framework. Ang iba ay nangangailangan ng safeguards, gaya ng standard contractual clauses na may UK addendum.
@@ -105,7 +107,7 @@ Nagpapatakbo ang testee ng timed multiple-choice skills interviews na isinulat n
 
 Ang hitsura nito sa produkto ngayon:
 
-- **AI ang sumusulat ng mga tanong at ng answer keys nito; sumusunod sa nakapirming patakaran ang pagmamarka.** Walang AI na bumabasa o humuhusga sa sagot ng aplikante, at walang video o face analysis. Sa voice mode, ginagawang text ang pananalita at itinutugma sa isang option, na sinasabi sa aplikante at ipinapakita sa screen: agad na itinatala ang iisang option na malinaw na binanggit, at kinukumpirma muna ang pagpili ng ilang option. Hindi kailanman iniimbak ang pananalita at hindi kailanman ina-analyze ang boses.
+- **AI ang sumusulat ng mga tanong at ng answer keys nito; sumusunod sa nakapirming patakaran ang pagmamarka.** Walang AI na humuhusga sa sagot ng aplikante, at walang video o face analysis. Sa voice mode, ginagawang text ang pananalita at itinutugma sa isang option, na sinasabi sa aplikante at ipinapakita sa screen: agad na itinatala ang iisang option na malinaw na binanggit, at kinukumpirma muna ang pagpili ng ilang option. Hindi kailanman iniimbak ng testee ang pananalita, at hindi kailanman ina-analyze ang boses.
 - **Ikaw ang nag-aapruba ng mga topic** bago maisulat ang kahit isang tanong, at ikaw ang pumipili ng passing grade.
 - **Tao ang nagdedesisyon.** Pinapaalalahanan ng results page at ng PDF reports ang iyong team na i-review ang mga resulta; hindi nagre-reject ng aplikante o nagpapadala ng rejection message ang testee.
 - **Sinasabihan ang mga aplikante** bago sila magsimula na AI ang sumulat ng mga tanong, na mga tao sa iyong kumpanya ang nagre-review ng resulta at nagdedesisyon, at na puwede silang humingi ng review.
@@ -128,4 +130,5 @@ Ang hitsura nito sa produkto ngayon:
 - Data (Use and Access) Act 2025, [section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80), na nagsisingit ng Articles 22A hanggang 22D sa UK GDPR ([Article 22C](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [Nobyembre 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), Marso 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

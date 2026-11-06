@@ -2,7 +2,7 @@
 title: "Cómo fijar el tiempo de una prueba de habilidades: tiempo por pregunta, duración y tiempo extra"
 seoTitle: "Tiempo en pruebas de habilidades: por pregunta y extra"
 description: "Cuánto tiempo dar a cada pregunta, cuántas preguntas hacer, qué duración total funciona y cómo dar tiempo extra justo a los candidatos que lo necesitan."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Cómo fijar el tiempo de una prueba de habilidades: tiempo por pregunta, duración y tiempo extra
@@ -101,7 +101,7 @@ En testee, una entrevista es una prueba de habilidades de opción múltiple con 
 
 ### Tiempo por pregunta
 
-- **Cada pregunta tiene su propia cuenta atrás,** controlada por el servidor, así que cerrar la pestaña o recargar la página no la detiene.
+- **Cada pregunta tiene su propia cuenta atrás,** controlada por el servidor, así que cerrar la pestaña o recargar la página no la detiene. En el modo de voz, corre mientras Mira lee la pregunta.
 - **El valor por defecto depende del nivel de la entrevista,** que en una entrevista generada viene de la experiencia que pide la descripción del puesto: 60 segundos para una entrevista básica o intermedia, 75 segundos para una difícil.
 - **Es una media: cada pregunta tiene su propio tiempo** a partir de ella cuando se sacan las preguntas de un candidato, según lo que se tarda en leerla y responderla: sus palabras, el código o ejemplo que tenga (que se lee más despacio) y el tiempo para pensar la respuesta. Las preguntas cortas tienen menos, y las más largas y las que llevan código, más; cada una entre la mitad y el doble de la media, y entre todas suman exactamente el número de preguntas por la media. La cuenta atrás muestra el tiempo propio de cada pregunta, y el informe de resultados muestra cuánto de él llevó cada respuesta.
 - **Puedes cambiar la media en cada entrevista,** en sus ajustes, de 10 a 600 segundos. El cambio se aplica a los candidatos que empiecen después; el tiempo de un candidato queda fijado cuando empieza.
@@ -115,7 +115,7 @@ En una entrevista en árabe, chino, japonés, persa, ruso, tailandés o ucranian
 ### Número de preguntas
 
 - **Cada tema de una entrevista generada tiene un banco de 70 preguntas,** y una entrevista tiene como máximo 10 temas, que tú apruebas antes de que se redacte ninguna pregunta.
-- **Cada candidato recibe por defecto 10 preguntas por tema,** un conjunto aleatorio del banco en su propio orden, con la misma proporción de preguntas de «Selecciona todas las opciones que correspondan». Puedes fijar un número distinto para cada tema. Ponlo en 0 para dejar un tema fuera; al menos un tema conserva sus preguntas.
+- **Cada candidato recibe por defecto 10 preguntas por tema,** un conjunto aleatorio del banco en su propio orden, con la misma proporción de preguntas de «Selecciona todas las opciones que correspondan». Una entrevista tiene como máximo 60 preguntas, así que con más temas el valor por defecto baja: 8 por tema con 7 temas, 7 con 8, y 6 con 9 o 10. Puedes fijar un número distinto para cada tema, dentro de ese límite. Ponlo en 0 para dejar un tema fuera; al menos un tema conserva sus preguntas.
 
 ### Duración total
 

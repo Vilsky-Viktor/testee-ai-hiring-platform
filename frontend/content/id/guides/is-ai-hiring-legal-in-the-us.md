@@ -2,14 +2,14 @@
 title: "Apakah rekrutmen dengan AI legal di AS? Yang perlu diketahui pemberi kerja"
 seoTitle: "Apakah Rekrutmen dengan AI Legal di AS? Aturan Federal"
 description: "AI dalam rekrutmen legal di AS, dengan aturan: dampak merugikan dan akomodasi menurut hukum federal, audit bias di NYC, Illinois, Colorado, California."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Apakah rekrutmen dengan AI legal di AS? Yang perlu diketahui pemberi kerja
 
-Secara umum, ya: memakai AI dalam rekrutmen itu legal di AS. Tidak ada undang-undang AI federal untuk perekrutan. Sebagai gantinya, hukum antidiskriminasi federal berlaku untuk alat AI sama seperti untuk tes apa pun, dan beberapa tempat menambahkan aturannya sendiri: New York City, Illinois, Colorado, dan California.
+Secara umum, ya: memakai AI dalam rekrutmen itu legal di AS. Tidak ada undang-undang AI federal untuk perekrutan. Sebagai gantinya, hukum antidiskriminasi federal berlaku untuk alat AI sama seperti untuk tes apa pun, dan beberapa tempat menambahkan aturannya sendiri: New York City, Illinois, Colorado, California, New Jersey, dan Texas. Perintah eksekutif Desember 2025 membentuk gugus tugas Departemen Kehakiman untuk menggugat undang-undang AI negara bagian ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), tetapi perintah itu tidak mencabutnya: undang-undang itu tetap berlaku sampai Kongres atau pengadilan menyatakan lain.
 
-Panduan ini menjelaskan aturannya secara garis besar, tanggal-tanggal yang penting, apa yang harus dilakukan pemberi kerja, dan pendekatan testee. **Ini bukan nasihat hukum.** Isinya mencerminkan aturan per Oktober 2026, dan beberapa di antaranya masih baru atau masih difinalisasi.
+Panduan ini menjelaskan aturannya secara garis besar, tanggal-tanggal yang penting, apa yang harus dilakukan pemberi kerja, dan pendekatan testee. **Ini bukan nasihat hukum.** Isinya mencerminkan aturan per November 2026, dan beberapa di antaranya masih baru atau masih difinalisasi.
 
 ## Jawaban singkatnya
 
@@ -20,7 +20,7 @@ Panduan ini menjelaskan aturannya secara garis besar, tanggal-tanggal yang penti
 | Apakah saya harus memberi tahu kandidat? | Di New York City dan Illinois, ya; di Colorado dan California, mulai 1 Januari 2027 |
 | Apakah saya harus menawarkan tambahan waktu? | Kepada kandidat penyandang disabilitas yang membutuhkannya: itu akomodasi yang wajar (reasonable accommodation) |
 | Berapa lama saya harus menyimpan catatan? | Empat tahun di California, tiga di Colorado |
-| Siapa yang membuat keputusan perekrutan? | Manusia. Semua aturan di sini mengharapkan peninjauan oleh manusia |
+| Siapa yang membuat keputusan perekrutan? | Manusia. Colorado dan California mengatur peninjauan oleh manusia, dan itu pendekatan paling aman di mana pun |
 
 ## Hukum federal
 
@@ -32,7 +32,9 @@ Title VII dari Civil Rights Act 1964 melarang diskriminasi dalam pekerjaan karen
 
 Misalnya, jika 60% dari satu kelompok lulus tesmu dan 42% dari kelompok lain, rasionya 42 ÷ 60 = 0,70, di bawah 0,80: tanda peringatan yang perlu ditelusuri. Itu bukan bukti diskriminasi, dan angka yang kecil bisa membuat rasionya berubah-ubah.
 
-Bantuan teknis EEOC tahun 2023 tentang AI dalam seleksi ditarik pada Januari 2025. Uniform Guidelines adalah peraturan, bukan panduan, dan masih berlaku. Tanggung jawab atas dampak merugikan tetap ada pada pemberi kerja, siapa pun yang membuat tesnya.
+Penegakan di tingkat federal telah berubah. Bantuan teknis EEOC tahun 2023 tentang AI dalam seleksi ditarik pada Januari 2025. National Enforcement Plan EEOC bulan Juni 2026 menyatakan bahwa EEOC akan menghindari teori dampak yang tidak setara (disparate impact) dalam penyelidikan "semaksimal mungkin" dan tidak akan mengajukan perkara dampak yang tidak setara ([EEOC](https://www.eeoc.gov/sites/default/files/2026-06/NEP_-_signed.pdf)). Departemen Tenaga Kerja menghapus salinan Uniform Guidelines miliknya pada 26 Oktober 2026, dan pada 16 Oktober 2026 EEOC mengirim ke Gedung Putih aturan final untuk mencabut bagian interpretatif dari salinannya sendiri, dengan target Januari 2027 ([Ogletree](https://ogletree.com/insights-resources/blog-posts/eeoc-sends-oira-final-rule-rescinding-uniform-guidelines-on-employee-selection-procedures/)). Sampai aturan itu diterbitkan dan berlaku, Guidelines tetap ada dalam Code of Federal Regulations.
+
+Semua ini tidak mengubah Title VII. Dampak yang tidak setara tercantum dalam undang-undangnya ([42 U.S.C. §2000e-2(k)](https://www.law.cornell.edu/uscode/text/42/2000e-2)), kandidat masih bisa menggugat, dan negara bagian menegakkan hukumnya sendiri. Aturan empat per lima tetap menjadi pemeriksaan awal yang berguna, apa pun yang terjadi pada Guidelines, dan tanggung jawab atas dampak merugikan tetap ada pada pemberi kerja, siapa pun yang membuat tesnya.
 
 ### ADA dan akomodasi
 
@@ -64,7 +66,7 @@ Dan mereka harus memberi tahu kandidat ketika AI dipakai dalam keputusan rekrutm
 
 ## Colorado
 
-Undang-undang AI Colorado dicabut dan diberlakukan ulang melalui SB 26-189, ditandatangani pada 14 Mei 2026 dan berlaku mulai 1 Januari 2027. Aturan Attorney General sudah diusulkan (sidang dengar pendapat diadakan pada 26 Oktober 2026) dan dijadwalkan terbit sebelum tanggal itu. Bagi pengguna (deployer) AI berisiko tinggi yang dipakai dalam keputusan ketenagakerjaan, kewajibannya adalah:
+Undang-undang AI Colorado dicabut dan diberlakukan ulang melalui SB 26-189, ditandatangani pada 14 Mei 2026 dan berlaku mulai 1 Januari 2027. Aturan Attorney General sudah diusulkan (sidang dengar pendapat dijadwalkan pada 26 Oktober 2026), belum disahkan per November 2026, dan dijadwalkan terbit paling lambat saat undang-undang itu berlaku. Bagi pengguna (deployer) teknologi pengambilan keputusan otomatis yang secara material memengaruhi keputusan ketenagakerjaan, kewajibannya adalah:
 
 - **Pemberitahuan sebelum dipakai** kepada kandidat.
 - **Penjelasan atas keputusan yang merugikan,** seperti tidak diterima atau tidak lanjut ke tahap berikutnya.
@@ -75,6 +77,12 @@ Undang-undang AI Colorado dicabut dan diberlakukan ulang melalui SB 26-189, dita
 
 - **Peraturan Civil Rights Council tentang sistem keputusan otomatis,** berlaku sejak 1 Oktober 2025: hukum antidiskriminasi berlaku untuk alat otomatis dalam perekrutan sama seperti untuk metode seleksi lain. Pemberi kerja wajib menyimpan catatan ketenagakerjaan, termasuk data sistem keputusan otomatis, selama empat tahun (Cal. Code Regs. tit. 2, §11013(c)).
 - **Aturan CCPA tentang teknologi pengambilan keputusan otomatis** berlaku untuk keputusan ketenagakerjaan mulai 1 Januari 2027: pemberitahuan sebelum dipakai, hak untuk menolak (opt-out) atau mengajukan banding, dan hak untuk mengakses informasi tentang cara teknologi itu dipakai.
+- **No Robo Bosses Act (SB 947),** ditandatangani pada 30 September 2026, berlaku mulai 1 Juli 2027 untuk tindakan disipliner dan pemutusan hubungan kerja, bukan untuk rekrutmen.
+
+## New Jersey dan Texas
+
+- **New Jersey.** Aturan tentang dampak yang tidak setara berdasarkan Law Against Discrimination (N.J.A.C. 13:16), berlaku sejak 15 Desember 2025, mencakup alat keputusan ketenagakerjaan otomatis. Pemberi kerja bisa bertanggung jawab meskipun alatnya dibuat oleh vendor.
+- **Texas.** Responsible AI Governance Act (HB 149), berlaku sejak 1 Januari 2026, melarang AI yang dipakai dengan niat untuk mendiskriminasi secara melanggar hukum. Dampak yang tidak setara saja tidak membuktikan niat itu.
 
 ## Tanggal-tanggalnya
 
@@ -82,12 +90,13 @@ Undang-undang AI Colorado dicabut dan diberlakukan ulang melalui SB 26-189, dita
 | --- | --- |
 | 5 Juli 2023 | Local Law 144 New York City mulai ditegakkan |
 | 1 Oktober 2025 | Aturan Civil Rights Council California tentang sistem keputusan otomatis |
-| 1 Januari 2026 | Illinois: pemberitahuan penggunaan AI, tidak boleh ada AI yang diskriminatif, tidak boleh memakai kode pos sebagai pengganti |
+| 15 Desember 2025 | Aturan New Jersey tentang dampak yang tidak setara |
+| 1 Januari 2026 | Illinois: pemberitahuan penggunaan AI, tidak boleh ada AI yang diskriminatif, tidak boleh memakai kode pos sebagai pengganti; Texas: tidak boleh ada AI yang dipakai dengan niat mendiskriminasi |
 | 1 Januari 2027 | Undang-undang AI Colorado; aturan CCPA California tentang pengambilan keputusan otomatis dalam ketenagakerjaan |
 
 ## Daftar periksa praktis untuk pemberi kerja
 
-1. **Daftar pekerjaan dan lokasi** yang kamu rekrut: New York City, Illinois, Colorado, California, tempat lain di AS.
+1. **Daftar pekerjaan dan lokasi** yang kamu rekrut: New York City, Illinois, Colorado, California, New Jersey, Texas, tempat lain di AS.
 2. **Uji hanya yang dibutuhkan pekerjaan itu.** Pilih topik dan nilai lulus yang bisa kamu pertanggungjawabkan untuk peran itu.
 3. **Perbarui pemberitahuan untuk kandidat** agar menyebut bahwa AI dipakai, bagaimana hasilnya dipakai, dan cara meminta akomodasi serta peninjauan oleh manusia. Tambahkan kalimat untuk Illinois dan Colorado di tempat yang berlaku.
 4. **Tawarkan akomodasi,** seperti tambahan waktu, dan sepakati sebelum kandidat mulai.
@@ -103,12 +112,12 @@ testee menjalankan wawancara keterampilan pilihan ganda berbatas waktu yang ditu
 
 Seperti apa wujudnya di produk saat ini:
 
-- **AI menulis soal dan kunci jawabannya; penilaian mengikuti aturan tetap.** Tidak ada AI yang membaca atau menilai jawaban kandidat, dan tidak ada analisis video atau wajah. Dalam mode suara, ucapan diubah menjadi teks dan dicocokkan dengan sebuah pilihan, yang disebutkan kepada kandidat dan ditampilkan di layar: satu pilihan yang disebut dengan jelas langsung dicatat, sedangkan jawaban dengan beberapa pilihan dikonfirmasi lebih dulu. Ucapan tidak pernah disimpan dan suaranya tidak pernah dianalisis.
+- **AI menulis soal dan kunci jawabannya; penilaian mengikuti aturan tetap.** Tidak ada AI yang menilai jawaban kandidat, dan tidak ada analisis video atau wajah. Dalam mode suara, ucapan diubah menjadi teks dan dicocokkan dengan sebuah pilihan, yang disebutkan kepada kandidat dan ditampilkan di layar: satu pilihan yang disebut dengan jelas langsung dicatat, sedangkan jawaban dengan beberapa pilihan dikonfirmasi lebih dulu. testee tidak pernah menyimpan ucapan, dan suaranya tidak pernah dianalisis.
 - **Kamu menyetujui topiknya** sebelum ada soal yang ditulis, dan kamu yang memilih nilai lulus.
 - **Manusia yang memutuskan.** testee tidak menolak kandidat atau mengirim pesan penolakan.
 - **Tanpa karakteristik yang dilindungi.** testee tidak pernah menanyakan, menyimpulkan, atau menyimpan jenis kelamin, ras, usia, disabilitas, kode pos, atau karakteristik lain yang dilindungi milik kandidat.
 - **Ekspor untuk audit bias.** Di halaman Log tindakan perusahaan, pemilik bisa mengunduh file CSV berisi kandidat yang sudah selesai, untuk seluruh perusahaan atau satu wawancara dan di antara dua tanggal: nilai setiap kandidat, nilai lulus, apakah ia lulus, dan apakah skornya di atas median wawancara. Setiap baris memakai email kandidat sebagai kunci, sehingga kamu bisa menggabungkannya dengan kategori yang dilaporkan sendiri oleh kandidat yang kamu kumpulkan sendiri; lalu hapus kolom email dan serahkan file itu kepada auditor independenmu, yang menghitung tingkat seleksi dan tingkat skor serta rasio dampak. File yang sama memungkinkanmu melakukan pemeriksaan empat per lima sendiri.
-- **Tambahan waktu** +25%, +50%, atau +100% untuk setiap soal bisa diberikan kepada kandidat mana pun yang memintanya, sebelum ia mulai. testee hanya menyimpan besarnya, tidak pernah alasannya. Dalam mode suara, kandidat selalu bisa mengetuk pilihan sebagai gantinya, dan kamu bisa mengatur wawancara agar hanya dijawab dengan mengetuk.
+- **Tambahan waktu** +25%, +50%, atau +100% untuk setiap soal bisa diberikan kepada kandidat mana pun yang memintanya, sebelum ia mulai. testee hanya menyimpan besarnya, tidak pernah alasannya. Dalam mode suara, kandidat bisa mengetuk pilihan alih-alih berbicara. Memulai wawancara suara butuh mikrofon, jadi sebelum mulai, atur kandidat yang tidak bisa memakainya agar menjawab dengan mengetuk. Kamu juga bisa mengatur seluruh wawancara seperti itu.
 - **Templat pemberitahuan untuk kandidat,** satu yang umum dan versi untuk New York City, Illinois, dan Colorado, ada di [halaman dokumen](/documents), bersama petunjuk untuk perusahaan.
 - **New York City.** testee belum menjalani audit bias independennya sendiri. Jangan pakai testee untuk pekerjaan di New York City sampai kamu melakukan apa yang diwajibkan Local Law 144 kepadamu sebagai pemberi kerja: audit bias independen dalam setahun sebelum dipakai, ringkasannya dipublikasikan, dan pemberitahuan kepada kandidat 10 hari kerja sebelumnya.
 - **Data.** Menurut CCPA, perusahaanmu adalah bisnis (business) dan testee penyedia layanannya (service provider), berdasarkan [perjanjian pemrosesan data](/dpa) dan bagian AS-nya. Data di-hosting di UE, dengan beberapa sub-pemroses di AS (lihat [kebijakan privasi](/privacy)), dan tidak dipakai untuk melatih model AI.
@@ -124,8 +133,13 @@ Seperti apa wujudnya di produk saat ini:
 ## Sumber
 
 - Uniform Guidelines on Employee Selection Procedures, [29 CFR §1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4).
+- Title VII of the Civil Rights Act of 1964, [42 U.S.C. §2000e-2(k)](https://www.law.cornell.edu/uscode/text/42/2000e-2).
+- EEOC, [National Enforcement Plan](https://www.eeoc.gov/sites/default/files/2026-06/NEP_-_signed.pdf), Juni 2026; Ogletree, [EEOC sends OIRA final rule rescinding the Uniform Guidelines](https://ogletree.com/insights-resources/blog-posts/eeoc-sends-oira-final-rule-rescinding-uniform-guidelines-on-employee-selection-procedures/), Oktober 2026.
+- [Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm), 11 Desember 2025.
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 dan 6 RCNY §5-300 dan seterusnya; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) dan FAQ-nya.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), sebagaimana diubah oleh Public Act 103-0804.
 - Colorado SB 26-189.
-- California Code of Regulations, title 2, §11013(c); peraturan California Consumer Privacy Act tentang teknologi pengambilan keputusan otomatis.
+- California Code of Regulations, title 2, §11013(c); peraturan California Consumer Privacy Act tentang teknologi pengambilan keputusan otomatis; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
+- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).

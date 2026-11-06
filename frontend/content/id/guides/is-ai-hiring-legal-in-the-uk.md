@@ -2,14 +2,14 @@
 title: "Apakah rekrutmen dengan AI legal di Inggris Raya? Yang perlu diketahui pemberi kerja"
 seoTitle: "Apakah Rekrutmen dengan AI Legal di Inggris Raya?"
 description: "AI dalam rekrutmen legal di Inggris Raya, dengan aturan: Equality Act, aturan baru UK GDPR soal keputusan otomatis sejak Februari 2026, dan temuan ICO."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Apakah rekrutmen dengan AI legal di Inggris Raya? Yang perlu diketahui pemberi kerja
 
 Secara umum, ya: memakai AI dalam rekrutmen itu legal di Inggris Raya. Inggris Raya tidak punya satu undang-undang AI seperti AI Act UE (EU AI Act). Sebagai gantinya, Equality Act 2010 dan GDPR Inggris Raya (UK GDPR) berlaku untuk alat AI sama seperti untuk tes apa pun, dan sejak 5 Februari 2026 UK GDPR punya aturan baru tentang keputusan yang semata-mata dibuat secara otomatis.
 
-Panduan ini menjelaskan aturannya secara garis besar, apa yang harus dilakukan pemberi kerja, dan pendekatan testee. **Ini bukan nasihat hukum.** Isinya mencerminkan aturan per Oktober 2026; sebagian aturan itu masih baru dan panduan regulator tentangnya masih diperbarui.
+Panduan ini menjelaskan aturannya secara garis besar, apa yang harus dilakukan pemberi kerja, dan pendekatan testee. **Ini bukan nasihat hukum.** Isinya mencerminkan aturan per November 2026; sebagian aturan itu masih baru dan panduan regulator tentangnya masih diperbarui.
 
 ## Jawaban singkatnya
 
@@ -83,6 +83,8 @@ Tujuh rekomendasi utamanya, untuk penyedia maupun perekrut:
 
 ICO juga merekomendasikan peninjauan manusia yang bermakna atas output AI, dengan catatan peninjauan yang dilakukan.
 
+Pada Maret 2026, ICO menerbitkan laporan kedua, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), dari kerjanya bersama lebih dari 30 pemberi kerja. Laporan itu menemukan bahwa banyak yang memperlakukan alatnya sebagai pendukung keputusan padahal keterlibatan manusia yang nyata sangat sedikit, bahwa perlindungan untuk menggugat keputusan diterapkan tidak merata, bahwa kandidat sering tidak diberi tahu dengan jelas bagaimana otomatisasi dipakai, dan bahwa DPIA sering tidak ada atau lemah. Panduan terbarunya tentang keputusan otomatis dibuka untuk konsultasi hingga 29 Mei 2026 dan belum final per November 2026, dan kode praktik berdasarkan undang-undang tentang AI dan pengambilan keputusan otomatis sedang disiapkan. Sejak 30 September 2026, regulatornya adalah Information Commission, yang masih memakai nama ICO.
+
 ## Transfer ke AS
 
 Jika penyedia mengirim data kandidat Inggris Raya ke Amerika Serikat, jembatan data Inggris Raya–AS (UK–US data bridge) dapat mencakupnya: [The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents), berlaku sejak 12 Oktober 2023, untuk perusahaan AS yang tersertifikasi di bawah Perluasan Inggris Raya atas Kerangka Privasi Data UE–AS (Data Privacy Framework). Yang lain memerlukan perlindungan, seperti klausul kontrak standar dengan adendum Inggris Raya (UK addendum).
@@ -105,7 +107,7 @@ testee menjalankan wawancara keterampilan pilihan ganda berbatas waktu yang ditu
 
 Seperti apa wujudnya di produk saat ini:
 
-- **AI menulis soal dan kunci jawabannya; penilaian mengikuti aturan tetap.** Tidak ada AI yang membaca atau menilai jawaban kandidat, dan tidak ada analisis video atau wajah. Dalam mode suara, ucapan diubah menjadi teks dan dicocokkan dengan sebuah pilihan, yang disebutkan kepada kandidat dan ditampilkan di layar: satu pilihan yang disebut dengan jelas langsung dicatat, sedangkan jawaban dengan beberapa pilihan dikonfirmasi lebih dulu. Ucapan tidak pernah disimpan dan suaranya tidak pernah dianalisis.
+- **AI menulis soal dan kunci jawabannya; penilaian mengikuti aturan tetap.** Tidak ada AI yang menilai jawaban kandidat, dan tidak ada analisis video atau wajah. Dalam mode suara, ucapan diubah menjadi teks dan dicocokkan dengan sebuah pilihan, yang disebutkan kepada kandidat dan ditampilkan di layar: satu pilihan yang disebut dengan jelas langsung dicatat, sedangkan jawaban dengan beberapa pilihan dikonfirmasi lebih dulu. testee tidak pernah menyimpan ucapan, dan suaranya tidak pernah dianalisis.
 - **Kamu menyetujui topiknya** sebelum ada soal yang ditulis, dan kamu yang memilih nilai lulus.
 - **Manusia yang memutuskan.** Halaman hasil dan laporan PDF mengingatkan timmu untuk meninjau hasil; testee tidak menolak kandidat atau mengirim pesan penolakan.
 - **Kandidat diberi tahu** sebelum mulai bahwa soal ditulis oleh AI, bahwa orang di perusahaanmu yang meninjau hasil dan memutuskan, dan bahwa mereka bisa meminta peninjauan.
@@ -128,4 +130,5 @@ Seperti apa wujudnya di produk saat ini:
 - Data (Use and Access) Act 2025, [section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80), yang menyisipkan Pasal 22A sampai 22D ke dalam UK GDPR ([Pasal 22C](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [November 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), Maret 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

@@ -2,7 +2,7 @@
 title: "Tes keterampilan vs penyaringan CV: apa yang memprediksi kinerja kerja"
 seoTitle: "Tes Keterampilan vs Seleksi CV: Mana yang Lebih Akurat"
 description: "Kata riset rekrutmen selama puluhan tahun tentang tes pengetahuan kerja, sampel kerja, wawancara, dan lama pengalaman, serta cara memakainya saat seleksi."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Tes keterampilan vs penyaringan CV: apa yang memprediksi kinerja kerja
@@ -64,7 +64,7 @@ Para penulis juga mencatat syarat kedua: sampel kerja dan tes pengetahuan cocok 
 - **Ini adalah rata-rata dari banyak pekerjaan dan studi.** Posisimu, tesmu, dan kandidatmu bisa berbeda.
 - **Perkiraan validitas berlaku untuk metode yang dibuat dengan baik.** Tes yang ditulis dengan buruk atau wawancara yang asal-asalan tidak akan mencapai angka-angka ini.
 - **Satu metode jarang cukup.** Para peneliti umumnya menyarankan menggabungkan metode, misalnya tes pengetahuan di awal dan wawancara terstruktur belakangan.
-- **Keadilan perlu diperiksa tersendiri.** Sackett dkk. memasangkan validitas dengan rata-rata selisih skor antara kandidat kulit hitam dan kulit putih. Tes pengetahuan kerja, sampel kerja, dan tes kognitif menunjukkan selisih yang cukup besar; wawancara terstruktur menunjukkan selisih yang lebih kecil. Menggabungkan metode bisa menguranginya. Apa pun yang kamu pakai, pantau tingkat kelulusan antarkelompok. Di AS, patokan empat per lima dalam [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) adalah titik awal yang umum.
+- **Keadilan perlu diperiksa tersendiri.** Sackett dkk. memasangkan validitas dengan rata-rata selisih skor antara kandidat kulit hitam dan kulit putih. Tes pengetahuan kerja, sampel kerja, dan tes kognitif menunjukkan selisih yang cukup besar; wawancara terstruktur menunjukkan selisih yang lebih kecil. Menggabungkan metode bisa menguranginya. Apa pun yang kamu pakai, pantau tingkat kelulusan antarkelompok. Di AS, patokan empat per lima dalam [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) adalah titik awal yang umum, bahkan saat EEOC bergerak mencabut bagian interpretatif Guidelines itu.
 - **Skor mendukung keputusan; skor tidak membuat keputusan.** Seseorang perlu melihat jawabannya sebelum memutuskan.
 
 ## Proses penyaringan yang memanfaatkan riset
@@ -85,7 +85,7 @@ testee menangani langkah 2: tes pengetahuan kerja pilihan ganda berbatas waktu, 
 - **Kondisi yang sama untuk semua orang.** Topik dan jumlah soal yang sama, serta hitung mundur di setiap soal. Kamu bisa memberi tambahan waktu kepada kandidat yang memintanya.
 - **Setiap kandidat mendapat soalnya sendiri,** set acak dari bank soal tiap topik, sehingga jawaban lebih sulit dibagikan.
 - **Hasil yang mudah dibaca.** Scorecard per kandidat dengan setiap jawaban dan waktunya, diurutkan berdasarkan skor, dengan tanda untuk jawaban yang terlalu cepat, meninggalkan halaman, percobaan menyalin, dan pola jawaban yang tidak biasa.
-- **Jawaban dinilai berdasarkan kunci jawaban** yang ditulis AI; sebagian kunci di tiap topik diperiksa sebelum dirilis, sisanya saat soalnya ditandai. Tidak ada AI yang membaca atau menilai jawaban kandidat.
+- **Jawaban dinilai berdasarkan kunci jawaban** yang ditulis AI; sebagian kunci di tiap topik diperiksa sebelum dirilis, sisanya saat soalnya ditandai. Tidak ada AI yang menilai jawaban kandidat.
 
 testee tidak menjalankan wawancara terstruktur, sampel kerja, atau tes kognitif. Pakai testee berdampingan dengan semua itu. Untuk informasi lebih lanjut tentang jenis-jenis tes dan keadilan, baca [Tes seleksi karyawan](/guides/pre-employment-testing).
 

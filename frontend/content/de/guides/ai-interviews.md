@@ -2,14 +2,14 @@
 title: "KI-Interviews: was sie sind und wie du sie fair einsetzt"
 seoTitle: "KI im Recruiting: KI-Interviews, Risiken und fairer Einsatz"
 description: "KI im Recruiting: was KI-Interviewer, Chatbots, Videoanalyse und generierte Tests leisten, wo Risiken liegen und was rechtlich gilt. Mit testees Ansatz."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # KI-Interviews: was sie sind und wie du sie fair einsetzt
 
 „KI-Interview“ bedeutet je nach Anbieter sehr Unterschiedliches. Manche Tools führen ein Gespräch mit den Kandidaten. Manche zeichnen Videos auf und bewerten sie. Manche nutzen KI nur, um die Fragen zu schreiben, und bewerten die Antworten dann nach festen Regeln. Für ein Recruiting-Team ist der Unterschied wichtig: Er bestimmt, was du Kandidaten erklären kannst, was schiefgehen kann und was das Gesetz von dir erwartet.
 
-Diese Seite ordnet die wichtigsten Arten von KI-Interview-Tools ein, erklärt den Ansatz von testee und fasst die rechtlichen Grundlagen zusammen.
+Dieser Leitfaden ordnet die wichtigsten Arten von KI-Interview-Tools ein, erklärt den Ansatz von testee und fasst die rechtlichen Grundlagen zusammen.
 
 ## Drei Arten von KI-Interview-Tools
 
@@ -38,13 +38,13 @@ testee nutzt KI, um aus deiner Stellenbeschreibung ein Interview zu Fachkenntnis
 1. **Die KI liest deine Stellenbeschreibung** und erkennt, was ein Kandidat wissen muss: die Anforderungen, das Niveau und eine Reihe von Themen mit Unterthemen.
 2. **Du prüfst die Themen.** Behalte sie, wähle sie ab, benenne sie um oder bearbeite sie, oder sag der KI in normalem Text, was sie ändern soll. Keine Frage wird geschrieben, bevor du zustimmst.
 3. **Die KI schreibt die Fragen.** Jedes Thema erhält einen Pool aus Multiple-Choice-Fragen mit je vier Optionen: Die meisten haben eine richtige und drei plausible falsche Optionen, etwa jede zehnte ist eine Mehrfachauswahl („alle zutreffenden auswählen“) mit 2 oder 3 richtigen Optionen. Bei technischen Themen zeigen viele Fragen ein kurzes Codebeispiel und fragen, was es ausgibt, was es tut, warum es fehlschlägt oder welche Änderung es behebt. Du kannst jede Frage und ihre Optionen öffnen und jede neu generieren lassen, die dir nicht gefällt.
-4. **Kandidaten beantworten Fragen unter Zeitvorgabe.** Jeder Kandidat erhält einen eigenen zufälligen Fragensatz aus dem Pool jedes Themas, in eigener Reihenfolge, mit einem Countdown bei jeder Frage.
-5. **Antworten werden anhand eines Lösungsschlüssels bewertet.** Die KI schreibt die Schlüssel. Eine Stichprobe der Schlüssel jedes Themas wird vor der Freigabe geprüft, die übrigen, sobald eine Frage markiert wird. Die Bewertung selbst folgt festen Regeln, und keine KI liest oder beurteilt die Antwort eines Kandidaten. Wird ein Schlüssel später korrigiert, gilt die Korrektur für Kandidaten, die danach beginnen; frühere Ergebnisse ändern sich nicht. Tempo, Verlassen der Seite und Kopierversuche werden dir als Hinweise angezeigt; sie ändern die Punktzahl nicht.
+4. **Kandidaten beantworten Fragen unter Zeitvorgabe.** Jeder Kandidat erhält einen eigenen zufälligen Fragensatz aus dem Pool jedes Themas, in eigener Reihenfolge, mit einem Countdown bei jeder Frage. Standardmäßig tippen sie ihre Antworten an; im Sprachmodus liest Mira, die KI-Interviewerin von testee, jede Frage vor, und der Kandidat sagt eine Antwort oder tippt sie an.
+5. **Antworten werden anhand eines Lösungsschlüssels bewertet.** Die KI schreibt die Schlüssel. Eine Stichprobe der Schlüssel jedes Themas wird vor der Freigabe geprüft, die übrigen, sobald eine Frage markiert wird. Die Bewertung selbst folgt festen Regeln, und keine KI beurteilt die Antwort eines Kandidaten. Im Sprachmodus wandelt KI nur Sprache in Text um und ordnet ihn einer Option zu. Wird ein Schlüssel später korrigiert, gilt die Korrektur für Kandidaten, die danach beginnen; frühere Ergebnisse ändern sich nicht. Tempo, Verlassen der Seite und Kopierversuche werden dir als Hinweise angezeigt; sie ändern die Punktzahl nicht.
 6. **Menschen entscheiden.** Du siehst eine Rangliste und eine Auswertung pro Kandidat, mit jeder Antwort und ihrer Dauer. Eine Person in deinem Unternehmen prüft die Ergebnisse und trifft die Einstellungsentscheidung.
 
 Was testee nicht tut:
 
-- Keine Video-, Stimm- oder Gesichtsanalyse.
+- Keine Video- oder Gesichtsanalyse und keine Analyse der Stimme eines Kandidaten. Der Sprachmodus wandelt Sprache nur in Text um, um die genannte Option zu finden.
 - Keine Ableitung von Persönlichkeit oder Emotionen.
 - Keine automatischen Absagen. testee lehnt keine Kandidaten ab und verschickt keine Absagen; dein Team entscheidet.
 - Deine Daten werden nicht zum Training von KI-Modellen genutzt. Der KI-Anbieter von testee, OpenAI, trainiert laut seinen Bedingungen nicht mit API-Daten.
@@ -63,7 +63,7 @@ Du kannst dein eigenes Interview auch vorab als Kandidat ausprobieren, bevor du 
 
 **Alle haben ähnliche Bedingungen.** Gleiche Themen, gleiche Anzahl Fragen pro Thema, gleiche durchschnittliche Zeit pro Frage und gleiche Gesamtzeit. Die Fragen jedes Kandidaten werden zufällig gezogen, daher unterscheiden sich die Sätze leicht im Schwierigkeitsgrad. Kandidaten, die mehr Zeit brauchen, können sie bekommen: Du kannst pro Kandidat zusätzliche Zeit gewähren.
 
-**Weniger irrelevante Signale.** Eine Multiple-Choice-Antwort hat keinen Akzent, kein Gesicht, keinen Hintergrund und keinen Schreibstil, die Punktzahl hängt also nicht davon ab, wie jemand aussieht oder klingt. Bias ist damit nicht ausgeschlossen: Wissenstests können Punktunterschiede zwischen Gruppen zeigen, und ein Test in der Zweitsprache kann Kandidaten benachteiligen. Beobachte die Ergebnisse über Gruppen hinweg.
+**Weniger irrelevante Signale.** Eine Multiple-Choice-Antwort hat keinen Akzent, kein Gesicht, keinen Hintergrund und keinen Schreibstil, die Punktzahl hängt also nicht davon ab, wie jemand aussieht oder klingt. Im Sprachmodus hängt es von Sprache und Akzent ab, wie gut Gesprochenes verstanden wird, deshalb können Kandidaten stattdessen antippen ([Sprachmodus in 23 Sprachen](/guides/voice-interview-languages)). Das alles schließt Bias nicht aus: Wissenstests können Punktunterschiede zwischen Gruppen zeigen, und ein Test in der Zweitsprache kann Kandidaten benachteiligen. Beobachte die Ergebnisse über Gruppen hinweg.
 
 **Antworten weiterzugeben ist schwieriger.** Weil jeder Kandidat einen eigenen zufälligen Fragensatz und bei jeder Frage einen Timer hat, kostet es mehr Aufwand, Antworten zu teilen oder nachzuschlagen. Die Hinweise auf Auffälligkeiten helfen dir zu entscheiden, wo du genauer hinsehen solltest; sie sind kein Beweis für Schummeln.
 
@@ -75,7 +75,7 @@ Sei dir der Grenzen bewusst. Ein Multiple-Choice-Test prüft Wissen. Fragen zum 
 
 ## Rechtliche Grundlagen für KI-Interview-Tools
 
-Dies ist eine Zusammenfassung mit Stand Oktober 2026, keine Rechtsberatung. Kläre Einzelheiten mit deiner eigenen Rechtsberatung.
+Dies ist eine Zusammenfassung mit Stand November 2026, keine Rechtsberatung.
 
 ### KI-Verordnung der EU
 
@@ -94,7 +94,7 @@ Interviewergebnisse sind personenbezogene Daten, nach der EU-DSGVO (GDPR) ebenso
 
 ### USA
 
-KI-Tools in der Personalauswahl unterliegen denselben Antidiskriminierungsregeln wie jedes Auswahlverfahren. Beobachte die Auswahlquoten über Gruppen hinweg (die Vier-Fünftel-Faustregel in [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)), biete Anpassungen an und prüfe die Regeln der Bundesstaaten und Kommunen. So verlangt etwa das [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) der Stadt New York ein Bias-Audit innerhalb eines Jahres vor dem Einsatz eines automatisierten Tools für Einstellungsentscheidungen, eine öffentliche Zusammenfassung davon und eine Information der Kandidaten. Einen Überblick gibt [Einstellungstests](/guides/pre-employment-testing).
+KI-Tools in der Personalauswahl unterliegen denselben Antidiskriminierungsregeln wie jedes Auswahlverfahren. Beobachte die Auswahlquoten über Gruppen hinweg (die Vier-Fünftel-Faustregel in [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4), die die EEOC aufheben will, während die Adverse-Impact-Regel von Title VII bestehen bleibt), biete Anpassungen an und prüfe die Regeln der Bundesstaaten und Kommunen. So verlangt etwa das [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) der Stadt New York ein Bias-Audit innerhalb eines Jahres vor dem Einsatz eines automatisierten Tools für Einstellungsentscheidungen, eine öffentliche Zusammenfassung davon und eine Information der Kandidaten. Einen Überblick gibt [Einstellungstests](/guides/pre-employment-testing).
 
 ## Wie du ein KI-Interview-Tool bewertest
 

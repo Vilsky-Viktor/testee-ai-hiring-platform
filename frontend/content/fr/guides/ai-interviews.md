@@ -2,14 +2,14 @@
 title: "Entretiens IA : ce qu'ils sont et comment les utiliser équitablement"
 seoTitle: "Entretien IA en recrutement : types, risques et conformité"
 description: "IA en recrutement : chatbots, analyse vidéo, tests générés. Risques, conformité et l'approche QCM chronométrée de testee pour évaluer les candidats."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Entretiens IA : ce qu'ils sont et comment les utiliser équitablement
 
 « Entretien IA » recouvre des réalités très différentes selon les fournisseurs. Certains outils mènent une conversation avec le candidat. D'autres enregistrent une vidéo et la notent. D'autres encore n'utilisent l'IA que pour rédiger les questions, puis notent les réponses selon des règles fixes. Pour une équipe de recrutement, la différence compte : elle change ce que vous pouvez expliquer à un candidat, ce qui peut mal tourner et ce que la loi attend de vous.
 
-Cette page fait le tri entre les principaux types d'outils d'entretien IA, explique l'approche de testee et présente les bases de la conformité.
+Ce guide fait le tri entre les principaux types d'outils d'entretien IA, explique l'approche de testee et présente les bases de la conformité.
 
 ## Trois types d'outils d'entretien IA
 
@@ -38,13 +38,13 @@ testee utilise l'IA pour rédiger un entretien de compétences à partir de votr
 1. **L'IA lit votre fiche de poste** et repère ce qu'un candidat doit savoir : les exigences, le niveau et une série de thèmes avec leurs sous-thèmes.
 2. **Vous vérifiez les thèmes.** Gardez-les, décochez-les, renommez-les ou modifiez-les, ou dites à l'IA en texte libre ce qu'il faut changer. Aucune question n'est rédigée avant votre validation.
 3. **L'IA rédige les questions.** Chaque thème reçoit une banque de questions à choix multiples, chacune avec quatre réponses proposées : la plupart ont une bonne réponse et trois mauvaises réponses plausibles, et environ 1 sur 10 demande de « cocher toutes les bonnes réponses », avec 2 ou 3 bonnes réponses. Pour les thèmes techniques, de nombreuses questions montrent un court exemple de code et demandent ce qu'il affiche, ce qu'il fait, pourquoi il échoue ou quelle modification le corrige. Vous pouvez ouvrir chaque question et ses options, et régénérer celles qui ne vous plaisent pas.
-4. **Les candidats répondent à des questions chronométrées.** Chaque candidat reçoit sa propre série aléatoire tirée de la banque de chaque thème, dans son propre ordre, avec un compte à rebours pour chaque question.
-5. **Les réponses sont notées d'après un corrigé.** L'IA rédige les corrigés. Un échantillon des corrigés de chaque thème est vérifié avant la mise en ligne, les autres dès qu'une question est signalée. La notation elle-même suit des règles fixes, et aucune IA ne lit ni ne juge la réponse d'un candidat. Si un corrigé est rectifié par la suite, la rectification s'applique aux candidats qui commencent après elle ; les résultats passés ne changent pas. La vitesse, les sorties de la page et les tentatives de copie vous sont présentées comme des signaux ; elles ne modifient pas le score.
+4. **Les candidats répondent à des questions chronométrées.** Chaque candidat reçoit sa propre série aléatoire tirée de la banque de chaque thème, dans son propre ordre, avec un compte à rebours pour chaque question. Par défaut, il touche ses réponses ; en mode vocal, Mira, l'intervieweuse IA de testee, lit chaque question à voix haute et le candidat dit ou touche sa réponse.
+5. **Les réponses sont notées d'après un corrigé.** L'IA rédige les corrigés. Un échantillon des corrigés de chaque thème est vérifié avant la mise en ligne, les autres dès qu'une question est signalée. La notation elle-même suit des règles fixes, et aucune IA ne juge la réponse d'un candidat. En mode vocal, l'IA ne fait que transcrire la parole en texte et l'associer à une option. Si un corrigé est rectifié par la suite, la rectification s'applique aux candidats qui commencent après elle ; les résultats passés ne changent pas. La vitesse, les sorties de la page et les tentatives de copie vous sont présentées comme des signaux ; elles ne modifient pas le score.
 6. **Des personnes décident.** Vous voyez une liste classée et une fiche d'évaluation par candidat, avec chaque réponse et son temps. Une personne de votre entreprise examine les résultats et prend la décision d'embauche.
 
 Ce que testee ne fait pas :
 
-- Aucune analyse vidéo, vocale ou faciale.
+- Aucune analyse vidéo ou faciale, et aucune analyse de la voix d'un candidat. Le mode vocal ne fait que transcrire la parole en texte pour trouver l'option nommée.
 - Aucune inférence de personnalité ou d'émotions.
 - Aucun refus automatique. testee ne rejette pas de candidats et n'envoie pas de messages de refus ; c'est votre équipe qui décide.
 - Vos données ne servent pas à entraîner des modèles d'IA. Le fournisseur d'IA de testee, OpenAI, ne s'entraîne pas sur les données de l'API selon ses conditions.
@@ -63,7 +63,7 @@ Vous pouvez aussi essayer votre propre entretien en tant que candidat avant d'in
 
 **Tout le monde passe le test dans des conditions similaires.** Mêmes thèmes, même nombre de questions par thème, même temps moyen par question et même durée totale. Les questions de chaque candidat sont tirées au hasard, si bien que les séries diffèrent un peu en difficulté. Les candidats qui ont besoin de plus de temps peuvent l'obtenir : vous pouvez ajouter du temps par candidat.
 
-**Moins de signaux sans rapport avec le poste.** Une réponse à choix multiples n'a ni accent, ni visage, ni arrière-plan, ni style d'écriture : le score ne dépend donc pas de l'apparence ou de la voix de quelqu'un. Cela n'exclut pas les biais : les tests de connaissances peuvent faire apparaître des écarts de score entre groupes, et un test dans la deuxième langue d'un candidat peut le désavantager. Surveillez les résultats selon les groupes.
+**Moins de signaux sans rapport avec le poste.** Une réponse à choix multiples n'a ni accent, ni visage, ni arrière-plan, ni style d'écriture : le score ne dépend donc pas de l'apparence ou de la voix de quelqu'un. En mode vocal, la qualité de reconnaissance de la parole varie selon la langue et l'accent, donc les candidats peuvent toucher leur réponse à la place ([Le mode vocal en 23 langues](/guides/voice-interview-languages)). Rien de cela n'exclut les biais : les tests de connaissances peuvent faire apparaître des écarts de score entre groupes, et un test dans la deuxième langue d'un candidat peut le désavantager. Surveillez les résultats selon les groupes.
 
 **Partager les réponses est plus difficile.** Avec une série aléatoire propre à chaque candidat et un minuteur sur chaque question, partager des réponses ou chercher des informations demande plus d'efforts. Les signaux d'intégrité vous aident à décider où regarder de plus près ; ce ne sont pas des preuves de triche.
 
@@ -75,7 +75,7 @@ Soyez lucide sur les limites. Un test à choix multiples vérifie des connaissan
 
 ## Les bases de la conformité pour les outils d'entretien IA
 
-Ceci est un résumé à jour en octobre 2026, et ne constitue pas un conseil juridique. Vérifiez auprès de votre propre conseil juridique.
+Ceci est un résumé à jour en novembre 2026, et ne constitue pas un conseil juridique.
 
 ### Règlement européen sur l'IA
 
@@ -94,7 +94,7 @@ Les résultats d'entretien sont des données personnelles, au sens du RGPD (GDPR
 
 ### États-Unis
 
-Les outils d'IA utilisés dans le recrutement relèvent des mêmes règles anti-discrimination que toute méthode de sélection. Surveillez les taux de sélection selon les groupes (la règle empirique des quatre cinquièmes de [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)), proposez des aménagements et vérifiez les règles des États et des collectivités locales. Par exemple, la [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) de la ville de New York impose un audit des biais réalisé dans l'année précédant l'utilisation d'un outil automatisé de décision d'embauche, un résumé public de cet audit et une information des candidats. Voir [Tests de recrutement](/guides/pre-employment-testing) pour une vue d'ensemble.
+Les outils d'IA utilisés dans le recrutement relèvent des mêmes règles anti-discrimination que toute méthode de sélection. Surveillez les taux de sélection selon les groupes (la règle empirique des quatre cinquièmes de [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4), que l'EEOC s'apprête à abroger alors que la règle du Title VII sur l'impact défavorable demeure), proposez des aménagements et vérifiez les règles des États et des collectivités locales. Par exemple, la [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) de la ville de New York impose un audit des biais réalisé dans l'année précédant l'utilisation d'un outil automatisé de décision d'embauche, un résumé public de cet audit et une information des candidats. Voir [Tests de recrutement](/guides/pre-employment-testing) pour une vue d'ensemble.
 
 ## Comment évaluer un outil d'entretien IA
 

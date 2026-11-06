@@ -2,14 +2,14 @@
 title: "Rozmowy rekrutacyjne z AI: czym są i jak korzystać z nich uczciwie"
 seoTitle: "AI w rekrutacji: rozmowy z AI, ryzyka i uczciwe użycie"
 description: "Narzędzia AI w rekrutacji: chatboty, analiza wideo i generowane testy. Co mówi prawo, jakie są ryzyka i jak działa podejście testee."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Rozmowy rekrutacyjne z AI: czym są i jak korzystać z nich uczciwie
 
 „Rozmowa rekrutacyjna z AI” oznacza zupełnie różne rzeczy w zależności od dostawcy. Niektóre narzędzia prowadzą z kandydatem rozmowę. Inne nagrywają wideo i je oceniają. Jeszcze inne używają AI tylko do napisania pytań, a odpowiedzi oceniają według stałych reguł. Dla zespołu rekrutacyjnego ta różnica ma znaczenie: wpływa na to, co możesz wyjaśnić kandydatowi, co może pójść nie tak i czego wymaga od Ciebie prawo.
 
-Ta strona porządkuje główne rodzaje narzędzi do rozmów rekrutacyjnych z AI, wyjaśnia podejście testee i omawia podstawy zgodności z przepisami.
+Ten poradnik porządkuje główne rodzaje narzędzi do rozmów rekrutacyjnych z AI, wyjaśnia podejście testee i omawia podstawy zgodności z przepisami.
 
 ## Trzy rodzaje narzędzi do rozmów rekrutacyjnych z AI
 
@@ -38,13 +38,13 @@ testee używa AI do napisania rozmowy sprawdzającej umiejętności na podstawie
 1. **AI czyta Twój opis stanowiska** i wyodrębnia, co kandydat musi wiedzieć: wymagania, poziom oraz zestaw tematów z podtematami.
 2. **Przeglądasz tematy.** Zostaw je, odznacz, zmień nazwę lub edytuj albo napisz AI zwykłym tekstem, co zmienić. Żadne pytanie nie powstaje, dopóki tego nie zatwierdzisz.
 3. **AI pisze pytania.** Każdy temat dostaje pulę pytań testowych z czterema odpowiedziami do wyboru: większość z jedną poprawną odpowiedzią i trzema wiarygodnymi błędnymi, a około 1 na 10 to pytania wielokrotnego wyboru („zaznacz wszystkie poprawne”) z 2 lub 3 poprawnymi odpowiedziami. W tematach technicznych wiele pytań pokazuje krótki fragment kodu i pyta, co wypisze, co robi, dlaczego nie działa lub która zmiana go naprawi. Możesz otworzyć każde pytanie i jego odpowiedzi oraz wygenerować ponownie te, które Ci się nie podobają.
-4. **Kandydaci odpowiadają na pytania z limitem czasu.** Każdy kandydat dostaje własny losowy zestaw z puli każdego tematu, we własnej kolejności, z odliczaniem czasu przy każdym pytaniu.
-5. **Odpowiedzi są oceniane według klucza odpowiedzi.** AI pisze klucze. Próbka kluczy z każdego tematu jest sprawdzana przed udostępnieniem, a pozostałe, gdy pytanie zostanie oznaczone. Samo ocenianie odbywa się według stałych reguł i żadna AI nie czyta ani nie ocenia odpowiedzi kandydata. Jeśli klucz zostanie później poprawiony, poprawka dotyczy kandydatów, którzy zaczną po niej; wcześniejsze wyniki się nie zmieniają. Tempo odpowiedzi, opuszczanie strony i próby kopiowania widzisz jako sygnały; nie zmieniają one wyniku.
+4. **Kandydaci odpowiadają na pytania z limitem czasu.** Każdy kandydat dostaje własny losowy zestaw z puli każdego tematu, we własnej kolejności, z odliczaniem czasu przy każdym pytaniu. Domyślnie odpowiada dotknięciem; w trybie głosowym Mira, AI prowadząca rozmowy w testee, czyta każde pytanie na głos, a kandydat wypowiada lub dotyka odpowiedzi.
+5. **Odpowiedzi są oceniane według klucza odpowiedzi.** AI pisze klucze. Próbka kluczy z każdego tematu jest sprawdzana przed udostępnieniem, a pozostałe, gdy pytanie zostanie oznaczone. Samo ocenianie odbywa się według stałych reguł i żadna AI nie ocenia odpowiedzi kandydata. W trybie głosowym AI tylko zamienia mowę na tekst i dopasowuje go do odpowiedzi. Jeśli klucz zostanie później poprawiony, poprawka dotyczy kandydatów, którzy zaczną po niej; wcześniejsze wyniki się nie zmieniają. Tempo odpowiedzi, opuszczanie strony i próby kopiowania widzisz jako sygnały; nie zmieniają one wyniku.
 6. **Decydują ludzie.** Widzisz ranking i kartę wyników każdego kandydata z każdą odpowiedzią i czasem jej udzielenia. Wyniki przegląda i decyzję o zatrudnieniu podejmuje osoba z Twojej firmy.
 
 Czego testee nie robi:
 
-- Żadnej analizy wideo, głosu ani twarzy.
+- Żadnej analizy wideo ani twarzy i żadnej analizy głosu kandydata. Tryb głosowy tylko zamienia mowę na tekst, by znaleźć wskazaną odpowiedź.
 - Żadnego wnioskowania o osobowości ani emocjach.
 - Żadnych automatycznych odrzuceń. testee nie odrzuca kandydatów ani nie wysyła wiadomości z odmową; decyduje Twój zespół.
 - Twoje dane nie służą do trenowania modeli AI. Dostawca AI, z którego korzysta testee, OpenAI, zgodnie ze swoimi warunkami nie trenuje modeli na danych z API.
@@ -63,7 +63,7 @@ Zanim kogokolwiek zaprosisz, możesz też odbyć własną rozmowę jako kandydat
 
 **Wszyscy mają podobne warunki.** Te same tematy, ta sama liczba pytań na temat, ten sam średni czas na pytanie i ten sam łączny czas. Pytania każdego kandydata są losowane, więc zestawy nieco różnią się trudnością. Kandydaci, którzy potrzebują więcej czasu, mogą go dostać: możesz dodać dodatkowy czas konkretnemu kandydatowi.
 
-**Mniej nieistotnych sygnałów.** Odpowiedź w teście wyboru nie niesie akcentu, twarzy, tła ani stylu pisania, więc wynik nie zależy od tego, jak ktoś wygląda lub brzmi. To nie wyklucza uprzedzeń: testy wiedzy mogą wykazywać różnice wyników między grupami, a test w drugim języku kandydata może go stawiać w gorszej sytuacji. Monitoruj wyniki w poszczególnych grupach.
+**Mniej nieistotnych sygnałów.** Odpowiedź w teście wyboru nie niesie akcentu, twarzy, tła ani stylu pisania, więc wynik nie zależy od tego, jak ktoś wygląda lub brzmi. W trybie głosowym to, jak dobrze mowa jest rozumiana, zależy od języka i akcentu, więc kandydaci mogą zamiast tego dotykać ([Rozmowy głosowe w 23 językach](/guides/voice-interview-languages)). Nic z tego nie wyklucza uprzedzeń: testy wiedzy mogą wykazywać różnice wyników między grupami, a test w drugim języku kandydata może go stawiać w gorszej sytuacji. Monitoruj wyniki w poszczególnych grupach.
 
 **Trudniej przekazywać sobie odpowiedzi.** Gdy każdy kandydat ma własny losowy zestaw pytań i limit czasu przy każdym pytaniu, przekazywanie odpowiedzi lub szukanie ich wymaga więcej wysiłku. Sygnały dotyczące rzetelności pomagają zdecydować, czemu przyjrzeć się bliżej; nie są dowodem oszustwa.
 
@@ -75,7 +75,7 @@ Jasno określ ograniczenia. Test wyboru sprawdza wiedzę. Pytania o czytanie kod
 
 ## Podstawy zgodności z prawem dla narzędzi do rozmów rekrutacyjnych z AI
 
-To podsumowanie według stanu na październik 2026. To nie jest porada prawna. Skonsultuj się z własnym prawnikiem.
+To podsumowanie według stanu na listopad 2026. To nie jest porada prawna.
 
 ### Akt w sprawie sztucznej inteligencji (UE)
 
@@ -94,7 +94,7 @@ Wyniki rozmów to dane osobowe, zarówno w rozumieniu unijnego RODO (GDPR), jak 
 
 ### Stany Zjednoczone
 
-Narzędzia AI używane w rekrutacji podlegają tym samym przepisom antydyskryminacyjnym co każda metoda selekcji. Obserwuj wskaźniki selekcji w poszczególnych grupach (praktyczna reguła czterech piątych w [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)), zapewniaj racjonalne usprawnienia i sprawdzaj przepisy stanowe oraz lokalne. Na przykład nowojorskie [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) wymaga audytu stronniczości przeprowadzonego w ciągu roku przed użyciem zautomatyzowanego narzędzia do decyzji o zatrudnieniu, publicznego podsumowania tego audytu i powiadomienia kandydatów. Przegląd znajdziesz w artykule [Testy rekrutacyjne](/guides/pre-employment-testing).
+Narzędzia AI używane w rekrutacji podlegają tym samym przepisom antydyskryminacyjnym co każda metoda selekcji. Obserwuj wskaźniki selekcji w poszczególnych grupach (praktyczna reguła czterech piątych w [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4), którą EEOC zamierza uchylić, choć zasada Title VII dotycząca niekorzystnego wpływu pozostaje), zapewniaj racjonalne usprawnienia i sprawdzaj przepisy stanowe oraz lokalne. Na przykład nowojorskie [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) wymaga audytu stronniczości przeprowadzonego w ciągu roku przed użyciem zautomatyzowanego narzędzia do decyzji o zatrudnieniu, publicznego podsumowania tego audytu i powiadomienia kandydatów. Przegląd znajdziesz w artykule [Testy rekrutacyjne](/guides/pre-employment-testing).
 
 ## Jak ocenić narzędzie do rozmów rekrutacyjnych z AI
 

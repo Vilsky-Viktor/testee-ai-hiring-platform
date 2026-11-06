@@ -2,14 +2,14 @@
 title: "Apakah rekrutmen dengan AI legal di UE? Yang perlu diketahui pemberi kerja"
 seoTitle: "Apakah Rekrutmen dengan AI Legal di UE? AI Act dan GDPR"
 description: "AI dalam rekrutmen legal di UE, dengan aturan. Arti kategori berisiko tinggi AI Act bagi pemberi kerja, tanggal penting hingga Desember 2027, dan GDPR."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Apakah rekrutmen dengan AI legal di UE? Yang perlu diketahui pemberi kerja
 
 Secara umum, ya: memakai AI dalam rekrutmen itu legal di UE. Tetapi sebagian besar alat AI yang mengevaluasi kandidat masuk kategori berisiko tinggi dalam AI Act UE (EU AI Act), yang membawa kewajiban bagi vendor dan bagi kamu sebagai pemberi kerja. Beberapa praktik dilarang sepenuhnya. Dan GDPR berlaku untuk data kandidat, seperti selama ini.
 
-Panduan ini menjelaskan aturannya secara garis besar, tanggal-tanggal yang penting, apa yang harus dilakukan pemberi kerja, dan pendekatan testee. **Ini bukan nasihat hukum.** Isinya mencerminkan aturan per Oktober 2026. Aturannya masih baru, panduannya masih difinalisasi, dan hukum nasional menambahkan persyaratannya sendiri. Konsultasikan dengan penasihat hukummu sendiri sebelum mengandalkan isi panduan ini.
+Panduan ini menjelaskan aturannya secara garis besar, tanggal-tanggal yang penting, apa yang harus dilakukan pemberi kerja, dan pendekatan testee. **Ini bukan nasihat hukum.** Isinya mencerminkan aturan per November 2026. Aturannya masih baru, panduannya masih difinalisasi, dan hukum nasional menambahkan persyaratannya sendiri.
 
 ## Jawaban singkatnya
 
@@ -36,7 +36,7 @@ Cakupannya luas: filter CV, sistem pemeringkatan, pewawancara AI, dan tes yang m
 
 Biasanya tidak. [Pasal 6(3)](https://artificialintelligenceact.eu/article/6/) AI Act mengecualikan sebagian sistem Lampiran III dari kategori berisiko tinggi, misalnya saat sistem itu menjalankan tugas prosedural yang sempit atau hanya menyiapkan penilaian manusia. Tetapi sistem Lampiran III yang membuat profil orang (profiling) selalu tergolong berisiko tinggi, dan memberi skor atau memeringkat kandidat berdasarkan kemampuan mereka kemungkinan besar terhitung sebagai profiling.
 
-Rancangan pedoman Komisi Eropa tentang klasifikasi berisiko tinggi (diterbitkan 19 Mei 2026 untuk konsultasi; belum final per Oktober 2026) memakai tafsiran yang luas. Rancangan itu menggambarkan seleksi sebagai mencakup "penyusunan shortlist, penilaian, pemeringkatan, atau pengujian kandidat", dan, sebagaimana diringkas oleh [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), memperlakukan sistem yang menghasilkan skor kesesuaian sebagai berisiko tinggi "bahkan jika keputusan rekrutmen akhir dibuat oleh rekruter manusia."
+Rancangan pedoman Komisi Eropa tentang klasifikasi berisiko tinggi (diterbitkan 19 Mei 2026 untuk konsultasi; belum final per November 2026) memakai tafsiran yang luas. Rancangan itu menggambarkan seleksi sebagai mencakup "penyusunan shortlist, penilaian, pemeringkatan, atau pengujian kandidat", dan, sebagaimana diringkas oleh [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), memperlakukan sistem yang menghasilkan skor kesesuaian sebagai berisiko tinggi "bahkan jika keputusan rekrutmen akhir dibuat oleh rekruter manusia."
 
 Jadi alat yang memberi setiap kandidat skor dan peringkat sangat mungkin tergolong berisiko tinggi, meskipun manusia yang memutuskan siapa yang direkrut.
 
@@ -49,7 +49,7 @@ Jadi alat yang memberi setiap kandidat skor dan peringkat sangat mungkin tergolo
 | 2 Desember 2027 | Kewajiban berisiko tinggi untuk sistem Lampiran III, termasuk alat rekrutmen |
 | 2 Agustus 2028 | Kewajiban berisiko tinggi untuk AI dalam produk yang dicakup Lampiran I |
 
-Tanggal berisiko tinggi untuk Lampiran III awalnya 2 Agustus 2026. Digital Omnibus on AI (Regulation (EU) 2026/1744, berlaku sejak 27 Juli 2026) memundurkannya ke 2 Desember 2027 ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Tanggal sesuai yang tercantum di [AI Act Explorer, Pasal 113](https://artificialintelligenceact.eu/article/113/), per Oktober 2026.
+Tanggal berisiko tinggi untuk Lampiran III awalnya 2 Agustus 2026. Digital Omnibus on AI (Regulation (EU) 2026/1744, berlaku sejak 27 Juli 2026) memundurkannya ke 2 Desember 2027 ([Official Journal](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). Peraturan itu juga menulis ulang kewajiban literasi AI dalam Pasal 4, mulai 27 Juli 2026: penyedia dan pengguna (deployer) kini wajib mengambil langkah untuk mendukung literasi AI stafnya, tanpa tingkat tertentu yang harus dijamin. Tanggal per November 2026.
 
 Tambahan waktu ini untuk persiapan, bukan alasan untuk mengabaikan aturan. GDPR dan undang-undang antidiskriminasi sudah berlaku sepenuhnya.
 
@@ -88,7 +88,7 @@ Pasal 26 menetapkan kewajiban pemberi kerja. Ringkasnya ([Pasal 26](https://arti
 - **Beri tahu perwakilan pekerja dan pekerja yang terdampak** sebelum memakai sistem berisiko tinggi di tempat kerja.
 - **Beri tahu kandidat** bahwa mereka dikenai penggunaan sistem AI berisiko tinggi.
 
-Badan publik dan sebagian organisasi swasta juga wajib melakukan penilaian dampak hak fundamental (Pasal 27). Dan kewajiban literasi AI dalam Pasal 4 sudah berlaku: orang-orang yang memakai alat AI dalam rekrutmenmu perlu memahami apa yang dilakukan dan tidak dilakukan alat-alat itu.
+Badan publik dan sebagian organisasi swasta juga wajib melakukan penilaian dampak hak fundamental (Pasal 27). Dan Pasal 4 sudah berlaku: ambil langkah untuk mendukung literasi AI orang-orang yang memakai alat AI dalam rekrutmenmu, agar mereka memahami apa yang dilakukan dan tidak dilakukan alat-alat itu.
 
 ## Dasar-dasar GDPR
 
@@ -119,7 +119,7 @@ testee menjalankan wawancara keterampilan pilihan ganda berbatas waktu yang ditu
 
 Seperti apa wujudnya di produk saat ini:
 
-- **AI menulis soal dan kunci jawabannya; penilaian mengikuti aturan tetap.** Tidak ada AI yang membaca atau menilai jawaban kandidat, dan tidak ada analisis video, suara, atau wajah. Kalau AI mengoreksi sebuah kunci jawaban belakangan, koreksinya berlaku untuk kandidat yang mulai setelahnya; hasil sebelumnya tidak berubah.
+- **AI menulis soal dan kunci jawabannya; penilaian mengikuti aturan tetap.** Tidak ada AI yang menilai jawaban kandidat, dan tidak ada analisis video atau wajah. Dalam mode suara, ucapan diubah menjadi teks dan dicocokkan dengan sebuah pilihan, yang disebutkan kepada kandidat dan ditampilkan di layar: satu pilihan yang disebut dengan jelas langsung dicatat, sedangkan jawaban dengan beberapa pilihan dikonfirmasi lebih dulu. testee tidak pernah menyimpan ucapan, dan suaranya tidak pernah dianalisis. Kalau AI mengoreksi sebuah kunci jawaban belakangan, koreksinya berlaku untuk kandidat yang mulai setelahnya; hasil sebelumnya tidak berubah.
 - **Kamu menyetujui topiknya** sebelum ada soal yang ditulis, dan kamu bisa melihat setiap soal.
 - **Manusia yang memutuskan.** Halaman hasil dan laporan PDF mengingatkan timmu untuk meninjau hasil; testee tidak menolak kandidat atau mengirim pesan penolakan.
 - **Kandidat diberi tahu** sebelum mulai bahwa soal ditulis oleh AI, bahwa orang di perusahaanmu yang meninjau hasil dan memutuskan, dan bahwa mereka bisa meminta peninjauan.

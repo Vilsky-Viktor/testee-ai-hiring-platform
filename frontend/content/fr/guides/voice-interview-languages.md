@@ -2,14 +2,14 @@
 title: "Le mode vocal en 23 langues : la qualité de lecture et d'écoute de Mira dans chacune"
 seoTitle: "Mode vocal en 23 langues : la qualité langue par langue"
 description: "La qualité du mode vocal de testee dans ses 23 langues pour lire les questions et comprendre les réponses, notre méthode et quand préférer toucher l'écran."
-updated: "2026-11-04"
+updated: "2026-11-07"
 ---
 
 # Le mode vocal en 23 langues : la qualité de lecture et d'écoute de Mira dans chacune
 
 En mode vocal, Mira, la recruteuse IA de testee, lit à voix haute chaque question et ses réponses possibles, et le candidat répond à l'oral : « B », « réponse C », « la médiane » ou « A et D » pour une question à plusieurs bonnes réponses. Le mode vocal fonctionne dans les 23 langues de testee, mais les technologies vocales ne sont pas aussi performantes dans toutes les langues. Ce guide montre la qualité obtenue dans chacune, pour que vous choisissiez le mode adapté à vos candidats.
 
-Quelle que soit la langue, les candidats peuvent toujours toucher une réponse au lieu de parler, et la réponse retenue par Mira s'affiche à l'écran pendant qu'elle la répète.
+Une fois l'entretien commencé, les candidats peuvent toujours toucher une réponse au lieu de parler, quelle que soit la langue, et la réponse retenue par Mira s'affiche à l'écran pendant qu'elle la répète. Le temps d'une question court pendant qu'elle la lit.
 
 ## L'essentiel
 
@@ -53,9 +53,9 @@ Mesures du 4 novembre 2026.
 
 - **Hébreu, arabe et persan :** Mira nomme parfois les réponses avec les lettres de l'alphabet de la langue (alef, bet, guimel) au lieu de A, B, C et D tels qu'ils apparaissent à l'écran. L'ordre est le même, la première réponse reste donc la première, mais les candidats doivent répondre avec les lettres qu'ils voient.
 - **Estonien :** un « ei » (non) bref peut ressembler à la lettre A ; un candidat qui refuse un choix que Mira répète est donc parfois enregistré comme ayant choisi la réponse A.
-- **Thaï :** une lettre prononcée est parfois entendue comme un nombre thaï (« ข้อ C » compris comme « ข้อ สี่ », réponse quatre), ce qui peut enregistrer la mauvaise réponse, et les réponses désignées par leur position sont souvent mal comprises. Toucher la réponse est plus sûr.
+- **Thaï :** une lettre prononcée est parfois entendue comme un nombre thaï (« ข้อ C » compris comme « ข้อ สี่ », réponse quatre), ce qui peut enregistrer la mauvaise réponse. Toucher la réponse est plus sûr.
 - **Japonais :** « 選択肢C » (réponse C) a parfois été entendu comme un autre mot et enregistré comme la mauvaise réponse ; une lettre seule fonctionne mieux.
-- **Russe, ukrainien et polonais :** le « et » entre deux lettres (« A и C ») est parfois entendu comme une troisième lettre, et Mira repose la question.
+- **Russe et polonais :** le « et » entre deux lettres (« A и C ») est parfois entendu comme une troisième lettre, et Mira repose la question.
 
 ## Notre méthode de mesure
 
@@ -67,6 +67,7 @@ Ces chiffres sont indicatifs, pas une garantie. Avec vingt réponses par langue,
 
 - **Le mode vocal** convient aux postes où l'expression orale compte, aux candidats qui préfèrent ne pas taper ni toucher l'écran, et aux besoins d'accessibilité. Il donne les meilleurs résultats dans les langues de qualité très bonne et bonne.
 - **Le mode clic** est le mode par défaut et fonctionne de la même façon dans toutes les langues. Privilégiez-le pour les postes à fort enjeu dans une langue de qualité correcte.
+- Démarrer un entretien vocal nécessite un micro en état de marche : un candidat qui ne peut pas en utiliser a donc besoin du mode clic, à activer avant qu'il ne commence.
 - Vous pouvez définir le mode de tout l'entretien dans ses paramètres et le changer pour un candidat avant qu'il ne commence.
 
-En mode vocal, la voix des candidats sert uniquement à transcrire leurs réponses en texte ; elle n'est jamais conservée ni analysée d'aucune autre manière.
+En mode vocal, la voix des candidats sert uniquement à transcrire leurs réponses en texte ; elle n'est jamais analysée d'aucune autre manière, et testee ne la conserve jamais. OpenAI, qui transcrit la parole en texte, a pour consigne de ne pas la conserver et garde les données de l'API 30 jours au plus, uniquement pour détecter les abus.

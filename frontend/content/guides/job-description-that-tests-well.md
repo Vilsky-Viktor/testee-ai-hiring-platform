@@ -2,7 +2,7 @@
 title: "How to write a job description that tests well"
 seoTitle: "How to Write a Job Description That Tests Well"
 description: "What a job description needs for a skills test built from it to check the right things: concrete skills and tools, the level, the daily work, what to omit."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # How to write a job description that tests well
@@ -15,7 +15,7 @@ This guide is about the second job: writing a description that a skills test can
 
 A knowledge test is useful when it tests what the job actually needs. Hiring research ranks job knowledge tests among the better predictors of job performance on average, but the estimate is for tests built for the job in question; knowledge tests unrelated to the job predict less (see [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)).
 
-US employment rules say the same from the legal side. The Uniform Guidelines on Employee Selection Procedures expect a test supported by its content to rest on a job analysis, one that focuses on "the work behavior(s) and the tasks associated with them" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). In practice, for most teams, the job description is that analysis written down. And under the Americans with Disabilities Act, a written description prepared before advertising or interviewing is considered evidence of a job's essential functions ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+US employment rules say the same from the legal side. The Uniform Guidelines on Employee Selection Procedures expect a test supported by its content to rest on a job analysis, one that focuses on "the work behavior(s) and the tasks associated with them" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). In practice, for most teams, the job description is that analysis written down. (In October 2026 the EEOC moved to rescind the interpretive parts of these Guidelines, aiming for January 2027. Title VII still requires a test with an adverse impact to be job-related.) And under the Americans with Disabilities Act, a written description prepared before advertising or interviewing is considered evidence of a job's essential functions ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 So the description is worth an extra half hour. Whatever it says, the test will ask about.
 
@@ -48,7 +48,7 @@ Years of experience are a rough stand-in for level, and a weak one: in the resea
 
 Duties are the most useful lines for a test. "Prepares the monthly VAT return" or "triages incoming bugs and reproduces them" tells a test writer which knowledge is used and in what situations. Write duties as a verb and an object, the way you'd describe the work to a new colleague.
 
-If you're unsure what a role usually involves, [O*NET OnLine](https://www.onetonline.org/) lists the typical tasks, technology and knowledge for hundreds of occupations. Use it as a checklist, then keep only what your role actually does.
+If you're unsure what a role usually involves, [O*NET OnLine](https://www.onetonline.org/) lists the typical tasks, technology and knowledge for about 1,000 occupations. Use it as a checklist, then keep only what your role actually does.
 
 ### 4. A clear line between must-have and nice to have
 

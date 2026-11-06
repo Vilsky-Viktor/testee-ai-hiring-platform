@@ -2,7 +2,7 @@
 title: "Paano itakda ang oras ng skills test: oras bawat tanong, haba at dagdag na oras"
 seoTitle: "Oras ng Skills Test: Timer Bawat Tanong at Dagdag na Oras"
 description: "Gaano katagal bawat tanong, ilang tanong, anong kabuuang haba ang epektibo, at paano patas na magbigay ng dagdag na oras sa aplikanteng kailangan ito."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Paano itakda ang oras ng skills test: oras bawat tanong, haba at dagdag na oras
@@ -101,7 +101,7 @@ Sa testee, ang interview ay isang timed na multiple-choice skills test na ginawa
 
 ### Oras bawat tanong
 
-- **May sariling countdown ang bawat tanong,** na hawak ng server, kaya hindi ito tumitigil kapag isinara ang tab o ni-reload ang pahina.
+- **May sariling countdown ang bawat tanong,** na hawak ng server, kaya hindi ito tumitigil kapag isinara ang tab o ni-reload ang pahina. Sa voice mode, tumatakbo ito habang binabasa ni Mira ang tanong.
 - **Nakadepende ang default sa level ng interview,** na sa isang generated na interview ay galing sa seniority na hinihingi ng job description: 60 segundo para sa basic o medium na interview, 75 segundo para sa hard.
 - **Average ito: may sariling oras ang bawat tanong** mula rito kapag binunot ang mga tanong ng isang aplikante, batay sa tagal ng pagbasa at pagsagot dito: ang mga salita nito, anumang code o halimbawa (na mas mabagal basahin), at oras para pag-isipan ang sagot. Mas kaunti ang sa maiikling tanong, mas marami ang sa mas mahahaba at sa may code, bawat isa sa pagitan ng kalahati at doble ng average, at pinagsama-sama ay eksaktong katumbas ng bilang ng tanong times ang average. Ipinapakita ng countdown ang sariling oras ng bawat tanong, at ipinapakita ng scorecard kung gaano karami nito ang nagamit ng bawat sagot.
 - **Puwede mong baguhin ang average bawat interview,** sa mga setting nito, mula 10 hanggang 600 segundo. Para sa mga aplikanteng magsisimula pagkatapos nito ang pagbabago; nakatakda na ang oras ng isang aplikante pagsimula niya.
@@ -115,7 +115,7 @@ Sa interview na nasa Arabic, Chinese, Japanese, Persian, Russian, Thai o Ukraini
 ### Bilang ng tanong
 
 - **May bank na 70 tanong ang bawat topic ng isang generated na interview,** at hanggang 10 topic ang isang interview, na inaaprubahan mo bago isulat ang anumang tanong.
-- **Bilang default, 10 tanong bawat topic ang nakukuha ng bawat aplikante,** isang random na set mula sa bank sa sarili nilang pagkakasunod-sunod, na may parehong bahagi ng mga tanong na "piliin ang lahat ng tamang opsyon". Puwede kang magtakda ng ibang bilang para sa bawat topic. Gawin itong 0 para hindi isama ang isang topic; may tanong pa rin ang kahit isang topic.
+- **Bilang default, 10 tanong bawat topic ang nakukuha ng bawat aplikante,** isang random na set mula sa bank sa sarili nilang pagkakasunod-sunod, na may parehong bahagi ng mga tanong na "piliin ang lahat ng tamang opsyon". Hanggang 60 tanong lang ang isang interview, kaya bumababa ang default kapag mas marami ang topic: 8 bawat isa sa 7 topic, 7 sa 8, at 6 sa 9 o 10. Puwede kang magtakda ng ibang bilang para sa bawat topic, sa loob ng limitasyong iyon. Gawin itong 0 para hindi isama ang isang topic; may tanong pa rin ang kahit isang topic.
 
 ### Kabuuang haba
 

@@ -2,7 +2,7 @@
 title: "Chronométrer un test de compétences : temps par question, durée et temps supplémentaire"
 seoTitle: "Durée d'un test de compétences et temps supplémentaire"
 description: "Combien de temps par question, combien de questions, quelle durée totale retenir, et comment accorder équitablement du temps supplémentaire aux candidats."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Chronométrer un test de compétences : temps par question, durée et temps supplémentaire
@@ -101,7 +101,7 @@ Dans testee, un entretien est un test de compétences chronométré à choix mul
 
 ### Temps par question
 
-- **Chaque question a son propre compte à rebours,** tenu par le serveur : fermer l'onglet ou recharger la page ne l'arrête pas.
+- **Chaque question a son propre compte à rebours,** tenu par le serveur : fermer l'onglet ou recharger la page ne l'arrête pas. En mode vocal, il tourne pendant que Mira lit la question.
 - **La valeur par défaut dépend du niveau de l'entretien,** qui, pour un entretien généré, découle du niveau d'expérience demandé dans la fiche de poste : 60 secondes pour un entretien basique ou intermédiaire, 75 secondes pour un entretien difficile.
 - **C'est une moyenne : chaque question reçoit son propre temps** à partir d'elle quand les questions d'un candidat sont tirées, selon le temps qu'il faut pour la lire et y répondre : ses mots, le code ou l'exemple qu'elle contient (lu plus lentement) et le temps de trouver la réponse. Les questions courtes en ont moins, les plus longues et celles avec du code en ont plus, chacune entre la moitié et le double de la moyenne, et ensemble elles font exactement le nombre de questions multiplié par la moyenne. Le compte à rebours affiche le temps propre à chaque question, et la fiche de résultats montre combien chaque réponse en a pris.
 - **Vous pouvez modifier la moyenne pour chaque entretien,** dans ses paramètres, de 10 à 600 secondes. Une modification s'applique aux candidats qui commencent après elle ; le temps d'un candidat est fixé quand il commence.
@@ -115,7 +115,7 @@ Dans un entretien en arabe, chinois, japonais, persan, russe, thaï ou ukrainien
 ### Nombre de questions
 
 - **Chaque thème d'un entretien généré dispose d'une banque de 70 questions,** et un entretien compte au plus 10 thèmes, que vous validez avant qu'une question ne soit rédigée.
-- **Chaque candidat reçoit 10 questions par thème par défaut,** une série aléatoire tirée de la banque, dans son propre ordre, avec la même part de questions « Cochez toutes les bonnes réponses ». Vous pouvez fixer un nombre différent pour chaque thème. Mettez-le à 0 pour retirer un thème ; au moins un thème garde ses questions.
+- **Chaque candidat reçoit 10 questions par thème par défaut,** une série aléatoire tirée de la banque, dans son propre ordre, avec la même part de questions « Cochez toutes les bonnes réponses ». Un entretien compte au plus 60 questions, donc le nombre par défaut baisse avec plus de thèmes : 8 par thème avec 7 thèmes, 7 avec 8, et 6 avec 9 ou 10. Vous pouvez fixer un nombre différent pour chaque thème, dans cette limite. Mettez-le à 0 pour retirer un thème ; au moins un thème garde ses questions.
 
 ### Durée totale
 

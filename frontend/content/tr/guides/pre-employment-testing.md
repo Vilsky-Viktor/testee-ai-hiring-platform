@@ -2,7 +2,7 @@
 title: "İşe alım öncesi testler: küçük ve orta ölçekli ekipler için pratik rehber"
 seoTitle: "İşe Alım Testleri: Türleri, Adillik ve Araç Seçimi"
 description: "İşe alım testleri nedir, hangi türleri vardır, ne zaman kullanılır, adillik ve yasal esaslar, araç nasıl seçilir. İşe alım ekipleri için kısa rehber."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # İşe alım öncesi testler: küçük ve orta ölçekli ekipler için pratik rehber
@@ -48,11 +48,11 @@ Testi başvurudan hemen sonra (iş ilanındaki bir bağlantıyla) veya lisans ya
 
 ## Adillik ve yasa: temel esaslar
 
-Bu bölüm Ekim 2026 itibarıyla üst düzey bir genel bakıştır, hukuki tavsiye değildir. Kurallar ülkenize, sektörünüze ve sonuçları nasıl kullandığınıza bağlıdır. Kendi hukuk danışmanınıza danışın.
+Bu bölüm Kasım 2026 itibarıyla üst düzey bir genel bakıştır, hukuki tavsiye değildir. Kurallar ülkenize, sektörünüze ve sonuçları nasıl kullandığınıza bağlıdır.
 
 ### Amerika Birleşik Devletleri: EEOC ve beşte dört kuralı
 
-İşe alım kararlarında test kullanan ABD'li işverenler, EEOC'nin (Eşit İstihdam Fırsatı Komisyonu) uyguladığı federal ayrımcılık karşıtı yasalara tabidir. Çalışan Seçme Prosedürlerine İlişkin Tek Tip Yönergeler (Uniform Guidelines on Employee Selection Procedures), olumsuz etki için bir pratik kural içerir: “Herhangi bir ırk, cinsiyet veya etnik grup için, en yüksek orana sahip grubun oranının beşte dördünden (4/5) (veya yüzde sekseninden) düşük olan bir seçilme oranı, federal denetim kurumlarınca genellikle olumsuz etkinin kanıtı olarak kabul edilir” ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)).
+İşe alım kararlarında test kullanan ABD'li işverenler, EEOC'nin (Eşit İstihdam Fırsatı Komisyonu) uyguladığı federal ayrımcılık karşıtı yasalara tabidir. Çalışan Seçme Prosedürlerine İlişkin Tek Tip Yönergeler (Uniform Guidelines on Employee Selection Procedures), olumsuz etki için bir pratik kural içerir: “Herhangi bir ırk, cinsiyet veya etnik grup için, en yüksek orana sahip grubun oranının beşte dördünden (4/5) (veya yüzde sekseninden) düşük olan bir seçilme oranı, federal denetim kurumlarınca genellikle olumsuz etkinin kanıtı olarak kabul edilir” ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). EEOC, Ekim 2026'da bu Yönergelerin yorumlayıcı bölümlerini yürürlükten kaldıran nihai kuralı Beyaz Saray'a gönderdi ve Ocak 2027'yi hedefliyor. Title VII'nin olumsuz etki kuralı yerinde kalıyor ve beşte dört kontrolü yararlı bir ilk test olmaya devam ediyor.
 
 Pratikte: yalnızca işin gerektirdiği bilgiyi test edin, gruplar arasındaki geçme oranlarını izleyin, ek süre gibi makul düzenlemeler sunun ve otomatik işe alım araçlarına ilişkin eyalet ve şehir kurallarını kontrol edin. Örneğin New York City'nin [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) düzenlemesi, otomatik bir istihdam karar aracı kullanılmadan önce bir yanlılık denetimi, bunun kamuya açık bir özeti ve adaylara bildirim yapılmasını şart koşar.
 
@@ -98,9 +98,9 @@ testee bir iş tanımını süreli, çoktan seçmeli bir beceri mülakatına dö
 
 - **Her aday, her konunun havuzundan kendine ait rastgele bir set alır;** her soruda sunucu tarafından uygulanan bir geri sayım vardır. İsteyen herkese ek süre verebilirsiniz.
 - **Değerlendirme kartları** her yanıtı, doğru olup olmadığını ve ne kadar sürdüğünü; çok hızlı yanıtlar, sayfadan ayrılma, kopyalama girişimleri ve olağan dışı yanıt örüntüleri için işaretlerle birlikte gösterir; ayrıca canlı bir mülakatta sorulacak sorular önerir. İşaretler puanı değiştirmez.
-- **Yanıtlar, yapay zekânın yazdığı bir cevap anahtarına göre değerlendirilir;** her konudaki anahtarlardan bir örneklem yayından önce kontrol edilir, diğerleri bir soru bildirildiğinde; hiçbir yapay zekâ adayın yanıtını okumaz veya yargılamaz. PDF rapor tek bir adayı veya tüm listeyi kapsar.
+- **Yanıtlar, yapay zekânın yazdığı bir cevap anahtarına göre değerlendirilir;** her konudaki anahtarlardan bir örneklem yayından önce kontrol edilir, diğerleri bir soru bildirildiğinde; hiçbir yapay zekâ adayın yanıtını yargılamaz. PDF rapor tek bir adayı veya tüm listeyi kapsar.
 - **Araçlarınızla çalışır:** Workable, Greenhouse, Teamtailor, Recruitee veya Breezy HR'da bir aşamaya taşıdığınız adaylar mülakatı alır ve sonuçları ATS'ye geri döner. Bir aday bitirdiğinde Slack haberdar olur ve [API](/api-docs) kendi platformunuzu bağlar. Bkz. [Beceri testleri ATS'nize nasıl bağlanır](/guides/ats-integration-skills-tests).
 
-Fiyatlandırma yanıt veren aday başınadır ve abonelik yoktur: kredi yükleme tutarınıza göre aday başına $2–5 (Kanada, Avustralya, İsrail, Polonya, İsviçre, Japonya, Güney Kore, Tayvan, Hong Kong, Tayland, Singapur, Hindistan, Avrupa'nın geri kalanı ve Birleşik Krallık'ta yerel para biriminde); ilk 3 adayınız ücretsizdir. Veriler AB'de barındırılır (bazı alt işleyenler ABD'dedir; bkz. [gizlilik politikası](/privacy)); veri işleme sözleşmesi ve şirketler için talimatlar dahildir.
+Fiyatlandırma yanıt veren aday başınadır ve abonelik yoktur: kredi yükleme tutarınıza göre aday başına $2–5 (Kanada, Avustralya, İsrail, Polonya, İsviçre, Japonya, Güney Kore, Tayvan, Hong Kong, Tayland, Singapur, Hindistan, AB'nin geri kalanı, Norveç, İzlanda, Lihtenştayn ve Birleşik Krallık'ta yerel para biriminde); ilk şirketinizin ilk 3 adayı ücretsizdir. Veriler AB'de barındırılır (bazı alt işleyenler ABD'dedir; bkz. [gizlilik politikası](/privacy)); veri işleme sözleşmesi ve şirketler için talimatlar dahildir.
 
 testee bir psikometri paketi, kod yazma ve çalıştırma platformu veya video mülakat aracı değildir; bunlarla birlikte çalışır. Diğer yapay zekâ destekli işe alım araçlarıyla karşılaştırması için [Yapay zekâ mülakatları](/guides/ai-interviews) sayfasını okuyun. Mühendislik pozisyonları için [Mühendis işe alımı nasıl yapılır](/guides/hiring-engineers) rehberine bakın.

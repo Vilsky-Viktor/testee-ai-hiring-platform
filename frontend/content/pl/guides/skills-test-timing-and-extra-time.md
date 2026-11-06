@@ -2,7 +2,7 @@
 title: "Jak ustawić czas w teście umiejętności: limit na pytanie, długość i dodatkowy czas"
 seoTitle: "Limit czasu w teście umiejętności i dodatkowy czas"
 description: "Ile czasu dać na każde pytanie, ile pytań zadać, jaka łączna długość się sprawdza i jak uczciwie przyznać dodatkowy czas kandydatom, którzy go potrzebują."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Jak ustawić czas w teście umiejętności: limit na pytanie, długość i dodatkowy czas
@@ -101,7 +101,7 @@ W testee rozmowa to test umiejętności w formie testu wyboru z limitem czasu, u
 
 ### Czas na pytanie
 
-- **Każde pytanie ma własne odliczanie,** prowadzone przez serwer, więc zamknięcie karty czy odświeżenie strony go nie zatrzymuje.
+- **Każde pytanie ma własne odliczanie,** prowadzone przez serwer, więc zamknięcie karty czy odświeżenie strony go nie zatrzymuje. W trybie głosowym biegnie, gdy Mira czyta pytanie.
 - **Wartość domyślna zależy od poziomu rozmowy,** który w wygenerowanej rozmowie wynika z poziomu doświadczenia wymaganego w opisie stanowiska: 60 sekund dla rozmowy na poziomie podstawowym lub średnim, 75 sekund dla trudnej.
 - **To średnia: każde pytanie dostaje z niej własny czas,** gdy losowane są pytania kandydata, zależnie od tego, ile trwa przeczytanie go i odpowiedź: jego słów, kodu lub przykładu (czytanych wolniej) i czasu na znalezienie odpowiedzi. Krótkie pytania dostają mniej, dłuższe i te z kodem — więcej, każde od połowy do dwukrotności średniej, a razem dają dokładnie liczbę pytań razy średnią. Odliczanie pokazuje własny czas każdego pytania, a karta wyników — ile z niego zajęła każda odpowiedź.
 - **Możesz zmienić średnią dla każdej rozmowy,** w jej ustawieniach, od 10 do 600 sekund. Zmiana dotyczy kandydatów, którzy zaczną po niej; czas kandydata jest ustalany w chwili, gdy zaczyna.
@@ -115,7 +115,7 @@ W rozmowie po arabsku, chińsku, japońsku, persku, rosyjsku, tajsku lub ukraiń
 ### Liczba pytań
 
 - **Każdy temat wygenerowanej rozmowy ma pulę 70 pytań,** a rozmowa ma najwyżej 10 tematów, które zatwierdzasz, zanim powstanie jakiekolwiek pytanie.
-- **Każdy kandydat dostaje domyślnie 10 pytań z każdego tematu,** losowy zestaw z puli we własnej kolejności, z takim samym udziałem pytań typu „Zaznacz wszystkie poprawne odpowiedzi”. Dla każdego tematu możesz ustawić inną liczbę. Ustaw 0, by pominąć temat; co najmniej jeden temat zachowuje swoje pytania.
+- **Każdy kandydat dostaje domyślnie 10 pytań z każdego tematu,** losowy zestaw z puli we własnej kolejności, z takim samym udziałem pytań typu „Zaznacz wszystkie poprawne odpowiedzi”. Rozmowa ma najwyżej 60 pytań, więc przy większej liczbie tematów wartość domyślna spada: po 8 przy 7 tematach, 7 przy 8 oraz 6 przy 9 lub 10. Dla każdego tematu możesz ustawić inną liczbę, w ramach tego limitu. Ustaw 0, by pominąć temat; co najmniej jeden temat zachowuje swoje pytania.
 
 ### Łączna długość
 

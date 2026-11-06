@@ -2,7 +2,7 @@
 title: "AI-agents, MCP en API's: wat het zijn en hoe je ze inzet bij werving en selectie"
 seoTitle: "AI-agents, MCP en API's bij werving: zo zet je ze in"
 description: "Wat een AI-agent, MCP en API zijn, hoe je ze veilig inzet bij werving en hoe je testee bedient via de eigen AI-assistent, Claude, ChatGPT of je platform."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # AI-agents, MCP en API's: wat het zijn en hoe je ze inzet bij werving en selectie
@@ -96,7 +96,7 @@ Werkt je team al in Claude of ChatGPT, dan kun je testee daarheen halen. De MCP-
 **Zo koppel je:**
 
 1. Open in testee het tabblad **Integraties** van een bedrijf en kies **AI-apps**. Kopieer het serveradres: `https://testee.ai/mcp`.
-2. **In Claude:** open Instellingen, dan Connectors, en voeg een aangepaste connector toe met dat adres. **In Claude Code:** voer `claude mcp add --transport http testee https://testee.ai/mcp` uit. **In ChatGPT:** voeg het toe als aangepaste connector in de instellingen voor apps en connectors.
+2. **In Claude:** open Aanpassen, dan Connectors, en voeg een aangepaste connector toe met dat adres; bij Team- en Enterprise-abonnementen voegt een eigenaar hem eerst toe in de organisatie-instellingen. **In Claude Code:** voer `claude mcp add --transport http testee https://testee.ai/mcp` uit. **In ChatGPT:** voeg het toe als aangepaste MCP-server. Waar dat kan, hangt af van je abonnement, en je beheerder moet het misschien toestaan.
 3. Je AI-app opent de aanmelding van testee. Meld je aan, controleer welke app erom vraagt, en kies **Toestaan**. Mag de app alleen lezen, zet dan eerst **Wijzigingen toestaan** uit.
 
 Vanaf dan vraag je in je chat wat je ook een collega zou vragen: "Wie zijn in testee de drie beste kandidaten voor Product designer?" De meeste AI-apps vragen je om toestemming voor een wijziging en waarschuwen je voor alles wat niet ongedaan kan worden gemaakt: testee vertelt ze welke acties iets wijzigen of verwijderen.
@@ -106,7 +106,7 @@ Vanaf dan vraag je in je chat wat je ook een collega zou vragen: "Wie zijn in te
 - **Je rechten.** Hij handelt namens jou, in elk bedrijf waar je lid van bent, met je rol in elk ervan.
 - **Credits en limieten.** Een kandidaat uitnodigen kost hetzelfde als in de app, en dezelfde e-maillimieten gelden.
 - **De registratie.** Alles wat een AI-app voor je doet, verschijnt in het actielog van het bedrijf als gedaan via een AI-app, van onderwerpen goedkeuren en resultaten bekijken tot extra tijd geven of een kandidaat intrekken. De eigenaar van het bedrijf leest het op het tabblad **Actielog** van het bedrijf.
-- **Het bedrijf beslist.** Eigenaren en beheerders kunnen AI-apps het gebruik van de gegevens van een bedrijf ontzeggen met **AI-apps toestaan in dit bedrijf** op de pagina AI-apps van het bedrijf.
+- **Het bedrijf beslist.** Eigenaren en beheerders kunnen AI-apps het gebruik van de gegevens van een bedrijf ontzeggen met de schakelaar **AI-apps toestaan** op de pagina AI-apps van het bedrijf.
 - **Wat hij niet kan.** Hij kan je wachtwoord en API-sleutels niet zien, en kan je account of een bedrijf niet verwijderen. Dat blijft in de app.
 
 **Om te ontkoppelen** verwijder je de connector in je AI-app, of kies je **Ontkoppelen** ernaast onder **AI-apps** op het tabblad Integraties. Hij werkt dan meteen niet meer.
@@ -117,7 +117,7 @@ Vanaf dan vraag je in je chat wat je ook een collega zou vragen: "Wie zijn in te
 
 Voor automatisering zonder AI heeft testee een API, beschreven in de [ontwikkelaarsdocumentatie](/api-docs).
 
-1. Een eigenaar of beheerder opent het tabblad **Integraties** van een bedrijf, dan **API**, en kiest **Nieuwe sleutel**. Geef hem de naam van het platform dat hem gaat gebruiken, kies wanneer hij verloopt en vink alleen aan wat hij nodig heeft: de sleutel van een dashboard leest alleen, die van een vacaturesite nodigt ook uit. Rechten kun je later toevoegen of intrekken. De sleutel wordt één keer getoond; bewaar hem op een veilige plek.
+1. Een eigenaar of beheerder opent het tabblad **Integraties** van een bedrijf, dan **API, SDK, webhooks**, en kiest **Nieuwe sleutel**. Geef hem de naam van het platform dat hem gaat gebruiken, kies wanneer hij verloopt en vink alleen aan wat hij nodig heeft: de sleutel van een dashboard leest alleen, die van een vacaturesite nodigt ook uit. Rechten kun je later toevoegen of intrekken. De sleutel wordt één keer getoond; bewaar hem op een veilige plek.
 2. Je platform stuurt verzoeken met die sleutel: de interviews van het bedrijf ophalen, kandidaten ophalen of opvragen met hun score, of ze geslaagd zijn en hun integriteitssignalen, en een kandidaat uitnodigen.
 3. Voeg een **webhook** toe: een adres op je platform dat testee ondertekend aanroept wanneer een kandidaat begint of klaar is, wanneer de uitnodiging een kandidaat niet bereikt of verloopt, wanneer een kandidaat wordt verwijderd en wanneer een interview klaarstaat, zodat je niet steeds hoeft te vragen. Op de API-pagina kun je er een testgebeurtenis naartoe sturen en zie je het afleverlogboek.
 

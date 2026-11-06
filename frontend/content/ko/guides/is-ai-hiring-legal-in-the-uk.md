@@ -2,14 +2,14 @@
 title: "영국에서 AI 채용은 합법일까? 기업이 알아야 할 것"
 seoTitle: "영국에서 AI 채용은 합법일까? 평등법과 개인정보 규칙"
 description: "영국에서 AI 채용은 규칙 안에서 합법입니다. Equality Act, 2026년 2월부터 적용된 UK GDPR의 새 자동화된 결정 규칙, ICO의 감사 결과를 정리했습니다."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # 영국에서 AI 채용은 합법일까? 기업이 알아야 할 것
 
 대체로 그렇습니다. 영국에서 채용에 AI를 사용하는 것은 합법입니다. 영국에는 EU의 AI Act 같은 단일 AI 법률이 없습니다. 대신 평등법(Equality Act 2010)과 UK GDPR이 다른 모든 테스트와 마찬가지로 AI 도구에도 적용되며, 2026년 2월 5일부터 UK GDPR에는 오로지 자동화된 수단으로 내려지는 결정에 관한 새 규칙이 있습니다.
 
-이 가이드는 규칙의 개요, 고용주가 해야 할 일, 그리고 testee의 접근 방식을 설명합니다. **이 글은 법률 자문이 아닙니다.** 2026년 10월 기준의 규칙을 반영합니다. 일부 규칙은 새로 생겼고, 이에 관한 감독기관의 지침은 아직 업데이트 중입니다.
+이 가이드는 규칙의 개요, 고용주가 해야 할 일, 그리고 testee의 접근 방식을 설명합니다. **이 글은 법률 자문이 아닙니다.** 2026년 11월 기준의 규칙을 반영합니다. 일부 규칙은 새로 생겼고, 이에 관한 감독기관의 지침은 아직 업데이트 중입니다.
 
 ## 짧은 답
 
@@ -83,6 +83,8 @@ UK GDPR의 기존 제22조는 몇 가지 예외를 두고, 오로지 자동화�
 
 ICO는 또한 AI 결과를 사람이 의미 있게 검토하고, 수행한 검토를 기록할 것을 권고합니다.
 
+2026년 3월 ICO는 30곳이 넘는 고용주와의 작업을 바탕으로 두 번째 보고서 [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/)를 발표했습니다. 많은 고용주가 사람의 실질적인 관여가 거의 없는데도 도구를 의사결정 지원으로 취급하고, 결정에 이의를 제기하기 위한 안전장치가 고르지 않게 적용되며, 자동화가 어떻게 쓰이는지 지원자에게 명확히 알리지 않는 경우가 많고, DPIA가 없거나 부실한 경우가 많다는 것을 확인했습니다. 자동화된 결정에 관한 ICO의 개정 지침은 2026년 5월 29일까지 의견 수렴을 거쳤고 2026년 11월 기준 확정되지 않았으며, AI와 자동화된 의사결정에 관한 법정 실무 규약도 마련되고 있습니다. 2026년 9월 30일부터 감독기관은 Information Commission이며, 여전히 ICO로 불립니다.
+
 ## 미국으로의 이전
 
 공급업체가 영국 지원자의 데이터를 미국으로 보낸다면 영국–미국 데이터 브리지(UK–US data bridge)로 처리할 수 있습니다. 2023년 10월 12일부터 시행 중인 [The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents)은 EU–US Data Privacy Framework의 영국 확장(UK Extension)에 따라 인증받은 미국 기업에 적용됩니다. 그 밖의 경우에는 영국 부록(UK addendum)을 붙인 표준계약조항 같은 보호조치가 필요합니다.
@@ -105,7 +107,7 @@ testee는 직무 설명을 바탕으로 AI가 작성한, 시간 제한이 있는
 
 현재 제품에서는 다음과 같습니다.
 
-- **AI는 문제와 정답을 작성하고, 채점은 정해진 규칙을 따릅니다.** 어떤 AI도 지원자의 답변을 읽거나 판단하지 않으며, 영상이나 얼굴 분석은 사용하지 않습니다. 음성 모드에서는 말을 텍스트로 변환해 선택지와 맞추고, 그 선택지를 지원자에게 말해 주고 화면에 보여 줍니다. 분명하게 말한 선택지 하나는 바로 답변으로 기록되고, 여러 선택지를 고른 경우에는 먼저 확인합니다. 말한 내용은 저장되지 않으며 목소리는 분석되지 않습니다.
+- **AI는 문제와 정답을 작성하고, 채점은 정해진 규칙을 따릅니다.** 어떤 AI도 지원자의 답변을 판단하지 않으며, 영상이나 얼굴 분석은 사용하지 않습니다. 음성 모드에서는 말을 텍스트로 변환해 선택지와 맞추고, 그 선택지를 지원자에게 말해 주고 화면에 보여 줍니다. 분명하게 말한 선택지 하나는 바로 답변으로 기록되고, 여러 선택지를 고른 경우에는 먼저 확인합니다. testee는 말한 내용을 저장하지 않으며 목소리는 분석되지 않습니다.
 - **주제는 회사가 승인합니다.** 문제가 작성되기 전에 승인하며, 합격 기준도 회사가 정합니다.
 - **결정은 사람이 합니다.** 결과 페이지와 PDF 보고서는 팀에게 결과를 검토하라고 안내하며, testee는 지원자를 탈락시키거나 불합격 메시지를 보내지 않습니다.
 - **지원자에게 알립니다.** 시작 전에, 문제는 AI가 작성하고 결과는 회사 담당자가 검토해 결정하며, 검토를 요청할 수 있다는 사실을 안내합니다.
@@ -128,4 +130,5 @@ testee는 직무 설명을 바탕으로 AI가 작성한, 시간 제한이 있는
 - Data (Use and Access) Act 2025, UK GDPR에 제22A조부터 제22D조를 신설한 [section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80) ([제22C조](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [2024년 11월](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), 2026년 3월.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

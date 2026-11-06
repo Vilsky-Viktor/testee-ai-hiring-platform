@@ -2,7 +2,7 @@
 title: "Einstellungstests: ein Praxisleitfaden für kleine und mittlere Teams"
 seoTitle: "Einstellungstests für Unternehmen: Arten, Recht und Software"
 description: "Eignungstests für Bewerber: welche Arten es gibt, wann sie sinnvoll sind, was rechtlich gilt und wie du eine Einstellungstest-Software wählst."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Einstellungstests: ein Praxisleitfaden für kleine und mittlere Teams
@@ -48,11 +48,11 @@ Setz den Test direkt nach der Bewerbung ein (über einen Link in der Stellenanze
 
 ## Fairness und Recht: die Grundlagen
 
-Dieser Abschnitt ist ein allgemeiner Überblick mit Stand Oktober 2026, keine Rechtsberatung. Die Regeln hängen von deinem Land, deiner Branche und davon ab, wie du die Ergebnisse nutzt. Kläre Einzelheiten mit deiner eigenen Rechtsberatung.
+Dieser Abschnitt ist ein allgemeiner Überblick mit Stand November 2026, keine Rechtsberatung. Die Regeln hängen von deinem Land, deiner Branche und davon ab, wie du die Ergebnisse nutzt.
 
 ### USA: EEOC und die Vier-Fünftel-Regel
 
-US-Arbeitgeber, die Tests für Einstellungsentscheidungen einsetzen, unterliegen den bundesweiten Antidiskriminierungsgesetzen, die die EEOC durchsetzt. Die Uniform Guidelines on Employee Selection Procedures enthalten eine Faustregel für nachteilige Auswirkungen (adverse impact): „A selection rate for any race, sex, or ethnic group which is less than four-fifths (4/5) (or eighty percent) of the rate for the group with the highest rate will generally be regarded by the Federal enforcement agencies as evidence of adverse impact“ ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). (Sinngemäß: Liegt die Auswahlquote einer Gruppe nach ethnischer Herkunft oder Geschlecht unter vier Fünfteln, also 80 Prozent, der Quote der Gruppe mit der höchsten Quote, werten die US-Bundesbehörden das in der Regel als Hinweis auf eine nachteilige Auswirkung.)
+US-Arbeitgeber, die Tests für Einstellungsentscheidungen einsetzen, unterliegen den bundesweiten Antidiskriminierungsgesetzen, die die EEOC durchsetzt. Die Uniform Guidelines on Employee Selection Procedures enthalten eine Faustregel für nachteilige Auswirkungen (adverse impact): „A selection rate for any race, sex, or ethnic group which is less than four-fifths (4/5) (or eighty percent) of the rate for the group with the highest rate will generally be regarded by the Federal enforcement agencies as evidence of adverse impact“ ([29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)). (Sinngemäß: Liegt die Auswahlquote einer Gruppe nach ethnischer Herkunft oder Geschlecht unter vier Fünfteln, also 80 Prozent, der Quote der Gruppe mit der höchsten Quote, werten die US-Bundesbehörden das in der Regel als Hinweis auf eine nachteilige Auswirkung.) Die EEOC hat dem Weißen Haus im Oktober 2026 eine endgültige Regelung zugeleitet, die die auslegenden Teile dieser Guidelines aufheben soll, mit Ziel Januar 2027. Die Regel von Title VII zu nachteiligen Auswirkungen bleibt bestehen, und die Vier-Fünftel-Prüfung bleibt ein nützlicher erster Test.
 
 In der Praxis heißt das: Teste nur Wissen, das die Stelle braucht, beobachte die Bestehensquoten der verschiedenen Gruppen, biete Anpassungen wie zusätzliche Zeit an und prüfe die Regeln einzelner Bundesstaaten und Städte für automatisierte Einstellungstools. So verlangt etwa das [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) der Stadt New York ein Bias-Audit, eine öffentliche Zusammenfassung davon und eine Information der Kandidaten, bevor ein automatisiertes Tool für Einstellungsentscheidungen eingesetzt wird.
 
@@ -98,9 +98,9 @@ testee macht aus einer Stellenbeschreibung ein zeitlich begrenztes Multiple-Choi
 
 - **Jeder Kandidat erhält einen eigenen zufälligen Fragensatz** aus dem Fragenpool jedes Themas, mit einem serverseitig erzwungenen Countdown bei jeder Frage. Allen, die darum bitten, kannst du zusätzliche Zeit geben.
 - **Auswertungen** zeigen jede Antwort, ob sie richtig war und wie lange sie gedauert hat, mit Hinweisen auf zu schnelle Antworten, das Verlassen der Seite, Kopierversuche und ungewöhnliche Antwortmuster, dazu Fragen, nach denen du in einem Live-Gespräch fragen kannst. Die Hinweise ändern die Punktzahl nicht.
-- **Antworten werden anhand eines Lösungsschlüssels bewertet**, den KI schreibt; eine Stichprobe der Schlüssel jedes Themas wird vor der Freigabe geprüft, die übrigen, sobald eine Frage markiert wird. Keine KI liest oder beurteilt die Antwort eines Kandidaten. Ein PDF-Bericht deckt einen Kandidaten oder die ganze Liste ab.
+- **Antworten werden anhand eines Lösungsschlüssels bewertet**, den KI schreibt; eine Stichprobe der Schlüssel jedes Themas wird vor der Freigabe geprüft, die übrigen, sobald eine Frage markiert wird. Keine KI beurteilt die Antwort eines Kandidaten. Ein PDF-Bericht deckt einen Kandidaten oder die ganze Liste ab.
 - **Funktioniert mit deinen Tools:** Kandidaten, die du in Workable, Greenhouse, Teamtailor, Recruitee oder Breezy HR in eine Phase verschieben, erhalten das Interview, und ihre Ergebnisse gehen zurück ins ATS. Slack meldet, wenn ein Kandidat fertig ist, und die [API](/api-docs) bindet deine eigene Plattform an. Siehe [So verbindest du Fachtests mit deinem ATS](/guides/ats-integration-skills-tests).
 
-Bezahlt wird pro Kandidat, der antwortet, ohne Abo: 2–5 $ pro Kandidat je nach Höhe deiner Aufladung (in Kanada, Australien, Israel, Polen, der Schweiz, Japan, Südkorea, Taiwan, Hongkong, Thailand, Singapur, Indien, im übrigen Europa und im Vereinigten Königreich in der Landeswährung), und deine ersten 3 Kandidaten sind kostenlos. Die Daten werden in der EU gehostet (einige Unterauftragsverarbeiter sitzen in den USA; siehe die [Datenschutzerklärung](/privacy)), und der Auftragsverarbeitungsvertrag sowie die Anleitung für Unternehmen sind enthalten.
+Bezahlt wird pro Kandidat, der antwortet, ohne Abo: 2–5 $ pro Kandidat je nach Höhe deiner Aufladung (in Kanada, Australien, Israel, Polen, der Schweiz, Japan, Südkorea, Taiwan, Hongkong, Thailand, Singapur, Indien, in der übrigen EU, in Norwegen, Island, Liechtenstein und im Vereinigten Königreich in der Landeswährung), und die ersten 3 Kandidaten deines ersten Unternehmens sind kostenlos. Die Daten werden in der EU gehostet (einige Unterauftragsverarbeiter sitzen in den USA; siehe die [Datenschutzerklärung](/privacy)), und der Auftragsverarbeitungsvertrag sowie die Anleitung für Unternehmen sind enthalten.
 
 testee ist keine psychometrische Testsuite, keine Plattform zum Schreiben und Ausführen von Code und kein Videointerview-Tool, und es funktioniert neben solchen Tools. Wie es sich mit anderen KI-Recruiting-Tools vergleicht, liest du unter [KI-Interviews](/guides/ai-interviews). Für technische Stellen siehe [Entwickler einstellen](/guides/hiring-engineers).

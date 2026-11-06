@@ -2,14 +2,14 @@
 title: "在英国用 AI 招聘合法吗？雇主需要了解的要点"
 seoTitle: "英国 AI 招聘合规指南：平等法与数据保护要点"
 description: "在英国用 AI 招聘是合法的，但有规则约束：《平等法》、UK GDPR 自 2026 年 2 月起施行的自动化决策新规，以及英国信息专员办公室（ICO）的审计发现。"
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # 在英国用 AI 招聘合法吗？雇主需要了解的要点
 
 总体而言，是的：在英国，在招聘中使用 AI 是合法的。英国没有像欧盟《人工智能法案》那样的统一 AI 法律。相反，《2010 年平等法》（Equality Act 2010）和 UK GDPR（英国版《通用数据保护条例》）像适用于任何测评一样适用于 AI 工具；自 2026 年 2 月 5 日起，UK GDPR 对完全通过自动化方式作出的决定有了新规则。
 
-本指南从宏观层面解释相关规则、雇主必须做什么，以及 testee 的做法。**本文不构成法律建议。** 内容反映截至 2026 年 10 月的规则；其中一些规则是新的，监管机构的相关指南仍在更新中。
+本指南从宏观层面解释相关规则、雇主必须做什么，以及 testee 的做法。**本文不构成法律建议。** 内容反映截至 2026 年 11 月的规则；其中一些规则是新的，监管机构的相关指南仍在更新中。
 
 ## 简短回答
 
@@ -83,6 +83,8 @@ UK GDPR 原第 22 条赋予个人不受仅基于自动化处理作出的决定�
 
 ICO 还建议对 AI 输出进行有意义的人工审核，并记录已完成的审核。
 
+2026 年 3 月，ICO 发布了第二份报告 [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/)，依据是它与 30 多家雇主的合作。报告发现，许多雇主把工具当作决策辅助，而实际的人工参与却很少；对决定提出质疑的保障措施执行不一；候选人往往没有被清楚告知自动化的使用方式；DPIA 常常缺失或质量不高。ICO 关于自动化决策的更新版指南已公开征求意见至 2026 年 5 月 29 日，截至 2026 年 11 月尚未定稿，关于 AI 和自动化决策的法定实务守则也即将出台。自 2026 年 9 月 30 日起，监管机构变为信息委员会（Information Commission），但仍沿用 ICO 的名称。
+
 ## 向美国传输数据
 
 如果提供商将英国候选人的数据发送到美国，英美“数据桥”（UK–US data bridge）可以覆盖这种传输：[The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents) 自 2023 年 10 月 12 日起施行，适用于按 EU–US Data Privacy Framework 英国扩展（UK Extension）获得认证的美国公司。其他情况则需要保障措施，例如附带英国附录（UK addendum）的标准合同条款。
@@ -105,7 +107,7 @@ testee 根据职位描述，由 AI 编写限时的多项选择技能面试。它
 
 这在今天的产品中体现为：
 
-- **AI 编写题目及其答案；评分遵循固定规则。** 没有 AI 阅读或评判候选人的回答，也不使用任何视频或面部分析。在语音模式下，语音会被转成文字并与选项匹配，匹配到的选项会读给候选人听并显示在屏幕上：清楚说出的单个选项会立即记为答案，选择多个选项时则先确认。语音从不保存，声音也从不分析。
+- **AI 编写题目及其答案；评分遵循固定规则。** 没有 AI 评判候选人的回答，也不使用任何视频或面部分析。在语音模式下，语音会被转成文字并与选项匹配，匹配到的选项会读给候选人听并显示在屏幕上：清楚说出的单个选项会立即记为答案，选择多个选项时则先确认。testee 从不保存语音，声音也从不分析。
 - **由你批准主题，** 之后才会生成题目，及格线也由你选择。
 - **由人做决定。** 结果页面和 PDF 报告会提醒你的团队审核结果；testee 不会拒绝候选人，也不会发送拒绝通知。
 - **告知候选人：** 在开始之前，候选人会被告知题目由 AI 编写、由你公司的人员审核结果并做决定，以及他们可以申请复核。
@@ -128,4 +130,5 @@ testee 根据职位描述，由 AI 编写限时的多项选择技能面试。它
 - Data (Use and Access) Act 2025，[section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80)，在 UK GDPR 中新增第 22A 至 22D 条（[第 22C 条](https://www.legislation.gov.uk/eur/2016/679/article/22C)）。
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026，[SI 2026/82, regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made)。
 - Information Commissioner's Office，*AI tools in recruitment: audit outcomes report*，[2024 年 11 月](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf)。
+- Information Commissioner's Office，[*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/)，2026 年 3 月。
 - The Data Protection (Adequacy) (United States of America) Regulations 2023，[SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents)。

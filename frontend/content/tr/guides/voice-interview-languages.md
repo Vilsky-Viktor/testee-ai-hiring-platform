@@ -2,14 +2,14 @@
 title: "23 dilde sesli mülakatlar: Mira her dilde ne kadar iyi okuyor ve duyuyor"
 seoTitle: "23 Dilde Sesli Mülakatlar: Dillere Göre Kalite"
 description: "testee'nin sesli modu 23 dilin her birinde soruları ne kadar iyi okuyor, sözlü cevapları ne kadar iyi anlıyor, nasıl ölçtük ve ne zaman dokunmak daha iyi."
-updated: "2026-11-04"
+updated: "2026-11-07"
 ---
 
 # 23 dilde sesli mülakatlar: Mira her dilde ne kadar iyi okuyor ve duyuyor
 
 Sesli modda testee'nin yapay zekâ mülakatçısı Mira her soruyu ve seçeneklerini sesli okur, aday da konuşarak cevap verir: "B", "C seçeneği", "medyan" ya da birden fazla doğru cevabı olan bir soruda "A ve D". Sesli mod testee'nin konuştuğu 23 dilin hepsinde çalışır, ancak konuşma teknolojisi her dilde aynı derecede iyi değildir. Bu rehber, adaylarınıza uygun modu seçebilmeniz için sesli modun her dilde ne kadar iyi çalıştığını gösterir.
 
-Dil hangisi olursa olsun adaylar konuşmak yerine her zaman bir seçeneğe dokunabilir; Mira'nın aldığı seçenek, Mira onu tekrar ederken ekranda gösterilir.
+Mülakat başladıktan sonra, dil hangisi olursa olsun adaylar konuşmak yerine her zaman bir seçeneğe dokunabilir; Mira'nın aldığı seçenek, Mira onu tekrar ederken ekranda gösterilir. Sorunun süresi, Mira soruyu okurken de işler.
 
 ## Kısaca
 
@@ -53,9 +53,9 @@ Dil hangisi olursa olsun adaylar konuşmak yerine her zaman bir seçeneğe dokun
 
 - **İbranice, Arapça ve Farsça:** Mira seçenekleri bazen ekranda görünen A, B, C ve D yerine o dilin kendi alfabesindeki harflerle (alef, bet, gimel) adlandırır. Sıra aynıdır, yani ilk seçenek yine ilktir, ancak adaylar ekranda gördükleri harflerle cevap vermelidir.
 - **Estonca:** kısa bir "ei" (hayır) A harfi gibi duyulabilir; bu yüzden Mira'nın tekrar ettiği bir seçimi reddeden aday zaman zaman A seçeneğini seçmiş gibi kaydedilir.
-- **Tayca:** söylenen bir harf bazen Tayca bir sayı olarak duyulur ("ข้อ C", "ข้อ สี่" yani dördüncü seçenek olarak), bu da yanlış seçeneğin kaydedilmesine yol açabilir; sırasıyla adlandırılan seçenekler de çoğu zaman anlaşılmaz. Dokunmak daha güvenlidir.
+- **Tayca:** söylenen bir harf bazen Tayca bir sayı olarak duyulur ("ข้อ C", "ข้อ สี่" yani dördüncü seçenek olarak), bu da yanlış seçeneğin kaydedilmesine yol açabilir. Dokunmak daha güvenlidir.
 - **Japonca:** "選択肢C" (C seçeneği) bazen başka bir kelime olarak duyuldu ve yanlış seçenek olarak kaydedildi; harfi tek başına söylemek daha iyi çalışır.
-- **Rusça, Ukraynaca ve Lehçe:** iki harf arasındaki "ve" bağlacı ("A и C") bazen üçüncü bir harf olarak duyulur ve Mira yeniden sorar.
+- **Rusça ve Lehçe:** iki harf arasındaki "ve" bağlacı ("A и C") bazen üçüncü bir harf olarak duyulur ve Mira yeniden sorar.
 
 ## Nasıl ölçtük
 
@@ -67,6 +67,7 @@ Rakamlar bir garanti değil, bir yol göstericidir. Dil başına yirmi cevap, ik
 
 - **Sesli mod**, konuşmanın önemli olduğu pozisyonlara, yazmamayı veya dokunmamayı tercih eden adaylara ve erişilebilirlik ihtiyaçlarına uygundur. En iyi sonucu çok iyi ve iyi dillerde verir.
 - **Tıklama modu** varsayılandır ve her dilde aynı şekilde çalışır. Orta olarak değerlendirilen bir dilde kritik pozisyonlar için onu tercih edin.
+- Sesli bir mülakata başlamak için çalışan bir mikrofon gerekir; bu yüzden mikrofon kullanamayan bir adayın, başlamadan önce ayarlanmış tıklama moduna ihtiyacı vardır.
 - Modu tüm mülakat için mülakatın ayarlarından belirleyebilir, bir aday başlamadan önce yalnızca onun için değiştirebilirsiniz.
 
-Sesli modda adayların sesi yalnızca cevaplarını okumak için metne dönüştürülür; hiçbir zaman saklanmaz veya başka bir şekilde analiz edilmez.
+Sesli modda adayların sesi yalnızca cevaplarını okumak için metne dönüştürülür, hiçbir zaman başka bir şekilde analiz edilmez ve testee bu sesi hiçbir zaman saklamaz. Konuşmayı metne dönüştüren OpenAI'a konuşmayı saklamaması söylenir; OpenAI, API verilerini yalnızca kötüye kullanımı denetlemek için en fazla 30 gün tutar.

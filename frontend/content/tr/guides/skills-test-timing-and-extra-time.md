@@ -2,7 +2,7 @@
 title: "Beceri testinin süresi nasıl ayarlanır: soru başına süre, uzunluk ve ek süre"
 seoTitle: "Beceri Testinde Süre Sınırı: Soru Başına Süre ve Ek Süre"
 description: "Her soruya ne kadar süre verilmeli, kaç soru sorulmalı, toplam süre ne olmalı ve ihtiyacı olan adaylara ek süre adil şekilde nasıl verilir."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Beceri testinin süresi nasıl ayarlanır: soru başına süre, uzunluk ve ek süre
@@ -101,7 +101,7 @@ testee'de mülakat, iş tanımınızdan oluşturulan süreli, çoktan seçmeli b
 
 ### Soru başına süre
 
-- **Her sorunun kendi geri sayımı vardır** ve bu sayımı sunucu tutar; bu yüzden sekmeyi kapatmak ya da sayfayı yenilemek onu durdurmaz.
+- **Her sorunun kendi geri sayımı vardır** ve bu sayımı sunucu tutar; bu yüzden sekmeyi kapatmak ya da sayfayı yenilemek onu durdurmaz. Sesli modda süre, Mira soruyu okurken de işler.
 - **Varsayılan süre mülakatın seviyesine bağlıdır;** oluşturulan bir mülakatta bu seviye, iş tanımının istediği kıdemden gelir: temel veya orta seviye bir mülakat için 60 saniye, zor bir mülakat için 75 saniye.
 - **Bu bir ortalamadır: her soru, adayın soruları seçilirken bundan kendi süresini alır;** süre, soruyu okuyup cevaplamanın ne kadar sürdüğüne göre belirlenir: kelimeleri, varsa kod ya da örnek (daha yavaş okunur) ve cevabı bulma süresi. Kısa sorular daha az, daha uzun sorular ve kod içerenler daha fazla süre alır; her biri ortalamanın yarısı ile iki katı arasındadır ve hepsi birlikte tam olarak soru sayısı çarpı ortalamaya eşittir. Geri sayım her sorunun kendi süresini gösterir; puan kartı da her cevabın bundan ne kadar sürdüğünü gösterir.
 - **Ortalamayı mülakat bazında değiştirebilirsiniz,** mülakatın ayarlarından, 10 ile 600 saniye arasında. Değişiklik, sonrasında başlayan adaylar için geçerli olur; bir adayın süresi başladığı anda sabitlenir.
@@ -115,7 +115,7 @@ Arapça, Çince, Japonca, Farsça, Rusça, Tayca veya Ukraynaca bir mülakatta h
 ### Soru sayısı
 
 - **Oluşturulan bir mülakattaki her konunun 70 soruluk bir havuzu vardır** ve bir mülakatta en fazla 10 konu bulunur; bu konuları siz, herhangi bir soru yazılmadan önce onaylarsınız.
-- **Her aday varsayılan olarak konu başına 10 soru alır:** havuzdan kendine özgü sırayla gelen rastgele bir set, aynı oranda "doğru olanların tümünü seçin" sorusuyla. Her konu için farklı bir sayı belirleyebilirsiniz. Bir konuyu dışarıda bırakmak için 0 yapın; en az bir konunun soruları kalır.
+- **Her aday varsayılan olarak konu başına 10 soru alır:** havuzdan kendine özgü sırayla gelen rastgele bir set, aynı oranda "doğru olanların tümünü seçin" sorusuyla. Bir mülakatta en fazla 60 soru olur, bu yüzden konu sayısı arttıkça varsayılan düşer: 7 konuda 8'er, 8 konuda 7'şer, 9 veya 10 konuda 6'şar soru. Bu sınır içinde her konu için farklı bir sayı belirleyebilirsiniz. Bir konuyu dışarıda bırakmak için 0 yapın; en az bir konunun soruları kalır.
 
 ### Toplam uzunluk
 

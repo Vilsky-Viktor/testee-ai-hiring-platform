@@ -2,14 +2,14 @@
 title: "AB'de yapay zekâ ile işe alım yasal mı? İşverenlerin bilmesi gerekenler"
 seoTitle: "AB'de Yapay Zekâ ile İşe Alım Yasal mı? AI Act ve GDPR"
 description: "AB'de işe alımda yapay zekâ kurallar dahilinde yasaldır. Yapay Zekâ Yasası'nın yüksek risk kategorisi, Aralık 2027'ye kadarki tarihler ve GDPR esasları."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # AB'de yapay zekâ ile işe alım yasal mı? İşverenlerin bilmesi gerekenler
 
 Genel olarak evet: AB'de işe alımda yapay zekâ kullanmak yasaldır. Ancak adayları değerlendiren yapay zekâ araçlarının çoğu, Yapay Zekâ Yasası'nın yüksek risk kategorisine girer ve bu, hem sağlayıcıya hem de işveren olarak size yükümlülükler getirir. Bazı uygulamalar ise doğrudan yasaktır. GDPR de her zaman olduğu gibi aday verilerine uygulanır.
 
-Bu rehber kuralları üst düzeyde, önemli tarihleri, işverenlerin yapması gerekenleri ve testee'nin konuya yaklaşımını açıklar. **Hukuki tavsiye değildir.** Ekim 2026 itibarıyla geçerli kuralları yansıtır. Kurallar yenidir, kılavuzlar hâlâ kesinleşmektedir ve ulusal mevzuat kendi gerekliliklerini ekler. Bunlardan herhangi birine dayanmadan önce kendi hukuk danışmanınıza danışın.
+Bu rehber kuralları üst düzeyde, önemli tarihleri, işverenlerin yapması gerekenleri ve testee'nin konuya yaklaşımını açıklar. **Hukuki tavsiye değildir.** Kasım 2026 itibarıyla geçerli kuralları yansıtır. Kurallar yenidir, kılavuzlar hâlâ kesinleşmektedir ve ulusal mevzuat kendi gerekliliklerini ekler.
 
 ## Kısa yanıt
 
@@ -36,7 +36,7 @@ Bu, geniş bir araç yelpazesini kapsar: CV filtreleri, sıralama sistemleri, ya
 
 Genellikle hayır. Yapay Zekâ Yasası'nın [Madde 6(3)](https://artificialintelligenceact.eu/article/6/) hükmü, bazı Ek III sistemlerini yüksek risk kategorisinin dışında bırakır; örneğin dar kapsamlı usule ilişkin bir görev yerine getirdiklerinde veya yalnızca bir insan değerlendirmesine hazırlık yaptıklarında. Ancak kişilerin profilini çıkaran bir Ek III sistemi her zaman yüksek risklidir ve adayları yeteneklerine göre puanlamak veya sıralamak büyük olasılıkla profil çıkarma sayılır.
 
-Avrupa Komisyonu'nun yüksek risk sınıflandırmasına ilişkin taslak kılavuzu (19 Mayıs 2026'da görüşe açılmak üzere yayımlandı; Ekim 2026 itibarıyla kesinleşmedi) geniş bir yaklaşım benimser. Seçmeyi “adayların kısa listeye alınması, notlandırılması, sıralanması veya test edilmesi” olarak tanımlar ve [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update) özetine göre, uygunluk puanı üreten sistemleri “nihai işe alım kararı bir insan işe alım uzmanı tarafından verilse bile” yüksek riskli kabul eder.
+Avrupa Komisyonu'nun yüksek risk sınıflandırmasına ilişkin taslak kılavuzu (19 Mayıs 2026'da görüşe açılmak üzere yayımlandı; Kasım 2026 itibarıyla kesinleşmedi) geniş bir yaklaşım benimser. Seçmeyi “adayların kısa listeye alınması, notlandırılması, sıralanması veya test edilmesi” olarak tanımlar ve [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update) özetine göre, uygunluk puanı üreten sistemleri “nihai işe alım kararı bir insan işe alım uzmanı tarafından verilse bile” yüksek riskli kabul eder.
 
 Dolayısıyla her adaya bir puan ve sıralama veren bir araç, kimin işe alınacağına insanlar karar verse bile büyük olasılıkla yüksek risklidir.
 
@@ -49,7 +49,7 @@ Dolayısıyla her adaya bir puan ve sıralama veren bir araç, kimin işe alına
 | 2 Aralık 2027 | İşe alım araçları dahil Ek III sistemleri için yüksek risk yükümlülükleri |
 | 2 Ağustos 2028 | Ek I kapsamındaki ürünlerdeki yapay zekâ için yüksek risk yükümlülükleri |
 
-Ek III için yüksek risk tarihi başlangıçta 2 Ağustos 2026 idi. Yapay Zekâya İlişkin Dijital Omnibus (Digital Omnibus on AI; 27 Temmuz 2026'dan beri yürürlükte olan (AB) 2026/1744 sayılı Tüzük) bu tarihi 2 Aralık 2027'ye erteledi ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Tarihler, Ekim 2026 itibarıyla [AI Act Explorer, Madde 113](https://artificialintelligenceact.eu/article/113/) sayfasında gösterildiği şekildedir.
+Ek III için yüksek risk tarihi başlangıçta 2 Ağustos 2026 idi. Yapay Zekâya İlişkin Dijital Omnibus (Digital Omnibus on AI; 27 Temmuz 2026'dan beri yürürlükte olan (AB) 2026/1744 sayılı Tüzük) bu tarihi 2 Aralık 2027'ye erteledi ([Official Journal](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). Ayrıca 27 Temmuz 2026'dan itibaren geçerli olmak üzere Madde 4'teki yapay zekâ okuryazarlığı yükümlülüğünü yeniden yazdı: sağlayıcılar ve işverenler (deployers) artık personelinin yapay zekâ okuryazarlığını desteklemek için önlemler almak zorundadır ve güvence altına alınması gereken belirli bir düzey yoktur. Tarihler Kasım 2026 itibarıyladır.
 
 Ek süre hazırlık içindir, kuralları görmezden gelmek için bir neden değildir. GDPR ve ayrımcılık karşıtı yasalar halihazırda tam olarak uygulanmaktadır.
 
@@ -88,7 +88,7 @@ Madde 26, işverenin yükümlülüklerini belirler. Özetle ([Madde 26](https://
 - **Çalışan temsilcilerini ve etkilenen çalışanları,** işyerinde yüksek riskli bir sistem kullanmadan önce **bilgilendirin.**
 - **Adaylara,** yüksek riskli bir yapay zekâ sisteminin kullanımına tabi olduklarını **bildirin.**
 
-Kamu kurumları ve bazı özel kuruluşlar ayrıca bir temel haklar etki değerlendirmesi yapmak zorundadır (Madde 27). Madde 4'teki yapay zekâ okuryazarlığı yükümlülüğü de halihazırda geçerlidir: işe alımınızda yapay zekâ araçlarını kullanan kişiler, bu araçların ne yaptığını ve ne yapmadığını anlamalıdır.
+Kamu kurumları ve bazı özel kuruluşlar ayrıca bir temel haklar etki değerlendirmesi yapmak zorundadır (Madde 27). Madde 4 de halihazırda geçerlidir: işe alımınızda yapay zekâ araçlarını kullanan kişilerin yapay zekâ okuryazarlığını desteklemek için önlemler alın; böylece bu kişiler araçların ne yaptığını ve ne yapmadığını anlasın.
 
 ## GDPR esasları
 
@@ -119,7 +119,7 @@ testee, bir iş tanımından yapay zekâ tarafından yazılmış süreli, çokta
 
 Bunun bugün üründeki karşılığı:
 
-- **Soruları ve cevap anahtarlarını yapay zekâ yazar; değerlendirme sabit kurallara göre yapılır.** Hiçbir yapay zekâ adayın yanıtını okumaz veya yargılamaz; video, ses veya yüz analizi kullanılmaz. Yapay zekâ bir anahtarı sonradan düzeltirse düzeltme, sonrasında başlayan adaylar için geçerli olur; geçmiş sonuçlar değişmez.
+- **Soruları ve cevap anahtarlarını yapay zekâ yazar; değerlendirme sabit kurallara göre yapılır.** Hiçbir yapay zekâ adayın yanıtını yargılamaz; video veya yüz analizi kullanılmaz. Sesli modda konuşma metne dönüştürülür ve bir seçenekle eşleştirilir; bu seçenek adaya söylenir ve ekranda gösterilir: açıkça söylenen tek bir seçenek hemen cevap olarak kaydedilir, birden çok seçenekli bir seçim ise önce onaylatılır. testee konuşmayı asla saklamaz ve ses asla analiz edilmez. Yapay zekâ bir anahtarı sonradan düzeltirse düzeltme, sonrasında başlayan adaylar için geçerli olur; geçmiş sonuçlar değişmez.
 - **Konuları siz onaylarsınız;** bu, herhangi bir soru yazılmadan önce olur ve her soruyu görebilirsiniz.
 - **Kararı insanlar verir.** Sonuçlar sayfası ve PDF raporlar ekibinize sonuçları incelemesini hatırlatır; testee adayları reddetmez veya ret mesajı göndermez.
 - **Adaylar başlamadan önce bilgilendirilir:** soruların yapay zekâ tarafından yazıldığı, sonuçları şirketinizdeki kişilerin inceleyip karar verdiği ve yeniden inceleme talep edebilecekleri.

@@ -2,7 +2,7 @@
 title: "Cara mengatur waktu tes keterampilan: timer per soal, panjang tes, dan waktu tambahan"
 seoTitle: "Waktu Tes Keterampilan: Timer per Soal dan Waktu Tambahan"
 description: "Berapa lama waktu tiap soal, berapa banyak soal, total durasi yang pas, dan cara memberi waktu tambahan secara adil kepada kandidat yang membutuhkannya."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Cara mengatur waktu tes keterampilan: timer per soal, panjang tes, dan waktu tambahan
@@ -101,7 +101,7 @@ Di testee, wawancara adalah tes keterampilan pilihan ganda berbatas waktu yang d
 
 ### Waktu per soal
 
-- **Setiap soal punya hitung mundurnya sendiri,** yang dijalankan oleh server, jadi menutup tab atau memuat ulang halaman tidak menghentikannya.
+- **Setiap soal punya hitung mundurnya sendiri,** yang dijalankan oleh server, jadi menutup tab atau memuat ulang halaman tidak menghentikannya. Dalam mode suara, hitung mundurnya berjalan saat Mira membacakan soal.
 - **Default-nya bergantung pada level wawancara,** yang untuk wawancara yang dibuat otomatis berasal dari tingkat senioritas yang diminta deskripsi pekerjaan: 60 detik untuk wawancara dasar atau menengah, 75 detik untuk wawancara sulit.
 - **Ini rata-rata: setiap soal mendapat waktunya sendiri** darinya saat soal seorang kandidat diambil, sesuai lama membaca dan menjawabnya: kata-katanya, kode atau contoh di dalamnya (yang dibaca lebih lambat), dan waktu untuk memikirkan jawaban. Soal pendek mendapat lebih sedikit, soal yang lebih panjang dan yang berisi kode mendapat lebih banyak, masing-masing antara setengah dan dua kali rata-rata, dan jumlah semuanya tepat sama dengan jumlah soal dikali rata-rata. Hitung mundur menampilkan waktu masing-masing soal, dan kartu nilai menunjukkan berapa banyak dari waktu itu yang dipakai setiap jawaban.
 - **Kamu bisa mengubah rata-ratanya per wawancara,** di pengaturannya, dari 10 sampai 600 detik. Perubahan berlaku untuk kandidat yang mulai setelahnya; waktu seorang kandidat ditetapkan saat ia mulai.
@@ -115,7 +115,7 @@ Dalam wawancara berbahasa Arab, Mandarin, Jepang, Persia, Rusia, Thai, atau Ukra
 ### Jumlah soal
 
 - **Setiap topik dalam wawancara yang dibuat otomatis punya bank berisi 70 soal,** dan satu wawancara punya paling banyak 10 topik, yang kamu setujui sebelum soal apa pun ditulis.
-- **Secara default setiap kandidat mendapat 10 soal per topik,** berupa set acak dari bank dengan urutannya sendiri, dengan porsi soal "pilih semua jawaban yang benar" yang sama. Kamu bisa menetapkan jumlah yang berbeda untuk setiap topik. Atur ke 0 untuk mengeluarkan sebuah topik; setidaknya satu topik tetap punya soal.
+- **Secara default setiap kandidat mendapat 10 soal per topik,** berupa set acak dari bank dengan urutannya sendiri, dengan porsi soal "pilih semua jawaban yang benar" yang sama. Satu wawancara berisi paling banyak 60 soal, jadi dengan lebih banyak topik, jumlah default-nya turun: 8 per topik untuk 7 topik, 7 untuk 8 topik, dan 6 untuk 9 atau 10 topik. Kamu bisa menetapkan jumlah yang berbeda untuk setiap topik, dalam batas itu. Atur ke 0 untuk mengeluarkan sebuah topik; setidaknya satu topik tetap punya soal.
 
 ### Total durasi
 

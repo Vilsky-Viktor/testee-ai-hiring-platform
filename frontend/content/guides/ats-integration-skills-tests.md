@@ -2,7 +2,7 @@
 title: "How to connect skills tests to your ATS"
 seoTitle: "How to Connect Skills Tests to Your ATS: A Practical Guide"
 description: "Send skills tests and get results through your ATS automatically, keep people in charge of hiring decisions, and know what to check first."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # How to connect skills tests to your ATS
@@ -90,15 +90,15 @@ testee connects to **Workable, Greenhouse, Teamtailor, Recruitee and Breezy HR**
 - **Your key, your control.** An owner or admin connects the ATS on the company's Integrations tab with a key your company creates in the ATS. testee checks it before saving, stores it encrypted and never shows it again. Disconnecting deletes the key and the linked jobs at once.
 - **Link a job to an interview.** Pick an ATS job and the stage that triggers the invite, and link it to an existing testee interview or make a new one from the job's text in the ATS. You review the topics before any question is written.
 - **Move a candidate, the invite goes out.** Each candidate is invited once per interview, even if the ATS sends the same event twice.
-- **Results back in the ATS.** When a candidate finishes, testee adds a note or comment to them in the ATS with their grade, whether they passed, any integrity flags (leaving the page, copy attempts, answers picked too fast to have read the question) and a link to their scorecard with every answer.
-- **Failures don't go unnoticed.** If a candidate can't be invited, for example because the company is out of credits, has hit an email limit, or because testee has paused invites for a while, every member of the company gets a notification naming the ATS. Candidates not invited for lack of credits are invited automatically after a top-up, and any job's waiting candidates can be invited again with one click.
+- **Results back in the ATS.** When a candidate finishes, testee adds a note or comment to them in the ATS with their grade, whether they passed, whether any integrity flags were raised and a link to their scorecard with every answer and flag.
+- **Failures don't go unnoticed.** If a candidate can't be invited, for example because the company is out of credits, has hit an email limit, or because testee has paused invites for a while, every member of the company gets a notification naming the ATS. Candidates the ATS sent in the last 30 days who weren't invited for lack of credits are invited automatically after a top-up, and any job's waiting candidates can be invited again with one click.
 - **Slack, if you use it.** testee can post notifications, such as a finished candidate or an ATS candidate who couldn't be invited, to a Slack channel you choose.
 - **Your own platform.** If your ATS isn't on the list, testee's [API](/api-docs) lets you invite candidates with an API key and receive a signed web hook when a candidate starts, finishes, isn't reached, expires or is removed, and when an interview is ready.
 - **Data kept for a set time.** Candidates saved from an ATS are deleted after 365 days, or earlier with their interview or company.
 
-Some ATSs need a step on their side. Greenhouse, Teamtailor and Recruitee ask you to add a web hook by hand; testee's Instructions dialog shows the address and where to paste its secret. testee sets up Workable's and Breezy HR's web hooks itself.
+Some ATSs need a step on their side. Greenhouse, Teamtailor and Recruitee ask you to add a web hook by hand; testee's Instructions dialog shows the address and where to paste its secret. testee sets up Workable's and Breezy HR's web hooks itself. Breezy HR's API and web hooks come with its Pro plan, and Teamtailor's web hooks are a Teamtailor add-on.
 
-Pricing is per candidate, with no subscription: you pay only for candidates who answer at least one question, $5 each on the $50 top-up, $4 from a $200 top-up, $3 from a $600 top-up and $2 from a $1,000 top-up. Prices are in US dollars here, and in the local currency in Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, the rest of Europe and the UK; VAT or sales tax is handled at checkout. Connecting an ATS and making interviews is free, and your first company's first 3 candidates are free. See [pricing](/pricing).
+Pricing is per candidate, with no subscription: you pay only for candidates who answer at least one question, $5 each on the $50 top-up, $4 from a $200 top-up, $3 from a $600 top-up and $2 from a $1,000 top-up. Prices are in US dollars here, and in the local currency in Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, the rest of the EU, Norway, Iceland, Liechtenstein and the UK; VAT or sales tax is handled at checkout. Connecting an ATS and making interviews is free, and your first company's first 3 candidates are free. See [pricing](/pricing).
 
 ## Related reading
 

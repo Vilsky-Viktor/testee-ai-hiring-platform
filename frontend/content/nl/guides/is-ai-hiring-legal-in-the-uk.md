@@ -2,14 +2,14 @@
 title: "Is AI bij werving en selectie legaal in het VK? Wat werkgevers moeten weten"
 seoTitle: "AI bij werving en selectie: legaal in het VK?"
 description: "AI bij werving is legaal in het VK, met regels: de Equality Act, nieuwe regels in de UK GDPR voor geautomatiseerde besluiten sinds februari 2026 en de ICO."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Is AI bij werving en selectie legaal in het VK? Wat werkgevers moeten weten
 
 Over het algemeen wel: AI gebruiken bij werving en selectie is legaal in het Verenigd Koninkrijk. Het VK heeft geen aparte AI-wet zoals de AI-verordening van de EU. In plaats daarvan gelden de Equality Act 2010 (de Britse gelijkebehandelingswet) en de UK GDPR (de Britse AVG) voor AI-tools zoals voor elke test, en sinds 5 februari 2026 heeft de UK GDPR nieuwe regels voor besluiten die uitsluitend geautomatiseerd worden genomen.
 
-Deze gids legt de regels op hoofdlijnen uit, wat werkgevers moeten doen en hoe testee ermee omgaat. **Dit is geen juridisch advies.** Het geeft de regels weer zoals ze in oktober 2026 gelden; een deel ervan is nieuw en de richtsnoeren van de toezichthouder daarover worden nog bijgewerkt.
+Deze gids legt de regels op hoofdlijnen uit, wat werkgevers moeten doen en hoe testee ermee omgaat. **Dit is geen juridisch advies.** Het geeft de regels weer zoals ze in november 2026 gelden; een deel ervan is nieuw en de richtsnoeren van de toezichthouder daarover worden nog bijgewerkt.
 
 ## Het korte antwoord
 
@@ -83,6 +83,8 @@ De zeven belangrijkste aanbevelingen, voor aanbieders en werkgevers allebei:
 
 De ICO raadt ook betekenisvolle menselijke beoordeling van AI-uitkomsten aan, met vastlegging van de gedane beoordelingen.
 
+In maart 2026 publiceerde de ICO een tweede rapport, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), op basis van zijn werk met meer dan 30 werkgevers. Daaruit blijkt dat velen hun tools als beslissingsondersteuning behandelen terwijl er weinig echte menselijke betrokkenheid is, dat waarborgen om een besluit aan te vechten ongelijk worden toegepast, dat kandidaten vaak niet duidelijk horen hoe automatisering wordt gebruikt en dat DPIA's vaak ontbreken of zwak zijn. De bijgewerkte richtsnoeren over geautomatiseerde besluiten lagen tot 29 mei 2026 ter consultatie en waren in november 2026 niet definitief, en er komt een wettelijke gedragscode over AI en geautomatiseerde besluitvorming. Sinds 30 september 2026 is de toezichthouder de Information Commission, die nog steeds als ICO door het leven gaat.
+
 ## Doorgifte naar de VS
 
 Als een aanbieder gegevens van Britse kandidaten naar de Verenigde Staten stuurt, kan de UK–US data bridge dat dekken: [The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents), van kracht sinds 12 oktober 2023, voor Amerikaanse bedrijven die gecertificeerd zijn onder de UK Extension van het EU–US Data Privacy Framework. Voor andere zijn waarborgen nodig, zoals standaardcontractbepalingen met het Britse addendum (UK addendum).
@@ -105,7 +107,7 @@ testee neemt getimede meerkeuze-vaardigheidstests af die door AI worden geschrev
 
 Zo ziet dat er vandaag in het product uit:
 
-- **AI schrijft de vragen en de antwoordsleutels; het nakijken volgt vaste regels.** Geen AI leest of beoordeelt het antwoord van een kandidaat, en er wordt geen video- of gezichtsanalyse gebruikt. In de spraakmodus wordt spraak omgezet in tekst en gekoppeld aan een antwoordoptie, die de kandidaat te horen krijgt en op het scherm ziet: één duidelijk genoemde optie wordt meteen vastgelegd, een keuze van meerdere opties wordt eerst bevestigd. De spraak wordt nooit opgeslagen en de stem wordt nooit geanalyseerd.
+- **AI schrijft de vragen en de antwoordsleutels; het nakijken volgt vaste regels.** Geen AI beoordeelt het antwoord van een kandidaat, en er wordt geen video- of gezichtsanalyse gebruikt. In de spraakmodus wordt spraak omgezet in tekst en gekoppeld aan een antwoordoptie, die de kandidaat te horen krijgt en op het scherm ziet: één duidelijk genoemde optie wordt meteen vastgelegd, een keuze van meerdere opties wordt eerst bevestigd. testee slaat spraak nooit op, en de stem wordt nooit geanalyseerd.
 - **Jij keurt de onderwerpen goed** voordat er ook maar één vraag wordt geschreven, en jij kiest de slaaggrens.
 - **Mensen beslissen.** De resultatenpagina en de pdf-rapporten herinneren je team eraan de resultaten te beoordelen; testee wijst geen kandidaten af en stuurt geen afwijzingsberichten.
 - **Kandidaten krijgen te horen,** voordat ze beginnen, dat de vragen door AI zijn geschreven, dat mensen bij jouw bedrijf de resultaten beoordelen en beslissen, en dat ze om een herbeoordeling kunnen vragen.
@@ -128,4 +130,5 @@ Zo ziet dat er vandaag in het product uit:
 - Data (Use and Access) Act 2025, [section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80), die de artikelen 22A tot en met 22D in de UK GDPR invoegt ([artikel 22C](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [november 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), maart 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

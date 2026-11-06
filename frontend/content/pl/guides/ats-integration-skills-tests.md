@@ -2,7 +2,7 @@
 title: "Jak połączyć testy umiejętności z ATS"
 seoTitle: "Jak połączyć testy umiejętności z ATS: praktyczny poradnik"
 description: "Wysyłaj testy umiejętności i odbieraj wyniki automatycznie przez ATS, zostaw decyzje rekrutacyjne ludziom i sprawdź, na co zwrócić uwagę najpierw."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Jak połączyć testy umiejętności z ATS
@@ -90,15 +90,15 @@ testee łączy się z **Workable, Greenhouse, Teamtailor, Recruitee i Breezy HR*
 - **Twój klucz, Twoja kontrola.** Właściciel lub administrator łączy ATS w zakładce Integracje firmy za pomocą klucza, który Twoja firma tworzy w ATS. testee sprawdza go przed zapisaniem, przechowuje zaszyfrowany i nigdy więcej go nie pokazuje. Odłączenie od razu usuwa klucz i powiązane oferty pracy.
 - **Powiąż ofertę pracy z rozmową.** Wybierz ofertę pracy w ATS i etap, który uruchamia zaproszenie, a następnie powiąż ją z istniejącą rozmową w testee albo utwórz nową na podstawie treści ogłoszenia z ATS. Sprawdzasz tematy, zanim powstanie jakiekolwiek pytanie.
 - **Przenosisz kandydata, zaproszenie wychodzi.** Każdy kandydat jest zapraszany na rozmowę raz, nawet jeśli ATS wyśle to samo zdarzenie dwa razy.
-- **Wyniki wracają do ATS.** Gdy kandydat skończy, testee dodaje przy nim w ATS notatkę lub komentarz z oceną, informacją, czy zdał, ewentualnymi sygnałami nieuczciwości (opuszczenie strony, próby kopiowania, odpowiedzi wybrane zbyt szybko, by zdążyć przeczytać pytanie) i linkiem do jego karty wyników ze wszystkimi odpowiedziami.
-- **Błędy nie przechodzą niezauważone.** Jeśli kandydata nie da się zaprosić, na przykład dlatego, że firmie skończyły się kredyty, osiągnęła limit e-maili albo testee tymczasowo wstrzymała zaproszenia, wszyscy członkowie firmy dostają powiadomienie z nazwą ATS. Kandydaci niezaproszeni z powodu braku kredytów są zapraszani automatycznie po doładowaniu, a oczekujących kandydatów z dowolnej oferty pracy można zaprosić ponownie jednym kliknięciem.
+- **Wyniki wracają do ATS.** Gdy kandydat skończy, testee dodaje przy nim w ATS notatkę lub komentarz z oceną, informacją, czy zdał, informacją, czy pojawiły się sygnały nieuczciwości, i linkiem do jego karty wyników ze wszystkimi odpowiedziami i sygnałami.
+- **Błędy nie przechodzą niezauważone.** Jeśli kandydata nie da się zaprosić, na przykład dlatego, że firmie skończyły się kredyty, osiągnęła limit e-maili albo testee tymczasowo wstrzymała zaproszenia, wszyscy członkowie firmy dostają powiadomienie z nazwą ATS. Kandydaci przysłani przez ATS w ciągu ostatnich 30 dni i niezaproszeni z powodu braku kredytów są zapraszani automatycznie po doładowaniu, a oczekujących kandydatów z dowolnej oferty pracy można zaprosić ponownie jednym kliknięciem.
 - **Slack, jeśli go używasz.** testee może publikować powiadomienia, na przykład o kandydacie, który skończył, albo o kandydacie z ATS, którego nie udało się zaprosić, na wybranym przez Ciebie kanale Slack.
 - **Twoja własna platforma.** Jeśli Twojego ATS nie ma na liście, [API](/api-docs) testee pozwala zapraszać kandydatów za pomocą klucza API i odbierać podpisany webhook, gdy kandydat zaczyna lub kończy, gdy zaproszenie do niego nie dotrze lub wygaśnie, gdy kandydat zostanie usunięty i gdy rozmowa jest gotowa.
 - **Dane przechowywane przez określony czas.** Kandydaci zapisani z ATS są usuwani po 365 dniach albo wcześniej, razem z ich rozmową lub firmą.
 
-Niektóre ATS wymagają kroku po swojej stronie. Greenhouse, Teamtailor i Recruitee wymagają ręcznego dodania webhooka; okno Instrukcja w testee pokazuje adres i miejsce, w które należy wkleić jego sekret. Webhooki Workable i Breezy HR testee konfiguruje samodzielnie.
+Niektóre ATS wymagają kroku po swojej stronie. Greenhouse, Teamtailor i Recruitee wymagają ręcznego dodania webhooka; okno Instrukcja w testee pokazuje adres i miejsce, w które należy wkleić jego sekret. Webhooki Workable i Breezy HR testee konfiguruje samodzielnie. API i webhooki Breezy HR są dostępne w jego planie Pro, a webhooki Teamtailor to płatny dodatek Teamtailor.
 
-Płacisz za kandydata, bez subskrypcji: tylko za kandydatów, którzy odpowiedzą na co najmniej jedno pytanie — $5 za kandydata przy doładowaniu $50, $4 od doładowania $200, $3 od doładowania $600 i $2 od doładowania $1000. Ceny są tu w dolarach amerykańskich, a w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze, Indiach, pozostałej części Europy i Wielkiej Brytanii w walucie lokalnej; VAT lub podatek od sprzedaży jest naliczany przy płatności. Połączenie ATS i tworzenie rozmów jest bezpłatne, a pierwszych 3 kandydatów Twojej pierwszej firmy jest za darmo. Zobacz [cennik](/pricing).
+Płacisz za kandydata, bez subskrypcji: tylko za kandydatów, którzy odpowiedzą na co najmniej jedno pytanie — $5 za kandydata przy doładowaniu $50, $4 od doładowania $200, $3 od doładowania $600 i $2 od doładowania $1000. Ceny są tu w dolarach amerykańskich, a w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze, Indiach, pozostałej części UE, Norwegii, Islandii, Liechtensteinie i Wielkiej Brytanii w walucie lokalnej; VAT lub podatek od sprzedaży jest naliczany przy płatności. Połączenie ATS i tworzenie rozmów jest bezpłatne, a pierwszych 3 kandydatów Twojej pierwszej firmy jest za darmo. Zobacz [cennik](/pricing).
 
 ## Przeczytaj też
 

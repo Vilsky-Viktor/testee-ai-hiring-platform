@@ -2,14 +2,14 @@
 title: "Is AI hiring legal in the UK? What employers need to know"
 seoTitle: "Is AI Hiring Legal in the UK? Equality and Data Law"
 description: "AI in hiring is legal in the UK, with rules: the Equality Act, the UK GDPR's new automated-decision rules from February 2026, and the ICO's findings."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Is AI hiring legal in the UK? What employers need to know
 
 In general, yes: using AI in hiring is legal in the UK. The UK has no single AI law like the EU's AI Act. Instead, the Equality Act 2010 and the UK GDPR apply to AI tools as they do to any test, and since 5 February 2026 the UK GDPR has new rules on decisions made solely by automated means.
 
-This guide explains the rules at a high level, what employers have to do, and how testee approaches it. **It is not legal advice.** It reflects the rules as of October 2026; some of them are new and the regulator's guidance on them is still being updated.
+This guide explains the rules at a high level, what employers have to do, and how testee approaches it. **It is not legal advice.** It reflects the rules as of November 2026; some of them are new and the regulator's guidance on them is still being updated.
 
 ## The short answer
 
@@ -63,7 +63,7 @@ Candidate data falls under the UK GDPR and the Data Protection Act 2018, which w
 
 ## What the ICO found when it audited AI recruitment tools
 
-In November 2024 the Information Commissioner's Office published the outcomes of its audits of providers of AI sourcing, screening and selection tools. It made 296 recommendations and 42 advisory notes, and says "Both AI providers and recruiters should follow the recommendations in this report." What it found:
+In November 2024 the Information Commissioner's Office (ICO) published the outcomes of its audits of providers of AI sourcing, screening and selection tools. It made 296 recommendations and 42 advisory notes, and says "Both AI providers and recruiters should follow the recommendations in this report." What it found:
 
 - **Inferred characteristics.** Some tools "estimated or inferred people's gender, ethnicity, and other characteristics from their job application or even just their name, rather than asking candidates directly." The ICO's view: "This inferred information is not accurate enough to monitor bias effectively." It was often processed without a lawful basis and without the candidate's knowledge.
 - **Filtering by protected characteristics.** Some tools let recruiters filter out candidates with certain protected characteristics.
@@ -82,6 +82,8 @@ Its seven key recommendations, for providers and recruiters alike:
 7. **Lawful basis.** Identify one before processing, plus a condition for any special category data.
 
 The ICO also recommends meaningful human reviews of AI outputs, with records of the reviews done.
+
+In March 2026 the ICO published a second report, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), from its work with more than 30 employers. It found that many treat their tools as decision support when there's little real human involvement, that safeguards for challenging a decision are applied unevenly, that candidates often aren't told clearly how automation is used, and that DPIAs are often missing or weak. Its updated guidance on automated decisions went out for consultation until 29 May 2026 and wasn't final as of November 2026, and a statutory code of practice on AI and automated decision-making is on its way. Since 30 September 2026 the regulator has been the Information Commission, which still goes by ICO.
 
 ## Transfers to the US
 
@@ -105,7 +107,7 @@ testee runs timed multiple-choice skills interviews written by AI from a job des
 
 What that looks like in the product today:
 
-- **AI writes the questions and their answer keys; marking follows fixed rules.** No AI reads or judges a candidate's answer, and no video or face analysis is used. In voice mode, speech is turned into text and matched to an option, which is said back to the candidate and shown on screen: one clearly named option is saved at once, and a choice of several options is confirmed first. Speech is never stored and the voice is never analysed.
+- **AI writes the questions and their answer keys; marking follows fixed rules.** No AI judges a candidate's answer, and no video or face analysis is used. In voice mode, speech is turned into text and matched to an option, which is said back to the candidate and shown on screen: one clearly named option is saved at once, and a choice of several options is confirmed first. testee never stores speech, and the voice is never analysed.
 - **You approve the topics** before any question is written, and you choose the passing grade.
 - **People decide.** The results page and PDF reports remind your team to review results; testee doesn't reject candidates or send rejection messages.
 - **Candidates are told** before they start that questions are written by AI, that people at your company review results and decide, and that they can ask for a review.
@@ -128,4 +130,5 @@ What that looks like in the product today:
 - Data (Use and Access) Act 2025, [section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80), inserting Articles 22A to 22D into the UK GDPR ([Article 22C](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [November 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), March 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

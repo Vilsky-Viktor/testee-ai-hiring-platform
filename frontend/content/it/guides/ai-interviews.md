@@ -2,14 +2,14 @@
 title: "Colloqui con IA: cosa sono e come usarli in modo equo"
 seoTitle: "IA nel recruiting: colloqui con IA, rischi e uso corretto"
 description: "IA nel recruiting: cosa fanno colloqui con intelligenza artificiale, chatbot, analisi video e test generati, rischi, conformità e l'approccio di testee."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Colloqui con IA: cosa sono e come usarli in modo equo
 
 "Colloquio con IA" significa cose molto diverse a seconda del fornitore. Alcuni strumenti conversano con il candidato. Altri registrano un video e gli assegnano un punteggio. Altri ancora usano l'IA solo per scrivere le domande, poi valutano le risposte con regole fisse. Per chi si occupa di selezione la differenza conta: cambia ciò che puoi spiegare a un candidato, ciò che può andare storto e ciò che la legge si aspetta da te.
 
-Questa pagina mette ordine tra i principali tipi di strumenti di colloquio con IA, spiega l'approccio di testee e riassume le basi di conformità.
+Questa guida mette ordine tra i principali tipi di strumenti di colloquio con IA, spiega l'approccio di testee e riassume le basi di conformità.
 
 ## Tre tipi di strumenti di colloquio con IA
 
@@ -38,13 +38,13 @@ testee usa l'IA per scrivere un colloquio sulle competenze a partire dalla tua d
 1. **L'IA legge la tua descrizione del ruolo** e individua ciò che un candidato deve sapere: i requisiti, il livello e una serie di argomenti con i relativi sottoargomenti.
 2. **Tu rivedi gli argomenti.** Mantienili, deselezionali, rinominali o modificali, oppure scrivi all'IA in linguaggio semplice cosa cambiare. Nessuna domanda viene scritta finché non approvi.
 3. **L'IA scrive le domande.** Ogni argomento riceve una serie di domande a scelta multipla con quattro opzioni ciascuna: la maggior parte ha una sola opzione corretta e tre sbagliate ma plausibili, e circa 1 su 10 chiede di «selezionare tutte le risposte corrette», con 2 o 3 opzioni corrette. Per gli argomenti tecnici, molte domande mostrano un breve esempio di codice e chiedono cosa stampa, cosa fa, perché fallisce o quale modifica lo corregge. Puoi aprire ogni domanda e le sue opzioni e rigenerare quelle che non ti convincono.
-4. **I candidati rispondono a domande a tempo.** Ogni candidato riceve un proprio set casuale dalla serie di domande di ciascun argomento, in un ordine tutto suo, con un conto alla rovescia su ogni domanda.
-5. **Le risposte vengono corrette in base a una chiave di correzione.** L'IA scrive le chiavi. Un campione delle chiavi di ogni argomento viene controllato prima della pubblicazione, le altre quando una domanda viene segnalata. La correzione in sé segue regole fisse, e nessuna IA legge o giudica la risposta di un candidato. Se una chiave viene corretta in seguito, la correzione vale per i candidati che iniziano dopo; i risultati passati non cambiano. Velocità, uscite dalla pagina e tentativi di copia ti vengono mostrati come segnali; non cambiano il punteggio.
+4. **I candidati rispondono a domande a tempo.** Ogni candidato riceve un proprio set casuale dalla serie di domande di ciascun argomento, in un ordine tutto suo, con un conto alla rovescia su ogni domanda. Di norma tocca le risposte; nella modalità vocale, Mira, l'intervistatrice IA di testee, legge ad alta voce ogni domanda e il candidato dice o tocca una risposta.
+5. **Le risposte vengono corrette in base a una chiave di correzione.** L'IA scrive le chiavi. Un campione delle chiavi di ogni argomento viene controllato prima della pubblicazione, le altre quando una domanda viene segnalata. La correzione in sé segue regole fisse, e nessuna IA giudica la risposta di un candidato. Nella modalità vocale, l'IA si limita a trasformare il parlato in testo e ad abbinarlo a un'opzione. Se una chiave viene corretta in seguito, la correzione vale per i candidati che iniziano dopo; i risultati passati non cambiano. Velocità, uscite dalla pagina e tentativi di copia ti vengono mostrati come segnali; non cambiano il punteggio.
 6. **Decidono le persone.** Vedi una classifica e una scheda di valutazione per ogni candidato, con ogni risposta e il relativo tempo. Una persona della tua azienda esamina i risultati e prende la decisione di assunzione.
 
 Cosa testee non fa:
 
-- Nessuna analisi di video, voce o volto.
+- Nessuna analisi di video o volto, e nessuna analisi della voce del candidato. La modalità vocale trasforma il parlato in testo solo per trovare l'opzione indicata.
 - Nessuna deduzione della personalità o delle emozioni.
 - Nessuno scarto automatico. testee non scarta candidati né invia messaggi di rifiuto; decide il tuo team.
 - I tuoi dati non vengono usati per addestrare modelli di IA. Il fornitore di IA di testee, OpenAI, secondo i propri termini non si addestra sui dati dell'API.
@@ -63,7 +63,7 @@ Puoi anche provare il tuo colloquio come candidato prima di invitare qualcuno: l
 
 **Tutti affrontano condizioni simili.** Stessi argomenti, stesso numero di domande per argomento, stesso tempo medio per domanda e stessa durata totale. Le domande di ogni candidato sono estratte a caso, quindi i set differiscono un po' in difficoltà. I candidati che hanno bisogno di più tempo possono ottenerlo: puoi aggiungere tempo extra per singolo candidato.
 
-**Meno segnali irrilevanti.** Una risposta a scelta multipla non porta con sé un accento, un volto, uno sfondo o uno stile di scrittura, quindi il punteggio non dipende da come qualcuno appare o suona. Questo non esclude i bias: i test di conoscenza possono mostrare differenze di punteggio tra gruppi, e un test nella seconda lingua di un candidato può penalizzarlo. Monitora i risultati tra i gruppi.
+**Meno segnali irrilevanti.** Una risposta a scelta multipla non porta con sé un accento, un volto, uno sfondo o uno stile di scrittura, quindi il punteggio non dipende da come qualcuno appare o suona. Nella modalità vocale, la qualità con cui il parlato viene capito varia in base a lingua e accento, quindi i candidati possono toccare invece di parlare ([Colloqui vocali in 23 lingue](/guides/voice-interview-languages)). Nulla di tutto questo esclude i bias: i test di conoscenza possono mostrare differenze di punteggio tra gruppi, e un test nella seconda lingua di un candidato può penalizzarlo. Monitora i risultati tra i gruppi.
 
 **Condividere le risposte è più difficile.** Con un set di domande casuale per ogni candidato e un timer su ogni domanda, condividere le risposte o cercarle richiede più impegno. Le segnalazioni di comportamenti sospetti ti aiutano a capire dove guardare meglio; non sono una prova di imbroglio.
 
@@ -75,7 +75,7 @@ Sii chiaro sui limiti. Un test a scelta multipla verifica le conoscenze. Le doma
 
 ## Basi di conformità per gli strumenti di colloquio con IA
 
-Questo è un riepilogo aggiornato a ottobre 2026, non una consulenza legale. Verifica con il tuo consulente legale.
+Questo è un riepilogo aggiornato a novembre 2026, non una consulenza legale.
 
 ### AI Act dell'UE
 
@@ -94,7 +94,7 @@ I risultati dei colloqui sono dati personali, sia secondo il GDPR dell'UE sia se
 
 ### Stati Uniti
 
-Gli strumenti di IA usati nelle assunzioni sono soggetti alle stesse regole antidiscriminazione di qualsiasi metodo di selezione. Tieni d'occhio i tassi di selezione tra i gruppi (la regola empirica dei quattro quinti in [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)), offri adattamenti e verifica le norme statali e locali. Ad esempio, la [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) di New York City richiede un audit sui bias entro un anno prima di usare uno strumento automatizzato per le decisioni di assunzione, una sintesi pubblica dell'audit e un avviso ai candidati. Vedi [Test pre-assunzione](/guides/pre-employment-testing) per una panoramica.
+Gli strumenti di IA usati nelle assunzioni sono soggetti alle stesse regole antidiscriminazione di qualsiasi metodo di selezione. Tieni d'occhio i tassi di selezione tra i gruppi (la regola empirica dei quattro quinti in [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4), che l'EEOC si sta muovendo per abrogare mentre la regola del Title VII sull'impatto sfavorevole resta), offri adattamenti e verifica le norme statali e locali. Ad esempio, la [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) di New York City richiede un audit sui bias entro un anno prima di usare uno strumento automatizzato per le decisioni di assunzione, una sintesi pubblica dell'audit e un avviso ai candidati. Vedi [Test pre-assunzione](/guides/pre-employment-testing) per una panoramica.
 
 ## Come valutare uno strumento di colloquio con IA
 

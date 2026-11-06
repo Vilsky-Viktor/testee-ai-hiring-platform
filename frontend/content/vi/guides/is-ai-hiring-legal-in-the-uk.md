@@ -2,14 +2,14 @@
 title: "Dùng AI trong tuyển dụng có hợp pháp ở Vương quốc Anh không? Những điều nhà tuyển dụng cần biết"
 seoTitle: "Tuyển dụng bằng AI ở Vương quốc Anh: bình đẳng và dữ liệu"
 description: "Dùng AI để tuyển dụng ở Vương quốc Anh là hợp pháp, có quy định: Equality Act, quy định mới của UK GDPR về quyết định tự động từ 2/2026 và kết luận ICO."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Dùng AI trong tuyển dụng có hợp pháp ở Vương quốc Anh không? Những điều nhà tuyển dụng cần biết
 
 Nói chung là có: dùng AI trong tuyển dụng là hợp pháp ở Vương quốc Anh. Vương quốc Anh không có một đạo luật AI riêng như Đạo luật AI của EU. Thay vào đó, Luật Bình đẳng 2010 (Equality Act 2010) và UK GDPR áp dụng cho công cụ AI như với mọi bài kiểm tra khác, và từ ngày 5/2/2026, UK GDPR có quy định mới về các quyết định được đưa ra hoàn toàn bằng phương tiện tự động.
 
-Hướng dẫn này giải thích các quy định ở mức tổng quan, những gì bên tuyển dụng phải làm, và cách testee tiếp cận vấn đề. **Đây không phải tư vấn pháp lý.** Nội dung phản ánh các quy định tính đến tháng 10/2026; một số quy định còn mới và hướng dẫn của cơ quan quản lý về chúng vẫn đang được cập nhật.
+Hướng dẫn này giải thích các quy định ở mức tổng quan, những gì bên tuyển dụng phải làm, và cách testee tiếp cận vấn đề. **Đây không phải tư vấn pháp lý.** Nội dung phản ánh các quy định tính đến tháng 11/2026; một số quy định còn mới và hướng dẫn của cơ quan quản lý về chúng vẫn đang được cập nhật.
 
 ## Câu trả lời ngắn
 
@@ -83,6 +83,8 @@ Bảy khuyến nghị chính, cho cả nhà cung cấp lẫn bên tuyển dụng
 
 ICO cũng khuyến nghị con người xem xét có ý nghĩa các kết quả của AI, và lưu hồ sơ các lần xem xét đã thực hiện.
 
+Tháng 3/2026, ICO công bố báo cáo thứ hai, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), từ quá trình làm việc với hơn 30 bên tuyển dụng. Báo cáo cho thấy nhiều bên coi công cụ của mình là hỗ trợ quyết định trong khi con người thực sự tham gia rất ít, các biện pháp bảo vệ để phản đối một quyết định được áp dụng không đồng đều, ứng viên thường không được cho biết rõ tự động hóa được dùng như thế nào, và DPIA thường thiếu hoặc yếu. Hướng dẫn cập nhật của ICO về quyết định tự động được lấy ý kiến đến ngày 29/5/2026 và chưa phải bản cuối tính đến tháng 11/2026, và một bộ quy tắc thực hành theo luật định về AI và ra quyết định tự động đang được chuẩn bị. Từ ngày 30/9/2026, cơ quan quản lý là Information Commission, vẫn dùng tên ICO.
+
 ## Chuyển dữ liệu sang Mỹ
 
 Nếu một nhà cung cấp gửi dữ liệu của ứng viên ở Vương quốc Anh sang Hoa Kỳ, "cầu nối dữ liệu" Anh–Mỹ (UK–US data bridge) có thể bao quát việc đó: [The Data Protection (Adequacy) (United States of America) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/1028/contents), có hiệu lực từ ngày 12/10/2023, cho các công ty Mỹ được chứng nhận theo phần mở rộng dành cho Vương quốc Anh (UK Extension) của EU–US Data Privacy Framework. Các trường hợp khác cần biện pháp bảo vệ, như điều khoản hợp đồng mẫu kèm phụ lục của Vương quốc Anh (UK addendum).
@@ -105,7 +107,7 @@ testee tổ chức các buổi phỏng vấn kỹ năng trắc nghiệm có tín
 
 Hiện nay điều đó thể hiện trong sản phẩm như sau:
 
-- **AI viết câu hỏi và đáp án; việc chấm điểm theo quy tắc cố định.** Không có AI nào đọc hay đánh giá câu trả lời của ứng viên, và không dùng phân tích video hay khuôn mặt. Ở chế độ giọng nói, lời nói được chuyển thành văn bản và khớp với một lựa chọn, lựa chọn đó được đọc lại cho ứng viên và hiển thị trên màn hình: một lựa chọn duy nhất được nói rõ sẽ được ghi nhận ngay, còn khi chọn nhiều lựa chọn thì phải xác nhận trước. Lời nói không bao giờ được lưu và giọng nói không bao giờ bị phân tích.
+- **AI viết câu hỏi và đáp án; việc chấm điểm theo quy tắc cố định.** Không có AI nào đánh giá câu trả lời của ứng viên, và không dùng phân tích video hay khuôn mặt. Ở chế độ giọng nói, lời nói được chuyển thành văn bản và khớp với một lựa chọn, lựa chọn đó được đọc lại cho ứng viên và hiển thị trên màn hình: một lựa chọn duy nhất được nói rõ sẽ được ghi nhận ngay, còn khi chọn nhiều lựa chọn thì phải xác nhận trước. testee không bao giờ lưu lời nói, và giọng nói không bao giờ bị phân tích.
 - **Bạn duyệt các chủ đề** trước khi bất kỳ câu hỏi nào được viết, và bạn chọn điểm đạt.
 - **Con người quyết định.** Trang kết quả và báo cáo PDF nhắc nhóm của bạn xem xét kết quả; testee không loại ứng viên và không gửi thư từ chối.
 - **Ứng viên được thông báo** trước khi bắt đầu rằng câu hỏi do AI viết, rằng người của công ty bạn xem xét kết quả và quyết định, và rằng họ có thể yêu cầu xem xét lại.
@@ -128,4 +130,5 @@ Hiện nay điều đó thể hiện trong sản phẩm như sau:
 - Data (Use and Access) Act 2025, [mục 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80), bổ sung các Điều 22A đến 22D vào UK GDPR ([Điều 22C](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, quy định 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [tháng 11/2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), tháng 3/2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

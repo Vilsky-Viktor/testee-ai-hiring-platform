@@ -2,14 +2,14 @@
 title: "AI-interviews: wat ze zijn en hoe je ze eerlijk inzet"
 seoTitle: "AI in werving en selectie: AI-interviews, risico's en regels"
 description: "AI in werving en selectie: wat AI-interviewtools doen (chatbots, video-analyse, gegenereerde assessments), hoe testee werkt en de juridische basis."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # AI-interviews: wat ze zijn en hoe je ze eerlijk inzet
 
 "AI-interview" betekent per leverancier iets heel anders. Sommige tools voeren een gesprek met de kandidaat. Sommige nemen video op en geven die een score. Sommige gebruiken AI alleen om de vragen te schrijven en scoren de antwoorden daarna volgens vaste regels. Voor een selectieteam maakt dat verschil uit: het bepaalt wat je aan een kandidaat kunt uitleggen, wat er mis kan gaan en wat de wet van je verwacht.
 
-Deze pagina zet de belangrijkste soorten AI-interviewtools op een rij, legt de aanpak van testee uit en behandelt de juridische basis.
+Deze gids zet de belangrijkste soorten AI-interviewtools op een rij, legt de aanpak van testee uit en behandelt de juridische basis.
 
 ## Drie soorten AI-interviewtools
 
@@ -38,13 +38,13 @@ testee gebruikt AI om op basis van je functieomschrijving een interview over vaa
 1. **AI leest je functieomschrijving** en haalt eruit wat een kandidaat moet weten: de eisen, het niveau en een set onderwerpen met subonderwerpen.
 2. **Jij bekijkt de onderwerpen.** Houd ze, vink ze uit, hernoem of bewerk ze, of vertel de AI in gewone taal wat er anders moet. Er wordt geen vraag geschreven tot jij akkoord geeft.
 3. **AI schrijft de vragen.** Elk onderwerp krijgt een vragenbank met meerkeuzevragen met elk vier opties: de meeste hebben één juiste optie en drie aannemelijke foute, en ongeveer 1 op de 10 is een vraag waarbij je alle juiste opties aanvinkt, met 2 of 3 juiste. Bij technische onderwerpen tonen veel vragen een kort codevoorbeeld en vragen ze wat het uitvoert, wat het doet, waarom het faalt of welke wijziging het oplost. Je kunt elke vraag met haar opties openen en elke vraag die je niet bevalt opnieuw laten genereren.
-4. **Kandidaten beantwoorden vragen met tijdslimiet.** Elke kandidaat krijgt een eigen willekeurige set uit de vragenbank van elk onderwerp, in een eigen volgorde, met een aftelklok bij elke vraag.
-5. **Antwoorden worden nagekeken met een antwoordsleutel.** AI schrijft de sleutels. Een steekproef van de sleutels van elk onderwerp wordt vóór vrijgave gecontroleerd, de rest zodra een vraag wordt gemarkeerd. Het nakijken zelf volgt vaste regels, en geen AI leest of beoordeelt het antwoord van een kandidaat. Wordt een sleutel later gecorrigeerd, dan geldt de correctie voor kandidaten die daarna beginnen; eerdere resultaten veranderen niet. Snelheid, het verlaten van de pagina en kopieerpogingen zie je als signalen; ze veranderen de score niet.
+4. **Kandidaten beantwoorden vragen met tijdslimiet.** Elke kandidaat krijgt een eigen willekeurige set uit de vragenbank van elk onderwerp, in een eigen volgorde, met een aftelklok bij elke vraag. Standaard tikken ze hun antwoorden aan; in de spraakmodus leest Mira, de AI-interviewer van testee, elke vraag voor en zegt of tikt de kandidaat een antwoord.
+5. **Antwoorden worden nagekeken met een antwoordsleutel.** AI schrijft de sleutels. Een steekproef van de sleutels van elk onderwerp wordt vóór vrijgave gecontroleerd, de rest zodra een vraag wordt gemarkeerd. Het nakijken zelf volgt vaste regels, en geen AI beoordeelt het antwoord van een kandidaat. In de spraakmodus zet AI alleen spraak om in tekst en koppelt die aan een optie. Wordt een sleutel later gecorrigeerd, dan geldt de correctie voor kandidaten die daarna beginnen; eerdere resultaten veranderen niet. Snelheid, het verlaten van de pagina en kopieerpogingen zie je als signalen; ze veranderen de score niet.
 6. **Mensen beslissen.** Je ziet een gerangschikte lijst en per kandidaat een scorekaart, met elk antwoord en de tijd die het kostte. Iemand in je bedrijf bekijkt de resultaten en neemt het wervingsbesluit.
 
 Wat testee niet doet:
 
-- Geen analyse van video, stem of gezicht.
+- Geen analyse van video of gezicht, en geen analyse van de stem van een kandidaat. De spraakmodus zet spraak alleen om in tekst om de genoemde optie te vinden.
 - Geen afleiding van persoonlijkheid of emoties.
 - Geen automatische afwijzingen. testee wijst geen kandidaten af en stuurt geen afwijzingen; je team beslist.
 - Je gegevens worden niet gebruikt om AI-modellen te trainen. De AI-leverancier van testee, OpenAI, traint volgens zijn voorwaarden niet op API-gegevens.
@@ -63,7 +63,7 @@ Je kunt je eigen interview ook als kandidaat proberen voordat je iemand uitnodig
 
 **Iedereen krijgt vergelijkbare omstandigheden.** Dezelfde onderwerpen, hetzelfde aantal vragen per onderwerp, dezelfde gemiddelde tijd per vraag en dezelfde totale tijd. De vragen van elke kandidaat worden willekeurig getrokken, dus sets verschillen een beetje in moeilijkheid. Kandidaten die meer tijd nodig hebben, kunnen die krijgen: je kunt per kandidaat extra tijd toevoegen.
 
-**Minder irrelevante signalen.** Een meerkeuzeantwoord heeft geen accent, gezicht, achtergrond of schrijfstijl, dus de score hangt niet af van hoe iemand eruitziet of klinkt. Dat sluit vooringenomenheid niet uit: kennistests kunnen scoreverschillen tussen groepen laten zien, en een test in de tweede taal van een kandidaat kan die kandidaat benadelen. Volg de resultaten per groep.
+**Minder irrelevante signalen.** Een meerkeuzeantwoord heeft geen accent, gezicht, achtergrond of schrijfstijl, dus de score hangt niet af van hoe iemand eruitziet of klinkt. In de spraakmodus hangt het van taal en accent af hoe goed spraak wordt verstaan, dus kandidaten kunnen in plaats daarvan tikken ([Spraakmodus in 23 talen](/guides/voice-interview-languages)). Niets daarvan sluit vooringenomenheid uit: kennistests kunnen scoreverschillen tussen groepen laten zien, en een test in de tweede taal van een kandidaat kan die kandidaat benadelen. Volg de resultaten per groep.
 
 **Antwoorden delen is lastiger.** Omdat elke kandidaat een eigen willekeurige set vragen krijgt en elke vraag een timer heeft, kost het meer moeite om antwoorden te delen of dingen op te zoeken. De integriteitssignalen helpen je bepalen waar je beter moet kijken; ze zijn geen bewijs van fraude.
 
@@ -75,7 +75,7 @@ Wees duidelijk over de grenzen. Een meerkeuzetest toetst kennis. Vragen over cod
 
 ## Juridische basis voor AI-interviewtools
 
-Dit is een samenvatting per oktober 2026, geen juridisch advies. Overleg met je eigen juridisch adviseur.
+Dit is een samenvatting per november 2026, geen juridisch advies.
 
 ### AI-verordening
 
@@ -94,7 +94,7 @@ Interviewresultaten zijn persoonsgegevens, onder de AVG (GDPR) van de EU en de U
 
 ### Verenigde Staten
 
-AI-tools die bij werving worden gebruikt, vallen onder dezelfde antidiscriminatieregels als elke selectiemethode. Let op selectiepercentages per groep (de vuistregel van vier vijfde in [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)), bied aanpassingen aan en check regels van staten en steden. Zo eist [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) van New York City een bias-audit binnen een jaar voordat je een automated employment decision tool gebruikt, een openbare samenvatting daarvan en een bericht aan kandidaten. Zie [Selectietests](/guides/pre-employment-testing) voor een overzicht.
+AI-tools die bij werving worden gebruikt, vallen onder dezelfde antidiscriminatieregels als elke selectiemethode. Let op selectiepercentages per groep (de vuistregel van vier vijfde in [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4), die de EEOC wil intrekken terwijl de adverse-impactregel van Title VII blijft), bied aanpassingen aan en check regels van staten en steden. Zo eist [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) van New York City een bias-audit binnen een jaar voordat je een automated employment decision tool gebruikt, een openbare samenvatting daarvan en een bericht aan kandidaten. Zie [Selectietests](/guides/pre-employment-testing) voor een overzicht.
 
 ## Hoe je een AI-interviewtool beoordeelt
 

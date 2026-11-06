@@ -2,7 +2,7 @@
 title: "Testes de habilidades x triagem de currículos: o que prevê o desempenho no trabalho"
 seoTitle: "Teste de habilidades x triagem de currículos: o que funciona"
 description: "O que décadas de pesquisa dizem sobre testes de conhecimentos, amostras de trabalho, entrevistas e anos de experiência, e como usar isso na sua triagem."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Testes de habilidades x triagem de currículos: o que prevê o desempenho no trabalho
@@ -64,7 +64,7 @@ Os autores também apontam uma segunda condição: amostras de trabalho e testes
 - **São médias de muitas funções e estudos.** A sua vaga, o seu teste e os seus candidatos podem ser diferentes.
 - **As estimativas de validade valem para métodos bem construídos.** Um teste mal escrito ou uma entrevista malfeita não vão chegar a esses números.
 - **Um só método raramente basta.** Os pesquisadores geralmente recomendam combinar métodos, por exemplo um teste de conhecimentos no início e uma entrevista estruturada depois.
-- **A imparcialidade precisa de verificações próprias.** Sackett et al. apresentam a validade junto com as diferenças médias de pontuação entre candidatos negros e brancos. Testes de conhecimentos da função, amostras de trabalho e testes cognitivos mostram diferenças consideráveis; entrevistas estruturadas, diferenças menores. Combinar métodos pode reduzi-las. Seja qual for o método, acompanhe as taxas de aprovação entre grupos. Nos EUA, a regra prática dos quatro quintos das [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) é o ponto de partida habitual.
+- **A imparcialidade precisa de verificações próprias.** Sackett et al. apresentam a validade junto com as diferenças médias de pontuação entre candidatos negros e brancos. Testes de conhecimentos da função, amostras de trabalho e testes cognitivos mostram diferenças consideráveis; entrevistas estruturadas, diferenças menores. Combinar métodos pode reduzi-las. Seja qual for o método, acompanhe as taxas de aprovação entre grupos. Nos EUA, a regra prática dos quatro quintos das [Uniform Guidelines](https://www.law.cornell.edu/cfr/text/29/1607.4) é o ponto de partida habitual, mesmo com a EEOC em vias de revogar as partes interpretativas das Guidelines.
 - **Uma pontuação apoia uma decisão; ela não toma a decisão.** Uma pessoa deve olhar as respostas antes de decidir.
 
 ## Um processo de triagem baseado na pesquisa
@@ -85,7 +85,7 @@ A testee cobre o passo 2: um teste de conhecimentos da função, de múltipla es
 - **As mesmas condições para todos.** Os mesmos tópicos e número de perguntas, e uma contagem regressiva em cada pergunta. Você pode dar tempo extra aos candidatos que pedirem.
 - **Cada candidato recebe suas próprias perguntas,** um conjunto aleatório do banco de cada tópico, o que dificulta compartilhar respostas.
 - **Resultados fáceis de ler.** Uma ficha de avaliação por candidato com cada resposta e seu tempo, ordenada por pontuação, com alertas para respostas rápidas demais, saídas da página, tentativas de cópia e padrões de resposta incomuns.
-- **Respostas corrigidas com base em um gabarito** que a IA escreve; uma amostra dos gabaritos de cada tópico é verificada antes da liberação, e os demais quando uma pergunta é sinalizada. Nenhuma IA lê ou julga a resposta de um candidato.
+- **Respostas corrigidas com base em um gabarito** que a IA escreve; uma amostra dos gabaritos de cada tópico é verificada antes da liberação, e os demais quando uma pergunta é sinalizada. Nenhuma IA julga a resposta de um candidato.
 
 A testee não faz entrevistas estruturadas, amostras de trabalho nem testes cognitivos. Use-a junto com eles. Para saber mais sobre tipos de teste e imparcialidade, leia [Testes de seleção](/guides/pre-employment-testing).
 

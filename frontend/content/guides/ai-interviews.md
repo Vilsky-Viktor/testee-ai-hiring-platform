@@ -2,14 +2,14 @@
 title: "AI interviews: what they are and how to use them fairly"
 seoTitle: "AI Interview Tools: Types, Risks and How to Use Them Fairly"
 description: "What AI interview tools do: chatbots, video analysis and generated tests. How testee's timed multiple-choice approach works, and the compliance basics."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # AI interviews: what they are and how to use them fairly
 
 "AI interview" means very different things depending on the vendor. Some tools hold a conversation with the candidate. Some record video and score it. Some use AI only to write the questions, then score answers by fixed rules. For a hiring team, the difference matters: it changes what you can explain to a candidate, what can go wrong, and what the law expects from you.
 
-This page sorts out the main kinds of AI interview tools, explains the approach testee takes, and covers the compliance basics.
+This guide sorts out the main kinds of AI interview tools, explains the approach testee takes, and covers the compliance basics.
 
 ## Three kinds of AI interview tools
 
@@ -38,13 +38,13 @@ testee uses AI to write a skills interview from your job description. People sta
 1. **AI reads your job description** and picks out what a candidate must know: the requirements, the level and a set of topics with subtopics.
 2. **You review the topics.** Keep, uncheck, rename or edit them, or tell the AI in plain text what to change. No question is written until you approve.
 3. **AI writes the questions.** Each topic gets a bank of multiple-choice questions with four options each: most have one correct option and three plausible wrong ones, and about 1 in 10 are "select all that apply", with 2 or 3 correct options. For technical topics, many questions show a short code example and ask what it outputs, what it does, why it fails or which change fixes it. You can open every question and its options, and re-generate any you don't like.
-4. **Candidates answer timed questions.** Each candidate gets their own random set from each topic's bank, in their own order, with a countdown on every question.
-5. **Answers are marked against an answer key.** AI writes the keys. A sample of each topic's keys is checked before release, and the rest when a question is flagged. Marking itself follows fixed rules, and no AI reads or judges a candidate's answer. If a key is corrected later, the fix applies to candidates who start after it; past results don't change. Speed, page leaves and copy attempts are shown to you as signals; they don't change the score.
+4. **Candidates answer timed questions.** Each candidate gets their own random set from each topic's bank, in their own order, with a countdown on every question. By default they tap their answers; in voice mode, Mira, testee's AI interviewer, reads each question aloud and the candidate says or taps an answer.
+5. **Answers are marked against an answer key.** AI writes the keys. A sample of each topic's keys is checked before release, and the rest when a question is flagged. Marking itself follows fixed rules, and no AI judges a candidate's answer. In voice mode, AI only turns speech into text and matches it to an option. If a key is corrected later, the fix applies to candidates who start after it; past results don't change. Speed, page leaves and copy attempts are shown to you as signals; they don't change the score.
 6. **People decide.** You see a ranked list and a scorecard per candidate, with every answer and its timing. A person at your company reviews results and makes the hiring call.
 
 What testee does not do:
 
-- No video, voice or face analysis.
+- No video or face analysis, and no analysis of a candidate's voice. Voice mode only turns speech into text to find the option they named.
 - No personality or emotion inference.
 - No automatic rejections. testee doesn't reject candidates or send rejection messages; your team decides.
 - Your data isn't used to train AI models. testee's AI provider, OpenAI, doesn't train on API data under its terms.
@@ -63,7 +63,7 @@ You can also preview your own interview as a candidate before inviting anyone: t
 
 **Everyone faces similar conditions.** Same topics, same number of questions per topic, same average time per question and the same total time. Each candidate's questions are drawn at random, so sets differ a little in difficulty. Candidates who need more time can get it: you can add extra time per candidate.
 
-**Fewer irrelevant signals.** A multiple-choice answer doesn't carry an accent, a face, a background or a writing style, so the score doesn't depend on how someone looks or sounds. That doesn't rule out bias: knowledge tests can show score differences between groups, and a test in a candidate's second language can hold them back. Monitor results across groups.
+**Fewer irrelevant signals.** A multiple-choice answer doesn't carry an accent, a face, a background or a writing style, so the score doesn't depend on how someone looks or sounds. In voice mode, how well speech is heard varies by language and accent, so candidates can tap instead ([Voice interviews in 23 languages](/guides/voice-interview-languages)). None of that rules out bias: knowledge tests can show score differences between groups, and a test in a candidate's second language can hold them back. Monitor results across groups.
 
 **Sharing answers is harder.** With each candidate's own random set of questions and a timer on every question, sharing answers or looking things up takes more effort. The integrity signals help you decide where to look closer; they aren't proof of cheating.
 
@@ -75,7 +75,7 @@ Be clear about the limits. A multiple-choice test checks knowledge. Code-reading
 
 ## Compliance basics for AI interview tools
 
-This is a summary as of October 2026, not legal advice. Check with your own counsel.
+This is a summary as of November 2026, not legal advice.
 
 ### EU AI Act
 
@@ -94,7 +94,7 @@ Interview results are personal data, under the EU GDPR and the UK GDPR alike. Ex
 
 ### United States
 
-AI tools used in hiring fall under the same anti-discrimination rules as any selection method. Watch selection rates across groups (the four-fifths rule of thumb in [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)), offer accommodations, and check state and local rules. For example, New York City's [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) requires a bias audit within one year before using an automated employment decision tool, a public summary of it, and notice to candidates. See [Pre-employment testing](/guides/pre-employment-testing) for an overview.
+AI tools used in hiring fall under the same anti-discrimination rules as any selection method. Watch selection rates across groups (the four-fifths rule of thumb in [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4), which the EEOC is moving to rescind while Title VII's adverse impact rule stays), offer accommodations, and check state and local rules. For example, New York City's [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) requires a bias audit within one year before using an automated employment decision tool, a public summary of it, and notice to candidates. See [Pre-employment testing](/guides/pre-employment-testing) for an overview.
 
 ## How to evaluate an AI interview tool
 

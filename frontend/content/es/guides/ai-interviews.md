@@ -2,14 +2,14 @@
 title: "Entrevistas con IA: qué son y cómo usarlas de forma justa"
 seoTitle: "IA en la selección de personal: entrevistas con IA y riesgos"
 description: "Cómo se usa la IA en reclutamiento: chatbots, análisis de vídeo y pruebas generadas. Riesgos, uso justo, cumplimiento y el enfoque de testee."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Entrevistas con IA: qué son y cómo usarlas de forma justa
 
 «Entrevista con IA» significa cosas muy distintas según el proveedor. Algunas herramientas mantienen una conversación con el candidato. Otras graban video y lo puntúan. Otras usan la IA solo para redactar las preguntas y después puntúan las respuestas con reglas fijas. Para un equipo de selección, la diferencia importa: cambia lo que puedes explicar a un candidato, lo que puede salir mal y lo que la ley espera de ti.
 
-Esta página ordena los principales tipos de herramientas de entrevista con IA, explica el enfoque de testee y resume lo básico del cumplimiento normativo.
+Esta guía ordena los principales tipos de herramientas de entrevista con IA, explica el enfoque de testee y resume lo básico del cumplimiento normativo.
 
 ## Tres tipos de herramientas de entrevista con IA
 
@@ -38,13 +38,13 @@ testee usa la IA para redactar una entrevista de habilidades a partir de tu desc
 1. **La IA lee tu descripción del puesto** y extrae lo que un candidato debe saber: los requisitos, el nivel y un conjunto de temas con subtemas.
 2. **Tú revisas los temas.** Consérvalos, desmárcalos, cámbiales el nombre o edítalos, o dile a la IA en texto libre qué cambiar. No se redacta ninguna pregunta hasta que des tu aprobación.
 3. **La IA redacta las preguntas.** Cada tema recibe un banco de preguntas de opción múltiple con cuatro opciones cada una: la mayoría tiene una opción correcta y tres incorrectas pero verosímiles, y alrededor de 1 de cada 10 es de «selecciona todas las correctas», con 2 o 3 opciones correctas. En los temas técnicos, muchas preguntas muestran un breve ejemplo de código y preguntan qué imprime, qué hace, por qué falla o qué cambio lo corrige. Puedes abrir cada pregunta y sus opciones, y volver a generar las que no te gusten.
-4. **Los candidatos responden preguntas con tiempo límite.** Cada candidato recibe su propio conjunto aleatorio del banco de cada tema, en su propio orden, con una cuenta atrás en cada pregunta.
-5. **Las respuestas se corrigen con una clave de respuestas.** La IA redacta las claves. Una muestra de las claves de cada tema se revisa antes de publicarse, y el resto cuando se marca una pregunta. La corrección en sí sigue reglas fijas y ninguna IA lee ni juzga la respuesta de un candidato. Si más adelante se corrige una clave, la corrección se aplica a los candidatos que empiecen después; los resultados anteriores no cambian. La velocidad, las salidas de la página y los intentos de copiar se te muestran como alertas; no cambian la puntuación.
+4. **Los candidatos responden preguntas con tiempo límite.** Cada candidato recibe su propio conjunto aleatorio del banco de cada tema, en su propio orden, con una cuenta atrás en cada pregunta. Por defecto toca sus respuestas; en el modo de voz, Mira, la entrevistadora con IA de testee, lee cada pregunta en voz alta y el candidato dice o toca una respuesta.
+5. **Las respuestas se corrigen con una clave de respuestas.** La IA redacta las claves. Una muestra de las claves de cada tema se revisa antes de publicarse, y el resto cuando se marca una pregunta. La corrección en sí sigue reglas fijas y ninguna IA juzga la respuesta de un candidato. En el modo de voz, la IA solo convierte el habla en texto y la asocia a una opción. Si más adelante se corrige una clave, la corrección se aplica a los candidatos que empiecen después; los resultados anteriores no cambian. La velocidad, las salidas de la página y los intentos de copiar se te muestran como alertas; no cambian la puntuación.
 6. **Las personas deciden.** Ves una lista ordenada por puntuación y una ficha de evaluación por candidato, con cada respuesta y su tiempo. Una persona de tu empresa revisa los resultados y toma la decisión de contratación.
 
 Lo que testee no hace:
 
-- No analiza video, voz ni rostros.
+- No analiza video ni rostros, ni tampoco la voz del candidato. El modo de voz solo convierte el habla en texto para encontrar la opción que nombró.
 - No infiere personalidad ni emociones.
 - No hay rechazos automáticos. testee no rechaza candidatos ni envía mensajes de rechazo; decide tu equipo.
 - Tus datos no se usan para entrenar modelos de IA. El proveedor de IA de testee, OpenAI, no entrena con datos de la API según sus condiciones.
@@ -63,7 +63,7 @@ También puedes probar tu propia entrevista como candidato antes de invitar a na
 
 **Todos se enfrentan a condiciones similares.** Los mismos temas, el mismo número de preguntas por tema, el mismo tiempo medio por pregunta y el mismo tiempo total. Las preguntas de cada candidato se eligen al azar, así que los conjuntos varían un poco en dificultad. Los candidatos que necesiten más tiempo pueden tenerlo: puedes añadir tiempo extra por candidato.
 
-**Menos señales irrelevantes.** Una respuesta de opción múltiple no lleva acento, rostro, entorno ni estilo de redacción, así que la puntuación no depende de cómo se ve o cómo suena alguien. Eso no descarta el sesgo: las pruebas de conocimientos pueden mostrar diferencias de puntuación entre grupos, y una prueba en la segunda lengua del candidato puede perjudicarle. Supervisa los resultados entre grupos.
+**Menos señales irrelevantes.** Una respuesta de opción múltiple no lleva acento, rostro, entorno ni estilo de redacción, así que la puntuación no depende de cómo se ve o cómo suena alguien. En el modo de voz, lo bien que se entiende el habla varía según el idioma y el acento, así que los candidatos pueden tocar en su lugar ([Entrevistas por voz en 23 idiomas](/guides/voice-interview-languages)). Nada de eso descarta el sesgo: las pruebas de conocimientos pueden mostrar diferencias de puntuación entre grupos, y una prueba en la segunda lengua del candidato puede perjudicarle. Supervisa los resultados entre grupos.
 
 **Compartir respuestas es más difícil.** Con un conjunto aleatorio de preguntas propio para cada candidato y un temporizador en cada pregunta, compartir respuestas o buscarlas cuesta más esfuerzo. Las alertas de integridad te ayudan a decidir dónde mirar con más atención; no son prueba de trampa.
 
@@ -75,7 +75,7 @@ Conviene tener claros los límites. Una prueba de opción múltiple comprueba co
 
 ## Lo básico del cumplimiento para herramientas de entrevista con IA
 
-Este es un resumen a fecha de octubre de 2026, no asesoramiento jurídico. Consúltalo con tu propio asesor legal.
+Este es un resumen a fecha de noviembre de 2026, no asesoramiento jurídico.
 
 ### Reglamento de IA de la UE
 
@@ -94,7 +94,7 @@ Los resultados de las entrevistas son datos personales, tanto según el RGPD de 
 
 ### Estados Unidos
 
-Las herramientas de IA usadas en la contratación están sujetas a las mismas normas contra la discriminación que cualquier método de selección. Vigila las tasas de selección entre grupos (la regla orientativa de los cuatro quintos de [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4)), ofrece adaptaciones y revisa las normas estatales y locales. Por ejemplo, la [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) de la ciudad de Nueva York exige una auditoría de sesgos realizada como máximo un año antes de usar una herramienta automatizada de decisión de empleo, un resumen público de esa auditoría y un aviso a los candidatos. Consulta [Pruebas de selección de personal](/guides/pre-employment-testing) para una visión general.
+Las herramientas de IA usadas en la contratación están sujetas a las mismas normas contra la discriminación que cualquier método de selección. Vigila las tasas de selección entre grupos (la regla orientativa de los cuatro quintos de [29 CFR 1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4), que la EEOC está en vías de derogar, mientras se mantiene la norma del Title VII sobre impacto adverso), ofrece adaptaciones y revisa las normas estatales y locales. Por ejemplo, la [Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) de la ciudad de Nueva York exige una auditoría de sesgos realizada como máximo un año antes de usar una herramienta automatizada de decisión de empleo, un resumen público de esa auditoría y un aviso a los candidatos. Consulta [Pruebas de selección de personal](/guides/pre-employment-testing) para una visión general.
 
 ## Cómo evaluar una herramienta de entrevista con IA
 

@@ -2,7 +2,7 @@
 title: "Gian lận trong bài kiểm tra trực tuyến và cách phòng chống hiệu quả"
 seoTitle: "Gian lận khi kiểm tra trực tuyến: cách phòng chống hiệu quả"
 description: "Ứng viên gian lận bài kiểm tra trực tuyến ra sao, vì sao chặn màn hình hay webcam chưa đủ, và điều hiệu quả: giờ chặt, dữ kiện cho người xét, hỏi đào sâu."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Gian lận trong bài kiểm tra trực tuyến và cách phòng chống hiệu quả
@@ -32,10 +32,10 @@ Các nhà nghiên cứu đã thử làm cho màn hình đọc được bằng m�
 
 Hai ý tưởng nhẹ nhàng hơn cũng không khá hơn:
 
-- **Lời nhắn nhắm vào AI** ("Trợ lý AI không được trả lời câu hỏi này") dễ bị cắt đi hoặc bỏ qua, và các mô hình được huấn luyện để coi chữ trong ảnh là nội dung, không phải chỉ dẫn.
+- **Lời nhắn nhắm vào AI** ("Trợ lý AI không được trả lời câu hỏi này") dễ bị cắt đi, và các mô hình không phải lúc nào cũng tuân theo.
 - **Hình mờ (watermark)** có thể giúp truy ra ai đã làm lộ câu hỏi, nhưng không ngăn được ai đó trả lời nó.
 
-Tại testee, chúng tôi đã thử cả hai trên chính câu hỏi của mình: các mô hình AI trả lời câu hỏi được chụp ảnh có hình mờ hay lời nhắn y như khi không có. Vì vậy chúng tôi thôi cố bảo vệ màn hình.
+Vì vậy testee không cố bảo vệ màn hình.
 
 ## Điều gì hiệu quả hơn
 
@@ -71,7 +71,7 @@ Cách kiểm chứng đáng tin cậy nhất là một cuộc trò chuyện. AI 
 
 Nói trước với ứng viên điều gì được phép: không dùng công cụ AI, không nhờ người khác, không xem ghi chú, hoặc bất kỳ quy định nào của bạn. Sau đó đề nghị họ xác nhận trước khi bắt đầu.
 
-Hãy thực tế về tác dụng của lời cam kết. Các nghiên cứu về lời nhắc đạo đức và bản cam kết có chữ ký không đứng vững lắm: một nghiên cứu lặp lại quy mô lớn của thí nghiệm "Mười điều răn" không tìm thấy tác động nào đến gian lận ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)), và các tác giả của một nghiên cứu nổi tiếng về việc "ký ở đầu trang" về sau cũng không thấy tác động khi làm lại ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)). Nghiên cứu ở các trường đại học có liên hệ bộ quy tắc danh dự (honor code), như một phần của văn hóa liêm chính rộng hơn, với việc ít gian lận hơn ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). Giá trị chính của lời cam kết là sự rõ ràng: không ai có thể nói mình không biết quy định, và bạn có bản ghi rằng họ đã đồng ý.
+Hãy thực tế về tác dụng của lời cam kết. Các nghiên cứu về lời nhắc đạo đức và bản cam kết có chữ ký không đứng vững lắm: một nghiên cứu lặp lại quy mô lớn của thí nghiệm "Mười điều răn" không tìm thấy tác động nào đến gian lận ([Verschuere et al., 2018](https://doi.org/10.1177/2515245918781032)), và các tác giả của một nghiên cứu nổi tiếng về việc "ký ở đầu trang" về sau cũng không thấy tác động khi làm lại ([Kristal et al., 2020](https://doi.org/10.1073/pnas.1911695117)); bài báo gốc đã bị rút lại vào năm 2021 vì nghi ngờ về dữ liệu. Nghiên cứu ở các trường đại học có liên hệ bộ quy tắc danh dự (honor code), như một phần của văn hóa liêm chính rộng hơn, với việc ít gian lận hơn ([McCabe, Treviño & Butterfield, 2001](https://doi.org/10.1207/S15327019EB1103_2)). Giá trị chính của lời cam kết là sự rõ ràng: không ai có thể nói mình không biết quy định, và bạn có bản ghi rằng họ đã đồng ý.
 
 ## Giới hạn của giám sát thi: công bằng và pháp luật
 
@@ -83,9 +83,9 @@ Giám sát qua webcam, ghi màn hình và quét phòng hứa hẹn bắt đượ
 
 Pháp luật đặt thêm giới hạn, nhất là ở châu Âu:
 
-- **GDPR.** Video quay ứng viên là dữ liệu cá nhân, và việc phân tích khuôn mặt họ có thể là dữ liệu sinh trắc học, loại được bảo vệ đặc biệt ([Điều 9](https://gdpr-info.eu/art-9-gdpr/)). Năm 2021, cơ quan bảo vệ dữ liệu của Ý đã phạt Đại học Bocconi vì việc giám sát thi từ xa, kết luận, trong số các điểm khác, rằng việc phân tích khuôn mặt là xử lý dữ liệu sinh trắc học không có cơ sở pháp lý hợp lệ, rằng sự đồng ý không được đưa ra một cách tự do do chênh lệch quyền lực giữa trường và sinh viên, và rằng sinh viên không được thông báo đầy đủ ([Garante, quyết định số 317 ngày 16/9/2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). Chênh lệch quyền lực giữa nhà tuyển dụng và ứng viên, nếu có khác, còn lớn hơn.
+- **GDPR.** Video quay ứng viên là dữ liệu cá nhân, và việc phân tích khuôn mặt họ có thể là dữ liệu sinh trắc học, loại được bảo vệ đặc biệt ([Điều 9](https://gdpr-info.eu/art-9-gdpr/)). Năm 2021, cơ quan bảo vệ dữ liệu của Ý đã phạt Đại học Bocconi vì việc giám sát thi từ xa, kết luận, trong số các điểm khác, rằng việc phân tích khuôn mặt là xử lý dữ liệu sinh trắc học không có cơ sở pháp lý hợp lệ, rằng sự đồng ý không được đưa ra một cách tự do do chênh lệch quyền lực giữa trường và sinh viên, và rằng sinh viên không được thông báo đầy đủ ([Garante, quyết định số 317 ngày 16/9/2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988)). Sau các lần kháng cáo, mức phạt là €150.000, giảm từ €200.000. Chênh lệch quyền lực giữa nhà tuyển dụng và ứng viên, nếu có khác, còn lớn hơn.
 - **Đạo luật AI của EU.** Từ ngày 2/2/2025, AI suy đoán cảm xúc của con người tại nơi làm việc bị cấm, với một vài ngoại lệ hẹp về y tế và an toàn ([Điều 5(1)(f)](https://artificialintelligenceact.eu/article/5/)), và hướng dẫn của Ủy ban châu Âu hiểu "nơi làm việc" là bao gồm cả tuyển dụng ([Hướng dẫn của Ủy ban về các hành vi AI bị cấm](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)). Việc giám sát thi đánh giá hành vi "đáng ngờ" qua video tiến khá sát ranh giới đó. AI dùng để đánh giá ứng viên cũng rất có thể thuộc nhóm rủi ro cao, kèm các nghĩa vụ như sự giám sát của con người. [Dùng AI trong tuyển dụng có hợp pháp ở EU không?](/guides/is-ai-hiring-legal-in-the-eu) giải thích các quy định và mốc thời gian.
-- **Hoa Kỳ.** Năm 2022, một tòa án liên bang phán quyết rằng việc một trường đại học công dùng webcam quét phòng ngủ của sinh viên trước bài thi trực tuyến đã vi phạm Tu chính án thứ Tư ([Ogletree v. Cleveland State University, theo tin của Higher Ed Dive](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). Nhà tuyển dụng tư nhân không bị ràng buộc bởi Tu chính án thứ Tư, nhưng luật các bang về sinh trắc học, như Biometric Information Privacy Act của Illinois, có quy định riêng về dữ liệu khuôn mặt.
+- **Hoa Kỳ.** Năm 2022, một thẩm phán liên bang phán quyết rằng việc một trường đại học công dùng webcam quét phòng ngủ của sinh viên trước bài thi trực tuyến đã vi phạm Tu chính án thứ Tư ([Ogletree v. Cleveland State University, theo tin của Higher Ed Dive](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/)). Tòa phúc thẩm đã kết thúc vụ án vào năm 2023 sau khi sinh viên qua đời, mà không phán quyết về vấn đề này ([Bloomberg Law](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death)), nên vấn đề vẫn còn bỏ ngỏ. Nhà tuyển dụng tư nhân không bị ràng buộc bởi Tu chính án thứ Tư, nhưng luật các bang về sinh trắc học, như Biometric Information Privacy Act của Illinois, có quy định riêng về dữ liệu khuôn mặt.
 
 **Phần này là hướng dẫn thực tế, không phải tư vấn pháp lý.** Hãy kiểm tra nghĩa vụ của chính bạn ở nơi bạn tuyển dụng.
 
@@ -110,7 +110,7 @@ testee tổ chức các bài kiểm tra kỹ năng trắc nghiệm có tính gi�
 - **Mẫu trả lời, khi ứng viên làm xong.** Báo cáo của ứng viên chỉ ra thời gian trả lời gần như như nhau ở mọi câu, bất kể độ dài và độ khó, và việc đúng câu khó trong khi sai câu dễ, kèm các con số đằng sau ("đúng 9 trên 10 câu khó, sai 4 trên 8 câu dễ"). Trường hợp thứ hai cần đủ câu trả lời từ các ứng viên khác để biết mỗi câu khó đến đâu. Cả hai ngưỡng được đặt trên một bài kiểm tra với ứng viên mô phỏng sao cho tối đa 1% ứng viên trung thực bị gắn cảnh báo; chúng phát hiện được khoảng một phần ba số ứng viên chuyển mọi câu hỏi cho AI. Báo cáo lưu ý rằng những mẫu như vậy có thể có nguyên nhân vô hại.
 - **Câu hỏi cho buổi phỏng vấn trực tiếp.** Trang của mỗi ứng viên đã làm xong gợi ý tối đa 3 câu họ trả lời đúng, từ các chủ đề mạnh nhất của họ, để trao đổi trong cuộc trò chuyện tiếp theo, bắt đầu bằng những câu khó đứng sau một mẫu bất thường nếu có.
 - **Ứng viên cam kết** tự trả lời, không dùng công cụ AI hay nhờ người khác, trước khi được bắt đầu, và bảng điểm cho thấy họ cam kết lúc nào.
-- **Không dùng camera, micro hay ghi màn hình.** testee chỉ dùng những gì chính trang làm bài thấy: câu trả lời, thời gian, các lần rời trang và các lần cố sao chép.
+- **Không dùng camera hay ghi màn hình.** Micro chỉ được dùng ở chế độ giọng nói, để chuyển câu trả lời bằng lời của ứng viên thành văn bản. Ngoài ra, testee chỉ dùng những gì chính trang làm bài thấy: câu trả lời, thời gian, các lần rời trang và các lần cố sao chép.
 - **Con người quyết định.** Không có gì tự động loại một ứng viên.
 
 ## Đọc thêm
@@ -129,10 +129,10 @@ testee tổ chức các bài kiểm tra kỹ năng trắc nghiệm có tính gi�
 - van der Linden, W. J., & Guo, F. (2008). Bayesian procedures for identifying aberrant response-time patterns in adaptive testing. *Psychometrika, 73*(3), 365–384. [doi:10.1007/s11336-007-9046-8](https://doi.org/10.1007/s11336-007-9046-8)
 - Meijer, R. R., & Sijtsma, K. (2001). Methodology review: Evaluating person fit. *Applied Psychological Measurement, 25*(2), 107–135. [doi:10.1177/01466210122031957](https://doi.org/10.1177/01466210122031957)
 - Verschuere, B., et al. (2018). Registered replication report on Mazar, Amir, and Ariely (2008). *Advances in Methods and Practices in Psychological Science, 1*(3), 299–317. [doi:10.1177/2515245918781032](https://doi.org/10.1177/2515245918781032)
-- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107. [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
+- Kristal, A. S., Whillans, A. V., Bazerman, M. H., Gino, F., Shu, L. L., Mazar, N., & Ariely, D. (2020). Signing at the beginning versus at the end does not decrease dishonesty. *PNAS, 117*(13), 7103–7107 (đính chính năm 2026). [doi:10.1073/pnas.1911695117](https://doi.org/10.1073/pnas.1911695117)
 - McCabe, D. L., Treviño, L. K., & Butterfield, K. D. (2001). Cheating in academic institutions: A decade of research. *Ethics & Behavior, 11*(3), 219–232. [doi:10.1207/S15327019EB1103_2](https://doi.org/10.1207/S15327019EB1103_2)
 - Yoder-Himes, D. R., et al. (2022). Racial, skin tone, and sex disparities in automated proctoring software. *Frontiers in Education, 7*. [doi:10.3389/feduc.2022.881449](https://doi.org/10.3389/feduc.2022.881449)
 - Garante per la protezione dei dati personali, [quyết định số 317 ngày 16/9/2021](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9703988) (Università Bocconi).
-- Regulation (EU) 2024/1689 (AI Act), [Điều 5](https://artificialintelligenceact.eu/article/5/); European Commission, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), 4/2/2025.
+- Regulation (EU) 2024/1689 (AI Act), [Điều 5](https://artificialintelligenceact.eu/article/5/); European Commission, [Guidelines on prohibited AI practices](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act), công bố ngày 4/2/2025, thông qua ngày 29/7/2025.
 - GDPR, [Điều 9](https://gdpr-info.eu/art-9-gdpr/) và [Điều 22](https://gdpr-info.eu/art-22-gdpr/).
-- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), tháng 8/2022 (Ogletree v. Cleveland State University, Tòa án Quận Bắc Ohio).
+- Higher Ed Dive, [Test proctoring room scans violated college student's privacy, judge rules](https://www.highereddive.com/news/test-proctoring-room-scans-violated-college-students-privacy-judge-rules/630340/), tháng 8/2022 (Ogletree v. Cleveland State University, Tòa án Quận Bắc Ohio); Bloomberg Law, [Cleveland State dodges room-scan order after plaintiff's death](https://news.bloomberglaw.com/litigation/cleveland-state-dodges-room-scan-order-after-plaintiffs-death), tháng 12/2023.

@@ -2,7 +2,7 @@
 title: "Cách viết mô tả công việc để tạo bài kiểm tra tốt"
 seoTitle: "Cách viết mô tả công việc (JD) để kiểm tra đúng kỹ năng"
 description: "Mô tả công việc cần gì để bài kiểm tra kỹ năng tạo từ nó kiểm tra đúng điều cần: kỹ năng và công cụ cụ thể, cấp độ, công việc hằng ngày và những gì nên bỏ."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # Cách viết mô tả công việc để tạo bài kiểm tra tốt
@@ -15,7 +15,7 @@ Hướng dẫn này nói về việc thứ hai: viết một bản mô tả côn
 
 Bài kiểm tra kiến thức hữu ích khi nó kiểm tra những gì công việc thực sự cần. Nghiên cứu tuyển dụng xếp bài kiểm tra kiến thức chuyên môn vào nhóm dự báo hiệu suất công việc tốt hơn tính trung bình, nhưng con số ước tính đó là cho các bài kiểm tra được xây dựng riêng cho công việc đang xét; bài kiểm tra kiến thức không liên quan đến công việc dự báo kém hơn (xem [Bài kiểm tra kỹ năng và sàng lọc CV](/guides/skills-tests-vs-cv-screening)).
 
-Các quy định lao động của Mỹ cũng nói điều tương tự từ góc độ pháp lý. Bộ Hướng dẫn thống nhất về quy trình tuyển chọn nhân sự (Uniform Guidelines on Employee Selection Procedures) yêu cầu một bài kiểm tra dựa trên nội dung phải dựa trên phân tích công việc, một phân tích tập trung vào "các hành vi trong công việc và các nhiệm vụ gắn với chúng" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Trên thực tế, với hầu hết các nhóm, mô tả công việc chính là bản phân tích đó được viết ra. Và theo Đạo luật Người khuyết tật Hoa Kỳ (ADA), một bản mô tả công việc được soạn trước khi đăng tuyển hoặc phỏng vấn được xem là bằng chứng về các chức năng thiết yếu của công việc ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
+Các quy định lao động của Mỹ cũng nói điều tương tự từ góc độ pháp lý. Bộ Hướng dẫn thống nhất về quy trình tuyển chọn nhân sự (Uniform Guidelines on Employee Selection Procedures) yêu cầu một bài kiểm tra dựa trên nội dung phải dựa trên phân tích công việc, một phân tích tập trung vào "các hành vi trong công việc và các nhiệm vụ gắn với chúng" ([29 CFR 1607.14(C)](https://www.law.cornell.edu/cfr/text/29/1607.14)). Trên thực tế, với hầu hết các nhóm, mô tả công việc chính là bản phân tích đó được viết ra. (Tháng 10/2026, EEOC đã tiến hành hủy bỏ các phần diễn giải của Guidelines này, với mục tiêu tháng 1/2027. Title VII vẫn yêu cầu bài kiểm tra có tác động bất lợi phải liên quan đến công việc.) Và theo Đạo luật Người khuyết tật Hoa Kỳ (ADA), một bản mô tả công việc được soạn trước khi đăng tuyển hoặc phỏng vấn được xem là bằng chứng về các chức năng thiết yếu của công việc ([42 U.S.C. 12111(8)](https://www.law.cornell.edu/uscode/text/42/12111)).
 
 Vì vậy, mô tả công việc đáng để bạn bỏ thêm nửa giờ. Nó viết gì, bài kiểm tra sẽ hỏi về điều đó.
 
@@ -48,7 +48,7 @@ Số năm kinh nghiệm chỉ là thước đo gần đúng cho cấp độ, và
 
 Mô tả nhiệm vụ là những dòng hữu ích nhất cho bài kiểm tra. "Lập tờ khai thuế GTGT hằng tháng" hay "phân loại các lỗi mới được báo và tái hiện chúng" cho người viết câu hỏi biết kiến thức nào được dùng và trong tình huống nào. Hãy viết nhiệm vụ dưới dạng động từ và tân ngữ, như cách bạn mô tả công việc cho một đồng nghiệp mới.
 
-Nếu bạn không chắc một vị trí thường làm những gì, [O*NET OnLine](https://www.onetonline.org/) liệt kê các nhiệm vụ, công nghệ và kiến thức điển hình của hàng trăm nghề. Hãy dùng nó như một danh sách kiểm tra, rồi chỉ giữ lại những gì vị trí của bạn thực sự làm.
+Nếu bạn không chắc một vị trí thường làm những gì, [O*NET OnLine](https://www.onetonline.org/) liệt kê các nhiệm vụ, công nghệ và kiến thức điển hình của khoảng 1.000 nghề. Hãy dùng nó như một danh sách kiểm tra, rồi chỉ giữ lại những gì vị trí của bạn thực sự làm.
 
 ### 4. Ranh giới rõ ràng giữa yêu cầu bắt buộc và điểm cộng
 

@@ -2,7 +2,7 @@
 title: "Agenti IA, MCP e API: cosa sono e come usarli nella selezione del personale"
 seoTitle: "Agenti IA, MCP e API nella selezione del personale"
 description: "Cosa sono agenti IA, MCP e API, come usarli in sicurezza nella selezione e gestire testee dalla sua assistente IA, Claude, ChatGPT o la tua piattaforma."
-updated: "2026-10-22"
+updated: "2026-11-07"
 ---
 
 # Agenti IA, MCP e API: cosa sono e come usarli nella selezione del personale
@@ -96,7 +96,7 @@ Se il tuo team lavora già in Claude o ChatGPT, puoi portare lì testee. Il serv
 **Per collegarlo:**
 
 1. In testee, apri la scheda **Integrazioni** di un'azienda e seleziona **App IA**. Copia l'indirizzo del server: `https://testee.ai/mcp`.
-2. **In Claude:** apri Impostazioni, poi Connettori, e aggiungi un connettore personalizzato con quell'indirizzo. **In Claude Code:** esegui `claude mcp add --transport http testee https://testee.ai/mcp`. **In ChatGPT:** aggiungilo come connettore personalizzato nelle impostazioni di app e connettori.
+2. **In Claude:** apri Personalizza, poi Connettori, e aggiungi un connettore personalizzato con quell'indirizzo; nei piani Team ed Enterprise, prima lo aggiunge un proprietario nelle impostazioni dell'organizzazione. **In Claude Code:** esegui `claude mcp add --transport http testee https://testee.ai/mcp`. **In ChatGPT:** aggiungilo come server MCP personalizzato. Dove farlo dipende dal tuo piano, e potrebbe servire l'autorizzazione del tuo amministratore.
 3. La tua app di IA apre la pagina di accesso di testee. Accedi, controlla quale app sta facendo la richiesta e seleziona **Consenti**. Perché possa solo leggere, disattiva prima **Consenti modifiche**.
 
 Da quel momento, chiedi nella chat come faresti con un collega: «In testee, chi sono i tre migliori candidati per Product designer?» La maggior parte delle app di IA ti chiede conferma prima di una modifica e ti avvisa prima di qualsiasi operazione che non si può annullare: testee indica loro quali azioni modificano o eliminano qualcosa.
@@ -106,7 +106,7 @@ Da quel momento, chiedi nella chat come faresti con un collega: «In testee, chi
 - **I tuoi permessi.** Agisce a tuo nome, in ogni azienda di cui fai parte, con il tuo ruolo in ciascuna.
 - **Crediti e limiti.** Invitare un candidato costa come nell'app, e valgono gli stessi limiti di email.
 - **La tracciabilità.** Tutto ciò che un'app di IA fa per te compare nel registro attività dell'azienda come fatto tramite un'app di IA, dall'approvare argomenti e vedere risultati al concedere tempo extra o revocare un candidato. Il proprietario dell'azienda lo legge nella scheda **Registro attività** dell'azienda.
-- **Decide l'azienda.** Proprietari e amministratori possono impedire alle app di IA di usare i dati di un'azienda con **Consenti le app di IA in questa azienda** nella sua pagina delle app di IA.
+- **Decide l'azienda.** Proprietari e amministratori possono impedire alle app di IA di usare i dati di un'azienda con l'interruttore **Consenti le app IA** nella sua pagina delle app di IA.
 - **Cosa non può fare.** Non può vedere la tua password né le tue chiavi API, e non può eliminare il tuo account o un'azienda. Queste operazioni restano nell'app.
 
 **Per scollegarlo,** rimuovi il connettore nella tua app di IA, oppure seleziona **Scollega** accanto a esso in **App IA**, nella scheda Integrazioni. Smette di funzionare subito.
@@ -117,7 +117,7 @@ Da quel momento, chiedi nella chat come faresti con un collega: «In testee, chi
 
 Per automazioni senza IA, testee ha un'API, descritta nella sua [documentazione per sviluppatori](/api-docs).
 
-1. Un proprietario o un amministratore apre la scheda **Integrazioni** di un'azienda, poi **API**, e seleziona **Nuova chiave**. Dalle il nome della piattaforma che la userà, scegli quando scade e spunta solo ciò che le serve: la chiave di una dashboard legge soltanto, quella di un sito carriere invita anche. Potrai aggiungere o togliere permessi in seguito. La chiave viene mostrata una sola volta: conservala in un posto sicuro.
+1. Un proprietario o un amministratore apre la scheda **Integrazioni** di un'azienda, poi **API, SDK, webhook**, e seleziona **Nuova chiave**. Dalle il nome della piattaforma che la userà, scegli quando scade e spunta solo ciò che le serve: la chiave di una dashboard legge soltanto, quella di un sito carriere invita anche. Potrai aggiungere o togliere permessi in seguito. La chiave viene mostrata una sola volta: conservala in un posto sicuro.
 2. La tua piattaforma invia richieste con quella chiave: elencare i colloqui dell'azienda, elencare o leggere i candidati con il loro punteggio, se hanno superato il test e le segnalazioni di integrità, e invitare un candidato.
 3. Aggiungi un **webhook**: un indirizzo sulla tua piattaforma che testee chiama, con una firma, quando un candidato inizia, termina o viene rimosso, quando il suo invito non gli arriva o scade, e quando un colloquio è pronto, così non devi continuare a chiedere. La pagina API può inviargli un evento di test e ne mostra il registro delle consegne.
 

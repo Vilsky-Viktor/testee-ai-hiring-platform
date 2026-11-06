@@ -2,14 +2,14 @@
 title: "Kas AI kasutamine värbamisel on Ühendkuningriigis seaduslik? Mida tööandjad peavad teadma"
 seoTitle: "AI värbamisel Ühendkuningriigis: võrdõiguslikkus ja andmed"
 description: "AI kasutamine värbamisel on Ühendkuningriigis seaduslik, kuid reeglitega: Equality Act, UK GDPR-i uued automatiseeritud otsuste reeglid 2026 ja ICO leiud."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Kas AI kasutamine värbamisel on Ühendkuningriigis seaduslik? Mida tööandjad peavad teadma
 
 Üldiselt jah: AI kasutamine värbamisel on Ühendkuningriigis seaduslik. Ühendkuningriigis ei ole ühtset AI seadust nagu ELi tehisintellekti määrus (AI Act). Selle asemel kohalduvad AI-tööriistadele, nagu igale testile, Equality Act 2010 ja Ühendkuningriigi isikuandmete kaitse üldmäärus (UK GDPR), ning alates 5. veebruarist 2026 on UK GDPR-is uued reeglid otsustele, mis tehakse üksnes automatiseeritult.
 
-See juhend selgitab üldjoontes reegleid, seda, mida tööandjad peavad tegema, ja kuidas testee sellele läheneb. **See ei ole õigusnõuanne.** See kajastab reegleid 2026. aasta oktoobri seisuga; mõned neist on uued ja järelevalveasutuse juhiseid nende kohta alles uuendatakse.
+See juhend selgitab üldjoontes reegleid, seda, mida tööandjad peavad tegema, ja kuidas testee sellele läheneb. **See ei ole õigusnõuanne.** See kajastab reegleid 2026. aasta novembri seisuga; mõned neist on uued ja järelevalveasutuse juhiseid nende kohta alles uuendatakse.
 
 ## Lühike vastus
 
@@ -63,7 +63,7 @@ Kandidaatide andmetele kohalduvad UK GDPR ja Data Protection Act 2018, mis toimi
 
 ## Mida ICO leidis AI-värbamistööriistu auditeerides
 
-2024. aasta novembris avaldas Information Commissioner's Office (ICO), Ühendkuningriigi andmekaitse järelevalveasutus, oma auditite tulemused AI-põhiste kandidaatide otsimise, sõelumise ja valiku tööriistade pakkujate kohta. Ta tegi 296 soovitust ja 42 nõuandvat märkust ning ütleb: „Nii AI pakkujad kui ka värbajad peaksid järgima selle aruande soovitusi.“ Mida ta leidis:
+Novembris 2024 avaldas Information Commissioner's Office (ICO), Ühendkuningriigi andmekaitse järelevalveasutus, oma auditite tulemused AI-põhiste kandidaatide otsimise, sõelumise ja valiku tööriistade pakkujate kohta. Ta tegi 296 soovitust ja 42 nõuandvat märkust ning ütleb: „Nii AI pakkujad kui ka värbajad peaksid järgima selle aruande soovitusi.“ Mida ta leidis:
 
 - **Tuletatud tunnused.** Mõned tööriistad „hindasid või tuletasid inimeste sugu, etnilist päritolu ja muid tunnuseid nende tööavaldusest või isegi ainult nimest, selle asemel et kandidaatidelt otse küsida“. ICO seisukoht: „See tuletatud teave ei ole piisavalt täpne, et kallutatust tõhusalt jälgida.“ Seda töödeldi sageli ilma õigusliku aluseta ja kandidaadi teadmata.
 - **Filtreerimine kaitstud tunnuste järgi.** Mõned tööriistad võimaldasid värbajatel teatud kaitstud tunnustega kandidaate välja filtreerida.
@@ -82,6 +82,8 @@ Tema seitse peamist soovitust, nii pakkujatele kui ka värbajatele:
 7. **Õiguslik alus.** Määra see enne töötlemist, lisaks tingimus mis tahes eriliiki isikuandmete jaoks.
 
 ICO soovitab ka AI väljundite sisulist inimülevaatust koos tehtud ülevaatuste kirjetega.
+
+Märtsis 2026 avaldas ICO teise aruande, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), mis põhineb tööl enam kui 30 tööandjaga. Selle järgi käsitlevad paljud oma tööriistu otsustustoena ka siis, kui tegelikku inimese osalust on vähe, otsuse vaidlustamise kaitsemeetmeid rakendatakse ebaühtlaselt, kandidaatidele ei öelda sageli selgelt, kuidas automatiseerimist kasutatakse, ning mõjuhinnangud puuduvad sageli või on nõrgad. Selle uuendatud juhised automatiseeritud otsuste kohta olid avalikul konsultatsioonil 29. maini 2026 ega olnud 2026. aasta novembri seisuga lõplikud ning teel on seadusjärgne tegevusjuhend AI ja automatiseeritud otsuste kohta. Alates 30. septembrist 2026 on järelevalveasutus Information Commission, mis kannab endiselt nime ICO.
 
 ## Edastamine USAsse
 
@@ -105,7 +107,7 @@ testee viib läbi ajapiiranguga valikvastustega oskuste intervjuusid, mille AI k
 
 Kuidas see tootes täna välja näeb:
 
-- **AI kirjutab küsimused ja nende vastusevõtmed; hindamine käib kindlate reeglite järgi.** Ükski AI ei loe ega hinda kandidaadi vastust ning video- ega näoanalüüsi ei kasutata. Häälerežiimis muudetakse kõne tekstiks ja sobitatakse vastusevariandiga, mis kandidaadile välja öeldakse ja ekraanil näidatakse: üks selgelt nimetatud variant võetakse vastuseks kohe, mitme variandi valik kinnitatakse kõigepealt. Kõnet ei salvestata kunagi ja häält ei analüüsita kunagi.
+- **AI kirjutab küsimused ja nende vastusevõtmed; hindamine käib kindlate reeglite järgi.** Ükski AI ei hinda kandidaadi vastust ning video- ega näoanalüüsi ei kasutata. Häälerežiimis muudetakse kõne tekstiks ja sobitatakse vastusevariandiga, mis kandidaadile välja öeldakse ja ekraanil näidatakse: üks selgelt nimetatud variant võetakse vastuseks kohe, mitme variandi valik kinnitatakse kõigepealt. testee ei salvesta kõnet kunagi ja häält ei analüüsita kunagi.
 - **Sina kiidad teemad heaks** enne, kui ühtegi küsimust kirjutatakse, ja sina valid läbimise läve.
 - **Otsustavad inimesed.** Tulemuste leht ja PDF-aruanded tuletavad sinu meeskonnale meelde tulemused üle vaadata; testee ei lükka kandidaate tagasi ega saada äraütlemiskirju.
 - **Kandidaatidele öeldakse** enne alustamist, et küsimused on kirjutanud AI, et tulemused vaatavad üle ja otsuse teevad inimesed sinu ettevõttest ning et nad võivad taotleda ülevaatust.
@@ -128,4 +130,5 @@ Kuidas see tootes täna välja näeb:
 - Data (Use and Access) Act 2025, [section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80), millega lisatakse UK GDPR-i artiklid 22A–22D ([artikkel 22C](https://www.legislation.gov.uk/eur/2016/679/article/22C)).
 - The Data (Use and Access) Act 2025 (Commencement No. 6 and Transitional and Saving Provisions) Regulations 2026, [SI 2026/82, regulation 2](https://www.legislation.gov.uk/uksi/2026/82/regulation/2/made).
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [november 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
+- Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), märts 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).

@@ -2,14 +2,14 @@
 title: "Usare l'IA nella selezione del personale è legale nell'UE? Cosa devono sapere i datori di lavoro"
 seoTitle: "IA nella selezione del personale: è legale nell'UE?"
 description: "L'IA nelle assunzioni è legale nell'UE, con regole. Cosa implica l'alto rischio del regolamento sull'IA, le date fino a dicembre 2027 e le basi del GDPR."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Usare l'IA nella selezione del personale è legale nell'UE? Cosa devono sapere i datori di lavoro
 
 In generale, sì: usare l'IA nella selezione del personale è legale nell'UE. Ma la maggior parte degli strumenti di IA che valutano i candidati rientra nella categoria ad alto rischio del regolamento sull'intelligenza artificiale (EU AI Act), che comporta obblighi per il fornitore e per te, il datore di lavoro. Alcune pratiche sono vietate del tutto. E il GDPR (regolamento generale sulla protezione dei dati) si applica ai dati dei candidati, come è sempre stato.
 
-Questa guida spiega le regole a grandi linee, le date che contano, cosa devono fare i datori di lavoro e come se ne occupa testee. **Non costituisce consulenza legale.** Riflette le regole in vigore a ottobre 2026. Le regole sono nuove, le linee guida sono ancora in via di definizione e il diritto nazionale aggiunge requisiti propri. Consulta il tuo legale prima di fare affidamento su quanto scritto qui.
+Questa guida spiega le regole a grandi linee, le date che contano, cosa devono fare i datori di lavoro e come se ne occupa testee. **Non costituisce consulenza legale.** Riflette le regole in vigore a novembre 2026. Le regole sono nuove, le linee guida sono ancora in via di definizione e il diritto nazionale aggiunge requisiti propri.
 
 ## La risposta breve
 
@@ -34,7 +34,7 @@ Questo copre un'ampia gamma di strumenti: filtri dei CV, sistemi di classificazi
 
 Di solito no. L'[articolo 6, paragrafo 3](https://artificialintelligenceact.eu/article/6/), del regolamento sull'IA esclude dalla categoria ad alto rischio alcuni sistemi dell'allegato III, ad esempio quando svolgono un compito procedurale limitato o si limitano a preparare una valutazione umana. Ma un sistema dell'allegato III che effettua la profilazione di persone è sempre ad alto rischio, e assegnare punteggi o classificare i candidati in base alle loro capacità rischia di essere considerato profilazione.
 
-Le bozze di linee guida della Commissione europea sulla classificazione ad alto rischio (pubblicate il 19 maggio 2026 per la consultazione; non definitive a ottobre 2026) adottano un'interpretazione ampia. Descrivono la selezione come comprensiva di "preselezione, valutazione, classificazione o test dei candidati" e, come riassunto da [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), considerano ad alto rischio i sistemi che generano punteggi di idoneità "anche se la decisione finale di assunzione è presa da un recruiter umano".
+Le bozze di linee guida della Commissione europea sulla classificazione ad alto rischio (pubblicate il 19 maggio 2026 per la consultazione; non definitive a novembre 2026) adottano un'interpretazione ampia. Descrivono la selezione come comprensiva di "preselezione, valutazione, classificazione o test dei candidati" e, come riassunto da [Skadden](https://www.skadden.com/insights/publications/2026/05/ai-act-update), considerano ad alto rischio i sistemi che generano punteggi di idoneità "anche se la decisione finale di assunzione è presa da un recruiter umano".
 
 Quindi uno strumento che assegna a ogni candidato un punteggio e una posizione in classifica è molto probabilmente ad alto rischio, anche se sono le persone a decidere chi viene assunto.
 
@@ -47,7 +47,7 @@ Quindi uno strumento che assegna a ogni candidato un punteggio e una posizione i
 | 2 dicembre 2027 | Obblighi per i sistemi ad alto rischio dell'allegato III, compresi gli strumenti di selezione |
 | 2 agosto 2028 | Obblighi per l'IA ad alto rischio nei prodotti coperti dall'allegato I |
 
-La data per l'alto rischio dell'allegato III era originariamente il 2 agosto 2026. Il Digital Omnibus sull'IA (regolamento (UE) 2026/1744, in vigore dal 27 luglio 2026) l'ha spostata al 2 dicembre 2027 ([National Law Review](https://natlawreview.com/article/eu-digital-omnibus-ai-enters-force)). Date come riportate nell'[AI Act Explorer, articolo 113](https://artificialintelligenceact.eu/article/113/), a ottobre 2026.
+La data per l'alto rischio dell'allegato III era originariamente il 2 agosto 2026. Il Digital Omnibus sull'IA (regolamento (UE) 2026/1744, in vigore dal 27 luglio 2026) l'ha spostata al 2 dicembre 2027 ([Gazzetta ufficiale](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng)). Ha anche riscritto l'obbligo di alfabetizzazione in materia di IA dell'articolo 4, dal 27 luglio 2026: fornitori e deployer devono ora adottare misure per sostenere l'alfabetizzazione in materia di IA del proprio personale, senza un livello prefissato da garantire. Date aggiornate a novembre 2026.
 
 Il tempo in più serve per prepararsi, non è un motivo per ignorare le regole. Il GDPR e le leggi contro la discriminazione si applicano già pienamente.
 
@@ -86,7 +86,7 @@ L'articolo 26 stabilisce gli obblighi del datore di lavoro. In sintesi ([articol
 - **Informa i rappresentanti dei lavoratori e i lavoratori interessati** prima di usare un sistema ad alto rischio sul luogo di lavoro.
 - **Informa i candidati** che sono soggetti all'uso di un sistema di IA ad alto rischio.
 
-Gli enti pubblici e alcune organizzazioni private devono anche effettuare una valutazione d'impatto sui diritti fondamentali (articolo 27). E l'obbligo di alfabetizzazione in materia di IA dell'articolo 4 si applica già: le persone che usano strumenti di IA nella tua selezione devono capire cosa fanno e cosa non fanno.
+Gli enti pubblici e alcune organizzazioni private devono anche effettuare una valutazione d'impatto sui diritti fondamentali (articolo 27). E l'articolo 4 si applica già: adotta misure per sostenere l'alfabetizzazione in materia di IA delle persone che usano strumenti di IA nella tua selezione, in modo che capiscano cosa fanno e cosa non fanno.
 
 ## Le basi del GDPR
 
@@ -117,7 +117,7 @@ testee svolge colloqui di competenze a scelta multipla e a tempo, scritti dall'I
 
 Ecco cosa significa oggi nel prodotto:
 
-- **L'IA scrive le domande e le relative chiavi di correzione; la correzione segue regole fisse.** Nessuna IA legge o giudica la risposta di un candidato, e non si usa alcuna analisi di video, voce o volto. Se in seguito l'IA corregge una chiave, la correzione vale per i candidati che iniziano dopo; i risultati passati non cambiano.
+- **L'IA scrive le domande e le relative chiavi di correzione; la correzione segue regole fisse.** Nessuna IA giudica la risposta di un candidato, e non si usa alcuna analisi di video o volto. Nella modalità vocale, il parlato viene trasformato in testo e abbinato a un'opzione, che viene detta al candidato e mostrata sullo schermo: una sola opzione indicata chiaramente viene registrata subito, una scelta di più opzioni viene prima confermata. testee non conserva mai il parlato, e la voce non viene mai analizzata. Se in seguito l'IA corregge una chiave, la correzione vale per i candidati che iniziano dopo; i risultati passati non cambiano.
 - **Approvi tu gli argomenti** prima che venga scritta qualsiasi domanda, e puoi vedere ogni domanda.
 - **Decidono le persone.** La pagina dei risultati e i report PDF ricordano al tuo team di esaminare i risultati; testee non scarta candidati né invia messaggi di rifiuto.
 - **I candidati vengono informati** prima di iniziare che le domande sono scritte dall'IA, che le persone della tua azienda esaminano i risultati e decidono, e che possono chiedere una revisione.

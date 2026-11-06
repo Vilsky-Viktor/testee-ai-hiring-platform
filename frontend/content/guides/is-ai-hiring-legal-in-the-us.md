@@ -2,14 +2,14 @@
 title: "Is AI hiring legal in the US? What employers need to know"
 seoTitle: "Is AI Hiring Legal in the US? Federal and State Rules"
 description: "AI in hiring is legal in the US, with rules: adverse impact and accommodation under federal law, NYC bias audits, and Illinois, Colorado and California."
-updated: "2026-10-30"
+updated: "2026-11-07"
 ---
 
 # Is AI hiring legal in the US? What employers need to know
 
-In general, yes: using AI in hiring is legal in the US. There is no federal AI law for hiring. Instead, federal anti-discrimination law applies to AI tools as it does to any test, and a few places add rules of their own: New York City, Illinois, Colorado and California.
+In general, yes: using AI in hiring is legal in the US. There is no federal AI law for hiring. Instead, federal anti-discrimination law applies to AI tools as it does to any test, and a few places add rules of their own: New York City, Illinois, Colorado, California, New Jersey and Texas. A December 2025 executive order set up a Justice Department task force to challenge state AI laws ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), but an order doesn't repeal them: they apply until Congress or a court says otherwise.
 
-This guide explains the rules at a high level, the dates that matter, what employers have to do, and how testee approaches it. **It is not legal advice.** It reflects the rules as of October 2026, several of which are new or still being finalized.
+This guide explains the rules at a high level, the dates that matter, what employers have to do, and how testee approaches it. **It is not legal advice.** It reflects the rules as of November 2026, several of which are new or still being finalized.
 
 ## The short answer
 
@@ -20,7 +20,7 @@ This guide explains the rules at a high level, the dates that matter, what emplo
 | Do I have to tell candidates? | In New York City and Illinois, yes; in Colorado and California, from 1 January 2027 |
 | Do I have to offer extra time? | To candidates with disabilities who need it: a reasonable accommodation |
 | How long must I keep records? | Four years in California, three in Colorado |
-| Who makes the hiring decision? | A person. Every set of rules here expects human review |
+| Who makes the hiring decision? | A person. Colorado and California build in human review, and it's the safest approach everywhere |
 
 ## Federal law
 
@@ -32,7 +32,9 @@ Title VII of the Civil Rights Act of 1964 forbids employment discrimination beca
 
 For example, if 60% of one group passes your test and 42% of another, the ratio is 42 ÷ 60 = 0.70, below 0.80: a warning sign to look into. It isn't proof of discrimination, and small numbers can make the ratio swing.
 
-The EEOC's 2023 technical assistance on AI in selection was taken down in January 2025. The Uniform Guidelines are a regulation, not guidance, and still apply. Responsibility for adverse impact stays with the employer, whoever built the test.
+Federal enforcement has changed. The EEOC's 2023 technical assistance on AI in selection was taken down in January 2025. Its National Enforcement Plan of June 2026 says it will avoid disparate impact theories in investigations "to the maximum degree possible" and won't bring disparate impact cases ([EEOC](https://www.eeoc.gov/sites/default/files/2026-06/NEP_-_signed.pdf)). The Department of Labor removed its copy of the Uniform Guidelines on 26 October 2026, and on 16 October 2026 the EEOC sent the White House a final rule to rescind the interpretive parts of its own, aiming for January 2027 ([Ogletree](https://ogletree.com/insights-resources/blog-posts/eeoc-sends-oira-final-rule-rescinding-uniform-guidelines-on-employee-selection-procedures/)). Until that rule is published and takes effect, the Guidelines stay in the Code of Federal Regulations.
+
+None of this changes Title VII. Disparate impact is in the statute ([42 U.S.C. §2000e-2(k)](https://www.law.cornell.edu/uscode/text/42/2000e-2)), candidates can still sue, and states enforce their own laws. The four-fifths rule remains a useful first check whatever happens to the Guidelines, and responsibility for adverse impact stays with the employer, whoever built the test.
 
 ### The ADA and accommodation
 
@@ -64,7 +66,7 @@ And they must tell candidates when AI is used in recruitment and hiring decision
 
 ## Colorado
 
-Colorado's AI law was repealed and re-enacted by SB 26-189, signed on 14 May 2026 and in force from 1 January 2027. The Attorney General's rules are proposed (a hearing was held on 26 October 2026) and due before that date. For deployers of high-risk AI used in employment decisions, the duties are:
+Colorado's AI law was repealed and re-enacted by SB 26-189, signed on 14 May 2026 and in force from 1 January 2027. The Attorney General's rules are proposed (with a hearing set for 26 October 2026), not yet adopted as of November 2026, and due by 1 January 2027. For deployers of automated decision-making technology that materially influences an employment decision, the duties are:
 
 - **Notice before use** to the candidate.
 - **An explanation of an adverse decision,** such as not being hired or not moving forward.
@@ -75,6 +77,12 @@ Colorado's AI law was repealed and re-enacted by SB 26-189, signed on 14 May 202
 
 - **Civil Rights Council regulations on automated-decision systems,** in force since 1 October 2025: anti-discrimination law applies to automated tools in hiring as it does to any other selection method. Employers must keep employment records, including automated-decision system data, for four years (Cal. Code Regs. tit. 2, §11013(c)).
 - **The CCPA's rules on automated decision-making technology** apply to employment decisions from 1 January 2027: a notice before use, the right to opt out or to appeal, and the right to access information about how the technology was used.
+- **The No Robo Bosses Act (SB 947),** signed on 30 September 2026, applies from 1 July 2027 to discipline and termination, not to hiring.
+
+## New Jersey and Texas
+
+- **New Jersey.** Rules on disparate impact under the Law Against Discrimination (N.J.A.C. 13:16), in force since 15 December 2025, cover automated employment decision tools. An employer can be liable even if a vendor built the tool.
+- **Texas.** The Responsible AI Governance Act (HB 149), in force since 1 January 2026, bans AI used with the intent to discriminate unlawfully. A disparate impact alone doesn't show that intent.
 
 ## The dates
 
@@ -82,12 +90,13 @@ Colorado's AI law was repealed and re-enacted by SB 26-189, signed on 14 May 202
 | --- | --- |
 | 5 July 2023 | New York City's Local Law 144 enforced |
 | 1 October 2025 | California's Civil Rights Council rules on automated-decision systems |
-| 1 January 2026 | Illinois: notice of AI use, no discriminatory AI, no zip codes as a proxy |
+| 15 December 2025 | New Jersey's rules on disparate impact |
+| 1 January 2026 | Illinois: notice of AI use, no discriminatory AI, no zip codes as a proxy; Texas: no AI used with intent to discriminate |
 | 1 January 2027 | Colorado's AI law; California's CCPA rules on automated decision-making in employment |
 
 ## A practical checklist for employers
 
-1. **List the jobs and places** you hire for: New York City, Illinois, Colorado, California, elsewhere in the US.
+1. **List the jobs and places** you hire for: New York City, Illinois, Colorado, California, New Jersey, Texas, elsewhere in the US.
 2. **Test only what the job needs.** Choose topics and a passing grade you can justify for the role.
 3. **Update your candidate notice** to say AI is used, how results are used, and how to ask for an accommodation and a human review. Add the Illinois and Colorado wording where they apply.
 4. **Offer accommodations,** such as extra time, and agree them before the candidate starts.
@@ -103,12 +112,12 @@ testee runs timed multiple-choice skills interviews written by AI from a job des
 
 What that looks like in the product today:
 
-- **AI writes the questions and their answer keys; marking follows fixed rules.** No AI reads or judges a candidate's answer, and no video or face analysis is used. In voice mode, speech is turned into text and matched to an option, which is said back to the candidate and shown on screen: one clearly named option is saved at once, and a choice of several options is confirmed first. Speech is never stored and the voice is never analysed.
+- **AI writes the questions and their answer keys; marking follows fixed rules.** No AI judges a candidate's answer, and no video or face analysis is used. In voice mode, speech is turned into text and matched to an option, which is said back to the candidate and shown on screen: one clearly named option is saved at once, and a choice of several options is confirmed first. testee never stores speech, and the voice is never analysed.
 - **You approve the topics** before any question is written, and you choose the passing grade.
 - **People decide.** testee doesn't reject candidates or send rejection messages.
 - **No protected characteristics.** testee never asks for, infers or stores candidates' sex, race, age, disability, zip code or other protected characteristics.
 - **A bias-audit export.** On the company's Action log page, the owner can download a CSV file of the candidates who finished, for the whole company or one interview and between two dates: each candidate's grade, the passing grade, whether they passed and whether they scored above the interview's median. Each row is keyed by the candidate's email, so you can join it with the self-reported categories you collected yourself; then remove the email column and give the file to your independent auditor, who works out the selection and scoring rates and the impact ratios. The same file lets you run the four-fifths check yourself.
-- **Extra time** of +25%, +50% or +100% on every question can be given to any candidate who asks, before they start. testee stores only the amount, never the reason. In voice mode, a candidate can always tap an option instead, and you can set an interview to answering by tapping only.
+- **Extra time** of +25%, +50% or +100% on every question can be given to any candidate who asks, before they start. testee stores only the amount, never the reason. In voice mode, a candidate can tap an option instead of speaking. Starting a voice interview needs a microphone, so before they start, set a candidate who can't use one to answering by tapping. You can also set the whole interview to that.
 - **Candidate notice templates,** a general one and versions for New York City, Illinois and Colorado, are on the [documents page](/documents), with the instructions for companies.
 - **New York City.** testee hasn't had its own independent bias audit yet. Don't use testee for New York City jobs until you've done what Local Law 144 asks of you as the employer: an independent bias audit within the year before use, its summary published, and a notice to candidates 10 business days before.
 - **Data.** Your company is the business and testee its service provider under the CCPA, under the [data processing agreement](/dpa) and its US section. Data is hosted in the EU, with some sub-processors in the US (see the [privacy policy](/privacy)), and isn't used to train AI models.
@@ -124,8 +133,13 @@ What that looks like in the product today:
 ## Sources
 
 - Uniform Guidelines on Employee Selection Procedures, [29 CFR §1607.4(D)](https://www.law.cornell.edu/cfr/text/29/1607.4).
+- Title VII of the Civil Rights Act of 1964, [42 U.S.C. §2000e-2(k)](https://www.law.cornell.edu/uscode/text/42/2000e-2).
+- EEOC, [National Enforcement Plan](https://www.eeoc.gov/sites/default/files/2026-06/NEP_-_signed.pdf), June 2026; Ogletree, [EEOC sends OIRA final rule rescinding the Uniform Guidelines](https://ogletree.com/insights-resources/blog-posts/eeoc-sends-oira-final-rule-rescinding-uniform-guidelines-on-employee-selection-procedures/), October 2026.
+- [Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm), 11 December 2025.
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 and 6 RCNY §5-300 and following; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) and its FAQ.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), as amended by Public Act 103-0804.
 - Colorado SB 26-189.
-- California Code of Regulations, title 2, §11013(c); California Consumer Privacy Act regulations on automated decision-making technology.
+- California Code of Regulations, title 2, §11013(c); California Consumer Privacy Act regulations on automated decision-making technology; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
+- New Jersey, [N.J.A.C. 13:16](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
+- Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).
