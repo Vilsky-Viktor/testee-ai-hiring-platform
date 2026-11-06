@@ -37,13 +37,13 @@ PAGES=0 VUS=20 e2e_tests/load.sh public    # the public API only, without the fr
 | `PAGES` | 1 | `public`: 0 leaves the frontend's pages out |
 | `BASE_URL` | `http://gateway:8081` | Only `public` may use another host, with `--i-mean-it` |
 
-The defaults are modest: the local Docker VM has little free memory, and the frontend's dev server (3 GB and more) is the first thing to run out. Raise `VUS` a step at a time and watch `docker stats`. Run it with nothing else using the stack: with browser tests on the same VM, latency doubles and even the default run crosses the thresholds (seen: 5 candidates, `start` p95 1.2 s, `answer` 1.3 s).
+The defaults are modest: the local Docker VM has little free memory. Raise `VUS` a step at a time and watch `docker stats`. Run it with nothing else using the stack: with browser tests on the same VM, latency doubles and even the default run crosses the thresholds (seen: 5 candidates, `start` p95 1.2 s, `answer` 1.3 s).
 
 ## Scenarios
 
 - **candidates.** Setup makes throwaway owners, each with a company, a test copied from a local template and the test's shareable link on. A company's welcome credits pay for 3 candidates, so there's one owner and company per 3 candidates. Each iteration is a new candidate: signs up in the emulator (verified email), opens the link (`link`), starts (`start`) and answers as the interview page does, `step` then `answer`, until the step says the interview is done. Answers are random. The link starts a candidate exactly as an email invite does (same sessions, same credits held), without emailing anyone or reading invite codes from the database.
 - **dashboard.** Setup makes `COMPANIES` companies, each with a test 3 candidates have finished. Each iteration an owner opens their companies (`companies`), the tests list (`interviews`), a test (`interview`), its candidates best grade first (`candidates`), filtered by a status or result (`filtered`, every filter in turn), a candidate's scorecard (`scorecard`) and the candidates report (`report`).
-- **public.** A signed-out visitor opens the home, pricing, FAQ, documents and practice pages, and the public API those read: the price catalog (`catalog`), the practice tests (`templates`) and the FAQ (`help_faq`). The first request of each page, which makes the dev server compile it, is made in setup and not measured.
+- **public.** A signed-out visitor opens the home, pricing, FAQ, documents and practice pages, and the public API those read: the price catalog (`catalog`), the practice tests (`templates`) and the FAQ (`help_faq`). The first request of each page is made in setup and not measured.
 
 Sign-ups, setup and clean-up calls carry no endpoint name and count towards no threshold.
 
@@ -58,7 +58,7 @@ A run fails (k6 exits non-zero) when any is crossed:
 | Failed requests (4xx/5xx, timeouts) | under 1% |
 | `candidates`: interviews finished | over 99% |
 
-These are for the local stack: one uvicorn process per service in reload mode, Next's dev server, the Pub/Sub emulator, all in one Docker VM on a laptop, often shared with other test runs. They catch a regression, not a capacity.
+These are for the local stack: one uvicorn process per service in reload mode, a production build of the frontend, the Pub/Sub emulator, all in one Docker VM on a laptop, often shared with other test runs. They catch a regression, not a capacity.
 
 Targets for production (Cloud Run, a production frontend build): p95 under 300 ms and p99 under 1 s for `step` and `answer`, under 500 ms for the dashboard's endpoints and `start`, under 1 s for server-rendered pages; errors under 0.1%. Check them at 50, 200 and 500 users at once on a test environment with the `public` scenario (the signed-in ones run only locally); there's no test environment yet, so that needs one first.
 
@@ -68,13 +68,13 @@ After every `candidates` and `dashboard` run, and on `clean`, `load.sh`:
 
 1. lists the throwaway companies and users still in the databases (`leftovers.sh ids`);
 2. deletes every throwaway account (`clean.js`) the way a user does in settings (`DELETE /api/accounts/me`), candidates first, which also deletes the companies they alone own;
-3. counts the rows left that hold one of those ids in companies, members, tests, candidates, audit events, rounds' sections, library's sets, billing's wallets and holds, ATS connections and users' and companies' notifications (`leftovers.sh count`), and fails when any is.
+3. counts the rows left that hold one of those ids in companies, members, tests, candidates, audit events, rounds' sections, library's sets, billing's wallets and holds, ATS connections, API keys and users' and companies' notifications (`leftovers.sh count`), and fails when any is.
 
 Only load runs' rows ever match: companies named `Load <run> <n>`, owners at `load-<run>-owner-<n>@example.com`, candidates at `delivered+load-<run>-candidate-<n>@resend.dev` (Resend's test domain, which delivers to nobody). The users' own local records are never touched.
 
 ## Results
 
-First local runs of 2026-10-06, before the optimisations below, on an Apple Silicon laptop, Docker VM with 8 CPUs and 7.7 GB, about 2 GB free, other test runs (Playwright, integration tests) on the same VM at the same time. The numbers vary by 2x between runs; read them as orders of magnitude.
+First local runs of 2026-10-06, before the optimisations below and while the local frontend was still Next's dev server, on an Apple Silicon laptop, Docker VM with 8 CPUs and 7.7 GB, about 2 GB free, other test runs (Playwright, integration tests) on the same VM at the same time. The numbers vary by 2x between runs; read them as orders of magnitude.
 
 | Scenario | Load | Requests | p95 per endpoint | Errors | Thresholds |
 |---|---|---|---|---|---|
@@ -93,7 +93,7 @@ What the runs showed:
 - **`start` is the slowest candidate call**: it reads the test's questions from `library` to pick the candidate's, then creates the sections in `rounds`, for every candidate.
 - **`scorecard` is the heaviest dashboard call**: the full review of every answered question from `rounds`, an analytics event published inside the request, an audit row.
 - **`report` reads every candidate of a test, unpaged**, and their scores from `rounds` in one call. With 3 candidates a company here (what the welcome credits pay for) it's fast alone; a test with hundreds of candidates was not tried.
-- **Pages:** the dev server compiles and renders on request and recompiles when files change, so its seconds-long spikes say nothing about production; measure pages against a production build (`next start`) or staging.
+- **Pages:** the dev server of these runs compiled and rendered on request, so its seconds-long spikes say nothing about production. The local frontend is a production build now; these page numbers haven't been measured again.
 
 ### Optimisations
 

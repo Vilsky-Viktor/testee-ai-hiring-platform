@@ -1,7 +1,7 @@
 # api
 
 The public API at `/api/v1/` (companies' API keys, their interviews, candidates and interview
-notes, web hooks) and the API page's management routes, and the count of a company's working
+notes, web hooks) and the API page's management routes, the check of an AI agent's key for the MCP server (`/internal/keys/verify`, the assistant only) and the count of a company's working
 keys and web hooks for its menu (`/internal/companies/{id}/active-count`, companies only). It keeps the keys, web hooks, deliveries and retries in its
 own database; interviews, candidates, invites and notes come from the companies service. What it does
 and its settings: [docs/features/api.md](../../docs/features/api.md).

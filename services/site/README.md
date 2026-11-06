@@ -64,4 +64,5 @@ images copy it to `/frontend/content`, at the same place relative to the code.
 docker compose up -d --build site                # the service and its migrations
 cd services/site && uv run pytest                # unit tests
 scripts/integration.sh site                      # integration tests (real Postgres and Redis)
+scripts/assistant-openapi.sh                     # refresh the assistant's snapshot of these routes
 ```

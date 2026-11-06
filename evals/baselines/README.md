@@ -4,7 +4,7 @@ What each metric of `../README.md` measured, by date, with the runs behind it. T
 per metric are summed up in `../README.md`; a shipped change adds its row here, for the assistant
 in `assistant.md` (its actions in `assistant-actions.md`), for the help chat in `help-chat.md`, for
 generation's prompts in `generation.md`, and for the small utility prompts (translations, code-language tags, quality patterns, conversation titles)
-in `utility.md` (CLAUDE.md rule 20).
+in `utility.md` (`.claude/rules/evals.md`).
 
 Contents: [Baselines (2026-10-04)](#baselines-2026-10-04) ·
 [Eval changes (2026-10-20)](#eval-changes-2026-10-20) ·
@@ -208,8 +208,8 @@ questions only.
 
 ## Integrity signals (2026-10-29)
 
-The anti-cheating plan's signals (`internal_docs/plans/anti-cheating.md`), measured before any was
-built. No real candidate's answers exist or may be used (rule 20), so candidates are made up
+The anti-cheating plan's signals, measured before any was built. No real candidate's answers
+exist or may be used (`.claude/rules/evals.md`), so candidates are made up
 (`integrity_population.py`): honest ones answer by the Rasch model with van der Linden's lognormal
 times (reading plus thinking that grows with difficulty, a speed per person, noise per answer);
 relaying ones give the AI's real answer to each question (`ai_picks.json`) in a flat 20–40 s of

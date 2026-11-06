@@ -1,5 +1,6 @@
-# Local development only. Every app image is built from its Dockerfile's `dev` target, with the
-# source mounted so the servers reload on change. Production images come from the `prod` targets
+# Local development only. Every service's image is built from its Dockerfile's `dev` target, with
+# the source mounted so the servers reload on change; the frontend is a production build (`prod`
+# target), with no hot reload. Production images come from the `prod` targets
 # (see README); deploy them with your own orchestration.
 #
 # The stack is split by kind into compose/; paths in every file are relative to this folder.

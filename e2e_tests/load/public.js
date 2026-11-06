@@ -1,6 +1,5 @@
 // Signed-out visitors: the public pages, rendered by the frontend, and the public API they read
-// (prices, practice tests, FAQ). PAGES=0 leaves the pages out and loads only the API: the local
-// frontend is Next's dev server, which renders slowly and can run out of memory under load.
+// (prices, practice tests, FAQ). PAGES=0 leaves the pages out and loads only the API.
 import { sleep } from "k6"
 import http from "k6/http"
 
@@ -45,7 +44,7 @@ export const options = {
   },
 }
 
-/** The dev server compiles a page the first time it's asked for: done here, not measured. */
+/** The first request of each page: made here, not measured. */
 export function setup() {
   for (const path of Object.values(PAGES)) {
     http.get(BASE_URL + path, { timeout: "120s", tags: { phase: "setup" } })

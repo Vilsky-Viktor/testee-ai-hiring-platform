@@ -42,8 +42,8 @@ migrations/                       # Alembic (and LangGraph's checkpoint tables)
 ```
 
 Routes call services; services open the transaction (`async with Session.begin() as
-session:`) and pass it to the repositories, and call the model, library, notifications, Cloud
-Tasks and Redis outside it: a run's row is saved between model calls, a start is saved before
+session:`) and pass it to the repositories, and call the model, library, Cloud Tasks and Redis
+outside it: a run's row is saved between model calls, a start is saved before
 its job is queued, and what the weekly pattern job found is saved in one transaction after its
 call. A plain read may open `async with Session() as session:` in the route.
 `tests/unit/test_layers.py` checks the imports and that no repository commits; clearing old
@@ -62,6 +62,5 @@ docker compose up -d --build generation generation-worker   # the API, the worke
 cd services/generation && uv run pytest                     # unit tests
 scripts/integration.sh generation                           # integration tests (real Postgres, Redis)
 scripts/graph-diagrams.sh                                   # redraw the graph in docs/generation.md
-scripts/assistant-openapi.sh                                # refresh the assistant's snapshot
 docker compose exec generation uv run --no-sync python -m generation.jobs.embed_templates
 ```

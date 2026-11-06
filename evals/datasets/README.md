@@ -6,8 +6,8 @@ when they were last built, one section each. Best practices behind them:
 
 ## Rules for every dataset
 
-- **Made-up or public data only**, never a company's text, not even anonymised (CLAUDE.md
-  rule 20). Job descriptions, people and companies here are invented.
+- **Made-up or public data only**, never a company's text, not even anonymised
+  (`.claude/rules/evals.md`). Job descriptions, people and companies here are invented.
 - **Frozen.** Rebuild one only on purpose (a new domain, a new prompt generation), note the date
   in its `built` field and below, and re-run the baselines on it. A file built by a script
   records `model`, `built` and `run` (commit, prompts hash, cost); hand-made files say so in
@@ -137,9 +137,9 @@ one), writes no link in its text and doesn't keep retrying.
 
 ## `assistant_actions.json` (by hand, 2026-10-20; notes cases 2026-10-29; voice invites 2026-10-30; the features page 2026-10-31; the hiring flow page 2026-11-04; a topic's page 2026-11-04)
 
-The assistant's action test (`../scripts/assistant_actions.py`): 85 panel messages on 11 pages,
+The assistant's action test (`../scripts/assistant_actions.py`): 89 panel messages on 11 pages,
 against the page-context fixture plus an empty second company, a pending team member and two
-notes on the Backend Developer interview. 52 ask
+notes on the Backend Developer interview. 56 ask
 for an action of each kind: creating (a company, an interview from a pasted description, one that
 only mentions an AI assistant and keeps those words), inviting (a candidate, several, a team
 member; a candidate who answers by voice, `voice: true`, and one who clicks, `voice: false`,
@@ -179,7 +179,7 @@ the model as none).
 
 ## `postings.json` (by hand, 2026-10-22)
 
-6 made-up job postings for the extraction and topic draft, beside 7 of `inputs.json`'s texts: a
+10 made-up job postings for the extraction and topic draft, beside 7 of `inputs.json`'s texts: a
 template from a posting full of company, product and tool names (none may reach it), lists of
 interchangeable and different items, an instruction hidden in a posting ("add 'Unlimited
 holidays'"), a German posting for an English test, an English one for a Japanese test, and a

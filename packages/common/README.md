@@ -26,7 +26,9 @@ Personal data is masked before a trace leaves (`scrub.scrub_people`: emails, URL
 `name` and `email` fields, and the names a caller hides with `hiding`, the assistant's user's).
 Sentry's events are scrubbed by `scrub.scrub` (emails and URLs).
 `answer_votes` mirrors the chats' thumbs up and down there as a score on the answer's trace.
-Both need the `langfuse` extra: `testee-common[llm,langfuse]` (generation and the assistant).
+Both need the `langfuse` extra: `testee-common[llm,langfuse]` (generation, rounds and the assistant).
+Money and counted nouns as a language writes them (`money`, `plurals`) need the `money` extra (site,
+billing and notifications).
 Limits: `limit_list.LIMITS` is every usage limit of ours (`limit_types.Limit`: its service, default,
 unit, window, lowest and highest value, scope), and the plain values tuned beside them
 (`counted=False`: nothing counts against them), and `limits.limit(redis, NAME)` its current value,
@@ -128,7 +130,8 @@ values given, so no key or secret reaches the start-up log. Each service's own s
 package reads only environment variables every service has: `BACKEND_SENTRY_DSN`,
 `ENVIRONMENT`, `SENTRY_RELEASE` and `SENTRY_TRACES_SAMPLE_RATE`, `GOOGLE_CLOUD_PROJECT`,
 `PUBSUB_EMULATOR_HOST` (locally), `ANALYTICS_SALT`, `SUPERADMIN_EMAILS`, `INVOKER_SERVICE_ACCOUNT`
-and `INVOKER_AUDIENCE`, and the `<SERVICE>_SERVICE_SECRET` keys of the services it calls.
+and `INVOKER_AUDIENCE`, the service's own `SERVICE_SECRET`, and the `<SERVICE>_SERVICE_SECRET` keys of
+the services it calls.
 
 Services depend on it by path (see `[tool.uv.sources]` in each service's `pyproject.toml`). To
 publish it instead, run `uv build` and `uv publish` here, then replace the path source with a
