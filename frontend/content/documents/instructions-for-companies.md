@@ -1,6 +1,6 @@
 # Using testee responsibly: instructions for companies
 
-Version of 2026-10-30. Arcolabs OÜ (registry code 17587452), Sepapaja tn 6, 15551 Tallinn, Estonia; hello@testee.ai.
+Version of 2026-11-07. Arcolabs OÜ (registry code 17587452), Sepapaja tn 6, 15551 Tallinn, Estonia; hello@testee.ai.
 
 For owners and admins of a company on testee. These are testee's instructions for use under the
 EU AI Act (Art. 13). Your own duties as an employer, under the employment and data protection law
@@ -12,7 +12,7 @@ that applies to you, stay yours.
 - **Intended purpose:** testing job candidates' knowledge for one role with a timed
   multiple-choice interview, to help the people at your company decide whom to take further. AI
   writes the questions from your job description (up to half of a topic may be proven questions
-  from testee's own templates, never ones shown publicly for practice); you review the topics; each
+  from testee's own templates or its shared question bank, never ones shown publicly for practice); you review the topics; each
   candidate's answers are marked against a fixed answer key.
 - **High-risk AI system.** Under the EU AI Act, a system used to evaluate candidates is high-risk
   (Annex III point 4(a)), and testee is treated as one. Its obligations apply from 2027-12-02;
@@ -105,8 +105,8 @@ People at your company make the hiring decision. testee never tells a candidate 
   is restricted (GDPR Art. 22). Rejecting automatically everyone below the passing grade can be
   one.
 - The same applies to results testee sends to the tools you connect: your applicant tracking
-  system, Slack, or your own systems through the API and web hooks receive the grade and whether
-  it reached the passing grade. **Don't set them up to reject candidates automatically** on those
+  system, Slack, or your own systems through the API and web hooks receive the grade, and your
+  applicant tracking system and own systems whether it reached the passing grade. **Don't set them up to reject candidates automatically** on those
   results; the human review above applies there too.
 - **The assistant and AI apps.** testee's in-app assistant acts only after the member confirms
   each change. AI apps (Claude, ChatGPT and others) a member connects act with that member's
@@ -182,7 +182,8 @@ words; they appear only on the candidate's page.
   option always works. Tell candidates
   before they start, and set an interview to click mode for anyone who prefers it. testee turns
   the speech into text and options only, never stores it and never analyses the voice (no tone,
-  emotion or confidence, which the EU AI Act forbids in hiring).
+  emotion or confidence; the EU AI Act bans inferring emotions in the workplace, recruitment
+  included).
 - In the **UK**, the Equality Act 2010 asks you to make reasonable adjustments for disabled
   candidates; in the **US**, the ADA asks for reasonable accommodation. Extra time, an alternative
   assessment and click or voice mode are the adjustments testee gives you.
@@ -199,7 +200,7 @@ is yours to give.
 
 - **People you find on the Discover tab** chose to be open to offers and gave you no data
   themselves: you got their name, LinkedIn profile and practice results from testee. Tell them, at
-  the latest in your invite, who you are, why you're contacting them, what you saw and their
+  the latest in your invite and within a month, who you are, why you're contacting them, what you saw and their
   rights (GDPR and UK GDPR Art. 14). Use what you see only to consider them for your own jobs, and
   remember their results are practice, not a qualification.
 - Until testee has verified your company, your invite pages and emails say so in a small line.
@@ -239,20 +240,29 @@ tab, filtered by member, kind of action and days, or through the API
 these records at least six months, and testee keeps them for you as below. Download PDF reports to
 keep them longer: some laws ask for more than testee's 12 months, such as California's rules on
 automated-decision systems in employment (4 years, from 2025-10-01), Colorado's AI law (3 years,
-from 2027-01-01) and US federal rules on hiring records (1 year from the record or the decision).
-Team notes on an interview stay with it until you delete them or the interview.
+from 2027-01-01) and US federal rules on hiring records (1 year from the record or the personnel action, whichever is
+later, and until any charge is settled).
+Team notes on an interview stay with it until you delete them or the interview, also after the
+candidate they name is deleted.
 
 **Retention.**
 
 - Candidate results, timings and signals are **deleted automatically 12 months after the invite**
   was last sent.
-- Invites never started expire after 30 days.
-- Candidates your applicant tracking system sends (their email and ATS ids) are kept 12 months.
+- Invites never started expire after 30 days: they can't be used, and their email stays until the
+  12 months above.
+- Candidates your applicant tracking system sends (their email, name and ATS ids, and their result
+  until it has gone back to the system) are kept 12 months.
 - The action log is kept 12 months.
 - Job description text is kept 90 days in generation records; the interview stays until you delete
   it.
 - A candidate's request to stop your company's emails is kept, as a one-way hash of their email
-  address, until you delete the company, also after you delete the candidate.
+  address, until you delete the company, also after you delete the candidate. A hash of an address
+  that bounced or marked an email as spam stays until testee removes it, so it isn't emailed again.
+- Candidates' ratings and reports of questions stay with the question, or until the candidate
+  deletes their account.
+- Notifications in your members' bells, which can show a candidate's email and grade, are kept up
+  to 90 days. A web hook still being retried holds its data up to 3 days.
 - Backups hold deleted data for at most 14 more days.
 - PDFs you download, and results sent to your applicant tracking system, Slack or your own systems,
   are yours to keep and delete under your own retention policy.
@@ -267,7 +277,8 @@ under the data processing agreement at testee.ai/dpa, which is part of the terms
 - **Erasure or objection:** on the candidate's page, revoke an unused invite, or use **Delete
   candidate** for one who started or finished: their answers and results are deleted for good, also
   from the bell and from testee's record of them for your applicant tracking system, and credits
-  still held come back (a finished candidate stays charged). Copies already sent to your applicant
+  still held come back (a candidate who answered at least one question stays charged). Team notes
+  that name them aren't touched: edit those yourself. Copies already sent to your applicant
   tracking system, Slack or your own systems are yours to delete there.
 - If a candidate writes to testee instead, testee passes the request on to you.
 - Candidates can also download what is linked to their own testee account with **Download my data**
@@ -284,9 +295,10 @@ under the data processing agreement at testee.ai/dpa, which is part of the terms
   a bias audit by an independent auditor within the year before use, its summary published, and a
   notice to candidates at least 10 business days before they are assessed. testee gives you the
   bias-audit export for your auditor (the owner downloads it from the Action log page: each
-  finished candidate's grade, passing grade, whether they passed and whether they scored above
-  the interview's median, by email, for you to add your candidates' own self-reported categories
-  and remove the email before you share it), the summary of its own bias audit, and a notice
+  finished candidate's id and email, the interview, the day they finished, their grade, the
+  passing grade, whether they passed and whether they scored above the interview's median, for
+  you to add your candidates' own self-reported categories and remove the id and email before you
+  share it), the summary of its own bias audit, and a notice
   template.
 - Where your local law requires a works council agreement, a regulator approval or a bias audit you
   haven't done.
@@ -299,48 +311,72 @@ it may not be one, but count on the duties above.
 ## 11a. The UK and the US
 
 - **UK:** the UK GDPR and the Data Protection Act 2018 apply as the GDPR does: a lawful basis,
-  a DPIA (the ICO treats AI in recruitment as high risk), the candidate notice, human review on
-  request and a way to challenge a decision (Arts. 22A to 22D UK GDPR, as the Data (Use and
-  Access) Act 2025 made them from 2026-02-05). The ICO's recommendations for AI
+  a DPIA (the Information Commission, which still goes by ICO, treats AI in recruitment as high
+  risk) and the candidate notice. A significant decision taken solely by automated means needs
+  safeguards: information about it, a way to make representations, human intervention and a way
+  to contest it (Arts. 22A to 22D UK GDPR, as the Data (Use and Access) Act 2025 made them from
+  2026-02-05). With a person who really decides, these are good practice rather than a legal duty;
+  the ICO's March 2026 report Recruitment rewired warns of calling a tool decision support when
+  little human involvement remains. The ICO's recommendations for AI
   recruitment tools (2024) also ask you to check the tool's accuracy and bias with its provider,
   to collect no more than needed, and to keep candidates' data no longer than needed. Avoid
   indirect discrimination under the Equality Act 2010: choose topics and a passing grade the job
   really needs (sections 4 and 6), and watch pass rates.
 - **US federal:** Title VII and the ADA apply to tests used in hiring. Check adverse impact on
-  your own outcomes (the EEOC's four-fifths rule of thumb: a group's pass rate under 80% of the
-  highest group's is a warning sign; the bias-audit export in section 11 gives the outcomes to
-  join with your own data), and give reasonable accommodation.
+  your own outcomes (the four-fifths rule of thumb in the Uniform Guidelines, 29 CFR 1607.4(D): a
+  group's pass rate under 80% of the highest group's is a warning sign; the bias-audit export in
+  section 11 gives the outcomes to join with your own data), and give reasonable accommodation.
+  The EEOC is rescinding its copy of the Guidelines and no longer brings disparate impact cases,
+  but disparate impact stays in Title VII and candidates can still sue.
 - **New York City:** section 11.
 - **Illinois** (Human Rights Act, from 2026-01-01): tell candidates when AI is used in
   recruitment or hiring decisions, and never use AI that discriminates by a protected class, or
-  zip codes as a proxy for one (testee asks for neither). Use the Illinois notice template.
-- **Colorado** (its AI law, from 2027-01-01): before using testee on Colorado candidates, give the
-  pre-use notice; after an adverse outcome, within 30 days, explain the decision and testee's role,
-  the data used and its sources, and the candidate's rights to correct data and to ask for human
-  review and reconsideration; keep records 3 years. Use the Colorado notice template; testee's
-  documentation for deployers is this document, the technical facts in section 3 and the DPIA
-  template.
+  zip codes as a proxy for one (testee asks for neither). No rules on the notice have been
+  adopted yet, so follow the statute. Use the Illinois notice template.
+- **Colorado** (its automated decision-making law, SB 26-189, which replaced the 2024 AI Act, from
+  2027-01-01; the Attorney General's rules aren't final): before using testee on Colorado
+  candidates, give the pre-use notice; within 30 days of an adverse decision, explain the decision
+  and testee's role, how to ask for the tool's name, version and developer and the data used and
+  its sources, and the candidate's rights to correct factually wrong personal data and to ask for
+  human review where commercially reasonable; keep records 3 years from the decision. Use the
+  Colorado notice template; testee's documentation for deployers is this document, the technical
+  facts in section 3 and the DPIA template. testee trains no AI model and puts no candidate's data
+  into training: questions come from OpenAI's general-purpose models and your job description, and
+  the grade comes from answer keys, not from a trained model.
 - **California:** the Civil Rights Council's rules on automated-decision systems (from
   2025-10-01) make you answer for discrimination through such tools, value anti-bias testing,
   and ask you to keep their records 4 years; the privacy agency's rules on automated
-  decision-making technology ask for a pre-use notice, and access and opt-out or appeal rights,
-  for significant decisions such as hiring, from 2027-01-01. testee is your service provider under
-  the CCPA (the data processing agreement's US section).
+  decision-making technology, for businesses under the CCPA where a tool replaces or substantially
+  replaces a person's decision, ask for a pre-use notice, and access and opt-out rights (with
+  exceptions for a human appeal and for tools that only assess ability to do the work), for
+  significant decisions such as hiring, from 2027-01-01. A person who understands the result,
+  weighs it and can change the decision keeps you outside them. testee is your service provider
+  under the CCPA (the data processing agreement's US section).
+- **New Jersey** (N.J.A.C. 13:16, from 2025-12-15): disparate impact rules under the Law Against
+  Discrimination cover automated employment decision tools; you can be liable even if a vendor
+  built the tool.
+- **Texas** (HB 149, from 2026-01-01): AI used with the intent to discriminate is banned; a
+  disparate impact alone doesn't show that intent.
 
 ## 12. Your duties as a deployer under the EU AI Act
+
+Already now, take measures to support the AI literacy of the staff who use testee (Art. 4), and
+explain, on request, the role it played in a decision about a candidate (Art. 86: the move to 2027
+leaves this article out).
 
 From 2027-12-02, when you use testee in the EU:
 
 - use it as these instructions say, and give human review to people with the competence and
   authority for it (section 5);
 - make sure the job description and topics are relevant to the role (section 4);
-- watch how it works for you, and tell testee at once of a serious problem (below);
+- watch how it works for you, tell testee at once of a serious problem (below), and if it presents
+  a risk, stop using it and tell testee and the market surveillance authority (Art. 26(5));
 - keep the records for at least six months (section 10);
-- tell your employees' representatives before you use it for hiring, where your law requires;
-- tell candidates that a high-risk AI system is used to assess them (section 9), and explain, on
-  request, the role it played in a decision about them;
+- tell workers' representatives and affected workers before you use it at the workplace, as your
+  national rules set out (Art. 26(7));
+- tell candidates that a high-risk AI system is used to assess them (section 9);
 - in voice mode, rely on what testee does: speech turned into text only, never emotion
-  recognition, which Art. 5 forbids in the workplace and hiring;
+  recognition, which Art. 5 forbids in the workplace, recruitment included;
 - use these instructions for your data protection impact assessment (testee's DPIA template at
   testee.ai/documents).
 

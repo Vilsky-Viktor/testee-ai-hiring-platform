@@ -1,6 +1,6 @@
 # Candidate notice templates
 
-Version of 2026-10-30. Arcolabs OÜ (registry code 17587452), Sepapaja tn 6, 15551 Tallinn, Estonia; hello@testee.ai.
+Version of 2026-11-07. Arcolabs OÜ (registry code 17587452), Sepapaja tn 6, 15551 Tallinn, Estonia; hello@testee.ai.
 
 For companies to adapt and send **before** inviting candidates to a testee interview. Replace
 everything in [brackets]. The notice is yours to give as the employer: these templates cover what
@@ -12,14 +12,16 @@ the state wording in sections 4 and 5 added.
 ## 1. New York City (Local Law 144, automated employment decision tool)
 
 Local Law 144 applies when an employer or employment agency uses an automated employment decision
-tool to substantially assist decisions about candidates who live in New York City. Whether testee is
-such a tool depends on how you use it. The rules require, among other things: a bias audit within
+tool to substantially assist hiring decisions in New York City: for a job at an office there (at
+least part time), a fully remote job tied to one, or through an agency located there. The notice
+goes to candidates who live in the city. Whether testee is such a tool depends on how you use it. The rules require, among other things: a bias audit within
 one year before use with a public summary; a notice at least **10 business days** before use (in
 the job posting, on the careers site, or by mail or email); and information on how to request an
 alternative selection process or accommodation.
 
-Under Local Law 144 the employer or employment agency commissions the bias audit and gives the
-notice: testee doesn't do it for you. testee gives you the candidates' results for your auditor
+Under Local Law 144 the employer or employment agency must make sure a bias audit exists and gives
+the notice: testee doesn't do it for you. You can rely on an audit built on several employers' data
+only if your own data is in it or you haven't used the tool yet. testee gives you the candidates' results for your auditor
 (API, PDF reports), the summary of its own independent bias audit once published at
 testee.ai/documents, and this template. Don't use testee for candidates in New York City before
 your audit summary is published (see testee's instructions for companies).
@@ -93,8 +95,9 @@ your audit summary is published (see testee's instructions for companies).
 > [Voice mode only:] **Answering aloud.** The questions and their options are read aloud and you
 > can answer aloud. What the microphone picks up while you answer is turned into text by AI and
 > matched to the options: you hear and see the option it matched, one clearly named option is
-> saved at once, and you confirm a choice of several options before it counts. Your speech is
-> never recorded or stored, and your voice isn't analysed in any other way. You can always tap an
+> saved at once, and you confirm a choice of several options before it counts. testee never stores
+> your speech; OpenAI, which turns it into text, may keep it for up to 30 days to check for abuse,
+> and doesn't use it for training. Your voice isn't analysed in any other way. You can always tap an
 > option instead, or ask us at [contact] for the test without voice.
 >
 > **How we use it.** Your result is one part of our assessment, alongside [your CV / interviews].
@@ -110,9 +113,11 @@ your audit summary is published (see testee's instructions for companies).
 > **Your data.** [Company] is responsible for your test data; testee (Arcolabs OÜ, Estonia)
 > processes it for us. It is kept for 12 months after your invitation and then deleted
 > automatically. Our legal basis is [legitimate interest in assessing job knowledge fairly / steps
-> before entering into a contract]. You can ask us for a copy of your data, its correction or
-> deletion, or object, at [contact]. In the EU or UK you can complain to your data protection
-> authority. testee's privacy policy: https://testee.ai/privacy.
+> before entering into a contract]. Some of it is handled in the United States by testee's
+> providers, under the safeguards in testee's data processing agreement (https://testee.ai/dpa).
+> You can ask us for a copy of your data, its correction, deletion, restriction or transfer to you
+> in a portable form, or object, at [contact]. You can complain to us at [contact] and, in the EU
+> or UK, to your data protection authority. testee's privacy policy: https://testee.ai/privacy.
 >
 > **Emails.** testee sends your invitation and reminders for us. Each has a link to stop our emails
 > through testee, or that test's reminders.
@@ -139,7 +144,7 @@ Add to the general notice for candidates in Illinois, from 2026-01-01:
 > one. A person at [Company] reviews every result. Questions, an accommodation or a human review:
 > [contact].
 
-## 5. Colorado (its AI law, from 2027-01-01)
+## 5. Colorado (SB 26-189, from 2027-01-01)
 
 Before the test, add to the general notice for candidates who live in Colorado:
 
@@ -155,5 +160,5 @@ If the outcome is adverse (not hired, or not invited onward), send within 30 day
 > grade of N%, which we weighed with your interview]. The system is testee (Arcolabs OÜ, version
 > as used on [date]); it used your answers, how long each took and the integrity signals described
 > in our notice, all from your test, and your name and email from your application. You can ask us
-> to correct any of this data, and ask a person to review and reconsider the decision, at
-> [contact] by [date].
+> for more about the tool, to correct any personal data that is factually wrong, and for a person
+> to review the decision, at [contact] by [date].

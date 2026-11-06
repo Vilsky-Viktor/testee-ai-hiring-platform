@@ -281,7 +281,7 @@ ACCOUNT_OWNS_SHARED = (
 LEGAL_VERSIONS = {
     "terms": "2026-10-23",
     "privacy": "2026-10-23",
-    "dpa": "2026-10-23",
+    "dpa": "2026-11-07",
 }
 
 # The sign-in a company's own platform gives its candidate with the invite link (no email, no

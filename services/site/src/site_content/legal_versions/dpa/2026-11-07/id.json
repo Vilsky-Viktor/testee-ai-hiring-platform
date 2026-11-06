@@ -1,0 +1,85 @@
+{
+  "intro": "Perjanjian ini berlaku saat perusahaan menggunakan testee untuk menilai kandidat. Perusahaan adalah pengendali data kandidatnya, dan Arcolabs OÜ (kode registrasi 17587452), Sepapaja tn 6, 15551 Tallinn, Harju maakond, Estonia, memprosesnya atas nama perusahaan. Perjanjian ini merupakan bagian dari ketentuan dan diterima bersama ketentuan tersebut; tidak ada yang perlu ditandatangani. testee.ai juga menampilkan dokumen ini dalam bahasa lain; hanya versi bahasa Inggris ini yang mengikat, dan jika suatu terjemahan berbeda, yang berlaku adalah versi bahasa Inggris.",
+  "sections": [
+    {
+      "heading": "Apa yang diproses",
+      "items": [
+        "Tujuan: menjalankan wawancara perusahaan: mengundang kandidat, mengukur waktu dan menilai jawaban mereka, menampilkan hasil dan sinyal integritas kepada perusahaan, mengirim email yang diminta perusahaan, mengirim hasil ke alat yang dihubungkan perusahaan (sistem pelacakan pelamarnya, Slack, dan sistemnya sendiri melalui API dan webhook testee), menyimpan hasil untuk perusahaan, serta menyimpan log tentang apa yang dilakukan anggotanya terhadap kandidatnya untuk pemilik perusahaan. Untuk wawancara yang diatur perusahaan ke mode suara: membacakan soal dan mengubah setiap jawaban lisan menjadi teks lalu menjadi opsi yang dimaksud kandidat, yang langsung dicatat bila satu opsi disebut dengan jelas dan, jika tidak, dikonfirmasi oleh kandidat; suara tidak pernah dianalisis untuk nada, emosi, atau hal lain apa pun.",
+        "Orang: kandidat yang diundang perusahaan, yang melamar melalui tautannya, atau yang dikirim oleh sistem pelacakan pelamarnya. Anggota perusahaan tidak tercakup di sini: testee adalah pengendali akun mereka, berdasarkan kebijakan privasinya. Orang yang mengaktifkan “Terbuka untuk tawaran” juga tidak tercakup, sampai perusahaan mengundang salah satunya: testee menampilkan mereka kepada perusahaan sebagai pengendali data mereka, dengan persetujuan mereka, dan perusahaan adalah pengendali atas apa yang dilakukannya dengan apa yang dilihatnya; setelah diundang, mereka menjadi kandidat perusahaan berdasarkan perjanjian ini.",
+        "Data: alamat email kandidat, nama mereka (diberikan oleh perusahaan atau sistem pelacakan pelamarnya, atau dari akun yang mereka gunakan untuk masuk) dan ID akun dari proses masuk mereka, jawaban mereka, berapa lama setiap jawaban, kejadian meninggalkan halaman (beserta berapa lama mereka pergi), upaya menyalin, dan jawaban yang terlalu cepat untuk sempat membaca soal selama wawancara, apakah waktu jawab mereka serta jawaban benar dan salah mereka mengikuti panjang dan tingkat kesulitan soal seperti pada kandidat lain (dihitung saat hasil dibaca, tidak pernah disimpan), kapan mereka mengonfirmasi, sebelum mulai, bahwa mereka akan menjawab sendiri, waktu tambahan yang diberikan perusahaan kepada mereka (tanpa alasan), dan hasilnya; dalam mode suara, apa yang ditangkap mikrofon saat kandidat menjawab (jawaban lisannya, dan suara lain apa pun di ruangan), yang diubah menjadi teks dan dicocokkan dengan opsi hanya di memori, tidak pernah disimpan oleh testee; email, nama, dan ID sistem pelacakan pelamar dari kandidat yang dikirim oleh sistem tersebut, serta hasil mereka hingga hasil itu dikirim kembali ke sistem tersebut; email orang-orang yang dikirimi laporan oleh perusahaan; hash satu arah dari alamat email setiap kandidat yang menghentikan email dari perusahaan, dan dari setiap alamat yang emailnya terpental secara permanen atau yang menandai email sebagai spam; penilaian dan laporan kandidat atas soal, beserta komentar apa pun yang mereka tulis; catatan yang ditulis anggota perusahaan dan kunci API-nya di wawancaranya, yang dapat menyebut nama kandidat; dan log tindakan perusahaan berisi tindakan anggotanya terhadap kandidat, seperti mengundang mereka, melihat hasil mereka, atau menghapus mereka: siapa yang melakukannya, kapan, dan undangan kandidat yang mana, disimpan berdasarkan ID-nya, tidak pernah sebagai salinan email kandidat (pemilik melihat email tersebut selama undangan masih ada).",
+        "Durasi: selama perusahaan menggunakan testee. Hasil kandidat dihapus 12 bulan setelah undangan mereka terakhir kali dikirim, kandidat yang dikirim oleh sistem pelacakan pelamar 12 bulan setelah mereka masuk, setiap tindakan dalam log tindakan 12 bulan setelah dilakukan, catatan bersama wawancaranya, penilaian dan laporan atas soal bersama soal tersebut atau akun kandidat, dan semua yang lainnya saat perusahaan dihapus. Hash dari alamat yang emailnya terpental atau yang menandai email sebagai spam tetap disimpan hingga kami menghapusnya, agar alamat itu tidak dikirimi email lagi. Kami tidak menyimpan jawaban lisan dari mode suara; penyimpanan singkat oleh OpenAI tercantum di bawah."
+      ]
+    },
+    {
+      "heading": "Kewajiban kami",
+      "items": [
+        "Kami memproses data hanya untuk menyediakan testee sebagaimana perusahaan menggunakannya, mengikuti instruksinya yang diberikan melalui produk dan ketentuan ini, kecuali hukum mewajibkan lain; kami memberi tahu perusahaan jika suatu instruksi tampaknya melanggar hukum pelindungan data.",
+        "Setiap orang yang dapat mengakses data terikat kewajiban kerahasiaan.",
+        "Kami menjaga keamanan data: dienkripsi saat dikirim dan saat disimpan, akses dibatasi pada apa yang dibutuhkan setiap layanan, proses masuk melalui Firebase (Google, LinkedIn, atau GitHub), panggilan bertanda tangan antarlayanan, cadangan dengan pemulihan ke titik waktu tertentu, laporan kesalahan tanpa alamat email, dan log yang disimpan dalam waktu singkat.",
+        "Kami membantu perusahaan menjawab permintaan kandidat (akses, perbaikan, penghapusan, keberatan, peninjauan oleh manusia) serta dalam penilaian dampak dan konsultasinya, sejauh informasinya ada pada kami.",
+        "Kami memberi tahu perusahaan tanpa penundaan yang tidak semestinya, dan dalam 48 jam jika memungkinkan, setelah mengetahui adanya pelanggaran terhadap datanya, beserta apa yang kami ketahui.",
+        "Pada akhirnya, data dihapus sebagaimana dijelaskan di atas; perusahaan dapat mengunduh hasilnya sebelum menghapus perusahaannya.",
+        "Alat yang dihubungkan perusahaan (sistem pelacakan pelamar, workspace Slack, atau sistemnya sendiri melalui API dan webhook testee) adalah penerima milik perusahaan sendiri, bukan subprosesor kami: kami mengirimkan data kepadanya hanya atas instruksi perusahaan, yang diberikan saat pemilik atau adminnya menghubungkannya, dan berhenti saat sambungannya diputus. Jika alat tersebut berada di luar UE, transfer itu menjadi tanggung jawab perusahaan.",
+        "Aplikasi AI yang dihubungkan seorang anggota ke akun testee-nya sendiri (seperti Claude atau ChatGPT) adalah penerima milik anggota tersebut, bukan subprosesor kami: hanya jika seorang anggota menghubungkannya, aplikasi itu membaca dan mengubah data perusahaan yang diminta anggota tersebut, dalam batas perannya, dan data yang diterimanya kemudian tunduk pada ketentuan aplikasi itu sendiri. Sambungan berhenti saat anggota memutuskannya atau menghapus akunnya, atau setelah 90 hari tidak digunakan. Pemilik dan admin perusahaan memutuskan apakah anggotanya boleh melakukan ini: “Izinkan aplikasi AI” di halaman Aplikasi AI perusahaan, aktif kecuali mereka menonaktifkannya; selama nonaktif, tidak ada aplikasi AI yang membaca atau mengubah data perusahaan. Menghapus akun atau perusahaan tidak pernah dilakukan melalui aplikasi seperti itu.",
+        "Undangan dan pengingat yang dikirim atas nama perusahaan menyertakan tautan bagi kandidat untuk menghentikan email dari perusahaan, atau pengingat untuk wawancara itu. Setelah kandidat menghentikan email dari perusahaan, testee tidak lagi mengirim email kepadanya atas nama perusahaan itu, dan perusahaan melihat undangannya sebagai tidak terkirim. Permintaan itu disimpan sebagai hash satu arah dari alamat email sampai perusahaan dihapus, juga saat perusahaan menghapus kandidat tersebut.",
+        "Kami memberikan kepada perusahaan informasi yang diperlukan untuk menunjukkan bahwa perjanjian ini dipatuhi, serta mengizinkan dan berkontribusi pada audit, termasuk inspeksi, oleh perusahaan atau auditor yang ditunjuknya, dengan pemberitahuan sebelumnya yang wajar, atas biaya perusahaan, dan paling banyak setahun sekali kecuali suatu pelanggaran atau otoritas pengawas mengharuskan lebih sering."
+      ]
+    },
+    {
+      "heading": "Subprosesor",
+      "paragraphs": [
+        "Perusahaan memberi wewenang kepada subprosesor berikut, yang masing-masing terikat ketentuan pelindungan data yang setidaknya sama protektifnya dengan ketentuan ini:"
+      ],
+      "items": [
+        "Google Cloud (hosting, basis data, event; UE, Belgia) dan Google Firebase (proses masuk; Google LLC, Amerika Serikat, berdasarkan EU-US Data Privacy Framework).",
+        "OpenAI (menulis dan memperbaiki soal, termasuk memeriksa soal yang dilaporkan berdasarkan alasan yang diberikan, tidak pernah komentarnya; jawaban asisten, dari pertanyaan anggota dan data yang dibacanya dengan hak akses anggota tersebut, serta mengubah pesan suara menjadi teks; dalam mode suara, membacakan soal, yang tidak memuat data pribadi, serta mengubah jawaban lisan kandidat menjadi teks dan mencocokkannya dengan opsi, dari rekaman lalu dari teksnya bersama soal dan opsinya, tidak pernah jawaban mana yang benar; diminta untuk tidak menyimpannya; berdasarkan ketentuan API-nya, OpenAI dapat menyimpan data paling lama 30 hari, hanya untuk memeriksa penyalahgunaan kecuali hukum mewajibkan lebih lama, dan tidak menggunakan apa pun untuk pelatihan; OpenAI Ireland Ltd, yang mentransfernya ke OpenAI di Amerika Serikat berdasarkan klausul kontrak standar Komisi Eropa).",
+        "Resend (email; dikirim dari UE, Irlandia, dan disimpan di Amerika Serikat, berdasarkan klausul kontrak standar Komisi Eropa dan EU-US Data Privacy Framework).",
+        "Google Workspace (kotak masuk email kami: pesan dari perusahaan dan kandidat, serta permintaan yang diteruskan kepada perusahaan; Google Ireland Ltd, email dapat disimpan di luar UE berdasarkan EU-US Data Privacy Framework dan klausul kontrak standar).",
+        "Sentry (laporan kesalahan, tanpa alamat email; UE).",
+        "Langfuse (catatan panggilan AI, untuk memantau dan meningkatkan kualitas jawaban: apa yang dikirim ke AI dan jawabannya, yang dapat mencakup data kandidat yang ditangani AI, seperti hasil yang dibaca asisten untuk menjawab seorang anggota, serta penilaian atas jawaban asisten; dalam mode suara, hanya opsi mana yang cocok dengan jawaban lisan, tidak pernah kata-katanya; disimpan 30 hari; Langfuse GmbH, Jerman, cloud UE-nya).",
+        "Cloudflare (pemeriksaan \"Saya bukan robot\", Turnstile, saat kandidat memulai melalui tautan iklan lowongan kerja: sinyal dan alamat browser-nya, yang tidak kami simpan sama sekali; Cloudflare, Inc., Amerika Serikat, berdasarkan EU-US Data Privacy Framework).",
+        "Upstash (penghitung berumur pendek untuk batas, pembaruan langsung, dan hasil panggilan API, yang disimpan paling lama 24 jam agar panggilan yang diulang tidak dijalankan dua kali; UE, Belgia)."
+      ]
+    },
+    {
+      "heading": "Perubahan dan transfer",
+      "paragraphs": [
+        "Kami mengirim email kepada pemilik dan admin perusahaan tentang subprosesor baru, atau perubahan signifikan lain pada perjanjian ini, paling lambat 14 hari sebelum perubahan itu berlaku; setiap versi sebelumnya tetap dapat dibaca di halaman ini; perusahaan yang berkeberatan dengan alasan pelindungan data yang wajar dapat berhenti menggunakan testee dan menghapus perusahaannya.",
+        "Transfer ke luar UE dilindungi sebagaimana tercantum di atas: ke Google Firebase dan Cloudflare berdasarkan EU-US Data Privacy Framework, ke Resend dan untuk email Google Workspace berdasarkan klausul kontrak standar Komisi Eropa dan Framework tersebut, dan oleh OpenAI Ireland Ltd ke OpenAI berdasarkan klausul tersebut; perusahaan dapat meminta salinan perlindungan tersebut.",
+        "Untuk data kandidat yang tunduk pada hukum pelindungan data Inggris Raya (UK GDPR dan Data Protection Act 2018), perjanjian ini berlaku dengan cara yang sama, dengan GDPR dibaca sebagai UK GDPR dan UE sebagai Inggris Raya. Transfer dari Inggris Raya ke testee di UE tidak memerlukan perlindungan tambahan, karena hukum Inggris Raya mengakui pelindungan di UE sebagai memadai. Transfer lanjutan ke Amerika Serikat dilindungi oleh UK Extension to the EU-US Data Privacy Framework (Google Firebase dan Cloudflare) serta oleh klausul kontrak standar Komisi Eropa beserta International Data Transfer Addendum Inggris Raya, yang diterbitkan berdasarkan pasal 119A Data Protection Act 2018 (OpenAI dan Resend)."
+      ]
+    },
+    {
+      "heading": "Undang-undang privasi negara bagian AS",
+      "paragraphs": [
+        "Jika perusahaan merupakan pelaku usaha (“business”) menurut California Consumer Privacy Act (sebagaimana diubah oleh California Privacy Rights Act) atau pengendali menurut undang-undang privasi negara bagian AS lainnya, testee adalah penyedia layanannya (“service provider”) atau prosesornya untuk informasi pribadi kandidatnya. testee:"
+      ],
+      "items": [
+        "memprosesnya hanya untuk tujuan bisnis yang dijelaskan dalam perjanjian ini: menjalankan wawancara perusahaan sesuai instruksinya;",
+        "tidak menjualnya atau membagikannya untuk iklan perilaku lintas konteks;",
+        "tidak menyimpan, menggunakan, atau mengungkapkannya untuk tujuan lain apa pun, atau di luar hubungan bisnis langsungnya dengan perusahaan, dan tidak menggabungkannya dengan informasi pribadi dari sumber lain, kecuali sejauh diizinkan oleh undang-undang tersebut (seperti statistik gabungan, yang tidak mengidentifikasi siapa pun, untuk meningkatkan soal);",
+        "mematuhi undang-undang tersebut, memberinya tingkat pelindungan privasi yang diwajibkan undang-undang itu, dan memberi tahu perusahaan jika tidak dapat lagi memenuhi kewajiban ini;",
+        "mengizinkan perusahaan mengambil langkah yang wajar dan tepat untuk memastikan informasi itu digunakan sebagaimana diwajibkan undang-undang tersebut, serta untuk menghentikan dan memulihkan setiap penggunaan tanpa izin;",
+        "membantu perusahaan menjawab permintaan untuk mengetahui, menghapus, atau memperbaiki informasi pribadi, dan mengikat subprosesornya secara tertulis dengan kewajiban yang sama."
+      ]
+    },
+    {
+      "heading": "Kewajiban perusahaan",
+      "items": [
+        "Perusahaan memiliki dasar hukum yang sah untuk menilai kandidatnya, memberi tahu mereka bagaimana hasil mereka digunakan, dan menjawab permintaan mereka.",
+        "Kandidat yang menghapus akun testee-nya sendiri ikut menghapus jawaban dan hasilnya, untuk setiap perusahaan; kandidat tersebut hilang dari wawancara perusahaan, dan riwayat kredit perusahaan menampilkan kandidat yang dihapus.",
+        "testee tidak membuat keputusan apa pun tentang kandidat. Perusahaan meninjau hasil sebelum memutuskan, tidak menolak kandidat hanya berdasarkan skor, memberikan penyesuaian seperti waktu tambahan kepada kandidat yang membutuhkannya, dan memungkinkan kandidat meminta agar hasilnya ditinjau oleh manusia. Hal ini juga berlaku untuk hasil yang dikirim ke sistem pelacakan pelamarnya atau alat lain: perusahaan tidak mengaturnya untuk menolak kandidat secara otomatis.",
+        "Perusahaan mengizinkan testee menggunakan jawaban kandidat, secara gabungan dan tanpa mengidentifikasi siapa pun, untuk mengukur dan meningkatkan kualitas soal di seluruh testee.",
+        "Soal yang dibuat testee untuk perusahaan adalah konten perusahaan berdasarkan ketentuan, bukan data pribadi kandidat, sehingga perjanjian ini tidak mencakupnya: berdasarkan lisensi dalam ketentuan, testee dapat menggunakannya kembali dalam wawancara dan latihan pelanggan lain, tanpa apa pun yang mengidentifikasi perusahaan atau orang lain, kecuali perusahaan mengecualikan soal suatu wawancara dari hal ini di pengaturannya.",
+        "Dalam mode suara, perusahaan memberi tahu kandidat sebelum mereka mulai bahwa jawaban lisan mereka diubah menjadi teks oleh AI dan tidak pernah disimpan oleh testee; kandidat selalu dapat menjawab dengan mengetuk sebagai gantinya.",
+        "Jika diwajibkan oleh hukum, perusahaan melakukan penilaian dampak, dan memberikan kepada kandidat pemberitahuan yang diwajibkan oleh yurisdiksinya."
+      ]
+    },
+    {
+      "heading": "Kontak",
+      "paragraphs": [
+        "Pertanyaan tentang perjanjian ini, dan pemberitahuan berdasarkan perjanjian ini: hello@testee.ai."
+      ]
+    }
+  ]
+}
