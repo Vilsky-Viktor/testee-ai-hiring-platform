@@ -24,7 +24,8 @@ class ActionOut(AuditEventOut):
     API key's name, a web hook's host, an integration's name; None for the company itself, or a
     person who's gone), and what it took away (`removed`: an API key's permissions). An API key
     that took it is named by `key_name`, its name now (None once it was deleted), instead of a
-    member."""
+    member. `interview_id` is the interview it opens: its candidate's, or the one it was about,
+    while it's still there."""
 
     id: UUID
     group: str | None
@@ -33,3 +34,4 @@ class ActionOut(AuditEventOut):
     target: str | None
     removed: list[str] | None = None
     key_name: str | None = None
+    interview_id: UUID | None = None

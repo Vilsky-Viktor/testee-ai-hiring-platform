@@ -136,12 +136,17 @@ async def list_for_company(
     group: str | None = None,
     start: datetime | None = None,
     end: datetime | None = None,
+    key_id: UUID | None = None,
 ) -> list[AuditEvent]:
-    """Newest first; only one member's, one group's, or those from `start` and before `end`."""
+    """Newest first; only one member's, one API key's, one group's, or those from `start` and
+    before `end`."""
     query = select(AuditEvent).where(AuditEvent.company_id == company_id)
 
     if user_id is not None:
         query = query.where(AuditEvent.user_id == user_id)
+
+    if key_id is not None:
+        query = query.where(AuditEvent.key_id == key_id)
 
     if group is not None:
         query = query.where(AuditEvent.group == group)

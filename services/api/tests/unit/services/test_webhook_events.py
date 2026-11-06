@@ -119,6 +119,10 @@ def hook_routes(monkeypatch, endpoints):
     async def tested(session, found, user_id):
         found.tested_by.append(user_id)
 
+    async def not_limited(redis, key, name, message=None, **who):
+        return None
+
+    monkeypatch.setattr(manage, "hit_or_skip", not_limited)
     monkeypatch.setattr(webhooks, "get", get)
     monkeypatch.setattr(webhooks, "tested", tested)
     monkeypatch.setattr(manage.webhook_log_store, "latest", latest)
@@ -130,7 +134,10 @@ def test_an_owner_sends_a_test_event_and_reads_the_log(client, companies_api, ho
     sign_in("u1")
     base = f"/manage/webhooks/{hook_routes.id}"
 
-    assert client.post(f"{base}/test", params={"company_id": str(COMPANY)}).json() == {"ok": True}
+    assert client.post(f"{base}/test", params={"company_id": str(COMPANY)}).json() == {
+        "ok": True,
+        "result": "delivered",
+    }
     assert hook_routes.tested_by == ["u1"]
     assert client.get(f"{base}/log", params={"company_id": str(COMPANY)}).json() == [
         {"event_type": "test", "ok": True, "result": "delivered", "at": "2026-10-15T00:00:00Z"}

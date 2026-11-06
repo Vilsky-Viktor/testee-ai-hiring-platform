@@ -7,8 +7,9 @@ from testee_common.auth.key_actor import key_actor
 from testee_common.auth.service_auth import issue_token
 
 from companies.constants.ai_apps import KEY_OTHER_COMPANY
+from companies.integrations import billing
 from companies.main import app
-from companies.repositories import companies
+from companies.repositories import companies, interviews
 from companies.repositories.audit import record as real_record
 from companies.services.access import key_company, member_of
 from tests.unit.api.v1.test_ai_apps import COMPANY_ID, SECRET, company  # noqa: F401 (fixture)
@@ -61,7 +62,15 @@ def test_a_key_lists_only_its_company_without_being_a_member(client, signed_in_a
     async def list_for_user(*args, **kwargs):
         raise AssertionError("a key is no member: its companies aren't looked up by membership")
 
+    async def none_finished(session, company_ids, since):
+        return {}
+
+    async def credits(company_ids):
+        return {}
+
     monkeypatch.setattr(companies, "list_for_user", list_for_user)
+    monkeypatch.setattr(interviews, "finished_since", none_finished)
+    monkeypatch.setattr(billing, "companies_credits", credits)
 
     listed = client.get("/companies", headers=as_key())
     later = client.get("/companies?offset=1", headers=as_key())

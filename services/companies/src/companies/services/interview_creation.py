@@ -24,9 +24,41 @@ from companies.integrations import billing, library
 from companies.integrations import generation as generation_api
 from companies.integrations.redis import get_redis
 from companies.models.companies import Company
-from companies.repositories import audit, companies, interviews
+from companies.repositories import audit, companies, interviews, template_interviews
 from companies.schemas.interviews import InterviewOut
+from companies.services.idempotent_creates import once_per_key
 from companies.services.interview_views import interview_out
+
+
+async def create_once(
+    company: Company,
+    user_id: str,
+    language: str | None,
+    text: str,
+    generate_in: str | None,
+    key: str | None,
+) -> InterviewOut:
+    """create, once per the user's Idempotency-Key in the company: the same request again gets
+    the interview the first made."""
+
+    async def find(interview_id) -> InterviewOut:
+        async with Session() as session:
+            interview = await interviews.get(session, interview_id)
+
+        if interview is None or interview.company_id != company.id:
+            raise HTTPException(status.HTTP_404_NOT_FOUND, "Interview not found")
+
+        return await interview_out(interview)
+
+    return await once_per_key(
+        "interview",
+        user_id,
+        company.id,
+        key,
+        {"text": text, "generate_in": generate_in},
+        lambda: create(company, user_id, language, text, generate_in),
+        find,
+    )
 
 
 async def create(
@@ -139,8 +171,14 @@ async def create_from_template(company: Company, user_id: str, template_id) -> I
     seconds = await question_seconds(redis, copy["level"])
 
     async with Session.begin() as session:
-        interview = await interviews.create_from_template(
-            session, company.id, copy["id"], copy["title"], copy["language"], seconds
+        interview = await template_interviews.create(
+            session,
+            company.id,
+            copy["id"],
+            template_id,
+            copy["title"],
+            copy["language"],
+            seconds,
         )
         await audit.record_interview(
             session, interview, user_id, AuditAction.INTERVIEW_FROM_TEMPLATE

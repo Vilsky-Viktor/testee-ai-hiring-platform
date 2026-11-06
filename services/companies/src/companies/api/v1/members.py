@@ -25,6 +25,7 @@ def member_out(member: Member, caller: Member) -> MemberOut:
         email=member.invited_email,
         role=member.role,
         joined=joined,
+        joined_at=member.joined_at,
         token=None if joined else member.token,
         removable=is_owner(caller) and not is_owner(member),
         can_own=is_owner(caller) and joined and member.role == Role.ADMIN,
@@ -39,7 +40,11 @@ async def list_members(company_id: UUID, user: CurrentUser, page: PageParams) ->
     async with Session() as session:
         rows = await members.list_for_company(session, company.id, page.offset, page.limit)
 
-    return [member_out(member, caller) for member in rows]
+    people = await member_service.profiles_of(rows)
+
+    return [
+        member_out(member, caller).model_copy(update=people.get(member.id, {})) for member in rows
+    ]
 
 
 @router.post("", status_code=status.HTTP_201_CREATED)

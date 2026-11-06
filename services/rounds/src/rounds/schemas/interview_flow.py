@@ -12,3 +12,5 @@ class InterviewStep(BaseModel):
     question: NextQuestion | None
     topics: list[SessionTopicOut]
     done: bool
+    # Once it's done: how long the whole interview took, in whole minutes.
+    minutes_taken: int | None = None

@@ -8,7 +8,7 @@ from companies.services import company_creation as company_routes
 from tests.unit.api.v1.test_companies import sign_in
 
 
-@pytest.mark.parametrize(("edited", "most"), [(None, 3), (5, 5)])
+@pytest.mark.parametrize(("edited", "most"), [(None, 10), (5, 5)])
 def test_nobody_creates_more_companies_than_one_person_may_own(
     client, monkeypatch, limit_hits, edited, most
 ):

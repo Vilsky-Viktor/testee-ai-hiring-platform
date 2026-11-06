@@ -22,3 +22,5 @@ class DiscoverPersonOut(BaseModel):
     name: str | None
     linkedin_url: str
     results: list[PracticeResultOut]
+    # Whether they already have an invite to this interview.
+    invited: bool = False

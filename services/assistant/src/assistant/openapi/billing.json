@@ -562,7 +562,7 @@
      "internal"
     ],
     "summary": "Company History",
-    "description": "Every movement of the company's credits, newest first.",
+    "description": "Every movement of the company's credits, newest first, or only those of one `kind`, from\n`start` and before `end`.",
     "operationId": "company_history_internal_companies__company_id__history_get",
     "security": [
      {
@@ -577,6 +577,61 @@
       "schema": {
        "type": "string",
        "title": "Company Id"
+      }
+     },
+     {
+      "name": "kind",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "enum": [
+          "topups",
+          "charges",
+          "refunds"
+         ],
+         "type": "string"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Kind"
+      }
+     },
+     {
+      "name": "start",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "date-time"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Start"
+      }
+     },
+     {
+      "name": "end",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "date-time"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "End"
       }
      },
      {
@@ -618,6 +673,54 @@
           "$ref": "#/components/schemas/HistoryEntryOut"
          },
          "title": "Response Company History Internal Companies  Company Id  History Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/internal/companies/{company_id}/spent": {
+   "get": {
+    "tags": [
+     "internal"
+    ],
+    "summary": "Company Spent",
+    "description": "The credits the company's candidates took this calendar month (UTC).",
+    "operationId": "company_spent_internal_companies__company_id__spent_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "company_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Company Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SpentOut"
         }
        }
       }
@@ -3035,6 +3138,17 @@
       ],
       "title": "Total"
      },
+     "paid": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Paid"
+     },
      "currency": {
       "anyOf": [
        {
@@ -3091,13 +3205,14 @@
      "reason",
      "created_at",
      "total",
+     "paid",
      "currency",
      "automatic",
      "transaction_id",
      "hold_key"
     ],
     "title": "HistoryEntryOut",
-    "description": "One movement of a wallet's credits. `total` (minor units, tax included) and `currency`\nare what a top-up cost or an adjustment moved, when known; `transaction_id` is the Paddle\ntransaction of a top-up or adjustment, and `hold_key` the key of a candidate's credits."
+    "description": "One movement of a wallet's credits. `total` (minor units, tax included) and `currency`\nare what a top-up cost or an adjustment moved, when known, and `paid` the same in whole\nunits; `transaction_id` is the Paddle transaction of a top-up or adjustment, and `hold_key`\nthe key of a candidate's credits."
    },
    "HitterOut": {
     "properties": {
@@ -3721,9 +3836,25 @@
       "type": "integer",
       "title": "Reward"
      },
+     "reward_candidates": {
+      "type": "integer",
+      "title": "Reward Candidates"
+     },
      "rewarded": {
       "type": "integer",
       "title": "Rewarded"
+     },
+     "earned": {
+      "type": "integer",
+      "title": "Earned"
+     },
+     "rewards_per_year": {
+      "type": "integer",
+      "title": "Rewards Per Year"
+     },
+     "rewards_left": {
+      "type": "integer",
+      "title": "Rewards Left"
      },
      "rewards": {
       "items": {
@@ -3737,7 +3868,11 @@
     "required": [
      "code",
      "reward",
+     "reward_candidates",
      "rewarded",
+     "earned",
+     "rewards_per_year",
+     "rewards_left",
      "rewards"
     ],
     "title": "ReferralOut",
@@ -3802,6 +3937,19 @@
      "name"
     ],
     "title": "SpenderOut"
+   },
+   "SpentOut": {
+    "properties": {
+     "credits": {
+      "type": "integer",
+      "title": "Credits"
+     }
+    },
+    "type": "object",
+    "required": [
+     "credits"
+    ],
+    "title": "SpentOut"
    },
    "StatsOut": {
     "properties": {

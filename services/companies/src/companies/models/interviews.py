@@ -24,6 +24,7 @@ class Interview(Base):
     # A company's interviews by last change, for the public API's updated_since (migration 0045).
     __table_args__ = (
         Index("ix_interviews_company_updated", "company_id", "updated_at", "id"),
+        Index("ix_interviews_company_template", "company_id", "template_id"),
         # The reminder emails' interviews, by when they got their questions or were started.
         Index("ix_interviews_ready_at", "ready_at"),
         Index("ix_interviews_created_at", "created_at"),
@@ -64,6 +65,8 @@ class Interview(Base):
     )
     # The shareable link's code while it's on: anyone who opens it can take the test.
     link_token: Mapped[str | None] = mapped_column(String(64))
+    # The template it was copied from; None for a generated one, or from before this was kept.
+    template_id: Mapped[uuid.UUID | None] = mapped_column()
     # Every interview is timed: each question has question_seconds, and one left unanswered is
     # wrong. Candidates never see their scores. A new test gets its level's
     # (repositories/interviews.py); the database's default is from before tests had them.

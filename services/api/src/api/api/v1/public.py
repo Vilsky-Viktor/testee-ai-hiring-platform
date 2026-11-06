@@ -4,6 +4,7 @@ from uuid import UUID
 from fastapi import APIRouter, Request, Response, status
 from testee_common.auth.key_actor import key_actor
 from testee_common.db.paging import PageParams
+from testee_common.redis.idempotency import fingerprint, once
 
 from api.api.dependencies import needs
 from api.config import settings
@@ -12,11 +13,12 @@ from api.constants.responses import COMMON, LISTED, NOT_FOUND, RETRY_AFTER
 from api.helpers.docs import refusal
 from api.helpers.public import candidate_of, interview_of, link_next
 from api.integrations import companies
+from api.integrations.redis import get_redis
 from api.models.api import ApiKey
 from api.schemas.changes import InterviewIn
 from api.schemas.public import Candidate, CandidateIn, Interview
 from api.schemas.public_params import After, IdempotencyKey, UpdatedSince
-from api.services.idempotency import fingerprint, once, slot
+from api.services.idempotency import slot
 
 # Every route can answer COMMON; ones under an interview also NOT_FOUND.
 router = APIRouter(prefix="/interviews", tags=["Interviews"], responses=COMMON)
@@ -163,7 +165,7 @@ async def invite_candidate(
     name, seconds = slot(key.company_id, key.id, idempotency_key, request)
 
     if idempotency_key:
-        invite_id = UUID(await once(name, seconds, request, invite))
+        invite_id = UUID(await once(get_redis(), name, seconds, request, invite))
     else:
         invite_id = UUID(await invite())
 
@@ -223,7 +225,7 @@ async def create_interview(
 
     request = fingerprint("interview", body.model_dump(mode="json"))
     name, seconds = slot(key.company_id, key.id, idempotency_key, request)
-    interview_id = UUID(await once(name, seconds, request, create))
+    interview_id = UUID(await once(get_redis(), name, seconds, request, create))
 
     # A retry returns the interview the first request made: nothing new, 200.
     if not created:

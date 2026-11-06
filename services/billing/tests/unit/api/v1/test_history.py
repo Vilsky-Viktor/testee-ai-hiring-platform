@@ -61,8 +61,8 @@ def test_a_candidates_movement_carries_the_key_companies_knows_the_invite_by():
 def test_the_history_route_lists_a_page_with_the_money_and_transaction(client, monkeypatch):
     asked = []
 
-    async def page(session, owner_type, owner_id, offset, limit):
-        asked.append((owner_type, owner_id, offset, limit))
+    async def page(session, owner_type, owner_id, offset, limit, kind, start, end):
+        asked.append((owner_type, owner_id, offset, limit, kind, start, end))
 
         return [
             entry(
@@ -83,7 +83,7 @@ def test_the_history_route_lists_a_page_with_the_money_and_transaction(client, m
     )
     topup, candidate = response.json()
 
-    assert asked == [("company", "acme", 20, 10)]
+    assert asked == [("company", "acme", 20, 10, None, None, None)]
     assert (topup["amount"], topup["total"], topup["currency"], topup["automatic"]) == (
         3_000,
         "3000",

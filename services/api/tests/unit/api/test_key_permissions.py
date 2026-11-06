@@ -105,17 +105,18 @@ def test_a_change_comes_with_reading_what_it_changes():
     ]
 
 
-def test_a_new_key_starts_with_the_two_reads(client, companies_api, stored):
+def test_a_new_key_starts_with_the_reads(client, companies_api, stored):
+    reads = ["interviews:read", "candidates:read", "notes:read", "credits:read"]
     sign_in()
     made = client.post(KEYS, json={"name": "Site", "expiry": "1"}).json()
     page = client.get(f"/manage?company_id={COMPANY}").json()
 
-    assert made["permissions"] == ["interviews:read", "candidates:read"]
-    assert page["default_permissions"] == ["interviews:read", "candidates:read"]
+    assert made["permissions"] == reads
+    assert page["default_permissions"] == reads
     assert page["implied"]["candidates:invite"] == "candidates:read"
     assert page["implied"]["notes:add"] == "notes:read"
     assert page["permission_groups"]["notes"] == ["notes:read", "notes:add"]
-    assert page["keys"][0]["permissions"] == ["interviews:read", "candidates:read"]
+    assert page["keys"][0]["permissions"] == reads
 
 
 def test_a_new_key_gets_what_was_ticked_and_the_reads_it_implies(client, companies_api, stored):

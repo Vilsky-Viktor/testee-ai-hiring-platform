@@ -10,7 +10,7 @@ from testee_common.auth.user import User
 
 from companies.main import app
 from companies.models.companies import Company, Member
-from companies.repositories import candidates, companies, interviews
+from companies.repositories import candidates, companies, interview_progress
 
 COMPANY_ID = uuid.uuid4()
 URL = "/interviews"
@@ -28,7 +28,7 @@ def asked(monkeypatch):
     async def found(session, _company_id):
         return company
 
-    async def listed(session, company_id, offset, limit, q=""):
+    async def listed(session, company_id, offset, limit, q, state, by_activity):
         searches.append((company_id, offset, limit, q))
 
         return []
@@ -37,7 +37,7 @@ def asked(monkeypatch):
         return {}
 
     monkeypatch.setattr(companies, "get", found)
-    monkeypatch.setattr(interviews, "list_for_company", listed)
+    monkeypatch.setattr(interview_progress, "page", listed)
     monkeypatch.setattr(candidates, "counts", counts)
     app.dependency_overrides[current_user] = lambda: User(
         uid="bob", email="bob@example.com", email_verified=True

@@ -25,12 +25,19 @@ GENERATION = {
     "company_id": str(COMPANY_ID),
     "status": "awaiting_review",
     "topics": [{"main_topic": "Python", "subtopics": ["Typing", "Async"]}],
-    "progress": {"done": 0, "total": 10, "topics": 1, "topics_ready": 0},
+    "progress": {
+        "done": 0,
+        "total": 10,
+        "topics": 1,
+        "topics_ready": 0,
+        "topic_states": [{"name": "Python", "ready": False}],
+    },
     "preparation_id": None,
     "error": None,
     "language": "en",
     "max_topics": 5,
     "max_subtopics": 6,
+    "min_added_subtopics": 3,
 }
 
 

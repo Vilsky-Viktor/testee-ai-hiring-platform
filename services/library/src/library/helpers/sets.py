@@ -94,6 +94,7 @@ def copied(template: QuestionSet, company_id: str) -> tuple[QuestionSet, list[uu
         kind=SetKind.INTERVIEW,
         owner_type=OwnerType.COMPANY,
         owner_id=company_id,
+        source_template_id=template.id,
         title=template.title,
         source_text=template.source_text,
         level=template.level,

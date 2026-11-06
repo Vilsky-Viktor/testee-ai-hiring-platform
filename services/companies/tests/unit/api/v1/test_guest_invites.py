@@ -8,6 +8,7 @@ from testee_common.auth.user import User
 
 import companies.api.v1.invites as routes
 from companies.constants.invites import INVITE_EXPIRED, NOT_THE_GUEST, InviteStatus
+from companies.integrations import rounds
 from companies.main import app
 from companies.services import candidate_start, invite_pages
 from tests.unit.api.v1.test_invites import (  # noqa: F401 (fixtures)
@@ -28,7 +29,7 @@ def sign_in(uid, email=""):
 @pytest.fixture
 def guest_invite(monkeypatch, invite_page):  # noqa: F811
     """The invite a company's platform sent with sign_in false, its candidate in it already, and
-    the sessions it starts recorded instead of made."""
+    the sessions it starts recorded instead of made; rounds has them 40% through it."""
     invite_page.guest = True
     invite_page.status = InviteStatus.IN_PROCESS
     started = []
@@ -38,7 +39,12 @@ def guest_invite(monkeypatch, invite_page):  # noqa: F811
 
         return {"sessions": []}
 
+    async def scores(invite_ids):
+        return {str(invite_id): {"progress": 40} for invite_id in invite_ids}
+
     monkeypatch.setattr(candidate_start, "start_sessions", start)
+    monkeypatch.setattr(rounds, "invite_scores", scores)
+    monkeypatch.setattr(routes, "get_redis", lambda: FakeRedis())
     monkeypatch.setattr(
         firebase_auth, "create_custom_token", lambda uid: f"custom-for-{uid}".encode()
     )
@@ -47,7 +53,9 @@ def guest_invite(monkeypatch, invite_page):  # noqa: F811
 
 
 def test_a_guest_invitation_says_so_and_signs_its_link_in(client, guest_invite):
-    assert client.get("/invites/token-1").json()["guest"] is True
+    invitation = client.get("/invites/token-1").json()
+
+    assert (invitation["guest"], invitation["progress"]) == (True, 40)
 
     response = client.post("/invites/token-1/guest")
 

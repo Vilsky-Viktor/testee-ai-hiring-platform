@@ -5,6 +5,7 @@ from testee_common.limits.rate_limit import hit
 from generation.constants.generation import (
     NOT_AWAITING_REVIEW,
     RUN_GENERATION,
+    TOO_FEW_SUBTOPICS,
     TOO_MANY_CHOSEN,
     TOO_MANY_REVISIONS,
     TOO_MANY_SUBTOPICS,
@@ -21,11 +22,13 @@ from generation.services.topic_caps import topic_caps
 
 async def submit_review(generation: Generation, body: ReviewRequest) -> Generation:
     """Queues the reviewed topics; only one review wins for a generation awaiting review. The
-    selection must name drafted topics, and a generation's topics are revised in words (a model
-    call each) at most MAX_TOPIC_REVISIONS times."""
+    selection must name topics of the list, the drafted ones with any the reviewer added, and a
+    generation's topics are revised in words (a model call each) at most MAX_TOPIC_REVISIONS
+    times."""
     drafted = len(generation.topics or [])
+    listed = max(drafted, len(body.topics or []))
 
-    if any(not 0 <= index < drafted for index in body.selected):
+    if any(not 0 <= index < listed for index in body.selected):
         raise HTTPException(status.HTTP_422_UNPROCESSABLE_CONTENT, "Choose topics from the list")
 
     caps = await topic_caps()
@@ -40,6 +43,15 @@ async def submit_review(generation: Generation, body: ReviewRequest) -> Generati
     if any(len(topic.subtopics) > caps["max_subtopics"] for topic in body.topics or []):
         raise TemplateError(
             status.HTTP_422_UNPROCESSABLE_CONTENT, TOO_MANY_SUBTOPICS, count=caps["max_subtopics"]
+        )
+
+    added = (body.topics or [])[drafted:]
+
+    if any(len(topic.subtopics) < caps["min_added_subtopics"] for topic in added):
+        raise TemplateError(
+            status.HTTP_422_UNPROCESSABLE_CONTENT,
+            TOO_FEW_SUBTOPICS,
+            count=caps["min_added_subtopics"],
         )
 
     # Refused before it counts a revision; the claim below still settles two reviews at once.

@@ -36,3 +36,6 @@ async def remember_via(
 # What a user's request came through (the assistant or an AI app), for the audit log; None in
 # the app itself.
 Via = Annotated[str | None, Depends(request_via)]
+# The site's start sends one with a new company and its interview, so the same create sent again
+# after a reload gives what the first made (services/idempotent_creates.py).
+IdempotencyKey = Annotated[str | None, Header(max_length=255)]

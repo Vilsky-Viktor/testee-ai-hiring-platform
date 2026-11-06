@@ -1,4 +1,4 @@
-from datetime import UTC, datetime
+from datetime import datetime
 from typing import Annotated
 from uuid import UUID
 
@@ -8,6 +8,7 @@ from testee_common.auth.auth import CurrentUser
 from companies.constants.bias_audit import FILE_NAME, NOT_OWNER
 from companies.services import bias_audit
 from companies.services.access import require_owner
+from companies.services.file_exports import csv_file
 
 router = APIRouter(prefix="/companies", tags=["companies"])
 
@@ -29,13 +30,5 @@ async def export_bias_audit(
     the action log."""
     company = await require_owner(user, company_id, NOT_OWNER)
     text = await bias_audit.export(company, user.uid, interview_id, start, end)
-    name = FILE_NAME.format(day=datetime.now(UTC).date().isoformat())
 
-    return Response(
-        text,
-        media_type="text/csv; charset=utf-8",
-        headers={
-            "Content-Disposition": f'attachment; filename="{name}"',
-            "Cache-Control": "no-store",
-        },
-    )
+    return csv_file(text, FILE_NAME)

@@ -15,6 +15,38 @@ from companies.integrations.redis import get_redis
 from companies.models.companies import Company
 from companies.repositories import companies
 from companies.services.company_deletion import delete_rows
+from companies.services.idempotent_creates import once_per_key
+
+
+async def create_once(
+    name: str,
+    user: CurrentUser,
+    request: Request,
+    via: str | None,
+    country: str | None,
+    key: str | None,
+) -> Company:
+    """create, once per the user's Idempotency-Key: the same request again gets the company
+    the first made."""
+
+    async def find(company_id) -> Company:
+        async with Session() as session:
+            company = await companies.get(session, company_id)
+
+        if company is None:
+            raise HTTPException(status.HTTP_404_NOT_FOUND, "Company not found")
+
+        return company
+
+    return await once_per_key(
+        "company",
+        user.uid,
+        None,
+        key,
+        {"name": name},
+        lambda: create(name, user, request, via, country),
+        find,
+    )
 
 
 async def create(

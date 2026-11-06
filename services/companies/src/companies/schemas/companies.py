@@ -37,6 +37,11 @@ class MemberOut(BaseModel):
     email: str
     role: str
     joined: bool
+    # Their name and picture on the team list (None for an invite, or without them), and when
+    # they joined, once that's known.
+    name: str | None = None
+    photo_url: str | None = None
+    joined_at: datetime | None = None
     token: str | None = None
     # Whether the user can remove this member or pending invite, or change its role: the owner,
     # any row but their own.
@@ -59,6 +64,9 @@ class AdminInviteOut(BaseModel):
     company_id: UUID | None = None
 
 
+CompanyStatus = Literal["low", "verify", "finished"]
+
+
 class CompanyOut(BaseModel):
     id: UUID
     name: str
@@ -73,6 +81,12 @@ class CompanyOut(BaseModel):
     interview_count: int
     # Its team as the Team page counts it (members and pending invites).
     member_count: int = 0
+    # On the companies list only: its credits (None when billing doesn't answer), and the one
+    # thing to know about it now (helpers/company_status.py), with the candidates who finished
+    # lately.
+    credits: int | None = None
+    status: CompanyStatus | None = None
+    finished_count: int = 0
     # The logo's address on the site; None until one is set.
     logo_url: str | None = None
     # Its own colors on candidates' pages, by theme (a theme missing: testee's), and the colors
@@ -129,7 +143,13 @@ class ReferralOut(BaseModel):
 
     code: str
     reward: int
+    # How many candidates the reward pays for.
+    reward_candidates: int
     rewarded: int
+    # The credits the rewards gave it, and how many more rewards it can get in any 365 days.
+    earned: int
+    rewards_per_year: int
+    rewards_left: int
     rewards: list[ReferralRewardOut]
 
 
@@ -156,10 +176,11 @@ class CompanyCreditsOut(BaseModel):
 
 
 class CompanyBalanceOut(BaseModel):
-    """A company the user can top up, with its credits."""
+    """A company the user can top up, with its logo and credits."""
 
     id: UUID
     name: str
+    logo_url: str | None = None
     available: int
     low: bool
 

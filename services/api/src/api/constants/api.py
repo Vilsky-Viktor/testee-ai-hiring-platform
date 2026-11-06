@@ -84,5 +84,6 @@ WEBHOOK_LOG_KEPT = 20
 RETRY_WINDOW_SECONDS = 15 * 60
 # An Idempotency-Key a client still sends keeps working: its first result, this long.
 IDEMPOTENCY_SECONDS = 24 * 60 * 60
-IDEMPOTENCY_IN_PROGRESS = "The same request is still running. Try again shortly."
-IDEMPOTENCY_KEY_REUSED = "This Idempotency-Key was already used for a different request."
+
+# A key expiring within this many days is told apart on the keys page.
+KEY_EXPIRING_DAYS = 30

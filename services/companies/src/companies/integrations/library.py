@@ -26,6 +26,19 @@ async def copy_template(template_id: UUID, company_id: UUID) -> dict | None:
     return response.json()
 
 
+async def copyable_templates(params: list[tuple[str, str | int]]) -> list[dict]:
+    """The templates a company can copy, the most copied first, with the topics a copy keeps."""
+    response = await http.get_client().get(
+        f"{settings.library_url}/internal/templates/copyable",
+        params=params,
+        headers=bearer(service_token("library")),
+    )
+
+    response.raise_for_status()
+
+    return response.json()
+
+
 async def get_set(set_id: UUID) -> dict | None:
     response = await http.get_client().get(
         f"{settings.library_url}/internal/sets/{set_id}",

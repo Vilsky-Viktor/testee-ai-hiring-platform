@@ -61,3 +61,8 @@ class SlackStatus:
 LINKABLE_DOT = r"(?<=\w)\.(?=\w)"
 # Put after such a dot, so the text reads the same but Slack doesn't link it.
 ZERO_WIDTH_SPACE = "\u200b"
+
+# The test message a company sends itself, and what stops it.
+SLACK_TEST_MESSAGE = "This is a test from testee: your channel gets its notifications here."
+SLACK_NOT_CONNECTED = "Slack isn't connected. Reconnect it, then try again."
+SLACK_TEST_FAILED = "Slack didn't take the message. Please try again in a minute."

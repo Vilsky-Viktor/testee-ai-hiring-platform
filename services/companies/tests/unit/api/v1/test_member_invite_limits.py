@@ -110,7 +110,7 @@ def test_a_company_that_never_paid_sends_a_limited_number_of_invites_a_day(
     ]
 
 
-@pytest.mark.parametrize(("edited", "most"), [(None, 3), (5, 5)])
+@pytest.mark.parametrize(("edited", "most"), [(None, 10), (5, 5)])
 def test_nobody_becomes_owner_of_more_companies_than_one_person_may(
     client,
     team,  # noqa: F811

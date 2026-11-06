@@ -1,3 +1,5 @@
+from datetime import UTC, datetime
+
 from testee_common.config.constants import MAX_PAGE_SIZE
 from testee_common.events.analytics import track
 from testee_common.events.notifications import (
@@ -6,7 +8,7 @@ from testee_common.events.notifications import (
     notification,
 )
 
-from billing.constants.credits import REFERRAL_REWARD
+from billing.constants.credits import CANDIDATE_CREDITS, REFERRAL_REWARD, REFERRALS_PER_YEAR
 from billing.constants.notifications import REFERRAL_LINK
 from billing.core.db import Session
 from billing.repositories import referrals
@@ -20,11 +22,18 @@ async def referral_out(owner_type: str, owner_id: str) -> ReferralOut:
         code = await referrals.code_of(session, owner_type, owner_id)
         rewarded = await referrals.rewarded_count(session, owner_type, owner_id)
         rewards = await referrals.rewards(session, owner_type, owner_id, MAX_PAGE_SIZE)
+        this_year = await referrals.rewarded_in_a_year(
+            session, owner_type, owner_id, datetime.now(UTC)
+        )
 
     return ReferralOut(
         code=code,
         reward=REFERRAL_REWARD,
+        reward_candidates=REFERRAL_REWARD // CANDIDATE_CREDITS,
         rewarded=rewarded,
+        earned=sum(paid for _row, paid in rewards),
+        rewards_per_year=REFERRALS_PER_YEAR,
+        rewards_left=max(REFERRALS_PER_YEAR - this_year, 0),
         rewards=[
             ReferralRewardOut(company_id=row.owner_id, rewarded_at=row.rewarded_at, credits=paid)
             for row, paid in rewards

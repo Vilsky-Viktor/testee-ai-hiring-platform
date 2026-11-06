@@ -21,6 +21,21 @@ async def member_emails(session: AsyncSession, company_id, user_ids: list[str]) 
     return {user_id: email for user_id, email in await session.execute(query)}
 
 
+async def candidate_interviews(session: AsyncSession, company_id, ids: list) -> dict:
+    """The interview of each of the company's candidate invites with those ids; gone ones are
+    left out."""
+    if not ids:
+        return {}
+
+    query = (
+        select(CandidateInvite.id, CandidateInvite.interview_id)
+        .join(Interview, Interview.id == CandidateInvite.interview_id)
+        .where(Interview.company_id == company_id, CandidateInvite.id.in_(ids))
+    )
+
+    return dict((await session.execute(query)).tuples().all())
+
+
 async def target_names(session: AsyncSession, company_id, ids: list) -> dict:
     """What the company's actions were about, by id: a candidate invite's email, an interview's
     title, or a member's email. Ids of anything gone, or of anything else, are left out."""

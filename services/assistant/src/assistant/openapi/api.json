@@ -703,7 +703,7 @@
       }
      },
      "422": {
-      "description": "The body is invalid (`validation_failed`), `return_url` isn't an https address (http only on localhost) (`return_url_invalid`), or `mode` is `voice` in a language voice mode doesn't support (`voice_unavailable`)",
+      "description": "The body is invalid (`validation_failed`) or `return_url` isn't an https address (http only on localhost) (`return_url_invalid`)",
       "content": {
        "application/json": {
         "schema": {
@@ -1892,6 +1892,75 @@
     }
    }
   },
+  "/manage/keys/{key_id}/name": {
+   "patch": {
+    "tags": [
+     "manage"
+    ],
+    "summary": "Rename Key",
+    "description": "Owners and admins give a key a new name.",
+    "operationId": "rename_key",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "key_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Key Id"
+      }
+     },
+     {
+      "name": "company_id",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Company Id"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/KeyRenameIn"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/KeyOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/manage/keys/{key_id}": {
    "patch": {
     "tags": [
@@ -2405,6 +2474,16 @@
       "type": "object",
       "title": "Permission Groups"
      },
+     "permission_presets": {
+      "additionalProperties": {
+       "items": {
+        "$ref": "#/components/schemas/Permission"
+       },
+       "type": "array"
+      },
+      "type": "object",
+      "title": "Permission Presets"
+     },
      "implied": {
       "additionalProperties": {
        "$ref": "#/components/schemas/Permission"
@@ -2429,6 +2508,7 @@
      "expiries",
      "webhooks",
      "permission_groups",
+     "permission_presets",
      "implied",
      "default_permissions"
     ],
@@ -3297,6 +3377,25 @@
       "type": "array",
       "title": "Allowed Ips",
       "default": []
+     },
+     "state": {
+      "type": "string",
+      "enum": [
+       "expired",
+       "expiring",
+       "never_used",
+       "active"
+      ],
+      "title": "State"
+     },
+     "access": {
+      "type": "string",
+      "enum": [
+       "read",
+       "write",
+       "custom"
+      ],
+      "title": "Access"
      }
     },
     "type": "object",
@@ -3308,7 +3407,9 @@
      "expires_at",
      "expired",
      "last_used_at",
-     "permissions"
+     "permissions",
+     "state",
+     "access"
     ],
     "title": "KeyOut"
    },
@@ -3328,6 +3429,21 @@
      "permissions"
     ],
     "title": "KeyPermissionsIn"
+   },
+   "KeyRenameIn": {
+    "properties": {
+     "name": {
+      "type": "string",
+      "maxLength": 80,
+      "minLength": 1,
+      "title": "Name"
+     }
+    },
+    "type": "object",
+    "required": [
+     "name"
+    ],
+    "title": "KeyRenameIn"
    },
    "NewKeyOut": {
     "properties": {
@@ -3392,6 +3508,25 @@
       "title": "Allowed Ips",
       "default": []
      },
+     "state": {
+      "type": "string",
+      "enum": [
+       "expired",
+       "expiring",
+       "never_used",
+       "active"
+      ],
+      "title": "State"
+     },
+     "access": {
+      "type": "string",
+      "enum": [
+       "read",
+       "write",
+       "custom"
+      ],
+      "title": "Access"
+     },
      "key": {
       "type": "string",
       "title": "Key"
@@ -3407,6 +3542,8 @@
      "expired",
      "last_used_at",
      "permissions",
+     "state",
+     "access",
      "key"
     ],
     "title": "NewKeyOut"
@@ -3449,6 +3586,28 @@
      "failing": {
       "type": "boolean",
       "title": "Failing"
+     },
+     "state": {
+      "type": "string",
+      "enum": [
+       "paused",
+       "unused",
+       "active"
+      ],
+      "title": "State",
+      "default": "unused"
+     },
+     "last_delivered_at": {
+      "anyOf": [
+       {
+        "type": "string",
+        "format": "date-time"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Last Delivered At"
      },
      "secret": {
       "type": "string",
@@ -3882,6 +4041,28 @@
      "failing": {
       "type": "boolean",
       "title": "Failing"
+     },
+     "state": {
+      "type": "string",
+      "enum": [
+       "paused",
+       "unused",
+       "active"
+      ],
+      "title": "State",
+      "default": "unused"
+     },
+     "last_delivered_at": {
+      "anyOf": [
+       {
+        "type": "string",
+        "format": "date-time"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Last Delivered At"
      }
     },
     "type": "object",
@@ -3898,11 +4079,16 @@
      "ok": {
       "type": "boolean",
       "title": "Ok"
+     },
+     "result": {
+      "type": "string",
+      "title": "Result"
      }
     },
     "type": "object",
     "required": [
-     "ok"
+     "ok",
+     "result"
     ],
     "title": "WebhookTestOut"
    }

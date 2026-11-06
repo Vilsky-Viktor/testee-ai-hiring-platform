@@ -1,12 +1,16 @@
+import asyncio
+
 from fastapi import HTTPException, status
 from testee_common.auth.user import User
 from testee_common.i18n.i18n import CodedError
 
 from companies.constants import error_codes
 from companies.constants.discover import DISCOVER_UNPAID
+from companies.core.db import Session
 from companies.integrations import accounts, billing, library, rounds
 from companies.models.companies import Company
 from companies.models.interviews import Interview
+from companies.repositories import invites
 from companies.schemas.discover import DiscoverPersonOut
 from companies.services import candidate_invites
 from companies.services import outbox as outbox_service
@@ -18,6 +22,18 @@ async def require_paid(company_id) -> None:
     """Refused (403) to a company that never topped up, and when billing can't say."""
     if not await billing.company_paid(company_id):
         raise CodedError(status.HTTP_403_FORBIDDEN, DISCOVER_UNPAID, error_codes.DISCOVER_UNPAID)
+
+
+async def invited_people(interview_id, user_ids: list[str]) -> set[str]:
+    """Which of the people already have an invite to the interview, known by their account's
+    email; a removed invite no longer counts. The emails stay here."""
+    found = await asyncio.gather(*(accounts.account(user_id) for user_id in user_ids))
+    emails = {item["email"].lower(): item["user_id"] for item in found if item}
+
+    async with Session() as session:
+        statuses = await invites.statuses_of(session, interview_id, list(emails))
+
+    return {emails[email] for email in statuses}
 
 
 async def people(interview: Interview, offset: int, limit: int) -> list[DiscoverPersonOut]:
@@ -32,6 +48,7 @@ async def people(interview: Interview, offset: int, limit: int) -> list[Discover
 
     topic_ids = await library.practice_topics(interview.set_id)
     found = await rounds.offer_matches(topic_ids, offset, limit)
+    invited = await invited_people(interview.id, [match["user_id"] for match in found])
 
     return [
         DiscoverPersonOut(
@@ -39,6 +56,7 @@ async def people(interview: Interview, offset: int, limit: int) -> list[Discover
             name=match["name"],
             linkedin_url=match["linkedin_url"],
             results=match["results"],
+            invited=match["user_id"] in invited,
         )
         for match in found
     ]

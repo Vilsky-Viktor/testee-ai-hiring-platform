@@ -12,7 +12,7 @@ from library.helpers.templates import summarized
 from library.integrations.redis import get_redis
 from library.models.sets import Question, QuestionSet, Topic
 from library.repositories import preparations, templates
-from library.schemas.templates import TemplateSummary
+from library.schemas.templates import CopyableTemplate, CopyableTopic, TemplateSummary
 from library.services.set_saves import save_once
 
 
@@ -68,6 +68,29 @@ async def listed(
         duplicates = await templates.duplicate_ids(session, [row.id for row in rows])
 
     return summarized(rows, duplicates)
+
+
+async def copyable(
+    q: str, level: str | None, languages: list[str], offset: int, limit: int
+) -> list[CopyableTemplate]:
+    """The templates a company can copy, the most copied first, with the topics a copy keeps."""
+    async with Session() as session:
+        rows = await templates.list_templates(
+            session, q, level, languages, offset, limit, copyable=True, popular=True
+        )
+        ids = [row.id for row in rows]
+        duplicates = await templates.duplicate_ids(session, ids)
+        topics = await templates.copyable_topics(session, ids)
+
+    return [
+        CopyableTemplate(
+            **summary.model_dump(),
+            topics=[
+                CopyableTopic(title=title, size=size) for title, size in topics.get(summary.id, [])
+            ],
+        )
+        for summary in summarized(rows, duplicates)
+    ]
 
 
 async def find(session, key: str) -> QuestionSet:

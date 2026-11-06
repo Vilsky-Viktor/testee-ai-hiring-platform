@@ -11,7 +11,7 @@ from companies.integrations import library
 from companies.main import app
 from companies.models.companies import Company, Member
 from companies.models.interviews import Interview
-from companies.repositories import companies, interviews
+from companies.repositories import companies, template_interviews
 from companies.services import interview_creation as routes
 
 COMPANY_ID = uuid.uuid4()
@@ -43,8 +43,8 @@ def setup(monkeypatch):
 
         return {"id": str(SET_ID), "title": "Bookkeeper", "language": "de", "level": "hard"}
 
-    async def create(session, company_id, set_id, title, language, seconds):
-        made.append((company_id, set_id, title, language, seconds))
+    async def create(session, company_id, set_id, template_id, title, language, seconds):
+        made.append((company_id, set_id, template_id, title, language, seconds))
 
         return Interview(
             pass_mark=70,
@@ -52,6 +52,7 @@ def setup(monkeypatch):
             company_id=company_id,
             generation_id=None,
             set_id=uuid.UUID(set_id),
+            template_id=template_id,
             generation_failed=False,
             title=title,
             language=language,
@@ -64,7 +65,7 @@ def setup(monkeypatch):
     monkeypatch.setattr(companies, "get", get_company)
     monkeypatch.setattr(routes, "get_redis", lambda: FakeRedis())
     monkeypatch.setattr(library, "copy_template", copy)
-    monkeypatch.setattr(interviews, "create_from_template", create)
+    monkeypatch.setattr(template_interviews, "create", create)
     app.dependency_overrides[current_user] = lambda: User(
         uid="bob", email="bob@example.com", email_verified=True
     )
@@ -90,7 +91,7 @@ def test_a_template_becomes_a_ready_test_with_no_generation(client, setup, audit
     assert response.json()["title"] == "Bookkeeper"
     # A hard template's test: the hard level's seconds a question.
     assert response.json()["question_seconds"] == 75
-    assert setup == [(COMPANY_ID, str(SET_ID), "Bookkeeper", "de", 75)]
+    assert setup == [(COMPANY_ID, str(SET_ID), TEMPLATE_ID, "Bookkeeper", "de", 75)]
     assert audited == [
         (
             COMPANY_ID,

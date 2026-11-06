@@ -93,9 +93,10 @@ def test_the_api_page_shows_which_web_hooks_are_failing(client, companies_api, s
     stored["webhooks"][1].failing = True
     shown = client.get(f"/manage?company_id={COMPANY}").json()["webhooks"]
 
-    assert [(hook["url"], hook["failing"]) for hook in shown] == [
-        ("https://ok.example/x", False),
-        ("https://down.example/x", True),
+    # The paused one comes first: it's the one that needs looking at.
+    assert [(hook["url"], hook["failing"], hook["state"]) for hook in shown] == [
+        ("https://down.example/x", True, "paused"),
+        ("https://ok.example/x", False, "unused"),
     ]
 
 

@@ -74,9 +74,17 @@ def two_companies(monkeypatch):
     async def fake_counts(session, company_ids):
         return {OWNED_ID: 3}
 
+    async def fake_finished(session, company_ids, since):
+        return {JOINED_ID: 2}
+
+    async def fake_credits(company_ids):
+        return {str(OWNED_ID): {"available": 1_200, "low": True}}
+
     monkeypatch.setattr(companies, "list_for_user", fake_list)
     monkeypatch.setattr(companies, "get", fake_get)
     monkeypatch.setattr(interviews, "counts", fake_counts)
+    monkeypatch.setattr(interviews, "finished_since", fake_finished)
+    monkeypatch.setattr(billing, "companies_credits", fake_credits)
 
 
 def test_lists_every_membership(client, two_companies):
@@ -90,6 +98,10 @@ def test_lists_every_membership(client, two_companies):
     ] == [
         ("My company", "owner", 3, 2),
         ("Arcolabs", "admin", 0, 1),
+    ]
+    assert [(row["credits"], row["finished_count"], row["status"]) for row in response.json()] == [
+        (1_200, 0, "low"),
+        (None, 2, "verify"),
     ]
 
 
@@ -164,7 +176,7 @@ def test_lists_the_users_companies_with_their_credits(client, monkeypatch):
 
     assert response.status_code == 200
     assert response.json() == [
-        {"id": str(company.id), "name": "Acme", "available": 1_200, "low": False}
+        {"id": str(company.id), "name": "Acme", "logo_url": None, "available": 1_200, "low": False}
     ]
     # Only companies the user may top up: viewers spend no credits.
     assert asked == [EDITORS]

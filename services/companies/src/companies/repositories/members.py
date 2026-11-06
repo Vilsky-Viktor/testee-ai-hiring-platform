@@ -1,4 +1,5 @@
 import secrets
+from datetime import UTC, datetime
 
 from sqlalchemy import delete, func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -82,6 +83,7 @@ async def join(session: AsyncSession, member_id, user_id: str) -> tuple[Member |
         return row, False
 
     row.user_id = user_id
+    row.joined_at = datetime.now(UTC)
 
     return row, True
 

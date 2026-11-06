@@ -1,4 +1,4 @@
-from typing import Annotated
+from typing import Annotated, Literal
 from uuid import UUID
 
 from fastapi import APIRouter, Query, status
@@ -6,7 +6,8 @@ from testee_common.auth.auth import CurrentUser
 from testee_common.db.paging import PageParams
 from testee_common.limits.pause import refuse_if_paused
 
-from companies.api.dependencies import Via
+from companies.api.dependencies import IdempotencyKey, Via
+from companies.constants.interviews import InterviewStatus
 from companies.constants.invites import MAX_SEARCH_LENGTH
 from companies.integrations.redis import get_redis
 from companies.schemas.interviews import (
@@ -15,6 +16,7 @@ from companies.schemas.interviews import (
     InterviewFromTemplate,
     InterviewOut,
     InterviewSettings,
+    InterviewStatusCounts,
     PreviewOut,
     TitleIn,
 )
@@ -26,7 +28,12 @@ from companies.services import (
     interview_views,
     previews,
 )
-from companies.services.access import refuse_without_pledge, require_company, require_editor
+from companies.services.access import (
+    can_edit,
+    refuse_without_pledge,
+    require_company,
+    require_editor,
+)
 from companies.services.interview_access import interview_for
 
 router = APIRouter(prefix="/interviews", tags=["interviews"])
@@ -34,13 +41,17 @@ router = APIRouter(prefix="/interviews", tags=["interviews"])
 
 @router.post("", status_code=status.HTTP_201_CREATED)
 async def create_interview(
-    body: InterviewCreate, company_id: UUID, user: CurrentUser
+    body: InterviewCreate,
+    company_id: UUID,
+    user: CurrentUser,
+    idempotency_key: IdempotencyKey = None,
 ) -> InterviewOut:
+    """With an Idempotency-Key, the same request again gets the interview the first made."""
     await refuse_if_paused(get_redis(), "interview_generation", company_id, user.uid)
     company, _ = await require_editor(user, company_id)
 
-    return await interview_creation.create(
-        company, user.uid, user.language, body.text, body.generate_in
+    return await interview_creation.create_once(
+        company, user.uid, user.language, body.text, body.generate_in, idempotency_key
     )
 
 
@@ -60,11 +71,35 @@ async def list_interviews(
     user: CurrentUser,
     page: PageParams,
     q: Annotated[str, Query(max_length=MAX_SEARCH_LENGTH)] = "",
+    state: Annotated[InterviewStatus | None, Query(alias="status")] = None,
+    sort: Literal["newest", "activity"] = "newest",
 ) -> list[InterviewOut]:
-    """The company's interviews, newest first; `q` narrows them to titles containing it."""
+    """The company's interviews, newest first, or with `sort=activity` the latest activity first;
+    `q` narrows them to titles containing it, `status` to those in it."""
+    company, member = await require_company(user, company_id)
+
+    return await interview_views.interviews_page(
+        company.id,
+        page.offset,
+        page.limit,
+        q.strip(),
+        state,
+        sort == "activity",
+        can_edit(member),
+    )
+
+
+@router.get("/status-counts")
+async def interview_status_counts(
+    company_id: UUID,
+    user: CurrentUser,
+    q: Annotated[str, Query(max_length=MAX_SEARCH_LENGTH)] = "",
+) -> InterviewStatusCounts:
+    """How many of the company's interviews (with `q` in their title) are in each status. Declared
+    before /{interview_id}, which would otherwise take it as an id."""
     company, _ = await require_company(user, company_id)
 
-    return await interview_views.interviews_page(company.id, page.offset, page.limit, q.strip())
+    return await interview_views.status_counts(company.id, q.strip())
 
 
 @router.get("/{interview_id}")

@@ -1,13 +1,11 @@
-import asyncio
-
 import pytest
 from fake_redis import FakeRedis
 from fastapi import HTTPException
 from testee_common.auth.key_actor import key_actor
+from testee_common.config.constants import IDEMPOTENCY_KEY_REUSED
 
-from api.constants.api import IDEMPOTENCY_KEY_REUSED
+from api.api.v1 import public
 from api.integrations import companies
-from api.services import idempotency
 from tests.unit.api_keys import KEY, call
 from tests.unit.conftest import CANDIDATE, COMPANY, INTERVIEW, candidate, interview
 
@@ -43,7 +41,7 @@ def changes(monkeypatch, companies_api):
         return {"id": str(INTERVIEW)}
 
     monkeypatch.setattr(companies, "create_interview", create_interview)
-    monkeypatch.setattr(idempotency, "get_redis", lambda: redis)
+    monkeypatch.setattr(public, "get_redis", lambda: redis)
     redis = FakeRedis()
 
     return done
@@ -211,28 +209,3 @@ def test_lists_pass_on_what_changed_since_and_after_which_item(
         call(client, "GET", "/interviews", params={"updated_since": "yesterday"}).status_code == 422
     )
     assert asked == [("2026-10-15T10:00:00+00:00", INTERVIEW)]
-
-
-def test_a_result_kept_before_requests_were_fingerprinted_is_still_returned(monkeypatch):
-    redis = FakeRedis()
-    redis.counts["old"] = str(INTERVIEW).encode()
-    monkeypatch.setattr(idempotency, "get_redis", lambda: redis)
-
-    async def run():
-        raise AssertionError("ran again")
-
-    assert asyncio.run(idempotency.once("old", 60, "any", run)) == str(INTERVIEW)
-
-
-def test_a_retry_while_the_first_still_runs_is_refused(monkeypatch):
-    redis = FakeRedis()
-    redis.counts["running"] = b"req:pending"
-    monkeypatch.setattr(idempotency, "get_redis", lambda: redis)
-
-    async def run():
-        return "x"
-
-    with pytest.raises(HTTPException) as refused:
-        asyncio.run(idempotency.once("running", 60, "req", run))
-
-    assert refused.value.status_code == 409

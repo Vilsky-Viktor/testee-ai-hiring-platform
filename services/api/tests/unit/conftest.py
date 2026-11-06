@@ -3,19 +3,20 @@ from datetime import UTC, datetime
 from types import SimpleNamespace
 
 import pytest
+from fake_redis import FakeRedis
 from fastapi import HTTPException
 from testee_common.auth.auth import current_user
 from testee_common.auth.tokens import hashed
 from testee_common.auth.user import User
-from testee_common.limits import limits
+from testee_common.limits import limits, maintenance
 from testee_common.redis import memory_cache
 
 from api.config import settings
 from api.constants.permissions import Permission
 from api.integrations import companies
 from api.main import app
-from api.repositories import keys, webhooks
-from api.services import key_checks
+from api.repositories import keys, webhook_log, webhooks
+from api.services import key_checks, manage
 from tests.unit.api_keys import KEY as API_KEY
 from tests.unit.ids import CANDIDATE, COMPANY, INTERVIEW, KEY
 
@@ -149,6 +150,16 @@ def companies_api(monkeypatch):
     return state
 
 
+@pytest.fixture(autouse=True)
+def maintenance_off(monkeypatch):
+    """The maintenance switch every request reads is off (unit tests have no Redis)."""
+
+    async def off(redis):
+        return False
+
+    monkeypatch.setattr(maintenance, "is_on", off)
+
+
 @pytest.fixture
 def stored(monkeypatch):
     """Keys and web hooks in memory instead of the database, and requests never rate limited
@@ -242,6 +253,9 @@ def stored(monkeypatch):
     async def webhooks_of(session, company_id):
         return [hook for hook in state["webhooks"] if hook.company_id == company_id]
 
+    async def last_delivered(session, webhook_ids):
+        return {}
+
     async def hit(redis, key, name, message="Too many requests. Try again later.", **whose):
         state["counted"].append(key)
 
@@ -257,7 +271,10 @@ def stored(monkeypatch):
     monkeypatch.setattr(keys, "set_allowed_ips", set_allowed_ips)
     monkeypatch.setattr(webhooks, "add", add_webhook)
     monkeypatch.setattr(webhooks, "of_company", webhooks_of)
+    monkeypatch.setattr(webhook_log, "last_delivered", last_delivered)
     monkeypatch.setattr(key_checks, "hit_or_skip", hit)
+    monkeypatch.setattr(manage, "hit_or_skip", hit)
+    monkeypatch.setattr(manage, "get_redis", lambda: FakeRedis())
 
     return state
 

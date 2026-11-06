@@ -125,13 +125,13 @@ TOO_MANY_INTERVIEWS_UNPAID = (
     "Try again tomorrow."
 )
 TOO_MANY_WITHOUT_CANDIDATES = (
-    "Invite a candidate to one of your interviews, or delete one, before generating another: "
-    "your company's limit of generated interviews waiting without candidates is {limit}."
+    # One line per sentence.
+    "You've reached your limit of interviews without candidates ({limit}).\n"
+    "Invite a candidate or delete an interview to create a new one."
 )
 TOO_MANY_WITHOUT_CANDIDATES_UNPAID = (
-    "Invite a candidate to one of your interviews, or delete one, before generating another: "
-    "until your first top-up, your company's limit of generated interviews waiting without "
-    "candidates is {limit}."
+    "You've reached your limit of interviews without candidates ({limit} until your first "
+    "top-up).\nInvite a candidate or delete an interview to create a new one."
 )
 # Starting an interview with an email the sign-in hasn't verified (GitHub doesn't): a link to
 # confirm it was sent when they signed in.

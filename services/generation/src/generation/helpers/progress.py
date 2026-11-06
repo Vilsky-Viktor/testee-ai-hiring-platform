@@ -2,11 +2,13 @@ from generation.helpers.questions import question_calls
 
 
 def track_progress(progress: dict, chunk: dict, size: int) -> bool:
-    """Update {"done", "total", "topics", "topics_ready"} from one graph stream chunk.
+    """Update {"done", "total", "topics", "topics_ready", "topic_states"} from one graph stream
+    chunk; `topic_states` is each approved topic's name and whether its questions are ready.
 
     `size` is the questions each topic gets. Returns True if it changed. The steps are the question calls; a topic is ready once all its
     calls finished. A retry replays steps that already finished, so counts are capped, and done
-    stays below total until merging, which runs once every call has finished.
+    stays below total until merging: 100% means the questions are written, with topping up, saving
+    and checking still to come.
     """
     changed = False
 
@@ -21,6 +23,9 @@ def track_progress(progress: dict, chunk: dict, size: int) -> bool:
                 topics_ready=0,
                 topic_calls=topic_calls,
                 topic_done=[0] * len(topic_calls),
+                topic_states=[
+                    {"name": topic["main_topic"], "ready": False} for topic in update["topics"]
+                ],
             )
             changed = True
         elif node == "generate_questions":
@@ -34,15 +39,24 @@ def track_progress(progress: dict, chunk: dict, size: int) -> bool:
                         progress["topic_done"][ti] + 1, progress["topic_calls"][ti]
                     )
 
-                progress["topics_ready"] = sum(
+                ready = [
                     done >= calls
                     for done, calls in zip(progress["topic_done"], progress["topic_calls"])
-                )
+                ]
+                progress["topics_ready"] = sum(ready)
+
+                # Progress saved before the page listed its topics has no states to update.
+                for state, done in zip(progress.get("topic_states", []), ready):
+                    state["ready"] = done
 
             changed = True
         elif node == "merge_questions":
             progress["done"] = progress["total"]
             progress["topics_ready"] = progress.get("topics", 0)
+
+            for state in progress.get("topic_states", []):
+                state["ready"] = True
+
             changed = True
 
     return changed

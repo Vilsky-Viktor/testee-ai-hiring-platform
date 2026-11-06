@@ -6,6 +6,7 @@ from uuid import UUID
 from fastapi import HTTPException, status
 from testee_common.auth.user import User
 
+from companies.constants.invites import InviteStatus
 from companies.core.db import Session
 from companies.helpers.allowed_domains import frame_sources
 from companies.helpers.brand import color_sets, style_of
@@ -14,6 +15,7 @@ from companies.helpers.interviews import interview_minutes
 from companies.helpers.invite_links import addressed_to
 from companies.helpers.logos import logo_path
 from companies.helpers.return_urls import with_invite
+from companies.integrations import rounds
 from companies.models.interviews import Interview
 from companies.repositories import companies, interviews, invites
 from companies.schemas.invites import InviteView, LinkView
@@ -26,6 +28,16 @@ from companies.services.interview_views import attach_set, interview_title
 async def company_of(interview: Interview):
     async with Session() as session:
         return await companies.get(session, interview.company_id)
+
+
+async def progress_of(invite) -> int | None:
+    """How far a candidate on their way through it got, in percent."""
+    if invite.status != InviteStatus.IN_PROCESS:
+        return None
+
+    scores = await rounds.invite_scores([invite.id])
+
+    return (scores.get(str(invite.id)) or {}).get("progress")
 
 
 async def invite_view(
@@ -49,6 +61,7 @@ async def invite_view(
     matches, email = addressed_to(user, invite.email)
     # Their own mode when the company set one, else the interview's.
     voice = takes_voice(invite, interview)
+    own = matches or invite.guest
 
     return InviteView(
         interview_id=interview.id,
@@ -58,6 +71,7 @@ async def invite_view(
         verified_domain=company.verified_domain if company else None,
         email=email,
         matches=matches,
+        progress=await progress_of(invite) if own else None,
         status=invite.status,
         question_seconds=seconds,
         total_minutes=interview_minutes(found, interview, seconds),

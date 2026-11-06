@@ -33,7 +33,11 @@ def test_the_referral_lists_rewarded_companies_by_name(client, monkeypatch):
         return {
             "code": "abc",
             "reward": 500,
+            "reward_candidates": 5,
             "rewarded": 2,
+            "earned": 1000,
+            "rewards_per_year": 10,
+            "rewards_left": 8,
             "rewards": [
                 {"company_id": JOINED, "rewarded_at": "2026-10-05T10:00:00Z", "credits": 1000},
                 {"company_id": GONE, "rewarded_at": "2026-10-01T10:00:00Z", "credits": 0},
@@ -55,7 +59,8 @@ def test_the_referral_lists_rewarded_companies_by_name(client, monkeypatch):
     finally:
         app.dependency_overrides.clear()
 
-    assert found["rewarded"] == 2
+    assert (found["rewarded"], found["reward_candidates"]) == (2, 5)
+    assert (found["earned"], found["rewards_per_year"], found["rewards_left"]) == (1000, 10, 8)
     # A deleted company keeps its row, without a name.
     assert [row["name"] for row in found["rewards"]] == ["Globex", None]
     # Each at what it gave then (an earlier reward, or none over the yearly limit), not today's.

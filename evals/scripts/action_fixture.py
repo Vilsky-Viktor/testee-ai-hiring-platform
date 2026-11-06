@@ -31,6 +31,7 @@ async def extras(fixture: Fixture, facts: dict) -> dict:
 
     return {
         "company": company,
+        "company_name": facts["company"]["name"],
         "company2": second["id"],
         "interview0": interviews[0]["id"],
         "interview1": interviews[1]["id"],

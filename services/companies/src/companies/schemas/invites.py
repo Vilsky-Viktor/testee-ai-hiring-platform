@@ -85,6 +85,8 @@ class InviteView(BaseModel):
     email: str | None = None
     # Whether it was sent to the signed-in account's email: they may start it with it.
     matches: bool = False
+    # How far they got, in percent, shown to them on their way back.
+    progress: int | None = None
     status: str
     # Shown before the candidate starts: the timer begins at start.
     question_seconds: int
@@ -155,6 +157,17 @@ class LinkOut(BaseModel):
     """The test's shareable link code, or None while it's off."""
 
     link_token: str | None
+
+
+class CandidateSummaryOut(BaseModel):
+    """An interview's candidates at a glance: how many, how many finished and passed, the
+    finished ones' average grade (None until there's one), and how many each filter holds."""
+
+    total: int
+    finished: int
+    passed: int
+    average_grade: int | None
+    counts: dict[str, int]
 
 
 class CandidateFiltersOut(BaseModel):

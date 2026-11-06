@@ -14,7 +14,9 @@ from testee_common.events.deletions import COMPANY_DELETED, CompanyDeleted
 from companies.constants.roles import Role
 from companies.constants.verification import RENAME_REVIEWED, VerificationStatus
 from companies.core.exceptions import OverLimit
+from companies.helpers.search import escape_like
 from companies.models.companies import Company, Member
+from companies.models.interviews import Interview
 from companies.models.invites import CandidateInvite
 from companies.repositories import guests, outbox
 
@@ -53,7 +55,14 @@ async def create(
     company = Company(
         name=name,
         dpa_version=LEGAL_VERSIONS["dpa"],
-        members=[Member(user_id=user_id, invited_email=email.lower(), role=Role.OWNER)],
+        members=[
+            Member(
+                user_id=user_id,
+                invited_email=email.lower(),
+                role=Role.OWNER,
+                joined_at=datetime.now(UTC),
+            )
+        ],
     )
 
     owned = await lock_owner(session, user_id)
@@ -110,15 +119,37 @@ async def list_for_user(
     offset: int,
     limit: int,
     roles: tuple[str, ...] = tuple(Role),
+    q: str = "",
 ) -> list[Company]:
-    """The user's companies, by name (alphabetically, in any case), only those where their role is
-    one of `roles`."""
+    """The user's companies, the one with the latest activity first (an interview or a candidate
+    changed, or else its creation), only those where their role is one of `roles`; `q` narrows
+    them to names containing it, in any case."""
+    interview_change = (
+        select(func.max(Interview.updated_at))
+        .where(Interview.company_id == Company.id)
+        .scalar_subquery()
+    )
+    candidate_change = (
+        select(func.max(CandidateInvite.updated_at))
+        .join(Interview, Interview.id == CandidateInvite.interview_id)
+        .where(Interview.company_id == Company.id)
+        .scalar_subquery()
+    )
+    filters = [Member.user_id == user_id, Member.role.in_(roles)]
+
+    if q:
+        filters.append(Company.name.ilike(f"%{escape_like(q.lower())}%", escape="\\"))
+
     query = (
         select(Company)
         .join(Member, Member.company_id == Company.id)
-        .where(Member.user_id == user_id, Member.role.in_(roles))
+        .where(*filters)
         .options(selectinload(Company.members))
-        .order_by(func.lower(Company.name), Company.id)
+        .order_by(
+            func.greatest(interview_change, candidate_change, Company.created_at).desc(),
+            func.lower(Company.name),
+            Company.id,
+        )
         .offset(offset)
         .limit(limit)
     )

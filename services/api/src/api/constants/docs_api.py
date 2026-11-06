@@ -1,46 +1,52 @@
 # The API reference's API tab: getting a key, signing in, errors, lists and the changelog.
 API_TAB = """# API
 
-The testee API connects testee to your own platform. Use it to create interviews from job
-descriptions, invite candidates, remind, update or remove them, read their results, find a
-candidate by email, read and add your team's notes on an interview and read your credits, and
-receive a [web hook](/api-docs?tab=webhooks) as soon as a candidate finishes.
+Use the testee API to connect interviews to your own platform. You can create interviews from job
+descriptions, invite and manage candidates, read results, find a candidate by email, read and add
+your team's notes, and check your credits. To hear about results as they happen, add a
+[web hook](/api-docs?tab=webhooks).
 
-## Getting an API key
+## Get an API key
 
 1. Sign in to testee as an owner or admin of your company.
-2. Open **Dashboard**, select your company and go to the **Integrations** tab.
-3. In the **API** section, open the API page and select **New key**.
-4. Name the key after the platform that will use it, choose when it expires (in 1, 3, 6 or 12
-   months, or never), then select **New key**.
-5. Copy the key and store it securely. It is shown only once: testee keeps only a hash of it.
+2. Open your company from your workspace and go to **Integrations**, then **API**.
+3. Select **New key**.
+4. Name the key after the platform that will use it, choose its permissions and when it expires
+   (in 1, 3, 6 or 12 months, or never), then confirm.
+5. Copy the key and store it securely. It's shown only once, because testee keeps only a hash of
+   it.
 
-A company can have a limited number of keys; the API page refuses one more. An expired key
-returns `401`; make a new one before it expires. Deleting a key on the same page revokes it immediately.
+A company can have up to 10 keys. An expired key returns `401`, and deleting a key revokes it
+immediately.
 
-To rotate a key without downtime, make a new one while the old one still works (a company can
-have up to 10), switch your platform to the new key, check it's used (the API page shows when
-each key was last used), then delete the old one.
+To rotate a key without downtime, make a new one while the old one still works, switch your
+platform to it, check the key's page shows it being used, then delete the old one.
 
-## Authentication
+## Authenticate
 
-Send the key with every request in the `Authorization` header: `Authorization: Bearer te_...`.
-A key belongs to one company and acts on behalf of the member who created it, so invitations are
-sent under that member's email limits. If the member leaves the company or is no longer an owner
-or admin, the key stops working and requests return `401`.
+Send your key with every request, in the `Authorization` header:
 
-## Allowed IPs
+```bash
+Authorization: Bearer te_...
+```
 
-A key can be limited to the addresses your servers call from: on the API page, give the key a
-list of IPv4 or IPv6 addresses or CIDR ranges (like `203.0.113.7` or `2001:db8::/32`). A request
-from any other address returns `403` (`ip_not_allowed`); a key without a list works from any
-address. The address checked is the one your request reached testee from; an
-`X-Forwarded-For` header you send yourself is ignored.
+A key belongs to one company and acts as itself, not as the member who made it. Invitations are
+sent under the key's own email limits, and it keeps working after that member leaves. It stops
+only when it expires or is deleted.
 
-## Example: inviting a candidate
+## Limit a key to your servers
 
-Invite a candidate to an interview and get their invite link. Sending the same request again is
-safe: it never invites them twice.
+On a key's page, you can list the addresses your servers call from: IPv4 or IPv6 addresses, or
+CIDR ranges such as `203.0.113.7` or `2001:db8::/32`. A request from any other address returns
+`403` (`ip_not_allowed`). A key with no list works from any address.
+
+testee checks the address your request reached it from, so an `X-Forwarded-For` header you send
+yourself is ignored.
+
+## Quickstart: invite a candidate
+
+This request invites a candidate and returns their invite link. It's safe to send twice: nobody
+is invited a second time.
 
 ```bash
 curl -X POST "https://testee.ai/api/v1/interviews/$INTERVIEW_ID/candidates" \\
@@ -88,42 +94,89 @@ const candidate = await response.json()
 console.log(candidate.invite_url)
 ```
 
-## Rate limits and pagination
+## Rate limits
 
-Your company's keys together have a limit of requests per minute; further requests return
-`429` until the minute ends, with a `Retry-After` header giving the seconds left. List endpoints return the newest items first and accept `offset` and `limit` (up to 100
-items per request). A full page comes with a `Link` header to the next one,
-`Link: <https://testee.ai/api/v1/...>; rel="next"`; follow it until a response has none (the
-page after a full one can be empty).
+All of a company's keys share a limit of requests per minute. Past it, requests return `429` with
+a `Retry-After` header giving the seconds to wait.
 
-## Keeping your copy in sync
+## Pagination
 
-Interviews and candidates carry `updated_at`, when they last changed. To fetch only what changed,
-pass `updated_since` to a list: it returns the items changed at that time or later, oldest
-change first. For the next page, pass the last item's `updated_at` as `updated_since` and its
-`id` as `after`, so items changed at the same moment are neither repeated nor missed (the
-`Link` header's next page does this for you). Keep the
-last pair and start from it next time. A candidate's progress while they answer doesn't change
-`updated_at`; a removed candidate leaves the list, and the `candidate.removed` web hook event
-says so.
+Lists return the newest items first and accept `offset` and `limit`, up to 100 items a request.
+A full page comes with a `Link` header pointing to the next one:
 
-## Retrying safely
+```bash
+Link: <https://testee.ai/api/v1/...>; rel="next"
+```
 
-Every request can be retried as it is, with nothing extra to send. Inviting an address that is
-already invited, or has finished, returns that candidate as they are (`200` instead of `201`),
-without another email or credits; an expired invite is sent again. Creating an interview with
-the same request from the same key within 15 minutes returns the interview the first request
-made, with `200`: `201` only ever means something new was made. A retry while the first request
-is still running returns `409` (`request_in_progress`): wait a moment and retry.
+Follow it until a response has none. The page after a full one can be empty.
+
+## Sync changes
+
+Interviews and candidates carry `updated_at`, the time they last changed. To fetch only what
+changed, pass `updated_since` to a list. It returns items changed at that time or later, oldest
+change first.
+
+For the next page, pass the last item's `updated_at` as `updated_since` and its `id` as `after`,
+so items changed at the same moment are neither repeated nor missed. The `Link` header's next
+page does this for you. Keep the last pair and start from it next time.
+
+A candidate's progress while they answer doesn't change `updated_at`. A removed candidate leaves
+the list, and the `candidate.removed` web hook event tells you so.
+
+## Retry safely
+
+You can retry any request as it is, with nothing extra to send:
+
+- Inviting an address that's already invited, or has finished, returns that candidate as they are,
+  with `200` instead of `201`. No email is sent and no credits are used. An expired invite is sent
+  again.
+- Creating an interview with the same request from the same key within 15 minutes returns the
+  interview the first request made, with `200`. `201` only ever means something new was made.
+- A retry while the first request is still running returns `409` (`request_in_progress`). Wait a
+  moment and try again.
+
+## Invite links
+
+Until a candidate finishes, they come with `invite_url`, the same link their invite email
+carries. Send it to them yourself if the email didn't reach them. Only the invited email can use
+it, unless they were invited with `sign_in` false. It's null once they've finished or the invite
+has expired.
+
+## Send candidates from your platform
+
+If your platform already knows who the candidate is, invite them with `sign_in` false. testee then
+sends no emails, and `invite_url` opens the interview without signing in. Anyone with that link
+can take the interview, so give it only to the candidate.
+
+Add a `return_url` to bring them back when they finish. It can be any https address, or http on
+`localhost` or `127.0.0.1` while you test; anything else returns `422` (`return_url_invalid`). You
+can also [embed the interview](/api-docs?tab=sdk) in your own page.
+
+The API and web hooks don't depend on any domain: limit a key to your servers with its allowed
+IPs instead. Your company's allowed domains only decide which sites may embed the interview with
+the SDK. Company verification only adds the verified badge: the API, the SDK and MCP all work
+without it.
+
+## Results support a person's decision
+
+A candidate's `grade`, `passed` and `signals` help a person decide, but they aren't a decision.
+Don't reject candidates automatically on them. Before rejecting anyone, a person should open the
+candidate's full results at `results_url` and review them.
 
 ## Errors
 
-Failed requests return a standard HTTP status code and a JSON body with a `code` and a `detail`:
-`{"detail": "Interview not found", "code": "not_found"}`. Branch on `code`, which never changes;
-`detail` explains it for people, in the language of your `Accept-Language` header. For an invalid
-request (`validation_failed`), `detail` is a list with one entry per bad field, which its `loc`
-names. Each endpoint below lists the errors it can return. New codes can be added, so handle one
-you don't know by its HTTP status.
+A failed request returns a standard HTTP status and a JSON body with a `code` and a `detail`:
+
+```json
+{"detail": "Interview not found", "code": "not_found"}
+```
+
+Branch on `code`, which never changes. `detail` explains it for people, in the language of your
+`Accept-Language` header. For an invalid request (`validation_failed`), `detail` is a list with
+one entry per bad field, named by its `loc`.
+
+Each endpoint lists the errors it can return. New codes can be added, so handle any you don't know
+by its HTTP status.
 
 | Code | Status | Meaning |
 |---|---|---|
@@ -151,33 +204,6 @@ you don't know by its HTTP status.
 
 Any other refusal carries its status's code: `bad_request`, `unauthorized`, `forbidden`,
 `method_not_allowed`, `conflict` or `unavailable`.
-
-
-## Results support a person's decision
-
-A candidate's `grade`, `passed` and `signals` help a person decide; they are not a decision.
-Don't reject candidates automatically on them: before rejecting anyone, a person should open the
-candidate's full results (`results_url`) and review them.
-
-## Invite links
-
-Until a candidate finishes, they come with their invite link (`invite_url`), the same link the
-invite email carries. Send it to them yourself if the email didn't reach them; only the invited
-email can use it, unless they were invited with `sign_in` false. It's null once they've finished
-or the invite has expired.
-
-## Sending candidates from your own platform
-
-When your platform already knows who the candidate is, invite them with `sign_in` false: testee
-sends no emails, and the `invite_url` opens the interview without signing in to testee. Anyone
-with that link can take the interview, so give it only to the candidate. Add a `return_url` to
-bring them back once they've finished: any https address (http only on `localhost` or
-`127.0.0.1`, while you test); anything else returns `422` (`return_url_invalid`). Or [embed the
-interview](/api-docs?tab=sdk) in your own page instead.
-
-The API and web hooks don't depend on any domain: limit a key to your servers with its allowed
-IPs. Your company's allowed domains only decide which sites may embed the interview with the
-SDK. Company verification only adds the verified badge: the API, the SDK and MCP work without it.
 
 ## Changelog
 

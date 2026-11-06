@@ -10,12 +10,19 @@ class DraftTopic(BaseModel):
     subtopics: list[str]
 
 
+class TopicState(BaseModel):
+    name: str
+    ready: bool
+
+
 class GenerationProgress(BaseModel):
     done: int
     total: int
     # Missing on generations started before per-topic progress existed.
     topics: int | None = None
     topics_ready: int | None = None
+    # Each approved topic, in order; missing on generations started before the page listed them.
+    topic_states: list[TopicState] | None = None
 
 
 class GenerationOut(BaseModel):
@@ -35,3 +42,5 @@ class GenerationOut(BaseModel):
     # have when edited by hand.
     max_topics: int
     max_subtopics: int
+    # The subtopics a topic added by hand in the review needs at least.
+    min_added_subtopics: int

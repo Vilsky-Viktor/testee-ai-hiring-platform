@@ -1,4 +1,5 @@
 from datetime import UTC, datetime
+from math import ceil
 
 from testee_common.auth.user import User
 
@@ -97,6 +98,19 @@ async def finish_interview(row: Session, user: User) -> InterviewStep:
     return await step_out(await read(row.id), user, None)
 
 
+def minutes_taken(rows: list[Session]) -> int | None:
+    """How long the interview's sections took together, from the first start to the last finish,
+    in whole minutes, at least one."""
+    finished = [item.finished_at for item in rows if item.finished_at]
+
+    if not finished:
+        return None
+
+    seconds = (max(finished) - min(item.started_at for item in rows)).total_seconds()
+
+    return max(ceil(seconds / 60), 1)
+
+
 async def step_out(
     section: Session,
     user: User,
@@ -104,11 +118,14 @@ async def step_out(
     sections_now: list[Session] | None = None,
 ) -> InterviewStep:
     """`sections_now`: the interview's, when they're current; read again without them."""
-    topics = [topic_out(item) for item in sections_now or await own_sections(section)]
+    rows = sections_now or await own_sections(section)
+    topics = [topic_out(item) for item in rows]
+    done = question is None and all(t.status == RoundStatus.FINISHED for t in topics)
 
     return InterviewStep(
         session=await session_out_titled(section),
         question=question,
         topics=topics,
-        done=question is None and all(t.status == RoundStatus.FINISHED for t in topics),
+        done=done,
+        minutes_taken=minutes_taken(rows) if done else None,
     )

@@ -108,8 +108,9 @@ async def list_templates(
     offset: int,
     limit: int,
     copyable: bool = False,
+    popular: bool = False,
 ) -> list[QuestionSet]:
-    """Newest first; `q` matches anywhere in the title, a topic's title or a subtopic, and no
+    """Newest first, or with `popular` the most copied first; `q` matches anywhere in the title, a topic's title or a subtopic, and no
     languages means every one. `copyable` keeps only the templates copy_template can copy: with
     a topic that has at least MIN_COPY_QUESTIONS company questions."""
     filters = [QuestionSet.kind == SetKind.TEMPLATE]
@@ -146,12 +147,37 @@ async def list_templates(
     if languages:
         filters.append(QuestionSet.language.in_(languages))
 
+    copies = aliased(QuestionSet)
+    uses = select(func.count()).where(copies.source_template_id == QuestionSet.id).scalar_subquery()
+    order = [QuestionSet.created_at.desc(), QuestionSet.id]
     query = (
         select(QuestionSet)
         .where(*filters)
-        .order_by(QuestionSet.created_at.desc(), QuestionSet.id)
+        .order_by(*([uses.desc(), *order] if popular else order))
         .offset(offset)
         .limit(limit)
     )
 
     return list(await session.scalars(query))
+
+
+async def copyable_topics(session: AsyncSession, set_ids: list) -> dict[uuid.UUID, list]:
+    """The topics a copy of each template keeps (copy_template), by its id: each one's title and
+    number of company questions, in the template's order."""
+    if not set_ids:
+        return {}
+
+    query = (
+        select(Topic.set_id, Topic.title, func.count())
+        .join(Question, Question.topic_id == Topic.id)
+        .where(Topic.set_id.in_(set_ids), Question.pool == Pool.COMPANY)
+        .group_by(Topic.id)
+        .having(func.count() >= MIN_COPY_QUESTIONS)
+        .order_by(Topic.position)
+    )
+    found: dict[uuid.UUID, list] = {}
+
+    for set_id, title, size in await session.execute(query):
+        found.setdefault(set_id, []).append((title, size))
+
+    return found

@@ -1,9 +1,12 @@
+from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, HTTPException, Query, status
 from testee_common.ai.examples import has_example
 from testee_common.ai.multi_answer import is_multi
 from testee_common.ai.sets import PreparationIn
+from testee_common.auth.user import Language, Level
+from testee_common.config.constants import MAX_TITLE_LENGTH
 from testee_common.db.paging import PageParams
 
 from library.api.dependencies import ServiceCaller
@@ -18,7 +21,7 @@ from library.schemas.preparations import (
 )
 from library.schemas.regenerate import QuestionContext, QuestionReplace
 from library.schemas.sets import ContentQuestion, SetContent, SetOut, SetTopicOut
-from library.schemas.templates import TemplateCopyIn, TemplateCopyOut
+from library.schemas.templates import CopyableTemplate, TemplateCopyIn, TemplateCopyOut
 from library.services import questions, sets, templates
 
 router = APIRouter(prefix="/internal", tags=["internal"])
@@ -34,6 +37,18 @@ async def create_interview(body: PreparationIn, caller: ServiceCaller) -> Create
 async def create_template(body: PreparationIn, caller: ServiceCaller) -> CreatedOut:
     """A retried save from the same generation returns the template it already made."""
     return CreatedOut(id=await templates.create(body))
+
+
+@router.get("/templates/copyable")
+async def list_copyable_templates(
+    page: PageParams,
+    caller: ServiceCaller,
+    q: str = Query(default="", max_length=MAX_TITLE_LENGTH),
+    level: Level | None = None,
+    language: Annotated[list[Language] | None, Query()] = None,
+) -> list[CopyableTemplate]:
+    """For companies: the templates it can copy, with what a copy keeps."""
+    return await templates.copyable(q.strip(), level, language or [], page.offset, page.limit)
 
 
 @router.post("/templates/{template_id}/copy", status_code=status.HTTP_201_CREATED)

@@ -7,9 +7,10 @@ import uuid
 
 import pytest
 from fastapi import HTTPException
+from testee_common.redis.idempotency import fingerprint, once
 
 from api.integrations.redis import get_redis
-from api.services.idempotency import fingerprint, once, slot
+from api.services.idempotency import slot
 
 
 def made(results: list[str]):
@@ -30,10 +31,10 @@ def test_a_retry_gets_the_first_result_and_another_request_runs_again():
     async def scenario():
         try:
             name, seconds = slot(company, key, None, request)
-            first = await once(name, seconds, request, made(results))
-            again = await once(name, seconds, request, made(results))
+            first = await once(get_redis(), name, seconds, request, made(results))
+            again = await once(get_redis(), name, seconds, request, made(results))
             other_name, _ = slot(company, key, None, other)
-            third = await once(other_name, seconds, other, made(results))
+            third = await once(get_redis(), other_name, seconds, other, made(results))
             ttl = await get_redis().ttl(name)
 
             return first, again, third, ttl
@@ -60,12 +61,12 @@ def test_a_client_key_used_for_another_request_is_refused_and_a_failure_frees_it
             name, seconds = slot(company, key, client_key, first)
 
             with pytest.raises(HTTPException):
-                await once(name, seconds, first, failing)
+                await once(get_redis(), name, seconds, first, failing)
 
-            done = await once(name, seconds, first, made([]))
+            done = await once(get_redis(), name, seconds, first, made([]))
 
             with pytest.raises(HTTPException) as refused:
-                await once(name, seconds, second, made([]))
+                await once(get_redis(), name, seconds, second, made([]))
 
             return done, refused.value.status_code
         finally:

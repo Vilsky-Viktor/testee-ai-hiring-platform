@@ -2,7 +2,7 @@ import pytest
 from testee_common.auth.auth import current_user
 from testee_common.auth.user import User
 from testee_common.events.audit_actions import AuditAction, TargetKind
-from testee_common.limits import limits
+from testee_common.limits import limits, maintenance
 from testee_common.redis import memory_cache
 
 from companies.core.security import REQUEST_VIA
@@ -19,6 +19,16 @@ from companies.repositories import (
 )
 from companies.services import company_deletion, interview_removal
 from tests.unit import fake_candidates
+
+
+@pytest.fixture(autouse=True)
+def maintenance_off(monkeypatch):
+    """The maintenance switch every request reads is off (unit tests have no Redis)."""
+
+    async def off(redis):
+        return False
+
+    monkeypatch.setattr(maintenance, "is_on", off)
 
 
 @pytest.fixture(autouse=True)

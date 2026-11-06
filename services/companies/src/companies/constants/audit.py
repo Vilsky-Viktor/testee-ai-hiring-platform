@@ -11,5 +11,19 @@ VIA_API = "api"
 # A candidate an ATS sent, invited as the member who connected it.
 VIA_ATS = "ats"
 
+# The action log's file: a row for each action.
+ACTION_COLUMNS = (
+    "date",
+    "group",
+    "action",
+    "about",
+    "target",
+    "member_email",
+    "api_key",
+    "via",
+)
+# The file's name, with the day it was made (UTC).
+ACTION_FILE_NAME = "testee-action-log-{day}.csv"
+
 # Why anyone but the owner is refused the audit and action logs.
 LOG_NOT_OWNER = "Only the owner can see the audit log"

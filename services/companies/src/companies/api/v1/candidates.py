@@ -16,6 +16,7 @@ from companies.schemas.invites import (
     CandidateModeIn,
     CandidateNameIn,
     CandidateOut,
+    CandidateSummaryOut,
 )
 from companies.schemas.scorecards import ScorecardOut
 from companies.services import candidate_changes, candidate_invites, candidate_results, scorecards
@@ -78,6 +79,14 @@ async def list_candidates(
     return await candidate_results.page(
         interview, page.offset, page.limit, by_grade, q.strip(), filter_by
     )
+
+
+@router.get("/{interview_id}/candidates/summary")
+async def candidate_summary(interview_id: UUID, user: CurrentUser) -> CandidateSummaryOut:
+    """The interview's candidates at a glance (candidate_results.summary)."""
+    interview, _, _ = await interview_for(user, interview_id)
+
+    return await candidate_results.summary(interview)
 
 
 @router.delete("/{interview_id}/candidates/{invite_id}", status_code=status.HTTP_204_NO_CONTENT)

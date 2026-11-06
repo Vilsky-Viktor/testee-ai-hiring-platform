@@ -100,13 +100,7 @@ async def reward(
     # The referrer's wallet is locked before counting, so rewards from two of their
     # companies at once count each other and can't both pass the limit.
     referrer = await session.get(Wallet, (owner_type, referrer_id), with_for_update=True)
-    rewarded_this_year = await session.scalar(
-        select(func.count()).where(
-            Referral.owner_type == owner_type,
-            Referral.referrer_id == referrer_id,
-            Referral.rewarded_at > now - timedelta(days=365),
-        )
-    )
+    rewarded_this_year = await rewarded_in_a_year(session, owner_type, referrer_id, now)
     # This one is already counted, hence <=.
     paid = referrer is not None and rewarded_this_year <= REFERRALS_PER_YEAR
 
@@ -150,6 +144,19 @@ async def take_back(session: AsyncSession, transaction_id: str) -> bool:
         )
 
     return True
+
+
+async def rewarded_in_a_year(
+    session: AsyncSession, owner_type: str, referrer_id: str, now: datetime
+) -> int:
+    """How many of the referrer's referrals were rewarded in the 365 days before `now`."""
+    return await session.scalar(
+        select(func.count()).where(
+            Referral.owner_type == owner_type,
+            Referral.referrer_id == referrer_id,
+            Referral.rewarded_at > now - timedelta(days=365),
+        )
+    )
 
 
 async def rewarded_count(session: AsyncSession, owner_type: str, owner_id: str) -> int:

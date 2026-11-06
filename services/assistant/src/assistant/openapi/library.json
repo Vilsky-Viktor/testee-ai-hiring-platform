@@ -1378,6 +1378,152 @@
     ]
    }
   },
+  "/internal/templates/copyable": {
+   "get": {
+    "tags": [
+     "internal"
+    ],
+    "summary": "List Copyable Templates",
+    "description": "For companies: the templates it can copy, with what a copy keeps.",
+    "operationId": "list_copyable_templates_internal_templates_copyable_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "q",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "string",
+       "maxLength": 70,
+       "default": "",
+       "title": "Q"
+      }
+     },
+     {
+      "name": "level",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "enum": [
+          "basic",
+          "medium",
+          "hard"
+         ],
+         "type": "string"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Level"
+      }
+     },
+     {
+      "name": "language",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "array",
+         "items": {
+          "enum": [
+           "en",
+           "ru",
+           "uk",
+           "es",
+           "pt",
+           "de",
+           "fr",
+           "it",
+           "pl",
+           "nl",
+           "tr",
+           "ar",
+           "he",
+           "fa",
+           "ja",
+           "zh",
+           "ko",
+           "hi",
+           "id",
+           "th",
+           "vi",
+           "fil",
+           "et"
+          ],
+          "type": "string"
+         }
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Language"
+      }
+     },
+     {
+      "name": "offset",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "minimum": 0,
+       "description": "Number of items to skip",
+       "default": 0,
+       "title": "Offset"
+      },
+      "description": "Number of items to skip"
+     },
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "maximum": 100,
+       "minimum": 1,
+       "description": "Number of items to return, up to 100",
+       "default": 100,
+       "title": "Limit"
+      },
+      "description": "Number of items to return, up to 100"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/CopyableTemplate"
+         },
+         "title": "Response List Copyable Templates Internal Templates Copyable Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/internal/templates/{template_id}/copy": {
    "post": {
     "tags": [
@@ -3366,6 +3512,96 @@
      "options"
     ],
     "title": "ContentQuestion"
+   },
+   "CopyableTemplate": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Id"
+     },
+     "slug": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Slug"
+     },
+     "title": {
+      "type": "string",
+      "title": "Title"
+     },
+     "level": {
+      "type": "string",
+      "title": "Level"
+     },
+     "language": {
+      "type": "string",
+      "title": "Language"
+     },
+     "topic_count": {
+      "type": "integer",
+      "title": "Topic Count"
+     },
+     "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Created At"
+     },
+     "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Updated At"
+     },
+     "indexable": {
+      "type": "boolean",
+      "title": "Indexable",
+      "default": false
+     },
+     "topics": {
+      "items": {
+       "$ref": "#/components/schemas/CopyableTopic"
+      },
+      "type": "array",
+      "title": "Topics"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "slug",
+     "title",
+     "level",
+     "language",
+     "topic_count",
+     "created_at",
+     "updated_at",
+     "topics"
+    ],
+    "title": "CopyableTemplate",
+    "description": "A template a company can copy, with the topics a copy keeps."
+   },
+   "CopyableTopic": {
+    "properties": {
+     "title": {
+      "type": "string",
+      "title": "Title"
+     },
+     "size": {
+      "type": "integer",
+      "title": "Size"
+     }
+    },
+    "type": "object",
+    "required": [
+     "title",
+     "size"
+    ],
+    "title": "CopyableTopic"
    },
    "CreatedOut": {
     "properties": {

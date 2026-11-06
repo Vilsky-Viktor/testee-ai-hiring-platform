@@ -9,8 +9,9 @@ def human_review(state: State) -> dict:
     response = interrupt({"topics": state["topics"]}) or {}
     keep = set(response.get("selected") or [])
     edited = response.get("topics")
-    # Edits made by hand need no model call; an edited list must match the drafted one.
-    topics = edited if edited and len(edited) == len(state["topics"]) else state["topics"]
+    # Edits made by hand need no model call; an edited list has every drafted topic, in order,
+    # then any the reviewer added.
+    topics = edited if edited and len(edited) >= len(state["topics"]) else state["topics"]
     kept = [topic for index, topic in enumerate(topics) if index in keep]
     instructions = (response.get("instructions") or "").strip()
 

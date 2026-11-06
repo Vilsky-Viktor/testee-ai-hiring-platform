@@ -10,6 +10,7 @@ from api.schemas.manage import (
     KeyIpsIn,
     KeyOut,
     KeyPermissionsIn,
+    KeyRenameIn,
     NewKeyOut,
     NewSecretOut,
     NewWebhookOut,
@@ -43,6 +44,19 @@ async def create_key(company_id: UUID, body: KeyIn, user: CurrentUser) -> NewKey
     await outbox_service.flush_quietly()
 
     return created
+
+
+@router.patch("/keys/{key_id}/name")
+async def rename_key(
+    company_id: UUID, key_id: UUID, body: KeyRenameIn, user: CurrentUser
+) -> KeyOut:
+    """Owners and admins give a key a new name."""
+    await companies.require(company_id, user.uid, editor=True)
+
+    renamed = await manage.rename_key(company_id, key_id, body.name, user.uid)
+    await outbox_service.flush_quietly()
+
+    return renamed
 
 
 @router.patch("/keys/{key_id}")
@@ -111,10 +125,10 @@ async def test_webhook(company_id: UUID, webhook_id: UUID, user: CurrentUser) ->
     """Owners and admins send a signed test event to a web hook, now."""
     await companies.require(company_id, user.uid, editor=True)
 
-    ok = await manage.test_webhook(company_id, webhook_id, user.uid)
+    ok, result = await manage.test_webhook(company_id, webhook_id, user.uid)
     await outbox_service.flush_quietly()
 
-    return WebhookTestOut(ok=ok)
+    return WebhookTestOut(ok=ok, result=result)
 
 
 @router.get("/webhooks/{webhook_id}/log")

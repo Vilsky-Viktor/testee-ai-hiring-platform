@@ -34,6 +34,10 @@ RETRY_AFTER = "Retry-After"
 # uploads (report PDFs, voice messages) passes its own limit.
 MAX_BODY_BYTES = 1_000_000
 BODY_TOO_LARGE = "The request is too large."
+# A create retried with its Idempotency-Key (redis/idempotency.py): while the first still runs,
+# and with that key sent before with another request.
+IDEMPOTENCY_IN_PROGRESS = "The same request is still running. Try again shortly."
+IDEMPOTENCY_KEY_REUSED = "This Idempotency-Key was already used for a different request."
 # Cloud Logging's fields: a JSON log line's `severity` and `message` are read as such, and this
 # one ties the line to its request's trace, which the load balancer sends in TRACE_HEADER
 # ("TRACE_ID/SPAN_ID;o=1"), so one request can be followed across services.

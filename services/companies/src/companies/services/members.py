@@ -4,6 +4,7 @@ the action log."""
 
 import secrets
 
+import httpx
 from fastapi import HTTPException, status
 from sqlalchemy.exc import IntegrityError
 from testee_common.auth.user import User
@@ -22,7 +23,7 @@ from companies.core.db import Session
 from companies.core.exceptions import OverLimit
 from companies.helpers.logos import logo_path
 from companies.helpers.notifications import member_joined, ownership_received
-from companies.integrations import billing
+from companies.integrations import accounts, billing
 from companies.integrations.redis import get_redis
 from companies.models.companies import Company, Member
 from companies.repositories import audit, companies, members, outbox
@@ -243,3 +244,22 @@ async def accept(token: str, user: User) -> None:
 
     # The owner's notification goes out now; the outbox's regular run sends it if this fails.
     await outbox_service.flush_quietly()
+
+
+async def profiles_of(rows: list[Member]) -> dict:
+    """The name and picture of each member who joined, by member id; none when accounts doesn't
+    answer: the list shows their emails. A name that's only the email isn't one."""
+    users = {row.user_id: row for row in rows if row.user_id}
+
+    try:
+        found = await accounts.profiles(list(users))
+    except httpx.HTTPError:
+        return {}
+
+    return {
+        users[user_id].id: {
+            "name": None if item["name"] == users[user_id].invited_email else item["name"],
+            "photo_url": item["photo_url"],
+        }
+        for user_id, item in found.items()
+    }

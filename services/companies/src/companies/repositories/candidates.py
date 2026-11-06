@@ -84,6 +84,34 @@ async def page(
     return list(await session.scalars(query))
 
 
+async def status_counts(session: AsyncSession, interview_id) -> dict[str, int]:
+    """How many of the interview's candidates are at each status."""
+    query = (
+        select(CandidateInvite.status, func.count())
+        .where(CandidateInvite.interview_id == interview_id)
+        .group_by(CandidateInvite.status)
+    )
+
+    return dict((await session.execute(query)).tuples().all())
+
+
+async def finished_results(
+    session: AsyncSession, interview_id, pass_mark: int | None
+) -> tuple[int, int, float | None]:
+    """Of the interview's finished candidates: how many passed, how many were flagged, and their
+    average grade."""
+    query = select(
+        func.count().filter(CandidateInvite.grade >= pass_mark),
+        func.count().filter(CandidateInvite.flagged),
+        func.avg(CandidateInvite.grade),
+    ).where(
+        CandidateInvite.interview_id == interview_id,
+        CandidateInvite.status == InviteStatus.FINISHED,
+    )
+
+    return tuple((await session.execute(query)).one())
+
+
 async def company_page(
     session: AsyncSession, company_id, offset: int, limit: int, q: str = "", email: str = ""
 ) -> list[tuple[CandidateInvite, Interview]]:

@@ -18,7 +18,7 @@ TESTEE_COLORS = {
         "foreground": "#181818",
         "card": "#f9f9f9",
         "card_foreground": "#181818",
-        "primary": "#0065d2",
+        "primary": "#0c6bcc",
         "primary_foreground": "#fafafa",
         "muted": "#ededed",
         "muted_foreground": "#636363",

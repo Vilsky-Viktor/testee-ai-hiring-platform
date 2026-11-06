@@ -13,7 +13,12 @@ from testee_common.auth.user import User
 from companies.main import app
 from companies.models.companies import Company, Member
 from companies.models.interviews import Interview
-from companies.repositories import candidates, companies, interview_generations, interviews
+from companies.repositories import (
+    candidates,
+    companies,
+    interview_generations,
+    interview_progress,
+)
 from companies.services import interview_views as helpers
 
 COMPANY_ID = uuid.uuid4()
@@ -76,14 +81,18 @@ def test_listing_never_asks_generation_and_shows_the_stored_failure(client, monk
     async def found(session, _company_id):
         return company
 
-    async def listed(session, company_id, offset, limit, **filters):
+    async def listed(session, company_id, offset, limit, q, state, by_activity):
         return rows
 
     async def counts(session, ids):
         return {}
 
+    async def no_progress(session, ids, since):
+        return {}
+
     monkeypatch.setattr(companies, "get", found)
-    monkeypatch.setattr(interviews, "list_for_company", listed)
+    monkeypatch.setattr(interview_progress, "page", listed)
+    monkeypatch.setattr(interview_progress, "progress", no_progress)
     monkeypatch.setattr(candidates, "counts", counts)
     app.dependency_overrides[current_user] = lambda: User(
         uid="bob", email="bob@example.com", email_verified=True, name="bob"

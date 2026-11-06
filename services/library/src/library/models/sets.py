@@ -50,6 +50,10 @@ class QuestionSet(Base):
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
     # Null for sets saved before generations were tracked.
     generation_id: Mapped[uuid.UUID | None] = mapped_column()
+    # The template a company's copy was made from; null for other sets, or once it's gone.
+    source_template_id: Mapped[uuid.UUID | None] = mapped_column(
+        ForeignKey("sets.id", ondelete="SET NULL"), index=True
+    )
     kind: Mapped[str] = mapped_column(String(32))
     owner_type: Mapped[str] = mapped_column(String(32))
     owner_id: Mapped[str] = mapped_column(String(128), index=True)

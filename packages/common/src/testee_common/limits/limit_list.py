@@ -80,7 +80,7 @@ LIMITS = {
     ),
     "APPROVALS_PER_USER_HOUR": Limit(ASSISTANT, 20, "calls", HOUR_SECONDS, 1, 1_000, "user"),
     # Companies: what they own, generate, invite and email.
-    "MAX_OWNED_COMPANIES": Limit(COMPANIES, 3, "items", None, 1, 50, "user"),
+    "MAX_OWNED_COMPANIES": Limit(COMPANIES, 10, "items", None, 1, 50, "user"),
     "INTERVIEWS_PER_DAY": Limit(COMPANIES, 10, "calls", DAY_SECONDS, 1, 1_000, "company", "paid"),
     "INTERVIEWS_PER_DAY_UNPAID": Limit(
         COMPANIES, 3, "calls", DAY_SECONDS, 1, 100, "company", "unpaid", "INTERVIEWS_PER_DAY"
@@ -123,6 +123,12 @@ LIMITS = {
     "LINK_STARTS_PER_IP_HOUR": Limit(COMPANIES, 10, "calls", HOUR_SECONDS, 1, 1_000, "ip"),
     # The owner's bias-audit exports, each reading all of a company's finished candidates.
     "BIAS_AUDIT_EXPORTS_PER_DAY": Limit(COMPANIES, 20, "calls", DAY_SECONDS, 1, 1_000, "company"),
+    # Action log downloads, each reading all of the chosen days' actions.
+    "ACTION_LOG_EXPORTS_PER_DAY": Limit(COMPANIES, 20, "calls", DAY_SECONDS, 1, 1_000, "company"),
+    # Credit history downloads, each reading all of the chosen days' movements.
+    "CREDIT_HISTORY_EXPORTS_PER_DAY": Limit(
+        COMPANIES, 20, "calls", DAY_SECONDS, 1, 1_000, "company"
+    ),
     "MAX_BULK_INVITES": Limit(COMPANIES, 100, "items", None, 1, 1_000, "company"),
     "MAX_PENDING_INVITES": Limit(COMPANIES, 20, "items", None, 1, 1_000, "company"),
     "MEMBER_INVITES_PER_UNPAID_DAY": Limit(
@@ -238,6 +244,9 @@ LIMITS = {
     "ATS_CALLS_PER_COMPANY_MINUTE": Limit("ats", 60, "calls", MINUTE_SECONDS, 1, 1_000, "company"),
     "ATS_WEBHOOKS_PER_IP_MINUTE": Limit("ats", 600, "calls", MINUTE_SECONDS, 10, 10_000, "ip"),
     "ATS_CONNECTS_PER_HOUR": Limit("ats", 20, "calls", HOUR_SECONDS, 1, 1_000, "company"),
+    "SLACK_TESTS_PER_COMPANY_HOUR": Limit(
+        "notifications", 10, "calls", HOUR_SECONDS, 1, 1_000, "company"
+    ),
     # Notifications: emails a day through Resend, for the bulk ones' share (bulk.py).
     "RESEND_DAILY_LIMIT": Limit(
         "notifications", 100, "calls", DAY_SECONDS, 1, 1_000_000, "everyone"

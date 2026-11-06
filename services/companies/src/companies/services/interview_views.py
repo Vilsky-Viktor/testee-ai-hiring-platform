@@ -2,14 +2,20 @@
 events haven't come yet, its title fetched once from library, and its candidate count."""
 
 import logging
-from datetime import datetime
+from datetime import UTC, datetime
 from uuid import UUID
 
 import httpx
 from fastapi import HTTPException, status
 
-from companies.constants.interviews import GENERATION_FAILED_STATUS, MAX_INTERVIEW_QUESTIONS
+from companies.constants.company_status import FINISHED_WINDOW
+from companies.constants.interviews import (
+    GENERATION_FAILED_STATUS,
+    MAX_INTERVIEW_QUESTIONS,
+    InterviewStatus,
+)
 from companies.core.db import Session
+from companies.helpers.interview_row import interview_row_status
 from companies.helpers.interviews import (
     interview_minutes,
     interview_questions,
@@ -20,8 +26,14 @@ from companies.integrations import billing, library
 from companies.integrations import generation as generation_api
 from companies.models.companies import Member
 from companies.models.interviews import Interview
-from companies.repositories import candidates, interview_generations, interview_notes, interviews
-from companies.schemas.interviews import InterviewDetail, InterviewOut
+from companies.repositories import (
+    candidates,
+    interview_generations,
+    interview_notes,
+    interview_progress,
+    interviews,
+)
+from companies.schemas.interviews import InterviewDetail, InterviewOut, InterviewStatusCounts
 from companies.services import set_cache
 from companies.services.access import can_edit
 
@@ -125,13 +137,63 @@ async def counted_out(rows: list[Interview]) -> list[InterviewOut]:
     ]
 
 
-async def interviews_page(company_id, offset: int, limit: int, q: str = "") -> list[InterviewOut]:
-    """A page of the company's interviews, newest first, each with how many candidates it has;
-    `q` narrows them to titles containing it."""
-    async with Session() as session:
-        rows = await interviews.list_for_company(session, company_id, offset, limit, q=q)
+def _with_progress(out: InterviewOut, found, editor: bool) -> InterviewOut:
+    """An interview as the company's list shows it: how its candidates are doing, and the one
+    thing to know about it now. `found` is its row of interview_progress.progress, if any."""
+    finished = found.finished if found else 0
+    passed = found.passed if found else 0
+    undelivered = found.undelivered if found else 0
+    recent = found.recent if found else 0
 
-    return await counted_out(rows)
+    return out.model_copy(
+        update={
+            "finished_count": finished,
+            "passed_count": passed,
+            "undelivered_count": undelivered,
+            "recent_count": recent,
+            "row_status": interview_row_status(
+                out.generation_failed,
+                out.set_id is not None,
+                out.candidate_count,
+                undelivered,
+                recent,
+                editor,
+            ),
+        }
+    )
+
+
+async def interviews_page(
+    company_id,
+    offset: int,
+    limit: int,
+    q: str = "",
+    state: InterviewStatus | None = None,
+    by_activity: bool = False,
+    editor: bool = False,
+) -> list[InterviewOut]:
+    """A page of the company's interviews, newest first or by latest activity, each with how its
+    candidates are doing; `q` narrows them to titles containing it, `state` to those in it."""
+    since = datetime.now(UTC) - FINISHED_WINDOW
+
+    async with Session() as session:
+        rows = await interview_progress.page(
+            session, company_id, offset, limit, q, state, by_activity
+        )
+        found = await interview_progress.progress(session, [item.id for item in rows], since)
+
+    return [_with_progress(out, found.get(out.id), editor) for out in await counted_out(rows)]
+
+
+async def status_counts(company_id, q: str = "") -> InterviewStatusCounts:
+    """How many of the company's interviews (with `q` in their title) are in each status."""
+    async with Session() as session:
+        found = await interview_progress.status_counts(session, company_id, q)
+
+    return InterviewStatusCounts(
+        all=sum(found.values()),
+        **{item.value: found.get(item.value, 0) for item in InterviewStatus},
+    )
 
 
 async def one_out(interview: Interview) -> InterviewOut:

@@ -119,13 +119,12 @@ def generated_today(client, monkeypatch, paid, limits=None):
 
 
 WAITING_UNPAID = (
-    "Invite a candidate to one of your interviews, or delete one, before generating another: "
-    "until your first top-up, your company's limit of generated interviews waiting without "
-    "candidates is {}."
+    "You've reached your limit of interviews without candidates ({} until your first "
+    "top-up).\nInvite a candidate or delete an interview to create a new one."
 )
 WAITING_PAID = (
-    "Invite a candidate to one of your interviews, or delete one, before generating another: "
-    "your company's limit of generated interviews waiting without candidates is {}."
+    "You've reached your limit of interviews without candidates ({}).\n"
+    "Invite a candidate or delete an interview to create a new one."
 )
 DAY_UNPAID = (
     "Until your first top-up, your company's daily limit of generated interviews is {}. "

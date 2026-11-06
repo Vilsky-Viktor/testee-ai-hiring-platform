@@ -7,12 +7,12 @@ from uuid import UUID
 
 from fastapi import HTTPException, status
 
-from companies.constants.invites import RESULT_FILTERS, InviteStatus
+from companies.constants.invites import RESULT_FILTERS, CandidateFilter, InviteStatus
 from companies.core.db import Session
 from companies.helpers.candidates import candidate_out, company_candidate_out, stored_results
 from companies.integrations import rounds
 from companies.repositories import candidates
-from companies.schemas.invites import CandidateOut, SectionGrade
+from companies.schemas.invites import CandidateOut, CandidateSummaryOut, SectionGrade
 
 
 async def save(results: dict) -> None:
@@ -147,3 +147,24 @@ async def one(interview, invite_id: UUID) -> CandidateOut:
     found.answer_signals = (patterns or {}).get("signals", [])
 
     return found
+
+
+async def summary(interview) -> CandidateSummaryOut:
+    """The interview's candidates at a glance, on the results stored when they finish."""
+    await backfill(interview.id)
+
+    async with Session() as session:
+        statuses = await candidates.status_counts(session, interview.id)
+        passed, flagged, average = await candidates.finished_results(
+            session, interview.id, interview.pass_mark
+        )
+
+    held = statuses | {CandidateFilter.PASSED: passed, CandidateFilter.FLAGGED: flagged}
+
+    return CandidateSummaryOut(
+        total=sum(statuses.values()),
+        finished=statuses.get(InviteStatus.FINISHED, 0),
+        passed=passed,
+        average_grade=None if average is None else round(average),
+        counts={item: held.get(item, 0) for item in CandidateFilter},
+    )

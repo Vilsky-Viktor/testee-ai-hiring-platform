@@ -51,6 +51,9 @@ account's id emptied). `schema_rules.problems` lists the tables of a migrated da
 `schema_rules.misnamed` and `schema_rules.stale_checks` find no constraint named otherwise than its
 model and no CHECK allowing other values than its enum (`db.one_of` builds a closed set's CHECK).
 `redis_lock` keeps a scheduled run from overlapping the next (SET NX with a time it lasts).
+`idempotency.once` runs a create once per key (the api's creates, and companies' new company
+and interview with an `Idempotency-Key`): a retry gets the first result, one while the first
+runs is refused (409, `request_in_progress`), the key with another request too (422).
 `tenant_columns.add_company_id` is the migration step that gives a tenant's child table its
 company_id: filled from the parent in batches, indexed concurrently, NOT NULL through a validated check.
 `paging` gives a route its page (`PageParams`, at most `MAX_PAGE_SIZE`) or a page of ids by key
@@ -278,6 +281,7 @@ out or listed under another area):
 
 ### `redis/`
 
+- `idempotency`: a create run once per key (`once`), a retry getting its first result; `fingerprint` a request.
 - `memory_cache`: a per-instance cache of values that may be stale for their TTL.
 - `redis_client`: each service's Redis client: timeouts, retries with jitter, a health check.
 - `redis_constants`: the Redis client's retries, health check and timeouts.

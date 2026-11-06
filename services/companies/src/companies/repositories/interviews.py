@@ -1,6 +1,6 @@
 import uuid
 from collections.abc import Callable
-from datetime import UTC, datetime
+from datetime import datetime
 
 from sqlalchemy import delete, func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -57,27 +57,6 @@ async def create(
     return interview
 
 
-async def create_from_template(
-    session: AsyncSession, company_id, set_id, title: str, language: str, seconds: int
-) -> Interview:
-    """A test whose questions were copied from a template: ready at once, with no generation,
-    `seconds` a question (its level's)."""
-    interview = Interview(
-        company_id=company_id,
-        generation_id=None,
-        set_id=set_id,
-        title=title,
-        language=language,
-        question_seconds=seconds,
-        ready_at=datetime.now(UTC),
-    )
-
-    session.add(interview)
-    await session.flush()
-
-    return interview
-
-
 async def get_by_link(session: AsyncSession, token: str) -> Interview | None:
     query = select(Interview).where(Interview.link_token == token)
 
@@ -92,6 +71,21 @@ async def set_link(session: AsyncSession, interview_id, token: str | None) -> No
 
 async def get(session: AsyncSession, interview_id) -> Interview | None:
     return await session.get(Interview, interview_id)
+
+
+async def finished_since(session: AsyncSession, company_ids: list, since: datetime) -> dict:
+    """How many candidates each company has had finish since `since`, by its id."""
+    if not company_ids:
+        return {}
+
+    query = (
+        select(Interview.company_id, func.count())
+        .join(CandidateInvite, CandidateInvite.interview_id == Interview.id)
+        .where(Interview.company_id.in_(company_ids), CandidateInvite.finished_at >= since)
+        .group_by(Interview.company_id)
+    )
+
+    return {company_id: count for company_id, count in await session.execute(query)}
 
 
 async def counts(session: AsyncSession, company_ids: list) -> dict:

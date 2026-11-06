@@ -5,6 +5,7 @@ from fastapi import APIRouter, HTTPException, Request, Response, status
 from testee_common.auth.key_actor import key_actor
 from testee_common.config.constants import MAX_PAGE_SIZE
 from testee_common.db.paging import PageParams
+from testee_common.redis.idempotency import fingerprint, once
 
 from api.api.dependencies import needs
 from api.constants.permissions import Permission
@@ -12,11 +13,12 @@ from api.constants.responses import COMMON, LISTED, NOT_FOUND, RETRY_AFTER
 from api.helpers.docs import refusal
 from api.helpers.public import link_next, note_of
 from api.integrations import companies
+from api.integrations.redis import get_redis
 from api.models.api import ApiKey
 from api.schemas.changes import NoteIn
 from api.schemas.public import Note
 from api.schemas.public_params import IdempotencyKey
-from api.services.idempotency import fingerprint, once, slot
+from api.services.idempotency import slot
 
 # An interview's notes: what its team writes about the hiring round, never shown to candidates.
 router = APIRouter(prefix="/interviews", tags=["Notes"], responses=COMMON)
@@ -88,7 +90,7 @@ async def add_note(
 
     request = fingerprint("note", interview_id, body.model_dump(mode="json"))
     name, seconds = slot(key.company_id, key.id, idempotency_key, request)
-    note_id = await once(name, seconds, request, add)
+    note_id = await once(get_redis(), name, seconds, request, add)
 
     if created is not None:
         return note_of(created)

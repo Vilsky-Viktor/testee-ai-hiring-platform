@@ -1,4 +1,5 @@
 import asyncio
+from datetime import datetime
 from uuid import UUID
 
 import httpx
@@ -155,17 +156,48 @@ async def companies_credits(company_ids: list[UUID]) -> dict[str, dict]:
     return response.json()
 
 
-async def company_history(company_id: UUID, offset: int, limit: int) -> list[dict]:
-    """A page of the company's credit movements, newest first."""
+async def company_history(
+    company_id: UUID,
+    offset: int,
+    limit: int,
+    kind: str | None = None,
+    start: datetime | None = None,
+    end: datetime | None = None,
+) -> list[dict]:
+    """A page of the company's credit movements, newest first, or only those of one `kind`, from
+    `start` and before `end`."""
+    params: dict = {"offset": offset, "limit": limit}
+
+    if kind:
+        params["kind"] = kind
+
+    if start:
+        params["start"] = start.isoformat()
+
+    if end:
+        params["end"] = end.isoformat()
+
     response = await http.get_client().get(
         f"{settings.billing_url}/internal/companies/{company_id}/history",
-        params={"offset": offset, "limit": limit},
+        params=params,
         headers=_headers(),
     )
 
     response.raise_for_status()
 
     return response.json()
+
+
+async def company_spent(company_id: UUID) -> int:
+    """The credits the company's candidates took this calendar month."""
+    response = await http.get_client().get(
+        f"{settings.billing_url}/internal/companies/{company_id}/spent",
+        headers=_headers(),
+    )
+
+    response.raise_for_status()
+
+    return response.json()["credits"]
 
 
 async def company_invoice(company_id: UUID, transaction_id: str) -> str:

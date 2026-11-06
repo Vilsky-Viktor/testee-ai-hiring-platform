@@ -55,6 +55,14 @@ in the route. `tests/unit/test_layers.py` checks the imports and that no reposit
 batched deletions (a company's or an interview's invites, notes, interviews and action log) take a
 transaction per batch.
 
+Creating a company (`POST /companies`) or an interview (`POST /interviews`) takes an optional
+`Idempotency-Key` (the site's start sends one, so a reload sends the same request again): with
+it, the create runs once per user's key (and company, for an interview) for an hour
+(`constants/idempotency.py`), through `testee_common.redis.idempotency` (`services/idempotent_creates.py`):
+the same request again gets the company or interview the first made (`201`, nothing counted
+again), one while the first runs is refused (`409`, `request_in_progress`), and the key with
+another request too (`422`, `idempotency_key_reused`). Without the key, each request creates.
+
 `src/` is on the path (`PYTHONPATH` in the Dockerfile, `pythonpath` for pytest,
 `prepend_sys_path` for Alembic), so the package imports as `companies`
 (`companies.api.v1.members`).

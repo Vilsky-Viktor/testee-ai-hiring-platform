@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Annotated
+from typing import Annotated, Literal
 from uuid import UUID
 
 from pydantic import AfterValidator, BaseModel, Field, StringConstraints
@@ -36,6 +36,9 @@ class KeyOut(BaseModel):
     permissions: list[Permission]
     # The addresses it may be used from; empty: any.
     allowed_ips: list[str] = []
+    # How it stands, and the preset its permissions match (helpers/key_status.py).
+    state: Literal["expired", "expiring", "never_used", "active"]
+    access: Literal["read", "write", "custom"]
 
 
 class NewKeyOut(KeyOut):
@@ -51,6 +54,10 @@ class KeyIn(BaseModel):
         default_factory=lambda: list(DEFAULT_PERMISSIONS), min_length=1
     )
     allowed_ips: AllowedIps = []
+
+
+class KeyRenameIn(BaseModel):
+    name: str = Field(min_length=1, max_length=MAX_NAME_LENGTH)
 
 
 class KeyPermissionsIn(BaseModel):
@@ -69,6 +76,9 @@ class WebhookOut(BaseModel):
     created_at: datetime
     # It didn't take an event for days (it was dropped), and has taken none since.
     failing: bool
+    # How it stands, and the last event it took; on the settings' list only.
+    state: Literal["paused", "unused", "active"] = "unused"
+    last_delivered_at: datetime | None = None
 
 
 class NewWebhookOut(WebhookOut):
@@ -95,13 +105,15 @@ class ApiSettingsOut(BaseModel):
     # The permissions a key can have, by what they touch, in order; the read each one that
     # changes something comes with; and what a new key starts with.
     permission_groups: dict[str, list[Permission]]
+    permission_presets: dict[str, list[Permission]]
     implied: dict[Permission, Permission]
     default_permissions: list[Permission]
 
 
 class WebhookTestOut(BaseModel):
-    # Whether the web hook took the test event.
+    # Whether the web hook took the test event, and what its log says about it.
     ok: bool
+    result: str
 
 
 class WebhookAttemptOut(BaseModel):

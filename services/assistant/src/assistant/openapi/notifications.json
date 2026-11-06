@@ -538,6 +538,48 @@
     }
    }
   },
+  "/slack/test": {
+   "post": {
+    "tags": [
+     "slack"
+    ],
+    "summary": "Send Test",
+    "description": "Posts a test message to the channel, to see it works.",
+    "operationId": "send_test_slack_test_post",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "company_id",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Company Id"
+      }
+     }
+    ],
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/unsubscribe/{token}": {
    "get": {
     "tags": [

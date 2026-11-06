@@ -56,13 +56,19 @@ class EditedTopic(BaseModel):
 class ReviewRequest(BaseModel):
     selected: list[int] = Field(min_length=1)
     instructions: str = Field(default="", max_length=MAX_INSTRUCTIONS_LENGTH)
-    # Every drafted topic, in order, with the reviewer's own edits; `selected` indexes this list.
+    # Every drafted topic, in order, with the reviewer's own edits, then any they added; `selected`
+    # indexes this list.
     topics: list[EditedTopic] | None = None
 
 
 class DraftTopic(BaseModel):
     main_topic: str
     subtopics: list[str]
+
+
+class TopicState(BaseModel):
+    name: str
+    ready: bool
 
 
 class GenerationProgress(BaseModel):
@@ -73,6 +79,8 @@ class GenerationProgress(BaseModel):
     # Missing on generations started before per-topic progress existed.
     topics: int | None = None
     topics_ready: int | None = None
+    # Each approved topic, in order; missing on generations started before the page listed them.
+    topic_states: list[TopicState] | None = None
 
 
 class GenerationOut(BaseModel):
@@ -97,3 +105,5 @@ class GenerationOut(BaseModel):
     # (services/topic_caps.py).
     max_topics: int = 0
     max_subtopics: int = 0
+    # The subtopics a topic added by hand in the review needs at least.
+    min_added_subtopics: int = 0

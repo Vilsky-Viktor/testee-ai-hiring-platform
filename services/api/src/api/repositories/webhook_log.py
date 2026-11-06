@@ -1,11 +1,25 @@
 import uuid
 
-from sqlalchemy import delete, select
+from sqlalchemy import delete, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from api.constants.api import WEBHOOK_LOG_KEPT
 from api.models.api import WebhookAttempt
 from api.repositories.webhooks import company_of
+
+
+async def last_delivered(session: AsyncSession, webhook_ids: list) -> dict:
+    """The last event each web hook took, by its id; those that took none are missing."""
+    if not webhook_ids:
+        return {}
+
+    query = (
+        select(WebhookAttempt.webhook_id, func.max(WebhookAttempt.at))
+        .where(WebhookAttempt.webhook_id.in_(webhook_ids), WebhookAttempt.ok)
+        .group_by(WebhookAttempt.webhook_id)
+    )
+
+    return dict((await session.execute(query)).tuples().all())
 
 
 async def add(

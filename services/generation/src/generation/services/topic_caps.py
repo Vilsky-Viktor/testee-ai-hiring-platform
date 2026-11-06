@@ -3,6 +3,7 @@ review may approve, and what the review page is told."""
 
 from testee_common.limits.limits import limit
 
+from generation.constants.generation import MIN_ADDED_SUBTOPICS
 from generation.integrations.redis import get_redis
 from generation.models.generation import Generation
 from generation.schemas.generation import GenerationOut
@@ -10,10 +11,12 @@ from generation.schemas.generation import GenerationOut
 
 async def topic_caps() -> dict:
     redis = get_redis()
+    max_subtopics = await limit(redis, "MAX_SUBTOPICS")
 
     return {
         "max_topics": await limit(redis, "MAX_TOPICS"),
-        "max_subtopics": await limit(redis, "MAX_SUBTOPICS"),
+        "max_subtopics": max_subtopics,
+        "min_added_subtopics": min(MIN_ADDED_SUBTOPICS, max_subtopics),
     }
 
 

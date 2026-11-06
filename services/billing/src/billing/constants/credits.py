@@ -40,6 +40,13 @@ class Reason:
 # Every reason, for the database's check of entries.reason.
 REASONS = tuple(value for name, value in vars(Reason).items() if not name.startswith("_"))
 
+# The history's filters, and the reasons each shows.
+HISTORY_KINDS = {
+    "topups": (Reason.TOPUP,),
+    "charges": (Reason.CANDIDATE,),
+    "refunds": (Reason.REFUND, Reason.CHARGEBACK, Reason.CHARGEBACK_REVERSED),
+}
+
 # Paddle's adjustments of a top-up.
 ADJUSTMENTS = (Reason.REFUND, Reason.CHARGEBACK, Reason.CHARGEBACK_REVERSED)
 

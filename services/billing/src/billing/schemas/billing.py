@@ -171,7 +171,13 @@ class ReferralOut(BaseModel):
 
     code: str
     reward: int
+    # How many candidates the reward pays for.
+    reward_candidates: int
     rewarded: int
+    # The credits the rewards gave it, and how many more rewards it can get in any 365 days.
+    earned: int
+    rewards_per_year: int
+    rewards_left: int
     # The latest rewards, newest first.
     rewards: list[ReferralRewardOut]
 
@@ -216,16 +222,22 @@ class AutoTopUpOut(BaseModel):
     checkout: CheckoutOut | None = None
 
 
+class SpentOut(BaseModel):
+    credits: int
+
+
 class HistoryEntryOut(BaseModel):
     """One movement of a wallet's credits. `total` (minor units, tax included) and `currency`
-    are what a top-up cost or an adjustment moved, when known; `transaction_id` is the Paddle
-    transaction of a top-up or adjustment, and `hold_key` the key of a candidate's credits."""
+    are what a top-up cost or an adjustment moved, when known, and `paid` the same in whole
+    units; `transaction_id` is the Paddle transaction of a top-up or adjustment, and `hold_key`
+    the key of a candidate's credits."""
 
     id: UUID
     amount: int
     reason: str
     created_at: datetime
     total: str | None
+    paid: str | None
     currency: str | None
     automatic: bool
     transaction_id: str | None

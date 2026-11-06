@@ -8,9 +8,9 @@ from fake_redis import FakeRedis
 from fastapi import HTTPException
 from testee_common.auth.key_actor import key_actor
 
+from api.api.v1 import public_notes
 from api.constants.permissions import Permission
 from api.integrations import companies
-from api.services import idempotency
 from tests.unit.api.v1.test_list_links import next_page
 from tests.unit.api_keys import call
 from tests.unit.conftest import COMPANY, INTERVIEW
@@ -63,7 +63,7 @@ def notes_api(monkeypatch, companies_api):
 
     monkeypatch.setattr(companies, "notes", notes)
     monkeypatch.setattr(companies, "add_note", add_note)
-    monkeypatch.setattr(idempotency, "get_redis", lambda: redis)
+    monkeypatch.setattr(public_notes, "get_redis", lambda: redis)
     redis = FakeRedis()
 
     return state

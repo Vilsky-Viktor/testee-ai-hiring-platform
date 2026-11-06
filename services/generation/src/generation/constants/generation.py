@@ -76,6 +76,10 @@ TOO_MANY_REVISIONS = "These topics can't be changed in words any more. Choose th
 # MAX_SUBTOPICS, at their current values.
 TOO_MANY_CHOSEN = "Choose at most {count} topics"
 TOO_MANY_SUBTOPICS = "A topic can have at most {count} subtopics"
+# The subtopics a topic the reviewer adds by hand needs at least, so its questions have a spread;
+# fewer where MAX_SUBTOPICS is lower. Drafted topics aren't held to it.
+MIN_ADDED_SUBTOPICS = 3
+TOO_FEW_SUBTOPICS = "A topic you add needs at least {count} subtopics"
 
 # A generation stops after this long: Cloud Tasks gives one request at most 30 minutes.
 JOB_TIMEOUT_SECONDS = 25 * 60

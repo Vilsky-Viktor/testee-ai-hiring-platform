@@ -2303,6 +2303,17 @@
      "done": {
       "type": "boolean",
       "title": "Done"
+     },
+     "minutes_taken": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Minutes Taken"
      }
     },
     "type": "object",

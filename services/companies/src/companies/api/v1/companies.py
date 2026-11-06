@@ -1,12 +1,14 @@
+from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, HTTPException, Request, status
+from fastapi import APIRouter, HTTPException, Query, Request, status
 from testee_common.auth.auth import CurrentUser
 from testee_common.db.paging import PageParams
 from testee_common.http.visitor_country import VisitorCountry
 from testee_common.i18n.i18n import request_language
 
-from companies.api.dependencies import Via
+from companies.api.dependencies import IdempotencyKey, Via
+from companies.constants.invites import MAX_SEARCH_LENGTH
 from companies.constants.roles import Role
 from companies.core.db import Session
 from companies.helpers.brand import brand_problems, color_sets, style_of
@@ -23,11 +25,13 @@ from companies.schemas.companies import (
     ReferralOut,
     ReferralRewardOut,
 )
+from companies.schemas.company_templates import CompanyTemplate
 from companies.schemas.logos import BrandColorSets, BrandStyle
 from companies.services import (
     company_creation,
     company_deletion,
     company_settings,
+    company_templates,
     company_views,
     credits,
     menu_counts,
@@ -84,11 +88,15 @@ async def create_company(
     request: Request,
     via: Via,
     country: VisitorCountry = None,
+    idempotency_key: IdempotencyKey = None,
 ) -> CompanyOut:
     """A company needs its owner's verified email, as the welcome credits come once per email. A
     person's first company, which gets them, needs them to show they're a person, on the site;
-    through the assistant or an AI app (no browser) it can't be asked."""
-    company = await company_creation.create(body.name, user, request, via, country)
+    through the assistant or an AI app (no browser) it can't be asked. With an Idempotency-Key,
+    the same request again gets the company the first made."""
+    company = await company_creation.create_once(
+        body.name, user, request, via, country, idempotency_key
+    )
 
     return CompanyOut(
         id=company.id,
@@ -104,13 +112,41 @@ async def create_company(
 
 
 @router.get("")
-async def list_companies(user: CurrentUser, page: PageParams, request: Request) -> list[CompanyOut]:
-    """The user's companies; for an AI agent signed in with an API key, the key's only."""
-    rows = await company_views.listed(user.uid, page.offset, page.limit)
+async def list_companies(
+    user: CurrentUser,
+    page: PageParams,
+    request: Request,
+    q: Annotated[str, Query(max_length=MAX_SEARCH_LENGTH)] = "",
+) -> list[CompanyOut]:
+    """The user's companies, the latest activity first, with their credits and what to know about
+    them now; `q` narrows them to names containing it. For an AI agent signed in with an API key,
+    the key's only."""
+    rows = await company_views.listed(user.uid, page.offset, page.limit, q.strip())
 
     language = request_language(request)
 
-    return [company_out(item, user.uid, language, count) for item, count in rows]
+    return [
+        company_views.with_summary(company_out(item, user.uid, language, count), balance, finished)
+        for item, count, balance, finished in rows
+    ]
+
+
+@router.get("/{company_id}/templates")
+async def list_company_templates(
+    company_id: UUID,
+    user: CurrentUser,
+    page: PageParams,
+    q: Annotated[str, Query(max_length=MAX_SEARCH_LENGTH)] = "",
+    level: str | None = None,
+    language: Annotated[list[str] | None, Query()] = None,
+) -> list[CompanyTemplate]:
+    """The templates the company can start an interview from, the most used first, each with
+    what it adds up to and how many of the company's interviews came from it."""
+    await require_company(user, company_id)
+
+    return await company_templates.listed(
+        company_id, q.strip(), level, language or [], page.offset, page.limit
+    )
 
 
 @router.get("/credits")
@@ -119,7 +155,10 @@ async def list_credits(user: CurrentUser, page: PageParams) -> list[CompanyBalan
     before /{company_id}, which would otherwise take "credits" as an id."""
     rows = await company_views.with_credits(user.uid, page.offset, page.limit)
 
-    return [CompanyBalanceOut(id=item.id, name=item.name, **credits) for item, credits in rows]
+    return [
+        CompanyBalanceOut(id=item.id, name=item.name, logo_url=logo_path(item), **credits)
+        for item, credits in rows
+    ]
 
 
 @router.delete("/{company_id}", status_code=status.HTTP_204_NO_CONTENT)
@@ -159,7 +198,11 @@ async def get_referral(company_id: UUID, user: CurrentUser) -> ReferralOut:
     return ReferralOut(
         code=found["code"],
         reward=found["reward"],
+        reward_candidates=found["reward_candidates"],
         rewarded=found["rewarded"],
+        earned=found["earned"],
+        rewards_per_year=found["rewards_per_year"],
+        rewards_left=found["rewards_left"],
         rewards=[
             ReferralRewardOut(
                 name=found["names"].get(row["company_id"]),

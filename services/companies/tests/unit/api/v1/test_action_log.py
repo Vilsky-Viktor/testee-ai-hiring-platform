@@ -18,6 +18,7 @@ from companies.models.companies import Company, Member
 from companies.repositories import action_names, audit, companies
 
 COMPANY_ID = uuid.uuid4()
+INTERVIEW_ID = uuid.uuid4()
 BOB_ID = uuid.uuid4()
 INVITED_ID = uuid.uuid4()
 URL = f"/companies/{COMPANY_ID}/actions"
@@ -111,6 +112,9 @@ def log(monkeypatch):
     async def target_names(session, company_id, ids):
         return {candidate_id: "cara@example.com"}
 
+    async def candidate_interviews(session, company_id, ids):
+        return {candidate_id: INTERVIEW_ID}
+
     async def key_names(company_id, key_ids):
         asked.append(("keys", company_id, sorted(key_ids)))
 
@@ -121,6 +125,7 @@ def log(monkeypatch):
     monkeypatch.setattr(audit, "list_for_company", list_for_company)
     monkeypatch.setattr(action_names, "member_emails", member_emails)
     monkeypatch.setattr(action_names, "target_names", target_names)
+    monkeypatch.setattr(action_names, "candidate_interviews", candidate_interviews)
     monkeypatch.setattr(api_keys, "names", key_names)
 
     yield asked
@@ -149,6 +154,8 @@ def test_the_owner_reads_who_did_what_and_about_what(client, log):
         # A former member and a deleted candidate: nobody's email is kept.
         ("candidate_deleted", "candidates", None, None, None, None),
     ]
+    # A candidate's action opens their interview, while they're still there.
+    assert [row["interview_id"] for row in response.json()[:3]] == [str(INTERVIEW_ID), None, None]
 
 
 def test_an_api_key_is_its_own_author_named_as_it_is_now(client, log):
@@ -191,9 +198,10 @@ def test_the_filters_go_to_the_log_with_a_member_as_their_user(client, log):
             AuditGroup.CANDIDATES,
             datetime(2026, 10, 1, tzinfo=UTC),
             datetime(2026, 10, 17, tzinfo=UTC),
+            None,
         ),
         ("keys", COMPANY_ID, sorted([RENAMED_KEY, DELETED_KEY])),
-        (0, log[2][1], None, None, None, None),
+        (0, log[2][1], None, None, None, None, None),
         ("keys", COMPANY_ID, sorted([RENAMED_KEY, DELETED_KEY])),
     ]
 

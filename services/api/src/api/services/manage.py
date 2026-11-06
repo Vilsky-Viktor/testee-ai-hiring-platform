@@ -15,9 +15,11 @@ from api.constants.permissions import (
     DEFAULT_PERMISSIONS,
     IMPLIED,
     PERMISSION_GROUPS,
+    PERMISSION_PRESETS,
     Permission,
 )
 from api.core.db import Session
+from api.helpers.key_status import KEY_STATES, key_access, key_state, webhook_state
 from api.helpers.keys import add_months, expired, new_key, with_implied
 from api.helpers.webhooks import masked, new_secret
 from api.integrations.redis import get_redis
@@ -41,33 +43,50 @@ async def overview(company_id: UUID, editor: bool) -> ApiSettingsOut:
     async with Session() as session:
         hooks = await webhooks.of_company(session, company_id)
         company_keys = await keys.of_company(session, company_id)
+        delivered = await webhook_log_store.last_delivered(session, [item.id for item in hooks])
 
     return ApiSettingsOut(
-        keys=[key_out(key) for key in company_keys],
-        webhooks=[
-            WebhookOut.model_validate(hook, from_attributes=True).model_copy(
-                update={"url": hook.url if editor else masked(hook.url)}
-            )
-            for hook in hooks
-        ],
+        keys=sorted(
+            (key_out(key) for key in company_keys),
+            key=lambda key: KEY_STATES.index(key.state),
+        ),
+        webhooks=sorted(
+            (
+                WebhookOut.model_validate(hook, from_attributes=True).model_copy(
+                    update={
+                        "url": hook.url if editor else masked(hook.url),
+                        "state": webhook_state(hook.failing, delivered.get(hook.id)),
+                        "last_delivered_at": delivered.get(hook.id),
+                    }
+                )
+                for hook in hooks
+            ),
+            key=lambda hook: hook.state != "paused",
+        ),
         expiries=list(KeyExpiry),
         permission_groups=PERMISSION_GROUPS,
+        permission_presets=PERMISSION_PRESETS,
         implied=IMPLIED,
         default_permissions=DEFAULT_PERMISSIONS,
     )
 
 
 def key_out(key: ApiKey) -> KeyOut:
+    now = datetime.now(UTC)
+    is_expired = expired(key.expires_at, now)
+
     return KeyOut(
         id=key.id,
         name=key.name,
         shown=key.shown,
         created_at=key.created_at,
         expires_at=key.expires_at,
-        expired=expired(key.expires_at, datetime.now(UTC)),
+        expired=is_expired,
         last_used_at=key.last_used_at,
         permissions=key.permissions,
         allowed_ips=key.allowed_ips,
+        state=key_state(key.expires_at, key.last_used_at, is_expired, now),
+        access=key_access(key.permissions),
     )
 
 
@@ -106,6 +125,16 @@ async def create_key(
         )
 
     return NewKeyOut(**key_out(row).model_dump(), key=key)
+
+
+async def rename_key(company_id: UUID, key_id: UUID, name: str, user_id: str) -> KeyOut:
+    async with Session.begin() as session:
+        row = await keys.rename(session, company_id, key_id, name.strip(), user_id)
+
+    if row is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "API key not found")
+
+    return key_out(row)
 
 
 async def change_key_permissions(
@@ -225,9 +254,10 @@ async def webhook_log(company_id: UUID, webhook_id: UUID) -> list[WebhookAttempt
     return [WebhookAttemptOut.model_validate(row, from_attributes=True) for row in rows]
 
 
-async def test_webhook(company_id: UUID, webhook_id: UUID, user_id: str) -> bool:
+async def test_webhook(company_id: UUID, webhook_id: UUID, user_id: str) -> tuple[bool, str]:
     """A signed test event sent to the company's web hook now, up to WEBHOOK_TESTS_PER_HOUR a
-    company; whether it took it. The company's action log gets it as `user_id`'s."""
+    company; whether it took it, and what its log says about it. The company's action log gets
+    it as `user_id`'s."""
     hook = await webhook(company_id, webhook_id)
     await hit_or_skip(
         get_redis(),
@@ -240,5 +270,6 @@ async def test_webhook(company_id: UUID, webhook_id: UUID, user_id: str) -> bool
 
     async with Session.begin() as session:
         await webhooks.tested(session, hook, user_id)
+        attempts = await webhook_log_store.latest(session, hook.id)
 
-    return ok
+    return ok, attempts[0].result

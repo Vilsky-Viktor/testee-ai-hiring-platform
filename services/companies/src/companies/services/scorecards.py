@@ -1,4 +1,5 @@
 import asyncio
+from math import ceil
 
 from testee_common.auth.user import User
 from testee_common.events.analytics import track
@@ -28,6 +29,14 @@ from companies.services.interview_views import interview_title
 async def record_view(company_id, user_id: str, invite_id, via: str | None = None) -> None:
     async with Session.begin() as session:
         await audit.record_view(session, company_id, user_id, invite_id, via)
+
+
+def minutes_taken(invite: CandidateInvite) -> int | None:
+    """How long a finished candidate took, in whole minutes, at least one."""
+    if invite.started_at is None or invite.finished_at is None:
+        return None
+
+    return max(ceil((invite.finished_at - invite.started_at).total_seconds() / 60), 1)
 
 
 async def scorecard(
@@ -85,6 +94,7 @@ async def scorecard(
         pass_mark=interview.pass_mark,
         language=interview.language,
         pledged_at=invite.pledged_at,
+        time_taken_minutes=minutes_taken(invite),
         sessions=[
             {**section, "passed": section_passed(section, interview.pass_mark)} for section in card
         ],

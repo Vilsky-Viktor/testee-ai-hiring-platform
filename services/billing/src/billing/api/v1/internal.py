@@ -1,4 +1,5 @@
-from typing import Annotated
+from datetime import UTC, datetime
+from typing import Annotated, Literal
 
 from fastapi import APIRouter, HTTPException, Query, status
 from fastapi.encoders import jsonable_encoder
@@ -28,6 +29,7 @@ from billing.schemas.billing import (
     PaidOut,
     PurchaseOwnerOut,
     ReferralOut,
+    SpentOut,
     WelcomeIn,
 )
 from billing.services import accounts, holds, invoices, wallets
@@ -92,13 +94,32 @@ async def company_credits(company_id: str, caller: ServiceCaller) -> BalanceOut:
 
 @router.get("/companies/{company_id}/history")
 async def company_history(
-    company_id: str, page: PageParams, caller: ServiceCaller
+    company_id: str,
+    page: PageParams,
+    caller: ServiceCaller,
+    kind: Literal["topups", "charges", "refunds"] | None = None,
+    start: datetime | None = None,
+    end: datetime | None = None,
 ) -> list[HistoryEntryOut]:
-    """Every movement of the company's credits, newest first."""
+    """Every movement of the company's credits, newest first, or only those of one `kind`, from
+    `start` and before `end`."""
     async with Session() as session:
-        rows = await history.page(session, OwnerType.COMPANY, company_id, page.offset, page.limit)
+        rows = await history.page(
+            session, OwnerType.COMPANY, company_id, page.offset, page.limit, kind, start, end
+        )
 
     return [history_entry_out(row) for row in rows]
+
+
+@router.get("/companies/{company_id}/spent")
+async def company_spent(company_id: str, caller: ServiceCaller) -> SpentOut:
+    """The credits the company's candidates took this calendar month (UTC)."""
+    start = datetime.now(UTC).replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+
+    async with Session() as session:
+        credits = await history.spent_since(session, OwnerType.COMPANY, company_id, start)
+
+    return SpentOut(credits=credits)
 
 
 @router.post("/companies/{company_id}/adjustments", status_code=status.HTTP_204_NO_CONTENT)

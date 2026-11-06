@@ -6,7 +6,7 @@
      "companies"
     ],
     "summary": "Create Company",
-    "description": "A company needs its owner's verified email, as the welcome credits come once per email. A\nperson's first company, which gets them, needs them to show they're a person, on the site;\nthrough the assistant or an AI app (no browser) it can't be asked.",
+    "description": "A company needs its owner's verified email, as the welcome credits come once per email. A\nperson's first company, which gets them, needs them to show they're a person, on the site;\nthrough the assistant or an AI app (no browser) it can't be asked. With an Idempotency-Key,\nthe same request again gets the company the first made.",
     "operationId": "create_company_companies_post",
     "security": [
      {
@@ -28,6 +28,23 @@
         }
        ],
        "title": "X-Client-Country"
+      }
+     },
+     {
+      "name": "idempotency-key",
+      "in": "header",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "maxLength": 255
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Idempotency-Key"
       }
      }
     ],
@@ -69,7 +86,7 @@
      "companies"
     ],
     "summary": "List Companies",
-    "description": "The user's companies; for an AI agent signed in with an API key, the key's only.",
+    "description": "The user's companies, the latest activity first, with their credits and what to know about\nthem now; `q` narrows them to names containing it. For an AI agent signed in with an API key,\nthe key's only.",
     "operationId": "list_companies_companies_get",
     "security": [
      {
@@ -77,6 +94,17 @@
      }
     ],
     "parameters": [
+     {
+      "name": "q",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "string",
+       "maxLength": 254,
+       "default": "",
+       "title": "Q"
+      }
+     },
      {
       "name": "offset",
       "in": "query",
@@ -116,6 +144,132 @@
           "$ref": "#/components/schemas/CompanyOut"
          },
          "title": "Response List Companies Companies Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/companies/{company_id}/templates": {
+   "get": {
+    "tags": [
+     "companies"
+    ],
+    "summary": "List Company Templates",
+    "description": "The templates the company can start an interview from, the most used first, each with\nwhat it adds up to and how many of the company's interviews came from it.",
+    "operationId": "list_company_templates_companies__company_id__templates_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "company_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Company Id"
+      }
+     },
+     {
+      "name": "q",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "string",
+       "maxLength": 254,
+       "default": "",
+       "title": "Q"
+      }
+     },
+     {
+      "name": "level",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Level"
+      }
+     },
+     {
+      "name": "language",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Language"
+      }
+     },
+     {
+      "name": "offset",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "minimum": 0,
+       "description": "Number of items to skip",
+       "default": 0,
+       "title": "Offset"
+      },
+      "description": "Number of items to skip"
+     },
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "maximum": 100,
+       "minimum": 1,
+       "description": "Number of items to return, up to 100",
+       "default": 100,
+       "title": "Limit"
+      },
+      "description": "Number of items to return, up to 100"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/CompanyTemplate"
+         },
+         "title": "Response List Company Templates Companies  Company Id  Templates Get"
         }
        }
       }
@@ -607,13 +761,89 @@
     }
    }
   },
+  "/companies/{company_id}/actions/export": {
+   "get": {
+    "tags": [
+     "companies"
+    ],
+    "summary": "Export Actions",
+    "description": "The company's action log as a CSV, from `from` and before `to` when given; for the owner\nonly, counted per company a day.",
+    "operationId": "export_actions_companies__company_id__actions_export_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "company_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Company Id"
+      }
+     },
+     {
+      "name": "from",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "date-time"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "From"
+      }
+     },
+     {
+      "name": "to",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "date-time"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "To"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/companies/{company_id}/actions": {
    "get": {
     "tags": [
      "companies"
     ],
     "summary": "List Actions",
-    "description": "The company's action log, newest first, each action with who took it and what it was\nabout; for the owner only. Only one member's (`member_id`, a joined member), one group's, or\nthose from `from` and before `to`.",
+    "description": "The company's action log, newest first, each action with who took it and what it was\nabout; for the owner only. Only one member's (`member_id`, a joined member), one API key's,\none group's, or those from `from` and before `to`.",
     "operationId": "list_actions_companies__company_id__actions_get",
     "security": [
      {
@@ -646,6 +876,23 @@
         }
        ],
        "title": "Member Id"
+      }
+     },
+     {
+      "name": "key_id",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "uuid"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Key Id"
       }
      },
      {
@@ -853,7 +1100,7 @@
      "companies"
     ],
     "summary": "Get History",
-    "description": "Every movement of the company's credits, newest first, a page at a time.",
+    "description": "Every movement of the company's credits, newest first, a page at a time; `kind` narrows\nthem to one kind.",
     "operationId": "get_history_companies__company_id__billing_history_get",
     "security": [
      {
@@ -869,6 +1116,27 @@
        "type": "string",
        "format": "uuid",
        "title": "Company Id"
+      }
+     },
+     {
+      "name": "kind",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "enum": [
+          "topups",
+          "charges",
+          "refunds"
+         ],
+         "type": "string"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Kind"
       }
      },
      {
@@ -910,6 +1178,131 @@
           "$ref": "#/components/schemas/HistoryEntryOut"
          },
          "title": "Response Get History Companies  Company Id  Billing History Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/companies/{company_id}/billing/history/export": {
+   "get": {
+    "tags": [
+     "companies"
+    ],
+    "summary": "Export History",
+    "description": "The company's credit movements as a CSV, from `from` and before `to` when given; counted\nper company a day.",
+    "operationId": "export_history_companies__company_id__billing_history_export_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "company_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Company Id"
+      }
+     },
+     {
+      "name": "from",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "date-time"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "From"
+      }
+     },
+     {
+      "name": "to",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "date-time"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "To"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/companies/{company_id}/billing/spent": {
+   "get": {
+    "tags": [
+     "companies"
+    ],
+    "summary": "Get Spent",
+    "description": "The credits the company's candidates took this calendar month.",
+    "operationId": "get_spent_companies__company_id__billing_spent_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "company_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Company Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SpentOut"
         }
        }
       }
@@ -1404,6 +1797,7 @@
      "interviews"
     ],
     "summary": "Create Interview",
+    "description": "With an Idempotency-Key, the same request again gets the interview the first made.",
     "operationId": "create_interview_interviews_post",
     "security": [
      {
@@ -1419,6 +1813,23 @@
        "type": "string",
        "format": "uuid",
        "title": "Company Id"
+      }
+     },
+     {
+      "name": "idempotency-key",
+      "in": "header",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "maxLength": 255
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Idempotency-Key"
       }
      }
     ],
@@ -1460,7 +1871,7 @@
      "interviews"
     ],
     "summary": "List Interviews",
-    "description": "The company's interviews, newest first; `q` narrows them to titles containing it.",
+    "description": "The company's interviews, newest first, or with `sort=activity` the latest activity first;\n`q` narrows them to titles containing it, `status` to those in it.",
     "operationId": "list_interviews_interviews_get",
     "security": [
      {
@@ -1487,6 +1898,36 @@
        "maxLength": 254,
        "default": "",
        "title": "Q"
+      }
+     },
+     {
+      "name": "status",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "$ref": "#/components/schemas/InterviewStatus"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Status"
+      }
+     },
+     {
+      "name": "sort",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "enum": [
+        "newest",
+        "activity"
+       ],
+       "type": "string",
+       "default": "newest",
+       "title": "Sort"
       }
      },
      {
@@ -1587,6 +2028,66 @@
        "application/json": {
         "schema": {
          "$ref": "#/components/schemas/InterviewOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/interviews/status-counts": {
+   "get": {
+    "tags": [
+     "interviews"
+    ],
+    "summary": "Interview Status Counts",
+    "description": "How many of the company's interviews (with `q` in their title) are in each status. Declared\nbefore /{interview_id}, which would otherwise take it as an id.",
+    "operationId": "interview_status_counts_interviews_status_counts_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "company_id",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Company Id"
+      }
+     },
+     {
+      "name": "q",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "string",
+       "maxLength": 254,
+       "default": "",
+       "title": "Q"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/InterviewStatusCounts"
         }
        }
       }
@@ -2498,6 +2999,55 @@
        "application/json": {
         "schema": {
          "$ref": "#/components/schemas/CandidateFiltersOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/interviews/{interview_id}/candidates/summary": {
+   "get": {
+    "tags": [
+     "interviews"
+    ],
+    "summary": "Candidate Summary",
+    "description": "The interview's candidates at a glance (candidate_results.summary).",
+    "operationId": "candidate_summary_interviews__interview_id__candidates_summary_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "interview_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Interview Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/CandidateSummaryOut"
         }
        }
       }
@@ -8419,6 +8969,18 @@
        }
       ],
       "title": "Key Name"
+     },
+     "interview_id": {
+      "anyOf": [
+       {
+        "type": "string",
+        "format": "uuid"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Interview Id"
      }
     },
     "type": "object",
@@ -8434,7 +8996,7 @@
      "target"
     ],
     "title": "ActionOut",
-    "description": "A row of a company's action log (its owner's tab, the admin zone's support page): its\ngroup, who took it (`user_email`, None once they're no longer a member), and what it was\nabout: `target_kind` and `target` (a candidate's or member's email, an interview's title, an\nAPI key's name, a web hook's host, an integration's name; None for the company itself, or a\nperson who's gone), and what it took away (`removed`: an API key's permissions). An API key\nthat took it is named by `key_name`, its name now (None once it was deleted), instead of a\nmember."
+    "description": "A row of a company's action log (its owner's tab, the admin zone's support page): its\ngroup, who took it (`user_email`, None once they're no longer a member), and what it was\nabout: `target_kind` and `target` (a candidate's or member's email, an interview's title, an\nAPI key's name, a web hook's host, an integration's name; None for the company itself, or a\nperson who's gone), and what it took away (`removed`: an API key's permissions). An API key\nthat took it is named by `key_name`, its name now (None once it was deleted), instead of a\nmember. `interview_id` is the interview it opens: its candidate's, or the one it was about,\nwhile it's still there."
    },
    "AdminInviteOut": {
     "properties": {
@@ -9384,6 +9946,50 @@
     ],
     "title": "CandidateSort"
    },
+   "CandidateSummaryOut": {
+    "properties": {
+     "total": {
+      "type": "integer",
+      "title": "Total"
+     },
+     "finished": {
+      "type": "integer",
+      "title": "Finished"
+     },
+     "passed": {
+      "type": "integer",
+      "title": "Passed"
+     },
+     "average_grade": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Average Grade"
+     },
+     "counts": {
+      "additionalProperties": {
+       "type": "integer"
+      },
+      "type": "object",
+      "title": "Counts"
+     }
+    },
+    "type": "object",
+    "required": [
+     "total",
+     "finished",
+     "passed",
+     "average_grade",
+     "counts"
+    ],
+    "title": "CandidateSummaryOut",
+    "description": "An interview's candidates at a glance: how many, how many finished and passed, the\nfinished ones' average grade (None until there's one), and how many each filter holds."
+   },
    "CandidateUpdateOut": {
     "properties": {
      "kind": {
@@ -9560,6 +10166,17 @@
       "type": "string",
       "title": "Name"
      },
+     "logo_url": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Logo Url"
+     },
      "available": {
       "type": "integer",
       "title": "Available"
@@ -9577,7 +10194,7 @@
      "low"
     ],
     "title": "CompanyBalanceOut",
-    "description": "A company the user can top up, with its credits."
+    "description": "A company the user can top up, with its logo and credits."
    },
    "CompanyCandidateOut": {
     "properties": {
@@ -9945,6 +10562,38 @@
       "title": "Member Count",
       "default": 0
      },
+     "credits": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Credits"
+     },
+     "status": {
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "low",
+         "verify",
+         "finished"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Status"
+     },
+     "finished_count": {
+      "type": "integer",
+      "title": "Finished Count",
+      "default": 0
+     },
      "logo_url": {
       "anyOf": [
        {
@@ -10088,6 +10737,93 @@
     "title": "CompanyRename",
     "description": "A new name, edited in place like a test's title (hence `title`)."
    },
+   "CompanyTemplate": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Id"
+     },
+     "slug": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Slug"
+     },
+     "title": {
+      "type": "string",
+      "title": "Title"
+     },
+     "level": {
+      "type": "string",
+      "title": "Level"
+     },
+     "language": {
+      "type": "string",
+      "title": "Language"
+     },
+     "topic_count": {
+      "type": "integer",
+      "title": "Topic Count"
+     },
+     "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Created At"
+     },
+     "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Updated At"
+     },
+     "indexable": {
+      "type": "boolean",
+      "title": "Indexable",
+      "default": false
+     },
+     "topic_titles": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Topic Titles"
+     },
+     "question_count": {
+      "type": "integer",
+      "title": "Question Count"
+     },
+     "minutes": {
+      "type": "integer",
+      "title": "Minutes"
+     },
+     "used_count": {
+      "type": "integer",
+      "title": "Used Count"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "slug",
+     "title",
+     "level",
+     "language",
+     "topic_count",
+     "created_at",
+     "updated_at",
+     "topic_titles",
+     "question_count",
+     "minutes",
+     "used_count"
+    ],
+    "title": "CompanyTemplate",
+    "description": "A template as a company chooses from them: what an interview from it adds up to, and how\nmany of its interviews came from it."
+   },
    "CreditCandidateOut": {
     "properties": {
      "invite_id": {
@@ -10177,6 +10913,11 @@
       },
       "type": "array",
       "title": "Results"
+     },
+     "invited": {
+      "type": "boolean",
+      "title": "Invited",
+      "default": false
      }
     },
     "type": "object",
@@ -10347,6 +11088,10 @@
      "max_subtopics": {
       "type": "integer",
       "title": "Max Subtopics"
+     },
+     "min_added_subtopics": {
+      "type": "integer",
+      "title": "Min Added Subtopics"
      }
     },
     "type": "object",
@@ -10361,7 +11106,8 @@
      "error",
      "language",
      "max_topics",
-     "max_subtopics"
+     "max_subtopics",
+     "min_added_subtopics"
     ],
     "title": "GenerationOut"
    },
@@ -10396,6 +11142,20 @@
        }
       ],
       "title": "Topics Ready"
+     },
+     "topic_states": {
+      "anyOf": [
+       {
+        "items": {
+         "$ref": "#/components/schemas/TopicState"
+        },
+        "type": "array"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Topic States"
      }
     },
     "type": "object",
@@ -10462,6 +11222,17 @@
       ],
       "title": "Total"
      },
+     "paid": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Paid"
+     },
      "currency": {
       "anyOf": [
        {
@@ -10521,6 +11292,7 @@
      "reason",
      "created_at",
      "total",
+     "paid",
      "currency",
      "automatic",
      "invoice_id",
@@ -10733,6 +11505,44 @@
       "title": "Voice",
       "default": false
      },
+     "finished_count": {
+      "type": "integer",
+      "title": "Finished Count",
+      "default": 0
+     },
+     "passed_count": {
+      "type": "integer",
+      "title": "Passed Count",
+      "default": 0
+     },
+     "undelivered_count": {
+      "type": "integer",
+      "title": "Undelivered Count",
+      "default": 0
+     },
+     "recent_count": {
+      "type": "integer",
+      "title": "Recent Count",
+      "default": 0
+     },
+     "row_status": {
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "failed",
+         "generating",
+         "undelivered",
+         "finished",
+         "ready"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Row Status"
+     },
      "company_id": {
       "type": "string",
       "format": "uuid",
@@ -10940,6 +11750,44 @@
       "type": "boolean",
       "title": "Voice",
       "default": false
+     },
+     "finished_count": {
+      "type": "integer",
+      "title": "Finished Count",
+      "default": 0
+     },
+     "passed_count": {
+      "type": "integer",
+      "title": "Passed Count",
+      "default": 0
+     },
+     "undelivered_count": {
+      "type": "integer",
+      "title": "Undelivered Count",
+      "default": 0
+     },
+     "recent_count": {
+      "type": "integer",
+      "title": "Recent Count",
+      "default": 0
+     },
+     "row_status": {
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "failed",
+         "generating",
+         "undelivered",
+         "finished",
+         "ready"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Row Status"
      }
     },
     "type": "object",
@@ -11088,6 +11936,45 @@
     "title": "InterviewSettings",
     "description": "A change to a test's settings: only the ones sent change; the others stay as they are."
    },
+   "InterviewStatus": {
+    "type": "string",
+    "enum": [
+     "new",
+     "in_process",
+     "hired"
+    ],
+    "title": "InterviewStatus",
+    "description": "Where a test stands, as its lists show it (helpers/interviews.py decides)."
+   },
+   "InterviewStatusCounts": {
+    "properties": {
+     "all": {
+      "type": "integer",
+      "title": "All"
+     },
+     "new": {
+      "type": "integer",
+      "title": "New"
+     },
+     "in_process": {
+      "type": "integer",
+      "title": "In Process"
+     },
+     "hired": {
+      "type": "integer",
+      "title": "Hired"
+     }
+    },
+    "type": "object",
+    "required": [
+     "all",
+     "new",
+     "in_process",
+     "hired"
+    ],
+    "title": "InterviewStatusCounts",
+    "description": "How many of a company's interviews are in each status, and in all."
+   },
    "InviteStartOut": {
     "properties": {
      "sessions": {
@@ -11163,6 +12050,17 @@
       "type": "boolean",
       "title": "Matches",
       "default": false
+     },
+     "progress": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Progress"
      },
      "status": {
       "type": "string",
@@ -11633,6 +12531,40 @@
      "joined": {
       "type": "boolean",
       "title": "Joined"
+     },
+     "name": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Name"
+     },
+     "photo_url": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Photo Url"
+     },
+     "joined_at": {
+      "anyOf": [
+       {
+        "type": "string",
+        "format": "date-time"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Joined At"
      },
      "token": {
       "anyOf": [
@@ -12273,9 +13205,25 @@
       "type": "integer",
       "title": "Reward"
      },
+     "reward_candidates": {
+      "type": "integer",
+      "title": "Reward Candidates"
+     },
      "rewarded": {
       "type": "integer",
       "title": "Rewarded"
+     },
+     "earned": {
+      "type": "integer",
+      "title": "Earned"
+     },
+     "rewards_per_year": {
+      "type": "integer",
+      "title": "Rewards Per Year"
+     },
+     "rewards_left": {
+      "type": "integer",
+      "title": "Rewards Left"
      },
      "rewards": {
       "items": {
@@ -12289,7 +13237,11 @@
     "required": [
      "code",
      "reward",
+     "reward_candidates",
      "rewarded",
+     "earned",
+     "rewards_per_year",
+     "rewards_left",
      "rewards"
     ],
     "title": "ReferralOut",
@@ -12714,6 +13666,17 @@
       ],
       "title": "Pledged At"
      },
+     "time_taken_minutes": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Time Taken Minutes"
+     },
      "sessions": {
       "items": {
        "$ref": "#/components/schemas/ScorecardSection"
@@ -13051,6 +14014,20 @@
      "reason"
     ],
     "title": "SkippedInvite"
+   },
+   "SpentOut": {
+    "properties": {
+     "credits": {
+      "type": "integer",
+      "title": "Credits"
+     }
+    },
+    "type": "object",
+    "required": [
+     "credits"
+    ],
+    "title": "SpentOut",
+    "description": "The credits the company's candidates took this calendar month."
    },
    "StartIn": {
     "properties": {
@@ -13903,6 +14880,24 @@
      "question_limit"
     ],
     "title": "TopicOut"
+   },
+   "TopicState": {
+    "properties": {
+     "name": {
+      "type": "string",
+      "title": "Name"
+     },
+     "ready": {
+      "type": "boolean",
+      "title": "Ready"
+     }
+    },
+    "type": "object",
+    "required": [
+     "name",
+     "ready"
+    ],
+    "title": "TopicState"
    },
    "UserCompaniesOut": {
     "properties": {

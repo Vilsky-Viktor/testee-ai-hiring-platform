@@ -96,6 +96,34 @@ async def used(session: AsyncSession, key_id: uuid.UUID) -> None:
     await session.execute(query)
 
 
+async def rename(
+    session: AsyncSession, company_id: uuid.UUID, key_id: uuid.UUID, name: str, user_id: str
+) -> ApiKey | None:
+    """Gives the key a new name, logged as `user_id`'s; None when the company has no such key."""
+    query = (
+        select(ApiKey).where(ApiKey.company_id == company_id, ApiKey.id == key_id).with_for_update()
+    )
+    key = await session.scalar(query)
+
+    if key is None or key.name == name:
+        return key
+
+    key.name = name
+    audit.add(
+        session,
+        OutboxEvent,
+        company_id,
+        user_id,
+        AuditAction.API_KEY_RENAMED,
+        TargetKind.API_KEY,
+        key_id,
+        name,
+    )
+    await session.flush()
+
+    return key
+
+
 async def change_permissions(
     session: AsyncSession,
     company_id: uuid.UUID,

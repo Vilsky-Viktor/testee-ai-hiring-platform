@@ -31,6 +31,9 @@ class PreviewOut(BaseModel):
     session_id: UUID
 
 
+InterviewRowStatus = Literal["failed", "generating", "undelivered", "finished", "ready"]
+
+
 class InterviewOut(BaseModel):
     id: UUID
     # None for a test made from a template.
@@ -55,6 +58,22 @@ class InterviewOut(BaseModel):
     pinned_note: str | None = None
     # Taken in voice mode (read aloud, answered by voice); click mode otherwise, the default.
     voice: bool = False
+    # On the company's list only: how its candidates are doing, those who finished lately, and
+    # the one thing to know about it now (helpers/interview_row.py).
+    finished_count: int = 0
+    passed_count: int = 0
+    undelivered_count: int = 0
+    recent_count: int = 0
+    row_status: InterviewRowStatus | None = None
+
+
+class InterviewStatusCounts(BaseModel):
+    """How many of a company's interviews are in each status, and in all."""
+
+    all: int
+    new: int
+    in_process: int
+    hired: int
 
 
 class QuestionOption(BaseModel):

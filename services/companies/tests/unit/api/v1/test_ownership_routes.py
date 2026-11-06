@@ -55,7 +55,7 @@ def test_the_owner_makes_a_joined_admin_the_owner(client, team, transfers, audit
     ]
 
 
-def test_only_a_joined_admin_owning_fewer_than_three_can_become_owner(
+def test_only_a_joined_admin_below_the_owned_limit_can_become_owner(
     client, team, transfers, audited
 ):
     (_, bob, cid), _, _ = team
@@ -67,12 +67,12 @@ def test_only_a_joined_admin_owning_fewer_than_three_can_become_owner(
     bob.role = "viewer"
     viewer = client.post(owner_url(bob))
     bob.role = "admin"
-    owned["bob"] = 3
+    owned["bob"] = 10
     full = client.post(owner_url(bob))
 
     assert [r.status_code for r in (pending, viewer, full)] == [409, 409, 409]
     assert pending.json()["detail"] == ONLY_ADMINS_OWN
-    assert full.json()["detail"] == "They already own as many companies as one person may: 3."
+    assert full.json()["detail"] == "They already own as many companies as one person may: 10."
     assert made == [] and audited == []
 
 

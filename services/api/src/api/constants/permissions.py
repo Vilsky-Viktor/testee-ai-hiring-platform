@@ -37,8 +37,25 @@ IMPLIED = {
     Permission.CANDIDATES_DELETE: Permission.CANDIDATES_READ,
     Permission.NOTES_ADD: Permission.NOTES_READ,
 }
-# What a new key starts with: reading interviews and candidates, nothing that changes or costs.
-DEFAULT_PERMISSIONS = [Permission.INTERVIEWS_READ, Permission.CANDIDATES_READ]
+# What a new key starts with: reading, nothing that changes or costs.
+DEFAULT_PERMISSIONS = [
+    Permission.INTERVIEWS_READ,
+    Permission.CANDIDATES_READ,
+    Permission.NOTES_READ,
+    Permission.CREDITS_READ,
+]
+# The usual sets of permissions, offered first when a key is made; anything else is custom.
+# Writing leaves out deleting candidates, and AI agents, which are ticked on purpose.
+PERMISSION_PRESETS = {
+    "read": DEFAULT_PERMISSIONS,
+    "write": [
+        *DEFAULT_PERMISSIONS,
+        Permission.INTERVIEWS_CREATE,
+        Permission.CANDIDATES_INVITE,
+        Permission.CANDIDATES_CHANGE,
+        Permission.NOTES_ADD,
+    ],
+}
 
 # The answer to a route the key may not call: its code, and its message with the permission.
 MISSING_PERMISSION = "missing_permission"

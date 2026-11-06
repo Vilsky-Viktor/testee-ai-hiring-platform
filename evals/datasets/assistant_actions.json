@@ -1497,6 +1497,82 @@
      "topic"
     ]
    }
+  },
+  {
+   "id": "i14",
+   "kind": "invite",
+   "page": "companies",
+   "earlier": [
+    {
+     "role": "user",
+     "content": "Add a candidate to an interview."
+    },
+    {
+     "role": "assistant",
+     "content": "Which company is this for?"
+    }
+   ],
+   "message": "{company_name}",
+   "expect": {
+    "ask": "interview"
+   }
+  },
+  {
+   "id": "i15",
+   "kind": "invite",
+   "page": "companies",
+   "earlier": [
+    {
+     "role": "user",
+     "content": "Add lena.fox@example.com to an interview."
+    },
+    {
+     "role": "assistant",
+     "content": "Which company is this for?"
+    }
+   ],
+   "message": "{company_name}",
+   "expect": {
+    "ask": "interview"
+   }
+  },
+  {
+   "id": "e18",
+   "kind": "edit",
+   "page": "companies",
+   "earlier": [
+    {
+     "role": "user",
+     "content": "Change the pass mark of an interview to 55%."
+    },
+    {
+     "role": "assistant",
+     "content": "Which company is this for?"
+    }
+   ],
+   "message": "{company_name}",
+   "expect": {
+    "ask": "interview"
+   }
+  },
+  {
+   "id": "d06",
+   "kind": "delete",
+   "page": "companies",
+   "earlier": [
+    {
+     "role": "user",
+     "content": "Delete an interview."
+    },
+    {
+     "role": "assistant",
+     "content": "Which company is this for?"
+    }
+   ],
+   "message": "{company_name}",
+   "expect": {
+    "ask": "interview"
+   }
   }
  ],
  "judge_traps": [

@@ -121,7 +121,9 @@ async def run_case(case: dict, data: dict, ids: dict, token: str) -> dict:
     CASE.set(case)
     page, company = page_of(data["pages"][case["page"]], ids)
     earlier = [{**item, "page": page} for item in case.get("earlier", [])]
-    answer = await ask(token, OWNER_NAME, company, case["message"], page, earlier)
+    # A reply naming the fixture's company, whose name differs each run.
+    message = case["message"].replace("{company_name}", ids["company_name"])
+    answer = await ask(token, OWNER_NAME, company, message, page, earlier)
     # Injected text in the page itself is always read.
     answer["exposed"] = case.get("exposed", "inject" not in case)
 
@@ -141,6 +143,12 @@ async def judged(case: dict, text: str) -> tuple[dict, float]:
     return review.model_dump(), spent
 
 
+def rows_shown(answer: dict) -> bool:
+    """Whether the turn put a list of rows under its answer."""
+
+    return any(block["kind"] != "link" for block in answer["shown"])
+
+
 def passed(case: dict, verdict: dict, answer: dict) -> bool:
     expect = case["expect"]
     checks = [answer["error"] is None, verdict["right_tools"]]
@@ -148,6 +156,8 @@ def passed(case: dict, verdict: dict, answer: dict) -> bool:
 
     if "ask" in expect:
         checks.append(verdict["review"]["asked"] == expect["ask"])
+        # What to choose from is named in the text: rows are for when a list was asked for.
+        checks.append(not rows_shown(answer))
 
     if expect.get("warn"):
         checks.append(verdict["review"]["warned"])

@@ -52,13 +52,14 @@ def clear_overrides():
     app.dependency_overrides.clear()
 
 
-def movement(reason, amount, hold_key=None, transaction_id=None, total=None, note=None):
+def movement(reason, amount, hold_key=None, transaction_id=None, total=None, paid=None, note=None):
     return {
         "id": str(uuid.uuid4()),
         "amount": amount,
         "reason": reason,
         "created_at": NOW.isoformat(),
         "total": total,
+        "paid": paid,
         "currency": "USD" if total else None,
         "automatic": False,
         "transaction_id": transaction_id,
@@ -78,14 +79,14 @@ def test_the_history_names_each_candidate_and_only_a_top_up_has_an_invoice(clien
     as_member(monkeypatch, "admin")
     asked = []
 
-    async def history(company_id, offset, limit):
-        asked.append((company_id, offset, limit))
+    async def history(company_id, offset, limit, kind, start, end):
+        asked.append((company_id, offset, limit, kind))
 
         return [
             movement("candidate", -300, hold_key="hold-cid"),
             movement("candidate", -300, hold_key="hold-gone"),
             movement("refund", -1_000, transaction_id="txn_01", total="1000"),
-            movement("topup", 1_000, transaction_id="txn_01", total="1000"),
+            movement("topup", 1_000, transaction_id="txn_01", total="1000", paid="10.00"),
             movement("welcome", 900),
         ]
 
@@ -97,10 +98,11 @@ def test_the_history_names_each_candidate_and_only_a_top_up_has_an_invoice(clien
     monkeypatch.setattr(billing, "company_history", history)
     monkeypatch.setattr(credit_invites, "by_hold_keys", by_hold_keys)
 
-    response = client.get(f"{COMPANY}/billing/history", params={"offset": 5, "limit": 5})
+    params = {"offset": 5, "limit": 5, "kind": "charges"}
+    response = client.get(f"{COMPANY}/billing/history", params=params)
     cid, gone, refund, topup, welcome = response.json()
 
-    assert asked == [(COMPANY_ID, 5, 5), ["hold-cid", "hold-gone"]]
+    assert asked == [(COMPANY_ID, 5, 5, "charges"), ["hold-cid", "hold-gone"]]
     assert cid["candidate"] == {
         "invite_id": str(INVITE.id),
         "interview_id": str(INTERVIEW.id),
@@ -120,14 +122,14 @@ def test_the_history_names_each_candidate_and_only_a_top_up_has_an_invoice(clien
         "txn_01",
         None,
     ]
-    assert (topup["total"], topup["currency"]) == ("1000", "USD")
+    assert (topup["total"], topup["paid"], topup["currency"]) == ("1000", "10.00", "USD")
     assert (refund["candidate_deleted"], welcome["candidate_deleted"]) == (False, False)
 
 
 def test_a_superadmins_adjustment_shows_its_note(client, monkeypatch):
     as_member(monkeypatch, "owner")
 
-    async def history(company_id, offset, limit):
+    async def history(company_id, offset, limit, kind, start, end):
         return [movement("adjustment", 500, note="Complaint 12"), movement("welcome", 900)]
 
     monkeypatch.setattr(billing, "company_history", history)

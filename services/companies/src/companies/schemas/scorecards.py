@@ -98,6 +98,8 @@ class ScorecardOut(BaseModel):
     # When the candidate confirmed they'd answer on their own, without AI tools or other people;
     # None before they start (and for candidates from before it was asked).
     pledged_at: datetime | None = None
+    # How long they took, in whole minutes, once they finished.
+    time_taken_minutes: int | None = None
     sessions: list[ScorecardSection]
     # The integrity signals the answers and times show over every section (empty when none
     # fired) and questions to ask in a live interview; both empty until the candidate finishes.

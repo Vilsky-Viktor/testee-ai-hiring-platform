@@ -23,6 +23,18 @@ class TemplateSummary(BaseModel):
     indexable: bool = False
 
 
+class CopyableTopic(BaseModel):
+    title: str
+    # Its company questions: what a candidate's share of them comes from.
+    size: int
+
+
+class CopyableTemplate(TemplateSummary):
+    """A template a company can copy, with the topics a copy keeps."""
+
+    topics: list[CopyableTopic]
+
+
 class TemplateCopyIn(BaseModel):
     company_id: str
 

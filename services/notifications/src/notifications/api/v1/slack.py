@@ -6,7 +6,7 @@ from testee_common.auth.auth import CurrentUser
 
 from notifications.integrations import companies
 from notifications.schemas.slack import SlackKindsIn, SlackOut, SlackStartOut
-from notifications.services import slack
+from notifications.services import slack, slack_test
 
 router = APIRouter(prefix="/slack", tags=["slack"])
 
@@ -38,6 +38,13 @@ async def callback(state: str, code: str | None = None, error: str | None = None
 async def set_kinds(company_id: UUID, body: SlackKindsIn, user: CurrentUser) -> None:
     await companies.require(str(company_id), user.uid, editor=True)
     await slack.set_kinds(str(company_id), body.kinds, user.uid)
+
+
+@router.post("/test", status_code=status.HTTP_204_NO_CONTENT)
+async def send_test(company_id: UUID, user: CurrentUser) -> None:
+    """Posts a test message to the channel, to see it works."""
+    await companies.require(str(company_id), user.uid, editor=True)
+    await slack_test.send_test(str(company_id))
 
 
 @router.delete("", status_code=status.HTTP_204_NO_CONTENT)

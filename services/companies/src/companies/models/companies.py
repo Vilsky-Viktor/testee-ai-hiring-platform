@@ -130,6 +130,8 @@ class Member(Base):
     company_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("companies.id", ondelete="CASCADE"))
     user_id: Mapped[str | None] = mapped_column(String(128), index=True)
     invited_email: Mapped[str] = mapped_column(String(320))
+    # When they joined: None while invited, and for those who joined before this was kept.
+    joined_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     token: Mapped[str | None] = mapped_column(String(64), unique=True)
     role: Mapped[str] = mapped_column(String(32), default=Role.ADMIN)
     created_at: Mapped[datetime] = mapped_column(

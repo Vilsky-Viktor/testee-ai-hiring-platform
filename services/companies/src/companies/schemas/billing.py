@@ -14,6 +14,12 @@ class CreditCandidateOut(BaseModel):
     interview_title: str | None
 
 
+class SpentOut(BaseModel):
+    """The credits the company's candidates took this calendar month."""
+
+    credits: int
+
+
 class HistoryEntryOut(BaseModel):
     """One movement of the company's credits: `amount` is signed, `reason` says what it was.
     `total` (minor units, tax included) and `currency` are the money a top-up cost or a refund
@@ -26,6 +32,8 @@ class HistoryEntryOut(BaseModel):
     reason: str
     created_at: datetime
     total: str | None
+    # `total` in the currency's whole units, as a plain number.
+    paid: str | None
     currency: str | None
     automatic: bool
     invoice_id: str | None
