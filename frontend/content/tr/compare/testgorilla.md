@@ -2,18 +2,18 @@
 title: "testee ve TestGorilla: hangisi nerede uygun, ikisini birlikte kullanmak"
 seoTitle: "testee ve TestGorilla Karşılaştırması: Farklar ve Kullanım"
 description: "testee ve TestGorilla'nın test oluşturma, ölçtüğü beceriler ve fiyatlandırma açısından farkları, hangisinin nerede daha uygun olduğu ve birlikte kullanımı."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # testee ve TestGorilla: hangisi nerede uygun, ikisini birlikte kullanmak
 
 testee ile TestGorilla'yı karşılaştırmak doğal, ancak ikisi aslında rakip değil. TestGorilla; bilişsel yetenek, kişilik, dil ve programlama testleri dahil geniş bir hazır test kütüphanesi sunar. testee ise tek bir iş yapar: iş tanımınızdan süreli, çoktan seçmeli bir bilgi mülakatı hazırlar. Pek çok işe alım süreci ikisinden birden yararlanabilir; örneğin testee'yi pozisyona özel hızlı bir bilgi elemesi, TestGorilla'yı ise kısa listedeki adaylar için bilişsel ya da kişilik testleri olarak kullanmak.
 
-Bu sayfa ikisinin nasıl farklılaştığını, hangisinin nerede daha uygun olduğunu ve nasıl birleştirileceğini anlatır. TestGorilla bilgileri, Ekim 2026 itibarıyla şirketin kendi sayfalarından alınmıştır ve değişebilir; karar vermeden önce bağlantıları kontrol edin.
+Bu sayfa ikisinin nasıl farklılaştığını, hangisinin nerede daha uygun olduğunu ve nasıl birleştirileceğini anlatır. TestGorilla bilgileri, Kasım 2026 itibarıyla şirketin kendi sayfalarından alınmıştır ve değişebilir; karar vermeden önce bağlantıları kontrol edin.
 
 ## Kısaca
 
-- **TestGorilla uygundur:** bilişsel yetenek, kişilik, dil ya da uygulamalı kodlama testlerine, video sorularına veya web kamerası fotoğraflarına ihtiyacınız varsa.
+- **TestGorilla uygundur:** bilişsel yetenek, kişilik, dil ya da uygulamalı kodlama testlerine, video sorularına, yapay zekâ mülakatlarına veya web kamerası fotoğraflarına ihtiyacınız varsa.
 - **testee uygundur:** teknik pozisyonlar için kod okuma soruları da dahil, tam olarak sizin iş tanımınızdan yazılmış bir bilgi testi istiyorsanız ve bir plan yerine aday başına ödemeyi tercih ediyorsanız.
 - **İkisi birlikte uygundur:** her başvuru sahibi için pozisyona özel bir bilgi elemesi, bunu geçenler için ise daha kapsamlı testler istiyorsanız.
 
@@ -21,32 +21,32 @@ Bu sayfa ikisinin nasıl farklılaştığını, hangisinin nerede daha uygun old
 
 | | testee | TestGorilla |
 | --- | --- | --- |
-| Test nasıl oluşturulur | İş tanımınızdan yazılır; sorular yazılmadan önce konuları siz gözden geçirirsiniz. Pozisyona göre hazır şablonlar da mevcuttur | Hazır testlerden oluşan bir kütüphaneden derlenir; ücretli planlarda özel sorular ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
+| Test nasıl oluşturulur | İş tanımınızdan yazılır; sorular yazılmadan önce konuları siz gözden geçirirsiniz. Pozisyona göre hazır şablonlar da mevcuttur | Hazır testlerden oluşan bir kütüphaneden derlenir, her planda özel sorular ve iş tanımınızdan değerlendirme hazırlayan bir yapay zekâ ilan oluşturucu bulunur; üst planında kendi testlerinizi sıfırdan oluşturabilirsiniz ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
 | Test türleri | Süreli, çoktan seçmeli beceri ve bilgi mülakatları; teknik konularda kod okuma soruları | Bilişsel yetenek, dil, kişilik ve kültür, programlama, pozisyona özel beceriler, durumsal muhakeme, yazılım becerileri, klavye hızı ([test kütüphanesi](https://www.testgorilla.com/test-library/)) |
-| Video soruları | Hayır | Evet, ücretli planlarda |
-| Yapay zekâ mülakatları | Sohbet tabanlı yapay zekâ yok; yapay zekâ konu önerir ve soruları yazar; cevap anahtarlarından bir örneklem kontrol edilir | Planlarına bakın ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
+| Video soruları | Hayır | Evet: ücretsiz planında sınırlı, Core'da kütüphanesinden, Plus'ta özel ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
+| Yapay zekâ mülakatları | Yapay zekâyla açık sohbet yok. Sesli modda yapay zekâ mülakatçısı Mira soruları sesli okur, adaylar da sesle veya dokunarak cevap verir. Yapay zekâ konu önerir ve soruları yazar, ikinci bir yapay zekâ cevap anahtarlarından bir örneklemi kontrol eder | Ücretsiz planında sınırlı; Plus'ta 100+ mülakatlık kütüphanenin tamamı ve özel yapay zekâ mülakatları ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
 | Testte kod | Kod okuma soruları (kodun ne yaptığı veya ne çıktı verdiği); kod yazma veya çalıştırma yok | Kütüphanede programlama testleri; özel kodlama görevleri için planlarına bakın ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
-| Aday başına sorular | Her adaya kendi sırasıyla, kendine ait rastgele bir soru seti | Burada karşılaştırılmadı |
-| Güvenilirlik özellikleri | Her soruda süre sınırı (sunucu tarafından uygulanır), çok hızlı yanıtlar, sayfadan ayrılma, kopyalama girişimleri ve olağan dışı yanıt örüntüleri için işaretler | Üst planında web kamerası fotoğrafları, kopyala/yapıştır engeli ve tam ekran modu |
+| Aday başına sorular | Her adaya kendi sırasıyla, kendine ait rastgele bir soru seti, en fazla 60 soru | Test başına geniş bir soru havuzu listeler ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
+| Güvenilirlik özellikleri | Her soruda süre sınırı (sunucu tarafından uygulanır), çok hızlı yanıtlar, sayfadan ayrılma, kopyalama girişimleri ve olağan dışı yanıt örüntüleri için işaretler | Her planda web kamerası fotoğrafları, kopyala/yapıştır engeli ve tam ekran modu; Plus'ta kimlik doğrulama ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
 | Entegrasyonlar | Workable, Greenhouse, Teamtailor, Recruitee ve Breezy HR; Slack; imzalı webhook'larla herkese açık bir API ([geliştirici belgeleri](/api-docs)). Hepsi ek ücret olmadan | Üst planında ATS/API entegrasyonları |
 | Raporlar | Yanıtlar ve sürelerle değerlendirme kartları; tek aday veya tüm adaylar için PDF | Burada karşılaştırılmadı |
 | Diller | Arayüz, mülakatlar ve e-postalar için 23 dil | Burada karşılaştırılmadı; kütüphanede dil yeterlilik testleri bulunur |
-| Fiyatlandırma modeli | Yanıt veren aday başına, ön ödemeli kredilerden; abonelik yok ([fiyatlar](/pricing)) | Ücretsiz bir plan ve yıllık faturalandırılan ücretli planlar ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
+| Fiyatlandırma modeli | Yanıt veren aday başına, ön ödemeli kredilerden; abonelik yok ([fiyatlar](/pricing)) | Ücretsiz bir plan ve fiyatları yıllık faturalandırmaya göre verilen ücretli planlar ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
 | Barındırma | AB (bazı alt işleyenler ABD'de; bkz. [gizlilik politikası](/privacy)) | Burada karşılaştırılmadı |
 
-*TestGorilla özellikleri Ekim 2026 itibarıyla, şirketin [fiyat sayfası](https://www.testgorilla.com/pricing/) ve [test kütüphanesinden](https://www.testgorilla.com/test-library/) alınmıştır.*
+*TestGorilla özellikleri Kasım 2026 itibarıyla, şirketin [fiyat sayfası](https://www.testgorilla.com/pricing/) ve [test kütüphanesinden](https://www.testgorilla.com/test-library/) alınmıştır.*
 
 ## Testler nasıl oluşturulur
 
-**TestGorilla** kendi kütüphanesinden başlar. Pozisyona uygun testleri seçer (örneğin pozisyona özel bir beceri testi, bir bilişsel test ve bir kişilik testi) ve bunları bir değerlendirmede birleştirirsiniz. Kütüphanesi pozisyona özel beceriler, programlama becerileri, yazılım becerileri, dil, bilişsel yetenek, durumsal muhakeme, kişilik ve kültür ile klavye hızı gibi kategorilere ayrılmıştır ([test kütüphanesi](https://www.testgorilla.com/test-library/)).
+**TestGorilla** kendi kütüphanesinden başlar. Pozisyona uygun testleri seçer (örneğin pozisyona özel bir beceri testi, bir bilişsel test ve bir kişilik testi) ve bunları bir değerlendirmede birleştirirsiniz. Kütüphanesi pozisyona özel beceriler, programlama becerileri, yazılım becerileri, dil, bilişsel yetenek, durumsal muhakeme, kişilik ve kültür ile klavye hızı gibi kategorilere ayrılmıştır ([test kütüphanesi](https://www.testgorilla.com/test-library/)). Yapay zekâ ilan oluşturucusu iş tanımınızdan bir değerlendirme hazırlayabilir, üst planında ise kendi testlerinizi sıfırdan oluşturabilirsiniz ([fiyat sayfası](https://www.testgorilla.com/pricing/)).
 
 **testee** iş tanımınızdan başlar. Bir adayın bilmesi gerekenleri çıkarır ve alt konularıyla birlikte konular önerir. Bunları tutabilir, işaretini kaldırabilir, yeniden adlandırabilir veya düzenleyebilir ya da değişiklikleri düz metinle anlatabilirsiniz. Sorular ancak bundan sonra yazılır: her konu için çoktan seçmeli sorulardan oluşan bir soru havuzu; çoğunda bir doğru ve üç akla yatkın yanlış yanıt bulunur, yaklaşık 10 sorudan 1'i ise 2 ya da 3 doğru yanıtı olan "doğru olanların hepsini seçin" sorusudur. Her soruyu görebilir ve istediğinizi yeniden oluşturabilirsiniz. Teknik konularda birçok soru kısa bir kod örneği, sorgu veya komut gösterir ve bunun ne çıktı verdiğini, ne yaptığını, neden hata verdiğini ya da hangi değişikliğin sorunu düzelttiğini sorar.
 
-Pratikteki fark şu: kütüphane testi sabittir ve defalarca kullanılmıştır, ancak sizin pozisyonunuz için yazılmamıştır. testee mülakatı ise niş kısımları dahil sizin pozisyonunuz için yazılır, ama her seferinde yenidir. Yapay zekânın yazdığı sorular hata içerebilir; bu nedenle testee her konudaki cevap anahtarlarından bir örneklemi yayından önce, diğerlerini bir soru bildirildiğinde kontrol eder ve adaylar yanıt verdikçe soruları iyileştirir, siz de herhangi bir soruyu işaretleyebilirsiniz.
+Pratikteki fark şu: kütüphane testi sabittir ve defalarca kullanılmıştır, ancak sizin pozisyonunuz için yazılmamıştır. testee mülakatı ise niş kısımları dahil sizin pozisyonunuz için yazılır, ama bazı sorularını henüz kimse yanıtlamamış olabilir. Yapay zekânın yazdığı sorular hata içerebilir; bu nedenle ikinci bir yapay zekâ her konudaki cevap anahtarlarından bir örneklemi yayından önce, diğerlerini bir soru bildirildiğinde kontrol eder ve adaylar yanıt verdikçe soruları iyileştirir, siz de herhangi bir soruyu işaretleyebilirsiniz.
 
 ## Fiyatlandırma nasıl işler
 
-**TestGorilla**, aylık kullanım hakkı olan ücretsiz bir plan ve yıllık faturalandırılan ücretli planlar sunar; üst planlarda daha fazla özellik vardır. Güncel planlar ve fiyatlar için [fiyat sayfasına](https://www.testgorilla.com/pricing/) bakın.
+**TestGorilla**, ayda 10 kredili ücretsiz bir plan ve fiyatları yıllık faturalandırmaya göre verilen ücretli planlar sunar; üst planlarda daha fazla özellik vardır. Krediler aday bir değerlendirmeye başladığında harcanır ve içindeki her test veya yapay zekâ mülakatı kendi kredisini kullanır. Güncel planlar ve fiyatlar için [fiyat sayfasına](https://www.testgorilla.com/pricing/) bakın.
 
 **testee** aday başına ücret alır:
 
@@ -58,9 +58,9 @@ Hangi modelin daha ucuz olduğu, bir yılda kaç aday test ettiğinize ve hangi 
 
 ## Aday deneyimi
 
-**testee:** adaylar başlamadan önce ne bekleyeceklerini görür: soruların yapay zekâ tarafından yazıldığını, sonuçları şirketinizdeki kişilerin inceleyip karar verdiğini ve ek süre ya da sonuçlarının yeniden incelenmesini talep edebileceklerini. Her sorunun kendi geri sayımı vardır. Adaylar puanlarını veya hangi yanıtların doğru olduğunu görmez. Kamera kullanılmaz. Mülakat sayfalarında testee'nin üst ve alt bilgi alanları olmadan yalnızca şirketiniz, eklediyseniz logonuz ve renklerinizle birlikte görünür.
+**testee:** adaylar başlamadan önce ne bekleyeceklerini görür: soruların yapay zekâ tarafından yazıldığını, sonuçları şirketinizdeki kişilerin inceleyip karar verdiğini ve ek süre ya da sonuçlarının yeniden incelenmesini talep edebileceklerini. Her sorunun kendi geri sayımı vardır. Sesli modda yapay zekâ mülakatçısı Mira her soruyu sesli okur, adaylar da sesle veya dokunarak cevap verir. Adaylar puanlarını veya hangi yanıtların doğru olduğunu görmez. Kamera kullanılmaz. Mülakat sayfalarında testee'nin üst ve alt bilgi alanları olmadan yalnızca şirketiniz, eklediyseniz logonuz ve renklerinizle birlikte görünür.
 
-**TestGorilla:** üst planında gözetim; web kamerası fotoğraflarını, kopyala/yapıştır engelini ve tam ekran modunu içerir ([fiyat sayfası](https://www.testgorilla.com/pricing/)). Bu size daha fazla izleme imkânı verir. Kamera kullanıp kullanmamak, denetim ile adayların mahremiyeti arasında bir tercihtir; ayrıca kamera görüntüleri korunması gereken ek kişisel verilerdir.
+**TestGorilla:** her planda gözetim; web kamerası fotoğraflarını, kopyala/yapıştır engelini ve tam ekran modunu içerir ([fiyat sayfası](https://www.testgorilla.com/pricing/)). Bu size daha fazla izleme imkânı verir. Kamera kullanıp kullanmamak, denetim ile adayların mahremiyeti arasında bir tercihtir; ayrıca kamera görüntüleri korunması gereken ek kişisel verilerdir.
 
 ## TestGorilla'nın daha uygun olduğu durumlar
 
@@ -68,8 +68,8 @@ Neyi test etmeniz gerektiğinden yola çıkın. TestGorilla şu durumlarda daha 
 
 - **Psikometrik testler istiyorsanız.** Bilişsel yetenek, kişilik ve kültür testleri testee'nin sunduğu şeyler değildir.
 - **Uygulamalı kodlama veya iş simülasyonlarına ihtiyacınız varsa.** testee kod okuma soruları sorar, ancak adaylar kod yazmaz veya çalıştırmaz.
-- **Video yanıtlar veya yapay zekâ yönetimli mülakatlar istiyorsanız.** testee'de ikisi de yoktur.
-- **Sabit bir planın daha ucuza geldiği büyük ve düzenli hacimlerde işe alım yapıyorsanız.**
+- **Video yanıtlar veya yapay zekânın yönettiği sohbetler istiyorsanız.** testee'de ikisi de yoktur: sesli modu çoktan seçmeli soruları sesli okur.
+- **Bir planın daha ucuza gelebildiği büyük ve düzenli hacimlerde işe alım yapıyorsanız.**
 - **Her pozisyon için yazılan testler yerine defalarca kullanılmış hazır testleri tercih ediyorsanız.**
 
 ## testee'nin daha uygun olduğu durumlar
@@ -78,8 +78,8 @@ Neyi test etmeniz gerektiğinden yola çıkın. TestGorilla şu durumlarda daha 
 - **Ara sıra işe alım yapıyorsanız.** Aday başına ödeme, birkaç işe alım için yıllık taahhütten kurtarır.
 - **Herhangi bir soru yazılmadan önce neyin test edildiğini gözden geçirmek istiyorsanız.**
 - **Her adayın kendine ait rastgele bir soru seti almasını istiyorsanız,** böylece yanıtların paylaşılması zorlaşır.
-- **Kamerayla izlemeyi tercih etmiyorsanız.** testee video, ses veya yüz analizi kullanmaz.
-- **Birçok dilde işe alım yapıyorsanız.** Mülakatlar, arayüz ve e-postalar 23 dilde çalışır.
+- **Kamerayla izlemeyi tercih etmiyorsanız.** testee video veya yüz analizi kullanmaz; sesli modda konuşma yalnızca cevabı okumak için metne dönüştürülür.
+- **Birçok dilde işe alım yapıyorsanız.** Mülakatlar, sesli mod, arayüz ve e-postalar 23 dilde çalışır.
 
 ## İkisini birlikte kullanmak
 

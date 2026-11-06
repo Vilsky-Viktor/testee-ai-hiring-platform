@@ -2,7 +2,7 @@
 title: "Einstellungstests ohne Abo"
 seoTitle: "Einstellungstests ohne Abo: Bezahlung pro Kandidat"
 description: "Teste Bewerber ohne Monatsabo oder Jahresvertrag. Wie sich die Abrechnung pro Kandidat von Abos unterscheidet und was du vor dem Kauf prüfen solltest."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Einstellungstests ohne Abo
@@ -28,14 +28,14 @@ Diese Seite erklärt die Alternativen zum Abo, wie sie sich im Vergleich zu Abo-
 
 ## Wie verbreitete Tools abrechnen
 
-| Tool | Preismodell (Stand Oktober 2026) | Bindung |
+| Tool | Preismodell (Stand November 2026) | Bindung |
 | --- | --- | --- |
 | **testee** | Vorausbezahlte Credits, abgerechnet pro Kandidat, der antwortet ([Preise](/pricing)) | Keine; Credits verfallen nicht |
-| **TestGorilla** | Gratis-Tarif oder jährlich abgerechnete Bezahltarife ([Preisseite](https://www.testgorilla.com/pricing/)) | Jährlich bei Bezahltarifen |
+| **TestGorilla** | Gratis-Tarif oder Bezahltarife, Preise bei jährlicher Abrechnung ([Preisseite](https://www.testgorilla.com/pricing/)) | Jährlich bei den angegebenen Preisen; die Seite zeigt auch eine monatliche Option |
 | **CodeSignal** | Tarife mit Credits ([Preisseite](https://codesignal.com/pricing/)) | Monatlich oder jährlich |
 | **Bryq** | Tarife mit unbegrenzten Einladungen ([Preisseite](https://www.bryq.com/pricing)) | Monatlich oder jährlich |
 | **Alooba** | Tarife mit monatlichen Credits ([Preisseite](https://www.alooba.com/pricing/)) | Monatlich oder jährlich; Credits verfallen am Ende jedes Abrechnungszeitraums; Enterprise mit mindestens 1 Jahr Laufzeit |
-| **Codility** | Jahrestarife mit Einladungs-Credits ([Preisseite](https://www.codility.com/pricing/)) | Jährlich |
+| **Codility** | Monats- oder Jahrestarife mit Einladungs-Credits ([Preisseite](https://www.codility.com/pricing/)) | Monatlich oder jährlich |
 
 Einige dieser Tools bieten monatliche Abrechnung an; das ist kein langer Vertrag, aber trotzdem eine wiederkehrende Gebühr. Wenn du nur ab und zu einstellst, denk daran, zwischen den Einstellungsrunden zu kündigen.
 
@@ -51,12 +51,13 @@ testee hat kein Abo und keinen Vertrag. Du kaufst Credits, wenn du sie brauchst,
 - **Interviews zu generieren ist kostenlos,** ebenso, dein Interview vorab als Kandidat auszuprobieren.
 - **Keine Gebühren pro Nutzer.** Füge deinem Unternehmen kostenlos Admins und Betrachter hinzu.
 - **Willkommens-Credits:** Die ersten 3 Kandidaten deines ersten Unternehmens sind kostenlos.
+- **Erstattungen:** Credits, die du in den letzten 14 Tagen gekauft und noch nicht ausgegeben hast, können erstattet werden. Gratis-Credits nicht.
 
-Die Preise sind hier in US-Dollar angegeben, in Kanada, Australien, Israel, Polen, der Schweiz, Japan, Südkorea, Taiwan, Hongkong, Thailand, Singapur, Indien, im übrigen Europa und im Vereinigten Königreich in der Landeswährung (siehe [Preise](/pricing)). Zahlungen laufen über Paddle, das sich um Mehrwertsteuer und Sales Tax kümmert und den Endbetrag beim Bezahlen anzeigt; testee speichert keine Kartendaten. Du kannst eine automatische Aufladung aktivieren, die dein Guthaben auffüllt, wenn es zur Neige geht, das ist aber optional.
+Die Preise sind hier in US-Dollar angegeben, in Kanada, Australien, Israel, Polen, der Schweiz, Japan, Südkorea, Taiwan, Hongkong, Thailand, Singapur, Indien und im Vereinigten Königreich in der Landeswährung und in der übrigen EU, in Island, Liechtenstein und Norwegen in Euro (siehe [Preise](/pricing)). Zahlungen laufen über Paddle, das sich um Mehrwertsteuer und Sales Tax kümmert und den Endbetrag beim Bezahlen anzeigt; testee speichert keine Kartendaten. Du kannst eine automatische Aufladung aktivieren, die dein Guthaben auffüllt, wenn es zur Neige geht, das ist aber optional.
 
 ## Was du für jeden Kandidaten bekommst
 
-- Ein zeitlich begrenztes Multiple-Choice-Interview zu Fachkenntnissen, geschrieben aus deiner Stellenbeschreibung oder aus einer fertigen Vorlage für die Stelle.
+- Ein zeitlich begrenztes Multiple-Choice-Interview zu Fachkenntnissen, geschrieben aus deiner Stellenbeschreibung oder aus einer fertigen Vorlage für die Stelle, im Klick- oder Sprachmodus.
 - Themen, die du prüfst und bearbeitest, bevor eine einzige Frage geschrieben wird.
 - Einen eigenen zufälligen Fragensatz für jeden Kandidaten, mit einem Countdown bei jeder Frage. Für technische Stellen können Fragen kurze Codebeispiele zeigen und fragen, was sie tun oder ausgeben.
 - Eine Auswertung mit jeder Antwort und ihrer Dauer sowie Hinweisen auf zu schnelle Antworten, das Verlassen der Seite und Kopierversuche.

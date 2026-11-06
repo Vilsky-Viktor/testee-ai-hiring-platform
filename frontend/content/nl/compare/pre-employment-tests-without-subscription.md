@@ -2,7 +2,7 @@
 title: "Selectietests zonder abonnement"
 seoTitle: "Pre-employment tests zonder abonnement"
 description: "Kandidaten screenen zonder maandplan of jaarcontract. Hoe betalen per kandidaat zich verhoudt tot abonnementen, en wat je checkt voordat je koopt."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Selectietests zonder abonnement
@@ -28,14 +28,14 @@ Deze pagina legt de alternatieven voor een abonnement uit, hoe ze zich verhouden
 
 ## Hoe gangbare tools geprijsd zijn
 
-| Tool | Prijsmodel (per oktober 2026) | Verplichting |
+| Tool | Prijsmodel (per november 2026) | Verplichting |
 | --- | --- | --- |
 | **testee** | Vooraf gekochte credits, gerekend per kandidaat die antwoordt ([prijzen](/pricing)) | Geen; credits verlopen niet |
-| **TestGorilla** | Gratis plan, of betaalde plannen die jaarlijks worden gefactureerd ([prijspagina](https://www.testgorilla.com/pricing/)) | Jaarlijks voor betaalde plannen |
+| **TestGorilla** | Gratis plan, of betaalde plannen met prijzen bij jaarlijkse facturering ([prijspagina](https://www.testgorilla.com/pricing/)) | Jaarlijks bij de vermelde prijzen; de pagina toont ook een maandelijkse optie |
 | **CodeSignal** | Plannen met credits ([prijspagina](https://codesignal.com/pricing/)) | Maandelijks of jaarlijks |
 | **Bryq** | Plannen met onbeperkt uitnodigen ([prijspagina](https://www.bryq.com/pricing)) | Maandelijks of jaarlijks |
 | **Alooba** | Plannen met maandelijkse credits ([prijspagina](https://www.alooba.com/pricing/)) | Maandelijks of jaarlijks; credits verlopen aan het eind van elke factuurperiode; Enterprise heeft een minimum van 1 jaar |
-| **Codility** | Jaarplannen met uitnodigingscredits ([prijspagina](https://www.codility.com/pricing/)) | Jaarlijks |
+| **Codility** | Maand- of jaarplannen met uitnodigingscredits ([prijspagina](https://www.codility.com/pricing/)) | Maandelijks of jaarlijks |
 
 Sommige van deze tools bieden maandelijkse facturering, wat geen lang contract is maar wel een terugkerend bedrag. Werf je maar af en toe, vergeet dan niet tussen wervingsrondes op te zeggen.
 
@@ -51,12 +51,13 @@ testee heeft geen abonnement en geen contract. Je koopt credits wanneer je ze no
 - **Interviews genereren is gratis,** en je interview als kandidaat proberen ook.
 - **Geen kosten per gebruiker.** Voeg zonder kosten beheerders en kijkers toe aan je bedrijf.
 - **Welkomstcredits:** de eerste 3 kandidaten van je eerste bedrijf zijn gratis.
+- **Terugbetalingen:** credits die je de afgelopen 14 dagen hebt gekocht en nog niet hebt besteed, kunnen worden terugbetaald. Gratis credits niet.
 
-Prijzen zijn hier in Amerikaanse dollars, en in de lokale valuta in Canada, Australië, Israël, Polen, Zwitserland, Japan, Zuid-Korea, Taiwan, Hongkong, Thailand, Singapore, India, de rest van Europa en het Verenigd Koninkrijk (zie [prijzen](/pricing)). Betalingen lopen via Paddle, dat btw en sales tax regelt en het eindbedrag bij het afrekenen toont; testee slaat geen kaartgegevens op. Je kunt automatisch opwaarderen aanzetten, zodat je saldo wordt aangevuld als het bijna op is, maar dat is optioneel.
+Prijzen zijn hier in Amerikaanse dollars, en in de lokale valuta in Canada, Australië, Israël, Polen, Zwitserland, Japan, Zuid-Korea, Taiwan, Hongkong, Thailand, Singapore, India en het Verenigd Koninkrijk, en in euro's in de rest van de EU, IJsland, Liechtenstein en Noorwegen (zie [prijzen](/pricing)). Betalingen lopen via Paddle, dat btw en sales tax regelt en het eindbedrag bij het afrekenen toont; testee slaat geen kaartgegevens op. Je kunt automatisch opwaarderen aanzetten, zodat je saldo wordt aangevuld als het bijna op is, maar dat is optioneel.
 
 ## Wat je per kandidaat krijgt
 
-- Een interview over vaardigheden met tijdslimiet en meerkeuzevragen, geschreven op basis van je functieomschrijving, of van een kant-en-klaar sjabloon voor de functie.
+- Een interview over vaardigheden met tijdslimiet en meerkeuzevragen, geschreven op basis van je functieomschrijving, of van een kant-en-klaar sjabloon voor de functie, in klik- of spraakmodus.
 - Onderwerpen die je bekijkt en bewerkt voordat er een vraag wordt geschreven.
 - Een eigen willekeurige set vragen per kandidaat, met een aftelklok bij elke vraag. Voor technische functies kunnen vragen korte codevoorbeelden tonen en vragen wat die doen of uitvoeren.
 - Een scorekaart met elk antwoord en de tijd die het kostte, plus signalen bij te snelle antwoorden, het verlaten van de pagina en kopieerpogingen.

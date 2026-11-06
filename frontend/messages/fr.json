@@ -1760,7 +1760,7 @@
         "name": "Outils de test",
         "checks": "Des tests tout faits, issus d'une bibliothèque",
         "time": "Des tests à choisir ou à rédiger pour chaque poste",
-        "cost": "Un abonnement mensuel, que vous recrutiez ou non"
+        "cost": "Le prix d'une offre, que vous recrutiez ou non"
       },
       "testee": {
         "name": "testee",
@@ -2158,7 +2158,7 @@
   "compare": {
     "title": "Comparer testee",
     "metaTitle": "Comparatif des outils de tests de pré-embauche",
-    "intro": "Des comparaisons sourcées avec d'autres outils de tests de pré-embauche : comment les tests sont créés, ce qu'ils coûtent et quand chacun convient le mieux."
+    "intro": "Des comparaisons sourcées avec d'autres outils de tests de pré-embauche : comment les tests sont créés, comment ils sont tarifés et quand chacun convient le mieux."
   },
   "guides": {
     "title": "Guides pour recruter",
@@ -3558,7 +3558,7 @@
       },
       "questions": {
         "title": "Les questions sont générées et vérifiées",
-        "text": "L'IA rédige un ensemble de questions pour chaque thème, une seconde IA vérifie chaque corrigé à l'aveugle, et chaque candidat reçoit sa propre série aléatoire.",
+        "text": "L'IA rédige un ensemble de questions pour chaque thème, une seconde IA vérifie à l'aveugle un échantillon de corrigés, et chaque candidat reçoit sa propre série aléatoire.",
         "points": {
           "unique": "Des questions propres à chaque candidat",
           "checked": "Corrigés vérifiés par une seconde IA",

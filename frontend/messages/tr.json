@@ -1760,7 +1760,7 @@
         "name": "Test araçları",
         "checks": "Bir kütüphaneden hazır testler",
         "time": "Her pozisyon için seçilecek ya da yazılacak testler",
-        "cost": "İşe alım olsun olmasın aylık ücret"
+        "cost": "İşe alım olsun olmasın plan ücreti"
       },
       "testee": {
         "name": "testee",
@@ -2162,7 +2162,7 @@
   "compare": {
     "title": "testee'yi karşılaştırın",
     "metaTitle": "İşe alım öncesi test araçlarının karşılaştırması",
-    "intro": "Diğer işe alım öncesi test araçlarıyla kaynaklı karşılaştırmalar: testler nasıl hazırlanır, ne kadar tutar ve hangisi ne zaman daha uygundur."
+    "intro": "Diğer işe alım öncesi test araçlarıyla kaynaklı karşılaştırmalar: testler nasıl hazırlanır, nasıl fiyatlandırılır ve hangisi ne zaman daha uygundur."
   },
   "guides": {
     "title": "İşe alım rehberleri",
@@ -3562,7 +3562,7 @@
       },
       "questions": {
         "title": "Sorular üretilir ve kontrol edilir",
-        "text": "Yapay zekâ her konu için bir soru havuzu yazar, ikinci bir yapay zekâ her cevap anahtarını körlemesine kontrol eder ve her aday kendi rastgele soru setini alır.",
+        "text": "Yapay zekâ her konu için bir soru havuzu yazar, ikinci bir yapay zekâ cevap anahtarlarından bir örneklemi körlemesine kontrol eder ve her aday kendi rastgele soru setini alır.",
         "points": {
           "unique": "Her adaya özgün sorular",
           "checked": "İkinci bir yapay zekânın kontrol ettiği cevap anahtarları",

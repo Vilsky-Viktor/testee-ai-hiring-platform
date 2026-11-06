@@ -2,7 +2,7 @@
 title: "Cara membandingkan biaya tes seleksi karyawan"
 seoTitle: "Tes Seleksi Karyawan Termurah? Cara Membandingkan Biayanya"
 description: "Paket gratis, langganan, bayar per kandidat, dan penawaran khusus: cara kerja tiap model harga dan cara memperkirakan biaya tes seleksi karyawanmu."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Cara membandingkan biaya tes seleksi karyawan
@@ -20,7 +20,7 @@ Halaman ini tidak mencantumkan harga vendor lain, karena harga itu sering beruba
 | **Bayar per kandidat** | Kamu hanya membayar untuk kandidat yang mengikuti tes, biasanya dari kredit prabayar | Kamu merekrut sesekali, atau volumenya naik turun | [testee](/pricing) |
 | **Penawaran khusus** | Harga yang disepakati dengan tim sales, sering untuk satu tahun | Kamu merekrut dalam skala besar atau butuh psikometri yang tervalidasi | Beberapa vendor, sering kali spesialis psikometri |
 
-*Model harga sesuai yang tercantum di halaman tiap vendor pada Oktober 2026.*
+*Model harga sesuai yang tercantum di halaman tiap vendor pada November 2026.*
 
 ## Cara memperkirakan biayamu
 
@@ -35,7 +35,7 @@ Kamu butuh tiga angka: berapa banyak kandidat yang kamu tes dalam setahun, harga
 
 ### Harga testee untuk perkiraanmu
 
-testee mengenakan biaya per kandidat yang menjawab setidaknya satu soal. Harga per kandidat tergantung besar isi ulangmu: $5 untuk isi ulang terkecil, $4 mulai dari isi ulang $200, $3 mulai dari isi ulang $600, dan $2 mulai dari isi ulang $1.000. 3 kandidat pertama dari perusahaan pertamamu gratis. Harga di sini dalam dolar AS, dan dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, India, bagian Eropa lainnya, dan Inggris Raya; Paddle, yang memproses pembayaran, menangani PPN (VAT) dan pajak penjualan saat checkout. Lihat [harga](/pricing) untuk pilihan isi ulang terbaru.
+testee mengenakan biaya per kandidat yang menjawab setidaknya satu soal. Harga per kandidat tergantung besar isi ulangmu: $5 untuk isi ulang terkecil, $4 mulai dari isi ulang $200, $3 mulai dari isi ulang $600, dan $2 mulai dari isi ulang $1.000. 3 kandidat pertama dari perusahaan pertamamu gratis. Harga di sini dalam dolar AS, dan dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, India, dan Inggris Raya, serta dalam euro di bagian UE lainnya, Islandia, Liechtenstein, dan Norwegia; Paddle, yang memproses pembayaran, menangani PPN (VAT) dan pajak penjualan saat checkout. Lihat [harga](/pricing) untuk pilihan isi ulang terbaru.
 
 ## Biaya di luar harga yang tercantum
 
@@ -44,7 +44,7 @@ Saat membandingkan, periksa juga hal-hal ini:
 - **Komitmen tahunan.** Paket yang "ditagih tahunan" berarti membayar 12 bulan di muka, meskipun kamu hanya merekrut di dua bulan di antaranya.
 - **Kursi pengguna.** Beberapa paket membatasi berapa orang di timmu yang bisa memakainya. testee tidak memungut biaya per kursi: pemilik, admin, dan viewer gratis.
 - **Kandidat yang tidak pernah mulai.** testee hanya menagih kandidat yang menjawab setidaknya satu soal; kredit dari undangan yang tidak terpakai kembali.
-- **Kredit yang kedaluwarsa.** Kredit testee tidak kedaluwarsa. Periksa apakah kredit vendor lain bisa dibawa ke periode berikutnya.
+- **Kredit yang kedaluwarsa.** Kredit testee tidak kedaluwarsa, dan kredit yang kamu beli dalam 14 hari terakhir dan belum dipakai bisa dikembalikan dananya. Periksa apakah kredit vendor lain bisa dibawa ke periode berikutnya.
 - **Pajak.** Periksa apakah harga yang tercantum sudah termasuk PPN atau pajak penjualan.
 - **Fitur di paket yang lebih tinggi.** Integrasi ATS, proctoring, dan coding kustom sering ada di paket yang lebih mahal. Periksa paket mana yang sebenarnya kamu butuhkan. testee terintegrasi dengan Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR, dan Slack, serta menyertakan API-nya, tanpa biaya tambahan.
 - **Lebih dari satu alat.** Kalau kamu butuh tes pengetahuan dan tes psikometri atau coding, jumlahkan keduanya.
@@ -55,14 +55,14 @@ Harga murah hanya berguna kalau tesnya mengukur apa yang dibutuhkan pekerjaanmu.
 
 - **Kamu butuh psikometri.** Tes kognitif dan kepribadian yang tervalidasi berasal dari vendor spesialis dan platform yang lebih luas.
 - **Kamu butuh coding langsung.** Platform developer memungkinkan kandidat menulis dan menjalankan kode. testee memberi soal membaca kode (apa yang dilakukan atau dihasilkan kode), tetapi kandidat tidak menulis atau menjalankan kode.
-- **Kamu butuh wawancara video atau wawancara yang dipandu AI.** testee tidak punya keduanya.
+- **Kamu butuh jawaban video atau percakapan yang dipandu AI.** testee tidak punya keduanya: mode suaranya membacakan soal pilihan ganda, dan kandidat menjawab dengan suara atau ketukan.
 - **Kamu merekrut secara rutin dalam volume tinggi.** Paket tetap bisa lebih murah daripada harga per kandidat.
 
 Lihat [alternatif TestGorilla](/compare/testgorilla-alternatives) dan [alternatif HackerRank](/compare/hackerrank-alternatives) untuk mengetahui kapan tiap alat cocok dan bagaimana menggabungkannya.
 
 ## Apa yang didapat setiap kandidat testee
 
-- Wawancara pilihan ganda berbatas waktu yang ditulis dari deskripsi pekerjaanmu, dengan topik yang kamu tinjau lebih dulu.
+- Wawancara pilihan ganda berbatas waktu yang ditulis dari deskripsi pekerjaanmu, dengan topik yang kamu tinjau lebih dulu, dalam mode klik atau mode suara.
 - Set soal acak untuk setiap kandidat, dengan hitung mundur di setiap soal. Untuk posisi teknis, soal bisa berisi contoh kode singkat.
 - Scorecard dengan jawaban dan waktunya, serta tanda untuk jawaban yang terlalu cepat, meninggalkan halaman, dan percobaan menyalin.
 - Laporan PDF untuk satu kandidat atau seluruh daftar.

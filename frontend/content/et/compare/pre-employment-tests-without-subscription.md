@@ -2,7 +2,7 @@
 title: "Värbamistestid ilma tellimuseta"
 seoTitle: "Värbamistestid ilma tellimuseta: maksa kandidaadi eest"
 description: "Testi kandidaate ilma kuupaketi ja aastalepinguta. Kuidas kandidaadipõhine tasu erineb tellimusest ja mida enne ostmist kontrollida."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Värbamistestid ilma tellimuseta
@@ -28,14 +28,14 @@ See leht selgitab tellimuse alternatiive, kuidas need tellimuspakettidega võrre
 
 ## Kuidas levinud tööriistade hinnad on üles ehitatud
 
-| Tööriist | Hinnamudel (2026. aasta oktoobri seisuga) | Kohustus |
+| Tööriist | Hinnamudel (2026. aasta novembri seisuga) | Kohustus |
 | --- | --- | --- |
 | **testee** | Ettemakstud krediidid, tasu iga vastanud kandidaadi eest ([hinnad](/pricing)) | Puudub; krediidid ei aegu |
-| **TestGorilla** | Tasuta pakett või aastase arveldusega tasulised paketid ([hinnaleht](https://www.testgorilla.com/pricing/)) | Tasulistel pakettidel aasta |
+| **TestGorilla** | Tasuta pakett või tasulised paketid, hinnad aastase arveldusega ([hinnaleht](https://www.testgorilla.com/pricing/)) | Näidatud hindade puhul aasta; lehel on ka kuine valik |
 | **CodeSignal** | Krediitidega paketid ([hinnaleht](https://codesignal.com/pricing/)) | Kuu või aasta |
 | **Bryq** | Piiramatute kutsetega paketid ([hinnaleht](https://www.bryq.com/pricing)) | Kuu või aasta |
 | **Alooba** | Kuiste krediitidega paketid ([hinnaleht](https://www.alooba.com/pricing/)) | Kuu või aasta; krediidid aeguvad iga arveldusperioodi lõpus; Enterprise'il on minimaalselt 1 aasta |
-| **Codility** | Aastapaketid kutsekrediitidega ([hinnaleht](https://www.codility.com/pricing/)) | Aasta |
+| **Codility** | Kuu- või aastapaketid kutsekrediitidega ([hinnaleht](https://www.codility.com/pricing/)) | Kuu või aasta |
 
 Mõni neist tööriistadest pakub kuist arveldust: see pole pikk leping, kuid siiski korduv tasu. Kui värbad vaid aeg-ajalt, ära unusta värbamisvoorude vahel tellimust tühistada.
 
@@ -51,12 +51,13 @@ testeel pole tellimust ega lepingut. Ostad krediite siis, kui neid vajad, ja kas
 - **Intervjuude loomine on tasuta,** samuti oma intervjuu eelvaade kandidaadina.
 - **Kasutajakohtade tasu pole.** Lisa ettevõttesse administraatoreid ja vaatajaid tasuta.
 - **Tervituskrediidid:** sinu esimese ettevõtte esimesed 3 kandidaati on tasuta.
+- **Tagasimaksed:** viimase 14 päeva jooksul ostetud ja kulutamata krediitide eest saab raha tagasi. Tasuta krediitide eest mitte.
 
-Hinnad on siin USA dollarites, Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris, Indias, ülejäänud Euroopas ja Ühendkuningriigis aga kohalikus valuutas (vaata [hindu](/pricing)). Maksed käivad läbi Paddle'i, mis arvestab käibemaksu ja müügimaksu ning näitab lõppsummat maksmise ajal; testee ei hoia kaardiandmeid. Võid sisse lülitada automaatse juurdelaadimise, mis täiendab saldot, kui see väheneb, kuid see pole kohustuslik.
+Hinnad on siin USA dollarites, Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris, Indias ja Ühendkuningriigis aga kohalikus valuutas ning ülejäänud EL-is, Islandil, Liechtensteinis ja Norras eurodes (vaata [hindu](/pricing)). Maksed käivad läbi Paddle'i, mis arvestab käibemaksu ja müügimaksu ning näitab lõppsummat maksmise ajal; testee ei hoia kaardiandmeid. Võid sisse lülitada automaatse juurdelaadimise, mis täiendab saldot, kui see väheneb, kuid see pole kohustuslik.
 
 ## Mida iga kandidaadi eest saad
 
-- Ajapiiranguga valikvastustega oskuste intervjuu, mis on kirjutatud sinu töökuulutuse või rolli valmis malli põhjal.
+- Ajapiiranguga valikvastustega oskuste intervjuu, mis on kirjutatud sinu töökuulutuse või rolli valmis malli põhjal, klõpsu- või häälerežiimis.
 - Teemad, mille vaatad üle ja muudad enne, kui ühtegi küsimust kirjutatakse.
 - Igale kandidaadile oma juhuslik küsimuste komplekt ja iga küsimuse juures taimer. Tehniliste rollide puhul võivad küsimused näidata lühikesi koodinäiteid ja küsida, mida need teevad või väljastavad.
 - Hindamisleht iga vastuse ja selle ajakuluga ning märked liiga kiirete vastuste, lehelt lahkumise ja kopeerimiskatsete kohta.

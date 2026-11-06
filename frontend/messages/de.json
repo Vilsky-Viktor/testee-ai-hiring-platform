@@ -1760,7 +1760,7 @@
         "name": "Testtools",
         "checks": "Fertige Tests aus einer Bibliothek",
         "time": "Tests für jede Rolle auswählen oder schreiben",
-        "cost": "Eine Monatsgebühr, ob du einstellst oder nicht"
+        "cost": "Eine Tarifgebühr, ob du einstellst oder nicht"
       },
       "testee": {
         "name": "testee",
@@ -2158,7 +2158,7 @@
   "compare": {
     "title": "testee im Vergleich",
     "metaTitle": "Tools für Einstellungstests im Vergleich",
-    "intro": "Vergleiche mit Quellen zu anderen Tools für Einstellungstests: wie die Tests entstehen, was sie kosten und wann welches besser passt."
+    "intro": "Vergleiche mit Quellen zu anderen Tools für Einstellungstests: wie die Tests entstehen, wie ihre Preise aufgebaut sind und wann welches besser passt."
   },
   "guides": {
     "title": "Ratgeber für die Personalauswahl",
@@ -3558,7 +3558,7 @@
       },
       "questions": {
         "title": "Fragen werden erstellt und geprüft",
-        "text": "Die KI schreibt für jedes Thema einen Pool an Fragen, eine zweite KI prüft jeden Lösungsschlüssel blind, und jeder Kandidat bekommt seine eigene zufällige Auswahl.",
+        "text": "Die KI schreibt für jedes Thema einen Pool an Fragen, eine zweite KI prüft blind eine Stichprobe der Lösungsschlüssel, und jeder Kandidat bekommt seine eigene zufällige Auswahl.",
         "points": {
           "unique": "Eigene Fragen für jeden Kandidaten",
           "checked": "Lösungsschlüssel von einer zweiten KI geprüft",

@@ -2,7 +2,7 @@
 title: "Test pre-assunzione senza abbonamento"
 seoTitle: "Test pre-assunzione senza abbonamento: paghi per candidato"
 description: "Valuta i candidati senza piano mensile né contratto annuale. Pagamento per candidato o abbonamento a confronto, e cosa controllare prima di comprare."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Test pre-assunzione senza abbonamento
@@ -28,14 +28,14 @@ Questa pagina spiega le alternative a un abbonamento, come si confrontano con i 
 
 ## Come sono prezzati gli strumenti più diffusi
 
-| Strumento | Modello di prezzo (a ottobre 2026) | Vincolo |
+| Strumento | Modello di prezzo (a novembre 2026) | Vincolo |
 | --- | --- | --- |
 | **testee** | Crediti prepagati, addebitati per candidato che risponde ([prezzi](/pricing)) | Nessuno; i crediti non scadono |
-| **TestGorilla** | Piano gratuito, oppure piani a pagamento fatturati annualmente ([pagina prezzi](https://www.testgorilla.com/pricing/)) | Annuale per i piani a pagamento |
+| **TestGorilla** | Piano gratuito, oppure piani a pagamento con prezzi a fatturazione annuale ([pagina prezzi](https://www.testgorilla.com/pricing/)) | Annuale ai prezzi indicati; la sua pagina mostra anche un'opzione mensile |
 | **CodeSignal** | Piani con crediti ([pagina prezzi](https://codesignal.com/pricing/)) | Mensile o annuale |
 | **Bryq** | Piani con inviti illimitati ([pagina prezzi](https://www.bryq.com/pricing)) | Mensile o annuale |
 | **Alooba** | Piani con crediti mensili ([pagina prezzi](https://www.alooba.com/pricing/)) | Mensile o annuale; i crediti scadono alla fine di ogni periodo di fatturazione; Enterprise ha un minimo di 1 anno |
-| **Codility** | Piani annuali con crediti di invito ([pagina prezzi](https://www.codility.com/pricing/)) | Annuale |
+| **Codility** | Piani mensili o annuali con crediti di invito ([pagina prezzi](https://www.codility.com/pricing/)) | Mensile o annuale |
 
 Alcuni di questi strumenti offrono la fatturazione mensile, che non è un contratto lungo ma resta un canone ricorrente. Se assumi solo di tanto in tanto, ricordati di disdire tra una tornata di assunzioni e l'altra.
 
@@ -51,12 +51,13 @@ testee non ha abbonamenti né contratti. Compri crediti quando ti servono e li s
 - **Generare colloqui è gratis,** e lo è anche provare il tuo colloquio come candidato.
 - **Nessun costo per postazione.** Aggiungi amministratori e visualizzatori alla tua azienda senza costi.
 - **Crediti di benvenuto:** i primi 3 candidati della tua prima azienda sono gratis.
+- **Rimborsi:** i crediti acquistati negli ultimi 14 giorni e non ancora spesi possono essere rimborsati. I crediti gratuiti no.
 
-I prezzi sono qui in dollari statunitensi, e nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore, India, nel resto d'Europa e nel Regno Unito (vedi i [prezzi](/pricing)). I pagamenti passano da Paddle, che gestisce IVA e imposte sulle vendite e mostra l'importo finale al momento del pagamento; testee non conserva i dati delle carte. Puoi attivare una ricarica automatica che rabbocca il saldo quando si sta esaurendo, ma è facoltativa.
+I prezzi sono qui in dollari statunitensi, e nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore, India e nel Regno Unito, e in euro nel resto dell'UE, in Islanda, in Liechtenstein e in Norvegia (vedi i [prezzi](/pricing)). I pagamenti passano da Paddle, che gestisce IVA e imposte sulle vendite e mostra l'importo finale al momento del pagamento; testee non conserva i dati delle carte. Puoi attivare una ricarica automatica che rabbocca il saldo quando si sta esaurendo, ma è facoltativa.
 
 ## Cosa ottieni per ogni candidato
 
-- Un colloquio sulle competenze a scelta multipla e a tempo, scritto a partire dalla tua descrizione del ruolo o da un modello pronto per il ruolo.
+- Un colloquio sulle competenze a scelta multipla e a tempo, scritto a partire dalla tua descrizione del ruolo o da un modello pronto per il ruolo, in modalità clic o vocale.
 - Argomenti che rivedi e modifichi prima che venga scritta qualsiasi domanda.
 - Un set casuale di domande per ogni candidato, con un conto alla rovescia su ogni domanda. Per i ruoli tecnici, le domande possono mostrare brevi esempi di codice e chiedere cosa fanno o cosa stampano.
 - Una scheda di valutazione con ogni risposta e il relativo tempo, più segnalazioni per risposte troppo rapide, uscite dalla pagina e tentativi di copia.

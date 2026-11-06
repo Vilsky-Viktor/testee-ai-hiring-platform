@@ -2,18 +2,18 @@
 title: "testee i TestGorilla: do czego pasuje każde z nich i jak używać obu"
 seoTitle: "testee vs TestGorilla: porównanie i wspólne użycie"
 description: "Czym różnią się testee i TestGorilla: jak powstają testy, co sprawdzają i ile kosztują, gdzie każde narzędzie sprawdza się lepiej i jak używać ich razem."
-updated: "2026-10-29"
+updated: "2026-11-07"
 ---
 
 # testee i TestGorilla: do czego pasuje każde z nich i jak używać obu
 
 Porównywanie testee i TestGorilla jest naturalne, ale w praktyce te narzędzia nie są konkurentami. TestGorilla oferuje dużą bibliotekę gotowych testów, w tym testy poznawcze, osobowości, językowe i programistyczne. testee robi jedną rzecz: pisze na podstawie Twojego opisu stanowiska rozmowę sprawdzającą wiedzę, z pytaniami zamkniętymi i limitem czasu. W wielu procesach rekrutacyjnych można użyć obu, na przykład testee jako szybkiego sprawdzenia wiedzy dopasowanego do stanowiska, a TestGorilla do testów poznawczych lub osobowości dla krótkiej listy.
 
-Ta strona wyjaśnia, czym się różnią, gdzie każde z nich sprawdza się lepiej i jak je połączyć. Informacje o TestGorilla pochodzą z jej własnych stron według stanu na październik 2026 i mogą się zmienić; sprawdź linki, zanim podejmiesz decyzję.
+Ta strona wyjaśnia, czym się różnią, gdzie każde z nich sprawdza się lepiej i jak je połączyć. Informacje o TestGorilla pochodzą z jej własnych stron według stanu na listopad 2026 i mogą się zmienić; sprawdź linki, zanim podejmiesz decyzję.
 
 ## W skrócie
 
-- **TestGorilla pasuje**, gdy potrzebujesz testów zdolności poznawczych, osobowości, językowych lub praktycznego kodowania, pytań wideo albo zdjęć z kamery internetowej.
+- **TestGorilla pasuje**, gdy potrzebujesz testów zdolności poznawczych, osobowości, językowych lub praktycznego kodowania, pytań wideo, rozmów prowadzonych przez AI albo zdjęć z kamery internetowej.
 - **testee pasuje**, gdy chcesz testu wiedzy napisanego na podstawie dokładnie Twojego opisu stanowiska, w tym pytań o czytanie kodu na stanowiska techniczne, i wolisz płacić za kandydata niż za plan.
 - **Oba pasują**, gdy chcesz sprawdzić wiedzę każdego kandydata pod kątem konkretnego stanowiska, a szersze testy zostawić dla osób, które przejdą ten etap.
 
@@ -21,32 +21,32 @@ Ta strona wyjaśnia, czym się różnią, gdzie każde z nich sprawdza się lepi
 
 | | testee | TestGorilla |
 | --- | --- | --- |
-| Jak powstaje test | Napisany na podstawie Twojego opisu stanowiska; przeglądasz tematy, zanim powstaną pytania. Dostępne są też gotowe szablony dla stanowisk | Złożony z biblioteki gotowych testów; własne pytania w płatnych planach ([strona z cenami](https://www.testgorilla.com/pricing/)) |
+| Jak powstaje test | Napisany na podstawie Twojego opisu stanowiska; przeglądasz tematy, zanim powstaną pytania. Dostępne są też gotowe szablony dla stanowisk | Złożony z biblioteki gotowych testów, z własnymi pytaniami w każdym planie i kreatorem stanowisk opartym na AI, który układa ocenę na podstawie Twojego opisu stanowiska; własne testy od zera w wyższym planie ([strona z cenami](https://www.testgorilla.com/pricing/)) |
 | Rodzaje testów | Rozmowy sprawdzające umiejętności i wiedzę, z pytaniami zamkniętymi i limitem czasu, z pytaniami o czytanie kodu w tematach technicznych | Zdolności poznawcze, język, osobowość i kultura, programowanie, umiejętności dla konkretnych stanowisk, ocena sytuacyjna, obsługa oprogramowania, pisanie na klawiaturze ([biblioteka testów](https://www.testgorilla.com/test-library/)) |
-| Pytania wideo | Nie | Tak, w płatnych planach |
-| Rozmowy z AI | Bez konwersacyjnej AI; AI proponuje tematy i pisze pytania, a próbka kluczy odpowiedzi jest sprawdzana | Zobacz plany ([strona z cenami](https://www.testgorilla.com/pricing/)) |
+| Pytania wideo | Nie | Tak, w ograniczonym zakresie w planie bezpłatnym, z biblioteki w Core i własne w Plus ([strona z cenami](https://www.testgorilla.com/pricing/)) |
+| Rozmowy z AI | Bez swobodnej rozmowy z AI. W trybie głosowym Mira, rekruterka AI, czyta pytania na głos, a kandydaci odpowiadają głosem lub dotknięciem. AI proponuje tematy i pisze pytania, a druga AI sprawdza próbkę ich kluczy odpowiedzi | W ograniczonym zakresie w planie bezpłatnym; pełna biblioteka ponad 100 oraz własne rozmowy z AI w Plus ([strona z cenami](https://www.testgorilla.com/pricing/)) |
 | Kod w teście | Pytania o czytanie kodu (co kod robi lub wypisuje); bez pisania ani uruchamiania kodu | Testy programistyczne w bibliotece; własne zadania programistyczne: zobacz plany ([strona z cenami](https://www.testgorilla.com/pricing/)) |
-| Pytania na kandydata | Własny losowy zestaw każdego kandydata, we własnej kolejności | Nie porównujemy tutaj |
-| Funkcje rzetelności | Limit czasu przy każdym pytaniu (kontrolowany po stronie serwera), oznaczenia zbyt szybkich odpowiedzi, opuszczenia strony, prób kopiowania i nietypowych wzorców odpowiedzi | Zdjęcia z kamery internetowej, wyłączone kopiowanie/wklejanie i tryb pełnoekranowy w wyższym planie |
+| Pytania na kandydata | Własny losowy zestaw każdego kandydata, we własnej kolejności, do 60 pytań | Podaje dużą pulę pytań na test ([strona z cenami](https://www.testgorilla.com/pricing/)) |
+| Funkcje rzetelności | Limit czasu przy każdym pytaniu (kontrolowany po stronie serwera), oznaczenia zbyt szybkich odpowiedzi, opuszczenia strony, prób kopiowania i nietypowych wzorców odpowiedzi | Zdjęcia z kamery internetowej, wyłączone kopiowanie/wklejanie i tryb pełnoekranowy w każdym planie; weryfikacja tożsamości w Plus ([strona z cenami](https://www.testgorilla.com/pricing/)) |
 | Integracje | Workable, Greenhouse, Teamtailor, Recruitee i Breezy HR; Slack; publiczne API z podpisanymi webhookami ([dokumentacja dla deweloperów](/api-docs)). Wszystko bez dodatkowych opłat | Integracje z ATS/API w wyższym planie |
 | Raporty | Karty wyników z odpowiedziami i czasami; PDF dla jednego lub wszystkich kandydatów | Nie porównujemy tutaj |
 | Języki | 23 języki interfejsu, rozmów i e-maili | Nie porównujemy tutaj; biblioteka zawiera testy biegłości językowej |
-| Model cenowy | Za kandydata, który odpowiada, z przedpłaconych kredytów; bez subskrypcji ([cennik](/pricing)) | Plan bezpłatny i płatne plany rozliczane rocznie ([strona z cenami](https://www.testgorilla.com/pricing/)) |
+| Model cenowy | Za kandydata, który odpowiada, z przedpłaconych kredytów; bez subskrypcji ([cennik](/pricing)) | Plan bezpłatny i płatne plany, ceny przy rozliczeniu rocznym ([strona z cenami](https://www.testgorilla.com/pricing/)) |
 | Hosting | UE (niektórzy podprzetwarzający w USA; zobacz [politykę prywatności](/privacy)) | Nie porównujemy tutaj |
 
-*Funkcje TestGorilla według stanu na październik 2026, na podstawie jej [strony z cenami](https://www.testgorilla.com/pricing/) i [biblioteki testów](https://www.testgorilla.com/test-library/).*
+*Funkcje TestGorilla według stanu na listopad 2026, na podstawie jej [strony z cenami](https://www.testgorilla.com/pricing/) i [biblioteki testów](https://www.testgorilla.com/test-library/).*
 
 ## Jak powstają testy
 
-**TestGorilla** zaczyna od swojej biblioteki. Wybierasz testy pasujące do stanowiska (na przykład test umiejętności dla danego stanowiska, test poznawczy i test osobowości) i łączysz je w jedną ocenę. Biblioteka jest podzielona na kategorie, takie jak umiejętności dla konkretnych stanowisk, umiejętności programistyczne, obsługa oprogramowania, język, zdolności poznawcze, ocena sytuacyjna, osobowość i kultura oraz pisanie na klawiaturze ([biblioteka testów](https://www.testgorilla.com/test-library/)).
+**TestGorilla** zaczyna od swojej biblioteki. Wybierasz testy pasujące do stanowiska (na przykład test umiejętności dla danego stanowiska, test poznawczy i test osobowości) i łączysz je w jedną ocenę. Biblioteka jest podzielona na kategorie, takie jak umiejętności dla konkretnych stanowisk, umiejętności programistyczne, obsługa oprogramowania, język, zdolności poznawcze, ocena sytuacyjna, osobowość i kultura oraz pisanie na klawiaturze ([biblioteka testów](https://www.testgorilla.com/test-library/)). Jej kreator stanowisk oparty na AI może ułożyć ocenę na podstawie Twojego opisu stanowiska, a wyższy plan pozwala tworzyć własne testy od zera ([strona z cenami](https://www.testgorilla.com/pricing/)).
 
 **testee** zaczyna od Twojego opisu stanowiska. Wyodrębnia, co kandydat musi wiedzieć, i proponuje tematy z podtematami. Zostawiasz je, odznaczasz, zmieniasz ich nazwy lub je edytujesz albo opisujesz zmiany zwykłym tekstem. Dopiero wtedy powstają pytania: pula pytań testowych dla każdego tematu, w większości z jedną poprawną odpowiedzią i trzema wiarygodnymi błędnymi, a około 1 na 10 to pytania wielokrotnego wyboru („zaznacz wszystkie poprawne”) z 2 lub 3 poprawnymi odpowiedziami. Widzisz każde pytanie i możesz wygenerować ponownie dowolne z nich. W tematach technicznych wiele pytań pokazuje krótki fragment kodu, zapytanie lub polecenie i pyta, co wypisze, co robi, dlaczego nie działa lub która zmiana to naprawi.
 
-Różnica w praktyce: test z biblioteki jest stały i był używany wiele razy, ale nie jest napisany pod Twoje stanowisko. Rozmowa w testee jest napisana pod Twoje stanowisko, łącznie z jego niszowymi elementami, ale za każdym razem jest nowa. Pytania napisane przez AI mogą zawierać błędy, dlatego testee przed udostępnieniem sprawdza próbkę kluczy odpowiedzi z każdego tematu, a pozostałe, gdy pytanie zostanie oznaczone, ulepsza pytania w miarę, jak kandydaci odpowiadają, a Ty możesz oznaczyć dowolne pytanie.
+Różnica w praktyce: test z biblioteki jest stały i był używany wiele razy, ale nie jest napisany pod Twoje stanowisko. Rozmowa w testee jest napisana pod Twoje stanowisko, łącznie z jego niszowymi elementami, ale na niektóre jej pytania być może nikt jeszcze nie odpowiadał. Pytania napisane przez AI mogą zawierać błędy, dlatego druga AI przed udostępnieniem sprawdza próbkę kluczy odpowiedzi z każdego tematu, a pozostałe, gdy pytanie zostanie oznaczone, ulepsza pytania w miarę, jak kandydaci odpowiadają, a Ty możesz oznaczyć dowolne pytanie.
 
 ## Jak działają ceny
 
-**TestGorilla** oferuje plan bezpłatny z miesięcznym limitem oraz płatne plany rozliczane rocznie, z większą liczbą funkcji w wyższych planach. Aktualne plany i ceny znajdziesz na jej [stronie z cenami](https://www.testgorilla.com/pricing/).
+**TestGorilla** oferuje plan bezpłatny z 10 kredytami miesięcznie oraz płatne plany z cenami przy rozliczeniu rocznym, z większą liczbą funkcji w wyższych planach. Kredyty są zużywane, gdy kandydat rozpoczyna ocenę, a każdy test lub rozmowa z AI w jej ramach zużywa własne. Aktualne plany i ceny znajdziesz na jej [stronie z cenami](https://www.testgorilla.com/pricing/).
 
 **testee** pobiera opłatę za kandydata:
 
@@ -58,9 +58,9 @@ To, który model kosztuje mniej, zależy od tego, ilu kandydatów testujesz w ci
 
 ## Doświadczenie kandydata
 
-**testee:** kandydaci przed rozpoczęciem widzą, czego się spodziewać: że pytania pisze AI, że wyniki przeglądają i decyzje podejmują ludzie z Twojej firmy oraz że mogą poprosić o więcej czasu lub o ponowne sprawdzenie swojego wyniku. Każde pytanie ma własne odliczanie czasu. Kandydaci nie widzą swojego wyniku ani tego, które odpowiedzi były poprawne. Kamera nie jest używana. Strony rozmowy pokazują tylko Twoją firmę, z Twoim logo i kolorami, jeśli je dodasz, bez nagłówka i stopki testee.
+**testee:** kandydaci przed rozpoczęciem widzą, czego się spodziewać: że pytania pisze AI, że wyniki przeglądają i decyzje podejmują ludzie z Twojej firmy oraz że mogą poprosić o więcej czasu lub o ponowne sprawdzenie swojego wyniku. Każde pytanie ma własne odliczanie czasu. W trybie głosowym Mira, rekruterka AI, czyta każde pytanie na głos, a kandydaci odpowiadają głosem lub dotknięciem. Kandydaci nie widzą swojego wyniku ani tego, które odpowiedzi były poprawne. Kamera nie jest używana. Strony rozmowy pokazują tylko Twoją firmę, z Twoim logo i kolorami, jeśli je dodasz, bez nagłówka i stopki testee.
 
-**TestGorilla:** w wyższym planie nadzór (proctoring) obejmuje zdjęcia z kamery internetowej, wyłączone kopiowanie/wklejanie i tryb pełnoekranowy ([strona z cenami](https://www.testgorilla.com/pricing/)). Daje Ci to więcej monitorowania. Decyzja o użyciu kamery to kompromis między nadzorem a prywatnością kandydatów, a zdjęcia z kamery to kolejne dane osobowe, które trzeba chronić.
+**TestGorilla:** w każdym planie nadzór (proctoring) obejmuje zdjęcia z kamery internetowej, wyłączone kopiowanie/wklejanie i tryb pełnoekranowy ([strona z cenami](https://www.testgorilla.com/pricing/)). Daje Ci to więcej monitorowania. Decyzja o użyciu kamery to kompromis między nadzorem a prywatnością kandydatów, a zdjęcia z kamery to kolejne dane osobowe, które trzeba chronić.
 
 ## Kiedy lepiej sprawdzi się TestGorilla
 
@@ -68,8 +68,8 @@ Zacznij od tego, co musisz sprawdzić. TestGorilla sprawdzi się lepiej, gdy:
 
 - **Chcesz testów psychometrycznych.** Testów zdolności poznawczych, osobowości i kultury testee nie oferuje.
 - **Potrzebujesz praktycznego kodowania lub symulacji stanowiska.** testee zadaje pytania o czytanie kodu, ale kandydaci nie piszą ani nie uruchamiają kodu.
-- **Chcesz odpowiedzi wideo lub rozmów prowadzonych przez AI.** testee nie ma żadnej z tych funkcji.
-- **Rekrutujesz na dużą skalę i regularnie**, a stały plan wychodzi taniej.
+- **Chcesz odpowiedzi wideo lub swobodnych rozmów prowadzonych przez AI.** testee nie ma żadnej z tych funkcji: tryb głosowy czyta na głos pytania wyboru.
+- **Rekrutujesz na dużą skalę i regularnie**, a plan może wyjść taniej.
 - **Wolisz gotowe testy, które były używane wiele razy**, od testów pisanych dla każdego stanowiska.
 
 ## Kiedy lepiej sprawdzi się testee
@@ -78,8 +78,8 @@ Zacznij od tego, co musisz sprawdzić. TestGorilla sprawdzi się lepiej, gdy:
 - **Rekrutujesz okazjonalnie.** Płacąc za kandydata, unikasz rocznego zobowiązania dla kilku zatrudnień.
 - **Chcesz przejrzeć, co jest sprawdzane**, zanim powstanie jakiekolwiek pytanie.
 - **Chcesz, aby każdy kandydat dostał własny losowy zestaw pytań**, co utrudnia przekazywanie sobie odpowiedzi.
-- **Wolisz brak monitorowania kamerą.** testee nie stosuje analizy wideo, głosu ani twarzy.
-- **Rekrutujesz w wielu językach.** Rozmowy, interfejs i e-maile działają w 23 językach.
+- **Wolisz brak monitorowania kamerą.** testee nie stosuje analizy wideo ani twarzy, a w trybie głosowym mowa jest tylko zamieniana na tekst, aby odczytać odpowiedź.
+- **Rekrutujesz w wielu językach.** Rozmowy, tryb głosowy, interfejs i e-maile działają w 23 językach.
 
 ## Używanie obu
 

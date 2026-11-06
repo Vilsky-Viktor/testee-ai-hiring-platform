@@ -1760,7 +1760,7 @@
         "name": "Mga testing tool",
         "checks": "Mga handang test mula sa isang library",
         "time": "Mga test na pipiliin o isusulat para sa bawat role",
-        "cost": "Buwanang bayad, nagha-hire ka man o hindi"
+        "cost": "Bayad sa plan, nagha-hire ka man o hindi"
       },
       "testee": {
         "name": "testee",
@@ -2158,7 +2158,7 @@
   "compare": {
     "title": "Ikumpara ang testee",
     "metaTitle": "Paghahambing ng mga pre-employment testing tool",
-    "intro": "Mga paghahambing na may sources sa ibang pre-employment testing tool: paano ginagawa ang mga test, magkano ang mga ito at kailan mas bagay ang bawat isa."
+    "intro": "Mga paghahambing na may sources sa ibang pre-employment testing tool: paano ginagawa ang mga test, paano ang presyo ng mga ito at kailan mas bagay ang bawat isa."
   },
   "guides": {
     "title": "Mga gabay sa pag-hire",
@@ -3558,7 +3558,7 @@
       },
       "questions": {
         "title": "Ginagawa at sinusuri ang mga tanong",
-        "text": "Sumusulat ang AI ng pool ng mga tanong para sa bawat topic, sinusuri ng pangalawang AI ang bawat answer key nang hindi nakikita ang sagot ng una, at may sariling random na set ang bawat aplikante.",
+        "text": "Sumusulat ang AI ng pool ng mga tanong para sa bawat topic, sinusuri ng pangalawang AI ang sample ng mga answer key nang hindi nakikita ang sagot ng una, at may sariling random na set ang bawat aplikante.",
         "points": {
           "unique": "Natatanging mga tanong sa bawat aplikante",
           "checked": "Answer key na sinuri ng pangalawang AI",

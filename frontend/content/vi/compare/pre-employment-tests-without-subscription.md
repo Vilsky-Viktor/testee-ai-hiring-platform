@@ -2,7 +2,7 @@
 title: "Bài kiểm tra trước tuyển dụng không cần gói đăng ký"
 seoTitle: "Bài kiểm tra trước tuyển dụng không cần gói đăng ký"
 description: "Đánh giá ứng viên mà không cần gói tháng hay hợp đồng năm. So sánh trả tiền theo ứng viên với gói đăng ký, và những gì cần kiểm tra trước khi mua."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Bài kiểm tra trước tuyển dụng không cần gói đăng ký
@@ -28,14 +28,14 @@ Trang này giải thích các lựa chọn thay cho gói đăng ký, chúng so v
 
 ## Giá của các công cụ phổ biến
 
-| Công cụ | Mô hình giá (tính đến tháng 10/2026) | Cam kết |
+| Công cụ | Mô hình giá (tính đến tháng 11/2026) | Cam kết |
 | --- | --- | --- |
 | **testee** | Credit trả trước, tính phí theo mỗi ứng viên có trả lời ([bảng giá](/pricing)) | Không có; credit không hết hạn |
-| **TestGorilla** | Gói miễn phí, hoặc gói trả phí thanh toán theo năm ([trang bảng giá](https://www.testgorilla.com/pricing/)) | Theo năm với gói trả phí |
+| **TestGorilla** | Gói miễn phí, hoặc gói trả phí với giá tính theo thanh toán hằng năm ([trang bảng giá](https://www.testgorilla.com/pricing/)) | Theo năm ở mức giá niêm yết; trang của họ cũng có lựa chọn theo tháng |
 | **CodeSignal** | Gói kèm credit ([trang bảng giá](https://codesignal.com/pricing/)) | Theo tháng hoặc theo năm |
 | **Bryq** | Gói với số lời mời không giới hạn ([trang bảng giá](https://www.bryq.com/pricing)) | Theo tháng hoặc theo năm |
 | **Alooba** | Gói kèm credit hằng tháng ([trang bảng giá](https://www.alooba.com/pricing/)) | Theo tháng hoặc theo năm; credit hết hạn vào cuối mỗi kỳ thanh toán; gói Enterprise tối thiểu 1 năm |
-| **Codility** | Gói theo năm kèm credit lời mời ([trang bảng giá](https://www.codility.com/pricing/)) | Theo năm |
+| **Codility** | Gói theo tháng hoặc theo năm kèm credit lời mời ([trang bảng giá](https://www.codility.com/pricing/)) | Theo tháng hoặc theo năm |
 
 Một số công cụ trên có thanh toán theo tháng, không phải hợp đồng dài hạn nhưng vẫn là phí định kỳ. Nếu bạn chỉ thỉnh thoảng mới tuyển, hãy nhớ hủy giữa các đợt tuyển dụng.
 
@@ -51,12 +51,13 @@ testee không có gói đăng ký và không có hợp đồng. Bạn mua credit
 - **Tạo buổi phỏng vấn là miễn phí,** xem trước buổi phỏng vấn với tư cách ứng viên cũng vậy.
 - **Không tính phí theo người dùng.** Thêm quản trị viên và người xem vào công ty của bạn miễn phí.
 - **Credit chào mừng:** 3 ứng viên đầu tiên của công ty đầu tiên của bạn được miễn phí.
+- **Hoàn tiền:** credit bạn mua trong 14 ngày gần nhất và chưa dùng có thể được hoàn tiền. Credit miễn phí thì không.
 
-Giá ở đây tính bằng đô la Mỹ, và bằng đồng tiền địa phương ở Canada, Úc, Israel, Ba Lan, Thụy Sĩ, Nhật Bản, Hàn Quốc, Đài Loan, Hồng Kông, Thái Lan, Singapore, Ấn Độ, phần còn lại của châu Âu và Vương quốc Anh (xem [bảng giá](/pricing)). Thanh toán qua Paddle, đơn vị xử lý VAT và thuế bán hàng và hiển thị số tiền cuối cùng khi thanh toán; testee không lưu thông tin thẻ. Bạn có thể bật tính năng tự động nạp để nạp thêm credit khi sắp hết, nhưng đó là tùy chọn.
+Giá ở đây tính bằng đô la Mỹ, và bằng đồng tiền địa phương ở Canada, Úc, Israel, Ba Lan, Thụy Sĩ, Nhật Bản, Hàn Quốc, Đài Loan, Hồng Kông, Thái Lan, Singapore, Ấn Độ và Vương quốc Anh, và bằng euro ở phần còn lại của EU, Iceland, Liechtenstein và Na Uy (xem [bảng giá](/pricing)). Thanh toán qua Paddle, đơn vị xử lý VAT và thuế bán hàng và hiển thị số tiền cuối cùng khi thanh toán; testee không lưu thông tin thẻ. Bạn có thể bật tính năng tự động nạp để nạp thêm credit khi sắp hết, nhưng đó là tùy chọn.
 
 ## Bạn nhận được gì cho mỗi ứng viên
 
-- Một buổi phỏng vấn kỹ năng trắc nghiệm có tính giờ, được viết từ mô tả công việc của bạn hoặc từ một mẫu có sẵn cho vị trí.
+- Một buổi phỏng vấn kỹ năng trắc nghiệm có tính giờ, được viết từ mô tả công việc của bạn hoặc từ một mẫu có sẵn cho vị trí, ở chế độ nhấp hoặc chế độ giọng nói.
 - Các chủ đề bạn duyệt và chỉnh sửa trước khi bất kỳ câu hỏi nào được viết.
 - Bộ câu hỏi ngẫu nhiên riêng cho mỗi ứng viên, với đồng hồ đếm ngược cho mọi câu hỏi. Với vị trí kỹ thuật, câu hỏi có thể đưa ra các ví dụ code ngắn và hỏi chúng làm gì hoặc in ra gì.
 - Bảng điểm với mọi câu trả lời và thời gian, kèm cảnh báo về trả lời quá nhanh, rời khỏi trang và cố sao chép.

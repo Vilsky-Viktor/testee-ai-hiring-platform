@@ -2,7 +2,7 @@
 title: "Kuidas võrrelda värbamistestide hindu"
 seoTitle: "Odavaim värbamistest? Kuidas testide hindu võrrelda"
 description: "Tasuta paketid, tellimused, tasu kandidaadi kohta ja hinnapakkumised: kuidas iga hinnamudel toimib ja kuidas hinnata oma kandidaatide testimise kulu."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Kuidas võrrelda värbamistestide hindu
@@ -20,7 +20,7 @@ Sellel lehel ei ole teiste pakkujate hindu, sest need muutuvad sageli. Selgitame
 | **Tasu kandidaadi kohta** | Maksad ainult testi tegevate kandidaatide eest, tavaliselt ettemakstud krediitidest | Värbad aeg-ajalt või sinu maht kõigub | [testee](/pricing) |
 | **Individuaalne hinnapakkumine** | Müügiga kokku lepitud hind, sageli aastaks | Värbad suures mahus või vajad valideeritud psühhomeetrilisi teste | Mõned pakkujad, sageli psühhomeetria spetsialistid |
 
-*Hinnamudelid pakkujate lehtedel 2026. aasta oktoobri seisuga.*
+*Hinnamudelid pakkujate lehtedel 2026. aasta novembri seisuga.*
 
 ## Kuidas oma kulu hinnata
 
@@ -35,7 +35,7 @@ Vajad kolme arvu: mitu kandidaati aastas testid, hind kandidaadi kohta kandidaad
 
 ### testee hinnad sinu arvutuse jaoks
 
-testee võtab tasu iga kandidaadi eest, kes vastab vähemalt ühele küsimusele. Hind kandidaadi kohta sõltub juurdelaadimise suurusest: väikseima juurdelaadimise puhul 5 $, alates 200 $ juurdelaadimisest 4 $, alates 600 $ juurdelaadimisest 3 $ ja alates 1000 $ juurdelaadimisest 2 $. Sinu esimese ettevõtte esimesed 3 kandidaati on tasuta. Hinnad on siin USA dollarites, Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris, Indias, ülejäänud Euroopas ja Ühendkuningriigis aga kohalikus valuutas; makseid töötlev Paddle arvestab käibemaksu ja müügimaksu maksmise ajal. Kehtivad juurdelaadimised leiad [hinnalehelt](/pricing).
+testee võtab tasu iga kandidaadi eest, kes vastab vähemalt ühele küsimusele. Hind kandidaadi kohta sõltub juurdelaadimise suurusest: väikseima juurdelaadimise puhul 5 $, alates 200 $ juurdelaadimisest 4 $, alates 600 $ juurdelaadimisest 3 $ ja alates 1000 $ juurdelaadimisest 2 $. Sinu esimese ettevõtte esimesed 3 kandidaati on tasuta. Hinnad on siin USA dollarites, Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris, Indias ja Ühendkuningriigis aga kohalikus valuutas ning ülejäänud EL-is, Islandil, Liechtensteinis ja Norras eurodes; makseid töötlev Paddle arvestab käibemaksu ja müügimaksu maksmise ajal. Kehtivad juurdelaadimised leiad [hinnalehelt](/pricing).
 
 ## Kulud lisaks hinnasildile
 
@@ -44,7 +44,7 @@ Võrdlemisel kontrolli ka neid:
 - **Aastane kohustus.** „Aastase arveldusega“ pakett tähendab 12 kuu eest ettemaksmist, isegi kui värbad neist ainult kahel.
 - **Kasutajakohad.** Mõni pakett piirab, mitu sinu meeskonna liiget seda kasutada saab. testee ei võta kasutajakohtade eest tasu: omanikud, administraatorid ja vaatajad on tasuta.
 - **Kandidaadid, kes ei alusta.** testee võtab tasu ainult kandidaatide eest, kes vastavad vähemalt ühele küsimusele; kasutamata kutse krediidid tulevad tagasi.
-- **Aeguvad krediidid.** testee krediidid ei aegu. Kontrolli, kas teiste pakkujate krediidid kanduvad üle.
+- **Aeguvad krediidid.** testee krediidid ei aegu ning viimase 14 päeva jooksul ostetud ja kulutamata krediitide eest saab raha tagasi. Kontrolli, kas teiste pakkujate krediidid kanduvad üle.
 - **Maksud.** Kontrolli, kas avaldatud hind sisaldab käibemaksu või müügimaksu.
 - **Kallimate pakettide funktsioonid.** ATS-integratsioonid, järelevalve (proctoring) ja kohandatud programmeerimisülesanded on sageli kallimates pakettides. Kontrolli, millist paketti sul tegelikult vaja oleks. testee ühendub ilma lisatasuta Workable'i, Greenhouse'i, Teamtailori, Recruitee, Breezy HR-i ja Slackiga ning pakub ka oma API-t.
 - **Rohkem kui üks tööriist.** Kui vajad nii teadmiste testi kui ka psühhomeetrilist või programmeerimistesti, liida mõlemad kokku.
@@ -55,14 +55,14 @@ Madal hind aitab ainult siis, kui test mõõdab seda, mida sinu töö vajab. Mak
 
 - **Vajad psühhomeetriat.** Valideeritud kognitiivsete võimete ja isiksuse teste pakuvad spetsialiseerunud pakkujad ja laiemad platvormid.
 - **Vajad praktilist programmeerimist.** Arendajate platvormidel saavad kandidaadid koodi kirjutada ja käivitada. testee esitab koodi lugemise küsimusi (mida kood teeb või väljastab), kuid kandidaadid koodi ei kirjuta ega käivita.
-- **Vajad videointervjuusid või AI juhitud intervjuusid.** testees pole kumbagi.
+- **Vajad videovastuseid või AI juhitud vestlusi.** testees pole kumbagi: häälerežiim loeb valikvastustega küsimused ette ja kandidaadid vastavad hääle või puudutusega.
 - **Värbad ühtlaselt ja suures mahus.** Fikseeritud pakett võib tulla odavam kui hind kandidaadi kohta.
 
 Vaata lehti [TestGorilla alternatiivid](/compare/testgorilla-alternatives) ja [HackerRanki alternatiivid](/compare/hackerrank-alternatives), et näha, kuhu iga tööriist sobib ja kuidas neid kombineerida.
 
 ## Mida sisaldab iga testee kandidaat
 
-- Ajapiiranguga valikvastustega intervjuu, mis on kirjutatud sinu töökuulutuse põhjal ja mille teemad vaatad esmalt üle.
+- Ajapiiranguga valikvastustega intervjuu, mis on kirjutatud sinu töökuulutuse põhjal ja mille teemad vaatad esmalt üle, klõpsu- või häälerežiimis.
 - Igale kandidaadile oma juhuslik küsimuste komplekt ja iga küsimuse juures taimer. Tehniliste rollide puhul võivad küsimused sisaldada lühikesi koodinäiteid.
 - Hindamislehed vastuste ja ajakuluga ning märked liiga kiirete vastuste, lehelt lahkumise ja kopeerimiskatsete kohta.
 - PDF-aruanded ühe kandidaadi või kogu nimekirja kohta.

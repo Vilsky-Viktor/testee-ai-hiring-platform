@@ -2,7 +2,7 @@
 title: "Jak porównać koszty testów rekrutacyjnych"
 seoTitle: "Najtańsze testy rekrutacyjne? Jak porównać koszty"
 description: "Darmowe plany, subskrypcje, płatność za kandydata i wyceny indywidualne: jak działa każdy model i jak oszacować koszt testów rekrutacyjnych."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Jak porównać koszty testów rekrutacyjnych
@@ -20,7 +20,7 @@ Ta strona nie podaje cen innych dostawców, bo często się zmieniają. Wyjaśni
 | **Płatność za kandydata** | Płacisz tylko za kandydatów, którzy podejdą do testu, zwykle z przedpłaconych kredytów | Rekrutujesz okazjonalnie albo liczba kandydatów mocno się waha | [testee](/pricing) |
 | **Wycena indywidualna** | Cena ustalana z działem sprzedaży, często na rok | Rekrutujesz na dużą skalę albo potrzebujesz zwalidowanych testów psychometrycznych | Niektórzy dostawcy, często specjaliści od psychometrii |
 
-*Modele cenowe według stron poszczególnych dostawców w październiku 2026.*
+*Modele cenowe według stron poszczególnych dostawców w listopadzie 2026.*
 
 ## Jak oszacować swój koszt
 
@@ -35,7 +35,7 @@ Potrzebujesz trzech liczb: ilu kandydatów testujesz w roku, ceny za kandydata w
 
 ### Ceny testee do Twoich wyliczeń
 
-testee pobiera opłatę za każdego kandydata, który odpowie na co najmniej jedno pytanie. Cena za kandydata zależy od wielkości doładowania: $5 przy najmniejszym doładowaniu, $4 od doładowania za $200, $3 od doładowania za $600 i $2 od doładowania za $1000. Pierwszych 3 kandydatów Twojej pierwszej firmy jest za darmo. Ceny są tu w dolarach amerykańskich, a w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze, Indiach, pozostałej części Europy i Wielkiej Brytanii w walucie lokalnej; Paddle, który obsługuje płatności, nalicza VAT i podatek od sprzedaży przy kasie. Aktualne doładowania znajdziesz w [cenniku](/pricing).
+testee pobiera opłatę za każdego kandydata, który odpowie na co najmniej jedno pytanie. Cena za kandydata zależy od wielkości doładowania: $5 przy najmniejszym doładowaniu, $4 od doładowania za $200, $3 od doładowania za $600 i $2 od doładowania za $1000. Pierwszych 3 kandydatów Twojej pierwszej firmy jest za darmo. Ceny są tu w dolarach amerykańskich, a w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze, Indiach i Wielkiej Brytanii w walucie lokalnej, a w pozostałej części UE, Islandii, Liechtensteinie i Norwegii w euro; Paddle, który obsługuje płatności, nalicza VAT i podatek od sprzedaży przy kasie. Aktualne doładowania znajdziesz w [cenniku](/pricing).
 
 ## Koszty poza ceną z cennika
 
@@ -44,7 +44,7 @@ Porównując, sprawdź też:
 - **Zobowiązanie roczne.** Plan „rozliczany rocznie” oznacza zapłatę za 12 miesięcy z góry, nawet jeśli rekrutujesz tylko w dwóch z nich.
 - **Licencje użytkowników.** Niektóre plany ograniczają liczbę osób z zespołu, które mogą z nich korzystać. testee nie pobiera opłat za użytkowników: właściciele, administratorzy i obserwatorzy są za darmo.
 - **Kandydaci, którzy nie zaczną testu.** testee pobiera opłatę tylko za kandydatów, którzy odpowiedzą na co najmniej jedno pytanie; kredyty za niewykorzystane zaproszenie wracają.
-- **Wygasające kredyty.** Kredyty w testee nie wygasają. Sprawdź, czy u innych dostawców kredyty przechodzą na kolejny okres.
+- **Wygasające kredyty.** Kredyty w testee nie wygasają, a kredyty kupione w ciągu ostatnich 14 dni i jeszcze niewydane można zwrócić. Sprawdź, czy u innych dostawców kredyty przechodzą na kolejny okres.
 - **Podatki.** Sprawdź, czy podana cena zawiera VAT lub podatek od sprzedaży.
 - **Funkcje w droższych planach.** Integracje z ATS, nadzór nad testem (proctoring) i własne zadania programistyczne są często w droższych planach. Sprawdź, którego planu faktycznie potrzebujesz. testee integruje się z Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR i Slackiem oraz udostępnia własne API, bez dodatkowych opłat.
 - **Więcej niż jedno narzędzie.** Jeśli potrzebujesz testu wiedzy oraz testu psychometrycznego lub programistycznego, zsumuj oba koszty.
@@ -55,14 +55,14 @@ Niska cena pomaga tylko wtedy, gdy test mierzy to, czego wymaga stanowisko. Zap�
 
 - **Potrzebujesz psychometrii.** Zwalidowane testy zdolności poznawczych i osobowości oferują wyspecjalizowani dostawcy i szersze platformy.
 - **Potrzebujesz praktycznego programowania.** Platformy dla programistów pozwalają kandydatom pisać i uruchamiać kod. testee zadaje pytania o czytanie kodu (co kod robi lub wypisuje), ale kandydaci nie piszą ani nie uruchamiają kodu.
-- **Potrzebujesz rozmów wideo lub rozmów prowadzonych przez AI.** testee nie oferuje żadnej z tych opcji.
+- **Potrzebujesz odpowiedzi wideo lub swobodnych rozmów prowadzonych przez AI.** testee nie oferuje żadnej z tych opcji: tryb głosowy czyta na głos pytania wyboru, a kandydaci odpowiadają głosem lub dotknięciem.
 - **Rekrutujesz stale i na dużą skalę.** Plan ze stałą opłatą może kosztować mniej niż cena za kandydata.
 
 Zobacz [alternatywy dla TestGorilla](/compare/testgorilla-alternatives) i [alternatywy dla HackerRank](/compare/hackerrank-alternatives), aby sprawdzić, do czego pasuje każde narzędzie i jak je łączyć.
 
 ## Co obejmuje każdy kandydat w testee
 
-- Rozmowę na czas z pytaniami wyboru, przygotowaną na podstawie Twojego opisu stanowiska, z tematami, które najpierw przeglądasz.
+- Rozmowę na czas z pytaniami wyboru, przygotowaną na podstawie Twojego opisu stanowiska, z tematami, które najpierw przeglądasz, w trybie kliknięć lub głosowym.
 - Własny, losowy zestaw pytań dla każdego kandydata, z odliczaniem czasu przy każdym pytaniu. Na stanowiskach technicznych pytania mogą zawierać krótkie fragmenty kodu.
 - Karty wyników z odpowiedziami i czasami oraz oznaczeniami zbyt szybkich odpowiedzi, opuszczania strony i prób kopiowania.
 - Raporty PDF dla jednego kandydata lub całej listy.

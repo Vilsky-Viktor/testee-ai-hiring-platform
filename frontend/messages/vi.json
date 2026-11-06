@@ -1760,7 +1760,7 @@
         "name": "Công cụ kiểm tra",
         "checks": "Bài kiểm tra có sẵn từ thư viện",
         "time": "Phải chọn hoặc viết bài kiểm tra cho từng vị trí",
-        "cost": "Phí hằng tháng, dù có tuyển hay không"
+        "cost": "Phí gói, dù có tuyển hay không"
       },
       "testee": {
         "name": "testee",
@@ -2162,7 +2162,7 @@
   "compare": {
     "title": "So sánh testee",
     "metaTitle": "So sánh các công cụ kiểm tra trước tuyển dụng",
-    "intro": "So sánh có dẫn nguồn với các công cụ kiểm tra trước tuyển dụng khác: bài kiểm tra được tạo thế nào, chi phí bao nhiêu và khi nào công cụ nào phù hợp hơn."
+    "intro": "So sánh có dẫn nguồn với các công cụ kiểm tra trước tuyển dụng khác: bài kiểm tra được tạo thế nào, định giá ra sao và khi nào công cụ nào phù hợp hơn."
   },
   "guides": {
     "title": "Hướng dẫn tuyển dụng",
@@ -3562,7 +3562,7 @@
       },
       "questions": {
         "title": "Câu hỏi được tạo và kiểm tra",
-        "text": "AI soạn một bộ câu hỏi cho mỗi chủ đề, một AI thứ hai kiểm tra từng đáp án mà không xem đáp án của AI thứ nhất, và mỗi ứng viên nhận một bộ câu hỏi ngẫu nhiên của riêng mình.",
+        "text": "AI soạn một bộ câu hỏi cho mỗi chủ đề, một AI thứ hai kiểm tra một phần đáp án mà không xem đáp án của AI thứ nhất, và mỗi ứng viên nhận một bộ câu hỏi ngẫu nhiên của riêng mình.",
         "points": {
           "unique": "Câu hỏi riêng cho từng ứng viên",
           "checked": "Đáp án được AI thứ hai kiểm tra",

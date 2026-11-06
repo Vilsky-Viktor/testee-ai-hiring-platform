@@ -2,7 +2,7 @@
 title: "Cách so sánh chi phí bài kiểm tra trước tuyển dụng"
 seoTitle: "Bài kiểm tra trước tuyển dụng giá rẻ? Cách so sánh chi phí"
 description: "Gói miễn phí, gói đăng ký, trả tiền theo ứng viên và báo giá riêng: cách từng mô hình giá hoạt động và cách ước tính chi phí kiểm tra trước tuyển dụng."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Cách so sánh chi phí bài kiểm tra trước tuyển dụng
@@ -20,7 +20,7 @@ Trang này không liệt kê giá của các nhà cung cấp khác, vì giá tha
 | **Trả tiền theo ứng viên** | Bạn chỉ trả cho ứng viên làm bài, thường từ credit trả trước | Bạn tuyển dụng không thường xuyên, hoặc số lượng biến động | [testee](/pricing) |
 | **Báo giá riêng** | Giá thỏa thuận với bộ phận kinh doanh, thường theo năm | Bạn tuyển dụng quy mô lớn hoặc cần trắc nghiệm tâm lý đã được kiểm định | Một số nhà cung cấp, thường là chuyên gia trắc nghiệm tâm lý |
 
-*Các mô hình giá theo trang của từng nhà cung cấp vào tháng 10/2026.*
+*Các mô hình giá theo trang của từng nhà cung cấp vào tháng 11/2026.*
 
 ## Cách ước tính chi phí của bạn
 
@@ -35,7 +35,7 @@ Bạn cần ba con số: số ứng viên bạn kiểm tra trong một năm, gi�
 
 ### Giá của testee để bạn ước tính
 
-testee tính phí cho mỗi ứng viên trả lời ít nhất một câu hỏi. Giá mỗi ứng viên phụ thuộc vào mức nạp: $5 với mức nạp nhỏ nhất, $4 từ mức nạp $200, $3 từ mức nạp $600 và $2 từ mức nạp $1.000. 3 ứng viên đầu tiên của công ty đầu tiên của bạn được miễn phí. Giá ở đây tính bằng đô la Mỹ, và bằng đồng tiền địa phương ở Canada, Úc, Israel, Ba Lan, Thụy Sĩ, Nhật Bản, Hàn Quốc, Đài Loan, Hồng Kông, Thái Lan, Singapore, Ấn Độ, phần còn lại của châu Âu và Vương quốc Anh; Paddle, đơn vị xử lý thanh toán, xử lý VAT và thuế bán hàng khi thanh toán. Xem [bảng giá](/pricing) để biết các mức nạp hiện tại.
+testee tính phí cho mỗi ứng viên trả lời ít nhất một câu hỏi. Giá mỗi ứng viên phụ thuộc vào mức nạp: $5 với mức nạp nhỏ nhất, $4 từ mức nạp $200, $3 từ mức nạp $600 và $2 từ mức nạp $1.000. 3 ứng viên đầu tiên của công ty đầu tiên của bạn được miễn phí. Giá ở đây tính bằng đô la Mỹ, và bằng đồng tiền địa phương ở Canada, Úc, Israel, Ba Lan, Thụy Sĩ, Nhật Bản, Hàn Quốc, Đài Loan, Hồng Kông, Thái Lan, Singapore, Ấn Độ và Vương quốc Anh, và bằng euro ở phần còn lại của EU, Iceland, Liechtenstein và Na Uy; Paddle, đơn vị xử lý thanh toán, xử lý VAT và thuế bán hàng khi thanh toán. Xem [bảng giá](/pricing) để biết các mức nạp hiện tại.
 
 ## Chi phí ngoài giá niêm yết
 
@@ -44,7 +44,7 @@ Khi so sánh, hãy kiểm tra cả những điều sau:
 - **Cam kết theo năm.** Một gói "thanh toán theo năm" nghĩa là trả trước 12 tháng, kể cả khi bạn chỉ tuyển dụng trong hai tháng.
 - **Số người dùng.** Một số gói giới hạn số người trong nhóm bạn được sử dụng. testee không tính phí theo người dùng: chủ sở hữu, quản trị viên và người xem đều miễn phí.
 - **Ứng viên không bao giờ bắt đầu.** testee chỉ tính phí cho ứng viên trả lời ít nhất một câu hỏi; credit của lời mời không được dùng sẽ được hoàn lại.
-- **Credit hết hạn.** Credit của testee không hết hạn. Hãy kiểm tra credit của các nhà cung cấp khác có được chuyển sang kỳ sau không.
+- **Credit hết hạn.** Credit của testee không hết hạn, và credit bạn mua trong 14 ngày gần nhất và chưa dùng có thể được hoàn tiền. Hãy kiểm tra credit của các nhà cung cấp khác có được chuyển sang kỳ sau không.
 - **Thuế.** Kiểm tra giá niêm yết đã gồm VAT hoặc thuế bán hàng chưa.
 - **Tính năng ở gói cao hơn.** Tích hợp ATS, giám sát thi (proctoring) và bài lập trình tùy chỉnh thường nằm ở các gói đắt hơn. Hãy kiểm tra bạn thực sự cần gói nào. testee tích hợp với Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR và Slack, kèm cả API, mà không tốn thêm phí.
 - **Nhiều hơn một công cụ.** Nếu bạn cần cả bài kiểm tra kiến thức lẫn bài trắc nghiệm tâm lý hoặc bài lập trình, hãy cộng cả hai.
@@ -55,14 +55,14 @@ Giá thấp chỉ có ích nếu bài kiểm tra đo đúng những gì công vi
 
 - **Bạn cần trắc nghiệm tâm lý.** Các bài kiểm tra nhận thức và tính cách đã được kiểm định đến từ các nhà cung cấp chuyên biệt và các nền tảng rộng hơn.
 - **Bạn cần lập trình thực hành.** Các nền tảng dành cho lập trình viên cho phép ứng viên viết và chạy code. testee có câu hỏi đọc code (code làm gì hoặc in ra gì), nhưng ứng viên không viết hay chạy code.
-- **Bạn cần phỏng vấn video hoặc phỏng vấn do AI dẫn dắt.** testee không có cả hai.
+- **Bạn cần câu trả lời bằng video hoặc hội thoại do AI dẫn dắt.** testee không có cả hai: chế độ giọng nói của testee đọc to câu hỏi trắc nghiệm, và ứng viên trả lời bằng giọng nói hoặc bằng cách chạm.
 - **Bạn tuyển dụng số lượng lớn đều đặn.** Một gói cố định có thể rẻ hơn giá theo ứng viên.
 
 Xem [các lựa chọn thay thế TestGorilla](/compare/testgorilla-alternatives) và [các lựa chọn thay thế HackerRank](/compare/hackerrank-alternatives) để biết mỗi công cụ phù hợp ở đâu và kết hợp với nhau thế nào.
 
 ## Mỗi ứng viên testee bao gồm những gì
 
-- Một buổi phỏng vấn trắc nghiệm có tính giờ được viết từ mô tả công việc của bạn, với các chủ đề bạn duyệt trước.
+- Một buổi phỏng vấn trắc nghiệm có tính giờ được viết từ mô tả công việc của bạn, với các chủ đề bạn duyệt trước, ở chế độ nhấp hoặc chế độ giọng nói.
 - Bộ câu hỏi ngẫu nhiên riêng cho mỗi ứng viên, với đồng hồ đếm ngược cho mọi câu hỏi. Với vị trí kỹ thuật, câu hỏi có thể kèm các ví dụ code ngắn.
 - Bảng điểm với câu trả lời và thời gian, kèm cảnh báo về trả lời quá nhanh, rời khỏi trang và cố sao chép.
 - Báo cáo PDF cho một ứng viên hoặc cả danh sách.

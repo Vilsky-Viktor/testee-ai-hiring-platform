@@ -2,16 +2,16 @@
 title: "HackerRanki alternatiivid ja täiendused tehniliste teadmiste testimiseks"
 seoTitle: "HackerRanki alternatiivid: tehniliste teadmiste test"
 description: "Kuhu sobivad HackerRank ja teised tööriistad tehniliste teadmiste ja koodi lugemise testimiseks ning kuidas kombineerida teadmiste ja programmeerimistesti."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # HackerRanki alternatiivid ja täiendused tehniliste teadmiste testimiseks
 
-HackerRank on arendajate värbamise platvorm. 2026. aasta oktoobri seisuga kirjeldab selle veebileht eelvaliku teste, reaalajas paarisprogrammeerimise intervjuusid ühisel lõuendil ja AI-intervjueerijat, kes viib kandidaadi läbi päriselulise ülesande ([hackerrank.com](https://www.hackerrank.com/)). Kui vajad, et kandidaadid koodi kirjutaksid ja käivitaksid, on selline platvorm just selleks loodud.
+HackerRank on arendajate värbamise platvorm. 2026. aasta novembri seisuga kirjeldab selle veebileht kodus tehtavaid eelvaliku teste, reaalajas paarisprogrammeerimise intervjuusid ühises programmeerimiskeskkonnas ja AI-intervjueerijat, kes annab päriselulise ülesande ([hackerrank.com](https://www.hackerrank.com/)). Kui vajad, et kandidaadid koodi kirjutaksid ja käivitaksid, on selline platvorm just selleks loodud.
 
 testee ei asenda seda. See teeb teist tööd: ajapiiranguga valikvastustega test selle kohta, mida kandidaat teab, kirjutatud sinu töökuulutuse põhjal ja koos koodi lugemise küsimustega. Need kaks sobivad hästi kokku. Levinud lahendus on testee kiire teadmiste kontrollina igale kandideerijale ja seejärel arendajate platvormi programmeerimistest või reaalajas kodeerimisintervjuu neile, kes selle läbivad. testee katab ka teised rollid, mida samas kvartalis värbad, näiteks kliendihalduri, raamatupidaja või klienditoe spetsialisti.
 
-See leht selgitab, kuhu iga tööriistaliik sobib. Faktid viitavad pakkujate endi lehtedele 2026. aasta oktoobri seisuga; kontrolli need enne ostmist üle.
+See leht selgitab, kuhu iga tööriistaliik sobib. Faktid viitavad pakkujate endi lehtedele 2026. aasta novembri seisuga; kontrolli need enne ostmist üle.
 
 ## Mida sellises olukorras meeskonnad tavaliselt vajavad
 
@@ -22,11 +22,11 @@ See leht selgitab, kuhu iga tööriistaliik sobib. Faktid viitavad pakkujate end
 
 ## Võrdlustabel
 
-| Tööriist | Tugevaim valdkond | Rollid väljaspool arendust | Kood testis | Hinnamudel (2026. aasta oktoobri seisuga) |
+| Tööriist | Tugevaim valdkond | Rollid väljaspool arendust | Kood testis | Hinnamudel (2026. aasta novembri seisuga) |
 | --- | --- | --- | --- | --- |
-| **HackerRank** | Programmeerimistestid, reaalajas kodeerimisintervjuud ja AI-intervjueerija arendajatele ([veebileht](https://www.hackerrank.com/)) | Pole põhifookus | Kandidaadid kirjutavad ja käivitavad koodi | Vaata [hinnalehte](https://www.hackerrank.com/pricing/) |
+| **HackerRank** | Programmeerimistestid, reaalajas kodeerimisintervjuud ja AI-intervjueerija arendajatele ([veebileht](https://www.hackerrank.com/)) | Pole põhifookus | Kandidaadid kirjutavad ja käivitavad koodi | Starter- ja Pro-paketid aastase katsete arvuga ning kohandatud Enterprise-paketid ([KKK](https://www.hackerrank.com/frequently-asked-questions), [hinnaleht](https://www.hackerrank.com/pricing/)) |
 | **testee** | Ajapiiranguga valikvastustega oskuste intervjuud sinu töökuulutuse põhjal | Iga roll | Koodi lugemise küsimused (mida kood teeb või väljastab); koodi ei kirjutata ega käivitata | Kandidaadi kohta, ilma tellimuseta ([hinnad](/pricing)) |
-| **TestGorilla** | Lai testikogu: rollioskused, kognitiivsed, isiksuse-, keele- ja programmeerimistestid | Jah | Programmeerimistestid; kohandatud programmeerimisülesanded kõrgemas paketis | Tasuta pakett ja aastapaketid ([hinnaleht](https://www.testgorilla.com/pricing/)) |
+| **TestGorilla** | Lai testikogu: rollioskused, kognitiivsed, isiksuse-, keele- ja programmeerimistestid | Jah | Programmeerimistestid; kohandatud programmeerimisülesanded kõrgemas paketis | Tasuta pakett ja tasulised paketid, hinnad aastase arveldusega ([hinnaleht](https://www.testgorilla.com/pricing/)) |
 | **CodeSignal** | Tehnilised hindamised ja AI-intervjueerijad | Müük, kliendiedu ja turundus kõrgemates pakettides | Programmeerimisülesanded | Kuu- või aastapaketid krediitidega ([hinnaleht](https://codesignal.com/pricing/)) |
 | **Bryq** | Kognitiivsete võimete, isiksuse ja oskuste hindamine | Jah | Pole põhifookus | Kuu- või aastapaketid ([hinnaleht](https://www.bryq.com/pricing)) |
 | **Alooba** | Tehnilised ja andmerollid | Mõned | Analüütika ja SQL-i programmeerimistestid kõrgemates pakettides | Kuu- või aastapaketid krediitidega ([hinnaleht](https://www.alooba.com/pricing/)) |
@@ -37,34 +37,34 @@ See leht selgitab, kuhu iga tööriistaliik sobib. Faktid viitavad pakkujate end
 
 testee loeb sinu töökuulutust, toob välja, mida kandidaat peab teadma, ja pakub teemad. Vaatad need üle (jätad alles, eemaldad linnukese, nimetad ümber, muudad või kirjeldad muudatusi tavalise tekstiga) enne, kui küsimused kirjutatakse. Iga teema jaoks luuakse valikvastustega küsimuste pank ja iga kandidaat saab oma juhusliku komplekti, kus igal küsimusel on taimer.
 
-See toimib backend-arendaja puhul samamoodi kui palgaarvestaja puhul. Arendaja puhul saab testee testida andmebaase, API-sid, süsteemidisaini või raamistikku. Kui teema puudutab koodi, SQL-i, käsurea käske või konfiguratsiooni, näitavad paljud küsimused lühikest näidet ja küsivad, mida see prindib või tagastab, mida see teeb, miks see ebaõnnestub või milline muudatus selle parandab. Kandidaadid valivad ühe neljast vastusest. Nad ei kirjuta, käivita ega siluta testees koodi ja reaalajas programmeerimiskeskkonda pole.
+See toimib backend-arendaja puhul samamoodi kui palgaarvestaja puhul. Arendaja puhul saab testee testida andmebaase, API-sid, süsteemidisaini või raamistikku. Kui teema puudutab koodi, SQL-i, käsurea käske või konfiguratsiooni, näitavad paljud küsimused lühikest näidet ja küsivad, mida see prindib või tagastab, mida see teeb, miks see ebaõnnestub või milline muudatus selle parandab. Kandidaadid valivad nelja vastuse seast. Nad ei kirjuta, käivita ega siluta testees koodi ja reaalajas programmeerimiskeskkonda pole.
 
 - **Hind:** iga kandidaadi eest, kes vastab vähemalt ühele küsimusele, suuremate juurdelaadimiste puhul kandidaadi kohta odavam. Tellimust pole ja krediidid ei aegu. Vaata [hindu](/pricing).
-- **Lisaks:** hindamislehed vastuste ja ajakuluga, märked liiga kiirete vastuste, lehelt lahkumise ja kopeerimiskatsete kohta, PDF-aruanded, kutsed e-postiga või töökuulutuse lingiga, automaatsed meeldetuletused ja 23 keelt.
+- **Lisaks:** klõpsu- või häälerežiim, hindamislehed vastuste ja ajakuluga, märked liiga kiirete vastuste, lehelt lahkumise ja kopeerimiskatsete kohta, PDF-aruanded, kutsed e-postiga või töökuulutuse lingiga, automaatsed meeldetuletused ja 23 keelt.
 - **Sobib:** esmaseks sõelaks enne programmeerimisetappi ja testiks rollidele väljaspool arendust.
 
 ### TestGorilla: lai testikogu
 
-TestGorilla testikogu hõlmab rollipõhiseid oskusi, programmeerimist, tarkvaraoskusi, keelt, kognitiivseid võimeid, situatsioonipõhist otsustamist, isiksust ja trükkimist ([testikogu, 2026. aasta oktoobri seisuga](https://www.testgorilla.com/test-library/)). Kõrgem pakett lisab AI-intervjuud, kohandatud programmeerimisülesanded, töösimulatsioonid ja ATS-integratsioonid ([hinnaleht](https://www.testgorilla.com/pricing/)).
+TestGorilla testikogu hõlmab rollipõhiseid oskusi, programmeerimist, tarkvaraoskusi, keelt, kognitiivseid võimeid, situatsioonipõhist otsustamist, isiksust ja trükkimist ([testikogu, 2026. aasta novembri seisuga](https://www.testgorilla.com/test-library/)). Kõrgem pakett lisab täieliku AI-intervjuude kogu, kohandatud programmeerimisülesanded, töösimulatsioonid ning ATS- ja API-integratsioonid ([hinnaleht](https://www.testgorilla.com/pricing/)).
 
 - **Parem kui testee:** oskustestide kombineerimiseks kognitiivsete ja isiksustestidega, programmeerimisülesanneteks ning ühtlaseks suuremahuliseks värbamiseks.
 - Vaata [testee ja TestGorilla](/compare/testgorilla).
 
 ### CodeSignal: eelkõige tehnilised rollid, müügirollid kõrgemates pakettides
 
-CodeSignali paketid hõlmavad tehnilisi hindamisi ja AI-intervjueerijaid toote-, disaini- ja arendusrollidele. Kõrgemad paketid lisavad müügi- ja turundussuunaliste (go-to-market) rollide hindamised ja AI-intervjueerijad müügi, kliendiedu ja turunduse jaoks ([hinnaleht, 2026. aasta oktoobri seisuga](https://codesignal.com/pricing/)).
+CodeSignali paketid hõlmavad tehnilisi hindamisi ja AI-intervjueerijaid toote-, disaini- ja arendusrollidele. Kõrgemad paketid lisavad müügi- ja turundussuunaliste (go-to-market) rollide hindamised ja AI-intervjueerijad müügi, kliendiedu ja turunduse jaoks ([hinnaleht, 2026. aasta novembri seisuga](https://codesignal.com/pricing/)).
 
 - **Parem kui testee:** meeskondadele, kes tahavad praktilist programmeerimise hindamist ja AI juhitud intervjuusid samas tööriistas.
 
 ### Bryq: psühhomeetria
 
-Bryqi paketid sisaldavad kognitiivsete võimete ja isiksuse hindamist, oskuste hindamist, piiramatult kutseid ja AI-põhist töökuulutuste koostajat; organisatsioonikultuuri sobivus on märgitud lisavõimalusena ([hinnaleht, 2026. aasta oktoobri seisuga](https://www.bryq.com/pricing)).
+Bryqi paketid sisaldavad kognitiivsete võimete ja isiksuse hindamist, oskuste hindamist, piiramatult kutseid ja AI-põhist töökuulutuste koostajat; organisatsioonikultuuri sobivus on märgitud lisavõimalusena ([hinnaleht, 2026. aasta novembri seisuga](https://www.bryq.com/pricing)).
 
 - **Parem kui testee:** meeskondadele, kes värbavad kognitiivsete võimete ja isiksuse põhjal.
 
 ### Alooba: andmerollid
 
-Alooba loetleb üle 400 rollipõhise eelvaliku testi enam kui 500 oskuse kohta, sealhulgas andmeanalüüsi teste; kõrgemad paketid lisavad analüütika ja SQL-i programmeerimistestid ([hinnaleht, 2026. aasta oktoobri seisuga](https://www.alooba.com/pricing/)).
+Alooba loetleb üle 400 rollipõhise eelvaliku testi enam kui 500 oskuse kohta, sealhulgas andmeanalüüsi teste; kõrgemad paketid lisavad analüütika ja SQL-i programmeerimistestid ([hinnaleht, 2026. aasta novembri seisuga](https://www.alooba.com/pricing/)).
 
 - **Parem kui testee:** analüütika- ja andmerollidele, kus on vaja praktilisi andmeteste.
 
@@ -96,7 +96,7 @@ Sõelumine hoiab inseneride intervjuuaja inimestele, kes tehnoloogiapakki juba t
 Et võrdlus oleks aus:
 
 - Ei koodi kirjutamist, käivitamist ega silumist ega reaalajas programmeerimiskeskkonda.
-- Ei videointervjuusid ega AI juhitud vestlusintervjuusid.
+- Ei videovastuseid ega AI juhitud vestlusi. Häälerežiim loeb valikvastustega küsimused ette ja kandidaadid vastavad hääle või puudutusega.
 - Ei kognitiivsete võimete ega isiksuse teste.
 
 Inseneride värbamise terviklikku protsessi vaata juhendist [Kuidas värvata insenere](/guides/hiring-engineers).

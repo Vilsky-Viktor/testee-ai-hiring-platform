@@ -2,14 +2,14 @@
 title: "TestGorilla alternatifleri: hangi araç nerede uygun, birlikte kullanmak"
 seoTitle: "TestGorilla Alternatifleri: Hangi Araç Nerede Uygun"
 description: "TestGorilla alternatifleri, ölçtükleri beceriler ve fiyatlandırmaya göre karşılaştırma: testee, CodeSignal, HackerRank, Alooba, Bryq ve diğerleri."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # TestGorilla alternatifleri: hangi araç nerede uygun, birlikte kullanmak
 
 TestGorilla, geniş bir test kütüphanesi ve ücretsiz planı olan bir beceri testi platformudur ([TestGorilla fiyat sayfası](https://www.testgorilla.com/pricing/)). Ekipler birkaç yaygın nedenle başka araçlara bakar: yıllık taahhüt ara sıra yapılan işe alımlara uymaz, uygulamalı kodlama testleri isterler ya da tam olarak kendi pozisyonları için yazılmış testler isterler.
 
-Bu araçların çoğu birbirinin doğrudan yerine geçmez. Farklı şeyleri ölçerler ve birçok işe alım süreci bunlardan ikisini birlikte kullanır. Özellikle testee büyük ölçüde tamamlayıcıdır: kullandığınız diğer araçların önüne, iş tanımınızdan yazılmış hızlı bir bilgi elemesi ekler. Bu sayfa her aracın nerede uygun olduğunu ve nasıl birleştirildiğini anlatır. Bilgiler, Ekim 2026 itibarıyla her sağlayıcının kendi sayfalarına bağlanmıştır; satın almadan önce kontrol edin.
+Bu araçların çoğu birbirinin doğrudan yerine geçmez. Farklı şeyleri ölçerler ve birçok işe alım süreci bunlardan ikisini birlikte kullanır. Özellikle testee büyük ölçüde tamamlayıcıdır: kullandığınız diğer araçların önüne, iş tanımınızdan yazılmış hızlı bir bilgi elemesi ekler. Bu sayfa her aracın nerede uygun olduğunu ve nasıl birleştirildiğini anlatır. Bilgiler, Kasım 2026 itibarıyla her sağlayıcının kendi sayfalarına bağlanmıştır; satın almadan önce kontrol edin.
 
 ## Nasıl seçilir
 
@@ -24,22 +24,22 @@ Ardından fiyatlandırma modelini işe alım hacminizle karşılaştırın. Plan
 
 ## Karşılaştırma tablosu
 
-| Araç | Ne için tasarlandı | Fiyatlandırma modeli (Ekim 2026 itibarıyla) |
+| Araç | Ne için tasarlandı | Fiyatlandırma modeli (Kasım 2026 itibarıyla) |
 | --- | --- | --- |
-| **TestGorilla** | Geniş kütüphane: bilişsel, kişilik, dil, programlama, pozisyona özel beceriler | Ücretsiz plan ve yıllık faturalandırılan ücretli planlar ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
+| **TestGorilla** | Geniş kütüphane: bilişsel, kişilik, dil, programlama, pozisyona özel beceriler | Ücretsiz plan ve fiyatları yıllık faturalandırmaya göre verilen ücretli planlar ([fiyat sayfası](https://www.testgorilla.com/pricing/)) |
 | **testee** | İş tanımınızdan yazılan süreli, çoktan seçmeli beceri mülakatları | Yanıt veren aday başına, abonelik yok ([fiyatlar](/pricing)) |
 | **CodeSignal** | Teknik değerlendirmeler ve yapay zekâ mülakatçıları; üst planlarda satış ve pazarlama (go-to-market) pozisyonları | Kredili aylık veya yıllık planlar ([fiyat sayfası](https://codesignal.com/pricing/)) |
-| **HackerRank** | Kodlama testleri ve teknik mülakatlar | Bkz. [fiyat sayfası](https://www.hackerrank.com/pricing/) |
+| **HackerRank** | Kodlama testleri ve teknik mülakatlar | Yıllık deneme hakkı sunan Starter ve Pro planları ile özel Enterprise planları ([SSS](https://www.hackerrank.com/frequently-asked-questions), [fiyat sayfası](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Teknik ve veri pozisyonları için aday elemesi | Kredili aylık veya yıllık planlar ([fiyat sayfası](https://www.alooba.com/pricing/)) |
 | **Bryq** | Bilişsel, kişilik ve beceri değerlendirmeleri | Aylık veya yıllık planlar ([fiyat sayfası](https://www.bryq.com/pricing)) |
-| **Codility** | Kodlama değerlendirmesi | Davet kredili yıllık planlar ([fiyat sayfası](https://www.codility.com/pricing/)) |
+| **Codility** | Kodlama değerlendirmesi | Davet kredili aylık veya yıllık planlar ([fiyat sayfası](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Psikometrik ve bilişsel testler | Sağlayıcıların sitelerine bakın |
 
 ## Araçlara daha yakından bakış
 
 ### testee
 
-testee bir iş tanımını süreli, çoktan seçmeli bir beceri mülakatına dönüştürür. Herhangi bir soru yazılmadan önce önerilen konuları gözden geçirirsiniz; her aday, her sorusunda geri sayım olan kendine ait rastgele bir soru seti alır. Teknik pozisyonlarda sorular kısa bir kod örneği gösterip bunun ne yaptığını veya ne çıktı verdiğini sorabilir. Değerlendirme kartları her yanıtı ve süresini, çok hızlı yanıtlar, sayfadan ayrılma ve kopyalama girişimleri için işaretlerle birlikte gösterir. Adayları e-postayla ya da iş ilanınızdaki tek bir bağlantıyla davet edersiniz; hatırlatmalar otomatik olarak gönderilir.
+testee bir iş tanımını süreli, çoktan seçmeli bir beceri mülakatına dönüştürür. Herhangi bir soru yazılmadan önce önerilen konuları gözden geçirirsiniz; her aday, her sorusunda geri sayım olan kendine ait rastgele bir soru seti alır. Teknik pozisyonlarda sorular kısa bir kod örneği gösterip bunun ne yaptığını veya ne çıktı verdiğini sorabilir. Değerlendirme kartları her yanıtı ve süresini, çok hızlı yanıtlar, sayfadan ayrılma ve kopyalama girişimleri için işaretlerle birlikte gösterir. Adayları e-postayla ya da iş ilanınızdaki tek bir bağlantıyla davet edersiniz; hatırlatmalar otomatik olarak gönderilir. Adaylar tıklayarak veya sesli modda yapay zekâ mülakatçısı Mira'ya sesli olarak cevap verir.
 
 - **Fiyatlandırma:** en az bir soruyu yanıtlayan aday başına; daha büyük kredi yüklemelerinde aday başına daha ucuz. Krediler süresiz geçerlidir ve abonelik yoktur. Bkz. [fiyatlar](/pricing).
 - **Kimlere uygun:** herhangi bir pozisyon için, bir seferde birkaç kişiyi işe alan küçük ve orta ölçekli ekiplere, ilk eleme olarak.
@@ -48,27 +48,27 @@ testee bir iş tanımını süreli, çoktan seçmeli bir beceri mülakatına dö
 
 ### CodeSignal
 
-CodeSignal'ın planları; ürün, tasarım ve mühendislik pozisyonları için teknik değerlendirmeleri ve yapay zekâ mülakatçılarını, yapay zekâ destekli gözetim ve kimlik doğrulamayla birlikte kapsar. Üst planlar satış, müşteri başarısı ve pazarlama için go-to-market değerlendirmeleri ve yapay zekâ mülakatçılarının yanı sıra ATS entegrasyonları ekler ([CodeSignal fiyat sayfası, Ekim 2026 itibarıyla](https://codesignal.com/pricing/)).
+CodeSignal'ın planları; ürün, tasarım ve mühendislik pozisyonları için teknik değerlendirmeleri ve yapay zekâ mülakatçılarını, yapay zekâ destekli gözetim ve kimlik doğrulamayla birlikte kapsar. Üst planlar satış, müşteri başarısı ve pazarlama için go-to-market değerlendirmeleri ve yapay zekâ mülakatçılarının yanı sıra ATS entegrasyonları ekler ([CodeSignal fiyat sayfası, Kasım 2026 itibarıyla](https://codesignal.com/pricing/)).
 
 - **testee'den daha iyi olduğu alanlar:** uygulamalı kodlama değerlendirmesi, yapay zekâ yönetimli mülakatlar.
 - **Birlikte:** her başvuru sahibi için bilgi elemesi olarak testee, kodlama aşaması için CodeSignal.
 
 ### HackerRank
 
-HackerRank geliştirici işe alımına odaklanır. Ekim 2026 itibarıyla sitesi eleme testlerini, canlı eşli programlama mülakatlarını ve bir yapay zekâ mülakatçısını tanımlıyor ([hackerrank.com](https://www.hackerrank.com/)).
+HackerRank geliştirici işe alımına odaklanır. Kasım 2026 itibarıyla sitesi eleme testlerini, canlı eşli programlama mülakatlarını ve bir yapay zekâ mülakatçısını tanımlıyor ([hackerrank.com](https://www.hackerrank.com/)).
 
 - **testee'den daha iyi olduğu alanlar:** kodun yazılıp çalıştırılması gereken geliştirici işe alımları veya canlı kodlama mülakatları.
 - **Birlikte:** bir bilgi elemesi ile bir geliştirici platformunun tek bir süreçte nasıl bir arada kullanılacağı için [HackerRank alternatifleri](/compare/hackerrank-alternatives) sayfasına bakın.
 
 ### Alooba
 
-Alooba, veri analizi testleri dahil 500'den fazla beceride 400'den fazla pozisyon için eleme testi listeler. Üst planlar gözetim, ATS entegrasyonları, SMS hatırlatmaları ve video yanıtlar ekler ([Alooba fiyat sayfası, Ekim 2026 itibarıyla](https://www.alooba.com/pricing/)).
+Alooba, veri analizi testleri dahil 500'den fazla beceride 400'den fazla pozisyon için eleme testi listeler. Üst planlar gözetim, ATS entegrasyonları, SMS hatırlatmaları ve video yanıtlar ekler ([Alooba fiyat sayfası, Kasım 2026 itibarıyla](https://www.alooba.com/pricing/)).
 
 - **testee'den daha iyi olduğu alanlar:** uygulamalı veri testleri, gözetim ve video yanıtlar gerektiren veri ve analitik pozisyonları.
 
 ### Bryq
 
-Bryq'nun planları bilişsel ve kişilik değerlendirmelerini, beceri değerlendirmelerini, sınırsız daveti, bir yapay zekâ ilan oluşturucuyu, ATS entegrasyonunu ve PDF sonuçlarını içerir; kültür uyumu ek özellik olarak listelenir ([Bryq fiyat sayfası, Ekim 2026 itibarıyla](https://www.bryq.com/pricing)).
+Bryq'nun planları bilişsel ve kişilik değerlendirmelerini, beceri değerlendirmelerini, sınırsız daveti, bir yapay zekâ ilan oluşturucuyu, ATS entegrasyonunu ve PDF sonuçlarını içerir; kültür uyumu ek özellik olarak listelenir ([Bryq fiyat sayfası, Kasım 2026 itibarıyla](https://www.bryq.com/pricing)).
 
 - **testee'den daha iyi olduğu alanlar:** bilişsel ve kişilik profili çıkarma, kültür uyumu ve sabit fiyata sınırsız davet.
 - **Birlikte:** testee pozisyona özel bilgiyi kontrol eder; Bryq bilişsel ve kişilik sonuçları ekler.
@@ -83,8 +83,8 @@ TestGorilla şu durumlarda size daha uygun olabilir:
 
 - Birkaç test türünü birlikte kullanıyorsanız: pozisyona özel beceriler, bilişsel, kişilik, dil.
 - Çok hafif kullanım için ücretsiz bir plan istiyorsanız ([fiyat sayfası](https://www.testgorilla.com/pricing/)).
-- Video sorularına, iş simülasyonlarına veya web kamerası fotoğraflarına ihtiyacınız varsa.
-- Sabit bir planın aday başına daha ucuza geldiği düzenli ve yüksek hacimde işe alım yapıyorsanız.
+- Video sorularına, yapay zekâ mülakatlarına, iş simülasyonlarına veya web kamerası fotoğraflarına ihtiyacınız varsa.
+- Bir planın aday başına daha ucuza gelebildiği düzenli ve yüksek hacimde işe alım yapıyorsanız.
 
 Ve yine de testee'nin yanında yer alabilir: önce pozisyona özel bir bilgi elemesi, sonra TestGorilla'nın daha kapsamlı testleri. Bire bir karşılaştırma için [testee ve TestGorilla](/compare/testgorilla) sayfasını okuyun.
 

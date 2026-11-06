@@ -2,7 +2,7 @@
 title: "Pre-employment tests without a subscription"
 seoTitle: "Pre-Employment Tests Without a Subscription"
 description: "Test candidates without a monthly plan or annual contract. How pay-per-candidate testing compares with subscriptions, and what to check before you buy."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Pre-employment tests without a subscription
@@ -28,14 +28,14 @@ This page explains the alternatives to a subscription, how they compare with sub
 
 ## How common tools are priced
 
-| Tool | Pricing model (as of October 2026) | Commitment |
+| Tool | Pricing model (as of November 2026) | Commitment |
 | --- | --- | --- |
 | **testee** | Prepaid credits, charged per candidate who answers ([pricing](/pricing)) | None; credits don't expire |
-| **TestGorilla** | Free plan, or paid plans billed annually ([pricing page](https://www.testgorilla.com/pricing/)) | Annual for paid plans |
+| **TestGorilla** | Free plan, or paid plans priced as billed annually ([pricing page](https://www.testgorilla.com/pricing/)) | Annual at the listed prices; its page also shows a monthly option |
 | **CodeSignal** | Plans with credits ([pricing page](https://codesignal.com/pricing/)) | Monthly or annual |
 | **Bryq** | Plans with unlimited invitations ([pricing page](https://www.bryq.com/pricing)) | Monthly or annual |
 | **Alooba** | Plans with monthly credits ([pricing page](https://www.alooba.com/pricing/)) | Monthly or annual; credits expire at the end of each billing period; Enterprise has a 1-year minimum |
-| **Codility** | Annual plans with invite credits ([pricing page](https://www.codility.com/pricing/)) | Annual |
+| **Codility** | Monthly or annual plans with invite credits ([pricing page](https://www.codility.com/pricing/)) | Monthly or annual |
 
 Some of these tools offer monthly billing, which is not a long contract but is still a recurring fee. If you only hire now and then, remember to cancel between hiring rounds.
 
@@ -51,12 +51,13 @@ testee has no subscription and no contract. You buy credits when you need them a
 - **Generating interviews is free,** and so is previewing your interview as a candidate.
 - **No seat fees.** Add admins and viewers to your company at no cost.
 - **Welcome credits:** your first company's first 3 candidates are free.
+- **Refunds:** credits you bought in the last 14 days and haven't spent can be refunded. Free credits can't.
 
-Prices are in US dollars here, and in the local currency in Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, the rest of Europe and the UK (see [pricing](/pricing)). Payments go through Paddle, which handles VAT and sales tax and shows the final amount at checkout; testee stores no card details. You can turn on an automatic top-up that refills your balance when it runs low, but it's optional.
+Prices are in US dollars here, and in the local currency in Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India and the UK, and in euros in the rest of the EU, Iceland, Liechtenstein and Norway (see [pricing](/pricing)). Payments go through Paddle, which handles VAT and sales tax and shows the final amount at checkout; testee stores no card details. You can turn on an automatic top-up that refills your balance when it runs low, but it's optional.
 
 ## What you get for each candidate
 
-- A timed multiple-choice skills interview written from your job description, or from a ready-made template for the role.
+- A timed multiple-choice skills interview written from your job description, or from a ready-made template for the role, in click or voice mode.
 - Topics you review and edit before any question is written.
 - Each candidate's own random set of questions, with a countdown on every question. For technical roles, questions can show short code examples and ask what they do or output.
 - A scorecard with every answer and its timing, plus flags for too-fast answers, leaving the page and copy attempts.

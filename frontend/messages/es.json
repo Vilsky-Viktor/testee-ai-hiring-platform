@@ -1760,7 +1760,7 @@
         "name": "Herramientas de pruebas",
         "checks": "Pruebas prediseñadas de una biblioteca",
         "time": "Pruebas que elegir o escribir para cada puesto",
-        "cost": "Una cuota mensual, contrates o no"
+        "cost": "Una cuota de plan, contrates o no"
       },
       "testee": {
         "name": "testee",
@@ -2158,7 +2158,7 @@
   "compare": {
     "title": "Compara testee",
     "metaTitle": "Comparativa de herramientas de evaluación preempleo",
-    "intro": "Comparaciones con fuentes frente a otras herramientas de evaluación preempleo: cómo se crean las pruebas, cuánto cuestan y cuándo encaja mejor cada una."
+    "intro": "Comparaciones con fuentes frente a otras herramientas de evaluación preempleo: cómo se crean las pruebas, cómo se fijan sus precios y cuándo encaja mejor cada una."
   },
   "guides": {
     "title": "Guías para contratar",
@@ -3558,7 +3558,7 @@
       },
       "questions": {
         "title": "Las preguntas se generan y se revisan",
-        "text": "La IA escribe un conjunto de preguntas para cada tema, una segunda IA revisa a ciegas cada clave de respuestas, y cada candidato recibe su propia serie aleatoria.",
+        "text": "La IA escribe un conjunto de preguntas para cada tema, una segunda IA revisa a ciegas una muestra de claves de respuestas, y cada candidato recibe su propia serie aleatoria.",
         "points": {
           "unique": "Preguntas distintas para cada candidato",
           "checked": "Claves de respuestas revisadas por una segunda IA",

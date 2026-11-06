@@ -2,7 +2,7 @@
 title: "Hoe je de kosten van selectietests vergelijkt"
 seoTitle: "Goedkoopste pre-employment test? Zo vergelijk je kosten"
 description: "Gratis plannen, abonnementen, betalen per kandidaat en offertes: hoe elk prijsmodel werkt en hoe je de kosten van je selectietests inschat."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Hoe je de kosten van selectietests vergelijkt
@@ -20,7 +20,7 @@ Deze pagina noemt geen prijzen van andere leveranciers, omdat die vaak verandere
 | **Betalen per kandidaat** | Je betaalt alleen voor kandidaten die de test doen, meestal uit vooraf gekochte credits | Je werft af en toe, of je volume schommelt | [testee](/pricing) |
 | **Offerte op maat** | Een prijs die je met sales afspreekt, vaak voor een jaar | Je werft op grote schaal of hebt gevalideerde psychometrie nodig | Sommige leveranciers, vaak psychometrische specialisten |
 
-*Prijsmodellen zoals getoond op de pagina van elke leverancier in oktober 2026.*
+*Prijsmodellen zoals getoond op de pagina van elke leverancier in november 2026.*
 
 ## Hoe je je kosten inschat
 
@@ -35,7 +35,7 @@ Je hebt drie getallen nodig: hoeveel kandidaten je per jaar test, de prijs per k
 
 ### De prijzen van testee voor je berekening
 
-testee rekent per kandidaat die minstens één vraag beantwoordt. De prijs per kandidaat hangt af van de grootte van je opwaardering: $5 bij de kleinste opwaardering, $4 vanaf een opwaardering van $200, $3 vanaf een opwaardering van $600 en $2 vanaf een opwaardering van $1.000. De eerste 3 kandidaten van je eerste bedrijf zijn gratis. Prijzen zijn hier in Amerikaanse dollars, en in de lokale valuta in Canada, Australië, Israël, Polen, Zwitserland, Japan, Zuid-Korea, Taiwan, Hongkong, Thailand, Singapore, India, de rest van Europa en het Verenigd Koninkrijk; Paddle, dat de betalingen verwerkt, regelt btw en sales tax bij het afrekenen. Zie [prijzen](/pricing) voor de huidige opwaarderingen.
+testee rekent per kandidaat die minstens één vraag beantwoordt. De prijs per kandidaat hangt af van de grootte van je opwaardering: $5 bij de kleinste opwaardering, $4 vanaf een opwaardering van $200, $3 vanaf een opwaardering van $600 en $2 vanaf een opwaardering van $1.000. De eerste 3 kandidaten van je eerste bedrijf zijn gratis. Prijzen zijn hier in Amerikaanse dollars, en in de lokale valuta in Canada, Australië, Israël, Polen, Zwitserland, Japan, Zuid-Korea, Taiwan, Hongkong, Thailand, Singapore, India en het Verenigd Koninkrijk, en in euro's in de rest van de EU, IJsland, Liechtenstein en Noorwegen; Paddle, dat de betalingen verwerkt, regelt btw en sales tax bij het afrekenen. Zie [prijzen](/pricing) voor de huidige opwaarderingen.
 
 ## Kosten bovenop de vermelde prijs
 
@@ -44,7 +44,7 @@ Check bij het vergelijken ook dit:
 - **Jaarverplichting.** Een plan dat "jaarlijks gefactureerd" wordt, betekent 12 maanden vooruitbetalen, ook als je maar in twee daarvan werft.
 - **Gebruikers.** Sommige plannen beperken hoeveel mensen in je team ze kunnen gebruiken. testee rekent niets per gebruiker: eigenaren, beheerders en kijkers zijn gratis.
 - **Kandidaten die nooit beginnen.** testee rekent alleen voor kandidaten die minstens één vraag beantwoorden; de credits van een ongebruikte uitnodiging komen terug.
-- **Verlopende credits.** De credits van testee verlopen niet. Check of credits bij andere leveranciers meegaan naar de volgende periode.
+- **Verlopende credits.** De credits van testee verlopen niet, en credits die je de afgelopen 14 dagen hebt gekocht en nog niet hebt besteed, kunnen worden terugbetaald. Check of credits bij andere leveranciers meegaan naar de volgende periode.
 - **Belastingen.** Check of een vermelde prijs inclusief btw of sales tax is.
 - **Functies in duurdere plannen.** ATS-koppelingen, proctoring en eigen programmeeropdrachten zitten vaak in duurdere plannen. Check welk plan je echt nodig hebt. testee koppelt met Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR en Slack, en biedt zijn API, zonder meerkosten.
 - **Meer dan één tool.** Heb je een kennistest en een psychometrische of programmeertest nodig, tel ze dan allebei op.
@@ -55,14 +55,14 @@ Een lage prijs helpt alleen als de test meet wat je functie vraagt. Betaal voor 
 
 - **Je psychometrie nodig hebt.** Gevalideerde cognitieve en persoonlijkheidstests komen van gespecialiseerde leveranciers en bredere platforms.
 - **Je echt wilt laten programmeren.** Op developerplatforms schrijven en draaien kandidaten code. testee stelt vragen over code lezen (wat code doet of uitvoert), maar kandidaten schrijven of draaien geen code.
-- **Je video-interviews of door AI geleide interviews nodig hebt.** testee heeft geen van beide.
+- **Je video-antwoorden of door AI geleide gesprekken nodig hebt.** testee heeft geen van beide: de spraakmodus leest meerkeuzevragen voor, en kandidaten antwoorden met hun stem of door te tikken.
 - **Je constant met een hoog volume werft.** Een vast plan kan dan minder kosten dan een prijs per kandidaat.
 
 Zie [Alternatieven voor TestGorilla](/compare/testgorilla-alternatives) en [Alternatieven voor HackerRank](/compare/hackerrank-alternatives) voor waar elke tool past en hoe je ze combineert.
 
 ## Wat je bij testee per kandidaat krijgt
 
-- Een interview met tijdslimiet en meerkeuzevragen, geschreven op basis van je functieomschrijving, met onderwerpen die je eerst bekijkt.
+- Een interview met tijdslimiet en meerkeuzevragen, geschreven op basis van je functieomschrijving, met onderwerpen die je eerst bekijkt, in klik- of spraakmodus.
 - Een eigen willekeurige set vragen per kandidaat, met een aftelklok bij elke vraag. Voor technische functies kunnen vragen korte codevoorbeelden bevatten.
 - Scorekaarten met antwoorden en tijden, en signalen bij te snelle antwoorden, het verlaten van de pagina en kopieerpogingen.
 - Pdf-rapporten voor één kandidaat of de hele lijst.

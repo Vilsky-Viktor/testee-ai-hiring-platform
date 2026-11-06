@@ -1760,7 +1760,7 @@
         "name": "Ferramentas de teste",
         "checks": "Testes prontos de uma biblioteca",
         "time": "Testes para escolher ou escrever para cada vaga",
-        "cost": "Uma mensalidade, contratando ou não"
+        "cost": "O custo de um plano, contratando ou não"
       },
       "testee": {
         "name": "testee",
@@ -2162,7 +2162,7 @@
   "compare": {
     "title": "Compare a testee",
     "metaTitle": "Ferramentas de testes pré-admissão comparadas",
-    "intro": "Comparações com fontes com outras ferramentas de testes pré-admissão: como os testes são criados, quanto custam e quando cada uma se encaixa melhor."
+    "intro": "Comparações com fontes com outras ferramentas de testes pré-admissão: como os testes são criados, como são cobrados e quando cada uma se encaixa melhor."
   },
   "guides": {
     "title": "Guias de contratação",
@@ -3562,7 +3562,7 @@
       },
       "questions": {
         "title": "As perguntas são geradas e verificadas",
-        "text": "A IA escreve um conjunto de perguntas para cada tópico, uma segunda IA verifica cada gabarito às cegas, e cada candidato recebe sua própria seleção aleatória.",
+        "text": "A IA escreve um conjunto de perguntas para cada tópico, uma segunda IA verifica às cegas uma amostra de gabaritos, e cada candidato recebe sua própria seleção aleatória.",
         "points": {
           "unique": "Perguntas diferentes para cada candidato",
           "checked": "Gabaritos verificados por uma segunda IA",

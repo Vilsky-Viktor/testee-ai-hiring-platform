@@ -2,14 +2,14 @@
 title: "Các lựa chọn thay thế TestGorilla: mỗi công cụ phù hợp ở đâu và cách dùng kết hợp"
 seoTitle: "Lựa chọn thay thế TestGorilla: công cụ nào phù hợp?"
 description: "So sánh các lựa chọn thay thế TestGorilla theo nội dung kiểm tra và giá: testee, CodeSignal, HackerRank, Alooba, Bryq và hơn nữa, cùng cách kết hợp."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Các lựa chọn thay thế TestGorilla: mỗi công cụ phù hợp ở đâu và cách dùng kết hợp
 
 TestGorilla là nền tảng kiểm tra kỹ năng với thư viện bài kiểm tra lớn và một gói miễn phí ([trang bảng giá TestGorilla](https://www.testgorilla.com/pricing/)). Các nhóm tìm đến công cụ khác vì vài lý do phổ biến: cam kết theo năm không hợp với nhu cầu tuyển dụng không thường xuyên, họ muốn bài kiểm tra lập trình thực hành, hoặc họ muốn bài kiểm tra được viết cho đúng vị trí của mình.
 
-Phần lớn các công cụ này không thay thế trực tiếp cho nhau. Chúng kiểm tra những thứ khác nhau, và nhiều quy trình tuyển dụng dùng hai công cụ cùng lúc. Riêng testee chủ yếu mang tính bổ sung: testee thêm một bài kiểm tra kiến thức nhanh, được viết từ mô tả công việc của bạn, trước bất kỳ công cụ nào khác bạn đang dùng. Trang này giải thích mỗi công cụ phù hợp ở đâu và cách kết hợp chúng. Các thông tin dẫn liên kết đến trang của chính từng nhà cung cấp tính đến tháng 10/2026; hãy kiểm tra chúng trước khi mua.
+Phần lớn các công cụ này không thay thế trực tiếp cho nhau. Chúng kiểm tra những thứ khác nhau, và nhiều quy trình tuyển dụng dùng hai công cụ cùng lúc. Riêng testee chủ yếu mang tính bổ sung: testee thêm một bài kiểm tra kiến thức nhanh, được viết từ mô tả công việc của bạn, trước bất kỳ công cụ nào khác bạn đang dùng. Trang này giải thích mỗi công cụ phù hợp ở đâu và cách kết hợp chúng. Các thông tin dẫn liên kết đến trang của chính từng nhà cung cấp tính đến tháng 11/2026; hãy kiểm tra chúng trước khi mua.
 
 ## Cách lựa chọn
 
@@ -24,22 +24,22 @@ Sau đó đối chiếu mô hình giá với số lượng tuyển dụng của 
 
 ## Bảng so sánh
 
-| Công cụ | Được xây dựng cho | Mô hình giá (tính đến tháng 10/2026) |
+| Công cụ | Được xây dựng cho | Mô hình giá (tính đến tháng 11/2026) |
 | --- | --- | --- |
-| **TestGorilla** | Thư viện rộng: nhận thức, tính cách, ngoại ngữ, lập trình, kỹ năng theo vị trí | Gói miễn phí và gói trả phí thanh toán theo năm ([trang bảng giá](https://www.testgorilla.com/pricing/)) |
+| **TestGorilla** | Thư viện rộng: nhận thức, tính cách, ngoại ngữ, lập trình, kỹ năng theo vị trí | Gói miễn phí và gói trả phí với giá tính theo thanh toán hằng năm ([trang bảng giá](https://www.testgorilla.com/pricing/)) |
 | **testee** | Phỏng vấn kỹ năng trắc nghiệm có tính giờ, viết từ mô tả công việc của bạn | Theo mỗi ứng viên có trả lời, không có gói đăng ký ([bảng giá](/pricing)) |
 | **CodeSignal** | Đánh giá kỹ thuật và người phỏng vấn AI; vị trí go-to-market ở gói cao hơn | Gói theo tháng hoặc theo năm kèm credit ([trang bảng giá](https://codesignal.com/pricing/)) |
-| **HackerRank** | Bài kiểm tra lập trình và phỏng vấn kỹ thuật | Xem [trang bảng giá](https://www.hackerrank.com/pricing/) |
+| **HackerRank** | Bài kiểm tra lập trình và phỏng vấn kỹ thuật | Gói Starter và Pro với số lượt làm bài theo năm, và gói Enterprise tùy chỉnh ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [trang bảng giá](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Sàng lọc vị trí kỹ thuật và dữ liệu | Gói theo tháng hoặc theo năm kèm credit ([trang bảng giá](https://www.alooba.com/pricing/)) |
 | **Bryq** | Đánh giá nhận thức, tính cách và kỹ năng | Gói theo tháng hoặc theo năm ([trang bảng giá](https://www.bryq.com/pricing)) |
-| **Codility** | Đánh giá lập trình | Gói theo năm kèm credit lời mời ([trang bảng giá](https://www.codility.com/pricing/)) |
+| **Codility** | Đánh giá lập trình | Gói theo tháng hoặc theo năm kèm credit lời mời ([trang bảng giá](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Trắc nghiệm tâm lý và kiểm tra nhận thức | Xem trang web của từng nhà cung cấp |
 
 ## Chi tiết từng công cụ
 
 ### testee
 
-testee biến mô tả công việc thành một buổi phỏng vấn kỹ năng trắc nghiệm có tính giờ. Bạn duyệt các chủ đề được đề xuất trước khi bất kỳ câu hỏi nào được viết, và mỗi ứng viên nhận bộ câu hỏi ngẫu nhiên của riêng mình với đồng hồ đếm ngược cho từng câu. Với vị trí kỹ thuật, câu hỏi có thể đưa ra một ví dụ code ngắn và hỏi nó làm gì hoặc in ra gì. Bảng điểm hiển thị mọi câu trả lời và thời gian, kèm cảnh báo về trả lời quá nhanh, rời khỏi trang và cố sao chép. Bạn mời qua email hoặc bằng một liên kết trong tin tuyển dụng, và lời nhắc được gửi tự động.
+testee biến mô tả công việc thành một buổi phỏng vấn kỹ năng trắc nghiệm có tính giờ. Bạn duyệt các chủ đề được đề xuất trước khi bất kỳ câu hỏi nào được viết, và mỗi ứng viên nhận bộ câu hỏi ngẫu nhiên của riêng mình với đồng hồ đếm ngược cho từng câu. Với vị trí kỹ thuật, câu hỏi có thể đưa ra một ví dụ code ngắn và hỏi nó làm gì hoặc in ra gì. Bảng điểm hiển thị mọi câu trả lời và thời gian, kèm cảnh báo về trả lời quá nhanh, rời khỏi trang và cố sao chép. Bạn mời qua email hoặc bằng một liên kết trong tin tuyển dụng, và lời nhắc được gửi tự động. Ứng viên trả lời bằng một cú nhấp hoặc, ở chế độ giọng nói, nói câu trả lời với Mira, người phỏng vấn AI.
 
 - **Giá:** theo mỗi ứng viên trả lời ít nhất một câu hỏi, rẻ hơn mỗi ứng viên với các mức nạp lớn hơn. Credit không hết hạn, và không có gói đăng ký. Xem [bảng giá](/pricing).
 - **Phù hợp với:** các nhóm vừa và nhỏ tuyển cho mọi vị trí, vài người mỗi lần, làm vòng sàng lọc đầu tiên.
@@ -48,27 +48,27 @@ testee biến mô tả công việc thành một buổi phỏng vấn kỹ năng
 
 ### CodeSignal
 
-Các gói của CodeSignal bao gồm đánh giá kỹ thuật và người phỏng vấn AI cho các vị trí sản phẩm, thiết kế và kỹ thuật, với giám sát thi bằng AI và xác minh danh tính. Các gói cao hơn có thêm đánh giá go-to-market và người phỏng vấn AI cho kinh doanh, chăm sóc khách hàng và marketing, cùng tích hợp ATS ([trang bảng giá CodeSignal, tính đến tháng 10/2026](https://codesignal.com/pricing/)).
+Các gói của CodeSignal bao gồm đánh giá kỹ thuật và người phỏng vấn AI cho các vị trí sản phẩm, thiết kế và kỹ thuật, với giám sát thi bằng AI và xác minh danh tính. Các gói cao hơn có thêm đánh giá go-to-market và người phỏng vấn AI cho kinh doanh, chăm sóc khách hàng và marketing, cùng tích hợp ATS ([trang bảng giá CodeSignal, tính đến tháng 11/2026](https://codesignal.com/pricing/)).
 
 - **Tốt hơn testee khi:** cần đánh giá lập trình thực hành, phỏng vấn do AI dẫn dắt.
 - **Kết hợp:** testee làm bài kiểm tra kiến thức cho mọi ứng viên, CodeSignal cho giai đoạn lập trình.
 
 ### HackerRank
 
-HackerRank tập trung vào tuyển dụng lập trình viên. Tính đến tháng 10/2026, trang web của HackerRank mô tả các bài kiểm tra sàng lọc, phỏng vấn lập trình cặp trực tiếp và một người phỏng vấn AI ([hackerrank.com](https://www.hackerrank.com/)).
+HackerRank tập trung vào tuyển dụng lập trình viên. Tính đến tháng 11/2026, trang web của HackerRank mô tả các bài kiểm tra sàng lọc, phỏng vấn lập trình cặp trực tiếp và một người phỏng vấn AI ([hackerrank.com](https://www.hackerrank.com/)).
 
 - **Tốt hơn testee khi:** tuyển lập trình viên mà bạn cần ứng viên viết và chạy code, hoặc phỏng vấn live coding.
 - **Kết hợp:** xem [các lựa chọn thay thế HackerRank](/compare/hackerrank-alternatives) để biết bài kiểm tra kiến thức và nền tảng dành cho lập trình viên nằm chung một quy trình thế nào.
 
 ### Alooba
 
-Alooba liệt kê hơn 400 bài kiểm tra sàng lọc theo vị trí trên hơn 500 kỹ năng, bao gồm bài kiểm tra phân tích dữ liệu. Các gói cao hơn có thêm giám sát thi, tích hợp ATS, nhắc nhở qua SMS và trả lời bằng video ([trang bảng giá Alooba, tính đến tháng 10/2026](https://www.alooba.com/pricing/)).
+Alooba liệt kê hơn 400 bài kiểm tra sàng lọc theo vị trí trên hơn 500 kỹ năng, bao gồm bài kiểm tra phân tích dữ liệu. Các gói cao hơn có thêm giám sát thi, tích hợp ATS, nhắc nhở qua SMS và trả lời bằng video ([trang bảng giá Alooba, tính đến tháng 11/2026](https://www.alooba.com/pricing/)).
 
 - **Tốt hơn testee khi:** vị trí dữ liệu và phân tích cần bài kiểm tra dữ liệu thực hành, giám sát thi và trả lời bằng video.
 
 ### Bryq
 
-Các gói của Bryq bao gồm đánh giá nhận thức và tính cách, đánh giá kỹ năng, số lời mời không giới hạn, công cụ AI tạo vị trí tuyển dụng, tích hợp ATS và kết quả dạng PDF; mức độ phù hợp văn hóa được liệt kê là tiện ích bổ sung ([trang bảng giá Bryq, tính đến tháng 10/2026](https://www.bryq.com/pricing)).
+Các gói của Bryq bao gồm đánh giá nhận thức và tính cách, đánh giá kỹ năng, số lời mời không giới hạn, công cụ AI tạo vị trí tuyển dụng, tích hợp ATS và kết quả dạng PDF; mức độ phù hợp văn hóa được liệt kê là tiện ích bổ sung ([trang bảng giá Bryq, tính đến tháng 11/2026](https://www.bryq.com/pricing)).
 
 - **Tốt hơn testee khi:** cần hồ sơ nhận thức và tính cách, mức độ phù hợp văn hóa, và số lời mời không giới hạn với giá cố định.
 - **Kết hợp:** testee kiểm tra kiến thức chuyên môn; Bryq bổ sung kết quả nhận thức và tính cách.
@@ -83,8 +83,8 @@ TestGorilla có thể hợp với bạn hơn nếu:
 
 - Bạn dùng nhiều loại bài kiểm tra cùng lúc: kỹ năng theo vị trí, nhận thức, tính cách, ngoại ngữ.
 - Bạn muốn một gói miễn phí cho nhu cầu rất ít ([trang bảng giá](https://www.testgorilla.com/pricing/)).
-- Bạn cần câu hỏi video, mô phỏng công việc hoặc chụp ảnh qua webcam.
-- Bạn tuyển dụng đều đặn với số lượng lớn, khi một gói cố định rẻ hơn tính theo mỗi ứng viên.
+- Bạn cần câu hỏi video, phỏng vấn do AI dẫn dắt, mô phỏng công việc hoặc chụp ảnh qua webcam.
+- Bạn tuyển dụng đều đặn với số lượng lớn, khi một gói có thể rẻ hơn tính theo mỗi ứng viên.
 
 Và TestGorilla vẫn có thể dùng song song với testee: bài kiểm tra kiến thức theo vị trí trước, các bài kiểm tra rộng hơn của TestGorilla sau. Để so sánh trực tiếp, đọc [testee và TestGorilla](/compare/testgorilla).
 

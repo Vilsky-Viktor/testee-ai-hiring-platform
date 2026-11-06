@@ -2,14 +2,14 @@
 title: "Alternativen zu TestGorilla: wofür sich welches Tool eignet und wie sie zusammenspielen"
 seoTitle: "TestGorilla-Alternativen: Welches Tool passt wofür?"
 description: "Alternativen zu TestGorilla nach Testinhalten und Preisen verglichen: testee, CodeSignal, HackerRank, Alooba, Bryq und mehr, und wie du sie kombinierst."
-updated: "2026-10-07"
+updated: "2026-11-07"
 ---
 
 # Alternativen zu TestGorilla: wofür sich welches Tool eignet und wie sie zusammenspielen
 
 TestGorilla ist eine Plattform für Kompetenztests mit einer großen Testbibliothek und einem Gratis-Tarif ([Preisseite von TestGorilla](https://www.testgorilla.com/pricing/)). Teams sehen sich aus einigen typischen Gründen nach anderen Tools um: Eine Jahresbindung passt nicht zu gelegentlichen Einstellungen, sie wollen praktische Programmiertests, oder sie wollen Tests, die für genau ihre Stelle geschrieben sind.
 
-Die meisten dieser Tools sind kein direkter Ersatz füreinander. Sie prüfen unterschiedliche Dinge, und viele Auswahlprozesse nutzen zwei davon zusammen. Gerade testee ist überwiegend eine Ergänzung: Es setzt einen schnellen Wissenstest, geschrieben aus deiner Stellenbeschreibung, vor alles, was du sonst nutzt. Diese Seite erklärt, wofür sich welches Tool eignet und wie sie sich kombinieren lassen. Fakten verlinken auf die eigenen Seiten des jeweiligen Anbieters mit Stand Oktober 2026; prüf diese vor dem Kauf.
+Die meisten dieser Tools sind kein direkter Ersatz füreinander. Sie prüfen unterschiedliche Dinge, und viele Auswahlprozesse nutzen zwei davon zusammen. Gerade testee ist überwiegend eine Ergänzung: Es setzt einen schnellen Wissenstest, geschrieben aus deiner Stellenbeschreibung, vor alles, was du sonst nutzt. Diese Seite erklärt, wofür sich welches Tool eignet und wie sie sich kombinieren lassen. Fakten verlinken auf die eigenen Seiten des jeweiligen Anbieters mit Stand November 2026; prüf diese vor dem Kauf.
 
 ## So wählst du aus
 
@@ -24,22 +24,22 @@ Prüf dann das Preismodell anhand deines Einstellungsvolumens. Ein Abo passt zu 
 
 ## Vergleichstabelle
 
-| Tool | Wofür es gebaut ist | Preismodell (Stand Oktober 2026) |
+| Tool | Wofür es gebaut ist | Preismodell (Stand November 2026) |
 | --- | --- | --- |
-| **TestGorilla** | Breite Bibliothek: kognitive Fähigkeiten, Persönlichkeit, Sprache, Programmieren, Fachkenntnisse | Gratis-Tarif und jährlich abgerechnete Bezahltarife ([Preisseite](https://www.testgorilla.com/pricing/)) |
+| **TestGorilla** | Breite Bibliothek: kognitive Fähigkeiten, Persönlichkeit, Sprache, Programmieren, Fachkenntnisse | Gratis-Tarif und Bezahltarife, Preise bei jährlicher Abrechnung ([Preisseite](https://www.testgorilla.com/pricing/)) |
 | **testee** | Zeitlich begrenzte Multiple-Choice-Interviews zu Fachkenntnissen, geschrieben aus deiner Stellenbeschreibung | Pro Kandidat, der antwortet, ohne Abo ([Preise](/pricing)) |
 | **CodeSignal** | Technische Assessments und KI-Interviewer; Go-to-Market-Rollen in höheren Tarifen | Monats- oder Jahrestarife mit Credits ([Preisseite](https://codesignal.com/pricing/)) |
-| **HackerRank** | Programmiertests und technische Interviews | Siehe [Preisseite](https://www.hackerrank.com/pricing/) |
+| **HackerRank** | Programmiertests und technische Interviews | Starter- und Pro-Tarife mit Jahreskontingent an Versuchen sowie individuelle Enterprise-Tarife ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [Preisseite](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Vorauswahl für technische und Datenrollen | Monats- oder Jahrestarife mit Credits ([Preisseite](https://www.alooba.com/pricing/)) |
 | **Bryq** | Kognitive, Persönlichkeits- und Kompetenz-Assessments | Monats- oder Jahrestarife ([Preisseite](https://www.bryq.com/pricing)) |
-| **Codility** | Programmier-Assessments | Jahrestarife mit Einladungs-Credits ([Preisseite](https://www.codility.com/pricing/)) |
+| **Codility** | Programmier-Assessments | Monats- oder Jahrestarife mit Einladungs-Credits ([Preisseite](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Psychometrische und kognitive Tests | Siehe die Website des Anbieters |
 
 ## Die Tools im Detail
 
 ### testee
 
-testee macht aus einer Stellenbeschreibung ein zeitlich begrenztes Multiple-Choice-Interview zu Fachkenntnissen. Du prüfst die vorgeschlagenen Themen, bevor eine Frage geschrieben wird, und jeder Kandidat erhält einen eigenen zufälligen Fragensatz mit einem Countdown bei jeder Frage. Bei technischen Stellen können Fragen ein kurzes Codebeispiel zeigen und fragen, was es tut oder ausgibt. Auswertungen zeigen jede Antwort und ihre Dauer, mit Hinweisen auf zu schnelle Antworten, das Verlassen der Seite und Kopierversuche. Du lädst per E-Mail oder mit einem Link in deiner Stellenanzeige ein, und Erinnerungen gehen automatisch raus.
+testee macht aus einer Stellenbeschreibung ein zeitlich begrenztes Multiple-Choice-Interview zu Fachkenntnissen. Du prüfst die vorgeschlagenen Themen, bevor eine Frage geschrieben wird, und jeder Kandidat erhält einen eigenen zufälligen Fragensatz mit einem Countdown bei jeder Frage. Bei technischen Stellen können Fragen ein kurzes Codebeispiel zeigen und fragen, was es tut oder ausgibt. Auswertungen zeigen jede Antwort und ihre Dauer, mit Hinweisen auf zu schnelle Antworten, das Verlassen der Seite und Kopierversuche. Du lädst per E-Mail oder mit einem Link in deiner Stellenanzeige ein, und Erinnerungen gehen automatisch raus. Kandidaten antworten per Klick oder, im Sprachmodus, mündlich gegenüber Mira, einer KI-Interviewerin.
 
 - **Preise:** pro Kandidat, der mindestens eine Frage beantwortet, pro Kandidat günstiger bei größeren Aufladungen. Credits verfallen nicht, und es gibt kein Abo. Siehe [Preise](/pricing).
 - **Geeignet für:** kleine und mittlere Teams, die für beliebige Stellen ein paar Personen auf einmal einstellen, als erste Vorauswahl.
@@ -48,27 +48,27 @@ testee macht aus einer Stellenbeschreibung ein zeitlich begrenztes Multiple-Choi
 
 ### CodeSignal
 
-Die Tarife von CodeSignal decken technische Assessments und KI-Interviewer für Stellen in Produkt, Design und Entwicklung ab, mit KI-Proctoring und Identitätsprüfung. Höhere Tarife ergänzen Go-to-Market-Assessments und KI-Interviewer für Vertrieb, Customer Success und Marketing sowie ATS-Integrationen ([Preisseite von CodeSignal, Stand Oktober 2026](https://codesignal.com/pricing/)).
+Die Tarife von CodeSignal decken technische Assessments und KI-Interviewer für Stellen in Produkt, Design und Entwicklung ab, mit KI-Proctoring und Identitätsprüfung. Höhere Tarife ergänzen Go-to-Market-Assessments und KI-Interviewer für Vertrieb, Customer Success und Marketing sowie ATS-Integrationen ([Preisseite von CodeSignal, Stand November 2026](https://codesignal.com/pricing/)).
 
 - **Besser als testee für:** praktische Programmier-Assessments, KI-geführte Interviews.
 - **Zusammen:** testee als Wissenstest für alle Bewerber, CodeSignal für die Programmierphase.
 
 ### HackerRank
 
-HackerRank konzentriert sich auf die Einstellung von Entwicklern. Mit Stand Oktober 2026 beschreibt die Website Screening-Tests, Live-Pair-Programming-Interviews und einen KI-Interviewer ([hackerrank.com](https://www.hackerrank.com/)).
+HackerRank konzentriert sich auf die Einstellung von Entwicklern. Mit Stand November 2026 beschreibt die Website Screening-Tests, Live-Pair-Programming-Interviews und einen KI-Interviewer ([hackerrank.com](https://www.hackerrank.com/)).
 
 - **Besser als testee für:** Entwickler-Recruiting, bei dem Code geschrieben und ausgeführt werden muss, oder Live-Coding-Interviews.
 - **Zusammen:** Unter [Alternativen zu HackerRank](/compare/hackerrank-alternatives) siehst du, wie ein Wissenstest und eine Entwicklerplattform in einen Prozess passen.
 
 ### Alooba
 
-Alooba nennt über 400 Screening-Tests für Rollen zu über 500 Kompetenzen, darunter Tests zur Datenanalyse. Höhere Tarife ergänzen Proctoring, ATS-Integrationen, SMS-Erinnerungen und Videoantworten ([Preisseite von Alooba, Stand Oktober 2026](https://www.alooba.com/pricing/)).
+Alooba nennt über 400 Screening-Tests für Rollen zu über 500 Kompetenzen, darunter Tests zur Datenanalyse. Höhere Tarife ergänzen Proctoring, ATS-Integrationen, SMS-Erinnerungen und Videoantworten ([Preisseite von Alooba, Stand November 2026](https://www.alooba.com/pricing/)).
 
 - **Besser als testee für:** Daten- und Analytics-Rollen, die praktische Datentests, Proctoring und Videoantworten brauchen.
 
 ### Bryq
 
-Die Tarife von Bryq umfassen kognitive und Persönlichkeits-Assessments, Kompetenz-Assessments, unbegrenzte Einladungen, einen KI-Job-Builder, ATS-Integration und Ergebnisse als PDF; Culture Fit ist als Zusatzmodul aufgeführt ([Preisseite von Bryq, Stand Oktober 2026](https://www.bryq.com/pricing)).
+Die Tarife von Bryq umfassen kognitive und Persönlichkeits-Assessments, Kompetenz-Assessments, unbegrenzte Einladungen, einen KI-Job-Builder, ATS-Integration und Ergebnisse als PDF; Culture Fit ist als Zusatzmodul aufgeführt ([Preisseite von Bryq, Stand November 2026](https://www.bryq.com/pricing)).
 
 - **Besser als testee für:** kognitive und Persönlichkeitsprofile, Culture Fit und unbegrenzte Einladungen zum Pauschalpreis.
 - **Zusammen:** testee prüft das Fachwissen; Bryq ergänzt kognitive und Persönlichkeitsergebnisse.
@@ -83,8 +83,8 @@ TestGorilla passt womöglich besser zu dir, wenn:
 
 - du mehrere Testarten zusammen einsetzt: Fachkenntnisse, kognitive Fähigkeiten, Persönlichkeit, Sprache.
 - du einen Gratis-Tarif für sehr geringe Nutzung willst ([Preisseite](https://www.testgorilla.com/pricing/)).
-- du Videofragen, Jobsimulationen oder Webcam-Schnappschüsse brauchst.
-- du regelmäßig in hohem Volumen einstellst, sodass ein Pauschaltarif pro Kandidat günstiger ist.
+- du Videofragen, KI-geführte Interviews, Jobsimulationen oder Webcam-Schnappschüsse brauchst.
+- du regelmäßig in hohem Volumen einstellst, sodass ein Tarif pro Kandidat günstiger sein kann.
 
 Und es kann trotzdem neben testee stehen: zuerst ein stellenspezifischer Wissenstest, später die breiteren Tests von TestGorilla. Einen direkten Vergleich findest du unter [testee und TestGorilla](/compare/testgorilla).
 

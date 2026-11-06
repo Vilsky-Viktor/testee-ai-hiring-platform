@@ -2,7 +2,7 @@
 title: "Abonelik gerektirmeyen işe alım öncesi testler"
 seoTitle: "Aboneliksiz İşe Alım Öncesi Test: Aday Başına Ödeme"
 description: "Aylık plan veya yıllık sözleşme olmadan aday değerlendirme. Aday başına ödeme aboneliklerle nasıl karşılaştırılır, satın almadan önce neye bakılır."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Abonelik gerektirmeyen işe alım öncesi testler
@@ -28,14 +28,14 @@ Bu sayfa aboneliğe alternatifleri, bunların abonelik planlarıyla nasıl karş
 
 ## Yaygın araçların fiyatlandırması
 
-| Araç | Fiyatlandırma modeli (Ekim 2026 itibarıyla) | Taahhüt |
+| Araç | Fiyatlandırma modeli (Kasım 2026 itibarıyla) | Taahhüt |
 | --- | --- | --- |
 | **testee** | Ön ödemeli krediler, yanıt veren aday başına düşülür ([fiyatlar](/pricing)) | Yok; krediler süresiz geçerlidir |
-| **TestGorilla** | Ücretsiz plan veya yıllık faturalandırılan ücretli planlar ([fiyat sayfası](https://www.testgorilla.com/pricing/)) | Ücretli planlarda yıllık |
+| **TestGorilla** | Ücretsiz plan veya fiyatları yıllık faturalandırmaya göre verilen ücretli planlar ([fiyat sayfası](https://www.testgorilla.com/pricing/)) | Listelenen fiyatlarda yıllık; sayfasında aylık seçenek de gösterilir |
 | **CodeSignal** | Kredili planlar ([fiyat sayfası](https://codesignal.com/pricing/)) | Aylık veya yıllık |
 | **Bryq** | Sınırsız davetli planlar ([fiyat sayfası](https://www.bryq.com/pricing)) | Aylık veya yıllık |
 | **Alooba** | Aylık kredili planlar ([fiyat sayfası](https://www.alooba.com/pricing/)) | Aylık veya yıllık; krediler her faturalandırma döneminin sonunda sona erer; Enterprise planında en az 1 yıl |
-| **Codility** | Davet kredili yıllık planlar ([fiyat sayfası](https://www.codility.com/pricing/)) | Yıllık |
+| **Codility** | Davet kredili aylık veya yıllık planlar ([fiyat sayfası](https://www.codility.com/pricing/)) | Aylık veya yıllık |
 
 Bu araçların bazıları aylık faturalandırma sunar; bu uzun bir sözleşme değildir ama yine de yinelenen bir ücrettir. Yalnızca ara sıra işe alım yapıyorsanız, işe alım dönemleri arasında iptal etmeyi unutmayın.
 
@@ -51,12 +51,13 @@ testee'de abonelik ve sözleşme yoktur. İhtiyaç duyduğunuzda kredi satın al
 - **Mülakat oluşturmak ücretsizdir;** mülakatınızı aday gözüyle önizlemek de öyle.
 - **Kullanıcı başı ücret yok.** Şirketinize ücretsiz olarak yönetici ve görüntüleyici ekleyin.
 - **Hoş geldin kredileri:** ilk şirketinizin ilk 3 adayı ücretsizdir.
+- **İadeler:** son 14 gün içinde satın aldığınız ve harcamadığınız krediler iade edilebilir. Ücretsiz krediler iade edilmez.
 
-Fiyatlar burada ABD doları, Kanada, Avustralya, İsrail, Polonya, İsviçre, Japonya, Güney Kore, Tayvan, Hong Kong, Tayland, Singapur, Hindistan, Avrupa'nın geri kalanı ve Birleşik Krallık'ta ise yerel para birimi cinsindendir (bkz. [fiyatlar](/pricing)). Ödemeler, KDV ve satış vergisini hesaplayan ve nihai tutarı ödeme adımında gösteren Paddle üzerinden yapılır; testee kart bilgisi saklamaz. Bakiyeniz azaldığında onu dolduran otomatik yüklemeyi açabilirsiniz, ancak bu isteğe bağlıdır.
+Fiyatlar burada ABD doları, Kanada, Avustralya, İsrail, Polonya, İsviçre, Japonya, Güney Kore, Tayvan, Hong Kong, Tayland, Singapur, Hindistan ve Birleşik Krallık'ta yerel para birimi, AB'nin geri kalanı ile İzlanda, Lihtenştayn ve Norveç'te ise avro cinsindendir (bkz. [fiyatlar](/pricing)). Ödemeler, KDV ve satış vergisini hesaplayan ve nihai tutarı ödeme adımında gösteren Paddle üzerinden yapılır; testee kart bilgisi saklamaz. Bakiyeniz azaldığında onu dolduran otomatik yüklemeyi açabilirsiniz, ancak bu isteğe bağlıdır.
 
 ## Her aday için neler alırsınız
 
-- İş tanımınızdan veya pozisyon için hazır bir şablondan yazılmış süreli, çoktan seçmeli bir beceri mülakatı.
+- İş tanımınızdan veya pozisyon için hazır bir şablondan yazılmış, tıklama veya sesli modda yapılan süreli, çoktan seçmeli bir beceri mülakatı.
 - Herhangi bir soru yazılmadan önce gözden geçirip düzenlediğiniz konular.
 - Her adaya, her sorusunda geri sayım olan kendine ait rastgele bir soru seti. Teknik pozisyonlarda sorular kısa kod örnekleri gösterip bunların ne yaptığını veya ne çıktı verdiğini sorabilir.
 - Her yanıtı ve süresini gösteren bir değerlendirme kartı; ayrıca çok hızlı yanıtlar, sayfadan ayrılma ve kopyalama girişimleri için işaretler.

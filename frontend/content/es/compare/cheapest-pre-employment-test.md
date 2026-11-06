@@ -2,7 +2,7 @@
 title: "Cómo comparar el coste de las pruebas de selección"
 seoTitle: "¿La prueba de selección más barata? Cómo comparar costes"
 description: "Planes gratuitos, suscripciones, pago por candidato y presupuestos a medida: cómo funciona cada modelo de precios y cómo estimar el coste de tus pruebas."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Cómo comparar el coste de las pruebas de selección
@@ -20,7 +20,7 @@ Esta página no recoge los precios de otros proveedores, porque cambian a menudo
 | **Pago por candidato** | Pagas solo por los candidatos que hacen la prueba, normalmente con créditos prepago | Contratas de forma ocasional o tu volumen varía | [testee](/pricing) |
 | **Presupuesto a medida** | Un precio acordado con el equipo comercial, a menudo por un año | Contratas a gran escala o necesitas pruebas psicométricas validadas | Algunos proveedores, a menudo especialistas en psicometría |
 
-*Modelos de precios según la página de cada proveedor en octubre de 2026.*
+*Modelos de precios según la página de cada proveedor en noviembre de 2026.*
 
 ## Cómo estimar tu coste
 
@@ -35,7 +35,7 @@ Necesitas tres números: cuántos candidatos evalúas al año, el precio por can
 
 ### Los precios de testee para tu estimación
 
-testee cobra por candidato que responde al menos una pregunta. El precio por candidato depende del tamaño de tu recarga: $5 en la recarga más pequeña, $4 a partir de una recarga de $200, $3 a partir de una recarga de $600 y $2 a partir de una recarga de $1000. Los 3 primeros candidatos de tu primera empresa son gratis. Los precios están aquí en dólares estadounidenses, y en la moneda local en Canadá, Australia, Israel, Polonia, Suiza, Japón, Corea del Sur, Taiwán, Hong Kong, Tailandia, Singapur, India, el resto de Europa y el Reino Unido; Paddle, que procesa los pagos, gestiona el IVA y los impuestos sobre las ventas al pagar. Consulta los [precios](/pricing) para ver las recargas actuales.
+testee cobra por candidato que responde al menos una pregunta. El precio por candidato depende del tamaño de tu recarga: $5 en la recarga más pequeña, $4 a partir de una recarga de $200, $3 a partir de una recarga de $600 y $2 a partir de una recarga de $1000. Los 3 primeros candidatos de tu primera empresa son gratis. Los precios están aquí en dólares estadounidenses, y en la moneda local en Canadá, Australia, Israel, Polonia, Suiza, Japón, Corea del Sur, Taiwán, Hong Kong, Tailandia, Singapur, India y el Reino Unido, y en euros en el resto de la UE, Islandia, Liechtenstein y Noruega; Paddle, que procesa los pagos, gestiona el IVA y los impuestos sobre las ventas al pagar. Consulta los [precios](/pricing) para ver las recargas actuales.
 
 ## Costes más allá del precio de etiqueta
 
@@ -44,7 +44,7 @@ Al comparar, revisa también lo siguiente:
 - **Compromiso anual.** Un plan «con facturación anual» significa pagar 12 meses por adelantado, aunque solo contrates en dos de ellos.
 - **Usuarios.** Algunos planes limitan cuántas personas de tu equipo pueden usarlos. testee no cobra por usuario: propietarios, administradores y lectores son gratis.
 - **Candidatos que nunca empiezan.** testee solo cobra por los candidatos que responden al menos una pregunta; los créditos de una invitación sin usar se devuelven.
-- **Créditos que caducan.** Los créditos de testee no caducan. Comprueba si los créditos de otros proveedores se acumulan de un periodo a otro.
+- **Créditos que caducan.** Los créditos de testee no caducan, y los créditos que compraste en los últimos 14 días y no has gastado se pueden reembolsar. Comprueba si los créditos de otros proveedores se acumulan de un periodo a otro.
 - **Impuestos.** Comprueba si un precio publicado incluye el IVA o los impuestos sobre las ventas.
 - **Funciones reservadas a planes superiores.** Las integraciones con ATS, la supervisión (proctoring) y la programación personalizada suelen estar en planes más caros. Comprueba qué plan necesitarías de verdad. testee se conecta con Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR y Slack, e incluye su API, sin coste adicional.
 - **Más de una herramienta.** Si necesitas una prueba de conocimientos y una prueba psicométrica o de programación, suma ambas.
@@ -55,14 +55,14 @@ Un precio bajo solo ayuda si la prueba mide lo que tu puesto necesita. Paga por 
 
 - **Necesitas pruebas psicométricas.** Las pruebas cognitivas y de personalidad validadas vienen de proveedores especializados y de plataformas más amplias.
 - **Necesitas programación práctica.** Las plataformas para desarrolladores permiten a los candidatos escribir y ejecutar código. testee hace preguntas de lectura de código (qué hace o qué imprime el código), pero los candidatos no escriben ni ejecutan código.
-- **Necesitas entrevistas en video o dirigidas por IA.** testee no tiene ninguna de las dos.
+- **Necesitas respuestas en video o conversaciones dirigidas por IA.** testee no tiene ninguna de las dos: su modo de voz lee en voz alta preguntas de opción múltiple, y los candidatos responden con la voz o tocando una opción.
 - **Contratas con un volumen alto y constante.** Un plan fijo puede costar menos que un precio por candidato.
 
 Consulta [Alternativas a TestGorilla](/compare/testgorilla-alternatives) y [Alternativas a HackerRank](/compare/hackerrank-alternatives) para ver dónde encaja cada herramienta y cómo se combinan.
 
 ## Qué incluye cada candidato de testee
 
-- Una entrevista de opción múltiple con tiempo límite redactada a partir de tu descripción del puesto, con temas que revisas primero.
+- Una entrevista de opción múltiple con tiempo límite redactada a partir de tu descripción del puesto, con temas que revisas primero, en modo clic o de voz.
 - Un conjunto aleatorio de preguntas propio para cada candidato, con una cuenta atrás en cada pregunta. Para puestos técnicos, las preguntas pueden incluir breves ejemplos de código.
 - Fichas de evaluación con respuestas y tiempos, y alertas de respuestas demasiado rápidas, salidas de la página e intentos de copiar.
 - Informes en PDF de un candidato o de toda la lista.

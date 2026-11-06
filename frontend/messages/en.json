@@ -1760,7 +1760,7 @@
         "name": "Testing tools",
         "checks": "Ready-made tests from a library",
         "time": "Tests to pick or write for every role",
-        "cost": "A monthly fee, whether you hire or not"
+        "cost": "A plan fee, whether you hire or not"
       },
       "testee": {
         "name": "testee",
@@ -2158,7 +2158,7 @@
   "compare": {
     "title": "Compare testee",
     "metaTitle": "Pre-employment testing tools compared",
-    "intro": "Sourced comparisons with other pre-employment testing tools: how tests are made, what they cost and when each one fits better."
+    "intro": "Sourced comparisons with other pre-employment testing tools: how tests are made, how they're priced and when each one fits better."
   },
   "guides": {
     "title": "Guides for hiring",
@@ -3558,7 +3558,7 @@
       },
       "questions": {
         "title": "Questions are generated and checked",
-        "text": "AI writes a pool of questions for each topic, a second AI checks every answer key blind, and each candidate gets their own random set.",
+        "text": "AI writes a pool of questions for each topic, a second AI checks a sample of answer keys blind, and each candidate gets their own random set.",
         "points": {
           "unique": "Unique questions per candidate",
           "checked": "Answer keys checked by a second AI",

@@ -2,7 +2,7 @@
 title: "Tes seleksi karyawan tanpa langganan"
 seoTitle: "Tes Seleksi Karyawan Tanpa Langganan: Bayar per Kandidat"
 description: "Tes kandidat tanpa paket bulanan atau kontrak tahunan. Perbandingan tes bayar per kandidat dengan langganan, dan apa yang perlu dicek sebelum membeli."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Tes seleksi karyawan tanpa langganan
@@ -28,14 +28,14 @@ Halaman ini menjelaskan alternatif selain langganan, bagaimana perbandingannya d
 
 ## Cara alat-alat umum menetapkan harga
 
-| Alat | Model harga (per Oktober 2026) | Komitmen |
+| Alat | Model harga (per November 2026) | Komitmen |
 | --- | --- | --- |
 | **testee** | Kredit prabayar, ditagih per kandidat yang menjawab ([harga](/pricing)) | Tidak ada; kredit tidak kedaluwarsa |
-| **TestGorilla** | Paket gratis, atau paket berbayar yang ditagih tahunan ([halaman harga](https://www.testgorilla.com/pricing/)) | Tahunan untuk paket berbayar |
+| **TestGorilla** | Paket gratis, atau paket berbayar dengan harga untuk penagihan tahunan ([halaman harga](https://www.testgorilla.com/pricing/)) | Tahunan pada harga yang tercantum; halamannya juga menampilkan opsi bulanan |
 | **CodeSignal** | Paket dengan kredit ([halaman harga](https://codesignal.com/pricing/)) | Bulanan atau tahunan |
 | **Bryq** | Paket dengan undangan tanpa batas ([halaman harga](https://www.bryq.com/pricing)) | Bulanan atau tahunan |
 | **Alooba** | Paket dengan kredit bulanan ([halaman harga](https://www.alooba.com/pricing/)) | Bulanan atau tahunan; kredit kedaluwarsa di akhir setiap periode penagihan; Enterprise minimal 1 tahun |
-| **Codility** | Paket tahunan dengan kredit undangan ([halaman harga](https://www.codility.com/pricing/)) | Tahunan |
+| **Codility** | Paket bulanan atau tahunan dengan kredit undangan ([halaman harga](https://www.codility.com/pricing/)) | Bulanan atau tahunan |
 
 Beberapa alat ini menawarkan penagihan bulanan, yang memang bukan kontrak panjang tetapi tetap merupakan biaya berulang. Kalau kamu hanya merekrut sesekali, jangan lupa membatalkannya di antara putaran rekrutmen.
 
@@ -51,12 +51,13 @@ testee tidak memakai langganan dan tidak memakai kontrak. Kamu membeli kredit sa
 - **Membuat wawancara gratis,** begitu juga melihat pratinjau wawancaramu sebagai kandidat.
 - **Tanpa biaya per kursi.** Tambahkan admin dan viewer ke perusahaanmu tanpa biaya.
 - **Kredit sambutan:** 3 kandidat pertama dari perusahaan pertamamu gratis.
+- **Pengembalian dana:** kredit yang kamu beli dalam 14 hari terakhir dan belum dipakai bisa dikembalikan dananya. Kredit gratis tidak bisa.
 
-Harga di sini dalam dolar AS, dan dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, India, bagian Eropa lainnya, dan Inggris Raya (lihat [harga](/pricing)). Pembayaran diproses lewat Paddle, yang menangani PPN (VAT) dan pajak penjualan serta menampilkan jumlah akhir saat checkout; testee tidak menyimpan detail kartu. Kamu bisa menyalakan isi ulang otomatis yang mengisi saldo saat hampir habis, tetapi ini opsional.
+Harga di sini dalam dolar AS, dan dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, India, dan Inggris Raya, serta dalam euro di bagian UE lainnya, Islandia, Liechtenstein, dan Norwegia (lihat [harga](/pricing)). Pembayaran diproses lewat Paddle, yang menangani PPN (VAT) dan pajak penjualan serta menampilkan jumlah akhir saat checkout; testee tidak menyimpan detail kartu. Kamu bisa menyalakan isi ulang otomatis yang mengisi saldo saat hampir habis, tetapi ini opsional.
 
 ## Apa yang kamu dapat untuk setiap kandidat
 
-- Wawancara keterampilan pilihan ganda berbatas waktu yang ditulis dari deskripsi pekerjaanmu, atau dari templat siap pakai untuk posisi tersebut.
+- Wawancara keterampilan pilihan ganda berbatas waktu yang ditulis dari deskripsi pekerjaanmu, atau dari templat siap pakai untuk posisi tersebut, dalam mode klik atau mode suara.
 - Topik yang kamu tinjau dan ubah sebelum ada soal yang ditulis.
 - Set soal acak untuk setiap kandidat, dengan hitung mundur di setiap soal. Untuk posisi teknis, soal bisa menampilkan contoh kode singkat dan menanyakan apa fungsinya atau hasilnya.
 - Scorecard berisi setiap jawaban dan waktunya, plus tanda untuk jawaban yang terlalu cepat, meninggalkan halaman, dan percobaan menyalin.

@@ -2,7 +2,7 @@
 title: "Pre-employment tests na walang subscription"
 seoTitle: "Pre-Employment Test na Walang Subscription"
 description: "Mag-test ng aplikante nang walang buwanang plan o taunang kontrata. Paano ikinukumpara ang pay-per-candidate sa subscription, at ano ang dapat suriin."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Pre-employment tests na walang subscription
@@ -28,14 +28,14 @@ Ipinapaliwanag ng pahinang ito ang mga alternatibo sa subscription, paano sila i
 
 ## Paano naka-presyo ang mga karaniwang tool
 
-| Tool | Pricing model (noong Oktubre 2026) | Commitment |
+| Tool | Pricing model (noong Nobyembre 2026) | Commitment |
 | --- | --- | --- |
 | **testee** | Prepaid credits, sinisingil bawat aplikanteng sumasagot ([presyo](/pricing)) | Wala; hindi nag-e-expire ang credits |
-| **TestGorilla** | Libreng plan, o mga paid plan na sinisingil taun-taon ([pricing page](https://www.testgorilla.com/pricing/)) | Taunan para sa mga paid plan |
+| **TestGorilla** | Libreng plan, o mga paid plan na ang presyo ay para sa taunang billing ([pricing page](https://www.testgorilla.com/pricing/)) | Taunan sa mga nakalistang presyo; may monthly option din sa page nito |
 | **CodeSignal** | Mga plan na may credits ([pricing page](https://codesignal.com/pricing/)) | Buwanan o taunan |
 | **Bryq** | Mga plan na may unlimited invitations ([pricing page](https://www.bryq.com/pricing)) | Buwanan o taunan |
 | **Alooba** | Mga plan na may buwanang credits ([pricing page](https://www.alooba.com/pricing/)) | Buwanan o taunan; nag-e-expire ang credits sa dulo ng bawat billing period; may 1-taong minimum ang Enterprise |
-| **Codility** | Taunang plan na may invite credits ([pricing page](https://www.codility.com/pricing/)) | Taunan |
+| **Codility** | Buwanan o taunang plan na may invite credits ([pricing page](https://www.codility.com/pricing/)) | Buwanan o taunan |
 
 May ilan sa mga tool na ito na nag-aalok ng buwanang billing, na hindi mahabang kontrata pero paulit-ulit pa ring bayarin. Kung paminsan-minsan ka lang nagha-hire, tandaang mag-cancel sa pagitan ng mga hiring round.
 
@@ -51,12 +51,13 @@ Walang subscription at walang kontrata ang testee. Bumibili ka ng credits kapag 
 - **Libre ang paggawa ng interview,** pati ang pag-preview ng iyong interview bilang aplikante.
 - **Walang seat fees.** Magdagdag ng mga admin at viewer sa iyong kumpanya nang walang bayad.
 - **Welcome credits:** libre ang unang 3 aplikante ng iyong unang kumpanya.
+- **Refunds:** puwedeng ma-refund ang credits na binili mo sa nakaraang 14 na araw at hindi pa nagagastos. Hindi nire-refund ang libreng credits.
 
-Nasa US dollars ang mga presyo rito, at nasa lokal na currency sa Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, iba pang bahagi ng Europe at UK (tingnan ang [presyo](/pricing)). Dumaraan ang mga bayad sa Paddle, na humahawak sa VAT at sales tax at nagpapakita ng huling halaga sa checkout; walang iniimbak na card details ang testee. Puwede mong i-on ang automatic top-up na nagre-refill ng balance mo kapag paubos na, pero opsyonal ito.
+Nasa US dollars ang mga presyo rito, at nasa lokal na currency sa Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India at UK, at nasa euros sa iba pang bahagi ng EU, Iceland, Liechtenstein at Norway (tingnan ang [presyo](/pricing)). Dumaraan ang mga bayad sa Paddle, na humahawak sa VAT at sales tax at nagpapakita ng huling halaga sa checkout; walang iniimbak na card details ang testee. Puwede mong i-on ang automatic top-up na nagre-refill ng balance mo kapag paubos na, pero opsyonal ito.
 
 ## Ang makukuha mo para sa bawat aplikante
 
-- Isang timed multiple-choice skills interview na isinulat mula sa iyong job description, o mula sa handang template para sa role.
+- Isang timed multiple-choice skills interview na isinulat mula sa iyong job description, o mula sa handang template para sa role, sa click o voice mode.
 - Mga topic na nire-review at ine-edit mo bago maisulat ang kahit isang tanong.
 - Sariling random na set ng tanong ang bawat aplikante, na may countdown sa bawat tanong. Para sa mga technical role, puwedeng magpakita ang mga tanong ng maiikling code example at itanong kung ano ang ginagawa o inilalabas nito.
 - Isang scorecard na may bawat sagot at oras nito, kasama ang mga flag para sa sobrang bilis na sagot, pag-alis sa pahina at pagtatangkang mag-copy.

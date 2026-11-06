@@ -2,7 +2,7 @@
 title: "Pruebas de selección de personal sin suscripción"
 seoTitle: "Pruebas de selección de personal sin suscripción"
 description: "Evalúa candidatos sin plan mensual ni contrato anual. Cómo se compara el pago por candidato con las suscripciones y qué revisar antes de comprar."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Pruebas de selección de personal sin suscripción
@@ -28,14 +28,14 @@ Esta página explica las alternativas a una suscripción, cómo se comparan con 
 
 ## Cómo fijan el precio las herramientas habituales
 
-| Herramienta | Modelo de precios (a octubre de 2026) | Compromiso |
+| Herramienta | Modelo de precios (a noviembre de 2026) | Compromiso |
 | --- | --- | --- |
 | **testee** | Créditos prepago, cobrados por candidato que responde ([precios](/pricing)) | Ninguno; los créditos no caducan |
-| **TestGorilla** | Plan gratuito o planes de pago con facturación anual ([página de precios](https://www.testgorilla.com/pricing/)) | Anual en los planes de pago |
+| **TestGorilla** | Plan gratuito o planes de pago con precios de facturación anual ([página de precios](https://www.testgorilla.com/pricing/)) | Anual a los precios indicados; su página también muestra una opción mensual |
 | **CodeSignal** | Planes con créditos ([página de precios](https://codesignal.com/pricing/)) | Mensual o anual |
 | **Bryq** | Planes con invitaciones ilimitadas ([página de precios](https://www.bryq.com/pricing)) | Mensual o anual |
 | **Alooba** | Planes con créditos mensuales ([página de precios](https://www.alooba.com/pricing/)) | Mensual o anual; los créditos caducan al final de cada periodo de facturación; Enterprise tiene un mínimo de 1 año |
-| **Codility** | Planes anuales con créditos de invitación ([página de precios](https://www.codility.com/pricing/)) | Anual |
+| **Codility** | Planes mensuales o anuales con créditos de invitación ([página de precios](https://www.codility.com/pricing/)) | Mensual o anual |
 
 Algunas de estas herramientas ofrecen facturación mensual, que no es un contrato largo pero sigue siendo una cuota recurrente. Si solo contratas de vez en cuando, recuerda cancelar entre un proceso de selección y otro.
 
@@ -51,12 +51,13 @@ testee no tiene suscripción ni contrato. Compras créditos cuando los necesitas
 - **Generar entrevistas es gratis,** y también lo es probar tu entrevista como candidato.
 - **Sin cargos por usuario.** Añade administradores y lectores a tu empresa sin coste.
 - **Créditos de bienvenida:** los 3 primeros candidatos de tu primera empresa son gratis.
+- **Reembolsos:** los créditos que compraste en los últimos 14 días y no has gastado se pueden reembolsar. Los créditos gratis no.
 
-Los precios están aquí en dólares estadounidenses, y en la moneda local en Canadá, Australia, Israel, Polonia, Suiza, Japón, Corea del Sur, Taiwán, Hong Kong, Tailandia, Singapur, India, el resto de Europa y el Reino Unido (consulta los [precios](/pricing)). Los pagos se procesan a través de Paddle, que gestiona el IVA y los impuestos sobre las ventas y muestra el importe final al pagar; testee no almacena datos de tarjetas. Puedes activar una recarga automática que repone tu saldo cuando se agota, pero es opcional.
+Los precios están aquí en dólares estadounidenses, y en la moneda local en Canadá, Australia, Israel, Polonia, Suiza, Japón, Corea del Sur, Taiwán, Hong Kong, Tailandia, Singapur, India y el Reino Unido, y en euros en el resto de la UE, Islandia, Liechtenstein y Noruega (consulta los [precios](/pricing)). Los pagos se procesan a través de Paddle, que gestiona el IVA y los impuestos sobre las ventas y muestra el importe final al pagar; testee no almacena datos de tarjetas. Puedes activar una recarga automática que repone tu saldo cuando se agota, pero es opcional.
 
 ## Qué obtienes por cada candidato
 
-- Una entrevista de habilidades de opción múltiple con tiempo límite redactada a partir de tu descripción del puesto, o de una plantilla lista para el puesto.
+- Una entrevista de habilidades de opción múltiple con tiempo límite redactada a partir de tu descripción del puesto, o de una plantilla lista para el puesto, en modo clic o de voz.
 - Temas que revisas y editas antes de que se redacte ninguna pregunta.
 - Un conjunto aleatorio de preguntas propio para cada candidato, con una cuenta atrás en cada pregunta. Para puestos técnicos, las preguntas pueden mostrar breves ejemplos de código y preguntar qué hacen o qué imprimen.
 - Una ficha de evaluación con cada respuesta y su tiempo, además de alertas de respuestas demasiado rápidas, salidas de la página e intentos de copiar.

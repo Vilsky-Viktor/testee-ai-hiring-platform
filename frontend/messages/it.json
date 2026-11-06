@@ -1760,7 +1760,7 @@
         "name": "Strumenti di test",
         "checks": "Test già pronti da una libreria",
         "time": "Test da scegliere o scrivere per ogni ruolo",
-        "cost": "Un canone mensile, che tu assuma o no"
+        "cost": "Il costo di un piano, che tu assuma o no"
       },
       "testee": {
         "name": "testee",
@@ -2158,7 +2158,7 @@
   "compare": {
     "title": "Confronta testee",
     "metaTitle": "Strumenti di test pre-assunzione a confronto",
-    "intro": "Confronti con fonti rispetto ad altri strumenti di test pre-assunzione: come vengono creati i test, quanto costano e quando ciascuno è più adatto."
+    "intro": "Confronti con fonti rispetto ad altri strumenti di test pre-assunzione: come vengono creati i test, come sono strutturati i prezzi e quando ciascuno è più adatto."
   },
   "guides": {
     "title": "Guide per assumere",
@@ -3558,7 +3558,7 @@
       },
       "questions": {
         "title": "Le domande vengono generate e verificate",
-        "text": "L'IA scrive un insieme di domande per ogni argomento, una seconda IA verifica alla cieca ogni chiave di correzione, e ogni candidato riceve una serie casuale tutta sua.",
+        "text": "L'IA scrive un insieme di domande per ogni argomento, una seconda IA verifica alla cieca un campione di chiavi di correzione, e ogni candidato riceve una serie casuale tutta sua.",
         "points": {
           "unique": "Domande diverse per ogni candidato",
           "checked": "Chiavi di correzione verificate da una seconda IA",

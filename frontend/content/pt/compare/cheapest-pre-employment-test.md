@@ -2,7 +2,7 @@
 title: "Como comparar o custo de testes de seleção"
 seoTitle: "Teste de seleção mais barato? Como comparar custos"
 description: "Planos gratuitos, assinaturas, pagamento por candidato e orçamentos sob medida: como funciona cada modelo de preço e como estimar o custo dos seus testes."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Como comparar o custo de testes de seleção
@@ -20,7 +20,7 @@ Esta página não lista os preços de outros fornecedores, porque eles mudam com
 | **Pagamento por candidato** | Você paga só pelos candidatos que fazem o teste, normalmente com créditos pré-pagos | Você contrata de vez em quando, ou o seu volume oscila | [testee](/pricing) |
 | **Orçamento sob medida** | Um preço negociado com o time comercial, muitas vezes por um ano | Você contrata em grande escala ou precisa de testes psicométricos validados | Alguns fornecedores, muitas vezes especialistas em psicometria |
 
-*Modelos de preço conforme a página de cada fornecedor em outubro de 2026.*
+*Modelos de preço conforme a página de cada fornecedor em novembro de 2026.*
 
 ## Como estimar o seu custo
 
@@ -35,7 +35,7 @@ Você precisa de três números: quantos candidatos avalia por ano, o preço por
 
 ### Os preços da testee para a sua estimativa
 
-A testee cobra por candidato que responde pelo menos uma pergunta. O preço por candidato depende do tamanho da recarga: $5 na menor recarga, $4 a partir de uma recarga de $200, $3 a partir de uma recarga de $600 e $2 a partir de uma recarga de $1.000. Os 3 primeiros candidatos da sua primeira empresa são gratuitos. Os preços aqui são em dólares americanos, e na moeda local no Canadá, na Austrália, em Israel, na Polônia, na Suíça, no Japão, na Coreia do Sul, em Taiwan, em Hong Kong, na Tailândia, em Singapura, na Índia, no restante da Europa e no Reino Unido; a Paddle, que processa os pagamentos, cuida do IVA e dos impostos sobre vendas no checkout. Veja os [preços](/pricing) para as recargas atuais.
+A testee cobra por candidato que responde pelo menos uma pergunta. O preço por candidato depende do tamanho da recarga: $5 na menor recarga, $4 a partir de uma recarga de $200, $3 a partir de uma recarga de $600 e $2 a partir de uma recarga de $1.000. Os 3 primeiros candidatos da sua primeira empresa são gratuitos. Os preços aqui são em dólares americanos, e na moeda local no Canadá, na Austrália, em Israel, na Polônia, na Suíça, no Japão, na Coreia do Sul, em Taiwan, em Hong Kong, na Tailândia, em Singapura, na Índia e no Reino Unido, e em euros no restante da UE, na Islândia, em Liechtenstein e na Noruega; a Paddle, que processa os pagamentos, cuida do IVA e dos impostos sobre vendas no checkout. Veja os [preços](/pricing) para as recargas atuais.
 
 ## Custos além do preço de vitrine
 
@@ -44,7 +44,7 @@ Ao comparar, verifique também:
 - **Compromisso anual.** Um plano "cobrado anualmente" significa pagar 12 meses adiantados, mesmo que você só contrate em dois deles.
 - **Usuários.** Alguns planos limitam quantas pessoas da sua equipe podem usá-los. A testee não cobra por usuário: proprietários, administradores e visualizadores são gratuitos.
 - **Candidatos que nunca começam.** A testee só cobra pelos candidatos que respondem pelo menos uma pergunta; os créditos de um convite não usado voltam para você.
-- **Créditos que expiram.** Os créditos da testee não expiram. Verifique se os créditos de outros fornecedores são acumulados para o período seguinte.
+- **Créditos que expiram.** Os créditos da testee não expiram, e os créditos que você comprou nos últimos 14 dias e ainda não gastou podem ser reembolsados. Verifique se os créditos de outros fornecedores são acumulados para o período seguinte.
 - **Impostos.** Verifique se o preço anunciado inclui IVA ou impostos sobre vendas.
 - **Recursos restritos a planos mais altos.** Integrações com ATS, monitoramento (proctoring) e programação personalizada muitas vezes estão em planos mais caros. Verifique de qual plano você realmente precisaria. A testee se integra com Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR e Slack, e inclui a sua própria API, sem custo adicional.
 - **Mais de uma ferramenta.** Se você precisa de um teste de conhecimentos e de um teste psicométrico ou de programação, some os dois.
@@ -55,14 +55,14 @@ Um preço baixo só ajuda se o teste medir o que a sua vaga exige. Pague por out
 
 - **Você precisa de testes psicométricos.** Testes cognitivos e de personalidade validados vêm de fornecedores especializados e de plataformas mais amplas.
 - **Você precisa de programação prática.** Plataformas para desenvolvedores permitem que os candidatos escrevam e executem código. A testee faz perguntas de leitura de código (o que o código faz ou imprime), mas os candidatos não escrevem nem executam código.
-- **Você precisa de entrevistas em vídeo ou conduzidas por IA.** A testee não tem nenhuma das duas coisas.
+- **Você precisa de respostas em vídeo ou conversas conduzidas por IA.** A testee não tem nenhuma das duas coisas: o modo de voz lê perguntas de múltipla escolha em voz alta, e os candidatos respondem por voz ou com um toque.
 - **Você contrata em volume alto e constante.** Um plano fixo pode custar menos do que um preço por candidato.
 
 Veja [Alternativas à TestGorilla](/compare/testgorilla-alternatives) e [Alternativas ao HackerRank](/compare/hackerrank-alternatives) para saber onde cada ferramenta se encaixa e como elas se combinam.
 
 ## O que cada candidato da testee inclui
 
-- Uma entrevista de múltipla escolha cronometrada, escrita a partir da sua descrição da vaga, com tópicos que você revisa antes.
+- Uma entrevista de múltipla escolha cronometrada, escrita a partir da sua descrição da vaga, com tópicos que você revisa antes, no modo clique ou de voz.
 - Um conjunto aleatório de perguntas próprio para cada candidato, com contagem regressiva em cada pergunta. Para vagas técnicas, as perguntas podem incluir pequenos exemplos de código.
 - Fichas de avaliação com respostas e tempos, e alertas para respostas rápidas demais, saídas da página e tentativas de cópia.
 - Relatórios em PDF de um candidato ou da lista inteira.

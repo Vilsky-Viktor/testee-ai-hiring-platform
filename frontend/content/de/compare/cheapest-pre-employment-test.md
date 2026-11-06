@@ -2,7 +2,7 @@
 title: "Kosten von Einstellungstests vergleichen"
 seoTitle: "Günstiger Einstellungstest? So vergleichst du Kosten"
 description: "Gratis-Tarife, Abos, Abrechnung pro Kandidat, individuelle Angebote: So funktionieren die Preismodelle, so schätzt du deine Kosten für Einstellungstests."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Kosten von Einstellungstests vergleichen
@@ -20,7 +20,7 @@ Diese Seite nennt keine Preise anderer Anbieter, weil sie sich oft ändern. Sie 
 | **Abrechnung pro Kandidat** | Du zahlst nur für Kandidaten, die den Test machen, meist aus vorausbezahlten Credits | du gelegentlich einstellst oder dein Volumen schwankt | [testee](/pricing) |
 | **Individuelles Angebot** | Ein mit dem Vertrieb vereinbarter Preis, oft für ein Jahr | du in großem Umfang einstellst oder validierte psychometrische Tests brauchst | Einige Anbieter, oft Spezialisten für Psychometrie |
 
-*Preismodelle, wie sie im Oktober 2026 auf der Seite des jeweiligen Anbieters angegeben waren.*
+*Preismodelle, wie sie im November 2026 auf der Seite des jeweiligen Anbieters angegeben waren.*
 
 ## So schätzt du deine Kosten
 
@@ -35,7 +35,7 @@ Du brauchst drei Zahlen: wie viele Kandidaten du pro Jahr testest, den Preis pro
 
 ### Die Preise von testee für deine Schätzung
 
-testee berechnet pro Kandidat, der mindestens eine Frage beantwortet. Der Preis pro Kandidat hängt von der Höhe deiner Aufladung ab: 5 $ bei der kleinsten Aufladung, 4 $ ab einer Aufladung von 200 $, 3 $ ab einer Aufladung von 600 $ und 2 $ ab einer Aufladung von 1.000 $. Die ersten 3 Kandidaten deines ersten Unternehmens sind kostenlos. Die Preise sind hier in US-Dollar angegeben, in Kanada, Australien, Israel, Polen, der Schweiz, Japan, Südkorea, Taiwan, Hongkong, Thailand, Singapur, Indien, im übrigen Europa und im Vereinigten Königreich in der Landeswährung; Paddle, das die Zahlungen abwickelt, kümmert sich beim Bezahlen um Mehrwertsteuer und Sales Tax. Die aktuellen Aufladungen findest du unter [Preise](/pricing).
+testee berechnet pro Kandidat, der mindestens eine Frage beantwortet. Der Preis pro Kandidat hängt von der Höhe deiner Aufladung ab: 5 $ bei der kleinsten Aufladung, 4 $ ab einer Aufladung von 200 $, 3 $ ab einer Aufladung von 600 $ und 2 $ ab einer Aufladung von 1.000 $. Die ersten 3 Kandidaten deines ersten Unternehmens sind kostenlos. Die Preise sind hier in US-Dollar angegeben, in Kanada, Australien, Israel, Polen, der Schweiz, Japan, Südkorea, Taiwan, Hongkong, Thailand, Singapur, Indien und im Vereinigten Königreich in der Landeswährung und in der übrigen EU, in Island, Liechtenstein und Norwegen in Euro; Paddle, das die Zahlungen abwickelt, kümmert sich beim Bezahlen um Mehrwertsteuer und Sales Tax. Die aktuellen Aufladungen findest du unter [Preise](/pricing).
 
 ## Kosten jenseits des Listenpreises
 
@@ -44,7 +44,7 @@ Prüf beim Vergleich auch Folgendes:
 - **Jahresbindung.** Ein Tarif mit „jährlicher Abrechnung“ bedeutet, 12 Monate im Voraus zu bezahlen, auch wenn du nur in zwei davon einstellst.
 - **Nutzerlizenzen.** Manche Tarife begrenzen, wie viele Personen in deinem Team sie nutzen können. testee hat keine Gebühren pro Nutzer: Inhaber, Admins und Betrachter sind kostenlos.
 - **Kandidaten, die nie anfangen.** testee berechnet nur Kandidaten, die mindestens eine Frage beantworten; die Credits einer ungenutzten Einladung kommen zurück.
-- **Verfallende Credits.** Die Credits von testee verfallen nicht. Prüf, ob die Credits anderer Anbieter übertragen werden.
+- **Verfallende Credits.** Die Credits von testee verfallen nicht, und Credits, die du in den letzten 14 Tagen gekauft und noch nicht ausgegeben hast, können erstattet werden. Prüf, ob die Credits anderer Anbieter übertragen werden.
 - **Steuern.** Prüf, ob ein angegebener Preis Mehrwertsteuer oder Sales Tax enthält.
 - **Funktionen in höheren Tarifen.** ATS-Integrationen, Proctoring und eigene Programmieraufgaben gibt es oft nur in teureren Tarifen. Prüf, welchen Tarif du tatsächlich bräuchtest. testee ist an Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR und Slack angebunden und bietet seine API, alles ohne Aufpreis.
 - **Mehr als ein Tool.** Wenn du einen Wissenstest und einen psychometrischen Test oder Programmiertest brauchst, addiere beide.
@@ -55,14 +55,14 @@ Ein niedriger Preis hilft nur, wenn der Test misst, was deine Stelle braucht. Za
 
 - **Du Psychometrie brauchst.** Validierte kognitive Tests und Persönlichkeitstests kommen von spezialisierten Anbietern und breiter aufgestellten Plattformen.
 - **Du praktische Programmieraufgaben brauchst.** Auf Entwicklerplattformen schreiben Kandidaten Code und führen ihn aus. testee stellt Fragen zum Lesen von Code (was Code tut oder ausgibt), aber Kandidaten schreiben oder starten keinen Code.
-- **Du Videointerviews oder KI-geführte Interviews brauchst.** testee bietet beides nicht.
+- **Du Videoantworten oder KI-geführte Gespräche brauchst.** testee bietet beides nicht: Der Sprachmodus liest Multiple-Choice-Fragen vor, und Kandidaten antworten per Sprache oder durch Antippen.
 - **Du dauerhaft in hohem Volumen einstellst.** Ein Pauschaltarif kann günstiger sein als ein Preis pro Kandidat.
 
 Unter [Alternativen zu TestGorilla](/compare/testgorilla-alternatives) und [Alternativen zu HackerRank](/compare/hackerrank-alternatives) siehst du, wofür sich welches Tool eignet und wie sie sich kombinieren lassen.
 
 ## Was jeder Kandidat bei testee beinhaltet
 
-- Ein zeitlich begrenztes Multiple-Choice-Interview, geschrieben aus deiner Stellenbeschreibung, mit Themen, die du vorher prüfst.
+- Ein zeitlich begrenztes Multiple-Choice-Interview, geschrieben aus deiner Stellenbeschreibung, mit Themen, die du vorher prüfst, im Klick- oder Sprachmodus.
 - Einen eigenen zufälligen Fragensatz für jeden Kandidaten, mit einem Countdown bei jeder Frage. Für technische Stellen können Fragen kurze Codebeispiele enthalten.
 - Auswertungen mit Antworten und Zeiten sowie Hinweisen auf zu schnelle Antworten, das Verlassen der Seite und Kopierversuche.
 - PDF-Berichte für einen Kandidaten oder die ganze Liste.

@@ -2,7 +2,7 @@
 title: "İşe alım öncesi test maliyetleri nasıl karşılaştırılır"
 seoTitle: "En Ucuz İşe Alım Öncesi Test? Maliyetleri Karşılaştırın"
 description: "Ücretsiz plan, abonelik, aday başına ödeme ve özel teklif: her fiyatlandırma modeli nasıl işler, işe alım öncesi test maliyetinizi nasıl tahmin edersiniz."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # İşe alım öncesi test maliyetleri nasıl karşılaştırılır
@@ -20,7 +20,7 @@ Bu sayfa diğer sağlayıcıların fiyatlarını listelemez, çünkü sık deği
 | **Aday başına ödeme** | Yalnızca testi çözen adaylar için, genellikle ön ödemeli kredilerden ödersiniz | Ara sıra işe alım yapıyorsanız veya hacminiz dalgalanıyorsa | [testee](/pricing) |
 | **Özel teklif** | Satış ekibiyle, çoğunlukla bir yıllığına anlaşılan fiyat | Büyük ölçekte işe alım yapıyorsanız veya geçerliliği kanıtlanmış psikometrik testlere ihtiyacınız varsa | Bazı sağlayıcılar, çoğunlukla psikometri uzmanları |
 
-*Fiyatlandırma modelleri, Ekim 2026'da her sağlayıcının sayfasında gösterildiği şekildedir.*
+*Fiyatlandırma modelleri, Kasım 2026'da her sağlayıcının sayfasında gösterildiği şekildedir.*
 
 ## Maliyetinizi nasıl tahmin edersiniz
 
@@ -35,7 +35,7 @@ Bu sayfa diğer sağlayıcıların fiyatlarını listelemez, çünkü sık deği
 
 ### Tahmininiz için testee fiyatları
 
-testee, en az bir soruyu yanıtlayan aday başına ücret alır. Aday başı fiyat, kredi yükleme tutarınıza bağlıdır: en küçük yüklemede $5, $200'lık yüklemeden itibaren $4, $600'lık yüklemeden itibaren $3 ve $1.000'lık yüklemeden itibaren $2. İlk şirketinizin ilk 3 adayı ücretsizdir. Fiyatlar burada ABD doları, Kanada, Avustralya, İsrail, Polonya, İsviçre, Japonya, Güney Kore, Tayvan, Hong Kong, Tayland, Singapur, Hindistan, Avrupa'nın geri kalanı ve Birleşik Krallık'ta ise yerel para birimi cinsindendir; ödemeleri işleyen Paddle, KDV ve satış vergisini ödeme adımında hesaplar. Güncel yükleme seçenekleri için [fiyatlar](/pricing) sayfasına bakın.
+testee, en az bir soruyu yanıtlayan aday başına ücret alır. Aday başı fiyat, kredi yükleme tutarınıza bağlıdır: en küçük yüklemede $5, $200'lık yüklemeden itibaren $4, $600'lık yüklemeden itibaren $3 ve $1.000'lık yüklemeden itibaren $2. İlk şirketinizin ilk 3 adayı ücretsizdir. Fiyatlar burada ABD doları, Kanada, Avustralya, İsrail, Polonya, İsviçre, Japonya, Güney Kore, Tayvan, Hong Kong, Tayland, Singapur, Hindistan ve Birleşik Krallık'ta yerel para birimi, AB'nin geri kalanı ile İzlanda, Lihtenştayn ve Norveç'te ise avro cinsindendir; ödemeleri işleyen Paddle, KDV ve satış vergisini ödeme adımında hesaplar. Güncel yükleme seçenekleri için [fiyatlar](/pricing) sayfasına bakın.
 
 ## Etiket fiyatının ötesindeki maliyetler
 
@@ -44,7 +44,7 @@ Karşılaştırırken bunları da kontrol edin:
 - **Yıllık taahhüt.** “Yıllık faturalandırılan” bir plan, yalnızca iki ayında işe alım yapsanız bile 12 ayı peşin ödemek demektir.
 - **Kullanıcı lisansları.** Bazı planlar ekibinizden kaç kişinin kullanabileceğini sınırlar. testee'de kullanıcı başı ücret yoktur: sahipler, yöneticiler ve görüntüleyiciler ücretsizdir.
 - **Hiç başlamayan adaylar.** testee yalnızca en az bir soruyu yanıtlayan adaylar için ücret alır; kullanılmayan bir davetin kredileri geri gelir.
-- **Süresi dolan krediler.** testee'nin kredileri süresiz geçerlidir. Diğer sağlayıcıların kredilerinin sonraki döneme devredilip devredilmediğini kontrol edin.
+- **Süresi dolan krediler.** testee'nin kredileri süresiz geçerlidir; son 14 gün içinde satın aldığınız ve harcamadığınız krediler iade edilebilir. Diğer sağlayıcıların kredilerinin sonraki döneme devredilip devredilmediğini kontrol edin.
 - **Vergiler.** Listelenen fiyatın KDV veya satış vergisini içerip içermediğini kontrol edin.
 - **Üst planlardaki özellikler.** ATS entegrasyonları, gözetim ve özel kodlama genellikle daha pahalı planlarda bulunur. Gerçekte hangi plana ihtiyacınız olacağını kontrol edin. testee, ek ücret olmadan Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR ve Slack ile entegre olur ve API'sini de sunar.
 - **Birden fazla araç.** Bir bilgi testine ve bir psikometrik ya da kodlama testine ihtiyacınız varsa ikisini toplayın.
@@ -55,14 +55,14 @@ Düşük fiyat, ancak test işinizin gerektirdiği şeyi ölçüyorsa işe yarar
 
 - **Psikometrik testlere ihtiyacınız varsa.** Geçerliliği kanıtlanmış bilişsel ve kişilik testleri uzman sağlayıcılardan ve daha kapsamlı platformlardan gelir.
 - **Uygulamalı kodlamaya ihtiyacınız varsa.** Geliştirici platformları adayların kod yazıp çalıştırmasına olanak tanır. testee kod okuma soruları (kodun ne yaptığı veya ne çıktı verdiği) sorar, ancak adaylar kod yazmaz veya çalıştırmaz.
-- **Video veya yapay zekâ yönetimli mülakatlara ihtiyacınız varsa.** testee'de ikisi de yoktur.
+- **Video yanıtlara veya yapay zekânın yönettiği sohbetlere ihtiyacınız varsa.** testee'de ikisi de yoktur: sesli modu çoktan seçmeli soruları sesli okur, adaylar da sesle veya dokunarak cevap verir.
 - **Düzenli ve yüksek hacimde işe alım yapıyorsanız.** Sabit bir plan, aday başı fiyattan daha ucuza gelebilir.
 
 Her aracın nerede uygun olduğu ve nasıl birleştirildiği için [TestGorilla alternatifleri](/compare/testgorilla-alternatives) ve [HackerRank alternatifleri](/compare/hackerrank-alternatives) sayfalarına bakın.
 
 ## testee'de her adaya neler dahildir
 
-- İş tanımınızdan yazılmış, konularını önce sizin gözden geçirdiğiniz süreli, çoktan seçmeli bir mülakat.
+- İş tanımınızdan yazılmış, konularını önce sizin gözden geçirdiğiniz, tıklama veya sesli modda yapılan süreli, çoktan seçmeli bir mülakat.
 - Her adaya, her sorusunda geri sayım olan kendine ait rastgele bir soru seti. Teknik pozisyonlarda sorular kısa kod örnekleri içerebilir.
 - Yanıtlar ve sürelerle değerlendirme kartları; çok hızlı yanıtlar, sayfadan ayrılma ve kopyalama girişimleri için işaretler.
 - Tek bir aday veya tüm liste için PDF raporlar.

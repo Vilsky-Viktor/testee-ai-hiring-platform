@@ -1760,7 +1760,7 @@
         "name": "Narzędzia do testów",
         "checks": "Gotowe testy z biblioteki",
         "time": "Testy do wybrania lub napisania dla każdej roli",
-        "cost": "Miesięczna opłata, czy rekrutujesz, czy nie"
+        "cost": "Opłata za plan, czy rekrutujesz, czy nie"
       },
       "testee": {
         "name": "testee",
@@ -2158,7 +2158,7 @@
   "compare": {
     "title": "Porównaj testee",
     "metaTitle": "Porównanie narzędzi do testów rekrutacyjnych",
-    "intro": "Porównania z innymi narzędziami do testów rekrutacyjnych, ze źródłami: jak powstają testy, ile kosztują i kiedy które pasuje lepiej."
+    "intro": "Porównania z innymi narzędziami do testów rekrutacyjnych, ze źródłami: jak powstają testy, jak są wyceniane i kiedy które pasuje lepiej."
   },
   "guides": {
     "title": "Poradniki rekrutacyjne",
@@ -3558,7 +3558,7 @@
       },
       "questions": {
         "title": "Pytania są generowane i sprawdzane",
-        "text": "AI pisze pulę pytań do każdego tematu, druga AI sprawdza w ciemno każdy klucz odpowiedzi, a każdy kandydat dostaje własny losowy zestaw.",
+        "text": "AI pisze pulę pytań do każdego tematu, druga AI sprawdza w ciemno próbkę kluczy odpowiedzi, a każdy kandydat dostaje własny losowy zestaw.",
         "points": {
           "unique": "Inne pytania dla każdego kandydata",
           "checked": "Klucze odpowiedzi sprawdzane przez drugą AI",

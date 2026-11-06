@@ -1760,7 +1760,7 @@
         "name": "Testtools",
         "checks": "Kant-en-klare tests uit een bibliotheek",
         "time": "Voor elke functie tests kiezen of schrijven",
-        "cost": "Maandelijkse kosten, of je nu werft of niet"
+        "cost": "Plankosten, of je nu werft of niet"
       },
       "testee": {
         "name": "testee",
@@ -2158,7 +2158,7 @@
   "compare": {
     "title": "Vergelijk testee",
     "metaTitle": "Tools voor selectietests vergeleken",
-    "intro": "Vergelijkingen met bronnen met andere tools voor selectietests: hoe de tests worden gemaakt, wat ze kosten en wanneer welke beter past."
+    "intro": "Vergelijkingen met bronnen met andere tools voor selectietests: hoe de tests worden gemaakt, hoe de prijzen werken en wanneer welke beter past."
   },
   "guides": {
     "title": "Gidsen voor werving",
@@ -3558,7 +3558,7 @@
       },
       "questions": {
         "title": "Vragen worden gegenereerd en gecontroleerd",
-        "text": "AI schrijft per onderwerp een pool van vragen, een tweede AI controleert elke antwoordsleutel blind, en elke kandidaat krijgt een eigen willekeurige set.",
+        "text": "AI schrijft per onderwerp een pool van vragen, een tweede AI controleert blind een steekproef van de antwoordsleutels, en elke kandidaat krijgt een eigen willekeurige set.",
         "points": {
           "unique": "Eigen vragen per kandidaat",
           "checked": "Antwoordsleutels gecontroleerd door een tweede AI",

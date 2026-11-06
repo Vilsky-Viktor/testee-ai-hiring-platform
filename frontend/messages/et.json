@@ -1760,7 +1760,7 @@
         "name": "Testimisvahendid",
         "checks": "Valmis testid testikogust",
         "time": "Testid, mis tuleb iga rolli jaoks valida või kirjutada",
-        "cost": "Kuutasu, värbad või mitte"
+        "cost": "Paketitasu, värbad või mitte"
       },
       "testee": {
         "name": "testee",
@@ -2158,7 +2158,7 @@
   "compare": {
     "title": "testee võrdlus",
     "metaTitle": "Värbamistestide tööriistade võrdlus",
-    "intro": "Allikatega võrdlused teiste värbamistestide tööriistadega: kuidas testid luuakse, mis need maksavad ja millal milline paremini sobib."
+    "intro": "Allikatega võrdlused teiste värbamistestide tööriistadega: kuidas testid luuakse, milline on hinnamudel ja millal milline paremini sobib."
   },
   "guides": {
     "title": "Värbamisjuhendid",
@@ -3558,7 +3558,7 @@
       },
       "questions": {
         "title": "Küsimused luuakse ja kontrollitakse",
-        "text": "AI kirjutab igale teemale küsimuste kogumi, teine AI kontrollib iga vastusevõtit pimesi ja iga kandidaat saab oma juhusliku komplekti.",
+        "text": "AI kirjutab igale teemale küsimuste kogumi, teine AI kontrollib pimesi valimit vastusevõtmetest ja iga kandidaat saab oma juhusliku komplekti.",
         "points": {
           "unique": "Igale kandidaadile oma küsimused",
           "checked": "Vastusevõtmeid kontrollib teine AI",

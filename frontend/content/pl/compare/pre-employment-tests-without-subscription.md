@@ -2,7 +2,7 @@
 title: "Testy rekrutacyjne bez subskrypcji"
 seoTitle: "Testy rekrutacyjne bez subskrypcji i abonamentu"
 description: "Testuj kandydatów bez planu miesięcznego i umowy rocznej. Jak płatność za kandydata wypada na tle subskrypcji i co sprawdzić przed zakupem."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Testy rekrutacyjne bez subskrypcji
@@ -28,14 +28,14 @@ Ta strona wyjaśnia, jakie są alternatywy dla subskrypcji, jak wypadają na tle
 
 ## Jak wyceniane są popularne narzędzia
 
-| Narzędzie | Model cenowy (stan na październik 2026) | Zobowiązanie |
+| Narzędzie | Model cenowy (stan na listopad 2026) | Zobowiązanie |
 | --- | --- | --- |
 | **testee** | Przedpłacone kredyty, pobierane za kandydata, który odpowie ([cennik](/pricing)) | Brak; kredyty nie wygasają |
-| **TestGorilla** | Darmowy plan lub płatne plany rozliczane rocznie ([cennik](https://www.testgorilla.com/pricing/)) | Roczne w planach płatnych |
+| **TestGorilla** | Darmowy plan lub płatne plany, ceny przy rozliczeniu rocznym ([cennik](https://www.testgorilla.com/pricing/)) | Roczne przy podanych cenach; strona pokazuje też opcję miesięczną |
 | **CodeSignal** | Plany z kredytami ([cennik](https://codesignal.com/pricing/)) | Miesięczne lub roczne |
 | **Bryq** | Plany z nielimitowanymi zaproszeniami ([cennik](https://www.bryq.com/pricing)) | Miesięczne lub roczne |
 | **Alooba** | Plany z miesięcznymi kredytami ([cennik](https://www.alooba.com/pricing/)) | Miesięczne lub roczne; kredyty wygasają z końcem każdego okresu rozliczeniowego; Enterprise ma minimum 1 rok |
-| **Codility** | Plany roczne z kredytami na zaproszenia ([cennik](https://www.codility.com/pricing/)) | Roczne |
+| **Codility** | Plany miesięczne lub roczne z kredytami na zaproszenia ([cennik](https://www.codility.com/pricing/)) | Miesięczne lub roczne |
 
 Niektóre z tych narzędzi oferują rozliczenie miesięczne, które nie jest długą umową, ale wciąż jest opłatą cykliczną. Jeśli rekrutujesz tylko od czasu do czasu, pamiętaj, by anulować je między rundami rekrutacji.
 
@@ -51,12 +51,13 @@ testee nie ma subskrypcji ani umowy. Kupujesz kredyty, kiedy ich potrzebujesz, i
 - **Generowanie rozmów jest darmowe,** podobnie jak podgląd rozmowy z perspektywy kandydata.
 - **Bez opłat za użytkowników.** Dodawaj administratorów i obserwatorów do firmy bez kosztów.
 - **Kredyty powitalne:** pierwszych 3 kandydatów Twojej pierwszej firmy jest za darmo.
+- **Zwroty:** kredyty kupione w ciągu ostatnich 14 dni i jeszcze niewydane można zwrócić. Darmowych kredytów nie.
 
-Ceny są tu w dolarach amerykańskich, a w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze, Indiach, pozostałej części Europy i Wielkiej Brytanii w walucie lokalnej (zobacz [cennik](/pricing)). Płatności obsługuje Paddle, który nalicza VAT i podatek od sprzedaży oraz pokazuje kwotę końcową przy kasie; testee nie przechowuje danych kart. Możesz włączyć automatyczne doładowanie, które uzupełnia saldo, gdy się kończy, ale nie jest obowiązkowe.
+Ceny są tu w dolarach amerykańskich, a w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze, Indiach i Wielkiej Brytanii w walucie lokalnej, a w pozostałej części UE, Islandii, Liechtensteinie i Norwegii w euro (zobacz [cennik](/pricing)). Płatności obsługuje Paddle, który nalicza VAT i podatek od sprzedaży oraz pokazuje kwotę końcową przy kasie; testee nie przechowuje danych kart. Możesz włączyć automatyczne doładowanie, które uzupełnia saldo, gdy się kończy, ale nie jest obowiązkowe.
 
 ## Co dostajesz za każdego kandydata
 
-- Rozmowę na czas sprawdzającą umiejętności, z pytaniami wyboru, przygotowaną na podstawie Twojego opisu stanowiska albo gotowego szablonu dla danej roli.
+- Rozmowę na czas sprawdzającą umiejętności, z pytaniami wyboru, przygotowaną na podstawie Twojego opisu stanowiska albo gotowego szablonu dla danej roli, w trybie kliknięć lub głosowym.
 - Tematy, które przeglądasz i edytujesz, zanim powstanie jakiekolwiek pytanie.
 - Własny, losowy zestaw pytań dla każdego kandydata, z odliczaniem czasu przy każdym pytaniu. Na stanowiskach technicznych pytania mogą pokazywać krótkie fragmenty kodu i pytać, co robią lub wypisują.
 - Kartę wyników z każdą odpowiedzią i jej czasem oraz oznaczeniami zbyt szybkich odpowiedzi, opuszczania strony i prób kopiowania.

@@ -2,7 +2,7 @@
 title: "Come confrontare i costi dei test pre-assunzione"
 seoTitle: "Test pre-assunzione più economico? Come confrontare i costi"
 description: "Piani gratuiti, abbonamenti, pagamento per candidato e preventivi: come funziona ogni modello di prezzo e come stimare il costo dei test pre-assunzione."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Come confrontare i costi dei test pre-assunzione
@@ -20,7 +20,7 @@ Questa pagina non riporta i prezzi di altri fornitori, perché cambiano spesso. 
 | **Pagamento per candidato** | Paghi solo per i candidati che svolgono il test, di solito con crediti prepagati | Assumi occasionalmente, o i tuoi volumi oscillano | [testee](/pricing) |
 | **Preventivo personalizzato** | Un prezzo concordato con il commerciale, spesso per un anno | Assumi su larga scala o ti servono test psicometrici validati | Alcuni fornitori, spesso specialisti in psicometria |
 
-*Modelli di prezzo come indicati sulla pagina di ciascun fornitore a ottobre 2026.*
+*Modelli di prezzo come indicati sulla pagina di ciascun fornitore a novembre 2026.*
 
 ## Come stimare il tuo costo
 
@@ -35,7 +35,7 @@ Ti servono tre numeri: quanti candidati valuti in un anno, il prezzo per candida
 
 ### I prezzi di testee per la tua stima
 
-testee addebita per ogni candidato che risponde ad almeno una domanda. Il prezzo per candidato dipende dall'importo della ricarica: $5 con la ricarica più piccola, $4 da una ricarica di $200, $3 da una ricarica di $600 e $2 da una ricarica di $1.000. I primi 3 candidati della tua prima azienda sono gratis. I prezzi sono qui in dollari statunitensi, e nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore, India, nel resto d'Europa e nel Regno Unito; Paddle, che elabora i pagamenti, gestisce IVA e imposte sulle vendite al momento del pagamento. Vedi i [prezzi](/pricing) per le ricariche attuali.
+testee addebita per ogni candidato che risponde ad almeno una domanda. Il prezzo per candidato dipende dall'importo della ricarica: $5 con la ricarica più piccola, $4 da una ricarica di $200, $3 da una ricarica di $600 e $2 da una ricarica di $1.000. I primi 3 candidati della tua prima azienda sono gratis. I prezzi sono qui in dollari statunitensi, e nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore, India e nel Regno Unito, e in euro nel resto dell'UE, in Islanda, in Liechtenstein e in Norvegia; Paddle, che elabora i pagamenti, gestisce IVA e imposte sulle vendite al momento del pagamento. Vedi i [prezzi](/pricing) per le ricariche attuali.
 
 ## Costi oltre il prezzo di listino
 
@@ -44,7 +44,7 @@ Quando confronti, controlla anche questi:
 - **Impegno annuale.** Un piano "fatturato annualmente" significa pagare 12 mesi in anticipo, anche se assumi solo in due di quei mesi.
 - **Postazioni.** Alcuni piani limitano quante persone del tuo team possono usarli. testee non ha costi per postazione: proprietari, amministratori e visualizzatori sono gratis.
 - **Candidati che non iniziano mai.** testee addebita solo i candidati che rispondono ad almeno una domanda; i crediti di un invito non usato tornano indietro.
-- **Crediti in scadenza.** I crediti di testee non scadono. Verifica se i crediti di altri fornitori vengono riportati.
+- **Crediti in scadenza.** I crediti di testee non scadono, e i crediti acquistati negli ultimi 14 giorni e non ancora spesi possono essere rimborsati. Verifica se i crediti di altri fornitori vengono riportati.
 - **Imposte.** Verifica se un prezzo indicato include IVA o imposte sulle vendite.
 - **Funzioni nei piani superiori.** Integrazioni con l'ATS, proctoring e coding personalizzato sono spesso nei piani più costosi. Verifica quale piano ti servirebbe davvero. testee si integra con Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR e Slack, e include la sua API, senza costi aggiuntivi.
 - **Più di uno strumento.** Se ti servono un test di conoscenze e un test psicometrico o di coding, somma entrambi.
@@ -55,14 +55,14 @@ Un prezzo basso serve solo se il test misura ciò che il tuo lavoro richiede. Pa
 
 - **Ti servono test psicometrici.** I test cognitivi e di personalità validati vengono da fornitori specializzati e da piattaforme più ampie.
 - **Ti serve coding pratico.** Le piattaforme per sviluppatori permettono ai candidati di scrivere ed eseguire codice. testee pone domande di lettura del codice (cosa fa o cosa stampa il codice), ma i candidati non scrivono né eseguono codice.
-- **Ti servono videocolloqui o colloqui condotti dall'IA.** testee non offre né gli uni né gli altri.
+- **Ti servono risposte video o conversazioni condotte dall'IA.** testee non offre né le une né le altre: la sua modalità vocale legge ad alta voce domande a scelta multipla, e i candidati rispondono a voce o con un tocco.
 - **Assumi con volumi alti e costanti.** Un piano a tariffa fissa può costare meno di un prezzo per candidato.
 
 Vedi [Alternative a TestGorilla](/compare/testgorilla-alternatives) e [Alternative a HackerRank](/compare/hackerrank-alternatives) per capire dove si colloca ogni strumento e come si combinano.
 
 ## Cosa include ogni candidato su testee
 
-- Un colloquio a scelta multipla a tempo scritto a partire dalla tua descrizione del ruolo, con argomenti che rivedi prima.
+- Un colloquio a scelta multipla a tempo scritto a partire dalla tua descrizione del ruolo, con argomenti che rivedi prima, in modalità clic o vocale.
 - Un set casuale di domande per ogni candidato, con un conto alla rovescia su ogni domanda. Per i ruoli tecnici, le domande possono includere brevi esempi di codice.
 - Schede di valutazione con risposte e tempi, e segnalazioni per risposte troppo rapide, uscite dalla pagina e tentativi di copia.
 - Report PDF per un singolo candidato o per l'intero elenco.

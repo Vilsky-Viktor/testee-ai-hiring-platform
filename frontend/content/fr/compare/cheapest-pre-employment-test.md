@@ -2,7 +2,7 @@
 title: "Comment comparer le coût des tests de recrutement"
 seoTitle: "Test de recrutement pas cher ? Comparer les coûts"
 description: "Offres gratuites, abonnements, paiement par candidat, devis : le fonctionnement de chaque modèle de prix et comment estimer le coût de vos tests."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Comment comparer le coût des tests de recrutement
@@ -20,7 +20,7 @@ Cette page ne liste pas les prix des autres fournisseurs, car ils changent souve
 | **Paiement par candidat** | Vous ne payez que pour les candidats qui passent le test, généralement avec des crédits prépayés | Vous recrutez ponctuellement, ou votre volume varie | [testee](/pricing) |
 | **Devis sur mesure** | Un prix négocié avec l'équipe commerciale, souvent pour un an | Vous recrutez à grande échelle ou avez besoin de tests psychométriques validés | Certains fournisseurs, souvent spécialistes de la psychométrie |
 
-*Modèles de prix tels qu'affichés sur la page de chaque fournisseur en octobre 2026.*
+*Modèles de prix tels qu'affichés sur la page de chaque fournisseur en novembre 2026.*
 
 ## Comment estimer votre coût
 
@@ -35,7 +35,7 @@ Il vous faut trois chiffres : le nombre de candidats que vous évaluez par an, l
 
 ### Les prix de testee pour votre estimation
 
-testee facture chaque candidat qui répond à au moins une question. Le prix par candidat dépend du montant de votre recharge : 5 $ pour la plus petite recharge, 4 $ à partir d'une recharge de 200 $, 3 $ à partir d'une recharge de 600 $ et 2 $ à partir d'une recharge de 1 000 $. Les 3 premiers candidats de votre première entreprise sont gratuits. Les prix sont ici en dollars américains, et dans la devise locale au Canada, en Australie, en Israël, en Pologne, en Suisse, au Japon, en Corée du Sud, à Taïwan, à Hong Kong, en Thaïlande, à Singapour, en Inde, dans le reste de l'Europe et au Royaume-Uni ; Paddle, qui traite les paiements, gère la TVA et la sales tax au moment du paiement. Voir les [tarifs](/pricing) pour les recharges actuelles.
+testee facture chaque candidat qui répond à au moins une question. Le prix par candidat dépend du montant de votre recharge : 5 $ pour la plus petite recharge, 4 $ à partir d'une recharge de 200 $, 3 $ à partir d'une recharge de 600 $ et 2 $ à partir d'une recharge de 1 000 $. Les 3 premiers candidats de votre première entreprise sont gratuits. Les prix sont ici en dollars américains, et dans la devise locale au Canada, en Australie, en Israël, en Pologne, en Suisse, au Japon, en Corée du Sud, à Taïwan, à Hong Kong, en Thaïlande, à Singapour, en Inde et au Royaume-Uni, et en euros dans le reste de l'UE, en Islande, au Liechtenstein et en Norvège ; Paddle, qui traite les paiements, gère la TVA et la sales tax au moment du paiement. Voir les [tarifs](/pricing) pour les recharges actuelles.
 
 ## Les coûts au-delà du prix affiché
 
@@ -44,7 +44,7 @@ Lors de votre comparaison, vérifiez aussi :
 - **L'engagement annuel.** Une offre « facturée annuellement » signifie payer 12 mois d'avance, même si vous ne recrutez que pendant deux d'entre eux.
 - **Les licences utilisateurs.** Certaines offres limitent le nombre de personnes de votre équipe qui peuvent les utiliser. testee ne facture pas de licences : propriétaires, admins et lecteurs sont gratuits.
 - **Les candidats qui ne commencent jamais.** testee ne facture que les candidats qui répondent à au moins une question ; les crédits d'une invitation inutilisée vous sont rendus.
-- **Les crédits qui expirent.** Les crédits de testee n'expirent pas. Vérifiez si les crédits des autres fournisseurs sont reportés.
+- **Les crédits qui expirent.** Les crédits de testee n'expirent pas, et les crédits achetés au cours des 14 derniers jours et non dépensés peuvent être remboursés. Vérifiez si les crédits des autres fournisseurs sont reportés.
 - **Les taxes.** Vérifiez si un prix affiché inclut la TVA ou la sales tax.
 - **Les fonctionnalités réservées aux offres supérieures.** Intégrations ATS, surveillance (proctoring) et exercices de code personnalisés sont souvent dans des offres plus chères. Vérifiez de quelle offre vous auriez réellement besoin. testee se connecte à Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR et Slack, et inclut son API, sans surcoût.
 - **Plusieurs outils.** Si vous avez besoin d'un test de connaissances et d'un test psychométrique ou de code, additionnez les deux.
@@ -55,14 +55,14 @@ Un prix bas n'est utile que si le test mesure ce dont votre poste a besoin. Paye
 
 - **Vous avez besoin de psychométrie.** Les tests d'aptitudes cognitives et de personnalité validés viennent de fournisseurs spécialisés et de plateformes plus généralistes.
 - **Vous avez besoin d'exercices de code pratiques.** Les plateformes pour développeurs permettent aux candidats d'écrire et d'exécuter du code. testee pose des questions de lecture de code (ce que fait ou affiche un code), mais les candidats n'écrivent ni n'exécutent de code.
-- **Vous avez besoin d'entretiens vidéo ou menés par une IA.** testee ne propose ni l'un ni l'autre.
+- **Vous avez besoin de réponses vidéo ou de conversations menées par une IA.** testee ne propose ni l'un ni l'autre : son mode vocal lit à voix haute des questions à choix multiples, et les candidats répondent à l'oral ou en touchant une réponse.
 - **Vous recrutez en volume élevé et régulier.** Un forfait peut coûter moins cher qu'un prix par candidat.
 
 Consultez [Alternatives à TestGorilla](/compare/testgorilla-alternatives) et [Alternatives à HackerRank](/compare/hackerrank-alternatives) pour savoir à quoi sert chaque outil et comment les combiner.
 
 ## Ce que comprend chaque candidat testee
 
-- Un entretien chronométré à choix multiples rédigé à partir de votre fiche de poste, avec des thèmes que vous vérifiez d'abord.
+- Un entretien chronométré à choix multiples rédigé à partir de votre fiche de poste, avec des thèmes que vous vérifiez d'abord, en mode clic ou vocal.
 - Une série aléatoire de questions propre à chaque candidat, avec un compte à rebours pour chaque question. Pour les postes techniques, les questions peuvent inclure de courts exemples de code.
 - Des fiches d'évaluation avec les réponses et les temps, et des alertes pour les réponses trop rapides, les sorties de la page et les tentatives de copie.
 - Des rapports PDF pour un candidat ou pour toute la liste.

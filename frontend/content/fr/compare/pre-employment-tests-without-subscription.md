@@ -2,7 +2,7 @@
 title: "Tests de recrutement sans abonnement"
 seoTitle: "Tests de recrutement sans abonnement"
 description: "Évaluez vos candidats sans abonnement mensuel ni contrat annuel. Paiement par candidat ou abonnement : comparaison, et points à vérifier avant d'acheter."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Tests de recrutement sans abonnement
@@ -28,14 +28,14 @@ Cette page présente les alternatives à l'abonnement, leur comparaison avec les
 
 ## Comment les outils courants sont tarifés
 
-| Outil | Modèle de prix (en octobre 2026) | Engagement |
+| Outil | Modèle de prix (en novembre 2026) | Engagement |
 | --- | --- | --- |
 | **testee** | Crédits prépayés, facturés par candidat qui répond ([tarifs](/pricing)) | Aucun ; les crédits n'expirent pas |
-| **TestGorilla** | Offre gratuite, ou offres payantes facturées annuellement ([page tarifs](https://www.testgorilla.com/pricing/)) | Annuel pour les offres payantes |
+| **TestGorilla** | Offre gratuite, ou offres payantes, prix en facturation annuelle ([page tarifs](https://www.testgorilla.com/pricing/)) | Annuel aux prix affichés ; sa page indique aussi une option mensuelle |
 | **CodeSignal** | Offres avec crédits ([page tarifs](https://codesignal.com/pricing/)) | Mensuel ou annuel |
 | **Bryq** | Offres avec invitations illimitées ([page tarifs](https://www.bryq.com/pricing)) | Mensuel ou annuel |
 | **Alooba** | Offres avec crédits mensuels ([page tarifs](https://www.alooba.com/pricing/)) | Mensuel ou annuel ; les crédits expirent à la fin de chaque période de facturation ; Enterprise avec un minimum d'un an |
-| **Codility** | Offres annuelles avec crédits d'invitation ([page tarifs](https://www.codility.com/pricing/)) | Annuel |
+| **Codility** | Offres mensuelles ou annuelles avec crédits d'invitation ([page tarifs](https://www.codility.com/pricing/)) | Mensuel ou annuel |
 
 Certains de ces outils proposent une facturation mensuelle, qui n'est pas un long contrat mais reste un paiement récurrent. Si vous ne recrutez que de temps en temps, pensez à résilier entre deux campagnes.
 
@@ -51,12 +51,13 @@ testee n'a ni abonnement ni contrat. Vous achetez des crédits quand vous en ave
 - **Générer des entretiens est gratuit,** tout comme essayer votre entretien en tant que candidat.
 - **Pas de frais par utilisateur.** Ajoutez gratuitement des admins et des lecteurs à votre entreprise.
 - **Crédits de bienvenue :** les 3 premiers candidats de votre première entreprise sont gratuits.
+- **Remboursements :** les crédits achetés au cours des 14 derniers jours et non dépensés peuvent être remboursés. Les crédits offerts, non.
 
-Les prix sont ici en dollars américains, et dans la devise locale au Canada, en Australie, en Israël, en Pologne, en Suisse, au Japon, en Corée du Sud, à Taïwan, à Hong Kong, en Thaïlande, à Singapour, en Inde, dans le reste de l'Europe et au Royaume-Uni (voir les [tarifs](/pricing)). Les paiements passent par Paddle, qui gère la TVA et la sales tax et affiche le montant final au moment du paiement ; testee ne conserve aucune donnée de carte. Vous pouvez activer une recharge automatique qui réapprovisionne votre solde quand il baisse, mais c'est facultatif.
+Les prix sont ici en dollars américains, et dans la devise locale au Canada, en Australie, en Israël, en Pologne, en Suisse, au Japon, en Corée du Sud, à Taïwan, à Hong Kong, en Thaïlande, à Singapour, en Inde et au Royaume-Uni, et en euros dans le reste de l'UE, en Islande, au Liechtenstein et en Norvège (voir les [tarifs](/pricing)). Les paiements passent par Paddle, qui gère la TVA et la sales tax et affiche le montant final au moment du paiement ; testee ne conserve aucune donnée de carte. Vous pouvez activer une recharge automatique qui réapprovisionne votre solde quand il baisse, mais c'est facultatif.
 
 ## Ce que vous obtenez pour chaque candidat
 
-- Un entretien de compétences chronométré à choix multiples, rédigé à partir de votre fiche de poste ou d'un modèle prêt à l'emploi pour le poste.
+- Un entretien de compétences chronométré à choix multiples, rédigé à partir de votre fiche de poste ou d'un modèle prêt à l'emploi pour le poste, en mode clic ou vocal.
 - Des thèmes que vous vérifiez et modifiez avant qu'une seule question ne soit rédigée.
 - Une série aléatoire de questions propre à chaque candidat, avec un compte à rebours pour chaque question. Pour les postes techniques, les questions peuvent montrer de courts exemples de code et demander ce qu'ils font ou affichent.
 - Une fiche d'évaluation avec chaque réponse et son temps, ainsi que des alertes pour les réponses trop rapides, les sorties de la page et les tentatives de copie.

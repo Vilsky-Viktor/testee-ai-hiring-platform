@@ -2,7 +2,7 @@
 title: "How to compare pre-employment test costs"
 seoTitle: "Cheapest Pre-Employment Test? How to Compare Costs"
 description: "Free plans, subscriptions, pay per candidate and custom quotes: how each pricing model works and how to estimate your pre-employment testing cost."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # How to compare pre-employment test costs
@@ -20,7 +20,7 @@ This page doesn't list other vendors' prices, because they change often. It expl
 | **Pay per candidate** | You pay only for candidates who take the test, usually from prepaid credits | You hire occasionally, or your volume swings | [testee](/pricing) |
 | **Custom quote** | A price agreed with sales, often for a year | You hire at large scale or need validated psychometrics | Some vendors, often psychometric specialists |
 
-*Pricing models as shown on each vendor's page in October 2026.*
+*Pricing models as shown on each vendor's page in November 2026.*
 
 ## How to estimate your cost
 
@@ -35,7 +35,7 @@ You need three numbers: how many candidates you test in a year, the price per ca
 
 ### testee's prices for your estimate
 
-testee charges per candidate who answers at least one question. The price per candidate depends on your top-up size: $5 on the smallest top-up, $4 from a $200 top-up, $3 from a $600 top-up and $2 from a $1,000 top-up. Your first company's first 3 candidates are free. Prices are in US dollars here, and in the local currency in Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India, the rest of Europe and the UK; Paddle, which processes payments, handles VAT and sales tax at checkout. See [pricing](/pricing) for the current top-ups.
+testee charges per candidate who answers at least one question. The price per candidate depends on your top-up size: $5 on the smallest top-up, $4 from a $200 top-up, $3 from a $600 top-up and $2 from a $1,000 top-up. Your first company's first 3 candidates are free. Prices are in US dollars here, and in the local currency in Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore, India and the UK, and in euros in the rest of the EU, Iceland, Liechtenstein and Norway; Paddle, which processes payments, handles VAT and sales tax at checkout. See [pricing](/pricing) for the current top-ups.
 
 ## Costs beyond the sticker price
 
@@ -44,7 +44,7 @@ When you compare, check these too:
 - **Annual commitment.** A plan "billed annually" means paying for 12 months up front, even if you only hire in two of them.
 - **Seats.** Some plans limit how many people on your team can use them. testee has no seat fees: owners, admins and viewers are free.
 - **Candidates who never start.** testee charges only for candidates who answer at least one question; an unused invite's credits come back.
-- **Expiring credits.** testee's credits don't expire. Check whether other vendors' credits roll over.
+- **Expiring credits.** testee's credits don't expire, and credits you bought in the last 14 days and haven't spent can be refunded. Check whether other vendors' credits roll over.
 - **Taxes.** Check whether a listed price includes VAT or sales tax.
 - **Features behind higher plans.** ATS integrations, proctoring and custom coding are often on more expensive plans. Check which plan you'd actually need. testee connects to Workable, Greenhouse, Teamtailor, Recruitee, Breezy HR and Slack, and includes its API, at no extra cost.
 - **More than one tool.** If you need a knowledge test and a psychometric or coding test, add up both.
@@ -55,14 +55,14 @@ A low price only helps if the test measures what your job needs. Pay for another
 
 - **You need psychometrics.** Validated cognitive and personality tests come from specialist vendors and broader platforms.
 - **You need hands-on coding.** Developer platforms let candidates write and run code. testee asks code-reading questions (what code does or outputs), but candidates don't write or run code.
-- **You need video or AI-led interviews.** testee has neither.
+- **You need video answers or AI-led conversations.** testee has neither: its voice mode reads multiple-choice questions aloud, and candidates answer by voice or tap.
 - **You hire at steady high volume.** A flat plan can cost less than a per-candidate price.
 
 See [TestGorilla alternatives](/compare/testgorilla-alternatives) and [HackerRank alternatives](/compare/hackerrank-alternatives) for where each tool fits and how they combine.
 
 ## What each testee candidate includes
 
-- A timed multiple-choice interview written from your job description, with topics you review first.
+- A timed multiple-choice interview written from your job description, with topics you review first, in click or voice mode.
 - Each candidate's own random set of questions, with a countdown on every question. For technical roles, questions can include short code examples.
 - Scorecards with answers and timings, and flags for too-fast answers, leaving the page and copy attempts.
 - PDF reports for one candidate or the whole list.

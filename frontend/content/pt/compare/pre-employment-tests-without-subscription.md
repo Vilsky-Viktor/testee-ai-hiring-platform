@@ -2,7 +2,7 @@
 title: "Testes de seleção sem assinatura"
 seoTitle: "Testes de seleção sem assinatura"
 description: "Avalie candidatos sem plano mensal nem contrato anual. Como o pagamento por candidato se compara às assinaturas e o que verificar antes de comprar."
-updated: "2026-10-21"
+updated: "2026-11-07"
 ---
 
 # Testes de seleção sem assinatura
@@ -28,14 +28,14 @@ Esta página explica as alternativas a uma assinatura, como elas se comparam aos
 
 ## Como as ferramentas mais comuns cobram
 
-| Ferramenta | Modelo de preço (em outubro de 2026) | Compromisso |
+| Ferramenta | Modelo de preço (em novembro de 2026) | Compromisso |
 | --- | --- | --- |
 | **testee** | Créditos pré-pagos, cobrados por candidato que responde ([preços](/pricing)) | Nenhum; os créditos não expiram |
-| **TestGorilla** | Plano gratuito ou planos pagos com cobrança anual ([página de preços](https://www.testgorilla.com/pricing/)) | Anual nos planos pagos |
+| **TestGorilla** | Plano gratuito ou planos pagos com preços de cobrança anual ([página de preços](https://www.testgorilla.com/pricing/)) | Anual nos preços indicados; a página também mostra uma opção mensal |
 | **CodeSignal** | Planos com créditos ([página de preços](https://codesignal.com/pricing/)) | Mensal ou anual |
 | **Bryq** | Planos com convites ilimitados ([página de preços](https://www.bryq.com/pricing)) | Mensal ou anual |
 | **Alooba** | Planos com créditos mensais ([página de preços](https://www.alooba.com/pricing/)) | Mensal ou anual; os créditos expiram no fim de cada período de cobrança; o Enterprise tem mínimo de 1 ano |
-| **Codility** | Planos anuais com créditos de convite ([página de preços](https://www.codility.com/pricing/)) | Anual |
+| **Codility** | Planos mensais ou anuais com créditos de convite ([página de preços](https://www.codility.com/pricing/)) | Mensal ou anual |
 
 Algumas dessas ferramentas oferecem cobrança mensal, que não é um contrato longo, mas continua sendo uma cobrança recorrente. Se você só contrata de vez em quando, lembre-se de cancelar entre um processo seletivo e outro.
 
@@ -51,12 +51,13 @@ A testee não tem assinatura nem contrato. Você compra créditos quando precisa
 - **Gerar entrevistas é gratuito,** assim como testar a sua entrevista como candidato.
 - **Sem cobrança por usuário.** Adicione administradores e visualizadores à sua empresa sem custo.
 - **Créditos de boas-vindas:** os 3 primeiros candidatos da sua primeira empresa são gratuitos.
+- **Reembolsos:** os créditos que você comprou nos últimos 14 dias e ainda não gastou podem ser reembolsados. Créditos grátis, não.
 
-Os preços aqui são em dólares americanos, e na moeda local no Canadá, na Austrália, em Israel, na Polônia, na Suíça, no Japão, na Coreia do Sul, em Taiwan, em Hong Kong, na Tailândia, em Singapura, na Índia, no restante da Europa e no Reino Unido (veja os [preços](/pricing)). Os pagamentos passam pela Paddle, que cuida do IVA e dos impostos sobre vendas e mostra o valor final no checkout; a testee não armazena dados de cartão. Você pode ativar uma recarga automática que repõe o saldo quando ele fica baixo, mas é opcional.
+Os preços aqui são em dólares americanos, e na moeda local no Canadá, na Austrália, em Israel, na Polônia, na Suíça, no Japão, na Coreia do Sul, em Taiwan, em Hong Kong, na Tailândia, em Singapura, na Índia e no Reino Unido, e em euros no restante da UE, na Islândia, em Liechtenstein e na Noruega (veja os [preços](/pricing)). Os pagamentos passam pela Paddle, que cuida do IVA e dos impostos sobre vendas e mostra o valor final no checkout; a testee não armazena dados de cartão. Você pode ativar uma recarga automática que repõe o saldo quando ele fica baixo, mas é opcional.
 
 ## O que você recebe por candidato
 
-- Uma entrevista de habilidades de múltipla escolha cronometrada, escrita a partir da sua descrição da vaga ou de um modelo pronto para o cargo.
+- Uma entrevista de habilidades de múltipla escolha cronometrada, escrita a partir da sua descrição da vaga ou de um modelo pronto para o cargo, no modo clique ou de voz.
 - Tópicos que você revisa e edita antes de qualquer pergunta ser escrita.
 - Um conjunto aleatório de perguntas próprio para cada candidato, com contagem regressiva em cada pergunta. Para vagas técnicas, as perguntas podem mostrar pequenos exemplos de código e perguntar o que eles fazem ou imprimem.
 - Uma ficha de avaliação com cada resposta e seu tempo, além de alertas para respostas rápidas demais, saídas da página e tentativas de cópia.

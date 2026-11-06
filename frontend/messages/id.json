@@ -1760,7 +1760,7 @@
         "name": "Alat tes",
         "checks": "Tes siap pakai dari pustaka tes",
         "time": "Tes yang harus dipilih atau ditulis untuk setiap posisi",
-        "cost": "Biaya bulanan, sedang merekrut atau tidak"
+        "cost": "Biaya paket, sedang merekrut atau tidak"
       },
       "testee": {
         "name": "testee",
@@ -2158,7 +2158,7 @@
   "compare": {
     "title": "Bandingkan testee",
     "metaTitle": "Perbandingan alat tes seleksi karyawan",
-    "intro": "Perbandingan bersumber dengan alat tes seleksi karyawan lainnya: cara tesnya dibuat, berapa biayanya, dan kapan masing-masing lebih cocok."
+    "intro": "Perbandingan bersumber dengan alat tes seleksi karyawan lainnya: cara tesnya dibuat, bagaimana harganya ditetapkan, dan kapan masing-masing lebih cocok."
   },
   "guides": {
     "title": "Panduan rekrutmen",
@@ -3558,7 +3558,7 @@
       },
       "questions": {
         "title": "Soal dibuat dan diperiksa",
-        "text": "AI menulis kumpulan soal untuk tiap topik, AI kedua memeriksa setiap kunci jawaban tanpa melihat jawaban AI pertama, dan setiap kandidat mendapat set soal acaknya sendiri.",
+        "text": "AI menulis kumpulan soal untuk tiap topik, AI kedua memeriksa sampel kunci jawaban tanpa melihat jawaban AI pertama, dan setiap kandidat mendapat set soal acaknya sendiri.",
         "points": {
           "unique": "Soal unik per kandidat",
           "checked": "Kunci jawaban diperiksa AI kedua",
