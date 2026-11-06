@@ -62,6 +62,15 @@ def test_faq_names_prices_from_billing(client, monkeypatch):
     assert "1,500 free credits, enough for its first 3 candidates" in items["cost"]
 
 
+def test_faq_names_the_referral_reward_and_the_top_up_range_from_billing(client, monkeypatch):
+    monkeypatch.setattr("site_content.api.v1.help.billing.catalog", fake_catalog(CATALOG))
+
+    items = {item["key"]: item["answer"] for item in client.get("/help/faq").json()}
+
+    assert "both companies get 1,000 credits" in items["referrals"]
+    assert "for 10 to 1,000 candidates at a time" in items["top_up"]
+
+
 def test_faq_names_prices_in_the_visitors_currency(client, monkeypatch):
     asked = []
     pounds = {**CATALOG, "currency": "GBP", "candidate_cents_min": 150, "candidate_cents_max": 400}

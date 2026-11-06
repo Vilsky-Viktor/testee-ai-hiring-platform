@@ -39,6 +39,7 @@ def faq_values(catalog: dict | None, language: str) -> dict:
     candidate = prices.get("candidate_credits", "")
     currency = prices.get("currency", "USD")
     standard = prices.get("candidate_cents_max")
+    custom = prices.get("custom", {})
 
     return {
         "count": len(LANGUAGES),
@@ -53,6 +54,10 @@ def faq_values(catalog: dict | None, language: str) -> dict:
         "zero_price": money(0, currency, language),
         "example_candidates": FAQ_EXAMPLE_CANDIDATES,
         "company": grouped(prices.get("welcome_company", ""), language),
+        "referral": grouped(prices.get("referral_company", ""), language),
+        # A top-up's smallest and largest number of candidates.
+        "min_candidates": grouped(custom.get("min_candidates", ""), language),
+        "max_candidates": grouped(custom.get("max_candidates", ""), language),
         # The candidates a new company's welcome credits cover.
         "company_candidates": (
             prices["welcome_company"] // candidate

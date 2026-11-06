@@ -39,7 +39,7 @@ export async function generateMetadata() {
 export default async function FaqPage() {
   const t = await getTranslations("faq")
   const nav = await getTranslations("nav")
-  // The questions come from the rounds service in the page's language, with today's prices in
+  // The questions come from the site service in the page's language, with today's prices in
   // the visitor's currency.
   const items = (await publicFetch<FaqItem[]>(await faqPath())) ?? []
   const groups = faqGroups(items)

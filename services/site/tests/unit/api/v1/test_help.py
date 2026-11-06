@@ -10,6 +10,8 @@ CATALOG = {
     "candidate_cents_min": 200,
     "candidate_cents_max": 500,
     "welcome_company": 1500,
+    "referral_company": 1000,
+    "custom": {"min_candidates": 10, "max_candidates": 1000},
 }
 MAX_COMPANIES = LIMITS["MAX_OWNED_COMPANIES"].default
 
