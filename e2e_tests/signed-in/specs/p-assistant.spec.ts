@@ -1,6 +1,15 @@
+import type { Locator } from "@playwright/test";
+
 import { expect, test } from "../fixtures";
 import { createCompany } from "../helpers/api";
-import { assistantAnswers, CANDIDATE_LINK, CONVERSATION, events, openPanel } from "../helpers/assistant";
+import {
+  assistantAnswers,
+  CANDIDATE_LINK,
+  CONVERSATION,
+  events,
+  openPanel,
+  visitorChatKept,
+} from "../helpers/assistant";
 import { visit } from "../helpers/navigation";
 import { shot } from "../helpers/screenshots";
 import { ownerEmail } from "../helpers/users";
@@ -171,26 +180,31 @@ test("the assistant welcomes by stage, answers, takes voice, keeps history and s
 test("a visitor who signs in from the sign-in card keeps their chat", async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
+  const question = "Please set one up for Acme";
+  const answer = "Sign in below to create it.";
   await page.route("**/api/assistant/help/chat", (route) =>
     route.fulfill({
       contentType: "text/event-stream",
       body: events(
         { block: { kind: "sign_in", items: [], links: [], provider: "google" } },
-        { delta: "Sign in below to create it." },
+        { delta: answer },
         { done: true }
       ),
     })
   );
   await visit(page, "/");
   const panel = await openPanel(page);
-  await panel.getByRole("textbox").fill("Create a company");
+  await panel.getByRole("textbox").fill(question);
   await panel.locator("button[type=submit]").click();
-  await expect(panel.getByRole("list").getByText("Sign in below to create it.").filter({ visible: true })).toBeVisible();
+  // The question, then the answer.
+  const said = (dialog: Locator) => dialog.getByRole("list").getByRole("listitem").filter({ visible: true });
+  await expect(said(panel).nth(1)).toContainText(answer);
+  await visitorChatKept(page, 2);
 
   // A reload keeps the visitor's chat and the open panel.
   await page.reload();
   const again = page.getByRole("dialog");
-  await expect(again.getByRole("list").getByText("Create a company").filter({ visible: true })).toBeVisible();
+  await expect(said(again).first()).toContainText(question);
 
   const sent = await assistantAnswers(page);
   const opened = context.waitForEvent("page");
@@ -206,16 +220,16 @@ test("a visitor who signs in from the sign-in card keeps their chat", async ({ b
   // Signed in, the panel is still open with the chat, without the sign-in card, and the next
   // message carries the chat.
   await expect(again.getByTestId("assistant-history").filter({ visible: true })).toBeVisible();
-  await expect(again.getByRole("list").getByText("Create a company").filter({ visible: true })).toBeVisible();
-  await expect(again.getByRole("list").getByText("Sign in below to create it.").filter({ visible: true })).toBeVisible();
+  await expect(said(again).first()).toContainText(question);
+  await expect(said(again).nth(1)).toContainText(answer);
   await expect(again.locator('[data-testid^="sign-in-"]')).toHaveCount(0);
 
   // A reload before the first message keeps that chat (the user has no newer conversation).
   await page.route("**/api/assistant/conversations/active", (route) => route.fulfill({ status: 204 }));
   await page.reload();
   await expect(again.getByTestId("assistant-history").filter({ visible: true })).toBeVisible({ timeout: 45_000 });
-  await expect(again.getByRole("list").getByText("Create a company").filter({ visible: true })).toBeVisible();
-  await expect(again.getByRole("list").getByText("Sign in below to create it.").filter({ visible: true })).toBeVisible();
+  await expect(said(again).first()).toContainText(question);
+  await expect(said(again).nth(1)).toContainText(answer);
   await expect(again.locator('[data-testid^="sign-in-"]')).toHaveCount(0);
   await again.getByRole("textbox").fill("Call it Acme");
   await again.locator("button[type=submit]").click();
@@ -223,8 +237,8 @@ test("a visitor who signs in from the sign-in card keeps their chat", async ({ b
   expect(sent[0]).toMatchObject({
     message: "Call it Acme",
     earlier: [
-      { role: "user", content: "Create a company" },
-      { role: "assistant", content: "Sign in below to create it." },
+      { role: "user", content: question },
+      { role: "assistant", content: answer },
     ],
   });
   await context.close();

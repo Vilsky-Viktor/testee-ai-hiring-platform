@@ -21,6 +21,15 @@ function askAgent(page: Page) {
   return page.getByRole("banner").locator("[data-assistant-toggle]");
 }
 
+/** Waits until the tab keeps the visitor's chat, which it does once an answer has ended. */
+async function chatKept(page: Page, messages: number) {
+  await expect
+    .poll(() =>
+      page.evaluate(() => JSON.parse(sessionStorage.getItem("testee:assistant:visitor") ?? "{}").messages?.length),
+    )
+    .toBe(messages);
+}
+
 // On a page without the home page's moving pictures, which keep a browser busy.
 async function openPanel(page: Page) {
   await page.goto("/faq");
@@ -179,14 +188,25 @@ test("a failed answer shows its error and Try again asks again", async ({ page }
 
 // A reload in the middle of a visitor's chat brings it back; a chat older than the service's
 // window (GET /config) isn't: opened, it's a new chat, and closed, it stays closed after a reload.
+// An answer that ends before that window has arrived is kept too.
 test("a reload brings a visitor's chat back, but not an old one, and a closed panel stays closed", async ({
   page,
 }) => {
   await helpAnswers(page, [{ delta: "A hiring test." }]);
+  let release = () => {};
+  const config = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  await page.route("**/api/assistant/config", async (route) => {
+    await config;
+    await route.fallback();
+  });
   const panel = await openPanel(page);
   const question = (await welcomeQuestions(panel).first().textContent())!;
   await welcomeQuestions(panel).first().click();
   await expect(panel.getByRole("list").getByText("A hiring test.")).toBeVisible();
+  release();
+  await chatKept(page, 2);
 
   await page.reload();
   const again = page.getByRole("dialog");

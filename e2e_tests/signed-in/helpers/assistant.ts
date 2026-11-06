@@ -71,6 +71,15 @@ export async function assistantAnswers(page: Page) {
   return sent;
 }
 
+/** Waits until the tab keeps the visitor's chat, which it does once an answer has ended. */
+export async function visitorChatKept(page: Page, messages: number) {
+  await expect
+    .poll(() =>
+      page.evaluate(() => JSON.parse(sessionStorage.getItem("testee:assistant:visitor") ?? "{}").messages?.length)
+    )
+    .toBe(messages);
+}
+
 export async function openPanel(page: Page): Promise<Locator> {
   await page.getByRole("banner").locator("[data-assistant-toggle]").click();
   const panel = page.getByRole("dialog");

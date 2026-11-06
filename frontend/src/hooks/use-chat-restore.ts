@@ -1,6 +1,12 @@
 "use client"
 
-import { type Dispatch, type SetStateAction, useEffect, useRef } from "react"
+import {
+  type Dispatch,
+  type SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react"
 
 import { useAuth } from "@/providers/auth-provider"
 import {
@@ -45,15 +51,16 @@ export function useChatRestore({
   const uid = loading ? undefined : (user?.uid ?? null)
   const restoredFor = useRef<string | null | undefined>(undefined)
   // Whether the first restore has read what a reload kept.
-  const lookedAt = useRef(false)
+  const [lookedAt, setLookedAt] = useState(false)
 
   // Once what a reload kept was looked at, so it isn't overwritten first (also when the panel
-  // mounts with the page already known, and React runs its effects twice in development).
+  // mounts with the page already known, and React runs its effects twice in development). An
+  // answer that ended before then is saved at that moment.
   useEffect(() => {
-    if (lookedAt.current && !signedIn && !streaming) {
+    if (lookedAt && !signedIn && !streaming) {
       saveChat(false, { messages, lastAt: new Date().toISOString() })
     }
-  }, [signedIn, streaming, messages])
+  }, [lookedAt, signedIn, streaming, messages])
 
   async function restore(
     before: string | null | undefined,
@@ -80,7 +87,7 @@ export function useChatRestore({
     }
 
     const recent = now ? await restoreConversation() : await restoreVisitor()
-    lookedAt.current = true
+    setLookedAt(true)
     onRestored(recent)
   }
 
