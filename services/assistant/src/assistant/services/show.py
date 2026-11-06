@@ -2,6 +2,7 @@ import httpx
 
 from assistant.constants.show import (
     ALL_PAGES,
+    GUIDE_READ,
     LINK_IDS,
     MAX_ROWS,
     NOTHING_TO_SHOW,
@@ -194,10 +195,28 @@ async def setting_link(answer, turn: Turn) -> dict | None:
     return await link_block({"kind": "link", "page": page, "company_id": company_id}, turn)
 
 
+async def guide_link(answer, turn: Turn) -> dict | None:
+    """The guide the answer read (the first, if it read several): it's offered under the answer.
+    None beside an action's card."""
+    slug = next(
+        (
+            result.arguments.get("slug")
+            for result in answer.results
+            if result.succeeded and result.tool == GUIDE_READ
+        ),
+        None,
+    )
+
+    if answer.pending or slug is None:
+        return None
+
+    return await link_block({"kind": "link", "page": "guide", "slug": slug}, turn)
+
+
 async def implied_link(answer, turn: Turn) -> dict | None:
-    """The link an answer about one interview, one candidate, one topic or one setting needs
-    when the model gave none: that candidate's report, that topic's questions, that interview's
-    candidates, or the setting's page, from what the turn read."""
+    """The link an answer about one interview, one candidate, one topic, one setting or a guide
+    needs when the model gave none: that candidate's report, that topic's questions, that
+    interview's candidates, the setting's page or the guide, from what the turn read."""
     interviews, candidates, topics = set(), set(), set()
 
     for result in answer.results:
@@ -214,7 +233,7 @@ async def implied_link(answer, turn: Turn) -> dict | None:
             topics.add(str(result.arguments.get(TOPIC_READS[result.tool])))
 
     if not interviews:
-        return await setting_link(answer, turn)
+        return await setting_link(answer, turn) or await guide_link(answer, turn)
 
     if len(interviews) != 1:
         return None

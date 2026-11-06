@@ -6,10 +6,11 @@ import pytest
 
 from assistant.constants.key_tools import KEY_TOOLS
 from assistant.integrations import services
-from assistant.models.answers import Turn
+from assistant.models.answers import Answer, Turn
+from assistant.models.tools import ToolResult
 from assistant.services import mcp_tools
 from assistant.services.registry import tools
-from assistant.services.show import show
+from assistant.services.show import finish, show
 from assistant.services.tool_calls import call_tool
 
 TURN = Turn(uuid.uuid4(), "ann", None, "t", "de", frozenset())
@@ -92,3 +93,38 @@ def test_ai_apps_and_api_keys_with_mcp_get_the_guides():
 
     assert {"list_guides", "get_guide"} <= names
     assert KEY_TOOLS["list_guides"] == KEY_TOOLS["get_guide"] == "mcp"
+
+
+def guide_read(status=200):
+    return ToolResult("get_guide", {"slug": "hire-testers"}, status, {}, None, 0)
+
+
+def test_an_answer_from_a_guide_links_it_when_the_model_offered_nothing(site):
+    other = ToolResult("get_guide", {"slug": "other"}, 200, {}, None, 0)
+    answer = Answer(results=[guide_read(), other])
+    emitted = []
+    asyncio.run(finish(answer, TURN, emitted.append))
+
+    assert emitted == [
+        {
+            "block": {
+                "kind": "link",
+                "items": [],
+                "links": ["/guides/hire-testers"],
+                "page": "guide",
+                "label": "Tester einstellen",
+            }
+        }
+    ]
+    assert answer.blocks[0]["page"] == "guide"
+
+
+def test_a_guide_that_failed_or_beside_an_action_card_is_not_linked(site):
+    for answer in (
+        Answer(results=[guide_read(status=404)]),
+        Answer(results=[guide_read()], pending=[object()]),
+    ):
+        emitted = []
+        asyncio.run(finish(answer, TURN, emitted.append))
+
+        assert emitted == []

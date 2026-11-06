@@ -110,11 +110,14 @@ test("the assistant answers hiring advice from the site's guide and links it", a
     tool: expect.objectContaining({ name: "get_guide", state: "done" }),
   })
   expect(advice.answer.some((event) => event.done)).toBe(true)
-  // The guide it read, offered under the answer, opens the article.
-  const link = panel.locator('a[href*="/guides/"]')
-  await expect(link).toBeVisible()
-  await link.click()
-  await expect(owner).toHaveURL(/\/guides\/[a-z0-9-]+$/)
+  // Under the answer, one link: the guide it read, or a more fitting page if the model chose one
+  // (show's description lets it); the service adds the guide when the model offered nothing.
+  const shown = advice.answer.find((event) => event.block?.kind === "link")?.block
+  expect(shown?.links).toHaveLength(1)
+  const [path] = shown.links
+  // The last: the answer's text may link the same page.
+  await panel.locator(`a[href="${path}"]`).last().click()
+  await expect(owner).toHaveURL(new RegExp(`${path}$`))
   await expect(owner.getByRole("heading", { level: 1 })).toBeVisible()
 })
 

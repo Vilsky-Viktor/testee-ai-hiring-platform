@@ -56,6 +56,8 @@ SETTING_PAGES = {
     "list_ats_connections": "integrations",
     "get_api_settings": "api",
 }
+# The read of a guide: an answer from one links it when the model gave no link.
+GUIDE_READ = "get_guide"
 # The ids a link may be filled with.
 LINK_IDS = (
     "company_id",
