@@ -47,8 +47,7 @@ async def invite(
     member's email limits and billing's 402 when the company is out of credits, and 409 while a
     superadmin has the company suspended (an ATS keeps its candidates waiting then). The action
     log records it as `user`'s, through `via` when an ATS or the API sent it. `voice` chooses how
-    a candidate not started yet takes it (none leaves it as it is); voice in a language voice
-    mode doesn't speak is 422."""
+    a candidate not started yet takes it (none leaves it as it is)."""
     if company.suspended_at is not None:
         raise CodedError(status.HTTP_409_CONFLICT, COMPANY_SUSPENDED, error_codes.COMPANY_SUSPENDED)
 

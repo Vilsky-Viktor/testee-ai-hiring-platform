@@ -69,7 +69,7 @@ async def change(
     and chooses how they take it (`voice`, kept only when apart from the interview's), the last
     two until they start; all or nothing: every rule is checked before anything is written, and
     all are written at once. A deleted candidate is 404; extra time or a mode for one who
-    started, 409; voice in a language voice mode doesn't speak, 422. Each change is recorded for
+    started, 409. Each change is recorded for
     `user_id`, with `via`."""
     fixed = [field for field in BEFORE_START if field in values]
 
