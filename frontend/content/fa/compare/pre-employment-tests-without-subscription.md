@@ -98,4 +98,4 @@ testee اشتراک و قرارداد ندارد. هر وقت لازم داشت�
 - [چگونه هزینه آزمون‌ها را مقایسه کنیم](/compare/cheapest-pre-employment-test)
 - [جایگزین‌های TestGorilla](/compare/testgorilla-alternatives)
 - [testee و TestGorilla](/compare/testgorilla)
-- [راهنمای آزمون‌های استخدامی](/pre-employment-testing)
+- [راهنمای آزمون‌های استخدامی](/guides/pre-employment-testing)

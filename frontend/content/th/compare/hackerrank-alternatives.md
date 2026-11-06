@@ -107,5 +107,5 @@ Alooba มีแบบทดสอบคัดกรองตามตำแห�
 
 - [ทางเลือกแทน TestGorilla](/compare/testgorilla-alternatives)
 - [วิธีเปรียบเทียบค่าใช้จ่ายของแบบทดสอบ](/compare/cheapest-pre-employment-test)
-- [สัมภาษณ์งานด้วย AI: คืออะไร และใช้อย่างไรให้เป็นธรรม](/ai-interviews)
-- [คู่มือแบบทดสอบก่อนจ้างงาน](/pre-employment-testing)
+- [สัมภาษณ์งานด้วย AI: คืออะไร และใช้อย่างไรให้เป็นธรรม](/guides/ai-interviews)
+- [คู่มือแบบทดสอบก่อนจ้างงาน](/guides/pre-employment-testing)

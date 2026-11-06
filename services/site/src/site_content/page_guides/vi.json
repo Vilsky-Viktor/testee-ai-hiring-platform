@@ -559,32 +559,6 @@
       "Ứng viên của bạn nhận bộ câu hỏi ngẫu nhiên riêng, không bao giờ là các câu mẫu ở đây."
     ]
   },
-  "aiInterviews": {
-    "title": "Phỏng vấn AI",
-    "text": "Hướng dẫn về các loại công cụ phỏng vấn AI, cách testee tiếp cận và những điều cơ bản về tuân thủ pháp luật.",
-    "actions": [
-      "So sánh các công cụ phỏng vấn bằng chatbot, bằng video và bằng bài kiểm tra được tạo tự động.",
-      "Đọc từng bước cách testee tạo và chấm một buổi phỏng vấn, và những gì testee không bao giờ làm.",
-      "Đọc những điều cơ bản về Đạo luật AI của EU, GDPR và các quy định của Mỹ về AI trong tuyển dụng.",
-      "Tạo bài kiểm tra cho ứng viên của bạn từ thẻ ở cuối trang."
-    ],
-    "tips": [
-      "Đây là bản tóm tắt, không phải tư vấn pháp lý: hãy hỏi ý kiến luật sư của bạn."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Kiểm tra trước tuyển dụng",
-    "text": "Hướng dẫn dễ hiểu cho đội ngũ tuyển dụng về các bài kiểm tra trước tuyển dụng: các loại, khi nào chúng hữu ích, tính công bằng và pháp luật, và cách chọn công cụ.",
-    "actions": [
-      "Đọc về các loại bài kiểm tra hiện có và khi nào mỗi loại hữu ích.",
-      "Đọc những điều cơ bản về tính công bằng và pháp luật.",
-      "Xem cần chú ý gì ở một công cụ kiểm tra, và testee làm điều đó thế nào.",
-      "Tạo bài kiểm tra cho ứng viên của bạn từ thẻ ở cuối trang."
-    ],
-    "tips": [
-      "Đây là bản tóm tắt, không phải tư vấn pháp lý: hãy hỏi ý kiến luật sư của bạn."
-    ]
-  },
   "compare": {
     "title": "So sánh testee",
     "text": "So sánh có dẫn nguồn giữa testee và các công cụ kiểm tra trước tuyển dụng khác: bài kiểm tra được tạo thế nào, chi phí bao nhiêu và khi nào công cụ nào phù hợp hơn.",

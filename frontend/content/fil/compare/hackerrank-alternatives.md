@@ -107,5 +107,5 @@ Para sa buong proseso ng engineering hiring, tingnan ang [Paano mag-hire ng mga 
 
 - [Mga alternatibo sa TestGorilla](/compare/testgorilla-alternatives)
 - [Paano ikumpara ang gastos ng mga test](/compare/cheapest-pre-employment-test)
-- [AI interviews: ano ang mga ito at paano gamitin nang patas](/ai-interviews)
-- [Gabay sa pre-employment testing](/pre-employment-testing)
+- [AI interviews: ano ang mga ito at paano gamitin nang patas](/guides/ai-interviews)
+- [Gabay sa pre-employment testing](/guides/pre-employment-testing)

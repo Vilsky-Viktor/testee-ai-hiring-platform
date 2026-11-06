@@ -104,4 +104,4 @@ Bryq のプランには、認知能力と性格の評価、スキル評価、無
 
 - [テスト費用の比較方法](/compare/cheapest-pre-employment-test)
 - [サブスクリプション不要の採用前テスト](/compare/pre-employment-tests-without-subscription)
-- [採用前テストガイド](/pre-employment-testing)
+- [採用前テストガイド](/guides/pre-employment-testing)

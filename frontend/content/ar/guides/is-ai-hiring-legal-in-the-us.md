@@ -119,7 +119,7 @@ updated: "2026-10-30"
 - [هل التوظيف بالذكاء الاصطناعي قانوني في الاتحاد الأوروبي؟](/guides/is-ai-hiring-legal-in-the-eu)
 - [هل التوظيف بالذكاء الاصطناعي قانوني في المملكة المتحدة؟](/guides/is-ai-hiring-legal-in-the-uk)
 - [كيف تحدد توقيت اختبار المهارات: مؤقت السؤال والطول والوقت الإضافي](/guides/skills-test-timing-and-extra-time)
-- [اختبارات ما قبل التوظيف: دليل عملي](/pre-employment-testing)
+- [اختبارات ما قبل التوظيف: دليل عملي](/guides/pre-employment-testing)
 
 ## المصادر
 

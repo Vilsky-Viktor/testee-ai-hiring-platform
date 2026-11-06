@@ -137,7 +137,7 @@ testee の面接は、求人票から作られる、時間制限のある多肢�
 - [スキルテストと書類選考の比較](/guides/skills-tests-vs-cv-screening)
 - [AI 時代のエンジニア面接](/guides/interviewing-in-the-age-of-ai)
 - [Web テストの不正行為と、本当に効く対策](/guides/cheating-in-online-assessments)
-- [採用前テスト：実践ガイド](/pre-employment-testing)
+- [採用前テスト：実践ガイド](/guides/pre-employment-testing)
 
 ## 出典
 

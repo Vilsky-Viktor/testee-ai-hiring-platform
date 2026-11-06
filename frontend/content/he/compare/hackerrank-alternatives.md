@@ -107,5 +107,5 @@ Alooba מציגה יותר מ-400 מבחני סינון לתפקידים ביו�
 
 - [חלופות ל-TestGorilla](/compare/testgorilla-alternatives)
 - [איך להשוות עלויות של מבחנים](/compare/cheapest-pre-employment-test)
-- [ראיונות AI: מה הם ואיך להשתמש בהם בהוגנות](/ai-interviews)
-- [מדריך למבחני מיון לעבודה](/pre-employment-testing)
+- [ראיונות AI: מה הם ואיך להשתמש בהם בהוגנות](/guides/ai-interviews)
+- [מדריך למבחני מיון לעבודה](/guides/pre-employment-testing)

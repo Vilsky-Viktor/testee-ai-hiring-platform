@@ -104,4 +104,4 @@ testee به **Workable، Greenhouse، Teamtailor، Recruitee و Breezy HR** وص
 
 - [چطور ۱۰۰ متقاضی را در یک روز غربال کنیم](/guides/screen-100-applicants-in-a-day)
 - [آزمون مهارت در برابر غربالگری رزومه](/guides/skills-tests-vs-cv-screening)
-- [آزمون‌های استخدامی: راهنمای عملی](/pre-employment-testing)
+- [آزمون‌های استخدامی: راهنمای عملی](/guides/pre-employment-testing)

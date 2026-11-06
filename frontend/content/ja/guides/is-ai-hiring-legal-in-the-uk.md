@@ -120,7 +120,7 @@ testee は、職務内容をもとに AI が作成した、時間制限付きの
 - [EU で AI を使った採用は合法か？](/guides/is-ai-hiring-legal-in-the-eu)
 - [米国で AI を使った採用は合法か？](/guides/is-ai-hiring-legal-in-the-us)
 - [スキルテストの時間設定：1 問あたりの時間、テストの長さ、追加時間](/guides/skills-test-timing-and-extra-time)
-- [AI 面接とは：種類と公正な使い方](/ai-interviews)
+- [AI 面接とは：種類と公正な使い方](/guides/ai-interviews)
 
 ## 出典
 

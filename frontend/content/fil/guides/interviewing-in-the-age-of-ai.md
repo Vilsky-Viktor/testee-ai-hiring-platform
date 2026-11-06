@@ -76,7 +76,7 @@ Bagay na bagay ang testee sa hakbang 2. Ginagawa nitong timed multiple-choice na
 - **Integrity signals:** fina-flag ng scorecards ang mga sagot na masyadong mabilis para mabasa pa ang tanong, ang mga pagkakataong umalis ang aplikante sa pahina, at ang mga pagtatangkang mag-copy. Kapag tapos na ang aplikante, itinuturo rin ng kanyang report ang mga pattern ng sagot na kadalasang naiiwan kapag ipinapasa ang mga tanong sa AI at kinokopya ang mga sagot nito: halos parehong oras sa bawat tanong gaano man ito kahaba o kahirap, o tama ang mahihirap na tanong habang mali ang madadali. Ang flag o pattern ay dahilan para tumingin nang mas mabuti, hindi patunay ng pandaraya.
 - **Mga tanong para sa live na interview:** nagmumungkahi ang report ng hanggang 3 tanong na tama ang sagot ng aplikante, mula sa pinakamalalakas niyang topic, para pag-usapan sa isang live na interview, kung saan walang AI na makakasagot para sa kanya.
 
-Ang hindi ginagawa ng testee: hindi sumusulat, nagpapatakbo o nagde-debug ng code ang mga aplikante sa testee, at hindi nito pinapanood kung paano sila gumagamit ng AI assistant. Bahagi iyon ng hands-on stage, na pinapatakbo in-house o sa isang developer platform, at kumukumpleto sa knowledge screen. Tingnan ang [skills tests ayon sa role](/tests) para sa mga handang test na puwedeng simulan, at ang [AI interviews](/ai-interviews) para malaman kung paano gumagamit ng AI ang testee at ano ang iniiwan nito sa mga tao.
+Ang hindi ginagawa ng testee: hindi sumusulat, nagpapatakbo o nagde-debug ng code ang mga aplikante sa testee, at hindi nito pinapanood kung paano sila gumagamit ng AI assistant. Bahagi iyon ng hands-on stage, na pinapatakbo in-house o sa isang developer platform, at kumukumpleto sa knowledge screen. Tingnan ang [skills tests ayon sa role](/tests) para sa mga handang test na puwedeng simulan, at ang [AI interviews](/guides/ai-interviews) para malaman kung paano gumagamit ng AI ang testee at ano ang iniiwan nito sa mga tao.
 
 ## Pagkapatas at candidate experience
 
@@ -106,5 +106,5 @@ Pinamura ng AI assistants ang paggawa ng code at pinahalaga ang paghusga rito. S
 - [Paano mag-hire ng mga engineer](/guides/hiring-engineers)
 - [Skills tests ayon sa role](/tests)
 - [Pandaraya sa mga online assessment, at ang talagang epektibo laban dito](/guides/cheating-in-online-assessments)
-- [AI interviews: ano ang mga ito at paano gamitin nang patas](/ai-interviews)
+- [AI interviews: ano ang mga ito at paano gamitin nang patas](/guides/ai-interviews)
 - [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)

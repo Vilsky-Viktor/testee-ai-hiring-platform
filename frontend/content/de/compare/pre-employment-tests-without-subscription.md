@@ -98,4 +98,4 @@ Setz die echten Preise von der Preisseite jedes Anbieters und [die von testee](/
 - [Kosten von Einstellungstests vergleichen](/compare/cheapest-pre-employment-test)
 - [Alternativen zu TestGorilla](/compare/testgorilla-alternatives)
 - [testee und TestGorilla](/compare/testgorilla)
-- [Leitfaden zu Einstellungstests](/pre-employment-testing)
+- [Leitfaden zu Einstellungstests](/guides/pre-employment-testing)

@@ -131,6 +131,6 @@ Des versions provisoires de la documentation technique, du registre des risques,
 
 - [L'IA dans le recrutement est-elle légale au Royaume-Uni ?](/guides/is-ai-hiring-legal-in-the-uk)
 - [L'IA dans le recrutement est-elle légale aux États-Unis ?](/guides/is-ai-hiring-legal-in-the-us)
-- [Entretiens IA : ce qu'ils sont et comment les utiliser équitablement](/ai-interviews)
-- [Tests de recrutement : guide pratique](/pre-employment-testing)
+- [Entretiens IA : ce qu'ils sont et comment les utiliser équitablement](/guides/ai-interviews)
+- [Tests de recrutement : guide pratique](/guides/pre-employment-testing)
 - [Tests de compétences ou tri de CV](/guides/skills-tests-vs-cv-screening)

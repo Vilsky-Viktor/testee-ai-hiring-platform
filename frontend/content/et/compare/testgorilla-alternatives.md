@@ -104,4 +104,4 @@ Iga tööriista hind sõltub sinu mahust ja vajalikest pakettidest. [Kuidas võr
 
 - [Kuidas võrrelda värbamistestide hindu](/compare/cheapest-pre-employment-test)
 - [Värbamistestid ilma tellimuseta](/compare/pre-employment-tests-without-subscription)
-- [Kandidaatide testimise juhend](/pre-employment-testing)
+- [Kandidaatide testimise juhend](/guides/pre-employment-testing)

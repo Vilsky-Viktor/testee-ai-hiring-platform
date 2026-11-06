@@ -76,7 +76,7 @@ testee past goed bij stap 2. Het maakt van je functieomschrijving een getimede m
 - **Integriteitssignalen:** scorekaarten markeren antwoorden die te snel waren om de vraag te hebben gelezen, momenten waarop de kandidaat de pagina verliet, en kopieerpogingen. Zodra een kandidaat klaar is, wijst het rapport ook op antwoordpatronen die vaak ontstaan als iemand de vragen aan een AI doorgeeft en de antwoorden overneemt: ongeveer even lang bij elke vraag, ongeacht de lengte of moeilijkheid, of moeilijke vragen goed terwijl makkelijke fout waren. Een signaal of patroon is een reden om beter te kijken, geen bewijs van valsspelen.
 - **Vragen voor het live gesprek:** het rapport stelt tot 3 vragen voor die de kandidaat goed had, uit de sterkste onderwerpen, om door te nemen in een live gesprek, waar geen AI het antwoord kan geven.
 
-Wat testee niet doet: kandidaten schrijven, draaien of debuggen geen code in testee, en testee kijkt niet mee terwijl ze een AI-assistent gebruiken. Dat hoort in de praktijkfase, intern of op een developerplatform, die de kennistest aanvult. Zie [vaardigheidstests per functie](/tests) voor kant-en-klare tests om mee te beginnen, en [AI-interviews](/ai-interviews) voor hoe testee AI gebruikt en wat het aan mensen overlaat.
+Wat testee niet doet: kandidaten schrijven, draaien of debuggen geen code in testee, en testee kijkt niet mee terwijl ze een AI-assistent gebruiken. Dat hoort in de praktijkfase, intern of op een developerplatform, die de kennistest aanvult. Zie [vaardigheidstests per functie](/tests) voor kant-en-klare tests om mee te beginnen, en [AI-interviews](/guides/ai-interviews) voor hoe testee AI gebruikt en wat het aan mensen overlaat.
 
 ## Eerlijkheid en candidate experience
 
@@ -106,5 +106,5 @@ AI-assistenten hebben code maken goedkoper en code beoordelen belangrijker gemaa
 - [Developers werven](/guides/hiring-engineers)
 - [Vaardigheidstests per functie](/tests)
 - [Valsspelen bij online assessments, en wat ertegen helpt](/guides/cheating-in-online-assessments)
-- [AI-interviews: wat ze zijn en hoe je ze eerlijk inzet](/ai-interviews)
+- [AI-interviews: wat ze zijn en hoe je ze eerlijk inzet](/guides/ai-interviews)
 - [Vaardigheidstests vs. cv-screening](/guides/skills-tests-vs-cv-screening)

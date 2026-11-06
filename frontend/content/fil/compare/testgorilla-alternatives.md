@@ -104,4 +104,4 @@ Ang gastos ng bawat tool ay depende sa iyong volume at sa mga plan na kailangan 
 
 - [Paano ikumpara ang gastos ng mga test](/compare/cheapest-pre-employment-test)
 - [Pre-employment tests na walang subscription](/compare/pre-employment-tests-without-subscription)
-- [Gabay sa pre-employment testing](/pre-employment-testing)
+- [Gabay sa pre-employment testing](/guides/pre-employment-testing)

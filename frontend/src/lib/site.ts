@@ -7,7 +7,6 @@ import {
   PREVIEW_TITLE_MAX,
   PREVIEW_UNSUPPORTED,
 } from "@/config/preview-image"
-import { CATEGORY_PAGES } from "@/config/content"
 import {
   LOCALE_HEADER,
   LOCALIZED_ARTICLE,
@@ -91,10 +90,7 @@ export async function translatedTitle(
 /** The title a page's preview picture draws: lowercase like the site's titles; articles and the
  * API docs keep their capitals (names such as TestGorilla, EU or API). */
 function pictureTitle(title: string, path: string, locale: string) {
-  const capitals =
-    LOCALIZED_ARTICLE.test(path) ||
-    CATEGORY_PAGES.includes(path.slice(1)) ||
-    path === "/api-docs"
+  const capitals = LOCALIZED_ARTICLE.test(path) || path === "/api-docs"
 
   return capitals ? title : title.toLocaleLowerCase(locale)
 }

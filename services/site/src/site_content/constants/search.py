@@ -22,8 +22,6 @@ PUBLIC_PAGES = {
     "hiringFlow": "/hiring-flow",
     "pricing": "/pricing",
     "tests": "/tests",
-    "aiInterviews": "/ai-interviews",
-    "preEmploymentTesting": "/pre-employment-testing",
     "practice": "/practice",
     "compare": "/compare",
     "guides": "/guides",

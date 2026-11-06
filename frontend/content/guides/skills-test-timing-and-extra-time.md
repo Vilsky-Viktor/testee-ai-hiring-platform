@@ -137,7 +137,7 @@ Before inviting anyone, take the interview yourself from its page: it's free, do
 - [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)
 - [Interviewing in the age of AI](/guides/interviewing-in-the-age-of-ai)
 - [Cheating in online assessments, and what works against it](/guides/cheating-in-online-assessments)
-- [Pre-employment testing: a practical guide](/pre-employment-testing)
+- [Pre-employment testing: a practical guide](/guides/pre-employment-testing)
 
 ## Sources
 

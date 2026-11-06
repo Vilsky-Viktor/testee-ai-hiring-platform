@@ -559,32 +559,6 @@
       "Adaylarınız kendi rastgele sorularını alır, burada gösterilen örnekleri asla almaz."
     ]
   },
-  "aiInterviews": {
-    "title": "Yapay zekâ mülakatları",
-    "text": "Yapay zekâ mülakat araçlarının türleri, testee'nin yaklaşımının nasıl işlediği ve mevzuata uyumun temelleri üzerine bir rehber.",
-    "actions": [
-      "Sohbet botu, video ve oluşturulan teste dayalı mülakat araçlarını karşılaştırın.",
-      "testee'nin bir mülakatı nasıl hazırlayıp puanladığını ve asla ne yapmadığını adım adım okuyun.",
-      "AB Yapay Zekâ Yasası, GDPR ve ABD'nin işe alımda yapay zekâ kurallarının temellerini okuyun.",
-      "Sondaki karttan adaylarınız için bir test oluşturun."
-    ],
-    "tips": [
-      "Bu bir özettir, hukuki tavsiye değildir: kendi hukuk danışmanınıza danışın."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "İşe alım öncesi testler",
-    "text": "İşe alım ekipleri için işe alım öncesi testlere sade bir rehber: türleri, ne zaman işe yaradıkları, adalet ve hukuk, araç seçimi.",
-    "actions": [
-      "Hangi test türlerinin olduğunu ve her birinin ne zaman işe yaradığını okuyun.",
-      "Adalet ve hukukun temellerini okuyun.",
-      "Bir test aracında nelere dikkat edileceğini ve testee'nin bunu nasıl yaptığını görün.",
-      "Sondaki karttan adaylarınız için bir test oluşturun."
-    ],
-    "tips": [
-      "Bu bir özettir, hukuki tavsiye değildir: kendi hukuk danışmanınıza danışın."
-    ]
-  },
   "compare": {
     "title": "testee'yi karşılaştırın",
     "text": "testee'nin diğer işe alım öncesi test araçlarıyla kaynaklı karşılaştırmaları: testlerin nasıl hazırlandığı, ne kadara mal olduğu ve hangisinin ne zaman daha uygun olduğu.",

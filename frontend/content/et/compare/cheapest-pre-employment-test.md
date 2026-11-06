@@ -75,4 +75,4 @@ Vaata lehti [TestGorilla alternatiivid](/compare/testgorilla-alternatives) ja [H
 
 - [Värbamistestid ilma tellimuseta](/compare/pre-employment-tests-without-subscription)
 - [testee ja TestGorilla](/compare/testgorilla)
-- [Kandidaatide testimise juhend](/pre-employment-testing)
+- [Kandidaatide testimise juhend](/guides/pre-employment-testing)

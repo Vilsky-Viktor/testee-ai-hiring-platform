@@ -104,4 +104,4 @@ El precio es por candidato, sin suscripción: solo pagas por los candidatos que 
 
 - [Cómo filtrar 100 candidatos en un día](/guides/screen-100-applicants-in-a-day)
 - [Pruebas de habilidades frente a filtrado de CV](/guides/skills-tests-vs-cv-screening)
-- [Pruebas de selección de personal: guía práctica](/pre-employment-testing)
+- [Pruebas de selección de personal: guía práctica](/guides/pre-employment-testing)

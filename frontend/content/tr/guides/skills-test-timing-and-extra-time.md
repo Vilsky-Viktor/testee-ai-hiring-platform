@@ -137,7 +137,7 @@ Kimseyi davet etmeden önce mülakatı sayfasından kendiniz çözün: ücretsiz
 - [Beceri testleri ve CV taraması](/guides/skills-tests-vs-cv-screening)
 - [Yapay zekâ çağında mühendislerle mülakat](/guides/interviewing-in-the-age-of-ai)
 - [Online değerlendirmelerde kopya ve buna karşı işe yarayanlar](/guides/cheating-in-online-assessments)
-- [İşe alım öncesi testler: pratik bir rehber](/pre-employment-testing)
+- [İşe alım öncesi testler: pratik bir rehber](/guides/pre-employment-testing)
 
 ## Kaynaklar
 

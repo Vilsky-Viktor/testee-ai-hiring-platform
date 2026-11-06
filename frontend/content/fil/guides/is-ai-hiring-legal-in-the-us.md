@@ -119,7 +119,7 @@ Ang hitsura nito sa produkto ngayon:
 - [Legal ba ang AI hiring sa EU?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Legal ba ang AI hiring sa UK?](/guides/is-ai-hiring-legal-in-the-uk)
 - [Paano itakda ang oras ng skills test: oras bawat tanong, haba at dagdag na oras](/guides/skills-test-timing-and-extra-time)
-- [Pre-employment testing: isang praktikal na gabay](/pre-employment-testing)
+- [Pre-employment testing: isang praktikal na gabay](/guides/pre-employment-testing)
 
 ## Mga source
 

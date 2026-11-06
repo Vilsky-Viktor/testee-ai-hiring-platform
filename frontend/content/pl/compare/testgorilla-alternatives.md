@@ -104,4 +104,4 @@ Koszt każdego narzędzia zależy od Twojego wolumenu i potrzebnych planów. Art
 
 - [Jak porównać koszty testów](/compare/cheapest-pre-employment-test)
 - [Testy rekrutacyjne bez subskrypcji](/compare/pre-employment-tests-without-subscription)
-- [Przewodnik po testach rekrutacyjnych](/pre-employment-testing)
+- [Przewodnik po testach rekrutacyjnych](/guides/pre-employment-testing)

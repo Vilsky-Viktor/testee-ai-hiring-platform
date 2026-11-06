@@ -122,7 +122,7 @@ testee היא דוגמה אחת לכלי שבונה מבחן מיומנויות 
 - [איך למיין 100 מועמדים ביום אחד](/guides/screen-100-applicants-in-a-day)
 - [מבחני מיומנויות מול סינון קורות חיים](/guides/skills-tests-vs-cv-screening)
 - [איך לתזמן מבחן מיומנויות](/guides/skills-test-timing-and-extra-time)
-- [מבחני מיון לעבודה: מדריך מעשי](/pre-employment-testing)
+- [מבחני מיון לעבודה: מדריך מעשי](/guides/pre-employment-testing)
 
 ## מקורות
 

@@ -137,7 +137,7 @@ updated: "2026-10-29"
 - [اختبارات المهارات مقابل فرز السير الذاتية](/guides/skills-tests-vs-cv-screening)
 - [مقابلة المهندسين في عصر الذكاء الاصطناعي](/guides/interviewing-in-the-age-of-ai)
 - [الغش في الاختبارات عبر الإنترنت، وما الذي ينفع ضده](/guides/cheating-in-online-assessments)
-- [اختبارات ما قبل التوظيف: دليل عملي](/pre-employment-testing)
+- [اختبارات ما قبل التوظيف: دليل عملي](/guides/pre-employment-testing)
 
 ## المصادر
 

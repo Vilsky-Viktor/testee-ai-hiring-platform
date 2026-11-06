@@ -104,4 +104,4 @@ ATS によっては、ATS 側での作業が必要です。Greenhouse、Teamtail
 
 - [応募者 100 人を 1 日で選考する方法](/guides/screen-100-applicants-in-a-day)
 - [スキルテストと書類選考の比較](/guides/skills-tests-vs-cv-screening)
-- [採用前テスト：実践ガイド](/pre-employment-testing)
+- [採用前テスト：実践ガイド](/guides/pre-employment-testing)

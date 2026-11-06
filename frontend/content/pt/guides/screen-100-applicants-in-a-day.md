@@ -107,7 +107,7 @@ Com a testee, você paga só pelos candidatos que respondem pelo menos uma pergu
 
 ## Leitura relacionada
 
-- [Teste de seleção: guia prático](/pre-employment-testing)
+- [Teste de seleção: guia prático](/guides/pre-employment-testing)
 - [Testes de habilidades x triagem de currículos](/guides/skills-tests-vs-cv-screening)
 - [Como escrever uma descrição de vaga que rende um bom teste](/guides/job-description-that-tests-well)
 - [Como comparar o custo dos testes](/compare/cheapest-pre-employment-test)

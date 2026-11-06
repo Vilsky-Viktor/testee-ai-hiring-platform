@@ -104,4 +104,4 @@ TestGorilla עשויה להתאים לכם יותר אם:
 
 - [איך להשוות עלויות של מבחנים](/compare/cheapest-pre-employment-test)
 - [מבחני מיון בלי מנוי](/compare/pre-employment-tests-without-subscription)
-- [מדריך למבחני מיון לעבודה](/pre-employment-testing)
+- [מדריך למבחני מיון לעבודה](/guides/pre-employment-testing)

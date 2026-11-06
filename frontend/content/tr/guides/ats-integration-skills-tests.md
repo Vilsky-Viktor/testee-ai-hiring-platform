@@ -104,4 +104,4 @@ Fiyatlandırma aday başınadır ve abonelik yoktur: yalnızca en az bir soruyu 
 
 - [Bir günde 100 başvuru nasıl elenir](/guides/screen-100-applicants-in-a-day)
 - [Beceri testleri ve CV taraması](/guides/skills-tests-vs-cv-screening)
-- [İşe alım öncesi testler: pratik bir rehber](/pre-employment-testing)
+- [İşe alım öncesi testler: pratik bir rehber](/guides/pre-employment-testing)

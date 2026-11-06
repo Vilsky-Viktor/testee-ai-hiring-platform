@@ -98,4 +98,4 @@ testee में कोई कॉन्ट्रैक्ट नहीं है
 - [TestGorilla के विकल्प](/compare/testgorilla-alternatives)
 - [टेस्ट की लागत की तुलना कैसे करें](/compare/cheapest-pre-employment-test)
 - [बिना सब्सक्रिप्शन के प्री-एम्प्लॉयमेंट टेस्ट](/compare/pre-employment-tests-without-subscription)
-- [प्री-एम्प्लॉयमेंट टेस्टिंग गाइड](/pre-employment-testing)
+- [प्री-एम्प्लॉयमेंट टेस्टिंग गाइड](/guides/pre-employment-testing)

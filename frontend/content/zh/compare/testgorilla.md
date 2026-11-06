@@ -98,4 +98,4 @@ testee 没有合同，点数永不过期，所以把它加入已经使用其他�
 - [TestGorilla 替代方案](/compare/testgorilla-alternatives)
 - [如何比较测评费用](/compare/cheapest-pre-employment-test)
 - [无需订阅的招聘前测评](/compare/pre-employment-tests-without-subscription)
-- [招聘前测评指南](/pre-employment-testing)
+- [招聘前测评指南](/guides/pre-employment-testing)

@@ -131,6 +131,6 @@ Já existem rascunhos da documentação técnica, do registro de riscos, das ins
 
 - [O uso de IA no recrutamento é legal no Reino Unido?](/guides/is-ai-hiring-legal-in-the-uk)
 - [O uso de IA no recrutamento é legal nos EUA?](/guides/is-ai-hiring-legal-in-the-us)
-- [Entrevistas com IA: o que são e como usá-las de forma justa](/ai-interviews)
-- [Teste de seleção: guia prático](/pre-employment-testing)
+- [Entrevistas com IA: o que são e como usá-las de forma justa](/guides/ai-interviews)
+- [Teste de seleção: guia prático](/guides/pre-employment-testing)
 - [Testes de habilidades x triagem de currículos](/guides/skills-tests-vs-cv-screening)

@@ -122,7 +122,7 @@ Pour essayer, collez une fiche de poste sur la page d'accueil, ou partez d'un te
 - [Comment présélectionner 100 candidats en une journée](/guides/screen-100-applicants-in-a-day)
 - [Tests de compétences ou tri de CV](/guides/skills-tests-vs-cv-screening)
 - [Chronométrer un test de compétences](/guides/skills-test-timing-and-extra-time)
-- [Tests de recrutement : guide pratique](/pre-employment-testing)
+- [Tests de recrutement : guide pratique](/guides/pre-employment-testing)
 
 ## Sources
 

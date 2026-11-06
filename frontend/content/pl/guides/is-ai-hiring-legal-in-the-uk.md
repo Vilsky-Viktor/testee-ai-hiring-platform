@@ -120,7 +120,7 @@ Jak to dziś wygląda w produkcie:
 - [Czy rekrutacja z AI jest legalna w UE?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Czy rekrutacja z AI jest legalna w USA?](/guides/is-ai-hiring-legal-in-the-us)
 - [Jak ustawić czas w teście umiejętności: limit na pytanie, długość i dodatkowy czas](/guides/skills-test-timing-and-extra-time)
-- [Rozmowy rekrutacyjne z AI: czym są i jak korzystać z nich uczciwie](/ai-interviews)
+- [Rozmowy rekrutacyjne z AI: czym są i jak korzystać z nich uczciwie](/guides/ai-interviews)
 
 ## Źródła
 

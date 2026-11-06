@@ -98,4 +98,4 @@ A testee não tem contrato e os créditos não expiram, então adicioná-la a um
 - [Alternativas à TestGorilla](/compare/testgorilla-alternatives)
 - [Como comparar o custo dos testes](/compare/cheapest-pre-employment-test)
 - [Testes de seleção sem assinatura](/compare/pre-employment-tests-without-subscription)
-- [Guia de testes de seleção](/pre-employment-testing)
+- [Guia de testes de seleção](/guides/pre-employment-testing)

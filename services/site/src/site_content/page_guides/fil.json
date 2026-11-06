@@ -559,32 +559,6 @@
       "Bawat aplikante mo ay may sariling random na mga tanong, hindi kailanman ang mga halimbawang ipinapakita rito."
     ]
   },
-  "aiInterviews": {
-    "title": "AI interviews",
-    "text": "Gabay sa mga uri ng AI interview tool, kung paano gumagana ang paraan ng testee, at ang mga pangunahing kaalaman sa compliance.",
-    "actions": [
-      "Ikumpara ang mga interview tool na chatbot, video at gumagawa ng test.",
-      "Basahin, hakbang-hakbang, kung paano gumagawa at nagmamarka ng interview ang testee, at kung ano ang hindi nito kailanman ginagawa.",
-      "Basahin ang mga pangunahing kaalaman sa EU AI Act, GDPR at mga patakaran ng US para sa AI sa pag-hire.",
-      "Gumawa ng test para sa iyong mga aplikante mula sa card sa dulo."
-    ],
-    "tips": [
-      "Buod ito, hindi legal na payo: kumonsulta sa sarili mong abogado."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Pre-employment testing",
-    "text": "Simpleng gabay para sa mga hiring team tungkol sa mga pre-employment test: ang mga uri, kailan nakakatulong ang mga ito, pagiging patas at ang batas, at pagpili ng tool.",
-    "actions": [
-      "Basahin kung anong mga uri ng test ang mayroon at kailan nakakatulong ang bawat isa.",
-      "Basahin ang mga pangunahing kaalaman tungkol sa pagiging patas at sa batas.",
-      "Tingnan kung ano ang hahanapin sa isang testing tool, at kung paano ito ginagawa ng testee.",
-      "Gumawa ng test para sa iyong mga aplikante mula sa card sa dulo."
-    ],
-    "tips": [
-      "Buod ito, hindi legal na payo: kumonsulta sa sarili mong abogado."
-    ]
-  },
   "compare": {
     "title": "Ikumpara ang testee",
     "text": "Mga paghahambing ng testee sa ibang pre-employment testing tool, may mga source: paano ginagawa ang mga test, magkano ang mga ito at kailan mas bagay ang bawat isa.",

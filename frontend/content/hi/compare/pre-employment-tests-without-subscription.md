@@ -98,4 +98,4 @@ testee के लिए: नहीं, नहीं, नहीं, हाँ (�
 - [टेस्ट की लागत की तुलना कैसे करें](/compare/cheapest-pre-employment-test)
 - [TestGorilla के विकल्प](/compare/testgorilla-alternatives)
 - [testee और TestGorilla](/compare/testgorilla)
-- [प्री-एम्प्लॉयमेंट टेस्टिंग गाइड](/pre-employment-testing)
+- [प्री-एम्प्लॉयमेंट टेस्टिंग गाइड](/guides/pre-employment-testing)

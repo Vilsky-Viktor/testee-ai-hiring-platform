@@ -98,4 +98,4 @@ testee には契約がなく、クレジットに有効期限もないため、�
 - [TestGorilla の代替ツール](/compare/testgorilla-alternatives)
 - [テスト費用の比較方法](/compare/cheapest-pre-employment-test)
 - [サブスクリプション不要の採用前テスト](/compare/pre-employment-tests-without-subscription)
-- [採用前テストガイド](/pre-employment-testing)
+- [採用前テストガイド](/guides/pre-employment-testing)

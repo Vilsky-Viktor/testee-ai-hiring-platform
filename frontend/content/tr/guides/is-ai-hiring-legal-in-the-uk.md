@@ -120,7 +120,7 @@ Bunun bugün üründeki karşılığı:
 - [AB'de yapay zekâ ile işe alım yasal mı?](/guides/is-ai-hiring-legal-in-the-eu)
 - [ABD'de yapay zekâ ile işe alım yasal mı?](/guides/is-ai-hiring-legal-in-the-us)
 - [Beceri testinin süresi nasıl ayarlanır: soru başına süre, uzunluk ve ek süre](/guides/skills-test-timing-and-extra-time)
-- [Yapay zekâ mülakatları: nedir ve adil şekilde nasıl kullanılır](/ai-interviews)
+- [Yapay zekâ mülakatları: nedir ve adil şekilde nasıl kullanılır](/guides/ai-interviews)
 
 ## Kaynaklar
 

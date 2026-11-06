@@ -132,7 +132,7 @@ Un proceso estructurado también es más justo, pero solo si lo aplicas de forma
 - **Supervisa los resultados.** Los distintos métodos muestran diferencias de puntuación distintas entre grupos. Sackett et al. encontraron diferencias medias mayores en las pruebas de conocimientos del puesto y las muestras de trabajo que en las entrevistas estructuradas, lo que es un motivo más para combinar métodos. Vigila las tasas de aprobados en cada fase.
 - **Deciden las personas.** Una puntuación respalda una decisión; no la toma. Mira las respuestas antes de rechazar a nadie.
 
-Para lo básico en materia legal, incluido el Reglamento de IA de la UE (EU AI Act) y las normas estadounidenses sobre tasas de selección, consulta [Pruebas de selección de personal](/pre-employment-testing).
+Para lo básico en materia legal, incluido el Reglamento de IA de la UE (EU AI Act) y las normas estadounidenses sobre tasas de selección, consulta [Pruebas de selección de personal](/guides/pre-employment-testing).
 
 ## Resumen
 
@@ -146,6 +146,6 @@ Pon primero las comprobaciones amplias y baratas, y al final las profundas y car
 
 - [Pruebas de habilidades por puesto](/tests)
 - [Alternativas a HackerRank](/compare/hackerrank-alternatives)
-- [Guía de pruebas de selección de personal](/pre-employment-testing)
+- [Guía de pruebas de selección de personal](/guides/pre-employment-testing)
 - [Pruebas de habilidades frente a filtrado de CV](/guides/skills-tests-vs-cv-screening)
 - [Entrevistar a ingenieros en la era de la IA](/guides/interviewing-in-the-age-of-ai)

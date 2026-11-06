@@ -120,7 +120,7 @@ Kuidas see tootes täna välja näeb:
 - [Kas AI kasutamine värbamisel on ELis seaduslik?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Kas AI kasutamine värbamisel on USAs seaduslik?](/guides/is-ai-hiring-legal-in-the-us)
 - [Kuidas ajastada oskustesti: küsimuse taimer, pikkus ja lisaaeg](/guides/skills-test-timing-and-extra-time)
-- [AI-intervjuud: mis need on ja kuidas neid õiglaselt kasutada](/ai-interviews)
+- [AI-intervjuud: mis need on ja kuidas neid õiglaselt kasutada](/guides/ai-interviews)
 
 ## Allikad
 

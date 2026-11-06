@@ -98,4 +98,4 @@ testee tidak memakai kontrak dan kreditnya tidak kedaluwarsa, jadi menambahkanny
 - [Alternatif TestGorilla](/compare/testgorilla-alternatives)
 - [Cara membandingkan biaya tes](/compare/cheapest-pre-employment-test)
 - [Tes seleksi karyawan tanpa langganan](/compare/pre-employment-tests-without-subscription)
-- [Panduan tes seleksi karyawan](/pre-employment-testing)
+- [Panduan tes seleksi karyawan](/guides/pre-employment-testing)

@@ -120,7 +120,7 @@ Hiện nay điều đó thể hiện trong sản phẩm như sau:
 - [Dùng AI trong tuyển dụng có hợp pháp ở EU không?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Dùng AI trong tuyển dụng có hợp pháp ở Mỹ không?](/guides/is-ai-hiring-legal-in-the-us)
 - [Cách đặt thời gian cho bài kiểm tra kỹ năng: thời gian mỗi câu, độ dài và thời gian cộng thêm](/guides/skills-test-timing-and-extra-time)
-- [Phỏng vấn AI: là gì và cách dùng công bằng](/ai-interviews)
+- [Phỏng vấn AI: là gì và cách dùng công bằng](/guides/ai-interviews)
 
 ## Nguồn tham khảo
 

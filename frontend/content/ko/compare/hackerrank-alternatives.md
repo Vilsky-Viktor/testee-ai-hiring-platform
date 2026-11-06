@@ -107,5 +107,5 @@ Alooba는 500개 이상의 역량에 걸친 400개 이상의 직무 선별 테�
 
 - [TestGorilla 대안](/compare/testgorilla-alternatives)
 - [테스트 비용 비교하는 법](/compare/cheapest-pre-employment-test)
-- [AI 면접: 무엇이고 어떻게 공정하게 활용할까](/ai-interviews)
-- [채용 전 테스트 가이드](/pre-employment-testing)
+- [AI 면접: 무엇이고 어떻게 공정하게 활용할까](/guides/ai-interviews)
+- [채용 전 테스트 가이드](/guides/pre-employment-testing)

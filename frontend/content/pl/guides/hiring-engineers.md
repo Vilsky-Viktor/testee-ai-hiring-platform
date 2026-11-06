@@ -132,7 +132,7 @@ Ustrukturyzowany proces jest też uczciwszy, ale tylko wtedy, gdy prowadzisz go 
 - **Monitoruj wyniki.** Różne metody dają różne różnice w wynikach między grupami. Sackett i współpracownicy stwierdzili większe średnie różnice w testach wiedzy zawodowej i próbkach pracy niż w ustrukturyzowanych rozmowach, co jest kolejnym powodem, by łączyć metody. Obserwuj odsetek osób przechodzących każdy etap.
 - **Decydują ludzie.** Wynik wspiera decyzję, ale jej nie podejmuje. Przejrzyj odpowiedzi, zanim kogokolwiek odrzucisz.
 
-Podstawy prawne, w tym unijny akt w sprawie sztucznej inteligencji (AI Act) i amerykańskie zasady dotyczące wskaźników selekcji, opisuje strona [Testy rekrutacyjne](/pre-employment-testing).
+Podstawy prawne, w tym unijny akt w sprawie sztucznej inteligencji (AI Act) i amerykańskie zasady dotyczące wskaźników selekcji, opisuje strona [Testy rekrutacyjne](/guides/pre-employment-testing).
 
 ## Podsumowanie
 
@@ -146,6 +146,6 @@ Szerokie, tanie sprawdziany daj na początek, a dogłębne i drogie na koniec. S
 
 - [Testy umiejętności według roli](/tests)
 - [Alternatywy dla HackerRank](/compare/hackerrank-alternatives)
-- [Przewodnik po testach rekrutacyjnych](/pre-employment-testing)
+- [Przewodnik po testach rekrutacyjnych](/guides/pre-employment-testing)
 - [Testy umiejętności a selekcja CV](/guides/skills-tests-vs-cv-screening)
 - [Rozmowy z programistami w erze AI](/guides/interviewing-in-the-age-of-ai)

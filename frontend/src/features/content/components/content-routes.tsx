@@ -72,12 +72,3 @@ export function hubArticleRoute(hub: "guides" | "compare") {
     },
   }
 }
-
-/** A category page for companies searching the category (content/pages/<slug>.md at /<slug>),
- * with its guide's key. */
-export function categoryRoute(slug: string, pageKey: PageHelpKey) {
-  return {
-    generateMetadata: () => metadata("pages", slug, `/${slug}`),
-    Page: () => article("pages", slug, `/${slug}`, pageKey),
-  }
-}

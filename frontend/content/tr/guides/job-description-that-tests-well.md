@@ -122,7 +122,7 @@ Denemek için ana sayfaya bir tanım yapıştırın ya da [pozisyona göre becer
 - [Bir günde 100 başvuru nasıl elenir](/guides/screen-100-applicants-in-a-day)
 - [Beceri testleri ve CV taraması](/guides/skills-tests-vs-cv-screening)
 - [Beceri testinin süresi nasıl ayarlanır](/guides/skills-test-timing-and-extra-time)
-- [İşe alım öncesi testler: pratik bir rehber](/pre-employment-testing)
+- [İşe alım öncesi testler: pratik bir rehber](/guides/pre-employment-testing)
 
 ## Kaynaklar
 

@@ -107,7 +107,7 @@ Con testee paghi solo per i candidati che rispondono ad almeno una domanda: $5 c
 
 ## Letture correlate
 
-- [Test pre-assunzione: una guida pratica](/pre-employment-testing)
+- [Test pre-assunzione: una guida pratica](/guides/pre-employment-testing)
 - [Test attitudinali e di competenze o screening dei CV](/guides/skills-tests-vs-cv-screening)
 - [Come scrivere una descrizione del ruolo da cui nasce un buon test](/guides/job-description-that-tests-well)
 - [Come confrontare i costi dei test](/compare/cheapest-pre-employment-test)

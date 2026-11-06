@@ -98,4 +98,4 @@ updated: "2026-10-21"
 - [איך להשוות עלויות של מבחנים](/compare/cheapest-pre-employment-test)
 - [חלופות ל-TestGorilla](/compare/testgorilla-alternatives)
 - [testee ו-TestGorilla](/compare/testgorilla)
-- [מדריך למבחני מיון לעבודה](/pre-employment-testing)
+- [מדריך למבחני מיון לעבודה](/guides/pre-employment-testing)

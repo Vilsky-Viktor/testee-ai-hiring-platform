@@ -104,4 +104,4 @@ Lo que cuesta cada herramienta depende de tu volumen y de los planes que necesit
 
 - [Cómo comparar el coste de las pruebas](/compare/cheapest-pre-employment-test)
 - [Pruebas de selección sin suscripción](/compare/pre-employment-tests-without-subscription)
-- [Guía de pruebas de selección de personal](/pre-employment-testing)
+- [Guía de pruebas de selección de personal](/guides/pre-employment-testing)

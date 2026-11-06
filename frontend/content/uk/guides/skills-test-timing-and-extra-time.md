@@ -137,7 +137,7 @@ updated: "2026-10-29"
 - [Тести навичок чи відбір за резюме](/guides/skills-tests-vs-cv-screening)
 - [Співбесіди з інженерами в епоху ШІ](/guides/interviewing-in-the-age-of-ai)
 - [Списування в онлайн-тестах і що справді допомагає](/guides/cheating-in-online-assessments)
-- [Тестування кандидатів під час найму: практичний посібник](/pre-employment-testing)
+- [Тестування кандидатів під час найму: практичний посібник](/guides/pre-employment-testing)
 
 ## Джерела
 

@@ -107,7 +107,7 @@ updated: "2026-10-29"
 
 ## อ่านเพิ่มเติม
 
-- [แบบทดสอบก่อนจ้างงาน: คู่มือใช้งานจริง](/pre-employment-testing)
+- [แบบทดสอบก่อนจ้างงาน: คู่มือใช้งานจริง](/guides/pre-employment-testing)
 - [แบบทดสอบทักษะ เทียบกับการคัดกรองเรซูเม่](/guides/skills-tests-vs-cv-screening)
 - [วิธีเขียนรายละเอียดงานให้สร้างแบบทดสอบได้ดี](/guides/job-description-that-tests-well)
 - [วิธีเปรียบเทียบค่าใช้จ่ายของแบบทดสอบ](/compare/cheapest-pre-employment-test)

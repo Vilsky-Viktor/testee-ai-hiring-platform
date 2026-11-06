@@ -137,7 +137,7 @@ Avant d'inviter qui que ce soit, passez l'entretien vous-même depuis sa page : 
 - [Tests de compétences ou tri de CV](/guides/skills-tests-vs-cv-screening)
 - [Recruter des développeurs à l'ère de l'IA](/guides/interviewing-in-the-age-of-ai)
 - [La triche aux tests de recrutement en ligne, et ce qui marche contre elle](/guides/cheating-in-online-assessments)
-- [Tests de recrutement : guide pratique](/pre-employment-testing)
+- [Tests de recrutement : guide pratique](/guides/pre-employment-testing)
 
 ## Sources
 

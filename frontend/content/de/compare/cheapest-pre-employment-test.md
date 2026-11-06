@@ -75,4 +75,4 @@ Unter [Alternativen zu TestGorilla](/compare/testgorilla-alternatives) und [Alte
 
 - [Einstellungstests ohne Abo](/compare/pre-employment-tests-without-subscription)
 - [testee und TestGorilla](/compare/testgorilla)
-- [Leitfaden zu Einstellungstests](/pre-employment-testing)
+- [Leitfaden zu Einstellungstests](/guides/pre-employment-testing)

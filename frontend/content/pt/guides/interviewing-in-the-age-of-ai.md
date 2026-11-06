@@ -76,7 +76,7 @@ A testee é bem adequada para o passo 2. Ela transforma a sua descrição da vag
 - **Sinais de integridade:** as fichas de avaliação sinalizam respostas rápidas demais para a pergunta ter sido lida, as vezes em que o candidato saiu da página e as tentativas de cópia. Quando o candidato termina, o relatório também aponta padrões de resposta que costumam aparecer quando alguém repassa as perguntas a uma IA e copia as respostas dela: mais ou menos o mesmo tempo em cada pergunta, independentemente da extensão ou da dificuldade, ou perguntas difíceis certas enquanto as fáceis estavam erradas. Um alerta ou padrão é um motivo para olhar com mais atenção, não prova de cola.
 - **Perguntas para a entrevista ao vivo:** o relatório sugere até 3 perguntas que o candidato acertou, dos seus temas mais fortes, para discutir em uma entrevista ao vivo, onde nenhuma IA pode responder por ele.
 
-O que a testee não faz: os candidatos não escrevem, executam nem depuram código na testee, e ela não observa como eles usam um assistente de IA. Isso fica para a etapa prática, feita internamente ou numa plataforma para desenvolvedores, que complementa a triagem de conhecimentos. Veja os [testes de habilidades por cargo](/tests) para começar com testes prontos, e [Entrevistas com IA](/ai-interviews) para ver como a testee usa a IA e o que deixa para as pessoas.
+O que a testee não faz: os candidatos não escrevem, executam nem depuram código na testee, e ela não observa como eles usam um assistente de IA. Isso fica para a etapa prática, feita internamente ou numa plataforma para desenvolvedores, que complementa a triagem de conhecimentos. Veja os [testes de habilidades por cargo](/tests) para começar com testes prontos, e [Entrevistas com IA](/guides/ai-interviews) para ver como a testee usa a IA e o que deixa para as pessoas.
 
 ## Imparcialidade e experiência do candidato
 
@@ -106,5 +106,5 @@ Os assistentes de IA baratearam a produção de código e tornaram mais importan
 - [Como contratar engenheiros](/guides/hiring-engineers)
 - [Testes de habilidades por cargo](/tests)
 - [Cola em testes de recrutamento online, e o que funciona contra ela](/guides/cheating-in-online-assessments)
-- [Entrevistas com IA: o que são e como usá-las de forma justa](/ai-interviews)
+- [Entrevistas com IA: o que são e como usá-las de forma justa](/guides/ai-interviews)
 - [Testes de habilidades x triagem de currículos](/guides/skills-tests-vs-cv-screening)

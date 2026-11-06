@@ -559,32 +559,6 @@
       "Tus candidatos reciben sus propias preguntas aleatorias, nunca los ejemplos que se muestran aquí."
     ]
   },
-  "aiInterviews": {
-    "title": "Entrevistas con IA",
-    "text": "Una guía de los tipos de herramientas de entrevista con IA, de cómo funciona el enfoque de testee y de lo básico del cumplimiento normativo.",
-    "actions": [
-      "Compara las herramientas de entrevista por chatbot, por vídeo y con pruebas generadas.",
-      "Lee, paso a paso, cómo testee crea y califica una entrevista, y lo que nunca hace.",
-      "Lee lo básico de la Ley de IA de la UE, el RGPD y las normas de EE. UU. sobre la IA en la contratación.",
-      "Crea una prueba para tus candidatos desde la tarjeta del final."
-    ],
-    "tips": [
-      "Es un resumen, no asesoramiento legal: consúltalo con tu propio asesor jurídico."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Evaluación preempleo",
-    "text": "Una guía clara de las pruebas preempleo para equipos de selección: los tipos, cuándo ayudan, la equidad y la ley, y cómo elegir una herramienta.",
-    "actions": [
-      "Lee qué tipos de pruebas existen y cuándo ayuda cada uno.",
-      "Lee lo básico sobre equidad y legislación.",
-      "Mira qué buscar en una herramienta de evaluación y cómo lo hace testee.",
-      "Crea una prueba para tus candidatos desde la tarjeta del final."
-    ],
-    "tips": [
-      "Es un resumen, no asesoramiento legal: consúltalo con tu propio asesor jurídico."
-    ]
-  },
   "compare": {
     "title": "testee comparado",
     "text": "Comparativas con fuentes entre testee y otras herramientas de evaluación preempleo: cómo se crean las pruebas, cuánto cuestan y cuándo encaja mejor cada una.",

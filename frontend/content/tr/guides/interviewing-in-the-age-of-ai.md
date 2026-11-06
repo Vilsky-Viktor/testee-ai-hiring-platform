@@ -76,7 +76,7 @@ testee 2. adım için çok uygundur. İş tanımınızı süreli, çoktan seçme
 - **Güvenilirlik sinyalleri:** değerlendirme kartları, soruyu okumaya yetmeyecek kadar hızlı verilen yanıtları, adayın sayfadan ayrıldığı anları ve kopyalama girişimlerini işaretler. Aday bitirdiğinde raporu, soruları bir yapay zekâya aktarıp onun yanıtlarını kopyalamanın genellikle bıraktığı yanıt örüntülerini de gösterir: uzunluğu ya da zorluğu ne olursa olsun her soruda yaklaşık aynı süre veya kolay sorular yanlışken zor soruların doğru olması. İşaret ya da örüntü, daha yakından bakmak için bir nedendir, kopya çekildiğinin kanıtı değildir.
 - **Canlı mülakat için sorular:** rapor, adayın en güçlü konularından doğru yanıtladığı en fazla 3 soruyu, hiçbir yapay zekânın onun yerine yanıt veremeyeceği canlı bir mülakatta konuşmak için önerir.
 
-testee'nin yapmadıkları: adaylar testee'de kod yazmaz, çalıştırmaz veya hata ayıklamaz ve testee onların bir yapay zekâ asistanını kullanmasını izlemez. Bunun yeri, şirket içinde veya bir geliştirici platformunda yürütülen ve bilgi elemesini tamamlayan uygulamalı aşamadır. Başlangıç için hazır testler için [pozisyona göre beceri testleri](/tests) sayfasına, testee'nin yapay zekâyı nasıl kullandığı ve neyi insanlara bıraktığı için [Yapay zekâ mülakatları](/ai-interviews) sayfasına bakın.
+testee'nin yapmadıkları: adaylar testee'de kod yazmaz, çalıştırmaz veya hata ayıklamaz ve testee onların bir yapay zekâ asistanını kullanmasını izlemez. Bunun yeri, şirket içinde veya bir geliştirici platformunda yürütülen ve bilgi elemesini tamamlayan uygulamalı aşamadır. Başlangıç için hazır testler için [pozisyona göre beceri testleri](/tests) sayfasına, testee'nin yapay zekâyı nasıl kullandığı ve neyi insanlara bıraktığı için [Yapay zekâ mülakatları](/guides/ai-interviews) sayfasına bakın.
 
 ## Adillik ve aday deneyimi
 
@@ -106,5 +106,5 @@ Yapay zekâ asistanları kod üretmeyi ucuzlattı, kodu değerlendirmeyi ise dah
 - [Mühendis işe alımı nasıl yapılır](/guides/hiring-engineers)
 - [Pozisyona göre beceri testleri](/tests)
 - [Online değerlendirmelerde kopya ve buna karşı işe yarayanlar](/guides/cheating-in-online-assessments)
-- [Yapay zekâ mülakatları: nedir ve adil şekilde nasıl kullanılır](/ai-interviews)
+- [Yapay zekâ mülakatları: nedir ve adil şekilde nasıl kullanılır](/guides/ai-interviews)
 - [Beceri testleri ve CV taraması](/guides/skills-tests-vs-cv-screening)

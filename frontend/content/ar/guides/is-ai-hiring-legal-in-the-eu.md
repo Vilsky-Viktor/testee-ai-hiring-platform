@@ -133,6 +133,6 @@ updated: "2026-10-07"
 
 - [هل التوظيف بالذكاء الاصطناعي قانوني في المملكة المتحدة؟](/guides/is-ai-hiring-legal-in-the-uk)
 - [هل التوظيف بالذكاء الاصطناعي قانوني في الولايات المتحدة؟](/guides/is-ai-hiring-legal-in-the-us)
-- [مقابلات الذكاء الاصطناعي: ما هي وكيف تستخدمها بعدالة](/ai-interviews)
-- [اختبارات ما قبل التوظيف: دليل عملي](/pre-employment-testing)
+- [مقابلات الذكاء الاصطناعي: ما هي وكيف تستخدمها بعدالة](/guides/ai-interviews)
+- [اختبارات ما قبل التوظيف: دليل عملي](/guides/pre-employment-testing)
 - [اختبارات المهارات مقابل فرز السير الذاتية](/guides/skills-tests-vs-cv-screening)

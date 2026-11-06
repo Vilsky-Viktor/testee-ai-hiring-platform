@@ -9,6 +9,7 @@ export const PRIVATE_PATHS = [
   "/apply",
   "/companies",
   "/connect",
+  "/dashboard",
   "/embedded",
   "/generate",
   "/invite",
@@ -64,8 +65,6 @@ export const LOCALIZED_PATHS = [
   "/tests",
   "/compare",
   "/guides",
-  "/pre-employment-testing",
-  "/ai-interviews",
   "/news",
 ]
 

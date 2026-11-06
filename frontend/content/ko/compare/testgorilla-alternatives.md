@@ -104,4 +104,4 @@ Bryq의 요금제에는 인지 능력 및 성격 평가, 역량 평가, 무제�
 
 - [테스트 비용 비교하는 법](/compare/cheapest-pre-employment-test)
 - [구독 없는 채용 전 테스트](/compare/pre-employment-tests-without-subscription)
-- [채용 전 테스트 가이드](/pre-employment-testing)
+- [채용 전 테스트 가이드](/guides/pre-employment-testing)

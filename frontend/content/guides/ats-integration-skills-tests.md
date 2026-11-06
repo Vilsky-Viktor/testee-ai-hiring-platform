@@ -104,4 +104,4 @@ Pricing is per candidate, with no subscription: you pay only for candidates who 
 
 - [How to screen 100 applicants in a day](/guides/screen-100-applicants-in-a-day)
 - [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)
-- [Pre-employment testing: a practical guide](/pre-employment-testing)
+- [Pre-employment testing: a practical guide](/guides/pre-employment-testing)

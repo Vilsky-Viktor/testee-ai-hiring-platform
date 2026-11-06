@@ -104,4 +104,4 @@ Wat elke tool kost, hangt af van je volume en de plannen die je nodig hebt. [Hoe
 
 - [Hoe je de kosten van selectietests vergelijkt](/compare/cheapest-pre-employment-test)
 - [Selectietests zonder abonnement](/compare/pre-employment-tests-without-subscription)
-- [Gids voor selectietests](/pre-employment-testing)
+- [Gids voor selectietests](/guides/pre-employment-testing)

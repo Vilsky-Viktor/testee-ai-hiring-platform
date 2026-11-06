@@ -137,7 +137,7 @@ Trước khi mời bất kỳ ai, hãy tự làm buổi phỏng vấn từ trang
 - [Bài kiểm tra kỹ năng và sàng lọc CV](/guides/skills-tests-vs-cv-screening)
 - [Phỏng vấn kỹ sư trong thời đại AI: nên kiểm tra gì bây giờ](/guides/interviewing-in-the-age-of-ai)
 - [Gian lận trong bài kiểm tra trực tuyến và cách phòng chống hiệu quả](/guides/cheating-in-online-assessments)
-- [Kiểm tra trước tuyển dụng: hướng dẫn thực tế](/pre-employment-testing)
+- [Kiểm tra trước tuyển dụng: hướng dẫn thực tế](/guides/pre-employment-testing)
 
 ## Nguồn tham khảo
 

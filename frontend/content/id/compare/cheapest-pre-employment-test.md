@@ -75,4 +75,4 @@ Lihat [alternatif TestGorilla](/compare/testgorilla-alternatives) dan [alternati
 
 - [Tes seleksi karyawan tanpa langganan](/compare/pre-employment-tests-without-subscription)
 - [testee dan TestGorilla](/compare/testgorilla)
-- [Panduan tes seleksi karyawan](/pre-employment-testing)
+- [Panduan tes seleksi karyawan](/guides/pre-employment-testing)

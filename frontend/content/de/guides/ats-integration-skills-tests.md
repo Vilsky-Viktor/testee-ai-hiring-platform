@@ -104,4 +104,4 @@ Abgerechnet wird pro Kandidat, ohne Abo: Du zahlst nur für Kandidaten, die mind
 
 - [So sichtest du 100 Bewerbungen an einem Tag](/guides/screen-100-applicants-in-a-day)
 - [Fachtests vs. Lebenslauf-Screening](/guides/skills-tests-vs-cv-screening)
-- [Einstellungstests: ein Praxisleitfaden](/pre-employment-testing)
+- [Einstellungstests: ein Praxisleitfaden](/guides/pre-employment-testing)

@@ -132,7 +132,7 @@ Sackett ら（2022）では、構造化面接が単独で最も予測力の高�
 - **結果を見守る。** 手法によって、グループ間のスコア差は異なります。Sackett らは、職務知識テストとワークサンプルでは構造化面接よりも平均的な差が大きいことを示しました。手法を組み合わせるべき理由がもう 1 つ増えます。各段階の合格率を確認しましょう。
 - **判断するのは人です。** スコアは判断を助けるものであり、判断を下すものではありません。誰かを不採用にする前に回答を見てください。
 
-EU AI 法（EU AI Act）や選考通過率に関する米国の規則など、法的な基本事項は[採用前テスト](/pre-employment-testing)をご覧ください。
+EU AI 法（EU AI Act）や選考通過率に関する米国の規則など、法的な基本事項は[採用前テスト](/guides/pre-employment-testing)をご覧ください。
 
 ## まとめ
 
@@ -146,6 +146,6 @@ EU AI 法（EU AI Act）や選考通過率に関する米国の規則など、�
 
 - [職種別のスキルテスト](/tests)
 - [HackerRank の代替ツール](/compare/hackerrank-alternatives)
-- [採用前テストガイド](/pre-employment-testing)
+- [採用前テストガイド](/guides/pre-employment-testing)
 - [スキルテストと書類選考の比較](/guides/skills-tests-vs-cv-screening)
 - [AI 時代のエンジニア面接](/guides/interviewing-in-the-age-of-ai)

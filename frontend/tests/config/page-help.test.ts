@@ -30,19 +30,19 @@ const REGISTERS: [RegExp, string][] = [
   [/<InterviewHeader\b/, "features/company/components/interview-header.tsx"],
   [/<LegalPage\b/, "components/common/legal-page.tsx"],
   [
-    /\b(categoryRoute|hubArticleRoute)\(/,
+    /\bhubArticleRoute\(/,
     "features/content/components/content-article.tsx",
   ],
   [/<GenerationView\b/, "features/generation/components/generation-view.tsx"],
   [
     /<GenerationProgress\b/,
-    "features/generation/components/generation-progress.tsx",
+    "components/common/generation-progress.tsx",
   ],
 ]
 
 // A page that is not found outside development.
 const DEVELOPMENT_ONLY =
-  /if \(process\.env\.NODE_ENV !== "development"\) \{\s*notFound\(\)/
+  /if \(process\.env\.NEXT_PUBLIC_ENVIRONMENT !== "development"\) \{\s*notFound\(\)/
 
 /** Every page file under app/, as its route ("/companies/[companyId]/billing"). */
 function pages(dir = "app"): string[] {

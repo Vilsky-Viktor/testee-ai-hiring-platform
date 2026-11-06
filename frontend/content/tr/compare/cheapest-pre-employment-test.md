@@ -75,4 +75,4 @@ Her aracın nerede uygun olduğu ve nasıl birleştirildiği için [TestGorilla 
 
 - [Abonelik gerektirmeyen işe alım öncesi testler](/compare/pre-employment-tests-without-subscription)
 - [testee ve TestGorilla](/compare/testgorilla)
-- [İşe alım öncesi test rehberi](/pre-employment-testing)
+- [İşe alım öncesi test rehberi](/guides/pre-employment-testing)

@@ -104,4 +104,4 @@ Giá tính theo ứng viên, không có gói đăng ký: bạn chỉ trả tiề
 
 - [Cách sàng lọc 100 ứng viên trong một ngày](/guides/screen-100-applicants-in-a-day)
 - [Bài kiểm tra kỹ năng và sàng lọc CV](/guides/skills-tests-vs-cv-screening)
-- [Kiểm tra trước tuyển dụng: hướng dẫn thực tế](/pre-employment-testing)
+- [Kiểm tra trước tuyển dụng: hướng dẫn thực tế](/guides/pre-employment-testing)

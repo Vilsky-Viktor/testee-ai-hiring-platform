@@ -104,4 +104,4 @@ Harganya per kandidat, tanpa langganan: kamu hanya membayar untuk kandidat yang 
 
 - [Cara menyaring 100 pelamar dalam sehari](/guides/screen-100-applicants-in-a-day)
 - [Tes keterampilan vs penyaringan CV](/guides/skills-tests-vs-cv-screening)
-- [Tes seleksi karyawan: panduan praktis](/pre-employment-testing)
+- [Tes seleksi karyawan: panduan praktis](/guides/pre-employment-testing)

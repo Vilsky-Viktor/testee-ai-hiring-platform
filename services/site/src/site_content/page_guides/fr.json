@@ -559,32 +559,6 @@
       "Vos candidats reçoivent leurs propres questions aléatoires, jamais les exemples présentés ici."
     ]
   },
-  "aiInterviews": {
-    "title": "Entretiens par IA",
-    "text": "Un guide des types d'outils d'entretien par IA, du fonctionnement de l'approche de testee et des bases de la conformité.",
-    "actions": [
-      "Comparez les outils d'entretien par chatbot, par vidéo et par test généré.",
-      "Lisez, étape par étape, comment testee crée et note un entretien, et ce qu'il ne fait jamais.",
-      "Lisez les bases de l'AI Act européen, du RGPD et des règles américaines sur l'IA dans le recrutement.",
-      "Créez un test pour vos candidats depuis la carte à la fin."
-    ],
-    "tips": [
-      "C'est un résumé, pas un avis juridique : vérifiez auprès de votre propre conseil."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Tests de pré-embauche",
-    "text": "Un guide clair des tests de pré-embauche pour les équipes de recrutement : les types, quand ils sont utiles, l'équité et le droit, et le choix d'un outil.",
-    "actions": [
-      "Découvrez les types de tests qui existent et quand chacun est utile.",
-      "Lisez les bases de l'équité et du droit.",
-      "Voyez ce qu'il faut attendre d'un outil de test, et comment testee s'y prend.",
-      "Créez un test pour vos candidats depuis la carte à la fin."
-    ],
-    "tips": [
-      "C'est un résumé, pas un avis juridique : vérifiez auprès de votre propre conseil."
-    ]
-  },
   "compare": {
     "title": "testee comparé",
     "text": "Des comparatifs sourcés de testee avec d'autres outils de tests de pré-embauche : comment les tests sont créés, ce qu'ils coûtent et quand chacun convient le mieux.",

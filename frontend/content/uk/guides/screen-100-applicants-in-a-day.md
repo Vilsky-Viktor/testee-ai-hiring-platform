@@ -107,7 +107,7 @@ updated: "2026-10-29"
 
 ## Що ще почитати
 
-- [Тестування кандидатів під час найму: практичний посібник](/pre-employment-testing)
+- [Тестування кандидатів під час найму: практичний посібник](/guides/pre-employment-testing)
 - [Тести навичок чи відбір за резюме](/guides/skills-tests-vs-cv-screening)
 - [Як написати опис вакансії, за яким вийде добрий тест](/guides/job-description-that-tests-well)
 - [Як порівняти вартість тестів](/compare/cheapest-pre-employment-test)

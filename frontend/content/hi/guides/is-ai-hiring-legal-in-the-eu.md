@@ -135,6 +135,6 @@ testee जॉब डिस्क्रिप्शन से AI द्वार�
 
 - [क्या UK में AI से भर्ती कानूनी है?](/guides/is-ai-hiring-legal-in-the-uk)
 - [क्या US में AI से भर्ती कानूनी है?](/guides/is-ai-hiring-legal-in-the-us)
-- [AI इंटरव्यू: ये क्या हैं और इन्हें निष्पक्ष तरीके से कैसे इस्तेमाल करें](/ai-interviews)
-- [प्री-एम्प्लॉयमेंट टेस्टिंग: एक प्रैक्टिकल गाइड](/pre-employment-testing)
+- [AI इंटरव्यू: ये क्या हैं और इन्हें निष्पक्ष तरीके से कैसे इस्तेमाल करें](/guides/ai-interviews)
+- [प्री-एम्प्लॉयमेंट टेस्टिंग: एक प्रैक्टिकल गाइड](/guides/pre-employment-testing)
 - [स्किल्स टेस्ट बनाम CV स्क्रीनिंग](/guides/skills-tests-vs-cv-screening)

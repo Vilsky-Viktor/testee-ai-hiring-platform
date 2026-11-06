@@ -98,4 +98,4 @@ testee 没有订阅，也没有合同。你在需要时购买点数，用在候�
 - [如何比较测评费用](/compare/cheapest-pre-employment-test)
 - [TestGorilla 替代方案](/compare/testgorilla-alternatives)
 - [testee 与 TestGorilla](/compare/testgorilla)
-- [招聘前测评指南](/pre-employment-testing)
+- [招聘前测评指南](/guides/pre-employment-testing)

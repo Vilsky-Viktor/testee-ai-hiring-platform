@@ -75,4 +75,4 @@ testee бере оплату за кожного кандидата, який в
 
 - [Тестування кандидатів без підписки](/compare/pre-employment-tests-without-subscription)
 - [testee і TestGorilla](/compare/testgorilla)
-- [Посібник із тестування кандидатів](/pre-employment-testing)
+- [Посібник із тестування кандидатів](/guides/pre-employment-testing)

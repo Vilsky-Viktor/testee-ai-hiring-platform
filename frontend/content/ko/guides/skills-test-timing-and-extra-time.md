@@ -137,7 +137,7 @@ testee에서 면접은 채용 공고로 만드는, 시간 제한이 있는 객�
 - [역량 테스트 vs 이력서 심사](/guides/skills-tests-vs-cv-screening)
 - [AI 시대의 개발자 면접](/guides/interviewing-in-the-age-of-ai)
 - [온라인 평가의 부정행위와 실제로 효과 있는 대응](/guides/cheating-in-online-assessments)
-- [채용 전 테스트: 실무 가이드](/pre-employment-testing)
+- [채용 전 테스트: 실무 가이드](/guides/pre-employment-testing)
 
 ## 출처
 

@@ -559,32 +559,6 @@
       "Kandidatmu mendapat soal acak mereka sendiri, tidak pernah contoh soal yang ditampilkan di sini."
     ]
   },
-  "aiInterviews": {
-    "title": "Wawancara AI",
-    "text": "Panduan tentang jenis-jenis alat wawancara AI, cara kerja pendekatan testee, dan dasar-dasar kepatuhan hukum.",
-    "actions": [
-      "Bandingkan alat wawancara berbasis chatbot, video, dan tes yang dibuat otomatis.",
-      "Baca, langkah demi langkah, cara testee membuat dan menilai wawancara, serta apa yang tidak pernah dilakukannya.",
-      "Baca dasar-dasar EU AI Act, GDPR, dan aturan AS tentang AI dalam rekrutmen.",
-      "Buat tes untuk kandidatmu dari kartu di bagian akhir."
-    ],
-    "tips": [
-      "Ini ringkasan, bukan nasihat hukum: konsultasikan dengan penasihat hukummu sendiri."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Tes seleksi karyawan",
-    "text": "Panduan sederhana tentang tes seleksi karyawan untuk tim rekrutmen: jenis-jenisnya, kapan bermanfaat, keadilan dan hukum, serta cara memilih alat.",
-    "actions": [
-      "Baca jenis-jenis tes yang ada dan kapan masing-masing bermanfaat.",
-      "Baca dasar-dasar keadilan dan hukum.",
-      "Lihat apa yang perlu diperhatikan dalam alat tes, dan bagaimana testee melakukannya.",
-      "Buat tes untuk kandidatmu dari kartu di bagian akhir."
-    ],
-    "tips": [
-      "Ini ringkasan, bukan nasihat hukum: konsultasikan dengan penasihat hukummu sendiri."
-    ]
-  },
   "compare": {
     "title": "Bandingkan testee",
     "text": "Perbandingan testee dengan alat tes seleksi karyawan lain, lengkap dengan sumbernya: cara tes dibuat, biayanya, dan kapan masing-masing lebih cocok.",

@@ -120,7 +120,7 @@ testee जॉब डिस्क्रिप्शन से AI द्वार�
 - [क्या EU में AI से भर्ती कानूनी है?](/guides/is-ai-hiring-legal-in-the-eu)
 - [क्या US में AI से भर्ती कानूनी है?](/guides/is-ai-hiring-legal-in-the-us)
 - [स्किल्स टेस्ट का समय कैसे तय करें: प्रति सवाल टाइमर, लंबाई और अतिरिक्त समय](/guides/skills-test-timing-and-extra-time)
-- [AI इंटरव्यू: ये क्या हैं और इन्हें निष्पक्ष तरीके से कैसे इस्तेमाल करें](/ai-interviews)
+- [AI इंटरव्यू: ये क्या हैं और इन्हें निष्पक्ष तरीके से कैसे इस्तेमाल करें](/guides/ai-interviews)
 
 ## स्रोत
 

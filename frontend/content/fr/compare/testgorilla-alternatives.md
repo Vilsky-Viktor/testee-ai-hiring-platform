@@ -104,4 +104,4 @@ Le coût de chaque outil dépend de votre volume et des offres dont vous avez be
 
 - [Comment comparer le coût des tests](/compare/cheapest-pre-employment-test)
 - [Tests de recrutement sans abonnement](/compare/pre-employment-tests-without-subscription)
-- [Guide des tests de recrutement](/pre-employment-testing)
+- [Guide des tests de recrutement](/guides/pre-employment-testing)

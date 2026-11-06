@@ -98,4 +98,4 @@ testee'nin sözleşmesi yoktur ve kredileri süresiz geçerlidir; bu nedenle onu
 - [TestGorilla alternatifleri](/compare/testgorilla-alternatives)
 - [İşe alım öncesi test maliyetleri nasıl karşılaştırılır](/compare/cheapest-pre-employment-test)
 - [Abonelik gerektirmeyen işe alım öncesi testler](/compare/pre-employment-tests-without-subscription)
-- [İşe alım öncesi test rehberi](/pre-employment-testing)
+- [İşe alım öncesi test rehberi](/guides/pre-employment-testing)

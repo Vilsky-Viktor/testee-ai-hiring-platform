@@ -76,7 +76,7 @@ testee rất phù hợp với bước 2. testee biến mô tả công việc c�
 - **Tín hiệu cảnh báo:** bảng điểm đánh dấu các câu trả lời quá nhanh để kịp đọc câu hỏi, số lần ứng viên rời khỏi trang và các lần cố sao chép. Khi ứng viên làm xong, báo cáo của họ còn chỉ ra những mẫu trả lời thường xuất hiện khi ai đó chuyển câu hỏi cho AI rồi chép lại đáp án: mọi câu hỏi tốn gần như cùng một khoảng thời gian bất kể độ dài hay độ khó, hoặc câu khó thì đúng trong khi câu dễ lại sai. Một cảnh báo hay một mẫu trả lời là lý do để xem kỹ hơn, không phải bằng chứng gian lận.
 - **Câu hỏi cho buổi phỏng vấn trực tiếp:** báo cáo gợi ý tối đa 3 câu ứng viên đã trả lời đúng, thuộc những chủ đề họ mạnh nhất, để trao đổi trong buổi phỏng vấn trực tiếp, nơi không AI nào có thể trả lời thay họ.
 
-Những gì testee không làm: ứng viên không viết, chạy hay debug code trong testee, và testee không quan sát họ dùng trợ lý AI. Phần đó thuộc giai đoạn thực hành, tổ chức nội bộ hoặc trên một nền tảng dành cho lập trình viên, bổ sung cho bài kiểm tra kiến thức. Xem [bài kiểm tra kỹ năng theo vị trí](/tests) để có sẵn bài kiểm tra làm điểm xuất phát, và [phỏng vấn AI](/ai-interviews) để biết testee dùng AI thế nào và để lại những gì cho con người.
+Những gì testee không làm: ứng viên không viết, chạy hay debug code trong testee, và testee không quan sát họ dùng trợ lý AI. Phần đó thuộc giai đoạn thực hành, tổ chức nội bộ hoặc trên một nền tảng dành cho lập trình viên, bổ sung cho bài kiểm tra kiến thức. Xem [bài kiểm tra kỹ năng theo vị trí](/tests) để có sẵn bài kiểm tra làm điểm xuất phát, và [phỏng vấn AI](/guides/ai-interviews) để biết testee dùng AI thế nào và để lại những gì cho con người.
 
 ## Công bằng và trải nghiệm ứng viên
 
@@ -106,5 +106,5 @@ Trợ lý AI khiến việc tạo ra code rẻ hơn và việc đánh giá code 
 - [Cách tuyển kỹ sư phần mềm](/guides/hiring-engineers)
 - [Bài kiểm tra kỹ năng theo vị trí](/tests)
 - [Gian lận trong bài kiểm tra trực tuyến và cách phòng chống hiệu quả](/guides/cheating-in-online-assessments)
-- [Phỏng vấn AI: là gì và cách dùng công bằng](/ai-interviews)
+- [Phỏng vấn AI: là gì và cách dùng công bằng](/guides/ai-interviews)
 - [Bài kiểm tra kỹ năng và sàng lọc CV](/guides/skills-tests-vs-cv-screening)

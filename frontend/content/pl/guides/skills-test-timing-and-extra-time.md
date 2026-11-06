@@ -137,7 +137,7 @@ Zanim kogokolwiek zaprosisz, przejdź rozmowę samodzielnie z jej strony: to nic
 - [Testy umiejętności a selekcja CV](/guides/skills-tests-vs-cv-screening)
 - [Rozmowy z programistami w erze AI](/guides/interviewing-in-the-age-of-ai)
 - [Oszukiwanie w testach rekrutacyjnych online i co naprawdę przed nim chroni](/guides/cheating-in-online-assessments)
-- [Testy rekrutacyjne: praktyczny poradnik](/pre-employment-testing)
+- [Testy rekrutacyjne: praktyczny poradnik](/guides/pre-employment-testing)
 
 ## Źródła
 

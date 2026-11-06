@@ -122,7 +122,7 @@ testee는 채용 공고로 시간 제한이 있는 객관식 역량 테스트를
 - [하루 만에 지원자 100명을 선별하는 방법](/guides/screen-100-applicants-in-a-day)
 - [역량 테스트 vs 이력서 심사](/guides/skills-tests-vs-cv-screening)
 - [역량 테스트 시간 설정](/guides/skills-test-timing-and-extra-time)
-- [채용 전 테스트: 실무 가이드](/pre-employment-testing)
+- [채용 전 테스트: 실무 가이드](/guides/pre-employment-testing)
 
 ## 출처
 

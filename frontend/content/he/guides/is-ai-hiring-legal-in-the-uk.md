@@ -120,7 +120,7 @@ testee מריצה ראיונות מיומנויות בזמן מוגבל עם ש�
 - [האם גיוס עובדים בעזרת AI חוקי באיחוד האירופי?](/guides/is-ai-hiring-legal-in-the-eu)
 - [האם גיוס עובדים בעזרת AI חוקי בארה״ב?](/guides/is-ai-hiring-legal-in-the-us)
 - [איך לתזמן מבחן מיומנויות: טיימר לשאלה, אורך המבחן וזמן נוסף](/guides/skills-test-timing-and-extra-time)
-- [ראיונות AI: מה הם ואיך להשתמש בהם בהוגנות](/ai-interviews)
+- [ראיונות AI: מה הם ואיך להשתמש בהם בהוגנות](/guides/ai-interviews)
 
 ## מקורות
 

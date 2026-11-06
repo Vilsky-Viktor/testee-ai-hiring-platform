@@ -122,7 +122,7 @@ Możesz wkleić do 10 000 znaków albo po prostu opisać stanowisko w jednej czy
 - [Jak przeprowadzić selekcję 100 kandydatów w jeden dzień](/guides/screen-100-applicants-in-a-day)
 - [Testy umiejętności a selekcja CV](/guides/skills-tests-vs-cv-screening)
 - [Jak ustawić czas w teście umiejętności](/guides/skills-test-timing-and-extra-time)
-- [Testy rekrutacyjne: praktyczny poradnik](/pre-employment-testing)
+- [Testy rekrutacyjne: praktyczny poradnik](/guides/pre-employment-testing)
 
 ## Źródła
 

@@ -137,7 +137,7 @@ Prima di invitare qualcuno, svolgi tu stesso il colloquio dalla sua pagina: è g
 - [Test di competenze o screening dei CV](/guides/skills-tests-vs-cv-screening)
 - [Colloqui tecnici nell'era dell'IA](/guides/interviewing-in-the-age-of-ai)
 - [Imbrogli nei test di selezione online e come contrastarli](/guides/cheating-in-online-assessments)
-- [Test pre-assunzione: una guida pratica](/pre-employment-testing)
+- [Test pre-assunzione: una guida pratica](/guides/pre-employment-testing)
 
 ## Fonti
 

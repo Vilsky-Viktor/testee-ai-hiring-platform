@@ -119,7 +119,7 @@ Bunun bugün üründeki karşılığı:
 - [AB'de yapay zekâ ile işe alım yasal mı?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Birleşik Krallık'ta yapay zekâ ile işe alım yasal mı?](/guides/is-ai-hiring-legal-in-the-uk)
 - [Beceri testinin süresi nasıl ayarlanır: soru başına süre, uzunluk ve ek süre](/guides/skills-test-timing-and-extra-time)
-- [İşe alım öncesi testler: pratik bir rehber](/pre-employment-testing)
+- [İşe alım öncesi testler: pratik bir rehber](/guides/pre-employment-testing)
 
 ## Kaynaklar
 

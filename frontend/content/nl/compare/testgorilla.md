@@ -98,4 +98,4 @@ testee heeft geen contract en de credits verlopen niet, dus als je het toevoegt 
 - [Alternatieven voor TestGorilla](/compare/testgorilla-alternatives)
 - [Hoe je de kosten van selectietests vergelijkt](/compare/cheapest-pre-employment-test)
 - [Selectietests zonder abonnement](/compare/pre-employment-tests-without-subscription)
-- [Gids voor selectietests](/pre-employment-testing)
+- [Gids voor selectietests](/guides/pre-employment-testing)

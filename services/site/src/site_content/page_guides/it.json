@@ -559,32 +559,6 @@
       "I tuoi candidati ricevono domande casuali tutte loro, mai gli esempi mostrati qui."
     ]
   },
-  "aiInterviews": {
-    "title": "Colloqui con l'IA",
-    "text": "Una guida ai tipi di strumenti per colloqui con l'IA, a come funziona l'approccio di testee e alle basi della conformità.",
-    "actions": [
-      "Confronta gli strumenti di colloquio via chatbot, via video e con test generati.",
-      "Leggi, passo dopo passo, come testee crea e valuta un colloquio, e cosa non fa mai.",
-      "Leggi le basi dell'AI Act dell'UE, del GDPR e delle norme statunitensi sull'IA nelle assunzioni.",
-      "Crea un test per i tuoi candidati dalla scheda in fondo."
-    ],
-    "tips": [
-      "È una sintesi, non una consulenza legale: verifica con il tuo consulente legale."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Test pre-assunzione",
-    "text": "Una guida semplice ai test pre-assunzione per chi seleziona il personale: i tipi, quando aiutano, equità e normativa, e come scegliere uno strumento.",
-    "actions": [
-      "Leggi quali tipi di test esistono e quando ciascuno aiuta.",
-      "Leggi le basi su equità e normativa.",
-      "Scopri cosa cercare in uno strumento di test, e come lo fa testee.",
-      "Crea un test per i tuoi candidati dalla scheda in fondo."
-    ],
-    "tips": [
-      "È una sintesi, non una consulenza legale: verifica con il tuo consulente legale."
-    ]
-  },
   "compare": {
     "title": "testee a confronto",
     "text": "Confronti con fonti tra testee e altri strumenti di test pre-assunzione: come vengono creati i test, quanto costano e quando ciascuno è più adatto.",

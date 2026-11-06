@@ -132,7 +132,7 @@ Yapılandırılmış bir süreç aynı zamanda daha adildir, ama yalnızca tutar
 - **Sonuçları izleyin.** Farklı yöntemler gruplar arasında farklı puan açıkları gösterir. Sackett vd., mesleki bilgi testleri ve iş örnekleri için yapılandırılmış mülakatlara göre daha büyük ortalama farklar buldu; bu da yöntemleri birleştirmek için bir neden daha. Her aşamadaki geçme oranlarını izleyin.
 - **Kararı insanlar verir.** Puan bir kararı destekler; kararı vermez. Herhangi birini reddetmeden önce yanıtlara bakın.
 
-AB Yapay Zekâ Yasası ve seçilme oranlarına ilişkin ABD kuralları dahil yasal esaslar için [İşe alım öncesi testler](/pre-employment-testing) sayfasına bakın.
+AB Yapay Zekâ Yasası ve seçilme oranlarına ilişkin ABD kuralları dahil yasal esaslar için [İşe alım öncesi testler](/guides/pre-employment-testing) sayfasına bakın.
 
 ## Özet
 
@@ -146,6 +146,6 @@ Kapsamlı ve ucuz kontrolleri başa, derin ve pahalı olanları sona koyun. CV'l
 
 - [Pozisyona göre beceri testleri](/tests)
 - [HackerRank alternatifleri](/compare/hackerrank-alternatives)
-- [İşe alım öncesi test rehberi](/pre-employment-testing)
+- [İşe alım öncesi test rehberi](/guides/pre-employment-testing)
 - [Beceri testleri ve CV taraması](/guides/skills-tests-vs-cv-screening)
 - [Yapay zekâ çağında mühendislerle mülakat](/guides/interviewing-in-the-age-of-ai)

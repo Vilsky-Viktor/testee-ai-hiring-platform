@@ -132,7 +132,7 @@ Proses yang terstruktur juga lebih adil, tetapi hanya kalau dijalankan secara ko
 - **Pantau hasilnya.** Metode yang berbeda menunjukkan selisih skor antarkelompok yang berbeda. Sackett dkk. menemukan perbedaan rata-rata yang lebih besar untuk tes pengetahuan kerja dan sampel kerja dibanding wawancara terstruktur, yang menjadi satu alasan lagi untuk menggabungkan metode. Pantau tingkat kelulusan di setiap tahap.
 - **Manusia yang memutuskan.** Skor mendukung keputusan; skor tidak membuat keputusan. Lihat jawabannya sebelum kamu menolak siapa pun.
 
-Untuk dasar-dasar hukumnya, termasuk AI Act UE (EU AI Act) dan aturan AS tentang tingkat seleksi, lihat [Tes seleksi karyawan](/pre-employment-testing).
+Untuk dasar-dasar hukumnya, termasuk AI Act UE (EU AI Act) dan aturan AS tentang tingkat seleksi, lihat [Tes seleksi karyawan](/guides/pre-employment-testing).
 
 ## Ringkasan
 
@@ -146,6 +146,6 @@ Taruh pemeriksaan yang luas dan murah di awal, dan yang mendalam dan mahal di ak
 
 - [Tes keterampilan per posisi](/tests)
 - [Alternatif HackerRank](/compare/hackerrank-alternatives)
-- [Panduan tes seleksi karyawan](/pre-employment-testing)
+- [Panduan tes seleksi karyawan](/guides/pre-employment-testing)
 - [Tes keterampilan vs penyaringan CV](/guides/skills-tests-vs-cv-screening)
 - [Mewawancarai engineer di era AI](/guides/interviewing-in-the-age-of-ai)

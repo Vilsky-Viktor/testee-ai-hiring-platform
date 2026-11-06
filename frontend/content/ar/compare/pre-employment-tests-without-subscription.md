@@ -98,4 +98,4 @@ updated: "2026-10-21"
 - [كيف تقارن تكاليف اختبارات ما قبل التوظيف](/compare/cheapest-pre-employment-test)
 - [بدائل TestGorilla](/compare/testgorilla-alternatives)
 - [testee وTestGorilla](/compare/testgorilla)
-- [دليل اختبارات ما قبل التوظيف](/pre-employment-testing)
+- [دليل اختبارات ما قبل التوظيف](/guides/pre-employment-testing)

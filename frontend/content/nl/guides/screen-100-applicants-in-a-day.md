@@ -107,7 +107,7 @@ Met testee betaal je alleen voor kandidaten die minstens één vraag beantwoorde
 
 ## Verder lezen
 
-- [Selectietests: een praktische gids](/pre-employment-testing)
+- [Selectietests: een praktische gids](/guides/pre-employment-testing)
 - [Vaardigheidstests vs. cv-screening](/guides/skills-tests-vs-cv-screening)
 - [Zo schrijf je een functieomschrijving waar een goede test uit komt](/guides/job-description-that-tests-well)
 - [Zo vergelijk je de kosten van tests](/compare/cheapest-pre-employment-test)

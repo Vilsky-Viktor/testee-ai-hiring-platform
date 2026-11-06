@@ -107,5 +107,5 @@ Per un processo di assunzione completo in ambito ingegneristico, vedi [Come assu
 
 - [Alternative a TestGorilla](/compare/testgorilla-alternatives)
 - [Come confrontare i costi dei test](/compare/cheapest-pre-employment-test)
-- [Colloqui con IA: cosa sono e come usarli in modo equo](/ai-interviews)
-- [Guida ai test pre-assunzione](/pre-employment-testing)
+- [Colloqui con IA: cosa sono e come usarli in modo equo](/guides/ai-interviews)
+- [Guida ai test pre-assunzione](/guides/pre-employment-testing)

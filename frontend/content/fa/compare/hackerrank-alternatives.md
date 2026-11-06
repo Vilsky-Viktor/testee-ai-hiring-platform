@@ -107,5 +107,5 @@ Alooba بیش از ۴۰۰ آزمون غربالگری شغلی در بیش از 
 
 - [جایگزین‌های TestGorilla](/compare/testgorilla-alternatives)
 - [چگونه هزینه آزمون‌ها را مقایسه کنیم](/compare/cheapest-pre-employment-test)
-- [مصاحبه با هوش مصنوعی: چیست و چگونه منصفانه از آن استفاده کنیم](/ai-interviews)
-- [راهنمای آزمون‌های استخدامی](/pre-employment-testing)
+- [مصاحبه با هوش مصنوعی: چیست و چگونه منصفانه از آن استفاده کنیم](/guides/ai-interviews)
+- [راهنمای آزمون‌های استخدامی](/guides/pre-employment-testing)

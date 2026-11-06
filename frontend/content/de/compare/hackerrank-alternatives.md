@@ -107,5 +107,5 @@ Einen vollständigen Prozess für technische Stellen findest du unter [Entwickle
 
 - [Alternativen zu TestGorilla](/compare/testgorilla-alternatives)
 - [Kosten von Einstellungstests vergleichen](/compare/cheapest-pre-employment-test)
-- [KI-Interviews: was sie sind und wie du sie fair einsetzt](/ai-interviews)
-- [Leitfaden zu Einstellungstests](/pre-employment-testing)
+- [KI-Interviews: was sie sind und wie du sie fair einsetzt](/guides/ai-interviews)
+- [Leitfaden zu Einstellungstests](/guides/pre-employment-testing)

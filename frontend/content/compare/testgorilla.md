@@ -98,4 +98,4 @@ testee has no contract and its credits don't expire, so adding it to a process t
 - [TestGorilla alternatives](/compare/testgorilla-alternatives)
 - [How to compare test costs](/compare/cheapest-pre-employment-test)
 - [Pre-employment tests without a subscription](/compare/pre-employment-tests-without-subscription)
-- [Pre-employment testing guide](/pre-employment-testing)
+- [Pre-employment testing guide](/guides/pre-employment-testing)

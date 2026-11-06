@@ -75,4 +75,4 @@ Vedi [Alternative a TestGorilla](/compare/testgorilla-alternatives) e [Alternati
 
 - [Test pre-assunzione senza abbonamento](/compare/pre-employment-tests-without-subscription)
 - [testee e TestGorilla](/compare/testgorilla)
-- [Guida ai test pre-assunzione](/pre-employment-testing)
+- [Guida ai test pre-assunzione](/guides/pre-employment-testing)

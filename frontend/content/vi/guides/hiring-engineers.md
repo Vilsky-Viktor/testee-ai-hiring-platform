@@ -132,7 +132,7 @@ Một quy trình có cấu trúc cũng công bằng hơn, nhưng chỉ khi bạn
 - **Theo dõi kết quả.** Các phương pháp khác nhau cho thấy chênh lệch điểm giữa các nhóm khác nhau. Sackett và cộng sự nhận thấy chênh lệch trung bình ở bài kiểm tra kiến thức chuyên môn và mẫu công việc lớn hơn ở phỏng vấn có cấu trúc, thêm một lý do để kết hợp các phương pháp. Hãy theo dõi tỷ lệ đạt ở từng giai đoạn.
 - **Con người quyết định.** Điểm số hỗ trợ một quyết định; nó không đưa ra quyết định. Hãy xem các câu trả lời trước khi loại bất kỳ ai.
 
-Về các vấn đề pháp lý cơ bản, bao gồm Đạo luật AI của EU (EU AI Act) và các quy định của Mỹ về tỷ lệ tuyển chọn, xem [Kiểm tra trước tuyển dụng](/pre-employment-testing).
+Về các vấn đề pháp lý cơ bản, bao gồm Đạo luật AI của EU (EU AI Act) và các quy định của Mỹ về tỷ lệ tuyển chọn, xem [Kiểm tra trước tuyển dụng](/guides/pre-employment-testing).
 
 ## Tóm tắt
 
@@ -146,6 +146,6 @@ Về các vấn đề pháp lý cơ bản, bao gồm Đạo luật AI của EU (
 
 - [Bài kiểm tra kỹ năng theo vị trí](/tests)
 - [Các lựa chọn thay thế HackerRank](/compare/hackerrank-alternatives)
-- [Hướng dẫn kiểm tra trước tuyển dụng](/pre-employment-testing)
+- [Hướng dẫn kiểm tra trước tuyển dụng](/guides/pre-employment-testing)
 - [Bài kiểm tra kỹ năng và sàng lọc CV](/guides/skills-tests-vs-cv-screening)
 - [Phỏng vấn kỹ sư trong thời đại AI](/guides/interviewing-in-the-age-of-ai)

@@ -104,4 +104,4 @@ La tarification se fait par candidat, sans abonnement : vous ne payez que pour l
 
 - [Comment présélectionner 100 candidats en une journée](/guides/screen-100-applicants-in-a-day)
 - [Tests de compétences ou tri de CV](/guides/skills-tests-vs-cv-screening)
-- [Tests de recrutement : guide pratique](/pre-employment-testing)
+- [Tests de recrutement : guide pratique](/guides/pre-employment-testing)

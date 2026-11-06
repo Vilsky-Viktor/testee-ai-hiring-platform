@@ -75,4 +75,4 @@ testee は、少なくとも 1 問に回答した候補者ごとに料金がか�
 
 - [サブスクリプション不要の採用前テスト](/compare/pre-employment-tests-without-subscription)
 - [testee と TestGorilla](/compare/testgorilla)
-- [採用前テストガイド](/pre-employment-testing)
+- [採用前テストガイド](/guides/pre-employment-testing)

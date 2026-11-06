@@ -559,32 +559,6 @@
       "Sinu kandidaadid saavad oma juhuslikud küsimused, mitte kunagi siin näidatud näidiseid."
     ]
   },
-  "aiInterviews": {
-    "title": "AI-intervjuud",
-    "text": "Juhend AI-intervjuu tööriistade liikide, testee lähenemise ja õigusnõuete põhitõdede kohta.",
-    "actions": [
-      "Võrdle vestlusroboti-, video- ja genereeritud testiga intervjuutööriistu.",
-      "Loe samm-sammult, kuidas testee intervjuu loob ja hindab ning mida see kunagi ei tee.",
-      "Loe ELi tehisintellekti määruse (AI Act), isikuandmete kaitse üldmääruse (GDPR) ja USA värbamisel AI kasutamise reeglite põhitõdesid.",
-      "Loo lõpus oleval kaardil test oma kandidaatidele."
-    ],
-    "tips": [
-      "See on kokkuvõte, mitte õigusnõu: küsi oma juristilt."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Värbamistestid",
-    "text": "Selge juhend värbamismeeskondadele värbamistestide kohta: liigid, millal need aitavad, õiglus ja seadus ning tööriista valimine.",
-    "actions": [
-      "Loe, milliseid teste on olemas ja millal igaüks neist aitab.",
-      "Loe õigluse ja õigusnõuete põhitõdesid.",
-      "Vaata, mida testimistööriistas jälgida ja kuidas testee seda teeb.",
-      "Loo lõpus oleval kaardil test oma kandidaatidele."
-    ],
-    "tips": [
-      "See on kokkuvõte, mitte õigusnõu: küsi oma juristilt."
-    ]
-  },
   "compare": {
     "title": "testee võrdlus",
     "text": "Allikatega võrdlused testee ja teiste värbamistestide tööriistade vahel: kuidas testid luuakse, mida need maksavad ja millal kumb paremini sobib.",

@@ -120,7 +120,7 @@ Ecco cosa significa oggi nel prodotto:
 - [Usare l'IA nella selezione del personale è legale nell'UE?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Usare l'IA nella selezione del personale è legale negli Stati Uniti?](/guides/is-ai-hiring-legal-in-the-us)
 - [Come impostare i tempi di un test di competenze: timer per domanda, durata e tempo extra](/guides/skills-test-timing-and-extra-time)
-- [Colloqui con IA: cosa sono e come usarli in modo equo](/ai-interviews)
+- [Colloqui con IA: cosa sono e come usarli in modo equo](/guides/ai-interviews)
 
 ## Fonti
 

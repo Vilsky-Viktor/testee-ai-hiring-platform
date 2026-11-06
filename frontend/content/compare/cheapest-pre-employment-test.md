@@ -75,4 +75,4 @@ See [TestGorilla alternatives](/compare/testgorilla-alternatives) and [HackerRan
 
 - [Pre-employment tests without a subscription](/compare/pre-employment-tests-without-subscription)
 - [testee and TestGorilla](/compare/testgorilla)
-- [Pre-employment testing guide](/pre-employment-testing)
+- [Pre-employment testing guide](/guides/pre-employment-testing)

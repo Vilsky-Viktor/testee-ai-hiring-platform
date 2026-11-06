@@ -107,5 +107,5 @@ Vòng sàng lọc giữ thời gian phỏng vấn của kỹ sư cho những ng�
 
 - [Các lựa chọn thay thế TestGorilla](/compare/testgorilla-alternatives)
 - [Cách so sánh chi phí bài kiểm tra](/compare/cheapest-pre-employment-test)
-- [Phỏng vấn AI: là gì và cách dùng công bằng](/ai-interviews)
-- [Hướng dẫn kiểm tra trước tuyển dụng](/pre-employment-testing)
+- [Phỏng vấn AI: là gì và cách dùng công bằng](/guides/ai-interviews)
+- [Hướng dẫn kiểm tra trước tuyển dụng](/guides/pre-employment-testing)

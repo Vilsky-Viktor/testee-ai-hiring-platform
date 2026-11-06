@@ -107,7 +107,7 @@ With testee, you pay only for candidates who answer at least one question: $5 ea
 
 ## Related reading
 
-- [Pre-employment testing: a practical guide](/pre-employment-testing)
+- [Pre-employment testing: a practical guide](/guides/pre-employment-testing)
 - [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)
 - [How to write a job description that tests well](/guides/job-description-that-tests-well)
 - [How to compare test costs](/compare/cheapest-pre-employment-test)

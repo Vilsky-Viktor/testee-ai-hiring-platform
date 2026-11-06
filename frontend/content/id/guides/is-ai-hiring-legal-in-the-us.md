@@ -119,7 +119,7 @@ Seperti apa wujudnya di produk saat ini:
 - [Apakah rekrutmen dengan AI legal di UE?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Apakah rekrutmen dengan AI legal di Inggris Raya?](/guides/is-ai-hiring-legal-in-the-uk)
 - [Cara mengatur waktu tes keterampilan: timer per soal, panjang tes, dan waktu tambahan](/guides/skills-test-timing-and-extra-time)
-- [Tes seleksi karyawan: panduan praktis](/pre-employment-testing)
+- [Tes seleksi karyawan: panduan praktis](/guides/pre-employment-testing)
 
 ## Sumber
 

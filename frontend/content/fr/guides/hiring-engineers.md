@@ -132,7 +132,7 @@ Un processus structuré est aussi plus équitable, mais seulement si vous l'appl
 - **Surveillez les résultats.** Les méthodes font apparaître des écarts de score différents entre groupes. Sackett et al. ont constaté des différences moyennes plus importantes pour les tests de connaissances métier et les mises en situation que pour les entretiens structurés, une raison de plus de combiner les méthodes. Suivez les taux de réussite à chaque étape.
 - **Des personnes décident.** Un score étaye une décision ; il ne la prend pas. Regardez les réponses avant d'écarter qui que ce soit.
 
-Pour les bases juridiques, dont le Règlement européen sur l'IA (AI Act) et les règles américaines sur les taux de sélection, voir [Tests de recrutement](/pre-employment-testing).
+Pour les bases juridiques, dont le Règlement européen sur l'IA (AI Act) et les règles américaines sur les taux de sélection, voir [Tests de recrutement](/guides/pre-employment-testing).
 
 ## En résumé
 
@@ -146,6 +146,6 @@ Placez d'abord les vérifications larges et peu coûteuses, et à la fin les vé
 
 - [Tests de compétences par poste](/tests)
 - [Alternatives à HackerRank](/compare/hackerrank-alternatives)
-- [Guide des tests de recrutement](/pre-employment-testing)
+- [Guide des tests de recrutement](/guides/pre-employment-testing)
 - [Tests de compétences ou tri de CV](/guides/skills-tests-vs-cv-screening)
 - [Recruter des développeurs à l'ère de l'IA](/guides/interviewing-in-the-age-of-ai)

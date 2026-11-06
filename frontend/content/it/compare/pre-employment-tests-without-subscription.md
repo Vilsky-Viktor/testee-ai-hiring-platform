@@ -98,4 +98,4 @@ Inserisci in entrambe le righe i prezzi reali dalla pagina prezzi di ogni fornit
 - [Come confrontare i costi dei test](/compare/cheapest-pre-employment-test)
 - [Alternative a TestGorilla](/compare/testgorilla-alternatives)
 - [testee e TestGorilla](/compare/testgorilla)
-- [Guida ai test pre-assunzione](/pre-employment-testing)
+- [Guida ai test pre-assunzione](/guides/pre-employment-testing)

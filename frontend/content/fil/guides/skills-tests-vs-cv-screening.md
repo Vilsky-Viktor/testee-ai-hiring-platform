@@ -87,7 +87,7 @@ Sinasaklaw ng testee ang hakbang 2: isang timed multiple-choice na job knowledge
 - **Madaling basahing resulta.** Scorecard bawat aplikante na may bawat sagot at oras nito, naka-rank ayon sa score, na may flag para sa sobrang bilis na sagot, pag-alis sa pahina, pagtatangkang mag-copy at hindi karaniwang pattern ng sagot.
 - **Mina-mark ang mga sagot ayon sa answer key** na isinusulat ng AI; chine-check ang ilan sa bawat topic bago i-release, at ang iba kapag na-flag ang tanong. Walang AI na bumabasa o humuhusga sa sagot ng aplikante.
 
-Hindi nagpapatakbo ang testee ng structured interviews, work samples o cognitive tests. Gamitin ito kasabay ng mga iyon. Para sa higit pa tungkol sa mga uri ng test at pagkapatas, basahin ang [Pre-employment testing](/pre-employment-testing).
+Hindi nagpapatakbo ang testee ng structured interviews, work samples o cognitive tests. Gamitin ito kasabay ng mga iyon. Para sa higit pa tungkol sa mga uri ng test at pagkapatas, basahin ang [Pre-employment testing](/guides/pre-employment-testing).
 
 ## Mga pinagkunan
 

@@ -98,4 +98,4 @@ testee ไม่มีการสมัครสมาชิกและไม�
 - [วิธีเปรียบเทียบค่าใช้จ่ายของแบบทดสอบ](/compare/cheapest-pre-employment-test)
 - [ทางเลือกแทน TestGorilla](/compare/testgorilla-alternatives)
 - [testee และ TestGorilla](/compare/testgorilla)
-- [คู่มือแบบทดสอบก่อนจ้างงาน](/pre-employment-testing)
+- [คู่มือแบบทดสอบก่อนจ้างงาน](/guides/pre-employment-testing)

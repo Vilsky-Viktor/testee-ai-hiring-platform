@@ -107,5 +107,5 @@ Inseneride värbamise terviklikku protsessi vaata juhendist [Kuidas värvata ins
 
 - [TestGorilla alternatiivid](/compare/testgorilla-alternatives)
 - [Kuidas võrrelda värbamistestide hindu](/compare/cheapest-pre-employment-test)
-- [AI-intervjuud: mis need on ja kuidas neid õiglaselt kasutada](/ai-interviews)
-- [Kandidaatide testimise juhend](/pre-employment-testing)
+- [AI-intervjuud: mis need on ja kuidas neid õiglaselt kasutada](/guides/ai-interviews)
+- [Kandidaatide testimise juhend](/guides/pre-employment-testing)

@@ -104,4 +104,4 @@ Bryq 的套餐包括认知和性格测评、技能测评、无限邀请、AI 职
 
 - [如何比较测评费用](/compare/cheapest-pre-employment-test)
 - [无需订阅的招聘前测评](/compare/pre-employment-tests-without-subscription)
-- [招聘前测评指南](/pre-employment-testing)
+- [招聘前测评指南](/guides/pre-employment-testing)

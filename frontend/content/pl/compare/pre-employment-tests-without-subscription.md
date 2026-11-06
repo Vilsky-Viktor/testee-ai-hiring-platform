@@ -98,4 +98,4 @@ Wstaw do obu wierszy prawdziwe ceny z cennika każdego dostawcy i [z cennika tes
 - [Jak porównać koszty testów](/compare/cheapest-pre-employment-test)
 - [Alternatywy dla TestGorilla](/compare/testgorilla-alternatives)
 - [testee i TestGorilla](/compare/testgorilla)
-- [Przewodnik po testach rekrutacyjnych](/pre-employment-testing)
+- [Przewodnik po testach rekrutacyjnych](/guides/pre-employment-testing)

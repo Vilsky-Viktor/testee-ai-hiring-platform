@@ -137,7 +137,7 @@ updated: "2026-10-29"
 - [技能测试与简历筛选对比](/guides/skills-tests-vs-cv-screening)
 - [AI 时代如何面试工程师](/guides/interviewing-in-the-age-of-ai)
 - [在线测评中的作弊行为，以及真正有效的应对方法](/guides/cheating-in-online-assessments)
-- [招聘前测评：实用指南](/pre-employment-testing)
+- [招聘前测评：实用指南](/guides/pre-employment-testing)
 
 ## 参考文献
 

@@ -75,4 +75,4 @@ Zie [Alternatieven voor TestGorilla](/compare/testgorilla-alternatives) en [Alte
 
 - [Selectietests zonder abonnement](/compare/pre-employment-tests-without-subscription)
 - [testee en TestGorilla](/compare/testgorilla)
-- [Gids voor selectietests](/pre-employment-testing)
+- [Gids voor selectietests](/guides/pre-employment-testing)

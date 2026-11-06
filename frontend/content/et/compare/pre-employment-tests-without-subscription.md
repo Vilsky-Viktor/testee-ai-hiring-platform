@@ -98,4 +98,4 @@ Pane mõlemale reale iga pakkuja hinnalehe ja [testee](/pricing) tegelikud hinna
 - [Kuidas võrrelda värbamistestide hindu](/compare/cheapest-pre-employment-test)
 - [TestGorilla alternatiivid](/compare/testgorilla-alternatives)
 - [testee ja TestGorilla](/compare/testgorilla)
-- [Kandidaatide testimise juhend](/pre-employment-testing)
+- [Kandidaatide testimise juhend](/guides/pre-employment-testing)

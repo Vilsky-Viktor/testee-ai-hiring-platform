@@ -120,7 +120,7 @@ Como isso aparece no produto hoje:
 - [O uso de IA no recrutamento é legal na UE?](/guides/is-ai-hiring-legal-in-the-eu)
 - [O uso de IA no recrutamento é legal nos EUA?](/guides/is-ai-hiring-legal-in-the-us)
 - [Como definir o tempo de um teste de habilidades: tempo por pergunta, duração e tempo extra](/guides/skills-test-timing-and-extra-time)
-- [Entrevistas com IA: o que são e como usá-las de forma justa](/ai-interviews)
+- [Entrevistas com IA: o que são e como usá-las de forma justa](/guides/ai-interviews)
 
 ## Fontes
 

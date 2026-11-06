@@ -75,4 +75,4 @@ testee हर उस उम्मीदवार के लिए चार्�
 
 - [बिना सब्सक्रिप्शन के प्री-एम्प्लॉयमेंट टेस्ट](/compare/pre-employment-tests-without-subscription)
 - [testee और TestGorilla](/compare/testgorilla)
-- [प्री-एम्प्लॉयमेंट टेस्टिंग गाइड](/pre-employment-testing)
+- [प्री-एम्प्लॉयमेंट टेस्टिंग गाइड](/guides/pre-employment-testing)

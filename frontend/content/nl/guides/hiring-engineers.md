@@ -132,7 +132,7 @@ Een gestructureerd proces is ook eerlijker, maar alleen als je het consequent ui
 - **Monitor de uitkomsten.** Verschillende methoden laten verschillende scoreverschillen tussen groepen zien. Sackett et al. vonden gemiddeld grotere verschillen bij vakkennistests en werkproeven dan bij gestructureerde interviews, nog een reden om methoden te combineren. Houd de slagingspercentages per fase in de gaten.
 - **Mensen beslissen.** Een score ondersteunt een besluit; hij neemt het niet. Bekijk de antwoorden voordat je iemand afwijst.
 
-Voor de juridische basis, waaronder de AI-verordening (EU AI Act) en Amerikaanse regels over selectiepercentages, zie [Selectietests](/pre-employment-testing).
+Voor de juridische basis, waaronder de AI-verordening (EU AI Act) en Amerikaanse regels over selectiepercentages, zie [Selectietests](/guides/pre-employment-testing).
 
 ## Samenvatting
 
@@ -146,6 +146,6 @@ Zet de brede, goedkope checks vooraan en de diepgaande, dure achteraan. Screen c
 
 - [Vaardigheidstests per functie](/tests)
 - [Alternatieven voor HackerRank](/compare/hackerrank-alternatives)
-- [Gids voor selectietests](/pre-employment-testing)
+- [Gids voor selectietests](/guides/pre-employment-testing)
 - [Vaardigheidstests vs. cv-screening](/guides/skills-tests-vs-cv-screening)
 - [Developers interviewen in het tijdperk van AI](/guides/interviewing-in-the-age-of-ai)

@@ -133,6 +133,6 @@ Draf dokumentasi teknis, daftar risiko, petunjuk untuk perusahaan, sistem manaje
 
 - [Apakah rekrutmen dengan AI legal di Inggris Raya?](/guides/is-ai-hiring-legal-in-the-uk)
 - [Apakah rekrutmen dengan AI legal di AS?](/guides/is-ai-hiring-legal-in-the-us)
-- [Wawancara AI: apa itu dan cara memakainya secara adil](/ai-interviews)
-- [Tes seleksi karyawan: panduan praktis](/pre-employment-testing)
+- [Wawancara AI: apa itu dan cara memakainya secara adil](/guides/ai-interviews)
+- [Tes seleksi karyawan: panduan praktis](/guides/pre-employment-testing)
 - [Tes keterampilan vs penyaringan CV](/guides/skills-tests-vs-cv-screening)

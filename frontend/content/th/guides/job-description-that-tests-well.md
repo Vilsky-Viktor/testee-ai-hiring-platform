@@ -122,7 +122,7 @@ testee เป็นตัวอย่างหนึ่งของเครื�
 - [วิธีคัดกรองผู้สมัคร 100 คนในหนึ่งวัน](/guides/screen-100-applicants-in-a-day)
 - [แบบทดสอบทักษะ เทียบกับการคัดกรองเรซูเม่](/guides/skills-tests-vs-cv-screening)
 - [วิธีกำหนดเวลาแบบทดสอบทักษะ](/guides/skills-test-timing-and-extra-time)
-- [แบบทดสอบก่อนจ้างงาน: คู่มือใช้งานจริง](/pre-employment-testing)
+- [แบบทดสอบก่อนจ้างงาน: คู่มือใช้งานจริง](/guides/pre-employment-testing)
 
 ## แหล่งอ้างอิง
 

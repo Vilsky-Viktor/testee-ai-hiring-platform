@@ -107,5 +107,5 @@ Eksiksiz bir mühendislik işe alım süreci için [Mühendis işe alımı nası
 
 - [TestGorilla alternatifleri](/compare/testgorilla-alternatives)
 - [İşe alım öncesi test maliyetleri nasıl karşılaştırılır](/compare/cheapest-pre-employment-test)
-- [Yapay zekâ mülakatları: nedir ve adil şekilde nasıl kullanılır](/ai-interviews)
-- [İşe alım öncesi test rehberi](/pre-employment-testing)
+- [Yapay zekâ mülakatları: nedir ve adil şekilde nasıl kullanılır](/guides/ai-interviews)
+- [İşe alım öncesi test rehberi](/guides/pre-employment-testing)

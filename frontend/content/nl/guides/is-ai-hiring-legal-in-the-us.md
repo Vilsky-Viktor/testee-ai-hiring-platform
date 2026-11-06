@@ -119,7 +119,7 @@ Zo ziet dat er vandaag in het product uit:
 - [Is AI bij werving en selectie legaal in de EU?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Is AI bij werving en selectie legaal in het VK?](/guides/is-ai-hiring-legal-in-the-uk)
 - [Zo stel je de tijd van een vaardigheidstest in: timer per vraag, lengte en extra tijd](/guides/skills-test-timing-and-extra-time)
-- [Selectietests: een praktische gids](/pre-employment-testing)
+- [Selectietests: een praktische gids](/guides/pre-employment-testing)
 
 ## Bronnen
 

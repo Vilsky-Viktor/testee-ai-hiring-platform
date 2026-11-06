@@ -104,4 +104,4 @@ ATS บางระบบต้องทำขั้นตอนหนึ่ง�
 
 - [วิธีคัดกรองผู้สมัคร 100 คนในหนึ่งวัน](/guides/screen-100-applicants-in-a-day)
 - [แบบทดสอบทักษะ เทียบกับการคัดกรองเรซูเม่](/guides/skills-tests-vs-cv-screening)
-- [แบบทดสอบก่อนจ้างงาน: คู่มือใช้งานจริง](/pre-employment-testing)
+- [แบบทดสอบก่อนจ้างงาน: คู่มือใช้งานจริง](/guides/pre-employment-testing)

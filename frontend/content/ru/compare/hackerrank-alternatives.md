@@ -107,5 +107,5 @@ Alooba заявляет более 400 скрининговых тестов п�
 
 - [Альтернативы TestGorilla](/compare/testgorilla-alternatives)
 - [Как сравнить стоимость тестирования кандидатов](/compare/cheapest-pre-employment-test)
-- [ИИ-собеседования: что это такое и как проводить их честно](/ai-interviews)
-- [Руководство по тестированию кандидатов при найме](/pre-employment-testing)
+- [ИИ-собеседования: что это такое и как проводить их честно](/guides/ai-interviews)
+- [Руководство по тестированию кандидатов при найме](/guides/pre-employment-testing)

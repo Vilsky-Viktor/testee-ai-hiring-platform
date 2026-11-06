@@ -104,4 +104,4 @@ Chi phí của mỗi công cụ phụ thuộc vào số lượng ứng viên và
 
 - [Cách so sánh chi phí bài kiểm tra](/compare/cheapest-pre-employment-test)
 - [Bài kiểm tra trước tuyển dụng không cần gói đăng ký](/compare/pre-employment-tests-without-subscription)
-- [Hướng dẫn kiểm tra trước tuyển dụng](/pre-employment-testing)
+- [Hướng dẫn kiểm tra trước tuyển dụng](/guides/pre-employment-testing)

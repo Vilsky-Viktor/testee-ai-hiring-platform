@@ -87,7 +87,7 @@ testee obejmuje krok 2: test wiedzy zawodowej w formie testu wyboru z limitem cz
 - **Czytelne wyniki.** Karta wyników dla każdego kandydata z każdą odpowiedzią i czasem jej udzielenia, ranking według punktacji, z oznaczeniami zbyt szybkich odpowiedzi, opuszczenia strony, prób kopiowania i nietypowych wzorców odpowiedzi.
 - **Odpowiedzi oceniane według klucza odpowiedzi,** który pisze AI; próbka kluczy z każdego tematu jest sprawdzana przed udostępnieniem, a pozostałe, gdy pytanie zostanie oznaczone. Żadna AI nie czyta ani nie ocenia odpowiedzi kandydata.
 
-testee nie prowadzi ustrukturyzowanych rozmów kwalifikacyjnych, próbek pracy ani testów poznawczych. Używaj jej razem z nimi. Więcej o rodzajach testów i uczciwości przeczytasz w poradniku [Testy rekrutacyjne](/pre-employment-testing).
+testee nie prowadzi ustrukturyzowanych rozmów kwalifikacyjnych, próbek pracy ani testów poznawczych. Używaj jej razem z nimi. Więcej o rodzajach testów i uczciwości przeczytasz w poradniku [Testy rekrutacyjne](/guides/pre-employment-testing).
 
 ## Źródła
 

@@ -43,8 +43,6 @@ export const PAGE_HELP_KEYS = [
   "pricing",
   "tests",
   "test",
-  "aiInterviews",
-  "preEmploymentTesting",
   "compare",
   "comparison",
   "guides",

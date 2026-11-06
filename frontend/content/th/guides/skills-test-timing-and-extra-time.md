@@ -137,7 +137,7 @@ updated: "2026-10-29"
 - [แบบทดสอบทักษะ เทียบกับการคัดกรองเรซูเม่](/guides/skills-tests-vs-cv-screening)
 - [สัมภาษณ์วิศวกรในยุค AI](/guides/interviewing-in-the-age-of-ai)
 - [การทุจริตในการทดสอบออนไลน์ และวิธีที่ได้ผลจริง](/guides/cheating-in-online-assessments)
-- [แบบทดสอบก่อนจ้างงาน: คู่มือใช้งานจริง](/pre-employment-testing)
+- [แบบทดสอบก่อนจ้างงาน: คู่มือใช้งานจริง](/guides/pre-employment-testing)
 
 ## แหล่งอ้างอิง
 

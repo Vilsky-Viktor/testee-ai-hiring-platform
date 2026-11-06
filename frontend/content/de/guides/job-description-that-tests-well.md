@@ -122,7 +122,7 @@ Zum Ausprobieren füge eine Beschreibung auf der Startseite ein oder beginne mit
 - [So sichtest du 100 Bewerbungen an einem Tag](/guides/screen-100-applicants-in-a-day)
 - [Fachtests vs. Lebenslauf-Screening](/guides/skills-tests-vs-cv-screening)
 - [Zeit im Fachtest richtig festlegen](/guides/skills-test-timing-and-extra-time)
-- [Einstellungstests: ein Praxisleitfaden](/pre-employment-testing)
+- [Einstellungstests: ein Praxisleitfaden](/guides/pre-employment-testing)
 
 ## Quellen
 

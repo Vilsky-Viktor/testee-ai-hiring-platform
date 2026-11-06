@@ -98,4 +98,4 @@ Masukkan harga sebenarnya dari halaman harga tiap vendor, dan [harga testee](/pr
 - [Cara membandingkan biaya tes](/compare/cheapest-pre-employment-test)
 - [Alternatif TestGorilla](/compare/testgorilla-alternatives)
 - [testee dan TestGorilla](/compare/testgorilla)
-- [Panduan tes seleksi karyawan](/pre-employment-testing)
+- [Panduan tes seleksi karyawan](/guides/pre-employment-testing)

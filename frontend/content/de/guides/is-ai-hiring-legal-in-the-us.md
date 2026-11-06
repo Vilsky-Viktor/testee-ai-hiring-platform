@@ -119,7 +119,7 @@ So sieht das heute im Produkt aus:
 - [Ist KI im Recruiting in der EU erlaubt?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Ist KI im Recruiting im Vereinigten Königreich erlaubt?](/guides/is-ai-hiring-legal-in-the-uk)
 - [Zeit im Fachtest richtig festlegen: Timer pro Frage, Länge und zusätzliche Zeit](/guides/skills-test-timing-and-extra-time)
-- [Einstellungstests: ein Praxisleitfaden](/pre-employment-testing)
+- [Einstellungstests: ein Praxisleitfaden](/guides/pre-employment-testing)
 
 ## Quellen
 

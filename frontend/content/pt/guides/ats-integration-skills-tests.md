@@ -104,4 +104,4 @@ O preço é por candidato, sem assinatura: você paga só pelos candidatos que r
 
 - [Como fazer a triagem de 100 candidatos em um dia](/guides/screen-100-applicants-in-a-day)
 - [Testes de habilidades x triagem de currículos](/guides/skills-tests-vs-cv-screening)
-- [Teste de seleção: guia prático](/pre-employment-testing)
+- [Teste de seleção: guia prático](/guides/pre-employment-testing)

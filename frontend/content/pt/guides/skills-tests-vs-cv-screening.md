@@ -87,7 +87,7 @@ A testee cobre o passo 2: um teste de conhecimentos da função, de múltipla es
 - **Resultados fáceis de ler.** Uma ficha de avaliação por candidato com cada resposta e seu tempo, ordenada por pontuação, com alertas para respostas rápidas demais, saídas da página, tentativas de cópia e padrões de resposta incomuns.
 - **Respostas corrigidas com base em um gabarito** que a IA escreve; uma amostra dos gabaritos de cada tópico é verificada antes da liberação, e os demais quando uma pergunta é sinalizada. Nenhuma IA lê ou julga a resposta de um candidato.
 
-A testee não faz entrevistas estruturadas, amostras de trabalho nem testes cognitivos. Use-a junto com eles. Para saber mais sobre tipos de teste e imparcialidade, leia [Testes de seleção](/pre-employment-testing).
+A testee não faz entrevistas estruturadas, amostras de trabalho nem testes cognitivos. Use-a junto com eles. Para saber mais sobre tipos de teste e imparcialidade, leia [Testes de seleção](/guides/pre-employment-testing).
 
 ## Fontes
 

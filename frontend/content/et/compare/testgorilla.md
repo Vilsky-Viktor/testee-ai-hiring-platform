@@ -98,4 +98,4 @@ testeel pole lepingut ja selle krediidid ei aegu, nii et selle lisamine protsess
 - [TestGorilla alternatiivid](/compare/testgorilla-alternatives)
 - [Kuidas võrrelda värbamistestide hindu](/compare/cheapest-pre-employment-test)
 - [Värbamistestid ilma tellimuseta](/compare/pre-employment-tests-without-subscription)
-- [Kandidaatide testimise juhend](/pre-employment-testing)
+- [Kandidaatide testimise juhend](/guides/pre-employment-testing)

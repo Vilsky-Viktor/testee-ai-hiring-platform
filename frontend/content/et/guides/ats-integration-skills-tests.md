@@ -104,4 +104,4 @@ Hind on kandidaadipõhine, ilma tellimuseta: maksad ainult kandidaatide eest, ke
 
 - [Kuidas sõeluda 100 kandidaati päevaga](/guides/screen-100-applicants-in-a-day)
 - [Oskustestid vs CV-de sõelumine](/guides/skills-tests-vs-cv-screening)
-- [Kandidaatide testimine värbamisel: praktiline juhend](/pre-employment-testing)
+- [Kandidaatide testimine värbamisel: praktiline juhend](/guides/pre-employment-testing)

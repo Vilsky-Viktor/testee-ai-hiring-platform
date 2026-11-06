@@ -87,7 +87,7 @@ testee covers step 2: a timed multiple-choice job knowledge test, written from y
 - **Readable results.** A scorecard per candidate with every answer and its timing, ranked by score, with flags for too-fast answers, leaving the page, copy attempts and unusual answer patterns.
 - **Answers marked against an answer key** that AI writes; a sample of each topic's keys is checked before release, the rest when a question is flagged. No AI reads or judges a candidate's answer.
 
-testee doesn't run structured interviews, work samples or cognitive tests. Use it alongside them. For more on testing types and fairness, read [Pre-employment testing](/pre-employment-testing).
+testee doesn't run structured interviews, work samples or cognitive tests. Use it alongside them. For more on testing types and fairness, read [Pre-employment testing](/guides/pre-employment-testing).
 
 ## Sources
 

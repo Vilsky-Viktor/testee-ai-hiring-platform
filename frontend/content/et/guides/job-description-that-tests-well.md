@@ -122,7 +122,7 @@ Proovimiseks kleebi kuulutus avalehele või alusta valmis testist lehel [oskuste
 - [Kuidas sõeluda 100 kandidaati päevaga](/guides/screen-100-applicants-in-a-day)
 - [Oskustestid vs CV-de sõelumine](/guides/skills-tests-vs-cv-screening)
 - [Kuidas ajastada oskustesti](/guides/skills-test-timing-and-extra-time)
-- [Kandidaatide testimine värbamisel: praktiline juhend](/pre-employment-testing)
+- [Kandidaatide testimine värbamisel: praktiline juhend](/guides/pre-employment-testing)
 
 ## Allikad
 

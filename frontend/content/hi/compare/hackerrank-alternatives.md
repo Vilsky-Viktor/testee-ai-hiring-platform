@@ -107,5 +107,5 @@ HackerRank, या कोई दूसरा डेवलपर प्लेट�
 
 - [TestGorilla के विकल्प](/compare/testgorilla-alternatives)
 - [टेस्ट की लागत की तुलना कैसे करें](/compare/cheapest-pre-employment-test)
-- [AI इंटरव्यू: ये क्या हैं और इन्हें निष्पक्ष तरीके से कैसे इस्तेमाल करें](/ai-interviews)
-- [प्री-एम्प्लॉयमेंट टेस्टिंग गाइड](/pre-employment-testing)
+- [AI इंटरव्यू: ये क्या हैं और इन्हें निष्पक्ष तरीके से कैसे इस्तेमाल करें](/guides/ai-interviews)
+- [प्री-एम्प्लॉयमेंट टेस्टिंग गाइड](/guides/pre-employment-testing)

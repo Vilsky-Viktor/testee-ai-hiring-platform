@@ -87,7 +87,7 @@ testee cubre el paso 2: una prueba de conocimientos del puesto de opción múlti
 - **Resultados fáciles de leer.** Una ficha de evaluación por candidato con cada respuesta y su tiempo, ordenada por puntuación, con alertas de respuestas demasiado rápidas, salidas de la página, intentos de copiar y patrones de respuesta inusuales.
 - **Respuestas corregidas con una clave de respuestas** que redacta la IA; una muestra de las claves de cada tema se revisa antes de publicarse, y el resto cuando se marca una pregunta. Ninguna IA lee ni juzga la respuesta de un candidato.
 
-testee no hace entrevistas estructuradas, muestras de trabajo ni pruebas cognitivas. Úsalo junto con ellas. Para saber más sobre tipos de pruebas y equidad, lee [Pruebas de selección de personal](/pre-employment-testing).
+testee no hace entrevistas estructuradas, muestras de trabajo ni pruebas cognitivas. Úsalo junto con ellas. Para saber más sobre tipos de pruebas y equidad, lee [Pruebas de selección de personal](/guides/pre-employment-testing).
 
 ## Fuentes
 

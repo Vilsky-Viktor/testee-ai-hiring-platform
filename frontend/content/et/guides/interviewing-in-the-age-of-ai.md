@@ -76,7 +76,7 @@ testee sobib hästi 2. sammu jaoks. See muudab sinu töökuulutuse ajapiiranguga
 - **Aususe signaalid:** hindamislehed märgivad vastused, mis on liiga kiired, et küsimust lugeda jõuaks, korrad, kui kandidaat lehelt lahkus, ja kopeerimiskatsed. Kui kandidaat on lõpetanud, toob tema aruanne välja ka vastuste mustrid, mis on tüüpilised, kui küsimusi AI-le edasi antakse: igale küsimusele kulub umbes sama palju aega, olenemata selle pikkusest või raskusest, või rasketele küsimustele on vastatud õigesti, lihtsatele aga valesti. Märge või muster on põhjus lähemalt vaadata, mitte spikerdamise tõend.
 - **Küsimused reaalajas intervjuuks:** aruanne soovitab kuni 3 küsimust, millele kandidaat vastas õigesti, tema tugevaimatest teemadest, et neid arutada reaalajas intervjuul, kus AI ei saa tema eest vastata.
 
-Mida testee ei tee: kandidaadid ei kirjuta, käivita ega siluta testees koodi ja testee ei jälgi, kuidas nad AI-assistenti kasutavad. See kuulub praktilisse etappi, mis tehakse ise või arendajate platvormil ja mis täiendab teadmiste kontrolli. Valmis teste, millest alustada, leiad lehelt [oskustestid rollide kaupa](/tests) ning seda, kuidas testee AI-d kasutab ja mida inimestele jätab, lehelt [AI-intervjuud](/ai-interviews).
+Mida testee ei tee: kandidaadid ei kirjuta, käivita ega siluta testees koodi ja testee ei jälgi, kuidas nad AI-assistenti kasutavad. See kuulub praktilisse etappi, mis tehakse ise või arendajate platvormil ja mis täiendab teadmiste kontrolli. Valmis teste, millest alustada, leiad lehelt [oskustestid rollide kaupa](/tests) ning seda, kuidas testee AI-d kasutab ja mida inimestele jätab, lehelt [AI-intervjuud](/guides/ai-interviews).
 
 ## Õiglus ja kandidaadikogemus
 
@@ -106,5 +106,5 @@ AI-assistendid on muutnud koodi tootmise odavamaks ja koodi hindamise olulisemak
 - [Kuidas värvata insenere](/guides/hiring-engineers)
 - [Oskustestid rollide kaupa](/tests)
 - [Spikerdamine veebitestides ja mis selle vastu aitab](/guides/cheating-in-online-assessments)
-- [AI-intervjuud: mis need on ja kuidas neid õiglaselt kasutada](/ai-interviews)
+- [AI-intervjuud: mis need on ja kuidas neid õiglaselt kasutada](/guides/ai-interviews)
 - [Oskustestid vs CV-de sõelumine](/guides/skills-tests-vs-cv-screening)

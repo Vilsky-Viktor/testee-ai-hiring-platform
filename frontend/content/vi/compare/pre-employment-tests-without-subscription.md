@@ -98,4 +98,4 @@ Hãy đưa giá thật từ trang bảng giá của từng nhà cung cấp, và 
 - [Cách so sánh chi phí bài kiểm tra](/compare/cheapest-pre-employment-test)
 - [Các lựa chọn thay thế TestGorilla](/compare/testgorilla-alternatives)
 - [testee và TestGorilla](/compare/testgorilla)
-- [Hướng dẫn kiểm tra trước tuyển dụng](/pre-employment-testing)
+- [Hướng dẫn kiểm tra trước tuyển dụng](/guides/pre-employment-testing)

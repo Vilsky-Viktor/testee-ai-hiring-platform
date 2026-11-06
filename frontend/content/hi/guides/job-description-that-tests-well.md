@@ -122,7 +122,7 @@ testee ऐसे टूल का एक उदाहरण है जो जॉ
 - [एक दिन में 100 आवेदकों की स्क्रीनिंग कैसे करें](/guides/screen-100-applicants-in-a-day)
 - [स्किल्स टेस्ट बनाम CV स्क्रीनिंग](/guides/skills-tests-vs-cv-screening)
 - [स्किल्स टेस्ट का समय कैसे तय करें](/guides/skills-test-timing-and-extra-time)
-- [प्री-एम्प्लॉयमेंट टेस्टिंग: एक प्रैक्टिकल गाइड](/pre-employment-testing)
+- [प्री-एम्प्लॉयमेंट टेस्टिंग: एक प्रैक्टिकल गाइड](/guides/pre-employment-testing)
 
 ## स्रोत
 

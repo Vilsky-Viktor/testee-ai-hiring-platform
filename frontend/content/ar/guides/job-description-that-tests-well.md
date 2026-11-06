@@ -122,7 +122,7 @@ testee مثال واحد على أداة تبني اختبار مهارات مو
 - [كيف تفرز 100 متقدم في يوم واحد](/guides/screen-100-applicants-in-a-day)
 - [اختبارات المهارات مقابل فرز السير الذاتية](/guides/skills-tests-vs-cv-screening)
 - [كيف تحدد توقيت اختبار المهارات](/guides/skills-test-timing-and-extra-time)
-- [اختبارات ما قبل التوظيف: دليل عملي](/pre-employment-testing)
+- [اختبارات ما قبل التوظيف: دليل عملي](/guides/pre-employment-testing)
 
 ## المصادر
 

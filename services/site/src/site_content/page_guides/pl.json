@@ -559,32 +559,6 @@
       "Twoi kandydaci dostają własne losowe pytania, nigdy przykłady pokazane tutaj."
     ]
   },
-  "aiInterviews": {
-    "title": "Rozmowy z AI",
-    "text": "Przewodnik po rodzajach narzędzi do rozmów z AI, podejściu testee i podstawach zgodności z przepisami.",
-    "actions": [
-      "Porównaj narzędzia do rozmów: chatboty, wideo i generowane testy.",
-      "Przeczytaj krok po kroku, jak testee tworzy i ocenia rozmowę oraz czego nigdy nie robi.",
-      "Przeczytaj podstawy unijnego aktu w sprawie AI (AI Act), RODO i przepisów USA o AI w rekrutacji.",
-      "Utwórz test dla swoich kandydatów z karty na końcu."
-    ],
-    "tips": [
-      "To podsumowanie, a nie porada prawna: skonsultuj się z własnym prawnikiem."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Testy rekrutacyjne",
-    "text": "Przystępny poradnik o testach rekrutacyjnych dla zespołów rekrutacyjnych: rodzaje, kiedy pomagają, równe traktowanie i prawo oraz wybór narzędzia.",
-    "actions": [
-      "Przeczytaj, jakie są rodzaje testów i kiedy każdy z nich pomaga.",
-      "Przeczytaj podstawy równego traktowania i przepisów.",
-      "Zobacz, na co zwracać uwagę w narzędziu do testów i jak robi to testee.",
-      "Utwórz test dla swoich kandydatów z karty na końcu."
-    ],
-    "tips": [
-      "To podsumowanie, a nie porada prawna: skonsultuj się z własnym prawnikiem."
-    ]
-  },
   "compare": {
     "title": "Porównaj testee",
     "text": "Porównania testee z innymi narzędziami do testów rekrutacyjnych, ze źródłami: jak powstają testy, ile kosztują i kiedy które lepiej pasuje.",

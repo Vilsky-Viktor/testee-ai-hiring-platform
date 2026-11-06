@@ -104,4 +104,4 @@ Il prezzo è per candidato, senza abbonamento: paghi solo per i candidati che ri
 
 - [Come fare lo screening di 100 candidati in un giorno](/guides/screen-100-applicants-in-a-day)
 - [Test di competenze o screening dei CV](/guides/skills-tests-vs-cv-screening)
-- [Test pre-assunzione: una guida pratica](/pre-employment-testing)
+- [Test pre-assunzione: una guida pratica](/guides/pre-employment-testing)

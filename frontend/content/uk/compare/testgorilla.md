@@ -98,4 +98,4 @@ testee не має контракту, а її кредити не згоряю�
 - [Альтернативи TestGorilla](/compare/testgorilla-alternatives)
 - [Як порівняти вартість тестів](/compare/cheapest-pre-employment-test)
 - [Тестування кандидатів без підписки](/compare/pre-employment-tests-without-subscription)
-- [Посібник із тестування кандидатів](/pre-employment-testing)
+- [Посібник із тестування кандидатів](/guides/pre-employment-testing)

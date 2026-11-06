@@ -131,6 +131,6 @@ Istnieją wersje robocze dokumentacji technicznej, rejestru ryzyk, instrukcji dl
 
 - [Czy rekrutacja z AI jest legalna w Wielkiej Brytanii?](/guides/is-ai-hiring-legal-in-the-uk)
 - [Czy rekrutacja z AI jest legalna w USA?](/guides/is-ai-hiring-legal-in-the-us)
-- [Rozmowy rekrutacyjne z AI: czym są i jak korzystać z nich uczciwie](/ai-interviews)
-- [Testy rekrutacyjne: praktyczny poradnik](/pre-employment-testing)
+- [Rozmowy rekrutacyjne z AI: czym są i jak korzystać z nich uczciwie](/guides/ai-interviews)
+- [Testy rekrutacyjne: praktyczny poradnik](/guides/pre-employment-testing)
 - [Testy umiejętności a selekcja CV](/guides/skills-tests-vs-cv-screening)

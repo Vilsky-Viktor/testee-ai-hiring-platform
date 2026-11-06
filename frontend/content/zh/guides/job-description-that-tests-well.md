@@ -122,7 +122,7 @@ testee 是根据职位描述生成限时选择题技能测试的工具之一。�
 - [如何在一天内筛选 100 位求职者](/guides/screen-100-applicants-in-a-day)
 - [技能测试与简历筛选对比](/guides/skills-tests-vs-cv-screening)
 - [技能测试如何设置时间](/guides/skills-test-timing-and-extra-time)
-- [招聘前测评：实用指南](/pre-employment-testing)
+- [招聘前测评：实用指南](/guides/pre-employment-testing)
 
 ## 参考文献
 

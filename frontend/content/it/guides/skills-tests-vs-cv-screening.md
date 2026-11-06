@@ -87,7 +87,7 @@ testee copre il passo 2: un test di conoscenze professionali a scelta multipla e
 - **Risultati leggibili.** Una scheda di valutazione per candidato con ogni risposta e il relativo tempo, in classifica per punteggio, con segnalazioni per risposte troppo rapide, uscite dalla pagina, tentativi di copia e andamenti insoliti delle risposte.
 - **Risposte corrette in base a una chiave di correzione** che l'IA scrive; un campione delle chiavi di ogni argomento viene verificato prima della pubblicazione, le altre quando una domanda viene segnalata. Nessuna IA legge o giudica la risposta di un candidato.
 
-testee non conduce colloqui strutturati, prove pratiche o test cognitivi. Usalo insieme a questi. Per saperne di più sui tipi di test e sull'equità, leggi [Test pre-assunzione](/pre-employment-testing).
+testee non conduce colloqui strutturati, prove pratiche o test cognitivi. Usalo insieme a questi. Per saperne di più sui tipi di test e sull'equità, leggi [Test pre-assunzione](/guides/pre-employment-testing).
 
 ## Fonti
 

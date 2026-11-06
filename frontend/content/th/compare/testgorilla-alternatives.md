@@ -104,4 +104,4 @@ TestGorilla อาจเหมาะกับคุณมากกว่าห�
 
 - [วิธีเปรียบเทียบค่าใช้จ่ายของแบบทดสอบ](/compare/cheapest-pre-employment-test)
 - [แบบทดสอบก่อนจ้างงานแบบไม่ต้องสมัครสมาชิก](/compare/pre-employment-tests-without-subscription)
-- [คู่มือแบบทดสอบก่อนจ้างงาน](/pre-employment-testing)
+- [คู่มือแบบทดสอบก่อนจ้างงาน](/guides/pre-employment-testing)

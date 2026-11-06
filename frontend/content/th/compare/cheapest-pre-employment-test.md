@@ -75,4 +75,4 @@ testee คิดค่าบริการต่อผู้สมัครท�
 
 - [แบบทดสอบก่อนจ้างงานแบบไม่ต้องสมัครสมาชิก](/compare/pre-employment-tests-without-subscription)
 - [testee และ TestGorilla](/compare/testgorilla)
-- [คู่มือแบบทดสอบก่อนจ้างงาน](/pre-employment-testing)
+- [คู่มือแบบทดสอบก่อนจ้างงาน](/guides/pre-employment-testing)

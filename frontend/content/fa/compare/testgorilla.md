@@ -98,4 +98,4 @@ testee قرارداد ندارد و اعتبارش منقضی نمی‌شود، 
 - [جایگزین‌های TestGorilla](/compare/testgorilla-alternatives)
 - [چگونه هزینه آزمون‌ها را مقایسه کنیم](/compare/cheapest-pre-employment-test)
 - [آزمون استخدامی بدون اشتراک](/compare/pre-employment-tests-without-subscription)
-- [راهنمای آزمون‌های استخدامی](/pre-employment-testing)
+- [راهنمای آزمون‌های استخدامی](/guides/pre-employment-testing)

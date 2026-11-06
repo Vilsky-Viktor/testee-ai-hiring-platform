@@ -559,32 +559,6 @@
       "Seus candidatos recebem questões aleatórias próprias, nunca os exemplos mostrados aqui."
     ]
   },
-  "aiInterviews": {
-    "title": "Entrevistas com IA",
-    "text": "Um guia sobre os tipos de ferramentas de entrevista com IA, como funciona a abordagem da testee e o básico de conformidade.",
-    "actions": [
-      "Compare ferramentas de entrevista por chatbot, por vídeo e com testes gerados.",
-      "Leia, passo a passo, como a testee cria e corrige uma entrevista, e o que ela nunca faz.",
-      "Leia o básico do AI Act da UE, do RGPD e das regras dos EUA sobre IA na contratação.",
-      "Crie um teste para seus candidatos pelo cartão no final."
-    ],
-    "tips": [
-      "É um resumo, não aconselhamento jurídico: confirme com sua própria assessoria jurídica."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Testes pré-admissão",
-    "text": "Um guia simples sobre testes pré-admissão para equipes de recrutamento: os tipos, quando ajudam, imparcialidade e a lei, e como escolher uma ferramenta.",
-    "actions": [
-      "Leia quais tipos de testes existem e quando cada um ajuda.",
-      "Leia o básico sobre imparcialidade e a lei.",
-      "Veja o que procurar em uma ferramenta de testes, e como a testee faz isso.",
-      "Crie um teste para seus candidatos pelo cartão no final."
-    ],
-    "tips": [
-      "É um resumo, não aconselhamento jurídico: confirme com sua própria assessoria jurídica."
-    ]
-  },
   "compare": {
     "title": "testee em comparação",
     "text": "Comparações com fontes entre a testee e outras ferramentas de testes pré-admissão: como os testes são criados, quanto custam e quando cada uma é mais adequada.",

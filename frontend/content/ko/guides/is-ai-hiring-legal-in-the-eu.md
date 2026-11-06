@@ -133,6 +133,6 @@ testee는 채용 공고를 바탕으로 AI가 작성한, 시간 제한이 있는
 
 - [영국에서 AI 채용은 합법일까?](/guides/is-ai-hiring-legal-in-the-uk)
 - [미국에서 AI 채용은 합법일까?](/guides/is-ai-hiring-legal-in-the-us)
-- [AI 면접: 무엇이고 어떻게 공정하게 활용할까](/ai-interviews)
-- [채용 전 테스트: 실무 가이드](/pre-employment-testing)
+- [AI 면접: 무엇이고 어떻게 공정하게 활용할까](/guides/ai-interviews)
+- [채용 전 테스트: 실무 가이드](/guides/pre-employment-testing)
 - [역량 테스트 vs 이력서 심사](/guides/skills-tests-vs-cv-screening)

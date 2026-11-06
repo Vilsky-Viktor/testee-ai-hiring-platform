@@ -137,7 +137,7 @@ updated: "2026-10-29"
 - [آزمون مهارت در برابر غربالگری رزومه](/guides/skills-tests-vs-cv-screening)
 - [مصاحبه با مهندسان در عصر هوش مصنوعی](/guides/interviewing-in-the-age-of-ai)
 - [تقلب در آزمون‌های آنلاین، و آنچه واقعاً جلویش را می‌گیرد](/guides/cheating-in-online-assessments)
-- [آزمون‌های استخدامی: راهنمای عملی](/pre-employment-testing)
+- [آزمون‌های استخدامی: راهنمای عملی](/guides/pre-employment-testing)
 
 ## منابع
 

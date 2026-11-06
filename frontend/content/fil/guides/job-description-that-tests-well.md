@@ -122,7 +122,7 @@ Para subukan, mag-paste ng job description sa home page, o magsimula sa isang ha
 - [Paano mag-screen ng 100 aplikante sa isang araw](/guides/screen-100-applicants-in-a-day)
 - [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)
 - [Paano itakda ang oras ng skills test](/guides/skills-test-timing-and-extra-time)
-- [Pre-employment testing: praktikal na gabay](/pre-employment-testing)
+- [Pre-employment testing: praktikal na gabay](/guides/pre-employment-testing)
 
 ## Mga pinagkunan
 

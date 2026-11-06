@@ -132,7 +132,7 @@ Struktureeritud protsess on ka õiglasem, kuid ainult siis, kui viid selle läbi
 - **Jälgi tulemusi.** Eri meetodid näitavad rühmade vahel erinevaid tulemuste lõhesid. Sackett et al. leidsid erialaste teadmiste testide ja proovitööde puhul suuremaid keskmisi erinevusi kui struktureeritud intervjuude puhul, mis on veel üks põhjus meetodeid kombineerida. Jälgi läbimise määrasid igas etapis.
 - **Otsustavad inimesed.** Tulemus toetab otsust, kuid ei tee seda. Enne kellegi tagasilükkamist vaata vastuseid.
 
-Õiguslikud põhitõed, sealhulgas ELi tehisintellekti määruse (AI Act) ja USA valikumäärade reeglid, leiad lehelt [Kandidaatide testimine värbamisel](/pre-employment-testing).
+Õiguslikud põhitõed, sealhulgas ELi tehisintellekti määruse (AI Act) ja USA valikumäärade reeglid, leiad lehelt [Kandidaatide testimine värbamisel](/guides/pre-employment-testing).
 
 ## Kokkuvõte
 
@@ -146,6 +146,6 @@ Pane laiad ja odavad kontrollid ette ning põhjalikud ja kallid lõppu. Sõelu C
 
 - [Oskustestid rollide kaupa](/tests)
 - [HackerRanki alternatiivid](/compare/hackerrank-alternatives)
-- [Kandidaatide testimise juhend](/pre-employment-testing)
+- [Kandidaatide testimise juhend](/guides/pre-employment-testing)
 - [Oskustestid vs CV-de sõelumine](/guides/skills-tests-vs-cv-screening)
 - [Inseneride intervjueerimine AI ajastul](/guides/interviewing-in-the-age-of-ai)

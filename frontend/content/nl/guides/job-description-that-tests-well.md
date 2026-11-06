@@ -122,7 +122,7 @@ Om het te proberen, plak je een omschrijving op de homepage, of begin je met een
 - [Zo screen je 100 sollicitanten in één dag](/guides/screen-100-applicants-in-a-day)
 - [Vaardigheidstests vs. cv-screening](/guides/skills-tests-vs-cv-screening)
 - [Zo stel je de tijd van een vaardigheidstest in](/guides/skills-test-timing-and-extra-time)
-- [Selectietests: een praktische gids](/pre-employment-testing)
+- [Selectietests: een praktische gids](/guides/pre-employment-testing)
 
 ## Bronnen
 

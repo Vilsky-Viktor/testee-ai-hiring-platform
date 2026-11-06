@@ -104,4 +104,4 @@ TestGorilla ممکن است برای شما مناسب‌تر باشد اگر:
 
 - [چگونه هزینه آزمون‌ها را مقایسه کنیم](/compare/cheapest-pre-employment-test)
 - [آزمون استخدامی بدون اشتراک](/compare/pre-employment-tests-without-subscription)
-- [راهنمای آزمون‌های استخدامی](/pre-employment-testing)
+- [راهنمای آزمون‌های استخدامی](/guides/pre-employment-testing)

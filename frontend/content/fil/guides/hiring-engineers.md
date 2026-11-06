@@ -132,7 +132,7 @@ Mas patas din ang isang structured na proseso, pero kung pare-pareho lang ang pa
 - **Bantayan ang mga resulta.** Iba-iba ang score gap sa pagitan ng mga grupo sa iba't ibang paraan. Nakita nina Sackett et al. ang mas malalaking average na pagkakaiba para sa job knowledge tests at work samples kaysa sa structured interviews, na isa pang dahilan para pagsamahin ang mga paraan. Bantayan ang pass rates sa bawat stage.
 - **Tao ang nagdedesisyon.** Sinusuportahan ng score ang desisyon; hindi ito ang gumagawa nito. Tingnan ang mga sagot bago ka mag-reject ng kahit sino.
 
-Para sa legal basics, kasama ang EU AI Act at ang mga patakaran ng US sa selection rates, tingnan ang [Pre-employment testing](/pre-employment-testing).
+Para sa legal basics, kasama ang EU AI Act at ang mga patakaran ng US sa selection rates, tingnan ang [Pre-employment testing](/guides/pre-employment-testing).
 
 ## Buod
 
@@ -146,6 +146,6 @@ Unahin ang malawak at murang mga check at ihuli ang malalim at mahal. I-screen a
 
 - [Skills tests ayon sa role](/tests)
 - [Mga alternatibo sa HackerRank](/compare/hackerrank-alternatives)
-- [Gabay sa pre-employment testing](/pre-employment-testing)
+- [Gabay sa pre-employment testing](/guides/pre-employment-testing)
 - [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)
 - [Pag-interview ng mga engineer sa panahon ng AI](/guides/interviewing-in-the-age-of-ai)

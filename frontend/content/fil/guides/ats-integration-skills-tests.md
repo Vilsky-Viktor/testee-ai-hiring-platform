@@ -104,4 +104,4 @@ Per aplikante ang presyo, walang subscription: nagbabayad ka lang para sa mga ap
 
 - [Paano mag-screen ng 100 aplikante sa isang araw](/guides/screen-100-applicants-in-a-day)
 - [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)
-- [Pre-employment testing: isang praktikal na gabay](/pre-employment-testing)
+- [Pre-employment testing: isang praktikal na gabay](/guides/pre-employment-testing)

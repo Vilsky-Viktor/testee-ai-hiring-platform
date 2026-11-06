@@ -107,5 +107,5 @@ Untuk proses engineering yang lengkap, lihat [Cara merekrut engineer](/guides/hi
 
 - [Alternatif TestGorilla](/compare/testgorilla-alternatives)
 - [Cara membandingkan biaya tes](/compare/cheapest-pre-employment-test)
-- [Wawancara AI: apa itu dan cara memakainya secara adil](/ai-interviews)
-- [Panduan tes seleksi karyawan](/pre-employment-testing)
+- [Wawancara AI: apa itu dan cara memakainya secara adil](/guides/ai-interviews)
+- [Panduan tes seleksi karyawan](/guides/pre-employment-testing)

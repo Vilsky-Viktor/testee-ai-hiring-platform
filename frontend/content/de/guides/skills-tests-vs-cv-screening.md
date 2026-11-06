@@ -87,7 +87,7 @@ testee deckt Schritt 2 ab: einen zeitlich begrenzten Multiple-Choice-Test zum Fa
 - **Lesbare Ergebnisse.** Eine Auswertung pro Kandidat mit jeder Antwort und ihrer Dauer, nach Punktzahl sortiert, mit Hinweisen auf zu schnelle Antworten, das Verlassen der Seite, Kopierversuche und ungewöhnliche Antwortmuster.
 - **Antworten werden anhand eines Lösungsschlüssels bewertet,** den KI schreibt; eine Stichprobe der Schlüssel jedes Themas wird vor der Freigabe geprüft, die übrigen, sobald eine Frage markiert wird. Keine KI liest oder beurteilt die Antwort eines Kandidaten.
 
-testee führt keine strukturierten Interviews, Arbeitsproben oder kognitiven Tests durch. Nutze es daneben. Mehr zu Testarten und Fairness liest du unter [Einstellungstests](/pre-employment-testing).
+testee führt keine strukturierten Interviews, Arbeitsproben oder kognitiven Tests durch. Nutze es daneben. Mehr zu Testarten und Fairness liest du unter [Einstellungstests](/guides/pre-employment-testing).
 
 ## Quellen
 

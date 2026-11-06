@@ -559,32 +559,6 @@
       "Your candidates get their own random questions, never the samples shown here."
     ]
   },
-  "aiInterviews": {
-    "title": "AI interviews",
-    "text": "A guide to the kinds of AI interview tools, how testee's approach works, and the compliance basics.",
-    "actions": [
-      "Compare chatbot, video and generated-test interview tools.",
-      "Read, step by step, how testee makes and marks an interview, and what it never does.",
-      "Read the basics of the EU AI Act, the GDPR and US rules for AI in hiring.",
-      "Create a test for your candidates from the card at the end."
-    ],
-    "tips": [
-      "It's a summary, not legal advice: check with your own counsel."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Pre-employment testing",
-    "text": "A plain guide for hiring teams to pre-employment tests: the types, when they help, fairness and the law, and choosing a tool.",
-    "actions": [
-      "Read which types of tests exist and when each one helps.",
-      "Read the fairness and legal basics.",
-      "See what to look for in a testing tool, and how testee does it.",
-      "Create a test for your candidates from the card at the end."
-    ],
-    "tips": [
-      "It's a summary, not legal advice: check with your own counsel."
-    ]
-  },
   "compare": {
     "title": "Compare testee",
     "text": "Sourced comparisons of testee with other pre-employment testing tools: how tests are made, what they cost and when each fits better.",

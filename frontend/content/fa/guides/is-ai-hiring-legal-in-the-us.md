@@ -119,7 +119,7 @@ testee مصاحبه‌های مهارتی چندگزینه‌ای زمان‌د�
 - [آیا استخدام با هوش مصنوعی در اتحادیه اروپا قانونی است؟](/guides/is-ai-hiring-legal-in-the-eu)
 - [آیا استخدام با هوش مصنوعی در بریتانیا قانونی است؟](/guides/is-ai-hiring-legal-in-the-uk)
 - [چطور زمان آزمون مهارت را تنظیم کنیم: زمان هر پرسش، طول آزمون و زمان اضافه](/guides/skills-test-timing-and-extra-time)
-- [آزمون‌های استخدامی: راهنمای عملی](/pre-employment-testing)
+- [آزمون‌های استخدامی: راهنمای عملی](/guides/pre-employment-testing)
 
 ## منابع
 

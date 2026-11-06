@@ -107,7 +107,7 @@ testee ile yalnızca en az bir soruyu yanıtlayan adaylar için ödeme yaparsın
 
 ## İlgili yazılar
 
-- [İşe alım öncesi testler: pratik bir rehber](/pre-employment-testing)
+- [İşe alım öncesi testler: pratik bir rehber](/guides/pre-employment-testing)
 - [Beceri testleri ve CV taraması](/guides/skills-tests-vs-cv-screening)
 - [İyi bir test çıkaran iş tanımı nasıl yazılır](/guides/job-description-that-tests-well)
 - [İşe alım öncesi test maliyetleri nasıl karşılaştırılır](/compare/cheapest-pre-employment-test)

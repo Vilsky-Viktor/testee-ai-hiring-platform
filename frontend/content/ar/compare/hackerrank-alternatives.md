@@ -107,5 +107,5 @@ testee ليس بديلًا عنها. فهو يؤدي مهمة مختلفة: اخ
 
 - [بدائل TestGorilla](/compare/testgorilla-alternatives)
 - [كيف تقارن تكاليف اختبارات ما قبل التوظيف](/compare/cheapest-pre-employment-test)
-- [مقابلات الذكاء الاصطناعي: ما هي وكيف تستخدمها بعدالة](/ai-interviews)
-- [دليل اختبارات ما قبل التوظيف](/pre-employment-testing)
+- [مقابلات الذكاء الاصطناعي: ما هي وكيف تستخدمها بعدالة](/guides/ai-interviews)
+- [دليل اختبارات ما قبل التوظيف](/guides/pre-employment-testing)

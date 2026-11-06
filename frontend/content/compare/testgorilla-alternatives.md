@@ -104,4 +104,4 @@ What each tool costs depends on your volume and the plans you need. [How to comp
 
 - [How to compare test costs](/compare/cheapest-pre-employment-test)
 - [Pre-employment tests without a subscription](/compare/pre-employment-tests-without-subscription)
-- [Pre-employment testing guide](/pre-employment-testing)
+- [Pre-employment testing guide](/guides/pre-employment-testing)

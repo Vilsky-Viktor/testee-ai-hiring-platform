@@ -75,4 +75,4 @@ testee גובה תשלום על כל מועמד שעונה על שאלה אחת 
 
 - [מבחני מיון בלי מנוי](/compare/pre-employment-tests-without-subscription)
 - [testee ו-TestGorilla](/compare/testgorilla)
-- [מדריך למבחני מיון לעבודה](/pre-employment-testing)
+- [מדריך למבחני מיון לעבודה](/guides/pre-employment-testing)

@@ -75,4 +75,4 @@ Xem [các lựa chọn thay thế TestGorilla](/compare/testgorilla-alternatives
 
 - [Bài kiểm tra trước tuyển dụng không cần gói đăng ký](/compare/pre-employment-tests-without-subscription)
 - [testee và TestGorilla](/compare/testgorilla)
-- [Hướng dẫn kiểm tra trước tuyển dụng](/pre-employment-testing)
+- [Hướng dẫn kiểm tra trước tuyển dụng](/guides/pre-employment-testing)

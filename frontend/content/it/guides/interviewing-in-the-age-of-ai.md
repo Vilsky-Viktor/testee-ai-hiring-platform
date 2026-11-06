@@ -76,7 +76,7 @@ testee è adatto al passo 2. Trasforma la tua descrizione del ruolo in un colloq
 - **Segnalazioni di comportamenti sospetti:** le schede di valutazione segnalano le risposte troppo rapide per aver letto la domanda, le volte in cui il candidato ha lasciato la pagina e i tentativi di copia. Quando un candidato ha finito, il suo report indica anche gli andamenti delle risposte che di solito lascia chi passa le domande a un'IA e ne copia le risposte: più o meno lo stesso tempo per ogni domanda, a prescindere da lunghezza e difficoltà, oppure domande difficili giuste e domande facili sbagliate. Una segnalazione o un andamento è un motivo per guardare meglio, non la prova di un imbroglio.
 - **Domande per il colloquio dal vivo:** il report suggerisce fino a 3 domande a cui il candidato ha risposto correttamente, dai suoi argomenti più forti, da approfondire in un colloquio dal vivo, dove nessuna IA può rispondere al suo posto.
 
-Cosa non fa testee: in testee i candidati non scrivono, non eseguono e non fanno debug del codice, e testee non li osserva mentre usano un assistente IA. Questo appartiene alla fase pratica, svolta internamente o su una piattaforma per sviluppatori, che completa il test di conoscenze. Vedi i [test di selezione per ruolo](/tests) per test pronti da cui partire, e [colloqui con IA](/ai-interviews) per come testee usa l'IA e cosa lascia alle persone.
+Cosa non fa testee: in testee i candidati non scrivono, non eseguono e non fanno debug del codice, e testee non li osserva mentre usano un assistente IA. Questo appartiene alla fase pratica, svolta internamente o su una piattaforma per sviluppatori, che completa il test di conoscenze. Vedi i [test di selezione per ruolo](/tests) per test pronti da cui partire, e [colloqui con IA](/guides/ai-interviews) per come testee usa l'IA e cosa lascia alle persone.
 
 ## Equità ed esperienza del candidato
 
@@ -106,5 +106,5 @@ Gli assistenti IA hanno reso più economico produrre codice e più importante gi
 - [Come assumere sviluppatori](/guides/hiring-engineers)
 - [Test di selezione per ruolo](/tests)
 - [Imbrogli nei test di selezione online e come contrastarli](/guides/cheating-in-online-assessments)
-- [Colloqui con IA: cosa sono e come usarli in modo equo](/ai-interviews)
+- [Colloqui con IA: cosa sono e come usarli in modo equo](/guides/ai-interviews)
 - [Test attitudinali e di competenze o screening dei CV](/guides/skills-tests-vs-cv-screening)

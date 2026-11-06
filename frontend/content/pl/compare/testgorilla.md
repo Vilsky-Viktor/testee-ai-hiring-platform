@@ -98,4 +98,4 @@ testee nie wymaga umowy, a jej kredyty nie wygasają, więc dodanie jej do proce
 - [Alternatywy dla TestGorilla](/compare/testgorilla-alternatives)
 - [Jak porównać koszty testów](/compare/cheapest-pre-employment-test)
 - [Testy rekrutacyjne bez subskrypcji](/compare/pre-employment-tests-without-subscription)
-- [Przewodnik po testach rekrutacyjnych](/pre-employment-testing)
+- [Przewodnik po testach rekrutacyjnych](/guides/pre-employment-testing)

@@ -104,4 +104,4 @@ testee підключається до **Workable, Greenhouse, Teamtailor, Recru
 
 - [Як відібрати 100 кандидатів за один день](/guides/screen-100-applicants-in-a-day)
 - [Тести навичок чи відбір за резюме](/guides/skills-tests-vs-cv-screening)
-- [Тестування кандидатів під час найму: практичний посібник](/pre-employment-testing)
+- [Тестування кандидатів під час найму: практичний посібник](/guides/pre-employment-testing)

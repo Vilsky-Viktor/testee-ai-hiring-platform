@@ -559,32 +559,6 @@
       "Je kandidaten krijgen hun eigen willekeurige vragen, nooit de voorbeelden die hier staan."
     ]
   },
-  "aiInterviews": {
-    "title": "AI-interviews",
-    "text": "Een gids over de soorten AI-interviewtools, hoe de aanpak van testee werkt en de basis van compliance.",
-    "actions": [
-      "Vergelijk interviewtools met een chatbot, met video en met gegenereerde tests.",
-      "Lees stap voor stap hoe testee een interview maakt en beoordeelt, en wat het nooit doet.",
-      "Lees de basis van de Europese AI-verordening, de AVG en de Amerikaanse regels voor AI bij werving.",
-      "Maak een test voor je kandidaten met de kaart aan het einde."
-    ],
-    "tips": [
-      "Dit is een samenvatting, geen juridisch advies: overleg met je eigen jurist."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Selectietests",
-    "text": "Een heldere gids over selectietests voor wervingsteams: de soorten, wanneer ze helpen, eerlijkheid en de wet, en het kiezen van een tool.",
-    "actions": [
-      "Lees welke soorten tests er zijn en wanneer elk soort helpt.",
-      "Lees de basis over eerlijkheid en de wet.",
-      "Bekijk waar je op let bij een testtool, en hoe testee het doet.",
-      "Maak een test voor je kandidaten met de kaart aan het einde."
-    ],
-    "tips": [
-      "Dit is een samenvatting, geen juridisch advies: overleg met je eigen jurist."
-    ]
-  },
   "compare": {
     "title": "testee vergeleken",
     "text": "Vergelijkingen met bronnen van testee en andere tools voor selectietests: hoe tests worden gemaakt, wat ze kosten en wanneer welke beter past.",

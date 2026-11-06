@@ -107,5 +107,5 @@ Pour un processus complet de recrutement d'ingénieurs, voir [Comment recruter d
 
 - [Alternatives à TestGorilla](/compare/testgorilla-alternatives)
 - [Comment comparer le coût des tests](/compare/cheapest-pre-employment-test)
-- [Entretiens IA : ce qu'ils sont et comment les utiliser équitablement](/ai-interviews)
-- [Guide des tests de recrutement](/pre-employment-testing)
+- [Entretiens IA : ce qu'ils sont et comment les utiliser équitablement](/guides/ai-interviews)
+- [Guide des tests de recrutement](/guides/pre-employment-testing)

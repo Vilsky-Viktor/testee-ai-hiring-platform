@@ -122,7 +122,7 @@ Bạn có thể dán tối đa 10.000 ký tự, hoặc chỉ mô tả vị trí 
 - [Cách sàng lọc 100 ứng viên trong một ngày](/guides/screen-100-applicants-in-a-day)
 - [Bài kiểm tra kỹ năng và sàng lọc CV](/guides/skills-tests-vs-cv-screening)
 - [Cách đặt thời gian cho bài kiểm tra kỹ năng](/guides/skills-test-timing-and-extra-time)
-- [Bài kiểm tra trước tuyển dụng: hướng dẫn thực tế](/pre-employment-testing)
+- [Bài kiểm tra trước tuyển dụng: hướng dẫn thực tế](/guides/pre-employment-testing)
 
 ## Nguồn tham khảo
 

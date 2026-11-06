@@ -132,7 +132,7 @@ testee 不做的事：候选人不会在 testee 中编写、运行或调试代�
 - **监测结果。** 不同方法在不同群体之间呈现的分数差距不同。Sackett 等人发现，岗位知识测试和工作样本的平均差异大于结构化面试，这也是应该组合使用多种方法的又一个理由。关注每个阶段的通过率。
 - **由人做决定。** 分数是决策的依据，而不是决策本身。在拒绝任何人之前，先看看他们的答案。
 
-关于法律基础知识，包括欧盟《人工智能法案》(EU AI Act) 和美国关于录用率的规定，请参阅[招聘前测评](/pre-employment-testing)。
+关于法律基础知识，包括欧盟《人工智能法案》(EU AI Act) 和美国关于录用率的规定，请参阅[招聘前测评](/guides/pre-employment-testing)。
 
 ## 总结
 
@@ -146,6 +146,6 @@ testee 不做的事：候选人不会在 testee 中编写、运行或调试代�
 
 - [按岗位分类的技能测试](/tests)
 - [HackerRank 替代方案](/compare/hackerrank-alternatives)
-- [招聘前测评指南](/pre-employment-testing)
+- [招聘前测评指南](/guides/pre-employment-testing)
 - [技能测试与简历筛选对比](/guides/skills-tests-vs-cv-screening)
 - [AI 时代如何面试工程师](/guides/interviewing-in-the-age-of-ai)

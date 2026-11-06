@@ -107,5 +107,5 @@ Alooba 列出了覆盖 500 多项技能的 400 多个职位筛选测试，包括
 
 - [TestGorilla 替代方案](/compare/testgorilla-alternatives)
 - [如何比较测评费用](/compare/cheapest-pre-employment-test)
-- [AI 面试：是什么，以及如何公平地使用](/ai-interviews)
-- [招聘前测评指南](/pre-employment-testing)
+- [AI 面试：是什么，以及如何公平地使用](/guides/ai-interviews)
+- [招聘前测评指南](/guides/pre-employment-testing)

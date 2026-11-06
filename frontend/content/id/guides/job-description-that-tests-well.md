@@ -122,7 +122,7 @@ Untuk mencobanya, tempel deskripsi pekerjaan di halaman utama, atau mulai dari t
 - [Cara menyaring 100 pelamar dalam sehari](/guides/screen-100-applicants-in-a-day)
 - [Tes keterampilan vs penyaringan CV](/guides/skills-tests-vs-cv-screening)
 - [Cara mengatur waktu tes keterampilan](/guides/skills-test-timing-and-extra-time)
-- [Tes seleksi karyawan: panduan praktis](/pre-employment-testing)
+- [Tes seleksi karyawan: panduan praktis](/guides/pre-employment-testing)
 
 ## Sumber
 

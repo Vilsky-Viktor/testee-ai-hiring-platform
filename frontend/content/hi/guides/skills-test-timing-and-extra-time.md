@@ -137,7 +137,7 @@ testee में इंटरव्यू एक टाइम वाला म�
 - [स्किल्स टेस्ट बनाम CV स्क्रीनिंग](/guides/skills-tests-vs-cv-screening)
 - [AI के दौर में इंजीनियरों का इंटरव्यू](/guides/interviewing-in-the-age-of-ai)
 - [ऑनलाइन असेसमेंट में नकल, और उसके ख़िलाफ़ क्या काम करता है](/guides/cheating-in-online-assessments)
-- [प्री-एम्प्लॉयमेंट टेस्टिंग: एक प्रैक्टिकल गाइड](/pre-employment-testing)
+- [प्री-एम्प्लॉयमेंट टेस्टिंग: एक प्रैक्टिकल गाइड](/guides/pre-employment-testing)
 
 ## स्रोत
 

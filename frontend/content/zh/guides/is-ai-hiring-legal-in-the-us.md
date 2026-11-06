@@ -119,7 +119,7 @@ testee 根据职位描述，由 AI 编写限时的多项选择技能面试。它
 - [在欧盟用 AI 招聘合法吗？](/guides/is-ai-hiring-legal-in-the-eu)
 - [在英国用 AI 招聘合法吗？](/guides/is-ai-hiring-legal-in-the-uk)
 - [技能测试如何设置时间：每题计时、测试长度与额外时间](/guides/skills-test-timing-and-extra-time)
-- [招聘前测评：实用指南](/pre-employment-testing)
+- [招聘前测评：实用指南](/guides/pre-employment-testing)
 
 ## 参考文献
 

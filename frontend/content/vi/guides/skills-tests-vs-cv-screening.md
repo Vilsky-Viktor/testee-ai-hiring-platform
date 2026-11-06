@@ -87,7 +87,7 @@ testee đảm nhận bước 2: một bài kiểm tra kiến thức chuyên môn
 - **Kết quả dễ đọc.** Một bảng điểm cho mỗi ứng viên với từng câu trả lời và thời gian, xếp hạng theo điểm, kèm cảnh báo về trả lời quá nhanh, rời khỏi trang, cố sao chép và mẫu trả lời bất thường.
 - **Câu trả lời được chấm theo đáp án** do AI viết; một phần đáp án của mỗi chủ đề được kiểm tra trước khi phát hành, phần còn lại khi câu hỏi bị đánh dấu. Không có AI nào đọc hay đánh giá câu trả lời của ứng viên.
 
-testee không tổ chức phỏng vấn có cấu trúc, mẫu công việc hay bài kiểm tra nhận thức. Hãy dùng testee cùng với các phương pháp đó. Để tìm hiểu thêm về các loại bài kiểm tra và tính công bằng, đọc [Kiểm tra trước tuyển dụng](/pre-employment-testing).
+testee không tổ chức phỏng vấn có cấu trúc, mẫu công việc hay bài kiểm tra nhận thức. Hãy dùng testee cùng với các phương pháp đó. Để tìm hiểu thêm về các loại bài kiểm tra và tính công bằng, đọc [Kiểm tra trước tuyển dụng](/guides/pre-employment-testing).
 
 ## Nguồn tham khảo
 

@@ -122,7 +122,7 @@ testee — один из примеров инструмента, который
 - [Как отобрать 100 кандидатов за день](/guides/screen-100-applicants-in-a-day)
 - [Тесты навыков или отбор по резюме](/guides/skills-tests-vs-cv-screening)
 - [Как рассчитать время теста навыков](/guides/skills-test-timing-and-extra-time)
-- [Тестирование кандидатов при найме: практическое руководство](/pre-employment-testing)
+- [Тестирование кандидатов при найме: практическое руководство](/guides/pre-employment-testing)
 
 ## Источники
 

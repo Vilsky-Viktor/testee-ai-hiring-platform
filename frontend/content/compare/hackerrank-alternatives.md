@@ -107,5 +107,5 @@ For a full engineering process, see [How to hire engineers](/guides/hiring-engin
 
 - [TestGorilla alternatives](/compare/testgorilla-alternatives)
 - [How to compare test costs](/compare/cheapest-pre-employment-test)
-- [AI interviews: what they are and how to use them fairly](/ai-interviews)
-- [Pre-employment testing guide](/pre-employment-testing)
+- [AI interviews: what they are and how to use them fairly](/guides/ai-interviews)
+- [Pre-employment testing guide](/guides/pre-employment-testing)

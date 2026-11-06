@@ -98,4 +98,4 @@ testee の場合：いいえ、いいえ、いいえ、はい（両方可能）�
 - [テスト費用の比較方法](/compare/cheapest-pre-employment-test)
 - [TestGorilla の代替ツール](/compare/testgorilla-alternatives)
 - [testee と TestGorilla](/compare/testgorilla)
-- [採用前テストガイド](/pre-employment-testing)
+- [採用前テストガイド](/guides/pre-employment-testing)

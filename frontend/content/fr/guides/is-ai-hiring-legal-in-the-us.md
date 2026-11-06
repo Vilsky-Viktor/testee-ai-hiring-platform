@@ -119,7 +119,7 @@ Ce que cela donne aujourd'hui dans le produit :
 - [L'IA dans le recrutement est-elle légale dans l'UE ?](/guides/is-ai-hiring-legal-in-the-eu)
 - [L'IA dans le recrutement est-elle légale au Royaume-Uni ?](/guides/is-ai-hiring-legal-in-the-uk)
 - [Chronométrer un test de compétences : temps par question, durée et temps supplémentaire](/guides/skills-test-timing-and-extra-time)
-- [Tests de recrutement : guide pratique](/pre-employment-testing)
+- [Tests de recrutement : guide pratique](/guides/pre-employment-testing)
 
 ## Sources
 

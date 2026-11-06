@@ -98,4 +98,4 @@ testee n'a pas de contrat et ses crédits n'expirent pas : l'ajouter à un proce
 - [Alternatives à TestGorilla](/compare/testgorilla-alternatives)
 - [Comment comparer le coût des tests](/compare/cheapest-pre-employment-test)
 - [Tests de recrutement sans abonnement](/compare/pre-employment-tests-without-subscription)
-- [Guide des tests de recrutement](/pre-employment-testing)
+- [Guide des tests de recrutement](/guides/pre-employment-testing)

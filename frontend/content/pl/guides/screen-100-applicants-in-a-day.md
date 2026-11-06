@@ -107,7 +107,7 @@ W testee płacisz tylko za kandydatów, którzy odpowiedzą na co najmniej jedno
 
 ## Przeczytaj też
 
-- [Testy rekrutacyjne: praktyczny poradnik](/pre-employment-testing)
+- [Testy rekrutacyjne: praktyczny poradnik](/guides/pre-employment-testing)
 - [Testy umiejętności a selekcja CV](/guides/skills-tests-vs-cv-screening)
 - [Jak napisać opis stanowiska, z którego powstanie dobry test](/guides/job-description-that-tests-well)
 - [Jak porównać koszty testów](/compare/cheapest-pre-employment-test)

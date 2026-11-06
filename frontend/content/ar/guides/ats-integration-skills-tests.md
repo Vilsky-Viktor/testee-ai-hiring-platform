@@ -104,4 +104,4 @@ updated: "2026-10-21"
 
 - [كيف تفرز 100 متقدم في يوم واحد](/guides/screen-100-applicants-in-a-day)
 - [اختبارات المهارات مقابل فرز السير الذاتية](/guides/skills-tests-vs-cv-screening)
-- [اختبارات ما قبل التوظيف: دليل عملي](/pre-employment-testing)
+- [اختبارات ما قبل التوظيف: دليل عملي](/guides/pre-employment-testing)

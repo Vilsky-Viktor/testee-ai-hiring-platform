@@ -76,7 +76,7 @@ testee es muy adecuado para el paso 2. Convierte tu descripción del puesto en u
 - **Alertas de integridad:** las fichas de evaluación marcan las respuestas demasiado rápidas como para haber leído la pregunta, las veces que el candidato salió de la página y los intentos de copiar. Cuando un candidato termina, su informe también señala los patrones de respuesta típicos de quien le pasa las preguntas a una IA: más o menos el mismo tiempo en cada pregunta, sin importar su extensión o dificultad, o aciertos en las preguntas difíciles y fallos en las fáciles. Una alerta o un patrón es un motivo para mirar con más atención, no una prueba de trampa.
 - **Preguntas para la entrevista en directo:** el informe sugiere hasta 3 preguntas que el candidato acertó, de los temas que mejor domina, para comentarlas en una entrevista en directo, donde ninguna IA puede responder por él.
 
-Lo que testee no hace: los candidatos no escriben, ejecutan ni depuran código en testee, y no observa cómo usan un asistente de IA. Eso corresponde a la fase práctica, hecha internamente o en una plataforma para desarrolladores, que complementa el filtro de conocimientos. Consulta las [pruebas de habilidades por puesto](/tests) para empezar desde pruebas ya preparadas, y [Entrevistas con IA](/ai-interviews) para ver cómo usa testee la IA y qué deja en manos de las personas.
+Lo que testee no hace: los candidatos no escriben, ejecutan ni depuran código en testee, y no observa cómo usan un asistente de IA. Eso corresponde a la fase práctica, hecha internamente o en una plataforma para desarrolladores, que complementa el filtro de conocimientos. Consulta las [pruebas de habilidades por puesto](/tests) para empezar desde pruebas ya preparadas, y [Entrevistas con IA](/guides/ai-interviews) para ver cómo usa testee la IA y qué deja en manos de las personas.
 
 ## Equidad y experiencia del candidato
 
@@ -106,5 +106,5 @@ Los asistentes de IA han abaratado la producción de código y han hecho más im
 - [Cómo contratar ingenieros](/guides/hiring-engineers)
 - [Pruebas de habilidades por puesto](/tests)
 - [Trampas en las pruebas de selección en línea y qué funciona contra ellas](/guides/cheating-in-online-assessments)
-- [Entrevistas con IA: qué son y cómo usarlas de forma justa](/ai-interviews)
+- [Entrevistas con IA: qué son y cómo usarlas de forma justa](/guides/ai-interviews)
 - [Pruebas de habilidades frente a filtrado de CV](/guides/skills-tests-vs-cv-screening)

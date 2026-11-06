@@ -107,5 +107,5 @@ Voor een volledig selectieproces voor developers, zie [Developers werven](/guide
 
 - [Alternatieven voor TestGorilla](/compare/testgorilla-alternatives)
 - [Hoe je de kosten van selectietests vergelijkt](/compare/cheapest-pre-employment-test)
-- [AI-interviews: wat ze zijn en hoe je ze eerlijk inzet](/ai-interviews)
-- [Gids voor selectietests](/pre-employment-testing)
+- [AI-interviews: wat ze zijn en hoe je ze eerlijk inzet](/guides/ai-interviews)
+- [Gids voor selectietests](/guides/pre-employment-testing)

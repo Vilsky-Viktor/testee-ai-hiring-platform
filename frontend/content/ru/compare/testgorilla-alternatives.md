@@ -104,4 +104,4 @@ TestGorilla может подойти вам лучше, если:
 
 - [Как сравнить стоимость тестирования кандидатов](/compare/cheapest-pre-employment-test)
 - [Тесты для кандидатов без подписки](/compare/pre-employment-tests-without-subscription)
-- [Руководство по тестированию кандидатов при найме](/pre-employment-testing)
+- [Руководство по тестированию кандидатов при найме](/guides/pre-employment-testing)

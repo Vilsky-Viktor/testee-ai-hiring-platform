@@ -107,7 +107,7 @@ updated: "2026-10-29"
 
 ## קריאה נוספת
 
-- [מבחני מיון לעבודה: מדריך מעשי](/pre-employment-testing)
+- [מבחני מיון לעבודה: מדריך מעשי](/guides/pre-employment-testing)
 - [מבחני מיומנויות מול סינון קורות חיים](/guides/skills-tests-vs-cv-screening)
 - [איך לכתוב תיאור משרה שאפשר לבנות ממנו מבחן טוב](/guides/job-description-that-tests-well)
 - [איך להשוות עלויות של מבחנים](/compare/cheapest-pre-employment-test)

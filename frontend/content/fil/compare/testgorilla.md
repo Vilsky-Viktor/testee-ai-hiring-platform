@@ -98,4 +98,4 @@ Walang kontrata ang testee at hindi nag-e-expire ang credits nito, kaya ang pagd
 - [Mga alternatibo sa TestGorilla](/compare/testgorilla-alternatives)
 - [Paano ikumpara ang gastos ng mga test](/compare/cheapest-pre-employment-test)
 - [Pre-employment tests na walang subscription](/compare/pre-employment-tests-without-subscription)
-- [Gabay sa pre-employment testing](/pre-employment-testing)
+- [Gabay sa pre-employment testing](/guides/pre-employment-testing)

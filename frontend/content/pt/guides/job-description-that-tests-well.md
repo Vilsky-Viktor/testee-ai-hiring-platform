@@ -122,7 +122,7 @@ Para experimentar, cole uma descrição na página inicial, ou comece por um tes
 - [Como fazer a triagem de 100 candidatos em um dia](/guides/screen-100-applicants-in-a-day)
 - [Testes de habilidades x triagem de currículos](/guides/skills-tests-vs-cv-screening)
 - [Como definir o tempo de um teste de habilidades](/guides/skills-test-timing-and-extra-time)
-- [Teste de seleção: guia prático](/pre-employment-testing)
+- [Teste de seleção: guia prático](/guides/pre-employment-testing)
 
 ## Fontes
 

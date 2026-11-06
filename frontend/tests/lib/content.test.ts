@@ -43,7 +43,7 @@ describe("parseContent", () => {
 
 describe("contentPage", () => {
   it("reads a page from the content folder", async () => {
-    const page = await contentPage("pages", "pre-employment-testing")
+    const page = await contentPage("guides", "pre-employment-testing")
 
     expect(page?.title).toBeTruthy()
   })
@@ -59,7 +59,7 @@ describe("contentPage", () => {
   })
 
   it("never reads outside the folder or a missing page", async () => {
-    expect(await contentPage("guides", "../pages/ai-interviews")).toBeNull()
+    expect(await contentPage("guides", "../compare/testgorilla")).toBeNull()
     expect(await contentPage("guides", "no-such-guide")).toBeNull()
   })
 })

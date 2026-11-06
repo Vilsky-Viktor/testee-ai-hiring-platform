@@ -87,7 +87,7 @@ testee couvre l'étape 2 : un test chronométré à choix multiples sur les conn
 - **Des résultats lisibles.** Une fiche d'évaluation par candidat avec chaque réponse et son temps, classée par score, avec des alertes pour les réponses trop rapides, les sorties de la page, les tentatives de copie et les schémas de réponse inhabituels.
 - **Des réponses notées d'après un corrigé** que l'IA rédige ; un échantillon des corrigés de chaque thème est vérifié avant la mise en ligne, les autres dès qu'une question est signalée. Aucune IA ne lit ni ne juge la réponse d'un candidat.
 
-testee ne mène pas d'entretiens structurés, de mises en situation ni de tests cognitifs. Utilisez-le en complément. Pour en savoir plus sur les types de tests et l'équité, lisez [Tests de recrutement](/pre-employment-testing).
+testee ne mène pas d'entretiens structurés, de mises en situation ni de tests cognitifs. Utilisez-le en complément. Pour en savoir plus sur les types de tests et l'équité, lisez [Tests de recrutement](/guides/pre-employment-testing).
 
 ## Sources
 

@@ -107,7 +107,7 @@ Dengan testee, kamu hanya membayar untuk kandidat yang menjawab setidaknya satu 
 
 ## Bacaan terkait
 
-- [Tes seleksi karyawan: panduan praktis](/pre-employment-testing)
+- [Tes seleksi karyawan: panduan praktis](/guides/pre-employment-testing)
 - [Tes keterampilan vs penyaringan CV](/guides/skills-tests-vs-cv-screening)
 - [Cara menulis deskripsi pekerjaan yang bisa diuji dengan baik](/guides/job-description-that-tests-well)
 - [Cara membandingkan biaya tes](/compare/cheapest-pre-employment-test)

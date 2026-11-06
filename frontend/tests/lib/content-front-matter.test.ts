@@ -10,7 +10,7 @@ import { contentLanguages, contentPages, parseContent } from "@/lib/content"
 // Rule 23's limits: search results cut longer titles and snippets.
 const SEO_TITLE_MAX = 60
 const DESCRIPTION_MAX = 155
-const FOLDERS: ContentFolder[] = ["pages", "compare", "guides"]
+const FOLDERS: ContentFolder[] = ["compare", "guides"]
 
 /** Every article in every language it's written in, with its file's own text. */
 async function everyFile() {

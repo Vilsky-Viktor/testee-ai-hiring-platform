@@ -98,4 +98,4 @@ Vul de echte prijzen van de prijspagina van elke leverancier, en die van [testee
 - [Hoe je de kosten van selectietests vergelijkt](/compare/cheapest-pre-employment-test)
 - [Alternatieven voor TestGorilla](/compare/testgorilla-alternatives)
 - [testee en TestGorilla](/compare/testgorilla)
-- [Gids voor selectietests](/pre-employment-testing)
+- [Gids voor selectietests](/guides/pre-employment-testing)

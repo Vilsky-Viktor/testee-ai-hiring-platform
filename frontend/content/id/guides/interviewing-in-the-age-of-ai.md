@@ -76,7 +76,7 @@ testee sangat cocok untuk langkah 2. testee mengubah deskripsi pekerjaanmu menja
 - **Tanda peringatan:** scorecard menandai jawaban yang terlalu cepat untuk sempat membaca soalnya, saat kandidat meninggalkan halaman, dan percobaan menyalin. Setelah kandidat selesai, laporannya juga menunjukkan pola jawaban yang biasanya muncul saat soal diteruskan ke AI dan jawabannya disalin: waktu yang kira-kira sama di setiap soal, berapa pun panjang atau tingkat kesulitannya, atau soal sulit dijawab benar sementara soal mudah salah. Tanda atau pola adalah alasan untuk melihat lebih teliti, bukan bukti kecurangan.
 - **Soal untuk wawancara langsung:** laporannya menyarankan hingga 3 soal yang dijawab benar oleh kandidat, dari topik terkuatnya, untuk dibahas dalam wawancara langsung, tempat tidak ada AI yang bisa menjawab untuknya.
 
-Yang tidak dilakukan testee: kandidat tidak menulis, menjalankan, atau men-debug kode di testee, dan testee tidak mengamati mereka memakai asisten AI. Itu masuk ke tahap praktik langsung, yang dijalankan sendiri oleh timmu atau di platform developer, dan melengkapi tes pengetahuan. Lihat [tes keterampilan per posisi](/tests) untuk tes siap pakai sebagai titik awal, dan [Wawancara AI](/ai-interviews) untuk cara testee memakai AI dan apa yang diserahkannya kepada manusia.
+Yang tidak dilakukan testee: kandidat tidak menulis, menjalankan, atau men-debug kode di testee, dan testee tidak mengamati mereka memakai asisten AI. Itu masuk ke tahap praktik langsung, yang dijalankan sendiri oleh timmu atau di platform developer, dan melengkapi tes pengetahuan. Lihat [tes keterampilan per posisi](/tests) untuk tes siap pakai sebagai titik awal, dan [Wawancara AI](/guides/ai-interviews) untuk cara testee memakai AI dan apa yang diserahkannya kepada manusia.
 
 ## Keadilan dan pengalaman kandidat
 
@@ -106,5 +106,5 @@ Asisten AI membuat produksi kode makin murah dan penilaian kode makin penting. P
 - [Cara merekrut engineer](/guides/hiring-engineers)
 - [Tes keterampilan per posisi](/tests)
 - [Kecurangan dalam tes online, dan cara yang benar-benar efektif mengatasinya](/guides/cheating-in-online-assessments)
-- [Wawancara AI: apa itu dan cara memakainya secara adil](/ai-interviews)
+- [Wawancara AI: apa itu dan cara memakainya secara adil](/guides/ai-interviews)
 - [Tes keterampilan vs penyaringan CV](/guides/skills-tests-vs-cv-screening)

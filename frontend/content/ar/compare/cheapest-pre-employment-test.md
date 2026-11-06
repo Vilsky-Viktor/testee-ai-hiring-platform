@@ -75,4 +75,4 @@ updated: "2026-10-21"
 
 - [اختبارات ما قبل التوظيف دون اشتراك](/compare/pre-employment-tests-without-subscription)
 - [testee وTestGorilla](/compare/testgorilla)
-- [دليل اختبارات ما قبل التوظيف](/pre-employment-testing)
+- [دليل اختبارات ما قبل التوظيف](/guides/pre-employment-testing)

@@ -137,7 +137,7 @@ Antes de invitar a nadie, haz tú mismo la entrevista desde su página: es grati
 - [Pruebas de habilidades frente a filtrado de CV](/guides/skills-tests-vs-cv-screening)
 - [Entrevistar a ingenieros en la era de la IA](/guides/interviewing-in-the-age-of-ai)
 - [Trampas en las pruebas de selección en línea y qué funciona contra ellas](/guides/cheating-in-online-assessments)
-- [Pruebas de selección de personal: guía práctica](/pre-employment-testing)
+- [Pruebas de selección de personal: guía práctica](/guides/pre-employment-testing)
 
 ## Fuentes
 

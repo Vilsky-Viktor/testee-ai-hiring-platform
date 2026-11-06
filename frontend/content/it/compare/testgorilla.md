@@ -98,4 +98,4 @@ testee non ha contratti e i suoi crediti non scadono, quindi aggiungerlo a un pr
 - [Alternative a TestGorilla](/compare/testgorilla-alternatives)
 - [Come confrontare i costi dei test](/compare/cheapest-pre-employment-test)
 - [Test pre-assunzione senza abbonamento](/compare/pre-employment-tests-without-subscription)
-- [Guida ai test pre-assunzione](/pre-employment-testing)
+- [Guida ai test pre-assunzione](/guides/pre-employment-testing)

@@ -137,7 +137,7 @@ Bevor du jemanden einlädst, mach das Interview selbst von seiner Seite aus: Das
 - [Fachtests vs. Lebenslauf-Screening](/guides/skills-tests-vs-cv-screening)
 - [Entwickler interviewen im KI-Zeitalter](/guides/interviewing-in-the-age-of-ai)
 - [Schummeln bei Online-Einstellungstests und was dagegen hilft](/guides/cheating-in-online-assessments)
-- [Einstellungstests: ein Praxisleitfaden](/pre-employment-testing)
+- [Einstellungstests: ein Praxisleitfaden](/guides/pre-employment-testing)
 
 ## Quellen
 

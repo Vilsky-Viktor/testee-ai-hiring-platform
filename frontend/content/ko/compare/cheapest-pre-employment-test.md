@@ -75,4 +75,4 @@ testee는 문제에 하나 이상 답한 지원자당 요금을 받습니다. �
 
 - [구독 없는 채용 전 테스트](/compare/pre-employment-tests-without-subscription)
 - [testee와 TestGorilla](/compare/testgorilla)
-- [채용 전 테스트 가이드](/pre-employment-testing)
+- [채용 전 테스트 가이드](/guides/pre-employment-testing)

@@ -75,4 +75,4 @@ testee به ازای هر متقاضی‌ای که دست‌کم به یک پر�
 
 - [آزمون استخدامی بدون اشتراک](/compare/pre-employment-tests-without-subscription)
 - [testee و TestGorilla](/compare/testgorilla)
-- [راهنمای آزمون‌های استخدامی](/pre-employment-testing)
+- [راهنمای آزمون‌های استخدامی](/guides/pre-employment-testing)

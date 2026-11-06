@@ -132,7 +132,7 @@ Sackett 외(2022)에서 구조화 면접은 단일 방법 중 가장 강력한 �
 - **결과를 모니터링하세요.** 방법마다 집단 간 점수 차이가 다르게 나타납니다. Sackett 외는 직무 지식 테스트와 업무 샘플에서 구조화 면접보다 평균 차이가 더 크다는 결과를 얻었고, 이는 여러 방법을 조합해야 하는 또 하나의 이유입니다. 각 단계의 통과율을 지켜보세요.
 - **결정은 사람이 합니다.** 점수는 결정을 돕지만, 결정을 대신하지 않습니다. 누군가를 탈락시키기 전에 답변을 직접 살펴보세요.
 
-EU AI Act와 미국의 선발 비율 관련 규정 등 법적 기본 사항은 [채용 전 테스트](/pre-employment-testing)를 참고하세요.
+EU AI Act와 미국의 선발 비율 관련 규정 등 법적 기본 사항은 [채용 전 테스트](/guides/pre-employment-testing)를 참고하세요.
 
 ## 요약
 
@@ -146,6 +146,6 @@ EU AI Act와 미국의 선발 비율 관련 규정 등 법적 기본 사항은 [
 
 - [직무별 역량 테스트](/tests)
 - [HackerRank 대안](/compare/hackerrank-alternatives)
-- [채용 전 테스트 가이드](/pre-employment-testing)
+- [채용 전 테스트 가이드](/guides/pre-employment-testing)
 - [역량 테스트 vs 이력서 심사](/guides/skills-tests-vs-cv-screening)
 - [AI 시대의 엔지니어 면접](/guides/interviewing-in-the-age-of-ai)

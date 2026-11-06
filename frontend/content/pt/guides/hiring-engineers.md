@@ -132,7 +132,7 @@ Um processo estruturado também é mais justo, mas só se você o aplicar de for
 - **Acompanhe os resultados.** Métodos diferentes mostram diferenças de pontuação diferentes entre grupos. Sackett et al. encontraram diferenças médias maiores em testes de conhecimentos da função e amostras de trabalho do que em entrevistas estruturadas, o que é mais um motivo para combinar métodos. Acompanhe as taxas de aprovação em cada etapa.
 - **Pessoas decidem.** Uma pontuação apoia uma decisão; ela não toma a decisão. Olhe as respostas antes de reprovar alguém.
 
-Para o básico jurídico, incluindo o Regulamento de IA da UE (EU AI Act) e as regras americanas sobre taxas de seleção, veja [Testes de seleção](/pre-employment-testing).
+Para o básico jurídico, incluindo o Regulamento de IA da UE (EU AI Act) e as regras americanas sobre taxas de seleção, veja [Testes de seleção](/guides/pre-employment-testing).
 
 ## Resumo
 
@@ -146,6 +146,6 @@ Coloque primeiro as verificações amplas e baratas e por último as profundas e
 
 - [Testes de habilidades por cargo](/tests)
 - [Alternativas ao HackerRank](/compare/hackerrank-alternatives)
-- [Guia de testes de seleção](/pre-employment-testing)
+- [Guia de testes de seleção](/guides/pre-employment-testing)
 - [Testes de habilidades x triagem de currículos](/guides/skills-tests-vs-cv-screening)
 - [Entrevistando engenheiros na era da IA](/guides/interviewing-in-the-age-of-ai)

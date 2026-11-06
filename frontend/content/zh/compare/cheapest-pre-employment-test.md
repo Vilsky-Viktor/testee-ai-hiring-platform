@@ -75,4 +75,4 @@ testee 按至少回答了一道题的候选人收费。每位候选人的价格�
 
 - [无需订阅的招聘前测评](/compare/pre-employment-tests-without-subscription)
 - [testee 与 TestGorilla](/compare/testgorilla)
-- [招聘前测评指南](/pre-employment-testing)
+- [招聘前测评指南](/guides/pre-employment-testing)

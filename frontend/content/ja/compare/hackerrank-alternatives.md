@@ -107,5 +107,5 @@ Alooba は、500 以上のスキルにわたる 400 以上の職種別スクリ�
 
 - [TestGorilla の代替ツール](/compare/testgorilla-alternatives)
 - [テスト費用の比較方法](/compare/cheapest-pre-employment-test)
-- [AI 面接とは：種類と公正な使い方](/ai-interviews)
-- [採用前テストガイド](/pre-employment-testing)
+- [AI 面接とは：種類と公正な使い方](/guides/ai-interviews)
+- [採用前テストガイド](/guides/pre-employment-testing)

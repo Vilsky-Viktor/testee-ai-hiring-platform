@@ -98,4 +98,4 @@ testee no tiene contrato y sus créditos no caducan, así que añadirlo a un pro
 - [Alternativas a TestGorilla](/compare/testgorilla-alternatives)
 - [Cómo comparar el coste de las pruebas](/compare/cheapest-pre-employment-test)
 - [Pruebas de selección sin suscripción](/compare/pre-employment-tests-without-subscription)
-- [Guía de pruebas de selección de personal](/pre-employment-testing)
+- [Guía de pruebas de selección de personal](/guides/pre-employment-testing)

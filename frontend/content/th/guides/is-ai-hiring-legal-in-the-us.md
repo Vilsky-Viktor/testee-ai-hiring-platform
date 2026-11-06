@@ -119,7 +119,7 @@ testee จัดการสัมภาษณ์วัดทักษะแบ�
 - [การใช้ AI ในการจ้างงานถูกกฎหมายใน EU หรือไม่?](/guides/is-ai-hiring-legal-in-the-eu)
 - [การใช้ AI ในการจ้างงานถูกกฎหมายในสหราชอาณาจักรหรือไม่?](/guides/is-ai-hiring-legal-in-the-uk)
 - [วิธีกำหนดเวลาแบบทดสอบทักษะ: เวลาต่อคำถาม ความยาว และเวลาเพิ่ม](/guides/skills-test-timing-and-extra-time)
-- [แบบทดสอบก่อนจ้างงาน: คู่มือใช้งานจริง](/pre-employment-testing)
+- [แบบทดสอบก่อนจ้างงาน: คู่มือใช้งานจริง](/guides/pre-employment-testing)
 
 ## แหล่งอ้างอิง
 

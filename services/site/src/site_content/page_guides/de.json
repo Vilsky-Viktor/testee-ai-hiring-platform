@@ -559,32 +559,6 @@
       "Deine Kandidaten bekommen eigene zufällige Fragen, nie die Beispiele von hier."
     ]
   },
-  "aiInterviews": {
-    "title": "KI-Interviews",
-    "text": "Ein Ratgeber zu den Arten von KI-Interview-Tools, wie testee vorgeht und den Grundlagen der Compliance.",
-    "actions": [
-      "Vergleiche Chatbot-, Video- und generierte Test-Tools für Interviews.",
-      "Lies Schritt für Schritt, wie testee ein Interview erstellt und bewertet und was es nie tut.",
-      "Lies die Grundlagen des EU AI Act, der DSGVO und der US-Regeln für KI in der Personalauswahl.",
-      "Erstelle über die Karte am Ende einen Test für deine Kandidaten."
-    ],
-    "tips": [
-      "Das ist eine Zusammenfassung, keine Rechtsberatung: Kläre es mit deiner eigenen Rechtsberatung."
-    ]
-  },
-  "preEmploymentTesting": {
-    "title": "Einstellungstests",
-    "text": "Ein verständlicher Ratgeber zu Einstellungstests für Recruiting-Teams: die Arten, wann sie helfen, Fairness und Recht und die Wahl eines Tools.",
-    "actions": [
-      "Lies, welche Arten von Tests es gibt und wann welche hilft.",
-      "Lies die Grundlagen zu Fairness und Recht.",
-      "Sieh, worauf du bei einem Test-Tool achten solltest und wie testee es macht.",
-      "Erstelle über die Karte am Ende einen Test für deine Kandidaten."
-    ],
-    "tips": [
-      "Das ist eine Zusammenfassung, keine Rechtsberatung: Kläre es mit deiner eigenen Rechtsberatung."
-    ]
-  },
   "compare": {
     "title": "testee im Vergleich",
     "text": "Belegte Vergleiche von testee mit anderen Tools für Einstellungstests: wie Tests entstehen, was sie kosten und wann welches besser passt.",

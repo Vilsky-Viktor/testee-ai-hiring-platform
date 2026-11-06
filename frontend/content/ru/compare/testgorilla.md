@@ -98,4 +98,4 @@ updated: "2026-10-29"
 - [Альтернативы TestGorilla](/compare/testgorilla-alternatives)
 - [Как сравнить стоимость тестирования кандидатов](/compare/cheapest-pre-employment-test)
 - [Тесты для кандидатов без подписки](/compare/pre-employment-tests-without-subscription)
-- [Руководство по тестированию кандидатов при найме](/pre-employment-testing)
+- [Руководство по тестированию кандидатов при найме](/guides/pre-employment-testing)

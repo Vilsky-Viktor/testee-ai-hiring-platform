@@ -104,4 +104,4 @@ testee מתחברת ל-**Workable, Greenhouse, Teamtailor, Recruitee ו-Breezy H
 
 - [איך למיין 100 מועמדים ביום אחד](/guides/screen-100-applicants-in-a-day)
 - [מבחני מיומנויות מול סינון קורות חיים](/guides/skills-tests-vs-cv-screening)
-- [מבחני מיון לעבודה: מדריך מעשי](/pre-employment-testing)
+- [מבחני מיון לעבודה: מדריך מעשי](/guides/pre-employment-testing)

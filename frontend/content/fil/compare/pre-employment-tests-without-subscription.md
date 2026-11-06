@@ -98,4 +98,4 @@ Ilagay sa dalawang linya ang totoong presyo mula sa pricing page ng bawat vendor
 - [Paano ikumpara ang gastos ng mga test](/compare/cheapest-pre-employment-test)
 - [Mga alternatibo sa TestGorilla](/compare/testgorilla-alternatives)
 - [testee at TestGorilla](/compare/testgorilla)
-- [Gabay sa pre-employment testing](/pre-employment-testing)
+- [Gabay sa pre-employment testing](/guides/pre-employment-testing)

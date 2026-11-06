@@ -75,4 +75,4 @@ Tingnan ang [Mga alternatibo sa TestGorilla](/compare/testgorilla-alternatives) 
 
 - [Pre-employment tests na walang subscription](/compare/pre-employment-tests-without-subscription)
 - [testee at TestGorilla](/compare/testgorilla)
-- [Gabay sa pre-employment testing](/pre-employment-testing)
+- [Gabay sa pre-employment testing](/guides/pre-employment-testing)

@@ -120,7 +120,7 @@ Ang hitsura nito sa produkto ngayon:
 - [Legal ba ang AI hiring sa EU?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Legal ba ang AI hiring sa US?](/guides/is-ai-hiring-legal-in-the-us)
 - [Paano itakda ang oras ng skills test: oras bawat tanong, haba at dagdag na oras](/guides/skills-test-timing-and-extra-time)
-- [AI interviews: ano ang mga ito at paano gamitin nang patas](/ai-interviews)
+- [AI interviews: ano ang mga ito at paano gamitin nang patas](/guides/ai-interviews)
 
 ## Mga source
 

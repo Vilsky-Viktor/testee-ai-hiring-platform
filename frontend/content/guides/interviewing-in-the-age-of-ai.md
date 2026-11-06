@@ -76,7 +76,7 @@ testee is well suited to step 2. It turns your job description into a timed mult
 - **Integrity signals:** scorecards flag answers too fast to have read the question, times the candidate left the page, and copy attempts. Once a candidate finishes, their report also points out answer patterns that relaying questions to an AI tends to leave: about the same time on every question whatever its length or difficulty, or hard questions right while easy ones were wrong. A flag or a pattern is a reason to look closer, not proof of cheating.
 - **Questions for the live interview:** the report suggests up to 3 questions the candidate got right, from their strongest topics, to talk through in a live interview, where no AI can answer for them.
 
-What testee doesn't do: candidates don't write, run or debug code in testee, and it doesn't watch them use an AI assistant. That belongs in the hands-on stage, run in-house or on a developer platform, which complements the knowledge screen. See [skills tests by role](/tests) for ready-made tests to start from, and [AI interviews](/ai-interviews) for how testee uses AI and what it leaves to people.
+What testee doesn't do: candidates don't write, run or debug code in testee, and it doesn't watch them use an AI assistant. That belongs in the hands-on stage, run in-house or on a developer platform, which complements the knowledge screen. See [skills tests by role](/tests) for ready-made tests to start from, and [AI interviews](/guides/ai-interviews) for how testee uses AI and what it leaves to people.
 
 ## Fairness and candidate experience
 
@@ -106,5 +106,5 @@ AI assistants have made producing code cheaper and judging code more important. 
 - [How to hire engineers](/guides/hiring-engineers)
 - [Skills tests by role](/tests)
 - [Cheating in online assessments, and what works against it](/guides/cheating-in-online-assessments)
-- [AI interviews: what they are and how to use them fairly](/ai-interviews)
+- [AI interviews: what they are and how to use them fairly](/guides/ai-interviews)
 - [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)

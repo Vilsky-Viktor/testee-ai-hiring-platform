@@ -119,7 +119,7 @@ What that looks like in the product today:
 - [Is AI hiring legal in the EU?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Is AI hiring legal in the UK?](/guides/is-ai-hiring-legal-in-the-uk)
 - [How to time a skills test: question timers, length and extra time](/guides/skills-test-timing-and-extra-time)
-- [Pre-employment testing: a practical guide](/pre-employment-testing)
+- [Pre-employment testing: a practical guide](/guides/pre-employment-testing)
 
 ## Sources
 

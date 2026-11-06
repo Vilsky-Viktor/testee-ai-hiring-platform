@@ -104,4 +104,4 @@ Was jedes Tool kostet, hängt von deinem Volumen und den benötigten Tarifen ab.
 
 - [Kosten von Einstellungstests vergleichen](/compare/cheapest-pre-employment-test)
 - [Einstellungstests ohne Abo](/compare/pre-employment-tests-without-subscription)
-- [Leitfaden zu Einstellungstests](/pre-employment-testing)
+- [Leitfaden zu Einstellungstests](/guides/pre-employment-testing)

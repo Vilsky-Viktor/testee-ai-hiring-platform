@@ -120,7 +120,7 @@ What that looks like in the product today:
 - [Is AI hiring legal in the EU?](/guides/is-ai-hiring-legal-in-the-eu)
 - [Is AI hiring legal in the US?](/guides/is-ai-hiring-legal-in-the-us)
 - [How to time a skills test: question timers, length and extra time](/guides/skills-test-timing-and-extra-time)
-- [AI interviews: what they are and how to use them fairly](/ai-interviews)
+- [AI interviews: what they are and how to use them fairly](/guides/ai-interviews)
 
 ## Sources
 

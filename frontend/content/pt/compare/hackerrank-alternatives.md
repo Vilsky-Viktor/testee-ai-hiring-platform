@@ -107,5 +107,5 @@ Para um processo completo de engenharia, veja [Como contratar engenheiros](/guid
 
 - [Alternativas à TestGorilla](/compare/testgorilla-alternatives)
 - [Como comparar o custo dos testes](/compare/cheapest-pre-employment-test)
-- [Entrevistas com IA: o que são e como usá-las de forma justa](/ai-interviews)
-- [Guia de testes de seleção](/pre-employment-testing)
+- [Entrevistas com IA: o que são e como usá-las de forma justa](/guides/ai-interviews)
+- [Guia de testes de seleção](/guides/pre-employment-testing)

@@ -98,4 +98,4 @@ Put the real prices from each vendor's pricing page, and [testee's](/pricing), i
 - [How to compare test costs](/compare/cheapest-pre-employment-test)
 - [TestGorilla alternatives](/compare/testgorilla-alternatives)
 - [testee and TestGorilla](/compare/testgorilla)
-- [Pre-employment testing guide](/pre-employment-testing)
+- [Pre-employment testing guide](/guides/pre-employment-testing)

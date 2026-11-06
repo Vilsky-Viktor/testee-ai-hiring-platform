@@ -122,7 +122,7 @@ testee نمونه‌ای از ابزاری است که از شرح شغل یک �
 - [چطور ۱۰۰ متقاضی را در یک روز غربال کنیم](/guides/screen-100-applicants-in-a-day)
 - [آزمون مهارت در برابر غربالگری رزومه](/guides/skills-tests-vs-cv-screening)
 - [چطور زمان آزمون مهارت را تنظیم کنیم](/guides/skills-test-timing-and-extra-time)
-- [آزمون‌های استخدامی: راهنمای عملی](/pre-employment-testing)
+- [آزمون‌های استخدامی: راهنمای عملی](/guides/pre-employment-testing)
 
 ## منابع
 

@@ -87,7 +87,7 @@ testee 2. adımı kapsar: iş tanımınızdan yazılmış süreli, çoktan seçm
 - **Okunabilir sonuçlar.** Her aday için her yanıtı ve süresini gösteren, puana göre sıralanmış bir değerlendirme kartı; çok hızlı yanıtlar, sayfadan ayrılma, kopyalama girişimleri ve olağan dışı yanıt örüntüleri için işaretlerle.
 - **Yanıtlar, yapay zekânın yazdığı bir cevap anahtarına göre değerlendirilir;** her konudaki anahtarlardan bir örneklem yayından önce kontrol edilir, diğerleri bir soru bildirildiğinde; hiçbir yapay zekâ adayın yanıtını okumaz veya yargılamaz.
 
-testee yapılandırılmış mülakatlar, iş örnekleri veya bilişsel testler yürütmez. Onlarla birlikte kullanın. Test türleri ve adillik hakkında daha fazlası için [İşe alım öncesi testler](/pre-employment-testing) sayfasını okuyun.
+testee yapılandırılmış mülakatlar, iş örnekleri veya bilişsel testler yürütmez. Onlarla birlikte kullanın. Test türleri ve adillik hakkında daha fazlası için [İşe alım öncesi testler](/guides/pre-employment-testing) sayfasını okuyun.
 
 ## Kaynaklar
 

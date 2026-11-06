@@ -107,5 +107,5 @@ Pełny proces rekrutacji inżynierów opisuje [Jak rekrutować programistów](/g
 
 - [Alternatywy dla TestGorilla](/compare/testgorilla-alternatives)
 - [Jak porównać koszty testów](/compare/cheapest-pre-employment-test)
-- [Rozmowy rekrutacyjne z AI: czym są i jak korzystać z nich uczciwie](/ai-interviews)
-- [Przewodnik po testach rekrutacyjnych](/pre-employment-testing)
+- [Rozmowy rekrutacyjne z AI: czym są i jak korzystać z nich uczciwie](/guides/ai-interviews)
+- [Przewodnik po testach rekrutacyjnych](/guides/pre-employment-testing)

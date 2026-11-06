@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next"
 
 import { PUBLIC_TIMEOUT_MS } from "@/config/api"
-import { CATEGORY_PAGES } from "@/config/content"
 import { DEFAULT_LOCALE, LOCALES } from "@/config/i18n"
 import { LOCALIZED_PATHS, PUBLIC_PATHS } from "@/config/seo"
 import { contentLanguages, contentPage, contentPages } from "@/lib/content"
@@ -96,7 +95,6 @@ async function legalUpdated(): Promise<Record<string, string | undefined>> {
 
 // Articles in each content folder, by the address they live at.
 const ARTICLES = [
-  { folder: "pages", base: "" },
   { folder: "compare", base: "/compare" },
   { folder: "guides", base: "/guides" },
 ] as const
@@ -149,10 +147,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     Object.fromEntries(
       Object.entries(links).map(([locale, path]) => [locale, `${site}${path}`])
     )
-  // The category pages are articles: listed with their translations below.
-  const everyLanguage = LOCALIZED_PATHS.filter(
-    (path) => !CATEGORY_PAGES.includes(path.slice(1))
-  )
   const [rows, written, news, legal] = await Promise.all([
     templates(),
     articles(site),
@@ -162,7 +156,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     // A page in every language is listed once per language, each naming all of them.
-    ...everyLanguage.flatMap((path) =>
+    ...LOCALIZED_PATHS.flatMap((path) =>
       LOCALES.map((locale) => ({
         url: `${site}${localizedPath(locale, path)}`,
         lastModified: path === "/news" ? news : undefined,

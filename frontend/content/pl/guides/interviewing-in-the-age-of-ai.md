@@ -76,7 +76,7 @@ testee dobrze sprawdza się w kroku 2. Zamienia Twój opis stanowiska w rozmowę
 - **Sygnały dotyczące rzetelności:** karty wyników oznaczają odpowiedzi zbyt szybkie, by kandydat zdążył przeczytać pytanie, momenty opuszczenia strony i próby kopiowania. Gdy kandydat skończy, jego raport wskazuje też wzorce odpowiedzi, jakie zwykle zostawia przekazywanie pytań AI i przepisywanie jej odpowiedzi: mniej więcej tyle samo czasu przy każdym pytaniu bez względu na jego długość czy trudność albo poprawne odpowiedzi na trudne pytania przy błędnych na łatwe. Oznaczenie czy wzorzec to powód, by przyjrzeć się bliżej, a nie dowód oszustwa.
 - **Pytania na rozmowę na żywo:** raport podsuwa do 3 pytań, na które kandydat odpowiedział poprawnie, z jego najmocniejszych tematów, do omówienia na rozmowie na żywo, gdzie AI nie odpowie za niego.
 
-Czego testee nie robi: kandydaci nie piszą, nie uruchamiają ani nie debugują kodu w testee, a testee nie obserwuje, jak korzystają z asystenta AI. To należy do etapu praktycznego, prowadzonego we własnym zakresie lub na platformie dla programistów, który uzupełnia test wiedzy. Gotowe testy na start znajdziesz w [testach umiejętności według roli](/tests), a o tym, jak testee korzysta z AI i co zostawia ludziom, przeczytasz na stronie [Rozmowy rekrutacyjne z AI](/ai-interviews).
+Czego testee nie robi: kandydaci nie piszą, nie uruchamiają ani nie debugują kodu w testee, a testee nie obserwuje, jak korzystają z asystenta AI. To należy do etapu praktycznego, prowadzonego we własnym zakresie lub na platformie dla programistów, który uzupełnia test wiedzy. Gotowe testy na start znajdziesz w [testach umiejętności według roli](/tests), a o tym, jak testee korzysta z AI i co zostawia ludziom, przeczytasz na stronie [Rozmowy rekrutacyjne z AI](/guides/ai-interviews).
 
 ## Uczciwość i doświadczenie kandydata
 
@@ -106,5 +106,5 @@ Asystenci AI sprawili, że tworzenie kodu jest tańsze, a jego ocena ważniejsza
 - [Jak rekrutować programistów](/guides/hiring-engineers)
 - [Testy umiejętności według roli](/tests)
 - [Oszukiwanie w testach rekrutacyjnych online i co naprawdę przed nim chroni](/guides/cheating-in-online-assessments)
-- [Rozmowy rekrutacyjne z AI: czym są i jak korzystać z nich uczciwie](/ai-interviews)
+- [Rozmowy rekrutacyjne z AI: czym są i jak korzystać z nich uczciwie](/guides/ai-interviews)
 - [Testy umiejętności a selekcja CV](/guides/skills-tests-vs-cv-screening)

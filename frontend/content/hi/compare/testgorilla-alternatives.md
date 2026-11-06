@@ -104,4 +104,4 @@ TestGorilla आपके लिए बेहतर हो सकता है �
 
 - [टेस्ट की लागत की तुलना कैसे करें](/compare/cheapest-pre-employment-test)
 - [बिना सब्सक्रिप्शन के प्री-एम्प्लॉयमेंट टेस्ट](/compare/pre-employment-tests-without-subscription)
-- [प्री-एम्प्लॉयमेंट टेस्टिंग गाइड](/pre-employment-testing)
+- [प्री-एम्प्लॉयमेंट टेस्टिंग गाइड](/guides/pre-employment-testing)

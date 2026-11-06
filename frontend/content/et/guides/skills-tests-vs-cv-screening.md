@@ -87,7 +87,7 @@ testee katab 2. sammu: ajapiiranguga valikvastustega erialaste teadmiste test, m
 - **Loetavad tulemused.** Iga kandidaadi hindamisleht kõigi vastuste ja nende ajakuluga, järjestatud tulemuse järgi, märgetega liiga kiirete vastuste, lehelt lahkumise, kopeerimiskatsete ja ebatavaliste vastuste mustrite kohta.
 - **Vastuseid kontrollitakse vastusevõtme järgi,** mille AI kirjutab; igast teemast kontrollitakse enne avaldamist valim võtmeid, ülejäänuid siis, kui küsimusest teatatakse; ükski AI ei loe ega hinda kandidaadi vastust.
 
-testee ei korralda struktureeritud intervjuusid, proovitöid ega kognitiivseid teste. Kasuta seda nende kõrval. Testiliikide ja õigluse kohta loe lähemalt lehelt [Kandidaatide testimine värbamisel](/pre-employment-testing).
+testee ei korralda struktureeritud intervjuusid, proovitöid ega kognitiivseid teste. Kasuta seda nende kõrval. Testiliikide ja õigluse kohta loe lähemalt lehelt [Kandidaatide testimine värbamisel](/guides/pre-employment-testing).
 
 ## Allikad
 

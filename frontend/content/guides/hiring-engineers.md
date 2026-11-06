@@ -132,7 +132,7 @@ A structured process is also a fairer one, but only if you run it consistently:
 - **Monitor outcomes.** Different methods show different score gaps between groups. Sackett et al. found larger average differences for job knowledge tests and work samples than for structured interviews, which is one more reason to combine methods. Watch pass rates at each stage.
 - **People decide.** A score supports a decision; it doesn't make it. Look at the answers before you reject anyone.
 
-For the legal basics, including the EU AI Act and US rules on selection rates, see [Pre-employment testing](/pre-employment-testing).
+For the legal basics, including the EU AI Act and US rules on selection rates, see [Pre-employment testing](/guides/pre-employment-testing).
 
 ## Summary
 
@@ -146,6 +146,6 @@ Put the broad, cheap checks first and the deep, expensive ones last. Screen CVs 
 
 - [Skills tests by role](/tests)
 - [HackerRank alternatives](/compare/hackerrank-alternatives)
-- [Pre-employment testing guide](/pre-employment-testing)
+- [Pre-employment testing guide](/guides/pre-employment-testing)
 - [Skills tests vs CV screening](/guides/skills-tests-vs-cv-screening)
 - [Interviewing engineers in the age of AI](/guides/interviewing-in-the-age-of-ai)

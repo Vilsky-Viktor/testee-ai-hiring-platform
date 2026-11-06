@@ -122,7 +122,7 @@ Per provarlo, incolla una descrizione nella home page, oppure parti da un test p
 - [Come fare lo screening di 100 candidati in un giorno](/guides/screen-100-applicants-in-a-day)
 - [Test di competenze o screening dei CV](/guides/skills-tests-vs-cv-screening)
 - [Come impostare i tempi di un test di competenze](/guides/skills-test-timing-and-extra-time)
-- [Test pre-assunzione: una guida pratica](/pre-employment-testing)
+- [Test pre-assunzione: una guida pratica](/guides/pre-employment-testing)
 
 ## Fonti
 

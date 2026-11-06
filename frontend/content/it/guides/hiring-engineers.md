@@ -132,7 +132,7 @@ Un processo strutturato è anche più equo, ma solo se lo applichi in modo coere
 - **Monitora i risultati.** Metodi diversi mostrano divari di punteggio diversi tra i gruppi. Sackett et al. hanno rilevato differenze medie maggiori per i test di conoscenze professionali e le prove pratiche che per i colloqui strutturati, un motivo in più per combinare i metodi. Tieni d'occhio i tassi di superamento in ogni fase.
 - **Decidono le persone.** Un punteggio supporta una decisione; non la prende. Guarda le risposte prima di scartare qualcuno.
 
-Per le basi legali, compresi il regolamento UE sull'intelligenza artificiale (EU AI Act) e le norme statunitensi sui tassi di selezione, vedi [Test pre-assunzione](/pre-employment-testing).
+Per le basi legali, compresi il regolamento UE sull'intelligenza artificiale (EU AI Act) e le norme statunitensi sui tassi di selezione, vedi [Test pre-assunzione](/guides/pre-employment-testing).
 
 ## In sintesi
 
@@ -146,6 +146,6 @@ Metti prima i controlli ampi ed economici e per ultimi quelli approfonditi e cos
 
 - [Test di selezione per ruolo](/tests)
 - [Alternative a HackerRank](/compare/hackerrank-alternatives)
-- [Guida ai test pre-assunzione](/pre-employment-testing)
+- [Guida ai test pre-assunzione](/guides/pre-employment-testing)
 - [Test attitudinali e di competenze o screening dei CV](/guides/skills-tests-vs-cv-screening)
 - [Fare colloqui agli sviluppatori nell'era dell'IA](/guides/interviewing-in-the-age-of-ai)

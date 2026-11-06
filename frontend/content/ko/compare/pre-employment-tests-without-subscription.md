@@ -98,4 +98,4 @@ testee의 경우: 아니요, 아니요, 아니요, 예(둘 다 가능), EU에서
 - [테스트 비용 비교하는 법](/compare/cheapest-pre-employment-test)
 - [TestGorilla 대안](/compare/testgorilla-alternatives)
 - [testee와 TestGorilla](/compare/testgorilla)
-- [채용 전 테스트 가이드](/pre-employment-testing)
+- [채용 전 테스트 가이드](/guides/pre-employment-testing)

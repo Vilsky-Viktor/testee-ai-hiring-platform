@@ -75,4 +75,4 @@ Consulta [Alternativas a TestGorilla](/compare/testgorilla-alternatives) y [Alte
 
 - [Pruebas de selección sin suscripción](/compare/pre-employment-tests-without-subscription)
 - [testee y TestGorilla](/compare/testgorilla)
-- [Guía de pruebas de selección de personal](/pre-employment-testing)
+- [Guía de pruebas de selección de personal](/guides/pre-employment-testing)

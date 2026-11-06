@@ -119,7 +119,7 @@ testee는 직무 설명을 바탕으로 AI가 작성한, 시간 제한이 있는
 - [EU에서 AI 채용은 합법일까?](/guides/is-ai-hiring-legal-in-the-eu)
 - [영국에서 AI 채용은 합법일까?](/guides/is-ai-hiring-legal-in-the-uk)
 - [역량 테스트 시간 설정: 문항당 타이머, 테스트 길이, 추가 시간](/guides/skills-test-timing-and-extra-time)
-- [채용 전 테스트: 실무 가이드](/pre-employment-testing)
+- [채용 전 테스트: 실무 가이드](/guides/pre-employment-testing)
 
 ## 출처
 

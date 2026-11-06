@@ -104,4 +104,4 @@ Płacisz za kandydata, bez subskrypcji: tylko za kandydatów, którzy odpowiedz�
 
 - [Jak przeprowadzić selekcję 100 kandydatów w jeden dzień](/guides/screen-100-applicants-in-a-day)
 - [Testy umiejętności a selekcja CV](/guides/skills-tests-vs-cv-screening)
-- [Testy rekrutacyjne: praktyczny poradnik](/pre-employment-testing)
+- [Testy rekrutacyjne: praktyczny poradnik](/guides/pre-employment-testing)

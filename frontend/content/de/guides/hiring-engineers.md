@@ -132,7 +132,7 @@ Ein strukturierter Prozess ist auch ein fairerer, aber nur, wenn du ihn konseque
 - **Ergebnisse beobachten.** Verschiedene Methoden zeigen unterschiedliche Punktunterschiede zwischen Gruppen. Sackett et al. fanden bei Fachwissenstests und Arbeitsproben im Durchschnitt größere Unterschiede als bei strukturierten Interviews; ein weiterer Grund, Methoden zu kombinieren. Beobachte die Bestehensquoten in jeder Phase.
 - **Menschen entscheiden.** Eine Punktzahl stützt eine Entscheidung; sie trifft sie nicht. Sieh dir die Antworten an, bevor du jemandem absagst.
 
-Die rechtlichen Grundlagen, einschließlich der KI-Verordnung der EU (AI Act) und der US-Regeln zu Auswahlquoten, findest du unter [Einstellungstests](/pre-employment-testing).
+Die rechtlichen Grundlagen, einschließlich der KI-Verordnung der EU (AI Act) und der US-Regeln zu Auswahlquoten, findest du unter [Einstellungstests](/guides/pre-employment-testing).
 
 ## Zusammenfassung
 
@@ -146,6 +146,6 @@ Stell die breiten, günstigen Prüfungen an den Anfang und die tiefen, teuren an
 
 - [Fachtests nach Stelle](/tests)
 - [Alternativen zu HackerRank](/compare/hackerrank-alternatives)
-- [Leitfaden zu Einstellungstests](/pre-employment-testing)
+- [Leitfaden zu Einstellungstests](/guides/pre-employment-testing)
 - [Fachtests vs. Lebenslauf-Screening](/guides/skills-tests-vs-cv-screening)
 - [Entwickler interviewen im KI-Zeitalter](/guides/interviewing-in-the-age-of-ai)

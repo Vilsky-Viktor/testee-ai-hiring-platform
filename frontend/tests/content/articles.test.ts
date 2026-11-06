@@ -7,7 +7,7 @@ import { LOCALES } from "@/config/i18n"
 // The articles' rules (.claude/rules/content-i18n.md): front matter, the body's first heading,
 // slugs, and one translation per language that keeps the original's sections and links.
 const ROOT = path.resolve(__dirname, "../../content")
-const FOLDERS = ["guides", "compare", "pages"]
+const FOLDERS = ["guides", "compare"]
 const SEO_TITLE_MAX = 60
 const DESCRIPTION_MAX = 155
 
