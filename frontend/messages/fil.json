@@ -789,7 +789,10 @@
     "completed": "tapos na",
     "warningText": "<b>Gusto ng mas akmang test?</b> Gumawa ng interview mula sa iyong job description.",
     "contents": "{topics, plural, one {# topic} other {# topic}}, {questions, plural, one {# tanong} other {# tanong}}, {minutes, plural, one {# min} other {# min}}",
-    "usedIn": "{count, plural, one {Ginamit sa # interview} other {Ginamit sa # interview}}"
+    "usedIn": "{count, plural, one {Ginamit sa # interview} other {Ginamit sa # interview}}",
+    "pageTitle": "{title}, page {page, number}",
+    "pages": "Mga page",
+    "pageLink": "Page {page, number}"
   },
   "billing": {
     "paidTitle": "Natanggap ang bayad",
@@ -3801,3 +3804,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Skills assessment software",
+        "title": "Skills assessment software para sa hiring",
+        "description": "Skills assessment software na ginagawang timed test para sa anumang role ang job description. {count, plural, one {# wika} other {# wika}}, bayad bawat aplikante, walang subscription.",
+        "hero": {
+          "title": "Skills assessment software\npara sa anumang role",
+          "text": "Mag-paste ng job description at makakuha ng timed skills test na ginawa para sa role. Bawat aplikante ay may sariling mga tanong, at nakikita mo ang bawat sagot."
+        },
+        "how": {
+          "title": "Isang test para sa trabahong hina-hire mo",
+          "text": "Nagsisimula ito sa job description mo, kaya saklaw nito ang kailangan ng role na ito."
+        },
+        "why": {
+          "title": "Kasama ang lahat",
+          "text": "Kasama ang bawat feature sa bawat test. May bayad lang ang isang aplikante kapag nakasagot na siya ng kahit isang tanong."
+        }
+      },
+      "aiInterview": {
+        "name": "AI interview software",
+        "title": "AI interview software para sa hiring",
+        "description": "AI interview software kung saan AI ang sumusulat ng mga tanong at tao ang nagpapasya. Click o voice mode sa {count, plural, one {# wika} other {# wika}}, walang camera, walang subscription.",
+        "hero": {
+          "title": "AI interview software\nna tao ang nagpapasya",
+          "text": "Sumusulat ang AI ng timed interview mula sa job description mo, at puwede itong basahin nang malakas ni Mira, ang AI interviewer. Minamarkahan ang mga sagot batay sa answer key, at ang team mo ang nagpapasya."
+        },
+        "how": {
+          "title": "Ang ginagawa ng AI, at ang hindi nito ginagawa",
+          "text": "AI ang gumagawa ng pagsusulat. Sumasagot ang mga aplikante sa mga tanong na may malinaw na tama at maling sagot, kaya maipapaliwanag mo ang bawat grade."
+        },
+        "why": {
+          "title": "Kasama ang tiwala at compliance",
+          "text": "Tao ang nagpapasya, pare-pareho ang patakaran para sa bawat aplikante, at handa na ang mga dokumento para sa GDPR, EU AI Act, at mga patakaran ng UK at US."
+        }
+      },
+      "codingTest": {
+        "name": "Coding test para sa hiring",
+        "title": "Coding test para sa pag-hire ng developers",
+        "description": "Timed na code-reading test para sa developers, mula sa job description mo. Nagbabasa ng code at sumasagot sila: walang editor, setup o subscription.",
+        "hero": {
+          "title": "Coding test para sa hiring\nna nakabatay sa pagbasa ng code",
+          "text": "Isang timed test ng mga language at framework sa job description mo. Nagbabasa ang mga aplikante ng maiikling piraso ng code at sumasagot, bago mo gastusin ang oras ng isang engineer sa kanila."
+        },
+        "how": {
+          "title": "Isang screen na nagbabasa ng code",
+          "text": "Hindi sumusulat, nagpapatakbo o nagde-debug ng code ang mga aplikante sa testee. Magkaibang skill ang pagbasa at pagsulat ng code, kaya gamitin ito bilang screen bago ang hands-on round."
+        },
+        "why": {
+          "title": "Bagay bago ang hands-on round mo",
+          "text": "Timed screen muna, saka ang sarili mong exercise o coding round para sa mga aplikanteng pinili mo."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "Isinulat mula sa job description mo",
+        "text": "Binabasa ng AI ang job description at nagmumungkahi ng mga topic. Itinitira, pinapalitan ng pangalan o binabago mo ang mga ito bago isulat ang anumang tanong, at libre ang paggawa ng test.",
+        "alt": "Ang tab ng mga topic ng isang interview: ang kabuuang tanong at minuto para sa bawat aplikante, at ang mga topic kasama ang bilang ng tanong ng bawat isa."
+      },
+      "sameRules": {
+        "title": "Pare-parehong patakaran para sa bawat aplikante",
+        "text": "Bawat aplikante ay may sariling random na mga tanong, sa sarili nilang pagkakasunod-sunod, na may countdown sa bawat isa, at ang server ang nagbabantay ng oras.",
+        "alt": "Isang tanong ng aplikante tungkol sa Rust: ang tanong, ang countdown nito at apat na pagpipiliang sagot, may isang napili."
+      },
+      "compare": {
+        "title": "Mga resultang maikukumpara",
+        "text": "Ang grade ng bawat aplikante kumpara sa passing grade mo, sa iisang listahan. Magbukas ng report para makita ang bawat sagot at kung gaano ito katagal.",
+        "alt": "Listahan ng mga aplikante ng isang interview na may mga pangalan, status, grade at isang naka-flag na aplikante."
+      },
+      "aiWrites": {
+        "title": "AI ang sumusulat, ikaw ang may kontrol",
+        "text": "Nagmumungkahi ang AI ng mga topic mula sa job description at sumusulat ng pool ng mga tanong para sa bawat topic na inaprubahan mo. Puwede mong basahin ang bawat tanong, i-disable ang isa o i-regenerate ito.",
+        "alt": "Ang mga tanong ng isang interview, bawat isa ay may halimbawa at answer key."
+      },
+      "voice": {
+        "title": "Click o voice",
+        "text": "Sumasagot ang mga aplikante sa isang click, o sa voice mode ay binabasa nang malakas ni Mira, isang AI interviewer, ang bawat tanong at ang mga pagpipilian nito at sumasagot sila nang hindi gumagamit ng kamay.",
+        "alt": "Isang voice interview: si Mira, ang AI interviewer, katabi ng tanong at ng apat na pagpipilian nito."
+      },
+      "personDecides": {
+        "title": "Tao ang nagpapasya",
+        "text": "Minamarkahan ang mga sagot batay sa answer key: walang AI na humuhusga sa sagot ng aplikante, at hindi kailanman nagre-reject ang testee ng sinuman. Makukuha mo ang grade, bawat sagot at mga tanong para sa isang live interview.",
+        "alt": "Report ng isang aplikante: ang grade, ang card ng mga pattern ng sagot at mga mungkahing follow-up na tanong."
+      },
+      "stack": {
+        "title": "Ang stack mo, wala nang iba",
+        "text": "Binabasa ng AI ang job description at nagmumungkahi ng mga topic. Itira ang mahalaga at baguhin ang iba, para saklaw ng test ang mga language, framework at practice mo.",
+        "alt": "Ang tab ng mga topic ng isang interview: ang kabuuang tanong at minuto para sa bawat aplikante, at ang mga topic kasama ang bilang ng tanong ng bawat isa."
+      },
+      "readingCode": {
+        "title": "Mga tanong tungkol sa code",
+        "text": "Isang maikling piraso ng code, at tanong kung ano ang pini-print o ibinabalik nito, ano ang ginagawa nito, bakit ito pumapalya o aling pagbabago ang aayos dito. Para sa SQL, isang maliit na table at isang query.",
+        "alt": "Isang tanong ng aplikante tungkol sa Rust: ang tanong, ang countdown nito at apat na pagpipiliang sagot, may isang napili."
+      },
+      "signals": {
+        "title": "Mga flag na dapat tingnan nang mas mabuti",
+        "text": "Pag-alis sa page, pagtatangkang kumopya at mga sagot na masyadong mabilis para mabasa ang tanong, pati mga kakaibang pattern ng sagot. Nagmumungkahi ang mga report ng mga tanong para sa isang live interview.",
+        "alt": "Report ng isang aplikante: ang grade, ang card ng mga pattern ng sagot at mga mungkahing follow-up na tanong."
+      }
+    },
+    "points": {
+      "anyRole": "Anumang trabaho, anumang larangan",
+      "options": "Apat na pagpipilian bawat tanong, may ilang may higit sa isang tamang sagot",
+      "maxQuestions": "Hanggang 60 tanong bawat aplikante",
+      "onePass": "Isang attempt: walang pagbalik, walang pag-ulit",
+      "sameMix": "Parehong timer at halo ng mga tanong para sa lahat",
+      "extraTime": "Dagdag na oras para sa sinumang humiling, itinatakda bago sila magsimula",
+      "sort": "Pinakamataas na grade muna sa isang click",
+      "pdf": "Mga PDF report para sa isang aplikante o sa buong interview",
+      "peopleDecide": "Sinusuportahan ng grade ang desisyon mo; hindi ito ang nagpapasya",
+      "keysChecked": "Sinusuri ng pangalawang AI ang sample ng mga answer key",
+      "weakFixed": "Tinutukoy ng mga sagot, boto at report ang mahihinang tanong, saka inaayos o pinapalitan",
+      "preview": "Sagutan ito gaya ng isang aplikante, nang libre, bago mag-imbita ng sinuman",
+      "ownMode": "Itinatakda para sa interview, o inililipat para sa isang aplikante",
+      "voiceLanguages": "Voice sa lahat ng {count, plural, one {# wika} other {# wika}}, na iba-iba ang kalidad bawat wika",
+      "noVoiceKept": "Walang itinatagong boses ang testee: ginagawa lang itong text",
+      "noCamera": "Walang camera, screen recording o pag-track ng device",
+      "noInference": "Hindi kailanman nagtatanong o nanghuhula ang testee ng mga katangiang protektado ng batas",
+      "notProof": "Ang flag ay dahilan para tumingin nang mas mabuti, hindi kailanman patunay",
+      "freeReview": "Nirerebyu nang libre ang mga topic, bago isulat ang anumang tanong",
+      "startFromTest": "O magsimula sa isang handang test ayon sa role",
+      "shortExamples": "Mga halimbawang hanggang 8 maiikling linya",
+      "noSetup": "Walang editor o setup: bumubukas ito sa browser, pati sa phone",
+      "ownQuestions": "Isang attempt, na may sariling random na mga tanong ang bawat aplikante"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Mga handang test",
+        "text": "Magsimula sa skills test ayon sa role at level, o gumawa ng sarili mo."
+      },
+      "languages": {
+        "title": "{count, plural, one {# wika} other {# wika}}",
+        "text": "Ang app, ang mga test at ang mga email, sa wika ng mga aplikante mo."
+      },
+      "ats": {
+        "title": "Gumagana sa ATS mo",
+        "text": "Nag-iimbita ng mga aplikante at tumatanggap ng mga resulta ang Workable, Greenhouse, Teamtailor, Recruitee at Breezy HR."
+      },
+      "integrity": {
+        "title": "Mga integrity flag",
+        "text": "Pag-alis sa page, pagtatangkang kumopya at mga sagot na masyadong mabilis para mabasa ang tanong: dahilan para tumingin nang mas mabuti, hindi kailanman patunay."
+      },
+      "accessible": {
+        "title": "Accessible",
+        "text": "Ginawa para sa WCAG 2.2 AA, may dagdag na oras para sa mga nangangailangan nito."
+      },
+      "price": {
+        "title": "{price} bawat aplikante",
+        "text": "Walang subscription. Nagsisimula ang una mong kumpanya sa {free, plural, one {# libreng aplikante} other {# libreng aplikante}}, walang card na kailangan."
+      },
+      "documents": {
+        "title": "Handa ang mga dokumento",
+        "text": "Isang data processing agreement, template ng DPIA at mga template ng abiso sa aplikante."
+      },
+      "biasAudit": {
+        "title": "Bias audit export",
+        "text": "Mga resulta ng mga aplikanteng tapos na bilang CSV para sa independiyenteng audit o sarili mong four-fifths check."
+      },
+      "noTraining": {
+        "title": "Hindi ginagamit sa pag-train ng AI",
+        "text": "Hindi nagte-train ng AI model ang data mo: ayon sa mga tuntunin nito, hindi nagte-train sa API data ang OpenAI, ang AI provider ng testee."
+      },
+      "location": {
+        "title": "Nakaimbak sa EU",
+        "text": "Sa Google Cloud sa Belgium; nakalista sa page ng Tiwala ang bawat provider."
+      },
+      "platform": {
+        "title": "Mula sa platform mo",
+        "text": "Mag-imbita sa pamamagitan ng API, o i-embed ang test sa sarili mong site gamit ang SDK."
+      },
+      "quality": {
+        "title": "Mga tanong na kusang naaayos",
+        "text": "Tinutukoy ng mga sagot, boto at report ang mahihinang tanong; inaayos o pinapalitan ang mga ito."
+      },
+      "practice": {
+        "title": "Libreng practice",
+        "text": "Puwedeng mag-practice ang mga aplikante ayon sa role, libre at pribado, at makita ang bawat tamang sagot sa dulo."
+      }
+    },
+    "more": {
+      "features": "lahat ng feature",
+      "tests": "skills tests ayon sa role",
+      "trust": "page ng tiwala",
+      "testingGuide": "ang gabay sa pre-employment testing",
+      "interviewsGuide": "ang gabay sa AI interviews",
+      "engineersGuide": "paano mag-hire ng mga engineer"
+    }

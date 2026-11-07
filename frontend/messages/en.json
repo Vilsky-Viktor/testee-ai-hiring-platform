@@ -789,7 +789,10 @@
     "completed": "completed",
     "warningText": "<b>Want a closer fit?</b> Create an interview from your job description.",
     "contents": "{topics, plural, one {# topic} other {# topics}}, {questions, plural, one {# question} other {# questions}}, {minutes, plural, one {# min} other {# min}}",
-    "usedIn": "{count, plural, one {Used in # interview} other {Used in # interviews}}"
+    "usedIn": "{count, plural, one {Used in # interview} other {Used in # interviews}}",
+    "pageTitle": "{title}, page {page, number}",
+    "pages": "Pages",
+    "pageLink": "Page {page, number}"
   },
   "billing": {
     "paidTitle": "Payment received",
@@ -3801,3 +3804,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Skills assessment software",
+        "title": "Skills assessment software for hiring",
+        "description": "Skills assessment software that turns a job description into a timed test for any role. {count, plural, one {# language} other {# languages}}, pay per candidate, no subscription.",
+        "hero": {
+          "title": "Skills assessment software\nfor any role",
+          "text": "Paste a job description and get a timed skills test written for the role. Every candidate gets their own questions, and you see every answer."
+        },
+        "how": {
+          "title": "A test for the job you're hiring for",
+          "text": "It starts from your job description, so it covers what this role needs."
+        },
+        "why": {
+          "title": "Everything is included",
+          "text": "Every feature comes with every test. A candidate costs only once they've answered at least one question."
+        }
+      },
+      "aiInterview": {
+        "name": "AI interview software",
+        "title": "AI interview software for hiring",
+        "description": "AI interview software where AI writes the questions and people decide. Click or voice mode in {count, plural, one {# language} other {# languages}}, no camera, no subscription.",
+        "hero": {
+          "title": "AI interview software\nwhere people decide",
+          "text": "AI writes a timed interview from your job description, and Mira, the AI interviewer, can read it aloud. Answers are marked against an answer key, and your team decides."
+        },
+        "how": {
+          "title": "What the AI does, and what it doesn't",
+          "text": "AI does the writing. Candidates answer questions with clear right and wrong answers, so you can explain every grade."
+        },
+        "why": {
+          "title": "Trust and compliance included",
+          "text": "A person decides, every candidate gets the same rules, and the documents for GDPR, the EU AI Act, UK and US rules are ready."
+        }
+      },
+      "codingTest": {
+        "name": "Coding test for hiring",
+        "title": "Coding test for hiring developers",
+        "description": "A timed code-reading test for hiring developers, written from your job description. Candidates read code and answer: no editor, no setup, no subscription.",
+        "hero": {
+          "title": "Coding test for hiring\nbuilt on reading code",
+          "text": "A timed test of the languages and frameworks in your job description. Candidates read short pieces of code and answer, before you spend an engineer's time on them."
+        },
+        "how": {
+          "title": "A screen that reads code",
+          "text": "Candidates don't write, run or debug code in testee. Reading code and writing it are different skills, so use this as the screen before a hands-on round."
+        },
+        "why": {
+          "title": "Fits before your hands-on round",
+          "text": "A timed screen first, then your own exercise or coding round for the candidates you pick."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "Written from your job description",
+        "text": "The AI reads the job description and proposes topics. You keep, rename or change them before any question is written, and creating the test is free.",
+        "alt": "An interview's topics tab: the total questions and minutes for each candidate, and the topics with their question counts."
+      },
+      "sameRules": {
+        "title": "The same rules for every candidate",
+        "text": "Each candidate gets their own random questions, in their own order, with a countdown on every one, kept by the server.",
+        "alt": "A candidate's question on Rust: the question, its countdown and four answer options, one picked."
+      },
+      "compare": {
+        "title": "Results you can compare",
+        "text": "Every candidate's grade against your passing grade in one list. Open a report to see every answer and how long it took.",
+        "alt": "An interview's candidates list with names, statuses, grades and a flagged candidate."
+      },
+      "aiWrites": {
+        "title": "AI writes, you stay in control",
+        "text": "AI proposes topics from the job description and writes a pool of questions for each one you approve. You can read every question, disable one or re-generate it.",
+        "alt": "An interview's questions, each with its example and answer key."
+      },
+      "voice": {
+        "title": "Click or voice",
+        "text": "Candidates answer with a click, or in voice mode Mira, an AI interviewer, reads each question and its options aloud and they answer hands-free.",
+        "alt": "A voice interview: Mira, the AI interviewer, beside the question and its four options."
+      },
+      "personDecides": {
+        "title": "A person decides",
+        "text": "Answers are marked against the answer key: no AI judges a candidate's answer, and testee never rejects anyone. You get the grade, every answer and questions to ask in a live interview.",
+        "alt": "A candidate's report: the grade, the answer patterns card and suggested follow-up questions."
+      },
+      "stack": {
+        "title": "Your stack, nothing else",
+        "text": "The AI reads the job description and proposes topics. You keep what matters and change the rest, so the test covers your languages, frameworks and practices.",
+        "alt": "An interview's topics tab: the total questions and minutes for each candidate, and the topics with their question counts."
+      },
+      "readingCode": {
+        "title": "Questions about code",
+        "text": "A short piece of code, and a question on what it prints or returns, what it does, why it fails or which change fixes it. For SQL, a small table and a query.",
+        "alt": "A candidate's question on Rust: the question, its countdown and four answer options, one picked."
+      },
+      "signals": {
+        "title": "Signals worth a closer look",
+        "text": "Page leaves, copy attempts and answers too fast to have been read, plus unusual answer patterns. Reports suggest questions to ask in a live interview.",
+        "alt": "A candidate's report: the grade, the answer patterns card and suggested follow-up questions."
+      }
+    },
+    "points": {
+      "anyRole": "Any job, in any field",
+      "options": "Four options per question, some with more than one right answer",
+      "maxQuestions": "Up to 60 questions per candidate",
+      "onePass": "One attempt: no going back, no retakes",
+      "sameMix": "The same timer and mix of questions for everyone",
+      "extraTime": "Extra time for anyone who asks, set before they start",
+      "sort": "Best grades first in one click",
+      "pdf": "PDF reports for one candidate or a whole interview",
+      "peopleDecide": "The grade supports your decision; it doesn't make it",
+      "keysChecked": "A sample of answer keys checked by a second AI",
+      "weakFixed": "Weak questions flagged by answers, votes and reports, then fixed or replaced",
+      "preview": "Take it as a candidate would, for free, before inviting anyone",
+      "ownMode": "Set for the interview, or switched for one candidate",
+      "voiceLanguages": "Voice in all {count, plural, one {# language} other {# languages}}, with quality that varies by language",
+      "noVoiceKept": "testee keeps no voice: it's only turned into text",
+      "noCamera": "No camera, screen recording or device tracking",
+      "noInference": "testee never asks for or guesses protected characteristics",
+      "notProof": "A signal is a reason to look closer, never proof",
+      "freeReview": "Topics reviewed for free, before any question is written",
+      "startFromTest": "Or start from a ready-made test by role",
+      "shortExamples": "Examples of at most 8 short lines",
+      "noSetup": "No editor or setup: it opens in a browser, on a phone too",
+      "ownQuestions": "One attempt, with each candidate's own random questions"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Ready-made tests",
+        "text": "Start from a skills test by role and level, or create your own."
+      },
+      "languages": {
+        "title": "{count, plural, one {# language} other {# languages}}",
+        "text": "The app, the tests and the emails, in your candidates' language."
+      },
+      "ats": {
+        "title": "Works with your ATS",
+        "text": "Workable, Greenhouse, Teamtailor, Recruitee and Breezy HR invite candidates and get results back."
+      },
+      "integrity": {
+        "title": "Integrity signals",
+        "text": "Page leaves, copy attempts and answers too fast to have been read: a reason to look closer, never proof."
+      },
+      "accessible": {
+        "title": "Accessible",
+        "text": "Built for WCAG 2.2 AA, with extra time for those who need it."
+      },
+      "price": {
+        "title": "{price} per candidate",
+        "text": "No subscription. Your first company starts with {free, plural, one {# free candidate} other {# free candidates}}, no card needed."
+      },
+      "documents": {
+        "title": "Documents ready",
+        "text": "A data processing agreement, a DPIA template and candidate notice templates."
+      },
+      "biasAudit": {
+        "title": "Bias-audit export",
+        "text": "Finished candidates' results as a CSV for an independent audit or your own four-fifths check."
+      },
+      "noTraining": {
+        "title": "Not used to train AI",
+        "text": "Your data doesn't train AI models: OpenAI, testee's AI provider, doesn't train on API data under its terms."
+      },
+      "location": {
+        "title": "Stored in the EU",
+        "text": "On Google Cloud in Belgium; the trust page lists every provider."
+      },
+      "platform": {
+        "title": "From your platform",
+        "text": "Invite through the API, or embed the test in your own site with the SDK."
+      },
+      "quality": {
+        "title": "Questions that fix themselves",
+        "text": "Answers, votes and reports flag weak questions; they're fixed or replaced."
+      },
+      "practice": {
+        "title": "Free practice",
+        "text": "Candidates can practise by role, free and in private, and see every right answer at the end."
+      }
+    },
+    "more": {
+      "features": "all features",
+      "tests": "skills tests by role",
+      "trust": "trust page",
+      "testingGuide": "the pre-employment testing guide",
+      "interviewsGuide": "the AI interviews guide",
+      "engineersGuide": "how to hire engineers"
+    }

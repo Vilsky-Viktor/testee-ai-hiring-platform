@@ -789,7 +789,10 @@
     "completed": "lõpetatud",
     "warningText": "<b>Soovid täpsemalt sobivat?</b> Loo intervjuu oma töökuulutusest.",
     "contents": "{topics, plural, one {# teema} other {# teemat}}, {questions, plural, one {# küsimus} other {# küsimust}}, {minutes, plural, one {# min} other {# min}}",
-    "usedIn": "{count, plural, one {Kasutusel # intervjuus} other {Kasutusel # intervjuus}}"
+    "usedIn": "{count, plural, one {Kasutusel # intervjuus} other {Kasutusel # intervjuus}}",
+    "pageTitle": "{title}, {page, number}. lehekülg",
+    "pages": "Leheküljed",
+    "pageLink": "{page, number}. lehekülg"
   },
   "billing": {
     "paidTitle": "Makse laekus",
@@ -3801,3 +3804,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Oskuste hindamise tarkvara",
+        "title": "Oskuste hindamise tarkvara värbamiseks",
+        "description": "Oskuste hindamise tarkvara: töökuulutusest ajapiiranguga test iga ametikoha jaoks. {count, plural, one {# keeles} other {# keeles}}, tasu kandidaadi kohta, ilma tellimuseta.",
+        "hero": {
+          "title": "Oskuste hindamise tarkvara\niga ametikoha jaoks",
+          "text": "Kleebi töökuulutus ja saad selle ametikoha jaoks kirjutatud ajapiiranguga oskustesti. Iga kandidaat saab oma küsimused ja sina näed kõiki vastuseid."
+        },
+        "how": {
+          "title": "Test just sellele ametikohale, kuhu värbad",
+          "text": "See lähtub sinu töökuulutusest, nii et katab selle, mida see ametikoht nõuab."
+        },
+        "why": {
+          "title": "Kõik on hinnas",
+          "text": "Iga testiga tulevad kõik funktsioonid. Kandidaadi eest maksad alles siis, kui ta on vastanud vähemalt ühele küsimusele."
+        }
+      },
+      "aiInterview": {
+        "name": "AI-intervjuu tarkvara",
+        "title": "AI-intervjuu tarkvara värbamiseks",
+        "description": "AI-intervjuu tarkvara, kus küsimused kirjutab AI ja otsustavad inimesed. Klõpsu- või häälerežiim {count, plural, one {# keeles} other {# keeles}}, ilma kaamera ja tellimuseta.",
+        "hero": {
+          "title": "AI-intervjuu tarkvara\notsuse teeb inimene",
+          "text": "AI kirjutab sinu töökuulutuse põhjal ajapiiranguga intervjuu ja Mira, tehisaru intervjueerija, saab selle ette lugeda. Vastused hinnatakse vastusevõtme järgi ja otsustab sinu meeskond."
+        },
+        "how": {
+          "title": "Mida AI teeb ja mida ei tee",
+          "text": "Kirjutamistöö teeb AI. Kandidaadid vastavad küsimustele, millel on selgelt õiged ja valed vastused, nii et saad iga hinnet selgitada."
+        },
+        "why": {
+          "title": "Usaldus ja nõuetele vastavus on hinnas",
+          "text": "Otsustab inimene, kõigil kandidaatidel on samad reeglid ning dokumendid GDPR-i, ELi tehisintellekti määruse (AI Act), Ühendkuningriigi ja USA reeglite jaoks on valmis."
+        }
+      },
+      "codingTest": {
+        "name": "Programmeerimistest värbamiseks",
+        "title": "Programmeerimistest arendajate värbamiseks",
+        "description": "Ajapiiranguga koodi lugemise test arendajate värbamiseks, töökuulutuse põhjal. Kandidaat loeb koodi ja vastab: ei redaktorit, seadistust ega tellimust.",
+        "hero": {
+          "title": "Programmeerimistest värbamiseks\nkoodi lugemise põhjal",
+          "text": "Ajapiiranguga test sinu töökuulutuses nimetatud keelte ja raamistike kohta. Kandidaadid loevad lühikesi koodijuppe ja vastavad, enne kui kulutad neile inseneri aega."
+        },
+        "how": {
+          "title": "Sõelumine koodi lugemise kaudu",
+          "text": "Kandidaadid ei kirjuta, käivita ega siluta testees koodi. Koodi lugemine ja kirjutamine on erinevad oskused, nii et kasuta seda sõelumiseks enne praktilist vooru."
+        },
+        "why": {
+          "title": "Sobib enne praktilist vooru",
+          "text": "Kõigepealt ajapiiranguga sõelumine, seejärel sinu enda ülesanne või programmeerimisvoor kandidaatidele, kelle valid."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "Kirjutatud sinu töökuulutuse põhjal",
+        "text": "Tehisaru loeb töökuulutuse ja pakub teemad. Sina jätad need alles, nimetad ümber või muudad neid enne, kui ühtki küsimust kirjutatakse, ja testi loomine on tasuta.",
+        "alt": "Intervjuu teemade vahekaart: küsimuste ja minutite koguarv iga kandidaadi kohta ning teemad koos küsimuste arvuga."
+      },
+      "sameRules": {
+        "title": "Samad reeglid igale kandidaadile",
+        "text": "Iga kandidaat saab oma juhuslikud küsimused oma järjekorras ja igal küsimusel on oma taimer, aega peab server.",
+        "alt": "Kandidaadi küsimus Rusti kohta: küsimus, selle taimer ja neli vastusevarianti, millest üks on valitud."
+      },
+      "compare": {
+        "title": "Tulemused, mida saab võrrelda",
+        "text": "Iga kandidaadi hinne võrreldes läbimise lävega ühes nimekirjas. Ava raport, et näha kõiki vastuseid ja kui kaua igaüks aega võttis.",
+        "alt": "Intervjuu kandidaatide nimekiri nimede, olekute, hinnete ja ühe märgitud kandidaadiga."
+      },
+      "aiWrites": {
+        "title": "AI kirjutab, kontroll jääb sinule",
+        "text": "AI pakub töökuulutuse põhjal teemad ja kirjutab igale kinnitatud teemale küsimuste kogumi. Saad lugeda iga küsimust, mõne välja lülitada või uuesti luua.",
+        "alt": "Intervjuu küsimused, igaüks oma näite ja vastusevõtmega."
+      },
+      "voice": {
+        "title": "Klõps või hääl",
+        "text": "Kandidaadid vastavad klõpsuga või häälerežiimis, kus Mira, tehisaru intervjueerija, loeb iga küsimuse ja selle vastusevariandid ette ning nad vastavad käsi kasutamata.",
+        "alt": "Häälintervjuu: Mira, tehisaru intervjueerija, küsimuse ja selle nelja vastusevariandi kõrval."
+      },
+      "personDecides": {
+        "title": "Otsustab inimene",
+        "text": "Vastused hinnatakse vastusevõtme järgi: ükski AI ei hinda kandidaadi vastust ja testee ei lükka kunagi kedagi tagasi. Saad hinde, kõik vastused ja küsimused, mida vestlusintervjuul küsida.",
+        "alt": "Kandidaadi raport: hinne, vastuste mustrite kaart ja soovitatud lisaküsimused."
+      },
+      "stack": {
+        "title": "Sinu tehnoloogiad, mitte midagi muud",
+        "text": "Tehisaru loeb töökuulutuse ja pakub teemad. Jätad alles olulise ja muudad ülejäänu, nii et test katab sinu keeled, raamistikud ja töövõtted.",
+        "alt": "Intervjuu teemade vahekaart: küsimuste ja minutite koguarv iga kandidaadi kohta ning teemad koos küsimuste arvuga."
+      },
+      "readingCode": {
+        "title": "Küsimused koodi kohta",
+        "text": "Lühike koodijupp ja küsimus selle kohta, mida see väljastab või tagastab, mida see teeb, miks see ebaõnnestub või milline muudatus selle parandab. SQL-i puhul väike tabel ja päring.",
+        "alt": "Kandidaadi küsimus Rusti kohta: küsimus, selle taimer ja neli vastusevarianti, millest üks on valitud."
+      },
+      "signals": {
+        "title": "Märked, mida tasub lähemalt vaadata",
+        "text": "Lehelt lahkumised, kopeerimiskatsed ja liiga kiired vastused, et küsimust jõuaks lugeda, ning ebatavalised vastuste mustrid. Raportid soovitavad küsimusi, mida vestlusintervjuul küsida.",
+        "alt": "Kandidaadi raport: hinne, vastuste mustrite kaart ja soovitatud lisaküsimused."
+      }
+    },
+    "points": {
+      "anyRole": "Iga ametikoht, iga valdkond",
+      "options": "Neli vastusevarianti küsimuse kohta, mõnel rohkem kui üks õige vastus",
+      "maxQuestions": "Kuni 60 küsimust kandidaadi kohta",
+      "onePass": "Üks katse: tagasi minna ega uuesti teha ei saa",
+      "sameMix": "Sama taimer ja küsimuste segu kõigile",
+      "extraTime": "Lisaaeg kõigile, kes seda küsivad, määratakse enne alustamist",
+      "sort": "Parimad hinded eespool ühe klõpsuga",
+      "pdf": "PDF-raportid ühe kandidaadi või kogu intervjuu kohta",
+      "peopleDecide": "Hinne toetab sinu otsust, kuid ei tee seda sinu eest",
+      "keysChecked": "Valimit vastusevõtmetest kontrollib teine AI",
+      "weakFixed": "Vastused, hääled ja teated toovad esile nõrgad küsimused, mis parandatakse või asendatakse",
+      "preview": "Tee see läbi nii, nagu kandidaat seda teeks, tasuta ja enne kellegi kutsumist",
+      "ownMode": "Määratakse intervjuule või muudetakse ühe kandidaadi jaoks",
+      "voiceLanguages": "Hääl kõigis {count, plural, one {# keeles} other {# keeles}}, kvaliteet oleneb keelest",
+      "noVoiceKept": "testee ei säilita häält: see muudetakse ainult tekstiks",
+      "noCamera": "Ei mingit kaamerat, ekraanisalvestust ega seadme jälgimist",
+      "noInference": "testee ei küsi ega oleta kunagi kaitstud tunnuseid",
+      "notProof": "Märge on põhjus lähemalt vaadata, mitte kunagi tõend",
+      "freeReview": "Teemad vaadatakse tasuta üle, enne kui ühtki küsimust kirjutatakse",
+      "startFromTest": "Või alusta valmis testist ametikoha järgi",
+      "shortExamples": "Näited on kuni 8 lühikest rida",
+      "noSetup": "Ei redaktorit ega seadistust: avaneb brauseris, ka telefonis",
+      "ownQuestions": "Üks katse, igal kandidaadil omad juhuslikud küsimused"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Valmis testid",
+        "text": "Alusta oskustestist ametikoha ja taseme järgi või loo oma."
+      },
+      "languages": {
+        "title": "{count, plural, one {# keel} other {# keelt}}",
+        "text": "Rakendus, testid ja e-kirjad sinu kandidaatide keeles."
+      },
+      "ats": {
+        "title": "Töötab sinu ATS-iga",
+        "text": "Workable, Greenhouse, Teamtailor, Recruitee ja Breezy HR kutsuvad kandidaate ja saavad tulemused tagasi."
+      },
+      "integrity": {
+        "title": "Märked kahtlase käitumise kohta",
+        "text": "Lehelt lahkumised, kopeerimiskatsed ja liiga kiired vastused, et küsimust jõuaks lugeda: põhjus lähemalt vaadata, mitte kunagi tõend."
+      },
+      "accessible": {
+        "title": "Ligipääsetav",
+        "text": "Loodud WCAG 2.2 AA järgi, lisaajaga neile, kes seda vajavad."
+      },
+      "price": {
+        "title": "{price} kandidaadi kohta",
+        "text": "Ilma tellimuseta. Sinu esimene ettevõte alustab {free, plural, one {# tasuta kandidaadiga} other {# tasuta kandidaadiga}}, kaarti pole vaja."
+      },
+      "documents": {
+        "title": "Dokumendid valmis",
+        "text": "Andmetöötlusleping, DPIA mall ja kandidaaditeate mallid."
+      },
+      "biasAudit": {
+        "title": "Eksport kallutatuse auditiks",
+        "text": "Lõpetanud kandidaatide tulemused CSV-failina sõltumatuks auditiks või oma neljaviiendiku reegli kontrolliks."
+      },
+      "noTraining": {
+        "title": "Ei kasutata AI treenimiseks",
+        "text": "Sinu andmetega ei treenita AI-mudeleid: testee AI-teenuse pakkuja OpenAI oma tingimuste järgi API andmetel ei treeni."
+      },
+      "location": {
+        "title": "Hoitakse ELis",
+        "text": "Google Cloudis Belgias; usalduse lehel on kõik teenusepakkujad."
+      },
+      "platform": {
+        "title": "Sinu platvormilt",
+        "text": "Kutsu API kaudu või põimi test SDK abil oma veebisaiti."
+      },
+      "quality": {
+        "title": "Küsimused, mis parandavad end ise",
+        "text": "Vastused, hääled ja teated toovad esile nõrgad küsimused ning need parandatakse või asendatakse."
+      },
+      "practice": {
+        "title": "Tasuta harjutamine",
+        "text": "Kandidaadid saavad ametikoha järgi harjutada, tasuta ja privaatselt, ning näevad lõpus kõiki õigeid vastuseid."
+      }
+    },
+    "more": {
+      "features": "kõik võimalused",
+      "tests": "oskustestid rollide kaupa",
+      "trust": "usalduse leht",
+      "testingGuide": "värbamistestide juhend",
+      "interviewsGuide": "AI-intervjuude juhend",
+      "engineersGuide": "kuidas värvata insenere"
+    }

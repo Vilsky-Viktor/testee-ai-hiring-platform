@@ -23,6 +23,10 @@ class TemplateSummary(BaseModel):
     indexable: bool = False
 
 
+class TemplateCountOut(BaseModel):
+    count: int
+
+
 class CopyableTopic(BaseModel):
     title: str
     # Its company questions: what a candidate's share of them comes from.

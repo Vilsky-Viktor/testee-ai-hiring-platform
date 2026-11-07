@@ -68,7 +68,8 @@ function TemplateContents({ template }: { template: ListedTemplate }) {
  * slug with `bySlug`), and
  * for `companyId` also ends with a "Use template" button. A template in `statuses` shows the
  * signed-in talent's progress on it after its title: a check while in progress, a double check
- * in the results' green once completed, each named in its tooltip. */
+ * in the results' green once completed, each named in its tooltip. Without `scrollsOn`, the
+ * list stays as it is (a numbered page of a public hub, with its page links under it). */
 export function TemplateList({
   path,
   initial,
@@ -78,6 +79,7 @@ export function TemplateList({
   bySlug,
   statuses,
   topicsLine = false,
+  scrollsOn = true,
 }: {
   path: string
   initial: ListedTemplate[]
@@ -87,6 +89,7 @@ export function TemplateList({
   bySlug?: boolean
   statuses?: PracticeStatus[]
   topicsLine?: boolean
+  scrollsOn?: boolean
 }) {
   const t = useTranslations("templates")
   const localTime = useLocalTime()
@@ -105,7 +108,7 @@ export function TemplateList({
       items={items}
       getKey={byId}
       estimateSize={89}
-      onEndReached={loadMore}
+      onEndReached={scrollsOn ? loadMore : undefined}
       className={LIST_BOX}
       renderItem={(template) => {
         const level = `levels.${template.level}` as const

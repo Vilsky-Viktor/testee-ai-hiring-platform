@@ -789,7 +789,10 @@
     "completed": "đã hoàn thành",
     "warningText": "<b>Muốn sát hơn với vị trí của bạn?</b> Hãy tạo buổi phỏng vấn từ mô tả công việc của bạn.",
     "contents": "{topics, plural, other {# chủ đề}}, {questions, plural, other {# câu hỏi}}, {minutes, plural, other {# phút}}",
-    "usedIn": "{count, plural, other {Được dùng trong # buổi phỏng vấn}}"
+    "usedIn": "{count, plural, other {Được dùng trong # buổi phỏng vấn}}",
+    "pageTitle": "{title}, trang {page, number}",
+    "pages": "Trang",
+    "pageLink": "Trang {page, number}"
   },
   "billing": {
     "paidTitle": "Đã nhận thanh toán",
@@ -3805,3 +3808,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Phần mềm đánh giá kỹ năng",
+        "title": "Phần mềm đánh giá kỹ năng trong tuyển dụng",
+        "description": "Phần mềm đánh giá kỹ năng biến mô tả công việc thành bài kiểm tra có tính giờ cho mọi vị trí. {count, plural, other {# ngôn ngữ}}, trả theo ứng viên, không gói đăng ký.",
+        "hero": {
+          "title": "Phần mềm đánh giá kỹ năng\ncho mọi vị trí",
+          "text": "Dán mô tả công việc và nhận một bài kiểm tra kỹ năng có tính giờ được soạn cho vị trí đó. Mỗi ứng viên nhận câu hỏi riêng, và bạn thấy mọi câu trả lời."
+        },
+        "how": {
+          "title": "Bài kiểm tra cho đúng vị trí bạn đang tuyển",
+          "text": "Bài kiểm tra bắt đầu từ mô tả công việc của bạn, nên bao quát những gì vị trí này cần."
+        },
+        "why": {
+          "title": "Đã bao gồm mọi thứ",
+          "text": "Bài kiểm tra nào cũng có mọi tính năng. Bạn chỉ trả phí cho ứng viên khi họ đã trả lời ít nhất một câu hỏi."
+        }
+      },
+      "aiInterview": {
+        "name": "Phần mềm phỏng vấn AI",
+        "title": "Phần mềm phỏng vấn AI cho tuyển dụng",
+        "description": "Phần mềm phỏng vấn AI: AI viết câu hỏi, con người quyết định. Chế độ nhấp hoặc giọng nói bằng {count, plural, other {# ngôn ngữ}}, không camera, không gói đăng ký.",
+        "hero": {
+          "title": "Phần mềm phỏng vấn AI\nđể con người quyết định",
+          "text": "AI soạn một buổi phỏng vấn có tính giờ từ mô tả công việc của bạn, và Mira, người phỏng vấn AI, có thể đọc to. Câu trả lời được chấm theo đáp án, và nhóm của bạn quyết định."
+        },
+        "how": {
+          "title": "AI làm gì và không làm gì",
+          "text": "AI làm phần việc viết. Ứng viên trả lời những câu hỏi có đáp án đúng sai rõ ràng, nên bạn có thể giải thích mọi điểm số."
+        },
+        "why": {
+          "title": "Đã bao gồm tin cậy và tuân thủ",
+          "text": "Con người quyết định, mọi ứng viên theo cùng một quy tắc, và tài liệu cho GDPR, Đạo luật AI của EU, quy định của Anh và Mỹ đều đã sẵn sàng."
+        }
+      },
+      "codingTest": {
+        "name": "Bài kiểm tra lập trình tuyển dụng",
+        "title": "Bài kiểm tra lập trình tuyển lập trình viên",
+        "description": "Bài kiểm tra đọc code tính giờ để tuyển lập trình viên, soạn từ mô tả công việc. Ứng viên đọc code và trả lời: không editor hay cài đặt, không gói đăng ký.",
+        "hero": {
+          "title": "Bài kiểm tra lập trình tuyển dụng\ndựa trên đọc code",
+          "text": "Bài kiểm tra có tính giờ về các ngôn ngữ và framework trong mô tả công việc của bạn. Ứng viên đọc những đoạn code ngắn và trả lời, trước khi bạn dành thời gian của kỹ sư cho họ."
+        },
+        "how": {
+          "title": "Vòng sàng lọc bằng đọc code",
+          "text": "Ứng viên không viết, chạy hay debug code trong testee. Đọc code và viết code là hai kỹ năng khác nhau, nên hãy dùng bài này để sàng lọc trước vòng thực hành."
+        },
+        "why": {
+          "title": "Phù hợp trước vòng thực hành",
+          "text": "Trước tiên là vòng sàng lọc có tính giờ, sau đó là bài tập hoặc vòng lập trình của riêng bạn cho những ứng viên bạn chọn."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "Soạn từ mô tả công việc của bạn",
+        "text": "AI đọc mô tả công việc và đề xuất các chủ đề. Bạn giữ, đổi tên hoặc thay đổi chúng trước khi câu hỏi nào được viết, và tạo bài kiểm tra là miễn phí.",
+        "alt": "Thẻ chủ đề của buổi phỏng vấn: tổng số câu hỏi và số phút cho mỗi ứng viên, cùng các chủ đề và số câu hỏi của từng chủ đề."
+      },
+      "sameRules": {
+        "title": "Cùng một quy tắc cho mọi ứng viên",
+        "text": "Mỗi ứng viên nhận bộ câu hỏi ngẫu nhiên riêng, theo thứ tự riêng, với đồng hồ đếm ngược ở từng câu do máy chủ tính.",
+        "alt": "Một câu hỏi của ứng viên về Rust: câu hỏi, đồng hồ đếm ngược và bốn phương án, một phương án đã được chọn."
+      },
+      "compare": {
+        "title": "Kết quả có thể so sánh",
+        "text": "Điểm của mọi ứng viên so với điểm đạt của bạn, trong một danh sách. Mở báo cáo để xem mọi câu trả lời và thời gian trả lời.",
+        "alt": "Danh sách ứng viên của buổi phỏng vấn với tên, trạng thái, điểm và một ứng viên có cảnh báo."
+      },
+      "aiWrites": {
+        "title": "AI viết, bạn vẫn kiểm soát",
+        "text": "AI đề xuất chủ đề từ mô tả công việc và soạn một bộ câu hỏi cho mỗi chủ đề bạn phê duyệt. Bạn có thể đọc mọi câu hỏi, tắt hoặc tạo lại từng câu.",
+        "alt": "Các câu hỏi của buổi phỏng vấn, mỗi câu kèm ví dụ và đáp án."
+      },
+      "voice": {
+        "title": "Nhấp hoặc giọng nói",
+        "text": "Ứng viên trả lời bằng cú nhấp, hoặc ở chế độ giọng nói, Mira, người phỏng vấn AI, đọc to từng câu hỏi và các phương án, và ứng viên trả lời mà không cần dùng tay.",
+        "alt": "Buổi phỏng vấn bằng giọng nói: Mira, người phỏng vấn AI, bên cạnh câu hỏi và bốn phương án."
+      },
+      "personDecides": {
+        "title": "Con người quyết định",
+        "text": "Câu trả lời được chấm theo đáp án: không AI nào phán xét câu trả lời của ứng viên, và testee không bao giờ loại ai. Bạn nhận điểm, mọi câu trả lời và các câu hỏi để hỏi trong buổi phỏng vấn trực tiếp.",
+        "alt": "Báo cáo của một ứng viên: điểm, thẻ mẫu trả lời và các câu hỏi gợi ý để hỏi thêm."
+      },
+      "stack": {
+        "title": "Đúng công nghệ của bạn, không gì khác",
+        "text": "AI đọc mô tả công việc và đề xuất các chủ đề. Bạn giữ những gì quan trọng và đổi phần còn lại, nên bài kiểm tra bao quát ngôn ngữ, framework và cách làm của bạn.",
+        "alt": "Thẻ chủ đề của buổi phỏng vấn: tổng số câu hỏi và số phút cho mỗi ứng viên, cùng các chủ đề và số câu hỏi của từng chủ đề."
+      },
+      "readingCode": {
+        "title": "Câu hỏi về code",
+        "text": "Một đoạn code ngắn và câu hỏi về việc nó in ra hoặc trả về gì, làm gì, vì sao lỗi hoặc thay đổi nào sửa được. Với SQL là một bảng nhỏ và một truy vấn.",
+        "alt": "Một câu hỏi của ứng viên về Rust: câu hỏi, đồng hồ đếm ngược và bốn phương án, một phương án đã được chọn."
+      },
+      "signals": {
+        "title": "Tín hiệu đáng xem kỹ hơn",
+        "text": "Rời trang, thử sao chép và trả lời quá nhanh để kịp đọc, cùng các mẫu trả lời bất thường. Báo cáo gợi ý các câu hỏi để hỏi trong buổi phỏng vấn trực tiếp.",
+        "alt": "Báo cáo của một ứng viên: điểm, thẻ mẫu trả lời và các câu hỏi gợi ý để hỏi thêm."
+      }
+    },
+    "points": {
+      "anyRole": "Mọi vị trí, mọi lĩnh vực",
+      "options": "Bốn phương án mỗi câu, một số câu có nhiều hơn một đáp án đúng",
+      "maxQuestions": "Tối đa 60 câu hỏi cho mỗi ứng viên",
+      "onePass": "Chỉ một lần: không quay lại câu trước, không làm lại",
+      "sameMix": "Cùng đồng hồ và cơ cấu câu hỏi cho mọi người",
+      "extraTime": "Thêm thời gian cho ai yêu cầu, đặt trước khi bắt đầu",
+      "sort": "Điểm cao nhất lên đầu chỉ với một cú nhấp",
+      "pdf": "Báo cáo PDF cho một ứng viên hoặc cả buổi phỏng vấn",
+      "peopleDecide": "Điểm số hỗ trợ quyết định của bạn, không thay bạn quyết định",
+      "keysChecked": "Một phần đáp án được AI thứ hai kiểm tra",
+      "weakFixed": "Câu hỏi yếu được chỉ ra qua câu trả lời, lượt bình chọn và báo cáo, rồi được sửa hoặc thay thế",
+      "preview": "Làm thử như ứng viên, miễn phí, trước khi mời ai",
+      "ownMode": "Đặt cho buổi phỏng vấn, hoặc chuyển riêng cho một ứng viên",
+      "voiceLanguages": "Giọng nói bằng cả {count, plural, other {# ngôn ngữ}}, với chất lượng khác nhau tùy ngôn ngữ",
+      "noVoiceKept": "testee không lưu giọng nói: giọng nói chỉ được chuyển thành văn bản",
+      "noCamera": "Không camera, không quay màn hình, không theo dõi thiết bị",
+      "noInference": "testee không bao giờ hỏi hay suy đoán các đặc điểm được pháp luật bảo vệ",
+      "notProof": "Tín hiệu là lý do để xem kỹ hơn, không bao giờ là bằng chứng",
+      "freeReview": "Xem lại chủ đề miễn phí, trước khi câu hỏi nào được viết",
+      "startFromTest": "Hoặc bắt đầu từ bài kiểm tra có sẵn theo vị trí",
+      "shortExamples": "Ví dụ dài tối đa 8 dòng ngắn",
+      "noSetup": "Không trình soạn thảo, không cài đặt: mở trên trình duyệt, cả trên điện thoại",
+      "ownQuestions": "Chỉ một lần, với câu hỏi ngẫu nhiên riêng cho mỗi ứng viên"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Bài kiểm tra có sẵn",
+        "text": "Bắt đầu từ một bài kiểm tra kỹ năng theo vị trí và cấp bậc, hoặc tự tạo bài của bạn."
+      },
+      "languages": {
+        "title": "{count, plural, other {# ngôn ngữ}}",
+        "text": "Ứng dụng, bài kiểm tra và email, bằng ngôn ngữ của ứng viên."
+      },
+      "ats": {
+        "title": "Hoạt động với ATS của bạn",
+        "text": "Workable, Greenhouse, Teamtailor, Recruitee và Breezy HR mời ứng viên và nhận lại kết quả."
+      },
+      "integrity": {
+        "title": "Cảnh báo hành vi bất thường",
+        "text": "Rời trang, thử sao chép và trả lời quá nhanh để kịp đọc: lý do để xem kỹ hơn, không bao giờ là bằng chứng."
+      },
+      "accessible": {
+        "title": "Dễ tiếp cận",
+        "text": "Xây dựng theo WCAG 2.2 AA, có thêm thời gian cho người cần."
+      },
+      "price": {
+        "title": "{price} mỗi ứng viên",
+        "text": "Không gói đăng ký. Công ty đầu tiên của bạn bắt đầu với {free, plural, other {# ứng viên miễn phí}}, không cần thẻ."
+      },
+      "documents": {
+        "title": "Tài liệu sẵn sàng",
+        "text": "Thỏa thuận xử lý dữ liệu, mẫu DPIA và mẫu thông báo cho ứng viên."
+      },
+      "biasAudit": {
+        "title": "Xuất dữ liệu kiểm toán thiên lệch",
+        "text": "Kết quả của các ứng viên đã hoàn thành ở dạng CSV, cho một cuộc kiểm toán độc lập hoặc tự kiểm tra theo quy tắc bốn phần năm."
+      },
+      "noTraining": {
+        "title": "Không dùng để huấn luyện AI",
+        "text": "Dữ liệu của bạn không huấn luyện mô hình AI: OpenAI, nhà cung cấp AI của testee, không huấn luyện trên dữ liệu API theo điều khoản của mình."
+      },
+      "location": {
+        "title": "Lưu trữ tại EU",
+        "text": "Trên Google Cloud ở Bỉ; trang Tin cậy liệt kê mọi nhà cung cấp."
+      },
+      "platform": {
+        "title": "Từ nền tảng của bạn",
+        "text": "Mời qua API, hoặc nhúng bài kiểm tra vào trang web của riêng bạn bằng SDK."
+      },
+      "quality": {
+        "title": "Câu hỏi tự hoàn thiện",
+        "text": "Câu trả lời, lượt bình chọn và báo cáo chỉ ra câu hỏi yếu; chúng được sửa hoặc thay thế."
+      },
+      "practice": {
+        "title": "Luyện tập miễn phí",
+        "text": "Ứng viên có thể luyện tập theo vị trí, miễn phí và riêng tư, rồi xem mọi đáp án đúng ở cuối."
+      }
+    },
+    "more": {
+      "features": "tất cả tính năng",
+      "tests": "bài kiểm tra kỹ năng theo vị trí",
+      "trust": "trang tin cậy",
+      "testingGuide": "hướng dẫn về bài kiểm tra trước tuyển dụng",
+      "interviewsGuide": "hướng dẫn về phỏng vấn AI",
+      "engineersGuide": "cách tuyển kỹ sư phần mềm"
+    }

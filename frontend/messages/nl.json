@@ -789,7 +789,10 @@
     "completed": "afgerond",
     "warningText": "<b>Liever iets dat beter past?</b> Maak een interview op basis van je functieomschrijving.",
     "contents": "{topics, plural, one {# onderwerp} other {# onderwerpen}}, {questions, plural, one {# vraag} other {# vragen}}, {minutes, plural, one {# min} other {# min}}",
-    "usedIn": "{count, plural, one {Gebruikt in # interview} other {Gebruikt in # interviews}}"
+    "usedIn": "{count, plural, one {Gebruikt in # interview} other {Gebruikt in # interviews}}",
+    "pageTitle": "{title}, pagina {page, number}",
+    "pages": "Pagina's",
+    "pageLink": "Pagina {page, number}"
   },
   "billing": {
     "paidTitle": "Betaling ontvangen",
@@ -3801,3 +3804,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Software voor skills assessments",
+        "title": "Software voor skills assessments bij werving",
+        "description": "Software voor skills assessments die van een functieomschrijving een test met tijdslimiet maakt. {count, plural, one {# taal} other {# talen}}, betaal per kandidaat, geen abonnement.",
+        "hero": {
+          "title": "Software voor skills assessments\nvoor elke functie",
+          "text": "Plak een functieomschrijving en krijg een vaardigheidstest met tijdslimiet, geschreven voor de functie. Elke kandidaat krijgt eigen vragen, en jij ziet elk antwoord."
+        },
+        "how": {
+          "title": "Een test voor de functie die je wilt invullen",
+          "text": "De test begint bij je functieomschrijving, dus hij dekt wat deze functie vraagt."
+        },
+        "why": {
+          "title": "Alles is inbegrepen",
+          "text": "Bij elke test zitten alle functionaliteiten. Een kandidaat kost pas iets als die minstens één vraag heeft beantwoord."
+        }
+      },
+      "aiInterview": {
+        "name": "Software voor AI-interviews",
+        "title": "Software voor AI-interviews bij werving",
+        "description": "Software voor AI-interviews: AI schrijft de vragen, mensen beslissen. Klik- of spraakmodus in {count, plural, one {# taal} other {# talen}}, geen camera, geen abonnement.",
+        "hero": {
+          "title": "Software voor AI-interviews\nwaarin mensen beslissen",
+          "text": "AI schrijft een interview met tijdslimiet op basis van je functieomschrijving, en Mira, de AI-interviewer, kan het voorlezen. Antwoorden worden nagekeken met een antwoordsleutel, en je team beslist."
+        },
+        "how": {
+          "title": "Wat AI doet, en wat niet",
+          "text": "AI doet het schrijfwerk. Kandidaten beantwoorden vragen met duidelijk goede en foute antwoorden, dus je kunt elke score uitleggen."
+        },
+        "why": {
+          "title": "Vertrouwen en compliance inbegrepen",
+          "text": "Een mens beslist, elke kandidaat krijgt dezelfde regels, en de documenten voor de GDPR, de EU AI Act en de regels in het VK en de VS staan klaar."
+        }
+      },
+      "codingTest": {
+        "name": "Programmeertest voor werving",
+        "title": "Programmeertest om developers te werven",
+        "description": "Programmeertest met tijdslimiet voor developers, op basis van je functieomschrijving. Kandidaten lezen code en antwoorden: geen editor, geen abonnement.",
+        "hero": {
+          "title": "Programmeertest voor werving\ngebouwd op code lezen",
+          "text": "Een test met tijdslimiet over de talen en frameworks uit je functieomschrijving. Kandidaten lezen korte stukken code en antwoorden, voordat je de tijd van een developer inzet."
+        },
+        "how": {
+          "title": "Een screening op code lezen",
+          "text": "Kandidaten schrijven, draaien of debuggen geen code in testee. Code lezen en code schrijven zijn verschillende vaardigheden, dus gebruik dit als screening vóór een praktijkronde."
+        },
+        "why": {
+          "title": "Past vóór je praktijkronde",
+          "text": "Eerst een screening met tijdslimiet, daarna je eigen opdracht of coderonde voor de kandidaten die je kiest."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "Geschreven vanuit je functieomschrijving",
+        "text": "De AI leest de functieomschrijving en stelt onderwerpen voor. Je houdt ze, geeft ze een andere naam of wijzigt ze voordat er een vraag geschreven wordt, en de test maken is gratis.",
+        "alt": "Het tabblad onderwerpen van een interview: het totaal aan vragen en minuten per kandidaat, en de onderwerpen met hun aantal vragen."
+      },
+      "sameRules": {
+        "title": "Dezelfde regels voor elke kandidaat",
+        "text": "Elke kandidaat krijgt eigen willekeurige vragen, in een eigen volgorde, met bij elke vraag een aftelklok die de server bijhoudt.",
+        "alt": "Een vraag van een kandidaat over Rust: de vraag, de aftelklok en vier antwoordopties, waarvan één gekozen."
+      },
+      "compare": {
+        "title": "Resultaten die je kunt vergelijken",
+        "text": "De score van elke kandidaat ten opzichte van je slaaggrens, in één lijst. Open een rapport om elk antwoord te zien en hoe lang het duurde.",
+        "alt": "De kandidatenlijst van een interview met namen, statussen, scores en een gemarkeerde kandidaat."
+      },
+      "aiWrites": {
+        "title": "AI schrijft, jij houdt de regie",
+        "text": "AI stelt onderwerpen voor op basis van de functieomschrijving en schrijft een pool van vragen voor elk onderwerp dat je goedkeurt. Je kunt elke vraag lezen, uitschakelen of opnieuw genereren.",
+        "alt": "De vragen van een interview, elk met het voorbeeld en de antwoordsleutel."
+      },
+      "voice": {
+        "title": "Klik of spraak",
+        "text": "Kandidaten antwoorden met een klik, of in spraakmodus leest Mira, een AI-interviewer, elke vraag en de opties voor en antwoorden ze handsfree.",
+        "alt": "Een spraakinterview: Mira, de AI-interviewer, naast de vraag en de vier opties."
+      },
+      "personDecides": {
+        "title": "Een mens beslist",
+        "text": "Antwoorden worden nagekeken met de antwoordsleutel: geen enkele AI beoordeelt het antwoord van een kandidaat, en testee wijst nooit iemand af. Je krijgt de score, elk antwoord en vragen om te stellen in een live gesprek.",
+        "alt": "Het rapport van een kandidaat: de score, de kaart met antwoordpatronen en voorgestelde vervolgvragen."
+      },
+      "stack": {
+        "title": "Jouw stack, verder niets",
+        "text": "De AI leest de functieomschrijving en stelt onderwerpen voor. Je houdt wat telt en wijzigt de rest, zodat de test jouw talen, frameworks en werkwijzen dekt.",
+        "alt": "Het tabblad onderwerpen van een interview: het totaal aan vragen en minuten per kandidaat, en de onderwerpen met hun aantal vragen."
+      },
+      "readingCode": {
+        "title": "Vragen over code",
+        "text": "Een kort stuk code, en een vraag over wat het afdrukt of teruggeeft, wat het doet, waarom het faalt of welke wijziging het oplost. Voor SQL een kleine tabel en een query.",
+        "alt": "Een vraag van een kandidaat over Rust: de vraag, de aftelklok en vier antwoordopties, waarvan één gekozen."
+      },
+      "signals": {
+        "title": "Signalen om beter naar te kijken",
+        "text": "Pagina verlaten, kopieerpogingen en antwoorden die te snel kwamen om de vraag gelezen te hebben, plus ongewone antwoordpatronen. Rapporten stellen vragen voor om te stellen in een live gesprek.",
+        "alt": "Het rapport van een kandidaat: de score, de kaart met antwoordpatronen en voorgestelde vervolgvragen."
+      }
+    },
+    "points": {
+      "anyRole": "Elke functie, elke branche",
+      "options": "Vier opties per vraag, soms met meer dan één goed antwoord",
+      "maxQuestions": "Tot 60 vragen per kandidaat",
+      "onePass": "Eén poging: niet teruggaan, niet opnieuw afleggen",
+      "sameMix": "Dezelfde timer en dezelfde mix van vragen voor iedereen",
+      "extraTime": "Extra tijd voor wie erom vraagt, ingesteld vóór de start",
+      "sort": "Beste scores bovenaan met één klik",
+      "pdf": "Pdf-rapporten voor één kandidaat of het hele interview",
+      "peopleDecide": "De score ondersteunt je beslissing; hij neemt hem niet",
+      "keysChecked": "Steekproef van antwoordsleutels gecontroleerd door een tweede AI",
+      "weakFixed": "Zwakke vragen aangewezen door antwoorden, stemmen en meldingen, en daarna verbeterd of vervangen",
+      "preview": "Doe het zoals een kandidaat, gratis, voordat je iemand uitnodigt",
+      "ownMode": "Ingesteld voor het interview, of gewijzigd voor één kandidaat",
+      "voiceLanguages": "Spraak in alle {count, plural, one {# taal} other {# talen}}, met een kwaliteit die per taal verschilt",
+      "noVoiceKept": "testee bewaart geen stem: die wordt alleen omgezet in tekst",
+      "noCamera": "Geen camera, schermopname of apparaattracking",
+      "noInference": "testee vraagt nooit naar beschermde kenmerken en leidt ze nooit af",
+      "notProof": "Een signaal is een reden om beter te kijken, nooit een bewijs",
+      "freeReview": "Onderwerpen gratis bekeken, voordat er een vraag geschreven wordt",
+      "startFromTest": "Of begin met een kant-en-klare test per functie",
+      "shortExamples": "Voorbeelden van maximaal 8 korte regels",
+      "noSetup": "Geen editor of installatie: het opent in een browser, ook op een telefoon",
+      "ownQuestions": "Eén poging, met eigen willekeurige vragen voor elke kandidaat"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Kant-en-klare tests",
+        "text": "Begin met een vaardigheidstest per functie en niveau, of maak je eigen test."
+      },
+      "languages": {
+        "title": "{count, plural, one {# taal} other {# talen}}",
+        "text": "De app, de tests en de e-mails, in de taal van je kandidaten."
+      },
+      "ats": {
+        "title": "Werkt met je ATS",
+        "text": "Workable, Greenhouse, Teamtailor, Recruitee en Breezy HR nodigen kandidaten uit en krijgen de resultaten terug."
+      },
+      "integrity": {
+        "title": "Integriteitssignalen",
+        "text": "Pagina verlaten, kopieerpogingen en antwoorden die te snel kwamen om de vraag gelezen te hebben: een reden om beter te kijken, nooit een bewijs."
+      },
+      "accessible": {
+        "title": "Toegankelijk",
+        "text": "Gebouwd volgens WCAG 2.2 AA, met extra tijd voor wie dat nodig heeft."
+      },
+      "price": {
+        "title": "{price} per kandidaat",
+        "text": "Geen abonnement. Je eerste bedrijf begint met {free, plural, one {# gratis kandidaat} other {# gratis kandidaten}}, zonder creditcard."
+      },
+      "documents": {
+        "title": "Documenten klaar",
+        "text": "Een verwerkersovereenkomst, een DPIA-sjabloon en sjablonen voor kandidaatberichten."
+      },
+      "biasAudit": {
+        "title": "Export voor bias-audit",
+        "text": "De resultaten van kandidaten die klaar zijn als CSV, voor een onafhankelijke audit of je eigen vier-vijfdetoets."
+      },
+      "noTraining": {
+        "title": "Niet gebruikt om AI te trainen",
+        "text": "Je gegevens trainen geen AI-modellen: OpenAI, de AI-leverancier van testee, traint volgens zijn voorwaarden niet op API-gegevens."
+      },
+      "location": {
+        "title": "Opgeslagen in de EU",
+        "text": "Op Google Cloud in België; op de pagina Vertrouwen staat elke dienstverlener."
+      },
+      "platform": {
+        "title": "Vanuit je platform",
+        "text": "Nodig uit via de API, of sluit de test met de SDK in op je eigen site."
+      },
+      "quality": {
+        "title": "Vragen die zichzelf verbeteren",
+        "text": "Antwoorden, stemmen en meldingen wijzen zwakke vragen aan; die worden verbeterd of vervangen."
+      },
+      "practice": {
+        "title": "Gratis oefenen",
+        "text": "Kandidaten kunnen per functie oefenen, gratis en privé, en zien aan het eind elk juist antwoord."
+      }
+    },
+    "more": {
+      "features": "alle functionaliteiten",
+      "tests": "vaardigheidstests per functie",
+      "trust": "vertrouwenspagina",
+      "testingGuide": "de gids over selectietests",
+      "interviewsGuide": "de gids over AI-interviews",
+      "engineersGuide": "developers werven"
+    }

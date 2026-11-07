@@ -6,6 +6,7 @@ from sqlalchemy.orm import aliased, selectinload
 
 from library.constants.reuse import MIN_COPY_QUESTIONS
 from library.constants.sets import Pool, SetKind
+from library.constants.templates import MIN_INDEXABLE_TOPICS
 from library.helpers.search import escape_like
 from library.helpers.slugs import unique_slug
 from library.models.sets import Question, QuestionSet, Topic
@@ -31,11 +32,12 @@ async def get_by_slug(session: AsyncSession, slug: str) -> QuestionSet | None:
     return await session.scalar(query)
 
 
-async def duplicate_ids(session: AsyncSession, ids: list[uuid.UUID]) -> set[uuid.UUID]:
-    """The templates among `ids` with an older template of the same title (any case) and
-    language: near-duplicates of it. Of two made at once, the one with the smaller id is older."""
+def _has_older_twin():
+    """Whether a template has an older template of the same title (any case) and language: it's a
+    near-duplicate of it. Of two made at once, the one with the smaller id is older."""
     older = aliased(QuestionSet)
-    has_older = (
+
+    return (
         select(older.id)
         .where(
             older.kind == SetKind.TEMPLATE,
@@ -48,7 +50,11 @@ async def duplicate_ids(session: AsyncSession, ids: list[uuid.UUID]) -> set[uuid
         )
         .exists()
     )
-    query = select(QuestionSet.id).where(QuestionSet.id.in_(ids), has_older)
+
+
+async def duplicate_ids(session: AsyncSession, ids: list[uuid.UUID]) -> set[uuid.UUID]:
+    """The templates among `ids` that are near-duplicates of an older one."""
+    query = select(QuestionSet.id).where(QuestionSet.id.in_(ids), _has_older_twin())
 
     return set(await session.scalars(query))
 
@@ -98,6 +104,39 @@ async def add_copy(session: AsyncSession, copy: QuestionSet, sources: list[uuid.
 
     if copied:
         await session.execute(COPY_EMBEDDING_SQL, copied)
+
+
+def _hub_filters(languages: list[str]) -> list:
+    """The templates the public hubs (/tests, /practice) list: those search engines index
+    (helpers/templates.is_indexable), in these languages."""
+    return [
+        QuestionSet.kind == SetKind.TEMPLATE,
+        QuestionSet.topic_count >= MIN_INDEXABLE_TOPICS,
+        ~_has_older_twin(),
+        QuestionSet.language.in_(languages),
+    ]
+
+
+async def hub_templates(
+    session: AsyncSession, languages: list[str], offset: int, limit: int
+) -> list[QuestionSet]:
+    """A public hub's page, by title, so each page keeps its roles as new templates arrive."""
+    query = (
+        select(QuestionSet)
+        .where(*_hub_filters(languages))
+        .order_by(func.lower(QuestionSet.title), QuestionSet.id)
+        .offset(offset)
+        .limit(limit)
+    )
+
+    return list(await session.scalars(query))
+
+
+async def hub_count(session: AsyncSession, languages: list[str]) -> int:
+    """How many templates a public hub lists, for its page links."""
+    query = select(func.count()).select_from(QuestionSet).where(*_hub_filters(languages))
+
+    return await session.scalar(query) or 0
 
 
 async def list_templates(

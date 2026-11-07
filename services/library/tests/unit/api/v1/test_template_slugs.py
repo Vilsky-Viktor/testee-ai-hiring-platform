@@ -43,6 +43,7 @@ def test_a_taken_slug_gets_the_next_free_number():
 def test_the_words_of_other_template_routes_are_never_slugs():
     assert unique_slug(slugify("Filters"), set()) == "filters-2"
     assert unique_slug("copyable", set()) == "copyable-2"
+    assert unique_slug("hub", set()) == "hub-2"
 
 
 @pytest.fixture
@@ -104,3 +105,8 @@ def test_the_sample_has_questions_with_answers_and_their_topic(client, stored):
 def test_a_company_test_has_no_sample(client, stored):
     assert client.get(f"/templates/{uuid.uuid4()}/sample").status_code == 404
     assert client.get("/templates/no-such-template/sample").status_code == 404
+
+
+@pytest.mark.parametrize("path", ["/templates/hub", "/templates/hub/count"])
+def test_a_hub_names_its_languages(client, path):
+    assert client.get(path).status_code == 422

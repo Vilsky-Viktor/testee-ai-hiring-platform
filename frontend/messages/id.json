@@ -789,7 +789,10 @@
     "completed": "selesai",
     "warningText": "<b>Butuh yang lebih pas?</b> Buat wawancara dari deskripsi pekerjaanmu.",
     "contents": "{topics, plural, other {# topik}}, {questions, plural, other {# soal}}, {minutes, plural, other {# mnt}}",
-    "usedIn": "{count, plural, other {Dipakai di # wawancara}}"
+    "usedIn": "{count, plural, other {Dipakai di # wawancara}}",
+    "pageTitle": "{title}, halaman {page, number}",
+    "pages": "Halaman",
+    "pageLink": "Halaman {page, number}"
   },
   "billing": {
     "paidTitle": "Pembayaran diterima",
@@ -3801,3 +3804,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Software asesmen keterampilan",
+        "title": "Software asesmen keterampilan untuk rekrutmen",
+        "description": "Software asesmen keterampilan: ubah deskripsi pekerjaan menjadi tes berbatas waktu untuk posisi apa pun. {count, plural, other {# bahasa}}, bayar per kandidat, tanpa langganan.",
+        "hero": {
+          "title": "Software asesmen keterampilan\nuntuk posisi apa pun",
+          "text": "Tempel deskripsi pekerjaan dan dapatkan tes keterampilan berbatas waktu yang ditulis untuk posisi itu. Setiap kandidat mendapat soalnya sendiri, dan kamu melihat setiap jawaban."
+        },
+        "how": {
+          "title": "Tes untuk posisi yang sedang kamu rekrut",
+          "text": "Tes dimulai dari deskripsi pekerjaanmu, jadi mencakup apa yang dibutuhkan posisi ini."
+        },
+        "why": {
+          "title": "Semuanya sudah termasuk",
+          "text": "Semua fitur tersedia di setiap tes. Kandidat baru dikenai biaya setelah menjawab setidaknya satu soal."
+        }
+      },
+      "aiInterview": {
+        "name": "Software wawancara AI",
+        "title": "Software wawancara AI untuk rekrutmen",
+        "description": "Software wawancara AI: AI menulis soal, manusia yang memutuskan. Mode klik atau suara dalam {count, plural, other {# bahasa}}, tanpa kamera, tanpa langganan.",
+        "hero": {
+          "title": "Software wawancara AI\ndan manusia yang memutuskan",
+          "text": "AI menulis wawancara berbatas waktu dari deskripsi pekerjaanmu, dan Mira, pewawancara AI, bisa membacakannya. Jawaban dinilai berdasarkan kunci jawaban, dan timmu yang memutuskan."
+        },
+        "how": {
+          "title": "Yang dilakukan AI, dan yang tidak",
+          "text": "AI mengerjakan penulisannya. Kandidat menjawab soal yang punya jawaban benar dan salah yang jelas, jadi kamu bisa menjelaskan setiap nilai."
+        },
+        "why": {
+          "title": "Kepercayaan dan kepatuhan sudah termasuk",
+          "text": "Manusia yang memutuskan, setiap kandidat mendapat aturan yang sama, dan dokumen untuk GDPR, EU AI Act, serta aturan Inggris dan AS sudah siap."
+        }
+      },
+      "codingTest": {
+        "name": "Tes coding untuk rekrutmen",
+        "title": "Tes coding untuk merekrut developer",
+        "description": "Tes baca kode berbatas waktu untuk merekrut developer, dari deskripsi pekerjaanmu. Kandidat membaca lalu menjawab: tanpa editor, setup, atau langganan.",
+        "hero": {
+          "title": "Tes coding untuk rekrutmen\nberbasis membaca kode",
+          "text": "Tes berbatas waktu tentang bahasa dan framework dalam deskripsi pekerjaanmu. Kandidat membaca potongan kode singkat lalu menjawab, sebelum kamu menghabiskan waktu engineer untuk mereka."
+        },
+        "how": {
+          "title": "Penyaringan yang membaca kode",
+          "text": "Kandidat tidak menulis, menjalankan, atau men-debug kode di testee. Membaca kode dan menulisnya adalah keterampilan yang berbeda, jadi pakai ini sebagai penyaringan sebelum babak praktik."
+        },
+        "why": {
+          "title": "Pas sebelum babak praktikmu",
+          "text": "Penyaringan berbatas waktu dulu, lalu latihan atau babak coding versimu sendiri untuk kandidat yang kamu pilih."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "Ditulis dari deskripsi pekerjaanmu",
+        "text": "AI membaca deskripsi pekerjaan dan mengusulkan topik. Kamu mempertahankan, mengganti nama, atau mengubahnya sebelum soal apa pun ditulis, dan membuat tes itu gratis.",
+        "alt": "Tab topik wawancara: total soal dan menit untuk setiap kandidat, serta topik dengan jumlah soalnya."
+      },
+      "sameRules": {
+        "title": "Aturan yang sama untuk setiap kandidat",
+        "text": "Setiap kandidat mendapat soal acaknya sendiri, dengan urutannya sendiri, dan hitung mundur di setiap soal, dengan waktu dihitung oleh server.",
+        "alt": "Soal kandidat tentang Rust: soal, hitung mundurnya, dan empat pilihan jawaban, satu terpilih."
+      },
+      "compare": {
+        "title": "Hasil yang bisa dibandingkan",
+        "text": "Nilai setiap kandidat terhadap nilai lulusmu, dalam satu daftar. Buka laporan untuk melihat setiap jawaban dan berapa lama waktunya.",
+        "alt": "Daftar kandidat sebuah wawancara dengan nama, status, nilai, dan satu kandidat yang ditandai."
+      },
+      "aiWrites": {
+        "title": "AI menulis, kamu tetap memegang kendali",
+        "text": "AI mengusulkan topik dari deskripsi pekerjaan dan menulis kumpulan soal untuk setiap topik yang kamu setujui. Kamu bisa membaca setiap soal, menonaktifkannya, atau membuatnya ulang.",
+        "alt": "Soal-soal wawancara, masing-masing dengan contoh dan kunci jawabannya."
+      },
+      "voice": {
+        "title": "Klik atau suara",
+        "text": "Kandidat menjawab dengan klik, atau dalam mode suara Mira, pewawancara AI, membacakan setiap soal dan pilihannya, dan mereka menjawab tanpa perlu menyentuh apa pun.",
+        "alt": "Wawancara suara: Mira, pewawancara AI, di samping soal dan empat pilihannya."
+      },
+      "personDecides": {
+        "title": "Manusia yang memutuskan",
+        "text": "Jawaban dinilai berdasarkan kunci jawaban: tidak ada AI yang menilai jawaban kandidat, dan testee tidak pernah menolak siapa pun. Kamu mendapat nilai, setiap jawaban, dan pertanyaan untuk wawancara langsung.",
+        "alt": "Laporan kandidat: nilai, kartu pola jawaban, dan saran pertanyaan lanjutan."
+      },
+      "stack": {
+        "title": "Stack-mu, tidak lebih",
+        "text": "AI membaca deskripsi pekerjaan dan mengusulkan topik. Pertahankan yang penting dan ubah sisanya, jadi tes mencakup bahasa, framework, dan praktik yang kamu pakai.",
+        "alt": "Tab topik wawancara: total soal dan menit untuk setiap kandidat, serta topik dengan jumlah soalnya."
+      },
+      "readingCode": {
+        "title": "Soal tentang kode",
+        "text": "Potongan kode singkat, dan soal tentang apa yang dicetak atau dikembalikannya, apa fungsinya, kenapa gagal, atau perubahan mana yang memperbaikinya. Untuk SQL, tabel kecil dan sebuah query.",
+        "alt": "Soal kandidat tentang Rust: soal, hitung mundurnya, dan empat pilihan jawaban, satu terpilih."
+      },
+      "signals": {
+        "title": "Tanda yang layak dilihat lebih teliti",
+        "text": "Meninggalkan halaman, percobaan menyalin, dan jawaban yang terlalu cepat untuk sempat dibaca, ditambah pola jawaban yang tidak biasa. Laporan menyarankan pertanyaan untuk wawancara langsung.",
+        "alt": "Laporan kandidat: nilai, kartu pola jawaban, dan saran pertanyaan lanjutan."
+      }
+    },
+    "points": {
+      "anyRole": "Pekerjaan apa pun, bidang apa pun",
+      "options": "Empat pilihan per soal, sebagian dengan lebih dari satu jawaban benar",
+      "maxQuestions": "Sampai 60 soal per kandidat",
+      "onePass": "Satu kesempatan: tidak bisa kembali ke soal sebelumnya, tidak bisa mengulang",
+      "sameMix": "Pengatur waktu dan campuran soal yang sama untuk semua orang",
+      "extraTime": "Waktu tambahan bagi siapa pun yang memintanya, diatur sebelum mulai",
+      "sort": "Nilai terbaik di atas dengan sekali klik",
+      "pdf": "Laporan PDF untuk satu kandidat atau seluruh wawancara",
+      "peopleDecide": "Nilai mendukung keputusanmu; nilai tidak membuat keputusan",
+      "keysChecked": "Sampel kunci jawaban diperiksa AI kedua",
+      "weakFixed": "Soal yang lemah ditandai oleh jawaban, vote, dan laporan, lalu diperbaiki atau diganti",
+      "preview": "Ikuti seperti kandidat, gratis, sebelum mengundang siapa pun",
+      "ownMode": "Diatur untuk wawancara, atau diubah untuk satu kandidat",
+      "voiceLanguages": "Suara dalam ke-{count, plural, other {# bahasa}}, dengan kualitas yang berbeda-beda per bahasa",
+      "noVoiceKept": "testee tidak menyimpan suara: suara hanya diubah menjadi teks",
+      "noCamera": "Tanpa kamera, rekaman layar, atau pelacakan perangkat",
+      "noInference": "testee tidak pernah menanyakan atau menebak karakteristik yang dilindungi hukum",
+      "notProof": "Tanda adalah alasan untuk melihat lebih teliti, bukan bukti",
+      "freeReview": "Topik ditinjau gratis, sebelum soal apa pun ditulis",
+      "startFromTest": "Atau mulai dari tes siap pakai per posisi",
+      "shortExamples": "Contoh paling banyak 8 baris pendek",
+      "noSetup": "Tanpa editor atau setup: terbuka di browser, di ponsel juga",
+      "ownQuestions": "Satu kesempatan, dengan soal acak sendiri untuk setiap kandidat"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Tes siap pakai",
+        "text": "Mulai dari tes keterampilan per posisi dan level, atau buat sendiri."
+      },
+      "languages": {
+        "title": "{count, plural, other {# bahasa}}",
+        "text": "Aplikasi, tes, dan email, dalam bahasa kandidatmu."
+      },
+      "ats": {
+        "title": "Bekerja dengan ATS-mu",
+        "text": "Workable, Greenhouse, Teamtailor, Recruitee, dan Breezy HR mengundang kandidat dan menerima hasilnya kembali."
+      },
+      "integrity": {
+        "title": "Tanda integritas",
+        "text": "Meninggalkan halaman, percobaan menyalin, dan jawaban yang terlalu cepat untuk sempat dibaca: alasan untuk melihat lebih teliti, bukan bukti."
+      },
+      "accessible": {
+        "title": "Aksesibel",
+        "text": "Dibangun untuk WCAG 2.2 AA, dengan waktu tambahan bagi yang membutuhkannya."
+      },
+      "price": {
+        "title": "{price} per kandidat",
+        "text": "Tanpa langganan. Perusahaan pertamamu mulai dengan {free, plural, other {# kandidat gratis}}, tanpa kartu."
+      },
+      "documents": {
+        "title": "Dokumen siap",
+        "text": "Perjanjian pemrosesan data, templat DPIA, dan templat pemberitahuan kandidat."
+      },
+      "biasAudit": {
+        "title": "Ekspor audit bias",
+        "text": "Hasil kandidat yang sudah selesai sebagai CSV untuk audit independen atau pemeriksaan empat per lima versimu sendiri."
+      },
+      "noTraining": {
+        "title": "Tidak dipakai melatih AI",
+        "text": "Datamu tidak melatih model AI: OpenAI, penyedia AI testee, tidak berlatih dengan data API sesuai ketentuannya."
+      },
+      "location": {
+        "title": "Disimpan di UE",
+        "text": "Di Google Cloud di Belgia; halaman kepercayaan mencantumkan setiap penyedia."
+      },
+      "platform": {
+        "title": "Dari platformmu",
+        "text": "Undang lewat API, atau sematkan tes di situsmu sendiri dengan SDK."
+      },
+      "quality": {
+        "title": "Soal yang memperbaiki diri",
+        "text": "Jawaban, vote, dan laporan menandai soal yang lemah; soal itu diperbaiki atau diganti."
+      },
+      "practice": {
+        "title": "Latihan gratis",
+        "text": "Kandidat bisa berlatih per posisi, gratis dan secara privat, lalu melihat semua jawaban benar di akhir."
+      }
+    },
+    "more": {
+      "features": "semua fitur",
+      "tests": "tes keterampilan per posisi",
+      "trust": "halaman kepercayaan",
+      "testingGuide": "panduan tes seleksi karyawan",
+      "interviewsGuide": "panduan wawancara AI",
+      "engineersGuide": "cara merekrut engineer"
+    }

@@ -44,7 +44,10 @@ paths:
 - The sitemap lists every indexable page in every language it exists in, absolute URLs, a
   `lastmod` from that language's own real date (front matter `updated`), nothing else (no
   `priority` or `changefreq`); split with `generateSitemaps` past 50,000 URLs.
-- Links are crawlable `<a href>` elements.
+- Links are crawlable `<a href>` elements. A long public list has plain numbered pages
+  (`?page=2`), each its own canonical and in the sitemap, with a whole page of rows in the HTML;
+  infinite scroll alone leaves rows uncrawled. `/tests` and `/practice` by default list only what
+  the API calls indexable; both stay indexable, and a search still reaches the rest.
 
 ## Structured data
 

@@ -5,19 +5,24 @@ import {
   TemplateBrowser,
   type TemplateSearchParams,
 } from "@/features/templates/components/template-browser"
+import { hubMetadata } from "@/features/templates/utils/hub-metadata"
 import { TOKEN_COOKIE } from "@/config/auth"
 import { DEFAULT_LOCALE } from "@/config/i18n"
 import { localizedPath } from "@/lib/locale-path"
 import { serverFetch } from "@/lib/server-api"
-import { pageMetadata, urlLocale } from "@/lib/site"
+import { urlLocale } from "@/lib/site"
 import { PUBLIC_TEMPLATES_PATH } from "@/config/lists"
 import { PageHeader } from "@/components/common/page-header"
 import type { PracticeStatus } from "@/types/round"
 
-export async function generateMetadata() {
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<TemplateSearchParams>
+}) {
   const t = await getTranslations("practice")
 
-  return pageMetadata(t("title"), t("intro"), "/practice", true)
+  return hubMetadata(t("title"), t("intro"), "/practice", await searchParams)
 }
 
 /** The free practice library: every template, searched and filtered like the companies' list.

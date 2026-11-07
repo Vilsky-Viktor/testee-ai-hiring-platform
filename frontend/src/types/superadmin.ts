@@ -12,6 +12,7 @@ export type Template = Schemas["TemplateOut"]
 /** A template on its superadmin page: each topic's practice and company question counts. */
 export type PooledTemplate = Schemas["PooledTemplateOut"]
 export type TemplateFilters = Schemas["TemplateFiltersOut"]
+export type TemplateCount = Schemas["TemplateCountOut"]
 export type FlaggedQuestion = Schemas["FlaggedQuestionOut"]
 export type ReplacedQuestion = Schemas["ReplacedQuestionOut"]
 

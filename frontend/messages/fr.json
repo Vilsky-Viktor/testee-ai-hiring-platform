@@ -789,7 +789,10 @@
     "completed": "terminé",
     "warningText": "<b>Besoin d'un entretien plus ciblé ?</b> Créez-en un à partir de votre fiche de poste.",
     "contents": "{topics, plural, one {# thème} other {# thèmes}}, {questions, plural, one {# question} other {# questions}}, {minutes, plural, one {# min} other {# min}}",
-    "usedIn": "{count, plural, one {Utilisé dans # entretien} other {Utilisé dans # entretiens}}"
+    "usedIn": "{count, plural, one {Utilisé dans # entretien} other {Utilisé dans # entretiens}}",
+    "pageTitle": "{title}, page {page, number}",
+    "pages": "Pages",
+    "pageLink": "Page {page, number}"
   },
   "billing": {
     "paidTitle": "Paiement reçu",
@@ -3801,3 +3804,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Logiciel d'évaluation des compétences",
+        "title": "Logiciel d'évaluation des compétences RH",
+        "description": "Logiciel d'évaluation des compétences : une fiche de poste devient un test chronométré pour tout poste. {count, plural, one {# langue} many {# de langues} other {# langues}}, paiement par candidat, sans abonnement.",
+        "hero": {
+          "title": "Logiciel d'évaluation des compétences\npour tous les postes",
+          "text": "Collez une fiche de poste et obtenez un test de compétences chronométré rédigé pour le poste. Chaque candidat reçoit ses propres questions, et vous voyez toutes les réponses."
+        },
+        "how": {
+          "title": "Un test pour le poste que vous pourvoyez",
+          "text": "Il part de votre fiche de poste : il couvre donc ce dont ce poste a besoin."
+        },
+        "why": {
+          "title": "Tout est inclus",
+          "text": "Toutes les fonctionnalités sont incluses dans chaque test. Un candidat ne coûte qu'à partir du moment où il a répondu à au moins une question."
+        }
+      },
+      "aiInterview": {
+        "name": "Logiciel d'entretien IA",
+        "title": "Logiciel d'entretien IA pour le recrutement",
+        "description": "Logiciel d'entretien IA : l'IA rédige les questions, des personnes décident. Mode clic ou vocal en {count, plural, one {# langue} many {# de langues} other {# langues}}, sans caméra, sans abonnement.",
+        "hero": {
+          "title": "Logiciel d'entretien IA\noù des personnes décident",
+          "text": "L'IA rédige un entretien chronométré à partir de votre fiche de poste, et Mira, la recruteuse IA, peut le lire à voix haute. Les réponses sont notées d'après un corrigé, et votre équipe décide."
+        },
+        "how": {
+          "title": "Ce que fait l'IA, et ce qu'elle ne fait pas",
+          "text": "L'IA s'occupe de la rédaction. Les candidats répondent à des questions dont les réponses sont clairement justes ou fausses : vous pouvez donc expliquer chaque note."
+        },
+        "why": {
+          "title": "Confiance et conformité incluses",
+          "text": "Une personne décide, chaque candidat a les mêmes règles, et les documents pour le GDPR, l'EU AI Act et les règles du Royaume-Uni et des États-Unis sont prêts."
+        }
+      },
+      "codingTest": {
+        "name": "Test de code pour le recrutement",
+        "title": "Test de code pour recruter des développeurs",
+        "description": "Test chronométré de lecture de code, rédigé d'après votre fiche de poste. Les candidats lisent et répondent : ni éditeur, ni installation, ni abonnement.",
+        "hero": {
+          "title": "Test de code pour le recrutement\nfondé sur la lecture de code",
+          "text": "Un test chronométré sur les langages et frameworks de votre fiche de poste. Les candidats lisent de courts extraits de code et répondent, avant que vous ne mobilisiez le temps d'un ingénieur."
+        },
+        "how": {
+          "title": "Une présélection par la lecture de code",
+          "text": "Les candidats n'écrivent, n'exécutent ni ne déboguent de code dans testee. Lire du code et en écrire sont des compétences différentes : utilisez-le donc comme présélection avant une épreuve pratique."
+        },
+        "why": {
+          "title": "Se place avant votre épreuve pratique",
+          "text": "D'abord une présélection chronométrée, puis votre propre exercice ou épreuve de code pour les candidats que vous retenez."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "Rédigé à partir de votre fiche de poste",
+        "text": "L'IA lit la fiche de poste et propose des thèmes. Vous les gardez, les renommez ou les modifiez avant qu'une seule question soit rédigée, et créer le test est gratuit.",
+        "alt": "L'onglet des thèmes d'un entretien : le total de questions et de minutes par candidat, et les thèmes avec leur nombre de questions."
+      },
+      "sameRules": {
+        "title": "Les mêmes règles pour chaque candidat",
+        "text": "Chaque candidat reçoit ses propres questions aléatoires, dans son propre ordre, avec un compte à rebours pour chacune, tenu par le serveur.",
+        "alt": "Une question d'un candidat sur Rust : la question, son compte à rebours et quatre options de réponse, dont une sélectionnée."
+      },
+      "compare": {
+        "title": "Des résultats comparables",
+        "text": "La note de chaque candidat par rapport à votre seuil de réussite, dans une seule liste. Ouvrez un rapport pour voir chaque réponse et le temps qu'elle a pris.",
+        "alt": "La liste des candidats d'un entretien avec les noms, les statuts, les notes et un candidat signalé."
+      },
+      "aiWrites": {
+        "title": "L'IA rédige, vous gardez la main",
+        "text": "L'IA propose des thèmes à partir de la fiche de poste et rédige un ensemble de questions pour chaque thème que vous approuvez. Vous pouvez lire chaque question, la désactiver ou la régénérer.",
+        "alt": "Les questions d'un entretien, chacune avec son exemple et son corrigé."
+      },
+      "voice": {
+        "title": "Clic ou voix",
+        "text": "Les candidats répondent d'un clic ou, en mode vocal, Mira, une recruteuse IA, lit à voix haute chaque question et ses options, et ils répondent sans les mains.",
+        "alt": "Un entretien vocal : Mira, la recruteuse IA, à côté de la question et de ses quatre options."
+      },
+      "personDecides": {
+        "title": "Une personne décide",
+        "text": "Les réponses sont notées d'après le corrigé : aucune IA ne juge la réponse d'un candidat, et testee ne rejette jamais personne. Vous obtenez la note, chaque réponse et des questions à poser lors d'un entretien en direct.",
+        "alt": "Le rapport d'un candidat : la note, la carte des schémas de réponse et les questions de suivi suggérées."
+      },
+      "stack": {
+        "title": "Votre stack, rien d'autre",
+        "text": "L'IA lit la fiche de poste et propose des thèmes. Vous gardez l'essentiel et modifiez le reste : le test couvre ainsi vos langages, frameworks et pratiques.",
+        "alt": "L'onglet des thèmes d'un entretien : le total de questions et de minutes par candidat, et les thèmes avec leur nombre de questions."
+      },
+      "readingCode": {
+        "title": "Des questions sur le code",
+        "text": "Un court extrait de code, et une question sur ce qu'il affiche ou renvoie, ce qu'il fait, pourquoi il échoue ou quelle modification le corrige. Pour SQL, une petite table et une requête.",
+        "alt": "Une question d'un candidat sur Rust : la question, son compte à rebours et quatre options de réponse, dont une sélectionnée."
+      },
+      "signals": {
+        "title": "Des alertes à regarder de plus près",
+        "text": "Sorties de la page, tentatives de copie et réponses trop rapides pour avoir lu la question, plus des schémas de réponse inhabituels. Les rapports suggèrent des questions à poser lors d'un entretien en direct.",
+        "alt": "Le rapport d'un candidat : la note, la carte des schémas de réponse et les questions de suivi suggérées."
+      }
+    },
+    "points": {
+      "anyRole": "Tous les postes, dans tous les secteurs",
+      "options": "Quatre options par question, certaines avec plusieurs bonnes réponses",
+      "maxQuestions": "Jusqu'à 60 questions par candidat",
+      "onePass": "Une seule tentative : ni retour en arrière, ni nouvel essai",
+      "sameMix": "Le même minuteur et le même mélange de questions pour tous",
+      "extraTime": "Du temps supplémentaire pour qui le demande, fixé avant de commencer",
+      "sort": "Les meilleures notes en premier, en un clic",
+      "pdf": "Rapports PDF pour un candidat ou pour tout un entretien",
+      "peopleDecide": "La note éclaire votre décision ; elle ne la prend pas",
+      "keysChecked": "Un échantillon de corrigés vérifié par une seconde IA",
+      "weakFixed": "Questions faibles repérées par les réponses, les votes et les signalements, puis corrigées ou remplacées",
+      "preview": "Passez-le comme un candidat, gratuitement, avant d'inviter qui que ce soit",
+      "ownMode": "Défini pour l'entretien, ou changé pour un candidat",
+      "voiceLanguages": "Voix dans les {count, plural, one {# langue} many {# de langues} other {# langues}}, avec une qualité qui varie selon la langue",
+      "noVoiceKept": "testee ne conserve aucune voix : elle est seulement transcrite en texte",
+      "noCamera": "Pas de caméra, d'enregistrement d'écran ni de suivi de l'appareil",
+      "noInference": "testee ne demande ni ne devine jamais de caractéristiques protégées",
+      "notProof": "Une alerte est une raison de regarder de plus près, jamais une preuve",
+      "freeReview": "Des thèmes relus gratuitement, avant qu'une seule question soit rédigée",
+      "startFromTest": "Ou partez d'un test prêt à l'emploi par poste",
+      "shortExamples": "Des exemples de 8 lignes courtes au maximum",
+      "noSetup": "Ni éditeur ni installation : il s'ouvre dans un navigateur, sur téléphone aussi",
+      "ownQuestions": "Une seule tentative, avec des questions aléatoires propres à chaque candidat"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Tests prêts à l'emploi",
+        "text": "Partez d'un test de compétences par poste et niveau, ou créez le vôtre."
+      },
+      "languages": {
+        "title": "{count, plural, one {# langue} many {# de langues} other {# langues}}",
+        "text": "L'application, les tests et les e-mails, dans la langue de vos candidats."
+      },
+      "ats": {
+        "title": "Fonctionne avec votre ATS",
+        "text": "Workable, Greenhouse, Teamtailor, Recruitee et Breezy HR invitent les candidats et récupèrent les résultats."
+      },
+      "integrity": {
+        "title": "Alertes d'intégrité",
+        "text": "Sorties de la page, tentatives de copie et réponses trop rapides pour avoir lu la question : une raison de regarder de plus près, jamais une preuve."
+      },
+      "accessible": {
+        "title": "Accessible",
+        "text": "Conçu pour les WCAG 2.2 AA, avec du temps supplémentaire pour ceux qui en ont besoin."
+      },
+      "price": {
+        "title": "{price} par candidat",
+        "text": "Sans abonnement. Votre première entreprise démarre avec {free, plural, one {# candidat gratuit} many {# de candidats gratuits} other {# candidats gratuits}}, sans carte bancaire."
+      },
+      "documents": {
+        "title": "Documents prêts",
+        "text": "Un accord de traitement des données, un modèle d'AIPD et des modèles d'information des candidats."
+      },
+      "biasAudit": {
+        "title": "Export pour audit des biais",
+        "text": "Les résultats des candidats ayant terminé, en CSV, pour un audit indépendant ou votre propre vérification de la règle des quatre cinquièmes."
+      },
+      "noTraining": {
+        "title": "Pas d'entraînement de l'IA",
+        "text": "Vos données n'entraînent pas de modèles d'IA : OpenAI, le fournisseur d'IA de testee, ne s'entraîne pas sur les données de l'API selon ses conditions."
+      },
+      "location": {
+        "title": "Données stockées dans l'UE",
+        "text": "Sur Google Cloud en Belgique ; la page Confiance liste tous les prestataires."
+      },
+      "platform": {
+        "title": "Depuis votre plateforme",
+        "text": "Invitez via l'API, ou intégrez le test à votre propre site avec le SDK."
+      },
+      "quality": {
+        "title": "Des questions qui se corrigent",
+        "text": "Réponses, votes et signalements repèrent les questions faibles ; elles sont corrigées ou remplacées."
+      },
+      "practice": {
+        "title": "Entraînement gratuit",
+        "text": "Les candidats peuvent s'entraîner par poste, gratuitement et en privé, et voir toutes les bonnes réponses à la fin."
+      }
+    },
+    "more": {
+      "features": "toutes les fonctionnalités",
+      "tests": "tests de compétences par poste",
+      "trust": "page confiance",
+      "testingGuide": "le guide des tests de recrutement",
+      "interviewsGuide": "le guide des entretiens IA",
+      "engineersGuide": "comment recruter des développeurs"
+    }

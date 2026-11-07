@@ -266,6 +266,47 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/templates/hub": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * List Hub
+     * @description The public hubs' list before a search or filter: only the templates search engines index,
+     *     by title, so the pages crawlers follow lead to no duplicates.
+     */
+    get: operations["list_hub_templates_hub_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/templates/hub/count": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Count Hub
+     * @description How many templates the hub lists in these languages, for its page links.
+     */
+    get: operations["count_hub_templates_hub_count_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/templates/copyable": {
     parameters: {
       query?: never
@@ -1764,6 +1805,11 @@ export interface components {
       /** Level */
       level: string
     }
+    /** TemplateCountOut */
+    TemplateCountOut: {
+      /** Count */
+      count: number
+    }
     /**
      * TemplateFiltersOut
      * @description What the template list can be filtered by.
@@ -2479,6 +2525,120 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["TemplateSummary"][]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  list_hub_templates_hub_get: {
+    parameters: {
+      query: {
+        language: (
+          | "en"
+          | "ru"
+          | "uk"
+          | "es"
+          | "pt"
+          | "de"
+          | "fr"
+          | "it"
+          | "pl"
+          | "nl"
+          | "tr"
+          | "ar"
+          | "he"
+          | "fa"
+          | "ja"
+          | "zh"
+          | "ko"
+          | "hi"
+          | "id"
+          | "th"
+          | "vi"
+          | "fil"
+          | "et"
+        )[]
+        /** @description Number of items to skip */
+        offset?: number
+        /** @description Number of items to return, up to 100 */
+        limit?: number
+      }
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["TemplateSummary"][]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  count_hub_templates_hub_count_get: {
+    parameters: {
+      query: {
+        language: (
+          | "en"
+          | "ru"
+          | "uk"
+          | "es"
+          | "pt"
+          | "de"
+          | "fr"
+          | "it"
+          | "pl"
+          | "nl"
+          | "tr"
+          | "ar"
+          | "he"
+          | "fa"
+          | "ja"
+          | "zh"
+          | "ko"
+          | "hi"
+          | "id"
+          | "th"
+          | "vi"
+          | "fil"
+          | "et"
+        )[]
+      }
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["TemplateCountOut"]
         }
       }
       /** @description Validation Error */

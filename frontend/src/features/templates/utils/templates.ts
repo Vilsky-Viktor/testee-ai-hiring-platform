@@ -22,6 +22,24 @@ export function templateChoice(
   }
 }
 
+/** The numbered page of a public hub the address asks for: only its plain list has them, and
+ * anything but a whole number from 1 is the first. */
+export function hubPage({
+  q,
+  level,
+  lang,
+  page,
+}: {
+  q?: string
+  level?: string
+  lang?: string | string[]
+  page?: string
+}): number {
+  const plain = !q?.trim() && !level && !lang
+
+  return plain && /^[1-9]\d{0,5}$/.test(page ?? "") ? Number(page) : 1
+}
+
 /** The API list's query for a choice: its search, level and each language. */
 export function templateQuery(choice: TemplateChoice): URLSearchParams {
   const query = new URLSearchParams()

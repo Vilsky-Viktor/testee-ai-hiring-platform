@@ -789,7 +789,10 @@
     "completed": "ukończono",
     "warningText": "<b>Chcesz lepiej dopasować?</b> Utwórz rozmowę na podstawie opisu swojego stanowiska.",
     "contents": "{topics, plural, one {# temat} few {# tematy} many {# tematów} other {# tematu}}, {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}, {minutes, plural, one {# min} few {# min} many {# min} other {# min}}",
-    "usedIn": "{count, plural, one {Używany w # rozmowie} few {Używany w # rozmowach} many {Używany w # rozmowach} other {Używany w # rozmowach}}"
+    "usedIn": "{count, plural, one {Używany w # rozmowie} few {Używany w # rozmowach} many {Używany w # rozmowach} other {Używany w # rozmowach}}",
+    "pageTitle": "{title}, strona {page, number}",
+    "pages": "Strony",
+    "pageLink": "Strona {page, number}"
   },
   "billing": {
     "paidTitle": "Płatność otrzymana",
@@ -3801,3 +3804,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Narzędzie do testów kompetencji",
+        "title": "Narzędzie do testów kompetencji w rekrutacji",
+        "description": "Narzędzie do testów kompetencji, które zamienia opis stanowiska w test na czas dla dowolnej roli. {count, plural, one {# język} few {# języki} many {# języków} other {# języka}}, opłata za kandydata, bez abonamentu.",
+        "hero": {
+          "title": "Narzędzie do testów kompetencji\nna każde stanowisko",
+          "text": "Wklej opis stanowiska i otrzymaj test umiejętności na czas napisany pod tę rolę. Każdy kandydat dostaje własne pytania, a Ty widzisz każdą odpowiedź."
+        },
+        "how": {
+          "title": "Test pod stanowisko, na które rekrutujesz",
+          "text": "Powstaje na podstawie Twojego opisu stanowiska, więc obejmuje to, czego wymaga ta rola."
+        },
+        "why": {
+          "title": "Wszystko jest w cenie",
+          "text": "Wszystkie funkcje są dostępne w każdym teście. Kandydat kosztuje dopiero wtedy, gdy odpowie na co najmniej jedno pytanie."
+        }
+      },
+      "aiInterview": {
+        "name": "Narzędzie do rozmów rekrutacyjnych z AI",
+        "title": "Rozmowy rekrutacyjne z AI: narzędzie dla firm",
+        "description": "Narzędzie do rozmów rekrutacyjnych z AI: AI pisze pytania, a decydują ludzie. Tryb kliknięć lub głosowy w {count, plural, one {# języku} few {# językach} many {# językach} other {# języka}}, bez kamery i abonamentu.",
+        "hero": {
+          "title": "Rozmowy rekrutacyjne z AI\nDecydują ludzie",
+          "text": "AI pisze rozmowę na czas na podstawie Twojego opisu stanowiska, a Mira, rekruterka AI, może przeczytać ją na głos. Odpowiedzi są oceniane według klucza, a decyzję podejmuje Twój zespół."
+        },
+        "how": {
+          "title": "Co robi AI, a czego nie robi",
+          "text": "Pisaniem zajmuje się AI. Kandydaci odpowiadają na pytania z jednoznacznie poprawnymi i błędnymi odpowiedziami, więc każdy wynik możesz wyjaśnić."
+        },
+        "why": {
+          "title": "Zaufanie i zgodność z przepisami w cenie",
+          "text": "Decyduje człowiek, każdy kandydat ma te same zasady, a dokumenty dotyczące RODO, unijnego AI Act oraz przepisów Wielkiej Brytanii i USA są gotowe."
+        }
+      },
+      "codingTest": {
+        "name": "Test programistyczny w rekrutacji",
+        "title": "Test programistyczny w rekrutacji IT",
+        "description": "Test na czas dla programistów, napisany na podstawie opisu stanowiska. Kandydaci czytają kod i odpowiadają: bez edytora, konfiguracji i abonamentu.",
+        "hero": {
+          "title": "Test programistyczny w rekrutacji\noparty na czytaniu kodu",
+          "text": "Test na czas z języków i frameworków z Twojego opisu stanowiska. Kandydaci czytają krótkie fragmenty kodu i odpowiadają, zanim poświęcisz im czas inżyniera."
+        },
+        "how": {
+          "title": "Preselekcja przez czytanie kodu",
+          "text": "W testee kandydaci nie piszą, nie uruchamiają ani nie debugują kodu. Czytanie kodu i pisanie go to różne umiejętności, więc traktuj to jako preselekcję przed etapem praktycznym."
+        },
+        "why": {
+          "title": "Przed Twoim etapem praktycznym",
+          "text": "Najpierw preselekcja na czas, a potem Twoje własne zadanie lub etap programowania dla wybranych kandydatów."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "Napisany na podstawie opisu stanowiska",
+        "text": "AI czyta opis stanowiska i proponuje tematy. Zostawiasz je, zmieniasz ich nazwy lub je edytujesz, zanim powstanie jakiekolwiek pytanie, a utworzenie testu jest darmowe.",
+        "alt": "Karta tematów rozmowy: łączna liczba pytań i minut dla każdego kandydata oraz tematy z liczbą pytań."
+      },
+      "sameRules": {
+        "title": "Te same zasady dla każdego kandydata",
+        "text": "Każdy kandydat dostaje własne losowe pytania, we własnej kolejności, z odliczaniem czasu przy każdym z nich, które prowadzi serwer.",
+        "alt": "Pytanie kandydata o Rust: pytanie, odliczanie czasu i cztery odpowiedzi do wyboru, jedna zaznaczona."
+      },
+      "compare": {
+        "title": "Wyniki, które można porównać",
+        "text": "Wynik każdego kandydata na tle Twojego progu zaliczenia, na jednej liście. Otwórz raport, aby zobaczyć każdą odpowiedź i czas jej udzielenia.",
+        "alt": "Lista kandydatów rozmowy z imionami, statusami, wynikami i jednym oznaczonym kandydatem."
+      },
+      "aiWrites": {
+        "title": "AI pisze, Ty zachowujesz kontrolę",
+        "text": "AI proponuje tematy na podstawie opisu stanowiska i pisze pulę pytań do każdego tematu, który zatwierdzisz. Możesz przeczytać każde pytanie, wyłączyć je lub wygenerować ponownie.",
+        "alt": "Pytania rozmowy, każde z przykładem i kluczem odpowiedzi."
+      },
+      "voice": {
+        "title": "Kliknięciem lub głosem",
+        "text": "Kandydaci odpowiadają kliknięciem. W trybie głosowym Mira, rekruterka AI, czyta na głos każde pytanie i odpowiedzi do wyboru, a kandydaci odpowiadają bez użycia rąk.",
+        "alt": "Rozmowa głosowa: Mira, rekruterka AI, obok pytania i czterech odpowiedzi do wyboru."
+      },
+      "personDecides": {
+        "title": "Decyduje człowiek",
+        "text": "Odpowiedzi są oceniane według klucza: żadna AI nie ocenia odpowiedzi kandydata, a testee nikogo nie odrzuca. Dostajesz wynik, każdą odpowiedź i pytania do zadania na rozmowie na żywo.",
+        "alt": "Raport kandydata: wynik, karta wzorców odpowiedzi i proponowane pytania uzupełniające."
+      },
+      "stack": {
+        "title": "Twój stos technologiczny i nic więcej",
+        "text": "AI czyta opis stanowiska i proponuje tematy. Zostawiasz to, co ważne, a resztę zmieniasz, więc test obejmuje Twoje języki, frameworki i praktyki.",
+        "alt": "Karta tematów rozmowy: łączna liczba pytań i minut dla każdego kandydata oraz tematy z liczbą pytań."
+      },
+      "readingCode": {
+        "title": "Pytania o kod",
+        "text": "Krótki fragment kodu i pytanie o to, co wypisuje lub zwraca, co robi, dlaczego kończy się błędem albo która zmiana to naprawia. W przypadku SQL mała tabela i zapytanie.",
+        "alt": "Pytanie kandydata o Rust: pytanie, odliczanie czasu i cztery odpowiedzi do wyboru, jedna zaznaczona."
+      },
+      "signals": {
+        "title": "Ostrzeżenia, którym warto się przyjrzeć",
+        "text": "Opuszczenia strony, próby kopiowania i odpowiedzi zbyt szybkie, by zdążyć przeczytać pytanie, a do tego nietypowe wzorce odpowiedzi. Raporty podpowiadają pytania do zadania na rozmowie na żywo.",
+        "alt": "Raport kandydata: wynik, karta wzorców odpowiedzi i proponowane pytania uzupełniające."
+      }
+    },
+    "points": {
+      "anyRole": "Każde stanowisko, każda branża",
+      "options": "Cztery odpowiedzi do wyboru w każdym pytaniu, czasem więcej niż jedna poprawna",
+      "maxQuestions": "Do 60 pytań na kandydata",
+      "onePass": "Jedno podejście: bez powrotu do pytań i bez powtórek",
+      "sameMix": "Ten sam limit czasu i ta sama mieszanka pytań dla wszystkich",
+      "extraTime": "Dodatkowy czas dla każdego, kto o niego poprosi, ustawiany przed startem",
+      "sort": "Najlepsze wyniki na górze jednym kliknięciem",
+      "pdf": "Raporty PDF dla jednego kandydata lub całej rozmowy",
+      "peopleDecide": "Wynik wspiera Twoją decyzję, ale jej nie podejmuje",
+      "keysChecked": "Próbkę kluczy odpowiedzi sprawdza druga AI",
+      "weakFixed": "Słabe pytania wskazywane przez odpowiedzi, głosy i zgłoszenia, a potem poprawiane lub zastępowane",
+      "preview": "Przejdź go jak kandydat, za darmo, zanim kogokolwiek zaprosisz",
+      "ownMode": "Ustawiany dla rozmowy lub zmieniany dla jednego kandydata",
+      "voiceLanguages": "Głos we wszystkich {count, plural, one {# języku} few {# językach} many {# językach} other {# języka}}, z jakością zależną od języka",
+      "noVoiceKept": "testee nie przechowuje głosu: jest on tylko zamieniany na tekst",
+      "noCamera": "Bez kamery, nagrywania ekranu i śledzenia urządzenia",
+      "noInference": "testee nigdy nie pyta o cechy chronione ani ich nie odgaduje",
+      "notProof": "Ostrzeżenie to powód, by przyjrzeć się bliżej, nigdy dowód",
+      "freeReview": "Tematy przeglądasz za darmo, zanim powstanie jakiekolwiek pytanie",
+      "startFromTest": "Albo zacznij od gotowego testu według roli",
+      "shortExamples": "Przykłady mają najwyżej 8 krótkich wierszy",
+      "noSetup": "Bez edytora i konfiguracji: otwiera się w przeglądarce, także na telefonie",
+      "ownQuestions": "Jedno podejście, a każdy kandydat dostaje własne losowe pytania"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Gotowe testy",
+        "text": "Zacznij od testu umiejętności według roli i poziomu albo utwórz własny."
+      },
+      "languages": {
+        "title": "{count, plural, one {# język} few {# języki} many {# języków} other {# języka}}",
+        "text": "Aplikacja, testy i e-maile w języku Twoich kandydatów."
+      },
+      "ats": {
+        "title": "Działa z Twoim ATS",
+        "text": "Workable, Greenhouse, Teamtailor, Recruitee i Breezy HR zapraszają kandydatów i odbierają wyniki."
+      },
+      "integrity": {
+        "title": "Ostrzeżenia o podejrzanych zachowaniach",
+        "text": "Opuszczenia strony, próby kopiowania i odpowiedzi zbyt szybkie, by zdążyć przeczytać pytanie: powód, by przyjrzeć się bliżej, nigdy dowód."
+      },
+      "accessible": {
+        "title": "Dostępność",
+        "text": "Zgodnie z WCAG 2.2 AA, z dodatkowym czasem dla tych, którzy go potrzebują."
+      },
+      "price": {
+        "title": "{price} za kandydata",
+        "text": "Bez abonamentu. Twoja pierwsza firma zaczyna z {free, plural, one {# darmowym kandydatem} few {# darmowymi kandydatami} many {# darmowymi kandydatami} other {# darmowego kandydata}}, bez karty."
+      },
+      "documents": {
+        "title": "Gotowe dokumenty",
+        "text": "Umowa powierzenia przetwarzania danych, szablon DPIA i szablony informacji dla kandydatów."
+      },
+      "biasAudit": {
+        "title": "Eksport do audytu stronniczości",
+        "text": "Wyniki kandydatów, którzy ukończyli test, w pliku CSV do niezależnego audytu albo własnej kontroli reguły czterech piątych."
+      },
+      "noTraining": {
+        "title": "Nie służy do trenowania AI",
+        "text": "Twoje dane nie trenują modeli AI: OpenAI, dostawca AI testee, zgodnie ze swoimi warunkami nie trenuje modeli na danych z API."
+      },
+      "location": {
+        "title": "Przechowywane w UE",
+        "text": "W Google Cloud w Belgii; strona zaufania wymienia wszystkich dostawców."
+      },
+      "platform": {
+        "title": "Z Twojej platformy",
+        "text": "Zapraszaj przez API albo osadź test na własnej stronie za pomocą SDK."
+      },
+      "quality": {
+        "title": "Pytania, które same się poprawiają",
+        "text": "Odpowiedzi, głosy i zgłoszenia wskazują słabe pytania; są one poprawiane lub zastępowane."
+      },
+      "practice": {
+        "title": "Darmowe ćwiczenia",
+        "text": "Kandydaci mogą ćwiczyć pod kątem stanowiska, za darmo i prywatnie, a na końcu zobaczyć wszystkie poprawne odpowiedzi."
+      }
+    },
+    "more": {
+      "features": "wszystkie funkcje",
+      "tests": "testy umiejętności według roli",
+      "trust": "strona zaufania",
+      "testingGuide": "poradnik o testach rekrutacyjnych",
+      "interviewsGuide": "poradnik o rozmowach rekrutacyjnych z AI",
+      "engineersGuide": "jak rekrutować programistów"
+    }

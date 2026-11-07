@@ -1053,6 +1053,181 @@
     }
    }
   },
+  "/templates/hub": {
+   "get": {
+    "tags": [
+     "templates"
+    ],
+    "summary": "List Hub",
+    "description": "The public hubs' list before a search or filter: only the templates search engines index,\nby title, so the pages crawlers follow lead to no duplicates.",
+    "operationId": "list_hub_templates_hub_get",
+    "parameters": [
+     {
+      "name": "language",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "array",
+       "items": {
+        "enum": [
+         "en",
+         "ru",
+         "uk",
+         "es",
+         "pt",
+         "de",
+         "fr",
+         "it",
+         "pl",
+         "nl",
+         "tr",
+         "ar",
+         "he",
+         "fa",
+         "ja",
+         "zh",
+         "ko",
+         "hi",
+         "id",
+         "th",
+         "vi",
+         "fil",
+         "et"
+        ],
+        "type": "string"
+       },
+       "minItems": 1,
+       "title": "Language"
+      }
+     },
+     {
+      "name": "offset",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "minimum": 0,
+       "description": "Number of items to skip",
+       "default": 0,
+       "title": "Offset"
+      },
+      "description": "Number of items to skip"
+     },
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "maximum": 100,
+       "minimum": 1,
+       "description": "Number of items to return, up to 100",
+       "default": 100,
+       "title": "Limit"
+      },
+      "description": "Number of items to return, up to 100"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/TemplateSummary"
+         },
+         "title": "Response List Hub Templates Hub Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/templates/hub/count": {
+   "get": {
+    "tags": [
+     "templates"
+    ],
+    "summary": "Count Hub",
+    "description": "How many templates the hub lists in these languages, for its page links.",
+    "operationId": "count_hub_templates_hub_count_get",
+    "parameters": [
+     {
+      "name": "language",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "array",
+       "items": {
+        "enum": [
+         "en",
+         "ru",
+         "uk",
+         "es",
+         "pt",
+         "de",
+         "fr",
+         "it",
+         "pl",
+         "nl",
+         "tr",
+         "ar",
+         "he",
+         "fa",
+         "ja",
+         "zh",
+         "ko",
+         "hi",
+         "id",
+         "th",
+         "vi",
+         "fil",
+         "et"
+        ],
+        "type": "string"
+       },
+       "minItems": 1,
+       "title": "Language"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/TemplateCountOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/templates/copyable": {
    "get": {
     "tags": [
@@ -4856,6 +5031,19 @@
     ],
     "title": "TemplateCopyOut",
     "description": "The company's new test set."
+   },
+   "TemplateCountOut": {
+    "properties": {
+     "count": {
+      "type": "integer",
+      "title": "Count"
+     }
+    },
+    "type": "object",
+    "required": [
+     "count"
+    ],
+    "title": "TemplateCountOut"
    },
    "TemplateFiltersOut": {
     "properties": {

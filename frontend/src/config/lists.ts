@@ -8,8 +8,9 @@ export const LOAD_AHEAD = 5
 export const OVERSCAN = 6
 
 // The viewport assumed before the browser can measure (server rendering), so the first rows
-// render on the server instead of appearing only once the page's JavaScript runs.
-export const INITIAL_VIEWPORT = { width: 1024, height: 1000 }
+// render on the server instead of appearing only once the page's JavaScript runs: tall enough
+// that, with OVERSCAN, a whole page of PAGE_SIZE rows is in the HTML for search engines.
+export const INITIAL_VIEWPORT = { width: 1024, height: 1200 }
 
 // A page's list: its rows in one bordered, rounded box. On phones it spans the screen, out of
 // the page's side padding, with only its top and bottom borders and square corners.
@@ -60,6 +61,8 @@ export const INTEGRATION_ACTIONS = "flex shrink-0 items-center gap-3"
 export const SEARCH_DELAY_MS = 500
 // The public template catalog, the same for every visitor: its pages read it cached.
 export const PUBLIC_TEMPLATES_PATH = "/library/templates"
+// That catalog as a public hub's default list: indexable templates only, by title.
+export const PUBLIC_TEMPLATES_HUB_PATH = "/library/templates/hub"
 
 // How long a field that saves itself shows its check, in milliseconds.
 export const SAVED_MARK_MS = 2500

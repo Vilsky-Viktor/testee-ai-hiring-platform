@@ -789,7 +789,10 @@
     "completed": "completado",
     "warningText": "<b>¿Quieres algo más a medida?</b> Crea una entrevista a partir de tu descripción del puesto.",
     "contents": "{topics, plural, one {# tema} other {# temas}}, {questions, plural, one {# pregunta} other {# preguntas}}, {minutes, plural, one {# min} other {# min}}",
-    "usedIn": "{count, plural, one {Usada en # entrevista} other {Usada en # entrevistas}}"
+    "usedIn": "{count, plural, one {Usada en # entrevista} other {Usada en # entrevistas}}",
+    "pageTitle": "{title}, página {page, number}",
+    "pages": "Páginas",
+    "pageLink": "Página {page, number}"
   },
   "billing": {
     "paidTitle": "Pago recibido",
@@ -3801,3 +3804,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Software de evaluación de habilidades",
+        "title": "Software de evaluación de habilidades",
+        "description": "Software de evaluación de habilidades que convierte una descripción del puesto en una prueba cronometrada. {count, plural, one {# idioma} many {# de idiomas} other {# idiomas}}, pago por candidato, sin suscripción.",
+        "hero": {
+          "title": "Software de evaluación de habilidades\npara cualquier puesto",
+          "text": "Pega una descripción del puesto y obtén una prueba de habilidades cronometrada escrita para el puesto. Cada candidato recibe sus propias preguntas, y tú ves todas las respuestas."
+        },
+        "how": {
+          "title": "Una prueba para el puesto que quieres cubrir",
+          "text": "Parte de tu descripción del puesto, así que cubre lo que este puesto necesita."
+        },
+        "why": {
+          "title": "Todo está incluido",
+          "text": "Todas las funciones vienen con cada prueba. Un candidato solo cuesta cuando ha respondido al menos una pregunta."
+        }
+      },
+      "aiInterview": {
+        "name": "Software de entrevistas con IA",
+        "title": "Software de entrevistas con IA para contratar",
+        "description": "Software de entrevistas con IA: la IA escribe las preguntas y deciden las personas. Modo clic o voz en {count, plural, one {# idioma} many {# de idiomas} other {# idiomas}}, sin cámara y sin suscripción.",
+        "hero": {
+          "title": "Software de entrevistas con IA\ndonde deciden las personas",
+          "text": "La IA escribe una entrevista cronometrada a partir de tu descripción del puesto, y Mira, la entrevistadora de IA, puede leerla en voz alta. Las respuestas se corrigen con una clave de respuestas, y decide tu equipo."
+        },
+        "how": {
+          "title": "Lo que hace la IA y lo que no",
+          "text": "La IA se encarga de redactar. Los candidatos responden preguntas con respuestas claramente correctas e incorrectas, así que puedes explicar cada nota."
+        },
+        "why": {
+          "title": "Confianza y cumplimiento incluidos",
+          "text": "Decide una persona, todos los candidatos tienen las mismas reglas y los documentos para el GDPR, el EU AI Act y las normas del Reino Unido y EE. UU. están listos."
+        }
+      },
+      "codingTest": {
+        "name": "Prueba de programación para contratar",
+        "title": "Prueba técnica para contratar desarrolladores",
+        "description": "Prueba cronometrada de lectura de código, según tu descripción del puesto. Los candidatos leen código y responden: sin editor, instalación ni suscripción.",
+        "hero": {
+          "title": "Prueba de programación para contratar\nbasada en leer código",
+          "text": "Una prueba cronometrada de los lenguajes y frameworks de tu descripción del puesto. Los candidatos leen fragmentos breves de código y responden, antes de que dediques el tiempo de un ingeniero."
+        },
+        "how": {
+          "title": "Un filtro que lee código",
+          "text": "Los candidatos no escriben, ejecutan ni depuran código en testee. Leer código y escribirlo son habilidades distintas, así que úsala como filtro antes de una prueba práctica."
+        },
+        "why": {
+          "title": "Encaja antes de tu prueba práctica",
+          "text": "Primero un filtro cronometrado, y después tu propio ejercicio o ronda de programación para los candidatos que elijas."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "Escrita a partir de tu descripción del puesto",
+        "text": "La IA lee la descripción del puesto y propone temas. Los conservas, les cambias el nombre o los modificas antes de que se escriba ninguna pregunta, y crear la prueba es gratis.",
+        "alt": "La pestaña de temas de una entrevista: el total de preguntas y minutos por candidato, y los temas con su número de preguntas."
+      },
+      "sameRules": {
+        "title": "Las mismas reglas para todos los candidatos",
+        "text": "Cada candidato recibe sus propias preguntas aleatorias, en su propio orden, con una cuenta atrás en cada una, controlada por el servidor.",
+        "alt": "Una pregunta de un candidato sobre Rust: la pregunta, su cuenta atrás y cuatro opciones de respuesta, una elegida."
+      },
+      "compare": {
+        "title": "Resultados que puedes comparar",
+        "text": "La nota de cada candidato frente a tu nota de aprobado, en una sola lista. Abre un informe para ver cada respuesta y cuánto tardó.",
+        "alt": "La lista de candidatos de una entrevista con nombres, estados, notas y un candidato con alertas."
+      },
+      "aiWrites": {
+        "title": "La IA escribe, tú mantienes el control",
+        "text": "La IA propone temas a partir de la descripción del puesto y escribe un conjunto de preguntas para cada uno que apruebes. Puedes leer cada pregunta, desactivarla o regenerarla.",
+        "alt": "Las preguntas de una entrevista, cada una con su ejemplo y su clave de respuestas."
+      },
+      "voice": {
+        "title": "Clic o voz",
+        "text": "Los candidatos responden con un clic o, en el modo de voz, Mira, una entrevistadora de IA, lee en voz alta cada pregunta y sus opciones, y responden sin usar las manos.",
+        "alt": "Una entrevista por voz: Mira, la entrevistadora de IA, junto a la pregunta y sus cuatro opciones."
+      },
+      "personDecides": {
+        "title": "Decide una persona",
+        "text": "Las respuestas se corrigen con la clave de respuestas: ninguna IA juzga la respuesta de un candidato, y testee nunca rechaza a nadie. Recibes la nota, cada respuesta y preguntas para hacer en una entrevista en directo.",
+        "alt": "El informe de un candidato: la nota, la tarjeta de patrones de respuesta y preguntas de seguimiento sugeridas."
+      },
+      "stack": {
+        "title": "Tu stack, nada más",
+        "text": "La IA lee la descripción del puesto y propone temas. Conservas lo importante y cambias el resto, así que la prueba cubre tus lenguajes, frameworks y prácticas.",
+        "alt": "La pestaña de temas de una entrevista: el total de preguntas y minutos por candidato, y los temas con su número de preguntas."
+      },
+      "readingCode": {
+        "title": "Preguntas sobre código",
+        "text": "Un fragmento breve de código y una pregunta sobre qué imprime o devuelve, qué hace, por qué falla o qué cambio lo arregla. Para SQL, una tabla pequeña y una consulta.",
+        "alt": "Una pregunta de un candidato sobre Rust: la pregunta, su cuenta atrás y cuatro opciones de respuesta, una elegida."
+      },
+      "signals": {
+        "title": "Alertas que merecen una mirada más atenta",
+        "text": "Salidas de la página, intentos de copiar y respuestas demasiado rápidas para haber leído la pregunta, además de patrones de respuesta inusuales. Los informes sugieren preguntas para hacer en una entrevista en directo.",
+        "alt": "El informe de un candidato: la nota, la tarjeta de patrones de respuesta y preguntas de seguimiento sugeridas."
+      }
+    },
+    "points": {
+      "anyRole": "Cualquier puesto, en cualquier sector",
+      "options": "Cuatro opciones por pregunta, algunas con más de una respuesta correcta",
+      "maxQuestions": "Hasta 60 preguntas por candidato",
+      "onePass": "Un solo intento: sin volver atrás ni repetir",
+      "sameMix": "El mismo temporizador y la misma combinación de preguntas para todos",
+      "extraTime": "Tiempo extra para quien lo pida, fijado antes de empezar",
+      "sort": "Las mejores notas primero con un clic",
+      "pdf": "Informes en PDF de un candidato o de toda una entrevista",
+      "peopleDecide": "La nota apoya tu decisión; no la toma por ti",
+      "keysChecked": "Una muestra de claves de respuestas revisada por una segunda IA",
+      "weakFixed": "Preguntas flojas señaladas por las respuestas, los votos y los reportes, y después corregidas o sustituidas",
+      "preview": "Hazla como la haría un candidato, gratis, antes de invitar a nadie",
+      "ownMode": "Definido para la entrevista, o cambiado para un candidato",
+      "voiceLanguages": "Voz en los {count, plural, one {# idioma} many {# de idiomas} other {# idiomas}}, con una calidad que varía según el idioma",
+      "noVoiceKept": "testee no guarda ninguna voz: solo se convierte en texto",
+      "noCamera": "Sin cámara, sin grabación de pantalla ni rastreo del dispositivo",
+      "noInference": "testee nunca pide ni deduce características protegidas",
+      "notProof": "Una alerta es un motivo para mirar con más atención, nunca una prueba",
+      "freeReview": "Temas revisados gratis, antes de que se escriba ninguna pregunta",
+      "startFromTest": "O empieza con una prueba ya preparada por puesto",
+      "shortExamples": "Ejemplos de 8 líneas cortas como máximo",
+      "noSetup": "Sin editor ni instalación: se abre en el navegador, también en el móvil",
+      "ownQuestions": "Un solo intento, con preguntas aleatorias propias para cada candidato"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Pruebas ya preparadas",
+        "text": "Empieza con una prueba de habilidades por puesto y nivel, o crea la tuya."
+      },
+      "languages": {
+        "title": "{count, plural, one {# idioma} many {# de idiomas} other {# idiomas}}",
+        "text": "La app, las pruebas y los correos, en el idioma de tus candidatos."
+      },
+      "ats": {
+        "title": "Funciona con tu ATS",
+        "text": "Workable, Greenhouse, Teamtailor, Recruitee y Breezy HR invitan a los candidatos y reciben los resultados."
+      },
+      "integrity": {
+        "title": "Alertas de integridad",
+        "text": "Salidas de la página, intentos de copiar y respuestas demasiado rápidas para haber leído la pregunta: un motivo para mirar con más atención, nunca una prueba."
+      },
+      "accessible": {
+        "title": "Accesible",
+        "text": "Diseñado según WCAG 2.2 AA, con tiempo extra para quien lo necesite."
+      },
+      "price": {
+        "title": "{price} por candidato",
+        "text": "Sin suscripción. Tu primera empresa empieza con {free, plural, one {# candidato gratis} many {# de candidatos gratis} other {# candidatos gratis}}, sin tarjeta."
+      },
+      "documents": {
+        "title": "Documentos listos",
+        "text": "Un acuerdo de tratamiento de datos, una plantilla de EIPD y plantillas de aviso para candidatos."
+      },
+      "biasAudit": {
+        "title": "Exportación para auditoría de sesgos",
+        "text": "Los resultados de los candidatos que terminaron, en un CSV, para una auditoría independiente o tu propia comprobación de la regla de los cuatro quintos."
+      },
+      "noTraining": {
+        "title": "No se usa para entrenar IA",
+        "text": "Tus datos no entrenan modelos de IA: OpenAI, el proveedor de IA de testee, no entrena con datos de la API según sus condiciones."
+      },
+      "location": {
+        "title": "Datos almacenados en la UE",
+        "text": "En Google Cloud en Bélgica; la página de confianza enumera todos los proveedores."
+      },
+      "platform": {
+        "title": "Desde tu plataforma",
+        "text": "Invita a través de la API o integra la prueba en tu propio sitio con el SDK."
+      },
+      "quality": {
+        "title": "Preguntas que se corrigen solas",
+        "text": "Las respuestas, los votos y los reportes señalan las preguntas flojas; se corrigen o se sustituyen."
+      },
+      "practice": {
+        "title": "Práctica gratis",
+        "text": "Los candidatos pueden practicar por puesto, gratis y en privado, y ver todas las respuestas correctas al final."
+      }
+    },
+    "more": {
+      "features": "todas las funciones",
+      "tests": "pruebas de habilidades por puesto",
+      "trust": "página de confianza",
+      "testingGuide": "la guía de pruebas de selección",
+      "interviewsGuide": "la guía de entrevistas con IA",
+      "engineersGuide": "cómo contratar ingenieros"
+    }

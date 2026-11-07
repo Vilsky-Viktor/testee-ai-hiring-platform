@@ -70,6 +70,19 @@ async def listed(
     return summarized(rows, duplicates)
 
 
+async def hub(languages: list[str], offset: int, limit: int) -> list[TemplateSummary]:
+    """A page of a public hub (templates.hub_templates); all of them indexed."""
+    async with Session() as session:
+        rows = await templates.hub_templates(session, languages, offset, limit)
+
+    return summarized(rows, set())
+
+
+async def hub_count(languages: list[str]) -> int:
+    async with Session() as session:
+        return await templates.hub_count(session, languages)
+
+
 async def copyable(
     q: str, level: str | None, languages: list[str], offset: int, limit: int
 ) -> list[CopyableTemplate]:

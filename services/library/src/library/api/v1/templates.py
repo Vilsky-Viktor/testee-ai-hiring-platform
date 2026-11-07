@@ -9,6 +9,7 @@ from library.constants.templates import SAMPLE_QUESTIONS
 from library.schemas.preparations import TopicOut
 from library.schemas.templates import (
     SampleQuestionOut,
+    TemplateCountOut,
     TemplateFiltersOut,
     TemplateOut,
     TemplateSummary,
@@ -34,6 +35,23 @@ async def list_templates(
     language: Annotated[list[Language] | None, Query()] = None,
 ) -> list[TemplateSummary]:
     return await templates.listed(q.strip(), level, language or [], page.offset, page.limit)
+
+
+@router.get("/hub")
+async def list_hub(
+    page: PageParams, language: Annotated[list[Language], Query(min_length=1)]
+) -> list[TemplateSummary]:
+    """The public hubs' list before a search or filter: only the templates search engines index,
+    by title, so the pages crawlers follow lead to no duplicates."""
+    return await templates.hub(language, page.offset, page.limit)
+
+
+@router.get("/hub/count")
+async def count_hub(
+    language: Annotated[list[Language], Query(min_length=1)],
+) -> TemplateCountOut:
+    """How many templates the hub lists in these languages, for its page links."""
+    return TemplateCountOut(count=await templates.hub_count(language))
 
 
 @router.get("/copyable")

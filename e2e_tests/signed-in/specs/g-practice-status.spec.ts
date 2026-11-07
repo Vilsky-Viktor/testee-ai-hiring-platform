@@ -57,6 +57,9 @@ async function answer(user: Page, sessionId: string, topics: number, questions =
   }
 }
 
+// The practice list with every template, not only the indexable ones.
+const EVERY_TEMPLATE = "/practice?lang=en"
+
 /** The status icon after the title in the list's row for the template. */
 function statusOf(user: Page, template: Listed) {
   return user
@@ -101,7 +104,8 @@ test("the practice list shows the talent's progress on each test", async ({ sign
   // Started, nothing answered: not started.
   const opened = await round(listed)
 
-  await visit(user, "/practice")
+  // A language chosen: the default list leaves out templates of too few topics, as these are.
+  await visit(user, EVERY_TEMPLATE)
   await expect(statusOf(user, longer.template)).toHaveAttribute("data-status", "in_progress")
   // Its name carries the topics done of all, the counts the API gave.
   await expect(statusOf(user, longer.template)).toHaveAccessibleName(
@@ -124,11 +128,11 @@ test("the practice list shows the talent's progress on each test", async ({ sign
   for (const scheme of ["light", "dark"] as const) {
     await setScheme(user, scheme)
     await user.setViewportSize({ width: 1280, height: 900 })
-    await visit(user, "/practice")
+    await visit(user, EVERY_TEMPLATE)
     await expect(statusOf(user, whole.template)).toBeVisible()
     await shot(user, `desktop-${scheme}`, false)
     await user.setViewportSize(PHONE)
-    await visit(user, "/practice")
+    await visit(user, EVERY_TEMPLATE)
     await expect(statusOf(user, whole.template)).toBeVisible()
     // The list measures its rows once shown: the second starts below the first.
     const rows = user.getByRole("main").getByRole("link")

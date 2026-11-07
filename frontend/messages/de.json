@@ -789,7 +789,10 @@
     "completed": "abgeschlossen",
     "warningText": "<b>Etwas Passenderes gewünscht?</b> Erstelle ein Interview aus deiner Stellenbeschreibung.",
     "contents": "{topics, plural, one {# Thema} other {# Themen}}, {questions, plural, one {# Frage} other {# Fragen}}, {minutes, plural, one {# Min.} other {# Min.}}",
-    "usedIn": "{count, plural, one {In # Interview verwendet} other {In # Interviews verwendet}}"
+    "usedIn": "{count, plural, one {In # Interview verwendet} other {In # Interviews verwendet}}",
+    "pageTitle": "{title}, Seite {page, number}",
+    "pages": "Seiten",
+    "pageLink": "Seite {page, number}"
   },
   "billing": {
     "paidTitle": "Zahlung erhalten",
@@ -3801,3 +3804,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Eignungstest-Software",
+        "title": "Eignungstest-Software fürs Recruiting",
+        "description": "Eignungstest-Software, die aus einer Stellenbeschreibung einen Test mit Zeitlimit für jede Stelle macht. {count, plural, one {# Sprache} other {# Sprachen}}, Zahlung pro Kandidat, kein Abo.",
+        "hero": {
+          "title": "Eignungstest-Software\nfür jede Stelle",
+          "text": "Füge eine Stellenbeschreibung ein und erhalte einen Fachtest mit Zeitlimit, geschrieben für die Stelle. Jeder Kandidat bekommt eigene Fragen, und du siehst jede Antwort."
+        },
+        "how": {
+          "title": "Ein Test für die Stelle, die du besetzt",
+          "text": "Er beginnt bei deiner Stellenbeschreibung und deckt also ab, was diese Stelle braucht."
+        },
+        "why": {
+          "title": "Alles ist inklusive",
+          "text": "Alle Funktionen sind bei jedem Test inklusive. Ein Kandidat kostet erst etwas, wenn er mindestens eine Frage beantwortet hat."
+        }
+      },
+      "aiInterview": {
+        "name": "KI-Interview-Software",
+        "title": "KI-Interview-Software fürs Recruiting",
+        "description": "KI-Interview-Software: Die KI schreibt die Fragen, Menschen entscheiden. Klick- oder Sprachmodus in {count, plural, one {# Sprache} other {# Sprachen}}, ohne Kamera, ohne Abo.",
+        "hero": {
+          "title": "KI-Interview-Software\nMenschen entscheiden",
+          "text": "Die KI schreibt aus deiner Stellenbeschreibung ein Interview mit Zeitlimit, und Mira, die KI-Interviewerin, kann es vorlesen. Antworten werden anhand eines Lösungsschlüssels bewertet, und dein Team entscheidet."
+        },
+        "how": {
+          "title": "Was die KI tut und was nicht",
+          "text": "Die KI übernimmt das Schreiben. Kandidaten beantworten Fragen mit eindeutig richtigen und falschen Antworten, sodass du jedes Ergebnis erklären kannst."
+        },
+        "why": {
+          "title": "Vertrauen und Compliance inklusive",
+          "text": "Ein Mensch entscheidet, für jeden Kandidaten gelten dieselben Regeln, und die Dokumente für GDPR, den EU AI Act und die Regeln in UK und USA liegen bereit."
+        }
+      },
+      "codingTest": {
+        "name": "Coding-Test für Bewerber",
+        "title": "Coding-Test fürs Entwickler-Recruiting",
+        "description": "Coding-Test mit Zeitlimit für Entwickler, aus deiner Stellenbeschreibung. Kandidaten lesen Code und antworten: ohne Editor, ohne Setup, ohne Abo.",
+        "hero": {
+          "title": "Coding-Test für Bewerber\nzum Lesen von Code",
+          "text": "Ein Test mit Zeitlimit zu den Sprachen und Frameworks aus deiner Stellenbeschreibung. Kandidaten lesen kurze Codestücke und antworten, bevor du die Zeit eines Entwicklers investierst."
+        },
+        "how": {
+          "title": "Eine Vorauswahl über das Lesen von Code",
+          "text": "Kandidaten schreiben, starten oder debuggen in testee keinen Code. Code lesen und Code schreiben sind unterschiedliche Fähigkeiten, nutze dies also als Vorauswahl vor einer Praxisrunde."
+        },
+        "why": {
+          "title": "Passt vor deine Praxisrunde",
+          "text": "Zuerst eine Vorauswahl mit Zeitlimit, dann deine eigene Aufgabe oder Coding-Runde für die Kandidaten, die du auswählst."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "Aus deiner Stellenbeschreibung geschrieben",
+        "text": "Die KI liest die Stellenbeschreibung und schlägt Themen vor. Du behältst, benennst um oder änderst sie, bevor eine Frage geschrieben wird, und das Erstellen des Tests ist kostenlos.",
+        "alt": "Der Themen-Tab eines Interviews: die Fragen und Minuten insgesamt pro Kandidat und die Themen mit ihrer Fragenanzahl."
+      },
+      "sameRules": {
+        "title": "Dieselben Regeln für jeden Kandidaten",
+        "text": "Jeder Kandidat bekommt eigene, zufällige Fragen in eigener Reihenfolge, mit einem Countdown bei jeder Frage, den der Server führt.",
+        "alt": "Die Frage eines Kandidaten zu Rust: die Frage, ihr Countdown und vier Antwortoptionen, eine davon ausgewählt."
+      },
+      "compare": {
+        "title": "Ergebnisse, die du vergleichen kannst",
+        "text": "Das Ergebnis jedes Kandidaten im Vergleich zu deiner Bestehensgrenze, in einer Liste. Öffne einen Bericht, um jede Antwort und ihre Zeit zu sehen.",
+        "alt": "Die Kandidatenliste eines Interviews mit Namen, Status, Ergebnissen und einem auffälligen Kandidaten."
+      },
+      "aiWrites": {
+        "title": "Die KI schreibt, du behältst die Kontrolle",
+        "text": "Die KI schlägt aus der Stellenbeschreibung Themen vor und schreibt für jedes freigegebene Thema einen Pool an Fragen. Du kannst jede Frage lesen, deaktivieren oder neu generieren.",
+        "alt": "Die Fragen eines Interviews, jede mit ihrem Beispiel und Lösungsschlüssel."
+      },
+      "voice": {
+        "title": "Klick oder Sprache",
+        "text": "Kandidaten antworten per Klick, oder im Sprachmodus liest Mira, eine KI-Interviewerin, jede Frage und ihre Optionen vor, und sie antworten freihändig.",
+        "alt": "Ein Sprachinterview: Mira, die KI-Interviewerin, neben der Frage und ihren vier Optionen."
+      },
+      "personDecides": {
+        "title": "Ein Mensch entscheidet",
+        "text": "Antworten werden anhand des Lösungsschlüssels bewertet: Keine KI beurteilt die Antwort eines Kandidaten, und testee lehnt nie jemanden ab. Du bekommst das Ergebnis, jede Antwort und Fragen für ein Live-Interview.",
+        "alt": "Der Bericht eines Kandidaten: das Ergebnis, die Karte mit den Antwortmustern und vorgeschlagene Nachfragen."
+      },
+      "stack": {
+        "title": "Dein Stack, sonst nichts",
+        "text": "Die KI liest die Stellenbeschreibung und schlägt Themen vor. Du behältst, was zählt, und änderst den Rest, damit der Test deine Programmiersprachen, Frameworks und Arbeitsweisen abdeckt.",
+        "alt": "Der Themen-Tab eines Interviews: die Fragen und Minuten insgesamt pro Kandidat und die Themen mit ihrer Fragenanzahl."
+      },
+      "readingCode": {
+        "title": "Fragen zu Code",
+        "text": "Ein kurzes Stück Code und eine Frage dazu, was es ausgibt oder zurückgibt, was es tut, warum es fehlschlägt oder welche Änderung es behebt. Bei SQL eine kleine Tabelle und eine Abfrage.",
+        "alt": "Die Frage eines Kandidaten zu Rust: die Frage, ihr Countdown und vier Antwortoptionen, eine davon ausgewählt."
+      },
+      "signals": {
+        "title": "Hinweise, die einen genaueren Blick wert sind",
+        "text": "Seitenwechsel, Kopierversuche und Antworten, die zu schnell kamen, um die Frage gelesen zu haben, dazu ungewöhnliche Antwortmuster. Berichte schlagen Fragen für ein Live-Interview vor.",
+        "alt": "Der Bericht eines Kandidaten: das Ergebnis, die Karte mit den Antwortmustern und vorgeschlagene Nachfragen."
+      }
+    },
+    "points": {
+      "anyRole": "Jede Stelle, in jeder Branche",
+      "options": "Vier Optionen pro Frage, manche mit mehr als einer richtigen Antwort",
+      "maxQuestions": "Bis zu 60 Fragen pro Kandidat",
+      "onePass": "Ein Versuch: kein Zurück, keine Wiederholung",
+      "sameMix": "Derselbe Timer und dieselbe Fragenmischung für alle",
+      "extraTime": "Mehr Zeit für alle, die darum bitten, vor dem Start festgelegt",
+      "sort": "Beste Ergebnisse zuerst, mit einem Klick",
+      "pdf": "PDF-Berichte für einen Kandidaten oder ein ganzes Interview",
+      "peopleDecide": "Das Ergebnis unterstützt deine Entscheidung; es trifft sie nicht",
+      "keysChecked": "Stichprobe der Lösungsschlüssel von einer zweiten KI geprüft",
+      "weakFixed": "Schwache Fragen werden durch Antworten, Bewertungen und Meldungen markiert, dann korrigiert oder ersetzt",
+      "preview": "Mach es kostenlos so, wie ein Kandidat es sieht, bevor du jemanden einlädst",
+      "ownMode": "Für das Interview festgelegt oder für einen Kandidaten umgestellt",
+      "voiceLanguages": "Sprachmodus in allen {count, plural, one {# Sprache} other {# Sprachen}}, mit je nach Sprache unterschiedlicher Qualität",
+      "noVoiceKept": "testee speichert keine Stimme: Sie wird nur in Text umgewandelt",
+      "noCamera": "Keine Kamera, keine Bildschirmaufnahme, kein Geräte-Tracking",
+      "noInference": "testee fragt nie nach geschützten Merkmalen und leitet sie nie ab",
+      "notProof": "Ein Hinweis ist ein Grund, genauer hinzusehen, nie ein Beweis",
+      "freeReview": "Themen kostenlos geprüft, bevor eine Frage geschrieben wird",
+      "startFromTest": "Oder starte mit einem fertigen Test nach Stelle",
+      "shortExamples": "Beispiele mit höchstens 8 kurzen Zeilen",
+      "noSetup": "Kein Editor, kein Setup: Es öffnet sich im Browser, auch auf dem Handy",
+      "ownQuestions": "Ein Versuch, mit eigenen zufälligen Fragen für jeden Kandidaten"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Fertige Tests",
+        "text": "Starte mit einem Fachtest nach Stelle und Level oder erstelle deinen eigenen."
+      },
+      "languages": {
+        "title": "{count, plural, one {# Sprache} other {# Sprachen}}",
+        "text": "Die App, die Tests und die E-Mails in der Sprache deiner Kandidaten."
+      },
+      "ats": {
+        "title": "Funktioniert mit deinem ATS",
+        "text": "Workable, Greenhouse, Teamtailor, Recruitee und Breezy HR laden Kandidaten ein und bekommen die Ergebnisse zurück."
+      },
+      "integrity": {
+        "title": "Integritätshinweise",
+        "text": "Seitenwechsel, Kopierversuche und Antworten, die zu schnell kamen, um die Frage gelesen zu haben: ein Grund, genauer hinzusehen, nie ein Beweis."
+      },
+      "accessible": {
+        "title": "Barrierefrei",
+        "text": "Gebaut für WCAG 2.2 AA, mit zusätzlicher Zeit für alle, die sie brauchen."
+      },
+      "price": {
+        "title": "{price} pro Kandidat",
+        "text": "Kein Abo. Dein erstes Unternehmen startet mit {free, plural, one {# kostenlosen Kandidaten} other {# kostenlosen Kandidaten}}, ohne Kreditkarte."
+      },
+      "documents": {
+        "title": "Dokumente bereit",
+        "text": "Ein Auftragsverarbeitungsvertrag, eine DSFA-Vorlage und Vorlagen für Hinweise an Kandidaten."
+      },
+      "biasAudit": {
+        "title": "Export für Bias-Audits",
+        "text": "Die Ergebnisse abgeschlossener Kandidaten als CSV für ein unabhängiges Audit oder deine eigene Vier-Fünftel-Prüfung."
+      },
+      "noTraining": {
+        "title": "Kein Training von KI",
+        "text": "Deine Daten trainieren keine KI-Modelle: OpenAI, der KI-Anbieter von testee, trainiert laut seinen Bedingungen nicht mit API-Daten."
+      },
+      "location": {
+        "title": "In der EU gespeichert",
+        "text": "Auf Google Cloud in Belgien; die Vertrauensseite nennt jeden Anbieter."
+      },
+      "platform": {
+        "title": "Von deiner Plattform",
+        "text": "Lade über die API ein oder bette den Test mit dem SDK in deine eigene Website ein."
+      },
+      "quality": {
+        "title": "Fragen, die sich selbst verbessern",
+        "text": "Antworten, Bewertungen und Meldungen markieren schwache Fragen; sie werden korrigiert oder ersetzt."
+      },
+      "practice": {
+        "title": "Kostenlos üben",
+        "text": "Kandidaten können für eine Stelle üben, kostenlos und privat, und am Ende jede richtige Antwort sehen."
+      }
+    },
+    "more": {
+      "features": "alle funktionen",
+      "tests": "fachtests nach stelle",
+      "trust": "vertrauensseite",
+      "testingGuide": "der ratgeber zu einstellungstests",
+      "interviewsGuide": "der ratgeber zu ki-interviews",
+      "engineersGuide": "entwickler einstellen"
+    }

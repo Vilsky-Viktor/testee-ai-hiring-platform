@@ -789,7 +789,10 @@
     "completed": "tamamlandı",
     "warningText": "<b>Daha uygun bir test mi istiyorsunuz?</b> İş tanımınızdan bir mülakat oluşturun.",
     "contents": "{topics, plural, one {# konu} other {# konu}}, {questions, plural, one {# soru} other {# soru}}, {minutes, plural, one {# dk} other {# dk}}",
-    "usedIn": "{count, plural, one {# mülakatta kullanıldı} other {# mülakatta kullanıldı}}"
+    "usedIn": "{count, plural, one {# mülakatta kullanıldı} other {# mülakatta kullanıldı}}",
+    "pageTitle": "{title}, sayfa {page, number}",
+    "pages": "Sayfalar",
+    "pageLink": "Sayfa {page, number}"
   },
   "billing": {
     "paidTitle": "Ödeme alındı",
@@ -3805,3 +3808,192 @@
     }
   }
 }
+  },
+  "solutions": {
+    "pages": {
+      "skillsAssessment": {
+        "name": "Beceri değerlendirme yazılımı",
+        "title": "İşe alım için beceri değerlendirme yazılımı",
+        "description": "İş tanımından her pozisyon için süreli test hazırlayan beceri değerlendirme yazılımı. {count, plural, one {# dil} other {# dil}}, aday başına ödeme, abonelik yok.",
+        "hero": {
+          "title": "Beceri değerlendirme yazılımı\nher pozisyon için",
+          "text": "Bir iş tanımı yapıştırın, pozisyona özel yazılmış süreli bir beceri testi alın. Her aday kendi sorularını alır, siz de tüm cevapları görürsünüz."
+        },
+        "how": {
+          "title": "İşe aldığınız pozisyona özel bir test",
+          "text": "İş tanımınızdan yola çıkar, böylece bu pozisyonun gerektirdiklerini kapsar."
+        },
+        "why": {
+          "title": "Her şey dahil",
+          "text": "Her testte tüm özellikler vardır. Bir aday için yalnızca en az bir soruyu cevapladığında ödeme yaparsınız."
+        }
+      },
+      "aiInterview": {
+        "name": "Yapay zekâ mülakat yazılımı",
+        "title": "İşe alım için yapay zekâ mülakat yazılımı",
+        "description": "Soruları yapay zekânın yazdığı, kararı insanların verdiği mülakat yazılımı. {count, plural, one {# dilde} other {# dilde}} tıklama veya sesli mod, kamera yok, abonelik yok.",
+        "hero": {
+          "title": "Yapay zekâ mülakat yazılımı\nkararı insanlar verir",
+          "text": "Yapay zekâ iş tanımınızdan süreli bir mülakat yazar, yapay zekâ mülakatçısı Mira da bunu sesli okuyabilir. Cevaplar bir cevap anahtarına göre notlandırılır, kararı ekibiniz verir."
+        },
+        "how": {
+          "title": "Yapay zekâ neyi yapar, neyi yapmaz",
+          "text": "Yazma işini yapay zekâ yapar. Adaylar doğru ve yanlış cevapları net olan soruları cevaplar, böylece her notu açıklayabilirsiniz."
+        },
+        "why": {
+          "title": "Güven ve uyum dahil",
+          "text": "Kararı bir insan verir, her aday aynı kurallara tabidir ve GDPR, AB Yapay Zekâ Yasası, Birleşik Krallık ve ABD kuralları için belgeler hazır."
+        }
+      },
+      "codingTest": {
+        "name": "İşe alım için kodlama testi",
+        "title": "Geliştirici işe alımı için kodlama testi",
+        "description": "İş tanımınızdan yazılan, geliştirici işe alımı için süreli kod okuma testi. Adaylar kodu okur ve cevaplar: editör yok, kurulum yok, abonelik yok.",
+        "hero": {
+          "title": "İşe alım için kodlama testi\nkod okumaya dayalı",
+          "text": "İş tanımınızdaki diller ve çerçeveler üzerine süreli bir test. Adaylar kısa kod parçalarını okuyup cevaplar; siz de bir mühendisin zamanını harcamadan önce sonucu görürsünüz."
+        },
+        "how": {
+          "title": "Kod okumaya dayalı bir ön eleme",
+          "text": "Adaylar testee'de kod yazmaz, çalıştırmaz veya hata ayıklamaz. Kod okumak ve yazmak farklı becerilerdir, bu yüzden bunu uygulamalı aşamadan önce ön eleme olarak kullanın."
+        },
+        "why": {
+          "title": "Uygulamalı aşamanızdan önce gelir",
+          "text": "Önce süreli bir ön eleme, ardından seçtiğiniz adaylar için kendi alıştırmanız veya kodlama aşamanız."
+        }
+      }
+    },
+    "rows": {
+      "fromDescription": {
+        "title": "İş tanımınızdan yazılır",
+        "text": "Yapay zekâ iş tanımını okur ve konular önerir. Herhangi bir soru yazılmadan önce bunları tutar, yeniden adlandırır veya değiştirirsiniz; testi oluşturmak ücretsizdir.",
+        "alt": "Bir mülakatın konular sekmesi: her aday için toplam soru ve dakika ile soru sayılarıyla konular."
+      },
+      "sameRules": {
+        "title": "Her aday için aynı kurallar",
+        "text": "Her aday kendi rastgele sorularını kendi sırasıyla alır; her soruda süreyi sunucunun tuttuğu bir geri sayım vardır.",
+        "alt": "Rust hakkında bir aday sorusu: soru, geri sayımı ve biri seçilmiş dört cevap seçeneği."
+      },
+      "compare": {
+        "title": "Karşılaştırılabilir sonuçlar",
+        "text": "Her adayın geçme notunuza göre notu tek bir listede. Her cevabı ve ne kadar sürdüğünü görmek için bir raporu açın.",
+        "alt": "Bir mülakatın aday listesi: adlar, durumlar, notlar ve işaretlenmiş bir aday."
+      },
+      "aiWrites": {
+        "title": "Yapay zekâ yazar, kontrol sizde kalır",
+        "text": "Yapay zekâ iş tanımından konular önerir ve onayladığınız her konu için bir soru havuzu yazar. Her soruyu okuyabilir, birini devre dışı bırakabilir veya yeniden oluşturabilirsiniz.",
+        "alt": "Bir mülakatın soruları; her biri örneği ve cevap anahtarıyla."
+      },
+      "voice": {
+        "title": "Tıklama veya ses",
+        "text": "Adaylar tıklayarak cevap verir ya da sesli modda yapay zekâ mülakatçısı Mira her soruyu ve seçeneklerini sesli okur, adaylar da ellerini kullanmadan cevap verir.",
+        "alt": "Sesli mülakat: sorunun ve dört seçeneğinin yanında yapay zekâ mülakatçısı Mira."
+      },
+      "personDecides": {
+        "title": "Kararı bir insan verir",
+        "text": "Cevaplar cevap anahtarına göre notlandırılır: hiçbir yapay zekâ adayın cevabını yargılamaz ve testee kimseyi asla reddetmez. Notu, tüm cevapları ve yüz yüze mülakatta sorulacak soruları alırsınız.",
+        "alt": "Bir adayın raporu: not, cevap örüntüleri kartı ve önerilen ek sorular."
+      },
+      "stack": {
+        "title": "Sizin teknolojileriniz, başka bir şey değil",
+        "text": "Yapay zekâ iş tanımını okur ve konular önerir. Önemli olanları tutar, gerisini değiştirirsiniz; böylece test sizin dillerinizi, çerçevelerinizi ve uygulamalarınızı kapsar.",
+        "alt": "Bir mülakatın konular sekmesi: her aday için toplam soru ve dakika ile soru sayılarıyla konular."
+      },
+      "readingCode": {
+        "title": "Kod hakkında sorular",
+        "text": "Kısa bir kod parçası ve neyi yazdırdığı veya döndürdüğü, ne yaptığı, neden hata verdiği ya da hangi değişikliğin düzelttiği üzerine bir soru. SQL için küçük bir tablo ve bir sorgu.",
+        "alt": "Rust hakkında bir aday sorusu: soru, geri sayımı ve biri seçilmiş dört cevap seçeneği."
+      },
+      "signals": {
+        "title": "Daha yakından bakmaya değer uyarılar",
+        "text": "Sayfadan ayrılmalar, kopyalama denemeleri ve okunmuş olamayacak kadar hızlı cevaplar, ayrıca olağan dışı cevap örüntüleri. Raporlar yüz yüze mülakatta sorulacak sorular önerir.",
+        "alt": "Bir adayın raporu: not, cevap örüntüleri kartı ve önerilen ek sorular."
+      }
+    },
+    "points": {
+      "anyRole": "Her pozisyon, her sektör",
+      "options": "Soru başına dört seçenek, bazılarında birden fazla doğru cevap",
+      "maxQuestions": "Aday başına en fazla 60 soru",
+      "onePass": "Tek deneme: geri dönüş yok, tekrar yok",
+      "sameMix": "Herkes için aynı süre ve aynı soru karışımı",
+      "extraTime": "İsteyen herkese başlamadan önce ek süre tanımlanır",
+      "sort": "Tek tıkla en yüksek notlar en üstte",
+      "pdf": "Tek aday veya tüm mülakat için PDF raporlar",
+      "peopleDecide": "Not kararınızı destekler, kararı vermez",
+      "keysChecked": "Cevap anahtarlarından bir örneklemi ikinci bir yapay zekâ kontrol eder",
+      "weakFixed": "Zayıf sorular cevaplar, oylar ve bildirimlerle işaretlenir, sonra düzeltilir ya da değiştirilir",
+      "preview": "Kimseyi davet etmeden önce bir aday gibi ücretsiz deneyin",
+      "ownMode": "Mülakat için ayarlanır veya tek bir aday için değiştirilir",
+      "voiceLanguages": "{count, plural, one {# dilin} other {# dilin}} hepsinde ses, kalitesi dile göre değişir",
+      "noVoiceKept": "testee ses saklamaz: ses yalnızca metne çevrilir",
+      "noCamera": "Kamera, ekran kaydı veya cihaz takibi yok",
+      "noInference": "testee korunan özellikleri asla sormaz ve tahmin etmez",
+      "notProof": "Bir uyarı daha yakından bakmak için bir nedendir, asla kanıt değildir",
+      "freeReview": "Herhangi bir soru yazılmadan önce konular ücretsiz gözden geçirilir",
+      "startFromTest": "Ya da pozisyona göre hazır bir testten başlayın",
+      "shortExamples": "Örnekler en fazla 8 kısa satırdır",
+      "noSetup": "Editör veya kurulum yok: tarayıcıda, telefonda da açılır",
+      "ownQuestions": "Tek deneme, her adaya kendi rastgele soruları"
+    },
+    "cards": {
+      "readyTests": {
+        "title": "Hazır testler",
+        "text": "Pozisyona ve seviyeye göre bir beceri testinden başlayın ya da kendinizinkini oluşturun."
+      },
+      "languages": {
+        "title": "{count, plural, one {# dil} other {# dil}}",
+        "text": "Uygulama, testler ve e-postalar adaylarınızın dilinde."
+      },
+      "ats": {
+        "title": "ATS'nizle çalışır",
+        "text": "Workable, Greenhouse, Teamtailor, Recruitee ve Breezy HR adayları davet eder ve sonuçları geri alır."
+      },
+      "integrity": {
+        "title": "Dürüstlük uyarıları",
+        "text": "Sayfadan ayrılmalar, kopyalama denemeleri ve okunmuş olamayacak kadar hızlı cevaplar: daha yakından bakmak için bir neden, asla kanıt değil."
+      },
+      "accessible": {
+        "title": "Erişilebilir",
+        "text": "WCAG 2.2 AA'ya göre tasarlandı; ihtiyacı olanlara ek süre."
+      },
+      "price": {
+        "title": "Aday başına {price}",
+        "text": "Abonelik yok. İlk şirketiniz {free, plural, one {# ücretsiz adayla} other {# ücretsiz adayla}} başlar, kart gerekmez."
+      },
+      "documents": {
+        "title": "Belgeler hazır",
+        "text": "Veri işleme sözleşmesi, DPIA şablonu ve aday bilgilendirme şablonları."
+      },
+      "biasAudit": {
+        "title": "Yanlılık denetimi için dışa aktarım",
+        "text": "Mülakatı bitiren adayların sonuçları, bağımsız bir denetim veya kendi beşte dört kontrolünüz için CSV olarak."
+      },
+      "noTraining": {
+        "title": "Yapay zekâ eğitiminde kullanılmaz",
+        "text": "Verileriniz yapay zekâ modellerini eğitmez: testee'nin yapay zekâ sağlayıcısı OpenAI, koşulları gereği API verileriyle eğitim yapmaz."
+      },
+      "location": {
+        "title": "AB'de saklanır",
+        "text": "Belçika'daki Google Cloud'da; güven sayfasında tüm sağlayıcılar listelenir."
+      },
+      "platform": {
+        "title": "Platformunuzdan",
+        "text": "API üzerinden davet edin ya da testi SDK ile kendi sitenize yerleştirin."
+      },
+      "quality": {
+        "title": "Kendini düzelten sorular",
+        "text": "Cevaplar, oylar ve bildirimler zayıf soruları gösterir; bunlar düzeltilir ya da değiştirilir."
+      },
+      "practice": {
+        "title": "Ücretsiz pratik",
+        "text": "Adaylar pozisyona göre ücretsiz ve gizli pratik yapabilir, sonunda tüm doğru cevapları görür."
+      }
+    },
+    "more": {
+      "features": "tüm özellikler",
+      "tests": "pozisyona göre beceri testleri",
+      "trust": "güven sayfası",
+      "testingGuide": "işe alım öncesi test rehberi",
+      "interviewsGuide": "yapay zekâ mülakatları rehberi",
+      "engineersGuide": "mühendis işe alımı rehberi"
+    }

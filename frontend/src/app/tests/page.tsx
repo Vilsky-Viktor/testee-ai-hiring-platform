@@ -4,16 +4,21 @@ import { getTranslations } from "next-intl/server"
 import { Button } from "@/components/ui/button"
 import { TemplateBrowser } from "@/features/templates/components/template-browser"
 import type { TemplateSearchParams } from "@/features/templates/components/template-browser"
+import { hubMetadata } from "@/features/templates/utils/hub-metadata"
 import { DEFAULT_LOCALE } from "@/config/i18n"
 import { localizedPath } from "@/lib/locale-path"
-import { pageMetadata, urlLocale } from "@/lib/site"
+import { urlLocale } from "@/lib/site"
 import { PUBLIC_TEMPLATES_PATH } from "@/config/lists"
 import { PageKey } from "@/components/common/page-key"
 
-export async function generateMetadata() {
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<TemplateSearchParams>
+}) {
   const t = await getTranslations("tests")
 
-  return pageMetadata(t("title"), t("intro"), "/tests", true)
+  return hubMetadata(t("title"), t("intro"), "/tests", await searchParams)
 }
 
 /** Skills tests by role for companies: every template, searched like the practice list, each

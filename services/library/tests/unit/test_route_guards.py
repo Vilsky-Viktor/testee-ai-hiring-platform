@@ -9,6 +9,8 @@ PUBLIC = {
     # The public template library, the same for everyone.
     "GET /templates/filters",
     "GET /templates",
+    "GET /templates/hub",
+    "GET /templates/hub/count",
     "GET /templates/copyable",
     "GET /templates/{key}",
     "GET /templates/{key}/sample",

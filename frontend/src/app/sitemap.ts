@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next"
 
 import { PUBLIC_TIMEOUT_MS } from "@/config/api"
-import { DEFAULT_LOCALE, LOCALES } from "@/config/i18n"
+import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/config/i18n"
+import { PAGE_SIZE } from "@/config/lists"
 import { LOCALIZED_PATHS, PUBLIC_PATHS } from "@/config/seo"
 import { contentLanguages, contentPage, contentPages } from "@/lib/content"
 import {
@@ -137,10 +138,29 @@ async function articles(site: string) {
   return lists.flat(2)
 }
 
+/** The public hubs' numbered pages past the first, in each language: a hub lists the indexable
+ * templates in its language and English. */
+function hubPages(site: string, rows: Template[]) {
+  return LOCALES.flatMap((locale) => {
+    const listed = rows.filter(
+      (row) =>
+        row.indexable &&
+        [locale, DEFAULT_LOCALE].includes(row.language as Locale)
+    )
+    const pages = Math.ceil(listed.length / PAGE_SIZE)
+
+    return Array.from({ length: Math.max(pages - 1, 0) }, (_, index) =>
+      ["/tests", "/practice"].map((base) => ({
+        url: `${site}${localizedPath(locale, base)}?page=${index + 2}`,
+      }))
+    ).flat()
+  })
+}
+
 /** The public pages (those in every language with each language's address; the news page with
  * its newest post's day, the legal pages with their last update), the articles in their
- * languages with their dates, and the role test page and free practice page of each template
- * the API marks indexable. */
+ * languages with their dates, the role test page and free practice page of each template the
+ * API marks indexable, and the numbered pages listing them. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const site = siteUrl()
   const absolute = (links: Record<string, string>) =>
@@ -167,6 +187,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       (path) => ({ url: `${site}${path}`, lastModified: legal[path] })
     ),
     ...written,
+    ...hubPages(site, rows),
     // A template's pages in English and in its language, each naming the other.
     ...rows
       .filter((row) => row.indexable)
