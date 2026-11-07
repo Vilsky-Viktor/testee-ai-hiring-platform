@@ -7,7 +7,7 @@ from urllib.parse import urlencode
 import httpx
 from fastapi import HTTPException, status
 from testee_common.auth.encryption import decrypt, encrypt
-from testee_common.auth.tokens import purpose_key
+from testee_common.auth.tokens import purpose_key, same_secret
 from testee_common.events.notifications import NotificationKind, Recipient, notification
 from testee_common.limits.rate_limit import hit_or_skip
 
@@ -67,8 +67,9 @@ def state_key() -> str:
     return purpose_key(settings.service_secret, SLACK_STATE_PURPOSE)
 
 
-async def start(company_id: str, user_id: str) -> str:
-    """Slack's approval page, for the company's editor who pressed "Add to Slack"."""
+async def start(company_id: str, user_id: str) -> tuple[str, str]:
+    """Slack's approval page, for the company's editor who pressed "Add to Slack", and the trip's
+    nonce, for the cookie on their browser."""
     if not available():
         raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Slack isn't set up yet")
 
@@ -91,18 +92,20 @@ async def start(company_id: str, user_id: str) -> str:
         }
     )
 
-    return f"{SLACK_AUTHORIZE_URL}?{query}"
+    return f"{SLACK_AUTHORIZE_URL}?{query}", nonce
 
 
-async def finish(code: str | None, state: str, error: str | None) -> str:
+async def finish(code: str | None, state: str, error: str | None, browser_nonce: str | None) -> str:
     """Back from Slack: the approved channel is saved (replacing an earlier one, whose app is
-    removed unless a company still uses it). Each state works once, and only while whoever
-    started the trip is still an editor. Where to send the browser: the company's Slack page,
-    saying how it went."""
+    removed unless a company still uses it). Each state works once, only in the browser that
+    started the trip (`browser_nonce`, its cookie: a link handed to someone else saves nothing)
+    and only while whoever started it is still an editor. Where to send the browser: the
+    company's Slack page, saying how it went."""
     found = read_state(state_key(), state, int(time.time()))
+    same_browser = found is not None and same_secret(browser_nonce or "", found[2])
 
     # Deleting the nonce takes the state: a second callback with it finds nothing.
-    if found is None or not await get_redis().delete(SLACK_STATE_KEY.format(nonce=found[2])):
+    if not same_browser or not await get_redis().delete(SLACK_STATE_KEY.format(nonce=found[2])):
         raise HTTPException(
             status.HTTP_422_UNPROCESSABLE_CONTENT, "This Slack link expired: try again"
         )

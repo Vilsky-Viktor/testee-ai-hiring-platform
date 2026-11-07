@@ -11,7 +11,8 @@ from testee_common.auth.encryption import encrypt
 from testee_common.auth.user import User
 
 from notifications.config import settings
-from notifications.helpers.slack import signed_state, token_hash
+from notifications.constants.slack import SLACK_COOKIE
+from notifications.helpers.slack import read_state, signed_state, token_hash
 from notifications.integrations import companies
 from notifications.integrations import slack as slack_api
 from notifications.main import app
@@ -163,8 +164,15 @@ def saved(monkeypatch):
     return found
 
 
-def callback(client, query):
-    return client.get(f"/slack/callback?{query}", follow_redirects=False)
+def callback(client, query, cookie=None):
+    """Back from Slack in the browser that started the trip, unless `cookie` says otherwise."""
+    if cookie is None:
+        started = read_state(service.state_key(), parse_qs(query)["state"][0], 0)
+        cookie = started[2]
+
+    headers = {"Cookie": f"{SLACK_COOKIE}={cookie}"}
+
+    return client.get(f"/slack/callback?{query}", headers=headers, follow_redirects=False)
 
 
 def test_back_from_slack_the_channel_is_saved_sealed_with_the_default_kinds(

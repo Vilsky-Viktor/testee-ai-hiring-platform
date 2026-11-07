@@ -261,10 +261,11 @@ def test_an_add_to_slack_trip_finishes_once(run, monkeypatch):
             started = await client.get(f"/slack/start?company_id={company_id}")
             state = parse_qs(urlparse(started.json()["url"]).query)["state"][0]
 
-            return [
-                (await client.get(f"/slack/callback?code=ok&state={state}")).status_code
-                for _ in range(2)
-            ]
+            # Set for the gateway's address, which this client doesn't call.
+            headers = {"Cookie": started.headers["set-cookie"].split(";")[0]}
+            url = f"/slack/callback?code=ok&state={state}"
+
+            return [(await client.get(url, headers=headers)).status_code for _ in range(2)]
 
     try:
         assert run(scenario()) == [303, 422]

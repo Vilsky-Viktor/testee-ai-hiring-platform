@@ -1,9 +1,12 @@
+from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, status
+from fastapi import APIRouter, Cookie, Response, status
 from fastapi.responses import RedirectResponse
 from testee_common.auth.auth import CurrentUser
 
+from notifications.config import settings
+from notifications.constants.slack import SLACK_CALLBACK_PATH, SLACK_COOKIE, SLACK_STATE_SECONDS
 from notifications.integrations import companies
 from notifications.schemas.slack import SlackKindsIn, SlackOut, SlackStartOut
 from notifications.services import slack, slack_test
@@ -20,18 +23,38 @@ async def get_slack(company_id: UUID, user: CurrentUser) -> SlackOut:
 
 
 @router.get("/start")
-async def start(company_id: UUID, user: CurrentUser) -> SlackStartOut:
-    """Where "Add to Slack" goes: Slack's page to approve testee and pick a channel."""
+async def start(company_id: UUID, user: CurrentUser, response: Response) -> SlackStartOut:
+    """Where "Add to Slack" goes: Slack's page to approve testee and pick a channel. The cookie
+    marks this browser: only it can finish the trip."""
     await companies.require(str(company_id), user.uid, editor=True)
+    url, nonce = await slack.start(str(company_id), user.uid)
+    response.set_cookie(
+        SLACK_COOKIE,
+        nonce,
+        max_age=SLACK_STATE_SECONDS,
+        path=SLACK_CALLBACK_PATH,
+        secure=settings.site_url.startswith("https://"),
+        httponly=True,
+        samesite="lax",
+    )
 
-    return SlackStartOut(url=await slack.start(str(company_id), user.uid))
+    return SlackStartOut(url=url)
 
 
 @router.get("/callback")
-async def callback(state: str, code: str | None = None, error: str | None = None):
-    """Slack sends the browser back here; the signed, one-time state says whose company it is.
-    Then on to the company's Slack page."""
-    return RedirectResponse(await slack.finish(code, state, error), status.HTTP_303_SEE_OTHER)
+async def callback(
+    state: str,
+    nonce: Annotated[str | None, Cookie(alias=SLACK_COOKIE)] = None,
+    code: str | None = None,
+    error: str | None = None,
+):
+    """Slack sends the browser back here; the signed, one-time state says whose company it is,
+    and the cookie that this browser started the trip. Then on to the company's Slack page."""
+    page = await slack.finish(code, state, error, nonce)
+    response = RedirectResponse(page, status.HTTP_303_SEE_OTHER)
+    response.delete_cookie(SLACK_COOKIE, path=SLACK_CALLBACK_PATH)
+
+    return response
 
 
 @router.put("/kinds", status_code=status.HTTP_204_NO_CONTENT)

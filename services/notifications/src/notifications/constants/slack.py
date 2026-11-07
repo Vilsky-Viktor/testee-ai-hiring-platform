@@ -10,7 +10,8 @@ SLACK_SCOPE = "incoming-webhook"
 # Where Slack's incoming web hooks live: a web hook anywhere else is refused, never posted to.
 SLACK_HOOKS = "https://hooks.slack.com/"
 # Where Slack sends the company back, and the page that then opens.
-SLACK_CALLBACK = "{site}/api/notifications/slack/callback"
+SLACK_CALLBACK_PATH = "/api/notifications/slack/callback"
+SLACK_CALLBACK = "{site}" + SLACK_CALLBACK_PATH
 SLACK_PAGE = "{site}/companies/{company_id}/integrations/slack"
 # The same page, as a notification opens it.
 SLACK_LINK = "/companies/{company_id}/integrations/slack"
@@ -20,6 +21,9 @@ SLACK_STATE_SECONDS = 15 * 60
 SLACK_STATE_KEY = "slack:state:{nonce}"
 # What the state's signing key is made for (testee_common.auth.tokens.purpose_key).
 SLACK_STATE_PURPOSE = "slack-state"
+# The cookie holding a trip's nonce on the browser that started it: someone else's browser can't
+# finish the trip. Sent only to the callback, for as long as the trip may take.
+SLACK_COOKIE = "testee_slack"
 SLACK_TIMEOUT_SECONDS = 10
 # What Slack answers when the web hook is gone (the app removed, the channel deleted or
 # archived): the connection needs reconnecting.
