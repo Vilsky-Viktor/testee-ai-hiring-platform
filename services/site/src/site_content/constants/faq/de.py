@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Können Unternehmen mich über meine Übungen finden?",
-        "answer": "Nur wenn du das willst. Schalte „Offen für Angebote“ nach einer Übungsrunde oder in den Einstellungen ein und gib dabei die Adresse deines LinkedIn-Profils an. Unternehmen, die auf testee Credits aufgeladen haben, sehen dann deinen Namen, dein LinkedIn-Profil und dein neuestes Übungsergebnis in jedem Thema ihrer Interviews, das du geübt hast, und können dich zu einem Interview einladen. testee erstellt keine Rangliste und empfiehlt dich nicht. Du kannst es jederzeit in den Einstellungen ausschalten und verschwindest dann sofort aus der Liste jedes Unternehmens; außerdem endet es ein Jahr, nachdem du es zuletzt eingeschaltet oder dein LinkedIn-Profil gespeichert hast.",
+        "answer": "Nur wenn du das willst. Schalte „Offen für Angebote“ nach einer Übungsrunde oder in den Einstellungen ein und gib dabei die Adresse deines LinkedIn-Profils an. Unternehmen, die auf testee Credits aufgeladen haben, sehen dann deinen Namen, dein LinkedIn-Profil und dein neuestes Ergebnis einer Übung mit Zeitlimit in jedem Thema ihrer Interviews, das du geübt hast, und können dich zu einem Interview einladen. testee erstellt keine Rangliste und empfiehlt dich nicht. Du kannst es jederzeit in den Einstellungen ausschalten und verschwindest dann sofort aus der Liste jedes Unternehmens; außerdem endet es ein Jahr, nachdem du es zuletzt eingeschaltet oder dein LinkedIn-Profil gespeichert hast.",
     },
     {
         "key": "cheating",

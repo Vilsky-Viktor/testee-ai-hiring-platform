@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Şirketler beni pratiklerim üzerinden bulabilir mi?",
-        "answer": "Yalnızca siz isterseniz. Bir pratik turundan sonra veya Ayarlar'da, LinkedIn profilinizin adresiyle \"İş tekliflerine açık\" seçeneğini açın. Bunun ardından testee'de kredi yüklemiş şirketler adınızı, LinkedIn profilinizi ve mülakatlarındaki konulardan pratik yaptığınız her birindeki en son pratik sonucunuzu görür ve sizi bir mülakata davet edebilir. testee sizi sıralamaz veya önermez. İstediğiniz zaman Ayarlar'dan kapatabilirsiniz; o anda tüm şirketlerin listesinden kaybolursunuz. Ayrıca bu seçenek, en son açtığınız veya LinkedIn profilinizi kaydettiğiniz tarihten bir yıl sonra kendiliğinden kapanır.",
+        "answer": "Yalnızca siz isterseniz. Bir pratik turundan sonra veya Ayarlar'da, LinkedIn profilinizin adresiyle \"İş tekliflerine açık\" seçeneğini açın. Bunun ardından testee'de kredi yüklemiş şirketler adınızı, LinkedIn profilinizi ve mülakatlarındaki konulardan pratik yaptığınız her birindeki en son süreli pratik sonucunuzu görür ve sizi bir mülakata davet edebilir. testee sizi sıralamaz veya önermez. İstediğiniz zaman Ayarlar'dan kapatabilirsiniz; o anda tüm şirketlerin listesinden kaybolursunuz. Ayrıca bu seçenek, en son açtığınız veya LinkedIn profilinizi kaydettiğiniz tarihten bir yıl sonra kendiliğinden kapanır.",
     },
     {
         "key": "cheating",

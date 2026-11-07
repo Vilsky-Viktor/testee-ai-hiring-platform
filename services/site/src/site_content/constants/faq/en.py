@@ -39,7 +39,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Can companies find me through my practice?",
-        "answer": "Only if you choose to. Turn on Open to offers after a practice round or in Settings, with your LinkedIn profile's address. Companies that have topped up on testee then see your name, LinkedIn profile and latest practice result on each subject of their interviews that you practised, and may invite you to an interview. testee doesn't rank or recommend you. Turn it off at any time in Settings, and you disappear from every company's list at once; it also ends a year after you last turned it on or saved your LinkedIn profile.",
+        "answer": "Only if you choose to. Turn on Open to offers after a practice round or in Settings, with your LinkedIn profile's address. Companies that have topped up on testee then see your name, LinkedIn profile and latest timed practice result on each subject of their interviews that you practised, and may invite you to an interview. testee doesn't rank or recommend you. Turn it off at any time in Settings, and you disappear from every company's list at once; it also ends a year after you last turned it on or saved your LinkedIn profile.",
     },
     {
         "key": "cheating",

@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Kunnen bedrijven me vinden via mijn oefeningen?",
-        "answer": "Alleen als je daarvoor kiest. Zet Open voor nieuwe kansen aan na een oefenronde of in Instellingen, met het adres van je LinkedIn-profiel. Bedrijven die op testee hebben opgewaardeerd, zien dan je naam, je LinkedIn-profiel en je nieuwste oefenresultaat op elk onderwerp van hun interviews dat je hebt geoefend, en kunnen je uitnodigen voor een interview. testee rangschikt je niet en beveelt je niet aan. Zet het op elk moment uit in Instellingen, en je verdwijnt meteen uit de lijst van elk bedrijf; het stopt ook een jaar nadat je het voor het laatst hebt aangezet of je LinkedIn-profiel hebt opgeslagen.",
+        "answer": "Alleen als je daarvoor kiest. Zet Open voor nieuwe kansen aan na een oefenronde of in Instellingen, met het adres van je LinkedIn-profiel. Bedrijven die op testee hebben opgewaardeerd, zien dan je naam, je LinkedIn-profiel en je nieuwste getimede oefenresultaat op elk onderwerp van hun interviews dat je hebt geoefend, en kunnen je uitnodigen voor een interview. testee rangschikt je niet en beveelt je niet aan. Zet het op elk moment uit in Instellingen, en je verdwijnt meteen uit de lijst van elk bedrijf; het stopt ook een jaar nadat je het voor het laatst hebt aangezet of je LinkedIn-profiel hebt opgeslagen.",
     },
     {
         "key": "cheating",

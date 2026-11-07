@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Bisakah perusahaan menemukanku lewat latihanku?",
-        "answer": "Hanya jika kamu memilihnya. Aktifkan Terbuka untuk tawaran kerja setelah sesi latihan atau di Pengaturan, dengan alamat profil LinkedIn-mu. Perusahaan yang sudah isi ulang di testee lalu melihat nama, profil LinkedIn, dan hasil latihan terbarumu di setiap topik wawancara mereka yang pernah kamu latih, dan bisa mengundangmu ke wawancara. testee tidak memeringkat atau merekomendasikanmu. Matikan kapan saja di Pengaturan, dan kamu langsung hilang dari daftar setiap perusahaan; fitur ini juga berakhir setahun setelah terakhir kali kamu mengaktifkannya atau menyimpan profil LinkedIn-mu.",
+        "answer": "Hanya jika kamu memilihnya. Aktifkan Terbuka untuk tawaran kerja setelah sesi latihan atau di Pengaturan, dengan alamat profil LinkedIn-mu. Perusahaan yang sudah isi ulang di testee lalu melihat nama, profil LinkedIn, dan hasil latihan berwaktu terbarumu di setiap topik wawancara mereka yang pernah kamu latih, dan bisa mengundangmu ke wawancara. testee tidak memeringkat atau merekomendasikanmu. Matikan kapan saja di Pengaturan, dan kamu langsung hilang dari daftar setiap perusahaan; fitur ini juga berakhir setahun setelah terakhir kali kamu mengaktifkannya atau menyimpan profil LinkedIn-mu.",
     },
     {
         "key": "cheating",

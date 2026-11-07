@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "As empresas podem me encontrar pela minha prática?",
-        "answer": "Só se você quiser. Ative Aberto a propostas depois de uma rodada de prática ou em Configurações, com o endereço do seu perfil do LinkedIn. As empresas que já recarregaram na testee passam a ver seu nome, seu perfil do LinkedIn e seu resultado de prática mais recente em cada tema das entrevistas delas que você praticou, e podem convidar você para uma entrevista. A testee não classifica nem recomenda você. Desative quando quiser em Configurações, e você some na hora da lista de todas as empresas; a opção também termina um ano depois da última vez que você a ativou ou salvou seu perfil do LinkedIn.",
+        "answer": "Só se você quiser. Ative Aberto a propostas depois de uma rodada de prática ou em Configurações, com o endereço do seu perfil do LinkedIn. As empresas que já recarregaram na testee passam a ver seu nome, seu perfil do LinkedIn e seu resultado de prática cronometrada mais recente em cada tema das entrevistas delas que você praticou, e podem convidar você para uma entrevista. A testee não classifica nem recomenda você. Desative quando quiser em Configurações, e você some na hora da lista de todas as empresas; a opção também termina um ano depois da última vez que você a ativou ou salvou seu perfil do LinkedIn.",
     },
     {
         "key": "cheating",

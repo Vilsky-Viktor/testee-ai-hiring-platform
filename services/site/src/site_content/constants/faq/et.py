@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Kas ettevõtted võivad mind mu harjutamise kaudu leida?",
-        "answer": "Ainult siis, kui ise soovid. Lülita „Avatud tööpakkumistele“ sisse pärast harjutusvooru või seadetes ja lisa oma LinkedIni profiili aadress. Siis näevad ettevõtted, kes on testees krediiti juurde laadinud, sinu nime, LinkedIni profiili ja viimast harjutuse tulemust igas nende intervjuude teemas, mida oled harjutanud, ning võivad sind intervjuule kutsuda. testee ei järjesta ega soovita sind. Saad selle igal ajal seadetes välja lülitada ja kaod siis kohe kõigi ettevõtete loenditest; see lõpeb ka aasta pärast seda, kui selle viimati sisse lülitasid või LinkedIni profiili salvestasid.",
+        "answer": "Ainult siis, kui ise soovid. Lülita „Avatud tööpakkumistele“ sisse pärast harjutusvooru või seadetes ja lisa oma LinkedIni profiili aadress. Siis näevad ettevõtted, kes on testees krediiti juurde laadinud, sinu nime, LinkedIni profiili ja viimast ajapiiranguga harjutuse tulemust igas nende intervjuude teemas, mida oled harjutanud, ning võivad sind intervjuule kutsuda. testee ei järjesta ega soovita sind. Saad selle igal ajal seadetes välja lülitada ja kaod siis kohe kõigi ettevõtete loenditest; see lõpeb ka aasta pärast seda, kui selle viimati sisse lülitasid või LinkedIni profiili salvestasid.",
     },
     {
         "key": "cheating",

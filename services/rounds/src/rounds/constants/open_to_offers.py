@@ -6,7 +6,7 @@ import re
 # The version of the switch's wording the person agreed to (the frontend's openToOffers texts):
 # a change to what it says is shared gets a new version, so the consent log tells which wording
 # each choice was made under.
-CONSENT_VERSION = "2026-10-30"
+CONSENT_VERSION = "2026-11-07"
 # An opt-in lapses this many days after it was last turned on, so nobody who stopped looking
 # stays listed for good (the privacy policy says so); turning it on again starts it anew.
 OPEN_DAYS = 365

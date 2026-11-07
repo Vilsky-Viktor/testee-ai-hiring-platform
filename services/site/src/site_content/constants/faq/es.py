@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "¿Pueden las empresas encontrarme a través de mi práctica?",
-        "answer": "Solo si tú lo eliges. Activa Abierto a ofertas después de una ronda de práctica o en Ajustes, con la dirección de tu perfil de LinkedIn. Entonces, las empresas que han recargado en testee ven tu nombre, tu perfil de LinkedIn y tu último resultado de práctica en cada tema de sus entrevistas que hayas practicado, y pueden invitarte a una entrevista. testee no te clasifica ni te recomienda. Desactívalo cuando quieras en Ajustes y desaparecerás al instante de la lista de todas las empresas; además, se desactiva un año después de la última vez que lo activaste o guardaste tu perfil de LinkedIn.",
+        "answer": "Solo si tú lo eliges. Activa Abierto a ofertas después de una ronda de práctica o en Ajustes, con la dirección de tu perfil de LinkedIn. Entonces, las empresas que han recargado en testee ven tu nombre, tu perfil de LinkedIn y tu último resultado de práctica cronometrada en cada tema de sus entrevistas que hayas practicado, y pueden invitarte a una entrevista. testee no te clasifica ni te recomienda. Desactívalo cuando quieras en Ajustes y desaparecerás al instante de la lista de todas las empresas; además, se desactiva un año después de la última vez que lo activaste o guardaste tu perfil de LinkedIn.",
     },
     {
         "key": "cheating",

@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Puwede ba akong mahanap ng mga kumpanya sa pamamagitan ng practice ko?",
-        "answer": "Kung pipiliin mo lang. I-on ang Open to offers pagkatapos ng isang practice round o sa Settings, kasama ang address ng iyong LinkedIn profile. Makikita na ng mga kumpanyang nag-top up na sa testee ang pangalan mo, LinkedIn profile at pinakabagong resulta ng practice mo sa bawat topic ng kanilang mga interview na pinag-practice-an mo, at puwede ka nilang imbitahan sa isang interview. Hindi ka nira-rank o inirerekomenda ng testee. I-off ito kahit kailan sa Settings, at agad kang mawawala sa listahan ng bawat kumpanya; natatapos din ito isang taon matapos mo itong huling i-on o i-save ang iyong LinkedIn profile.",
+        "answer": "Kung pipiliin mo lang. I-on ang Open to offers pagkatapos ng isang practice round o sa Settings, kasama ang address ng iyong LinkedIn profile. Makikita na ng mga kumpanyang nag-top up na sa testee ang pangalan mo, LinkedIn profile at pinakabagong naka-time na resulta ng practice mo sa bawat topic ng kanilang mga interview na pinag-practice-an mo, at puwede ka nilang imbitahan sa isang interview. Hindi ka nira-rank o inirerekomenda ng testee. I-off ito kahit kailan sa Settings, at agad kang mawawala sa listahan ng bawat kumpanya; natatapos din ito isang taon matapos mo itong huling i-on o i-save ang iyong LinkedIn profile.",
     },
     {
         "key": "cheating",

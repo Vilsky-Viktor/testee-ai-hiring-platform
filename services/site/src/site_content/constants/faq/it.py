@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Le aziende possono trovarmi attraverso le mie simulazioni?",
-        "answer": "Solo se lo scegli tu. Attiva Aperto a nuove opportunità dopo una simulazione o nelle Impostazioni, indicando l'indirizzo del tuo profilo LinkedIn. Le aziende che hanno effettuato una ricarica su testee vedranno allora il tuo nome, il tuo profilo LinkedIn e il tuo ultimo risultato in ogni argomento dei loro colloqui su cui ti sei esercitato, e potranno invitarti a un colloquio. testee non ti classifica né ti raccomanda. Puoi disattivarlo in qualsiasi momento nelle Impostazioni e sparisci subito dall'elenco di ogni azienda; si disattiva anche un anno dopo l'ultima volta che l'hai attivato o hai salvato il tuo profilo LinkedIn.",
+        "answer": "Solo se lo scegli tu. Attiva Aperto a nuove opportunità dopo una simulazione o nelle Impostazioni, indicando l'indirizzo del tuo profilo LinkedIn. Le aziende che hanno effettuato una ricarica su testee vedranno allora il tuo nome, il tuo profilo LinkedIn e il tuo ultimo risultato a tempo in ogni argomento dei loro colloqui su cui ti sei esercitato, e potranno invitarti a un colloquio. testee non ti classifica né ti raccomanda. Puoi disattivarlo in qualsiasi momento nelle Impostazioni e sparisci subito dall'elenco di ogni azienda; si disattiva anche un anno dopo l'ultima volta che l'hai attivato o hai salvato il tuo profilo LinkedIn.",
     },
     {
         "key": "cheating",

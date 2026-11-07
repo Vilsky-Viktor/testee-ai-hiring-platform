@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Czy firmy mogą mnie znaleźć dzięki moim ćwiczeniom?",
-        "answer": "Tylko jeśli tego chcesz. Włącz „Rozważam oferty pracy” po rundzie ćwiczeń lub w Ustawieniach, podając adres swojego profilu LinkedIn. Firmy, które doładowały kredyty w testee, zobaczą wtedy Twoje imię i nazwisko, profil LinkedIn i najnowszy wynik ćwiczeń z każdego tematu ich rozmów, który ćwiczyłeś, i mogą zaprosić Cię na rozmowę. testee nie tworzy rankingu ani Cię nie poleca. Możesz to wyłączyć w każdej chwili w Ustawieniach, a wtedy od razu znikasz z list wszystkich firm; wyłącza się to też samo rok po tym, jak ostatnio to włączyłeś lub zapisałeś profil LinkedIn.",
+        "answer": "Tylko jeśli tego chcesz. Włącz „Rozważam oferty pracy” po rundzie ćwiczeń lub w Ustawieniach, podając adres swojego profilu LinkedIn. Firmy, które doładowały kredyty w testee, zobaczą wtedy Twoje imię i nazwisko, profil LinkedIn i najnowszy wynik ćwiczeń na czas z każdego tematu ich rozmów, który ćwiczyłeś, i mogą zaprosić Cię na rozmowę. testee nie tworzy rankingu ani Cię nie poleca. Możesz to wyłączyć w każdej chwili w Ustawieniach, a wtedy od razu znikasz z list wszystkich firm; wyłącza się to też samo rok po tym, jak ostatnio to włączyłeś lub zapisałeś profil LinkedIn.",
     },
     {
         "key": "cheating",

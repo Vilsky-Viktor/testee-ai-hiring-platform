@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Các công ty có thể tìm thấy tôi qua phần luyện tập không?",
-        "answer": "Chỉ khi bạn chọn như vậy. Bật Sẵn sàng nhận cơ hội việc làm sau một lượt luyện tập hoặc trong Cài đặt, kèm địa chỉ hồ sơ LinkedIn của bạn. Khi đó, các công ty đã nạp credit trên testee sẽ thấy tên, hồ sơ LinkedIn và kết quả luyện tập mới nhất của bạn ở từng chủ đề trong các buổi phỏng vấn của họ mà bạn đã luyện tập, và có thể mời bạn phỏng vấn. testee không xếp hạng hay giới thiệu bạn. Bạn có thể tắt bất cứ lúc nào trong Cài đặt, và bạn biến mất khỏi danh sách của mọi công ty ngay lập tức; tính năng này cũng tự kết thúc sau một năm kể từ lần cuối bạn bật nó hoặc lưu hồ sơ LinkedIn.",
+        "answer": "Chỉ khi bạn chọn như vậy. Bật Sẵn sàng nhận cơ hội việc làm sau một lượt luyện tập hoặc trong Cài đặt, kèm địa chỉ hồ sơ LinkedIn của bạn. Khi đó, các công ty đã nạp credit trên testee sẽ thấy tên, hồ sơ LinkedIn và kết quả luyện tập có tính giờ mới nhất của bạn ở từng chủ đề trong các buổi phỏng vấn của họ mà bạn đã luyện tập, và có thể mời bạn phỏng vấn. testee không xếp hạng hay giới thiệu bạn. Bạn có thể tắt bất cứ lúc nào trong Cài đặt, và bạn biến mất khỏi danh sách của mọi công ty ngay lập tức; tính năng này cũng tự kết thúc sau một năm kể từ lần cuối bạn bật nó hoặc lưu hồ sơ LinkedIn.",
     },
     {
         "key": "cheating",

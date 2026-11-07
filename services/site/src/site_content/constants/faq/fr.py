@@ -40,7 +40,7 @@ FAQ = [
     {
         "key": "open-to-offers",
         "question": "Les entreprises peuvent-elles me trouver grâce à mon entraînement ?",
-        "answer": "Seulement si vous le choisissez. Activez Ouvert aux opportunités après une session d'entraînement ou dans les Paramètres, avec l'adresse de votre profil LinkedIn. Les entreprises qui ont rechargé sur testee voient alors votre nom, votre profil LinkedIn et votre dernier résultat d'entraînement sur chaque sujet de leurs entretiens sur lequel vous vous êtes entraîné, et peuvent vous inviter à un entretien. testee ne vous classe pas et ne vous recommande pas. Désactivez-le à tout moment dans les Paramètres : vous disparaissez aussitôt de la liste de toutes les entreprises. Il prend aussi fin un an après la dernière fois que vous l'avez activé ou avez enregistré votre profil LinkedIn.",
+        "answer": "Seulement si vous le choisissez. Activez Ouvert aux opportunités après une session d'entraînement ou dans les Paramètres, avec l'adresse de votre profil LinkedIn. Les entreprises qui ont rechargé sur testee voient alors votre nom, votre profil LinkedIn et votre dernier résultat d'entraînement chronométré sur chaque sujet de leurs entretiens sur lequel vous vous êtes entraîné, et peuvent vous inviter à un entretien. testee ne vous classe pas et ne vous recommande pas. Désactivez-le à tout moment dans les Paramètres : vous disparaissez aussitôt de la liste de toutes les entreprises. Il prend aussi fin un an après la dernière fois que vous l'avez activé ou avez enregistré votre profil LinkedIn.",
     },
     {
         "key": "cheating",
