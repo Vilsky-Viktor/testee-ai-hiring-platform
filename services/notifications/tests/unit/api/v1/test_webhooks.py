@@ -241,6 +241,15 @@ def test_a_signature_beyond_ascii_is_refused_not_an_error():
     assert signature_valid("m1", "1000", "v1,ä", b"{}", secret, 1000, 300) is False
 
 
+def test_the_saved_event_keeps_the_addresses_as_hashes_only(client, reported, monkeypatch):
+    recorded = deliver_recorded(monkeypatch)
+
+    assert signed_post(client, event("email.bounced", "candidate_invite")).status_code == 204
+
+    [saved] = recorded.values()
+    assert saved["data"]["to"] == [address_hash("bob@example.com")]
+
+
 def test_a_web_hook_sent_again_is_recorded_and_handled_once(client, reported):
     first = signed_post(client, event("email.bounced", "candidate_invite"))
     again = signed_post(client, event("email.bounced", "candidate_invite"))

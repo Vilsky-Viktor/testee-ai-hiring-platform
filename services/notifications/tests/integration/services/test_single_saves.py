@@ -82,7 +82,7 @@ def test_a_complaint_whose_campaign_count_fails_suppresses_nobody(run, monkeypat
     monkeypatch.setattr(bulk_recipients, "mark_complained", broken)
     event = {
         "type": "email.complained",
-        "data": {"to": [to], "tags": {SEND_TAG: str(uuid.uuid4()), ID_TAG: "u1"}},
+        "data": {"to": [address_hash(to)], "tags": {SEND_TAG: str(uuid.uuid4()), ID_TAG: "u1"}},
     }
 
     async def scenario():
@@ -106,7 +106,7 @@ def test_a_soft_bounce_whose_suppression_fails_isnt_counted(run, monkeypatch):
             await transaction(soft_bounces.add, address_hash(to), email_id, since)
 
         with pytest.raises(RuntimeError):
-            await suppression.soft_bounced({"to": [to], "email_id": "e-3"})
+            await suppression.soft_bounced({"to": [address_hash(to)], "email_id": "e-3"})
 
         return await transaction(bounces_of, address_hash(to))
 
@@ -137,7 +137,7 @@ def test_a_reminders_complaint_stops_every_address_or_none(run, monkeypatch):
 
     async def scenario():
         with pytest.raises(RuntimeError):
-            await webhooks.complained(tags, [first, second])
+            await webhooks.complained(tags, [address_hash(first), address_hash(second)])
 
         return await transaction(opt_outs.opted_out, address_hash(first), company_id, invite_id)
 

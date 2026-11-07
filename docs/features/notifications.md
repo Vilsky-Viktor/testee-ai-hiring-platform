@@ -198,6 +198,8 @@ Legal notices and campaigns go through one bulk sender (`services/bulk.py`); who
 - **Skipped,** with the reason: an account or address that's gone (`gone`), an address on the suppression list (`suppressed`), a product update's or offer's setting turned off since it started (`unsubscribed`; never for an important notice), a stopped or deleted campaign (`stopped`).
 - A send is finished once nothing is pending. Deleting an account removes its rows.
 
+Who a send went to (`bulk_recipients`) is deleted 2 years after it finished (`BULK_RECIPIENTS_KEEP_DAYS`); the send stays, so a campaign can't be sent a second time, without its counts from then on.
+
 #### Legal notices
 
 A notice of a significant change to the terms, the privacy policy or the DPA, asked for in the admin zone (see [Legal notices](admin-zone.md#legal-notices)). It's a service email, sent whatever the email settings, in each recipient's language: the terms and privacy notices to every account (accounts' `GET /internal/users/ids`), the DPA's to every company's joined owners and admins (companies' `GET /internal/companies/member-ids?editors_only=true`). It says the day the new version applies, written as the recipient's language writes dates (8 November 2026, 8. November 2026), and links to it. Counts in the digest and reminders are formatted for the language too (1,234 or 1.234). Asking twice, or two superadmins at once, starts it once. It also goes in the bell (see [The bell](#the-bell)).
@@ -225,6 +227,8 @@ Product updates, offers and important notices, written by a superadmin in the ad
 
 Resend's `email.bounced`, `email.complained` and `email.suppressed` (Resend's own list holds the address after an earlier bounce or complaint) for any email, a candidate's invite included (an address that bounced or complained does so whichever company writes), put the address on testee's own suppression list (`suppressed_addresses`), kept as its keyed hash with the reason and the date, never in the clear. Only a permanent bounce (Resend's `bounce.type` `Permanent`) suppresses at once; a temporary one (a full mailbox, a server down) is counted (`soft_bounces`, once per email, kept 14 days), and the third within 14 days suppresses the address too (`soft_bounced`). Nothing is sent to those addresses: bulk sends skip them (`suppressed`), and every other email checks the list before it goes (`services/delivery.py`), except the contact page's messages to testee's own inbox. A candidate's invite or reminder skipped so shows as undelivered, as with a bounce; any other email is logged. A complaint also turns that email's setting off, as before. A superadmin sees it, and takes it off the list, on the account's support page: off Resend's own suppression list first (`DELETE /suppressions/{address}`; one not on it is fine), then off testee's. When Resend keeps it, the address stays on both, the request answers 502 and the page says the action failed, to try again.
 
+Deleting an account deletes its temporary bounces; "Download my data" lists whether the address is on the list, with the reason and the date, and the companies' emails it stopped. The list and the opt-outs themselves stay after the deletion, as the privacy policy says, so the address isn't emailed again.
+
 ### Failed sends
 
 - A failed send answers Pub/Sub's push with an error, so Pub/Sub retries it.
@@ -243,7 +247,7 @@ To show invites whose email bounced, was marked as spam or couldn't be sent ("Em
 2. Put its signing secret (`whsec_...`) in `.env` as `RESEND_WEBHOOK_SECRET`.
 3. Restart notifications.
 
-Without the secret, every webhook is refused. One sending address gets at most 600 webhooks a minute, counted before their signature is checked (`RESEND_WEBHOOKS_PER_IP_MINUTE`), by default; past that it's answered `429` and Resend retries. A webhook is answered once its signature is checked and it's recorded as an `email.webhook_received` event, keyed by its delivery (`svix-id`), so Resend sending it again records it once; its work (the suppression list, telling companies and accounts) runs when Pub/Sub pushes that event back, retried there, and every step is safe to repeat. The event keeps only what the work reads (`to`, `tags`, `email_id`, `bounce`), for the outbox's 7 days. Locally, Resend reaches the webhook only through a tunnel, as with Paddle (see [Credits and payments](billing.md#setting-up-paddle)).
+Without the secret, every webhook is refused. One sending address gets at most 600 webhooks a minute, counted before their signature is checked (`RESEND_WEBHOOKS_PER_IP_MINUTE`), by default; past that it's answered `429` and Resend retries. A webhook is answered once its signature is checked and it's recorded as an `email.webhook_received` event, keyed by its delivery (`svix-id`) and with its addresses as hashes, so Resend sending it again records it once and no address lies in the outbox; its work (the suppression list, telling companies and accounts) runs when Pub/Sub pushes that event back, retried there, and every step is safe to repeat. The event keeps only what the work reads (`to`, `tags`, `email_id`, `bounce`), for the outbox's 7 days. Locally, Resend reaches the webhook only through a tunnel, as with Paddle (see [Credits and payments](billing.md#setting-up-paddle)).
 
 ## How it's built
 

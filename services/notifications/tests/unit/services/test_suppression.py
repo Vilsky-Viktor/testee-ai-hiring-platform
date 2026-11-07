@@ -40,10 +40,19 @@ def test_a_bounce_or_complaint_suppresses_a_members_address(suppressing):
     send = str(uuid.uuid4())
     complaint = {
         "type": "email.complained",
-        "data": {"to": ["Ann@Example.com"], "tags": {"kind": "updates", "id": "ann", "send": send}},
+        "data": {
+            "to": [address_hash("Ann@Example.com")],
+            "tags": {"kind": "updates", "id": "ann", "send": send},
+        },
     }
-    bounce = {"type": "email.bounced", "data": {"to": ["bob@example.com"], "tags": {}}}
-    resends = {"type": "email.suppressed", "data": {"to": ["cy@example.com"], "tags": {}}}
+    bounce = {
+        "type": "email.bounced",
+        "data": {"to": [address_hash("bob@example.com")], "tags": {}},
+    }
+    resends = {
+        "type": "email.suppressed",
+        "data": {"to": [address_hash("cy@example.com")], "tags": {}},
+    }
 
     asyncio.run(suppression.from_webhook(complaint))
     asyncio.run(suppression.from_webhook(bounce))
@@ -60,9 +69,12 @@ def test_a_bounce_or_complaint_suppresses_a_members_address(suppressing):
 def test_a_candidates_bounce_suppresses_and_another_event_nothing(suppressing):
     invite = {
         "type": "email.bounced",
-        "data": {"to": ["cat@example.com"], "tags": {"kind": "candidate_invite", "id": "i"}},
+        "data": {
+            "to": [address_hash("cat@example.com")],
+            "tags": {"kind": "candidate_invite", "id": "i"},
+        },
     }
-    delivered = {"type": "email.delivered", "data": {"to": ["cy@example.com"]}}
+    delivered = {"type": "email.delivered", "data": {"to": [address_hash("cy@example.com")]}}
 
     asyncio.run(suppression.from_webhook(invite))
     asyncio.run(suppression.from_webhook(delivered))
@@ -109,7 +121,12 @@ def test_nothing_goes_to_a_suppressed_address_and_an_invite_shows_undelivered(ou
 def bounce(kind, email_id="e-1", to="dan@example.com"):
     return {
         "type": "email.bounced",
-        "data": {"to": [to], "email_id": email_id, "bounce": {"type": kind}, "tags": {}},
+        "data": {
+            "to": [address_hash(to)],
+            "email_id": email_id,
+            "bounce": {"type": kind},
+            "tags": {},
+        },
     }
 
 

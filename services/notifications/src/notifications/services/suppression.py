@@ -38,8 +38,8 @@ async def from_webhook(event: dict) -> None:
     """A permanent bounce, a spam complaint or Resend's own suppression of any email (a
     candidate's invite too: an address that bounced or complained does so whichever company
     writes) suppresses its addresses, and so do SOFT_BOUNCES temporary bounces within
-    SOFT_BOUNCE_DAYS; a complaint about a campaign counts against it, in the same save. Safe to
-    repeat: Resend may send the web hook again."""
+    SOFT_BOUNCE_DAYS; a complaint about a campaign counts against it, in the same save. The
+    event's addresses are hashes (kept_of). Safe to repeat: Resend may send the web hook again."""
     reason = REASONS.get(event.get("type"))
     data = event.get("data") or {}
     tags = data.get("tags") or {}
@@ -53,8 +53,8 @@ async def from_webhook(event: dict) -> None:
         return
 
     async with Session.begin() as session:
-        for address in data.get("to") or []:
-            await suppressed.add(session, address_hash(address), reason)
+        for hashed in data.get("to") or []:
+            await suppressed.add(session, hashed, reason)
 
         if reason == SuppressionReason.COMPLAINED and tags.get(SEND_TAG) and tags.get(ID_TAG):
             await bulk_recipients.mark_complained(session, uuid.UUID(tags[SEND_TAG]), tags[ID_TAG])
@@ -74,8 +74,7 @@ async def soft_bounced(data: dict) -> None:
     since = datetime.now(UTC) - timedelta(days=SOFT_BOUNCE_DAYS)
 
     async with Session.begin() as session:
-        for address in data.get("to") or []:
-            hashed = address_hash(address)
+        for hashed in data.get("to") or []:
             count = await soft_bounces.add(session, hashed, data.get("email_id") or "", since)
 
             if count >= SOFT_BOUNCES:

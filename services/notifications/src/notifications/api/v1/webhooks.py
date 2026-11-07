@@ -7,8 +7,8 @@ from testee_common.http.client_ip import limit_address
 from testee_common.limits.rate_limit import hit_or_skip
 
 from notifications.config import settings
-from notifications.constants.webhooks import WEBHOOK_FIELDS, WEBHOOK_TOLERANCE_SECONDS
-from notifications.helpers.webhooks import signature_valid
+from notifications.constants.webhooks import WEBHOOK_TOLERANCE_SECONDS
+from notifications.helpers.webhooks import kept_of, signature_valid
 from notifications.integrations.redis import get_redis
 from notifications.services import webhooks
 
@@ -38,10 +38,4 @@ async def resend_webhook(request: Request) -> None:
         logger.warning("%s: resend", WEBHOOK_SIGNATURE_REFUSED)
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Invalid signature")
 
-    event = await request.json()
-    data = event.get("data") or {}
-    kept = {
-        "type": event.get("type"),
-        "data": {key: data[key] for key in WEBHOOK_FIELDS if key in data},
-    }
-    await webhooks.record(request.headers["svix-id"], kept)
+    await webhooks.record(request.headers["svix-id"], kept_of(await request.json()))

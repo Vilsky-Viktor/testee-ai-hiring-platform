@@ -13,7 +13,6 @@ from notifications.constants.webhooks import (
     UNDELIVERED_EVENTS,
 )
 from notifications.core.db import Session
-from notifications.helpers.unsubscribe import address_hash
 from notifications.integrations import companies
 from notifications.repositories import opt_outs, webhook_deliveries
 from notifications.services import outbox as outbox_service
@@ -54,7 +53,7 @@ async def handle(event: dict) -> None:
     await report_undelivered(tags)
 
 
-async def complained(tags: dict[str, str], addresses: list[str]) -> None:
+async def complained(tags: dict[str, str], hashes: list[str]) -> None:
     """A spam complaint about an optional email turns it off, as its unsubscribe link would: a
     user's digest or reminders (logged in accounts as an unsubscribe), or a candidate's
     reminders for that invite. Safe to repeat when Resend sends the webhook again."""
@@ -65,8 +64,8 @@ async def complained(tags: dict[str, str], addresses: list[str]) -> None:
 
     if kind == CANDIDATE_REMINDER_KIND and about and tags.get(COMPANY_TAG):
         async with Session.begin() as session:
-            for address in addresses:
-                await opt_outs.add(session, address_hash(address), tags[COMPANY_TAG], about)
+            for hashed in hashes:
+                await opt_outs.add(session, hashed, tags[COMPANY_TAG], about)
 
 
 async def report_undelivered(tags: dict[str, str]) -> None:

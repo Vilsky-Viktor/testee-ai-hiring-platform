@@ -5,6 +5,9 @@ import hmac
 
 from testee_common.auth.tokens import same_secret
 
+from notifications.constants.webhooks import WEBHOOK_FIELDS
+from notifications.helpers.unsubscribe import address_hash
+
 
 def signature_valid(
     message_id: str,
@@ -34,3 +37,15 @@ def signature_valid(
     received = [part.split(",", 1)[1] for part in header.split() if part.startswith("v1,")]
 
     return any(same_secret(expected, signature) for signature in received)
+
+
+def kept_of(event: dict) -> dict:
+    """What a Resend web hook's event keeps, saved as an event of ours: WEBHOOK_FIELDS, with its
+    addresses as hashes, all its work needs, so no address lies in the outbox."""
+    data = event.get("data") or {}
+    kept = {key: data[key] for key in WEBHOOK_FIELDS if key in data}
+
+    if "to" in kept:
+        kept["to"] = [address_hash(address) for address in kept["to"]]
+
+    return {"type": event.get("type"), "data": kept}
