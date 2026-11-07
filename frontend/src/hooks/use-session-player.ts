@@ -4,10 +4,20 @@ import { useTranslations } from "next-intl"
 import { useEffect, useRef, useState } from "react"
 import { toast } from "sonner"
 
+import { SESSION_TIMEOUT_MS } from "@/config/api"
 import { useAuth } from "@/providers/auth-provider"
 import { ApiError, apiErrorMessage, apiFetch } from "@/lib/api"
 import type { InterviewStep, SessionAnswerResult } from "@/types/company"
 import type { AnswerInput } from "@/types/round"
+
+/** A call to the interview's session; a stalled one fails like any other. */
+function sessionPost<T>(path: string, body?: string) {
+  return apiFetch<T>(`/rounds/sessions/${path}`, {
+    method: "POST",
+    body,
+    signal: AbortSignal.timeout(SESSION_TIMEOUT_MS),
+  })
+}
 
 /** A candidate's interview: the server says which section and question come next and when the
 interview is done; this shows them, sends answers and asks for the next step. */
@@ -38,7 +48,7 @@ export function useSessionPlayer(id: string) {
     }
 
     let current = true
-    apiFetch<InterviewStep>(`/rounds/sessions/${id}/step`, { method: "POST" })
+    sessionPost<InterviewStep>(`${id}/step`)
       .then((next) => {
         if (current) {
           shownQuestion.current = next.question?.question_id ?? null
@@ -77,12 +87,7 @@ export function useSessionPlayer(id: string) {
     moving.current = true
 
     try {
-      show(
-        await apiFetch<InterviewStep>(
-          `/rounds/sessions/${step.session.id}/step`,
-          { method: "POST" }
-        )
-      )
+      show(await sessionPost<InterviewStep>(`${step.session.id}/step`))
     } catch {
       toast.error(t("continueFailed"))
     } finally {
@@ -98,12 +103,9 @@ export function useSessionPlayer(id: string) {
     }
 
     try {
-      const next = await apiFetch<SessionAnswerResult>(
-        `/rounds/sessions/${step.session.id}/answers`,
-        {
-          method: "POST",
-          body: JSON.stringify({ question_id: asked, ...input }),
-        }
+      const next = await sessionPost<SessionAnswerResult>(
+        `${step.session.id}/answers`,
+        JSON.stringify({ question_id: asked, ...input })
       )
 
       // The screen moved on meanwhile (time ran out): this answer's counts are old news.
@@ -150,10 +152,7 @@ export function useSessionPlayer(id: string) {
 
     try {
       show(
-        await apiFetch<InterviewStep>(
-          `/rounds/sessions/${step.session.id}/finish-interview`,
-          { method: "POST" }
-        )
+        await sessionPost<InterviewStep>(`${step.session.id}/finish-interview`)
       )
     } catch {
       toast.error(t("finishFailed"))
