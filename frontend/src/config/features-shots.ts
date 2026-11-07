@@ -25,7 +25,7 @@ export const FEATURE_SHOTS = {
   "flow-candidates": { width: 2000, height: 1310 },
   "flow-share": { width: 1024, height: 870 },
   "flow-report": { width: 2520, height: 2640 },
-  create: { width: 1440, height: 500 },
+  create: { width: 1208, height: 600 },
 } as const
 
 export type FeatureShotName = keyof typeof FEATURE_SHOTS

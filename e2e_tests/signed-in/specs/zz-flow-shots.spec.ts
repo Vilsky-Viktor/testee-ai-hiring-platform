@@ -14,7 +14,7 @@ import {
 import { openDialog, visit } from "../helpers/navigation"
 import { ownerEmail, throwawayEmail } from "../helpers/users"
 
-// The job description pasted on the new interview page in the hiring flow's first picture.
+// The job description pasted on the home page in the hiring flow's first picture.
 const SHOT_DESCRIPTION = `Senior Accountant, Northwind Labs (hybrid, Amsterdam)
 
 We're looking for a senior accountant to own our month-end close, reconciliations and VAT returns across three EU entities, under IFRS.
@@ -32,11 +32,10 @@ test.use({ deviceScaleFactor: 2, viewport: SHOT_VIEWPORT })
 // One after the other: both make "Northwind Labs", and company names are unique across testee.
 test.describe.configure({ mode: "serial" })
 
-// The hiring flow's first step: the new interview page's box with a job description pasted.
+// The hiring flow's first step: the home page's box with a job description pasted.
 test("hiring flow: a job description", async ({ signInAs }) => {
   const owner = await signInAs(ownerEmail(), undefined, "Alex Morgan")
-  const company = await createCompany(owner, "Northwind Labs")
-  await visit(owner, `/companies/${company.id}/interviews/new`)
+  await visit(owner, "/")
   await owner.getByRole("main").getByRole("textbox").first().fill(SHOT_DESCRIPTION)
   await pair(owner, "create")
 })
