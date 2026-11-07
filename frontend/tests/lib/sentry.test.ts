@@ -32,6 +32,27 @@ afterEach(async () => {
   await Sentry.close()
 })
 
+describe("secrets in an event", () => {
+  it.each([
+    ["a sign-in token", "Bearer eyJhbGciOiJSUzI1.eyJzdWIiOiIxMjM0.c2lnbmF0dXJl-_x"],
+    ["an API key", "key te_0123456789abcdef0123"],
+    ["an AI app's token", "token tem_0123456789abcdef0123"],
+    ["a web hook's secret", "whsec_cGxKM25teUNER0JLSW5hdmRP+/="],
+  ])("takes out %s", (_, secret) => {
+    const event = scrub({ message: `failed with ${secret}!` })
+    const message = (event as { message: string }).message
+
+    expect(message).toContain("[token]")
+    expect(message).not.toMatch(/eyJ|te_|tem_|whsec_/)
+  })
+
+  it("leaves ordinary words with the same start alone", () => {
+    const event = scrub({ message: "the te_st of a template_name" })
+
+    expect(event).toEqual({ message: "the te_st of a template_name" })
+  })
+})
+
 describe("sentryOptions", () => {
   it("collects no IP address, cookies, headers, bodies or query strings", () => {
     vi.stubEnv("FRONTEND_SENTRY_DSN", "https://key@o1.ingest.sentry.io/1")

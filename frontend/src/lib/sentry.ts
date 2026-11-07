@@ -8,14 +8,19 @@ const EMAIL = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g
 const LINK_TOKEN =
   /(\/(?:invite|invites|apply|links|join|embedded|unsubscribe)\/)[^/?#\s"']+/g
 const QUERY_TOKEN = /([?&]token=)[^&#\s"']+/g
+// A sign-in token, an API key or an AI app's token, and a web hook's secret, wherever they turn up.
+const JWT = /\beyJ[\w-]{8,}\.[\w-]{8,}\.[\w-]*/g
+const KEY = /\b(?:tem?|whsec)_[\w+/=-]{16,}/g
 
-/** Replaces every email address and link token in an event, however deep it sits. */
+/** Replaces every email address, link token, sign-in token and key in an event, however deep it sits. */
 function scrub<T>(value: T): T {
   if (typeof value === "string") {
     return value
       .replace(EMAIL, "[email]")
       .replace(LINK_TOKEN, "$1[token]")
-      .replace(QUERY_TOKEN, "$1[token]") as T
+      .replace(QUERY_TOKEN, "$1[token]")
+      .replace(JWT, "[token]")
+      .replace(KEY, "[token]") as T
   }
 
   if (Array.isArray(value)) {
