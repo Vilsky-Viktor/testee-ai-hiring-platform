@@ -102,9 +102,11 @@ async def start(body: ChatRequest, user: User, token: str, language: str) -> Asy
 async def stream(turn: Turn, prompt: list, first: dict | None = None) -> AsyncIterator[str]:
     """The turn's events: the conversation's id first (and `first`, when given), a keep-alive comment whenever nothing
     came for KEEP_ALIVE_SECONDS. The turn runs as a task of its own; when the client goes (the
-    user stopped it, or closed the tab), it's cancelled and saves what it had."""
+    user stopped it, or closed the tab), it's cancelled and saves what it had; one already saving
+    isn't, as a late stop would lose an answer that looks finished."""
     queue: asyncio.Queue = asyncio.Queue()
-    task = asyncio.create_task(run_turn(turn, prompt, queue.put_nowait))
+    answer = Answer()
+    task = asyncio.create_task(run_turn(turn, prompt, answer, queue.put_nowait))
     running["turns"] += 1
 
     try:
@@ -126,7 +128,8 @@ async def stream(turn: Turn, prompt: list, first: dict | None = None) -> AsyncIt
 
             yield sse_event(event)
     finally:
-        task.cancel()
+        if not answer.saving:
+            task.cancel()
 
         # The request may be cancelled itself: waiting for the turn to save must not be.
         with anyio.CancelScope(shield=True):
@@ -135,11 +138,10 @@ async def stream(turn: Turn, prompt: list, first: dict | None = None) -> AsyncIt
         running["turns"] -= 1
 
 
-async def run_turn(turn: Turn, prompt: list, emit: Emit) -> None:
+async def run_turn(turn: Turn, prompt: list, answer: Answer, emit: Emit) -> None:
     """Runs the conversation loop within TURN_SECONDS and saves the answer however it ends:
     complete, cancelled (with its text so far) or failed. Its tokens count against the budgets.
     Ends with {"done": {"message_id"}} or a translated {"error"}, then END."""
-    answer = Answer()
     status = Status.COMPLETE
     error = None
 
@@ -164,6 +166,7 @@ async def run_turn(turn: Turn, prompt: list, emit: Emit) -> None:
         status = Status.FAILED
         error = {"error": translate(CHAT_FAILED, turn.language)}
 
+    answer.saving = True
     await limits.record(get_redis(), turn.user_id, turn.company_id, answer.tokens)
     last = error or {"error": translate(CHAT_FAILED, turn.language)}
 

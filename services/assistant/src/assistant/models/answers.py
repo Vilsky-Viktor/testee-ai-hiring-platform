@@ -14,6 +14,8 @@ class Answer:
     results: list[ToolResult] = field(default_factory=list)
     input_tokens: int = 0
     output_tokens: int = 0
+    # The model is done and the answer is being saved: the turn can't be cancelled any more.
+    saving: bool = False
     # The actions it prepared, waiting for the user's confirmation (kept in Redis only).
     pending: list = field(default_factory=list)
     # What it showed with the `show` tool: "rows" and "link", one of each at most, and those

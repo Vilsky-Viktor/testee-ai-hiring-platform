@@ -153,6 +153,36 @@ def test_an_answer_that_cant_be_saved_is_an_error(monkeypatch, saved):
     assert events_of(collect())[-1] == {"error": CHAT_FAILED}
 
 
+def test_a_stop_just_after_the_model_finished_still_saves_the_answer(monkeypatch, saved):
+    """The window between the last words on screen and the save."""
+    record = turns.limits.record
+    saving = asyncio.Event()
+
+    async def slow_record(redis, user_id, company_id, tokens):
+        saving.set()
+        await asyncio.sleep(0.05)
+        await record(redis, user_id, company_id, tokens)
+
+    monkeypatch.setattr(turns.limits, "record", slow_record)
+    script(monkeypatch, text("Hi"))
+
+    async def scenario():
+        stream = turns.stream(TURN, [HumanMessage(content="Who am I?")])
+
+        async def read():
+            async for _ in stream:
+                pass
+
+        reading = asyncio.create_task(read())
+        await saving.wait()
+        reading.cancel()
+        await asyncio.gather(reading, return_exceptions=True)
+
+    asyncio.run(asyncio.wait_for(scenario(), 2))
+
+    assert saved == [(Status.COMPLETE, "Hi", [])]
+
+
 @pytest.mark.parametrize("how", ["cancel", "scope", "close"])
 def test_a_stopped_turn_is_saved_cancelled_with_its_text_so_far(monkeypatch, saved, how):
     """The server cancels the request when the client goes (Starlette cancels its task group's
