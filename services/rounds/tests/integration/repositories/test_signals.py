@@ -1,13 +1,26 @@
 import os
 import uuid
+from datetime import timedelta
 
+from sqlalchemy import func, update
 from testee_common.db.lock_waits import hold_first_commit, race
 
+from rounds.constants.integrity import MIN_TAB_LEAVE_SECONDS
+from rounds.models.signals import Signal
 from rounds.repositories import sessions, signals
 from rounds.services import invite_scores
 from tests.integration import transactions
 from tests.integration.factories import MOST_SIGNALS, created, topic
 from tests.integration.transactions import transaction
+
+
+async def aged(session, session_id):
+    """As if the session's signals began just past the shortest leave that counts."""
+    await session.execute(
+        update(Signal)
+        .where(Signal.session_id == session_id)
+        .values(created_at=func.now() - timedelta(seconds=MIN_TAB_LEAVE_SECONDS))
+    )
 
 
 def test_signals_are_saved_with_their_question_and_loaded_for_the_scorecard(run):
@@ -29,18 +42,21 @@ def test_signals_are_saved_with_their_question_and_loaded_for_the_scorecard(run)
     ]
 
 
-def test_a_returns_length_times_the_latest_leave_and_a_short_one_isnt_counted(run):
+def test_a_return_drops_only_a_leave_that_began_under_two_seconds_ago(run):
     invite_id = uuid.uuid4()
 
     async def scenario():
         [row] = await created("cand", invite_id, [topic(2)], 60, company_id=uuid.uuid4())
+        await transaction(signals.add_signal, row.id, None, "copy", MOST_SIGNALS)
         await transaction(signals.add_signal, row.id, None, "tab_leave", MOST_SIGNALS)
-        await transaction(signals.set_away, row.id, 5)
+        await transaction(aged, row.id)
+        # A return after a long leave keeps it.
+        await transaction(signals.drop_short_leave, row.id)
         await transaction(signals.add_signal, row.id, None, "tab_leave", MOST_SIGNALS)
-        # A moment's leave: kept, not counted.
-        await transaction(signals.set_away, row.id, 0.5)
-        # A return without a leave left open changes nothing.
-        await transaction(signals.set_away, row.id, 9)
+        # A moment's leave goes.
+        await transaction(signals.drop_short_leave, row.id)
+        # A return with nothing left to drop changes nothing.
+        await transaction(signals.drop_short_leave, row.id)
         # A leave never returned from counts.
         await transaction(signals.add_signal, row.id, None, "tab_leave", MOST_SIGNALS)
         [found] = await transaction(sessions.list_for_invite, invite_id, signals=True)
@@ -49,7 +65,7 @@ def test_a_returns_length_times_the_latest_leave_and_a_short_one_isnt_counted(ru
 
     found, scores = run(scenario())
 
-    assert sorted(signal.away_seconds or -1 for signal in found.signals) == [-1, 0.5, 5]
+    assert sorted(signal.kind for signal in found.signals) == ["copy", "tab_leave", "tab_leave"]
     assert scores[invite_id]["tab_leaves"] == 2
 
 

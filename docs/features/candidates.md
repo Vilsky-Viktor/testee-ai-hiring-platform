@@ -77,7 +77,7 @@ The shareable link (`/apply/{token}`) is one link per interview, for a job ad. O
 - Turning it off, or marking the interview as hired, stops it at once for new candidates; those who started continue from their own link.
 - Extra time can't be given to them, as their invite is made when they start: the page tells them to ask the company for a personal invite before they start.
 - A new candidate shows they're a person first ([the "I'm not a robot" check](../architecture.md#the-im-not-a-robot-check)).
-- It takes at most 30 new candidates an hour, and one address starts at most 10 an hour across all links (`LINK_STARTS_PER_HOUR`, `LINK_STARTS_PER_IP_HOUR`, their defaults), so a script with many accounts can't use up a company's credits; over either, a 429. A candidate already invited is never held back by them.
+- It takes at most 300 new candidates an hour, and one address starts at most 30 an hour across all links (`LINK_STARTS_PER_HOUR`, `LINK_STARTS_PER_IP_HOUR`, their defaults), so a script with many accounts can't use up a company's credits; over either, a 429. A candidate already invited is never held back by them.
 
 ## Taking an interview
 
@@ -156,7 +156,7 @@ A scorecard shows every answer, whether it was right and how long it took; for a
 
 Only a company's interview records page leaves and copies: a talent's practice round and a member's preview record none, as no one assesses them. One session's browser may report a page leave or a copy 60 times a minute (`SIGNALS_PER_MINUTE`; a 429 past that), and a question keeps at most 50 (`MAX_SIGNALS_PER_QUESTION`), by default: one already flags the candidate, so a script can't flood the scorecard.
 
-A page leave is reported when the page loses focus, and how long it lasted when it gets focus back (`tab_return`, stored as the leave's `away_seconds`). Rounds counts a leave only when it lasted at least 2 seconds (`MIN_TAB_LEAVE_SECONDS`), so a notification or a permission prompt taking focus for a moment is kept but not counted; a leave the candidate never came back from counts. Any counted signal flags the candidate, so a company trying an interview itself sees exactly what a candidate's would show. Signals are what the candidate's browser reports: the scorecard and the PDF report say so when there are any (a reason to look closer, not proof), and so does the result comment in the ATS.
+A page leave is reported when the page loses focus, and `tab_return` when it gets focus back. Rounds keeps a leave only if it began at least 2 seconds before the return (`MIN_TAB_LEAVE_SECONDS`, compared on the server against the leave's own time), so a notification or a permission prompt taking focus for a moment leaves nothing behind; no length is sent or stored, and a leave the candidate never came back from counts. Any counted signal flags the candidate, so a company trying an interview itself sees exactly what a candidate's would show. Signals are what the candidate's browser reports: the scorecard and the PDF report say so when there are any (a reason to look closer, not proof), and so does the result comment in the ATS.
 
 ### Answer patterns
 

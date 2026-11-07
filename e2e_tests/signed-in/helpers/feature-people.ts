@@ -140,7 +140,6 @@ async function answer(candidate: Page, email: string, person: Person) {
       if (answered === 0 && person.share === null) {
         const signals = `/rounds/sessions/${step.session.id}/signals`
         await api(candidate, "POST", signals, { kind: "tab_leave" })
-        await api(candidate, "POST", signals, { kind: "tab_return", seconds: 14 })
         await api(candidate, "POST", signals, { kind: "copy" })
       }
 

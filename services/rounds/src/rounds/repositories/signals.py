@@ -1,28 +1,31 @@
 import uuid
+from datetime import timedelta
 
-from sqlalchemy import func, select, update
+from sqlalchemy import delete, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from rounds.constants.integrity import IntegritySignal
+from rounds.constants.integrity import MIN_TAB_LEAVE_SECONDS, IntegritySignal
 from rounds.models.signals import Signal
 
 
-async def set_away(session: AsyncSession, session_id: uuid.UUID, seconds: float) -> None:
-    """How long the session's latest page leave lasted, once the candidate is back; a return
-    without a leave changes nothing."""
+async def drop_short_leave(session: AsyncSession, session_id: uuid.UUID) -> None:
+    """The candidate is back: their latest page leave goes if it began under
+    MIN_TAB_LEAVE_SECONDS ago. Only the leave's own time is compared, so no length is ever sent
+    or kept; a return with no such leave changes nothing."""
     latest = (
         select(Signal.id)
-        .where(
-            Signal.session_id == session_id,
-            Signal.kind == IntegritySignal.TAB_LEAVE,
-            Signal.away_seconds.is_(None),
-        )
+        .where(Signal.session_id == session_id, Signal.kind == IntegritySignal.TAB_LEAVE)
         .order_by(Signal.created_at.desc())
         .limit(1)
         .scalar_subquery()
     )
 
-    await session.execute(update(Signal).where(Signal.id == latest).values(away_seconds=seconds))
+    await session.execute(
+        delete(Signal).where(
+            Signal.id == latest,
+            Signal.created_at > func.now() - timedelta(seconds=MIN_TAB_LEAVE_SECONDS),
+        )
+    )
 
 
 async def add_signal(

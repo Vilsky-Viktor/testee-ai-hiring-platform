@@ -145,7 +145,7 @@ Page leaves, copy attempts and answers under 3 seconds are **hints, not proof**.
 accessibility tool, a slow connection or a fast expert can all trigger them. Page leaves and copies
 are reported by the candidate's browser, and a page leave counts only when it lasts 2 seconds or
 more or the candidate never came back (a shorter one, such as a notification or a permission
-prompt taking focus, is kept but not counted). Never reject
+prompt taking focus, is dropped; how long a leave lasted is never kept). Never reject
 on signals alone; follow up in a conversation, and let the candidate explain.
 
 Once a candidate has finished every section, their page can also show **answer patterns**, read
@@ -240,7 +240,7 @@ is yours to give.
 ## 10. Records, retention and data requests
 
 **Records (logs).** For each candidate testee records every question shown and when, the picks,
-right or wrong (or the points of a "select all that apply" question), the time taken, timeouts, page leaves (with how long they lasted) and copy attempts, start and finish (in voice mode, the options the candidate chose, never what they said). The
+right or wrong (or the points of a "select all that apply" question), the time taken, timeouts, page leaves and copy attempts, start and finish (in voice mode, the options the candidate chose, never what they said). The
 scorecard shows them, with the number of page leaves; its PDF report shows the grade, each topic's score and the signals' counts, never the questions; and the API returns the results. Answer patterns aren't
 stored: they're read from these records each time the results are opened. It also records when the
 candidate confirmed, before starting, that they'd answer on their own, which the scorecard shows. Your company's action
@@ -286,7 +286,7 @@ under the data processing agreement at testee.ai/dpa, which is part of the terms
 
 - **Access:** open the candidate's **scorecard page** and download their **PDF report**. Together
   they show what testee keeps about the interview: each question, their answer (every option ticked), right or
-  wrong or the points it earned, time taken, page leaves and copy attempts, any answer patterns, and the grade. How long each page leave lasted is kept but not shown. Send the PDF with a copy of the scorecard's answers, as the PDF holds no questions, and your own explanation of
+  wrong or the points it earned, time taken, page leaves and copy attempts, any answer patterns, and the grade. Send the PDF with a copy of the scorecard's answers, as the PDF holds no questions, and your own explanation of
   how it was used.
 - **Erasure or objection:** on the candidate's page, revoke an unused invite, or use **Delete
   candidate** for one who started or finished: their answers and results are deleted for good, also

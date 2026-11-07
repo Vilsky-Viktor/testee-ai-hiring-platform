@@ -37,7 +37,6 @@ async def export_user(user_id: str) -> dict:
                     {
                         "kind": s.kind,
                         "question_id": s.question_id,
-                        "away_seconds": s.away_seconds,
                         "at": s.created_at,
                     }
                     for s in row.signals

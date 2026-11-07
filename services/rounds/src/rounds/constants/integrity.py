@@ -6,12 +6,13 @@ class IntegritySignal(StrEnum):
 
     TAB_LEAVE = "tab_leave"
     COPY = "copy"
-    # Back on the page after a leave, with how long it lasted: not a signal of its own.
+    # Back on the page after a leave: not a signal of its own, never saved.
     TAB_RETURN = "tab_return"
 
 
 # A page leave shorter than this (a notification, a permission prompt, an assistive tool taking
-# focus for a moment) is kept but not counted. A leave the candidate never came back from counts.
+# focus for a moment) is dropped when the candidate comes back. A leave's length is never kept.
+# A leave the candidate never came back from counts.
 MIN_TAB_LEAVE_SECONDS = 2
 
 

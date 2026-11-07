@@ -16,9 +16,8 @@ from rounds.services.session_access import get_own_session
 
 async def record(session_id: UUID, body: SignalIn, user: User) -> None:
     """A page leave or a copy, saved with the question on screen so the scorecard can show where
-    it happened; or a return, with how long the leave lasted, which decides whether it counts
-    (helpers/integrity.py). Only in a company's interview: a practice round or a preview records
-    none, as no one assesses them."""
+    it happened; or a return, which drops a leave too short to count. Only in a company's
+    interview: a practice round or a preview records none, as no one assesses them."""
     row = await get_own_session(session_id, user)
 
     if row.status != RoundStatus.IN_PROGRESS or row.practice or row.preview:
@@ -30,9 +29,8 @@ async def record(session_id: UUID, body: SignalIn, user: User) -> None:
     await hit_or_skip(redis, f"rate:signals:{row.id}", "SIGNALS_PER_MINUTE", user_id=user.uid)
 
     if body.kind == IntegritySignal.TAB_RETURN:
-        if body.seconds is not None:
-            async with Session.begin() as session:
-                await signals.set_away(session, row.id, body.seconds)
+        async with Session.begin() as session:
+            await signals.drop_short_leave(session, row.id)
 
         return
 

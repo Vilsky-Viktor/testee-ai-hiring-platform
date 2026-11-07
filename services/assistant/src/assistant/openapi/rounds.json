@@ -3649,19 +3649,6 @@
     "properties": {
      "kind": {
       "$ref": "#/components/schemas/IntegritySignal"
-     },
-     "seconds": {
-      "anyOf": [
-       {
-        "type": "number",
-        "maximum": 86400.0,
-        "minimum": 0.0
-       },
-       {
-        "type": "null"
-       }
-      ],
-      "title": "Seconds"
      }
     },
     "type": "object",

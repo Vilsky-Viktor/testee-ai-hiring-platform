@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { apiFetch } from "@/lib/api"
 
 /** Tells the server when the candidate leaves the page or copies, for the company's scorecard,
-and how long a leave lasted once they're back (the server decides whether it counts).
+and when they're back (the server drops a leave too short to count).
 
 Reporting never gets in the candidate's way: a failed report is dropped. */
 export function useIntegritySignals(sessionId: string, active: boolean) {
@@ -12,32 +12,28 @@ export function useIntegritySignals(sessionId: string, active: boolean) {
       return
     }
 
-    // When the current leave began, while the candidate is away.
-    let leftAt: number | null = null
+    let away = false
 
-    function report(
-      kind: "tab_leave" | "tab_return" | "copy",
-      seconds?: number
-    ) {
+    function report(kind: "tab_leave" | "tab_return" | "copy") {
       apiFetch(`/rounds/sessions/${sessionId}/signals`, {
         method: "POST",
-        body: JSON.stringify({ kind, seconds }),
+        body: JSON.stringify({ kind }),
       }).catch(() => {})
     }
 
     // Blur covers both another tab and another app.
     function onBlur() {
-      leftAt = Date.now()
+      away = true
       report("tab_leave")
     }
 
     function onFocus() {
-      if (leftAt === null) {
+      if (!away) {
         return
       }
 
-      report("tab_return", (Date.now() - leftAt) / 1000)
-      leftAt = null
+      report("tab_return")
+      away = false
     }
 
     const onCopy = () => report("copy")

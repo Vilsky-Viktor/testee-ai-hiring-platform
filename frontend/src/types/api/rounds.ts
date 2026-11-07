@@ -1512,8 +1512,6 @@ export interface components {
     /** SignalIn */
     SignalIn: {
       kind: components["schemas"]["IntegritySignal"]
-      /** Seconds */
-      seconds?: number | null
     }
     /** StatsOut */
     StatsOut: {

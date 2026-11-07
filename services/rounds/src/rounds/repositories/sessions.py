@@ -1,17 +1,13 @@
 import uuid
 from datetime import UTC, datetime
 
-from sqlalchemy import delete, func, or_, select, update
+from sqlalchemy import delete, func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from testee_common.db.db import delete_in_batches
 from testee_common.events import outbox
 
-from rounds.constants.integrity import (
-    FAST_ANSWER_SECONDS,
-    MIN_TAB_LEAVE_SECONDS,
-    IntegritySignal,
-)
+from rounds.constants.integrity import FAST_ANSWER_SECONDS, IntegritySignal
 from rounds.constants.rounds import SESSION_DELETE_BATCH, RoundStatus
 from rounds.models.answers import Answer
 from rounds.models.outbox import OutboxEvent
@@ -78,13 +74,7 @@ async def invite_counts(
     signals_query = (
         select(
             invite,
-            func.count(Signal.id).filter(
-                Signal.kind == IntegritySignal.TAB_LEAVE,
-                or_(
-                    Signal.away_seconds.is_(None),
-                    Signal.away_seconds >= MIN_TAB_LEAVE_SECONDS,
-                ),
-            ),
+            func.count(Signal.id).filter(Signal.kind == IntegritySignal.TAB_LEAVE),
             func.count(Signal.id).filter(Signal.kind == IntegritySignal.COPY),
         )
         .join(Signal, Signal.session_id == RoundSession.id)

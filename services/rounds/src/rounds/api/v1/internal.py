@@ -5,7 +5,6 @@ from fastapi import APIRouter, HTTPException, status
 from rounds.api.dependencies import ServiceCaller
 from rounds.constants.integrity import IntegritySignal
 from rounds.core.db import Session
-from rounds.helpers.integrity import counted_leave
 from rounds.helpers.integrity_report import answer_patterns
 from rounds.helpers.review import add_signals, build_review
 from rounds.helpers.sessions import session_out
@@ -77,7 +76,7 @@ async def invite_scorecard(invite_id: UUID, caller: ServiceCaller) -> list[Score
                 topic_title=row.topic_title,
                 status=row.status,
                 final_score=row.final_score,
-                tab_leaves=sum(counted_leave(signal) for signal in row.signals),
+                tab_leaves=kinds.count(IntegritySignal.TAB_LEAVE),
                 copies=kinds.count(IntegritySignal.COPY),
                 fast_answers=sum(item.answer is not None and item.answer.fast for item in review),
                 review=review,

@@ -38,7 +38,6 @@ def test_a_deleted_account_takes_their_interview_sessions(run):
                     session_id=session.id,
                     question_id=uuid.UUID(question["id"]),
                     kind=IntegritySignal.TAB_LEAVE,
-                    away_seconds=12.5,
                 )
             )
             await db.commit()
@@ -65,9 +64,10 @@ def test_a_deleted_account_takes_their_interview_sessions(run):
     # is.
     assert "correct" not in answer
     assert section["final_score"] == 50
-    # A page leave comes with how long they were away.
+    # A page leave comes with when it began, never how long it lasted.
     [leave] = section["page_leaves_and_copies"]
-    assert (leave["kind"], leave["away_seconds"]) == ("tab_leave", 12.5)
+    assert leave["kind"] == "tab_leave"
+    assert "away_seconds" not in leave
     assert session is None
     assert kept is not None
 
