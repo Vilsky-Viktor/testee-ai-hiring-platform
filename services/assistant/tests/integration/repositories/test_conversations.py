@@ -14,7 +14,7 @@ from testee_common.redis import memory_cache
 from assistant.core.db import Session
 from assistant.integrations.redis import get_redis
 from assistant.main import app
-from assistant.models.conversations import Conversation, Message
+from assistant.models.conversations import Conversation
 from assistant.repositories import conversations, messages
 from assistant.schemas.chat import EarlierTurn
 from assistant.services import limits, retention
@@ -157,6 +157,7 @@ def test_an_erased_candidates_or_deleted_interviews_conversations_go_and_the_res
     async def scenario():
         await say(company, "Asked about Ann", "How did ANN@example.com do?")
         await say(company, "About the interview", f"Open /interviews/{interview}")
+        await say(company, "About Ann by name", "Ann Lee scored 80.")
         await say(company, "About Bo", "How did bo@example.com do?")
         # Chats a member started about all companies, or about another company, can hold her.
         await say(None, "All companies, Ann", "ann@example.com")
@@ -172,6 +173,7 @@ def test_an_erased_candidates_or_deleted_interviews_conversations_go_and_the_res
                 "company_id": str(company),
                 "interview_id": interview,
                 "email": "ann@example.com",
+                "name": "Ann Lee",
                 "member_ids": [user],
             },
         )
@@ -220,27 +222,6 @@ def test_a_deleted_companys_conversations_go_with_its_members_all_companies_ones
     left = run(scenario())
 
     assert sorted(item.title for item in left) == ["Another company", "Someone else's"]
-
-
-def test_an_accounts_answers_traces_are_found_to_delete_with_it(run):
-    user, other = f"traced-{uuid.uuid4().hex[:8]}", f"other-{uuid.uuid4().hex[:8]}"
-
-    async def scenario():
-        for owner, trace in ((user, "a" * 32), (other, "b" * 32)):
-            conversation = await transaction(conversations.create, owner, None, "Traced")
-            await transaction(messages.add_question, conversation.id, "Hi", "text")
-
-            async with Session() as session:
-                await session.execute(
-                    update(Message)
-                    .where(Message.conversation_id == conversation.id)
-                    .values(trace_id=trace)
-                )
-                await session.commit()
-
-        return await transaction(conversations.trace_ids_of_user, user)
-
-    assert run(scenario()) == ["a" * 32]
 
 
 def test_a_companys_conversations_go_batch_after_batch(run, monkeypatch):

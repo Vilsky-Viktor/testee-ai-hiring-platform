@@ -69,7 +69,7 @@ def test_a_candidates_start_bounce_expiry_and_removal_are_told_once_each(run):
         ("candidate.started", about(started)),
         (
             "candidate.removed",
-            {**about(started), "email": "s@example.com", "member_ids": ["owner"]},
+            {**about(started), "email": "s@example.com", "name": None, "member_ids": ["owner"]},
         ),
     ]
     assert told[bounced.id] == [("candidate.undelivered", about(bounced))]

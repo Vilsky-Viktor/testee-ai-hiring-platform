@@ -89,3 +89,6 @@ WHICH_COMPANY_FIRST = (
 # The error event's code when a service refused the user's token mid-turn: the panel refreshes
 # the token and sends the message again, once.
 SESSION_EXPIRED_CODE = "session_expired"
+# An erased candidate's name is looked for in conversations from this long: anything shorter
+# would match parts of other words, and take unrelated conversations with it.
+MIN_NAME_NEEDLE = 3

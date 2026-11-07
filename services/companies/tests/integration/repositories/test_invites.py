@@ -256,6 +256,7 @@ def test_removing_a_candidate_tells_the_other_services_to_forget_them(run):
             "interview_id": str(found.id),
             "email": "hal@example.com",
             "candidate_invite_id": events[0]["candidate_invite_id"],
+            "name": None,
             "member_ids": ["owner"],
         }
     ]

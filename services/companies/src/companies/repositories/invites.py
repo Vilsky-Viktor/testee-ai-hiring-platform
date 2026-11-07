@@ -224,6 +224,7 @@ async def remove(session: AsyncSession, invite: CandidateInvite, company_id) -> 
             "interview_id": str(invite.interview_id),
             "candidate_invite_id": str(invite.id),
             "email": invite.email,
+            "name": invite.name,
             "member_ids": await members.user_ids(session, company_id),
         },
     )
