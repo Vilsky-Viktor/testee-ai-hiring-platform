@@ -5,12 +5,16 @@ import uuid
 import httpx
 import pytest
 from fastapi import HTTPException
+from testee_common.config.constants import PAUSED, RETRY_AFTER
 from testee_common.i18n import error_codes
+from testee_common.limits import pause
+from testee_common.limits.rate_limit import hit as real_hit
 
 from assistant.constants.actions_flow import ACTION_TTL_SECONDS
+from assistant.constants.chat import TURNS_AT_ONCE, TURNS_BUSY_RETRY_SECONDS
 from assistant.integrations import services
 from assistant.repositories import actions as store
-from assistant.services import actions, chat
+from assistant.services import actions, chat, confirmations, turns
 from assistant.services.registry import tools
 from tests.unit.actions_setup import ANN, BOB, COMPANY, CONVERSATION, TURN, prepared
 
@@ -244,3 +248,45 @@ def test_a_confirm_the_message_limits_refuse_isnt_counted_as_an_action(redis, wr
         asyncio.run(actions.run(CONVERSATION, action_id, ANN, "fresh", "en"))
 
     assert (counted, writes) == ([], [])
+
+
+def test_actions_past_the_hourly_limit_are_refused_and_run_nothing(redis, writes, monkeypatch):
+    monkeypatch.setattr(actions, "hit", real_hit)
+    redis.limits["ACTIONS_PER_USER_HOUR"] = "1"
+    asyncio.run(actions.run(CONVERSATION, prepared(redis), ANN, "fresh", "en"))
+    writes.clear()
+
+    with pytest.raises(HTTPException) as refused:
+        asyncio.run(actions.run(CONVERSATION, prepared(redis), ANN, "fresh", "en"))
+
+    assert refused.value.status_code == 429
+    assert writes == []
+
+
+def test_while_paused_a_confirmed_action_runs_nothing_and_stays(redis, writes, monkeypatch):
+    async def on(redis):
+        return True
+
+    monkeypatch.setattr(actions, "refuse_if_paused", pause.refuse_if_paused)
+    monkeypatch.setattr(pause, "is_paused", on)
+    action_id = prepared(redis)
+
+    with pytest.raises(HTTPException) as refused:
+        asyncio.run(actions.run(CONVERSATION, action_id, ANN, "fresh", "en"))
+
+    assert refused.value.status_code == 503
+    assert refused.value.detail == PAUSED
+    assert writes == []
+    assert asyncio.run(store.peek(action_id)) is not None
+
+
+def test_a_busy_instance_refuses_a_confirm_before_the_action_runs(redis, writes, monkeypatch):
+    monkeypatch.setitem(turns.running, "turns", TURNS_AT_ONCE)
+    action_id = prepared(redis)
+
+    with pytest.raises(HTTPException) as refused:
+        asyncio.run(confirmations.confirm(CONVERSATION, action_id, ANN, "fresh", "en"))
+
+    assert refused.value.status_code == 503
+    assert refused.value.headers == {RETRY_AFTER: str(TURNS_BUSY_RETRY_SECONDS)}
+    assert writes == []

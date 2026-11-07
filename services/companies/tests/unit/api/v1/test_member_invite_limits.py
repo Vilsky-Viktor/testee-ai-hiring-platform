@@ -4,8 +4,9 @@ from datetime import UTC, datetime
 import pytest
 from fake_redis import FakeRedis
 from fastapi import HTTPException
+from sqlalchemy.exc import IntegrityError
 
-from companies.constants.roles import TOO_MANY_PENDING
+from companies.constants.roles import ALREADY_INVITED, TOO_MANY_PENDING
 from companies.integrations import billing
 from companies.models.companies import Member
 from companies.repositories import audit, companies, members, outbox
@@ -186,3 +187,36 @@ def test_an_address_over_its_email_limit_doesnt_use_up_the_companys_invites(
 
     assert client.post(URL, json={"email": "bo@example.com"}).status_code == 429
     assert f"rate:member-invites:{COMPANY_ID}" not in limits.counts
+
+
+def test_an_email_already_invited_is_refused(
+    client,
+    team,  # noqa: F811
+    limits,
+):
+    _, added, _ = team
+    sign_in("ann@example.com", uid="ann")
+
+    refused = client.post(URL, json={"email": "cid@example.com"})
+
+    assert refused.status_code == 409
+    assert refused.json() == {"detail": ALREADY_INVITED}
+    assert added == []
+
+
+def test_an_invite_that_loses_the_race_for_the_address_is_refused(
+    client,
+    team,  # noqa: F811
+    limits,
+    monkeypatch,
+):
+    async def taken(session, company_id, email, role, sender, most=None):
+        raise IntegrityError("insert", {}, Exception())
+
+    monkeypatch.setattr(members, "add", taken)
+    sign_in("ann@example.com", uid="ann")
+
+    refused = client.post(URL, json={"email": "new@example.com"})
+
+    assert refused.status_code == 409
+    assert refused.json() == {"detail": ALREADY_INVITED}

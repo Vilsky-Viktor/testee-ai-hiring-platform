@@ -215,6 +215,18 @@ def test_cancelled_refused_and_expired_trips(client, monkeypatch, saved):
     assert saved["saved"] is None
 
 
+def test_kinds_of_a_company_without_slack_are_refused(client, monkeypatch):
+    async def get(session, company_id):
+        return None
+
+    monkeypatch.setattr(storage, "get", get)
+
+    response = client.put(f"/slack/kinds?company_id={C1}", json={"kinds": ["interview_ready"]})
+
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Slack isn't connected"
+
+
 def test_only_known_kinds_are_saved(client, monkeypatch):
     chosen = []
 

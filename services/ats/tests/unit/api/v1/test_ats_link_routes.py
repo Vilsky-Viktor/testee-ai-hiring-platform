@@ -6,6 +6,7 @@ from testee_common.http import http
 
 from ats.integrations import workable
 from ats.repositories import ats_links
+from ats.services import ats_webhooks
 from tests.unit.workable_setup import (
     COMPANY_ID,
     INTERVIEW_ID,
@@ -44,6 +45,48 @@ def test_a_job_links_to_one_of_the_companys_interviews(client, stored, key):
     assert client.post(f"/links?company_id={COMPANY_ID}", json=other).status_code == 404
     assert client.post(f"/links?company_id={COMPANY_ID}", json=unknown).status_code == 404
     assert len(stored["links"]) == 1
+
+
+def test_a_job_linked_already_is_refused_and_nothing_is_subscribed(
+    client, stored, key, monkeypatch
+):
+    async def taken(session, company_id, connection_id, interview_id, job, stage, user_id):
+        return None
+
+    monkeypatch.setattr(ats_links, "add_link", taken)
+    sign_in("ann")
+    connect(client)
+    body = {
+        "provider": "workable",
+        "job_id": "A1",
+        "stage_id": "assessment",
+        "interview_id": str(INTERVIEW_ID),
+    }
+
+    refused = client.post(f"/links?company_id={COMPANY_ID}", json=body)
+
+    assert refused.status_code == 409
+    assert refused.json()["detail"] == "That job is already linked"
+    assert stored["subscriptions"] == []
+
+
+def test_workables_web_hook_route_hands_on_the_raw_event_and_its_signature(client, monkeypatch):
+    received = []
+    link_id = uuid.uuid4()
+
+    async def receive(link, body, signature):
+        received.append((link, body, signature))
+
+    monkeypatch.setattr(ats_webhooks, "receive_workable", receive)
+
+    response = client.post(
+        f"/webhooks/workable/{link_id}",
+        content=b'{"event_type": "candidate_moved"}',
+        headers={"x-workable-signature": "signed"},
+    )
+
+    assert response.status_code == 200
+    assert received == [(link_id, b'{"event_type": "candidate_moved"}', "signed")]
 
 
 def test_linked_jobs_show_their_interviews_titles_from_companies(client, stored, monkeypatch):

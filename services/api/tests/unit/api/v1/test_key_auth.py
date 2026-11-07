@@ -13,8 +13,9 @@ from testee_common.limits import rate_limit
 from api.constants.api import LAST_USED_EVERY
 from api.constants.permissions import Permission
 from api.integrations import companies
+from api.services import manage
 from tests.unit.api_keys import call
-from tests.unit.conftest import COMPANY
+from tests.unit.conftest import COMPANY, sign_in
 
 
 @pytest.mark.parametrize("sent", [None, "te_wrong", "not-even-a-key"])
@@ -31,6 +32,24 @@ def test_an_expired_key_is_refused(client, companies_api, key):
 
     assert response.status_code == 401
     assert response.json()["detail"] == "This API key has expired"
+
+
+def test_a_revoked_key_is_refused_at_once(client, companies_api, key, stored, monkeypatch):
+    async def remove(session, company_id, key_id, user_id):
+        stored["keys"].remove(key)
+
+        return True
+
+    monkeypatch.setattr(manage.keys, "remove", remove)
+
+    assert call(client, "GET", "/interviews").status_code == 200
+
+    sign_in()
+    revoked = client.delete(f"/manage/keys/{key.id}?company_id={COMPANY}")
+    response = call(client, "GET", "/interviews")
+
+    assert revoked.status_code == 204
+    assert response.status_code == 401
 
 
 @pytest.mark.parametrize("role", ["viewer", None])

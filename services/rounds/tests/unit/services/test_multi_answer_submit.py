@@ -4,6 +4,7 @@ from uuid import uuid4
 
 import pytest
 from fastapi import HTTPException
+from sqlalchemy.exc import IntegrityError
 
 from rounds.constants.rounds import TIME_UP
 from rounds.models.answers import Answer
@@ -142,3 +143,46 @@ def test_a_multi_answer_answer_is_not_mistaken_for_a_timed_out_one(saved):
 
     assert refusal(section(MULTI, answers=[ticked]), picks=[1]) != (409, TIME_UP)
     assert refusal(section(MULTI, answers=[ran_out]), picks=[1]) == (409, TIME_UP)
+
+
+@pytest.mark.parametrize(
+    ("question_id", "answers", "expected"),
+    [
+        (uuid4(), [], (404, "Question not found")),
+        (QUESTION_ID, [Answer(question_id=QUESTION_ID)], (409, "Question already answered")),
+    ],
+    ids=["another question", "answered"],
+)
+def test_an_answer_is_checked_against_the_section(question_id, answers, expected):
+    row = section(SINGLE, answers=answers)
+
+    with pytest.raises(HTTPException) as refused:
+        session_answers.checked_answer(row, AnswerCreate(question_id=question_id, picks=[0]))
+
+    assert (refused.value.status_code, refused.value.detail) == expected
+
+
+def test_a_question_not_on_screen_isnt_open(saved):
+    row = section(SINGLE)
+    row.question_shown_at = None
+
+    assert refusal(row, picks=[0]) == (409, "This question isn't open")
+    assert saved == []
+
+
+@pytest.mark.parametrize(
+    "lost", [False, IntegrityError("insert", {}, Exception())], ids=["finished", "answered"]
+)
+def test_an_answer_that_loses_the_race_for_the_question_is_refused(saved, monkeypatch, lost):
+    """Another request finished the section or saved its answer between the check and the save:
+    the unique constraint or the locked update refuses it, not the checks above."""
+
+    async def racing(session, answer, event=None):
+        if isinstance(lost, Exception):
+            raise lost
+
+        return lost
+
+    monkeypatch.setattr(sessions, "add_answer", racing)
+
+    assert refusal(section(SINGLE), picks=[0]) == (409, "Question already answered")

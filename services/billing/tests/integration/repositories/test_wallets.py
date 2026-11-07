@@ -12,8 +12,8 @@ from billing.core.db import Session
 from billing.models.billing import Hold, Wallet
 from billing.repositories import ledger, purchases
 from billing.repositories.ledger import add
-from billing.services import accounts, topups
-from tests.integration.factories import welcomed
+from billing.services import accounts
+from tests.integration.factories import granted, welcomed
 from tests.integration.transactions import transaction
 
 NOW = datetime(2026, 10, 3, 12, tzinfo=UTC)
@@ -51,6 +51,35 @@ def test_a_candidate_is_charged_once_and_a_released_hold_comes_back(run):
     assert (done.balance, done.reserved) == (WELCOME_COMPANY - CANDIDATE_CREDITS, 0)
 
 
+def test_a_hold_unknown_released_or_charged_changes_nothing_when_settled_again(run):
+    acme = company()
+
+    async def scenario():
+        await welcomed(acme, f"{acme}@example.com")
+
+        for key in ("candidate:released", "candidate:charged"):
+            await transaction(
+                ledger.reserve, COMPANY, acme, CANDIDATE_CREDITS, key, Reason.CANDIDATE
+            )
+
+        await transaction(ledger.release, "candidate:released")
+        await transaction(ledger.charge, "candidate:charged")
+        before = await transaction(ledger.wallet, COMPANY, acme)
+        settled = before.balance, before.reserved
+
+        for key in ("candidate:unknown", "candidate:released", "candidate:charged"):
+            await transaction(ledger.release, key)
+            await transaction(ledger.charge, key)
+
+        after = await transaction(ledger.wallet, COMPANY, acme)
+
+        return settled, (after.balance, after.reserved)
+
+    settled, after = run(scenario())
+
+    assert after == settled == (WELCOME_COMPANY - CANDIDATE_CREDITS, 0)
+
+
 def test_credits_set_aside_cant_be_held_twice(run):
     acme = company()
 
@@ -72,8 +101,8 @@ def test_a_retried_topup_is_granted_once(run):
 
     async def scenario():
         args = (COMPANY, acme, TOPUP_CREDITS, 1, "txn", TOPUP.key, "ann", "1000")
-        first = await topups.grant(*args, "USD", NOW)
-        again = await topups.grant(*args, "USD", NOW)
+        first = await granted(*args, "USD", NOW)
+        again = await granted(*args, "USD", NOW)
 
         return first, again, (await transaction(ledger.wallet, COMPANY, acme)).balance
 
@@ -84,9 +113,7 @@ def test_deleting_a_user_keeps_their_companys_purchases_without_them(run):
     acme, ann = company(), f"user-{uuid.uuid4()}"
 
     async def scenario():
-        await topups.grant(
-            COMPANY, acme, TOPUP_CREDITS, 1, "txn2", TOPUP.key, ann, "1000", "USD", NOW
-        )
+        await granted(COMPANY, acme, TOPUP_CREDITS, 1, "txn2", TOPUP.key, ann, "1000", "USD", NOW)
         mine = await transaction(purchases.purchases_of, ann)
         await transaction(purchases.forget_buyer, ann)
 
@@ -122,7 +149,7 @@ def test_a_refund_of_spent_credits_leaves_the_balance_negative(run):
     acme = company()
 
     async def scenario():
-        await topups.grant(
+        await granted(
             COMPANY, acme, TOPUP_CREDITS, 1, "txn-r", TOPUP.key, "ann", "1000", "USD", NOW
         )
         await transaction(ledger.reserve, COMPANY, acme, 600, "candidate:spent", Reason.CANDIDATE)
@@ -143,7 +170,7 @@ def test_partial_refunds_add_up_and_one_counted_under_its_old_key_isnt_counted_a
     acme = company()
 
     async def scenario():
-        await topups.grant(
+        await granted(
             COMPANY, acme, TOPUP_CREDITS, 1, "txn_p%", TOPUP.key, "ann", "1000", "USD", NOW
         )
         first = await transaction(
