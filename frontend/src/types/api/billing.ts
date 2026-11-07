@@ -57,7 +57,8 @@ export interface paths {
     put?: never
     /**
      * Paddle Webhook
-     * @description Paddle retries until it gets a 2xx, and granting is idempotent, so retries are safe.
+     * @description Paddle retries until it gets a 2xx, and granting is idempotent, so retries are safe. Counted by
+     *     sending address before the signature is checked; with Redis down, not counted.
      */
     post: operations["paddle_webhook_webhooks_paddle_post"]
     delete?: never

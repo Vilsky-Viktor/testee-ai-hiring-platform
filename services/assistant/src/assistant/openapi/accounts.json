@@ -1267,6 +1267,10 @@
       "type": "string",
       "title": "Email"
      },
+     "email_verified": {
+      "type": "boolean",
+      "title": "Email Verified"
+     },
      "language": {
       "type": "string",
       "title": "Language"
@@ -1279,6 +1283,7 @@
     "required": [
      "user_id",
      "email",
+     "email_verified",
      "language",
      "preferences"
     ],

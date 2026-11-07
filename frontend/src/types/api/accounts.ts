@@ -595,6 +595,8 @@ export interface components {
       user_id: string
       /** Email */
       email: string
+      /** Email Verified */
+      email_verified: boolean
       /** Language */
       language: string
       preferences: components["schemas"]["EmailPreferencesOut"]
