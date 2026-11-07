@@ -16,6 +16,7 @@ from companies.constants.invites import (
     InviteStatus,
 )
 from companies.core.db import Session
+from companies.core.exceptions import AlreadyFinished
 from companies.helpers.candidates import new_hold_key, voice_override
 from companies.helpers.logos import logo_path
 from companies.integrations import billing
@@ -122,27 +123,32 @@ async def save(
     it revived an expired invite."""
     user_id, action, via = audited
 
-    async with Session.begin() as session:
-        invite, revived = await invites.upsert(
-            session,
-            interview.id,
-            email,
-            title,
-            company.name,
-            interview.language,
-            logo_path(company),
-            verified=company.verified_domain is not None,
-            **options,
-        )
-        await audit.record(
-            session,
-            company.id,
-            user_id,
-            action,
-            invite.id,
-            via=via,
-            target_kind=TargetKind.CANDIDATE,
-        )
+    try:
+        async with Session.begin() as session:
+            invite, revived = await invites.upsert(
+                session,
+                interview.id,
+                email,
+                title,
+                company.name,
+                interview.language,
+                logo_path(company),
+                verified=company.verified_domain is not None,
+                **options,
+            )
+            await audit.record(
+                session,
+                company.id,
+                user_id,
+                action,
+                invite.id,
+                via=via,
+                target_kind=TargetKind.CANDIDATE,
+            )
+    except AlreadyFinished:
+        raise CodedError(
+            status.HTTP_409_CONFLICT, ALREADY_FINISHED, error_codes.CANDIDATE_FINISHED
+        ) from None
 
     return invite, revived
 

@@ -5,3 +5,7 @@ class OverLimit(Exception):
     def __init__(self, count: int):
         super().__init__(count)
         self.count = count
+
+
+class AlreadyFinished(Exception):
+    """The candidate finished after the invite was read: their results stay, and no email goes."""

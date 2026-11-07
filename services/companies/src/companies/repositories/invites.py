@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from companies.constants.events import CANDIDATE_INVITED, CANDIDATE_REMOVED
 from companies.constants.invites import NOT_STARTED, InviteStatus
+from companies.core.exceptions import AlreadyFinished
 from companies.helpers.candidates import new_hold_key
 from companies.models.interviews import Interview
 from companies.models.invites import CandidateInvite
@@ -35,7 +36,9 @@ async def upsert(
 ) -> tuple[CandidateInvite, bool]:
     """Creates the invite (with `hold_key`, its credits' key, or a new one), or returns the
     existing one so it can be sent again, and saves the email's event with it. True when it revived an expired
-    invite, whose credits were given back. `name`, the inviter's or the ATS's, fills a name not
+    invite, whose credits were given back. AlreadyFinished when the candidate finished: the row
+    is locked before it's read, so that holds against a start or a finish at the same moment.
+    `name`, the inviter's or the ATS's, fills a name not
     known yet: a name an owner or admin set stays, also when the same invite comes again. With
     `mode_chosen`, `voice` becomes the candidate's own mode (None: the interview's) unless they
     already started."""
@@ -76,18 +79,25 @@ async def upsert(
             .values(voice=voice)
         )
 
-    invite = await session.scalar(select(CandidateInvite).where(*this))
+    # Locked, as a start locks it: what's read here is what stays true until this commits.
+    invite = await session.scalar(select(CandidateInvite).where(*this).with_for_update())
+
+    if invite.status == InviteStatus.FINISHED:
+        raise AlreadyFinished
+
     revived = invite.status == InviteStatus.EXPIRED
 
     # Sending again revives an undelivered or expired invite and restarts its 30 days.
     if invite.status in (InviteStatus.UNDELIVERED, InviteStatus.EXPIRED):
         invite.status = InviteStatus.INVITED
 
-    invite.sent_at = datetime.now(UTC)
-    # A caller that sends the candidate itself (no sign-in, the link is enough) gets no
-    # emails: no reminder either, marked as reminded.
-    invite.guest = not sign_in
-    invite.reminded_at = None if sign_in else datetime.now(UTC)
+    # A candidate already started keeps theirs: only the link goes out again.
+    if invite.status == InviteStatus.INVITED:
+        invite.sent_at = datetime.now(UTC)
+        # A caller that sends the candidate itself (no sign-in, the link is enough) gets no
+        # emails: no reminder either, marked as reminded.
+        invite.guest = not sign_in
+        invite.reminded_at = None if sign_in else datetime.now(UTC)
 
     if return_url:
         invite.return_url = return_url
