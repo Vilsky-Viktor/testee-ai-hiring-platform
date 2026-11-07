@@ -1530,8 +1530,8 @@
           "text": "Bearbeite die Themen selbst oder bitte die KI darum, bevor eine Frage geschrieben wird."
         },
         "templates": {
-          "title": "Fertige Vorlagen",
-          "text": "Starte mit einer Vorlage statt mit einer Stellenbeschreibung."
+          "title": "Vorlage verwenden",
+          "text": "Starte mit einer fertigen Vorlage statt mit einer Stellenbeschreibung."
         },
         "languages": {
           "title": "Jede Stelle, {count, number} Sprachen",

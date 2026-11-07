@@ -1530,8 +1530,8 @@
           "text": "Edit topiknya sendiri, atau minta AI melakukannya, sebelum pertanyaan ditulis."
         },
         "templates": {
-          "title": "Templat siap pakai",
-          "text": "Mulai dari templat, bukan dari deskripsi pekerjaan."
+          "title": "Gunakan templat",
+          "text": "Mulai dari templat siap pakai, bukan dari deskripsi pekerjaan."
         },
         "languages": {
           "title": "Pekerjaan apa pun, {count, number} bahasa",

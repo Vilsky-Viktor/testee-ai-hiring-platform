@@ -1530,8 +1530,8 @@
           "text": "Edit the topics yourself, or ask AI to, before any question is written."
         },
         "templates": {
-          "title": "Ready-made templates",
-          "text": "Start from a template instead of a job description."
+          "title": "Use a template",
+          "text": "Start from a ready-made template instead of a job description."
         },
         "languages": {
           "title": "Any job, {count, number} languages",

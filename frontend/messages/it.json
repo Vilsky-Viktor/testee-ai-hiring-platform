@@ -1530,8 +1530,8 @@
           "text": "Modifica tu gli argomenti, o chiedi all'IA di farlo, prima che venga scritta una sola domanda."
         },
         "templates": {
-          "title": "Modelli pronti",
-          "text": "Parti da un modello invece che da una descrizione del ruolo."
+          "title": "Usa un modello",
+          "text": "Parti da un modello già pronto invece che da una descrizione del ruolo."
         },
         "languages": {
           "title": "Qualsiasi ruolo, {count, number} lingue",

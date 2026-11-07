@@ -1530,8 +1530,8 @@
           "text": "Tự sửa chủ đề hoặc nhờ AI sửa, trước khi có câu hỏi nào được viết."
         },
         "templates": {
-          "title": "Mẫu dùng ngay",
-          "text": "Bắt đầu từ một mẫu thay vì mô tả công việc."
+          "title": "Dùng mẫu",
+          "text": "Bắt đầu từ một mẫu có sẵn thay vì mô tả công việc."
         },
         "languages": {
           "title": "Mọi vị trí, {count, number} ngôn ngữ",

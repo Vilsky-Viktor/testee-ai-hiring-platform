@@ -1530,8 +1530,8 @@
           "text": "Ikaw mismo ang mag-edit ng mga topic, o ipagawa ito sa AI, bago maisulat ang anumang tanong."
         },
         "templates": {
-          "title": "Mga handang template",
-          "text": "Magsimula sa template sa halip na job description."
+          "title": "Gumamit ng template",
+          "text": "Magsimula sa handang template sa halip na job description."
         },
         "languages": {
           "title": "Anumang trabaho, {count, number} wika",

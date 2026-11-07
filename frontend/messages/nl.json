@@ -1530,8 +1530,8 @@
           "text": "Bewerk de onderwerpen zelf, of vraag AI dat te doen, voordat er een vraag wordt geschreven."
         },
         "templates": {
-          "title": "Kant-en-klare sjablonen",
-          "text": "Begin met een sjabloon in plaats van een functieomschrijving."
+          "title": "Gebruik een sjabloon",
+          "text": "Begin met een kant-en-klaar sjabloon in plaats van een functieomschrijving."
         },
         "languages": {
           "title": "Elke functie, {count, number} talen",

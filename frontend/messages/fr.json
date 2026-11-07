@@ -1530,8 +1530,8 @@
           "text": "Modifiez les thèmes vous-même, ou demandez à l'IA de le faire, avant qu'une seule question soit rédigée."
         },
         "templates": {
-          "title": "Modèles prêts à l'emploi",
-          "text": "Partez d'un modèle plutôt que d'une fiche de poste."
+          "title": "Utilisez un modèle",
+          "text": "Partez d'un modèle prêt à l'emploi plutôt que d'une fiche de poste."
         },
         "languages": {
           "title": "Tous les postes, {count, number} langues",

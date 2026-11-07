@@ -1530,8 +1530,8 @@
           "text": "Zmień tematy samodzielnie lub poproś o to AI, zanim powstanie choć jedno pytanie."
         },
         "templates": {
-          "title": "Gotowe szablony",
-          "text": "Zacznij od szablonu zamiast opisu stanowiska."
+          "title": "Użyj szablonu",
+          "text": "Zacznij od gotowego szablonu zamiast opisu stanowiska."
         },
         "languages": {
           "title": "Każde stanowisko, {count, plural, one {# język} few {# języki} many {# języków} other {# języka}}",

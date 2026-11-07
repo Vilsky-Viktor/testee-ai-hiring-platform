@@ -1530,8 +1530,8 @@
           "text": "Edite os tópicos por conta própria, ou peça à IA para fazer isso, antes de qualquer pergunta ser escrita."
         },
         "templates": {
-          "title": "Modelos prontos",
-          "text": "Comece por um modelo em vez de uma descrição de vaga."
+          "title": "Use um modelo",
+          "text": "Comece por um modelo pronto em vez de uma descrição de vaga."
         },
         "languages": {
           "title": "Qualquer vaga, {count, number} idiomas",

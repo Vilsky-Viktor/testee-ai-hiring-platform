@@ -1530,8 +1530,8 @@
           "text": "Edita tú los temas, o pide a la IA que lo haga, antes de que se redacte ninguna pregunta."
         },
         "templates": {
-          "title": "Plantillas listas para usar",
-          "text": "Empieza con una plantilla en lugar de una descripción del puesto."
+          "title": "Usa una plantilla",
+          "text": "Empieza con una plantilla lista para usar en lugar de una descripción del puesto."
         },
         "languages": {
           "title": "Cualquier puesto, {count, number} idiomas",

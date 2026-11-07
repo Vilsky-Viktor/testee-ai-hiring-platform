@@ -1530,8 +1530,8 @@
           "text": "Herhangi bir soru yazılmadan önce konuları kendiniz düzenleyin veya yapay zekâdan isteyin."
         },
         "templates": {
-          "title": "Hazır şablonlar",
-          "text": "İş tanımı yerine bir şablonla başlayın."
+          "title": "Şablon kullanın",
+          "text": "İş tanımı yerine hazır bir şablonla başlayın."
         },
         "languages": {
           "title": "Her pozisyon, {count, number} dil",

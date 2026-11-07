@@ -1530,8 +1530,8 @@
           "text": "Muuda teemasid ise või palu seda tehisarul, enne kui ühtegi küsimust kirjutatakse."
         },
         "templates": {
-          "title": "Valmis mallid",
-          "text": "Alusta töökuulutuse asemel mallist."
+          "title": "Kasuta malli",
+          "text": "Alusta töökuulutuse asemel valmis mallist."
         },
         "languages": {
           "title": "Iga ametikoht, {count, plural, one {# keel} other {# keelt}}",
