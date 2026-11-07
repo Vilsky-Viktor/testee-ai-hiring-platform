@@ -10,6 +10,7 @@ from testee_common.http.health import health_router
 from testee_common.http.no_store import NoStoreMiddleware
 from testee_common.http.shutdown import close_shared
 from testee_common.i18n.i18n import add_localized_errors
+from testee_common.limits.maintenance import MaintenanceMiddleware
 from testee_common.observability.logging import RequestLogMiddleware, configure_logging
 from testee_common.observability.loop_watch import start_loop_watch
 from testee_common.observability.sentry import init_sentry
@@ -60,6 +61,7 @@ app = FastAPI(
 if settings.api_docs:
     add_api_docs(app, "/api/billing")
 add_localized_errors(app)
+app.add_middleware(MaintenanceMiddleware, get_redis=get_redis)
 app.add_middleware(NoStoreMiddleware)
 app.add_middleware(RequestLogMiddleware)
 app.add_middleware(BodyLimitMiddleware)
