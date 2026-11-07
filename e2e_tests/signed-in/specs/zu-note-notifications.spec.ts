@@ -33,6 +33,8 @@ test("a member hears of the team's new notes in one item per interview", async (
   )
   const bob = await signInAs(bobEmail, undefined, "Bob Stone")
   await api(bob, "POST", `/companies/members/invites/${invited.token}/accept`)
+  // The bell keeps a user's companies for a minute; joining reads them again, as the site does.
+  await api(bob, "GET", "/notifications/me?fresh=true")
 
   const notes = `/companies/interviews/${interviewId}/notes`
   await api(ann, "POST", notes, { text: "Shortlist the top 5" })
