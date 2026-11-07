@@ -1,5 +1,7 @@
 import uuid
 
+from fastapi import HTTPException, status
+from sqlalchemy.exc import IntegrityError
 from testee_common.limits.rate_limit import hit_or_skip
 
 from library.core.db import Session
@@ -8,31 +10,50 @@ from library.repositories import bank, feedback
 from library.services.quality import review
 
 
-async def rate(
-    question_id: uuid.UUID, user_id: str, value: int | None, previous: int | None
-) -> None:
-    """Changes the question's counts from the reader's `previous` vote to `value`, then reviews
-    it. Feedback is anonymous: `user_id` only counts against their limit, which is all that
-    stands between one person and many votes (with Redis down, not counted)."""
+async def rate(question_id: uuid.UUID, user_id: str, value: int) -> None:
+    """Sets the user's thumbs up or down, then reviews the question."""
     key = f"rate:ratings:{user_id}"
     await hit_or_skip(get_redis(), key, "RATINGS_PER_DAY", user_id=user_id)
 
     async with Session.begin() as session:
-        await feedback.change_rating(session, question_id, value, previous)
+        await feedback.rate_question(session, question_id, user_id, value)
+
+    await review(question_id)
+
+
+async def unrate(question_id: uuid.UUID, user_id: str) -> None:
+    """Takes back the user's thumbs up or down (a click by mistake), then reviews the question
+    without it."""
+    async with Session.begin() as session:
+        await feedback.unrate_question(session, question_id, user_id)
 
     await review(question_id)
 
 
 async def report(question_id: uuid.UUID, user_id: str, reason: str, comment: str) -> None:
-    """Saves the report, then reviews the question. Anonymous like a vote: `user_id` only counts
-    against their limit (with Redis down, not counted)."""
+    """One report per user and question, whatever its revision. One already made is refused
+    before it's counted; the count is against floods (with Redis down, not counted)."""
+    async with Session() as session:
+        reported = await feedback.has_reported(session, question_id, user_id)
+
+    if reported:
+        raise HTTPException(status.HTTP_409_CONFLICT, "Already reported")
+
     key = f"rate:reports:{user_id}"
     await hit_or_skip(get_redis(), key, "REPORTS_PER_DAY", user_id=user_id)
 
-    async with Session.begin() as session:
-        await feedback.report_question(session, question_id, reason, comment)
+    try:
+        async with Session.begin() as session:
+            saved = await feedback.report_question(session, question_id, user_id, reason, comment)
 
-        # Reported, it leaves the shared bank for everyone, with what it's a copy of.
-        await bank.leave(session, [question_id])
+            # Reported, it leaves the shared bank for everyone, with what it's a copy of.
+            if saved:
+                await bank.leave(session, [question_id])
+    except IntegrityError:
+        # The transaction is over: a report made before reporters were kept.
+        saved = False
+
+    if not saved:
+        raise HTTPException(status.HTTP_409_CONFLICT, "Already reported")
 
     await review(question_id)

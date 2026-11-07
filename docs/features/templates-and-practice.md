@@ -87,7 +87,7 @@ A practice test's page and its result both offer the template for hiring. The bu
 
 ## How it's built
 
-Library's routes and event handlers call services (`src/library/services/`), which open each transaction and pass it to the repositories; generation, the other services, Firebase and Redis are called outside it. A question's replacement (its old content kept as a revision, the new content, its owner's notification and the `question.fixed` event for its copies) is one save, and so is each batch of copies fixed after it, with their companies' notifications. Votes and reports are anonymous (likes and dislikes as counts per question, reports with no user), so library keeps nothing to delete or export with an account; the daily `bank-stages` job empties reports' comments a year on (`REPORT_COMMENT_KEEP_DAYS`), keeping the reports.
+Library's routes and event handlers call services (`src/library/services/`), which open each transaction and pass it to the repositories; generation, the other services, Firebase and Redis are called outside it. A question's replacement (its old content kept as a revision, the new content, its owner's notification and the `question.fixed` event for its copies) is one save, and so is each batch of copies fixed after it, with their companies' notifications. When an account is deleted, library deletes the user's votes and reports on accounts' `user.deleted` event, safe to repeat.
 
 ## Related pages
 

@@ -101,6 +101,7 @@ MESSAGES = {
     "Workable didn't answer": "Workable ei vastanud",
     "You're already a member": "Oled juba liige",
     "Already finished": "Juba lõpetatud",
+    "Already reported": "Juba teatatud",
     "Cancel the generation instead": "Tühista hoopis loomine",
     "Candidate not found": "Kandidaati ei leitud",
     "Choose topics from the list": "Vali teemad loendist",

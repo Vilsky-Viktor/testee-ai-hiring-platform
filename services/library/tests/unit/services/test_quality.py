@@ -18,10 +18,6 @@ OPTIONS = [
 ]
 
 
-async def not_fixed(session, _question_id, _since):
-    return False
-
-
 def flag(answers=0, correct=0, picks=None, reports=None, likes=0, dislikes=0):
     return flag_for(OPTIONS, answers, correct, picks or {}, reports or {}, likes, dislikes)
 
@@ -120,7 +116,6 @@ def record(monkeypatch, found, generation_down=False):
         calls.append(("leave_bank", question_ids))
 
     monkeypatch.setattr(quality, "load", fake_load)
-    monkeypatch.setattr(quality, "fixed_since", not_fixed)
     monkeypatch.setattr(generation, "verify_question", fake_verify)
     monkeypatch.setattr(quality, "save_flag", fake_save)
     monkeypatch.setattr(quality, "change_flag", fake_change)

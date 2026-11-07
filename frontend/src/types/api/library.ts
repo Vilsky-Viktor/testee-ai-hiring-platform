@@ -489,7 +489,8 @@ export interface paths {
     }
     /**
      * List Topic Questions
-     * @description One topic's questions in a set, with their options and feedback counts.
+     * @description One topic's questions in a set, with their options and feedback counts; with `user_id`,
+     *     that user's own vote and report on each.
      */
     get: operations["list_topic_questions_internal_sets__set_id__topics__topic_id__questions_get"]
     put?: never
@@ -549,6 +550,26 @@ export interface paths {
      */
     put: operations["replace_question_internal_questions__question_id__put"]
     post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/internal/users/{user_id}/export": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /**
+     * Export User
+     * @description Accounts, for "Download my data": the user's votes and reports on questions.
+     */
+    post: operations["export_user_internal_users__user_id__export_post"]
     delete?: never
     options?: never
     head?: never
@@ -669,8 +690,8 @@ export interface paths {
     /**
      * Daily Housekeeping
      * @description Daily, from Cloud Scheduler: sends flags the verifier hasn't acted on to it again, takes
-     *     out of the shared bank what a flag, report or opt-out raced, empties reports' comments past
-     *     REPORT_COMMENT_KEEP_DAYS, and forgets old notes of processed events.
+     *     out of the shared bank what a flag, report or opt-out raced, and forgets old notes of
+     *     processed events.
      */
     post: operations["daily_housekeeping_internal_schedules_bank_post"]
     delete?: never
@@ -708,13 +729,31 @@ export interface paths {
       path?: never
       cookie?: never
     }
-    get?: never
     /**
-     * Rate
-     * @description For callers that already checked the user may see this question, e.g. a candidate. The
-     *     user's id, in the body, only counts against their limit; nothing saved names them.
+     * Get Rating
+     * @description For callers that already checked the user may see this question, e.g. a candidate.
      */
+    get: operations["get_rating_internal_questions__question_id__rating_get"]
+    /** Rate */
     put: operations["rate_internal_questions__question_id__rating_put"]
+    post?: never
+    /** Unrate */
+    delete: operations["unrate_internal_questions__question_id__rating_delete"]
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/internal/questions/{question_id}/reports/mine": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /** My Report */
+    get: operations["my_report_internal_questions__question_id__reports_mine_get"]
+    put?: never
     post?: never
     delete?: never
     options?: never
@@ -733,8 +772,8 @@ export interface paths {
     put?: never
     /**
      * Report
-     * @description Anonymous like a vote: the user's id only counts against their limit, against floods
-     *     (with Redis down, not counted).
+     * @description One report per user and question, whatever its revision. One already made is refused
+     *     before it's counted; the count is against floods (with Redis down, not counted).
      */
     post: operations["report_internal_questions__question_id__reports_post"]
     delete?: never
@@ -1184,18 +1223,15 @@ export interface components {
       /** Detail */
       detail?: components["schemas"]["ValidationError"][]
     }
-    /**
-     * InternalRatingIn
-     * @description The reader's vote and the one it replaces, by this page's memory (no vote is kept by
-     *     person); `user_id` only counts against their limit.
-     */
+    /** InternalRatingIn */
     InternalRatingIn: {
+      /**
+       * Value
+       * @enum {integer}
+       */
+      value: -1 | 1
       /** User Id */
       user_id: string
-      /** Value */
-      value: (-1 | 1) | null
-      /** Previous */
-      previous?: (-1 | 1) | null
     }
     /** InternalReportIn */
     InternalReportIn: {
@@ -1207,6 +1243,11 @@ export interface components {
       comment: string
       /** User Id */
       user_id: string
+    }
+    /** MyReportOut */
+    MyReportOut: {
+      /** Reported */
+      reported: boolean
     }
     /** OptionIn */
     OptionIn: {
@@ -1434,6 +1475,11 @@ export interface components {
       /** Flag */
       flag?: string | null
     }
+    /** QuestionRatingOut */
+    QuestionRatingOut: {
+      /** Value */
+      value?: (-1 | 1) | null
+    }
     /** QuestionReplace */
     QuestionReplace: {
       /** Text */
@@ -1475,6 +1521,13 @@ export interface components {
        * @default 0
        */
       reports: number
+      /** My Rating */
+      my_rating?: (-1 | 1) | null
+      /**
+       * Reported
+       * @default false
+       */
+      reported: boolean
     }
     /**
      * QuestionUpdateOut
@@ -1571,7 +1624,7 @@ export interface components {
     }
     /**
      * ReportOut
-     * @description A report, anonymous: nothing saved says who made it.
+     * @description A report without the reporter's identity.
      */
     ReportOut: {
       /**
@@ -1868,6 +1921,15 @@ export interface components {
       id: string
       /** Text */
       text: string
+    }
+    /**
+     * UserEmailIn
+     * @description An email address sent in the body, so request logs don't record it: the account's, in
+     *     accounts' calls to delete or export a user's data, or the one a superadmin looks up.
+     */
+    UserEmailIn: {
+      /** Email */
+      email: string
     }
     /** ValidationError */
     ValidationError: {
@@ -2845,7 +2907,9 @@ export interface operations {
   }
   list_topic_questions_internal_sets__set_id__topics__topic_id__questions_get: {
     parameters: {
-      query?: never
+      query?: {
+        user_id?: string | null
+      }
       header?: never
       path: {
         set_id: string
@@ -2964,6 +3028,43 @@ export interface operations {
           [name: string]: unknown
         }
         content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  export_user_internal_users__user_id__export_post: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        user_id: string
+      }
+      cookie?: never
+    }
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["UserEmailIn"]
+      }
+    }
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": {
+            [key: string]: unknown
+          }
+        }
       }
       /** @description Validation Error */
       422: {
@@ -3172,6 +3273,39 @@ export interface operations {
       }
     }
   }
+  get_rating_internal_questions__question_id__rating_get: {
+    parameters: {
+      query: {
+        user_id: string
+      }
+      header?: never
+      path: {
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["QuestionRatingOut"]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
   rate_internal_questions__question_id__rating_put: {
     parameters: {
       query?: never
@@ -3193,6 +3327,70 @@ export interface operations {
           [name: string]: unknown
         }
         content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  unrate_internal_questions__question_id__rating_delete: {
+    parameters: {
+      query: {
+        user_id: string
+      }
+      header?: never
+      path: {
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      204: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  my_report_internal_questions__question_id__reports_mine_get: {
+    parameters: {
+      query: {
+        user_id: string
+      }
+      header?: never
+      path: {
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["MyReportOut"]
+        }
       }
       /** @description Validation Error */
       422: {

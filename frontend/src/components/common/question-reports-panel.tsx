@@ -8,8 +8,8 @@ import { ReportDialog } from "@/components/common/report-dialog"
 import { Button } from "@/components/ui/button"
 import type { QuestionStats } from "@/types/feedback"
 
-/** A question's reports, under its row; with `feedbackPath`, a member adds their own on top (the
- * button then says they did, while they stay on the page: reports are anonymous). */
+/** A question's reports, under its row; with `feedbackPath`, a member adds their own on top,
+ * once (the button then says they did). */
 export function QuestionReportsPanel({
   question,
   reportsPath,
@@ -40,7 +40,7 @@ export function QuestionReportsPanel({
               onChange({
                 ...question,
                 reported: true,
-                reports: question.reports + 1,
+                reports: question.reports + (reported ? 0 : 1),
               })
               setReportsKey((key) => key + 1)
             }}

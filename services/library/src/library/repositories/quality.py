@@ -15,9 +15,12 @@ from library.models.sets import Question
 
 async def rating_counts(session: AsyncSession, question_id: uuid.UUID) -> tuple[int, int]:
     """Likes and dislikes."""
-    rating = await session.get(QuestionRating, question_id)
+    query = select(
+        func.count().filter(QuestionRating.value == 1),
+        func.count().filter(QuestionRating.value == -1),
+    ).where(QuestionRating.question_id == question_id)
 
-    return (rating.likes, rating.dislikes) if rating else (0, 0)
+    return tuple((await session.execute(query)).one())
 
 
 async def load(
@@ -121,17 +124,6 @@ async def change_flag(
     return changed
 
 
-async def fixed_since(session: AsyncSession, question_id: uuid.UUID, since: datetime) -> bool:
-    """Whether the question was replaced because it was flagged since `since`."""
-    query = select(QuestionRevision.id).where(
-        QuestionRevision.question_id == question_id,
-        QuestionRevision.fixed,
-        QuestionRevision.replaced_at >= since,
-    )
-
-    return await session.scalar(query.limit(1)) is not None
-
-
 async def current_flag(session: AsyncSession, question_id: uuid.UUID) -> str | None:
     return await session.scalar(
         select(QuestionStats.flag).where(QuestionStats.question_id == question_id)
@@ -193,7 +185,7 @@ async def archive(session: AsyncSession, question_id: uuid.UUID, fixed: bool = F
             dislikes=dislikes,
             reports=[
                 # Without the comment: it's the reporter's own words, and the revision outlives
-                # the report, so only the reason and time stay.
+                # the report (and the reporter's account), so only the reason and time stay.
                 {"reason": report.reason, "created_at": report.created_at.isoformat()}
                 for report in reports
             ],

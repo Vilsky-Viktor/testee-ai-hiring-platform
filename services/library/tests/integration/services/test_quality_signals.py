@@ -30,7 +30,9 @@ async def questions(title, count):
 
 async def reported(question_id, reason, times=2):
     for _ in range(times):
-        await transaction(feedback.report_question, question_id, reason, COMMENT)
+        await transaction(
+            feedback.report_question, question_id, f"user-{uuid.uuid4()}", reason, COMMENT
+        )
 
 
 async def revisions_of(session, question_id):
@@ -59,7 +61,7 @@ def test_a_flagged_question_comes_with_its_flag_answers_and_feedback(run):
             0.0,
         )
         await reported(question.id, "wrong_answer")
-        await transaction(feedback.change_rating, question.id, -1, None)
+        await transaction(feedback.rate_question, question.id, "user-1", -1)
         await transaction(quality.save_flag, question.id, "wrong_key")
 
         return set_id, question, await quality_signals.recent(7)

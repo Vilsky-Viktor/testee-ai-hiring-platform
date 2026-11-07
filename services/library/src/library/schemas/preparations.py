@@ -1,3 +1,4 @@
+from typing import Literal
 from uuid import UUID
 
 from pydantic import BaseModel
@@ -20,6 +21,9 @@ class QuestionText(BaseModel):
     likes: int = 0
     dislikes: int = 0
     reports: int = 0
+    # The asking user's own vote (1 or -1) and whether they've reported it, when one is named.
+    my_rating: Literal[-1, 1] | None = None
+    reported: bool = False
 
 
 class QuestionOut(BaseModel):

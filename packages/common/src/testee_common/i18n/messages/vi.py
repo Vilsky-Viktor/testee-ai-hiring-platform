@@ -91,6 +91,7 @@ MESSAGES = {
     "Workable didn't answer": "Workable không phản hồi",
     "You're already a member": "Bạn đã là thành viên",
     "Already finished": "Đã kết thúc",
+    "Already reported": "Đã báo cáo",
     "Cancel the generation instead": "Thay vào đó, hãy hủy quá trình tạo",
     "Candidate not found": "Không tìm thấy ứng viên",
     "Choose topics from the list": "Chọn chủ đề trong danh sách",

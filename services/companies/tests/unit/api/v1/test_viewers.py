@@ -145,7 +145,7 @@ def test_a_viewer_reads_the_company_without_verifying_it(client, viewer, monkeyp
 
 
 def test_a_viewer_reads_questions(client, viewer, monkeypatch):
-    async def fake_questions(set_id, topic_id):
+    async def fake_questions(set_id, topic_id, user_id):
         return []
 
     monkeypatch.setattr(library, "get_topic_questions", fake_questions)

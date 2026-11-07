@@ -9,11 +9,10 @@ LIBRARY = "library"
 
 
 class QuestionFeedback:
-    """Library's ratings and reports of a question, called by a service that has already checked
-    the user may see the question: rounds for a candidate's session, companies for a member's
-    interview. The user's id goes in the body, never the address, which request logs record: it
-    counts against their limits and nothing saved with the feedback names them. Answers are
-    library's own (429 for its limits), for the caller to pass on."""
+    """Library's ratings and reports of a question, for one user, called by a service that has
+    already checked the user may see the question: rounds for a candidate's session, companies
+    for a member's interview. Answers are library's own (409 for a repeat report, 429 for its
+    limits), for the caller to pass on."""
 
     def __init__(self, library_url: str, caller: str):
         self.library_url = library_url
@@ -29,13 +28,20 @@ class QuestionFeedback:
             **kwargs,
         )
 
-    async def rate(
-        self, question_id: UUID, user_id: str, value: int | None, previous: int | None
-    ) -> httpx.Response:
+    async def get_rating(self, question_id: UUID, user_id: str) -> httpx.Response:
+        return await self._request("GET", f"/{question_id}/rating", params={"user_id": user_id})
+
+    async def rate(self, question_id: UUID, user_id: str, value: int) -> httpx.Response:
         return await self._request(
-            "PUT",
-            f"/{question_id}/rating",
-            json={"user_id": user_id, "value": value, "previous": previous},
+            "PUT", f"/{question_id}/rating", json={"user_id": user_id, "value": value}
+        )
+
+    async def unrate(self, question_id: UUID, user_id: str) -> httpx.Response:
+        return await self._request("DELETE", f"/{question_id}/rating", params={"user_id": user_id})
+
+    async def my_report(self, question_id: UUID, user_id: str) -> httpx.Response:
+        return await self._request(
+            "GET", f"/{question_id}/reports/mine", params={"user_id": user_id}
         )
 
     async def report(

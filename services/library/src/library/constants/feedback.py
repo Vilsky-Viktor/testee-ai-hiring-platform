@@ -14,5 +14,3 @@ class ReportStatus(StrEnum):
 
 
 MAX_REPORT_COMMENT_LENGTH = 1000
-# A report's comment can name someone, so it goes after this long (12 months); the report stays.
-REPORT_COMMENT_KEEP_DAYS = 365

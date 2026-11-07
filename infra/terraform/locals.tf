@@ -105,7 +105,7 @@ locals {
     assistant = ["companies", "billing", "api", "notifications", "ats", "library", "rounds", "accounts", "site"]
     # Every service holding part of a user's data, for downloading an account (deleting one is
     # companies' call, then the user.deleted event); billing also sets a new account's currency.
-    accounts = ["companies", "rounds", "generation", "billing", "notifications", "ats", "api", "assistant", "site"]
+    accounts = ["companies", "rounds", "generation", "billing", "notifications", "ats", "api", "assistant", "library", "site"]
     # generation: translating news posts (it sends them back as news.translated events).
     site = ["generation"]
   }

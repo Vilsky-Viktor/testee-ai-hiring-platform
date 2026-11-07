@@ -91,6 +91,7 @@ MESSAGES = {
     "Workable didn't answer": "Workable から応答がありません",
     "You're already a member": "すでにメンバーです",
     "Already finished": "すでに終了しています",
+    "Already reported": "すでに報告済みです",
     "Cancel the generation instead": "代わりに生成をキャンセルしてください",
     "Candidate not found": "候補者が見つかりません",
     "Choose topics from the list": "リストからトピックを選んでください",

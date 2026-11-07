@@ -129,7 +129,7 @@ Library keeps the bank (`bank_questions`, `src/library/models/bank.py`): a copy 
 - **Taken out for everyone:** a flag or a report on the source or on any copy removes the bank copy at once, in the same save, and bars the source from joining again (`bank_checks.barred`). Copies already reused stay in their interviews.
 - **The opt-out:** checking "Keep these questions out of testee's shared question bank" sends `interview.privacy_changed` (companies' outbox, with the interview's set and generation); library keeps the newest change per interview (`interview_privacy`), takes the interview's questions out of the bank and never lets them join; unchecking lets those that qualify join again at once. Copies already reused elsewhere stay.
 - **Deletion never deletes a bank copy:** deleting an interview, a company (by its owner, by a superadmin, or with its owner's account) or an account removes the company's own questions, while each bank copy stays and keeps being reused; only its link to the source is cleared (`ON DELETE SET NULL`). The integration tests in `services/library/tests/integration/handlers/test_bank_deletions.py` check every path.
-- **The daily sweep** (library's `POST /internal/schedules/bank`): takes out a bank copy a flag, a report or an opt-out raced as it joined, 500 a day at most. The same run empties reports' comments 12 months after they were written (`REPORT_COMMENT_KEEP_DAYS`), as free text can name someone; the reports stay.
+- **The daily sweep** (library's `POST /internal/schedules/bank`): takes out a bank copy a flag, a report or an opt-out raced as it joined, 500 a day at most.
 
 ## Question quality
 
@@ -145,7 +145,6 @@ Rounds publish every answer. Library keeps per-question stats (answers, correct,
 
 - An answer re-checks a question only once the question has been shown 30 times, as answer-based flags need that many.
 - Votes, reports and finished topics re-check it every time.
-- Votes and reports are anonymous, so two reports may be one person's. Daily limits per user (`RATINGS_PER_DAY`, `REPORTS_PER_DAY`) hold that back, and for 30 days after a fix only answers flag a question (`FEEDBACK_REST_DAYS`), so the same few people can't send it to the verifier again and again; what was reported meanwhile counts once the time is up.
 - An answer event missing a field is logged and dropped rather than retried forever.
 - A question is flagged once, however many reviews run at the same moment (an answer and its finished topic): the flag is saved only if it's still what the review read, so one notification goes out and the verifier gets one request. A member marking the answer wrong twice at once is sent once too.
 
@@ -253,8 +252,8 @@ Each limit is one of `testee_common.limits.limit_list.LIMITS`, with its default;
 | New generations and regenerated questions a day for companies that never topped up, together, a ceiling on AI spending; a company that paid isn't held to it, so free sign-ups can't use it up for paying ones | `DAILY_GENERATION_LIMIT` | 100 |
 | Revisions in words per topic review; after that, topics are only chosen by checkbox | `MAX_TOPIC_REVISIONS` | 10 |
 | Verifier jobs a day for everyone together; a superadmin's "Fix now" isn't counted | `DAILY_VERIFY_LIMIT` | 300 |
-| Question reports per user a day (library) | `REPORTS_PER_DAY` | 10 |
-| Thumbs (ratings) per user a day (library) | `RATINGS_PER_DAY` | 100 |
+| Question reports per user a day (library) | `REPORTS_PER_DAY` | 30 |
+| Thumbs (ratings) per user a day (library) | `RATINGS_PER_DAY` | 200 |
 
 Above them all, the daily AI spend cap for unpaid companies and people without a company (`AI_SPEND_UNPAID_DAY`, $15 a UTC day by default): once their AI calls of the day (generations, regenerations, the assistant and the help chat) have cost that much, generating for an unpaid company answers 503 ("AI features are paused for today…") until midnight UTC. Paid companies and testee's own work (templates, quality checks, news) aren't counted or held to it. Billing adds each call's cost to the day's Redis counter (`spend:ai:unpaid:<date>`) as it stores it; with Redis down, nothing is refused.
 

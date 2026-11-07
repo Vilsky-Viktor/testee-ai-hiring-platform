@@ -1,7 +1,7 @@
 """Deleting a company never deletes its questions in the shared bank (the user's rule): every
 path that deletes in library (companies' interview.deleted and company.deleted, which a deleted
-company, an account's erasure and a superadmin's deletion all end in; generation's delete of a
-cancelled set; the daily job) leaves the bank copies whole, their
+company, an account's erasure and a superadmin's deletion all end in; accounts' user.deleted;
+generation's delete of a cancelled set; the daily job) leaves the bank copies whole, their
 link to the source only cleared, and other companies still get them."""
 
 import uuid
@@ -93,6 +93,24 @@ def test_a_deleted_companys_bank_questions_stay(run, monkeypatch):
     assert codes == [204, 204]
     assert gone == [None, None]
     assert_kept(result, bank_ids, texts)
+
+
+def test_a_deleted_accounts_event_keeps_the_bank_questions(run):
+    """user.deleted takes only the user's votes and reports; the bank and its sources stay."""
+    company = a_company(str(uuid.uuid4()))
+
+    async def scenario():
+        _, bank_ids, _ = await shared(company)
+        sources = {bank_id: source for bank_id, (source, _) in (await bank_by_id(bank_ids)).items()}
+        codes = await pushed("user.deleted", {"user_id": company, "email": "gone@example.com"})
+        now = await bank_by_id(bank_ids)
+
+        return codes, sources, {bank_id: source for bank_id, (source, _) in now.items()}
+
+    codes, before, after = run(scenario())
+
+    assert codes == [204, 204]
+    assert after == before
 
 
 def test_a_cancelled_generations_set_goes_without_its_bank_questions(run):

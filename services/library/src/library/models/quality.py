@@ -91,7 +91,7 @@ class QuestionRevision(Base):
     option_picks: Mapped[dict] = mapped_column(JSONB)
     likes: Mapped[int]
     dislikes: Mapped[int]
-    # Every report: [{"reason", "created_at"}].
+    # Every report: [{"reason", "comment", "created_at"}].
     reports: Mapped[list] = mapped_column(JSONB)
     # The QualityFlag it had when it was replaced; None for an owner's edit of an unflagged one.
     flag: Mapped[str | None] = mapped_column(String(32))

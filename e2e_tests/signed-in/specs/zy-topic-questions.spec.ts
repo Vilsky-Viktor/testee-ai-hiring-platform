@@ -2,7 +2,7 @@ import type { Locator, Page } from "@playwright/test"
 
 import { expect, test } from "../fixtures"
 import { api, createCompany } from "../helpers/api"
-import { addFeedback, addTemplate, deleteTemplate } from "../helpers/db-library"
+import { addTemplate, deleteTemplate } from "../helpers/db-library"
 import { PHONE } from "../helpers/layout"
 import { visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
@@ -29,11 +29,11 @@ async function interviewFrom(owner: Page, template: string) {
   }
 }
 
-/** Clicks a like or dislike and waits for its vote to be saved: a click while the last one is
- * saving is ignored. */
-async function vote(page: Page, button: Locator) {
+/** Clicks a like or dislike and waits for its vote to be saved (`method`: PUT, or DELETE when
+ * taken back): a click while the last one is saving is ignored. */
+async function vote(page: Page, button: Locator, method: "PUT" | "DELETE") {
   const saved = page.waitForResponse(
-    (response) => response.url().endsWith("/rating") && response.request().method() === "PUT",
+    (response) => response.url().endsWith("/rating") && response.request().method() === method,
   )
   await button.click()
   expect((await saved).ok()).toBe(true)
@@ -135,32 +135,24 @@ test("an owner manages a topic's questions on their page", async ({ signInAs }) 
     await expect(like).toHaveAttribute("aria-pressed", "false")
     const likes = await countOf(like)
     const dislikes = await countOf(dislike)
-    await vote(owner, like)
+    await vote(owner, like, "PUT")
     await expect(like).toHaveAttribute("aria-pressed", "true")
     await expect.poll(() => countOf(like)).toBe(likes + 1)
-    await vote(owner, like)
+    await vote(owner, like, "DELETE")
     await expect(like).toHaveAttribute("aria-pressed", "false")
     await expect.poll(() => countOf(like)).toBe(likes)
-    await vote(owner, dislike)
+    await vote(owner, dislike, "PUT")
     await expect(dislike).toHaveAttribute("aria-pressed", "true")
     await expect(like).toHaveAttribute("aria-pressed", "false")
     await expect.poll(() => countOf(dislike)).toBe(dislikes + 1)
-    // Saved, but anonymous: after a reload the counts stay and nothing shows it as the owner's.
+    // Saved: still the dislike after a reload.
     await owner.reload()
+    await expect(dislike).toHaveAttribute("aria-pressed", "true")
     await expect.poll(() => countOf(dislike)).toBe(dislikes + 1)
     await expect.poll(() => countOf(like)).toBe(likes)
-    await expect(dislike).toHaveAttribute("aria-pressed", "false")
 
     await addReport(owner, row, `Owner details ${randomId()}`)
     await shot(owner, "question-reported")
-
-    // A report the same: it's counted, and after a reload the add button is free again.
-    const reportsButton = row.locator("button[aria-expanded]:not([aria-haspopup])")
-    const reports = await countOf(reportsButton)
-    await owner.reload()
-    await expect.poll(() => countOf(reportsButton)).toBe(reports)
-    await reportsButton.click()
-    await expect(row.getByTestId("question-reports").getByRole("button").first()).toBeEnabled()
 
     // Phone: the checkbox stays on screen, at its row's side.
     await owner.setViewportSize(PHONE)
@@ -200,14 +192,9 @@ test("a viewer likes and reports a topic's questions but can't disable them", as
     await expect(include).toBeDisabled()
     await shot(viewer, "viewer-topic-questions")
 
-    // Counts other people left: numbers, with no one behind them.
-    await addFeedback(topicId, [{ likes: 2, dislikes: 1, reports: 1 }])
-    await viewer.reload()
     const like = row.locator("button[aria-pressed]").first()
-    await expect.poll(() => countOf(like)).toBe(2)
-    await expect.poll(() => countOf(row.locator("button[aria-pressed]").nth(1))).toBe(1)
     const likes = await countOf(like)
-    await vote(viewer, like)
+    await vote(viewer, like, "PUT")
     await expect(like).toHaveAttribute("aria-pressed", "true")
     await expect.poll(() => countOf(like)).toBe(likes + 1)
 

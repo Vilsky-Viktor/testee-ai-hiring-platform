@@ -35,10 +35,10 @@ async def generated_interview(
 async def list_topic_questions(
     interview_id: UUID, topic_id: UUID, user: CurrentUser
 ) -> list[QuestionText]:
-    """The topic's questions with their feedback counts, and whether an owner or admin left each
-    out."""
+    """The topic's questions, each with the member's own like or dislike and report, and
+    whether an owner or admin left it out."""
     interview = await generated_interview(user, interview_id)
-    questions = await library.get_topic_questions(interview.set_id, topic_id)
+    questions = await library.get_topic_questions(interview.set_id, topic_id, user.uid)
 
     if questions is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Topic not found")
@@ -71,19 +71,25 @@ async def set_question_excluded(
 async def rate_question(
     interview_id: UUID, question_id: UUID, body: RatingIn, user: CurrentUser
 ) -> Response:
-    """A member's like (1) or dislike (-1) on one of the interview's questions, or none to take it
-    back (a click by mistake); `previous` is the vote it replaces, as the page knows it: nothing
-    keeps it by person."""
+    """A member's like (1) or dislike (-1) on one of the interview's questions."""
     interview = await generated_interview(user, interview_id)
 
-    return await question_choices.rate(interview, question_id, body.value, body.previous, user.uid)
+    return await question_choices.rate(interview, question_id, body.value, user.uid)
+
+
+@router.delete("/{interview_id}/questions/{question_id}/rating")
+async def unrate_question(interview_id: UUID, question_id: UUID, user: CurrentUser) -> Response:
+    """Takes back a member's like or dislike (a click by mistake)."""
+    interview = await generated_interview(user, interview_id)
+
+    return await question_choices.unrate(interview, question_id, user.uid)
 
 
 @router.post("/{interview_id}/questions/{question_id}/reports")
 async def report_question(
     interview_id: UUID, question_id: UUID, body: ReportIn, user: CurrentUser
 ) -> Response:
-    """A member's report on one of the interview's questions, anonymous."""
+    """A member's report on one of the interview's questions, once each (409 for a second)."""
     interview = await generated_interview(user, interview_id)
 
     return await question_choices.report(

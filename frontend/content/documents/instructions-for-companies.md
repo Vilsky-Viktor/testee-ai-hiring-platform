@@ -259,8 +259,8 @@ candidate they name is deleted.
 - A candidate's request to stop your company's emails is kept, as a one-way hash of their email
   address, until you delete the company, also after you delete the candidate. A hash of an address
   that bounced or marked an email as spam stays until testee removes it, so it isn't emailed again.
-- Candidates' ratings and reports of questions are anonymous and stay with the question; a
-  report's comment is deleted 12 months after it was written.
+- Candidates' ratings and reports of questions stay with the question, or until the candidate
+  deletes their account.
 - Notifications in your members' bells, which can show a candidate's email and grade, are kept up
   to 90 days. A web hook still being retried holds its data up to 3 days.
 - Backups hold deleted data for at most 14 more days.

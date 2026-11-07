@@ -1778,7 +1778,7 @@
      "internal"
     ],
     "summary": "List Topic Questions",
-    "description": "One topic's questions in a set, with their options and feedback counts.",
+    "description": "One topic's questions in a set, with their options and feedback counts; with `user_id`,\nthat user's own vote and report on each.",
     "operationId": "list_topic_questions_internal_sets__set_id__topics__topic_id__questions_get",
     "security": [
      {
@@ -1804,6 +1804,22 @@
        "type": "string",
        "format": "uuid",
        "title": "Topic Id"
+      }
+     },
+     {
+      "name": "user_id",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "User Id"
       }
      }
     ],
@@ -2010,6 +2026,66 @@
     "responses": {
      "204": {
       "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/internal/users/{user_id}/export": {
+   "post": {
+    "tags": [
+     "internal"
+    ],
+    "summary": "Export User",
+    "description": "Accounts, for \"Download my data\": the user's votes and reports on questions.",
+    "operationId": "export_user_internal_users__user_id__export_post",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "user_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "User Id"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/UserEmailIn"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "additionalProperties": true,
+         "title": "Response Export User Internal Users  User Id  Export Post"
+        }
+       }
+      }
      },
      "422": {
       "description": "Validation Error",
@@ -2278,7 +2354,7 @@
      "schedules"
     ],
     "summary": "Daily Housekeeping",
-    "description": "Daily, from Cloud Scheduler: sends flags the verifier hasn't acted on to it again, takes\nout of the shared bank what a flag, report or opt-out raced, empties reports' comments past\nREPORT_COMMENT_KEEP_DAYS, and forgets old notes of processed events.",
+    "description": "Daily, from Cloud Scheduler: sends flags the verifier hasn't acted on to it again, takes\nout of the shared bank what a flag, report or opt-out raced, and forgets old notes of\nprocessed events.",
     "operationId": "daily_housekeeping_internal_schedules_bank_post",
     "responses": {
      "204": {
@@ -2323,12 +2399,67 @@
    }
   },
   "/internal/questions/{question_id}/rating": {
+   "get": {
+    "tags": [
+     "internal"
+    ],
+    "summary": "Get Rating",
+    "description": "For callers that already checked the user may see this question, e.g. a candidate.",
+    "operationId": "get_rating_internal_questions__question_id__rating_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     },
+     {
+      "name": "user_id",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "User Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/QuestionRatingOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   },
    "put": {
     "tags": [
      "internal"
     ],
     "summary": "Rate",
-    "description": "For callers that already checked the user may see this question, e.g. a candidate. The\nuser's id, in the body, only counts against their limit; nothing saved names them.",
     "operationId": "rate_internal_questions__question_id__rating_put",
     "security": [
      {
@@ -2372,6 +2503,111 @@
       }
      }
     }
+   },
+   "delete": {
+    "tags": [
+     "internal"
+    ],
+    "summary": "Unrate",
+    "operationId": "unrate_internal_questions__question_id__rating_delete",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     },
+     {
+      "name": "user_id",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "User Id"
+      }
+     }
+    ],
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/internal/questions/{question_id}/reports/mine": {
+   "get": {
+    "tags": [
+     "internal"
+    ],
+    "summary": "My Report",
+    "operationId": "my_report_internal_questions__question_id__reports_mine_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     },
+     {
+      "name": "user_id",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "User Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/MyReportOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
    }
   },
   "/internal/questions/{question_id}/reports": {
@@ -2380,7 +2616,7 @@
      "internal"
     ],
     "summary": "Report",
-    "description": "Anonymous like a vote: the user's id only counts against their limit, against floods\n(with Redis down, not counted).",
+    "description": "One report per user and question, whatever its revision. One already made is refused\nbefore it's counted; the count is against floods (with Redis down, not counted).",
     "operationId": "report_internal_questions__question_id__reports_post",
     "security": [
      {
@@ -3465,48 +3701,25 @@
    },
    "InternalRatingIn": {
     "properties": {
-     "user_id": {
-      "type": "string",
-      "title": "User Id"
-     },
      "value": {
-      "anyOf": [
-       {
-        "type": "integer",
-        "enum": [
-         -1,
-         1
-        ]
-       },
-       {
-        "type": "null"
-       }
+      "type": "integer",
+      "enum": [
+       -1,
+       1
       ],
       "title": "Value"
      },
-     "previous": {
-      "anyOf": [
-       {
-        "type": "integer",
-        "enum": [
-         -1,
-         1
-        ]
-       },
-       {
-        "type": "null"
-       }
-      ],
-      "title": "Previous"
+     "user_id": {
+      "type": "string",
+      "title": "User Id"
      }
     },
     "type": "object",
     "required": [
-     "user_id",
-     "value"
+     "value",
+     "user_id"
     ],
-    "title": "InternalRatingIn",
-    "description": "The reader's vote and the one it replaces, by this page's memory (no vote is kept by\nperson); `user_id` only counts against their limit."
+    "title": "InternalRatingIn"
    },
    "InternalReportIn": {
     "properties": {
@@ -3530,6 +3743,19 @@
      "user_id"
     ],
     "title": "InternalReportIn"
+   },
+   "MyReportOut": {
+    "properties": {
+     "reported": {
+      "type": "boolean",
+      "title": "Reported"
+     }
+    },
+    "type": "object",
+    "required": [
+     "reported"
+    ],
+    "title": "MyReportOut"
    },
    "OptionIn": {
     "properties": {
@@ -4038,6 +4264,27 @@
     "title": "QuestionQuality",
     "description": "What the verifier looks at: the question, how it's answered and what users reported."
    },
+   "QuestionRatingOut": {
+    "properties": {
+     "value": {
+      "anyOf": [
+       {
+        "type": "integer",
+        "enum": [
+         -1,
+         1
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Value"
+     }
+    },
+    "type": "object",
+    "title": "QuestionRatingOut"
+   },
    "QuestionReplace": {
     "properties": {
      "text": {
@@ -4097,6 +4344,26 @@
       "type": "integer",
       "title": "Reports",
       "default": 0
+     },
+     "my_rating": {
+      "anyOf": [
+       {
+        "type": "integer",
+        "enum": [
+         -1,
+         1
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "My Rating"
+     },
+     "reported": {
+      "type": "boolean",
+      "title": "Reported",
+      "default": false
      }
     },
     "type": "object",
@@ -4322,7 +4589,7 @@
      "created_at"
     ],
     "title": "ReportOut",
-    "description": "A report, anonymous: nothing saved says who made it."
+    "description": "A report without the reporter's identity."
    },
    "ReportReason": {
     "type": "string",
@@ -4937,6 +5204,20 @@
      "text"
     ],
     "title": "UntaggedQuestion"
+   },
+   "UserEmailIn": {
+    "properties": {
+     "email": {
+      "type": "string",
+      "title": "Email"
+     }
+    },
+    "type": "object",
+    "required": [
+     "email"
+    ],
+    "title": "UserEmailIn",
+    "description": "An email address sent in the body, so request logs don't record it: the account's, in\naccounts' calls to delete or export a user's data, or the one a superadmin looks up."
    },
    "ValidationError": {
     "properties": {

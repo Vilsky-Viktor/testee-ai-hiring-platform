@@ -530,12 +530,65 @@
    }
   },
   "/sessions/{session_id}/questions/{question_id}/rating": {
+   "get": {
+    "tags": [
+     "sessions"
+    ],
+    "summary": "Get Rating",
+    "operationId": "get_rating_sessions__session_id__questions__question_id__rating_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "session_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Session Id"
+      }
+     },
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   },
    "put": {
     "tags": [
      "sessions"
     ],
     "summary": "Rate",
-    "description": "The candidate's thumbs up or down, or none to take it back (a click by mistake); `previous`\nis the vote it replaces, as the page knows it: nothing keeps it by person.",
     "operationId": "rate_sessions__session_id__questions__question_id__rating_put",
     "security": [
      {
@@ -574,6 +627,117 @@
       }
      }
     },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   },
+   "delete": {
+    "tags": [
+     "sessions"
+    ],
+    "summary": "Unrate",
+    "description": "Takes back the candidate's thumbs up or down (a click by mistake).",
+    "operationId": "unrate_sessions__session_id__questions__question_id__rating_delete",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "session_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Session Id"
+      }
+     },
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/sessions/{session_id}/questions/{question_id}/reports/mine": {
+   "get": {
+    "tags": [
+     "sessions"
+    ],
+    "summary": "My Report",
+    "operationId": "my_report_sessions__session_id__questions__question_id__reports_mine_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "session_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Session Id"
+      }
+     },
+     {
+      "name": "question_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
+      }
+     }
+    ],
     "responses": {
      "200": {
       "description": "Successful Response",
@@ -2987,34 +3151,12 @@
    "RatingIn": {
     "properties": {
      "value": {
-      "anyOf": [
-       {
-        "type": "integer",
-        "enum": [
-         -1,
-         1
-        ]
-       },
-       {
-        "type": "null"
-       }
+      "type": "integer",
+      "enum": [
+       -1,
+       1
       ],
       "title": "Value"
-     },
-     "previous": {
-      "anyOf": [
-       {
-        "type": "integer",
-        "enum": [
-         -1,
-         1
-        ]
-       },
-       {
-        "type": "null"
-       }
-      ],
-      "title": "Previous"
      }
     },
     "type": "object",
@@ -3022,7 +3164,7 @@
      "value"
     ],
     "title": "RatingIn",
-    "description": "A thumbs up (1) or down (-1) on a question, or none: a vote is kept with no person, so the\nreader's page says what it replaces (`previous`, its earlier click on this question)."
+    "description": "A thumbs up (1) or down (-1) on a question."
    },
    "ReportIn": {
     "properties": {

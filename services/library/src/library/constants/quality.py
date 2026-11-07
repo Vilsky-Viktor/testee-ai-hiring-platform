@@ -20,10 +20,6 @@ DEAD_OPTION_SHARE = 0.02
 REPORTS_TO_FLAG = 2
 # Thumbs down that flag a question, when they're also at least twice its thumbs up.
 DISLIKES_TO_FLAG = 3
-# Feedback is anonymous, so these counts may come from one person: for this long after a fix
-# only answers flag a question, and the same people can't send it to the verifier again and
-# again. What was reported meanwhile counts once the time is up.
-FEEDBACK_REST_DAYS = 30
 # A candidate whose topic score is at least STRONG_SCORE counts as strong there, one at most
 # WEAK_SCORE as weak. A question needs MIN_GROUP_ANSWERS from each before it's judged, and
 # separates them when strong candidates get it right at least MIN_SEPARATION more often.

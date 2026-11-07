@@ -91,6 +91,7 @@ MESSAGES = {
     "Workable didn't answer": "Workable не відповідає",
     "You're already a member": "Ви вже учасник",
     "Already finished": "Уже завершено",
+    "Already reported": "Уже надіслано",
     "Cancel the generation instead": "Натомість скасуйте генерацію",
     "Candidate not found": "Кандидата не знайдено",
     "Choose topics from the list": "Виберіть теми зі списку",

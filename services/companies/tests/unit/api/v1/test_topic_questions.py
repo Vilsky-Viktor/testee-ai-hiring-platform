@@ -160,11 +160,14 @@ def test_topic_questions_come_with_their_options_and_the_members_own_say(client,
         "likes": 3,
         "dislikes": 1,
         "reports": 0,
+        "my_rating": 1,
+        "reported": False,
     }
-    other = {**question, "id": str(left_out)}
+    other = {**question, "id": str(left_out), "my_rating": None, "reported": True}
 
-    async def fake_questions(set_id, _topic_id):
-        assert set_id == interview.set_id
+    async def fake_questions(set_id, _topic_id, user_id):
+        # Library is asked for the signed-in member's own likes and reports.
+        assert (set_id, user_id) == (interview.set_id, "bob")
 
         return [question, other]
 

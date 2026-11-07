@@ -17,6 +17,6 @@ async def flush_outbox() -> None:
 @router.post("/bank", status_code=status.HTTP_204_NO_CONTENT)
 async def daily_housekeeping() -> None:
     """Daily, from Cloud Scheduler: sends flags the verifier hasn't acted on to it again, takes
-    out of the shared bank what a flag, report or opt-out raced, empties reports' comments past
-    REPORT_COMMENT_KEEP_DAYS, and forgets old notes of processed events."""
+    out of the shared bank what a flag, report or opt-out raced, and forgets old notes of
+    processed events."""
     await housekeeping.daily()

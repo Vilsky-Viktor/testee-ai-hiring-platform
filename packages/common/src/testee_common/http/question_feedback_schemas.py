@@ -4,11 +4,9 @@ from pydantic import BaseModel
 
 
 class RatingIn(BaseModel):
-    """A thumbs up (1) or down (-1) on a question, or none: a vote is kept with no person, so the
-    reader's page says what it replaces (`previous`, its earlier click on this question)."""
+    """A thumbs up (1) or down (-1) on a question."""
 
-    value: Literal[-1, 1] | None
-    previous: Literal[-1, 1] | None = None
+    value: Literal[-1, 1]
 
 
 class ReportIn(BaseModel):

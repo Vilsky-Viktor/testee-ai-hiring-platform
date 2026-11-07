@@ -96,29 +96,24 @@ test("an interview question sits beside its options and rates before a pick", as
     await expect.poll(() => card.evaluate((element) => element.scrollTop)).toBeGreaterThan(0)
     await shot(candidate, "question-desktop", false)
 
-    // The question's like is saved and shows; a second click takes it back. Votes are anonymous,
-    // so one shows only while the question is on the page: a reload starts with none.
+    // The question's like is saved; a second click takes it back, and it stays taken back.
     const like = rating.getByRole("button").first()
-    const saved = () =>
+    const saved = (method: string) =>
       candidate.waitForResponse(
         (response: Response) =>
-          response.url().endsWith("/rating") && response.request().method() === "PUT",
+          response.url().endsWith("/rating") && response.request().method() === method,
       )
-    const liked = saved()
+    const liked = saved("PUT")
     await like.click()
     expect((await liked).ok()).toBe(true)
     await expect(like).toHaveAttribute("aria-pressed", "true")
-    const removed = saved()
+    const removed = saved("DELETE")
     await like.click()
-    const takenBack = await removed
-    expect(takenBack.ok()).toBe(true)
-    expect(takenBack.request().postDataJSON()).toEqual({ value: null, previous: 1 })
+    expect((await removed).ok()).toBe(true)
     await expect(like).toHaveAttribute("aria-pressed", "false")
-    const again = saved()
-    await like.click()
-    expect((await again).ok()).toBe(true)
-    await expect(like).toHaveAttribute("aria-pressed", "true")
+    const loaded = saved("GET")
     await candidate.reload()
+    expect(await (await loaded).json()).toEqual({ value: null })
     await expect(like).toHaveAttribute("aria-pressed", "false")
 
     // Phone: stacked, the question and the options as wide as the screen, the rating after them.

@@ -6,10 +6,11 @@ from sqlalchemy import (
     DateTime,
     ForeignKey,
     Index,
+    SmallInteger,
     String,
     Text,
+    UniqueConstraint,
     func,
-    text,
 )
 from sqlalchemy.orm import Mapped, mapped_column
 from testee_common.db.db import one_of
@@ -19,13 +20,13 @@ from library.models.base import Base
 
 
 class QuestionRating(Base):
-    """A question's thumbs up and down, as counts: feedback is anonymous, so no vote keeps any
-    trace of who gave it."""
+    """A thumbs up (1) or down (-1) per user and question."""
 
     __tablename__ = "question_ratings"
+    # A person's votes (their account's deletion and export).
     __table_args__ = (
-        CheckConstraint("likes >= 0", name="ck_question_ratings_likes"),
-        CheckConstraint("dislikes >= 0", name="ck_question_ratings_dislikes"),
+        Index("ix_question_ratings_user_id", "user_id"),
+        CheckConstraint("value IN (-1, 1)", name="ck_question_ratings_value"),
     )
 
     question_id: Mapped[uuid.UUID] = mapped_column(
@@ -33,24 +34,33 @@ class QuestionRating(Base):
     )
     # Its company, filled by the database from questions (a trigger; templates have none).
     company_id: Mapped[uuid.UUID | None] = mapped_column(index=True)
-    likes: Mapped[int] = mapped_column(default=0, server_default=text("0"))
-    dislikes: Mapped[int] = mapped_column(default=0, server_default=text("0"))
+    user_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    value: Mapped[int] = mapped_column(SmallInteger)
+
+
+class QuestionReporter(Base):
+    """Who has reported a question, kept when it's replaced: one report per user and question,
+    whatever its revision, so the same users can't send it to the verifier again and again."""
+
+    __tablename__ = "question_reporters"
+
+    question_id: Mapped[uuid.UUID] = mapped_column(
+        ForeignKey("questions.id", ondelete="CASCADE"), primary_key=True
+    )
+    # Its company, filled by the database from questions (a trigger; templates have none).
+    company_id: Mapped[uuid.UUID | None] = mapped_column(index=True)
+    user_id: Mapped[str] = mapped_column(String(128), primary_key=True, index=True)
 
 
 class QuestionReport(Base):
-    """A report of a question, anonymous like a vote; its comment goes REPORT_COMMENT_KEEP_DAYS
-    after it was written, as free text can name someone."""
+    """At most one report per user and question."""
 
     __tablename__ = "question_reports"
     __table_args__ = (
-        # A question's reports, newest first.
-        Index("ix_question_reports_question_id_created_at", "question_id", "created_at"),
-        # The comments old enough to go.
-        Index(
-            "ix_question_reports_comments",
-            "created_at",
-            postgresql_where=text("comment <> ''"),
-        ),
+        # Also a question's reports, by its first column.
+        UniqueConstraint("question_id", "user_id", name="uq_question_reports_question_user"),
+        # A person's reports (their account's deletion and export).
+        Index("ix_question_reports_user_id", "user_id"),
         CheckConstraint(one_of("reason", ReportReason), name="ck_question_reports_reason"),
         CheckConstraint(one_of("status", ReportStatus), name="ck_question_reports_status"),
     )
@@ -59,6 +69,7 @@ class QuestionReport(Base):
     question_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("questions.id", ondelete="CASCADE"))
     # Its company, filled by the database from questions (a trigger; templates have none).
     company_id: Mapped[uuid.UUID | None] = mapped_column(index=True)
+    user_id: Mapped[str] = mapped_column(String(128))
     reason: Mapped[str] = mapped_column(String(32))
     comment: Mapped[str] = mapped_column(Text, default="")
     status: Mapped[str] = mapped_column(String(32), default=ReportStatus.OPEN)

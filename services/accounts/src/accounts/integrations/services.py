@@ -18,6 +18,7 @@ def services() -> dict[str, str]:
         "ats": settings.ats_url,
         "api": settings.api_url,
         "assistant": settings.assistant_url,
+        "library": settings.library_url,
         "site": settings.site_service_url,
     }
 

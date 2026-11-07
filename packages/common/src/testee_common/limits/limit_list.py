@@ -227,11 +227,9 @@ LIMITS = {
     "CONTACT_DAILY_LIMIT": Limit(SITE, 200, "calls", DAY_SECONDS, 1, 10_000, "everyone"),
     # Accounts: "Download my data", each asking every service for the account's data.
     "DATA_EXPORTS_PER_HOUR": Limit("accounts", 5, "calls", HOUR_SECONDS, 1, 100, "user"),
-    # Library: feedback on questions. It's kept with no person, so nothing stops one person voting
-    # or reporting twice but these (and the wait after a fix, FEEDBACK_REST_DAYS): 100 covers
-    # voting on a whole 60-question interview, 10 are far more reports than a day needs.
-    "RATINGS_PER_DAY": Limit("library", 100, "calls", DAY_SECONDS, 1, 10_000, "user"),
-    "REPORTS_PER_DAY": Limit("library", 10, "calls", DAY_SECONDS, 1, 1_000, "user"),
+    # Library: feedback on questions.
+    "RATINGS_PER_DAY": Limit("library", 200, "calls", DAY_SECONDS, 1, 10_000, "user"),
+    "REPORTS_PER_DAY": Limit("library", 30, "calls", DAY_SECONDS, 1, 1_000, "user"),
     # The public API: keys, web hooks and requests.
     "MAX_API_KEYS": Limit("api", 10, "items", None, 1, 100, "company"),
     "MAX_WEBHOOKS": Limit("api", 5, "items", None, 1, 100, "company"),

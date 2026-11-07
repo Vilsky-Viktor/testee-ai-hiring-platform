@@ -1054,8 +1054,8 @@ export interface paths {
     }
     /**
      * List Topic Questions
-     * @description The topic's questions with their feedback counts, and whether an owner or admin left each
-     *     out.
+     * @description The topic's questions, each with the member's own like or dislike and report, and
+     *     whether an owner or admin left it out.
      */
     get: operations["list_topic_questions_interviews__interview_id__topics__topic_id__questions_get"]
     put?: never
@@ -1097,13 +1097,15 @@ export interface paths {
     get?: never
     /**
      * Rate Question
-     * @description A member's like (1) or dislike (-1) on one of the interview's questions, or none to take it
-     *     back (a click by mistake); `previous` is the vote it replaces, as the page knows it: nothing
-     *     keeps it by person.
+     * @description A member's like (1) or dislike (-1) on one of the interview's questions.
      */
     put: operations["rate_question_interviews__interview_id__questions__question_id__rating_put"]
     post?: never
-    delete?: never
+    /**
+     * Unrate Question
+     * @description Takes back a member's like or dislike (a click by mistake).
+     */
+    delete: operations["unrate_question_interviews__interview_id__questions__question_id__rating_delete"]
     options?: never
     head?: never
     patch?: never
@@ -1124,7 +1126,7 @@ export interface paths {
     put?: never
     /**
      * Report Question
-     * @description A member's report on one of the interview's questions, anonymous.
+     * @description A member's report on one of the interview's questions, once each (409 for a second).
      */
     post: operations["report_question_interviews__interview_id__questions__question_id__reports_post"]
     delete?: never
@@ -4482,6 +4484,13 @@ export interface components {
       dislikes: number
       /** Reports */
       reports: number
+      /** My Rating */
+      my_rating?: (-1 | 1) | null
+      /**
+       * Reported
+       * @default false
+       */
+      reported: boolean
       /**
        * Excluded
        * @default false
@@ -4490,14 +4499,14 @@ export interface components {
     }
     /**
      * RatingIn
-     * @description A thumbs up (1) or down (-1) on a question, or none: a vote is kept with no person, so the
-     *     reader's page says what it replaces (`previous`, its earlier click on this question).
+     * @description A thumbs up (1) or down (-1) on a question.
      */
     RatingIn: {
-      /** Value */
-      value: (-1 | 1) | null
-      /** Previous */
-      previous?: (-1 | 1) | null
+      /**
+       * Value
+       * @enum {integer}
+       */
+      value: -1 | 1
     }
     /**
      * ReferralOut
@@ -7393,6 +7402,38 @@ export interface operations {
         "application/json": components["schemas"]["RatingIn"]
       }
     }
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": unknown
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  unrate_question_interviews__interview_id__questions__question_id__rating_delete: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        interview_id: string
+        question_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
     responses: {
       /** @description Successful Response */
       200: {

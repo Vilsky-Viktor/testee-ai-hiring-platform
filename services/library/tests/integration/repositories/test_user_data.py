@@ -1,0 +1,35 @@
+import uuid
+
+from library.handlers.dispatch import handle
+from library.repositories import feedback, user_data
+from tests.integration.factories import interview, question_ids
+from tests.integration.transactions import transaction
+
+
+def test_a_deleted_account_takes_their_votes_and_reports_and_the_export_has_them(run):
+    async def scenario():
+        set_id = await interview("Ledgers")
+        first, second, _ = await question_ids(set_id)
+        await transaction(feedback.rate_question, first, "gone", -1)
+        await transaction(feedback.report_question, second, "gone", "unclear", "Two answers fit.")
+        await transaction(feedback.rate_question, first, "stays", 1)
+        exported = await transaction(user_data.export, "gone")
+
+        # Accounts' event, delivered twice: the second finds nothing left.
+        for _ in range(2):
+            await handle(f"e-{uuid.uuid4()}", "user.deleted", {"user_id": "gone", "email": ""})
+
+        return (
+            exported,
+            await transaction(feedback.my_question_rating, first, "gone"),
+            await transaction(feedback.has_reported, second, "gone"),
+            await transaction(feedback.my_question_rating, first, "stays"),
+        )
+
+    exported, vote, reported, kept = run(scenario())
+
+    assert exported["question_votes"] == [{"question": "Ledgers question 0?", "vote": -1}]
+    [report] = exported["question_reports"]
+    assert (report["question"], report["reason"]) == ("Ledgers question 1?", "unclear")
+    assert exported["questions_reported"] == ["Ledgers question 1?"]
+    assert (vote, reported, kept) == (None, False, 1)

@@ -27,7 +27,12 @@ NOT_OWNED = {}
 
 # A set with one of its topics or questions: companies asks about its interview's set.
 INTERNAL_OWNED = {"set_id", "topic_id", "question_id"}
-NOT_SCOPED = {}
+OWN = "The user's own, as rounds vouches for its candidate and companies for its member."
+NOT_SCOPED = {
+    "GET /internal/questions/{question_id}/rating": OWN,
+    "DELETE /internal/questions/{question_id}/rating": OWN,
+    "GET /internal/questions/{question_id}/reports/mine": OWN,
+}
 KEY = (settings.service_secret, SERVICE_NAME)
 
 VALUES = {}
