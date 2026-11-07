@@ -2,24 +2,41 @@
 
 import re
 
+from testee_common.ai.secrets_check import PATTERNS
 from testee_common.config.constants import EMAIL_PATTERN
 from testee_common.observability.scrub_patterns import (
+    IP_PATTERN,
     PERSON_FIELD_ENDINGS,
     PERSON_FIELD_PATTERN,
     QUERY_FIELDS,
     REDACTED_EMAIL,
+    REDACTED_IP,
     REDACTED_PERSON,
+    REDACTED_SECRET,
+    SECRET_PATTERNS,
     URL_PATTERN,
     URL_SCRUBBED,
 )
 
+SECRETS = (*(pattern for pattern, _ in PATTERNS), *map(re.compile, SECRET_PATTERNS))
+
+
+def scrub_text(text: str) -> str:
+    """A text with its URLs cut, and its email addresses, secrets and IP addresses taken out."""
+    text = re.sub(EMAIL_PATTERN, REDACTED_EMAIL, re.sub(URL_PATTERN, URL_SCRUBBED, text))
+
+    for pattern in SECRETS:
+        text = pattern.sub(REDACTED_SECRET, text)
+
+    return re.sub(IP_PATTERN, REDACTED_IP, text)
+
 
 def scrub(value):
-    """Replaces every email address, however deep it sits, and cuts every URL to its scheme and
-    host: outgoing calls' URLs (web hooks, Slack) and invite links are secrets. Fields that hold
-    a query alone are dropped."""
+    """Replaces every email address, secret and IP address, however deep it sits, and cuts every
+    URL to its scheme and host: outgoing calls' URLs (web hooks, Slack) and invite links are
+    secrets. Fields that hold a query alone are dropped."""
     if isinstance(value, str):
-        return re.sub(EMAIL_PATTERN, REDACTED_EMAIL, re.sub(URL_PATTERN, URL_SCRUBBED, value))
+        return scrub_text(value)
 
     if isinstance(value, dict):
         return {key: scrub(item) for key, item in value.items() if key not in QUERY_FIELDS}

@@ -80,7 +80,8 @@ the Top 10 for LLM applications 2025.
 - Never log tokens, keys, session ids, a URL path that carries a secret token (log the route
   template) or unneeded personal data; log authentication and authorization failures.
 - `packages/common/tests/unit/test_log_calls.py` fails on a log call passing an email, a name, a
-  token or a key; every log line is scrubbed of emails and URL paths (`testee_common.observability.scrub`).
+  token or a key; every log line is scrubbed of emails, secrets, IP addresses and URL paths
+  (`testee_common.observability.scrub`).
 
 ## AI
 

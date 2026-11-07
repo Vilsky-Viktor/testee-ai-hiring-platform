@@ -1,6 +1,7 @@
 """What leaves us for Sentry and Langfuse (testee_common.observability.scrub): no emails, URLs cut to their
 host, and for Langfuse people's names too."""
 
+import pytest
 from pydantic import BaseModel
 from testee_common.observability.scrub import scrub, scrub_people
 
@@ -79,3 +80,39 @@ def test_name_fields_of_data_and_hidden_names_are_masked_and_the_rest_kept():
 
 def test_a_hidden_name_is_masked_only_as_a_whole_word():
     assert scrub_people("Ann's annual review", ("Ann",)) == "[person]'s annual review"
+
+
+@pytest.mark.parametrize(
+    "secret",
+    [
+        "te_" + "a1" * 12,
+        "tem_" + "a1" * 12,
+        "whsec_" + "a1+/" * 6,
+        "xoxb-" + "1234567890-abc",
+        "pdl_live_apikey_" + "a1" * 12,
+        "re_" + "a1" * 12,
+        "sk-lf-" + "a1" * 12,
+        "pk-lf-" + "a1" * 12,
+        "0x" + "a1" * 16,
+        "sk-" + "a1" * 12,
+        "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxMjM0In0.c2lnbmF0dXJlLXBhcnQ",
+    ],
+)
+def test_a_secret_in_an_error_is_taken_out(secret):
+    scrubbed = scrub({"message": f"Refused: {secret} !"})
+
+    assert scrubbed == {"message": "Refused: [secret] !"}
+
+
+@pytest.mark.parametrize("address", ["203.0.113.5", "2001:db8:1:2::/64", "2001:db8::1"])
+def test_an_ip_address_in_a_redis_breadcrumb_is_taken_out(address):
+    crumb = {"category": "redis", "message": f"GET 'rate:help-votes:{address}'"}
+
+    assert address not in str(scrub(crumb))
+    assert "[ip]" in scrub(crumb)["message"]
+
+
+def test_times_and_plain_words_stay():
+    text = "at 12:34:56 the template_name failed on a re_try"
+
+    assert scrub(text) == text
