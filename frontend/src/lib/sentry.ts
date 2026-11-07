@@ -43,7 +43,16 @@ export function sentryOptions() {
     enabled: Boolean(dsn),
     environment: process.env.NEXT_PUBLIC_ENVIRONMENT ?? "production",
     tracesSampleRate: SENTRY_TRACES_SAMPLE_RATE,
-    sendDefaultPii: false,
+    // No IP address, cookies, headers, bodies, query strings or local variables: the SDK collects
+    // them unless told not to.
+    dataCollection: {
+      userInfo: false,
+      cookies: false,
+      httpHeaders: false,
+      httpBodies: [],
+      urlQueryParams: false,
+      stackFrameVariables: false,
+    },
     beforeSend: (event: ErrorEvent) => scrub(event),
     // Traces carry page and request addresses too. The SDK sends them as streamed spans, which
     // only this sees, every span on its way out.

@@ -33,6 +33,20 @@ afterEach(async () => {
 })
 
 describe("sentryOptions", () => {
+  it("collects no IP address, cookies, headers, bodies or query strings", () => {
+    vi.stubEnv("FRONTEND_SENTRY_DSN", "https://key@o1.ingest.sentry.io/1")
+    Sentry.init(sentryOptions())
+
+    expect(Sentry.getClient()?.getDataCollectionOptions()).toMatchObject({
+      userInfo: false,
+      cookies: false,
+      httpHeaders: { request: false, response: false },
+      httpBodies: [],
+      urlQueryParams: false,
+      stackFrameVariables: false,
+    })
+  })
+
   it("keeps every link's secret token and email out of an error report", () => {
     const event = {
       request: { url: "https://testee.ai/unsubscribe?token=abc.def&x=1" },
