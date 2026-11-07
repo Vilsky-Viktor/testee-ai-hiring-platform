@@ -122,6 +122,22 @@ describe("the API docs read the OpenAPI description", () => {
     expect(after.steps).toBeNull()
   })
 
+  it("reads a table and a list as their own blocks", () => {
+    const [section] = richText(
+      "| Code | Status |\n| --- | --- |\n| `not_found` | 404 |\n\n- 2026-10-30: first\n- 2026-10-31: `second`\n  goes on"
+    )
+    const [table, list] = section.blocks
+
+    expect(table.table).toEqual([
+      [[{ text: "Code", kind: "text" }], [{ text: "Status", kind: "text" }]],
+      [[{ text: "not_found", kind: "code" }], [{ text: "404", kind: "text" }]],
+    ])
+    expect(list.list).toHaveLength(2)
+    expect(list.list?.[0]).toEqual([
+      { text: "2026-10-30: first", kind: "text" },
+    ])
+  })
+
   it("splits a description into its tabs at its top titles", () => {
     expect(
       descriptionTabs(
