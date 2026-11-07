@@ -12,9 +12,8 @@ back with `notification.news_withdrawn`), the post's English and missing
 languages sent to generation, whose translations come back as `news.translated` events (at
 `/internal/events`), the post's English for notifications (`/internal/news/{id}`) and the bell's
 titles (`/internal/news/titles`); a
-daily schedule (`/internal/schedules/news`) sends posts still missing a language again. A
-one-off job copied library's news rows (`python -m site_content.jobs.copy_from_library`, safe to
-repeat). What it does:
+daily schedule (`/internal/schedules/news`) sends posts still missing a language again. What it
+does:
 [the site](../../docs/features/site.md).
 
 Its Python package is `site_content`, not `site`: `site` is a module of Python's own, loaded when
