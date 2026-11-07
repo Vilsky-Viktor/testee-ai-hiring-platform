@@ -50,7 +50,7 @@ testee 把职位描述变成限时选择题技能面试。在编写任何题目�
 
 CodeSignal 的套餐涵盖面向产品、设计和工程职位的技术测评和 AI 面试官，并提供 AI 监考和身份验证。高级套餐增加了面向销售、客户成功和市场职位的市场类（go-to-market）测评和 AI 面试官，以及 ATS 集成（[CodeSignal 价格页，截至 2026 年 11 月](https://codesignal.com/pricing/)）。
 
-- **比 testee 更适合：** 动手编程测评、AI 主导的面试。
+- **比 testee 更适合：** 动手编程测评、AI 主导的对话。
 - **搭配使用：** 用 testee 对每位应聘者做知识筛选，用 CodeSignal 做编程环节。
 
 ### HackerRank
@@ -83,7 +83,7 @@ Bryq 的套餐包括认知和性格测评、技能测评、无限邀请、AI 职
 
 - 你同时使用多种测试类型：岗位技能、认知、性格、语言。
 - 你想用免费套餐满足很少量的使用（[价格页](https://www.testgorilla.com/pricing/)）。
-- 你需要视频题、AI 主导的面试、岗位模拟或摄像头快照。
+- 你需要视频题、AI 主导的对话、岗位模拟或摄像头快照。
 - 你持续大批量招聘，此时套餐摊到每位候选人身上可能更便宜。
 
 而且它仍然可以与 testee 搭配：先用针对岗位的知识筛选，之后再用 TestGorilla 更广泛的测试。一对一的比较，请阅读 [testee 与 TestGorilla](/compare/testgorilla)。

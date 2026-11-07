@@ -54,7 +54,7 @@ TestGorilla testikogu hõlmab rollipõhiseid oskusi, programmeerimist, tarkvarao
 
 CodeSignali paketid hõlmavad tehnilisi hindamisi ja AI-intervjueerijaid toote-, disaini- ja arendusrollidele. Kõrgemad paketid lisavad müügi- ja turundussuunaliste (go-to-market) rollide hindamised ja AI-intervjueerijad müügi, kliendiedu ja turunduse jaoks ([hinnaleht, 2026. aasta novembri seisuga](https://codesignal.com/pricing/)).
 
-- **Parem kui testee:** meeskondadele, kes tahavad praktilist programmeerimise hindamist ja AI juhitud intervjuusid samas tööriistas.
+- **Parem kui testee:** meeskondadele, kes tahavad praktilist programmeerimise hindamist ja AI juhitud vestlusi samas tööriistas.
 
 ### Bryq: psühhomeetria
 

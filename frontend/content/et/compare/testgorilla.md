@@ -13,7 +13,7 @@ See leht selgitab, mille poolest need erinevad, kuhu kumbki paremini sobib ja ku
 
 ## Lühidalt
 
-- **TestGorilla sobib,** kui vajad kognitiivsete võimete, isiksuse, keele või praktilise programmeerimise teste, videoküsimusi, AI juhitud intervjuusid või veebikaamera hetktõmmiseid.
+- **TestGorilla sobib,** kui vajad kognitiivsete võimete, isiksuse, keele või praktilise programmeerimise teste, videoküsimusi, AI juhitud vestlusi või veebikaamera hetktõmmiseid.
 - **testee sobib,** kui tahad teadmiste testi, mis on kirjutatud täpselt sinu töökuulutuse põhjal, sh koodi lugemise küsimustega tehniliste rollide jaoks, ja eelistad maksta kandidaadi, mitte paketi eest.
 - **Mõlemad sobivad,** kui tahad igale kandideerijale rollipõhist teadmiste kontrolli ja selle läbinutele laiemaid teste.
 

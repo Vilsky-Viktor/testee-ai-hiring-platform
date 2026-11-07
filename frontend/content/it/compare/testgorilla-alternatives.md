@@ -50,7 +50,7 @@ testee trasforma una descrizione del ruolo in un colloquio sulle competenze a sc
 
 I piani di CodeSignal coprono valutazioni tecniche e intervistatori IA per ruoli di prodotto, design e ingegneria, con proctoring tramite IA e verifica dell'identità. I piani superiori aggiungono valutazioni per i ruoli go-to-market e intervistatori IA per vendite, customer success e marketing, oltre a integrazioni con l'ATS ([pagina prezzi di CodeSignal, a novembre 2026](https://codesignal.com/pricing/)).
 
-- **Meglio di testee per:** valutazione del coding pratico, colloqui condotti dall'IA.
+- **Meglio di testee per:** valutazione del coding pratico, conversazioni condotte dall'IA.
 - **Insieme:** testee come verifica delle conoscenze per ogni candidato, CodeSignal per la fase di coding.
 
 ### HackerRank
@@ -83,7 +83,7 @@ TestGorilla potrebbe fare più al caso tuo se:
 
 - Usi diversi tipi di test insieme: competenze di ruolo, cognitivi, personalità, lingue.
 - Vuoi un piano gratuito per un uso molto leggero ([pagina prezzi](https://www.testgorilla.com/pricing/)).
-- Ti servono domande video, colloqui condotti dall'IA, simulazioni di lavoro o istantanee dalla webcam.
+- Ti servono domande video, conversazioni condotte dall'IA, simulazioni di lavoro o istantanee dalla webcam.
 - Assumi con volumi alti e costanti, dove un piano può costare meno per candidato.
 
 E può comunque affiancare testee: prima una verifica delle conoscenze specifica per il ruolo, poi i test più ampi di TestGorilla. Per un confronto diretto, leggi [testee e TestGorilla](/compare/testgorilla).

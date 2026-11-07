@@ -54,7 +54,7 @@ Die Bibliothek von TestGorilla umfasst stellenspezifische Fachkenntnisse, Progra
 
 Die Tarife von CodeSignal decken technische Assessments und KI-Interviewer für Produkt, Design und Entwicklung ab. Höhere Tarife ergänzen Go-to-Market-Assessments und KI-Interviewer für Vertrieb, Customer Success und Marketing ([Preisseite, Stand November 2026](https://codesignal.com/pricing/)).
 
-- **Besser als testee für:** Teams, die praktische Programmier-Assessments und KI-geführte Interviews im selben Tool wollen.
+- **Besser als testee für:** Teams, die praktische Programmier-Assessments und KI-geführte Gespräche im selben Tool wollen.
 
 ### Bryq: Psychometrie
 

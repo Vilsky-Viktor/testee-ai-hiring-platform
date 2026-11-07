@@ -13,7 +13,7 @@ Cette page explique ce qui les distingue, dans quels cas chacun convient le mieu
 
 ## En bref
 
-- **TestGorilla convient** quand vous avez besoin de tests d'aptitudes cognitives, de personnalité, de langue ou de code en pratique, de questions vidéo, d'entretiens menés par IA ou de captures webcam.
+- **TestGorilla convient** quand vous avez besoin de tests d'aptitudes cognitives, de personnalité, de langue ou de code en pratique, de questions vidéo, d'conversations menées par IA ou de captures webcam.
 - **testee convient** quand vous voulez un test de connaissances rédigé à partir de votre fiche de poste exacte, avec des questions de lecture de code pour les postes techniques, et que vous préférez payer par candidat plutôt qu'un abonnement.
 - **Les deux conviennent** quand vous voulez une présélection des connaissances propre au poste pour chaque candidat et des tests plus larges pour ceux qui la réussissent.
 

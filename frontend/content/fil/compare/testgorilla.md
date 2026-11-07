@@ -13,7 +13,7 @@ Ipinapaliwanag ng pahinang ito kung paano sila nagkakaiba, kung saan mas bagay a
 
 ## Ang maikling bersyon
 
-- **Bagay ang TestGorilla** kapag kailangan mo ng cognitive ability, personality, language o hands-on coding tests, video questions, AI-led interviews o webcam snapshots.
+- **Bagay ang TestGorilla** kapag kailangan mo ng cognitive ability, personality, language o hands-on coding tests, video questions, AI-led conversations o webcam snapshots.
 - **Bagay ang testee** kapag gusto mo ng knowledge test na isinulat mula mismo sa iyong job description, kasama ang code-reading questions para sa mga technical role, at mas gusto mong magbayad bawat aplikante kaysa sa isang plan.
 - **Bagay ang dalawa** kapag gusto mo ng role-specific na knowledge screen para sa bawat aplikante at mas malawak na mga test para sa mga papasa rito.
 

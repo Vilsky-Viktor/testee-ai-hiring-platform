@@ -54,7 +54,7 @@ Pustaka TestGorilla mencakup tes keterampilan khusus posisi, pemrograman, ketera
 
 Paket CodeSignal mencakup asesmen teknis dan pewawancara AI untuk product, design, dan engineering. Paket yang lebih tinggi menambahkan asesmen go-to-market dan pewawancara AI untuk sales, customer success, dan marketing ([halaman harga, per November 2026](https://codesignal.com/pricing/)).
 
-- **Lebih baik dari testee untuk:** tim yang ingin asesmen coding langsung dan wawancara yang dipandu AI dalam satu alat.
+- **Lebih baik dari testee untuk:** tim yang ingin asesmen coding langsung dan percakapan yang dipandu AI dalam satu alat.
 
 ### Bryq: psikometri
 

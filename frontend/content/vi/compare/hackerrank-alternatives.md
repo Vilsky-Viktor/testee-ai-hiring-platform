@@ -54,7 +54,7 @@ Thư viện của TestGorilla bao gồm bài kiểm tra kỹ năng theo vị tr�
 
 Các gói của CodeSignal bao gồm đánh giá kỹ thuật và người phỏng vấn AI cho sản phẩm, thiết kế và kỹ thuật. Các gói cao hơn có thêm đánh giá go-to-market và người phỏng vấn AI cho kinh doanh, chăm sóc khách hàng và marketing ([trang bảng giá, tính đến tháng 11/2026](https://codesignal.com/pricing/)).
 
-- **Tốt hơn testee khi:** nhóm muốn có đánh giá lập trình thực hành và phỏng vấn do AI dẫn dắt trong cùng một công cụ.
+- **Tốt hơn testee khi:** nhóm muốn có đánh giá lập trình thực hành và hội thoại do AI dẫn dắt trong cùng một công cụ.
 
 ### Bryq: trắc nghiệm tâm lý
 

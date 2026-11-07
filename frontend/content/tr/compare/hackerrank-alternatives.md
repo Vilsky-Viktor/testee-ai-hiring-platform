@@ -54,7 +54,7 @@ TestGorilla'nın kütüphanesi pozisyona özel beceriler, programlama, yazılım
 
 CodeSignal'ın planları ürün, tasarım ve mühendislik için teknik değerlendirmeleri ve yapay zekâ mülakatçılarını kapsar. Üst planlar satış, müşteri başarısı ve pazarlama için go-to-market değerlendirmeleri ve yapay zekâ mülakatçıları ekler ([fiyat sayfası, Kasım 2026 itibarıyla](https://codesignal.com/pricing/)).
 
-- **testee'den daha iyi olduğu alanlar:** uygulamalı kodlama değerlendirmesini ve yapay zekâ yönetimli mülakatları aynı araçta isteyen ekipler.
+- **testee'den daha iyi olduğu alanlar:** uygulamalı kodlama değerlendirmesini ve yapay zekânın yönettiği sohbetleri aynı araçta isteyen ekipler.
 
 ### Bryq: psikometri
 

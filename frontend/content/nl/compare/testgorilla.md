@@ -13,7 +13,7 @@ Deze pagina legt uit hoe ze verschillen, waar elk beter past en hoe je ze combin
 
 ## De korte versie
 
-- **TestGorilla past** als je tests nodig hebt voor cognitieve vaardigheden, persoonlijkheid, taal of echt programmeren, videovragen, door AI geleide interviews of webcamfoto's.
+- **TestGorilla past** als je tests nodig hebt voor cognitieve vaardigheden, persoonlijkheid, taal of echt programmeren, videovragen, door AI geleide gesprekken of webcamfoto's.
 - **testee past** als je een kennistest wilt die geschreven is op basis van precies jouw functieomschrijving, inclusief vragen over code lezen voor technische functies, en je liever per kandidaat betaalt dan voor een plan.
 - **Allebei passen** als je een functiespecifieke kennisscreening voor elke sollicitant wilt en bredere tests voor de mensen die slagen.
 

@@ -54,7 +54,7 @@ Biblioteka TestGorilla obejmuje umiejętności stanowiskowe, programowanie, obs�
 
 Plany CodeSignal obejmują ocenę kompetencji technicznych i rozmówców AI dla produktu, designu i inżynierii. Wyższe plany dodają testy i rozmówców AI dla działów go-to-market: sprzedaży, customer success i marketingu ([cennik, stan na listopad 2026](https://codesignal.com/pricing/)).
 
-- **Lepszy niż testee dla:** zespołów, które chcą praktycznej oceny programowania i rozmów prowadzonych przez AI w jednym narzędziu.
+- **Lepszy niż testee dla:** zespołów, które chcą praktycznej oceny programowania i swobodnych rozmów prowadzonych przez AI w jednym narzędziu.
 
 ### Bryq: psychometria
 

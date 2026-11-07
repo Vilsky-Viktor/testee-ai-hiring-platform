@@ -54,7 +54,7 @@ O catálogo da TestGorilla abrange testes de habilidades específicas da funçã
 
 Os planos do CodeSignal cobrem avaliações técnicas e entrevistadores de IA para produto, design e engenharia. Os planos mais altos acrescentam avaliações para vagas comerciais (go-to-market) e entrevistadores de IA para vendas, customer success e marketing ([página de preços, em novembro de 2026](https://codesignal.com/pricing/)).
 
-- **Melhor que a testee para:** equipes que querem avaliação de programação prática e entrevistas conduzidas por IA na mesma ferramenta.
+- **Melhor que a testee para:** equipes que querem avaliação de programação prática e conversas conduzidas por IA na mesma ferramenta.
 
 ### Bryq: testes psicométricos
 

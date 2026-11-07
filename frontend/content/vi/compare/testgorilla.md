@@ -13,7 +13,7 @@ Trang này giải thích hai công cụ khác nhau thế nào, mỗi công cụ 
 
 ## Tóm tắt nhanh
 
-- **TestGorilla phù hợp** khi bạn cần bài kiểm tra năng lực nhận thức, tính cách, ngoại ngữ hoặc lập trình thực hành, câu hỏi video, phỏng vấn do AI dẫn dắt hay chụp ảnh qua webcam.
+- **TestGorilla phù hợp** khi bạn cần bài kiểm tra năng lực nhận thức, tính cách, ngoại ngữ hoặc lập trình thực hành, câu hỏi video, hội thoại do AI dẫn dắt hay chụp ảnh qua webcam.
 - **testee phù hợp** khi bạn muốn một bài kiểm tra kiến thức được viết từ chính mô tả công việc của mình, kể cả câu hỏi đọc code cho vị trí kỹ thuật, và bạn muốn trả tiền theo ứng viên hơn là mua gói.
 - **Cả hai đều phù hợp** khi bạn muốn một bài kiểm tra kiến thức theo vị trí cho mọi ứng viên và các bài kiểm tra rộng hơn cho những người vượt qua.
 

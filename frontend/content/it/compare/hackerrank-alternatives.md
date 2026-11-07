@@ -54,7 +54,7 @@ Il catalogo di TestGorilla comprende test su competenze specifiche del ruolo, pr
 
 I piani di CodeSignal coprono valutazioni tecniche e intervistatori IA per prodotto, design e ingegneria. I piani superiori aggiungono valutazioni per i ruoli go-to-market e intervistatori IA per vendite, customer success e marketing ([pagina prezzi, a novembre 2026](https://codesignal.com/pricing/)).
 
-- **Meglio di testee per:** team che vogliono valutazioni di coding pratico e colloqui condotti dall'IA nello stesso strumento.
+- **Meglio di testee per:** team che vogliono valutazioni di coding pratico e conversazioni condotte dall'IA nello stesso strumento.
 
 ### Bryq: psicometria
 

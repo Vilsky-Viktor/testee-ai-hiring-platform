@@ -50,7 +50,7 @@ testee maakt van een functieomschrijving een interview over vaardigheden, met ti
 
 De plannen van CodeSignal omvatten technische assessments en AI-interviewers voor product-, design- en engineeringfuncties, met AI-proctoring en ID-verificatie. Duurdere plannen voegen go-to-marketassessments en AI-interviewers toe voor sales, customer success en marketing, plus ATS-koppelingen ([prijspagina van CodeSignal, per november 2026](https://codesignal.com/pricing/)).
 
-- **Beter dan testee voor:** programmeerassessments, door AI geleide interviews.
+- **Beter dan testee voor:** programmeerassessments, door AI geleide gesprekken.
 - **Samen:** testee als kennisscreening voor elke sollicitant, CodeSignal voor de programmeerfase.
 
 ### HackerRank
@@ -83,7 +83,7 @@ TestGorilla past mogelijk beter als:
 
 - Je meerdere soorten tests samen gebruikt: functievaardigheden, cognitief, persoonlijkheid, taal.
 - Je een gratis plan wilt voor heel licht gebruik ([prijspagina](https://www.testgorilla.com/pricing/)).
-- Je videovragen, door AI geleide interviews, functiesimulaties of webcamfoto's nodig hebt.
+- Je videovragen, door AI geleide gesprekken, functiesimulaties of webcamfoto's nodig hebt.
 - Je constant met een hoog volume werft, waarbij een plan per kandidaat minder kan kosten.
 
 En het kan nog steeds naast testee staan: eerst een functiespecifieke kennisscreening, later de bredere tests van TestGorilla. Lees voor een directe vergelijking [testee en TestGorilla](/compare/testgorilla).

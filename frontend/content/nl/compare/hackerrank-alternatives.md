@@ -54,7 +54,7 @@ De bibliotheek van TestGorilla omvat functiespecifieke vaardigheden, programmere
 
 De plannen van CodeSignal omvatten technische assessments en AI-interviewers voor product, design en engineering. Duurdere plannen voegen go-to-marketassessments en AI-interviewers toe voor sales, customer success en marketing ([prijspagina, per november 2026](https://codesignal.com/pricing/)).
 
-- **Beter dan testee voor:** teams die programmeerassessments en door AI geleide interviews in dezelfde tool willen.
+- **Beter dan testee voor:** teams die programmeerassessments en door AI geleide gesprekken in dezelfde tool willen.
 
 ### Bryq: psychometrie
 

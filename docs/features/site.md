@@ -88,7 +88,7 @@ It's in every language, in the sitemap with hreflang, and has its page guide.
 
 Addresses use the template's slug (see [Templates and practice](templates-and-practice.md#slugs)); an old address by id moves there for good.
 
-A role page, like the template's free practice page, is in English and in its template's language only. For a German template, that's `/de/tests/<slug>` and `/de/practice/<slug>`, with hreflang between the two. Its address in any other language isn't found.
+A role page, like the template's free practice page, is in English and in its template's language only. For a German template, that's `/de/tests/<slug>` and `/de/practice/<slug>`, with hreflang between the two. Its address in any other language isn't found. The free practice page stays out of search results and the sitemap: it's a thin copy of its role page.
 
 ## Articles
 
@@ -247,7 +247,7 @@ Every public page has its title, description, canonical address and link-preview
 
 **Structured data:** organization (with its postal address in parts), product and price range (no rating until real reviews exist), founder, articles (with their picture and language), the developer docs as a technical article in English, breadcrumbs (role and practice pages, the API docs), FAQ (left out when there are no questions).
 
-**Sitemap:** every language version, article, and the pages of each indexable template, dated by the template's last change; each language of an article by its own file's `updated`. Its calls to the API give up after 5 seconds. The news page is dated by its newest post, and the privacy policy, terms and DPA by their last update.
+**Sitemap:** every language version, article, and the role page of each indexable template, dated by the template's last change; each language of an article by its own file's `updated`. Its calls to the API give up after 5 seconds. The news page is dated by its newest post, and the privacy policy, terms and DPA by their last update.
 
 **Indexing:**
 

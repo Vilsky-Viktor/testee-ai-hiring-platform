@@ -13,7 +13,7 @@ Bu sayfa ikisinin nasıl farklılaştığını, hangisinin nerede daha uygun old
 
 ## Kısaca
 
-- **TestGorilla uygundur:** bilişsel yetenek, kişilik, dil ya da uygulamalı kodlama testlerine, video sorularına, yapay zekâ mülakatlarına veya web kamerası fotoğraflarına ihtiyacınız varsa.
+- **TestGorilla uygundur:** bilişsel yetenek, kişilik, dil ya da uygulamalı kodlama testlerine, video sorularına, yapay zekânın yönettiği sohbetlere veya web kamerası fotoğraflarına ihtiyacınız varsa.
 - **testee uygundur:** teknik pozisyonlar için kod okuma soruları da dahil, tam olarak sizin iş tanımınızdan yazılmış bir bilgi testi istiyorsanız ve bir plan yerine aday başına ödemeyi tercih ediyorsanız.
 - **İkisi birlikte uygundur:** her başvuru sahibi için pozisyona özel bir bilgi elemesi, bunu geçenler için ise daha kapsamlı testler istiyorsanız.
 

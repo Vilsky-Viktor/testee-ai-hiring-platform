@@ -50,7 +50,7 @@ testee zamienia opis stanowiska w rozmowę sprawdzającą umiejętności z pytan
 
 Plany CodeSignal obejmują oceny techniczne i rozmówców AI dla stanowisk produktowych, projektowych i inżynierskich, z nadzorem AI (proctoring) i weryfikacją tożsamości. Wyższe plany dodają oceny i rozmówców AI dla stanowisk go-to-market, takich jak sprzedaż, customer success i marketing, a także integracje z ATS ([strona z cenami CodeSignal, stan na listopad 2026](https://codesignal.com/pricing/)).
 
-- **Lepszy niż testee do:** praktycznej oceny kodowania, rozmów prowadzonych przez AI.
+- **Lepszy niż testee do:** praktycznej oceny kodowania, swobodnych rozmów prowadzonych przez AI.
 - **Razem:** testee jako sprawdzenie wiedzy każdego kandydata, CodeSignal na etapie kodowania.
 
 ### HackerRank
@@ -83,7 +83,7 @@ TestGorilla może być lepszym wyborem, jeśli:
 
 - Używasz kilku rodzajów testów razem: umiejętności dla stanowisk, poznawczych, osobowości, językowych.
 - Chcesz planu bezpłatnego do bardzo sporadycznego użytku ([strona z cenami](https://www.testgorilla.com/pricing/)).
-- Potrzebujesz pytań wideo, rozmów prowadzonych przez AI, symulacji stanowiska lub zdjęć z kamery internetowej.
+- Potrzebujesz pytań wideo, swobodnych rozmów prowadzonych przez AI, symulacji stanowiska lub zdjęć z kamery internetowej.
 - Rekrutujesz regularnie i na dużą skalę, a plan może kosztować mniej za kandydata.
 
 A przy tym nadal może działać obok testee: najpierw sprawdzenie wiedzy pod kątem stanowiska, później szersze testy TestGorilla. Bezpośrednie porównanie znajdziesz w artykule [testee i TestGorilla](/compare/testgorilla).

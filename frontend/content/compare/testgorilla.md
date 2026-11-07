@@ -13,7 +13,7 @@ This page explains how they differ, where each one fits better, and how to combi
 
 ## The short version
 
-- **TestGorilla fits** when you need cognitive ability, personality, language or hands-on coding tests, video questions, AI-led interviews or webcam snapshots.
+- **TestGorilla fits** when you need cognitive ability, personality, language or hands-on coding tests, video questions, AI-led conversations or webcam snapshots.
 - **testee fits** when you want a knowledge test written from your exact job description, including code-reading questions for technical roles, and you'd rather pay per candidate than for a plan.
 - **Both fit** when you want a role-specific knowledge screen for every applicant and broader tests for the people who pass it.
 

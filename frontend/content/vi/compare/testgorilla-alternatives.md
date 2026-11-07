@@ -50,7 +50,7 @@ testee biến mô tả công việc thành một buổi phỏng vấn kỹ năng
 
 Các gói của CodeSignal bao gồm đánh giá kỹ thuật và người phỏng vấn AI cho các vị trí sản phẩm, thiết kế và kỹ thuật, với giám sát thi bằng AI và xác minh danh tính. Các gói cao hơn có thêm đánh giá go-to-market và người phỏng vấn AI cho kinh doanh, chăm sóc khách hàng và marketing, cùng tích hợp ATS ([trang bảng giá CodeSignal, tính đến tháng 11/2026](https://codesignal.com/pricing/)).
 
-- **Tốt hơn testee khi:** cần đánh giá lập trình thực hành, phỏng vấn do AI dẫn dắt.
+- **Tốt hơn testee khi:** cần đánh giá lập trình thực hành, hội thoại do AI dẫn dắt.
 - **Kết hợp:** testee làm bài kiểm tra kiến thức cho mọi ứng viên, CodeSignal cho giai đoạn lập trình.
 
 ### HackerRank
@@ -83,7 +83,7 @@ TestGorilla có thể hợp với bạn hơn nếu:
 
 - Bạn dùng nhiều loại bài kiểm tra cùng lúc: kỹ năng theo vị trí, nhận thức, tính cách, ngoại ngữ.
 - Bạn muốn một gói miễn phí cho nhu cầu rất ít ([trang bảng giá](https://www.testgorilla.com/pricing/)).
-- Bạn cần câu hỏi video, phỏng vấn do AI dẫn dắt, mô phỏng công việc hoặc chụp ảnh qua webcam.
+- Bạn cần câu hỏi video, hội thoại do AI dẫn dắt, mô phỏng công việc hoặc chụp ảnh qua webcam.
 - Bạn tuyển dụng đều đặn với số lượng lớn, khi một gói có thể rẻ hơn tính theo mỗi ứng viên.
 
 Và TestGorilla vẫn có thể dùng song song với testee: bài kiểm tra kiến thức theo vị trí trước, các bài kiểm tra rộng hơn của TestGorilla sau. Để so sánh trực tiếp, đọc [testee và TestGorilla](/compare/testgorilla).

@@ -13,7 +13,7 @@ Questa pagina spiega come differiscono, dove ciascuno è più adatto e come comb
 
 ## In breve
 
-- **TestGorilla è adatto** quando ti servono test di abilità cognitive, personalità, lingua o coding pratico, domande video, colloqui condotti dall'IA o istantanee dalla webcam.
+- **TestGorilla è adatto** quando ti servono test di abilità cognitive, personalità, lingua o coding pratico, domande video, conversazioni condotte dall'IA o istantanee dalla webcam.
 - **testee è adatto** quando vuoi un test di conoscenze scritto a partire dalla tua descrizione del ruolo esatta, con domande di lettura del codice per i ruoli tecnici, e preferisci pagare per candidato anziché per un piano.
 - **Entrambi sono adatti** quando vuoi una verifica delle conoscenze specifica per il ruolo per ogni candidato e test più ampi per chi la supera.
 

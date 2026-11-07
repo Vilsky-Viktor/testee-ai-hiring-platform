@@ -13,7 +13,7 @@ Esta página explica en qué se diferencian, dónde encaja mejor cada uno y cóm
 
 ## La versión corta
 
-- **TestGorilla encaja** cuando necesitas pruebas de aptitud cognitiva, de personalidad, de idiomas o de programación práctica, preguntas en video, entrevistas dirigidas por IA o capturas de webcam.
+- **TestGorilla encaja** cuando necesitas pruebas de aptitud cognitiva, de personalidad, de idiomas o de programación práctica, preguntas en video, conversaciones dirigidas por IA o capturas de webcam.
 - **testee encaja** cuando quieres una prueba de conocimientos redactada a partir de tu descripción del puesto exacta, con preguntas de lectura de código para puestos técnicos, y prefieres pagar por candidato en lugar de por un plan.
 - **Ambos encajan** cuando quieres un filtro de conocimientos específico del puesto para cada candidato y pruebas más amplias para quienes lo superan.
 

@@ -54,7 +54,7 @@ La bibliothèque de TestGorilla couvre les compétences propres aux postes, la p
 
 Les offres de CodeSignal couvrent les évaluations techniques et les recruteurs IA pour le produit, le design et l'ingénierie. Les offres supérieures ajoutent des évaluations go-to-market et des recruteurs IA pour la vente, le customer success et le marketing ([page tarifs, en novembre 2026](https://codesignal.com/pricing/)).
 
-- **Mieux que testee pour :** les équipes qui veulent une évaluation de code en pratique et des entretiens menés par IA dans le même outil.
+- **Mieux que testee pour :** les équipes qui veulent une évaluation de code en pratique et des conversations menées par IA dans le même outil.
 
 ### Bryq : la psychométrie
 

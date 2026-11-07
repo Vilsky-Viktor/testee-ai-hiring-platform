@@ -13,7 +13,7 @@ Diese Seite erklärt, wie sie sich unterscheiden, wofür sich welches Tool besse
 
 ## Die Kurzfassung
 
-- **TestGorilla passt,** wenn du Tests zu kognitiven Fähigkeiten, Persönlichkeit, Sprache oder praktischem Programmieren, Videofragen, KI-geführte Interviews oder Webcam-Schnappschüsse brauchst.
+- **TestGorilla passt,** wenn du Tests zu kognitiven Fähigkeiten, Persönlichkeit, Sprache oder praktischem Programmieren, Videofragen, KI-geführte Gespräche oder Webcam-Schnappschüsse brauchst.
 - **testee passt,** wenn du einen Wissenstest willst, der aus genau deiner Stellenbeschreibung geschrieben ist, einschließlich Fragen zum Lesen von Code für technische Stellen, und du lieber pro Kandidat zahlst als für ein Abo.
 - **Beide passen,** wenn du einen stellenspezifischen Wissenstest für alle Bewerber und breitere Tests für diejenigen willst, die ihn bestehen.
 

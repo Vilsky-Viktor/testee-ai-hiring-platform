@@ -13,7 +13,7 @@ Ta strona wyjaśnia, czym się różnią, gdzie każde z nich sprawdza się lepi
 
 ## W skrócie
 
-- **TestGorilla pasuje**, gdy potrzebujesz testów zdolności poznawczych, osobowości, językowych lub praktycznego kodowania, pytań wideo, rozmów prowadzonych przez AI albo zdjęć z kamery internetowej.
+- **TestGorilla pasuje**, gdy potrzebujesz testów zdolności poznawczych, osobowości, językowych lub praktycznego kodowania, pytań wideo, swobodnych rozmów prowadzonych przez AI albo zdjęć z kamery internetowej.
 - **testee pasuje**, gdy chcesz testu wiedzy napisanego na podstawie dokładnie Twojego opisu stanowiska, w tym pytań o czytanie kodu na stanowiska techniczne, i wolisz płacić za kandydata niż za plan.
 - **Oba pasują**, gdy chcesz sprawdzić wiedzę każdego kandydata pod kątem konkretnego stanowiska, a szersze testy zostawić dla osób, które przejdą ten etap.
 

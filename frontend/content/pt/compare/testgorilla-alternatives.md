@@ -50,7 +50,7 @@ A testee transforma uma descrição da vaga em uma entrevista de habilidades de 
 
 Os planos do CodeSignal cobrem avaliações técnicas e entrevistadores de IA para vagas de produto, design e engenharia, com monitoramento (proctoring) por IA e verificação de identidade. Os planos mais altos acrescentam avaliações para vagas comerciais (go-to-market) e entrevistadores de IA para vendas, customer success e marketing, além de integrações com ATS ([página de preços do CodeSignal, em novembro de 2026](https://codesignal.com/pricing/)).
 
-- **Melhor que a testee para:** avaliação de programação prática, entrevistas conduzidas por IA.
+- **Melhor que a testee para:** avaliação de programação prática, conversas conduzidas por IA.
 - **Juntas:** a testee como triagem de conhecimentos para todos os candidatos, o CodeSignal para a etapa de programação.
 
 ### HackerRank
@@ -83,7 +83,7 @@ A TestGorilla pode ser melhor para você se:
 
 - Você usa vários tipos de teste juntos: habilidades da função, cognitivos, personalidade, idiomas.
 - Você quer um plano gratuito para uso bem leve ([página de preços](https://www.testgorilla.com/pricing/)).
-- Você precisa de perguntas em vídeo, entrevistas conduzidas por IA, simulações da função ou fotos pela webcam.
+- Você precisa de perguntas em vídeo, conversas conduzidas por IA, simulações da função ou fotos pela webcam.
 - Você contrata em volume alto e constante, em que um plano pode custar menos por candidato.
 
 E ela ainda pode funcionar junto com a testee: primeiro uma triagem de conhecimentos específica da vaga, depois os testes mais amplos da TestGorilla. Para uma comparação direta, leia [testee e TestGorilla](/compare/testgorilla).

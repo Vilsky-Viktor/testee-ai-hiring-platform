@@ -54,7 +54,7 @@ TestGorilla's library spans role-specific skills, programming, software skills, 
 
 CodeSignal's plans cover technical assessments and AI interviewers for product, design and engineering. Higher plans add go-to-market assessments and AI interviewers for sales, customer success and marketing ([pricing page, as of November 2026](https://codesignal.com/pricing/)).
 
-- **Better than testee for:** teams that want hands-on coding assessment and AI-led interviews in the same tool.
+- **Better than testee for:** teams that want hands-on coding assessment and AI-led conversations in the same tool.
 
 ### Bryq: psychometrics
 

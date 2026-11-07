@@ -50,7 +50,7 @@ testee turns a job description into a timed multiple-choice skills interview. Yo
 
 CodeSignal's plans cover technical assessments and AI interviewers for product, design and engineering roles, with AI proctoring and ID verification. Higher plans add go-to-market assessments and AI interviewers for sales, customer success and marketing, plus ATS integrations ([CodeSignal pricing page, as of November 2026](https://codesignal.com/pricing/)).
 
-- **Better than testee for:** hands-on coding assessment, AI-led interviews.
+- **Better than testee for:** hands-on coding assessment, AI-led conversations.
 - **Together:** testee as a knowledge screen for every applicant, CodeSignal for the coding stage.
 
 ### HackerRank
@@ -83,7 +83,7 @@ TestGorilla may suit you better if:
 
 - You use several test types together: role skills, cognitive, personality, language.
 - You want a free plan for very light use ([pricing page](https://www.testgorilla.com/pricing/)).
-- You need video questions, AI-led interviews, job simulations or webcam snapshots.
+- You need video questions, AI-led conversations, job simulations or webcam snapshots.
 - You hire at steady, high volume, where a plan can cost less per candidate.
 
 And it can still sit next to testee: a role-specific knowledge screen first, TestGorilla's broader tests later. For a one-to-one look, read [testee and TestGorilla](/compare/testgorilla).

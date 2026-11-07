@@ -50,7 +50,7 @@ testee transforme une fiche de poste en entretien de compétences chronométré 
 
 Les offres de CodeSignal couvrent les évaluations techniques et les recruteurs IA pour les postes produit, design et ingénierie, avec surveillance par IA et vérification d'identité. Les offres supérieures ajoutent des évaluations go-to-market et des recruteurs IA pour la vente, le customer success et le marketing, ainsi que des intégrations ATS ([page tarifs de CodeSignal, en novembre 2026](https://codesignal.com/pricing/)).
 
-- **Mieux que testee pour :** l'évaluation de code en pratique, les entretiens menés par IA.
+- **Mieux que testee pour :** l'évaluation de code en pratique, les conversations menées par IA.
 - **Ensemble :** testee comme présélection des connaissances pour chaque candidat, CodeSignal pour l'étape de code.
 
 ### HackerRank
@@ -83,7 +83,7 @@ TestGorilla peut mieux vous convenir si :
 
 - Vous utilisez plusieurs types de tests ensemble : compétences métier, aptitudes cognitives, personnalité, langues.
 - Vous voulez une offre gratuite pour un usage très léger ([page tarifs](https://www.testgorilla.com/pricing/)).
-- Vous avez besoin de questions vidéo, d'entretiens menés par IA, de simulations de poste ou de captures webcam.
+- Vous avez besoin de questions vidéo, d'conversations menées par IA, de simulations de poste ou de captures webcam.
 - Vous recrutez en volume élevé et régulier, où une offre peut coûter moins cher par candidat.
 
 Et il peut toujours fonctionner avec testee : d'abord une présélection des connaissances propre au poste, puis les tests plus larges de TestGorilla. Pour une comparaison directe, lisez [testee et TestGorilla](/compare/testgorilla).

@@ -13,7 +13,7 @@ Halaman ini menjelaskan perbedaannya, kapan masing-masing lebih cocok, dan cara 
 
 ## Versi singkatnya
 
-- **TestGorilla cocok** saat kamu butuh tes kemampuan kognitif, kepribadian, bahasa, atau coding langsung, pertanyaan video, wawancara yang dipandu AI, atau snapshot webcam.
+- **TestGorilla cocok** saat kamu butuh tes kemampuan kognitif, kepribadian, bahasa, atau coding langsung, pertanyaan video, percakapan yang dipandu AI, atau snapshot webcam.
 - **testee cocok** saat kamu ingin tes pengetahuan yang dibuat dari deskripsi pekerjaanmu sendiri, termasuk soal membaca kode untuk posisi teknis, dan kamu lebih suka bayar per kandidat daripada berlangganan paket.
 - **Keduanya cocok** saat kamu ingin penyaringan pengetahuan khusus posisi untuk setiap pelamar, dan tes yang lebih luas bagi yang lolos.
 

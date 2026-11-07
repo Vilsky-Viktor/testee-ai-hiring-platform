@@ -50,7 +50,7 @@ testee macht aus einer Stellenbeschreibung ein zeitlich begrenztes Multiple-Choi
 
 Die Tarife von CodeSignal decken technische Assessments und KI-Interviewer für Stellen in Produkt, Design und Entwicklung ab, mit KI-Proctoring und Identitätsprüfung. Höhere Tarife ergänzen Go-to-Market-Assessments und KI-Interviewer für Vertrieb, Customer Success und Marketing sowie ATS-Integrationen ([Preisseite von CodeSignal, Stand November 2026](https://codesignal.com/pricing/)).
 
-- **Besser als testee für:** praktische Programmier-Assessments, KI-geführte Interviews.
+- **Besser als testee für:** praktische Programmier-Assessments, KI-geführte Gespräche.
 - **Zusammen:** testee als Wissenstest für alle Bewerber, CodeSignal für die Programmierphase.
 
 ### HackerRank
@@ -83,7 +83,7 @@ TestGorilla passt womöglich besser zu dir, wenn:
 
 - du mehrere Testarten zusammen einsetzt: Fachkenntnisse, kognitive Fähigkeiten, Persönlichkeit, Sprache.
 - du einen Gratis-Tarif für sehr geringe Nutzung willst ([Preisseite](https://www.testgorilla.com/pricing/)).
-- du Videofragen, KI-geführte Interviews, Jobsimulationen oder Webcam-Schnappschüsse brauchst.
+- du Videofragen, KI-geführte Gespräche, Jobsimulationen oder Webcam-Schnappschüsse brauchst.
 - du regelmäßig in hohem Volumen einstellst, sodass ein Tarif pro Kandidat günstiger sein kann.
 
 Und es kann trotzdem neben testee stehen: zuerst ein stellenspezifischer Wissenstest, später die breiteren Tests von TestGorilla. Einen direkten Vergleich findest du unter [testee und TestGorilla](/compare/testgorilla).

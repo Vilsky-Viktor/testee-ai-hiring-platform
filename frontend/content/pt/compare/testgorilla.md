@@ -13,7 +13,7 @@ Esta página explica como elas diferem, onde cada uma se encaixa melhor e como c
 
 ## A versão curta
 
-- **A TestGorilla se encaixa** quando você precisa de testes de habilidade cognitiva, personalidade, idiomas ou programação prática, perguntas em vídeo, entrevistas conduzidas por IA ou fotos pela webcam.
+- **A TestGorilla se encaixa** quando você precisa de testes de habilidade cognitiva, personalidade, idiomas ou programação prática, perguntas em vídeo, conversas conduzidas por IA ou fotos pela webcam.
 - **A testee se encaixa** quando você quer um teste de conhecimentos escrito a partir da sua descrição da vaga exata, incluindo perguntas de leitura de código para vagas técnicas, e prefere pagar por candidato em vez de por um plano.
 - **As duas se encaixam** quando você quer uma triagem de conhecimentos específica da vaga para todos os candidatos e testes mais amplos para quem passar nela.
 

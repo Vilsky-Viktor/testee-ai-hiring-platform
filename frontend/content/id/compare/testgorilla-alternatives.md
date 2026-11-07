@@ -50,7 +50,7 @@ testee mengubah deskripsi pekerjaan menjadi wawancara keterampilan pilihan ganda
 
 Paket CodeSignal mencakup asesmen teknis dan pewawancara AI untuk posisi product, design, dan engineering, dengan proctoring AI dan verifikasi identitas. Paket yang lebih tinggi menambahkan asesmen go-to-market dan pewawancara AI untuk sales, customer success, dan marketing, serta integrasi ATS ([halaman harga CodeSignal, per November 2026](https://codesignal.com/pricing/)).
 
-- **Lebih baik dari testee untuk:** asesmen coding langsung, wawancara yang dipandu AI.
+- **Lebih baik dari testee untuk:** asesmen coding langsung, percakapan yang dipandu AI.
 - **Bersama:** testee sebagai penyaringan pengetahuan untuk semua pelamar, CodeSignal untuk tahap coding.
 
 ### HackerRank
@@ -83,7 +83,7 @@ TestGorilla mungkin lebih cocok untukmu jika:
 
 - Kamu memakai beberapa jenis tes sekaligus: keterampilan khusus posisi, kognitif, kepribadian, bahasa.
 - Kamu ingin paket gratis untuk pemakaian yang sangat ringan ([halaman harga](https://www.testgorilla.com/pricing/)).
-- Kamu butuh pertanyaan video, wawancara yang dipandu AI, simulasi kerja, atau snapshot webcam.
+- Kamu butuh pertanyaan video, percakapan yang dipandu AI, simulasi kerja, atau snapshot webcam.
 - Kamu merekrut secara rutin dalam volume tinggi, sehingga paket bisa lebih murah per kandidat.
 
 Dan TestGorilla tetap bisa dipakai berdampingan dengan testee: penyaringan pengetahuan khusus posisi lebih dulu, tes TestGorilla yang lebih luas belakangan. Untuk perbandingan satu lawan satu, baca [testee dan TestGorilla](/compare/testgorilla).

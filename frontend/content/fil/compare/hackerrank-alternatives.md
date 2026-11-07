@@ -54,7 +54,7 @@ Saklaw ng library ng TestGorilla ang role-specific skills, programming, software
 
 Sinasaklaw ng mga plan ng CodeSignal ang technical assessments at AI interviewers para sa product, design at engineering. Nagdadagdag ang mas matataas na plan ng go-to-market assessments at AI interviewers para sa sales, customer success at marketing ([pricing page, noong Nobyembre 2026](https://codesignal.com/pricing/)).
 
-- **Mas mahusay kaysa sa testee para sa:** mga team na gusto ng hands-on coding assessment at AI-led interviews sa iisang tool.
+- **Mas mahusay kaysa sa testee para sa:** mga team na gusto ng hands-on coding assessment at AI-led conversations sa iisang tool.
 
 ### Bryq: psychometrics
 
