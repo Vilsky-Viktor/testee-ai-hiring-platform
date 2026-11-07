@@ -122,6 +122,13 @@ export async function signInAsGuest(token: string) {
     firebaseAuth(),
     import("firebase/auth"),
   ])
+
+  // On a shared computer the guest stays only as long as the tab, and a reload mid-interview
+  // keeps them; in a frame their sign-in is in memory already (lib/firebase.ts).
+  if (window.top === window.self) {
+    await firebase.setPersistence(auth, firebase.browserSessionPersistence)
+  }
+
   await firebase.signInWithCustomToken(auth, token)
 }
 
