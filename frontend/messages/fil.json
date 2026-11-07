@@ -3127,7 +3127,7 @@
       "chats": "Mga chat sa assistant: 90 araw pagkatapos ng huling mensahe ng mga ito.",
       "aiRecords": "Mga record ng mga AI call: 30 araw.",
       "errors": "Mga error report: hanggang 90 araw.",
-      "backups": "Mga backup ng database: 14 na araw, saka pinapalitan; pagsapit niyon, wala na sa mga ito ang anumang binura.",
+      "backups": "Mga backup ng database at ang araw-araw na backup ng mga sign-in account: 14 na araw, saka pinapalitan o binubura; pagsapit niyon, wala na sa mga ito ang anumang binura.",
       "statistics": "Mga usage statistic, gamit ang mga code sa halip na mga account id: 25 buwan.",
       "purchases": "Mga record ng pagbili: 7 taon, ayon sa hinihingi ng batas sa accounting ng Estonia."
     },

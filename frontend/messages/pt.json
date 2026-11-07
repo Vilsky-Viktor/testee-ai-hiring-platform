@@ -3131,7 +3131,7 @@
       "chats": "Conversas com a assistente: 90 dias após a última mensagem.",
       "aiRecords": "Registros de chamadas de IA: 30 dias.",
       "errors": "Relatórios de erros: até 90 dias.",
-      "backups": "Backups do banco de dados: 14 dias, depois sobrescritos; até lá, tudo o que foi excluído já saiu deles.",
+      "backups": "Backups do banco de dados e o backup diário das contas de acesso: 14 dias, depois sobrescritos ou excluídos; até lá, tudo o que foi excluído já saiu deles.",
       "statistics": "Estatísticas de uso, com códigos em vez de IDs de conta: 25 meses.",
       "purchases": "Registros de compras: 7 anos, como exige a lei contábil da Estônia."
     },

@@ -3127,7 +3127,7 @@
       "chats": "Chats with the assistant: 90 days after their last message.",
       "aiRecords": "Records of AI calls: 30 days.",
       "errors": "Error reports: up to 90 days.",
-      "backups": "Database backups: 14 days, then overwritten; anything deleted is gone from them by then.",
+      "backups": "Database backups and the daily backup of sign-in accounts: 14 days, then overwritten or deleted; anything deleted is gone from them by then.",
       "statistics": "Usage statistics, under codes instead of account ids: 25 months.",
       "purchases": "Purchase records: 7 years, as Estonian accounting law requires."
     },

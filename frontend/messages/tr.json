@@ -3131,7 +3131,7 @@
       "chats": "Asistanla sohbetler: son mesajdan sonra 90 gün.",
       "aiRecords": "Yapay zekâ çağrılarının kayıtları: 30 gün.",
       "errors": "Hata raporları: en fazla 90 gün.",
-      "backups": "Veritabanı yedekleri: 14 gün, sonra üzerine yazılır; silinen her şey o zamana kadar yedeklerden de çıkar.",
+      "backups": "Veritabanı yedekleri ve giriş hesaplarının günlük yedeği: 14 gün, sonra üzerine yazılır veya silinir; silinen her şey o zamana kadar yedeklerden de çıkar.",
       "statistics": "Hesap kimlikleri yerine kodlarla tutulan kullanım istatistikleri: 25 ay.",
       "purchases": "Satın alma kayıtları: Estonya muhasebe yasasının gerektirdiği gibi 7 yıl."
     },

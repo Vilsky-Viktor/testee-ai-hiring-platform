@@ -3131,7 +3131,7 @@
       "chats": "Cuộc trò chuyện với trợ lý: 90 ngày sau tin nhắn cuối cùng.",
       "aiRecords": "Bản ghi các lệnh gọi AI: 30 ngày.",
       "errors": "Báo cáo lỗi: tối đa 90 ngày.",
-      "backups": "Bản sao lưu cơ sở dữ liệu: 14 ngày, sau đó bị ghi đè; đến lúc đó, mọi thứ đã xóa cũng không còn trong bản sao lưu.",
+      "backups": "Bản sao lưu cơ sở dữ liệu và bản sao lưu hằng ngày của tài khoản đăng nhập: 14 ngày, sau đó bị ghi đè hoặc xóa; đến lúc đó, mọi thứ đã xóa cũng không còn trong bản sao lưu.",
       "statistics": "Thống kê sử dụng, dùng mã thay cho ID tài khoản: 25 tháng.",
       "purchases": "Hồ sơ mua hàng: 7 năm, theo yêu cầu của luật kế toán Estonia."
     },

@@ -3127,7 +3127,7 @@
       "chats": "Les conversations avec l'assistant : 90 jours après leur dernier message.",
       "aiRecords": "Les enregistrements des appels à l'IA : 30 jours.",
       "errors": "Les rapports d'erreurs : jusqu'à 90 jours.",
-      "backups": "Les sauvegardes de la base de données : 14 jours, puis elles sont écrasées ; tout ce qui a été supprimé en a disparu d'ici là.",
+      "backups": "Les sauvegardes de la base de données et la sauvegarde quotidienne des comptes de connexion : 14 jours, puis elles sont écrasées ou supprimées ; tout ce qui a été supprimé en a disparu d'ici là.",
       "statistics": "Les statistiques d'utilisation, sous des codes plutôt que des identifiants de compte : 25 mois.",
       "purchases": "Les justificatifs d'achat : 7 ans, comme l'exige le droit comptable estonien."
     },

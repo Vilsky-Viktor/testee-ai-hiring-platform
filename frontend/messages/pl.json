@@ -3127,7 +3127,7 @@
       "chats": "Czaty z asystentką: 90 dni od ostatniej wiadomości.",
       "aiRecords": "Zapisy wywołań AI: 30 dni.",
       "errors": "Raporty błędów: do 90 dni.",
-      "backups": "Kopie zapasowe bazy danych: 14 dni, potem nadpisywane; do tego czasu znika z nich wszystko, co zostało usunięte.",
+      "backups": "Kopie zapasowe bazy danych i codzienna kopia zapasowa kont logowania: 14 dni, potem nadpisywane lub usuwane; do tego czasu znika z nich wszystko, co zostało usunięte.",
       "statistics": "Statystyki użycia, z kodami zamiast identyfikatorów kont: 25 miesięcy.",
       "purchases": "Dokumentacja zakupów: 7 lat, zgodnie z estońską ustawą o rachunkowości."
     },

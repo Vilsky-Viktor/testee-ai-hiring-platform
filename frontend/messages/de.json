@@ -3127,7 +3127,7 @@
       "chats": "Chats mit dem Assistenten: 90 Tage nach ihrer letzten Nachricht.",
       "aiRecords": "Aufzeichnungen über KI-Aufrufe: 30 Tage.",
       "errors": "Fehlerberichte: bis zu 90 Tage.",
-      "backups": "Datenbanksicherungen: 14 Tage, danach überschrieben; was gelöscht wurde, ist bis dahin auch aus ihnen verschwunden.",
+      "backups": "Datenbanksicherungen und die tägliche Sicherung der Anmeldekonten: 14 Tage, danach überschrieben oder gelöscht; was gelöscht wurde, ist bis dahin auch aus ihnen verschwunden.",
       "statistics": "Nutzungsstatistiken, unter Codes statt Konto-IDs: 25 Monate.",
       "purchases": "Kaufbelege: 7 Jahre, wie es das estnische Buchführungsrecht verlangt."
     },

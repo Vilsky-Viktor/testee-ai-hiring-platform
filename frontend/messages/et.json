@@ -3127,7 +3127,7 @@
       "chats": "Vestlused assistendiga: 90 päeva pärast viimast sõnumit.",
       "aiRecords": "Tehisintellekti päringute kirjed: 30 päeva.",
       "errors": "Vearaportid: kuni 90 päeva.",
-      "backups": "Andmebaasi varukoopiad: 14 päeva, seejärel kirjutatakse üle; selleks ajaks on kõik kustutatu ka neist kadunud.",
+      "backups": "Andmebaasi varukoopiad ja sisselogimiskontode igapäevane varukoopia: 14 päeva, seejärel kirjutatakse üle või kustutatakse; selleks ajaks on kõik kustutatu ka neist kadunud.",
       "statistics": "Kasutusstatistika, kontotunnuste asemel koodidega: 25 kuud.",
       "purchases": "Ostudokumendid: 7 aastat, nagu nõuab Eesti raamatupidamisseadus."
     },

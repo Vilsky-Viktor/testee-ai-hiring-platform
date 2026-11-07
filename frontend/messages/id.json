@@ -3127,7 +3127,7 @@
       "chats": "Chat dengan asisten: 90 hari setelah pesan terakhirnya.",
       "aiRecords": "Catatan panggilan AI: 30 hari.",
       "errors": "Laporan error: hingga 90 hari.",
-      "backups": "Cadangan database: 14 hari, lalu ditimpa; apa pun yang dihapus sudah hilang darinya pada saat itu.",
+      "backups": "Cadangan database dan cadangan harian akun masuk: 14 hari, lalu ditimpa atau dihapus; apa pun yang dihapus sudah hilang darinya pada saat itu.",
       "statistics": "Statistik penggunaan, dengan kode sebagai pengganti ID akun: 25 bulan.",
       "purchases": "Catatan pembelian: 7 tahun, sesuai ketentuan hukum akuntansi Estonia."
     },

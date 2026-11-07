@@ -3127,7 +3127,7 @@
       "chats": "Le chat con l'assistente: 90 giorni dall'ultimo messaggio.",
       "aiRecords": "I registri delle chiamate all'IA: 30 giorni.",
       "errors": "Le segnalazioni di errore: fino a 90 giorni.",
-      "backups": "I backup del database: 14 giorni, poi sovrascritti; entro allora tutto ciò che è stato eliminato è sparito anche da lì.",
+      "backups": "I backup del database e il backup giornaliero degli account di accesso: 14 giorni, poi sovrascritti o eliminati; entro allora tutto ciò che è stato eliminato è sparito anche da lì.",
       "statistics": "Le statistiche di utilizzo, con codici al posto degli ID degli account: 25 mesi.",
       "purchases": "I documenti di acquisto: 7 anni, come richiede la legge contabile estone."
     },

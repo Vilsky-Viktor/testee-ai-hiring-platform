@@ -3127,7 +3127,7 @@
       "chats": "Los chats con el asistente: 90 días después de su último mensaje.",
       "aiRecords": "Los registros de llamadas a la IA: 30 días.",
       "errors": "Los informes de errores: hasta 90 días.",
-      "backups": "Las copias de seguridad de la base de datos: 14 días, y luego se sobrescriben; para entonces, todo lo eliminado ya ha desaparecido de ellas.",
+      "backups": "Las copias de seguridad de la base de datos y la copia de seguridad diaria de las cuentas de inicio de sesión: 14 días, y luego se sobrescriben o se eliminan; para entonces, todo lo eliminado ya ha desaparecido de ellas.",
       "statistics": "Las estadísticas de uso, con códigos en lugar de ids de cuenta: 25 meses.",
       "purchases": "Los registros de compras: 7 años, como exige la ley contable estonia."
     },

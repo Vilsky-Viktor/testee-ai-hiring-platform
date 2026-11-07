@@ -3127,7 +3127,7 @@
       "chats": "Chats met de assistent: 90 dagen na het laatste bericht.",
       "aiRecords": "Registraties van AI-aanroepen: 30 dagen.",
       "errors": "Foutrapporten: hooguit 90 dagen.",
-      "backups": "Databaseback-ups: 14 dagen, daarna overschreven; alles wat verwijderd is, is er dan uit verdwenen.",
+      "backups": "Databaseback-ups en de dagelijkse back-up van inlogaccounts: 14 dagen, daarna overschreven of verwijderd; alles wat verwijderd is, is er dan uit verdwenen.",
       "statistics": "Gebruiksstatistieken, onder codes in plaats van account-id's: 25 maanden.",
       "purchases": "Aankoopgegevens: 7 jaar, zoals de Estse boekhoudwet vereist."
     },

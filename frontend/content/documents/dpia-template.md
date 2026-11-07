@@ -158,7 +158,8 @@ and without their comment once their invitation or account is deleted; any other
 Notifications in members' bells: up to 90 days. Web hooks being retried: about 3 days.
 Records of AI calls at Langfuse: 30 days. Team notes: with their interview, also after a candidate
 they name is deleted. Voice mode's spoken answers: never stored by testee, up to 30 days at OpenAI.
-Database backups: 14 days, then overwritten. **[COMPANY]**: your own retention of
+Database backups and the daily backup of sign-in accounts: 14 days, then overwritten or deleted.
+**[COMPANY]**: your own retention of
 downloaded PDFs and notes, and of what reached your applicant tracking system, Slack and own
 systems.
 
