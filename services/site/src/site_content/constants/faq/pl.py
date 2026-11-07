@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Czy mogę dostać zwrot?",
-        "answer": "Tak, za kredyty kupione w ciągu ostatnich 14 dni i jeszcze niewydane: przez Paddle lub pisząc do nas. Darmowe kredyty, takie jak prezent powitalny, nie podlegają zwrotowi i są wydawane jako pierwsze. Szczegóły są w [regulaminie](/terms).",
+        "answer": "Tak, za kredyty kupione w ciągu ostatnich 14 dni i jeszcze niewydane: na stronie rozliczeń Twojej firmy, przez Paddle lub pisząc do nas. Kredytów zarezerwowanych na kandydatów nie można zwrócić, dopóki są zarezerwowane; te zarezerwowane w ciągu tych 14 dni można zwrócić w ciągu 7 dni od ich powrotu. Darmowe kredyty, takie jak prezent powitalny, nie podlegają zwrotowi i są wydawane jako pierwsze. Szczegóły są w [regulaminie](/terms).",
     },
     {
         "key": "scorecards",

@@ -527,6 +527,28 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/companies/{company_id}/billing/refund": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /**
+     * Refund Top Up
+     * @description Refunds one of the company's top-ups: the unspent credits the history offers, in what it
+     *     was paid in. What and how much are decided here; the browser only names the top-up. Owners
+     *     and admins, as top-ups.
+     */
+    post: operations["refund_top_up_companies__company_id__billing_refund_post"]
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/companies/{company_id}/billing/payment-failure": {
     parameters: {
       query?: never
@@ -1154,6 +1176,7 @@ export interface components {
       hold_key: string | null
       /** Note */
       note?: string | null
+      refund?: components["schemas"]["RefundStateOut"] | null
     }
     /** HitterOut */
     HitterOut: {
@@ -1429,6 +1452,69 @@ export interface components {
       rewarded_at: string
       /** Credits */
       credits: number
+    }
+    /** RefundIn */
+    RefundIn: {
+      /** Transaction Id */
+      transaction_id: string
+    }
+    /**
+     * RefundOfferOut
+     * @description What refunding a top-up now returns: its unspent `credits`, for `amount` (minor units, tax
+     *     included, as a string) in `currency`, what the top-up was paid in. `takes_referral`: the
+     *     top-up paid a referral, so both rewards go back too, however little is refunded. `auto_top_up_on`: the
+     *     company's automatic top-up stays on and charges again once the balance is under its level.
+     */
+    RefundOfferOut: {
+      /** Credits */
+      credits: number
+      /** Amount */
+      amount: string
+      /** Currency */
+      currency: string
+      /** Takes Referral */
+      takes_referral: boolean
+      /** Auto Top Up On */
+      auto_top_up_on: boolean
+    }
+    /**
+     * RefundOut
+     * @description The refund asked for: `refunded` when Paddle approved it at once, else `processing`.
+     */
+    RefundOut: {
+      /**
+       * Status
+       * @enum {string}
+       */
+      status: "processing" | "refunded"
+      /** Credits */
+      credits: number
+      /** Amount */
+      amount: string
+      /** Currency */
+      currency: string
+    }
+    /**
+     * RefundStateOut
+     * @description A top-up's refund in the history: `offer` when some of it can be refunded now, `status` of
+     *     its latest refund, and the credits of it held back by credits set aside for candidates (not
+     *     refundable while set aside), with the candidates they make up: revoking their invites would
+     *     add them to the offer.
+     */
+    RefundStateOut: {
+      offer?: components["schemas"]["RefundOfferOut"] | null
+      /** Status */
+      status?: ("processing" | "refunded" | "declined") | null
+      /**
+       * Held Back Credits
+       * @default 0
+       */
+      held_back_credits: number
+      /**
+       * Held Back Candidates
+       * @default 0
+       */
+      held_back_candidates: number
     }
     /** SpenderOut */
     SpenderOut: {
@@ -2471,6 +2557,41 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["InvoiceOut"]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  refund_top_up_companies__company_id__billing_refund_post: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        company_id: string
+      }
+      cookie?: never
+    }
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["RefundIn"]
+      }
+    }
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["RefundOut"]
         }
       }
       /** @description Validation Error */

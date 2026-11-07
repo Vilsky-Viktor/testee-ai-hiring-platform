@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack متصل نیست. دوباره آن را وصل کنید و سپس تلاش کنید.",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "به سقف مصاحبه‌های بدون متقاضی ({limit}) رسیده‌اید.\nبرای ساخت مصاحبهٔ جدید، یک متقاضی دعوت کنید یا یک مصاحبه را حذف کنید.",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "به سقف مصاحبه‌های بدون متقاضی ({limit} تا اولین شارژ) رسیده‌اید.\nبرای ساخت مصاحبهٔ جدید، یک متقاضی دعوت کنید یا یک مصاحبه را حذف کنید.",
+    "This top-up can't be refunded now.": "این شارژ اکنون قابل بازپرداخت نیست.",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle نتوانست این شارژ را بازپرداخت کند. اعتبارهای آن به موجودی شما برگشته است.",
 }

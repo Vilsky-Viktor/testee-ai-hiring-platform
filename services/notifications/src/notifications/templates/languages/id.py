@@ -372,6 +372,28 @@ TEXTS = {
             "emailmu."
         ),
     },
+    "refund_rejected": {
+        "subject": "Pengembalian dana ditolak untuk {company}: {price}",
+        "preheader": "Paddle menolak pengembalian dana {price}. Kreditnya sudah kembali ke saldomu.",
+        "heading": "Paddle menolak pengembalian dana",
+        "lines": [
+            "Paddle, penjual kembali kami, menolak pengembalian dana {price} untuk {company}, dan tidak ada uang yang dikembalikan.",
+            "{credits, plural, other {# kredit}} yang disisihkan untuk itu sudah kembali ke saldo perusahaan. Tulis kepada kami jika kamu masih menginginkan pengembalian dana.",
+        ],
+        "button": "Buka tagihan",
+        "footer": "Email ini dikirim ke {email} karena kamu pemilik atau admin {company} di testee. Email ini tentang penagihan perusahaanmu, jadi selalu dikirim apa pun pengaturan emailmu.",
+    },
+    "refund_approved": {
+        "subject": "Pengembalian dana disetujui untuk {company}: {price}",
+        "preheader": "Paddle menyetujui pengembalian dana {price}. Dananya kembali ke kartu yang membayar.",
+        "heading": "Paddle menyetujui pengembalian dana",
+        "lines": [
+            "Paddle, penjual kembali kami, menyetujui pengembalian dana {price} untuk {company}. Dananya kembali ke kartu yang membayar, termasuk pajak, yang bisa memakan waktu beberapa hari.",
+            "{credits, plural, other {# kredit}} yang dikembalikan sudah keluar dari saldo perusahaan.",
+        ],
+        "button": "Buka tagihan",
+        "footer": "Email ini dikirim ke {email} karena kamu pemilik atau admin {company} di testee. Email ini tentang penagihan perusahaanmu, jadi selalu dikirim apa pun pengaturan emailmu.",
+    },
     "top_up_price_change": {
         "subject": "Harga isi ulang baru untuk {company}",
         "preheader": "Mulai {date}, setiap isi ulang otomatis berharga {new_price}, bukan {price}.",

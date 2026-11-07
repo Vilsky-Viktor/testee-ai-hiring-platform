@@ -4,7 +4,9 @@ import hmac
 import re
 
 from testee_common.auth.tokens import same_secret
+from testee_common.config.constants import DEFAULT_LANGUAGE
 from testee_common.events.notifications import NotificationKind
+from testee_common.i18n.money import money
 
 from notifications.constants.notes import NOTES_LINK, SLACK_TEXT_CHARS
 from notifications.constants.slack import LINKABLE_DOT, ZERO_WIDTH_SPACE
@@ -71,6 +73,7 @@ def message(event: dict, site: str) -> dict | None:
         if data.get("candidate_name")
         else data.get("email")
     )
+    price = money(data["price"], data["currency"], DEFAULT_LANGUAGE) if data.get("currency") else ""
     texts = {
         NotificationKind.CANDIDATE_FINISHED: f"{candidate} finished {named}"
         + (f": {data['grade']}%." if data.get("grade") is not None else "."),
@@ -86,6 +89,9 @@ def message(event: dict, site: str) -> dict | None:
         " credits.",
         NotificationKind.AUTO_TOP_UP_FAILED: "Automatic top-up couldn't charge the card. Top up"
         " to keep your balance going.",
+        NotificationKind.REFUND_APPROVED: f"Refund approved for {data.get('name')}: {price}.",
+        NotificationKind.REFUND_REJECTED: f"Refund declined for {data.get('name')}: {price}."
+        " The credits are back in the balance.",
     }
     text = texts.get(event.get("kind"))
 

@@ -9,7 +9,7 @@ from testee_common.events.notifications import (
     notification,
 )
 
-from notifications.constants.notifications import DROPDOWN_LIMIT
+from notifications.constants.notifications import BILLING_KINDS, DROPDOWN_LIMIT
 from notifications.handlers import dispatch
 from notifications.integrations import accounts, companies, subscription
 from notifications.repositories import notifications
@@ -21,24 +21,70 @@ from tests.integration.transactions import transaction
 @pytest.fixture
 def member_of(monkeypatch):
     """The companies a user belongs to, as the companies service would answer."""
-    memberships = {}
+    joined = {}
 
-    async def company_ids(user_id):
-        return memberships.get(user_id, [])
+    async def memberships(user_id):
+        return joined.get(user_id, []), joined.get(f"viewer:{user_id}", [])
 
     async def account_created(user_id):
         """Unknown to library: only the user's own and their companies' notifications."""
 
-    monkeypatch.setattr(companies, "company_ids", company_ids)
+    monkeypatch.setattr(companies, "memberships", memberships)
     monkeypatch.setattr(accounts, "account_created", account_created)
 
-    return memberships
+    return joined
 
 
 def own(user_id: str, title: str) -> dict:
     return notification(
         Recipient.USER, user_id, NotificationKind.REFERRAL_REWARDED, "/billing", title=title
     )
+
+
+@pytest.mark.parametrize("kind", sorted(BILLING_KINDS))
+def test_a_companys_billing_reaches_its_editors_bell_and_not_a_viewers(run, member_of, kind):
+    editor, viewer, acme = f"u-{uuid.uuid4()}", f"u-{uuid.uuid4()}", company()
+    member_of[editor] = [acme]
+    member_of[viewer] = [acme]
+    member_of[f"viewer:{viewer}"] = [acme]
+
+    async def scenario():
+        await notices.store(
+            str(uuid.uuid4()),
+            notification(Recipient.COMPANY, acme, kind, f"/companies/{acme}/billing"),
+        )
+        await notices.store(str(uuid.uuid4()), finished(acme))
+
+        return await feed.feed(editor, "en"), await feed.feed(viewer, "en")
+
+    seen, kept_out = run(scenario())
+
+    assert {item.kind for item in seen.items} == {kind, NotificationKind.CANDIDATE_FINISHED}
+    assert seen.unread == 2
+    # The viewer's list and count leave it out; the company's other notices stay.
+    assert [item.kind for item in kept_out.items] == [NotificationKind.CANDIDATE_FINISHED]
+    assert kept_out.unread == 1
+
+
+def test_a_viewer_keeps_billing_they_own_as_a_person_and_of_a_company_they_edit(run, member_of):
+    viewer, watched, edited = f"u-{uuid.uuid4()}", company(), company()
+    member_of[viewer] = [watched, edited]
+    member_of[f"viewer:{viewer}"] = [watched]
+    kind = NotificationKind.AUTO_TOP_UP_FAILED
+
+    async def scenario():
+        for recipient, id_ in (
+            (Recipient.COMPANY, watched),
+            (Recipient.COMPANY, edited),
+            (Recipient.USER, viewer),
+        ):
+            await notices.store(str(uuid.uuid4()), notification(recipient, id_, kind, "/x"))
+
+        return await feed.feed(viewer, "en")
+
+    found = run(scenario())
+
+    assert found.unread == 2
 
 
 def test_the_feed_holds_the_users_and_their_companies_notifications(run, member_of):

@@ -265,6 +265,28 @@ TEXTS = {
             "이메일 설정과 관계없이 발송됩니다."
         ),
     },
+    "refund_rejected": {
+        "subject": "{company} 환불 거절: {price}",
+        "preheader": "Paddle이 {price} 환불을 거절했습니다. 크레딧은 잔액으로 돌아왔습니다.",
+        "heading": "Paddle이 환불을 거절했습니다",
+        "lines": [
+            "당사의 재판매자인 Paddle이 {company}의 {price} 환불을 거절하여 금액이 반환되지 않았습니다.",
+            "환불을 위해 따로 잡아 둔 {credits, plural, other {# 크레딧}}은 회사 잔액으로 돌아왔습니다. 그래도 환불을 원하시면 저희에게 연락해 주세요.",
+        ],
+        "button": "결제 페이지 열기",
+        "footer": "testee에서 {company}의 소유자 또는 관리자이므로 {email}(으)로 이 이메일이 발송되었습니다. 회사 결제에 관한 내용이므로 이메일 설정과 관계없이 발송됩니다.",
+    },
+    "refund_approved": {
+        "subject": "{company} 환불 승인: {price}",
+        "preheader": "Paddle이 {price} 환불을 승인했습니다. 결제한 카드로 돌아갑니다.",
+        "heading": "Paddle이 환불을 승인했습니다",
+        "lines": [
+            "당사의 재판매자인 Paddle이 {company}의 {price} 환불을 승인했습니다. 세금을 포함한 금액이 결제한 카드로 돌아가며, 며칠이 걸릴 수 있습니다.",
+            "환불된 {credits, plural, other {# 크레딧}}은 회사 잔액에서 빠졌습니다.",
+        ],
+        "button": "결제 페이지 열기",
+        "footer": "testee에서 {company}의 소유자 또는 관리자이므로 {email}(으)로 이 이메일이 발송되었습니다. 회사 결제에 관한 내용이므로 이메일 설정과 관계없이 발송됩니다.",
+    },
     "top_up_price_change": {
         "subject": "{company} 자동 충전 가격 변경",
         "preheader": "{date}부터 자동 충전 1회 가격이 {price}에서 {new_price}(으)로 바뀝니다.",

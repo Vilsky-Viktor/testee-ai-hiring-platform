@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack לא מחובר. יש לחבר אותו מחדש ואז לנסות שוב.",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "הגעת למגבלה של ראיונות בלי מועמדים ({limit}).\nיש להזמין מועמד או למחוק ראיון כדי ליצור ראיון חדש.",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "הגעת למגבלה של ראיונות בלי מועמדים ({limit} עד לטעינה הראשונה).\nיש להזמין מועמד או למחוק ראיון כדי ליצור ראיון חדש.",
+    "This top-up can't be refunded now.": "לא ניתן להחזיר את הטעינה הזו כרגע.",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle לא הצליחה להחזיר את הטעינה הזו. הקרדיטים שלה חזרו ליתרה שלכם.",
 }

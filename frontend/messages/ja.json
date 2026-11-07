@@ -1255,7 +1255,6 @@
     "memberFailed": "招待できませんでした。もう一度お試しください。",
     "invite": "招待",
     "jobDescription": "求人票",
-    "generate": "面接を作成",
     "startFailed": "面接を開始できませんでした。もう一度お試しください。",
     "candidateEmails": "候補者のメールアドレス",
     "candidateEmail": "候補者のメールアドレス",
@@ -2079,6 +2078,8 @@
       "auto_top_up_on": "自動チャージはオンです：利用可能なクレジットが {threshold, number} を下回ると {price}（税別）を請求します。",
       "auto_top_up_paused": "カードが承認されなかったため、自動チャージを一時停止しています。再開するにはカードを更新してください。",
       "auto_top_up_price_change": "<time>{date}</time> から、自動チャージ 1 回あたりの料金は {price} から {newPrice} に変わります。",
+      "refund_approved": "<bdi>{name}</bdi> の返金が承認されました: {price}。",
+      "refund_rejected": "<bdi>{name}</bdi> の返金が却下されました: {price}。{credits, plural, other {# クレジット}}は残高に戻りました。",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> さんが{title, select, none {面接} other {「<bdi>{title}</bdi>」}}を完了しました{grade, select, none {。} other {（{grade}）。}}} other {# 人の候補者が{title, select, none {面接} other {「<bdi>{title}</bdi>」}}を完了しました。}}",
       "invite_undelivered": "{count, plural, =1 {<bdi>{email}</bdi> さんへの{title, select, none {面接} other {「<bdi>{title}</bdi>」}}の招待を届けられませんでした。} other {{title, select, none {面接} other {「<bdi>{title}</bdi>」}}の招待 # 件を届けられませんでした。}}",
       "interview_ready": "{title, select, none {面接の準備ができました。} other {面接「<bdi>{title}</bdi>」の準備ができました。}}",
@@ -2375,6 +2376,8 @@
       "interview_ready": "面接「Data Analyst」の準備ができました。",
       "auto_top_up_charged": "自動チャージで 5,000 クレジットが追加されました。",
       "auto_top_up_failed": "自動チャージでカードに請求できませんでした。残高が不足しないようチャージしてください。",
+      "refund_approved": "Acme の返金が承認されました: $55.50。",
+      "refund_rejected": "Acme の返金が却下されました: $55.50。クレジットは残高に戻りました。",
       "note_added": "Maya さんが「Data Analyst」にメモを追加しました：SQL に強く、連絡する価値あり。"
     },
     "connectFailed": "Slack に接続できませんでした。",
@@ -2392,6 +2395,8 @@
       "interview_ready": "面接の準備ができた",
       "auto_top_up_charged": "自動チャージで請求された",
       "auto_top_up_failed": "自動チャージに失敗した",
+      "refund_approved": "返金が承認されました",
+      "refund_rejected": "返金が却下されました",
       "note_added": "チームのメンバーがメモを書いた（本文付き）"
     },
     "instructionsTitle": "Slack にお知らせが届くしくみ",
@@ -2960,6 +2965,23 @@
       "adjustment": "testee による調整"
     },
     "automatic": "自動チャージ",
+    "refund": {
+      "open": "返金",
+      "title": "{amount} を返金しますか？",
+      "text": "Paddle が {amount}（税込）を支払い元のカードに返金します。数日かかる場合があります。未使用の <credits></credits> {count, plural, other {クレジットは今すぐ残高から差し引かれ、}}返金が完了しなかった場合は残高に戻ります。",
+      "referral": "このチャージでは紹介特典が付与されたため、金額にかかわらず返金すると両方の会社から特典が取り消されます。特典がすでに使用されている場合、残高がマイナスになることがあります。",
+      "autoTopUp": "自動チャージはオンのままで、残高が設定額を下回ると再び請求されます。それを避けたい場合は、先にオフにしてください。",
+      "heldBack": "{count, plural, other {候補者 # 人分}}は<reserved>確保済み</reserved>です。招待を取り消すと返金の対象に含められます。",
+      "confirm": "{amount} を返金",
+      "refunded": "返金しました。",
+      "processing": "返金を処理しています。",
+      "failed": "このチャージを返金できませんでした。もう一度お試しください。",
+      "status": {
+        "processing": "返金処理中",
+        "refunded": "返金済み",
+        "declined": "Paddle が返金を却下"
+      }
+    },
     "invoice": "請求書",
     "invoiceFailed": "請求書を開けませんでした。もう一度お試しください。",
     "deletedCandidate": "削除された候補者",
@@ -3084,6 +3106,7 @@
     "compliance": {
       "title": "コンプライアンス",
       "aiAct": "EU AI 法のもとで testee は高リスク AI システムとして扱われ、その義務は <time>{date}</time> から適用されます。当社の会社向け利用ガイドが、その使用説明書にあたります。",
+      "aiMarks": "質問、回答の選択肢、アシスタントの回答、音声クリップには、AI が生成したことを示す、ソフトウェアで読み取れる印が付いています。ページのコードには data-ai-generated、音声クリップのファイルには AI_GENERATED タグがあります。音声クリップには OpenAI の聞き取れない透かしも含まれており、<verify>openai.com/verify</verify> で確認できます。ページからコピーしたテキストには、この印は残りません。",
       "humanReview": "testee が候補者について決定を下すことはありません。会社の担当者が結果を確認して判断し、候補者は自分の結果を人が確認するよう求めることができます。",
       "dpa": "データ処理契約は利用規約の一部であり、署名は不要です。GDPR、英国 GDPR、そしてカリフォルニア州法など、testee が会社のサービスプロバイダーとなる米国各州のプライバシー法に対応しています。",
       "documents": "会社には<link>利用ガイド、DPIA テンプレート、候補者への通知テンプレート</link>が用意されており、ニューヨーク市、イリノイ州、コロラド州向けの版もあります。",
@@ -3143,7 +3166,6 @@
     "periodDays": "過去 {days, number} 日間",
     "periodCustom": "カスタム",
     "empty": "まだ操作はありません。",
-      "aiMarks": "質問、回答の選択肢、アシスタントの回答、音声クリップには、AI が生成したことを示す、ソフトウェアで読み取れる印が付いています。ページのコードには data-ai-generated、音声クリップのファイルには AI_GENERATED タグがあります。音声クリップには OpenAI の聞き取れない透かしも含まれており、<verify>openai.com/verify</verify> で確認できます。ページからコピーしたテキストには、この印は残りません。",
     "noMatches": "この条件に一致する操作はありません。",
     "formerMember": "以前のメンバー",
     "apiKey": "{via, select, mcp {MCP 経由（キー「<bdi>{name}</bdi>」）} other {API 経由（キー「<bdi>{name}</bdi>」）}}",
@@ -3209,6 +3231,7 @@
       "verification_requested": "会社の認証を申請しました",
       "ai_apps_changed": "AI アプリを許可または停止しました",
       "top_up_paid": "クレジットをチャージしました",
+      "refund_requested": "返金を申請しました",
       "auto_top_up_set": "自動チャージを設定しました",
       "auto_top_up_changed": "自動チャージを変更しました",
       "auto_top_up_stopped": "自動チャージを停止しました",

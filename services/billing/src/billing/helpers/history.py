@@ -5,6 +5,7 @@ from babel.numbers import get_currency_precision
 from billing.constants.credits import ADJUSTMENTS, CANDIDATE_PREFIX, Reason
 from billing.models.billing import Entry
 from billing.schemas.billing import HistoryEntryOut
+from billing.schemas.refunds import RefundStateOut
 
 
 def transaction_id(entry: Entry) -> str | None:
@@ -32,13 +33,17 @@ def whole_units(minor: int | None, currency: str | None) -> str | None:
     return f"{Decimal(minor).scaleb(-digits):.{digits}f}"
 
 
-def history_entry_out(entry: Entry) -> HistoryEntryOut:
+def history_entry_out(
+    entry: Entry, refunds: dict[str, RefundStateOut] | None = None
+) -> HistoryEntryOut:
     """One movement as the history shows it; a candidate's with the key of its hold, which
-    companies knows the invite by."""
+    companies knows the invite by, and a top-up's with its state in `refunds`, by transaction."""
     hold_key = None
 
     if entry.reason == Reason.CANDIDATE and entry.key.startswith(CANDIDATE_PREFIX):
         hold_key = entry.key.removeprefix(CANDIDATE_PREFIX)
+
+    transaction = transaction_id(entry)
 
     return HistoryEntryOut(
         id=entry.id,
@@ -50,6 +55,7 @@ def history_entry_out(entry: Entry) -> HistoryEntryOut:
         currency=entry.currency,
         automatic=entry.automatic,
         note=entry.note,
-        transaction_id=transaction_id(entry),
+        transaction_id=transaction,
         hold_key=hold_key,
+        refund=(refunds or {}).get(transaction) if entry.reason == Reason.TOPUP else None,
     )

@@ -38,26 +38,28 @@ from notifications.schemas.notifications import FeedOut, NotificationOut
 logger = logging.getLogger(__name__)
 
 
-async def recipients_of(user_id: str, fresh: bool = False) -> tuple[Recipients, bool]:
+async def recipients_of(user_id: str, fresh: bool = False) -> tuple[Recipients, list[str], bool]:
     """The user's own notifications, and those of every company they belong to (kept for
-    COMPANY_IDS_SECONDS, read again when `fresh`, as right after joining one); whether the
-    companies are in: when companies doesn't answer, only the user's own."""
+    COMPANY_IDS_SECONDS, read again when `fresh`, as right after joining one); the companies
+    where they're only a viewer, whose billing they don't see; whether the companies are in: when
+    companies doesn't answer, only the user's own."""
     key = COMPANY_IDS_KEY.format(user_id=user_id)
-    ids = None if fresh else memory_cache.get(key)
+    found = None if fresh else memory_cache.get(key)
 
-    if ids is None:
+    if found is None:
         try:
-            ids = await companies.company_ids(user_id)
+            found = await companies.memberships(user_id)
         except httpx.HTTPError as error:
             logger.warning("Companies didn't say %s's companies: %s", user_id, error)
 
-            return [(Recipient.USER, user_id)], False
+            return [(Recipient.USER, user_id)], [], False
 
-        memory_cache.put(key, ids, COMPANY_IDS_SECONDS)
+        memory_cache.put(key, found, COMPANY_IDS_SECONDS)
 
+    ids, viewer_of = found
     own = (Recipient.USER, user_id)
 
-    return [own, *((Recipient.COMPANY, company_id) for company_id in ids)], True
+    return [own, *((Recipient.COMPANY, company_id) for company_id in ids)], viewer_of, True
 
 
 async def account_created(user_id: str) -> datetime | None:
@@ -106,12 +108,12 @@ async def in_language(items: list[NotificationOut], language: str) -> list[Notif
 
 
 async def feed(user_id: str, language: str, fresh: bool = False) -> FeedOut:
-    recipients, _ = await recipients_of(user_id, fresh)
+    recipients, viewer_of, _ = await recipients_of(user_id, fresh)
     since = await account_created(user_id)
 
     async with Session() as session:
-        items = await notifications.latest(session, recipients, DROPDOWN_LIMIT, since)
-        unread = await notifications.unread_count(session, recipients, user_id, since)
+        items = await notifications.latest(session, recipients, DROPDOWN_LIMIT, since, viewer_of)
+        unread = await notifications.unread_count(session, recipients, user_id, since, viewer_of)
 
     shown = [NotificationOut.model_validate(item) for item in items]
 
@@ -129,7 +131,7 @@ async def changes(user_id: str, fresh: bool = False) -> AsyncIterator[str]:
     gets a notification, and a comment every HEARTBEAT_SECONDS so the connection stays open. The
     instance's tabs share one Redis subscription. It ends after STREAM_REFRESH_SECONDS (or
     STREAM_RETRY_SECONDS without the companies), and the tab reconnects with what's current."""
-    recipients, complete = await recipients_of(user_id, fresh)
+    recipients, _, complete = await recipients_of(user_id, fresh)
     # Everyone's notifications are announced to every open tab.
     everyone = (Recipient.ALL, EVERYONE)
     channels = [

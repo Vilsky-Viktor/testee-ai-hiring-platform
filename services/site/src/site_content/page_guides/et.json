@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee saab ainult sellesse kanalisse postitada; su Slacki lugeda see ei saa.",
-      "Kõik näevad endiselt iga teavitust kellukese all.",
+      "Kõik näevad oma teavitusi endiselt kellukese all; arveldusteavitusi näevad ainult omanikud ja administraatorid.",
       "Kui liige, kes Slacki ühendas, lahkub või saab vaatajaks, see peatub, kuni omanik või administraator selle uuesti ühendab."
     ]
   },
@@ -388,7 +388,7 @@
       "Mõlemad saavad krediiti, kui kutsutud ettevõte teeb esimese juurdelaadimise mis tahes summas.",
       "Krediit läheb sellele ettevõttele ja ei aegu kunagi.",
       "Kumbki pool saab 1 000 krediiti. Sinu ettevõte teenib seda kuni 25 korda aastas; pärast seda saab kutsutud ettevõte oma krediidid ikkagi.",
-      "Täielikult tagastatud või tagasi nõutud juurdelaadimine võtab mõlemad preemiad tagasi."
+      "Mis tahes summas tagastatud või täielikult tagasi nõutud juurdelaadimine võtab mõlemad preemiad tagasi."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "Kandidaadi krediidid broneeritakse kutsumisel, arvestatakse maha, kui ta vastab, ja antakse tagasi, kui ta ei vasta.",
       "Seda lehte näevad ainult omanikud ja administraatorid.",
-      "Saad küsida tagasimakset viimase 14 päeva jooksul ostetud ja kasutamata krediitide eest Paddle'i kaudu või meile kirjutades."
+      "Saad tagastada viimase 14 päeva jooksul ostetud ja kasutamata krediidid ajaloos juurdelaadimise real, Paddle'i kaudu või meile kirjutades. Kandidaatidele broneeritud krediite ei saa tagastada, kuni need on broneeritud."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Kandidaat maksab 500 krediiti: need broneeritakse kutsumisel, arvestatakse maha, kui ta vastab, ja antakse tagasi, kui ta ei vasta.",
       "Krediidid ei aegu. Iga juurdelaadimise arve on ettevõtte vahekaardil „Arveldus“.",
       "Hinnad ei sisalda käibemaksu ega müügimaksu: kus see kehtib, lisatakse see maksmisel.",
-      "Saad küsida tagasimakset viimase 14 päeva jooksul ostetud ja kasutamata krediitide eest Paddle'i kaudu või meile kirjutades.",
+      "Saad tagastada viimase 14 päeva jooksul ostetud ja kasutamata krediidid ettevõtte arvelduse lehel, Paddle'i kaudu või meile kirjutades.",
       "Automaatse juurdelaadimise seadistavad omanikud ja administraatorid. Seda muuta või kaarti uuendada saab ainult inimene, kelle kaart maksab; välja lülitada saab selle kohe iga omanik või administraator.",
       "Tagasi lükatud kaarti proovitakse uuesti 1, 3 ja 7 päeva pärast, seejärel peatub automaatne juurdelaadimine, kuni kaart on uuendatud. Kaart, millega ei saa maksta, näiteks aegunud kaart, peatab selle kohe."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Krediidid ei aegu.",
       "Kandidaat, kes ei vasta ühelegi küsimusele, ei maksa midagi.",
-      "Kasutamata makstud krediidid saab tagastada 14 päeva jooksul."
+      "Kasutamata makstud krediidid saab tagastada 14 päeva jooksul ettevõtte arvelduse lehel."
     ]
   },
   "tests": {

@@ -4,7 +4,7 @@ from testee_common.auth.user import User
 
 from billing.api.v1 import company_auto_top_ups, company_payments
 from billing.main import app
-from billing.repositories import company_actions, currencies, ledger, purchases
+from billing.repositories import company_actions, currencies, ledger, purchases, refunds
 from billing.services import checkout_calls
 
 
@@ -16,6 +16,21 @@ def wallets_exist(monkeypatch):
         return {owner_id: object() for owner_id in owner_ids}
 
     monkeypatch.setattr(ledger, "wallets", wallets)
+
+
+@pytest.fixture(autouse=True)
+def no_open_refunds(monkeypatch):
+    """Unit tests have no database: no adjustment is a company's own refund, and none waits for
+    reconciliation (the integration tests cover those)."""
+
+    async def matching(session, adjustment):
+        return None
+
+    async def overdue(session, before, limit):
+        return []
+
+    monkeypatch.setattr(refunds, "matching", matching)
+    monkeypatch.setattr(refunds, "overdue", overdue)
 
 
 @pytest.fixture(autouse=True)

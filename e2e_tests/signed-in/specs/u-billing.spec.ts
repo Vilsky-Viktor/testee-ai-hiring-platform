@@ -157,8 +157,9 @@ test("the history lists a top-up and a candidate's charge", async ({
     await expect(charge).toBeVisible({ timeout: 3_000 });
   }).toPass({ timeout: 90_000 });
   await expect(topUp).toContainText("$50");
-  // Its invoice, the row's only button.
-  await expect(topUp.getByRole("button")).toHaveCount(1);
+  // Its refund and its invoice, the row's only buttons.
+  await expect(topUp.getByRole("button")).toHaveCount(2);
+  await expect(topUp.getByTestId("refund-top-up")).toBeVisible();
   await expect(charge).toContainText("−500");
   await expect(reservedTab(owner)).not.toHaveText(/\d/);
   await shot(owner, "history-top-up-and-charge");

@@ -133,16 +133,81 @@ export async function sealWebhookSecretsElsewhere(companyId: string) {
  * its purchase row, which outlives the company. Locally Paddle's prices aren't set, so a signed
  * webhook would grant nothing. Deleting the company deletes both. */
 export async function addTopUp(companyId: string, credits: number, totalCents: number) {
+  const transactionId = `txn_e2e${randomUUID().replaceAll("-", "")}`;
+
   await withDatabase("billing", async (client) => {
     await client.query(
       `INSERT INTO entries (id, key, owner_type, owner_id, amount, reason, total_minor, currency)
        VALUES (gen_random_uuid(), $1, 'company', $2, $3, 'topup', $4, 'USD')`,
-      [`txn_e2e${randomUUID().replaceAll("-", "")}:topup_50`, companyId, credits, totalCents],
+      [`${transactionId}:topup_50`, companyId, credits, totalCents],
     );
     await client.query(
       "UPDATE wallets SET balance = balance + $2 WHERE owner_type = 'company' AND owner_id = $1",
       [companyId, credits],
     );
+  });
+
+  return transactionId;
+}
+
+/** A refund of the company's top-up in billing, as it stands once Paddle has it: `pending` keeps
+ * its credits aside under a hold, `approved` has taken them back. */
+export async function addRefund(
+  companyId: string,
+  transactionId: string,
+  credits: number,
+  status: "pending" | "approved",
+) {
+  const id = randomUUID();
+
+  await withDatabase("billing", async (client) => {
+    await client.query(
+      `INSERT INTO refunds (id, owner_type, owner_id, transaction_id, credits, amount_minor,
+       currency, status) VALUES ($1, 'company', $2, $3, $4, $5, 'USD', $6)`,
+      [id, companyId, transactionId, credits, credits, status],
+    );
+
+    if (status === "approved") {
+      await client.query(
+        `INSERT INTO entries (id, key, owner_type, owner_id, amount, reason, total_minor, currency)
+         VALUES (gen_random_uuid(), $1, 'company', $2, $3, 'refund', $4, 'USD')`,
+        [`adjustment:${transactionId}:adj_${id}`, companyId, -credits, credits],
+      );
+      await client.query(
+        "UPDATE wallets SET balance = balance - $2 WHERE owner_type = 'company' AND owner_id = $1",
+        [companyId, credits],
+      );
+    } else {
+      await reserveCredits(client, companyId, `refund:${id}`, credits, "refund");
+    }
+  });
+}
+
+/** Sets a company's credits aside under a hold, as billing does for a candidate or a refund. */
+async function reserveCredits(
+  client: pg.Client,
+  companyId: string,
+  key: string,
+  credits: number,
+  reason: string,
+) {
+  await client.query(
+    `INSERT INTO holds (key, owner_type, owner_id, amount, reason, status)
+     VALUES ($1, 'company', $2, $3, $4, 'open')`,
+    [key, companyId, credits, reason],
+  );
+  await client.query(
+    "UPDATE wallets SET reserved = reserved + $2 WHERE owner_type = 'company' AND owner_id = $1",
+    [companyId, credits],
+  );
+}
+
+/** Sets `count` candidates' 500 credits each aside, as their invites do. */
+export async function reserveCandidates(companyId: string, count: number) {
+  await withDatabase("billing", async (client) => {
+    for (let at = 0; at < count; at += 1) {
+      await reserveCredits(client, companyId, `candidate:${randomUUID()}`, 500, "candidate");
+    }
   });
 }
 
@@ -153,6 +218,17 @@ export async function finishInvite(email: string, grade: number) {
     client.query(
       "UPDATE candidate_invites SET status = 'finished', grade = $2, started_at = now(), finished_at = now() WHERE email = $1",
       [email, grade],
+    ),
+  );
+}
+
+/** The signed-in user as a viewer of the company, as accepting a viewer's invite makes them. */
+export async function addViewer(companyId: string, userId: string, email: string) {
+  await withDatabase("companies", (client) =>
+    client.query(
+      `INSERT INTO members (id, company_id, user_id, invited_email, role, joined_at)
+       VALUES (gen_random_uuid(), $1, $2, $3, 'viewer', now())`,
+      [companyId, userId, email],
     ),
   );
 }

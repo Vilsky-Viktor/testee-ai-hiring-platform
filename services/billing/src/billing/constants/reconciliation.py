@@ -8,3 +8,5 @@ RECONCILE_WINDOW = timedelta(days=7)
 # billing's request timeout; the next run reads the rest.
 PADDLE_PAGE_SIZE = 200
 RECONCILE_MAX_PAGES = 10
+# A refund's adjustments of one transaction: never many.
+PADDLE_REFUNDS_PAGE = 50

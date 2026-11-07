@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "ยังไม่ได้เชื่อมต่อ Slack โปรดเชื่อมต่อใหม่แล้วลองอีกครั้ง",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "คุณใช้สิทธิ์การสัมภาษณ์ที่ไม่มีผู้สมัครครบตามขีดจำกัดแล้ว ({limit} รายการ)\nเชิญผู้สมัครหรือลบการสัมภาษณ์หนึ่งรายการเพื่อสร้างรายการใหม่",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "คุณใช้สิทธิ์การสัมภาษณ์ที่ไม่มีผู้สมัครครบตามขีดจำกัดแล้ว ({limit} รายการ จนกว่าจะเติมเครดิตครั้งแรก)\nเชิญผู้สมัครหรือลบการสัมภาษณ์หนึ่งรายการเพื่อสร้างรายการใหม่",
+    "This top-up can't be refunded now.": "การเติมเครดิตนี้คืนเงินไม่ได้ในขณะนี้",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle คืนเงินการเติมเครดิตนี้ไม่ได้ เครดิตกลับเข้ายอดคงเหลือของคุณแล้ว",
 }

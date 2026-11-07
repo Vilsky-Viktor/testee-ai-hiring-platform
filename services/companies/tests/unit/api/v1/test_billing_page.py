@@ -75,6 +75,33 @@ def test_a_viewer_doesnt_see_the_billing(client, monkeypatch, path):
     assert client.get(f"{COMPANY}/billing/{path}").status_code == 403
 
 
+def test_a_top_ups_refund_state_reaches_the_history_as_billing_decides_it(client, monkeypatch):
+    as_member(monkeypatch, "admin")
+    state = {
+        "offer": {
+            "credits": 500,
+            "amount": "500",
+            "currency": "USD",
+            "takes_referral": False,
+            "auto_top_up_on": False,
+        },
+        "status": "declined",
+        "held_back_credits": 500,
+        "held_back_candidates": 1,
+    }
+
+    async def history(company_id, offset, limit, kind, start, end):
+        return [
+            {**movement("topup", 1_000, transaction_id="txn_01", total="1000"), "refund": state}
+        ]
+
+    monkeypatch.setattr(billing, "company_history", history)
+
+    [topup] = client.get(f"{COMPANY}/billing/history").json()
+
+    assert topup["refund"] == state
+
+
 def test_the_history_names_each_candidate_and_only_a_top_up_has_an_invoice(client, monkeypatch):
     as_member(monkeypatch, "admin")
     asked = []

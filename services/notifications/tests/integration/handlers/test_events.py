@@ -1,6 +1,7 @@
 import uuid
 from datetime import UTC, datetime, timedelta
 
+import pytest
 from event_pushes import push
 from sqlalchemy import func, select, update
 from testee_common.events.notifications import (
@@ -11,6 +12,7 @@ from testee_common.events.notifications import (
 
 from notifications.constants.notifications import GROUP_HOURS
 from notifications.core.db import Session
+from notifications.integrations import companies
 from notifications.models.notifications import Notification, Received
 from notifications.services import notices
 from tests.integration.factories import api, company, finished
@@ -56,6 +58,45 @@ def test_a_redelivered_event_makes_one_notification(run):
     assert codes == [204, 204, 204]
     assert received == 1
     assert [row.event_id for row in saved] == ["outbox-1"]
+
+
+@pytest.mark.parametrize(
+    "kind", [NotificationKind.REFUND_APPROVED, NotificationKind.REFUND_REJECTED]
+)
+def test_a_refund_redelivered_or_sent_again_makes_one_notification_naming_the_company(
+    run, monkeypatch, kind
+):
+    company_id = company()
+
+    async def members(company_ids):
+        return [{"id": company_id, "name": "Arcolabs", "members": []}]
+
+    monkeypatch.setattr(companies, "members", members)
+    event = notification(
+        "company",
+        company_id,
+        kind,
+        f"/companies/{company_id}/billing",
+        key="adj_1",
+        credits=5_000,
+        price=5_550,
+        currency="USD",
+    )
+
+    async def scenario():
+        async with api() as client:
+            for args in (
+                (NOTIFICATION_REQUESTED, event, "outbox-r1", "m-1"),
+                (NOTIFICATION_REQUESTED, event, "outbox-r1", "m-1"),
+                (NOTIFICATION_REQUESTED, event, "outbox-r2", "m-2"),
+            ):
+                assert (await client.post("/internal/events", json=push(*args))).status_code == 204
+
+        return await rows(company_id)
+
+    [saved] = run(scenario())
+
+    assert saved.data == {"credits": 5_000, "price": 5_550, "currency": "USD", "name": "Arcolabs"}
 
 
 def test_the_same_key_from_different_events_makes_one_notification(run):

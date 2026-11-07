@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Tôi có được hoàn tiền không?",
-        "answer": "Có, với credit bạn mua trong 14 ngày gần nhất và chưa dùng: qua Paddle hoặc bằng cách viết cho chúng tôi. Credit miễn phí, như quà chào mừng, không được hoàn, và được tính là đã dùng trước. Chi tiết có trong [điều khoản](/terms).",
+        "answer": "Có, với credit bạn mua trong 14 ngày gần nhất và chưa dùng: trên trang thanh toán của công ty, qua Paddle hoặc bằng cách viết cho chúng tôi. Credit giữ chỗ cho ứng viên không được hoàn trong thời gian giữ chỗ; credit được giữ chỗ trong 14 ngày đó có thể được hoàn trong 7 ngày kể từ khi được trả lại. Credit miễn phí, như quà chào mừng, không được hoàn, và được tính là đã dùng trước. Chi tiết có trong [điều khoản](/terms).",
     },
     {
         "key": "scorecards",

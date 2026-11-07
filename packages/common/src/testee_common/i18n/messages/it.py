@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack non è collegato. Ricollegalo, poi riprova.",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "Hai raggiunto il limite di colloqui senza candidati ({limit}).\nInvita un candidato o elimina un colloquio per crearne uno nuovo.",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Hai raggiunto il limite di colloqui senza candidati ({limit} fino alla tua prima ricarica).\nInvita un candidato o elimina un colloquio per crearne uno nuovo.",
+    "This top-up can't be refunded now.": "Questa ricarica non può essere rimborsata ora.",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle non è riuscito a rimborsare questa ricarica. I suoi crediti sono tornati nel tuo saldo.",
 }

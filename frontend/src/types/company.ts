@@ -52,6 +52,7 @@ export type CompanyReferral = Schemas["ReferralOut"]
 export type MenuCounts = Schemas["MenuCountsOut"]
 // One movement of a company's credits, and a candidate whose invite holds or was charged credits.
 export type CreditHistoryEntry = Schemas["HistoryEntryOut"]
+export type RefundOffer = Schemas["RefundOfferOut"]
 export type CreditCandidate = Schemas["CreditCandidateOut"]
 export type AtsIntegrations = AtsSchemas["IntegrationsOut"]
 export type AtsConnection = AtsSchemas["ConnectionOut"]

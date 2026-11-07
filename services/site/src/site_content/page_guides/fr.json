@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee peut seulement publier dans ce canal ; il ne peut pas lire votre Slack.",
-      "Tout le monde voit toujours chaque notification dans la cloche.",
+      "Chacun voit toujours ses notifications dans la cloche ; celles de facturation sont réservées aux propriétaires et aux admins.",
       "Si le membre qui a connecté Slack part ou devient lecteur, Slack s'arrête jusqu'à ce qu'un propriétaire ou un admin le reconnecte."
     ]
   },
@@ -388,7 +388,7 @@
       "Vous recevez chacun des crédits lors de la première recharge de l'entreprise invitée, quel que soit le montant.",
       "Les crédits vont à cette entreprise et n'expirent jamais.",
       "Chaque partie reçoit 1 000 crédits. Votre entreprise peut en bénéficier jusqu'à 25 fois par an ; au-delà, l'entreprise que vous avez invitée reçoit quand même ses crédits.",
-      "Une recharge remboursée en totalité ou rétrofacturée annule les deux récompenses."
+      "Une recharge remboursée, quel que soit le montant, ou rétrofacturée en totalité annule les deux récompenses."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "Les crédits d'un candidat sont réservés à l'invitation, débités dès qu'il répond et rendus s'il ne répond pas.",
       "Seuls les propriétaires et admins voient cette page.",
-      "Vous pouvez demander le remboursement des crédits achetés au cours des 14 derniers jours et non utilisés, via Paddle ou en nous écrivant."
+      "Vous pouvez vous faire rembourser les crédits achetés au cours des 14 derniers jours et non utilisés depuis la ligne de la recharge dans l'historique, via Paddle ou en nous écrivant. Les crédits réservés à des candidats ne peuvent pas être remboursés tant qu'ils sont réservés."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Un candidat coûte 500 crédits : réservés à l'invitation, débités dès qu'il répond et rendus s'il ne répond pas.",
       "Les crédits n'expirent jamais. La facture de chaque recharge se trouve dans l'onglet Facturation de l'entreprise.",
       "Les prix n'incluent pas la TVA ni la taxe de vente : là où elle s'applique, elle est ajoutée au paiement.",
-      "Vous pouvez demander le remboursement des crédits achetés au cours des 14 derniers jours et non utilisés, via Paddle ou en nous écrivant.",
+      "Vous pouvez vous faire rembourser les crédits achetés au cours des 14 derniers jours et non utilisés sur la page Facturation de l'entreprise, via Paddle ou en nous écrivant.",
       "Les propriétaires et les admins configurent la recharge automatique. Seule la personne dont la carte paie peut la modifier ou mettre à jour la carte ; tout propriétaire ou admin peut la désactiver immédiatement.",
       "Une carte refusée est de nouveau essayée après 1, 3 et 7 jours, puis la recharge automatique se met en pause jusqu'à la mise à jour de la carte. Une carte qui ne peut pas payer, par exemple une carte expirée, la met en pause immédiatement."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Les crédits n'expirent jamais.",
       "Un candidat qui ne répond à aucune question ne coûte rien.",
-      "Les crédits payés non utilisés peuvent être remboursés sous 14 jours."
+      "Les crédits payés non utilisés peuvent être remboursés sous 14 jours, sur la page Facturation de l'entreprise."
     ]
   },
   "tests": {

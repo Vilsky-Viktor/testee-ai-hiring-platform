@@ -116,7 +116,7 @@ async def reward(
 
 
 async def take_back(session: AsyncSession, transaction_id: str) -> bool:
-    """The top-up that paid a referral was refunded in full or charged back: both sides' rewards
+    """The top-up that paid a referral was refunded or charged back: both sides' rewards
     go back (from wallets that still exist), and the referral waits for the company's next
     top-up. Once per transaction, however often Paddle sends the adjustment. True when there
     was a reward to take back."""
@@ -144,6 +144,13 @@ async def take_back(session: AsyncSession, transaction_id: str) -> bool:
         )
 
     return True
+
+
+async def rewarded_by(session: AsyncSession, transaction_ids: list[str]) -> set[str]:
+    """Which of these top-ups paid a referral."""
+    query = select(Referral.rewarded_by).where(Referral.rewarded_by.in_(transaction_ids))
+
+    return set(await session.scalars(query))
 
 
 async def rewarded_in_a_year(

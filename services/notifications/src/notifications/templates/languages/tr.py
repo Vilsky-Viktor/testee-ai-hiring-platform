@@ -376,6 +376,28 @@ TEXTS = {
             "olduğundan e-posta ayarlarınızdan bağımsız olarak gönderilir."
         ),
     },
+    "refund_rejected": {
+        "subject": "{company} için iade reddedildi: {price}",
+        "preheader": "Paddle, {price} tutarındaki iadeyi reddetti. Krediler bakiyenize geri döndü.",
+        "heading": "Paddle iadeyi reddetti",
+        "lines": [
+            "Yeniden satıcımız Paddle, {company} için {price} tutarındaki iadeyi reddetti ve para iade edilmedi.",
+            "Bunun için ayrılan {credits, plural, one {# kredi} other {# kredi}} şirketin bakiyesine geri döndü. İadeyi hâlâ istiyorsanız bize yazın.",
+        ],
+        "button": "Faturalandırmayı aç",
+        "footer": "Bu e-posta {email} adresine, testee'de {company} şirketinin sahibi veya yöneticisi olduğunuz için gönderildi. Şirketinizin faturalandırmasıyla ilgili olduğundan e-posta ayarlarınızdan bağımsız olarak gönderilir.",
+    },
+    "refund_approved": {
+        "subject": "{company} için iade onaylandı: {price}",
+        "preheader": "Paddle, {price} tutarındaki iadeyi onayladı. Tutar ödeme yapılan karta geri döner.",
+        "heading": "Paddle iadeyi onayladı",
+        "lines": [
+            "Yeniden satıcımız Paddle, {company} için {price} tutarındaki iadeyi onayladı. Tutar vergiler dahil ödeme yapılan karta geri döner; bu birkaç gün sürebilir.",
+            "İade edilen {credits, plural, one {# kredi} other {# kredi}} şirketin bakiyesinden çıktı.",
+        ],
+        "button": "Faturalandırmayı aç",
+        "footer": "Bu e-posta {email} adresine, testee'de {company} şirketinin sahibi veya yöneticisi olduğunuz için gönderildi. Şirketinizin faturalandırmasıyla ilgili olduğundan e-posta ayarlarınızdan bağımsız olarak gönderilir.",
+    },
     "top_up_price_change": {
         "subject": "{company} için yeni otomatik yükleme fiyatı",
         "preheader": (

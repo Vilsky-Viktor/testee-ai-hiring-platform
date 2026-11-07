@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee kan alleen in dat kanaal posten; je Slack lezen kan het niet.",
-      "Iedereen ziet elke melding nog steeds bij het belletje.",
+      "Iedereen ziet zijn meldingen nog steeds bij het belletje; die over facturatie alleen eigenaren en beheerders.",
       "Als het lid dat Slack heeft gekoppeld vertrekt of kijker wordt, stopt het totdat een eigenaar of beheerder het opnieuw koppelt."
     ]
   },
@@ -388,7 +388,7 @@
       "Jullie krijgen allebei credits wanneer het uitgenodigde bedrijf voor het eerst opwaardeert, met welk bedrag ook.",
       "De credits gaan naar dit bedrijf en vervallen nooit.",
       "Beide kanten krijgen 1.000 credits. Je bedrijf verdient dit tot 25 keer per jaar; daarna krijgt het bedrijf dat je hebt uitgenodigd nog steeds zijn credits.",
-      "Een opwaardering die volledig wordt terugbetaald of teruggeboekt, neemt beide beloningen terug."
+      "Een opwaardering die wordt terugbetaald, voor welk bedrag dan ook, of volledig wordt teruggeboekt, neemt beide beloningen terug."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "De credits van een kandidaat worden gereserveerd bij de uitnodiging, afgeschreven zodra die antwoordt en teruggegeven als dat niet gebeurt.",
       "Alleen eigenaren en beheerders zien deze pagina.",
-      "Je kunt terugbetaling vragen van credits die je in de afgelopen 14 dagen hebt gekocht en niet hebt gebruikt, via Paddle of door ons te schrijven."
+      "Je kunt credits die je in de afgelopen 14 dagen hebt gekocht en niet hebt gebruikt, laten terugbetalen via de regel van de opwaardering in de geschiedenis, via Paddle of door ons te schrijven. Credits die voor kandidaten zijn gereserveerd, kunnen niet worden terugbetaald zolang ze gereserveerd zijn."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Een kandidaat kost 500 credits: gereserveerd bij de uitnodiging, afgeschreven zodra die antwoordt en teruggegeven als dat niet gebeurt.",
       "Credits verlopen nooit. De factuur van elke opwaardering staat op het tabblad Facturering van het bedrijf.",
       "Prijzen zijn exclusief btw of omzetbelasting: waar die van toepassing is, wordt ze bij het afrekenen toegevoegd.",
-      "Je kunt terugbetaling vragen van credits die je in de afgelopen 14 dagen hebt gekocht en niet hebt gebruikt, via Paddle of door ons te schrijven.",
+      "Je kunt credits die je in de afgelopen 14 dagen hebt gekocht en niet hebt gebruikt, laten terugbetalen op de factureringspagina van het bedrijf, via Paddle of door ons te schrijven.",
       "Eigenaren en beheerders stellen automatisch opwaarderen in. Alleen de persoon wiens kaart betaalt, kan het wijzigen of de kaart bijwerken; elke eigenaar of beheerder kan het meteen uitzetten.",
       "Een geweigerde kaart wordt na 1, 3 en 7 dagen opnieuw geprobeerd; daarna pauzeert automatisch opwaarderen tot de kaart is bijgewerkt. Een kaart die niet kan betalen, zoals een verlopen kaart, pauzeert het meteen."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Credits verlopen nooit.",
       "Een kandidaat die geen enkele vraag beantwoordt, kost niets.",
-      "Ongebruikte betaalde credits kunnen binnen 14 dagen worden terugbetaald."
+      "Ongebruikte betaalde credits kunnen binnen 14 dagen worden terugbetaald, op de factureringspagina van het bedrijf."
     ]
   },
   "tests": {

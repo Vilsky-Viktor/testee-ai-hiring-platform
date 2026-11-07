@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack chưa được kết nối. Hãy kết nối lại rồi thử lại.",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "Bạn đã đạt giới hạn số buổi phỏng vấn chưa có ứng viên ({limit}).\nHãy mời một ứng viên hoặc xóa một buổi phỏng vấn để tạo buổi mới.",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Bạn đã đạt giới hạn số buổi phỏng vấn chưa có ứng viên ({limit} cho đến lần nạp đầu tiên).\nHãy mời một ứng viên hoặc xóa một buổi phỏng vấn để tạo buổi mới.",
+    "This top-up can't be refunded now.": "Hiện không thể hoàn tiền lần nạp này.",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle không thể hoàn tiền lần nạp này. Số credit của lần nạp đã quay lại số dư của bạn.",
 }

@@ -29,6 +29,9 @@ class NotificationKind(StrEnum):
     AUTO_TOP_UP_FAILED = "auto_top_up_failed"
     AUTO_TOP_UP_PAUSED = "auto_top_up_paused"
     AUTO_TOP_UP_PRICE_CHANGE = "auto_top_up_price_change"
+    # Paddle approved a refund the company asked for, or turned it down: its credits are back.
+    REFUND_APPROVED = "refund_approved"
+    REFUND_REJECTED = "refund_rejected"
     # Companies: a candidate finished, an invite bounced, an interview is ready or was cancelled.
     CANDIDATE_FINISHED = "candidate_finished"
     INVITE_UNDELIVERED = "invite_undelivered"

@@ -66,9 +66,9 @@ def test_the_bell_shows_the_users_and_their_companies_notifications(client, monk
     asked = {}
 
     async def fake_companies(user_id):
-        return ["c1"]
+        return ["c1"], []
 
-    async def fake_latest(session, recipients, limit, since):
+    async def fake_latest(session, recipients, limit, since, viewer_of):
         asked["recipients"], asked["limit"], asked["since"] = recipients, limit, since
 
         return [
@@ -81,13 +81,13 @@ def test_the_bell_shows_the_users_and_their_companies_notifications(client, monk
             )
         ]
 
-    async def fake_unread(session, recipients, user_id, since):
+    async def fake_unread(session, recipients, user_id, since, viewer_of):
         return 3
 
     async def fake_created(user_id):
         return MADE
 
-    monkeypatch.setattr(feed.companies, "company_ids", fake_companies)
+    monkeypatch.setattr(feed.companies, "memberships", fake_companies)
     monkeypatch.setattr(notifications, "latest", fake_latest)
     monkeypatch.setattr(notifications, "unread_count", fake_unread)
     monkeypatch.setattr(feed.accounts, "account_created", fake_created)

@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Literal
 from uuid import UUID
 
 from pydantic import BaseModel
@@ -18,6 +19,29 @@ class SpentOut(BaseModel):
     """The credits the company's candidates took this calendar month."""
 
     credits: int
+
+
+class RefundOfferOut(BaseModel):
+    """What refunding a top-up now returns, as billing decides it: its unspent `credits`, for
+    `amount` (minor units, tax included) in `currency`. `takes_referral`: the referral rewards go
+    back too. `auto_top_up_on`: the company's automatic top-up stays on."""
+
+    credits: int
+    amount: str
+    currency: str
+    takes_referral: bool
+    auto_top_up_on: bool
+
+
+class RefundStateOut(BaseModel):
+    """A top-up's refund: `offer` when some of it can be refunded now, `status` of its latest
+    refund, and the credits and candidates of it held back by credits set aside, which a
+    revoked invite makes refundable."""
+
+    offer: RefundOfferOut | None
+    status: Literal["processing", "refunded", "declined"] | None
+    held_back_credits: int
+    held_back_candidates: int
 
 
 class HistoryEntryOut(BaseModel):
@@ -41,6 +65,8 @@ class HistoryEntryOut(BaseModel):
     candidate_deleted: bool
     # Why a superadmin adjusted the credits (reason "adjustment").
     note: str | None = None
+    # A top-up's: whether it can be refunded now, and its latest refund.
+    refund: RefundStateOut | None = None
 
 
 class InvoiceOut(BaseModel):

@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack bağlı değil. Yeniden bağlayın, ardından tekrar deneyin.",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "Adaysız mülakat sınırınıza ulaştınız ({limit}).\nYeni bir mülakat oluşturmak için bir aday davet edin veya bir mülakatı silin.",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Adaysız mülakat sınırınıza ulaştınız (ilk yüklemenize kadar {limit}).\nYeni bir mülakat oluşturmak için bir aday davet edin veya bir mülakatı silin.",
+    "This top-up can't be refunded now.": "Bu yükleme şu anda iade edilemez.",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle bu yüklemeyi iade edemedi. Kredileri bakiyenize geri döndü.",
 }

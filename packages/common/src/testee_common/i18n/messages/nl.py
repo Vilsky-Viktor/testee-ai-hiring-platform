@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack is niet gekoppeld. Koppel het opnieuw en probeer het dan nog eens.",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "Je hebt je limiet voor interviews zonder kandidaten bereikt ({limit}).\nNodig een kandidaat uit of verwijder een interview om een nieuw interview te maken.",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Je hebt je limiet voor interviews zonder kandidaten bereikt ({limit} tot je eerste opwaardering).\nNodig een kandidaat uit of verwijder een interview om een nieuw interview te maken.",
+    "This top-up can't be refunded now.": "Deze opwaardering kan nu niet worden terugbetaald.",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle kon deze opwaardering niet terugbetalen. De credits staan weer op je saldo.",
 }

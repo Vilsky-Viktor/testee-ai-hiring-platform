@@ -1,3 +1,4 @@
+from collections.abc import Sequence
 from datetime import datetime, timedelta
 
 from sqlalchemy import and_, delete, func, or_, select, tuple_
@@ -7,6 +8,7 @@ from testee_common.events.notifications import NotificationKind, Recipient
 
 from notifications.constants.member_emails import INTERVIEW_LINK
 from notifications.constants.notifications import (
+    BILLING_KINDS,
     EXPIRED_PER_PRUNE,
     GROUP_HOURS,
     KEEP_DAYS,
@@ -18,16 +20,24 @@ from notifications.models.notifications import Notification, Received, Seen
 Recipients = list[tuple[str, str]]
 
 
-def for_recipients(recipients: Recipients, since: datetime | None = None):
+def for_recipients(
+    recipients: Recipients, since: datetime | None = None, viewer_of: Sequence[str] = ()
+):
     """The recipients' notifications, and with `since` (when the user's account was made) the
     notifications for everyone that came after it. A user's items about a company's notes show
-    only while they're a member of it (among the recipients)."""
+    only while they're a member of it (among the recipients), and a company's billing not in
+    the companies they're only a viewer of (`viewer_of`)."""
     company_ids = [id_ for kind, id_ in recipients if kind == Recipient.COMPANY]
     own = and_(
         tuple_(Notification.recipient, Notification.recipient_id).in_(recipients),
         or_(
             Notification.kind != NotificationKind.NOTE_ADDED,
             Notification.data["company_id"].astext.in_(company_ids),
+        ),
+        or_(
+            Notification.kind.not_in(BILLING_KINDS),
+            Notification.recipient != Recipient.COMPANY,
+            Notification.recipient_id.not_in(viewer_of),
         ),
     )
 
@@ -145,12 +155,16 @@ async def prune(session: AsyncSession, event: dict, now: datetime) -> None:
 
 
 async def latest(
-    session: AsyncSession, recipients: Recipients, limit: int | None, since: datetime | None = None
+    session: AsyncSession,
+    recipients: Recipients,
+    limit: int | None,
+    since: datetime | None = None,
+    viewer_of: Sequence[str] = (),
 ) -> list[Notification]:
     """Newest first; all of them when `limit` is None. With `since`, everyone's too."""
     rows = await session.scalars(
         select(Notification)
-        .where(for_recipients(recipients, since))
+        .where(for_recipients(recipients, since, viewer_of))
         .order_by(Notification.created_at.desc())
         .limit(limit)
     )
@@ -159,11 +173,19 @@ async def latest(
 
 
 async def unread_count(
-    session: AsyncSession, recipients: Recipients, user_id: str, since: datetime | None = None
+    session: AsyncSession,
+    recipients: Recipients,
+    user_id: str,
+    since: datetime | None = None,
+    viewer_of: Sequence[str] = (),
 ) -> int:
     """Everything newer than when the user last opened the bell."""
     seen_at = await session.scalar(select(Seen.seen_at).where(Seen.user_id == user_id))
-    query = select(func.count()).select_from(Notification).where(for_recipients(recipients, since))
+    query = (
+        select(func.count())
+        .select_from(Notification)
+        .where(for_recipients(recipients, since, viewer_of))
+    )
 
     if seen_at is not None:
         query = query.where(Notification.created_at > seen_at)

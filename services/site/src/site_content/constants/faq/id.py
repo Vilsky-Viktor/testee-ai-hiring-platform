@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Bisakah aku mendapat pengembalian dana?",
-        "answer": "Bisa, untuk kredit yang kamu beli dalam 14 hari terakhir dan belum dipakai: lewat Paddle atau dengan menulis kepada kami. Kredit gratis, seperti hadiah sambutan, tidak dikembalikan, dan dihitung terpakai lebih dulu. Rinciannya ada di [ketentuan](/terms).",
+        "answer": "Bisa, untuk kredit yang kamu beli dalam 14 hari terakhir dan belum dipakai: di halaman tagihan perusahaanmu, lewat Paddle, atau dengan menulis kepada kami. Kredit yang dicadangkan untuk kandidat tidak bisa dikembalikan selama masih dicadangkan; kredit yang disisihkan dalam 14 hari itu bisa dikembalikan selama 7 hari setelah kembali. Kredit gratis, seperti hadiah sambutan, tidak dikembalikan, dan dihitung terpakai lebih dulu. Rinciannya ada di [ketentuan](/terms).",
     },
     {
         "key": "scorecards",

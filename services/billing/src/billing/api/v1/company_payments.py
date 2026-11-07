@@ -1,5 +1,5 @@
 """A company's payments, for its members: its prices and currency, a top-up's checkout, an
-invoice and why a payment failed. Billing checks the member and their role itself through
+invoice, a refund and why a payment failed. Billing checks the member and their role itself through
 companies (integrations/companies.py); owners and admins pay, viewers only see the currency.
 Reached at /api/companies/companies/{id}/billing/..., as before (the gateway sends these here)."""
 
@@ -23,7 +23,15 @@ from billing.schemas.billing import (
     TopUpCheckoutIn,
     TopUpCheckoutOut,
 )
-from billing.services import checkout_calls, checkouts, currencies, invoices, payment_failures
+from billing.schemas.refunds import RefundIn, RefundOut
+from billing.services import (
+    checkout_calls,
+    checkouts,
+    currencies,
+    invoices,
+    payment_failures,
+    refunds,
+)
 from billing.services import outbox as outbox_service
 from billing.services.catalog import catalog_out
 from billing.services.currencies import decide
@@ -98,6 +106,17 @@ async def get_company_invoice(
     await checkout_calls.count(user.uid, company_id)
 
     return await invoices.company_invoice(str(company_id), transaction_id)
+
+
+@router.post("/refund")
+async def refund_top_up(company_id: UUID, body: RefundIn, user: CurrentUser) -> RefundOut:
+    """Refunds one of the company's top-ups: the unspent credits the history offers, in what it
+    was paid in. What and how much are decided here; the browser only names the top-up. Owners
+    and admins, as top-ups."""
+    await require(company_id, user.uid, editor=True)
+    await checkout_calls.count(user.uid, company_id)
+
+    return await refunds.request(str(company_id), body.transaction_id, user.uid)
 
 
 @router.get("/payment-failure")

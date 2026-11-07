@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee può solo pubblicare in quel canale; non può leggere il tuo Slack.",
-      "Tutti continuano a vedere ogni notifica nella campanella.",
+      "Tutti continuano a vedere le proprie notifiche nella campanella; quelle di fatturazione solo proprietari e amministratori.",
       "Se il membro che ha collegato Slack se ne va o diventa visualizzatore, Slack si ferma finché un proprietario o un amministratore non lo ricollega."
     ]
   },
@@ -388,7 +388,7 @@
       "Ricevete entrambi crediti quando l'azienda invitata fa la sua prima ricarica, di qualsiasi importo.",
       "I crediti vanno a questa azienda e non scadono mai.",
       "Ogni parte riceve 1.000 crediti. La tua azienda li ottiene fino a 25 volte l'anno; oltre questo limite, l'azienda che hai invitato riceve comunque i suoi crediti.",
-      "Una ricarica rimborsata per intero o stornata annulla entrambi i premi."
+      "Una ricarica rimborsata, per qualsiasi importo, o stornata per intero annulla entrambi i premi."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "I crediti di un candidato vengono riservati quando lo inviti, addebitati quando risponde e restituiti se non risponde.",
       "Solo proprietari e amministratori vedono questa pagina.",
-      "Puoi chiedere il rimborso dei crediti acquistati negli ultimi 14 giorni e non spesi, tramite Paddle o scrivendoci."
+      "Puoi farti rimborsare i crediti acquistati negli ultimi 14 giorni e non spesi dalla riga della ricarica nello storico, tramite Paddle o scrivendoci. I crediti riservati ai candidati non possono essere rimborsati finché restano riservati."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Un candidato costa 500 crediti: riservati quando lo inviti, addebitati quando risponde e restituiti se non risponde.",
       "I crediti non scadono. La fattura di ogni ricarica è nella scheda Fatturazione dell'azienda.",
       "I prezzi non includono IVA o imposta sulle vendite: dove si applica, viene aggiunta al checkout.",
-      "Puoi chiedere il rimborso dei crediti acquistati negli ultimi 14 giorni e non spesi, tramite Paddle o scrivendoci.",
+      "Puoi farti rimborsare i crediti acquistati negli ultimi 14 giorni e non spesi nella pagina Fatturazione dell'azienda, tramite Paddle o scrivendoci.",
       "Proprietari e amministratori configurano la ricarica automatica. Solo la persona la cui carta paga può modificarla o aggiornare la carta; qualsiasi proprietario o amministratore può disattivarla subito.",
       "Una carta rifiutata viene riprovata dopo 1, 3 e 7 giorni, poi la ricarica automatica si sospende finché la carta non viene aggiornata. Una carta che non può pagare, come una scaduta, la sospende subito."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "I crediti non scadono mai.",
       "Un candidato che non risponde a nessuna domanda non costa nulla.",
-      "I crediti pagati e non usati possono essere rimborsati entro 14 giorni."
+      "I crediti pagati e non usati possono essere rimborsati entro 14 giorni, nella pagina Fatturazione dell'azienda."
     ]
   },
   "tests": {

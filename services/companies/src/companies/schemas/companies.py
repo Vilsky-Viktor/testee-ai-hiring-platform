@@ -186,6 +186,8 @@ class CompanyBalanceOut(BaseModel):
 
 
 class UserCompaniesOut(BaseModel):
-    """Every company the user is a member of, for the notifications service."""
+    """Every company the user is a member of, for the notifications service, and those of them
+    where they're only a viewer: the bell keeps a company's billing from them."""
 
     company_ids: list[str]
+    viewer_company_ids: list[str]

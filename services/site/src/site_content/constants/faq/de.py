@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Kann ich mein Geld zurückbekommen?",
-        "answer": "Ja, für Credits, die du in den letzten 14 Tagen gekauft und noch nicht ausgegeben hast: über Paddle oder indem du uns schreibst. Gratis-Credits wie das Willkommensgeschenk werden nicht erstattet und gelten als zuerst ausgegeben. Details stehen in den [Bedingungen](/terms).",
+        "answer": "Ja, für Credits, die du in den letzten 14 Tagen gekauft und noch nicht ausgegeben hast: auf der Abrechnungsseite deines Unternehmens, über Paddle oder indem du uns schreibst. Für Kandidaten reservierte Credits können nicht erstattet werden, solange sie reserviert sind; innerhalb der 14 Tage reservierte Credits können noch 7 Tage nach ihrer Rückkehr erstattet werden. Gratis-Credits wie das Willkommensgeschenk werden nicht erstattet und gelten als zuerst ausgegeben. Details stehen in den [Bedingungen](/terms).",
     },
     {
         "key": "scorecards",

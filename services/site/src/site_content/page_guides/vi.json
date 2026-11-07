@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee chỉ có thể đăng vào kênh đó; nó không thể đọc Slack của bạn.",
-      "Mọi người vẫn thấy mọi thông báo ở biểu tượng chuông.",
+      "Mọi người vẫn thấy thông báo của mình ở biểu tượng chuông; thông báo thanh toán chỉ dành cho chủ sở hữu và quản trị viên.",
       "Nếu thành viên đã kết nối Slack rời đi hoặc trở thành người xem, Slack sẽ ngừng hoạt động cho đến khi chủ sở hữu hoặc quản trị viên kết nối lại."
     ]
   },
@@ -388,7 +388,7 @@
       "Cả hai bên nhận credit khi công ty bạn mời nạp credit lần đầu, với bất kỳ số tiền nào.",
       "Credit được cộng cho công ty này và không bao giờ hết hạn.",
       "Mỗi bên nhận 1.000 credit. Công ty của bạn nhận được tối đa 25 lần một năm; sau đó, công ty bạn đã mời vẫn nhận credit của họ.",
-      "Lần nạp bị hoàn tiền toàn bộ hoặc bị bồi hoàn (chargeback) sẽ thu hồi cả hai phần thưởng."
+      "Lần nạp bị hoàn tiền, dù với số tiền bao nhiêu, hoặc bị bồi hoàn (chargeback) toàn bộ sẽ thu hồi cả hai phần thưởng."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "Credit cho một ứng viên được giữ lại khi mời, bị trừ khi ứng viên trả lời và được hoàn lại nếu không.",
       "Chỉ chủ sở hữu và quản trị viên thấy trang này.",
-      "Bạn có thể yêu cầu hoàn tiền cho credit đã mua trong 14 ngày qua và chưa dùng, qua Paddle hoặc bằng cách viết cho chúng tôi."
+      "Bạn có thể hoàn tiền cho credit đã mua trong 14 ngày qua và chưa dùng, ngay tại dòng của lần nạp đó trong lịch sử, qua Paddle hoặc bằng cách viết cho chúng tôi. Credit giữ chỗ cho ứng viên không thể được hoàn tiền trong thời gian giữ chỗ."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Mỗi ứng viên tốn 500 credit: được giữ lại khi mời, bị trừ khi ứng viên trả lời và được hoàn lại nếu không.",
       "Credit không bao giờ hết hạn. Hóa đơn của mỗi lần nạp nằm ở thẻ Thanh toán của công ty.",
       "Giá chưa bao gồm VAT hoặc thuế bán hàng: nếu áp dụng, thuế được cộng khi thanh toán.",
-      "Bạn có thể yêu cầu hoàn tiền cho credit đã mua trong 14 ngày qua và chưa dùng, qua Paddle hoặc bằng cách viết cho chúng tôi.",
+      "Bạn có thể hoàn tiền cho credit đã mua trong 14 ngày qua và chưa dùng, trên trang thanh toán của công ty, qua Paddle hoặc bằng cách viết cho chúng tôi.",
       "Chủ sở hữu và quản trị viên thiết lập tự động nạp. Chỉ người có thẻ đang thanh toán mới thay đổi được hoặc cập nhật thẻ; bất kỳ chủ sở hữu hoặc quản trị viên nào cũng có thể tắt ngay.",
       "Thẻ bị từ chối sẽ được thử lại sau 1, 3 và 7 ngày, rồi tự động nạp tạm dừng cho đến khi thẻ được cập nhật. Thẻ không thể thanh toán, như thẻ hết hạn, sẽ làm tạm dừng ngay."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Credit không bao giờ hết hạn.",
       "Ứng viên không trả lời câu hỏi nào thì không tốn gì.",
-      "Credit đã mua chưa dùng có thể được hoàn tiền trong vòng 14 ngày."
+      "Credit đã mua chưa dùng có thể được hoàn tiền trong vòng 14 ngày, trên trang thanh toán của công ty."
     ]
   },
   "tests": {

@@ -337,7 +337,7 @@
     ],
     "tips": [
       "A testee só pode publicar nesse canal; ela não consegue ler seu Slack.",
-      "Todos continuam vendo cada notificação no sino.",
+      "Todos continuam vendo suas notificações no sino; as de cobrança são só para proprietários e admins.",
       "Se o membro que conectou o Slack sair ou virar visualizador, ele para até um proprietário ou administrador reconectá-lo."
     ]
   },
@@ -388,7 +388,7 @@
       "Vocês dois recebem créditos quando a empresa convidada faz a primeira recarga, de qualquer valor.",
       "Os créditos vão para esta empresa e nunca expiram.",
       "Cada lado recebe 1.000 créditos. Sua empresa ganha isso até 25 vezes por ano; depois disso, a empresa que você convidou ainda recebe os créditos dela.",
-      "Uma recarga reembolsada integralmente ou estornada cancela as duas recompensas."
+      "Uma recarga reembolsada, em qualquer valor, ou estornada integralmente cancela as duas recompensas."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "Os créditos de um candidato são reservados quando ele é convidado, cobrados quando ele responde e devolvidos se não responder.",
       "Só proprietários e administradores veem esta página.",
-      "Você pode pedir o reembolso de créditos comprados nos últimos 14 dias e não gastos, pela Paddle ou escrevendo para nós."
+      "Você pode reembolsar créditos comprados nos últimos 14 dias e não gastos na linha da recarga no histórico, pela Paddle ou escrevendo para nós. Créditos reservados para candidatos não podem ser reembolsados enquanto estiverem reservados."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Um candidato custa 500 créditos: reservados quando ele é convidado, cobrados quando ele responde e devolvidos se não responder.",
       "Os créditos não expiram. A fatura de cada recarga fica na aba Faturamento da empresa.",
       "Os preços não incluem IVA nem imposto sobre vendas: onde se aplica, é adicionado no checkout.",
-      "Você pode pedir o reembolso de créditos comprados nos últimos 14 dias e não gastos, pela Paddle ou escrevendo para nós.",
+      "Você pode reembolsar créditos comprados nos últimos 14 dias e não gastos na página de faturamento da empresa, pela Paddle ou escrevendo para nós.",
       "Proprietários e administradores configuram a recarga automática. Só a pessoa cujo cartão paga pode alterá-la ou atualizar o cartão; qualquer proprietário ou administrador pode desativá-la na hora.",
       "Um cartão recusado é tentado de novo após 1, 3 e 7 dias; depois, a recarga automática é pausada até o cartão ser atualizado. Um cartão que não pode pagar, como um vencido, a pausa na hora."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Os créditos não expiram.",
       "Um candidato que não responde nenhuma questão não custa nada.",
-      "Créditos pagos não usados podem ser reembolsados em até 14 dias."
+      "Créditos pagos não usados podem ser reembolsados em até 14 dias, na página de faturamento da empresa."
     ]
   },
   "tests": {

@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "¿Puedo obtener un reembolso?",
-        "answer": "Sí, de los créditos que compraste en los últimos 14 días y no has gastado: a través de Paddle o escribiéndonos. Los créditos gratis, como el regalo de bienvenida, no se reembolsan y se consideran gastados primero. Los [términos](/terms) tienen los detalles.",
+        "answer": "Sí, de los créditos que compraste en los últimos 14 días y no has gastado: en la página de facturación de tu empresa, a través de Paddle o escribiéndonos. Los créditos reservados para candidatos no se pueden reembolsar mientras estén reservados; los reservados dentro de los 14 días se pueden reembolsar durante los 7 días siguientes a su vuelta. Los créditos gratis, como el regalo de bienvenida, no se reembolsan y se consideran gastados primero. Los [términos](/terms) tienen los detalles.",
     },
     {
         "key": "scorecards",

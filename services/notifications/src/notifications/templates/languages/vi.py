@@ -373,6 +373,28 @@ TEXTS = {
             "luôn được gửi, bất kể cài đặt email của bạn."
         ),
     },
+    "refund_rejected": {
+        "subject": "Hoàn tiền bị từ chối cho {company}: {price}",
+        "preheader": "Paddle đã từ chối hoàn {price}. Số credit đã quay lại số dư của bạn.",
+        "heading": "Paddle đã từ chối hoàn tiền",
+        "lines": [
+            "Paddle, bên bán lại của chúng tôi, đã từ chối hoàn {price} cho {company}, và chưa có khoản tiền nào được trả lại.",
+            "{credits, plural, other {# credit}} dành riêng cho việc này đã quay lại số dư của công ty. Hãy viết cho chúng tôi nếu bạn vẫn muốn hoàn tiền.",
+        ],
+        "button": "Mở trang thanh toán",
+        "footer": "Email này được gửi đến {email} vì bạn là chủ sở hữu hoặc quản trị viên của {company} trên testee. Email liên quan đến việc thanh toán của công ty bạn nên luôn được gửi, bất kể cài đặt email của bạn.",
+    },
+    "refund_approved": {
+        "subject": "Hoàn tiền được phê duyệt cho {company}: {price}",
+        "preheader": "Paddle đã phê duyệt hoàn {price}. Khoản tiền sẽ về thẻ đã thanh toán.",
+        "heading": "Paddle đã phê duyệt hoàn tiền",
+        "lines": [
+            "Paddle, bên bán lại của chúng tôi, đã phê duyệt hoàn {price} cho {company}. Khoản tiền, đã gồm thuế, sẽ về thẻ đã thanh toán, việc này có thể mất vài ngày.",
+            "{credits, plural, other {# credit}} được hoàn đã rời khỏi số dư của công ty.",
+        ],
+        "button": "Mở trang thanh toán",
+        "footer": "Email này được gửi đến {email} vì bạn là chủ sở hữu hoặc quản trị viên của {company} trên testee. Email liên quan đến việc thanh toán của công ty bạn nên luôn được gửi, bất kể cài đặt email của bạn.",
+    },
     "top_up_price_change": {
         "subject": "Giá tự động nạp mới cho {company}",
         "preheader": "Từ {date}, mỗi lần tự động nạp có giá {new_price} thay vì {price}.",

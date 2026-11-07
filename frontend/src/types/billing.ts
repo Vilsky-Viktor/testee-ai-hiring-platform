@@ -6,6 +6,7 @@ export type Catalog = Schemas["CatalogOut"]
 export type Product = Schemas["TopUpOut"]
 export type Referral = Schemas["ReferralOut"]
 export type AutoTopUp = Schemas["AutoTopUpOut"]
+export type RefundResult = Schemas["RefundOut"]
 // The currency someone sees prices in, or a company pays in (and its running automatic
 // top-up's), with the ones to choose from.
 export type CurrencyChoice = Schemas["CurrencyOut"]

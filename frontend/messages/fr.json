@@ -1255,7 +1255,6 @@
     "memberFailed": "Impossible d'inviter cette personne. Veuillez réessayer.",
     "invite": "Inviter",
     "jobDescription": "Description du poste",
-    "generate": "Générer l'entretien",
     "startFailed": "Impossible de commencer l'entretien. Veuillez réessayer.",
     "candidateEmails": "E-mails des candidats",
     "candidateEmail": "E-mail du candidat",
@@ -2071,6 +2070,8 @@
       "auto_top_up_on": "La recharge automatique est activée : {price} hors taxes quand les crédits disponibles passent sous {threshold, number}.",
       "auto_top_up_paused": "La recharge automatique est en pause : la carte a été refusée. Mettez la carte à jour pour la réactiver.",
       "auto_top_up_price_change": "À partir du <time>{date}</time>, chaque recharge automatique coûte {newPrice} au lieu de {price}.",
+      "refund_approved": "Remboursement approuvé pour <bdi>{name}</bdi> : {price}.",
+      "refund_rejected": "Remboursement refusé pour <bdi>{name}</bdi> : {price}. {credits, plural, one {# crédit est revenu} many {# crédits sont revenus} other {# crédits sont revenus}} dans votre solde.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> a terminé {title, select, none {un entretien} other {« <bdi>{title}</bdi> »}}{grade, select, none {.} other { : {grade}.}}} other {# candidats ont terminé {title, select, none {un entretien} other {« <bdi>{title}</bdi> »}}.}}",
       "invite_undelivered": "{count, plural, =1 {L'invitation envoyée à <bdi>{email}</bdi> pour {title, select, none {un entretien} other {« <bdi>{title}</bdi> »}} n'a pas été remise.} other {# invitations pour {title, select, none {un entretien} other {« <bdi>{title}</bdi> »}} n'ont pas été remises.}}",
       "interview_ready": "{title, select, none {Un entretien est prêt.} other {L'entretien « <bdi>{title}</bdi> » est prêt.}}",
@@ -2367,6 +2368,8 @@
       "interview_ready": "L'entretien « Data Analyst » est prêt.",
       "auto_top_up_charged": "La recharge automatique a ajouté 5 000 crédits.",
       "auto_top_up_failed": "La recharge automatique n'a pas pu débiter la carte. Rechargez pour ne pas manquer de solde.",
+      "refund_approved": "Remboursement approuvé pour Acme : $55.50.",
+      "refund_rejected": "Remboursement refusé pour Acme : $55.50. Les crédits sont revenus dans le solde.",
       "note_added": "Maya a ajouté une note sur « Data Analyst » : solide en SQL, à appeler."
     },
     "connectFailed": "Impossible de connecter Slack.",
@@ -2384,6 +2387,8 @@
       "interview_ready": "Un entretien est prêt",
       "auto_top_up_charged": "Une recharge automatique a été débitée",
       "auto_top_up_failed": "Une recharge automatique a échoué",
+      "refund_approved": "Un remboursement a été approuvé",
+      "refund_rejected": "Un remboursement a été refusé",
       "note_added": "Un membre de l'équipe a écrit un commentaire, avec son texte"
     },
     "instructionsTitle": "Comment Slack reçoit vos notifications",
@@ -2952,6 +2957,23 @@
       "adjustment": "Ajustement par testee"
     },
     "automatic": "Recharge automatique",
+    "refund": {
+      "open": "Rembourser",
+      "title": "Rembourser {amount} ?",
+      "text": "Paddle rembourse {amount}, taxes comprises, sur la carte utilisée pour le paiement, ce qui peut prendre quelques jours. <credits></credits> {count, plural, one {crédit non dépensé quitte} many {crédits non dépensés quittent} other {crédits non dépensés quittent}} votre solde dès maintenant, et {count, plural, one {y revient} many {y reviennent} other {y reviennent}} si le remboursement n'aboutit pas.",
+      "referral": "Cette recharge a déclenché une récompense de parrainage : tout remboursement la retire donc aux deux entreprises. Si elle a été dépensée, votre solde peut devenir négatif.",
+      "autoTopUp": "La recharge automatique reste active et débitera de nouveau la carte quand le solde passera sous le montant choisi. Désactivez-la d'abord si vous ne le souhaitez pas.",
+      "heldBack": "{count, plural, one {# candidat a} many {# candidats ont} other {# candidats ont}} des crédits <reserved>réservés</reserved>. Révoquez leurs invitations pour les inclure.",
+      "confirm": "Rembourser {amount}",
+      "refunded": "Remboursée.",
+      "processing": "Remboursement en cours.",
+      "failed": "Impossible de rembourser cette recharge. Veuillez réessayer.",
+      "status": {
+        "processing": "Remboursement en cours",
+        "refunded": "Remboursée",
+        "declined": "Remboursement refusé par Paddle"
+      }
+    },
     "invoice": "Facture",
     "invoiceFailed": "Impossible d'ouvrir la facture. Veuillez réessayer.",
     "deletedCandidate": "Un candidat supprimé",
@@ -3076,6 +3098,7 @@
     "compliance": {
       "title": "Conformité",
       "aiAct": "Au titre de l'EU AI Act, testee est traité comme un système d'IA à haut risque, dont les obligations s'appliquent à partir du <time>{date}</time>. Nos instructions pour les entreprises en sont la notice d'utilisation.",
+      "aiMarks": "Les questions, les options de réponse, les réponses de l’assistant et les clips vocaux sont marqués comme générés par IA sous une forme lisible par un logiciel : data-ai-generated dans le code d’une page, et la balise AI_GENERATED dans le fichier d’un clip vocal. Les clips vocaux portent aussi le filigrane inaudible d’OpenAI, que vous pouvez vérifier sur <verify>openai.com/verify</verify>. Un texte copié depuis une page ne garde pas sa marque.",
       "humanReview": "testee ne prend aucune décision sur un candidat : ce sont des personnes de l'entreprise qui examinent les résultats et décident, et les candidats peuvent demander qu'une personne réexamine leur résultat.",
       "dpa": "L'accord de traitement des données fait partie des conditions, sans rien à signer. Il couvre le RGPD, le UK GDPR et les lois des États américains sur la protection de la vie privée, comme celle de la Californie, au titre desquelles testee est le prestataire de services (service provider) de l'entreprise.",
       "documents": "Les entreprises reçoivent <link>une notice d'utilisation, un modèle d'AIPD et des modèles d'information des candidats</link>, avec des versions pour la ville de New York, l'Illinois et le Colorado.",
@@ -3135,7 +3158,6 @@
     "periodDays": "{days, number} derniers jours",
     "periodCustom": "Personnalisée",
     "empty": "Aucune action pour l'instant.",
-      "aiMarks": "Les questions, les options de réponse, les réponses de l’assistant et les clips vocaux sont marqués comme générés par IA sous une forme lisible par un logiciel : data-ai-generated dans le code d’une page, et la balise AI_GENERATED dans le fichier d’un clip vocal. Les clips vocaux portent aussi le filigrane inaudible d’OpenAI, que vous pouvez vérifier sur <verify>openai.com/verify</verify>. Un texte copié depuis une page ne garde pas sa marque.",
     "noMatches": "Aucune action ne correspond à ces filtres.",
     "formerMember": "Un ancien membre",
     "apiKey": "{via, select, mcp {Via MCP avec la clé « <bdi>{name}</bdi> »} other {Via l'API avec la clé « <bdi>{name}</bdi> »}}",
@@ -3201,6 +3223,7 @@
       "verification_requested": "A demandé la vérification de l'entreprise",
       "ai_apps_changed": "A autorisé ou bloqué les apps d'IA",
       "top_up_paid": "A rechargé des crédits",
+      "refund_requested": "A demandé un remboursement",
       "auto_top_up_set": "A configuré la recharge automatique",
       "auto_top_up_changed": "A modifié la recharge automatique",
       "auto_top_up_stopped": "A arrêté la recharge automatique",

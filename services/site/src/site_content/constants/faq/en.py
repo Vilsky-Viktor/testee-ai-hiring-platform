@@ -114,7 +114,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Can I get a refund?",
-        "answer": "Yes, for credits you bought in the last 14 days and haven't spent: through Paddle, or by writing to us. Free credits, such as the welcome gift, aren't refunded, and count as spent first. The [terms](/terms) have the details.",
+        "answer": "Yes, for credits you bought in the last 14 days and haven't spent: on your company's billing page, through Paddle, or by writing to us. Credits reserved for candidates can't be refunded while reserved; those set aside within the 14 days can be refunded for 7 days after they come back. Free credits, such as the welcome gift, aren't refunded, and count as spent first. The [terms](/terms) have the details.",
     },
     {
         "key": "scorecards",

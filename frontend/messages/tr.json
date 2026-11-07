@@ -1255,7 +1255,6 @@
     "memberFailed": "Davet edilemedi. Lütfen tekrar deneyin.",
     "invite": "Davet et",
     "jobDescription": "İş tanımı",
-    "generate": "Mülakat oluştur",
     "startFailed": "Mülakat başlatılamadı. Lütfen tekrar deneyin.",
     "candidateEmails": "Aday e-postaları",
     "candidateEmail": "Adayın e-postası",
@@ -2075,6 +2074,8 @@
       "auto_top_up_on": "Otomatik yükleme açık: kullanılabilir krediler {threshold, number} altına düştüğünde {price} artı vergi.",
       "auto_top_up_paused": "Otomatik yükleme duraklatıldı: kart reddedildi. Yeniden açmak için kartı güncelleyin.",
       "auto_top_up_price_change": "<time>{date}</time> itibarıyla her otomatik yüklemenin ücreti {price} yerine {newPrice} olacak.",
+      "refund_approved": "<bdi>{name}</bdi> için iade onaylandı: {price}.",
+      "refund_rejected": "<bdi>{name}</bdi> için iade reddedildi: {price}. {credits, plural, one {# kredi} other {# kredi}} bakiyenize geri döndü.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi>, {title, select, none {bir mülakatı} other {“<bdi>{title}</bdi>” mülakatını}} tamamladı{grade, select, none {.} other {: {grade}.}}} other {# aday {title, select, none {bir mülakatı} other {“<bdi>{title}</bdi>” mülakatını}} tamamladı.}}",
       "invite_undelivered": "{count, plural, one {<bdi>{email}</bdi> adresine gönderilen {title, select, none {mülakat daveti} other {“<bdi>{title}</bdi>” daveti}} iletilemedi.} other {{title, select, none {Bir mülakat için} other {“<bdi>{title}</bdi>” için}} gönderilen # davet iletilemedi.}}",
       "interview_ready": "{title, select, none {Bir mülakat hazır.} other {“<bdi>{title}</bdi>” mülakatı hazır.}}",
@@ -2371,6 +2372,8 @@
       "interview_ready": "“Data Analyst” mülakatı hazır.",
       "auto_top_up_charged": "Otomatik yükleme 5.000 kredi ekledi.",
       "auto_top_up_failed": "Otomatik yükleme karttan ödeme alamadı. Bakiyenizin bitmemesi için kredi yükleyin.",
+      "refund_approved": "Acme için iade onaylandı: $55.50.",
+      "refund_rejected": "Acme için iade reddedildi: $55.50. Krediler bakiyeye geri döndü.",
       "note_added": "Maya “Data Analyst” için bir yorum ekledi: güçlü SQL, aramaya değer."
     },
     "connectFailed": "Slack bağlanamadı.",
@@ -2388,6 +2391,8 @@
       "interview_ready": "Bir mülakat hazır",
       "auto_top_up_charged": "Otomatik yükleme ücreti tahsil edildi",
       "auto_top_up_failed": "Otomatik yükleme başarısız oldu",
+      "refund_approved": "Bir iade onaylandı",
+      "refund_rejected": "Bir iade reddedildi",
       "note_added": "Bir ekip üyesi yorum yazdı, metniyle birlikte"
     },
     "instructionsTitle": "Slack bildirimlerinizi nasıl alır",
@@ -2956,6 +2961,23 @@
       "adjustment": "testee düzeltmesi"
     },
     "automatic": "Otomatik yükleme",
+    "refund": {
+      "open": "İade et",
+      "title": "{amount} iade edilsin mi?",
+      "text": "Paddle, vergiler dahil {amount} tutarını ödeme yapılan karta iade eder; bu birkaç gün sürebilir. <credits></credits> {count, plural, one {harcanmamış kredi şimdi bakiyenizden çıkar} other {harcanmamış kredi şimdi bakiyenizden çıkar}} ve iade gerçekleşmezse geri gelir.",
+      "referral": "Bu yükleme bir davet ödülü kazandırdı, bu yüzden herhangi bir iadesi ödülü her iki şirketten de geri alır. Ödül harcandıysa bakiyeniz sıfırın altına düşebilir.",
+      "autoTopUp": "Otomatik yükleme açık kalır ve bakiye belirlediğiniz seviyenin altına düştüğünde yeniden tahsilat yapar. Bunu istemiyorsanız önce kapatın.",
+      "heldBack": "{count, plural, one {# aday için} other {# aday için}} krediler <reserved>ayrıldı</reserved>. Bu kredileri de dahil etmek için davetleri geri alın.",
+      "confirm": "{amount} iade et",
+      "refunded": "İade edildi.",
+      "processing": "İade yolda.",
+      "failed": "Bu yükleme iade edilemedi. Lütfen tekrar deneyin.",
+      "status": {
+        "processing": "İade sürüyor",
+        "refunded": "İade edildi",
+        "declined": "İade Paddle tarafından reddedildi"
+      }
+    },
     "invoice": "Fatura",
     "invoiceFailed": "Fatura açılamadı. Lütfen tekrar deneyin.",
     "deletedCandidate": "Silinmiş bir aday",
@@ -3080,6 +3102,7 @@
     "compliance": {
       "title": "Uyumluluk",
       "aiAct": "AB Yapay Zekâ Yasası kapsamında testee, yükümlülükleri <time>{date}</time> tarihinden itibaren geçerli olan yüksek riskli bir yapay zekâ sistemi olarak kabul edilir. Şirketler için talimatlarımız, sistemin kullanım talimatlarıdır.",
+      "aiMarks": "Sorular, cevap seçenekleri, asistanın cevapları ve ses klipleri, yazılımların okuyabileceği bir biçimde yapay zekâ ürünü olarak işaretlenir: sayfanın kodunda data-ai-generated, ses klibinin dosyasında AI_GENERATED etiketi bulunur. Ses kliplerinde ayrıca OpenAI'ın duyulmayan filigranı vardır; bunu <verify>openai.com/verify</verify> adresinden kontrol edebilirsiniz. Bir sayfadan kopyalanan metin bu işareti korumaz.",
       "humanReview": "testee bir aday hakkında karar vermez: şirketteki kişiler sonuçları inceler ve karar verir, adaylar da sonuçlarının bir insan tarafından incelenmesini isteyebilir.",
       "dpa": "Veri işleme sözleşmesi koşulların bir parçasıdır, imzalanacak bir şey yoktur. GDPR'ı, UK GDPR'ı ve testee'nin şirketin hizmet sağlayıcısı olduğu, Kaliforniya'nınki gibi ABD eyalet gizlilik yasalarını kapsar.",
       "documents": "Şirketler <link>kullanım talimatlarını, bir DPIA şablonunu ve aday bilgilendirme şablonlarını</link> alır; New York City, Illinois ve Colorado için sürümler de vardır.",
@@ -3139,7 +3162,6 @@
     "periodDays": "Son {days, number} gün",
     "periodCustom": "Özel",
     "empty": "Henüz işlem yok.",
-      "aiMarks": "Sorular, cevap seçenekleri, asistanın cevapları ve ses klipleri, yazılımların okuyabileceği bir biçimde yapay zekâ ürünü olarak işaretlenir: sayfanın kodunda data-ai-generated, ses klibinin dosyasında AI_GENERATED etiketi bulunur. Ses kliplerinde ayrıca OpenAI'ın duyulmayan filigranı vardır; bunu <verify>openai.com/verify</verify> adresinden kontrol edebilirsiniz. Bir sayfadan kopyalanan metin bu işareti korumaz.",
     "noMatches": "Bu filtrelere uyan işlem yok.",
     "formerMember": "Eski bir üye",
     "apiKey": "{via, select, mcp {MCP üzerinden “<bdi>{name}</bdi>” anahtarıyla} other {API üzerinden “<bdi>{name}</bdi>” anahtarıyla}}",
@@ -3205,6 +3227,7 @@
       "verification_requested": "Şirketin doğrulanmasını istedi",
       "ai_apps_changed": "Yapay zekâ uygulamalarına izin verdi veya durdurdu",
       "top_up_paid": "Kredi yükledi",
+      "refund_requested": "İade istedi",
       "auto_top_up_set": "Otomatik yüklemeyi ayarladı",
       "auto_top_up_changed": "Otomatik yüklemeyi değiştirdi",
       "auto_top_up_stopped": "Otomatik yüklemeyi durdurdu",

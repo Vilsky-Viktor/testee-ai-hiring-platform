@@ -1577,7 +1577,8 @@ export interface paths {
     }
     /**
      * User Companies
-     * @description Every company the user is a member of, in any role; notifications sends them theirs.
+     * @description Every company the user is a member of, in any role, and those where they're a viewer;
+     *     notifications sends them theirs, billing's to owners and admins only.
      */
     get: operations["user_companies_internal_users__user_id__companies_get"]
     put?: never
@@ -3704,6 +3705,7 @@ export interface components {
       candidate_deleted: boolean
       /** Note */
       note?: string | null
+      refund?: components["schemas"]["RefundStateOut"] | null
     }
     /** InterviewBriefOut */
     InterviewBriefOut: {
@@ -4553,6 +4555,39 @@ export interface components {
       credits: number
     }
     /**
+     * RefundOfferOut
+     * @description What refunding a top-up now returns, as billing decides it: its unspent `credits`, for
+     *     `amount` (minor units, tax included) in `currency`. `takes_referral`: the referral rewards go
+     *     back too. `auto_top_up_on`: the company's automatic top-up stays on.
+     */
+    RefundOfferOut: {
+      /** Credits */
+      credits: number
+      /** Amount */
+      amount: string
+      /** Currency */
+      currency: string
+      /** Takes Referral */
+      takes_referral: boolean
+      /** Auto Top Up On */
+      auto_top_up_on: boolean
+    }
+    /**
+     * RefundStateOut
+     * @description A top-up's refund: `offer` when some of it can be refunded now, `status` of its latest
+     *     refund, and the credits and candidates of it held back by credits set aside, which a
+     *     revoked invite makes refundable.
+     */
+    RefundStateOut: {
+      offer: components["schemas"]["RefundOfferOut"] | null
+      /** Status */
+      status: ("processing" | "refunded" | "declined") | null
+      /** Held Back Credits */
+      held_back_credits: number
+      /** Held Back Candidates */
+      held_back_candidates: number
+    }
+    /**
      * ReportEmailIn
      * @description Who gets the candidate's report, and the PDF the page made, base64-encoded.
      */
@@ -5233,11 +5268,14 @@ export interface components {
     }
     /**
      * UserCompaniesOut
-     * @description Every company the user is a member of, for the notifications service.
+     * @description Every company the user is a member of, for the notifications service, and those of them
+     *     where they're only a viewer: the bell keeps a company's billing from them.
      */
     UserCompaniesOut: {
       /** Company Ids */
       company_ids: string[]
+      /** Viewer Company Ids */
+      viewer_company_ids: string[]
     }
     /**
      * UserEmailIn

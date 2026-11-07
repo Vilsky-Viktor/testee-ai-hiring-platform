@@ -4,8 +4,8 @@ from billing.integrations.redis import get_redis
 
 
 async def count(user_id: str, company_id) -> None:
-    """One call to Paddle's API on the user's behalf (a checkout, a card update, an invoice or a
-    failure read); past the hourly limit, a 429. Against abuse, so Redis being down lets it
+    """One call to Paddle's API on the user's behalf (a checkout, a card update, an invoice, a
+    failure read or a refund); past the hourly limit, a 429. Against abuse, so Redis being down lets it
     through."""
     await hit_or_skip(
         get_redis(),

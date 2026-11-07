@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Posso pedir reembolso?",
-        "answer": "Sim, dos créditos que você comprou nos últimos 14 dias e ainda não gastou: pelo Paddle ou escrevendo para nós. Créditos grátis, como o presente de boas-vindas, não são reembolsados e são considerados gastos primeiro. Os [termos](/terms) têm os detalhes.",
+        "answer": "Sim, dos créditos que você comprou nos últimos 14 dias e ainda não gastou: na página de faturamento da sua empresa, pelo Paddle ou escrevendo para nós. Créditos reservados para candidatos não podem ser reembolsados enquanto estiverem reservados; os reservados dentro dos 14 dias podem ser reembolsados por 7 dias após a volta. Créditos grátis, como o presente de boas-vindas, não são reembolsados e são considerados gastos primeiro. Os [termos](/terms) têm os detalhes.",
     },
     {
         "key": "scorecards",

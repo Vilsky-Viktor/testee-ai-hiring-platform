@@ -376,6 +376,28 @@ TEXTS = {
             "saadetakse see sõltumata sinu e-kirjade seadetest."
         ),
     },
+    "refund_rejected": {
+        "subject": "Tagasimaksest keelduti ettevõttele {company}: {price}",
+        "preheader": "Paddle keeldus summa {price} tagasimaksest. Krediidid on tagasi sinu saldol.",
+        "heading": "Paddle keeldus tagasimaksest",
+        "lines": [
+            "Meie edasimüüja Paddle keeldus summa {price} tagasimaksest ettevõttele {company} ja raha ei tagastatud.",
+            "{credits, plural, one {Selleks broneeritud # krediit on} other {Selleks broneeritud # krediiti on}} tagasi ettevõtte saldol. Kirjuta meile, kui soovid tagasimakset endiselt.",
+        ],
+        "button": "Ava arveldus",
+        "footer": "See e-kiri saadeti aadressile {email}, sest oled testees ettevõtte {company} omanik või administraator. See puudutab sinu ettevõtte arveldust, seega saadetakse see sõltumata sinu e-kirjade seadetest.",
+    },
+    "refund_approved": {
+        "subject": "Tagasimakse kiideti heaks ettevõttele {company}: {price}",
+        "preheader": "Paddle kiitis summa {price} tagasimakse heaks. Raha läheb tagasi kaardile, millega maksti.",
+        "heading": "Paddle kiitis tagasimakse heaks",
+        "lines": [
+            "Meie edasimüüja Paddle kiitis summa {price} tagasimakse ettevõttele {company} heaks. Raha läheb koos maksuga tagasi kaardile, millega maksti, ja see võib võtta mõne päeva.",
+            "{credits, plural, one {Tagastatud # krediit on} other {Tagastatud # krediiti on}} ettevõtte saldolt maha võetud.",
+        ],
+        "button": "Ava arveldus",
+        "footer": "See e-kiri saadeti aadressile {email}, sest oled testees ettevõtte {company} omanik või administraator. See puudutab sinu ettevõtte arveldust, seega saadetakse see sõltumata sinu e-kirjade seadetest.",
+    },
     "top_up_price_change": {
         "subject": "Uus juurdelaadimise hind: {company}",
         "preheader": (

@@ -21,7 +21,15 @@ const GROUPS = [
     ["candidate_finished", "ats_not_invited", "invite_undelivered"],
   ],
   ["interviews", ["interview_ready"]],
-  ["billing", ["auto_top_up_charged", "auto_top_up_failed"]],
+  [
+    "billing",
+    [
+      "auto_top_up_charged",
+      "auto_top_up_failed",
+      "refund_approved",
+      "refund_rejected",
+    ],
+  ],
   ["team", ["note_added"]],
 ] as const
 

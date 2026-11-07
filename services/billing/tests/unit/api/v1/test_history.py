@@ -10,6 +10,7 @@ from billing.helpers.history import history_entry_out, transaction_id
 from billing.integrations import paddle
 from billing.models.billing import Entry
 from billing.repositories import history, purchases
+from billing.services import refund_offers
 
 AUTH = bearer(service_token("billing"))
 NOW = datetime(2026, 10, 10, 12, tzinfo=UTC)
@@ -76,7 +77,11 @@ def test_the_history_route_lists_a_page_with_the_money_and_transaction(client, m
             entry("candidate:hold-1", Reason.CANDIDATE, -300),
         ]
 
+    async def states(session, owner_type, owner_id, entries, now):
+        return {}
+
     monkeypatch.setattr(history, "page", page)
+    monkeypatch.setattr(refund_offers, "states", states)
 
     response = client.get(
         "/internal/companies/acme/history", params={"offset": 20, "limit": 10}, headers=AUTH

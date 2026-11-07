@@ -74,6 +74,7 @@ locals {
     "billing/checkout",
     "billing/invoice",
     "billing/payment-failure",
+    "billing/refund",
     "auto-top-up",
     "auto-top-up/card",
   ]

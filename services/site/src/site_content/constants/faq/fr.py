@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Puis-je être remboursé ?",
-        "answer": "Oui, pour les crédits achetés au cours des 14 derniers jours et non dépensés : via Paddle ou en nous écrivant. Les crédits offerts, comme le cadeau de bienvenue, ne sont pas remboursés et sont dépensés en premier. Les [conditions](/terms) donnent les détails.",
+        "answer": "Oui, pour les crédits achetés au cours des 14 derniers jours et non dépensés : sur la page Facturation de votre entreprise, via Paddle ou en nous écrivant. Les crédits réservés à des candidats ne peuvent pas être remboursés tant qu'ils sont réservés ; ceux réservés pendant les 14 jours peuvent être remboursés pendant 7 jours après leur retour. Les crédits offerts, comme le cadeau de bienvenue, ne sont pas remboursés et sont dépensés en premier. Les [conditions](/terms) donnent les détails.",
     },
     {
         "key": "scorecards",

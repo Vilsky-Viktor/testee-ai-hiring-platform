@@ -26,7 +26,7 @@ Only what matters, for every member of a company:
 - an interview ready or cancelled,
 - a flagged and fixed interview question,
 - a referral reward,
-- an automatic top-up turned on, charged, failed, paused or getting a new price,
+- an automatic top-up turned on, charged, failed, paused or getting a new price, and a company's own refund approved or declined by Paddle: for its owners and admins only, in the bell too (the list and the count leave them out for a viewer, `BILLING_KINDS`; companies says who's a viewer, and a role change shows within a minute); a Slack channel is the company's own choice, so it gets those it chose,
 - an ATS candidate who couldn't be invited (`ats_not_invited`, see [ATS integrations](ats.md#candidates-from-workable)),
 - an ATS that takes the company's key but refuses the results written back (`ats_cannot_write`, once until the company reconnects or a write goes through; in the bell only),
 - an ATS or Slack connection that stopped working and needs reconnecting (`connection_broken`, once each time it stops; in the bell only, opening its page).
@@ -46,7 +46,7 @@ A member who accepts their team invite is announced to the owner, who invited th
 
 A company can send its notifications to one Slack channel too, from its integrations tab (Messaging, above the ATSs).
 
-- An owner or admin clicks "Add to Slack", allows testee in Slack and picks the channel. Back on the company's Slack page, they choose which notifications go there. Each "Add to Slack" link works once, for 15 minutes, and only while whoever clicked it is still an owner or admin. By default: finished candidates, ATS candidates that weren't invited, undelivered invites, failed automatic top-ups and the team's notes; ready interviews and charged top-ups can be added. Channels connected before notes existed got them too.
+- An owner or admin clicks "Add to Slack", allows testee in Slack and picks the channel. Back on the company's Slack page, they choose which notifications go there. Each "Add to Slack" link works once, for 15 minutes, and only while whoever clicked it is still an owner or admin. By default: finished candidates, ATS candidates that weren't invited, undelivered invites, failed automatic top-ups, refunds approved or declined and the team's notes; ready interviews and charged top-ups can be added. Channels connected before notes or refund notices existed got them too.
 - testee gets only an incoming web hook for that channel (the `incoming-webhook` scope): it can post there and can't read anything.
 - Each notification is posted once, in English, with a link back to testee: a finished candidate, or an invite that wasn't delivered, opens the candidate's page; an ATS candidate who wasn't invited opens that ATS's page, where they're retried; the rest open their notification's page. What people wrote (titles, emails) shows as typed: a title like `<!channel>` doesn't ping anyone. Every notification is posted, also one the bell groups with others (see [Grouping](#grouping)); a redelivered event doesn't post again.
 - A message is a plain-text block, which Slack doesn't format, with an **Open in testee** button (`helpers/slack.py`). What people wrote (a title, a candidate's name from an ATS) can't ping anyone (`<`, `>` and `&` are escaped), become a link (a dot inside a word gets an invisible zero-width space, so `www.evil-login.com` or an email isn't linked) or change the formatting.

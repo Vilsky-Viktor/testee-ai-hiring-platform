@@ -20,13 +20,17 @@ def test_notifications_gets_every_company_of_a_user(client, monkeypatch):
 
         return ["acme", "globex"]
 
+    async def fake_viewer_ids(session, user_id):
+        return ["globex"]
+
     monkeypatch.setattr(companies, "ids_for_user", fake_ids)
+    monkeypatch.setattr(companies, "viewer_ids_for_user", fake_viewer_ids)
     token = issue_token("notifications", "companies", "test-secret-that-is-at-least-32-bytes")
 
     response = client.get(URL, headers=bearer(token))
 
     assert response.status_code == 200
-    assert response.json() == {"company_ids": ["acme", "globex"]}
+    assert response.json() == {"company_ids": ["acme", "globex"], "viewer_company_ids": ["globex"]}
     assert asked == ["ann"]
 
 

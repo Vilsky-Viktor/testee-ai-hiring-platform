@@ -121,6 +121,19 @@ def top_up_charged_email(recipient: dict, company: str, notice: dict, link: str)
     return render("top_up_charged", data, link)
 
 
+def refund_email(kind: str, recipient: dict, company: str, notice: dict, link: str) -> Email:
+    """A service email: Paddle approved or turned down the company's refund, with what it returned
+    or would have and the credits; its button opens the company's billing page."""
+    data = {
+        **recipient_data(recipient),
+        "company": company,
+        "price": money(notice["price"], notice["currency"], recipient["language"]),
+        "credits": notice["credits"],
+    }
+
+    return render(kind, data, link)
+
+
 def legal_email(recipient: dict, document: str, version: str, site_url: str) -> Email:
     """A notice of a change to a legal document: a service email, whatever the settings. Its
     button opens the new version. The day it applies is written in the recipient's language."""

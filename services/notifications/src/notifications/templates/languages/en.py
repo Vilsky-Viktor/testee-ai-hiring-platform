@@ -342,6 +342,49 @@ TEXTS = {
             " settings."
         ),
     },
+    "refund_rejected": {
+        "subject": "Refund declined for {company}: {price}",
+        "preheader": "Paddle declined the {price} refund. The credits are back in your balance.",
+        "heading": "Paddle declined the refund",
+        "lines": [
+            (
+                "Paddle, our reseller, declined the refund of {price} for {company}, and no money "
+                "was returned."
+            ),
+            (
+                "The {credits, plural, one {# credit} other {# credits}} set aside for it "
+                "{credits, plural, one {is} other {are}} back in the company's balance. Write to "
+                "us if you still want the refund."
+            ),
+        ],
+        "button": "Open billing",
+        "footer": (
+            "This email was sent to {email} because you're an owner or admin of {company} "
+            "on testee. It's about your company's billing, so it's sent whatever your email"
+            " settings."
+        ),
+    },
+    "refund_approved": {
+        "subject": "Refund approved for {company}: {price}",
+        "preheader": "Paddle approved the {price} refund. It goes back to the card that paid.",
+        "heading": "Paddle approved the refund",
+        "lines": [
+            (
+                "Paddle, our reseller, approved the refund of {price} for {company}. It goes back "
+                "to the card that paid, tax included, which can take a few days."
+            ),
+            (
+                "The {credits, plural, one {# credit} other {# credits}} refunded "
+                "{credits, plural, one {has} other {have}} left the company's balance."
+            ),
+        ],
+        "button": "Open billing",
+        "footer": (
+            "This email was sent to {email} because you're an owner or admin of {company} "
+            "on testee. It's about your company's billing, so it's sent whatever your email"
+            " settings."
+        ),
+    },
     "top_up_price_change": {
         "subject": "New top-up price for {company}",
         "preheader": "From {date}, each automatic top-up costs {new_price} instead of {price}.",

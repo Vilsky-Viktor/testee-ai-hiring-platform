@@ -88,6 +88,9 @@ def teams(monkeypatch):
     async def company_ids(user_id):
         return [cid for cid, ids in found.items() if user_id in ids]
 
+    async def memberships(user_id):
+        return await company_ids(user_id), []
+
     async def account_created(user_id):
         return None
 
@@ -95,6 +98,7 @@ def teams(monkeypatch):
 
     monkeypatch.setattr(companies, "members", members)
     monkeypatch.setattr(companies, "company_ids", company_ids)
+    monkeypatch.setattr(companies, "memberships", memberships)
     monkeypatch.setattr(accounts, "account_created", account_created)
 
     return found

@@ -121,7 +121,7 @@ On the top-up page, under each balance, "Set up automatic top-up" opens the choi
 - Both companies get 1,000 credits (2 candidates) once the new one first tops up, any amount.
 - The link asks the visitor first (a toast with **Keep** and **No thanks**), as the cookie serves the referral and not the page they asked for; kept, its code goes in a cookie (`testee_ref`, 30 days), which companies reads when the visitor creates a company, on the site or through the in-app assistant: confirming the assistant's action passes the cookie on (only a code that reads right). AI apps connected over MCP have no browser cookie, so a company they create records no referral.
 - A referrer earns the reward for at most 25 referrals in any 365 days; past that, only the new company gets its 1,000 credits.
-- If that top-up is refunded in full or charged back, both rewards are taken back, even after the referred company was deleted: its rewarded referral is kept (only ids and the top-up that paid it), so deleting it can't keep the referrer's reward.
+- If that top-up is refunded, by any amount, or charged back in full, both rewards are taken back, even after the referred company was deleted: its rewarded referral is kept (only ids and the top-up that paid it), so deleting it can't keep the referrer's reward.
 
 A balance shows short from a thousand credits up ("3.5K", in the language's own way), and says the whole amount on hover ("Current balance: 3,549"), wherever it appears: the company's header, the billing and top-up pages and the assistant's answers.
 
@@ -133,7 +133,7 @@ Owners and admins see a company's **billing** tab, before referrals; viewers don
 - Two pages of billing's own, listed under it in the company's side menu (on a phone, a bar under the tabs naming the open one, which opens a menu of both): **history** first and **reserved (N)** (`?tab=reserved`), so a long list of reserved candidates never pushes the history out of sight; only the open page's list is loaded.
 - **Reserved**: an info card on what reserved credits are, then the candidates invited who haven't finished (invited, undelivered or in progress), each opening the candidate's page. Their count comes with the company's credits (`reserved_candidates`).
 - **History**: every movement of the company's credits, newest first, loading more as you scroll. Each shows the credits it moved (+5,000, −500), what it was and when:
-  - a top-up: what was paid (tax included), whether it was automatic, and its invoice, opened through a temporary Paddle link made on request;
+  - a top-up: what was paid (tax included), whether it was automatic, its invoice, opened through a temporary Paddle link made on request, and, for owners and admins while it can be refunded, a **Refund** button (see [A company's own refund](#a-companys-own-refund)), or its refund's state; support sees the state only;
   - a candidate: the candidate and their test, opening the candidate's page, or "A deleted candidate" when the invite is gone;
   - a refund, a chargeback, a chargeback reversed: the money it moved;
   - a referral reward, a referral reward taken back, the welcome gift.
@@ -144,6 +144,17 @@ Billing's history entries keep the money a top-up, refund or chargeback moved (`
 
 Refunds and chargebacks in Paddle take back the credits they bought, in proportion to the money returned (a top-up of any number of candidates too: $100 back of $200 takes back half its credits).
 
+### A company's own refund
+
+Owners and admins refund a top-up themselves, from its row in the billing tab's history (`POST /companies/{id}/billing/refund`, `src/billing/services/refunds.py`). The browser only names the top-up: billing decides what can go back (`services/refund_offers.py`) and the history shows it (`refund` on a top-up's entry).
+
+- **What can be refunded:** credits bought in the last 14 days and not spent. Free credits count as spent first, and what's unspent falls on the newest top-up first.
+- **Reserved credits:** credits set aside for candidates aren't refundable while set aside. The row says how many candidates hold them, with a link to revoke their invites. Set aside within a top-up's 14 days and given back after them, they stay refundable for 7 days from then (`REFUND_GRACE`): an invite can hold them past day 14 through no choice of the buyer's.
+- **The money:** the price paid per credit, tax included, in what was paid, rounded in the buyer's favour; the last credits take all the money left, so several refunds add up to what was paid.
+- **Asking:** the confirmation says what goes back, whether it takes back a referral reward (any refund of the rewarding top-up does, from both companies) and whether automatic top-up stays on. The credits are set aside under the wallet's lock, so nothing can spend them while Paddle is asked, and a second click while one is open changes nothing (one open refund per top-up, `refunds`). It's in the action log (`refund_requested`).
+- **Paddle's answer:** approved at once, the ledger's adjustment entry takes the credits back; awaiting its approval, they stay aside and the row says so. Paddle refusing gives them back and shows why. A lost answer leaves them aside, as Paddle has no idempotency key to retry with: the web hook or the daily reconciliation settles it.
+- **Telling the company:** Paddle's approval (`refund_approved`) and its rejection (`refund_rejected`, which gives the credits back) are saved in the same transaction that settles the refund, so each comes once however often Paddle sends it, on reconciliation too, and never for a late `pending_approval`. Both name the company and the amount in the buyer's currency, in the bell, by email to the owners and admins, and in the company's Slack channel, on by default. Notifications adds the company's name.
+
 ## Missed web hooks
 
 Paddle retries a web hook for about two days (three tries in the sandbox). So that a payment's credits or a refund's take-back is never lost when it gives up (a wrong web hook secret, a long outage), billing reconciles with Paddle daily (`POST /internal/schedules/reconcile`, Cloud Scheduler's `billing-reconcile`; locally `scripts/local/crontab`):
@@ -151,11 +162,12 @@ Paddle retries a web hook for about two days (three tries in the sandbox). So th
 - It reads Paddle's completed transactions updated in the last week and its approved adjustments created in it (`RECONCILE_WINDOW`, `src/billing/constants/reconciliation.py`), up to 10 pages of 200 each, the rest left to the next run.
 - Each one billing hasn't counted yet goes through the same handler as its web hook, so it counts once whichever comes first, and two runs at once change nothing twice. Payments go first, so a refund whose payment's web hook was lost counts too.
 - What it had to apply is logged as a warning ("Reconciliation credited transaction …", "Reconciliation counted adjustment …"): a sign that web hooks are failing. One item failing is logged and the rest go on. Each of these lines, and each paid transaction billing refuses to credit ("refund it"), fires the **testee payment not credited** alert ([runbook](../runbooks.md#a-payment-not-credited)).
+- Then it looks up, on Paddle, each company refund still open an hour on (at most 50 a run): a lost answer or a lost web hook, a rejection above all, which the approved adjustments don't list. What it finds goes through the same handler; a refund Paddle never got gives its credits back.
 - It needs the API key's permission to read transactions and adjustments (see [Setting up Paddle](#setting-up-paddle)).
 
 ## Who reaches a company's payments
 
-A company's prices, currency, checkouts, invoices, failed payments and automatic top-up are billing's own routes (`src/billing/api/v1/company_payments.py`, `company_auto_top_ups.py`), kept at the addresses the site always used: `/api/companies/companies/{id}/billing/catalog`, `/currency`, `/checkout`, `/invoice`, `/payment-failure`, and `/api/companies/companies/{id}/auto-top-up` (and `/card`). The gateway and the load balancer send exactly these paths to billing (`gateway/nginx.conf`, `company_billing_paths` in `infra/terraform/locals.tf`); the history and the reserved list stay with companies, which knows the candidates. Billing asks companies who the user is in the company (`testee_common.auth.company_access`, with the assistant's `X-Assistant` header passed on): any member sees the currency and the automatic top-up, only owners and admins pay, change them or read invoices and failures; others get 404, a viewer changing 403, and a suspended company or an AI app the company doesn't allow 403 with companies' reason. A changed currency and an automatic top-up set up, changed or turned off are logged in the company's action log through billing's outbox, in the same save as the change.
+A company's prices, currency, checkouts, invoices, refunds, failed payments and automatic top-up are billing's own routes (`src/billing/api/v1/company_payments.py`, `company_auto_top_ups.py`), kept at the addresses the site always used: `/api/companies/companies/{id}/billing/catalog`, `/currency`, `/checkout`, `/invoice`, `/refund`, `/payment-failure`, and `/api/companies/companies/{id}/auto-top-up` (and `/card`). The gateway and the load balancer send exactly these paths to billing (`gateway/nginx.conf`, `company_billing_paths` in `infra/terraform/locals.tf`); the history and the reserved list stay with companies, which knows the candidates. Billing asks companies who the user is in the company (`testee_common.auth.company_access`, with the assistant's `X-Assistant` header passed on): any member sees the currency and the automatic top-up, only owners and admins pay, change them or read invoices and failures; others get 404, a viewer changing 403, and a suspended company or an AI app the company doesn't allow 403 with companies' reason. A changed currency and an automatic top-up set up, changed or turned off are logged in the company's action log through billing's outbox, in the same save as the change.
 
 ## Deleting a company
 
@@ -228,7 +240,7 @@ Every price is made by billing in the transaction itself, in one currency, with 
 
    A card saved for an automatic top-up (**Update card**) arrives as `transaction.completed` too.
 
-3. Create a server-side API key with permission to read and write transactions (billing makes every top-up's checkout, reads invoices for the billing tab and lists payments for the daily reconciliation), to read adjustments (the reconciliation's refunds and chargebacks) and to read and update subscriptions (automatic top-up's charges, currency and card updates). Paddle's keys expire (90 days by default, a year at most): note the date and replace the key before it (see [runbooks](../runbooks.md#paddle-down)). For automatic top-up, also create a $0 monthly price (its checkout saves the card); without it and the key, automatic top-up isn't offered.
+3. Create a server-side API key with permission to read and write transactions (billing makes every top-up's checkout, reads invoices for the billing tab and lists payments for the daily reconciliation), to read and write adjustments (`adjustment.read` for the reconciliation's refunds and chargebacks, `adjustment.write` for a company's own refunds) and to read and update subscriptions (automatic top-up's charges, currency and card updates). Paddle's keys expire (90 days by default, a year at most): note the date and replace the key before it (see [runbooks](../runbooks.md#paddle-down)). For automatic top-up, also create a $0 monthly price (its checkout saves the card); without it and the key, automatic top-up isn't offered.
 4. Set these in `.env`, then restart billing:
 
    | Setting | Value |

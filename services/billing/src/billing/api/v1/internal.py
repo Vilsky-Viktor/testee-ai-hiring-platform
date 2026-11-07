@@ -32,7 +32,7 @@ from billing.schemas.billing import (
     SpentOut,
     WelcomeIn,
 )
-from billing.services import accounts, holds, invoices, wallets
+from billing.services import accounts, holds, invoices, refund_offers, wallets
 from billing.services.referrals import referral_out
 
 router = APIRouter(prefix="/internal", tags=["internal"])
@@ -107,8 +107,11 @@ async def company_history(
         rows = await history.page(
             session, OwnerType.COMPANY, company_id, page.offset, page.limit, kind, start, end
         )
+        refunds = await refund_offers.states(
+            session, OwnerType.COMPANY, company_id, rows, datetime.now(UTC)
+        )
 
-    return [history_entry_out(row) for row in rows]
+    return [history_entry_out(row, refunds) for row in rows]
 
 
 @router.get("/companies/{company_id}/spent")

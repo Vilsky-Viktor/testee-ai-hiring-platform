@@ -60,6 +60,7 @@ async def page(
                 candidate=candidate,
                 candidate_deleted=row["reason"] == Reason.CANDIDATE and candidate is None,
                 note=row["note"],
+                refund=row.get("refund"),
             )
         )
 

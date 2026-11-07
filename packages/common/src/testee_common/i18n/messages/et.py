@@ -306,4 +306,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack pole ühendatud. Ühenda see uuesti ja proovi siis veel kord.",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "Oled jõudnud kandidaatideta intervjuude limiidini ({limit}).\nKutsu kandidaat või kustuta intervjuu, et luua uus.",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Oled jõudnud kandidaatideta intervjuude limiidini ({limit} kuni esimese juurdelaadimiseni).\nKutsu kandidaat või kustuta intervjuu, et luua uus.",
+    "This top-up can't be refunded now.": "Seda juurdelaadimist ei saa praegu tagastada.",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle ei saanud seda juurdelaadimist tagastada. Selle krediidid on tagasi sinu saldol.",
 }

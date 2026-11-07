@@ -76,6 +76,7 @@ class AuditAction(StrEnum):
     EMBED_DOMAINS_CHANGED = "embed_domains_changed"
     # Billing.
     TOP_UP_PAID = "top_up_paid"
+    REFUND_REQUESTED = "refund_requested"
     AUTO_TOP_UP_SET = "auto_top_up_set"
     AUTO_TOP_UP_CHANGED = "auto_top_up_changed"
     AUTO_TOP_UP_STOPPED = "auto_top_up_stopped"
@@ -147,6 +148,7 @@ _GROUPS = {
     ),
     AuditGroup.BILLING: (
         AuditAction.TOP_UP_PAID,
+        AuditAction.REFUND_REQUESTED,
         AuditAction.AUTO_TOP_UP_SET,
         AuditAction.AUTO_TOP_UP_CHANGED,
         AuditAction.AUTO_TOP_UP_STOPPED,

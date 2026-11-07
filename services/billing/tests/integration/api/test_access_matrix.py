@@ -20,6 +20,7 @@ from billing.core.security import SERVICE_NAME
 from billing.integrations import paddle
 from billing.main import app
 from billing.repositories import purchases
+from tests.integration.services.refund_world import adjustment
 from tests.integration.transactions import transaction
 
 OWNED = {"company_id", "transaction_id", "user_id"}
@@ -38,6 +39,9 @@ VALUES = {"name": "MAX_API_KEYS"}
 
 BODIES = {
     "PUT /companies/{company_id}/billing/currency": {"currency": "USD"},
+    "POST /companies/{company_id}/billing/refund": lambda ids: {
+        "transaction_id": ids["transaction_id"]
+    },
     "PUT /superadmin/limits/{name}": {"value": 10},
 }
 
@@ -91,6 +95,7 @@ def world(run, monkeypatch):
                 "buyer_id": side.user,
             },
             "payments": [{"error_code": "declined"}],
+            "details": {"line_items": [{"id": "line_1", "totals": {"total": "1000"}}]},
         }
         for side in (made.mine, made.theirs)
     }
@@ -98,7 +103,11 @@ def world(run, monkeypatch):
     async def found(transaction_id, timeout):
         return known.get(transaction_id, {})
 
+    async def refund(transaction_id, item):
+        return adjustment(transaction_id, 1000, "pending_approval")
+
     monkeypatch.setattr(paddle, "transaction", found)
+    monkeypatch.setattr(paddle, "refund", refund)
 
     return access_matrix.enter(monkeypatch, made)
 

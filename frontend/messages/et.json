@@ -1255,7 +1255,6 @@
     "memberFailed": "Kutset ei õnnestunud saata. Proovi uuesti.",
     "invite": "Kutsu",
     "jobDescription": "Töökuulutus",
-    "generate": "Loo intervjuu",
     "startFailed": "Intervjuud ei õnnestunud alustada. Proovi uuesti.",
     "candidateEmails": "Kandidaatide e-posti aadressid",
     "candidateEmail": "Kandidaadi e-post",
@@ -2071,6 +2070,8 @@
       "auto_top_up_on": "Automaatne juurdelaadimine on sees: {price} pluss maks, kui saadaolev krediit langeb alla {threshold, number}.",
       "auto_top_up_paused": "Automaatne juurdelaadimine on peatatud: kaart lükati tagasi. Uuenda kaarti, et see uuesti sisse lülitada.",
       "auto_top_up_price_change": "Alates kuupäevast <time>{date}</time> maksab iga automaatne juurdelaadimine {price} asemel {newPrice}.",
+      "refund_approved": "Tagasimakse kiideti heaks ettevõttele <bdi>{name}</bdi>: {price}.",
+      "refund_rejected": "Tagasimaksest keelduti ettevõttele <bdi>{name}</bdi>: {price}. {credits, plural, one {# krediit on} other {# krediiti on}} tagasi sinu saldol.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> lõpetas intervjuu{title, select, none {} other { „<bdi>{title}</bdi>“}}{grade, select, none {.} other {: {grade}.}}} other {# kandidaati lõpetasid intervjuu{title, select, none {} other { „<bdi>{title}</bdi>“}}.}}",
       "invite_undelivered": "{count, plural, one {Kutset intervjuule{title, select, none {} other { „<bdi>{title}</bdi>“}} aadressile <bdi>{email}</bdi> ei õnnestunud kohale toimetada.} other {# kutset intervjuule{title, select, none {} other { „<bdi>{title}</bdi>“}} ei õnnestunud kohale toimetada.}}",
       "interview_ready": "{title, select, none {Intervjuu on valmis.} other {Intervjuu „<bdi>{title}</bdi>“ on valmis.}}",
@@ -2367,6 +2368,8 @@
       "interview_ready": "Intervjuu „Data Analyst“ on valmis.",
       "auto_top_up_charged": "Automaatne juurdelaadimine lisas 5000 krediiti.",
       "auto_top_up_failed": "Automaatne juurdelaadimine ei saanud kaardilt makset võtta. Laadi juurde, et saldo otsa ei saaks.",
+      "refund_approved": "Tagasimakse kiideti heaks ettevõttele Acme: $55.50.",
+      "refund_rejected": "Tagasimaksest keelduti ettevõttele Acme: $55.50. Krediidid on tagasi saldol.",
       "note_added": "Maya lisas märkme intervjuule „Data Analyst“: tugev SQL, väärt kõnet."
     },
     "connectFailed": "Slacki ühendamine ebaõnnestus.",
@@ -2384,6 +2387,8 @@
       "interview_ready": "Intervjuu on valmis",
       "auto_top_up_charged": "Automaatse juurdelaadimise makse võeti kaardilt",
       "auto_top_up_failed": "Automaatne juurdelaadimine ebaõnnestus",
+      "refund_approved": "Tagasimakse kiideti heaks",
+      "refund_rejected": "Tagasimaksest keelduti",
       "note_added": "Meeskonnaliige kirjutas märkme, koos selle tekstiga"
     },
     "instructionsTitle": "Kuidas Slack sinu teavitused saab",
@@ -2952,6 +2957,23 @@
       "adjustment": "Korrektsioon testeelt"
     },
     "automatic": "Automaatne juurdelaadimine",
+    "refund": {
+      "open": "Tagasta",
+      "title": "Tagastada {amount}?",
+      "text": "Paddle tagastab {amount} koos maksuga kaardile, millega maksti, ja see võib võtta mõne päeva. <credits></credits> {count, plural, one {kulutamata krediit võetakse kohe sinu saldolt maha ja antakse tagasi} other {kulutamata krediiti võetakse kohe sinu saldolt maha ja antakse tagasi}}, kui tagasimakse ei õnnestu.",
+      "referral": "See juurdelaadimine tõi soovituspreemia, seega võtab iga selle tagasimakse preemia mõlemalt ettevõttelt tagasi. Kui see on kulutatud, võib sinu saldo minna alla nulli.",
+      "autoTopUp": "Automaatne juurdelaadimine jääb sisse ja võtab uuesti makse, kui saldo langeb alla valitud taseme. Kui sa seda ei soovi, lülita see enne välja.",
+      "heldBack": "{count, plural, one {# kandidaadile} other {# kandidaadile}} on krediidid <reserved>reserveeritud</reserved>. Tühista kutsed, et need krediidid tagasimaksesse arvata.",
+      "confirm": "Tagasta {amount}",
+      "refunded": "Tagastatud.",
+      "processing": "Tagasimakse on teel.",
+      "failed": "Seda juurdelaadimist ei õnnestunud tagastada. Proovi uuesti.",
+      "status": {
+        "processing": "Tagasimakse on pooleli",
+        "refunded": "Tagastatud",
+        "declined": "Paddle keeldus tagasimaksest"
+      }
+    },
     "invoice": "Arve",
     "invoiceFailed": "Arvet ei õnnestunud avada. Proovi uuesti.",
     "deletedCandidate": "Kustutatud kandidaat",
@@ -3076,6 +3098,7 @@
     "compliance": {
       "title": "Vastavus",
       "aiAct": "ELi tehisintellekti määruse (AI Act) järgi käsitletakse testeed suure riskiga tehisintellektisüsteemina, mille kohustused kehtivad alates <time>{date}</time>. Meie juhend ettevõtetele on selle kasutusjuhend.",
+      "aiMarks": "Küsimused, vastusevalikud, assistendi vastused ja häälklipid on märgitud tehisaru loodud sisuks kujul, mida tarkvara saab lugeda: data-ai-generated lehe koodis ja silt AI_GENERATED häälklipi failis. Häälklippidel on lisaks OpenAI kuuldamatu vesimärk, mida saad kontrollida aadressil <verify>openai.com/verify</verify>. Lehelt kopeeritud tekstil märget alles ei jää.",
       "humanReview": "testee ei tee kandidaadi kohta ühtegi otsust: ettevõtte inimesed vaatavad tulemused üle ja otsustavad ning kandidaadid võivad paluda, et inimene nende tulemuse üle vaataks.",
       "dpa": "Andmetöötlusleping on osa tingimustest ja midagi ei pea allkirjastama. See hõlmab GDPR-i, UK GDPR-i ja USA osariikide privaatsusseadusi, näiteks California oma, mille järgi on testee ettevõtte teenusepakkuja (service provider).",
       "documents": "Ettevõtted saavad <link>kasutusjuhendi, andmekaitsealase mõjuhinnangu malli ja kandidaaditeate mallid</link>, sh versioonid New Yorgi, Illinoisi ja Colorado jaoks.",
@@ -3135,7 +3158,6 @@
     "periodDays": "Viimased {days, number} päeva",
     "periodCustom": "Kohandatud",
     "empty": "Toiminguid veel pole.",
-      "aiMarks": "Küsimused, vastusevalikud, assistendi vastused ja häälklipid on märgitud tehisaru loodud sisuks kujul, mida tarkvara saab lugeda: data-ai-generated lehe koodis ja silt AI_GENERATED häälklipi failis. Häälklippidel on lisaks OpenAI kuuldamatu vesimärk, mida saad kontrollida aadressil <verify>openai.com/verify</verify>. Lehelt kopeeritud tekstil märget alles ei jää.",
     "noMatches": "Ükski toiming ei vasta nendele filtritele.",
     "formerMember": "Endine liige",
     "apiKey": "{via, select, mcp {MCP kaudu võtmega „<bdi>{name}</bdi>“} other {API kaudu võtmega „<bdi>{name}</bdi>“}}",
@@ -3201,6 +3223,7 @@
       "verification_requested": "Taotles ettevõtte kinnitamist",
       "ai_apps_changed": "Lubas või keelas AI-rakendused",
       "top_up_paid": "Laadis krediiti juurde",
+      "refund_requested": "Küsis tagasimakset",
       "auto_top_up_set": "Seadistas automaatse juurdelaadimise",
       "auto_top_up_changed": "Muutis automaatset juurdelaadimist",
       "auto_top_up_stopped": "Peatas automaatse juurdelaadimise",

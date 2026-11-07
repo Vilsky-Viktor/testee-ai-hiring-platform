@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack이 연동되지 않았습니다. 다시 연동한 뒤 다시 시도해 주세요.",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "지원자 없는 면접의 한도({limit}개)에 도달했습니다.\n새 면접을 만들려면 지원자를 초대하거나 면접을 삭제하세요.",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "지원자 없는 면접의 한도(첫 충전 전까지 {limit}개)에 도달했습니다.\n새 면접을 만들려면 지원자를 초대하거나 면접을 삭제하세요.",
+    "This top-up can't be refunded now.": "이 충전은 지금 환불할 수 없습니다.",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle이 이 충전을 환불하지 못했습니다. 해당 크레딧은 잔액으로 돌아왔습니다.",
 }

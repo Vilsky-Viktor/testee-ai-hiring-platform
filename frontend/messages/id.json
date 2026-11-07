@@ -1255,7 +1255,6 @@
     "memberFailed": "Tidak bisa mengundangnya. Coba lagi.",
     "invite": "Undang",
     "jobDescription": "Deskripsi pekerjaan",
-    "generate": "Buat wawancara",
     "startFailed": "Wawancara tidak bisa dimulai. Coba lagi.",
     "candidateEmails": "Email kandidat",
     "candidateEmail": "Email kandidat",
@@ -2071,6 +2070,8 @@
       "auto_top_up_on": "Isi ulang otomatis menyala: {price} ditambah pajak saat kredit tersedia turun di bawah {threshold, number}.",
       "auto_top_up_paused": "Isi ulang otomatis dijeda: kartu ditolak. Perbarui kartu untuk menyalakannya lagi.",
       "auto_top_up_price_change": "Mulai <time>{date}</time>, setiap isi ulang otomatis berharga {newPrice}, bukan {price}.",
+      "refund_approved": "Pengembalian dana disetujui untuk <bdi>{name}</bdi>: {price}.",
+      "refund_rejected": "Pengembalian dana ditolak untuk <bdi>{name}</bdi>: {price}. {credits, plural, other {# kredit}} kembali ke saldomu.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> menyelesaikan {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# kandidat menyelesaikan {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}}.}}",
       "invite_undelivered": "{count, plural, =1 {Undangan {title, select, none {wawancara} other {“<bdi>{title}</bdi>”}} ke <bdi>{email}</bdi> tidak terkirim.} other {# undangan {title, select, none {wawancara} other {“<bdi>{title}</bdi>”}} tidak terkirim.}}",
       "interview_ready": "{title, select, none {Sebuah wawancara sudah siap.} other {Wawancara “<bdi>{title}</bdi>” sudah siap.}}",
@@ -2367,6 +2368,8 @@
       "interview_ready": "Wawancara “Data Analyst” sudah siap.",
       "auto_top_up_charged": "Isi ulang otomatis menambahkan 5.000 kredit.",
       "auto_top_up_failed": "Isi ulang otomatis gagal menagih kartu. Isi ulang agar saldomu tidak habis.",
+      "refund_approved": "Pengembalian dana disetujui untuk Acme: $55.50.",
+      "refund_rejected": "Pengembalian dana ditolak untuk Acme: $55.50. Kreditnya sudah kembali ke saldo.",
       "note_added": "Maya menambahkan catatan di “Data Analyst”: SQL kuat, layak ditelepon."
     },
     "connectFailed": "Slack tidak bisa dihubungkan.",
@@ -2384,6 +2387,8 @@
       "interview_ready": "Wawancara sudah siap",
       "auto_top_up_charged": "Isi ulang otomatis berhasil ditagih",
       "auto_top_up_failed": "Isi ulang otomatis gagal",
+      "refund_approved": "Pengembalian dana disetujui",
+      "refund_rejected": "Pengembalian dana ditolak",
       "note_added": "Anggota tim menulis catatan, beserta teksnya"
     },
     "instructionsTitle": "Cara Slack menerima notifikasimu",
@@ -2952,6 +2957,23 @@
       "adjustment": "Penyesuaian oleh testee"
     },
     "automatic": "Isi ulang otomatis",
+    "refund": {
+      "open": "Kembalikan dana",
+      "title": "Kembalikan dana {amount}?",
+      "text": "Paddle mengembalikan {amount}, termasuk pajak, ke kartu yang membayar, yang bisa memakan waktu beberapa hari. <credits></credits> {count, plural, other {kredit yang belum terpakai keluar dari saldomu sekarang,}} dan kembali lagi jika pengembalian dana tidak berhasil.",
+      "referral": "Isi ulang ini memberikan hadiah referal, jadi pengembalian dana berapa pun akan menarik kembali hadiah dari kedua perusahaan. Saldomu bisa menjadi negatif jika hadiah itu sudah terpakai.",
+      "autoTopUp": "Isi ulang otomatis tetap menyala, dan akan menagih lagi saat saldo turun di bawah batasnya. Matikan dulu jika kamu tidak menginginkannya.",
+      "heldBack": "Kredit untuk {count, plural, other {# kandidat}} sedang <reserved>dicadangkan</reserved>. Cabut undangan mereka agar ikut dikembalikan.",
+      "confirm": "Kembalikan {amount}",
+      "refunded": "Dana dikembalikan.",
+      "processing": "Pengembalian dana sedang berjalan.",
+      "failed": "Dana isi ulang ini tidak bisa dikembalikan. Coba lagi.",
+      "status": {
+        "processing": "Pengembalian dana diproses",
+        "refunded": "Dana dikembalikan",
+        "declined": "Pengembalian dana ditolak Paddle"
+      }
+    },
     "invoice": "Faktur",
     "invoiceFailed": "Tidak bisa membuka faktur. Silakan coba lagi.",
     "deletedCandidate": "Kandidat yang dihapus",
@@ -3076,6 +3098,7 @@
     "compliance": {
       "title": "Kepatuhan",
       "aiAct": "Berdasarkan EU AI Act, testee diperlakukan sebagai sistem AI berisiko tinggi, yang kewajibannya berlaku mulai <time>{date}</time>. Petunjuk kami untuk perusahaan adalah petunjuk penggunaannya.",
+      "aiMarks": "Pertanyaan, pilihan jawaban, jawaban asisten, dan klip suara ditandai sebagai buatan AI dalam bentuk yang bisa dibaca perangkat lunak: data-ai-generated di kode halaman, dan tag AI_GENERATED di file klip suara. Klip suara juga membawa watermark OpenAI yang tidak terdengar, yang bisa kamu periksa di <verify>openai.com/verify</verify>. Teks yang disalin dari halaman tidak mempertahankan tandanya.",
       "humanReview": "testee tidak membuat keputusan apa pun tentang kandidat: orang-orang di perusahaan meninjau hasilnya dan memutuskan, dan kandidat bisa meminta seseorang untuk meninjau hasil mereka.",
       "dpa": "Perjanjian pemrosesan data adalah bagian dari ketentuan, tanpa perlu ditandatangani. Perjanjian ini mencakup GDPR, UK GDPR, dan undang-undang privasi negara bagian AS seperti milik California, dengan testee sebagai penyedia layanan (service provider) perusahaan.",
       "documents": "Perusahaan mendapatkan <link>petunjuk penggunaan, templat DPIA, dan templat pemberitahuan kandidat</link>, dengan versi untuk New York City, Illinois, dan Colorado.",
@@ -3135,7 +3158,6 @@
     "periodDays": "{days, number} hari terakhir",
     "periodCustom": "Kustom",
     "empty": "Belum ada tindakan.",
-      "aiMarks": "Pertanyaan, pilihan jawaban, jawaban asisten, dan klip suara ditandai sebagai buatan AI dalam bentuk yang bisa dibaca perangkat lunak: data-ai-generated di kode halaman, dan tag AI_GENERATED di file klip suara. Klip suara juga membawa watermark OpenAI yang tidak terdengar, yang bisa kamu periksa di <verify>openai.com/verify</verify>. Teks yang disalin dari halaman tidak mempertahankan tandanya.",
     "noMatches": "Tidak ada tindakan yang cocok dengan filter ini.",
     "formerMember": "Mantan anggota",
     "apiKey": "{via, select, mcp {Lewat MCP dengan kunci “<bdi>{name}</bdi>”} other {Lewat API dengan kunci “<bdi>{name}</bdi>”}}",
@@ -3201,6 +3223,7 @@
       "verification_requested": "Meminta verifikasi perusahaan",
       "ai_apps_changed": "Mengizinkan atau menghentikan aplikasi AI",
       "top_up_paid": "Mengisi ulang kredit",
+      "refund_requested": "Meminta pengembalian dana",
       "auto_top_up_set": "Mengatur isi ulang otomatis",
       "auto_top_up_changed": "Mengubah isi ulang otomatis",
       "auto_top_up_stopped": "Menghentikan isi ulang otomatis",

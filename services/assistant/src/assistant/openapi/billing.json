@@ -1619,6 +1619,65 @@
     }
    }
   },
+  "/companies/{company_id}/billing/refund": {
+   "post": {
+    "tags": [
+     "billing"
+    ],
+    "summary": "Refund Top Up",
+    "description": "Refunds one of the company's top-ups: the unspent credits the history offers, in what it\nwas paid in. What and how much are decided here; the browser only names the top-up. Owners\nand admins, as top-ups.",
+    "operationId": "refund_top_up_companies__company_id__billing_refund_post",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "company_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Company Id"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/RefundIn"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/RefundOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/companies/{company_id}/billing/payment-failure": {
    "get": {
     "tags": [
@@ -3196,6 +3255,16 @@
        }
       ],
       "title": "Note"
+     },
+     "refund": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/RefundStateOut"
+       },
+       {
+        "type": "null"
+       }
+      ]
      }
     },
     "type": "object",
@@ -3902,6 +3971,130 @@
     ],
     "title": "ReferralRewardOut",
     "description": "A company that came through the link and topped up, so both got the reward."
+   },
+   "RefundIn": {
+    "properties": {
+     "transaction_id": {
+      "type": "string",
+      "pattern": "^txn_[a-z0-9]{26}$",
+      "title": "Transaction Id"
+     }
+    },
+    "type": "object",
+    "required": [
+     "transaction_id"
+    ],
+    "title": "RefundIn"
+   },
+   "RefundOfferOut": {
+    "properties": {
+     "credits": {
+      "type": "integer",
+      "title": "Credits"
+     },
+     "amount": {
+      "type": "string",
+      "title": "Amount"
+     },
+     "currency": {
+      "type": "string",
+      "title": "Currency"
+     },
+     "takes_referral": {
+      "type": "boolean",
+      "title": "Takes Referral"
+     },
+     "auto_top_up_on": {
+      "type": "boolean",
+      "title": "Auto Top Up On"
+     }
+    },
+    "type": "object",
+    "required": [
+     "credits",
+     "amount",
+     "currency",
+     "takes_referral",
+     "auto_top_up_on"
+    ],
+    "title": "RefundOfferOut",
+    "description": "What refunding a top-up now returns: its unspent `credits`, for `amount` (minor units, tax\nincluded, as a string) in `currency`, what the top-up was paid in. `takes_referral`: the\ntop-up paid a referral, so both rewards go back too, however little is refunded. `auto_top_up_on`: the\ncompany's automatic top-up stays on and charges again once the balance is under its level."
+   },
+   "RefundOut": {
+    "properties": {
+     "status": {
+      "type": "string",
+      "enum": [
+       "processing",
+       "refunded"
+      ],
+      "title": "Status"
+     },
+     "credits": {
+      "type": "integer",
+      "title": "Credits"
+     },
+     "amount": {
+      "type": "string",
+      "title": "Amount"
+     },
+     "currency": {
+      "type": "string",
+      "title": "Currency"
+     }
+    },
+    "type": "object",
+    "required": [
+     "status",
+     "credits",
+     "amount",
+     "currency"
+    ],
+    "title": "RefundOut",
+    "description": "The refund asked for: `refunded` when Paddle approved it at once, else `processing`."
+   },
+   "RefundStateOut": {
+    "properties": {
+     "offer": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/RefundOfferOut"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "status": {
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "processing",
+         "refunded",
+         "declined"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Status"
+     },
+     "held_back_credits": {
+      "type": "integer",
+      "title": "Held Back Credits",
+      "default": 0
+     },
+     "held_back_candidates": {
+      "type": "integer",
+      "title": "Held Back Candidates",
+      "default": 0
+     }
+    },
+    "type": "object",
+    "title": "RefundStateOut",
+    "description": "A top-up's refund in the history: `offer` when some of it can be refunded now, `status` of\nits latest refund, and the credits of it held back by credits set aside for candidates (not\nrefundable while set aside), with the candidates they make up: revoking their invites would\nadd them to the offer."
    },
    "SpenderOut": {
     "properties": {

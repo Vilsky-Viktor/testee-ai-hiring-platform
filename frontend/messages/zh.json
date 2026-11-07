@@ -1255,7 +1255,6 @@
     "memberFailed": "无法邀请，请重试。",
     "invite": "邀请",
     "jobDescription": "职位描述",
-    "generate": "生成面试",
     "startFailed": "无法开始面试，请重试。",
     "candidateEmails": "候选人邮箱",
     "candidateEmail": "候选人邮箱",
@@ -2071,6 +2070,8 @@
       "auto_top_up_on": "自动充值已开启：可用点数低于 {threshold, number} 时充值 {price}，另加税费。",
       "auto_top_up_paused": "自动充值已暂停：银行卡被拒。请更新银行卡以重新开启。",
       "auto_top_up_price_change": "自 <time>{date}</time> 起，每次自动充值的价格从 {price} 调整为 {newPrice}。",
+      "refund_approved": "<bdi>{name}</bdi> 的退款已批准：{price}。",
+      "refund_rejected": "<bdi>{name}</bdi> 的退款被拒：{price}。{credits, plural, other {# 点数}}已退回你的余额。",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> 已完成{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}{grade, select, none {。} other {，得分 {grade}。}}} other {# 位候选人已完成{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}。}}",
       "invite_undelivered": "{count, plural, =1 {发送给 <bdi>{email}</bdi> 的{title, select, none {面试} other {“<bdi>{title}</bdi>”}}邀请未能送达。} other {{title, select, none {面试} other {“<bdi>{title}</bdi>”}}的 # 份邀请未能送达。}}",
       "interview_ready": "{title, select, none {一场面试已就绪。} other {面试“<bdi>{title}</bdi>”已就绪。}}",
@@ -2367,6 +2368,8 @@
       "interview_ready": "面试“Data Analyst”已就绪。",
       "auto_top_up_charged": "自动充值已添加 5,000 点数。",
       "auto_top_up_failed": "自动充值无法从银行卡扣款。请充值，以免余额不足。",
+      "refund_approved": "Acme 的退款已批准：$55.50。",
+      "refund_rejected": "Acme 的退款被拒：$55.50。点数已退回余额。",
       "note_added": "Maya 在“Data Analyst”下添加了备注：SQL 很强，值得约聊。"
     },
     "connectFailed": "无法连接 Slack。",
@@ -2384,6 +2387,8 @@
       "interview_ready": "面试已就绪",
       "auto_top_up_charged": "自动充值已扣款",
       "auto_top_up_failed": "自动充值失败",
+      "refund_approved": "退款已批准",
+      "refund_rejected": "退款被拒",
       "note_added": "团队成员写了一条备注（附内容）"
     },
     "instructionsTitle": "Slack 如何接收你的通知",
@@ -2952,6 +2957,23 @@
       "adjustment": "testee 调整"
     },
     "automatic": "自动充值",
+    "refund": {
+      "open": "退款",
+      "title": "退款 {amount}？",
+      "text": "Paddle 会将 {amount}（含税）退回付款的银行卡，可能需要几天。未使用的 <credits></credits> {count, plural, other {点数现在从你的余额中扣除，}}如果退款未成功，会退回余额。",
+      "referral": "这笔充值产生了推荐奖励，因此无论退款多少，两家公司的奖励都会被收回。如果奖励已被使用，你的余额可能变为负数。",
+      "autoTopUp": "自动充值仍保持开启，余额低于设定水平时会再次扣款。如不希望这样，请先将其关闭。",
+      "heldBack": "{count, plural, other {# 位候选人}}的点数已<reserved>预留</reserved>。撤销他们的邀请后即可计入。",
+      "confirm": "退款 {amount}",
+      "refunded": "已退款。",
+      "processing": "退款处理中。",
+      "failed": "无法退款这笔充值，请重试。",
+      "status": {
+        "processing": "退款处理中",
+        "refunded": "已退款",
+        "declined": "Paddle 已拒绝退款"
+      }
+    },
     "invoice": "发票",
     "invoiceFailed": "无法打开发票，请重试。",
     "deletedCandidate": "已删除的候选人",
@@ -3076,6 +3098,7 @@
     "compliance": {
       "title": "合规",
       "aiAct": "根据欧盟《人工智能法案》，testee 被视为高风险 AI 系统，相关义务自 <time>{date}</time> 起适用。我们的公司使用说明即为该系统的使用说明。",
+      "aiMarks": "问题、答案选项、助手的回答和语音片段都以软件可读的形式标记为 AI 生成：页面代码中的 data-ai-generated，以及语音片段文件中的 AI_GENERATED 标签。语音片段还带有 OpenAI 的不可听水印，你可以在 <verify>openai.com/verify</verify> 查验。从页面复制的文本不会保留此标记。",
       "humanReview": "testee 不对候选人做出任何决定：由公司的人员审核结果并作出决定，候选人也可以要求由人工审核自己的结果。",
       "dpa": "数据处理协议是条款的一部分，无需签署。它涵盖 GDPR、英国 GDPR，以及美国各州的隐私法律（例如加利福尼亚州的法律），在这些法律下 testee 是公司的服务提供商。",
       "documents": "公司可获得<link>使用说明、DPIA 模板和候选人告知模板</link>，并有适用于纽约市、伊利诺伊州和科罗拉多州的版本。",
@@ -3135,7 +3158,6 @@
     "periodDays": "最近 {days, number} 天",
     "periodCustom": "自定义",
     "empty": "还没有操作记录。",
-      "aiMarks": "问题、答案选项、助手的回答和语音片段都以软件可读的形式标记为 AI 生成：页面代码中的 data-ai-generated，以及语音片段文件中的 AI_GENERATED 标签。语音片段还带有 OpenAI 的不可听水印，你可以在 <verify>openai.com/verify</verify> 查验。从页面复制的文本不会保留此标记。",
     "noMatches": "没有符合这些筛选条件的操作。",
     "formerMember": "前成员",
     "apiKey": "{via, select, mcp {通过 MCP 使用密钥“<bdi>{name}</bdi>”} other {通过 API 使用密钥“<bdi>{name}</bdi>”}}",
@@ -3201,6 +3223,7 @@
       "verification_requested": "申请了公司验证",
       "ai_apps_changed": "允许或停用了 AI 应用",
       "top_up_paid": "充值了点数",
+      "refund_requested": "申请了退款",
       "auto_top_up_set": "设置了自动充值",
       "auto_top_up_changed": "更改了自动充值",
       "auto_top_up_stopped": "停止了自动充值",

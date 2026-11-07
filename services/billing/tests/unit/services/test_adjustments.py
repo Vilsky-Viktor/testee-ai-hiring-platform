@@ -66,29 +66,35 @@ def test_a_refund_keeps_the_money_it_returned(monkeypatch):
 
         return 0
 
+    async def take_back_reward(session, transaction_id):
+        return False
+
     monkeypatch.setattr(purchases, "for_transaction", bought)
     monkeypatch.setattr(purchases, "take_back", take_back_credits)
+    monkeypatch.setattr(referrals, "take_back", take_back_reward)
 
     asyncio.run(webhooks.handle(adjustment(total="250")))
 
     assert kept == [("250", "USD")]
 
 
-def test_a_partial_refund_takes_back_its_share(moved):
+def test_a_partial_refund_takes_back_its_share_and_the_referral(moved):
     asyncio.run(webhooks.handle(adjustment(total="250")))
 
-    assert moved == [("acme", -250, "adjustment:txn_01:adj_01", "refund")]
-
-
-def test_partial_refunds_adding_up_to_the_whole_top_up_take_back_the_referral(moved):
-    asyncio.run(webhooks.handle(adjustment(total="400", adjustment_id="adj_a")))
-    asyncio.run(webhooks.handle(adjustment(total="600", adjustment_id="adj_b")))
-
     assert moved == [
-        ("acme", -400, "adjustment:txn_01:adj_a", "refund"),
-        ("acme", -600, "adjustment:txn_01:adj_b", "refund"),
+        ("acme", -250, "adjustment:txn_01:adj_01", "refund"),
         ("referral taken back", "txn_01"),
     ]
+
+
+def test_a_partial_chargeback_keeps_the_referral_until_all_of_it_is_taken(moved):
+    chargeback = {"action": "chargeback", "adjustment_id": "adj_a"}
+    asyncio.run(webhooks.handle(adjustment(total="400", **chargeback)))
+    partly = list(moved)
+    asyncio.run(webhooks.handle(adjustment(total="600", action="chargeback", adjustment_id="b")))
+
+    assert partly == [("acme", -400, "adjustment:txn_01:adj_a", "chargeback")]
+    assert moved[-1] == ("referral taken back", "txn_01")
 
 
 def test_a_chargeback_takes_back_and_its_reversal_returns(moved):

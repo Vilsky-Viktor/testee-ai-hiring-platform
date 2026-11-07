@@ -1255,7 +1255,6 @@
     "memberFailed": "לא ניתן להזמין. נסו שוב.",
     "invite": "הזמנה",
     "jobDescription": "תיאור המשרה",
-    "generate": "יצירת ראיון",
     "startFailed": "לא ניתן להתחיל את הראיון. נסו שוב.",
     "candidateEmails": "כתובות האימייל של המועמדים",
     "candidateEmail": "אימייל המועמד",
@@ -2066,6 +2065,8 @@
       "auto_top_up_on": "הטעינה האוטומטית פעילה: {price} בתוספת מס כשהקרדיטים הזמינים יורדים מתחת ל-{threshold, number}.",
       "auto_top_up_paused": "הטעינה האוטומטית מושהית: הכרטיס נדחה. עדכנו את הכרטיס כדי להפעיל אותה מחדש.",
       "auto_top_up_price_change": "החל מ-<time>{date}</time>, כל טעינה אוטומטית תעלה {newPrice} במקום {price}.",
+      "refund_approved": "ההחזר אושר עבור <bdi>{name}</bdi>: {price}.",
+      "refund_rejected": "ההחזר נדחה עבור <bdi>{name}</bdi>: {price}. {credits, plural, one {קרדיט אחד חזר} two {# קרדיטים חזרו} other {# קרדיטים חזרו}} ליתרה שלכם.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> השלים/ה {title, select, none {ראיון} other {את \"<bdi>{title}</bdi>\"}}{grade, select, none {.} other {: {grade}.}}} two {שני מועמדים השלימו {title, select, none {ראיון} other {את \"<bdi>{title}</bdi>\"}}.} other {# מועמדים השלימו {title, select, none {ראיון} other {את \"<bdi>{title}</bdi>\"}}.}}",
       "invite_undelivered": "{count, plural, one {ההזמנה ל-<bdi>{email}</bdi> עבור {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}} לא נמסרה.} two {שתי הזמנות עבור {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}} לא נמסרו.} other {# הזמנות עבור {title, select, none {ראיון} other {\"<bdi>{title}</bdi>\"}} לא נמסרו.}}",
       "interview_ready": "{title, select, none {ראיון מוכן.} other {הראיון \"<bdi>{title}</bdi>\" מוכן.}}",
@@ -2362,6 +2363,8 @@
       "interview_ready": "הראיון \"Data Analyst\" מוכן.",
       "auto_top_up_charged": "הטעינה האוטומטית הוסיפה 5,000 קרדיטים.",
       "auto_top_up_failed": "הטעינה האוטומטית לא הצליחה לחייב את הכרטיס. טענו קרדיטים כדי שהיתרה לא תיגמר.",
+      "refund_approved": "ההחזר אושר עבור Acme: $55.50.",
+      "refund_rejected": "ההחזר נדחה עבור Acme: $55.50. הקרדיטים חזרו ליתרה.",
       "note_added": "Maya הוסיפה הערה על ״Data Analyst״: SQL חזק, שווה שיחה."
     },
     "connectFailed": "לא ניתן לחבר את Slack.",
@@ -2379,6 +2382,8 @@
       "interview_ready": "ראיון מוכן",
       "auto_top_up_charged": "בוצע חיוב של טעינה אוטומטית",
       "auto_top_up_failed": "טעינה אוטומטית נכשלה",
+      "refund_approved": "החזר אושר",
+      "refund_rejected": "החזר נדחה",
       "note_added": "חבר/ת צוות כתב/ה הערה, עם הטקסט שלה"
     },
     "instructionsTitle": "איך Slack מקבל את ההתראות שלכם",
@@ -2947,6 +2952,23 @@
       "adjustment": "תיקון על ידי testee"
     },
     "automatic": "טעינה אוטומטית",
+    "refund": {
+      "open": "החזר",
+      "title": "החזר של {amount}?",
+      "text": "Paddle מחזירה {amount}, כולל מס, לכרטיס ששילם, וזה עשוי להימשך כמה ימים. <credits></credits> {count, plural, one {קרדיט שלא נוצל יורד מהיתרה שלכם עכשיו, והוא חוזר} two {קרדיטים שלא נוצלו יורדים מהיתרה שלכם עכשיו, והם חוזרים} other {קרדיטים שלא נוצלו יורדים מהיתרה שלכם עכשיו, והם חוזרים}} אם ההחזר לא יצא לפועל.",
+      "referral": "טעינה זו שילמה תגמול על הפניה, ולכן כל החזר שלה מבטל את התגמול בשתי החברות. היתרה שלכם עלולה לרדת מתחת לאפס אם הוא כבר נוצל.",
+      "autoTopUp": "הטעינה האוטומטית נשארת פעילה, ותחייב שוב כשהיתרה תרד מתחת לרמה שלה. כבו אותה קודם אם אתם לא רוצים בכך.",
+      "heldBack": "הקרדיטים של {count, plural, one {מועמד אחד} two {# מועמדים} other {# מועמדים}} <reserved>שמורים</reserved>. בטלו את ההזמנות שלהם כדי לכלול אותם.",
+      "confirm": "החזר של {amount}",
+      "refunded": "ההחזר בוצע.",
+      "processing": "ההחזר בדרך.",
+      "failed": "לא ניתן להחזיר את הטעינה הזו. נסו שוב.",
+      "status": {
+        "processing": "ההחזר בתהליך",
+        "refunded": "הוחזר",
+        "declined": "Paddle דחתה את ההחזר"
+      }
+    },
     "invoice": "חשבונית",
     "invoiceFailed": "לא ניתן לפתוח את החשבונית. נסו שוב.",
     "deletedCandidate": "מועמד שנמחק",
@@ -3071,6 +3093,7 @@
     "compliance": {
       "title": "עמידה בדרישות",
       "aiAct": "לפי חוק ה-AI של האיחוד האירופי, testee נחשבת למערכת AI בסיכון גבוה, שהחובות שלה חלות מ-<time>{date}</time>. ההנחיות שלנו לחברות הן הוראות השימוש שלה.",
+      "aiMarks": "שאלות, אפשרויות תשובה, התשובות של העוזר וקטעי קול מסומנים כתוכן שנוצר ב-AI בצורה שתוכנה יכולה לקרוא: data-ai-generated בקוד של העמוד, והתג AI_GENERATED בקובץ של קטע הקול. קטעי הקול נושאים גם סימן מים לא נשמע של OpenAI, שאפשר לבדוק ב-<verify>openai.com/verify</verify>. טקסט שמועתק מעמוד לא שומר על הסימון שלו.",
       "humanReview": "testee לא מקבלת שום החלטה לגבי מועמד: אנשים בחברה בודקים את התוצאות ומחליטים, ומועמדים יכולים לבקש שאדם יבדוק את התוצאה שלהם.",
       "dpa": "הסכם עיבוד הנתונים הוא חלק מתנאי השימוש, ואין צורך לחתום על שום דבר. הוא חל על ה-GDPR, על ה-UK GDPR ועל חוקי הפרטיות של מדינות בארה״ב כמו קליפורניה, שלפיהם testee היא נותנת השירות (service provider) של החברה.",
       "documents": "חברות מקבלות <link>הוראות שימוש, תבנית DPIA ותבניות הודעה למועמדים</link>, עם גרסאות לניו יורק, לאילינוי ולקולורדו.",
@@ -3130,7 +3153,6 @@
     "periodDays": "{days, plural, one {היום האחרון} two {# הימים האחרונים} other {# הימים האחרונים}}",
     "periodCustom": "מותאמת אישית",
     "empty": "עדיין אין פעולות.",
-      "aiMarks": "שאלות, אפשרויות תשובה, התשובות של העוזר וקטעי קול מסומנים כתוכן שנוצר ב-AI בצורה שתוכנה יכולה לקרוא: data-ai-generated בקוד של העמוד, והתג AI_GENERATED בקובץ של קטע הקול. קטעי הקול נושאים גם סימן מים לא נשמע של OpenAI, שאפשר לבדוק ב-<verify>openai.com/verify</verify>. טקסט שמועתק מעמוד לא שומר על הסימון שלו.",
     "noMatches": "אין פעולות שמתאימות למסננים האלה.",
     "formerMember": "חבר צוות לשעבר",
     "apiKey": "{via, select, mcp {דרך MCP עם המפתח \"<bdi>{name}</bdi>\"} other {דרך ה-API עם המפתח \"<bdi>{name}</bdi>\"}}",
@@ -3196,6 +3218,7 @@
       "verification_requested": "ביקש/ה לאמת את החברה",
       "ai_apps_changed": "התיר/ה או עצר/ה אפליקציות AI",
       "top_up_paid": "טען/ה קרדיטים",
+      "refund_requested": "ביקש/ה החזר",
       "auto_top_up_set": "הגדיר/ה טעינה אוטומטית",
       "auto_top_up_changed": "שינה/תה את הטעינה האוטומטית",
       "auto_top_up_stopped": "עצר/ה את הטעינה האוטומטית",

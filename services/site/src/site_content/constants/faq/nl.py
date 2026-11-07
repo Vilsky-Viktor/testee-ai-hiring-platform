@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Kan ik mijn geld terugkrijgen?",
-        "answer": "Ja, voor credits die je de afgelopen 14 dagen hebt gekocht en nog niet hebt besteed: via Paddle of door ons te schrijven. Gratis credits, zoals het welkomstcadeau, worden niet terugbetaald en tellen als eerst besteed. De [voorwaarden](/terms) geven de details.",
+        "answer": "Ja, voor credits die je de afgelopen 14 dagen hebt gekocht en nog niet hebt besteed: op de factureringspagina van je bedrijf, via Paddle of door ons te schrijven. Credits die voor kandidaten zijn gereserveerd, kunnen niet worden terugbetaald zolang ze gereserveerd zijn; credits die binnen de 14 dagen zijn gereserveerd, kunnen tot 7 dagen na hun terugkeer worden terugbetaald. Gratis credits, zoals het welkomstcadeau, worden niet terugbetaald en tellen als eerst besteed. De [voorwaarden](/terms) geven de details.",
     },
     {
         "key": "scorecards",

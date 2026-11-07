@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee solo puede publicar en ese canal; no puede leer tu Slack.",
-      "Todos siguen viendo cada notificación en la campana.",
+      "Todos siguen viendo sus notificaciones en la campana; las de facturación, solo propietarios y administradores.",
       "Si el miembro que conectó Slack se va o pasa a ser lector, Slack se detiene hasta que un propietario o administrador lo vuelva a conectar."
     ]
   },
@@ -388,7 +388,7 @@
       "Las dos empresas reciben créditos cuando la invitada hace su primera recarga, de cualquier importe.",
       "Los créditos van a esta empresa y nunca caducan.",
       "Cada parte recibe 1.000 créditos. Tu empresa puede ganarlos hasta 25 veces al año; a partir de ahí, la empresa que invitaste sigue recibiendo sus créditos.",
-      "Una recarga reembolsada por completo o con contracargo retira ambas recompensas."
+      "Una recarga reembolsada, sea cual sea el importe, o con contracargo total retira ambas recompensas."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "Los créditos de un candidato se reservan al invitarlo, se cobran cuando responde y se devuelven si no lo hace.",
       "Solo los propietarios y administradores ven esta página.",
-      "Puedes pedir el reembolso de los créditos que compraste en los últimos 14 días y no has gastado, a través de Paddle o escribiéndonos."
+      "Puedes reembolsar los créditos que compraste en los últimos 14 días y no has gastado desde la fila de la recarga en el historial, a través de Paddle o escribiéndonos. Los créditos reservados para candidatos no se pueden reembolsar mientras estén reservados."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Un candidato cuesta 500 créditos: se reservan al invitarlo, se cobran cuando responde y se devuelven si no lo hace.",
       "Los créditos no caducan. La factura de cada recarga está en la pestaña Facturación de la empresa.",
       "Los precios no incluyen IVA ni impuesto sobre las ventas: donde se aplique, se añade al pagar.",
-      "Puedes pedir el reembolso de los créditos que compraste en los últimos 14 días y no has gastado, a través de Paddle o escribiéndonos.",
+      "Puedes reembolsar los créditos que compraste en los últimos 14 días y no has gastado en la página de facturación de la empresa, a través de Paddle o escribiéndonos.",
       "Los propietarios y administradores configuran la recarga automática. Solo la persona cuya tarjeta paga puede cambiarla o actualizar la tarjeta; cualquier propietario o administrador puede desactivarla al momento.",
       "Una tarjeta rechazada se vuelve a intentar a los 1, 3 y 7 días; después, la recarga automática se pausa hasta que se actualice la tarjeta. Una tarjeta que no puede pagar, como una caducada, la pausa al momento."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Los créditos no caducan.",
       "Un candidato que no responde ninguna pregunta no cuesta nada.",
-      "Los créditos pagados sin usar se pueden reembolsar en un plazo de 14 días."
+      "Los créditos pagados sin usar se pueden reembolsar en un plazo de 14 días, en la página de facturación de la empresa."
     ]
   },
   "tests": {

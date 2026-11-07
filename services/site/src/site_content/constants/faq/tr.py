@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Para iadesi alabilir miyim?",
-        "answer": "Evet, son 14 gün içinde satın aldığınız ve harcamadığınız krediler için: Paddle üzerinden veya bize yazarak. Hoş geldin hediyesi gibi ücretsiz krediler iade edilmez ve ilk olarak bunlar harcanmış sayılır. Ayrıntılar [koşullarda](/terms) yer alır.",
+        "answer": "Evet, son 14 gün içinde satın aldığınız ve harcamadığınız krediler için: şirketinizin faturalandırma sayfasından, Paddle üzerinden veya bize yazarak. Adaylar için ayrılan krediler ayrılmış durumdayken iade edilemez; bu 14 gün içinde ayrılanlar geri geldikten sonraki 7 gün boyunca iade edilebilir. Hoş geldin hediyesi gibi ücretsiz krediler iade edilmez ve ilk olarak bunlar harcanmış sayılır. Ayrıntılar [koşullarda](/terms) yer alır.",
     },
     {
         "key": "scorecards",

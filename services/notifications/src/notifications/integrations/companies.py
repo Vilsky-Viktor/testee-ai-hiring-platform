@@ -31,6 +31,19 @@ async def company_ids(user_id: str) -> list[str]:
     return response.json()["company_ids"]
 
 
+async def memberships(user_id: str) -> tuple[list[str], list[str]]:
+    """Every company the user belongs to, and those where they're only a viewer."""
+    response = await http.get_client().get(
+        f"{settings.companies_url}/internal/users/{user_id}/companies",
+        headers=bearer(service_token("companies")),
+    )
+
+    response.raise_for_status()
+    found = response.json()
+
+    return found["company_ids"], found["viewer_company_ids"]
+
+
 async def invited_company_ids(email: str) -> list[str]:
     """The companies that invited the address; it goes in the body, which request logs don't
     record."""

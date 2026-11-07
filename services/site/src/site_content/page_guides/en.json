@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee can only post to that channel; it can't read your Slack.",
-      "Everyone still sees every notification in the bell.",
+      "The bell still shows everyone their notifications, with billing ones for owners and admins only.",
       "If the member who connected Slack leaves or becomes a viewer, it stops until an owner or admin reconnects it."
     ]
   },
@@ -388,7 +388,7 @@
       "You both get credits when the company you invited makes its first top-up, of any amount.",
       "Credits go to this company and never expire.",
       "Each side gets 1,000 credits. Your company earns this up to 25 times a year; past that, the company you invited still gets its credits.",
-      "A top-up that's refunded in full or charged back takes both rewards back."
+      "A top-up that's refunded, by any amount, or charged back in full takes both rewards back."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "A candidate's credits are reserved when they're invited, charged once they answer, and given back if they don't.",
       "Only owners and admins see this page.",
-      "You can ask for a refund of credits you bought in the last 14 days and haven't spent, through Paddle or by writing to us."
+      "You can refund credits you bought in the last 14 days and haven't spent from the top-up's row in the history, through Paddle or by writing to us. Credits reserved for candidates can't be refunded while reserved."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "A candidate costs 500 credits: reserved when they're invited, charged once they answer, and given back if they don't.",
       "Credits never expire. Each top-up's invoice is on the company's billing tab.",
       "Prices don't include VAT or sales tax: where it applies, it's added at checkout.",
-      "You can ask for a refund of credits you bought in the last 14 days and haven't spent, through Paddle or by writing to us.",
+      "You can refund credits you bought in the last 14 days and haven't spent on the company's billing page, through Paddle or by writing to us.",
       "Owners and admins set up automatic top-up. Only the person whose card pays can change it or update the card; any owner or admin can turn it off at once.",
       "A declined card is tried again after 1, 3 and 7 days, then automatic top-up pauses until the card is updated. A card that can't pay, such as an expired one, pauses it at once."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Credits never expire.",
       "A candidate who doesn't answer any question costs nothing.",
-      "Unused paid credits can be refunded within 14 days."
+      "Unused paid credits can be refunded within 14 days, on the company's billing page."
     ]
   },
   "tests": {

@@ -382,6 +382,28 @@ TEXTS = {
             "inviata indipendentemente dalle tue impostazioni email."
         ),
     },
+    "refund_rejected": {
+        "subject": "Rimborso rifiutato per {company}: {price}",
+        "preheader": "Paddle ha rifiutato il rimborso di {price}. I crediti sono tornati nel tuo saldo.",
+        "heading": "Paddle ha rifiutato il rimborso",
+        "lines": [
+            "Paddle, il nostro rivenditore, ha rifiutato il rimborso di {price} per {company} e non è stato restituito alcun importo.",
+            "{credits, plural, one {Il # credito accantonato per questo rimborso è tornato} many {I # crediti accantonati per questo rimborso sono tornati} other {I # crediti accantonati per questo rimborso sono tornati}} nel saldo dell'azienda. Scrivici se vuoi ancora il rimborso.",
+        ],
+        "button": "Apri Fatturazione",
+        "footer": "Questa email è stata inviata a {email} perché sei proprietario o amministratore di {company} su testee. Riguarda la fatturazione della tua azienda, quindi viene inviata indipendentemente dalle tue impostazioni email.",
+    },
+    "refund_approved": {
+        "subject": "Rimborso approvato per {company}: {price}",
+        "preheader": "Paddle ha approvato il rimborso di {price}. Torna sulla carta usata per il pagamento.",
+        "heading": "Paddle ha approvato il rimborso",
+        "lines": [
+            "Paddle, il nostro rivenditore, ha approvato il rimborso di {price} per {company}. Torna sulla carta usata per il pagamento, imposte incluse; possono volerci alcuni giorni.",
+            "{credits, plural, one {Il # credito rimborsato è uscito} many {I # crediti rimborsati sono usciti} other {I # crediti rimborsati sono usciti}} dal saldo dell'azienda.",
+        ],
+        "button": "Apri Fatturazione",
+        "footer": "Questa email è stata inviata a {email} perché sei proprietario o amministratore di {company} su testee. Riguarda la fatturazione della tua azienda, quindi viene inviata indipendentemente dalle tue impostazioni email.",
+    },
     "top_up_price_change": {
         "subject": "Nuovo prezzo della ricarica per {company}",
         "preheader": "Dal {date}, ogni ricarica automatica costa {new_price} invece di {price}.",

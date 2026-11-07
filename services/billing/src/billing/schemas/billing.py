@@ -6,6 +6,7 @@ from testee_common.config.constants import MAX_ADJUSTMENT, MAX_ADJUSTMENT_NOTE, 
 
 from billing.constants.currencies import Currency
 from billing.constants.payment_failures import PaymentFailure
+from billing.schemas.refunds import RefundStateOut
 
 
 class TopUpOut(BaseModel):
@@ -244,6 +245,8 @@ class HistoryEntryOut(BaseModel):
     hold_key: str | None
     # A superadmin's adjustment: why.
     note: str | None = None
+    # A top-up's: whether it can be refunded now, and its latest refund.
+    refund: RefundStateOut | None = None
 
 
 class PurchaseOwnerOut(BaseModel):

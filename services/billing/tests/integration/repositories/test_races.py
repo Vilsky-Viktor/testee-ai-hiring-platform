@@ -8,12 +8,13 @@ import os
 import uuid
 from datetime import UTC, datetime
 
+from fastapi import HTTPException
 from testee_common.db.lock_waits import hold_first_commit, race
 
 from billing.constants.credits import CANDIDATE_CREDITS, WELCOME_COMPANY, Reason
 from billing.constants.products import TOP_UPS, OwnerType
 from billing.repositories import auto_top_ups, ledger
-from billing.services import holds, topups
+from billing.services import holds, refunds, topups
 from tests.integration import transactions
 from tests.integration.factories import welcomed
 from tests.integration.services.test_auto_top_up_retries import running_low
@@ -102,3 +103,88 @@ def test_two_checks_at_once_charge_the_automatic_top_up_once(run, monkeypatch, p
 
     assert first is not None
     assert second is None
+
+
+def test_a_refund_and_a_candidates_hold_at_once_cant_both_take_the_last_credits(run, monkeypatch):
+    """The refund claims first: the spending waits on the wallet's lock, then finds nothing."""
+    acme = str(uuid.uuid4())
+    txn = f"txn_{uuid.uuid4().hex[:26]}"
+
+    async def scenario():
+        await topups.grant(
+            COMPANY, acme, 500, 1, txn, "topup_50", "ann", "500", "USD", datetime.now(UTC)
+        )
+        held = hold_first_commit(monkeypatch, refunds)
+        spend = transactions.transaction(
+            ledger.reserve, COMPANY, acme, 500, "candidate:a", Reason.CANDIDATE
+        )
+        results = await race(
+            os.environ["DATABASE_URL"], held, refunds.claim(acme, txn, "ann"), spend
+        )
+
+        return results, await transactions.transaction(ledger.wallet, COMPANY, acme)
+
+    (claimed, spent), wallet = run(scenario())
+
+    assert claimed[1] is True
+    assert spent is False
+    assert (wallet.balance, wallet.reserved) == (500, 500)
+
+
+def test_a_candidates_hold_first_leaves_the_refund_nothing_to_take(run, monkeypatch):
+    acme = str(uuid.uuid4())
+    txn = f"txn_{uuid.uuid4().hex[:26]}"
+
+    async def scenario():
+        await topups.grant(
+            COMPANY, acme, 500, 1, txn, "topup_50", "ann", "500", "USD", datetime.now(UTC)
+        )
+        held = hold_first_commit(monkeypatch, transactions)
+
+        async def refund():
+            try:
+                return await refunds.claim(acme, txn, "ann")
+            except HTTPException as refused:
+                return refused.status_code
+
+        results = await race(
+            os.environ["DATABASE_URL"],
+            held,
+            transactions.transaction(
+                ledger.reserve, COMPANY, acme, 500, "candidate:a", Reason.CANDIDATE
+            ),
+            refund(),
+        )
+
+        return results, await transactions.transaction(ledger.wallet, COMPANY, acme)
+
+    (spent, refused), wallet = run(scenario())
+
+    assert spent is True
+    assert refused == 409
+    assert (wallet.balance, wallet.reserved) == (500, 500)
+
+
+def test_two_clicks_at_once_make_one_refund(run, monkeypatch):
+    acme = str(uuid.uuid4())
+    txn = f"txn_{uuid.uuid4().hex[:26]}"
+
+    async def scenario():
+        await topups.grant(
+            COMPANY, acme, 500, 1, txn, "topup_50", "ann", "500", "USD", datetime.now(UTC)
+        )
+        held = hold_first_commit(monkeypatch, refunds)
+        results = await race(
+            os.environ["DATABASE_URL"],
+            held,
+            refunds.claim(acme, txn, "ann"),
+            refunds.claim(acme, txn, "ann"),
+        )
+
+        return results, await transactions.transaction(ledger.wallet, COMPANY, acme)
+
+    ((first, first_new), (second, second_new)), wallet = run(scenario())
+
+    assert (first_new, second_new) == (True, False)
+    assert first.id == second.id
+    assert wallet.reserved == 500

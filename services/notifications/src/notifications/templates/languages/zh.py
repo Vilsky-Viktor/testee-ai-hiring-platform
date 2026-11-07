@@ -245,6 +245,28 @@ TEXTS = {
         "button": "打开账单",
         "footer": "这封邮件发送到 {email}，因为你是 testee 上 {company} 的所有者或管理员。它与你公司的账单有关，因此无论你的邮件设置如何都会发送。",
     },
+    "refund_rejected": {
+        "subject": "{company} 的退款被拒：{price}",
+        "preheader": "Paddle 拒绝了 {price} 的退款。点数已退回你的余额。",
+        "heading": "Paddle 拒绝了退款",
+        "lines": [
+            "我们的转售商 Paddle 拒绝了 {company} 的 {price} 退款，款项未退回。",
+            "为此预留的 {credits, plural, other {# 点数}}已退回公司余额。如果你仍希望退款，请写信给我们。",
+        ],
+        "button": "打开账单",
+        "footer": "这封邮件发送到 {email}，因为你是 testee 上 {company} 的所有者或管理员。它与你公司的账单有关，因此无论你的邮件设置如何都会发送。",
+    },
+    "refund_approved": {
+        "subject": "{company} 的退款已批准：{price}",
+        "preheader": "Paddle 批准了 {price} 的退款。款项将退回付款的银行卡。",
+        "heading": "Paddle 批准了退款",
+        "lines": [
+            "我们的转售商 Paddle 批准了 {company} 的 {price} 退款。款项（含税）将退回付款的银行卡，可能需要几天。",
+            "已退款的 {credits, plural, other {# 点数}}已从公司余额中扣除。",
+        ],
+        "button": "打开账单",
+        "footer": "这封邮件发送到 {email}，因为你是 testee 上 {company} 的所有者或管理员。它与你公司的账单有关，因此无论你的邮件设置如何都会发送。",
+    },
     "top_up_price_change": {
         "subject": "{company} 的自动充值新价格",
         "preheader": "自 {date} 起，每次自动充值的价格从 {price} 调整为 {new_price}。",

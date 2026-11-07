@@ -40,6 +40,8 @@ export const NOTIFICATION_LOOKS: Record<
   auto_top_up_failed: { icon: DollarSignIcon, alert: true },
   auto_top_up_paused: { icon: CreditCardIcon, alert: true },
   auto_top_up_price_change: { icon: DollarSignIcon, alert: false },
+  refund_approved: { icon: DollarSignIcon, alert: false },
+  refund_rejected: { icon: DollarSignIcon, alert: true },
   candidate_finished: { icon: UserCheckIcon, alert: false },
   invite_undelivered: { icon: MailWarningIcon, alert: true },
   interview_ready: { icon: PackageCheckIcon, alert: false },

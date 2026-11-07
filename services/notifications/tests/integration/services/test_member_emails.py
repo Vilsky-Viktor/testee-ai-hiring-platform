@@ -100,7 +100,7 @@ def outside(monkeypatch):
             )
 
         if path.startswith("/internal/users/") and path.endswith("/companies"):
-            return httpx.Response(200, json={"company_ids": [company_id]})
+            return httpx.Response(200, json={"company_ids": [company_id], "viewer_company_ids": []})
 
         if path == "/internal/users/email-recipients":
             return httpx.Response(200, json={"recipients": state["people"]})

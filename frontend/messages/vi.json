@@ -1255,7 +1255,6 @@
     "memberFailed": "Không thể mời người này. Vui lòng thử lại.",
     "invite": "Mời",
     "jobDescription": "Mô tả công việc",
-    "generate": "Tạo buổi phỏng vấn",
     "startFailed": "Không thể bắt đầu buổi phỏng vấn. Vui lòng thử lại.",
     "candidateEmails": "Email ứng viên",
     "candidateEmail": "Email ứng viên",
@@ -2075,6 +2074,8 @@
       "auto_top_up_on": "Tự động nạp đang bật: {price} cộng thuế khi credit khả dụng xuống dưới {threshold, number}.",
       "auto_top_up_paused": "Tự động nạp đã tạm dừng: thẻ bị từ chối. Hãy cập nhật thẻ để bật lại.",
       "auto_top_up_price_change": "Từ <time>{date}</time>, mỗi lần tự động nạp có giá {newPrice} thay vì {price}.",
+      "refund_approved": "Đã phê duyệt hoàn tiền cho <bdi>{name}</bdi>: {price}.",
+      "refund_rejected": "Đã từ chối hoàn tiền cho <bdi>{name}</bdi>: {price}. {credits, plural, other {# credit}} đã quay lại số dư của bạn.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> đã hoàn thành {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# ứng viên đã hoàn thành {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}}.}}",
       "invite_undelivered": "{count, plural, =1 {Lời mời gửi tới <bdi>{email}</bdi> cho {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}} chưa được chuyển đến.} other {# lời mời cho {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}} chưa được chuyển đến.}}",
       "interview_ready": "{title, select, none {Một buổi phỏng vấn đã sẵn sàng.} other {Buổi phỏng vấn “<bdi>{title}</bdi>” đã sẵn sàng.}}",
@@ -2371,6 +2372,8 @@
       "interview_ready": "Buổi phỏng vấn “Data Analyst” đã sẵn sàng.",
       "auto_top_up_charged": "Tự động nạp đã thêm 5.000 credit.",
       "auto_top_up_failed": "Tự động nạp không trừ tiền được từ thẻ. Hãy nạp credit để không bị hết số dư.",
+      "refund_approved": "Đã phê duyệt hoàn tiền cho Acme: $55.50.",
+      "refund_rejected": "Đã từ chối hoàn tiền cho Acme: $55.50. Số credit đã quay lại số dư.",
       "note_added": "Maya đã thêm ghi chú về “Data Analyst”: SQL tốt, nên gọi trao đổi."
     },
     "connectFailed": "Không thể kết nối Slack.",
@@ -2388,6 +2391,8 @@
       "interview_ready": "Một buổi phỏng vấn đã sẵn sàng",
       "auto_top_up_charged": "Đã trừ tiền cho một lần tự động nạp",
       "auto_top_up_failed": "Một lần tự động nạp không thành công",
+      "refund_approved": "Một khoản hoàn tiền đã được phê duyệt",
+      "refund_rejected": "Một khoản hoàn tiền đã bị từ chối",
       "note_added": "Một thành viên trong nhóm đã viết ghi chú, kèm nội dung"
     },
     "instructionsTitle": "Cách Slack nhận thông báo của bạn",
@@ -2956,6 +2961,23 @@
       "adjustment": "Điều chỉnh từ testee"
     },
     "automatic": "Tự động nạp",
+    "refund": {
+      "open": "Hoàn tiền",
+      "title": "Hoàn {amount}?",
+      "text": "Paddle trả lại {amount}, đã gồm thuế, vào thẻ đã thanh toán, việc này có thể mất vài ngày. <credits></credits> {count, plural, other {credit chưa dùng rời khỏi số dư của bạn ngay bây giờ,}} và sẽ quay lại nếu việc hoàn tiền không thành công.",
+      "referral": "Lần nạp này đã tạo thưởng giới thiệu, nên bất kỳ khoản hoàn tiền nào cho lần nạp này cũng thu hồi phần thưởng của cả hai công ty. Số dư của bạn có thể bị âm nếu phần thưởng đã được dùng.",
+      "autoTopUp": "Tự động nạp vẫn bật và sẽ trừ tiền lại khi số dư xuống dưới mức đã đặt. Nếu không muốn vậy, hãy tắt trước.",
+      "heldBack": "Credit của {count, plural, other {# ứng viên}} đang được <reserved>giữ chỗ</reserved>. Hãy thu hồi lời mời của họ để tính cả số credit này.",
+      "confirm": "Hoàn {amount}",
+      "refunded": "Đã hoàn tiền.",
+      "processing": "Đang hoàn tiền.",
+      "failed": "Không thể hoàn tiền lần nạp này. Vui lòng thử lại.",
+      "status": {
+        "processing": "Đang hoàn tiền",
+        "refunded": "Đã hoàn tiền",
+        "declined": "Paddle đã từ chối hoàn tiền"
+      }
+    },
     "invoice": "Hóa đơn",
     "invoiceFailed": "Không mở được hóa đơn. Vui lòng thử lại.",
     "deletedCandidate": "Ứng viên đã bị xóa",
@@ -3080,6 +3102,7 @@
     "compliance": {
       "title": "Tuân thủ",
       "aiAct": "Theo Đạo luật AI của EU, testee được xem là một hệ thống AI rủi ro cao, với các nghĩa vụ áp dụng từ <time>{date}</time>. Hướng dẫn cho công ty của chúng tôi chính là hướng dẫn sử dụng của hệ thống này.",
+      "aiMarks": "Câu hỏi, lựa chọn trả lời, câu trả lời của trợ lý và đoạn âm thanh giọng nói được đánh dấu là do AI tạo ở dạng phần mềm đọc được: data-ai-generated trong mã của trang và thẻ AI_GENERATED trong tệp âm thanh. Các đoạn âm thanh này còn mang watermark âm thanh không nghe được của OpenAI, bạn có thể kiểm tra tại <verify>openai.com/verify</verify>. Văn bản sao chép từ trang không giữ lại dấu này.",
       "humanReview": "testee không đưa ra quyết định nào về ứng viên: những người ở công ty xem xét kết quả và quyết định, và ứng viên có thể yêu cầu một người xem xét lại kết quả của mình.",
       "dpa": "Thỏa thuận xử lý dữ liệu là một phần của các điều khoản, không cần ký gì. Thỏa thuận bao gồm GDPR, UK GDPR và các luật về quyền riêng tư của các bang tại Hoa Kỳ như luật của California, theo đó testee là nhà cung cấp dịch vụ của công ty.",
       "documents": "Các công ty nhận được <link>hướng dẫn sử dụng, mẫu DPIA và các mẫu thông báo cho ứng viên</link>, có phiên bản cho Thành phố New York, Illinois và Colorado.",
@@ -3139,7 +3162,6 @@
     "periodDays": "{days, number} ngày qua",
     "periodCustom": "Tùy chỉnh",
     "empty": "Chưa có thao tác nào.",
-      "aiMarks": "Câu hỏi, lựa chọn trả lời, câu trả lời của trợ lý và đoạn âm thanh giọng nói được đánh dấu là do AI tạo ở dạng phần mềm đọc được: data-ai-generated trong mã của trang và thẻ AI_GENERATED trong tệp âm thanh. Các đoạn âm thanh này còn mang watermark âm thanh không nghe được của OpenAI, bạn có thể kiểm tra tại <verify>openai.com/verify</verify>. Văn bản sao chép từ trang không giữ lại dấu này.",
     "noMatches": "Không có thao tác nào khớp với các bộ lọc này.",
     "formerMember": "Một cựu thành viên",
     "apiKey": "{via, select, mcp {Qua MCP bằng khóa “<bdi>{name}</bdi>”} other {Qua API bằng khóa “<bdi>{name}</bdi>”}}",
@@ -3205,6 +3227,7 @@
       "verification_requested": "Đã yêu cầu xác minh công ty",
       "ai_apps_changed": "Đã cho phép hoặc dừng ứng dụng AI",
       "top_up_paid": "Đã nạp credit",
+      "refund_requested": "Đã yêu cầu hoàn tiền",
       "auto_top_up_set": "Đã thiết lập tự động nạp",
       "auto_top_up_changed": "Đã thay đổi tự động nạp",
       "auto_top_up_stopped": "Đã dừng tự động nạp",

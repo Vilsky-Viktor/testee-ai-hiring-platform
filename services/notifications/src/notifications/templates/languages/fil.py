@@ -395,6 +395,28 @@ TEXTS = {
             "ang iyong email settings."
         ),
     },
+    "refund_rejected": {
+        "subject": "Tinanggihan ang refund para sa {company}: {price}",
+        "preheader": "Tinanggihan ng Paddle ang refund na {price}. Nakabalik na sa iyong balance ang credits.",
+        "heading": "Tinanggihan ng Paddle ang refund",
+        "lines": [
+            "Tinanggihan ng Paddle, ang aming reseller, ang refund na {price} para sa {company}, at walang naibalik na pera.",
+            "Nakabalik na sa balance ng kumpanya ang {credits, plural, =1 {# credit} one {# credits} other {# credits}} na inilaan para dito. Sumulat sa amin kung gusto mo pa rin ang refund.",
+        ],
+        "button": "Buksan ang billing",
+        "footer": "Ipinadala ang email na ito sa {email} dahil ikaw ay may-ari o admin ng {company} sa testee. Tungkol ito sa billing ng kumpanya mo, kaya ipinapadala ito anuman ang iyong email settings.",
+    },
+    "refund_approved": {
+        "subject": "Inaprubahan ang refund para sa {company}: {price}",
+        "preheader": "Inaprubahan ng Paddle ang refund na {price}. Babalik ito sa card na nagbayad.",
+        "heading": "Inaprubahan ng Paddle ang refund",
+        "lines": [
+            "Inaprubahan ng Paddle, ang aming reseller, ang refund na {price} para sa {company}. Babalik ito sa card na nagbayad, kasama ang buwis, na maaaring abutin ng ilang araw.",
+            "Umalis na sa balance ng kumpanya ang {credits, plural, =1 {# credit} one {# credits} other {# credits}} na na-refund.",
+        ],
+        "button": "Buksan ang billing",
+        "footer": "Ipinadala ang email na ito sa {email} dahil ikaw ay may-ari o admin ng {company} sa testee. Tungkol ito sa billing ng kumpanya mo, kaya ipinapadala ito anuman ang iyong email settings.",
+    },
     "top_up_price_change": {
         "subject": "Bagong presyo ng top-up para sa {company}",
         "preheader": (

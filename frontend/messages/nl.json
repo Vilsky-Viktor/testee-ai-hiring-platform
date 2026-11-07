@@ -1255,7 +1255,6 @@
     "memberFailed": "Uitnodigen is mislukt. Probeer het opnieuw.",
     "invite": "Uitnodigen",
     "jobDescription": "Functieomschrijving",
-    "generate": "Interview genereren",
     "startFailed": "Het interview kon niet worden gestart. Probeer het opnieuw.",
     "candidateEmails": "E-mailadressen van kandidaten",
     "candidateEmail": "E-mailadres van de kandidaat",
@@ -2071,6 +2070,8 @@
       "auto_top_up_on": "Automatisch opwaarderen staat aan: {price} plus belasting als de beschikbare credits onder {threshold, number} zakken.",
       "auto_top_up_paused": "Automatisch opwaarderen is gepauzeerd: de kaart is geweigerd. Werk de kaart bij om het weer aan te zetten.",
       "auto_top_up_price_change": "Vanaf <time>{date}</time> kost elke automatische opwaardering {newPrice} in plaats van {price}.",
+      "refund_approved": "Terugbetaling goedgekeurd voor <bdi>{name}</bdi>: {price}.",
+      "refund_rejected": "Terugbetaling afgewezen voor <bdi>{name}</bdi>: {price}. {credits, plural, one {# credit staat} other {# credits staan}} weer op je saldo.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> heeft {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} afgerond{grade, select, none {.} other {: {grade}.}}} other {# kandidaten hebben {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} afgerond.}}",
       "invite_undelivered": "{count, plural, one {De uitnodiging voor {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} aan <bdi>{email}</bdi> is niet bezorgd.} other {# uitnodigingen voor {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} zijn niet bezorgd.}}",
       "interview_ready": "{title, select, none {Een interview is klaar.} other {Het interview “<bdi>{title}</bdi>” is klaar.}}",
@@ -2367,6 +2368,8 @@
       "interview_ready": "Het interview “Data Analyst” is klaar.",
       "auto_top_up_charged": "Automatisch opwaarderen heeft 5.000 credits toegevoegd.",
       "auto_top_up_failed": "Automatisch opwaarderen kon de kaart niet belasten. Waardeer op zodat je saldo niet opraakt.",
+      "refund_approved": "Terugbetaling goedgekeurd voor Acme: $55.50.",
+      "refund_rejected": "Terugbetaling afgewezen voor Acme: $55.50. De credits staan weer op het saldo.",
       "note_added": "Maya heeft een notitie toegevoegd bij “Data Analyst”: sterke SQL, een telefoontje waard."
     },
     "connectFailed": "Slack kon niet worden gekoppeld.",
@@ -2384,6 +2387,8 @@
       "interview_ready": "Een interview is klaar",
       "auto_top_up_charged": "Een automatische opwaardering is afgeschreven",
       "auto_top_up_failed": "Een automatische opwaardering is mislukt",
+      "refund_approved": "Een terugbetaling is goedgekeurd",
+      "refund_rejected": "Een terugbetaling is afgewezen",
       "note_added": "Een teamlid schreef een notitie, met de tekst ervan"
     },
     "instructionsTitle": "Zo krijgt Slack je meldingen",
@@ -2952,6 +2957,23 @@
       "adjustment": "Correctie door testee"
     },
     "automatic": "Automatisch opwaarderen",
+    "refund": {
+      "open": "Terugbetalen",
+      "title": "{amount} terugbetalen?",
+      "text": "Paddle betaalt {amount}, inclusief belasting, terug op de kaart waarmee is betaald; dat kan een paar dagen duren. <credits></credits> {count, plural, one {onbestede credit verdwijnt nu van je saldo en komt} other {onbestede credits verdwijnen nu van je saldo en komen}} terug als de terugbetaling niet doorgaat.",
+      "referral": "Deze opwaardering leverde een doorverwijsbeloning op, dus elke terugbetaling neemt de beloning terug bij beide bedrijven. Als die al is besteed, kan je saldo onder nul komen.",
+      "autoTopUp": "Automatisch opwaarderen blijft aan en belast de kaart opnieuw als het saldo onder het gekozen bedrag zakt. Zet het eerst uit als je dat niet wilt.",
+      "heldBack": "{count, plural, one {# kandidaat heeft} other {# kandidaten hebben}} <reserved>gereserveerde</reserved> credits. Trek hun uitnodigingen in om ze mee te nemen.",
+      "confirm": "{amount} terugbetalen",
+      "refunded": "Terugbetaald.",
+      "processing": "Terugbetaling onderweg.",
+      "failed": "Deze opwaardering kon niet worden terugbetaald. Probeer het opnieuw.",
+      "status": {
+        "processing": "Terugbetaling loopt",
+        "refunded": "Terugbetaald",
+        "declined": "Terugbetaling afgewezen door Paddle"
+      }
+    },
     "invoice": "Factuur",
     "invoiceFailed": "De factuur kon niet worden geopend. Probeer het opnieuw.",
     "deletedCandidate": "Een verwijderde kandidaat",
@@ -3076,6 +3098,7 @@
     "compliance": {
       "title": "Naleving",
       "aiAct": "Onder de EU AI Act geldt testee als een AI-systeem met een hoog risico, waarvan de verplichtingen gelden vanaf <time>{date}</time>. Onze instructies voor bedrijven zijn de gebruiksaanwijzing ervan.",
+      "aiMarks": "Vragen, antwoordopties, de antwoorden van de assistent en spraakfragmenten zijn in een voor software leesbare vorm gemarkeerd als door AI gegenereerd: data-ai-generated in de code van een pagina, en de tag AI_GENERATED in het bestand van een spraakfragment. Spraakfragmenten dragen ook het onhoorbare watermerk van OpenAI, dat je kunt controleren op <verify>openai.com/verify</verify>. Tekst die je van een pagina kopieert, behoudt zijn markering niet.",
       "humanReview": "testee neemt geen besluit over een kandidaat: mensen bij het bedrijf beoordelen de resultaten en beslissen, en kandidaten kunnen vragen om een beoordeling van hun resultaat door een mens.",
       "dpa": "De verwerkersovereenkomst maakt deel uit van de voorwaarden; je hoeft niets te ondertekenen. Ze dekt de GDPR, de UK GDPR en privacywetten van Amerikaanse staten zoals die van Californië, waaronder testee de dienstverlener van het bedrijf is.",
       "documents": "Bedrijven krijgen <link>instructies voor gebruik, een DPIA-sjabloon en sjablonen voor kandidaatberichten</link>, met versies voor New York City, Illinois en Colorado.",
@@ -3135,7 +3158,6 @@
     "periodDays": "Laatste {days, number} dagen",
     "periodCustom": "Aangepast",
     "empty": "Nog geen acties.",
-      "aiMarks": "Vragen, antwoordopties, de antwoorden van de assistent en spraakfragmenten zijn in een voor software leesbare vorm gemarkeerd als door AI gegenereerd: data-ai-generated in de code van een pagina, en de tag AI_GENERATED in het bestand van een spraakfragment. Spraakfragmenten dragen ook het onhoorbare watermerk van OpenAI, dat je kunt controleren op <verify>openai.com/verify</verify>. Tekst die je van een pagina kopieert, behoudt zijn markering niet.",
     "noMatches": "Geen acties komen overeen met deze filters.",
     "formerMember": "Een voormalig lid",
     "apiKey": "{via, select, mcp {Via MCP met de sleutel ‘<bdi>{name}</bdi>’} other {Via de API met de sleutel ‘<bdi>{name}</bdi>’}}",
@@ -3201,6 +3223,7 @@
       "verification_requested": "Vroeg verificatie van het bedrijf aan",
       "ai_apps_changed": "Stond AI-apps toe of stopte ze",
       "top_up_paid": "Waardeerde credits op",
+      "refund_requested": "Vroeg een terugbetaling aan",
       "auto_top_up_set": "Stelde automatisch opwaarderen in",
       "auto_top_up_changed": "Wijzigde automatisch opwaarderen",
       "auto_top_up_stopped": "Stopte automatisch opwaarderen",

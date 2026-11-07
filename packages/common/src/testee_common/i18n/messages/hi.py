@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack कनेक्ट नहीं है। उसे फिर से कनेक्ट करें, फिर दोबारा कोशिश करें।",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "बिना उम्मीदवार वाले इंटरव्यू की आपकी सीमा ({limit}) पूरी हो चुकी है।\nनया इंटरव्यू बनाने के लिए किसी उम्मीदवार को इनवाइट करें या कोई इंटरव्यू हटाएँ।",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "बिना उम्मीदवार वाले इंटरव्यू की आपकी सीमा ({limit}, पहले टॉप अप तक) पूरी हो चुकी है।\nनया इंटरव्यू बनाने के लिए किसी उम्मीदवार को इनवाइट करें या कोई इंटरव्यू हटाएँ।",
+    "This top-up can't be refunded now.": "इस टॉप अप का रिफ़ंड अभी नहीं हो सकता।",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle इस टॉप अप का रिफ़ंड नहीं कर सका। इसके क्रेडिट आपके बैलेंस में वापस आ गए हैं।",
 }

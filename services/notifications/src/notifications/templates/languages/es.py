@@ -385,6 +385,28 @@ TEXTS = {
             "sin importar tu configuración de correo."
         ),
     },
+    "refund_rejected": {
+        "subject": "Reembolso rechazado para {company}: {price}",
+        "preheader": "Paddle rechazó el reembolso de {price}. Los créditos han vuelto a tu saldo.",
+        "heading": "Paddle rechazó el reembolso",
+        "lines": [
+            "Paddle, nuestro revendedor, rechazó el reembolso de {price} para {company}, y no se devolvió dinero.",
+            "{credits, plural, one {El # crédito reservado para este reembolso ha vuelto} many {Los # créditos reservados para este reembolso han vuelto} other {Los # créditos reservados para este reembolso han vuelto}} al saldo de la empresa. Escríbenos si aún quieres el reembolso.",
+        ],
+        "button": "Abrir facturación",
+        "footer": "Este correo se envió a {email} porque eres propietario o administrador de {company} en testee. Trata sobre la facturación de tu empresa, así que se envía sin importar tu configuración de correo.",
+    },
+    "refund_approved": {
+        "subject": "Reembolso aprobado para {company}: {price}",
+        "preheader": "Paddle aprobó el reembolso de {price}. Vuelve a la tarjeta con la que se pagó.",
+        "heading": "Paddle aprobó el reembolso",
+        "lines": [
+            "Paddle, nuestro revendedor, aprobó el reembolso de {price} para {company}. Vuelve a la tarjeta con la que se pagó, impuestos incluidos, lo que puede tardar unos días.",
+            "{credits, plural, one {El # crédito reembolsado ha salido} many {Los # créditos reembolsados han salido} other {Los # créditos reembolsados han salido}} del saldo de la empresa.",
+        ],
+        "button": "Abrir facturación",
+        "footer": "Este correo se envió a {email} porque eres propietario o administrador de {company} en testee. Trata sobre la facturación de tu empresa, así que se envía sin importar tu configuración de correo.",
+    },
     "top_up_price_change": {
         "subject": "Nuevo precio de recarga para {company}",
         "preheader": (

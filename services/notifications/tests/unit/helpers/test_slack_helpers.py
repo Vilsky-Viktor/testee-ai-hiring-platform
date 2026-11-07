@@ -122,6 +122,30 @@ def test_a_name_that_looks_like_a_link_or_markup_stays_plain_text():
     assert shown(payload).startswith("John www.evil-login.com *x* (a@b.c)")
 
 
+@pytest.mark.parametrize(
+    ("kind", "price", "currency", "says"),
+    [
+        (NotificationKind.REFUND_APPROVED, 5_550, "USD", "Refund approved for Arcolabs: $55.50."),
+        (NotificationKind.REFUND_APPROVED, 5_500, "JPY", "Refund approved for Arcolabs: ¥5,500."),
+        (
+            NotificationKind.REFUND_REJECTED,
+            5_550,
+            "EUR",
+            "Refund declined for Arcolabs: €55.50. The credits are back in the balance.",
+        ),
+    ],
+)
+def test_a_refund_names_its_company_and_amount_and_opens_billing(kind, price, currency, says):
+    data = {"name": "Arcolabs", "price": price, "currency": currency, "credits": 100}
+    found = message(
+        notification(Recipient.COMPANY, "c1", kind, "/companies/c1/billing", **data),
+        "https://testee.ai",
+    )
+
+    assert shown(found) == says
+    assert button(found) == "https://testee.ai/companies/c1/billing"
+
+
 def test_a_kind_slack_doesnt_get_has_no_message():
     assert message(event(NotificationKind.QUESTION_FLAGGED, title="Acme"), "https://x") is None
 

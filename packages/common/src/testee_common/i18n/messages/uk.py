@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack не підключено. Підключіть його знову й повторіть спробу.",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "Ви досягли ліміту співбесід без кандидатів ({limit}).\nЗапросіть кандидата або видаліть співбесіду, щоб створити нову.",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Ви досягли ліміту співбесід без кандидатів ({limit} до першого поповнення).\nЗапросіть кандидата або видаліть співбесіду, щоб створити нову.",
+    "This top-up can't be refunded now.": "Це поповнення зараз не можна повернути.",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle не зміг повернути це поповнення. Його кредити знову на вашому балансі.",
 }

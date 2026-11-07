@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee kann nur in diesem Kanal posten; dein Slack lesen kann es nicht.",
-      "Alle sehen weiterhin jede Benachrichtigung in der Glocke.",
+      "Alle sehen ihre Benachrichtigungen weiterhin in der Glocke; die zur Abrechnung nur Inhaber und Admins.",
       "Wenn das Mitglied, das Slack verbunden hat, das Unternehmen verlässt oder Betrachter wird, stoppt Slack, bis ein Inhaber oder Admin es neu verbindet."
     ]
   },
@@ -388,7 +388,7 @@
       "Ihr bekommt beide Credits, wenn das eingeladene Unternehmen zum ersten Mal auflädt, egal mit welchem Betrag.",
       "Die Credits gehen an dieses Unternehmen und verfallen nie.",
       "Jede Seite bekommt 1.000 Credits. Dein Unternehmen erhält das bis zu 25-mal pro Jahr; darüber hinaus bekommt das eingeladene Unternehmen seine Credits trotzdem.",
-      "Eine Aufladung, die vollständig erstattet oder zurückgebucht wird, nimmt beide Prämien zurück."
+      "Eine Aufladung, die in beliebiger Höhe erstattet oder vollständig zurückgebucht wird, nimmt beide Prämien zurück."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "Die Credits eines Kandidaten werden bei der Einladung reserviert, abgebucht, sobald er antwortet, und zurückgegeben, wenn nicht.",
       "Nur Inhaber und Admins sehen diese Seite.",
-      "Du kannst für Credits, die du in den letzten 14 Tagen gekauft und nicht verbraucht hast, eine Erstattung verlangen, über Paddle oder indem du uns schreibst."
+      "Du kannst Credits, die du in den letzten 14 Tagen gekauft und nicht verbraucht hast, in der Zeile der Aufladung im Verlauf erstatten lassen, über Paddle oder indem du uns schreibst. Für Kandidaten reservierte Credits können nicht erstattet werden, solange sie reserviert sind."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Ein Kandidat kostet 500 Credits: reserviert bei der Einladung, abgebucht, sobald er antwortet, und zurückgegeben, wenn nicht.",
       "Credits verfallen nie. Die Rechnung jeder Aufladung findest du im Tab „Abrechnung“ des Unternehmens.",
       "Die Preise enthalten keine Mehrwert- oder Umsatzsteuer: Wo sie anfällt, wird sie an der Kasse hinzugerechnet.",
-      "Du kannst für Credits, die du in den letzten 14 Tagen gekauft und nicht verbraucht hast, eine Erstattung verlangen, über Paddle oder indem du uns schreibst.",
+      "Du kannst Credits, die du in den letzten 14 Tagen gekauft und nicht verbraucht hast, auf der Abrechnungsseite des Unternehmens erstatten lassen, über Paddle oder indem du uns schreibst.",
       "Inhaber und Admins richten automatisches Aufladen ein. Nur die Person, deren Karte bezahlt, kann es ändern oder die Karte aktualisieren; jeder Inhaber oder Admin kann es sofort ausschalten.",
       "Eine abgelehnte Karte wird nach 1, 3 und 7 Tagen erneut versucht, danach pausiert das automatische Aufladen, bis die Karte aktualisiert ist. Eine Karte, die nicht zahlen kann, zum Beispiel eine abgelaufene, pausiert es sofort."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Credits verfallen nie.",
       "Ein Kandidat, der keine Frage beantwortet, kostet nichts.",
-      "Nicht verbrauchte bezahlte Credits können innerhalb von 14 Tagen erstattet werden."
+      "Nicht verbrauchte bezahlte Credits können innerhalb von 14 Tagen auf der Abrechnungsseite des Unternehmens erstattet werden."
     ]
   },
   "tests": {

@@ -11,7 +11,7 @@ from sqlalchemy.orm import selectinload
 from testee_common.config.constants import LEGAL_VERSIONS
 from testee_common.events.deletions import COMPANY_DELETED, CompanyDeleted
 
-from companies.constants.roles import Role
+from companies.constants.roles import EDITORS, Role
 from companies.constants.verification import RENAME_REVIEWED, VerificationStatus
 from companies.core.exceptions import OverLimit
 from companies.helpers.search import escape_like
@@ -83,6 +83,13 @@ async def owned_count(session: AsyncSession, user_id: str) -> int:
 async def ids_for_user(session: AsyncSession, user_id: str) -> list[str]:
     """Every company the user is a member of."""
     query = select(Member.company_id).where(Member.user_id == user_id)
+
+    return [str(company_id) for company_id in await session.scalars(query)]
+
+
+async def viewer_ids_for_user(session: AsyncSession, user_id: str) -> list[str]:
+    """The companies where the user is a member but neither owner nor admin."""
+    query = select(Member.company_id).where(Member.user_id == user_id, Member.role.not_in(EDITORS))
 
     return [str(company_id) for company_id in await session.scalars(query)]
 

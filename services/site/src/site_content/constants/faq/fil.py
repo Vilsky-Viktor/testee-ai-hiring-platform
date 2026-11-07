@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Puwede ba akong ma-refund?",
-        "answer": "Oo, para sa credits na binili mo sa nakaraang 14 na araw at hindi pa nagagastos: sa Paddle o sa pagsulat sa amin. Hindi nire-refund ang libreng credits, gaya ng welcome gift, at ang mga ito ang unang binibilang na nagastos. Nasa [terms](/terms) ang mga detalye.",
+        "answer": "Oo, para sa credits na binili mo sa nakaraang 14 na araw at hindi pa nagagastos: sa billing page ng kumpanya mo, sa Paddle o sa pagsulat sa amin. Hindi mare-refund ang credits na naka-reserve para sa mga aplikante habang naka-reserve; ang mga inilaan sa loob ng 14 na araw na iyon ay mare-refund sa loob ng 7 araw pagkabalik nila. Hindi nire-refund ang libreng credits, gaya ng welcome gift, at ang mga ito ang unang binibilang na nagastos. Nasa [terms](/terms) ang mga detalye.",
     },
     {
         "key": "scorecards",

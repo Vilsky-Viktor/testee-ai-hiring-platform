@@ -1255,7 +1255,6 @@
     "memberFailed": "Couldn't invite them. Please try again.",
     "invite": "Invite",
     "jobDescription": "Job description",
-    "generate": "Generate interview",
     "startFailed": "Couldn't start the interview. Please try again.",
     "candidateEmails": "Candidate emails",
     "candidateEmail": "Candidate email",
@@ -2071,6 +2070,8 @@
       "auto_top_up_on": "Automatic top-up is on: {price} plus tax when the available credits fall under {threshold, number}.",
       "auto_top_up_paused": "Automatic top-up is paused: the card was declined. Update the card to turn it back on.",
       "auto_top_up_price_change": "From <time>{date}</time>, each automatic top-up costs {newPrice} instead of {price}.",
+      "refund_approved": "Refund approved for <bdi>{name}</bdi>: {price}.",
+      "refund_rejected": "Refund declined for <bdi>{name}</bdi>: {price}. {credits, plural, one {# credit is} other {# credits are}} back in your balance.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> finished {title, select, none {an interview} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# candidates finished {title, select, none {an interview} other {“<bdi>{title}</bdi>”}}.}}",
       "invite_undelivered": "{count, plural, one {The invite to <bdi>{email}</bdi> for {title, select, none {an interview} other {“<bdi>{title}</bdi>”}} wasn't delivered.} other {# invites for {title, select, none {an interview} other {“<bdi>{title}</bdi>”}} weren't delivered.}}",
       "interview_ready": "{title, select, none {An interview is ready.} other {The interview “<bdi>{title}</bdi>” is ready.}}",
@@ -2367,6 +2368,8 @@
       "interview_ready": "The interview “Data Analyst” is ready.",
       "auto_top_up_charged": "Automatic top-up added 5,000 credits.",
       "auto_top_up_failed": "Automatic top-up couldn't charge the card. Top up to keep your balance going.",
+      "refund_approved": "Refund approved for Acme: $55.50.",
+      "refund_rejected": "Refund declined for Acme: $55.50. The credits are back in the balance.",
       "note_added": "Maya added a note on “Data Analyst”: strong SQL, worth a call."
     },
     "connectFailed": "Couldn't connect Slack.",
@@ -2384,6 +2387,8 @@
       "interview_ready": "An interview is ready",
       "auto_top_up_charged": "An automatic top-up was charged",
       "auto_top_up_failed": "An automatic top-up failed",
+      "refund_approved": "A refund was approved",
+      "refund_rejected": "A refund was declined",
       "note_added": "A team member added a note, with its text"
     },
     "instructionsTitle": "How Slack gets your notifications",
@@ -2952,6 +2957,23 @@
       "adjustment": "Adjustment by testee"
     },
     "automatic": "Automatic top-up",
+    "refund": {
+      "open": "Refund",
+      "title": "Refund {amount}?",
+      "text": "Paddle returns {amount}, tax included, to the card that paid, which can take a few days. <credits></credits> unspent {count, plural, one {credit leaves} other {credits leave}} your balance now, and {count, plural, one {it comes} other {they come}} back if the refund doesn't go through.",
+      "referral": "This top-up paid a referral reward, so any refund of it takes the reward back from both companies. Your balance can go below zero if it was spent.",
+      "autoTopUp": "Automatic top-up stays on, and charges again when the balance falls under its level. Turn it off first if you don't want that.",
+      "heldBack": "{count, plural, one {# candidate is} other {# candidates are}} <reserved>reserved</reserved>. Revoke their invites to include them.",
+      "confirm": "Refund {amount}",
+      "refunded": "Refunded.",
+      "processing": "Refund on its way.",
+      "failed": "Couldn't refund this top-up. Please try again.",
+      "status": {
+        "processing": "Refund in progress",
+        "refunded": "Refunded",
+        "declined": "Refund declined by Paddle"
+      }
+    },
     "invoice": "Invoice",
     "invoiceFailed": "Couldn't open the invoice. Please try again.",
     "deletedCandidate": "A deleted candidate",
@@ -3076,6 +3098,7 @@
     "compliance": {
       "title": "Compliance",
       "aiAct": "Under the EU AI Act, testee is treated as a high-risk AI system, whose duties apply from <time>{date}</time>. Our instructions for companies are its instructions for use.",
+      "aiMarks": "Questions, answer options, the assistant's answers and voice clips are marked as AI-generated in a form software can read: data-ai-generated in a page's code, and the AI_GENERATED tag in a voice clip's file. Voice clips also carry OpenAI's inaudible watermark, which you can check at <verify>openai.com/verify</verify>. Text copied from a page doesn't keep its mark.",
       "humanReview": "testee makes no decision about a candidate: people at the company review the results and decide, and candidates can ask for a person to review their result.",
       "dpa": "The data processing agreement is part of the terms, with nothing to sign. It covers the GDPR, the UK GDPR, and US state privacy laws such as California's, where testee is the company's service provider.",
       "documents": "Companies get <link>instructions for use, a DPIA template and candidate notice templates</link>, with versions for New York City, Illinois and Colorado.",
@@ -3135,7 +3158,6 @@
     "periodDays": "Last {days, number} days",
     "periodCustom": "Custom",
     "empty": "No actions yet.",
-      "aiMarks": "Questions, answer options, the assistant's answers and voice clips are marked as AI-generated in a form software can read: data-ai-generated in a page's code, and the AI_GENERATED tag in a voice clip's file. Voice clips also carry OpenAI's inaudible watermark, which you can check at <verify>openai.com/verify</verify>. Text copied from a page doesn't keep its mark.",
     "noMatches": "No actions match these filters.",
     "formerMember": "A former member",
     "apiKey": "{via, select, mcp {Through MCP with key \"<bdi>{name}</bdi>\"} other {Through API with key \"<bdi>{name}</bdi>\"}}",
@@ -3201,6 +3223,7 @@
       "verification_requested": "Asked to verify the company",
       "ai_apps_changed": "Allowed or stopped AI apps",
       "top_up_paid": "Topped up credits",
+      "refund_requested": "Asked for a refund",
       "auto_top_up_set": "Set up automatic top-up",
       "auto_top_up_changed": "Changed automatic top-up",
       "auto_top_up_stopped": "Stopped automatic top-up",

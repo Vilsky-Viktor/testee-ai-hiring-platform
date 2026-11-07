@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Posso avere un rimborso?",
-        "answer": "Sì, per i crediti acquistati negli ultimi 14 giorni e non ancora spesi: tramite Paddle o scrivendoci. I crediti gratuiti, come il regalo di benvenuto, non sono rimborsabili e contano come spesi per primi. I [termini](/terms) riportano i dettagli.",
+        "answer": "Sì, per i crediti acquistati negli ultimi 14 giorni e non ancora spesi: nella pagina Fatturazione della tua azienda, tramite Paddle o scrivendoci. I crediti riservati ai candidati non possono essere rimborsati finché restano riservati; quelli riservati entro i 14 giorni possono essere rimborsati per 7 giorni dal loro ritorno. I crediti gratuiti, come il regalo di benvenuto, non sono rimborsabili e contano come spesi per primi. I [termini](/terms) riportano i dettagli.",
     },
     {
         "key": "scorecards",

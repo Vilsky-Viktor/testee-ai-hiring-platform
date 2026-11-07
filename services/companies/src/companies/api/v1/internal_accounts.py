@@ -25,6 +25,10 @@ async def export_user(user_id: str, body: UserEmailIn, caller: ServiceCaller) ->
 
 @router.get("/users/{user_id}/companies")
 async def user_companies(user_id: str, caller: ServiceCaller) -> UserCompaniesOut:
-    """Every company the user is a member of, in any role; notifications sends them theirs."""
+    """Every company the user is a member of, in any role, and those where they're a viewer;
+    notifications sends them theirs, billing's to owners and admins only."""
     async with Session() as session:
-        return UserCompaniesOut(company_ids=await companies.ids_for_user(session, user_id))
+        return UserCompaniesOut(
+            company_ids=await companies.ids_for_user(session, user_id),
+            viewer_company_ids=await companies.viewer_ids_for_user(session, user_id),
+        )

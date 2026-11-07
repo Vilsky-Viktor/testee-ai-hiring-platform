@@ -63,13 +63,16 @@ def test_the_bell_names_the_news_in_the_readers_language_for_accounts_older_than
     async def company_ids(user_id):
         return []
 
+    async def memberships(user_id):
+        return await company_ids(user_id), []
+
     async def account_created(user_id):
         return made[user_id]
 
     async def news_titles(ids, language):
         return {news_id: f"Titel {language}"} if news_id in ids else {}
 
-    monkeypatch.setattr(companies, "company_ids", company_ids)
+    monkeypatch.setattr(companies, "memberships", memberships)
     monkeypatch.setattr(accounts, "account_created", account_created)
     monkeypatch.setattr(site, "news_titles", news_titles)
 

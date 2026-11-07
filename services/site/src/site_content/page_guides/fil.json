@@ -337,7 +337,7 @@
     ],
     "tips": [
       "Sa channel na iyon lang puwedeng mag-post ang testee; hindi nito nababasa ang iyong Slack.",
-      "Nakikita pa rin ng lahat ang bawat notification sa bell.",
+      "Nakikita pa rin ng lahat ang mga notification nila sa bell; ang tungkol sa billing ay para lang sa mga owner at admin.",
       "Kung umalis o naging viewer ang miyembrong nagkonekta ng Slack, hihinto ito hanggang i-reconnect ng may-ari o admin."
     ]
   },
@@ -388,7 +388,7 @@
       "Pareho kayong makakakuha ng credits kapag nag-top up sa unang pagkakataon ang kumpanyang inimbitahan mo, anumang halaga.",
       "Napupunta ang credits sa kumpanyang ito at hindi nag-e-expire.",
       "Bawat panig ay nakakakuha ng 1,000 credits. Hanggang 25 beses sa isang taon ito makukuha ng iyong kumpanya; lampas doon, makukuha pa rin ng kumpanyang inimbitahan mo ang credits nito.",
-      "Kapag buong na-refund o na-chargeback ang isang top-up, babawiin ang parehong reward."
+      "Kapag na-refund ang isang top-up, anuman ang halaga, o buong na-chargeback ito, babawiin ang parehong reward."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "Nire-reserve ang credits ng aplikante kapag inimbitahan siya, sinisingil kapag sumagot siya, at ibinabalik kung hindi.",
       "Ang mga may-ari at admin lang ang nakakakita ng page na ito.",
-      "Puwede kang humiling ng refund ng credits na binili mo sa nakaraang 14 na araw at hindi pa nagagamit, sa pamamagitan ng Paddle o sa pagsulat sa amin."
+      "Puwede kang mag-refund ng credits na binili mo sa nakaraang 14 na araw at hindi pa nagagamit mula sa row ng top-up sa history, sa pamamagitan ng Paddle o sa pagsulat sa amin. Hindi mare-refund ang credits na naka-reserve para sa mga aplikante habang naka-reserve."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "500 credits ang bawat aplikante: nire-reserve kapag inimbitahan siya, sinisingil kapag sumagot siya, at ibinabalik kung hindi.",
       "Hindi nag-e-expire ang credits. Nasa tab na Billing ng kumpanya ang invoice ng bawat top-up.",
       "Hindi kasama sa mga presyo ang VAT o sales tax: kung saan ito nalalapat, idinadagdag ito sa checkout.",
-      "Puwede kang humiling ng refund ng credits na binili mo sa nakaraang 14 na araw at hindi pa nagagamit, sa pamamagitan ng Paddle o sa pagsulat sa amin.",
+      "Puwede kang mag-refund ng credits na binili mo sa nakaraang 14 na araw at hindi pa nagagamit, sa billing page ng kumpanya, sa pamamagitan ng Paddle o sa pagsulat sa amin.",
       "Ang mga may-ari at admin ang nagse-set up ng awtomatikong top-up. Ang taong may-ari ng card na nagbabayad lang ang puwedeng magbago nito o mag-update ng card; agad itong mao-off ng kahit sinong may-ari o admin.",
       "Sinusubukan ulit ang na-decline na card pagkalipas ng 1, 3 at 7 araw, tapos napo-pause ang awtomatikong top-up hanggang ma-update ang card. Agad itong napo-pause ng card na hindi makakabayad, gaya ng expired na card."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Hindi nag-e-expire ang credits.",
       "Walang bayad ang aplikanteng hindi sumagot ng kahit isang tanong.",
-      "Puwedeng i-refund ang hindi nagamit na binayarang credits sa loob ng 14 na araw."
+      "Puwedeng i-refund ang hindi nagamit na binayarang credits sa loob ng 14 na araw, sa billing page ng kumpanya."
     ]
   },
   "tests": {

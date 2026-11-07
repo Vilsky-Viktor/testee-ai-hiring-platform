@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee może tylko publikować na tym kanale; nie może czytać Twojego Slacka.",
-      "Wszyscy nadal widzą każde powiadomienie pod dzwonkiem.",
+      "Wszyscy nadal widzą swoje powiadomienia pod dzwonkiem; te o rozliczeniach tylko właściciele i administratorzy.",
       "Jeśli członek, który połączył Slacka, odejdzie lub zostanie obserwatorem, Slack przestaje działać, dopóki właściciel lub administrator nie połączy go ponownie."
     ]
   },
@@ -388,7 +388,7 @@
       "Obie firmy dostają kredyty, gdy zaproszona firma zrobi pierwsze doładowanie, na dowolną kwotę.",
       "Kredyty trafiają do tej firmy i nigdy nie wygasają.",
       "Każda strona dostaje 1 000 kredytów. Twoja firma zdobywa je do 25 razy w roku; powyżej tego zaproszona firma nadal dostaje swoje kredyty.",
-      "Doładowanie w pełni zwrócone lub objęte obciążeniem zwrotnym cofa obie nagrody."
+      "Doładowanie zwrócone w dowolnej kwocie lub w pełni objęte obciążeniem zwrotnym cofa obie nagrody."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "Kredyty kandydata są rezerwowane przy zaproszeniu, pobierane, gdy odpowie, i zwracane, jeśli nie odpowie.",
       "Tę stronę widzą tylko właściciele i administratorzy.",
-      "Możesz poprosić o zwrot kredytów kupionych w ciągu ostatnich 14 dni i niewykorzystanych, przez Paddle lub pisząc do nas."
+      "Możesz zwrócić kredyty kupione w ciągu ostatnich 14 dni i niewykorzystane w wierszu doładowania w historii, przez Paddle lub pisząc do nas. Kredytów zarezerwowanych na kandydatów nie można zwrócić, dopóki są zarezerwowane."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Kandydat kosztuje 500 kredytów: są rezerwowane przy zaproszeniu, pobierane, gdy odpowie, i zwracane, jeśli nie odpowie.",
       "Kredyty nie wygasają. Faktura każdego doładowania jest na karcie Rozliczenia firmy.",
       "Ceny nie obejmują VAT ani podatku od sprzedaży: tam, gdzie ma zastosowanie, jest doliczany przy płatności.",
-      "Możesz poprosić o zwrot kredytów kupionych w ciągu ostatnich 14 dni i niewykorzystanych, przez Paddle lub pisząc do nas.",
+      "Możesz zwrócić kredyty kupione w ciągu ostatnich 14 dni i niewykorzystane na stronie rozliczeń firmy, przez Paddle lub pisząc do nas.",
       "Właściciele i administratorzy konfigurują automatyczne doładowanie. Tylko osoba, której karta płaci, może je zmienić lub zaktualizować kartę; każdy właściciel lub administrator może je natychmiast wyłączyć.",
       "Odrzucona karta jest próbowana ponownie po 1, 3 i 7 dniach, a potem automatyczne doładowanie zostaje wstrzymane do aktualizacji karty. Karta, która nie może zapłacić, np. wygasła, wstrzymuje je od razu."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Kredyty nie wygasają.",
       "Kandydat, który nie odpowie na żadne pytanie, nic nie kosztuje.",
-      "Niewykorzystane opłacone kredyty można zwrócić w ciągu 14 dni."
+      "Niewykorzystane opłacone kredyty można zwrócić w ciągu 14 dni na stronie rozliczeń firmy."
     ]
   },
   "tests": {

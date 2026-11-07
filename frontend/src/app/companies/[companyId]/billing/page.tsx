@@ -178,6 +178,7 @@ async function HistoryTab({
         companyId={companyId}
         initial={history ?? []}
         kind={kind}
+        canRefund
       />
     </div>
   )

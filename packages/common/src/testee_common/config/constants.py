@@ -279,7 +279,7 @@ ACCOUNT_OWNS_SHARED = (
 # python -m site_content.legal_archive in site); accounts records the terms a new account
 # accepts, and companies the DPA a new company does.
 LEGAL_VERSIONS = {
-    "terms": "2026-11-07",
+    "terms": "2026-11-08",
     "privacy": "2026-11-07",
     "dpa": "2026-11-07",
 }

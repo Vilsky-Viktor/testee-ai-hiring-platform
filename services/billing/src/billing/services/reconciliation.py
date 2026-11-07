@@ -2,9 +2,12 @@ import logging
 from datetime import datetime
 
 from billing.constants.reconciliation import RECONCILE_WINDOW
+from billing.constants.refunds import RECONCILE_MAX_REFUNDS, REFUND_CLOCK_SKEW, REFUND_OVERDUE
 from billing.core.db import Session
 from billing.integrations import paddle
-from billing.repositories import purchases
+from billing.models.billing import Refund
+from billing.repositories import purchases, refunds
+from billing.services import refund_claims
 from billing.services.adjustments import handle_adjustment
 from billing.services.topups import handle_completed
 
@@ -39,6 +42,45 @@ async def reconcile(now: datetime) -> None:
 
     for found in await counted(pairs) - done:
         logger.warning("Reconciliation counted adjustment %s: its web hook didn't", found)
+
+    await settle_open_refunds(now)
+
+
+async def settle_open_refunds(now: datetime) -> None:
+    """Company refunds still open an hour on: Paddle's answer was lost, or its web hook was (a
+    rejection above all, which the approved adjustments don't list)."""
+    async with Session() as session:
+        overdue = await refunds.overdue(session, now - REFUND_OVERDUE, RECONCILE_MAX_REFUNDS)
+
+    for refund in overdue:
+        try:
+            await settle(refund)
+        except Exception:
+            logger.exception("Reconciling refund %s failed", refund.id)
+
+
+async def settle(refund: Refund) -> None:
+    """Goes by what Paddle has for the refund; one it never got gives its credits back."""
+    since = refund.created_at - REFUND_CLOCK_SKEW
+    found = next(
+        (
+            item
+            for item in await paddle.refunds_of(refund.transaction_id)
+            if item["id"] == refund.adjustment_id
+            or (
+                refund.adjustment_id is None
+                and int(item["totals"]["total"]) == refund.amount_minor
+                and datetime.fromisoformat(item["created_at"]) >= since
+            )
+        ),
+        None,
+    )
+
+    if found is not None:
+        await handle_adjustment(found)
+    elif refund.adjustment_id is None:
+        logger.warning("Refund %s never reached Paddle: its credits are given back", refund.id)
+        await refund_claims.give_back_unsent(refund.id)
 
 
 async def credited(ids: list[str]) -> set[str]:

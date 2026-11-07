@@ -257,6 +257,28 @@ TEXTS = {
             "に送信されました。会社の請求に関する内容のため、メール設定にかかわらず送信されます。"
         ),
     },
+    "refund_rejected": {
+        "subject": "{company} の返金却下: {price}",
+        "preheader": "Paddle が {price} の返金を却下しました。クレジットは残高に戻っています。",
+        "heading": "Paddle が返金を却下しました",
+        "lines": [
+            "当社の再販業者である Paddle が {company} の {price} の返金を却下したため、返金は行われていません。",
+            "返金のために確保していた {credits, plural, other {# クレジット}}は会社の残高に戻りました。それでも返金をご希望の場合は、当社までご連絡ください。",
+        ],
+        "button": "請求ページを開く",
+        "footer": "このメールは、testee で {company} の所有者または管理者であるため {email} に送信されました。会社の請求に関する内容のため、メール設定にかかわらず送信されます。",
+    },
+    "refund_approved": {
+        "subject": "{company} の返金承認: {price}",
+        "preheader": "Paddle が {price} の返金を承認しました。支払い元のカードに返金されます。",
+        "heading": "Paddle が返金を承認しました",
+        "lines": [
+            "当社の再販業者である Paddle が {company} の {price} の返金を承認しました。税込金額が支払い元のカードに返金されます。数日かかる場合があります。",
+            "返金された {credits, plural, other {# クレジット}}は会社の残高から差し引かれました。",
+        ],
+        "button": "請求ページを開く",
+        "footer": "このメールは、testee で {company} の所有者または管理者であるため {email} に送信されました。会社の請求に関する内容のため、メール設定にかかわらず送信されます。",
+    },
     "top_up_price_change": {
         "subject": "{company} の自動チャージ料金を変更",
         "preheader": "{date} から、自動チャージ 1 回あたりの料金は {price} から {new_price} に変わります。",

@@ -18,6 +18,7 @@ from testee_common.db.db import one_of
 from billing.constants.credits import HOLD_STATUSES, REASONS, Reason
 from billing.constants.currencies import CURRENCY_CHECK, PRICE_CURRENCY_CHECK, ChoiceOwner
 from billing.constants.products import OwnerType
+from billing.constants.refunds import REFUND_OPEN, REFUND_STATUSES
 from billing.models.base import Base
 
 
@@ -40,8 +41,8 @@ class Wallet(Base):
 
 class Referral(Base):
     """A new company that came through another company's link. `rewarded_at` is set when
-    their first top-up pays both sides, and `rewarded_by` is that top-up's transaction; a full
-    refund of it takes the rewards back and clears both."""
+    their first top-up pays both sides, and `rewarded_by` is that top-up's transaction; a refund
+    of it takes the rewards back and clears both."""
 
     __tablename__ = "referrals"
     __table_args__ = (
@@ -133,7 +134,8 @@ class Gift(Base):
 
 
 class Hold(Base):
-    """Credits set aside for one piece of work, charged or given back later."""
+    """Credits set aside for one piece of work (a candidate, a refund Paddle hasn't decided),
+    charged or given back later."""
 
     __tablename__ = "holds"
     __table_args__ = (
@@ -141,7 +143,9 @@ class Hold(Base):
         Index("ix_holds_owner", "owner_type", "owner_id"),
         CheckConstraint(one_of("owner_type", OwnerType), name="ck_holds_owner_type"),
         CheckConstraint(one_of("status", HOLD_STATUSES), name="ck_holds_status"),
-        CheckConstraint(one_of("reason", (Reason.CANDIDATE,)), name="ck_holds_reason"),
+        CheckConstraint(
+            one_of("reason", (Reason.CANDIDATE, Reason.REFUND)), name="ck_holds_reason"
+        ),
         CheckConstraint("amount > 0", name="ck_holds_amount"),
     )
 
@@ -152,6 +156,12 @@ class Hold(Base):
     reason: Mapped[str] = mapped_column(String(64))
     # open, charged or released.
     status: Mapped[str] = mapped_column(String(16))
+    # When it was last set aside (a candidate's invite sent again counts as a new one) and given
+    # back: credits back after a top-up's 14 days stay refundable for a while (REFUND_GRACE).
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=lambda: datetime.now(UTC), server_default=func.now()
+    )
+    released_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
 
 class Entry(Base):
@@ -212,6 +222,47 @@ class Purchase(Base):
     # What the whole transaction cost, in minor units, tax included.
     total_minor: Mapped[int] = mapped_column(BigInteger)
     currency: Mapped[str] = mapped_column(String(3))
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=lambda: datetime.now(UTC), server_default=func.now()
+    )
+
+
+class Refund(Base):
+    """A company's own refund of a top-up's unspent credits, from asking until Paddle decides.
+    Its credits stay set aside under a hold meanwhile; approved, the ledger's adjustment entry
+    takes them back. `adjustment_id` is Paddle's, once known. Kept for the accounts, like
+    purchases: ids and amounts only."""
+
+    __tablename__ = "refunds"
+    __table_args__ = (
+        # One at a time per top-up: Paddle takes no new adjustment while a refund awaits approval.
+        Index(
+            "uq_refunds_open_transaction",
+            "transaction_id",
+            unique=True,
+            postgresql_where=text(one_of("status", REFUND_OPEN)),
+        ),
+        Index("ix_refunds_owner", "owner_type", "owner_id"),
+        Index(
+            "ix_refunds_open", "created_at", postgresql_where=text(one_of("status", REFUND_OPEN))
+        ),
+        CheckConstraint(one_of("owner_type", OwnerType), name="ck_refunds_owner_type"),
+        CheckConstraint(one_of("status", REFUND_STATUSES), name="ck_refunds_status"),
+        CheckConstraint(CURRENCY_CHECK, name="ck_refunds_currency"),
+        CheckConstraint("credits > 0", name="ck_refunds_credits"),
+        CheckConstraint("amount_minor > 0", name="ck_refunds_amount"),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
+    owner_type: Mapped[str] = mapped_column(String(16))
+    owner_id: Mapped[str] = mapped_column(String(128))
+    transaction_id: Mapped[str] = mapped_column(String(64), index=True)
+    adjustment_id: Mapped[str | None] = mapped_column(String(64), unique=True)
+    credits: Mapped[int]
+    # What goes back, in minor units, tax included, in what was paid.
+    amount_minor: Mapped[int] = mapped_column(BigInteger)
+    currency: Mapped[str] = mapped_column(String(3))
+    status: Mapped[str] = mapped_column(String(16))
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=lambda: datetime.now(UTC), server_default=func.now()
     )

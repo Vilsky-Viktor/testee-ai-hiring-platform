@@ -394,6 +394,28 @@ TEXTS = {
             "unabhängig von deinen E-Mail-Einstellungen gesendet."
         ),
     },
+    "refund_rejected": {
+        "subject": "Erstattung für {company} abgelehnt: {price}",
+        "preheader": "Paddle hat die Erstattung von {price} abgelehnt. Die Credits sind wieder in deinem Guthaben.",
+        "heading": "Paddle hat die Erstattung abgelehnt",
+        "lines": [
+            "Paddle, unser Wiederverkäufer, hat die Erstattung von {price} für {company} abgelehnt, und es wurde kein Geld zurückgezahlt.",
+            "{credits, plural, one {Der dafür reservierte # Credit ist} other {Die dafür reservierten # Credits sind}} wieder im Guthaben des Unternehmens. Schreib uns, wenn du die Erstattung weiterhin möchtest.",
+        ],
+        "button": "Abrechnung öffnen",
+        "footer": "Diese E-Mail wurde an {email} gesendet, weil du Inhaber oder Admin von {company} auf testee bist. Sie betrifft die Abrechnung deines Unternehmens und wird daher unabhängig von deinen E-Mail-Einstellungen gesendet.",
+    },
+    "refund_approved": {
+        "subject": "Erstattung für {company} genehmigt: {price}",
+        "preheader": "Paddle hat die Erstattung von {price} genehmigt. Sie geht zurück auf die Karte, mit der bezahlt wurde.",
+        "heading": "Paddle hat die Erstattung genehmigt",
+        "lines": [
+            "Paddle, unser Wiederverkäufer, hat die Erstattung von {price} für {company} genehmigt. Sie geht inklusive Steuern zurück auf die Karte, mit der bezahlt wurde; das kann einige Tage dauern.",
+            "{credits, plural, one {Der erstattete # Credit wurde} other {Die erstatteten # Credits wurden}} vom Guthaben des Unternehmens abgezogen.",
+        ],
+        "button": "Abrechnung öffnen",
+        "footer": "Diese E-Mail wurde an {email} gesendet, weil du Inhaber oder Admin von {company} auf testee bist. Sie betrifft die Abrechnung deines Unternehmens und wird daher unabhängig von deinen E-Mail-Einstellungen gesendet.",
+    },
     "top_up_price_change": {
         "subject": "Neuer Aufladepreis für {company}",
         "preheader": "Ab {date} kostet jedes automatische Aufladen {new_price} statt {price}.",

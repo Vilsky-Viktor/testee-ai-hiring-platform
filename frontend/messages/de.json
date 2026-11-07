@@ -1255,7 +1255,6 @@
     "memberFailed": "Die Person konnte nicht eingeladen werden. Bitte versuche es erneut.",
     "invite": "Einladen",
     "jobDescription": "Stellenbeschreibung",
-    "generate": "Interview generieren",
     "startFailed": "Das Interview konnte nicht gestartet werden. Bitte versuche es erneut.",
     "candidateEmails": "E-Mails der Kandidaten",
     "candidateEmail": "E-Mail des Kandidaten",
@@ -2071,6 +2070,8 @@
       "auto_top_up_on": "Automatisches Aufladen ist an: {price} zzgl. Steuern, wenn die verfügbaren Credits unter {threshold, number} fallen.",
       "auto_top_up_paused": "Automatisches Aufladen ist pausiert: Die Karte wurde abgelehnt. Aktualisiere die Karte, um es wieder einzuschalten.",
       "auto_top_up_price_change": "Ab <time>{date}</time> kostet jedes automatische Aufladen {newPrice} statt {price}.",
+      "refund_approved": "Erstattung für <bdi>{name}</bdi> genehmigt: {price}.",
+      "refund_rejected": "Erstattung für <bdi>{name}</bdi> abgelehnt: {price}. {credits, plural, one {# Credit ist} other {# Credits sind}} wieder in deinem Guthaben.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> hat {title, select, none {ein Interview} other {„<bdi>{title}</bdi>“}} abgeschlossen{grade, select, none {.} other {: {grade}.}}} other {# Kandidaten haben {title, select, none {ein Interview} other {„<bdi>{title}</bdi>“}} abgeschlossen.}}",
       "invite_undelivered": "{count, plural, one {Die Einladung an <bdi>{email}</bdi> für {title, select, none {ein Interview} other {„<bdi>{title}</bdi>“}} wurde nicht zugestellt.} other {# Einladungen für {title, select, none {ein Interview} other {„<bdi>{title}</bdi>“}} wurden nicht zugestellt.}}",
       "interview_ready": "{title, select, none {Ein Interview ist fertig.} other {Das Interview „<bdi>{title}</bdi>“ ist fertig.}}",
@@ -2367,6 +2368,8 @@
       "interview_ready": "Das Interview „Data Analyst“ ist fertig.",
       "auto_top_up_charged": "Automatisches Aufladen hat 5.000 Credits hinzugefügt.",
       "auto_top_up_failed": "Automatisches Aufladen konnte die Karte nicht belasten. Lade auf, damit dein Guthaben nicht ausgeht.",
+      "refund_approved": "Erstattung für Acme genehmigt: $55.50.",
+      "refund_rejected": "Erstattung für Acme abgelehnt: $55.50. Die Credits sind wieder im Guthaben.",
       "note_added": "Maya hat eine Notiz zu „Data Analyst“ hinzugefügt: starkes SQL, einen Anruf wert."
     },
     "connectFailed": "Slack konnte nicht verbunden werden.",
@@ -2384,6 +2387,8 @@
       "interview_ready": "Ein Interview ist fertig",
       "auto_top_up_charged": "Ein automatisches Aufladen wurde abgebucht",
       "auto_top_up_failed": "Ein automatisches Aufladen ist fehlgeschlagen",
+      "refund_approved": "Eine Erstattung wurde genehmigt",
+      "refund_rejected": "Eine Erstattung wurde abgelehnt",
       "note_added": "Ein Teammitglied hat eine Notiz geschrieben, mit ihrem Text"
     },
     "instructionsTitle": "So bekommt Slack deine Benachrichtigungen",
@@ -2952,6 +2957,23 @@
       "adjustment": "Korrektur durch testee"
     },
     "automatic": "Automatisches Aufladen",
+    "refund": {
+      "open": "Erstatten",
+      "title": "{amount} erstatten?",
+      "text": "Paddle erstattet {amount} inklusive Steuern auf die Karte, mit der bezahlt wurde; das kann einige Tage dauern. <credits></credits> {count, plural, one {nicht verbrauchter Credit wird} other {nicht verbrauchte Credits werden}} jetzt von deinem Guthaben abgezogen und wieder gutgeschrieben, falls die Erstattung nicht zustande kommt.",
+      "referral": "Diese Aufladung hat eine Empfehlungsprämie ausgelöst, daher nimmt jede Erstattung die Prämie bei beiden Unternehmen zurück. Wurde sie bereits verbraucht, kann dein Guthaben unter null fallen.",
+      "autoTopUp": "Automatisches Aufladen bleibt eingeschaltet und belastet die Karte erneut, wenn das Guthaben unter den eingestellten Wert fällt. Schalte es vorher aus, wenn du das nicht möchtest.",
+      "heldBack": "{count, plural, one {# Kandidat hat} other {# Kandidaten haben}} <reserved>reservierte</reserved> Credits. Widerrufe ihre Einladungen, um sie mit zu erstatten.",
+      "confirm": "{amount} erstatten",
+      "refunded": "Erstattet.",
+      "processing": "Erstattung ist unterwegs.",
+      "failed": "Diese Aufladung konnte nicht erstattet werden. Bitte versuche es erneut.",
+      "status": {
+        "processing": "Erstattung läuft",
+        "refunded": "Erstattet",
+        "declined": "Erstattung von Paddle abgelehnt"
+      }
+    },
     "invoice": "Rechnung",
     "invoiceFailed": "Die Rechnung konnte nicht geöffnet werden. Bitte versuche es erneut.",
     "deletedCandidate": "Ein gelöschter Kandidat",
@@ -3076,6 +3098,7 @@
     "compliance": {
       "title": "Compliance",
       "aiAct": "Nach dem EU AI Act wird testee als Hochrisiko-KI-System behandelt, dessen Pflichten ab dem <time>{date}</time> gelten. Unsere Anleitung für Unternehmen ist seine Gebrauchsanweisung.",
+      "aiMarks": "Fragen, Antwortoptionen, die Antworten des Assistenten und Sprachclips sind maschinenlesbar als KI-generiert gekennzeichnet: mit data-ai-generated im Code einer Seite und mit dem Tag AI_GENERATED in der Datei eines Sprachclips. Sprachclips tragen außerdem das unhörbare Wasserzeichen von OpenAI, das du unter <verify>openai.com/verify</verify> prüfen kannst. Von einer Seite kopierter Text behält seine Kennzeichnung nicht.",
       "humanReview": "testee trifft keine Entscheidung über Kandidaten: Menschen im Unternehmen prüfen die Ergebnisse und entscheiden, und Kandidaten können verlangen, dass ein Mensch ihr Ergebnis prüft.",
       "dpa": "Der Auftragsverarbeitungsvertrag ist Teil der Nutzungsbedingungen, es muss nichts unterschrieben werden. Er deckt die DSGVO, die UK GDPR und Datenschutzgesetze der US-Bundesstaaten wie das kalifornische ab, wobei testee Dienstleister (Service Provider) des Unternehmens ist.",
       "documents": "Unternehmen erhalten eine <link>Gebrauchsanweisung, eine DSFA-Vorlage und Vorlagen für Hinweise an Kandidaten</link>, mit Fassungen für New York City, Illinois und Colorado.",
@@ -3135,7 +3158,6 @@
     "periodDays": "Letzte {days, number} Tage",
     "periodCustom": "Benutzerdefiniert",
     "empty": "Noch keine Aktionen.",
-      "aiMarks": "Fragen, Antwortoptionen, die Antworten des Assistenten und Sprachclips sind maschinenlesbar als KI-generiert gekennzeichnet: mit data-ai-generated im Code einer Seite und mit dem Tag AI_GENERATED in der Datei eines Sprachclips. Sprachclips tragen außerdem das unhörbare Wasserzeichen von OpenAI, das du unter <verify>openai.com/verify</verify> prüfen kannst. Von einer Seite kopierter Text behält seine Kennzeichnung nicht.",
     "noMatches": "Keine Aktionen passen zu diesen Filtern.",
     "formerMember": "Ein ehemaliges Mitglied",
     "apiKey": "{via, select, mcp {Über MCP mit dem Schlüssel „<bdi>{name}</bdi>“} other {Über die API mit dem Schlüssel „<bdi>{name}</bdi>“}}",
@@ -3201,6 +3223,7 @@
       "verification_requested": "Hat die Verifizierung des Unternehmens beantragt",
       "ai_apps_changed": "Hat KI-Apps erlaubt oder gesperrt",
       "top_up_paid": "Hat Credits aufgeladen",
+      "refund_requested": "Hat eine Erstattung angefordert",
       "auto_top_up_set": "Hat automatisches Aufladen eingerichtet",
       "auto_top_up_changed": "Hat das automatische Aufladen geändert",
       "auto_top_up_stopped": "Hat das automatische Aufladen beendet",

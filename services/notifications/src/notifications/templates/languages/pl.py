@@ -386,6 +386,28 @@ TEXTS = {
             "wysyłana niezależnie od Twoich ustawień e-maili."
         ),
     },
+    "refund_rejected": {
+        "subject": "Zwrot odrzucony dla {company}: {price}",
+        "preheader": "Paddle odrzucił zwrot kwoty {price}. Kredyty wróciły na Twoje saldo.",
+        "heading": "Paddle odrzucił zwrot",
+        "lines": [
+            "Paddle, nasz odsprzedawca, odrzucił zwrot kwoty {price} dla {company} i pieniądze nie zostały zwrócone.",
+            "{credits, plural, one {# kredyt zarezerwowany na ten zwrot wrócił} few {# kredyty zarezerwowane na ten zwrot wróciły} many {# kredytów zarezerwowanych na ten zwrot wróciło} other {# kredytu zarezerwowanego na ten zwrot wróciło}} na saldo firmy. Napisz do nas, jeśli nadal chcesz zwrotu.",
+        ],
+        "button": "Otwórz rozliczenia",
+        "footer": "Ta wiadomość została wysłana na {email}, ponieważ masz rolę właściciela lub administratora w {company} w testee. Dotyczy rozliczeń Twojej firmy, więc jest wysyłana niezależnie od Twoich ustawień e-maili.",
+    },
+    "refund_approved": {
+        "subject": "Zwrot zatwierdzony dla {company}: {price}",
+        "preheader": "Paddle zatwierdził zwrot kwoty {price}. Pieniądze wrócą na kartę, z której zapłacono.",
+        "heading": "Paddle zatwierdził zwrot",
+        "lines": [
+            "Paddle, nasz odsprzedawca, zatwierdził zwrot kwoty {price} dla {company}. Pieniądze wrócą na kartę, z której zapłacono, z podatkiem, co może potrwać kilka dni.",
+            "{credits, plural, one {# zwrócony kredyt został usunięty} few {# zwrócone kredyty zostały usunięte} many {# zwróconych kredytów zostało usuniętych} other {# zwróconego kredytu zostało usunięte}} z salda firmy.",
+        ],
+        "button": "Otwórz rozliczenia",
+        "footer": "Ta wiadomość została wysłana na {email}, ponieważ masz rolę właściciela lub administratora w {company} w testee. Dotyczy rozliczeń Twojej firmy, więc jest wysyłana niezależnie od Twoich ustawień e-maili.",
+    },
     "top_up_price_change": {
         "subject": "Nowa cena doładowania dla {company}",
         "preheader": (

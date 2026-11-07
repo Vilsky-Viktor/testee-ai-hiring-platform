@@ -8,6 +8,7 @@ from testee_common.events.notifications import NotificationKind, Recipient, noti
 from testee_common.http import http
 
 from notifications.config import settings
+from notifications.constants.slack import SLACK_DEFAULT_KINDS, SLACK_KINDS
 from notifications.integrations import companies
 from notifications.integrations import slack as slack_api
 from notifications.repositories import slack as storage
@@ -114,6 +115,39 @@ def test_unchosen_kinds_other_companies_and_users_notifications_dont(channel):
 
     assert channel["posted"] == []
     assert channel["claimed"] == set()
+
+
+@pytest.mark.parametrize(
+    "kind", [NotificationKind.REFUND_APPROVED, NotificationKind.REFUND_REJECTED]
+)
+def test_both_refund_notices_are_on_by_default_and_posted_once(channel, monkeypatch, kind):
+    hook = SimpleNamespace(
+        kinds=[str(item) for item in SLACK_DEFAULT_KINDS],
+        webhook=encrypt(KEY, "https://hooks/x"),
+        created_by="u1",
+    )
+
+    async def connected(session, company_id):
+        return hook
+
+    monkeypatch.setattr(storage, "connected", connected)
+    event = notification(
+        Recipient.COMPANY,
+        "c1",
+        kind,
+        "/companies/c1/billing",
+        key="adj_1",
+        name="Arcolabs",
+        price=5_550,
+        currency="USD",
+        credits=100,
+    )
+
+    deliver(event, event["key"])
+    deliver(event, event["key"])
+
+    assert len(channel["posted"]) == 1
+    assert kind in SLACK_KINDS
 
 
 def test_slack_busy_or_down_raises_so_the_retry_posts_it(channel):

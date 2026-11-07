@@ -15,13 +15,15 @@ function byId(entry: CreditHistoryEntry) {
 
 /** Every movement of a company's credits, newest first, under their months, a page at a time;
  * `initial` is the server's first page. `api` is the company's billing routes, its own by default (the admin
- * zone's support page passes its own, and `links="support"`: its candidates open there). */
+ * zone's support page passes its own, and `links="support"`: its candidates open there).
+ * `canRefund` is for the company's own page: support only sees a refund's state. */
 export function CreditHistory({
   companyId,
   initial,
   api = `/companies/companies/${companyId}/billing`,
   links = "company",
   kind,
+  canRefund = false,
 }: {
   companyId: string
   initial: CreditHistoryEntry[]
@@ -29,6 +31,7 @@ export function CreditHistory({
   links?: CandidateLinks
   // Only this kind of movement.
   kind?: string
+  canRefund?: boolean
 }) {
   const t = useTranslations("companyBilling")
   const format = useFormatter()
@@ -70,6 +73,7 @@ export function CreditHistory({
             entry={entry}
             api={api}
             links={links}
+            canRefund={canRefund}
           />
         </>
       )}

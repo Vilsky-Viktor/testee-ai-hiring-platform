@@ -376,6 +376,28 @@ TEXTS = {
             "enviado independentemente das suas configurações de e-mail."
         ),
     },
+    "refund_rejected": {
+        "subject": "Reembolso recusado para {company}: {price}",
+        "preheader": "O Paddle recusou o reembolso de {price}. Os créditos voltaram ao seu saldo.",
+        "heading": "O Paddle recusou o reembolso",
+        "lines": [
+            "O Paddle, nosso revendedor, recusou o reembolso de {price} para {company}, e nenhum dinheiro foi devolvido.",
+            "{credits, plural, one {O # crédito reservado para esse reembolso voltou} many {Os # créditos reservados para esse reembolso voltaram} other {Os # créditos reservados para esse reembolso voltaram}} ao saldo da empresa. Escreva para nós se ainda quiser o reembolso.",
+        ],
+        "button": "Abrir faturamento",
+        "footer": "Este e-mail foi enviado para {email} porque você é proprietário ou administrador de {company} na testee. Ele trata do faturamento da sua empresa, por isso é enviado independentemente das suas configurações de e-mail.",
+    },
+    "refund_approved": {
+        "subject": "Reembolso aprovado para {company}: {price}",
+        "preheader": "O Paddle aprovou o reembolso de {price}. Ele volta ao cartão usado no pagamento.",
+        "heading": "O Paddle aprovou o reembolso",
+        "lines": [
+            "O Paddle, nosso revendedor, aprovou o reembolso de {price} para {company}. Ele volta ao cartão usado no pagamento, com impostos incluídos, o que pode levar alguns dias.",
+            "{credits, plural, one {O # crédito reembolsado saiu} many {Os # créditos reembolsados saíram} other {Os # créditos reembolsados saíram}} do saldo da empresa.",
+        ],
+        "button": "Abrir faturamento",
+        "footer": "Este e-mail foi enviado para {email} porque você é proprietário ou administrador de {company} na testee. Ele trata do faturamento da sua empresa, por isso é enviado independentemente das suas configurações de e-mail.",
+    },
     "top_up_price_change": {
         "subject": "Novo preço de recarga para {company}",
         "preheader": (

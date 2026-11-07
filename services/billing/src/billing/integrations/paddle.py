@@ -7,7 +7,12 @@ from testee_common.http.http import bearer
 
 from billing.config import settings
 from billing.constants.products import PADDLE_API, PADDLE_API_VERSION, PADDLE_REFUSES_BILLING
-from billing.constants.reconciliation import PADDLE_PAGE_SIZE, RECONCILE_MAX_PAGES
+from billing.constants.reconciliation import (
+    PADDLE_PAGE_SIZE,
+    PADDLE_REFUNDS_PAGE,
+    RECONCILE_MAX_PAGES,
+)
+from billing.constants.refunds import REFUND_REASON
 
 logger = logging.getLogger(__name__)
 
@@ -124,6 +129,35 @@ async def invoice_url(transaction_id: str) -> str:
     response = await _call("GET", f"/transactions/{transaction_id}/invoice")
 
     return response.json()["data"]["url"]
+
+
+async def refund(transaction_id: str, item: dict) -> dict:
+    """Refunds one line of a transaction, to the buyer, in what they paid: `item` as
+    helpers/refunds.py makes it, its amount with tax included (Paddle splits the tax off and
+    returns it). The adjustment as its web hooks send it: approved at once or awaiting Paddle's
+    approval. Paddle has no idempotency key: a call that gets no answer isn't repeated."""
+    response = await _call(
+        "POST",
+        "/adjustments",
+        json={
+            "action": "refund",
+            "type": "partial",
+            "tax_mode": "internal",
+            "transaction_id": transaction_id,
+            "reason": REFUND_REASON,
+            "items": [item],
+        },
+    )
+
+    return response.json()["data"]
+
+
+async def refunds_of(transaction_id: str) -> list[dict]:
+    """The refund adjustments of a transaction, newest first, as its web hooks send them."""
+    params = {"transaction_id": transaction_id, "action": "refund", "per_page": PADDLE_REFUNDS_PAGE}
+    response = await _call("GET", "/adjustments", params=params)
+
+    return response.json()["data"]
 
 
 async def transaction(transaction_id: str, timeout: float) -> dict:

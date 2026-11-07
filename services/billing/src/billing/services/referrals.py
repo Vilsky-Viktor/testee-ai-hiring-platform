@@ -68,7 +68,7 @@ async def reward_after_top_up(owner_type: str, owner_id: str, transaction_id: st
 
 
 async def take_back_reward(owner_id: str, transaction_id: str) -> None:
-    """A top-up refunded in full or charged back no longer pays its referral."""
+    """A top-up refunded, by any amount, or charged back no longer pays its referral."""
     async with Session.begin() as session:
         taken = await referrals.take_back(session, transaction_id)
 

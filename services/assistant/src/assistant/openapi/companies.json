@@ -5451,7 +5451,7 @@
      "internal"
     ],
     "summary": "User Companies",
-    "description": "Every company the user is a member of, in any role; notifications sends them theirs.",
+    "description": "Every company the user is a member of, in any role, and those where they're a viewer;\nnotifications sends them theirs, billing's to owners and admins only.",
     "operationId": "user_companies_internal_users__user_id__companies_get",
     "security": [
      {
@@ -11283,6 +11283,16 @@
        }
       ],
       "title": "Note"
+     },
+     "refund": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/RefundStateOut"
+       },
+       {
+        "type": "null"
+       }
+      ]
      }
     },
     "type": "object",
@@ -13285,6 +13295,87 @@
     "title": "ReferralRewardOut",
     "description": "A company that came through the link and topped up; no name once it's deleted."
    },
+   "RefundOfferOut": {
+    "properties": {
+     "credits": {
+      "type": "integer",
+      "title": "Credits"
+     },
+     "amount": {
+      "type": "string",
+      "title": "Amount"
+     },
+     "currency": {
+      "type": "string",
+      "title": "Currency"
+     },
+     "takes_referral": {
+      "type": "boolean",
+      "title": "Takes Referral"
+     },
+     "auto_top_up_on": {
+      "type": "boolean",
+      "title": "Auto Top Up On"
+     }
+    },
+    "type": "object",
+    "required": [
+     "credits",
+     "amount",
+     "currency",
+     "takes_referral",
+     "auto_top_up_on"
+    ],
+    "title": "RefundOfferOut",
+    "description": "What refunding a top-up now returns, as billing decides it: its unspent `credits`, for\n`amount` (minor units, tax included) in `currency`. `takes_referral`: the referral rewards go\nback too. `auto_top_up_on`: the company's automatic top-up stays on."
+   },
+   "RefundStateOut": {
+    "properties": {
+     "offer": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/RefundOfferOut"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "status": {
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "processing",
+         "refunded",
+         "declined"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Status"
+     },
+     "held_back_credits": {
+      "type": "integer",
+      "title": "Held Back Credits"
+     },
+     "held_back_candidates": {
+      "type": "integer",
+      "title": "Held Back Candidates"
+     }
+    },
+    "type": "object",
+    "required": [
+     "offer",
+     "status",
+     "held_back_credits",
+     "held_back_candidates"
+    ],
+    "title": "RefundStateOut",
+    "description": "A top-up's refund: `offer` when some of it can be refunded now, `status` of its latest\nrefund, and the credits and candidates of it held back by credits set aside, which a\nrevoked invite makes refundable."
+   },
    "ReportEmailIn": {
     "properties": {
      "email": {
@@ -14913,14 +15004,22 @@
       },
       "type": "array",
       "title": "Company Ids"
+     },
+     "viewer_company_ids": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Viewer Company Ids"
      }
     },
     "type": "object",
     "required": [
-     "company_ids"
+     "company_ids",
+     "viewer_company_ids"
     ],
     "title": "UserCompaniesOut",
-    "description": "Every company the user is a member of, for the notifications service."
+    "description": "Every company the user is a member of, for the notifications service, and those of them\nwhere they're only a viewer: the bell keeps a company's billing from them."
    },
    "UserEmailIn": {
     "properties": {

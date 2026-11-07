@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee hanya bisa memposting ke channel itu; testee tidak bisa membaca Slack-mu.",
-      "Semua orang tetap melihat setiap notifikasi di ikon lonceng.",
+      "Semua orang tetap melihat notifikasinya di ikon lonceng; notifikasi penagihan hanya untuk pemilik dan admin.",
       "Jika anggota yang menghubungkan Slack keluar atau menjadi pelihat, Slack berhenti sampai pemilik atau admin menghubungkannya ulang."
     ]
   },
@@ -388,7 +388,7 @@
       "Kalian berdua mendapat kredit saat perusahaan yang kamu undang melakukan isi ulang pertamanya, berapa pun jumlahnya.",
       "Kredit masuk ke perusahaan ini dan tidak pernah kedaluwarsa.",
       "Setiap pihak mendapat 1.000 kredit. Perusahaanmu mendapatkannya hingga 25 kali setahun; setelah itu, perusahaan yang kamu undang tetap mendapat kreditnya.",
-      "Isi ulang yang dikembalikan penuh atau kena chargeback menarik kembali kedua hadiah."
+      "Isi ulang yang dikembalikan, berapa pun jumlahnya, atau kena chargeback penuh menarik kembali kedua hadiah."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "Kredit kandidat dicadangkan saat ia diundang, dipotong setelah ia menjawab, dan dikembalikan jika tidak.",
       "Hanya pemilik dan admin yang bisa melihat halaman ini.",
-      "Kamu bisa meminta pengembalian dana untuk kredit yang dibeli dalam 14 hari terakhir dan belum terpakai, lewat Paddle atau dengan menulis kepada kami."
+      "Kamu bisa mengembalikan dana kredit yang dibeli dalam 14 hari terakhir dan belum terpakai dari baris isi ulang itu di riwayat, lewat Paddle, atau dengan menulis kepada kami. Kredit yang dicadangkan untuk kandidat tidak bisa dikembalikan selama masih dicadangkan."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Satu kandidat memakan 500 kredit: dicadangkan saat ia diundang, dipotong setelah ia menjawab, dan dikembalikan jika tidak.",
       "Kredit tidak pernah kedaluwarsa. Faktur setiap isi ulang ada di tab Tagihan perusahaan.",
       "Harga belum termasuk PPN atau pajak penjualan: jika berlaku, pajak ditambahkan saat checkout.",
-      "Kamu bisa meminta pengembalian dana untuk kredit yang dibeli dalam 14 hari terakhir dan belum terpakai, lewat Paddle atau dengan menulis kepada kami.",
+      "Kamu bisa mengembalikan dana kredit yang dibeli dalam 14 hari terakhir dan belum terpakai di halaman tagihan perusahaan, lewat Paddle, atau dengan menulis kepada kami.",
       "Pemilik dan admin menyiapkan isi ulang otomatis. Hanya orang yang kartunya membayar yang bisa mengubahnya atau memperbarui kartu; pemilik atau admin mana pun bisa langsung mematikannya.",
       "Kartu yang ditolak dicoba lagi setelah 1, 3, dan 7 hari, lalu isi ulang otomatis dijeda sampai kartu diperbarui. Kartu yang tidak bisa membayar, seperti yang kedaluwarsa, langsung menjedanya."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Kredit tidak pernah kedaluwarsa.",
       "Kandidat yang tidak menjawab satu soal pun tidak dikenai biaya.",
-      "Kredit berbayar yang belum terpakai bisa dikembalikan dananya dalam 14 hari."
+      "Kredit berbayar yang belum terpakai bisa dikembalikan dananya dalam 14 hari, di halaman tagihan perusahaan."
     ]
   },
   "tests": {

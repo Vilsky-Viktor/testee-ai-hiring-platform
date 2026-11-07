@@ -98,11 +98,20 @@ CLAUDE.md wins on conflict; rule 4 decides "not adopted". Overlaps are pointed a
 
 ## Refunds, chargebacks and failed payments
 
-- Refunds and chargebacks are made in Paddle (support or Paddle's dispute process), never by
-  editing balances. An approved `refund` or a `chargeback` takes back the credits in proportion
-  to the money returned (several partials add up to a full one); `chargeback_reverse` returns
-  them; `chargeback_warning`, pending and rejected adjustments change nothing. The balance may go
-  negative; a fully refunded top-up also takes back its referral reward.
+- Refunds and chargebacks are made in Paddle (a company's own refund, support or Paddle's dispute
+  process), never by editing balances. An approved `refund` or a `chargeback` takes back the
+  credits in proportion to the money returned (several partials add up to a full one);
+  `chargeback_reverse` returns them; `chargeback_warning` changes nothing. The balance may go
+  negative; any refund of a top-up, or a chargeback of all of it, also takes back its referral
+  reward.
+- A company's own refund (`services/refunds.py`): owners and admins, the terms' 14-day rule decided
+  by billing (free credits spent first, newest top-up first, reserved credits held back, 7 days for
+  credits given back late). Its credits are set aside under the wallet's lock before Paddle is
+  asked; approved, the adjustment's entry takes them; pending, they stay aside; rejected or
+  refused, they come back. Paddle has no idempotency key, so a lost answer isn't retried: the web
+  hook or reconciliation (a refund open past an hour) settles it. The company's told of an
+  approval or a rejection in the transaction that settles it, once. The sandbox and live keys both
+  need `adjustment.write`.
 - A payment failing in checkout: billing reads the attempt's `error_code` from Paddle for the
   buyer's own transaction only and maps it to advice (`constants/payment_failures.py`).
 

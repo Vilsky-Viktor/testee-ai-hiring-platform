@@ -388,6 +388,28 @@ TEXTS = {
             "altijd verstuurd, wat je e-mailinstellingen ook zijn."
         ),
     },
+    "refund_rejected": {
+        "subject": "Terugbetaling afgewezen voor {company}: {price}",
+        "preheader": "Paddle heeft de terugbetaling van {price} afgewezen. De credits staan weer op je saldo.",
+        "heading": "Paddle heeft de terugbetaling afgewezen",
+        "lines": [
+            "Paddle, onze wederverkoper, heeft de terugbetaling van {price} voor {company} afgewezen, en er is geen geld teruggestort.",
+            "{credits, plural, one {De # credit die hiervoor gereserveerd was, staat} other {De # credits die hiervoor gereserveerd waren, staan}} weer op het saldo van het bedrijf. Schrijf ons als je de terugbetaling nog steeds wilt.",
+        ],
+        "button": "Facturering openen",
+        "footer": "Deze e-mail is naar {email} gestuurd omdat je eigenaar of beheerder bent van {company} op testee. Hij gaat over de facturering van je bedrijf en wordt daarom altijd verstuurd, wat je e-mailinstellingen ook zijn.",
+    },
+    "refund_approved": {
+        "subject": "Terugbetaling goedgekeurd voor {company}: {price}",
+        "preheader": "Paddle heeft de terugbetaling van {price} goedgekeurd. Het bedrag gaat terug naar de kaart waarmee is betaald.",
+        "heading": "Paddle heeft de terugbetaling goedgekeurd",
+        "lines": [
+            "Paddle, onze wederverkoper, heeft de terugbetaling van {price} voor {company} goedgekeurd. Het bedrag gaat inclusief belasting terug naar de kaart waarmee is betaald; dat kan een paar dagen duren.",
+            "{credits, plural, one {De # terugbetaalde credit is} other {De # terugbetaalde credits zijn}} van het saldo van het bedrijf verdwenen.",
+        ],
+        "button": "Facturering openen",
+        "footer": "Deze e-mail is naar {email} gestuurd omdat je eigenaar of beheerder bent van {company} op testee. Hij gaat over de facturering van je bedrijf en wordt daarom altijd verstuurd, wat je e-mailinstellingen ook zijn.",
+    },
     "top_up_price_change": {
         "subject": "Nieuwe opwaardeerprijs voor {company}",
         "preheader": (

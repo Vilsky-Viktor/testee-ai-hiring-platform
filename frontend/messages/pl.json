@@ -1255,7 +1255,6 @@
     "memberFailed": "Nie udało się zaprosić tej osoby. Spróbuj ponownie.",
     "invite": "Zaproś",
     "jobDescription": "Opis stanowiska",
-    "generate": "Wygeneruj rozmowę",
     "startFailed": "Nie udało się rozpocząć rozmowy. Spróbuj ponownie.",
     "candidateEmails": "E-maile kandydatów",
     "candidateEmail": "E-mail kandydata",
@@ -2071,6 +2070,8 @@
       "auto_top_up_on": "Automatyczne doładowanie jest włączone: {price} plus podatek, gdy dostępne kredyty spadną poniżej {threshold, number}.",
       "auto_top_up_paused": "Automatyczne doładowanie jest wstrzymane: karta została odrzucona. Zaktualizuj kartę, aby je ponownie włączyć.",
       "auto_top_up_price_change": "Od <time>{date}</time> każde automatyczne doładowanie kosztuje {newPrice} zamiast {price}.",
+      "refund_approved": "Zwrot zatwierdzony dla <bdi>{name}</bdi>: {price}.",
+      "refund_rejected": "Zwrot odrzucony dla <bdi>{name}</bdi>: {price}. {credits, plural, one {# kredyt wrócił} few {# kredyty wróciły} many {# kredytów wróciło} other {# kredytu wróciło}} na Twoje saldo.",
       "candidate_finished": "{count, plural, one {Kandydat <bdi>{email}</bdi> ukończył {title, select, none {rozmowę} other {„<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} few {# kandydaci ukończyli {title, select, none {rozmowę} other {„<bdi>{title}</bdi>”}}.} many {# kandydatów ukończyło {title, select, none {rozmowę} other {„<bdi>{title}</bdi>”}}.} other {# kandydata ukończyło {title, select, none {rozmowę} other {„<bdi>{title}</bdi>”}}.}}",
       "invite_undelivered": "{count, plural, one {Zaproszenie dla <bdi>{email}</bdi> {title, select, none {do rozmowy} other {do „<bdi>{title}</bdi>”}} nie zostało dostarczone.} few {# zaproszenia {title, select, none {do rozmowy} other {do „<bdi>{title}</bdi>”}} nie zostały dostarczone.} many {# zaproszeń {title, select, none {do rozmowy} other {do „<bdi>{title}</bdi>”}} nie zostało dostarczonych.} other {# zaproszenia {title, select, none {do rozmowy} other {do „<bdi>{title}</bdi>”}} nie zostało dostarczone.}}",
       "interview_ready": "{title, select, none {Rozmowa jest gotowa.} other {Rozmowa „<bdi>{title}</bdi>” jest gotowa.}}",
@@ -2367,6 +2368,8 @@
       "interview_ready": "Rozmowa „Data Analyst” jest gotowa.",
       "auto_top_up_charged": "Automatyczne doładowanie dodało kredyty: 5000.",
       "auto_top_up_failed": "Automatyczne doładowanie nie mogło obciążyć karty. Doładuj konto, aby nie zabrakło Ci kredytów.",
+      "refund_approved": "Zwrot zatwierdzony dla Acme: $55.50.",
+      "refund_rejected": "Zwrot odrzucony dla Acme: $55.50. Kredyty wróciły na saldo.",
       "note_added": "Maya dodała notatkę do „Data Analyst”: mocny SQL, warto zadzwonić."
     },
     "connectFailed": "Nie udało się połączyć Slacka.",
@@ -2384,6 +2387,8 @@
       "interview_ready": "Rozmowa jest gotowa",
       "auto_top_up_charged": "Pobrano płatność za automatyczne doładowanie",
       "auto_top_up_failed": "Automatyczne doładowanie nie powiodło się",
+      "refund_approved": "Zwrot zatwierdzony",
+      "refund_rejected": "Zwrot odrzucony",
       "note_added": "Członek zespołu napisał notatkę, wraz z jej treścią"
     },
     "instructionsTitle": "Jak Slack otrzymuje Twoje powiadomienia",
@@ -2952,6 +2957,23 @@
       "adjustment": "Korekta od testee"
     },
     "automatic": "Automatyczne doładowanie",
+    "refund": {
+      "open": "Zwróć",
+      "title": "Zwrócić {amount}?",
+      "text": "Paddle zwróci {amount} z podatkiem na kartę, z której zapłacono, co może potrwać kilka dni. <credits></credits> {count, plural, one {niewykorzystany kredyt znika teraz z Twojego salda i wraca} few {niewykorzystane kredyty znikają teraz z Twojego salda i wracają} many {niewykorzystanych kredytów znika teraz z Twojego salda i wraca} other {niewykorzystanego kredytu znika teraz z Twojego salda i wraca}}, jeśli zwrot się nie powiedzie.",
+      "referral": "To doładowanie dało nagrodę za polecenie, więc każdy jego zwrot cofa nagrodę obu firmom. Jeśli została wykorzystana, saldo może spaść poniżej zera.",
+      "autoTopUp": "Automatyczne doładowanie pozostaje włączone i znów obciąży kartę, gdy saldo spadnie poniżej wybranej kwoty. Jeśli tego nie chcesz, najpierw je wyłącz.",
+      "heldBack": "Kredyty są <reserved>zarezerwowane</reserved> dla {count, plural, one {# kandydata} few {# kandydatów} many {# kandydatów} other {# kandydata}}. Cofnij zaproszenia, aby objąć te kredyty zwrotem.",
+      "confirm": "Zwróć {amount}",
+      "refunded": "Zwrócono.",
+      "processing": "Zwrot w drodze.",
+      "failed": "Nie udało się zwrócić tego doładowania. Spróbuj ponownie.",
+      "status": {
+        "processing": "Zwrot w toku",
+        "refunded": "Zwrócono",
+        "declined": "Paddle odrzucił zwrot"
+      }
+    },
     "invoice": "Faktura",
     "invoiceFailed": "Nie udało się otworzyć faktury. Spróbuj ponownie.",
     "deletedCandidate": "Usunięty kandydat",
@@ -3076,6 +3098,7 @@
     "compliance": {
       "title": "Zgodność z przepisami",
       "aiAct": "Na gruncie unijnego AI Act testee jest traktowana jako system AI wysokiego ryzyka, którego obowiązki mają zastosowanie od <time>{date}</time>. Nasze instrukcje dla firm są jego instrukcją używania.",
+      "aiMarks": "Pytania, opcje odpowiedzi, odpowiedzi asystentki i klipy głosowe są oznaczone jako wygenerowane przez AI w formie czytelnej dla oprogramowania: data-ai-generated w kodzie strony oraz tag AI_GENERATED w pliku klipu głosowego. Klipy głosowe mają też niesłyszalny znak wodny OpenAI, który możesz sprawdzić na <verify>openai.com/verify</verify>. Tekst skopiowany ze strony nie zachowuje oznaczenia.",
       "humanReview": "testee nie podejmuje żadnych decyzji o kandydacie: osoby w firmie przeglądają wyniki i decydują, a kandydaci mogą poprosić, aby ich wynik sprawdził człowiek.",
       "dpa": "Umowa powierzenia przetwarzania danych jest częścią regulaminu i nie trzeba niczego podpisywać. Obejmuje RODO, brytyjskie RODO (UK GDPR) oraz stanowe przepisy USA o prywatności, takie jak kalifornijskie, zgodnie z którymi testee jest usługodawcą firmy.",
       "documents": "Firmy otrzymują <link>instrukcję używania, szablon DPIA i szablony informacji dla kandydatów</link>, w wersjach także dla Nowego Jorku, Illinois i Kolorado.",
@@ -3135,7 +3158,6 @@
     "periodDays": "{days, plural, one {Ostatni # dzień} few {Ostatnie # dni} many {Ostatnie # dni} other {Ostatnie # dnia}}",
     "periodCustom": "Własny okres",
     "empty": "Nie ma jeszcze żadnych działań.",
-      "aiMarks": "Pytania, opcje odpowiedzi, odpowiedzi asystentki i klipy głosowe są oznaczone jako wygenerowane przez AI w formie czytelnej dla oprogramowania: data-ai-generated w kodzie strony oraz tag AI_GENERATED w pliku klipu głosowego. Klipy głosowe mają też niesłyszalny znak wodny OpenAI, który możesz sprawdzić na <verify>openai.com/verify</verify>. Tekst skopiowany ze strony nie zachowuje oznaczenia.",
     "noMatches": "Żadne działania nie pasują do tych filtrów.",
     "formerMember": "Były członek zespołu",
     "apiKey": "{via, select, mcp {Przez MCP kluczem „<bdi>{name}</bdi>”} other {Przez API kluczem „<bdi>{name}</bdi>”}}",
@@ -3201,6 +3223,7 @@
       "verification_requested": "Poprosił(a) o weryfikację firmy",
       "ai_apps_changed": "Zezwolił(a) na aplikacje AI lub je zablokował(a)",
       "top_up_paid": "Doładował(a) kredyty",
+      "refund_requested": "Poprosił(a) o zwrot",
       "auto_top_up_set": "Ustawił(a) automatyczne doładowanie",
       "auto_top_up_changed": "Zmienił(a) automatyczne doładowanie",
       "auto_top_up_stopped": "Wyłączył(a) automatyczne doładowanie",

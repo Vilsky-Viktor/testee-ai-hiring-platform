@@ -296,4 +296,6 @@ MESSAGES = {
     "Slack isn't connected. Reconnect it, then try again.": "Slack が接続されていません。再接続してから、もう一度お試しください。",
     "You've reached your limit of interviews without candidates ({limit}).\nInvite a candidate or delete an interview to create a new one.": "候補者のいない面接の上限（{limit} 件）に達しました。\n新しい面接を作成するには、候補者を招待するか、面接を削除してください。",
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "候補者のいない面接の上限（最初のチャージまで {limit} 件）に達しました。\n新しい面接を作成するには、候補者を招待するか、面接を削除してください。",
+    "This top-up can't be refunded now.": "このチャージは現在返金できません。",
+    "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle はこのチャージを返金できませんでした。クレジットは残高に戻りました。",
 }

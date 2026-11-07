@@ -1255,7 +1255,6 @@
     "memberFailed": "Hindi sila maimbitahan. Pakisubukang muli.",
     "invite": "Imbitahan",
     "jobDescription": "Job description",
-    "generate": "Gumawa ng interview",
     "startFailed": "Hindi masimulan ang interview. Pakisubukang muli.",
     "candidateEmails": "Mga email ng aplikante",
     "candidateEmail": "Email ng aplikante",
@@ -2071,6 +2070,8 @@
       "auto_top_up_on": "Naka-on ang awtomatikong top-up: {price} dagdag ang buwis kapag bumaba ang available na credits sa ilalim ng {threshold, number}.",
       "auto_top_up_paused": "Naka-pause ang awtomatikong top-up: tinanggihan ang card. I-update ang card para i-on ito ulit.",
       "auto_top_up_price_change": "Simula <time>{date}</time>, {newPrice} na ang bawat awtomatikong top-up sa halip na {price}.",
+      "refund_approved": "Inaprubahan ang refund para sa <bdi>{name}</bdi>: {price}.",
+      "refund_rejected": "Tinanggihan ang refund para sa <bdi>{name}</bdi>: {price}. Nakabalik na sa iyong balance ang {credits, plural, =1 {# credit} one {# credits} other {# credits}}.",
       "candidate_finished": "{count, plural, =1 {Natapos ni <bdi>{email}</bdi> ang {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# aplikante ang nakatapos ng {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.}}",
       "invite_undelivered": "{count, plural, =1 {Hindi naihatid ang imbitasyon kay <bdi>{email}</bdi> para sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.} other {Hindi naihatid ang # imbitasyon para sa {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.}}",
       "interview_ready": "{title, select, none {Handa na ang isang interview.} other {Handa na ang interview na “<bdi>{title}</bdi>”.}}",
@@ -2367,6 +2368,8 @@
       "interview_ready": "Handa na ang interview na “Data Analyst”.",
       "auto_top_up_charged": "Nagdagdag ang awtomatikong top-up ng 5,000 credits.",
       "auto_top_up_failed": "Hindi ma-charge ng awtomatikong top-up ang card. Mag-top up para hindi maubos ang iyong balance.",
+      "refund_approved": "Inaprubahan ang refund para sa Acme: $55.50.",
+      "refund_rejected": "Tinanggihan ang refund para sa Acme: $55.50. Nakabalik na sa balance ang credits.",
       "note_added": "Nagdagdag si Maya ng note sa “Data Analyst”: malakas sa SQL, sulit tawagan."
     },
     "connectFailed": "Hindi ma-connect ang Slack.",
@@ -2384,6 +2387,8 @@
       "interview_ready": "May interview na handa na",
       "auto_top_up_charged": "Na-charge ang isang awtomatikong top-up",
       "auto_top_up_failed": "Pumalya ang isang awtomatikong top-up",
+      "refund_approved": "May inaprubahang refund",
+      "refund_rejected": "May tinanggihang refund",
       "note_added": "May miyembro ng team na nagsulat ng note, kasama ang text nito"
     },
     "instructionsTitle": "Paano natatanggap ng Slack ang mga notification mo",
@@ -2952,6 +2957,23 @@
       "adjustment": "Adjustment ng testee"
     },
     "automatic": "Awtomatikong top-up",
+    "refund": {
+      "open": "I-refund",
+      "title": "I-refund ang {amount}?",
+      "text": "Ibabalik ng Paddle ang {amount}, kasama ang buwis, sa card na nagbayad, na maaaring abutin ng ilang araw. Aalis ngayon sa balance mo ang <credits></credits> {count, plural, =1 {hindi nagastos na credit} one {hindi nagastos na credits} other {hindi nagastos na credits}}, at {count, plural, =1 {babalik ito} one {babalik ang mga ito} other {babalik ang mga ito}} kung hindi matuloy ang refund.",
+      "referral": "Nagbigay ng referral reward ang top-up na ito, kaya babawiin ang reward sa parehong kumpanya sa anumang refund nito. Maaaring bumaba sa negatibo ang iyong balance kung nagastos na ito.",
+      "autoTopUp": "Mananatiling naka-on ang awtomatikong top-up, at magcha-charge ulit ito kapag bumaba ang balance sa level nito. I-off muna ito kung ayaw mo nito.",
+      "heldBack": "{count, plural, one {# aplikante} other {# aplikante}} ang <reserved>naka-reserve</reserved>. Bawiin ang mga imbitasyon nila para maisama sila.",
+      "confirm": "I-refund ang {amount}",
+      "refunded": "Na-refund.",
+      "processing": "Papunta na ang refund.",
+      "failed": "Hindi ma-refund ang top-up na ito. Pakisubukang muli.",
+      "status": {
+        "processing": "Pinoproseso ang refund",
+        "refunded": "Na-refund",
+        "declined": "Tinanggihan ng Paddle ang refund"
+      }
+    },
     "invoice": "Invoice",
     "invoiceFailed": "Hindi mabuksan ang invoice. Pakisubukan ulit.",
     "deletedCandidate": "Isang na-delete na aplikante",
@@ -3076,6 +3098,7 @@
     "compliance": {
       "title": "Compliance",
       "aiAct": "Sa ilalim ng EU AI Act, itinuturing ang testee na high-risk AI system, na ang mga tungkulin ay nalalapat mula <time>{date}</time>. Ang aming mga tagubilin para sa mga kumpanya ang mga instructions for use nito.",
+      "aiMarks": "Ang mga tanong, mga opsyon sa sagot, mga sagot ng assistant at mga voice clip ay may markang AI-generated sa anyong nababasa ng software: data-ai-generated sa code ng page, at ang tag na AI_GENERATED sa file ng voice clip. May dala rin ang mga voice clip na hindi naririnig na watermark ng OpenAI, na puwede mong suriin sa <verify>openai.com/verify</verify>. Hindi nananatili ang marka sa text na kinopya mula sa page.",
       "humanReview": "Walang desisyong ginagawa ang testee tungkol sa isang aplikante: ang mga tao sa kumpanya ang nagsusuri ng mga resulta at nagpapasya, at puwedeng humiling ang mga aplikante na suriin ng isang tao ang kanilang resulta.",
       "dpa": "Bahagi ng mga tuntunin ang data processing agreement, at walang kailangang pirmahan. Saklaw nito ang GDPR, ang UK GDPR at ang mga batas sa privacy ng mga estado ng US gaya ng sa California, kung saan ang testee ang service provider ng kumpanya.",
       "documents": "Nakakatanggap ang mga kumpanya ng <link>mga instructions for use, template ng DPIA at mga template ng abiso sa aplikante</link>, na may mga bersyon para sa New York City, Illinois at Colorado.",
@@ -3135,7 +3158,6 @@
     "periodDays": "Nakaraang {days, number} araw",
     "periodCustom": "Custom",
     "empty": "Wala pang aksyon.",
-      "aiMarks": "Ang mga tanong, mga opsyon sa sagot, mga sagot ng assistant at mga voice clip ay may markang AI-generated sa anyong nababasa ng software: data-ai-generated sa code ng page, at ang tag na AI_GENERATED sa file ng voice clip. May dala rin ang mga voice clip na hindi naririnig na watermark ng OpenAI, na puwede mong suriin sa <verify>openai.com/verify</verify>. Hindi nananatili ang marka sa text na kinopya mula sa page.",
     "noMatches": "Walang aksyong tugma sa mga filter na ito.",
     "formerMember": "Dating miyembro",
     "apiKey": "{via, select, mcp {Sa pamamagitan ng MCP gamit ang key na “<bdi>{name}</bdi>”} other {Sa pamamagitan ng API gamit ang key na “<bdi>{name}</bdi>”}}",
@@ -3201,6 +3223,7 @@
       "verification_requested": "Humiling na ma-verify ang kumpanya",
       "ai_apps_changed": "Pinayagan o itinigil ang mga AI app",
       "top_up_paid": "Nag-top up ng credits",
+      "refund_requested": "Humiling ng refund",
       "auto_top_up_set": "Nag-set up ng awtomatikong top-up",
       "auto_top_up_changed": "Binago ang awtomatikong top-up",
       "auto_top_up_stopped": "Itinigil ang awtomatikong top-up",

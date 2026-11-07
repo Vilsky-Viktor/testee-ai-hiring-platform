@@ -13,8 +13,8 @@ test("the terms show since when they apply", async ({ page }) => {
   const legal: Legal = await (
     await page.request.get(`${REQUEST_URL}/api/site/help/legal/terms`)
   ).json();
-  expect(legal.in_force).toBe(legal.current);
-  await page.goto("/terms");
+  // The newest version may apply from a later day: the one in force is still shown by its date.
+  await page.goto(`/terms?version=${legal.in_force}`);
   await loaded(page);
   const header = page.locator("main header");
   // Dates as the language writes them, not as the API names them.
@@ -28,8 +28,22 @@ test("the terms show since when they apply", async ({ page }) => {
     .locator("main nav a")
     .evaluateAll((items) => items.map((item) => item.getAttribute("href")));
   expect(hrefs).toEqual(
-    legal.versions.filter((version) => version !== legal.current).map((version) => `/terms?version=${version}`),
+    legal.versions
+      .filter((version) => version !== legal.in_force)
+      .map((version) => (version === legal.current ? "/terms" : `/terms?version=${version}`)),
   );
+});
+
+// A version published ahead says from when it applies, and links the one in force now.
+test("terms published ahead link the version in force", async ({ page }) => {
+  const legal: Legal = await (
+    await page.request.get(`${REQUEST_URL}/api/site/help/legal/terms`)
+  ).json();
+  test.skip(legal.in_force === legal.current, "No version is published ahead");
+  await page.goto("/terms");
+  await loaded(page);
+
+  await expect(page.locator("main header").locator(`a[href*="version=${legal.in_force}"]`)).toBeVisible();
 });
 
 // Each document in the page's language, with a link to the binding English.

@@ -1,3 +1,5 @@
+from datetime import UTC, datetime
+
 from sqlalchemy import delete, exists, select, update
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -13,6 +15,13 @@ async def wallet(session: AsyncSession, owner_type: str, owner_id: str) -> Walle
     await ensure(session, owner_type, owner_id)
 
     return await session.get(Wallet, (owner_type, owner_id), populate_existing=True)
+
+
+async def locked(session: AsyncSession, owner_type: str, owner_id: str) -> Wallet | None:
+    """The wallet, locked, as it is now: every use of its credits takes this lock."""
+    return await session.get(
+        Wallet, (owner_type, owner_id), with_for_update=True, populate_existing=True
+    )
 
 
 async def wallets(
@@ -68,8 +77,9 @@ async def has_entry(session: AsyncSession, key: str) -> bool:
 async def reserve(
     session: AsyncSession, owner_type: str, owner_id: str, amount: int, key: str, reason: str
 ) -> bool:
-    """Sets credits aside. Repeating the same key does it once; a released hold can be taken
-    again. False when the available balance is too low."""
+    """Sets credits aside. Repeating the same key does it once, dating it from now (an invite
+    sent again); a released hold can be taken again. False when the available balance is too
+    low."""
     await ensure(session, owner_type, owner_id)
     # The wallet's lock comes first, so two requests for the same hold can't both add it.
     row = await session.get(
@@ -77,7 +87,12 @@ async def reserve(
     )
     hold = await session.get(Hold, key)
 
-    if hold is not None and hold.status != HoldStatus.RELEASED:
+    if hold is not None and hold.status == HoldStatus.OPEN:
+        hold.created_at = datetime.now(UTC)
+
+        return True
+
+    if hold is not None and hold.status == HoldStatus.CHARGED:
         return True
 
     if row.balance - row.reserved < amount:
@@ -93,6 +108,8 @@ async def reserve(
             amount=amount,
             reason=reason,
             status=HoldStatus.OPEN,
+            created_at=datetime.now(UTC),
+            released_at=None,
         )
     )
 
@@ -128,6 +145,7 @@ async def release(session: AsyncSession, key: str) -> None:
         .values(reserved=Wallet.reserved - hold.amount)
     )
     hold.status = HoldStatus.RELEASED
+    hold.released_at = datetime.now(UTC)
 
 
 async def hold_status(session: AsyncSession, key: str) -> str | None:

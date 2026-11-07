@@ -115,7 +115,7 @@ FAQ = [
     {
         "key": "refunds",
         "question": "Kas saan raha tagasi?",
-        "answer": "Jah, viimase 14 päeva jooksul ostetud ja kulutamata krediitide eest: Paddle'i kaudu või meile kirjutades. Tasuta krediite, näiteks tervituskingitust, ei hüvitata ja need loetakse esimesena kulutatuks. Üksikasjad on [tingimustes](/terms).",
+        "answer": "Jah, viimase 14 päeva jooksul ostetud ja kulutamata krediitide eest: sinu ettevõtte arvelduse lehel, Paddle'i kaudu või meile kirjutades. Kandidaatidele broneeritud krediite ei saa tagastada, kuni need on broneeritud; nende 14 päeva jooksul broneeritud krediite saab tagastada 7 päeva jooksul pärast nende tagasitulekut. Tasuta krediite, näiteks tervituskingitust, ei hüvitata ja need loetakse esimesena kulutatuks. Üksikasjad on [tingimustes](/terms).",
     },
     {
         "key": "scorecards",

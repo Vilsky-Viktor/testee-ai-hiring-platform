@@ -1255,7 +1255,6 @@
     "memberFailed": "Não foi possível convidar essa pessoa. Tente novamente.",
     "invite": "Convidar",
     "jobDescription": "Descrição da vaga",
-    "generate": "Gerar entrevista",
     "startFailed": "Não foi possível começar a entrevista. Tente novamente.",
     "candidateEmails": "E-mails dos candidatos",
     "candidateEmail": "E-mail do candidato",
@@ -2075,6 +2074,8 @@
       "auto_top_up_on": "A recarga automática está ativada: {price} mais impostos quando os créditos disponíveis ficarem abaixo de {threshold, number}.",
       "auto_top_up_paused": "A recarga automática está pausada: o cartão foi recusado. Atualize o cartão para reativá-la.",
       "auto_top_up_price_change": "A partir de <time>{date}</time>, cada recarga automática custa {newPrice} em vez de {price}.",
+      "refund_approved": "Reembolso aprovado para <bdi>{name}</bdi>: {price}.",
+      "refund_rejected": "Reembolso recusado para <bdi>{name}</bdi>: {price}. {credits, plural, one {# crédito voltou} many {# créditos voltaram} other {# créditos voltaram}} ao seu saldo.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> concluiu {title, select, none {uma entrevista} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# candidatos concluíram {title, select, none {uma entrevista} other {“<bdi>{title}</bdi>”}}.}}",
       "invite_undelivered": "{count, plural, =1 {O convite de {title, select, none {uma entrevista} other {“<bdi>{title}</bdi>”}} para <bdi>{email}</bdi> não foi entregue.} other {# convites de {title, select, none {uma entrevista} other {“<bdi>{title}</bdi>”}} não foram entregues.}}",
       "interview_ready": "{title, select, none {Uma entrevista está pronta.} other {A entrevista “<bdi>{title}</bdi>” está pronta.}}",
@@ -2371,6 +2372,8 @@
       "interview_ready": "A entrevista “Data Analyst” está pronta.",
       "auto_top_up_charged": "A recarga automática adicionou 5.000 créditos.",
       "auto_top_up_failed": "A recarga automática não conseguiu cobrar o cartão. Recarregue para não ficar sem saldo.",
+      "refund_approved": "Reembolso aprovado para Acme: $55.50.",
+      "refund_rejected": "Reembolso recusado para Acme: $55.50. Os créditos voltaram ao saldo.",
       "note_added": "Maya adicionou uma nota em “Data Analyst”: SQL forte, vale uma ligação."
     },
     "connectFailed": "Não foi possível conectar o Slack.",
@@ -2388,6 +2391,8 @@
       "interview_ready": "Uma entrevista está pronta",
       "auto_top_up_charged": "Uma recarga automática foi cobrada",
       "auto_top_up_failed": "Uma recarga automática falhou",
+      "refund_approved": "Um reembolso foi aprovado",
+      "refund_rejected": "Um reembolso foi recusado",
       "note_added": "Um membro da equipe escreveu uma anotação, com o texto dela"
     },
     "instructionsTitle": "Como o Slack recebe suas notificações",
@@ -2956,6 +2961,23 @@
       "adjustment": "Ajuste da testee"
     },
     "automatic": "Recarga automática",
+    "refund": {
+      "open": "Reembolsar",
+      "title": "Reembolsar {amount}?",
+      "text": "A Paddle devolve {amount}, com impostos incluídos, ao cartão usado no pagamento, o que pode levar alguns dias. <credits></credits> {count, plural, one {crédito não gasto sai do seu saldo agora e volta} many {créditos não gastos saem do seu saldo agora e voltam} other {créditos não gastos saem do seu saldo agora e voltam}} se o reembolso não for concluído.",
+      "referral": "Esta recarga gerou uma recompensa por indicação, então qualquer reembolso a retira das duas empresas. Se ela já foi gasta, seu saldo pode ficar abaixo de zero.",
+      "autoTopUp": "A recarga automática continua ativa e cobra de novo quando o saldo ficar abaixo do valor escolhido. Desative antes se não quiser isso.",
+      "heldBack": "{count, plural, one {# candidato tem} many {# candidatos têm} other {# candidatos têm}} créditos <reserved>reservados</reserved>. Revogue os convites deles para incluí-los.",
+      "confirm": "Reembolsar {amount}",
+      "refunded": "Reembolsada.",
+      "processing": "Reembolso a caminho.",
+      "failed": "Não foi possível reembolsar esta recarga. Tente novamente.",
+      "status": {
+        "processing": "Reembolso em andamento",
+        "refunded": "Reembolsada",
+        "declined": "Reembolso recusado pela Paddle"
+      }
+    },
     "invoice": "Fatura",
     "invoiceFailed": "Não foi possível abrir a fatura. Tente novamente.",
     "deletedCandidate": "Um candidato excluído",
@@ -3080,6 +3102,7 @@
     "compliance": {
       "title": "Conformidade",
       "aiAct": "Pelo EU AI Act, a testee é tratada como um sistema de IA de alto risco, cujas obrigações se aplicam a partir de <time>{date}</time>. Nossas instruções para empresas são as instruções de utilização desse sistema.",
+      "aiMarks": "As perguntas, as opções de resposta, as respostas da assistente e os clipes de voz são marcados como gerados por IA de uma forma que os programas conseguem ler: data-ai-generated no código da página e a etiqueta AI_GENERATED no arquivo do clipe de voz. Os clipes de voz também levam a marca d'água inaudível da OpenAI, que você pode verificar em <verify>openai.com/verify</verify>. O texto copiado de uma página não mantém a marca.",
       "humanReview": "A testee não toma nenhuma decisão sobre um candidato: pessoas da empresa analisam os resultados e decidem, e os candidatos podem pedir que uma pessoa revise o resultado deles.",
       "dpa": "O acordo de tratamento de dados faz parte dos termos, sem nada para assinar. Ele abrange o GDPR, o UK GDPR e as leis estaduais de privacidade dos EUA, como a da Califórnia, nas quais a testee é a prestadora de serviços da empresa.",
       "documents": "As empresas recebem <link>instruções de utilização, um modelo de DPIA e modelos de aviso para candidatos</link>, com versões para a cidade de Nova York, Illinois e Colorado.",
@@ -3139,7 +3162,6 @@
     "periodDays": "Últimos {days, number} dias",
     "periodCustom": "Personalizado",
     "empty": "Nenhuma ação ainda.",
-      "aiMarks": "As perguntas, as opções de resposta, as respostas da assistente e os clipes de voz são marcados como gerados por IA de uma forma que os programas conseguem ler: data-ai-generated no código da página e a etiqueta AI_GENERATED no arquivo do clipe de voz. Os clipes de voz também levam a marca d'água inaudível da OpenAI, que você pode verificar em <verify>openai.com/verify</verify>. O texto copiado de uma página não mantém a marca.",
     "noMatches": "Nenhuma ação corresponde a estes filtros.",
     "formerMember": "Um ex-membro",
     "apiKey": "{via, select, mcp {Pelo MCP com a chave “<bdi>{name}</bdi>”} other {Pela API com a chave “<bdi>{name}</bdi>”}}",
@@ -3205,6 +3227,7 @@
       "verification_requested": "Pediu a verificação da empresa",
       "ai_apps_changed": "Permitiu ou bloqueou apps de IA",
       "top_up_paid": "Recarregou créditos",
+      "refund_requested": "Pediu um reembolso",
       "auto_top_up_set": "Configurou a recarga automática",
       "auto_top_up_changed": "Alterou a recarga automática",
       "auto_top_up_stopped": "Interrompeu a recarga automática",

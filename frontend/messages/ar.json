@@ -1255,7 +1255,6 @@
     "memberFailed": "تعذّرت دعوته. حاول مرة أخرى.",
     "invite": "دعوة",
     "jobDescription": "الوصف الوظيفي",
-    "generate": "إنشاء المقابلة",
     "startFailed": "تعذّر بدء المقابلة. حاول مرة أخرى.",
     "candidateEmails": "بريد المرشحين الإلكتروني",
     "candidateEmail": "البريد الإلكتروني للمرشح",
@@ -2071,6 +2070,8 @@
       "auto_top_up_on": "الشحن التلقائي مفعّل: {price} مضافًا إليها الضريبة عند انخفاض الرصيد المتاح عن {threshold, number}.",
       "auto_top_up_paused": "الشحن التلقائي متوقف مؤقتًا: رُفضت البطاقة. حدّث البطاقة لإعادة تشغيله.",
       "auto_top_up_price_change": "اعتبارًا من <time>{date}</time>، تكلّف كل عملية شحن تلقائي {newPrice} بدلًا من {price}.",
+      "refund_approved": "تمت الموافقة على الاسترداد لشركة <bdi>{name}</bdi>: {price}.",
+      "refund_rejected": "رُفض الاسترداد لشركة <bdi>{name}</bdi>: {price}. عاد {credits, plural, zero {# رصيد إلى رصيدك} one {رصيد واحد إلى رصيدك} two {رصيدان إلى رصيدك} few {# أرصدة إلى رصيدك} many {# رصيدًا إلى رصيدك} other {# رصيد إلى رصيدك}}.",
       "candidate_finished": "{count, plural, one {أنهى <bdi>{email}</bdi> {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}{grade, select, none {.} other {: {grade}.}}} zero {أنهى # مرشح {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}.} two {أنهى مرشحان {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}.} few {أنهى # مرشحين {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}.} many {أنهى # مرشحًا {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}.} other {أنهى # مرشح {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}.}}",
       "invite_undelivered": "{count, plural, one {لم تُسلَّم دعوة {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}} إلى <bdi>{email}</bdi>.} zero {لم تُسلَّم # دعوة {title, select, none {لمقابلة} other {لـ«<bdi>{title}</bdi>»}}.} two {لم تُسلَّم دعوتان {title, select, none {لمقابلة} other {لـ«<bdi>{title}</bdi>»}}.} few {لم تُسلَّم # دعوات {title, select, none {لمقابلة} other {لـ«<bdi>{title}</bdi>»}}.} many {لم تُسلَّم # دعوةً {title, select, none {لمقابلة} other {لـ«<bdi>{title}</bdi>»}}.} other {لم تُسلَّم # دعوة {title, select, none {لمقابلة} other {لـ«<bdi>{title}</bdi>»}}.}}",
       "interview_ready": "{title, select, none {هناك مقابلة جاهزة.} other {المقابلة «<bdi>{title}</bdi>» جاهزة.}}",
@@ -2367,6 +2368,8 @@
       "interview_ready": "المقابلة «Data Analyst» جاهزة.",
       "auto_top_up_charged": "أضاف الشحن التلقائي 5,000 من الأرصدة.",
       "auto_top_up_failed": "تعذّر على الشحن التلقائي الخصم من البطاقة. اشحن رصيدك حتى لا ينفد.",
+      "refund_approved": "تمت الموافقة على الاسترداد لشركة Acme: $55.50.",
+      "refund_rejected": "رُفض الاسترداد لشركة Acme: $55.50. عادت الأرصدة إلى رصيد الشركة.",
       "note_added": "أضافت Maya ملاحظة على «Data Analyst»: SQL قوي، يستحق مكالمة."
     },
     "connectFailed": "تعذّر ربط Slack.",
@@ -2384,6 +2387,8 @@
       "interview_ready": "مقابلة جاهزة",
       "auto_top_up_charged": "تم الخصم للشحن التلقائي",
       "auto_top_up_failed": "فشل الشحن التلقائي",
+      "refund_approved": "تمت الموافقة على استرداد",
+      "refund_rejected": "رُفض استرداد",
       "note_added": "أضاف عضو في الفريق ملاحظة، مع نصها"
     },
     "instructionsTitle": "كيف تصل إشعاراتك إلى Slack",
@@ -2952,6 +2957,23 @@
       "adjustment": "تعديل من testee"
     },
     "automatic": "الشحن التلقائي",
+    "refund": {
+      "open": "استرداد",
+      "title": "استرداد {amount}؟",
+      "text": "تعيد Paddle مبلغ {amount}، شاملًا الضريبة، إلى البطاقة التي دفعت، وقد يستغرق ذلك بضعة أيام. يُخصم الآن من رصيدك <credits></credits> {count, plural, zero {رصيد غير مُنفق، ويعود} one {رصيد غير مُنفق، ويعود} two {رصيد غير مُنفق، ويعودان} few {أرصدة غير مُنفقة، وتعود} many {رصيدًا غير مُنفق، وتعود} other {رصيد غير مُنفق، وتعود}} إليه إذا لم يكتمل الاسترداد.",
+      "referral": "دفعت عملية الشحن هذه مكافأة إحالة، لذا فإن أي استرداد لها يسحب المكافأة من الشركتين كلتيهما. وقد ينخفض رصيدك إلى ما دون الصفر إذا كانت قد أُنفقت.",
+      "autoTopUp": "يبقى الشحن التلقائي مفعّلًا، ويخصم من جديد عندما ينخفض الرصيد عن مستواه. أوقفه أولًا إذا لم ترغب في ذلك.",
+      "heldBack": "رصيد {count, plural, zero {# مرشح} one {مرشح واحد} two {مرشحَين اثنين} few {# مرشحين} many {# مرشحًا} other {# مرشح}} <reserved>محجوز</reserved>. ألغِ دعواتهم لإدراجه في الاسترداد.",
+      "confirm": "استرداد {amount}",
+      "refunded": "تم الاسترداد.",
+      "processing": "الاسترداد في الطريق.",
+      "failed": "تعذّر استرداد عملية الشحن هذه. حاول مرة أخرى.",
+      "status": {
+        "processing": "الاسترداد قيد التنفيذ",
+        "refunded": "تم الاسترداد",
+        "declined": "رفضت Paddle الاسترداد"
+      }
+    },
     "invoice": "الفاتورة",
     "invoiceFailed": "تعذّر فتح الفاتورة. يُرجى المحاولة مرة أخرى.",
     "deletedCandidate": "مرشح محذوف",
@@ -3076,6 +3098,7 @@
     "compliance": {
       "title": "الامتثال",
       "aiAct": "بموجب قانون الذكاء الاصطناعي الأوروبي، يُعامَل testee بوصفه نظام ذكاء اصطناعي عالي المخاطر، تسري التزاماته اعتبارًا من <time>{date}</time>. وتعليماتنا للشركات هي تعليمات استخدامه.",
+      "aiMarks": "الأسئلة وخيارات الإجابة وإجابات المساعد والمقاطع الصوتية موسومة بأنها مولَّدة بالذكاء الاصطناعي بصيغة تقرؤها البرامج: data-ai-generated في شيفرة الصفحة، والوسم AI_GENERATED في ملف المقطع الصوتي. وتحمل المقاطع الصوتية أيضًا علامة OpenAI المائية غير المسموعة، ويمكنك التحقق منها على <verify>openai.com/verify</verify>. أما النص المنسوخ من الصفحة فلا يحتفظ بوسمه.",
       "humanReview": "لا يتخذ testee أي قرار بشأن المرشح: يراجع أشخاص في الشركة النتائج ويقرّرون، ويمكن للمرشحين طلب أن يراجع شخصٌ نتيجتهم.",
       "dpa": "اتفاقية معالجة البيانات جزء من الشروط، ولا يلزم توقيع أي شيء. وهي تغطي اللائحة العامة لحماية البيانات (GDPR) وUK GDPR وقوانين الخصوصية في الولايات الأمريكية مثل قانون كاليفورنيا، حيث يكون testee مزوّد الخدمة للشركة.",
       "documents": "تحصل الشركات على <link>تعليمات الاستخدام ونموذج تقييم أثر حماية البيانات ونماذج إشعار المرشحين</link>، مع نسخ لمدينة نيويورك وإلينوي وكولورادو.",
@@ -3135,7 +3158,6 @@
     "periodDays": "{days, plural, zero {آخر # يوم} one {آخر يوم} two {آخر يومين} few {آخر # أيام} many {آخر # يومًا} other {آخر # يوم}}",
     "periodCustom": "مخصصة",
     "empty": "لا توجد إجراءات بعد.",
-      "aiMarks": "الأسئلة وخيارات الإجابة وإجابات المساعد والمقاطع الصوتية موسومة بأنها مولَّدة بالذكاء الاصطناعي بصيغة تقرؤها البرامج: data-ai-generated في شيفرة الصفحة، والوسم AI_GENERATED في ملف المقطع الصوتي. وتحمل المقاطع الصوتية أيضًا علامة OpenAI المائية غير المسموعة، ويمكنك التحقق منها على <verify>openai.com/verify</verify>. أما النص المنسوخ من الصفحة فلا يحتفظ بوسمه.",
     "noMatches": "لا توجد إجراءات تطابق هذه الفلاتر.",
     "formerMember": "عضو سابق",
     "apiKey": "{via, select, mcp {عبر MCP بالمفتاح «<bdi>{name}</bdi>»} other {عبر API بالمفتاح «<bdi>{name}</bdi>»}}",
@@ -3201,6 +3223,7 @@
       "verification_requested": "طلب توثيق الشركة",
       "ai_apps_changed": "سمح بتطبيقات الذكاء الاصطناعي أو أوقفها",
       "top_up_paid": "شحن الرصيد",
+      "refund_requested": "طلب استردادًا",
       "auto_top_up_set": "أعدّ الشحن التلقائي",
       "auto_top_up_changed": "غيّر الشحن التلقائي",
       "auto_top_up_stopped": "أوقف الشحن التلقائي",

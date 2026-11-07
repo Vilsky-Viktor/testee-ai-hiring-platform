@@ -45,7 +45,7 @@ export function NewInterview({
     <DescriptionBox
       placeholder={start("placeholder")}
       label={t("jobDescription")}
-      submitLabel={t("generate")}
+      submitLabel={start("submit")}
       onSubmit={create}
       disabled={disabled}
       example={{ label: t("tryExample"), text: sample("description") }}

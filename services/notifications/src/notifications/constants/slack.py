@@ -40,6 +40,8 @@ SLACK_KINDS = [
     NotificationKind.INTERVIEW_READY,
     NotificationKind.AUTO_TOP_UP_CHARGED,
     NotificationKind.AUTO_TOP_UP_FAILED,
+    NotificationKind.REFUND_APPROVED,
+    NotificationKind.REFUND_REJECTED,
     NotificationKind.NOTE_ADDED,
 ]
 SLACK_DEFAULT_KINDS = [
@@ -47,6 +49,8 @@ SLACK_DEFAULT_KINDS = [
     NotificationKind.ATS_NOT_INVITED,
     NotificationKind.INVITE_UNDELIVERED,
     NotificationKind.AUTO_TOP_UP_FAILED,
+    NotificationKind.REFUND_APPROVED,
+    NotificationKind.REFUND_REJECTED,
     NotificationKind.NOTE_ADDED,
 ]
 

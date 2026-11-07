@@ -151,3 +151,18 @@ def test_a_company_cant_take_another_companys_name_in_any_case(run):
     _, taken, free, name, word = run(scenario())
 
     assert (taken, free, name) == (False, True, f"Third {word}")
+
+
+def test_a_viewers_companies_leave_out_those_its_owner_and_admin_edit(run):
+    async def scenario():
+        found = await factories.team()
+
+        return found, [
+            await transaction(companies.viewer_ids_for_user, user)
+            for user in (found.owner, found.admin, found.viewer)
+        ]
+
+    found, (owner, admin, viewer) = run(scenario())
+
+    assert (owner, admin) == ([], [])
+    assert viewer == [str(found.company.id)]

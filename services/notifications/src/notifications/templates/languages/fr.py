@@ -398,6 +398,28 @@ TEXTS = {
             "donc envoyé quels que soient vos réglages d'e-mails."
         ),
     },
+    "refund_rejected": {
+        "subject": "Remboursement refusé pour {company} : {price}",
+        "preheader": "Paddle a refusé le remboursement de {price}. Les crédits sont revenus dans votre solde.",
+        "heading": "Paddle a refusé le remboursement",
+        "lines": [
+            "Paddle, notre revendeur, a refusé le remboursement de {price} pour {company}, et aucune somme n'a été rendue.",
+            "{credits, plural, one {Le # crédit réservé pour ce remboursement est revenu} many {Les # crédits réservés pour ce remboursement sont revenus} other {Les # crédits réservés pour ce remboursement sont revenus}} dans le solde de l'entreprise. Écrivez-nous si vous souhaitez toujours ce remboursement.",
+        ],
+        "button": "Ouvrir la facturation",
+        "footer": "Cet e-mail a été envoyé à {email} parce que vous êtes propriétaire ou admin de {company} sur testee. Il concerne la facturation de votre entreprise ; il est donc envoyé quels que soient vos réglages d'e-mails.",
+    },
+    "refund_approved": {
+        "subject": "Remboursement approuvé pour {company} : {price}",
+        "preheader": "Paddle a approuvé le remboursement de {price}. Il revient sur la carte utilisée pour le paiement.",
+        "heading": "Paddle a approuvé le remboursement",
+        "lines": [
+            "Paddle, notre revendeur, a approuvé le remboursement de {price} pour {company}. Il revient, taxes comprises, sur la carte utilisée pour le paiement, ce qui peut prendre quelques jours.",
+            "{credits, plural, one {Le # crédit remboursé a quitté} many {Les # crédits remboursés ont quitté} other {Les # crédits remboursés ont quitté}} le solde de l'entreprise.",
+        ],
+        "button": "Ouvrir la facturation",
+        "footer": "Cet e-mail a été envoyé à {email} parce que vous êtes propriétaire ou admin de {company} sur testee. Il concerne la facturation de votre entreprise ; il est donc envoyé quels que soient vos réglages d'e-mails.",
+    },
     "top_up_price_change": {
         "subject": "Nouveau prix de recharge pour {company}",
         "preheader": (

@@ -170,7 +170,7 @@ def refund(transaction_id, total):
     }
 
 
-def test_a_full_refund_of_the_rewarding_top_up_takes_both_rewards_back(run):
+def test_any_refund_of_the_rewarding_top_up_takes_both_rewards_back_once(run):
     acme, newco = company(), company()
     paid, refunded = f"txn_{uuid.uuid4().hex[:12]}", f"txn_{uuid.uuid4().hex[:12]}"
 
@@ -200,12 +200,12 @@ def test_a_full_refund_of_the_rewarding_top_up_takes_both_rewards_back(run):
             [],
         )
         await top_up(refunded)
-        # A partial refund keeps the rewards; a full one, sent twice, takes them back once.
-        await handle_adjustment(refund(refunded, "1000"))
-        partly = await available(COMPANY, acme)
-        full = refund(refunded, "3000")
-        await handle_adjustment(full)
-        await handle_adjustment(full)
+        # Any refund takes the rewards back, once however often it's sent, and however many
+        # refunds follow.
+        partial = refund(refunded, "1000")
+        await handle_adjustment(partial)
+        await handle_adjustment(partial)
+        await handle_adjustment(refund(refunded, "2000"))
         taken_back = (
             await available(COMPANY, acme),
             await transaction(referrals.rewarded_count, COMPANY, acme),
@@ -215,11 +215,10 @@ def test_a_full_refund_of_the_rewarding_top_up_takes_both_rewards_back(run):
         replayed = await transaction(referrals.rewarded_count, COMPANY, acme)
         await top_up(paid)
 
-        return partly, taken_back, replayed, await available(COMPANY, acme)
+        return taken_back, replayed, await available(COMPANY, acme)
 
-    partly, taken_back, replayed, again = run(scenario())
+    taken_back, replayed, again = run(scenario())
 
-    assert partly == WELCOME_COMPANY + REFERRAL_REWARD
     assert taken_back == (WELCOME_COMPANY, 0)
     assert replayed == 0
     assert again == WELCOME_COMPANY + REFERRAL_REWARD

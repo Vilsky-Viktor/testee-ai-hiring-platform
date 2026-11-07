@@ -337,7 +337,7 @@
     ],
     "tips": [
       "testee yalnızca o kanala mesaj gönderebilir; Slack'inizi okuyamaz.",
-      "Herkes her bildirimi zil simgesinde görmeye devam eder.",
+      "Herkes bildirimlerini zil simgesinde görmeye devam eder; faturalandırma bildirimleri yalnızca sahipler ve yöneticiler içindir.",
       "Slack'i bağlayan üye ayrılırsa veya görüntüleyici olursa, bir sahip veya yönetici yeniden bağlayana kadar durur."
     ]
   },
@@ -388,7 +388,7 @@
       "Davet ettiğiniz şirket, tutar ne olursa olsun ilk kredi yüklemesini yaptığında ikiniz de kredi kazanırsınız.",
       "Krediler bu şirkete gider ve hiç sona ermez.",
       "Her iki taraf da 1.000 kredi alır. Şirketiniz bunu yılda en fazla 25 kez kazanır; bundan sonra davet ettiğiniz şirket yine kredilerini alır.",
-      "Tamamı iade edilen veya ters ibraz edilen bir yükleme her iki ödülü de geri alır."
+      "Herhangi bir tutarda iade edilen veya tamamı ters ibraz edilen bir yükleme her iki ödülü de geri alır."
     ]
   },
   "brand": {
@@ -418,7 +418,7 @@
     "tips": [
       "Bir adayın kredileri davet edildiğinde ayrılır, yanıt verdiğinde düşülür, vermezse iade edilir.",
       "Bu sayfayı yalnızca sahipler ve yöneticiler görür.",
-      "Son 14 günde satın aldığınız ve harcamadığınız kredilerin iadesini Paddle üzerinden veya bize yazarak isteyebilirsiniz."
+      "Son 14 günde satın aldığınız ve harcamadığınız kredileri geçmişteki yükleme satırından, Paddle üzerinden veya bize yazarak iade edebilirsiniz. Adaylar için ayrılan krediler ayrılmış durumdayken iade edilemez."
     ]
   },
   "topUp": {
@@ -435,7 +435,7 @@
       "Bir aday 500 krediye mal olur: davet edildiğinde ayrılır, yanıt verdiğinde düşülür, vermezse iade edilir.",
       "Krediler hiç sona ermez. Her yüklemenin faturası şirketin Faturalandırma sekmesindedir.",
       "Fiyatlara KDV veya satış vergisi dahil değildir: uygulandığı yerlerde ödeme sırasında eklenir.",
-      "Son 14 günde satın aldığınız ve harcamadığınız kredilerin iadesini Paddle üzerinden veya bize yazarak isteyebilirsiniz.",
+      "Son 14 günde satın aldığınız ve harcamadığınız kredileri şirketin faturalandırma sayfasından, Paddle üzerinden veya bize yazarak iade edebilirsiniz.",
       "Otomatik yüklemeyi sahipler ve yöneticiler kurar. Yalnızca kartıyla ödeme yapan kişi onu değiştirebilir veya kartı güncelleyebilir; herhangi bir sahip veya yönetici onu hemen kapatabilir.",
       "Reddedilen kart 1, 3 ve 7 gün sonra yeniden denenir, ardından kart güncellenene kadar otomatik yükleme duraklatılır. Süresi dolmuş kart gibi ödeme yapamayan bir kart onu hemen duraklatır."
     ]
@@ -592,7 +592,7 @@
     "tips": [
       "Krediler hiç sona ermez.",
       "Hiçbir soruyu cevaplamayan aday için hiçbir ücret ödenmez.",
-      "Kullanılmamış ücretli krediler 14 gün içinde iade edilebilir."
+      "Kullanılmamış ücretli krediler 14 gün içinde şirketin faturalandırma sayfasından iade edilebilir."
     ]
   },
   "tests": {

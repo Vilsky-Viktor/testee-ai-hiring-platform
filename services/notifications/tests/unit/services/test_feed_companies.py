@@ -15,15 +15,15 @@ def asked(monkeypatch):
     """Companies, counting its answers; `down` makes it fail."""
     state = {"calls": 0, "down": False, "ids": ["c1"]}
 
-    async def company_ids(user_id):
+    async def memberships(user_id):
         state["calls"] += 1
 
         if state["down"]:
             raise httpx.ConnectError("companies is down")
 
-        return list(state["ids"])
+        return list(state["ids"]), ["c1"]
 
-    monkeypatch.setattr(companies, "company_ids", company_ids)
+    monkeypatch.setattr(companies, "memberships", memberships)
 
     return state
 
@@ -31,13 +31,14 @@ def asked(monkeypatch):
 def test_a_users_companies_are_kept_a_minute_and_read_again_when_fresh(asked):
     user = f"u-{uuid.uuid4()}"
 
-    first, _ = asyncio.run(feed.recipients_of(user))
+    first, _, _ = asyncio.run(feed.recipients_of(user))
     asked["ids"] = ["c1", "c2"]
-    kept, _ = asyncio.run(feed.recipients_of(user))
-    fresh, _ = asyncio.run(feed.recipients_of(user, fresh=True))
+    kept, viewer_of, _ = asyncio.run(feed.recipients_of(user))
+    fresh, _, _ = asyncio.run(feed.recipients_of(user, fresh=True))
 
     assert asked["calls"] == 2
     assert kept == first == [(Recipient.USER, user), (Recipient.COMPANY, "c1")]
+    assert viewer_of == ["c1"]
     assert (Recipient.COMPANY, "c2") in fresh
 
 
@@ -45,9 +46,10 @@ def test_with_companies_down_the_user_still_hears_their_own(asked):
     user = f"u-{uuid.uuid4()}"
     asked["down"] = True
 
-    recipients, complete = asyncio.run(feed.recipients_of(user))
+    recipients, viewer_of, complete = asyncio.run(feed.recipients_of(user))
 
     assert recipients == [(Recipient.USER, user)]
+    assert viewer_of == []
     assert complete is False
     # Nothing is kept from a failed read: the next one asks again.
     assert memory_cache.get(f"notifications:company-ids:{user}") is None
