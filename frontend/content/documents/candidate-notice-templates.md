@@ -6,8 +6,8 @@ For companies to adapt and send **before** inviting candidates to a testee inter
 everything in [brackets]. The notice is yours to give as the employer: these templates cover what
 testee does, and you add how you use the results. In the EU, telling candidates that a high-risk
 AI system is used to assess them is one of your duties under the AI Act from 2027-12-02; the
-general notice (section 2) does it. Illinois and Colorado candidates get the general notice with
-the state wording in sections 4 and 5 added.
+general notice (section 2) does it. Illinois, Colorado and Connecticut candidates get the general
+notice with the state wording in sections 4, 5 and 6 added.
 
 ## 1. New York City (Local Law 144, automated employment decision tool)
 
@@ -165,3 +165,26 @@ If the outcome is adverse (not hired, or not invited onward), send within 30 day
 > in our notice, all from your test, and your name and email from your application. You can ask us
 > for more about the tool, to correct any personal data that is factually wrong, and for a person
 > to review the decision, at [contact] by [date].
+
+## 6. Connecticut (Public Act 26-15, from 2027-10-01)
+
+Before the test, add to the general notice for applicants in Connecticut, from 2027-10-01. The
+written notice must reach them before the decision is made; sending it before the test does that,
+and it also tells them, in plain language, that they will be interacting with the tool.
+
+> **Automated employment-related decision technology (Connecticut).** [Company] has deployed an
+> automated employment-related decision technology: **testee**, a timed knowledge test you will
+> interact with when you take it. Its purpose is to grade your knowledge of the job, and we use the
+> grade [as a substantial factor in / to materially influence] our decision [whether to hire you /
+> whether to move your application forward] for [job title].
+>
+> **What it analyzes and how.** Your answers, with how long each took; when you left the test page
+> or copied text; answers given too fast to have read the question; when you confirmed answering
+> on your own; any extra time you were given; and your name, email address and sign-in account id.
+> Your grade is the percentage of points you earn against answer keys written with the help of AI,
+> compared with a passing grade of [N]%. The other data isn't part of the grade: it shows [Company]
+> what to ask you about, and never decides on its own.
+>
+> **Where the data comes from.** From you, in the test, and from your application or your sign-in.
+>
+> **Contact.** [Company], [address], [contact].

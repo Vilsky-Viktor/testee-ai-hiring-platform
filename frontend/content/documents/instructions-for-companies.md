@@ -371,6 +371,16 @@ it may not be one, but count on the duties above.
   built the tool.
 - **Texas** (HB 149, from 2026-01-01): AI used with the intent to discriminate is banned; a
   disparate impact alone doesn't show that intent.
+- **Connecticut** (Public Act 26-15): since 2026-10-01 using such a tool is no defense to a
+  discrimination claim, and anti-bias testing isn't required but can be taken into account. For
+  tools put into use from 2027-10-01, tell applicants and employees in plain language that they are
+  interacting with one, unless that's obvious, and give written notice before the decision is made:
+  that you use it, its purpose and the decision, its trade name (testee), the personal data it
+  analyzes and how, where the data comes from, and how to contact you. If you started using testee
+  before that date, give the notice all the same: the law doesn't say how it treats a tool already
+  in use. If you withhold anything as a trade secret, say so and why. Only the Attorney General
+  enforces this. Use the Connecticut notice template; testee doesn't take these duties on for you,
+  and the information you need is in this document and the template.
 
 ## 12. Your duties as a deployer under the EU AI Act
 
