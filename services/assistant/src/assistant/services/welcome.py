@@ -2,8 +2,10 @@ from uuid import UUID
 
 import httpx
 from fastapi import HTTPException, status
+from testee_common.http.capped import gather_capped
 
 from assistant.constants.chat import CHAT_FAILED
+from assistant.constants.tool_calls import MAX_PARALLEL_TOOL_CALLS
 from assistant.constants.welcome import WELCOME_LIMIT, Stage
 from assistant.helpers.welcome import stage
 from assistant.integrations import services
@@ -32,16 +34,19 @@ async def welcome_stage(company_id: UUID | None, token: str, language: str) -> S
     else:
         companies = await read(f"/companies/{company_id}", {}, token, language)
 
-    has_candidates = False
-
-    for company in companies:
-        if company.get("interview_count"):
-            query = {"company_id": company["id"], "limit": WELCOME_LIMIT}
-            interviews = await read("/interviews", query, token, language)
-
-            if any(interview.get("candidate_count") for interview in interviews):
-                has_candidates = True
-
-                break
+    lists = await gather_capped(
+        MAX_PARALLEL_TOOL_CALLS,
+        (
+            read(
+                "/interviews",
+                {"company_id": company["id"], "limit": WELCOME_LIMIT},
+                token,
+                language,
+            )
+            for company in companies
+            if company.get("interview_count")
+        ),
+    )
+    has_candidates = any(item.get("candidate_count") for interviews in lists for item in interviews)
 
     return stage(companies, has_candidates)

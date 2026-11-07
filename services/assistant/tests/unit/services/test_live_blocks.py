@@ -49,7 +49,7 @@ def test_opening_fetches_the_blocks_again_with_the_viewers_token_and_drops_whats
         {"kind": "link", "refs": [], "links": ["/settings"]},
     ]
 
-    shown = asyncio.run(live(stored, "viewer-token", "en"))
+    [shown] = asyncio.run(live([stored], "viewer-token", "en"))
 
     assert [block["kind"] for block in shown] == ["candidate_rows", "interview", "link"]
     assert [item["id"] for item in shown[0]["items"]] == ["c1"]
@@ -65,4 +65,30 @@ def test_companies_not_answering_shows_nothing_stale(monkeypatch):
         {"kind": "candidate_rows", "refs": [{"id": "c1", "interview_id": "i1"}], "links": ["/l"]}
     ]
 
-    assert asyncio.run(live(stored, "t", "en")) == []
+    assert asyncio.run(live([stored], "t", "en")) == [[]]
+
+
+def test_a_page_reads_what_its_answers_share_once_and_keeps_each_answers_blocks(monkeypatch):
+    tokens = companies(
+        monkeypatch,
+        {
+            "/interviews/i1/candidates": (200, CANDIDATES),
+            "/interviews/i2": (200, {"id": "i2", "title": "Backend", "status": "new"}),
+            "/companies/credits": (200, [{"id": "co1", "available": 5}]),
+        },
+    )
+    rows = {"kind": "candidate_rows", "refs": [{"id": "c1", "interview_id": "i1"}], "links": ["/c"]}
+    interview = {"kind": "interview", "refs": [{"id": "i2"}], "links": ["/i"]}
+    credits = {"kind": "credits", "refs": [{"company_id": "co1"}], "links": ["/t"]}
+    answers = [[rows, interview], [], [interview, credits], [credits, rows]]
+
+    shown = asyncio.run(live(answers, "t", "en"))
+
+    assert [[block["kind"] for block in answer] for answer in shown] == [
+        ["candidate_rows", "interview"],
+        [],
+        ["interview", "credits"],
+        ["credits", "candidate_rows"],
+    ]
+    # Three things to read, however many blocks show them.
+    assert len(tokens) == 3

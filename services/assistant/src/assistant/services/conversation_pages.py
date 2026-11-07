@@ -25,16 +25,12 @@ async def messages_page(
         if pending["user_id"] == user_id and pending.get("message_id"):
             cards.setdefault(pending["message_id"], []).append(pending["card"])
 
+    blocks = await live([item.blocks for item in found], token, language)
     shown = [
         MessageOut.model_validate(item).model_copy(
-            update={
-                "blocks": [
-                    *await live(item.blocks, token, language),
-                    *cards.get(str(item.id), []),
-                ]
-            }
+            update={"blocks": [*fresh, *cards.get(str(item.id), [])]}
         )
-        for item in found
+        for item, fresh in zip(found, blocks, strict=True)
     ]
 
     return MessagesOut(messages=shown, earlier=earlier)

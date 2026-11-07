@@ -16,7 +16,7 @@ from assistant.constants.show import (
 from assistant.helpers.blocks import SAFE_ID, link
 from assistant.integrations import services
 from assistant.models.answers import Turn
-from assistant.services.live_blocks import fetch, items_for
+from assistant.services.live_blocks import Reads, fetch, items_for
 
 
 async def page_name(page: str, ids: dict, token: str, language: str) -> str | None:
@@ -101,7 +101,7 @@ async def rows_block(arguments: dict, turn: Turn) -> dict | None:
     ]
     refs = [kept_ref(kind, ref) for ref in chosen]
     block = {"kind": kind, "refs": refs, "links": links}
-    found = await items_for(block, turn.token, turn.language)
+    found = await items_for(block, Reads(turn.token, turn.language))
     kept = [(item, url, ref) for item, url, ref in zip(found, links, refs, strict=True) if item]
 
     if not kept:
