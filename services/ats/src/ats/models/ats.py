@@ -185,3 +185,21 @@ class AtsApplicationChange(Base):
     changed_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=lambda: datetime.now(UTC), server_default=func.now()
     )
+
+
+class AtsErasedCandidate(Base):
+    """A candidate erased in the last ERASED_KEPT_DAYS, by the ATS's own id and no email: the row
+    that stopped a repeated web hook is gone, so without this a provider's retry or a replayed
+    signed body would save and invite them again."""
+
+    __tablename__ = "ats_erased_candidates"
+
+    connection_id: Mapped[uuid.UUID] = mapped_column(
+        ForeignKey("ats_connections.id", ondelete="CASCADE"), primary_key=True
+    )
+    candidate_id: Mapped[str] = mapped_column(Text(), primary_key=True)
+    interview_id: Mapped[uuid.UUID] = mapped_column(primary_key=True)
+    company_id: Mapped[uuid.UUID] = mapped_column(index=True)
+    erased_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), index=True
+    )

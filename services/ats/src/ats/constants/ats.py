@@ -76,6 +76,9 @@ RECOVER_LIMIT = 500
 MAX_INVITE_ATTEMPTS = 6
 # Candidates an ATS sent are kept this long (they hold emails), like companies' candidates.
 CANDIDATE_RETENTION_DAYS = 365
+# An erased candidate's ATS id is kept this long, past a provider's web hook retries, so they
+# aren't invited again.
+ERASED_KEPT_DAYS = 30
 # A Teamtailor application whose read keeps failing (a connection not reconnected) is given up
 # this long after its last change.
 APPLICATION_CHANGE_KEPT_DAYS = 30

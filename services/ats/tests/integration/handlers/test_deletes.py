@@ -1,15 +1,17 @@
 import uuid
 from datetime import UTC, datetime, timedelta
 
-from sqlalchemy import select, update
+from sqlalchemy import func, select, update
 from testee_common.config.constants import DELETED_USER
 
 from ats.constants.ats import AtsProvider, ConnectionStatus
+from ats.constants.events import ATS_CANDIDATE_ARRIVED
 from ats.core.db import Session
 from ats.handlers.dispatch import handle
 from ats.integrations import companies
 from ats.models.ats import AtsCandidate, AtsJobLink
-from ats.repositories import ats, ats_candidates, ats_links
+from ats.models.outbox import OutboxEvent
+from ats.repositories import ats, ats_candidates, ats_erased, ats_links
 from ats.services import accounts
 from ats.services import ats_candidates as candidate_service
 from tests.integration.transactions import transaction
@@ -210,3 +212,60 @@ def test_a_deleted_makers_connection_stays_without_their_id_and_stops_inviting(r
     assert (connection.created_by, connection.status) == (DELETED_USER, ConnectionStatus.BROKEN)
     assert left == []
     assert invited == []
+
+
+def test_an_erased_candidates_web_hook_coming_again_saves_and_invites_nobody(run):
+    """Erased by the company, then the ATS's retry of the same web hook: the unique key that
+    stopped it died with the row, so nothing but the erasure's note can."""
+    company_id, interview_id = uuid.uuid4(), uuid.uuid4()
+
+    async def events():
+        async with Session() as session:
+            return await session.scalar(
+                select(func.count())
+                .select_from(OutboxEvent)
+                .where(OutboxEvent.event_type == ATS_CANDIDATE_ARRIVED)
+            )
+
+    async def scenario():
+        connection, link_id, _ = await linked(company_id, interview_id)
+        await accounts.remove_candidate(interview_id, "ann@x.com")
+        before = await events()
+        again = await transaction(
+            ats_candidates.add, connection.id, link_id, interview_id, "c-1", "Ann@x.com"
+        )
+        left = await rows_of(AtsCandidate, AtsCandidate.interview_id, interview_id)
+        another = await transaction(
+            ats_candidates.add, connection.id, link_id, interview_id, "c-2", "bo@x.com"
+        )
+
+        return again, left, await events() - before, another
+
+    again, left, new_events, another = run(scenario())
+
+    assert (again, left) == (None, [])
+    # Someone else on the same job still arrives.
+    assert new_events == 1
+    assert another.candidate_id == "c-2"
+
+
+def test_a_deleted_accounts_web_hook_coming_again_saves_nobody_and_the_note_ends(run):
+    company_id, interview_id = uuid.uuid4(), uuid.uuid4()
+
+    async def scenario():
+        connection, link_id, _ = await linked(company_id, interview_id)
+        await accounts.remove_user("someone", "ann@x.com")
+        again = await transaction(
+            ats_candidates.add, connection.id, link_id, interview_id, "c-1", "ann@x.com"
+        )
+        await ats_erased.delete_older_than(Session, datetime.now(UTC) + timedelta(days=1))
+        after_the_note = await transaction(
+            ats_candidates.add, connection.id, link_id, interview_id, "c-1", "ann@x.com"
+        )
+
+        return again, after_the_note
+
+    again, after_the_note = run(scenario())
+
+    assert again is None
+    assert after_the_note.candidate_id == "c-1"

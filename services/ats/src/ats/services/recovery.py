@@ -5,13 +5,14 @@ from datetime import UTC, datetime, timedelta
 from ats.constants.ats import (
     APPLICATION_CHANGE_KEPT_DAYS,
     CANDIDATE_RETENTION_DAYS,
+    ERASED_KEPT_DAYS,
     RECOVER_INVITE_SECONDS,
     RECOVER_READ_SECONDS,
     REPORT_SECONDS,
 )
 from ats.core.db import Session
 from ats.repositories import ats_applications as application_changes
-from ats.repositories import ats_candidates, ats_results
+from ats.repositories import ats_candidates, ats_erased, ats_results
 from ats.services import ats_applications
 from ats.services.ats_candidates import invite_all
 from ats.services.reports import report
@@ -62,6 +63,9 @@ async def run() -> None:
 
     if deleted:
         logger.info("Deleted %d ATS candidates past their retention period", deleted)
+
+    before = datetime.now(UTC) - timedelta(days=ERASED_KEPT_DAYS)
+    await ats_erased.delete_older_than(Session, before)
 
     before = datetime.now(UTC) - timedelta(days=APPLICATION_CHANGE_KEPT_DAYS)
     deleted = await application_changes.delete_older_than(Session, before)

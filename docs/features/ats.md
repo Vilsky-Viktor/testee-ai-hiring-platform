@@ -83,6 +83,8 @@ On a company's **Integrations** tab, an owner or admin connects an ATS with its 
 - when the company erases the candidate in testee (`candidate.removed`),
 - with the candidate's account. Account deletion and export include them.
 
+An erased candidate (the last two) keeps no email, but their id in the ATS stays 30 days for that connection and interview, deleted by the `recover` job, so the same web hook, a provider's retry or a replayed signed body, can't save and invite them again. For those 30 days the ATS moving them again invites nobody either; the company can still invite them by hand.
+
 ## Candidates from Greenhouse
 
 Greenhouse's API can't set up web hooks, so the company does it once in Greenhouse:

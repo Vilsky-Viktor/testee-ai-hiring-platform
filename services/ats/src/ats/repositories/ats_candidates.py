@@ -19,6 +19,7 @@ from ats.constants.ats import (
 from ats.constants.events import ATS_CANDIDATE_ARRIVED
 from ats.models.ats import AtsCandidate, AtsConnection
 from ats.models.outbox import OutboxEvent
+from ats.repositories import ats_erased
 from ats.repositories.ats import company_of
 from ats.repositories.turns import in_turns
 
@@ -35,10 +36,12 @@ async def add(
     candidate_id: str,
     email: str,
     name: str | None = None,
-) -> AtsCandidate:
+) -> AtsCandidate | None:
     """The ATS's candidate for the interview: saved waiting the first time, with the
     ats.candidate_arrived event that invites them; the same row, and no new event, when the
-    web hook comes again (or twice at once: the unique key keeps one, with its first name)."""
+    web hook comes again (or twice at once: the unique key keeps one, with its first name).
+    None for a candidate lately erased: checked after the insert, which waits for an erasure
+    in progress."""
     query = (
         insert(AtsCandidate)
         .values(
@@ -63,6 +66,11 @@ async def add(
     made = await session.scalar(query)
 
     if made is not None:
+        if await ats_erased.was_erased(session, connection_id, candidate_id, interview_id):
+            await session.execute(delete(AtsCandidate).where(AtsCandidate.id == made))
+
+            return None
+
         outbox.add(session, OutboxEvent, ATS_CANDIDATE_ARRIVED, {"ats_candidate_id": str(made)})
 
     return await session.scalar(existing)
@@ -273,11 +281,10 @@ async def of_email(session: AsyncSession, email: str) -> list[AtsCandidate]:
 
 async def delete_email(session: AsyncSession, email: str, before: datetime | None = None) -> None:
     """The address's candidates; with `before`, a replayed deletion's, those from before it."""
-    await session.execute(
-        delete(AtsCandidate).where(
-            AtsCandidate.email == email.lower(), made_before(AtsCandidate.created_at, before)
-        )
+    query = delete(AtsCandidate).where(
+        AtsCandidate.email == email.lower(), made_before(AtsCandidate.created_at, before)
     )
+    await ats_erased.delete_and_remember(session, query)
 
 
 async def delete_candidate(session: AsyncSession, interview_id: UUID, email: str) -> None:
@@ -285,4 +292,4 @@ async def delete_candidate(session: AsyncSession, interview_id: UUID, email: str
     query = delete(AtsCandidate).where(
         AtsCandidate.interview_id == interview_id, AtsCandidate.email == email.lower()
     )
-    await session.execute(query)
+    await ats_erased.delete_and_remember(session, query)
