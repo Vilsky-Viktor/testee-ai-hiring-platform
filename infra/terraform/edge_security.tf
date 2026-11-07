@@ -58,6 +58,32 @@ resource "google_compute_security_policy" "edge" {
     }
   }
 
+  # The public API from one IP: many companies' keys can call from one address (an ATS vendor),
+  # and the api service limits each company itself. Past it, a bare 429: Cloud Armor can send
+  # neither a body nor Retry-After (the API's docs say so). gateway/nginx.conf does the same.
+  rule {
+    action      = "throttle"
+    priority    = 1190
+    description = "Public API requests per IP"
+
+    match {
+      expr {
+        expression = "request.path.urlDecode().lower().matches('^/+api/+v1/')"
+      }
+    }
+
+    rate_limit_options {
+      conform_action = "allow"
+      exceed_action  = "deny(429)"
+      enforce_on_key = "IP"
+
+      rate_limit_threshold {
+        count        = 3000
+        interval_sec = 60
+      }
+    }
+  }
+
   # A general limit per IP: 600 requests a minute, far above what a person (or an office behind
   # one address) sends, so only floods and scripts meet it. Static files (scripts, styles, fonts,
   # images) outside /api don't count; most are served by the CDN before Cloud Armor anyway.

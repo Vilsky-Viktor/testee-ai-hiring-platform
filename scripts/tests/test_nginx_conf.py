@@ -8,6 +8,8 @@ CONF = Path(__file__).resolve().parents[2] / "gateway" / "nginx.conf"
 
 # The site's pages say who may frame them in their own Content-Security-Policy.
 LEFT_OUT = {"/": {"X-Frame-Options"}}
+# A refusal by the limit says when to try again.
+ADDED = {"@rate_limited": {"Retry-After"}}
 
 
 def blocks(text: str) -> tuple[str, dict[str, str]]:
@@ -58,7 +60,7 @@ def test_a_block_with_its_own_headers_repeats_the_servers():
         own = names(body, "add_header")
 
         if own:
-            assert own == expected - LEFT_OUT.get(match, set()), match
+            assert own - ADDED.get(match, set()) == expected - LEFT_OUT.get(match, set()), match
 
 
 def test_a_block_with_its_own_proxy_headers_repeats_the_servers():
@@ -78,3 +80,12 @@ def test_every_header_is_sent_on_errors_too():
     for line in CONF.read_text().splitlines():
         if line.strip().startswith("add_header"):
             assert line.rstrip().endswith("always;"), line
+
+
+def test_a_refusal_by_the_per_ip_limit_is_json_with_retry_after():
+    server, locations = blocks(CONF.read_text())
+    refusal = locations["@rate_limited"]
+
+    assert "error_page 429 = @rate_limited;" in server
+    assert "add_header Retry-After 60 always;" in refusal
+    assert '"code":"rate_limited"' in refusal
