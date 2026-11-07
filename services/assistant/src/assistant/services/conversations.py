@@ -1,14 +1,19 @@
+import logging
 from uuid import UUID
 
 import httpx
 from fastapi import HTTPException, status
 from testee_common.ai.answer_votes import mirror_vote
+from testee_common.ai.tracing import tracing_on
+from testee_common.events.unhandleable import final
 
 from assistant.constants.chat import CHAT_FAILED, NOT_FOUND
 from assistant.core.db import Session
-from assistant.integrations import services
+from assistant.integrations import services, trace_retention
 from assistant.models.conversations import Conversation
 from assistant.repositories import conversations, messages
+
+logger = logging.getLogger(__name__)
 
 
 async def has_access(company_id: UUID, token: str, language: str) -> bool:
@@ -79,13 +84,46 @@ async def vote_of(message_id: UUID) -> int | None:
         return await messages.vote_of(session, message_id)
 
 
+async def delete_traces(trace_ids: list[str]) -> None:
+    """Called before the rows go, as nothing finds the traces after. A refusal no retry changes
+    doesn't stop the deletion, which would otherwise end with nothing deleted: the traces go
+    with the daily job. An outage raises, to be tried again."""
+    try:
+        await trace_retention.delete_traces(trace_ids)
+    except Exception as error:
+        if not final(error):
+            raise
+
+        logger.exception("Langfuse refused a deletion's traces: the daily job removes them")
+
+
 async def delete_company(company_id: UUID, member_ids: list[str]) -> int:
     """Every conversation about the deleted company, and its members' about all their companies,
-    a batch at a time; how many went."""
+    with their Langfuse traces, a batch at a time; how many went."""
+    if tracing_on():
+        async with Session() as session:
+            trace_ids = await conversations.trace_ids_of_company(session, company_id, member_ids)
+
+        await delete_traces(trace_ids)
+
     return await conversations.delete_company(Session, company_id, member_ids)
 
 
 async def delete_mentioning(company_id: UUID, member_ids: list[str], needles: list[str]) -> int:
     """The company's and its members' conversations that mention any of `needles` (an erased
-    candidate, a deleted interview), a batch at a time; how many went."""
+    candidate, a deleted interview), with their Langfuse traces, a batch at a time; how many
+    went."""
+    needles = [needle for needle in needles if needle]
+
+    if not needles:
+        return 0
+
+    if tracing_on():
+        async with Session() as session:
+            trace_ids = await conversations.trace_ids_mentioning(
+                session, company_id, member_ids, needles
+            )
+
+        await delete_traces(trace_ids)
+
     return await conversations.delete_mentioning(Session, company_id, member_ids, needles)

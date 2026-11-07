@@ -3,8 +3,10 @@ from uuid import UUID
 
 from sqlalchemy import Text, and_, cast, delete, func, or_, select, update
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
+from testee_common.ai.tracing import new_trace_id
 from testee_common.db.db import delete_in_batches
 
+from assistant.helpers.titles import title_seed
 from assistant.models.conversations import Conversation, Message
 
 
@@ -63,11 +65,13 @@ async def delete_company(
     """Every conversation about the company, and its members' about all their companies (any can
     hold its data), with their messages, a batch at a time (each its own transaction); how many
     went (none when run again)."""
+    return await delete_in_batches(sessions, Conversation, _of_company(company_id, member_ids))
+
+
+def _of_company(company_id: UUID, member_ids: list[str]):
     of_members = and_(Conversation.company_id.is_(None), Conversation.user_id.in_(member_ids))
 
-    return await delete_in_batches(
-        sessions, Conversation, or_(Conversation.company_id == company_id, of_members)
-    )
+    return or_(Conversation.company_id == company_id, of_members)
 
 
 def mentions(text, needle: str):
@@ -82,11 +86,12 @@ async def delete_mentioning(
     any of `needles` (an erased candidate's email or invite, a deleted interview): they go whole,
     as what's left of one would still read as about that person. A batch at a time; how many
     went (none when run again)."""
-    needles = [needle for needle in needles if needle]
+    return await delete_in_batches(
+        sessions, Conversation, *_mentioning(company_id, member_ids, needles)
+    )
 
-    if not needles:
-        return 0
 
+def _mentioning(company_id: UUID, member_ids: list[str], needles: list[str]) -> tuple:
     # Only the company's and its members' messages are read, never every tenant's.
     about = or_(Conversation.company_id == company_id, Conversation.user_id.in_(member_ids))
     said = select(Message.conversation_id).where(
@@ -97,18 +102,37 @@ async def delete_mentioning(
         ),
     )
 
-    return await delete_in_batches(sessions, Conversation, about, Conversation.id.in_(said))
+    return about, Conversation.id.in_(said)
+
+
+async def _trace_ids(session: AsyncSession, *where) -> list[str]:
+    """The Langfuse traces of these conversations: their answers' and their titles'. Once the
+    rows go, nothing finds them."""
+    answers = await session.scalars(
+        select(Message.trace_id)
+        .join(Conversation, Conversation.id == Message.conversation_id)
+        .where(*where, Message.trace_id.is_not(None))
+    )
+    ids = await session.scalars(select(Conversation.id).where(*where))
+    titles = [new_trace_id(title_seed(conversation_id)) for conversation_id in ids]
+
+    return [*answers, *filter(None, titles)]
 
 
 async def trace_ids_of_user(session: AsyncSession, user_id: str) -> list[str]:
-    """The Langfuse traces of the user's conversations' answers."""
-    query = (
-        select(Message.trace_id)
-        .join(Conversation, Conversation.id == Message.conversation_id)
-        .where(Conversation.user_id == user_id, Message.trace_id.is_not(None))
-    )
+    return await _trace_ids(session, Conversation.user_id == user_id)
 
-    return list(await session.scalars(query))
+
+async def trace_ids_of_company(
+    session: AsyncSession, company_id: UUID, member_ids: list[str]
+) -> list[str]:
+    return await _trace_ids(session, _of_company(company_id, member_ids))
+
+
+async def trace_ids_mentioning(
+    session: AsyncSession, company_id: UUID, member_ids: list[str], needles: list[str]
+) -> list[str]:
+    return await _trace_ids(session, *_mentioning(company_id, member_ids, needles))
 
 
 async def delete_user(session: AsyncSession, user_id: str) -> None:

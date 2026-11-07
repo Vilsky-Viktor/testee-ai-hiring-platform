@@ -1,4 +1,5 @@
 import re
+from uuid import UUID
 
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from testee_common.config.constants import LANGUAGES
@@ -7,6 +8,11 @@ from assistant.constants.titles import MAX_TITLE_LENGTH, TITLE_EVERY
 from assistant.prompts.titles import TITLE_INPUT, TITLE_SYSTEM
 
 EMAIL = re.compile(r"\S+@\S+")
+
+
+def title_seed(conversation_id: UUID) -> str:
+    """Seeds a conversation's titles' one Langfuse trace, so a deletion can work out its id."""
+    return f"title:{conversation_id}"
 
 
 def should_title(questions: int) -> bool:

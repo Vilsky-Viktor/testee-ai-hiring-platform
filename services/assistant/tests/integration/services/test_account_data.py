@@ -14,6 +14,7 @@ from assistant.integrations import trace_retention
 from assistant.models.conversations import Message, ToolCall
 from assistant.repositories import conversations, messages, oauth, update_checks
 from assistant.services import accounts
+from assistant.services import conversations as service
 from tests.integration.repositories.test_connected_apps import connect
 from tests.integration.transactions import transaction
 
@@ -121,3 +122,40 @@ def test_a_langfuse_outage_raises_with_the_conversations_kept(run, monkeypatch):
             return await messages.export(session, user)
 
     assert run(scenario()) != []
+
+
+def test_a_company_or_candidate_deletion_sends_its_traces_before_the_rows_go(run, monkeypatch):
+    """A Langfuse outage leaves the rows, whose trace ids a redelivered event finds again."""
+    company = uuid.uuid4()
+    user = f"data-{uuid.uuid4().hex[:8]}"
+    sent = []
+
+    async def delete_traces(trace_ids):
+        left = await transaction(conversations.of_user, user, None, 0, 100)
+        sent.append((list(trace_ids), len(left)))
+
+    monkeypatch.setattr(service, "tracing_on", lambda: True)
+    monkeypatch.setattr(trace_retention, "delete_traces", delete_traces)
+
+    async def conversation_with_a_trace():
+        async with Session.begin() as session:
+            conversation = await conversations.create(session, user, company, "Candidates")
+            session.add(
+                Message(
+                    conversation_id=conversation.id,
+                    role=Role.ASSISTANT,
+                    content="ann@example.com scored 80.",
+                    trace_id="a" * 32,
+                )
+            )
+
+    async def scenario():
+        await conversation_with_a_trace()
+        await service.delete_mentioning(company, [], ["ann@example.com", ""])
+        await conversation_with_a_trace()
+        await service.delete_company(company, [])
+
+        return await transaction(conversations.of_user, user, None, 0, 100)
+
+    assert run(scenario()) == []
+    assert sent == [(["a" * 32], 1), (["a" * 32], 1)]

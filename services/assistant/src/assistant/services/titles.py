@@ -4,14 +4,14 @@ from langchain_core.messages import BaseMessage
 from testee_common.ai import ai_usage
 from testee_common.ai.ai_constants import Outcome
 from testee_common.ai.llm import estimated_input
-from testee_common.ai.tracing import traced_run
+from testee_common.ai.tracing import hiding, traced_run
 
 from assistant.config import settings
 from assistant.constants.ai_usage import TITLE_ACTION
 from assistant.constants.titles import TITLE_SOURCE_CHARACTERS
 from assistant.core.db import Session
 from assistant.helpers.history import history
-from assistant.helpers.titles import clean_title, should_title, title_prompt
+from assistant.helpers.titles import clean_title, should_title, title_prompt, title_seed
 from assistant.integrations import llm
 from assistant.integrations.redis import get_redis
 from assistant.models.answers import Turn
@@ -34,10 +34,11 @@ async def write_title(prompt: list[BaseMessage]) -> tuple[str, dict]:
     return (parsed.title if parsed else ""), (result["raw"].usage_metadata or {})
 
 
-async def refresh(turn: Turn) -> str | None:
+async def refresh(turn: Turn, names: set[str]) -> str | None:
     """A new title for the conversation when it's time (should_title), written by the cheap
-    model call; its tokens count against the budgets. None when it isn't time or the call
-    failed, and the old title stays."""
+    model call; its tokens count against the budgets. `names`: the tools' this turn, masked in
+    its trace with the user's own. None when it isn't time or the call failed, and the old title
+    stays."""
     async with Session() as session:
         if not should_title(await messages.count_questions(session, turn.conversation_id)):
             return None
@@ -49,11 +50,14 @@ async def refresh(turn: Turn) -> str | None:
     recorded = {**who, "subject_id": turn.conversation_id}
 
     try:
-        # Its own trace in Langfuse when that's set up.
+        # Its own trace in Langfuse when that's set up; a deletion finds it by the seed.
         conversation = str(turn.conversation_id)
+        tags = [TITLE_ACTION, conversation]
+        seed = title_seed(turn.conversation_id)
 
-        with traced_run(TITLE_ACTION, [TITLE_ACTION, conversation], session_id=conversation):
-            text, usage = await write_title(prompt)
+        with traced_run(TITLE_ACTION, tags, seed, session_id=conversation):
+            with hiding(turn.user_name, *names):
+                text, usage = await write_title(prompt)
     except Exception as failure:  # noqa: BLE001 - logged by its type only
         logger.error("A conversation's title failed: %s", type(failure).__name__)
         await ai_usage.provider_refused(failure, TITLE_ACTION, **who)
