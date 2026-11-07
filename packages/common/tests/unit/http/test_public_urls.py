@@ -29,6 +29,27 @@ def test_only_https_to_the_public_internet_and_the_address_checked(
     assert public_address(url) == address
 
 
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://companies-1234.europe-west1.run.app/internal/events",
+        "https://COMPANIES-abc-ew.a.run.APP./hook",
+        "https://storage.googleapis.com/hook",
+        "https://testee.ai/api/hook",
+        "https://www.testee.ai/hook",
+    ],
+)
+def test_a_host_that_would_arrive_as_internal_traffic_is_refused_before_any_lookup(
+    monkeypatch, url
+):
+    def lookup(*args, **kwargs):
+        raise AssertionError("no lookup")
+
+    monkeypatch.setattr(socket, "getaddrinfo", lookup)
+
+    assert public_address(url) is None
+
+
 def test_a_failed_lookup_raises_so_the_request_can_be_retried(monkeypatch):
     def resolve(host, port, proto=0):
         raise socket.gaierror

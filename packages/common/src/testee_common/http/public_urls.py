@@ -5,6 +5,7 @@ from urllib.parse import urlsplit
 
 import httpx
 from testee_common.config.constants import ADDRESS_LOOKUP_SECONDS
+from testee_common.http.public_url_constants import NOT_REACHED_HOSTS
 
 
 def public_address(url: str) -> str | None:
@@ -12,11 +13,15 @@ def public_address(url: str) -> str | None:
     public internet, so a request to an address someone gave (a web hook, an AI app's metadata)
     can't reach testee's own services or the cloud's metadata server; None otherwise. The request
     connects to this very address (`pinned`), so a second lookup that answers differently (DNS
-    rebinding) can't lead it elsewhere. A lookup that fails raises socket.gaierror: it may work
+    rebinding) can't lead it elsewhere. Hosts of ours or of the cloud's that resolve to public
+    addresses but arrive as internal traffic, past the edge, are refused too. A lookup that fails raises socket.gaierror: it may work
     on a retry. Blocking: run it in a thread."""
     parts = urlsplit(url)
 
     if parts.scheme != "https" or not parts.hostname:
+        return None
+
+    if parts.hostname.lower().rstrip(".").endswith(NOT_REACHED_HOSTS):
         return None
 
     try:
