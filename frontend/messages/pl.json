@@ -272,7 +272,7 @@
     "pauseText": "Gdy jest włączone, nikt nie może rozpocząć nowej rozmowy, podejścia ćwiczeniowego ani podglądu ani zaprosić kandydata, asystent i czat pomocy przestają działać, aplikacje AI nie mogą niczego zmieniać, a pytania nie są generowane, generowane ponownie ani sprawdzane. Przypomnienia o zaproszeniach czekają na jego wyłączenie. Kandydaci, którzy są już w trakcie rozmowy, mogą ją dokończyć.",
     "pauseFailed": "Nie udało się zmienić wstrzymania. Spróbuj ponownie.",
     "maintenanceTitle": "Tryb konserwacji",
-    "maintenanceText": "Gdy jest włączony, każda strona poza stronami prawnymi i stroną wypisu pokazuje, że testee jest w trakcie konserwacji, a usługi odrzucają każde żądanie, z wyjątkiem żądań superadminów. Płatności, e-maile i zaplanowane zadania działają dalej.",
+    "maintenanceText": "Gdy jest włączony, każda strona poza stronami prawnymi i stroną wypisu pokazuje, że testee jest w trakcie konserwacji, a usługi odrzucają każde żądanie, z wyjątkiem żądań superadminów, więc nikt nie może zapłacić ani zlecić zwrotu. Płatności już dokonane nadal docierają, a e-maile i zaplanowane zadania działają dalej.",
     "maintenanceFailed": "Nie udało się zmienić trybu konserwacji. Spróbuj ponownie.",
     "maintenanceConfirmTitle": "Włączyć tryb konserwacji?",
     "maintenanceRunning": "{count, plural, =0 {Żaden kandydat nie jest teraz w trakcie rozmowy.} one {Kandydaci w trakcie rozmowy: #. Ich czas stoi, dopóki tryb konserwacji jest włączony.} few {Kandydaci w trakcie rozmowy: #. Ich czas stoi, dopóki tryb konserwacji jest włączony.} many {Kandydaci w trakcie rozmowy: #. Ich czas stoi, dopóki tryb konserwacji jest włączony.} other {Kandydaci w trakcie rozmowy: #. Ich czas stoi, dopóki tryb konserwacji jest włączony.}}",

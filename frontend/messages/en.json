@@ -272,7 +272,7 @@
     "pauseText": "While it's on, nobody can start a new interview, practice round or preview or invite a candidate, the assistant and the help chat stop, AI apps can't change anything, and no questions are generated, re-generated or checked. Invite reminders wait until it's off. Candidates already in an interview can finish it.",
     "pauseFailed": "Couldn't change the pause. Please try again.",
     "maintenanceTitle": "Maintenance mode",
-    "maintenanceText": "While it's on, every page except the legal and unsubscribe pages shows that testee is under maintenance and the services refuse every request, except from superadmins. Payments, emails and scheduled jobs keep working.",
+    "maintenanceText": "While it's on, every page except the legal and unsubscribe pages shows that testee is under maintenance and the services refuse every request, except from superadmins, so nobody can pay or refund. Payments already made still land, and emails and scheduled jobs keep working.",
     "maintenanceFailed": "Couldn't change maintenance mode. Please try again.",
     "maintenanceConfirmTitle": "Turn on maintenance mode?",
     "maintenanceRunning": "{count, plural, =0 {No candidate is in an interview right now.} one {# candidate is in an interview right now. Their time stops while maintenance mode is on.} other {# candidates are in an interview right now. Their time stops while maintenance mode is on.}}",

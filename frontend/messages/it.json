@@ -272,7 +272,7 @@
     "pauseText": "Finché è attiva, nessuno può iniziare un nuovo colloquio, una simulazione o un'anteprima, né invitare candidati, l'assistente e la chat di aiuto si fermano, le app IA non possono cambiare nulla e nessuna domanda viene generata, rigenerata o verificata. I promemoria degli inviti aspettano che venga disattivata. I candidati già in un colloquio possono completarlo.",
     "pauseFailed": "Impossibile modificare la pausa. Riprova.",
     "maintenanceTitle": "Modalità manutenzione",
-    "maintenanceText": "Finché è attiva, ogni pagina tranne quelle legali e quella di disiscrizione mostra che testee è in manutenzione e i servizi rifiutano ogni richiesta, tranne quelle dei superadmin. Pagamenti, email e attività pianificate continuano a funzionare.",
+    "maintenanceText": "Finché è attiva, ogni pagina tranne quelle legali e quella di disiscrizione mostra che testee è in manutenzione e i servizi rifiutano ogni richiesta, tranne quelle dei superadmin, quindi nessuno può pagare o rimborsare. I pagamenti già effettuati arrivano comunque, e email e attività pianificate continuano a funzionare.",
     "maintenanceFailed": "Impossibile cambiare la modalità manutenzione. Riprova.",
     "maintenanceConfirmTitle": "Attivare la modalità manutenzione?",
     "maintenanceRunning": "{count, plural, =0 {Nessun candidato è in un colloquio ora.} one {Candidati in un colloquio ora: #. Il loro tempo si ferma finché la modalità manutenzione è attiva.} other {Candidati in un colloquio ora: #. Il loro tempo si ferma finché la modalità manutenzione è attiva.}}",

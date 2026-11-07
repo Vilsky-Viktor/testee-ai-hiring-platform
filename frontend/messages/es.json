@@ -272,7 +272,7 @@
     "pauseText": "Mientras está activa, nadie puede empezar una entrevista nueva, una ronda de práctica ni una vista previa, ni invitar a candidatos; el asistente y el chat de ayuda se detienen, las apps de IA no pueden cambiar nada y no se generan, regeneran ni revisan preguntas. Los recordatorios de invitación esperan hasta que se desactive. Los candidatos que ya están en una entrevista pueden terminarla.",
     "pauseFailed": "No se pudo cambiar la pausa. Inténtalo de nuevo.",
     "maintenanceTitle": "Modo de mantenimiento",
-    "maintenanceText": "Mientras está activado, cada página, salvo las legales y la de baja de correos, muestra que testee está en mantenimiento y los servicios rechazan todas las solicitudes, salvo las de los superadministradores. Los pagos, los correos y las tareas programadas siguen funcionando.",
+    "maintenanceText": "Mientras está activado, cada página, salvo las legales y la de baja de correos, muestra que testee está en mantenimiento y los servicios rechazan todas las solicitudes, salvo las de los superadministradores, así que nadie puede pagar ni reembolsar. Los pagos ya realizados siguen llegando, y los correos y las tareas programadas siguen funcionando.",
     "maintenanceFailed": "No se pudo cambiar el modo de mantenimiento. Inténtalo de nuevo.",
     "maintenanceConfirmTitle": "¿Activar el modo de mantenimiento?",
     "maintenanceRunning": "{count, plural, =0 {Ningún candidato está en una entrevista ahora.} one {Candidatos en una entrevista ahora: #. Su tiempo se detiene mientras el modo de mantenimiento esté activo.} other {Candidatos en una entrevista ahora: #. Su tiempo se detiene mientras el modo de mantenimiento esté activo.}}",

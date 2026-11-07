@@ -272,7 +272,7 @@
     "pauseText": "Khi bật, không ai có thể bắt đầu buổi phỏng vấn, vòng luyện tập hay bản xem trước mới hoặc mời ứng viên, trợ lý và chat hỗ trợ dừng lại, ứng dụng AI không thể thay đổi gì, và không câu hỏi nào được tạo, tạo lại hay kiểm tra. Lời nhắc lời mời chờ đến khi tắt. Ứng viên đang làm phỏng vấn vẫn có thể hoàn thành.",
     "pauseFailed": "Không thể thay đổi trạng thái tạm dừng. Vui lòng thử lại.",
     "maintenanceTitle": "Chế độ bảo trì",
-    "maintenanceText": "Khi bật, mọi trang, trừ các trang pháp lý và trang hủy đăng ký, đều hiển thị rằng testee đang được bảo trì và các dịch vụ từ chối mọi yêu cầu, trừ của quản trị viên cấp cao. Thanh toán, email và tác vụ theo lịch vẫn hoạt động.",
+    "maintenanceText": "Khi bật, mọi trang, trừ các trang pháp lý và trang hủy đăng ký, đều hiển thị rằng testee đang được bảo trì và các dịch vụ từ chối mọi yêu cầu, trừ của quản trị viên cấp cao, nên không ai có thể thanh toán hay hoàn tiền. Các khoản đã thanh toán vẫn được ghi nhận, còn email và tác vụ theo lịch vẫn hoạt động.",
     "maintenanceFailed": "Không thể thay đổi chế độ bảo trì. Hãy thử lại.",
     "maintenanceConfirmTitle": "Bật chế độ bảo trì?",
     "maintenanceRunning": "{count, plural, =0 {Hiện không có ứng viên nào đang làm phỏng vấn.} other {Hiện có # ứng viên đang làm phỏng vấn. Thời gian làm bài của họ dừng lại khi chế độ bảo trì đang bật.}}",

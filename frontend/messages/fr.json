@@ -272,7 +272,7 @@
     "pauseText": "Tant qu'elle est activée, personne ne peut commencer un nouvel entretien, une session d'entraînement ou un aperçu, ni inviter un candidat, l'assistant et le chat d'aide s'arrêtent, les apps IA ne peuvent rien modifier, et aucune question n'est générée, régénérée ou vérifiée. Les rappels d'invitation attendent sa désactivation. Les candidats déjà en entretien peuvent le terminer.",
     "pauseFailed": "Impossible de modifier la pause. Veuillez réessayer.",
     "maintenanceTitle": "Mode maintenance",
-    "maintenanceText": "Tant qu'il est activé, chaque page, sauf les pages juridiques et celle de désabonnement, indique que testee est en maintenance et les services refusent toute requête, sauf celles des superadmins. Les paiements, les e-mails et les tâches planifiées continuent de fonctionner.",
+    "maintenanceText": "Tant qu'il est activé, chaque page, sauf les pages juridiques et celle de désabonnement, indique que testee est en maintenance et les services refusent toute requête, sauf celles des superadmins, si bien que personne ne peut payer ni rembourser. Les paiements déjà effectués arrivent quand même, et les e-mails et les tâches planifiées continuent de fonctionner.",
     "maintenanceFailed": "Impossible de changer le mode maintenance. Réessayez.",
     "maintenanceConfirmTitle": "Activer le mode maintenance ?",
     "maintenanceRunning": "{count, plural, =0 {Aucun candidat n'est en entretien en ce moment.} one {# candidat est en entretien en ce moment. Son temps s'arrête tant que le mode maintenance est activé.} other {# candidats sont en entretien en ce moment. Leur temps s'arrête tant que le mode maintenance est activé.}}",

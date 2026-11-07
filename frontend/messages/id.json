@@ -272,7 +272,7 @@
     "pauseText": "Selama aktif, tidak ada yang bisa memulai wawancara, sesi latihan, atau pratinjau baru, atau mengundang kandidat, asisten dan chat bantuan berhenti, aplikasi AI tidak bisa mengubah apa pun, dan tidak ada soal yang dibuat, dibuat ulang, atau diperiksa. Pengingat undangan menunggu sampai dimatikan. Kandidat yang sudah dalam wawancara bisa menyelesaikannya.",
     "pauseFailed": "Tidak dapat mengubah jeda. Coba lagi.",
     "maintenanceTitle": "Mode pemeliharaan",
-    "maintenanceText": "Selama aktif, setiap halaman kecuali halaman hukum dan halaman berhenti berlangganan menampilkan bahwa testee sedang dalam pemeliharaan dan layanan menolak setiap permintaan, kecuali dari superadmin. Pembayaran, email, dan tugas terjadwal tetap berjalan.",
+    "maintenanceText": "Selama aktif, setiap halaman kecuali halaman hukum dan halaman berhenti berlangganan menampilkan bahwa testee sedang dalam pemeliharaan dan layanan menolak setiap permintaan, kecuali dari superadmin, sehingga tidak ada yang bisa membayar atau mengembalikan dana. Pembayaran yang sudah dilakukan tetap masuk, dan email serta tugas terjadwal tetap berjalan.",
     "maintenanceFailed": "Tidak dapat mengubah mode pemeliharaan. Coba lagi.",
     "maintenanceConfirmTitle": "Aktifkan mode pemeliharaan?",
     "maintenanceRunning": "{count, plural, =0 {Tidak ada kandidat yang sedang wawancara sekarang.} other {Kandidat yang sedang wawancara sekarang: #. Waktu mereka berhenti selama mode pemeliharaan aktif.}}",

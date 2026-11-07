@@ -272,7 +272,7 @@
     "pauseText": "Enquanto está ativa, ninguém pode começar uma nova entrevista, rodada de prática ou prévia, nem convidar candidatos, o assistente e o chat de ajuda param, os apps de IA não podem alterar nada e nenhuma questão é gerada, gerada novamente ou verificada. Os lembretes de convite esperam até ela ser desativada. Candidatos que já estão em uma entrevista podem terminá-la.",
     "pauseFailed": "Não foi possível alterar a pausa. Tente novamente.",
     "maintenanceTitle": "Modo de manutenção",
-    "maintenanceText": "Enquanto estiver ativado, todas as páginas, exceto as legais e a de cancelamento de inscrição, mostram que a testee está em manutenção e os serviços recusam todos os pedidos, exceto os de superadmins. Pagamentos, e-mails e tarefas agendadas continuam funcionando.",
+    "maintenanceText": "Enquanto estiver ativado, todas as páginas, exceto as legais e a de cancelamento de inscrição, mostram que a testee está em manutenção e os serviços recusam todos os pedidos, exceto os de superadmins, então ninguém consegue pagar nem reembolsar. Os pagamentos já feitos continuam chegando, e e-mails e tarefas agendadas continuam funcionando.",
     "maintenanceFailed": "Não foi possível alterar o modo de manutenção. Tente novamente.",
     "maintenanceConfirmTitle": "Ativar o modo de manutenção?",
     "maintenanceRunning": "{count, plural, =0 {Nenhum candidato está em uma entrevista agora.} one {# candidato está em uma entrevista agora. Seu tempo para enquanto o modo de manutenção estiver ativo.} other {# candidatos estão em uma entrevista agora. O tempo deles para enquanto o modo de manutenção estiver ativo.}}",

@@ -272,7 +272,7 @@
     "pauseText": "Açıkken kimse yeni bir mülakat, pratik denemesi veya önizleme başlatamaz ya da aday davet edemez; asistan ve yardım sohbeti durur, yapay zekâ uygulamaları hiçbir şeyi değiştiremez, hiçbir soru oluşturulmaz, yeniden oluşturulmaz veya kontrol edilmez. Davet hatırlatmaları kapatılana kadar bekler. Hâlihazırda mülakatta olan adaylar onu bitirebilir.",
     "pauseFailed": "Duraklatma değiştirilemedi. Lütfen tekrar deneyin.",
     "maintenanceTitle": "Bakım modu",
-    "maintenanceText": "Açıkken hukuki sayfalar ve abonelikten çıkma sayfası dışındaki her sayfa testee'nin bakımda olduğunu gösterir ve hizmetler süper yöneticiler dışındaki tüm istekleri reddeder. Ödemeler, e-postalar ve zamanlanmış işler çalışmaya devam eder.",
+    "maintenanceText": "Açıkken hukuki sayfalar ve abonelikten çıkma sayfası dışındaki her sayfa testee'nin bakımda olduğunu gösterir ve hizmetler süper yöneticiler dışındaki tüm istekleri reddeder, bu yüzden kimse ödeme veya iade yapamaz. Daha önce yapılmış ödemeler yine de ulaşır; e-postalar ve zamanlanmış işler çalışmaya devam eder.",
     "maintenanceFailed": "Bakım modu değiştirilemedi. Tekrar deneyin.",
     "maintenanceConfirmTitle": "Bakım modu açılsın mı?",
     "maintenanceRunning": "{count, plural, =0 {Şu anda mülakatta aday yok.} one {Şu anda mülakattaki adaylar: #. Bakım modu açık kaldıkça süreleri durur.} other {Şu anda mülakattaki adaylar: #. Bakım modu açık kaldıkça süreleri durur.}}",

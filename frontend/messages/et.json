@@ -272,7 +272,7 @@
     "pauseText": "Kui see on sees, ei saa keegi alustada uut intervjuud, harjutusvooru ega eelvaadet ega kandidaate kutsuda, assistent ja abivestlus seisavad, AI-rakendused ei saa midagi muuta ning küsimusi ei looda, looda uuesti ega kontrollita. Kutsete meeldetuletused ootavad, kuni see on väljas. Kandidaadid, kes on juba intervjuus, saavad selle lõpetada.",
     "pauseFailed": "Pausi ei õnnestunud muuta. Proovi uuesti.",
     "maintenanceTitle": "Hooldusrežiim",
-    "maintenanceText": "Kui see on sees, näitab iga leht peale juriidiliste lehtede ja tellimusest loobumise lehe, et testee on hoolduses, ja teenused keelduvad igast päringust, välja arvatud superadminidelt. Maksed, e-kirjad ja ajastatud tööd toimivad edasi.",
+    "maintenanceText": "Kui see on sees, näitab iga leht peale juriidiliste lehtede ja tellimusest loobumise lehe, et testee on hoolduses, ja teenused keelduvad igast päringust, välja arvatud superadminidelt, nii et keegi ei saa maksta ega tagastada. Juba tehtud maksed jõuavad ikka kohale ning e-kirjad ja ajastatud tööd toimivad edasi.",
     "maintenanceFailed": "Hooldusrežiimi ei õnnestunud muuta. Proovi uuesti.",
     "maintenanceConfirmTitle": "Kas lülitada hooldusrežiim sisse?",
     "maintenanceRunning": "{count, plural, =0 {Praegu ei ole ükski kandidaat intervjuul.} one {Kandidaate praegu intervjuul: #. Nende aeg seisab, kuni hooldusrežiim on sees.} other {Kandidaate praegu intervjuul: #. Nende aeg seisab, kuni hooldusrežiim on sees.}}",
