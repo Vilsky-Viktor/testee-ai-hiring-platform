@@ -49,9 +49,9 @@ that applies to you, stay yours.
 
 - **Declared accuracy:** a correct answer key for **at least 98% of questions**, single-answer and
   "select all that apply" alike (for the latter, every option correctly marked right or wrong).
-  Measured in testee's offline evaluations, checked by an AI judge: 99% for single-answer
-  questions (240 questions in 8 fields, 2026-10-04; 98% had exactly one defensible answer) and
-  98.5% for "select all that apply" questions (268 of them on 48 subtopics, 2026-10-17). The key
+  Measured in testee's offline evaluations, checked by an AI judge: 98.6% for single-answer and
+  100% for "select all that apply" questions on 53 subtopics (2026-10-22), and 98.5% on the larger
+  "select all that apply" set (268 questions on 48 subtopics, 2026-10-17). The key
   checker caught 60 of 60 single-answer and 263 of 263 "select all that apply" wrong keys planted
   on purpose. Every new "select all that apply" question is also answered again blind, and dropped
   if that answer differs from its key or it leaves a deciding condition unstated. A change of
