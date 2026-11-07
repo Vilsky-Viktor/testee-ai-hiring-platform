@@ -689,9 +689,9 @@ export interface paths {
     put?: never
     /**
      * Daily Housekeeping
-     * @description Daily, from Cloud Scheduler: sends flags the verifier hasn't acted on to it again, takes
-     *     out of the shared bank what a flag, report or opt-out raced, and forgets old notes of
-     *     processed events.
+     * @description Daily, from Cloud Scheduler: empties reports' comments past their limit, sends flags the
+     *     verifier hasn't acted on to it again, takes out of the shared bank what a flag, report or
+     *     opt-out raced, and forgets old notes of processed events.
      */
     post: operations["daily_housekeeping_internal_schedules_bank_post"]
     delete?: never

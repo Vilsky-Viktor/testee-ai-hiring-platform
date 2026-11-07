@@ -2354,7 +2354,7 @@
      "schedules"
     ],
     "summary": "Daily Housekeeping",
-    "description": "Daily, from Cloud Scheduler: sends flags the verifier hasn't acted on to it again, takes\nout of the shared bank what a flag, report or opt-out raced, and forgets old notes of\nprocessed events.",
+    "description": "Daily, from Cloud Scheduler: empties reports' comments past their limit, sends flags the\nverifier hasn't acted on to it again, takes out of the shared bank what a flag, report or\nopt-out raced, and forgets old notes of processed events.",
     "operationId": "daily_housekeeping_internal_schedules_bank_post",
     "responses": {
      "204": {
