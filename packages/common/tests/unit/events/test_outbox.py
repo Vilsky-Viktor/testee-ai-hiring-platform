@@ -6,8 +6,10 @@ from types import SimpleNamespace
 
 import httpx
 import pytest
+from sqlalchemy.orm import DeclarativeBase
 from testee_common.config.event_constants import OUTBOX_BATCH, OUTBOX_MAX_ATTEMPTS
 from testee_common.events import outbox, pubsub
+from testee_common.events.event_models import OutboxColumns
 
 
 def row(name, attempts=0):
@@ -139,6 +141,41 @@ def batches(monkeypatch):
     run.calls = calls
 
     return run
+
+
+def test_pubsub_is_waited_for_with_no_lock_or_connection_held(monkeypatch):
+    steps = []
+    row = SimpleNamespace(published_at=None)
+
+    class Session:
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *_):
+            return None
+
+        async def scalars(self, query):
+            steps.append("read")
+
+            return [row]
+
+        async def commit(self):
+            steps.append("released" if row.published_at is None else "saved")
+
+    async def send(rows, timeout):
+        steps.append("publish")
+        rows[0].published_at = "now"
+
+    class Base(DeclarativeBase):
+        pass
+
+    class Row(OutboxColumns, Base):
+        __tablename__ = "outbox"
+
+    monkeypatch.setattr(outbox, "send", send)
+
+    assert asyncio.run(outbox.flush_batch(Session, Row, None, 1)) == (1, 1)
+    assert steps == ["read", "released", "publish", "saved"]
 
 
 def test_the_scheduled_flush_sends_batches_until_none_wait(batches):

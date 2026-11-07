@@ -98,9 +98,11 @@ async def flush_batch(
     sessionmaker, model, ids: list[uuid.UUID] | None, timeout: float
 ) -> tuple[int, int]:
     """Publishes one batch of waiting events, oldest first (with `ids`, only those), and returns
-    how many it published and how many it took. Two runs never take the same row (SKIP LOCKED),
-    and a row is locked only for its batch's one call. Parked rows are left out. A failure keeps
-    the rest for the next run."""
+    how many it published and how many it took. Parked rows are left out. A failure keeps the
+    rest for the next run. No connection or lock is held while Pub/Sub answers, or a slow Pub/Sub
+    would fill the pool: the rows are read (two runs at once skip each other's), released, and
+    saved again after; a run that reads them meanwhile sends them twice, which every consumer
+    takes (its event id)."""
     query = (
         select(model)
         .where(model.published_at.is_(None), model.attempts < OUTBOX_MAX_ATTEMPTS)
@@ -114,6 +116,7 @@ async def flush_batch(
 
     async with sessionmaker() as session:
         rows = list(await session.scalars(query))
+        await session.commit()
 
         try:
             if rows:
