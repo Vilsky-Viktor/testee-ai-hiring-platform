@@ -9,8 +9,9 @@ from generation.repositories import key_checks
 from generation.schemas.questions import AnswerItem, AnswerList
 from generation.schemas.regenerate import RegeneratedOption
 from generation.schemas.verify import KeyCheck, QuestionQuality
+from generation.services import batch_steps
 from generation.services.verify import check_key, verify
-from tests.unit.batch_fakes import run_batches
+from tests.unit.batch_fakes import key_checked, run_batches
 from tests.unit.services.test_verify import QUESTION_ID, context, question, record
 
 TEXT = "A shop sells goods for cash. Which entries are recorded?"
@@ -108,11 +109,15 @@ def test_new_options_for_a_multi_answer_question_keep_its_kind(monkeypatch):
         ]
     )
 
-    asyncio.run(verify(QUESTION_ID, QualityFlag.WEAK_OPTIONS))
-    batches = run_batches(monkeypatch, lambda body: answers.model_dump_json())
+    monkeypatch.setattr(batch_steps, "key_held", lambda *_: True)
 
-    assert calls[0][:2] == ("replace", TEXT)
-    assert sorted(calls[0][2]) == [False, False, True, True]
+    asyncio.run(verify(QUESTION_ID, QualityFlag.WEAK_OPTIONS))
+    batches = run_batches(monkeypatch, key_checked(lambda body: answers.model_dump_json()))
     [sent] = batches.sent.values()
     [body] = sent.values()
     assert MULTI_ANSWER_KIND in body["messages"][0]["content"]
+
+    run_batches(monkeypatch, key_checked(lambda body: None))
+
+    assert calls[0][:2] == ("replace", TEXT)
+    assert sorted(calls[0][2]) == [False, False, True, True]

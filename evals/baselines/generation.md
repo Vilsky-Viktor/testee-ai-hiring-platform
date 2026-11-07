@@ -125,3 +125,33 @@ with:
 Nothing moved beyond the noise, and the mistake never showed without the rule: it doesn't ship,
 as the gate says. $1.48, 538 s. No rule is in use (`QUALITY_RULES` is empty), so the prompts
 read exactly as before.
+
+## A replacement's key is checked as a new question's is (2026-11-07, kept)
+
+A question written to replace another was saved on the writer's word alone: only its `ambiguous`
+flag stood between a wrong key and a company's test, and through it every unchanged copy. Now
+`key_holds` (`services/key_self_check.py`) checks it first on the verifier's model, the self-check
+for a multi-answer question and the blind confirmation for a single-answer one, directly and as a
+batch's last step (`check`); one that doesn't hold, or can't be checked, is written again.
+`regenerate_test.py`, the fixed 40 of `multi_questions.json`, judged by `gpt-6.1-sol` high:
+
+| Path | Written | Keys | Distractors | Clarity | Relevance | Price, time |
+|---|---|---|---|---|---|---|
+| Direct, before | 40 | 100% (91.2–100) | 3.42 ± 0.25 | 5.00 | 4.47 ± 0.23 | $0.347, 90 s |
+| Direct, with the check (kept) | 40; 43 keys checked, 3 dropped | 100% (91.2–100) | 3.33 ± 0.24 | 4.97 ± 0.05 | 4.50 ± 0.23 | $0.371, 118 s |
+| `--mode rewrite`, before (2026-10-22) | 40 | 100% (91.2–100) | 3.27 ± 0.27 | 4.97 | 4.53 ± 0.21 | $0.33 at once |
+| `--mode rewrite`, with the check | 40 | 100% (91.2–100); one defensible answer 97.5% | 3.27 ± 0.24 | 4.95 ± 0.10 | 4.38 ± 0.26 | $0.354 at once |
+| `--mode new-options`, before (2026-10-22) | 40 | 100% (91.2–100) | 2.85 ± 0.30 | 5.00 | 4.08 ± 0.28 | not recorded |
+| `--mode new-options`, with the check | 40 | 100% (91.2–100) | 3.08 ± 0.31 | 5.00 | 4.10 ± 0.28 | $0.172 at once |
+
+The batch modes' "before" are the 2026-10-22 runs: the code they ran is gone, so they weren't run
+again. The blind confirmation on planted keys, `verify_test.py --confirm`: 60 of 60, $0.0009 a check.
+
+Nothing moved beyond the noise, and keys can't: they were at 100% on these 40 before, so this
+sample can't show the check catching anything (they were 95–100% in earlier runs, below the 98%
+target twice). What's measured is the price of the check: $0.0006 a question, 7% on the direct
+path and half that in a batch, at most `REGENERATE_ATTEMPTS` rewrites, none lost. The 3 dropped keys
+weren't kept, so whether they were wrong is not known. Kept as asked for: a wrong key here reaches
+every copy of the question, and what it costs is small. `BATCH_WORK_ATTEMPTS` went from 6 to 9 for
+the third step, so a rewrite keeps its three tries.
+

@@ -25,7 +25,7 @@ from generation.integrations.usage import ai_run
 from generation.prompts.bank_filter import BANK_FILTER_INPUT, BANK_FILTER_SYSTEM
 from generation.schemas.bank_filter import BankCandidate, BankCheck, BankVerdict
 from generation.schemas.regenerate import RegeneratedOption
-from generation.services.verify import blind_key
+from generation.services.key_blind import blind_key
 
 logger = logging.getLogger(__name__)
 

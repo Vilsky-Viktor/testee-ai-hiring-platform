@@ -87,6 +87,19 @@ def fake_embeddings(monkeypatch):
     monkeypatch.setattr(llm, "get_embeddings", FakeEmbeddings)
 
 
+@pytest.fixture(autouse=True)
+def keys_hold(monkeypatch):
+    """Every key holds, unless a test says which texts' don't."""
+    wrong = set()
+
+    async def key_holds(text, options, topic, level):
+        return text not in wrong
+
+    monkeypatch.setattr(regenerate_module, "key_holds", key_holds)
+
+    return wrong
+
+
 class FakeLLM:
     def __init__(self, questions):
         self.questions = questions

@@ -61,8 +61,11 @@ class FakeVerifier:
         self.open_condition = open_condition
         self.error = error
         self.prompts = []
+        self.schemas = []
 
     def with_structured_output(self, schema):
+        self.schemas.append(schema)
+
         return self
 
     async def ainvoke(self, messages):

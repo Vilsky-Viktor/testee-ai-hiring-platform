@@ -7,9 +7,10 @@ from generation.repositories import key_checks
 from generation.schemas.questions import AnswerItem, AnswerList
 from generation.schemas.regenerate import QuestionContext, RegeneratedOption
 from generation.schemas.verify import KeyCheck, QuestionQuality, ReportNote
+from generation.services import batch_steps
 from generation.services import verify as verify_service
 from generation.services.verify import check_key, verify
-from tests.unit.batch_fakes import run_batches
+from tests.unit.batch_fakes import key_checked, run_batches
 
 QUESTION_ID = uuid.uuid4()
 TEXT = "A customer pays cash. Which entry is recorded?"
@@ -197,8 +198,10 @@ def test_weak_options_are_written_again_for_the_same_question_in_a_batch(monkeyp
         ]
     )
 
+    monkeypatch.setattr(batch_steps, "key_held", lambda *_: True)
+
     asyncio.run(verify(QUESTION_ID, QualityFlag.WEAK_OPTIONS))
-    run_batches(monkeypatch, lambda body: answers.model_dump_json())
+    run_batches(monkeypatch, key_checked(lambda body: answers.model_dump_json()), rounds=2)
 
     assert len(calls) == 1
     assert calls[0][:2] == ("replace", TEXT)

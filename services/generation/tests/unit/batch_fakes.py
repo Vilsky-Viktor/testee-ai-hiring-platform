@@ -7,6 +7,7 @@ from types import SimpleNamespace
 
 from generation.integrations import openai_batch
 from generation.repositories import batch_work as storage
+from generation.schemas.verify import KeyCheck, SelfCheck
 
 
 class FakeStore:
@@ -99,6 +100,24 @@ class FakeBatches:
         used = [(key, "gpt-6.1-sol", {"input_tokens": 100, "output_tokens": 10}) for key in replies]
 
         return replies, used
+
+
+def key_checked(answer):
+    """OpenAI answering `answer(body)`, and a replacement's key check with a reply of its own; the
+    tests stub what it leads to (batch_steps.key_held), or a body with no key check in it."""
+
+    def replying(body):
+        name = body["response_format"]["json_schema"]["name"]
+
+        if name == "KeyCheck":
+            return KeyCheck(correct_indexes=[0]).model_dump_json()
+
+        if name == "SelfCheck":
+            return SelfCheck(correct_indexes=[0, 1], open_condition=None).model_dump_json()
+
+        return answer(body)
+
+    return replying
 
 
 def run_batches(monkeypatch, answer, rounds: int = 1) -> FakeBatches:

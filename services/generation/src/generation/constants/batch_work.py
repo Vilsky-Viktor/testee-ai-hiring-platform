@@ -13,16 +13,18 @@ class BatchKind(StrEnum):
 
 
 class BatchStep(StrEnum):
-    """The call a piece of batch work waits on: a translation, a new question, its options."""
+    """The call a piece of batch work waits on: a translation, a new question, its options, the
+    check of their key."""
 
     TRANSLATE = "translate"
     QUESTION = "question"
     OPTIONS = "options"
+    CHECK = "check"
 
 
 # Pieces of work sent in one batch; the rest go in the next run's.
 MAX_BATCH_WORK = 500
 # Replies one piece may get before it's given up (a question that keeps coming out unusable,
-# a translation that keeps running past its limits). A rewrite's question and options count
-# together, as the direct rewrite tries each REGENERATE_ATTEMPTS times.
-BATCH_WORK_ATTEMPTS = 6
+# a translation that keeps running past its limits). A rewrite's question, options and key check
+# count together, as the direct rewrite tries each REGENERATE_ATTEMPTS times.
+BATCH_WORK_ATTEMPTS = 9

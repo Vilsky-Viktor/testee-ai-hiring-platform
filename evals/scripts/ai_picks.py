@@ -77,7 +77,7 @@ async def ask(llm, item: dict, seed: str, verify: bool = False) -> dict:
     none or an option that isn't there."""
     from generation.helpers.prompts import checker_messages
     from generation.schemas.regenerate import RegeneratedOption
-    from generation.services.verify import confirm_prompt
+    from generation.services.key_blind import confirm_prompt
 
     count = len(item["options"])
     order = random.Random(seed).sample(range(count), count)

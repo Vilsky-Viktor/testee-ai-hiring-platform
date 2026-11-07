@@ -12,8 +12,8 @@ from generation.integrations.redis import get_redis
 from generation.prompts.checker import MULTI_ANSWER_KEY
 from generation.prompts.self_check import SELF_CHECK_PROMPT
 from generation.schemas.regenerate import RegeneratedOption
-from generation.schemas.verify import SelfCheck
-from generation.services.verify import checked_key
+from generation.schemas.verify import KeyCheck, SelfCheck
+from generation.services.key_blind import checked_key, confirm_prompt
 
 logger = logging.getLogger(__name__)
 
@@ -21,6 +21,16 @@ logger = logging.getLogger(__name__)
 WRONG_KEY = "key"
 OPEN_CONDITION = "condition"
 NOT_CHECKED = "not checked"
+
+
+def self_check_prompt(text: str, options: list, topic: str, level: str, order: list[int]) -> str:
+    return SELF_CHECK_PROMPT.format(
+        kind=MULTI_ANSWER_KEY,
+        level=level,
+        topic=topic,
+        question=text,
+        options="\n".join(f"{number}. {options[i].answer}" for number, i in enumerate(order)),
+    )
 
 
 async def self_check(question: dict, topic: str, level: str) -> str | None:
@@ -33,13 +43,7 @@ async def self_check(question: dict, topic: str, level: str) -> str | None:
 
     options = [RegeneratedOption.model_validate(option) for option in question["options"]]
     order = random.sample(range(len(options)), len(options))
-    prompt = SELF_CHECK_PROMPT.format(
-        kind=MULTI_ANSWER_KEY,
-        level=level,
-        topic=topic,
-        question=question["text"],
-        options="\n".join(f"{number}. {options[i].answer}" for number, i in enumerate(order)),
-    )
+    prompt = self_check_prompt(question["text"], options, topic, level, order)
 
     try:
         result: SelfCheck = (
@@ -58,6 +62,46 @@ async def self_check(question: dict, topic: str, level: str) -> str | None:
     marked = {index for index, option in enumerate(options) if option.correct}
 
     return None if checked_key(options, result, order) == marked else WRONG_KEY
+
+
+def key_gate(
+    text: str, options: list, topic: str, level: str, order: list[int]
+) -> tuple[str, type[KeyCheck]]:
+    """The check of a replacement's key, the one a new question of its kind gets: its prompt and
+    what the reply is. A multi-answer question gets the self-check, a single-answer one the blind
+    confirmation; nothing marked, options in `order`."""
+    if is_multi(options):
+        return self_check_prompt(text, options, topic, level, order), SelfCheck
+
+    return confirm_prompt(text, options, level, topic, order), KeyCheck
+
+
+def key_held(result: KeyCheck, options: list, order: list[int]) -> bool:
+    """Whether a check's reply names the marked options and leaves no condition open."""
+    if isinstance(result, SelfCheck) and result.open_condition:
+        return False
+
+    marked = {index for index, option in enumerate(options) if option.correct}
+
+    return checked_key(options, result, order) == marked
+
+
+async def key_holds(text: str, written: list[dict], topic: str, level: str) -> bool:
+    """Whether a replacement's key stands up to key_gate; one that couldn't be checked doesn't."""
+    options = [RegeneratedOption.model_validate(option) for option in written]
+    order = random.sample(range(len(options)), len(options))
+    prompt, schema = key_gate(text, options, topic, level, order)
+
+    try:
+        result = await (
+            llm.get_verifier_llm().with_structured_output(schema).ainvoke(checker_messages(prompt))
+        )
+    except Exception:
+        logger.warning("Couldn't check a replacement's key; it's dropped", exc_info=True)
+
+        return False
+
+    return key_held(result, options, order)
 
 
 async def keys_that_hold(questions: list[dict], topic: str, level: str) -> list[dict]:

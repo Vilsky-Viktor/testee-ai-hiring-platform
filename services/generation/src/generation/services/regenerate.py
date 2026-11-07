@@ -23,6 +23,7 @@ from generation.schemas.questions import NewQuestion
 from generation.schemas.regenerate import QuestionContext, RegeneratedOut, RegeneratedQuestion
 from generation.services.answers import generate_answers
 from generation.services.dedupe import distinct_by_meaning
+from generation.services.key_self_check import key_holds
 
 logger = logging.getLogger(__name__)
 
@@ -99,8 +100,8 @@ async def new_question(context: QuestionContext, reasons: list[str]) -> str | No
 
 
 async def write(context: QuestionContext, reasons: list[str]) -> tuple[str, list] | None:
-    """A new question of the same kind as the one it replaces (context.multi), with its options,
-    or None when no unambiguous one came out."""
+    """A new question of the same kind as the one it replaces (context.multi), with its options
+    and a key that held up to the check a new question gets, or None when none came out."""
     for _ in range(REGENERATE_ATTEMPTS):
         text = await new_question(context, reasons)
 
@@ -120,10 +121,11 @@ async def write(context: QuestionContext, reasons: list[str]) -> tuple[str, list
         )
         options = result["answer_pool"][0]["options"][0]
 
-        if options:
+        if options and await key_holds(text, options, context.topic, context.level):
             return text, options
 
-        # No options means the question was ambiguous; never offer it again.
+        # No options means the question was ambiguous, and a key that doesn't hold, wrong or
+        # arguable: never offer it again.
         context = context.model_copy(update={"existing": [*context.existing, text]})
 
     return None

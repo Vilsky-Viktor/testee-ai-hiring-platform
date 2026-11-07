@@ -1,17 +1,20 @@
 """Flagged questions rewritten, or given new options, through OpenAI's Batch API
 (services/verify.py, batch_work.py, batch_steps.py): the new question first, then its options,
 each checked as the direct calls check them, and saved only while the question is still the one
-flagged. OpenAI, the library and storage are fakes."""
+flagged, and with a key that held up to the check a new question gets. OpenAI, the library and
+storage are fakes."""
 
 import asyncio
 
 import pytest
 
 from generation.constants.batch_work import BATCH_WORK_ATTEMPTS, BatchKind, BatchStep
+from generation.config import settings
 from generation.constants.quality import QualityFlag
 from generation.integrations import library
 from generation.schemas.questions import AnswerItem, AnswerList, NewQuestion
-from generation.services import regenerate
+from generation.schemas.verify import KeyCheck
+from generation.services import batch_steps, regenerate
 from generation.services.verify import verify
 from tests.unit.batch_fakes import run_batches
 from tests.unit.services.test_verify import QUESTION_ID, TEXT, context, question
@@ -57,6 +60,18 @@ def flagged(monkeypatch):
     return state
 
 
+@pytest.fixture(autouse=True)
+def key_holds(monkeypatch):
+    """Keys hold, until a test empties this."""
+    holds = [True]
+    monkeypatch.setattr(batch_steps, "key_held", lambda *_: holds[0])
+
+    return holds
+
+
+CHECKED = KeyCheck(correct_indexes=[0])
+
+
 def answering(*replies):
     """OpenAI answering each request with the next reply, by the schema it asks for."""
     queue = list(replies)
@@ -83,9 +98,45 @@ def test_a_rewrite_writes_a_question_then_its_options_and_saves_them(
 
     run_batches(monkeypatch, answering(written(NEW), OPTIONS), rounds=2)
 
+    # Written, but saved only once its key held.
+    [row] = batch_store.rows.values()
+    assert flagged["saved"] == []
+    assert row.step == BatchStep.CHECK
+    assert row.body["model"] == settings.verify_model
+    prompt = str(row.body["messages"])
+    assert NEW in prompt
+    assert "correct" not in prompt.split("<options>")[-1]
+
+    run_batches(monkeypatch, answering(CHECKED), rounds=1)
+
     [(saved_id, text, correct)] = flagged["saved"]
     assert (saved_id, text, sorted(correct)) == (QUESTION_ID, NEW, [False, False, False, True])
     assert batch_store.rows == {}
+
+
+def test_a_key_that_doesnt_hold_is_rewritten_and_never_offered_again(
+    monkeypatch, flagged, batch_store, key_holds
+):
+    key_holds[0] = False
+    asyncio.run(verify(QUESTION_ID, QualityFlag.REWRITE))
+
+    run_batches(monkeypatch, answering(written(NEW), OPTIONS, CHECKED), rounds=3)
+
+    [row] = batch_store.rows.values()
+    assert flagged["saved"] == []
+    assert row.step == BatchStep.QUESTION
+    assert NEW in row.payload["existing"]
+
+
+def test_an_unusable_key_check_is_asked_again(monkeypatch, flagged, batch_store):
+    asyncio.run(verify(QUESTION_ID, QualityFlag.REWRITE))
+    run_batches(monkeypatch, answering(written(NEW), OPTIONS), rounds=2)
+
+    run_batches(monkeypatch, lambda body: "not json", rounds=1)
+
+    [row] = batch_store.rows.values()
+    assert row.step == BatchStep.CHECK
+    assert flagged["saved"] == []
 
 
 def test_a_question_that_repeats_one_is_asked_for_again_unlike_it(
@@ -119,7 +170,7 @@ def test_a_question_kept_or_edited_since_it_was_flagged_keeps_its_own(
     asyncio.run(verify(QUESTION_ID, QualityFlag.REWRITE))
     flagged["flag"] = None
 
-    run_batches(monkeypatch, answering(written(NEW), OPTIONS), rounds=2)
+    run_batches(monkeypatch, answering(written(NEW), OPTIONS, CHECKED), rounds=3)
 
     assert flagged["saved"] == []
     assert batch_store.rows == {}

@@ -1,6 +1,7 @@
 # What a piece of batch work asks the model (`body_for`) and what its reply leads to (`advance`):
 # its result, its next call, or giving up. The same prompts, schemas and checks as the direct
 # calls (news.py, campaigns.py, answers.py, regenerate.py), so a batch writes what they would.
+import random
 from dataclasses import dataclass, field
 
 from langchain_core.messages import HumanMessage, SystemMessage
@@ -8,6 +9,7 @@ from pydantic import BaseModel, ValidationError
 
 from generation.config import settings
 from generation.constants.batch_work import BATCH_WORK_ATTEMPTS, BatchKind, BatchStep
+from generation.helpers.prompts import checker_messages
 from generation.helpers.questions import normalize, with_example
 from generation.integrations.openai_batch import request_body
 from generation.prompts.campaigns import CAMPAIGN_TRANSLATION_SYSTEM
@@ -15,9 +17,11 @@ from generation.prompts.news import NEWS_TRANSLATION_SYSTEM
 from generation.schemas.campaigns import CampaignSource, TranslatedCampaign
 from generation.schemas.news import NewsSource, TranslatedNews
 from generation.schemas.questions import AnswerList, NewQuestion
-from generation.schemas.regenerate import QuestionContext
+from generation.schemas.regenerate import QuestionContext, RegeneratedOption
+from generation.schemas.verify import KeyCheck
 from generation.services.answers import answers_messages, options_of
 from generation.services.campaigns import campaign_limits, campaign_request, without_made_up_button
+from generation.services.key_self_check import key_gate, key_held
 from generation.services.news import LIMITS as NEWS_LIMITS
 from generation.services.news import news_request
 from generation.services.regenerate import accepted, question_messages
@@ -62,6 +66,12 @@ def body_for(kind: str, step: str, payload: dict) -> dict:
 
         return writing_body(messages, NewQuestion)
 
+    if step == BatchStep.CHECK:
+        prompt, schema = check_of(payload, context)
+        model, effort = settings.verify_model, settings.verify_reasoning_effort
+
+        return request_body(model, effort, checker_messages(prompt), schema)
+
     return writing_body(answers_messages(answer_task(context, payload["text"]), [0]), AnswerList)
 
 
@@ -89,6 +99,14 @@ def answer_task(context: QuestionContext, text: str) -> dict:
     }
 
 
+def check_of(payload: dict, context: QuestionContext) -> tuple[str, type[KeyCheck]]:
+    """The new options' key check: its prompt and the reply's schema."""
+    options = [RegeneratedOption(**option) for option in payload["options"]]
+    text = payload["text"]
+
+    return key_gate(text, options, context.topic, context.level, payload["order"])
+
+
 def parsed[T: BaseModel](schema: type[T], reply: str | None) -> T | None:
     try:
         return schema.model_validate_json(reply) if reply else None
@@ -113,6 +131,9 @@ async def next_of(kind: str, step: str, payload: dict, reply: str | None) -> Adv
 
     if step == BatchStep.QUESTION:
         return await written(payload, reply)
+
+    if step == BatchStep.CHECK:
+        return key_checked(payload, reply)
 
     return with_options(payload, reply)
 
@@ -156,17 +177,41 @@ async def written(payload: dict, reply: str | None) -> Advance:
 
 
 def with_options(payload: dict, reply: str | None) -> Advance:
-    """Options for the question are the result; a question the model found ambiguous is
-    replaced by a new one (never offered again), and an incomplete answer is asked again."""
+    """Options for the question go on to the check of their key; a question the model found
+    ambiguous is replaced by a new one (never offered again), and an incomplete answer is asked
+    again."""
     result = parsed(AnswerList, reply)
     multi = QuestionContext(**payload["context"]).multi
     options = options_of(result, [0], multi).get(0) if result else None
 
     if options:
-        return Advance(result=(payload["text"], options))
+        order = random.sample(range(len(options)), len(options))
+
+        return Advance(
+            step=BatchStep.CHECK, payload={**payload, "options": options, "order": order}
+        )
 
     if options is None:
         return Advance(step=BatchStep.OPTIONS, payload=payload)
+
+    existing = [*payload["existing"], payload["text"]]
+
+    return Advance(step=BatchStep.QUESTION, payload={**payload, "existing": existing})
+
+
+def key_checked(payload: dict, reply: str | None) -> Advance:
+    """A key that holds makes the question and its options the result; one that doesn't replaces
+    the question (never offered again), and an unusable reply is asked again."""
+    schema = check_of(payload, QuestionContext(**payload["context"]))[1]
+    result = parsed(schema, reply)
+
+    if result is None:
+        return Advance(step=BatchStep.CHECK, payload=payload)
+
+    options = [RegeneratedOption(**option) for option in payload["options"]]
+
+    if key_held(result, options, payload["order"]):
+        return Advance(result=(payload["text"], payload["options"]))
 
     existing = [*payload["existing"], payload["text"]]
 

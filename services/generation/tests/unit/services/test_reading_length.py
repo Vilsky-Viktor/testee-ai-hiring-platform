@@ -6,6 +6,7 @@ from generation.integrations import library, llm
 from generation.prompts.questions import QUESTIONS_SYSTEM
 from generation.prompts.regenerate import REGENERATE_SYSTEM
 from generation.schemas.questions import QuestionItem, QuestionItemList
+from generation.services import regenerate as regenerate_module
 from generation.services.nodes.questions import generate_questions
 from generation.services.regenerate import regenerate
 from tests.unit.services.test_regenerate import QUESTION_ID, FakeEmbeddings, context
@@ -70,9 +71,13 @@ def test_a_rewritten_question_too_long_to_read_is_written_again(monkeypatch):
     async def replace(question_id, question):
         pass
 
+    async def key_holds(text, options, topic, level):
+        return True
+
     monkeypatch.setattr(llm, "get_generation_llm", lambda *_: fake)
     monkeypatch.setattr(library, "replace_question", replace)
     monkeypatch.setattr(llm, "get_embeddings", FakeEmbeddings)
+    monkeypatch.setattr(regenerate_module, "key_holds", key_holds)
 
     result = asyncio.run(regenerate(QUESTION_ID, context()))
 

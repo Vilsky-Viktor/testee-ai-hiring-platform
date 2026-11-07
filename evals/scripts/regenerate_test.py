@@ -34,6 +34,7 @@ from testee_common.ai.examples import has_example
 from generation.config import settings
 from generation.constants.batch_work import BatchKind, BatchStep
 from generation.schemas.regenerate import QuestionContext
+from generation.services import regenerate
 from generation.services.batch_work import question_payload
 from generation.services.regenerate import write
 
@@ -84,6 +85,15 @@ async def main(label: str, sample: int, mode: str) -> None:
     limit = asyncio.Semaphore(8)
 
     used: list = []
+    checks: list[bool] = []
+    key_holds = regenerate.key_holds
+
+    async def counted(*args) -> bool:
+        checks.append(await key_holds(*args))
+
+        return checks[-1]
+
+    regenerate.key_holds = counted
 
     async def one(item: dict):
         async with limit:
@@ -113,7 +123,14 @@ async def main(label: str, sample: int, mode: str) -> None:
     same_kind = sum(
         is_multi(new) == is_multi(item) for (item, _), new in zip(pairs, out, strict=True)
     )
-    scores = {"asked": len(chosen), "written": len(out), "same_kind": same_kind}
+    scores = {
+        "asked": len(chosen),
+        "written": len(out),
+        "same_kind": same_kind,
+        # The direct path's keys checked, and those that didn't hold and were written again.
+        "keys_checked": len(checks),
+        "keys_dropped": checks.count(False),
+    }
     tokens = tokens_of(usage.usage_metadata) + sum(u.get("total_tokens", 0) for _, u in used)
     run = run_record(
         model=models, mode=mode, scores=scores, cost=spent, seconds=seconds, tokens=tokens

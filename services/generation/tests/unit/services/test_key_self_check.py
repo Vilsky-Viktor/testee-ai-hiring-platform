@@ -2,11 +2,13 @@ import asyncio
 
 from generation.integrations import llm
 from generation.prompts.checker import MULTI_ANSWER_KEY
-from generation.schemas.verify import SelfCheck
+from generation.prompts.confirm import CONFIRM_PROMPT
+from generation.schemas.verify import KeyCheck, SelfCheck
 from generation.services.key_self_check import (
     NOT_CHECKED,
     OPEN_CONDITION,
     WRONG_KEY,
+    key_holds,
     keys_that_hold,
     self_check,
 )
@@ -138,3 +140,28 @@ def test_new_questions_are_written_of_both_kinds_and_self_checked(monkeypatch):
     [entry] = asyncio.run(generate_questions(task))["question_pool"]
 
     assert [question["text"] for question in entry["questions"]] == ["Single 1"]
+
+
+def replacement(monkeypatch, question, verifier):
+    monkeypatch.setattr(llm, "get_verifier_llm", lambda: verifier)
+
+    return asyncio.run(key_holds(question["text"], question["options"], "Bookkeeping", "basic"))
+
+
+def test_a_replacement_gets_the_check_of_a_new_question_of_its_kind(monkeypatch):
+    multi, single = FakeVerifier(), FakeVerifier()
+
+    assert replacement(monkeypatch, multi_answer(), multi)
+    assert replacement(monkeypatch, single_answer(), single)
+    # The multi-answer self-check asks about open conditions; the blind confirmation doesn't.
+    assert multi.schemas == [SelfCheck]
+    assert single.schemas == [KeyCheck]
+    assert CONFIRM_PROMPT.splitlines()[0] in single.prompts[0]
+
+
+def test_a_replacement_whose_marked_key_isnt_the_one_found_doesnt_hold(monkeypatch):
+    marked_wrong = single_answer()
+    marked_wrong["options"][0]["correct"] = False
+    marked_wrong["options"][1]["correct"] = True
+
+    assert not replacement(monkeypatch, marked_wrong, FakeVerifier())

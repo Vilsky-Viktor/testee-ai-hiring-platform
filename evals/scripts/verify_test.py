@@ -48,7 +48,8 @@ from stats import share
 from generation.helpers.prompts import checker_messages
 from generation.schemas.regenerate import QuestionContext, RegeneratedOption
 from generation.schemas.verify import KeyCheck, QuestionQuality, ReportNote
-from generation.services.verify import confirm_prompt, key_check_prompt, option_order
+from generation.services.key_blind import confirm_prompt
+from generation.services.verify import key_check_prompt, option_order
 
 
 def flawed_ids(multi: bool) -> set[str]:
