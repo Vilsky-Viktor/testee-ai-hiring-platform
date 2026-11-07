@@ -28,6 +28,7 @@ Only what matters, for every member of a company:
 - a referral reward,
 - an automatic top-up turned on, charged, failed, paused or getting a new price, and a company's own refund approved or declined by Paddle: for its owners and admins only, in the bell too (the list and the count leave them out for a viewer, `BILLING_KINDS`; companies says who's a viewer, and a role change shows within a minute); a Slack channel is the company's own choice, so it gets those it chose,
 - an ATS candidate who couldn't be invited (`ats_not_invited`, see [ATS integrations](ats.md#candidates-from-workable)),
+- a job-ad link at its hourly limit turning candidates away (`link_refused`, in the bell only, at most once an hour per interview, opening the interview): for everyone in the company, viewers too. Only the link's own limit (`LINK_STARTS_PER_HOUR`) tells the company; one address at its limit says nothing about the link. A Redis key (`notify:link-refused:<interview>`) lets one refusal of a burst save the notice; a failed save frees it for the next, and the event's id keeps a redelivery from storing it twice. See [Candidates](candidates.md),
 - an ATS that takes the company's key but refuses the results written back (`ats_cannot_write`, once until the company reconnects or a write goes through; in the bell only),
 - an ATS or Slack connection that stopped working and needs reconnecting (`connection_broken`, once each time it stops; in the bell only, opening its page).
 

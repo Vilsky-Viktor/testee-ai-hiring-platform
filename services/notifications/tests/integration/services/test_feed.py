@@ -67,6 +67,26 @@ def test_a_companys_billing_reaches_its_editors_bell_and_not_a_viewers(run, memb
     assert kept_out.unread == 1
 
 
+def test_a_refused_link_reaches_everyone_in_the_company(run, member_of):
+    editor, viewer, acme = f"u-{uuid.uuid4()}", f"u-{uuid.uuid4()}", company()
+    member_of[editor] = [acme]
+    member_of[viewer] = [acme]
+    member_of[f"viewer:{viewer}"] = [acme]
+
+    async def scenario():
+        await notices.store(
+            str(uuid.uuid4()),
+            notification(
+                Recipient.COMPANY, acme, NotificationKind.LINK_REFUSED, f"/companies/{acme}"
+            ),
+        )
+
+        return await feed.feed(editor, "en"), await feed.feed(viewer, "en")
+
+    for bell in run(scenario()):
+        assert [item.kind for item in bell.items] == [NotificationKind.LINK_REFUSED]
+
+
 def test_a_viewer_keeps_billing_they_own_as_a_person_and_of_a_company_they_edit(run, member_of):
     viewer, watched, edited = f"u-{uuid.uuid4()}", company(), company()
     member_of[viewer] = [watched, edited]

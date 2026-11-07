@@ -48,6 +48,7 @@ export const NOTIFICATION_LOOKS: Record<
   interview_cancelled: { icon: XCircleIcon, alert: true },
   verification_approved: { icon: BadgeCheckIcon, alert: false },
   verification_declined: { icon: BadgeXIcon, alert: true },
+  link_refused: { icon: UserXIcon, alert: true },
   ats_not_invited: { icon: UserXIcon, alert: true },
   ats_cannot_write: { icon: PencilOffIcon, alert: true },
   connection_broken: { icon: UnplugIcon, alert: true },

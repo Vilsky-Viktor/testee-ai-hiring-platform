@@ -75,6 +75,20 @@ def interview_ready(interview: Interview, title: str) -> dict:
     )
 
 
+def link_refused(interview: Interview) -> dict:
+    """The interview's job-ad link turned candidates away at its hourly limit. Asked for at most
+    once an hour per interview (services/link_refusals.py)."""
+    data = {"title": interview.title} if interview.title else {}
+
+    return notification(
+        Recipient.COMPANY,
+        interview.company_id,
+        NotificationKind.LINK_REFUSED,
+        interview_link(interview),
+        **data,
+    )
+
+
 def interview_cancelled(interview: Interview) -> dict:
     """A cancelled interview never got its questions, so it rarely has a title."""
     data = {"title": interview.title} if interview.title else {}

@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from "vitest"
 import {
   ApiError,
   apiErrorMessage,
+  checkedResponse,
   errorDetail,
   serviceRefusal,
 } from "@/lib/api"
@@ -58,5 +59,30 @@ describe("serviceRefusal and apiErrorMessage", () => {
 
     expect(serviceRefusal(busy, [429])).toBeNull()
     expect(apiErrorMessage(busy, "Couldn't send.")).toBe("Couldn't send.")
+  })
+})
+
+describe("checkedResponse", () => {
+  async function refusal(headers: Record<string, string>) {
+    const response = new Response(JSON.stringify({ detail: "Too many" }), {
+      status: 429,
+      headers,
+    })
+
+    return checkedResponse(response).catch((error: ApiError) => error)
+  }
+
+  it("keeps how long the service said to wait", async () => {
+    expect(await refusal({ "Retry-After": "1800" })).toMatchObject({
+      status: 429,
+      retryAfter: 1800,
+    })
+  })
+
+  it("has no wait when the service gave none, or not as seconds", async () => {
+    expect(await refusal({})).toMatchObject({ retryAfter: null })
+    expect(await refusal({ "Retry-After": "soon" })).toMatchObject({
+      retryAfter: null,
+    })
   })
 })

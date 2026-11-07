@@ -4,6 +4,8 @@ from http import HTTPStatus
 from testee_common.config.constants import MAX_CANDIDATE_NAME_LENGTH  # noqa: F401 (re-exported)
 from testee_common.events.audit_actions import AuditAction
 
+# Held for an hour once a job-ad link's refusal has been told to the company.
+LINK_REFUSED_KEY = "notify:link-refused:{interview_id}"
 # The longest search through candidates' emails and names (an email is at most 254 characters).
 MAX_SEARCH_LENGTH = 254
 

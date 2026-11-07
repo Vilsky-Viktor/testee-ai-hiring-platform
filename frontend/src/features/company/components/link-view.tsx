@@ -10,12 +10,13 @@ import { useAuth } from "@/providers/auth-provider"
 import { InviteIntro } from "@/components/common/invite-intro"
 import { LinkStatus } from "@/components/common/link-status"
 import { useHumanCheck } from "@/hooks/use-human-check"
-import { apiErrorMessage, apiFetch, serviceRefusal } from "@/lib/api"
+import { ApiError, apiErrorMessage, apiFetch, serviceRefusal } from "@/lib/api"
 import { humanHeaders } from "@/lib/human-check"
 import { refreshVerification } from "@/lib/auth"
 import { useBrandColors } from "@/hooks/use-brand-colors"
 import { useLinkData } from "@/hooks/use-link-data"
 import type { JobLink, SessionSummary } from "@/types/company"
+import { LinkBusy } from "@/features/company/components/link-busy"
 import { StartPledge } from "@/features/company/components/start-pledge"
 
 /** What someone sees from a test's shareable link: the same intro as an invite; starting signs
@@ -29,6 +30,8 @@ export function LinkView({ token }: { token: string }) {
   const router = useRouter()
   const { user, loading } = useAuth()
   const [starting, setStarting] = useState(false)
+  // The seconds the service said to wait when the link refused them for now.
+  const [wait, setWait] = useState<number | null>(null)
 
   // Once sign-in is known, and again after signing in, so a finished test is never offered.
   const {
@@ -73,6 +76,17 @@ export function LinkView({ token }: { token: string }) {
         return
       }
     } catch (error) {
+      if (
+        error instanceof ApiError &&
+        error.status === 429 &&
+        error.retryAfter
+      ) {
+        setWait(error.retryAfter)
+        setStarting(false)
+
+        return
+      }
+
       // Already finished, the company has stopped taking candidates, or their email isn't
       // confirmed yet: the API says which.
       toast.error(
@@ -90,6 +104,18 @@ export function LinkView({ token }: { token: string }) {
         status={status === "ready" ? "loading" : status}
         invalid={gone ?? share("invalid")}
         onRetry={retry}
+      />
+    )
+  }
+
+  if (wait !== null) {
+    return (
+      <LinkBusy
+        company={link.company}
+        logoUrl={link.logo_url}
+        title={link.title ?? t("fallbackTitle")}
+        seconds={wait}
+        onBack={() => setWait(null)}
       />
     )
   }

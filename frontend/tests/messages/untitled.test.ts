@@ -14,6 +14,7 @@ const KINDS = [
   "candidate_finished",
   "invite_undelivered",
   "interview_ready",
+  "link_refused",
   "ats_not_invited",
   "note_added",
 ]

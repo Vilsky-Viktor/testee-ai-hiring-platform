@@ -3,13 +3,15 @@ import { firebaseAuth } from "@/lib/firebase"
 
 /** A refused request. `fromService`: the message is the service's own (in the user's language);
  * otherwise the load balancer or the platform answered (an HTML 429, 502 or 503) and the message
- * is only for the logs. `code`: the service's machine-readable reason, when it gave one. */
+ * is only for the logs. `code`: the service's machine-readable reason, when it gave one.
+ * `retryAfter`: the seconds the service said to wait (its Retry-After), when it did. */
 export class ApiError extends Error {
   constructor(
     public status: number,
     message: string,
     public fromService = false,
-    public code: string | null = null
+    public code: string | null = null,
+    public retryAfter: number | null = null
   ) {
     super(message)
   }
@@ -60,7 +62,8 @@ export async function checkedResponse(response: Response) {
       response.status,
       detail ?? `Request failed with status ${response.status}`,
       detail !== null,
-      typeof code === "string" ? code : null
+      typeof code === "string" ? code : null,
+      Number(response.headers.get("Retry-After")) || null
     )
   }
 

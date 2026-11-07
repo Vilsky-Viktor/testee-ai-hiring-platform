@@ -37,6 +37,8 @@ class NotificationKind(StrEnum):
     INVITE_UNDELIVERED = "invite_undelivered"
     INTERVIEW_READY = "interview_ready"
     INTERVIEW_CANCELLED = "interview_cancelled"
+    # A job-ad link turned candidates away at its hourly limit: at most one an hour per interview.
+    LINK_REFUSED = "link_refused"
     # A candidate an ATS sent couldn't be invited (credits, limits, the pause).
     ATS_NOT_INVITED = "ats_not_invited"
     # An ATS takes the company's key but refuses the results written back (no write access).

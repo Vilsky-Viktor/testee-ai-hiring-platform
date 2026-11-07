@@ -36,14 +36,15 @@ INTERVIEW = Interview(
 @pytest.fixture
 def linked(monkeypatch):
     """The link "abc" opens INTERVIEW; returns what was held and started, a way to set the
-    candidate's current status or make billing refuse, and the rate counters and edited limits
-    ("counts", "limits": Redis's)."""
+    candidate's current status or make billing refuse, whose refusals told the company ("told"),
+    and the rate counters and edited limits ("counts", "limits": Redis's)."""
     redis = FakeRedis()
     state = {
         "status": None,
         "broke": False,
         "held": [],
         "started": [],
+        "told": [],
         "counts": redis.counts,
         "limits": redis.limits,
     }
@@ -80,6 +81,9 @@ def linked(monkeypatch):
     async def details(interview):
         return {"title": "Backend", "company": "Acme", "language": "en", "logo_path": None}
 
+    async def tell_company(interview):
+        state["told"].append(interview)
+
     async def no_flush():
         pass
 
@@ -87,6 +91,7 @@ def linked(monkeypatch):
     monkeypatch.setattr(link_start, "get_redis", lambda: redis)
     monkeypatch.setattr(link_start, "joined_details", details)
     monkeypatch.setattr(link_start.outbox_service, "flush_quietly", no_flush)
+    monkeypatch.setattr(link_start.link_refusals, "tell_company", tell_company)
     app.dependency_overrides[current_user] = lambda: User(
         uid="cand", email="Cand@Example.com", email_verified=True
     )
@@ -209,6 +214,9 @@ def test_a_link_takes_a_limited_number_of_new_candidates_an_hour(client, linked,
 
     assert refused.status_code == 429
     assert refused.json() == {"detail": TOO_MANY_REQUESTS, "code": "rate_limited"}
+    # The busy page says how long to wait, and the company hears its link is refusing people.
+    assert int(refused.headers["Retry-After"]) > 0
+    assert linked["told"] == [INTERVIEW]
     assert linked["held"] == []
     assert [(hit["limit"], hit["company_id"], hit["user_id"]) for hit in limit_hits] == [
         ("LINK_STARTS_PER_HOUR", str(INTERVIEW.company_id), "cand")
@@ -232,6 +240,8 @@ def test_one_address_starts_a_limited_number_of_new_candidates_an_hour(client, l
     assert refused.status_code == 429
     assert refused.json() == {"detail": TOO_MANY_REQUESTS, "code": "rate_limited"}
     assert len(linked["held"]) == LINK_STARTS_PER_IP_HOUR
+    # One address refused says nothing about the link, so the company isn't told.
+    assert linked["told"] == []
 
 
 def test_one_addresss_hourly_limit_is_as_edited(client, linked, limit_hits):

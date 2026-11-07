@@ -24,6 +24,7 @@ from companies.integrations import billing
 from companies.integrations.redis import get_redis
 from companies.repositories import companies, invites, link_invites
 from companies.schemas.invites import InviteStartOut
+from companies.services import link_refusals
 from companies.services import outbox as outbox_service
 from companies.services.access import refuse_if_suspended, refuse_without_pledge
 from companies.services.candidate_start import start_sessions
@@ -49,7 +50,8 @@ async def admit(interview, user: User, current: str | None, request: Request) ->
     in the interview. A new candidate shows they're a person and counts toward their address's
     and the link's hourly limits; one already invited is never held back by them. The address
     comes first, so one address refused can't go on using up the link's count for real
-    candidates."""
+    candidates. The link's own limit refusing tells the company, and the candidate gets the 429
+    either way; one address refused says nothing about the link."""
     if current == InviteStatus.FINISHED:
         raise HTTPException(status.HTTP_409_CONFLICT, "This interview is already finished")
 
@@ -68,7 +70,12 @@ async def admit(interview, user: User, current: str | None, request: Request) ->
         who = {"company_id": interview.company_id, "user_id": user.uid}
         address = limit_address(request)
         await hit(redis, f"rate:link-starts:ip:{address}", "LINK_STARTS_PER_IP_HOUR", **who)
-        await hit(redis, f"rate:link-starts:{interview.id}", "LINK_STARTS_PER_HOUR", **who)
+
+        try:
+            await hit(redis, f"rate:link-starts:{interview.id}", "LINK_STARTS_PER_HOUR", **who)
+        except HTTPException:
+            await link_refusals.tell_company(interview)
+            raise
 
 
 async def hold_credits(interview, key: str, current: str | None, fresh: bool) -> None:
