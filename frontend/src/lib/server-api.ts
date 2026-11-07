@@ -69,11 +69,16 @@ export async function optionalFetch<T>(path: string): Promise<T | null> {
  * doesn't hold the page: null then, so the page shows without it. Otherwise null and errors as
  * in serverFetch. In the interface language, or in
  * `locale` when the caller names one; `fresh` asks every time, for data a change must reach at
- * once (a deleted news post must not stay on the page).
+ * once (a deleted news post must not stay on the page). `required` is for a page that can't show
+ * without it: giving up throws, so a slow service makes a 500, which crawlers retry, never a 404.
  */
 export async function publicFetch<T>(
   path: string,
-  { locale, fresh = false }: { locale?: string; fresh?: boolean } = {}
+  {
+    locale,
+    fresh = false,
+    required = false,
+  }: { locale?: string; fresh?: boolean; required?: boolean } = {}
 ): Promise<T | null> {
   try {
     return await request<T>(path, {
@@ -84,7 +89,11 @@ export async function publicFetch<T>(
       signal: AbortSignal.timeout(PUBLIC_TIMEOUT_MS),
     })
   } catch (error) {
-    if (error instanceof DOMException && error.name === "TimeoutError") {
+    if (
+      !required &&
+      error instanceof DOMException &&
+      error.name === "TimeoutError"
+    ) {
       console.error(`Gave up on ${path}: no answer in ${PUBLIC_TIMEOUT_MS} ms`)
 
       return null

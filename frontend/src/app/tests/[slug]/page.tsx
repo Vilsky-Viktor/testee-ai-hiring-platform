@@ -37,7 +37,9 @@ export async function generateMetadata({ params }: Params) {
   const { slug } = await params
   const t = await getTranslations("tests")
   const [template, catalog] = await Promise.all([
-    publicFetch<Template>(`/library/templates/${slug}`),
+    publicFetch<Template>(`/library/templates/${slug}`, {
+      required: true,
+    }),
     countryCatalog(),
   ])
 
@@ -72,7 +74,9 @@ export default async function RoleTestPage({ params }: Params) {
   // site FAQ's answers to what companies ask before testing candidates, in the page's language
   // and with today's prices (left out while prices can't be read: rounds refuses).
   const [template, catalog, answers] = await Promise.all([
-    publicFetch<Template>(`/library/templates/${key}`),
+    publicFetch<Template>(`/library/templates/${key}`, {
+      required: true,
+    }),
     visitorCatalog(),
     faqPath()
       .then((path) => publicFetch<FaqItem[]>(path))

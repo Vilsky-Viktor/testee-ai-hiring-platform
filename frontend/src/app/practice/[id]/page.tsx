@@ -33,7 +33,9 @@ export async function generateMetadata({
   const { id } = await params
   const t = await getTranslations("practice")
   const tLevel = await getTranslations("templates.levels")
-  const template = await publicFetch<Template>(`/library/templates/${id}`)
+  const template = await publicFetch<Template>(`/library/templates/${id}`, {
+    required: true,
+  })
 
   if (!template) {
     return {}
@@ -69,7 +71,9 @@ export default async function PracticeTestPage({
   const t = await getTranslations("practice")
   const tLevel = await getTranslations("templates.levels")
   const signedIn = (await cookies()).has(TOKEN_COOKIE)
-  const template = await publicFetch<Template>(`/library/templates/${key}`)
+  const template = await publicFetch<Template>(`/library/templates/${key}`, {
+    required: true,
+  })
 
   const locale = await urlLocale()
   const pageLocale = await getLocale()

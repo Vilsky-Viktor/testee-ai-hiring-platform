@@ -47,6 +47,15 @@ describe("publicFetch", () => {
     vi.restoreAllMocks()
   })
 
+  it("throws when a page can't show without the answer and none came", async () => {
+    fetchMock.mockRejectedValue(new DOMException("slow", "TimeoutError"))
+
+    await expect(
+      publicFetch("/library/templates/x", { required: true })
+    ).rejects.toThrow("slow")
+    expect(await publicFetch("/library/templates/x")).toBeNull()
+  })
+
   it("is null for a missing resource and throws on a failure", async () => {
     fetchMock.mockResolvedValueOnce(new Response(null, { status: 404 }))
     expect(await publicFetch("/site/help/legal/x")).toBeNull()
