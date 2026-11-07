@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "Hiện không thể hoàn tiền lần nạp này.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle không thể hoàn tiền lần nạp này. Số credit của lần nạp đã quay lại số dư của bạn.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Công ty đầu tiên của bạn phải được tạo trên trang web, nơi chúng tôi kiểm tra bạn là người thật. Hãy mở trang Công ty ở đó để hoàn tất. Sau đó, bạn có thể tạo thêm từ đây.",
+    "The topic has only {count} questions": "Số câu hỏi có sẵn trong chủ đề này: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} không còn chấp nhận khóa: hãy kết nối lại để tiếp tục",
+    "That job or stage isn't in {name}": "Công việc hoặc giai đoạn đó không có trong {name}",
 }

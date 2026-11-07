@@ -1,8 +1,9 @@
 from uuid import UUID
 
 from fastapi import HTTPException, status
+from testee_common.i18n.i18n import TemplateError
 
-from ats.constants.ats import ATS_NAMES, AtsProvider, CandidateStatus
+from ats.constants.ats import ATS_NAMES, NOT_IN_ATS, AtsProvider, CandidateStatus
 from ats.core.db import Session
 from ats.integrations import companies
 from ats.repositories import ats_candidates, ats_links
@@ -54,9 +55,7 @@ async def job_and_stage(connection, body: JobLinkIn) -> tuple[dict, dict]:
     stage = next((stage for stage in stage_list if stage["id"] == body.stage_id), None)
 
     if job is None or stage is None:
-        raise HTTPException(
-            status.HTTP_404_NOT_FOUND, f"That job or stage isn't in {ATS_NAMES[body.provider]}"
-        )
+        raise TemplateError(status.HTTP_404_NOT_FOUND, NOT_IN_ATS, name=ATS_NAMES[body.provider])
 
     return job, stage
 

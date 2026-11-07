@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "このチャージは現在返金できません。",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle はこのチャージを返金できませんでした。クレジットは残高に戻りました。",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "最初の会社はサイトで作成する必要があります。サイトでは、利用者が人であることを確認しています。サイトの「会社」ページを開いて完了してください。その後は、ここからも作成できます。",
+    "The topic has only {count} questions": "このトピックで使える問題数：{count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} がこのキーを受け付けなくなりました。続けるには再接続してください",
+    "That job or stage isn't in {name}": "その求人または選考段階は {name} にありません",
 }

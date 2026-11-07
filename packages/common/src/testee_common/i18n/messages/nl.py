@@ -49,7 +49,7 @@ MESSAGES = {
     "The primary color is too hard to see on the page's background.": "De hoofdkleur is te moeilijk te zien op de achtergrond van de pagina.",
     "Enter the company's website, like acme.com": "Voer de website van het bedrijf in, zoals acme.com",
     "That's a free mail service, not a company's website.": "Dat is een gratis e-maildienst, geen bedrijfswebsite.",
-    "This text doesn't name anything to test. Paste a job description, a role, or the skills to test.": "Deze tekst noemt niets om te testen. Plak een vacaturetekst, een functie of de vaardigheden die je wilt testen.",
+    "This text doesn't name anything to test. Paste a job description, a role, or the skills to test.": "Deze tekst noemt niets om te testen. Plak een functieomschrijving, een functie of de vaardigheden die je wilt testen.",
     "Generation failed. Please try again.": "Genereren is mislukt. Probeer het opnieuw.",
     "Generation stopped unexpectedly. Please try again.": "Genereren is onverwacht gestopt. Probeer het opnieuw.",
     "Time is up for this question.": "De tijd voor deze vraag is om.",
@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "Deze opwaardering kan nu niet worden terugbetaald.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle kon deze opwaardering niet terugbetalen. De credits staan weer op je saldo.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Je eerste bedrijf moet je op de website aanmaken, want daar controleren we of je een persoon bent. Open daar de pagina Bedrijven om het af te ronden. Daarna kun je er vanaf hier meer aanmaken.",
+    "The topic has only {count} questions": "Beschikbare vragen in dit onderwerp: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} accepteert de sleutel niet meer: verbind opnieuw om door te gaan",
+    "That job or stage isn't in {name}": "Die vacature of fase staat niet in {name}",
 }

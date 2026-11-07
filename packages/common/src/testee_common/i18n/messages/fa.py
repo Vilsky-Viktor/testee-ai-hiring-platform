@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "این شارژ اکنون قابل بازپرداخت نیست.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle نتوانست این شارژ را بازپرداخت کند. اعتبارهای آن به موجودی شما برگشته است.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "شرکت اولتان باید در وب‌سایت ساخته شود، چون آنجا بررسی می‌کنیم که شما انسان هستید. برای تمام کردن کار، صفحهٔ «شرکت‌ها» را آنجا باز کنید. بعد از آن می‌توانید شرکت‌های بیشتری را از همین‌جا بسازید.",
+    "The topic has only {count} questions": "پرسش‌های موجود در این موضوع: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} دیگر این کلید را نمی‌پذیرد: برای ادامه دوباره متصل کنید",
+    "That job or stage isn't in {name}": "این شغل یا مرحله در {name} نیست",
 }

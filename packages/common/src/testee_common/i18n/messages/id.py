@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "Dana isi ulang ini tidak bisa dikembalikan sekarang.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle tidak bisa mengembalikan dana isi ulang ini. Kreditnya sudah kembali ke saldomu.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Perusahaan pertama Anda harus dibuat di situs, tempat kami memeriksa bahwa Anda manusia. Buka halaman Perusahaan di sana untuk menyelesaikannya. Setelah itu, Anda bisa membuat lebih banyak dari sini.",
+    "The topic has only {count} questions": "Soal yang tersedia di topik ini: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} tidak lagi menerima kunci ini: hubungkan ulang untuk melanjutkan",
+    "That job or stage isn't in {name}": "Pekerjaan atau tahap itu tidak ada di {name}",
 }

@@ -35,6 +35,7 @@ SETTINGS_LOGGED = {"question_seconds", "hired", "keep_private", "voice"}
 DEFAULT_TOPIC_QUESTIONS = 10
 # A topic's number of questions that would take the interview over MAX_INTERVIEW_QUESTIONS.
 TOO_MANY_QUESTIONS = "At most {most} questions per candidate; {left} left."
+TOPIC_TOO_SMALL = "The topic has only {count} questions"
 # Setting the last topic with questions to 0 (a topic at 0 is left out of the interview).
 NO_QUESTIONS_LEFT = "An interview needs at least one topic with questions."
 # A test's topics with their question counts, from library, kept this long by each companies

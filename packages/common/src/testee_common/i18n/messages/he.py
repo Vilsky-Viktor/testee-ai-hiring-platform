@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "לא ניתן להחזיר את הטעינה הזו כרגע.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle לא הצליחה להחזיר את הטעינה הזו. הקרדיטים שלה חזרו ליתרה שלכם.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "את החברה הראשונה צריך ליצור באתר, שם אנחנו מוודאים שמדובר באדם. כדי לסיים, פתחו שם את הדף «חברות». לאחר מכן אפשר ליצור חברות נוספות גם מכאן.",
+    "The topic has only {count} questions": "שאלות זמינות בנושא הזה: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} כבר לא מקבל את המפתח: יש להתחבר מחדש כדי להמשיך",
+    "That job or stage isn't in {name}": "המשרה או השלב האלה לא נמצאים ב-{name}",
 }

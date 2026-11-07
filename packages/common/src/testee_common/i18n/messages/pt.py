@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "Esta recarga não pode ser reembolsada agora.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "A Paddle não conseguiu reembolsar esta recarga. Os créditos dela voltaram ao seu saldo.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Sua primeira empresa precisa ser criada no site, onde verificamos que você é uma pessoa. Abra lá a página Empresas para concluir. Depois disso, você pode criar outras por aqui.",
+    "The topic has only {count} questions": "Perguntas disponíveis neste tema: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} não aceita mais a chave: reconecte para continuar",
+    "That job or stage isn't in {name}": "Essa vaga ou etapa não está em {name}",
 }

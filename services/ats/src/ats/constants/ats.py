@@ -30,6 +30,8 @@ class ConnectionStatus(StrEnum):
 
 
 # Workable's API for one account, by its subdomain (acme for acme.workable.com).
+KEY_REFUSED = "{name} no longer accepts the key: reconnect to continue"
+NOT_IN_ATS = "That job or stage isn't in {name}"
 WORKABLE_API = "https://{subdomain}.workable.com/spi/v3"
 # An account's subdomain as Workable and Recruitee allow it (acme in acme.workable.com).
 SUBDOMAIN = r"^[a-z0-9][a-z0-9-]{0,62}$"

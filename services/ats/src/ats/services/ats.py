@@ -5,12 +5,14 @@ import logging
 from cryptography.fernet import Fernet
 from fastapi import HTTPException, status
 from testee_common.auth.encryption import decrypt, encrypt
+from testee_common.i18n.i18n import TemplateError
 from testee_common.limits.rate_limit import hit_or_skip
 
 from ats.config import settings
 from ats.constants.ats import (
     ATS_ACTION_SECONDS,
     ATS_NAMES,
+    KEY_REFUSED,
     WORKABLE_WEBHOOK,
     WRITES,
     AtsProvider,
@@ -97,9 +99,7 @@ async def broken(connection: AtsConnection) -> None:
     await mark_broken(connection)
     name = ATS_NAMES[connection.provider]
 
-    raise HTTPException(
-        status.HTTP_409_CONFLICT, f"{name} no longer accepts the key: reconnect to continue"
-    )
+    raise TemplateError(status.HTTP_409_CONFLICT, KEY_REFUSED, name=name)
 
 
 async def connected(company_id, provider: str) -> AtsConnection:

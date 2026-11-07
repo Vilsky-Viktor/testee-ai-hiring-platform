@@ -16,6 +16,7 @@ from companies.constants.interviews import (
     NO_QUESTIONS_LEFT,
     SETTINGS_LOGGED,
     TOO_MANY_QUESTIONS,
+    TOPIC_TOO_SMALL,
 )
 from companies.constants.invites import INTERVIEW_NOT_READY, LINK_TOKEN_BYTES
 from companies.core.db import Session
@@ -100,9 +101,7 @@ async def set_topic_limit(interview: Interview, topic_id: UUID, limit: int, user
     available = dict(sizes)[str(topic_id)]
 
     if limit > available:
-        raise HTTPException(
-            status.HTTP_422_UNPROCESSABLE_CONTENT, f"The topic has only {available} questions"
-        )
+        raise TemplateError(status.HTTP_422_UNPROCESSABLE_CONTENT, TOPIC_TOO_SMALL, count=available)
 
     def change(stored: dict[str, int]) -> dict[str, int]:
         before = topic_limits(sizes, stored)

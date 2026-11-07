@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "Hindi ma-refund ang top-up na ito ngayon.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Hindi ma-refund ng Paddle ang top-up na ito. Nakabalik na sa iyong balance ang credits nito.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Kailangang gawin sa website ang una mong kumpanya, dahil doon namin tinitiyak na tao ka. Buksan doon ang page na Mga kumpanya para matapos ito. Pagkatapos, puwede ka nang gumawa ng iba pa mula rito.",
+    "The topic has only {count} questions": "Mga tanong sa topic na ito: {count} lang",
+    "{name} no longer accepts the key: reconnect to continue": "Hindi na tinatanggap ng {name} ang key: ikonekta ulit para magpatuloy",
+    "That job or stage isn't in {name}": "Wala sa {name} ang trabaho o stage na iyon",
 }

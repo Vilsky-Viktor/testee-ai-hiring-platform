@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "Bu yükleme şu anda iade edilemez.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle bu yüklemeyi iade edemedi. Kredileri bakiyenize geri döndü.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "İlk şirketiniz sitede oluşturulmalı, çünkü orada gerçek bir kişi olduğunuzu doğruluyoruz. Tamamlamak için oradaki Şirketler sayfasını açın. Sonrasında buradan da yeni şirket oluşturabilirsiniz.",
+    "The topic has only {count} questions": "Bu konudaki kullanılabilir soru sayısı: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} artık anahtarı kabul etmiyor: devam etmek için yeniden bağlayın",
+    "That job or stage isn't in {name}": "Bu iş veya aşama {name} içinde yok",
 }

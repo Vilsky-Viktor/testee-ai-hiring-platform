@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "这笔充值现在无法退款。",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle 无法退款这笔充值。相应点数已退回你的余额。",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "你的第一家公司需要在网站上创建，我们会在那里确认你是真人。请在网站上打开“公司”页面完成创建。之后你也可以在这里创建更多公司。",
+    "The topic has only {count} questions": "此主题可用的题目数：{count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} 不再接受此密钥：请重新连接以继续",
+    "That job or stage isn't in {name}": "{name} 中没有该职位或阶段",
 }

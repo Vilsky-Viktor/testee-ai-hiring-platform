@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "การเติมเครดิตนี้คืนเงินไม่ได้ในขณะนี้",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle คืนเงินการเติมเครดิตนี้ไม่ได้ เครดิตกลับเข้ายอดคงเหลือของคุณแล้ว",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "ต้องสร้างบริษัทแรกของคุณบนเว็บไซต์ เพราะเราตรวจสอบที่นั่นว่าคุณเป็นบุคคลจริง เปิดหน้าบริษัทบนเว็บไซต์เพื่อดำเนินการให้เสร็จ หลังจากนั้นคุณสร้างเพิ่มจากที่นี่ได้",
+    "The topic has only {count} questions": "คำถามที่ใช้ได้ในหัวข้อนี้: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} ไม่ยอมรับคีย์นี้แล้ว: เชื่อมต่อใหม่เพื่อดำเนินการต่อ",
+    "That job or stage isn't in {name}": "ไม่มีงานหรือขั้นตอนนั้นใน {name}",
 }

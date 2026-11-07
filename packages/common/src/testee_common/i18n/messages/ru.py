@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "Это пополнение сейчас нельзя вернуть.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle не смог вернуть это пополнение. Его кредиты снова на вашем балансе.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Первую компанию нужно создать на сайте: там мы проверяем, что вы человек. Чтобы завершить, откройте там страницу «Компании». После этого новые компании можно создавать и отсюда.",
+    "The topic has only {count} questions": "Доступно вопросов в этой теме: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} больше не принимает ключ: подключите заново, чтобы продолжить",
+    "That job or stage isn't in {name}": "Этой вакансии или этапа нет в {name}",
 }

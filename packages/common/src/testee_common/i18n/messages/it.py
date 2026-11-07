@@ -49,7 +49,7 @@ MESSAGES = {
     "The primary color is too hard to see on the page's background.": "Il colore principale è troppo difficile da vedere sullo sfondo della pagina.",
     "Enter the company's website, like acme.com": "Inserisci il sito web dell'azienda, ad esempio acme.com",
     "That's a free mail service, not a company's website.": "Questo è un servizio email gratuito, non il sito web di un'azienda.",
-    "This text doesn't name anything to test. Paste a job description, a role, or the skills to test.": "Questo testo non indica nulla da valutare. Incolla una descrizione del lavoro, un ruolo o le competenze da valutare.",
+    "This text doesn't name anything to test. Paste a job description, a role, or the skills to test.": "Questo testo non indica nulla da valutare. Incolla una descrizione del ruolo, un ruolo o le competenze da valutare.",
     "Generation failed. Please try again.": "Generazione non riuscita. Riprova.",
     "Generation stopped unexpectedly. Please try again.": "La generazione si è interrotta inaspettatamente. Riprova.",
     "Time is up for this question.": "Il tempo per questa domanda è scaduto.",
@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "Questa ricarica non può essere rimborsata ora.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle non è riuscito a rimborsare questa ricarica. I suoi crediti sono tornati nel tuo saldo.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "La tua prima azienda va creata sul sito, dove verifichiamo che tu sia una persona. Apri lì la pagina Aziende per completare. Dopo potrai crearne altre da qui.",
+    "The topic has only {count} questions": "Domande disponibili in questo argomento: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name} non accetta più la chiave: ricollegalo per continuare",
+    "That job or stage isn't in {name}": "Quel ruolo o quella fase non è in {name}",
 }

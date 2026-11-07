@@ -299,4 +299,7 @@ MESSAGES = {
     "This top-up can't be refunded now.": "이 충전은 지금 환불할 수 없습니다.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle이 이 충전을 환불하지 못했습니다. 해당 크레딧은 잔액으로 돌아왔습니다.",
     "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "첫 회사는 사이트에서 만들어야 합니다. 사이트에서 사람인지 확인하기 때문입니다. 사이트의 회사 페이지를 열어 마무리하세요. 그다음부터는 여기에서도 만들 수 있습니다.",
+    "The topic has only {count} questions": "이 주제에서 사용할 수 있는 문항 수: {count}",
+    "{name} no longer accepts the key: reconnect to continue": "{name}에서 더 이상 이 키를 허용하지 않습니다. 계속하려면 다시 연결하세요",
+    "That job or stage isn't in {name}": "해당 채용 공고나 단계가 {name}에 없습니다",
 }
