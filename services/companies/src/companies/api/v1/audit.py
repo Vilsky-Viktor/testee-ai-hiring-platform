@@ -3,7 +3,7 @@ from typing import Annotated
 from uuid import UUID
 
 from fastapi import APIRouter, HTTPException, Query, Response, status
-from testee_common.auth.auth import CurrentUser
+from testee_common.auth.auth import FreshUser
 from testee_common.db.paging import PageParams
 from testee_common.events.audit_actions import AuditGroup
 
@@ -19,7 +19,7 @@ router = APIRouter(prefix="/companies", tags=["companies"])
 @router.get("/{company_id}/actions/export", response_class=Response)
 async def export_actions(
     company_id: UUID,
-    user: CurrentUser,
+    user: FreshUser,
     start: Annotated[datetime | None, Query(alias="from")] = None,
     end: Annotated[datetime | None, Query(alias="to")] = None,
 ) -> Response:
@@ -34,7 +34,7 @@ async def export_actions(
 @router.get("/{company_id}/actions")
 async def list_actions(
     company_id: UUID,
-    user: CurrentUser,
+    user: FreshUser,
     page: PageParams,
     member_id: UUID | None = None,
     key_id: UUID | None = None,

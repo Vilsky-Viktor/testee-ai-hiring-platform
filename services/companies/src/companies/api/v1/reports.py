@@ -1,7 +1,7 @@
 from uuid import UUID
 
 from fastapi import APIRouter, status
-from testee_common.auth.auth import CurrentUser
+from testee_common.auth.auth import CurrentUser, FreshUser
 
 from companies.api.dependencies import Via
 from companies.schemas.reports import InterviewReportOut, ReportEmailIn
@@ -27,7 +27,7 @@ async def email_report(
 
 
 @router.get("/{interview_id}/report")
-async def interview_report(interview_id: UUID, user: CurrentUser) -> InterviewReportOut:
+async def interview_report(interview_id: UUID, user: FreshUser) -> InterviewReportOut:
     interview, company, _ = await interview_for(user, interview_id)
 
     return await interview_reports.report(interview, company)
@@ -35,7 +35,7 @@ async def interview_report(interview_id: UUID, user: CurrentUser) -> InterviewRe
 
 @router.post("/{interview_id}/report/email", status_code=status.HTTP_202_ACCEPTED)
 async def email_interview_report(
-    interview_id: UUID, body: ReportEmailIn, user: CurrentUser, via: Via
+    interview_id: UUID, body: ReportEmailIn, user: FreshUser, via: Via
 ) -> None:
     """Emails the test's candidates report, made on its candidates tab, like a candidate's."""
     interview, company, member = await interview_for(user, interview_id)

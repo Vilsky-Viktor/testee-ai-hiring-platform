@@ -3,7 +3,7 @@ from typing import Annotated
 from uuid import UUID
 
 from fastapi import APIRouter, Query, Response
-from testee_common.auth.auth import CurrentUser
+from testee_common.auth.auth import FreshUser
 
 from companies.constants.bias_audit import FILE_NAME, NOT_OWNER
 from companies.services import bias_audit
@@ -16,7 +16,7 @@ router = APIRouter(prefix="/companies", tags=["companies"])
 @router.get("/{company_id}/bias-audit", response_class=Response)
 async def export_bias_audit(
     company_id: UUID,
-    user: CurrentUser,
+    user: FreshUser,
     interview_id: UUID | None = None,
     start: Annotated[datetime | None, Query(alias="from")] = None,
     end: Annotated[datetime | None, Query(alias="to")] = None,
