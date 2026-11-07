@@ -1,5 +1,7 @@
 import { expect, type Locator, type Page, type Route } from "@playwright/test";
 
+import { settled } from "./layout";
+
 // The assistant's panel in the p-assistant specs: the panel opened from the header, and the
 // assistant's answers stubbed in the browser (no OpenAI in tests).
 
@@ -83,10 +85,12 @@ export async function visitorChatKept(page: Page, messages: number) {
     .toBe(messages);
 }
 
+/** Opens the panel and waits until it has slid in, so what a test measures in it is final. */
 export async function openPanel(page: Page): Promise<Locator> {
   await page.getByRole("banner").locator("[data-assistant-toggle]").click();
   const panel = page.getByRole("dialog");
   await expect(panel).toBeVisible();
+  await settled(panel);
 
   return panel;
 }
