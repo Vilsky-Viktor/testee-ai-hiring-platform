@@ -8,8 +8,8 @@ import asyncio
 
 import pytest
 
-from generation.constants.batch_work import BATCH_WORK_ATTEMPTS, BatchKind, BatchStep
 from generation.config import settings
+from generation.constants.batch_work import BATCH_WORK_ATTEMPTS, BatchKind, BatchStep
 from generation.constants.quality import QualityFlag
 from generation.integrations import library
 from generation.schemas.questions import AnswerItem, AnswerList, NewQuestion

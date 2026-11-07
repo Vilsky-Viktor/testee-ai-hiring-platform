@@ -1,5 +1,4 @@
 import pytest
-
 from testee_common.config.constants import LANGUAGES
 
 from rounds.constants.voice import Intent
