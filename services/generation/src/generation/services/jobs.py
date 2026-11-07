@@ -21,9 +21,10 @@ logger = logging.getLogger(__name__)
 
 
 async def run_generation(graph, generation_id: uuid.UUID, resume: dict | None) -> None:
-    """Runs one generation to its end or its review. Never raises: a failure is saved on the
-    generation, which the user can retry, so Cloud Tasks never runs it twice; the event saved
-    with it tells companies."""
+    """Runs one generation to its end or its review. Never raises for a failure: it's saved on
+    the generation, which the user can retry, so Cloud Tasks never runs it twice; the event saved
+    with it tells companies. Cancelled (the instance is going), it goes back in the queue and
+    the error stays, so the job's retry carries on from its checkpoint."""
     # Only a queued generation runs, and only once: not one cancelled while it waited, failed
     # by the sweeper, or already claimed by another delivery of this job.
     async with Session.begin() as session:
@@ -43,6 +44,10 @@ async def run_generation(graph, generation_id: uuid.UUID, resume: dict | None) -
 
     try:
         await asyncio.wait_for(run, JOB_TIMEOUT_SECONDS)
+    except asyncio.CancelledError:
+        await asyncio.shield(run_state.save(generation_id, status=Status.QUEUED))
+
+        raise
     except TimeoutError:
         logger.error("Generation %s ran out of time", generation_id)
         error = GENERATION_STOPPED

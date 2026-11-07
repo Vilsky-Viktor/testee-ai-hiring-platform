@@ -67,3 +67,25 @@ def test_a_failed_template_generation_tells_nobody(failing_run):
     _generation, saved, _flushes = failing_run(GenerationKind.TEMPLATE)
 
     assert saved == [(None, {"status": Status.FAILED, "error": GENERATION_FAILED})]
+
+
+def test_a_run_cancelled_as_its_instance_goes_is_queued_again_for_the_retry(
+    failing_run, monkeypatch
+):
+    saved = []
+
+    async def cancelled(graph, generation, resume):
+        raise asyncio.CancelledError
+
+    async def update(session, generation_id, event=None, **values):
+        saved.append((event, values))
+
+        return True
+
+    monkeypatch.setattr(jobs, "run_pipeline", cancelled)
+    monkeypatch.setattr(generations, "update", update)
+
+    with pytest.raises(asyncio.CancelledError):
+        failing_run(GenerationKind.INTERVIEW)
+
+    assert saved == [(None, {"status": Status.QUEUED})]
