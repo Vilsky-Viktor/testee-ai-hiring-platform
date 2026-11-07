@@ -11,10 +11,7 @@ from billing.models.usage import LimitHit
 HITS = func.count(LimitHit.id)
 
 
-def since(period: str | None) -> list:
-    if not period:
-        return []
-
+def since(period: str) -> list:
     start, end = period_range(period)
 
     return [LimitHit.occurred_at >= start, LimitHit.occurred_at < end]

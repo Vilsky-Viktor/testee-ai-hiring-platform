@@ -193,8 +193,8 @@ Who a call was for is decided as it's stored: a call for a company is **paid** i
 - **Deleted accounts and companies:** deleting an account (accounts' `user.deleted` event) or a company (`DELETE /internal/companies/{id}`) empties its id in both tables, a batch at a time; the costs and hits stay.
 
 ```
-GET    /superadmin/ai-costs?period=         # the AI costs page
-GET    /superadmin/limit-hits?period=
+GET    /superadmin/ai-costs?period=         # the AI costs page; a month or year, required
+GET    /superadmin/limit-hits?period=       # required too
 GET    /superadmin/ai-spend?company_id=|user_id=   # 30 days, for a support page
 GET    /superadmin/limits
 PUT    /superadmin/limits/{name}

@@ -20,13 +20,15 @@ const ITEM = "px-3 py-2"
 /** "All time" as a checkbox, and the period in the site's menu, like the pass rates' sort: a
  * grey pill opening one choice in two columns, a month with its year (a monthly report) or a
  * year (an annual report). The menu is off while all time is on and keeps its period for when
- * it's off again. */
+ * it's off again. `periodOnly`: the menu alone, without "All time". */
 export function StatsPicker({
   choice,
   onChange,
+  periodOnly = false,
 }: {
   choice: StatsChoice
   onChange: (choice: StatsChoice) => void
+  periodOnly?: boolean
 }) {
   const t = useTranslations("superadmin")
   const format = useFormatter()
@@ -43,16 +45,18 @@ export function StatsPicker({
 
   return (
     <div className="flex flex-wrap items-center justify-end gap-6">
-      <label className="flex cursor-pointer items-center gap-3 text-base">
-        <Checkbox
-          className="size-6 shrink-0 [&_[data-slot=checkbox-indicator]>svg]:size-4"
-          checked={choice.allTime}
-          onCheckedChange={(checked) =>
-            onChange({ ...choice, allTime: checked === true })
-          }
-        />
-        {t("statsAllTime")}
-      </label>
+      {!periodOnly && (
+        <label className="flex cursor-pointer items-center gap-3 text-base">
+          <Checkbox
+            className="size-6 shrink-0 [&_[data-slot=checkbox-indicator]>svg]:size-4"
+            checked={choice.allTime}
+            onCheckedChange={(checked) =>
+              onChange({ ...choice, allTime: checked === true })
+            }
+          />
+          {t("statsAllTime")}
+        </label>
+      )}
       <DropdownMenu>
         {/* Looks like the site's select (common/pill-select.tsx); opens the site's menu. */}
         <DropdownMenuTrigger

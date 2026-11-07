@@ -10,7 +10,10 @@ from sqlalchemy import ColumnElement, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 # The period asked for: a year ("2026") or a month ("2026-10"); None for all time.
-Period = Annotated[str | None, Query(pattern=r"^\d{4}(-(0[1-9]|1[0-2]))?$")]
+PERIOD_PATTERN = r"^\d{4}(-(0[1-9]|1[0-2]))?$"
+Period = Annotated[str | None, Query(pattern=PERIOD_PATTERN)]
+# The same for what can't run over all time: it must be asked for.
+RequiredPeriod = Annotated[str, Query(pattern=PERIOD_PATTERN)]
 
 
 class StatsOut(BaseModel):

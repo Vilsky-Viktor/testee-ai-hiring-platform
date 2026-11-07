@@ -13,11 +13,12 @@ import type { AiCosts, Budget, LimitHitLists as Hits } from "@/types/superadmin"
 
 type Loaded = { costs: AiCosts | null; hits: Hits | null; budgets: Budget[] }
 
-/** The AI costs tab: the period the browser kept (shared with the stats tab), what AI cost in it
+/** The AI costs tab: the period the browser kept (shared with the stats tab; never all time,
+ * which the service refuses, so this month instead), what AI cost in it
  * and why, today's shared budgets, and the limits' hits; asked again whenever the period
  * changes. A service that doesn't answer leaves its part out. */
 export function AiCostsView() {
-  const { choice, query, change } = useStatsChoice()
+  const { choice, query, change } = useStatsChoice(true)
   const [loaded, setLoaded] = useState<Loaded | null>(null)
 
   useEffect(() => {
@@ -54,7 +55,7 @@ export function AiCostsView() {
 
   return (
     <div className="space-y-10">
-      {choice && <StatsPicker choice={choice} onChange={change} />}
+      {choice && <StatsPicker choice={choice} onChange={change} periodOnly />}
       {loaded?.costs && (
         <AiCostSections
           costs={loaded.costs}

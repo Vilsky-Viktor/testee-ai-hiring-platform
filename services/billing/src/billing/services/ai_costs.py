@@ -74,9 +74,9 @@ async def unpaid_today() -> UnpaidTodayOut:
     return UnpaidTodayOut(spend=spend, cap=cap, share=share(spend, cap))
 
 
-async def ai_costs_out(period: str | None) -> AiCostsOut:
+async def ai_costs_out(period: str) -> AiCostsOut:
     where = ai_costs.in_period(period)
-    by_month = not period or len(period) == 4
+    by_month = len(period) == 4
 
     async with Session() as session:
         spend, calls, input_tokens, cached, output = await ai_costs.totals(session, where)

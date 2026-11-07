@@ -1,4 +1,4 @@
-"""The AI costs tab's sums over ai_usage, all time or in one UTC year or month."""
+"""The AI costs tab's sums over ai_usage, in one UTC year or month."""
 
 from datetime import datetime
 
@@ -21,10 +21,7 @@ TOKENS = (
 UNPAID = (Category.UNPAID, Category.NO_COMPANY)
 
 
-def in_period(period: str | None) -> list[ColumnElement]:
-    if not period:
-        return []
-
+def in_period(period: str) -> list[ColumnElement]:
     start, end = period_range(period)
 
     return [AiUsage.occurred_at >= start, AiUsage.occurred_at < end]

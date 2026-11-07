@@ -691,7 +691,7 @@ export interface paths {
     }
     /**
      * Get Ai Costs
-     * @description What AI cost, all time or in one year or month, and why.
+     * @description What AI cost in one year or month, and why.
      */
     get: operations["get_ai_costs_superadmin_ai_costs_get"]
     put?: never
@@ -2937,8 +2937,8 @@ export interface operations {
   }
   get_ai_costs_superadmin_ai_costs_get: {
     parameters: {
-      query?: {
-        period?: string | null
+      query: {
+        period: string
       }
       header?: never
       path?: never
@@ -2968,8 +2968,8 @@ export interface operations {
   }
   get_limit_hits_superadmin_limit_hits_get: {
     parameters: {
-      query?: {
-        period?: string | null
+      query: {
+        period: string
       }
       header?: never
       path?: never

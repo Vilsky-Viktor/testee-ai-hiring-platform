@@ -109,7 +109,7 @@ Numbers show short from a thousand up, in the language's own way ("1.5K", "$12.3
 
 ### Period
 
-- A UTC month or year, or all time with the "all time" checkbox.
+- A UTC month or year, or all time with the "all time" checkbox (General only).
 - The period is one choice in a menu of two columns: a month with its year (the last 12, none before 2026) or a year.
 - The menu is off while all time is on.
 - The browser keeps the choice for the next visit (`localStorage`), not the address.
@@ -128,14 +128,14 @@ So the numbers are what is stored now: deleted companies and candidates past ret
 
 ### AI costs
 
-What AI cost and why, for the same period as General (the choice is shared). Billing works it out from `ai_usage` and `limit_hits` (see [Credits and payments](billing.md#ai-usage-and-limit-hits)); the page only shows it:
+What AI cost and why, for the same period as General (the choice is shared). It is always a month or a year: a tab with no "all time" checkbox, opening on this month if General is on all time, because `ai_usage` is far too big to add up whole and billing refuses a request without a period. Billing works it out from `ai_usage` and `limit_hits` (see [Credits and payments](billing.md#ai-usage-and-limit-hits)); the page only shows it:
 
 1. **Totals:** spend in USD, AI calls, input, cached input and output tokens, and this month's spend against the monthly budget (`MONTHLY_BUDGET` in Controls, see [Limits](#limits); at 0, the month's spend alone).
 2. **Who it was for:** paid companies, unpaid companies, people without a company and testee's own work (templates, quality checks, batches, news), each with its spend and share.
 3. **By action:** each action's calls, spend, paid and unpaid spend, and what one cost: one interview generation, one assistant message, one minute of transcription.
 4. **By model:** calls, tokens and spend, with the share of input read from OpenAI's cache.
 5. **Companies and users that cost most:** 20 of each, by spend, each opening its support page.
-6. **By day,** for a month, or **by month,** for a year or all time.
+6. **By day,** for a month, or **by month,** for a year.
 7. **Shared budgets today:** today's (UTC) use of each limit for everyone: generation's new generations and quality checks, the assistant's messages and tokens and its help chat's questions and tokens, and the unpaid users' AI spend against its cap (`AI_SPEND_UNPAID_DAY`). Each owning service reads its own Redis counters.
 8. **Limits hit:** ours and our providers' (OpenAI's rate limit and quota, waits in generation's own request limiter, Resend's, the ATSs', Firebase's), each with its hits in the period, its current value, and the 5 companies and users that hit it most, opening their support pages.
 

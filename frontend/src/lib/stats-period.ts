@@ -51,6 +51,11 @@ export function parseStatsChoice(saved: string, now: Date): StatsChoice {
   }
 }
 
+/** The choice on a tab without "all time": there, all time reads as this month. */
+export function periodOnlyChoice(choice: StatsChoice, now: Date): StatsChoice {
+  return choice.allTime ? parseStatsChoice("", now) : choice
+}
+
 /** Keeps the choice for the next visit; nothing happens when storage is blocked. */
 export function writeStatsChoice(choice: StatsChoice) {
   try {

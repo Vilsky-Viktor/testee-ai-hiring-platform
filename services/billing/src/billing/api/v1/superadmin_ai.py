@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, status
 from testee_common.auth.superadmin import SuperadminUser
-from testee_common.db.stats import Period
+from testee_common.db.stats import RequiredPeriod
 
 from billing.schemas.ai_costs import AiCostsOut, AiSpendOut
 from billing.schemas.limits import LimitHitListsOut
@@ -12,13 +12,13 @@ router = APIRouter(prefix="/superadmin", tags=["superadmin"])
 
 
 @router.get("/ai-costs")
-async def get_ai_costs(superadmin: SuperadminUser, period: Period = None) -> AiCostsOut:
-    """What AI cost, all time or in one year or month, and why."""
+async def get_ai_costs(superadmin: SuperadminUser, period: RequiredPeriod) -> AiCostsOut:
+    """What AI cost in one year or month, and why."""
     return await ai_costs_out(period)
 
 
 @router.get("/limit-hits")
-async def get_limit_hits(superadmin: SuperadminUser, period: Period = None) -> LimitHitListsOut:
+async def get_limit_hits(superadmin: SuperadminUser, period: RequiredPeriod) -> LimitHitListsOut:
     return await limit_hits_out(period)
 
 

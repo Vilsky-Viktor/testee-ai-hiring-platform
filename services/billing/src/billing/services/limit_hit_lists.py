@@ -30,7 +30,7 @@ def hitters_out(found: list[tuple[str, int]], known: dict[str, str]) -> list[Hit
     return [HitterOut(id=key, name=known.get(key), hits=hits) for key, hits in found]
 
 
-async def limit_hits_out(period: str | None) -> LimitHitListsOut:
+async def limit_hits_out(period: str) -> LimitHitListsOut:
     where = limit_hits.since(period)
 
     async with Session() as session:

@@ -91,7 +91,16 @@ test("superadmin sees a month's AI costs, top spenders and limit hits", async ({
       { action: "assistant_message", category: "no_company", cost: 1.5, at, userId, subjectId: `e2e-${randomId()}` },
     ])
     await addLimitHits(HIT_LIMIT, 2, at, company.id, userId)
+    // All time left on in General: this tab has no such box and opens on this month.
+    await superadmin.evaluate(() =>
+      localStorage.setItem("testee_stats_period", JSON.stringify({ allTime: true, period: "2026" }))
+    )
     await visit(superadmin, "/superadmin/stats/ai-costs")
+    const month = { month: "long", year: "numeric", timeZone: "UTC" } as const
+    await expect(superadmin.getByRole("main").getByRole("button").first()).toHaveText(
+      now.toLocaleString("en-US", month)
+    )
+    await expect(superadmin.getByRole("main").getByRole("checkbox")).toHaveCount(0)
     await pickMonth(superadmin, label)
 
     // The totals.

@@ -213,6 +213,8 @@ def test_the_ai_costs_tab_asks_for_its_period(client, signed_in, monkeypatch):
     assert client.get("/superadmin/ai-costs?period=2026-10").status_code == 200
     assert client.get("/superadmin/limit-hits?period=2026").status_code == 200
     assert client.get("/superadmin/ai-costs?period=october").status_code == 422
+    assert client.get("/superadmin/ai-costs").status_code == 422
+    assert client.get("/superadmin/limit-hits").status_code == 422
     assert asked == [("costs", "2026-10"), ("hits", "2026")]
 
 

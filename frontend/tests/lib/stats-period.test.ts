@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest"
 
 import {
   parseStatsChoice,
+  periodOnlyChoice,
   savedStatsChoice,
   statsMonths,
   statsYears,
@@ -34,6 +35,18 @@ describe("statsMonths and statsYears", () => {
 
   it("offers every year since launch, newest first", () => {
     expect(statsYears(NOW)).toEqual(["2027", "2026"])
+  })
+})
+
+describe("periodOnlyChoice", () => {
+  it("reads all time as this month and keeps a period", () => {
+    expect(periodOnlyChoice({ allTime: true, period: "2026" }, NOW)).toEqual({
+      allTime: false,
+      period: "2027-03",
+    })
+    const month = { allTime: false, period: "2026-07" }
+
+    expect(periodOnlyChoice(month, NOW)).toEqual(month)
   })
 })
 
