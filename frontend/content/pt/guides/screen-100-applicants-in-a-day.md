@@ -103,7 +103,7 @@ Anote por que cada pessoa entrou na lista. Leva um minuto por candidato e ajuda 
 
 ## Quanto custa
 
-Com a testee, você paga só pelos candidatos que respondem pelo menos uma pergunta: $5 cada na recarga de $50, $4 a partir de uma recarga de $200, $3 a partir de uma recarga de $600 e $2 a partir de uma recarga de $1.000. Para 100 candidatos, são $400 em uma recarga de 100 candidatos a $4 cada, sem assinatura. Os preços aqui são em dólares americanos, e na moeda local no Canadá, na Austrália, em Israel, na Polônia, na Suíça, no Japão, na Coreia do Sul, em Taiwan, em Hong Kong, na Tailândia, em Singapura, na Índia, no restante da UE, na Noruega, na Islândia, em Liechtenstein e no Reino Unido (veja os [preços](/pricing)); IVA ou impostos sobre vendas são tratados no checkout. Gerar o teste é gratuito, e os 3 primeiros candidatos da sua primeira empresa são gratuitos.
+Com a testee, você paga só pelos candidatos que respondem pelo menos uma pergunta: $5 cada na recarga de $50, $4 a partir de uma recarga de $200, $3 a partir de uma recarga de $600 e $2 a partir de uma recarga de $1.000. Para 100 candidatos, são $400 em uma recarga de 100 candidatos a $4 cada, sem assinatura. Os preços aqui são em dólares americanos, e na moeda local no Canadá, na Austrália, em Israel, na Polônia, na Suíça, no Japão, na Coreia do Sul, em Taiwan, em Hong Kong, na Tailândia, em Singapura, na Índia e no Reino Unido, e em euros no restante da UE, na Islândia, em Liechtenstein e na Noruega (veja os [preços](/pricing)); IVA ou impostos sobre vendas são tratados no checkout. Gerar o teste é gratuito, e os 3 primeiros candidatos da sua primeira empresa são gratuitos.
 
 ## Leitura relacionada
 

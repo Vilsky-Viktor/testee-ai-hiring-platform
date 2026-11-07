@@ -103,7 +103,7 @@ Schrijf op waarom elke persoon op de lijst staat. Dat kost een minuut per kandid
 
 ## Wat het kost
 
-Met testee betaal je alleen voor kandidaten die minstens één vraag beantwoorden: $5 per kandidaat bij de opwaardering van $50, $4 vanaf een opwaardering van $200, $3 vanaf een opwaardering van $600 en $2 vanaf een opwaardering van $1.000. Voor 100 sollicitanten is dat $400 in één opwaardering van 100 kandidaten tegen $4 per kandidaat, zonder abonnement. Prijzen zijn hier in Amerikaanse dollars, en in de lokale valuta in Canada, Australië, Israël, Polen, Zwitserland, Japan, Zuid-Korea, Taiwan, Hongkong, Thailand, Singapore, India, de rest van de EU, Noorwegen, IJsland, Liechtenstein en het Verenigd Koninkrijk (zie [prijzen](/pricing)); btw of sales tax wordt bij het afrekenen geregeld. De test genereren is gratis, en de eerste 3 kandidaten van je eerste bedrijf zijn gratis.
+Met testee betaal je alleen voor kandidaten die minstens één vraag beantwoorden: $5 per kandidaat bij de opwaardering van $50, $4 vanaf een opwaardering van $200, $3 vanaf een opwaardering van $600 en $2 vanaf een opwaardering van $1.000. Voor 100 sollicitanten is dat $400 in één opwaardering van 100 kandidaten tegen $4 per kandidaat, zonder abonnement. Prijzen zijn hier in Amerikaanse dollars, en in de lokale valuta in Canada, Australië, Israël, Polen, Zwitserland, Japan, Zuid-Korea, Taiwan, Hongkong, Thailand, Singapore, India en het Verenigd Koninkrijk, en in euro's in de rest van de EU, IJsland, Liechtenstein en Noorwegen (zie [prijzen](/pricing)); btw of sales tax wordt bij het afrekenen geregeld. De test genereren is gratis, en de eerste 3 kandidaten van je eerste bedrijf zijn gratis.
 
 ## Verder lezen
 

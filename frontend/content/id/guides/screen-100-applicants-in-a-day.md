@@ -103,7 +103,7 @@ Tuliskan kenapa setiap orang masuk daftar. Hanya butuh satu menit per kandidat d
 
 ## Berapa biayanya
 
-Dengan testee, kamu hanya membayar untuk kandidat yang menjawab setidaknya satu soal: $5 per kandidat pada isi ulang $50, $4 mulai dari isi ulang $200, $3 mulai dari isi ulang $600, dan $2 mulai dari isi ulang $1.000. Untuk 100 pelamar, itu $400 dalam satu kali isi ulang untuk 100 kandidat dengan harga $4 per kandidat, tanpa langganan. Harga di sini dalam dolar AS, dan dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, India, negara UE lainnya, Norwegia, Islandia, Liechtenstein, dan Inggris Raya (lihat [harga](/pricing)); PPN (VAT) atau pajak penjualan ditangani saat checkout. Membuat tes gratis, dan 3 kandidat pertama dari perusahaan pertamamu gratis.
+Dengan testee, kamu hanya membayar untuk kandidat yang menjawab setidaknya satu soal: $5 per kandidat pada isi ulang $50, $4 mulai dari isi ulang $200, $3 mulai dari isi ulang $600, dan $2 mulai dari isi ulang $1.000. Untuk 100 pelamar, itu $400 dalam satu kali isi ulang untuk 100 kandidat dengan harga $4 per kandidat, tanpa langganan. Harga di sini dalam dolar AS, dan dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, India, dan Inggris Raya, serta dalam euro di bagian UE lainnya, Islandia, Liechtenstein, dan Norwegia (lihat [harga](/pricing)); PPN (VAT) atau pajak penjualan ditangani saat checkout. Membuat tes gratis, dan 3 kandidat pertama dari perusahaan pertamamu gratis.
 
 ## Bacaan terkait
 

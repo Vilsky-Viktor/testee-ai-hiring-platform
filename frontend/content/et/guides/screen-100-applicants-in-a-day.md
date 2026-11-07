@@ -103,7 +103,7 @@ Pane kirja, miks iga inimene nimekirja sai. See võtab kandidaadi kohta minuti j
 
 ## Mis see maksab
 
-testeega maksad ainult kandidaatide eest, kes vastavad vähemalt ühele küsimusele: 50 $ juurdelaadimise puhul 5 $ kandidaadi kohta, alates 200 $ juurdelaadimisest 4 $, alates 600 $ juurdelaadimisest 3 $ ja alates 1000 $ juurdelaadimisest 2 $. 100 kandideerija puhul on see 400 $ ühe 100 kandidaadi juurdelaadimisega, 4 $ kaupa, ilma tellimuseta. Hinnad on siin USA dollarites, Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris, Indias, ülejäänud ELis, Norras, Islandil, Liechtensteinis ja Ühendkuningriigis aga kohalikus valuutas (vaata [hindu](/pricing)); käibemaksu või müügimaksu arvestatakse maksmise ajal. Testi loomine on tasuta ja sinu esimese ettevõtte esimesed 3 kandidaati on tasuta.
+testeega maksad ainult kandidaatide eest, kes vastavad vähemalt ühele küsimusele: 50 $ juurdelaadimise puhul 5 $ kandidaadi kohta, alates 200 $ juurdelaadimisest 4 $, alates 600 $ juurdelaadimisest 3 $ ja alates 1000 $ juurdelaadimisest 2 $. 100 kandideerija puhul on see 400 $ ühe 100 kandidaadi juurdelaadimisega, 4 $ kaupa, ilma tellimuseta. Hinnad on siin USA dollarites, Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris, Indias ja Ühendkuningriigis aga kohalikus valuutas ning ülejäänud EL-is, Islandil, Liechtensteinis ja Norras eurodes (vaata [hindu](/pricing)); käibemaksu või müügimaksu arvestatakse maksmise ajal. Testi loomine on tasuta ja sinu esimese ettevõtte esimesed 3 kandidaati on tasuta.
 
 ## Loe ka
 

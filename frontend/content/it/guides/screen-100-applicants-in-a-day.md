@@ -103,7 +103,7 @@ Annota perché ogni persona è entrata nella rosa. Richiede un minuto per candid
 
 ## Quanto costa
 
-Con testee paghi solo per i candidati che rispondono ad almeno una domanda: $5 ciascuno con la ricarica da $50, $4 da una ricarica di $200, $3 da una ricarica di $600 e $2 da una ricarica di $1.000. Per 100 candidati sono $400 con una ricarica da 100 candidati a $4 ciascuno, senza abbonamento. I prezzi sono qui in dollari statunitensi, e nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore, India, nel resto dell'UE, in Norvegia, Islanda, Liechtenstein e nel Regno Unito (vedi i [prezzi](/pricing)); IVA o sales tax vengono gestite al pagamento. Generare il test è gratuito, e i primi 3 candidati della tua prima azienda sono gratis.
+Con testee paghi solo per i candidati che rispondono ad almeno una domanda: $5 ciascuno con la ricarica da $50, $4 da una ricarica di $200, $3 da una ricarica di $600 e $2 da una ricarica di $1.000. Per 100 candidati sono $400 con una ricarica da 100 candidati a $4 ciascuno, senza abbonamento. I prezzi sono qui in dollari statunitensi, e nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore, India e nel Regno Unito, e in euro nel resto dell'UE, in Islanda, in Liechtenstein e in Norvegia (vedi i [prezzi](/pricing)); IVA o sales tax vengono gestite al pagamento. Generare il test è gratuito, e i primi 3 candidati della tua prima azienda sono gratis.
 
 ## Letture correlate
 

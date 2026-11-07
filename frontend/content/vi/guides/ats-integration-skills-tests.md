@@ -98,7 +98,7 @@ testee kết nối với **Workable, Greenhouse, Teamtailor, Recruitee và Breez
 
 Một số ATS cần một bước ở phía họ. Greenhouse, Teamtailor và Recruitee yêu cầu bạn thêm webhook thủ công; hộp thoại Hướng dẫn của testee hiển thị địa chỉ và chỗ dán khóa bí mật. testee tự thiết lập webhook cho Workable và Breezy HR. API và webhook của Breezy HR đi kèm gói Pro của họ, còn webhook của Teamtailor là một tiện ích bổ sung của Teamtailor.
 
-Giá tính theo ứng viên, không có gói đăng ký: bạn chỉ trả tiền cho những ứng viên trả lời ít nhất một câu hỏi, $5 mỗi người với gói nạp $50, $4 từ gói nạp $200, $3 từ gói nạp $600 và $2 từ gói nạp $1.000. Giá ở đây tính bằng đô la Mỹ, và bằng đồng tiền địa phương ở Canada, Úc, Israel, Ba Lan, Thụy Sĩ, Nhật Bản, Hàn Quốc, Đài Loan, Hồng Kông, Thái Lan, Singapore, Ấn Độ, phần còn lại của EU, Na Uy, Iceland, Liechtenstein và Vương quốc Anh; VAT hoặc thuế bán hàng được xử lý khi thanh toán. Kết nối ATS và tạo buổi phỏng vấn là miễn phí, và 3 ứng viên đầu tiên của công ty đầu tiên của bạn được miễn phí. Xem [bảng giá](/pricing).
+Giá tính theo ứng viên, không có gói đăng ký: bạn chỉ trả tiền cho những ứng viên trả lời ít nhất một câu hỏi, $5 mỗi người với gói nạp $50, $4 từ gói nạp $200, $3 từ gói nạp $600 và $2 từ gói nạp $1.000. Giá ở đây tính bằng đô la Mỹ, và bằng đồng tiền địa phương ở Canada, Úc, Israel, Ba Lan, Thụy Sĩ, Nhật Bản, Hàn Quốc, Đài Loan, Hồng Kông, Thái Lan, Singapore, Ấn Độ và Vương quốc Anh, và bằng euro ở phần còn lại của EU, Iceland, Liechtenstein và Na Uy; VAT hoặc thuế bán hàng được xử lý khi thanh toán. Kết nối ATS và tạo buổi phỏng vấn là miễn phí, và 3 ứng viên đầu tiên của công ty đầu tiên của bạn được miễn phí. Xem [bảng giá](/pricing).
 
 ## Đọc thêm
 

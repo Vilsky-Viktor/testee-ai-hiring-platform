@@ -103,7 +103,7 @@ Halte fest, warum jede Person auf die Liste gekommen ist. Das dauert eine Minute
 
 ## Was es kostet
 
-Mit testee zahlst du nur für Kandidaten, die mindestens eine Frage beantworten: 5 $ pro Kandidat bei der Aufladung über 50 $, 4 $ ab einer Aufladung von 200 $, 3 $ ab einer Aufladung von 600 $ und 2 $ ab einer Aufladung von 1.000 $. Für 100 Bewerber sind das 400 $ in einer Aufladung für 100 Kandidaten zu je 4 $, ohne Abo. Die Preise sind hier in US-Dollar angegeben, in Kanada, Australien, Israel, Polen, der Schweiz, Japan, Südkorea, Taiwan, Hongkong, Thailand, Singapur, Indien, in der übrigen EU, in Norwegen, Island, Liechtenstein und im Vereinigten Königreich in der Landeswährung (siehe [Preise](/pricing)); Mehrwertsteuer oder Sales Tax werden beim Bezahlen berechnet. Den Test zu generieren ist kostenlos, und die ersten 3 Kandidaten deines ersten Unternehmens sind kostenlos.
+Mit testee zahlst du nur für Kandidaten, die mindestens eine Frage beantworten: 5 $ pro Kandidat bei der Aufladung über 50 $, 4 $ ab einer Aufladung von 200 $, 3 $ ab einer Aufladung von 600 $ und 2 $ ab einer Aufladung von 1.000 $. Für 100 Bewerber sind das 400 $ in einer Aufladung für 100 Kandidaten zu je 4 $, ohne Abo. Die Preise sind hier in US-Dollar angegeben, in Kanada, Australien, Israel, Polen, der Schweiz, Japan, Südkorea, Taiwan, Hongkong, Thailand, Singapur, Indien und im Vereinigten Königreich in der Landeswährung und in der übrigen EU, in Island, Liechtenstein und Norwegen in Euro (siehe [Preise](/pricing)); Mehrwertsteuer oder Sales Tax werden beim Bezahlen berechnet. Den Test zu generieren ist kostenlos, und die ersten 3 Kandidaten deines ersten Unternehmens sind kostenlos.
 
 ## Weiterlesen
 
