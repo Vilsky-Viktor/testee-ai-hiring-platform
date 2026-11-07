@@ -28,7 +28,7 @@
         "Cài đặt email: những email không bắt buộc nào bạn nhận, và nhật ký mọi thay đổi đối với chúng: email nào, bật hay tắt, khi nào, ở đâu (khi đăng nhập, trong Cài đặt, qua liên kết hủy đăng ký hay báo cáo thư rác, hoặc do nhân viên của chúng tôi, kèm người thực hiện) và bạn đã thấy phiên bản nào của nội dung các ô đánh dấu.",
         "Email gửi thành viên công ty: bản ghi các bản tóm tắt hoạt động và lời nhắc chúng tôi đã gửi cho bạn, và mỗi lời nhắc nói về điều gì, để không có email nào bị gửi hai lần.",
         "Email gửi nhiều người dùng (thông báo về thay đổi điều khoản của chúng tôi, thông báo quan trọng về dịch vụ, cập nhật sản phẩm, ưu đãi): mỗi email đã được gửi cho bạn, bị bỏ qua hay gửi thất bại, và bạn đã hủy đăng ký hoặc đánh dấu email đó là thư rác hay chưa, để không email nào bị gửi hai lần và chúng tôi biết mỗi email được đón nhận ra sao.",
-        "Các địa chỉ chúng tôi không còn gửi email: nếu email gửi đến một địa chỉ bị trả lại vĩnh viễn, bị trả lại tạm thời 3 lần trong 14 ngày hoặc bị đánh dấu là thư rác, hàm băm một chiều của địa chỉ đó, lý do và thời điểm. Hàm băm này không thể chuyển ngược lại thành email.",
+        "Các địa chỉ chúng tôi không còn gửi email: nếu email gửi đến một địa chỉ bị trả lại vĩnh viễn, bị trả lại tạm thời 3 lần trong 14 ngày hoặc bị đánh dấu là thư rác, hàm băm một chiều của địa chỉ đó, lý do và thời điểm, và với trường hợp bị trả lại tạm thời là ID mà Resend đã cấp cho email đó. Hàm băm không thể chuyển ngược lại thành địa chỉ.",
         "Ứng viên ngừng nhận email của một công ty: hàm băm một chiều của địa chỉ email của họ, cùng với công ty đó và, nếu họ chỉ ngừng nhận lời nhắc của một buổi phỏng vấn, lời mời đó. Hàm băm này không thể chuyển ngược lại thành email.",
         "Giới thiệu: bạn hoặc công ty của bạn đến qua liên kết giới thiệu của ai, và lượt giới thiệu đó đã được thưởng hay chưa.",
         "Giao dịch mua: với mỗi lần nạp credit, công ty được nạp, người mua, những gì đã mua, tổng tiền và loại tiền tệ, mã giao dịch của Paddle và thời điểm mua; và với mỗi lần hoàn tiền, lần nạp credit, số credit, số tiền, mã tham chiếu của Paddle và kết quả (người yêu cầu được ghi trong nhật ký thao tác của công ty). Paddle, không phải chúng tôi, lưu giữ thông tin thẻ và thông tin thanh toán.",
@@ -43,7 +43,7 @@
       "heading": "Vì sao chúng tôi sử dụng dữ liệu",
       "items": [
         "Để cung cấp testee: tạo buổi phỏng vấn, tổ chức phỏng vấn cho ứng viên được mời, hiển thị kết quả cho công ty và gửi các email bạn yêu cầu (hợp đồng).",
-        "Email dịch vụ, chẳng hạn như lời mời, báo cáo, sự cố thanh toán, thay đổi đối với điều khoản của chúng tôi và thông báo quan trọng về dịch vụ (sự cố bảo mật, thời gian ngừng hoạt động theo kế hoạch hoặc thay đổi về cách dịch vụ hoạt động), luôn được gửi (hợp đồng).",
+        "Email dịch vụ, chẳng hạn như lời mời, báo cáo, sự cố thanh toán, thay đổi đối với điều khoản của chúng tôi và thông báo quan trọng về dịch vụ (sự cố bảo mật, thời gian ngừng hoạt động theo kế hoạch hoặc thay đổi về cách dịch vụ hoạt động), được gửi bất kể bạn chọn gì tại mục Email (hợp đồng).",
         "Bản tóm tắt hoạt động và lời nhắc về các công ty của bạn, chẳng hạn như sắp hết credit hoặc một buổi phỏng vấn chưa có ứng viên (lợi ích hợp pháp của chúng tôi trong việc giúp bạn sử dụng testee). Các email này bật cho đến khi bạn tắt chúng.",
         "Cập nhật sản phẩm và tin tức: gửi cho người dùng của chính chúng tôi không đánh dấu ô “Không gửi cho tôi cập nhật sản phẩm và tin tức” vào lần đầu tiên tùy chọn này được đưa ra khi đăng nhập (Điều 13(2) của Chỉ thị ePrivacy và § 103¹ của Đạo luật Truyền thông Điện tử Estonia). Bạn có thể ngừng nhận bất cứ lúc nào, miễn phí.",
         "Ưu đãi và khuyến mãi: chỉ khi bạn đồng ý, bằng cách đánh dấu ô khi đăng nhập hoặc trong Cài đặt (sự đồng ý). Bạn có thể rút lại sự đồng ý bất cứ lúc nào.",
@@ -97,7 +97,7 @@
     {
       "heading": "Email và hủy đăng ký",
       "paragraphs": [
-        "Email dịch vụ, chẳng hạn như lời mời, báo cáo, sự cố thanh toán, thay đổi đối với điều khoản của chúng tôi và thông báo quan trọng về dịch vụ, luôn được gửi. Bạn chọn các email còn lại trong Cài đặt, tại mục Email: tóm tắt hoạt động, lời nhắc, cập nhật sản phẩm và tin tức, và ưu đãi và khuyến mãi. Mỗi email không bắt buộc đều có liên kết hủy đăng ký hoạt động mà không cần đăng nhập, và việc đánh dấu một email không bắt buộc là thư rác cũng sẽ tắt email đó. Nếu email gửi cho bạn bị trả lại vĩnh viễn, hoặc bạn đánh dấu một email của chúng tôi là thư rác, chúng tôi ngừng gửi email về sản phẩm và thông báo đến địa chỉ đó cho đến khi bạn yêu cầu chúng tôi gửi lại.",
+        "Email dịch vụ, chẳng hạn như lời mời, báo cáo, sự cố thanh toán, thay đổi đối với điều khoản của chúng tôi và thông báo quan trọng về dịch vụ, được gửi bất kể bạn chọn gì. Bạn chọn các email còn lại trong Cài đặt, tại mục Email: tóm tắt hoạt động, lời nhắc, cập nhật sản phẩm và tin tức, và ưu đãi và khuyến mãi. Mỗi email không bắt buộc đều có liên kết hủy đăng ký hoạt động mà không cần đăng nhập, và việc đánh dấu một email không bắt buộc là thư rác cũng sẽ tắt email đó. Chúng tôi chỉ gửi email đến địa chỉ bạn đã xác nhận; trước đó, bạn xem tin nhắn của chúng tôi trong testee. Nếu email gửi cho bạn bị trả lại vĩnh viễn, hoặc bạn đánh dấu bất kỳ email nào của chúng tôi là thư rác, chúng tôi ngừng gửi mọi email đến địa chỉ đó, kể cả email dịch vụ, cho đến khi bạn yêu cầu chúng tôi gửi lại.",
         "Lời mời và lời nhắc mà công ty gửi cho ứng viên qua testee có liên kết để ngừng nhận email của công ty đó, hoặc lời nhắc của buổi phỏng vấn đó. Sau đó testee không gửi email đến địa chỉ đó thay mặt công ty nữa, và công ty thấy lời mời là chưa được gửi tới."
       ]
     },
@@ -119,6 +119,7 @@
         "Nhật ký thao tác của công ty: ai đã làm gì, được lưu 12 tháng.",
         "Ghi chú bạn viết trên các buổi phỏng vấn của một công ty: cho đến khi ghi chú, buổi phỏng vấn hoặc công ty bị xóa. Ghi chú thuộc về công ty, vì vậy chúng vẫn ở lại với công ty, không kèm tên của bạn, khi bạn rời công ty hoặc xóa tài khoản.",
         "Bản ghi mức sử dụng AI và các giới hạn đã chạm tới: 13 tháng, không kèm ID tài khoản của bạn sau khi bạn xóa tài khoản.",
+        "Các thay đổi do quản trị viên của chúng tôi thực hiện đối với giới hạn: ai thực hiện từng thay đổi, kèm địa chỉ email của họ, điều gì đã thay đổi và khi nào: 2 năm.",
         "Các lượt luyện tập: cho đến khi bạn xóa tài khoản.",
         "Các đánh giá và báo cáo về câu hỏi: cùng với câu hỏi. Khi tài khoản của bạn bị xóa, các đánh giá và báo cáo của bạn vẫn được giữ và không liên kết với bạn, còn mọi bình luận bạn đã viết đều bị xóa. Điều tương tự áp dụng cho các đánh giá và báo cáo trong một buổi phỏng vấn khi lời mời của bạn đến buổi đó bị xóa. Bình luận của mọi báo cáo khác bị xóa 12 tháng sau khi được viết.",
         "Sẵn sàng nhận cơ hội việc làm: cho đến khi bạn tắt nó hoặc xóa tài khoản, và tối đa một năm sau lần cuối bạn bật nó hoặc lưu hồ sơ LinkedIn; nhật ký các lựa chọn của bạn, cho đến khi bạn xóa tài khoản.",
@@ -128,7 +129,7 @@
         "Bản ghi các bản tóm tắt và lời nhắc đã gửi cho bạn: 30 ngày, hoặc cho đến khi bạn xóa tài khoản nếu việc đó xảy ra sớm hơn.",
         "Bản ghi các thông báo, cập nhật sản phẩm và ưu đãi đã gửi cho bạn: cho đến khi bạn xóa tài khoản.",
         "Địa chỉ chúng tôi không còn gửi email, dưới dạng hàm băm: cho đến khi bạn yêu cầu chúng tôi gửi email đến địa chỉ đó trở lại, kể cả sau khi bạn xóa tài khoản, để địa chỉ đó không nhận email nữa.",
-        "Một lần bị trả lại tạm thời, dưới dạng hàm băm của địa chỉ: 14 ngày.",
+        "Một lần bị trả lại tạm thời, dưới dạng hàm băm của địa chỉ, cùng ID mà Resend đã cấp cho email đó: 14 ngày.",
         "Yêu cầu của ứng viên ngừng nhận email của một công ty, dưới dạng hàm băm của email: cho đến khi công ty bị xóa, kể cả khi công ty xóa ứng viên đó.",
         "Tin nhắn liên hệ: chừng nào chúng tôi cần để trả lời bạn, tối đa 2 năm.",
         "Báo cáo lỗi: tối đa 90 ngày.",
@@ -136,7 +137,7 @@
         "Bản ghi các lệnh gọi AI tại Langfuse: 30 ngày, sau đó tự động bị xóa.",
         "Bản sao lưu cơ sở dữ liệu và bản sao lưu hằng ngày của tài khoản đăng nhập: 14 ngày, sau đó bị ghi đè hoặc bị xóa; mọi thứ đã bị xóa sẽ không còn trong các bản sao lưu kể từ thời điểm đó.",
         "Bản ghi về một tài khoản đã xóa, kèm email và ID tài khoản: 14 ngày, trong thời gian các bản sao lưu còn tồn tại, chỉ để một bản sao lưu được khôi phục không thể mang dữ liệu của bạn trở lại.",
-        "Tin nhắn đang được chuyển giữa các dịch vụ của chúng tôi, có thể bao gồm email và báo cáo gửi qua email: tối đa 8 ngày sau khi được gửi. Một sự kiện webhook bị lỗi, đang chờ gửi lại: khoảng 3 ngày.",
+        "Tin nhắn đang được chuyển giữa các dịch vụ của chúng tôi, có thể bao gồm email và báo cáo gửi qua email: tối đa 8 ngày sau khi được gửi. Một sự kiện webhook bị lỗi, cùng những gì nó mang về một ứng viên, đang chờ gửi lại: khoảng 3 ngày. Bản ghi của mỗi lần gửi webhook: 30 ngày.",
         "Thống kê sử dụng: 25 tháng, sau đó tự động bị xóa; việc xóa tài khoản không rút ngắn thời hạn này.",
         "Hồ sơ mua hàng và hoàn tiền: trong thời gian luật kế toán yêu cầu (7 năm tại Estonia), không kèm ID tài khoản của bạn sau khi bạn xóa tài khoản.",
         "Số dư và các mục credit, cùng tiền tệ của công ty: cho đến khi công ty bị xóa. Tự động nạp của công ty: cho đến khi tính năng này bị tắt, thành viên đã bật rời công ty hoặc xóa tài khoản của họ, hoặc công ty bị xóa. Tiền tệ được lưu cho tài khoản của riêng bạn: cho đến khi bạn xóa tài khoản.",
@@ -161,7 +162,7 @@
       "heading": "Cookie và bộ nhớ trình duyệt",
       "paragraphs": [
         "testee chỉ sử dụng các cookie và bộ nhớ trình duyệt cần thiết để hoạt động hoặc để ghi nhớ các lựa chọn của chính bạn. Không có cookie quảng cáo hay cookie phân tích.",
-        "Để duy trì trạng thái đăng nhập: một cookie (testee_token, được gia hạn mỗi giờ khi bạn dùng testee, cho đến khi bạn đăng xuất) và bộ nhớ trình duyệt của nhà cung cấp đăng nhập của chúng tôi, Google Firebase, nơi cũng giữ một danh sách ngắn các ngày dịch vụ này chạy trên trình duyệt này, kể cả khi bạn chưa đăng nhập. Trong lúc bạn kết nối một ứng dụng AI, một cookie (testee_connect) tồn tại trong vài phút cần thiết.",
+        "Để duy trì trạng thái đăng nhập: một cookie (testee_token, được gia hạn mỗi giờ khi bạn dùng testee, cho đến khi bạn đăng xuất) và bộ nhớ trình duyệt của nhà cung cấp đăng nhập của chúng tôi, Google Firebase, nơi cũng giữ một danh sách ngắn các ngày dịch vụ này chạy trên trình duyệt này, kể cả khi bạn chưa đăng nhập. Trong lúc bạn kết nối một ứng dụng AI, một cookie (testee_connect) tồn tại trong vài phút cần thiết, và trong lúc bạn thêm Slack, một cookie (testee_slack) tồn tại tối đa 15 phút.",
         "Để ghi nhớ các lựa chọn của bạn: ngôn ngữ của bạn (một cookie, testee_locale, trong một năm, được đặt khi bạn chọn một ngôn ngữ hoặc mở testee tại địa chỉ của một ngôn ngữ), giao diện sáng hoặc tối, độ rộng bảng điều khiển của trợ lý, việc bảng đó có đang mở không và công ty bạn đã chọn trong đó (cho đến khi bạn đăng xuất), cách bạn mời ứng viên lần gần nhất, việc bạn đã từng đăng nhập trên trình duyệt này, khoảng thời gian bạn chọn gần nhất cho thống kê và các thông báo về tài liệu pháp lý đã thay đổi mà bạn đã đóng. Chúng ở lại trong trình duyệt của bạn cho đến khi bạn xóa chúng.",
         "Chỉ trong thẻ này, cho đến khi bạn đóng thẻ: cuộc trò chuyện của bạn với trợ lý cho đến khi bạn đăng nhập, và mô tả công việc mà bạn đang biến thành buổi phỏng vấn, để khi tải lại trang thì quá trình vẫn tiếp tục.",
         "Liên kết giới thiệu: chỉ khi bạn chọn giữ lại, một cookie (testee_ref) ghi nhớ liên kết mà bạn đã dùng để đến trong 30 ngày, để credit đến được cả hai công ty.",

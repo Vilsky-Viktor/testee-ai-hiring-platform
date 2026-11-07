@@ -41,7 +41,7 @@
       "updatesNote": "Nuevas funciones y noticias de testee.",
       "promotions": "Ofertas y promociones",
       "promotionsNote": "Descuentos y ofertas especiales.",
-      "alwaysSent": "Los correos de servicio, como invitaciones, informes de candidatos, problemas de pago y cambios en nuestros términos, se envían siempre."
+      "alwaysSent": "Los correos de servicio, como invitaciones, informes de candidatos, problemas de pago y cambios en nuestros términos, no se pueden desactivar."
     }
   },
   "userMenu": {
@@ -3108,7 +3108,7 @@
       "noSelling": "No vendemos datos personales ni los compartimos con fines publicitarios. No hay cookies de publicidad ni de analítica.",
       "noInference": "testee no recoge datos sobre el sexo, la edad, el origen o la discapacidad de los candidatos, ni deduce nada parecido.",
       "voice": "En el modo de voz, la respuesta hablada de un candidato se convierte en texto y se compara con las opciones, y la opción elegida se le dice y se le muestra en pantalla; una respuesta a una pregunta con varias opciones correctas se confirma primero. testee no guarda lo que dice, y la voz no se analiza de ninguna otra forma. OpenAI, que lo convierte en texto, puede conservarlo hasta 30 días, como se indica abajo.",
-      "ai": "OpenAI, que escribe las preguntas, tiene indicado no guardar lo que recibe cuando su API ofrece esa opción; puede conservar los datos hasta 30 días, solo para detectar abusos salvo que la ley exija más tiempo, y no los usa para entrenar sus modelos.",
+      "ai": "OpenAI, que escribe y revisa las preguntas y hace funcionar el asistente y el modo de voz, tiene indicado no guardar lo que recibe cuando su API ofrece esa opción; puede conservar los datos hasta 30 días, solo para detectar abusos salvo que la ley exija más tiempo, y no los usa para entrenar sus modelos.",
       "rights": "Cualquiera puede descargar o eliminar sus propios datos en Ajustes, sin escribirnos."
     },
     "compliance": {
@@ -3136,7 +3136,11 @@
       "results": "Los resultados de las entrevistas de los candidatos, sus tiempos y las alertas de integridad: 12 meses después del último envío de la invitación; luego se eliminan automáticamente.",
       "actionLog": "El registro de acciones de una empresa: 12 meses.",
       "chats": "Los chats con el asistente: 90 días después de su último mensaje.",
-      "aiRecords": "Los registros de llamadas a la IA: 30 días.",
+      "aiRecords": "Lo que se envió a la IA y sus respuestas, en nuestros registros de monitorización: 30 días.",
+      "aiUsage": "Los registros del uso de la IA y de los límites alcanzados, sin ese contenido: 13 meses.",
+      "jobDescriptions": "Las descripciones de puesto que pegas: 90 días.",
+      "atsCandidates": "Los candidatos que envía un sistema de seguimiento de candidatos: 12 meses después de su llegada.",
+      "notifications": "Las notificaciones en la app: 90 días.",
       "errors": "Los informes de errores: hasta 90 días.",
       "backups": "Las copias de seguridad de la base de datos y la copia de seguridad diaria de las cuentas de inicio de sesión: 14 días, y luego se sobrescriben o se eliminan; para entonces, todo lo eliminado ya ha desaparecido de ellas.",
       "statistics": "Las estadísticas de uso, con códigos en lugar de ids de cuenta: 25 meses.",

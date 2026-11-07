@@ -28,7 +28,7 @@
         "Ajustes de correo: qué correos opcionales recibes, y un registro de cada cambio en ellos: qué correo, activado o desactivado, cuándo, dónde (al iniciar sesión, en Ajustes, mediante un enlace para cancelar la suscripción o un reporte de spam, o por nuestro personal, indicando quién) y qué versión del texto de las casillas viste.",
         "Correos a los miembros de una empresa: un registro de los resúmenes de actividad y recordatorios que te enviamos, y del asunto de cada recordatorio, para que ninguno se envíe dos veces.",
         "Correos a muchos usuarios (avisos de cambios en nuestros términos, avisos importantes sobre el servicio, novedades del producto, ofertas): si cada uno se te envió, se omitió o falló, y si cancelaste la suscripción o lo marcaste como spam, para que ninguno se envíe dos veces y podamos ver cómo se recibió cada uno.",
-        "Direcciones a las que ya no enviamos correos: si un correo a una dirección rebota de forma definitiva, rebota de forma temporal 3 veces en 14 días o se marca como spam, un hash unidireccional de la dirección, el motivo y la fecha. No se puede volver a convertir en el correo.",
+        "Direcciones a las que ya no enviamos correos: si un correo a una dirección rebota de forma definitiva, rebota de forma temporal 3 veces en 14 días o se marca como spam, un hash unidireccional de la dirección, el motivo y la fecha y, en un rebote temporal, el identificador que Resend dio a ese correo. El hash no se puede volver a convertir en la dirección.",
         "Candidatos que dejan de recibir los correos de una empresa: un hash unidireccional de su dirección de correo, con la empresa y, si solo dejaron de recibir los recordatorios de una entrevista, esa invitación. No se puede volver a convertir en el correo.",
         "Recomendaciones: el enlace de recomendación a través del cual llegaste tú o llegó tu empresa, y si la recomendación ya se ha recompensado.",
         "Compras: por cada recarga, la empresa para la que fue, quién la compró, qué se compró, el total y la moneda, el identificador de transacción de Paddle y cuándo; y por cada reembolso, la recarga, los créditos, el importe, la referencia de Paddle y el resultado (quién lo pidió consta en el registro de acciones de la empresa). Los datos de la tarjeta y de facturación los guarda Paddle, no nosotros.",
@@ -43,7 +43,7 @@
       "heading": "Para qué los usamos",
       "items": [
         "Para prestar testee: generar entrevistas, hacerlas a los candidatos invitados, mostrar los resultados a las empresas y enviar los correos que pides (contrato).",
-        "Correos de servicio, como invitaciones, informes, problemas de pago, cambios en nuestros términos y avisos importantes sobre el servicio (un incidente de seguridad, una interrupción programada o un cambio en su funcionamiento), que se envían siempre (contrato).",
+        "Correos de servicio, como invitaciones, informes, problemas de pago, cambios en nuestros términos y avisos importantes sobre el servicio (un incidente de seguridad, una interrupción programada o un cambio en su funcionamiento), que se envían elijas lo que elijas en Correos (contrato).",
         "El resumen de actividad y los recordatorios sobre tus empresas, como pocos créditos o una entrevista sin candidatos (nuestro interés legítimo en ayudarte a usar testee). Están activados hasta que los desactives.",
         "Novedades del producto: para nuestros propios usuarios que no marcaron «No quiero recibir novedades del producto» la primera vez que se les ofreció al iniciar sesión (artículo 13, apartado 2, de la Directiva sobre la privacidad y las comunicaciones electrónicas y § 103¹ de la Ley de Comunicaciones Electrónicas de Estonia). Puedes dejar de recibirlas en cualquier momento, de forma gratuita.",
         "Ofertas y promociones: solo si das tu consentimiento, marcando la casilla al iniciar sesión o en Ajustes (consentimiento). Puedes retirarlo en cualquier momento.",
@@ -97,7 +97,7 @@
     {
       "heading": "Correos y cancelación de la suscripción",
       "paragraphs": [
-        "Los correos de servicio, como invitaciones, informes, problemas de pago, cambios en nuestros términos y avisos importantes sobre el servicio, se envían siempre. Los demás los eliges en Ajustes, en Correos: el resumen de actividad, los recordatorios, las novedades del producto, y las ofertas y promociones. Cada correo opcional tiene un enlace para cancelar la suscripción que funciona sin iniciar sesión, y marcar como spam un correo opcional también lo desactiva. Si un correo que te enviamos rebota de forma definitiva, o marcas uno de los nuestros como spam, dejamos de enviar correos del producto y avisos a esa dirección hasta que nos pidas volver a hacerlo.",
+        "Los correos de servicio, como invitaciones, informes, problemas de pago, cambios en nuestros términos y avisos importantes sobre el servicio, se envían elijas lo que elijas. Los demás los eliges en Ajustes, en Correos: el resumen de actividad, los recordatorios, las novedades del producto, y las ofertas y promociones. Cada correo opcional tiene un enlace para cancelar la suscripción que funciona sin iniciar sesión, y marcar como spam un correo opcional también lo desactiva. Solo enviamos correos a una dirección que hayas confirmado; hasta entonces, ves nuestros mensajes en testee. Si un correo que te enviamos rebota de forma definitiva, o marcas cualquiera de los nuestros como spam, dejamos de enviar cualquier correo a esa dirección, también los de servicio, hasta que nos pidas volver a hacerlo.",
         "Las invitaciones y los recordatorios que una empresa envía a candidatos a través de testee tienen enlaces para dejar de recibir los correos de esa empresa, o los recordatorios de esa entrevista. testee deja entonces de escribir a esa dirección por esa empresa, y la empresa ve la invitación como no entregada."
       ]
     },
@@ -119,6 +119,7 @@
         "El registro de acciones de una empresa: quién hizo qué, conservado 12 meses.",
         "Las notas que escribes en las entrevistas de una empresa: hasta que se elimine la nota, la entrevista o la empresa. Pertenecen a la empresa, así que se quedan con ella, sin tu nombre, cuando la dejas o eliminas tu cuenta.",
         "Los registros del uso de la IA y de los límites alcanzados: 13 meses, sin tu identificador de cuenta una vez que eliminas tu cuenta.",
+        "Los cambios que nuestros administradores hacen en los límites: quién hizo cada uno, con su dirección de correo, qué cambió y cuándo: 2 años.",
         "Rondas de práctica: hasta que elimines tu cuenta.",
         "Valoraciones y reportes de preguntas: junto con la pregunta. Cuando se elimina tu cuenta, los que hiciste se conservan sin ningún vínculo contigo y se elimina cualquier comentario que escribieras. Lo mismo ocurre con los que hiciste en una entrevista cuando se elimina tu invitación a ella. El comentario de cualquier otro reporte se elimina 12 meses después de escribirse.",
         "Abierto a ofertas: hasta que lo desactives o elimines tu cuenta, y como máximo un año después de la última vez que lo activaste o guardaste tu perfil de LinkedIn; el registro de tus elecciones, hasta que elimines tu cuenta.",
@@ -128,7 +129,7 @@
         "El registro de resúmenes y recordatorios que se te enviaron: 30 días, o hasta que elimines tu cuenta si eso ocurre antes.",
         "El registro de avisos, novedades del producto y ofertas que se te enviaron: hasta que elimines tu cuenta.",
         "Una dirección a la que ya no enviamos correos, como hash: hasta que nos pidas volver a escribirle, también después de que elimines tu cuenta, para que no vuelva a recibir correos.",
-        "Un rebote temporal, como hash de la dirección: 14 días.",
+        "Un rebote temporal, como hash de la dirección, con el identificador que Resend dio a ese correo: 14 días.",
         "La solicitud de un candidato de dejar de recibir los correos de una empresa, como hash de su correo: hasta que se elimine la empresa, aunque la empresa borre al candidato.",
         "Mensajes de contacto: el tiempo que necesitemos para responderte, como máximo 2 años.",
         "Informes de errores: hasta 90 días.",
@@ -136,7 +137,7 @@
         "Registros de llamadas a la IA en Langfuse: 30 días; después se eliminan automáticamente.",
         "Copias de seguridad de la base de datos y copia de seguridad diaria de las cuentas de inicio de sesión: 14 días; después se sobrescriben o se eliminan, y para entonces lo eliminado ya no está en ellas.",
         "Un registro de una cuenta eliminada, con su correo y su identificador de cuenta: 14 días, lo que duran las copias de seguridad, solo para que una copia de seguridad restaurada no pueda recuperar tus datos.",
-        "Mensajes en tránsito entre nuestros servicios, que pueden incluir correos e informes enviados por correo: hasta 8 días después de su envío. Un evento de webhook que falló, a la espera de reenviarse: unos 3 días.",
+        "Mensajes en tránsito entre nuestros servicios, que pueden incluir correos e informes enviados por correo: hasta 8 días después de su envío. Un evento de webhook que falló, con lo que lleva sobre un candidato, a la espera de reenviarse: unos 3 días. El registro de cada entrega de webhook: 30 días.",
         "Estadísticas de uso: 25 meses; después se eliminan automáticamente. Eliminar tu cuenta no acorta este plazo.",
         "Registros de compras y reembolsos: el tiempo que exija la normativa contable (7 años en Estonia), sin tu identificador de cuenta una vez que elimines tu cuenta.",
         "Saldos y movimientos de créditos, y la moneda de una empresa: hasta que se elimine la empresa. La recarga automática de una empresa: hasta que se desactive, el miembro que la activó deje la empresa o elimine su cuenta, o se elimine la empresa. La moneda guardada para tu propia cuenta: hasta que elimines tu cuenta.",
@@ -161,7 +162,7 @@
       "heading": "Cookies y almacenamiento",
       "paragraphs": [
         "testee solo usa las cookies y el almacenamiento del navegador que necesita para funcionar o que recuerdan tus propias elecciones. No hay cookies publicitarias ni analíticas.",
-        "Para mantener tu sesión iniciada: una cookie (testee_token, renovada cada hora mientras usas testee, hasta que cierres sesión) y el almacenamiento del navegador de nuestro proveedor de inicio de sesión, Google Firebase, que también guarda una breve lista de los días en que se ejecutó en este navegador, aunque no hayas iniciado sesión. Mientras conectas una app de IA, una cookie (testee_connect) dura los pocos minutos que lleva.",
+        "Para mantener tu sesión iniciada: una cookie (testee_token, renovada cada hora mientras usas testee, hasta que cierres sesión) y el almacenamiento del navegador de nuestro proveedor de inicio de sesión, Google Firebase, que también guarda una breve lista de los días en que se ejecutó en este navegador, aunque no hayas iniciado sesión. Mientras conectas una app de IA, una cookie (testee_connect) dura los pocos minutos que lleva y, mientras añades Slack, otra (testee_slack) dura 15 minutos como máximo.",
         "Para recordar tus elecciones: tu idioma (una cookie, testee_locale, durante un año, que se crea cuando eliges un idioma o abres testee en la dirección de un idioma), tu tema claro u oscuro, el ancho del panel del asistente, si estaba abierto y qué empresa elegiste en él (hasta que cierres sesión), cómo invitaste a candidatos la última vez, que ya iniciaste sesión antes en este navegador, el periodo que elegiste por última vez para las estadísticas y los avisos de un documento legal modificado que cerraste. Permanecen en tu navegador hasta que los borres.",
         "Solo en esta pestaña, hasta que la cierres: tu conversación con el asistente hasta que inicies sesión, y la descripción del puesto que estás convirtiendo en una entrevista, para que al recargar la página continúe donde estaba.",
         "Un enlace de recomendación: solo si eliges conservarlo, una cookie (testee_ref) recuerda durante 30 días el enlace por el que llegaste, para que los créditos lleguen a ambas empresas.",

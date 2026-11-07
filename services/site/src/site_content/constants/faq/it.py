@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "Quali email invia testee e come posso interromperle?",
-        "answer": "Le email di servizio, come inviti, report, email di fatturazione e modifiche ai nostri termini, vengono sempre inviate. Le altre, come il riepilogo attività giornaliero, i promemoria, le novità sul prodotto e le offerte, le scegli nelle Impostazioni, alla voce Email, oppure le interrompi con il link \"Annulla l'iscrizione\" in ogni email. I candidati possono interrompere le email della tua azienda, o i promemoria di un colloquio, con i link nei loro inviti e promemoria. Le novità di testee compaiono nelle tue notifiche, la campanella in alto; quelle più importanti arrivano anche via email come novità sul prodotto, solo finché quell'impostazione è attiva.",
+        "answer": "Le email di servizio, come inviti, report, email di fatturazione e modifiche ai nostri termini, non si possono disattivare; smette di riceverle solo un indirizzo per cui un'email è stata respinta in modo permanente o che ha segnalato una delle nostre email come spam. Le altre, come il riepilogo attività giornaliero, i promemoria, le novità sul prodotto e le offerte, le scegli nelle Impostazioni, alla voce Email, oppure le interrompi con il link \"Annulla l'iscrizione\" in ogni email. I candidati possono interrompere le email della tua azienda, o i promemoria di un colloquio, con i link nei loro inviti e promemoria. Le novità di testee compaiono nelle tue notifiche, la campanella in alto; quelle più importanti arrivano anche via email come novità sul prodotto, solo finché quell'impostazione è attiva.",
     },
     {
         "key": "data_export",

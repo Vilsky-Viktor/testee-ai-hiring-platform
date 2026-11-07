@@ -41,7 +41,7 @@
       "updatesNote": "Tính năng mới và tin tức từ testee.",
       "promotions": "Ưu đãi và khuyến mãi",
       "promotionsNote": "Giảm giá và ưu đãi đặc biệt.",
-      "alwaysSent": "Email dịch vụ, như lời mời, báo cáo ứng viên, sự cố thanh toán và thay đổi điều khoản của chúng tôi, luôn được gửi."
+      "alwaysSent": "Email dịch vụ, như lời mời, báo cáo ứng viên, sự cố thanh toán và thay đổi điều khoản của chúng tôi, không thể tắt."
     }
   },
   "userMenu": {
@@ -3112,7 +3112,7 @@
       "noSelling": "Chúng tôi không bán dữ liệu cá nhân hay chia sẻ nó cho quảng cáo. Không có cookie quảng cáo hay phân tích.",
       "noInference": "testee không thu thập dữ liệu về giới tính, tuổi, nguồn gốc hay khuyết tật của ứng viên, và không suy đoán bất kỳ điều gì như vậy.",
       "voice": "Ở chế độ giọng nói, câu trả lời bằng lời của ứng viên được chuyển thành văn bản và khớp với các lựa chọn, lựa chọn khớp được đọc lại cho ứng viên và hiển thị trên màn hình; câu trả lời cho câu hỏi có nhiều phương án đúng thì phải xác nhận trước. testee không lưu trữ lời nói, và giọng nói không được phân tích theo bất kỳ cách nào khác. OpenAI, bên chuyển lời nói thành văn bản, có thể lưu giữ tối đa 30 ngày, như nêu dưới đây.",
-      "ai": "OpenAI, bên viết câu hỏi, được yêu cầu không lưu những gì nhận được ở những nơi API của OpenAI cho phép lựa chọn này; OpenAI có thể giữ dữ liệu tối đa 30 ngày, chỉ để kiểm tra hành vi lạm dụng trừ khi pháp luật yêu cầu lâu hơn, và không dùng nó để huấn luyện mô hình.",
+      "ai": "OpenAI, bên viết và kiểm tra câu hỏi, đồng thời vận hành trợ lý và chế độ giọng nói, được yêu cầu không lưu những gì nhận được ở những nơi API của OpenAI cho phép lựa chọn này; OpenAI có thể giữ dữ liệu tối đa 30 ngày, chỉ để kiểm tra hành vi lạm dụng trừ khi pháp luật yêu cầu lâu hơn, và không dùng nó để huấn luyện mô hình.",
       "rights": "Bất kỳ ai cũng có thể tải về hoặc xóa dữ liệu của chính mình trong Cài đặt mà không cần viết thư cho chúng tôi."
     },
     "compliance": {
@@ -3140,7 +3140,11 @@
       "results": "Kết quả phỏng vấn, thời gian làm bài và cảnh báo hành vi bất thường của ứng viên: 12 tháng sau lần gửi lời mời cuối cùng, sau đó tự động bị xóa.",
       "actionLog": "Nhật ký thao tác của công ty: 12 tháng.",
       "chats": "Cuộc trò chuyện với trợ lý: 90 ngày sau tin nhắn cuối cùng.",
-      "aiRecords": "Bản ghi các lệnh gọi AI: 30 ngày.",
+      "aiRecords": "Những gì đã gửi cho AI và câu trả lời của AI, trong bản ghi giám sát của chúng tôi: 30 ngày.",
+      "aiUsage": "Bản ghi mức sử dụng AI và các giới hạn đã chạm tới, không kèm nội dung đó: 13 tháng.",
+      "jobDescriptions": "Các mô tả công việc bạn dán: 90 ngày.",
+      "atsCandidates": "Ứng viên do hệ thống theo dõi ứng viên gửi đến: 12 tháng sau khi đến.",
+      "notifications": "Thông báo trong ứng dụng: 90 ngày.",
       "errors": "Báo cáo lỗi: tối đa 90 ngày.",
       "backups": "Bản sao lưu cơ sở dữ liệu và bản sao lưu hằng ngày của tài khoản đăng nhập: 14 ngày, sau đó bị ghi đè hoặc xóa; đến lúc đó, mọi thứ đã xóa cũng không còn trong bản sao lưu.",
       "statistics": "Thống kê sử dụng, dùng mã thay cho ID tài khoản: 25 tháng.",

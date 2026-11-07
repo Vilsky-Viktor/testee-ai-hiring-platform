@@ -41,7 +41,7 @@
       "updatesNote": "Nieuwe functies en nieuws van testee.",
       "promotions": "Aanbiedingen en acties",
       "promotionsNote": "Kortingen en speciale aanbiedingen.",
-      "alwaysSent": "Service-e-mails, zoals uitnodigingen, kandidaatrapporten, betalingsproblemen en wijzigingen in onze voorwaarden, worden altijd verstuurd."
+      "alwaysSent": "Service-e-mails, zoals uitnodigingen, kandidaatrapporten, betalingsproblemen en wijzigingen in onze voorwaarden, kun je niet uitzetten."
     }
   },
   "userMenu": {
@@ -3108,7 +3108,7 @@
       "noSelling": "We verkopen geen persoonsgegevens en delen ze niet voor advertenties. Er zijn geen advertentie- of analysecookies.",
       "noInference": "testee verzamelt geen gegevens over geslacht, leeftijd, afkomst of beperking van kandidaten, en leidt daar ook niets over af.",
       "voice": "In de spraakmodus wordt het gesproken antwoord van een kandidaat omgezet in tekst en gekoppeld aan de opties, en de gekoppelde optie krijgt de kandidaat te horen en op het scherm te zien; een antwoord op een vraag met meerdere juiste opties wordt eerst bevestigd. testee slaat geen spraak op, en de stem wordt op geen enkele andere manier geanalyseerd. OpenAI, dat de spraak omzet in tekst, mag die maximaal 30 dagen bewaren, zoals hieronder staat.",
-      "ai": "OpenAI, dat de vragen schrijft, krijgt de opdracht niets op te slaan van wat het ontvangt waar zijn API die keuze biedt; het mag de gegevens maximaal 30 dagen bewaren, alleen om op misbruik te controleren, tenzij de wet een langere termijn vereist, en gebruikt ze niet om zijn modellen te trainen.",
+      "ai": "OpenAI, dat de vragen schrijft en controleert en de assistent en de spraakmodus aandrijft, krijgt de opdracht niets op te slaan van wat het ontvangt waar zijn API die keuze biedt; het mag de gegevens maximaal 30 dagen bewaren, alleen om op misbruik te controleren, tenzij de wet een langere termijn vereist, en gebruikt ze niet om zijn modellen te trainen.",
       "rights": "Iedereen kan zijn eigen gegevens downloaden of verwijderen in Instellingen, zonder ons te hoeven schrijven."
     },
     "compliance": {
@@ -3136,7 +3136,11 @@
       "results": "Interviewresultaten, tijden en integriteitssignalen van kandidaten: 12 maanden nadat de uitnodiging voor het laatst is verstuurd, daarna automatisch verwijderd.",
       "actionLog": "De actielog van een bedrijf: 12 maanden.",
       "chats": "Chats met de assistent: 90 dagen na het laatste bericht.",
-      "aiRecords": "Registraties van AI-aanroepen: 30 dagen.",
+      "aiRecords": "Wat naar de AI is verstuurd en de antwoorden ervan, in onze monitoringregistraties: 30 dagen.",
+      "aiUsage": "Registraties van AI-gebruik en van bereikte limieten, zonder die inhoud: 13 maanden.",
+      "jobDescriptions": "Functieomschrijvingen die je plakt: 90 dagen.",
+      "atsCandidates": "Kandidaten die een sollicitantvolgsysteem stuurt: 12 maanden na aankomst.",
+      "notifications": "Meldingen in de app: 90 dagen.",
       "errors": "Foutrapporten: hooguit 90 dagen.",
       "backups": "Databaseback-ups en de dagelijkse back-up van inlogaccounts: 14 dagen, daarna overschreven of verwijderd; alles wat verwijderd is, is er dan uit verdwenen.",
       "statistics": "Gebruiksstatistieken, onder codes in plaats van account-id's: 25 maanden.",

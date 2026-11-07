@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "Quais e-mails a testee envia, e como faço para pará-los?",
-        "answer": 'E-mails de serviço, como convites, relatórios, e-mails de cobrança e mudanças nos nossos termos, são sempre enviados. Os demais, como o resumo de atividades diário, os lembretes, as novidades do produto e as ofertas, você escolhe em Configurações, na seção E-mails, ou cancela pelo link "Cancelar inscrição" em cada e-mail. Os candidatos podem parar de receber os e-mails da sua empresa, ou os lembretes de uma entrevista, pelos links nos convites e lembretes. As novidades da testee aparecem nas suas notificações, o sino no topo; as mais importantes também chegam por e-mail como novidade do produto, só enquanto essa configuração estiver ativada.',
+        "answer": 'E-mails de serviço, como convites, relatórios, e-mails de cobrança e mudanças nos nossos termos, não podem ser desativados; só deixa de recebê-los um endereço cujo e-mail foi devolvido de forma definitiva ou que marcou um dos nossos e-mails como spam. Os demais, como o resumo de atividades diário, os lembretes, as novidades do produto e as ofertas, você escolhe em Configurações, na seção E-mails, ou cancela pelo link "Cancelar inscrição" em cada e-mail. Os candidatos podem parar de receber os e-mails da sua empresa, ou os lembretes de uma entrevista, pelos links nos convites e lembretes. As novidades da testee aparecem nas suas notificações, o sino no topo; as mais importantes também chegam por e-mail como novidade do produto, só enquanto essa configuração estiver ativada.',
     },
     {
         "key": "data_export",

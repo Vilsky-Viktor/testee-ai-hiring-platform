@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "testee hangi e-postaları gönderir ve bunları nasıl durdururum?",
-        "answer": "Davetler, raporlar, faturalandırma e-postaları ve koşullarımızdaki değişiklikler gibi hizmet e-postaları her zaman gönderilir. Günlük etkinlik özeti, hatırlatmalar, ürün güncellemeleri ve teklifler gibi diğerlerini Ayarlar'da, E-postalar bölümünde seçebilir ya da her e-postadaki \"Abonelikten çık\" bağlantısıyla durdurabilirsiniz. Adaylar, davet ve hatırlatma e-postalarındaki bağlantılarla şirketinizin e-postalarını ya da bir mülakatın hatırlatmalarını durdurabilir. testee'nin haberleri, üstteki zil simgesinde, yani bildirimlerinizde görünür; önemli haberler ayrıca ürün güncellemesi olarak e-postayla da gelir, ancak yalnızca bu ayar açıkken.",
+        "answer": "Davetler, raporlar, faturalandırma e-postaları ve koşullarımızdaki değişiklikler gibi hizmet e-postaları kapatılamaz; bunları yalnızca kalıcı olarak teslim edilemeyen veya e-postalarımızdan birini spam olarak işaretleyen bir adres almaz. Günlük etkinlik özeti, hatırlatmalar, ürün güncellemeleri ve teklifler gibi diğerlerini Ayarlar'da, E-postalar bölümünde seçebilir ya da her e-postadaki \"Abonelikten çık\" bağlantısıyla durdurabilirsiniz. Adaylar, davet ve hatırlatma e-postalarındaki bağlantılarla şirketinizin e-postalarını ya da bir mülakatın hatırlatmalarını durdurabilir. testee'nin haberleri, üstteki zil simgesinde, yani bildirimlerinizde görünür; önemli haberler ayrıca ürün güncellemesi olarak e-postayla da gelir, ancak yalnızca bu ayar açıkken.",
     },
     {
         "key": "data_export",

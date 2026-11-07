@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "Welke e-mails stuurt testee, en hoe stop ik ze?",
-        "answer": "Service-e-mails, zoals uitnodigingen, rapporten, factuurmails en wijzigingen in onze voorwaarden, worden altijd verstuurd. De rest, zoals het dagelijkse activiteitenoverzicht, herinneringen, productupdates en aanbiedingen, kies je in Instellingen, onder E-mails, of stop je met de link 'Afmelden' in elke e-mail. Kandidaten kunnen de e-mails van je bedrijf, of de herinneringen voor een interview, stoppen met de links in hun uitnodigingen en herinneringen. Nieuws van testee staat bij je meldingen, de bel bovenaan; het belangrijkste nieuws komt ook per e-mail als productupdate, alleen zolang die instelling aan staat.",
+        "answer": "Service-e-mails, zoals uitnodigingen, rapporten, factuurmails en wijzigingen in onze voorwaarden, kun je niet uitzetten; alleen een adres dat definitief onbestelbaar was of een van onze e-mails als spam heeft gemarkeerd, krijgt ze niet meer. De rest, zoals het dagelijkse activiteitenoverzicht, herinneringen, productupdates en aanbiedingen, kies je in Instellingen, onder E-mails, of stop je met de link 'Afmelden' in elke e-mail. Kandidaten kunnen de e-mails van je bedrijf, of de herinneringen voor een interview, stoppen met de links in hun uitnodigingen en herinneringen. Nieuws van testee staat bij je meldingen, de bel bovenaan; het belangrijkste nieuws komt ook per e-mail als productupdate, alleen zolang die instelling aan staat.",
     },
     {
         "key": "data_export",

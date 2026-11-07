@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "Quels e-mails testee envoie-t-il, et comment les arrêter ?",
-        "answer": "Les e-mails de service, comme les invitations, les rapports, les e-mails de facturation et les modifications de nos conditions, sont toujours envoyés. Les autres, comme le récapitulatif d'activité quotidien, les rappels, les nouveautés du produit et les offres, se choisissent dans les Paramètres, sous E-mails, ou s'arrêtent avec le lien « Se désabonner » de chaque e-mail. Les candidats peuvent arrêter les e-mails de votre entreprise, ou les rappels d'un entretien, avec les liens de leurs invitations et rappels. Les actualités de testee s'affichent dans vos notifications, la cloche en haut ; les plus importantes arrivent aussi par e-mail comme nouveauté du produit, uniquement tant que ce réglage est activé.",
+        "answer": "Les e-mails de service, comme les invitations, les rapports, les e-mails de facturation et les modifications de nos conditions, ne peuvent pas être désactivés ; seule une adresse définitivement rejetée ou ayant signalé l'un de nos e-mails comme spam cesse de les recevoir. Les autres, comme le récapitulatif d'activité quotidien, les rappels, les nouveautés du produit et les offres, se choisissent dans les Paramètres, sous E-mails, ou s'arrêtent avec le lien « Se désabonner » de chaque e-mail. Les candidats peuvent arrêter les e-mails de votre entreprise, ou les rappels d'un entretien, avec les liens de leurs invitations et rappels. Les actualités de testee s'affichent dans vos notifications, la cloche en haut ; les plus importantes arrivent aussi par e-mail comme nouveauté du produit, uniquement tant que ce réglage est activé.",
     },
     {
         "key": "data_export",

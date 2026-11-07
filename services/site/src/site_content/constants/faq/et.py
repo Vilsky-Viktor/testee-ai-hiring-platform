@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "Milliseid e-kirju testee saadab ja kuidas neid peatada?",
-        "answer": "Teenusekirjad, nagu kutsed, aruanded, arveldusega seotud kirjad ja meie tingimuste muudatused, saadetakse alati. Ülejäänud, näiteks igapäevase tegevuste kokkuvõtte, meeldetuletused, tooteuudised ja pakkumised, valid seadetes jaotises E-kirjad või peatad iga kirja lingiga „Loobu tellimusest“. Kandidaadid saavad sinu ettevõtte kirjad või ühe intervjuu meeldetuletused peatada oma kutsetes ja meeldetuletustes olevate linkidega. testee uudised on sinu teavitustes, ülaosas oleva kella all; olulisemad uudised tulevad ka e-kirjaga tooteuudisena, kuid ainult siis, kui see seade on sees.",
+        "answer": "Teenusekirju, nagu kutseid, aruandeid, arveldusega seotud kirju ja meie tingimuste muudatusi, ei saa välja lülitada; neid ei saa enam ainult aadress, mis põrkus jäädavalt tagasi või märkis mõne meie kirja rämpspostiks. Ülejäänud, näiteks igapäevase tegevuste kokkuvõtte, meeldetuletused, tooteuudised ja pakkumised, valid seadetes jaotises E-kirjad või peatad iga kirja lingiga „Loobu tellimusest“. Kandidaadid saavad sinu ettevõtte kirjad või ühe intervjuu meeldetuletused peatada oma kutsetes ja meeldetuletustes olevate linkidega. testee uudised on sinu teavitustes, ülaosas oleva kella all; olulisemad uudised tulevad ka e-kirjaga tooteuudisena, kuid ainult siis, kui see seade on sees.",
     },
     {
         "key": "data_export",

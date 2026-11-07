@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "Jakie e-maile wysyła testee i jak je wyłączyć?",
-        "answer": "E-maile serwisowe, takie jak zaproszenia, raporty, e-maile dotyczące rozliczeń i zmiany naszego regulaminu, są wysyłane zawsze. Resztę, na przykład codzienne podsumowanie aktywności, przypomnienia, nowości o produkcie i oferty, wybierasz w Ustawieniach, w sekcji E-maile, albo wyłączasz linkiem „Wypisz się” w każdym e-mailu. Kandydaci mogą wyłączyć e-maile od Twojej firmy lub przypomnienia o danej rozmowie linkami w zaproszeniach i przypomnieniach. Aktualności testee pojawiają się w Twoich powiadomieniach, pod dzwonkiem u góry; najważniejsze przychodzą też e-mailem jako nowości o produkcie, ale tylko wtedy, gdy to ustawienie jest włączone.",
+        "answer": "E-maili serwisowych, takich jak zaproszenia, raporty, e-maile dotyczące rozliczeń i zmiany naszego regulaminu, nie da się wyłączyć; przestaje je otrzymywać tylko adres, na który e-mail został trwale odrzucony lub który oznaczył jeden z naszych e-maili jako spam. Resztę, na przykład codzienne podsumowanie aktywności, przypomnienia, nowości o produkcie i oferty, wybierasz w Ustawieniach, w sekcji E-maile, albo wyłączasz linkiem „Wypisz się” w każdym e-mailu. Kandydaci mogą wyłączyć e-maile od Twojej firmy lub przypomnienia o danej rozmowie linkami w zaproszeniach i przypomnieniach. Aktualności testee pojawiają się w Twoich powiadomieniach, pod dzwonkiem u góry; najważniejsze przychodzą też e-mailem jako nowości o produkcie, ale tylko wtedy, gdy to ustawienie jest włączone.",
     },
     {
         "key": "data_export",

@@ -41,7 +41,7 @@
       "updatesNote": "Neue Funktionen und Neuigkeiten von testee.",
       "promotions": "Angebote und Aktionen",
       "promotionsNote": "Rabatte und Sonderangebote.",
-      "alwaysSent": "Service-E-Mails wie Einladungen, Kandidatenberichte, Zahlungsprobleme und Änderungen unserer Bedingungen werden immer gesendet."
+      "alwaysSent": "Service-E-Mails wie Einladungen, Kandidatenberichte, Zahlungsprobleme und Änderungen unserer Bedingungen lassen sich nicht ausschalten."
     }
   },
   "userMenu": {
@@ -3108,7 +3108,7 @@
       "noSelling": "Wir verkaufen keine personenbezogenen Daten und geben sie nicht für Werbung weiter. Es gibt keine Werbe- oder Analyse-Cookies.",
       "noInference": "testee erhebt keine Daten über Geschlecht, Alter, Herkunft oder Behinderung von Kandidaten und leitet auch nichts dergleichen ab.",
       "voice": "Im Sprachmodus wird die gesprochene Antwort eines Kandidaten in Text umgewandelt und den Optionen zugeordnet; die zugeordnete Option wird ihm genannt und auf dem Bildschirm angezeigt, eine Antwort auf eine Frage mit mehreren richtigen Optionen bestätigt er zuerst. testee speichert keine Sprache, und die Stimme wird auf keine andere Weise ausgewertet. OpenAI, das sie in Text umwandelt, darf sie bis zu 30 Tage aufbewahren, wie unten beschrieben.",
-      "ai": "OpenAI, das die Fragen schreibt, ist angewiesen, das Erhaltene nicht zu speichern, wo seine API diese Wahl lässt; es darf die Daten bis zu 30 Tage aufbewahren, nur zur Missbrauchserkennung, sofern das Gesetz nicht eine längere Aufbewahrung verlangt, und nutzt sie nicht zum Training seiner Modelle.",
+      "ai": "OpenAI, das die Fragen schreibt und prüft und den Assistenten und den Sprachmodus betreibt, ist angewiesen, das Erhaltene nicht zu speichern, wo seine API diese Wahl lässt; es darf die Daten bis zu 30 Tage aufbewahren, nur zur Missbrauchserkennung, sofern das Gesetz nicht eine längere Aufbewahrung verlangt, und nutzt sie nicht zum Training seiner Modelle.",
       "rights": "Alle können ihre eigenen Daten in den Einstellungen herunterladen oder löschen, ohne uns schreiben zu müssen."
     },
     "compliance": {
@@ -3136,7 +3136,11 @@
       "results": "Interviewergebnisse, Zeiten und Integritätshinweise der Kandidaten: 12 Monate nach dem letzten Versand der Einladung, danach automatisch gelöscht.",
       "actionLog": "Das Aktionsprotokoll eines Unternehmens: 12 Monate.",
       "chats": "Chats mit dem Assistenten: 90 Tage nach ihrer letzten Nachricht.",
-      "aiRecords": "Aufzeichnungen über KI-Aufrufe: 30 Tage.",
+      "aiRecords": "Was an die KI gesendet wurde und ihre Antworten, in unseren Monitoring-Aufzeichnungen: 30 Tage.",
+      "aiUsage": "Aufzeichnungen der KI-Nutzung und der erreichten Limits, ohne diese Inhalte: 13 Monate.",
+      "jobDescriptions": "Von dir eingefügte Stellenbeschreibungen: 90 Tage.",
+      "atsCandidates": "Kandidaten, die ein Bewerbermanagementsystem sendet: 12 Monate nach ihrem Eingang.",
+      "notifications": "Benachrichtigungen in der App: 90 Tage.",
       "errors": "Fehlerberichte: bis zu 90 Tage.",
       "backups": "Datenbanksicherungen und die tägliche Sicherung der Anmeldekonten: 14 Tage, danach überschrieben oder gelöscht; was gelöscht wurde, ist bis dahin auch aus ihnen verschwunden.",
       "statistics": "Nutzungsstatistiken, unter Codes statt Konto-IDs: 25 Monate.",

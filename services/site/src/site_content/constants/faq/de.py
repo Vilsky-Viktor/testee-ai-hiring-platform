@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "Welche E-Mails sendet testee und wie stelle ich sie ab?",
-        "answer": "Service-E-Mails wie Einladungen, Berichte, Abrechnungs-E-Mails und Änderungen unserer Bedingungen werden immer gesendet. Alles andere, etwa die tägliche Aktivitätsübersicht, Erinnerungen, Produkt-Updates und Angebote, wählst du in den Einstellungen unter E-Mails oder stellst es mit dem Link „Abmelden“ in jeder E-Mail ab. Kandidaten können die E-Mails deines Unternehmens oder die Erinnerungen zu einem Interview mit den Links in ihren Einladungen und Erinnerungen abstellen. Neuigkeiten von testee erscheinen in deinen Benachrichtigungen, der Glocke oben; die wichtigsten kommen außerdem als Produkt-Update per E-Mail, aber nur, solange diese Einstellung an ist.",
+        "answer": "Service-E-Mails wie Einladungen, Berichte, Abrechnungs-E-Mails und Änderungen unserer Bedingungen lassen sich nicht ausschalten; nur eine Adresse, die dauerhaft unzustellbar war oder eine unserer E-Mails als Spam markiert hat, erhält sie nicht mehr. Alles andere, etwa die tägliche Aktivitätsübersicht, Erinnerungen, Produkt-Updates und Angebote, wählst du in den Einstellungen unter E-Mails oder stellst es mit dem Link „Abmelden“ in jeder E-Mail ab. Kandidaten können die E-Mails deines Unternehmens oder die Erinnerungen zu einem Interview mit den Links in ihren Einladungen und Erinnerungen abstellen. Neuigkeiten von testee erscheinen in deinen Benachrichtigungen, der Glocke oben; die wichtigsten kommen außerdem als Produkt-Update per E-Mail, aber nur, solange diese Einstellung an ist.",
     },
     {
         "key": "data_export",

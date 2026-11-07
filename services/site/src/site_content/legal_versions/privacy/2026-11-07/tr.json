@@ -28,7 +28,7 @@
         "E-posta ayarları: hangi isteğe bağlı e-postaları aldığınız ve bunlarda yapılan her değişikliğin kaydı: hangi e-posta, açık veya kapalı, ne zaman, nerede (giriş yaparken, Ayarlar'da, bir abonelikten çıkma bağlantısı veya spam bildirimi yoluyla ya da çalışanlarımız tarafından, kim olduğuyla birlikte) ve onay kutularının metninin hangi sürümünü gördüğünüz.",
         "Şirket üyelerine gönderilen e-postalar: size gönderdiğimiz etkinlik özetlerinin ve hatırlatmaların ve her hatırlatmanın neyle ilgili olduğunun kaydı; böylece hiçbiri iki kez gönderilmez.",
         "Çok sayıda kullanıcıya gönderilen e-postalar (koşullarımızdaki değişikliklere ilişkin bildirimler, hizmetle ilgili önemli duyurular, ürün güncellemeleri, teklifler): her birinin size gönderilip gönderilmediği, atlanıp atlanmadığı veya başarısız olup olmadığı ve aboneliğinden çıkıp çıkmadığınız ya da onu spam olarak işaretleyip işaretlemediğiniz; böylece hiçbiri iki kez gönderilmez ve her birinin nasıl karşılandığını görebiliriz.",
-        "Artık e-posta göndermediğimiz adresler: bir adrese gönderilen e-posta kalıcı olarak teslim edilemezse, 14 gün içinde 3 kez geçici olarak teslim edilemezse veya spam olarak işaretlenirse, adresin tek yönlü özeti, nedeni ve zamanı. Bu özet tekrar e-posta adresine dönüştürülemez.",
+        "Artık e-posta göndermediğimiz adresler: bir adrese gönderilen e-posta kalıcı olarak teslim edilemezse, 14 gün içinde 3 kez geçici olarak teslim edilemezse veya spam olarak işaretlenirse, adresin tek yönlü özeti, nedeni ve zamanı; geçici durumda ayrıca Resend'in o e-postaya verdiği kimlik. Özet tekrar adrese dönüştürülemez.",
         "Bir şirketin e-postalarını durduran adaylar: e-posta adreslerinin tek yönlü özeti, şirketle birlikte ve yalnızca bir mülakatın hatırlatmalarını durdurdularsa o davetle birlikte. Bu özet tekrar e-posta adresine dönüştürülemez.",
         "Davetler: sizin veya şirketinizin kimin davet bağlantısıyla geldiği ve bunun için ödül verilip verilmediği.",
         "Satın almalar: her kredi yüklemesi için hangi şirket için yapıldığı, kimin satın aldığı, ne satın alındığı, toplam tutar ve para birimi, Paddle'ın işlem kimliği ve zamanı; her iade için ise kredi yüklemesi, krediler, tutar, Paddle'ın referansı ve sonuç (talebi kimin yaptığı şirketin işlem kaydında yer alır). Kart ve fatura bilgilerini biz değil, Paddle saklar.",
@@ -43,7 +43,7 @@
       "heading": "Neden kullanıyoruz",
       "items": [
         "testee'yi sunmak için: mülakat oluşturmak, bunları davet edilen adaylara uygulamak, sonuçları şirketlere göstermek ve istediğiniz e-postaları göndermek (sözleşme).",
-        "Davetler, raporlar, ödeme sorunları, koşullarımızdaki değişiklikler ve hizmetle ilgili önemli duyurular (bir güvenlik olayı, planlı bir kesinti veya işleyişindeki bir değişiklik) gibi her zaman gönderilen hizmet e-postaları (sözleşme).",
+        "Davetler, raporlar, ödeme sorunları, koşullarımızdaki değişiklikler ve hizmetle ilgili önemli duyurular (bir güvenlik olayı, planlı bir kesinti veya işleyişindeki bir değişiklik) gibi, E-postalar bölümünde ne seçerseniz seçin gönderilen hizmet e-postaları (sözleşme).",
         "Şirketlerinizle ilgili etkinlik özeti ve düşük kredi veya adayı olmayan bir mülakat gibi hatırlatmalar (testee'yi kullanmanıza yardımcı olma konusundaki meşru menfaatimiz). Siz kapatana kadar açıktır.",
         "Ürün güncellemeleri ve haberler: ilk girişte sunulduğunda \"Bana ürün güncellemeleri ve haberler göndermeyin\" kutusunu işaretlemeyen kendi kullanıcılarımız için (e-Gizlilik Direktifi madde 13(2) ve Estonya Elektronik Haberleşme Kanunu § 103¹). Bunları istediğiniz zaman ücretsiz olarak durdurabilirsiniz.",
         "Teklifler ve kampanyalar: yalnızca giriş yaparken veya Ayarlar'da kutuyu işaretleyerek onay verirseniz (açık rıza). Rızanızı istediğiniz zaman geri çekebilirsiniz.",
@@ -97,7 +97,7 @@
     {
       "heading": "E-postalar ve abonelikten çıkma",
       "paragraphs": [
-        "Davetler, raporlar, ödeme sorunları, koşullarımızdaki değişiklikler ve hizmetle ilgili önemli duyurular gibi hizmet e-postaları her zaman gönderilir. Diğerlerini Ayarlar'da, E-postalar bölümünde seçersiniz: etkinlik özeti, hatırlatmalar, ürün güncellemeleri ve haberler, teklifler ve kampanyalar. İsteğe bağlı her e-postada giriş yapmadan çalışan bir abonelikten çıkma bağlantısı bulunur; isteğe bağlı bir e-postayı spam olarak işaretlemek de onu kapatır. Size gönderilen bir e-posta kalıcı olarak teslim edilemezse veya e-postalarımızdan birini spam olarak işaretlerseniz, yeniden başlatmamızı isteyene kadar o adrese ürün e-postaları ve bildirimler göndermeyi durdururuz.",
+        "Davetler, raporlar, ödeme sorunları, koşullarımızdaki değişiklikler ve hizmetle ilgili önemli duyurular gibi hizmet e-postaları, ne seçerseniz seçin gönderilir. Diğerlerini Ayarlar'da, E-postalar bölümünde seçersiniz: etkinlik özeti, hatırlatmalar, ürün güncellemeleri ve haberler, teklifler ve kampanyalar. İsteğe bağlı her e-postada giriş yapmadan çalışan bir abonelikten çıkma bağlantısı bulunur; isteğe bağlı bir e-postayı spam olarak işaretlemek de onu kapatır. Yalnızca onayladığınız bir adrese e-posta göndeririz; o zamana kadar mesajlarımızı testee'de görürsünüz. Size gönderilen bir e-posta kalıcı olarak teslim edilemezse veya e-postalarımızdan herhangi birini spam olarak işaretlerseniz, yeniden başlatmamızı isteyene kadar o adrese hizmet e-postaları dahil hiçbir e-posta göndermeyiz.",
         "Bir şirketin testee aracılığıyla adaylara gönderdiği davetlerde ve hatırlatmalarda, o şirketin e-postalarını veya o mülakatın hatırlatmalarını durdurmaya yarayan bağlantılar bulunur. Bunun ardından testee o adrese o şirket adına bir daha e-posta göndermez ve şirket daveti teslim edilmemiş olarak görür."
       ]
     },
@@ -119,6 +119,7 @@
         "Bir şirketin işlem kaydı: kimin ne yaptığı, 12 ay saklanır.",
         "Bir şirketin mülakatlarına yazdığınız notlar: not, mülakat veya şirket silinene kadar. Notlar şirkete aittir; bu nedenle şirketten ayrıldığınızda veya hesabınızı sildiğinizde adınız olmadan şirkette kalır.",
         "Yapay zekâ kullanımı ve ulaşılan sınırlarla ilgili kayıtlar: 13 ay; hesabınızı sildiğinizde hesap kimliğiniz olmadan.",
+        "Yöneticilerimizin sınırlarda yaptığı değişiklikler: her birini kimin yaptığı, e-posta adresiyle birlikte, neyin değiştiği ve ne zaman: 2 yıl.",
         "Pratik denemeleri: hesabınızı silene kadar.",
         "Sorulara verilen puanlar ve soru bildirimleri: soruyla birlikte. Hesabınız silindiğinde, verdiğiniz puanlar ve bildirimler sizinle hiçbir bağlantısı olmadan kalır ve yazdığınız her yorum silinir. Bir mülakata davetiniz silindiğinde o mülakatta verdikleriniz için de aynısı geçerlidir. Diğer bildirimlerin yorumları, yazılmasından 12 ay sonra silinir.",
         "\"İş tekliflerine açık\": seçeneği kapatana veya hesabınızı silene kadar ve en fazla, seçeneği en son açtığınız ya da LinkedIn profilinizi kaydettiğiniz tarihten bir yıl sonrasına kadar; seçimlerinizin kaydı, hesabınızı silene kadar.",
@@ -128,7 +129,7 @@
         "Size gönderilen özetlerin ve hatırlatmaların kaydı: 30 gün veya daha önceyse hesabınızı silene kadar.",
         "Size gönderilen bildirimlerin, ürün güncellemelerinin ve tekliflerin kaydı: hesabınızı silene kadar.",
         "Artık e-posta göndermediğimiz bir adres, özet olarak: bu adrese yeniden e-posta göndermemizi isteyene kadar, hesabınızı sildikten sonra da; böylece bu adrese yeniden e-posta gönderilmez.",
-        "Geçici bir teslim edilememe durumu, adresin özeti olarak: 14 gün.",
+        "Geçici bir teslim edilememe durumu, adresin özeti olarak, Resend'in o e-postaya verdiği kimlikle birlikte: 14 gün.",
         "Bir adayın bir şirketin e-postalarını durdurma talebi, e-posta adresinin özeti olarak: şirket silinene kadar, şirket adayı silse bile.",
         "İletişim mesajları: size cevap vermek için ihtiyaç duyduğumuz süre boyunca, en fazla 2 yıl.",
         "Hata raporları: en fazla 90 gün.",
@@ -136,7 +137,7 @@
         "Langfuse'taki yapay zekâ çağrı kayıtları: 30 gün, ardından otomatik olarak silinir.",
         "Veritabanı yedekleri ve giriş hesaplarının günlük yedeği: 14 gün, ardından üzerine yazılır veya silinir; silinen her şey o zamana kadar yedeklerden de kaybolur.",
         "Silinmiş bir hesabın e-posta adresi ve hesap kimliğiyle birlikte kaydı: yedekler kaldığı sürece 14 gün; yalnızca geri yüklenen bir yedeğin verilerinizi geri getirmemesi için.",
-        "Hizmetlerimiz arasında iletilmekte olan mesajlar (e-postaları ve e-postayla gönderilen raporları içerebilir): gönderilmelerinden sonra en fazla 8 gün. Başarısız olmuş ve yeniden gönderilmeyi bekleyen bir webhook olayı: yaklaşık 3 gün.",
+        "Hizmetlerimiz arasında iletilmekte olan mesajlar (e-postaları ve e-postayla gönderilen raporları içerebilir): gönderilmelerinden sonra en fazla 8 gün. Başarısız olmuş ve yeniden gönderilmeyi bekleyen bir webhook olayı, bir aday hakkında taşıdıklarıyla birlikte: yaklaşık 3 gün. Her webhook tesliminin kaydı: 30 gün.",
         "Kullanım istatistikleri: 25 ay, ardından otomatik olarak silinir; hesabınızı silmeniz bu süreyi kısaltmaz.",
         "Satın alma ve iade kayıtları: muhasebe mevzuatının gerektirdiği süre boyunca (Estonya'da 7 yıl), hesabınızı sildikten sonra hesap kimliğiniz olmadan.",
         "Kredi bakiyeleri ve kayıtları ile şirketin para birimi: şirket silinene kadar. Şirketin otomatik yüklemesi: kapatılana, bunu açan üye şirketten ayrılana veya hesabını silene ya da şirket silinene kadar. Kendi hesabınız için kaydedilen para birimi: hesabınızı silene kadar.",
@@ -161,7 +162,7 @@
       "heading": "Çerezler ve depolama",
       "paragraphs": [
         "testee yalnızca çalışmak için ihtiyaç duyduğu veya kendi seçimlerinizi hatırlayan çerezleri ve tarayıcı depolamasını kullanır. Reklam veya analiz çerezi yoktur.",
-        "Oturumunuzu açık tutmak için: bir çerez (testee_token, testee'yi kullandığınız sürece her saat yenilenir, çıkış yapana kadar) ve giriş sağlayıcımız Google Firebase'in tarayıcı depolaması; bu depolama, giriş yapmamış olsanız bile bu tarayıcıda çalıştığı günlerin kısa bir listesini de tutar. Bir yapay zekâ uygulamasını bağlarken bir çerez (testee_connect) bunun sürdüğü birkaç dakika boyunca kalır.",
+        "Oturumunuzu açık tutmak için: bir çerez (testee_token, testee'yi kullandığınız sürece her saat yenilenir, çıkış yapana kadar) ve giriş sağlayıcımız Google Firebase'in tarayıcı depolaması; bu depolama, giriş yapmamış olsanız bile bu tarayıcıda çalıştığı günlerin kısa bir listesini de tutar. Bir yapay zekâ uygulamasını bağlarken bir çerez (testee_connect) bunun sürdüğü birkaç dakika boyunca kalır; Slack eklerken de bir çerez (testee_slack) en fazla 15 dakika kalır.",
         "Seçimlerinizi hatırlamak için: diliniz (bir çerez, testee_locale, bir yıl boyunca; bir dil seçtiğinizde veya testee'yi bir dilin adresinden açtığınızda ayarlanır), açık veya koyu temanız, asistan panelinin genişliği, panelin açık olup olmadığı ve panelde hangi şirketi seçtiğiniz (çıkış yapana kadar), adayları en son nasıl davet ettiğiniz, bu tarayıcıda daha önce giriş yaptığınız, istatistikler için en son seçtiğiniz dönem ve kapattığınız değişen yasal belge bildirimleri. Bunlar siz temizleyene kadar tarayıcınızda kalır.",
         "Yalnızca bu sekmede, siz kapatana kadar: giriş yapana kadarki asistan konuşmanız ve sayfayı yenilediğinizde kaldığınız yerden devam edebilmeniz için mülakata dönüştürdüğünüz iş tanımı.",
         "Davet bağlantısı: yalnızca saklamayı seçerseniz, bir çerez (testee_ref) kredilerin her iki şirkete de ulaşması için geldiğiniz bağlantıyı 30 gün boyunca hatırlar.",

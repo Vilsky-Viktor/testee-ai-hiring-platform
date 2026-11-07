@@ -41,7 +41,7 @@
       "updatesNote": "Uued funktsioonid ja testee uudised.",
       "promotions": "Pakkumised ja kampaaniad",
       "promotionsNote": "Allahindlused ja eripakkumised.",
-      "alwaysSent": "Teenusekirjad, näiteks kutsed, kandidaatide aruanded, makseprobleemid ja muudatused meie tingimustes, saadetakse alati."
+      "alwaysSent": "Teenusekirju, näiteks kutseid, kandidaatide aruandeid, teateid makseprobleemidest ja muudatustest meie tingimustes, ei saa välja lülitada."
     }
   },
   "userMenu": {
@@ -3108,7 +3108,7 @@
       "noSelling": "Me ei müü isikuandmeid ega jaga neid reklaami jaoks. Reklaami- ega analüütikaküpsiseid ei ole.",
       "noInference": "testee ei kogu andmeid kandidaatide soo, vanuse, päritolu ega puude kohta ega tuleta midagi sellist.",
       "voice": "Häälerežiimis muudetakse kandidaadi suuline vastus tekstiks ja sobitatakse valikutega ning sobitatud valik öeldakse talle välja ja näidatakse ekraanil; mitme õige valikuga küsimuse vastuse kinnitab ta kõigepealt. testee ei säilita kõnet ning häält ei analüüsita muul viisil. OpenAI, mis muudab selle tekstiks, võib seda säilitada kuni 30 päeva, nagu allpool kirjeldatud.",
-      "ai": "OpenAI-l, mis küsimused kirjutab, on palutud saadud andmeid mitte säilitada, kus tema API seda valikut pakub; ta võib neid hoida kuni 30 päeva, ainult kuritarvituste kontrollimiseks, välja arvatud juhul, kui seadus nõuab pikemat säilitamist, ega kasuta neid oma mudelite treenimiseks.",
+      "ai": "OpenAI-l, mis küsimused kirjutab ja neid kontrollib ning assistenti ja häälrežiimi käitab, on palutud saadud andmeid mitte säilitada, kus tema API seda valikut pakub; ta võib neid hoida kuni 30 päeva, ainult kuritarvituste kontrollimiseks, välja arvatud juhul, kui seadus nõuab pikemat säilitamist, ega kasuta neid oma mudelite treenimiseks.",
       "rights": "Igaüks saab oma andmed seadetes alla laadida või kustutada, ilma meile kirjutamata."
     },
     "compliance": {
@@ -3136,7 +3136,11 @@
       "results": "Kandidaatide intervjuutulemused, ajad ja märked kahtlase käitumise kohta: 12 kuud pärast kutse viimast saatmist, seejärel kustutatakse automaatselt.",
       "actionLog": "Ettevõtte toimingute logi: 12 kuud.",
       "chats": "Vestlused assistendiga: 90 päeva pärast viimast sõnumit.",
-      "aiRecords": "Tehisintellekti päringute kirjed: 30 päeva.",
+      "aiRecords": "Mida tehisintellektile saadeti ja selle vastused, meie jälgimiskirjetes: 30 päeva.",
+      "aiUsage": "Tehisintellekti kasutuse ja saavutatud piirangute kirjed, ilma selle sisuta: 13 kuud.",
+      "jobDescriptions": "Sinu kleebitud töökuulutuste kirjeldused: 90 päeva.",
+      "atsCandidates": "Värbamissüsteemi saadetud kandidaadid: 12 kuud pärast nende saabumist.",
+      "notifications": "Teavitused rakenduses: 90 päeva.",
       "errors": "Vearaportid: kuni 90 päeva.",
       "backups": "Andmebaasi varukoopiad ja sisselogimiskontode igapäevane varukoopia: 14 päeva, seejärel kirjutatakse üle või kustutatakse; selleks ajaks on kõik kustutatu ka neist kadunud.",
       "statistics": "Kasutusstatistika, kontotunnuste asemel koodidega: 25 kuud.",

@@ -28,7 +28,7 @@
         "E-kirjade seaded: milliseid valikulisi e-kirju saad, ja logi nende iga muudatuse kohta: milline e-kiri, sees või väljas, millal, kus (sisselogimisel, jaotises Seaded, tellimusest loobumise lingi või rämpspostiteate kaudu või meie töötajate poolt, koos märkega, kes) ja millist märkeruutude sõnastuse versiooni nägid.",
         "E-kirjad ettevõtte liikmetele: kirje sulle saadetud tegevuste kokkuvõtete ja meeldetuletuste kohta ning selle kohta, millest iga meeldetuletus oli, et ühtki ei saadetaks kaks korda.",
         "E-kirjad paljudele kasutajatele (teated meie tingimuste muudatustest, olulised teated teenuse kohta, tooteuudised, pakkumised): kas iga kiri saadeti sulle, jäeti vahele või ebaõnnestus ning kas loobusid selle tellimisest või märkisid selle rämpspostiks, et ühtki ei saadetaks kaks korda ja me näeksime, kuidas igaüks vastu võeti.",
-        "Aadressid, millele me enam e-kirju ei saada: kui e-kiri aadressile põrkub jäädavalt tagasi, põrkub ajutiselt tagasi 3 korda 14 päeva jooksul või märgitakse rämpspostiks, aadressi ühesuunaline räsi, põhjus ja aeg. Seda ei saa tagasi e-posti aadressiks muuta.",
+        "Aadressid, millele me enam e-kirju ei saada: kui e-kiri aadressile põrkub jäädavalt tagasi, põrkub ajutiselt tagasi 3 korda 14 päeva jooksul või märgitakse rämpspostiks, aadressi ühesuunaline räsi, põhjus ja aeg ning ajutise tagasipõrke korral ID, mille Resend sellele e-kirjale andis. Räsi ei saa tagasi aadressiks muuta.",
         "Kandidaadid, kes loobuvad ettevõtte e-kirjadest: nende e-posti aadressi ühesuunaline räsi koos ettevõttega ja, kui nad loobusid ainult ühe intervjuu meeldetuletustest, selle kutsega. Seda ei saa tagasi e-posti aadressiks muuta.",
         "Soovitused: kelle soovituslingi kaudu sina või sinu ettevõte tuli ja kas selle eest on preemia antud.",
         "Ostud: iga juurdelaadimise kohta ettevõte, kellele see oli, kes selle ostis, mida osteti, kogusumma ja valuuta, Paddle'i tehingu ID ja aeg ning iga tagasimakse kohta juurdelaadimine, krediidid, summa, Paddle'i viide ja tulemus (kes seda küsis, on kirjas ettevõtte toimingute logis). Kaardi- ja arveldusandmeid hoiab Paddle, mitte meie.",
@@ -43,7 +43,7 @@
       "heading": "Miks me neid kasutame",
       "items": [
         "testee pakkumiseks: intervjuude loomine, nende läbiviimine kutsutud kandidaatidele, tulemuste näitamine ettevõtetele ja sinu soovitud e-kirjade saatmine (leping).",
-        "Teenusega seotud e-kirjad, näiteks kutsed, aruanded, teated makseprobleemidest ja meie tingimuste muudatustest ning olulised teated teenuse kohta (turvaintsident, plaaniline katkestus või muudatus selle toimimises), mida saadetakse alati (leping).",
+        "Teenusega seotud e-kirjad, näiteks kutsed, aruanded, teated makseprobleemidest ja meie tingimuste muudatustest ning olulised teated teenuse kohta (turvaintsident, plaaniline katkestus või muudatus selle toimimises), mida saadetakse sõltumata sellest, mida jaotises E-kirjad valid (leping).",
         "Tegevuste kokkuvõte ja meeldetuletused sinu ettevõtete kohta, näiteks vähese krediidi või kandidaatideta intervjuu kohta (meie õigustatud huvi aidata sul testeed kasutada). Need on sees, kuni need välja lülitad.",
         "Tooteuudised: meie enda kasutajatele, kes ei märkinud valikut „Ma ei soovi tooteuudiseid“, kui seda esimesel sisselogimisel pakuti (eraelu puutumatuse ja elektroonilise side direktiivi artikli 13 lõige 2 ja elektroonilise side seaduse § 103¹). Saad nendest igal ajal tasuta loobuda.",
         "Pakkumised ja kampaaniad: ainult siis, kui oled nõus, märkides ruudu sisselogimisel või jaotises Seaded (nõusolek). Saad nõusoleku igal ajal tagasi võtta.",
@@ -97,7 +97,7 @@
     {
       "heading": "E-kirjad ja tellimusest loobumine",
       "paragraphs": [
-        "Teenusega seotud e-kirju, näiteks kutseid, aruandeid, teateid makseprobleemidest ja meie tingimuste muudatustest ning olulisi teateid teenuse kohta, saadetakse alati. Ülejäänud valid jaotises Seaded, alajaotises E-kirjad: tegevuste kokkuvõte, meeldetuletused, tooteuudised ning pakkumised ja kampaaniad. Igas valikulises e-kirjas on tellimusest loobumise link, mis töötab ilma sisse logimata, ning valikulise e-kirja rämpspostiks märkimine lülitab selle samuti välja. Kui sulle saadetud e-kiri põrkub jäädavalt tagasi või märgid mõne meie e-kirja rämpspostiks, lõpetame sellele aadressile tootekirjade ja teadete saatmise, kuni palud meil uuesti alustada.",
+        "Teenusega seotud e-kirju, näiteks kutseid, aruandeid, teateid makseprobleemidest ja meie tingimuste muudatustest ning olulisi teateid teenuse kohta, saadetakse sõltumata sinu valikust. Ülejäänud valid jaotises Seaded, alajaotises E-kirjad: tegevuste kokkuvõte, meeldetuletused, tooteuudised ning pakkumised ja kampaaniad. Igas valikulises e-kirjas on tellimusest loobumise link, mis töötab ilma sisse logimata, ning valikulise e-kirja rämpspostiks märkimine lülitab selle samuti välja. Saadame e-kirju ainult aadressile, mille oled kinnitanud; seni näed meie sõnumeid testees. Kui sulle saadetud e-kiri põrkub jäädavalt tagasi või märgid ükskõik millise meie e-kirja rämpspostiks, lõpetame sellele aadressile kõigi e-kirjade saatmise, ka teenusega seotud kirjade, kuni palud meil uuesti alustada.",
         "Kutsetes ja meeldetuletustes, mida ettevõte saadab kandidaatidele testee kaudu, on lingid, millega saab loobuda selle ettevõtte e-kirjadest või selle intervjuu meeldetuletustest. Seejärel ei saada testee sellele aadressile selle ettevõtte nimel enam e-kirju ja ettevõte näeb kutset kohaletoimetamata kutsena."
       ]
     },
@@ -119,6 +119,7 @@
         "Ettevõtte toimingute logi: kes mida tegi, säilitatakse 12 kuud.",
         "Märkmed, mida kirjutad ettevõtte intervjuude juurde: kuni märge, intervjuu või ettevõte kustutatakse. Need kuuluvad ettevõttele, seega jäävad need ettevõttele, ilma sinu nimeta, kui sa ettevõttest lahkud või oma konto kustutad.",
         "AI kasutuse ja saavutatud piirangute kirjed: 13 kuud, ilma sinu konto ID-ta pärast seda, kui oled oma konto kustutanud.",
+        "Meie administraatorite tehtud muudatused piirangutes: kes iga muudatuse tegi, koos tema e-posti aadressiga, mis muutus ja millal: 2 aastat.",
         "Harjutusvoorud: kuni kustutad oma konto.",
         "Küsimuste hinnangud ja teated: koos küsimusega. Kui sinu konto kustutatakse, jäävad sinu antud hinnangud ja teated alles ilma seoseta sinuga ning iga sinu kirjutatud kommentaar kustutatakse. Sama juhtub intervjuus antud hinnangute ja teadetega, kui sinu kutse sellele kustutatakse. Iga muu teate kommentaar kustutatakse 12 kuud pärast selle kirjutamist.",
         "„Avatud tööpakkumistele“: kuni lülitad selle välja või kustutad konto, kuid kõige rohkem aasta pärast seda, kui selle viimati sisse lülitasid või LinkedIni profiili salvestasid; sinu valikute logi kuni kustutad oma konto.",
@@ -128,7 +129,7 @@
         "Sulle saadetud kokkuvõtete ja meeldetuletuste kirje: 30 päeva või kuni kustutad oma konto, kui see juhtub varem.",
         "Sulle saadetud teadete, tooteuudiste ja pakkumiste kirje: kuni kustutad oma konto.",
         "Aadress, millele me enam e-kirju ei saada, räsina: kuni palud meil sellele uuesti kirjutada, ka pärast konto kustutamist, et sellele enam e-kirju ei saadetaks.",
-        "Ajutine tagasipõrge aadressi räsina: 14 päeva.",
+        "Ajutine tagasipõrge aadressi räsina koos ID-ga, mille Resend sellele e-kirjale andis: 14 päeva.",
         "Kandidaadi taotlus ettevõtte e-kirjadest loobumiseks, tema e-posti aadressi räsina: kuni ettevõte kustutatakse, ka siis, kui ettevõte kandidaadi kustutab.",
         "Kontaktsõnumid: nii kaua, kui meil on neid sulle vastamiseks vaja, kõige rohkem 2 aastat.",
         "Vearaportid: kuni 90 päeva.",
@@ -136,7 +137,7 @@
         "AI-päringute kirjed Langfuse juures: 30 päeva, seejärel kustutatakse need automaatselt.",
         "Andmebaasi varukoopiad ja sisselogimiskontode igapäevane varukoopia: 14 päeva, seejärel kirjutatakse need üle või kustutatakse; selleks ajaks on kõik kustutatu ka neist kadunud.",
         "Kirje kustutatud konto kohta koos selle e-posti aadressi ja konto ID-ga: 14 päeva, nii kaua kui varukoopiad kestavad, ainult selleks, et taastatud varukoopia ei saaks sinu andmeid tagasi tuua.",
-        "Meie teenuste vahel liikuvad sõnumid, mille hulgas võib olla e-kirju ja e-postiga saadetud aruandeid: kuni 8 päeva pärast nende saatmist. Ebaõnnestunud veebikonksu sündmus, mis ootab uuesti saatmist: umbes 3 päeva.",
+        "Meie teenuste vahel liikuvad sõnumid, mille hulgas võib olla e-kirju ja e-postiga saadetud aruandeid: kuni 8 päeva pärast nende saatmist. Ebaõnnestunud veebikonksu sündmus koos sellega, mida see kandidaadi kohta sisaldab, mis ootab uuesti saatmist: umbes 3 päeva. Iga veebikonksu edastuse kirje: 30 päeva.",
         "Kasutusstatistika: 25 kuud, seejärel kustutatakse see automaatselt; sinu konto kustutamine seda tähtaega ei lühenda.",
         "Ostu- ja tagasimaksekirjed: nii kaua, kui raamatupidamisseadus nõuab (Eestis 7 aastat), pärast konto kustutamist ilma sinu konto ID-ta.",
         "Krediidisaldod ja -kirjed ning ettevõtte valuuta: kuni ettevõtte kustutamiseni. Ettevõtte automaatne juurdelaadimine: kuni see välja lülitatakse, selle sisse lülitanud liige ettevõttest lahkub või oma konto kustutab või ettevõte kustutatakse. Sinu konto jaoks salvestatud valuuta: kuni kustutad oma konto.",
@@ -161,7 +162,7 @@
       "heading": "Küpsised ja salvestusruum",
       "paragraphs": [
         "testee kasutab ainult neid küpsiseid ja brauseri salvestusruumi, mida on vaja toimimiseks või mis jätavad meelde sinu enda valikud. Reklaami- ega analüütikaküpsiseid ei ole.",
-        "Sisselogituna hoidmiseks: küpsis (testee_token, mida uuendatakse testee kasutamise ajal iga tund, kuni logid välja) ja meie sisselogimisteenuse pakkuja Google Firebase'i brauseri salvestusruum, mis hoiab ka lühikest nimekirja päevadest, mil see selles brauseris töötas, isegi kui sa pole sisse logitud. AI-rakenduse ühendamise ajal kestab küpsis (testee_connect) need mõned minutid, mis selleks kuluvad.",
+        "Sisselogituna hoidmiseks: küpsis (testee_token, mida uuendatakse testee kasutamise ajal iga tund, kuni logid välja) ja meie sisselogimisteenuse pakkuja Google Firebase'i brauseri salvestusruum, mis hoiab ka lühikest nimekirja päevadest, mil see selles brauseris töötas, isegi kui sa pole sisse logitud. AI-rakenduse ühendamise ajal kestab küpsis (testee_connect) need mõned minutid, mis selleks kuluvad, ning Slacki lisamise ajal kestab üks küpsis (testee_slack) kõige rohkem 15 minutit.",
         "Sinu valikute meeldejätmiseks: sinu keel (küpsis testee_locale, üheks aastaks, mis seatakse, kui valid keele või avad testee mõne keele aadressil), hele või tume teema, assistendi paneeli laius, see, kas paneel oli avatud ja millise ettevõtte selles valisid (kuni välja logid), see, kuidas sa viimati kandidaate kutsusid, see, et oled selles brauseris varem sisse loginud, statistika jaoks viimati valitud periood ning sinu suletud teated muudetud õigusdokumendi kohta. Need jäävad sinu brauserisse, kuni need kustutad.",
         "Ainult selles vahekaardis, kuni selle sulged: sinu vestlus assistendiga kuni sisselogimiseni ja töökuulutus, millest intervjuud lood, et lehe uuesti laadimisel saaks jätkata.",
         "Soovituslink: ainult siis, kui otsustad selle alles jätta, jätab küpsis (testee_ref) 30 päevaks meelde lingi, mille kaudu tulid, et krediidid jõuaksid mõlema ettevõtteni.",

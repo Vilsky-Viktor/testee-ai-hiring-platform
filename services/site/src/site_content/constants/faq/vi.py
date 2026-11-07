@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "testee gửi những email nào, và làm sao để dừng nhận?",
-        "answer": 'Email dịch vụ, như lời mời, báo cáo, email thanh toán và thay đổi điều khoản của chúng tôi, luôn được gửi. Những email còn lại, như tóm tắt hoạt động hằng ngày, lời nhắc, cập nhật sản phẩm và ưu đãi, bạn chọn trong Cài đặt, mục Email, hoặc dừng bằng liên kết "Hủy đăng ký" trong mỗi email. Ứng viên có thể dừng nhận email từ công ty bạn, hoặc lời nhắc của một buổi phỏng vấn, bằng các liên kết trong lời mời và lời nhắc của họ. Tin tức của testee hiển thị trong thông báo của bạn, biểu tượng chuông ở trên cùng; tin quan trọng cũng được gửi qua email dưới dạng cập nhật sản phẩm, chỉ khi cài đặt đó đang bật.',
+        "answer": 'Email dịch vụ, như lời mời, báo cáo, email thanh toán và thay đổi điều khoản của chúng tôi, không thể tắt; chỉ địa chỉ bị trả lại vĩnh viễn hoặc đã đánh dấu một email của chúng tôi là thư rác mới ngừng nhận chúng. Những email còn lại, như tóm tắt hoạt động hằng ngày, lời nhắc, cập nhật sản phẩm và ưu đãi, bạn chọn trong Cài đặt, mục Email, hoặc dừng bằng liên kết "Hủy đăng ký" trong mỗi email. Ứng viên có thể dừng nhận email từ công ty bạn, hoặc lời nhắc của một buổi phỏng vấn, bằng các liên kết trong lời mời và lời nhắc của họ. Tin tức của testee hiển thị trong thông báo của bạn, biểu tượng chuông ở trên cùng; tin quan trọng cũng được gửi qua email dưới dạng cập nhật sản phẩm, chỉ khi cài đặt đó đang bật.',
     },
     {
         "key": "data_export",

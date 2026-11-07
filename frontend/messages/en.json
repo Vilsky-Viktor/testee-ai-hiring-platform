@@ -41,7 +41,7 @@
       "updatesNote": "New features and news from testee.",
       "promotions": "Offers and promotions",
       "promotionsNote": "Discounts and special offers.",
-      "alwaysSent": "Service emails, such as invites, candidate reports, billing problems and changes to our terms, are always sent."
+      "alwaysSent": "Service emails, such as invites, candidate reports, billing problems and changes to our terms, can't be turned off."
     }
   },
   "userMenu": {
@@ -3108,7 +3108,7 @@
       "noSelling": "We don't sell personal data or share it for advertising. There are no advertising or analytics cookies.",
       "noInference": "testee collects no data about candidates' sex, age, origin or disability, and infers nothing of the kind.",
       "voice": "In voice mode, a candidate's spoken answer is turned into text and matched to the options, and the option it matched is said back to them and shown on screen; an answer to a question with several right options is confirmed first. testee stores no speech, and the voice isn't analysed in any other way. OpenAI, which turns it into text, may keep it for up to 30 days, as below.",
-      "ai": "OpenAI, which writes the questions, is told not to store what it receives where its API offers that choice; it may keep the data for up to 30 days, only to check for abuse unless the law requires longer, and doesn't use it to train its models.",
+      "ai": "OpenAI, which writes and checks the questions and powers the assistant and voice mode, is told not to store what it receives where its API offers that choice; it may keep the data for up to 30 days, only to check for abuse unless the law requires longer, and doesn't use it to train its models.",
       "rights": "Anyone can download or delete their own data in Settings, without writing to us."
     },
     "compliance": {
@@ -3136,7 +3136,11 @@
       "results": "Candidates' interview results, timings and integrity signals: 12 months after the invitation was last sent, then deleted automatically.",
       "actionLog": "A company's action log: 12 months.",
       "chats": "Chats with the assistant: 90 days after their last message.",
-      "aiRecords": "Records of AI calls: 30 days.",
+      "aiRecords": "What was sent to the AI and its answers, in our monitoring records: 30 days.",
+      "aiUsage": "Records of AI usage and of limits reached, without that content: 13 months.",
+      "jobDescriptions": "Job descriptions you paste: 90 days.",
+      "atsCandidates": "Candidates an applicant tracking system sends: 12 months after they arrive.",
+      "notifications": "In-app notifications: 90 days.",
       "errors": "Error reports: up to 90 days.",
       "backups": "Database backups and the daily backup of sign-in accounts: 14 days, then overwritten or deleted; anything deleted is gone from them by then.",
       "statistics": "Usage statistics, under codes instead of account ids: 25 months.",

@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "Email apa saja yang dikirim testee, dan bagaimana cara menghentikannya?",
-        "answer": 'Email layanan, seperti undangan, laporan, email tagihan, dan perubahan ketentuan kami, selalu dikirim. Sisanya, seperti ringkasan aktivitas harian, pengingat, pembaruan produk, dan penawaran, kamu pilih di Pengaturan, bagian Email, atau hentikan dengan tautan "Berhenti berlangganan" di setiap email. Kandidat bisa menghentikan email dari perusahaanmu, atau pengingat sebuah wawancara, lewat tautan di undangan dan pengingat mereka. Berita testee muncul di notifikasimu, ikon lonceng di bagian atas; berita penting juga dikirim lewat email sebagai pembaruan produk, hanya selama pengaturan itu aktif.',
+        "answer": 'Email layanan, seperti undangan, laporan, email tagihan, dan perubahan ketentuan kami, tidak dapat dimatikan; hanya alamat yang emailnya terpental secara permanen atau yang menandai salah satu email kami sebagai spam yang berhenti menerimanya. Sisanya, seperti ringkasan aktivitas harian, pengingat, pembaruan produk, dan penawaran, kamu pilih di Pengaturan, bagian Email, atau hentikan dengan tautan "Berhenti berlangganan" di setiap email. Kandidat bisa menghentikan email dari perusahaanmu, atau pengingat sebuah wawancara, lewat tautan di undangan dan pengingat mereka. Berita testee muncul di notifikasimu, ikon lonceng di bagian atas; berita penting juga dikirim lewat email sebagai pembaruan produk, hanya selama pengaturan itu aktif.',
     },
     {
         "key": "data_export",

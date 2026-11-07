@@ -41,7 +41,7 @@
       "updatesNote": "Fitur baru dan berita dari testee.",
       "promotions": "Penawaran dan promosi",
       "promotionsNote": "Diskon dan penawaran khusus.",
-      "alwaysSent": "Email layanan, seperti undangan, laporan kandidat, masalah pembayaran, dan perubahan ketentuan kami, selalu dikirim."
+      "alwaysSent": "Email layanan, seperti undangan, laporan kandidat, masalah pembayaran, dan perubahan ketentuan kami, tidak dapat dimatikan."
     }
   },
   "userMenu": {
@@ -3108,7 +3108,7 @@
       "noSelling": "Kami tidak menjual data pribadi atau membagikannya untuk iklan. Tidak ada cookie iklan atau analitik.",
       "noInference": "testee tidak mengumpulkan data tentang jenis kelamin, usia, asal, atau disabilitas kandidat, dan tidak menyimpulkan hal semacam itu.",
       "voice": "Dalam mode suara, jawaban lisan kandidat diubah menjadi teks dan dicocokkan dengan pilihan yang ada, lalu pilihan yang cocok disebutkan kepadanya dan ditampilkan di layar; jawaban atas soal dengan lebih dari satu pilihan yang benar dikonfirmasi lebih dulu. testee tidak menyimpan ucapan, dan suaranya tidak dianalisis dengan cara lain apa pun. OpenAI, yang mengubahnya menjadi teks, dapat menyimpannya paling lama 30 hari, seperti dijelaskan di bawah.",
-      "ai": "OpenAI, yang menulis soal-soalnya, diminta untuk tidak menyimpan apa yang diterimanya jika API-nya menyediakan pilihan itu; OpenAI dapat menyimpan data paling lama 30 hari, hanya untuk memeriksa penyalahgunaan kecuali hukum mewajibkan lebih lama, dan tidak memakainya untuk melatih modelnya.",
+      "ai": "OpenAI, yang menulis dan memeriksa soal-soalnya serta menjalankan asisten dan mode suara, diminta untuk tidak menyimpan apa yang diterimanya jika API-nya menyediakan pilihan itu; OpenAI dapat menyimpan data paling lama 30 hari, hanya untuk memeriksa penyalahgunaan kecuali hukum mewajibkan lebih lama, dan tidak memakainya untuk melatih modelnya.",
       "rights": "Siapa pun bisa mengunduh atau menghapus datanya sendiri di Pengaturan, tanpa perlu menulis kepada kami."
     },
     "compliance": {
@@ -3136,7 +3136,11 @@
       "results": "Hasil wawancara kandidat, waktu pengerjaan, dan tanda integritas: 12 bulan setelah undangan terakhir kali dikirim, lalu dihapus otomatis.",
       "actionLog": "Log tindakan perusahaan: 12 bulan.",
       "chats": "Chat dengan asisten: 90 hari setelah pesan terakhirnya.",
-      "aiRecords": "Catatan panggilan AI: 30 hari.",
+      "aiRecords": "Apa yang dikirim ke AI dan jawabannya, dalam catatan pemantauan kami: 30 hari.",
+      "aiUsage": "Catatan penggunaan AI dan batasan yang tercapai, tanpa konten tersebut: 13 bulan.",
+      "jobDescriptions": "Deskripsi pekerjaan yang kamu tempel: 90 hari.",
+      "atsCandidates": "Kandidat yang dikirim oleh sistem pelacakan pelamar: 12 bulan setelah tiba.",
+      "notifications": "Notifikasi di aplikasi: 90 hari.",
       "errors": "Laporan error: hingga 90 hari.",
       "backups": "Cadangan database dan cadangan harian akun masuk: 14 hari, lalu ditimpa atau dihapus; apa pun yang dihapus sudah hilang darinya pada saat itu.",
       "statistics": "Statistik penggunaan, dengan kode sebagai pengganti ID akun: 25 bulan.",

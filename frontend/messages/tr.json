@@ -41,7 +41,7 @@
       "updatesNote": "testee'den yeni özellikler ve haberler.",
       "promotions": "Teklifler ve kampanyalar",
       "promotionsNote": "İndirimler ve özel teklifler.",
-      "alwaysSent": "Davetler, aday raporları, ödeme sorunları ve koşullarımızdaki değişiklikler gibi hizmet e-postaları her zaman gönderilir."
+      "alwaysSent": "Davetler, aday raporları, ödeme sorunları ve koşullarımızdaki değişiklikler gibi hizmet e-postaları kapatılamaz."
     }
   },
   "userMenu": {
@@ -3112,7 +3112,7 @@
       "noSelling": "Kişisel verileri satmayız ve reklam için paylaşmayız. Reklam veya analiz çerezleri yoktur.",
       "noInference": "testee adayların cinsiyeti, yaşı, kökeni veya engelliliği hakkında veri toplamaz ve bu türden hiçbir çıkarım yapmaz.",
       "voice": "Sesli modda adayın sözlü cevabı metne dönüştürülür ve seçeneklerle eşleştirilir; eşleşen seçenek adaya söylenir ve ekranda gösterilir, birden fazla doğru seçeneği olan bir sorunun cevabı ise önce onaylatılır. testee konuşmayı saklamaz, ses başka hiçbir şekilde analiz edilmez. Konuşmayı metne dönüştüren OpenAI, aşağıda belirtildiği gibi 30 güne kadar saklayabilir.",
-      "ai": "Soruları yazan OpenAI'a, API'si bu seçeneği sunduğu yerlerde aldıklarını saklamaması söylenir; verileri, kanun daha uzun bir süre gerektirmedikçe yalnızca kötüye kullanımı denetlemek için 30 güne kadar tutabilir ve modellerini eğitmek için kullanmaz.",
+      "ai": "Soruları yazan ve denetleyen, asistanı ve sesli modu çalıştıran OpenAI'a, API'si bu seçeneği sunduğu yerlerde aldıklarını saklamaması söylenir; verileri, kanun daha uzun bir süre gerektirmedikçe yalnızca kötüye kullanımı denetlemek için 30 güne kadar tutabilir ve modellerini eğitmek için kullanmaz.",
       "rights": "Herkes, bize yazmadan, Ayarlar'dan kendi verilerini indirebilir veya silebilir."
     },
     "compliance": {
@@ -3140,7 +3140,11 @@
       "results": "Adayların mülakat sonuçları, süreleri ve dürüstlük uyarıları: davetin son gönderilmesinden 12 ay sonra, ardından otomatik olarak silinir.",
       "actionLog": "Bir şirketin işlem kaydı: 12 ay.",
       "chats": "Asistanla sohbetler: son mesajdan sonra 90 gün.",
-      "aiRecords": "Yapay zekâ çağrılarının kayıtları: 30 gün.",
+      "aiRecords": "Yapay zekâya gönderilenler ve yanıtları, izleme kayıtlarımızda: 30 gün.",
+      "aiUsage": "Yapay zekâ kullanımı ve ulaşılan sınırlarla ilgili kayıtlar, bu içerik olmadan: 13 ay.",
+      "jobDescriptions": "Yapıştırdığınız iş tanımları: 90 gün.",
+      "atsCandidates": "Bir aday takip sisteminin gönderdiği adaylar: gelişlerinden 12 ay sonra.",
+      "notifications": "Uygulama içi bildirimler: 90 gün.",
       "errors": "Hata raporları: en fazla 90 gün.",
       "backups": "Veritabanı yedekleri ve giriş hesaplarının günlük yedeği: 14 gün, sonra üzerine yazılır veya silinir; silinen her şey o zamana kadar yedeklerden de çıkar.",
       "statistics": "Hesap kimlikleri yerine kodlarla tutulan kullanım istatistikleri: 25 ay.",

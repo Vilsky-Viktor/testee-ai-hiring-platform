@@ -28,7 +28,7 @@
         "Pengaturan email: email opsional mana yang kamu terima, dan log setiap perubahannya: email yang mana, aktif atau nonaktif, kapan, di mana (saat masuk, di Pengaturan, melalui tautan berhenti berlangganan atau laporan spam, atau oleh staf kami, beserta siapa orangnya), dan versi teks kotak centang yang kamu lihat.",
         "Email kepada anggota perusahaan: catatan ringkasan aktivitas dan pengingat yang kami kirimkan kepadamu, dan tentang apa setiap pengingat, agar tidak ada yang terkirim dua kali.",
         "Email kepada banyak pengguna (pemberitahuan perubahan ketentuan kami, pemberitahuan penting tentang layanan, pembaruan produk, penawaran): apakah setiap email terkirim kepadamu, dilewati, atau gagal, dan apakah kamu berhenti berlangganan darinya atau menandainya sebagai spam, agar tidak ada yang terkirim dua kali dan kami dapat melihat bagaimana setiap email diterima.",
-        "Alamat yang tidak lagi kami kirimi email: jika email ke suatu alamat terpental secara permanen, terpental sementara 3 kali dalam 14 hari, atau ditandai sebagai spam, hash satu arah dari alamat tersebut, alasannya, dan waktunya. Hash ini tidak dapat diubah kembali menjadi alamat email.",
+        "Alamat yang tidak lagi kami kirimi email: jika email ke suatu alamat terpental secara permanen, terpental sementara 3 kali dalam 14 hari, atau ditandai sebagai spam, hash satu arah dari alamat tersebut, alasannya, dan waktunya, serta untuk pentalan sementara, ID yang diberikan Resend pada email itu. Hash ini tidak dapat diubah kembali menjadi alamat.",
         "Kandidat yang menghentikan email dari suatu perusahaan: hash satu arah dari alamat email mereka, beserta perusahaannya dan, jika mereka hanya menghentikan pengingat untuk satu wawancara, undangan tersebut. Hash ini tidak dapat diubah kembali menjadi alamat email.",
         "Referal: melalui tautan referal siapa kamu atau perusahaanmu datang, dan apakah referal itu sudah diberi imbalan.",
         "Pembelian: untuk setiap isi ulang, perusahaan tujuannya, siapa yang membelinya, apa yang dibeli, total dan mata uangnya, ID transaksi Paddle, serta waktunya; dan untuk setiap pengembalian dana, isi ulangnya, kreditnya, jumlahnya, referensi Paddle, dan hasilnya (siapa yang memintanya ada di log tindakan perusahaan). Paddle, bukan kami, yang menyimpan detail kartu dan penagihan.",
@@ -43,7 +43,7 @@
       "heading": "Mengapa kami menggunakannya",
       "items": [
         "Untuk menyediakan testee: membuat wawancara, menjalankannya untuk kandidat yang diundang, menampilkan hasil kepada perusahaan, dan mengirim email yang kamu minta (kontrak).",
-        "Email layanan, seperti undangan, laporan, masalah pembayaran, perubahan pada ketentuan kami, dan pemberitahuan penting tentang layanan (insiden keamanan, waktu henti terjadwal, atau perubahan cara kerjanya), yang selalu dikirim (kontrak).",
+        "Email layanan, seperti undangan, laporan, masalah pembayaran, perubahan pada ketentuan kami, dan pemberitahuan penting tentang layanan (insiden keamanan, waktu henti terjadwal, atau perubahan cara kerjanya), yang dikirim apa pun pilihanmu di bagian Email (kontrak).",
         "Ringkasan aktivitas dan pengingat tentang perusahaanmu, seperti kredit yang hampir habis atau wawancara tanpa kandidat (kepentingan sah kami untuk membantumu menggunakan testee). Email ini aktif sampai kamu menonaktifkannya.",
         "Pembaruan produk dan berita: bagi pengguna kami sendiri yang tidak mencentang “Jangan kirimi saya pembaruan produk dan berita” saat pertama kali opsi itu ditawarkan ketika masuk (Pasal 13 ayat (2) Directive ePrivacy dan § 103¹ Undang-Undang Komunikasi Elektronik Estonia). Kamu bisa menghentikannya kapan saja, tanpa biaya.",
         "Penawaran dan promosi: hanya jika kamu setuju, dengan mencentang kotaknya saat masuk atau di Pengaturan (persetujuan). Kamu bisa menariknya kembali kapan saja.",
@@ -97,7 +97,7 @@
     {
       "heading": "Email dan berhenti berlangganan",
       "paragraphs": [
-        "Email layanan, seperti undangan, laporan, masalah pembayaran, perubahan pada ketentuan kami, dan pemberitahuan penting tentang layanan, selalu dikirim. Kamu memilih email lainnya di Pengaturan, di bagian Email: ringkasan aktivitas, pengingat, pembaruan produk dan berita, serta penawaran dan promosi. Setiap email opsional memiliki tautan berhenti berlangganan yang berfungsi tanpa perlu masuk, dan menandai email opsional sebagai spam juga menonaktifkannya. Jika email kepadamu terpental secara permanen, atau kamu menandai salah satu email kami sebagai spam, kami berhenti mengirim email produk dan pemberitahuan ke alamat itu sampai kamu meminta kami memulainya lagi.",
+        "Email layanan, seperti undangan, laporan, masalah pembayaran, perubahan pada ketentuan kami, dan pemberitahuan penting tentang layanan, dikirim apa pun pilihanmu. Kamu memilih email lainnya di Pengaturan, di bagian Email: ringkasan aktivitas, pengingat, pembaruan produk dan berita, serta penawaran dan promosi. Setiap email opsional memiliki tautan berhenti berlangganan yang berfungsi tanpa perlu masuk, dan menandai email opsional sebagai spam juga menonaktifkannya. Kami hanya mengirim email ke alamat yang sudah kamu konfirmasi; sampai saat itu, kamu melihat pesan kami di testee. Jika email kepadamu terpental secara permanen, atau kamu menandai email kami mana pun sebagai spam, kami berhenti mengirim semua email ke alamat itu, termasuk email layanan, sampai kamu meminta kami memulainya lagi.",
         "Undangan dan pengingat yang dikirim perusahaan kepada kandidat melalui testee memiliki tautan untuk menghentikan email dari perusahaan itu, atau pengingat untuk wawancara itu. Setelah itu testee tidak lagi mengirim email ke alamat tersebut atas nama perusahaan itu, dan perusahaan melihat undangannya sebagai tidak terkirim."
       ]
     },
@@ -119,6 +119,7 @@
         "Log tindakan perusahaan: siapa melakukan apa, disimpan selama 12 bulan.",
         "Catatan yang kamu tulis di wawancara sebuah perusahaan: sampai catatan itu, wawancaranya, atau perusahaannya dihapus. Catatan itu milik perusahaan, jadi tetap ada di perusahaan, tanpa namamu, saat kamu keluar dari perusahaan itu atau menghapus akunmu.",
         "Catatan penggunaan AI dan batasan yang tercapai: 13 bulan, tanpa ID akunmu setelah kamu menghapus akunmu.",
+        "Perubahan yang dilakukan administrator kami pada batasan: siapa yang melakukan setiap perubahan, beserta alamat emailnya, apa yang berubah, dan kapan: 2 tahun.",
         "Sesi latihan: sampai kamu menghapus akunmu.",
         "Penilaian dan laporan tentang soal: bersama soal tersebut. Saat akunmu dihapus, penilaian dan laporan yang kamu berikan tetap ada tanpa kaitan denganmu, dan komentar apa pun yang kamu tulis dihapus. Hal yang sama berlaku untuk yang kamu berikan dalam wawancara saat undanganmu ke wawancara itu dihapus. Komentar pada laporan lainnya dihapus 12 bulan setelah ditulis.",
         "Terbuka untuk tawaran kerja: sampai kamu mematikannya atau menghapus akunmu, dan paling lama setahun setelah terakhir kali kamu mengaktifkannya atau menyimpan profil LinkedIn-mu; log pilihanmu, sampai kamu menghapus akunmu.",
@@ -128,7 +129,7 @@
         "Catatan ringkasan dan pengingat yang dikirimkan kepadamu: 30 hari, atau sampai kamu menghapus akunmu jika itu lebih cepat.",
         "Catatan pemberitahuan, pembaruan produk, dan penawaran yang dikirimkan kepadamu: sampai kamu menghapus akunmu.",
         "Alamat yang tidak lagi kami kirimi email, sebagai hash: sampai kamu meminta kami mengirim email ke alamat itu lagi, juga setelah kamu menghapus akunmu, agar alamat itu tidak dikirimi email lagi.",
-        "Email yang terpental sementara, sebagai hash dari alamatnya: 14 hari.",
+        "Email yang terpental sementara, sebagai hash dari alamatnya, beserta ID yang diberikan Resend pada email itu: 14 hari.",
         "Permintaan kandidat untuk menghentikan email dari suatu perusahaan, sebagai hash dari email mereka: sampai perusahaan itu dihapus, bahkan jika perusahaan menghapus kandidat tersebut.",
         "Pesan kontak: selama kami membutuhkannya untuk menjawabmu, paling lama 2 tahun.",
         "Laporan kesalahan: hingga 90 hari.",
@@ -136,7 +137,7 @@
         "Catatan panggilan AI di Langfuse: 30 hari, lalu dihapus secara otomatis.",
         "Cadangan basis data dan cadangan harian akun untuk masuk: 14 hari, lalu ditimpa atau dihapus; apa pun yang telah dihapus sudah hilang dari cadangan pada saat itu.",
         "Catatan akun yang dihapus, dengan email dan ID akunnya: 14 hari, selama cadangan masih ada, hanya agar cadangan yang dipulihkan tidak dapat mengembalikan datamu.",
-        "Pesan yang sedang dikirim antarlayanan kami, yang dapat berisi email dan laporan yang dikirim lewat email: paling lama 8 hari setelah dikirim. Event webhook yang gagal dan menunggu dikirim ulang: sekitar 3 hari.",
+        "Pesan yang sedang dikirim antarlayanan kami, yang dapat berisi email dan laporan yang dikirim lewat email: paling lama 8 hari setelah dikirim. Event webhook yang gagal, beserta isinya tentang seorang kandidat, dan menunggu dikirim ulang: sekitar 3 hari. Catatan setiap pengiriman webhook: 30 hari.",
         "Statistik penggunaan: 25 bulan, lalu dihapus secara otomatis; menghapus akunmu tidak mempersingkat jangka waktu ini.",
         "Catatan pembelian dan pengembalian dana: selama diwajibkan oleh hukum akuntansi (7 tahun di Estonia), tanpa ID akunmu setelah kamu menghapus akunmu.",
         "Saldo dan entri kredit, serta mata uang perusahaan: sampai perusahaan dihapus. Isi ulang otomatis perusahaan: sampai dimatikan, anggota yang menyalakannya keluar dari perusahaan atau menghapus akunnya, atau perusahaan dihapus. Mata uang yang disimpan untuk akunmu sendiri: sampai kamu menghapus akunmu.",
@@ -161,7 +162,7 @@
       "heading": "Cookie dan penyimpanan",
       "paragraphs": [
         "testee hanya menggunakan cookie dan penyimpanan browser yang diperlukan agar berfungsi atau yang mengingat pilihanmu sendiri. Tidak ada cookie iklan atau analitik.",
-        "Agar kamu tetap masuk: sebuah cookie (testee_token, diperbarui setiap jam selama kamu memakai testee, sampai kamu keluar) dan penyimpanan browser milik penyedia proses masuk kami, Google Firebase, yang juga menyimpan daftar singkat hari-hari saat layanan itu berjalan di browser ini, meskipun kamu tidak masuk. Saat kamu menghubungkan aplikasi AI, sebuah cookie (testee_connect) bertahan selama beberapa menit yang diperlukan.",
+        "Agar kamu tetap masuk: sebuah cookie (testee_token, diperbarui setiap jam selama kamu memakai testee, sampai kamu keluar) dan penyimpanan browser milik penyedia proses masuk kami, Google Firebase, yang juga menyimpan daftar singkat hari-hari saat layanan itu berjalan di browser ini, meskipun kamu tidak masuk. Saat kamu menghubungkan aplikasi AI, sebuah cookie (testee_connect) bertahan selama beberapa menit yang diperlukan, dan saat kamu menambahkan Slack, sebuah cookie (testee_slack) bertahan paling lama 15 menit.",
         "Untuk mengingat pilihanmu: bahasamu (sebuah cookie, testee_locale, selama setahun, diatur saat kamu memilih bahasa atau membuka testee di alamat suatu bahasa), tema terang atau gelapmu, lebar panel asisten, apakah panel itu terbuka dan perusahaan mana yang kamu pilih di dalamnya (sampai kamu keluar), cara terakhir kamu mengundang kandidat, bahwa kamu pernah masuk di browser ini sebelumnya, periode yang terakhir kamu pilih untuk statistik, dan pemberitahuan perubahan dokumen hukum yang sudah kamu tutup. Semuanya tetap ada di browser-mu sampai kamu menghapusnya.",
         "Hanya di tab ini, sampai kamu menutupnya: percakapanmu dengan asisten sampai kamu masuk, dan deskripsi pekerjaan yang sedang kamu ubah menjadi wawancara, agar proses berlanjut saat halaman dimuat ulang.",
         "Tautan referal: hanya jika kamu memilih untuk menyimpannya, sebuah cookie (testee_ref) mengingat tautan yang kamu gunakan untuk datang selama 30 hari, agar kredit sampai ke kedua perusahaan.",

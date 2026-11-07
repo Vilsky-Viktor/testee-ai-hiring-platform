@@ -28,7 +28,7 @@
         "Configurações de e-mail: quais e-mails opcionais você recebe e um registro de cada alteração neles: qual e-mail, ativado ou desativado, quando, onde (ao entrar, em Configurações, por um link de cancelamento de inscrição ou uma denúncia de spam, ou pela nossa equipe, indicando quem) e qual versão do texto das caixas de seleção você viu.",
         "E-mails aos membros da empresa: um registro dos resumos de atividades e lembretes que enviamos a você, e do assunto de cada lembrete, para que nenhum seja enviado duas vezes.",
         "E-mails para muitos usuários (avisos de alterações dos nossos termos, avisos importantes sobre o serviço, novidades do produto, ofertas): se cada um foi enviado a você, ignorado ou falhou, e se você cancelou a inscrição ou o marcou como spam, para que nenhum seja enviado duas vezes e possamos ver como cada um foi recebido.",
-        "Endereços para os quais não enviamos mais e-mails: se um e-mail para um endereço for devolvido de forma definitiva, for devolvido temporariamente 3 vezes em 14 dias ou for marcado como spam, um hash unidirecional do endereço, o motivo e a data. Ele não pode ser convertido de volta no e-mail.",
+        "Endereços para os quais não enviamos mais e-mails: se um e-mail para um endereço for devolvido de forma definitiva, for devolvido temporariamente 3 vezes em 14 dias ou for marcado como spam, um hash unidirecional do endereço, o motivo e a data e, em uma devolução temporária, o ID que a Resend deu a esse e-mail. O hash não pode ser convertido de volta no endereço.",
         "Candidatos que deixam de receber os e-mails de uma empresa: um hash unidirecional do endereço de e-mail deles, com a empresa e, se deixaram de receber apenas os lembretes de uma entrevista, esse convite. Ele não pode ser convertido de volta no e-mail.",
         "Indicações: por meio do link de indicação de quem você ou sua empresa chegou, e se ele já foi recompensado.",
         "Compras: para cada recarga, a empresa a que se destinava, quem a comprou, o que foi comprado, o total e a moeda, o ID da transação da Paddle e quando; e, para cada reembolso, a recarga, os créditos, o valor, a referência da Paddle e o resultado (quem pediu fica no registro de ações da empresa). Os dados do cartão e de faturamento ficam com a Paddle, não conosco.",
@@ -43,7 +43,7 @@
       "heading": "Por que os usamos",
       "items": [
         "Para fornecer a testee: gerar entrevistas, aplicá-las aos candidatos convidados, mostrar os resultados às empresas e enviar os e-mails que você pede (contrato).",
-        "E-mails de serviço, como convites, relatórios, problemas de cobrança, alterações dos nossos termos e avisos importantes sobre o serviço (um incidente de segurança, uma manutenção programada ou uma mudança no seu funcionamento), que são sempre enviados (contrato).",
+        "E-mails de serviço, como convites, relatórios, problemas de cobrança, alterações dos nossos termos e avisos importantes sobre o serviço (um incidente de segurança, uma manutenção programada ou uma mudança no seu funcionamento), que são enviados seja qual for a sua escolha em E-mails (contrato).",
         "O resumo de atividades e os lembretes sobre as suas empresas, como créditos baixos ou uma entrevista sem candidatos (nosso interesse legítimo em ajudar você a usar a testee). Ficam ativados até você desativá-los.",
         "Novidades do produto e notícias: para os nossos próprios usuários que não marcaram \"Não quero receber novidades do produto e notícias\" quando isso foi oferecido no primeiro acesso (artigo 13(2) da Diretiva relativa à privacidade e às comunicações eletrônicas e § 103¹ da Lei das Comunicações Eletrônicas da Estônia). Você pode cancelá-los a qualquer momento, gratuitamente.",
         "Ofertas e promoções: somente se você concordar, marcando a caixa ao entrar ou em Configurações (consentimento). Você pode retirar o consentimento a qualquer momento.",
@@ -97,7 +97,7 @@
     {
       "heading": "E-mails e cancelamento de inscrição",
       "paragraphs": [
-        "Os e-mails de serviço, como convites, relatórios, problemas de cobrança, alterações dos nossos termos e avisos importantes sobre o serviço, são sempre enviados. Você escolhe os demais em Configurações, em E-mails: o resumo de atividades, os lembretes, as novidades do produto e notícias, e as ofertas e promoções. Todo e-mail opcional tem um link de cancelamento de inscrição que funciona sem entrar na conta, e marcar um e-mail opcional como spam também o desativa. Se um e-mail para você for devolvido de forma definitiva, ou se você marcar um dos nossos como spam, deixamos de enviar e-mails sobre o produto e avisos para esse endereço até que você nos peça para voltar a enviar.",
+        "Os e-mails de serviço, como convites, relatórios, problemas de cobrança, alterações dos nossos termos e avisos importantes sobre o serviço, são enviados seja qual for a sua escolha. Você escolhe os demais em Configurações, em E-mails: o resumo de atividades, os lembretes, as novidades do produto e notícias, e as ofertas e promoções. Todo e-mail opcional tem um link de cancelamento de inscrição que funciona sem entrar na conta, e marcar um e-mail opcional como spam também o desativa. Só enviamos e-mails para um endereço que você confirmou; até lá, você vê as nossas mensagens na testee. Se um e-mail para você for devolvido de forma definitiva, ou se você marcar qualquer um dos nossos como spam, deixamos de enviar todos os e-mails para esse endereço, inclusive os de serviço, até que você nos peça para voltar a enviar.",
         "Os convites e lembretes que uma empresa envia aos candidatos pela testee têm links para deixar de receber os e-mails dessa empresa, ou os lembretes dessa entrevista. A testee então não volta a enviar e-mails a esse endereço em nome da empresa, e a empresa vê o convite como não entregue."
       ]
     },
@@ -119,6 +119,7 @@
         "O registro de ações de uma empresa: quem fez o quê, guardado por 12 meses.",
         "As notas que você escreve nas entrevistas de uma empresa: até a nota, a entrevista ou a empresa ser excluída. Elas pertencem à empresa, então ficam com ela, sem o seu nome, quando você sai dela ou exclui a sua conta.",
         "Os registros do uso de IA e dos limites atingidos: 13 meses, sem o ID da sua conta depois que você exclui a sua conta.",
+        "As alterações que os nossos administradores fazem nos limites: quem fez cada uma, com o endereço de e-mail, o que mudou e quando: 2 anos.",
         "Rodadas de prática: até você excluir a sua conta.",
         "Avaliações e denúncias de perguntas: com a pergunta. Quando a sua conta é excluída, as que você fez ficam sem nenhum vínculo com você e qualquer comentário que você escreveu é excluído. O mesmo acontece com as que você fez em uma entrevista quando o seu convite para ela é excluído. O comentário de qualquer outra denúncia é excluído 12 meses depois de escrito.",
         "Aberto a propostas: até você desativar ou excluir a sua conta, e no máximo um ano depois da última vez que você ativou ou salvou o seu perfil do LinkedIn; o registro das suas escolhas, até você excluir a sua conta.",
@@ -128,7 +129,7 @@
         "O registro dos resumos e lembretes enviados a você: 30 dias, ou até você excluir a sua conta, se isso ocorrer antes.",
         "O registro dos avisos, novidades do produto e ofertas enviados a você: até você excluir a sua conta.",
         "Um endereço para o qual não enviamos mais e-mails, como hash: até você nos pedir para voltar a enviar e-mails para ele, mesmo depois de excluir a sua conta, para que ele não receba e-mails de novo.",
-        "Uma devolução temporária, como hash do endereço: 14 dias.",
+        "Uma devolução temporária, como hash do endereço, com o ID que a Resend deu a esse e-mail: 14 dias.",
         "O pedido de um candidato para deixar de receber os e-mails de uma empresa, como um hash do e-mail dele: até a empresa ser excluída, mesmo que a empresa apague o candidato.",
         "Mensagens de contato: pelo tempo necessário para responder a você, no máximo 2 anos.",
         "Relatórios de erros: até 90 dias.",
@@ -136,7 +137,7 @@
         "Registros de chamadas à IA na Langfuse: 30 dias; depois, são excluídos automaticamente.",
         "Backups do banco de dados e backup diário das contas de login: 14 dias, depois são sobrescritos ou excluídos; tudo o que foi excluído já terá desaparecido deles até lá.",
         "Um registro de uma conta excluída, com o e-mail e o ID da conta: 14 dias, enquanto durarem os backups, apenas para que um backup restaurado não possa trazer seus dados de volta.",
-        "Mensagens a caminho entre os nossos serviços, que podem incluir e-mails e relatórios enviados por e-mail: até 8 dias após o envio. Um evento de webhook que falhou, aguardando novo envio: cerca de 3 dias.",
+        "Mensagens a caminho entre os nossos serviços, que podem incluir e-mails e relatórios enviados por e-mail: até 8 dias após o envio. Um evento de webhook que falhou, com o que ele traz sobre um candidato, aguardando novo envio: cerca de 3 dias. O registro de cada entrega de webhook: 30 dias.",
         "Estatísticas de uso: 25 meses; depois, são excluídas automaticamente. Excluir a sua conta não encurta esse prazo.",
         "Registros de compras e reembolsos: pelo tempo exigido pela legislação contábil (7 anos na Estônia), sem o ID da sua conta depois que você excluir a sua conta.",
         "Saldos e lançamentos de créditos, e a moeda de uma empresa: até a empresa ser excluída. A recarga automática de uma empresa: até ser desativada, o membro que a ativou sair da empresa ou excluir a conta dele, ou a empresa ser excluída. A moeda salva para a sua própria conta: até você excluir a sua conta.",
@@ -161,7 +162,7 @@
       "heading": "Cookies e armazenamento",
       "paragraphs": [
         "A testee usa apenas os cookies e o armazenamento do navegador de que precisa para funcionar ou que guardam as suas próprias escolhas. Não há cookies de publicidade nem de análise.",
-        "Para manter você conectado: um cookie (testee_token, renovado a cada hora enquanto você usa a testee, até você sair) e o armazenamento do navegador do nosso provedor de login, o Google Firebase, que também guarda uma lista curta dos dias em que foi executado neste navegador, mesmo que você não esteja conectado. Enquanto você conecta um app de IA, um cookie (testee_connect) dura os poucos minutos necessários.",
+        "Para manter você conectado: um cookie (testee_token, renovado a cada hora enquanto você usa a testee, até você sair) e o armazenamento do navegador do nosso provedor de login, o Google Firebase, que também guarda uma lista curta dos dias em que foi executado neste navegador, mesmo que você não esteja conectado. Enquanto você conecta um app de IA, um cookie (testee_connect) dura os poucos minutos necessários e, enquanto você adiciona o Slack, um (testee_slack) dura no máximo 15 minutos.",
         "Para lembrar as suas escolhas: o seu idioma (um cookie, testee_locale, por um ano, definido quando você escolhe um idioma ou abre a testee no endereço de um idioma), o seu tema claro ou escuro, a largura do painel do assistente, se ele estava aberto e qual empresa você escolheu nele (até você sair), como você convidou candidatos da última vez, que você já entrou neste navegador antes, o período escolhido por último para as estatísticas e os avisos de alteração de um documento legal que você fechou. Eles ficam no seu navegador até você apagá-los.",
         "Apenas nesta aba, até você fechá-la: a sua conversa com o assistente até você entrar, e a descrição da vaga que você está transformando em entrevista, para que recarregar a página continue de onde parou.",
         "Um link de indicação: somente se você optar por guardá-lo, um cookie (testee_ref) lembra por 30 dias o link pelo qual você chegou, para que os créditos cheguem às duas empresas.",

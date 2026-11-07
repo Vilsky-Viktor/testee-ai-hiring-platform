@@ -41,7 +41,8 @@ reminders, campaigns) through Resend, to a global audience in each recipient's l
   URI) with `List-Unsubscribe-Post: List-Unsubscribe=One-Click`, both covered by DKIM; the POST
   needs no cookies or auth, never redirects, answers 204 and takes effect at once (within 48
   hours at most).
-- A spam complaint about optional mail turns it off.
+- A spam complaint about any email stops every email to that address, service mail too
+  (suppression; the policy says so).
 - A new sending domain or a much larger volume is warmed up: start low, raise the cap weekly over
   about six weeks, watch deferrals, bounces and complaints per mailbox provider.
 

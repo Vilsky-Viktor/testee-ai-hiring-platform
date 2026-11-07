@@ -244,7 +244,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "Which emails does testee send, and how do I stop them?",
-        "answer": "Service emails, such as invites, reports, billing emails and changes to our terms, are always sent. The rest, such as the daily activity digest, reminders, product updates and offers, you choose in Settings, under Emails, or stop with the Unsubscribe link in each email. Candidates can stop your company's emails, or an interview's reminders, with the links in their invites and reminders. testee's news shows in your notifications, the bell at the top; the major news also comes by email as a product update, only while that setting is on.",
+        "answer": "Service emails, such as invites, reports, billing emails and changes to our terms, can't be turned off; only an address that bounced for good or marked one of our emails as spam stops getting them. The rest, such as the daily activity digest, reminders, product updates and offers, you choose in Settings, under Emails, or stop with the Unsubscribe link in each email. Candidates can stop your company's emails, or an interview's reminders, with the links in their invites and reminders. testee's news shows in your notifications, the bell at the top; the major news also comes by email as a product update, only while that setting is on.",
     },
     {
         "key": "data_export",

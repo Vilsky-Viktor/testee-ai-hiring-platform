@@ -28,7 +28,7 @@
         "Ustawienia e-maili: jakie opcjonalne e-maile otrzymujesz oraz rejestr każdej ich zmiany: który e-mail, włączony czy wyłączony, kiedy, gdzie (przy logowaniu, w Ustawieniach, przez link do wypisania się lub zgłoszenie spamu albo przez nasz personel, ze wskazaniem kogo) i którą wersję treści pól wyboru widziałeś.",
         "E-maile do członków firm: rejestr wysłanych Ci podsumowań aktywności i przypomnień oraz tego, czego dotyczyło każde przypomnienie, aby żadne nie zostało wysłane dwukrotnie.",
         "E-maile do wielu użytkowników (powiadomienia o zmianach naszego regulaminu, ważne powiadomienia o usłudze, nowości o produkcie, oferty): czy każdy z nich został do Ciebie wysłany, pominięty lub się nie powiódł, oraz informacja o Twojej rezygnacji z niego lub oznaczeniu go jako spam, aby żaden nie został wysłany dwukrotnie i abyśmy widzieli, jak każdy został przyjęty.",
-        "Adresy, na które już nie wysyłamy e-maili: jeśli e-mail na dany adres zostanie trwale odrzucony, zostanie tymczasowo odrzucony 3 razy w ciągu 14 dni lub zostanie oznaczony jako spam, skrót jednokierunkowy tego adresu, powód i data. Nie da się go z powrotem zamienić na adres e-mail.",
+        "Adresy, na które już nie wysyłamy e-maili: jeśli e-mail na dany adres zostanie trwale odrzucony, zostanie tymczasowo odrzucony 3 razy w ciągu 14 dni lub zostanie oznaczony jako spam, skrót jednokierunkowy tego adresu, powód i data, a przy tymczasowym odrzuceniu identyfikator, który Resend nadał temu e-mailowi. Skrótu nie da się z powrotem zamienić na adres.",
         "Kandydaci, którzy rezygnują z e-maili firmy: skrót jednokierunkowy ich adresu e-mail, wraz z firmą oraz, jeśli zrezygnowali tylko z przypomnień dotyczących jednej rozmowy, tym zaproszeniem. Nie da się go z powrotem zamienić na adres e-mail.",
         "Polecenia: przez czyj link polecający Ty lub Twoja firma do nas trafiliście i czy przyznano już za to nagrodę.",
         "Zakupy: dla każdego doładowania firma, dla której było, kto je kupił, co zostało kupione, kwota łączna i waluta, identyfikator transakcji Paddle oraz kiedy; a dla każdego zwrotu doładowanie, kredyty, kwota, identyfikator Paddle i wynik (kto o niego poprosił, widać w dzienniku działań firmy). Dane karty i dane rozliczeniowe przechowuje Paddle, nie my.",
@@ -43,7 +43,7 @@
       "heading": "W jakim celu je wykorzystujemy",
       "items": [
         "Świadczenie usługi testee: generowanie rozmów, przeprowadzanie ich z zaproszonymi kandydatami, pokazywanie firmom wyników i wysyłanie e-maili, o które prosisz (umowa).",
-        "E-maile serwisowe, takie jak zaproszenia, raporty, problemy z płatnościami, zmiany naszego regulaminu i ważne powiadomienia o usłudze (incydent bezpieczeństwa, planowana przerwa w działaniu lub zmiana sposobu jej działania), które są wysyłane zawsze (umowa).",
+        "E-maile serwisowe, takie jak zaproszenia, raporty, problemy z płatnościami, zmiany naszego regulaminu i ważne powiadomienia o usłudze (incydent bezpieczeństwa, planowana przerwa w działaniu lub zmiana sposobu jej działania), które są wysyłane niezależnie od tego, co wybierzesz w sekcji E-maile (umowa).",
         "Podsumowanie aktywności i przypomnienia dotyczące Twoich firm, na przykład o małej liczbie kredytów lub o rozmowie bez kandydatów (nasz prawnie uzasadniony interes polegający na pomaganiu Ci w korzystaniu z testee). Są włączone, dopóki ich nie wyłączysz.",
         "Nowości o produkcie i aktualności: dla naszych własnych użytkowników, którzy nie zaznaczyli pola „Nie chcę otrzymywać nowości o produkcie i aktualności”, gdy logowanie po raz pierwszy to zaproponowało (art. 13 ust. 2 dyrektywy o prywatności i łączności elektronicznej oraz § 103¹ estońskiej ustawy o łączności elektronicznej). Możesz z nich zrezygnować w każdej chwili, bezpłatnie.",
         "Oferty i promocje: tylko jeśli wyrazisz zgodę, zaznaczając pole przy logowaniu lub w Ustawieniach (zgoda). Możesz ją w każdej chwili wycofać.",
@@ -97,7 +97,7 @@
     {
       "heading": "E-maile i wypisywanie się",
       "paragraphs": [
-        "E-maile serwisowe, takie jak zaproszenia, raporty, problemy z płatnościami, zmiany naszego regulaminu i ważne powiadomienia o usłudze, są wysyłane zawsze. Pozostałe wybierasz w Ustawieniach, w sekcji E-maile: podsumowanie aktywności, przypomnienia, nowości o produkcie i aktualności oraz oferty i promocje. Każdy opcjonalny e-mail ma link do wypisania się, który działa bez logowania, a oznaczenie opcjonalnego e-maila jako spam również go wyłącza. Jeśli e-mail do Ciebie zostanie trwale odrzucony albo oznaczysz jeden z naszych e-maili jako spam, przestajemy wysyłać na ten adres e-maile o produkcie i powiadomienia, dopóki nie poprosisz nas o ich wznowienie.",
+        "E-maile serwisowe, takie jak zaproszenia, raporty, problemy z płatnościami, zmiany naszego regulaminu i ważne powiadomienia o usłudze, są wysyłane niezależnie od Twojego wyboru. Pozostałe wybierasz w Ustawieniach, w sekcji E-maile: podsumowanie aktywności, przypomnienia, nowości o produkcie i aktualności oraz oferty i promocje. Każdy opcjonalny e-mail ma link do wypisania się, który działa bez logowania, a oznaczenie opcjonalnego e-maila jako spam również go wyłącza. Wysyłamy e-maile tylko na adres, który potwierdzisz; do tego czasu widzisz nasze wiadomości w testee. Jeśli e-mail do Ciebie zostanie trwale odrzucony albo oznaczysz którykolwiek z naszych e-maili jako spam, przestajemy wysyłać na ten adres wszelkie e-maile, także serwisowe, dopóki nie poprosisz nas o ich wznowienie.",
         "Zaproszenia i przypomnienia, które firma wysyła kandydatom przez testee, zawierają linki do rezygnacji z e-maili tej firmy lub z przypomnień dotyczących tej rozmowy. testee nie wysyła wtedy już na ten adres e-maili w imieniu tej firmy, a firma widzi zaproszenie jako niedostarczone."
       ]
     },
@@ -119,6 +119,7 @@
         "Dziennik działań firmy: kto co zrobił, przechowywany przez 12 miesięcy.",
         "Notatki, które piszesz do rozmów firmy: do czasu usunięcia notatki, rozmowy lub firmy. Należą do firmy, więc pozostają w niej, bez Twojego imienia i nazwiska, gdy z niej odejdziesz lub usuniesz konto.",
         "Rejestry wykorzystania AI i osiągniętych limitów: 13 miesięcy, bez identyfikatora Twojego konta po usunięciu przez Ciebie konta.",
+        "Zmiany limitów wprowadzane przez naszych administratorów: kto wprowadził każdą z nich, wraz z adresem e-mail, co się zmieniło i kiedy: 2 lata.",
         "Rundy ćwiczeniowe: do czasu usunięcia przez Ciebie konta.",
         "Oceny i zgłoszenia pytań: wraz z pytaniem. Gdy Twoje konto zostanie usunięte, Twoje oceny i zgłoszenia pozostają bez powiązania z Tobą, a każdy napisany przez Ciebie komentarz jest usuwany. To samo dotyczy ocen i zgłoszeń z rozmowy, gdy zostanie usunięte zaproszenie na nią. Komentarz do każdego innego zgłoszenia jest usuwany 12 miesięcy od jego napisania.",
         "„Rozważam oferty pracy”: do czasu wyłączenia tej opcji lub usunięcia konta, a najdłużej rok od jej ostatniego włączenia lub zapisania profilu LinkedIn; rejestr Twoich wyborów: do czasu usunięcia przez Ciebie konta.",
@@ -128,7 +129,7 @@
         "Rejestr wysłanych Ci podsumowań i przypomnień: 30 dni lub do czasu usunięcia przez Ciebie konta, jeśli nastąpi to wcześniej.",
         "Rejestr wysłanych Ci powiadomień, nowości o produkcie i ofert: do czasu usunięcia przez Ciebie konta.",
         "Adres, na który już nie wysyłamy e-maili, w postaci skrótu: do czasu, aż poprosisz nas o ponowne wysyłanie na niego e-maili, także po usunięciu przez Ciebie konta, aby nie otrzymywał ich ponownie.",
-        "Tymczasowe odrzucenie, jako skrót adresu: 14 dni.",
+        "Tymczasowe odrzucenie, jako skrót adresu wraz z identyfikatorem, który Resend nadał temu e-mailowi: 14 dni.",
         "Żądanie kandydata dotyczące rezygnacji z e-maili firmy, w postaci skrótu jego adresu e-mail: do czasu usunięcia firmy, nawet jeśli firma usunie dane kandydata.",
         "Wiadomości kontaktowe: tak długo, jak są nam potrzebne, aby Ci odpowiedzieć, maksymalnie 2 lata.",
         "Raporty o błędach: do 90 dni.",
@@ -136,7 +137,7 @@
         "Rejestry wywołań AI w Langfuse: 30 dni, a następnie są automatycznie usuwane.",
         "Kopie zapasowe bazy danych i codzienna kopia zapasowa kont logowania: 14 dni, a następnie są nadpisywane lub usuwane; do tego czasu znika z nich wszystko, co zostało usunięte.",
         "Zapis o usuniętym koncie, z jego adresem e-mail i identyfikatorem: 14 dni, tak długo, jak istnieją kopie zapasowe, wyłącznie po to, aby przywrócona kopia zapasowa nie mogła przywrócić Twoich danych.",
-        "Wiadomości w drodze między naszymi usługami, które mogą obejmować e-maile i raporty wysyłane e-mailem: do 8 dni od ich wysłania. Zdarzenie webhooka, które się nie powiodło i czeka na ponowne wysłanie: około 3 dni.",
+        "Wiadomości w drodze między naszymi usługami, które mogą obejmować e-maile i raporty wysyłane e-mailem: do 8 dni od ich wysłania. Zdarzenie webhooka, które się nie powiodło, wraz z tym, co zawiera o kandydacie, czekające na ponowne wysłanie: około 3 dni. Zapis każdego doręczenia webhooka: 30 dni.",
         "Statystyki użytkowania: 25 miesięcy, a następnie są automatycznie usuwane; usunięcie Twojego konta nie skraca tego okresu.",
         "Dokumentacja zakupów i zwrotów: tak długo, jak wymagają tego przepisy o rachunkowości (7 lat w Estonii), bez identyfikatora Twojego konta po jego usunięciu.",
         "Salda i wpisy kredytów oraz waluta firmy: do czasu usunięcia firmy. Automatyczne doładowanie firmy: do czasu jego wyłączenia, odejścia z firmy lub usunięcia konta przez członka, który je włączył, albo usunięcia firmy. Waluta zapisana dla Twojego własnego konta: do czasu jego usunięcia przez Ciebie.",
@@ -161,7 +162,7 @@
       "heading": "Pliki cookie i pamięć przeglądarki",
       "paragraphs": [
         "testee używa wyłącznie plików cookie i pamięci przeglądarki niezbędnych do działania lub zapamiętujących Twoje własne wybory. Nie ma plików cookie reklamowych ani analitycznych.",
-        "Aby utrzymać Cię w stanie zalogowania: plik cookie (testee_token, odnawiany co godzinę, gdy korzystasz z testee, do momentu wylogowania) oraz pamięć przeglądarki naszego dostawcy logowania, Google Firebase, który zapisuje też krótką listę dni, w których działał w tej przeglądarce, nawet jeśli nie jesteś zalogowany. Podczas podłączania aplikacji AI plik cookie (testee_connect) istnieje przez kilka minut, które to zajmuje.",
+        "Aby utrzymać Cię w stanie zalogowania: plik cookie (testee_token, odnawiany co godzinę, gdy korzystasz z testee, do momentu wylogowania) oraz pamięć przeglądarki naszego dostawcy logowania, Google Firebase, który zapisuje też krótką listę dni, w których działał w tej przeglądarce, nawet jeśli nie jesteś zalogowany. Podczas podłączania aplikacji AI plik cookie (testee_connect) istnieje przez kilka minut, które to zajmuje, a podczas dodawania Slacka jeden (testee_slack) istnieje najwyżej 15 minut.",
         "Aby zapamiętać Twoje wybory: Twój język (plik cookie testee_locale, przez rok, ustawiany, gdy wybierasz język lub otwierasz testee pod adresem danego języka), jasny lub ciemny motyw, szerokość panelu asystenta, to, czy był otwarty, i firmę wybraną w nim przez Ciebie (do momentu wylogowania), sposób, w jaki ostatnio zapraszałeś kandydatów, to, że logowałeś się już wcześniej w tej przeglądarce, okres ostatnio wybrany dla statystyk oraz zamknięte przez Ciebie powiadomienia o zmianie dokumentu prawnego. Pozostają one w Twojej przeglądarce, dopóki ich nie wyczyścisz.",
         "Tylko w tej karcie, dopóki jej nie zamkniesz: Twoja rozmowa z asystentem do momentu zalogowania oraz opis stanowiska, który zamieniasz na rozmowę, aby po przeładowaniu strony można było kontynuować.",
         "Link polecający: tylko jeśli zdecydujesz się go zachować, plik cookie (testee_ref) zapamiętuje link, przez który do nas trafiłeś, przez 30 dni, aby kredyty trafiły do obu firm.",

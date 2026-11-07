@@ -245,7 +245,7 @@ FAQ = [
     {
         "key": "emails",
         "question": "¿Qué correos envía testee y cómo dejo de recibirlos?",
-        "answer": "Los correos del servicio, como invitaciones, informes, correos de facturación y cambios en nuestros términos, se envían siempre. El resto, como el resumen de actividad diario, los recordatorios, las novedades del producto y las ofertas, lo eliges en Ajustes, en Correos, o lo detienes con el enlace «Cancelar la suscripción» de cada correo. Los candidatos pueden dejar de recibir los correos de tu empresa, o los recordatorios de una entrevista, con los enlaces de sus invitaciones y recordatorios. Las novedades de testee aparecen en tus notificaciones, la campana de arriba; las más importantes también llegan por correo como novedad del producto, solo mientras ese ajuste esté activado.",
+        "answer": "Los correos del servicio, como invitaciones, informes, correos de facturación y cambios en nuestros términos, no se pueden desactivar; solo deja de recibirlos una dirección que rebotó de forma definitiva o que marcó uno de nuestros correos como spam. El resto, como el resumen de actividad diario, los recordatorios, las novedades del producto y las ofertas, lo eliges en Ajustes, en Correos, o lo detienes con el enlace «Cancelar la suscripción» de cada correo. Los candidatos pueden dejar de recibir los correos de tu empresa, o los recordatorios de una entrevista, con los enlaces de sus invitaciones y recordatorios. Las novedades de testee aparecen en tus notificaciones, la campana de arriba; las más importantes también llegan por correo como novedad del producto, solo mientras ese ajuste esté activado.",
     },
     {
         "key": "data_export",
