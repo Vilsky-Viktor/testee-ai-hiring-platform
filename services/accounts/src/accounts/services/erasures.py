@@ -17,6 +17,7 @@ from accounts.integrations import services
 from accounts.models.erasures import Erasure
 from accounts.repositories import erasures, outbox, user_data
 from accounts.services import outbox as outbox_service
+from accounts.services.accounts import delete_sign_in
 
 logger = logging.getLogger(__name__)
 
@@ -34,8 +35,7 @@ async def run_again() -> int:
     """The deletions of the last ERASURE_KEEP_DAYS, safe to repeat: after a database is restored
     or cloned from a backup, nobody deleted since comes back. First forgets older ones. Newest
     first, a batch at once, until ERASURE_RUN_SECONDS into the run; a run stopped for time
-    leaves the rest to the next. Returns how many it ran. The sign-ins were deleted in Firebase,
-    which no restore brings back."""
+    leaves the rest to the next. Returns how many it ran."""
     now = datetime.now(UTC)
     before = now - timedelta(days=ERASURE_KEEP_DAYS)
     await erasures.forget(Session, before)
@@ -85,7 +85,8 @@ async def erase(user_id: str, email: str, erased_at: datetime | None = None) -> 
 
 
 async def erase_again(erasure: Erasure) -> None:
-    """One account's deletion run again: in companies, then everywhere else by the event."""
+    """One account's deletion run again: in companies, then everywhere else by the event, and its
+    sign-in, which restoring the sign-ins' backup brings back."""
     try:
         await services.delete_in_companies(erasure.user_id, erasure.email, erasure.erased_at)
     except httpx.HTTPStatusError as error:
@@ -96,3 +97,4 @@ async def erase_again(erasure: Erasure) -> None:
         logger.error("Erasure of account %s refused by companies", erasure.user_id)
 
     await erase(erasure.user_id, erasure.email, erasure.erased_at)
+    await asyncio.to_thread(delete_sign_in, erasure.user_id)

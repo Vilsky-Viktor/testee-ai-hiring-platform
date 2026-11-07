@@ -79,7 +79,8 @@ locals {
       SITE_URL         = "https://${var.domain}"
     }
     accounts = {
-      INVOKER_AUDIENCE = local.run_url["accounts"]
+      INVOKER_AUDIENCE      = local.run_url["accounts"]
+      SIGN_IN_BACKUP_BUCKET = google_storage_bucket.sign_in_backup.name
       # The api service (not common: the frontend's API_URL is the site itself).
       API_URL       = local.run_url["api"]
       ASSISTANT_URL = local.run_url["assistant"]

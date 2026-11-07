@@ -63,6 +63,9 @@ def done(monkeypatch):
     async def dropped(sessions):
         calls.append("events dropped")
 
+    monkeypatch.setattr(
+        replays, "delete_sign_in", lambda user_id: calls.append(("sign-in", user_id))
+    )
     monkeypatch.setattr(erasures, "page", page)
     monkeypatch.setattr(erasures, "forget", forget)
     monkeypatch.setattr(erasures, "record", record)
@@ -100,6 +103,7 @@ def test_every_recent_erasure_is_run_again_in_companies_and_by_event_after_older
             },
         ),
         "published",
+        ("sign-in", "u0"),
         # The email stays in the outbox no longer than in the note.
         "events dropped",
     ]

@@ -82,10 +82,19 @@ resource "google_project_iam_member" "assistant_reads_accounts" {
 }
 
 # Accounts manages users' sign-ins: sets their language, looks them up for other services and
-# the admin zone, counts them for the stats, and deletes them with their account or guest invite.
+# the admin zone, counts and backs them up, and deletes them with their account or guest invite.
+# Those permissions only: roles/firebaseauth.admin would also let it change the sign-in setup.
+resource "google_project_iam_custom_role" "sign_in_manager" {
+  project     = var.project_id
+  role_id     = "testeeSignInManager"
+  title       = "testee sign-in manager"
+  description = "Reads, updates and deletes Firebase users."
+  permissions = ["firebaseauth.users.get", "firebaseauth.users.update", "firebaseauth.users.delete"]
+}
+
 resource "google_project_iam_member" "accounts_manages_sign_ins" {
   project = var.project_id
-  role    = "roles/firebaseauth.admin"
+  role    = google_project_iam_custom_role.sign_in_manager.id
   member  = "serviceAccount:${google_service_account.service["accounts"].email}"
 }
 

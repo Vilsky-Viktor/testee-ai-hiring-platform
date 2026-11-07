@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Proves backups restore: the latest backup goes into a temporary Cloud SQL instance, its main
-# tables are counted, and the instance is deleted. Run before launch, then quarterly; it prints how
-# long the restore took, to compare with the recovery target in infra/README.md.
+# tables are counted, and the instance is deleted; the sign-ins' newest backup is read back too. Run
+# before launch, then quarterly; it prints how long the restore took, to compare with the recovery
+# target in infra/README.md.
 # Needs gcloud (signed in), cloud-sql-proxy, psql and pg_isready. Usage: scripts/ops/restore-drill.sh testee-prod
 set -euo pipefail
 
@@ -80,6 +81,20 @@ for check in "${checks[@]}"; do
     -v ON_ERROR_STOP=1 -tAc "SELECT count(*) FROM $table")
   printf '%-14s %-20s %s rows\n' "$database" "$table" "$rows"
 done
+
+# The sign-ins' newest file reads back, with its accounts; restoring them into the live project
+# isn't a drill, so accounts' integration test does that against the Auth emulator.
+sign_ins=$(gcloud storage ls "gs://$project-sign-in-backup/" --project="$project" | sort | tail -1)
+
+if [[ -z "$sign_ins" ]]; then
+  echo "No sign-in backup in gs://$project-sign-in-backup" >&2
+
+  exit 1
+fi
+
+accounts=$(gcloud storage cat "$sign_ins" --project="$project" |
+  python3 -c 'import json, sys; print(len(json.load(sys.stdin)))')
+echo "$sign_ins: $accounts accounts"
 
 minutes=$(((SECONDS - start + 59) / 60))
 echo "Restore drill passed: the backup restores and every database reads back, in $minutes minutes"

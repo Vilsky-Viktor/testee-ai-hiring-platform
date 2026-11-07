@@ -26,7 +26,10 @@ The event is published at once, or by the outbox's flush (`/internal/schedules/o
 minute), which also deletes events published a week ago. `GET /me/export` asks every service
 (`POST /internal/users/{id}/export`) and adds its own part. The daily `erasures` job
 (`/internal/schedules/erasures`; by hand after a restore) runs the last 14 days' deletions again:
-companies' call and the event.
+companies' call, the event and the sign-in. The daily `sign-in-backup` job
+(`/internal/schedules/sign-in-backup`) copies every sign-in to a bucket, 14 days, since they live
+only in Firebase; `jobs/restore_sign_ins.py` puts them back under their ids
+([runbook](../../docs/runbooks/platform.md#sign-in-accounts-lost)).
 
 ## Layout
 
@@ -46,7 +49,8 @@ src/accounts/
 ├── helpers/, constants/    # Pure functions (consent changes); fixed values
 ├── integrations/           # Companies' deletion and every service's export, billing (a
 │                           # new account's currency), Redis
-└── jobs/copy_from_library.py   # one-off: library's rows of these tables copied here
+├── integrations/backup_bucket.py   # the sign-ins' backup bucket
+└── jobs/                   # by hand: restore_sign_ins.py
 tests/unit/, tests/integration/   # Mirror src/
 migrations/                       # Alembic
 ```
@@ -58,17 +62,6 @@ imports and that no repository commits).
 
 `src/` is on the path (`PYTHONPATH` in the Dockerfile, `pythonpath` for pytest,
 `prepend_sys_path` for Alembic), so the package imports as `accounts` (`accounts.api.v1.me`).
-
-## Copying library's rows
-
-Library held these tables (`email_preferences`, `email_consents`, `terms_acceptances`,
-`erasures`) before this service. `accounts.jobs.copy_from_library` copies its rows here, safe to repeat (a row already here is kept as it is); it was run locally, and
-production had none before launch:
-
-```bash
-docker compose exec -e LIBRARY_DATABASE_URL=postgresql://library:<password>@postgres:5432/library \
-  accounts python -m accounts.jobs.copy_from_library
-```
 
 ## Commands
 

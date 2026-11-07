@@ -22,6 +22,8 @@ class Settings(ServiceSettings):
     library_url: str
     # The site's content service (contact messages); SITE_URL is the site's own address.
     site_service_url: str
+    # The bucket of the sign-in accounts' daily backup; unset locally, where there is no backup.
+    sign_in_backup_bucket: str = ""
 
 
 settings = Settings()

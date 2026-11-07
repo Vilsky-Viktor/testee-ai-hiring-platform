@@ -3,7 +3,7 @@ import logging
 from fastapi import APIRouter, status
 from testee_common.auth.google import Invoker
 
-from accounts.services import erasures
+from accounts.services import erasures, sign_in_backup
 from accounts.services import outbox as outbox_service
 
 logger = logging.getLogger(__name__)
@@ -24,3 +24,9 @@ async def replay_erasures() -> None:
     accounts deleted in the backups' life are deleted again everywhere (safe to repeat)."""
     count = await erasures.replay()
     logger.info("Ran %d recent account deletions again", count)
+
+
+@router.post("/sign-in-backup", status_code=status.HTTP_204_NO_CONTENT)
+async def back_up_sign_ins() -> None:
+    """Daily, from Cloud Scheduler: every sign-in account, copied to the backup bucket."""
+    await sign_in_backup.back_up()
