@@ -7,7 +7,10 @@ import uuid
 
 import httpx
 from sqlalchemy import select
+from testee_common.http import http
+from testee_common.i18n.i18n import translate
 
+from assistant.config import settings
 from assistant.constants.actions_flow import ACTION_TTL_SECONDS
 from assistant.core.db import Session
 from assistant.integrations import llm, services
@@ -17,6 +20,12 @@ from assistant.models.conversations import ToolCall
 from assistant.repositories import actions
 from tests.fake_model import FakeModel, calls, text
 
+# The companies service's refusal, word for word (the assistant passes it on as it is).
+FIRST_COMPANY_ON_SITE = (
+    "Your first company has to be created on the site, where we check you're a person. "
+    "Open the Companies page there to finish. After that, you can create more from here."
+)
+
 
 def events(body: str) -> list[dict]:
     return [json.loads(line[5:]) for line in body.splitlines() if line.startswith("data:")]
@@ -24,6 +33,19 @@ def events(body: str) -> list[dict]:
 
 def client() -> httpx.AsyncClient:
     return httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://assistant")
+
+
+async def company_on_the_site(token: str) -> dict:
+    """A first company as the site makes it, with Turnstile's dummy token (the local test secret
+    passes it): the assistant can make later ones."""
+    response = await http.get_client().post(
+        f"{settings.companies_url}/companies",
+        json={"name": f"Site {uuid.uuid4().hex[:6]}"},
+        headers={"Authorization": f"Bearer {token}", "X-Human-Check": "XXXX.DUMMY.TOKEN.XXXX"},
+    )
+    response.raise_for_status()
+
+    return response.json()
 
 
 def test_redis_hands_a_pending_action_to_one_claim_only_and_expires_it(run):
@@ -74,6 +96,8 @@ def test_a_confirmed_company_is_created_once_as_the_user_and_nothing_of_it_is_st
     headers = {"Authorization": f"Bearer {token}", "Accept-Language": "en"}
 
     async def scenario():
+        first = await company_on_the_site(token)
+
         async with client() as api:
             asked = events(
                 (await api.post("/chat", json={"message": f"Create {name}"}, headers=headers)).text
@@ -86,7 +110,7 @@ def test_a_confirmed_company_is_created_once_as_the_user_and_nothing_of_it_is_st
             listed = await services.get("companies", "/companies", {}, token, "en")
             mine = [item for item in listed.json() if item["name"] == name]
 
-            for company in mine:
+            for company in [*mine, first]:
                 await services.send(
                     "companies", "DELETE", f"/companies/{company['id']}", {}, None, token, "en"
                 )
@@ -107,6 +131,40 @@ def test_a_confirmed_company_is_created_once_as_the_user_and_nothing_of_it_is_st
     # The action's arguments and result were never written to the database.
     assert all(name not in json.dumps(call.arguments) for call in stored)
     assert all(call.result is None for call in stored)
+
+
+def test_a_first_company_through_the_assistant_is_refused_with_a_link_to_the_site(
+    run, user, monkeypatch
+):
+    _, token = user
+    name = f"First {uuid.uuid4().hex[:6]}"
+    model = FakeModel(
+        calls(("create_company", {"name": name})),
+        text("Check the card and confirm it below."),
+        text("It has to be made on the site."),
+    )
+    monkeypatch.setattr(llm, "get_chat_model", lambda: model)
+    headers = {"Authorization": f"Bearer {token}", "Accept-Language": "de"}
+
+    async def scenario():
+        async with client() as api:
+            asked = events(
+                (await api.post("/chat", json={"message": f"Create {name}"}, headers=headers)).text
+            )
+            conversation_id = asked[0]["conversation"]["id"]
+            [card] = [event["block"] for event in asked if "block" in event]
+            path = f"/conversations/{conversation_id}/actions/{card['action_id']}"
+            confirmed = await api.post(f"{path}/confirm", headers=headers)
+            listed = await services.get("companies", "/companies", {}, token, "en")
+
+        return events(confirmed.text), listed.json()
+
+    confirmed, listed = run(scenario())
+
+    assert confirmed[1]["action"]["state"] == "failed"
+    assert confirmed[1]["action"]["detail"] == translate(FIRST_COMPANY_ON_SITE, "de")
+    assert confirmed[1]["action"]["links"] == ["/companies"]
+    assert listed == []
 
 
 def test_a_pending_card_comes_back_with_its_answer_until_its_handled(run, user, monkeypatch):

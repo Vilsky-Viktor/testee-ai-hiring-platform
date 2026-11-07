@@ -298,4 +298,5 @@ MESSAGES = {
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Ви досягли ліміту співбесід без кандидатів ({limit} до першого поповнення).\nЗапросіть кандидата або видаліть співбесіду, щоб створити нову.",
     "This top-up can't be refunded now.": "Це поповнення зараз не можна повернути.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle не зміг повернути це поповнення. Його кредити знову на вашому балансі.",
+    "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Першу компанію потрібно створити на сайті: там ми перевіряємо, що ви людина. Щоб завершити, відкрийте там сторінку «Компанії». Після цього нові компанії можна створювати й звідси.",
 }

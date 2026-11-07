@@ -308,4 +308,5 @@ MESSAGES = {
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Oled jõudnud kandidaatideta intervjuude limiidini ({limit} kuni esimese juurdelaadimiseni).\nKutsu kandidaat või kustuta intervjuu, et luua uus.",
     "This top-up can't be refunded now.": "Seda juurdelaadimist ei saa praegu tagastada.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle ei saanud seda juurdelaadimist tagastada. Selle krediidid on tagasi sinu saldol.",
+    "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Esimene ettevõte tuleb luua veebilehel, kus kontrollime, et oled inimene. Lõpetamiseks ava seal leht „Ettevõtted“. Pärast seda saad neid luua ka siit.",
 }

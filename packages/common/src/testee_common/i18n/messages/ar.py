@@ -298,4 +298,5 @@ MESSAGES = {
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "لقد بلغت حدّك من المقابلات بدون مرشحين ({limit} حتى أول شحن).\nادعُ مرشحًا أو احذف مقابلة لإنشاء مقابلة جديدة.",
     "This top-up can't be refunded now.": "لا يمكن استرداد عملية الشحن هذه الآن.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "تعذّر على Paddle استرداد عملية الشحن هذه. عادت أرصدتها إلى رصيدك.",
+    "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "يجب إنشاء شركتك الأولى على الموقع، حيث نتحقق من أنك شخص حقيقي. افتح صفحة «الشركات» هناك لإكمال ذلك. بعدها يمكنك إنشاء المزيد من هنا.",
 }

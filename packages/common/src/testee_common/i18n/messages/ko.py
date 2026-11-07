@@ -298,4 +298,5 @@ MESSAGES = {
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "지원자 없는 면접의 한도(첫 충전 전까지 {limit}개)에 도달했습니다.\n새 면접을 만들려면 지원자를 초대하거나 면접을 삭제하세요.",
     "This top-up can't be refunded now.": "이 충전은 지금 환불할 수 없습니다.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle이 이 충전을 환불하지 못했습니다. 해당 크레딧은 잔액으로 돌아왔습니다.",
+    "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "첫 회사는 사이트에서 만들어야 합니다. 사이트에서 사람인지 확인하기 때문입니다. 사이트의 회사 페이지를 열어 마무리하세요. 그다음부터는 여기에서도 만들 수 있습니다.",
 }

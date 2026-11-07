@@ -171,8 +171,8 @@ function ActionButtons({
   )
 }
 
-/** How an action ended: done, with the pages it made (by the name it made, else the page's
- * name, else "Open"); failed, with why; or cancelled. Nothing while it's pending or running. */
+/** How an action ended: done, with the pages it made; failed, with why and the page that sorts
+ * it out, if one does; or cancelled. Nothing while it's pending or running. */
 function ActionOutcome({
   card,
   state,
@@ -183,10 +183,14 @@ function ActionOutcome({
   onNavigate: () => void
 }) {
   const t = useTranslations("assistant.actions")
-  const pages = useTranslations("assistant.pages")
 
   if (state === "failed") {
-    return <p className="text-destructive">{card.detail ?? t("failed")}</p>
+    return (
+      <div className="space-y-3">
+        <p className="text-destructive">{card.detail ?? t("failed")}</p>
+        <ActionLinks card={card} onNavigate={onNavigate} />
+      </div>
+    )
   }
 
   if (state === "cancelled") {
@@ -203,29 +207,40 @@ function ActionOutcome({
         <CheckIcon aria-hidden className="size-4" />
         {t("done")}
       </span>
-      {card.links.map(
-        (href) =>
-          href && (
-            <LocalizedLink
-              key={href}
-              href={href}
-              onClick={onNavigate}
-              className={cn(
-                buttonVariants({ variant: "outline", size: "sm" }),
-                // A name keeps its capitals in the lowercase button.
-                card.result_label && "normal-case"
-              )}
-            >
-              {card.result_label
-                ? t.rich("openNamed", { name: card.result_label, ...bdi })
-                : pages(linkPage(href) ?? "open")}
-              <ArrowRightIcon
-                data-icon="inline-end"
-                className="rtl:-scale-x-100"
-              />
-            </LocalizedLink>
-          )
-      )}
+      <ActionLinks card={card} onNavigate={onNavigate} />
     </div>
+  )
+}
+
+/** An action's pages, by the name it made, else the page's name, else "Open". */
+function ActionLinks({
+  card,
+  onNavigate,
+}: {
+  card: AssistantBlock
+  onNavigate: () => void
+}) {
+  const t = useTranslations("assistant.actions")
+  const pages = useTranslations("assistant.pages")
+
+  return card.links.map(
+    (href) =>
+      href && (
+        <LocalizedLink
+          key={href}
+          href={href}
+          onClick={onNavigate}
+          className={cn(
+            buttonVariants({ variant: "outline", size: "sm" }),
+            // A name keeps its capitals in the lowercase button.
+            card.result_label && "normal-case"
+          )}
+        >
+          {card.result_label
+            ? t.rich("openNamed", { name: card.result_label, ...bdi })
+            : pages(linkPage(href) ?? "open")}
+          <ArrowRightIcon data-icon="inline-end" className="rtl:-scale-x-100" />
+        </LocalizedLink>
+      )
   )
 }

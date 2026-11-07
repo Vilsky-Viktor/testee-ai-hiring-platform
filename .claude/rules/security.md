@@ -105,7 +105,9 @@ the Top 10 for LLM applications 2025.
 - Fixed windows in Redis, check-and-count in one transaction. Limits against floods fail open
   (`hit_or_skip`); limits that cap spend (AI, emails, credits) fail closed (`hit`).
 - Business flows people could abuse (sign-up, a first company, link starts, the help chat, the
-  contact form) also pass a Turnstile check.
+  contact form) also pass a Turnstile check. Where no browser can pass it, the flow is refused and
+  sent to the site: a first company through Mira or an AI app, unless the person is already in a
+  paid company.
 - Outbound: back off with jitter, honour `Retry-After` as the minimum wait, retry at one layer
   only, and keep a provider-side spend cap (OpenAI's hard limit) as the last line.
 

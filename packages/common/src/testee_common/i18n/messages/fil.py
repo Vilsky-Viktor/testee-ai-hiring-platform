@@ -298,4 +298,5 @@ MESSAGES = {
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Naabot mo na ang limit mo sa mga interview na walang kandidato ({limit} hanggang sa unang top-up mo).\nMag-imbita ng kandidato o mag-delete ng interview para makagawa ng bago.",
     "This top-up can't be refunded now.": "Hindi ma-refund ang top-up na ito ngayon.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Hindi ma-refund ng Paddle ang top-up na ito. Nakabalik na sa iyong balance ang credits nito.",
+    "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Kailangang gawin sa website ang una mong kumpanya, dahil doon namin tinitiyak na tao ka. Buksan doon ang page na Mga kumpanya para matapos ito. Pagkatapos, puwede ka nang gumawa ng iba pa mula rito.",
 }

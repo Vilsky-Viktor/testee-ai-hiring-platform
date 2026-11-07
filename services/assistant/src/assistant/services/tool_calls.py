@@ -14,6 +14,7 @@ from assistant.constants.tool_calls import (
     NARROW_WITH,
     NEXT_PAGE,
     NOT_FILTERS,
+    REFUSAL_PAGES,
     SERVICE_UNAVAILABLE,
     UNKNOWN_TOOL,
 )
@@ -102,7 +103,9 @@ async def call_tool(
         return result(None, {"error": 503, "detail": translate(SERVICE_UNAVAILABLE, language)})
 
     if not response.is_success:
-        return result(response.status_code, error_content(response, language))
+        return result(
+            response.status_code, error_content(response, language), refusal_block(response)
+        )
 
     content, data = read(tool, response, wanted, given.get("offset", 0))
     context = {"company_id": company_id, **given}
@@ -146,15 +149,27 @@ def narrowing(tool: Tool, next_offset: int) -> str:
     return " ".join(hint)
 
 
-def error_content(response: httpx.Response, language: str) -> dict:
-    """The service's error as the model reads it: its status and its message, already in the
-    user's language (the services translate by Accept-Language)."""
+def error_body(response: httpx.Response) -> dict:
+    """The service's error as JSON; empty when it isn't an object."""
     try:
         body = response.json()
     except ValueError:
-        body = None
+        return {}
 
-    detail = body.get("detail") if isinstance(body, dict) else None
+    return body if isinstance(body, dict) else {}
+
+
+def refusal_block(response: httpx.Response) -> dict | None:
+    """The page that sorts out the refusal, when one does (REFUSAL_PAGES), as a link block."""
+    page = REFUSAL_PAGES.get(error_body(response).get("code"))
+
+    return {"kind": "link", "items": [], "links": [page]} if page else None
+
+
+def error_content(response: httpx.Response, language: str) -> dict:
+    """The service's error as the model reads it: its status and its message, already in the
+    user's language (the services translate by Accept-Language)."""
+    detail = error_body(response).get("detail")
 
     if not isinstance(detail, str):
         detail = (

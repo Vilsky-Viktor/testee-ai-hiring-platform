@@ -79,8 +79,15 @@ def text_result(content: dict, error: bool) -> types.CallToolResult:
     )
 
 
-def error_result(detail: str) -> types.CallToolResult:
-    return text_result({"error": detail}, True)
+def error_result(detail: str, links: list[str] | None = None) -> types.CallToolResult:
+    return text_result({"error": detail, "links": links} if links else {"error": detail}, True)
+
+
+def absolute_links(block: dict | None) -> list[str]:
+    """A result's links to testee's pages, with the site's address."""
+    site = settings.site_url.rstrip("/")
+
+    return [site + link for link in (block or {}).get("links", []) if link]
 
 
 async def count_call(user_id: str) -> None:
@@ -183,11 +190,11 @@ async def run(
     if name == UPDATE_LANGUAGE and result.succeeded:
         firebase_tokens.forget(user.uid)
 
-    if not result.succeeded:
-        return error_result(result.content["detail"])
+    links = absolute_links(result.block)
 
-    site = settings.site_url.rstrip("/")
-    links = [site + link for link in (result.block or {}).get("links", []) if link]
+    if not result.succeeded:
+        return error_result(result.content["detail"], links)
+
     content = {**result.content, "links": links} if links else result.content
 
     return text_result(content, False)

@@ -1,6 +1,8 @@
 import pytest
+from testee_common.i18n import error_codes
 
 from companies.config import settings
+from companies.constants.invites import FIRST_COMPANY_ON_SITE
 from companies.main import app
 from companies.repositories import audit
 from companies.services import company_creation, generation_steps, link_start
@@ -35,32 +37,74 @@ def test_a_new_candidate_through_a_job_ads_link_is_asked_one_coming_back_isnt(
     assert checks == ["/links/abc/start"]
 
 
-@pytest.mark.parametrize(
-    ("owned", "via", "asked"),
-    [(0, None, True), (1, None, False), (0, "assistant", False)],
-)
-def test_only_a_persons_first_company_on_the_site_is_asked(
-    client, checks, monkeypatch, owned, via, asked
-):
+@pytest.fixture
+def first_company(monkeypatch):
+    """Creating a company as a signed-in user who owns `owned` and is in `member_of` companies, of
+    which `paid` topped up, through `via`: the answer, a taken name standing for a saved company."""
     from companies.api.dependencies import request_via
+    from companies.integrations import billing
     from companies.repositories import companies
     from tests.unit.api.v1.test_companies import sign_in
 
-    sign_in()
+    def create(client, owned=0, via=None, member_of=(), paid=()):
+        sign_in()
 
-    async def owned_count(session, user_id):
-        return owned
+        async def owned_count(session, user_id):
+            return owned
 
-    async def name_taken(session, name, user_id, email, most=None):
-        return None
+        async def ids_for_user(session, user_id):
+            return list(member_of)
 
-    monkeypatch.setattr(companies, "owned_count", owned_count)
-    monkeypatch.setattr(companies, "create", name_taken)
-    app.dependency_overrides[request_via] = lambda: via
-    client.post("/companies", json={"name": "Acme"})
-    app.dependency_overrides.pop(request_via)
+        async def company_paid(company_id):
+            return company_id in paid
+
+        async def name_taken(session, name, user_id, email, most=None):
+            return None
+
+        monkeypatch.setattr(companies, "owned_count", owned_count)
+        monkeypatch.setattr(companies, "ids_for_user", ids_for_user)
+        monkeypatch.setattr(billing, "company_paid", company_paid)
+        monkeypatch.setattr(companies, "create", name_taken)
+        app.dependency_overrides[request_via] = lambda: via
+
+        return client.post("/companies", json={"name": "Acme"})
+
+    yield create
+    app.dependency_overrides.pop(request_via, None)
+
+
+@pytest.mark.parametrize(
+    ("owned", "via", "asked"),
+    [(0, None, True), (1, None, False), (1, "assistant", False)],
+)
+def test_only_a_persons_first_company_on_the_site_is_asked(
+    client, checks, first_company, owned, via, asked
+):
+    first_company(client, owned, via)
 
     assert checks == (["/companies"] if asked else [])
+
+
+@pytest.mark.parametrize("via", ["assistant", "mcp"])
+def test_a_first_company_through_the_assistant_or_an_ai_app_is_sent_to_the_site(
+    client, checks, first_company, via
+):
+    response = first_company(client, via=via, member_of=["unpaid"])
+
+    assert response.status_code == 403
+    assert response.json() == {
+        "detail": FIRST_COMPANY_ON_SITE,
+        "code": error_codes.FIRST_COMPANY_ON_SITE,
+    }
+    assert checks == []
+
+
+def test_a_member_of_a_paid_company_may_still_make_their_first_there(client, checks, first_company):
+    response = first_company(client, via="assistant", member_of=["unpaid", "paid"], paid=["paid"])
+
+    # Past the refusal: the fake save says the name is taken.
+    assert response.status_code == 409
+    assert checks == []
 
 
 @pytest.mark.parametrize(("paid", "asked"), [(False, True), (True, False)])

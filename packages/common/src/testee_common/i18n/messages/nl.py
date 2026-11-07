@@ -298,4 +298,5 @@ MESSAGES = {
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Je hebt je limiet voor interviews zonder kandidaten bereikt ({limit} tot je eerste opwaardering).\nNodig een kandidaat uit of verwijder een interview om een nieuw interview te maken.",
     "This top-up can't be refunded now.": "Deze opwaardering kan nu niet worden terugbetaald.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle kon deze opwaardering niet terugbetalen. De credits staan weer op je saldo.",
+    "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Je eerste bedrijf moet je op de website aanmaken, want daar controleren we of je een persoon bent. Open daar de pagina Bedrijven om het af te ronden. Daarna kun je er vanaf hier meer aanmaken.",
 }

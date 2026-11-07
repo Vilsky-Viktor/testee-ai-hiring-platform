@@ -72,12 +72,28 @@ def tool_list(access: str) -> None:
     check(status == 200 and called["isError"] is False, f"tools/call {called}")
 
 
-def tools_as_the_user(access: str, email: str) -> str:
-    """get_me, create_company and list_companies as the user: the new company's id."""
-    step("tools as the user: get_me, then create_company and list_companies")
+def first_company_on_the_site(id_token: str) -> None:
+    """The first company as the site makes it, with Turnstile's dummy token."""
+    body = json.dumps({"name": f"Site e2e {uuid.uuid4().hex[:6]}"}).encode()
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {id_token}",
+        "X-Human-Check": "XXXX.DUMMY.TOKEN.XXXX",
+    }
+    status, _, made = send("POST", f"{SITE}/api/companies/companies", body, headers)
+    check(status == 201, f"first company on the site -> {status} {made}")
+
+
+def tools_as_the_user(access: str, email: str, id_token: str) -> str:
+    """get_me, a first company refused with a link to the site, then one made after the site's
+    first, and list_companies, as the user: the new company's id."""
+    step("tools as the user: get_me, create_company (a first is refused), list_companies")
     error, me = tool(access, "get_me", {})
     check(not error and me["data"]["email"] == email, f"get_me {me}")
     name = f"MCP e2e {uuid.uuid4().hex[:6]}"
+    error, refused = tool(access, "create_company", {"name": name})
+    check(error and refused["links"] == [f"{SITE}/companies"], f"a first company {refused}")
+    first_company_on_the_site(id_token)
     error, made = tool(access, "create_company", {"name": name})
     check(not error and made["data"]["name"] == name, f"create_company {made}")
     check(all(link.startswith(SITE) for link in made.get("links", [])), "links are absolute")
@@ -199,7 +215,7 @@ def main() -> None:
         step("an app registers, the user allows it, and it gets tokens with PKCE")
         client_id, tokens = connect(id_token, "E2E app")
         tool_list(tokens["access_token"])
-        company_id = tools_as_the_user(tokens["access_token"], email)
+        company_id = tools_as_the_user(tokens["access_token"], email, id_token)
         api_keys(id_token, company_id)
         step("the connection is listed for the user")
         names = [item["client_name"] for item in listed_connections(id_token)]

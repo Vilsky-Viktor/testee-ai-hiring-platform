@@ -4,10 +4,17 @@ from testee_common.auth.auth import CurrentUser
 from testee_common.auth.human_check import require_human
 from testee_common.config.constants import REFERRAL_COOKIE
 from testee_common.events.analytics import track
+from testee_common.i18n import error_codes
+from testee_common.i18n.i18n import CodedError
 from testee_common.limits.limits import at_most, limit
 
 from companies.config import settings
-from companies.constants.invites import COMPANY_NAME_TAKEN, EMAIL_NOT_VERIFIED, TOO_MANY_COMPANIES
+from companies.constants.invites import (
+    COMPANY_NAME_TAKEN,
+    EMAIL_NOT_VERIFIED,
+    FIRST_COMPANY_ON_SITE,
+    TOO_MANY_COMPANIES,
+)
 from companies.core.db import Session
 from companies.core.exceptions import OverLimit
 from companies.integrations import billing
@@ -53,8 +60,9 @@ async def create(
     name: str, user: CurrentUser, request: Request, via: str | None, country: str | None
 ) -> Company:
     """A company needs its owner's verified email, as the welcome credits come once per email. A
-    person's first company, which gets them, needs them to show they're a person, on the site;
-    through the assistant or an AI app (no browser) it can't be asked."""
+    person's first company, which gets them, needs them to show they're a person, so it's made
+    on the site: the assistant and AI apps (no browser) are refused, and sent there, unless the
+    person is already in a paid company."""
     # The welcome credits come once per owner's email: only a verified one may claim them.
     if not user.email_verified:
         raise HTTPException(status.HTTP_403_FORBIDDEN, EMAIL_NOT_VERIFIED)
@@ -64,6 +72,11 @@ async def create(
 
     if owned == 0 and via is None:
         await require_human(request, settings.turnstile_secret_key)
+
+    if owned == 0 and via is not None and not await in_a_paid_company(user.uid):
+        raise CodedError(
+            status.HTTP_403_FORBIDDEN, FIRST_COMPANY_ON_SITE, error_codes.FIRST_COMPANY_ON_SITE
+        )
 
     try:
         company = await save(name, user, owned)
@@ -91,6 +104,18 @@ async def create(
     await track("company_created", user_id=user.uid, company_id=company.id)
 
     return company
+
+
+async def in_a_paid_company(user_id: str) -> bool:
+    """Whether a company the user is a member of ever topped up."""
+    async with Session() as session:
+        member_of = await companies.ids_for_user(session, user_id)
+
+    for company_id in member_of:
+        if await billing.company_paid(company_id):
+            return True
+
+    return False
 
 
 async def save(name: str, user: CurrentUser, owned: int) -> Company | None:

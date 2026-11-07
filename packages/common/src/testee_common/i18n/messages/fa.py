@@ -298,4 +298,5 @@ MESSAGES = {
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "به سقف مصاحبه‌های بدون متقاضی ({limit} تا اولین شارژ) رسیده‌اید.\nبرای ساخت مصاحبهٔ جدید، یک متقاضی دعوت کنید یا یک مصاحبه را حذف کنید.",
     "This top-up can't be refunded now.": "این شارژ اکنون قابل بازپرداخت نیست.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle نتوانست این شارژ را بازپرداخت کند. اعتبارهای آن به موجودی شما برگشته است.",
+    "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "شرکت اولتان باید در وب‌سایت ساخته شود، چون آنجا بررسی می‌کنیم که شما انسان هستید. برای تمام کردن کار، صفحهٔ «شرکت‌ها» را آنجا باز کنید. بعد از آن می‌توانید شرکت‌های بیشتری را از همین‌جا بسازید.",
 }

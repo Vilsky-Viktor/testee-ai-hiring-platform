@@ -7,6 +7,7 @@ import pytest
 from fastapi import HTTPException
 from testee_common.ai.secrets_check import SECRET_REMOVED
 from testee_common.auth.user import User
+from testee_common.i18n import error_codes
 from testee_common.i18n.i18n import translate
 
 from assistant.constants.actions_flow import NOTHING_TO_CHANGE, SUBJECT_NOT_FOUND
@@ -156,6 +157,16 @@ def test_a_write_runs_at_once_with_an_idempotency_key_and_absolute_links(calls):
     assert (method, path, body, via) == ("POST", "/companies", {"name": "Acme"}, "mcp")
     assert key
     assert content["links"] == [f"http://localhost:8090/companies/{COMPANY}/interviews"]
+
+
+def test_a_first_company_refused_gives_the_app_the_absolute_link(calls):
+    calls.status = 403
+    calls.body = {"detail": "Finish it on the site.", "code": error_codes.FIRST_COMPANY_ON_SITE}
+
+    assert called("create_company", {"name": "Acme"}) == (
+        True,
+        {"error": "Finish it on the site.", "links": ["http://localhost:8090/companies"]},
+    )
 
 
 def test_the_account_and_company_deletion_are_refused(calls):

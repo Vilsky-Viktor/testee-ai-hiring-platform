@@ -298,4 +298,5 @@ MESSAGES = {
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "你已达到没有候选人的面试数量上限（首次充值前为 {limit} 个）。\n请邀请候选人或删除一个面试，以创建新的面试。",
     "This top-up can't be refunded now.": "这笔充值现在无法退款。",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle 无法退款这笔充值。相应点数已退回你的余额。",
+    "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "你的第一家公司需要在网站上创建，我们会在那里确认你是真人。请在网站上打开“公司”页面完成创建。之后你也可以在这里创建更多公司。",
 }

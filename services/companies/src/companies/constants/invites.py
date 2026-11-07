@@ -145,6 +145,10 @@ NOT_THE_GUEST = "Open the interview from the link the company gave you."
 # An invite not started within INVITE_EXPIRY_DAYS; sending it again makes the link work again.
 INVITE_EXPIRED = "This invite has expired. Ask the company to send it again."
 EMAIL_NOT_VERIFIED = "Confirm your email first: open the link we sent you, then try again."
+FIRST_COMPANY_ON_SITE = (
+    "Your first company has to be created on the site, where we check you're a person. "
+    "Open the Companies page there to finish. After that, you can create more from here."
+)
 # A first start without the candidate's pledge to answer on their own.
 NO_PLEDGE = "Confirm you'll answer on your own, without AI tools or other people, to start."
 # A company a superadmin suspended: its members see why, and candidates that the interview isn't

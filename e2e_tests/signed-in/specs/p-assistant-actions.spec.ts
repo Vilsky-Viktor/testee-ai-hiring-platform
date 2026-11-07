@@ -84,6 +84,49 @@ test("an action runs once its card is confirmed, and asking to sign out signs ou
   await expect(panel.getByTestId("welcome-signed_out").filter({ visible: true })).toBeVisible();
 });
 
+test("an action the service refused says why, with the page that sorts it out", async ({ signInAs }) => {
+  const owner = await signInAs(ownerEmail());
+  const actionId = "aaaaaaaa-bbbb-4ccc-8ddd-ffffffffffff";
+  const detail = "Your first company has to be created on the site.";
+  const card = {
+    kind: "confirm",
+    items: [],
+    links: [],
+    action_id: actionId,
+    tool: "create_company",
+    preview: { name: "Acme" },
+    company_id: null,
+    destructive: false,
+    state: "pending",
+  };
+  await owner.route("**/api/assistant/chat", (route) =>
+    route.fulfill({
+      contentType: "text/event-stream",
+      body: events({ conversation: { id: CONVERSATION } }, { block: card }, { done: { message_id: "m1" } }),
+    })
+  );
+  await owner.route(`**/api/assistant/conversations/${CONVERSATION}/actions/${actionId}/confirm`, (route) =>
+    route.fulfill({
+      contentType: "text/event-stream",
+      body: events(
+        { conversation: { id: CONVERSATION } },
+        { action: { ...card, state: "failed", detail, links: ["/companies"] } },
+        { done: { message_id: "m2" } }
+      ),
+    })
+  );
+  const panel = await openPanel(owner);
+  await panel.getByRole("textbox").fill("Create a company called Acme");
+  await panel.locator("button[type=submit]").click();
+  const shown = panel.getByTestId("action-card");
+  await shown.getByRole("button").first().click();
+
+  await expect(shown.getByText(detail)).toBeVisible();
+  await expect(shown.locator('a[href="/companies"]')).toBeVisible();
+  await expect(shown.getByRole("button")).toHaveCount(0);
+  await shot(owner, "action-refused");
+});
+
 test("a pasted secret is removed from the chat and explained, with the page it belongs on", async ({
   signInAs,
 }) => {

@@ -298,4 +298,5 @@ MESSAGES = {
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "Vous avez atteint votre limite d'entretiens sans candidats ({limit} jusqu'à votre première recharge).\nInvitez un candidat ou supprimez un entretien pour en créer un nouveau.",
     "This top-up can't be refunded now.": "Cette recharge ne peut pas être remboursée pour le moment.",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle n'a pas pu rembourser cette recharge. Ses crédits sont revenus dans votre solde.",
+    "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "Votre première entreprise doit être créée sur le site, où nous vérifions que vous êtes une personne. Ouvrez-y la page Entreprises pour terminer. Vous pourrez ensuite en créer d'autres depuis ici.",
 }

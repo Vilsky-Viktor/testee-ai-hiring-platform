@@ -91,9 +91,10 @@ async def create_company(
     idempotency_key: IdempotencyKey = None,
 ) -> CompanyOut:
     """A company needs its owner's verified email, as the welcome credits come once per email. A
-    person's first company, which gets them, needs them to show they're a person, on the site;
-    through the assistant or an AI app (no browser) it can't be asked. With an Idempotency-Key,
-    the same request again gets the company the first made."""
+    person's first company, which gets them, needs them to show they're a person, so it's made
+    on the site: the assistant and AI apps (no browser) are refused, and sent there, unless the
+    person is already in a paid company. With an Idempotency-Key, the same request again gets the
+    company the first made."""
     company = await company_creation.create_once(
         body.name, user, request, via, country, idempotency_key
     )

@@ -298,4 +298,5 @@ MESSAGES = {
     "You've reached your limit of interviews without candidates ({limit} until your first top-up).\nInvite a candidate or delete an interview to create a new one.": "คุณใช้สิทธิ์การสัมภาษณ์ที่ไม่มีผู้สมัครครบตามขีดจำกัดแล้ว ({limit} รายการ จนกว่าจะเติมเครดิตครั้งแรก)\nเชิญผู้สมัครหรือลบการสัมภาษณ์หนึ่งรายการเพื่อสร้างรายการใหม่",
     "This top-up can't be refunded now.": "การเติมเครดิตนี้คืนเงินไม่ได้ในขณะนี้",
     "Paddle couldn't refund this top-up. Its credits are back in your balance.": "Paddle คืนเงินการเติมเครดิตนี้ไม่ได้ เครดิตกลับเข้ายอดคงเหลือของคุณแล้ว",
+    "Your first company has to be created on the site, where we check you're a person. Open the Companies page there to finish. After that, you can create more from here.": "ต้องสร้างบริษัทแรกของคุณบนเว็บไซต์ เพราะเราตรวจสอบที่นั่นว่าคุณเป็นบุคคลจริง เปิดหน้าบริษัทบนเว็บไซต์เพื่อดำเนินการให้เสร็จ หลังจากนั้นคุณสร้างเพิ่มจากที่นี่ได้",
 }
