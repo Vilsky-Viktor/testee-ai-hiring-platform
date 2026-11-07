@@ -10,6 +10,7 @@ What to do when the site or an API is down or slow, work waits or stops, the dat
 - [A scheduled job failed](#a-scheduled-job-failed)
 - [A scheduled job didn't run](#a-scheduled-job-didnt-run)
 - [A web hook signature refused](#a-web-hook-signature-refused)
+- [The human check is off](#the-human-check-is-off)
 - [Emails bouncing](#emails-bouncing)
 - [The database under strain](#the-database-under-strain)
 - [A failed backup](#a-failed-backup)
@@ -130,15 +131,25 @@ What to do when the site or an API is down or slow, work waits or stops, the dat
 
 ## A web hook signature refused
 
-**How you notice:** **testee web hook signature refused** (a page): Paddle's, Resend's or an ATS's web hook failed its signature check; the log line names the service ([monitoring.tf](../../infra/terraform/monitoring.tf)). Usually the secret is wrong, so every event is refused: paid top-ups get no credits, bounces aren't recorded.
+**How you notice:** **testee web hook signature refused** (a page): more than 5 web hooks from Paddle, Resend or an ATS failed their signature check in an hour; each log line, a warning, names the service ([monitoring_log_alerts.tf](../../infra/terraform/monitoring_log_alerts.tf)). A stray post doesn't page: Paddle tries one event about 10 times in its first hour and Resend about 4, so a wrong secret passes the count on its own. Usually the secret is wrong, so every event is refused: paid top-ups get no credits, bounces aren't recorded.
 
 **What the system does by itself:** the event is refused with a 401 and the provider retries it (Paddle for about two days, Resend's Svix for about a day); billing's daily reconciliation applies the payments whose web hooks never came ([A payment not credited](providers.md#a-payment-not-credited)).
 
 **What to do:** compare the secret in Secret Manager (`paddle-webhook-secret` or `resend-webhook-secret`) with the provider's dashboard, add the right one and restart the service ([Paddle down](providers.md#paddle-down), step 4; for Resend, notifications), then resend the refused events from the provider's dashboard.
 
-An ATS's refusal names the ATS and the connection: its secret is the company's, not in Secret Manager, so its candidates don't arrive until the company saves the right key on its ATS page; one stray refusal with no others can be a stranger probing the address.
+An ATS's refusal names the ATS and the connection: its secret is the company's, not in Secret Manager, so its candidates don't arrive until the company saves the right key on its ATS page; refusals from one sender with no accepted events can also be a stranger probing the address.
 
 **Resolved when** new events are accepted (no new refusals in the logs) and the alert closes.
+
+## The human check is off
+
+**How you notice:** **testee human check off** (a page): Cloudflare refused `turnstile-secret-key`; or **testee Turnstile not answering** (a ticket): over 20 checks unanswered in 15 minutes ([monitoring_log_alerts.tf](../../infra/terraform/monitoring_log_alerts.tf)).
+
+**What the system does by itself:** it lets everyone through, as an outage or a setup mistake shouldn't stop hiring; the routes keep their own rate limits and budgets.
+
+**What to do:** on the page, add the real secret to `turnstile-secret-key` (it starts as `set-me`) and restart companies, site and assistant. On the ticket, check Cloudflare's status page; nothing else is needed.
+
+**Resolved when** the alert closes and the logs show no new "Turnstile refused our secret" or "Turnstile didn't answer" lines.
 
 ## Emails bouncing
 

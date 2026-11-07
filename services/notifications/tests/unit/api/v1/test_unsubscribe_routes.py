@@ -2,7 +2,9 @@ import hashlib
 
 import pytest
 from event_pushes import push
+from fastapi import HTTPException
 
+from notifications.api.v1 import unsubscribe as unsubscribe_routes
 from notifications.config import settings
 from notifications.constants.unsubscribe import UnsubscribeType
 from notifications.helpers.emails import candidate_reminder_email
@@ -64,6 +66,26 @@ def test_a_forged_link_is_not_found(client, applied):
 
     assert client.get(f"/unsubscribe/{forged}").status_code == 404
     assert client.post(f"/unsubscribe/{forged}").status_code == 404
+    assert applied == []
+
+
+def test_applying_links_too_often_is_refused_but_a_forged_link_isnt_counted(
+    client, applied, monkeypatch
+):
+    async def over(redis, key, name):
+        assert key.startswith("rate:unsubscribes:")
+        assert name == "UNSUBSCRIBE_PER_IP_MINUTE"
+
+        raise HTTPException(429, "Too many requests.", headers={"Retry-After": "60"})
+
+    monkeypatch.setattr(unsubscribe_routes, "hit_or_skip", over)
+    link = token(UnsubscribeType.DIGEST)
+
+    response = client.post(f"/unsubscribe/{link}")
+
+    assert response.status_code == 429
+    assert response.headers["Retry-After"] == "60"
+    assert client.post(f"/unsubscribe/{link[:-3]}abc").status_code == 404
     assert applied == []
 
 

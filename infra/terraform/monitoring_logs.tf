@@ -117,6 +117,40 @@ resource "google_logging_metric" "paddle_unavailable" {
   }
 }
 
+# The human check lets everyone through when Cloudflare refuses our secret (the "set-me"
+# placeholder, a typo) or doesn't answer: human_check.py logs each.
+resource "google_logging_metric" "turnstile_secret_refused" {
+  name   = "testee_turnstile_secret_refused"
+  filter = "resource.type=\"cloud_run_revision\" AND jsonPayload.message:\"Turnstile refused our secret\""
+
+  metric_descriptor {
+    metric_kind = "DELTA"
+    value_type  = "INT64"
+  }
+}
+
+resource "google_logging_metric" "turnstile_unanswered" {
+  name   = "testee_turnstile_unanswered"
+  filter = "resource.type=\"cloud_run_revision\" AND jsonPayload.message:\"Turnstile didn't answer\""
+
+  metric_descriptor {
+    metric_kind = "DELTA"
+    value_type  = "INT64"
+  }
+}
+
+# Web hooks refused: Paddle's, Resend's or an ATS's signature check failed
+# (WEBHOOK_SIGNATURE_REFUSED in testee_common/config/constants.py).
+resource "google_logging_metric" "webhook_signature_refused" {
+  name   = "testee_webhook_signature_refused"
+  filter = "resource.type=\"cloud_run_revision\" AND jsonPayload.message:\"web hook signature refused\""
+
+  metric_descriptor {
+    metric_kind = "DELTA"
+    value_type  = "INT64"
+  }
+}
+
 # Outbox events Pub/Sub refused 5 times: no flush sends them again ("Outbox event ... parked").
 resource "google_logging_metric" "outbox_parked" {
   name   = "testee_outbox_parked"

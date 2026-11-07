@@ -47,7 +47,7 @@ logger = logging.getLogger(__name__)
 def refuse(provider: str, connection_id: UUID) -> NoReturn:
     """A web hook that fails its signature check, logged so the alert sees it: a wrong secret
     means every candidate from that ATS silently never arrives."""
-    logger.error("%s: %s, connection %s", WEBHOOK_SIGNATURE_REFUSED, provider, connection_id)
+    logger.warning("%s: %s, connection %s", WEBHOOK_SIGNATURE_REFUSED, provider, connection_id)
 
     raise HTTPException(status.HTTP_401_UNAUTHORIZED, f"Not signed by {provider}")
 

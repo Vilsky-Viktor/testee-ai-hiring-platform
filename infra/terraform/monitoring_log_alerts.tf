@@ -1,7 +1,8 @@
 # Alerts counted from the services' own logs (monitoring_logs.tf's metrics) and Cloud Tasks, with
 # the channels and severities monitoring.tf describes: Redis or OpenAI failing, AI spend running
 # high (an hour's spike pages, the day's total is a ticket), AI stopped for many, generations and
-# their tasks failing, a failed migration, a parked outbox event, and emails not delivered.
+# their tasks failing, a failed migration, a parked outbox event, web hooks refused, the human check
+# off, and emails not delivered.
 
 locals {
   # Each: its metric (a log-based one, or Cloud Run's), the threshold over the window, the
@@ -106,6 +107,42 @@ locals {
       text      = "Pub/Sub refused an event 5 times, so no flush sends it again and whatever it should have caused (credits, a deleted user, a report) doesn't happen. Its row is deleted 7 days after it was saved. The log line names the event."
       page      = true
       runbook   = "platform.md#events-waiting-or-dead-lettered"
+    }
+    turnstile_secret = {
+      name      = "testee human check off"
+      condition = "Cloudflare refused our Turnstile secret"
+      filter    = "metric.type=\"logging.googleapis.com/user/${google_logging_metric.turnstile_secret_refused.name}\" AND resource.type=\"cloud_run_revision\""
+      aligner   = "ALIGN_DELTA"
+      threshold = 0
+      window    = "300s"
+      text      = "Sign-up, first companies, link starts, the contact form and the help chat run with no bot check: `turnstile-secret-key` is the placeholder or wrong. Set the real secret in Secret Manager and restart companies, site and assistant."
+      page      = true
+      runbook   = "platform.md#the-human-check-is-off"
+    }
+    turnstile_unanswered = {
+      name      = "testee Turnstile not answering"
+      condition = "Over 20 human checks unanswered in 15 minutes"
+      filter    = "metric.type=\"logging.googleapis.com/user/${google_logging_metric.turnstile_unanswered.name}\" AND resource.type=\"cloud_run_revision\""
+      aligner   = "ALIGN_DELTA"
+      threshold = 20
+      window    = "900s"
+      text      = "Cloudflare's check doesn't answer, so everyone is let through and only rate limits stop bots. Check Cloudflare's status page; it heals by itself."
+      page      = false
+      runbook   = "platform.md#the-human-check-is-off"
+    }
+    # Usually a wrong or unset secret: then every payment, email or candidate event is refused,
+    # as 401s the server-error alert doesn't count. Paddle tries one event about 10 times in its
+    # first hour and Resend about 4, so a wrong secret passes this at once; a stray post doesn't.
+    webhook_signatures = {
+      name      = "testee web hook signature refused"
+      condition = "Over 5 web hooks failed their signature check in an hour"
+      filter    = "metric.type=\"logging.googleapis.com/user/${google_logging_metric.webhook_signature_refused.name}\" AND resource.type=\"cloud_run_revision\""
+      aligner   = "ALIGN_DELTA"
+      threshold = 5
+      window    = "3600s"
+      text      = "Web hooks are being refused for their signature; the log lines name the provider. If they all come from one provider, the secret is wrong: for Paddle or Resend compare `paddle-webhook-secret` or `resend-webhook-secret` (Secret Manager) with the provider's dashboard, then resend the failed events from there; for an ATS the company saves the right key on its ATS page. Paid top-ups get their credits only once it's fixed."
+      page      = true
+      runbook   = "platform.md#a-web-hook-signature-refused"
     }
     bounces = {
       name      = "testee emails bouncing"

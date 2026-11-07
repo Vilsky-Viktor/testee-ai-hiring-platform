@@ -187,48 +187,6 @@ resource "google_monitoring_alert_policy" "scheduler_failed" {
   notification_channels = local.ticket_channels
 }
 
-# Web hooks refused: Paddle's, Resend's or an ATS's signature check failed
-# (WEBHOOK_SIGNATURE_REFUSED in testee_common/config/constants.py). Usually a wrong or unset
-# secret: then every payment, email or candidate event is refused, as 401s the server-error alert
-# doesn't count.
-resource "google_monitoring_alert_policy" "webhook_signature_refused" {
-  display_name = "testee web hook signature refused"
-  combiner     = "OR"
-  severity     = "CRITICAL"
-
-  conditions {
-    display_name = "A provider's web hook failed its signature check"
-
-    condition_matched_log {
-      filter = "resource.type=\"cloud_run_revision\" AND jsonPayload.message:\"web hook signature refused\""
-
-      label_extractors = {
-        service = "EXTRACT(resource.labels.service_name)"
-      }
-    }
-  }
-
-  alert_strategy {
-    notification_rate_limit {
-      period = "3600s"
-    }
-
-    auto_close = "86400s"
-  }
-
-  documentation {
-    content   = "A web hook was refused for its signature; the log line names the provider. If it keeps happening, the secret is wrong: for Paddle or Resend compare `paddle-webhook-secret` or `resend-webhook-secret` (Secret Manager) with the provider's dashboard, then resend the failed events from there; for an ATS the company saves the right key on its ATS page. Paid top-ups get their credits only once it's fixed."
-    mime_type = "text/markdown"
-
-    links {
-      display_name = "Runbook: a web hook signature refused"
-      url          = "${local.runbooks}/platform.md#a-web-hook-signature-refused"
-    }
-  }
-
-  notification_channels = local.page_channels
-}
-
 # Server errors: a Cloud Run service answering more than 5% of its requests with a 5xx for ten
 # minutes. A ticket: the API availability SLO (monitoring_slo.tf) pages when users feel it.
 resource "google_monitoring_alert_policy" "server_errors" {
