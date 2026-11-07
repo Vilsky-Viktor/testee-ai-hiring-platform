@@ -1,9 +1,11 @@
 import asyncio
+from contextlib import suppress
 from datetime import datetime
 from uuid import UUID
 
 import httpx
 from fastapi import status
+from redis.exceptions import RedisError
 from testee_common.http import http
 from testee_common.http.backoff import wait_seconds
 from testee_common.http.http import bearer, passed_on
@@ -14,12 +16,14 @@ from testee_common.redis import memory_cache
 from companies.config import settings
 from companies.constants.billing import (
     PAID_CACHE_SECONDS,
+    PAID_KEPT_SECONDS,
     READ_TIMEOUT_SECONDS,
     WELCOME_ATTEMPTS,
     WELCOME_FIRST_WAIT_SECONDS,
 )
 from companies.constants.invites import SETTLE_BATCH
 from companies.core.security import service_token
+from companies.integrations.redis import get_redis
 
 
 def _headers() -> dict:
@@ -132,8 +136,10 @@ async def company_referral(company_id: UUID) -> dict:
 async def company_paid(company_id: UUID) -> bool:
     """Whether the company ever topped up, which is on nearly every page, so a slow billing can't
     hold them up. Only a yes is kept, as it never changes back and a first top-up shows at once.
-    When billing can't say, it counts as not: the company is then held to the daily limit for
-    everyone, rather than refused."""
+    When billing can't say, a yes of the last PAID_KEPT_SECONDS still counts (from Redis, shared
+    by the instances), so an outage doesn't hold a paying company to the unpaid limits; with
+    none, it counts as not: the company is then held to the daily limit for everyone, rather
+    than refused."""
     key = f"paid:company:{company_id}"
 
     if memory_cache.get(key):
@@ -147,14 +153,24 @@ async def company_paid(company_id: UUID) -> bool:
         )
         response.raise_for_status()
     except httpx.HTTPError:
-        return False
+        return await paid_before(key)
 
     paid = response.json()["paid"]
 
     if paid:
         memory_cache.put(key, True, PAID_CACHE_SECONDS)
 
+        with suppress(RedisError):
+            await get_redis().set(key, "1", ex=PAID_KEPT_SECONDS)
+
     return paid
+
+
+async def paid_before(key: str) -> bool:
+    try:
+        return await get_redis().exists(key) > 0
+    except RedisError:
+        return False
 
 
 async def company_credits(company_id: UUID) -> dict:

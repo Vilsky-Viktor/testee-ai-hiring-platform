@@ -6,9 +6,11 @@ import uuid
 
 import httpx
 import pytest
+from fake_redis import DownRedis
 from testee_common.http import http
+from testee_common.redis import memory_cache
 
-from companies.constants.billing import READ_TIMEOUT_SECONDS
+from companies.constants.billing import PAID_KEPT_SECONDS, READ_TIMEOUT_SECONDS
 from companies.integrations import billing
 
 # The real call: conftest replaces billing.company_paid for the other tests.
@@ -69,3 +71,23 @@ def test_when_billing_cant_say_it_counts_as_not_and_is_asked_again(answering):
 
     assert asked(company_id) is False
     assert asked(company_id) is True
+
+
+def test_while_billing_is_down_a_company_that_paid_stays_paid(answering, memory_redis, monkeypatch):
+    company_id = uuid.uuid4()
+    answering(True, httpx.ReadTimeout("slow"))
+
+    assert asked(company_id) is True
+
+    # Another instance, or this one once its memory ran out.
+    monkeypatch.setattr(memory_cache, "_entries", {})
+
+    assert asked(company_id) is True
+    assert memory_redis.expiries[f"paid:company:{company_id}"] == PAID_KEPT_SECONDS
+
+
+def test_with_redis_down_too_it_counts_as_not(answering, monkeypatch):
+    answering(httpx.ReadTimeout("slow"))
+    monkeypatch.setattr(billing, "get_redis", DownRedis)
+
+    assert asked(uuid.uuid4()) is False

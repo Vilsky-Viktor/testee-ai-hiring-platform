@@ -31,3 +31,5 @@ WELCOME_FIRST_WAIT_SECONDS = 0.2
 READ_TIMEOUT_SECONDS = 3
 # How long this instance remembers a company has paid.
 PAID_CACHE_SECONDS = 600
+# How long a yes still counts when billing can't answer.
+PAID_KEPT_SECONDS = 86_400
