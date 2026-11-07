@@ -15,6 +15,7 @@ from companies.repositories import companies, interviews
 from companies.services import scorecards
 from tests.unit import fake_candidates
 from tests.unit.api.v1.test_candidates import COMPANY_ID, INTERVIEW_ID, INVITE_ID, sign_in
+from tests.unit.assistant_header import assistant_header
 
 URL = f"/interviews/{INTERVIEW_ID}/candidates/{INVITE_ID}"
 SECRET = "test-secret-that-is-at-least-32-bytes"
@@ -236,7 +237,7 @@ def test_viewing_a_finished_candidates_results_is_recorded(client, monkeypatch, 
 def test_a_read_through_the_assistant_or_an_ai_app_is_recorded_as_such_and_not_in_the_funnel(
     client, monkeypatch, audited, tracked, via
 ):
-    token = issue_token(via, "companies", SECRET)
+    token = assistant_header(via)
 
     assert open_scorecard(client, monkeypatch, {"X-Assistant": token}).status_code == 200
     assert audited == [
@@ -251,10 +252,11 @@ def test_a_read_through_the_assistant_or_an_ai_app_is_recorded_as_such_and_not_i
         "forged",
         # Signed with another key, or by another service.
         issue_token("assistant", "companies", "another-secret-that-is-at-least-32-bytes"),
-        issue_token("rounds", "companies", SECRET),
-        issue_token("assistant", "rounds", SECRET),
+        # A token for calling companies isn't the header.
+        issue_token("assistant", "companies", SECRET),
+        assistant_header("rounds"),
     ],
-    ids=["not a token", "wrong key", "another service", "for another service"],
+    ids=["not a token", "wrong key", "a service token", "another service"],
 )
 def test_a_forged_assistant_header_is_ignored(client, monkeypatch, audited, tracked, token):
     assert open_scorecard(client, monkeypatch, {"X-Assistant": token}).status_code == 200

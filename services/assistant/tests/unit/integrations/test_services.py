@@ -2,6 +2,8 @@ import asyncio
 
 import httpx
 from testee_common.auth.service_auth import token_caller
+from testee_common.auth.tokens import purpose_key
+from testee_common.config.constants import ASSISTANT_HEADER_PURPOSE
 from testee_common.http import http
 
 from assistant.constants.tool_calls import TOOL_TIMEOUT_SECONDS
@@ -37,9 +39,12 @@ def test_calls_go_as_the_user_and_every_service_passes_on_that_its_the_assistant
     assert timeout == TOOL_TIMEOUT_SECONDS
     # Signed for companies, by the assistant: companies audits the read as the assistant's.
     secret = "test-secret-that-is-at-least-32-bytes"
-    assert token_caller(headers["X-Assistant"], secret, "companies") == "assistant"
+    key = purpose_key(secret, ASSISTANT_HEADER_PURPOSE)
+    assert token_caller(headers["X-Assistant"], key, "companies") == "assistant"
+    # Its own key: no use as a token for calling companies.
+    assert token_caller(headers["X-Assistant"], secret, "companies") is None
     # Other services pass it on to companies' access check, which refuses as companies does.
-    assert token_caller(other_headers["X-Assistant"], secret, "companies") == "assistant"
+    assert token_caller(other_headers["X-Assistant"], key, "companies") == "assistant"
 
 
 def test_a_confirmed_write_sends_its_method_and_body_as_the_user(monkeypatch):

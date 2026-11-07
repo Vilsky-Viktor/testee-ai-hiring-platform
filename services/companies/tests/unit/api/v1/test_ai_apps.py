@@ -3,7 +3,6 @@ from datetime import UTC, datetime
 
 import pytest
 from testee_common.auth.auth import current_user
-from testee_common.auth.service_auth import issue_token
 from testee_common.auth.user import User
 from testee_common.events.audit_actions import AuditAction, TargetKind
 
@@ -12,13 +11,14 @@ from companies.constants.ai_apps import AI_APPS_CHANGED_BY_APP, AI_APPS_OFF
 from companies.main import app
 from companies.models.companies import Company, Member
 from companies.repositories import companies, interviews
+from tests.unit.assistant_header import assistant_header
 
 SECRET = "test-secret-that-is-at-least-32-bytes"
 COMPANY_ID = uuid.uuid4()
 
 
 def via(name):
-    return {"X-Assistant": issue_token(name, "companies", SECRET)}
+    return {"X-Assistant": assistant_header(name)}
 
 
 @pytest.fixture
@@ -93,3 +93,9 @@ def test_only_an_owner_or_admin_in_testee_itself_changes_it(client, company):
     sign_in("vic")
 
     assert client.put(path, json={"allowed": False}).status_code == 403
+
+
+def test_the_assistant_header_is_no_token_for_an_internal_route(client):
+    headers = {"Authorization": f"Bearer {assistant_header('assistant')}"}
+
+    assert client.get("/internal/users/ann/companies", headers=headers).status_code == 401

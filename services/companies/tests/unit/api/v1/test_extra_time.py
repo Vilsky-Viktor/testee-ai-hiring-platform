@@ -3,7 +3,6 @@ from datetime import UTC, datetime
 
 import pytest
 from testee_common.auth.auth import current_user
-from testee_common.auth.service_auth import issue_token
 from testee_common.auth.user import User
 from testee_common.events.audit_actions import AuditAction, TargetKind
 
@@ -14,6 +13,7 @@ from companies.models.companies import Company, Member
 from companies.models.interviews import Interview
 from companies.models.invites import CandidateInvite
 from companies.repositories import candidates, companies, interviews, invites
+from tests.unit.assistant_header import assistant_header
 
 SECRET = "test-secret-that-is-at-least-32-bytes"
 COMPANY_ID = uuid.uuid4()
@@ -92,7 +92,7 @@ def test_extra_time_given_through_the_assistant_or_an_ai_app_is_audited_as_such(
     client, candidate, audited, via
 ):
     invite, _ = candidate
-    header = {"X-Assistant": issue_token(via, "companies", SECRET)}
+    header = {"X-Assistant": assistant_header(via)}
 
     assert client.put(url(invite), json={"extra_time": 50}, headers=header).status_code == 204
     assert audited == [

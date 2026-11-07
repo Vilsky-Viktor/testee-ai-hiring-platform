@@ -12,7 +12,7 @@ from testee_common.http.http import bearer
 
 from assistant.config import settings
 from assistant.constants.tool_calls import REFERRAL_CODE, SERVICE_URLS, TOOL_TIMEOUT_SECONDS
-from assistant.core.security import service_token
+from assistant.core.security import assistant_header, service_token
 
 # For the MCP call being handled when an AI agent signed in with an API key: the key's company
 # and id, which companies' X-Assistant header carries (it refuses any other company), and which
@@ -48,7 +48,7 @@ async def send(
     # An AI agent signed in with an API key calls as the key: a token signed for the service.
     signed = service_token(service, VIA_MCP, claims) if claims else token
     headers = {**bearer(signed), "Accept-Language": language}
-    headers[ASSISTANT_HEADER] = service_token("companies", via, claims)
+    headers[ASSISTANT_HEADER] = assistant_header(via, claims)
 
     # The referral link the user came through (their browser's cookie): a company the
     # assistant creates for them counts for the referrer, as one made on the site does.

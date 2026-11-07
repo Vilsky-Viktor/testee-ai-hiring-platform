@@ -6,6 +6,8 @@ import pytest
 from fastapi import HTTPException
 from testee_common.auth.key_actor import key_actor
 from testee_common.auth.service_auth import token_claims
+from testee_common.auth.tokens import purpose_key
+from testee_common.config.constants import ASSISTANT_HEADER_PURPOSE
 from testee_common.http import http
 from testee_common.i18n.i18n import translate
 
@@ -191,7 +193,8 @@ def test_a_keys_call_is_signed_as_the_key_and_companies_header_carries_its_compa
 
     asyncio.run(as_key())
     asyncio.run(as_key_to_library())
-    claims = token_claims(sent[0]["X-Assistant"], SECRET, "companies")
+    header_key = purpose_key(SECRET, ASSISTANT_HEADER_PURPOSE)
+    claims = token_claims(sent[0]["X-Assistant"], header_key, "companies")
     signed = token_claims(sent[0]["Authorization"][7:], SECRET, "companies")
     to_library = token_claims(sent[1]["Authorization"][7:], SECRET, "library")
 

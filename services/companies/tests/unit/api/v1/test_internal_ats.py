@@ -15,6 +15,7 @@ from companies.repositories import companies, interviews, invites
 from companies.schemas.invites import CandidateOut
 from companies.services import candidate_invites, candidate_results, interview_views
 from companies.services import outbox as outbox_service
+from tests.unit.assistant_header import assistant_header
 
 COMPANY = SimpleNamespace(
     id=uuid.uuid4(),
@@ -118,7 +119,7 @@ def test_access_says_what_companies_own_routes_refuse(
     headers = dict(HEADERS)
 
     if via:
-        headers["X-Assistant"] = issue_token(via, "companies", SECRET)
+        headers["X-Assistant"] = assistant_header(via)
 
     found = client.get(f"{ACCESS}?user_id=ann", headers=headers).json()
 
@@ -126,7 +127,7 @@ def test_access_says_what_companies_own_routes_refuse(
 
 
 def test_an_api_keys_agent_is_refused_another_company(client):
-    headers = {**HEADERS, "X-Assistant": issue_token("mcp", "companies", SECRET, {"company": "x"})}
+    headers = {**HEADERS, "X-Assistant": assistant_header("mcp", {"company": "x"})}
 
     found = client.get(f"{ACCESS}?user_id=ann", headers=headers).json()
 

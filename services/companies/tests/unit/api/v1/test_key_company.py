@@ -13,6 +13,7 @@ from companies.repositories import companies, interviews
 from companies.repositories.audit import record as real_record
 from companies.services.access import key_company, member_of
 from tests.unit.api.v1.test_ai_apps import COMPANY_ID, SECRET, company  # noqa: F401 (fixture)
+from tests.unit.assistant_header import assistant_header
 
 KEY_ID = uuid.uuid4()
 
@@ -23,7 +24,7 @@ def as_key(company_id=COMPANY_ID):
     claims = {"company": str(company_id), "key": str(KEY_ID)}
     token = issue_token("mcp", "companies", SECRET, claims)
 
-    return {"Authorization": f"Bearer {token}", "X-Assistant": token}
+    return {"Authorization": f"Bearer {token}", "X-Assistant": assistant_header("mcp", claims)}
 
 
 @pytest.fixture
