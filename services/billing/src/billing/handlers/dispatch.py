@@ -1,16 +1,21 @@
-"""Billing's events: every AI call and limit hit the services record, and accounts' deleted
-accounts (rule 11: a redelivered record finds its id stored and changes nothing, each row keeps
+"""Billing's events: every AI call and limit hit the services record, accounts' deleted
+accounts and companies' deleted guests (rule 11: a redelivered record finds its id stored and changes nothing, each row keeps
 its own time, so order doesn't matter; deleting again deletes nothing more; an error answers 5xx
 and Pub/Sub delivers it again)."""
 
 from datetime import datetime
 
 from testee_common.ai.ai_constants import AI_USED, LIMIT_HIT
-from testee_common.events.deletions import USER_DELETED
+from testee_common.events.deletions import GUESTS_DELETED, USER_DELETED
 
-from billing.handlers import ai_used, limit_hit, user_deleted
+from billing.handlers import ai_used, guests_deleted, limit_hit, user_deleted
 
-HANDLERS = {AI_USED: ai_used.handle, LIMIT_HIT: limit_hit.handle, USER_DELETED: user_deleted.handle}
+HANDLERS = {
+    AI_USED: ai_used.handle,
+    LIMIT_HIT: limit_hit.handle,
+    USER_DELETED: user_deleted.handle,
+    GUESTS_DELETED: guests_deleted.handle,
+}
 
 
 async def handle(event_type: str, data: dict, event_id: str, occurred_at: datetime) -> None:

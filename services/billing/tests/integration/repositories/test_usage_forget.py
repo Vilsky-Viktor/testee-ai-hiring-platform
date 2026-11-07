@@ -3,9 +3,12 @@
 import uuid
 from datetime import UTC, datetime
 
+from testee_common.config.constants import GUEST_UID_PREFIX
 from testee_common.db import db
+from testee_common.events.deletions import GUESTS_DELETED
 
 from billing.core.db import Session
+from billing.handlers import dispatch
 from billing.models.usage import AiUsage
 from billing.repositories import usage
 from billing.services import accounts
@@ -53,3 +56,22 @@ def test_a_users_ai_calls_are_in_their_export_until_their_account_goes(run):
         ("assistant_message", NOW)
     ]
     assert after["ai_usage"] == []
+
+
+def test_a_deleted_guests_id_leaves_their_ai_calls_and_redelivery_changes_nothing(run):
+    guest = f"{GUEST_UID_PREFIX}{uuid.uuid4()}"
+    company = str(uuid.uuid4())
+
+    async def scenario():
+        await usage_service.record_usage(
+            uuid.uuid4().hex, NOW, call(company_id=company, user_id=guest)
+        )
+
+        for _ in range(2):
+            await dispatch.handle(GUESTS_DELETED, {"user_ids": [guest]}, "e-1", NOW)
+
+        return await rows_of(AiUsage.company_id, company)
+
+    [row] = run(scenario())
+
+    assert row.user_id is None

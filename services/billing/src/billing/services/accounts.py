@@ -42,6 +42,11 @@ async def delete_user(user_id: str) -> None:
     await usage.forget(Session, "user_id", user_id)
 
 
+async def forget_guest(user_id: str) -> None:
+    """A guest holds nothing here but its id on AI costs and limit hits, which stay without it."""
+    await usage.forget(Session, "user_id", user_id)
+
+
 async def export(user_id: str) -> dict:
     """What the user bought for their companies, the automatic top-ups they turned on (charged
     to their card once started), the currency they see prices in, and the records of their AI
@@ -59,6 +64,11 @@ async def export(user_id: str) -> dict:
                 "company_id": row.owner_id,
                 "product": row.product,
                 "threshold": row.threshold,
+                # What each charge costs, in the currency's minor units, as agreed.
+                "price": None if row.price is None else str(row.price),
+                "currency": row.price_currency,
+                # The language each charge is named in on Paddle's invoice.
+                "language": row.language,
                 "started": row.subscription_id is not None,
                 "agreed_at": row.agreed_at,
                 "last_charged_at": row.charged_at,
@@ -68,6 +78,9 @@ async def export(user_id: str) -> dict:
         ],
         "purchases": [
             {
+                # Paddle's id, on its receipt.
+                "transaction_id": item.transaction_id,
+                "company_id": item.owner_id,
                 "product": item.product,
                 "quantity": item.quantity,
                 "total": str(item.total_minor),
