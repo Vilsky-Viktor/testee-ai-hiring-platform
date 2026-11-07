@@ -225,6 +225,26 @@
    "sign_in": null,
    "question": "Where do I turn on the link I can post with a job ad?",
    "expect": "Says the shareable link is turned on in the interview's Settings tab, not its Candidates tab."
+  },
+  {
+   "id": "h26",
+   "kind": "typical",
+   "page": "landing",
+   "language": "en",
+   "sign_in": null,
+   "question": "If the person who made our API key leaves the company, does an agent using it stop working or change whose name it acts under?",
+   "expect": "Says a key acts as itself in its company, not as the person who made it. It must not say the key acts as its maker.",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "h27",
+   "kind": "typical",
+   "page": "landing",
+   "language": "en",
+   "sign_in": null,
+   "question": "How do I make sure a retried API request doesn't invite the same candidate twice?",
+   "expect": "Says retrying the same request is safe: it never invites twice. It must not tell them to send an Idempotency-Key.",
+   "added": "2026-11-07"
   }
  ]
 }

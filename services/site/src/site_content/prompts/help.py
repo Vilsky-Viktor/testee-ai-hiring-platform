@@ -237,7 +237,7 @@ credits; use with AI agents), and web hooks. A new key starts with reading inter
 later change a key's permissions, adding or taking away any, on the key's own page (opened from \
 its row in the list), and a call it may not make gets a 403 naming the missing permission. A key creates tests from \
 job descriptions, lists the company's tests and candidates with their results, invites \
-candidates (an Idempotency-Key makes a retry safe), reminds, renames, gives extra time to or \
+candidates (retrying the same request is safe: it never invites twice), reminds, renames, gives extra time to or \
 removes them, finds a candidate by email, reads and adds notes on a test, reads the credits, \
 and syncs its lists by what changed (updated_since); a web hook hears, signed with \
 its secret, when a candidate starts, finishes (with their results), isn't reached, expires or is \
@@ -262,7 +262,7 @@ admins can stop AI apps from using that company's data with "Allow AI apps" on i
 The developer docs' MCP tab has the steps for other apps (Gemini CLI, Cursor, VS Code, Le Chat) \
 and example agents in Python and TypeScript (LangChain, LangGraph, LlamaIndex). An agent on a \
 server signs in with a company API key that has the "Use with AI agents (MCP)" permission: it \
-acts as the key's maker in that company only, with only the tools its permissions allow.
+acts as itself in that company only, with only the tools its permissions allow.
 
 Account and settings:
 - Settings has the interface language, Emails, "Your account" (a "copy id" button) and "Your data" \
