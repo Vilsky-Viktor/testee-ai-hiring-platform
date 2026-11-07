@@ -8,10 +8,11 @@ from testee_common.http.http import bearer, passed_on
 
 async def invite(
     companies_url: str, token: str, interview_id: UUID, body: dict, refusals: set[int]
-) -> tuple[UUID, bool]:
-    """The invite's id, and whether this request invited them (False: returned as they were).
-    `body` names the email and `sender_id`, and what else the caller sets; companies' refusals in
-    `refusals` reach the caller with their status and reason."""
+) -> tuple[UUID, bool, dict | None]:
+    """The invite's id, whether this request invited them (False: returned as they were), and
+    the candidate when `body` names the `company_id` it must belong to. `body` names the email
+    and `sender_id`, and what else the caller sets; companies' refusals in `refusals` reach the
+    caller with their status and reason."""
     response = await http.get_client().post(
         f"{companies_url}/internal/interviews/{interview_id}/invites",
         json=body,
@@ -19,4 +20,4 @@ async def invite(
     )
     found = passed_on(response, refusals).json()
 
-    return UUID(found["invite_id"]), found.get("created", True)
+    return UUID(found["invite_id"]), found.get("created", True), found.get("candidate")

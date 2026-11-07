@@ -3,6 +3,7 @@ from uuid import UUID
 from pydantic import BaseModel, EmailStr, Field
 
 from companies.constants.brand import Theme
+from companies.schemas.invites import CandidateOut
 
 
 class AccessOut(BaseModel):
@@ -38,9 +39,14 @@ class AtsInviteIn(BaseModel):
     sign_in: bool = True
     # The API caller's: by voice (true) or click (false); none follows the interview's.
     voice: bool | None = None
+    # The API caller's: the interview must be this company's (404 otherwise), and the answer
+    # brings the candidate, so it needs no calls before or after.
+    company_id: UUID | None = None
 
 
 class AtsInviteOut(BaseModel):
     invite_id: UUID
     # Whether this request invited them (or invited them again).
     created: bool = True
+    # With the request's `company_id`.
+    candidate: CandidateOut | None = None

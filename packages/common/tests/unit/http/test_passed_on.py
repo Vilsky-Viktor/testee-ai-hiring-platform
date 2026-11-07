@@ -76,9 +76,9 @@ def test_an_invite_through_companies_returns_its_id_or_its_refusal(monkeypatch):
     found = asyncio.run(company_invites.invite("http://companies", "t", made, body, {409}))
     again = asyncio.run(company_invites.invite("http://companies", "t", made, body, {409}))
 
-    assert found == (made, True)
+    assert found == (made, True, None)
     # Already invited and returned as they were.
-    assert again == (made, False)
+    assert again == (made, False, None)
     with pytest.raises(HTTPException) as refused:
         asyncio.run(company_invites.invite("http://companies", "t", made, body, {409}))
     assert refused.value.detail == "Interview is still being generated"

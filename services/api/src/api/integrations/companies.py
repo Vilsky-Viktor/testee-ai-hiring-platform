@@ -115,6 +115,7 @@ async def candidate(company_id: UUID, interview_id: UUID, invite_id: UUID) -> di
 
 
 async def invite(
+    company_id: UUID,
     interview_id: UUID,
     email: str,
     sender_id: str,
@@ -123,12 +124,13 @@ async def invite(
     sign_in: bool = True,
     theme: str | None = None,
     voice: bool | None = None,
-) -> tuple[UUID, bool]:
-    """Invites the candidate as `sender_id` would: the invite's id, and whether this invited them.
-    A candidate whose invite is still open, or who finished, is returned as they are (no second
+) -> tuple[UUID, bool, dict | None]:
+    """Invites the candidate as `sender_id` would: the invite's id, whether this invited them, and
+    the candidate; 404 when the interview isn't the company's. A candidate whose invite is still open, or who finished, is returned as they are (no second
     email: a retried request invites once). Companies' refusals (PASSED_ON) raise an
     HTTPException with its status and reason."""
     body = {
+        "company_id": str(company_id),
         "email": email,
         "sender_id": sender_id,
         "name": name,

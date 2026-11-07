@@ -24,13 +24,14 @@ from companies.services.access import can_edit, trusted_member
 async def invite(interview_id: UUID, body: AtsInviteIn, via: str) -> tuple[UUID, bool]:
     """The invite's id, and whether it was made or sent now: a candidate who already finished or
     whose invite is still open is returned as they are, so a retry emails nobody twice. Refused
-    with 503 during the emergency pause, 404 when the interview is gone, 409 while it has no
-    questions yet, 403 when the sender is no longer an owner or admin, 422 for a return address
-    that isn't https (http only on localhost) (and as candidate_invites.invite refuses)."""
+    with 503 during the emergency pause, 404 when the interview is gone or not the given
+    company's, 409 while it has no questions yet, 403 when the sender is no longer an owner or
+    admin, 422 for a return address that isn't https (http only on localhost) (and as
+    candidate_invites.invite refuses)."""
     async with Session() as session:
         interview = await interviews.get(session, interview_id)
 
-    if interview is None:
+    if interview is None or body.company_id not in (None, interview.company_id):
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Interview not found")
 
     if interview.set_id is None:

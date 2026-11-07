@@ -8,7 +8,7 @@ from companies.constants.audit import VIA_API, VIA_ATS
 from companies.core.db import Session
 from companies.repositories import companies, interviews
 from companies.schemas.internal_ats import AccessOut, AtsInviteIn, AtsInviteOut, InterviewBriefOut
-from companies.services import ats_invites
+from companies.services import ats_invites, candidate_results, interview_views
 from companies.services.access import (
     ai_apps_refusal,
     can_edit,
@@ -75,6 +75,10 @@ async def invite(
     if not created:
         response.status_code = status.HTTP_200_OK
 
-        return AtsInviteOut(invite_id=invite_id, created=False)
+    candidate = None
 
-    return AtsInviteOut(invite_id=invite_id)
+    if body.company_id is not None:
+        interview = await interview_views.company_interview(body.company_id, interview_id)
+        candidate = await candidate_results.one(interview, invite_id)
+
+    return AtsInviteOut(invite_id=invite_id, created=created, candidate=candidate)

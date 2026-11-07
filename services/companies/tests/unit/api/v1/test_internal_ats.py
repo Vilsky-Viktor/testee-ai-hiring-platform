@@ -12,7 +12,8 @@ from companies.constants.ai_apps import AI_APPS_OFF, KEY_OTHER_COMPANY
 from companies.constants.audit import VIA_ATS
 from companies.constants.invites import COMPANY_SUSPENDED
 from companies.repositories import companies, interviews, invites
-from companies.services import candidate_invites
+from companies.schemas.invites import CandidateOut
+from companies.services import candidate_invites, candidate_results, interview_views
 from companies.services import outbox as outbox_service
 
 COMPANY = SimpleNamespace(
@@ -153,10 +154,40 @@ def test_ats_invites_a_candidate_as_the_member_who_connected_it(client, stored):
     response = client.post(f"/internal/interviews/{READY.id}/invites", json=body, headers=HEADERS)
 
     assert response.status_code == 201
-    assert response.json() == {"invite_id": str(uuid.UUID(int=7)), "created": True}
+    assert response.json() == {
+        "invite_id": str(uuid.UUID(int=7)),
+        "created": True,
+        "candidate": None,
+    }
     # The action log shows it came through the ATS.
     assert stored["invites"] == [(READY.id, COMPANY.id, "ann", "Cara@example.com", VIA_ATS)]
     assert stored["flushes"] == 1
+
+
+def test_the_apis_invite_brings_the_candidate_and_refuses_another_companys_interview(
+    client, stored, monkeypatch
+):
+    async def one(interview, invite_id):
+        return CandidateOut(
+            id=invite_id, email="cara@example.com", status="invited", created_at=datetime.now(UTC)
+        )
+
+    async def company_interview(company_id, interview_id):
+        return READY
+
+    monkeypatch.setattr(candidate_results, "one", one)
+    monkeypatch.setattr(interview_views, "company_interview", company_interview)
+    url = f"/internal/interviews/{READY.id}/invites"
+    body = {"email": "cara@example.com", "sender_id": "ann"}
+    foreign = client.post(url, json={**body, "company_id": str(uuid.uuid4())}, headers=HEADERS)
+
+    assert foreign.status_code == 404
+    assert stored["invites"] == []
+
+    ours = client.post(url, json={**body, "company_id": str(COMPANY.id)}, headers=HEADERS)
+
+    assert ours.status_code == 201
+    assert ours.json()["candidate"]["email"] == "cara@example.com"
 
 
 def test_a_candidate_who_finished_is_returned_without_another_email(client, stored):
@@ -166,7 +197,11 @@ def test_a_candidate_who_finished_is_returned_without_another_email(client, stor
 
     # Nothing new was made.
     assert response.status_code == 200
-    assert response.json() == {"invite_id": str(uuid.UUID(int=9)), "created": False}
+    assert response.json() == {
+        "invite_id": str(uuid.UUID(int=9)),
+        "created": False,
+        "candidate": None,
+    }
     assert stored["invites"] == []
 
 
