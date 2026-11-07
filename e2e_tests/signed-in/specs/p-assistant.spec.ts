@@ -8,6 +8,7 @@ import {
   CONVERSATION,
   events,
   openPanel,
+  PANEL_BACK,
   visitorChatKept,
 } from "../helpers/assistant";
 import { visit } from "../helpers/navigation";
@@ -146,7 +147,7 @@ test("the assistant welcomes by stage, answers, takes voice, keeps history and s
   // A reload in the middle of the chat brings the panel and the conversation back.
   await owner.reload();
   panel = owner.getByRole("dialog");
-  await expect(panel.getByRole("list").getByText("Who passed?").filter({ visible: true })).toBeVisible();
+  await expect(panel.getByRole("list").getByText("Who passed?").filter({ visible: true })).toBeVisible(PANEL_BACK);
   // The pick and the width came back with it.
   await expect(panel.getByTestId("assistant-company").getByRole("button")).not.toHaveText(company.name);
   await expect.poll(async () => (await panel.boundingBox())!.width).toBe(360);
@@ -207,7 +208,7 @@ test("a visitor who signs in from the sign-in card keeps their chat", async ({ b
   // A reload keeps the visitor's chat and the open panel.
   await page.reload();
   const again = page.getByRole("dialog");
-  await expect(said(again).first()).toContainText(question);
+  await expect(said(again).first()).toContainText(question, PANEL_BACK);
 
   const sent = await assistantAnswers(page);
   const opened = context.waitForEvent("page");
@@ -230,7 +231,7 @@ test("a visitor who signs in from the sign-in card keeps their chat", async ({ b
   // A reload before the first message keeps that chat (the user has no newer conversation).
   await page.route("**/api/assistant/conversations/active", (route) => route.fulfill({ status: 204 }));
   await page.reload();
-  await expect(again.getByTestId("assistant-history").filter({ visible: true })).toBeVisible({ timeout: 45_000 });
+  await expect(again.getByTestId("assistant-history").filter({ visible: true })).toBeVisible(PANEL_BACK);
   await expect(said(again).first()).toContainText(question);
   await expect(said(again).nth(1)).toContainText(answer);
   await expect(again.locator('[data-testid^="sign-in-"]')).toHaveCount(0);

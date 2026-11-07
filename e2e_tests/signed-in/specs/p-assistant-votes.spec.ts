@@ -1,7 +1,7 @@
 import type { Locator, Page, Route } from "@playwright/test";
 
 import { expect, test } from "../fixtures";
-import { assistantAnswers, CONVERSATION, events, openPanel } from "../helpers/assistant";
+import { assistantAnswers, CONVERSATION, events, openPanel, PANEL_BACK } from "../helpers/assistant";
 import { visit } from "../helpers/navigation";
 import { shot } from "../helpers/screenshots";
 import { ownerEmail } from "../helpers/users";
@@ -97,7 +97,7 @@ test("a member votes on the assistant's answers, changes and clears the vote", a
   );
   await owner.reload();
   const restored = owner.getByRole("dialog").getByTestId("answer-vote");
-  await expect(thumb(restored, DOWN)).toHaveAttribute("aria-pressed", "true");
+  await expect(thumb(restored, DOWN)).toHaveAttribute("aria-pressed", "true", PANEL_BACK);
   await expect(thumb(restored, UP)).toHaveAttribute("aria-pressed", "false");
 });
 

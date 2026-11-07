@@ -5,6 +5,9 @@ import { expect, type Locator, type Page, type Route } from "@playwright/test";
 
 export const CONVERSATION = "11111111-2222-4333-8444-555555555555";
 export const CANDIDATE_LINK = "/companies/c/interviews/i/candidates/1";
+// The panel after a reload: its code, then /config, load after the page's own, and in a full run
+// on a busy laptop that alone has taken over 18 s, past the usual 15 s.
+export const PANEL_BACK = { timeout: 45_000 };
 
 /** Server-sent events, as the chat routes stream them. */
 export function events(...items: object[]) {
