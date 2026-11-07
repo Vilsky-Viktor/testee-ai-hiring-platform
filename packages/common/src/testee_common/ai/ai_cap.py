@@ -37,14 +37,10 @@ async def refuse_if_capped(
     redis, company_id: object | None = None, user_id: str | None = None
 ) -> None:
     """For an AI call made for an unpaid company or someone without one: refused (503) once
-    today's unpaid spend reached the cap. With Redis down, not refused."""
-    try:
-        cap = await limit_value(redis, CAP)
-        spent = await spent_today(redis)
-    except Exception:
-        logger.warning("Couldn't read today's unpaid AI spend; not capped", exc_info=True)
-
-        return
+    today's unpaid spend reached the cap. With Redis down, an error: a limit on spend fails
+    rather than going uncapped (hit)."""
+    cap = await limit_value(redis, CAP)
+    spent = await spent_today(redis)
 
     if spent < cap:
         return

@@ -77,8 +77,9 @@ def test_the_counter_starts_again_at_midnight_utc(monkeypatch, published):
     assert redis.expiries["spend:ai:unpaid:2026-10-16"] >= 24 * 60 * 60
 
 
-def test_with_redis_down_nothing_is_refused():
-    assert not capped(DownRedis())
+def test_with_redis_down_an_unpaid_call_fails_rather_than_going_uncapped():
+    with pytest.raises(ConnectionError):
+        capped(DownRedis())
 
 
 def test_reaching_80_percent_and_the_cap_each_alert_once(caplog):
