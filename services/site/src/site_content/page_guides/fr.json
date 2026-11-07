@@ -3,7 +3,7 @@
     "title": "Comment fonctionne testee",
     "text": "testee transforme votre description de poste en un entretien chronométré, avec des questions aléatoires propres à chaque candidat. Cette page présente tout le parcours, de la création d'un entretien au partage des résultats.",
     "actions": [
-      "Collez la description du poste dans le champ en haut, ou choisissez un modèle prêt à l'emploi ; ajustez les thèmes, et les questions sont rédigées et vérifiées pour vous.",
+      "Collez la description du poste dans le champ en haut ; les modèles prêts à l'emploi se trouvent sur la page des tests et dans l'onglet Modèles d'une entreprise. Ajustez les thèmes, et les questions sont rédigées et vérifiées pour vous.",
       "Invitez des candidats par e-mail, à partir d'un fichier, avec un lien à partager dans votre annonce, ou depuis votre ATS, votre propre plateforme ou un assistant IA.",
       "Voyez ce que voient les candidats : un entretien chronométré à votre image, avec des réponses par clic ou à la voix.",
       "Lisez les rapports : les réponses, les notes et les alertes d'intégrité de chaque candidat, partagées par e-mail ou par chat en un clic.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Découvrir",
-    "text": "Les personnes qui s'entraînent sur testee et ont choisi d'être ouvertes aux opportunités, dont l'entraînement couvre les sujets de cet entretien à son niveau. Pour chacune s'affichent son nom, son profil LinkedIn et son dernier résultat d'entraînement sur chaque sujet correspondant. Seules les entreprises qui ont rechargé des crédits au moins une fois voient cet onglet.",
+    "text": "Les personnes qui s'entraînent sur testee et ont choisi d'être ouvertes aux opportunités, dont l'entraînement couvre les sujets de cet entretien à son niveau. Pour chacune s'affichent son nom, son profil LinkedIn et son dernier résultat d'entraînement chronométré sur chaque sujet correspondant. Seules les entreprises qui ont rechargé des crédits au moins une fois voient cet onglet.",
     "actions": [
       "Ouvrez le profil LinkedIn d'une personne pour en savoir plus sur elle.",
       "Invitez une personne à cet entretien (propriétaires et admins) : l'invitation part vers l'e-mail de son compte et coûte des crédits comme toute invitation."
@@ -233,6 +233,7 @@
       "Le score éclaire votre décision ; il ne la prend pas. Si le candidat le demande, faites examiner son résultat par une personne.",
       "Une coche sous la note indique que le candidat a confirmé, avant de commencer, qu'il répondrait par lui-même, sans outils d'IA ni l'aide d'autres personnes.",
       "La note est le pourcentage de points obtenus : chaque question vaut un point, et une question où il faut cocher toutes les bonnes réponses en rapporte une part pour chaque bonne réponse cochée, et rien si une mauvaise est cochée.",
+      "Supprimer un candidat qui a répondu à au moins une question débite ses crédits ; sinon, ils sont rendus.",
       "Le temps supplémentaire, le mode et le nom du candidat, le lien d'invitation, le renvoi, la révocation et la suppression sont réservés aux propriétaires et aux admins."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Les admins créent et modifient les entretiens, invitent des candidats et rechargent les crédits. Les lecteurs voient les entretiens et les résultats, partagent les rapports et écrivent des commentaires, mais ne modifient rien d'autre.",
       "Retirer un membre dont la carte paie les recharges automatiques, ou le faire passer lecteur, arrête ces recharges.",
-      "Seul le propriétaire ajoute, modifie et retire des membres ; tous les membres de l'entreprise voient l'équipe."
+      "Seul le propriétaire ajoute, modifie et retire des membres ; tous les membres de l'entreprise voient l'équipe.",
+      "Seule l'adresse e-mail invitée, une fois vérifiée, peut accepter une invitation. Une entreprise peut avoir 20 invitations en attente à la fois et, jusqu'à sa première recharge, en envoyer 10 par jour."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "Les crédits d'un candidat sont réservés à l'invitation, débités dès qu'il répond et rendus s'il ne répond pas.",
+      "Les crédits des candidats venus du lien de partage sont réservés quand ils commencent. Supprimer un entretien ou un candidat débite les crédits de tous ceux qui ont répondu à au moins une question ; ceux réservés pour les autres sont rendus.",
       "Seuls les propriétaires et admins voient cette page.",
       "Vous pouvez vous faire rembourser les crédits achetés au cours des 14 derniers jours et non utilisés depuis la ligne de la recharge dans l'historique, via Paddle ou en nous écrivant. Les crédits réservés à des candidats ne peuvent pas être remboursés tant qu'ils sont réservés ; réservés pendant les 14 jours et rendus après, ils restent remboursables pendant 7 jours.",
       "Les crédits gratuits sont considérés comme dépensés en premier, et ce qui n'est pas dépensé compte d'abord pour la recharge la plus récente. Le remboursement d'une recharge ayant généré une récompense de parrainage reprend cette récompense aux deux entreprises. Les propriétaires et les admins apprennent si Paddle l'a approuvé dans la cloche, par e-mail et, sauf désactivation, dans Slack."
@@ -548,7 +551,7 @@
     "tips": [
       "Ce que vous avez coché quand le temps d'une question s'écoule compte quand même ; une question sans rien de coché, ou jamais atteinte, compte comme fausse.",
       "Vous recrutez pour ce poste ? Créez-en un entretien pour vos propres candidats.",
-      "Vous cherchez un emploi ? Après une session terminée, indiquez votre profil LinkedIn et activez Ouvert aux opportunités pour que les entreprises qui recrutent sur ces sujets voient votre nom, votre profil et vos derniers résultats d'entraînement et puissent vous inviter ; l'option reste active un an, sauf si vous la désactivez."
+      "Vous cherchez un emploi ? Après une session terminée, indiquez votre profil LinkedIn et activez Ouvert aux opportunités pour que les entreprises qui recrutent sur ces sujets voient votre nom, votre profil et vos derniers résultats d'entraînement chronométré et puissent vous inviter ; l'option reste active un an, sauf si vous la désactivez."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Une fois connecté, ouvrez ensuite vos paramètres d'e-mail pour modifier les autres e-mails."
     ],
     "tips": [
-      "Les e-mails de service, comme les invitations à rejoindre une équipe, les rapports et les problèmes de facturation, continuent d'être envoyés ; un lien qui arrête les e-mails d'une entreprise arrête aussi ses invitations à votre intention."
+      "Les e-mails de service, comme les invitations à rejoindre une équipe, les rapports et les problèmes de facturation, continuent d'être envoyés ; un lien qui arrête les e-mails d'une entreprise arrête aussi ses invitations à votre intention.",
+      "Arrêter les e-mails d'une entreprise arrête aussi ses rappels à votre intention, et l'entreprise voit une invitation arrêtée comme non distribuée."
     ]
   }
 }

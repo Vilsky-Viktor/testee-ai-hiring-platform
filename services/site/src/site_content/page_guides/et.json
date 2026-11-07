@@ -3,7 +3,7 @@
     "title": "Kuidas testee töötab",
     "text": "testee teeb sinu töökuulutusest ajapiiranguga intervjuu, kus igal kandidaadil on omad juhuslikud küsimused. See leht näitab kogu teed, intervjuu loomisest tulemuste jagamiseni.",
     "actions": [
-      "Kleebi töökuulutus üleval olevasse kasti või vali valmis mall; kohanda teemasid ja küsimused kirjutatakse ning kontrollitakse sinu eest.",
+      "Kleebi töökuulutus üleval olevasse kasti; valmis mallid on testide lehel ja ettevõtte vahekaardil Mallid. Kohanda teemasid ja küsimused kirjutatakse ning kontrollitakse sinu eest.",
       "Kutsu kandidaate e-kirjaga, failist, töökuulutuses oleva jagamislingiga või oma ATS-i, oma platvormi või AI-assistendi kaudu.",
       "Vaata, mida kandidaadid näevad: ajapiiranguga intervjuu sinu brändis, millele vastatakse klõpsuga või häälega.",
       "Loe aruandeid: iga kandidaadi vastused, hinded ja märked kahtlase käitumise kohta, jagatud ühe klikiga e-kirja või vestluse kaudu.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Avasta",
-    "text": "Inimesed, kes harjutavad testees ja on valinud „Avatud tööpakkumistele“ ning kelle harjutused katavad selle intervjuu teemasid selle tasemel. Igaühe juures on näha nimi, LinkedIni profiil ja viimane harjutuse tulemus igas sobivas teemas. Seda vahekaarti näevad ainult ettevõtted, kes on vähemalt korra krediiti juurde laadinud.",
+    "text": "Inimesed, kes harjutavad testees ja on valinud „Avatud tööpakkumistele“ ning kelle harjutused katavad selle intervjuu teemasid selle tasemel. Igaühe juures on näha nimi, LinkedIni profiil ja viimane ajapiiranguga harjutuse tulemus igas sobivas teemas. Seda vahekaarti näevad ainult ettevõtted, kes on vähemalt korra krediiti juurde laadinud.",
     "actions": [
       "Ava kellegi LinkedIni profiil, et tema kohta rohkem teada saada.",
       "Kutsu keegi sellele intervjuule (omanikud ja administraatorid): kutse läheb tema konto e-posti aadressile ja maksab krediite nagu iga kutse."
@@ -233,6 +233,7 @@
       "Punktid toetavad sinu otsust, kuid ei tee seda sinu eest. Kui kandidaat palub, lase tema tulemus inimesel üle vaadata.",
       "Linnuke hinde all näitab, et kandidaat kinnitas enne alustamist, et vastab ise, ilma tehisaru tööriistade ja teiste inimeste abita.",
       "Hinne on teenitud punktide protsent: iga küsimus annab ühe punkti ja „vali mitu varianti“ küsimus annab osa sellest iga märgitud õige variandi eest, kuid mitte midagi, kui märgitud on vale variant.",
+      "Kui kustutad kandidaadi, kes vastas vähemalt ühele küsimusele, arvestatakse tema krediidid maha; muidu tulevad need tagasi.",
       "Lisaaeg, kandidaadi režiim ja nimi, kutselink, uuesti saatmine, tühistamine ja kustutamine on omanikele ja administraatoritele."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Administraatorid loovad ja muudavad intervjuusid, kutsuvad kandidaate ja laevad krediiti juurde. Vaatajad näevad intervjuusid ja tulemusi, jagavad aruandeid ja kirjutavad märkmeid, kuid muud nad ei muuda.",
       "Kui eemaldad liikme, kelle kaart maksab automaatse juurdelaadimise eest, või teed ta vaatajaks, see juurdelaadimine peatub.",
-      "Ainult omanik lisab, muudab ja eemaldab liikmeid; meeskonda näevad kõik ettevõttes."
+      "Ainult omanik lisab, muudab ja eemaldab liikmeid; meeskonda näevad kõik ettevõttes.",
+      "Kutset saab vastu võtta ainult kutsutud e-posti aadress, kui see on kinnitatud. Ettevõttel võib korraga olla 20 ootel kutset ja kuni esimese laadimiseni saab ta saata 10 kutset päevas."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "Kandidaadi krediidid broneeritakse kutsumisel, arvestatakse maha, kui ta vastab, ja antakse tagasi, kui ta ei vasta.",
+      "Jagatava lingi kaudu tulnud kandidaatide krediidid broneeritakse alustamisel. Intervjuu või kandidaadi kustutamisel arvestatakse maha kõigi vähemalt ühele küsimusele vastanute krediidid; teiste jaoks broneeritud krediidid tulevad tagasi.",
       "Seda lehte näevad ainult omanikud ja administraatorid.",
       "Saad tagastada viimase 14 päeva jooksul ostetud ja kasutamata krediidid ajaloos juurdelaadimise real, Paddle'i kaudu või meile kirjutades. Kandidaatidele broneeritud krediite ei saa tagastada, kuni need on broneeritud; kui need broneeriti 14 päeva jooksul ja anti tagasi pärast seda, saab neid tagastada veel 7 päeva.",
       "Tasuta krediidid loetakse kulutatuks esimesena ja kulutamata krediidid loetakse esmalt uusima juurdelaadimise omaks. Soovituspreemia teeninud juurdelaadimise tagastamine võtab selle preemia mõlemalt ettevõttelt tagasi. Omanikud ja administraatorid saavad teada, kas Paddle selle kinnitas, kellukese all, e-kirjaga ja, kui pole välja lülitatud, Slackis."
@@ -548,7 +551,7 @@
     "tips": [
       "See, mille oled valinud, kui küsimuse aeg täis saab, läheb arvesse; küsimus, kus pole midagi valitud või milleni sa ei jõudnud, loetakse valeks.",
       "Värbad sellesse rolli? Loo selle põhjal intervjuu oma kandidaatidele.",
-      "Otsid tööd? Pärast lõpetatud katset sisesta oma LinkedIni profiil ja lülita sisse „Avatud tööpakkumistele“, et nendel teemadel värbavad ettevõtted näeksid sinu nime, profiili ja viimaseid harjutuse tulemusi ning saaksid sind kutsuda; see jääb aastaks sisse, kui sa seda välja ei lülita."
+      "Otsid tööd? Pärast lõpetatud katset sisesta oma LinkedIni profiil ja lülita sisse „Avatud tööpakkumistele“, et nendel teemadel värbavad ettevõtted näeksid sinu nime, profiili ja viimaseid ajapiiranguga harjutuse tulemusi ning saaksid sind kutsuda; see jääb aastaks sisse, kui sa seda välja ei lülita."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Sisselogituna ava seejärel e-kirjade seaded, et muuta teisi e-kirju."
     ],
     "tips": [
-      "Teenusekirjad, näiteks meeskonnakutsed, aruanded ja makseprobleemid, saadetakse ikka; link, mis peatab ettevõtte e-kirjad, peatab ka selle kutsed sulle."
+      "Teenusekirjad, näiteks meeskonnakutsed, aruanded ja makseprobleemid, saadetakse ikka; link, mis peatab ettevõtte e-kirjad, peatab ka selle kutsed sulle.",
+      "Ettevõtte e-kirjade peatamine peatab ka selle meeldetuletused sulle ning ettevõte näeb peatatud kutset kättetoimetamata kutsena."
     ]
   }
 }

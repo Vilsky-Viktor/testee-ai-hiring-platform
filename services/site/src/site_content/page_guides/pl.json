@@ -3,7 +3,7 @@
     "title": "Jak działa testee",
     "text": "testee zamienia opis stanowiska w rozmowę na czas, z osobnym losowym zestawem pytań dla każdego kandydata. Ta strona pokazuje cały proces, od utworzenia rozmowy po udostępnienie wyników.",
     "actions": [
-      "Wklej opis stanowiska w polu na górze albo wybierz gotowy szablon; dopasuj tematy, a pytania zostaną za Ciebie napisane i sprawdzone.",
+      "Wklej opis stanowiska w polu na górze; gotowe szablony znajdziesz na stronie testów i na karcie Szablony firmy. Dopasuj tematy, a pytania zostaną za Ciebie napisane i sprawdzone.",
       "Zaproś kandydatów e-mailem, z pliku, linkiem w ogłoszeniu o pracę albo przez swój ATS, swoją platformę lub asystenta AI.",
       "Zobacz to, co widzą kandydaci: rozmowę na czas w Twojej marce, z odpowiedziami kliknięciem lub głosem.",
       "Czytaj raporty: odpowiedzi, wyniki i ostrzeżenia o podejrzanych zachowaniach każdego kandydata, udostępniane jednym kliknięciem e-mailem lub na czacie.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Odkrywaj",
-    "text": "Osoby, które ćwiczą w testee i zdecydowały się włączyć „Rozważam oferty pracy”, a ich ćwiczenia obejmują tematy tej rozmowy na jej poziomie. Przy każdej widać imię i nazwisko, profil LinkedIn i najnowszy wynik ćwiczeń z każdego pasującego tematu. Tę kartę widzą tylko firmy, które choć raz doładowały kredyty.",
+    "text": "Osoby, które ćwiczą w testee i zdecydowały się włączyć „Rozważam oferty pracy”, a ich ćwiczenia obejmują tematy tej rozmowy na jej poziomie. Przy każdej widać imię i nazwisko, profil LinkedIn i najnowszy wynik ćwiczeń na czas z każdego pasującego tematu. Tę kartę widzą tylko firmy, które choć raz doładowały kredyty.",
     "actions": [
       "Otwórz czyjś profil LinkedIn, aby dowiedzieć się o tej osobie więcej.",
       "Zaproś kogoś na tę rozmowę (właściciele i administratorzy): zaproszenie trafia na e-mail powiązany z kontem tej osoby i kosztuje kredyty jak każde zaproszenie."
@@ -233,6 +233,7 @@
       "Wynik wspiera Twoją decyzję, ale jej nie podejmuje. Jeśli kandydat o to poprosi, niech jego wynik sprawdzi człowiek.",
       "Znacznik pod oceną pokazuje, że kandydat przed startem potwierdził, że odpowie samodzielnie, bez narzędzi AI i pomocy innych osób.",
       "Wynik to odsetek zdobytych punktów: każde pytanie jest warte jeden punkt, a pytanie wielokrotnego wyboru („zaznacz kilka odpowiedzi”) daje jego część za każdą zaznaczoną poprawną odpowiedź i nic, jeśli zaznaczono błędną.",
+      "Usunięcie kandydata, który odpowiedział na co najmniej jedno pytanie, oznacza pobranie kredytów; w przeciwnym razie wracają.",
       "Dodatkowy czas, tryb i imię kandydata, link z zaproszeniem, ponowne wysyłanie, wycofywanie i usuwanie są dla właścicieli i administratorów."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Administratorzy tworzą i zmieniają rozmowy, zapraszają kandydatów i doładowują kredyty. Obserwatorzy widzą rozmowy i wyniki, udostępniają raporty i piszą notatki, ale niczego więcej nie zmieniają.",
       "Usunięcie członka zespołu, którego karta opłaca automatyczne doładowania, lub zmiana go na obserwatora wyłącza te doładowania.",
-      "Tylko właściciel dodaje, zmienia i usuwa członków; zespół widzą wszyscy w firmie."
+      "Tylko właściciel dodaje, zmienia i usuwa członków; zespół widzą wszyscy w firmie.",
+      "Zaproszenie może przyjąć tylko zaproszony adres e-mail po weryfikacji. Firma może mieć naraz 20 oczekujących zaproszeń, a do pierwszego doładowania wysyłać 10 dziennie."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "Kredyty kandydata są rezerwowane przy zaproszeniu, pobierane, gdy odpowie, i zwracane, jeśli nie odpowie.",
+      "Kredyty kandydatów z linku do udostępnienia są rezerwowane przy rozpoczęciu. Po usunięciu rozmowy lub kandydata pobierane są kredyty za każdego, kto odpowiedział na co najmniej jedno pytanie, a kredyty zarezerwowane dla pozostałych wracają.",
       "Tę stronę widzą tylko właściciele i administratorzy.",
       "Możesz zwrócić kredyty kupione w ciągu ostatnich 14 dni i niewykorzystane w wierszu doładowania w historii, przez Paddle lub pisząc do nas. Kredytów zarezerwowanych na kandydatów nie można zwrócić, dopóki są zarezerwowane; zarezerwowane w ciągu tych 14 dni i oddane po ich upływie pozostają do zwrotu przez 7 dni.",
       "Darmowe kredyty liczą się jako wydane najpierw, a to, co niewydane, liczy się najpierw jako kredyty z najnowszego doładowania. Zwrot doładowania, za które przyznano nagrodę za polecenie, cofa tę nagrodę obu firmom. Właściciele i administratorzy dowiadują się, czy Paddle go zatwierdził, pod dzwonkiem, e-mailem i, o ile nie wyłączono, na Slacku."
@@ -548,7 +551,7 @@
     "tips": [
       "To, co masz zaznaczone, gdy skończy się czas na pytanie, nadal się liczy; pytanie bez zaznaczonej odpowiedzi lub takie, do którego nie dotrzesz, liczy się jako błędne.",
       "Rekrutujesz na to stanowisko? Utwórz na jej podstawie rozmowę dla swoich kandydatów.",
-      "Szukasz pracy? Po ukończonym podejściu podaj swój profil LinkedIn i włącz „Rozważam oferty pracy”, aby firmy rekrutujące w tych tematach widziały Twoje imię i nazwisko, profil i najnowsze wyniki ćwiczeń i mogły Cię zaprosić; opcja pozostaje włączona przez rok, chyba że ją wyłączysz."
+      "Szukasz pracy? Po ukończonym podejściu podaj swój profil LinkedIn i włącz „Rozważam oferty pracy”, aby firmy rekrutujące w tych tematach widziały Twoje imię i nazwisko, profil i najnowsze wyniki ćwiczeń na czas i mogły Cię zaprosić; opcja pozostaje włączona przez rok, chyba że ją wyłączysz."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Po zalogowaniu otwórz potem ustawienia e-maili, by zmienić inne e-maile."
     ],
     "tips": [
-      "E-maile serwisowe, takie jak zaproszenia do zespołu, raporty i problemy z płatnościami, nadal będą wysyłane; link, który zatrzymuje e-maile firmy, zatrzymuje też jej zaproszenia do Ciebie."
+      "E-maile serwisowe, takie jak zaproszenia do zespołu, raporty i problemy z płatnościami, nadal będą wysyłane; link, który zatrzymuje e-maile firmy, zatrzymuje też jej zaproszenia do Ciebie.",
+      "Zatrzymanie e-maili firmy zatrzymuje też jej przypomnienia do Ciebie, a firma widzi zatrzymane zaproszenie jako niedostarczone."
     ]
   }
 }

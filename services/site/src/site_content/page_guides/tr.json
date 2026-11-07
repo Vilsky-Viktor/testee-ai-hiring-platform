@@ -3,7 +3,7 @@
     "title": "testee nasıl çalışır",
     "text": "testee iş tanımınızı süreli bir mülakata dönüştürür; her aday kendi rastgele sorularını alır. Bu sayfa, mülakat oluşturmaktan sonuçları paylaşmaya kadar tüm süreci anlatır.",
     "actions": [
-      "İş tanımını üstteki kutuya yapıştırın veya hazır bir şablon seçin; konuları düzenleyin, sorular sizin için yazılıp kontrol edilsin.",
+      "İş tanımını üstteki kutuya yapıştırın; hazır şablonlar testler sayfasında ve şirketin Şablonlar sekmesindedir. Konuları düzenleyin, sorular sizin için yazılıp kontrol edilsin.",
       "Adayları e-postayla, bir dosyadan, iş ilanınızdaki paylaşım bağlantısıyla ya da ATS'nizden, kendi platformunuzdan veya bir yapay zekâ asistanından davet edin.",
       "Adayların ne gördüğünü görün: kendi markanızla, tıklayarak veya sesle cevaplanan süreli bir mülakat.",
       "Raporları okuyun: her adayın cevapları, notları ve dürüstlük uyarıları, tek tıkla e-postayla ya da sohbette paylaşılır.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Keşfet",
-    "text": "testee'de pratik yapan, iş tekliflerine açık olmayı seçen ve pratiği bu mülakatın konularını mülakatın seviyesinde kapsayan kişiler. Her birinde adı, LinkedIn profili ve eşleşen her konudaki en son pratik sonucu görünür. Bu sekmeyi yalnızca en az bir kez kredi yüklemiş şirketler görür.",
+    "text": "testee'de pratik yapan, iş tekliflerine açık olmayı seçen ve pratiği bu mülakatın konularını mülakatın seviyesinde kapsayan kişiler. Her birinde adı, LinkedIn profili ve eşleşen her konudaki en son süreli pratik sonucu görünür. Bu sekmeyi yalnızca en az bir kez kredi yüklemiş şirketler görür.",
     "actions": [
       "Biri hakkında daha fazla bilgi edinmek için LinkedIn profilini açın.",
       "Birini bu mülakata davet edin (sahipler ve yöneticiler): davet, kişinin hesabındaki e-posta adresine gider ve her davet gibi kredi harcar."
@@ -233,6 +233,7 @@
       "Puan kararınızı destekler, kararı sizin yerinize vermez. Aday isterse sonucunu bir insana inceletin.",
       "Notun altındaki onay işareti, adayın başlamadan önce soruları yapay zekâ araçları veya başkalarının yardımı olmadan kendisinin yanıtlayacağını onayladığını gösterir.",
       "Not, kazanılan puanların yüzdesidir: her soru bir puan değerindedir; \"birden fazla seçenek seçin\" sorusu işaretlenen her doğru seçenek için bu puanın bir kısmını verir, yanlış bir seçenek işaretlenirse hiç puan vermez.",
+      "En az bir soruyu yanıtlamış bir adayı silmek kredilerini düşer; aksi halde iade edilir.",
       "Ek süre, adayın modu ve adı, davet bağlantısı, yeniden gönderme, geri alma ve silme sahipler ve yöneticiler içindir."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Yöneticiler mülakat oluşturur ve değiştirir, aday davet eder ve kredi yükler. Görüntüleyiciler mülakatları ve sonuçları görür, raporları paylaşır ve yorum yazar ama başka hiçbir şeyi değiştirmez.",
       "Kartı otomatik yüklemeleri ödeyen bir üyeyi kaldırmak veya görüntüleyici yapmak bu yüklemeleri durdurur.",
-      "Üyeleri yalnızca şirket sahibi ekler, değiştirir ve kaldırır; ekibi şirketteki herkes görür."
+      "Üyeleri yalnızca şirket sahibi ekler, değiştirir ve kaldırır; ekibi şirketteki herkes görür.",
+      "Daveti yalnızca davet edilen e-posta, doğrulandıktan sonra kabul edebilir. Bir şirketin aynı anda 20 bekleyen daveti olabilir ve ilk kredi yüklemesine kadar günde 10 davet gönderebilir."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "Bir adayın kredileri davet edildiğinde ayrılır, yanıt verdiğinde düşülür, vermezse iade edilir.",
+      "Paylaşılabilir bağlantıdan gelen adayların kredileri başladıklarında ayrılır. Bir mülakatı veya adayı silmek, en az bir soruyu yanıtlayan herkesin kredilerini düşer; diğerleri için ayrılan krediler iade edilir.",
       "Bu sayfayı yalnızca sahipler ve yöneticiler görür.",
       "Son 14 günde satın aldığınız ve harcamadığınız kredileri geçmişteki yükleme satırından, Paddle üzerinden veya bize yazarak iade edebilirsiniz. Adaylar için ayrılan krediler ayrılmış durumdayken iade edilemez; bu 14 gün içinde ayrılıp sonrasında geri verilen krediler 7 gün boyunca iade edilebilir kalır.",
       "Önce ücretsiz krediler harcanmış sayılır, harcanmayan kısım ise önce en yeni yüklemeye ait sayılır. Davet ödülü kazandıran bir yüklemenin iadesi, bu ödülü iki şirketten de geri alır. Sahipler ve yöneticiler, Paddle'ın onaylayıp onaylamadığını zil simgesinden, e-postayla ve kapatılmadıysa Slack'te öğrenir."
@@ -548,7 +551,7 @@
     "tips": [
       "Bir sorunun süresi dolduğunda seçili olanlar yine sayılır; hiçbir şey seçilmeden bırakılan veya hiç ulaşılmayan soru yanlış sayılır.",
       "Bu pozisyon için işe alım mı yapıyorsunuz? Bundan kendi adaylarınız için bir mülakat oluşturun.",
-      "İş mi arıyorsunuz? Biten bir denemeden sonra LinkedIn profilinizi girin ve bu konularda işe alım yapan şirketlerin adınızı, profilinizi ve en son pratik sonuçlarınızı görüp sizi davet edebilmesi için \"İş tekliflerine açık\" seçeneğini açın; siz kapatmadıkça bir yıl açık kalır."
+      "İş mi arıyorsunuz? Biten bir denemeden sonra LinkedIn profilinizi girin ve bu konularda işe alım yapan şirketlerin adınızı, profilinizi ve en son süreli pratik sonuçlarınızı görüp sizi davet edebilmesi için \"İş tekliflerine açık\" seçeneğini açın; siz kapatmadıkça bir yıl açık kalır."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Oturum açtıysanız, diğer e-postaları değiştirmek için ardından e-posta ayarlarınızı açın."
     ],
     "tips": [
-      "Ekip davetleri, raporlar ve ödeme sorunları gibi hizmet e-postaları yine gönderilir; bir şirketin e-postalarını durduran bağlantı, o şirketin size gönderdiği davetleri de durdurur."
+      "Ekip davetleri, raporlar ve ödeme sorunları gibi hizmet e-postaları yine gönderilir; bir şirketin e-postalarını durduran bağlantı, o şirketin size gönderdiği davetleri de durdurur.",
+      "Bir şirketin e-postalarını durdurmak size gönderdiği hatırlatmaları da durdurur ve şirket durdurulan daveti teslim edilmemiş olarak görür."
     ]
   }
 }

@@ -3,7 +3,7 @@
     "title": "Cara kerja testee",
     "text": "testee mengubah deskripsi pekerjaanmu menjadi wawancara berbatas waktu, dengan soal acak tersendiri untuk setiap kandidat. Halaman ini menunjukkan semua langkahnya, dari membuat wawancara sampai membagikan hasilnya.",
     "actions": [
-      "Tempel deskripsi pekerjaan di kotak paling atas, atau pilih templat siap pakai; sesuaikan topiknya, dan soalnya ditulis serta diperiksa untukmu.",
+      "Tempel deskripsi pekerjaan di kotak paling atas; templat siap pakai ada di halaman tes dan di tab Templat perusahaan. Sesuaikan topiknya, dan soalnya ditulis serta diperiksa untukmu.",
       "Undang kandidat lewat email, dari file, dengan tautan berbagi di iklan lowonganmu, atau dari ATS-mu, platformmu sendiri, atau asisten AI.",
       "Lihat apa yang dilihat kandidat: wawancara berbatas waktu dengan brand-mu, dijawab dengan klik atau suara.",
       "Baca laporannya: jawaban, nilai, dan tanda integritas setiap kandidat, dibagikan lewat email atau chat dengan sekali klik.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Temukan",
-    "text": "Orang yang berlatih di testee dan memilih terbuka untuk tawaran kerja, yang latihannya mencakup topik wawancara ini di levelnya. Setiap orang ditampilkan dengan nama, profil LinkedIn, dan hasil latihan terbarunya di setiap topik yang cocok. Hanya perusahaan yang sudah isi ulang setidaknya sekali yang melihat tab ini.",
+    "text": "Orang yang berlatih di testee dan memilih terbuka untuk tawaran kerja, yang latihannya mencakup topik wawancara ini di levelnya. Setiap orang ditampilkan dengan nama, profil LinkedIn, dan hasil latihan berwaktu terbarunya di setiap topik yang cocok. Hanya perusahaan yang sudah isi ulang setidaknya sekali yang melihat tab ini.",
     "actions": [
       "Buka profil LinkedIn seseorang untuk mengenalnya lebih jauh.",
       "Undang seseorang ke wawancara ini (pemilik dan admin): undangan dikirim ke email akunnya dan memakai kredit seperti undangan lainnya."
@@ -233,6 +233,7 @@
       "Skor mendukung keputusanmu, bukan menggantikannya. Jika kandidat memintanya, minta seseorang meninjau hasilnya.",
       "Tanda centang di bawah nilai menunjukkan kandidat telah mengonfirmasi, sebelum mulai, bahwa ia akan menjawab sendiri, tanpa alat AI atau bantuan orang lain.",
       "Nilai adalah persentase poin yang diperoleh: setiap soal bernilai satu poin, dan soal \"pilih lebih dari satu jawaban\" memberi sebagian poinnya untuk setiap opsi benar yang dicentang, dan nol jika ada opsi salah yang dicentang.",
+      "Menghapus kandidat yang menjawab setidaknya satu pertanyaan memotong kreditnya; jika tidak, kreditnya dikembalikan.",
       "Waktu tambahan, mode dan nama kandidat, tautan undangan, kirim ulang, pencabutan, dan penghapusan hanya untuk pemilik dan admin."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Admin membuat dan mengubah wawancara, mengundang kandidat, dan mengisi ulang kredit. Pelihat melihat wawancara dan hasil, membagikan laporan, dan menulis catatan, tetapi tidak mengubah hal lain.",
       "Menghapus anggota yang kartunya membayar isi ulang otomatis, atau menjadikannya pelihat, akan menghentikan isi ulang tersebut.",
-      "Hanya pemilik yang menambah, mengubah, dan menghapus anggota; semua orang di perusahaan bisa melihat tim."
+      "Hanya pemilik yang menambah, mengubah, dan menghapus anggota; semua orang di perusahaan bisa melihat tim.",
+      "Hanya email yang diundang, setelah diverifikasi, yang bisa menerima undangan. Perusahaan bisa punya 20 undangan tertunda sekaligus dan, sampai isi ulang pertamanya, mengirim 10 sehari."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "Kredit kandidat dicadangkan saat ia diundang, dipotong setelah ia menjawab, dan dikembalikan jika tidak.",
+      "Kredit kandidat dari tautan yang bisa dibagikan dicadangkan saat mereka mulai. Menghapus wawancara atau kandidat memotong kredit semua yang menjawab setidaknya satu pertanyaan, dan kredit yang dicadangkan untuk yang lain dikembalikan.",
       "Hanya pemilik dan admin yang bisa melihat halaman ini.",
       "Kamu bisa mengembalikan dana kredit yang dibeli dalam 14 hari terakhir dan belum terpakai dari baris isi ulang itu di riwayat, lewat Paddle, atau dengan menulis kepada kami. Kredit yang dicadangkan untuk kandidat tidak bisa dikembalikan selama masih dicadangkan; kredit yang dicadangkan dalam 14 hari itu dan dikembalikan sesudahnya tetap bisa dikembalikan dananya selama 7 hari.",
       "Kredit gratis dihitung terpakai lebih dulu, dan sisa yang belum terpakai dihitung lebih dulu sebagai milik isi ulang terbaru. Pengembalian dana isi ulang yang menghasilkan hadiah referal menarik kembali hadiah itu dari kedua perusahaan. Pemilik dan admin tahu apakah Paddle menyetujuinya di ikon lonceng, lewat email, dan, jika tidak dimatikan, di Slack."
@@ -548,7 +551,7 @@
     "tips": [
       "Apa pun yang sudah kamu pilih saat waktu soal habis tetap dihitung; soal yang tidak dipilih jawabannya, atau tidak sempat dicapai, dihitung salah.",
       "Sedang merekrut untuk posisi ini? Buat wawancara darinya untuk kandidatmu sendiri.",
-      "Sedang cari kerja? Setelah sesi selesai, masukkan profil LinkedIn-mu dan aktifkan Terbuka untuk tawaran kerja agar perusahaan yang merekrut untuk topik ini bisa melihat nama, profil, dan hasil latihan terbarumu serta mengundangmu; pengaturan ini tetap aktif selama setahun kecuali kamu mematikannya."
+      "Sedang cari kerja? Setelah sesi selesai, masukkan profil LinkedIn-mu dan aktifkan Terbuka untuk tawaran kerja agar perusahaan yang merekrut untuk topik ini bisa melihat nama, profil, dan hasil latihan berwaktu terbarumu serta mengundangmu; pengaturan ini tetap aktif selama setahun kecuali kamu mematikannya."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Jika sudah masuk, buka pengaturan emailmu setelah itu untuk mengubah email lainnya."
     ],
     "tips": [
-      "Email layanan, seperti undangan tim, laporan, dan masalah pembayaran, tetap dikirim; tautan yang menghentikan email sebuah perusahaan juga menghentikan undangannya kepadamu."
+      "Email layanan, seperti undangan tim, laporan, dan masalah pembayaran, tetap dikirim; tautan yang menghentikan email sebuah perusahaan juga menghentikan undangannya kepadamu.",
+      "Menghentikan email sebuah perusahaan juga menghentikan pengingatnya kepadamu, dan perusahaan melihat undangan yang dihentikan sebagai tidak terkirim."
     ]
   }
 }

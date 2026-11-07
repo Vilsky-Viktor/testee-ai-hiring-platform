@@ -3,7 +3,7 @@
     "title": "So funktioniert testee",
     "text": "testee macht aus deiner Stellenbeschreibung ein Interview mit Zeitlimit, mit eigenen zufälligen Fragen für jeden Kandidaten. Diese Seite zeigt den ganzen Weg, vom Erstellen eines Interviews bis zum Teilen der Ergebnisse.",
     "actions": [
-      "Füge die Stellenbeschreibung oben in das Feld ein oder wähle eine fertige Vorlage; passe die Themen an, und die Fragen werden für dich geschrieben und geprüft.",
+      "Füge die Stellenbeschreibung oben in das Feld ein; fertige Vorlagen findest du auf der Seite mit den Tests und im Tab „Vorlagen“ eines Unternehmens. Passe die Themen an, und die Fragen werden für dich geschrieben und geprüft.",
       "Lade Kandidaten per E-Mail, aus einer Datei, mit einem teilbaren Link in deiner Stellenanzeige oder über dein ATS, deine eigene Plattform oder einen KI-Assistenten ein.",
       "Sieh, was Kandidaten sehen: ein Interview mit Zeitlimit in deiner Marke, beantwortet per Klick oder per Sprache.",
       "Lies die Berichte: die Antworten, Ergebnisse und Integritätshinweise jedes Kandidaten, mit einem Klick per E-Mail oder Chat geteilt.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Entdecken",
-    "text": "Personen, die auf testee üben und sich entschieden haben, offen für Angebote zu sein, und deren Übungen die Themen dieses Interviews auf seinem Niveau abdecken. Zu jeder Person siehst du den Namen, das LinkedIn-Profil und das neueste Übungsergebnis in jedem passenden Thema. Nur Unternehmen, die mindestens einmal Credits aufgeladen haben, sehen diesen Tab.",
+    "text": "Personen, die auf testee üben und sich entschieden haben, offen für Angebote zu sein, und deren Übungen die Themen dieses Interviews auf seinem Niveau abdecken. Zu jeder Person siehst du den Namen, das LinkedIn-Profil und das neueste Ergebnis einer Übung mit Zeitlimit in jedem passenden Thema. Nur Unternehmen, die mindestens einmal Credits aufgeladen haben, sehen diesen Tab.",
     "actions": [
       "Öffne das LinkedIn-Profil einer Person, um mehr über sie zu erfahren.",
       "Lade eine Person zu diesem Interview ein (Inhaber und Admins): Die Einladung geht an die E-Mail-Adresse ihres Kontos und kostet Credits wie jede Einladung."
@@ -233,6 +233,7 @@
       "Das Ergebnis unterstützt deine Entscheidung, es trifft sie nicht. Wenn der Kandidat darum bittet, lass sein Ergebnis von einer Person prüfen.",
       "Ein Häkchen unter der Note zeigt, dass der Kandidat vor dem Start bestätigt hat, die Fragen selbst zu beantworten, ohne KI-Tools oder andere Personen.",
       "Das Ergebnis ist der Anteil der erreichten Punkte: Jede Frage zählt einen Punkt, und eine Frage mit Mehrfachauswahl bringt einen Teil davon für jede angekreuzte richtige Option, aber nichts, wenn eine falsche angekreuzt ist.",
+      "Wird ein Kandidat gelöscht, der mindestens eine Frage beantwortet hat, werden seine Credits abgebucht; sonst kommen sie zurück.",
       "Zusätzliche Zeit, Modus und Name des Kandidaten, der Einladungslink, erneutes Senden, Widerrufen und Löschen sind Inhabern und Admins vorbehalten."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Admins erstellen und ändern Interviews, laden Kandidaten ein und laden Credits auf. Betrachter sehen Interviews und Ergebnisse, teilen Berichte und schreiben Notizen, ändern aber sonst nichts.",
       "Wenn du ein Mitglied entfernst, dessen Karte das automatische Aufladen bezahlt, oder es zum Betrachter machst, endet das automatische Aufladen.",
-      "Nur der Inhaber fügt Mitglieder hinzu, ändert und entfernt sie; alle im Unternehmen sehen das Team."
+      "Nur der Inhaber fügt Mitglieder hinzu, ändert und entfernt sie; alle im Unternehmen sehen das Team.",
+      "Nur die eingeladene E-Mail-Adresse kann eine Einladung annehmen, sobald sie bestätigt ist. Ein Unternehmen kann 20 offene Einladungen gleichzeitig haben und bis zur ersten Aufladung 10 pro Tag senden."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "Die Credits eines Kandidaten werden bei der Einladung reserviert, abgebucht, sobald er antwortet, und zurückgegeben, wenn nicht.",
+      "Bei Kandidaten über den Link zum Teilen werden die Credits beim Start reserviert. Wird ein Interview oder ein Kandidat gelöscht, werden die Credits aller abgebucht, die mindestens eine Frage beantwortet haben; die für die anderen reservierten kommen zurück.",
       "Nur Inhaber und Admins sehen diese Seite.",
       "Du kannst Credits, die du in den letzten 14 Tagen gekauft und nicht verbraucht hast, in der Zeile der Aufladung im Verlauf erstatten lassen, über Paddle oder indem du uns schreibst. Für Kandidaten reservierte Credits können nicht erstattet werden, solange sie reserviert sind; wurden sie innerhalb der 14 Tage reserviert und danach zurückgegeben, bleiben sie 7 Tage lang erstattungsfähig.",
       "Gratis-Credits gelten als Erstes als verbraucht, und Unverbrauchtes zählt zuerst zur neuesten Aufladung. Die Erstattung einer Aufladung, die eine Empfehlungsprämie eingebracht hat, nimmt diese Prämie beiden Unternehmen wieder weg. Inhaber und Admins erfahren in der Glocke, per E-Mail und, sofern nicht deaktiviert, in Slack, ob Paddle sie genehmigt hat."
@@ -548,7 +551,7 @@
     "tips": [
       "Was du gewählt hast, wenn die Zeit einer Frage abläuft, zählt trotzdem; eine Frage ohne Auswahl oder eine, die du nicht erreicht hast, zählt als falsch.",
       "Du stellst für diese Rolle ein? Erstelle daraus ein Interview für deine eigenen Kandidaten.",
-      "Auf Jobsuche? Gib nach einer abgeschlossenen Runde dein LinkedIn-Profil an und schalte „Offen für Angebote“ ein, damit Unternehmen, die für diese Themen einstellen, deinen Namen, dein Profil und deine neuesten Übungsergebnisse sehen und dich einladen können; es bleibt ein Jahr lang eingeschaltet, sofern du es nicht ausschaltest."
+      "Auf Jobsuche? Gib nach einer abgeschlossenen Runde dein LinkedIn-Profil an und schalte „Offen für Angebote“ ein, damit Unternehmen, die für diese Themen einstellen, deinen Namen, dein Profil und deine neuesten Ergebnisse von Übungen mit Zeitlimit sehen und dich einladen können; es bleibt ein Jahr lang eingeschaltet, sofern du es nicht ausschaltest."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Wenn du angemeldet bist, öffne danach deine E-Mail-Einstellungen, um andere E-Mails zu ändern."
     ],
     "tips": [
-      "Service-E-Mails wie Team-Einladungen, Berichte und Zahlungsprobleme werden weiterhin gesendet; ein Link, der die E-Mails eines Unternehmens stoppt, stoppt auch seine Einladungen an dich."
+      "Service-E-Mails wie Team-Einladungen, Berichte und Zahlungsprobleme werden weiterhin gesendet; ein Link, der die E-Mails eines Unternehmens stoppt, stoppt auch seine Einladungen an dich.",
+      "Wenn du die E-Mails eines Unternehmens stoppst, stoppst du auch seine Erinnerungen an dich, und das Unternehmen sieht eine gestoppte Einladung als nicht zugestellt."
     ]
   }
 }

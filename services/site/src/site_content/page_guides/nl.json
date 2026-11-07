@@ -3,7 +3,7 @@
     "title": "Zo werkt testee",
     "text": "testee maakt van je functieomschrijving een interview met tijdslimiet, met eigen willekeurige vragen voor elke kandidaat. Deze pagina laat het hele proces zien, van het maken van een interview tot het delen van de resultaten.",
     "actions": [
-      "Plak de functieomschrijving in het vak bovenaan of kies een kant-en-klaar sjabloon; pas de onderwerpen aan, en de vragen worden voor je geschreven en gecontroleerd.",
+      "Plak de functieomschrijving in het vak bovenaan; kant-en-klare sjablonen staan op de testpagina en op het tabblad Sjablonen van een bedrijf. Pas de onderwerpen aan, en de vragen worden voor je geschreven en gecontroleerd.",
       "Nodig kandidaten uit per e-mail, vanuit een bestand, met een deelbare link in je vacature, of vanuit je ATS, je eigen platform of een AI-assistent.",
       "Zie wat kandidaten zien: een interview met tijdslimiet in jouw huisstijl, beantwoord met een klik of met je stem.",
       "Lees de rapporten: de antwoorden, scores en integriteitssignalen van elke kandidaat, met één klik gedeeld per e-mail of chat.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Ontdekken",
-    "text": "Mensen die op testee oefenen en ervoor gekozen hebben open te staan voor nieuwe kansen, en van wie de oefeningen de onderwerpen van dit interview op het niveau ervan dekken. Van iedereen zie je de naam, het LinkedIn-profiel en het nieuwste oefenresultaat op elk passend onderwerp. Alleen bedrijven die minstens één keer credits hebben opgewaardeerd, zien dit tabblad.",
+    "text": "Mensen die op testee oefenen en ervoor gekozen hebben open te staan voor nieuwe kansen, en van wie de oefeningen de onderwerpen van dit interview op het niveau ervan dekken. Van iedereen zie je de naam, het LinkedIn-profiel en het nieuwste getimede oefenresultaat op elk passend onderwerp. Alleen bedrijven die minstens één keer credits hebben opgewaardeerd, zien dit tabblad.",
     "actions": [
       "Open iemands LinkedIn-profiel om meer over die persoon te weten te komen.",
       "Nodig iemand uit voor dit interview (eigenaren en beheerders): de uitnodiging gaat naar het e-mailadres van diens account en kost credits zoals elke uitnodiging."
@@ -233,6 +233,7 @@
       "De score ondersteunt je beslissing, maar neemt die niet. Als de kandidaat erom vraagt, laat dan een mens het resultaat beoordelen.",
       "Een vinkje onder het cijfer laat zien dat de kandidaat voor het begin heeft bevestigd de vragen zelf te beantwoorden, zonder AI-tools of hulp van anderen.",
       "De score is het percentage behaalde punten: elke vraag is één punt waard, en een vraag waarbij je alle juiste opties aanvinkt levert een deel daarvan op voor elke aangevinkte juiste optie, en niets als er een foute is aangevinkt.",
+      "Verwijder je een kandidaat die minstens één vraag heeft beantwoord, dan worden diens credits afgeschreven; anders komen ze terug.",
       "Extra tijd, de modus en naam van de kandidaat, de uitnodigingslink, opnieuw sturen, intrekken en verwijderen zijn voor eigenaren en beheerders."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Beheerders maken en wijzigen interviews, nodigen kandidaten uit en waarderen op. Kijkers zien interviews en resultaten, delen rapporten en schrijven notities, maar wijzigen verder niets.",
       "Als je een lid verwijdert wiens kaart het automatisch opwaarderen betaalt, of diegene kijker maakt, stopt het automatisch opwaarderen.",
-      "Alleen de eigenaar voegt leden toe, wijzigt en verwijdert ze; iedereen in het bedrijf ziet het team."
+      "Alleen de eigenaar voegt leden toe, wijzigt en verwijdert ze; iedereen in het bedrijf ziet het team.",
+      "Alleen het uitgenodigde e-mailadres kan een uitnodiging accepteren, zodra het is geverifieerd. Een bedrijf kan 20 openstaande uitnodigingen tegelijk hebben en tot de eerste opwaardering 10 per dag versturen."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "De credits van een kandidaat worden gereserveerd bij de uitnodiging, afgeschreven zodra die antwoordt en teruggegeven als dat niet gebeurt.",
+      "De credits van kandidaten via de deelbare link worden gereserveerd zodra ze beginnen. Verwijder je een interview of kandidaat, dan worden de credits afgeschreven van iedereen die minstens één vraag heeft beantwoord; die voor de anderen zijn gereserveerd komen terug.",
       "Alleen eigenaren en beheerders zien deze pagina.",
       "Je kunt credits die je in de afgelopen 14 dagen hebt gekocht en niet hebt gebruikt, laten terugbetalen via de regel van de opwaardering in de geschiedenis, via Paddle of door ons te schrijven. Credits die voor kandidaten zijn gereserveerd, kunnen niet worden terugbetaald zolang ze gereserveerd zijn; gereserveerd binnen de 14 dagen en daarna teruggegeven, blijven ze 7 dagen terugbetaalbaar.",
       "Gratis credits tellen als eerst gebruikt, en wat niet is gebruikt telt als eerst afkomstig van de nieuwste opwaardering. Een terugbetaling van een opwaardering die een doorverwijsbeloning opleverde, neemt die beloning bij beide bedrijven terug. Eigenaren en beheerders horen bij het belletje, per e-mail en, tenzij uitgeschakeld, in Slack of Paddle die heeft goedgekeurd."
@@ -548,7 +551,7 @@
     "tips": [
       "Wat je had aangevinkt toen de tijd van een vraag op was, telt gewoon mee; een vraag zonder iets aangevinkt, of die je nooit hebt bereikt, telt als fout.",
       "Werf je voor deze functie? Maak er een interview van voor je eigen kandidaten.",
-      "Op zoek naar een baan? Vul na een afgeronde ronde je LinkedIn-profiel in en zet Open voor nieuwe kansen aan, zodat bedrijven die voor deze onderwerpen werven je naam, je profiel en je nieuwste oefenresultaten zien en je kunnen uitnodigen; het blijft een jaar aan, tenzij je het uitzet."
+      "Op zoek naar een baan? Vul na een afgeronde ronde je LinkedIn-profiel in en zet Open voor nieuwe kansen aan, zodat bedrijven die voor deze onderwerpen werven je naam, je profiel en je nieuwste getimede oefenresultaten zien en je kunnen uitnodigen; het blijft een jaar aan, tenzij je het uitzet."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Als je bent ingelogd, open je daarna je e-mailinstellingen om andere e-mails te wijzigen."
     ],
     "tips": [
-      "Service-e-mails, zoals teamuitnodigingen, rapporten en betalingsproblemen, worden nog steeds verstuurd; een link die de e-mails van een bedrijf stopt, stopt ook zijn uitnodigingen aan jou."
+      "Service-e-mails, zoals teamuitnodigingen, rapporten en betalingsproblemen, worden nog steeds verstuurd; een link die de e-mails van een bedrijf stopt, stopt ook zijn uitnodigingen aan jou.",
+      "Als je de e-mails van een bedrijf stopt, stop je ook zijn herinneringen aan jou, en het bedrijf ziet een gestopte uitnodiging als niet bezorgd."
     ]
   }
 }

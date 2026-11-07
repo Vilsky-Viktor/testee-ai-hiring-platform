@@ -3,7 +3,7 @@
     "title": "testee hoạt động thế nào",
     "text": "testee biến mô tả công việc của bạn thành một buổi phỏng vấn có giới hạn thời gian, mỗi ứng viên nhận bộ câu hỏi ngẫu nhiên riêng. Trang này giới thiệu toàn bộ quy trình, từ tạo buổi phỏng vấn đến chia sẻ kết quả.",
     "actions": [
-      "Dán mô tả công việc vào ô ở đầu trang, hoặc chọn một mẫu có sẵn; điều chỉnh các chủ đề, câu hỏi sẽ được soạn và kiểm tra giúp bạn.",
+      "Dán mô tả công việc vào ô ở đầu trang; các mẫu có sẵn nằm ở trang bài kiểm tra và tab Mẫu của công ty. Điều chỉnh các chủ đề, câu hỏi sẽ được soạn và kiểm tra giúp bạn.",
       "Mời ứng viên qua email, từ tệp, bằng liên kết chia sẻ trong tin tuyển dụng, hoặc từ ATS, nền tảng của riêng bạn hay trợ lý AI.",
       "Xem những gì ứng viên thấy: một buổi phỏng vấn có giới hạn thời gian mang thương hiệu của bạn, trả lời bằng cú nhấp hoặc bằng giọng nói.",
       "Xem báo cáo: câu trả lời, điểm và cảnh báo hành vi bất thường của mọi ứng viên, chia sẻ qua email hoặc chat chỉ với một cú nhấp.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Khám phá",
-    "text": "Những người luyện tập trên testee và đã chọn sẵn sàng nhận cơ hội việc làm, có phần luyện tập bao quát các chủ đề của buổi phỏng vấn này ở đúng cấp độ của nó. Mỗi người hiện tên, hồ sơ LinkedIn và kết quả luyện tập mới nhất ở từng chủ đề khớp. Chỉ những công ty đã nạp credit ít nhất một lần mới thấy thẻ này.",
+    "text": "Những người luyện tập trên testee và đã chọn sẵn sàng nhận cơ hội việc làm, có phần luyện tập bao quát các chủ đề của buổi phỏng vấn này ở đúng cấp độ của nó. Mỗi người hiện tên, hồ sơ LinkedIn và kết quả luyện tập có tính giờ mới nhất ở từng chủ đề khớp. Chỉ những công ty đã nạp credit ít nhất một lần mới thấy thẻ này.",
     "actions": [
       "Mở hồ sơ LinkedIn của một người để tìm hiểu thêm về họ.",
       "Mời một người tham gia buổi phỏng vấn này (chủ sở hữu và quản trị viên): lời mời được gửi đến email tài khoản của họ và tốn credit như mọi lời mời khác."
@@ -233,6 +233,7 @@
       "Điểm hỗ trợ quyết định của bạn chứ không thay bạn quyết định. Nếu ứng viên yêu cầu, hãy để một người xem xét lại kết quả của họ.",
       "Dấu tích dưới điểm cho thấy ứng viên đã xác nhận trước khi bắt đầu rằng sẽ tự trả lời, không dùng công cụ AI hay nhờ người khác.",
       "Điểm là tỷ lệ phần trăm điểm đạt được: mỗi câu hỏi có một điểm, câu \"chọn nhiều phương án\" được một phần điểm cho mỗi đáp án đúng đã chọn, và không được điểm nào nếu chọn một đáp án sai.",
+      "Xóa ứng viên đã trả lời ít nhất một câu hỏi sẽ trừ credit; nếu không, credit được hoàn lại.",
       "Thời gian thêm, chế độ và tên của ứng viên, liên kết mời, gửi lại, thu hồi và xóa dành cho chủ sở hữu và quản trị viên."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Quản trị viên tạo và thay đổi buổi phỏng vấn, mời ứng viên và nạp credit. Người xem thấy buổi phỏng vấn và kết quả, chia sẻ báo cáo và viết ghi chú, nhưng không thay đổi được gì khác.",
       "Xóa thành viên có thẻ đang dùng để tự động nạp, hoặc chuyển họ thành người xem, sẽ dừng việc tự động nạp.",
-      "Chỉ chủ sở hữu mới thêm, thay đổi và xóa thành viên; mọi người trong công ty đều thấy nhóm."
+      "Chỉ chủ sở hữu mới thêm, thay đổi và xóa thành viên; mọi người trong công ty đều thấy nhóm.",
+      "Chỉ email được mời, sau khi xác minh, mới có thể chấp nhận lời mời. Một công ty có thể có 20 lời mời đang chờ cùng lúc và, cho đến lần nạp đầu tiên, gửi 10 lời mời mỗi ngày."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "Credit cho một ứng viên được giữ lại khi mời, bị trừ khi ứng viên trả lời và được hoàn lại nếu không.",
+      "Ứng viên từ liên kết chia sẻ được giữ credit khi bắt đầu. Xóa một buổi phỏng vấn hoặc ứng viên sẽ trừ credit của mọi người đã trả lời ít nhất một câu hỏi, còn credit giữ cho những người khác được hoàn lại.",
       "Chỉ chủ sở hữu và quản trị viên thấy trang này.",
       "Bạn có thể hoàn tiền cho credit đã mua trong 14 ngày qua và chưa dùng, ngay tại dòng của lần nạp đó trong lịch sử, qua Paddle hoặc bằng cách viết cho chúng tôi. Credit giữ chỗ cho ứng viên không thể được hoàn tiền trong thời gian giữ chỗ; credit giữ chỗ trong 14 ngày đó và được trả lại sau đó vẫn được hoàn tiền trong 7 ngày.",
       "Credit miễn phí được tính là dùng trước, và phần chưa dùng được tính trước hết là của lần nạp mới nhất. Hoàn tiền cho lần nạp đã mang lại thưởng giới thiệu sẽ thu hồi khoản thưởng đó từ cả hai công ty. Chủ sở hữu và quản trị viên biết Paddle có duyệt hay không ở biểu tượng chuông, qua email và, nếu không tắt, trong Slack."
@@ -548,7 +551,7 @@
     "tips": [
       "Những gì bạn đã chọn khi hết giờ của câu hỏi vẫn được tính; câu hỏi chưa chọn gì, hoặc chưa làm tới, bị tính là sai.",
       "Đang tuyển cho vị trí này? Tạo buổi phỏng vấn từ đây cho ứng viên của bạn.",
-      "Đang tìm việc? Sau khi hoàn thành một lượt, hãy nhập hồ sơ LinkedIn và bật Sẵn sàng nhận cơ hội việc làm để các công ty tuyển dụng cho những chủ đề này thấy tên, hồ sơ và kết quả luyện tập mới nhất của bạn và mời bạn; tùy chọn này bật trong một năm trừ khi bạn tắt."
+      "Đang tìm việc? Sau khi hoàn thành một lượt, hãy nhập hồ sơ LinkedIn và bật Sẵn sàng nhận cơ hội việc làm để các công ty tuyển dụng cho những chủ đề này thấy tên, hồ sơ và kết quả luyện tập có tính giờ mới nhất của bạn và mời bạn; tùy chọn này bật trong một năm trừ khi bạn tắt."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Khi đã đăng nhập, sau đó mở cài đặt email để thay đổi các email khác."
     ],
     "tips": [
-      "Email dịch vụ, như lời mời vào nhóm, báo cáo và sự cố thanh toán, vẫn được gửi; liên kết dừng email của một công ty cũng dừng các lời mời của công ty đó gửi đến bạn."
+      "Email dịch vụ, như lời mời vào nhóm, báo cáo và sự cố thanh toán, vẫn được gửi; liên kết dừng email của một công ty cũng dừng các lời mời của công ty đó gửi đến bạn.",
+      "Dừng email của một công ty cũng dừng các lời nhắc của công ty đó gửi đến bạn, và công ty sẽ thấy lời mời bị dừng là chưa gửi được."
     ]
   }
 }

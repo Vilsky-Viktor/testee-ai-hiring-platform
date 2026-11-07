@@ -3,7 +3,7 @@
     "title": "Como a testee funciona",
     "text": "A testee transforma a descrição da vaga em uma entrevista cronometrada, com questões aleatórias próprias para cada candidato. Esta página mostra todo o processo, da criação de uma entrevista ao compartilhamento dos resultados.",
     "actions": [
-      "Cole a descrição da vaga na caixa no topo ou escolha um modelo pronto; ajuste os tópicos, e as questões são escritas e verificadas para você.",
+      "Cole a descrição da vaga na caixa no topo; os modelos prontos estão na página de testes e na aba Modelos de uma empresa. Ajuste os tópicos, e as questões são escritas e verificadas para você.",
       "Convide candidatos por e-mail, a partir de um arquivo, com um link compartilhável no seu anúncio de vaga, ou pelo seu ATS, pela sua própria plataforma ou por um assistente de IA.",
       "Veja o que os candidatos veem: uma entrevista cronometrada com a sua marca, respondida com um clique ou por voz.",
       "Leia os relatórios: as respostas, as notas e os alertas de integridade de cada candidato, compartilhados por e-mail ou chat com um clique.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Descobrir",
-    "text": "Pessoas que praticam na testee e escolheram ficar abertas a propostas, cuja prática cobre os temas desta entrevista no nível dela. Para cada uma aparecem o nome, o perfil do LinkedIn e o resultado de prática mais recente em cada tema correspondente. Só as empresas que recarregaram créditos pelo menos uma vez veem esta aba.",
+    "text": "Pessoas que praticam na testee e escolheram ficar abertas a propostas, cuja prática cobre os temas desta entrevista no nível dela. Para cada uma aparecem o nome, o perfil do LinkedIn e o resultado de prática cronometrada mais recente em cada tema correspondente. Só as empresas que recarregaram créditos pelo menos uma vez veem esta aba.",
     "actions": [
       "Abra o perfil do LinkedIn de alguém para saber mais sobre a pessoa.",
       "Convide alguém para esta entrevista (proprietários e administradores): o convite vai para o e-mail da conta da pessoa e custa créditos como qualquer convite."
@@ -233,6 +233,7 @@
       "A pontuação apoia sua decisão, mas não decide por você. Se o candidato pedir, peça que uma pessoa revise o resultado dele.",
       "Uma marca de seleção abaixo da nota mostra que o candidato confirmou, antes de começar, que responderia por conta própria, sem ferramentas de IA nem ajuda de outras pessoas.",
       "A nota é a porcentagem de pontos obtidos: cada pergunta vale um ponto, e uma de \"escolha várias opções\" dá uma parte dele por opção correta marcada, e nada se uma errada for marcada.",
+      "Ao excluir um candidato que respondeu a pelo menos uma pergunta, os créditos são cobrados; caso contrário, são devolvidos.",
       "Tempo extra, modo e nome do candidato, link de convite, reenvio, revogação e exclusão são para proprietários e administradores."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Administradores criam e alteram entrevistas, convidam candidatos e recarregam créditos. Visualizadores veem entrevistas e resultados, compartilham relatórios e escrevem anotações, mas não alteram mais nada.",
       "Remover um membro cujo cartão paga as recargas automáticas, ou torná-lo visualizador, interrompe essas recargas.",
-      "Só o proprietário adiciona, altera e remove membros; todos na empresa veem a equipe."
+      "Só o proprietário adiciona, altera e remove membros; todos na empresa veem a equipe.",
+      "Só o e-mail convidado, depois de verificado, pode aceitar um convite. Uma empresa pode ter 20 convites pendentes ao mesmo tempo e, até a primeira recarga, enviar 10 por dia."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "Os créditos de um candidato são reservados quando ele é convidado, cobrados quando ele responde e devolvidos se não responder.",
+      "Os créditos dos candidatos do link compartilhável são reservados quando eles começam. Ao excluir uma entrevista ou um candidato, os créditos de todos que responderam a pelo menos uma pergunta são cobrados, e os reservados para os demais são devolvidos.",
       "Só proprietários e administradores veem esta página.",
       "Você pode reembolsar créditos comprados nos últimos 14 dias e não gastos na linha da recarga no histórico, pela Paddle ou escrevendo para nós. Créditos reservados para candidatos não podem ser reembolsados enquanto estiverem reservados; reservados dentro dos 14 dias e devolvidos depois deles, continuam reembolsáveis por 7 dias.",
       "Os créditos gratuitos contam como gastos primeiro, e o que não foi gasto conta primeiro como da recarga mais recente. O reembolso de uma recarga que gerou uma recompensa por indicação retira essa recompensa das duas empresas. Proprietários e administradores ficam sabendo se a Paddle o aprovou no sino, por e-mail e, a menos que esteja desativado, no Slack."
@@ -548,7 +551,7 @@
     "tips": [
       "O que você marcou quando o tempo de uma questão acaba conta mesmo assim; uma questão sem nada marcado, ou que você não chegou a ver, conta como errada.",
       "Está contratando para este cargo? Crie a partir dela uma entrevista para seus próprios candidatos.",
-      "Procurando emprego? Depois de uma rodada concluída, informe seu perfil do LinkedIn e ative Aberto a propostas para que empresas que contratam para esses temas vejam seu nome, seu perfil e seus resultados de prática mais recentes e possam convidar você; fica ativado por um ano, a menos que você desative."
+      "Procurando emprego? Depois de uma rodada concluída, informe seu perfil do LinkedIn e ative Aberto a propostas para que empresas que contratam para esses temas vejam seu nome, seu perfil e seus resultados de prática cronometrada mais recentes e possam convidar você; fica ativado por um ano, a menos que você desative."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Com a sessão iniciada, abra depois suas configurações de e-mail para alterar outros e-mails."
     ],
     "tips": [
-      "E-mails de serviço, como convites para a equipe, relatórios e problemas de pagamento, continuam sendo enviados; um link que interrompe os e-mails de uma empresa também interrompe os convites dela para você."
+      "E-mails de serviço, como convites para a equipe, relatórios e problemas de pagamento, continuam sendo enviados; um link que interrompe os e-mails de uma empresa também interrompe os convites dela para você.",
+      "Interromper os e-mails de uma empresa também interrompe os lembretes dela para você, e a empresa vê o convite interrompido como não entregue."
     ]
   }
 }

@@ -3,7 +3,7 @@
     "title": "Cómo funciona testee",
     "text": "testee convierte tu descripción del puesto en una entrevista cronometrada, con preguntas aleatorias propias para cada candidato. Esta página recorre todo el proceso, desde crear una entrevista hasta compartir los resultados.",
     "actions": [
-      "Pega la descripción del puesto en el cuadro de arriba o elige una plantilla lista; ajusta los temas, y las preguntas se escriben y revisan por ti.",
+      "Pega la descripción del puesto en el cuadro de arriba; las plantillas listas están en la página de tests y en la pestaña Plantillas de una empresa. Ajusta los temas, y las preguntas se escriben y revisan por ti.",
       "Invita a candidatos por correo, desde un archivo, con un enlace para compartir en tu oferta de empleo, o desde tu ATS, tu propia plataforma o un asistente de IA.",
       "Mira lo que ven los candidatos: una entrevista cronometrada con tu marca, que se responde con un clic o por voz.",
       "Lee los informes: las respuestas, las notas y las alertas de integridad de cada candidato, compartidas por correo o chat con un clic.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Descubrir",
-    "text": "Personas que practican en testee y eligieron estar abiertas a ofertas, cuya práctica cubre los temas de esta entrevista a su nivel. De cada una se muestra su nombre, su perfil de LinkedIn y su último resultado de práctica en cada tema que coincide. Solo las empresas que han recargado créditos al menos una vez ven esta pestaña.",
+    "text": "Personas que practican en testee y eligieron estar abiertas a ofertas, cuya práctica cubre los temas de esta entrevista a su nivel. De cada una se muestra su nombre, su perfil de LinkedIn y su último resultado de práctica cronometrada en cada tema que coincide. Solo las empresas que han recargado créditos al menos una vez ven esta pestaña.",
     "actions": [
       "Abre el perfil de LinkedIn de alguien para saber más sobre esa persona.",
       "Invita a alguien a esta entrevista (propietarios y administradores): la invitación llega al correo de su cuenta y cuesta créditos como cualquier invitación."
@@ -233,6 +233,7 @@
       "La puntuación apoya tu decisión; no la toma por ti. Si el candidato lo pide, haz que una persona revise su resultado.",
       "Una marca bajo la nota indica que el candidato confirmó, antes de empezar, que respondería por su cuenta, sin herramientas de IA ni ayuda de otras personas.",
       "La nota es el porcentaje de puntos obtenidos: cada pregunta vale un punto, y una de «elige varias opciones» da una parte por cada opción correcta marcada, y nada si se marca una incorrecta.",
+      "Al eliminar a un candidato que respondió al menos una pregunta, sus créditos se cobran; si no, se devuelven.",
       "El tiempo extra, el modo y el nombre del candidato, el enlace de invitación, reenviar, revocar y eliminar son para propietarios y administradores."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Los administradores crean y cambian entrevistas, invitan a candidatos y recargan créditos. Los lectores ven entrevistas y resultados, comparten informes y escriben comentarios, pero no cambian nada más.",
       "Si quitas a un miembro cuya tarjeta paga las recargas automáticas, o lo conviertes en lector, esas recargas se detienen.",
-      "Solo el propietario añade, cambia y quita miembros; todos en la empresa ven el equipo."
+      "Solo el propietario añade, cambia y quita miembros; todos en la empresa ven el equipo.",
+      "Solo el correo invitado, una vez verificado, puede aceptar una invitación. Una empresa puede tener 20 invitaciones pendientes a la vez y, hasta su primera recarga, enviar 10 al día."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "Los créditos de un candidato se reservan al invitarlo, se cobran cuando responde y se devuelven si no lo hace.",
+      "Los créditos de los candidatos del enlace para compartir se reservan al empezar. Al eliminar una entrevista o un candidato, se cobran los créditos de todos los que respondieron al menos una pregunta, y los reservados para los demás se devuelven.",
       "Solo los propietarios y administradores ven esta página.",
       "Puedes reembolsar los créditos que compraste en los últimos 14 días y no has gastado desde la fila de la recarga en el historial, a través de Paddle o escribiéndonos. Los créditos reservados para candidatos no se pueden reembolsar mientras estén reservados; si se reservaron dentro de los 14 días y se devolvieron después, siguen siendo reembolsables durante 7 días.",
       "Los créditos gratuitos cuentan como gastados primero, y lo no gastado cuenta primero como de la recarga más reciente. El reembolso de una recarga que generó una recompensa por recomendación retira esa recompensa a ambas empresas. Los propietarios y administradores saben si Paddle lo aprobó en la campana, por correo electrónico y, salvo que lo hayan desactivado, en Slack."
@@ -548,7 +551,7 @@
     "tips": [
       "Lo que hayas marcado cuando se acaba el tiempo de una pregunta cuenta igualmente; una pregunta sin nada marcado, o a la que no llegaste, cuenta como incorrecta.",
       "¿Contratas para este puesto? Crea a partir de ella una entrevista para tus propios candidatos.",
-      "¿Buscas trabajo? Tras una ronda terminada, indica tu perfil de LinkedIn y activa Abierto a ofertas para que las empresas que contratan para estos temas vean tu nombre, tu perfil y tus últimos resultados de práctica y puedan invitarte; sigue activado un año, salvo que lo desactives."
+      "¿Buscas trabajo? Tras una ronda terminada, indica tu perfil de LinkedIn y activa Abierto a ofertas para que las empresas que contratan para estos temas vean tu nombre, tu perfil y tus últimos resultados de práctica cronometrada y puedan invitarte; sigue activado un año, salvo que lo desactives."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Con la sesión iniciada, abre después tus ajustes de correo para cambiar otros correos."
     ],
     "tips": [
-      "Los correos de servicio, como invitaciones al equipo, informes y problemas de pago, se siguen enviando; un enlace que detiene los correos de una empresa también detiene sus invitaciones para ti."
+      "Los correos de servicio, como invitaciones al equipo, informes y problemas de pago, se siguen enviando; un enlace que detiene los correos de una empresa también detiene sus invitaciones para ti.",
+      "Al detener los correos de una empresa también se detienen sus recordatorios para ti, y la empresa ve la invitación detenida como no entregada."
     ]
   }
 }

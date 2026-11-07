@@ -3,7 +3,7 @@
     "title": "Come funziona testee",
     "text": "testee trasforma la descrizione del ruolo in un colloquio a tempo, con domande casuali diverse per ogni candidato. Questa pagina mostra tutto il percorso, dalla creazione di un colloquio alla condivisione dei risultati.",
     "actions": [
-      "Incolla la descrizione del ruolo nel riquadro in alto, oppure scegli un modello pronto; regola gli argomenti, e le domande vengono scritte e verificate per te.",
+      "Incolla la descrizione del ruolo nel riquadro in alto; i modelli pronti sono nella pagina dei test e nella scheda Modelli di un'azienda. Regola gli argomenti, e le domande vengono scritte e verificate per te.",
       "Invita i candidati via email, da un file, con un link condivisibile nel tuo annuncio di lavoro, oppure dal tuo ATS, dalla tua piattaforma o da un assistente IA.",
       "Guarda ciò che vedono i candidati: un colloquio a tempo con il tuo brand, a cui si risponde con un clic o a voce.",
       "Leggi i report: le risposte, i punteggi e le segnalazioni di integrità di ogni candidato, condivisi via email o in chat con un clic.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Scopri",
-    "text": "Persone che si esercitano su testee e hanno scelto di essere aperte a nuove opportunità, le cui simulazioni coprono gli argomenti di questo colloquio al suo livello. Per ognuna vedi il nome, il profilo LinkedIn e l'ultimo risultato della simulazione in ogni argomento corrispondente. Solo le aziende che hanno ricaricato crediti almeno una volta vedono questa scheda.",
+    "text": "Persone che si esercitano su testee e hanno scelto di essere aperte a nuove opportunità, le cui simulazioni coprono gli argomenti di questo colloquio al suo livello. Per ognuna vedi il nome, il profilo LinkedIn e l'ultimo risultato della simulazione a tempo in ogni argomento corrispondente. Solo le aziende che hanno ricaricato crediti almeno una volta vedono questa scheda.",
     "actions": [
       "Apri il profilo LinkedIn di una persona per saperne di più.",
       "Invita una persona a questo colloquio (proprietari e amministratori): l'invito arriva all'email del suo account e costa crediti come qualsiasi invito."
@@ -233,6 +233,7 @@
       "Il punteggio supporta la tua decisione, non la prende al posto tuo. Se il candidato lo chiede, fai rivedere il suo risultato da una persona.",
       "Un segno di spunta sotto il voto indica che il candidato ha confermato, prima di iniziare, che avrebbe risposto in autonomia, senza strumenti di IA né l'aiuto di altre persone.",
       "Il punteggio è la percentuale di punti ottenuti: ogni domanda vale un punto, e una domanda in cui selezionare tutte le risposte corrette ne dà una parte per ogni opzione corretta selezionata, e niente se ne è selezionata una sbagliata.",
+      "Eliminando un candidato che ha risposto ad almeno una domanda, i suoi crediti vengono addebitati; altrimenti vengono restituiti.",
       "Tempo extra, modalità e nome del candidato, link d'invito, reinvio, revoca ed eliminazione spettano a proprietari e amministratori."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Gli amministratori creano e modificano i colloqui, invitano i candidati e ricaricano i crediti. I visualizzatori vedono colloqui e risultati, condividono i report e scrivono note, ma non modificano nient'altro.",
       "Rimuovere un membro la cui carta paga le ricariche automatiche, o renderlo visualizzatore, interrompe quelle ricariche.",
-      "Solo il proprietario aggiunge, modifica e rimuove i membri; tutti nell'azienda vedono il team."
+      "Solo il proprietario aggiunge, modifica e rimuove i membri; tutti nell'azienda vedono il team.",
+      "Solo l'email invitata, una volta verificata, può accettare un invito. Un'azienda può avere 20 inviti in sospeso alla volta e, fino alla prima ricarica, inviarne 10 al giorno."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "I crediti di un candidato vengono riservati quando lo inviti, addebitati quando risponde e restituiti se non risponde.",
+      "I crediti dei candidati dal link condivisibile vengono riservati quando iniziano. Eliminando un colloquio o un candidato, i crediti di chiunque abbia risposto ad almeno una domanda vengono addebitati, e quelli riservati agli altri vengono restituiti.",
       "Solo proprietari e amministratori vedono questa pagina.",
       "Puoi farti rimborsare i crediti acquistati negli ultimi 14 giorni e non spesi dalla riga della ricarica nello storico, tramite Paddle o scrivendoci. I crediti riservati ai candidati non possono essere rimborsati finché restano riservati; se riservati entro i 14 giorni e restituiti dopo, restano rimborsabili per 7 giorni.",
       "I crediti gratuiti contano come spesi per primi, e quelli non spesi contano prima come parte della ricarica più recente. Il rimborso di una ricarica che ha fatto ottenere un premio referral toglie quel premio a entrambe le aziende. Proprietari e amministratori sanno se Paddle l'ha approvato nella campanella, via email e, se non disattivato, su Slack."
@@ -548,7 +551,7 @@
     "tips": [
       "Quello che hai selezionato quando scade il tempo di una domanda conta comunque; una domanda senza nulla selezionato, o mai raggiunta, conta come sbagliata.",
       "Assumi per questo ruolo? Crea da qui un colloquio per i tuoi candidati.",
-      "Cerchi lavoro? Dopo una simulazione finita, inserisci il tuo profilo LinkedIn e attiva Aperto a nuove opportunità per permettere alle aziende che assumono per questi argomenti di vedere il tuo nome, il tuo profilo e i risultati delle tue ultime simulazioni e di invitarti; resta attivo per un anno, se non lo disattivi."
+      "Cerchi lavoro? Dopo una simulazione finita, inserisci il tuo profilo LinkedIn e attiva Aperto a nuove opportunità per permettere alle aziende che assumono per questi argomenti di vedere il tuo nome, il tuo profilo e i risultati delle tue ultime simulazioni a tempo e di invitarti; resta attivo per un anno, se non lo disattivi."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Con l'accesso effettuato, poi apri le impostazioni email per modificare le altre email."
     ],
     "tips": [
-      "Le email di servizio, come gli inviti al team, i report e i problemi di pagamento, continuano ad arrivare; un link che blocca le email di un'azienda blocca anche i suoi inviti a te."
+      "Le email di servizio, come gli inviti al team, i report e i problemi di pagamento, continuano ad arrivare; un link che blocca le email di un'azienda blocca anche i suoi inviti a te.",
+      "Bloccare le email di un'azienda blocca anche i suoi promemoria a te, e l'azienda vede l'invito bloccato come non consegnato."
     ]
   }
 }

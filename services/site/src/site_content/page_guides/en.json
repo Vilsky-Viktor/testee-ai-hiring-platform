@@ -3,7 +3,7 @@
     "title": "How testee works",
     "text": "testee turns your job description into a timed interview, with its own random questions for every candidate. This page walks through it, from creating an interview to sharing the results.",
     "actions": [
-      "Paste the job description in the box at the top, or pick a ready template; adjust the topics, and the questions are written and checked for you.",
+      "Paste the job description in the box at the top; ready templates are on the tests page and in a company's Templates tab. Adjust the topics, and the questions are written and checked for you.",
       "Invite candidates by email, from a file, with a share link in your job ad, or from your ATS, your own platform or an AI assistant.",
       "See what candidates see: a timed interview in your brand, answered with a click or by voice.",
       "Read the reports: every candidate's answers, grades and integrity signals, shared by email or chat in a click.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Discover",
-    "text": "People who practise on testee and chose to be open to offers, whose practice covers this interview's subjects at its level. Each shows their name, LinkedIn profile and latest practice result on each matching subject. Only companies that have topped up at least once see this tab.",
+    "text": "People who practise on testee and chose to be open to offers, whose practice covers this interview's subjects at its level. Each shows their name, LinkedIn profile and latest timed practice result on each matching subject. Only companies that have topped up at least once see this tab.",
     "actions": [
       "Open someone's LinkedIn profile to learn more about them.",
       "Invite someone to this interview (owners and admins): it goes to their account's email and costs credits like any invite."
@@ -233,6 +233,7 @@
       "The score supports your decision; it doesn't make it. If the candidate asks, have a person review their result.",
       "A check mark under the grade shows the candidate confirmed, before starting, that they'd answer on their own, without AI tools or other people.",
       "A grade is the percentage of points earned: each question is worth one point, and a \"pick multiple options\" question earns part of it for each right option ticked, and nothing if a wrong one is ticked.",
+      "Deleting a candidate who answered at least one question charges their credits; otherwise they come back.",
       "Extra time, the candidate's mode and name, the invite link, resending, revoking and deleting are for owners and admins."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Admins create and change interviews, invite candidates and top up. Viewers see interviews and results, share reports and write notes, but change nothing else.",
       "Removing a member whose card pays for automatic top-ups, or making them a viewer, stops those top-ups.",
-      "Only the owner adds, changes and removes members; everyone in the company sees the team."
+      "Only the owner adds, changes and removes members; everyone in the company sees the team.",
+      "Only the invited email, once verified, can accept an invite. A company can have 20 invites waiting at a time and, until its first top-up, send 10 a day."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "A candidate's credits are reserved when they're invited, charged once they answer, and given back if they don't.",
+      "Candidates from the shareable link reserve credits when they start. Deleting an interview or a candidate charges the credits of everyone who answered at least one question; those held for the others come back.",
       "Only owners and admins see this page.",
       "You can refund credits you bought in the last 14 days and haven't spent from the top-up's row in the history, through Paddle or by writing to us. Credits reserved for candidates can't be refunded while reserved; reserved within the 14 days and given back after them, they stay refundable for 7 days.",
       "Free credits count as spent first, and what's unspent counts as the newest top-up's first. A refund of a top-up that earned a referral reward takes that reward back from both companies. Owners and admins hear whether Paddle approved it in the bell, by email and, unless turned off, in Slack."
@@ -548,7 +551,7 @@
     "tips": [
       "Whatever you picked when a question's time runs out still counts; a question left with nothing picked, or never reached, counts as wrong.",
       "Hiring for this role? Create an interview from it for your own candidates.",
-      "Looking for a job? After a finished round, enter your LinkedIn profile and turn on Open to offers to let companies hiring for these subjects see your name, profile and latest practice results and invite you; it stays on for a year unless you turn it off."
+      "Looking for a job? After a finished round, enter your LinkedIn profile and turn on Open to offers to let companies hiring for these subjects see your name, profile and latest timed practice results and invite you; it stays on for a year unless you turn it off."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Signed in, open your email settings afterwards to change other emails."
     ],
     "tips": [
-      "Service emails, such as team invites, reports and billing problems, still go out; a link that stops a company's emails also stops its invites to you."
+      "Service emails, such as team invites, reports and billing problems, still go out; a link that stops a company's emails also stops its invites to you.",
+      "Stopping a company's emails also stops its reminders to you, and the company sees a stopped invite as undelivered."
     ]
   }
 }

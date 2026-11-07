@@ -3,7 +3,7 @@
     "title": "Paano gumagana ang testee",
     "text": "Ginagawa ng testee ang iyong job description na isang interview na may oras, na may sariling random na mga tanong para sa bawat aplikante. Ipinapakita ng page na ito ang buong proseso, mula sa paggawa ng interview hanggang sa pag-share ng mga resulta.",
     "actions": [
-      "I-paste ang job description sa box sa itaas, o pumili ng handang template; ayusin ang mga topic, at isusulat at susuriin ang mga tanong para sa iyo.",
+      "I-paste ang job description sa box sa itaas; nasa tests page at sa Templates tab ng kumpanya ang mga handang template. Ayusin ang mga topic, at isusulat at susuriin ang mga tanong para sa iyo.",
       "Mag-imbita ng mga aplikante sa email, mula sa file, gamit ang share link sa iyong job ad, o mula sa iyong ATS, sarili mong platform o isang AI assistant.",
       "Tingnan ang nakikita ng mga aplikante: isang interview na may oras at may brand mo, sinasagot sa isang click o sa boses.",
       "Basahin ang mga report: ang mga sagot, grade at integrity flag ng bawat aplikante, ishine-share sa email o chat sa isang click.",
@@ -172,7 +172,7 @@
   },
   "interviewDiscover": {
     "title": "Discover",
-    "text": "Mga taong nagpa-practice sa testee at piniling maging open to offers, na ang practice ay sumasaklaw sa mga topic ng interview na ito sa level nito. Makikita sa bawat isa ang pangalan, LinkedIn profile at pinakabagong resulta ng practice sa bawat katugmang topic. Ang mga kumpanyang nakapag-top up na kahit isang beses lang ang nakakakita sa tab na ito.",
+    "text": "Mga taong nagpa-practice sa testee at piniling maging open to offers, na ang practice ay sumasaklaw sa mga topic ng interview na ito sa level nito. Makikita sa bawat isa ang pangalan, LinkedIn profile at pinakabagong naka-time na resulta ng practice sa bawat katugmang topic. Ang mga kumpanyang nakapag-top up na kahit isang beses lang ang nakakakita sa tab na ito.",
     "actions": [
       "Buksan ang LinkedIn profile ng isang tao para makilala pa siya.",
       "Imbitahan ang isang tao sa interview na ito (para sa mga may-ari at admin): mapupunta ito sa email ng account niya at gagastos ng credits gaya ng anumang imbitasyon."
@@ -233,6 +233,7 @@
       "Tumutulong ang score sa iyong desisyon; hindi ito ang nagdedesisyon. Kung hilingin ng aplikante, ipa-review sa isang tao ang kanyang resulta.",
       "Ipinapakita ng check mark sa ilalim ng grade na kinumpirma ng aplikante, bago magsimula, na sasagot siya nang mag-isa, nang walang AI tool o tulong ng ibang tao.",
       "Ang grade ay ang porsiyento ng puntos na nakuha: bawat tanong ay isang puntos, at ang tanong na \"pumili ng higit sa isang opsyon\" ay nagbibigay ng bahagi nito sa bawat tamang opsyong na-check, at wala kung may na-check na mali.",
+      "Kapag binura ang aplikanteng sumagot sa kahit isang tanong, sinisingil ang credits niya; kung hindi, ibinabalik ang mga ito.",
       "Para sa mga may-ari at admin ang extra time, ang mode at pangalan ng aplikante, ang invite link, ang pagpapadala muli, ang pagbawi at ang pagbura."
     ]
   },
@@ -276,7 +277,8 @@
     "tips": [
       "Gumagawa at nagbabago ng mga interview ang mga admin, nag-iimbita ng mga aplikante at nagto-top up. Nakikita ng mga viewer ang mga interview at resulta, nagse-share ng mga report at nagsusulat ng mga note, pero wala nang ibang binabago.",
       "Kapag inalis ang miyembrong ang card ang nagbabayad ng awtomatikong top-up, o ginawa siyang viewer, titigil ang mga top-up na iyon.",
-      "Ang may-ari lang ang nagdadagdag, nagbabago at nag-aalis ng mga miyembro; nakikita ng lahat sa kumpanya ang team."
+      "Ang may-ari lang ang nagdadagdag, nagbabago at nag-aalis ng mga miyembro; nakikita ng lahat sa kumpanya ang team.",
+      "Ang inimbitahang email lang, kapag na-verify na, ang puwedeng tumanggap ng imbitasyon. Puwedeng may 20 nakabinbing imbitasyon ang kumpanya nang sabay-sabay at, hanggang sa una nitong top-up, makakapagpadala ng 10 sa isang araw."
     ]
   },
   "actions": {
@@ -417,6 +419,7 @@
     ],
     "tips": [
       "Nire-reserve ang credits ng aplikante kapag inimbitahan siya, sinisingil kapag sumagot siya, at ibinabalik kung hindi.",
+      "Nire-reserve ang credits ng mga aplikante mula sa link na puwedeng i-share kapag nagsimula sila. Kapag binura ang interview o aplikante, sinisingil ang credits ng lahat ng sumagot sa kahit isang tanong, at ibinabalik ang credits na naka-reserve para sa iba.",
       "Ang mga may-ari at admin lang ang nakakakita ng page na ito.",
       "Puwede kang mag-refund ng credits na binili mo sa nakaraang 14 na araw at hindi pa nagagamit mula sa row ng top-up sa history, sa pamamagitan ng Paddle o sa pagsulat sa amin. Hindi mare-refund ang credits na naka-reserve para sa mga aplikante habang naka-reserve; kapag na-reserve sa loob ng 14 na araw at naibalik pagkatapos nito, mare-refund pa rin ang mga ito sa loob ng 7 araw.",
       "Unang binibilang na nagastos ang libreng credits, at ang hindi pa nagagastos ay unang binibilang sa pinakabagong top-up. Ang refund ng top-up na nagbigay ng referral reward ay binabawi ang reward na iyon sa parehong kumpanya. Malalaman ng mga may-ari at admin kung inaprubahan ito ng Paddle sa bell, sa email at, maliban kung naka-off, sa Slack."
@@ -548,7 +551,7 @@
     "tips": [
       "Bibilangin pa rin ang anumang pinili mo nang maubos ang oras ng isang tanong; ang tanong na walang napili, o hindi naabot, ay mabibilang na mali.",
       "Nagha-hire para sa role na ito? Gumawa ng interview mula rito para sa sarili mong mga aplikante.",
-      "Naghahanap ng trabaho? Pagkatapos ng natapos na round, ilagay ang iyong LinkedIn profile at i-on ang Open to offers para makita ng mga kumpanyang nagha-hire para sa mga topic na ito ang pangalan mo, profile at pinakabagong mga resulta ng practice at maimbitahan ka nila; naka-on ito nang isang taon maliban kung i-off mo."
+      "Naghahanap ng trabaho? Pagkatapos ng natapos na round, ilagay ang iyong LinkedIn profile at i-on ang Open to offers para makita ng mga kumpanyang nagha-hire para sa mga topic na ito ang pangalan mo, profile at pinakabagong naka-time na mga resulta ng practice at maimbitahan ka nila; naka-on ito nang isang taon maliban kung i-off mo."
     ]
   },
   "features": {
@@ -809,7 +812,8 @@
       "Kapag naka-sign in, buksan pagkatapos ang iyong mga setting ng email para baguhin ang ibang email."
     ],
     "tips": [
-      "Ipinapadala pa rin ang mga email ng serbisyo, gaya ng mga imbitasyon sa team, report at problema sa bayad; ang link na nagtitigil sa mga email ng isang kumpanya ay nagtitigil din sa mga imbitasyon nito sa iyo."
+      "Ipinapadala pa rin ang mga email ng serbisyo, gaya ng mga imbitasyon sa team, report at problema sa bayad; ang link na nagtitigil sa mga email ng isang kumpanya ay nagtitigil din sa mga imbitasyon nito sa iyo.",
+      "Kapag itinigil mo ang mga email ng isang kumpanya, titigil din ang mga paalala nito sa iyo, at makikita ng kumpanya ang natigil na imbitasyon bilang hindi naihatid."
     ]
   }
 }
