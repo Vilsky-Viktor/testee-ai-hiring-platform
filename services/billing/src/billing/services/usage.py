@@ -1,14 +1,18 @@
 """Every AI call and limit hit the services record, kept once each by its event id, and dropped
 once past their retention."""
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from testee_common.ai.ai_constants import Category
 
-from billing.constants.usage import CHANGES_KEEP_DAYS, USAGE_KEEP_DAYS
+from billing.constants.usage import (
+    CHANGES_KEEP_DAYS,
+    SETTLED_HOLDS_KEEP_DAYS,
+    USAGE_KEEP_DAYS,
+)
 from billing.core.db import Session
 from billing.helpers.usage import category_of
-from billing.repositories import usage
+from billing.repositories import ledger, usage
 
 
 async def record_usage(event_id: str, occurred_at: datetime, data: dict) -> Category | None:
@@ -30,6 +34,7 @@ async def record_hit(event_id: str, occurred_at: datetime, data: dict) -> None:
 
 
 async def drop_old(now: datetime) -> None:
-    """AI usage and limit hits past USAGE_KEEP_DAYS, limit changes past CHANGES_KEEP_DAYS, a
-    batch at a time."""
+    """AI usage and limit hits past USAGE_KEEP_DAYS, limit changes past CHANGES_KEEP_DAYS and
+    settled holds past SETTLED_HOLDS_KEEP_DAYS, a batch at a time."""
     await usage.drop_old(Session, now, USAGE_KEEP_DAYS, CHANGES_KEEP_DAYS)
+    await ledger.forget_settled_holds(Session, now - timedelta(days=SETTLED_HOLDS_KEEP_DAYS))

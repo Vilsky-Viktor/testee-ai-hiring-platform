@@ -2,16 +2,18 @@
 hold and entry, then the wallet; another company's stays."""
 
 import uuid
+from datetime import UTC, datetime, timedelta
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, update
 from testee_common.db import db
 
 from billing.constants.credits import Reason
 from billing.constants.products import OwnerType
+from billing.constants.usage import SETTLED_HOLDS_KEEP_DAYS
 from billing.core.db import Session
 from billing.models.billing import Entry, Hold, Wallet
 from billing.repositories import ledger
-from billing.services import accounts
+from billing.services import accounts, usage
 from tests.integration.factories import welcomed
 from tests.integration.transactions import transaction
 
@@ -64,3 +66,30 @@ def test_a_deleted_companys_ledger_goes_batch_after_batch(run, monkeypatch):
     assert before == [5, 4, 1]
     assert after == [0, 0, 0]
     assert kept == before
+
+
+def test_settled_holds_go_past_their_time_while_open_ones_and_the_history_stay(run):
+    now = datetime.now(UTC)
+
+    async def scenario():
+        company_id = await company_with_ledger()
+        released = f"candidate:{company_id}:3"
+        await transaction(ledger.release, released)
+
+        async with Session.begin() as session:
+            await session.execute(
+                update(Hold)
+                .where(Hold.owner_id == company_id, Hold.key != f"candidate:{company_id}:0")
+                .values(created_at=now - timedelta(days=SETTLED_HOLDS_KEEP_DAYS + 1))
+            )
+
+        before = await ledger_rows(company_id)
+        await usage.drop_old(now)
+
+        return before, await ledger_rows(company_id)
+
+    before, after = run(scenario())
+
+    # Two charged and one released go; a recent charged one and the open one stay, with every
+    # entry and the wallet.
+    assert after == [before[0] - 3, before[1], before[2]]

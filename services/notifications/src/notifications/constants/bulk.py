@@ -61,6 +61,9 @@ MAX_ATTEMPTS = 3
 SEND_TAG = "send"
 # A failure's reason is kept this long.
 MAX_REASON_LENGTH = 200
+# Who a finished send went to is kept this long: a legal notice's proof of being sent, and a
+# campaign's counts. The send itself stays, so it can't be sent a second time.
+BULK_RECIPIENTS_KEEP_DAYS = 730
 # One bulk run at a time: a run holds this lock while it sends, at most this long (its
 # RUN_SECONDS of sending, the batch under way and the sends it prepares first).
 BULK_LOCK_KEY = "bulk:lock:send"

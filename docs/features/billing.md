@@ -172,6 +172,8 @@ A company's prices, currency, checkouts, invoices, refunds, failed payments and 
 
 ## Deleting a company
 
+Holds charged or given back are deleted 13 months after they were set aside (`SETTLED_HOLDS_KEEP_DAYS`, the daily `retention` job), past every invite's life; the history keeps what they moved, and an open hold stays until it's settled.
+
 Deleting a company deletes its credits: billing's internal `DELETE /internal/companies/{id}` removes the wallet, then its holds and its history (holds and history a batch at a time, each batch its own transaction, so a deletion cut off midway goes on when it's run again), and turns off automatic top-up. A top-up or refund arriving meanwhile locks the wallet first: the deletion waits for it, or it finds the wallet gone, adds nothing, and a top-up logs an error to refund it by hand. Purchases stay on record, and nothing is refunded; a refund Paddle makes later takes back only the referral reward the top-up paid. Before it's deleted, the owner sees how many credits are lost: the remove dialog, and the assistant's delete card, read the company's balance (`GET /companies/{id}/credits`, whose `candidates` is how many candidates the available credits pay for, worked out by billing) and add "Its 900 credits (about 3 candidates) will be lost and aren't refunded." when there are any.
 
 ## AI usage and limit hits

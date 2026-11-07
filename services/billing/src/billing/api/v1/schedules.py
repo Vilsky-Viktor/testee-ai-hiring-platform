@@ -25,7 +25,7 @@ async def sync_limits() -> None:
 
 @router.post("/retention", status_code=status.HTTP_204_NO_CONTENT)
 async def retention() -> None:
-    """Daily: AI usage and limit hits past 13 months, limit changes past 24."""
+    """Daily: AI usage, limit hits and settled holds past 13 months, limit changes past 24."""
     await usage.drop_old(datetime.now(UTC))
 
 

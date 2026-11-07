@@ -272,6 +272,14 @@ async def delete_history(sessions, company_id: str) -> None:
         await delete_in_batches(sessions, model, *owned)
 
 
+async def forget_settled_holds(sessions, before: datetime) -> int:
+    """Holds charged or given back, set aside before `before`, a batch at a time; open ones stay
+    whatever their age."""
+    return await delete_in_batches(
+        sessions, Hold, Hold.status != HoldStatus.OPEN, Hold.created_at < before
+    )
+
+
 async def lock_wallet(session: AsyncSession, owner_type: str, owner_id: str) -> None:
     """Held until the transaction ends, so a company's deletion waits for what's being added or
     taken back. Raises WalletGone when it was deleted."""

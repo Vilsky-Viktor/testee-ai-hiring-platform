@@ -2,6 +2,9 @@
 # comparison; limit changes 24 months.
 USAGE_KEEP_DAYS = 395
 CHANGES_KEEP_DAYS = 730
+# A charged or released hold, past every invite's life (12 months after it was last sent) and
+# the refunds that read it; the history (Entry) keeps what it moved.
+SETTLED_HOLDS_KEEP_DAYS = 395
 # The most expensive companies and users the tab lists, and the ones that hit each limit most.
 TOP_SPENDERS = 20
 TOP_HITTERS = 5
