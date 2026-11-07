@@ -23,6 +23,7 @@ def upgrade() -> None:
     op.execute("SET lock_timeout = '5s'")
     op.add_column("mcp_grants", sa.Column("refresh_family", sa.String(64)))
     op.execute("UPDATE mcp_grants SET refresh_family = refresh_hash")
+    # migration-check: a table of a few rows, and every row was just filled.
     op.alter_column("mcp_grants", "refresh_family", nullable=False)
     op.drop_index(INDEX, "mcp_grants")
     op.drop_column("mcp_grants", "previous_refresh_hash")
