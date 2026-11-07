@@ -59,7 +59,8 @@ paths:
 
 - Hashed build files are cached for a year (`immutable`); other static files in `public/` get an
   explicit `Cache-Control` (a day for logos, short with `stale-while-revalidate` for the embed
-  script); responses are compressed (Brotli at the CDN where it's on).
+  script); files are compressed by the CDN where it's on (Brotli); streamed pages, which have no
+  `Content-Length`, by Next itself (`compress: true`), which the CDN leaves alone.
 - Streaming passes through every hop unbuffered (nginx: `X-Accel-Buffering: no`).
 - HTTP/2 and HTTP/3 are left to the load balancer.
 - Cold starts: startup CPU boost, lazy initialisation, and minimum instances where the cost is

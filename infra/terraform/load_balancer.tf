@@ -44,9 +44,9 @@ resource "google_compute_backend_service" "service" {
   load_balancing_scheme = "EXTERNAL_MANAGED"
   protocol              = "HTTPS"
   security_policy       = google_compute_security_policy.edge.id
-  # The frontend's static files (scripts, styles, fonts) are cached at Google's edge, and its
-  # responses are compressed there, with Brotli for browsers that take it (the frontend itself
-  # sends them uncompressed: next.config.ts `compress`).
+  # The frontend's static files (scripts, styles, fonts) are cached at Google's edge and compressed
+  # there, with Brotli for browsers that take it. Streamed pages have no Content-Length, which the
+  # CDN needs to compress, so the frontend gzips those itself (next.config.ts `compress`).
   enable_cdn       = each.key == "frontend"
   compression_mode = each.key == "frontend" ? "AUTOMATIC" : null
 

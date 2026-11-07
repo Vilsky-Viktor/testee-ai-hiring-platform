@@ -1,7 +1,7 @@
-"""How pages reach browsers (.claude/rules/performance.md, Delivery): compressed once, at Cloud
-CDN in production (Brotli where the browser takes it) and at the gateway locally, never by the
-frontend itself, streamed through the gateway unbuffered, and never held by a cold start
-of a service pages ask."""
+"""How pages reach browsers (.claude/rules/performance.md, Delivery): files compressed at Cloud
+CDN (Brotli where the browser takes it), streamed pages by the frontend itself, as the CDN only
+compresses responses with a Content-Length, streamed through the gateway unbuffered, and never
+held by a cold start of a service pages ask."""
 
 import re
 from pathlib import Path
@@ -21,10 +21,10 @@ def test_the_cdn_compresses_the_frontends_responses():
     assert re.search(r'compression_mode\s*=\s*each\.key == "frontend" \? "AUTOMATIC"', balancer)
 
 
-def test_the_frontend_leaves_compression_to_what_is_in_front_of_it():
+def test_the_frontend_compresses_its_streamed_pages():
     config = (ROOT / "frontend/next.config.ts").read_text()
 
-    assert re.search(r"^\s*compress: false,$", config, re.MULTILINE)
+    assert re.search(r"^\s*compress: true,$", config, re.MULTILINE)
 
 
 def test_the_gateway_streams_and_compresses_pages_as_production_does():
