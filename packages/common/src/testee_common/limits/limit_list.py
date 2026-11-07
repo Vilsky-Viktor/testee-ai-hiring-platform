@@ -76,8 +76,9 @@ LIMITS = {
     ),
     "AUTHORIZATIONS_PER_IP_HOUR": Limit(ASSISTANT, 120, "calls", HOUR_SECONDS, 1, 10_000, "ip"),
     "TOKEN_REQUESTS_PER_CLIENT_MINUTE": Limit(
-        ASSISTANT, 30, "calls", MINUTE_SECONDS, 1, 1_000, "user"
+        ASSISTANT, 30, "calls", MINUTE_SECONDS, 1, 1_000, "ip"
     ),
+    "TOKEN_REQUESTS_PER_IP_MINUTE": Limit(ASSISTANT, 120, "calls", MINUTE_SECONDS, 1, 10_000, "ip"),
     "APPROVALS_PER_USER_HOUR": Limit(ASSISTANT, 20, "calls", HOUR_SECONDS, 1, 1_000, "user"),
     # Companies: what they own, generate, invite and email.
     "MAX_OWNED_COMPANIES": Limit(COMPANIES, 10, "items", None, 1, 50, "user"),
@@ -246,6 +247,9 @@ LIMITS = {
     "ATS_CALLS_PER_COMPANY_MINUTE": Limit("ats", 60, "calls", MINUTE_SECONDS, 1, 1_000, "company"),
     "ATS_WEBHOOKS_PER_IP_MINUTE": Limit("ats", 600, "calls", MINUTE_SECONDS, 10, 10_000, "ip"),
     "ATS_CONNECTS_PER_HOUR": Limit("ats", 20, "calls", HOUR_SECONDS, 1, 1_000, "company"),
+    "SLACK_CONNECTS_PER_HOUR": Limit(
+        "notifications", 20, "calls", HOUR_SECONDS, 1, 1_000, "company"
+    ),
     "SLACK_TESTS_PER_COMPANY_HOUR": Limit(
         "notifications", 10, "calls", HOUR_SECONDS, 1, 1_000, "company"
     ),

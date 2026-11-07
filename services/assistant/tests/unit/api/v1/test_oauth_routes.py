@@ -1,6 +1,7 @@
 from fastapi import HTTPException
 from mcp.shared.auth import OAuthClientInformationFull
 
+from assistant.integrations import client_documents
 from assistant.models.oauth_tokens import Access
 from assistant.repositories import oauth
 from assistant.services import oauth_limits, oauth_provider
@@ -206,7 +207,8 @@ def test_a_failed_token_exchange_is_counted_too(client, monkeypatch):
 
     assert response.json()["error"] == "invalid_grant"
     assert counted == [
-        ("rate:assistant:mcp:token:c1:testclient", "TOKEN_REQUESTS_PER_CLIENT_MINUTE")
+        ("rate:assistant:mcp:token-ip:testclient", "TOKEN_REQUESTS_PER_IP_MINUTE"),
+        ("rate:assistant:mcp:token:c1:testclient", "TOKEN_REQUESTS_PER_CLIENT_MINUTE"),
     ]
 
 
@@ -231,14 +233,33 @@ def test_too_many_token_requests_are_refused_before_the_lookup(client, monkeypat
     assert loaded == []
 
 
+def test_an_address_over_its_limit_fetches_no_app_it_names(client, monkeypatch):
+    read = []
+
+    async def over(redis, key, name):
+        raise HTTPException(429, "Too many requests.", headers={"Retry-After": "30"})
+
+    async def read_document(client_id):
+        read.append(client_id)
+
+    monkeypatch.setattr(oauth_limits, "hit_or_skip", over)
+    monkeypatch.setattr(client_documents, "read", read_document)
+    named = {"grant_type": "refresh_token", "client_id": "https://apps.example/one"}
+
+    response = client.post("/token", data=named)
+
+    assert response.status_code == 429
+    assert read == []
+
+
 def test_revoking_is_counted_and_refused_over_the_limit(client, monkeypatch):
     app_without_a_secret(monkeypatch)
     revoked = []
 
     async def over(redis, key, name):
         assert (key, name) == (
-            "rate:assistant:mcp:token:c1:testclient",
-            "TOKEN_REQUESTS_PER_CLIENT_MINUTE",
+            "rate:assistant:mcp:token-ip:testclient",
+            "TOKEN_REQUESTS_PER_IP_MINUTE",
         )
 
         raise HTTPException(429, "Too many requests.", headers={"Retry-After": "30"})

@@ -52,13 +52,21 @@ class Limited:
 async def token_refusal(request: Request, client_id: str) -> JSONResponse | None:
     """Counts one token request of the app (a code exchange, a refresh or a revocation, whether
     its code or token turns out good or not, so guessing them is counted too) from the
-    request's address; over the limit, the refusal. Counted per app and address, so someone
-    naming a well-known app's public id can't use up its limit for everyone. With Redis down,
-    not counted rather than refused."""
-    key = f"rate:assistant:mcp:token:{client_id}:{limit_address(request)}"
+    request's address; over the limit, the refusal. Per address first, as an app's id is the
+    caller's to choose and one the server hasn't seen is fetched and kept; then per app and
+    address, so someone naming a well-known app's public id can't use up its limit for
+    everyone. With Redis down, not counted rather than refused."""
+    address = limit_address(request)
 
     try:
-        await hit_or_skip(get_redis(), key, "TOKEN_REQUESTS_PER_CLIENT_MINUTE")
+        await hit_or_skip(
+            get_redis(), f"rate:assistant:mcp:token-ip:{address}", "TOKEN_REQUESTS_PER_IP_MINUTE"
+        )
+        await hit_or_skip(
+            get_redis(),
+            f"rate:assistant:mcp:token:{client_id}:{address}",
+            "TOKEN_REQUESTS_PER_CLIENT_MINUTE",
+        )
     except HTTPException as error:
         return refusal("invalid_request", error)
 

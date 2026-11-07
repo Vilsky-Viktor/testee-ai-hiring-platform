@@ -5,6 +5,7 @@ from urllib.parse import parse_qs, urlparse
 
 import pytest
 from fake_redis import FakeRedis
+from fastapi import HTTPException
 from testee_common.auth.auth import current_user
 from testee_common.auth.encryption import encrypt
 from testee_common.auth.user import User
@@ -72,7 +73,7 @@ def test_add_to_slack_goes_to_slacks_page_with_a_signed_state(client, monkeypatc
     assert url.startswith("https://slack.com/oauth/v2/authorize?")
     assert query["scope"] == ["incoming-webhook"]
     assert query["redirect_uri"] == ["http://localhost:8090/api/notifications/slack/callback"]
-    assert list(nonces.values()) == [15 * 60]
+    assert [ttl for key, ttl in nonces.items() if not key.startswith("rate:")] == [15 * 60]
 
 
 def test_a_state_works_once_and_only_for_a_current_editor(client, monkeypatch, saved):
@@ -91,6 +92,22 @@ def test_a_state_works_once_and_only_for_a_current_editor(client, monkeypatch, s
 
     assert callback(client, f"code=ok&state={state()}").status_code == 403
     assert saved["saved"] is None
+
+
+def test_starting_to_add_slack_too_often_is_refused_with_when_to_try_again(
+    client, monkeypatch, nonces
+):
+    async def over(redis, key, name, **scope):
+        assert (key, name) == (f"rate:slack-connects:{C1}", "SLACK_CONNECTS_PER_HOUR")
+
+        raise HTTPException(429, "Too many requests.", headers={"Retry-After": "60"})
+
+    monkeypatch.setattr(service, "hit_or_skip", over)
+
+    response = client.get(f"/slack/start?company_id={C1}")
+
+    assert response.status_code == 429
+    assert response.headers["retry-after"] == "60"
 
 
 def test_a_viewer_cant_add_slack_and_a_stranger_doesnt_see_the_company(client, monkeypatch):

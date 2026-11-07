@@ -9,6 +9,7 @@ from fastapi import HTTPException, status
 from testee_common.auth.encryption import decrypt, encrypt
 from testee_common.auth.tokens import purpose_key
 from testee_common.events.notifications import NotificationKind, Recipient, notification
+from testee_common.limits.rate_limit import hit_or_skip
 
 from notifications.config import settings
 from notifications.constants.slack import (
@@ -71,6 +72,12 @@ async def start(company_id: str, user_id: str) -> str:
     if not available():
         raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Slack isn't set up yet")
 
+    await hit_or_skip(
+        get_redis(),
+        f"rate:slack-connects:{company_id}",
+        "SLACK_CONNECTS_PER_HOUR",
+        company_id=company_id,
+    )
     nonce = secrets.token_urlsafe(16)
     await get_redis().set(SLACK_STATE_KEY.format(nonce=nonce), 1, ex=SLACK_STATE_SECONDS)
     expires = int(time.time()) + SLACK_STATE_SECONDS
