@@ -4,6 +4,7 @@ from datetime import UTC, datetime
 from sqlalchemy import cast, delete, func, select, update
 from sqlalchemy.dialects.postgresql import JSONB, insert
 from sqlalchemy.ext.asyncio import AsyncSession
+from testee_common.db.db import made_before
 
 from api.constants.api import RETRY_LEASE
 from api.models.api import Webhook, WebhookRetry
@@ -86,14 +87,19 @@ async def remove_matching(session: AsyncSession, *conditions) -> None:
     await session.execute(delete(WebhookRetry).where(*conditions))
 
 
-async def remove_email(session: AsyncSession, email: str) -> None:
+async def remove_email(session: AsyncSession, email: str, before: datetime | None = None) -> None:
     """A candidate who deleted their testee account: their results waiting to be sent again go,
-    from every company's web hooks. An empty (unverified) email matches none."""
+    from every company's web hooks; with `before`, a replay's, those from before it. An empty
+    (unverified) email matches none."""
     if not email:
         return
 
     body = cast(WebhookRetry.body, JSONB)["data"]
-    await remove_matching(session, func.lower(body["candidate"]["email"].astext) == email.lower())
+    await remove_matching(
+        session,
+        func.lower(body["candidate"]["email"].astext) == email.lower(),
+        made_before(WebhookRetry.created_at, before),
+    )
 
 
 async def remove_interview(session: AsyncSession, company_id: uuid.UUID, interview_id: str) -> None:

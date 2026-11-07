@@ -1,9 +1,10 @@
 from datetime import datetime
 from uuid import UUID
 
-from sqlalchemy import delete, func, or_, select, update
+from sqlalchemy import and_, delete, func, or_, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import aliased
+from testee_common.db.db import made_before
 
 from companies.constants.invites import InviteStatus
 from companies.constants.roles import Role
@@ -54,12 +55,20 @@ async def remove_member(session: AsyncSession, member_id) -> None:
     await session.execute(delete(Member).where(Member.id == member_id))
 
 
+def invited(email: str, before: datetime | None):
+    """Invites to the address; with `before`, a replayed deletion's, only those from before it:
+    one made since is someone's new."""
+    return and_(
+        CandidateInvite.email == email.lower(), made_before(CandidateInvite.created_at, before)
+    )
+
+
 async def unfinished_invites(
-    session: AsyncSession, user_id: str, email: str
+    session: AsyncSession, user_id: str, email: str, before: datetime | None = None
 ) -> list[CandidateInvite]:
     """The invites the user was sent or accepted that they haven't finished."""
     query = select(CandidateInvite).where(
-        or_(CandidateInvite.user_id == user_id, CandidateInvite.email == email.lower()),
+        or_(CandidateInvite.user_id == user_id, invited(email, before)),
         CandidateInvite.status != InviteStatus.FINISHED,
     )
 
@@ -67,14 +76,14 @@ async def unfinished_invites(
 
 
 async def candidate_invites(
-    session: AsyncSession, user_id: str, email: str
+    session: AsyncSession, user_id: str, email: str, before: datetime | None = None
 ) -> list[tuple[CandidateInvite, UUID]]:
     """Every invite the person was sent or started, each with its company. An empty
     (unverified) email matches by id only."""
     matched = [CandidateInvite.user_id == user_id]
 
     if email:
-        matched.append(CandidateInvite.email == email.lower())
+        matched.append(invited(email, before))
 
     query = (
         select(CandidateInvite, Interview.company_id)
@@ -96,22 +105,31 @@ async def blanked_invites(session: AsyncSession, limit: int) -> list:
     return list(await session.scalars(query))
 
 
-async def forget_member_invites(session: AsyncSession, email: str) -> None:
+async def forget_member_invites(
+    session: AsyncSession, email: str, before: datetime | None = None
+) -> None:
     """Team invites to the address not yet accepted: the person who deleted their account is
     no longer invited (their email goes with them). An empty (unverified) email matches none."""
     await session.execute(
         delete(Member).where(
-            Member.user_id.is_(None), func.lower(Member.invited_email) == email.lower()
+            Member.user_id.is_(None),
+            func.lower(Member.invited_email) == email.lower(),
+            made_before(Member.created_at, before),
         )
     )
 
 
-async def forget_verification_email(session: AsyncSession, email: str) -> None:
+async def forget_verification_email(
+    session: AsyncSession, email: str, before: datetime | None = None
+) -> None:
     """A company keeps its verification, but not the email of a person who deleted their account
     as its proof."""
     await session.execute(
         update(Company)
-        .where(func.lower(Company.verification_email) == email.lower())
+        .where(
+            func.lower(Company.verification_email) == email.lower(),
+            made_before(Company.verification_submitted_at, before),
+        )
         .values(verification_email=None)
     )
 

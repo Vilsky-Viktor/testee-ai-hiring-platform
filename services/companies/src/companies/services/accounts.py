@@ -1,4 +1,5 @@
 import asyncio
+from datetime import datetime
 
 import httpx
 from fastapi import HTTPException, status
@@ -7,7 +8,7 @@ from testee_common.config.constants import ACCOUNT_OWNS_SHARED
 from companies.constants.roles import Role
 from companies.core.db import Session
 from companies.integrations import billing, rounds
-from companies.repositories import accounts, audit, invites
+from companies.repositories import accounts, audit, interview_notes, invites
 from companies.services import candidate_billing, company_deletion
 
 
@@ -40,7 +41,7 @@ async def deletion(user_id: str) -> dict:
     }
 
 
-async def delete_user(user_id: str, email: str) -> None:
+async def delete_user(user_id: str, email: str, before: datetime | None = None) -> None:
     """A company whose only owner leaves is deleted with them; other memberships just end.
     The user's candidate invites and their decisions in the audit log stay with the companies,
     without their email or id; team invites to their email not yet accepted go. Safe to repeat.
@@ -50,7 +51,8 @@ async def delete_user(user_id: str, email: str) -> None:
     the team invites and the verification proof go in one save, so a failure keeps them all for
     the retry. Their sessions in rounds go first, a failure keeping the invites for the retry:
     a guest's are under the guest's own id, which no user.deleted names, and nothing else would
-    reach them once the invite is gone."""
+    reach them once the invite is gone. `before`, a replayed deletion's first time: what's under
+    the email since is someone's new, and stays."""
     async with Session() as session:
         owned = await accounts.owned(session, user_id)
         memberships = await accounts.memberships(session, user_id)
@@ -69,24 +71,24 @@ async def delete_user(user_id: str, email: str) -> None:
     # As if the company removed them: one who picked an answer is charged, the others' credits
     # come back. Rounds still has their answers, as accounts asks companies first.
     async with Session() as session:
-        unfinished = await accounts.unfinished_invites(session, user_id, email)
+        unfinished = await accounts.unfinished_invites(session, user_id, email, before)
 
     await candidate_billing.settle_removed(unfinished)
-    await delete_sessions(user_id, email)
-    await forget(user_id, email, leaving)
+    await delete_sessions(user_id, email, before)
+    await forget(user_id, email, leaving, before)
     await audit.forget_user(Session, user_id)
 
 
-async def delete_sessions(user_id: str, email: str) -> None:
+async def delete_sessions(user_id: str, email: str, before: datetime | None = None) -> None:
     """The sessions, answers and signals of every invite the person was sent or started."""
     async with Session() as session:
-        sent = await accounts.candidate_invites(session, user_id, email)
+        sent = await accounts.candidate_invites(session, user_id, email, before)
 
     if sent:
         await rounds.delete_invite_sessions([invite.id for invite, _ in sent])
 
 
-async def forget(user_id: str, email: str, leaving: list) -> None:
+async def forget(user_id: str, email: str, leaving: list, before: datetime | None = None) -> None:
     """In one save: the memberships that end, every invite the person was sent or started (as
     if each company erased them: a row kept without their email still linked back to them, so it
     wasn't anonymous; the other services are told, and a restore's copy is erased again), the
@@ -95,8 +97,9 @@ async def forget(user_id: str, email: str, leaving: list) -> None:
         for member_id in leaving:
             await accounts.remove_member(session, member_id)
 
-        for invite, company_id in await accounts.candidate_invites(session, user_id, email):
+        for invite, company_id in await accounts.candidate_invites(session, user_id, email, before):
             await invites.remove(session, invite, company_id)
 
-        await accounts.forget_member_invites(session, email)
-        await accounts.forget_verification_email(session, email)
+        await interview_notes.forget_author(session, user_id)
+        await accounts.forget_member_invites(session, email, before)
+        await accounts.forget_verification_email(session, email, before)

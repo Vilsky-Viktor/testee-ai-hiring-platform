@@ -8,4 +8,4 @@ async def handle(data: dict) -> None:
     without the user's id, and their results as a candidate waiting to be sent again to
     companies' web hooks go. Handling it twice changes nothing more."""
     event = UserDeleted.model_validate(data)
-    await accounts.remove_user(event.user_id, event.email)
+    await accounts.remove_user(event.user_id, event.email, event.erased_at)

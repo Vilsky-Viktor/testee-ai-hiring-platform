@@ -139,6 +139,28 @@ def test_an_erased_candidates_results_waiting_to_be_sent_again_go(run):
     assert run(scenario()) == ["elsewhere", "other", "theirs"]
 
 
+def test_a_replayed_deletion_leaves_results_waiting_since_of_that_address(run):
+    company = uuid.uuid4()
+    past = datetime.now(UTC) - timedelta(seconds=1)
+    email = f"{uuid.uuid4()}@x.com"
+    body = json.dumps({"data": {"candidate": {"email": email}}})
+
+    async def scenario():
+        hook = await transaction(
+            webhooks.add, company, "https://example.com/x", "sealed", "u1", MAX_WEBHOOKS
+        )
+        await transaction(retries.add, hook.id, "old", body, past)
+        erased_at = datetime.now(UTC)
+        await transaction(retries.add, hook.id, "new", body, past)
+        await transaction(retries.remove_email, email, erased_at)
+        left = [row.event_id for row, _ in await transaction(retries.claim, 25)]
+        await transaction(retries.remove_email, email)
+
+        return left
+
+    assert run(scenario()) == ["new"]
+
+
 def test_a_deleted_account_or_interview_takes_its_waiting_results_with_it(run):
     company = uuid.uuid4()
     future = datetime.now(UTC) + timedelta(hours=1)

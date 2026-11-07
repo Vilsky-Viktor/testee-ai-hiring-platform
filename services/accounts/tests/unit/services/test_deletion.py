@@ -70,7 +70,7 @@ def test_companies_deletes_first_then_one_save_tells_every_other_holder_then_the
         # restore, and the event every other holder deletes its part by.
         ("own", "ann"),
         ("erasure", "ann", "Ann@Example.com"),
-        ("event", USER_DELETED, {"user_id": "ann", "email": "Ann@Example.com"}),
+        ("event", USER_DELETED, {"user_id": "ann", "email": "Ann@Example.com", "erased_at": None}),
         "published",
         ("sign-in", "ann"),
     ]
@@ -198,7 +198,11 @@ def test_deletion_and_export_send_the_email_in_the_body_not_the_url(monkeypatch)
     body = b'{"email":"ann@example.com"}'
 
     assert sent == [
-        ("DELETE", f"{companies}/internal/users/ann", body),
+        (
+            "DELETE",
+            f"{companies}/internal/users/ann",
+            b'{"email":"ann@example.com","erased_at":null}',
+        ),
         ("POST", f"{ats}/internal/users/ann/export", body),
     ]
 

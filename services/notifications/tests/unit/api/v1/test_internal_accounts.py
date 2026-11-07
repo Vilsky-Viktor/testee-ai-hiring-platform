@@ -24,10 +24,10 @@ def test_a_deleted_account_takes_their_notifications_and_sent_log_and_forgets_th
     async def remove_user(session, user_id):
         done.append(("own", user_id))
 
-    async def remove_candidate(session, email):
+    async def remove_candidate(session, email, before=None):
         done.append(("candidate", email))
 
-    async def remove_member(session, email):
+    async def remove_member(session, email, before=None):
         done.append(("member", email))
 
     async def forget_maker(session, user_id):

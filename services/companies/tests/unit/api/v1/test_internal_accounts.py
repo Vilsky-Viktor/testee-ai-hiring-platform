@@ -37,7 +37,7 @@ def test_notifications_gets_every_company_of_a_user(client, monkeypatch):
 def test_deleting_and_exporting_an_account_read_the_email_from_the_body(client, monkeypatch):
     asked = []
 
-    async def delete_user(user_id, email):
+    async def delete_user(user_id, email, before=None):
         asked.append(("delete", user_id, email))
 
     async def export(session, user_id, email):

@@ -1,5 +1,8 @@
+from datetime import datetime
+
 from sqlalchemy import delete, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
+from testee_common.db.db import made_before
 from testee_common.events import outbox
 from testee_common.events.notifications import NOTIFICATION_REQUESTED
 
@@ -33,5 +36,9 @@ async def contact_messages(session: AsyncSession, email: str) -> list[OutboxEven
     return list(found)
 
 
-async def delete_contact_messages(session: AsyncSession, email: str) -> None:
-    await session.execute(delete(OutboxEvent).where(from_sender(email)))
+async def delete_contact_messages(
+    session: AsyncSession, email: str, before: datetime | None = None
+) -> None:
+    await session.execute(
+        delete(OutboxEvent).where(from_sender(email), made_before(OutboxEvent.created_at, before))
+    )

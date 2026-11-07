@@ -22,11 +22,20 @@ logger = logging.getLogger(__name__)
 
 
 async def replay() -> int:
-    """Runs the deletions of the last ERASURE_KEEP_DAYS again everywhere, safe to repeat:
-    after a database is restored or cloned from a backup, nobody deleted since comes back. Then
-    forgets older ones. Newest first, a batch at once, until ERASURE_RUN_SECONDS into the run;
-    a run stopped for time leaves the rest to the next. Returns how many it ran. The sign-ins
-    were deleted in Firebase, which no restore brings back."""
+    """Runs the deletions of the last ERASURE_KEEP_DAYS again everywhere (run_again), then drops
+    the events it saved: each carries an email, which mustn't outlast the erasure note."""
+    try:
+        return await run_again()
+    finally:
+        await outbox.forget_deletions(Session)
+
+
+async def run_again() -> int:
+    """The deletions of the last ERASURE_KEEP_DAYS, safe to repeat: after a database is restored
+    or cloned from a backup, nobody deleted since comes back. First forgets older ones. Newest
+    first, a batch at once, until ERASURE_RUN_SECONDS into the run; a run stopped for time
+    leaves the rest to the next. Returns how many it ran. The sign-ins were deleted in Firebase,
+    which no restore brings back."""
     now = datetime.now(UTC)
     before = now - timedelta(days=ERASURE_KEEP_DAYS)
     await erasures.forget(Session, before)
@@ -59,15 +68,18 @@ async def replay() -> int:
         below = (batch[-1].erased_at, batch[-1].user_id)
 
 
-async def erase(user_id: str, email: str) -> None:
+async def erase(user_id: str, email: str, erased_at: datetime | None = None) -> None:
     """In one save: what accounts keeps under the user goes, with the note that runs the
     deletion again after a restore (kept from the first time) and the `user.deleted` event every
     other holder deletes its part by. Neither is kept without the others. The event is published
-    at once; when that fails, the outbox's flush sends it within a minute."""
+    at once; when that fails, the outbox's flush sends it within a minute. `erased_at`: the first
+    time, on a replay."""
+    event = UserDeleted(user_id=user_id, email=email, erased_at=erased_at)
+
     async with Session.begin() as session:
         await user_data.delete_user(session, user_id)
         await erasures.record(session, user_id, email)
-        outbox.add(session, USER_DELETED, UserDeleted(user_id=user_id, email=email).model_dump())
+        outbox.add(session, USER_DELETED, event.model_dump(mode="json"))
 
     await outbox_service.flush_quietly()
 
@@ -75,7 +87,7 @@ async def erase(user_id: str, email: str) -> None:
 async def erase_again(erasure: Erasure) -> None:
     """One account's deletion run again: in companies, then everywhere else by the event."""
     try:
-        await services.delete_in_companies(erasure.user_id, erasure.email)
+        await services.delete_in_companies(erasure.user_id, erasure.email, erasure.erased_at)
     except httpx.HTTPStatusError as error:
         if error.response.status_code != status.HTTP_409_CONFLICT:
             raise
@@ -83,4 +95,4 @@ async def erase_again(erasure: Erasure) -> None:
         # A company the restore gave back others' members: left to support, logged.
         logger.error("Erasure of account %s refused by companies", erasure.user_id)
 
-    await erase(erasure.user_id, erasure.email)
+    await erase(erasure.user_id, erasure.email, erasure.erased_at)

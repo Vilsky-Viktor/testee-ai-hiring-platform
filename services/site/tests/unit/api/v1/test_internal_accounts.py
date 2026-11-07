@@ -14,7 +14,7 @@ FROM_ACCOUNTS = bearer(issue_token("accounts", "site", "test-secret-that-is-at-l
 def test_a_deleted_account_takes_its_contact_messages_by_email(client, monkeypatch):
     deleted = []
 
-    async def remove(email):
+    async def remove(email, before=None):
         deleted.append(email)
 
     monkeypatch.setattr(accounts, "remove_user", remove)

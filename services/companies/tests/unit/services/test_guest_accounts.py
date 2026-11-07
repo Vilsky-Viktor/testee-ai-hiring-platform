@@ -20,13 +20,13 @@ def guest_invite(calls, monkeypatch):  # noqa: F811
     company_id = uuid.uuid4()
     gone = []
 
-    async def candidate_invites(session, user_id, email):
+    async def candidate_invites(session, user_id, email, before=None):
         return [(invite, company_id)]
 
     async def no_memberships(session, user_id):
         return []
 
-    async def no_unfinished(session, user_id, email):
+    async def no_unfinished(session, user_id, email, before=None):
         return []
 
     async def remove(session, found, company):

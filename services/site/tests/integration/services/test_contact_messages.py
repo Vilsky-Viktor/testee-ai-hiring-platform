@@ -1,4 +1,5 @@
 import uuid
+from datetime import UTC, datetime
 
 import httpx
 from event_pushes import push
@@ -49,3 +50,19 @@ def test_a_users_contact_messages_are_exported_and_deleted_by_their_email(run):
     ]
     assert after == {"contact_messages": []}
     assert [m["message"] for m in others["contact_messages"]] == ["Hello"]
+
+
+def test_a_replayed_deletion_leaves_a_message_sent_since_from_that_address(run):
+    ann = f"ann-{uuid.uuid4().hex[:8]}@example.com"
+
+    async def scenario():
+        await send(ann, "Before")
+        erased_at = datetime.now(UTC)
+        await send(ann, "After")
+        await accounts.remove_user(ann, erased_at)
+
+        return await accounts.export_user(ann)
+
+    found = run(scenario())
+
+    assert [m["message"] for m in found["contact_messages"]] == ["After"]

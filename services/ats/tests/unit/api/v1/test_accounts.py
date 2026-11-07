@@ -20,7 +20,7 @@ def test_deleting_an_account_deletes_its_candidates_and_forgets_its_connections(
 ):
     done = []
 
-    async def delete_email(session, email):
+    async def delete_email(session, email, before=None):
         done.append(("candidates", email))
 
     async def forget_maker(session, user_id):

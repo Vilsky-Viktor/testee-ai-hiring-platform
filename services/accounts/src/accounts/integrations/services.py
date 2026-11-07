@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from testee_common.http import http
 from testee_common.http.http import bearer
 
@@ -23,14 +25,15 @@ def services() -> dict[str, str]:
     }
 
 
-async def delete_in_companies(user_id: str, email: str) -> None:
+async def delete_in_companies(user_id: str, email: str, erased_at: datetime | None = None) -> None:
     """Deletes the user's data in companies, which refuses (409) while they own a company others
-    have joined; raises if it can't, so the deletion can be retried."""
+    have joined; raises if it can't, so the deletion can be retried. `erased_at`, on a replay:
+    what's under the email since then stays."""
     # The email goes in the body, never the query string, which request logs record.
     response = await http.get_client().request(
         "DELETE",
         f"{settings.companies_url}/internal/users/{user_id}",
-        json={"email": email},
+        json={"email": email, "erased_at": erased_at.isoformat() if erased_at else None},
         headers=bearer(service_token("companies")),
         timeout=ACCOUNT_CALL_TIMEOUT_SECONDS,
     )

@@ -20,7 +20,7 @@ from notifications.schemas.notifications import NotificationOut
 from notifications.services import slack as slack_service
 
 
-async def remove_user(user_id: str, email: str) -> None:
+async def remove_user(user_id: str, email: str, before: datetime | None = None) -> None:
     """The user's own notifications go, and companies' notifications about them as a candidate
     (their email and grade), and owners' notifications that they joined a company (their email);
     the Slack channels they connected stay with their companies, without their id. The log of
@@ -33,8 +33,8 @@ async def remove_user(user_id: str, email: str) -> None:
         await forget_author(session, user_id)
         await sent_emails.remove_user(session, user_id)
         await bulk_recipients.remove_user(session, user_id)
-        await notifications.remove_candidate(session, email)
-        await notifications.remove_member(session, email)
+        await notifications.remove_candidate(session, email, before=before)
+        await notifications.remove_member(session, email, before)
         stopped = await slack.forget_maker(session, user_id)
 
     for company_id in stopped:

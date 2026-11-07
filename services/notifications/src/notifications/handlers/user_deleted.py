@@ -8,4 +8,4 @@ async def handle(data: dict, event_id: str) -> None:
     companies' notifications about them; the Slack channels they connected stay without them,
     each company told once (a redelivery finds none left to forget)."""
     event = UserDeleted.model_validate(data)
-    await accounts.remove_user(event.user_id, event.email)
+    await accounts.remove_user(event.user_id, event.email, event.erased_at)

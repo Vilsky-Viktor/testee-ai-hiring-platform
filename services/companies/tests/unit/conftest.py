@@ -78,7 +78,7 @@ def no_billing_calls(monkeypatch):
     async def nothing(*args, **kwargs):
         return None
 
-    async def no_invites(session, user_id, email):
+    async def no_invites(session, user_id, email, before=None):
         return []
 
     async def never_paid(company_id):
@@ -94,6 +94,7 @@ def no_billing_calls(monkeypatch):
 
     monkeypatch.setattr(accounts, "unfinished_invites", no_invites)
     monkeypatch.setattr(invites, "unfinished", none_unfinished)
+    monkeypatch.setattr(interview_notes, "forget_author", nothing)
 
 
 @pytest.fixture(autouse=True)

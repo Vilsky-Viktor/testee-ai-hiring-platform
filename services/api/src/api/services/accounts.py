@@ -1,3 +1,4 @@
+from datetime import datetime
 from uuid import UUID
 
 from fastapi.encoders import jsonable_encoder
@@ -6,15 +7,15 @@ from api.core.db import Session
 from api.repositories import keys, webhook_retries, webhooks
 
 
-async def remove_user(user_id: str, email: str) -> None:
+async def remove_user(user_id: str, email: str, before: datetime | None = None) -> None:
     """A deleted account: the keys and web hooks it made stay their companies', without its id,
     and, by its `email` (empty when it wasn't verified, matching no one), its results as a
-    candidate waiting to be sent again to companies' web hooks go. All at once or nothing, so a
-    retry finds everything still to do."""
+    candidate waiting to be sent again to companies' web hooks go (with `before`, a replay's,
+    those from before it). All at once or nothing, so a retry finds everything still to do."""
     async with Session.begin() as session:
         await keys.forget_user(session, user_id)
         await webhooks.forget_user(session, user_id)
-        await webhook_retries.remove_email(session, email)
+        await webhook_retries.remove_email(session, email, before)
 
 
 async def export_user(user_id: str) -> dict:

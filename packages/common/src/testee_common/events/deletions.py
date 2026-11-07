@@ -4,14 +4,20 @@ accounts' `user.deleted`. Consumers ignore
 fields they don't know (tolerant reader); a payload that fails validation can never be handled
 (a ValueError: handle_or_drop drops it)."""
 
+import logging
+from datetime import datetime
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict
+from testee_common.config.constants import GUEST_UID_PREFIX
+
+logger = logging.getLogger(__name__)
 
 INTERVIEW_DELETED = "interview.deleted"
 COMPANY_DELETED = "company.deleted"
 USER_DELETED = "user.deleted"
 INTERVIEW_CANDIDATES_DELETED = "interview.candidates_deleted"
+GUESTS_DELETED = "guests.deleted"
 
 
 class InterviewDeleted(BaseModel):
@@ -60,9 +66,34 @@ class UserDeleted(BaseModel):
     """A user deleted their account: each holder deletes what it keeps under their id, and
     under their email what it keeps about them as a candidate. Companies has already deleted its
     part (it may refuse, so accounts calls it first); accounts sends it again after a restore
-    (its erasures), so a holder deletes whatever a backup brought back."""
+    (its erasures), so a holder deletes whatever a backup brought back. `erased_at` comes with
+    those: what a holder keeps under the email from then on is someone's new, say the same
+    address invited again, and stays."""
 
     model_config = ConfigDict(extra="ignore")
 
     user_id: str
     email: str
+    erased_at: datetime | None = None
+
+
+def guest_ids(event_id: str, data: dict) -> list[str]:
+    """The guests a `guests.deleted` event names: only guests' ids are taken, anything else is
+    logged and left out."""
+    user_ids = data.get("user_ids")
+
+    if not isinstance(user_ids, list):
+        logger.error("Dropped malformed guests.deleted event %s", event_id)
+
+        return []
+
+    guests = [
+        user_id
+        for user_id in user_ids
+        if isinstance(user_id, str) and user_id.startswith(GUEST_UID_PREFIX)
+    ]
+
+    if len(guests) != len(user_ids):
+        logger.error("guests.deleted event %s names a user who isn't a guest", event_id)
+
+    return guests

@@ -71,7 +71,14 @@ def test_an_account_deletion_saves_its_rows_note_and_event_together(run, leaving
 
     assert terms == []
     assert noted == ["leaving@example.com"]
-    assert events == [{"type": USER_DELETED, "user_id": user.uid, "email": "leaving@example.com"}]
+    assert events == [
+        {
+            "type": USER_DELETED,
+            "user_id": user.uid,
+            "email": "leaving@example.com",
+            "erased_at": None,
+        }
+    ]
     assert signed_out == [user.uid]
 
 

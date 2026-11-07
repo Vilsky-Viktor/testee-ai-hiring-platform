@@ -3,6 +3,7 @@ from typing import Annotated, Literal
 from uuid import UUID
 
 from pydantic import AfterValidator, BaseModel, EmailStr, Field
+from testee_common.auth.user import UserEmailIn
 from testee_common.i18n.titles import at_least
 
 from companies.constants.invites import (
@@ -191,3 +192,8 @@ class UserCompaniesOut(BaseModel):
 
     company_ids: list[str]
     viewer_company_ids: list[str]
+
+
+class UserErasureIn(UserEmailIn):
+    # A replayed deletion's first time: what's under the email since then stays.
+    erased_at: datetime | None = None

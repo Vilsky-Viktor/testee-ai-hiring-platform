@@ -48,8 +48,8 @@ def done(monkeypatch):
     async def forget(session, before):
         calls.append("forget")
 
-    async def delete_in_companies(user_id, email):
-        calls.append(("companies", user_id, email))
+    async def delete_in_companies(user_id, email, erased_at):
+        calls.append(("companies", user_id, email, erased_at))
 
     async def delete_own(session, user_id):
         calls.append(("own", user_id))
@@ -60,9 +60,13 @@ def done(monkeypatch):
     async def flushed():
         calls.append("published")
 
+    async def dropped(sessions):
+        calls.append("events dropped")
+
     monkeypatch.setattr(erasures, "page", page)
     monkeypatch.setattr(erasures, "forget", forget)
     monkeypatch.setattr(erasures, "record", record)
+    monkeypatch.setattr(outbox, "forget_deletions", dropped)
     monkeypatch.setattr(services, "delete_in_companies", delete_in_companies)
     monkeypatch.setattr(user_data, "delete_user", delete_own)
     monkeypatch.setattr(
@@ -81,13 +85,23 @@ def test_every_recent_erasure_is_run_again_in_companies_and_by_event_after_older
     assert done == [
         "forget",
         ("page", True, None),
-        ("companies", "u0", "u0@example.com"),
+        ("companies", "u0", "u0@example.com", NOW),
         ("own", "u0"),
         # Kept from the first time (once per account).
         ("erasure", "u0"),
         # Every other holder deletes again what a restore brought back.
-        ("event", USER_DELETED, {"user_id": "u0", "email": "u0@example.com"}),
+        (
+            "event",
+            USER_DELETED,
+            {
+                "user_id": "u0",
+                "email": "u0@example.com",
+                "erased_at": NOW.isoformat().replace("+00:00", "Z"),
+            },
+        ),
         "published",
+        # The email stays in the outbox no longer than in the note.
+        "events dropped",
     ]
 
 
@@ -112,7 +126,7 @@ def test_a_run_past_its_time_leaves_the_rest_to_the_next(done, monkeypatch):
 
 
 def test_companies_refusing_a_shared_company_doesnt_stop_the_others(done, monkeypatch):
-    async def refuse(user_id, email):
+    async def refuse(user_id, email, erased_at):
         response = httpx.Response(409, request=httpx.Request("DELETE", "http://companies"))
         raise httpx.HTTPStatusError("refused", request=response.request, response=response)
 
@@ -123,7 +137,7 @@ def test_companies_refusing_a_shared_company_doesnt_stop_the_others(done, monkey
 
 
 def test_companies_failing_fails_the_run_to_be_retried(done, monkeypatch):
-    async def down(user_id, email):
+    async def down(user_id, email, erased_at):
         raise httpx.ConnectError("companies is down")
 
     monkeypatch.setattr(services, "delete_in_companies", down)

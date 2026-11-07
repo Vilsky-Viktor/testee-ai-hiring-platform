@@ -26,7 +26,7 @@ def test_a_deleted_account_leaves_its_keys_and_web_hooks_takes_waiting_results_a
     monkeypatch.setattr(keys, "of_user", nothing)
     monkeypatch.setattr(webhooks, "of_user", nothing)
 
-    async def remove_email(session, email):
+    async def remove_email(session, email, before=None):
         removed.append(("removed", email))
 
     monkeypatch.setattr(webhook_retries, "remove_email", remove_email)

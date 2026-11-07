@@ -1,3 +1,4 @@
+from datetime import datetime
 from uuid import UUID
 
 from ats.core.db import Session
@@ -7,12 +8,12 @@ from ats.services import ats as integrations
 from ats.services import outbox as outbox_service
 
 
-async def remove_user(user_id: str, email: str) -> None:
+async def remove_user(user_id: str, email: str, before: datetime | None = None) -> None:
     """An account is deleted, in one transaction: an ATS's records of them as a candidate go;
     the ATS connections they made stay with their companies, without their id, and each company
     whose connection stops working is told it needs reconnecting."""
     async with Session.begin() as session:
-        await ats_candidates.delete_email(session, email)
+        await ats_candidates.delete_email(session, email, before)
 
         for company_id, provider in await ats.forget_maker(session, user_id):
             ats.notify(session, connection_broken(company_id, provider))

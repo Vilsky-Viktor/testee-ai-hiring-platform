@@ -4,6 +4,8 @@ ACCOUNT_CALL_TIMEOUT_SECONDS = 60
 # Deleted accounts are remembered as long as the database's backups last (14 kept, a day each),
 # so a restore's deletions can be run again; then forgotten.
 ERASURE_KEEP_DAYS = 14
+# A `user.deleted` event not published after this long goes at the next replay, which sends it again.
+UNPUBLISHED_DELETION_HOURS = 12
 # Replaying them (services/erasures.py): ERASURE_BATCH at once, newest first (a restore from a
 # recent backup brings back the latest), and no batch started after ERASURE_RUN_SECONDS, so the
 # last batch (one account call's time) ends inside this service's 150 s request timeout. A run

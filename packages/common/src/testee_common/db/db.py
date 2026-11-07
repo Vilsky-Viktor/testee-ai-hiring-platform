@@ -1,6 +1,6 @@
 import time
 
-from sqlalchemy import Engine, create_engine, delete, inspect, select, text, update
+from sqlalchemy import Engine, create_engine, delete, inspect, select, text, true, update
 from sqlalchemy.ext.asyncio import AsyncEngine, async_sessionmaker, create_async_engine
 from testee_common.config.constants import (
     DB_MAX_OVERFLOW,
@@ -20,6 +20,12 @@ def one_of(column: str, values) -> str:
     listed = ", ".join("'" + str(value).replace("'", "''") + "'" for value in values)
 
     return f"{column} IN ({listed})"
+
+
+def made_before(column, moment):
+    """The condition that `column` is before `moment`; any row without one (an account's
+    deletion replayed: an address's rows made since are someone's new ones)."""
+    return column < moment if moment else true()
 
 
 def sqlalchemy_url(database_url: str) -> str:

@@ -1,12 +1,15 @@
+from datetime import datetime
+
 from site_content.core.db import Session
 from site_content.repositories import outbox
 
 
-async def remove_user(email: str) -> None:
+async def remove_user(email: str, before: datetime | None = None) -> None:
     """The contact messages the user sent from their account's email and site still keeps (until
-    a week after they're emailed); safe to repeat."""
+    a week after they're emailed), with `before`, a replay's, those from before it; safe to
+    repeat."""
     async with Session.begin() as session:
-        await outbox.delete_contact_messages(session, email)
+        await outbox.delete_contact_messages(session, email, before)
 
 
 async def export_user(email: str) -> dict:

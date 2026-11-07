@@ -37,7 +37,7 @@ def calls(monkeypatch):
     async def remove_member(session, member_id):
         done.append(("member", member_id))
 
-    async def candidate_invites(session, user_id, email):
+    async def candidate_invites(session, user_id, email, before=None):
         done.append(("candidate", user_id, email))
 
         return []
@@ -46,12 +46,12 @@ def calls(monkeypatch):
     monkeypatch.setattr(accounts, "remove_member", remove_member)
     monkeypatch.setattr(accounts, "candidate_invites", candidate_invites)
 
-    async def forget_verification(session, email):
+    async def forget_verification(session, email, before=None):
         done.append(("verification", email))
 
     monkeypatch.setattr(accounts, "forget_verification_email", forget_verification)
 
-    async def forget_member_invites(session, email):
+    async def forget_member_invites(session, email, before=None):
         done.append(("team invites", email))
 
     monkeypatch.setattr(accounts, "forget_member_invites", forget_member_invites)
@@ -104,7 +104,7 @@ def test_a_candidate_deleting_their_account_mid_interview_is_settled_as_if_remov
     waiting = SimpleNamespace(id=uuid.uuid4(), status=InviteStatus.INVITED, hold_key="h3")
     settled = []
 
-    async def unfinished(session, user_id, email):
+    async def unfinished(session, user_id, email, before=None):
         return [picked, opened, waiting]
 
     async def scores(invite_ids):
