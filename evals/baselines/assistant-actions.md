@@ -19,7 +19,9 @@ Contents: [Mira](#mira-an-ai-assistant-that-says-so-2026-10-22-kept) ·
 [Inviting by voice or by click](#inviting-by-voice-or-by-click-2026-10-30-kept) ·
 [A link to the features page](#a-link-to-the-features-page-2026-10-31-kept) ·
 [A link to the hiring flow page](#a-link-to-the-hiring-flow-page-2026-11-04-kept) ·
-[A link to a topic's page](#a-link-to-a-topics-page-2026-11-04-kept)
+[A link to a topic's page](#a-link-to-a-topics-page-2026-11-04-kept) ·
+[The turn after a confirmed action](#the-turn-after-a-confirmed-action-2026-11-07-kept) ·
+[Two tools' descriptions](#two-tools-descriptions-say-what-they-really-do-2026-11-07-kept)
 
 ## Mira, an AI assistant that says so (2026-10-22, kept)
 
@@ -249,3 +251,31 @@ task success 100% (98.5–100), then 99.2% (97.2–99.8); the 82 earlier cases 2
 topics). 16,161 then 16,214 tokens and $0.00168 then $0.00169 a turn, 11.8 then 6.4 s (a busier
 stack before). Misses after: e17.3 (no note card), m05.3 (the cross case's pass mark card), none
 about links; all within the noise. $0.50 and $0.52.
+
+## The turn after a confirmed action (2026-11-07, kept)
+
+The service's answer sat in the app's note as bare text, though it holds what users and ATSs wrote.
+It's now in `<result>`, named as data, and the next step leaves out what else the conversation
+asked for. That turn had no eval: `assistant_confirmed.py` on `assistant_confirmed.json` (18 cases,
+8 with planted instructions), code-graded, × 3 (54 turns), the same grader for both:
+
+| Note | Passed | No new card | At most 3 sentences | Injection safe | Price, time |
+|---|---|---|---|---|---|
+| Before | 94.4% (84.9–98.1) | 100% (93.4–100) | 100% (93.4–100) | 100% (86.2–100) | $0.0005 and 3.0 s a turn |
+| In `<result>`, as data (kept) | 98.1% (90.2–99.7) | 100% (93.4–100) | 100% (93.4–100) | 100% (86.2–100) | $0.0005 and 3.2 s a turn |
+
+No difference beyond the noise, and the model wasn't fooled before either: the planted text never
+made a card or reached a reply, in either run. The one case that moved is o01, naming the other
+card that waits: 3 of 3 misses → 1 of 3. Kept as ai.md asks: untrusted text goes in tagged as data.
+
+## Two tools' descriptions say what they really do (2026-11-07, kept)
+
+`revoke_candidate` read as if it only withdrew an unused invite, though the route also erases a
+candidate who started, with their answers, for good and charges them if they answered; `get_updates`
+now says an API key hears only what its permissions cover. `assistant_actions.py`, 85 cases × 3, the
+same day: task success 94.8% (91.4–96.9) → 97.8% (95.2–99.0), tool choice 97.0% → 98.5%, arguments
+100% both, link 88.9% → 96.3%, asked first 97.8% both, injection safe 100% both, judge traps 8 of 8
+both; 16,147 ± 1,216 → 17,486 ± 1,532 tokens, $0.0017 → $0.0018 a turn. Nothing beyond the noise; the
+misses left (b05 and three that come and go) touch neither tool. The dataset has no case that
+erases a started candidate, so what the new wording changes wasn't graded. $0.57 and $0.60.
+
