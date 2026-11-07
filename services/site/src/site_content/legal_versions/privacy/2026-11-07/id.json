@@ -134,7 +134,7 @@
         "Laporan kesalahan: hingga 90 hari.",
         "Log server: 30 hari. Catatan penggunaan zona admin oleh staf kami, berdasarkan ID akun: setahun, dan tidak ada yang dapat mengubah atau menghapusnya lebih cepat.",
         "Catatan panggilan AI di Langfuse: 30 hari, lalu dihapus secara otomatis.",
-        "Cadangan basis data: 14 hari, lalu ditimpa; apa pun yang telah dihapus sudah hilang dari cadangan pada saat itu.",
+        "Cadangan basis data dan cadangan harian akun untuk masuk: 14 hari, lalu ditimpa atau dihapus; apa pun yang telah dihapus sudah hilang dari cadangan pada saat itu.",
         "Catatan akun yang dihapus, dengan email dan ID akunnya: 14 hari, selama cadangan masih ada, hanya agar cadangan yang dipulihkan tidak dapat mengembalikan datamu.",
         "Pesan yang sedang dikirim antarlayanan kami, yang dapat berisi email dan laporan yang dikirim lewat email: paling lama 8 hari setelah dikirim. Event webhook yang gagal dan menunggu dikirim ulang: sekitar 3 hari.",
         "Statistik penggunaan: 25 bulan, lalu dihapus secara otomatis; menghapus akunmu tidak mempersingkat jangka waktu ini.",

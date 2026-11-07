@@ -134,7 +134,7 @@
         "Rapports d'erreur : jusqu'à 90 jours.",
         "Journaux serveur : 30 jours. Registres de l'utilisation de l'espace admin par notre personnel, par identifiant de compte : un an, et personne ne peut les modifier ni les supprimer avant.",
         "Registres des appels à l'IA chez Langfuse : 30 jours, puis suppression automatique.",
-        "Sauvegardes de la base de données : 14 jours, puis écrasées ; tout ce qui a été supprimé en a disparu à ce terme.",
+        "Sauvegardes de la base de données et sauvegarde quotidienne des comptes de connexion : 14 jours, puis écrasées ou supprimées ; tout ce qui a été supprimé en a disparu à ce terme.",
         "Une trace d'un compte supprimé, avec son e-mail et son identifiant de compte : 14 jours, soit la durée de vie des sauvegardes, uniquement pour qu'une sauvegarde restaurée ne puisse pas faire revenir vos données.",
         "Messages en transit entre nos services, qui peuvent inclure des e-mails et des rapports envoyés par e-mail : jusqu'à 8 jours après leur envoi. Un événement de webhook en échec, en attente d'un nouvel envoi : environ 3 jours.",
         "Statistiques d'utilisation : 25 mois, puis suppression automatique ; supprimer votre compte ne raccourcit pas ce délai.",

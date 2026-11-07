@@ -134,7 +134,7 @@
         "Report degli errori: fino a 90 giorni.",
         "Log del server: 30 giorni. Registri dell'uso dell'area admin da parte del nostro personale, per ID dell'account: un anno, e nessuno può modificarli o eliminarli prima.",
         "Registri delle chiamate all'IA presso Langfuse: 30 giorni, poi eliminati automaticamente.",
-        "Backup del database: 14 giorni, poi sovrascritti; entro allora, ciò che è stato eliminato non è più presente nei backup.",
+        "Backup del database e backup giornaliero degli account di accesso: 14 giorni, poi sovrascritti o eliminati; entro allora, ciò che è stato eliminato non è più presente nei backup.",
         "Un record di un account eliminato, con la sua email e il suo ID: 14 giorni, per tutta la durata dei backup, solo per evitare che un backup ripristinato riporti indietro i tuoi dati.",
         "Messaggi in transito tra i nostri servizi, che possono includere email e report inviati via email: fino a 8 giorni dopo l'invio. Un evento webhook non riuscito, in attesa di un nuovo invio: circa 3 giorni.",
         "Statistiche di utilizzo: 25 mesi, poi eliminate automaticamente; eliminare il tuo account non accorcia questo periodo.",

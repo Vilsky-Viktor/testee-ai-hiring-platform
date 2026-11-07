@@ -138,7 +138,7 @@ PRIVACY_SECTIONS = [
             "Error reports: up to 90 days.",
             "Server logs: 30 days. Records of our staff's use of the admin zone, by account id: a year, and nobody can change or delete them sooner.",
             "Records of AI calls at Langfuse: 30 days, then deleted automatically.",
-            "Database backups: 14 days, then overwritten; anything deleted is gone from them by then.",
+            "Database backups and the daily backup of sign-in accounts: 14 days, then overwritten or deleted; anything deleted is gone from them by then.",
             "A record of a deleted account, with its email and account id: 14 days, as long as the backups last, only so that a restored backup can't bring your data back.",
             "Messages on their way between our services, which can include emails and emailed reports: up to 8 days after they're sent. A web hook event that failed, waiting to be sent again: about 3 days.",
             "Usage statistics: 25 months, then deleted automatically; deleting your account doesn't shorten this.",

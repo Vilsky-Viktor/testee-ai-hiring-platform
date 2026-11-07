@@ -134,7 +134,7 @@
         "Fehlerberichte: bis zu 90 Tage.",
         "Serverprotokolle: 30 Tage. Aufzeichnungen über die Nutzung des Adminbereichs durch unsere Mitarbeitenden, nach Konto-ID: ein Jahr, und niemand kann sie vorher ändern oder löschen.",
         "Aufzeichnungen der KI-Aufrufe bei Langfuse: 30 Tage, danach werden sie automatisch gelöscht.",
-        "Datenbank-Backups: 14 Tage, danach werden sie überschrieben; alles Gelöschte ist bis dahin auch aus ihnen verschwunden.",
+        "Datenbank-Backups und das tägliche Backup der Anmeldekonten: 14 Tage, danach werden sie überschrieben oder gelöscht; alles Gelöschte ist bis dahin auch aus ihnen verschwunden.",
         "Ein Eintrag zu einem gelöschten Konto, mit seiner E-Mail-Adresse und Konto-ID: 14 Tage, so lange wie die Backups bestehen, nur damit ein wiederhergestelltes Backup deine Daten nicht zurückbringen kann.",
         "Nachrichten auf dem Weg zwischen unseren Diensten, die E-Mails und per E-Mail versendete Berichte enthalten können: bis zu 8 Tage nach ihrem Versand. Ein fehlgeschlagenes Webhook-Ereignis, das auf den erneuten Versand wartet: etwa 3 Tage.",
         "Nutzungsstatistiken: 25 Monate, danach werden sie automatisch gelöscht; das Löschen deines Kontos verkürzt diese Frist nicht.",

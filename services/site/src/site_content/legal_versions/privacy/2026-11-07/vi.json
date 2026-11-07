@@ -134,7 +134,7 @@
         "Báo cáo lỗi: tối đa 90 ngày.",
         "Nhật ký máy chủ: 30 ngày. Bản ghi việc nhân viên của chúng tôi sử dụng khu vực quản trị, theo ID tài khoản: một năm, và không ai có thể thay đổi hay xóa sớm hơn.",
         "Bản ghi các lệnh gọi AI tại Langfuse: 30 ngày, sau đó tự động bị xóa.",
-        "Bản sao lưu cơ sở dữ liệu: 14 ngày, sau đó bị ghi đè; mọi thứ đã bị xóa sẽ không còn trong các bản sao lưu kể từ thời điểm đó.",
+        "Bản sao lưu cơ sở dữ liệu và bản sao lưu hằng ngày của tài khoản đăng nhập: 14 ngày, sau đó bị ghi đè hoặc bị xóa; mọi thứ đã bị xóa sẽ không còn trong các bản sao lưu kể từ thời điểm đó.",
         "Bản ghi về một tài khoản đã xóa, kèm email và ID tài khoản: 14 ngày, trong thời gian các bản sao lưu còn tồn tại, chỉ để một bản sao lưu được khôi phục không thể mang dữ liệu của bạn trở lại.",
         "Tin nhắn đang được chuyển giữa các dịch vụ của chúng tôi, có thể bao gồm email và báo cáo gửi qua email: tối đa 8 ngày sau khi được gửi. Một sự kiện webhook bị lỗi, đang chờ gửi lại: khoảng 3 ngày.",
         "Thống kê sử dụng: 25 tháng, sau đó tự động bị xóa; việc xóa tài khoản không rút ngắn thời hạn này.",

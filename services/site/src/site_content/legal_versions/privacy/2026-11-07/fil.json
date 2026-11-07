@@ -134,7 +134,7 @@
         "Mga error report: hanggang 90 araw.",
         "Mga server log: 30 araw. Mga talaan ng paggamit ng aming staff sa admin zone, ayon sa account id: isang taon, at walang makakapagbago o makakapagbura ng mga ito nang mas maaga.",
         "Mga talaan ng mga AI call sa Langfuse: 30 araw, saka awtomatikong binubura.",
-        "Mga backup ng database: 14 na araw, saka ino-overwrite; anumang binura ay wala na sa mga ito pagsapit ng panahong iyon.",
+        "Mga backup ng database at ang araw-araw na backup ng mga sign-in account: 14 na araw, saka ino-overwrite o binubura; anumang binura ay wala na sa mga ito pagsapit ng panahong iyon.",
         "Isang talaan ng binurang account, kasama ang email at account id nito: 14 na araw, habang tumatagal ang mga backup, para lamang hindi maibalik ng isang na-restore na backup ang iyong data.",
         "Mga mensaheng papunta sa pagitan ng aming mga serbisyo, na maaaring kabilang ang mga email at mga ulat na in-email: hanggang 8 araw pagkatapos ipadala ang mga ito. Isang webhook event na nabigo at naghihintay na maipadala ulit: mga 3 araw.",
         "Usage statistics: 25 buwan, saka awtomatikong binubura; hindi napapaikli ang panahong ito kapag binura mo ang iyong account.",

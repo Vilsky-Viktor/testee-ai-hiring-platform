@@ -134,7 +134,7 @@
         "Informes de errores: hasta 90 días.",
         "Registros del servidor: 30 días. Registros del uso de la zona de administración por parte de nuestro personal, por identificador de cuenta: un año, y nadie puede cambiarlos ni eliminarlos antes.",
         "Registros de llamadas a la IA en Langfuse: 30 días; después se eliminan automáticamente.",
-        "Copias de seguridad de la base de datos: 14 días; después se sobrescriben, y para entonces lo eliminado ya no está en ellas.",
+        "Copias de seguridad de la base de datos y copia de seguridad diaria de las cuentas de inicio de sesión: 14 días; después se sobrescriben o se eliminan, y para entonces lo eliminado ya no está en ellas.",
         "Un registro de una cuenta eliminada, con su correo y su identificador de cuenta: 14 días, lo que duran las copias de seguridad, solo para que una copia de seguridad restaurada no pueda recuperar tus datos.",
         "Mensajes en tránsito entre nuestros servicios, que pueden incluir correos e informes enviados por correo: hasta 8 días después de su envío. Un evento de webhook que falló, a la espera de reenviarse: unos 3 días.",
         "Estadísticas de uso: 25 meses; después se eliminan automáticamente. Eliminar tu cuenta no acorta este plazo.",

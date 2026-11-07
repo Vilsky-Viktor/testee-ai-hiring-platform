@@ -134,7 +134,7 @@
         "Hata raporları: en fazla 90 gün.",
         "Sunucu günlükleri: 30 gün. Çalışanlarımızın yönetici alanını kullanımına ilişkin kayıtlar, hesap kimliğine göre: bir yıl; bu süreden önce kimse bunları değiştiremez veya silemez.",
         "Langfuse'taki yapay zekâ çağrı kayıtları: 30 gün, ardından otomatik olarak silinir.",
-        "Veritabanı yedekleri: 14 gün, ardından üzerine yazılır; silinen her şey o zamana kadar yedeklerden de kaybolur.",
+        "Veritabanı yedekleri ve giriş hesaplarının günlük yedeği: 14 gün, ardından üzerine yazılır veya silinir; silinen her şey o zamana kadar yedeklerden de kaybolur.",
         "Silinmiş bir hesabın e-posta adresi ve hesap kimliğiyle birlikte kaydı: yedekler kaldığı sürece 14 gün; yalnızca geri yüklenen bir yedeğin verilerinizi geri getirmemesi için.",
         "Hizmetlerimiz arasında iletilmekte olan mesajlar (e-postaları ve e-postayla gönderilen raporları içerebilir): gönderilmelerinden sonra en fazla 8 gün. Başarısız olmuş ve yeniden gönderilmeyi bekleyen bir webhook olayı: yaklaşık 3 gün.",
         "Kullanım istatistikleri: 25 ay, ardından otomatik olarak silinir; hesabınızı silmeniz bu süreyi kısaltmaz.",

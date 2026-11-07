@@ -134,7 +134,7 @@
         "Vearaportid: kuni 90 päeva.",
         "Serverilogid: 30 päeva. Kirjed meie töötajate tegevuse kohta administraatori alas konto ID järgi: üks aasta ning keegi ei saa neid enne seda muuta ega kustutada.",
         "AI-päringute kirjed Langfuse juures: 30 päeva, seejärel kustutatakse need automaatselt.",
-        "Andmebaasi varukoopiad: 14 päeva, seejärel kirjutatakse need üle; selleks ajaks on kõik kustutatu ka neist kadunud.",
+        "Andmebaasi varukoopiad ja sisselogimiskontode igapäevane varukoopia: 14 päeva, seejärel kirjutatakse need üle või kustutatakse; selleks ajaks on kõik kustutatu ka neist kadunud.",
         "Kirje kustutatud konto kohta koos selle e-posti aadressi ja konto ID-ga: 14 päeva, nii kaua kui varukoopiad kestavad, ainult selleks, et taastatud varukoopia ei saaks sinu andmeid tagasi tuua.",
         "Meie teenuste vahel liikuvad sõnumid, mille hulgas võib olla e-kirju ja e-postiga saadetud aruandeid: kuni 8 päeva pärast nende saatmist. Ebaõnnestunud veebikonksu sündmus, mis ootab uuesti saatmist: umbes 3 päeva.",
         "Kasutusstatistika: 25 kuud, seejärel kustutatakse see automaatselt; sinu konto kustutamine seda tähtaega ei lühenda.",

@@ -134,7 +134,7 @@
         "Relatórios de erros: até 90 dias.",
         "Registros de servidor: 30 dias. Registros do uso da área de administração pela nossa equipe, por ID da conta: um ano, e ninguém pode alterá-los ou excluí-los antes disso.",
         "Registros de chamadas à IA na Langfuse: 30 dias; depois, são excluídos automaticamente.",
-        "Backups do banco de dados: 14 dias, depois são sobrescritos; tudo o que foi excluído já terá desaparecido deles até lá.",
+        "Backups do banco de dados e backup diário das contas de login: 14 dias, depois são sobrescritos ou excluídos; tudo o que foi excluído já terá desaparecido deles até lá.",
         "Um registro de uma conta excluída, com o e-mail e o ID da conta: 14 dias, enquanto durarem os backups, apenas para que um backup restaurado não possa trazer seus dados de volta.",
         "Mensagens a caminho entre os nossos serviços, que podem incluir e-mails e relatórios enviados por e-mail: até 8 dias após o envio. Um evento de webhook que falhou, aguardando novo envio: cerca de 3 dias.",
         "Estatísticas de uso: 25 meses; depois, são excluídas automaticamente. Excluir a sua conta não encurta esse prazo.",

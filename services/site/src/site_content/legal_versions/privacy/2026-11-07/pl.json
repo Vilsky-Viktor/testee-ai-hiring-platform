@@ -134,7 +134,7 @@
         "Raporty o błędach: do 90 dni.",
         "Logi serwera: 30 dni. Rejestry korzystania ze strefy administratora przez nasz personel, według identyfikatora konta: rok, i nikt nie może ich wcześniej zmienić ani usunąć.",
         "Rejestry wywołań AI w Langfuse: 30 dni, a następnie są automatycznie usuwane.",
-        "Kopie zapasowe bazy danych: 14 dni, a następnie są nadpisywane; do tego czasu znika z nich wszystko, co zostało usunięte.",
+        "Kopie zapasowe bazy danych i codzienna kopia zapasowa kont logowania: 14 dni, a następnie są nadpisywane lub usuwane; do tego czasu znika z nich wszystko, co zostało usunięte.",
         "Zapis o usuniętym koncie, z jego adresem e-mail i identyfikatorem: 14 dni, tak długo, jak istnieją kopie zapasowe, wyłącznie po to, aby przywrócona kopia zapasowa nie mogła przywrócić Twoich danych.",
         "Wiadomości w drodze między naszymi usługami, które mogą obejmować e-maile i raporty wysyłane e-mailem: do 8 dni od ich wysłania. Zdarzenie webhooka, które się nie powiodło i czeka na ponowne wysłanie: około 3 dni.",
         "Statystyki użytkowania: 25 miesięcy, a następnie są automatycznie usuwane; usunięcie Twojego konta nie skraca tego okresu.",

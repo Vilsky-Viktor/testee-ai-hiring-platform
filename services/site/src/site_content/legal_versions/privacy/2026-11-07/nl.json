@@ -134,7 +134,7 @@
         "Foutrapporten: maximaal 90 dagen.",
         "Serverlogs: 30 dagen. Registraties van het gebruik van de beheeromgeving door onze medewerkers, per account-id: een jaar, en niemand kan ze eerder wijzigen of verwijderen.",
         "Registraties van AI-aanroepen bij Langfuse: 30 dagen, daarna automatisch verwijderd.",
-        "Databaseback-ups: 14 dagen, daarna overschreven; alles wat is verwijderd, is er dan ook uit verdwenen.",
+        "Databaseback-ups en de dagelijkse back-up van inlogaccounts: 14 dagen, daarna overschreven of verwijderd; alles wat is verwijderd, is er dan ook uit verdwenen.",
         "Een registratie van een verwijderd account, met het e-mailadres en de account-id: 14 dagen, zo lang als de back-ups bestaan, alleen zodat een teruggezette back-up je gegevens niet kan terugbrengen.",
         "Berichten onderweg tussen onze diensten, waaronder e-mails en per e-mail verstuurde rapporten kunnen vallen: maximaal 8 dagen nadat ze zijn verzonden. Een mislukte webhook-gebeurtenis die wacht om opnieuw te worden verzonden: ongeveer 3 dagen.",
         "Gebruiksstatistieken: 25 maanden, daarna automatisch verwijderd; het verwijderen van je account verkort deze termijn niet.",
