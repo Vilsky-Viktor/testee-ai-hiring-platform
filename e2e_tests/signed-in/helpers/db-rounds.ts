@@ -65,3 +65,17 @@ export async function shapeAnswers(inviteId: string, relayed: boolean): Promise<
     return right;
   });
 }
+
+/** The session's newest page leave dated `seconds` back, as the server times a leave from it. */
+export async function dateLastLeaveBack(sessionId: string, seconds: number) {
+  await withDatabase("rounds", (client) =>
+    client.query(
+      `UPDATE signals SET created_at = created_at - make_interval(secs => $2)
+       WHERE id = (
+         SELECT id FROM signals WHERE session_id = $1 AND kind = 'tab_leave'
+         ORDER BY created_at DESC LIMIT 1
+       )`,
+      [sessionId, seconds],
+    ),
+  );
+}

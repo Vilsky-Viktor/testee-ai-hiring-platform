@@ -1,6 +1,7 @@
 import { expect, test } from "../fixtures"
 import { api, createCompany, createInterview, inviteCandidate } from "../helpers/api"
 import { inviteToken } from "../helpers/db"
+import { dateLastLeaveBack } from "../helpers/db-rounds"
 import { visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { ownerEmail, throwawayEmail } from "../helpers/users"
@@ -8,7 +9,7 @@ import { ownerEmail, throwawayEmail } from "../helpers/users"
 type Row = { id: string; tab_leaves: number }
 
 // A page leave counts when it lasted 2 seconds or more: a moment's one (a notification taking
-// focus) is kept but not counted.
+// focus) is dropped.
 test("only a real page leave counts", async ({
   signInAs,
 }) => {
@@ -19,31 +20,31 @@ test("only a real page leave counts", async ({
   await inviteCandidate(owner, interviewId, email)
 
   const candidate = await signInAs(email)
-  // The page's clock is Playwright's, so time away passes at once.
-  await candidate.clock.install()
   await visit(candidate, `/invite/${await inviteToken(email)}`)
   await candidate.getByTestId("start-pledge").filter({ visible: true }).click()
   await candidate.getByRole("main").getByRole("button").click()
   await expect(candidate).toHaveURL(/\/sessions\//)
   await expect(candidate.getByRole("main").locator("button[aria-pressed]").first()).toBeVisible()
 
-  // Each report is saved before the next is sent: time away passes at once, so without waiting
-  // the return could reach the server before the leave it closes.
+  const sessionId = new URL(candidate.url()).pathname.split("/").pop() as string
+  // Each report is saved before the next is sent, or the return could reach the server before
+  // the leave it closes.
   const reported = () =>
     candidate.waitForResponse((response) => response.url().endsWith("/signals"))
 
-  async function leave(milliseconds: number) {
+  // The server times a leave from its own saved row, so a long one is its row dated back.
+  async function leave(awaySeconds: number) {
     const left = reported()
     await candidate.evaluate(() => window.dispatchEvent(new Event("blur")))
     await left
-    await candidate.clock.fastForward(milliseconds)
+    await dateLastLeaveBack(sessionId, awaySeconds)
     const back = reported()
     await candidate.evaluate(() => window.dispatchEvent(new Event("focus")))
     await back
   }
 
-  await leave(300)
-  await leave(2_500)
+  await leave(0)
+  await leave(3)
 
   const leaves = async () => {
     const [row] = await api<Row[]>(owner, "GET", `/companies/interviews/${interviewId}/candidates`)
