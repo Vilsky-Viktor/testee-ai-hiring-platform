@@ -12,7 +12,7 @@ from companies.core.exceptions import OverLimit
 from companies.helpers.search import escape_like
 from companies.models.interviews import Interview
 from companies.models.invites import CandidateInvite
-from companies.repositories import guests, outbox
+from companies.repositories import guests, members, outbox
 from companies.repositories.sync import changed_since
 from companies.schemas.interviews import InterviewSettings
 
@@ -237,7 +237,7 @@ async def remove(session: AsyncSession, interview_id) -> list[tuple]:
     ).first()
 
     if gone is not None:
-        add_deleted(session, *gone)
+        await add_deleted(session, *gone)
 
     return removed
 
@@ -256,11 +256,14 @@ def add_interview_deleted(session: AsyncSession, interview_id, company_id, set_i
     return data
 
 
-def add_deleted(session: AsyncSession, interview_id, company_id, set_id, generation_id) -> None:
+async def add_deleted(
+    session: AsyncSession, interview_id, company_id, set_id, generation_id
+) -> None:
     """interview.deleted, and candidate.interview_deleted for notifications, the api and the
-    assistant to forget its candidates."""
+    assistant to forget its candidates (the assistant finds them in its members' chats)."""
     data = add_interview_deleted(session, interview_id, company_id, set_id, generation_id)
-    outbox.add(session, CANDIDATE_INTERVIEW_DELETED, data)
+    member_ids = await members.user_ids(session, company_id)
+    outbox.add(session, CANDIDATE_INTERVIEW_DELETED, {**data, "member_ids": member_ids})
 
 
 async def set_title(session: AsyncSession, interview_id, title: str) -> None:

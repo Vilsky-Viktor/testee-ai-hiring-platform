@@ -213,7 +213,7 @@ def test_a_deleted_interview_tells_the_services_that_keep_its_candidates(run):
 
     found, saved = run(scenario())
 
-    assert saved == [deleted(found)]
+    assert saved == [{**deleted(found), "member_ids": ["owner"]}]
 
 
 def test_a_deleted_companys_interviews_are_each_announced_with_their_questions(run):
@@ -239,4 +239,4 @@ def test_a_deleted_companys_interviews_are_each_announced_with_their_questions(r
 
     assert ready_saved == [deleted(ready, set_id)]
     assert generating_saved == [deleted(generating)]
-    assert company_saved == [{"company_id": str(ready.company_id)}]
+    assert company_saved == [{"company_id": str(ready.company_id), "member_ids": ["owner"]}]

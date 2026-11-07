@@ -12,7 +12,7 @@ from companies.helpers.candidates import new_hold_key
 from companies.models.interviews import Interview
 from companies.models.invites import CandidateInvite
 from companies.models.removals import RemovedInvite
-from companies.repositories import guests, outbox
+from companies.repositories import guests, members, outbox
 from companies.repositories.interviews import company_of
 
 
@@ -214,6 +214,7 @@ async def remove(session: AsyncSession, invite: CandidateInvite, company_id) -> 
             "interview_id": str(invite.interview_id),
             "candidate_invite_id": str(invite.id),
             "email": invite.email,
+            "member_ids": await members.user_ids(session, company_id),
         },
     )
 

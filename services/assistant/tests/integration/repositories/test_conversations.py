@@ -144,37 +144,82 @@ def test_a_visitors_chat_starts_the_new_conversation_in_its_order(run):
 
 def test_an_erased_candidates_or_deleted_interviews_conversations_go_and_the_rest_stay(run):
     company, other = uuid.uuid4(), uuid.uuid4()
-    user = f"members-{uuid.uuid4().hex[:8]}"
+    user, stranger = f"members-{uuid.uuid4().hex[:8]}", f"stranger-{uuid.uuid4().hex[:8]}"
     interview = str(uuid.uuid4())
 
-    async def say(company_id, title, content):
-        conversation = await transaction(conversations.create, user, company_id, title)
+    async def say_as(owner, company_id, title, content):
+        conversation = await transaction(conversations.create, owner, company_id, title)
         await transaction(messages.add_question, conversation.id, content, "text")
+
+    async def say(company_id, title, content):
+        await say_as(user, company_id, title, content)
 
     async def scenario():
         await say(company, "Asked about Ann", "How did ANN@example.com do?")
         await say(company, "About the interview", f"Open /interviews/{interview}")
         await say(company, "About Bo", "How did bo@example.com do?")
-        # Another company's conversation about the same address isn't this company's to erase.
-        await say(other, "Ann elsewhere", "ann@example.com")
+        # Chats a member started about all companies, or about another company, can hold her.
+        await say(None, "All companies, Ann", "ann@example.com")
+        await say(None, "All companies, the interview", f"Open /interviews/{interview}")
+        await say(None, "All companies, Bo", "bo@example.com")
+        await say(other, "Another company, Ann", "ann@example.com")
+        # Someone else's conversation about the same address isn't this company's to erase.
+        await say_as(stranger, other, "Ann elsewhere", "ann@example.com")
+        await say_as(stranger, None, "Ann all over", "ann@example.com")
         removed = push(
             "candidate.removed",
-            {"company_id": str(company), "interview_id": interview, "email": "ann@example.com"},
+            {
+                "company_id": str(company),
+                "interview_id": interview,
+                "email": "ann@example.com",
+                "member_ids": [user],
+            },
         )
         deleted = push(
             "candidate.interview_deleted",
-            {"company_id": str(company), "interview_id": interview},
+            {"company_id": str(company), "interview_id": interview, "member_ids": [user]},
         )
 
         async with client() as api:
             for event in (removed, removed, deleted):
                 assert (await api.post("/internal/events", json=event)).status_code == 204
 
-        return await transaction(conversations.of_user, user, None, 0, 100)
+        mine = await transaction(conversations.of_user, user, None, 0, 100)
+
+        return mine + await transaction(conversations.of_user, stranger, None, 0, 100)
 
     left = run(scenario())
 
-    assert sorted(item.title for item in left) == ["About Bo", "Ann elsewhere"]
+    assert sorted(item.title for item in left) == [
+        "About Bo",
+        "All companies, Bo",
+        "Ann all over",
+        "Ann elsewhere",
+    ]
+
+
+def test_a_deleted_companys_conversations_go_with_its_members_all_companies_ones(run):
+    company, other = uuid.uuid4(), uuid.uuid4()
+    user, stranger = f"member-{uuid.uuid4().hex[:8]}", f"stranger-{uuid.uuid4().hex[:8]}"
+    event = push("company.deleted", {"company_id": str(company), "member_ids": [user]})
+
+    async def scenario():
+        await transaction(conversations.create, user, company, "About it")
+        await transaction(conversations.create, user, None, "All companies")
+        await transaction(conversations.create, user, other, "Another company")
+        await transaction(conversations.create, stranger, None, "Someone else's")
+
+        async with client() as api:
+            for _ in range(2):
+                assert (await api.post("/internal/events", json=event)).status_code == 204
+
+        mine = await transaction(conversations.of_user, user, None, 0, 100)
+
+        return mine + await transaction(conversations.of_user, stranger, None, 0, 100)
+
+    left = run(scenario())
+
+    assert sorted(item.title for item in left) == ["Another company", "Someone else's"]
 
 
 def test_an_accounts_answers_traces_are_found_to_delete_with_it(run):
@@ -216,9 +261,9 @@ def test_a_companys_conversations_go_batch_after_batch(run, monkeypatch):
             await transaction(conversations.create, user, company, f"Bo {number}")
 
         await transaction(conversations.create, user, other, "Elsewhere")
-        mentioned = await conversations.delete_mentioning(Session, company, ["ann@example.com"])
+        mentioned = await conversations.delete_mentioning(Session, company, [], ["ann@example.com"])
         after_mentions = await transaction(conversations.of_user, user, None, 0, 100)
-        deleted = await conversations.delete_company(Session, company)
+        deleted = await conversations.delete_company(Session, company, [])
         left = await transaction(conversations.of_user, user, None, 0, 100)
         await transaction(conversations.delete_user, user)
 

@@ -18,7 +18,7 @@ from companies.helpers.search import escape_like
 from companies.models.companies import Company, Member
 from companies.models.interviews import Interview
 from companies.models.invites import CandidateInvite
-from companies.repositories import guests, outbox
+from companies.repositories import guests, members, outbox
 
 # The unique index on company names (see models/companies.py).
 NAME_INDEX = "uq_companies_lower_name"
@@ -114,10 +114,10 @@ async def delete(session: AsyncSession, company_id) -> None:
     time: services/batch_deletion.py)."""
     # An invite made meanwhile goes with the company (cascade).
     await guests.announce_deleted(session, CandidateInvite.company_id == company_id)
+    member_ids = await members.user_ids(session, company_id)
     await session.execute(sql_delete(Company).where(Company.id == company_id))
-    outbox.add(
-        session, COMPANY_DELETED, CompanyDeleted(company_id=company_id).model_dump(mode="json")
-    )
+    deleted = CompanyDeleted(company_id=company_id, member_ids=member_ids)
+    outbox.add(session, COMPANY_DELETED, deleted.model_dump(mode="json"))
 
 
 async def list_for_user(

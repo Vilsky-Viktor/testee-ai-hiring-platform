@@ -104,4 +104,4 @@ async def remove_for_generation(
 
     if removed is not None:
         outbox.notify(session, notice)
-        add_deleted(session, *removed)
+        await add_deleted(session, *removed)

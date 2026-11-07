@@ -64,7 +64,7 @@ def test_a_deleted_company_and_its_company_deleted_event_are_saved_together(run)
     company, events = run(scenario())
 
     # Notifications removes the company's notifications when it gets it (retried until then).
-    assert {"company_id": str(company.id)} in events
+    assert {"company_id": str(company.id), "member_ids": ["owner"]} in events
 
 
 def test_an_invite_without_a_sign_in_is_a_guests_keeps_its_return_address_and_sends_no_email(run):

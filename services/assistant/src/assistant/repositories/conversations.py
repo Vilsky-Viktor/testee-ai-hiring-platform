@@ -1,11 +1,11 @@
 from datetime import UTC, datetime, timedelta
 from uuid import UUID
 
-from sqlalchemy import Text, cast, delete, func, or_, select, update
+from sqlalchemy import Text, and_, cast, delete, func, or_, select, update
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 from testee_common.db.db import delete_in_batches
 
-from assistant.models.conversations import Conversation, Message, ToolCall
+from assistant.models.conversations import Conversation, Message
 
 
 async def create(
@@ -57,10 +57,17 @@ async def delete_idle(session: AsyncSession, before: datetime, limit: int) -> in
     return result.rowcount
 
 
-async def delete_company(sessions: async_sessionmaker, company_id: UUID) -> int:
-    """Every conversation about the company, with its messages, a batch at a time (each its
-    own transaction); how many went (none when run again)."""
-    return await delete_in_batches(sessions, Conversation, Conversation.company_id == company_id)
+async def delete_company(
+    sessions: async_sessionmaker, company_id: UUID, member_ids: list[str]
+) -> int:
+    """Every conversation about the company, and its members' about all their companies (any can
+    hold its data), with their messages, a batch at a time (each its own transaction); how many
+    went (none when run again)."""
+    of_members = and_(Conversation.company_id.is_(None), Conversation.user_id.in_(member_ids))
+
+    return await delete_in_batches(
+        sessions, Conversation, or_(Conversation.company_id == company_id, of_members)
+    )
 
 
 def mentions(text, needle: str):
@@ -68,42 +75,29 @@ def mentions(text, needle: str):
 
 
 async def delete_mentioning(
-    sessions: async_sessionmaker, company_id: UUID, needles: list[str]
+    sessions: async_sessionmaker, company_id: UUID, member_ids: list[str], needles: list[str]
 ) -> int:
-    """The company's conversations whose messages or tools' results mention any of `needles`
-    (an erased candidate's email or invite, a deleted interview): they go whole, as what's left
-    of one would still read as about that person. A batch at a time; how many went (none when
-    run again)."""
+    """The conversations about the company, and any of its members' (they can read the company
+    from a chat about all their companies, or one started about another), whose messages mention
+    any of `needles` (an erased candidate's email or invite, a deleted interview): they go whole,
+    as what's left of one would still read as about that person. A batch at a time; how many
+    went (none when run again)."""
     needles = [needle for needle in needles if needle]
 
     if not needles:
         return 0
 
-    # Only the company's own messages are read, never every tenant's.
-    of_company = Message.conversation_id.in_(
-        select(Conversation.id).where(Conversation.company_id == company_id)
-    )
+    # Only the company's and its members' messages are read, never every tenant's.
+    about = or_(Conversation.company_id == company_id, Conversation.user_id.in_(member_ids))
     said = select(Message.conversation_id).where(
-        of_company,
+        Message.conversation_id.in_(select(Conversation.id).where(about)),
         or_(
             *(mentions(Message.content, needle) for needle in needles),
             *(mentions(cast(Message.blocks, Text), needle) for needle in needles),
         ),
     )
-    read = (
-        select(Message.conversation_id)
-        .join(ToolCall, ToolCall.message_id == Message.id)
-        .where(
-            of_company, or_(*(mentions(cast(ToolCall.result, Text), needle) for needle in needles))
-        )
-    )
 
-    return await delete_in_batches(
-        sessions,
-        Conversation,
-        Conversation.company_id == company_id,
-        or_(Conversation.id.in_(said), Conversation.id.in_(read)),
-    )
+    return await delete_in_batches(sessions, Conversation, about, Conversation.id.in_(said))
 
 
 async def trace_ids_of_user(session: AsyncSession, user_id: str) -> list[str]:

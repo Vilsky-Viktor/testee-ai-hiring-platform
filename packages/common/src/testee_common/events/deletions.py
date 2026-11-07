@@ -27,11 +27,13 @@ class InterviewDeleted(BaseModel):
 
 
 class CompanyDeleted(BaseModel):
-    """A company went, with every interview and candidate of it."""
+    """A company went, with every interview and candidate of it. `member_ids`: who was in it, as
+    their chats about all their companies can hold its data."""
 
     model_config = ConfigDict(extra="ignore")
 
     company_id: UUID
+    member_ids: list[str] = []
 
 
 class DeletedCandidate(BaseModel):

@@ -13,7 +13,7 @@ COMPANY = uuid.UUID("8c1d2b8e-1a2b-4c3d-8e9f-0a1b2c3d4e5f")
 def deletions(monkeypatch):
     deleted = []
 
-    async def delete_company(company_id):
+    async def delete_company(company_id, member_ids):
         deleted.append(company_id)
 
         return 0

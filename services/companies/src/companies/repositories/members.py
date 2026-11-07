@@ -88,6 +88,16 @@ async def join(session: AsyncSession, member_id, user_id: str) -> tuple[Member |
     return row, True
 
 
+async def user_ids(session: AsyncSession, company_id) -> list[str]:
+    """Everyone who joined the company; an erasure names them, as the assistant finds their chats
+    by them."""
+    joined = select(Member.user_id).where(
+        Member.company_id == company_id, Member.user_id.is_not(None)
+    )
+
+    return list(await session.scalars(joined))
+
+
 async def owner_user_id(session: AsyncSession, company_id) -> str | None:
     return await session.scalar(
         select(Member.user_id).where(Member.company_id == company_id, Member.role == Role.OWNER)

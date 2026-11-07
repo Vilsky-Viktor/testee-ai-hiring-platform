@@ -79,12 +79,13 @@ async def vote_of(message_id: UUID) -> int | None:
         return await messages.vote_of(session, message_id)
 
 
-async def delete_company(company_id: UUID) -> int:
-    """Every conversation about the deleted company, a batch at a time; how many went."""
-    return await conversations.delete_company(Session, company_id)
+async def delete_company(company_id: UUID, member_ids: list[str]) -> int:
+    """Every conversation about the deleted company, and its members' about all their companies,
+    a batch at a time; how many went."""
+    return await conversations.delete_company(Session, company_id, member_ids)
 
 
-async def delete_mentioning(company_id: UUID, needles: list[str]) -> int:
-    """The company's conversations that mention any of `needles` (an erased candidate, a
-    deleted interview), a batch at a time; how many went."""
-    return await conversations.delete_mentioning(Session, company_id, needles)
+async def delete_mentioning(company_id: UUID, member_ids: list[str], needles: list[str]) -> int:
+    """The company's and its members' conversations that mention any of `needles` (an erased
+    candidate, a deleted interview), a batch at a time; how many went."""
+    return await conversations.delete_mentioning(Session, company_id, member_ids, needles)
