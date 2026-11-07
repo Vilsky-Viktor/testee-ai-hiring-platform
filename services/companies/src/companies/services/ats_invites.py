@@ -22,11 +22,11 @@ from companies.services.access import can_edit, trusted_member
 
 
 async def invite(interview_id: UUID, body: AtsInviteIn, via: str) -> tuple[UUID, bool]:
-    """The invite's id, and whether it was made or sent now: a candidate who already finished is
-    returned as they are, and so is one still invited when `resend` is false. Refused with 503
-    during the emergency pause, 404 when the interview is gone, 409 while it has no questions
-    yet, 403 when the sender is no longer an owner or admin, 422 for a return address that
-    isn't https (http only on localhost) (and as candidate_invites.invite refuses)."""
+    """The invite's id, and whether it was made or sent now: a candidate who already finished or
+    whose invite is still open is returned as they are, so a retry emails nobody twice. Refused
+    with 503 during the emergency pause, 404 when the interview is gone, 409 while it has no
+    questions yet, 403 when the sender is no longer an owner or admin, 422 for a return address
+    that isn't https (http only on localhost) (and as candidate_invites.invite refuses)."""
     async with Session() as session:
         interview = await interviews.get(session, interview_id)
 
@@ -59,10 +59,8 @@ async def invite(interview_id: UUID, body: AtsInviteIn, via: str) -> tuple[UUID,
         )
 
     # A candidate who already finished keeps their results, and isn't emailed again; nor is one
-    # whose invite is still open, when the caller asked for no resend (the API's retries).
-    kept = (InviteStatus.FINISHED,) if body.resend else (InviteStatus.FINISHED, *OPEN)
-
-    if found is not None and found.status in kept:
+    # whose invite is still open: the API's and the ATS's retries invite once.
+    if found is not None and found.status in (InviteStatus.FINISHED, *OPEN):
         return found.id, False
 
     user = User(uid=body.sender_id, email="", email_verified=True)

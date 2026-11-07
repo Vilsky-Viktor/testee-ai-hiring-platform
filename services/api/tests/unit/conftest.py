@@ -130,7 +130,7 @@ def companies_api(monkeypatch):
         if state["refuse"]:
             raise HTTPException(state["refuse"], "Refused")
 
-        # Companies returns a candidate already invited as they are (resend false).
+        # Companies returns a candidate already invited as they are.
         if (interview_id, email, sender_id) in state["sent"]:
             return CANDIDATE, False
 
@@ -143,7 +143,12 @@ def companies_api(monkeypatch):
     monkeypatch.setattr(companies, "access", access)
     monkeypatch.setattr(companies, "interviews", interviews)
     monkeypatch.setattr(companies, "interview", get_interview)
+
+    async def removed_candidates(company_id, offset, limit, since, after):
+        return []
+
     monkeypatch.setattr(companies, "candidates", candidates)
+    monkeypatch.setattr(companies, "removed_candidates", removed_candidates)
     monkeypatch.setattr(companies, "candidate", get_candidate)
     monkeypatch.setattr(companies, "invite", invite)
 

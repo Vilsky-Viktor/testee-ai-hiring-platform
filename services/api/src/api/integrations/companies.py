@@ -100,6 +100,14 @@ async def candidates(
     return await _get(path, _list_params(offset, limit, since, after))
 
 
+async def removed_candidates(
+    company_id: UUID, offset: int, limit: int, since: datetime | None, after: UUID | None
+) -> list[dict]:
+    path = f"/internal/companies/{company_id}/candidates/removed"
+
+    return await _get(path, _list_params(offset, limit, since, after))
+
+
 async def candidate(company_id: UUID, interview_id: UUID, invite_id: UUID) -> dict:
     path = f"/internal/companies/{company_id}/interviews/{interview_id}/candidates/{invite_id}"
 
@@ -128,7 +136,6 @@ async def invite(
         "sign_in": sign_in,
         "theme": theme,
         "voice": voice,
-        "resend": False,
     }
 
     return await company_invites.invite(

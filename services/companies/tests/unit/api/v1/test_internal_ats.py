@@ -171,22 +171,14 @@ def test_a_candidate_who_finished_is_returned_without_another_email(client, stor
 
 
 @pytest.mark.parametrize(
-    ("status", "resend", "sent"),
-    [
-        ("invited", False, False),
-        ("undelivered", False, False),
-        ("in_process", False, False),
-        ("expired", False, True),
-        ("invited", True, True),
-    ],
+    ("status", "sent"),
+    [("invited", False), ("undelivered", False), ("in_process", False), ("expired", True)],
 )
-def test_without_resend_a_candidate_still_invited_is_returned_as_they_are(
-    client, stored, status, resend, sent
-):
-    """The API's retries: the same candidate, no second email; an expired invite is sent again,
-    and an ATS (resend) sends an open one again as before."""
+def test_a_candidate_still_invited_is_returned_as_they_are(client, stored, status, sent):
+    """The API's and the ATS's retries: the same candidate, no second email; an expired invite
+    is sent again."""
     stored["found"] = SimpleNamespace(id=uuid.UUID(int=9), status=status)
-    body = {"email": "cara@example.com", "sender_id": "ann", "resend": resend}
+    body = {"email": "cara@example.com", "sender_id": "ann"}
     response = client.post(f"/internal/interviews/{READY.id}/invites", json=body, headers=HEADERS)
 
     assert response.json()["created"] is sent

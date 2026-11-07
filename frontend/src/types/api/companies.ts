@@ -22,9 +22,10 @@ export interface paths {
     /**
      * Create Company
      * @description A company needs its owner's verified email, as the welcome credits come once per email. A
-     *     person's first company, which gets them, needs them to show they're a person, on the site;
-     *     through the assistant or an AI app (no browser) it can't be asked. With an Idempotency-Key,
-     *     the same request again gets the company the first made.
+     *     person's first company, which gets them, needs them to show they're a person, so it's made
+     *     on the site: the assistant and AI apps (no browser) are refused, and sent there, unless the
+     *     person is already in a paid company. With an Idempotency-Key, the same request again gets the
+     *     company the first made.
      */
     post: operations["create_company_companies_post"]
     delete?: never
@@ -381,7 +382,8 @@ export interface paths {
     /**
      * Invite Member
      * @description The owner invites an admin or a viewer, who is emailed the join link; the role applies
-     *     once the invite is accepted.
+     *     once the invite is accepted. With an Idempotency-Key, the same request again gets the
+     *     invite the first made.
      */
     post: operations["invite_member_members_post"]
     delete?: never
@@ -1761,6 +1763,27 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/internal/companies/{company_id}/candidates/removed": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Removed Candidates
+     * @description Who the company removed lately, ids only: what a web hook that missed `candidate.removed`
+     *     catches up from.
+     */
+    get: operations["removed_candidates_internal_companies__company_id__candidates_removed_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/internal/companies/{company_id}/candidates/search": {
     parameters: {
       query?: never
@@ -2801,11 +2824,6 @@ export interface components {
       sign_in: boolean
       /** Voice */
       voice?: boolean | null
-      /**
-       * Resend
-       * @default true
-       */
-      resend: boolean
     }
     /** AtsInviteOut */
     AtsInviteOut: {
@@ -4587,6 +4605,19 @@ export interface components {
       /** Held Back Candidates */
       held_back_candidates: number
     }
+    /** RemovedCandidateOut */
+    RemovedCandidateOut: {
+      /**
+       * Id
+       * Format: uuid
+       */
+      id: string
+      /**
+       * Updated At
+       * Format: date-time
+       */
+      updated_at: string
+    }
     /**
      * ReportEmailIn
      * @description Who gets the candidate's report, and the PDF the page made, base64-encoded.
@@ -5285,6 +5316,13 @@ export interface components {
     UserEmailIn: {
       /** Email */
       email: string
+    }
+    /** UserErasureIn */
+    UserErasureIn: {
+      /** Email */
+      email: string
+      /** Erased At */
+      erased_at?: string | null
     }
     /** UserIdsOut */
     UserIdsOut: {
@@ -6102,7 +6140,9 @@ export interface operations {
       query: {
         company_id: string
       }
-      header?: never
+      header?: {
+        "idempotency-key"?: string | null
+      }
       path?: never
       cookie?: never
     }
@@ -8274,7 +8314,7 @@ export interface operations {
     }
     requestBody: {
       content: {
-        "application/json": components["schemas"]["UserEmailIn"]
+        "application/json": components["schemas"]["UserErasureIn"]
       }
     }
     responses: {
@@ -8733,6 +8773,44 @@ export interface operations {
           [name: string]: unknown
         }
         content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  removed_candidates_internal_companies__company_id__candidates_removed_get: {
+    parameters: {
+      query?: {
+        updated_since?: string | null
+        after?: string | null
+        /** @description Number of items to skip */
+        offset?: number
+        /** @description Number of items to return, up to 100 */
+        limit?: number
+      }
+      header?: never
+      path: {
+        company_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["RemovedCandidateOut"][]
+        }
       }
       /** @description Validation Error */
       422: {

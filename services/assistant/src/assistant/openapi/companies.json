@@ -6,7 +6,7 @@
      "companies"
     ],
     "summary": "Create Company",
-    "description": "A company needs its owner's verified email, as the welcome credits come once per email. A\nperson's first company, which gets them, needs them to show they're a person, on the site;\nthrough the assistant or an AI app (no browser) it can't be asked. With an Idempotency-Key,\nthe same request again gets the company the first made.",
+    "description": "A company needs its owner's verified email, as the welcome credits come once per email. A\nperson's first company, which gets them, needs them to show they're a person, so it's made\non the site: the assistant and AI apps (no browser) are refused, and sent there, unless the\nperson is already in a paid company. With an Idempotency-Key, the same request again gets the\ncompany the first made.",
     "operationId": "create_company_companies_post",
     "security": [
      {
@@ -1483,7 +1483,7 @@
      "members"
     ],
     "summary": "Invite Member",
-    "description": "The owner invites an admin or a viewer, who is emailed the join link; the role applies\nonce the invite is accepted.",
+    "description": "The owner invites an admin or a viewer, who is emailed the join link; the role applies\nonce the invite is accepted. With an Idempotency-Key, the same request again gets the\ninvite the first made.",
     "operationId": "invite_member_members_post",
     "security": [
      {
@@ -1499,6 +1499,23 @@
        "type": "string",
        "format": "uuid",
        "title": "Company Id"
+      }
+     },
+     {
+      "name": "idempotency-key",
+      "in": "header",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "maxLength": 255
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Idempotency-Key"
       }
      }
     ],
@@ -5364,7 +5381,7 @@
      "content": {
       "application/json": {
        "schema": {
-        "$ref": "#/components/schemas/UserEmailIn"
+        "$ref": "#/components/schemas/UserErasureIn"
        }
       }
      }
@@ -6299,6 +6316,120 @@
     "responses": {
      "204": {
       "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/internal/companies/{company_id}/candidates/removed": {
+   "get": {
+    "tags": [
+     "internal"
+    ],
+    "summary": "Removed Candidates",
+    "description": "Who the company removed lately, ids only: what a web hook that missed `candidate.removed`\ncatches up from.",
+    "operationId": "removed_candidates_internal_companies__company_id__candidates_removed_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "company_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Company Id"
+      }
+     },
+     {
+      "name": "updated_since",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "date-time"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Updated Since"
+      }
+     },
+     {
+      "name": "after",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "uuid"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "After"
+      }
+     },
+     {
+      "name": "offset",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "minimum": 0,
+       "description": "Number of items to skip",
+       "default": 0,
+       "title": "Offset"
+      },
+      "description": "Number of items to skip"
+     },
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "maximum": 100,
+       "minimum": 1,
+       "description": "Number of items to return, up to 100",
+       "default": 100,
+       "title": "Limit"
+      },
+      "description": "Number of items to return, up to 100"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/RemovedCandidateOut"
+         },
+         "title": "Response Removed Candidates Internal Companies  Company Id  Candidates Removed Get"
+        }
+       }
+      }
      },
      "422": {
       "description": "Validation Error",
@@ -9183,11 +9314,6 @@
        }
       ],
       "title": "Voice"
-     },
-     "resend": {
-      "type": "boolean",
-      "title": "Resend",
-      "default": true
      }
     },
     "type": "object",
@@ -13376,6 +13502,26 @@
     "title": "RefundStateOut",
     "description": "A top-up's refund: `offer` when some of it can be refunded now, `status` of its latest\nrefund, and the credits and candidates of it held back by credits set aside, which a\nrevoked invite makes refundable."
    },
+   "RemovedCandidateOut": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Id"
+     },
+     "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Updated At"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "updated_at"
+    ],
+    "title": "RemovedCandidateOut"
+   },
    "ReportEmailIn": {
     "properties": {
      "email": {
@@ -15034,6 +15180,31 @@
     ],
     "title": "UserEmailIn",
     "description": "An email address sent in the body, so request logs don't record it: the account's, in\naccounts' calls to delete or export a user's data, or the one a superadmin looks up."
+   },
+   "UserErasureIn": {
+    "properties": {
+     "email": {
+      "type": "string",
+      "title": "Email"
+     },
+     "erased_at": {
+      "anyOf": [
+       {
+        "type": "string",
+        "format": "date-time"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Erased At"
+     }
+    },
+    "type": "object",
+    "required": [
+     "email"
+    ],
+    "title": "UserErasureIn"
    },
    "UserIdsOut": {
     "properties": {

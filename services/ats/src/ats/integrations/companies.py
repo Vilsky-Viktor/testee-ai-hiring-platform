@@ -56,7 +56,8 @@ async def interviews(ids) -> dict[UUID, dict]:
 
 async def invite(interview_id: UUID, email: str, sender_id: str, name: str | None = None) -> UUID:
     """Invites the candidate to the interview as `sender_id` would, with their name from the ATS
-    (companies keeps a name already known), and returns the invite's id.
+    (companies keeps a name already known), and returns the invite's id. One already invited
+    is returned as they are, without another email, so a retry after a lost answer is safe.
     A refusal raises an HTTPException with companies' status and reason (INVITE_REFUSALS)."""
     body = {"email": email, "sender_id": sender_id, "name": name}
 

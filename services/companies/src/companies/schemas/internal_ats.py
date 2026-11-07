@@ -38,9 +38,6 @@ class AtsInviteIn(BaseModel):
     sign_in: bool = True
     # The API caller's: by voice (true) or click (false); none follows the interview's.
     voice: bool | None = None
-    # False (the API): a candidate whose invite is still open is returned as they are, without
-    # another email, so a retried request invites once; an ATS sends the invite again.
-    resend: bool = True
 
 
 class AtsInviteOut(BaseModel):
