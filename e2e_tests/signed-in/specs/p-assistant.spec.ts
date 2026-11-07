@@ -44,6 +44,9 @@ test("the assistant welcomes by stage, answers, takes voice, keeps history and s
   // The welcome introduces the assistant by name, kept as written in the lowercase title.
   await expect(panel.getByTestId("welcome-no_company").getByRole("heading").locator(".normal-case").first()).toBeVisible();
   await shot(owner, "welcome-no-company");
+  // Someone in no company makes their first one on the site: the welcome's one link goes there.
+  await panel.getByTestId("welcome-no_company").getByRole("link").click();
+  await expect(owner).toHaveURL(/\/companies$/);
   await panel.getByTestId("assistant-close").click();
   const company = await createCompany(owner);
   panel = await openPanel(owner);

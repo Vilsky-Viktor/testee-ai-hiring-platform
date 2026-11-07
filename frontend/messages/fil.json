@@ -2772,7 +2772,7 @@
         "text": "Simulan na natin ang una mong interview.",
         "questions": {
           "firstInterview": "Gawin ang una kong interview",
-          "createCompany": "Gumawa ka ng kumpanya para sa akin",
+          "createCompany": "Gumawa ng kumpanya",
           "verify": "Paano gumagana ang pag-verify ng kumpanya?"
         }
       },

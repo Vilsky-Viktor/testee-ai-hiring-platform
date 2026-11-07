@@ -2772,7 +2772,7 @@
         "text": "Mettiamo in moto il tuo primo colloquio.",
         "questions": {
           "firstInterview": "Crea il mio primo colloquio",
-          "createCompany": "Crea un'azienda per me",
+          "createCompany": "Crea un'azienda",
           "verify": "Come funziona la verifica dell'azienda?"
         }
       },

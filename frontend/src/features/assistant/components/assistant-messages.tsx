@@ -10,16 +10,18 @@ import { AnswerMarkdown } from "@/features/assistant/components/answer-markdown"
 import { AnswerVote } from "@/features/assistant/components/answer-vote"
 import { ChatBubble, ThinkingDots } from "@/components/common/chat-bubble"
 import { KeepAcronyms } from "@/components/common/keep-acronyms"
+import { LocalizedLink } from "@/components/common/localized-link"
 import { MiraName } from "@/components/common/mira-name"
 import { Button } from "@/components/ui/button"
-import { WELCOME_QUESTIONS } from "@/config/assistant"
+import { WELCOME_LINKS, WELCOME_QUESTIONS } from "@/config/assistant"
 import { hasMessage } from "@/lib/messages"
 import type { ChatMessage, Vote } from "@/types/assistant"
 
 /** The conversation in the panel: questions, answers with what their tools found, the tools
  * at work while one is written, and a failed answer's error with Try again. With no messages
  * yet, a welcome for the user's stage: what the assistant helps with there, and questions to
- * tap, first "What can I do on this page?" on a page with a guide (`onPage`). Under the latest
+ * tap, first "What can I do on this page?" on a page with a guide (`onPage`), or a link to the
+ * page that does it where Mira can't (`WELCOME_LINKS`). Under the latest
  * answer and any voted on, thumbs up and down; under the others, on hover. */
 export function AssistantMessages({
   messages,
@@ -55,12 +57,14 @@ export function AssistantMessages({
 
   if (messages.length === 0) {
     const questions = (stage && WELCOME_QUESTIONS[stage]) || []
-    const asks = [
-      ...(onPage ? [t("pageQuestion")] : []),
+    const asks: { text: string; href?: string }[] = [
+      ...(onPage ? [{ text: t("pageQuestion") }] : []),
       ...questions.flatMap((key) => {
         const question = `welcome.${stage}.questions.${key}` as const
 
-        return hasMessage(t, question) ? [t(question)] : []
+        return hasMessage(t, question)
+          ? [{ text: t(question), href: WELCOME_LINKS[key] }]
+          : []
       }),
     ]
     const text = `welcome.${stage}.text` as const
@@ -80,14 +84,21 @@ export function AssistantMessages({
           </p>
         </div>
         <ul className="space-y-2">
-          {asks.map((question) => (
-            <li key={question}>
+          {asks.map(({ text, href }) => (
+            <li key={text}>
               <Button
                 variant="ghost"
                 className="h-auto w-full justify-between gap-3 rounded-xl bg-surface px-4 py-3 text-start text-base whitespace-normal normal-case hover:bg-input"
-                onClick={() => onAsk(question)}
+                {...(href
+                  ? {
+                      render: (
+                        <LocalizedLink href={href} onClick={onNavigate} />
+                      ),
+                      nativeButton: false,
+                    }
+                  : { onClick: () => onAsk(text) })}
               >
-                {question}
+                {text}
                 <ArrowRightIcon
                   data-icon="inline-end"
                   className="text-muted-foreground rtl:-scale-x-100"

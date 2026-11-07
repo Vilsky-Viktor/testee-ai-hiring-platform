@@ -2772,7 +2772,7 @@
         "text": "첫 면접을 시작해 봅시다.",
         "questions": {
           "firstInterview": "첫 면접을 만들어 줘",
-          "createCompany": "회사를 만들어 줘",
+          "createCompany": "회사 만들기",
           "verify": "회사 인증은 어떻게 진행되나요?"
         }
       },

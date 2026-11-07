@@ -12,6 +12,13 @@ export const WELCOME_QUESTIONS: Record<string, string[]> = {
   no_candidates: ["invite", "shareLink", "ats"],
   has_candidates: ["passed", "compare", "replace", "signals"],
 }
+// The welcome's entries that open a page instead of asking Mira, by their key there. A person in
+// no company at all (the no_company stage) makes their first company on the site, as companies
+// refuses it from Mira (first_company_on_site).
+export const WELCOME_LINKS: Record<string, string> = {
+  createCompany: "/companies",
+  firstInterview: "/",
+}
 
 // The pages an answer links to, by their path, and the "assistant.pages" message naming each;
 // the first match wins. Links come from the service, built from each tool's page.

@@ -2776,7 +2776,7 @@
         "text": "Vamos colocar sua primeira entrevista no ar.",
         "questions": {
           "firstInterview": "Crie minha primeira entrevista",
-          "createCompany": "Crie uma empresa para mim",
+          "createCompany": "Criar uma empresa",
           "verify": "Como funciona a verificação da empresa?"
         }
       },

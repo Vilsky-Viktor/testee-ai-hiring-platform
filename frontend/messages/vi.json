@@ -2776,7 +2776,7 @@
         "text": "Hãy bắt đầu buổi phỏng vấn đầu tiên của bạn.",
         "questions": {
           "firstInterview": "Tạo buổi phỏng vấn đầu tiên của tôi",
-          "createCompany": "Tạo công ty cho tôi",
+          "createCompany": "Tạo công ty",
           "verify": "Xác minh công ty diễn ra thế nào?"
         }
       },

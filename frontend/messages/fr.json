@@ -2772,7 +2772,7 @@
         "text": "Lançons votre premier entretien.",
         "questions": {
           "firstInterview": "Crée mon premier entretien",
-          "createCompany": "Crée une entreprise pour moi",
+          "createCompany": "Créer une entreprise",
           "verify": "Comment fonctionne la vérification de l'entreprise ?"
         }
       },

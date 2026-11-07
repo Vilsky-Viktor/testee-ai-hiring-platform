@@ -2772,7 +2772,7 @@
         "text": "Laten we je eerste interview op gang brengen.",
         "questions": {
           "firstInterview": "Maak mijn eerste interview",
-          "createCompany": "Maak een bedrijf voor me aan",
+          "createCompany": "Bedrijf aanmaken",
           "verify": "Hoe werkt de verificatie van een bedrijf?"
         }
       },

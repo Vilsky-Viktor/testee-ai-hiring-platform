@@ -2776,7 +2776,7 @@
         "text": "İlk mülakatınızı başlatalım.",
         "questions": {
           "firstInterview": "İlk mülakatımı oluştur",
-          "createCompany": "Benim için bir şirket oluştur",
+          "createCompany": "Şirket oluştur",
           "verify": "Şirket doğrulaması nasıl çalışıyor?"
         }
       },

@@ -2772,7 +2772,7 @@
         "text": "Bringen wir dein erstes Interview auf den Weg.",
         "questions": {
           "firstInterview": "Erstelle mein erstes Interview",
-          "createCompany": "Lege ein Unternehmen für mich an",
+          "createCompany": "Unternehmen erstellen",
           "verify": "Wie funktioniert die Verifizierung?"
         }
       },

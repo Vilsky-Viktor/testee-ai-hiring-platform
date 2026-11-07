@@ -2772,7 +2772,7 @@
         "text": "Pane sinu esimene intervjuu käima.",
         "questions": {
           "firstInterview": "Loo minu esimene intervjuu",
-          "createCompany": "Loo mulle ettevõte",
+          "createCompany": "Loo ettevõte",
           "verify": "Kuidas ettevõtte kinnitamine käib?"
         }
       },

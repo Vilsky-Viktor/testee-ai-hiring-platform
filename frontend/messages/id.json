@@ -2772,7 +2772,7 @@
         "text": "Ayo mulai wawancara pertamamu.",
         "questions": {
           "firstInterview": "Buat wawancara pertamaku",
-          "createCompany": "Buatkan perusahaan untukku",
+          "createCompany": "Buat perusahaan",
           "verify": "Bagaimana verifikasi perusahaan berjalan?"
         }
       },

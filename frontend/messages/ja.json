@@ -2780,7 +2780,7 @@
         "text": "最初の面接を始めましょう。",
         "questions": {
           "firstInterview": "最初の面接を作成して",
-          "createCompany": "会社を作成して",
+          "createCompany": "会社を作成",
           "verify": "会社の認証はどう進む？"
         }
       },

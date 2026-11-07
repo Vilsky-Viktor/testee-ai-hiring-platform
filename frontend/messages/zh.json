@@ -2772,7 +2772,7 @@
         "text": "让我们开始你的第一场面试。",
         "questions": {
           "firstInterview": "帮我创建第一场面试",
-          "createCompany": "帮我创建一家公司",
+          "createCompany": "创建公司",
           "verify": "公司认证是怎么进行的？"
         }
       },
