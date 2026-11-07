@@ -109,7 +109,7 @@ You need `gcloud`, Docker and Terraform 1.9+ (or `docker run hashicorp/terraform
    printf '%s' "$SLACK_CLIENT_SECRET" | gcloud secrets versions add slack-client-secret --data-file=-
    python3 -c "import base64,os; print(base64.urlsafe_b64encode(os.urandom(32)).decode(), end='')" | gcloud secrets versions add slack-encryption-key --data-file=-
    # Cloudflare Turnstile, the "I'm not a robot" check (docs/architecture.md): the widget's secret.
-   # With Terraform's "set-me" Cloudflare rejects it, and the check lets everyone through (logged). Its site key is the GitHub variable
+   # With Terraform's "set-me" Cloudflare rejects it, and the check lets everyone through, and **testee human check off** pages. Its site key is the GitHub variable
    # NEXT_PUBLIC_TURNSTILE_SITE_KEY, built into the frontend.
    printf '%s' "$TURNSTILE_SECRET_KEY" | gcloud secrets versions add turnstile-secret-key --data-file=-
    ```

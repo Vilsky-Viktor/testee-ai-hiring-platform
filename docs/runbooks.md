@@ -41,6 +41,8 @@ Two severities. A **page** (CRITICAL) is a symptom users feel now; it reaches th
 | testee scheduled job failed | ticket | [A scheduled job failed](runbooks/platform.md#a-scheduled-job-failed) |
 | testee scheduled job didn't run | page / ticket | [A scheduled job didn't run](runbooks/platform.md#a-scheduled-job-didnt-run) |
 | testee web hook signature refused | page | [A web hook signature refused](runbooks/platform.md#a-web-hook-signature-refused) |
+| testee human check off | page | [The human check is off](runbooks/platform.md#the-human-check-is-off) |
+| testee Turnstile not answering | ticket | [The human check is off](runbooks/platform.md#the-human-check-is-off) |
 | testee emails bouncing | page | [Emails bouncing](runbooks/platform.md#emails-bouncing) |
 | testee database connections, CPU, memory high, disk filling | ticket | [The database under strain](runbooks/platform.md#the-database-under-strain) |
 | testee database backup failed | ticket | [A failed backup](runbooks/platform.md#a-failed-backup) |
