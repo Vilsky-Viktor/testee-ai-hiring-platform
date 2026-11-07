@@ -426,7 +426,7 @@
     "text": "Osta krediiti igale ettevõttele, kus oled omanik või administraator.",
     "actions": [
       "Vali ettevõte ja sisesta, mitme kandidaadi jagu juurde laadida, 10 kuni 1 000, või vali hinnaaste: suuremad juurdelaadimised on kandidaadi kohta odavamad.",
-      "Muuda ettevõtte valuutat lehe ülaosas: edaspidi hinnastatakse ja võetakse selle juurdelaadimised, ka automaatsed, selles valuutas.",
+      "Muuda ettevõtte valuutat lehe ülaosas: edaspidi hinnastatakse ja võetakse selle juurdelaadimised, ka automaatsed, selles valuutas. Kui muudad ettevõtte valuutat ajal, mil automaatne juurdelaadimine on sees, näed kõigepealt kinnitamiseks mõlemat summat ning ettevõtte omanikud ja administraatorid saavad e-kirja.",
       "Maksa Paddle'i makselehel; krediidid jõuavad kohale mõne sekundiga.",
       "Ava hinnad, et juurdelaadimisi võrrelda.",
       "Seadista automaatne juurdelaadimine: vali summa ja saldo ning märgi nõusolek. Sinu kaart salvestatakse Paddle'i maksevaates ja sellelt võetakse makse iga kord, kui saldo langeb sellest tasemest allapoole."

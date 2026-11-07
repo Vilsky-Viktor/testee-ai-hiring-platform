@@ -71,6 +71,7 @@ locals {
   company_billing_paths = [
     "billing/catalog",
     "billing/currency",
+    "billing/currency/change",
     "billing/checkout",
     "billing/invoice",
     "billing/payment-failure",

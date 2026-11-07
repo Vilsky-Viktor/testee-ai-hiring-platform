@@ -13,6 +13,11 @@ async def get(session: AsyncSession, owner_type: str, owner_id: str) -> AutoTopU
     return await session.get(AutoTopUp, (owner_type, owner_id))
 
 
+async def locked(session: AsyncSession, owner_type: str, owner_id: str) -> AutoTopUp | None:
+    """The row, held until the transaction ends, so changes to it wait for each other."""
+    return await session.get(AutoTopUp, (owner_type, owner_id), with_for_update=True)
+
+
 async def save(
     session: AsyncSession,
     owner_type: str,

@@ -426,7 +426,7 @@
     "text": "Compre créditos para qualquer empresa da qual você é proprietário ou administrador.",
     "actions": [
       "Escolha uma empresa e digite para quantos candidatos recarregar, de 10 a 1.000, ou escolha uma faixa de preço: recargas maiores custam menos por candidato.",
-      "Mude a moeda da empresa no topo da página: a partir daí, as recargas dela, inclusive as automáticas, têm preço e cobrança nessa moeda.",
+      "Mude a moeda da empresa no topo da página: a partir daí, as recargas dela, inclusive as automáticas, têm preço e cobrança nessa moeda. Se você a alterar enquanto a recarga automática estiver ativa, verá primeiro os dois valores para confirmar, e os proprietários e administradores da empresa receberão um e-mail.",
       "Pague na página de pagamento da Paddle; os créditos chegam em segundos.",
       "Abra os preços para comparar as recargas.",
       "Configure a recarga automática: escolha um valor e um saldo e marque o acordo. Seu cartão é salvo no checkout da Paddle e cobrado cada vez que o saldo fica abaixo desse nível."

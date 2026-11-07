@@ -3,7 +3,9 @@ from datetime import datetime
 from testee_common.events.notifications import NotificationKind, notification
 
 from billing.constants.notifications import COMPANY_BILLING_LINK
+from billing.constants.products import OwnerType
 from billing.models.billing import AutoTopUp
+from billing.schemas.billing import AutoTopUpCurrencyChange
 from billing.services.auto_top_up_prices import charge_price
 
 
@@ -20,6 +22,21 @@ def turned_on(row: AutoTopUp, subscription_id: str, now: datetime) -> dict:
         price=charge_price(row, row.currency, now),
         currency=row.currency,
         threshold=row.threshold,
+    )
+
+
+def currency_changed(owner_id: str, change: AutoTopUpCurrencyChange) -> dict:
+    """The notice that the company's new currency changed what each automatic charge costs, at
+    once, so it carries no day: both amounts, each in its currency, for the bell and an email to
+    the company's owners and admins. It opens the company's billing page. It has no key: saved
+    with the change, it's one event per change, which its event id keeps to one notice however
+    often it's delivered."""
+    return notification(
+        OwnerType.COMPANY,
+        owner_id,
+        NotificationKind.AUTO_TOP_UP_PRICE_CHANGE,
+        COMPANY_BILLING_LINK.format(owner_id=owner_id),
+        **change.model_dump(mode="json"),
     )
 
 

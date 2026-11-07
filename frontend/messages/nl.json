@@ -1468,6 +1468,11 @@
     "updateCard": "Kaart bijwerken",
     "updateCardFailed": "Het bijwerken van de kaart kon niet worden geopend. Probeer het opnieuw.",
     "currencyApplied": "Automatisch opwaarderen rekent nu {amount} af.",
+    "currencyChange": {
+      "title": "Bedrag van automatisch opwaarderen wijzigen?",
+      "text": "Automatisch opwaarderen staat aan. Vanaf de volgende afschrijving is elke afschrijving {newAmount} in plaats van {amount}, plus eventuele btw of verkoopbelasting. Je krijgt er evenveel kandidaten voor. De eigenaren en beheerders van het bedrijf krijgen hierover een e-mail.",
+      "confirm": "Valuta wijzigen"
+    },
     "setUpShort": "Instellen",
     "changeShort": "Wijzigen",
     "turnOn": "Aanzetten",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "Automatisch opwaarderen kon de kaart niet belasten. Waardeer op zodat je saldo niet opraakt.",
       "auto_top_up_on": "Automatisch opwaarderen staat aan: {price} plus belasting als de beschikbare credits onder {threshold, number} zakken.",
       "auto_top_up_paused": "Automatisch opwaarderen is gepauzeerd: de kaart is geweigerd. Werk de kaart bij om het weer aan te zetten.",
-      "auto_top_up_price_change": "Vanaf <time>{date}</time> kost elke automatische opwaardering {newPrice} in plaats van {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {Vanaf <time>{date}</time> kost elke automatische opwaardering {newPrice} in plaats van {price}.} other {De valuta van <bdi>{name}</bdi> is gewijzigd: elke automatische opwaardering kost nu {newPrice} in plaats van {price}.}}",
       "refund_approved": "Terugbetaling goedgekeurd voor <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "Terugbetaling afgewezen voor <bdi>{name}</bdi>: {price}. {credits, plural, one {# credit staat} other {# credits staan}} weer op je saldo.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> heeft {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} afgerond{grade, select, none {.} other {: {grade}.}}} other {# kandidaten hebben {title, select, none {een interview} other {“<bdi>{title}</bdi>”}} afgerond.}}",

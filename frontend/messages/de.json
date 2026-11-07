@@ -1468,6 +1468,11 @@
     "updateCard": "Karte aktualisieren",
     "updateCardFailed": "Die Kartenaktualisierung konnte nicht geöffnet werden. Bitte versuche es erneut.",
     "currencyApplied": "Automatisches Aufladen berechnet jetzt {amount}.",
+    "currencyChange": {
+      "title": "Betrag des automatischen Aufladens ändern?",
+      "text": "Das automatische Aufladen ist eingeschaltet. Ab der nächsten Abbuchung beträgt jede Abbuchung {newAmount} statt {amount}, zuzüglich etwaiger MwSt. oder Sales Tax. Die Anzahl der Kandidaten bleibt gleich. Die Inhaber und Admins des Unternehmens werden per E-Mail informiert.",
+      "confirm": "Währung ändern"
+    },
     "setUpShort": "Einrichten",
     "changeShort": "Ändern",
     "turnOn": "Einschalten",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "Automatisches Aufladen konnte die Karte nicht belasten. Lade auf, damit dein Guthaben nicht ausgeht.",
       "auto_top_up_on": "Automatisches Aufladen ist an: {price} zzgl. Steuern, wenn die verfügbaren Credits unter {threshold, number} fallen.",
       "auto_top_up_paused": "Automatisches Aufladen ist pausiert: Die Karte wurde abgelehnt. Aktualisiere die Karte, um es wieder einzuschalten.",
-      "auto_top_up_price_change": "Ab <time>{date}</time> kostet jedes automatische Aufladen {newPrice} statt {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {Ab <time>{date}</time> kostet jedes automatische Aufladen {newPrice} statt {price}.} other {Die Währung für <bdi>{name}</bdi> wurde geändert: Jedes automatische Aufladen kostet jetzt {newPrice} statt {price}.}}",
       "refund_approved": "Erstattung für <bdi>{name}</bdi> genehmigt: {price}.",
       "refund_rejected": "Erstattung für <bdi>{name}</bdi> abgelehnt: {price}. {credits, plural, one {# Credit ist} other {# Credits sind}} wieder in deinem Guthaben.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> hat {title, select, none {ein Interview} other {„<bdi>{title}</bdi>“}} abgeschlossen{grade, select, none {.} other {: {grade}.}}} other {# Kandidaten haben {title, select, none {ein Interview} other {„<bdi>{title}</bdi>“}} abgeschlossen.}}",

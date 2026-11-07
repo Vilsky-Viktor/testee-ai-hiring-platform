@@ -426,7 +426,7 @@
     "text": "Mua credit cho bất kỳ công ty nào mà bạn là chủ sở hữu hoặc quản trị viên.",
     "actions": [
       "Chọn công ty, rồi nhập số ứng viên muốn nạp, từ 10 đến 1.000, hoặc chọn một mức giá: nạp càng nhiều thì chi phí cho mỗi ứng viên càng thấp.",
-      "Đổi tiền tệ của công ty ở đầu trang: các lần nạp của công ty, kể cả tự động, sẽ được định giá và tính phí bằng tiền tệ đó từ lúc ấy.",
+      "Đổi tiền tệ của công ty ở đầu trang: các lần nạp của công ty, kể cả tự động, sẽ được định giá và tính phí bằng tiền tệ đó từ lúc ấy. Nếu đổi tiền tệ khi tự động nạp đang bật, bạn sẽ thấy cả hai số tiền để xác nhận trước, và chủ sở hữu cùng quản trị viên của công ty sẽ nhận được email.",
       "Thanh toán trên trang thanh toán của Paddle; credit sẽ vào trong vài giây.",
       "Mở bảng giá để so sánh các gói nạp.",
       "Thiết lập tự động nạp: chọn số tiền và số dư, rồi đánh dấu thỏa thuận. Thẻ của bạn được lưu trong trang thanh toán của Paddle và bị trừ tiền mỗi khi số dư xuống dưới mức đó."

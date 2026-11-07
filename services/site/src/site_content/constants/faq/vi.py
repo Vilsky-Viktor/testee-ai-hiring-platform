@@ -105,7 +105,7 @@ FAQ = [
     {
         "key": "currency",
         "question": "Tôi thanh toán bằng đồng tiền nào?",
-        "answer": "Giá được tính bằng đồng tiền địa phương tại Canada, Úc, Israel, Ba Lan, Thụy Sĩ, Nhật Bản, Hàn Quốc, Đài Loan, Hồng Kông, Thái Lan, Singapore và Ấn Độ; bằng euro tại các nước còn lại của EU và tại Iceland, Liechtenstein và Na Uy; bằng bảng Anh tại Vương quốc Anh; và bằng đô la Mỹ ở những nơi khác. Tài khoản của bạn và mỗi công ty giữ đồng tiền của quốc gia nơi chúng được tạo hoặc được dùng lần đầu, dù bạn đi đâu: đổi đồng tiền của bạn trong Cài đặt, và của một công ty trên trang nạp credit (chủ sở hữu và quản trị viên). Các lần nạp của một công ty, kể cả tự động nạp, luôn được tính bằng đồng tiền của công ty.",
+        "answer": "Giá được tính bằng đồng tiền địa phương tại Canada, Úc, Israel, Ba Lan, Thụy Sĩ, Nhật Bản, Hàn Quốc, Đài Loan, Hồng Kông, Thái Lan, Singapore và Ấn Độ; bằng euro tại các nước còn lại của EU và tại Iceland, Liechtenstein và Na Uy; bằng bảng Anh tại Vương quốc Anh; và bằng đô la Mỹ ở những nơi khác. Tài khoản của bạn và mỗi công ty giữ đồng tiền của quốc gia nơi chúng được tạo hoặc được dùng lần đầu, dù bạn đi đâu: đổi đồng tiền của bạn trong Cài đặt, và của một công ty trên trang nạp credit (chủ sở hữu và quản trị viên). Các lần nạp của một công ty, kể cả tự động nạp, luôn được tính bằng đồng tiền của công ty. Nếu đổi tiền tệ khi tự động nạp đang bật, bạn sẽ thấy cả hai số tiền để xác nhận trước, và chủ sở hữu cùng quản trị viên của công ty sẽ nhận được email.",
     },
     {
         "key": "referrals",

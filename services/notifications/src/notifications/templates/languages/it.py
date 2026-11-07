@@ -427,6 +427,28 @@ TEXTS = {
             "azienda, quindi viene inviata indipendentemente dalle tue impostazioni email."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "Nuovo importo della ricarica per {company}",
+        "preheader": "Ogni ricarica automatica ora costa {new_price} invece di {price}.",
+        "heading": "L'importo della ricarica automatica è cambiato",
+        "lines": [
+            (
+                "La valuta di {company} è stata cambiata, quindi ogni ricarica automatica ora costa "
+                "{new_price} invece di {price}, più IVA o imposta sulle vendite dove si applica. Il "
+                "numero di candidati resta lo stesso."
+            ),
+            (
+                "Se preferisci un importo diverso, modifica o disattiva la ricarica automatica nella "
+                "pagina Fatturazione."
+            ),
+        ],
+        "button": "Apri Fatturazione",
+        "footer": (
+            "Questa email è stata inviata a {email} perché sei proprietario o "
+            "amministratore di {company} su testee. Riguarda la fatturazione della tua "
+            "azienda, quindi viene inviata indipendentemente dalle tue impostazioni email."
+        ),
+    },
     "footer": "Questa email è stata inviata a {email} perché qualcuno ha invitato questo "
     "indirizzo su testee. Se non te l'aspettavi, puoi ignorarla.",
     # An invite from a company testee hasn't verified, at the end of the footer.

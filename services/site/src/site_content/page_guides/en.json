@@ -426,7 +426,7 @@
     "text": "Buy credits for any company you belong to as an owner or admin.",
     "actions": [
       "Pick a company, then type how many candidates to top up, from 10 to 1,000, or pick a price step: larger top-ups cost less per candidate.",
-      "Change the company's currency at the top of the page: its top-ups, automatic ones too, are priced and charged in it from then on.",
+      "Change the company's currency at the top of the page: its top-ups, automatic ones too, are priced and charged in it from then on. Changing it while automatic top-up is running shows you both amounts to confirm first, and the company's owners and admins get an email.",
       "Pay in Paddle's checkout; the credits arrive within seconds.",
       "Open pricing to compare the top-ups.",
       "Set up automatic top-up: choose an amount and a balance, and tick the agreement. Your card is saved in Paddle's checkout and charged each time the balance falls under that level."

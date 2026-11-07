@@ -278,6 +278,21 @@ TEXTS = {
         "button": "打开账单",
         "footer": "这封邮件发送到 {email}，因为你是 testee 上 {company} 的所有者或管理员。它与你公司的账单有关，因此无论你的邮件设置如何都会发送。",
     },
+    "top_up_currency_change": {
+        "subject": "{company} 的新充值金额",
+        "preheader": "每次自动充值的价格现从 {price} 调整为 {new_price}。",
+        "heading": "自动充值金额已调整",
+        "lines": [
+            (
+                "{company} 的货币已更改，因此每次自动充值的价格现从 {price}"
+                " 调整为 {new_price}，如适用，另加增值税或销售税。每次充值包含的"
+                "候选人数量不变。"
+            ),
+            ("如果你想要其他金额，请到账单页面更改或关闭自动充值。"),
+        ],
+        "button": "打开账单",
+        "footer": "这封邮件发送到 {email}，因为你是 testee 上 {company} 的所有者或管理员。它与你公司的账单有关，因此无论你的邮件设置如何都会发送。",
+    },
     "footer": "这封邮件发送到 {email}，因为有人在 testee 上邀请了这个地址。如果这封邮件与你无关，可以忽略。",
     # An invite from a company testee hasn't verified, at the end of the footer.
     "unverified": "testee 尚未验证 {company}。",

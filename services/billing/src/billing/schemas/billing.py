@@ -138,8 +138,18 @@ class CompanyCurrencyOut(BaseModel):
     currency: Currency
     currencies: list[Currency] = list(Currency)
     # Once chosen: what each automatic top-up charges in it from now on (minor units), when one
-    # is running; choosing applies at once, without the notice a new price list gets.
+    # is running; choosing applies at once, confirmed by whoever chooses and told to the company.
     auto_top_up_price: int | None = None
+
+
+class AutoTopUpCurrencyChange(BaseModel):
+    """What a running automatic top-up costs now and in the currency being chosen (minor units,
+    each in its own currency), so whoever chooses it sees both before it applies."""
+
+    price: int
+    currency: Currency
+    new_price: int
+    new_currency: Currency
 
 
 class TopUpCheckoutOut(BaseModel):

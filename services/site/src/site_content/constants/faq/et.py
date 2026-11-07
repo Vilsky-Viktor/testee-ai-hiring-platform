@@ -105,7 +105,7 @@ FAQ = [
     {
         "key": "currency",
         "question": "Millises valuutas ma maksan?",
-        "answer": "Hinnad on kohalikus valuutas Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris ja Indias; ülejäänud ELis ning Islandil, Liechtensteinis ja Norras eurodes; Ühendkuningriigis naelsterlingites; ja mujal USA dollarites. Sinu konto ja iga ettevõte jäävad selle riigi valuutale, kus need loodi või kus neid esimest korda kasutati, ükskõik kuhu sa reisid: enda oma muudad seadetes, ettevõtte oma juurdelaadimise lehel (omanikud ja administraatorid). Ettevõtte juurdelaadimised, ka automaatsed, võetakse alati ettevõtte valuutas.",
+        "answer": "Hinnad on kohalikus valuutas Kanadas, Austraalias, Iisraelis, Poolas, Šveitsis, Jaapanis, Lõuna-Koreas, Taiwanis, Hongkongis, Tais, Singapuris ja Indias; ülejäänud ELis ning Islandil, Liechtensteinis ja Norras eurodes; Ühendkuningriigis naelsterlingites; ja mujal USA dollarites. Sinu konto ja iga ettevõte jäävad selle riigi valuutale, kus need loodi või kus neid esimest korda kasutati, ükskõik kuhu sa reisid: enda oma muudad seadetes, ettevõtte oma juurdelaadimise lehel (omanikud ja administraatorid). Ettevõtte juurdelaadimised, ka automaatsed, võetakse alati ettevõtte valuutas. Kui muudad ettevõtte valuutat ajal, mil automaatne juurdelaadimine on sees, näed kõigepealt kinnitamiseks mõlemat summat ning ettevõtte omanikud ja administraatorid saavad e-kirja.",
     },
     {
         "key": "referrals",

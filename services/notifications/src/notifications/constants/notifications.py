@@ -23,6 +23,8 @@ BILLING_KINDS = {
     NotificationKind.AUTO_TOP_UP_PRICE_CHANGE,
     *REFUND_KINDS,
 }
+# Notifications that carry their company's name, added here as billing doesn't know it.
+NAMED_KINDS = {NotificationKind.AUTO_TOP_UP_PRICE_CHANGE, *REFUND_KINDS}
 # Kinds that can come in bursts. One about the same thing (its page and title) within
 # GROUP_HOURS of the last adds to it, "3 candidates finished …", instead of a new one.
 GROUPED_KINDS = {

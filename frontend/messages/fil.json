@@ -1468,6 +1468,11 @@
     "updateCard": "I-update ang card",
     "updateCardFailed": "Hindi mabuksan ang pag-update ng card. Pakisubukang muli.",
     "currencyApplied": "{amount} na ang sinisingil ng awtomatikong top-up.",
+    "currencyChange": {
+      "title": "Baguhin ang halaga ng awtomatikong top-up?",
+      "text": "Naka-on ang awtomatikong top-up. Simula sa susunod na singil, {newAmount} na ang bawat isa sa halip na {amount}, dagdag ang anumang VAT o sales tax. Pareho pa rin ang dami ng aplikanteng saklaw nito. Aabisuhan sa email ang mga may-ari at admin ng kumpanya.",
+      "confirm": "Palitan ang currency"
+    },
     "setUpShort": "I-set up",
     "changeShort": "Baguhin",
     "turnOn": "I-on",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "Hindi ma-charge ng awtomatikong top-up ang card. Mag-top up para hindi maubos ang iyong balance.",
       "auto_top_up_on": "Naka-on ang awtomatikong top-up: {price} dagdag ang buwis kapag bumaba ang available na credits sa ilalim ng {threshold, number}.",
       "auto_top_up_paused": "Naka-pause ang awtomatikong top-up: tinanggihan ang card. I-update ang card para i-on ito ulit.",
-      "auto_top_up_price_change": "Simula <time>{date}</time>, {newPrice} na ang bawat awtomatikong top-up sa halip na {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {Simula <time>{date}</time>, {newPrice} na ang bawat awtomatikong top-up sa halip na {price}.} other {Napalitan ang currency ng <bdi>{name}</bdi>: {newPrice} na ang bawat awtomatikong top-up sa halip na {price}.}}",
       "refund_approved": "Inaprubahan ang refund para sa <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "Tinanggihan ang refund para sa <bdi>{name}</bdi>: {price}. Nakabalik na sa iyong balance ang {credits, plural, =1 {# credit} one {# credits} other {# credits}}.",
       "candidate_finished": "{count, plural, =1 {Natapos ni <bdi>{email}</bdi> ang {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# aplikante ang nakatapos ng {title, select, none {isang interview} other {“<bdi>{title}</bdi>”}}.}}",

@@ -105,7 +105,7 @@ FAQ = [
     {
         "key": "currency",
         "question": "Saya membayar dalam mata uang apa?",
-        "answer": "Harga dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, dan India; dalam euro di negara UE lainnya serta di Islandia, Liechtenstein, dan Norwegia; dalam pound di Inggris; dan dalam dolar AS di tempat lain. Akunmu dan setiap perusahaan tetap memakai mata uang negara tempat mereka dibuat atau pertama kali digunakan, ke mana pun kamu bepergian: ubah mata uangmu di Pengaturan, dan mata uang perusahaan di halaman isi ulang (pemilik dan admin). Isi ulang sebuah perusahaan, termasuk yang otomatis, selalu ditagih dalam mata uang perusahaan itu.",
+        "answer": "Harga dalam mata uang lokal di Kanada, Australia, Israel, Polandia, Swiss, Jepang, Korea Selatan, Taiwan, Hong Kong, Thailand, Singapura, dan India; dalam euro di negara UE lainnya serta di Islandia, Liechtenstein, dan Norwegia; dalam pound di Inggris; dan dalam dolar AS di tempat lain. Akunmu dan setiap perusahaan tetap memakai mata uang negara tempat mereka dibuat atau pertama kali digunakan, ke mana pun kamu bepergian: ubah mata uangmu di Pengaturan, dan mata uang perusahaan di halaman isi ulang (pemilik dan admin). Isi ulang sebuah perusahaan, termasuk yang otomatis, selalu ditagih dalam mata uang perusahaan itu. Jika kamu mengubah mata uang perusahaan saat isi ulang otomatis menyala, kamu akan melihat kedua jumlah untuk dikonfirmasi lebih dulu, dan pemilik serta admin perusahaan menerima email.",
     },
     {
         "key": "referrals",

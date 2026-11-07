@@ -426,7 +426,7 @@
     "text": "Acquista crediti per qualsiasi azienda di cui sei proprietario o amministratore.",
     "actions": [
       "Scegli un'azienda, poi scrivi per quanti candidati ricaricare, da 10 a 1.000, o scegli una fascia di prezzo: le ricariche più grandi costano meno per candidato.",
-      "Cambia la valuta dell'azienda in cima alla pagina: da quel momento le sue ricariche, anche quelle automatiche, sono prezzate e addebitate in quella valuta.",
+      "Cambia la valuta dell'azienda in cima alla pagina: da quel momento le sue ricariche, anche quelle automatiche, sono prezzate e addebitate in quella valuta. Se la cambi mentre la ricarica automatica è attiva, vedrai prima entrambi gli importi da confermare, e i proprietari e gli amministratori dell'azienda riceveranno un'email.",
       "Paga sulla pagina di pagamento di Paddle; i crediti arrivano in pochi secondi.",
       "Apri i prezzi per confrontare le ricariche.",
       "Configura la ricarica automatica: scegli un importo e un saldo e spunta l'accordo. La tua carta viene salvata nel checkout di Paddle e addebitata ogni volta che il saldo scende sotto quel livello."

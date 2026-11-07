@@ -11,6 +11,8 @@ export type RefundResult = Schemas["RefundOut"]
 // top-up's), with the ones to choose from.
 export type CurrencyChoice = Schemas["CurrencyOut"]
 export type CompanyCurrency = Schemas["CompanyCurrencyOut"]
+// What a running automatic top-up costs now and in the currency being chosen.
+export type AutoTopUpCurrencyChange = Schemas["AutoTopUpCurrencyChange"]
 // The Paddle transaction a top-up's checkout opens, made by the backend.
 export type CheckoutData = Schemas["TopUpCheckoutOut"]
 // A company's credits: available, set aside for candidates who haven't finished (and how many

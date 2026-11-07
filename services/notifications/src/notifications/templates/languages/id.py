@@ -416,6 +416,28 @@ TEXTS = {
             "pengaturan emailmu."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "Jumlah isi ulang baru untuk {company}",
+        "preheader": "Setiap isi ulang otomatis kini berharga {new_price}, bukan {price}.",
+        "heading": "Jumlah isi ulang otomatis berubah",
+        "lines": [
+            (
+                "Mata uang {company} telah diubah, sehingga setiap isi ulang otomatis kini berharga "
+                "{new_price}, bukan {price}, ditambah PPN atau pajak penjualan jika berlaku. Jumlah "
+                "kandidatnya tetap sama."
+            ),
+            (
+                "Jika kamu ingin jumlah lain, ubah atau matikan isi ulang otomatis di halaman "
+                "tagihan."
+            ),
+        ],
+        "button": "Buka tagihan",
+        "footer": (
+            "Email ini dikirim ke {email} karena kamu pemilik atau admin {company} di "
+            "testee. Email ini tentang penagihan perusahaanmu, jadi selalu dikirim apa pun "
+            "pengaturan emailmu."
+        ),
+    },
     "footer": "Email ini dikirim ke {email} karena seseorang mengundang alamat ini di testee. "
     "Jika kamu tidak mengharapkannya, abaikan saja.",
     # An invite from a company testee hasn't verified, at the end of the footer.

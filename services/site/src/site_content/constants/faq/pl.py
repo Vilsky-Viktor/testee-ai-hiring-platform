@@ -105,7 +105,7 @@ FAQ = [
     {
         "key": "currency",
         "question": "W jakiej walucie płacę?",
-        "answer": "Ceny są w walucie lokalnej w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze i Indiach; w euro w pozostałych krajach UE oraz w Islandii, Liechtensteinie i Norwegii; w funtach w Wielkiej Brytanii; a gdzie indziej w dolarach amerykańskich. Twoje konto i każda firma zachowują walutę kraju, w którym zostały utworzone lub po raz pierwszy użyte, niezależnie od tego, dokąd podróżujesz: swoją zmienisz w Ustawieniach, a walutę firmy na stronie doładowania (właściciele i administratorzy). Doładowania firmy, także automatyczne, są zawsze pobierane w walucie firmy.",
+        "answer": "Ceny są w walucie lokalnej w Kanadzie, Australii, Izraelu, Polsce, Szwajcarii, Japonii, Korei Południowej, na Tajwanie, w Hongkongu, Tajlandii, Singapurze i Indiach; w euro w pozostałych krajach UE oraz w Islandii, Liechtensteinie i Norwegii; w funtach w Wielkiej Brytanii; a gdzie indziej w dolarach amerykańskich. Twoje konto i każda firma zachowują walutę kraju, w którym zostały utworzone lub po raz pierwszy użyte, niezależnie od tego, dokąd podróżujesz: swoją zmienisz w Ustawieniach, a walutę firmy na stronie doładowania (właściciele i administratorzy). Doładowania firmy, także automatyczne, są zawsze pobierane w walucie firmy. Jeśli zmienisz walutę firmy, gdy działa automatyczne doładowanie, najpierw zobaczysz obie kwoty do potwierdzenia, a właściciele i administratorzy firmy dostaną e-mail.",
     },
     {
         "key": "referrals",

@@ -11,10 +11,12 @@ from testee_common.auth.auth import CurrentUser
 from testee_common.http.visitor_country import VisitorCountry
 from testee_common.i18n.i18n import request_language
 
+from billing.constants.currencies import Currency
 from billing.constants.payment_failures import TRANSACTION_ID_PATTERN
 from billing.constants.products import OwnerType
 from billing.integrations.companies import require
 from billing.schemas.billing import (
+    AutoTopUpCurrencyChange,
     CatalogOut,
     CompanyCurrencyOut,
     CurrencyIn,
@@ -63,6 +65,17 @@ async def get_company_currency(
     return CompanyCurrencyOut(
         currency=await decide(page_country or country, company_id=str(company_id))
     )
+
+
+@router.get("/currency/change")
+async def get_company_currency_change(
+    company_id: UUID, currency: Currency, user: CurrentUser
+) -> AutoTopUpCurrencyChange | None:
+    """What choosing `currency` would do to a running automatic top-up, for the confirmation
+    before it's chosen; none when there's nothing to tell."""
+    await require(company_id, user.uid, editor=True)
+
+    return await currencies.top_up_change(str(company_id), currency)
 
 
 @router.put("/currency")

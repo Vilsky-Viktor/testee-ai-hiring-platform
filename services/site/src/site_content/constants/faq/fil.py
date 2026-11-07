@@ -105,7 +105,7 @@ FAQ = [
     {
         "key": "currency",
         "question": "Anong currency ang ibabayad ko?",
-        "answer": "Nasa lokal na currency ang mga presyo sa Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore at India; sa euro sa iba pang bahagi ng EU at sa Iceland, Liechtenstein at Norway; sa pound sa UK; at sa US dollars sa ibang lugar. Pinananatili ng account mo at ng bawat kumpanya ang currency ng bansa kung saan sila ginawa o unang ginamit, saan ka man bumiyahe: palitan ang sa iyo sa Mga setting, at ang sa isang kumpanya sa top-up page (mga owner at admin). Ang mga top-up ng isang kumpanya, pati ang mga awtomatiko, ay laging sinisingil sa currency ng kumpanya.",
+        "answer": "Nasa lokal na currency ang mga presyo sa Canada, Australia, Israel, Poland, Switzerland, Japan, South Korea, Taiwan, Hong Kong, Thailand, Singapore at India; sa euro sa iba pang bahagi ng EU at sa Iceland, Liechtenstein at Norway; sa pound sa UK; at sa US dollars sa ibang lugar. Pinananatili ng account mo at ng bawat kumpanya ang currency ng bansa kung saan sila ginawa o unang ginamit, saan ka man bumiyahe: palitan ang sa iyo sa Mga setting, at ang sa isang kumpanya sa top-up page (mga owner at admin). Ang mga top-up ng isang kumpanya, pati ang mga awtomatiko, ay laging sinisingil sa currency ng kumpanya. Kapag pinalitan mo ang currency ng kumpanya habang naka-on ang awtomatikong top-up, makikita mo muna ang dalawang halaga para kumpirmahin, at makakatanggap ng email ang mga may-ari at admin ng kumpanya.",
     },
     {
         "key": "referrals",

@@ -30,17 +30,21 @@ import { watchNotifications } from "@/lib/notifications"
 import { timeTag } from "@/lib/time-tag"
 import type { AppNotification, NotificationFeed } from "@/types/notifications"
 
-/** An automatic top-up's price change as the bell writes it: what it costs and will cost. */
+/** An automatic top-up's price change as the bell writes it: what it costs and will cost, the
+ * new price in the new currency when the company chose another. */
 function prices(
   data: Record<string, string | number | undefined>,
   locale: string
 ) {
-  const money = (cents: unknown) =>
-    typeof cents === "number" && typeof data.currency === "string"
-      ? formatPrice(cents, data.currency, locale)
+  const money = (cents: unknown, currency: unknown) =>
+    typeof cents === "number" && typeof currency === "string"
+      ? formatPrice(cents, currency, locale)
       : ""
 
-  return { price: money(data.price), newPrice: money(data.new_price) }
+  return {
+    price: money(data.price, data.currency),
+    newPrice: money(data.new_price, data.new_currency ?? data.currency),
+  }
 }
 
 /** One notification's text: its kind's message, filled with what the service sent. Missing

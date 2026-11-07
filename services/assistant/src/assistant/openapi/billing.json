@@ -1486,6 +1486,71 @@
     }
    }
   },
+  "/companies/{company_id}/billing/currency/change": {
+   "get": {
+    "tags": [
+     "billing"
+    ],
+    "summary": "Get Company Currency Change",
+    "description": "What choosing `currency` would do to a running automatic top-up, for the confirmation\nbefore it's chosen; none when there's nothing to tell.",
+    "operationId": "get_company_currency_change_companies__company_id__billing_currency_change_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "company_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Company Id"
+      }
+     },
+     {
+      "name": "currency",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "$ref": "#/components/schemas/Currency"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "anyOf": [
+          {
+           "$ref": "#/components/schemas/AutoTopUpCurrencyChange"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "title": "Response Get Company Currency Change Companies  Company Id  Billing Currency Change Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/companies/{company_id}/billing/checkout": {
    "post": {
     "tags": [
@@ -2587,6 +2652,33 @@
     ],
     "title": "AiSpendOut",
     "description": "A company's or user's AI spend over the last SPEND_DAYS days, for its support page."
+   },
+   "AutoTopUpCurrencyChange": {
+    "properties": {
+     "price": {
+      "type": "integer",
+      "title": "Price"
+     },
+     "currency": {
+      "$ref": "#/components/schemas/Currency"
+     },
+     "new_price": {
+      "type": "integer",
+      "title": "New Price"
+     },
+     "new_currency": {
+      "$ref": "#/components/schemas/Currency"
+     }
+    },
+    "type": "object",
+    "required": [
+     "price",
+     "currency",
+     "new_price",
+     "new_currency"
+    ],
+    "title": "AutoTopUpCurrencyChange",
+    "description": "What a running automatic top-up costs now and in the currency being chosen (minor units,\neach in its own currency), so whoever chooses it sees both before it applies."
    },
    "AutoTopUpIn": {
     "properties": {

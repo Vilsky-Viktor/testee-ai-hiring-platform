@@ -426,7 +426,7 @@
     "text": "Kupuj kredyty dla każdej firmy, w której jesteś właścicielem lub administratorem.",
     "actions": [
       "Wybierz firmę, a potem wpisz, na ilu kandydatów chcesz doładować, od 10 do 1 000, albo wybierz próg cenowy: większe doładowania kosztują mniej za kandydata.",
-      "Zmień walutę firmy na górze strony: odtąd jej doładowania, także automatyczne, są w niej wyceniane i pobierane.",
+      "Zmień walutę firmy na górze strony: odtąd jej doładowania, także automatyczne, są w niej wyceniane i pobierane. Jeśli zmienisz walutę firmy, gdy działa automatyczne doładowanie, najpierw zobaczysz obie kwoty do potwierdzenia, a właściciele i administratorzy firmy dostaną e-mail.",
       "Zapłać na stronie płatności Paddle; kredyty pojawią się w kilka sekund.",
       "Otwórz cennik, by porównać doładowania.",
       "Skonfiguruj automatyczne doładowanie: wybierz kwotę i saldo oraz zaznacz zgodę. Twoja karta zostaje zapisana w kasie Paddle i jest obciążana za każdym razem, gdy saldo spadnie poniżej tego poziomu."

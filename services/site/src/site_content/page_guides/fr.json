@@ -426,7 +426,7 @@
     "text": "Achetez des crédits pour toute entreprise dont vous êtes propriétaire ou admin.",
     "actions": [
       "Choisissez une entreprise, puis saisissez pour combien de candidats recharger, de 10 à 1 000, ou choisissez un palier de prix : les recharges plus grandes coûtent moins cher par candidat.",
-      "Changez la devise de l'entreprise en haut de la page : ses recharges, automatiques comprises, sont dès lors tarifées et débitées dans cette devise.",
+      "Changez la devise de l'entreprise en haut de la page : ses recharges, automatiques comprises, sont dès lors tarifées et débitées dans cette devise. Si vous la changez alors que la recharge automatique est active, vous voyez d'abord les deux montants à confirmer, et les propriétaires et administrateurs de l'entreprise reçoivent un e-mail.",
       "Payez sur la page de paiement de Paddle ; les crédits arrivent en quelques secondes.",
       "Ouvrez les tarifs pour comparer les recharges.",
       "Configurez la recharge automatique : choisissez un montant et un solde, et cochez l'accord. Votre carte est enregistrée dans le paiement Paddle et débitée chaque fois que le solde passe sous ce niveau."

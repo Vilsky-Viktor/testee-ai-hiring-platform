@@ -4,8 +4,6 @@ known country billing sees them with; without a country (calls from AI apps, the
 other services, tests) the saved one applies, or US dollars, and nothing is saved."""
 
 import uuid
-from datetime import UTC, datetime
-from types import SimpleNamespace
 
 import pytest
 
@@ -116,94 +114,3 @@ def test_a_company_is_welcomed_with_or_without_its_owners_country(
         assert response.status_code == 204
 
     assert saved_currencies == {("company", "beta"): "EUR"}
-
-
-@pytest.mark.parametrize(
-    ("row", "charges"),
-    [
-        # No automatic top-up: nothing to say.
-        (None, None),
-        # One waiting for its card charges nothing yet.
-        (SimpleNamespace(subscription_id=None), None),
-        # A running one, agreed at $45: chosen in euros, it charges the price list's €50 at once.
-        (
-            SimpleNamespace(
-                subscription_id="sub_1",
-                product="topup_50",
-                price=4500,
-                price_currency="USD",
-                next_price=None,
-                next_price_from=None,
-            ),
-            5000,
-        ),
-    ],
-)
-def test_a_company_changes_its_currency_and_hears_what_automatic_top_up_now_charges(
-    client, editor, monkeypatch, saved_currencies, row, charges
-):
-    async def get(session, owner_type, owner_id):
-        return row
-
-    monkeypatch.setattr(auto_top_ups, "get", get)
-    editor("ann")
-
-    response = client.put(f"{COMPANY}/billing/currency", json={"currency": "EUR"})
-
-    assert response.json() == {
-        "currency": "EUR",
-        "currencies": [currency.value for currency in Currency],
-        "auto_top_up_price": charges,
-    }
-    assert saved_currencies == {("company", COMPANY_ID): "EUR"}
-
-
-@pytest.mark.parametrize(
-    ("subscription", "company", "switched", "charged"),
-    [
-        # Set up in dollars, the company now in euros: switched over, then charged €50.
-        ("USD", "EUR", ["EUR"], ("5000", "EUR")),
-        # Already in the company's: charged as it is.
-        ("GBP", "GBP", [], ("4000", "GBP")),
-        # From before currencies (none recorded) and none saved: dollars as before.
-        (None, None, [], ("5000", "USD")),
-    ],
-)
-def test_an_automatic_top_up_charges_in_the_companys_currency(
-    monkeypatch, saved_currencies, subscription, company, switched, charged
-):
-    import asyncio
-
-    from billing.integrations import paddle
-    from billing.services import auto_top_up_charging as service
-
-    if company:
-        saved_currencies[("company", "acme")] = company
-
-    row = SimpleNamespace(
-        subscription_id="sub_1",
-        product="topup_50",
-        currency=subscription,
-        price=None,
-        price_currency=None,
-        language=None,
-    )
-    patched, recorded, items = [], [], []
-
-    async def set_currency(subscription_id, currency):
-        patched.append(currency)
-
-    async def record(session, subscription_id, currency):
-        recorded.append(currency)
-
-    async def charge(subscription_id, price):
-        items.append((price["unit_price"]["amount"], price["unit_price"]["currency_code"]))
-
-    monkeypatch.setattr(paddle, "set_currency", set_currency)
-    monkeypatch.setattr(paddle, "charge", charge)
-    monkeypatch.setattr(auto_top_ups, "set_currency", record)
-
-    asyncio.run(service.charge(row, "acme", datetime.now(UTC)))
-
-    assert patched == recorded == switched
-    assert items == [charged]

@@ -1468,6 +1468,11 @@
     "updateCard": "Zaktualizuj kartę",
     "updateCardFailed": "Nie udało się otworzyć aktualizacji karty. Spróbuj ponownie.",
     "currencyApplied": "Automatyczne doładowanie pobiera teraz {amount}.",
+    "currencyChange": {
+      "title": "Zmienić kwotę automatycznego doładowania?",
+      "text": "Automatyczne doładowanie jest włączone. Począwszy od następnego obciążenia, każde będzie wynosić {newAmount} zamiast {amount}, plus ewentualny VAT lub podatek od sprzedaży. Liczba kandydatów pozostaje ta sama. Właściciele i administratorzy firmy otrzymają e-mail.",
+      "confirm": "Zmień walutę"
+    },
     "setUpShort": "Ustaw",
     "changeShort": "Zmień",
     "turnOn": "Włącz",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "Automatyczne doładowanie nie mogło obciążyć karty. Doładuj konto, aby nie zabrakło Ci kredytów.",
       "auto_top_up_on": "Automatyczne doładowanie jest włączone: {price} plus podatek, gdy dostępne kredyty spadną poniżej {threshold, number}.",
       "auto_top_up_paused": "Automatyczne doładowanie jest wstrzymane: karta została odrzucona. Zaktualizuj kartę, aby je ponownie włączyć.",
-      "auto_top_up_price_change": "Od <time>{date}</time> każde automatyczne doładowanie kosztuje {newPrice} zamiast {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {Od <time>{date}</time> każde automatyczne doładowanie kosztuje {newPrice} zamiast {price}.} other {Zmieniono walutę firmy <bdi>{name}</bdi>: każde automatyczne doładowanie kosztuje teraz {newPrice} zamiast {price}.}}",
       "refund_approved": "Zwrot zatwierdzony dla <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "Zwrot odrzucony dla <bdi>{name}</bdi>: {price}. {credits, plural, one {# kredyt wrócił} few {# kredyty wróciły} many {# kredytów wróciło} other {# kredytu wróciło}} na Twoje saldo.",
       "candidate_finished": "{count, plural, one {Kandydat <bdi>{email}</bdi> ukończył {title, select, none {rozmowę} other {„<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} few {# kandydaci ukończyli {title, select, none {rozmowę} other {„<bdi>{title}</bdi>”}}.} many {# kandydatów ukończyło {title, select, none {rozmowę} other {„<bdi>{title}</bdi>”}}.} other {# kandydata ukończyło {title, select, none {rozmowę} other {„<bdi>{title}</bdi>”}}.}}",

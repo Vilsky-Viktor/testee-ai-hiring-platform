@@ -1468,6 +1468,11 @@
     "updateCard": "Cập nhật thẻ",
     "updateCardFailed": "Không thể mở trang cập nhật thẻ. Vui lòng thử lại.",
     "currencyApplied": "Tự động nạp giờ trừ {amount} mỗi lần.",
+    "currencyChange": {
+      "title": "Thay đổi số tiền tự động nạp?",
+      "text": "Tự động nạp đang bật. Kể từ lần trừ tiền tiếp theo, mỗi lần trừ {newAmount} thay vì {amount}, cộng thêm VAT hoặc thuế bán hàng nếu có. Số ứng viên vẫn như cũ. Chủ sở hữu và quản trị viên của công ty sẽ được thông báo qua email.",
+      "confirm": "Đổi tiền tệ"
+    },
     "setUpShort": "Thiết lập",
     "changeShort": "Thay đổi",
     "turnOn": "Bật",
@@ -2073,7 +2078,7 @@
       "auto_top_up_failed": "Tự động nạp không trừ tiền được từ thẻ. Hãy nạp credit để không bị hết số dư.",
       "auto_top_up_on": "Tự động nạp đang bật: {price} cộng thuế khi credit khả dụng xuống dưới {threshold, number}.",
       "auto_top_up_paused": "Tự động nạp đã tạm dừng: thẻ bị từ chối. Hãy cập nhật thẻ để bật lại.",
-      "auto_top_up_price_change": "Từ <time>{date}</time>, mỗi lần tự động nạp có giá {newPrice} thay vì {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {Từ <time>{date}</time>, mỗi lần tự động nạp có giá {newPrice} thay vì {price}.} other {Tiền tệ của <bdi>{name}</bdi> đã thay đổi: mỗi lần tự động nạp giờ có giá {newPrice} thay vì {price}.}}",
       "refund_approved": "Đã phê duyệt hoàn tiền cho <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "Đã từ chối hoàn tiền cho <bdi>{name}</bdi>: {price}. {credits, plural, other {# credit}} đã quay lại số dư của bạn.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> đã hoàn thành {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# ứng viên đã hoàn thành {title, select, none {một buổi phỏng vấn} other {“<bdi>{title}</bdi>”}}.}}",

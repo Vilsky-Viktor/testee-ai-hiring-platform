@@ -1468,6 +1468,11 @@
     "updateCard": "تحديث البطاقة",
     "updateCardFailed": "تعذّر فتح صفحة تحديث البطاقة. حاول مرة أخرى.",
     "currencyApplied": "أصبح الشحن التلقائي يخصم {amount}.",
+    "currencyChange": {
+      "title": "هل تريد تغيير مبلغ الشحن التلقائي؟",
+      "text": "الشحن التلقائي مفعّل. سيصبح كل خصم {newAmount} بدلًا من {amount}، مضافًا إليه أي ضريبة قيمة مضافة أو ضريبة مبيعات، ابتداءً من عملية الخصم التالية. ويبقى عدد المرشحين كما هو. وسيُبلَّغ مالكو الشركة ومسؤولوها بالبريد الإلكتروني.",
+      "confirm": "تغيير العملة"
+    },
     "setUpShort": "إعداد",
     "changeShort": "تغيير",
     "turnOn": "تشغيل",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "تعذّر على الشحن التلقائي الخصم من البطاقة. اشحن رصيدك حتى لا ينفد.",
       "auto_top_up_on": "الشحن التلقائي مفعّل: {price} مضافًا إليها الضريبة عند انخفاض الرصيد المتاح عن {threshold, number}.",
       "auto_top_up_paused": "الشحن التلقائي متوقف مؤقتًا: رُفضت البطاقة. حدّث البطاقة لإعادة تشغيله.",
-      "auto_top_up_price_change": "اعتبارًا من <time>{date}</time>، تكلّف كل عملية شحن تلقائي {newPrice} بدلًا من {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {اعتبارًا من <time>{date}</time>، تكلّف كل عملية شحن تلقائي {newPrice} بدلًا من {price}.} other {تغيّرت عملة <bdi>{name}</bdi>: أصبحت كل عملية شحن تلقائي تكلّف {newPrice} بدلًا من {price}.}}",
       "refund_approved": "تمت الموافقة على الاسترداد لشركة <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "رُفض الاسترداد لشركة <bdi>{name}</bdi>: {price}. عاد {credits, plural, zero {# رصيد إلى رصيدك} one {رصيد واحد إلى رصيدك} two {رصيدان إلى رصيدك} few {# أرصدة إلى رصيدك} many {# رصيدًا إلى رصيدك} other {# رصيد إلى رصيدك}}.",
       "candidate_finished": "{count, plural, one {أنهى <bdi>{email}</bdi> {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}{grade, select, none {.} other {: {grade}.}}} zero {أنهى # مرشح {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}.} two {أنهى مرشحان {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}.} few {أنهى # مرشحين {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}.} many {أنهى # مرشحًا {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}.} other {أنهى # مرشح {title, select, none {مقابلة} other {«<bdi>{title}</bdi>»}}.}}",

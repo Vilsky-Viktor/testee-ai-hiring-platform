@@ -81,4 +81,5 @@ export const NOTIFICATION_DEFAULTS = {
   integration: "ats",
   url: "",
   threshold: 0,
+  new_currency: "none",
 }

@@ -17,6 +17,7 @@ COMPANY = {
     "members": [{"user_id": "ann", "editor": True}, {"user_id": "vic", "editor": False}],
 }
 NOTICE = {"price": 4500, "new_price": 5000, "currency": "USD", "date": "2026-11-21"}
+CURRENCY = {"price": 4500, "currency": "USD", "new_price": 4000, "new_currency": "GBP"}
 TURNED_ON = {"price": 5000, "currency": "EUR", "threshold": 1500}
 CHARGED = {
     "credits": 5000,
@@ -59,6 +60,7 @@ def sent(monkeypatch):
         ("auto_top_up_failed", {}, "https://testee.ai/top-up"),
         ("auto_top_up_paused", {}, "https://testee.ai/companies/c1/billing"),
         ("auto_top_up_price_change", NOTICE, "https://testee.ai/companies/c1/billing"),
+        ("auto_top_up_price_change", CURRENCY, "https://testee.ai/companies/c1/billing"),
         ("auto_top_up_on", TURNED_ON, "https://testee.ai/companies/c1/billing"),
         ("auto_top_up_charged", CHARGED, "https://testee.ai/companies/c1/billing"),
     ],
@@ -93,6 +95,9 @@ def test_other_notices_and_a_persons_own_arent_emailed(sent, event):
     [
         ("auto_top_up_on", TURNED_ON, "en", ["€50", "1,500"]),
         ("auto_top_up_on", TURNED_ON, "de", ["50\u00a0€", "1.500"]),
+        # A new currency: each amount in its own, and no day, as it applies at once.
+        ("auto_top_up_price_change", CURRENCY, "en", ["$45", "£40"]),
+        ("auto_top_up_price_change", CURRENCY, "de", ["45\u00a0$", "40\u00a0£"]),
         ("auto_top_up_charged", CHARGED, "en", ["$54.50", "5,000", "5,320", "October 29, 2026"]),
         (
             "auto_top_up_charged",
@@ -115,6 +120,37 @@ def test_turned_on_and_each_charge_say_what_it_charges_in_the_recipients_languag
 
     [(_, _, text)] = sent["sent"]
     assert [value for value in shown if value not in text] == []
+
+
+def test_each_change_of_currency_is_its_own_email_and_a_redelivered_one_the_same(sent):
+    """No key: the event's id keeps a redelivered change to one email, and tells two apart."""
+    event = notification(
+        "company", "c1", "auto_top_up_price_change", "/companies/c1/billing", **CURRENCY
+    )
+
+    for event_id in ("outbox-1", "outbox-1", "outbox-2"):
+        asyncio.run(service_emails.billing_emails(event, event_id))
+
+    assert {key for key, _, _ in sent["sent"]} == {"events/outbox-1/ann", "events/outbox-2/ann"}
+
+
+@pytest.mark.parametrize(
+    ("kind", "data"), [("auto_top_up_price_change", NOTICE), ("auto_top_up_price_change", CURRENCY)]
+)
+def test_a_price_change_names_its_company_and_is_dropped_once_the_company_is_gone(
+    sent, monkeypatch, kind, data
+):
+    event = notification("company", "c1", kind, "/companies/c1/billing", **data)
+
+    named = asyncio.run(service_emails.named(event))
+
+    async def gone(company_ids):
+        return []
+
+    monkeypatch.setattr(companies, "members", gone)
+
+    assert named["data"] == {**data, "name": "Acme"}
+    assert asyncio.run(service_emails.named(event)) is None
 
 
 def test_a_redelivered_charge_notice_sends_with_the_same_key(sent):

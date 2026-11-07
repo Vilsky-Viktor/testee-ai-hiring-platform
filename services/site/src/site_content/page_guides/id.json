@@ -426,7 +426,7 @@
     "text": "Beli kredit untuk perusahaan mana pun tempat kamu menjadi pemilik atau admin.",
     "actions": [
       "Pilih perusahaan, lalu ketik berapa kandidat yang akan diisi ulang, dari 10 hingga 1.000, atau pilih tingkat harga: isi ulang yang lebih besar lebih murah per kandidat.",
-      "Ubah mata uang perusahaan di bagian atas halaman: isi ulangnya, termasuk yang otomatis, dihargai dan ditagih dalam mata uang itu sejak saat itu.",
+      "Ubah mata uang perusahaan di bagian atas halaman: isi ulangnya, termasuk yang otomatis, dihargai dan ditagih dalam mata uang itu sejak saat itu. Jika kamu mengubah mata uang perusahaan saat isi ulang otomatis menyala, kamu akan melihat kedua jumlah untuk dikonfirmasi lebih dulu, dan pemilik serta admin perusahaan menerima email.",
       "Bayar di halaman pembayaran Paddle; kredit masuk dalam hitungan detik.",
       "Buka harga untuk membandingkan paket isi ulang.",
       "Siapkan isi ulang otomatis: pilih jumlah dan saldo, lalu centang persetujuan. Kartumu disimpan di checkout Paddle dan ditagih setiap kali saldo turun di bawah level itu."

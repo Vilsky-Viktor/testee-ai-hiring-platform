@@ -424,6 +424,28 @@ TEXTS = {
             "saadetakse see sõltumata sinu e-kirjade seadetest."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "Uus juurdelaadimise summa: {company}",
+        "preheader": "Iga automaatne juurdelaadimine maksab nüüd {price} asemel {new_price}.",
+        "heading": "Automaatse juurdelaadimise summa muutus",
+        "lines": [
+            (
+                "Ettevõtte {company} valuutat muudeti, seega maksab iga automaatne juurdelaadimine "
+                "nüüd {price} asemel {new_price}, millele lisandub käibemaks või müügimaks, kus see "
+                "kehtib. Kandidaatide arv jääb samaks."
+            ),
+            (
+                "Kui soovid teist summat, muuda automaatset juurdelaadimist arvelduse lehel või "
+                "lülita see välja."
+            ),
+        ],
+        "button": "Ava arveldus",
+        "footer": (
+            "See e-kiri saadeti aadressile {email}, sest oled testees ettevõtte {company} "
+            "omanik või administraator. See puudutab sinu ettevõtte arveldust, seega "
+            "saadetakse see sõltumata sinu e-kirjade seadetest."
+        ),
+    },
     "footer": "See e-kiri saadeti aadressile {email}, sest keegi kutsus selle aadressi "
     "testeesse. Kui sa seda ei oodanud, võid selle tähelepanuta jätta.",
     # An invite from a company testee hasn't verified, at the end of the footer.

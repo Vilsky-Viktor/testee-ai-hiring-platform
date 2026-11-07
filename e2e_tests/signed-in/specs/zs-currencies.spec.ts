@@ -88,7 +88,9 @@ test("a company's top-up is in the company's currency", async ({ signInAs }) => 
   await shots(owner, "company-currency-list")
   await owner.locator("input:focus").fill("USD")
   await owner.getByRole("option").first().click()
+  // No automatic top-up: nothing to confirm.
   await expect(currency).toHaveAttribute("data-currency", "USD")
+  await expect(owner.getByRole("dialog")).toHaveCount(0)
   await expect(owner.getByTestId("custom-quote")).toContainText("$")
   await shots(owner, "top-up-usd-company-eur-person", true)
 

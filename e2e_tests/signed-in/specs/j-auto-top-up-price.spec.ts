@@ -22,12 +22,14 @@ const SHOWN_DAY = new Intl.DateTimeFormat("en", {
 }).format(new Date(NEXT_DAY));
 
 // A throwaway owner and company, whose automatic top-up row is removed before the company is.
-const test = base.extend<{ owned: { page: Page; email: string; id: string } }>({
+const test = base.extend<{
+  owned: { page: Page; email: string; id: string; name: string };
+}>({
   owned: async ({ signInAs }, use) => {
     const email = throwawayEmail("auto-top-up-price");
     const page = await signInAs(email);
     const company = await createCompany(page);
-    await use({ page, email, id: company.id });
+    await use({ page, email, id: company.id, name: company.name });
     await removeAutoTopUp(company.id);
   },
 });
@@ -51,12 +53,14 @@ test("an announced new price shows beside the automatic top-up", async ({
   await shot(page, "top-up-page");
 });
 
-// Choosing another currency applies at once: what each charge now costs in it, from billing, and
-// the setting follows; the price announced in dollars no longer applies.
-test("choosing another currency says what automatic top-up now charges", async ({
+// Choosing another currency while it runs asks first, with both amounts from billing; keeping
+// changes nothing. Confirmed, it applies at once: the setting follows, the price announced in
+// dollars no longer applies, and the bell and an email tell both amounts.
+test("changing the currency confirms both amounts, then tells the company", async ({
   owned,
 }) => {
-  const { page, id } = owned;
+  const { page, email, id, name } = owned;
+  const billing = `/companies/${id}/billing`;
   await setAutoTopUp(id, await uidOf(page), {
     price: 4500,
     nextPrice: 6000,
@@ -66,9 +70,25 @@ test("choosing another currency says what automatic top-up now charges", async (
   await visit(page, "/top-up");
   await expect(page.getByTestId("next-price").filter({ visible: true })).toBeVisible();
   const currency = page.getByTestId("company-currency");
-  await currency.getByRole("combobox").click();
-  await page.locator("input:focus").fill("EUR");
-  await page.getByRole("option").first().click();
+  const dialog = page.getByRole("dialog");
+  const choose = async (code: string) => {
+    await currency.getByRole("combobox").click();
+    await page.locator("input:focus").fill(code);
+    await page.getByRole("option").first().click();
+  };
+
+  await choose("GBP");
+  await expect(dialog).toContainText("$45");
+  await expect(dialog).toContainText("£40");
+  await dialog.getByRole("button").first().click();
+  await expect(dialog).toHaveCount(0);
+  await expect(currency).toHaveAttribute("data-currency", "USD");
+
+  await choose("EUR");
+  await expect(dialog).toContainText("$45");
+  await expect(dialog).toContainText("€50");
+  await shot(page, "currency-confirm");
+  await dialog.getByRole("button").last().click();
 
   await expect(currency).toHaveAttribute("data-currency", "EUR");
   await expect(
@@ -77,6 +97,22 @@ test("choosing another currency says what automatic top-up now charges", async (
   await expect(page.getByTestId("auto-top-up-on")).toContainText("€50");
   await expect(page.getByTestId("next-price")).toHaveCount(0);
   await shot(page, "currency-chosen");
+
+  await expect
+    .poll(async () => (await mailsTo(page.request, email)).length)
+    .toBe(1);
+  const [mail] = await mailsTo(page.request, email);
+  const text = await mailText(page.request, mail.ID);
+  expect(text).toContain("$45");
+  expect(text).toContain("€50");
+  expect(text).toContain(billing);
+
+  await visit(page, `/companies/${id}/interviews`);
+  await page.getByTestId("notifications").click();
+  const notice = page.getByRole("menu").locator(`a[href$="${billing}"]`);
+  await expect(notice).toContainText(name);
+  await expect(notice).toContainText("$45");
+  await expect(notice).toContainText("€50");
 });
 
 // The notice: the bell and an email to the owner give both prices and the day, and open billing.

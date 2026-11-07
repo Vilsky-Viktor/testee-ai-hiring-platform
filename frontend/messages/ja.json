@@ -1468,6 +1468,11 @@
     "updateCard": "カードを更新",
     "updateCardFailed": "カードの更新画面を開けませんでした。もう一度お試しください。",
     "currencyApplied": "自動チャージの請求額は {amount} になりました。",
+    "currencyChange": {
+      "title": "自動チャージの金額を変更しますか？",
+      "text": "自動チャージはオンになっています。次回の請求から、1 回あたりの請求額は {amount} から {newAmount} に変わります（課税される場合は付加価値税（VAT）または売上税が加算されます）。チャージで招待できる候補者数は変わりません。会社のオーナーと管理者にはメールでお知らせします。",
+      "confirm": "通貨を変更"
+    },
     "setUpShort": "設定",
     "changeShort": "変更",
     "turnOn": "オンにする",
@@ -2077,7 +2082,7 @@
       "auto_top_up_failed": "自動チャージでカードに請求できませんでした。残高が不足しないようチャージしてください。",
       "auto_top_up_on": "自動チャージはオンです：利用可能なクレジットが {threshold, number} を下回ると {price}（税別）を請求します。",
       "auto_top_up_paused": "カードが承認されなかったため、自動チャージを一時停止しています。再開するにはカードを更新してください。",
-      "auto_top_up_price_change": "<time>{date}</time> から、自動チャージ 1 回あたりの料金は {price} から {newPrice} に変わります。",
+      "auto_top_up_price_change": "{new_currency, select, none {<time>{date}</time> から、自動チャージ 1 回あたりの料金は {price} から {newPrice} に変わります。} other {<bdi>{name}</bdi> の通貨が変更され、自動チャージ 1 回あたりの料金は {price} から {newPrice} に変わりました。}}",
       "refund_approved": "<bdi>{name}</bdi> の返金が承認されました: {price}。",
       "refund_rejected": "<bdi>{name}</bdi> の返金が却下されました: {price}。{credits, plural, other {# クレジット}}は残高に戻りました。",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> さんが{title, select, none {面接} other {「<bdi>{title}</bdi>」}}を完了しました{grade, select, none {。} other {（{grade}）。}}} other {# 人の候補者が{title, select, none {面接} other {「<bdi>{title}</bdi>」}}を完了しました。}}",

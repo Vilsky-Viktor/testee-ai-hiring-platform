@@ -426,7 +426,7 @@
     "text": "Kaufe Credits für jedes Unternehmen, in dem du Inhaber oder Admin bist.",
     "actions": [
       "Wähle ein Unternehmen und gib dann ein, für wie viele Kandidaten du aufladen willst, von 10 bis 1.000, oder wähle eine Preisstufe: Größere Aufladungen kosten pro Kandidat weniger.",
-      "Ändere die Währung des Unternehmens oben auf der Seite: Seine Aufladungen, auch die automatischen, werden von da an in ihr berechnet und abgebucht.",
+      "Ändere die Währung des Unternehmens oben auf der Seite: Seine Aufladungen, auch die automatischen, werden von da an in ihr berechnet und abgebucht. Änderst du sie, während das automatische Aufladen läuft, siehst du zuerst beide Beträge zur Bestätigung, und die Inhaber und Admins des Unternehmens erhalten eine E-Mail.",
       "Bezahle auf der Bezahlseite von Paddle; die Credits sind in wenigen Sekunden da.",
       "Öffne die Preise, um die Aufladungen zu vergleichen.",
       "Richte automatisches Aufladen ein: Wähle einen Betrag und ein Guthaben und setze das Häkchen bei der Vereinbarung. Deine Karte wird im Paddle-Checkout gespeichert und jedes Mal belastet, wenn das Guthaben unter diesen Wert fällt."

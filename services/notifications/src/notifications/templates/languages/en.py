@@ -406,6 +406,28 @@ TEXTS = {
             " settings."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "New top-up amount for {company}",
+        "preheader": "Each automatic top-up now costs {new_price} instead of {price}.",
+        "heading": "Automatic top-up's amount changed",
+        "lines": [
+            (
+                "The currency for {company} was changed, so each automatic top-up now costs "
+                "{new_price} instead of {price}, plus VAT or sales tax where it applies. It buys "
+                "the same candidates."
+            ),
+            (
+                "If you'd like a different amount, change or turn off automatic top-up on the "
+                "billing page."
+            ),
+        ],
+        "button": "Open billing",
+        "footer": (
+            "This email was sent to {email} because you're an owner or admin of {company} "
+            "on testee. It's about your company's billing, so it's sent whatever your email"
+            " settings."
+        ),
+    },
     "footer": "This email was sent to {email} because someone invited this address on testee. If "
     "you weren't expecting it, you can ignore it.",
     # An invite from a company testee hasn't verified, at the end of the footer.

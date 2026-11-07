@@ -1468,6 +1468,11 @@
     "updateCard": "Atualizar cartão",
     "updateCardFailed": "Não foi possível abrir a atualização do cartão. Tente novamente.",
     "currencyApplied": "A recarga automática agora cobra {amount}.",
+    "currencyChange": {
+      "title": "Alterar o valor da recarga automática?",
+      "text": "A recarga automática está ativada. A partir da próxima cobrança, cada cobrança será de {newAmount} em vez de {amount}, mais IVA ou imposto sobre vendas, quando aplicável. O número de candidatos continua o mesmo. Os proprietários e administradores da empresa serão avisados por e-mail.",
+      "confirm": "Alterar moeda"
+    },
     "setUpShort": "Configurar",
     "changeShort": "Alterar",
     "turnOn": "Ativar",
@@ -2073,7 +2078,7 @@
       "auto_top_up_failed": "A recarga automática não conseguiu cobrar o cartão. Recarregue para não ficar sem saldo.",
       "auto_top_up_on": "A recarga automática está ativada: {price} mais impostos quando os créditos disponíveis ficarem abaixo de {threshold, number}.",
       "auto_top_up_paused": "A recarga automática está pausada: o cartão foi recusado. Atualize o cartão para reativá-la.",
-      "auto_top_up_price_change": "A partir de <time>{date}</time>, cada recarga automática custa {newPrice} em vez de {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {A partir de <time>{date}</time>, cada recarga automática custa {newPrice} em vez de {price}.} other {A moeda de <bdi>{name}</bdi> foi alterada: cada recarga automática agora custa {newPrice} em vez de {price}.}}",
       "refund_approved": "Reembolso aprovado para <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "Reembolso recusado para <bdi>{name}</bdi>: {price}. {credits, plural, one {# crédito voltou} many {# créditos voltaram} other {# créditos voltaram}} ao seu saldo.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> concluiu {title, select, none {uma entrevista} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# candidatos concluíram {title, select, none {uma entrevista} other {“<bdi>{title}</bdi>”}}.}}",

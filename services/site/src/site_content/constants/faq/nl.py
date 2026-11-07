@@ -105,7 +105,7 @@ FAQ = [
     {
         "key": "currency",
         "question": "In welke valuta betaal ik?",
-        "answer": "Prijzen zijn in de lokale valuta in Canada, Australië, Israël, Polen, Zwitserland, Japan, Zuid-Korea, Taiwan, Hongkong, Thailand, Singapore en India; in euro in de rest van de EU en in IJsland, Liechtenstein en Noorwegen; in ponden in het Verenigd Koninkrijk; en elders in Amerikaanse dollars. Je account en elk bedrijf houden de valuta van het land waarin ze zijn aangemaakt of voor het eerst zijn gebruikt, waar je ook naartoe reist: wijzig de jouwe in Instellingen, en die van een bedrijf op de opwaardeerpagina (eigenaren en beheerders). De opwaarderingen van een bedrijf, ook de automatische, worden altijd in de valuta van het bedrijf in rekening gebracht.",
+        "answer": "Prijzen zijn in de lokale valuta in Canada, Australië, Israël, Polen, Zwitserland, Japan, Zuid-Korea, Taiwan, Hongkong, Thailand, Singapore en India; in euro in de rest van de EU en in IJsland, Liechtenstein en Noorwegen; in ponden in het Verenigd Koninkrijk; en elders in Amerikaanse dollars. Je account en elk bedrijf houden de valuta van het land waarin ze zijn aangemaakt of voor het eerst zijn gebruikt, waar je ook naartoe reist: wijzig de jouwe in Instellingen, en die van een bedrijf op de opwaardeerpagina (eigenaren en beheerders). De opwaarderingen van een bedrijf, ook de automatische, worden altijd in de valuta van het bedrijf in rekening gebracht. Wijzig je die terwijl automatisch opwaarderen loopt, dan zie je eerst beide bedragen om te bevestigen, en krijgen de eigenaren en beheerders van het bedrijf een e-mail.",
     },
     {
         "key": "referrals",

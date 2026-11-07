@@ -25,8 +25,11 @@ The rest of payments (prices, the ledger, web hooks, refunds, tests) is in
   pauses at once. Paused, nothing is charged until Paddle saves a new card (its card-update
   checkout, by the card's owner only); owners and admins are told by bell and email.
 - What a charge costs is agreed (`price`): a new price list applies only from a day announced at
-  least 30 days ahead by email and bell (the terms' promise); a currency or top-up the company
-  chooses applies at once.
+  least 30 days ahead by email and bell (the terms' promise); a top-up the company chooses applies
+  at once, and so does a currency: billing gives both amounts (`GET .../billing/currency/change`)
+  for whoever chooses it to confirm first, agrees the new price and tells owners and admins by bell
+  and email in the same save, once per change (the top-up's row locked, as with two saves at once;
+  a redelivered event keeps its id). A paused one too: it charges the new amount once it's back.
 - Only the person whose card pays can change what it buys; anyone allowed can turn it off, at
   once and with no retention step, which cancels the subscription first; so does deleting the
   account or company, and so does a cancel scheduled through Paddle's own emails or portal

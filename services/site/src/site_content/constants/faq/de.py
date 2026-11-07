@@ -105,7 +105,7 @@ FAQ = [
     {
         "key": "currency",
         "question": "In welcher Währung zahle ich?",
-        "answer": "Die Preise sind in Kanada, Australien, Israel, Polen, der Schweiz, Japan, Südkorea, Taiwan, Hongkong, Thailand, Singapur und Indien in der Landeswährung; in der übrigen EU sowie in Island, Liechtenstein und Norwegen in Euro; im Vereinigten Königreich in Pfund; und anderswo in US-Dollar. Dein Konto und jedes Unternehmen behalten die Währung des Landes, in dem sie angelegt oder zuerst genutzt wurden, egal wohin du reist: Deine änderst du in den Einstellungen, die eines Unternehmens auf der Seite zum Aufladen (Inhaber und Admins). Die Aufladungen eines Unternehmens, auch die automatischen, werden immer in seiner Währung berechnet.",
+        "answer": "Die Preise sind in Kanada, Australien, Israel, Polen, der Schweiz, Japan, Südkorea, Taiwan, Hongkong, Thailand, Singapur und Indien in der Landeswährung; in der übrigen EU sowie in Island, Liechtenstein und Norwegen in Euro; im Vereinigten Königreich in Pfund; und anderswo in US-Dollar. Dein Konto und jedes Unternehmen behalten die Währung des Landes, in dem sie angelegt oder zuerst genutzt wurden, egal wohin du reist: Deine änderst du in den Einstellungen, die eines Unternehmens auf der Seite zum Aufladen (Inhaber und Admins). Die Aufladungen eines Unternehmens, auch die automatischen, werden immer in seiner Währung berechnet. Änderst du sie, während das automatische Aufladen läuft, siehst du zuerst beide Beträge zur Bestätigung, und die Inhaber und Admins des Unternehmens erhalten eine E-Mail.",
     },
     {
         "key": "referrals",

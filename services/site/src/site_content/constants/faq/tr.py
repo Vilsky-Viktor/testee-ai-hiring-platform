@@ -105,7 +105,7 @@ FAQ = [
     {
         "key": "currency",
         "question": "Hangi para biriminde öderim?",
-        "answer": "Fiyatlar Kanada, Avustralya, İsrail, Polonya, İsviçre, Japonya, Güney Kore, Tayvan, Hong Kong, Tayland, Singapur ve Hindistan'da yerel para birimi; AB'nin geri kalanında ve İzlanda, Lihtenştayn ve Norveç'te avro; Birleşik Krallık'ta sterlin; diğer yerlerde ise ABD doları cinsindendir. Hesabınız ve her şirket, nereye seyahat ederseniz edin, oluşturuldukları veya ilk kullanıldıkları ülkenin para birimini korur: kendinizinkini Ayarlar'da, bir şirketinkini ise kredi yükleme sayfasında değiştirebilirsiniz (sahipler ve yöneticiler). Bir şirketin yüklemeleri, otomatik olanlar da, her zaman şirketin para biriminde tahsil edilir.",
+        "answer": "Fiyatlar Kanada, Avustralya, İsrail, Polonya, İsviçre, Japonya, Güney Kore, Tayvan, Hong Kong, Tayland, Singapur ve Hindistan'da yerel para birimi; AB'nin geri kalanında ve İzlanda, Lihtenştayn ve Norveç'te avro; Birleşik Krallık'ta sterlin; diğer yerlerde ise ABD doları cinsindendir. Hesabınız ve her şirket, nereye seyahat ederseniz edin, oluşturuldukları veya ilk kullanıldıkları ülkenin para birimini korur: kendinizinkini Ayarlar'da, bir şirketinkini ise kredi yükleme sayfasında değiştirebilirsiniz (sahipler ve yöneticiler). Bir şirketin yüklemeleri, otomatik olanlar da, her zaman şirketin para biriminde tahsil edilir. Otomatik yükleme açıkken para birimini değiştirdiğinizde önce onaylamanız için iki tutar da gösterilir ve şirketin sahipleri ile yöneticileri e-posta alır.",
     },
     {
         "key": "referrals",

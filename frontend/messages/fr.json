@@ -1468,6 +1468,11 @@
     "updateCard": "Mettre à jour la carte",
     "updateCardFailed": "Impossible d'ouvrir la mise à jour de la carte. Veuillez réessayer.",
     "currencyApplied": "La recharge automatique débite désormais {amount}.",
+    "currencyChange": {
+      "title": "Modifier le montant de la recharge automatique ?",
+      "text": "La recharge automatique est activée. À partir du prochain débit, chaque débit sera de {newAmount} au lieu de {amount}, hors TVA ou taxe de vente éventuelle. Elle couvre toujours le même nombre de candidats. Les propriétaires et administrateurs de l'entreprise seront prévenus par e-mail.",
+      "confirm": "Changer de devise"
+    },
     "setUpShort": "Configurer",
     "changeShort": "Modifier",
     "turnOn": "Activer",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "La recharge automatique n'a pas pu débiter la carte. Rechargez pour ne pas manquer de solde.",
       "auto_top_up_on": "La recharge automatique est activée : {price} hors taxes quand les crédits disponibles passent sous {threshold, number}.",
       "auto_top_up_paused": "La recharge automatique est en pause : la carte a été refusée. Mettez la carte à jour pour la réactiver.",
-      "auto_top_up_price_change": "À partir du <time>{date}</time>, chaque recharge automatique coûte {newPrice} au lieu de {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {À partir du <time>{date}</time>, chaque recharge automatique coûte {newPrice} au lieu de {price}.} other {La devise de <bdi>{name}</bdi> a changé : chaque recharge automatique coûte désormais {newPrice} au lieu de {price}.}}",
       "refund_approved": "Remboursement approuvé pour <bdi>{name}</bdi> : {price}.",
       "refund_rejected": "Remboursement refusé pour <bdi>{name}</bdi> : {price}. {credits, plural, one {# crédit est revenu} many {# crédits sont revenus} other {# crédits sont revenus}} dans votre solde.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> a terminé {title, select, none {un entretien} other {« <bdi>{title}</bdi> »}}{grade, select, none {.} other { : {grade}.}}} other {# candidats ont terminé {title, select, none {un entretien} other {« <bdi>{title}</bdi> »}}.}}",

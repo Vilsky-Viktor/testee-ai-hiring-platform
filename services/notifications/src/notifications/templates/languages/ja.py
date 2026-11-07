@@ -290,6 +290,25 @@ TEXTS = {
         "button": "請求ページを開く",
         "footer": "このメールは、testee で {company} の所有者または管理者であるため {email} に送信されました。会社の請求に関する内容のため、メール設定にかかわらず送信されます。",
     },
+    "top_up_currency_change": {
+        "subject": "{company} の新しい自動チャージ金額",
+        "preheader": "自動チャージ 1 回あたりの料金は {price} から {new_price} に変わりました。",
+        "heading": "自動チャージの金額が変わりました",
+        "lines": [
+            (
+                "{company} の通貨が変更されたため、自動チャージ 1 回あたりの料金"
+                "は {price} から {new_price} に変わりました（課税される"
+                "場合は付加価値税（VAT）または売上税が加算されます）。チャージで招待できる"
+                "候補者数は変わりません。"
+            ),
+            (
+                "別の金額をご希望の場合は、請求ページで自動チャージを変更するか、オフにしてく"
+                "ださい。"
+            ),
+        ],
+        "button": "請求ページを開く",
+        "footer": "このメールは、testee で {company} の所有者または管理者であるため {email} に送信されました。会社の請求に関する内容のため、メール設定にかかわらず送信されます。",
+    },
     "footer": "このメールは、testee で誰かがこのアドレスを招待したため {email} に送信されました。心当たりがない場合は無視してください。",
     # An invite from a company testee hasn't verified, at the end of the footer.
     "unverified": "testee は {company} を確認していません。",

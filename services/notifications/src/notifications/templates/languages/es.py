@@ -432,6 +432,28 @@ TEXTS = {
             "envía sin importar tu configuración de correo."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "Nuevo importe de recarga para {company}",
+        "preheader": "Cada recarga automática ahora cuesta {new_price} en lugar de {price}.",
+        "heading": "Ha cambiado el importe de la recarga automática",
+        "lines": [
+            (
+                "Se ha cambiado la moneda de {company}, así que cada recarga automática ahora cuesta "
+                "{new_price} en lugar de {price}, más el IVA o el impuesto sobre las ventas donde "
+                "corresponda. Incluye el mismo número de candidatos."
+            ),
+            (
+                "Si prefieres otro importe, cambia o desactiva la recarga automática en la página de "
+                "facturación."
+            ),
+        ],
+        "button": "Abrir facturación",
+        "footer": (
+            "Este correo se envió a {email} porque eres propietario o administrador de "
+            "{company} en testee. Trata sobre la facturación de tu empresa, así que se "
+            "envía sin importar tu configuración de correo."
+        ),
+    },
     "footer": "Este correo se envió a {email} porque alguien invitó a esta dirección en testee. "
     "Si no lo esperabas, puedes ignorarlo.",
     # An invite from a company testee hasn't verified, at the end of the footer.

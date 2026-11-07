@@ -1468,6 +1468,11 @@
     "updateCard": "更新银行卡",
     "updateCardFailed": "无法打开银行卡更新页面，请重试。",
     "currencyApplied": "自动充值现在每次扣款 {amount}。",
+    "currencyChange": {
+      "title": "更改自动充值金额？",
+      "text": "自动充值已开启。从下一次扣款起，每次扣款将从 {amount} 调整为 {newAmount}，如适用，另加增值税或销售税。每次充值包含的候选人数量不变。公司的所有者和管理员将收到电子邮件通知。",
+      "confirm": "更改货币"
+    },
     "setUpShort": "设置",
     "changeShort": "更改",
     "turnOn": "开启",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "自动充值无法从银行卡扣款。请充值，以免余额不足。",
       "auto_top_up_on": "自动充值已开启：可用点数低于 {threshold, number} 时充值 {price}，另加税费。",
       "auto_top_up_paused": "自动充值已暂停：银行卡被拒。请更新银行卡以重新开启。",
-      "auto_top_up_price_change": "自 <time>{date}</time> 起，每次自动充值的价格从 {price} 调整为 {newPrice}。",
+      "auto_top_up_price_change": "{new_currency, select, none {自 <time>{date}</time> 起，每次自动充值的价格从 {price} 调整为 {newPrice}。} other {<bdi>{name}</bdi> 的货币已更改：每次自动充值的价格现从 {price} 调整为 {newPrice}。}}",
       "refund_approved": "<bdi>{name}</bdi> 的退款已批准：{price}。",
       "refund_rejected": "<bdi>{name}</bdi> 的退款被拒：{price}。{credits, plural, other {# 点数}}已退回你的余额。",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> 已完成{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}{grade, select, none {。} other {，得分 {grade}。}}} other {# 位候选人已完成{title, select, none {一场面试} other {“<bdi>{title}</bdi>”}}。}}",

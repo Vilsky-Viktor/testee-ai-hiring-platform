@@ -435,6 +435,28 @@ TEXTS = {
             "daarom altijd verstuurd, wat je e-mailinstellingen ook zijn."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "Nieuw opwaardeerbedrag voor {company}",
+        "preheader": "Elke automatische opwaardering kost nu {new_price} in plaats van {price}.",
+        "heading": "Het bedrag van automatisch opwaarderen is gewijzigd",
+        "lines": [
+            (
+                "De valuta van {company} is gewijzigd, dus elke automatische opwaardering kost nu "
+                "{new_price} in plaats van {price}, plus btw of verkoopbelasting waar die van "
+                "toepassing is. Je krijgt er evenveel kandidaten voor."
+            ),
+            (
+                "Wil je een ander bedrag, wijzig automatisch opwaarderen dan op de factureringspagina"
+                " of zet het uit."
+            ),
+        ],
+        "button": "Facturering openen",
+        "footer": (
+            "Deze e-mail is naar {email} gestuurd omdat je eigenaar of beheerder bent van "
+            "{company} op testee. Hij gaat over de facturering van je bedrijf en wordt "
+            "daarom altijd verstuurd, wat je e-mailinstellingen ook zijn."
+        ),
+    },
     "footer": "Deze e-mail is naar {email} gestuurd omdat iemand dit adres op testee heeft "
     "uitgenodigd. Verwachtte je hem niet, dan kun je hem negeren.",
     # An invite from a company testee hasn't verified, at the end of the footer.

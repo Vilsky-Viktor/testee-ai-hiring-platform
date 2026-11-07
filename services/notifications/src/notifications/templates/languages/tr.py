@@ -423,6 +423,28 @@ TEXTS = {
             "olduğundan e-posta ayarlarınızdan bağımsız olarak gönderilir."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "{company} için yeni yükleme tutarı",
+        "preheader": "Her otomatik yüklemenin ücreti artık {price} yerine {new_price}.",
+        "heading": "Otomatik yükleme tutarı değişti",
+        "lines": [
+            (
+                "{company} için para birimi değiştirildi, bu nedenle her otomatik yüklemenin ücreti "
+                "artık {price} yerine {new_price}; geçerli olduğu yerlerde KDV veya satış vergisi "
+                "eklenir. Aday sayısı aynı kalır."
+            ),
+            (
+                "Farklı bir tutar isterseniz faturalandırma sayfasında otomatik yüklemeyi değiştirin "
+                "veya kapatın."
+            ),
+        ],
+        "button": "Faturalandırmayı aç",
+        "footer": (
+            "Bu e-posta {email} adresine, testee'de {company} şirketinin sahibi veya "
+            "yöneticisi olduğunuz için gönderildi. Şirketinizin faturalandırmasıyla ilgili "
+            "olduğundan e-posta ayarlarınızdan bağımsız olarak gönderilir."
+        ),
+    },
     "footer": "Bu e-posta {email} adresine, biri bu adresi testee'ye davet ettiği için "
     "gönderildi. Beklemiyorsanız görmezden gelebilirsiniz.",
     # An invite from a company testee hasn't verified, at the end of the footer.

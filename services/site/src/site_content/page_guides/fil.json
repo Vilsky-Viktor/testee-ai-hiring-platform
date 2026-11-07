@@ -426,7 +426,7 @@
     "text": "Bumili ng credits para sa kahit anong kumpanya kung saan ka may-ari o admin.",
     "actions": [
       "Pumili ng kumpanya, tapos i-type kung ilang aplikante ang ito-top up, mula 10 hanggang 1,000, o pumili ng price step: mas mura bawat aplikante ang mas malalaking top-up.",
-      "Palitan ang currency ng kumpanya sa itaas ng page: mula noon, sa currency na iyon ipepresyo at sisingilin ang mga top-up nito, pati ang mga awtomatiko.",
+      "Palitan ang currency ng kumpanya sa itaas ng page: mula noon, sa currency na iyon ipepresyo at sisingilin ang mga top-up nito, pati ang mga awtomatiko. Kapag pinalitan mo ang currency ng kumpanya habang naka-on ang awtomatikong top-up, makikita mo muna ang dalawang halaga para kumpirmahin, at makakatanggap ng email ang mga may-ari at admin ng kumpanya.",
       "Magbayad sa checkout ng Paddle; darating ang credits sa loob ng ilang segundo.",
       "Buksan ang presyo para ikumpara ang mga top-up.",
       "I-set up ang awtomatikong top-up: pumili ng halaga at balanse, at i-check ang kasunduan. Nase-save ang card mo sa checkout ng Paddle at sinisingil ito tuwing bababa ang balanse sa antas na iyon."

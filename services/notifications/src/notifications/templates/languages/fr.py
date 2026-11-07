@@ -445,6 +445,28 @@ TEXTS = {
             " donc envoyé quels que soient vos réglages d'e-mails."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "Nouveau montant de recharge pour {company}",
+        "preheader": "Chaque recharge automatique coûte désormais {new_price} au lieu de {price}.",
+        "heading": "Le montant de la recharge automatique a changé",
+        "lines": [
+            (
+                "La devise de {company} a été changée, chaque recharge automatique coûte donc "
+                "désormais {new_price} au lieu de {price}, hors TVA ou taxe de vente là où elle "
+                "s'applique. Elle couvre toujours le même nombre de candidats."
+            ),
+            (
+                "Si vous souhaitez un autre montant, modifiez ou désactivez la recharge automatique "
+                "sur la page Facturation."
+            ),
+        ],
+        "button": "Ouvrir la facturation",
+        "footer": (
+            "Cet e-mail a été envoyé à {email} parce que vous êtes propriétaire ou admin de"
+            " {company} sur testee. Il concerne la facturation de votre entreprise ; il est"
+            " donc envoyé quels que soient vos réglages d'e-mails."
+        ),
+    },
     "footer": "Cet e-mail a été envoyé à {email} parce que quelqu'un a invité cette adresse sur "
     "testee. Si vous ne l'attendiez pas, vous pouvez l'ignorer.",
     # An invite from a company testee hasn't verified, at the end of the footer.

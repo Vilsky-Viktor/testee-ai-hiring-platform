@@ -12,11 +12,13 @@ from fastapi import HTTPException
 from testee_common.db.lock_waits import hold_first_commit, race
 
 from billing.constants.credits import CANDIDATE_CREDITS, WELCOME_COMPANY, Reason
+from billing.constants.currencies import Currency
 from billing.constants.products import TOP_UPS, OwnerType
 from billing.repositories import auto_top_ups, ledger
-from billing.services import holds, refunds, topups
+from billing.services import currencies, holds, refunds, topups
 from tests.integration import transactions
 from tests.integration.factories import welcomed
+from tests.integration.services.test_auto_top_up_price_notices import agreed_at, notices
 from tests.integration.services.test_auto_top_up_retries import running_low
 
 COMPANY = OwnerType.COMPANY
@@ -63,6 +65,27 @@ def test_a_hold_charged_twice_at_once_takes_its_credits_once(run, monkeypatch):
 
     assert (wallet.balance, wallet.reserved) == (WELCOME_COMPANY - CANDIDATE_CREDITS, 0)
     assert status == "charged"
+
+
+def test_a_currency_saved_twice_at_once_tells_the_company_once(run, monkeypatch, paddle_calls):
+    acme, ann = str(uuid.uuid4()), f"user-{uuid.uuid4()}"
+
+    async def scenario():
+        await agreed_at(acme, ann, 4500)
+        held = hold_first_commit(monkeypatch, currencies)
+        results = await race(
+            os.environ["DATABASE_URL"],
+            held,
+            currencies.choose_company(acme, Currency.GBP),
+            currencies.choose_company(acme, Currency.GBP),
+        )
+
+        return results, await notices(acme)
+
+    (first, second), told = run(scenario())
+
+    assert (first.auto_top_up_price, second.auto_top_up_price) == (4000, None)
+    assert told == 1
 
 
 def test_a_top_up_paddle_sends_twice_at_once_is_granted_once(run, monkeypatch):

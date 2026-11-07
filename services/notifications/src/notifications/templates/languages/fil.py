@@ -441,6 +441,28 @@ TEXTS = {
             "ito anuman ang iyong email settings."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "Bagong halaga ng top-up para sa {company}",
+        "preheader": "{new_price} na ang bawat awtomatikong top-up sa halip na {price}.",
+        "heading": "Nagbago ang halaga ng awtomatikong top-up",
+        "lines": [
+            (
+                "Napalitan ang currency ng {company}, kaya {new_price} na ang bawat awtomatikong "
+                "top-up sa halip na {price}, dagdag ang VAT o sales tax kung saan ito naaangkop. "
+                "Pareho pa rin ang dami ng aplikanteng saklaw nito."
+            ),
+            (
+                "Kung gusto mo ng ibang halaga, baguhin o i-off ang awtomatikong top-up sa billing "
+                "page."
+            ),
+        ],
+        "button": "Buksan ang billing",
+        "footer": (
+            "Ipinadala ang email na ito sa {email} dahil ikaw ay may-ari o admin ng "
+            "{company} sa testee. Tungkol ito sa billing ng kumpanya mo, kaya ipinapadala "
+            "ito anuman ang iyong email settings."
+        ),
+    },
     "footer": "Ipinadala ang email na ito sa {email} dahil may nag-imbita sa address na ito sa "
     "testee. Kung hindi mo ito inaasahan, puwede mo itong balewalain.",
     # An invite from a company testee hasn't verified, at the end of the footer.

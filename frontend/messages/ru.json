@@ -1468,6 +1468,11 @@
     "updateCard": "Обновить карту",
     "updateCardFailed": "Не удалось открыть обновление карты. Попробуйте ещё раз.",
     "currencyApplied": "Автопополнение теперь списывает {amount}.",
+    "currencyChange": {
+      "title": "Изменить сумму автопополнения?",
+      "text": "Автопополнение включено. Начиная со следующего списания, каждое будет составлять {newAmount} вместо {amount}, плюс НДС или налог с продаж, если они применяются. Количество кандидатов остаётся прежним. Владельцы и администраторы компании получат письмо.",
+      "confirm": "Сменить валюту"
+    },
     "setUpShort": "Настроить",
     "changeShort": "Изменить",
     "turnOn": "Включить",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "Автопополнению не удалось списать оплату с карты. Пополните баланс, чтобы не остаться без кредитов.",
       "auto_top_up_on": "Автопополнение включено: {price} плюс налог, когда доступных кредитов становится меньше {threshold, number}.",
       "auto_top_up_paused": "Автопополнение приостановлено: карта отклонена. Обновите карту, чтобы снова его включить.",
-      "auto_top_up_price_change": "С <time>{date}</time> каждое автопополнение стоит {newPrice} вместо {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {С <time>{date}</time> каждое автопополнение стоит {newPrice} вместо {price}.} other {Валюта компании <bdi>{name}</bdi> изменена: каждое автопополнение теперь стоит {newPrice} вместо {price}.}}",
       "refund_approved": "Возврат одобрен для <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "Возврат отклонён для <bdi>{name}</bdi>: {price}. {credits, plural, one {# кредит вернулся} few {# кредита вернулись} many {# кредитов вернулись} other {# кредита вернулись}} на ваш баланс.",
       "candidate_finished": "{count, plural, =1 {Кандидат <bdi>{email}</bdi> завершил {title, select, none {собеседование} other {«<bdi>{title}</bdi>»}}{grade, select, none {.} other {: {grade}.}}} one {# кандидат завершил {title, select, none {собеседование} other {«<bdi>{title}</bdi>»}}.} few {# кандидата завершили {title, select, none {собеседование} other {«<bdi>{title}</bdi>»}}.} many {# кандидатов завершили {title, select, none {собеседование} other {«<bdi>{title}</bdi>»}}.} other {# кандидата завершили {title, select, none {собеседование} other {«<bdi>{title}</bdi>»}}.}}",

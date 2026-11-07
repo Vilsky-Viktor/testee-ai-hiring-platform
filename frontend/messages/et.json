@@ -1468,6 +1468,11 @@
     "updateCard": "Uuenda kaarti",
     "updateCardFailed": "Kaardi uuendamist ei õnnestunud avada. Proovi uuesti.",
     "currencyApplied": "Automaatne juurdelaadimine võtab nüüd {amount}.",
+    "currencyChange": {
+      "title": "Kas muuta automaatse juurdelaadimise summat?",
+      "text": "Automaatne juurdelaadimine on sees. Alates järgmisest maksest on iga makse {amount} asemel {newAmount}, millele lisandub võimalik käibemaks või müügimaks. Kandidaatide arv jääb samaks. Ettevõtte omanikud ja administraatorid saavad sellest e-kirja.",
+      "confirm": "Muuda valuutat"
+    },
     "setUpShort": "Seadista",
     "changeShort": "Muuda",
     "turnOn": "Lülita sisse",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "Automaatne juurdelaadimine ei saanud kaardilt makset võtta. Laadi juurde, et saldo otsa ei saaks.",
       "auto_top_up_on": "Automaatne juurdelaadimine on sees: {price} pluss maks, kui saadaolev krediit langeb alla {threshold, number}.",
       "auto_top_up_paused": "Automaatne juurdelaadimine on peatatud: kaart lükati tagasi. Uuenda kaarti, et see uuesti sisse lülitada.",
-      "auto_top_up_price_change": "Alates kuupäevast <time>{date}</time> maksab iga automaatne juurdelaadimine {price} asemel {newPrice}.",
+      "auto_top_up_price_change": "{new_currency, select, none {Alates kuupäevast <time>{date}</time> maksab iga automaatne juurdelaadimine {price} asemel {newPrice}.} other {Ettevõtte <bdi>{name}</bdi> valuutat muudeti: iga automaatne juurdelaadimine maksab nüüd {price} asemel {newPrice}.}}",
       "refund_approved": "Tagasimakse kiideti heaks ettevõttele <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "Tagasimaksest keelduti ettevõttele <bdi>{name}</bdi>: {price}. {credits, plural, one {# krediit on} other {# krediiti on}} tagasi sinu saldol.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> lõpetas intervjuu{title, select, none {} other { „<bdi>{title}</bdi>“}}{grade, select, none {.} other {: {grade}.}}} other {# kandidaati lõpetasid intervjuu{title, select, none {} other { „<bdi>{title}</bdi>“}}.}}",

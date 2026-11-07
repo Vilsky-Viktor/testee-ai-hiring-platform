@@ -432,6 +432,28 @@ TEXTS = {
             " wysyłana niezależnie od Twoich ustawień e-maili."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "Nowa kwota doładowania dla {company}",
+        "preheader": "Każde automatyczne doładowanie kosztuje teraz {new_price} zamiast {price}.",
+        "heading": "Zmieniła się kwota automatycznego doładowania",
+        "lines": [
+            (
+                "Zmieniono walutę firmy {company}, więc każde automatyczne doładowanie kosztuje teraz"
+                " {new_price} zamiast {price}, plus VAT lub podatek od sprzedaży tam, gdzie "
+                "obowiązuje. Liczba kandydatów pozostaje ta sama."
+            ),
+            (
+                "Jeśli wolisz inną kwotę, zmień lub wyłącz automatyczne doładowanie na stronie "
+                "rozliczeń."
+            ),
+        ],
+        "button": "Otwórz rozliczenia",
+        "footer": (
+            "Ta wiadomość została wysłana na {email}, ponieważ masz rolę właściciela lub "
+            "administratora w {company} w testee. Dotyczy rozliczeń Twojej firmy, więc jest"
+            " wysyłana niezależnie od Twoich ustawień e-maili."
+        ),
+    },
     "footer": "Ta wiadomość została wysłana na {email}, ponieważ ktoś zaprosił ten adres w "
     "testee. Jeśli się jej nie spodziewasz, możesz ją zignorować.",
     # An invite from a company testee hasn't verified, at the end of the footer.

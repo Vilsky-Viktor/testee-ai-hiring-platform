@@ -439,6 +439,28 @@ TEXTS = {
             " wird daher unabhängig von deinen E-Mail-Einstellungen gesendet."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "Neuer Aufladebetrag für {company}",
+        "preheader": "Jedes automatische Aufladen kostet jetzt {new_price} statt {price}.",
+        "heading": "Der Betrag des automatischen Aufladens hat sich geändert",
+        "lines": [
+            (
+                "Die Währung für {company} wurde geändert, daher kostet jedes automatische Aufladen "
+                "jetzt {new_price} statt {price}, zuzüglich MwSt. oder Sales Tax, wo sie anfällt. Die"
+                " Anzahl der Kandidaten bleibt gleich."
+            ),
+            (
+                "Wenn du einen anderen Betrag möchtest, ändere das automatische Aufladen auf der "
+                "Abrechnungsseite oder schalte es aus."
+            ),
+        ],
+        "button": "Abrechnung öffnen",
+        "footer": (
+            "Diese E-Mail wurde an {email} gesendet, weil du Inhaber oder Admin von "
+            "{company} auf testee bist. Sie betrifft die Abrechnung deines Unternehmens und"
+            " wird daher unabhängig von deinen E-Mail-Einstellungen gesendet."
+        ),
+    },
     "footer": "Diese E-Mail wurde an {email} gesendet, weil jemand diese Adresse auf testee "
     "eingeladen hat. Wenn du sie nicht erwartet hast, kannst du sie ignorieren.",
     # An invite from a company testee hasn't verified, at the end of the footer.

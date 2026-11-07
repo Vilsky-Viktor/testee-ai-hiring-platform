@@ -1468,6 +1468,11 @@
     "updateCard": "อัปเดตบัตร",
     "updateCardFailed": "เปิดหน้าอัปเดตบัตรไม่สำเร็จ โปรดลองอีกครั้ง",
     "currencyApplied": "นับจากนี้การเติมเครดิตอัตโนมัติจะเรียกเก็บ {amount}",
+    "currencyChange": {
+      "title": "เปลี่ยนจำนวนเงินเติมเครดิตอัตโนมัติหรือไม่",
+      "text": "การเติมเครดิตอัตโนมัติเปิดอยู่ ตั้งแต่การเรียกเก็บเงินครั้งถัดไป แต่ละครั้งจะเป็น {newAmount} แทน {amount} บวก VAT หรือภาษีการขายถ้ามี จำนวนผู้สมัครยังเท่าเดิม เจ้าของและผู้ดูแลของบริษัทจะได้รับแจ้งทางอีเมล",
+      "confirm": "เปลี่ยนสกุลเงิน"
+    },
     "setUpShort": "ตั้งค่า",
     "changeShort": "เปลี่ยน",
     "turnOn": "เปิด",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "เติมเครดิตอัตโนมัติเรียกเก็บเงินจากบัตรไม่สำเร็จ เติมเครดิตเพื่อไม่ให้ยอดคงเหลือหมด",
       "auto_top_up_on": "เปิดการเติมเครดิตอัตโนมัติแล้ว: {price} บวกภาษี เมื่อเครดิตที่ใช้ได้ต่ำกว่า {threshold, number}",
       "auto_top_up_paused": "การเติมเครดิตอัตโนมัติหยุดชั่วคราว: บัตรถูกปฏิเสธ อัปเดตบัตรเพื่อเปิดใช้อีกครั้ง",
-      "auto_top_up_price_change": "ตั้งแต่ <time>{date}</time> การเติมเครดิตอัตโนมัติแต่ละครั้งจะมีราคา {newPrice} แทน {price}",
+      "auto_top_up_price_change": "{new_currency, select, none {ตั้งแต่ <time>{date}</time> การเติมเครดิตอัตโนมัติแต่ละครั้งจะมีราคา {newPrice} แทน {price}} other {สกุลเงินของ <bdi>{name}</bdi> เปลี่ยนแล้ว: ตอนนี้การเติมเครดิตอัตโนมัติแต่ละครั้งมีราคา {newPrice} แทน {price}}}",
       "refund_approved": "อนุมัติการคืนเงินของ <bdi>{name}</bdi>: {price}",
       "refund_rejected": "ปฏิเสธการคืนเงินของ <bdi>{name}</bdi>: {price} {credits, plural, other {# เครดิต}}กลับเข้ายอดคงเหลือของคุณแล้ว",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> {title, select, none {ทำการสัมภาษณ์เสร็จแล้ว} other {ทำ “<bdi>{title}</bdi>” เสร็จแล้ว}}{grade, select, none {} other { ได้ {grade}}}} other {ผู้สมัคร # คน{title, select, none {ทำการสัมภาษณ์เสร็จแล้ว} other {ทำ “<bdi>{title}</bdi>” เสร็จแล้ว}}}}",

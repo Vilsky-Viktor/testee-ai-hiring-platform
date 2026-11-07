@@ -484,6 +484,27 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/companies/{company_id}/billing/currency/change": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    /**
+     * Get Company Currency Change
+     * @description What choosing `currency` would do to a running automatic top-up, for the confirmation
+     *     before it's chosen; none when there's nothing to tell.
+     */
+    get: operations["get_company_currency_change_companies__company_id__billing_currency_change_get"]
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/companies/{company_id}/billing/checkout": {
     parameters: {
       query?: never
@@ -846,6 +867,19 @@ export interface components {
       calls: number
       /** Days */
       days: number
+    }
+    /**
+     * AutoTopUpCurrencyChange
+     * @description What a running automatic top-up costs now and in the currency being chosen (minor units,
+     *     each in its own currency), so whoever chooses it sees both before it applies.
+     */
+    AutoTopUpCurrencyChange: {
+      /** Price */
+      price: number
+      currency: components["schemas"]["Currency"]
+      /** New Price */
+      new_price: number
+      new_currency: components["schemas"]["Currency"]
     }
     /**
      * AutoTopUpIn
@@ -2487,6 +2521,40 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["CompanyCurrencyOut"]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  get_company_currency_change_companies__company_id__billing_currency_change_get: {
+    parameters: {
+      query: {
+        currency: components["schemas"]["Currency"]
+      }
+      header?: never
+      path: {
+        company_id: string
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json":
+            components["schemas"]["AutoTopUpCurrencyChange"] | null
         }
       }
       /** @description Validation Error */

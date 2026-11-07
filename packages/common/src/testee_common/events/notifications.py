@@ -22,8 +22,8 @@ class NotificationKind(StrEnum):
     # Someone who came through the owner's referral link topped up.
     REFERRAL_REWARDED = "referral_rewarded"
     # An automatic top-up was turned on (its card saved), charged the card, or couldn't; paused,
-    # as the card won't pay until it's updated; and what it charges changes from a day (a new
-    # price, announced ahead).
+    # as the card won't pay until it's updated; and what it charges changes: from a day (a new
+    # price, announced ahead), or at once (the company chose another currency).
     AUTO_TOP_UP_ON = "auto_top_up_on"
     AUTO_TOP_UP_CHARGED = "auto_top_up_charged"
     AUTO_TOP_UP_FAILED = "auto_top_up_failed"

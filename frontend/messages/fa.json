@@ -1468,6 +1468,11 @@
     "updateCard": "به‌روزرسانی کارت",
     "updateCardFailed": "باز کردن صفحه به‌روزرسانی کارت ممکن نشد. دوباره امتحان کنید.",
     "currencyApplied": "شارژ خودکار اکنون {amount} برداشت می‌کند.",
+    "currencyChange": {
+      "title": "مبلغ شارژ خودکار تغییر کند؟",
+      "text": "شارژ خودکار روشن است. از برداشت بعدی، هر برداشت به‌جای {amount}، {newAmount} خواهد بود، به‌علاوهٔ هر مالیات بر ارزش افزوده یا مالیات بر فروش. تعداد متقاضیان همان می‌ماند. به مالکان و مدیران شرکت از طریق ایمیل اطلاع داده می‌شود.",
+      "confirm": "تغییر واحد پول"
+    },
     "setUpShort": "تنظیم",
     "changeShort": "تغییر",
     "turnOn": "روشن کردن",
@@ -2064,7 +2069,7 @@
       "auto_top_up_failed": "شارژ خودکار نتوانست از کارت برداشت کند. شارژ کنید تا موجودی‌تان تمام نشود.",
       "auto_top_up_on": "شارژ خودکار روشن است: {price} به‌علاوهٔ مالیات وقتی اعتبار در دسترس کمتر از {threshold, number} شود.",
       "auto_top_up_paused": "شارژ خودکار متوقف شده است: کارت رد شد. برای روشن کردن دوباره، کارت را به‌روز کنید.",
-      "auto_top_up_price_change": "از <time>{date}</time>، هزینهٔ هر شارژ خودکار به‌جای {price}، {newPrice} است.",
+      "auto_top_up_price_change": "{new_currency, select, none {از <time>{date}</time>، هزینهٔ هر شارژ خودکار به‌جای {price}، {newPrice} است.} other {واحد پول <bdi>{name}</bdi> تغییر کرد: هزینهٔ هر شارژ خودکار اکنون به‌جای {price}، {newPrice} است.}}",
       "refund_approved": "بازپرداخت برای <bdi>{name}</bdi> تأیید شد: {price}.",
       "refund_rejected": "بازپرداخت برای <bdi>{name}</bdi> رد شد: {price}. {credits, plural, one {# اعتبار به موجودی شما برگشت} other {# اعتبار به موجودی شما برگشت}}.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> {title, select, none {یک مصاحبه} other {«<bdi>{title}</bdi>»}} را به پایان رساند{grade, select, none {.} other {: {grade}.}}} other {# متقاضی {title, select, none {یک مصاحبه} other {«<bdi>{title}</bdi>»}} را به پایان رساندند.}}",

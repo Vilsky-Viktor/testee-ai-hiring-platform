@@ -105,7 +105,7 @@ FAQ = [
     {
         "key": "currency",
         "question": "In che valuta pago?",
-        "answer": "I prezzi sono nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore e India; in euro nel resto dell'UE e in Islanda, nel Liechtenstein e in Norvegia; in sterline nel Regno Unito; e in dollari statunitensi altrove. Il tuo account e ogni azienda mantengono la valuta del paese in cui sono stati creati o usati per la prima volta, ovunque tu viaggi: cambia la tua nelle Impostazioni e quella di un'azienda nella pagina di ricarica (proprietari e amministratori). Le ricariche di un'azienda, anche quelle automatiche, vengono sempre addebitate nella valuta dell'azienda.",
+        "answer": "I prezzi sono nella valuta locale in Canada, Australia, Israele, Polonia, Svizzera, Giappone, Corea del Sud, Taiwan, Hong Kong, Thailandia, Singapore e India; in euro nel resto dell'UE e in Islanda, nel Liechtenstein e in Norvegia; in sterline nel Regno Unito; e in dollari statunitensi altrove. Il tuo account e ogni azienda mantengono la valuta del paese in cui sono stati creati o usati per la prima volta, ovunque tu viaggi: cambia la tua nelle Impostazioni e quella di un'azienda nella pagina di ricarica (proprietari e amministratori). Le ricariche di un'azienda, anche quelle automatiche, vengono sempre addebitate nella valuta dell'azienda. Se la cambi mentre la ricarica automatica è attiva, vedrai prima entrambi gli importi da confermare, e i proprietari e gli amministratori dell'azienda riceveranno un'email.",
     },
     {
         "key": "referrals",

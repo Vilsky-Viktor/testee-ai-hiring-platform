@@ -1468,6 +1468,11 @@
     "updateCard": "Aggiorna carta",
     "updateCardFailed": "Impossibile aprire l'aggiornamento della carta. Riprova.",
     "currencyApplied": "La ricarica automatica ora addebita {amount}.",
+    "currencyChange": {
+      "title": "Cambiare l'importo della ricarica automatica?",
+      "text": "La ricarica automatica è attiva. A partire dal prossimo addebito, ogni addebito sarà di {newAmount} invece di {amount}, più l'eventuale IVA o imposta sulle vendite. Il numero di candidati resta lo stesso. I proprietari e gli amministratori dell'azienda saranno avvisati via email.",
+      "confirm": "Cambia valuta"
+    },
     "setUpShort": "Imposta",
     "changeShort": "Modifica",
     "turnOn": "Attiva",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "La ricarica automatica non è riuscita ad addebitare la carta. Ricarica per non restare senza saldo.",
       "auto_top_up_on": "La ricarica automatica è attiva: {price} più imposte quando i crediti disponibili scendono sotto {threshold, number}.",
       "auto_top_up_paused": "La ricarica automatica è in pausa: la carta è stata rifiutata. Aggiorna la carta per riattivarla.",
-      "auto_top_up_price_change": "Dal <time>{date}</time>, ogni ricarica automatica costa {newPrice} invece di {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {Dal <time>{date}</time>, ogni ricarica automatica costa {newPrice} invece di {price}.} other {La valuta di <bdi>{name}</bdi> è cambiata: ogni ricarica automatica ora costa {newPrice} invece di {price}.}}",
       "refund_approved": "Rimborso approvato per <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "Rimborso rifiutato per <bdi>{name}</bdi>: {price}. {credits, plural, one {# credito è tornato} many {# crediti sono tornati} other {# crediti sono tornati}} nel tuo saldo.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> ha completato {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}}{grade, select, none {.} other {: {grade}.}}} other {# candidati hanno completato {title, select, none {un colloquio} other {«<bdi>{title}</bdi>»}}.}}",

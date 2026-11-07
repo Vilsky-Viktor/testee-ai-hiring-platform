@@ -426,7 +426,7 @@
     "text": "Sahibi veya yöneticisi olduğunuz her şirket için kredi satın alın.",
     "actions": [
       "Bir şirket seçin, sonra kaç aday için yükleme yapacağınızı 10 ile 1.000 arasında yazın veya bir fiyat basamağı seçin: büyük yüklemelerde aday başına maliyet daha düşüktür.",
-      "Şirketin para birimini sayfanın üstünden değiştirin: otomatik olanlar dahil yüklemeleri bundan sonra bu para biriminde fiyatlandırılır ve tahsil edilir.",
+      "Şirketin para birimini sayfanın üstünden değiştirin: otomatik olanlar dahil yüklemeleri bundan sonra bu para biriminde fiyatlandırılır ve tahsil edilir. Otomatik yükleme açıkken para birimini değiştirdiğinizde önce onaylamanız için iki tutar da gösterilir ve şirketin sahipleri ile yöneticileri e-posta alır.",
       "Paddle'ın ödeme sayfasında ödeyin; krediler saniyeler içinde gelir.",
       "Yüklemeleri karşılaştırmak için fiyatları açın.",
       "Otomatik yüklemeyi kurun: bir tutar ve bir bakiye seçin, sözleşmeyi işaretleyin. Kartınız Paddle ödeme sayfasında kaydedilir ve bakiye bu seviyenin altına her düştüğünde tahsilat yapılır."

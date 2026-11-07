@@ -1468,6 +1468,11 @@
     "updateCard": "Update card",
     "updateCardFailed": "Couldn't open the card update. Please try again.",
     "currencyApplied": "Automatic top-up now charges {amount}.",
+    "currencyChange": {
+      "title": "Change the automatic top-up amount?",
+      "text": "Automatic top-up is on. Each charge will be {newAmount} instead of {amount}, plus any VAT or sales tax, starting with the next one. It buys the same candidates. The company's owners and admins will be told by email.",
+      "confirm": "Change currency"
+    },
     "setUpShort": "Set up",
     "changeShort": "Change",
     "turnOn": "Turn on",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "Automatic top-up couldn't charge the card. Top up to keep your balance going.",
       "auto_top_up_on": "Automatic top-up is on: {price} plus tax when the available credits fall under {threshold, number}.",
       "auto_top_up_paused": "Automatic top-up is paused: the card was declined. Update the card to turn it back on.",
-      "auto_top_up_price_change": "From <time>{date}</time>, each automatic top-up costs {newPrice} instead of {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {From <time>{date}</time>, each automatic top-up costs {newPrice} instead of {price}.} other {The currency for <bdi>{name}</bdi> changed: each automatic top-up now costs {newPrice} instead of {price}.}}",
       "refund_approved": "Refund approved for <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "Refund declined for <bdi>{name}</bdi>: {price}. {credits, plural, one {# credit is} other {# credits are}} back in your balance.",
       "candidate_finished": "{count, plural, one {<bdi>{email}</bdi> finished {title, select, none {an interview} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# candidates finished {title, select, none {an interview} other {“<bdi>{title}</bdi>”}}.}}",

@@ -9,6 +9,7 @@ from testee_common.i18n.plurals import PLURAL
 from notifications.constants.email import AUTOMATED_HEADERS
 from notifications.constants.member_emails import MemberEmail
 from notifications.helpers.member_emails import (
+    currency_change_email,
     digest_email,
     price_change_email,
     reminder_email,
@@ -141,6 +142,7 @@ def test_a_failed_top_up_is_a_service_email_without_unsubscribe():
 
 BILLING = f"{SITE}/companies/c1/billing"
 NOTICE = {"price": 4500, "new_price": 5000, "currency": "USD", "date": "2026-11-21"}
+CURRENCY = {"price": 4500, "currency": "USD", "new_price": 4000, "new_currency": "GBP"}
 
 
 @pytest.mark.parametrize(
@@ -148,6 +150,7 @@ NOTICE = {"price": 4500, "new_price": 5000, "currency": "USD", "date": "2026-11-
     [
         lambda language: top_up_paused_email(recipient(language), "Acme <Co>", BILLING),
         lambda language: price_change_email(recipient(language), "Acme <Co>", NOTICE, BILLING),
+        lambda language: currency_change_email(recipient(language), "Acme <Co>", CURRENCY, BILLING),
     ],
 )
 @pytest.mark.parametrize("language", ["en", "de", "ar"])

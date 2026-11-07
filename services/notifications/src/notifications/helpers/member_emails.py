@@ -90,6 +90,20 @@ def price_change_email(recipient: dict, company: str, notice: dict, link: str) -
     return render("top_up_price_change", data, link)
 
 
+def currency_change_email(recipient: dict, company: str, notice: dict, link: str) -> Email:
+    """A service email: the company's new currency changed what each automatic top-up costs, at
+    once, with both amounts, each in its currency; its button opens the company's billing page."""
+    language = recipient["language"]
+    data = {
+        **recipient_data(recipient),
+        "company": company,
+        "price": money(notice["price"], notice["currency"], language),
+        "new_price": money(notice["new_price"], notice["new_currency"], language),
+    }
+
+    return render("top_up_currency_change", data, link)
+
+
 def top_up_on_email(recipient: dict, company: str, notice: dict, link: str) -> Email:
     """A service email: automatic top-up is on, with what each charge costs, the level that
     starts one, and how to turn it off; its button opens the company's billing page."""

@@ -1,8 +1,9 @@
 from testee_common.events.notifications import NotificationKind, Recipient
 
 from notifications.config import settings
-from notifications.constants.notifications import BILLING_KINDS, REFUND_KINDS
+from notifications.constants.notifications import BILLING_KINDS, NAMED_KINDS, REFUND_KINDS
 from notifications.helpers.member_emails import (
+    currency_change_email,
     price_change_email,
     refund_email,
     top_up_charged_email,
@@ -22,6 +23,9 @@ def billing_email(data: dict, recipient: dict, company: str):
         return top_up_paused_email(recipient, company, link)
 
     if data["kind"] == NotificationKind.AUTO_TOP_UP_PRICE_CHANGE:
+        if "new_currency" in data["data"]:
+            return currency_change_email(recipient, company, data["data"], link)
+
         return price_change_email(recipient, company, data["data"], link)
 
     if data["kind"] == NotificationKind.AUTO_TOP_UP_ON:
@@ -37,10 +41,10 @@ def billing_email(data: dict, recipient: dict, company: str):
 
 
 async def named(data: dict) -> dict | None:
-    """A refund's notification with its company's name, which billing doesn't know: someone in
-    several companies has to tell them apart. None when the company is gone, as nobody
-    is left to tell. Any other notification as it is."""
-    if data["kind"] not in REFUND_KINDS:
+    """A refund's or an automatic top-up price change's notification with its company's name,
+    which billing doesn't know: someone in several companies has to tell them apart. None when
+    the company is gone, as nobody is left to tell. Any other notification as it is."""
+    if data["kind"] not in NAMED_KINDS:
         return data
 
     found = await companies.members([data["recipient_id"]])

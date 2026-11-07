@@ -105,7 +105,7 @@ FAQ = [
     {
         "key": "currency",
         "question": "¿En qué moneda pago?",
-        "answer": "Los precios están en la moneda local en Canadá, Australia, Israel, Polonia, Suiza, Japón, Corea del Sur, Taiwán, Hong Kong, Tailandia, Singapur e India; en euros en el resto de la UE y en Islandia, Liechtenstein y Noruega; en libras en el Reino Unido; y en dólares estadounidenses en el resto del mundo. Tu cuenta y cada empresa conservan la moneda del país donde se crearon o se usaron por primera vez, viajes a donde viajes: cambia la tuya en Ajustes, y la de una empresa en la página de recarga (propietarios y administradores). Las recargas de una empresa, también las automáticas, se cobran siempre en la moneda de la empresa.",
+        "answer": "Los precios están en la moneda local en Canadá, Australia, Israel, Polonia, Suiza, Japón, Corea del Sur, Taiwán, Hong Kong, Tailandia, Singapur e India; en euros en el resto de la UE y en Islandia, Liechtenstein y Noruega; en libras en el Reino Unido; y en dólares estadounidenses en el resto del mundo. Tu cuenta y cada empresa conservan la moneda del país donde se crearon o se usaron por primera vez, viajes a donde viajes: cambia la tuya en Ajustes, y la de una empresa en la página de recarga (propietarios y administradores). Las recargas de una empresa, también las automáticas, se cobran siempre en la moneda de la empresa. Si la cambias mientras la recarga automática está activa, primero verás ambos importes para confirmar, y los propietarios y administradores de la empresa recibirán un correo electrónico.",
     },
     {
         "key": "referrals",

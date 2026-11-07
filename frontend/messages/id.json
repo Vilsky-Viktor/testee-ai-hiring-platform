@@ -1468,6 +1468,11 @@
     "updateCard": "Perbarui kartu",
     "updateCardFailed": "Pembaruan kartu tidak bisa dibuka. Coba lagi.",
     "currencyApplied": "Isi ulang otomatis sekarang menagih {amount}.",
+    "currencyChange": {
+      "title": "Ubah jumlah isi ulang otomatis?",
+      "text": "Isi ulang otomatis sedang menyala. Mulai tagihan berikutnya, setiap tagihan menjadi {newAmount}, bukan {amount}, ditambah PPN atau pajak penjualan yang berlaku. Jumlah kandidatnya tetap sama. Pemilik dan admin perusahaan akan diberi tahu melalui email.",
+      "confirm": "Ubah mata uang"
+    },
     "setUpShort": "Atur",
     "changeShort": "Ubah",
     "turnOn": "Nyalakan",
@@ -2069,7 +2074,7 @@
       "auto_top_up_failed": "Isi ulang otomatis gagal menagih kartu. Isi ulang agar saldomu tidak habis.",
       "auto_top_up_on": "Isi ulang otomatis menyala: {price} ditambah pajak saat kredit tersedia turun di bawah {threshold, number}.",
       "auto_top_up_paused": "Isi ulang otomatis dijeda: kartu ditolak. Perbarui kartu untuk menyalakannya lagi.",
-      "auto_top_up_price_change": "Mulai <time>{date}</time>, setiap isi ulang otomatis berharga {newPrice}, bukan {price}.",
+      "auto_top_up_price_change": "{new_currency, select, none {Mulai <time>{date}</time>, setiap isi ulang otomatis berharga {newPrice}, bukan {price}.} other {Mata uang <bdi>{name}</bdi> diubah: setiap isi ulang otomatis kini berharga {newPrice}, bukan {price}.}}",
       "refund_approved": "Pengembalian dana disetujui untuk <bdi>{name}</bdi>: {price}.",
       "refund_rejected": "Pengembalian dana ditolak untuk <bdi>{name}</bdi>: {price}. {credits, plural, other {# kredit}} kembali ke saldomu.",
       "candidate_finished": "{count, plural, =1 {<bdi>{email}</bdi> menyelesaikan {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}}{grade, select, none {.} other {: {grade}.}}} other {# kandidat menyelesaikan {title, select, none {sebuah wawancara} other {“<bdi>{title}</bdi>”}}.}}",

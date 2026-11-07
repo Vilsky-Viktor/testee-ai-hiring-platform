@@ -18,6 +18,7 @@ from notifications.helpers.emails import (
     report_email,
 )
 from notifications.helpers.member_emails import (
+    currency_change_email,
     digest_email,
     price_change_email,
     reminder_email,
@@ -73,6 +74,15 @@ EMAILS_SENT = {
             RECIPIENT,
             "Acme",
             {"price": 4500, "new_price": 5000, "currency": "USD", "date": "2026-11-21"},
+            f"{SITE}/b",
+        ),
+        False,
+    ),
+    "top-up currency change": (
+        lambda: currency_change_email(
+            RECIPIENT,
+            "Acme",
+            {"price": 4500, "currency": "USD", "new_price": 4000, "new_currency": "GBP"},
             f"{SITE}/b",
         ),
         False,

@@ -48,6 +48,8 @@ BODIES = {
 EXCEPTIONS = {
     # Prices are for whoever pays: owners and admins.
     "GET /companies/{company_id}/billing/catalog": {"viewer": access_matrix.REFUSED},
+    # Only who may change the currency hears what changing it would do.
+    "GET /companies/{company_id}/billing/currency/change": {"viewer": access_matrix.REFUSED},
     # Owners and admins see the invoices and failed payments of the top-ups they pay.
     "GET /companies/{company_id}/billing/invoice": {"viewer": access_matrix.REFUSED},
     "GET /companies/{company_id}/billing/payment-failure": {"viewer": access_matrix.REFUSED},

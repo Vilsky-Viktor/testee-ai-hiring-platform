@@ -416,6 +416,25 @@ TEXTS = {
             " luôn được gửi, bất kể cài đặt email của bạn."
         ),
     },
+    "top_up_currency_change": {
+        "subject": "Số tiền nạp mới cho {company}",
+        "preheader": "Mỗi lần tự động nạp giờ có giá {new_price} thay vì {price}.",
+        "heading": "Số tiền tự động nạp đã thay đổi",
+        "lines": [
+            (
+                "Tiền tệ của {company} đã được thay đổi, vì vậy mỗi lần tự động nạp giờ có giá "
+                "{new_price} thay vì {price}, cộng thêm VAT hoặc thuế bán hàng nếu có. Số ứng viên "
+                "vẫn như cũ."
+            ),
+            ("Nếu bạn muốn số tiền khác, hãy thay đổi hoặc tắt tự động nạp trên trang thanh toán."),
+        ],
+        "button": "Mở trang thanh toán",
+        "footer": (
+            "Email này được gửi đến {email} vì bạn là chủ sở hữu hoặc quản trị viên của "
+            "{company} trên testee. Email liên quan đến việc thanh toán của công ty bạn nên"
+            " luôn được gửi, bất kể cài đặt email của bạn."
+        ),
+    },
     "footer": "Email này được gửi đến {email} vì có người đã mời địa chỉ này trên testee. Nếu "
     "bạn không mong đợi email này, bạn có thể bỏ qua.",
     # An invite from a company testee hasn't verified, at the end of the footer.
