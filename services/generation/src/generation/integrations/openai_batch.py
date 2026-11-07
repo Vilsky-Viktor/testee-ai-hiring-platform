@@ -8,12 +8,14 @@ from openai.lib._parsing._completions import type_to_response_format_param
 from pydantic import BaseModel
 
 from generation.constants.generation import (
+    BATCH_FILE_SECONDS,
     BATCH_MAX_RETRIES,
     LLM_TIMEOUT_SECONDS,
     MAX_OUTPUT_TOKENS,
 )
 
 COMPLETIONS = "/v1/chat/completions"
+EXPIRES = {"anchor": "created_at", "seconds": BATCH_FILE_SECONDS}
 
 
 @cache
@@ -44,10 +46,15 @@ async def submit(requests: dict[str, dict]) -> str:
         for custom_id, body in requests.items()
     ]
     upload = await get_client().files.create(
-        file=("requests.jsonl", io.BytesIO("\n".join(lines).encode())), purpose="batch"
+        file=("requests.jsonl", io.BytesIO("\n".join(lines).encode())),
+        purpose="batch",
+        expires_after=EXPIRES,
     )
     batch = await get_client().batches.create(
-        input_file_id=upload.id, endpoint=COMPLETIONS, completion_window="24h"
+        input_file_id=upload.id,
+        endpoint=COMPLETIONS,
+        completion_window="24h",
+        output_expires_after=EXPIRES,
     )
 
     return batch.id

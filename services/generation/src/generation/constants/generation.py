@@ -41,6 +41,9 @@ LLM_MAX_RETRIES = 2
 # idempotency key, so a retry after a lost answer would make (and bill) a second batch. The next
 # scheduled run sends what didn't go and reads what wasn't read.
 BATCH_MAX_RETRIES = 0
+# How long OpenAI keeps a batch's files (the job texts it was sent and its answers), past the
+# batch's 24 hours and the worker reading them; the privacy policy allows OpenAI 30 days.
+BATCH_FILE_SECONDS = 7 * 24 * 60 * 60
 # What OpenAI accepts for a reasoning model's effort; the settings pick one (see config).
 ReasoningEffort = Literal["none", "minimal", "low", "medium", "high"]
 # Every question has this many options: one correct, or for a multi-answer ("select all that
