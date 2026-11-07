@@ -239,7 +239,7 @@ Every price is made by billing in the transaction itself, in one currency, with 
    | `subscription.created`, `subscription.canceled` | Start and end automatic top-ups |
    | `subscription.updated` | A cancel scheduled in Paddle (its emails or portal) ends automatic top-up at once |
 
-   A card saved for an automatic top-up (**Update card**) arrives as `transaction.completed` too.
+   A card saved for an automatic top-up (**Update card**) arrives as `transaction.completed` too. One sending address gets at most 600 web hooks a minute, counted before their signature is checked (`PADDLE_WEBHOOKS_PER_IP_MINUTE`), by default; past that it's answered `429` and Paddle retries.
 
 3. Create a server-side API key with permission to read and write transactions (billing makes every top-up's checkout, reads invoices for the billing tab and lists payments for the daily reconciliation), to read and write adjustments (`adjustment.read` for the reconciliation's refunds and chargebacks, `adjustment.write` for a company's own refunds) and to read and update subscriptions (automatic top-up's charges, currency and card updates). Paddle's keys expire (90 days by default, a year at most): note the date and replace the key before it (see [runbooks](../runbooks.md#paddle-down)). For automatic top-up, also create a $0 monthly price (its checkout saves the card); without it and the key, automatic top-up isn't offered.
 4. Set these in `.env`, then restart billing:

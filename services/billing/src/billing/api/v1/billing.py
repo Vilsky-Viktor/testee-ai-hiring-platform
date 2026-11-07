@@ -4,12 +4,15 @@ import time
 from fastapi import APIRouter, HTTPException, Request, status
 from testee_common.auth.auth import CurrentUser, OptionalUser
 from testee_common.config.constants import WEBHOOK_SIGNATURE_REFUSED
+from testee_common.http.client_ip import limit_address
+from testee_common.limits.rate_limit import hit_or_skip
 
 from billing.api.dependencies import Country
 from billing.config import settings
 from billing.constants.currencies import ChoiceOwner
 from billing.constants.products import WEBHOOK_TOLERANCE_SECONDS
 from billing.helpers.paddle import signature_valid
+from billing.integrations.redis import get_redis
 from billing.schemas.billing import CatalogOut, CurrencyIn, CurrencyOut
 from billing.services import currencies
 from billing.services.catalog import catalog_out
@@ -42,14 +45,17 @@ async def choose_my_currency(body: CurrencyIn, user: CurrentUser) -> CurrencyOut
 
 @router.post("/webhooks/paddle", status_code=status.HTTP_200_OK)
 async def paddle_webhook(request: Request) -> dict:
-    """Paddle retries until it gets a 2xx, and granting is idempotent, so retries are safe."""
+    """Paddle retries until it gets a 2xx, and granting is idempotent, so retries are safe. Counted by
+    sending address before the signature is checked; with Redis down, not counted."""
+    key = f"rate:paddle-webhooks:{limit_address(request)}"
+    await hit_or_skip(get_redis(), key, "PADDLE_WEBHOOKS_PER_IP_MINUTE")
     body = await request.body()
     signature = request.headers.get("Paddle-Signature", "")
 
     if not signature_valid(
         signature, body, settings.paddle_webhook_secret, time.time(), WEBHOOK_TOLERANCE_SECONDS
     ):
-        logger.error("%s: paddle", WEBHOOK_SIGNATURE_REFUSED)
+        logger.warning("%s: paddle", WEBHOOK_SIGNATURE_REFUSED)
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Invalid signature")
 
     await handle(await request.json())

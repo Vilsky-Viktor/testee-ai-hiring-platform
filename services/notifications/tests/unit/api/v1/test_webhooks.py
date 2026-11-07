@@ -5,8 +5,10 @@ import json
 import time
 
 import pytest
+from fastapi import HTTPException
 from testee_common.config.constants import WEBHOOK_SIGNATURE_REFUSED
 
+from notifications.api.v1 import webhooks as webhook_routes
 from notifications.config import settings
 from notifications.constants.events import EMAIL_WEBHOOK
 from notifications.handlers.dispatch import handle
@@ -149,10 +151,29 @@ def test_an_unsigned_webhook_is_refused(client, reported, caplog):
 
     assert response.status_code == 401
     assert reported == []
-    # Logged as an error, which the alert for a wrong web hook secret matches.
+    # One refusal is a warning: the alert for a wrong web hook secret counts them.
     assert [r.levelname for r in caplog.records if WEBHOOK_SIGNATURE_REFUSED in r.message] == [
-        "ERROR"
+        "WARNING"
     ]
+
+
+def test_a_flood_of_web_hooks_is_refused_before_its_signature_is_checked(
+    client, reported, monkeypatch, caplog
+):
+    async def over(redis, key, name):
+        assert key.startswith("rate:resend-webhooks:")
+        assert name == "RESEND_WEBHOOKS_PER_IP_MINUTE"
+
+        raise HTTPException(429, "Too many requests.", headers={"Retry-After": "60"})
+
+    monkeypatch.setattr(webhook_routes, "hit_or_skip", over)
+
+    response = client.post("/webhooks/resend", json=event("email.bounced", "candidate_invite"))
+
+    assert response.status_code == 429
+    assert response.headers["Retry-After"] == "60"
+    assert reported == []
+    assert WEBHOOK_SIGNATURE_REFUSED not in caplog.text
 
 
 def test_invite_emails_are_tagged_with_what_they_are():

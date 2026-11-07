@@ -2,8 +2,10 @@ import asyncio
 import time
 
 import pytest
+from fastapi import HTTPException
 from testee_common.config.constants import WEBHOOK_SIGNATURE_REFUSED
 
+from billing.api.v1 import billing as billing_routes
 from billing.constants.products import WEBHOOK_TOLERANCE_SECONDS
 from billing.helpers.paddle import signature_valid
 from billing.repositories import auto_top_ups, purchases, referrals
@@ -156,10 +158,32 @@ def test_the_webhook_route_checks_the_signature(client, granted, caplog):
     assert ok.status_code == 200
     assert forged.status_code == 401
     assert len(granted) == 1
-    # Logged as an error, which the alert for a wrong web hook secret matches.
+    # One refusal is a warning: the alert for a wrong web hook secret counts them.
     assert [r.levelname for r in caplog.records if WEBHOOK_SIGNATURE_REFUSED in r.message] == [
-        "ERROR"
+        "WARNING"
     ]
+
+
+def test_a_flood_of_web_hooks_is_refused_before_its_signature_is_checked(
+    client, granted, monkeypatch, caplog
+):
+    async def over(redis, key, name):
+        assert key.startswith("rate:paddle-webhooks:")
+        assert name == "PADDLE_WEBHOOKS_PER_IP_MINUTE"
+
+        raise HTTPException(429, "Too many requests.", headers={"Retry-After": "60"})
+
+    monkeypatch.setattr(billing_routes, "hit_or_skip", over)
+    body, header = signed(completed())
+
+    response = client.post(
+        "/webhooks/paddle", content=body, headers={"Paddle-Signature": header + "0"}
+    )
+
+    assert response.status_code == 429
+    assert response.headers["Retry-After"] == "60"
+    assert granted == []
+    assert WEBHOOK_SIGNATURE_REFUSED not in caplog.text
 
 
 def test_a_signature_beyond_ascii_is_refused_not_an_error():
