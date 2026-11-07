@@ -57,3 +57,5 @@
 15 4 * * * curl -s -X POST http://rounds:8000/internal/schedules/voice-clips
 # Open to offers turned on more than a year ago lapses (rounds).
 20 4 * * * curl -s -X POST http://rounds:8000/internal/schedules/open-to-offers
+# Practice rounds started more than a year ago (rounds).
+25 4 * * * curl -s -X POST http://rounds:8000/internal/schedules/practice-retention

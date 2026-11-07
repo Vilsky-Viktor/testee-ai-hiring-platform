@@ -464,6 +464,27 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/internal/schedules/practice-retention": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /**
+     * Delete Old Practice
+     * @description Daily, from Cloud Scheduler: deletes practice rounds started more than PRACTICE_KEEP_DAYS
+     *     ago.
+     */
+    post: operations["delete_old_practice_internal_schedules_practice_retention_post"]
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/superadmin/stats": {
     parameters: {
       query?: never
@@ -2296,6 +2317,24 @@ export interface operations {
     }
   }
   close_lapsed_offers_internal_schedules_open_to_offers_post: {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      204: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+    }
+  }
+  delete_old_practice_internal_schedules_practice_retention_post: {
     parameters: {
       query?: never
       header?: never

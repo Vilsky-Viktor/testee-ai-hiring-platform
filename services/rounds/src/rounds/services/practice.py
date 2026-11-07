@@ -1,5 +1,5 @@
 import uuid
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from uuid import UUID
 
 from fastapi import HTTPException, status
@@ -11,6 +11,7 @@ from testee_common.redis.idempotency import fingerprint, key_name, once
 
 from rounds.constants.practice import (
     NO_PRACTICE_QUESTIONS,
+    PRACTICE_KEEP_DAYS,
     PRACTICE_KEY_SECONDS,
     STANDARD_TIMING,
 )
@@ -90,3 +91,10 @@ async def start(template_id: UUID, user_id: str, timing: str) -> PracticeStartOu
         await sessions.add_all(session, rows)
 
     return PracticeStartOut(round_id=round_id, session_id=rows[0].id)
+
+
+async def delete_old(now: datetime, until: float) -> int:
+    """Practice rounds past PRACTICE_KEEP_DAYS, until `until` (time.monotonic()); how many."""
+    before = now - timedelta(days=PRACTICE_KEEP_DAYS)
+
+    return await practice_sessions.delete_old(Session, before, until)

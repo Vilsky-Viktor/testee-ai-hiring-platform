@@ -95,6 +95,8 @@ locals {
     voice-clips = { service = "rounds", path = "/internal/schedules/voice-clips", cron = "15 4 * * *" }
     # Open to offers turned on more than OPEN_DAYS ago lapses: off every Discover tab.
     open-to-offers = { service = "rounds", path = "/internal/schedules/open-to-offers", cron = "20 4 * * *" }
+    # Practice rounds started more than a year ago.
+    practice-retention = { service = "rounds", path = "/internal/schedules/practice-retention", cron = "25 4 * * *" }
   }
 }
 

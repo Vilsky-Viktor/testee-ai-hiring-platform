@@ -7,7 +7,7 @@ from testee_common.limits.maintenance import is_on
 
 from rounds.constants.voice import CLIP_UNUSED_DAYS, JOB_SECONDS
 from rounds.integrations.redis import get_redis
-from rounds.services import open_to_offers, voice_clips
+from rounds.services import open_to_offers, practice, voice_clips
 from rounds.services import outbox as outbox_service
 from rounds.services.session_expiry import finish_expired
 
@@ -44,3 +44,10 @@ async def close_lapsed_offers() -> None:
     """Daily, from Cloud Scheduler: takes off the Discover tabs whoever turned Open to offers on
     more than OPEN_DAYS ago (they can turn it on again)."""
     await open_to_offers.close_lapsed(datetime.now(UTC), time.monotonic() + JOB_SECONDS)
+
+
+@router.post("/practice-retention", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_old_practice() -> None:
+    """Daily, from Cloud Scheduler: deletes practice rounds started more than PRACTICE_KEEP_DAYS
+    ago."""
+    await practice.delete_old(datetime.now(UTC), time.monotonic() + JOB_SECONDS)

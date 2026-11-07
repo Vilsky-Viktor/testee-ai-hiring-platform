@@ -27,6 +27,12 @@ class Session(Base):
             "candidate_invite_id",
             postgresql_where="status = 'in_progress'",
         ),
+        # Practice rounds past their retention, found daily.
+        Index(
+            "ix_sessions_practice_started_at",
+            "started_at",
+            postgresql_where="practice",
+        ),
         CheckConstraint(one_of("status", RoundStatus), name="ck_sessions_status"),
         CheckConstraint(
             f"final_score BETWEEN 0 AND {CORRECT_SCORE}", name="ck_sessions_final_score"

@@ -13,3 +13,6 @@ STANDARD_TIMING = "standard"
 # A practice round's Idempotency-Key (an assistant action confirmed again) keeps its first result
 # this long: a retry within it gets that round back.
 PRACTICE_KEY_SECONDS = 60 * 60
+# A practice round goes this long after it started, with its answers and signals: nothing else
+# ends it, as a candidate's does (their invite's retention, in companies).
+PRACTICE_KEEP_DAYS = 365

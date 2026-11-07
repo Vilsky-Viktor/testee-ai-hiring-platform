@@ -65,6 +65,8 @@ Free practice (`/practice`) gives people preparing for a role practice interview
 
 A practice page is in English and in its template's language only (see [Public site](site.md#skills-tests-by-role)).
 
+Practice rounds, with their answers and signals, are deleted a year after they started (`PRACTICE_KEEP_DAYS`, rounds' daily `practice-retention` job), or with the account.
+
 ### Open to offers
 
 A practice user can choose to be found by companies: the **Open to offers** card, under a finished practice round's results and in Settings. It is a separate, unticked switch, never bundled with the terms, and its text names exactly what is shared.

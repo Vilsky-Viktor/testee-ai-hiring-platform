@@ -1205,6 +1205,21 @@
     }
    }
   },
+  "/internal/schedules/practice-retention": {
+   "post": {
+    "tags": [
+     "schedules"
+    ],
+    "summary": "Delete Old Practice",
+    "description": "Daily, from Cloud Scheduler: deletes practice rounds started more than PRACTICE_KEEP_DAYS\nago.",
+    "operationId": "delete_old_practice_internal_schedules_practice_retention_post",
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     }
+    }
+   }
+  },
   "/superadmin/stats": {
    "get": {
     "tags": [

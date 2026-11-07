@@ -1,10 +1,13 @@
 import uuid
+from datetime import datetime
 
 from sqlalchemy import exists, func, select
 from sqlalchemy.dialects.postgresql import distinct_on
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
+from testee_common.db.db import delete_in_batches
 
+from rounds.constants.rounds import SESSION_DELETE_BATCH
 from rounds.models.sessions import Session
 
 
@@ -60,3 +63,17 @@ async def latest_rounds(session: AsyncSession, user_id: str) -> list[Session]:
     )
 
     return list(await session.scalars(query))
+
+
+async def delete_old(sessions, before: datetime, until: float) -> int:
+    """Practice rounds started before `before`, with their answers and signals (they cascade),
+    SESSION_DELETE_BATCH at a time, each batch its own transaction (from `sessions`), none
+    started after `until` (time.monotonic()); the next run deletes the rest. How many."""
+    return await delete_in_batches(
+        sessions,
+        Session,
+        Session.practice.is_(True),
+        Session.started_at < before,
+        batch=SESSION_DELETE_BATCH,
+        until=until,
+    )
