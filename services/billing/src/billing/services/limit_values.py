@@ -3,9 +3,11 @@ limits:values hash, which every service reads (on each change and every LIMITS_S
 so a Redis wipe heals itself and never brings back old values; not at start, which a cold start
 would wait on, Redis down included)."""
 
+import logging
 from datetime import UTC, datetime, timedelta
 
 from fastapi import HTTPException, status
+from redis.exceptions import RedisError
 from testee_common.auth.user import User
 from testee_common.i18n.i18n import TemplateError
 from testee_common.limits.limit_list import LIMITS, LIMITS_KEY, PROVIDER_LIMITS
@@ -15,6 +17,8 @@ from billing.core.db import Session
 from billing.integrations.redis import get_redis
 from billing.repositories import limit_hits, limit_settings
 from billing.schemas.limits import LimitOut, LimitsOut, ProviderLimitOut
+
+logger = logging.getLogger(__name__)
 
 
 async def sync() -> None:
@@ -62,7 +66,11 @@ async def change(name: str, value: float | None, user: User) -> None:
     async with Session.begin() as session:
         await limit_settings.change(session, name, value, user.uid, user.email)
 
-    await sync()
+    # Saved: with Redis down, the regular sync brings it to the services once it's back.
+    try:
+        await sync()
+    except RedisError:
+        logger.warning("Limit %s saved, but Redis is down: the next sync applies it", name)
 
 
 async def limits_out() -> LimitsOut:

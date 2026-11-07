@@ -6,6 +6,7 @@ import uuid
 from datetime import UTC, datetime, timedelta
 
 import pytest
+from fake_redis import DownRedis
 from fastapi import HTTPException
 from testee_common.auth.user import User
 from testee_common.limits import limits
@@ -93,6 +94,22 @@ def test_a_value_out_of_bounds_changes_nothing(run, redis, reset):
 
     assert (refused.status_code, refused.detail) == (422, "Use a value from 100 to 1000000.")
     assert (value, history) == (DEFAULT, [])
+
+
+def test_a_change_with_redis_down_is_saved_and_reaches_redis_at_the_next_sync(
+    run, redis, reset, monkeypatch
+):
+    async def scenario():
+        with monkeypatch.context() as down:
+            down.setattr(limit_values, "get_redis", DownRedis)
+            await limit_values.change(NAME, 800, ANN)
+
+        before = await read(redis)
+        await schedules.sync_limits()
+
+        return before, await read(redis)
+
+    assert run(scenario()) == (DEFAULT, 800)
 
 
 def test_a_redis_wipe_is_healed_by_the_next_sync(run, redis, reset):
