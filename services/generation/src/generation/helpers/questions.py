@@ -13,10 +13,11 @@ from generation.constants.generation import (
     MAX_QUESTION_CHARS,
     OPTIONS,
     QUESTION_BATCH_SIZE,
+    QUESTION_FOCUSES,
     QUESTION_OVERSAMPLE,
 )
 from generation.constants.kinds import GenerationKind
-from generation.models.state import State
+from generation.models.state import QuestionTask, State
 from generation.schemas.regenerate import QuestionContext
 
 # A line starting with "A." or "A)" begins choices the model listed in the question itself.
@@ -89,6 +90,57 @@ def question_calls(subtopic_count: int, size: int) -> int:
 def split_count(count: int, parts: int) -> list[int]:
     """`count` spread over `parts` as evenly as possible."""
     return [count // parts + (1 if part < count % parts else 0) for part in range(parts)]
+
+
+def focus_for(call: int, calls: int) -> str:
+    if calls == 1:
+        return "a mix of " + "; ".join(QUESTION_FOCUSES)
+
+    return QUESTION_FOCUSES[call % len(QUESTION_FOCUSES)]
+
+
+def question_tasks(
+    topic_index: int,
+    topic: str,
+    subtopics: list[str],
+    count: int,
+    calls_for: int,
+    multi: int,
+    examples: int,
+    context: dict,
+) -> list[QuestionTask]:
+    """The calls that write `count` questions for a topic, each subtopic getting its share
+    (oversampled) split into as many calls as `calls_for` questions would take, which take turns
+    at the angles; `multi` multi-answer questions and `examples` with an example are spread over
+    them. `context`: the task's `level`, `existing` and `language`."""
+    subtopics = subtopics or [topic]
+    per_subtopic = math.ceil(count * QUESTION_OVERSAMPLE / len(subtopics))
+    calls = question_calls(len(subtopics), calls_for)
+    counts = [size for _ in subtopics for size in split_count(per_subtopic, calls)]
+    multis = split_count(multi, len(counts))
+    shown = split_count(examples, len(counts))
+    tasks: list[QuestionTask] = []
+
+    for subtopic in subtopics:
+        for call in range(calls):
+            bucket = len(tasks)
+            tasks.append(
+                {
+                    "topic_index": topic_index,
+                    "topic": topic,
+                    "subtopic_index": bucket,
+                    "subtopic": subtopic,
+                    "count": counts[bucket],
+                    "multi": min(multis[bucket], counts[bucket]),
+                    "examples": min(shown[bucket], counts[bucket]),
+                    "level": context["level"],
+                    "existing": context["existing"],
+                    "focus": focus_for(call, calls),
+                    "language": context["language"],
+                }
+            )
+
+    return tasks
 
 
 def clean_options(options: list[str], taken: set[str], max_chars: int) -> list[str]:

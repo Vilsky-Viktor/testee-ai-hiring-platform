@@ -14,7 +14,6 @@ from testee_common.ai.sets import (
 from testee_common.limits.limits import limit
 
 from generation.constants.actions import TEMPLATE_GENERATION
-from generation.constants.generation import QUESTION_OVERSAMPLE
 from generation.constants.reuse import MAX_REUSE_SHARE
 from generation.constants.statuses import Status
 from generation.helpers.additions import planned
@@ -23,9 +22,8 @@ from generation.helpers.questions import (
     count_multi,
     merge_buckets,
     normalize,
-    question_calls,
+    question_tasks,
     shifted,
-    split_count,
 )
 from generation.integrations import library
 from generation.integrations.redis import get_redis
@@ -34,7 +32,7 @@ from generation.models.generation import Generation
 from generation.schemas.library import ReuseIn
 from generation.services import run_state
 from generation.services.dedupe import distinct_by_meaning
-from generation.services.nodes.questions import focus_for, generate_questions
+from generation.services.nodes.questions import generate_questions
 from generation.services.nodes.reuse import topic_text
 from generation.services.sample_checks import check_topics
 from generation.services.top_up import TopicShortError, top_up
@@ -166,34 +164,11 @@ def tasks_for(
     if count <= 0:
         return []
 
-    subtopics = topic.subtopics or [topic.title]
-    calls = question_calls(len(subtopics), count)
-    per_subtopic = math.ceil(count * QUESTION_OVERSAMPLE / len(subtopics))
-    sizes = [size for _ in subtopics for size in split_count(per_subtopic, calls)]
-    multis = split_count(multi, len(sizes))
-    shown = split_count(example_count(count), len(sizes))
-    tasks = []
+    context = {"level": context.level, "existing": existing, "language": context.language}
 
-    for subtopic in subtopics:
-        for call in range(calls):
-            size = sizes[len(tasks)]
-            tasks.append(
-                {
-                    "topic_index": 0,
-                    "topic": topic.title,
-                    "subtopic_index": len(tasks),
-                    "subtopic": subtopic,
-                    "count": size,
-                    "multi": min(multis[len(tasks)], size),
-                    "examples": min(shown[len(tasks)], size),
-                    "level": context.level,
-                    "existing": existing,
-                    "focus": focus_for(call, calls),
-                    "language": context.language,
-                }
-            )
-
-    return tasks
+    return question_tasks(
+        0, topic.title, topic.subtopics, count, count, multi, example_count(count), context
+    )
 
 
 async def fresh_questions(

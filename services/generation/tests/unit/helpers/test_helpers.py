@@ -1,5 +1,7 @@
+import math
 import uuid
 
+from generation.constants.generation import QUESTION_OVERSAMPLE
 from generation.helpers.payload import build_preparation
 from generation.helpers.progress import track_progress
 from generation.helpers.questions import (
@@ -7,6 +9,7 @@ from generation.helpers.questions import (
     clean_options,
     merge_buckets,
     question_calls,
+    question_tasks,
     split_count,
     strip_choices,
     topic_size,
@@ -233,3 +236,27 @@ def test_a_run_holds_the_questions_per_topic_it_started_with():
     assert topic_size({"template": True}) == 90
     # More questions per subtopic can take more calls.
     assert question_calls(1, topic_size({"template": True})) == 5
+
+
+def test_question_tasks_size_the_calls_by_their_own_number():
+    """Reuse lowers the calls' size, not their number; multis and examples spread over them."""
+    context = {"level": "hard", "existing": ["Reused"], "language": "de"}
+
+    tasks = question_tasks(2, "T", ["a", "b"], 10, 70, 3, 2, context)
+
+    assert len(tasks) == 2 * question_calls(2, 70)
+    assert sum(task["count"] for task in tasks) == 2 * math.ceil(10 * QUESTION_OVERSAMPLE / 2)
+    assert sum(task["multi"] for task in tasks) == 3
+    assert sum(task["examples"] for task in tasks) == 2
+    assert [task["subtopic_index"] for task in tasks] == list(range(len(tasks)))
+    assert {task["subtopic"] for task in tasks} == {"a", "b"}
+    assert all(task["topic_index"] == 2 and task["language"] == "de" for task in tasks)
+    assert all(task["existing"] == ["Reused"] for task in tasks)
+
+
+def test_a_topic_without_subtopics_is_its_own_subtopic():
+    context = {"level": "hard", "existing": [], "language": "en"}
+
+    tasks = question_tasks(0, "Whole topic", [], 5, 5, 0, 0, context)
+
+    assert {task["subtopic"] for task in tasks} == {"Whole topic"}

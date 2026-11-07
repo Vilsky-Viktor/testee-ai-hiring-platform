@@ -7,10 +7,9 @@ from generation.constants.generation import (
     MAX_OPTION_CHARS,
     OPTIONS,
     QUESTION_ATTEMPTS,
-    QUESTION_FOCUSES,
 )
 from generation.helpers.prompts import bullet_list, language_name
-from generation.helpers.questions import build_options, readable, with_example
+from generation.helpers.questions import build_options, focus_for, readable, with_example
 from generation.integrations import llm
 from generation.models.state import QuestionTask
 from generation.prompts.questions import QUESTIONS_REQUEST, QUESTIONS_SYSTEM
@@ -18,13 +17,6 @@ from generation.schemas.questions import QuestionItemList
 from generation.services.key_self_check import keys_that_hold
 
 logger = logging.getLogger(__name__)
-
-
-def focus_for(call: int, calls: int) -> str:
-    if calls == 1:
-        return "a mix of " + "; ".join(QUESTION_FOCUSES)
-
-    return QUESTION_FOCUSES[call % len(QUESTION_FOCUSES)]
 
 
 def question_messages(task: QuestionTask) -> list[BaseMessage]:
