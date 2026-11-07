@@ -1521,9 +1521,23 @@
       "draftingNote": "正在阅读你的职位描述。",
       "title": "几分钟创建一场面试",
       "text": "粘贴职位描述并调整主题，几分钟内即可完成面试。",
-      "notes": {
-        "templates": "提供现成模板",
-        "expert": "无需专业领域专家"
+      "cards": {
+        "expert": {
+          "title": "无需专业领域专家",
+          "text": "AI 读取职位描述并挑选主题，你只需批准。"
+        },
+        "charge": {
+          "title": "一切由你掌控",
+          "text": "在生成任何题目之前，你可以亲自修改主题，或让 AI 修改。"
+        },
+        "templates": {
+          "title": "现成模板",
+          "text": "从模板开始，无需职位描述。"
+        },
+        "languages": {
+          "title": "任何职位，{count, number} 种语言",
+          "text": "任何职位，都能用你选择的语言进行。"
+        }
       },
       "describe": "<n>1.</n> 粘贴职位描述",
       "adjust": "<n>2.</n> 调整主题",
@@ -1595,11 +1609,23 @@
         "once": "仅限这一次",
         "never": "一律不允许"
       },
-      "notes": {
-        "modes": "点选和语音模式",
-        "phone": "手机也能作答",
-        "time": "提前显示时间",
-        "extraTime": "需要时可延长时间"
+      "cards": {
+        "modes": {
+          "title": "点选或语音",
+          "text": "候选人可点选答案，也可直接说给米拉听。"
+        },
+        "phone": {
+          "title": "手机也能作答",
+          "text": "无需安装：在任何设备上打开链接即可。"
+        },
+        "time": {
+          "title": "提前显示时间和规则",
+          "text": "开始前就能看到时间和所有规则。"
+        },
+        "extraTime": {
+          "title": "可申请额外时间",
+          "text": "为有需要的人提供更多时间，无需说明理由。"
+        }
       },
       "rules": {
         "pick": "选择一个答案；标有“选择多个选项”的题目，请选出所有正确答案。",
@@ -1806,13 +1832,24 @@
       "bestPrice": "最优价格",
       "pack": "{count, number} 位 {price}",
       "see": "查看价格",
-      "notes": {
-        "subscription": "无需订阅",
-        "unanswered": "未作答的邀请不收费",
-        "expire": "点数永不过期",
-        "refund": "未使用的付费点数可在 14 天内退款"
-      },
-      "currencies": "{count, plural, other {# 种货币}}"
+      "cards": {
+        "results": {
+          "title": "只为结果付费",
+          "text": "从未作答的候选人不收费。"
+        },
+        "expire": {
+          "title": "点数永不过期",
+          "text": "充值一次，招聘时随时使用。"
+        },
+        "refund": {
+          "title": "自助退款",
+          "text": "购买后 14 天内，未使用的点数只需点击两下即可退款。"
+        },
+        "currencies": {
+          "title": "{count, plural, other {# 种货币}}",
+          "text": "用你自己的货币付款，免去银行的货币兑换手续费。"
+        }
+      }
     },
     "demoContent": {
       "create": {

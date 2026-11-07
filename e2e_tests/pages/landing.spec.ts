@@ -1,5 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
+import { expectFourColumns } from "./helpers/cards";
 import { REQUEST_URL } from "./helpers/env";
 import { loaded } from "./helpers/waits";
 
@@ -119,10 +120,11 @@ test("the pricing section shows the catalog's top-ups and free candidates", asyn
     "href",
     "/pricing",
   );
-  // The last fact under it counts the currencies billing sells in.
-  await expect(section.getByTestId("notes").locator("li").last()).toContainText(
+  // The last card under it counts the currencies billing sells in.
+  await expect(section.getByTestId("trust-cards").locator("li").last()).toContainText(
     String(prices.currencies.length),
   );
+  await expectFourColumns(section);
 });
 
 test("the reports section lists four facts under its picture", async ({ page }) => {

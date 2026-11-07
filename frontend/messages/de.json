@@ -1521,9 +1521,23 @@
       "draftingNote": "Deine Stellenbeschreibung wird gelesen.",
       "title": "Ein Interview in Minuten erstellen",
       "text": "Füge eine Stellenbeschreibung ein, passe die Themen an, und dein Interview ist in Minuten fertig.",
-      "notes": {
-        "templates": "fertige Vorlagen verfügbar",
-        "expert": "kein Fachexperte nötig"
+      "cards": {
+        "expert": {
+          "title": "Kein Fachexperte nötig",
+          "text": "Die KI liest die Stellenbeschreibung und wählt die Themen aus. Du musst sie nur noch freigeben."
+        },
+        "charge": {
+          "title": "Du behältst die Kontrolle",
+          "text": "Bearbeite die Themen selbst oder bitte die KI darum, bevor eine Frage geschrieben wird."
+        },
+        "templates": {
+          "title": "Fertige Vorlagen",
+          "text": "Starte mit einer Vorlage statt mit einer Stellenbeschreibung."
+        },
+        "languages": {
+          "title": "Jede Stelle, {count, number} Sprachen",
+          "text": "Jede Stelle, in der Sprache deiner Wahl."
+        }
       },
       "describe": "<n>1.</n> Beschreibung einfügen",
       "adjust": "<n>2.</n> Themen anpassen",
@@ -1595,11 +1609,23 @@
         "once": "Dieses Mal zulassen",
         "never": "Nie zulassen"
       },
-      "notes": {
-        "modes": "Klick- und Sprachmodus",
-        "phone": "funktioniert auf dem Handy",
-        "time": "Zeit vorab sichtbar",
-        "extraTime": "mehr Zeit für alle, die sie brauchen"
+      "cards": {
+        "modes": {
+          "title": "Klicken oder sprechen",
+          "text": "Kandidaten tippen ihre Antworten an oder sagen sie Mira."
+        },
+        "phone": {
+          "title": "Funktioniert auf dem Handy",
+          "text": "Nichts zu installieren: Der Link öffnet sich auf jedem Gerät."
+        },
+        "time": {
+          "title": "Zeit und Regeln vorab",
+          "text": "Vor dem Start sehen sie die Zeit und jede Regel."
+        },
+        "extraTime": {
+          "title": "Zusätzliche Zeit auf Anfrage",
+          "text": "Gib allen, die sie brauchen, mehr Zeit, ohne nach dem Grund zu fragen."
+        }
       },
       "rules": {
         "pick": "Wähle eine Antwort oder, wo „Mehrere Optionen auswählen“ steht, jede richtige.",
@@ -1806,13 +1832,24 @@
       "bestPrice": "Bester Preis",
       "pack": "{count, number} für {price}",
       "see": "Preise ansehen",
-      "notes": {
-        "subscription": "kein abo",
-        "unanswered": "unbeantwortete einladungen kosten nichts",
-        "expire": "credits verfallen nie",
-        "refund": "ungenutzte bezahlte credits 14 Tage lang erstattbar"
-      },
-      "currencies": "{count, plural, one {# Währung} other {# Währungen}}"
+      "cards": {
+        "results": {
+          "title": "Zahle nur für Ergebnisse",
+          "text": "Ein Kandidat, der nie antwortet, kostet nichts."
+        },
+        "expire": {
+          "title": "Credits verfallen nie",
+          "text": "Einmal aufladen und nutzen, wann immer du einstellst."
+        },
+        "refund": {
+          "title": "Erstattung selbst auslösen",
+          "text": "Lass ungenutzte Credits innerhalb von 14 Tagen nach dem Kauf mit zwei Klicks erstatten."
+        },
+        "currencies": {
+          "title": "{count, plural, one {# Währung} other {# Währungen}}",
+          "text": "Zahle in deiner Währung und spare dir die Umrechnungsgebühren deiner Bank."
+        }
+      }
     },
     "demoContent": {
       "create": {

@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 
+import { expectFourColumns } from "./helpers/cards";
 import { REQUEST_URL } from "./helpers/env";
 import { loaded } from "./helpers/waits";
 
@@ -83,7 +84,16 @@ test("on a phone the modes show as cards in place of the demo", { tag: "@phone-o
 
   await expect(section.getByTestId("candidates-demo")).toBeHidden();
   await expect(section.getByTestId("phone-steps").getByTestId("icon-card")).toHaveCount(2);
-  await expect(section.getByTestId("notes")).toBeVisible();
+  await expect(section.getByTestId("trust-cards").locator("li")).toHaveCount(4);
+});
+
+test("four cards stand side by side under the candidates' demo", async ({ page }) => {
+  test.setTimeout(120_000);
+  await page.goto("/");
+  const section = page.locator("#candidates");
+  await section.scrollIntoViewIfNeeded();
+
+  await expectFourColumns(section);
 });
 
 // Voice mode speaks every language: under the demo, a line links the guide to its quality in

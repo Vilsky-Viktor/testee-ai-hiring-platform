@@ -1,12 +1,19 @@
 import { getLocale, getTranslations } from "next-intl/server"
 
-import { NotesLine } from "@/features/landing/components/notes-line"
 import { PriceCard } from "@/features/landing/components/price-card"
 import { Receipt } from "@/features/landing/components/receipt"
 import { MoreLink } from "@/components/common/more-link"
 import { LandingSection } from "@/features/landing/components/section"
 import { StartButton } from "@/features/landing/components/start-button"
-import { DEMO_INVITED, FREE_LINES, NOTES } from "@/config/free-to-start-demo"
+import {
+  TrustCards,
+  TrustCardText,
+} from "@/features/landing/components/trust-cards"
+import {
+  DEMO_INVITED,
+  FREE_CARDS,
+  FREE_LINES,
+} from "@/config/free-to-start-demo"
 import { BAND } from "@/config/landing-backgrounds"
 import { formatPrice } from "@/lib/format"
 import type { Catalog } from "@/types/billing"
@@ -76,12 +83,23 @@ export async function FreeToStartSection({ catalog }: { catalog: Catalog }) {
             </div>
           </PriceCard>
         </div>
-        <NotesLine
-          notes={[
-            ...NOTES.map((key) => t(`notes.${key}`)),
-            t("currencies", { count: catalog.currencies.length }),
-          ]}
-        />
+        {/* A promo: its columns pop in as they come into view (promo.css). */}
+        <div data-promo className="w-full">
+          <TrustCards
+            cards={FREE_CARDS.map((key) => ({
+              key,
+              content: (
+                <TrustCardText
+                  title={t(`cards.${key}.title`, {
+                    count: catalog.currencies.length,
+                  })}
+                >
+                  {t(`cards.${key}.text`)}
+                </TrustCardText>
+              ),
+            }))}
+          />
+        </div>
       </div>
     </LandingSection>
   )

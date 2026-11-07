@@ -1521,9 +1521,23 @@
       "draftingNote": "Lecture de votre fiche de poste.",
       "title": "Créez un entretien en quelques minutes",
       "text": "Collez une fiche de poste, ajustez les thèmes, et votre entretien est prêt en quelques minutes.",
-      "notes": {
-        "templates": "modèles prêts à l'emploi disponibles",
-        "expert": "aucun expert du métier requis"
+      "cards": {
+        "expert": {
+          "title": "Aucun expert requis",
+          "text": "L'IA lit la fiche de poste et choisit les thèmes. Il ne vous reste qu'à les valider."
+        },
+        "charge": {
+          "title": "Vous gardez la main",
+          "text": "Modifiez les thèmes vous-même, ou demandez à l'IA de le faire, avant qu'une seule question soit rédigée."
+        },
+        "templates": {
+          "title": "Modèles prêts à l'emploi",
+          "text": "Partez d'un modèle plutôt que d'une fiche de poste."
+        },
+        "languages": {
+          "title": "Tous les postes, {count, number} langues",
+          "text": "Tous les postes, dans la langue de votre choix."
+        }
       },
       "describe": "<n>1.</n> Collez la description",
       "adjust": "<n>2.</n> Ajustez les thèmes",
@@ -1595,11 +1609,23 @@
         "once": "Autoriser cette fois-ci",
         "never": "Ne jamais autoriser"
       },
-      "notes": {
-        "modes": "mode clic ou vocal",
-        "phone": "fonctionne sur mobile",
-        "time": "durée affichée à l'avance",
-        "extraTime": "temps supplémentaire pour qui en a besoin"
+      "cards": {
+        "modes": {
+          "title": "Clic ou voix",
+          "text": "Les candidats touchent leurs réponses ou les disent à Mira."
+        },
+        "phone": {
+          "title": "Fonctionne sur mobile",
+          "text": "Rien à installer : ils ouvrent le lien sur n'importe quel appareil."
+        },
+        "time": {
+          "title": "Durée et règles affichées à l'avance",
+          "text": "Ils voient le temps et toutes les règles avant de commencer."
+        },
+        "extraTime": {
+          "title": "Temps supplémentaire sur demande",
+          "text": "Accordez plus de temps à qui en a besoin, sans justification."
+        }
       },
       "rules": {
         "pick": "Choisissez une réponse, ou toutes les bonnes là où il est indiqué « Choisissez plusieurs réponses ».",
@@ -1806,13 +1832,24 @@
       "bestPrice": "Meilleur prix",
       "pack": "{count, number} pour {price}",
       "see": "Voir les tarifs",
-      "notes": {
-        "subscription": "sans abonnement",
-        "unanswered": "les invitations sans réponse ne coûtent rien",
-        "expire": "les crédits n'expirent jamais",
-        "refund": "crédits payés non utilisés remboursables pendant 14 jours"
-      },
-      "currencies": "{count, plural, one {# devise} many {# devises} other {# devises}}"
+      "cards": {
+        "results": {
+          "title": "Payez uniquement les résultats",
+          "text": "Un candidat qui ne répond jamais ne coûte rien."
+        },
+        "expire": {
+          "title": "Les crédits n'expirent jamais",
+          "text": "Rechargez une fois et utilisez-les à chaque recrutement."
+        },
+        "refund": {
+          "title": "Remboursez vous-même",
+          "text": "Dans les 14 jours suivant l'achat, remboursez vos crédits non utilisés en deux clics."
+        },
+        "currencies": {
+          "title": "{count, plural, one {# devise} many {# devises} other {# devises}}",
+          "text": "Payez dans votre devise et évitez les frais de conversion de votre banque."
+        }
+      }
     },
     "demoContent": {
       "create": {

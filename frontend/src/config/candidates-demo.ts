@@ -71,5 +71,5 @@ export const VOICE_QUESTION: DemoQuestionPlay = {
 // The site asking for the microphone in the browser's prompt.
 export const DEMO_SITE = "testee.ai"
 
-// The facts under the picture, by their text's key.
-export const CANDIDATE_NOTES = ["modes", "phone", "time", "extraTime"] as const
+// What the section explains under its demo, in the order shown.
+export const CANDIDATE_CARDS = ["modes", "phone", "time", "extraTime"] as const

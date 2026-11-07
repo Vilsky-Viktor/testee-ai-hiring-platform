@@ -1521,9 +1521,23 @@
       "draftingNote": "Đang đọc mô tả công việc của bạn.",
       "title": "Tạo buổi phỏng vấn trong vài phút",
       "text": "Dán mô tả công việc, điều chỉnh các chủ đề, và buổi phỏng vấn của bạn sẵn sàng sau vài phút.",
-      "notes": {
-        "templates": "có sẵn các mẫu dùng ngay",
-        "expert": "không cần chuyên gia trong lĩnh vực"
+      "cards": {
+        "expert": {
+          "title": "Không cần chuyên gia trong lĩnh vực",
+          "text": "AI đọc mô tả công việc và chọn chủ đề. Bạn chỉ cần phê duyệt."
+        },
+        "charge": {
+          "title": "Bạn vẫn là người quyết định",
+          "text": "Tự sửa chủ đề hoặc nhờ AI sửa, trước khi có câu hỏi nào được viết."
+        },
+        "templates": {
+          "title": "Mẫu dùng ngay",
+          "text": "Bắt đầu từ một mẫu thay vì mô tả công việc."
+        },
+        "languages": {
+          "title": "Mọi vị trí, {count, number} ngôn ngữ",
+          "text": "Mọi vị trí, bằng ngôn ngữ bạn chọn."
+        }
       },
       "describe": "<n>1.</n> Dán mô tả",
       "adjust": "<n>2.</n> Điều chỉnh chủ đề",
@@ -1595,11 +1609,23 @@
         "once": "Cho phép lần này",
         "never": "Không bao giờ cho phép"
       },
-      "notes": {
-        "modes": "chế độ nhấp và giọng nói",
-        "phone": "dùng được trên điện thoại",
-        "time": "thời gian hiển thị trước",
-        "extraTime": "thêm thời gian cho người cần"
+      "cards": {
+        "modes": {
+          "title": "Nhấp hoặc giọng nói",
+          "text": "Ứng viên chạm để chọn câu trả lời, hoặc nói với Mira."
+        },
+        "phone": {
+          "title": "Dùng được trên điện thoại",
+          "text": "Không cần cài đặt: họ mở liên kết trên mọi thiết bị."
+        },
+        "time": {
+          "title": "Thời gian và quy tắc hiển thị trước",
+          "text": "Họ thấy thời gian và mọi quy tắc trước khi bắt đầu."
+        },
+        "extraTime": {
+          "title": "Thêm thời gian theo yêu cầu",
+          "text": "Cho bất kỳ ai cần thêm thời gian, không cần lý do."
+        }
       },
       "rules": {
         "pick": "Chọn một đáp án, hoặc chọn mọi đáp án đúng ở câu có ghi Chọn nhiều phương án.",
@@ -1806,13 +1832,24 @@
       "bestPrice": "Giá tốt nhất",
       "pack": "{count, number} ứng viên giá {price}",
       "see": "Xem bảng giá",
-      "notes": {
-        "subscription": "không có gói đăng ký",
-        "unanswered": "lời mời chưa được trả lời không mất phí",
-        "expire": "credit không bao giờ hết hạn",
-        "refund": "credit đã mua chưa dùng được hoàn tiền trong 14 ngày"
-      },
-      "currencies": "{count, plural, other {# loại tiền tệ}}"
+      "cards": {
+        "results": {
+          "title": "Chỉ trả tiền cho kết quả",
+          "text": "Ứng viên không trả lời thì không mất phí."
+        },
+        "expire": {
+          "title": "Credit không bao giờ hết hạn",
+          "text": "Nạp một lần và dùng bất cứ khi nào bạn tuyển dụng."
+        },
+        "refund": {
+          "title": "Tự hoàn tiền",
+          "text": "Trong 14 ngày kể từ khi mua, hoàn tiền credit chưa dùng chỉ với hai cú nhấp."
+        },
+        "currencies": {
+          "title": "{count, plural, other {# loại tiền tệ}}",
+          "text": "Thanh toán bằng đơn vị tiền tệ của bạn và tránh phí chuyển đổi của ngân hàng."
+        }
+      }
     },
     "demoContent": {
       "create": {

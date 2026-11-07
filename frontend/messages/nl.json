@@ -1521,9 +1521,23 @@
       "draftingNote": "Je functieomschrijving wordt gelezen.",
       "title": "Maak een interview in enkele minuten",
       "text": "Plak een functieomschrijving, pas de onderwerpen aan en je interview is binnen enkele minuten klaar.",
-      "notes": {
-        "templates": "kant-en-klare sjablonen beschikbaar",
-        "expert": "geen vakexpert nodig"
+      "cards": {
+        "expert": {
+          "title": "Geen vakexpert nodig",
+          "text": "AI leest de functieomschrijving en kiest de onderwerpen. Jij keurt ze alleen nog goed."
+        },
+        "charge": {
+          "title": "Jij houdt de regie",
+          "text": "Bewerk de onderwerpen zelf, of vraag AI dat te doen, voordat er een vraag wordt geschreven."
+        },
+        "templates": {
+          "title": "Kant-en-klare sjablonen",
+          "text": "Begin met een sjabloon in plaats van een functieomschrijving."
+        },
+        "languages": {
+          "title": "Elke functie, {count, number} talen",
+          "text": "Elke functie, in de taal die je kiest."
+        }
       },
       "describe": "<n>1.</n> Plak de omschrijving",
       "adjust": "<n>2.</n> Pas de onderwerpen aan",
@@ -1595,11 +1609,23 @@
         "once": "Deze keer toestaan",
         "never": "Nooit toestaan"
       },
-      "notes": {
-        "modes": "klik-/spraakmodus",
-        "phone": "werkt op een telefoon",
-        "time": "tijd vooraf zichtbaar",
-        "extraTime": "extra tijd voor wie dat nodig heeft"
+      "cards": {
+        "modes": {
+          "title": "Klikken of spreken",
+          "text": "Kandidaten tikken hun antwoorden aan of zeggen ze tegen Mira."
+        },
+        "phone": {
+          "title": "Werkt op een telefoon",
+          "text": "Niets te installeren: ze openen de link op elk apparaat."
+        },
+        "time": {
+          "title": "Tijd en regels vooraf zichtbaar",
+          "text": "Ze zien de tijd en elke regel voordat ze beginnen."
+        },
+        "extraTime": {
+          "title": "Extra tijd op verzoek",
+          "text": "Geef meer tijd aan wie dat nodig heeft, zonder naar een reden te vragen."
+        }
       },
       "rules": {
         "pick": "Kies één antwoord, of elk juist antwoord waar ‘Kies meerdere opties’ staat.",
@@ -1806,13 +1832,24 @@
       "bestPrice": "Beste prijs",
       "pack": "{count, number} voor {price}",
       "see": "Bekijk de prijzen",
-      "notes": {
-        "subscription": "geen abonnement",
-        "unanswered": "onbeantwoorde uitnodigingen kosten niets",
-        "expire": "credits verlopen nooit",
-        "refund": "ongebruikte betaalde credits 14 dagen lang terug te krijgen"
-      },
-      "currencies": "{count, plural, one {# valuta} other {# valuta's}}"
+      "cards": {
+        "results": {
+          "title": "Betaal alleen voor resultaten",
+          "text": "Een kandidaat die nooit antwoordt, kost niets."
+        },
+        "expire": {
+          "title": "Credits verlopen nooit",
+          "text": "Waardeer één keer op en gebruik ze wanneer je iemand aanneemt."
+        },
+        "refund": {
+          "title": "Zelf terugbetaling regelen",
+          "text": "Binnen 14 dagen na aankoop krijg je ongebruikte credits in twee klikken terug."
+        },
+        "currencies": {
+          "title": "{count, plural, one {# valuta} other {# valuta's}}",
+          "text": "Betaal in je eigen valuta en vermijd de wisselkosten van je bank."
+        }
+      }
     },
     "demoContent": {
       "create": {

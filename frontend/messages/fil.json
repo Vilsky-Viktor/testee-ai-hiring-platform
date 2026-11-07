@@ -1521,9 +1521,23 @@
       "draftingNote": "Binabasa ang iyong job description.",
       "title": "Gumawa ng interview sa loob ng ilang minuto",
       "text": "I-paste ang job description, ayusin ang mga topic, at handa na ang interview mo sa loob ng ilang minuto.",
-      "notes": {
-        "templates": "may mga handang template",
-        "expert": "hindi kailangan ng eksperto sa larangan"
+      "cards": {
+        "expert": {
+          "title": "Hindi kailangan ng eksperto",
+          "text": "Binabasa ng AI ang job description at pumipili ito ng mga topic. Aaprubahan mo na lang."
+        },
+        "charge": {
+          "title": "Ikaw pa rin ang may kontrol",
+          "text": "Ikaw mismo ang mag-edit ng mga topic, o ipagawa ito sa AI, bago maisulat ang anumang tanong."
+        },
+        "templates": {
+          "title": "Mga handang template",
+          "text": "Magsimula sa template sa halip na job description."
+        },
+        "languages": {
+          "title": "Anumang trabaho, {count, number} wika",
+          "text": "Anumang posisyon, sa wikang pipiliin mo."
+        }
       },
       "describe": "<n>1.</n> I-paste ang description",
       "adjust": "<n>2.</n> Ayusin ang mga topic",
@@ -1595,11 +1609,23 @@
         "once": "Payagan ngayong pagkakataon",
         "never": "Huwag kailanman payagan"
       },
-      "notes": {
-        "modes": "click/voice mode",
-        "phone": "gumagana sa phone",
-        "time": "makikita agad ang oras",
-        "extraTime": "dagdag na oras para sa nangangailangan"
+      "cards": {
+        "modes": {
+          "title": "Click o boses",
+          "text": "Tina-tap ng mga aplikante ang sagot nila, o sinasabi nila ito kay Mira."
+        },
+        "phone": {
+          "title": "Gumagana sa phone",
+          "text": "Walang kailangang i-install: bubuksan lang nila ang link sa anumang device."
+        },
+        "time": {
+          "title": "Makikita agad ang oras at mga patakaran",
+          "text": "Nakikita nila ang oras at bawat patakaran bago sila magsimula."
+        },
+        "extraTime": {
+          "title": "Dagdag na oras kapag hiniling",
+          "text": "Magbigay ng mas maraming oras sa sinumang nangangailangan nito, walang tinatanong na dahilan."
+        }
       },
       "rules": {
         "pick": "Pumili ng isang sagot, o lahat ng tama kapag nakasulat ang Pumili ng higit sa isang opsyon.",
@@ -1806,13 +1832,24 @@
       "bestPrice": "Pinakamagandang presyo",
       "pack": "{count, number} sa halagang {price}",
       "see": "Tingnan ang presyo",
-      "notes": {
-        "subscription": "walang subscription",
-        "unanswered": "walang bayad ang mga imbitasyong hindi sinagot",
-        "expire": "hindi nag-e-expire ang credits",
-        "refund": "mare-refund ang hindi nagamit na binayarang credits sa loob ng 14 araw"
-      },
-      "currencies": "{count, plural, one {# uri ng pera} other {# uri ng pera}}"
+      "cards": {
+        "results": {
+          "title": "Bayad para sa resulta lang",
+          "text": "Walang bayad ang aplikanteng hindi kailanman sumagot."
+        },
+        "expire": {
+          "title": "Hindi nag-e-expire ang credits",
+          "text": "Mag-top up nang isang beses at gamitin ang mga ito kahit kailan ka mag-hire."
+        },
+        "refund": {
+          "title": "Ikaw mismo ang mag-refund",
+          "text": "Sa loob ng 14 na araw mula sa pagbili, i-refund ang hindi nagamit na credits sa dalawang click."
+        },
+        "currencies": {
+          "title": "{count, plural, one {# uri ng pera} other {# uri ng pera}}",
+          "text": "Magbayad sa sarili mong currency at iwasan ang conversion fee ng bangko mo."
+        }
+      }
     },
     "demoContent": {
       "create": {

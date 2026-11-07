@@ -1,10 +1,11 @@
 import { expect, test, type Locator } from "@playwright/test";
 
+import { expectFourColumns } from "./helpers/cards";
 import { pauseClock } from "./helpers/clock";
 import { loaded } from "./helpers/waits";
 
 // The home page's "create an interview" section: one frame playing the four steps, a numbered
-// pill on its top edge naming the one shown; under it, short facts. On phones, the steps as cards.
+// pill on its top edge naming the one shown; under it, four cards. On phones, the steps as cards.
 // The last step is the candidate's inbox, the invitation opened.
 
 /** Where `frame` is on the page, rounded: its size and its place from the page's top. */
@@ -59,7 +60,7 @@ test("the create demo's pill names each step in turn and the frame never moves",
   await pauseClock(page);
   const section = page.locator("#how");
   await section.scrollIntoViewIfNeeded();
-  await expect(section.getByTestId("notes").locator("li")).not.toHaveCount(0);
+  await expectFourColumns(section);
   const frame = section.getByTestId("demo-panel");
   await expect(frame).toHaveCount(1);
   const pills = section.getByTestId("create-step");
@@ -192,7 +193,7 @@ test("on a phone the steps show as four cards in place of the frame", { tag: "@p
   expect(new Set(widths)).toEqual(new Set([page.viewportSize()!.width]));
 });
 
-test("on a 375 px phone the notes are one a row, and nothing scrolls sideways", { tag: "@phone-only" }, async ({
+test("on a 375 px phone the cards are two a row, and nothing scrolls sideways", { tag: "@phone-only" }, async ({
   page,
 }) => {
   test.setTimeout(120_000);
@@ -201,15 +202,15 @@ test("on a 375 px phone the notes are one a row, and nothing scrolls sideways", 
   const section = page.locator("#how");
   await section.scrollIntoViewIfNeeded();
 
-  const notes = section.getByTestId("notes").locator("li").filter({ visible: true });
-  const count = await notes.count();
-  expect(count).toBeGreaterThan(1);
-  const tops = await notes.evaluateAll((items) =>
+  const cards = section.getByTestId("trust-cards").locator("li");
+  await expect(cards).toHaveCount(4);
+  const tops = await cards.evaluateAll((items) =>
     items.map((item) => Math.round(item.getBoundingClientRect().top)),
   );
-  // Each note on a row of its own, one under another.
-  expect(new Set(tops).size).toBe(count);
-  expect(tops).toEqual([...tops].sort((a, b) => a - b));
+  // Two rows of two.
+  expect(tops[0]).toBe(tops[1]);
+  expect(tops[2]).toBe(tops[3]);
+  expect(tops[2]).toBeGreaterThan(tops[0]);
 
   const widths = await page.evaluate(() => ({
     scrollWidth: document.documentElement.scrollWidth,

@@ -1521,9 +1521,23 @@
       "draftingNote": "Czytamy opis Twojego stanowiska.",
       "title": "Utwórz rozmowę w kilka minut",
       "text": "Wklej opis stanowiska, dopasuj tematy, a rozmowa będzie gotowa w kilka minut.",
-      "notes": {
-        "templates": "gotowe szablony do wyboru",
-        "expert": "bez eksperta w danej dziedzinie"
+      "cards": {
+        "expert": {
+          "title": "Ekspert niepotrzebny",
+          "text": "AI czyta opis stanowiska i dobiera tematy. Ty tylko je zatwierdzasz."
+        },
+        "charge": {
+          "title": "Masz wszystko pod kontrolą",
+          "text": "Zmień tematy samodzielnie lub poproś o to AI, zanim powstanie choć jedno pytanie."
+        },
+        "templates": {
+          "title": "Gotowe szablony",
+          "text": "Zacznij od szablonu zamiast opisu stanowiska."
+        },
+        "languages": {
+          "title": "Każde stanowisko, {count, plural, one {# język} few {# języki} many {# języków} other {# języka}}",
+          "text": "Każde stanowisko, w wybranym przez Ciebie języku."
+        }
       },
       "describe": "<n>1.</n> Wklej opis",
       "adjust": "<n>2.</n> Dopasuj tematy",
@@ -1595,11 +1609,23 @@
         "once": "Zezwól tym razem",
         "never": "Nigdy nie zezwalaj"
       },
-      "notes": {
-        "modes": "tryb kliknięć/głosowy",
-        "phone": "działa na telefonie",
-        "time": "czas widoczny z góry",
-        "extraTime": "dodatkowy czas dla potrzebujących"
+      "cards": {
+        "modes": {
+          "title": "Kliknięcie lub głos",
+          "text": "Kandydaci klikają odpowiedzi albo podają je Mirze głosem."
+        },
+        "phone": {
+          "title": "Działa na telefonie",
+          "text": "Nic do instalowania: link otwiera się na każdym urządzeniu."
+        },
+        "time": {
+          "title": "Czas i zasady widoczne z góry",
+          "text": "Przed startem widzą czas i wszystkie zasady."
+        },
+        "extraTime": {
+          "title": "Dodatkowy czas na prośbę",
+          "text": "Daj więcej czasu każdemu, kto tego potrzebuje, bez pytania o powód."
+        }
       },
       "rules": {
         "pick": "Wybierz jedną odpowiedź albo każdą poprawną tam, gdzie widnieje „Zaznacz kilka odpowiedzi”.",
@@ -1806,13 +1832,24 @@
       "bestPrice": "Najlepsza cena",
       "pack": "{count, number} za {price}",
       "see": "Zobacz cennik",
-      "notes": {
-        "subscription": "bez abonamentu",
-        "unanswered": "zaproszenia bez odpowiedzi nic nie kosztują",
-        "expire": "kredyty nie wygasają",
-        "refund": "zwrot niewykorzystanych opłaconych kredytów przez 14 dni"
-      },
-      "currencies": "{count, plural, one {# waluta} few {# waluty} many {# walut} other {# waluty}}"
+      "cards": {
+        "results": {
+          "title": "Płać tylko za wyniki",
+          "text": "Kandydat, który nigdy nie odpowie, nic nie kosztuje."
+        },
+        "expire": {
+          "title": "Kredyty nie wygasają",
+          "text": "Doładuj raz i korzystaj z nich, gdy rekrutujesz."
+        },
+        "refund": {
+          "title": "Zwrot w Twoich rękach",
+          "text": "W ciągu 14 dni od zakupu zwrócisz niewykorzystane kredyty w dwóch kliknięciach."
+        },
+        "currencies": {
+          "title": "{count, plural, one {# waluta} few {# waluty} many {# walut} other {# waluty}}",
+          "text": "Płać we własnej walucie i unikaj prowizji banku za przewalutowanie."
+        }
+      }
     },
     "demoContent": {
       "create": {

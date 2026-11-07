@@ -5,10 +5,13 @@ import { LocalizedLink } from "@/components/common/localized-link"
 import { CandidatesDemo } from "@/features/landing/components/candidates-demo"
 import { DemoFit } from "@/features/landing/components/demo-fit"
 import { DEMO_GROUP } from "@/features/landing/components/demo-panel"
-import { NotesLine } from "@/features/landing/components/notes-line"
 import { LandingSection } from "@/features/landing/components/section"
 import { PhoneSteps } from "@/features/landing/components/phone-steps"
-import { CANDIDATE_NOTES, CLICK_QUESTIONS } from "@/config/candidates-demo"
+import {
+  TrustCards,
+  TrustCardText,
+} from "@/features/landing/components/trust-cards"
+import { CANDIDATE_CARDS, CLICK_QUESTIONS } from "@/config/candidates-demo"
 import { codeTokens, editorText } from "@/lib/code-tokens"
 import { TEXT_LINK } from "@/config/links"
 import { VOICE_GUIDE_PATH } from "@/config/voice"
@@ -66,7 +69,19 @@ export async function CandidatesSection() {
             })}
           </span>
         </p>
-        <NotesLine notes={CANDIDATE_NOTES.map((key) => t(`notes.${key}`))} />
+        {/* A promo: its columns pop in as they come into view (promo.css). */}
+        <div data-promo>
+          <TrustCards
+            cards={CANDIDATE_CARDS.map((key) => ({
+              key,
+              content: (
+                <TrustCardText title={t(`cards.${key}.title`)}>
+                  {t(`cards.${key}.text`)}
+                </TrustCardText>
+              ),
+            }))}
+          />
+        </div>
       </div>
     </LandingSection>
   )

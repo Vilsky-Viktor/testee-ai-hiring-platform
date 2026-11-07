@@ -24,8 +24,8 @@ export const RECEIPT_STEPS: DemoStep[] = [
   { name: "paid", ms: 86_400_000 },
 ]
 
-// The small print under the prices, by its text's key.
-export const NOTES = ["subscription", "unanswered", "expire", "refund"] as const
+// What the section adds under its cards, in the order shown.
+export const FREE_CARDS = ["results", "expire", "refund", "currencies"] as const
 
 // The two previews' one card: the receipt and the prices beside it, alike. On phones it spans the
 // screen, out of the page's side padding, with square corners.

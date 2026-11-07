@@ -1521,9 +1521,23 @@
       "draftingNote": "Leyendo la descripción del puesto.",
       "title": "Crea una entrevista en minutos",
       "text": "Pega una descripción del puesto, ajusta los temas y tu entrevista estará lista en minutos.",
-      "notes": {
-        "templates": "plantillas listas para usar",
-        "expert": "sin necesidad de un experto en la materia"
+      "cards": {
+        "expert": {
+          "title": "Sin necesidad de expertos",
+          "text": "La IA lee la descripción del puesto y elige los temas. Tú solo los apruebas."
+        },
+        "charge": {
+          "title": "Tú tienes el control",
+          "text": "Edita tú los temas, o pide a la IA que lo haga, antes de que se redacte ninguna pregunta."
+        },
+        "templates": {
+          "title": "Plantillas listas para usar",
+          "text": "Empieza con una plantilla en lugar de una descripción del puesto."
+        },
+        "languages": {
+          "title": "Cualquier puesto, {count, number} idiomas",
+          "text": "Cualquier puesto, en el idioma que elijas."
+        }
       },
       "describe": "<n>1.</n> Pega la descripción",
       "adjust": "<n>2.</n> Ajusta los temas",
@@ -1595,11 +1609,23 @@
         "once": "Permitir esta vez",
         "never": "No permitir nunca"
       },
-      "notes": {
-        "modes": "modo clic o de voz",
-        "phone": "funciona en el móvil",
-        "time": "el tiempo, visible de antemano",
-        "extraTime": "tiempo extra para quien lo necesite"
+      "cards": {
+        "modes": {
+          "title": "Clic o voz",
+          "text": "Los candidatos tocan sus respuestas o se las dicen a Mira."
+        },
+        "phone": {
+          "title": "Funciona en el móvil",
+          "text": "Nada que instalar: abren el enlace en cualquier dispositivo."
+        },
+        "time": {
+          "title": "Tiempo y reglas de antemano",
+          "text": "Ven el tiempo y todas las reglas antes de empezar."
+        },
+        "extraTime": {
+          "title": "Tiempo extra a petición",
+          "text": "Da más tiempo a quien lo necesite, sin pedir motivos."
+        }
       },
       "rules": {
         "pick": "Elige una respuesta, o todas las correctas donde ponga «Elige varias opciones».",
@@ -1806,13 +1832,24 @@
       "bestPrice": "El mejor precio",
       "pack": "{count, number} por {price}",
       "see": "Ver precios",
-      "notes": {
-        "subscription": "sin suscripción",
-        "unanswered": "las invitaciones sin respuesta no cuestan nada",
-        "expire": "los créditos no caducan",
-        "refund": "créditos pagados sin usar reembolsables durante 14 días"
-      },
-      "currencies": "{count, plural, one {# moneda} many {# monedas} other {# monedas}}"
+      "cards": {
+        "results": {
+          "title": "Paga solo por resultados",
+          "text": "Un candidato que nunca responde no cuesta nada."
+        },
+        "expire": {
+          "title": "Los créditos no caducan",
+          "text": "Recarga una vez y úsalos cuando contrates."
+        },
+        "refund": {
+          "title": "Reembolso por tu cuenta",
+          "text": "En los 14 días posteriores a la compra, reembolsa los créditos sin usar en dos clics."
+        },
+        "currencies": {
+          "title": "{count, plural, one {# moneda} many {# monedas} other {# monedas}}",
+          "text": "Paga en tu moneda y evita las comisiones de cambio de tu banco."
+        }
+      }
     },
     "demoContent": {
       "create": {

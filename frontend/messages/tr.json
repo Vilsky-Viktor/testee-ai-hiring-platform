@@ -1521,9 +1521,23 @@
       "draftingNote": "İş tanımınız okunuyor.",
       "title": "Dakikalar içinde mülakat oluşturun",
       "text": "Bir iş tanımı yapıştırın, konuları düzenleyin; mülakatınız dakikalar içinde hazır.",
-      "notes": {
-        "templates": "hazır şablonlar mevcut",
-        "expert": "alan uzmanı gerekmez"
+      "cards": {
+        "expert": {
+          "title": "Uzman gerekmez",
+          "text": "Yapay zekâ iş tanımını okur ve konuları seçer. Siz yalnızca onaylarsınız."
+        },
+        "charge": {
+          "title": "Kontrol sizde",
+          "text": "Herhangi bir soru yazılmadan önce konuları kendiniz düzenleyin veya yapay zekâdan isteyin."
+        },
+        "templates": {
+          "title": "Hazır şablonlar",
+          "text": "İş tanımı yerine bir şablonla başlayın."
+        },
+        "languages": {
+          "title": "Her pozisyon, {count, number} dil",
+          "text": "Her pozisyon, seçtiğiniz dilde."
+        }
       },
       "describe": "<n>1.</n> Tanımı yapıştırın",
       "adjust": "<n>2.</n> Konuları düzenleyin",
@@ -1595,11 +1609,23 @@
         "once": "Bu sefer izin ver",
         "never": "Hiçbir zaman izin verme"
       },
-      "notes": {
-        "modes": "tıklama ve sesli mod",
-        "phone": "telefonda çalışır",
-        "time": "süre baştan gösterilir",
-        "extraTime": "ihtiyacı olana ek süre"
+      "cards": {
+        "modes": {
+          "title": "Tıklama veya ses",
+          "text": "Adaylar yanıtlarını dokunarak seçer ya da Mira'ya sesli söyler."
+        },
+        "phone": {
+          "title": "Telefonda çalışır",
+          "text": "Kurulacak bir şey yok: bağlantıyı herhangi bir cihazda açarlar."
+        },
+        "time": {
+          "title": "Süre ve kurallar baştan gösterilir",
+          "text": "Başlamadan önce süreyi ve tüm kuralları görürler."
+        },
+        "extraTime": {
+          "title": "İstek üzerine ek süre",
+          "text": "İhtiyacı olan herkese neden sormadan daha fazla süre verin."
+        }
       },
       "rules": {
         "pick": "Bir cevap seçin ya da “Birden fazla seçenek seçin” yazan yerlerde her doğru cevabı işaretleyin.",
@@ -1806,13 +1832,24 @@
       "bestPrice": "En iyi fiyat",
       "pack": "{count, number} aday: {price}",
       "see": "Fiyatları görün",
-      "notes": {
-        "subscription": "abonelik yok",
-        "unanswered": "yanıtlanmayan davetler ücretsizdir",
-        "expire": "krediler hiç sona ermez",
-        "refund": "kullanılmayan ücretli krediler 14 gün içinde iade edilebilir"
-      },
-      "currencies": "{count, plural, one {# para birimi} other {# para birimi}}"
+      "cards": {
+        "results": {
+          "title": "Yalnızca sonuçlar için ödeyin",
+          "text": "Hiç yanıt vermeyen bir adayın maliyeti yoktur."
+        },
+        "expire": {
+          "title": "Krediler hiç sona ermez",
+          "text": "Bir kez yükleyin, işe alım yaptığınızda kullanın."
+        },
+        "refund": {
+          "title": "İadeyi kendiniz yapın",
+          "text": "Satın aldıktan sonraki 14 gün içinde kullanılmayan kredileri iki tıklamayla iade edin."
+        },
+        "currencies": {
+          "title": "{count, plural, one {# para birimi} other {# para birimi}}",
+          "text": "Kendi para biriminizle ödeyin, bankanızın kur dönüşümü ücretlerinden kaçının."
+        }
+      }
     },
     "demoContent": {
       "create": {

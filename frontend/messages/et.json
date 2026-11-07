@@ -1521,9 +1521,23 @@
       "draftingNote": "Loeme sinu töökuulutust.",
       "title": "Loo intervjuu mõne minutiga",
       "text": "Kleebi töökuulutus, kohanda teemasid ja intervjuu on mõne minutiga valmis.",
-      "notes": {
-        "templates": "valmis mallid olemas",
-        "expert": "valdkonna eksperti pole vaja"
+      "cards": {
+        "expert": {
+          "title": "Eksperti pole vaja",
+          "text": "Tehisaru loeb töökuulutuse ja valib teemad. Sina need ainult kinnitad."
+        },
+        "charge": {
+          "title": "Otsustad sina",
+          "text": "Muuda teemasid ise või palu seda tehisarul, enne kui ühtegi küsimust kirjutatakse."
+        },
+        "templates": {
+          "title": "Valmis mallid",
+          "text": "Alusta töökuulutuse asemel mallist."
+        },
+        "languages": {
+          "title": "Iga ametikoht, {count, plural, one {# keel} other {# keelt}}",
+          "text": "Iga ametikoht sinu valitud keeles."
+        }
       },
       "describe": "<n>1.</n> Kleebi kirjeldus",
       "adjust": "<n>2.</n> Kohanda teemasid",
@@ -1595,11 +1609,23 @@
         "once": "Luba seekord",
         "never": "Ära kunagi luba"
       },
-      "notes": {
-        "modes": "klõpsu- ja häälerežiim",
-        "phone": "töötab telefonis",
-        "time": "aeg on enne näha",
-        "extraTime": "lisaaeg neile, kes seda vajavad"
+      "cards": {
+        "modes": {
+          "title": "Klõps või hääl",
+          "text": "Kandidaadid klõpsavad vastuseid või ütlevad need Mirale."
+        },
+        "phone": {
+          "title": "Töötab telefonis",
+          "text": "Midagi pole vaja paigaldada: link avaneb igas seadmes."
+        },
+        "time": {
+          "title": "Aeg ja reeglid on enne näha",
+          "text": "Enne alustamist näevad nad aega ja kõiki reegleid."
+        },
+        "extraTime": {
+          "title": "Lisaaeg soovi korral",
+          "text": "Anna rohkem aega kõigile, kes seda vajavad; põhjust ei küsita."
+        }
       },
       "rules": {
         "pick": "Vali üks vastus või kõik õiged seal, kus on kirjas „Vali mitu varianti“.",
@@ -1806,13 +1832,24 @@
       "bestPrice": "Parim hind",
       "pack": "{count, number} hinnaga {price}",
       "see": "Vaata hindu",
-      "notes": {
-        "subscription": "tellimust pole",
-        "unanswered": "vastamata kutsed ei maksa midagi",
-        "expire": "krediidid ei aegu",
-        "refund": "kasutamata ostetud krediidid saab tagasi 14 päeva jooksul"
-      },
-      "currencies": "{count, plural, one {# valuuta} other {# valuutat}}"
+      "cards": {
+        "results": {
+          "title": "Maksa ainult tulemuste eest",
+          "text": "Kandidaat, kes ei vasta, ei maksa midagi."
+        },
+        "expire": {
+          "title": "Krediidid ei aegu",
+          "text": "Laadi korra juurde ja kasuta neid siis, kui värbad."
+        },
+        "refund": {
+          "title": "Tagasta ise",
+          "text": "14 päeva jooksul pärast ostu tagastad kasutamata krediidid kahe klikiga."
+        },
+        "currencies": {
+          "title": "{count, plural, one {# valuuta} other {# valuutat}}",
+          "text": "Maksa oma valuutas ja väldi panga valuutavahetustasusid."
+        }
+      }
     },
     "demoContent": {
       "create": {

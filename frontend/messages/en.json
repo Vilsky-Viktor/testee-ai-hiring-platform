@@ -1521,9 +1521,23 @@
       "draftingNote": "Reading your job description.",
       "title": "Create an interview in minutes",
       "text": "Paste a job description, adjust the topics, and your interview is ready in minutes.",
-      "notes": {
-        "templates": "ready-made templates available",
-        "expert": "no expert needed"
+      "cards": {
+        "expert": {
+          "title": "No expert needed",
+          "text": "AI reads the job and picks the topics. You just approve them."
+        },
+        "charge": {
+          "title": "You stay in charge",
+          "text": "Edit the topics yourself, or ask AI to, before any question is written."
+        },
+        "templates": {
+          "title": "Ready-made templates",
+          "text": "Start from a template instead of a job description."
+        },
+        "languages": {
+          "title": "Any job, {count, number} languages",
+          "text": "Any role, in the language you choose."
+        }
       },
       "describe": "<n>1.</n> Paste description",
       "adjust": "<n>2.</n> Adjust the topics",
@@ -1595,11 +1609,23 @@
         "once": "Allow this time",
         "never": "Never allow"
       },
-      "notes": {
-        "modes": "click/voice modes",
-        "phone": "works on a phone",
-        "time": "time shown up front",
-        "extraTime": "extra time for those in need"
+      "cards": {
+        "modes": {
+          "title": "Click or voice",
+          "text": "Candidates tap their answers, or speak them to Mira."
+        },
+        "phone": {
+          "title": "Works on a phone",
+          "text": "Nothing to install: they open the link on any device."
+        },
+        "time": {
+          "title": "Time and rules up front",
+          "text": "They see the time and every rule before they start."
+        },
+        "extraTime": {
+          "title": "Extra time on request",
+          "text": "Give more time to anyone who needs it, no reason asked."
+        }
       },
       "rules": {
         "pick": "Pick one answer, or every right one where it says Pick multiple options.",
@@ -1806,13 +1832,24 @@
       "bestPrice": "Best price",
       "pack": "{count, number} for {price}",
       "see": "See pricing",
-      "notes": {
-        "subscription": "no subscription",
-        "unanswered": "unanswered invites cost nothing",
-        "expire": "credits never expire",
-        "refund": "unused paid credits refundable within 14 days"
-      },
-      "currencies": "{count, plural, one {# currency} other {# currencies}}"
+      "cards": {
+        "results": {
+          "title": "Pay only for results",
+          "text": "A candidate who never answers costs nothing."
+        },
+        "expire": {
+          "title": "Credits never expire",
+          "text": "Top up once and use them whenever you hire."
+        },
+        "refund": {
+          "title": "Refund it yourself",
+          "text": "Within 14 days of buying, refund unused credits in two clicks."
+        },
+        "currencies": {
+          "title": "{count, plural, one {# currency} other {# currencies}}",
+          "text": "Pay in your own currency and avoid your bank's conversion fees."
+        }
+      }
     },
     "demoContent": {
       "create": {

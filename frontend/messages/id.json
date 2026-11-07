@@ -1521,9 +1521,23 @@
       "draftingNote": "Membaca deskripsi pekerjaanmu.",
       "title": "Buat wawancara dalam hitungan menit",
       "text": "Tempel deskripsi pekerjaan, sesuaikan topiknya, dan wawancaramu siap dalam hitungan menit.",
-      "notes": {
-        "templates": "templat siap pakai tersedia",
-        "expert": "tanpa perlu ahli di bidangnya"
+      "cards": {
+        "expert": {
+          "title": "Tanpa perlu ahli di bidangnya",
+          "text": "AI membaca deskripsi pekerjaan dan memilih topiknya. Kamu tinggal menyetujui."
+        },
+        "charge": {
+          "title": "Kendali tetap di tanganmu",
+          "text": "Edit topiknya sendiri, atau minta AI melakukannya, sebelum pertanyaan ditulis."
+        },
+        "templates": {
+          "title": "Templat siap pakai",
+          "text": "Mulai dari templat, bukan dari deskripsi pekerjaan."
+        },
+        "languages": {
+          "title": "Pekerjaan apa pun, {count, number} bahasa",
+          "text": "Posisi apa pun, dalam bahasa pilihanmu."
+        }
       },
       "describe": "<n>1.</n> Tempel deskripsi",
       "adjust": "<n>2.</n> Sesuaikan topiknya",
@@ -1595,11 +1609,23 @@
         "once": "Izinkan kali ini",
         "never": "Jangan pernah izinkan"
       },
-      "notes": {
-        "modes": "mode klik/suara",
-        "phone": "bisa di ponsel",
-        "time": "waktu ditampilkan di awal",
-        "extraTime": "waktu tambahan bagi yang membutuhkan"
+      "cards": {
+        "modes": {
+          "title": "Klik atau suara",
+          "text": "Kandidat mengetuk jawabannya, atau mengucapkannya kepada Mira."
+        },
+        "phone": {
+          "title": "Bisa di ponsel",
+          "text": "Tanpa instalasi: mereka cukup membuka tautan di perangkat apa pun."
+        },
+        "time": {
+          "title": "Waktu dan aturan ditampilkan di awal",
+          "text": "Mereka melihat waktu dan semua aturan sebelum mulai."
+        },
+        "extraTime": {
+          "title": "Waktu tambahan sesuai permintaan",
+          "text": "Beri waktu lebih kepada siapa pun yang membutuhkannya, tanpa perlu alasan."
+        }
       },
       "rules": {
         "pick": "Pilih satu jawaban, atau setiap jawaban yang benar jika tertulis Pilih lebih dari satu jawaban.",
@@ -1806,13 +1832,24 @@
       "bestPrice": "Harga terbaik",
       "pack": "{count, number} seharga {price}",
       "see": "Lihat harga",
-      "notes": {
-        "subscription": "tanpa langganan",
-        "unanswered": "undangan yang tidak dijawab gratis",
-        "expire": "kredit tidak pernah kedaluwarsa",
-        "refund": "kredit berbayar sisa bisa di-refund dalam 14 hari"
-      },
-      "currencies": "{count, plural, other {# mata uang}}"
+      "cards": {
+        "results": {
+          "title": "Bayar hanya untuk hasil",
+          "text": "Kandidat yang tidak pernah menjawab tidak dikenai biaya."
+        },
+        "expire": {
+          "title": "Kredit tidak pernah kedaluwarsa",
+          "text": "Isi ulang sekali dan pakai kapan pun kamu merekrut."
+        },
+        "refund": {
+          "title": "Kembalikan dana sendiri",
+          "text": "Dalam 14 hari setelah pembelian, kembalikan dana kredit yang belum terpakai dengan dua klik."
+        },
+        "currencies": {
+          "title": "{count, plural, other {# mata uang}}",
+          "text": "Bayar dengan mata uangmu sendiri dan hindari biaya konversi dari bankmu."
+        }
+      }
     },
     "demoContent": {
       "create": {

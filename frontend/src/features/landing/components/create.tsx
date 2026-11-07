@@ -9,10 +9,17 @@ import { getTranslations } from "next-intl/server"
 import { CreateFlow } from "@/features/landing/components/create-flow"
 import { DemoFit } from "@/features/landing/components/demo-fit"
 import { DEMO_GROUP } from "@/features/landing/components/demo-panel"
-import { NotesLine } from "@/features/landing/components/notes-line"
 import { PhoneSteps } from "@/features/landing/components/phone-steps"
 import { LandingSection } from "@/features/landing/components/section"
+import {
+  TrustCards,
+  TrustCardText,
+} from "@/features/landing/components/trust-cards"
+import { LOCALES } from "@/config/i18n"
 import { BAND } from "@/config/landing-backgrounds"
+
+// What the section explains under its demo, in the order shown.
+const CREATE_CARDS = ["expert", "charge", "templates", "languages"] as const
 
 // The four steps, each with its icon on phones.
 const STEPS = {
@@ -68,7 +75,21 @@ export async function CreateSection() {
             text: t(`phone.${key}`),
           }))}
         />
-        <NotesLine notes={[t("notes.expert"), t("notes.templates")]} />
+        {/* A promo: its columns pop in as they come into view (promo.css). */}
+        <div data-promo>
+          <TrustCards
+            cards={CREATE_CARDS.map((key) => ({
+              key,
+              content: (
+                <TrustCardText
+                  title={t(`cards.${key}.title`, { count: LOCALES.length })}
+                >
+                  {t(`cards.${key}.text`)}
+                </TrustCardText>
+              ),
+            }))}
+          />
+        </div>
       </div>
     </LandingSection>
   )
