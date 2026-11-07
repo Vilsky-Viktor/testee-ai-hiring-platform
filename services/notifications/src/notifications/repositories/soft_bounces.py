@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import func, select
+from sqlalchemy import delete, func, select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 from testee_common.db.db import delete_in_batches
@@ -21,6 +21,10 @@ async def add(session: AsyncSession, address: str, email_id: str, since: datetim
     )
 
     return count or 0
+
+
+async def remove_address(session: AsyncSession, address: str) -> None:
+    await session.execute(delete(SoftBounce).where(SoftBounce.address == address))
 
 
 async def forget(sessions, before: datetime, until: float | None = None) -> None:

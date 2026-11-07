@@ -2,6 +2,7 @@ from event_pushes import push
 from testee_common.auth.service_auth import issue_token
 
 from notifications.models.slack import SlackConnection
+from notifications.helpers.unsubscribe import address_hash
 from notifications.repositories import (
     bulk_recipients,
     note_notices,
@@ -9,6 +10,7 @@ from notifications.repositories import (
     pending_notes,
     sent_emails,
     slack,
+    soft_bounces,
 )
 
 
@@ -53,6 +55,11 @@ def test_a_deleted_account_takes_their_notifications_and_sent_log_and_forgets_th
     monkeypatch.setattr(sent_emails, "remove_user", forget_sent)
     monkeypatch.setattr(bulk_recipients, "remove_user", forget_bulk)
 
+    async def forget_bounces(session, address):
+        done.append(("bounces", address))
+
+    monkeypatch.setattr(soft_bounces, "remove_address", forget_bounces)
+
     async def by_author(session, user_id):
         done.append(("note items", user_id))
 
@@ -76,6 +83,7 @@ def test_a_deleted_account_takes_their_notifications_and_sent_log_and_forgets_th
         ("pending notes", "u1"),
         ("sent", "u1"),
         ("bulk", "u1"),
+        ("bounces", address_hash("ann@example.com")),
         ("candidate", "ann@example.com"),
         ("member", "ann@example.com"),
         ("slack", "u1"),
@@ -101,7 +109,7 @@ def test_an_export_holds_the_slack_channels_they_connected(client, monkeypatch):
     monkeypatch.setattr(sent_emails, "of_user", nothing)
     monkeypatch.setattr(bulk_recipients, "of_user", nothing)
 
-    response = client.post("/internal/users/u1/export", headers=fresh_headers())
+    response = client.post("/internal/users/u1/export", json={"email": ""}, headers=fresh_headers())
 
     assert response.json() == {
         "notifications": [],
@@ -109,4 +117,6 @@ def test_an_export_holds_the_slack_channels_they_connected(client, monkeypatch):
         "notifications_last_opened": None,
         "emails_sent": [],
         "emails_to_many": [],
+        "email_stopped": None,
+        "candidate_email_opt_outs": [],
     }

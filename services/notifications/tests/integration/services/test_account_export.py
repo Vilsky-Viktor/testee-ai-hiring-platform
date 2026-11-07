@@ -6,7 +6,15 @@ import uuid
 from datetime import UTC, date, datetime
 
 from notifications.constants.bulk import BulkKind
-from notifications.repositories import bulk_sends, notifications, sent_emails
+from notifications.helpers.unsubscribe import address_hash
+from notifications.repositories import (
+    bulk_sends,
+    notifications,
+    opt_outs,
+    sent_emails,
+    soft_bounces,
+    suppressed,
+)
 from notifications.services import accounts
 from tests.integration.transactions import transaction
 
@@ -22,7 +30,7 @@ def test_the_export_has_the_sent_log_the_emails_to_many_and_the_bells_last_openi
         await transaction(bulk_sends.save_page, send_id, "", f"x:{other}", [user, other], True)
         await transaction(notifications.mark_seen, user, opened)
 
-        return await accounts.export(user)
+        return await accounts.export(user, "")
 
     exported = run(scenario())
 
@@ -33,3 +41,26 @@ def test_the_export_has_the_sent_log_the_emails_to_many_and_the_bells_last_openi
         (BulkKind.LEGAL_TERMS, about, "pending")
     ]
     assert exported["notifications_last_opened"].startswith("2026-10-20T09:00:00")
+
+
+def test_the_export_says_what_is_kept_about_the_address_and_deletion_ends_its_bounces(run):
+    user, email = f"u-{uuid.uuid4()}", f"{uuid.uuid4()}@example.com"
+    hashed, company = address_hash(email), str(uuid.uuid4())
+
+    async def scenario():
+        await transaction(suppressed.add, hashed, "bounced")
+        await transaction(opt_outs.add, hashed, company)
+        await transaction(soft_bounces.add, hashed, "e-1", datetime.now(UTC))
+        exported = await accounts.export(user, email)
+        await accounts.remove_user(user, email)
+
+        return exported, await transaction(
+            soft_bounces.add, hashed, "e-2", datetime(2020, 1, 1, tzinfo=UTC)
+        )
+
+    exported, bounces = run(scenario())
+
+    assert exported["email_stopped"]["reason"] == "bounced"
+    assert [row["company_id"] for row in exported["candidate_email_opt_outs"]] == [company]
+    # Only the one just added is left.
+    assert bounces == 1
