@@ -187,9 +187,10 @@ resource "google_monitoring_alert_policy" "scheduler_failed" {
   notification_channels = local.ticket_channels
 }
 
-# Web hooks refused: Paddle's or Resend's signature check failed (WEBHOOK_SIGNATURE_REFUSED in
-# testee_common/config/constants.py). Usually a wrong or unset secret: then every payment and email event
-# is refused, as 401s the server-error alert doesn't count.
+# Web hooks refused: Paddle's, Resend's or an ATS's signature check failed
+# (WEBHOOK_SIGNATURE_REFUSED in testee_common/config/constants.py). Usually a wrong or unset
+# secret: then every payment, email or candidate event is refused, as 401s the server-error alert
+# doesn't count.
 resource "google_monitoring_alert_policy" "webhook_signature_refused" {
   display_name = "testee web hook signature refused"
   combiner     = "OR"
@@ -216,7 +217,7 @@ resource "google_monitoring_alert_policy" "webhook_signature_refused" {
   }
 
   documentation {
-    content   = "Paddle's or Resend's web hook was refused for its signature. If it keeps happening, the secret is wrong: compare `paddle-webhook-secret` or `resend-webhook-secret` (Secret Manager) with the provider's dashboard, then resend the failed events from there. Paid top-ups get their credits only once it's fixed."
+    content   = "A web hook was refused for its signature; the log line names the provider. If it keeps happening, the secret is wrong: for Paddle or Resend compare `paddle-webhook-secret` or `resend-webhook-secret` (Secret Manager) with the provider's dashboard, then resend the failed events from there; for an ATS the company saves the right key on its ATS page. Paid top-ups get their credits only once it's fixed."
     mime_type = "text/markdown"
 
     links {

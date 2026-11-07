@@ -6,6 +6,7 @@ import hmac
 import uuid
 
 import pytest
+from testee_common.config.constants import WEBHOOK_SIGNATURE_REFUSED
 
 from ats.constants.ats import GREENHOUSE_CANT_WRITE
 from tests.unit.ats_route_fakes import connect, save_key, saved, stored_for, webhook
@@ -123,7 +124,7 @@ def test_the_web_hook_has_no_secret_until_one_is_saved_and_a_reconnect_keeps_it(
     ],
 )
 def test_the_web_hook_answers_only_what_its_secret_signed(
-    client, monkeypatch, companies_api, provider, header, sign, body, unsaved
+    client, monkeypatch, companies_api, caplog, provider, header, sign, body, unsaved
 ):
     stored = stored_for(provider, monkeypatch, companies_api)
     connect(client, provider)
@@ -141,5 +142,8 @@ def test_the_web_hook_answers_only_what_its_secret_signed(
     assert client.post(url, content=body, headers=signed).status_code == 200
     assert client.post(url, content=body, headers=forged).status_code == 401
     assert client.post(url, content=body).status_code == 401
+    # The alert on refused signatures counts this line.
+    assert f"{WEBHOOK_SIGNATURE_REFUSED}: " in caplog.text
+    assert str(stored["connection"].id) in caplog.text
     # An address no connection has is answered, so the ATS doesn't keep sending.
     assert client.post(f"/webhooks/{provider}/{uuid.uuid4()}", content=body).status_code == 200

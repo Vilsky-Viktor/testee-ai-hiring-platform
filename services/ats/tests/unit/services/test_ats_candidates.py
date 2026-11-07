@@ -7,6 +7,7 @@ import uuid
 
 import pytest
 from fastapi import HTTPException, status
+from testee_common.config.constants import WEBHOOK_SIGNATURE_REFUSED
 
 from ats.helpers.ats import workable_signed
 from ats.models.ats import AtsCandidate, AtsConnection, AtsJobLink
@@ -122,13 +123,14 @@ def test_a_moved_candidate_is_invited_as_whoever_connected_workable(world):
     assert state["rows"]["c-1"].status == "invited"
 
 
-def test_an_unsigned_event_is_refused_and_invites_nobody(world):
+def test_an_unsigned_event_is_refused_and_invites_nobody(world, caplog):
     state, _ = world
 
     with pytest.raises(HTTPException) as refused:
         receive(event(), signature="forged")
 
     assert refused.value.status_code == 401
+    assert WEBHOOK_SIGNATURE_REFUSED in caplog.text
     assert state["api"]["sent"] == []
 
 

@@ -1,7 +1,10 @@
 import json
+import logging
+from typing import NoReturn
 from uuid import UUID
 
 from fastapi import HTTPException, status
+from testee_common.config.constants import WEBHOOK_SIGNATURE_REFUSED
 from testee_common.i18n.names import clean_name
 
 from ats.constants.ats import (
@@ -38,6 +41,17 @@ async def connection_of(connection_id: UUID) -> AtsConnection | None:
         return await ats.connection_by_id(session, connection_id)
 
 
+logger = logging.getLogger(__name__)
+
+
+def refuse(provider: str, connection_id: UUID) -> NoReturn:
+    """A web hook that fails its signature check, logged so the alert sees it: a wrong secret
+    means every candidate from that ATS silently never arrives."""
+    logger.error("%s: %s, connection %s", WEBHOOK_SIGNATURE_REFUSED, provider, connection_id)
+
+    raise HTTPException(status.HTTP_401_UNAUTHORIZED, f"Not signed by {provider}")
+
+
 async def link_for_job(connection: AtsConnection, job_id: str) -> AtsJobLink | None:
     async with Session() as session:
         return await ats_links.link_for_job(session, connection.id, job_id)
@@ -60,7 +74,7 @@ async def receive_workable(link_id: UUID, body: bytes, signature: str) -> None:
         return
 
     if not workable_signed(key["token"], body, signature):
-        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Not signed by Workable")
+        refuse("Workable", connection.id)
 
     event = json.loads(body)
     candidate = event.get("data") or {}
@@ -96,7 +110,7 @@ async def receive_greenhouse(connection_id: UUID, body: bytes, signature: str) -
         return
 
     if not greenhouse_signed(key["webhook_secret"], body, signature):
-        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Not signed by Greenhouse")
+        refuse("Greenhouse", connection.id)
 
     event = json.loads(body)
     application = (event.get("payload") or {}).get("application") or {}
@@ -141,7 +155,7 @@ async def receive_teamtailor(connection_id: UUID, body: bytes, signature: str) -
     if not key.get("webhook_secret") or not teamtailor_signed(
         key["webhook_secret"], body, signature
     ):
-        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Not signed by Teamtailor")
+        refuse("Teamtailor", connection.id)
 
     event = json.loads(body)
     # The event comes on its own, or inside a "payload" envelope.
@@ -177,7 +191,7 @@ async def receive_recruitee(connection_id: UUID, body: bytes, signature: str) ->
         return
 
     if not recruitee_signed(key["webhook_secret"], body, signature):
-        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Not signed by Recruitee")
+        refuse("Recruitee", connection.id)
 
     event = json.loads(body)
     payload = event.get("payload") or {}
@@ -214,7 +228,7 @@ async def receive_breezy(connection_id: UUID, body: bytes, signature: str) -> No
         return
 
     if not breezy_signed(key["webhook_secret"], body, signature):
-        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Not signed by Breezy HR")
+        refuse("Breezy HR", connection.id)
 
     event = json.loads(body)
     found = event.get("object") or {}
