@@ -179,7 +179,6 @@ def test_admins_viewers_and_others_are_refused(client, log, uid, code):
     sign_in(uid)
 
     assert client.get(URL).status_code == code
-    assert client.get(f"/companies/{COMPANY_ID}/audit").status_code == code
     assert log == []
 
 

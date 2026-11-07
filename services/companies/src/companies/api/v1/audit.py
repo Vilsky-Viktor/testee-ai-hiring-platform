@@ -8,28 +8,12 @@ from testee_common.db.paging import PageParams
 from testee_common.events.audit_actions import AuditGroup
 
 from companies.constants.audit import ACTION_FILE_NAME, LOG_NOT_OWNER
-from companies.core.db import Session
-from companies.helpers.audit import audit_event_out
-from companies.repositories import audit
-from companies.schemas.audit import ActionOut, AuditEventOut
+from companies.schemas.audit import ActionOut
 from companies.services import action_log
 from companies.services.access import require_owner
 from companies.services.file_exports import check_dates, csv_file
 
 router = APIRouter(prefix="/companies", tags=["companies"])
-
-
-@router.get("/{company_id}/audit")
-async def list_audit_events(
-    company_id: UUID, user: CurrentUser, page: PageParams
-) -> list[AuditEventOut]:
-    """Every action the company's members took, newest first; for the owner only."""
-    company = await require_owner(user, company_id, LOG_NOT_OWNER)
-
-    async with Session() as session:
-        rows = await audit.list_for_company(session, company.id, page.offset, page.limit)
-
-    return [audit_event_out(row) for row in rows]
 
 
 @router.get("/{company_id}/actions/export", response_class=Response)

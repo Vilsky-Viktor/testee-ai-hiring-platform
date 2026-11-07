@@ -119,7 +119,7 @@ Every action a company's members take on it is logged: who took it, what it was 
 
 **API keys.** An API key is its own author, never a person: an action it takes, over the API or by an AI agent over MCP ([API keys](mcp.md#api-keys)), is recorded with the key's id (`key_id`, and `user_id` `key:<id>`) and its way (`api` or `mcp`). The row reads as above, the name looked up from the api service when the log is read (`key_name`), so a renamed key shows its current name and a deleted one reads as a deleted key.
 
-**Reading it.** `GET /companies/{id}/actions?member_id&group&from&to&offset&limit` for the page; `GET /companies/{id}/audit` gives the same actions without who and what, for a signed-in owner. Both are for the owner only: admins and viewers get 403, others 404. Actions are kept for 12 months, then the daily retention job deletes them, and they go with the company when it's removed. When a member deletes their account, their actions stay with the company without their id (`deleted-user`, set a batch at a time); their data export lists them.
+**Reading it.** `GET /companies/{id}/actions?member_id&group&from&to&offset&limit` for the page. It's for the owner only: admins and viewers get 403, others 404. Actions are kept for 12 months, then the daily retention job deletes them, and they go with the company when it's removed. When a member deletes their account, their actions stay with the company without their id (`deleted-user`, set a batch at a time); their data export lists them.
 
 ## Bias-audit export
 

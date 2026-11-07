@@ -84,7 +84,6 @@ EXCEPTIONS = {
     # Every member, viewers too, writes notes on an interview.
     "POST /interviews/{interview_id}/notes": {"viewer": ALLOWED},
     # The audit and action logs are the owner's; credits' history, owners' and admins'.
-    "GET /companies/{company_id}/audit": OWNER_ONLY,
     "GET /companies/{company_id}/actions": OWNER_ONLY,
     "GET /companies/{company_id}/actions/export": OWNER_ONLY,
     "GET /companies/{company_id}/bias-audit": OWNER_ONLY,
