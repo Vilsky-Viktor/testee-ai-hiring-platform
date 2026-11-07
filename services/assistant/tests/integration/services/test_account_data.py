@@ -5,8 +5,12 @@ connections last asked for updates, leaving another user's untouched."""
 import uuid
 from datetime import UTC, datetime
 
+import httpx
+import pytest
+
 from assistant.constants.chat import Role, Source
 from assistant.core.db import Session
+from assistant.integrations import trace_retention
 from assistant.models.conversations import Message, ToolCall
 from assistant.repositories import conversations, messages, oauth, update_checks
 from assistant.services import accounts
@@ -76,3 +80,44 @@ def test_the_export_names_the_tools_and_deletion_takes_the_update_checks(run):
         {"tool": "list_candidates", "arguments": ["interview_id"], "state": "done"}
     ]
     assert (mine, theirs is not None) == (None, True)
+
+
+def refusing_traces(monkeypatch, status):
+    async def delete_traces(trace_ids):
+        request = httpx.Request("DELETE", "https://langfuse.test")
+        response = httpx.Response(status, request=request)
+
+        raise httpx.HTTPStatusError("refused", request=request, response=response)
+
+    monkeypatch.setattr(accounts, "tracing_on", lambda: True)
+    monkeypatch.setattr(trace_retention, "delete_traces", delete_traces)
+
+
+def test_langfuse_refusing_for_good_doesnt_stop_the_deletion(run, monkeypatch):
+    user = f"data-{uuid.uuid4().hex[:8]}"
+    refusing_traces(monkeypatch, 404)
+
+    async def scenario():
+        await answered_with_a_tool(user)
+        await accounts.delete_user(user)
+
+        async with Session() as session:
+            return await messages.export(session, user)
+
+    assert run(scenario()) == []
+
+
+def test_a_langfuse_outage_raises_with_the_conversations_kept(run, monkeypatch):
+    user = f"data-{uuid.uuid4().hex[:8]}"
+    refusing_traces(monkeypatch, 503)
+
+    async def scenario():
+        await answered_with_a_tool(user)
+
+        with pytest.raises(httpx.HTTPStatusError):
+            await accounts.delete_user(user)
+
+        async with Session() as session:
+            return await messages.export(session, user)
+
+    assert run(scenario()) != []

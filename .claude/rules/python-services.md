@@ -60,6 +60,12 @@ keeps the layout above and adds `events/` and `handlers/` beside `api/`. Every h
 idempotent, safe to retry and independent of event order (rule 11); a handler is an entry point
 like a route and calls services, never repositories with their own commit.
 
+An error of the event itself is final: it's logged and acknowledged (`handle_or_drop`), so it
+must never end a handler with work undone. An external call before the local save catches a
+refusal no retry changes (`unhandleable.final`) and goes on, raising only outages. A fan-out
+treats one member's failure as that member's: gather with `return_exceptions=True`, a `SAVEPOINT`
+per row.
+
 ## Shared library
 
 `packages/common` (`testee_common`) holds only what two or more services use (rule 10). Services

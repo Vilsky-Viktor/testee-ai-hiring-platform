@@ -31,17 +31,32 @@ def batch(size):
     return [uuid.uuid4() for _ in range(size)]
 
 
-def test_a_fixed_questions_copies_are_fixed_until_none_are_left(client, monkeypatch, told):
-    batches = [batch(copy_fixes.COPY_FIX_BATCH), batch(copy_fixes.COPY_FIX_BATCH), batch(3)]
-    fixed = [copy for found in batches for copy in found]
+def storing(monkeypatch, batches):
+    """The storage's copies, batch by batch; what it was asked for."""
     asked = []
 
-    async def fix_copies(session, question_id, old_text, old_options):
+    async def content_of(session, question_id):
+        return "New?", []
+
+    async def stale_copies(session, question_id, old_text, old_options):
         asked.append((question_id, old_text, old_options))
 
         return batches.pop(0)
 
-    monkeypatch.setattr(copy_storage, "fix_copies", fix_copies)
+    async def fix_copy(session, copy_id, text, options):
+        return None
+
+    monkeypatch.setattr(copy_storage, "content_of", content_of)
+    monkeypatch.setattr(copy_storage, "stale_copies", stale_copies)
+    monkeypatch.setattr(copy_storage, "fix_copy", fix_copy)
+
+    return asked
+
+
+def test_a_fixed_questions_copies_are_fixed_until_none_are_left(client, monkeypatch, told):
+    batches = [batch(copy_fixes.COPY_FIX_BATCH), batch(copy_fixes.COPY_FIX_BATCH), batch(3)]
+    fixed = [copy for found in batches for copy in found]
+    asked = storing(monkeypatch, batches)
 
     response = client.post("/internal/events", json=push("question.fixed", EVENT))
 
@@ -51,10 +66,7 @@ def test_a_fixed_questions_copies_are_fixed_until_none_are_left(client, monkeypa
 
 
 def test_a_push_out_of_time_with_copies_left_comes_back(client, monkeypatch, told):
-    async def fix_copies(session, question_id, old_text, old_options):
-        return batch(copy_fixes.COPY_FIX_BATCH)
-
-    monkeypatch.setattr(copy_storage, "fix_copies", fix_copies)
+    storing(monkeypatch, [batch(copy_fixes.COPY_FIX_BATCH) for _ in range(9)])
     monkeypatch.setattr(copy_fixes, "COPY_FIX_SECONDS", -1)
 
     response = client.post("/internal/events", json=push("question.fixed", EVENT))

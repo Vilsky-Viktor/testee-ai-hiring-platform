@@ -11,7 +11,9 @@ import httpx
 from fastapi import HTTPException, status
 from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel
+from sqlalchemy.exc import IntegrityError
 from testee_common.auth.encryption import decrypt
+from testee_common.events.unhandleable import final
 from testee_common.http.public_urls import resolved_address
 
 from api.config import settings
@@ -66,13 +68,31 @@ async def send(
 
     body = body_of(event_id, event_type, jsonable_encoder(data), occurred_at)
     # All at once, so slow endpoints together stay within Pub/Sub's acknowledgement deadline.
-    taken = await asyncio.gather(*(deliver(hook, event_id, body) for hook in hooks))
+    taken = await asyncio.gather(
+        *(deliver(hook, event_id, body) for hook in hooks), return_exceptions=True
+    )
     next_at = datetime.now(UTC) + retry_delay(1)
+    failures = [result for result in taken if isinstance(result, Exception)]
 
     for hook, ok in zip(hooks, taken, strict=True):
-        if not ok:
-            async with Session.begin() as session:
-                await retries.add(session, hook.id, event_id, body.decode(), next_at)
+        if ok is False:
+            await leave_to_retry(hook, event_id, body, next_at)
+
+    # One web hook's failure is its own, so the others got theirs above. A web hook deleted while
+    # sending is nothing more to do; an outage raises and the event comes back for the rest.
+    for failure in failures:
+        if not final(failure):
+            raise failure
+
+        logger.warning("Web hook gone during event %s: %s", event_id, type(failure).__name__)
+
+
+async def leave_to_retry(hook: Webhook, event_id: str, body: bytes, next_at: datetime) -> None:
+    try:
+        async with Session.begin() as session:
+            await retries.add(session, hook.id, event_id, body.decode(), next_at)
+    except IntegrityError:
+        logger.warning("Web hook %s gone before its retry of %s", hook.id, event_id)
 
 
 async def candidate_event(

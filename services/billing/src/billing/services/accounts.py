@@ -5,15 +5,15 @@ from billing.constants.products import OwnerType
 from billing.core.db import Session
 from billing.repositories import auto_top_ups as auto_top_up_rows
 from billing.repositories import currencies, ledger, purchases, referrals, usage
-from billing.services import auto_top_ups
+from billing.services import auto_top_up_cancels, auto_top_ups
 
 
 async def delete_company(company_id: str) -> None:
-    """Its automatic top-up off first (Paddle cancels its card's subscription, or this raises and
-    the deletion is tried again); its holds and history a batch at a time; then its wallet,
+    """Its automatic top-up off first (Paddle cancels its card's subscription, or an outage raises
+    and the deletion is tried again); its holds and history a batch at a time; then its wallet,
     referral and currency in one save. Its purchases stay for the accounts, and its AI costs and
     limit hits without the company."""
-    await auto_top_ups.turn_off(OwnerType.COMPANY, company_id)
+    await auto_top_ups.turn_off(OwnerType.COMPANY, company_id, deleting=True)
 
     # The wallet first: from here a payment arriving finds it gone (ledger.lock_wallet), so no
     # entry lands after the history's batches.
@@ -28,10 +28,10 @@ async def delete_company(company_id: str) -> None:
 
 async def delete_user(user_id: str) -> None:
     """The subscriptions of the automatic top-ups paid with the user's card are cancelled first
-    (or this raises and the deletion is tried again); then, in one save, those top-ups go off,
+    (or an outage raises and the deletion is tried again); then, in one save, those top-ups go off,
     their purchases for their companies stay without them and their currency goes. One started
     meanwhile is cancelled after. Their AI costs and limit hits stay, without them."""
-    cancelled = await auto_top_ups.cancel_for_buyer(user_id)
+    cancelled = await auto_top_up_cancels.cancel_for_buyer(user_id)
 
     async with Session.begin() as session:
         left = await auto_top_up_rows.remove_for_buyer(session, user_id)
@@ -39,7 +39,7 @@ async def delete_user(user_id: str) -> None:
         await currencies.forget(session, ChoiceOwner.USER, user_id)
 
     for subscription_id in set(left) - cancelled:
-        await auto_top_ups.cancel(subscription_id)
+        await auto_top_up_cancels.cancel_for_deletion(subscription_id)
 
     await usage.forget(Session, "user_id", user_id)
 

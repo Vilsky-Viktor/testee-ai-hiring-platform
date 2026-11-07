@@ -1,7 +1,7 @@
+import asyncio
 import logging
 from datetime import UTC, datetime
 
-import httpx
 from fastapi import HTTPException, status
 from testee_common.config.constants import DEFAULT_LANGUAGE
 from testee_common.events.analytics import track
@@ -18,6 +18,7 @@ from billing.constants.products import (
     SUBSCRIPTION_ENDED_STATUS,
     TOP_UP_UNAVAILABLE,
     TOP_UPS,
+    WEB_HOOK_STEP_SECONDS,
 )
 from billing.core.db import Session
 from billing.helpers.agreed_terms import agreed_terms
@@ -26,9 +27,11 @@ from billing.integrations import paddle
 from billing.repositories import auto_top_up_charges, auto_top_ups, company_actions
 from billing.repositories.events import tell
 from billing.schemas.billing import AutoTopUpIn, AutoTopUpOut, CheckoutOut
-from billing.services.auto_top_up_charging import check, check_briefly
+from billing.services.auto_top_up_cancels import cancel, cancel_for_deletion, cancel_quietly
+from billing.services.auto_top_up_charging import check_briefly
 from billing.services.auto_top_up_notices import turned_on
 from billing.services.auto_top_up_prices import charge_price, listed
+from billing.services.web_hook_steps import within_web_hook
 
 logger = logging.getLogger(__name__)
 
@@ -152,12 +155,18 @@ async def turn_on(
 
 
 async def turn_off(
-    owner_type: str, owner_id: str, buyer_id: str | None = None, actor: str | None = None
+    owner_type: str,
+    owner_id: str,
+    buyer_id: str | None = None,
+    actor: str | None = None,
+    deleting: bool = False,
 ) -> None:
     """Off, once the subscription that keeps the card is cancelled: if Paddle can't cancel it,
     nothing changes and this raises, so turning it off (or deleting the company) can be tried
     again. With `buyer_id`, only if that person's card pays for it (a member removed). An
-    `actor`'s turning it off goes to the company's action log in the same save."""
+    `actor`'s turning it off goes to the company's action log in the same save. `deleting`: its
+    company is going, which only Paddle's outage holds up (cancel_for_deletion)."""
+    stop = cancel_for_deletion if deleting else cancel
     async with Session() as session:
         row = await auto_top_ups.get(session, owner_type, owner_id)
 
@@ -165,7 +174,7 @@ async def turn_off(
         return
 
     if row.subscription_id:
-        await cancel(row.subscription_id)
+        await stop(row.subscription_id)
 
     async with Session.begin() as session:
         left = await auto_top_ups.remove(session, owner_type, owner_id, buyer_id)
@@ -175,39 +184,7 @@ async def turn_off(
 
     # One started meanwhile goes too.
     if left and left != row.subscription_id:
-        await cancel(left)
-
-
-async def cancel_for_buyer(buyer_id: str) -> set[str]:
-    """Cancels the subscriptions of the automatic top-ups paid with this person's card, so it's
-    never charged again; the ones cancelled. If Paddle can't cancel one, this raises and the
-    account's deletion is tried again (services/accounts.py)."""
-    async with Session() as session:
-        rows = await auto_top_ups.of_buyer(session, buyer_id)
-
-    cancelled = {row.subscription_id for row in rows if row.subscription_id}
-
-    for subscription_id in cancelled:
-        await cancel(subscription_id)
-
-    return cancelled
-
-
-async def cancel(subscription_id: str) -> None:
-    """Cancels the subscription; one Paddle has already ended counts as cancelled. Raises
-    otherwise."""
-    try:
-        await paddle.cancel(subscription_id)
-    except httpx.HTTPStatusError:
-        if await paddle.subscription_status(subscription_id) != SUBSCRIPTION_ENDED_STATUS:
-            raise
-
-
-async def cancel_quietly(subscription_id: str) -> None:
-    try:
-        await paddle.cancel(subscription_id)
-    except Exception:
-        logger.exception("Couldn't cancel subscription %s", subscription_id)
+        await stop(left)
 
 
 async def start(custom: dict, subscription_id: str, currency: str) -> None:
@@ -222,7 +199,9 @@ async def start(custom: dict, subscription_id: str, currency: str) -> None:
     if await owner_of(subscription_id) == owner:
         return
 
-    if await paddle.subscription_status(subscription_id) == SUBSCRIPTION_ENDED_STATUS:
+    status_now = await paddle.subscription_status(subscription_id, WEB_HOOK_STEP_SECONDS)
+
+    if status_now == SUBSCRIPTION_ENDED_STATUS:
         return
 
     async with Session.begin() as session:
@@ -236,13 +215,15 @@ async def start(custom: dict, subscription_id: str, currency: str) -> None:
             tell(session, turned_on(attached, subscription_id, datetime.now(UTC)))
 
     if not started:
-        await cancel_quietly(subscription_id)
+        await cancel_quietly(subscription_id, WEB_HOOK_STEP_SECONDS)
 
         return
 
-    await track("auto_top_up_on", company_id=owner[1])
-    # The balance may already be under the threshold.
-    await check(*owner)
+    # The balance may already be under the threshold. Together, as Paddle waits for the answer.
+    await asyncio.gather(
+        within_web_hook(track("auto_top_up_on", company_id=owner[1])),
+        check_briefly(*owner, WEB_HOOK_STEP_SECONDS),
+    )
 
 
 async def owner_of(subscription_id: str) -> tuple[str, str] | None:
@@ -267,7 +248,7 @@ async def cancel_scheduled(data: dict) -> None:
     if scheduled.get("action") != SCHEDULED_CANCEL or await owner_of(data["id"]) is None:
         return
 
-    await cancel(data["id"])
+    await cancel(data["id"], WEB_HOOK_STEP_SECONDS)
     await ended(data["id"])
 
 
@@ -278,4 +259,4 @@ async def card_saved(subscription_id: str, saved_at: datetime) -> None:
         owner = await auto_top_up_charges.resume(session, subscription_id, saved_at)
 
     if owner:
-        await check_briefly(*owner)
+        await check_briefly(*owner, WEB_HOOK_STEP_SECONDS)

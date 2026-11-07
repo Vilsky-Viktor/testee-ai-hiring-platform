@@ -12,6 +12,9 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.engine import make_url
 from testee_common.db.clean_start import start_clean, tables_left_empty
 
+# How Paddle answers a cancel, by the start of the subscription's id.
+CANCEL_REFUSALS = {"sub_ended": 400, "sub_down": 503, "sub_gone": 404, "sub_refused": 400}
+
 if not os.getenv("INTEGRATION_TESTS"):
     collect_ignore_glob = ["test_*.py", "*/test_*.py"]
 
@@ -73,7 +76,8 @@ def paddle_calls(monkeypatch):
     with sub_ended has ended in Paddle (cancelling it again is refused); one starting with
     sub_declined has a declined card (sub_declined_hard, for good); one starting with
     sub_timeout times out; Paddle fails to
-    cancel one starting with sub_down."""
+    cancel one starting with sub_down, no longer has one starting with sub_gone, and refuses to
+    cancel one starting with sub_refused for good."""
     import httpx
 
     from billing.config import settings
@@ -81,6 +85,12 @@ def paddle_calls(monkeypatch):
     from billing.integrations import paddle
 
     calls = []
+
+    def refused(status):
+        request = httpx.Request("POST", "https://paddle.test")
+        response = httpx.Response(status, request=request)
+
+        raise httpx.HTTPStatusError("not cancelled", request=request, response=response)
 
     async def charge(subscription_id, price):
         """Records what it charged: the fixed top-up's key and its price."""
@@ -110,17 +120,14 @@ def paddle_calls(monkeypatch):
         decline that can't pass later; the others give no reason."""
         return "fraud" if subscription_id.startswith("sub_declined_hard") else None
 
-    async def cancel(subscription_id):
+    async def cancel(subscription_id, timeout=None):
         calls.append(("cancel", subscription_id))
 
-        if subscription_id.startswith(("sub_ended", "sub_down")):
-            request = httpx.Request("POST", "https://paddle.test")
-            status = 400 if subscription_id.startswith("sub_ended") else 503
-            response = httpx.Response(status, request=request)
+        for prefix, status in CANCEL_REFUSALS.items():
+            if subscription_id.startswith(prefix):
+                refused(status)
 
-            raise httpx.HTTPStatusError("not cancelled", request=request, response=response)
-
-    async def subscription_status(subscription_id):
+    async def subscription_status(subscription_id, timeout=None):
         return "canceled" if subscription_id.startswith("sub_ended") else "active"
 
     async def set_currency(subscription_id, currency):

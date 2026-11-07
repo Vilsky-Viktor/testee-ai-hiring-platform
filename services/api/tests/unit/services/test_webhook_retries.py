@@ -2,6 +2,7 @@ import asyncio
 from datetime import UTC, datetime, timedelta
 
 import pytest
+from sqlalchemy.exc import IntegrityError, OperationalError
 
 from api.constants.api import (
     RETRY_BATCH,
@@ -187,3 +188,39 @@ def test_the_retry_job_starts_no_batch_once_its_time_is_up(endpoints, monkeypatc
 
     # Started at 0, 15 and 30; not at 45, past RETRY_RUN_SECONDS.
     assert run() == 3 * RETRY_BATCH
+
+
+def failing_at(monkeypatch, url, error):
+    """The send to `url` ends in `error`, as a web hook deleted meanwhile or an outage does."""
+    deliver = delivery.deliver
+
+    async def failing(hook, event_id, body):
+        if hook.url == url:
+            raise error
+
+        return await deliver(hook, event_id, body)
+
+    monkeypatch.setattr(delivery, "deliver", failing)
+
+
+def test_a_web_hook_deleted_while_sending_leaves_the_others_their_retries(endpoints, monkeypatch):
+    endpoints["hook"]("https://gone.example/x")
+    down = endpoints["hook"]("https://down.example/x")
+    endpoints["failing"].add("https://down.example/x")
+    failing_at(monkeypatch, "https://gone.example/x", IntegrityError("log", {}, Exception()))
+
+    finish()
+
+    assert list(endpoints["retries"]) == [(down.id, "e1")]
+
+
+def test_an_outage_on_one_web_hook_keeps_the_others_retries_and_raises(endpoints, monkeypatch):
+    endpoints["hook"]("https://cut.example/x")
+    down = endpoints["hook"]("https://down.example/x")
+    endpoints["failing"].add("https://down.example/x")
+    failing_at(monkeypatch, "https://cut.example/x", OperationalError("log", {}, Exception()))
+
+    with pytest.raises(OperationalError):
+        finish()
+
+    assert list(endpoints["retries"]) == [(down.id, "e1")]

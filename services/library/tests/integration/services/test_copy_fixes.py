@@ -1,6 +1,7 @@
 import pytest
 from fastapi import HTTPException
 from sqlalchemy import select, update
+from sqlalchemy.exc import IntegrityError
 
 from library.constants.events import QUESTION_FIXED
 from library.core.db import Session
@@ -134,3 +135,34 @@ def test_copies_are_fixed_a_batch_at_a_time_and_a_push_past_its_time_comes_back(
     assert status_code == 503
     assert texts.count("Which is right?") == 1
     assert after == ["Which is right?", "Which is right?"]
+
+
+def test_a_copy_that_fails_leaves_the_others_fixed(run, monkeypatch):
+    archive = quality.archive
+
+    async def failing(session, question_id, fixed=False):
+        if question_id == broken:
+            raise IntegrityError("copy", {}, Exception("gone"))
+
+        await archive(session, question_id, fixed)
+
+    monkeypatch.setattr(quality, "archive", failing)
+
+    async def scenario():
+        nonlocal broken
+        template = await interview("Rigger", template=True, questions=COPYABLE)
+        acme = await copy_of(template, a_company("acme-broken"))
+        globex = await copy_of(template, a_company("globex-broken"))
+        broken = (await first_question(acme.id)).id
+        original = (await first_question(acme.id)).source_question_id
+        await transaction(quality.save_flag, original, "wrong_key")
+        await question_service.replace(original, "Which is right?", FIXED)
+        await copy_fixes.fix_copies(await fixed_event(original))
+
+        return await first_question(acme.id), await first_question(globex.id)
+
+    broken = None
+    failed, fixed = run(scenario())
+
+    assert failed.text != "Which is right?"
+    assert fixed.text == "Which is right?"

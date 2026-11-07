@@ -8,19 +8,22 @@ from library.models.sets import Question
 from library.repositories import quality
 
 
-async def fix_copies(
+async def content_of(
+    session: AsyncSession, question_id: uuid.UUID
+) -> tuple[str, list[dict]] | None:
+    """A question's current text and options, if it's still there."""
+    question = await session.get(Question, question_id)
+
+    return (question.text, question.options) if question else None
+
+
+async def stale_copies(
     session: AsyncSession, question_id: uuid.UUID, old_text: str, old_options: list[dict]
 ) -> list[uuid.UUID]:
     """Up to COPY_FIX_BATCH copies of a fixed bank question that still hold its old content
-    (not one a company changed, nor one fixed on its own) get its current content, each kept as
-    a fixed revision; their ids. Copies another run holds are skipped, and a fixed copy no
-    longer matches, so running it again fixes nothing twice."""
-    original = await session.get(Question, question_id)
-
-    if original is None:
-        return []
-
-    copies = list(
+    (not one a company changed, nor one fixed on its own). Copies another run holds are skipped,
+    and a fixed copy no longer matches, so running it again fixes nothing twice."""
+    return list(
         await session.scalars(
             select(Question.id)
             .where(
@@ -33,14 +36,12 @@ async def fix_copies(
         )
     )
 
-    for copy_id in copies:
-        await quality.archive(session, copy_id, fixed=True)
 
-    if copies:
-        await session.execute(
-            update(Question)
-            .where(Question.id.in_(copies))
-            .values(text=original.text, options=original.options)
-        )
-
-    return copies
+async def fix_copy(
+    session: AsyncSession, copy_id: uuid.UUID, text: str, options: list[dict]
+) -> None:
+    """The copy gets this content, its old one kept as a fixed revision."""
+    await quality.archive(session, copy_id, fixed=True)
+    await session.execute(
+        update(Question).where(Question.id == copy_id).values(text=text, options=options)
+    )
