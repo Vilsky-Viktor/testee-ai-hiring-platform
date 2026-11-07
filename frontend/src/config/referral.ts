@@ -3,5 +3,6 @@
 export const REFERRAL_COOKIE = "testee_ref"
 export const REFERRAL_PARAM = "ref"
 export const REFERRAL_DAYS = 30
-// The shape of a code billing makes; anything else isn't kept.
+// The shape of a code billing makes; anything else isn't kept. Mirrors REFERRAL_CODE_PATTERN in
+// testee_common.config.constants.
 export const REFERRAL_CODE = /^[A-Za-z0-9_-]{4,16}$/

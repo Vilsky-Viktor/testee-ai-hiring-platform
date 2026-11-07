@@ -1,5 +1,6 @@
 import re
 
+from testee_common.config.constants import REFERRAL_CODE_PATTERN
 from testee_common.i18n import error_codes
 
 # Each tool call waits this long for its service (an ATS's job list is a live call to the ATS).
@@ -14,9 +15,8 @@ MAX_STRING_LENGTH = 300
 WRITE_METHODS = ("POST", "PUT", "PATCH", "DELETE")
 # Routes the assistant never calls: other services' and testee's own team's.
 FORBIDDEN_PATH_PREFIXES = ("/internal", "/superadmin")
-# A referral code as billing makes them (URL-safe): only one that reads right is passed on, in
-# the cookie companies reads.
-REFERRAL_CODE = re.compile(r"[A-Za-z0-9_-]{1,64}")
+# Only a referral code that reads right is passed on, in the cookie companies reads.
+REFERRAL_CODE = re.compile(REFERRAL_CODE_PATTERN)
 # The page that sorts out a refusal, by the service's `code`: the link comes from here, so neither
 # the service's text nor the model writes it.
 REFUSAL_PAGES = {error_codes.FIRST_COMPANY_ON_SITE: "/companies"}

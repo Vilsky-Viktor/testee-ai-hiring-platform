@@ -158,16 +158,6 @@ class TopUpCheckoutOut(BaseModel):
     transaction_id: str
 
 
-class WelcomeIn(BaseModel):
-    owner_email: str
-    # Where the owner is as they create it: the company's currency is that country's.
-    country: str | None = None
-    # The code of the link the owner came through, and their other companies, which can't
-    # refer this one.
-    referral: str | None = None
-    related: list[str] = Field(default=[], max_length=MAX_PAGE_SIZE)
-
-
 class ReferralRewardOut(BaseModel):
     """A company that came through the link and topped up, so both got the reward."""
 

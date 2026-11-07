@@ -30,6 +30,9 @@ def sent(monkeypatch):
         # Only companies reads it, and only a code that reads right is passed on.
         ("billing", "abc123", None),
         ("companies", "abc; other=1", None),
+        # Billing makes eight characters: three or a long one aren't its codes.
+        ("companies", "abc", None),
+        ("companies", "a" * 17, None),
         ("companies", None, None),
     ],
 )
