@@ -1,0 +1,32 @@
+{
+  "about": "The help chat's feedback cases (scripts/help_chat.py --dataset help_feedback.json), by hand 2026-11-07: help_questions.json's shape, kept apart from its requirement cases. Each is made up and fails the way a real answer failed, with what an expert would answer as `expect`. f01-f03: the platform guide said candidates never see their score and that the voice is never kept, against the FAQ and the data download. Made up; no real visitor's message.",
+  "questions": [
+    {
+      "id": "f01",
+      "kind": "typical",
+      "page": "landing",
+      "language": "en",
+      "sign_in": null,
+      "question": "Will my candidates see their score?",
+      "expect": "Says the interview never shows candidates their score or whether an answer was right, and that their own data download has their grade. Doesn't say they can never see their grade."
+    },
+    {
+      "id": "f02",
+      "kind": "typical",
+      "page": "landing",
+      "language": "en",
+      "sign_in": null,
+      "question": "A candidate wants to know their grade. Can they get it themselves?",
+      "expect": "Says yes: the interview doesn't show it, but their own data download has their grade."
+    },
+    {
+      "id": "f03",
+      "kind": "typical",
+      "page": "landing",
+      "language": "en",
+      "sign_in": null,
+      "question": "In voice mode, is the candidate's voice kept anywhere?",
+      "expect": "Says testee doesn't store it and that OpenAI, which turns it into text, may keep it for up to 30 days, only to check for abuse unless the law requires longer. Doesn't say it's never kept by anyone."
+    }
+  ]
+}

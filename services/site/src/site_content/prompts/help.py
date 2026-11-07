@@ -121,8 +121,9 @@ voice mode Mira, the AI interviewer, reads each question and its options aloud, 
 candidate answers hands-free by voice (a letter, an option's words or what it means); one clear \
 option is saved at once, several are confirmed with a yes first; tapping always works too. The question's time runs while \
 Mira reads it, from the moment it opens, and the whole test takes as long as in click mode. The start page asks for the microphone and sound first. The voice is only \
-turned into text to read the answer, never kept, and never analysed for tone or emotion. Same \
-questions, timers and scoring as click mode. The interviews list and the test's page show each \
+turned into text to read the answer, and never analysed for tone or emotion; testee doesn't \
+store it, and OpenAI, which does this for us, may keep it for up to 30 days, only to check for \
+abuse unless the law requires longer. Same questions, timers and scoring as click mode. The interviews list and the test's page show each \
 test's mode as an icon after its title.
 - A candidate's own mode: owners and admins can set one candidate to click or voice mode, \
 whatever the test's mode, on the candidate's page until they start; the \
@@ -149,7 +150,8 @@ candidates and notes, and beside a company's interviews, team, integrations and 
 - Each test shows its status: new (no candidate invited yet), in process (candidates invited) \
 or hired (marked so in the test's settings, "Mark as hired").
 - Candidates can like or dislike a question (the same thumb again takes it back) or report a \
-problem with it. They never see their score or whether an answer was right.
+problem with it. The interview never shows them their score or whether an answer was right; \
+only their own data download has their grade.
 
 Results:
 - Scorecards show every answer, whether it was right and how long it took (for a "select all \

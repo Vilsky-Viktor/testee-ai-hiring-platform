@@ -354,7 +354,7 @@ plain-text traps (a table's rows, a spreadsheet formula, prose, CSV rows, an equ
 instruction to tag everything "python") and examples of several files. Graded by code
 (`code_languages_test.py`); a regression set, near 100%.
 
-## Feedback cases: `assistant_feedback.json` and `help_feedback.json` (by hand; none yet)
+## Feedback cases: `assistant_feedback.json` and `help_feedback.json` (by hand)
 
 Made-up cases that fail the way an answer people voted down failed, each with the answer an
 expert would give as its `expect`, never the disliked answer or anyone's text; kept apart from the
@@ -367,7 +367,9 @@ leans negative. A help chat case has `help_questions.json`'s shape and runs with
 `help_chat.py --dataset help_feedback.json`; an assistant case has `assistant_questions.json`'s
 `general` or `page` shape on its pages and runs with `page_context.py --dataset
 assistant_feedback.json`. On 2026-10-29 neither Langfuse nor the local tables had a thumbs down
-(Langfuse had 2 votes, both up), so neither file exists yet.
+(Langfuse had 2 votes, both up), so `assistant_feedback.json` doesn't exist yet.
+`help_feedback.json` began on 2026-11-07 with `f01`–`f03`, from lines the CEO found wrong in the
+platform guide: whether candidates see their grade, and whether the voice is kept.
 
 ## `help_questions.json` (by hand, 2026-10-20)
 

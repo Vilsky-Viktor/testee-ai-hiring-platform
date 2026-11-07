@@ -280,3 +280,15 @@ take a vote back too): passed 96.0% (88.9–98.6), made up 4.0% (1.4–11.1), si
 identity 18 of 18 (`results/help_chat_topic-questions.json`). Misses: h17's known invented
 retake limit (2 of 3) and h18 once (the amount shown at checkout); none about questions. Within
 the noise of the last run (100.0%, 95.1–100.0); kept so the guide says what is true. $2.06.
+
+2026-11-07, two wrong lines in the guide (candidates "never see their score", against the data
+download, which has their grade; the voice "never kept", though OpenAI may keep it for up to 30
+days), reworded after the FAQ. New feedback cases `help_feedback.json`, × 3: passed 66.7%
+(35.4–87.9, f01 0 of 3, the answers leaving out the download) → 100.0% (70.1–100.0, f01 3 of 3),
+made up 0.0% both (`results/help_chat_mira-lines-feedback-base.json`, `-after.json`). Regression
+before, on today's main, 25 × 1: passed 100.0% (86.7–100.0), made up 0.0%, sign-in marker 100%,
+identity 6 of 6 (`results/help_chat_mira-lines-base.json`). After, only h03, h06 and h17, the
+cases about candidates: 3 of 3, none made up (`-after-h06.json`, `-after-candidates.json`); the
+full set wasn't repeated, its $1 being over the budget. The knowledge changed by those two
+sentences alone (87,554 to 87,752 characters). Kept: the intervals overlap, but the failing case
+is fixed on every try and the guide now says what is true. $1.36 and $0.50.
