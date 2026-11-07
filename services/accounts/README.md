@@ -21,7 +21,8 @@ the body): it refuses, 409, while the user owns a company others joined, before 
 deleted. Then, in one save, it deletes its own rows with a note in `erasures` and saves the
 `user.deleted` event (the user's id and verified email) in its outbox, which every other holder
 (rounds, generation, billing, notifications, ats, api, assistant, library, site) consumes to delete
-its part, safe to repeat; then the sign-in last, so a failed step leaves the user able to retry.
+its part, safe to repeat; that save is tried three times, as companies has already deleted its part
+by then; then the sign-in last, so a failed step leaves the user able to retry.
 The event is published at once, or by the outbox's flush (`/internal/schedules/outbox`, every
 minute), which also deletes events published a week ago. `GET /me/export` asks every service
 (`POST /internal/users/{id}/export`) and adds its own part. The daily `erasures` job

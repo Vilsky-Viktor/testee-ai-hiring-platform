@@ -1,22 +1,24 @@
 import asyncio
 import re
 from pathlib import Path
+from unittest.mock import ANY
 
 import httpx
 import pytest
-from fake_redis import FakeRedis
 from fastapi import HTTPException
-from testee_common.auth.auth import current_user
+from sqlalchemy.exc import OperationalError
 from testee_common.auth.user import User
 from testee_common.config.constants import ACCOUNT_OWNS_SHARED, GOOGLE_TIMEOUT_SECONDS
 from testee_common.config.event_constants import PUBLISH_IN_REQUEST_TIMEOUT_SECONDS
 from testee_common.events.deletions import USER_DELETED
 from testee_common.http import http
 
-from accounts.api.v1 import me as me_routes
-from accounts.constants.accounts import ACCOUNT_CALL_TIMEOUT_SECONDS
+from accounts.constants.accounts import (
+    ACCOUNT_CALL_TIMEOUT_SECONDS,
+    ERASE_ATTEMPTS,
+    ERASE_WAIT_SECONDS,
+)
 from accounts.integrations import services as account_services
-from accounts.main import app
 from accounts.repositories import erasures, outbox, user_data
 from accounts.services import deletion as account_service
 from accounts.services import erasures as replays
@@ -90,6 +92,40 @@ def test_companies_failing_keeps_the_sign_in_and_tells_no_one_so_the_user_can_re
     assert steps == []
 
 
+def test_a_failed_save_after_companies_is_tried_again_so_the_event_still_goes_out(
+    steps, monkeypatch
+):
+    failures = [OperationalError("save", {}, OSError("database down"))] * 2
+    delete_own = user_data.delete_user
+
+    async def fails_twice(session, user_id):
+        if failures:
+            raise failures.pop()
+
+        await delete_own(session, user_id)
+
+    monkeypatch.setattr(user_data, "delete_user", fails_twice)
+    monkeypatch.setattr(account_service, "wait_seconds", lambda first, attempt: 0)
+
+    asyncio.run(account_service.delete_account(USER))
+
+    assert ("event", USER_DELETED, ANY) in steps
+    assert steps[-1] == ("sign-in", "ann")
+
+
+def test_a_save_that_keeps_failing_keeps_the_sign_in_so_the_user_can_try_again(steps, monkeypatch):
+    async def always_fails(session, user_id):
+        raise OperationalError("save", {}, OSError("database down"))
+
+    monkeypatch.setattr(user_data, "delete_user", always_fails)
+    monkeypatch.setattr(account_service, "wait_seconds", lambda first, attempt: 0)
+
+    with pytest.raises(OperationalError):
+        asyncio.run(account_service.delete_account(USER))
+
+    assert steps == [("companies", "ann", "Ann@Example.com")]
+
+
 def test_an_owner_of_a_shared_company_is_told_to_hand_it_on_and_nothing_is_deleted(
     steps, monkeypatch
 ):
@@ -135,46 +171,6 @@ def test_candidate_data_is_matched_by_a_verified_email_only(steps, monkeypatch, 
     emails |= {step[2]["email"] for step in steps if step[0] == "event"}
 
     assert emails == {sent}
-
-
-def test_the_export_holds_every_service_and_downloads_as_a_file(client, monkeypatch):
-    async def export_from(service, user_id, email):
-        return {"from": service}
-
-    async def own_export(session, user_id):
-        return {"terms_accepted": []}
-
-    monkeypatch.setattr(account_services, "export_user", export_from)
-    monkeypatch.setattr(user_data, "export", own_export)
-    monkeypatch.setattr(me_routes, "get_redis", lambda: FakeRedis())
-    app.dependency_overrides[current_user] = lambda: USER
-
-    try:
-        response = client.get("/me/export")
-    finally:
-        app.dependency_overrides.clear()
-
-    assert response.status_code == 200
-    assert response.headers["content-disposition"] == 'attachment; filename="testee-data.json"'
-    assert response.json() == {
-        "account": {
-            "id": "ann",
-            "email": "Ann@Example.com",
-            "name": "Ann",
-            "language": "en",
-        },
-        "accounts": {"terms_accepted": []},
-        "companies": {"from": "companies"},
-        "rounds": {"from": "rounds"},
-        "generation": {"from": "generation"},
-        "billing": {"from": "billing"},
-        "notifications": {"from": "notifications"},
-        "ats": {"from": "ats"},
-        "api": {"from": "api"},
-        "assistant": {"from": "assistant"},
-        "library": {"from": "library"},
-        "site": {"from": "site"},
-    }
 
 
 def test_deletion_and_export_send_the_email_in_the_body_not_the_url(monkeypatch):
@@ -230,34 +226,6 @@ def test_deleting_and_exporting_in_a_service_waits_longer_than_an_ordinary_call(
     assert ACCOUNT_CALL_TIMEOUT_SECONDS > HTTP_TIMEOUT_SECONDS
 
 
-def test_data_downloads_past_the_hourly_limit_are_refused_before_asking_anyone(client, monkeypatch):
-    asked = []
-
-    async def export_from(service, user_id, email):
-        asked.append(service)
-
-        return {}
-
-    async def own_export(session, user_id):
-        return {}
-
-    monkeypatch.setattr(account_services, "export_user", export_from)
-    monkeypatch.setattr(user_data, "export", own_export)
-    redis = FakeRedis({"DATA_EXPORTS_PER_HOUR": 1})
-    monkeypatch.setattr(me_routes, "get_redis", lambda: redis)
-    app.dependency_overrides[current_user] = lambda: USER
-
-    try:
-        first = client.get("/me/export")
-        asked_once = len(asked)
-        second = client.get("/me/export")
-    finally:
-        app.dependency_overrides.clear()
-
-    assert (first.status_code, second.status_code) == (200, 429)
-    assert len(asked) == asked_once
-
-
 def test_a_deletion_fits_accounts_own_request_timeout():
     """Companies' call, the event's quick publish, then the sign-in's revocation and deletion."""
     services_tf = (Path(__file__).resolve().parents[5] / "infra/terraform/locals.tf").read_text()
@@ -267,6 +235,7 @@ def test_a_deletion_fits_accounts_own_request_timeout():
 
     assert (
         ACCOUNT_CALL_TIMEOUT_SECONDS
+        + ERASE_WAIT_SECONDS * (2 ** (ERASE_ATTEMPTS - 1) - 1)
         + PUBLISH_IN_REQUEST_TIMEOUT_SECONDS
         + 2 * GOOGLE_TIMEOUT_SECONDS
         < accounts

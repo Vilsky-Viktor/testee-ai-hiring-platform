@@ -2,9 +2,12 @@ import asyncio
 
 import httpx
 from fastapi import HTTPException, status
+from sqlalchemy.exc import SQLAlchemyError
 from testee_common.auth.user import User
 from testee_common.config.constants import ACCOUNT_OWNS_SHARED
+from testee_common.http.backoff import wait_seconds
 
+from accounts.constants.accounts import ERASE_ATTEMPTS, ERASE_WAIT_SECONDS
 from accounts.core.db import Session
 from accounts.helpers.accounts import candidate_email
 from accounts.integrations import services
@@ -33,8 +36,23 @@ async def delete_account(user: User) -> None:
 
         raise
 
-    await erase(user.uid, email)
+    await _erase_with_retries(user.uid, email)
     await asyncio.to_thread(delete_sign_in, user.uid)
+
+
+async def _erase_with_retries(user_id: str, email: str) -> None:
+    """Companies has deleted its part by now, and nothing yet tells the others to delete theirs:
+    a brief database failure here shouldn't rest on the user seeing the error and trying again."""
+    for attempt in range(ERASE_ATTEMPTS):
+        try:
+            await erase(user_id, email)
+
+            return
+        except (SQLAlchemyError, OSError):
+            if attempt == ERASE_ATTEMPTS - 1:
+                raise
+
+            await asyncio.sleep(wait_seconds(ERASE_WAIT_SECONDS, attempt))
 
 
 async def export_account(user: User) -> dict:

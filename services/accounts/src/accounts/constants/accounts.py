@@ -1,6 +1,10 @@
 # A user's deletion or export in one service: it may delete or read every company the user owns,
 # and the service may be starting cold, so it waits longer than an ordinary call between services.
 ACCOUNT_CALL_TIMEOUT_SECONDS = 60
+# Companies has already deleted its part when accounts' own save runs, and no note yet says to
+# finish, so a failed save is tried again at once. Waits from ERASE_WAIT_SECONDS, doubling.
+ERASE_ATTEMPTS = 3
+ERASE_WAIT_SECONDS = 0.5
 # Deleted accounts are remembered as long as the database's backups last (14 kept, a day each),
 # so a restore's deletions can be run again; then forgotten.
 ERASURE_KEEP_DAYS = 14
