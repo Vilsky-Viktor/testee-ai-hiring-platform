@@ -15,7 +15,7 @@ down_revision = "0040"
 branch_labels = None
 depends_on = None
 
-FOREIGN_KEY = "fk_sets_source_template_id_sets"
+FOREIGN_KEY = "sets_source_template_id_fkey"
 INDEX = "ix_sets_source_template_id"
 
 

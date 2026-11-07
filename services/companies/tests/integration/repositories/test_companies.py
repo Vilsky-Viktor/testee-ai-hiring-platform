@@ -1,11 +1,13 @@
 import uuid
+from datetime import UTC, datetime
 
 import pytest
+from sqlalchemy import update
 from testee_common.config.constants import LEGAL_VERSIONS
 
 from companies.core.db import Session
-from companies.models.companies import Member
-from companies.repositories import companies, email_reminders
+from companies.models.companies import Company, Member
+from companies.repositories import companies, email_reminders, interviews, invites
 from tests.integration import factories
 from tests.integration.transactions import transaction
 
@@ -73,23 +75,48 @@ def test_members_are_listed_a_page_at_a_time_joined_ones_only(run, editors_only)
     assert None not in found
 
 
-def test_a_users_companies_are_listed_by_name_in_any_case(run):
+def test_a_users_companies_come_latest_activity_first_then_by_name_in_any_case(run):
     owner = f"abc-{uuid.uuid4()}"
     suffix = uuid.uuid4()
 
+    async def names() -> list[str]:
+        found = await transaction(companies.list_for_user, owner, 0, 10)
+
+        return [company.name.removesuffix(f" {suffix}") for company in found]
+
     async def scenario():
-        made = [
+        beta, alpha, gamma = [
             await factories.company(f"{name} {suffix}", owner, "own@example.com")
             for name in ("beta", "Alpha", "Gamma")
         ]
-        found = await transaction(companies.list_for_user, owner, 0, 10)
+        made = [beta.id, alpha.id, gamma.id]
 
-        for company in made:
-            await factories.deleted(company.id)
+        async with Session.begin() as session:
+            await session.execute(
+                update(Company)
+                .where(Company.id.in_(made))
+                .values(created_at=datetime(2026, 1, 1, tzinfo=UTC))
+            )
 
-        return [company.name for company in found]
+        created = await names()
+        late = await transaction(interviews.create, gamma.id, uuid.uuid4(), "en", 60)
+        interviewed = await names()
+        await transaction(interviews.create, beta.id, uuid.uuid4(), "en", 60)
+        interviewed_again = await names()
+        await transaction(invites.upsert, late.id, "dan@example.com", "Backend", "Acme", "en")
+        invited = await names()
 
-    assert run(scenario()) == [f"Alpha {suffix}", f"beta {suffix}", f"Gamma {suffix}"]
+        for company_id in made:
+            await factories.deleted(company_id)
+
+        return created, interviewed, interviewed_again, invited
+
+    assert run(scenario()) == (
+        ["Alpha", "beta", "Gamma"],
+        ["Gamma", "Alpha", "beta"],
+        ["beta", "Gamma", "Alpha"],
+        ["Gamma", "beta", "Alpha"],
+    )
 
 
 def test_a_logo_is_saved_served_and_removed_with_a_new_address_each_time(run):

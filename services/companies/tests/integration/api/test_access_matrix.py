@@ -86,8 +86,11 @@ EXCEPTIONS = {
     # The audit and action logs are the owner's; credits' history, owners' and admins'.
     "GET /companies/{company_id}/audit": OWNER_ONLY,
     "GET /companies/{company_id}/actions": OWNER_ONLY,
+    "GET /companies/{company_id}/actions/export": OWNER_ONLY,
     "GET /companies/{company_id}/bias-audit": OWNER_ONLY,
     "GET /companies/{company_id}/billing/history": OWNER_ONLY,
+    "GET /companies/{company_id}/billing/history/export": OWNER_ONLY,
+    "GET /companies/{company_id}/billing/spent": OWNER_ONLY,
     "GET /companies/{company_id}/billing/reserved": OWNER_ONLY,
     # Every member, viewers too, likes, dislikes and reports the interview's questions.
     "PUT /interviews/{interview_id}/questions/{question_id}/rating": {"viewer": ALLOWED},

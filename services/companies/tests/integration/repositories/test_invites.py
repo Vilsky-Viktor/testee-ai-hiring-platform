@@ -13,6 +13,7 @@ from companies.repositories import (
     invite_progress,
     invites,
     reminders,
+    template_interviews,
 )
 from tests.integration import factories
 from tests.integration.transactions import transaction
@@ -112,7 +113,7 @@ def test_only_interviews_without_a_candidate_count_as_waiting(run):
         first = await transaction(interviews.create, company.id, uuid.uuid4(), "en", 60)
         await transaction(interviews.create, company.id, uuid.uuid4(), "en", 60)
         await transaction(
-            interviews.create_from_template, company.id, uuid.uuid4(), "Copied", "en", 60
+            template_interviews.create, company.id, uuid.uuid4(), uuid.uuid4(), "Copied", "en", 60
         )
         before = await transaction(interviews.without_candidates, company.id)
         invite, _ = await transaction(

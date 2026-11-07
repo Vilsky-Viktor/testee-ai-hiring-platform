@@ -12,6 +12,7 @@ from companies.repositories import (
     interview_generations,
     interviews,
     invites,
+    template_interviews,
 )
 from tests.integration import factories
 from tests.integration.transactions import transaction
@@ -56,7 +57,7 @@ def test_an_interview_is_ready_when_it_gets_its_questions_once(run):
         )
         second = (await transaction(interviews.get, generated.id)).ready_at
         template = await transaction(
-            interviews.create_from_template, found.id, uuid.uuid4(), "Design", "en", 60
+            template_interviews.create, found.id, uuid.uuid4(), uuid.uuid4(), "Design", "en", 60
         )
 
         return before, first, second, (await transaction(interviews.get, template.id)).ready_at
@@ -74,16 +75,16 @@ def test_waiting_interviews_are_ready_ones_nobody_was_invited_to_and_ones_still_
     async def scenario():
         found = await company()
         idle = await transaction(
-            interviews.create_from_template, found.id, uuid.uuid4(), "Idle", "en", 60
+            template_interviews.create, found.id, uuid.uuid4(), uuid.uuid4(), "Idle", "en", 60
         )
         invited = await transaction(
-            interviews.create_from_template, found.id, uuid.uuid4(), "Invited", "en", 60
+            template_interviews.create, found.id, uuid.uuid4(), uuid.uuid4(), "Invited", "en", 60
         )
         recent = await transaction(
-            interviews.create_from_template, found.id, uuid.uuid4(), "Recent", "en", 60
+            template_interviews.create, found.id, uuid.uuid4(), uuid.uuid4(), "Recent", "en", 60
         )
         hired = await transaction(
-            interviews.create_from_template, found.id, uuid.uuid4(), "Hired", "en", 60
+            template_interviews.create, found.id, uuid.uuid4(), uuid.uuid4(), "Hired", "en", 60
         )
         generating = await transaction(interviews.create, found.id, uuid.uuid4(), "en", 60)
         await transaction(invites.upsert, invited.id, "gus@example.com", "Invited", "Acme", "en")
@@ -129,12 +130,12 @@ def test_companies_with_waiting_interviews_come_in_order_a_page_at_a_time(run):
     async def scenario():
         idle, generating, quiet = await company(), await company(), await company()
         waiting = await transaction(
-            interviews.create_from_template, idle.id, uuid.uuid4(), "Idle", "en", 60
+            template_interviews.create, idle.id, uuid.uuid4(), uuid.uuid4(), "Idle", "en", 60
         )
         await ready_at(waiting.id, now - timedelta(days=4))
         await transaction(interviews.create, generating.id, uuid.uuid4(), "en", 60)
         await transaction(
-            interviews.create_from_template, quiet.id, uuid.uuid4(), "Recent", "en", 60
+            template_interviews.create, quiet.id, uuid.uuid4(), uuid.uuid4(), "Recent", "en", 60
         )
         mine = sorted([idle.id, generating.id, quiet.id])
         # Two companies a page, from just before this test's first company until past its last.

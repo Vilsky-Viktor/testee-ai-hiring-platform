@@ -13,7 +13,7 @@ from testee_common.db.lock_waits import hold_first_commit, race
 from companies.api.v1.interview_questions import set_topic_limit
 from companies.api.v1.interviews import get_interview
 from companies.integrations import library
-from companies.repositories import interviews
+from companies.repositories import interviews, template_interviews
 from companies.schemas.interviews import InterviewSettings, TopicLimitIn
 from companies.services import interview_changes, set_cache
 from tests.integration import factories
@@ -60,7 +60,7 @@ async def an_interview() -> tuple:
     uid = f"owner-{uuid.uuid4().hex}"
     company = await factories.company(f"Acme {uuid.uuid4()}", uid, f"{uid}@example.com")
     interview = await transaction(
-        interviews.create_from_template, company.id, uuid.uuid4(), "Backend", "en", 60
+        template_interviews.create, company.id, uuid.uuid4(), uuid.uuid4(), "Backend", "en", 60
     )
     owner = User(uid=uid, email=f"{uid}@example.com", email_verified=True)
 

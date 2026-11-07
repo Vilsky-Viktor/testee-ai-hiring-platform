@@ -9,7 +9,7 @@ import httpx
 import pytest
 from access_matrix import HOST, World
 
-from companies.integrations import billing, library, rounds
+from companies.integrations import accounts, billing, library, rounds
 from companies.main import app
 from tests.integration.api.test_access_matrix import side
 
@@ -37,6 +37,10 @@ def world(run, monkeypatch):
     async def offer_matches(topic_ids, offset, limit):
         return [PERSON]
 
+    async def account(user_id):
+        return {"user_id": user_id, "email": f"{user_id}@example.com"}
+
+    monkeypatch.setattr(accounts, "account", account)
     monkeypatch.setattr(billing, "company_paid", company_paid)
     monkeypatch.setattr(library, "practice_topics", practice_topics)
     monkeypatch.setattr(rounds, "offer_matches", offer_matches)
@@ -88,5 +92,11 @@ def test_only_a_paying_companys_members_see_the_people_open_to_offers(world, run
     assert answers["other company's owner invites"][0] == 404
     assert answers["paying owner"] == (
         200,
-        [{**{k: v for k, v in PERSON.items() if k != "user_id"}, "id": "ann-open"}],
+        [
+            {
+                **{k: v for k, v in PERSON.items() if k != "user_id"},
+                "id": "ann-open",
+                "invited": False,
+            }
+        ],
     )
