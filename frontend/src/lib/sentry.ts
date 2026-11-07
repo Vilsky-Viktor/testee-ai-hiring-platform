@@ -45,7 +45,8 @@ export function sentryOptions() {
     tracesSampleRate: SENTRY_TRACES_SAMPLE_RATE,
     sendDefaultPii: false,
     beforeSend: (event: ErrorEvent) => scrub(event),
-    // Traces carry page and request addresses too.
-    beforeSendTransaction: scrub,
+    // Traces carry page and request addresses too. The SDK sends them as streamed spans, which
+    // only this sees, every span on its way out.
+    beforeSendSpan: scrub,
   }
 }
