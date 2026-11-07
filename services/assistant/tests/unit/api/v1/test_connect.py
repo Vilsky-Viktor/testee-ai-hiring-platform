@@ -223,7 +223,7 @@ def test_the_consent_routes_need_a_signed_in_user(client):
         ("Claude Code", "http://localhost:3118/callback", ("Claude Code", "localhost", True)),
         (None, "http://127.0.0.1:5000/cb", ("Local app", "127.0.0.1", True)),
         # Any other site: unknown, named as it says (or by its site).
-        ("Claude", "https://evil.example/cb", ("Claude", "evil.example", False)),
+        ("Claude", "https://evil.example/cb", ("evil.example", "evil.example", False)),
         (" ", "https://other.example/cb", ("other.example", "other.example", False)),
         # Only https is a known site: this one would be labelled Claude otherwise.
         (None, "javascript://claude.ai/%0Aalert(1)", ("claude.ai", "claude.ai", False)),
