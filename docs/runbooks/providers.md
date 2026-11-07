@@ -25,7 +25,7 @@ What to do when a provider testee depends on fails, a payment isn't credited or 
 
 **What to do**
 
-1. Check Paddle's status page. If Paddle is down, there's nothing to switch: wait. Maintenance mode wouldn't help, as it leaves billing open.
+1. Check Paddle's status page. If Paddle is down, there's nothing to switch: wait. Maintenance mode stops checkouts too, so turn it on only if the rest of the site needs it.
 2. If Paddle is up, read billing's errors (command above). A `401` or `403` from Paddle means the API key: Paddle's keys expire (90 days by default, a year at most), so check its expiry and permissions in Paddle's dashboard against `paddle-api-key` (its permissions are in [Credits and payments](../features/billing.md#setting-up-paddle)), add the right one and restart billing:
    ```bash
    printf '%s' "$PADDLE_API_KEY" | gcloud secrets versions add paddle-api-key --data-file=-

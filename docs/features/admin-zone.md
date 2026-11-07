@@ -177,7 +177,7 @@ The switch is one Redis key (`pause:on`, no expiry) that every service reads, at
 Maintenance mode closes the whole site:
 
 - Every page but the unsubscribe and legal pages (below) shows a maintenance screen. `proxy.ts` asks companies' public `GET /maintenance`, cached 10 seconds.
-- Every service's API but billing's answers every request with a 503 (`testee_common.limits.maintenance`, a middleware in each `main.py`).
+- Every service's API answers every request with a 503 (`testee_common.limits.maintenance`, a middleware in each `main.py`), but for Paddle's web hooks and internal calls, so a payment already made still lands.
 - Superadmins still use the site, with a warning above each page.
 
 These stay open, so no event, job or payment is lost:
