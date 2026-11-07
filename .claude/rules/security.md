@@ -16,7 +16,8 @@ the Top 10 for LLM applications 2025.
 
 - Every Firebase ID token is verified server-side (`testee_common.auth.auth`: signature, `aud`,
   `iss`, `exp`); a certificate fetch failure is a 503, never a pass. Deleting an account
-  revokes its refresh tokens; a check that must see revocation at once uses `check_revoked`.
+  revokes its refresh tokens; a write sees revocation within `REVOCATION_CACHE_SECONDS`, and a
+  check that must see it at once uses `check_revoked` (`FreshUser`).
 - Decisions that rely on an email (starting an invite, accepting a member invite, the admin
   zone, data export, what a link reveals about an address) need a verified email.
 - Every route resolves its object and checks the caller's company and role on it (`interview_for`,

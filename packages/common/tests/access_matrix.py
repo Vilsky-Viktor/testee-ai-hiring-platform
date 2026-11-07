@@ -34,6 +34,7 @@ process: companies' access check is answered from the matrix's roles, anything e
 
 import re
 from dataclasses import dataclass, field
+from types import SimpleNamespace
 from uuid import uuid4
 
 import httpx
@@ -244,9 +245,14 @@ def sign_in(monkeypatch, world: World) -> None:
             "email": f"{token}@example.com",
             "email_verified": True,
             "firebase": {"sign_in_provider": "google.com"},
+            "iat": 1,
         }
 
+    def get_user(uid):
+        return SimpleNamespace(disabled=False, tokens_valid_after_timestamp=0)
+
     monkeypatch.setattr(firebase_auth, "verify_id_token", verify_id_token)
+    monkeypatch.setattr(firebase_auth, "get_user", get_user)
     monkeypatch.setenv("SUPERADMIN_EMAILS", f"{world.superadmin}@example.com")
 
 

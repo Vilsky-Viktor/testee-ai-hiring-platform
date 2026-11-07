@@ -1,5 +1,7 @@
 import os
 
+from testee_common.auth import auth
+
 # Integration tests (tests/integration) use a database of their own, never the dev one: the
 # service's database name with "_test" added.
 if os.getenv("INTEGRATION_TESTS"):
@@ -51,3 +53,9 @@ def clean_process(monkeypatch):
     yield
 
     app.dependency_overrides.clear()
+
+
+@pytest.fixture(autouse=True)
+def sign_ins_not_revoked(monkeypatch):
+    """Firebase isn't asked: tests that fake a token have no account behind it."""
+    monkeypatch.setattr(auth, "refuse_revoked", lambda claims: None)
