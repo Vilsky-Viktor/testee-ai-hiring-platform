@@ -117,6 +117,23 @@ EMAILS_SENT = {
 OPTIONAL = {"digest", "reminders", "campaign"}
 
 
+def test_a_line_end_in_a_company_name_never_reaches_the_subject():
+    email = candidate_invite_email(
+        {
+            "email": "bob@example.com",
+            "token": "t",
+            "title": "Backend",
+            "company": "Acme\r\nBcc: victim@example.com",
+            "invite_id": "6f1c2c1e-0000-4000-8000-000000000001",
+        },
+        "http://x",
+        "secret",
+    )
+
+    assert "\r" not in email.subject and "\n" not in email.subject
+    assert "Acme Bcc: victim@example.com" in email.subject
+
+
 @pytest.mark.parametrize("name", EMAILS_SENT)
 def test_every_email_is_marked_automated_and_only_optional_ones_can_be_unsubscribed(name):
     build, unsubscribable = EMAILS_SENT[name]

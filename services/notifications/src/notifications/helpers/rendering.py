@@ -3,6 +3,7 @@ from html import escape
 
 from babel.numbers import format_decimal
 from testee_common.config.constants import DEFAULT_LANGUAGE, OPERATOR, RTL_LANGUAGES
+from testee_common.i18n.names import one_line
 from testee_common.i18n.plurals import plurals
 
 from notifications.constants.email import LTR_VALUE
@@ -203,4 +204,6 @@ def render(
         else "",
     )
 
-    return Email(to=data["email"], subject=template["subject"].format(**data), html=html, text=text)
+    subject = one_line(template["subject"].format(**data))
+
+    return Email(to=data["email"], subject=subject, html=html, text=text)
