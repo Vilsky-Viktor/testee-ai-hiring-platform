@@ -20,7 +20,7 @@ function mira(sent = true): Mira {
 }
 
 function answer(intent: VoiceAnswer["intent"], picks: number[] = []) {
-  return { heard: "", intent, picks, clear: false }
+  return { heard: "", intent, picks, clear: false, doubted: false }
 }
 
 it("ignores an answer with no words and listens on", async () => {

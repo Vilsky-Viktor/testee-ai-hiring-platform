@@ -1,5 +1,5 @@
 {
- "about": "Made-up spoken answers to multiple-choice questions in all 23 interface languages, the same ten kinds in each, to measure how well speech-to-text hears each and compare them (the six offered first were added the same day with ids starting h, as voice_answers.json already has en01-style ids): per language, one single-answer and one select-all question and ten answers, all spoken: a letter alone, a letter after a word ('option C'), a read option, a position, two letters, two read options, a yes and a no to a waiting choice, a change while waiting ('no, D'), and an undecided trap. Read aloud by a native-sounding voice, half with noise (build_voice_answers.py --dataset voice_hearing.json), heard by OpenAI or ElevenLabs (voice_answers_test.py --hearing), then matched by rounds' own call; graded by code. Hand-written.",
+ "about": "Made-up spoken answers to multiple-choice questions in all 23 interface languages, the same ten kinds in each, to measure how well speech-to-text hears each and compare them (the six offered first were added the same day with ids starting h, as voice_answers.json already has en01-style ids): per language, one single-answer and one select-all question and ten answers, all spoken: a letter alone, a letter after a word ('option C'), a read option, a position, two letters, two read options, a yes and a no to a waiting choice, a change while waiting ('no, D'), and an undecided trap. Read aloud by a native-sounding voice, half with noise (build_voice_answers.py --dataset voice_hearing.json), heard by OpenAI or ElevenLabs (voice_answers_test.py --hearing), then matched by rounds' own call; graded by code. Hand-written. 34 text-only traps added 2026-11-07, two per language not in voice_answers.json, each marked `added`: a letter taken back or negated.",
  "built": "2026-11-04 by hand; audio gpt-realtime-2.1-mini",
  "model": "gpt-realtime-2.1-mini",
  "questions": {
@@ -4558,6 +4558,380 @@
     "style": "Say it hesitantly, as a native Italian speaker would, saying any option letter the way people in that language name it.",
     "noise": false
    }
+  },
+  {
+   "id": "ru11",
+   "language": "ru",
+   "question": "ru1",
+   "said": "A? нет",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "ru12",
+   "language": "ru",
+   "question": "ru1",
+   "said": "не A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "uk11",
+   "language": "uk",
+   "question": "uk1",
+   "said": "A? ні",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "uk12",
+   "language": "uk",
+   "question": "uk1",
+   "said": "не A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "pl11",
+   "language": "pl",
+   "question": "pl1",
+   "said": "A? nie",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "pl12",
+   "language": "pl",
+   "question": "pl1",
+   "said": "nie A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "nl11",
+   "language": "nl",
+   "question": "nl1",
+   "said": "A? nee",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "nl12",
+   "language": "nl",
+   "question": "nl1",
+   "said": "niet A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "tr11",
+   "language": "tr",
+   "question": "tr1",
+   "said": "A mı? hayır",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "tr12",
+   "language": "tr",
+   "question": "tr1",
+   "said": "A değil",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "ar11",
+   "language": "ar",
+   "question": "ar1",
+   "said": "A؟ لا",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "ar12",
+   "language": "ar",
+   "question": "ar1",
+   "said": "ليس A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "he11",
+   "language": "he",
+   "question": "he1",
+   "said": "A? לא",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "he12",
+   "language": "he",
+   "question": "he1",
+   "said": "לא A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "fa11",
+   "language": "fa",
+   "question": "fa1",
+   "said": "A؟ نه",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "fa12",
+   "language": "fa",
+   "question": "fa1",
+   "said": "A نیست",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "ja11",
+   "language": "ja",
+   "question": "ja1",
+   "said": "Aかな? いや、違う",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "ja12",
+   "language": "ja",
+   "question": "ja1",
+   "said": "Aじゃない",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "zh11",
+   "language": "zh",
+   "question": "zh1",
+   "said": "A?不对",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "zh12",
+   "language": "zh",
+   "question": "zh1",
+   "said": "不是A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "ko11",
+   "language": "ko",
+   "question": "ko1",
+   "said": "A? 아니",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "ko12",
+   "language": "ko",
+   "question": "ko1",
+   "said": "A 아니야",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "hi11",
+   "language": "hi",
+   "question": "hi1",
+   "said": "A? नहीं",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "hi12",
+   "language": "hi",
+   "question": "hi1",
+   "said": "A नहीं",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "id11",
+   "language": "id",
+   "question": "id1",
+   "said": "A? bukan",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "id12",
+   "language": "id",
+   "question": "id1",
+   "said": "bukan A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "th11",
+   "language": "th",
+   "question": "th1",
+   "said": "A เหรอ ไม่",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "th12",
+   "language": "th",
+   "question": "th1",
+   "said": "ไม่ใช่ A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "vi11",
+   "language": "vi",
+   "question": "vi1",
+   "said": "A à? không",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "vi12",
+   "language": "vi",
+   "question": "vi1",
+   "said": "không phải A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "fil11",
+   "language": "fil",
+   "question": "fil1",
+   "said": "A? hindi",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "fil12",
+   "language": "fil",
+   "question": "fil1",
+   "said": "hindi A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "et11",
+   "language": "et",
+   "question": "et1",
+   "said": "A? ei",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "et12",
+   "language": "et",
+   "question": "et1",
+   "said": "mitte A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
   }
  ]
 }

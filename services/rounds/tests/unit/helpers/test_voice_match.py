@@ -1,8 +1,13 @@
 import pytest
 
+from testee_common.config.constants import LANGUAGES
+
 from rounds.constants.voice import Intent
+from rounds.constants.voice_doubts import DOUBT_WORDS
 from rounds.helpers.voice_match import (
     hearing_keywords,
+    in_doubt,
+    is_clear,
     is_noise,
     letters_of,
     match_prompt,
@@ -55,6 +60,46 @@ def test_the_prompt_tags_the_reply_as_data_and_never_carries_the_answer_key():
     assert "<waiting_for_confirmation>B</waiting_for_confirmation>" in user.content
     assert "<test_language>German</test_language>" in user.content
     assert "correct" not in user.content
+
+
+@pytest.mark.parametrize(
+    ("said", "language", "doubt"),
+    [
+        ("A? no", "en", True),
+        ("la A? no", "it", True),
+        ("não é a A", "pt", True),
+        ("A, maybe D", "en", True),
+        ("ليس A", "ar", True),
+        ("A؟ لا", "ar", True),
+        ("不是A", "zh", True),
+        ("Aじゃない", "ja", True),
+        ("A 아니야", "ko", True),
+        ("ไม่ใช่ A", "th", True),
+        ("A नहीं", "hi", True),
+        ("Isn’t it A", "en", True),
+        ("the second one", "en", False),
+        # Inside another word: "no" in "nominal", "ni" in "ninguna".
+        ("the nominal one", "en", False),
+        ("la ninguna", "es", False),
+        ("второй вариант", "ru", False),
+        # A language without words of its own: the question mark still counts.
+        ("A?", "xx", True),
+        ("A", "xx", False),
+    ],
+)
+def test_a_reply_that_questions_negates_or_doubts_is_in_doubt(said, language, doubt):
+    assert in_doubt(said, language) is doubt
+
+
+def test_every_interview_language_has_its_words_of_doubt():
+    assert set(DOUBT_WORDS) == set(LANGUAGES)
+
+
+def test_only_a_single_undoubted_choice_is_clear():
+    assert is_clear(Intent.CHOOSE, False, "the second one", "en")
+    assert not is_clear(Intent.CHOOSE, True, "the second one", "en")
+    assert not is_clear(Intent.CHOOSE, False, "not the second one", "en")
+    assert not is_clear(Intent.CONFIRM, False, "yes", "en")
 
 
 def test_letters_name_options_in_order():

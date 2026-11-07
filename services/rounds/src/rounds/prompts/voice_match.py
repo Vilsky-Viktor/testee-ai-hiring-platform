@@ -19,6 +19,7 @@ question takes every option they named.
 "correct", "that's it"). No letters.
 - reject: a choice is waiting and they say no without naming an option. No letters.
 - unclear: anything else: a question back, thinking aloud without settling ("B or maybe C"), \
+an option only denied, questioned or doubted ("C? no", "isn't C", "perhaps B", "B, perhaps C"), \
 words that fit no option or fit several equally, a single-answer question given several \
 options, or words unrelated to the test. No letters.
 

@@ -1,5 +1,5 @@
 {
- "about": "Made-up spoken answers to multiple-choice questions in voice mode's six languages (English, Spanish, German, French, Portuguese, Italian), for the matching that turns what a candidate said into options (rounds' services/voice_match.py): letters (alone, after a word such as \"option\" or \"answer\", several on a select-all question, also as heard or spelled), read options, paraphrases and descriptions, positions and ordinals, several options on select-all-that-apply questions, changes of mind, confirmations and refusals of a waiting choice, and traps that must stay unclear (undecided, a question back, several options on a single-answer question, words fitting no option, recognition noise on silence, instructions to the model, letters inside a sentence that must not be read by code alone: \"not A\", \"B is wrong, I mean C\"). `spoken` items are also read aloud with a voice, a way of speaking and sometimes noise into audio/answer_<id>.ogg (build_voice_answers.py) and heard by speech-to-text first. Graded by code: the intent and the options. Hand-written.",
+ "about": "Made-up spoken answers to multiple-choice questions in voice mode's six languages (English, Spanish, German, French, Portuguese, Italian), for the matching that turns what a candidate said into options (rounds' services/voice_match.py): letters (alone, after a word such as \"option\" or \"answer\", several on a select-all question, also as heard or spelled), read options, paraphrases and descriptions, positions and ordinals, several options on select-all-that-apply questions, changes of mind, confirmations and refusals of a waiting choice, and traps that must stay unclear (undecided, a question back, several options on a single-answer question, words fitting no option, recognition noise on silence, instructions to the model, letters inside a sentence that must not be read by code alone: \"not A\", \"B is wrong, I mean C\"). `spoken` items are also read aloud with a voice, a way of speaking and sometimes noise into audio/answer_<id>.ogg (build_voice_answers.py) and heard by speech-to-text first. Graded by code: the intent and the options. Hand-written. 16 traps added 2026-11-07, each marked `added`: a letter taken back, negated or doubted, which must never be saved unconfirmed.",
  "built": "2026-10-30",
  "model": "by hand; audio gpt-realtime-2.1-mini",
  "questions": {
@@ -2753,6 +2753,182 @@
     3
    ],
    "kind": "letters multi"
+  },
+  {
+   "id": "en61",
+   "language": "en",
+   "question": "en1",
+   "said": "is it A? no wait",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "en62",
+   "language": "en",
+   "question": "en1",
+   "said": "A, maybe D",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "en63",
+   "language": "en",
+   "question": "en1",
+   "said": "maybe A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "en64",
+   "language": "en",
+   "question": "en1",
+   "said": "not the first one",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "es29",
+   "language": "es",
+   "question": "es1",
+   "said": "la A? no",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "es30",
+   "language": "es",
+   "question": "es1",
+   "said": "no es la A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "es31",
+   "language": "es",
+   "question": "es3",
+   "said": "A, quizás D",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "de29",
+   "language": "de",
+   "question": "de1",
+   "said": "A? nein",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "de30",
+   "language": "de",
+   "question": "de3",
+   "said": "A, vielleicht D",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "fr28",
+   "language": "fr",
+   "question": "fr1",
+   "said": "la A ? non",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "fr29",
+   "language": "fr",
+   "question": "fr1",
+   "said": "ce n'est pas la A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "fr30",
+   "language": "fr",
+   "question": "fr3",
+   "said": "A, peut-être D",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "pt27",
+   "language": "pt",
+   "question": "pt1",
+   "said": "a A? não",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "pt28",
+   "language": "pt",
+   "question": "pt3",
+   "said": "A, talvez D",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "it27",
+   "language": "it",
+   "question": "it1",
+   "said": "non è la A",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
+  },
+  {
+   "id": "it28",
+   "language": "it",
+   "question": "it3",
+   "said": "A, forse D",
+   "waiting": [],
+   "intent": "unclear",
+   "picks": [],
+   "kind": "trap: unsaid answer",
+   "added": "2026-11-07"
   }
  ]
 }

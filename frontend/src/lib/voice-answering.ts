@@ -32,7 +32,8 @@ export function answerInProgress() {
     timedOut: () => timedOut,
     /** The question's time ran out: the options the answer picked (a choice, or the yes to the
      * choice waiting), waited for at most `ms`; null when nothing is in progress, it picked
-     * nothing, or it took longer. */
+     * nothing, it took longer, or its choice was in doubt ("A? no"): no time is left to confirm
+     * it. */
     timeUp: async (ms: number) => {
       timedOut = true
 
@@ -44,7 +45,8 @@ export function answerInProgress() {
         pending.answer,
         new Promise<null>((done) => window.setTimeout(() => done(null), ms)),
       ])
-      const picked = answer?.intent === "choose" || answer?.intent === "confirm"
+      const chose = answer?.intent === "choose" && !answer.doubted
+      const picked = chose || answer?.intent === "confirm"
 
       return picked ? answer.picks : null
     },

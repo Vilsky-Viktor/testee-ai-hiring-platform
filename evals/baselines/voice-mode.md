@@ -219,3 +219,33 @@ the live model's price. Through the local gateway, end to end on a throwaway ses
 0.88–1.54 s streamed against 1.32–2.74 s uploaded (3 each); a code-read "B" answered 0.90–1.57 s
 after its end against 1.55–3.94 s. The matching call (2.4–6.3 s here) is now the slow part of a
 model-read answer. Spent about $0.90.
+
+## A choice in doubt is never saved unconfirmed (2026-11-07, kept)
+
+"A? no", "la A? no", "não é a A" and "maybe A" on a single-answer question could be saved with "A,
+saved.", as only a select-all question's choice went to the confirmation. Two changes. Code:
+`helpers/voice_match.py` `is_clear` turns a reply holding a question mark or a word of
+`constants/voice_doubts.py` (a negation or a maybe, all 23 languages) into a confirmation, and
+`doubted` in the answer keeps it from being saved as the time runs out. Prompt: `unclear` also
+covers an option only denied, questioned or doubted. `voice_answers.json` grew to 211 (16 traps,
+`added: 2026-11-07`) and `voice_hearing.json` to 264 (34 text traps in the 17 other languages);
+`saved_wrong` (saved at once and not what was meant) and `saved_at_once` are new scores. `gpt-6-luna`
+at effort none, hearing `gpt-transcribe`, 3 repeats, the same items for all three runs:
+
+| Run | Right as text | Wrong matches (text) | Saved wrong (text) | Saved at once (text) | Right spoken | Saved wrong (spoken) | Saved at once (spoken) | Price, time |
+|---|---|---|---|---|---|---|---|---|
+| Before | 97.0% (95.4–98.1) | 3.0% (1.9–4.6) | 0.5% (0.2–1.4) | 52.1% (48.2–56.0) | 94.3% (88.1–97.4) | 0% (0.0–3.5) | 54.3% (44.8–63.5) | $0.075, 1.4 s median |
+| Code check | 96.5% (94.8–97.7) | 3.5% (2.3–5.2) | 0% (0.0–0.6) | 45.5% (41.7–49.4) | 94.3% (88.1–97.4) | 0% (0.0–3.5) | 40.0% (31.1–49.6) | $0.075 |
+| With the prompt rule (kept) | 99.4% (98.4–99.8) | 0.2% (0.0–0.9) | 0% (0.0–0.6) | 45.5% (41.7–49.4) | 94.3% (88.1–97.4) | 0% (0.0–3.5) | 40.0% (31.1–49.6) | $0.076, 1.4 s median |
+
+The 34 traps in the other 17 languages (text): saved wrong 7.8% (4.0–14.7) before (fa, hi, ko, pl),
+0% after the code check; right 92.2% → 100% (96.4–100) with the prompt rule, 102 graded, $0.008 a
+run. All 264 of `voice_hearing.json`, spoken, 2 repeats, against its last run: right 88.7%
+(85.5–91.3) against 88.9% (85.7–91.5), wrong matches 0.4% (0.1–1.6) against 1.5% (0.7–3.1), $0.13;
+the one left is et08 spoken, "ei" heard as "A.", read by code.
+
+Beyond the noise: wrong matches and right as text. The one wrong match left is "maybe A" (1 of 3),
+which the code check sends to a confirmation. The price: fewer answers saved at once, as a
+correction in the same breath ("no, C", "la A, no, mejor la C") holds a no and is now confirmed;
+within the intervals, and the dataset leans on such corrections (14 of 211 answers). One extra
+"yes" against an answer the candidate never gave.

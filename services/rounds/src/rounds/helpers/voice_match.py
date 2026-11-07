@@ -5,6 +5,7 @@ from testee_common.config.constants import LANGUAGES
 
 from rounds.constants.voice import LETTERS, Intent
 from rounds.constants.voice_confirmations import CONFIRMATIONS
+from rounds.constants.voice_doubts import DOUBT_WORDS, QUESTION_MARKS, RUN_TOGETHER
 from rounds.helpers.voice_letters import plain_letters
 from rounds.helpers.voice_speech import read_aloud
 from rounds.prompts.voice_match import MULTI, NOTHING_WAITING, SINGLE, SYSTEM, USER
@@ -76,6 +77,29 @@ def understood(match: VoiceMatch, multi: bool, waiting: list[int]) -> tuple[Inte
         return match.intent, sorted(waiting) if match.intent == Intent.CONFIRM else []
 
     return unclear
+
+
+def in_doubt(said: str, language: str) -> bool:
+    """Whether a reply questions, negates or doubts what it names: "A? no", "not A", "maybe A",
+    in any language."""
+    text = said.lower().replace("’", "'")
+
+    if any(mark in text for mark in QUESTION_MARKS):
+        return True
+
+    words = DOUBT_WORDS.get(language, ())
+
+    if language in RUN_TOGETHER:
+        return any(word in text for word in words)
+
+    return any(re.search(rf"(?<!\w){re.escape(word)}(?!\w)", text) for word in words)
+
+
+def is_clear(intent: Intent, multi: bool, said: str, language: str) -> bool:
+    """Whether a reply is saved at once rather than confirmed first: one option on a
+    single-answer question, said without a doubt. A wrong reading of a reply in doubt would record
+    an answer the candidate never gave, so it's asked to confirm, whoever read it."""
+    return intent == Intent.CHOOSE and not multi and not in_doubt(said, language)
 
 
 def obvious(

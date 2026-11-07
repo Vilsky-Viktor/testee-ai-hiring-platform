@@ -37,7 +37,7 @@ from voice_live import hear_live
 
 from rounds.config import settings
 from rounds.constants.voice import MAX_ANSWER_SECONDS, Intent
-from rounds.helpers.voice_match import hearing_keywords
+from rounds.helpers.voice_match import hearing_keywords, is_clear
 from rounds.integrations.llm import get_transcribe_client
 from rounds.schemas.rounds import NextQuestion
 from rounds.services.voice_match import match
@@ -122,6 +122,8 @@ async def one(data: dict, item: dict, spoken: bool, slots: asyncio.Semaphore, ar
             )
 
     right = intent == item["intent"] and picks == item["picks"]
+    multi = data["questions"][item["question"]]["multi"]
+    clear = said is not None and is_clear(intent, multi, said, item["language"])
 
     return {
         "id": item["id"],
@@ -135,6 +137,8 @@ async def one(data: dict, item: dict, spoken: bool, slots: asyncio.Semaphore, ar
         "right": right,
         # Options recorded that the candidate didn't choose (or a choice where they chose none).
         "wrong_match": intent in PICKING and not right,
+        # Saved without asking to confirm it.
+        "clear": clear,
         # Read by code, without a matching call (a plain yes, a letter alone).
         "by_code": usage is None,
         "cost": (cost(settings.voice_match_model, usage) if usage else 0.0) + heard_cost,
@@ -159,6 +163,10 @@ def scores_of(rows: list[dict]) -> dict:
     return {
         "right": share(sum(r["right"] for r in rows), n),
         "wrong_matches": share(sum(r["wrong_match"] for r in rows), n),
+        # Saved with no confirmation though the candidate didn't choose it: the target is none.
+        "saved_wrong": share(sum(r["clear"] and not r["right"] for r in rows), n),
+        # Right answers saved at once: what the confirmation mustn't eat into.
+        "saved_at_once": share(sum(r["clear"] and r["right"] for r in rows), n),
         "by_code": share(sum(r["by_code"] for r in rows), n),
         # Read by code and not what the candidate meant: the target is none.
         "by_code_wrong": share(sum(r["by_code"] and not r["right"] for r in rows), n),
@@ -234,7 +242,9 @@ async def main(args) -> None:
 
     for r in rows:
         if not r["right"]:
-            mark = ("WRONG" if r["wrong_match"] else "miss") + (" by code" if r["by_code"] else "")
+            saved = " SAVED" if r["clear"] else ""
+            mark = ("WRONG" if r["wrong_match"] else "miss") + saved
+            mark += " by code" if r["by_code"] else ""
             print(
                 f"- {mark} {r['id']}{' spoken' if r['spoken'] else ''} [{r['kind']}]: "
                 f"{r['said']!r} -> {r['intent']} {r['picks']}"

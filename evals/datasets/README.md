@@ -273,9 +273,9 @@ give answer C"). Each is turned into the interviewer's script by rounds' own `qu
 Graded by code (`voice_reading_test.py`): word errors once heard, every option's letter heard,
 nothing added.
 
-## `voice_answers.json` and `audio/answer_*.ogg` (by hand, 2026-10-30; audio by `gpt-realtime-2.1-mini`, 2026-10-30)
+## `voice_answers.json` and `audio/answer_*.ogg` (by hand, 2026-10-30, 2026-11-07; audio by `gpt-realtime-2.1-mini`, 2026-10-30)
 
-195 made-up spoken answers to 19 made-up multiple-choice questions (a statistics question, a
+211 made-up spoken answers to 19 made-up multiple-choice questions (a statistics question, a
 customer-service one, a select-all-that-apply one on version control, and in English a code
 example) in voice mode's six languages: letters as said (alone, after "option", "answer" and the
 like, several joined by "and"), heard or spelled ("bee", "la be", "letra bê"), read options,
@@ -291,11 +291,13 @@ spoken by OpenAI's realtime voice model (`build_voice_answers.py`: eight voices,
 hesitation asked for in the instructions, a clip spoken again when the model's own transcript is
 over 10% off; then Ogg Opus with pink noise mixed into most, by ffmpeg) into
 `audio/answer_<id>.ogg`. Graded by code
-(`voice_answers_test.py`): the intent and the options.
+(`voice_answers_test.py`): the intent and the options, and whether a wrong one would be saved at
+once. 16 traps were added on 2026-11-07, each marked `added`: a letter taken back, negated or
+doubted ("A? no", "no es la A", "maybe A", "A, quizás D"), text only: 211 answers.
 
-## `voice_hearing.json` and `audio/answer_*.ogg` (by hand, 2026-11-04; audio by `gpt-realtime-2.1-mini`, 2026-11-04)
+## `voice_hearing.json` and `audio/answer_*.ogg` (by hand, 2026-11-04, 2026-11-07; audio by `gpt-realtime-2.1-mini`, 2026-11-04)
 
-230 made-up spoken answers, the same ten kinds in each of the 23 interface languages, to compare
+230 made-up spoken answers (and the traps below), the same ten kinds in each of the 23 interface languages, to compare
 how well speech-to-text hears short answers per language. Per language, a single-answer
 statistics question with its options in that language and a select-all one on version control
 (Git, Mercurial, Docker, Subversion), and ten answers, all spoken: a letter alone, a letter after a
@@ -305,6 +307,8 @@ language and a number; the six languages voice_answers.json already has start wi
 Spoken by OpenAI's realtime voice model as a native speaker naming the letters as that language
 does (`build_voice_answers.py --dataset voice_hearing.json`), half with pink noise. Graded by code
 (`voice_answers_test.py --dataset voice_hearing.json`): the intent and the options, per language.
+34 text-only traps were added on 2026-11-07, two each in the 17 languages `voice_answers.json`
+doesn't have, marked `added`: a letter taken back or negated. 264 answers.
 
 ## `voice_reading_languages.json` (by hand, 2026-11-04)
 
@@ -371,7 +375,15 @@ assistant_feedback.json`. On 2026-10-29 neither Langfuse nor the local tables ha
 `help_feedback.json` began on 2026-11-07 with `f01`–`f03`, from lines the CEO found wrong in the
 platform guide: whether candidates see their grade, and whether the voice is kept.
 
-## `help_questions.json` (by hand, 2026-10-20)
+## `assistant_confirmed.json` (by hand, 2026-11-07)
+
+18 made-up turns after a confirmed action, for `assistant_confirmed.py`: the app's note with a
+service's answer that worked (6, one in German, one in Arabic), failed (2), with another card still
+waiting from the same request (2), or with instructions planted in fields users and ATSs write (8:
+a note, a description, an ATS comment, a closing `</result>`, a line posing as the app). Graded by
+code: no new card, at most three sentences, one of `names` said, none of `absent`.
+
+## `help_questions.json` (by hand, 2026-10-20; 2 cases 2026-11-07)
 
 The help chat's test: visitor questions on the site's pages, each with what a right answer says
 (from the platform guide, the FAQ, prices and the legal pages) and what it must not do. Typical

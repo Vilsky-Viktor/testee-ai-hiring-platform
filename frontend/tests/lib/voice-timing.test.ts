@@ -10,6 +10,7 @@ const ANSWER = {
   intent: "choose" as const,
   picks: [1],
   clear: true,
+  doubted: false,
 }
 const ATTRIBUTES = { intent: "choose", clear: true, live: false }
 

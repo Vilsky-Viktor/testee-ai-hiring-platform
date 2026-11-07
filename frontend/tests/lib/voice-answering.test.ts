@@ -15,13 +15,18 @@ afterEach(() => {
   vi.unstubAllGlobals()
 })
 
-function answer(intent: VoiceAnswer["intent"], picks: number[] = []) {
-  return { heard: "", intent, picks, clear: false }
+function answer(
+  intent: VoiceAnswer["intent"],
+  picks: number[] = [],
+  doubted = false
+) {
+  return { heard: "", intent, picks, clear: false, doubted }
 }
 
 it.each([
   ["a choice", answer("choose", [1, 2]), [1, 2]],
   ["a yes to the choice waiting", answer("confirm", [0]), [0]],
+  ["a choice in doubt", answer("choose", [0], true), null],
   ["words she didn't catch", answer("unclear"), null],
   ["no words at all", answer("noise"), null],
   ["a failure", null, null],
