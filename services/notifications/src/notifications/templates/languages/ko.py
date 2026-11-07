@@ -7,36 +7,36 @@ MEMBER_FOOTER = (
 
 TEXTS = {
     "candidate": {
-        "subject": "{company} 면접 초대",
-        "preheader": "testee에서 “{title}” 면접을 보세요. {email}(으)로 로그인하면 시작할 수 있습니다.",
-        "heading": "면접 초대",
+        "subject": "{company} 온라인 평가 초대",
+        "preheader": "testee에서 “{title}” 온라인 평가에 응시하세요. {email}(으)로 로그인하면 시작할 수 있습니다.",
+        "heading": "온라인 평가 초대",
         "lines": [
-            "{company}에서 testee의 “{title}” 면접에 초대했습니다.",
-            "{email}(으)로 로그인하면 시작할 수 있습니다. 이 주소로만 면접을 볼 수 있으며, 기회는 한 번뿐입니다.",
+            "{company}에서 testee의 “{title}” 온라인 평가에 초대했습니다.",
+            "{email}(으)로 로그인하면 시작할 수 있습니다. 이 주소로만 평가에 응시할 수 있으며, 기회는 한 번뿐입니다.",
         ],
         "button": "초대 열기",
     },
     "joined": {
-        "subject": "“{title}” 면접 링크",
-        "preheader": "면접을 떠나면 이 링크로 이어서 보세요. {email}(으)로 로그인하세요.",
-        "heading": "면접 링크",
+        "subject": "“{title}” 평가 링크",
+        "preheader": "평가를 떠나면 이 링크로 이어서 응시하세요. {email}(으)로 로그인하세요.",
+        "heading": "평가 링크",
         "lines": [
-            "testee에서 {company}의 “{title}” 면접을 시작했습니다.",
+            "testee에서 {company}의 “{title}” 온라인 평가를 시작했습니다.",
             (
-                "면접을 떠나면 이 링크로 이어서 보세요. {email}(으)로 로그인하면 됩니다. 시작할 때 사용한 링크를 {company}에서 비활성화해도 "
+                "평가를 떠나면 이 링크로 이어서 응시하세요. {email}(으)로 로그인하면 됩니다. 시작할 때 사용한 링크를 {company}에서 비활성화해도 "
                 "이 링크는 계속 작동합니다. 자리를 비운 동안에도 시간은 계속 흐릅니다."
             ),
         ],
-        "button": "면접 이어서 보기",
-        "footer": "이 주소로 testee에서 면접이 시작되어 {email}(으)로 이 이메일이 발송되었습니다.",
+        "button": "평가 이어서 진행하기",
+        "footer": "이 주소로 testee에서 온라인 평가가 시작되어 {email}(으)로 이 이메일이 발송되었습니다.",
     },
     "reminder": {
-        "subject": "알림: {company} 면접",
-        "preheader": "“{title}” 면접이 아직 열려 있습니다. {email}(으)로 로그인하면 시작할 수 있습니다.",
-        "heading": "아직 응시하지 않은 면접이 있습니다",
+        "subject": "알림: {company} 온라인 평가",
+        "preheader": "“{title}” 온라인 평가가 아직 열려 있습니다. {email}(으)로 로그인하면 시작할 수 있습니다.",
+        "heading": "아직 응시하지 않은 온라인 평가가 있습니다",
         "lines": [
-            "며칠 전 {company}에서 testee의 “{title}” 면접에 초대했지만, 아직 시작하지 않으셨습니다.",
-            "{email}(으)로 로그인하면 시작할 수 있습니다. 이 주소로만 면접을 볼 수 있으며, 기회는 한 번뿐입니다. 초대는 발송 후 30일이 지나면 만료됩니다.",
+            "며칠 전 {company}에서 testee의 “{title}” 온라인 평가에 초대했지만, 아직 시작하지 않으셨습니다.",
+            "{email}(으)로 로그인하면 시작할 수 있습니다. 이 주소로만 평가에 응시할 수 있으며, 기회는 한 번뿐입니다. 초대는 발송 후 30일이 지나면 만료됩니다.",
         ],
         "button": "초대 열기",
     },
@@ -328,7 +328,7 @@ TEXTS = {
     # The footer's links: optional emails' unsubscribe and settings, and a candidate's own.
     "unsubscribe": "수신 거부",
     "email_settings": "이메일 설정 변경",
-    "stop_reminders": "이 면접의 알림 받지 않기",
+    "stop_reminders": "이 평가의 알림 받지 않기",
     "stop_company": "{company}의 이메일 받지 않기",
     # Who runs testee, at the end of every email.
     "operator": "testee는 {name}({address})이(가) 운영합니다.",

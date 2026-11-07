@@ -7,36 +7,36 @@ MEMBER_FOOTER = (
 
 TEXTS = {
     "candidate": {
-        "subject": "{company}から面接の招待",
+        "subject": "{company}からWeb テストの招待",
         "preheader": "testee で「{title}」を受けてください。開始するには {email} でサインインしてください。",
-        "heading": "面接のご案内",
+        "heading": "Web テストのご案内",
         "lines": [
-            "{company}が、testee の面接「{title}」にあなたを招待しています。",
-            "開始するには {email} でサインインしてください。このアドレスでのみ、1回だけ面接を受けられます。",
+            "{company}が、testee の Web テスト「{title}」にあなたを招待しています。",
+            "開始するには {email} でサインインしてください。このアドレスでのみ、1回だけテストを受けられます。",
         ],
         "button": "招待を開く",
     },
     "joined": {
         "subject": "「{title}」へのリンク",
-        "preheader": "面接を離れた場合は、このリンクから続けてください。{email} でサインインしてください。",
-        "heading": "面接のリンク",
+        "preheader": "テストを離れた場合は、このリンクから続けてください。{email} でサインインしてください。",
+        "heading": "テストのリンク",
         "lines": [
-            "testee で{company}の面接「{title}」を開始しました。",
+            "testee で{company}の Web テスト「{title}」を開始しました。",
             (
-                "面接を離れた場合は、このリンクから続けてください。{email} でサインインします。開始に使ったリンクを{company}が無効にしても、このリンクは使えます。離れている"
+                "テストを離れた場合は、このリンクから続けてください。{email} でサインインします。開始に使ったリンクを{company}が無効にしても、このリンクは使えます。離れている"
                 "間も時間は進みます。"
             ),
         ],
-        "button": "面接を続ける",
-        "footer": "このメールは、このアドレスで testee の面接が開始されたため {email} に送信されました。",
+        "button": "テストを続ける",
+        "footer": "このメールは、このアドレスで testee の Web テストが開始されたため {email} に送信されました。",
     },
     "reminder": {
-        "subject": "リマインダー: {company}の面接",
+        "subject": "リマインダー: {company}の Web テスト",
         "preheader": "「{title}」はまだ受けられます。開始するには {email} でサインインしてください。",
-        "heading": "未受験の面接があります",
+        "heading": "未受検の Web テストがあります",
         "lines": [
-            "数日前、{company}が testee の面接「{title}」にあなたを招待しましたが、まだ開始されていません。",
-            "開始するには {email} でサインインしてください。このアドレスでのみ、1回だけ面接を受けられます。招待は送信から30日で期限切れになります。",
+            "数日前、{company}が testee の Web テスト「{title}」にあなたを招待しましたが、まだ開始されていません。",
+            "開始するには {email} でサインインしてください。このアドレスでのみ、1回だけテストを受けられます。招待は送信から30日で期限切れになります。",
         ],
         "button": "招待を開く",
     },
@@ -316,7 +316,7 @@ TEXTS = {
     # The footer's links: optional emails' unsubscribe and settings, and a candidate's own.
     "unsubscribe": "配信停止",
     "email_settings": "メール設定を変更",
-    "stop_reminders": "この面接のリマインダーを受け取らない",
+    "stop_reminders": "このテストのリマインダーを受け取らない",
     "stop_company": "{company}からのメールを受け取らない",
     # Who runs testee, at the end of every email.
     "operator": "testee は {name}（{address}）が運営しています。",

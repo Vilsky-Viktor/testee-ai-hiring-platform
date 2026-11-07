@@ -5,33 +5,33 @@ MEMBER_FOOTER = "这封邮件发送到 {email}，因为你是 testee 上某家�
 
 TEXTS = {
     "candidate": {
-        "subject": "{company} 的面试邀请",
+        "subject": "{company} 的在线测评邀请",
         "preheader": "在 testee 上完成“{title}”。使用 {email} 登录即可开始。",
-        "heading": "面试邀请",
+        "heading": "在线测评邀请",
         "lines": [
-            "{company} 邀请你在 testee 上参加“{title}”面试。",
-            "使用 {email} 登录即可开始。只有这个邮箱地址可以参加面试，并且只有一次机会。",
+            "{company} 邀请你在 testee 上参加“{title}”在线测评。",
+            "使用 {email} 登录即可开始。只有这个邮箱地址可以参加测评，并且只有一次机会。",
         ],
         "button": "打开邀请",
     },
     "joined": {
         "subject": "“{title}”的链接",
-        "preheader": "如果离开面试，请用这个链接继续。使用 {email} 登录。",
-        "heading": "你的面试链接",
+        "preheader": "如果离开测评，请用这个链接继续。使用 {email} 登录。",
+        "heading": "你的测评链接",
         "lines": [
-            "你已在 testee 上开始 {company} 的“{title}”面试。",
+            "你已在 testee 上开始 {company} 的“{title}”在线测评。",
             "如果离开，请用这个链接继续：使用 {email} 登录。即使 {company} 关闭了你开始时使用的链接，它也依然有效。你离开期间，时间会继续计算。",
         ],
-        "button": "继续面试",
-        "footer": "这封邮件发送到 {email}，因为有人用这个地址在 testee 上开始了面试。",
+        "button": "继续测评",
+        "footer": "这封邮件发送到 {email}，因为有人用这个地址在 testee 上开始了在线测评。",
     },
     "reminder": {
-        "subject": "提醒：你在 {company} 的面试",
+        "subject": "提醒：你在 {company} 的在线测评",
         "preheader": "“{title}”仍然开放。使用 {email} 登录即可开始。",
-        "heading": "你的面试尚未开始",
+        "heading": "你的在线测评尚未开始",
         "lines": [
-            "{company} 几天前邀请你在 testee 上参加“{title}”面试，你还没有开始。",
-            "使用 {email} 登录即可开始。只有这个邮箱地址可以参加面试，并且只有一次机会。邀请在发送 30 天后失效。",
+            "{company} 几天前邀请你在 testee 上参加“{title}”在线测评，你还没有开始。",
+            "使用 {email} 登录即可开始。只有这个邮箱地址可以参加测评，并且只有一次机会。邀请在发送 30 天后失效。",
         ],
         "button": "打开邀请",
     },
@@ -300,7 +300,7 @@ TEXTS = {
     # The footer's links: optional emails' unsubscribe and settings, and a candidate's own.
     "unsubscribe": "退订",
     "email_settings": "更改邮件设置",
-    "stop_reminders": "不再给我发送此面试的提醒",
+    "stop_reminders": "不再给我发送此测评的提醒",
     "stop_company": "不再给我发送来自 {company} 的邮件",
     # Who runs testee, at the end of every email.
     "operator": "testee 由 {name}（{address}）运营。",
