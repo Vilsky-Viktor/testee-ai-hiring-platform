@@ -14,7 +14,7 @@ QUESTION_ID = uuid.uuid4()
 
 def fresh_auth():
     """Made per call: a service token lasts a minute."""
-    return bearer(token())
+    return bearer(token(caller="companies"))
 
 
 @pytest.fixture(autouse=True)

@@ -12,6 +12,7 @@ from access_matrix import REFUSED, Side, World, user_id
 from sqlalchemy import select
 
 from library.config import settings
+from library.constants.internal_callers import INTERNAL_CALLERS
 from library.core.db import Session
 from library.core.security import SERVICE_NAME
 from library.main import app
@@ -33,7 +34,7 @@ NOT_SCOPED = {
     "DELETE /internal/questions/{question_id}/rating": OWN,
     "GET /internal/questions/{question_id}/reports/mine": OWN,
 }
-KEY = (settings.service_secret, SERVICE_NAME)
+KEY = (settings.service_secret, SERVICE_NAME, INTERNAL_CALLERS)
 
 VALUES = {}
 

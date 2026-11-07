@@ -5,12 +5,13 @@ from types import SimpleNamespace
 import pytest
 from fastapi import HTTPException
 from testee_common.ai.ai_constants import LIMIT_HIT
+from testee_common.auth.service_auth import issue_token
 from testee_common.http.http import bearer
 from testee_common.limits.limit_list import LIMITS
 
 from generation.api.v1 import internal
+from generation.config import settings
 from generation.constants.generation import BUDGET_KEY, GENERATIONS_PAUSED
-from generation.core.security import service_token
 from generation.services import budget
 
 COMPANY_ID = uuid.uuid4()
@@ -87,7 +88,7 @@ def test_a_regenerated_question_counts_toward_the_limit_unless_the_company_paid(
     client.post(
         f"/internal/questions/{uuid.uuid4()}/regenerate",
         json={"user_id": "bob", "set_id": str(set_id), "paid": paid},
-        headers=bearer(service_token("generation")),
+        headers=bearer(issue_token("companies", "generation", settings.service_secret)),
     )
 
     assert counted == [paid]

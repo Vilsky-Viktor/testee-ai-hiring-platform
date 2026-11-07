@@ -2,12 +2,11 @@ from datetime import UTC, datetime, timedelta
 
 import jwt
 import pytest
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from testee_common.auth.service_auth import (
     callee_secret,
     issue_token,
-    only_from,
     service_caller,
     token_caller,
     token_claims,
@@ -20,10 +19,14 @@ ROUNDS_SECRET = "rounds-secret-that-is-at-least-32-bytes!"
 def library():
     """Library's app, admitting calls signed with its key and addressed to it."""
     app = FastAPI()
-    caller = service_caller(LIBRARY_SECRET, "library")
+    caller = service_caller(LIBRARY_SECRET, "library", {"GET /internal": {"companies"}})
 
     @app.get("/internal")
     def internal(name: caller) -> dict:
+        return {"caller": name}
+
+    @app.get("/internal/unlisted")
+    def unlisted(name: caller) -> dict:
         return {"caller": name}
 
     return TestClient(app)
@@ -98,13 +101,14 @@ def test_extra_claims_ride_along_signed_and_never_replace_the_callers():
     assert token_claims(token, ROUNDS_SECRET, "library") is None
 
 
-def test_only_from_lets_the_allowed_caller_through():
-    assert only_from("assistant", "assistant") is None
+def test_a_service_not_listed_for_the_route_is_refused():
+    response = call(issue_token("assistant", "library", LIBRARY_SECRET))
+
+    assert response.status_code == 403
+    assert response.json()["detail"] == "Not allowed"
 
 
-def test_only_from_refuses_another_caller():
-    with pytest.raises(HTTPException) as refused:
-        only_from("library", "assistant")
+def test_a_route_listed_for_no_one_refuses_every_service():
+    headers = {"Authorization": f"Bearer {issue_token('companies', 'library', LIBRARY_SECRET)}"}
 
-    assert refused.value.status_code == 403
-    assert refused.value.detail == "Not allowed"
+    assert library().get("/internal/unlisted", headers=headers).status_code == 403

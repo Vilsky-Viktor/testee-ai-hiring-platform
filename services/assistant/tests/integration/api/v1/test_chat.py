@@ -34,7 +34,7 @@ def client() -> httpx.AsyncClient:
 
 def library() -> dict:
     """A signed service token, as accounts calls to export a user's data."""
-    token = issue_token("library", "assistant", os.environ["SERVICE_SECRET"])
+    token = issue_token("accounts", "assistant", os.environ["SERVICE_SECRET"])
 
     return bearer(token)
 

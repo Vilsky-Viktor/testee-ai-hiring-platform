@@ -42,8 +42,6 @@ COPY_FIX_SECONDS = 30
 # The questions flagged or replaced lately that generation's weekly pattern job reads, newest
 # first, at most this many.
 MAX_PATTERN_SIGNALS = 500
-# Only generation reads them.
-PATTERN_SIGNALS_CALLER = "generation"
 
 # The page a company's question notifications open: its interviews (the library doesn't know
 # which interview a set belongs to).

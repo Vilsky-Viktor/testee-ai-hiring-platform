@@ -1,0 +1,26 @@
+# Who may call each /internal route of this service that takes a service token; any other
+# service is refused, and a route not listed here refuses everyone.
+INTERNAL_CALLERS = {
+    "POST /internal/candidates/charge": {"companies"},
+    "GET /internal/candidates/hold": {"companies"},
+    "POST /internal/candidates/hold": {"companies"},
+    "GET /internal/candidates/holds/open": {"companies"},
+    "POST /internal/candidates/release": {"companies"},
+    "POST /internal/candidates/settle": {"companies"},
+    "POST /internal/companies/credits": {"companies"},
+    "GET /internal/companies/low": {"assistant", "notifications"},
+    "DELETE /internal/companies/{company_id}": {"companies"},
+    "POST /internal/companies/{company_id}/adjustments": {"companies"},
+    "DELETE /internal/companies/{company_id}/auto-top-up": {"companies"},
+    "GET /internal/companies/{company_id}/credits": {"companies"},
+    "GET /internal/companies/{company_id}/history": {"companies"},
+    "GET /internal/companies/{company_id}/invoice": {"companies"},
+    "GET /internal/companies/{company_id}/paid": {"assistant", "companies"},
+    "GET /internal/companies/{company_id}/referral": {"companies"},
+    "GET /internal/companies/{company_id}/spent": {"companies"},
+    "POST /internal/companies/{company_id}/welcome": {"companies"},
+    "GET /internal/purchases": {"companies"},
+    "GET /internal/purchases/{transaction_id}": {"companies"},
+    "POST /internal/users/{user_id}/currency": {"accounts"},
+    "POST /internal/users/{user_id}/export": {"accounts"},
+}

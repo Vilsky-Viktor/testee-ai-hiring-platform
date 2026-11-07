@@ -7,6 +7,7 @@ from testee_common.auth.service_auth import service_caller
 from testee_common.auth.user import User
 
 from assistant.config import settings
+from assistant.constants.internal_callers import INTERNAL_CALLERS
 from assistant.core.security import SERVICE_NAME
 
 
@@ -23,4 +24,4 @@ def user_with_token(
 UserWithToken = Annotated[tuple[User, str], Depends(user_with_token)]
 
 # Calls to this service (accounts deleting or exporting a user's data), signed with its own key.
-ServiceCaller = service_caller(settings.service_secret, SERVICE_NAME)
+ServiceCaller = service_caller(settings.service_secret, SERVICE_NAME, INTERNAL_CALLERS)

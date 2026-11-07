@@ -83,7 +83,11 @@ async def internal(note_id: UUID) -> dict:
 
 
 SECRET = "matrix-secret-that-is-at-least-32-bytes"
-ServiceCaller = service_caller(SECRET, "notes")
+CALLERS = {
+    "GET /internal/companies/{company_id}/notes/{note_id}": {"companies"},
+    "DELETE /internal/companies/{company_id}/notes/{note_id}": {"companies"},
+}
+ServiceCaller = service_caller(SECRET, "notes", CALLERS)
 
 
 @app.get("/internal/companies/{company_id}/notes/{note_id}")
@@ -160,7 +164,7 @@ def test_a_superadmin_route_lets_only_the_superadmin_through(world):
 def test_an_internal_route_refuses_an_object_outside_its_scope_and_a_call_without_its_token(world):
     found = {
         str(route): asyncio.run(
-            internal_matrix.outcomes(app, route, world, (SECRET, "notes"), {}, {})
+            internal_matrix.outcomes(app, route, world, (SECRET, "notes", CALLERS), {}, {})
         )[0]
         for route in internal_matrix.routes(app, OWNED, {}, {})
     }
@@ -169,6 +173,7 @@ def test_an_internal_route_refuses_an_object_outside_its_scope_and_a_call_withou
         "GET /internal/companies/{company_id}/notes/{note_id}": {
             "no token": SIGNED_OUT,
             "wrong audience": SIGNED_OUT,
+            "other service": REFUSED,
             "cross company_id": REFUSED,
             "cross note_id": REFUSED,
             "service": ALLOWED,
@@ -176,6 +181,7 @@ def test_an_internal_route_refuses_an_object_outside_its_scope_and_a_call_withou
         "DELETE /internal/companies/{company_id}/notes/{note_id}": {
             "no token": SIGNED_OUT,
             "wrong audience": SIGNED_OUT,
+            "other service": REFUSED,
             "cross company_id": ALLOWED,
             "cross note_id": ALLOWED,
             "service": ALLOWED,

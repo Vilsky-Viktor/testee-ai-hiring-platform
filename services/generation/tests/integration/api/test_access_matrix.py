@@ -13,6 +13,7 @@ from sqlalchemy import select
 
 from generation.api.v1 import internal, superadmin
 from generation.config import settings
+from generation.constants.internal_callers import INTERNAL_CALLERS
 from generation.constants.kinds import GenerationKind
 from generation.core.db import Session
 from generation.core.security import SERVICE_NAME
@@ -32,7 +33,7 @@ NOT_OWNED = {}
 # asks for its interview's.
 INTERNAL_OWNED = {"generation_id", "company_id", "question_id", "set_id"}
 BODY_IDS = {"POST /internal/questions/{question_id}/regenerate": ("set_id",)}
-KEY = (settings.service_secret, SERVICE_NAME)
+KEY = (settings.service_secret, SERVICE_NAME, INTERNAL_CALLERS)
 
 # Templates and their questions are library's, asked for each request.
 VALUES = {"template_id": str(uuid4()), "question_id": str(uuid4())}

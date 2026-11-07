@@ -37,7 +37,9 @@ def test_a_deleted_account_unlinks_the_users_votes_and_reports(client, stored):
 
 
 def test_an_export_gives_the_users_votes_and_reports(client, stored):
-    response = client.post("/internal/users/ann/export", json=BODY, headers=bearer(token()))
+    response = client.post(
+        "/internal/users/ann/export", json=BODY, headers=bearer(token(caller="accounts"))
+    )
 
     assert response.json() == {
         "question_votes": [{"question": "Why?", "vote": 1}],

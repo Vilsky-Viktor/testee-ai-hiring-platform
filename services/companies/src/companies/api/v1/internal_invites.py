@@ -1,9 +1,7 @@
 from uuid import UUID
 
 from fastapi import APIRouter, status
-from testee_common.auth.service_auth import only_from
 from testee_common.auth.user import UserEmailIn
-from testee_common.config.constants import UPDATES_CALLER
 
 from companies.api.dependencies import ServiceCaller
 from companies.core.db import Session
@@ -38,6 +36,4 @@ async def company_candidate_updates(
     """The assistant, for its get_updates tool: each candidate of these companies who started,
     finished or whose invite wasn't delivered after `since` and up to `until`: the newest
     MAX_UPDATES, newest first, and the counts of all."""
-    only_from(caller, UPDATES_CALLER)
-
     return await candidate_updates.updates(body.company_ids, body.since, body.until)

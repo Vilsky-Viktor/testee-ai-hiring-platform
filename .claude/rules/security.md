@@ -29,7 +29,12 @@ the Top 10 for LLM applications 2025.
   (`packages/common/tests/access_matrix.py`) fails on a route that lets the wrong caller through.
 - Superadmin routes answer 404 to everyone else.
 - Service-to-service calls carry short-lived (60 s), audience-bound tokens with one key per
-  callee (`service_auth`); Google-signed pushes have their audience and account checked;
+  callee (`service_auth`), and each service's `constants/internal_callers.py` lists who may call
+  each `/internal` route (`INTERNAL_CALLERS`, refused with a 403 otherwise, an unlisted route
+  refusing everyone; `test_route_guards.py` checks the list against the routes and Terraform's
+  `calls`). The caller's name is what its token says: the list stops a wrong or misdirected call,
+  not a service that holds the key and lies. Google-signed pushes have their audience and
+  account checked;
   `/internal` is blocked at the edge and the gateway, and Cloud Run takes traffic only from the
   load balancer.
 

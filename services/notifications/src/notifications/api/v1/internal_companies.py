@@ -1,8 +1,6 @@
 from uuid import UUID
 
 from fastapi import APIRouter
-from testee_common.auth.service_auth import only_from
-from testee_common.config.constants import INTEGRATIONS_CALLER
 from testee_common.http.counts import CountOut
 
 from notifications.api.dependencies import ServiceCaller
@@ -16,8 +14,6 @@ router = APIRouter(prefix="/internal/companies", tags=["internal"])
 async def active_count(company_id: UUID, caller: ServiceCaller) -> CountOut:
     """Companies, for the company's menu: 1 while its Slack channel is connected and working,
     else 0."""
-    only_from(caller, INTEGRATIONS_CALLER)
-
     async with Session() as session:
         found = await slack.connected(session, str(company_id))
 

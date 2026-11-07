@@ -1,6 +1,4 @@
 from fastapi import APIRouter
-from testee_common.auth.service_auth import only_from
-from testee_common.config.constants import UPDATES_CALLER
 
 from notifications.api.dependencies import ServiceCaller
 from notifications.core.db import Session
@@ -14,7 +12,6 @@ router = APIRouter(prefix="/internal", tags=["internal"])
 async def company_updates(body: UpdatesIn, caller: ServiceCaller) -> UpdatesOut:
     """The assistant, for its get_updates tool: what reached these companies' bells between two
     times, newest first. Reading them marks nothing as seen."""
-    only_from(caller, UPDATES_CALLER)
     ids = [str(company_id) for company_id in body.company_ids]
     rows = []
 

@@ -67,12 +67,11 @@ VIA_MCP = "mcp"
 # That header: a service token signed for companies, so it can't be forged; other services pass
 # it on to companies' access check (testee_common.auth.company_access).
 ASSISTANT_HEADER = "X-Assistant"
-# The only service that may read the internal routes of what's new (its get_updates tool), and
-# the most updates one lists, newest first (with the counts of all).
-UPDATES_CALLER = "assistant"
+# What the header's signing key is made for (testee_common.auth.tokens.purpose_key): it isn't a
+# token for calling companies, and a service that passes it on can't use it as one.
+ASSISTANT_HEADER_PURPOSE = "assistant-header"
+# The most updates the internal routes of what's new list, newest first (with the counts of all).
 MAX_UPDATES = 50
-# The only service that may read how many integrations a company has working (its menu).
-INTEGRATIONS_CALLER = "companies"
 NOT_ALLOWED = "Not allowed"
 SIGN_IN_UNAVAILABLE = "Sign-in is temporarily unavailable. Please try again shortly."
 MINUTE_SECONDS = 60

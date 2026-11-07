@@ -2,11 +2,12 @@ import uuid
 
 import pytest
 from pydantic import ValidationError
+from testee_common.auth.service_auth import issue_token
 from testee_common.http.http import bearer
 
 from generation.api.v1 import internal
+from generation.config import settings
 from generation.constants.generation import MAX_INSTRUCTIONS_LENGTH, RUN_GENERATION
-from generation.core.security import service_token
 from generation.models.generation import Generation
 from generation.repositories import generations
 from generation.schemas.generation import ReviewRequest
@@ -16,7 +17,7 @@ GENERATION_ID = uuid.uuid4()
 
 
 def headers():
-    return bearer(service_token("generation"))
+    return bearer(issue_token("companies", "generation", settings.service_secret))
 
 
 def company_generation():

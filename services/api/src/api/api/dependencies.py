@@ -6,6 +6,7 @@ from testee_common.auth.service_auth import service_caller
 from testee_common.http.client_ip import client_ip
 
 from api.config import settings
+from api.constants.internal_callers import INTERNAL_CALLERS
 from api.constants.permissions import Permission
 from api.core.exceptions import MissingPermission
 from api.core.security import SERVICE_NAME
@@ -42,4 +43,4 @@ def needs(permission: Permission):
 
 
 # Calls to this service, signed with its own key.
-ServiceCaller = service_caller(settings.service_secret, SERVICE_NAME)
+ServiceCaller = service_caller(settings.service_secret, SERVICE_NAME, INTERNAL_CALLERS)

@@ -49,7 +49,8 @@ def topic(monkeypatch):
 
 def test_a_topics_questions_say_which_are_multi_answer(client, topic):
     found = client.get(
-        f"/internal/sets/{SET_ID}/topics/{uuid.uuid4()}/questions", headers=bearer(token())
+        f"/internal/sets/{SET_ID}/topics/{uuid.uuid4()}/questions",
+        headers=bearer(token(caller="companies")),
     ).json()
 
     assert [item["multi"] for item in found] == [False, True]
@@ -67,8 +68,10 @@ def test_a_topics_questions_carry_the_named_users_own_say(client, topic, monkeyp
     monkeypatch.setattr(feedback, "mine", fake_mine)
     url = f"/internal/sets/{SET_ID}/topics/{uuid.uuid4()}/questions"
 
-    named = client.get(url, params={"user_id": "ann"}, headers=bearer(token())).json()
-    unnamed = client.get(url, headers=bearer(token())).json()
+    named = client.get(
+        url, params={"user_id": "ann"}, headers=bearer(token(caller="companies"))
+    ).json()
+    unnamed = client.get(url, headers=bearer(token(caller="companies"))).json()
 
     assert [(item["my_rating"], item["reported"]) for item in named] == [(-1, False), (None, True)]
     # Without a user, library doesn't look anyone's up.
@@ -80,7 +83,9 @@ def test_a_questions_context_says_whether_it_is_multi_answer(client, topic):
     single, multi = topic.questions
 
     def context(item):
-        return client.get(f"/internal/questions/{item.id}/context", headers=bearer(token())).json()
+        return client.get(
+            f"/internal/questions/{item.id}/context", headers=bearer(token(caller="companies"))
+        ).json()
 
     assert (context(single)["multi"], context(multi)["multi"]) == (False, True)
 
@@ -90,6 +95,8 @@ def test_a_questions_context_says_whether_it_shows_an_example(client, topic):
     shown.text = "What does it print?\n```python\nprint(1)\n```"
 
     def context(item):
-        return client.get(f"/internal/questions/{item.id}/context", headers=bearer(token())).json()
+        return client.get(
+            f"/internal/questions/{item.id}/context", headers=bearer(token(caller="companies"))
+        ).json()
 
     assert (context(plain)["example"], context(shown)["example"]) == (False, True)

@@ -5,15 +5,16 @@ from types import SimpleNamespace
 
 import pytest
 from firebase_admin import auth as firebase_auth
+from testee_common.auth.service_auth import issue_token
 from testee_common.http.http import bearer
 
+from accounts.config import settings
 from accounts.constants.emails import FIREBASE_LOOKUP_LIMIT
-from accounts.core.security import service_token
 
 
 def auth() -> dict:
     """Made per call: a service token lasts a minute."""
-    return bearer(service_token("accounts"))
+    return bearer(issue_token("companies", "accounts", settings.service_secret))
 
 
 ANN = SimpleNamespace(

@@ -23,7 +23,7 @@ from tests.integration.transactions import transaction
 def internal() -> httpx.AsyncClient:
     """The assistant's internal routes, called with a service token (exporting an account) or
     as Pub/Sub's push (accounts' `user.deleted`)."""
-    token = issue_token("library", "assistant", os.environ["SERVICE_SECRET"])
+    token = issue_token("accounts", "assistant", os.environ["SERVICE_SECRET"])
 
     return httpx.AsyncClient(
         transport=httpx.ASGITransport(app=app),

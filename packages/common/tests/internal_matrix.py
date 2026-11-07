@@ -8,6 +8,8 @@ the real database, with:
 - a token for this service and one side's ids: let through (anything but 401, 403 or 404);
 - that token and the same ids but one from the other side, one case per id ("cross <id>"):
   refused (403 or 404);
+- a token from a service not listed for the route in `INTERNAL_CALLERS` ("other service"):
+  refused (403);
 - no token, and a token signed with this service's key for another service ("wrong audience"):
   refused (401).
 
@@ -25,10 +27,16 @@ with why it scopes nothing (an acting user the caller vouches for, a filter). It
         assert found == internal_matrix.expected(route, {}), str(statuses)
 """
 
+import re
+from pathlib import Path
+
 from access_matrix import ALLOWED, REFUSED, SIGNED_OUT, Route, World, call_all, id_params
+from fastapi.testclient import TestClient
 from testee_common.auth.route_guards import api_routes, calls
 from testee_common.auth.service_auth import issue_token
 from testee_common.http.http import bearer
+
+LOCALS = Path(__file__).parents[3] / "infra/terraform/locals.tf"
 
 
 def service_routes(app):
@@ -37,6 +45,41 @@ def service_routes(app):
         if route.path.startswith("/internal") and "verify_service" in calls(route.dependant):
             for method in sorted(route.methods):
                 yield method, route
+
+
+def unlisted_callers(app, callers: dict) -> list[str]:
+    """Service routes `INTERNAL_CALLERS` leaves out, and listed routes gone."""
+    names = {f"{method} {route.path}" for method, route in service_routes(app)}
+
+    return sorted(names - set(callers)) + [f"gone: {name}" for name in sorted(set(callers) - names)]
+
+
+def keyless_callers(callers: dict, name: str) -> list[str]:
+    """Services listed in `INTERNAL_CALLERS` that Terraform's `calls` doesn't give `name`'s key:
+    their calls could never work there."""
+    block = re.search(
+        r"^  calls = \{(.*?)^  \}", LOCALS.read_text(), re.MULTILINE | re.DOTALL
+    ).group(1)
+    lists = re.findall(r"^\s*([\w-]+)\s*=\s*\[(.*?)\]", block, re.MULTILINE)
+    holders = {caller for caller, callees in lists if f'"{name}"' in callees}
+
+    return sorted(set().union(*callers.values()) - holders)
+
+
+def outsiders_let_in(app, key: tuple) -> list[str]:
+    """Each service route that doesn't answer 403 to a valid token of a service it doesn't list."""
+    secret, name, _ = key
+    client = TestClient(app, raise_server_exceptions=False)
+    headers = bearer(issue_token("outsider", name, secret))
+    found = []
+
+    for method, route in service_routes(app):
+        path = re.sub(r"\{[^}]*\}", "1", route.path)
+
+        if client.request(method, path, headers=headers).status_code != 403:
+            found.append(f"{method} {route.path}")
+
+    return found
 
 
 def ids_of(name: str, route, body_ids: dict) -> list[str]:
@@ -73,19 +116,30 @@ def unlisted(app, owned: set[str], not_scoped: dict[str, str], body_ids: dict) -
 
 
 def expected(route: Route, exceptions: dict) -> dict[str, str]:
-    found = {"service": ALLOWED, "no token": SIGNED_OUT, "wrong audience": SIGNED_OUT}
+    found = {
+        "service": ALLOWED,
+        "other service": REFUSED,
+        "no token": SIGNED_OUT,
+        "wrong audience": SIGNED_OUT,
+    }
     found |= {f"cross {name}": REFUSED for name in route.owned}
 
     return found | exceptions.get(str(route), {})
 
 
 async def outcomes(app, route: Route, world: World, key: tuple, bodies: dict, values: dict):
-    """Who got through and the statuses they got; `key` is the service's (secret, name)."""
-    secret, name = key
-    token = bearer(issue_token("matrix", name, secret))
-    wrong = bearer(issue_token("matrix", f"not-{name}", secret))
+    """Who got through and the statuses they got; `key` is the service's (secret, name,
+    INTERNAL_CALLERS)."""
+    secret, name, callers = key
+    token = bearer(issue_token(min(callers[str(route)]), name, secret))
+    other = bearer(issue_token("outsider", name, secret))
+    wrong = bearer(issue_token("outsider", f"not-{name}", secret))
     mine, theirs = world.mine.ids, world.theirs.ids
-    found = {"no token": ({}, mine), "wrong audience": (wrong, mine)}
+    found = {
+        "no token": ({}, mine),
+        "wrong audience": (wrong, mine),
+        "other service": (other, mine),
+    }
     found |= {f"cross {item}": (token, mine | {item: theirs[item]}) for item in route.owned}
 
     return await call_all(app, route, found | {"service": (token, mine)}, bodies, values)

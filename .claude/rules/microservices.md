@@ -74,7 +74,8 @@ timeouts: `python-services.md`; scaling: `scalability.md`; tables: `database.md`
 - Services talk only through HTTP routes (REST, JSON) and Pub/Sub events; never by importing
   another service's code, reading its files at run time or sharing its database.
 - Routes other services call are `/internal/...`, in the service's OpenAPI, signed with a
-  service token and allowed by `run.invoker` on that callee only (`locals.tf` `calls`).
+  service token, listed with their callers in the service's `constants/internal_callers.py` and
+  allowed by `run.invoker` on that callee only (`locals.tf` `calls`).
 - Every event type has one producer, a past-tense name (`interview.deleted`), a Pydantic payload
   model and a line in `docs/architecture.md`'s table of consumers. Facts every holder reacts to
   go as events (choreography); a sequence where a step may refuse and the starter must know runs

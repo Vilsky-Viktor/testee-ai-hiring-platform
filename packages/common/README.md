@@ -94,7 +94,8 @@ Access checks: `route_guards.unguarded(app, public)` lists the routes that run n
 a superadmin, another service, Google's pushes): each service's `test_route_guards.py` fails on one
 that isn't listed as public on purpose, and `route_guards.not_from_a_service(app)` on an `/internal`
 route that takes neither a service token nor Google's signature (what the token itself refuses is
-tested once, in `test_service_auth.py`). `tests/access_matrix.py` checks the guard looks at the right
+tested once, in `test_service_auth.py`). `service_caller` takes each service's `INTERNAL_CALLERS`.
+`tests/access_matrix.py` checks the guard looks at the right
 object: each service's `tests/integration/api/test_access_matrix.py` calls every route taking an id
 of something owned (found from the app) as the owner, another company's owner (with the owner's ids,
 and with its own ids but one of the owner's), a viewer changing something, nobody signed in and, on

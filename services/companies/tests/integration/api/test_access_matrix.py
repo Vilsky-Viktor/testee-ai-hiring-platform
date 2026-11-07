@@ -13,6 +13,7 @@ from access_matrix import ALLOWED, REFUSED, Side, World, user_id
 from sqlalchemy import update
 
 from companies.config import settings
+from companies.constants.internal_callers import INTERNAL_CALLERS
 from companies.core.db import Session
 from companies.core.security import SERVICE_NAME
 from companies.integrations import billing
@@ -46,7 +47,7 @@ NOT_SCOPED = {
     "GET /internal/companies/{company_id}/access": "Answers whether the user is a member.",
     "POST /internal/companies/{company_id}/interviews": "The acting user the api checked.",
 }
-KEY = (settings.service_secret, SERVICE_NAME)
+KEY = (settings.service_secret, SERVICE_NAME, INTERNAL_CALLERS)
 
 # Values of the parameters naming nothing this service owns: the question bank's topics and
 # questions are library's, which checks them against the interview's set.

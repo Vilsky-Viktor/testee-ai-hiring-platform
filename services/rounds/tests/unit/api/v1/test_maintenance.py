@@ -1,10 +1,11 @@
 import asyncio
 from datetime import timedelta
 
+from testee_common.auth.service_auth import issue_token
 from testee_common.http.http import bearer
 
 from rounds.api.v1 import internal_maintenance, schedules
-from rounds.core.security import service_token
+from rounds.config import settings
 
 
 def test_a_service_reads_the_running_count(client, monkeypatch):
@@ -15,7 +16,7 @@ def test_a_service_reads_the_running_count(client, monkeypatch):
 
     response = client.get(
         "/internal/maintenance/running",
-        headers=bearer(service_token("rounds")),
+        headers=bearer(issue_token("companies", "rounds", settings.service_secret)),
     )
 
     assert response.json() == {"running": 3}
@@ -33,7 +34,7 @@ def test_a_service_gives_the_time_back(client, monkeypatch):
     response = client.post(
         url,
         json={"seconds": 90},
-        headers=bearer(service_token("rounds")),
+        headers=bearer(issue_token("companies", "rounds", settings.service_secret)),
     )
 
     assert response.status_code == 204

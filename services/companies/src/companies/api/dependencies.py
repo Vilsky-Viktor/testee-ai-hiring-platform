@@ -4,6 +4,7 @@ from fastapi import Depends, Header
 from testee_common.auth.service_auth import service_caller
 
 from companies.config import settings
+from companies.constants.internal_callers import INTERNAL_CALLERS
 from companies.core.security import (
     REQUEST_COMPANY,
     REQUEST_KEY,
@@ -14,7 +15,7 @@ from companies.core.security import (
 )
 
 # Calls to this service, signed with its own key.
-ServiceCaller = service_caller(settings.service_secret, SERVICE_NAME)
+ServiceCaller = service_caller(settings.service_secret, SERVICE_NAME, INTERNAL_CALLERS)
 
 
 async def request_via(

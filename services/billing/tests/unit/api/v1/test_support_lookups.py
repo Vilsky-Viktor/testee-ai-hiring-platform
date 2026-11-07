@@ -4,16 +4,17 @@ zone's support tab; storage faked."""
 from datetime import UTC, datetime
 from types import SimpleNamespace
 
+from testee_common.auth.service_auth import issue_token
 from testee_common.http.http import bearer
 
+from billing.config import settings
 from billing.constants.products import MAX_BUYER_PURCHASES
-from billing.core.security import service_token
 from billing.repositories import ledger, purchases
 
 
 def fresh_auth():
     """Made per call: a service token lasts a minute."""
-    return bearer(service_token("billing"))
+    return bearer(issue_token("companies", "billing", settings.service_secret))
 
 
 NOW = datetime(2026, 10, 10, 12, tzinfo=UTC)

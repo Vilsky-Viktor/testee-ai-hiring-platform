@@ -15,6 +15,7 @@ import pytest
 from access_matrix import Side, World, user_id
 
 from billing.config import settings
+from billing.constants.internal_callers import INTERNAL_CALLERS
 from billing.constants.products import OwnerType
 from billing.core.security import SERVICE_NAME
 from billing.integrations import paddle
@@ -33,7 +34,7 @@ NOT_SCOPED = {
     "DELETE /internal/companies/{company_id}/auto-top-up": "`buyer_id` only narrows: off only "
     "when that person's card pays.",
 }
-KEY = (settings.service_secret, SERVICE_NAME)
+KEY = (settings.service_secret, SERVICE_NAME, INTERNAL_CALLERS)
 
 VALUES = {"name": "MAX_API_KEYS"}
 

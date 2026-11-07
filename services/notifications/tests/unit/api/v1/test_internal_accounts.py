@@ -15,7 +15,7 @@ from notifications.repositories import (
 def fresh_headers():
     """Made per call: a service token lasts a minute."""
     return {
-        "Authorization": f"Bearer {issue_token('library', 'notifications', 'test-secret-that-is-at-least-32-bytes')}"
+        "Authorization": f"Bearer {issue_token('accounts', 'notifications', 'test-secret-that-is-at-least-32-bytes')}"
     }
 
 

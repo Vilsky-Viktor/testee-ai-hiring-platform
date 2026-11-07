@@ -3,7 +3,7 @@ from datetime import UTC, datetime
 from typing import Annotated
 
 import jwt
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from testee_common.config.constants import NOT_ALLOWED, SERVICE_TOKEN_LIFETIME
 
@@ -54,11 +54,13 @@ def token_caller(token: str, secret: str, name: str) -> str | None:
     return claims["iss"] if claims else None
 
 
-def service_caller(secret: str, name: str):
+def service_caller(secret: str, name: str, route_callers: dict[str, set[str]]):
     """A FastAPI parameter type that admits only tokens addressed to service `name` and signed
-    with its key; it holds the calling service's name."""
+    with its key, from a service `route_callers` lists for the route ("METHOD path"); it holds
+    the calling service's name. A route not listed refuses everyone."""
 
     def verify_service(
+        request: Request,
         credentials: Annotated[HTTPAuthorizationCredentials, Depends(bearer)],
     ) -> str:
         caller = token_caller(credentials.credentials, secret, name)
@@ -66,12 +68,9 @@ def service_caller(secret: str, name: str):
         if caller is None:
             raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Invalid service token")
 
+        if caller not in route_callers.get(f"{request.method} {request.scope['route'].path}", ()):
+            raise HTTPException(status.HTTP_403_FORBIDDEN, NOT_ALLOWED)
+
         return caller
 
     return Annotated[str, Depends(verify_service)]
-
-
-def only_from(caller: str, allowed: str) -> None:
-    """Refuses a call from any service but `allowed`, for an internal route only it may use."""
-    if caller != allowed:
-        raise HTTPException(status.HTTP_403_FORBIDDEN, NOT_ALLOWED)

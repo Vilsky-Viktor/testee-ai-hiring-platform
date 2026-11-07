@@ -204,7 +204,7 @@ def service_token(lifetime=60):
     exp = datetime.now(UTC) + timedelta(seconds=lifetime)
 
     return jwt.encode(
-        {"iss": "generation", "aud": "site", "exp": exp},
+        {"iss": "notifications", "aud": "site", "exp": exp},
         "test-secret-that-is-at-least-32-bytes",
         algorithm="HS256",
     )

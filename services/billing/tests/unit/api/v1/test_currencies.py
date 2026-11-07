@@ -73,7 +73,9 @@ def test_a_new_accounts_currency_is_saved_only_with_a_country(
 ):
     params = {"country": country} if country else {}
 
-    response = client.post("/internal/users/ann/currency", params=params, headers=fresh_auth())
+    response = client.post(
+        "/internal/users/ann/currency", params=params, headers=fresh_auth("accounts")
+    )
 
     assert response.status_code == 204
     assert saved_currencies.get(("user", "ann")) == kept

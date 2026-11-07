@@ -1,11 +1,10 @@
 from uuid import UUID
 
 from fastapi import APIRouter, HTTPException, Query, status
-from testee_common.auth.service_auth import only_from
-from testee_common.config.constants import MAX_UPDATES, UPDATES_CALLER
+from testee_common.config.constants import MAX_UPDATES
 
 from library.api.dependencies import ServiceCaller
-from library.constants.quality import COMPANY_INTERVIEWS_LINK, PATTERN_SIGNALS_CALLER
+from library.constants.quality import COMPANY_INTERVIEWS_LINK
 from library.schemas.quality import (
     QuestionQuality,
     QuestionUpdateOut,
@@ -27,8 +26,6 @@ async def list_signals(
     """Questions flagged or replaced in the last `days` across every company and template, for
     generation's weekly pattern job only: it turns them into general rules without any company's
     text, and nothing else may read other companies' questions."""
-    only_from(caller, PATTERN_SIGNALS_CALLER)
-
     return await quality_signals.recent(days)
 
 
@@ -39,7 +36,6 @@ async def company_question_updates(
     """The assistant, for its get_updates tool: each question of these companies' interviews
     newly flagged or fixed after `since` and up to `until`, named by its topic: the newest
     MAX_UPDATES of each kind, and how many of each in all."""
-    only_from(caller, UPDATES_CALLER)
     rows, counts = await question_updates.between(
         body.company_ids, body.since, body.until, MAX_UPDATES
     )

@@ -3,10 +3,11 @@ post's; each language is queued once for the next batch."""
 
 import uuid
 
+from testee_common.auth.service_auth import issue_token
 from testee_common.http.http import bearer
 
+from generation.config import settings
 from generation.constants.batch_work import BatchKind
-from generation.core.security import service_token
 
 SOURCE = {"subject": "New", "text": "One.", "button": None, "missing": ["de", "fr"]}
 
@@ -14,7 +15,7 @@ SOURCE = {"subject": "New", "text": "One.", "button": None, "missing": ["de", "f
 def test_each_missing_language_of_a_campaign_is_queued_once(client, batch_store):
     campaign_id = uuid.uuid4()
     path = f"/internal/campaigns/{campaign_id}/translate"
-    headers = bearer(service_token("generation"))
+    headers = bearer(issue_token("notifications", "generation", settings.service_secret))
 
     answers = [client.post(path, json=SOURCE, headers=headers).status_code for _ in range(2)]
 
@@ -31,7 +32,7 @@ def test_each_missing_language_of_a_campaign_is_queued_once(client, batch_store)
 def test_each_missing_language_of_a_news_post_is_queued_once(client, batch_store):
     news_id = uuid.uuid4()
     path = f"/internal/news/{news_id}/translate"
-    headers = bearer(service_token("generation"))
+    headers = bearer(issue_token("site", "generation", settings.service_secret))
     source = {"title": "Practice", "text": "One.", "missing": ["de", "fr"]}
 
     answers = [client.post(path, json=source, headers=headers).status_code for _ in range(2)]

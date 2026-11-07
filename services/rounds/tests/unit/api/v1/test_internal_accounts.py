@@ -7,7 +7,7 @@ def fresh_headers():
     """Made per call: a service token lasts a minute."""
     return {
         "Authorization": "Bearer "
-        + issue_token("library", "rounds", "test-secret-that-is-at-least-32-bytes")
+        + issue_token("accounts", "rounds", "test-secret-that-is-at-least-32-bytes")
     }
 
 

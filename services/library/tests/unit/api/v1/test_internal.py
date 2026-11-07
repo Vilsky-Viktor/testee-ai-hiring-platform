@@ -21,12 +21,10 @@ PAYLOAD = {
 }
 
 
-def token(secret="test-secret-that-is-at-least-32-bytes", lifetime=60):
+def token(secret="test-secret-that-is-at-least-32-bytes", lifetime=60, caller="generation"):
     exp = datetime.now(UTC) + timedelta(seconds=lifetime)
 
-    return jwt.encode(
-        {"iss": "generation", "aud": "library", "exp": exp}, secret, algorithm="HS256"
-    )
+    return jwt.encode({"iss": caller, "aud": "library", "exp": exp}, secret, algorithm="HS256")
 
 
 def post(client, value):
@@ -140,7 +138,7 @@ def test_a_template_copy_carries_its_level_for_the_tests_seconds_a_question(clie
     response = client.post(
         f"/internal/templates/{uuid.uuid4()}/copy",
         json={"company_id": "company-1"},
-        headers=bearer(token()),
+        headers=bearer(token(caller="companies")),
     )
 
     assert response.status_code == 201

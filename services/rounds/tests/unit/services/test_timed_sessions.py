@@ -4,11 +4,12 @@ from uuid import uuid4
 
 import pytest
 from fastapi import HTTPException
+from testee_common.auth.service_auth import issue_token
 from testee_common.auth.user import User
 from testee_common.http.http import bearer
 
+from rounds.config import settings
 from rounds.constants.rounds import TIME_UP
-from rounds.core.security import service_token
 from rounds.models.answers import Answer
 from rounds.models.sessions import Session
 from rounds.repositories import session_expiry, sessions
@@ -79,7 +80,7 @@ def test_starting_a_timed_interview_passes_the_seconds_per_question(client, monk
     response = client.post(
         "/internal/sessions",
         json=body,
-        headers=bearer(service_token("rounds")),
+        headers=bearer(issue_token("companies", "rounds", settings.service_secret)),
     )
 
     assert response.status_code == 201

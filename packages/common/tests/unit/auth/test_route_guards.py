@@ -40,7 +40,7 @@ def test_routes_without_a_guard_are_found_unless_public():
 
 
 def test_internal_routes_take_only_a_services_token_or_googles_signature():
-    caller = service_caller("library-secret-that-is-at-least-32-bytes", "library")
+    caller = service_caller("library-secret-that-is-at-least-32-bytes", "library", {})
     app = FastAPI()
 
     @app.get("/internal/signed")

@@ -38,7 +38,7 @@ def test_practice_gets_only_practice_questions_and_skips_empty_topics(client, mo
         return template if set_id == TEMPLATE_ID else None
 
     monkeypatch.setattr(preparations, "get_content", get_content)
-    headers = bearer(token())
+    headers = bearer(token(caller="rounds"))
 
     found = client.get(f"/internal/templates/{TEMPLATE_ID}/practice", headers=headers).json()
     missing = client.get(f"/internal/templates/{uuid.uuid4()}/practice", headers=headers)
@@ -58,6 +58,8 @@ def test_companies_gets_an_interviews_matching_practice_topics(client, monkeypat
 
     monkeypatch.setattr(practice_matches, "practice_topics", practice_topics)
 
-    found = client.get(f"/internal/sets/{TEMPLATE_ID}/practice-topics", headers=bearer(token()))
+    found = client.get(
+        f"/internal/sets/{TEMPLATE_ID}/practice-topics", headers=bearer(token(caller="companies"))
+    )
 
     assert found.json() == {"topic_ids": [str(topic_id)]}

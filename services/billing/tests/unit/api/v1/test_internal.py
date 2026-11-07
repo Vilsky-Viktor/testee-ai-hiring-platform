@@ -2,18 +2,19 @@ import asyncio
 from datetime import UTC, datetime
 from types import SimpleNamespace
 
+from testee_common.auth.service_auth import issue_token
 from testee_common.http.http import bearer
 
+from billing.config import settings
 from billing.constants.credits import CANDIDATE_CREDITS
-from billing.core.security import service_token
 from billing.repositories import auto_top_ups as auto_top_up_rows
 from billing.repositories import ledger, purchases, usage
 from billing.services import auto_top_up_charging, auto_top_ups
 
 
-def fresh_auth():
+def fresh_auth(caller="companies"):
     """Made per call: a service token lasts a minute."""
-    return bearer(service_token("billing"))
+    return bearer(issue_token(caller, "billing", settings.service_secret))
 
 
 HOLD = {"company_id": "acme", "key": "session-1"}
@@ -164,7 +165,7 @@ def test_accounts_exports_a_users_purchases_and_automatic_top_ups_with_a_post(cl
     monkeypatch.setattr(auto_top_up_rows, "of_buyer", of_buyer)
     monkeypatch.setattr(usage, "of_user", of_user)
 
-    response = client.post("/internal/users/ann/export", headers=fresh_auth())
+    response = client.post("/internal/users/ann/export", headers=fresh_auth("accounts"))
 
     assert response.json() == {
         # Never chosen nor seen with a country: none saved.
@@ -212,7 +213,7 @@ def test_low_companies_say_how_many_credits_are_available(client, monkeypatch):
 
     monkeypatch.setattr(ledger, "running_low", running_low)
 
-    response = client.get("/internal/companies/low", headers=fresh_auth())
+    response = client.get("/internal/companies/low", headers=fresh_auth("assistant"))
 
     assert response.json() == {
         "companies": [{"company_id": "acme", "available": 1100, "candidates": 2}]
@@ -230,7 +231,7 @@ def test_low_companies_can_be_only_those_asked_for(client, monkeypatch):
 
     monkeypatch.setattr(ledger, "running_low", running_low)
 
-    response = client.get("/internal/companies/low?ids=a&ids=b", headers=fresh_auth())
+    response = client.get("/internal/companies/low?ids=a&ids=b", headers=fresh_auth("assistant"))
 
     assert response.json() == {"companies": []}
     assert asked == [["a", "b"]]

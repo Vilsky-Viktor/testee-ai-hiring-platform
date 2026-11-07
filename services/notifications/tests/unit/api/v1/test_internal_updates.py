@@ -2,7 +2,6 @@ import uuid
 from datetime import UTC, datetime
 
 from testee_common.auth.service_auth import issue_token
-from testee_common.config.constants import UPDATES_CALLER
 
 from notifications.models.notifications import Notification
 from notifications.repositories import updates
@@ -42,7 +41,7 @@ def test_the_assistant_reads_its_companies_updates_with_each_ones_company(client
 
     monkeypatch.setattr(updates, "of_companies", of_companies)
 
-    response = client.post("/internal/updates", json=body(), headers=headers(UPDATES_CALLER))
+    response = client.post("/internal/updates", json=body(), headers=headers("assistant"))
 
     assert response.status_code == 200
     assert response.json() == {
@@ -66,7 +65,7 @@ def test_no_companies_give_no_updates_without_reading(client, monkeypatch):
 
     monkeypatch.setattr(updates, "of_companies", of_companies)
 
-    response = client.post("/internal/updates", json=body([]), headers=headers(UPDATES_CALLER))
+    response = client.post("/internal/updates", json=body([]), headers=headers("assistant"))
 
     assert response.status_code == 200
     assert response.json() == {"items": []}
@@ -81,7 +80,7 @@ def test_another_service_is_not_allowed(client):
 
 def test_a_time_without_a_time_zone_is_refused(client):
     response = client.post(
-        "/internal/updates", json=body(since="2026-10-17T09:00:00"), headers=headers(UPDATES_CALLER)
+        "/internal/updates", json=body(since="2026-10-17T09:00:00"), headers=headers("assistant")
     )
 
     assert response.status_code == 422

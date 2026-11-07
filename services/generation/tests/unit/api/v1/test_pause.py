@@ -2,11 +2,12 @@ import uuid
 
 import pytest
 from testee_common.auth.auth import current_user
+from testee_common.auth.service_auth import issue_token
 from testee_common.auth.user import User
 from testee_common.config.constants import PAUSED
 from testee_common.http.http import bearer
 
-from generation.core.security import service_token
+from generation.config import settings
 from generation.main import app
 
 
@@ -50,7 +51,7 @@ def test_paused_the_verifier_takes_no_new_question(client, queued):
     refused = client.post(
         f"/internal/questions/{uuid.uuid4()}/verify",
         json={"flag": "wrong_key", "now": True},
-        headers=bearer(service_token("generation")),
+        headers=bearer(issue_token("library", "generation", settings.service_secret)),
     )
 
     assert refused.status_code == 503
@@ -58,20 +59,24 @@ def test_paused_the_verifier_takes_no_new_question(client, queued):
 
 
 @pytest.mark.parametrize(
-    "kind, source",
+    "caller, kind, source",
     [
-        ("campaigns", {"subject": "New", "text": "One.", "button": None, "missing": ["de"]}),
-        ("news", {"title": "New", "text": "One.", "missing": ["de"]}),
+        (
+            "notifications",
+            "campaigns",
+            {"subject": "New", "text": "One.", "button": None, "missing": ["de"]},
+        ),
+        ("site", "news", {"title": "New", "text": "One.", "missing": ["de"]}),
     ],
 )
 def test_paused_a_campaign_or_news_post_is_not_queued_for_translation(
-    client, batch_store, kind, source
+    client, batch_store, caller, kind, source
 ):
     """Notifications saves a campaign again later, and site's daily run sends a post again."""
     refused = client.post(
         f"/internal/{kind}/{uuid.uuid4()}/translate",
         json=source,
-        headers=bearer(service_token("generation")),
+        headers=bearer(issue_token(caller, "generation", settings.service_secret)),
     )
 
     assert refused.status_code == 503

@@ -2,10 +2,11 @@ import uuid
 from datetime import UTC, datetime
 
 import pytest
+from testee_common.auth.service_auth import issue_token
 from testee_common.http.http import bearer
 
+from billing.config import settings
 from billing.constants.credits import Reason
-from billing.core.security import service_token
 from billing.helpers.history import history_entry_out, transaction_id
 from billing.integrations import paddle
 from billing.models.billing import Entry
@@ -15,7 +16,7 @@ from billing.services import refund_offers
 
 def fresh_auth():
     """Made per call: a service token lasts a minute."""
-    return bearer(service_token("billing"))
+    return bearer(issue_token("companies", "billing", settings.service_secret))
 
 
 NOW = datetime(2026, 10, 10, 12, tzinfo=UTC)
