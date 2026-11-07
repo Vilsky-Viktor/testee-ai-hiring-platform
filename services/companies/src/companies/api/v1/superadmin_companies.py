@@ -4,6 +4,7 @@ from uuid import UUID
 from fastapi import APIRouter, Query, status
 from testee_common.auth.superadmin import SuperadminUser
 
+from companies.constants.invites import MAX_SEARCH_LENGTH
 from companies.constants.superadmin import COMPANIES_SHOWN
 from companies.core.db import Session
 from companies.repositories import superadmin_companies as superadmin_store
@@ -17,7 +18,7 @@ router = APIRouter(prefix="/superadmin/companies", tags=["superadmin"])
 
 @router.get("")
 async def list_companies(
-    superadmin: SuperadminUser, q: Annotated[str, Query(max_length=200)] = ""
+    superadmin: SuperadminUser, q: Annotated[str, Query(max_length=MAX_SEARCH_LENGTH)] = ""
 ) -> list[SuperadminCompanyOut]:
     """Companies by name, newest first, at most COMPANIES_SHOWN."""
     async with Session() as session:

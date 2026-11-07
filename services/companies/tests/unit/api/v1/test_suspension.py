@@ -12,7 +12,12 @@ from testee_common.auth.user import User
 from testee_common.i18n.i18n import CodedError
 
 from companies.constants import error_codes
-from companies.constants.invites import COMPANY_SUSPENDED, INTERVIEW_UNAVAILABLE, InviteStatus
+from companies.constants.invites import (
+    COMPANY_SUSPENDED,
+    INTERVIEW_UNAVAILABLE,
+    MAX_SEARCH_LENGTH,
+    InviteStatus,
+)
 from companies.models.companies import Company, Member
 from companies.repositories import companies, superadmin_companies
 from companies.services import candidate_invites, interview_creation
@@ -61,6 +66,17 @@ def test_only_a_superadmin_finds_and_suspends_companies(client, superadmin, monk
     assert client.post(f"{url}/suspend").status_code == 204
     assert client.post(f"{url}/unsuspend").status_code == 204
     assert suspended == [True, False]
+
+
+def test_a_search_as_long_as_the_field_takes_is_answered(client, superadmin, monkeypatch):
+    async def search(session, q, limit):
+        return []
+
+    monkeypatch.setattr(superadmin_companies, "search", search)
+    superadmin("ann@example.com")
+    long = client.get("/superadmin/companies", params={"q": "a" * MAX_SEARCH_LENGTH})
+
+    assert long.status_code == 200
 
 
 def test_a_superadmin_renames_to_a_free_name_and_deletes(client, superadmin, monkeypatch):
