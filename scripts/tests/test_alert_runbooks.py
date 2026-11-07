@@ -82,3 +82,29 @@ def test_every_runbook_section_keeps_the_four_parts():
         for name, body in sections(path).items():
             for part in PARTS:
                 assert part in body, f"{path.name}#{name}: {part}"
+
+
+def test_a_parked_outbox_event_pages():
+    """The alert counts the line outbox.py logs, so renaming that line can't silence it."""
+    source = (ROOT / "packages/common/src/testee_common/events/outbox.py").read_text()
+    line = re.search(r'logger\.error\("(Outbox event .*parked.*)",', source).group(1)
+    pattern = re.search(r'message=~\\"(\^Outbox event [^\\]+)\\"', terraform()).group(1)
+    alert = re.search(r"^    outbox = \{\n(.*?)^    \}", terraform(), re.MULTILINE | re.DOTALL)
+
+    assert re.search(pattern, line % ("event-id", "user.deleted", "400"))
+    assert re.search(r"^      page\s+= true$", alert.group(1), re.MULTILINE)
+
+
+def test_every_scheduled_job_is_watched_for_silence():
+    """monitoring_schedules.tf picks jobs by their cron; a job on a rarer one isn't watched, so a
+    new one is a choice made here. The jobs that page must exist."""
+    jobs = (TERRAFORM / "jobs.tf").read_text()
+    schedules = dict(
+        re.findall(r'^\s+([\w-]+)\s+= \{ service = .*cron = "([^"]+)"', jobs, re.MULTILINE)
+    )
+    paged = re.search(r"contains\(\[(.*?)\], name\)", terraform()).group(1)
+
+    assert {name for name, cron in schedules.items() if not cron.endswith(" * * *")} == {
+        "quality-patterns"
+    }
+    assert set(re.findall(r'"([\w-]+)"', paged)) <= set(schedules)

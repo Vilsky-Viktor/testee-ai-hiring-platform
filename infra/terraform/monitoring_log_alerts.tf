@@ -1,7 +1,7 @@
 # Alerts counted from the services' own logs (monitoring_logs.tf's metrics) and Cloud Tasks, with
 # the channels and severities monitoring.tf describes: Redis or OpenAI failing, AI spend running
 # high (an hour's spike pages, the day's total is a ticket), AI stopped for many, generations and
-# their tasks failing, a failed migration, and emails not delivered.
+# their tasks failing, a failed migration, a parked outbox event, and emails not delivered.
 
 locals {
   # Each: its metric (a log-based one, or Cloud Run's), the threshold over the window, the
@@ -95,6 +95,17 @@ locals {
       text      = "A deploy's migration (or db-roles) job failed, and the deploy stopped before moving any service."
       page      = true
       runbook   = "platform.md#a-failed-migration-during-a-deploy"
+    }
+    outbox = {
+      name      = "testee outbox event parked"
+      condition = "Pub/Sub refused an outbox event for good"
+      filter    = "metric.type=\"logging.googleapis.com/user/${google_logging_metric.outbox_parked.name}\" AND resource.type=\"cloud_run_revision\""
+      aligner   = "ALIGN_DELTA"
+      threshold = 0
+      window    = "300s"
+      text      = "Pub/Sub refused an event 5 times, so no flush sends it again and whatever it should have caused (credits, a deleted user, a report) doesn't happen. Its row is deleted 7 days after it was saved. The log line names the event."
+      page      = true
+      runbook   = "platform.md#events-waiting-or-dead-lettered"
     }
     bounces = {
       name      = "testee emails bouncing"

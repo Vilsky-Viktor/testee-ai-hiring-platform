@@ -8,10 +8,12 @@ What to do when the site or an API is down or slow, work waits or stops, the dat
 - [Server errors](#server-errors)
 - [Events waiting or dead-lettered](#events-waiting-or-dead-lettered)
 - [A scheduled job failed](#a-scheduled-job-failed)
+- [A scheduled job didn't run](#a-scheduled-job-didnt-run)
 - [A web hook signature refused](#a-web-hook-signature-refused)
 - [Emails bouncing](#emails-bouncing)
 - [The database under strain](#the-database-under-strain)
 - [A failed backup](#a-failed-backup)
+- [Sign-in accounts lost](#sign-in-accounts-lost)
 - [A stuck generation](#a-stuck-generation)
 - [A failed migration during a deploy](#a-failed-migration-during-a-deploy)
 
@@ -76,17 +78,21 @@ What to do when the site or an API is down or slow, work waits or stops, the dat
 
 ## Events waiting or dead-lettered
 
-**How you notice:** **testee events waiting** (a ticket): a consumer's subscription (`<service>-events`) or the funnel's has held an event unhandled for over 15 minutes ([monitoring_backlog.tf](../../infra/terraform/monitoring_backlog.tf)). **testee events dead-lettered** (a page): an event failed 50 deliveries and waits in `events-dead-letter` ([monitoring.tf](../../infra/terraform/monitoring.tf)). What that consumer does (emails, credits, the action log) happens late or not at all.
+**How you notice:** **testee events waiting** (a ticket): a consumer's subscription (`<service>-events`) or the funnel's has held an event unhandled for over 15 minutes ([monitoring_backlog.tf](../../infra/terraform/monitoring_backlog.tf)). **testee events dead-lettered** (a page): an event failed 50 deliveries and waits in `events-dead-letter` ([monitoring.tf](../../infra/terraform/monitoring.tf)). **testee outbox event parked** (a page): Pub/Sub refused an event 5 times before any consumer saw it (too large, or malformed), so the producing service stopped sending it ([monitoring_log_alerts.tf](../../infra/terraform/monitoring_log_alerts.tf)). What that consumer does (emails, credits, the action log) happens late or not at all.
 
-**What the system does by itself:** Pub/Sub retries each push with backoff (10 seconds to 10 minutes) for 50 attempts, several hours, then moves it to `events-dead-letter`, which keeps it 7 days ([pubsub.tf](../../infra/terraform/pubsub.tf)). Consumers are idempotent, so a retry or replay changes nothing twice. An event no retry can handle (data its handler needs missing or malformed, ids nothing knows, another service answering 400, 404, 410 or 422) is logged as an error, "Dropped event … no retry can handle it", and acknowledged instead ([unhandleable.py](../../packages/common/src/testee_common/events/unhandleable.py)): it shows in Sentry, not in `events-dead-letter`.
+**What the system does by itself:** an outbox row Pub/Sub refuses is tried again by each flush, alone, then parked after 5 refusals so it can't hold up the others ("Outbox event … parked", also in Sentry); parked rows are deleted 7 days after they were saved ([outbox.py](../../packages/common/src/testee_common/events/outbox.py)). Pub/Sub retries each push with backoff (10 seconds to 10 minutes) for 50 attempts, several hours, then moves it to `events-dead-letter`, which keeps it 7 days ([pubsub.tf](../../infra/terraform/pubsub.tf)). Consumers are idempotent, so a retry or replay changes nothing twice. An event no retry can handle (data its handler needs missing or malformed, ids nothing knows, another service answering 400, 404, 410 or 422) is logged as an error, "Dropped event … no retry can handle it", and acknowledged instead ([unhandleable.py](../../packages/common/src/testee_common/events/unhandleable.py)): it shows in Sentry, not in `events-dead-letter`.
 
 **What to do**
 
 1. Read the consumer's errors (its service name is the subscription's first part) and Sentry. notifications failing to send email: [Resend down](providers.md#resend-down).
 2. Fix the cause (a provider, a bad deploy, a bug in the handler).
 3. Replay the dead-lettered events once it's fixed, with the loop in [infra/README.md](../../infra/README.md#notes) ("Dead-lettered events"), within the 7 days.
+4. A parked event: find its id and type in the log line and its service in the log entry, fix why Pub/Sub refuses it (the same row would be refused again), then, within the 7 days, in that service's database (through the Cloud SQL Auth Proxy, as in [infra/README.md](../../infra/README.md#restore-drill)), send it again by setting its count back; the next flush publishes it:
+   ```sql
+   UPDATE outbox SET attempts = 0 WHERE id = '<event id>' AND published_at IS NULL;
+   ```
 
-**Resolved when** the subscription's oldest event is minutes old, `events-dead-letter` is empty and both alerts close.
+**Resolved when** the subscription's oldest event is minutes old, `events-dead-letter` is empty, no parked row is left unsent and the alerts close.
 
 ## A scheduled job failed
 
@@ -105,13 +111,32 @@ What to do when the site or an API is down or slow, work waits or stops, the dat
 
 **Resolved when** the job's next run succeeds and the alert closes (after a day).
 
+## A scheduled job didn't run
+
+**How you notice:** **testee scheduled job didn't run** with the job's name: a job had no successful run in 30 minutes (those running at least hourly) or in a day (the daily ones) ([monitoring_schedules.tf](../../infra/terraform/monitoring_schedules.tf)). It pages for the outbox flushes, `erasures`, `invite-expiry`, `billing-reconcile` and `sign-in-backup`, and is a ticket for the rest. Paused jobs and the weekly job aren't watched.
+
+**What the system does by itself:** nothing: a job that stopped doesn't start again. The work piles up safely: the outbox keeps its rows and each job picks up what's left on its next run.
+
+**What to do**
+
+1. See whether the job exists, is paused, and how its last attempts went:
+   ```bash
+   gcloud scheduler jobs describe <job> --location=europe-west1
+   ```
+2. Paused or missing: `terraform apply` puts it back as `jobs.tf` has it; failing: [A scheduled job failed](#a-scheduled-job-failed). If every job stopped, check Cloud Scheduler's status.
+3. Run it by hand once fixed: `gcloud scheduler jobs run <job> --location=europe-west1`. Every job is safe to run twice.
+
+**Resolved when** the job's next run succeeds and the alert closes.
+
 ## A web hook signature refused
 
-**How you notice:** **testee web hook signature refused** (a page): Paddle's or Resend's web hook failed its signature check; the log line names the service ([monitoring.tf](../../infra/terraform/monitoring.tf)). Usually the secret is wrong, so every event is refused: paid top-ups get no credits, bounces aren't recorded.
+**How you notice:** **testee web hook signature refused** (a page): Paddle's, Resend's or an ATS's web hook failed its signature check; the log line names the service ([monitoring.tf](../../infra/terraform/monitoring.tf)). Usually the secret is wrong, so every event is refused: paid top-ups get no credits, bounces aren't recorded.
 
 **What the system does by itself:** the event is refused with a 401 and the provider retries it (Paddle for about two days, Resend's Svix for about a day); billing's daily reconciliation applies the payments whose web hooks never came ([A payment not credited](providers.md#a-payment-not-credited)).
 
 **What to do:** compare the secret in Secret Manager (`paddle-webhook-secret` or `resend-webhook-secret`) with the provider's dashboard, add the right one and restart the service ([Paddle down](providers.md#paddle-down), step 4; for Resend, notifications), then resend the refused events from the provider's dashboard.
+
+An ATS's refusal names the ATS and the connection: its secret is the company's, not in Secret Manager, so its candidates don't arrive until the company saves the right key on its ATS page; one stray refusal with no others can be a stranger probing the address.
 
 **Resolved when** new events are accepted (no new refusals in the logs) and the alert closes.
 
@@ -155,9 +180,30 @@ What to do when the site or an API is down or slow, work waits or stops, the dat
    gcloud sql backups list --instance=testee --limit=5
    gcloud sql backups create --instance=testee
    ```
-2. Once the automated backups succeed again, delete the one made by hand (`gcloud sql backups delete <id> --instance=testee`), at most 14 days later, so backups last no longer than the privacy policy says.
+2. The sign-ins' daily backup (a separate job) failing shows as **testee scheduled job didn't run**, `sign-in-backup`, a page: see [A scheduled job didn't run](#a-scheduled-job-didnt-run); Firebase holds the only other copy.
+3. Once the automated backups succeed again, delete the one made by hand (`gcloud sql backups delete <id> --instance=testee`), at most 14 days later, so backups last no longer than the privacy policy says.
 
 **Resolved when** an automated backup succeeds and the hand-made one is deleted.
+
+## Sign-in accounts lost
+
+**How you notice:** people can't sign in or lose their companies after a mistake in Firebase or a bad deletion: every company's rows hang on the account's id, and signing in again makes a new one.
+
+**What the system does by itself:** the `sign-in-backup` job copies every account daily to the `<project>-sign-in-backup` bucket, kept 14 days like the database's backups ([sign_in_backup.tf](../../infra/terraform/sign_in_backup.tf)). The accounts service may only add files there.
+
+**What to do**
+
+1. Signed in with `gcloud auth application-default login` as someone who can change Firebase users, restore the newest file from before the loss, then remove the local copy:
+   ```bash
+   gcloud storage cp "gs://testee-prod-sign-in-backup/sign-ins-<time>.json" .
+   cd services/accounts && uv run --no-sync python -m accounts.jobs.restore_sign_ins testee-prod ../../sign-ins-<time>.json
+   rm ../../sign-ins-<time>.json
+   ```
+2. Run `gcloud scheduler jobs run erasures --location=europe-west1`: it deletes again anyone erased since the backup.
+
+Accounts made after the file stay as they are; anyone changed since gets the file's copy; anyone who signed up after it and was lost isn't in it.
+
+**Resolved when** the lost accounts sign in to their companies and the erasures job has run.
 
 ## A stuck generation
 

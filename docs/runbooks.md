@@ -37,7 +37,9 @@ Two severities. A **page** (CRITICAL) is a symptom users feel now; it reaches th
 | testee candidate answers slow / slowing | page / ticket | [Candidate answers slow](runbooks/platform.md#candidate-answers-slow) |
 | testee server errors | ticket | [Server errors](runbooks/platform.md#server-errors) |
 | testee events dead-lettered / events waiting | page / ticket | [Events waiting or dead-lettered](runbooks/platform.md#events-waiting-or-dead-lettered) |
+| testee outbox event parked | page | [Events waiting or dead-lettered](runbooks/platform.md#events-waiting-or-dead-lettered) |
 | testee scheduled job failed | ticket | [A scheduled job failed](runbooks/platform.md#a-scheduled-job-failed) |
+| testee scheduled job didn't run | page / ticket | [A scheduled job didn't run](runbooks/platform.md#a-scheduled-job-didnt-run) |
 | testee web hook signature refused | page | [A web hook signature refused](runbooks/platform.md#a-web-hook-signature-refused) |
 | testee emails bouncing | page | [Emails bouncing](runbooks/platform.md#emails-bouncing) |
 | testee database connections, CPU, memory high, disk filling | ticket | [The database under strain](runbooks/platform.md#the-database-under-strain) |

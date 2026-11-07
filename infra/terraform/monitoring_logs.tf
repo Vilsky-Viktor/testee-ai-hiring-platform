@@ -116,3 +116,14 @@ resource "google_logging_metric" "paddle_unavailable" {
     value_type  = "INT64"
   }
 }
+
+# Outbox events Pub/Sub refused 5 times: no flush sends them again ("Outbox event ... parked").
+resource "google_logging_metric" "outbox_parked" {
+  name   = "testee_outbox_parked"
+  filter = "resource.type=\"cloud_run_revision\" AND severity>=ERROR AND jsonPayload.message=~\"^Outbox event .* parked\""
+
+  metric_descriptor {
+    metric_kind = "DELTA"
+    value_type  = "INT64"
+  }
+}
