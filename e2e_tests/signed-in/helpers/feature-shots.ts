@@ -36,6 +36,8 @@ export async function pair(page: Page, name: string, ready?: () => Promise<void>
 }
 
 // The topics picture's role and its template.
+// The most subtopics a topic can have (MAX_SUBTOPICS's default, limit_list.py).
+const MAX_SUBTOPICS = 5
 export const SHOT_AI_ROLE = "AI Architect"
 export const SHOT_AI_TEMPLATE = "Senior AI Engineer"
 
@@ -57,8 +59,29 @@ export async function roleInterview(
     { template_id: template.id },
   )
   await api(page, "PATCH", `/companies/interviews/${interview.id}/title`, { title: role })
+  await keepSubtopicLimit(interview.id)
 
   return interview.id
+}
+
+/** An older local template may hold more subtopics than a new interview can: its copy, this
+ * interview's own, is cut to what the product makes today. */
+async function keepSubtopicLimit(interviewId: string) {
+  const setId = await withDatabase("companies", async (client) => {
+    const found = await client.query("SELECT set_id FROM interviews WHERE id = $1", [interviewId])
+
+    return found.rows[0].set_id
+  })
+  await withDatabase("library", (client) =>
+    client.query(
+      `UPDATE topics SET subtopics = (
+         SELECT jsonb_agg(value ORDER BY position)
+         FROM jsonb_array_elements(subtopics) WITH ORDINALITY AS kept(value, position)
+         WHERE position <= $2
+       ) WHERE set_id = $1`,
+      [setId, MAX_SUBTOPICS],
+    ),
+  )
 }
 
 /** The Slack connection's workspace and channel named like the made-up company's. */
