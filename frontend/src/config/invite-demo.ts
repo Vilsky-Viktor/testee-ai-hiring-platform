@@ -16,8 +16,8 @@ export const DEMO_INVITE_INTERVIEW = {
 export const INVITE_SOURCES = [
   { key: "ats", side: "start", x: 9, y: 8, delay: 0, sway: 7, phase: 0 },
   { key: "email", side: "start", x: 1, y: 33, delay: 1.4, sway: 6, phase: 2 },
-  { key: "file", side: "start", x: 4, y: 58, delay: 0.6, sway: 8, phase: 5 },
-  { key: "link", side: "start", x: 13, y: 83, delay: 2.1, sway: 6.5, phase: 1 },
+  { key: "link", side: "start", x: 4, y: 58, delay: 0.6, sway: 8, phase: 5 },
+  { key: "file", side: "start", x: 13, y: 83, delay: 2.1, sway: 6.5, phase: 1 },
   { key: "apps", side: "end", x: 13, y: 9, delay: 0.9, sway: 7.5, phase: 3 },
   { key: "sdk", side: "end", x: 3, y: 34, delay: 2.4, sway: 6, phase: 4 },
   { key: "agent", side: "end", x: 1, y: 59, delay: 0.3, sway: 8.5, phase: 2.5 },
