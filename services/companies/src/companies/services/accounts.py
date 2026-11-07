@@ -6,7 +6,7 @@ from testee_common.config.constants import ACCOUNT_OWNS_SHARED
 
 from companies.constants.roles import Role
 from companies.core.db import Session
-from companies.integrations import billing
+from companies.integrations import billing, rounds
 from companies.repositories import accounts, audit, invites
 from companies.services import candidate_billing, company_deletion
 
@@ -48,7 +48,9 @@ async def delete_user(user_id: str, email: str) -> None:
     joined: it would go with their access and its credits. Accounts asks companies first, so no
     other service has deleted anything then. The memberships that end, the candidate invites,
     the team invites and the verification proof go in one save, so a failure keeps them all for
-    the retry."""
+    the retry. Their sessions in rounds go first, a failure keeping the invites for the retry:
+    a guest's are under the guest's own id, which no user.deleted names, and nothing else would
+    reach them once the invite is gone."""
     async with Session() as session:
         owned = await accounts.owned(session, user_id)
         memberships = await accounts.memberships(session, user_id)
@@ -70,8 +72,18 @@ async def delete_user(user_id: str, email: str) -> None:
         unfinished = await accounts.unfinished_invites(session, user_id, email)
 
     await candidate_billing.settle_removed(unfinished)
+    await delete_sessions(user_id, email)
     await forget(user_id, email, leaving)
     await audit.forget_user(Session, user_id)
+
+
+async def delete_sessions(user_id: str, email: str) -> None:
+    """The sessions, answers and signals of every invite the person was sent or started."""
+    async with Session() as session:
+        sent = await accounts.candidate_invites(session, user_id, email)
+
+    if sent:
+        await rounds.delete_invite_sessions([invite.id for invite, _ in sent])
 
 
 async def forget(user_id: str, email: str, leaving: list) -> None:

@@ -84,6 +84,7 @@ def test_a_company_goes_with_its_only_owner_other_memberships_just_end(calls, mo
 
     assert calls == [
         ("company", sole[1].id),
+        ("candidate", "ann", "ann@example.com"),
         ("member", shared[0].id),
         ("member", admin[0].id),
         ("candidate", "ann", "ann@example.com"),
