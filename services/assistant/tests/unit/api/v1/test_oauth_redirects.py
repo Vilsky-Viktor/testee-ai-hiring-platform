@@ -6,9 +6,14 @@ from assistant.services import oauth_limits, oauth_provider
 
 
 @pytest.mark.parametrize(
-    "address", ["javascript://app.example.com/%0aalert(1)", "https://testee.test/connect?request=r"]
+    "address",
+    [
+        "javascript://app.example.com/%0aalert(1)",
+        "https://testee.test/connect?request=r",
+        "http://app.example.com/callback",
+    ],
 )
-def test_an_app_cant_return_to_a_script_or_to_the_site_itself(client, monkeypatch, address):
+def test_an_app_cant_return_to_a_script_plain_http_or_the_site_itself(client, monkeypatch, address):
     monkeypatch.setattr(settings, "site_url", "https://testee.test")
 
     async def hit(redis, key, name):

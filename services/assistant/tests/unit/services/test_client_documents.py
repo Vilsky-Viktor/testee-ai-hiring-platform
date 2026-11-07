@@ -54,6 +54,7 @@ def test_a_metadata_document_is_kept_as_a_client_without_a_secret():
         {"token_endpoint_auth_method": "client_secret_post"},
         {"redirect_uris": []},
         {"redirect_uris": ["javascript://app.example.com/%0aalert(1)"]},
+        {"redirect_uris": ["http://app.example.com/callback"]},
         {"redirect_uris": "https://app.example.com/callback"},
     ],
 )

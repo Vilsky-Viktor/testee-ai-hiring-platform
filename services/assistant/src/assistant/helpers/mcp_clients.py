@@ -35,18 +35,27 @@ def describe_client(reported_name: str | None, redirect_uri: str) -> tuple[str, 
     if url.scheme in ("http", "https") and host in LOOPBACK_HOSTS:
         return reported or LOCAL_APP, host, True
 
+    # Any other site is named by itself: a name it gives itself ("Claude") would pass for that app.
+    if url.scheme == "https" and host:
+        return host[:MAX_CLIENT_NAME_LENGTH], host, False
+
     return reported or host[:MAX_CLIENT_NAME_LENGTH], host, False
 
 
 def refused_redirect(redirect_uri: str) -> bool:
     """A return address that would run or read something in the browser instead of opening an
-    app (constants/mcp.py REFUSED_REDIRECT_SCHEMES), or one on the site itself: an app's address
-    there could pass for the consent page."""
+    app (constants/mcp.py REFUSED_REDIRECT_SCHEMES), plain http anywhere but this computer, where
+    the sign-in's code would travel in clear (OAuth 2.1), or one on the site itself: an app's
+    address there could pass for the consent page."""
     url = urlparse(redirect_uri)
+    scheme = url.scheme.lower()
+    loopback = url.hostname in LOOPBACK_HOSTS
     own_site = url.hostname == urlparse(settings.site_url).hostname
 
-    return url.scheme.lower() in REFUSED_REDIRECT_SCHEMES or (
-        own_site and url.hostname not in LOOPBACK_HOSTS
+    return (
+        scheme in REFUSED_REDIRECT_SCHEMES
+        or (scheme == "http" and not loopback)
+        or (own_site and not loopback)
     )
 
 
