@@ -19,7 +19,9 @@ GET_UPDATES_DEFINITION = {
             " or fixed; interviews ready or cancelled, automatic top-ups and the other "
             "notifications testee's bell shows; and companies running low on credits. First a "
             "summary with counts, then the updates grouped by company and interview, newest "
-            "first, each with a link to its page in testee. Call it when the user asks what's new"
+            "first, each with a link to its page in testee. An API key hears only what its "
+            "permissions cover: interviews and questions need interviews:read, credits and "
+            "automatic top-ups credits:read. Call it when the user asks what's new"
             " or how hiring is going, or starts a conversation about their candidates. It marks "
             "nothing as read in testee."
         ),
