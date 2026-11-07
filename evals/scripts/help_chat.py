@@ -8,14 +8,28 @@ The help chat is the assistant's; what it answers from comes from site, as in th
     evals/run.sh assistant help_chat.py --dataset help_feedback.json --label feedback
 
 The help model runs at effort "none" with a little temperature, so each message is asked
-`--repeat` times. Costs about $0.01 for the answers and $0.30-0.60 for the judge (the
-information comes first in its prompt, so it's cached after the first call)."""
+`--repeat` times. Each run also plants broken answers (help_traps.py, `--traps` of each kind): its
+scores count only when the judge catches them all. Costs about $0.01 for the answers and
+about $3.50 for the judge at 25 x 3 with its traps (about $0.04 a call: the information comes first
+in its prompt, but most calls miss the cache)."""
 
 import argparse
 import asyncio
 import json
 
-from common import DATASETS, JUDGE_MODEL, RESULTS, cost, judge, load, prompt, run_record, save
+from common import (
+    DATASETS,
+    EVALS,
+    JUDGE_MODEL,
+    RESULTS,
+    cost,
+    judge,
+    load,
+    prompt,
+    run_record,
+    save,
+)
+from help_traps import judge_traps
 from langchain_core.messages import HumanMessage
 from pydantic import BaseModel, Field
 from stats import share
@@ -61,6 +75,15 @@ async def answer(item: dict) -> dict:
     return {"text": result.content, "cost": cost(settings.help_model, result.usage_metadata or {})}
 
 
+async def translated(item: dict, text: str) -> str:
+    """`text` in a language that isn't the reply's: what the wrong-language trap plants."""
+    other = "Polish" if LANGUAGES[item["language"]] == "English" else "English"
+    request = f"Translate into {other}; give only the translation:\n\n{text}"
+    result = await llm.get_help_llm().ainvoke([HumanMessage(content=request)])
+
+    return result.content
+
+
 async def review(item: dict, info: str, found: dict) -> dict:
     guide = (await help_knowledge(None, item["page"])).page_guide if item["page"] else None
     page = f"\n\n<page_guide>\n{guide}\n</page_guide>" if guide else ""
@@ -86,7 +109,7 @@ async def review(item: dict, info: str, found: dict) -> dict:
     }
 
 
-async def main(label: str, only: str, repeat: int, dataset: str) -> None:
+async def main(label, only, repeat, dataset, traps, earlier) -> None:
     items = load(DATASETS / dataset)["questions"]
     items = [item for item in items if not only or item["id"] in only.split(",")]
     # The judge reads what the chat reads, in English (the FAQ in the page's language aside).
@@ -99,7 +122,15 @@ async def main(label: str, only: str, repeat: int, dataset: str) -> None:
 
             return {"id": item["id"], "turn": turn, **found, **await review(item, info, found)}
 
-    rows = await asyncio.gather(*(one(item, turn) for item in items for turn in range(repeat)))
+    if earlier:
+        rows = load(EVALS / earlier)["answers"]
+    else:
+        rows = await asyncio.gather(*(one(item, turn) for item in items for turn in range(repeat)))
+
+    async def reviewed(item: dict, found: dict) -> dict:
+        return await review(item, info, found)
+
+    calibration = await judge_traps(rows, items, traps, reviewed, translated, marker_ok)
     kinds = sorted({item["kind"] for item in items})
     kind_of = {item["id"]: item["kind"] for item in items}
     scores = {
@@ -107,6 +138,9 @@ async def main(label: str, only: str, repeat: int, dataset: str) -> None:
         "passed": share(passed(rows), len(rows)),
         "made_up": share(sum(r["made_up"] for r in rows), len(rows)),
         "marker_ok": share(sum(r["marker_ok"] for r in rows), len(rows)),
+        "judge": {
+            key: value for key, value in calibration.items() if key not in ("missed", "cost")
+        },
         "by_kind": {
             kind: f"{passed([r for r in rows if kind_of[r['id']] == kind])} of "
             f"{sum(kind_of[r['id']] == kind for r in rows)}"
@@ -116,13 +150,20 @@ async def main(label: str, only: str, repeat: int, dataset: str) -> None:
     spent = {
         "help": round(sum(r["cost"] for r in rows), 4),
         "judge": round(sum(r["judge_cost"] for r in rows), 4),
+        "judge_traps": calibration["cost"],
     }
     model = f"{settings.help_model} ({settings.help_reasoning_effort})"
     run = run_record(
         model=model, dataset=dataset, repeat=repeat, only=only, scores=scores, cost=spent
     )
-    save(RESULTS / f"help_chat_{label}.json", {"run": run, "answers": rows})
+    save(
+        RESULTS / f"help_chat_{label}.json",
+        {"run": run, "answers": rows, "judge_missed": calibration["missed"]},
+    )
     print(json.dumps({"scores": scores, "cost": spent}, indent=1, ensure_ascii=False))
+
+    for missed in calibration["missed"]:
+        print(f"- judge missed {missed['kind']} on {missed['id']}: {missed['text'][:160]!r}")
 
     for r in rows:
         if not (r["passed"] and r["marker_ok"]) or r["made_up"]:
@@ -136,5 +177,9 @@ if __name__ == "__main__":
     parser.add_argument("--repeat", type=int, default=3)
     # The feedback cases (help_feedback.json) are kept apart from the hand-written ones.
     parser.add_argument("--dataset", default="help_questions.json")
+    # Planted answers of each kind for the judge (help_traps.py).
+    parser.add_argument("--traps", type=int, default=8)
+    # A run's answers (results/help_chat_<label>.json) for the traps alone: a judge change.
+    parser.add_argument("--traps-on", default="")
     args = parser.parse_args()
-    asyncio.run(main(args.label, args.only, args.repeat, args.dataset))
+    asyncio.run(main(args.label, args.only, args.repeat, args.dataset, args.traps, args.traps_on))

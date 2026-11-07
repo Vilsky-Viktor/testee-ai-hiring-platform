@@ -13,6 +13,8 @@ The visitor wrote on the page "{page}" of the site, whose language is {language}
 
 What a right answer does: {expect}
 
+From the information, work out what a right answer says first; only then read the answer below.
+
 <answer>
 {answer}
 </answer>

@@ -1,89 +1,8 @@
 # Help chat baselines
 
 Each change to the help chat (the signed-out and in-app help, `help_chat.py`) with the runs behind
-it; the newest numbers are summed up in `../README.md`, the first baseline in `README.md`.
-
-Contents: [Help chat: a tighter rule for what the information doesn't say (2026-10-20, reverted)](#help-chat-a-tighter-rule-for-what-the-information-doesnt-say-2026-10-20-reverted) ·
-[Help chat: currencies in its guide (2026-10-21, kept)](#help-chat-currencies-in-its-guide-2026-10-21-kept) ·
-[Help chat: four more currencies (2026-10-21, kept)](#help-chat-four-more-currencies-2026-10-21-kept) ·
-[Help chat: automatic top-up's pause and price notice (2026-10-21, kept)](#help-chat-automatic-top-ups-pause-and-price-notice-2026-10-21-kept) ·
-[Help chat: Mira, an AI assistant that says so (2026-10-22, kept)](#help-chat-mira-an-ai-assistant-that-says-so-2026-10-22-kept) ·
-[Help chat: the reply's language chosen by code, the visitor's messages as data (2026-10-22, kept)](#help-chat-the-replys-language-chosen-by-code-the-visitors-messages-as-data-2026-10-22-kept) ·
-[The scope rule names no language of its own (2026-10-22, kept)](#the-scope-rule-names-no-language-of-its-own-2026-10-22-kept) ·
-[Help chat: the shareable link on the Settings tab (2026-10-23, kept)](#help-chat-the-shareable-link-on-the-settings-tab-2026-10-23-kept) ·
-[Help chat: moved from rounds to the assistant (2026-10-29, kept)](#help-chat-moved-from-rounds-to-the-assistant-2026-10-29-kept) ·
-[Help chat: the page guide's contact card (2026-10-29, kept)](#help-chat-the-page-guides-contact-card-2026-10-29-kept) ·
-[Help chat: allowed domains only for the SDK (2026-10-29, kept)](#help-chat-allowed-domains-only-for-the-sdk-2026-10-29-kept) ·
-[Help chat: two brand fonts (2026-10-29, kept)](#help-chat-two-brand-fonts-2026-10-29-kept)
-
-## Help chat: a tighter rule for what the information doesn't say (2026-10-20, reverted)
-
-Tried: "never work out a rule, a limit or a number it doesn't state from nearby facts; if the
-answer isn't there, say so plainly and suggest {email} or the contact page". Passed 49 → 47 of
-54 (87.0%, 75.6–93.6); the invented attempt limit (h17) 0 → 1 of 3 right; two sign-in replies
-read as promising more. No gain beyond the noise: reverted. Reading the failures showed h09's
-expectation was wrong: the terms do say how price changes work, and the chat quoted them, so a
-right answer may do that instead of pointing to the contact page. With the case fixed, the
-baseline re-run: **passed 51 of 54, 94.4% (84.9–98.1)**, made up 5.6%, markers 54/54; every
-miss is h17 ("How many times can a candidate take the test?" in Japanese: it answers "once",
-which the platform guide doesn't state). That gap is the guide's: it should say whether a
-candidate can take a test again.
-
-## Help chat: currencies in its guide (2026-10-21, kept)
-
-Prices became EUR in the EU and nearby, GBP in the UK and USD elsewhere, per person and per
-company. The guide gained one fact line about currencies and lost "$0 subscription"; the FAQ it
-reads names prices in the visitor's currency. `help_chat.py`, `help_questions.json`, 18 messages
-× 3, `gpt-6-luna` at none, same judge; both runs on the same working tree, before and after the
-prompt change:
-
-| Run | Passed | Made up | Sign-in marker | Price (help / judge) |
-|---|---|---|---|---|
-| Before | 88.9% (77.8–94.8) | 7.4% (2.9–17.6) | 100% | $0.013 / $1.08 |
-| After | 94.4% (84.9–98.1) | 7.4% (2.9–17.6) | 100% | $0.012 / $1.06 |
-
-No difference beyond the intervals; kept because the facts are needed for currency questions.
-The failures are the known h17 (an invented retake limit) and one h04 (viewers and billing).
-
-## Help chat: four more currencies (2026-10-21, kept)
-
-The guide's currency line now names CAD, AUD, ILS and PLN, and the FAQ gained "Which currency
-do I pay in?". Same test, dataset, model and judge as the run above: passed 94.4% (84.9–98.1),
-made up 5.6% (1.9–15.1), sign-in marker 100%; $0.013 help, $1.10 judge. No difference beyond
-the intervals; the only failures are the known h17 (an invented retake limit).
-
-## Help chat: automatic top-up's pause and price notice (2026-10-21, kept)
-
-The guide's automatic top-up line now says a declined charge is tried again after 1, 3 and 7
-days, then pauses until the card's owner updates it ("Update card" on the billing page), that a
-new price is emailed at least 30 days ahead, and that a currency change applies at once. Same
-test, dataset, model and judge as the run above: passed 94.4% (84.9–98.1), made up 5.6%
-(1.9–15.1), sign-in marker 100%; $0.013 help, $1.13 judge. No difference beyond the intervals;
-the only failures are the known h17 (an invented retake limit).
-
-## Help chat: Mira, an AI assistant that says so (2026-10-22, kept)
-
-The help chat is the same Mira as the in-app assistant, for visitors: its instructions open "You
-are Mira, testee's AI assistant" and say that asked its name, who it is or whether it's human, it
-says it's Mira, an AI, never a person; its guide calls the header's button "ask Mira".
-`help_questions.json` gained 6 identity questions (h19–h24: English, French, Korean, Polish,
-Hebrew). Same test, model and judge, 3 repeats: before (`results/help_chat_mira-base.json`)
-passed 72.2% (61.0–81.2), identity 1 of 18, the rest 51 of 54, made up 6.9%; after
-(`…_mira-new2.json`) passed 94.4% (86.6–97.8), identity 18 of 18, the rest 50 of 54, made up
-4.2% (1.4–11.5), sign-in marker 100% both times. A first wording that also told it to offer help
-made an off-topic refusal two sentences long (h12, 1 of 3), so it was dropped. The remaining
-failures are the known h17 (an invented retake limit) and one h12.
-
-## Help chat: the reply's language chosen by code, the visitor's messages as data (2026-10-22, kept)
-
-The help chat let the model infer the reply's language ("the page's, unless the user writes in
-another"); now code chooses it (the question's own when its script or at least two of a
-Latin-script language's common chat words show it, else the page's) and the prompt names it.
-Each of the visitor's messages comes inside `<visitor_message>`, read as data. `help_chat.py`,
-`help_questions.json`, 24 × 3, `gpt-6-luna` at none, judged by `gpt-6.1-sol` high, before →
-after: passed 93.1% (84.8–97.0) → 97.2% (90.4–99.2); made up 4.2% → 2.8%; sign-in marker 100%
-both; language cases 3 → 4 of 6 (the misses are h17's invented retake limit); $0.024 help, $1.27
-judge. Kept: better, nothing worse.
+it; the newest numbers are summed up in `../README.md`, the first baseline in `README.md`, the
+changes up to 2026-10-22 in `help-chat-first.md`.
 
 ## The scope rule names no language of its own (2026-10-22, kept)
 
@@ -292,3 +211,32 @@ cases about candidates: 3 of 3, none made up (`-after-h06.json`, `-after-candida
 full set wasn't repeated, its $1 being over the budget. The knowledge changed by those two
 sentences alone (87,554 to 87,752 characters). Kept: the intervals overlap, but the failing case
 is fixed on every try and the guide now says what is true. $1.36 and $0.50.
+
+## The help judge's traps (2026-11-07, kept)
+
+The help judge's verdicts carried every baseline here with no check on the judge itself. It's now
+told to work out what a right answer says before reading the answer, and each run plants broken
+answers made by code from that run's right ones (`help_traps.py`, `--traps` of each kind): a made-up
+promise appended (must be `made_up`), the numbers moved and the answer in the wrong language (must
+fail), a sign-in reply without its marker (the code's check), and the answers as they were (must
+stay passed). `--traps-on <run>` runs them on a run's saved answers, for a judge change.
+
+| Judge | Passed | Made up | Made-up promise | Numbers moved | Wrong language | Marker | Kept | Kappa | Price |
+|---|---|---|---|---|---|---|---|---|---|
+| Before, 25 × 3 | 97.3% (90.8–99.3) | 0% (0.0–4.9) | 8 of 8 | 7 of 7 | not valid (below) | 6 of 6 | 8 of 8 | not valid | $2.34, about $1.25 more for the traps |
+| Works out the answer first, on those answers (kept) | not judged again | not judged again | 6 of 6 | 6 of 6 | 6 of 6 | 6 of 6 | 6 of 6 | 1.0 | $0.96 |
+
+The first run's wrong-language trap was the script's fault: told another language, the chat rightly
+kept to the visitor's, so the planted answers were right ones. It translates them now. The traps'
+price wasn't counted in that first run; about $0.04 a call uncached, over 31 calls. The passed and
+made-up scores weren't judged again by the new judge, for the price: only its traps and kept
+answers were (intervals 61–100%, 6 of each). `help_chat.py` now costs about $3.50 at 25 × 3: the
+guide has grown, and the prefix is mostly not cached.
+
+## Help chat: an API key acts as itself, and a retry needs no key (2026-11-07, kept)
+
+The guide said a key "acts as the key's maker" and that "an Idempotency-Key" makes a retry safe,
+against the code and the API docs. Worded as they are. Two cases added, `added: 2026-11-07` (h26,
+h27); `--only h26,h27,h04,h05`, × 2: 8 of 8, none made up, traps 3 of 3 and kept 1 of 1, $0.39. Not
+run before the change or on the full set, for the budget.
+
