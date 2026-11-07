@@ -27,6 +27,9 @@ def test_every_workflow_starts_read_only():
 def test_every_job_has_a_timeout():
     for path in WORKFLOWS:
         for name, block in jobs(path.read_text()).items():
-            assert re.search(r"^    timeout-minutes: \d+$", block, re.MULTILINE), (
+            # A job calling a workflow gets its timeout there, and that file is checked too.
+            calls = re.search(r"^    uses: \./", block, re.MULTILINE)
+
+            assert calls or re.search(r"^    timeout-minutes: \d+$", block, re.MULTILINE), (
                 f"{path.name}: {name}"
             )
