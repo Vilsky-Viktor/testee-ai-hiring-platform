@@ -1,6 +1,6 @@
-import AxeBuilder from "@axe-core/playwright";
-import { expect, type Page, test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
+import { violations } from "./helpers/axe";
 import { setScheme } from "./helpers/theme";
 import { loaded } from "./helpers/waits";
 
@@ -29,29 +29,6 @@ const THEMES = ["light", "dark"] as const;
 // The home pages: axe takes long over their demos' many screens, past the usual time when tests
 // run side by side.
 const HOME_PAGES = ["/", "/ar"];
-const WCAG_AA = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
-
-// Known issues: found by the scan, tracked here until fixed, rather than turning their rules off.
-// Each names the rule, the element (a part of its HTML) and why it waits.
-const KNOWN_ISSUES: { rule: string; html: RegExp; why: string }[] = [];
-
-/** What axe finds on the page as it is now, but the known issues: each rule broken, with its
- * elements (their HTML, as an id alone, Base UI's generated ones, says nothing) and why. */
-async function violations(page: Page) {
-  const results = await new AxeBuilder({ page }).withTags(WCAG_AA).analyze();
-
-  return results.violations
-    .map((violation) => ({
-      rule: violation.id,
-      nodes: violation.nodes
-        .filter(
-          (node) =>
-            !KNOWN_ISSUES.some((known) => known.rule === violation.id && known.html.test(node.html)),
-        )
-        .map((node) => `${node.html.slice(0, 200)}: ${node.failureSummary}`),
-    }))
-    .filter((violation) => violation.nodes.length > 0);
-}
 
 for (const path of PAGES) {
   for (const theme of THEMES) {
