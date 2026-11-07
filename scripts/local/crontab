@@ -34,10 +34,9 @@
 * * * * * curl -s -X POST http://ats:8000/internal/schedules/outbox
 * * * * * curl -s -X POST http://billing:8000/internal/schedules/outbox
 * * * * * curl -s -X POST http://accounts:8000/internal/schedules/outbox
-# Paddle's payments and refunds of the last week that its web hooks never delivered (billing),
-# daily.
-# Payments made in Paddle (billing): there is no web hook on a laptop, so every minute, not daily
-# as in production, so a top-up's credits arrive at once.
+# Paddle's payments and refunds of the last week that its web hooks never delivered (billing):
+# there is no web hook on a laptop, so every minute, not daily as in production, so a top-up's
+# credits arrive at once.
 * * * * * curl -s -X POST http://billing:8000/internal/schedules/reconcile
 # A new price for an automatic top-up, announced 30 days before it applies (billing), daily.
 45 5 * * * curl -s -X POST http://billing:8000/internal/schedules/auto-top-up-prices
