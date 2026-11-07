@@ -49,6 +49,8 @@ class RecipientsIn(BaseModel):
 class RecipientOut(BaseModel):
     user_id: str
     email: str
+    # Whether the user proved the address: notifications mails only proved ones.
+    email_verified: bool
     # The interface language, emails are written in.
     language: str
     preferences: EmailPreferencesOut

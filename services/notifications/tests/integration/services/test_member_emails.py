@@ -162,6 +162,7 @@ def person(user_id: str, **preferences) -> dict:
     return {
         "user_id": user_id,
         "email": f"{user_id}@example.com",
+        "email_verified": True,
         "language": "de",
         "preferences": {**on, **preferences},
     }

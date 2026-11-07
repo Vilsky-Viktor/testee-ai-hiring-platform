@@ -22,10 +22,12 @@ async def unsubscribe(user_id: str, email_settings: list[str]) -> None:
 
 async def recipients(user_ids: list[str]) -> list[dict]:
     """Each user's address, interface language and email preferences: {"user_id", "email",
-    "language", "preferences"}; users who are gone are left out."""
+    "language", "preferences"}. Users who are gone are left out, and those who never proved their
+    address: nothing is mailed to an address that may not be theirs (the bell still tells them)."""
     url = f"{settings.accounts_url}/internal/users/email-recipients"
+    found = await post_ids(url, service_token("accounts"), "user_ids", user_ids, "recipients")
 
-    return await post_ids(url, service_token("accounts"), "user_ids", user_ids, "recipients")
+    return [person for person in found if person["email_verified"]]
 
 
 async def user_ids(after: str, setting: str | None = None) -> list[str]:

@@ -13,10 +13,12 @@ def auth() -> dict:
     return bearer(token())
 
 
-def account(uid, email, language=None, disabled=False):
+def account(uid, email, language=None, disabled=False, verified=True):
     claims = {"language": language} if language else None
 
-    return SimpleNamespace(uid=uid, email=email, custom_claims=claims, disabled=disabled)
+    return SimpleNamespace(
+        uid=uid, email=email, email_verified=verified, custom_claims=claims, disabled=disabled
+    )
 
 
 def test_recipients_have_their_address_language_and_preferences(client, monkeypatch):
@@ -28,7 +30,7 @@ def test_recipients_have_their_address_language_and_preferences(client, monkeypa
         return SimpleNamespace(
             users=[
                 account("ann", "ann@example.com", "de"),
-                account("bob", "bob@example.com", "xx"),
+                account("bob", "bob@example.com", "xx", verified=False),
                 account("off", "off@example.com", disabled=True),
                 account("phone", None),
             ]
@@ -54,6 +56,7 @@ def test_recipients_have_their_address_language_and_preferences(client, monkeypa
         ("bob", "bob@example.com", "en"),
     ]
     assert found[1]["preferences"]["reminders"] is False
+    assert [item["email_verified"] for item in found] == [True, False]
 
 
 def test_firebase_is_asked_at_most_a_hundred_at_a_time(client, monkeypatch):

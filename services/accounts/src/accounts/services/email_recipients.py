@@ -10,8 +10,8 @@ from accounts.repositories import emails
 
 
 async def recipients(user_ids: list[str]) -> list[dict]:
-    """Each user's sign-in email, interface language and email preferences; users who are gone,
-    disabled or have no email are left out."""
+    """Each user's sign-in email, whether they proved it, interface language and email
+    preferences; users who are gone, disabled or have no email are left out."""
     accounts = []
 
     for start in range(0, len(user_ids), FIREBASE_LOOKUP_LIMIT):
@@ -28,6 +28,7 @@ async def recipients(user_ids: list[str]) -> list[dict]:
         {
             "user_id": account.uid,
             "email": account.email,
+            "email_verified": account.email_verified,
             "language": claims_language(account.custom_claims or {}),
             "preferences": preferences[account.uid],
         }
