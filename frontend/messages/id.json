@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Hapus akunmu?",
     "everything": "Semuanya dihapus: keanggotaanmu di tim setiap perusahaan, hasil wawancara yang kamu ikuti sebagai kandidat, sesi latihan, dan notifikasimu.",
-    "company": "Perusahaan yang hanya kamu miliki akan dihapus beserta wawancaranya. Tindakan ini tidak bisa dibatalkan.",
+    "company": "Perusahaan yang hanya berisi kamu akan dihapus beserta wawancara, catatan, dan sisa kreditnya, yang tidak dikembalikan. Jika orang lain bergabung ke perusahaan milikmu, jadikan dulu salah satunya pemilik atau hapus perusahaan itu. Tindakan ini tidak bisa dibatalkan.",
     "confirm": "Hapus akun",
     "deleted": "Akunmu sudah dihapus.",
     "failed": "Akunmu tidak bisa dihapus. Coba lagi.",
@@ -1134,7 +1134,7 @@
     "erased": "<bdi>{email}</bdi> dihapus",
     "eraseFailed": "Kandidat tidak bisa dihapus.",
     "eraseTitle": "Hapus kandidat ini?",
-    "eraseText": "Jawaban dan hasil <bdi>{email}</bdi> dihapus permanen, misalnya saat mereka meminta datanya dihapus. Tindakan ini tidak bisa dibatalkan.",
+    "eraseText": "Jawaban dan hasil <bdi>{email}</bdi> dihapus permanen, misalnya saat mereka meminta datanya dihapus. Jika ia menjawab setidaknya satu pertanyaan, kreditnya dipotong; jika tidak, kreditnya dikembalikan. Tindakan ini tidak bisa dibatalkan.",
     "eraseConfirm": "Hapus",
     "sortBy": "Urutkan: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, other {# kandidat}}",
     "deleteLabel": "Hapus <bdi>{title}</bdi>",
     "deleteTitle": "Hapus wawancara ini?",
-    "deleteText": "Kandidat kehilangan akses, dan hasil mereka dihapus. Tindakan ini tidak bisa dibatalkan.",
+    "deleteText": "Kandidat kehilangan akses, dan hasil mereka dihapus. Kredit mereka yang menjawab setidaknya satu pertanyaan dipotong, dan kredit yang dicadangkan untuk yang lain dikembalikan. Tindakan ini tidak bisa dibatalkan.",
     "deleteFailed": "Wawancara tidak bisa dihapus. Coba lagi.",
     "settings": "Pengaturan",
     "settingsFailed": "Pengaturan wawancara tidak bisa disimpan.",
@@ -2173,7 +2173,7 @@
   },
   "openToOffers": {
     "title": "Terbuka untuk tawaran kerja",
-    "text": "Perusahaan yang merekrut lewat testee akan melihat nama, profil LinkedIn, dan hasil latihan terbarumu, serta bisa mengundangmu ke wawancara. Matikan kapan saja.",
+    "text": "Perusahaan yang merekrut lewat testee akan melihat nama, profil LinkedIn, dan hasil latihan berwaktu terbarumu, serta bisa mengundangmu ke wawancara. Matikan kapan saja.",
     "linkedin": "Profil LinkedIn",
     "linkedinHint": "linkedin.com/in/nama-kamu",
     "save": "Simpan",

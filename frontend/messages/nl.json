@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Je account verwijderen?",
     "everything": "Alles wordt verwijderd: je plek in het team van elk bedrijf, je resultaten van interviews die je als kandidaat hebt gedaan, je oefenrondes en je meldingen.",
-    "company": "Een bedrijf waarvan alleen jij eigenaar bent, wordt met zijn interviews verwijderd. Dit kan niet ongedaan worden gemaakt.",
+    "company": "Een bedrijf waarin alleen jij zit, wordt verwijderd met zijn interviews, notities en resterende credits, die niet worden terugbetaald. Als anderen zich bij een bedrijf van jou hebben aangesloten, maak dan eerst een van hen eigenaar of verwijder het bedrijf. Dit kan niet ongedaan worden gemaakt.",
     "confirm": "Account verwijderen",
     "deleted": "Je account is verwijderd.",
     "failed": "Je account kon niet worden verwijderd. Probeer het opnieuw.",
@@ -1134,7 +1134,7 @@
     "erased": "<bdi>{email}</bdi> verwijderd",
     "eraseFailed": "De kandidaat kon niet worden verwijderd.",
     "eraseTitle": "Deze kandidaat verwijderen?",
-    "eraseText": "De antwoorden en resultaten van <bdi>{email}</bdi> worden definitief verwijderd, bijvoorbeeld wanneer iemand vraagt om zijn gegevens te wissen. Dit kan niet ongedaan worden gemaakt.",
+    "eraseText": "De antwoorden en resultaten van <bdi>{email}</bdi> worden definitief verwijderd, bijvoorbeeld wanneer iemand vraagt om zijn gegevens te wissen. Heeft diegene minstens één vraag beantwoord, dan worden de credits afgeschreven; zo niet, dan komen ze terug. Dit kan niet ongedaan worden gemaakt.",
     "eraseConfirm": "Verwijderen",
     "sortBy": "Sorteren op: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# kandidaat} other {# kandidaten}}",
     "deleteLabel": "<bdi>{title}</bdi> verwijderen",
     "deleteTitle": "Dit interview verwijderen?",
-    "deleteText": "Kandidaten verliezen de toegang en hun resultaten worden verwijderd. Dit kan niet ongedaan worden gemaakt.",
+    "deleteText": "Kandidaten verliezen de toegang en hun resultaten worden verwijderd. De credits van wie minstens één vraag heeft beantwoord, worden afgeschreven, en die voor de anderen zijn gereserveerd komen terug. Dit kan niet ongedaan worden gemaakt.",
     "deleteFailed": "Het interview kon niet worden verwijderd. Probeer het opnieuw.",
     "settings": "Instellingen",
     "settingsFailed": "De instellingen van het interview konden niet worden opgeslagen.",
@@ -1406,8 +1406,8 @@
     "topUp": "Opwaarderen"
   },
   "site": {
-    "description": "Online assessment met tijdslimiet uit je vacaturetekst. Elke kandidaat krijgt eigen willekeurige vragen; jij scorekaarten en rapporten.{priced, select, yes { {price} per kandidaat.} other {}}",
-    "homeTitle": "Online assessment voor werving, uit je vacaturetekst"
+    "description": "Online assessment met tijdslimiet uit je functieomschrijving. Elke kandidaat krijgt eigen willekeurige vragen; jij scorekaarten en rapporten.{priced, select, yes { {price} per kandidaat.} other {}}",
+    "homeTitle": "Online assessment voor werving, uit je functieomschrijving"
   },
   "legal": {
     "englishOnly": "Deze versie is alleen in het Engels beschikbaar.",
@@ -1450,7 +1450,7 @@
   },
   "autoTopUp": {
     "title": "Automatisch opwaarderen",
-    "text": "Als het beschikbare saldo onder het gekozen bedrag zakt, kopen we de opwaardering met je opgeslagen kaart. Elke afschrijving wordt gemaild naar de eigenaren en beheerders van het bedrijf, en Paddle mailt zijn bon. Je kunt het hier altijd uitzetten: het stopt meteen.",
+    "text": "Als het beschikbare saldo onder het gekozen aantal credits zakt, kopen we de opwaardering met je opgeslagen kaart. Elke afschrijving wordt gemaild naar de eigenaren en beheerders van het bedrijf, en Paddle mailt zijn bon. Je kunt het hier altijd uitzetten: het stopt meteen.",
     "agree": "Ik ga ermee akkoord dat mijn kaart elke keer dat het beschikbare saldo onder {threshold, plural, one {# credit} other {# credits}} zakt, wordt belast met {amount}, plus eventuele btw of verkoopbelasting, totdat ik automatisch opwaarderen hier uitzet.",
     "amount": "Opwaardering",
     "when": "Als het saldo daalt onder",
@@ -2007,7 +2007,7 @@
     },
     "closingTitle": "Nog een vraag?",
     "closingText": "Vraag het aan Mira, onze AI-assistent, of schrijf ons.",
-    "description": "Antwoorden over testee: hoe interviews uit een vacaturetekst ontstaan, wat kandidaten zien, prijzen en credits, resultaten, ATS-koppelingen, talen en je gegevens."
+    "description": "Antwoorden over testee: hoe interviews uit een functieomschrijving ontstaan, wat kandidaten zien, prijzen en credits, resultaten, ATS-koppelingen, talen en je gegevens."
   },
   "contact": {
     "title": "Neem contact op",
@@ -2032,7 +2032,7 @@
   "about": {
     "title": "Over ons",
     "intro": "testee helpt bedrijven mensen te vinden die het vak echt kennen: een eerlijk interview met tijdslimiet, gemaakt op basis van je functieomschrijving, voor een prijs die elk team kan betalen. En wie zich voorbereidt op een sollicitatiegesprek, kan gratis oefenen.",
-    "description": "testee maakt van een vacaturetekst in een paar minuten een eerlijk interview met tijdslimiet, voor een prijs die elk team kan betalen, en iedereen kan gratis oefenen voor sollicitatiegesprekken.",
+    "description": "testee maakt van een functieomschrijving in een paar minuten een eerlijk interview met tijdslimiet, voor een prijs die elk team kan betalen, en iedereen kan gratis oefenen voor sollicitatiegesprekken.",
     "company": {
       "title": "Waarom we bestaan",
       "titles": {
@@ -2173,7 +2173,7 @@
   },
   "openToOffers": {
     "title": "Open voor nieuwe kansen",
-    "text": "Bedrijven die via testee werven, zien je naam, je LinkedIn-profiel en je nieuwste oefenresultaten en kunnen je uitnodigen voor een interview. Je kunt het op elk moment uitzetten.",
+    "text": "Bedrijven die via testee werven, zien je naam, je LinkedIn-profiel en je nieuwste getimede oefenresultaten en kunnen je uitnodigen voor een interview. Je kunt het op elk moment uitzetten.",
     "linkedin": "LinkedIn-profiel",
     "linkedinHint": "linkedin.com/in/jouw-naam",
     "save": "Opslaan",
@@ -2211,7 +2211,7 @@
     "updated": "Laatst bijgewerkt",
     "englishOnly": "Deze pagina is alleen in het Engels.",
     "startTitle": "Test je kandidaten",
-    "startText": "Maak een selectietest met tijdslimiet op basis van je vacaturetekst.{priced, select, yes { {price} per kandidaat, zonder abonnement.} other {}}",
+    "startText": "Maak een selectietest met tijdslimiet op basis van je functieomschrijving.{priced, select, yes { {price} per kandidaat, zonder abonnement.} other {}}",
     "contents": "Op deze pagina",
     "startButton": "Test maken"
   },
@@ -2228,7 +2228,7 @@
   },
   "tests": {
     "title": "Selectietesten per functie",
-    "intro": "Kant-en-klare selectietesten met tijdslimiet voor veelvoorkomende functies. Gebruik er een zoals hij is, of maak een test op basis van je eigen vacaturetekst.",
+    "intro": "Kant-en-klare selectietesten met tijdslimiet voor veelvoorkomende functies. Gebruik er een zoals hij is, of maak een test op basis van je eigen functieomschrijving.",
     "heading": "<bdi>{role}</bdi> test voor sollicitanten",
     "pageTitle": "{role} test voor sollicitanten",
     "pageDescription": "Getimede {role} test voor sollicitanten, over {count, plural, one {# onderwerp} other {# onderwerpen}}. Elke kandidaat krijgt eigen willekeurige vragen.{priced, select, yes { {price} per kandidaat.} other {}}",
@@ -2781,13 +2781,13 @@
         "questions": {
           "verify": "Verifieer mijn bedrijf",
           "whyVerify": "Waarom mijn bedrijf verifiëren?",
-          "createInterview": "Maak een interview van een vacaturetekst"
+          "createInterview": "Maak een interview van een functieomschrijving"
         }
       },
       "no_interviews": {
         "text": "Laten we je eerste interview maken.",
         "questions": {
-          "fromDescription": "Maak een interview van een vacaturetekst",
+          "fromDescription": "Maak een interview van een functieomschrijving",
           "template": "Maak een interview van een sjabloon",
           "changeQuestions": "Kan ik de vragen aanpassen?"
         }
@@ -2845,7 +2845,7 @@
         "remove_webhook": "De webhook verwijderen",
         "remove_api_key": "De API-sleutel verwijderen",
         "start_practice": "Een oefenronde starten",
-        "create_interview": "Een interview maken van een vacaturetekst",
+        "create_interview": "Een interview maken van een functieomschrijving",
         "create_interview_from_template": "Een interview maken van een sjabloon",
         "delete_interview": "Het interview verwijderen",
         "rename_interview": "Het interview hernoemen",
@@ -2874,7 +2874,7 @@
         "title": "Nieuwe naam",
         "email": "E-mail",
         "role": "Rol",
-        "text": "Vacaturetekst",
+        "text": "Functieomschrijving",
         "generate_in": "Vragen in",
         "website": "Website",
         "question_seconds": "Gemiddeld aantal seconden per vraag",
@@ -2967,7 +2967,7 @@
       "title": "{amount} terugbetalen?",
       "text": "Paddle betaalt {amount}, inclusief belasting, terug op de kaart waarmee is betaald; dat kan een paar dagen duren. <credits></credits> {count, plural, one {onbestede credit verdwijnt nu van je saldo en komt} other {onbestede credits verdwijnen nu van je saldo en komen}} terug als de terugbetaling niet doorgaat.",
       "referral": "Deze opwaardering leverde een doorverwijsbeloning op, dus elke terugbetaling neemt de beloning terug bij beide bedrijven. Als die al is besteed, kan je saldo onder nul komen.",
-      "autoTopUp": "Automatisch opwaarderen blijft aan en belast de kaart opnieuw als het saldo onder het gekozen bedrag zakt. Zet het eerst uit als je dat niet wilt.",
+      "autoTopUp": "Automatisch opwaarderen blijft aan en belast de kaart opnieuw als het saldo onder het gekozen aantal credits zakt. Zet het eerst uit als je dat niet wilt.",
       "heldBack": "{count, plural, one {# kandidaat heeft} other {# kandidaten hebben}} <reserved>gereserveerde</reserved> credits. Trek hun uitnodigingen in om ze mee te nemen.",
       "confirm": "{amount} terugbetalen",
       "refunded": "Terugbetaald.",

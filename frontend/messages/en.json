@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Delete your account?",
     "everything": "Everything goes: your place in each company's team, your results from interviews you took as a candidate, your practice rounds and your notifications.",
-    "company": "A company you alone own is deleted with its interviews. This can't be undone.",
+    "company": "A company only you are in is deleted with its interviews, notes and remaining credits, which aren't refunded. If other people joined a company you own, first make one of them the owner or delete the company. This can't be undone.",
     "confirm": "Delete account",
     "deleted": "Your account was deleted.",
     "failed": "Couldn't delete your account. Please try again.",
@@ -1134,7 +1134,7 @@
     "erased": "<bdi>{email}</bdi> deleted",
     "eraseFailed": "Couldn't delete the candidate.",
     "eraseTitle": "Delete this candidate?",
-    "eraseText": "<bdi>{email}</bdi>'s answers and results are deleted for good, for example when they ask to have their data erased. This can't be undone.",
+    "eraseText": "<bdi>{email}</bdi>'s answers and results are deleted for good, for example when they ask to have their data erased. If they answered at least one question, their credits are charged; if not, they come back. This can't be undone.",
     "eraseConfirm": "Delete",
     "sortBy": "Sort by: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# candidate} other {# candidates}}",
     "deleteLabel": "Delete <bdi>{title}</bdi>",
     "deleteTitle": "Delete this interview?",
-    "deleteText": "Candidates lose access, and their results are deleted. This can't be undone.",
+    "deleteText": "Candidates lose access, and their results are deleted. Credits are charged for candidates who answered at least one question, and those held for the others come back. This can't be undone.",
     "deleteFailed": "Couldn't delete the interview. Please try again.",
     "settings": "Settings",
     "settingsFailed": "Couldn't save the interview settings.",
@@ -2173,7 +2173,7 @@
   },
   "openToOffers": {
     "title": "Open to offers",
-    "text": "Companies hiring on testee will see your name, LinkedIn profile and latest practice results, and may invite you to an interview. Turn it off at any time.",
+    "text": "Companies hiring on testee will see your name, LinkedIn profile and latest timed practice results, and may invite you to an interview. Turn it off at any time.",
     "linkedin": "LinkedIn profile",
     "linkedinHint": "linkedin.com/in/your-name",
     "save": "Save",

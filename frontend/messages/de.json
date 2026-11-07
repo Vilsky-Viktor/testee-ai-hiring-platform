@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Dein Konto löschen?",
     "everything": "Alles wird gelöscht: dein Platz im Team jedes Unternehmens, deine Ergebnisse aus Interviews, die du als Kandidat gemacht hast, deine Übungsrunden und deine Benachrichtigungen.",
-    "company": "Ein Unternehmen, das nur dir gehört, wird mit seinen Interviews gelöscht. Das kann nicht rückgängig gemacht werden.",
+    "company": "Ein Unternehmen, in dem nur du bist, wird mit seinen Interviews, Notizen und restlichen Credits gelöscht; die Credits werden nicht erstattet. Sind andere einem Unternehmen beigetreten, das dir gehört, mach zuerst eine dieser Personen zum Inhaber oder lösche das Unternehmen. Das kann nicht rückgängig gemacht werden.",
     "confirm": "Konto löschen",
     "deleted": "Dein Konto wurde gelöscht.",
     "failed": "Dein Konto konnte nicht gelöscht werden. Bitte versuche es erneut.",
@@ -1134,7 +1134,7 @@
     "erased": "<bdi>{email}</bdi> gelöscht",
     "eraseFailed": "Der Kandidat konnte nicht gelöscht werden.",
     "eraseTitle": "Diesen Kandidaten löschen?",
-    "eraseText": "Die Antworten und Ergebnisse von <bdi>{email}</bdi> werden endgültig gelöscht, zum Beispiel wenn die Person die Löschung ihrer Daten verlangt. Das kann nicht rückgängig gemacht werden.",
+    "eraseText": "Die Antworten und Ergebnisse von <bdi>{email}</bdi> werden endgültig gelöscht, zum Beispiel wenn die Person die Löschung ihrer Daten verlangt. Hat die Person mindestens eine Frage beantwortet, werden ihre Credits abgebucht; sonst kommen sie zurück. Das kann nicht rückgängig gemacht werden.",
     "eraseConfirm": "Löschen",
     "sortBy": "Sortieren nach: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# Kandidat} other {# Kandidaten}}",
     "deleteLabel": "<bdi>{title}</bdi> löschen",
     "deleteTitle": "Dieses Interview löschen?",
-    "deleteText": "Kandidaten verlieren den Zugriff, und ihre Ergebnisse werden gelöscht. Das kann nicht rückgängig gemacht werden.",
+    "deleteText": "Kandidaten verlieren den Zugriff, und ihre Ergebnisse werden gelöscht. Für alle, die mindestens eine Frage beantwortet haben, werden die Credits abgebucht, und die für die anderen reservierten kommen zurück. Das kann nicht rückgängig gemacht werden.",
     "deleteFailed": "Das Interview konnte nicht gelöscht werden. Bitte versuche es erneut.",
     "settings": "Einstellungen",
     "settingsFailed": "Die Interview-Einstellungen konnten nicht gespeichert werden.",
@@ -1406,7 +1406,7 @@
     "topUp": "Aufladen"
   },
   "site": {
-    "description": "Einstellungstest mit Zeitlimit aus deiner Stellenbeschreibung: eigene, zufällige Fragen je Bewerber, dazu Ranking und Berichte.{priced, select, yes { {price} pro Kandidat.} other {}}",
+    "description": "Einstellungstest mit Zeitlimit aus deiner Stellenbeschreibung: eigene, zufällige Fragen je Bewerber, dazu Auswertungen und Berichte.{priced, select, yes { {price} pro Kandidat.} other {}}",
     "homeTitle": "Einstellungstest aus deiner Stellenbeschreibung erstellen"
   },
   "legal": {
@@ -2173,7 +2173,7 @@
   },
   "openToOffers": {
     "title": "Offen für Angebote",
-    "text": "Unternehmen, die über testee einstellen, sehen deinen Namen, dein LinkedIn-Profil und deine neuesten Übungsergebnisse und können dich zu einem Interview einladen. Du kannst es jederzeit ausschalten.",
+    "text": "Unternehmen, die über testee einstellen, sehen deinen Namen, dein LinkedIn-Profil und deine neuesten Ergebnisse von Übungen mit Zeitlimit und können dich zu einem Interview einladen. Du kannst es jederzeit ausschalten.",
     "linkedin": "LinkedIn-Profil",
     "linkedinHint": "linkedin.com/in/dein-name",
     "save": "Speichern",

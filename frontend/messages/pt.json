@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Excluir sua conta?",
     "everything": "Tudo é apagado: o seu lugar na equipe de cada empresa, os seus resultados das entrevistas que fez como candidato, as suas rodadas de prática e as suas notificações.",
-    "company": "Uma empresa da qual você é o único proprietário é excluída com suas entrevistas. Isso não pode ser desfeito.",
+    "company": "Uma empresa em que só você está é excluída com suas entrevistas, notas e créditos restantes, que não são reembolsados. Se outras pessoas entraram em uma empresa sua, primeiro torne uma delas proprietária ou exclua a empresa. Isso não pode ser desfeito.",
     "confirm": "Excluir conta",
     "deleted": "Sua conta foi excluída.",
     "failed": "Não foi possível excluir sua conta. Tente novamente.",
@@ -1134,7 +1134,7 @@
     "erased": "<bdi>{email}</bdi> excluído",
     "eraseFailed": "Não foi possível excluir o candidato.",
     "eraseTitle": "Excluir este candidato?",
-    "eraseText": "As respostas e os resultados de <bdi>{email}</bdi> são excluídos para sempre, por exemplo quando a pessoa pede que seus dados sejam apagados. Isso não pode ser desfeito.",
+    "eraseText": "As respostas e os resultados de <bdi>{email}</bdi> são excluídos para sempre, por exemplo quando a pessoa pede que seus dados sejam apagados. Se a pessoa respondeu a pelo menos uma pergunta, os créditos são cobrados; se não, são devolvidos. Isso não pode ser desfeito.",
     "eraseConfirm": "Excluir",
     "sortBy": "Ordenar por: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# candidato} other {# candidatos}}",
     "deleteLabel": "Excluir <bdi>{title}</bdi>",
     "deleteTitle": "Excluir esta entrevista?",
-    "deleteText": "Os candidatos perdem o acesso e seus resultados são excluídos. Isso não pode ser desfeito.",
+    "deleteText": "Os candidatos perdem o acesso e seus resultados são excluídos. Os créditos de quem respondeu a pelo menos uma pergunta são cobrados, e os reservados para os demais são devolvidos. Isso não pode ser desfeito.",
     "deleteFailed": "Não foi possível excluir a entrevista. Tente novamente.",
     "settings": "Configurações",
     "settingsFailed": "Não foi possível salvar as configurações da entrevista.",
@@ -1406,7 +1406,7 @@
     "topUp": "Recarregar"
   },
   "site": {
-    "description": "Testes de recrutamento e seleção com tempo, criados da descrição da vaga. Perguntas aleatórias por candidato, ranking e relatórios.{priced, select, yes { {price} por candidato.} other {}}",
+    "description": "Testes de recrutamento e seleção com tempo, criados da descrição da vaga. Perguntas aleatórias por candidato, fichas de avaliação e relatórios.{priced, select, yes { {price} por candidato.} other {}}",
     "homeTitle": "Testes de recrutamento e seleção criados da sua vaga"
   },
   "legal": {
@@ -2177,7 +2177,7 @@
   },
   "openToOffers": {
     "title": "Aberto a propostas",
-    "text": "Empresas que contratam pela testee verão seu nome, seu perfil do LinkedIn e seus resultados de prática mais recentes, e poderão convidar você para uma entrevista. Desative quando quiser.",
+    "text": "Empresas que contratam pela testee verão seu nome, seu perfil do LinkedIn e seus resultados de prática cronometrada mais recentes, e poderão convidar você para uma entrevista. Desative quando quiser.",
     "linkedin": "Perfil do LinkedIn",
     "linkedinHint": "linkedin.com/in/seu-nome",
     "save": "Salvar",

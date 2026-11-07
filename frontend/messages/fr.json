@@ -795,9 +795,9 @@
     "paidTitle": "Paiement reçu",
     "paidText": "Vos crédits arrivent. Ils apparaissent généralement en quelques secondes, et le solde se met à jour ici tout seul.",
     "autoTopUpOnTitle": "La recharge automatique est activée",
-    "autoTopUpOnText": "Votre carte est enregistrée. Les crédits sont rechargés automatiquement dès que le solde passe sous le montant choisi.",
+    "autoTopUpOnText": "Votre carte est enregistrée. Les crédits sont rechargés automatiquement dès que le solde passe sous le niveau choisi.",
     "cardUpdatedTitle": "Carte mise à jour",
-    "cardUpdatedText": "Votre nouvelle carte est enregistrée. La recharge automatique reprend dans un instant et l'utilisera pour recharger le solde dès qu'il passe sous le montant choisi.",
+    "cardUpdatedText": "Votre nouvelle carte est enregistrée. La recharge automatique reprend dans un instant et l'utilisera pour recharger le solde dès qu'il passe sous le niveau choisi.",
     "checkoutFailed": "Impossible d'ouvrir le paiement. Veuillez réessayer.",
     "paymentFailedTitle": "Le paiement n'a pas abouti",
     "tryAnotherMethod": "Réessayer",
@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Supprimer votre compte ?",
     "everything": "Tout est supprimé : votre place dans l'équipe de chaque entreprise, vos résultats aux entretiens passés en tant que candidat, vos sessions d'entraînement et vos notifications.",
-    "company": "Une entreprise dont vous êtes le seul propriétaire est supprimée avec ses entretiens. Cette action est irréversible.",
+    "company": "Une entreprise dont vous êtes le seul membre est supprimée avec ses entretiens, ses notes et ses crédits restants, qui ne sont pas remboursés. Si d'autres personnes ont rejoint une entreprise qui vous appartient, faites d'abord de l'une d'elles le propriétaire ou supprimez l'entreprise. Cette action est irréversible.",
     "confirm": "Supprimer le compte",
     "deleted": "Votre compte a été supprimé.",
     "failed": "Impossible de supprimer votre compte. Veuillez réessayer.",
@@ -1134,7 +1134,7 @@
     "erased": "<bdi>{email}</bdi> supprimé",
     "eraseFailed": "Impossible de supprimer le candidat.",
     "eraseTitle": "Supprimer ce candidat ?",
-    "eraseText": "Les réponses et les résultats de <bdi>{email}</bdi> sont supprimés définitivement, par exemple quand la personne demande l'effacement de ses données. Cette action est irréversible.",
+    "eraseText": "Les réponses et les résultats de <bdi>{email}</bdi> sont supprimés définitivement, par exemple quand la personne demande l'effacement de ses données. S'il a répondu à au moins une question, ses crédits sont débités ; sinon, ils sont rendus. Cette action est irréversible.",
     "eraseConfirm": "Supprimer",
     "sortBy": "Trier par : {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# candidat} other {# candidats}}",
     "deleteLabel": "Supprimer <bdi>{title}</bdi>",
     "deleteTitle": "Supprimer cet entretien ?",
-    "deleteText": "Les candidats perdent l'accès et leurs résultats sont supprimés. Cette action est irréversible.",
+    "deleteText": "Les candidats perdent l'accès et leurs résultats sont supprimés. Les crédits de ceux qui ont répondu à au moins une question sont débités, et ceux réservés pour les autres sont rendus. Cette action est irréversible.",
     "deleteFailed": "Impossible de supprimer l'entretien. Veuillez réessayer.",
     "settings": "Paramètres",
     "settingsFailed": "Impossible d'enregistrer les paramètres de l'entretien.",
@@ -1406,8 +1406,8 @@
     "topUp": "Recharger"
   },
   "site": {
-    "description": "Tests de recrutement chronométrés, créés à partir de votre offre d'emploi. Questions aléatoires par candidat, classement, rapports PDF.{priced, select, yes { {price} par candidat.} other {}}",
-    "homeTitle": "Test de recrutement créé à partir de votre offre d'emploi"
+    "description": "Tests de recrutement chronométrés, créés à partir de votre fiche de poste. Questions aléatoires par candidat, fiches d'évaluation et rapports.{priced, select, yes { {price} par candidat.} other {}}",
+    "homeTitle": "Test de recrutement créé à partir de votre fiche de poste"
   },
   "legal": {
     "englishOnly": "Cette version n'existe qu'en anglais.",
@@ -1450,7 +1450,7 @@
   },
   "autoTopUp": {
     "title": "Recharge automatique",
-    "text": "Quand le solde disponible passe sous le montant choisi, nous achetons la recharge avec votre carte enregistrée. Chaque débit est notifié par e-mail aux propriétaires et administrateurs de l'entreprise, et Paddle envoie son reçu par e-mail. Vous pouvez la désactiver ici à tout moment : elle s'arrête immédiatement.",
+    "text": "Quand le solde disponible passe sous le niveau choisi, nous achetons la recharge avec votre carte enregistrée. Chaque débit est notifié par e-mail aux propriétaires et administrateurs de l'entreprise, et Paddle envoie son reçu par e-mail. Vous pouvez la désactiver ici à tout moment : elle s'arrête immédiatement.",
     "agree": "J'accepte que ma carte soit débitée de {amount}, plus toute TVA ou taxe de vente applicable, chaque fois que le solde disponible passe sous {threshold, plural, one {# crédit} many {# crédits} other {# crédits}}, jusqu'à ce que je désactive la recharge automatique ici.",
     "amount": "Recharge",
     "when": "Quand le solde passe sous",
@@ -2173,7 +2173,7 @@
   },
   "openToOffers": {
     "title": "Ouvert aux opportunités",
-    "text": "Les entreprises qui recrutent sur testee verront votre nom, votre profil LinkedIn et vos derniers résultats d'entraînement, et pourront vous inviter à un entretien. Vous pouvez le désactiver à tout moment.",
+    "text": "Les entreprises qui recrutent sur testee verront votre nom, votre profil LinkedIn et vos derniers résultats d'entraînement chronométré, et pourront vous inviter à un entretien. Vous pouvez le désactiver à tout moment.",
     "linkedin": "Profil LinkedIn",
     "linkedinHint": "linkedin.com/in/votre-nom",
     "save": "Enregistrer",
@@ -2781,13 +2781,13 @@
         "questions": {
           "verify": "Fais vérifier mon entreprise",
           "whyVerify": "Pourquoi faire vérifier mon entreprise ?",
-          "createInterview": "Crée un entretien à partir d'une offre d'emploi"
+          "createInterview": "Crée un entretien à partir d'une fiche de poste"
         }
       },
       "no_interviews": {
         "text": "Créons votre premier entretien.",
         "questions": {
-          "fromDescription": "Crée un entretien à partir d'une offre d'emploi",
+          "fromDescription": "Crée un entretien à partir d'une fiche de poste",
           "template": "Crée un entretien à partir d'un modèle",
           "changeQuestions": "Puis-je modifier les questions ?"
         }
@@ -2845,7 +2845,7 @@
         "remove_webhook": "Retirer le webhook",
         "remove_api_key": "Retirer la clé API",
         "start_practice": "Commencer une session d'entraînement",
-        "create_interview": "Créer un entretien à partir d'une offre d'emploi",
+        "create_interview": "Créer un entretien à partir d'une fiche de poste",
         "create_interview_from_template": "Créer un entretien à partir d'un modèle",
         "delete_interview": "Supprimer l'entretien",
         "rename_interview": "Renommer l'entretien",
@@ -2874,7 +2874,7 @@
         "title": "Nouveau nom",
         "email": "E-mail",
         "role": "Rôle",
-        "text": "Offre d'emploi",
+        "text": "Fiche de poste",
         "generate_in": "Questions en",
         "website": "Site web",
         "question_seconds": "Secondes par question en moyenne",

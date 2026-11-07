@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Burahin ang iyong account?",
     "everything": "Mabubura ang lahat: ang puwesto mo sa team ng bawat kumpanya, ang mga resulta mo sa mga interview na kinuha mo bilang aplikante, ang mga practice round mo at ang mga notification mo.",
-    "company": "Ang kumpanyang ikaw lang ang may-ari ay mabubura kasama ang mga interview nito. Hindi na ito maibabalik.",
+    "company": "Ang kumpanyang ikaw lang ang miyembro ay mabubura kasama ang mga interview, tala at natitirang credits nito, na hindi ire-refund. Kung may ibang sumali sa kumpanyang pag-aari mo, gawin munang may-ari ang isa sa kanila o i-delete ang kumpanya. Hindi na ito maibabalik.",
     "confirm": "Burahin ang account",
     "deleted": "Nabura na ang iyong account.",
     "failed": "Hindi mabura ang iyong account. Pakisubukang muli.",
@@ -1134,7 +1134,7 @@
     "erased": "Binura si <bdi>{email}</bdi>",
     "eraseFailed": "Hindi mabura ang aplikante.",
     "eraseTitle": "Burahin ang aplikanteng ito?",
-    "eraseText": "Permanenteng mabubura ang mga sagot at resulta ni <bdi>{email}</bdi>, halimbawa kapag hiniling nilang burahin ang kanilang data. Hindi na ito maibabalik.",
+    "eraseText": "Permanenteng mabubura ang mga sagot at resulta ni <bdi>{email}</bdi>, halimbawa kapag hiniling nilang burahin ang kanilang data. Kung sumagot siya sa kahit isang tanong, sinisingil ang credits niya; kung hindi, ibinabalik ang mga ito. Hindi na ito maibabalik.",
     "eraseConfirm": "Burahin",
     "sortBy": "Ayusin ayon sa: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# aplikante} other {# aplikante}}",
     "deleteLabel": "Burahin ang <bdi>{title}</bdi>",
     "deleteTitle": "Burahin ang interview na ito?",
-    "deleteText": "Mawawalan ng access ang mga aplikante, at mabubura ang kanilang mga resulta. Hindi na ito maibabalik.",
+    "deleteText": "Mawawalan ng access ang mga aplikante, at mabubura ang kanilang mga resulta. Sinisingil ang credits ng mga sumagot sa kahit isang tanong, at ibinabalik ang credits na naka-reserve para sa iba. Hindi na ito maibabalik.",
     "deleteFailed": "Hindi mabura ang interview. Pakisubukang muli.",
     "settings": "Mga setting",
     "settingsFailed": "Hindi ma-save ang mga setting ng interview.",
@@ -1406,7 +1406,7 @@
     "topUp": "Mag-top up"
   },
   "site": {
-    "description": "Timed na skills test para sa mga aplikante, mula sa job description mo. Random na tanong bawat aplikante, may ranking at ulat.{priced, select, yes { {price} bawat aplikante.} other {}}",
+    "description": "Timed na skills test para sa mga aplikante, mula sa job description mo. Random na tanong bawat aplikante, may scorecard at report.{priced, select, yes { {price} bawat aplikante.} other {}}",
     "homeTitle": "Pre-employment assessment mula sa job description mo"
   },
   "legal": {
@@ -2173,7 +2173,7 @@
   },
   "openToOffers": {
     "title": "Open to offers",
-    "text": "Makikita ng mga kumpanyang nagha-hire sa testee ang pangalan mo, LinkedIn profile at pinakabagong mga resulta ng practice, at puwede ka nilang imbitahan sa isang interview. I-off ito kahit kailan.",
+    "text": "Makikita ng mga kumpanyang nagha-hire sa testee ang pangalan mo, LinkedIn profile at pinakabagong naka-time na mga resulta ng practice, at puwede ka nilang imbitahan sa isang interview. I-off ito kahit kailan.",
     "linkedin": "LinkedIn profile",
     "linkedinHint": "linkedin.com/in/pangalan-mo",
     "save": "I-save",

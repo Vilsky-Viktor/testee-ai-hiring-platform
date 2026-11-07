@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Usunąć konto?",
     "everything": "Wszystko zostaje usunięte: Twoje miejsce w zespole każdej firmy, Twoje wyniki z rozmów, które odbyłeś jako kandydat, Twoje podejścia ćwiczeniowe i powiadomienia.",
-    "company": "Firma, której jesteś jedynym właścicielem, zostanie usunięta razem z rozmowami. Tej operacji nie można cofnąć.",
+    "company": "Firma, w której jesteś tylko Ty, zostanie usunięta razem z rozmowami, notatkami i pozostałymi kredytami, które nie są zwracane. Jeśli do Twojej firmy dołączyły inne osoby, najpierw przekaż własność jednej z nich albo usuń firmę. Tej operacji nie można cofnąć.",
     "confirm": "Usuń konto",
     "deleted": "Twoje konto zostało usunięte.",
     "failed": "Nie udało się usunąć konta. Spróbuj ponownie.",
@@ -1134,7 +1134,7 @@
     "erased": "Usunięto <bdi>{email}</bdi>",
     "eraseFailed": "Nie udało się usunąć kandydata.",
     "eraseTitle": "Usunąć tego kandydata?",
-    "eraseText": "Odpowiedzi i wyniki <bdi>{email}</bdi> zostaną trwale usunięte, np. gdy ta osoba poprosi o usunięcie swoich danych. Tej operacji nie można cofnąć.",
+    "eraseText": "Odpowiedzi i wyniki <bdi>{email}</bdi> zostaną trwale usunięte, np. gdy ta osoba poprosi o usunięcie swoich danych. Jeśli ta osoba odpowiedziała na co najmniej jedno pytanie, kredyty są pobierane; jeśli nie, wracają. Tej operacji nie można cofnąć.",
     "eraseConfirm": "Usuń",
     "sortBy": "Sortuj według: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# kandydat} few {# kandydaci} many {# kandydatów} other {# kandydata}}",
     "deleteLabel": "Usuń <bdi>{title}</bdi>",
     "deleteTitle": "Usunąć tę rozmowę?",
-    "deleteText": "Kandydaci stracą dostęp, a ich wyniki zostaną usunięte. Tej operacji nie można cofnąć.",
+    "deleteText": "Kandydaci stracą dostęp, a ich wyniki zostaną usunięte. Za osoby, które odpowiedziały na co najmniej jedno pytanie, pobierane są kredyty, a kredyty zarezerwowane dla pozostałych wracają. Tej operacji nie można cofnąć.",
     "deleteFailed": "Nie udało się usunąć rozmowy. Spróbuj ponownie.",
     "settings": "Ustawienia",
     "settingsFailed": "Nie udało się zapisać ustawień rozmowy.",
@@ -1406,7 +1406,7 @@
     "topUp": "Doładuj"
   },
   "site": {
-    "description": "Wklej opis stanowiska i wyślij kandydatom test umiejętności na czas. Każdy dostaje własne losowe pytania, Ty ranking i raporty.{priced, select, yes { {price} za kandydata.} other {}}",
+    "description": "Wklej opis stanowiska i wyślij kandydatom test umiejętności na czas. Każdy dostaje własne losowe pytania, Ty karty wyników i raporty.{priced, select, yes { {price} za kandydata.} other {}}",
     "homeTitle": "Testy rekrutacyjne online z Twojego opisu stanowiska"
   },
   "legal": {
@@ -2173,7 +2173,7 @@
   },
   "openToOffers": {
     "title": "Rozważam oferty pracy",
-    "text": "Firmy, które rekrutują przez testee, zobaczą Twoje imię i nazwisko, profil LinkedIn i najnowsze wyniki ćwiczeń oraz mogą zaprosić Cię na rozmowę. Możesz to wyłączyć w każdej chwili.",
+    "text": "Firmy, które rekrutują przez testee, zobaczą Twoje imię i nazwisko, profil LinkedIn i najnowsze wyniki ćwiczeń na czas oraz mogą zaprosić Cię na rozmowę. Możesz to wyłączyć w każdej chwili.",
     "linkedin": "Profil LinkedIn",
     "linkedinHint": "linkedin.com/in/twoje-imie",
     "save": "Zapisz",
@@ -2232,7 +2232,7 @@
     "heading": "Test umiejętności do rekrutacji: <bdi>{role}</bdi>",
     "pageTitle": "Test rekrutacyjny: {role}",
     "pageDescription": "Test rekrutacyjny na czas dla kandydatów: {role}, obejmujący {count, plural, one {# temat} few {# tematy} many {# tematów} other {# tematu}}. Każdy kandydat dostaje własne losowe pytania.{priced, select, yes { {price} za kandydata.} other {}}",
-    "lead": "Test jednokrotnego wyboru na czas sprawdzający umiejętności potrzebne na tym stanowisku. Każdy kandydat dostaje własny losowy zestaw pytań z limitem czasu na każde, a Ty dostajesz kartę wyników z każdą odpowiedzią i jej czasem.{priced, select, yes { {price} za kandydata, bez abonamentu.} other {}}",
+    "lead": "Test wielokrotnego wyboru na czas sprawdzający umiejętności potrzebne na tym stanowisku. Każdy kandydat dostaje własny losowy zestaw pytań z limitem czasu na każde, a Ty dostajesz kartę wyników z każdą odpowiedzią i jej czasem.{priced, select, yes { {price} za kandydata, bez abonamentu.} other {}}",
     "create": "Utwórz test dla swoich kandydatów",
     "practise": "Poćwicz za darmo",
     "topics": "Co sprawdza",

@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "¿Eliminar tu cuenta?",
     "everything": "Se elimina todo: tu lugar en el equipo de cada empresa, tus resultados de las entrevistas que hiciste como candidato, tus rondas de práctica y tus notificaciones.",
-    "company": "Las empresas de las que eres el único propietario se eliminan con sus entrevistas. Esto no se puede deshacer.",
+    "company": "Una empresa en la que solo estás tú se elimina con sus entrevistas, notas y créditos restantes, que no se reembolsan. Si otras personas se unieron a una empresa tuya, primero haz propietaria a una de ellas o elimina la empresa. Esto no se puede deshacer.",
     "confirm": "Eliminar cuenta",
     "deleted": "Tu cuenta se eliminó.",
     "failed": "No se pudo eliminar tu cuenta. Inténtalo de nuevo.",
@@ -1134,7 +1134,7 @@
     "erased": "<bdi>{email}</bdi> eliminado",
     "eraseFailed": "No se pudo eliminar el candidato.",
     "eraseTitle": "¿Eliminar este candidato?",
-    "eraseText": "Las respuestas y los resultados de <bdi>{email}</bdi> se eliminan para siempre, por ejemplo cuando la persona pide que se borren sus datos. Esto no se puede deshacer.",
+    "eraseText": "Las respuestas y los resultados de <bdi>{email}</bdi> se eliminan para siempre, por ejemplo cuando la persona pide que se borren sus datos. Si respondió al menos una pregunta, sus créditos se cobran; si no, se devuelven. Esto no se puede deshacer.",
     "eraseConfirm": "Eliminar",
     "sortBy": "Ordenar por: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# candidato} other {# candidatos}}",
     "deleteLabel": "Eliminar <bdi>{title}</bdi>",
     "deleteTitle": "¿Eliminar esta entrevista?",
-    "deleteText": "Los candidatos pierden el acceso y sus resultados se eliminan. Esto no se puede deshacer.",
+    "deleteText": "Los candidatos pierden el acceso y sus resultados se eliminan. Se cobran los créditos de quienes respondieron al menos una pregunta, y los reservados para los demás se devuelven. Esto no se puede deshacer.",
     "deleteFailed": "No se pudo eliminar la entrevista. Inténtalo de nuevo.",
     "settings": "Ajustes",
     "settingsFailed": "No se pudieron guardar los ajustes de la entrevista.",
@@ -1406,7 +1406,7 @@
     "topUp": "Recargar"
   },
   "site": {
-    "description": "Pega la descripción del puesto y obtén una prueba de selección cronometrada. Preguntas aleatorias por candidato, ranking e informes.{priced, select, yes { {price} por candidato.} other {}}",
+    "description": "Pega la descripción del puesto y obtén una prueba de selección cronometrada. Preguntas aleatorias por candidato, fichas de evaluación e informes.{priced, select, yes { {price} por candidato.} other {}}",
     "homeTitle": "Pruebas de selección de personal desde tu oferta de empleo"
   },
   "legal": {
@@ -2173,7 +2173,7 @@
   },
   "openToOffers": {
     "title": "Abierto a ofertas",
-    "text": "Las empresas que contratan en testee verán tu nombre, tu perfil de LinkedIn y tus últimos resultados de práctica, y podrán invitarte a una entrevista. Desactívalo cuando quieras.",
+    "text": "Las empresas que contratan en testee verán tu nombre, tu perfil de LinkedIn y tus últimos resultados de práctica cronometrada, y podrán invitarte a una entrevista. Desactívalo cuando quieras.",
     "linkedin": "Perfil de LinkedIn",
     "linkedinHint": "linkedin.com/in/tu-nombre",
     "save": "Guardar",

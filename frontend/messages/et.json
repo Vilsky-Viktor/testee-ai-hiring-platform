@@ -38,7 +38,7 @@
       "reminders": "Meeldetuletused",
       "remindersNote": "Vähe krediiti, kandidaatideta intervjuud, ülevaatust ootavad teemad.",
       "updates": "Tooteuudised",
-      "updatesNote": "Uued funktsioonid ja testee. uudised.",
+      "updatesNote": "Uued funktsioonid ja testee uudised.",
       "promotions": "Pakkumised ja kampaaniad",
       "promotionsNote": "Allahindlused ja eripakkumised.",
       "alwaysSent": "Teenusekirjad, näiteks kutsed, kandidaatide aruanded, makseprobleemid ja muudatused meie tingimustes, saadetakse alati."
@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Kustutada sinu konto?",
     "everything": "Kõik kustutatakse: sinu koht iga ettevõtte meeskonnas, sinu tulemused intervjuudest, mille tegid kandidaadina, sinu harjutusvoorud ja teavitused.",
-    "company": "Ettevõte, mille ainus omanik oled, kustutatakse koos selle intervjuudega. Seda ei saa tagasi võtta.",
+    "company": "Ettevõte, kus oled ainult sina, kustutatakse koos selle intervjuude, märkmete ja järelejäänud krediitidega, mida ei hüvitata. Kui sinu ettevõttega on liitunud teisi inimesi, tee esmalt üks neist omanikuks või kustuta ettevõte. Seda ei saa tagasi võtta.",
     "confirm": "Kustuta konto",
     "deleted": "Sinu konto kustutati.",
     "failed": "Kontot ei õnnestunud kustutada. Proovi uuesti.",
@@ -1134,7 +1134,7 @@
     "erased": "<bdi>{email}</bdi> kustutati",
     "eraseFailed": "Kandidaati ei õnnestunud kustutada.",
     "eraseTitle": "Kustutada see kandidaat?",
-    "eraseText": "Aadressi <bdi>{email}</bdi> vastused ja tulemused kustutatakse jäädavalt, näiteks kui kandidaat palub oma andmed kustutada. Seda ei saa tagasi võtta.",
+    "eraseText": "Aadressi <bdi>{email}</bdi> vastused ja tulemused kustutatakse jäädavalt, näiteks kui kandidaat palub oma andmed kustutada. Kui kandidaat vastas vähemalt ühele küsimusele, arvestatakse krediidid maha; kui mitte, tulevad need tagasi. Seda ei saa tagasi võtta.",
     "eraseConfirm": "Kustuta",
     "sortBy": "Järjesta: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# kandidaat} other {# kandidaati}}",
     "deleteLabel": "Kustuta <bdi>{title}</bdi>",
     "deleteTitle": "Kustutada see intervjuu?",
-    "deleteText": "Kandidaadid kaotavad juurdepääsu ja nende tulemused kustutatakse. Seda ei saa tagasi võtta.",
+    "deleteText": "Kandidaadid kaotavad juurdepääsu ja nende tulemused kustutatakse. Vähemalt ühele küsimusele vastanute krediidid arvestatakse maha ja teiste jaoks broneeritud krediidid tulevad tagasi. Seda ei saa tagasi võtta.",
     "deleteFailed": "Intervjuud ei õnnestunud kustutada. Proovi uuesti.",
     "settings": "Seaded",
     "settingsFailed": "Intervjuu seadeid ei õnnestunud salvestada.",
@@ -1406,7 +1406,7 @@
     "topUp": "Laadi juurde"
   },
   "site": {
-    "description": "Ajapiiranguga värbamistestid sinu töökuulutusest: igal kandidaadil oma juhuslikud küsimused, sulle pingerida ja aruanded.{priced, select, yes { {price} kandidaadi kohta.} other {}}",
+    "description": "Ajapiiranguga värbamistestid sinu töökuulutusest: igal kandidaadil oma juhuslikud küsimused, sulle hindamislehed ja aruanded.{priced, select, yes { {price} kandidaadi kohta.} other {}}",
     "homeTitle": "Värbamistestid kandidaatidele sinu töökuulutusest"
   },
   "legal": {
@@ -2173,7 +2173,7 @@
   },
   "openToOffers": {
     "title": "Avatud tööpakkumistele",
-    "text": "Ettevõtted, kes värbavad testee kaudu, näevad sinu nime, LinkedIni profiili ja viimaseid harjutuse tulemusi ning võivad sind intervjuule kutsuda. Saad selle igal ajal välja lülitada.",
+    "text": "Ettevõtted, kes värbavad testee kaudu, näevad sinu nime, LinkedIni profiili ja viimaseid ajapiiranguga harjutuse tulemusi ning võivad sind intervjuule kutsuda. Saad selle igal ajal välja lülitada.",
     "linkedin": "LinkedIni profiil",
     "linkedinHint": "linkedin.com/in/sinu-nimi",
     "save": "Salvesta",
@@ -3329,7 +3329,7 @@
     "rows": {
       "describe": {
         "title": "Töökuulutuse põhjal",
-        "text": "Tehisaru loeb ametikoha kirjelduse ja pakub teemad. Vaatad need tasuta üle: jätad alles olulise, nimetad teemad ümber, muudad alateemasid või kirjeldad muudatusi oma sõnadega.",
+        "text": "Tehisaru loeb töökuulutuse ja pakub teemad. Vaatad need tasuta üle: jätad alles olulise, nimetad teemad ümber, muudad alateemasid või kirjeldad muudatusi oma sõnadega.",
         "alt": "Intervjuu teemade vahekaart: küsimuste ja minutite koguarv iga kandidaadi kohta ning teemad koos küsimuste arvuga."
       },
       "invite": {

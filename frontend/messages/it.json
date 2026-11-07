@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Eliminare il tuo account?",
     "everything": "Viene eliminato tutto: il tuo posto nel team di ogni azienda, i tuoi risultati dei colloqui sostenuti come candidato, le tue simulazioni e le tue notifiche.",
-    "company": "Un'azienda di cui sei l'unico proprietario viene eliminata con i suoi colloqui. L'operazione non può essere annullata.",
+    "company": "Un'azienda di cui fai parte solo tu viene eliminata con i suoi colloqui, le note e i crediti rimasti, che non vengono rimborsati. Se altre persone sono entrate in un'azienda di tua proprietà, prima rendi proprietario uno di loro oppure elimina l'azienda. L'operazione non può essere annullata.",
     "confirm": "Elimina account",
     "deleted": "Il tuo account è stato eliminato.",
     "failed": "Impossibile eliminare il tuo account. Riprova.",
@@ -1134,7 +1134,7 @@
     "erased": "<bdi>{email}</bdi> eliminato",
     "eraseFailed": "Impossibile eliminare il candidato.",
     "eraseTitle": "Eliminare questo candidato?",
-    "eraseText": "Le risposte e i risultati di <bdi>{email}</bdi> vengono eliminati definitivamente, ad esempio quando la persona chiede la cancellazione dei propri dati. L'operazione non può essere annullata.",
+    "eraseText": "Le risposte e i risultati di <bdi>{email}</bdi> vengono eliminati definitivamente, ad esempio quando la persona chiede la cancellazione dei propri dati. Se ha risposto ad almeno una domanda, i suoi crediti vengono addebitati; altrimenti vengono restituiti. L'operazione non può essere annullata.",
     "eraseConfirm": "Elimina",
     "sortBy": "Ordina per: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# candidato} other {# candidati}}",
     "deleteLabel": "Elimina <bdi>{title}</bdi>",
     "deleteTitle": "Eliminare questo colloquio?",
-    "deleteText": "I candidati perdono l'accesso e i loro risultati vengono eliminati. L'operazione non può essere annullata.",
+    "deleteText": "I candidati perdono l'accesso e i loro risultati vengono eliminati. I crediti di chi ha risposto ad almeno una domanda vengono addebitati, e quelli riservati agli altri vengono restituiti. L'operazione non può essere annullata.",
     "deleteFailed": "Impossibile eliminare il colloquio. Riprova.",
     "settings": "Impostazioni",
     "settingsFailed": "Impossibile salvare le impostazioni del colloquio.",
@@ -1406,8 +1406,8 @@
     "topUp": "Ricarica"
   },
   "site": {
-    "description": "Test di selezione del personale a tempo, creati dal tuo annuncio. Domande casuali diverse per ogni candidato, classifica e report.{priced, select, yes { {price} per candidato.} other {}}",
-    "homeTitle": "Test di selezione del personale creati dal tuo annuncio"
+    "description": "Test di selezione del personale a tempo, creati dalla descrizione del ruolo. Domande casuali diverse per ogni candidato, schede di valutazione e report.{priced, select, yes { {price} per candidato.} other {}}",
+    "homeTitle": "Test di selezione del personale creati dalla descrizione del ruolo"
   },
   "legal": {
     "englishOnly": "Questa versione è disponibile solo in inglese.",
@@ -1450,7 +1450,7 @@
   },
   "autoTopUp": {
     "title": "Ricarica automatica",
-    "text": "Quando il saldo disponibile scende sotto l'importo scelto, acquistiamo la ricarica con la tua carta salvata. Ogni addebito viene comunicato via email ai proprietari e agli amministratori dell'azienda, e Paddle invia la sua ricevuta via email. Puoi disattivarla qui in qualsiasi momento: si interrompe subito.",
+    "text": "Quando il saldo disponibile scende sotto il livello che scegli, acquistiamo la ricarica con la tua carta salvata. Ogni addebito viene comunicato via email ai proprietari e agli amministratori dell'azienda, e Paddle invia la sua ricevuta via email. Puoi disattivarla qui in qualsiasi momento: si interrompe subito.",
     "agree": "Accetto che sulla mia carta venga addebitato {amount}, più l'eventuale IVA o imposta sulle vendite, ogni volta che il saldo disponibile scende sotto {threshold, plural, one {# credito} many {# crediti} other {# crediti}}, finché non disattivo qui la ricarica automatica.",
     "amount": "Ricarica",
     "when": "Quando il saldo scende sotto",
@@ -2173,7 +2173,7 @@
   },
   "openToOffers": {
     "title": "Aperto a nuove opportunità",
-    "text": "Le aziende che assumono su testee vedranno il tuo nome, il tuo profilo LinkedIn e i risultati delle tue ultime simulazioni, e potranno invitarti a un colloquio. Puoi disattivarlo in qualsiasi momento.",
+    "text": "Le aziende che assumono su testee vedranno il tuo nome, il tuo profilo LinkedIn e i risultati delle tue ultime simulazioni a tempo, e potranno invitarti a un colloquio. Puoi disattivarlo in qualsiasi momento.",
     "linkedin": "Profilo LinkedIn",
     "linkedinHint": "linkedin.com/in/tuo-nome",
     "save": "Salva",
@@ -2781,13 +2781,13 @@
         "questions": {
           "verify": "Verifica la mia azienda",
           "whyVerify": "Perché verificare la mia azienda?",
-          "createInterview": "Crea un colloquio da una descrizione del lavoro"
+          "createInterview": "Crea un colloquio da una descrizione del ruolo"
         }
       },
       "no_interviews": {
         "text": "Creiamo il tuo primo colloquio.",
         "questions": {
-          "fromDescription": "Crea un colloquio da una descrizione del lavoro",
+          "fromDescription": "Crea un colloquio da una descrizione del ruolo",
           "template": "Crea un colloquio da un modello",
           "changeQuestions": "Posso cambiare le domande?"
         }
@@ -2845,7 +2845,7 @@
         "remove_webhook": "Rimuovi il webhook",
         "remove_api_key": "Rimuovi la chiave API",
         "start_practice": "Inizia un round di pratica",
-        "create_interview": "Crea un colloquio da una descrizione del lavoro",
+        "create_interview": "Crea un colloquio da una descrizione del ruolo",
         "create_interview_from_template": "Crea un colloquio da un modello",
         "delete_interview": "Elimina il colloquio",
         "rename_interview": "Rinomina il colloquio",
@@ -2874,7 +2874,7 @@
         "title": "Nuovo nome",
         "email": "Email",
         "role": "Ruolo",
-        "text": "Descrizione del lavoro",
+        "text": "Descrizione del ruolo",
         "generate_in": "Domande in",
         "website": "Sito",
         "question_seconds": "Secondi medi per domanda",
@@ -2967,7 +2967,7 @@
       "title": "Rimborsare {amount}?",
       "text": "Paddle restituisce {amount}, imposte incluse, sulla carta usata per il pagamento; possono volerci alcuni giorni. <credits></credits> {count, plural, one {credito non speso esce subito dal tuo saldo e torna} many {crediti non spesi escono subito dal tuo saldo e tornano} other {crediti non spesi escono subito dal tuo saldo e tornano}} se il rimborso non va a buon fine.",
       "referral": "Questa ricarica ha fatto scattare un premio referral, quindi qualsiasi rimborso lo revoca a entrambe le aziende. Se è già stato speso, il tuo saldo può diventare negativo.",
-      "autoTopUp": "La ricarica automatica resta attiva e addebita di nuovo la carta quando il saldo scende sotto l'importo scelto. Disattivala prima se non vuoi che succeda.",
+      "autoTopUp": "La ricarica automatica resta attiva e addebita di nuovo la carta quando il saldo scende sotto il livello che scegli. Disattivala prima se non vuoi che succeda.",
       "heldBack": "{count, plural, one {# candidato ha} many {# candidati hanno} other {# candidati hanno}} crediti <reserved>riservati</reserved>. Revoca i loro inviti per includerli.",
       "confirm": "Rimborsa {amount}",
       "refunded": "Rimborsata.",

@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Xóa tài khoản của bạn?",
     "everything": "Mọi thứ đều bị xóa: vị trí của bạn trong nhóm của mỗi công ty, kết quả các buổi phỏng vấn bạn đã làm với tư cách ứng viên, các lượt luyện tập và thông báo của bạn.",
-    "company": "Công ty do riêng bạn sở hữu sẽ bị xóa cùng các buổi phỏng vấn. Không thể hoàn tác.",
+    "company": "Công ty chỉ có mình bạn sẽ bị xóa cùng các buổi phỏng vấn, ghi chú và credit còn lại, và credit không được hoàn tiền. Nếu người khác đã tham gia công ty bạn sở hữu, trước hết hãy đặt một người trong số họ làm chủ sở hữu hoặc xóa công ty. Không thể hoàn tác.",
     "confirm": "Xóa tài khoản",
     "deleted": "Tài khoản của bạn đã bị xóa.",
     "failed": "Không thể xóa tài khoản. Vui lòng thử lại.",
@@ -1134,7 +1134,7 @@
     "erased": "Đã xóa <bdi>{email}</bdi>",
     "eraseFailed": "Không thể xóa ứng viên.",
     "eraseTitle": "Xóa ứng viên này?",
-    "eraseText": "Câu trả lời và kết quả của <bdi>{email}</bdi> sẽ bị xóa vĩnh viễn, ví dụ khi họ yêu cầu xóa dữ liệu của mình. Không thể hoàn tác.",
+    "eraseText": "Câu trả lời và kết quả của <bdi>{email}</bdi> sẽ bị xóa vĩnh viễn, ví dụ khi họ yêu cầu xóa dữ liệu của mình. Nếu ứng viên đã trả lời ít nhất một câu hỏi, credit sẽ bị trừ; nếu không, credit được hoàn lại. Không thể hoàn tác.",
     "eraseConfirm": "Xóa",
     "sortBy": "Sắp xếp theo: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, other {# ứng viên}}",
     "deleteLabel": "Xóa <bdi>{title}</bdi>",
     "deleteTitle": "Xóa buổi phỏng vấn này?",
-    "deleteText": "Ứng viên sẽ mất quyền truy cập và kết quả của họ sẽ bị xóa. Không thể hoàn tác.",
+    "deleteText": "Ứng viên sẽ mất quyền truy cập và kết quả của họ sẽ bị xóa. Ứng viên đã trả lời ít nhất một câu hỏi sẽ bị trừ credit, còn credit giữ cho những người khác được hoàn lại. Không thể hoàn tác.",
     "deleteFailed": "Không thể xóa buổi phỏng vấn. Vui lòng thử lại.",
     "settings": "Cài đặt",
     "settingsFailed": "Không thể lưu cài đặt buổi phỏng vấn.",
@@ -2177,7 +2177,7 @@
   },
   "openToOffers": {
     "title": "Sẵn sàng nhận cơ hội việc làm",
-    "text": "Các công ty tuyển dụng trên testee sẽ thấy tên, hồ sơ LinkedIn và kết quả luyện tập mới nhất của bạn, và có thể mời bạn phỏng vấn. Bạn có thể tắt bất cứ lúc nào.",
+    "text": "Các công ty tuyển dụng trên testee sẽ thấy tên, hồ sơ LinkedIn và kết quả luyện tập có tính giờ mới nhất của bạn, và có thể mời bạn phỏng vấn. Bạn có thể tắt bất cứ lúc nào.",
     "linkedin": "Hồ sơ LinkedIn",
     "linkedinHint": "linkedin.com/in/nguyen-van-a",
     "save": "Lưu",

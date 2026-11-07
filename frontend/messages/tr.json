@@ -38,7 +38,7 @@
       "reminders": "Hatırlatmalar",
       "remindersNote": "Azalan kredi, adayı olmayan mülakatlar, inceleme bekleyen konular.",
       "updates": "Ürün güncellemeleri ve haberler",
-      "updatesNote": "testee.'dan yeni özellikler ve haberler.",
+      "updatesNote": "testee'den yeni özellikler ve haberler.",
       "promotions": "Teklifler ve kampanyalar",
       "promotionsNote": "İndirimler ve özel teklifler.",
       "alwaysSent": "Davetler, aday raporları, ödeme sorunları ve koşullarımızdaki değişiklikler gibi hizmet e-postaları her zaman gönderilir."
@@ -830,7 +830,7 @@
   "deleteAccount": {
     "title": "Hesabınız silinsin mi?",
     "everything": "Her şey silinir: her şirketin ekibindeki yeriniz, aday olarak girdiğiniz mülakatların sonuçları, pratik denemeleriniz ve bildirimleriniz.",
-    "company": "Tek sahibi olduğunuz şirket, mülakatlarıyla birlikte silinir. Bu işlem geri alınamaz.",
+    "company": "Yalnızca sizin bulunduğunuz şirket, mülakatları, notları ve kalan kredileriyle birlikte silinir; krediler iade edilmez. Sahibi olduğunuz bir şirkete başkaları katıldıysa önce onlardan birini sahip yapın ya da şirketi silin. Bu işlem geri alınamaz.",
     "confirm": "Hesabı sil",
     "deleted": "Hesabınız silindi.",
     "failed": "Hesabınız silinemedi. Lütfen tekrar deneyin.",
@@ -1134,7 +1134,7 @@
     "erased": "<bdi>{email}</bdi> silindi",
     "eraseFailed": "Aday silinemedi.",
     "eraseTitle": "Bu aday silinsin mi?",
-    "eraseText": "<bdi>{email}</bdi> adresli adayın cevapları ve sonuçları kalıcı olarak silinir; örneğin aday verilerinin silinmesini istediğinde. Bu işlem geri alınamaz.",
+    "eraseText": "<bdi>{email}</bdi> adresli adayın cevapları ve sonuçları kalıcı olarak silinir; örneğin aday verilerinin silinmesini istediğinde. En az bir soruyu yanıtladıysa kredileri düşülür; yanıtlamadıysa iade edilir. Bu işlem geri alınamaz.",
     "eraseConfirm": "Sil",
     "sortBy": "Sırala: {sort}",
     "sort": {
@@ -1241,7 +1241,7 @@
     "candidateCount": "{count, plural, one {# aday} other {# aday}}",
     "deleteLabel": "<bdi>{title}</bdi> öğesini sil",
     "deleteTitle": "Bu mülakat silinsin mi?",
-    "deleteText": "Adaylar erişimini kaybeder ve sonuçları silinir. Bu işlem geri alınamaz.",
+    "deleteText": "Adaylar erişimini kaybeder ve sonuçları silinir. En az bir soruyu yanıtlayanların kredileri düşülür, diğerleri için ayrılan krediler iade edilir. Bu işlem geri alınamaz.",
     "deleteFailed": "Mülakat silinemedi. Lütfen tekrar deneyin.",
     "settings": "Ayarlar",
     "settingsFailed": "Mülakat ayarları kaydedilemedi.",
@@ -1406,7 +1406,7 @@
     "topUp": "Kredi yükle"
   },
   "site": {
-    "description": "İş tanımınızdan süreli işe alım testleri. Her aday kendi rastgele sorularını alır; aday sıralaması, değerlendirme kartları ve raporlar.{priced, select, yes { Aday başına {price}.} other {}}",
+    "description": "İş tanımınızdan süreli işe alım testleri. Her aday kendi rastgele sorularını alır; değerlendirme kartları ve raporlar.{priced, select, yes { Aday başına {price}.} other {}}",
     "homeTitle": "İş tanımınızdan işe alım testleri oluşturun"
   },
   "legal": {
@@ -2177,7 +2177,7 @@
   },
   "openToOffers": {
     "title": "İş tekliflerine açık",
-    "text": "testee üzerinden işe alım yapan şirketler adınızı, LinkedIn profilinizi ve en son pratik sonuçlarınızı görür ve sizi bir mülakata davet edebilir. İstediğiniz zaman kapatabilirsiniz.",
+    "text": "testee üzerinden işe alım yapan şirketler adınızı, LinkedIn profilinizi ve en son süreli pratik sonuçlarınızı görür ve sizi bir mülakata davet edebilir. İstediğiniz zaman kapatabilirsiniz.",
     "linkedin": "LinkedIn profili",
     "linkedinHint": "linkedin.com/in/ad-soyad",
     "save": "Kaydet",
