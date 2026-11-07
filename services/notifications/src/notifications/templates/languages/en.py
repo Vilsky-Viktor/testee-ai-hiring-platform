@@ -267,6 +267,27 @@ TEXTS = {
             " settings."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Top-up not confirmed: {company}",
+        "preheader": "An automatic top-up isn't confirmed. Top up to keep inviting candidates.",
+        "heading": "Automatic top-up not confirmed",
+        "lines": [
+            (
+                "Our payment provider hasn't confirmed an automatic top-up for {company}, so no"
+                " credits have been added yet."
+            ),
+            (
+                "Top up to keep inviting candidates. To avoid charging the card twice, no other"
+                " automatic top-up is made until this one is settled."
+            ),
+        ],
+        "button": "Top up",
+        "footer": (
+            "This email was sent to {email} because you're an owner or admin of {company} "
+            "on testee. It's about your company's billing, so it's sent whatever your email"
+            " settings."
+        ),
+    },
     "top_up_paused": {
         "subject": "Top-up paused: {company}",
         "preheader": "The card was declined. Update it to turn automatic top-up back on.",

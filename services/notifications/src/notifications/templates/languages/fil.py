@@ -314,6 +314,17 @@ TEXTS = {
             "ito anuman ang iyong email settings."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Hindi pa kumpirmado ang top-up: {company}",
+        "preheader": "Hindi pa kumpirmado ang isang awtomatikong top-up. Mag-top up para patuloy na makapag-imbita ng aplikante.",
+        "heading": "Hindi pa kumpirmado ang awtomatikong top-up",
+        "lines": [
+            "Hindi pa kinukumpirma ng aming payment provider ang isang awtomatikong top-up para sa {company}, kaya wala pang naidagdag na credits.",
+            "Mag-top up para patuloy na makapag-imbita ng aplikante. Para hindi ma-charge nang dalawang beses ang card, walang ibang awtomatikong top-up hangga't hindi naaayos ito.",
+        ],
+        "button": "Mag-top up",
+        "footer": "Ipinadala ang email na ito sa {email} dahil ikaw ay may-ari o admin ng {company} sa testee. Tungkol ito sa billing ng kumpanya mo, kaya ipinapadala ito anuman ang iyong email settings.",
+    },
     "top_up_paused": {
         "subject": "Naka-pause ang top-up: {company}",
         "preheader": "Tinanggihan ang card. I-update ito para i-on ulit ang awtomatikong top-up.",

@@ -300,6 +300,17 @@ TEXTS = {
             " luôn được gửi, bất kể cài đặt email của bạn."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Tự động nạp chưa được xác nhận: {company}",
+        "preheader": "Một lần tự động nạp chưa được xác nhận. Hãy nạp thêm để tiếp tục mời ứng viên.",
+        "heading": "Tự động nạp chưa được xác nhận",
+        "lines": [
+            "Nhà cung cấp thanh toán của chúng tôi chưa xác nhận một lần tự động nạp cho {company}, nên chưa có credit nào được thêm.",
+            "Hãy nạp thêm để tiếp tục mời ứng viên. Để tránh trừ tiền thẻ hai lần, sẽ không có lần tự động nạp nào khác cho đến khi lần này được giải quyết.",
+        ],
+        "button": "Nạp credit",
+        "footer": "Email này được gửi đến {email} vì bạn là chủ sở hữu hoặc quản trị viên của {company} trên testee. Email liên quan đến việc thanh toán của công ty bạn nên luôn được gửi, bất kể cài đặt email của bạn.",
+    },
     "top_up_paused": {
         "subject": "Tự động nạp đã tạm dừng: {company}",
         "preheader": "Thẻ bị từ chối. Hãy cập nhật thẻ để bật lại tự động nạp.",

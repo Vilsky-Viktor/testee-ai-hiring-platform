@@ -19,8 +19,10 @@ The rest of payments (prices, the ledger, web hooks, refunds, tests) is in
   (`agreed_at`) and logs the terms in the company's action log.
 - One charge at a time per wallet (`claim_charge`, atomic): a cooldown between charges, none while
   the last charge's credits haven't come, until Paddle's records show a charge it didn't answer
-  was never made (`auto_top_up_recheck`). Never retry in a loop; Paddle's limit is 20 charges an
-  hour per subscription.
+  was never made (`auto_top_up_recheck`): no transaction at all on the subscription since. Any
+  transaction, or an answer that can't be read, is never charged again; unknown after a day, the
+  company is told and looking stops, in words that don't blame the card. Never retry in a loop;
+  Paddle's limit is 20 charges an hour per subscription.
 - A declined card is retried within card-network limits (Visa: at most 15 in 30 days):
   `AUTO_TOP_UP_RETRY_WAITS` (1, 3, 7 days), then paused; a decline in `HARD_DECLINE_CODES`
   pauses at once. Paused, nothing is charged until Paddle saves a new card (its card-update

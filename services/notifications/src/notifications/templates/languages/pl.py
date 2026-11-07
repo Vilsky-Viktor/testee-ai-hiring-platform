@@ -300,6 +300,17 @@ TEXTS = {
             " wysyłana niezależnie od Twoich ustawień e-maili."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Doładowanie niepotwierdzone: {company}",
+        "preheader": "Automatyczne doładowanie nie zostało potwierdzone. Doładuj, aby dalej zapraszać kandydatów.",
+        "heading": "Automatyczne doładowanie niepotwierdzone",
+        "lines": [
+            "Nasz operator płatności nie potwierdził automatycznego doładowania dla {company}, więc kredyty nie zostały jeszcze dodane.",
+            "Doładuj, aby dalej zapraszać kandydatów. Aby nie obciążyć karty dwukrotnie, kolejne automatyczne doładowanie nie nastąpi, dopóki ta sprawa się nie wyjaśni.",
+        ],
+        "button": "Doładuj",
+        "footer": "Ta wiadomość została wysłana na {email}, ponieważ masz rolę właściciela lub administratora w {company} w testee. Dotyczy rozliczeń Twojej firmy, więc jest wysyłana niezależnie od Twoich ustawień e-maili.",
+    },
     "top_up_paused": {
         "subject": "Doładowanie wstrzymane: {company}",
         "preheader": (

@@ -1,3 +1,5 @@
+import asyncio
+import time
 import uuid
 from datetime import UTC, datetime
 
@@ -11,10 +13,11 @@ from billing.constants.products import (
     AUTO_TOP_UP_UNCREDITED_WAIT,
     OwnerType,
 )
+from billing.integrations import paddle
 from billing.repositories import auto_top_ups as rows
 from billing.repositories import ledger
 from billing.schemas.billing import AutoTopUpIn
-from billing.services import auto_top_ups
+from billing.services import auto_top_up_charging, auto_top_ups
 from tests.integration.factories import welcomed
 from tests.integration.services.test_auto_top_ups import checkout_data
 from tests.integration.transactions import transaction
@@ -73,7 +76,7 @@ def test_a_subscription_that_ended_before_its_checkout_arrived_isnt_started(run,
     assert not after.on and after.waiting
 
 
-def test_a_charge_that_timed_out_isnt_failed_and_is_tried_again_only_after_a_day(run, paddle_calls):
+def test_a_charge_that_timed_out_isnt_failed_and_no_wait_lets_another_follow(run, paddle_calls):
     ann = f"user-{uuid.uuid4()}"
     acme = str(uuid.uuid4())
     sub = f"sub_timeout_{uuid.uuid4().hex[:12]}"
@@ -91,9 +94,9 @@ def test_a_charge_that_timed_out_isnt_failed_and_is_tried_again_only_after_a_day
             Reason.CANDIDATE,
         )
         # Paddle may have taken it: its web hook would add the credits.
-        await auto_top_ups.check(COMPANY, acme)
+        await auto_top_up_charging.check(COMPANY, acme)
         row = await transaction(rows.get, COMPANY, acme)
-        # Its credits never came: no charge after the cooldown, only after a day.
+        # Paddle may yet take it: no charge after the cooldown, nor a day on.
         soon = await transaction(
             rows.claim_charge, COMPANY, acme, datetime.now(UTC) + AUTO_TOP_UP_COOLDOWN * 2
         )
@@ -108,7 +111,7 @@ def test_a_charge_that_timed_out_isnt_failed_and_is_tried_again_only_after_a_day
     assert [call[0] for call in paddle_calls] == ["charge"]
     assert row.failed_at is None
     assert soon is None
-    assert next_day is not None
+    assert next_day is None
 
 
 def test_its_charges_are_named_in_the_language_of_whoever_pays(run, paddle_calls):
@@ -133,3 +136,36 @@ def test_its_charges_are_named_in_the_language_of_whoever_pays(run, paddle_calls
         return waiting, kept, (await transaction(rows.get, COMPANY, acme)).language
 
     assert run(scenario()) == ("de", "de", "ja")
+
+
+def test_a_hung_paddle_doesnt_hold_the_web_hook_that_starts_it(run, paddle_calls, monkeypatch):
+    ann = f"user-{uuid.uuid4()}"
+    acme = str(uuid.uuid4())
+
+    async def hung(subscription_id, price):
+        await asyncio.Event().wait()
+
+    monkeypatch.setattr(paddle, "charge", hung)
+    monkeypatch.setattr(auto_top_ups, "WEB_HOOK_STEP_SECONDS", 0.2)
+
+    async def scenario():
+        await welcomed(acme, f"{acme}@example.com")
+        await transaction(
+            ledger.reserve,
+            COMPANY,
+            acme,
+            WELCOME_COMPANY - 1,
+            f"candidate:{acme}",
+            Reason.CANDIDATE,
+        )
+        await auto_top_ups.turn_on(COMPANY, acme, CHOICE, ann, Currency.USD)
+        started = time.monotonic()
+        await auto_top_ups.start(checkout_data(acme, ann), f"sub_{uuid.uuid4().hex[:8]}", "USD")
+
+        return time.monotonic() - started, await transaction(rows.get, COMPANY, acme)
+
+    took, row = run(scenario())
+
+    assert took < 2
+    # Cut off, it counts as a charge Paddle didn't answer, for the recheck to look up.
+    assert row.awaiting_answer is True

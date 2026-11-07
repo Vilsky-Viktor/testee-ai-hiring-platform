@@ -87,6 +87,9 @@ class AutoTopUp(Base):
     # The last charge was asked for and Paddle hasn't answered (saved with the claim, so a charge
     # cut off counts too): services/auto_top_up_recheck.py looks at it.
     awaiting_answer: Mapped[bool] = mapped_column(default=False, server_default="false")
+    # When billing stopped looking up a charge Paddle's records still leave unknown (a day on):
+    # the company was told, and no charge follows it until its credits come.
+    unconfirmed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     # Declines in a row since the last charge that went through; the next try waits until
     # `retry_at`. Paused (`paused_at`) after a decline that can't pass later, or too many: no
     # charge until the card is updated.

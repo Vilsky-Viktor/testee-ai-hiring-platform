@@ -299,6 +299,17 @@ TEXTS = {
             "olduğundan e-posta ayarlarınızdan bağımsız olarak gönderilir."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Otomatik yükleme onaylanmadı: {company}",
+        "preheader": "Otomatik yükleme onaylanmadı. Aday davet etmeye devam etmek için kredi yükleyin.",
+        "heading": "Otomatik yükleme onaylanmadı",
+        "lines": [
+            "Ödeme sağlayıcımız {company} için bir otomatik yüklemeyi henüz onaylamadı, bu yüzden henüz kredi eklenmedi.",
+            "Aday davet etmeye devam etmek için kredi yükleyin. Karttan iki kez ödeme alınmaması için bu işlem netleşene kadar başka otomatik yükleme yapılmayacak.",
+        ],
+        "button": "Kredi yükle",
+        "footer": "Bu e-posta {email} adresine, testee'de {company} şirketinin sahibi veya yöneticisi olduğunuz için gönderildi. Şirketinizin faturalandırmasıyla ilgili olduğundan e-posta ayarlarınızdan bağımsız olarak gönderilir.",
+    },
     "top_up_paused": {
         "subject": "Otomatik yükleme duraklatıldı: {company}",
         "preheader": "Kart reddedildi. Otomatik yüklemeyi yeniden açmak için kartı güncelleyin.",

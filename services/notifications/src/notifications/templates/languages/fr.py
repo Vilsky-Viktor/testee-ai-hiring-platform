@@ -313,6 +313,17 @@ TEXTS = {
             " donc envoyé quels que soient vos réglages d'e-mails."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Recharge non confirmée : {company}",
+        "preheader": "Une recharge automatique n'est pas confirmée. Rechargez pour continuer à inviter des candidats.",
+        "heading": "Recharge automatique non confirmée",
+        "lines": [
+            "Notre prestataire de paiement n'a pas confirmé une recharge automatique pour {company}, aucun crédit n'a donc encore été ajouté.",
+            "Rechargez pour continuer à inviter des candidats. Pour éviter de débiter la carte deux fois, aucune autre recharge automatique n'aura lieu tant que celle-ci n'est pas réglée.",
+        ],
+        "button": "Recharger",
+        "footer": "Cet e-mail a été envoyé à {email} parce que vous êtes propriétaire ou admin de {company} sur testee. Il concerne la facturation de votre entreprise ; il est donc envoyé quels que soient vos réglages d'e-mails.",
+    },
     "top_up_paused": {
         "subject": "Recharge en pause : {company}",
         "preheader": (

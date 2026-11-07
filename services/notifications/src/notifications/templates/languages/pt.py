@@ -297,6 +297,17 @@ TEXTS = {
             " por isso é enviado independentemente das suas configurações de e-mail."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Recarga automática não confirmada: {company}",
+        "preheader": "Uma recarga automática não foi confirmada. Recarregue para continuar convidando candidatos.",
+        "heading": "Recarga automática não confirmada",
+        "lines": [
+            "Nosso provedor de pagamentos não confirmou uma recarga automática de {company}, então nenhum crédito foi adicionado ainda.",
+            "Recarregue para continuar convidando candidatos. Para não cobrar o cartão duas vezes, nenhuma outra recarga automática será feita até que esta seja resolvida.",
+        ],
+        "button": "Recarregar",
+        "footer": "Este e-mail foi enviado para {email} porque você é proprietário ou administrador de {company} na testee. Ele trata do faturamento da sua empresa, por isso é enviado independentemente das suas configurações de e-mail.",
+    },
     "top_up_paused": {
         "subject": "Recarga automática pausada: {company}",
         "preheader": "O cartão foi recusado. Atualize-o para reativar a recarga automática.",

@@ -31,6 +31,12 @@ SLACK_GONE = {
     "no_active_hooks",
 }
 
+# An automatic top-up that isn't confirmed, unlike a declined card.
+TOP_UP_UNCONFIRMED_TEXT = (
+    "An automatic top-up hasn't been confirmed by our payment provider, so your balance may not"
+    " refill. Top up to keep it going."
+)
+
 # The company's notifications a channel can get, in the order the page lists them, and the ones
 # on by default. Notes (note_added) are posted one by one, each with its text.
 SLACK_KINDS = [

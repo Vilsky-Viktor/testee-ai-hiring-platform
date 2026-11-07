@@ -299,6 +299,17 @@ TEXTS = {
             "azienda, quindi viene inviata indipendentemente dalle tue impostazioni email."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Ricarica automatica non confermata: {company}",
+        "preheader": "Una ricarica automatica non è confermata. Ricarica per continuare a invitare candidati.",
+        "heading": "Ricarica automatica non confermata",
+        "lines": [
+            "Il nostro fornitore di pagamenti non ha confermato una ricarica automatica per {company}, quindi non sono stati ancora aggiunti crediti.",
+            "Ricarica per continuare a invitare candidati. Per non addebitare la carta due volte, non verrà fatta un'altra ricarica automatica finché questa non sarà chiarita.",
+        ],
+        "button": "Ricarica",
+        "footer": "Questa email è stata inviata a {email} perché sei proprietario o amministratore di {company} su testee. Riguarda la fatturazione della tua azienda, quindi viene inviata indipendentemente dalle tue impostazioni email.",
+    },
     "top_up_paused": {
         "subject": "Ricarica automatica in pausa: {company}",
         "preheader": (

@@ -5,7 +5,7 @@ import httpx
 import pytest
 from testee_common.events.notifications import NotificationKind, Recipient, notification
 
-from notifications.constants.slack import ZERO_WIDTH_SPACE
+from notifications.constants.slack import TOP_UP_UNCONFIRMED_TEXT, ZERO_WIDTH_SPACE
 from notifications.helpers.slack import message, read_state, signed_state
 from notifications.integrations import slack
 
@@ -234,3 +234,13 @@ def test_a_state_signed_beyond_ascii_is_refused_not_an_error():
     state = base64.urlsafe_b64encode("c1|u1|9999999999|n1|ä".encode()).decode()
 
     assert read_state("secret", state, 1000) is None
+
+
+def test_a_top_up_that_isnt_confirmed_says_so_instead_of_blaming_the_card():
+    failed = notification("company", "c1", "auto_top_up_failed", "/top-up")
+    unconfirmed = notification(
+        "company", "c1", "auto_top_up_failed", "/top-up", reason="unconfirmed"
+    )
+
+    assert TOP_UP_UNCONFIRMED_TEXT not in str(message(failed, "https://testee.ai"))
+    assert TOP_UP_UNCONFIRMED_TEXT in str(message(unconfirmed, "https://testee.ai"))

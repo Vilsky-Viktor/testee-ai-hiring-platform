@@ -1,4 +1,9 @@
-from testee_common.events.notifications import BILLING_KINDS, NotificationKind, Recipient
+from testee_common.events.notifications import (
+    BILLING_KINDS,
+    TOP_UP_UNCONFIRMED,
+    NotificationKind,
+    Recipient,
+)
 
 from notifications.config import settings
 from notifications.constants.notifications import NAMED_KINDS, REFUND_KINDS
@@ -10,6 +15,7 @@ from notifications.helpers.member_emails import (
     top_up_failed_email,
     top_up_on_email,
     top_up_paused_email,
+    top_up_unconfirmed_email,
 )
 from notifications.integrations import accounts, companies
 from notifications.services import delivery
@@ -36,6 +42,9 @@ def billing_email(data: dict, recipient: dict, company: str):
 
     if data["kind"] in REFUND_KINDS:
         return refund_email(data["kind"], recipient, company, data["data"], link)
+
+    if data["data"].get("reason") == TOP_UP_UNCONFIRMED:
+        return top_up_unconfirmed_email(recipient, company, link)
 
     return top_up_failed_email(recipient, company, settings.site_url)
 

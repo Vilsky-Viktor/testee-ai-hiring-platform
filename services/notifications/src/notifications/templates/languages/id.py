@@ -297,6 +297,17 @@ TEXTS = {
             "pengaturan emailmu."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Isi ulang otomatis belum dikonfirmasi: {company}",
+        "preheader": "Isi ulang otomatis belum dikonfirmasi. Isi ulang untuk terus mengundang kandidat.",
+        "heading": "Isi ulang otomatis belum dikonfirmasi",
+        "lines": [
+            "Penyedia pembayaran kami belum mengonfirmasi isi ulang otomatis untuk {company}, jadi belum ada kredit yang ditambahkan.",
+            "Isi ulang untuk terus mengundang kandidat. Agar kartu tidak ditagih dua kali, tidak ada isi ulang otomatis lain sampai yang ini selesai.",
+        ],
+        "button": "Isi ulang",
+        "footer": "Email ini dikirim ke {email} karena kamu pemilik atau admin {company} di testee. Email ini tentang penagihan perusahaanmu, jadi selalu dikirim apa pun pengaturan emailmu.",
+    },
     "top_up_paused": {
         "subject": "Isi ulang otomatis dijeda: {company}",
         "preheader": "Kartu ditolak. Perbarui kartu untuk menyalakan lagi isi ulang otomatis.",

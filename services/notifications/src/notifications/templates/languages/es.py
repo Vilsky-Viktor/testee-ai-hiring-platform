@@ -301,6 +301,17 @@ TEXTS = {
             "envía sin importar tu configuración de correo."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Recarga automática sin confirmar: {company}",
+        "preheader": "Una recarga automática no está confirmada. Recarga para seguir invitando a candidatos.",
+        "heading": "Recarga automática sin confirmar",
+        "lines": [
+            "Nuestro proveedor de pagos no ha confirmado una recarga automática de {company}, así que aún no se han añadido créditos.",
+            "Recarga para seguir invitando a candidatos. Para no cobrar dos veces a la tarjeta, no se hará otra recarga automática hasta resolver esta.",
+        ],
+        "button": "Recargar",
+        "footer": "Este correo se envió a {email} porque eres propietario o administrador de {company} en testee. Trata sobre la facturación de tu empresa, así que se envía sin importar tu configuración de correo.",
+    },
     "top_up_paused": {
         "subject": "Recarga automática en pausa: {company}",
         "preheader": (

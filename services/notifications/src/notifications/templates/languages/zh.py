@@ -204,6 +204,17 @@ TEXTS = {
         "button": "充值",
         "footer": "这封邮件发送到 {email}，因为你是 testee 上 {company} 的所有者或管理员。它与你公司的账单有关，因此无论你的邮件设置如何都会发送。",
     },
+    "top_up_unconfirmed": {
+        "subject": "自动充值未确认：{company}",
+        "preheader": "一笔自动充值尚未确认。充值后才能继续邀请候选人。",
+        "heading": "自动充值未确认",
+        "lines": [
+            "支付服务商尚未确认 {company} 的一笔自动充值，因此还没有添加点数。",
+            "充值后才能继续邀请候选人。为避免重复扣款，在此事解决之前不会再进行自动充值。",
+        ],
+        "button": "充值",
+        "footer": "这封邮件发送到 {email}，因为你是 testee 上 {company} 的所有者或管理员。它与你公司的账单有关，因此无论你的邮件设置如何都会发送。",
+    },
     "top_up_paused": {
         "subject": "自动充值已暂停：{company}",
         "preheader": "银行卡被拒。请更新银行卡以重新开启自动充值。",

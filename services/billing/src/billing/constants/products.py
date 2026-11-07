@@ -85,17 +85,23 @@ ADJUSTMENT_APPROVED = "approved"
 # They cover 1, 3 and 5 candidates.
 AUTO_TOP_UP_THRESHOLDS = [CANDIDATE_CREDITS, 3 * CANDIDATE_CREDITS, 5 * CANDIDATE_CREDITS]
 AUTO_TOP_UP_COOLDOWN = timedelta(minutes=10)
-# A charge whose credits haven't come (its transaction.completed web hook late or failing, or a
-# charge whose answer was lost) holds off the next one this long, so the card isn't charged again
-# and again meanwhile.
+# A charge whose credits haven't come (its transaction.completed web hook late or failing) holds
+# off the next one this long, so the card isn't charged again and again meanwhile. One Paddle
+# didn't answer holds it off until Paddle shows it never took it; still unknown this long after,
+# the company is told and it stops looking.
 AUTO_TOP_UP_UNCREDITED_WAIT = timedelta(days=1)
 # A charge Paddle didn't answer is looked up this long after it, when its web hook has had time.
 AUTO_TOP_UP_RECHECK_AFTER = timedelta(minutes=30)
+# Looked up from this long before it, as Paddle's clock isn't billing's.
+AUTO_TOP_UP_CLOCK_SKEW = timedelta(minutes=5)
 AUTO_TOP_UP_RECHECK_BATCH = 100
 # Using credits waits this long at most for an automatic top-up's charge: Cloud Run slows the CPU
 # once the answer is sent, so it can't run after it. A charge cut off is treated as one whose
-# answer was lost (AUTO_TOP_UP_UNCREDITED_WAIT).
+# answer was lost (auto_top_up_recheck).
 AUTO_TOP_UP_WAIT_SECONDS = 5
+# Paddle wants a web hook answered within 5 seconds, or it counts a failure and sends it again:
+# each step that waits on another system there (a call to Paddle, a publish) stops after this.
+WEB_HOOK_STEP_SECONDS = 2
 # Turning it on is a checkout for a $0 monthly subscription, which saves the card; Paddle tells
 # us when it starts and when it ends (cancelled in Paddle, or after failed payments).
 SUBSCRIPTION_CREATED = "subscription.created"

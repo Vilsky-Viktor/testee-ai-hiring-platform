@@ -2,10 +2,12 @@ import logging
 from datetime import UTC, datetime
 
 import httpx
+from testee_common.config.constants import HTTP_TIMEOUT_SECONDS
 from testee_common.http import http
 from testee_common.http.http import bearer
 
 from billing.config import settings
+from billing.constants.declines import PAYMENT_METHOD_CHANGE_ORIGIN
 from billing.constants.products import PADDLE_API, PADDLE_API_VERSION, PADDLE_REFUSES_BILLING
 from billing.constants.reconciliation import (
     PADDLE_PAGE_SIZE,
@@ -15,6 +17,10 @@ from billing.constants.reconciliation import (
 from billing.constants.refunds import REFUND_REASON
 
 logger = logging.getLogger(__name__)
+
+
+def _stamp(moment: datetime) -> str:
+    return moment.astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 async def _call(method: str, path: str, **kwargs) -> httpx.Response:
@@ -62,7 +68,7 @@ async def charge_error(subscription_id: str, since: datetime, timeout: float) ->
     failed payment's error code, None when Paddle shows none."""
     params = {
         "subscription_id": subscription_id,
-        "created_at[GTE]": since.astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "created_at[GTE]": _stamp(since),
         "order_by": "created_at[DESC]",
         "per_page": 1,
     }
@@ -75,6 +81,20 @@ async def charge_error(subscription_id: str, since: datetime, timeout: float) ->
     ]
 
     return payments[0]["error_code"] if payments else None
+
+
+async def charges_since(subscription_id: str, since: datetime) -> list[dict]:
+    """Every transaction Paddle made on the subscription since `since`, in any state: only an
+    empty list shows nothing was charged. Those that only save a new card don't count."""
+    params = {
+        "subscription_id": subscription_id,
+        "created_at[GTE]": _stamp(since),
+        "order_by": "created_at[DESC]",
+        "per_page": PADDLE_PAGE_SIZE,
+    }
+    transactions = await _pages("/transactions", params, lambda item: False)
+
+    return [item for item in transactions if item["origin"] != PAYMENT_METHOD_CHANGE_ORIGIN]
 
 
 async def card_update_transaction(subscription_id: str) -> str:
@@ -108,18 +128,19 @@ async def create_transaction(items: list[dict], currency: str, custom_data: dict
     return response.json()["data"]["id"]
 
 
-async def cancel(subscription_id: str) -> None:
+async def cancel(subscription_id: str, timeout: float = HTTP_TIMEOUT_SECONDS) -> None:
     """Ends the subscription at once, so the card isn't kept for us."""
     await _call(
         "POST",
         f"/subscriptions/{subscription_id}/cancel",
         json={"effective_from": "immediately"},
+        timeout=timeout,
     )
 
 
-async def subscription_status(subscription_id: str) -> str:
+async def subscription_status(subscription_id: str, timeout: float = HTTP_TIMEOUT_SECONDS) -> str:
     """The subscription's status now: active, canceled and so on."""
-    response = await _call("GET", f"/subscriptions/{subscription_id}")
+    response = await _call("GET", f"/subscriptions/{subscription_id}", timeout=timeout)
 
     return response.json()["data"]["status"]
 
@@ -172,7 +193,7 @@ async def completed_transactions(since: datetime) -> list[dict]:
     send them; at most RECONCILE_MAX_PAGES pages."""
     params = {
         "status": "completed",
-        "updated_at[GTE]": since.astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "updated_at[GTE]": _stamp(since),
         "order_by": "updated_at[ASC]",
         "per_page": PADDLE_PAGE_SIZE,
     }

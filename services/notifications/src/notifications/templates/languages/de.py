@@ -311,6 +311,17 @@ TEXTS = {
             " wird daher unabhängig von deinen E-Mail-Einstellungen gesendet."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Aufladen nicht bestätigt: {company}",
+        "preheader": "Ein automatisches Aufladen ist nicht bestätigt. Lade auf, um weiter Kandidaten einzuladen.",
+        "heading": "Automatisches Aufladen nicht bestätigt",
+        "lines": [
+            "Unser Zahlungsanbieter hat ein automatisches Aufladen für {company} nicht bestätigt, daher wurden noch keine Credits hinzugefügt.",
+            "Lade auf, um weiter Kandidaten einzuladen. Damit die Karte nicht doppelt belastet wird, erfolgt kein weiteres automatisches Aufladen, bis dieses geklärt ist.",
+        ],
+        "button": "Aufladen",
+        "footer": "Diese E-Mail wurde an {email} gesendet, weil du Inhaber oder Admin von {company} auf testee bist. Sie betrifft die Abrechnung deines Unternehmens und wird daher unabhängig von deinen E-Mail-Einstellungen gesendet.",
+    },
     "top_up_paused": {
         "subject": "Aufladen pausiert: {company}",
         "preheader": (

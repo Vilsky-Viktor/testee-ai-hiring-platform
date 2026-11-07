@@ -139,7 +139,9 @@ async def claim_charge(
     """The running automatic top-up, if the available balance is under its threshold, it
     hasn't charged within the cooldown, it isn't paused and a declined card's retry is due
     (`retry_at`); marks it charged now. Atomic, so two requests at once charge once. The last
-    charge's credits must have come first, else it waits AUTO_TOP_UP_UNCREDITED_WAIT."""
+    charge's credits must have come first, else it waits AUTO_TOP_UP_UNCREDITED_WAIT, and for
+    one Paddle never answered no wait is enough: that one may still go through, so only its
+    credits, or Paddle showing it never took it (auto_top_up_recheck), let another follow."""
     query = (
         update(AutoTopUp)
         .where(
@@ -151,7 +153,10 @@ async def claim_charge(
                 # Declined: the retry wait below applies.
                 AutoTopUp.failed_at >= AutoTopUp.charged_at,
                 and_(AutoTopUp.charged_at < now - AUTO_TOP_UP_COOLDOWN, credited()),
-                AutoTopUp.charged_at < now - AUTO_TOP_UP_UNCREDITED_WAIT,
+                and_(
+                    AutoTopUp.charged_at < now - AUTO_TOP_UP_UNCREDITED_WAIT,
+                    AutoTopUp.awaiting_answer.is_(False),
+                ),
             ),
             AutoTopUp.paused_at.is_(None),
             or_(AutoTopUp.retry_at.is_(None), AutoTopUp.retry_at <= now),
@@ -159,7 +164,7 @@ async def claim_charge(
             Wallet.owner_id == AutoTopUp.owner_id,
             Wallet.balance - Wallet.reserved < AutoTopUp.threshold,
         )
-        .values(charged_at=now, awaiting_answer=True)
+        .values(charged_at=now, awaiting_answer=True, unconfirmed_at=None)
         .returning(AutoTopUp)
     )
 
@@ -169,7 +174,8 @@ async def claim_charge(
 
 
 async def unanswered(session: AsyncSession, before: datetime) -> list[AutoTopUp]:
-    """Charges from before `before` that Paddle didn't answer and whose credits haven't come."""
+    """Charges from before `before` that Paddle didn't answer, whose credits haven't come and
+    which are still being looked up."""
     query = (
         select(AutoTopUp)
         .where(
@@ -177,6 +183,7 @@ async def unanswered(session: AsyncSession, before: datetime) -> list[AutoTopUp]
             AutoTopUp.charged_at < before,
             AutoTopUp.subscription_id.is_not(None),
             AutoTopUp.paused_at.is_(None),
+            AutoTopUp.unconfirmed_at.is_(None),
             ~credited(),
         )
         .order_by(AutoTopUp.charged_at)

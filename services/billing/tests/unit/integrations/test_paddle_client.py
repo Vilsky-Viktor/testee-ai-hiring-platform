@@ -126,3 +126,36 @@ def test_the_card_update_checkout_is_paddles_transaction_for_the_subscription(mo
 
     assert asyncio.run(paddle.card_update_transaction("sub_1")) == "txn_card"
     assert asked == [("GET", "/subscriptions/sub_1/update-payment-method-transaction")]
+
+
+def test_a_subscriptions_charges_count_in_any_state_but_a_card_update(monkeypatch):
+    since = datetime(2026, 11, 7, 9, tzinfo=UTC)
+    seen = {}
+    billed = {"id": "txn_1", "status": "billed", "origin": "subscription_charge"}
+    saved = {"id": "txn_2", "status": "completed", "origin": "subscription_payment_method_change"}
+
+    def answer(request: httpx.Request) -> httpx.Response:
+        seen.update(request.url.params)
+
+        return httpx.Response(
+            200, json={"data": [billed, saved], "meta": {"pagination": {"has_more": False}}}
+        )
+
+    use(monkeypatch, answer)
+
+    assert asyncio.run(paddle.charges_since("sub_1", since)) == [billed]
+    assert seen["subscription_id"] == "sub_1"
+    assert seen["created_at[GTE]"] == "2026-11-07T09:00:00Z"
+    assert "status" not in seen
+
+
+def test_a_transaction_that_cant_be_told_apart_isnt_left_out(monkeypatch):
+    use(
+        monkeypatch,
+        lambda request: httpx.Response(
+            200, json={"data": [{"id": "txn_1"}], "meta": {"pagination": {"has_more": False}}}
+        ),
+    )
+
+    with pytest.raises(KeyError):
+        asyncio.run(paddle.charges_since("sub_1", datetime(2026, 11, 7, tzinfo=UTC)))

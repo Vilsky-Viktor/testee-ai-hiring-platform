@@ -67,6 +67,26 @@ async def never_made(
     return await session.scalar(query) is not None
 
 
+async def unconfirmed(
+    session: AsyncSession, owner_type: str, owner_id: str, charged_at: datetime, now: datetime
+) -> bool:
+    """The charge of `charged_at` stays unknown: no more looks and, as it's still awaiting an
+    answer, no next charge. Whether this was the one that stopped it, so it's told once."""
+    query = (
+        update(AutoTopUp)
+        .where(
+            *_of(owner_type, owner_id),
+            AutoTopUp.charged_at == charged_at,
+            AutoTopUp.awaiting_answer.is_(True),
+            AutoTopUp.unconfirmed_at.is_(None),
+        )
+        .values(unconfirmed_at=now)
+        .returning(AutoTopUp.owner_id)
+    )
+
+    return await session.scalar(query) is not None
+
+
 async def charged(
     session: AsyncSession, owner_type: str, owner_id: str, price: int, currency: str, now: datetime
 ) -> None:

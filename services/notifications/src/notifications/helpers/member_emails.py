@@ -67,6 +67,13 @@ def top_up_failed_email(recipient: dict, company: str, site_url: str) -> Email:
     return render("top_up_failed", data, site_url.rstrip("/") + TOP_UP_LINK)
 
 
+def top_up_unconfirmed_email(recipient: dict, company: str, link: str) -> Email:
+    """A service email, like the failed one, for a charge that wasn't the card's doing."""
+    data = {**recipient_data(recipient), "company": company}
+
+    return render("top_up_unconfirmed", data, link)
+
+
 def top_up_paused_email(recipient: dict, company: str, link: str) -> Email:
     """A service email, like the failed one; its button opens the company's billing page, where
     the card is updated."""

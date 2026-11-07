@@ -24,6 +24,7 @@ from notifications.helpers.member_emails import (
     reminder_email,
     top_up_failed_email,
     top_up_paused_email,
+    top_up_unconfirmed_email,
 )
 from notifications.helpers.rendering import render
 from notifications.integrations import resend, smtp
@@ -68,6 +69,7 @@ EMAILS_SENT = {
     "report": (lambda: report_email(REPORT, SITE), False),
     "contact": (lambda: contact_email(CONTACT, "hello@testee.ai"), False),
     "top-up failed": (lambda: top_up_failed_email(RECIPIENT, "Acme", SITE), False),
+    "top-up unconfirmed": (lambda: top_up_unconfirmed_email(RECIPIENT, "Acme", f"{SITE}/t"), False),
     "top-up paused": (lambda: top_up_paused_email(RECIPIENT, "Acme", f"{SITE}/b"), False),
     "top-up price change": (
         lambda: price_change_email(

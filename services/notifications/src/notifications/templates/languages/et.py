@@ -294,6 +294,17 @@ TEXTS = {
             "saadetakse see sõltumata sinu e-kirjade seadetest."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Juurdelaadimine kinnitamata: {company}",
+        "preheader": "Automaatne juurdelaadimine on kinnitamata. Laadi juurde, et kandidaate edasi kutsuda.",
+        "heading": "Automaatne juurdelaadimine on kinnitamata",
+        "lines": [
+            "Meie makseteenuse pakkuja ei ole ettevõtte {company} automaatset juurdelaadimist kinnitanud, seega pole krediiti veel lisatud.",
+            "Laadi juurde, et kandidaate edasi kutsuda. Et kaardilt kaks korda makset ei võetaks, ei tehta uut automaatset juurdelaadimist enne, kui see on selgunud.",
+        ],
+        "button": "Laadi juurde",
+        "footer": "See e-kiri saadeti aadressile {email}, sest oled testees ettevõtte {company} omanik või administraator. See puudutab sinu ettevõtte arveldust, seega saadetakse see sõltumata sinu e-kirjade seadetest.",
+    },
     "top_up_paused": {
         "subject": "Juurdelaadimine peatatud: {company}",
         "preheader": (

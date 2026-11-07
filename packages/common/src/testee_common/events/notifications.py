@@ -64,6 +64,10 @@ class NotificationKind(StrEnum):
     LEGAL_DPA = "legal_dpa"
 
 
+# An AUTO_TOP_UP_FAILED's `reason` when it wasn't the card: Paddle's records don't show the charge
+# went through, nor that it can't still. The other failed charges have none.
+TOP_UP_UNCONFIRMED = "unconfirmed"
+
 # A company's billing: in the bell for its owners and admins only, and emailed to them too.
 # Referral rewards aren't among them: every member sees the referrals tab they open.
 BILLING_KINDS = {

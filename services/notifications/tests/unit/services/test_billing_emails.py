@@ -8,8 +8,10 @@ import pytest
 from testee_common.events.notifications import notification
 
 from notifications.config import settings
+from notifications.helpers.member_emails import top_up_unconfirmed_email
 from notifications.integrations import accounts, companies
 from notifications.services import delivery, service_emails
+from notifications.templates.emails import EMAILS
 
 COMPANY = {
     "id": "c1",
@@ -58,6 +60,7 @@ def sent(monkeypatch):
     ("kind", "data", "opens"),
     [
         ("auto_top_up_failed", {}, "https://testee.ai/top-up"),
+        ("auto_top_up_failed", {"reason": "unconfirmed"}, "https://testee.ai/companies/c1/billing"),
         ("auto_top_up_paused", {}, "https://testee.ai/companies/c1/billing"),
         ("auto_top_up_price_change", NOTICE, "https://testee.ai/companies/c1/billing"),
         ("auto_top_up_price_change", CURRENCY, "https://testee.ai/companies/c1/billing"),
@@ -191,3 +194,12 @@ def test_a_charges_credits_take_the_plural_their_number_needs(
     [(_, _, text)] = sent["sent"]
     assert [value for value in shown if value not in text] == []
     assert "plural" not in text
+
+
+@pytest.mark.parametrize("language", EMAILS)
+def test_a_top_up_that_isnt_confirmed_has_its_own_email_in_each_language(language):
+    person = {"user_id": "ann", "email": "ann@example.com", "language": language}
+    email = top_up_unconfirmed_email(person, "Acme", "https://testee.ai/top-up")
+
+    assert email.subject == EMAILS[language]["top_up_unconfirmed"]["subject"].format(company="Acme")
+    assert "https://testee.ai/top-up" in email.text

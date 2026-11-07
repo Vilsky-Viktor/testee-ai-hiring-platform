@@ -308,6 +308,17 @@ TEXTS = {
             "daarom altijd verstuurd, wat je e-mailinstellingen ook zijn."
         ),
     },
+    "top_up_unconfirmed": {
+        "subject": "Opwaardering niet bevestigd: {company}",
+        "preheader": "Een automatische opwaardering is niet bevestigd. Waardeer op om kandidaten te blijven uitnodigen.",
+        "heading": "Automatische opwaardering niet bevestigd",
+        "lines": [
+            "Onze betaalprovider heeft een automatische opwaardering voor {company} niet bevestigd, dus er zijn nog geen credits toegevoegd.",
+            "Waardeer op om kandidaten te blijven uitnodigen. Om de kaart niet twee keer te belasten, volgt er geen andere automatische opwaardering tot deze is opgehelderd.",
+        ],
+        "button": "Opwaarderen",
+        "footer": "Deze e-mail is naar {email} gestuurd omdat je eigenaar of beheerder bent van {company} op testee. Hij gaat over de facturering van je bedrijf en wordt daarom altijd verstuurd, wat je e-mailinstellingen ook zijn.",
+    },
     "top_up_paused": {
         "subject": "Opwaarderen gepauzeerd: {company}",
         "preheader": (
