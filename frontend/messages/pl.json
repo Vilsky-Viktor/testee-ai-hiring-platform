@@ -3096,7 +3096,7 @@
       "roles": "testee jest administratorem danych kont osób, które z niej korzystają, oraz podmiotem przetwarzającym dane kandydatów, które należą do firmy zapraszającej ich na rozmowę.",
       "noSelling": "Nie sprzedajemy danych osobowych ani nie udostępniamy ich w celach reklamowych. Nie używamy plików cookie reklamowych ani analitycznych.",
       "noInference": "testee nie zbiera danych o płci, wieku, pochodzeniu ani niepełnosprawności kandydatów i niczego takiego nie wnioskuje.",
-      "voice": "W trybie głosowym wypowiedziana odpowiedź kandydata jest zamieniana na tekst i dopasowywana do opcji, a dopasowaną opcję kandydat słyszy i widzi na ekranie; wybór kilku opcji jest najpierw potwierdzany. testee nie przechowuje żadnych wypowiedzi, a głos nie jest analizowany w żaden inny sposób. OpenAI, które zamienia je na tekst, może je przechowywać maksymalnie 30 dni, jak opisano poniżej.",
+      "voice": "W trybie głosowym wypowiedziana odpowiedź kandydata jest zamieniana na tekst i dopasowywana do opcji, a dopasowaną opcję kandydat słyszy i widzi na ekranie; odpowiedź na pytanie z kilkoma poprawnymi opcjami jest najpierw potwierdzana. testee nie przechowuje żadnych wypowiedzi, a głos nie jest analizowany w żaden inny sposób. OpenAI, które zamienia je na tekst, może je przechowywać maksymalnie 30 dni, jak opisano poniżej.",
       "ai": "OpenAI, które pisze pytania, otrzymuje polecenie, aby nie przechowywać tego, co otrzymuje, tam, gdzie API daje taki wybór; może przechowywać dane maksymalnie 30 dni, wyłącznie w celu wykrywania nadużyć, chyba że prawo wymaga dłuższego okresu, i nie używa ich do trenowania swoich modeli.",
       "rights": "Każdy może pobrać lub usunąć swoje dane w Ustawieniach, bez pisania do nas."
     },

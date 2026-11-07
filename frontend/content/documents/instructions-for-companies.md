@@ -12,7 +12,8 @@ that applies to you, stay yours.
 - **Intended purpose:** testing job candidates' knowledge for one role with a timed
   multiple-choice interview, to help the people at your company decide whom to take further. AI
   writes the questions from your job description (up to half of a topic may be proven questions
-  from testee's own templates or its shared question bank, never ones shown publicly for practice); you review the topics; each
+  from testee's own templates or its shared question bank, never ones shown publicly for practice), or
+  you copy a template whose questions are already written; you review the topics (section 4); each
   candidate's answers are marked against a fixed answer key.
 - **High-risk AI system.** Under the EU AI Act, a system used to evaluate candidates is high-risk
   (Annex III point 4(a)), and testee is treated as one. Its obligations apply from 2027-12-02;
@@ -25,14 +26,15 @@ that applies to you, stay yours.
 - The **percentage of points earned**, over every question the candidate was shown. Each question
   is worth one point:
   - most questions have one right option of four: 1 point when it's picked, 0 otherwise;
-  - about 1 in 10 are **"select all that apply"** (shown as such to the candidate): 2 or 3 of the
+  - about 1 in 10 are **"select all that apply"** (the candidate is told to pick several): 2 or 3 of the
     4 options are right and the candidate ticks every option they think is right. Any wrong option
     ticked scores 0; otherwise the question earns the share of its right options ticked (2 of 3:
     0.67 of a point). Each candidate gets the same share of these questions.
 
   With single-answer questions alone, the grade is the percentage answered correctly. A question
   with nothing picked when its timer ran out counts as wrong. Candidates can change their pick
-  until they move on; only the final one is kept.
+  until they move on; only the final one is kept (in voice mode, a clear spoken answer is saved at
+  once and can't be changed).
 - Each answer is marked against the question's **answer key**. No AI marks answers,
   and nothing else (speed, page leaves, copy attempts) changes the grade. If a question's key is
   found to be wrong and corrected, the fix applies to candidates who start after it; answers
@@ -56,8 +58,8 @@ that applies to you, stay yours.
   model or prompt that misses the target isn't released without a reason.
 - **What that means for a grade:** the grade counts points against the key. A key found wrong is fixed for candidates who start afterwards; grades already given are never marked again,
   so a candidate may have answered a question whose key was later corrected (section 5).
-- **In use:** before an interview is ready, one answer key per topic is checked again. After 30
-  answers, a question is flagged and fixed or replaced when it is answered right by 15% or fewer, by
+- **In use:** before an interview is ready, one answer key per topic is checked again. From about
+  30 answers, a question is flagged and fixed or replaced when it is answered right by 15% or fewer, by
   95% or more (for a "select all that apply" question, by its average points), when a wrong
   option is picked more often than the key (than its least-picked right option), when strong and weak
   candidates get it right about equally often, or when time runs out on a quarter of its showings;
@@ -81,8 +83,17 @@ that applies to you, stay yours.
 - A job description, or a description of the role, that names what the job actually needs. Only
   what is in it becomes topics.
 - Your review of the topics before questions are written: uncheck what the job doesn't need,
-  rename or edit, then approve. The approval is recorded.
+  rename or edit, then approve. The approval is recorded. An interview your platform creates through
+  the API skips this once your company has topped up: the proposed topics go on as they are, and
+  no approval is recorded (until the first top-up, its topics wait for your review). An interview
+  copied from a template has no topic review either. Check both on the interview's page before you
+  invite anyone: exclude or regenerate a question, or set a topic's number of questions to 0 to
+  drop it. An AI app or agent can approve topics too, which the action log marks.
 - A passing grade and average time per question that fit the role (section 6).
+- Your choice about the shared question bank: a question testee generates for your interview can
+  join it once it has been answered at least 5 times and passes a filter that removes anything
+  identifying you, and other companies' interviews may then use it. To keep an interview's
+  questions out, use its setting; copies already reused stay.
 
 ## 5. Human review: your duty
 
@@ -110,7 +121,8 @@ People at your company make the hiring decision. testee never tells a candidate 
   results; the human review above applies there too.
 - **The assistant and AI apps.** testee's in-app assistant acts only after the member confirms
   each change. AI apps (Claude, ChatGPT and others) a member connects act with that member's
-  access, and the data they read goes to that app's provider. Owners and admins can turn AI apps
+  access, and the data they read goes to that app's provider. An agent running on a company API
+  key with the `mcp` permission acts as that key, within its permissions. Owners and admins can turn AI apps
   off for the company (Integrations → AI apps → **Allow AI apps**). The same human review applies
   to results read through them. Both answer with AI and can misstate or leave out part of a
   result: before acting on what they say about a candidate, check the candidate's scorecard, and
@@ -130,9 +142,10 @@ People at your company make the hiring decision. testee never tells a candidate 
 ## 7. Integrity signals
 
 Page leaves, copy attempts and answers under 3 seconds are **hints, not proof**. A notification, an
-accessibility tool, a slow connection or a fast expert can all trigger them. They're reported by the
-candidate's browser, and a page leave counts only when it lasts 2 seconds or more (a shorter one,
-such as a notification or a permission prompt taking focus, is kept but not counted). Never reject
+accessibility tool, a slow connection or a fast expert can all trigger them. Page leaves and copies
+are reported by the candidate's browser, and a page leave counts only when it lasts 2 seconds or
+more or the candidate never came back (a shorter one, such as a notification or a permission
+prompt taking focus, is kept but not counted). Never reject
 on signals alone; follow up in a conversation, and let the candidate explain.
 
 Once a candidate has finished every section, their page can also show **answer patterns**, read
@@ -173,14 +186,15 @@ words; they appear only on the candidate's page.
 - You can also raise the average time per question for everyone in the interview's settings;
   each question's own time grows with it.
 - testee's candidate pages are built to WCAG 2.2 AA.
-- **Voice mode** (an interview's setting, in English, Spanish, German, French, Portuguese or
-  Italian) reads each question and its options aloud and lets candidates answer aloud. It can help
+- **Voice mode** (an interview's setting, in any of testee's 23 languages, its quality varying by
+  language: testee.ai/guides/voice-interview-languages) reads each question and its options aloud and lets candidates answer aloud. It can help
   some candidates (some visual or motor impairments, a phone), but speech recognition can mishear
   an accent, a speech impairment or a noisy room: the interviewer says the option it heard and
-  shows it on screen ("B, saved." for a single answer; a choice of several options is confirmed
-  first), only a reply that clearly names one option is saved without asking, and tapping an
-  option always works. Tell candidates
-  before they start, and set an interview to click mode for anyone who prefers it. testee turns
+  shows it on screen ("B, saved." for a single answer; an answer to a question with several right
+  options is confirmed first), only a reply that clearly names one option is saved without asking,
+  and tapping an option works at any point in the interview. A question's time runs while it's
+  read. Tell candidates before they start: starting needs a working microphone, so set anyone who
+  can't use one, or who prefers it, to click mode on their page before they start. testee turns
   the speech into text and options only, never stores it and never analyses the voice (no tone,
   emotion or confidence; the EU AI Act bans inferring emotions in the workplace, recruitment
   included).
@@ -226,19 +240,18 @@ is yours to give.
 ## 10. Records, retention and data requests
 
 **Records (logs).** For each candidate testee records every question shown and when, the picks,
-right or wrong (or the points of a "select all that apply" question), the time taken, timeouts, page leaves (with how long they lasted) and copy attempts, start and finish (in voice mode, the options the candidate chose, never what they said): the
-scorecard and its PDF report show them, and the API returns the results. Answer patterns aren't
+right or wrong (or the points of a "select all that apply" question), the time taken, timeouts, page leaves (with how long they lasted) and copy attempts, start and finish (in voice mode, the options the candidate chose, never what they said). The
+scorecard shows them, with the number of page leaves; its PDF report shows the grade, each topic's score and the signals' counts, never the questions; and the API returns the results. Answer patterns aren't
 stored: they're read from these records each time the results are opened. It also records when the
 candidate confirmed, before starting, that they'd answer on their own, which the scorecard shows. Your company's action
-log records every action your members take: on interviews (created, renamed, settings, shareable
-link, topics approved, passing grade), on candidates (invited, revoked, deleted, renamed, extra
-time, results viewed, reports emailed), on the team, the company, billing and integrations (ATS,
+log records what your members and API keys do, for example on interviews (created, renamed, settings, shareable
+link, topics approved, passing grade, notes), on candidates (invited, revoked, deleted, renamed, extra
+time, mode, results viewed, reports emailed), on the team, the company, billing (refunds too) and integrations (ATS,
 Slack, API keys and web hooks), with who acted, when, and whether they acted in the app, through
 the assistant, an AI app, the API or an ATS. The owner reads it on the company's **Action log**
-tab, filtered by member, kind of action and days, or through the API
-(`GET /companies/{id}/audit`). Keep what your law requires: the EU AI Act asks you to keep
+tab, filtered by member, kind of action and days, and can download it as a CSV. Keep what your law requires: the EU AI Act asks you to keep
 these records at least six months, and testee keeps them for you as below. Download PDF reports to
-keep them longer: some laws ask for more than testee's 12 months, such as California's rules on
+keep them longer, and copy the scorecard's answers if your law needs those too, as the PDF holds no questions: some laws ask for more than testee's 12 months, such as California's rules on
 automated-decision systems in employment (4 years, from 2025-10-01), Colorado's AI law (3 years,
 from 2027-01-01) and US federal rules on hiring records (1 year from the record or the personnel action, whichever is
 later, and until any charge is settled).
@@ -263,7 +276,7 @@ candidate they name is deleted.
   candidate and without their comment once their invitation or account is deleted. Any other
   report's comment is deleted 12 months after it was written.
 - Notifications in your members' bells, which can show a candidate's email and grade, are kept up
-  to 90 days. A web hook still being retried holds its data up to 3 days.
+  to 90 days. A web hook still being retried holds its data about 3 days.
 - Backups hold deleted data for at most 14 more days.
 - PDFs you download, and results sent to your applicant tracking system, Slack or your own systems,
   are yours to keep and delete under your own retention policy.
@@ -272,8 +285,8 @@ candidate they name is deleted.
 under the data processing agreement at testee.ai/dpa, which is part of the terms.
 
 - **Access:** open the candidate's **scorecard page** and download their **PDF report**. Together
-  they hold everything testee keeps about the interview: each question, their answer (every option ticked), right or
-  wrong or the points it earned, time taken, page leaves and copy attempts, any answer patterns, and the grade. Send the PDF, with your own explanation of
+  they show what testee keeps about the interview: each question, their answer (every option ticked), right or
+  wrong or the points it earned, time taken, page leaves and copy attempts, any answer patterns, and the grade. How long each page leave lasted is kept but not shown. Send the PDF with a copy of the scorecard's answers, as the PDF holds no questions, and your own explanation of
   how it was used.
 - **Erasure or objection:** on the candidate's page, revoke an unused invite, or use **Delete
   candidate** for one who started or finished: their answers and results are deleted for good, also
@@ -383,7 +396,7 @@ From 2027-12-02, when you use testee in the EU:
 
 testee marks what its AI generates in a machine-readable way (Art. 50(2)): questions, answer options
 and the assistant's answers on its pages, questions read by AI apps, and the voice clips in voice
-mode. These marks don't travel with text you copy out of testee, and a voice clip's tag can be lost
+mode made since 2026-11-07. These marks don't travel with text you copy out of testee, and a voice clip's tag can be lost
 if the file is converted. Voice clips also carry OpenAI's inaudible watermark, which you can check
 at openai.com/verify.
 
@@ -402,6 +415,9 @@ at openai.com/verify.
   who start after it. A change to how grades are worked out or to these instructions is published
   here with a new version date. A significant change to the terms or the data processing agreement
   is emailed to you at least 14 days before it applies.
+- **Suspension:** a suspended company's candidates who haven't started can't start, and those in
+  an interview can finish; it can't create interviews or invite anyone, also through the API, and
+  its data stays readable.
 - **Security:** sign-in with Google, LinkedIn or GitHub and a verified email; only the invited
   email can start an invite, except an invite your platform sent through the API without sign-in,
   which anyone with its link can use; roles limit what admins and viewers can do; API keys are kept only as

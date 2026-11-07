@@ -32,6 +32,8 @@ multiple-choice test, as one input to a hiring decision made by **[COMPANY: who]
 **How it works.**
 
 1. You paste a job description; AI (OpenAI models) proposes topics; you review and edit them.
+   Through the API, once you've topped up, the proposed topics go on without a review; an interview
+   copied from a template has no topic review either, so check both on the interview's page.
 2. AI writes a bank of multiple-choice questions per topic; you can try the interview as a
    candidate and report any question whose answer looks wrong.
 3. You invite candidates by email (or share a link); if you connect them, your applicant tracking
@@ -42,13 +44,16 @@ multiple-choice test, as one input to a hiring decision made by **[COMPANY: who]
    "select all that apply" question, about 1 in 10, earns part of it for each right option ticked
    and nothing with a wrong one) and shows you a grade, the percentage of points earned, green or red against the passing grade you set, ranked best first, with
    integrity signals.
-   If you set an interview to **voice mode** (English, Spanish, German, French, Portuguese or
-   Italian), testee reads each question and its options aloud and the candidate answers aloud:
+   If you set an interview to **voice mode** (any of testee's 23 languages, its quality varying by
+   language: testee.ai/guides/voice-interview-languages), testee reads each question and its options aloud and the candidate answers aloud:
    what the microphone picks up while they answer is turned into text by AI and matched to the
    options; a clear choice of one option is recorded at once as a tapped answer is, with the
-   interviewer saying which ("B, saved."), and a choice of several options is confirmed first. testee never stores
+   interviewer saying which ("B, saved."), and an answer to a question with several right options
+   is confirmed first. testee never stores
    the audio or its text (OpenAI may keep them up to 30 days, see below), voices are never analysed (no tone, emotion or confidence), and
-   the candidate can always tap an option instead. Marking is the same in both modes.
+   the candidate can tap an option at any point in the interview. Starting needs a working
+   microphone, so set a candidate who can't use one to click mode before they start. Marking is the
+   same in both modes.
 5. You review results and decide. testee sends candidates no decision. If you connect them, testee
    also sends results to your applicant tracking system (as a note), your Slack channel (the
    notifications you choose) and your own systems (through the API and web hooks).
@@ -78,7 +83,7 @@ multiple-choice test, as one input to a hiring decision made by **[COMPANY: who]
 | Open to offers | For people on your Discover tab: name, LinkedIn profile address, latest timed practice results on your interview's subjects; never their email until you invite them |
 | Pledge | When the candidate confirmed, before starting, that they'd answer on their own, without AI tools or other people |
 | Feedback | Candidate's ratings and reports of questions (reports may include a free-text comment); they stay with no link to the candidate and without their comment once their invitation or account is deleted; any other report's comment is deleted 12 months after it was written |
-| Reports | PDFs made in your browser; if emailed through testee, kept at most 7 days to send |
+| Reports | PDFs made in your browser, without the questions; if emailed through testee, kept at most 8 days to send |
 | Email opt-outs | A one-way hash of the email address of a candidate who stops your emails (or one interview's reminders) through the link in testee's invites and reminders, and of an address that bounced for good or marked an email as spam |
 | Special categories | None requested. **[COMPANY]** confirm you do not add any (e.g. in job descriptions or notes) |
 
@@ -94,7 +99,7 @@ multiple-choice test, as one input to a hiring decision made by **[COMPANY: who]
   which can include candidates' emails, names, grades and integrity signals; voice messages
   turned into text. In voice mode: questions read aloud (no personal data), and a candidate's
   spoken answer turned into text and matched to the options, from the recording and then its
-  text with the question and options, never the answer key. testee tells OpenAI not to store it; under OpenAI's API terms it may keep
+  text with the question and options, never the answer key. testee tells OpenAI not to store it where its API offers the choice; under OpenAI's API terms it may keep
   the data for up to 30 days, only to check for abuse unless the law requires longer, and uses
   none of it for training. OpenAI
   Ireland Ltd, which transfers it to OpenAI in the United States under the European Commission's
@@ -105,7 +110,7 @@ multiple-choice test, as one input to a hiring decision made by **[COMPANY: who]
 - Sentry (error reports, without email addresses; EU).
 - Langfuse (records of AI calls, to monitor and improve the quality of answers: what is sent to the AI and its answers, which can include candidates' data the AI handles, such as the results the assistant reads to answer a member, and votes on the assistant's answers; in voice mode only which options a spoken answer matched, never its words; kept 30 days; Langfuse GmbH, Germany, its EU cloud).
 - Cloudflare (the "I'm not a robot" check, Turnstile, when a candidate starts through a job ad's link: their browser's signals and address, of which testee keeps nothing; Cloudflare, Inc., United States, under the EU-US Data Privacy Framework).
-- Upstash (short-lived counters for limits, live updates, and the results of API calls, kept up to 24 hours so that a repeated call isn't run twice; EU, Belgium).
+- Upstash (short-lived counters for limits, some keyed by a candidate's email address, live updates, the results of API calls, kept up to 24 hours so that a repeated call isn't run twice, and actions waiting for a member's confirmation, kept up to 10 minutes; EU, Belgium).
 - Paddle (payments; receives no candidate data).
 
 **Tools you connect** (your own recipients, not testee's sub-processors; delete the ones you don't
@@ -150,7 +155,7 @@ company is deleted. Hashes of addresses that bounced or marked an email as spam:
 removes them. Ratings and reports of questions: with the question, with no link to the candidate
 and without their comment once their invitation or account is deleted; any other report's comment:
 12 months after it was written.
-Notifications in members' bells: up to 90 days. Web hooks being retried: up to 3 days.
+Notifications in members' bells: up to 90 days. Web hooks being retried: about 3 days.
 Records of AI calls at Langfuse: 30 days. Team notes: with their interview, also after a candidate
 they name is deleted. Voice mode's spoken answers: never stored by testee, up to 30 days at OpenAI.
 Database backups: 14 days, then overwritten. **[COMPANY]**: your own retention of
@@ -166,11 +171,11 @@ describe who reviews results and how (see section 5).
 | Question | Answer |
 |---|---|
 | Lawful basis | **[COMPANY]** usually legitimate interest (Art. 6(1)(f)) or steps before a contract (Art. 6(1)(b)); record your balancing test |
-| Is the knowledge tested a genuine requirement of the role? | **[COMPANY]** you approved the topics; keep that record |
+| Is the knowledge tested a genuine requirement of the role? | **[COMPANY]** you approved the topics, or checked them yourself for API interviews and template copies; the action log records only an approval made in testee |
 | Could a less intrusive method work? | **[COMPANY]** |
 | Data minimisation | Only sign-in details and test data; no CV, video, voice recordings or demographics are kept by testee; in voice mode, speech is turned into text and options in memory and never stored or analysed for anything else |
 | Information to candidates | For people you invite from the Discover tab, you got their data from testee, not from them: tell them, at the latest in your first message (the invite) and within a month, who you are, why you contacted them, what you saw (name, LinkedIn profile, practice results) and their rights (GDPR and UK GDPR Art. 14). Invite page tells candidates what to expect, whether testee has verified your company, that leaving the page and copying are recorded, that questions are AI-written, that people at your company decide and can review their result, and to ask you for more time if needed. Invites and reminders have links to stop your emails or that interview's reminders. **[COMPANY]** add your notice (see testee's candidate notice templates) |
-| Rights | Access: candidate's scorecard page and PDF report give you everything to answer; erasure: "Delete candidate" on the candidate's page (also deletes testee's copy of what your applicant tracking system sent; delete it in your own tools yourself); a candidate who deletes their testee account erases their answers and results too; objection: **[COMPANY]** process; stopping your emails: the link in testee's invites and reminders, after which an invite to them shows as undelivered; candidates can also write to testee, who passes requests on |
+| Rights | Access: the candidate's scorecard page has their questions, answers, marks and times, and the PDF report their grade, topic scores and signals; send both; erasure: "Delete candidate" on the candidate's page (also deletes testee's copy of what your applicant tracking system sent; delete it in your own tools yourself); a candidate who deletes their testee account erases their answers and results too; objection: **[COMPANY]** process; stopping your emails: the link in testee's invites and reminders, after which an invite to them shows as undelivered; candidates can also write to testee, who passes requests on |
 | Human review on request | **[COMPANY]** who handles it and how fast |
 | Accommodations | Extra time per candidate (+25%, +50% or +100%), set before they start, no reason stored; **[COMPANY]** alternative process |
 
@@ -180,11 +185,11 @@ Likelihood and severity: **[COMPANY]** to rate. Starting points from testee:
 
 | Risk | Typical source | testee controls | Your controls **[COMPANY]** |
 |---|---|---|---|
-| Unfair rejection from a wrong or ambiguous question | AI-written content | Your topic review and trial run; a sample of answer keys per topic checked before release; statistics and reports flag questions for a fix, and a fix applies to candidates who start after it (past results don't change) | |
+| Unfair rejection from a wrong or ambiguous question | AI-written content | Your topic review (none for API interviews of a company that has topped up, or for template copies) and trial run; a sample of answer keys per topic checked before release; statistics and reports flag questions for a fix, and a fix applies to candidates who start after it (past results don't change) | |
 | Discrimination (age, disability, language, origin) | Time pressure, language, content | Knowledge questions only; questions flagged when too slow or not discriminating; extra time | |
 | Over-reliance on the grade or signals | Ranked list, green/red | All answers visible; signals as counts; no automatic decisions | |
 | Wrongful cheating suspicion | Page-leave and fast-answer signals; answer patterns | Shown as hints with the question on screen; each answer pattern set on an offline test to flag at most 1% of honest candidates, not counted as "flagged", and shown with follow-up questions to ask rather than a verdict | |
-| A spoken answer misheard (accent, speech impairment, noise) | Voice mode's speech-to-text and matching | The interviewer says and shows the option it heard: a single clear option is saved as it says so ("B, saved."), anything unclear is asked again and a choice of several options is confirmed before it counts; matching is told to answer unclear when in doubt, measured at 0 wrong matches in its eval; tapping an option is always possible; voice mode only in languages where speech recognition is reliable | |
+| A spoken answer misheard (accent, speech impairment, noise) | Voice mode's speech-to-text and matching | The interviewer says and shows the option it heard: a single clear option is saved as it says so ("B, saved."), anything unclear is asked again and an answer to a question with several right options is confirmed before it counts; matching is told to answer unclear when in doubt, measured at 1.5% wrong matches over all 23 languages (Japanese, Estonian and Thai had them); tapping an option is possible at any point in the interview; quality by language is published at testee.ai/guides/voice-interview-languages, so prefer click mode in a language rated lower | |
 | Other people's voices sent for transcription | A room with others talking while the candidate answers | Speech is sent only while the interview listens for an answer, turned into text in memory and never stored by testee; OpenAI may keep it up to 30 days to check for abuse | |
 | Candidates found through Discover treated as applicants without being told | Open to offers | Listed only with their own consent, which they can withdraw at once; no ranking or recommendation; no email until you invite | |
 | Over-reliance on the assistant's summaries or comparisons | AI-written answers about candidates | It answers only from the data its tools read, says the AI can be wrong, makes no decision, and asks before every action in the app; action log marks results read through it | |
@@ -196,7 +201,8 @@ Likelihood and severity: **[COMPANY]** to rate. Starting points from testee:
 
 ## 5. Measures to reduce risk **[COMPANY]**
 
-- [ ] Topics reviewed against the job's real requirements and the review recorded
+- [ ] Topics reviewed against the job's real requirements and the review recorded, by you for API
+  interviews and template copies, whose review testee doesn't record
 - [ ] Interview tried by someone who knows the role before inviting
 - [ ] Passing grade chosen and justified (not just the default 70%)
 - [ ] A named person reviews every candidate's scorecard before a rejection

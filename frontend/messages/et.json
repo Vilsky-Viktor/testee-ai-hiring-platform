@@ -3096,7 +3096,7 @@
       "roles": "testee on vastutav töötleja nende inimeste kontode puhul, kes seda kasutavad, ning volitatud töötleja kandidaatide andmete puhul, mis kuuluvad neid kutsunud ettevõttele.",
       "noSelling": "Me ei müü isikuandmeid ega jaga neid reklaami jaoks. Reklaami- ega analüütikaküpsiseid ei ole.",
       "noInference": "testee ei kogu andmeid kandidaatide soo, vanuse, päritolu ega puude kohta ega tuleta midagi sellist.",
-      "voice": "Häälerežiimis muudetakse kandidaadi suuline vastus tekstiks ja sobitatakse valikutega ning sobitatud valik öeldakse talle välja ja näidatakse ekraanil; mitme valiku korral kinnitab ta selle kõigepealt. testee ei säilita kõnet ning häält ei analüüsita muul viisil. OpenAI, mis muudab selle tekstiks, võib seda säilitada kuni 30 päeva, nagu allpool kirjeldatud.",
+      "voice": "Häälerežiimis muudetakse kandidaadi suuline vastus tekstiks ja sobitatakse valikutega ning sobitatud valik öeldakse talle välja ja näidatakse ekraanil; mitme õige valikuga küsimuse vastuse kinnitab ta kõigepealt. testee ei säilita kõnet ning häält ei analüüsita muul viisil. OpenAI, mis muudab selle tekstiks, võib seda säilitada kuni 30 päeva, nagu allpool kirjeldatud.",
       "ai": "OpenAI-l, mis küsimused kirjutab, on palutud saadud andmeid mitte säilitada, kus tema API seda valikut pakub; ta võib neid hoida kuni 30 päeva, ainult kuritarvituste kontrollimiseks, välja arvatud juhul, kui seadus nõuab pikemat säilitamist, ega kasuta neid oma mudelite treenimiseks.",
       "rights": "Igaüks saab oma andmed seadetes alla laadida või kustutada, ilma meile kirjutamata."
     },

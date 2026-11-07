@@ -36,7 +36,7 @@ def test_the_help_chat_reads_the_platform_guide_in_english_with_the_visitors_pri
     voice_previews = LIMITS["VOICE_PREVIEWS_PER_COMPANY_DAY"].default
     preview_limits = f"up to {previews} previews a day in click mode and {voice_previews} in voice"
     assert preview_limits in found["knowledge"]
-    assert "Refunds: you can refund credits" in found["knowledge"]
+    assert "Refunds: a company's owner or admin can refund credits" in found["knowledge"]
     assert "Who is responsible" in found["knowledge"]
     assert '"candidate_credits": 500' in found["knowledge"]
     assert "secret-token" not in found["knowledge"]

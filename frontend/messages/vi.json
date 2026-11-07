@@ -3100,7 +3100,7 @@
       "roles": "testee là bên kiểm soát dữ liệu đối với tài khoản của những người sử dụng nó, và là bên xử lý dữ liệu của ứng viên, vốn thuộc về công ty mời họ.",
       "noSelling": "Chúng tôi không bán dữ liệu cá nhân hay chia sẻ nó cho quảng cáo. Không có cookie quảng cáo hay phân tích.",
       "noInference": "testee không thu thập dữ liệu về giới tính, tuổi, nguồn gốc hay khuyết tật của ứng viên, và không suy đoán bất kỳ điều gì như vậy.",
-      "voice": "Ở chế độ giọng nói, câu trả lời bằng lời của ứng viên được chuyển thành văn bản và khớp với các lựa chọn, lựa chọn khớp được đọc lại cho ứng viên và hiển thị trên màn hình; khi chọn nhiều lựa chọn thì phải xác nhận trước. testee không lưu trữ lời nói, và giọng nói không được phân tích theo bất kỳ cách nào khác. OpenAI, bên chuyển lời nói thành văn bản, có thể lưu giữ tối đa 30 ngày, như nêu dưới đây.",
+      "voice": "Ở chế độ giọng nói, câu trả lời bằng lời của ứng viên được chuyển thành văn bản và khớp với các lựa chọn, lựa chọn khớp được đọc lại cho ứng viên và hiển thị trên màn hình; câu trả lời cho câu hỏi có nhiều phương án đúng thì phải xác nhận trước. testee không lưu trữ lời nói, và giọng nói không được phân tích theo bất kỳ cách nào khác. OpenAI, bên chuyển lời nói thành văn bản, có thể lưu giữ tối đa 30 ngày, như nêu dưới đây.",
       "ai": "OpenAI, bên viết câu hỏi, được yêu cầu không lưu những gì nhận được ở những nơi API của OpenAI cho phép lựa chọn này; OpenAI có thể giữ dữ liệu tối đa 30 ngày, chỉ để kiểm tra hành vi lạm dụng trừ khi pháp luật yêu cầu lâu hơn, và không dùng nó để huấn luyện mô hình.",
       "rights": "Bất kỳ ai cũng có thể tải về hoặc xóa dữ liệu của chính mình trong Cài đặt mà không cần viết thư cho chúng tôi."
     },

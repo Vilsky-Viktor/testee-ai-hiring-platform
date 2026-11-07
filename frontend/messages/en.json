@@ -3096,7 +3096,7 @@
       "roles": "testee is the controller of the accounts of the people who use it, and a processor of candidates' data, which belongs to the company that invites them.",
       "noSelling": "We don't sell personal data or share it for advertising. There are no advertising or analytics cookies.",
       "noInference": "testee collects no data about candidates' sex, age, origin or disability, and infers nothing of the kind.",
-      "voice": "In voice mode, a candidate's spoken answer is turned into text and matched to the options, and the option it matched is said back to them and shown on screen; a choice of several options is confirmed first. testee stores no speech, and the voice isn't analysed in any other way. OpenAI, which turns it into text, may keep it for up to 30 days, as below.",
+      "voice": "In voice mode, a candidate's spoken answer is turned into text and matched to the options, and the option it matched is said back to them and shown on screen; an answer to a question with several right options is confirmed first. testee stores no speech, and the voice isn't analysed in any other way. OpenAI, which turns it into text, may keep it for up to 30 days, as below.",
       "ai": "OpenAI, which writes the questions, is told not to store what it receives where its API offers that choice; it may keep the data for up to 30 days, only to check for abuse unless the law requires longer, and doesn't use it to train its models.",
       "rights": "Anyone can download or delete their own data in Settings, without writing to us."
     },

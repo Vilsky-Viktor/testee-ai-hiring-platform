@@ -3096,7 +3096,7 @@
       "roles": "testee è titolare del trattamento degli account delle persone che lo usano, e responsabile del trattamento dei dati dei candidati, che appartengono all'azienda che li invita.",
       "noSelling": "Non vendiamo dati personali né li condividiamo per pubblicità. Non ci sono cookie pubblicitari o di analisi.",
       "noInference": "testee non raccoglie dati su sesso, età, origine o disabilità dei candidati, e non deduce nulla del genere.",
-      "voice": "In modalità vocale, la risposta parlata di un candidato viene trascritta e abbinata alle opzioni, e l'opzione abbinata gli viene detta e mostrata sullo schermo; una scelta di più opzioni viene prima confermata. testee non conserva alcun parlato, e la voce non viene analizzata in nessun altro modo. OpenAI, che lo trascrive, può conservarlo per un massimo di 30 giorni, come indicato sotto.",
+      "voice": "In modalità vocale, la risposta parlata di un candidato viene trascritta e abbinata alle opzioni, e l'opzione abbinata gli viene detta e mostrata sullo schermo; la risposta a una domanda con più opzioni corrette viene prima confermata. testee non conserva alcun parlato, e la voce non viene analizzata in nessun altro modo. OpenAI, che lo trascrive, può conservarlo per un massimo di 30 giorni, come indicato sotto.",
       "ai": "OpenAI, che scrive le domande, ha l'istruzione di non conservare ciò che riceve dove la sua API offre questa scelta; può tenere i dati per un massimo di 30 giorni, solo per individuare abusi salvo che la legge richieda un periodo più lungo, e non li usa per addestrare i suoi modelli.",
       "rights": "Chiunque può scaricare o eliminare i propri dati nelle Impostazioni, senza doverci scrivere."
     },

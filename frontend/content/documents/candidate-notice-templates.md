@@ -22,7 +22,7 @@ alternative selection process or accommodation.
 Under Local Law 144 the employer or employment agency must make sure a bias audit exists and gives
 the notice: testee doesn't do it for you. You can rely on an audit built on several employers' data
 only if your own data is in it or you haven't used the tool yet. testee gives you the candidates' results for your auditor
-(API, PDF reports), the summary of its own independent bias audit once published at
+(the owner's bias-audit export, the API, PDF reports), the summary of its own independent bias audit once published at
 testee.ai/documents, and this template. Don't use testee for candidates in New York City before
 your audit summary is published (see testee's instructions for companies).
 
@@ -53,7 +53,7 @@ your audit summary is published (see testee's instructions for companies).
 > the account id from your sign-in, and your answers in the test, with how long each took, page
 > leaves, copy attempts, answers too fast to have read the question, when you confirmed answering
 > on your own, and any extra time you were given. The questions were written with AI from the job description,
-> on topics [Company] chose. Your test data is kept by testee for 12 months after your invitation, then
+> [on topics [Company] chose / on topics drawn from it]. Your test data is kept by testee for 12 months after your invitation, then
 > deleted. [Company's own retention policy: ...]. More information about the data collected, its
 > source and retention policy is available on request at [contact], within 30 days of a written
 > request.
@@ -77,7 +77,8 @@ your audit summary is published (see testee's instructions for companies).
 > **What it is.** An AI system that helps us assess candidates; under the EU AI Act it counts as a
 > high-risk AI system. [N] multiple-choice questions about [topics], with on average [N] seconds
 > for each; each question shows its own timer.
-> Questions were written with the help of AI from the job description, on topics our team chose.
+> Questions were written with the help of AI from the job description, [on topics our team chose /
+> on topics drawn from it].
 > Each candidate gets their own selection of questions. Most have one right option; a "select all
 > that apply" question has 2 or 3, and you tick every one you think is right: it earns part of its
 > point for each right option ticked, and nothing if a wrong one is ticked. You can change your pick
@@ -95,10 +96,12 @@ your audit summary is published (see testee's instructions for companies).
 > [Voice mode only:] **Answering aloud.** The questions and their options are read aloud and you
 > can answer aloud. What the microphone picks up while you answer is turned into text by AI and
 > matched to the options: you hear and see the option it matched, one clearly named option is
-> saved at once, and you confirm a choice of several options before it counts. testee never stores
+> saved at once and can't then be changed, and on a question with several right options you confirm
+> your answer before it counts. testee never stores
 > your speech; OpenAI, which turns it into text, may keep it for up to 30 days to check for abuse,
-> and doesn't use it for training. Your voice isn't analysed in any other way. You can always tap an
-> option instead, or ask us at [contact] for the test without voice.
+> and doesn't use it for training. Your voice isn't analysed in any other way. You can tap an option
+> at any point in the test. Starting needs a working microphone: if you can't use one, or prefer not
+> to speak, ask us at [contact] for the test without voice before you start.
 >
 > **How we use it.** Your result is one part of our assessment, alongside [your CV / interviews].
 > A person at [Company] reviews it; no decision is made automatically. You can ask us for a human
@@ -128,7 +131,7 @@ your audit summary is published (see testee's instructions for companies).
 ## 3. Short version for the invite email or job ad
 
 > This role includes a timed multiple-choice knowledge test on testee ([N] minutes). Questions are
-> AI-written on topics our team chose; a person reviews every result and you can ask for a human
+> AI-written [on topics our team chose / from the job description]; a person reviews every result and you can ask for a human
 > review. Need extra time or an alternative? Write to [contact] before you start. Details:
 > [link to full notice].
 
