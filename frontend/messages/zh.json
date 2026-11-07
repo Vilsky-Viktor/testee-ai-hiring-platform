@@ -821,7 +821,6 @@
     "enough": "足够 {count, plural, other {# 位候选人}}使用",
     "pay": "支付 {price}",
     "quote": "{count, plural, other {# 位候选人}}，每位 {price}，共 {credits, number} 点数",
-    "nextPrice": "再增加 {count, plural, other {# 位候选人}}，每位 {price}",
     "howMany": "充值的候选人数",
     "credits": "{count, plural, other {# 点数}}",
     "upgraded": "同样的价格可得 {count, number} 位候选人",

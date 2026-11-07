@@ -821,7 +821,6 @@
     "enough": "Вистачить на {count, plural, one {# кандидата} few {# кандидатів} many {# кандидатів} other {# кандидата}}",
     "pay": "Сплатити {price}",
     "quote": "{count, plural, one {# кандидат} few {# кандидати} many {# кандидатів} other {# кандидата}} по {price}, {credits, number} кредитів",
-    "nextPrice": "{count, plural, one {Ще # кандидат} few {Ще # кандидати} many {Ще # кандидатів} other {Ще # кандидата}}, і кожен коштує {price}",
     "howMany": "Кількість кандидатів для поповнення",
     "credits": "{count, plural, one {# кредит} few {# кредити} many {# кредитів} other {# кредиту}}",
     "upgraded": "{count, plural, one {# кандидат} few {# кандидати} many {# кандидатів} other {# кандидата}} за ту саму ціну",

@@ -821,7 +821,6 @@
     "enough": "Wystarczy na {count, plural, one {# kandydata} few {# kandydatów} many {# kandydatów} other {# kandydata}}",
     "pay": "Zapłać {price}",
     "quote": "{count, plural, one {# kandydat} few {# kandydatów} many {# kandydatów} other {# kandydata}} po {price}, {credits, number} kredytów",
-    "nextPrice": "{count, plural, one {Jeszcze # kandydat} few {Jeszcze # kandydatów} many {Jeszcze # kandydatów} other {Jeszcze # kandydata}}, a każdy kosztuje {price}",
     "howMany": "Liczba kandydatów do doładowania",
     "credits": "{count, plural, one {# kredyt} few {# kredyty} many {# kredytów} other {# kredytu}}",
     "upgraded": "{count, plural, one {# kandydat} few {# kandydaci} many {# kandydatów} other {# kandydata}} w tej samej cenie",

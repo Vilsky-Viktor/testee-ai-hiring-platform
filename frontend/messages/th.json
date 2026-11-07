@@ -821,7 +821,6 @@
     "enough": "เพียงพอสำหรับผู้สมัคร {count, plural, other {# คน}}",
     "pay": "ชำระ {price}",
     "quote": "{count, plural, other {ผู้สมัคร # คน}} คนละ {price} รวม {credits, number} เครดิต",
-    "nextPrice": "อีก {count, plural, other {# คน}} ผู้สมัครแต่ละคนจะเสีย {price}",
     "howMany": "จำนวนผู้สมัครที่จะเติม",
     "credits": "{count, plural, other {# เครดิต}}",
     "upgraded": "ผู้สมัคร {count, number} คนในราคาเดียวกัน",

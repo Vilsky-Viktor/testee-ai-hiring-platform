@@ -5,7 +5,7 @@ import { shot } from "../helpers/screenshots"
 import { throwawayEmail } from "../helpers/users"
 
 // Any number of candidates, typed or chosen by where each price starts, priced from billing's
-// catalog: the price to pay, credits and candidates, how far the next price is, and the next
+// catalog: the price to pay, credits and candidates, and the next
 // level instead where it costs no more.
 test("the top-up page prices any number of candidates", async ({ signInAs }) => {
   const owner = await signInAs(throwawayEmail("custom-top-up"))
@@ -13,7 +13,6 @@ test("the top-up page prices any number of candidates", async ({ signInAs }) => 
   const buy = await openTopUpPage(owner, company.id)
   const count = owner.getByTestId("custom-count").filter({ visible: true })
   const quote = owner.getByTestId("custom-quote").filter({ visible: true })
-  const next = owner.getByTestId("custom-next").filter({ visible: true })
   const upgraded = owner.getByTestId("custom-upgraded").filter({ visible: true })
   const tiers = topUpTiers(owner)
 
@@ -23,12 +22,10 @@ test("the top-up page prices any number of candidates", async ({ signInAs }) => 
   await expect(quote).toContainText("5,000")
   await expect(upgraded).toHaveCount(0)
 
-  // Any count in the first level, at its price, with how many more reach the next.
+  // Any count in the first level, at its price.
   await count.fill("39")
   await expect(buy).toContainText("$195")
   await expect(tiers.first()).toHaveAttribute("aria-pressed", "true")
-  await expect(next).toContainText("11")
-  await expect(next).toContainText("$4")
   await expect(upgraded).toHaveCount(0)
 
   // 40 at $5 would cost $200, what 50 at $4 cost: those 50 it is.

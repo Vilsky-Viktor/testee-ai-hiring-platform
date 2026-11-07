@@ -821,7 +821,6 @@
     "enough": "{count, plural, zero {يكفي لدعوة # مرشح} one {يكفي لدعوة مرشح واحد} two {يكفي لدعوة مرشحين} few {يكفي لدعوة # مرشحين} many {يكفي لدعوة # مرشحًا} other {يكفي لدعوة # مرشح}}",
     "pay": "ادفع {price}",
     "quote": "{count, plural, zero {# مرشح بسعر {price} لكل مرشح} one {مرشح واحد بسعر {price}} two {مرشحان بسعر {price} لكل مرشح} few {# مرشحين بسعر {price} لكل مرشح} many {# مرشحًا بسعر {price} لكل مرشح} other {# مرشح بسعر {price} لكل مرشح}}، {credits, number} رصيد",
-    "nextPrice": "{count, plural, zero {# مرشح إضافي وسيكلّف كل منهم {price}} one {مرشح إضافي واحد وسيكلّف {price}} two {مرشحان إضافيان وسيكلّف كل منهم {price}} few {# مرشحين إضافيين وسيكلّف كل منهم {price}} many {# مرشحًا إضافيًا وسيكلّف كل منهم {price}} other {# مرشح إضافي وسيكلّف كل منهم {price}}}",
     "howMany": "عدد المرشحين للشحن",
     "credits": "{count, plural, zero {# رصيد} one {رصيد واحد} two {رصيدان} few {# أرصدة} many {# رصيدًا} other {# رصيد}}",
     "upgraded": "{count, plural, zero {# مرشح} one {مرشح واحد} two {مرشحان} few {# مرشحين} many {# مرشحًا} other {# مرشح}} بالسعر نفسه",

@@ -21,13 +21,3 @@ export function customTopUp(custom: Custom, candidates: number) {
     upgraded: upgrade,
   }
 }
-
-/** How many more candidates reach the next, lower price billing lists after `candidates`, and
- * that price; null at the lowest. */
-export function nextPrice(custom: Custom, candidates: number) {
-  const next = custom.tiers.find((tier) => tier.from_candidates > candidates)
-
-  return next
-    ? { more: next.from_candidates - candidates, cents: next.cents }
-    : null
-}

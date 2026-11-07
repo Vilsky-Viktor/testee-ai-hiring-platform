@@ -821,7 +821,6 @@
     "enough": "Piisab {count, plural, one {# kandidaadile} other {# kandidaadile}}",
     "pay": "Maksa {price}",
     "quote": "{count, plural, one {# kandidaat} other {# kandidaati}} hinnaga {price} tükk, {credits, number} krediiti",
-    "nextPrice": "{count, plural, one {Veel # kandidaat} other {Veel # kandidaati}} ja igaüks maksab {price}",
     "howMany": "Juurde laaditavad kandidaadid",
     "credits": "{count, plural, one {# krediit} other {# krediiti}}",
     "upgraded": "{count, plural, one {# kandidaat} other {# kandidaati}} sama hinnaga",

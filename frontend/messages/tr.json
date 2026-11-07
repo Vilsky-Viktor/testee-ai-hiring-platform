@@ -821,7 +821,6 @@
     "enough": "{count, plural, one {# aday} other {# aday}} için yeterli",
     "pay": "{price} öde",
     "quote": "{count, plural, one {# aday} other {# aday}}, aday başına {price}, {credits, number} kredi",
-    "nextPrice": "{count, plural, one {# aday} other {# aday}} daha ve her biri {price}",
     "howMany": "Yüklenecek aday sayısı",
     "credits": "{count, plural, one {# kredi} other {# kredi}}",
     "upgraded": "Aynı fiyata {count, number} aday",

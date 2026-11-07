@@ -821,7 +821,6 @@
     "enough": "{count, plural, one {# उम्मीदवार} other {# उम्मीदवारों}} के लिए काफ़ी",
     "pay": "{price} चुकाएँ",
     "quote": "{count, plural, one {# उम्मीदवार} other {# उम्मीदवार}}, प्रति उम्मीदवार {price}, {credits, number} क्रेडिट",
-    "nextPrice": "{count, plural, one {# और उम्मीदवार} other {# और उम्मीदवारों}} के बाद हर उम्मीदवार की कीमत {price} होगी",
     "howMany": "टॉप अप के लिए उम्मीदवार",
     "credits": "{count, plural, one {# क्रेडिट} other {# क्रेडिट}}",
     "upgraded": "उसी कीमत में {count, number} उम्मीदवार",

@@ -821,7 +821,6 @@
     "enough": "{count, plural, other {지원자 #명}}에게 충분한 크레딧",
     "pay": "{price} 결제",
     "quote": "{count, plural, other {지원자 #명}}, 1인당 {price}, {credits, number} 크레딧",
-    "nextPrice": "{count, plural, other {지원자 #명}}을 더 추가하면 1인당 {price}입니다",
     "howMany": "충전할 지원자 수",
     "credits": "{count, plural, other {# 크레딧}}",
     "upgraded": "같은 가격에 지원자 {count, number}명",

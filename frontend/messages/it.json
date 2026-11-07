@@ -821,7 +821,6 @@
     "enough": "Bastano per {count, plural, one {# candidato} other {# candidati}}",
     "pay": "Paga {price}",
     "quote": "{count, plural, one {# candidato} other {# candidati}} a {price} ciascuno, {credits, number} crediti",
-    "nextPrice": "{count, plural, one {# candidato in più} other {# candidati in più}} e ciascuno costa {price}",
     "howMany": "Candidati da ricaricare",
     "credits": "{count, plural, one {# credito} other {# crediti}}",
     "upgraded": "{count, plural, one {# candidato} other {# candidati}} allo stesso prezzo",

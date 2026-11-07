@@ -821,7 +821,6 @@
     "enough": "{count, plural, one {کافی برای # متقاضی} other {کافی برای # متقاضی}}",
     "pay": "پرداخت {price}",
     "quote": "{count, plural, one {# متقاضی با قیمت {price} برای هر نفر} other {# متقاضی با قیمت {price} برای هر نفر}}، {credits, number} اعتبار",
-    "nextPrice": "{count, plural, one {# متقاضی دیگر و هزینهٔ هر کدام {price}} other {# متقاضی دیگر و هزینهٔ هر کدام {price}}}",
     "howMany": "تعداد متقاضی برای شارژ",
     "credits": "{count, plural, one {# اعتبار} other {# اعتبار}}",
     "upgraded": "{count, number} متقاضی با همین قیمت",

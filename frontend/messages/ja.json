@@ -821,7 +821,6 @@
     "enough": "{count, plural, other {# 人の候補者}}に十分な残高",
     "pay": "{price} を支払う",
     "quote": "{count, plural, other {# 人の候補者}}、1人あたり {price}、{credits, number} クレジット",
-    "nextPrice": "あと{count, plural, other {# 人の候補者}}で、1人あたり {price} になります",
     "howMany": "チャージする候補者数",
     "credits": "{count, plural, other {# クレジット}}",
     "upgraded": "同じ価格で候補者 {count, number} 人",

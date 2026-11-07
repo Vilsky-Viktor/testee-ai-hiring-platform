@@ -821,7 +821,6 @@
     "enough": "Sapat para sa {count, plural, one {# aplikante} other {# aplikante}}",
     "pay": "Bayaran ang {price}",
     "quote": "{count, plural, one {# aplikante} other {# aplikante}} sa halagang {price} bawat isa, {credits, number} credit",
-    "nextPrice": "{count, plural, one {# pang aplikante} other {# pang aplikante}} at magiging {price} ang bawat isa",
     "howMany": "Mga aplikanteng ito-top up",
     "credits": "{count, plural, one {# credit} other {# credits}}",
     "upgraded": "{count, number} aplikante sa parehong presyo",

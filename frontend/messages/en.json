@@ -821,7 +821,6 @@
     "enough": "Enough for {count, plural, one {# candidate} other {# candidates}}",
     "pay": "Pay {price}",
     "quote": "{count, plural, one {# candidate} other {# candidates}} at {price} each, {credits, number} credits",
-    "nextPrice": "{count, plural, one {# more candidate} other {# more candidates}} and each costs {price}",
     "howMany": "Candidates to top up",
     "credits": "{count, plural, one {# credit} other {# credits}}",
     "upgraded": "{count, plural, one {# candidate for the same price} other {# candidates for the same price}}",

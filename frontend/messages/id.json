@@ -821,7 +821,6 @@
     "enough": "Cukup untuk {count, plural, other {# kandidat}}",
     "pay": "Bayar {price}",
     "quote": "{count, plural, other {# kandidat}} dengan harga {price} per kandidat, {credits, number} kredit",
-    "nextPrice": "{count, plural, other {# kandidat}} lagi, dan harga tiap kandidat menjadi {price}",
     "howMany": "Kandidat yang diisi ulang",
     "credits": "{count, plural, other {# kredit}}",
     "upgraded": "{count, number} kandidat dengan harga yang sama",

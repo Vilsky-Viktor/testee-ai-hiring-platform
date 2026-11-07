@@ -8,7 +8,7 @@ import { BuyButton } from "@/components/common/buy-button"
 import { FloatingInput } from "@/components/ui/floating-field"
 import { onlyDigits } from "@/lib/digits"
 import { formatPrice } from "@/lib/format"
-import { customTopUp, nextPrice } from "@/lib/top-up"
+import { customTopUp } from "@/lib/top-up"
 import type { Catalog } from "@/types/billing"
 
 /** A top-up of any number of candidates: typed, or chosen by where each price starts; what it
@@ -32,7 +32,6 @@ export function CustomTopUp({
   const fitted = Math.min(Math.max(count, min), max)
   const bought = customTopUp(custom, fitted)
   const unit = bought.cents / bought.candidates
-  const next = nextPrice(custom, bought.candidates)
   const price = (cents: number) => formatPrice(cents, catalog.currency, locale)
 
   return (
@@ -90,14 +89,12 @@ export function CustomTopUp({
           })}
         </p>
         {/* Its line is always there, so nothing moves when it changes. */}
-        <p
-          className="min-h-5 text-sm text-muted-foreground"
-          data-testid={bought.upgraded ? "custom-upgraded" : "custom-next"}
-        >
-          {bought.upgraded
-            ? t("upgraded", { count: bought.candidates })
-            : next &&
-              t("nextPrice", { count: next.more, price: price(next.cents) })}
+        <p className="min-h-5 text-sm text-muted-foreground">
+          {bought.upgraded && (
+            <span data-testid="custom-upgraded">
+              {t("upgraded", { count: bought.candidates })}
+            </span>
+          )}
         </p>
       </div>
       <BuyButton

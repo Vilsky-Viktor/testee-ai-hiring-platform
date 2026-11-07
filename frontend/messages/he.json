@@ -821,7 +821,6 @@
     "enough": "{count, plural, one {מספיק עבור מועמד אחד} two {מספיק עבור # מועמדים} other {מספיק עבור # מועמדים}}",
     "pay": "לתשלום {price}",
     "quote": "{count, plural, one {מועמד אחד ב-{price} כל אחד} two {# מועמדים ב-{price} כל אחד} other {# מועמדים ב-{price} כל אחד}}, {credits, number} קרדיטים",
-    "nextPrice": "{count, plural, one {עוד מועמד אחד, והוא יעלה {price}} two {עוד # מועמדים, וכל אחד יעלה {price}} other {עוד # מועמדים, וכל אחד יעלה {price}}}",
     "howMany": "מספר מועמדים לטעינה",
     "credits": "{count, plural, one {קרדיט אחד} two {# קרדיטים} other {# קרדיטים}}",
     "upgraded": "{count, plural, one {מועמד אחד} two {# מועמדים} other {# מועמדים}} באותו מחיר",

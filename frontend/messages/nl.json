@@ -821,7 +821,6 @@
     "enough": "Genoeg voor {count, plural, one {# kandidaat} other {# kandidaten}}",
     "pay": "{price} betalen",
     "quote": "{count, plural, one {# kandidaat} other {# kandidaten}} à {price} per stuk, {credits, number} credits",
-    "nextPrice": "{count, plural, one {# kandidaat} other {# kandidaten}} extra en elke kandidaat kost {price}",
     "howMany": "Kandidaten om op te waarderen",
     "credits": "{count, plural, one {# credit} other {# credits}}",
     "upgraded": "{count, plural, one {# kandidaat} other {# kandidaten}} voor dezelfde prijs",

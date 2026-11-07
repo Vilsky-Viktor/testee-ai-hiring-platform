@@ -821,7 +821,6 @@
     "enough": "Đủ cho {count, plural, other {# ứng viên}}",
     "pay": "Thanh toán {price}",
     "quote": "{count, plural, other {# ứng viên}} với giá {price} mỗi người, {credits, number} credit",
-    "nextPrice": "Thêm {count, plural, other {# ứng viên}} nữa, mỗi người sẽ có giá {price}",
     "howMany": "Số ứng viên cần nạp",
     "credits": "{count, plural, other {# credit}}",
     "upgraded": "{count, number} ứng viên với cùng mức giá",
