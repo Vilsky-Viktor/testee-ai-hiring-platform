@@ -3,8 +3,12 @@ import json
 import uuid
 from datetime import UTC, datetime, timedelta
 
-from api.constants.api import RETRY_LEASE
+from sqlalchemy import update
+
+from api.constants.api import RETRY_GIVE_UP, RETRY_LEASE
+from api.core.db import Session
 from api.handlers.dispatch import handle
+from api.models.api import WebhookRetry
 from api.repositories import webhook_retries as retries
 from api.repositories import webhooks
 from tests.integration.transactions import transaction
@@ -45,6 +49,29 @@ def test_an_event_is_kept_once_and_claimed_by_one_run_at_a_time(run):
     # Put off while it's being sent, so a run cut off midway leaves it for a later one.
     assert row.next_at > datetime.now(UTC) + RETRY_LEASE - timedelta(minutes=1)
     assert again == []
+
+
+def test_an_event_past_giving_up_is_claimed_whenever_its_next_try_was_set(run):
+    company = uuid.uuid4()
+    later = datetime.now(UTC) + timedelta(hours=6)
+
+    async def scenario():
+        hook = await transaction(
+            webhooks.add, company, "https://example.com/x", "sealed", "u1", MAX_WEBHOOKS
+        )
+        await transaction(retries.add, hook.id, "old", '{"id":"old"}', later)
+        await transaction(retries.add, hook.id, "new", '{"id":"new"}', later)
+
+        async with Session.begin() as session:
+            await session.execute(
+                update(WebhookRetry)
+                .where(WebhookRetry.event_id == "old")
+                .values(created_at=datetime.now(UTC) - RETRY_GIVE_UP)
+            )
+
+        return await transaction(retries.claim, 25)
+
+    assert [row.event_id for row, _ in run(scenario())] == ["old"]
 
 
 def test_a_kept_event_waits_longer_goes_once_sent_and_with_its_web_hook(run):

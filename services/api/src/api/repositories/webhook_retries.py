@@ -1,12 +1,12 @@
 import uuid
 from datetime import UTC, datetime
 
-from sqlalchemy import cast, delete, func, select, update
+from sqlalchemy import cast, delete, func, or_, select, update
 from sqlalchemy.dialects.postgresql import JSONB, insert
 from sqlalchemy.ext.asyncio import AsyncSession
 from testee_common.db.db import made_before
 
-from api.constants.api import RETRY_LEASE
+from api.constants.api import RETRY_GIVE_UP, RETRY_LEASE
 from api.models.api import Webhook, WebhookRetry
 from api.repositories.webhooks import company_of
 
@@ -31,14 +31,15 @@ async def add(
 
 
 async def claim(session: AsyncSession, limit: int) -> list[tuple[WebhookRetry, Webhook]]:
-    """Up to `limit` retries whose time came, longest waiting first, with their web hooks. Each
-    is put off by RETRY_LEASE in the same step, so a run at the same time doesn't take it, and a
-    run cut off midway leaves it for a later one."""
+    """Up to `limit` retries whose time came, longest waiting first, with their web hooks, and
+    any past RETRY_GIVE_UP whatever its time: what it carries about a candidate isn't kept
+    longer. Each is put off by RETRY_LEASE in the same step, so a run at the same time doesn't
+    take it, and a run cut off midway leaves it for a later one."""
     now = datetime.now(UTC)
     due = (
         select(WebhookRetry, Webhook)
         .join(Webhook, Webhook.id == WebhookRetry.webhook_id)
-        .where(WebhookRetry.next_at <= now)
+        .where(or_(WebhookRetry.next_at <= now, WebhookRetry.created_at <= now - RETRY_GIVE_UP))
         .order_by(WebhookRetry.next_at)
         .limit(limit)
         .with_for_update(of=WebhookRetry, skip_locked=True)
