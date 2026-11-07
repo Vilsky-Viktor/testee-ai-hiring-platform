@@ -3098,6 +3098,7 @@
     "periodDays": "Laatste {days, number} dagen",
     "periodCustom": "Aangepast",
     "empty": "Nog geen acties.",
+      "aiMarks": "Vragen, antwoordopties, de antwoorden van de assistent en spraakfragmenten zijn in een voor software leesbare vorm gemarkeerd als door AI gegenereerd: data-ai-generated in de code van een pagina, en de tag AI_GENERATED in het bestand van een spraakfragment. Spraakfragmenten dragen ook het onhoorbare watermerk van OpenAI, dat je kunt controleren op <verify>openai.com/verify</verify>. Tekst die je van een pagina kopieert, behoudt zijn markering niet.",
     "noMatches": "Geen acties komen overeen met deze filters.",
     "formerMember": "Een voormalig lid",
     "apiKey": "{via, select, mcp {Via MCP met de sleutel ‘<bdi>{name}</bdi>’} other {Via de API met de sleutel ‘<bdi>{name}</bdi>’}}",

@@ -383,8 +383,9 @@ From 2027-12-02, when you use testee in the EU:
 
 testee marks what its AI generates in a machine-readable way (Art. 50(2)): questions, answer options
 and the assistant's answers on its pages, questions read by AI apps, and the voice clips in voice
-mode. These marks don't travel with text you copy out of testee, and a voice clip's mark is lost if
-the file is converted.
+mode. These marks don't travel with text you copy out of testee, and a voice clip's tag can be lost
+if the file is converted. Voice clips also carry OpenAI's inaudible watermark, which you can check
+at openai.com/verify.
 
 ## 13. Availability, changes and support
 

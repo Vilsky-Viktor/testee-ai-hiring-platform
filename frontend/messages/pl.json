@@ -3098,6 +3098,7 @@
     "periodDays": "{days, plural, one {Ostatni # dzień} few {Ostatnie # dni} many {Ostatnie # dni} other {Ostatnie # dnia}}",
     "periodCustom": "Własny okres",
     "empty": "Nie ma jeszcze żadnych działań.",
+      "aiMarks": "Pytania, opcje odpowiedzi, odpowiedzi asystentki i klipy głosowe są oznaczone jako wygenerowane przez AI w formie czytelnej dla oprogramowania: data-ai-generated w kodzie strony oraz tag AI_GENERATED w pliku klipu głosowego. Klipy głosowe mają też niesłyszalny znak wodny OpenAI, który możesz sprawdzić na <verify>openai.com/verify</verify>. Tekst skopiowany ze strony nie zachowuje oznaczenia.",
     "noMatches": "Żadne działania nie pasują do tych filtrów.",
     "formerMember": "Były członek zespołu",
     "apiKey": "{via, select, mcp {Przez MCP kluczem „<bdi>{name}</bdi>”} other {Przez API kluczem „<bdi>{name}</bdi>”}}",

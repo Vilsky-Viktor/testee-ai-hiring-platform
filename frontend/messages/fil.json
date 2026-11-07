@@ -3098,6 +3098,7 @@
     "periodDays": "Nakaraang {days, number} araw",
     "periodCustom": "Custom",
     "empty": "Wala pang aksyon.",
+      "aiMarks": "Ang mga tanong, mga opsyon sa sagot, mga sagot ng assistant at mga voice clip ay may markang AI-generated sa anyong nababasa ng software: data-ai-generated sa code ng page, at ang tag na AI_GENERATED sa file ng voice clip. May dala rin ang mga voice clip na hindi naririnig na watermark ng OpenAI, na puwede mong suriin sa <verify>openai.com/verify</verify>. Hindi nananatili ang marka sa text na kinopya mula sa page.",
     "noMatches": "Walang aksyong tugma sa mga filter na ito.",
     "formerMember": "Dating miyembro",
     "apiKey": "{via, select, mcp {Sa pamamagitan ng MCP gamit ang key na “<bdi>{name}</bdi>”} other {Sa pamamagitan ng API gamit ang key na “<bdi>{name}</bdi>”}}",

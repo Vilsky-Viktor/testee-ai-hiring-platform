@@ -9,6 +9,7 @@ import { TEXT_LINK } from "@/config/links"
 import { OPERATOR } from "@/config/operator"
 import {
   AI_ACT_APPLIES,
+  OPENAI_VERIFY,
   TRUST_COMPLIANCE,
   TRUST_LINKS,
   TRUST_PRIVACY,
@@ -70,6 +71,16 @@ export default async function TrustPage() {
             date: formatDay(AI_ACT_APPLIES, locale),
             ...timeTag(AI_ACT_APPLIES),
             link: link("/documents"),
+            verify: (chunks) => (
+              <a
+                href={OPENAI_VERIFY}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={TEXT_LINK}
+              >
+                {chunks}
+              </a>
+            ),
           })
         )}
       />

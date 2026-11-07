@@ -3106,6 +3106,7 @@
     "periodDays": "過去 {days, number} 日間",
     "periodCustom": "カスタム",
     "empty": "まだ操作はありません。",
+      "aiMarks": "質問、回答の選択肢、アシスタントの回答、音声クリップには、AI が生成したことを示す、ソフトウェアで読み取れる印が付いています。ページのコードには data-ai-generated、音声クリップのファイルには AI_GENERATED タグがあります。音声クリップには OpenAI の聞き取れない透かしも含まれており、<verify>openai.com/verify</verify> で確認できます。ページからコピーしたテキストには、この印は残りません。",
     "noMatches": "この条件に一致する操作はありません。",
     "formerMember": "以前のメンバー",
     "apiKey": "{via, select, mcp {MCP 経由（キー「<bdi>{name}</bdi>」）} other {API 経由（キー「<bdi>{name}</bdi>」）}}",

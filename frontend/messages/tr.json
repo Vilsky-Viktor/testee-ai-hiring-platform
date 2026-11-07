@@ -3102,6 +3102,7 @@
     "periodDays": "Son {days, number} gün",
     "periodCustom": "Özel",
     "empty": "Henüz işlem yok.",
+      "aiMarks": "Sorular, cevap seçenekleri, asistanın cevapları ve ses klipleri, yazılımların okuyabileceği bir biçimde yapay zekâ ürünü olarak işaretlenir: sayfanın kodunda data-ai-generated, ses klibinin dosyasında AI_GENERATED etiketi bulunur. Ses kliplerinde ayrıca OpenAI'ın duyulmayan filigranı vardır; bunu <verify>openai.com/verify</verify> adresinden kontrol edebilirsiniz. Bir sayfadan kopyalanan metin bu işareti korumaz.",
     "noMatches": "Bu filtrelere uyan işlem yok.",
     "formerMember": "Eski bir üye",
     "apiKey": "{via, select, mcp {MCP üzerinden “<bdi>{name}</bdi>” anahtarıyla} other {API üzerinden “<bdi>{name}</bdi>” anahtarıyla}}",

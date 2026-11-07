@@ -3098,6 +3098,7 @@
     "periodDays": "Letzte {days, number} Tage",
     "periodCustom": "Benutzerdefiniert",
     "empty": "Noch keine Aktionen.",
+      "aiMarks": "Fragen, Antwortoptionen, die Antworten des Assistenten und Sprachclips sind maschinenlesbar als KI-generiert gekennzeichnet: mit data-ai-generated im Code einer Seite und mit dem Tag AI_GENERATED in der Datei eines Sprachclips. Sprachclips tragen außerdem das unhörbare Wasserzeichen von OpenAI, das du unter <verify>openai.com/verify</verify> prüfen kannst. Von einer Seite kopierter Text behält seine Kennzeichnung nicht.",
     "noMatches": "Keine Aktionen passen zu diesen Filtern.",
     "formerMember": "Ein ehemaliges Mitglied",
     "apiKey": "{via, select, mcp {Über MCP mit dem Schlüssel „<bdi>{name}</bdi>“} other {Über die API mit dem Schlüssel „<bdi>{name}</bdi>“}}",

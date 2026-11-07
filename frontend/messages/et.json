@@ -3098,6 +3098,7 @@
     "periodDays": "Viimased {days, number} päeva",
     "periodCustom": "Kohandatud",
     "empty": "Toiminguid veel pole.",
+      "aiMarks": "Küsimused, vastusevalikud, assistendi vastused ja häälklipid on märgitud tehisaru loodud sisuks kujul, mida tarkvara saab lugeda: data-ai-generated lehe koodis ja silt AI_GENERATED häälklipi failis. Häälklippidel on lisaks OpenAI kuuldamatu vesimärk, mida saad kontrollida aadressil <verify>openai.com/verify</verify>. Lehelt kopeeritud tekstil märget alles ei jää.",
     "noMatches": "Ükski toiming ei vasta nendele filtritele.",
     "formerMember": "Endine liige",
     "apiKey": "{via, select, mcp {MCP kaudu võtmega „<bdi>{name}</bdi>“} other {API kaudu võtmega „<bdi>{name}</bdi>“}}",

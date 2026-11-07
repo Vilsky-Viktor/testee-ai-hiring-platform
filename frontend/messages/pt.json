@@ -3102,6 +3102,7 @@
     "periodDays": "Últimos {days, number} dias",
     "periodCustom": "Personalizado",
     "empty": "Nenhuma ação ainda.",
+      "aiMarks": "As perguntas, as opções de resposta, as respostas da assistente e os clipes de voz são marcados como gerados por IA de uma forma que os programas conseguem ler: data-ai-generated no código da página e a etiqueta AI_GENERATED no arquivo do clipe de voz. Os clipes de voz também levam a marca d'água inaudível da OpenAI, que você pode verificar em <verify>openai.com/verify</verify>. O texto copiado de uma página não mantém a marca.",
     "noMatches": "Nenhuma ação corresponde a estes filtros.",
     "formerMember": "Um ex-membro",
     "apiKey": "{via, select, mcp {Pelo MCP com a chave “<bdi>{name}</bdi>”} other {Pela API com a chave “<bdi>{name}</bdi>”}}",

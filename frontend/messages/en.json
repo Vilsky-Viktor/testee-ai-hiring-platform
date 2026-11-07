@@ -3098,6 +3098,7 @@
     "periodDays": "Last {days, number} days",
     "periodCustom": "Custom",
     "empty": "No actions yet.",
+      "aiMarks": "Questions, answer options, the assistant's answers and voice clips are marked as AI-generated in a form software can read: data-ai-generated in a page's code, and the AI_GENERATED tag in a voice clip's file. Voice clips also carry OpenAI's inaudible watermark, which you can check at <verify>openai.com/verify</verify>. Text copied from a page doesn't keep its mark.",
     "noMatches": "No actions match these filters.",
     "formerMember": "A former member",
     "apiKey": "{via, select, mcp {Through MCP with key \"<bdi>{name}</bdi>\"} other {Through API with key \"<bdi>{name}</bdi>\"}}",

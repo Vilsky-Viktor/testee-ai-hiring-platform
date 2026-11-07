@@ -3098,6 +3098,7 @@
     "periodDays": "최근 {days, number}일",
     "periodCustom": "직접 설정",
     "empty": "아직 작업이 없습니다.",
+      "aiMarks": "질문, 답변 선택지, 어시스턴트의 답변, 음성 클립에는 AI가 생성했음을 소프트웨어가 읽을 수 있는 형태로 표시합니다. 페이지 코드에는 data-ai-generated가, 음성 클립 파일에는 AI_GENERATED 태그가 있습니다. 음성 클립에는 들리지 않는 OpenAI 워터마크도 있으며, <verify>openai.com/verify</verify>에서 확인할 수 있습니다. 페이지에서 복사한 텍스트에는 이 표시가 남지 않습니다.",
     "noMatches": "이 필터에 맞는 작업이 없습니다.",
     "formerMember": "이전 멤버",
     "apiKey": "{via, select, mcp {MCP를 통해 “<bdi>{name}</bdi>” 키로} other {API를 통해 “<bdi>{name}</bdi>” 키로}}",

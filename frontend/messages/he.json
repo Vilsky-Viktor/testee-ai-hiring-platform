@@ -3093,6 +3093,7 @@
     "periodDays": "{days, plural, one {היום האחרון} two {# הימים האחרונים} other {# הימים האחרונים}}",
     "periodCustom": "מותאמת אישית",
     "empty": "עדיין אין פעולות.",
+      "aiMarks": "שאלות, אפשרויות תשובה, התשובות של העוזר וקטעי קול מסומנים כתוכן שנוצר ב-AI בצורה שתוכנה יכולה לקרוא: data-ai-generated בקוד של העמוד, והתג AI_GENERATED בקובץ של קטע הקול. קטעי הקול נושאים גם סימן מים לא נשמע של OpenAI, שאפשר לבדוק ב-<verify>openai.com/verify</verify>. טקסט שמועתק מעמוד לא שומר על הסימון שלו.",
     "noMatches": "אין פעולות שמתאימות למסננים האלה.",
     "formerMember": "חבר צוות לשעבר",
     "apiKey": "{via, select, mcp {דרך MCP עם המפתח \"<bdi>{name}</bdi>\"} other {דרך ה-API עם המפתח \"<bdi>{name}</bdi>\"}}",

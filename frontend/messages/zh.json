@@ -3098,6 +3098,7 @@
     "periodDays": "最近 {days, number} 天",
     "periodCustom": "自定义",
     "empty": "还没有操作记录。",
+      "aiMarks": "问题、答案选项、助手的回答和语音片段都以软件可读的形式标记为 AI 生成：页面代码中的 data-ai-generated，以及语音片段文件中的 AI_GENERATED 标签。语音片段还带有 OpenAI 的不可听水印，你可以在 <verify>openai.com/verify</verify> 查验。从页面复制的文本不会保留此标记。",
     "noMatches": "没有符合这些筛选条件的操作。",
     "formerMember": "前成员",
     "apiKey": "{via, select, mcp {通过 MCP 使用密钥“<bdi>{name}</bdi>”} other {通过 API 使用密钥“<bdi>{name}</bdi>”}}",

@@ -3098,6 +3098,7 @@
     "periodDays": "{days, number} hari terakhir",
     "periodCustom": "Kustom",
     "empty": "Belum ada tindakan.",
+      "aiMarks": "Pertanyaan, pilihan jawaban, jawaban asisten, dan klip suara ditandai sebagai buatan AI dalam bentuk yang bisa dibaca perangkat lunak: data-ai-generated di kode halaman, dan tag AI_GENERATED di file klip suara. Klip suara juga membawa watermark OpenAI yang tidak terdengar, yang bisa kamu periksa di <verify>openai.com/verify</verify>. Teks yang disalin dari halaman tidak mempertahankan tandanya.",
     "noMatches": "Tidak ada tindakan yang cocok dengan filter ini.",
     "formerMember": "Mantan anggota",
     "apiKey": "{via, select, mcp {Lewat MCP dengan kunci “<bdi>{name}</bdi>”} other {Lewat API dengan kunci “<bdi>{name}</bdi>”}}",

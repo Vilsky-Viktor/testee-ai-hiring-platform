@@ -3102,6 +3102,7 @@
     "periodDays": "{days, number} ngày qua",
     "periodCustom": "Tùy chỉnh",
     "empty": "Chưa có thao tác nào.",
+      "aiMarks": "Câu hỏi, lựa chọn trả lời, câu trả lời của trợ lý và đoạn âm thanh giọng nói được đánh dấu là do AI tạo ở dạng phần mềm đọc được: data-ai-generated trong mã của trang và thẻ AI_GENERATED trong tệp âm thanh. Các đoạn âm thanh này còn mang watermark âm thanh không nghe được của OpenAI, bạn có thể kiểm tra tại <verify>openai.com/verify</verify>. Văn bản sao chép từ trang không giữ lại dấu này.",
     "noMatches": "Không có thao tác nào khớp với các bộ lọc này.",
     "formerMember": "Một cựu thành viên",
     "apiKey": "{via, select, mcp {Qua MCP bằng khóa “<bdi>{name}</bdi>”} other {Qua API bằng khóa “<bdi>{name}</bdi>”}}",

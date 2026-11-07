@@ -25,5 +25,8 @@ for (const path of ["/trust", "/de/trust"]) {
     for (const href of ["/terms", "/privacy", "/dpa", "/documents", "/accessibility"]) {
       await expect(main.locator(`a[href$="${href}"]`).first()).toBeVisible();
     }
+
+    // The AI marks' public check (Art. 50): the page says where anyone can test a voice clip.
+    await expect(main.locator('a[href="https://openai.com/verify"]')).toBeVisible();
   });
 }

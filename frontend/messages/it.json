@@ -3098,6 +3098,7 @@
     "periodDays": "Ultimi {days, number} giorni",
     "periodCustom": "Personalizzato",
     "empty": "Ancora nessuna azione.",
+      "aiMarks": "Le domande, le opzioni di risposta, le risposte dell’assistente e le clip vocali sono contrassegnate come generate dall’IA in una forma leggibile da un software: data-ai-generated nel codice di una pagina e il tag AI_GENERATED nel file di una clip vocale. Le clip vocali portano anche la filigrana non udibile di OpenAI, che puoi verificare su <verify>openai.com/verify</verify>. Il testo copiato da una pagina non conserva il contrassegno.",
     "noMatches": "Nessuna azione corrisponde a questi filtri.",
     "formerMember": "Un ex membro",
     "apiKey": "{via, select, mcp {Tramite MCP con la chiave «<bdi>{name}</bdi>»} other {Tramite l'API con la chiave «<bdi>{name}</bdi>»}}",

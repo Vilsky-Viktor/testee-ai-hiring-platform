@@ -249,7 +249,10 @@ What AI generates carries a machine-readable mark (EU AI Act Art. 50(2); the leg
 - **On pages:** `AI_GENERATED` (`frontend/src/config/ai-generated.ts`), `data-ai-generated="true"` and `data-digital-source-type` with IPTC's `trainedAlgorithmicMedia`, is on the shared components: `QuestionText`, `AnswerOptions`, `ChoiceOptions` and the AI's side of `ChatBubble` (the assistant and the help chat). So every question and option carries it wherever it's shown, the public role pages' samples and the landing's demos too.
 - **To AI apps:** `list_topic_questions` gives each question `ai_generated: true` ([MCP](features/mcp.md#tools)). The public API returns no questions.
 - **Voice clips:** every clip's Ogg Opus comment header carries `AI_GENERATED=true` and `DIGITAL_SOURCE_TYPE=<the IPTC term>` (rounds' `CLIP_TAGS`), written as the clip is made. Any tag reader shows them (`ffprobe clip.ogg`). A clip made before the tags stays as it is, as re-reading it costs money; it goes once nobody has played it for 30 days.
+- **Voice clips' watermark:** OpenAI's speech carries its inaudible SynthID watermark. OpenAI's check found it on a stored clip as served, and on the same clip with the tags, naming `gpt-realtime-2.1-mini` (one English clip, 4.9 seconds, 2026-11-07). The check is free: openai.com/verify, or `POST /v1/content_provenance_checks` with the file as `audio/ogg`, up to 60 seconds. Run it again on a fixed phrase, never on a clip reading a company's question, when the speech model, the format or the bit rate changes.
+- **Long text:** no watermark. OpenAI's textGrain would add one, but it's an organisation or project setting in OpenAI's dashboard, not a request parameter, and it's off. Turning it on changes every model's output in that project, so it needs an eval first.
 - **Reports:** nothing, as a report PDF holds no questions.
+- **Reading the marks:** the trust page tells anyone how: the page attribute, the clip's tag and OpenAI's check.
 
 ## Rate limits
 

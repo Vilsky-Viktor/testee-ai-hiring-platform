@@ -19,6 +19,7 @@ export const TRUST_PRIVACY = [
 ] as const
 export const TRUST_COMPLIANCE = [
   "aiAct",
+  "aiMarks",
   "humanReview",
   "dpa",
   "documents",
@@ -44,6 +45,9 @@ export const TRUST_LINKS = [
   { href: "/dpa", key: "dpa" },
   { href: "/documents", key: "documents" },
 ] as const
+
+// OpenAI's own check of its audio watermark, for anyone holding a voice clip (trust.compliance.aiMarks).
+export const OPENAI_VERIFY = "https://openai.com/verify"
 
 // The day the EU AI Act's duties for high-risk systems, testee among them, apply, and the day
 // testee's own independent bias audit is done by (content/documents/instructions-for-companies.md).
