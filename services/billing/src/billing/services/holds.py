@@ -46,3 +46,11 @@ async def charge(key: str) -> None:
 async def release(key: str) -> None:
     async with Session.begin() as session:
         await ledger.release(session, CANDIDATE_PREFIX + key)
+
+
+async def settle(to_charge: list[str], to_release: list[str]) -> None:
+    for key in to_charge:
+        await charge(key)
+
+    for key in to_release:
+        await release(key)

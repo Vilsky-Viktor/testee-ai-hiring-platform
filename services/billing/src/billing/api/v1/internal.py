@@ -30,8 +30,8 @@ from billing.schemas.billing import (
     PurchaseOwnerOut,
     ReferralOut,
     SpentOut,
-    WelcomeIn,
 )
+from billing.schemas.internal import SettleIn, WelcomeIn
 from billing.services import accounts, holds, invoices, refund_offers, wallets
 from billing.services.referrals import referral_out
 
@@ -54,6 +54,13 @@ async def charge_candidate(key: str, caller: ServiceCaller) -> None:
 @router.post("/candidates/release", status_code=status.HTTP_204_NO_CONTENT)
 async def release_candidate(key: str, caller: ServiceCaller) -> None:
     await holds.release(key)
+
+
+@router.post("/candidates/settle", status_code=status.HTTP_204_NO_CONTENT)
+async def settle_candidates(body: SettleIn, caller: ServiceCaller) -> None:
+    """A batch of candidates' credits taken or given back in one call, for what removes many at
+    once. Each key on its own, so a failure leaves the batch safe to send again."""
+    await holds.settle(body.charge, body.release)
 
 
 @router.get("/candidates/hold")

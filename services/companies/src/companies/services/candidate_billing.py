@@ -127,9 +127,10 @@ async def hold_again(invite, key: str) -> None:
 async def release_unfinished(rows: list) -> None:
     """Before a candidate's invites lose their email: the ones not finished give their credits
     back."""
-    for interview_id, email, status, stored in rows:
-        if status in (*NOT_STARTED, InviteStatus.IN_PROCESS):
-            await billing.release_candidate(stored)
+    unfinished = (*NOT_STARTED, InviteStatus.IN_PROCESS)
+    await billing.settle_candidates(
+        [], [stored for _, _, status, stored in rows if status in unfinished]
+    )
 
 
 async def settle_unfinished(interview_id) -> None:
@@ -156,11 +157,10 @@ async def settle_removed(rows: list) -> None:
     are deleted; safe to repeat (a charged candidate stays charged)."""
     started = [row.id for row in rows if row.status == InviteStatus.IN_PROCESS]
     scores = await rounds.invite_scores(started)
+    charged, released = [], []
 
     for row in rows:
-        key = row.hold_key
+        picked = (scores.get(str(row.id)) or {}).get("picked")
+        (charged if picked else released).append(row.hold_key)
 
-        if (scores.get(str(row.id)) or {}).get("picked"):
-            await billing.charge_candidate(key)
-        else:
-            await billing.release_candidate(key)
+    await billing.settle_candidates(charged, released)

@@ -16,6 +16,7 @@ from companies.models.companies import Company, Member
 from companies.repositories import accounts, audit
 from companies.services import accounts as account_service
 from companies.services import company_deletion, retention
+from tests.unit.billing_fakes import settle_with
 
 INTERVIEW_ID = uuid.uuid4()
 
@@ -124,6 +125,7 @@ def test_a_candidate_deleting_their_account_mid_interview_is_settled_as_if_remov
     monkeypatch.setattr(rounds, "invite_scores", scores)
     monkeypatch.setattr(billing, "charge_candidate", charge)
     monkeypatch.setattr(billing, "release_candidate", release)
+    settle_with(monkeypatch, charge=charge, release=release)
 
     asyncio.run(account_service.delete_user("ann", "ann@example.com"))
 
@@ -183,6 +185,7 @@ def test_retention_deletes_results_and_holds_before_the_invites_in_batches(monke
     monkeypatch.setattr(rounds, "delete_invite_sessions", delete_sessions)
     monkeypatch.setattr(accounts, "delete_invites", delete_invites)
     monkeypatch.setattr(billing, "release_candidate", release)
+    settle_with(monkeypatch, release=release)
 
     assert asyncio.run(retention.delete_expired_candidates()) == 1
     # A candidate stuck in process gives their credits back as they go.

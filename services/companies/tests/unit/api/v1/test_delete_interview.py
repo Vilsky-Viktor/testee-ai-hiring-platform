@@ -12,6 +12,7 @@ from companies.models.companies import Company, Member
 from companies.models.interviews import Interview
 from companies.models.invites import CandidateInvite
 from companies.repositories import companies, interviews, invites
+from tests.unit.billing_fakes import settle_with
 
 COMPANY_ID = uuid.uuid4()
 INTERVIEW_ID = uuid.uuid4()
@@ -137,13 +138,14 @@ def test_deleting_an_interview_settles_unfinished_candidates_credits(client, mon
     monkeypatch.setattr(invites, "unfinished", unfinished)
     monkeypatch.setattr(rounds, "invite_scores", scores)
     monkeypatch.setattr(billing, "release_candidate", release)
+    settle_with(monkeypatch, charge=charge, release=release)
     monkeypatch.setattr(billing, "charge_candidate", charge)
 
     assert client.delete(URL).status_code == 204
     assert calls == [
         ("scores", sorted([dan.id, erin.id])),
-        ("release", f"{INTERVIEW_ID}:carol-key"),
         ("charge", f"{INTERVIEW_ID}:dan-key"),
+        ("release", f"{INTERVIEW_ID}:carol-key"),
         ("release", f"{INTERVIEW_ID}:erin-key"),
         ("interview", INTERVIEW_ID),
     ]
@@ -163,6 +165,7 @@ def test_an_invite_made_while_the_interview_is_deleted_gives_its_credits_back(cl
 
     monkeypatch.setattr(interviews, "remove", remove)
     monkeypatch.setattr(billing, "release_candidate", release)
+    settle_with(monkeypatch, release=release)
 
     assert client.delete(URL).status_code == 204
     assert released == ["late-key"]

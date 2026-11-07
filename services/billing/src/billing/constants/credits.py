@@ -10,6 +10,8 @@ LOW_BALANCE = CANDIDATE_CREDITS
 REFERRAL_REWARD = 1000
 REFERRALS_PER_YEAR = 25
 REFERRAL_CODE_BYTES = 6
+# Candidates' credits one call settles (companies' SETTLE_BATCH).
+MOST_SETTLED = 200
 
 NOT_ENOUGH = "Not enough credits. Top up to continue."
 

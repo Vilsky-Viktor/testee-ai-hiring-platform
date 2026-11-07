@@ -16,6 +16,7 @@ from companies.models.invites import CandidateInvite
 from companies.repositories import candidates, companies, interviews
 from companies.repositories import invites as invite_store
 from tests.unit import fake_candidates
+from tests.unit.billing_fakes import settle_with
 
 COMPANY_ID = uuid.uuid4()
 INTERVIEW_ID = uuid.uuid4()
@@ -177,6 +178,7 @@ def revoke(client, monkeypatch, status, progress=0, picked=0, removed_as=None):
     monkeypatch.setattr(candidates_router.outbox_service, "flush_quietly", no_flush)
     monkeypatch.setattr(rounds, "delete_invite_sessions", fake_erase)
     monkeypatch.setattr(billing, "release_candidate", fake_release)
+    settle_with(monkeypatch, charge=fake_charge, release=fake_release)
     monkeypatch.setattr(billing, "charge_candidate", fake_charge)
     monkeypatch.setattr(rounds, "invite_scores", fake_scores)
     response = client.delete(f"/interviews/{INTERVIEW_ID}/candidates/{INVITE_ID}")

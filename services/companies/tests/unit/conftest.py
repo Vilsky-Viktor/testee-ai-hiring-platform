@@ -86,7 +86,13 @@ def no_billing_calls(monkeypatch):
 
     monkeypatch.setattr(billing, "company_paid", never_paid)
 
-    for name in ("delete_company", "release_candidate", "charge_candidate", "welcome_company"):
+    for name in (
+        "delete_company",
+        "settle_candidates",
+        "release_candidate",
+        "charge_candidate",
+        "welcome_company",
+    ):
         monkeypatch.setattr(billing, name, nothing)
 
     async def none_unfinished(session, interview_id, after, size):

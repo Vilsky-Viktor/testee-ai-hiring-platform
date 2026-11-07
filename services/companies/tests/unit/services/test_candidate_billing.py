@@ -5,14 +5,18 @@ from types import SimpleNamespace
 import httpx
 import pytest
 from testee_common.events.notifications import notification
+from testee_common.http import http
 
-from companies.constants.invites import InviteStatus
+from companies.constants.invites import SETTLE_BATCH, InviteStatus
 from companies.integrations import billing, rounds
 from companies.repositories import interviews, invite_progress, invites
 from companies.services import candidate_billing
 from companies.services import outbox as outbox_service
+from tests.unit.billing_fakes import settle_with
 
 INTERVIEW_ID = uuid.uuid4()
+# The real one: the tests' setup fakes it.
+SETTLE = billing.settle_candidates
 
 
 @pytest.fixture
@@ -27,6 +31,7 @@ def ledger(monkeypatch):
 
     monkeypatch.setattr(billing, "charge_candidate", charge)
     monkeypatch.setattr(billing, "release_candidate", release)
+    settle_with(monkeypatch, release=release)
 
     return calls
 
@@ -180,3 +185,21 @@ def test_a_deleted_candidate_is_left_alone(ledger, monkeypatch):
     )
 
     assert (notices, ledger) == ([], [])
+
+
+def test_many_candidates_go_to_billing_a_batch_a_call(monkeypatch):
+    """Deleting a big interview makes a call per SETTLE_BATCH, not one per candidate."""
+    sent = []
+
+    class Client:
+        async def post(self, url, json, headers):
+            sent.append((len(json["charge"]), len(json["release"])))
+
+            return httpx.Response(204, request=httpx.Request("POST", url))
+
+    monkeypatch.setattr(http, "get_client", Client)
+    release = [f"key-{number}" for number in range(SETTLE_BATCH + 1)]
+
+    asyncio.run(SETTLE(["charged"], release))
+
+    assert sent == [(1, SETTLE_BATCH), (0, 1)]
