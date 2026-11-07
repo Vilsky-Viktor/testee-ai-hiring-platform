@@ -15,7 +15,8 @@ from billing.integrations import paddle
 from billing.models.billing import Entry, Hold, Refund
 from billing.models.outbox import OutboxEvent
 from billing.repositories import ledger
-from billing.services import holds, refund_offers, topups
+from billing.services import holds, refund_offers
+from tests.integration.factories import granted
 
 COMPANY = OwnerType.COMPANY
 
@@ -32,9 +33,7 @@ async def bought(company_id: str, credits=5_000, paid=5_000, days_ago=0.0) -> st
     """A paid top-up of the company, bought that long ago; its Paddle id."""
     txn = transaction_id()
     at = datetime.now(UTC) - timedelta(days=days_ago)
-    await topups.grant(
-        COMPANY, company_id, credits, 1, txn, "topup_50", "ann", str(paid), "USD", at
-    )
+    await granted(COMPANY, company_id, credits, 1, txn, "topup_50", "ann", str(paid), "USD", at)
 
     async with Session.begin() as session:
         await session.execute(

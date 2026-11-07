@@ -19,7 +19,7 @@ from billing.constants.products import OwnerType
 from billing.core.security import SERVICE_NAME
 from billing.integrations import paddle
 from billing.main import app
-from billing.repositories import purchases
+from billing.repositories import ledger, purchases
 from tests.integration.services.refund_world import adjustment
 from tests.integration.transactions import transaction
 
@@ -66,6 +66,7 @@ def transaction_id() -> str:
 async def side(kind: str) -> Side:
     """A company's owner and viewer, with a top-up the owner paid."""
     owner, company, paid = user_id(kind), str(uuid4()), transaction_id()
+    await transaction(ledger.ensure, OwnerType.COMPANY, company)
     await transaction(
         purchases.grant,
         OwnerType.COMPANY,

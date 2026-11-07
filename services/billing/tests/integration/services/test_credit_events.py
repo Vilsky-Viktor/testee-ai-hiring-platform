@@ -12,9 +12,9 @@ from billing.constants.products import OwnerType
 from billing.core.db import Session
 from billing.models.outbox import OutboxEvent
 from billing.repositories.events import tell
-from billing.services import topups
 from billing.services.adjustments import handle_adjustment
 from billing.services.credit_events import credits_added
+from tests.integration.factories import granted
 from tests.unit.paddle_events import adjustment
 
 NOW = datetime(2026, 10, 10, 12, tzinfo=UTC)
@@ -36,7 +36,7 @@ def test_a_top_up_saves_its_event_once_however_often_paddle_repeats_it(run):
 
     async def scenario():
         for _ in range(2):
-            await topups.grant(
+            await granted(
                 OwnerType.COMPANY,
                 acme,
                 100,
@@ -83,9 +83,7 @@ def test_a_reversed_chargeback_paddle_repeats_tells_of_its_credits_once(run):
     reversal = adjustment("chargeback_reverse", total="3000")["data"] | {"transaction_id": txn}
 
     async def scenario():
-        await topups.grant(
-            OwnerType.COMPANY, acme, 100, 1, txn, "topup_50", None, "3000", "USD", NOW
-        )
+        await granted(OwnerType.COMPANY, acme, 100, 1, txn, "topup_50", None, "3000", "USD", NOW)
 
         for _ in range(2):
             await handle_adjustment(reversal)

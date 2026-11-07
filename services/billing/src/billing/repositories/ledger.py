@@ -10,6 +10,10 @@ from billing.constants.products import OwnerType
 from billing.models.billing import AutoTopUp, Entry, Gift, Hold, Wallet
 
 
+class WalletGone(Exception):
+    """The wallet was deleted, with its company."""
+
+
 async def wallet(session: AsyncSession, owner_type: str, owner_id: str) -> Wallet:
     """The wallet, created empty the first time."""
     await ensure(session, owner_type, owner_id)
@@ -246,6 +250,19 @@ async def delete_history(sessions, company_id: str) -> None:
     for model in (Hold, Entry):
         owned = (model.owner_type == OwnerType.COMPANY, model.owner_id == company_id)
         await delete_in_batches(sessions, model, *owned)
+
+
+async def lock_wallet(session: AsyncSession, owner_type: str, owner_id: str) -> None:
+    """Held until the transaction ends, so a company's deletion waits for what's being added or
+    taken back. Raises WalletGone when it was deleted."""
+    query = (
+        select(Wallet.owner_id)
+        .where(Wallet.owner_type == owner_type, Wallet.owner_id == owner_id)
+        .with_for_update()
+    )
+
+    if await session.scalar(query) is None:
+        raise WalletGone(owner_id)
 
 
 async def delete_wallet(session: AsyncSession, company_id: str) -> None:

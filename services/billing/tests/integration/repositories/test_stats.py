@@ -4,7 +4,7 @@ from datetime import UTC, datetime, timedelta
 from billing.constants.credits import CANDIDATE_CREDITS, Reason
 from billing.constants.products import TOP_UPS, OwnerType
 from billing.repositories import ledger, stats
-from billing.services import topups
+from tests.integration.factories import granted
 from tests.integration.transactions import transaction
 
 COMPANY = OwnerType.COMPANY
@@ -21,15 +21,15 @@ def test_a_transaction_counts_once_and_spent_credits_are_charges_only(run):
 
         # Two product lines of one $49 transaction: each holds the whole total.
         for top_up in TOP_UPS[:2]:
-            await topups.grant(COMPANY, acme, 10_000, 1, txn, top_up.key, None, "4900", "USD", now)
+            await granted(COMPANY, acme, 10_000, 1, txn, top_up.key, None, "4900", "USD", now)
 
         # One in euros this month, counted apart.
-        await topups.grant(
+        await granted(
             COMPANY, acme, 100, 1, f"txn_{uuid.uuid4().hex}", "topup_50", None, "5950", "EUR", now
         )
         # One paid last month.
         last_month = now.replace(day=1) - timedelta(days=1)
-        await topups.grant(
+        await granted(
             COMPANY,
             acme,
             100,

@@ -7,8 +7,7 @@ from datetime import UTC, datetime, timedelta
 from billing.constants.credits import CANDIDATE_CREDITS, HoldStatus, Reason
 from billing.constants.products import TOP_UPS, OwnerType
 from billing.repositories import ledger, purchases
-from billing.services import topups
-from tests.integration.factories import welcomed
+from tests.integration.factories import granted, welcomed
 from tests.integration.transactions import transaction
 
 NOW = datetime(2026, 10, 10, 12, tzinfo=UTC)
@@ -22,11 +21,11 @@ def test_a_persons_top_ups_once_per_transaction_newest_first(run):
     async def scenario():
         # One transaction of two lines, a later one, and another person's.
         for product in (TOP_UPS[0].key, TOP_UPS[1].key):
-            await topups.grant(COMPANY, acme, 1_000, 1, first, product, buyer, "25000", "USD", NOW)
+            await granted(COMPANY, acme, 1_000, 1, first, product, buyer, "25000", "USD", NOW)
 
         later = NOW + timedelta(days=1)
-        await topups.grant(COMPANY, acme, 1_000, 1, second, "topup_50", buyer, "5000", "EUR", later)
-        await topups.grant(COMPANY, acme, 1_000, 1, theirs, "topup_50", other, "5000", "USD", NOW)
+        await granted(COMPANY, acme, 1_000, 1, second, "topup_50", buyer, "5000", "EUR", later)
+        await granted(COMPANY, acme, 1_000, 1, theirs, "topup_50", other, "5000", "USD", NOW)
 
         return await transaction(purchases.bought_by, buyer, 100), await transaction(
             purchases.bought_by, buyer, 1

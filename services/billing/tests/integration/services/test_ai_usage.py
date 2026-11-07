@@ -19,8 +19,9 @@ from billing.integrations import names
 from billing.models.limits import LimitChange
 from billing.models.usage import AiUsage, LimitHit
 from billing.repositories import usage
-from billing.services import ai_costs, topups
+from billing.services import ai_costs
 from billing.services import usage as usage_service
+from tests.integration.factories import granted
 from tests.integration.transactions import transaction
 
 NOW = datetime(2026, 10, 10, 12, tzinfo=UTC)
@@ -73,9 +74,7 @@ def test_a_company_is_paid_from_its_first_top_up_on(run, redis):
 
     async def scenario():
         txn = f"txn_{uuid.uuid4().hex}"
-        await topups.grant(
-            OwnerType.COMPANY, acme, 100, 1, txn, "topup_50", None, "3000", "USD", NOW
-        )
+        await granted(OwnerType.COMPANY, acme, 100, 1, txn, "topup_50", None, "3000", "USD", NOW)
         found = []
 
         for company_id, at in ((acme, NOW - timedelta(hours=1)), (acme, NOW), (other, NOW)):

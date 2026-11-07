@@ -6,6 +6,7 @@ from billing.constants.credits import Reason
 from billing.constants.products import ADJUSTMENT_APPROVED
 from billing.core.db import Session
 from billing.repositories import ledger, purchases, refunds
+from billing.repositories.ledger import WalletGone
 from billing.services import credit_events, refund_claims
 from billing.services import outbox as outbox_service
 from billing.services.referrals import take_back_reward
@@ -27,6 +28,15 @@ def share(granted: int, adjusted_total: str, paid: int) -> int:
         return 0
 
     return granted * min(int(adjusted_total), paid) // paid
+
+
+async def wallet_gone(owner_id: str, data: dict, reward_too: bool) -> None:
+    """Its company was deleted, credits and all: nothing to take back but the referral reward
+    the top-up paid (`reward_too`), so deleting a referred company can't keep it."""
+    await refund_claims.close_for_deleted_wallet(data)
+
+    if reward_too:
+        await take_back_reward(owner_id, data["transaction_id"])
 
 
 async def handle_adjustment(data: dict) -> None:
@@ -65,40 +75,40 @@ async def handle_adjustment(data: dict) -> None:
 
     owner_type, owner_id, granted, paid = bought
 
-    # Its company was deleted, credits and all: nothing to take back but the referral reward
-    # the top-up paid, so deleting a referred company can't keep it.
     if owner_id not in existing:
-        await refund_claims.close_for_deleted_wallet(data)
-
-        if takes_reward(int(data["totals"]["total"]) >= paid):
-            await take_back_reward(owner_id, data["transaction_id"])
+        await wallet_gone(owner_id, data, takes_reward(int(data["totals"]["total"]) >= paid))
 
         return
 
     # Several partial refunds of the whole top-up count as a full one.
     # A chargeback reversed gives the credits back: other services hear of it.
-    async with Session.begin() as session:
-        refund = await refunds.matching(session, data) if reason == Reason.REFUND else None
-        credits = refund.credits if refund else share(granted, data["totals"]["total"], paid)
+    try:
+        async with Session.begin() as session:
+            refund = await refunds.matching(session, data) if reason == Reason.REFUND else None
+            credits = refund.credits if refund else share(granted, data["totals"]["total"], paid)
 
-        if not credits:
-            return
+            if not credits:
+                return
 
-        taken = await purchases.take_back(
-            session,
-            owner_type,
-            owner_id,
-            sign * credits,
-            data["transaction_id"],
-            data["id"],
-            reason,
-            data["totals"]["total"],
-            data.get("currency_code"),
-            [credit_events.credits_added(owner_type, owner_id)] if sign > 0 else [],
-        )
+            taken = await purchases.take_back(
+                session,
+                owner_type,
+                owner_id,
+                sign * credits,
+                data["transaction_id"],
+                data["id"],
+                reason,
+                data["totals"]["total"],
+                data.get("currency_code"),
+                [credit_events.credits_added(owner_type, owner_id)] if sign > 0 else [],
+            )
 
-        if refund is not None:
-            await refund_claims.approved(session, refund, data["id"])
+            if refund is not None:
+                await refund_claims.approved(session, refund, data["id"])
+    except WalletGone:
+        await wallet_gone(owner_id, data, takes_reward(int(data["totals"]["total"]) >= paid))
+
+        return
 
     # Sent now if Pub/Sub takes it; the outbox's next run otherwise.
     if refund is not None:

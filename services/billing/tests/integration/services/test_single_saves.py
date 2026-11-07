@@ -11,9 +11,9 @@ from billing.constants.products import TOP_UPS, OwnerType
 from billing.repositories import auto_top_ups, currencies, ledger, purchases, referrals
 from billing.schemas.billing import AutoTopUpIn
 from billing.schemas.internal import WelcomeIn
-from billing.services import accounts, topups, wallets
+from billing.services import accounts, wallets
 from billing.services import auto_top_ups as auto_top_up_service
-from tests.integration.factories import welcomed
+from tests.integration.factories import granted, welcomed
 from tests.integration.transactions import transaction
 
 COMPANY = OwnerType.COMPANY
@@ -78,7 +78,7 @@ def test_a_user_deletion_whose_currency_fails_keeps_what_they_bought_and_turned_
 
     async def scenario():
         await welcomed(acme, f"{acme}@example.com")
-        await topups.grant(
+        await granted(
             COMPANY, acme, 1_000, 1, f"txn_{acme}", TOP_UPS[0].key, ann, "1000", "USD", NOW
         )
         await auto_top_up_service.turn_on(COMPANY, acme, choice, ann, Currency.USD)

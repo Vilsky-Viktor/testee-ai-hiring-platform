@@ -11,11 +11,11 @@ from billing.core.db import Session
 from billing.helpers.gifts import legacy_gift_key
 from billing.models.billing import Gift
 from billing.repositories import ledger, referrals
-from billing.services import accounts, topups
+from billing.services import accounts
 from billing.services.adjustments import handle_adjustment
 from billing.services.referrals import reward_after_top_up
 from tests.integration import transactions
-from tests.integration.factories import welcomed
+from tests.integration.factories import granted, welcomed
 from tests.integration.transactions import transaction
 
 COMPANY = OwnerType.COMPANY
@@ -175,7 +175,7 @@ def test_any_refund_of_the_rewarding_top_up_takes_both_rewards_back_once(run):
     paid, refunded = f"txn_{uuid.uuid4().hex[:12]}", f"txn_{uuid.uuid4().hex[:12]}"
 
     async def top_up(transaction_id):
-        await topups.grant(
+        await granted(
             COMPANY,
             newco,
             3_000,
@@ -271,7 +271,7 @@ def test_deleting_the_referred_company_doesnt_keep_the_referrers_reward_from_a_r
             newco,
             [],
         )
-        await topups.grant(
+        await granted(
             COMPANY, newco, 3_000, 1, paid, "topup_50", None, "3000", "USD", datetime.now(UTC)
         )
         await reward_after_top_up(COMPANY, newco, paid)

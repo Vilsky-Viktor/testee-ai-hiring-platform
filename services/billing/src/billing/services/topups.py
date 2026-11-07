@@ -11,6 +11,7 @@ from billing.constants.declines import PAYMENT_METHOD_CHANGE_ORIGIN
 from billing.constants.products import PADDLE_API_ORIGIN, OwnerType
 from billing.core.db import Session
 from billing.repositories import ledger, purchases
+from billing.repositories.ledger import WalletGone
 from billing.services import auto_top_ups, credit_events
 from billing.services import outbox as outbox_service
 from billing.services.auto_top_up_notices import charged
@@ -146,25 +147,31 @@ async def grant(
     """Adds a paid top-up once per product of a transaction (purchases.grant), with its events
     for the outbox (`events_for` the credits available after it), and a member's own top-up to
     the company's action log in the same save; an automatic one isn't theirs."""
-    async with Session.begin() as session:
-        granted = await purchases.grant(
-            session,
-            owner_type,
-            owner_id,
-            credits,
-            quantity,
-            transaction_id,
-            product,
-            buyer_id,
-            total,
-            currency,
-            now,
-            automatic,
-            events_for,
-        )
+    try:
+        async with Session.begin() as session:
+            granted = await purchases.grant(
+                session,
+                owner_type,
+                owner_id,
+                credits,
+                quantity,
+                transaction_id,
+                product,
+                buyer_id,
+                total,
+                currency,
+                now,
+                automatic,
+                events_for,
+            )
 
-        if granted and owner_type == OwnerType.COMPANY and buyer_id and not automatic:
-            purchases.log_top_up(session, owner_id, buyer_id)
+            if granted and owner_type == OwnerType.COMPANY and buyer_id and not automatic:
+                purchases.log_top_up(session, owner_id, buyer_id)
+    except WalletGone:
+        # Deleted between the check at the start and now, with its company.
+        logger.error("Transaction %s pays into a wallet that's gone: refund it", transaction_id)
+
+        return False
 
     return granted
 

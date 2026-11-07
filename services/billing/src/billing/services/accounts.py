@@ -14,13 +14,15 @@ async def delete_company(company_id: str) -> None:
     referral and currency in one save. Its purchases stay for the accounts, and its AI costs and
     limit hits without the company."""
     await auto_top_ups.turn_off(OwnerType.COMPANY, company_id)
-    await ledger.delete_history(Session, company_id)
 
+    # The wallet first: from here a payment arriving finds it gone (ledger.lock_wallet), so no
+    # entry lands after the history's batches.
     async with Session.begin() as session:
         await ledger.delete_wallet(session, company_id)
         await referrals.forget(session, OwnerType.COMPANY, company_id)
         await currencies.forget(session, ChoiceOwner.COMPANY, company_id)
 
+    await ledger.delete_history(Session, company_id)
     await usage.forget(Session, "company_id", company_id)
 
 

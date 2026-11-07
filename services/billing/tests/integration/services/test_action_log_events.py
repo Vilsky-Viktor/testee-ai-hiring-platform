@@ -13,8 +13,8 @@ from billing.constants.products import TOP_UPS, OwnerType
 from billing.core.db import Session
 from billing.models.outbox import OutboxEvent
 from billing.schemas.billing import AutoTopUpIn
-from billing.services import auto_top_ups, currencies, topups
-from tests.integration.factories import welcomed
+from billing.services import auto_top_ups, currencies
+from tests.integration.factories import granted, welcomed
 from tests.integration.services.test_auto_top_ups import checkout_data
 
 NOW = datetime(2026, 10, 16, 12, tzinfo=UTC)
@@ -44,11 +44,11 @@ def test_a_members_top_up_is_logged_once_and_an_automatic_one_not(run):
         await welcomed(acme, f"{acme}@example.com")
 
         for _ in range(2):
-            await topups.grant(
+            await granted(
                 OwnerType.COMPANY, acme, 1_000, 1, paid, TOPUP.key, "ann", "1000", "USD", NOW
             )
 
-        await topups.grant(
+        await granted(
             OwnerType.COMPANY,
             acme,
             1_000,

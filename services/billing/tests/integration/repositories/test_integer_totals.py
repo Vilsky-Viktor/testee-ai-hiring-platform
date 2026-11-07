@@ -14,7 +14,7 @@ from billing.core.db import Session
 from billing.helpers.history import history_entry_out
 from billing.models.billing import Purchase
 from billing.repositories import history, purchases
-from billing.services import topups
+from tests.integration.factories import granted
 from tests.integration.transactions import transaction
 
 COMPANY = OwnerType.COMPANY
@@ -27,7 +27,7 @@ def test_a_top_up_keeps_its_total_as_an_integer_and_the_api_as_a_string(run):
     txn = f"txn_{uuid.uuid4().hex}"
 
     async def scenario():
-        await topups.grant(COMPANY, acme, 5_000, 1, txn, "topup_50", ann, "750", "JPY", NOW)
+        await granted(COMPANY, acme, 5_000, 1, txn, "topup_50", ann, "750", "JPY", NOW)
 
         async with Session() as session:
             stored = await session.scalar(

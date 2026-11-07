@@ -11,7 +11,7 @@ from billing.constants.products import OwnerType
 from billing.models.billing import Entry, Purchase
 from billing.repositories import company_actions
 from billing.repositories.events import save
-from billing.repositories.ledger import add, ensure, wallet
+from billing.repositories.ledger import add, lock_wallet, wallet
 
 
 async def grant(
@@ -32,7 +32,8 @@ async def grant(
     """Adds a paid top-up once per product of a transaction, however often Paddle retries, with
     the events (type, data) `events_for` makes from the credits available after it, for the
     outbox in the same transaction. `credits` is what the whole line buys; `quantity` is kept for
-    the accounts."""
+    the accounts. Raises WalletGone when its company was deleted."""
+    await lock_wallet(session, owner_type, owner_id)
     new = await session.scalar(
         insert(Purchase)
         .values(
@@ -53,7 +54,6 @@ async def grant(
     if new is None:
         return False
 
-    await ensure(session, owner_type, owner_id)
     await add(
         session,
         owner_type,
@@ -115,7 +115,8 @@ async def take_back(
     it negative), with `events` for the outbox when it moves them, and returns how many credits
     the transaction's adjustments have taken back so far, less what reversals returned. The
     transaction's lines are locked, so adjustments of one transaction arriving together are
-    counted one after the other."""
+    counted one after the other. Raises WalletGone when its company was deleted."""
+    await lock_wallet(session, owner_type, owner_id)
     prefix = f"adjustment:{transaction_id}:"
     await session.execute(
         select(Purchase.id)
@@ -129,7 +130,6 @@ async def take_back(
     )
 
     if counted is None:
-        await ensure(session, owner_type, owner_id)
         moved = await add(
             session, owner_type, owner_id, amount, prefix + adjustment_id, reason, total, currency
         )

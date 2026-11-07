@@ -14,10 +14,10 @@ from testee_common.db.lock_waits import hold_first_commit, race
 from billing.constants.credits import CANDIDATE_CREDITS, WELCOME_COMPANY, Reason
 from billing.constants.currencies import Currency
 from billing.constants.products import TOP_UPS, OwnerType
-from billing.repositories import auto_top_ups, ledger
-from billing.services import currencies, holds, refunds, topups
+from billing.repositories import auto_top_ups, history, ledger
+from billing.services import accounts, currencies, holds, refunds, topups
 from tests.integration import transactions
-from tests.integration.factories import welcomed
+from tests.integration.factories import granted, welcomed
 from tests.integration.services.test_auto_top_up_price_notices import agreed_at, notices
 from tests.integration.services.test_auto_top_up_retries import running_low
 
@@ -93,7 +93,7 @@ def test_a_top_up_paddle_sends_twice_at_once_is_granted_once(run, monkeypatch):
     top_up = TOP_UPS[0]
 
     def grant():
-        return topups.grant(
+        return granted(
             COMPANY, acme, 1_000, 1, f"txn_{acme}", top_up.key, "ann", "1000", "USD", NOW
         )
 
@@ -105,6 +105,50 @@ def test_a_top_up_paddle_sends_twice_at_once_is_granted_once(run, monkeypatch):
         return results, wallet.balance
 
     assert run(scenario()) == ((True, False), 1_000)
+
+
+def test_a_top_up_landing_while_its_company_is_deleted_leaves_nothing_behind(run, monkeypatch):
+    """The deletion waits on the wallet the top-up locked, then takes the credits with it."""
+    acme = str(uuid.uuid4())
+
+    async def scenario():
+        await welcomed(acme, f"{acme}@example.com")
+        held = hold_first_commit(monkeypatch, topups)
+        await race(
+            os.environ["DATABASE_URL"],
+            held,
+            topups.grant(
+                COMPANY, acme, 1_000, 1, f"txn_{acme}", TOP_UPS[0].key, "ann", "1000", "USD", NOW
+            ),
+            accounts.delete_company(acme),
+        )
+
+        return (
+            await transactions.transaction(ledger.wallets, COMPANY, [acme]),
+            await transactions.transaction(history.page, COMPANY, acme, 0, 10),
+        )
+
+    assert run(scenario()) == ({}, [])
+
+
+def test_a_top_up_after_its_company_was_deleted_makes_no_wallet_and_says_to_refund_it(
+    run, monkeypatch
+):
+    acme = str(uuid.uuid4())
+    errors = []
+    monkeypatch.setattr(topups.logger, "error", lambda text, *args: errors.append(text % args))
+
+    async def scenario():
+        await welcomed(acme, f"{acme}@example.com")
+        await accounts.delete_company(acme)
+        added = await topups.grant(
+            COMPANY, acme, 1_000, 1, f"txn_{acme}", TOP_UPS[0].key, "ann", "1000", "USD", NOW
+        )
+
+        return added, await transactions.transaction(ledger.wallets, COMPANY, [acme])
+
+    assert run(scenario()) == (False, {})
+    assert errors == [f"Transaction txn_{acme} pays into a wallet that's gone: refund it"]
 
 
 def test_two_checks_at_once_charge_the_automatic_top_up_once(run, monkeypatch, paddle_calls):
@@ -134,7 +178,7 @@ def test_a_refund_and_a_candidates_hold_at_once_cant_both_take_the_last_credits(
     txn = f"txn_{uuid.uuid4().hex[:26]}"
 
     async def scenario():
-        await topups.grant(
+        await granted(
             COMPANY, acme, 500, 1, txn, "topup_50", "ann", "500", "USD", datetime.now(UTC)
         )
         held = hold_first_commit(monkeypatch, refunds)
@@ -159,7 +203,7 @@ def test_a_candidates_hold_first_leaves_the_refund_nothing_to_take(run, monkeypa
     txn = f"txn_{uuid.uuid4().hex[:26]}"
 
     async def scenario():
-        await topups.grant(
+        await granted(
             COMPANY, acme, 500, 1, txn, "topup_50", "ann", "500", "USD", datetime.now(UTC)
         )
         held = hold_first_commit(monkeypatch, transactions)
@@ -193,7 +237,7 @@ def test_two_clicks_at_once_make_one_refund(run, monkeypatch):
     txn = f"txn_{uuid.uuid4().hex[:26]}"
 
     async def scenario():
-        await topups.grant(
+        await granted(
             COMPANY, acme, 500, 1, txn, "topup_50", "ann", "500", "USD", datetime.now(UTC)
         )
         held = hold_first_commit(monkeypatch, refunds)
