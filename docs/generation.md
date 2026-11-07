@@ -185,7 +185,7 @@ Once a week (Mondays, 05:00 UTC, `/internal/schedules/patterns` on the worker) g
 - Stored: the rule's text, the flag, how many questions showed it (a count only), when it was first and last seen, its status (proposed, approved, dismissed, in use), who reviewed it when, and for one in use the eval run that put it there. No question ids or text. A known rule found again adds to its count and last seen; a dismissed one stays dismissed and is never proposed again. What one flag's call found is saved in one go after the call: the new rules and the known ones' counts together, or, on a failure, none of them.
 - Each flag is read once a week (a Redis key per flag, kept 6 days), so a retried or repeated run counts no question twice; one run at a time (a lock), and none during the emergency pause. Its AI cost is recorded under its own line, "Question quality patterns".
 - Superadmins approve or dismiss the proposed rules on the admin zone's Questions tab, under Patterns (see [Admin zone](features/admin-zone.md#questions)). An approved rule is only a candidate: it's used in generation once the eval gate below shows it helps.
-- In production the job is created paused (`infra/terraform/jobs.tf`) until the terms and privacy that allow it are in force (their versions from 2026-10-23 on).
+- In production the job is created paused (`infra/terraform/jobs.tf`), and step 15 of [infra/README.md](../infra/README.md)'s bootstrap resumes it; the terms and privacy allow it since their 2026-10-23 version.
 
 ### Rules in use and the eval gate
 
