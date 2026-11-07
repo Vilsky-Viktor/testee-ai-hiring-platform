@@ -84,6 +84,10 @@ DAY_SECONDS = 24 * HOUR_SECONDS
 # budget (infra/terraform/database.tf).
 DB_POOL_SIZE = 2
 DB_MAX_OVERFLOW = 1
+# A request gives up waiting for a pooled connection after this long and is answered 503 with
+# DB_POOL_RETRY_SECONDS to wait, so a slow dependency sheds work instead of queueing it all.
+DB_POOL_TIMEOUT_SECONDS = 5
+DB_POOL_RETRY_SECONDS = 5
 # A pooled connection is replaced once it's this old, instead of pinged before each use (a
 # SELECT 1 per checkout). Nothing drops idle ones on the way (Postgres has no idle timeout set,
 # and the Cloud SQL connector none); one killed by a database restart fails one request, and
@@ -205,6 +209,9 @@ FUNNEL_PREFIX = "funnel."
 
 # Holds the referral code from a ?ref= link until the new person signs up or makes a company.
 REFERRAL_COOKIE = "testee_ref"
+# A referral code's shape, as billing makes them (URL-safe): one that doesn't read right is no
+# code. frontend/src/config/referral.ts mirrors it.
+REFERRAL_CODE_PATTERN = r"[A-Za-z0-9_-]{4,16}"
 
 # A test's title, as its company can rename it; generated titles aim for 60.
 MAX_TITLE_LENGTH = 70
@@ -287,6 +294,10 @@ LEGAL_VERSIONS = {
 # The sign-in a company's own platform gives its candidate with the invite link (no email, no
 # account of their own): companies signs it in, library counts it as no sign-up.
 GUEST_UID_PREFIX = "guest-"
+# All a guest's sign-in reaches, in any service: the interview it came for and its own account.
+# Anyone with the invite link can get one, so everything else (practice, the assistant, making a
+# company) acts as if it weren't there.
+GUEST_PATHS = ("/invites/", "/sessions/", "/candidates/", "/me/")
 
 # Money as people read it (money.py): a currency pattern's decimals, left out of a whole amount
 # ("$5", not "$5.00"), and where letters of a currency's symbol meet its number ("CHF2.60"),

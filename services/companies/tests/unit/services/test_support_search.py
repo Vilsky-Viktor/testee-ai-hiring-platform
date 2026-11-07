@@ -8,7 +8,7 @@ from types import SimpleNamespace
 import pytest
 
 from companies.constants.superadmin import SUPPORT_RESULTS
-from companies.integrations import accounts, billing
+from companies.integrations import accounts, billing_purchases
 from companies.repositories import companies, superadmin_companies, superadmin_support
 from companies.services import support_search
 
@@ -78,7 +78,7 @@ def stored(monkeypatch):
     monkeypatch.setattr(superadmin_support, "candidate", candidate)
     monkeypatch.setattr(accounts, "account", account)
     monkeypatch.setattr(accounts, "account_by_email", account_by_email)
-    monkeypatch.setattr(billing, "purchase_owner", purchase_owner)
+    monkeypatch.setattr(billing_purchases, "purchase_owner", purchase_owner)
     monkeypatch.setattr(superadmin_support, "companies_of_member", companies_of_member)
     monkeypatch.setattr(superadmin_support, "invites_to", invites_to)
     monkeypatch.setattr(superadmin_support, "companies_of_user", companies_of_user)

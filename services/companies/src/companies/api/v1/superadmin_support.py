@@ -7,7 +7,7 @@ from testee_common.auth.user import User
 from testee_common.db.paging import PageParams
 
 from companies.core.db import Session
-from companies.integrations import billing
+from companies.integrations import billing_purchases
 from companies.models.companies import Company
 from companies.repositories import companies, superadmin_support
 from companies.schemas.audit import ActionOut
@@ -140,7 +140,7 @@ async def get_invoice(
     """A temporary link to the invoice of one of the company's top-ups."""
     await viewed(company_id, f"invoice {transaction_id}", superadmin)
 
-    return InvoiceOut(url=await billing.company_invoice(company_id, transaction_id))
+    return InvoiceOut(url=await billing_purchases.company_invoice(company_id, transaction_id))
 
 
 @router.post("/companies/{company_id}/adjustments", status_code=status.HTTP_204_NO_CONTENT)

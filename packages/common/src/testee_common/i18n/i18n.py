@@ -7,12 +7,15 @@ from fastapi.exception_handlers import (
 )
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
+from sqlalchemy.exc import TimeoutError as PoolTimeout
 from starlette.exceptions import HTTPException
-from testee_common.config.constants import DEFAULT_LANGUAGE, LANGUAGES
+from testee_common.config.constants import DB_POOL_RETRY_SECONDS, DEFAULT_LANGUAGE, LANGUAGES
 from testee_common.i18n.translations import TRANSLATIONS
 
 # Pydantic's prefix on messages raised from a validator.
 VALUE_ERROR = "Value error, "
+# Told when no database connection came free in time.
+TOO_BUSY = "Too many requests. Try again later."
 # Traditional Chinese (Taiwan's, Hong Kong's, Macau's, or the Hant script): never given the
 # Simplified Chinese that "zh" is.
 TRADITIONAL_CHINESE = ("zh-tw", "zh-hk", "zh-mo", "zh-hant")
@@ -114,5 +117,13 @@ def add_localized_errors(app: FastAPI, codes: dict[int, str] | None = None) -> N
             {"detail": jsonable_encoder(errors), "code": codes[422]}, status_code=422
         )
 
+    async def no_free_connection(request: Request, error: PoolTimeout):
+        return JSONResponse(
+            {"detail": translate(TOO_BUSY, request_language(request))},
+            status_code=503,
+            headers={"Retry-After": str(DB_POOL_RETRY_SECONDS)},
+        )
+
     app.add_exception_handler(HTTPException, http_error)
     app.add_exception_handler(RequestValidationError, validation_error)
+    app.add_exception_handler(PoolTimeout, no_free_connection)

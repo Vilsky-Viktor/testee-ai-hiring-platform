@@ -3,15 +3,22 @@ from datetime import datetime
 from uuid import UUID
 
 import httpx
-from fastapi import HTTPException, status
+from fastapi import status
 from testee_common.http import http
 from testee_common.http.backoff import wait_seconds
 from testee_common.http.http import bearer, passed_on
 from testee_common.i18n import error_codes as shared_codes
 from testee_common.i18n.i18n import CodedError
+from testee_common.redis import memory_cache
 
 from companies.config import settings
-from companies.constants.billing import WELCOME_ATTEMPTS, WELCOME_FIRST_WAIT_SECONDS
+from companies.constants.billing import (
+    PAID_CACHE_SECONDS,
+    READ_TIMEOUT_SECONDS,
+    WELCOME_ATTEMPTS,
+    WELCOME_FIRST_WAIT_SECONDS,
+)
+from companies.constants.invites import SETTLE_BATCH
 from companies.core.security import service_token
 
 
@@ -57,6 +64,21 @@ async def release_candidate(key: str) -> None:
     response.raise_for_status()
 
 
+async def settle_candidates(charge: list[str], release: list[str]) -> None:
+    """Candidates' credits taken (`charge`) or given back (`release`), at most SETTLE_BATCH of
+    each a call."""
+    for start in range(0, max(len(charge), len(release)), SETTLE_BATCH):
+        body = {
+            "charge": charge[start : start + SETTLE_BATCH],
+            "release": release[start : start + SETTLE_BATCH],
+        }
+        response = await http.get_client().post(
+            f"{settings.billing_url}/internal/candidates/settle", json=body, headers=_headers()
+        )
+
+        response.raise_for_status()
+
+
 async def welcome_company(
     company_id: UUID,
     owner_email: str,
@@ -99,6 +121,7 @@ async def company_referral(company_id: UUID) -> dict:
     response = await http.get_client().get(
         f"{settings.billing_url}/internal/companies/{company_id}/referral",
         headers=_headers(),
+        timeout=READ_TIMEOUT_SECONDS,
     )
 
     response.raise_for_status()
@@ -107,18 +130,31 @@ async def company_referral(company_id: UUID) -> dict:
 
 
 async def company_paid(company_id: UUID) -> bool:
-    """Whether the company ever topped up. When billing can't say, it counts as not: the
-    company is then held to the daily limit for everyone, rather than refused."""
+    """Whether the company ever topped up, which is on nearly every page, so a slow billing can't
+    hold them up. Only a yes is kept, as it never changes back and a first top-up shows at once.
+    When billing can't say, it counts as not: the company is then held to the daily limit for
+    everyone, rather than refused."""
+    key = f"paid:company:{company_id}"
+
+    if memory_cache.get(key):
+        return True
+
     try:
         response = await http.get_client().get(
             f"{settings.billing_url}/internal/companies/{company_id}/paid",
             headers=_headers(),
+            timeout=READ_TIMEOUT_SECONDS,
         )
         response.raise_for_status()
     except httpx.HTTPError:
         return False
 
-    return response.json()["paid"]
+    paid = response.json()["paid"]
+
+    if paid:
+        memory_cache.put(key, True, PAID_CACHE_SECONDS)
+
+    return paid
 
 
 async def company_credits(company_id: UUID) -> dict:
@@ -126,6 +162,7 @@ async def company_credits(company_id: UUID) -> dict:
     response = await http.get_client().get(
         f"{settings.billing_url}/internal/companies/{company_id}/credits",
         headers=_headers(),
+        timeout=READ_TIMEOUT_SECONDS,
     )
 
     response.raise_for_status()
@@ -181,6 +218,7 @@ async def company_history(
         f"{settings.billing_url}/internal/companies/{company_id}/history",
         params=params,
         headers=_headers(),
+        timeout=READ_TIMEOUT_SECONDS,
     )
 
     response.raise_for_status()
@@ -193,28 +231,12 @@ async def company_spent(company_id: UUID) -> int:
     response = await http.get_client().get(
         f"{settings.billing_url}/internal/companies/{company_id}/spent",
         headers=_headers(),
+        timeout=READ_TIMEOUT_SECONDS,
     )
 
     response.raise_for_status()
 
     return response.json()["credits"]
-
-
-async def company_invoice(company_id: UUID, transaction_id: str) -> str:
-    """A temporary link to the invoice of one of the company's top-ups; billing's 404 for any
-    other transaction reaches the user unchanged."""
-    response = await http.get_client().get(
-        f"{settings.billing_url}/internal/companies/{company_id}/invoice",
-        params={"transaction_id": transaction_id},
-        headers=_headers(),
-    )
-
-    if response.status_code == status.HTTP_404_NOT_FOUND:
-        raise HTTPException(status.HTTP_404_NOT_FOUND, response.json()["detail"])
-
-    response.raise_for_status()
-
-    return response.json()["url"]
 
 
 async def turn_off_auto_top_up(company_id: UUID, buyer_id: str | None = None) -> None:
@@ -230,36 +252,6 @@ async def turn_off_auto_top_up(company_id: UUID, buyer_id: str | None = None) ->
     response.raise_for_status()
 
 
-async def purchase_owner(transaction_id: str) -> dict | None:
-    """Whose wallet a top-up's Paddle transaction paid into (`owner_type`, `owner_id`); None
-    when no top-up has it."""
-    response = await http.get_client().get(
-        f"{settings.billing_url}/internal/purchases/{transaction_id}",
-        headers=_headers(),
-    )
-
-    if response.status_code == status.HTTP_404_NOT_FOUND:
-        return None
-
-    response.raise_for_status()
-
-    return response.json()
-
-
-async def buyer_purchases(user_id: str) -> list[dict]:
-    """The company top-ups the user paid for, one per transaction, newest first (at most
-    billing's limit): {"transaction_id", "company_id", "total", "currency", "created_at"}."""
-    response = await http.get_client().get(
-        f"{settings.billing_url}/internal/purchases",
-        params={"buyer_id": user_id},
-        headers=_headers(),
-    )
-
-    response.raise_for_status()
-
-    return response.json()
-
-
 async def candidate_hold(key: str) -> str | None:
     """Whether the credits of the invite with that key are open, charged or released; None
     when none were held."""
@@ -267,6 +259,7 @@ async def candidate_hold(key: str) -> str | None:
         f"{settings.billing_url}/internal/candidates/hold",
         params={"key": key},
         headers=_headers(),
+        timeout=READ_TIMEOUT_SECONDS,
     )
 
     if response.status_code == status.HTTP_404_NOT_FOUND:

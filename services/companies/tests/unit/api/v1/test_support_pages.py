@@ -8,7 +8,7 @@ from datetime import UTC, datetime
 
 import pytest
 
-from companies.integrations import accounts, billing, library, rounds
+from companies.integrations import accounts, billing, billing_purchases, library, rounds
 from companies.models.companies import Company
 from companies.models.interviews import Interview
 from companies.models.invites import CandidateInvite
@@ -103,7 +103,7 @@ def stored(monkeypatch, stored_candidates):
 
     monkeypatch.setattr(accounts, "account", account)
     monkeypatch.setattr(superadmin_support, "companies_of_user", companies_of_user)
-    monkeypatch.setattr(billing, "buyer_purchases", buyer_purchases)
+    monkeypatch.setattr(billing_purchases, "buyer_purchases", buyer_purchases)
     monkeypatch.setattr(companies, "names", names)
     monkeypatch.setattr(superadmin_support, "candidate", candidate)
     monkeypatch.setattr(superadmin_support, "interview", interview)

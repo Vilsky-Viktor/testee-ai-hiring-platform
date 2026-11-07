@@ -9,7 +9,7 @@ from testee_common.config.constants import MAX_PAGE_SIZE
 from companies.constants.superadmin import CREDIT_STATES
 from companies.core.db import Session
 from companies.helpers.candidates import candidate_out
-from companies.integrations import accounts, billing, rounds
+from companies.integrations import accounts, billing, billing_purchases, rounds
 from companies.repositories import candidates, companies, members, superadmin_support
 from companies.schemas.superadmin_support import (
     SupportCandidateOut,
@@ -40,7 +40,7 @@ async def user_page(user_id: str) -> SupportUserOut | None:
     if account is None and not memberships:
         return None
 
-    bought = await billing.buyer_purchases(user_id)
+    bought = await billing_purchases.buyer_purchases(user_id)
 
     async with Session() as session:
         names = await companies.names(session, [row["company_id"] for row in bought])

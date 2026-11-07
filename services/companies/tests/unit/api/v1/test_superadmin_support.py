@@ -10,7 +10,7 @@ import httpx
 import pytest
 from testee_common.http import http
 
-from companies.integrations import accounts, billing
+from companies.integrations import accounts, billing, billing_purchases
 from companies.models.companies import Company, Member
 from companies.repositories import companies, members
 
@@ -136,8 +136,8 @@ def test_an_unknown_transaction_has_no_owner(billing_answers):
         {"owner_type": "company", "owner_id": "acme"},
     )
 
-    assert asyncio.run(billing.purchase_owner("txn_01")) is None
-    assert asyncio.run(billing.purchase_owner("txn_02")) == {
+    assert asyncio.run(billing_purchases.purchase_owner("txn_01")) is None
+    assert asyncio.run(billing_purchases.purchase_owner("txn_02")) == {
         "owner_type": "company",
         "owner_id": "acme",
     }

@@ -11,7 +11,7 @@ from companies.constants.superadmin import (
     SupportKind,
 )
 from companies.core.db import Session
-from companies.integrations import accounts, billing
+from companies.integrations import accounts, billing_purchases
 from companies.repositories import companies, superadmin_companies, superadmin_support
 from companies.schemas.superadmin_support import SupportResultOut
 
@@ -131,7 +131,7 @@ async def by_id(query: str) -> list[SupportResultOut]:
 
 async def by_transaction(query: str) -> list[SupportResultOut]:
     """The company a top-up's transaction paid into, as billing knows it."""
-    owner = await billing.purchase_owner(query)
+    owner = await billing_purchases.purchase_owner(query)
     company_id = as_uuid(owner["owner_id"]) if owner else None
 
     return await company_by_id(company_id) if company_id else []

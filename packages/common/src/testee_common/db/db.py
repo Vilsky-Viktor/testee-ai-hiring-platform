@@ -1,11 +1,22 @@
 import time
 
-from sqlalchemy import Engine, create_engine, delete, inspect, select, text, true, update
+from sqlalchemy import (
+    Engine,
+    create_engine,
+    delete,
+    inspect,
+    select,
+    text,
+    true,
+    tuple_,
+    update,
+)
 from sqlalchemy.ext.asyncio import AsyncEngine, async_sessionmaker, create_async_engine
 from testee_common.config.constants import (
     DB_MAX_OVERFLOW,
     DB_POOL_RECYCLE_SECONDS,
     DB_POOL_SIZE,
+    DB_POOL_TIMEOUT_SECONDS,
     DELETE_BATCH,
     IDLE_IN_TRANSACTION_TIMEOUT,
     MIGRATION_LOCK_TIMEOUT,
@@ -45,6 +56,7 @@ def database(
         sqlalchemy_url(url),
         hide_parameters=True,
         pool_recycle=DB_POOL_RECYCLE_SECONDS,
+        pool_timeout=DB_POOL_TIMEOUT_SECONDS,
         pool_size=pool_size,
         max_overflow=max_overflow,
         connect_args={
@@ -77,12 +89,13 @@ async def delete_in_batches(
     committed on its own, and returns how many went. For old rows (retention) and a deleted
     tenant's: a run cut off midway keeps what it deleted, and the next run goes on. With `until`
     (time.monotonic()), no batch starts after it, so a scheduled job keeps to its deadline."""
-    (key,) = inspect(model).primary_key
+    columns = inspect(model).primary_key
+    key = tuple_(*columns) if len(columns) > 1 else columns[0]
     batch = batch or DELETE_BATCH
     total = 0
 
     while True:
-        chosen = select(key).where(*conditions).limit(batch)
+        chosen = select(*columns).where(*conditions).limit(batch)
 
         async with sessionmaker() as session:
             result = await session.execute(delete(model).where(key.in_(chosen)))

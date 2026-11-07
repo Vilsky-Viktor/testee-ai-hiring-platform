@@ -2,6 +2,7 @@ import pytest
 from fastapi import FastAPI, HTTPException
 from fastapi.testclient import TestClient
 from pydantic import BaseModel, field_validator
+from sqlalchemy.exc import TimeoutError as PoolTimeout
 from testee_common.config.constants import RATE_LIMITED
 from testee_common.i18n.i18n import CodedError, TemplateError, add_localized_errors, language_of
 
@@ -20,6 +21,11 @@ class Body(BaseModel):
 
 app = FastAPI()
 add_localized_errors(app)
+
+
+@app.get("/pool-exhausted")
+def pool_exhausted():
+    raise PoolTimeout("no connection")
 
 
 @app.get("/limited")
@@ -190,3 +196,11 @@ def test_with_codes_every_refusal_has_one_and_validation_still_names_each_field(
         (["body", "title"], "Value error, Нужно название")
     ]
     assert unknown_route.json()["code"] == "not_found"
+
+
+def test_no_free_database_connection_is_a_503_that_says_when_to_retry():
+    response = client.get("/pool-exhausted", headers={"Accept-Language": "de"})
+
+    assert response.status_code == 503
+    assert response.headers["Retry-After"] == "5"
+    assert response.json()["detail"] == "Zu viele Anfragen. Versuche es später erneut."

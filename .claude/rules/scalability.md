@@ -116,8 +116,9 @@ Points other rule files already hold are only pointed at.
   longer than its Cloud Run timeout.
 - Retries at one layer, with jittered backoff and a cap (`.claude/rules/python-services.md`).
 - Overload sheds early: `429` with `Retry-After` for a caller over its limit, `503` with
-  `Retry-After` for a daily cap or a paused feature; a non-essential part of a page (a count, a
-  news title, the bell) is left out rather than failing the page.
+  `Retry-After` for a daily cap, a paused feature or no free database connection within
+  `DB_POOL_TIMEOUT_SECONDS`; a non-essential part of a page (a count, a news title, the bell) is
+  left out rather than failing the page.
 - Not adopted: circuit breakers, retry budgets and criticality classes (rule 4).
 
 ## Load tests and capacity
