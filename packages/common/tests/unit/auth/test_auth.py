@@ -1,15 +1,29 @@
+from types import SimpleNamespace
 from unittest import mock
 
 import pytest
 from fastapi import HTTPException, Request
 from fastapi.security import HTTPAuthorizationCredentials
 from firebase_admin import auth as firebase_auth
-from testee_common.auth.auth import current_user, fresh_user, optional_user, verify
+from testee_common.auth.auth import current_user, fresh_user, verify
 from testee_common.auth.key_actor import key_actor
 from testee_common.auth.service_auth import issue_token
 from testee_common.config.constants import SIGN_IN_UNAVAILABLE
+from testee_common.redis import memory_cache
 
-CLAIMS = {"uid": "ann", "email": "ann@example.com", "email_verified": True, "name": "Ann"}
+CLAIMS = {
+    "uid": "ann",
+    "email": "ann@example.com",
+    "email_verified": True,
+    "name": "Ann",
+    "iat": 1_000,
+}
+ACCOUNT = SimpleNamespace(disabled=False, tokens_valid_after_timestamp=500_000)
+
+
+@pytest.fixture(autouse=True)
+def nothing_kept():
+    memory_cache._entries.clear()
 
 
 def test_a_valid_token_gives_its_user():
@@ -67,24 +81,39 @@ def test_a_signed_in_request_names_the_user_to_sentry_by_id_only():
     [("GET", False), ("HEAD", False), ("POST", True), ("PUT", True), ("DELETE", True)],
 )
 def test_only_a_change_asks_firebase_whether_the_sign_in_was_revoked(method, checked):
-    with mock.patch.object(firebase_auth, "verify_id_token", return_value=CLAIMS) as verified:
+    with (
+        mock.patch.object(firebase_auth, "verify_id_token", return_value=CLAIMS),
+        mock.patch.object(firebase_auth, "get_user", return_value=ACCOUNT) as asked,
+    ):
         current_user(request(method), CREDENTIALS)
-        optional_user(request(method), CREDENTIALS)
 
-    assert [call.kwargs["check_revoked"] for call in verified.call_args_list] == [checked] * 2
+    assert asked.called is checked
+
+
+def test_an_instance_asks_firebase_about_an_account_once_a_minute():
+    with (
+        mock.patch.object(firebase_auth, "verify_id_token", return_value=CLAIMS),
+        mock.patch.object(firebase_auth, "get_user", return_value=ACCOUNT) as asked,
+    ):
+        current_user(request("POST"), CREDENTIALS)
+        current_user(request("POST"), CREDENTIALS)
+
+    assert asked.call_count == 1
 
 
 @pytest.mark.parametrize(
-    "error",
+    "account",
     [
-        firebase_auth.RevokedIdTokenError("revoked"),
-        firebase_auth.UserNotFoundError("deleted"),
-        firebase_auth.UserDisabledError("disabled"),
+        {"side_effect": firebase_auth.UserNotFoundError("deleted")},
+        {"return_value": SimpleNamespace(disabled=True, tokens_valid_after_timestamp=0)},
+        # Signed out everywhere after this token was made.
+        {"return_value": SimpleNamespace(disabled=False, tokens_valid_after_timestamp=2_000_000)},
     ],
 )
-def test_a_deleted_or_revoked_account_cant_change_anything(error):
+def test_a_deleted_or_revoked_account_cant_change_anything(account):
     with (
-        mock.patch.object(firebase_auth, "verify_id_token", side_effect=error),
+        mock.patch.object(firebase_auth, "verify_id_token", return_value=CLAIMS),
+        mock.patch.object(firebase_auth, "get_user", **account),
         pytest.raises(HTTPException) as raised,
     ):
         current_user(request("POST"), CREDENTIALS)
@@ -96,7 +125,8 @@ def test_firebase_unreachable_while_checking_revocation_is_a_503():
     error = firebase_auth.UnexpectedResponseError("down", cause=None, http_response=None)
 
     with (
-        mock.patch.object(firebase_auth, "verify_id_token", side_effect=error),
+        mock.patch.object(firebase_auth, "verify_id_token", return_value=CLAIMS),
+        mock.patch.object(firebase_auth, "get_user", side_effect=error),
         pytest.raises(HTTPException) as raised,
     ):
         current_user(request("POST"), CREDENTIALS)
@@ -147,6 +177,36 @@ def test_a_signed_out_or_bad_request_is_401_but_404_in_the_admin_zone():
             current_user(at(path), CREDENTIALS)
 
         assert signed_out.value.status_code == bad.value.status_code == code
+
+
+@pytest.mark.parametrize(
+    ("path", "reached"),
+    [
+        ("/sessions/1/step", True),
+        ("/invites/token/start", True),
+        ("/candidates/1/brand", True),
+        ("/me", True),
+        ("/me/legal-changes", True),
+        ("/practice/1", False),
+        ("/chat", False),
+        ("/companies", False),
+        ("/members/invites/token/accept", False),
+    ],
+)
+def test_a_guests_sign_in_reaches_only_its_interview_and_account(path, reached):
+    request = Request({"type": "http", "method": "GET", "path": path, "headers": []})
+    claims = {"uid": "guest-1", "email_verified": False}
+
+    with mock.patch.object(firebase_auth, "verify_id_token", return_value=claims):
+        if reached:
+            assert current_user(request, CREDENTIALS).uid == "guest-1"
+
+            return
+
+        with pytest.raises(HTTPException) as refused:
+            current_user(request, CREDENTIALS)
+
+    assert refused.value.status_code == 404
 
 
 def test_an_api_keys_token_from_the_assistant_is_the_key_for_reads_and_changes(monkeypatch):

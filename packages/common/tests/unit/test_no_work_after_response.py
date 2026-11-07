@@ -15,6 +15,8 @@ STARTS = re.compile(r"\b(create_task|ensure_future|BackgroundTasks|add_task)\(|B
 ALLOWED = {
     # A turn runs as a task its stream awaits in `finally`, so it ends with the request.
     "services/assistant/src/assistant/services/turns.py",
+    # An opened page's reads, each awaited by the blocks that need it before the page answers.
+    "services/assistant/src/assistant/services/live_blocks.py",
     # The instance's one Redis subscription for the bell's open streams, dropped with the last.
     "services/notifications/src/notifications/integrations/subscription.py",
     # Locally only: there's no Cloud Tasks queue, so a job calls the worker in the background.

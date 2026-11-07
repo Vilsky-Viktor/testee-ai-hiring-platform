@@ -18,6 +18,12 @@ from testee_common.config.constants import (
     SIGN_IN_UNAVAILABLE,
     SUPERADMIN_PREFIX,
 )
+from testee_common.config.sign_in_constants import (
+    GUEST_PATHS,
+    GUEST_UID_PREFIX,
+    REVOCATION_CACHE_SECONDS,
+)
+from testee_common.redis import memory_cache
 
 bearer = HTTPBearer()
 optional_bearer = HTTPBearer(auto_error=False)
@@ -31,17 +37,41 @@ def start_firebase(project_id: str) -> None:
     )
 
 
-def verify(token: str, check_revoked: bool = False) -> User | None:
+def refuse_revoked(claims: dict) -> None:
+    """Firebase's revocation check from the account as read at most REVOCATION_CACHE_SECONDS ago
+    on this instance: every write would otherwise be a call to Firebase, a candidate's answers
+    included. A deleted account raises at once when it's read, and is never kept."""
+    key = f"account:{claims['uid']}"
+    account = memory_cache.get(key)
+
+    if account is None:
+        found = firebase_auth.get_user(claims["uid"])
+        account = (found.disabled, found.tokens_valid_after_timestamp)
+        memory_cache.put(key, account, REVOCATION_CACHE_SECONDS)
+
+    disabled, valid_after = account
+
+    if disabled:
+        raise firebase_auth.UserDisabledError("The account is disabled")
+
+    if claims["iat"] * 1000 < valid_after:
+        raise firebase_auth.RevokedIdTokenError("The sign-in was revoked")
+
+
+def verify(token: str, check_revoked: bool = False, recently: bool = False) -> User | None:
     """The user a Firebase ID token belongs to, or None when it isn't valid. With
     `check_revoked`, Firebase is also asked whether the account still exists and its sign-ins
     weren't revoked (account deletion revokes them), which a valid token alone can't say for up
-    to an hour.
+    to an hour; with `recently`, the same from what it last said (refuse_revoked).
 
     When Google's signing certificates (or, checking revocation, Firebase) can't be reached, no
     token can be checked: that's our outage, not a bad token, so it's a 503 rather than a 401.
     """
     try:
         claims = firebase_auth.verify_id_token(token, check_revoked=check_revoked)
+
+        if recently:
+            refuse_revoked(claims)
     except (
         ValueError,
         firebase_auth.InvalidIdTokenError,
@@ -75,9 +105,10 @@ def writes(request: Request) -> bool:
 
 
 def signed_in(request: Request, token: str) -> User | None:
-    """A person's Firebase token (checked for revocation when the request writes), or an API
-    key's token from the assistant (key_user); None for anything else."""
-    return verify(token, check_revoked=writes(request)) or key_user(token)
+    """A person's Firebase token (checked for revocation when the request writes, within
+    REVOCATION_CACHE_SECONDS), or an API key's token from the assistant (key_user); None for
+    anything else."""
+    return verify(token, recently=writes(request)) or key_user(token)
 
 
 def current_user(
@@ -86,14 +117,19 @@ def current_user(
 ) -> User:
     """The signed-in user; 401 without a valid token, except on the admin zone's routes, which
     answer 404 to everyone else, signed out included, so they don't show they exist. An AI
-    agent signed in with an API key is the key (key_actor)."""
+    agent signed in with an API key is the key (key_actor). A guest's sign-in reaches only
+    GUEST_PATHS: 404 anywhere else."""
     user = signed_in(request, credentials.credentials) if credentials else None
+    path = request.scope.get("path", "")
 
     if user is None:
-        if request.scope.get("path", "").startswith(SUPERADMIN_PREFIX):
+        if path.startswith(SUPERADMIN_PREFIX):
             raise HTTPException(status.HTTP_404_NOT_FOUND, "Not found")
 
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Invalid token")
+
+    if user.uid.startswith(GUEST_UID_PREFIX) and not f"{path}/".startswith(GUEST_PATHS):
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Not found")
 
     # Errors from this request name the account by id only, never by email.
     sentry_sdk.set_user({"id": user.uid})
