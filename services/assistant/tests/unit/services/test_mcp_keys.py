@@ -95,6 +95,13 @@ def test_a_key_lists_only_what_its_permissions_allow():
     assert not names & {"get_me", "update_language", "list_members", "rename_company"}
 
 
+def test_a_key_that_can_create_interviews_cant_remove_one():
+    names = {tool.name for tool in mcp_tools.listed(key("interviews:create"))}
+
+    assert "retry_generation" in names
+    assert "cancel_generation" not in names
+
+
 @pytest.mark.parametrize(
     ("permission", "notes_tools"),
     [

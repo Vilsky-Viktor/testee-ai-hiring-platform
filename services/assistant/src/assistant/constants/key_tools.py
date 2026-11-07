@@ -33,7 +33,6 @@ KEY_TOOLS = {
     "create_interview_from_template": INTERVIEWS_CREATE,
     "review_generation": INTERVIEWS_CREATE,
     "retry_generation": INTERVIEWS_CREATE,
-    "cancel_generation": INTERVIEWS_CREATE,
     "search_templates": INTERVIEWS_CREATE,
     "list_template_filters": INTERVIEWS_CREATE,
     "get_template": INTERVIEWS_CREATE,
