@@ -54,7 +54,7 @@ One Cloud SQL instance, a database per service. Adding a migration: the `migrati
 Migrations run before the new version deploys, while the old one serves traffic, and a rollback
 runs older code on the newer schema.
 
-- Expand, then contract: add columns, tables and indexes first; switch the code; drop the old
+- From production on (until then, nothing old runs: remove the old in the same change): expand, then contract: add columns, tables and indexes first; switch the code; drop the old
   only once no running version reads it. Never rename or drop in the same release that stops
   using it; never change a column's type in place (add a column, backfill in batches, switch).
 - Migrations run with a short `lock_timeout` (about 5 s) and a `statement_timeout`, so a lock

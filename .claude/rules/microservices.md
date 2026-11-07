@@ -50,7 +50,8 @@ timeouts: `python-services.md`; scaling: `scalability.md`; tables: `database.md`
 - Each service builds its own image, runs its own migrations and can be rolled back alone.
   Releases deploy every service at one version (the release train stays: one developer);
   nothing may require two services to switch at the same moment.
-- Contracts change backward compatibly for at least one release: add fields, routes and event
+- From production on (until then, the old goes in the same change), contracts change backward
+  compatibly for at least one release: add fields, routes and event
   types first; switch the callers; remove the old only when no running version uses it. Never
   rename or drop a field, route or event type in the release that stops using it.
 - Consumers ignore fields and event types they don't know (tolerant reader); a producer never
