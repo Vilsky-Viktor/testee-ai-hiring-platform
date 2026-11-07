@@ -221,6 +221,7 @@ MESSAGES = {
     "This document has no such version.": "该文件没有此版本。",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "通知须在新版本适用前至少 14 天发出：请为其设定更晚的日期。",
     "This version's notice was already sent.": "此版本的通知已发送。",
+    "No email of this notice failed.": "此通知没有发送失败的邮件。",
     "Prices aren't available right now. Please try again in a minute.": "目前无法获取价格，请一分钟后重试。",
     "return_url must be an https address (http only on localhost, for testing).": "return_url 必须是 https 地址（http 仅限 localhost，用于测试）。",
     "The same request is still running. Try again shortly.": "相同的请求仍在处理中，请稍后再试。",

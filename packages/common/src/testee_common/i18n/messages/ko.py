@@ -219,6 +219,7 @@ MESSAGES = {
     "This document has no such version.": "이 문서에는 그런 버전이 없습니다.",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "알림은 새 버전이 적용되기 최소 14일 전에 발송됩니다. 더 늦은 날짜를 지정하세요.",
     "This version's notice was already sent.": "이 버전의 알림은 이미 발송되었습니다.",
+    "No email of this notice failed.": "이 공지에서 발송에 실패한 이메일이 없습니다.",
     "Prices aren't available right now. Please try again in a minute.": "지금은 가격을 확인할 수 없습니다. 1분 후에 다시 시도해 주세요.",
     "return_url must be an https address (http only on localhost, for testing).": "return_url은 https 주소여야 합니다(http는 테스트용으로 localhost에서만 가능합니다).",
     "The same request is still running. Try again shortly.": "같은 요청이 아직 처리 중입니다. 잠시 후 다시 시도해 주세요.",

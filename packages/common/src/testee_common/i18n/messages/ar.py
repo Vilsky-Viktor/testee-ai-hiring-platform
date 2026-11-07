@@ -219,6 +219,7 @@ MESSAGES = {
     "This document has no such version.": "لا توجد نسخة كهذه من هذا المستند.",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "يُرسل الإشعار قبل 14 يومًا على الأقل من سريان النسخة الجديدة: اختر لها تاريخًا لاحقًا.",
     "This version's notice was already sent.": "سبق إرسال إشعار هذه النسخة.",
+    "No email of this notice failed.": "لم يفشل أي بريد لهذا الإشعار.",
     "Prices aren't available right now. Please try again in a minute.": "الأسعار غير متاحة الآن. يُرجى المحاولة مرة أخرى بعد دقيقة.",
     "return_url must be an https address (http only on localhost, for testing).": "يجب أن يكون return_url عنوان https (يُسمح بـ http على localhost فقط، للاختبار).",
     "The same request is still running. Try again shortly.": "لا يزال الطلب نفسه قيد التنفيذ. حاول مرة أخرى بعد قليل.",

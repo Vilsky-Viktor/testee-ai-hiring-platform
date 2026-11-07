@@ -208,7 +208,7 @@
      "webhooks"
     ],
     "summary": "Resend Webhook",
-    "description": "Answered once the signature is checked and the event recorded (by its delivery id, so a\nrepeat is recorded once): its work runs from the email.webhook_received event\n(services/webhooks.py), retried by Pub/Sub, not before the answer.",
+    "description": "Answered once the signature is checked and the event recorded (by its delivery id, so a\nrepeat is recorded once): its work runs from the email.webhook_received event\n(services/webhooks.py), retried by Pub/Sub, not before the answer. Counted by sending address before the signature is\nchecked; with Redis down, not counted.",
     "operationId": "resend_webhook_webhooks_resend_post",
     "responses": {
      "204": {
@@ -233,7 +233,7 @@
      "internal"
     ],
     "summary": "Export User",
-    "description": "Accounts, for \"Download my data\": the user's own notifications and the Slack channels\nthey connected.",
+    "description": "Accounts, for \"Download my data\": the user's own notifications, the Slack channels they\nconnected, and what's kept about their address.",
     "operationId": "export_user_internal_users__user_id__export_post",
     "security": [
      {
@@ -251,6 +251,16 @@
       }
      }
     ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/UserEmailIn"
+       }
+      }
+     }
+    },
     "responses": {
      "200": {
       "description": "Successful Response",
@@ -371,7 +381,7 @@
      "slack"
     ],
     "summary": "Start",
-    "description": "Where \"Add to Slack\" goes: Slack's page to approve testee and pick a channel.",
+    "description": "Where \"Add to Slack\" goes: Slack's page to approve testee and pick a channel. The cookie\nmarks this browser: only it can finish the trip.",
     "operationId": "start_slack_start_get",
     "security": [
      {
@@ -420,7 +430,7 @@
      "slack"
     ],
     "summary": "Callback",
-    "description": "Slack sends the browser back here; the signed, one-time state says whose company it is.\nThen on to the company's Slack page.",
+    "description": "Slack sends the browser back here; the signed, one-time state says whose company it is,\nand the cookie that this browser started the trip. Then on to the company's Slack page.",
     "operationId": "callback_slack_callback_get",
     "parameters": [
      {
@@ -462,6 +472,22 @@
         }
        ],
        "title": "Error"
+      }
+     },
+     {
+      "name": "testee_slack",
+      "in": "cookie",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Testee Slack"
       }
      }
     ],
@@ -627,7 +653,7 @@
      "unsubscribe"
     ],
     "summary": "Unsubscribe",
-    "description": "Applies the link; no sign-in. The unsubscribe page's button posts here, and so do mail\nclients' own unsubscribe buttons (RFC 8058: `List-Unsubscribe=One-Click` as the body, which\nneeds nothing more). Safe to repeat.",
+    "description": "Applies the link; no sign-in. The unsubscribe page's button posts here, and so do mail\nclients' own unsubscribe buttons (RFC 8058: `List-Unsubscribe=One-Click` as the body, which\nneeds nothing more). Safe to repeat. Counted by address once the link is checked, as applying\nit calls accounts; with Redis down, not counted.",
     "operationId": "unsubscribe_unsubscribe__token__post",
     "parameters": [
      {
@@ -800,6 +826,52 @@
     "summary": "Send Notice",
     "description": "Emails the change to the document's current version from the next sending hour, and puts\nit in the bell.",
     "operationId": "send_notice_superadmin_legal_notices__document__post",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "document",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "enum": [
+        "terms",
+        "privacy",
+        "dpa"
+       ],
+       "type": "string",
+       "title": "Document"
+      }
+     }
+    ],
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/superadmin/legal-notices/{document}/retry": {
+   "post": {
+    "tags": [
+     "superadmin"
+    ],
+    "summary": "Retry Notice",
+    "description": "Sends the notice again, from the next sending hour, to those its email failed for.",
+    "operationId": "retry_notice_superadmin_legal_notices__document__retry_post",
     "security": [
      {
       "HTTPBearer": []
@@ -2507,6 +2579,10 @@
        "company_editors"
       ],
       "title": "Audience"
+     },
+     "failed": {
+      "type": "integer",
+      "title": "Failed"
      }
     },
     "type": "object",
@@ -2514,7 +2590,8 @@
      "document",
      "version",
      "state",
-     "audience"
+     "audience",
+     "failed"
     ],
     "title": "LegalNoticeOut"
    },

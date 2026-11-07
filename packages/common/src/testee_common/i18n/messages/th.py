@@ -221,6 +221,7 @@ MESSAGES = {
     "This document has no such version.": "เอกสารนี้ไม่มีเวอร์ชันดังกล่าว",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "ประกาศจะส่งออกอย่างน้อย 14 วันก่อนเวอร์ชันใหม่มีผล โปรดกำหนดวันที่ให้ช้ากว่านี้",
     "This version's notice was already sent.": "ส่งประกาศของเวอร์ชันนี้ไปแล้ว",
+    "No email of this notice failed.": "ไม่มีอีเมลของประกาศนี้ที่ส่งไม่สำเร็จ",
     "Prices aren't available right now. Please try again in a minute.": "ยังแสดงราคาไม่ได้ในขณะนี้ โปรดลองอีกครั้งในอีกหนึ่งนาที",
     "return_url must be an https address (http only on localhost, for testing).": "return_url ต้องเป็นที่อยู่ https (ใช้ http ได้เฉพาะบน localhost สำหรับการทดสอบ)",
     "The same request is still running. Try again shortly.": "คำขอเดียวกันยังดำเนินการอยู่ โปรดลองอีกครั้งในอีกสักครู่",

@@ -127,7 +127,8 @@ export interface paths {
      * Resend Webhook
      * @description Answered once the signature is checked and the event recorded (by its delivery id, so a
      *     repeat is recorded once): its work runs from the email.webhook_received event
-     *     (services/webhooks.py), retried by Pub/Sub, not before the answer.
+     *     (services/webhooks.py), retried by Pub/Sub, not before the answer. Counted by sending address before the signature is
+     *     checked; with Redis down, not counted.
      */
     post: operations["resend_webhook_webhooks_resend_post"]
     delete?: never
@@ -147,8 +148,8 @@ export interface paths {
     put?: never
     /**
      * Export User
-     * @description Accounts, for "Download my data": the user's own notifications and the Slack channels
-     *     they connected.
+     * @description Accounts, for "Download my data": the user's own notifications, the Slack channels they
+     *     connected, and what's kept about their address.
      */
     post: operations["export_user_internal_users__user_id__export_post"]
     delete?: never
@@ -187,7 +188,8 @@ export interface paths {
     }
     /**
      * Start
-     * @description Where "Add to Slack" goes: Slack's page to approve testee and pick a channel.
+     * @description Where "Add to Slack" goes: Slack's page to approve testee and pick a channel. The cookie
+     *     marks this browser: only it can finish the trip.
      */
     get: operations["start_slack_start_get"]
     put?: never
@@ -207,8 +209,8 @@ export interface paths {
     }
     /**
      * Callback
-     * @description Slack sends the browser back here; the signed, one-time state says whose company it is.
-     *     Then on to the company's Slack page.
+     * @description Slack sends the browser back here; the signed, one-time state says whose company it is,
+     *     and the cookie that this browser started the trip. Then on to the company's Slack page.
      */
     get: operations["callback_slack_callback_get"]
     put?: never
@@ -274,7 +276,8 @@ export interface paths {
      * Unsubscribe
      * @description Applies the link; no sign-in. The unsubscribe page's button posts here, and so do mail
      *     clients' own unsubscribe buttons (RFC 8058: `List-Unsubscribe=One-Click` as the body, which
-     *     needs nothing more). Safe to repeat.
+     *     needs nothing more). Safe to repeat. Counted by address once the link is checked, as applying
+     *     it calls accounts; with Redis down, not counted.
      */
     post: operations["unsubscribe_unsubscribe__token__post"]
     delete?: never
@@ -359,6 +362,26 @@ export interface paths {
      *     it in the bell.
      */
     post: operations["send_notice_superadmin_legal_notices__document__post"]
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  "/superadmin/legal-notices/{document}/retry": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /**
+     * Retry Notice
+     * @description Sends the notice again, from the next sending hour, to those its email failed for.
+     */
+    post: operations["retry_notice_superadmin_legal_notices__document__retry_post"]
     delete?: never
     options?: never
     head?: never
@@ -1026,6 +1049,8 @@ export interface components {
        * @enum {string}
        */
       audience: "everyone" | "company_editors"
+      /** Failed */
+      failed: number
     }
     /**
      * LegalNoticeState
@@ -1444,7 +1469,11 @@ export interface operations {
       }
       cookie?: never
     }
-    requestBody?: never
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["UserEmailIn"]
+      }
+    }
     responses: {
       /** @description Successful Response */
       200: {
@@ -1568,7 +1597,9 @@ export interface operations {
       }
       header?: never
       path?: never
-      cookie?: never
+      cookie?: {
+        testee_slack?: string | null
+      }
     }
     requestBody?: never
     responses: {
@@ -1810,6 +1841,35 @@ export interface operations {
     }
   }
   send_notice_superadmin_legal_notices__document__post: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        document: "terms" | "privacy" | "dpa"
+      }
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      204: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  retry_notice_superadmin_legal_notices__document__retry_post: {
     parameters: {
       query?: never
       header?: never

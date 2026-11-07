@@ -28,3 +28,14 @@ async def send_notice(
     it in the bell."""
     await legal_notices.ask(document, superadmin.uid)
     logger.warning("Superadmin %s asked for the %s change's notice", superadmin.uid, document)
+
+
+@router.post("/{document}/retry", status_code=status.HTTP_204_NO_CONTENT)
+async def retry_notice(
+    document: Literal["terms", "privacy", "dpa"], superadmin: SuperadminUser
+) -> None:
+    """Sends the notice again, from the next sending hour, to those its email failed for."""
+    again = await legal_notices.retry(document)
+    logger.warning(
+        "Superadmin %s asked for the %s notice again for %d", superadmin.uid, document, again
+    )

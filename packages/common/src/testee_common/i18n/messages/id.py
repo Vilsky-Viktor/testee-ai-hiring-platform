@@ -221,6 +221,7 @@ MESSAGES = {
     "This document has no such version.": "Dokumen ini tidak memiliki versi tersebut.",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "Pemberitahuan dikirim paling lambat 14 hari sebelum versi baru berlaku: beri tanggal yang lebih lambat.",
     "This version's notice was already sent.": "Pemberitahuan versi ini sudah dikirim.",
+    "No email of this notice failed.": "Tidak ada email pemberitahuan ini yang gagal.",
     "Prices aren't available right now. Please try again in a minute.": "Harga belum tersedia saat ini. Silakan coba lagi dalam satu menit.",
     "return_url must be an https address (http only on localhost, for testing).": "return_url harus berupa alamat https (http hanya di localhost, untuk pengujian).",
     "The same request is still running. Try again shortly.": "Permintaan yang sama masih diproses. Coba lagi sebentar lagi.",

@@ -43,6 +43,11 @@ def notices(monkeypatch):
     async def get(session, kind, about):
         return state.sends.get((kind, about))
 
+    async def counts(session, send_ids):
+        return {}
+
+    monkeypatch.setattr(bulk_sends, "counts", counts)
+
     async def save_page(session, send_id, after, last, user_ids, done):
         state.prepared[send_id] = user_ids
 
@@ -181,6 +186,7 @@ def test_only_a_superadmin_sees_and_asks_for_notices(client, notices, monkeypatc
         "version": LATER,
         "state": "sending",
         "audience": "everyone",
+        "failed": 0,
     }
 
     app.dependency_overrides.clear()

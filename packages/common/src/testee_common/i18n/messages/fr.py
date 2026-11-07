@@ -219,6 +219,7 @@ MESSAGES = {
     "This document has no such version.": "Ce document n'a pas de telle version.",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "Un avis part au moins 14 jours avant que la nouvelle version s'applique : donnez-lui une date plus tardive.",
     "This version's notice was already sent.": "L'avis de cette version a déjà été envoyé.",
+    "No email of this notice failed.": "Aucun e-mail de cette notification n'a échoué.",
     "Prices aren't available right now. Please try again in a minute.": "Les prix ne sont pas disponibles pour le moment. Veuillez réessayer dans une minute.",
     "return_url must be an https address (http only on localhost, for testing).": "return_url doit être une adresse https (http uniquement sur localhost, pour les tests).",
     "The same request is still running. Try again shortly.": "La même demande est encore en cours de traitement. Réessayez dans un instant.",

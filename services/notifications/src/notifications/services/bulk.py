@@ -253,6 +253,13 @@ async def send_run(now: datetime) -> int:
         await record_hit("RESEND_DAILY_LIMIT", what="bulk_email")
 
     async with Session.begin() as session:
-        await bulk_sends.finish_done(session)
+        finished = await bulk_sends.finish_done(session)
+        ids = [send.id for send in finished if send.kind in LEGAL_KINDS]
+        counts = await bulk_sends.counts(session, ids) if ids else {}
+
+    for send_id, count in counts.items():
+        if count[RecipientStatus.FAILED]:
+            failed = count[RecipientStatus.FAILED]
+            logger.error("Legal notice %s finished with %d emails failed", send_id, failed)
 
     return sent

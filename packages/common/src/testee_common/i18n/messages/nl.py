@@ -219,6 +219,7 @@ MESSAGES = {
     "This document has no such version.": "Dit document heeft zo'n versie niet.",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "Een kennisgeving gaat minstens 14 dagen voordat de nieuwe versie geldt de deur uit: geef haar een latere datum.",
     "This version's notice was already sent.": "De kennisgeving van deze versie is al verstuurd.",
+    "No email of this notice failed.": "Er is geen e-mail van deze kennisgeving mislukt.",
     "Prices aren't available right now. Please try again in a minute.": "De prijzen zijn nu niet beschikbaar. Probeer het over een minuut opnieuw.",
     "return_url must be an https address (http only on localhost, for testing).": "return_url moet een https-adres zijn (http alleen op localhost, om te testen).",
     "The same request is still running. Try again shortly.": "Hetzelfde verzoek wordt nog verwerkt. Probeer het zo meteen opnieuw.",

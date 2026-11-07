@@ -109,16 +109,24 @@ async def save_page(
     return True
 
 
-async def finish_done(session: AsyncSession) -> None:
-    """Prepared sends with no pending recipient left are finished."""
+async def finish_done(session: AsyncSession) -> list[BulkSend]:
+    """Prepared sends with no pending recipient left are finished; returns them."""
     pending = exists().where(
         BulkRecipient.send_id == BulkSend.id, BulkRecipient.status == RecipientStatus.PENDING
     )
-    await session.execute(
+    finished = await session.scalars(
         update(BulkSend)
         .where(BulkSend.prepared_at.is_not(None), BulkSend.finished_at.is_(None), ~pending)
         .values(finished_at=datetime.now(UTC))
+        .returning(BulkSend)
     )
+
+    return list(finished)
+
+
+async def reopen(session: AsyncSession, send_id: uuid.UUID) -> None:
+    """Finished sends' failed recipients were made pending again: the runs take the send up."""
+    await session.execute(update(BulkSend).where(BulkSend.id == send_id).values(finished_at=None))
 
 
 async def stop(session: AsyncSession, send_id: uuid.UUID, now: datetime) -> None:

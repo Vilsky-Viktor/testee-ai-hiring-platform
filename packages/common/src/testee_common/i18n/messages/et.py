@@ -229,6 +229,7 @@ MESSAGES = {
     "This document has no such version.": "Sellel dokumendil pole sellist versiooni.",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "Teade läheb välja vähemalt 14 päeva enne uue versiooni kehtima hakkamist: anna sellele hilisem kuupäev.",
     "This version's notice was already sent.": "Selle versiooni teade on juba saadetud.",
+    "No email of this notice failed.": "Selle teate ükski e-kiri ei ebaõnnestunud.",
     "Prices aren't available right now. Please try again in a minute.": "Hinnad ei ole praegu saadaval. Proovi minuti pärast uuesti.",
     "return_url must be an https address (http only on localhost, for testing).": "return_url peab olema https-aadress (http ainult localhostis, testimiseks).",
     "The same request is still running. Try again shortly.": "Sama päring on veel pooleli. Proovi varsti uuesti.",

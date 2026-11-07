@@ -3,11 +3,12 @@ from datetime import UTC, datetime, timedelta
 from fastapi import HTTPException, status
 from testee_common.config.constants import LEGAL_VERSIONS
 
-from notifications.constants.bulk import LEGAL_KINDS
+from notifications.constants.bulk import LEGAL_KINDS, RecipientStatus
 from notifications.constants.legal_notices import (
     ALREADY_ASKED,
     EVERYONE,
     LEGAL_NOTICE_DAYS,
+    NOTHING_FAILED,
     TOO_LATE,
     LegalNoticeState,
 )
@@ -30,6 +31,7 @@ async def states() -> list[dict]:
     """Each document's current version, and where its notice stands."""
     async with Session() as session:
         sends = await bulk_sends.of_kinds(session, list(LEGAL_KINDS))
+        counts = await bulk_sends.counts(session, [send.id for send in sends])
 
     asked = {(document_of(send.kind), send.about): send for send in sends}
     today = datetime.now(UTC).date()
@@ -49,8 +51,15 @@ async def states() -> list[dict]:
             state = LegalNoticeState.SENDABLE
 
         audience = "everyone" if document in EVERYONE else "company_editors"
+        failed = counts.get(send.id, {}).get(RecipientStatus.FAILED, 0) if send else 0
         found.append(
-            {"document": document, "version": version, "state": state, "audience": audience}
+            {
+                "document": document,
+                "version": version,
+                "state": state,
+                "audience": audience,
+                "failed": failed,
+            }
         )
 
     return found
@@ -72,6 +81,21 @@ async def ask(document: str, user_id: str) -> None:
         raise HTTPException(status.HTTP_409_CONFLICT, ALREADY_ASKED)
 
     await prepare_now(kind_of(document), version)
+
+
+async def retry(document: str) -> int:
+    """A superadmin sends a finished notice again to those its email failed for: the sending
+    hours' runs take them up. How many; refused when none failed."""
+    async with Session.begin() as session:
+        send = await bulk_sends.get(session, kind_of(document), LEGAL_VERSIONS[document])
+        again = await bulk_recipients.retry_failed(session, send.id) if send else 0
+
+        if not again:
+            raise HTTPException(status.HTTP_409_CONFLICT, NOTHING_FAILED)
+
+        await bulk_sends.reopen(session, send.id)
+
+    return again
 
 
 async def upcoming(user_id: str) -> list[dict]:

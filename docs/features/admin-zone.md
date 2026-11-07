@@ -208,7 +208,10 @@ One row per legal document (terms, privacy policy, data processing agreement): i
 ```
 GET  /notifications/superadmin/legal-notices
 POST /notifications/superadmin/legal-notices/{terms|privacy|dpa}
+POST /notifications/superadmin/legal-notices/{terms|privacy|dpa}/retry
 ```
+
+The API also says how many emails of a notice failed for good (`failed`, after three tries or a refusal), and a notice that finishes with any logs an error, which reaches Sentry. Its `retry` sends it again, from the next sending hour, to those people only; with none failed it's refused (409). The admin zone doesn't show these yet.
 
 ### Limits
 

@@ -219,6 +219,7 @@ MESSAGES = {
     "This document has no such version.": "इस दस्तावेज़ का ऐसा कोई संस्करण नहीं है।",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "सूचना नए संस्करण के लागू होने से कम से कम 14 दिन पहले भेजी जाती है: इसे बाद की तारीख दें।",
     "This version's notice was already sent.": "इस संस्करण की सूचना पहले ही भेजी जा चुकी है।",
+    "No email of this notice failed.": "इस सूचना का कोई ईमेल विफल नहीं हुआ।",
     "Prices aren't available right now. Please try again in a minute.": "कीमतें अभी उपलब्ध नहीं हैं। कृपया एक मिनट बाद फिर से कोशिश करें।",
     "return_url must be an https address (http only on localhost, for testing).": "return_url एक https पता होना चाहिए (http केवल localhost पर, टेस्टिंग के लिए)।",
     "The same request is still running. Try again shortly.": "यही अनुरोध अभी चल रहा है। कृपया थोड़ी देर बाद फिर से कोशिश करें।",

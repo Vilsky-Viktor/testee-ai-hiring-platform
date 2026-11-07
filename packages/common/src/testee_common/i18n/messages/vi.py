@@ -221,6 +221,7 @@ MESSAGES = {
     "This document has no such version.": "Tài liệu này không có phiên bản đó.",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "Thông báo được gửi ít nhất 14 ngày trước khi phiên bản mới áp dụng: hãy đặt ngày muộn hơn.",
     "This version's notice was already sent.": "Thông báo của phiên bản này đã được gửi.",
+    "No email of this notice failed.": "Không có email nào của thông báo này bị lỗi.",
     "Prices aren't available right now. Please try again in a minute.": "Hiện chưa xem được giá. Vui lòng thử lại sau một phút.",
     "return_url must be an https address (http only on localhost, for testing).": "return_url phải là địa chỉ https (http chỉ dùng trên localhost, để thử nghiệm).",
     "The same request is still running. Try again shortly.": "Yêu cầu giống hệt vẫn đang được xử lý. Vui lòng thử lại sau ít phút.",

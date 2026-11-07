@@ -9,7 +9,8 @@ from testee_common.auth.auth import current_user
 from testee_common.auth.user import User
 from testee_common.events.notifications import EVERYONE, Recipient
 
-from notifications.constants.legal_notices import ALREADY_ASKED
+from notifications.constants.legal_notices import ALREADY_ASKED, NOTHING_FAILED
+from notifications.integrations.resend import EmailRefused
 from notifications.main import app
 from notifications.repositories import bulk_sends, notifications
 from notifications.services import bulk, delivery, legal_notices
@@ -115,3 +116,53 @@ def test_a_notice_is_asked_once_goes_in_everyones_bell_and_emails_each_account_o
     assert all(day in subject for _, subject, _ in mine)
     assert states["terms"] == "sent"
     assert {"document": "terms", "version": LATER} in banner
+
+
+def test_a_failed_email_shows_on_the_notice_alerts_and_can_be_sent_again(run, terms, monkeypatch):
+    _, _, sent = terms
+    working = delivery.transmit
+
+    async def refused(email, key):
+        raise EmailRefused("no")
+
+    async def sent_to_one(email, key):
+        if email.to.startswith(failing[0]):
+            await refused(email, key)
+
+        await working(email, key)
+
+    failing = [terms[1]]
+    alerts = []
+    monkeypatch.setattr(delivery, "transmit", sent_to_one)
+    monkeypatch.setattr(bulk.logger, "error", lambda text, *args: alerts.append(args))
+
+    def state():
+        return next(item for item in found[-1] if item["document"] == "terms")
+
+    found = []
+
+    async def scenario():
+        await legal_notices.ask("terms", "sam")
+        await bulk.send_bulk(datetime.now(UTC))
+        found.append(await legal_notices.states())
+        first = state()
+        failing[0] = "nobody"
+        await legal_notices.retry("terms")
+        found.append(await legal_notices.states())
+        reopened = state()
+        await bulk.send_bulk(datetime.now(UTC))
+        found.append(await legal_notices.states())
+
+        with pytest.raises(HTTPException) as nothing:
+            await legal_notices.retry("terms")
+
+        return first, reopened, state(), nothing.value
+
+    first, reopened, last, nothing = run(scenario())
+
+    assert (first["state"], first["failed"]) == ("sent", 1)
+    assert [failed for _, failed in alerts] == [1]
+    assert (reopened["state"], reopened["failed"]) == ("sending", 0)
+    assert (last["state"], last["failed"]) == ("sent", 0)
+    assert sum(key.endswith(terms[1]) for _, _, key in sent) == 1
+    assert (nothing.status_code, nothing.detail) == (409, NOTHING_FAILED)

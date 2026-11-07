@@ -219,6 +219,7 @@ MESSAGES = {
     "This document has no such version.": "אין גרסה כזו למסמך הזה.",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "הודעה נשלחת לפחות 14 יום לפני שהגרסה החדשה חלה: יש לתת לה תאריך מאוחר יותר.",
     "This version's notice was already sent.": "ההודעה על הגרסה הזו כבר נשלחה.",
+    "No email of this notice failed.": "אף דוא״ל של הודעה זו לא נכשל.",
     "Prices aren't available right now. Please try again in a minute.": "המחירים לא זמינים כרגע. נסו שוב בעוד דקה.",
     "return_url must be an https address (http only on localhost, for testing).": "return_url חייבת להיות כתובת https (http רק ב-localhost, לבדיקות).",
     "The same request is still running. Try again shortly.": "אותה בקשה עדיין בטיפול. נסו שוב בעוד רגע.",

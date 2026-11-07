@@ -28,3 +28,4 @@ TOO_LATE = (
     "A notice goes out at least 14 days before the new version applies: give it a later date."
 )
 ALREADY_ASKED = "This version's notice was already sent."
+NOTHING_FAILED = "No email of this notice failed."

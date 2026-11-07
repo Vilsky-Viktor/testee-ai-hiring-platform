@@ -11,6 +11,8 @@ class LegalNoticeOut(BaseModel):
     state: LegalNoticeState
     # Who it goes to: every account, or every company's owners and admins.
     audience: Literal["everyone", "company_editors"]
+    # Emails that failed for good: the notice didn't reach those people.
+    failed: int
 
 
 class LegalChangeOut(BaseModel):

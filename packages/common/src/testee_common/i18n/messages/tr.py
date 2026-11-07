@@ -219,6 +219,7 @@ MESSAGES = {
     "This document has no such version.": "Bu belgenin böyle bir sürümü yok.",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "Bildirim, yeni sürüm geçerli olmadan en az 14 gün önce gönderilir: ona daha ileri bir tarih verin.",
     "This version's notice was already sent.": "Bu sürümün bildirimi zaten gönderildi.",
+    "No email of this notice failed.": "Bu bildirimin hiçbir e-postası başarısız olmadı.",
     "Prices aren't available right now. Please try again in a minute.": "Fiyatlar şu anda kullanılamıyor. Lütfen bir dakika sonra tekrar deneyin.",
     "return_url must be an https address (http only on localhost, for testing).": "return_url bir https adresi olmalıdır (http yalnızca localhost'ta, test için).",
     "The same request is still running. Try again shortly.": "Aynı istek hâlâ işleniyor. Lütfen birazdan tekrar deneyin.",

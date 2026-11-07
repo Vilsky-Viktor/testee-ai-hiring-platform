@@ -101,7 +101,7 @@ def store(monkeypatch):
         return None
 
     async def finish_done(session):
-        return None
+        return []
 
     monkeypatch.setattr(bulk_sends, "unprepared", nothing)
     monkeypatch.setattr(bulk_sends, "finish_done", finish_done)

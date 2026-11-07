@@ -219,6 +219,7 @@ MESSAGES = {
     "This document has no such version.": "У этого документа нет такой версии.",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "Уведомление отправляется не позднее чем за 14 дней до вступления новой версии в силу: назначьте ей более позднюю дату.",
     "This version's notice was already sent.": "Уведомление об этой версии уже отправлено.",
+    "No email of this notice failed.": "Ни одно письмо этого уведомления не завершилось ошибкой.",
     "Prices aren't available right now. Please try again in a minute.": "Цены сейчас недоступны. Попробуйте ещё раз через минуту.",
     "return_url must be an https address (http only on localhost, for testing).": "return_url должен быть https-адресом (http — только на localhost, для тестирования).",
     "The same request is still running. Try again shortly.": "Такой же запрос ещё выполняется. Попробуйте чуть позже.",

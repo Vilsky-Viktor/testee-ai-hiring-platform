@@ -3,6 +3,7 @@ from datetime import UTC, datetime
 
 from sqlalchemy import delete, func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
+from testee_common.db.db import delete_in_batches
 
 from notifications.constants.bulk import RecipientStatus
 from notifications.models.bulk import BulkRecipient, BulkSend
@@ -116,3 +117,21 @@ async def of_user(session: AsyncSession, user_id: str) -> list[tuple[BulkSend, B
     )
 
     return [tuple(row) for row in rows]
+
+
+async def retry_failed(session: AsyncSession, send_id: uuid.UUID) -> int:
+    """The send's failed recipients are tried afresh; how many."""
+    result = await session.execute(
+        update(BulkRecipient)
+        .where(BulkRecipient.send_id == send_id, BulkRecipient.status == RecipientStatus.FAILED)
+        .values(status=RecipientStatus.PENDING, attempts=0, reason=None)
+    )
+
+    return result.rowcount
+
+
+async def forget(sessions, before: datetime, until: float | None = None) -> None:
+    """The recipients of sends finished before `before`, in batches (each its own transaction),
+    none started after `until` (time.monotonic()); the next run deletes the rest."""
+    old = select(BulkSend.id).where(BulkSend.finished_at < before)
+    await delete_in_batches(sessions, BulkRecipient, BulkRecipient.send_id.in_(old), until=until)

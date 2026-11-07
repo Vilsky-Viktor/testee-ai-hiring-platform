@@ -219,6 +219,7 @@ MESSAGES = {
     "This document has no such version.": "この文書にそのバージョンはありません。",
     "A notice goes out at least 14 days before the new version applies: give it a later date.": "通知は新しいバージョンの適用日の少なくとも 14 日前に送られます。より後の日付にしてください。",
     "This version's notice was already sent.": "このバージョンの通知はすでに送信されています。",
+    "No email of this notice failed.": "この通知で送信に失敗したメールはありません。",
     "Prices aren't available right now. Please try again in a minute.": "現在、料金を表示できません。1分後にもう一度お試しください。",
     "return_url must be an https address (http only on localhost, for testing).": "return_url は https のアドレスである必要があります（http はテスト用に localhost でのみ使えます）。",
     "The same request is still running. Try again shortly.": "同じリクエストがまだ処理中です。少し時間をおいてもう一度お試しください。",
