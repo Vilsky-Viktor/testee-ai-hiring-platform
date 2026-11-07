@@ -13,7 +13,7 @@ from testee_common.auth.tokens import hashed
 from testee_common.http.http import bearer
 
 from assistant.core.db import Session
-from assistant.helpers.oauth import new_tokens
+from assistant.helpers.oauth import family_of, new_tokens
 from assistant.main import app
 from assistant.models.oauth import McpGrant, OAuthClient
 from assistant.repositories import oauth, oauth_requests
@@ -67,18 +67,32 @@ def test_of_two_refreshes_with_one_token_only_the_first_gets_new_tokens(run):
     async def scenario():
         grant, tokens = await connect(user)
         old = hashed(tokens["refresh_token"])
-        first = await transaction(oauth.rotate, grant.id, old, new_tokens()[1])
+        kept = new_tokens(family=family_of(tokens["refresh_token"]))[1]
+        first = await transaction(oauth.rotate, grant.id, old, kept)
         second = await transaction(oauth.rotate, grant.id, old, new_tokens()[1])
 
-        replaced = await transaction(oauth.by_previous_refresh, old)
+        family = hashed(family_of(tokens["refresh_token"]))
+        replaced = await transaction(oauth.by_family, family)
 
         return first, second, await transaction(oauth.by_refresh, old), replaced, grant.id
 
     first, second, current, replaced, grant_id = run(scenario())
 
     assert (first, second, current) == (True, False, None)
-    # The replaced token is remembered, with when, to tell a late reuse from a race.
+    # The replaced token still names its connection, with when, to tell a late reuse from a race.
     assert replaced.id == grant_id and replaced.refreshed_at is not None
+
+
+def test_a_used_code_names_its_connection_once(run):
+    code_hash = uuid.uuid4().hex
+    grant_id = str(uuid.uuid4())
+
+    async def scenario():
+        await oauth_requests.save_used_code(code_hash, grant_id)
+
+        return [await oauth_requests.take_used_code(code_hash) for _ in range(2)]
+
+    assert run(scenario()) == [grant_id, None]
 
 
 def test_last_used_is_written_at_most_once_an_hour(run):

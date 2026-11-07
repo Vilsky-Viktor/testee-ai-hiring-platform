@@ -25,6 +25,7 @@ from assistant.core.db import Session
 from assistant.helpers.mcp_clients import describe_client, is_document_id, refused_redirect
 from assistant.helpers.oauth import (
     consent_url,
+    family_of,
     funnel_client,
     new_tokens,
     other_resource,
@@ -40,14 +41,15 @@ from assistant.services.mcp_keys import key_access
 logger = logging.getLogger(__name__)
 
 
-async def revoke_if_replayed(refresh_hash: str) -> None:
-    """A refresh token a refresh replaced, used again: within REFRESH_REUSE_GRACE_SECONDS, an app
-    that refreshed twice at once (just refused); later, likely a stolen copy, so the connection
-    goes and the app asks the user again (OAuth 2.1)."""
+async def revoke_if_replayed(family: str) -> None:
+    """A connection's refresh token that a refresh replaced, used again, however long ago it was
+    replaced: within REFRESH_REUSE_GRACE_SECONDS of the last refresh, an app that refreshed twice
+    at once (just refused); later, likely a stolen copy, so the connection goes and the app asks
+    the user again (OAuth 2.1)."""
     grace = timedelta(seconds=REFRESH_REUSE_GRACE_SECONDS)
 
     async with Session.begin() as session:
-        grant = await oauth.by_previous_refresh(session, refresh_hash)
+        grant = await oauth.by_family(session, family)
 
         if grant is None or grant.refreshed_at is None:
             return
@@ -57,6 +59,19 @@ async def revoke_if_replayed(refresh_hash: str) -> None:
                 "A replaced refresh token was used again: connection %s revoked", grant.id
             )
             await oauth.remove(session, grant.id)
+
+
+async def revoke_if_code_reused(code_hash: str) -> None:
+    """A code already exchanged, used again: it leaked, so the connection it made goes too."""
+    grant_id = await oauth_requests.take_used_code(code_hash)
+
+    if grant_id is None:
+        return
+
+    logger.warning("A used code came again: connection %s revoked", grant_id)
+
+    async with Session.begin() as session:
+        await oauth.remove(session, UUID(grant_id))
 
 
 class Provider:
@@ -118,9 +133,15 @@ class Provider:
     async def load_authorization_code(
         self, client: OAuthClientInformationFull, authorization_code: str
     ) -> Code | None:
-        found = await oauth_requests.peek_code(hashed(authorization_code))
+        code_hash = hashed(authorization_code)
+        found = await oauth_requests.peek_code(code_hash)
 
-        if found is None or found["client_id"] != client.client_id:
+        if found is None:
+            await revoke_if_code_reused(code_hash)
+
+            return None
+
+        if found["client_id"] != client.client_id:
             return None
 
         return Code(
@@ -141,7 +162,9 @@ class Provider:
         self, client: OAuthClientInformationFull, authorization_code: Code
     ) -> OAuthToken:
         """The code, once, for the connection's first tokens."""
-        if await oauth_requests.take_code(hashed(authorization_code.code)) is None:
+        code_hash = hashed(authorization_code.code)
+
+        if await oauth_requests.take_code(code_hash) is None:
             raise TokenError("invalid_grant", "authorization code does not exist")
 
         scope = authorization_code.scopes[0]
@@ -157,7 +180,9 @@ class Provider:
 
         async with Session.begin() as session:
             await oauth.add_grant(session, grant)
+            grant_id = str(grant.id)
 
+        await oauth_requests.save_used_code(code_hash, grant_id)
         client_label = funnel_client(authorization_code.client_name)
         await track("mcp_connected", user_id=authorization_code.subject, client=client_label)
 
@@ -170,7 +195,7 @@ class Provider:
             grant = await oauth.by_refresh(session, hashed(refresh_token))
 
         if grant is None:
-            await revoke_if_replayed(hashed(refresh_token))
+            await revoke_if_replayed(hashed(family_of(refresh_token)))
 
             return None
 
@@ -193,7 +218,7 @@ class Provider:
         """New tokens for the connection; the old ones stop working. Of two refreshes with the
         same token, the second is refused."""
         scope = MCP_SCOPE if MCP_SCOPE in refresh_token.scopes else refresh_token.scopes[0]
-        token, kept = new_tokens(scope)
+        token, kept = new_tokens(scope, family_of(refresh_token.token))
 
         grant_id = UUID(refresh_token.grant_id)
 

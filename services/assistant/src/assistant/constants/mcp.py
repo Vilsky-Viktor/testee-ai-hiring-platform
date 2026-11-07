@@ -38,6 +38,10 @@ AUTH_METHODS = ["none", "client_secret_post", "client_secret_basic"]
 # Tokens: this prefix and random bytes; only their hashes are kept.
 TOKEN_PREFIX = "tem_"
 TOKEN_BYTES = 32
+# Every refresh token of a connection starts with the same random family, so one replaced many
+# refreshes ago still names its connection, with no list of old tokens to keep.
+REFRESH_FAMILY_BYTES = 16
+REFRESH_FAMILY_LENGTH = 22
 CODE_BYTES = 32
 # How long each lasts: the access an hour, the refresh 90 days from its last use (each refresh
 # makes new ones); a code 5 minutes, and a request waiting for the user 10.
@@ -45,8 +49,9 @@ ACCESS_SECONDS = 60 * 60
 REFRESH_SECONDS = 90 * 24 * 60 * 60
 CODE_SECONDS = 5 * 60
 REQUEST_SECONDS = 10 * 60
-# A replaced refresh token used again within this long is an app refreshing twice at once: just
-# refused. Later, it was likely stolen, and the connection is revoked.
+# A refresh token of the connection that isn't its current one, used within this long of its
+# last refresh, is an app refreshing twice at once: just refused. Later, it was likely stolen, and
+# the connection is revoked.
 REFRESH_REUSE_GRACE_SECONDS = 60
 # A connection's "last used" is written at most this often.
 LAST_USED_EVERY_SECONDS = 60 * 60
@@ -67,6 +72,8 @@ MAX_CLIENT_NAME_LENGTH = 80
 # last counted as active for a user (the funnel's mcp_active, once a day).
 REQUEST_KEY = "mcp:request:{request_id}"
 CODE_KEY = "mcp:code:{code_hash}"
+# The connection a code made, kept as long as the code could have lived: used again, it goes.
+USED_CODE_KEY = "mcp:used-code:{code_hash}"
 ACTIVE_KEY = "mcp:active:{user_id}:{client}"
 
 # Apps known by the address they return to: the name the consent page shows, whatever the app

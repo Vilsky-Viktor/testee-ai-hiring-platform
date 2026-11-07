@@ -61,11 +61,9 @@ async def by_refresh(session: AsyncSession, refresh_hash: str) -> McpGrant | Non
     return await session.scalar(select(McpGrant).where(McpGrant.refresh_hash == refresh_hash))
 
 
-async def by_previous_refresh(session: AsyncSession, refresh_hash: str) -> McpGrant | None:
-    """The connection whose last refresh replaced this refresh token."""
-    return await session.scalar(
-        select(McpGrant).where(McpGrant.previous_refresh_hash == refresh_hash)
-    )
+async def by_family(session: AsyncSession, family: str) -> McpGrant | None:
+    """The connection a refresh token came from, however many refreshes ago."""
+    return await session.scalar(select(McpGrant).where(McpGrant.refresh_family == family))
 
 
 async def rotate(session: AsyncSession, grant_id: UUID, refresh_hash: str, values: dict) -> bool:
@@ -74,7 +72,7 @@ async def rotate(session: AsyncSession, grant_id: UUID, refresh_hash: str, value
     query = (
         update(McpGrant)
         .where(McpGrant.id == grant_id, McpGrant.refresh_hash == refresh_hash)
-        .values(**values, previous_refresh_hash=refresh_hash, refreshed_at=func.now())
+        .values(**values, refreshed_at=func.now())
     )
 
     result = await session.execute(query)

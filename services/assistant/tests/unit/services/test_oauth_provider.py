@@ -25,7 +25,7 @@ RESOURCE = "http://localhost:8090/mcp"
 @pytest.fixture
 def kept(monkeypatch):
     """Requests and codes (Redis) and connections (Postgres), in memory."""
-    store = SimpleNamespace(requests={}, codes={}, grants={}, tracked=[])
+    store = SimpleNamespace(requests={}, codes={}, used_codes={}, grants={}, tracked=[])
 
     async def save_request(request_id, request):
         store.requests[request_id] = request
@@ -38,6 +38,12 @@ def kept(monkeypatch):
 
     async def take_code(code_hash):
         return store.codes.pop(code_hash, None)
+
+    async def save_used_code(code_hash, grant_id):
+        store.used_codes[code_hash] = grant_id
+
+    async def take_used_code(code_hash):
+        return store.used_codes.pop(code_hash, None)
 
     async def add_grant(session, grant):
         grant.id = uuid.uuid4()
@@ -60,7 +66,6 @@ def kept(monkeypatch):
         for name, value in values.items():
             setattr(grant, name, value)
 
-        grant.previous_refresh_hash = refresh_hash
         grant.refreshed_at = datetime.now(UTC)
 
         return True
@@ -79,13 +84,15 @@ def kept(monkeypatch):
         "save_code": save_code,
         "peek_code": peek_code,
         "take_code": take_code,
+        "save_used_code": save_used_code,
+        "take_used_code": take_used_code,
     }.items():
         monkeypatch.setattr(oauth_requests, name, fake)
 
     monkeypatch.setattr(oauth, "add_grant", add_grant)
     monkeypatch.setattr(oauth, "by_access", finder("access_hash"))
     monkeypatch.setattr(oauth, "by_refresh", finder("refresh_hash"))
-    monkeypatch.setattr(oauth, "by_previous_refresh", finder("previous_refresh_hash"))
+    monkeypatch.setattr(oauth, "by_family", finder("refresh_family"))
     monkeypatch.setattr(oauth, "rotate", rotate)
     monkeypatch.setattr(oauth, "remove", remove)
     monkeypatch.setattr(oauth_provider, "track", track)
@@ -220,6 +227,49 @@ def test_a_replaced_refresh_token_used_again_later_revokes_the_connection(kept):
     assert asyncio.run(provider.load_refresh_token(CLIENT, first.refresh_token)) is None
     assert kept.grants == {}
     assert asyncio.run(provider.load_access_token(second.access_token)) is None
+
+
+def test_a_refresh_token_replaced_many_refreshes_ago_revokes_the_connection_too(kept):
+    provider = Provider()
+    asyncio.run(provider.authorize(CLIENT, params()))
+    code = asyncio.run(provider.load_authorization_code(CLIENT, allowed(kept)))
+    first = asyncio.run(provider.exchange_authorization_code(CLIENT, code))
+    token = first.refresh_token
+
+    for _ in range(2):
+        refresh = asyncio.run(provider.load_refresh_token(CLIENT, token))
+        token = asyncio.run(provider.exchange_refresh_token(CLIENT, refresh, ["testee"]))
+        token = token.refresh_token
+
+    [grant] = kept.grants.values()
+    grant.refreshed_at = datetime.now(UTC) - timedelta(minutes=2)
+
+    assert asyncio.run(provider.load_refresh_token(CLIENT, first.refresh_token)) is None
+    assert kept.grants == {}
+
+
+def test_a_made_up_refresh_token_revokes_nothing(kept):
+    provider = Provider()
+    asyncio.run(provider.authorize(CLIENT, params()))
+    code = asyncio.run(provider.load_authorization_code(CLIENT, allowed(kept)))
+    asyncio.run(provider.exchange_authorization_code(CLIENT, code))
+    [grant] = kept.grants.values()
+    grant.refreshed_at = datetime.now(UTC) - timedelta(minutes=2)
+
+    assert asyncio.run(provider.load_refresh_token(CLIENT, "tem_" + "x" * 64)) is None
+    assert list(kept.grants.values()) == [grant]
+
+
+def test_a_code_used_again_revokes_the_connection_it_made(kept):
+    provider = Provider()
+    asyncio.run(provider.authorize(CLIENT, params()))
+    code_id = allowed(kept)
+    code = asyncio.run(provider.load_authorization_code(CLIENT, code_id))
+    tokens = asyncio.run(provider.exchange_authorization_code(CLIENT, code))
+
+    assert asyncio.run(provider.load_authorization_code(CLIENT, code_id)) is None
+    assert kept.grants == {}
+    assert asyncio.run(provider.load_access_token(tokens.access_token)) is None
 
 
 def test_an_expired_access_token_is_refused(kept):

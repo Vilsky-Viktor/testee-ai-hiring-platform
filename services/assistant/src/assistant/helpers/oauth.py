@@ -1,8 +1,9 @@
 from datetime import UTC, datetime, timedelta
+from secrets import token_urlsafe
 
 from mcp.server.auth.settings import AuthSettings
 from mcp.shared.auth import OAuthToken
-from testee_common.auth.tokens import new_token
+from testee_common.auth.tokens import hashed, new_token
 
 from assistant.config import settings
 from assistant.constants.mcp import (
@@ -12,6 +13,8 @@ from assistant.constants.mcp import (
     MCP_PATH,
     MCP_READ_SCOPE,
     MCP_SCOPE,
+    REFRESH_FAMILY_BYTES,
+    REFRESH_FAMILY_LENGTH,
     REFRESH_SECONDS,
     TOKEN_BYTES,
     TOKEN_PREFIX,
@@ -59,15 +62,23 @@ def granted_scope(asked: list[str], read_only: bool) -> str:
     return MCP_SCOPE if MCP_SCOPE in asked and not read_only else MCP_READ_SCOPE
 
 
-def new_tokens(scope: str = MCP_SCOPE) -> tuple[OAuthToken, dict]:
-    """A new access and refresh token for the app, and what the connection keeps of them."""
+def family_of(refresh_token: str) -> str:
+    """The family a refresh token carries: its connection's, whichever refresh made it."""
+    return refresh_token.removeprefix(TOKEN_PREFIX)[:REFRESH_FAMILY_LENGTH]
+
+
+def new_tokens(scope: str = MCP_SCOPE, family: str | None = None) -> tuple[OAuthToken, dict]:
+    """A new access and refresh token for the app, and what the connection keeps of them; a
+    refresh passes the replaced token's family on, a new connection gets its own."""
     access, access_hash = new_token(TOKEN_PREFIX, TOKEN_BYTES)
-    refresh, refresh_hash = new_token(TOKEN_PREFIX, TOKEN_BYTES)
+    family = family or token_urlsafe(REFRESH_FAMILY_BYTES)
+    refresh, refresh_hash = new_token(f"{TOKEN_PREFIX}{family}", TOKEN_BYTES)
     now = datetime.now(UTC)
     kept = {
         "access_hash": access_hash,
         "access_expires_at": now + timedelta(seconds=ACCESS_SECONDS),
         "refresh_hash": refresh_hash,
+        "refresh_family": hashed(family),
         "refresh_expires_at": now + timedelta(seconds=REFRESH_SECONDS),
     }
     token = OAuthToken(

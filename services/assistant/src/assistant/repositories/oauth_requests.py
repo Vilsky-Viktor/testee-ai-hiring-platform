@@ -1,6 +1,12 @@
 import json
 
-from assistant.constants.mcp import CODE_KEY, CODE_SECONDS, REQUEST_KEY, REQUEST_SECONDS
+from assistant.constants.mcp import (
+    CODE_KEY,
+    CODE_SECONDS,
+    REQUEST_KEY,
+    REQUEST_SECONDS,
+    USED_CODE_KEY,
+)
 from assistant.integrations.redis import get_redis
 
 
@@ -40,3 +46,15 @@ async def take_code(code_hash: str) -> dict | None:
     found = await get_redis().getdel(CODE_KEY.format(code_hash=code_hash))
 
     return json.loads(found) if found else None
+
+
+async def save_used_code(code_hash: str, grant_id: str) -> None:
+    """Remembers the connection an exchanged code made, in case the code comes again."""
+    await get_redis().set(USED_CODE_KEY.format(code_hash=code_hash), grant_id, ex=CODE_SECONDS)
+
+
+async def take_used_code(code_hash: str) -> str | None:
+    """The connection a code already exchanged made, if it's that code."""
+    found = await get_redis().getdel(USED_CODE_KEY.format(code_hash=code_hash))
+
+    return found.decode() if found else None
