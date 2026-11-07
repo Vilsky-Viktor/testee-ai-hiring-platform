@@ -6,9 +6,8 @@ import pytest
 from langchain_core.messages import AIMessage
 
 from assistant.constants.ai_usage import TITLE_ACTION
-from assistant.helpers.titles import title_seed
 from assistant.constants.chat import Role
-from assistant.helpers.titles import clean_title, should_title
+from assistant.helpers.titles import clean_title, should_title, title_seed
 from assistant.models.answers import Turn
 from assistant.models.conversations import Message
 from assistant.schemas.titles import ConversationTitle

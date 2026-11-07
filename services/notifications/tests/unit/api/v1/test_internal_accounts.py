@@ -1,8 +1,8 @@
 from event_pushes import push
 from testee_common.auth.service_auth import issue_token
 
-from notifications.models.slack import SlackConnection
 from notifications.helpers.unsubscribe import address_hash
+from notifications.models.slack import SlackConnection
 from notifications.repositories import (
     bulk_recipients,
     note_notices,

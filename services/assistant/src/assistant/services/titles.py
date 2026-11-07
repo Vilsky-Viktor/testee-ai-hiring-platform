@@ -55,9 +55,11 @@ async def refresh(turn: Turn, names: set[str]) -> str | None:
         tags = [TITLE_ACTION, conversation]
         seed = title_seed(turn.conversation_id)
 
-        with traced_run(TITLE_ACTION, tags, seed, session_id=conversation):
-            with hiding(turn.user_name, *names):
-                text, usage = await write_title(prompt)
+        with (
+            traced_run(TITLE_ACTION, tags, seed, session_id=conversation),
+            hiding(turn.user_name, *names),
+        ):
+            text, usage = await write_title(prompt)
     except Exception as failure:  # noqa: BLE001 - logged by its type only
         logger.error("A conversation's title failed: %s", type(failure).__name__)
         await ai_usage.provider_refused(failure, TITLE_ACTION, **who)
