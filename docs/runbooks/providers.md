@@ -15,7 +15,7 @@ What to do when a provider testee depends on fails, a payment isn't credited or 
 
 - **testee Paddle failing:** over 3 calls to Paddle's API failed in 15 minutes: no answer, a 5xx, or Paddle refusing billing itself (`401` or `403`: the API key wrong, expired or short of a permission; `429`: over Paddle's rate limit). billing logs each as "Paddle unavailable"; a refusal of the request, such as a declined card, doesn't count ([paddle.py](../../services/billing/src/billing/integrations/paddle.py), [monitoring_log_alerts.tf](../../infra/terraform/monitoring_log_alerts.tf)). **testee server errors** may fire too, once failed checkouts and invoices pass 5% of a service's requests ([monitoring.tf](../../infra/terraform/monitoring.tf)).
 - **testee web hook signature refused** means our secret is wrong, not that Paddle is down (see the last step).
-- Users: **Top up** says "Couldn't open the checkout. Please try again." ([buy-button.tsx](../../frontend/src/components/common/buy-button.tsx)); invoice downloads fail; turning automatic top-up off, or deleting a company or an account with one, fails and can be tried again ([auto_top_ups.py](../../services/billing/src/billing/services/auto_top_ups.py)). Prices still show: the catalog comes from billing's settings, not from Paddle ([billing.py](../../services/billing/src/billing/api/v1/billing.py)).
+- Users: **Top up** says "Couldn't open the checkout. Please try again." ([buy-button.tsx](../../frontend/src/components/common/buy-button.tsx)); invoice downloads fail; a company's own refund is refused with a `409` and its credits go back to the balance, or, when Paddle's answer is lost, stay set aside for the web hook or the daily reconciliation to settle ([refunds.py](../../services/billing/src/billing/services/refunds.py)); turning automatic top-up off, or deleting a company or an account with one, fails and can be tried again ([auto_top_ups.py](../../services/billing/src/billing/services/auto_top_ups.py)). Prices still show: the catalog comes from billing's settings, not from Paddle ([billing.py](../../services/billing/src/billing/api/v1/billing.py)).
 
 **What the system does by itself**
 
@@ -43,7 +43,7 @@ What to do when a provider testee depends on fails, a payment isn't credited or 
 - **"… : refund it"** (an error): billing refused to credit a paid transaction it can't give credits for: one it didn't create ("wasn't created by billing"), one for a company deleted after the checkout ("pays into a wallet that's gone"), or an item it doesn't sell ("isn't one we sell") ([topups.py](../../services/billing/src/billing/services/topups.py));
 - **"Transaction … has no valid owner"**: a payment with no company in its custom data, so nobody was credited;
 - **"Reconciliation credited transaction …"** or **"Reconciliation counted adjustment …"**: the daily reconciliation applied a payment or a refund whose web hook never came; the company now has the right credits, but web hooks are failing ([reconciliation.py](../../services/billing/src/billing/services/reconciliation.py), [Missed web hooks](../features/billing.md#missed-web-hooks));
-- **"Reconciling … failed"**: reconciling one transaction or adjustment raised an error; it stays uncredited until a run succeeds.
+- **"Reconciling … failed"**: reconciling one transaction, adjustment or company refund raised an error; it stays uncredited, or the refund open with its credits set aside, until a run succeeds.
 
 **What the system does by itself:** nothing is credited for a "refund it" or "no valid owner" line; billing answers Paddle 200, so it isn't retried. Reconciliation runs daily and tries a failed item again the next day.
 
@@ -69,7 +69,7 @@ What to do when a provider testee depends on fails, a payment isn't credited or 
 
 - **testee OpenAI failing:** over 10 OpenAI errors in 15 minutes ([monitoring_log_alerts.tf](../../infra/terraform/monitoring_log_alerts.tf)). It counts errors whose traceback or message names `openai.`: generation's failures by their traceback, the assistant's and the help chat's by their message, which names only the error's type, such as `openai.APIConnectionError` ([turns.py](../../services/assistant/src/assistant/services/turns.py), [help_answers.py](../../services/assistant/src/assistant/services/help_answers.py)).
 - **testee generations failing:** over 2 generations failed in an hour, counted from the logs: a run that errored, or the sweep marking stuck ones failed ([monitoring_log_alerts.tf](../../infra/terraform/monitoring_log_alerts.tf)). A failed generation doesn't fail its task, which saves the failure on the generation ([jobs.py](../../services/generation/src/generation/services/jobs.py)), so **testee generation tasks failing** fires for other tasks, such as news translations, and a worker that crashes.
-- Users: a generation ends as failed, "Generation failed. Please try again.", with **Retry**; the help chat and the assistant answer "Couldn't get a reply right now. Please try again."; voice input fails with a `502` ([assistant.md](../features/assistant.md)). Candidates' interviews don't call OpenAI.
+- Users: a generation ends as failed, "Generation failed. Please try again.", with **Retry**; the help chat and the assistant answer "Couldn't get a reply right now. Please try again."; voice input fails with a `502` ([assistant.md](../features/assistant.md)). Candidates' clicked interviews don't call OpenAI; in voice mode a question whose reading isn't kept stays unread with its clock running, and a spoken answer fails with a `502`, so the candidate says it again or taps ([rounds](../../services/rounds/README.md#voice-mode)).
 
 **What the system does by itself**
 
@@ -82,17 +82,17 @@ What to do when a provider testee depends on fails, a payment isn't credited or 
 **What to do**
 
 1. Check OpenAI's status page, then the account's usage limits and credit balance in OpenAI's dashboard.
-2. Read the errors of `generation-worker` or `assistant` (command above). An authentication error means the key: add the right one to `openai-api-key` and restart the three services that read it:
+2. Read the errors of `generation-worker`, `assistant` or `rounds` (command above). An authentication error means the key: add the right one to `openai-api-key` and restart the four services that read it:
    ```bash
    printf '%s' "$OPENAI_API_KEY" | gcloud secrets versions add openai-api-key --data-file=-
-   for service in generation generation-worker assistant; do
+   for service in generation generation-worker rounds assistant; do
      gcloud run services update $service --region=europe-west1 --update-labels=restarted=$(date +%s)
    done
    ```
 3. If OpenAI is down, wait. The users see a "try again" message, not a broken page. The emergency pause would replace those with a clear 503, but it also stops candidate invites and new interviews, which don't need OpenAI: turn it on only if the failures cost money (**testee AI spend high**) or a long outage is announced.
 4. Once it's back, there's nothing to replay: failed generations wait for their owner's **Retry**. A template's generation has the same **Retry** on its page in the admin zone. There's no way to retry a company's generation for it.
 
-**OpenAI's rate limits (a dashboard check, before scaling).** OpenAI limits each model by requests and tokens a minute (RPM, TPM) for the account's usage tier. Before raising the generation worker's instances or concurrency (`infra/terraform/locals.tf`), `GENERATION_CALLS_AT_ONCE` or `GENERATION_CALLS_PER_SECOND` (the admin zone's Controls), and again when 429s from OpenAI show in the logs or as `OPENAI_THROTTLED` hits: open OpenAI's dashboard (**Settings → Limits**), read the TPM of each model in `.env.example`'s model settings (generation, verifier, assistant, help chat, embeddings) and check it covers the new peak: about 380k tokens for a full template, times the generations at once, plus the chats. Raise the tier (it rises with spend) or lower the limits above if it doesn't.
+**OpenAI's rate limits (a dashboard check, before scaling).** OpenAI limits each model by requests and tokens a minute (RPM, TPM) for the account's usage tier. Before raising the generation worker's instances or concurrency (`infra/terraform/locals.tf`), `GENERATION_CALLS_AT_ONCE` or `GENERATION_CALLS_PER_SECOND` (the admin zone's Controls), and again when 429s from OpenAI show in the logs or as `OPENAI_THROTTLED` hits: open OpenAI's dashboard (**Settings → Limits**), read the TPM of each model in `.env.example`'s model settings (generation, verifier, assistant, help chat, embeddings, voice mode) and check it covers the new peak: about 380k tokens for a full template, times the generations at once, plus the chats. Raise the tier (it rises with spend) or lower the limits above if it doesn't.
 
 **Resolved when** a test question in the help chat gets an answer, `generation-worker` logs no new OpenAI errors, and the alert closes.
 

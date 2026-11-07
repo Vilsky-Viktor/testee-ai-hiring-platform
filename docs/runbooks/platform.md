@@ -52,7 +52,7 @@ What to do when the site or an API is down or slow, work waits or stops, the dat
 
 ## Candidate answers slow
 
-**How you notice:** **testee candidate answers slow** (a page) or **testee candidate answers slowing** (a ticket): fewer than 95% of the interview service's (rounds) requests answer within 2 seconds at the load balancer, over 28 days ([monitoring_slo.tf](../../infra/terraform/monitoring_slo.tf)). Candidates wait at every question.
+**How you notice:** **testee candidate answers slow** (a page) or **testee candidate answers slowing** (a ticket): fewer than 95% of the interview service's (rounds) requests answer within 2 seconds at the load balancer, over 28 days, voice mode's live listening left out as its WebSocket stays open while the candidate speaks ([monitoring_slo.tf](../../infra/terraform/monitoring_slo.tf)). Candidates wait at every question.
 
 **What the system does by itself:** Cloud Run adds rounds instances up to its `max` (`locals.tf`); nothing else.
 
@@ -202,7 +202,7 @@ What to do when the site or an API is down or slow, work waits or stops, the dat
 
 **What the system does by itself**
 
-- The deploy runs the 9 `<db>-migrate` jobs one at a time, in the order library, generation, rounds, companies, billing, notifications, ats, api, assistant, and stops at the first failure; it moves no service ([deploy.yml](../../.github/workflows/deploy.yml)).
+- The deploy runs the 11 `<db>-migrate` jobs one at a time, in the order library, generation, rounds, companies, billing, notifications, ats, api, assistant, accounts, site, and stops at the first failure; it moves no service ([deploy.yml](../../.github/workflows/deploy.yml)).
 - A migrate job isn't retried (`max_retries = 0`, [services.tf](../../infra/terraform/services.tf)).
 - One service's migrations run in a single transaction, so the one that failed left its database as it was ([billing's env.py](../../services/billing/migrations/env.py), the same in each service). The databases migrated before it keep their new schema; the old version keeps working on it, as migrations only add ([Deployment](../deployment.md#migrations)).
 

@@ -29,6 +29,7 @@ On a company's **Integrations** tab, an owner or admin connects an ATS with its 
 - testee checks the key with one read before saving it. A Teamtailor key is tried in each of Teamtailor's regions (EU, North America, Asia-Pacific) until one accepts it; the connection keeps that region.
 - The key is saved encrypted with `ATS_ENCRYPTION_KEY`, the ats service's Fernet key. An empty key turns integrations off. To replace it, list the new key and the old one, comma-separated, new first (see [infra/README.md](../../infra/README.md), step 8). After the key that sealed them is gone, saved keys can't be read: their connections are marked for reconnecting, and reconnecting starts afresh (Greenhouse gets a new web hook secret key to paste; Teamtailor's and Recruitee's are pasted again).
 - testee never shows the key again.
+- A company's ATS pages make at most 60 calls a minute to its ATS (`ATS_CALLS_PER_COMPANY_MINUTE`), and one sending address at most 600 web hooks a minute, counted before their signature is checked (`ATS_WEBHOOKS_PER_IP_MINUTE`), by default.
 - Disconnecting deletes the key and the linked jobs at once.
 - A key the ATS stops accepting marks the connection for reconnecting. Only a refusal of the key counts (401 or 403; when connecting, also a wrong address): something deleted in the ATS, like one candidate, affects only that candidate.
 - While a connection waits for reconnecting, its web hooks still count, checked with the secrets it keeps: the candidates it sends wait, and results are kept. Within 10 minutes of reconnecting, the `recover` job invites those candidates and sends those results. Teamtailor's events are the exception when its key is refused: ats can't read the application, so the event is answered with an error.
@@ -72,7 +73,7 @@ On a company's **Integrations** tab, an owner or admin connects an ATS with its 
 - A candidate for an interview still being made waits, and is invited once it's ready (`interview.ready`).
 - A candidate refused (credits, limits, the pause) is kept as not invited, and every member of the company gets an `ats_not_invited` notification (several within 24 hours add up to one, see [Grouping](notifications.md#grouping)). **Invite again** puts that job's not-invited candidates back to waiting and invites them.
 - When companies fails or doesn't answer, the candidate waits and the `recover` job tries again, 6 times in all (about an hour); only then are they kept as not invited, with the notification.
-- Candidates refused for lack of credits are invited again by themselves once the company gets credits: billing publishes `credits.added` after a top-up (automatic ones too), a referral reward or a chargeback reversed, and ats invites the company's credit-refused candidates from every ATS, of jobs still linked and sent in the last 30 days, as far as the credits go (the rest stay not invited, with a new notification). Billing saves the event through its outbox with the credits, so it isn't lost.
+- Candidates refused for lack of credits are invited again by themselves once the company gets credits: billing publishes `credits.added` after a top-up (automatic ones too), a referral reward, a chargeback reversed or a refund that won't happen, and ats invites the company's credit-refused candidates from every ATS, of jobs still linked and sent in the last 30 days, as far as the credits go (the rest stay not invited, with a new notification). Billing saves the event through its outbox with the credits, so it isn't lost.
 
 **Retention.** The saved candidates, with their emails, are deleted:
 
@@ -166,6 +167,6 @@ When such a candidate finishes, companies publishes `candidate.finished` (grade,
 - `src/ats/integrations/ats_clients.py` picks the module by provider. A new ATS adds its module there.
 - The web hook handlers are in `src/ats/services/ats_webhooks.py`, one per ATS.
 - Each action is saved in one transaction, and no ATS or companies call happens inside one: deleting an account (its candidates go and the connections it made are forgotten, with their notices), results a key can't write (kept, with the company's notice), and results that went back (marked reported, clearing an earlier write refusal). Steps with a call to the ATS between them (connecting, linking a Workable job, an invite) are saved apart, each undone or retried on its own.
-- The webhook routes stay open in maintenance mode (see [Admin zone](admin-zone.md#maintenance-mode)).
+- The web hook routes stay open in maintenance mode (see [Admin zone](admin-zone.md#maintenance-mode)).
 
 See also [Architecture](../architecture.md) for the events ats consumes.

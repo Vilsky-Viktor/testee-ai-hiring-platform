@@ -40,6 +40,21 @@ its own transaction.
 `prepend_sys_path` for Alembic), so the package imports as `billing`
 (`billing.api.v1.internal`).
 
+## Refunds
+
+A company's owners and admins refund a top-up's unspent credits themselves (`POST
+/companies/{id}/billing/refund`; `services/refunds.py`, `refund_offers.py`, `refund_claims.py`;
+the rules: [Refunds and chargebacks](../../docs/features/billing.md#refunds-and-chargebacks)). The
+`refunds` table holds each one from asking until Paddle decides (one open per top-up), its credits
+set aside under a hold. Credits bought in the last 14 days (`REFUND_WINDOW`) and not spent go back,
+free credits spent first and the newest top-up first; reserved ones stay refundable for
+`REFUND_GRACE` (7 days) once given back after those 14 days. Paddle's API key needs
+`adjustment.write`. Paddle's answer, its `adjustment.*` web hooks and the daily reconciliation go
+through one idempotent handler (`services/adjustments.py`), which takes the credits back, gives
+them back on a rejection, saves the `refund_approved` or `refund_rejected` notice in the same
+transaction and, for a referred company's rewarding top-up, takes the referral rewards back from
+both companies.
+
 ## Commands
 
 ```bash

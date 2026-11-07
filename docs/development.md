@@ -108,7 +108,7 @@ The frontend keeps its `node_modules` in a volume. After a frontend dependency c
 2. remove the `testee_frontend-modules` volume,
 3. start again.
 
-Paddle and Resend reach local webhooks only through a tunnel, for example `cloudflared tunnel --url http://localhost:8090`.
+Top-ups need no tunnel locally: the scheduler reconciles with Paddle every minute, so a sandbox top-up's credits arrive within a minute ([Setting up Paddle](features/billing.md#setting-up-paddle)). Only to test a web hook itself do Paddle or Resend need a tunnel, for example `cloudflared tunnel --url http://localhost:8090`.
 
 Prices follow the visitor's country, which the load balancer gives in production. Locally, set a `test_country` cookie on `localhost:8090` (`document.cookie = "test_country=DE"`, or `GB`; none means US dollars) and the gateway passes it on as that country ([Currencies](features/billing.md#currencies)). A person's and a company's currency are saved the first time billing sees them with a country, so use a new account or company to see another country's default.
 
@@ -156,4 +156,4 @@ See [CLAUDE.md](../CLAUDE.md). In short:
 - the simplest solution that works,
 - no business logic on the frontend: rules, thresholds and decisions live in the services.
 
-Claude Code skills for the repo's recurring work live in `.claude/skills/`: `translate` (a text in all 23 languages), `api-types` (the assistant's API snapshots and the frontend's types), `verify` (which suites to run, and the browser tests' site), `review-batch` (working through a platform review), `ui-build` (a screen in the app's design language, from its shared components), `ui-check` (screenshots, desktop and phone) and `migration` (an Alembic migration).
+Claude Code skills for the repo's recurring work live in `.claude/skills/`: `translate` (a text in all 23 languages), `api-types` (the assistant's API snapshots and the frontend's types), `verify` (which suites to run, and the browser tests' site), `review-batch` (working through a platform review), `ui-build` (a screen in the app's design language, from its shared components), `ui-check` (screenshots, desktop and phone), `finish-ui` (tests, translations and docs once a UI is approved), `run-eval` (measuring an AI change with the offline evals) and `migration` (an Alembic migration).

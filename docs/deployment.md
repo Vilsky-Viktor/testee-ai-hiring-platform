@@ -15,7 +15,7 @@ Production runs on Google Cloud in `europe-west1`, set up by Terraform in [`infr
 Every app Dockerfile (on Alpine) has a `prod` target, with the code built in and no reload. The API images are built from the repo root, because they include `packages/common`:
 
 ```bash
-docker build --target prod -f services/library/Dockerfile -t testee-library .   # also generation, rounds, companies, billing, notifications, ats, api, assistant
+docker build --target prod -f services/library/Dockerfile -t testee-library .   # also generation, rounds, companies, billing, notifications, ats, api, assistant, accounts, site
 docker build --target prod -t testee-frontend \
   --build-arg NEXT_PUBLIC_FIREBASE_API_KEY=... --build-arg NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=... \
   --build-arg NEXT_PUBLIC_FIREBASE_PROJECT_ID=... frontend
@@ -28,7 +28,7 @@ Terraform passes none of generation's settings to Google Cloud; production runs 
 ## Migrations
 
 - Run each API's migrations once before it starts: `alembic upgrade head` (production images have no `uv`).
-- Each of the 9 API services has them (library, generation, rounds, companies, billing, notifications, ats, api, assistant); the generation worker and the bell stream share generation's and notifications' databases. In Google Cloud, each runs as a `<service>-migrate` job, after the `db-roles` job that gives each service its own database user.
+- Each of the 11 API services has them (library, generation, rounds, companies, billing, notifications, ats, api, assistant, accounts, site); the generation worker and the bell stream share generation's and notifications' databases. In Google Cloud, each runs as a `<service>-migrate` job, after the `db-roles` job that gives each service its own database user.
 - Migrations only go forward, so keep them additive for rollbacks to stay safe.
 - **Waiting to be dropped:** a table a migration replaced stays until no version that reads it can be rolled back to; then a later migration drops it.
   - notifications `legal_notices`: copied into `bulk_sends` by 0009. Once every deployed version and any rollback target is at 0009 or later (no running code imports it), add a migration that drops it; its `downgrade` recreates the empty table. Check first that every row has its `bulk_sends` copy (`kind = 'legal_' || document`, `about = version`).

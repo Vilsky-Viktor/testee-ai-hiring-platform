@@ -72,8 +72,9 @@ and updates `docs/features/api.md` or `mcp.md` and the API description in the sa
   rotated by overlapping an old and a new key. A key may list allowed IPs (IPv4, IPv6, CIDR):
   another address is `403 ip_not_allowed`, read only from the load balancer's entry in
   `X-Forwarded-For` (`testee_common.http.client_ip`), never what the client sent.
-- Each key permission covers what it names and nothing more; a key never gains one after it's
-  made, and its maker's role is rechecked. A new route declares its permission.
+- Each key permission covers what it names and nothing more; a key gains one only when an owner
+  or admin changes it on the key's page, and acts as itself, never as its maker. A new route
+  declares its permission.
 - Every call is scoped to the key's company (object-level authorization, OWASP API1);
   `/api/*/internal/` never reaches the internet.
 

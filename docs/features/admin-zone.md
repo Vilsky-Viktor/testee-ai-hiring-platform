@@ -177,7 +177,7 @@ The switch is one Redis key (`pause:on`, no expiry) that every service reads, at
 Maintenance mode closes the whole site:
 
 - Every page but the unsubscribe and legal pages (below) shows a maintenance screen. `proxy.ts` asks companies' public `GET /maintenance`, cached 10 seconds.
-- Every service's API answers every request with a 503 (`testee_common.limits.maintenance`, a middleware in each `main.py`).
+- Every service's API but billing's answers every request with a 503 (`testee_common.limits.maintenance`, a middleware in each `main.py`).
 - Superadmins still use the site, with a warning above each page.
 
 These stay open, so no event, job or payment is lost:
@@ -187,9 +187,9 @@ These stay open, so no event, job or payment is lost:
 - `/internal/` (calls between services, Pub/Sub and Scheduler pushes),
 - `/webhooks/` (Paddle, Resend, the ATSs).
 - unsubscribing (`/unsubscribe/` in notifications, and its page): an email's one-click link must always work,
-- the legal texts (`/help/legal/` in site, and the privacy, terms, DPA, documents and accessibility pages; `MAINTENANCE_OPEN_PAGES` in the frontend).
+- the legal texts (`/help/legal/` in site, and the privacy, terms, DPA, documents, accessibility and trust pages; `MAINTENANCE_OPEN_PAGES` in the frontend).
 
-Billing isn't switched; its only public route is the price catalog.
+Billing isn't switched: its own routes (the price catalog, a user's currency, a company's billing and automatic top-up routes, Paddle's web hook) keep answering, while the site's pages for them are closed.
 
 Turning it on first asks to confirm, showing the number of candidates in an interview right now (a question shown in the last 15 minutes), whose time stops meanwhile.
 
@@ -226,7 +226,7 @@ Beside the limits, in the same groups, are the plain values the services work wi
 |---|---|---|---|
 | `QUESTION_SECONDS_BASIC`, `_MEDIUM`, `_HARD` | 60, 60, 75 s | 10–600 | The seconds a question of a new test of that level starts with, and of a practice round on a template of that level. Existing tests keep theirs. |
 | `GENERATION_CALLS_AT_ONCE` | 24 | 1–64 | The AI calls one generation (or a template's top-up) makes at once. |
-| `GENERATION_CALLS_PER_SECOND` | 24 | 1–80 | The AI calls a second of every generation together, shared through Redis; OpenAI allows our account 5,000 requests and 1M tokens a minute. |
+| `GENERATION_CALLS_PER_SECOND` | 24 | 1–80 | The AI calls a second of every generation together, shared through Redis; OpenAI allows our account 10,000 requests and 4M tokens a minute. |
 | `MULTI_ANSWER_PERCENT` | 10% | 0–50 | The share of each topic, and of each draw from it, that is "select all that apply" (see [Generation](../generation.md#select-all-that-apply)). |
 | `INTERVIEW_QUESTIONS_PER_TOPIC`, `TEMPLATE_QUESTIONS_PER_TOPIC` | 70, 90 | 10–500 | The questions generated for each topic of a company's interview and of a template. A generation takes them when it starts (see [Generation](../generation.md#generation-settings)). |
 | `MAX_TOPICS`, `MAX_SUBTOPICS` | 10, 5 | 1–20 | The topics an interview or template has, and the subtopics a topic has; the topic review follows them. |

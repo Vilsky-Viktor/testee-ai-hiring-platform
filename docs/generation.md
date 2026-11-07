@@ -53,7 +53,7 @@ graph TD;
 - A generation can be cancelled at any step.
 - A generation started with `auto_approve` (companies sets it only for a paying company's interview through the public API) has no review: when the graph stops at `human_review`, `review.topics_proposed` saves its topics and queues the run again with what a reviewer keeping them would send, up to `MAX_TOPICS`, on the same resume path. It never awaits review, so neither the 14-day expiry nor the reminders touch it; each job is claimed once (`claim_run`), a lost job leaves it queued for the sweeper to fail, and a retry comes back to the same step. During the emergency pause, which refuses a reviewer too, its topics wait for a review.
 - A run's row is saved step by step between model calls (its progress, its topics for review, its end), each change on its own, so nothing is held open while the model works. A finished or cancelled generation is never changed again, and the event that tells companies (completed, failed, cancelled) is saved with the change it tells of.
-- A generation makes up to `GENERATION_CALLS_AT_ONCE` AI calls at once (24 by default); so do the other jobs' fan-outs (translations into the missing languages, the key self-checks, the sample key checks), and every LLM call of the pipeline shares one rate limit across the API and all workers (`GENERATION_CALLS_PER_SECOND`, 24 a second by default, counted in Redis). Both are values in the admin zone's Controls (see [Admin zone](features/admin-zone.md#limits)), read within 30 seconds of a change; OpenAI allows our account 5,000 requests and 1M tokens a minute, and a full template uses about 380k tokens. The help chat isn't held to the rate, so it stays responsive during big generations.
+- A generation makes up to `GENERATION_CALLS_AT_ONCE` AI calls at once (24 by default); so do the other jobs' fan-outs (translations into the missing languages, the key self-checks, the sample key checks), and every LLM call of the pipeline shares one rate limit across the API and all workers (`GENERATION_CALLS_PER_SECOND`, 24 a second by default, counted in Redis). Both are values in the admin zone's Controls (see [Admin zone](features/admin-zone.md#limits)), read within 30 seconds of a change; OpenAI allows our account (usage tier Launch) 10,000 requests and 4M tokens a minute, and a full template uses about 380k tokens. The help chat isn't held to the rate, so it stays responsive during big generations.
 - An LLM call silent for 5 minutes has hung (`LLM_TIMEOUT_SECONDS`) and is tried again at most twice (`LLM_MAX_RETRIES`): quick failures recover, and a stuck call gives up well within a run's 25 minutes.
 - Regenerating one question has 90 seconds to write it (`REGENERATE_TIMEOUT_SECONDS`), so the whole request (reading the question, saving the new one, recording its AI usage) ends within the 140 companies waits (`REGENERATE_CALL_SECONDS`); past that the old question stays and the company is told to try again, so a retry never makes two replacements.
 - `generation.completed` carries the test's level, which gives a generated test its level's seconds a question (see [Interviews](features/interviews.md#settings)).
@@ -116,7 +116,7 @@ Each record is one log line ("AI used: …", the `testee_ai_spend` metric and th
 A new generation reuses proven questions on similar topics (topic embeddings, pgvector) from two sources:
 
 - **Templates' company questions** (pools in [Templates and practice](features/templates-and-practice.md#the-question-bank)), for templates and companies' interviews: of the same level and language, answered at least 5 times, never flagged. Practice questions are public, so they're never reused.
-- **The shared question bank**, for companies' interviews only (never a template, never practice, as practice is public): other companies' proven questions, as the terms (2026-10-23) let testee reuse them. A company is never offered its own questions back.
+- **The shared question bank**, for companies' interviews only (never a template, never practice, as practice is public): other companies' proven questions, as the terms let testee reuse them. A company is never offered its own questions back.
 
 Reused questions fill at most half of a new interview's topic.
 
@@ -185,7 +185,7 @@ Once a week (Mondays, 05:00 UTC, `/internal/schedules/patterns` on the worker) g
 - Stored: the rule's text, the flag, how many questions showed it (a count only), when it was first and last seen, its status (proposed, approved, dismissed, in use), who reviewed it when, and for one in use the eval run that put it there. No question ids or text. A known rule found again adds to its count and last seen; a dismissed one stays dismissed and is never proposed again. What one flag's call found is saved in one go after the call: the new rules and the known ones' counts together, or, on a failure, none of them.
 - Each flag is read once a week (a Redis key per flag, kept 6 days), so a retried or repeated run counts no question twice; one run at a time (a lock), and none during the emergency pause. Its AI cost is recorded under its own line, "Question quality patterns".
 - Superadmins approve or dismiss the proposed rules on the admin zone's Questions tab, under Patterns (see [Admin zone](features/admin-zone.md#questions)). An approved rule is only a candidate: it's used in generation once the eval gate below shows it helps.
-- In production the job is created paused (`infra/terraform/jobs.tf`) until the terms and privacy version that allows it, 2026-10-23, is in force.
+- In production the job is created paused (`infra/terraform/jobs.tf`) until the terms and privacy that allow it are in force (their versions from 2026-10-23 on).
 
 ### Rules in use and the eval gate
 
@@ -226,12 +226,15 @@ Each AI task has its own model and reasoning effort. The effort is `none`, `mini
 | The weekly quality patterns | `PATTERNS_MODEL` (`gpt-6.1-sol`) | `PATTERNS_REASONING_EFFORT` (`medium`) |
 | Tagging the notation of questions' examples (`tag_code_languages`) | `CODE_TAGS_MODEL` (`gpt-6.1-sol`) | `CODE_TAGS_REASONING_EFFORT` (`low`) |
 | The check that a pasted text names anything to test, before a generation starts | `SCREEN_MODEL` (`gpt-6-luna`) | `SCREEN_REASONING_EFFORT` (`none`) |
+| The shared question bank's filter | `BANK_FILTER_MODEL` (`gpt-6.1-sol`) | `BANK_FILTER_REASONING_EFFORT` (`low`) |
 | Embeddings of topics and questions (reuse, dropping repeats); a new model needs every stored topic embedded again | `EMBEDDING_MODEL` (`text-embedding-3-small`) | None |
 | Help chat (the signed-out assistant) | `HELP_MODEL` (`gpt-6-luna`) | `HELP_REASONING_EFFORT` (`none`, which also lets it take a temperature) |
 | In-app assistant | `ASSISTANT_MODEL` (`gpt-6-luna`) | `ASSISTANT_REASONING_EFFORT` (`low`) |
 | Assistant's conversation titles | `TITLE_MODEL` (`gpt-6-luna`) | `TITLE_REASONING_EFFORT` (`none`) |
 | Assistant's tools for a turn (the groups it's offered) | `ROUTING_MODEL` (`gpt-6-luna`) | `ROUTING_REASONING_EFFORT` (`none`) |
-| Assistant's voice messages to text | `TRANSCRIBE_MODEL` (`gpt-transcribe`) | None |
+| Assistant's voice messages and voice mode's spoken answers to text (each service has its own setting) | `TRANSCRIBE_MODEL` (`gpt-transcribe`) | None |
+| Voice mode: matching a spoken answer to the options | `VOICE_MATCH_MODEL` (`gpt-6-luna`) | `VOICE_MATCH_REASONING_EFFORT` (`none`) |
+| Voice mode: reading questions aloud | `SPEECH_MODEL` (`gpt-realtime-2.1-mini`, voice `SPEECH_VOICE`, `marin`) | None |
 
 Every service builds its chat models with `testee_common.ai.llm.chat_model`, which leaves the temperature out at any effort but `none`.
 
@@ -246,7 +249,7 @@ Every generation runs on `gpt-6.1-sol` at low. In testing ([evals/README.md](../
 
 What AI generates carries a machine-readable mark (EU AI Act Art. 50(2); the legal reading and its limits are in the local `internal_docs/compliance/ai-act-technical-documentation.md`). Nothing a person sees changes.
 
-- **On pages:** `AI_GENERATED` (`frontend/src/config/ai-generated.ts`), `data-ai-generated="true"` and `data-digital-source-type` with IPTC's `trainedAlgorithmicMedia`, is on the shared components: `QuestionText`, `AnswerOptions`, `ChoiceOptions` and the AI's side of `ChatBubble` (the assistant and the help chat). So every question and option carries it wherever it's shown, the public role pages' samples and the landing's demos too.
+- **On pages:** `AI_GENERATED` (`frontend/src/config/ai-generated.ts`), `data-ai-generated="true"` and `data-digital-source-type` with IPTC's `trainedAlgorithmicMedia`, is on the shared components: `QuestionText`, `AnswerOptions`, `ChoiceOptions` and the AI's side of `ChatBubble` (the assistant and the help chat), and on the option shown in a scorecard's review and the brand tab's sample question. So every question and option carries it wherever it's shown, the public role pages' samples and the landing's demos too.
 - **To AI apps:** `list_topic_questions` gives each question `ai_generated: true` ([MCP](features/mcp.md#tools)). The public API returns no questions.
 - **Voice clips:** every clip's Ogg Opus comment header carries `AI_GENERATED=true` and `DIGITAL_SOURCE_TYPE=<the IPTC term>` (rounds' `CLIP_TAGS`), written as the clip is made. Any tag reader shows them (`ffprobe clip.ogg`). A clip made before the tags stays as it is, as re-reading it costs money; it goes once nobody has played it for 30 days.
 - **Voice clips' watermark:** OpenAI's speech carries its inaudible SynthID watermark. OpenAI's check found it on a stored clip as served, and on the same clip with the tags, naming `gpt-realtime-2.1-mini` (one English clip, 4.9 seconds, 2026-11-07). The check is free: openai.com/verify, or `POST /v1/content_provenance_checks` with the file as `audio/ogg`, up to 60 seconds. Run it again on a fixed phrase, never on a clip reading a company's question, when the speech model, the format or the bit rate changes.

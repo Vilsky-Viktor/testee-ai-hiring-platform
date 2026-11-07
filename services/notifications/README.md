@@ -9,6 +9,11 @@ list fed by Resend's web hooks. It keeps all of it in its own database. What it 
 settings: [notifications and emails](../../docs/features/notifications.md); the email rules:
 `.claude/rules/email.md`.
 
+A company's billing notices (automatic top-ups, `refund_approved`, `refund_rejected`) reach its
+owners and admins only, in the bell and by email, and viewers never see them; `referral_rewarded`
+is for all members. Both refund notices also go to Slack, on by default, with the company's name
+added here.
+
 ## Layout
 
 ```

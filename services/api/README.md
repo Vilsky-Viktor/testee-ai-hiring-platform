@@ -6,6 +6,11 @@ keys and web hooks for its menu (`/internal/companies/{id}/active-count`, compan
 own database; interviews, candidates, invites and notes come from the companies service. What it does
 and its settings: [docs/features/api.md](../../docs/features/api.md).
 
+An interview made through `POST /api/v1/interviews` has no one to review its topics: a company
+that has paid gets them approved at once (`auto_approve`, set by companies), one that never paid
+stops at review on the site, and a suspended company is refused with `409`
+(`company_suspended`). What it does: [the API](../../docs/features/api.md).
+
 ## Layout
 
 ```

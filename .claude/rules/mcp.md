@@ -86,7 +86,7 @@ the HTTP rules are `api.md`'s, tool-writing rules `ai.md`'s, security `security.
   a tool call (hosts don't re-authorize mid-call; reconnecting does it). Never change a scope's
   meaning silently; `offline_access` is not listed.
 - Non-interactive agents use a company API key with the `mcp` permission (`api.md` keys); it
-  acts as its maker in its company, with only its permissions' tools (`key_tools.py`). ChatGPT
+  acts as itself in its company, with only its permissions' tools (`key_tools.py`). ChatGPT
   supports no API keys; Claude's static headers are a beta.
 - Every OAuth endpoint is rate-limited (`oauth_limits.py`) and answers in clients' timeouts.
 

@@ -46,7 +46,7 @@ Each Python service (and `packages/common`) keeps:
 cd services/rounds && uv sync && uv run pytest
 
 # Python lint and format, as CI runs them (ruff's version is pinned in CI)
-uvx ruff@0.16.10 check services packages evals && uvx ruff@0.16.10 format --check services packages evals
+uvx ruff@0.16.10 check services packages evals database && uvx ruff@0.16.10 format --check services packages evals database
 
 # Frontend: lint, types, translations, and unit tests of the pure helpers (frontend/tests, vitest)
 cd frontend && pnpm install && pnpm lint && pnpm typecheck && pnpm check:messages && pnpm test
@@ -72,7 +72,7 @@ PYTEST_ADDOPTS="-k access_matrix" ./scripts/integration.sh companies
 
 ## The assistant's OpenAPI snapshots
 
-The assistant builds its tools from snapshots of the other services' OpenAPI descriptions in `services/assistant/src/assistant/openapi/`. After changing a route of companies, billing, library, notifications, ats, api, rounds or accounts, refresh them with the stack running and commit the result; CI's stack job runs the script and fails when a snapshot differs.
+The assistant builds its tools from snapshots of the other services' OpenAPI descriptions in `services/assistant/src/assistant/openapi/`. After changing a route of companies, billing, library, notifications, ats, api, rounds, accounts or site, refresh them with the stack running and commit the result; CI's stack job runs the script and fails when a snapshot differs.
 
 ```bash
 ./scripts/assistant-openapi.sh
@@ -148,7 +148,7 @@ Load tests with k6, in its Docker image, against a local stack only: never produ
 
 ## Model and prompt evals
 
-Model and prompt quality is tested offline with the prepared datasets, judge prompts and metrics in [evals/](../evals/README.md): question generation and its checks, and the assistant's page context (with it and without it, on throwaway data).
+Model and prompt quality is tested offline with the prepared datasets, judge prompts and metrics in [evals/](../evals/README.md), every AI action its own test (the table in [Every AI action and its eval](../evals/README.md#every-ai-action-and-its-eval)).
 
 ## CI
 
@@ -157,7 +157,7 @@ CI runs all of these except the end-to-end test, which needs an OpenAI key, and 
 - A service counts as changed when its folder or `packages/common` changed; the frontend, when `frontend/` did. A change to `ci.yml`, `scripts/ci_changes.sh` (which works this out) or `.python-version` counts as everything.
 - A pull request compares with its base. `main` compares with the last commit CI passed on, so a failed run's changes are tested and built by the next one.
 - Each changed part's unit tests run and its production image is built. A changed frontend also gets lint, types and the translations check (`pnpm check:messages`). On `main`, an unchanged part's image is the last passing commit's, tagged with the new commit too.
-- `checks.yml`, on every change: Ruff and the file size check (`scripts/check_file_size.sh`: no hand-written file over 300 lines, CLAUDE.md rule 2), the scripts' tests (`scripts/tests`) and the migration check (`scripts/check_migrations.py`): a new migration that builds an index without `CONCURRENTLY`, adds a foreign key or `CHECK` without `NOT VALID`, changes a column's type in place, sets `NOT NULL` without a validated check or renames, on a table that already exists, fails it (`.claude/rules/database.md`). Ruff and the frontend's ESLint also fail a function over complexity 15 (and, in Python, over 12 branches or 50 statements); tests and migrations are exempt in Python, the generated API types in the frontend.
+- `checks.yml`, on every change: Ruff, the file size check (`scripts/check_file_size.sh`: no hand-written file over 300 lines, CLAUDE.md rule 2), the eval datasets' check (`evals/scripts/check_datasets.py`), the scripts' tests (`scripts/tests`) and the migration check (`scripts/check_migrations.py`): a new migration that builds an index without `CONCURRENTLY`, adds a foreign key or `CHECK` without `NOT VALID`, changes a column's type in place, sets `NOT NULL` without a validated check or renames, on a table that already exists, fails it (`.claude/rules/database.md`). Ruff and the frontend's ESLint also fail a function over complexity 15 (and, in Python, over 12 branches or 50 statements); tests and migrations are exempt in Python, the generated API types in the frontend.
 - `checks.yml` also runs Terraform's format check, `terraform validate` (no credentials, no state, Terraform's version pinned) and TFLint (`infra/terraform/.tflint.hcl`: Terraform's recommended rules, and a type and description on every variable and output).
 - And ShellCheck on every shell script (`.shellcheckrc` also asks for `[[ ]]` in bash and quotes around every variable), and actionlint and zizmor on the workflows (tools pinned by version and checksum). Locally: `shellcheck $(git ls-files '*.sh')`, `actionlint` and `uvx zizmor@1.31.1 --offline .github`.
 - The dependency audit (`.github/workflows/audit.yml`) runs on every change and every Monday: `pip-audit`, `pnpm audit --prod`, and gitleaks over the whole history (`.gitleaks.toml` allows tests' made-up keys and placeholders; mark another made-up value with a `gitleaks:allow` comment). On Mondays it also builds and scans every production image's OS packages with Trivy.
