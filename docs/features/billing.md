@@ -246,5 +246,5 @@ In Google Cloud, the webhook secret and the API key go into the `paddle-webhook-
 - Every call to Paddle's API asks for version 1 (the `Paddle-Version` header, `PADDLE_API_VERSION`), so a newer default in Paddle's dashboard changes nothing until billing moves to it.
 - Until `PADDLE_PRODUCT_CANDIDATES` is set, the top-up page's button is disabled and automatic top-up isn't offered.
 - Until both automatic top-up values are set, its line on the top-up page is hidden.
-- Locally, Paddle reaches the webhook only through a tunnel, for example `cloudflared tunnel --url http://localhost:8090`.
+- Locally, with no tunnel, the scheduler runs the reconciliation every minute, so a sandbox top-up's credits arrive within a minute. To test the web hook itself, Paddle reaches it only through a tunnel, for example `cloudflared tunnel --url http://localhost:8090`.
 - In the sandbox, pay with Paddle's test cards (any name, a future expiry): `4242 4242 4242 4242` pays, `4000 0000 0000 0002` is declined, and `4000 0038 0000 0446` asks for 3-D Secure, which can be failed.
