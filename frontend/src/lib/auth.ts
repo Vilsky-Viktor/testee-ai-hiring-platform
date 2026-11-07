@@ -81,6 +81,9 @@ export async function signIn(name: SignInProvider): Promise<SignInResult> {
     // Invites need a verified email; some ways of signing in (GitHub) don't verify it, so a
     // link is sent to confirm it. Each sign-in sends a new one, so a failed send is said.
     if (!user.emailVerified) {
+      // Firebase writes the email in this language, not English.
+      auth.languageCode = document.documentElement.lang
+
       const sent = await firebase.sendEmailVerification(user).then(
         () => true,
         () => false
