@@ -4,7 +4,7 @@ from datetime import UTC, datetime
 
 import pytest
 from sqlalchemy import select
-from testee_common.config.constants import GUEST_UID_PREFIX
+from testee_common.config.sign_in_constants import GUEST_UID_PREFIX
 
 from notifications.core.db import Session
 from notifications.models.bulk import BulkRecipient

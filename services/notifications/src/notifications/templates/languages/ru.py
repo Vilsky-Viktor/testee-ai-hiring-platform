@@ -465,5 +465,5 @@ TEXTS = {
     "stop_reminders": "Не присылать мне напоминания об этом собеседовании",
     "stop_company": "Не присылать мне письма от {company}",
     # Who runs testee, at the end of every email.
-    "operator": "testee управляет {name}, {address}.",
+    "operator": "Оператор testee — {name}, {address}.",
 }

@@ -1,6 +1,6 @@
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from testee_common.config.constants import GUEST_UID_PREFIX
+from testee_common.config.sign_in_constants import GUEST_UID_PREFIX
 from testee_common.events.deletions import (
     INTERVIEW_CANDIDATES_DELETED,
     DeletedCandidate,

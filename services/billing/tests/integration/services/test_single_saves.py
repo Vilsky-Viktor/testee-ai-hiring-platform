@@ -9,7 +9,8 @@ import pytest
 from billing.constants.currencies import ChoiceOwner, Currency
 from billing.constants.products import TOP_UPS, OwnerType
 from billing.repositories import auto_top_ups, currencies, ledger, purchases, referrals
-from billing.schemas.billing import AutoTopUpIn, WelcomeIn
+from billing.schemas.billing import AutoTopUpIn
+from billing.schemas.internal import WelcomeIn
 from billing.services import accounts, topups, wallets
 from billing.services import auto_top_ups as auto_top_up_service
 from tests.integration.factories import welcomed

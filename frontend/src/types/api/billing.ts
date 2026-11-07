@@ -127,6 +127,27 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/internal/candidates/settle": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /**
+     * Settle Candidates
+     * @description A batch of candidates' credits taken or given back in one call, for what removes many at
+     *     once. Each key on its own, so a failure leaves the batch safe to send again.
+     */
+    post: operations["settle_candidates_internal_candidates_settle_post"]
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/internal/companies/{company_id}/welcome": {
     parameters: {
       query?: never
@@ -1550,6 +1571,22 @@ export interface components {
        */
       held_back_candidates: number
     }
+    /**
+     * SettleIn
+     * @description Candidates' hold keys: those to charge and those to give back.
+     */
+    SettleIn: {
+      /**
+       * Charge
+       * @default []
+       */
+      charge: string[]
+      /**
+       * Release
+       * @default []
+       */
+      release: string[]
+    }
     /** SpenderOut */
     SpenderOut: {
       /** Spend */
@@ -1895,6 +1932,37 @@ export interface operations {
       cookie?: never
     }
     requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      204: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  settle_candidates_internal_candidates_settle_post: {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["SettleIn"]
+      }
+    }
     responses: {
       /** @description Successful Response */
       204: {

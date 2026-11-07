@@ -411,5 +411,5 @@ TEXTS = {
     "stop_reminders": "لا ترسلوا إليّ تذكيرات بهذه المقابلة",
     "stop_company": "لا ترسلوا إليّ رسائل من {company}",
     # Who runs testee, at the end of every email.
-    "operator": "تُشغّل testee شركة {name}، {address}.",
+    "operator": "تُشغَّل testee من قِبل {name}، {address}.",
 }

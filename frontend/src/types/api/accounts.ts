@@ -378,6 +378,26 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/internal/schedules/sign-in-backup": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /**
+     * Back Up Sign Ins
+     * @description Daily, from Cloud Scheduler: every sign-in account, copied to the backup bucket.
+     */
+    post: operations["back_up_sign_ins_internal_schedules_sign_in_backup_post"]
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
 }
 export type webhooks = Record<string, never>
 export interface components {
@@ -1243,6 +1263,24 @@ export interface operations {
     }
   }
   replay_erasures_internal_schedules_erasures_post: {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      204: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+    }
+  }
+  back_up_sign_ins_internal_schedules_sign_in_backup_post: {
     parameters: {
       query?: never
       header?: never

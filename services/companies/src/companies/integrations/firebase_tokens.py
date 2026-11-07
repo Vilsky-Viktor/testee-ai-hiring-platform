@@ -2,7 +2,7 @@ import asyncio
 from uuid import UUID
 
 from firebase_admin import auth as firebase_auth
-from testee_common.config.constants import GUEST_UID_PREFIX
+from testee_common.config.sign_in_constants import GUEST_UID_PREFIX
 
 
 def guest_uid(invite_id: UUID) -> str:

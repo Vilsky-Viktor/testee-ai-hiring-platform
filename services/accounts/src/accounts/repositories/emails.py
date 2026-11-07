@@ -3,7 +3,7 @@ from datetime import UTC, datetime
 from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
-from testee_common.config.constants import GUEST_UID_PREFIX
+from testee_common.config.sign_in_constants import GUEST_UID_PREFIX
 
 from accounts.constants.emails import (
     CONSENT_TEXT_VERSION,

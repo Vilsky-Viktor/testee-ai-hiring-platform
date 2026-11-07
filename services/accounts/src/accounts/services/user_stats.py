@@ -4,7 +4,7 @@ import asyncio
 from datetime import UTC, datetime
 
 from firebase_admin import auth as firebase_auth
-from testee_common.config.constants import GUEST_UID_PREFIX
+from testee_common.config.sign_in_constants import GUEST_UID_PREFIX
 from testee_common.db.stats import period_range
 
 

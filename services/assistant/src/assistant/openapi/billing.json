@@ -364,6 +364,46 @@
     }
    }
   },
+  "/internal/candidates/settle": {
+   "post": {
+    "tags": [
+     "internal"
+    ],
+    "summary": "Settle Candidates",
+    "description": "A batch of candidates' credits taken or given back in one call, for what removes many at\nonce. Each key on its own, so a failure leaves the batch safe to send again.",
+    "operationId": "settle_candidates_internal_candidates_settle_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/SettleIn"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ]
+   }
+  },
   "/internal/companies/{company_id}/welcome": {
    "post": {
     "tags": [
@@ -4187,6 +4227,31 @@
     "type": "object",
     "title": "RefundStateOut",
     "description": "A top-up's refund in the history: `offer` when some of it can be refunded now, `status` of\nits latest refund, and the credits of it held back by credits set aside for candidates (not\nrefundable while set aside), with the candidates they make up: revoking their invites would\nadd them to the offer."
+   },
+   "SettleIn": {
+    "properties": {
+     "charge": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "maxItems": 200,
+      "title": "Charge",
+      "default": []
+     },
+     "release": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "maxItems": 200,
+      "title": "Release",
+      "default": []
+     }
+    },
+    "type": "object",
+    "title": "SettleIn",
+    "description": "Candidates' hold keys: those to charge and those to give back."
    },
    "SpenderOut": {
     "properties": {

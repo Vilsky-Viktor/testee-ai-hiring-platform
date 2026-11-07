@@ -4,7 +4,7 @@
 # (bulk_recipients is unique per send and user), so they get one email.
 import uuid
 
-from testee_common.config.constants import GUEST_UID_PREFIX
+from testee_common.config.sign_in_constants import GUEST_UID_PREFIX
 from testee_common.db.paging import ID_PAGE_SIZE
 
 from notifications.constants.bulk import LEGAL_KINDS, OPTIONAL_KINDS, BulkKind

@@ -18,7 +18,8 @@ from billing.core.db import Session
 from billing.helpers.gifts import gift_key, legacy_gift_key
 from billing.helpers.wallets import balance_out
 from billing.repositories import ledger, referrals
-from billing.schemas.billing import AdjustmentIn, BalanceOut, WelcomeIn
+from billing.schemas.billing import AdjustmentIn, BalanceOut
+from billing.schemas.internal import WelcomeIn
 from billing.services.currencies import saved_in
 
 

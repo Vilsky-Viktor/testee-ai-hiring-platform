@@ -834,6 +834,21 @@
      }
     }
    }
+  },
+  "/internal/schedules/sign-in-backup": {
+   "post": {
+    "tags": [
+     "schedules"
+    ],
+    "summary": "Back Up Sign Ins",
+    "description": "Daily, from Cloud Scheduler: every sign-in account, copied to the backup bucket.",
+    "operationId": "back_up_sign_ins_internal_schedules_sign_in_backup_post",
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     }
+    }
+   }
   }
  },
  "components": {

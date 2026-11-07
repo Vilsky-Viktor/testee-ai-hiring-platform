@@ -1,4 +1,4 @@
-from testee_common.config.constants import GUEST_UID_PREFIX
+from testee_common.config.sign_in_constants import GUEST_UID_PREFIX
 from testee_common.events.deletions import guest_ids
 
 
