@@ -4,8 +4,9 @@ audio stays in memory: never written to disk, a database or the logs."""
 
 from fastapi import HTTPException, Request, status
 
-# The largest recording (a minute of compressed speech is well under it).
-MAX_AUDIO_BYTES = 2 * 1024 * 1024
+# The largest recording: a minute at the 160 kbit/s no browser passes for speech. The minute's stop
+# is the browser's; this keeps a script to a few minutes of speech a call.
+MAX_AUDIO_BYTES = 1_200_000
 # The formats browsers record in, and the file name OpenAI reads the format from.
 AUDIO_FILES = {
     "audio/webm": "audio.webm",
@@ -79,15 +80,15 @@ async def received_audio(request: Request) -> tuple[str, str, bytes]:
     return content_type, file_name, audio
 
 
-def audio_seconds(usage, size: int, max_seconds: float) -> float:
+def audio_seconds(usage, size: int) -> float:
     """A transcribed recording's length: as OpenAI reports it (a "duration" usage), otherwise
-    estimated from its size (AUDIO_BYTES_PER_SECOND), at most `max_seconds`."""
+    estimated from its size (AUDIO_BYTES_PER_SECOND)."""
     seconds = getattr(usage, "seconds", None)
 
     if seconds:
         return float(seconds)
 
-    return min(size / AUDIO_BYTES_PER_SECOND, max_seconds)
+    return size / AUDIO_BYTES_PER_SECOND
 
 
 async def speech_to_text(

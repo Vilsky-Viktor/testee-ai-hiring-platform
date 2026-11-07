@@ -107,6 +107,16 @@ def test_openai_failing_is_a_502_and_nothing_is_logged_of_the_recording(client, 
     assert "secret-audio" not in caplog.text
 
 
+def test_a_long_recording_with_no_reported_length_is_recorded_by_its_whole_size(
+    client, openai, published
+):
+    openai.answer.usage = None
+    client.post("/transcribe", content=OPUS + bytes(400_000), headers=WEBM)
+
+    [(_, data)] = published
+    assert data["audio_seconds"] > 100
+
+
 def test_a_transcription_is_recorded_with_its_audio_seconds(client, openai, published):
     openai.answer.usage = SimpleNamespace(type="duration", seconds=7.5)
     client.post("/transcribe", content=OPUS, headers=WEBM)

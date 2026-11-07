@@ -11,7 +11,6 @@ from testee_common.limits.pause import refuse_if_paused
 
 from assistant.config import settings
 from assistant.constants.ai_usage import TRANSCRIPTION_ACTION
-from assistant.constants.limits import MAX_AUDIO_SECONDS
 from assistant.constants.transcribe import TRANSCRIBE_FAILED
 from assistant.integrations.llm import get_openai
 from assistant.integrations.redis import get_redis
@@ -45,7 +44,7 @@ async def transcribe(request: Request, user_id: str, language: str) -> str:
         # The error's type only: its message may quote the request.
         logger.warning("A transcription failed: %s", type(error).__name__)
         await ai_usage.provider_refused(error, TRANSCRIPTION_ACTION, user_id=user_id)
-        seconds = audio_seconds(None, len(audio), MAX_AUDIO_SECONDS)
+        seconds = audio_seconds(None, len(audio))
         await ai_usage.record(
             TRANSCRIPTION_ACTION,
             model,
@@ -55,7 +54,7 @@ async def transcribe(request: Request, user_id: str, language: str) -> str:
         )
         raise HTTPException(status.HTTP_502_BAD_GATEWAY, TRANSCRIBE_FAILED)
 
-    seconds = audio_seconds(getattr(result, "usage", None), len(audio), MAX_AUDIO_SECONDS)
+    seconds = audio_seconds(getattr(result, "usage", None), len(audio))
     await ai_usage.record(TRANSCRIPTION_ACTION, model, audio_seconds=seconds, user_id=user_id)
     text = result.text.strip()
 

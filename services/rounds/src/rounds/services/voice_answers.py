@@ -12,7 +12,6 @@ from testee_common.ai.speech import audio_seconds, received_audio, speech_to_tex
 from rounds.config import settings
 from rounds.constants.voice import (
     MATCH_ACTION,
-    MAX_ANSWER_SECONDS,
     TRANSCRIPTION_ACTION,
     VOICE_FAILED,
 )
@@ -50,10 +49,10 @@ async def hear(request: Request, language: str, who: dict, keywords: list[str]) 
             get_transcribe_client(), model, file_name, audio, content_type, language, keywords
         )
     except OpenAIError as error:
-        seconds = audio_seconds(None, len(audio), MAX_ANSWER_SECONDS)
+        seconds = audio_seconds(None, len(audio))
         raise await failed(error, TRANSCRIPTION_ACTION, model, who, audio_seconds=seconds)
 
-    seconds = audio_seconds(getattr(result, "usage", None), len(audio), MAX_ANSWER_SECONDS)
+    seconds = audio_seconds(getattr(result, "usage", None), len(audio))
     await ai_usage.record(TRANSCRIPTION_ACTION, model, audio_seconds=seconds, **who)
 
     return result.text.strip()
