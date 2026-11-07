@@ -31,7 +31,7 @@ resource "google_pubsub_subscription" "dead_letter" {
 # whole family, every type up to its first dot, matched on the event's `family` attribute
 # (testee_common.events.pubsub) in 23 bytes plus the family's name: notifications and api take all
 # "candidate." events that way, as listing them one by one outgrew the cap, and ignore the ones
-# they don't handle; ats and library take the "interview." family that way (library handles interview.deleted and
+# they don't handle; ats, api and library take the "interview." family that way (api handles interview.ready, .failed and .cancelled; library handles interview.deleted and
 # companies' interview.candidates_deleted, its filter having no room for another clause; ats
 # ignores the latter); notifications takes the
 # "notification." family too (notification.requested, and site's notification.news_withdrawn). A
@@ -52,7 +52,7 @@ locals {
     companies     = ["generation.completed", "generation.failed", "generation.cancelled", "interview.finished", "audit.recorded"]
     notifications = ["notification.*", "candidate.*", "member.*", "report.*", "contact.*", "company.*", "email.*", "user.*"]
     ats           = ["candidate.finished", "candidate.removed", "interview.*", "company.*", "credits.*", "ats.*", "user.*"]
-    api           = ["candidate.*", "interview.ready", "company.deleted", "user.*"]
+    api           = ["candidate.*", "interview.*", "company.deleted", "user.*"]
     assistant     = ["company.deleted", "candidate.removed", "candidate.interview_deleted", "user.*"]
     accounts      = ["guests.deleted"]
     generation    = ["user.*"]

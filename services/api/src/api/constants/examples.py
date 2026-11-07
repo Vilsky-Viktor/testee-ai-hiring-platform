@@ -4,6 +4,7 @@ INTERVIEW = {
     "title": "Backend developer",
     "status": "in_process",
     "ready": True,
+    "generation_failed": False,
     "pass_mark": 70,
     "candidate_count": 12,
     "created_at": "2026-10-01T09:00:00Z",

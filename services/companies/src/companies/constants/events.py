@@ -23,6 +23,10 @@ CANDIDATE_FINISHED = "candidate.finished"
 # A generated interview got its questions; ats invites the candidates waiting for it, and the
 # API's web hooks hear it.
 INTERVIEW_READY = "interview.ready"
+# A generated interview's making failed, or its review was cancelled and it's gone: the API's web
+# hooks hear it, so an integration waiting for interview.ready can stop waiting.
+INTERVIEW_FAILED = "interview.failed"
+INTERVIEW_CANCELLED = "interview.cancelled"
 # A candidate started, their invite email bounced, or their invite expired: the API's web hooks
 # hear it (repositories/candidate_events.py).
 CANDIDATE_STARTED = "candidate.started"

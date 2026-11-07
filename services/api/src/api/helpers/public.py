@@ -16,6 +16,7 @@ def interview_of(found: dict) -> Interview:
         title=found["title"],
         status=found["status"],
         ready=found["set_id"] is not None,
+        generation_failed=found["generation_failed"],
         pass_mark=found["pass_mark"],
         candidate_count=found["candidate_count"],
         created_at=found["created_at"],

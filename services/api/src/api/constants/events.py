@@ -14,6 +14,10 @@ CANDIDATE_REMOVED = "candidate.removed"
 CANDIDATE_INTERVIEW_DELETED = "candidate.interview_deleted"
 # An interview's questions are ready: the company's web hooks hear it.
 INTERVIEW_READY = "interview.ready"
+# Making an interview failed (it can be retried), or it was cancelled and is gone: the company's
+# web hooks hear it.
+INTERVIEW_FAILED = "interview.failed"
+INTERVIEW_CANCELLED = "interview.cancelled"
 # A company was deleted: its keys and web hooks go.
 COMPANY_DELETED = "company.deleted"
 # What a web hook's "send test event" sends.

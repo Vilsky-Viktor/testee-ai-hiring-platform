@@ -16,6 +16,8 @@ from api.main import app
         "candidate.expired",
         "candidate.removed",
         "interview.ready",
+        "interview.failed",
+        "interview.cancelled",
         "test",
     ],
 )

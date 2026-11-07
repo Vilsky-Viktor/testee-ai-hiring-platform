@@ -6,11 +6,14 @@ from api.constants.events import (
     CANDIDATE_REMOVED,
     CANDIDATE_STARTED,
     CANDIDATE_UNDELIVERED,
+    INTERVIEW_CANCELLED,
+    INTERVIEW_FAILED,
     INTERVIEW_READY,
     TEST_EVENT,
 )
 from api.schemas.webhook_events import (
     CandidateWebhook,
+    InterviewCancelledWebhook,
     InterviewWebhook,
     RemovedWebhook,
     TestWebhook,
@@ -54,6 +57,19 @@ def candidate_removed(event: RemovedWebhook) -> None:
 @webhooks.post(INTERVIEW_READY, summary="An interview is ready")
 def interview_ready(event: InterviewWebhook) -> None:
     """Sent when an interview's questions are ready, so candidates can be invited."""
+
+
+@webhooks.post(INTERVIEW_FAILED, summary="Making an interview failed")
+def interview_failed(event: InterviewWebhook) -> None:
+    """Sent when making an interview's questions fails. It stays not `ready`, with
+    `generation_failed` true, until an owner or admin retries it in testee, and
+    `interview.ready` follows if that works."""
+
+
+@webhooks.post(INTERVIEW_CANCELLED, summary="An interview was cancelled")
+def interview_cancelled(event: InterviewCancelledWebhook) -> None:
+    """Sent when an interview goes before it had questions, as its topics waited too long for a
+    review. Its id no longer exists."""
 
 
 @webhooks.post(TEST_EVENT, summary="A test")

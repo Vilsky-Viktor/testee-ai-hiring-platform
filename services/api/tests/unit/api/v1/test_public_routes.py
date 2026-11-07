@@ -19,6 +19,7 @@ def test_a_key_lists_its_companys_interviews_and_notes_its_use(client, companies
             "title": "Backend",
             "status": "in_process",
             "ready": True,
+            "generation_failed": False,
             "pass_mark": 70,
             "candidate_count": 1,
             "created_at": "2026-10-01T09:00:00Z",
@@ -123,6 +124,20 @@ def test_an_invite_with_an_unknown_mode_is_refused(client, companies_api, key):
     assert companies_api["sent"] == []
 
 
+def test_an_invite_reads_the_candidate_from_its_one_call(client, companies_api, key, monkeypatch):
+    async def never(*args):
+        raise AssertionError("an invite needs one call")
+
+    monkeypatch.setattr(companies, "interview", never)
+    monkeypatch.setattr(companies, "candidate", never)
+    response = call(
+        client, "POST", f"/interviews/{INTERVIEW}/candidates", json={"email": "a@example.com"}
+    )
+
+    assert response.status_code == 201
+    assert response.json()["id"] == str(CANDIDATE)
+
+
 def test_an_invites_default_theme_leaves_it_to_the_candidate(client, companies_api, key):
     body = {"email": "bob@example.com", "theme": "default"}
     call(client, "POST", f"/interviews/{INTERVIEW}/candidates", json=body)
@@ -207,6 +222,8 @@ def test_the_public_reference_lists_only_the_public_api(client):
         "candidate.expired",
         "candidate.removed",
         "interview.ready",
+        "interview.failed",
+        "interview.cancelled",
         "test",
     ]
 

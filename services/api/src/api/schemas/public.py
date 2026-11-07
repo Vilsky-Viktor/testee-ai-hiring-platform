@@ -21,6 +21,10 @@ class Interview(BaseModel):
         "your company marks it so"
     )
     ready: bool = Field(description="Whether the questions are ready and candidates can be invited")
+    generation_failed: bool = Field(
+        description="Whether making its questions failed; true until an owner or admin retries "
+        "it in testee"
+    )
     pass_mark: int = Field(description="The minimum grade, in percent, a candidate needs to pass")
     candidate_count: int = Field(description="How many candidates were invited to it")
     created_at: datetime = Field(description="When it was made")
@@ -248,9 +252,15 @@ class RemovedEvent(BaseModel):
 
 
 class InterviewEvent(BaseModel):
-    """The `data` object of an `interview.ready` event."""
+    """The `data` object of an `interview.ready` or `interview.failed` event."""
 
-    interview: Interview = Field(description="The interview, now ready")
+    interview: Interview = Field(description="The interview")
+
+
+class InterviewCancelledEvent(BaseModel):
+    """The `data` object of an `interview.cancelled` event."""
+
+    interview_id: UUID = Field(description="The interview's id, which no longer exists")
 
 
 class TestEvent(BaseModel):

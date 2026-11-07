@@ -15,7 +15,7 @@ from testee_common.auth.encryption import decrypt
 from testee_common.http.public_urls import resolved_address
 
 from api.config import settings
-from api.constants.events import CANDIDATE_REMOVED, INTERVIEW_READY, TEST_EVENT
+from api.constants.events import CANDIDATE_REMOVED, INTERVIEW_CANCELLED, TEST_EVENT
 from api.core.db import Session
 from api.helpers.public import candidate_of, interview_of
 from api.helpers.webhooks import body_of, retry_delay, signature
@@ -24,7 +24,12 @@ from api.integrations import webhooks as endpoints
 from api.models.api import Webhook
 from api.repositories import webhook_log, webhooks
 from api.repositories import webhook_retries as retries
-from api.schemas.public import CandidateEvent, InterviewEvent, RemovedEvent
+from api.schemas.public import (
+    CandidateEvent,
+    InterviewCancelledEvent,
+    InterviewEvent,
+    RemovedEvent,
+)
 
 logger = logging.getLogger(__name__)
 # How a send that went through shows in its web hook's log.
@@ -111,7 +116,10 @@ async def removed(data: dict, event_id: str, occurred_at: datetime) -> None:
     await send(CANDIDATE_REMOVED, UUID(data["company_id"]), event_id, occurred_at, build)
 
 
-async def interview_ready(data: dict, event_id: str, occurred_at: datetime) -> None:
+async def interview_state(
+    event_type: str, data: dict, event_id: str, occurred_at: datetime
+) -> None:
+    """An interview became ready or failed: it goes out as it is when it's sent."""
     company_id, interview_id = UUID(data["company_id"]), UUID(data["interview_id"])
 
     async def build() -> InterviewEvent | None:
@@ -125,7 +133,16 @@ async def interview_ready(data: dict, event_id: str, occurred_at: datetime) -> N
 
         return InterviewEvent(interview=interview_of(interview))
 
-    await send(INTERVIEW_READY, company_id, event_id, occurred_at, build)
+    await send(event_type, company_id, event_id, occurred_at, build)
+
+
+async def interview_cancelled(data: dict, event_id: str, occurred_at: datetime) -> None:
+    """An interview was cancelled: its id, from the event itself, as the interview is gone."""
+
+    async def build() -> InterviewCancelledEvent:
+        return InterviewCancelledEvent(interview_id=data["interview_id"])
+
+    await send(INTERVIEW_CANCELLED, UUID(data["company_id"]), event_id, occurred_at, build)
 
 
 async def test(hook: Webhook) -> bool:

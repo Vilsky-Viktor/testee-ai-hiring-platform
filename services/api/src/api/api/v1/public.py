@@ -140,14 +140,14 @@ async def invite_candidate(
     address whose invite is still open, or who already finished, returns that candidate as they
     are (`200`), without another email or credits; an expired invite is sent again. To send an
     open invite again, use the resend endpoint."""
-    await companies.interview(key.company_id, interview_id)
-
     # A replay of an earlier request (its Idempotency-Key) invites no one: 200.
     created = False
+    found = None
 
     async def invite() -> str:
-        nonlocal created
-        invite_id, created = await companies.invite(
+        nonlocal created, found
+        invite_id, created, found = await companies.invite(
+            key.company_id,
             interview_id,
             str(body.email),
             key_actor(key.id),
@@ -172,7 +172,8 @@ async def invite_candidate(
     if not created:
         response.status_code = status.HTTP_200_OK
 
-    found = await companies.candidate(key.company_id, interview_id, invite_id)
+    # Only a replay still has to read them.
+    found = found or await companies.candidate(key.company_id, interview_id, invite_id)
 
     return candidate_of(found, key.company_id, interview_id, settings.site_url)
 
@@ -214,8 +215,9 @@ async def create_interview(
     is. Until your company's first top-up, and during a pause, the topics wait for a review
     instead: by an owner or admin on the interview's page in testee, or by an agent with
     `review_generation` over MCP. The API has no route for it, and topics left unreviewed for 14
-    days cancel the interview. If making it fails, `ready` stays false until an owner or admin
-    retries it on that page. Retrying this request is safe: the same request from the same key
+    days cancel the interview (`interview.cancelled`). If making it fails, `generation_failed`
+    is true and `ready` stays false until an owner or admin retries it on that page
+    (`interview.failed`). Retrying this request is safe: the same request from the same key
     within 15 minutes returns the interview the first one made, with `200`."""
 
     created = False

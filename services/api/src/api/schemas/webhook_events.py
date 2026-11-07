@@ -3,7 +3,13 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-from api.schemas.public import CandidateEvent, InterviewEvent, RemovedEvent, TestEvent
+from api.schemas.public import (
+    CandidateEvent,
+    InterviewCancelledEvent,
+    InterviewEvent,
+    RemovedEvent,
+    TestEvent,
+)
 
 EXAMPLE_AT = "2026-10-15T08:30:00+00:00"
 
@@ -39,8 +45,13 @@ class RemovedWebhook(WebhookEvent):
 
 
 class InterviewWebhook(WebhookEvent):
-    type: Literal["interview.ready"] = Field(description="The event's type")
+    type: Literal["interview.ready", "interview.failed"] = Field(description="The event's type")
     data: InterviewEvent
+
+
+class InterviewCancelledWebhook(WebhookEvent):
+    type: Literal["interview.cancelled"] = Field(description="The event's type")
+    data: InterviewCancelledEvent
 
 
 class TestWebhook(WebhookEvent):

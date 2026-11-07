@@ -4,7 +4,7 @@ from sqlalchemy import case, delete, func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from testee_common.events import processed_events
 
-from companies.constants.events import INTERVIEW_READY
+from companies.constants.events import INTERVIEW_CANCELLED, INTERVIEW_FAILED, INTERVIEW_READY
 from companies.models.events import ProcessedEvent
 from companies.models.interviews import Interview
 from companies.repositories import outbox
@@ -70,13 +70,25 @@ async def set_generated(
 
 
 async def mark_failed(session: AsyncSession, generation_id: uuid.UUID, event_id: str) -> None:
-    """Marks the interview of a failed generation, once per event: a late redelivery doesn't
-    mark it again after a retry. One with its questions already isn't touched."""
-    if await processed_events.claim(session, ProcessedEvent, event_id):
-        await session.execute(
-            update(Interview)
-            .where(Interview.generation_id == generation_id, Interview.set_id.is_(None))
-            .values(generation_failed=True)
+    """Marks the interview of a failed generation and saves the interview.failed event with it,
+    once per event: a late redelivery doesn't mark it again after a retry. One with its questions
+    already isn't touched."""
+    if not await processed_events.claim(session, ProcessedEvent, event_id):
+        return
+
+    row = await session.execute(
+        update(Interview)
+        .where(Interview.generation_id == generation_id, Interview.set_id.is_(None))
+        .values(generation_failed=True)
+        .returning(Interview.id, Interview.company_id)
+    )
+    found = row.one_or_none()
+
+    if found is not None:
+        outbox.add(
+            session,
+            INTERVIEW_FAILED,
+            {"interview_id": str(found.id), "company_id": str(found.company_id)},
         )
 
 
@@ -90,8 +102,8 @@ async def remove_for_generation(
     session: AsyncSession, generation_id: uuid.UUID, notice: dict
 ) -> None:
     """Removes the interview of a generation that was cancelled before producing questions;
-    the company's notification and the interview.deleted event are saved only when one is
-    removed."""
+    the company's notification and the interview.deleted and interview.cancelled events are
+    saved only when one is removed."""
     removed = (
         await session.execute(
             delete(Interview)
@@ -105,3 +117,8 @@ async def remove_for_generation(
     if removed is not None:
         outbox.notify(session, notice)
         await add_deleted(session, *removed)
+        outbox.add(
+            session,
+            INTERVIEW_CANCELLED,
+            {"interview_id": str(removed.id), "company_id": str(removed.company_id)},
+        )

@@ -7,6 +7,8 @@ from api.constants.events import (
     CANDIDATE_INTERVIEW_DELETED,
     CANDIDATE_REMOVED,
     COMPANY_DELETED,
+    INTERVIEW_CANCELLED,
+    INTERVIEW_FAILED,
     INTERVIEW_READY,
 )
 from api.handlers import (
@@ -14,6 +16,8 @@ from api.handlers import (
     candidate_progress,
     candidate_removed,
     company_deleted,
+    interview_cancelled,
+    interview_failed,
     interview_ready,
     user_deleted,
 )
@@ -35,6 +39,10 @@ async def handle(
         await candidate_interview_deleted.handle(data)
     elif event_type == INTERVIEW_READY:
         await interview_ready.handle(data, event_id, when)
+    elif event_type == INTERVIEW_FAILED:
+        await interview_failed.handle(data, event_id, when)
+    elif event_type == INTERVIEW_CANCELLED:
+        await interview_cancelled.handle(data, event_id, when)
     elif event_type == COMPANY_DELETED:
         await company_deleted.handle(data)
     elif event_type == USER_DELETED:

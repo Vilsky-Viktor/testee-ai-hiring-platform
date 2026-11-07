@@ -102,7 +102,7 @@ def test_a_removed_interview_is_announced_once_naming_its_questions(run):
     assert saved == [deleted(found, set_id)]
 
 
-def test_a_cancelled_generations_interview_is_announced_as_deleted(run):
+def test_a_cancelled_generations_interview_is_announced_as_deleted_and_cancelled_once(run):
     async def scenario():
         found = await interview()
         await transaction(
@@ -112,11 +112,16 @@ def test_a_cancelled_generations_interview_is_announced_as_deleted(run):
             interview_generations.remove_for_generation, found.generation_id, {"kind": "x"}
         )
 
-        return found, await events("interview.deleted", "interview_id", str(found.id))
+        return (
+            found,
+            await events("interview.deleted", "interview_id", str(found.id)),
+            await events("interview.cancelled", "interview_id", str(found.id)),
+        )
 
-    found, saved = run(scenario())
+    found, saved, cancelled = run(scenario())
 
     assert saved == [deleted(found)]
+    assert cancelled == [{"interview_id": str(found.id), "company_id": str(found.company_id)}]
 
 
 def test_interviews_by_ids_skip_the_ones_gone(run):
@@ -156,12 +161,25 @@ def test_a_failed_generation_marks_its_interview_once_until_the_questions_come(r
         )
         await transaction(interview_generations.mark_failed, found.generation_id, str(uuid.uuid4()))
 
-        return failed, redelivered, await transaction(interviews.get, found.id)
+        return (
+            failed,
+            redelivered,
+            await transaction(interviews.get, found.id),
+            await events("interview.failed", "interview_id", str(found.id)),
+        )
 
-    failed, redelivered, ready = run(scenario())
+    failed, redelivered, ready, announced = run(scenario())
 
     assert (failed, redelivered) == (True, False)
     assert ready.generation_failed is False and ready.set_id is not None
+    # The first failure and the retry's, never the redelivery or the one after the questions.
+    assert (
+        announced
+        == [
+            {"interview_id": str(ready.id), "company_id": str(ready.company_id)},
+        ]
+        * 2
+    )
 
 
 def test_a_removed_interview_returns_its_unfinished_invites_for_their_credits(run):
