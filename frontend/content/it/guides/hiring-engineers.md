@@ -80,7 +80,7 @@ Qui entra in gioco testee. Trasforma la tua descrizione del ruolo in un colloqui
 
 Ogni candidato riceve il proprio set casuale di domande, con un conto alla rovescia su ognuna. Vedi una scheda di valutazione con ogni risposta e il tempo impiegato, più segnalazioni per risposte troppo rapide, uscite dalla pagina, tentativi di copia e andamenti insoliti nelle risposte e nei tempi. Una segnalazione è un motivo per guardare meglio, non la prova di qualcosa. La pagina del candidato suggerisce anche domande a cui ha risposto correttamente, da approfondire nel colloquio successivo.
 
-Cosa non fa testee: in testee i candidati non scrivono, non eseguono e non fanno debug del codice. Leggere codice e scriverlo sono competenze diverse, quindi il passo successivo resta importante. Vedi i [test di selezione per ruolo](/tests) per test pronti da cui partire.
+Cosa non fa testee: in testee i candidati non scrivono, non eseguono e non fanno debug del codice. Leggere codice e scriverlo sono competenze diverse, quindi il passo successivo resta importante. Vedi il [test di programmazione per le assunzioni](/guides/coding-test-for-hiring) per capire come funziona, e i [test di selezione per ruolo](/tests) per test pronti da cui partire.
 
 ## Passo 4: esercizio a casa o live coding
 

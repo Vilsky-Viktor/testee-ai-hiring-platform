@@ -80,7 +80,7 @@ C'est là que se place testee. Il transforme votre fiche de poste en entretien d
 
 Chaque candidat reçoit sa propre série aléatoire de questions avec un compte à rebours pour chacune. Vous voyez une fiche d'évaluation avec chaque réponse et le temps qu'elle a pris, ainsi que des alertes pour les réponses trop rapides, les sorties de la page, les tentatives de copie et les schémas inhabituels dans ses réponses et ses temps. Une alerte est une raison de regarder de plus près, pas une preuve. La page du candidat suggère aussi des questions auxquelles il a bien répondu, à aborder lors de l'entretien suivant.
 
-Ce que testee ne fait pas : les candidats n'écrivent, n'exécutent ni ne déboguent de code dans testee. Lire du code et en écrire sont des compétences différentes, l'étape suivante reste donc importante. Voir les [tests de compétences par poste](/tests) pour des tests prêts à l'emploi.
+Ce que testee ne fait pas : les candidats n'écrivent, n'exécutent ni ne déboguent de code dans testee. Lire du code et en écrire sont des compétences différentes, l'étape suivante reste donc importante. Voir le [test de code pour le recrutement](/guides/coding-test-for-hiring) pour son fonctionnement, et les [tests de compétences par poste](/tests) pour des tests prêts à l'emploi.
 
 ## Étape 4 : exercice à la maison ou code en direct
 

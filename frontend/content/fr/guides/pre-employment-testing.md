@@ -89,7 +89,7 @@ Pour comparer les prix, voir [comment comparer le coût des tests](/compare/chea
 
 ## Comment testee procède
 
-testee transforme une fiche de poste en entretien de compétences chronométré à choix multiples.
+testee transforme une fiche de poste en entretien de compétences chronométré à choix multiples : voir le [logiciel d'évaluation des compétences](/guides/skills-assessment-software) pour ce qui est inclus.
 
 1. **Collez la fiche de poste.** N'importe quel poste, dans l'une des 23 langues. testee repère ce qu'un candidat doit savoir et propose des thèmes.
 2. **Vérifiez les thèmes.** Décochez ce dont vous n'avez pas besoin, renommez un thème, modifiez ses sous-thèmes ou décrivez vos changements en texte libre. Les questions ne sont rédigées qu'après votre validation. Vous pouvez aussi partir d'un modèle prêt à l'emploi pour votre poste.

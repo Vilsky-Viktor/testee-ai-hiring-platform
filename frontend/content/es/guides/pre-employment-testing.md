@@ -89,7 +89,7 @@ Para comparar precios, consulta [cómo comparar el coste de las pruebas](/compar
 
 ## Cómo lo hace testee
 
-testee convierte una descripción del puesto en una entrevista de habilidades de opción múltiple con tiempo límite.
+testee convierte una descripción del puesto en una entrevista de habilidades de opción múltiple con tiempo límite: consulta el [software de evaluación de habilidades](/guides/skills-assessment-software) para ver qué incluye.
 
 1. **Pega la descripción del puesto.** Cualquier puesto, en cualquiera de 23 idiomas. testee extrae lo que un candidato debe saber y propone temas.
 2. **Revisa los temas.** Desmarca lo que no necesites, cambia el nombre de un tema, edita sus subtemas o describe los cambios en texto libre. Las preguntas se redactan solo después de tu aprobación. También puedes empezar desde una plantilla lista para tu puesto.

@@ -80,7 +80,7 @@ Dito pumapasok ang testee. Ginagawa nitong timed multiple-choice na knowledge in
 
 Bawat aplikante ay may sariling random na set ng tanong na may countdown sa bawat isa. Makikita mo ang scorecard na may bawat sagot at kung gaano ito katagal, kasama ang mga flag para sa sobrang bilis na sagot, pag-alis sa pahina, pagtatangkang mag-copy at hindi karaniwang pattern sa mga sagot at oras nila. Ang flag ay dahilan para tumingin nang mas mabuti, hindi patunay ng kahit ano. Nagmumungkahi rin ang kanilang page ng mga tanong na tama ang sagot nila para itanong sa susunod na interview.
 
-Ang hindi ginagawa ng testee: hindi sumusulat, nagpapatakbo o nagde-debug ng code ang mga aplikante sa testee. Magkaibang skill ang pagbasa at pagsulat ng code, kaya mahalaga pa rin ang susunod na hakbang. Tingnan ang [skills tests ayon sa role](/tests) para sa mga handang test na puwedeng simulan.
+Ang hindi ginagawa ng testee: hindi sumusulat, nagpapatakbo o nagde-debug ng code ang mga aplikante sa testee. Magkaibang skill ang pagbasa at pagsulat ng code, kaya mahalaga pa rin ang susunod na hakbang. Tingnan ang [coding test para sa hiring](/guides/coding-test-for-hiring) para malaman kung paano ito gumagana, at ang [skills tests ayon sa role](/tests) para sa mga handang test na puwedeng simulan.
 
 ## Hakbang 4: Take-home o live coding
 

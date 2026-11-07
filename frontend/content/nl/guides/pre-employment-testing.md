@@ -89,7 +89,7 @@ Voor prijsvergelijkingen, zie [hoe je de kosten van tests vergelijkt](/compare/c
 
 ## Hoe testee het doet
 
-testee maakt van een functieomschrijving een interview over vaardigheden, met tijdslimiet en meerkeuzevragen.
+testee maakt van een functieomschrijving een interview over vaardigheden, met tijdslimiet en meerkeuzevragen: zie [software voor skills assessments](/guides/skills-assessment-software) voor wat er is inbegrepen.
 
 1. **Plak de functieomschrijving.** Elke functie, in elk van 23 talen. testee haalt eruit wat een kandidaat moet weten en stelt onderwerpen voor.
 2. **Bekijk de onderwerpen.** Vink uit wat je niet nodig hebt, hernoem een onderwerp, bewerk de subonderwerpen of beschrijf wijzigingen in gewone taal. Vragen worden pas geschreven nadat jij akkoord geeft. Je kunt ook beginnen met een kant-en-klaar sjabloon voor je functie.

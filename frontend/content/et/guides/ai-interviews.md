@@ -33,7 +33,7 @@ Selles mudelis teeb AI kirjutamistöö: loeb töökuulutust, pakub välja, mida 
 
 ## testee lähenemine
 
-testee kirjutab AI abil sinu töökuulutuse põhjal oskuste intervjuu. Mida testitakse ja mis otsused tehakse, jääb inimeste kontrolli alla.
+testee kirjutab AI abil sinu töökuulutuse põhjal oskuste intervjuu. Mida testitakse ja mis otsused tehakse, jääb inimeste kontrolli alla. Mida see sisaldab, vaata lehelt [AI-intervjuu tarkvara](/guides/ai-interview-software).
 
 1. **AI loeb sinu töökuulutust** ja toob välja, mida kandidaat peab teadma: nõuded, taseme ning teemad koos alateemadega.
 2. **Sina vaatad teemad üle.** Jäta alles, eemalda linnuke, nimeta ümber või muuda neid või kirjuta AI-le tavalise tekstiga, mida muuta. Ühtegi küsimust ei kirjutata enne, kui oled teemad heaks kiitnud. Erand on intervjuu, mille sinu enda platvorm loob API kaudu pärast seda, kui sinu ettevõte on krediiti juurde laadinud: see liigub pakutud teemadelt otse edasi.

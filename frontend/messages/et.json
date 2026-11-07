@@ -3805,8 +3805,6 @@
         "alt": "Kandidaadi aruanne, tulemus üle läbimise läve"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "AI-intervjuude juhend",
       "engineersGuide": "kuidas värvata insenere"
     }
+  }
+}

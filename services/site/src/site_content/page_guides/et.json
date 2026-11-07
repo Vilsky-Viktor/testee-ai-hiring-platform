@@ -673,6 +673,48 @@
       "Õigusteemad on kuupäevaga kokkuvõtted, mitte õigusnõu: kontrolli reegleid, mis kehtivad seal, kus värbad."
     ]
   },
+  "skillsAssessment": {
+    "title": "Oskuste hindamise tarkvara",
+    "text": "Mida testee pakub oskuste hindamise tarkvarana: ajapiiranguga oskustest iga ametikoha jaoks, kirjutatud sinu töökuulutuse põhjal, tulemustega, mida saab võrrelda.",
+    "actions": [
+      "Liigu ülal oleva nupuga „Loo intervjuu“ lehe lõpus oleva kasti juurde või ava hinnad.",
+      "Vaata päris rakenduse piltide kõrval, kuidas test kirjutatakse, läbi viiakse ja tulemusi võrreldakse.",
+      "Vaata kaartidelt, mida iga test sisaldab, koos hinnaga kandidaadi kohta.",
+      "Kleebi töökuulutus lehe lõpus olevasse kasti, et luua test.",
+      "Ava lingid valmis testide, värbamistestide juhendi ja kõigi võimaluste juurde."
+    ],
+    "tips": [
+      "Kõik funktsioonid on hinnas: maksad ainult iga kandidaadi eest, kes vastab vähemalt ühele küsimusele."
+    ]
+  },
+  "aiInterview": {
+    "title": "AI-intervjuu tarkvara",
+    "text": "Mida testee pakub AI-intervjuu tarkvarana: küsimused kirjutab AI, häälerežiimis saab Mira need ette lugeda ja iga otsuse teeb sinu meeskond.",
+    "actions": [
+      "Liigu ülal oleva nupuga „Loo intervjuu“ lehe lõpus oleva kasti juurde või ava hinnad.",
+      "Vaata päris rakenduse piltide kõrval, mida AI teeb ja mida ei tee.",
+      "Vaata kaartidelt dokumente, kallutatuse auditi eksporti ja seda, kus andmeid hoitakse.",
+      "Kleebi töökuulutus lehe lõpus olevasse kasti, et luua intervjuu.",
+      "Ava lingid AI-intervjuude juhendi, usalduse lehe ja kõigi võimaluste juurde."
+    ],
+    "tips": [
+      "testee ei lükka kunagi kedagi tagasi: vastused hinnatakse vastusevõtme järgi ja otsustab inimene."
+    ]
+  },
+  "codingTest": {
+    "title": "Programmeerimistest värbamiseks",
+    "text": "Mida testee pakub programmeerimistestina värbamiseks: ajapiiranguga test, kus arendajad loevad lühikesi koodijuppe ja vastavad, sõelumiseks enne sinu praktilist vooru.",
+    "actions": [
+      "Liigu ülal oleva nupuga „Loo intervjuu“ lehe lõpus oleva kasti juurde või ava hinnad.",
+      "Vaata päris rakenduse piltide kõrval, kuidas test katab sinu tehnoloogiad ja millised on küsimused koodi kohta.",
+      "Vaata kaartidelt, kuidas see sobib sinu ATS-i või oma platvormiga, koos hinnaga kandidaadi kohta.",
+      "Kleebi töökuulutus lehe lõpus olevasse kasti, et luua test.",
+      "Ava lingid inseneride värbamise juhendi, valmis testide ja kõigi võimaluste juurde."
+    ],
+    "tips": [
+      "Kandidaadid ei kirjuta, käivita ega siluta testees koodi: kasuta seda enne praktilist vooru, mitte selle asemel."
+    ]
+  },
   "faq": {
     "title": "Korduma kippuvad küsimused",
     "text": "Vastused levinud küsimustele testee kohta: intervjuud, kandidaadid, hinnad ja krediidid, tulemused, integratsioonid, keeled ja sinu andmed.",

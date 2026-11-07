@@ -673,6 +673,48 @@
       "Rechtliche Themen sind datierte Zusammenfassungen, keine Rechtsberatung: Prüfe die Regeln, die dort gelten, wo du einstellst."
     ]
   },
+  "skillsAssessment": {
+    "title": "Eignungstest-Software",
+    "text": "Was testee als Eignungstest-Software ist: ein Fachtest mit Zeitlimit für jede Stelle, aus deiner Stellenbeschreibung geschrieben, mit vergleichbaren Ergebnissen.",
+    "actions": [
+      "Springe mit „Interview erstellen“ oben zum Feld am Ende der Seite oder öffne die Preise.",
+      "Sieh neben Bildern der echten App, wie ein Test geschrieben, durchgeführt und verglichen wird.",
+      "Sieh auf den Karten, was jeder Test enthält, mit dem Preis pro Kandidat.",
+      "Füge im Feld am Ende der Seite eine Stellenbeschreibung ein, um einen Test zu erstellen.",
+      "Folge den Links zu den fertigen Tests, dem Ratgeber zu Einstellungstests und allen Funktionen."
+    ],
+    "tips": [
+      "Alle Funktionen sind inklusive: Du zahlst nur für jeden Kandidaten, der mindestens eine Frage beantwortet."
+    ]
+  },
+  "aiInterview": {
+    "title": "KI-Interview-Software",
+    "text": "Was testee als KI-Interview-Software ist: Die KI schreibt die Fragen, Mira kann sie im Sprachmodus vorlesen, und dein Team trifft jede Entscheidung.",
+    "actions": [
+      "Springe mit „Interview erstellen“ oben zum Feld am Ende der Seite oder öffne die Preise.",
+      "Sieh neben Bildern der echten App, was die KI tut und was nicht.",
+      "Sieh auf den Karten die Dokumente, den Export für Bias-Audits und wo die Daten gespeichert werden.",
+      "Füge im Feld am Ende der Seite eine Stellenbeschreibung ein, um ein Interview zu erstellen.",
+      "Folge den Links zum Ratgeber zu KI-Interviews, zur Vertrauensseite und zu allen Funktionen."
+    ],
+    "tips": [
+      "testee lehnt nie jemanden ab: Antworten werden anhand eines Lösungsschlüssels bewertet, und ein Mensch entscheidet."
+    ]
+  },
+  "codingTest": {
+    "title": "Coding-Test für Bewerber",
+    "text": "Was testee als Coding-Test für Bewerber ist: ein Test mit Zeitlimit, bei dem Entwickler kurze Codestücke lesen und antworten, als Vorauswahl vor deiner Praxisrunde.",
+    "actions": [
+      "Springe mit „Interview erstellen“ oben zum Feld am Ende der Seite oder öffne die Preise.",
+      "Sieh neben Bildern der echten App, wie ein Test deinen Stack abdeckt und wie seine Fragen zu Code aussehen.",
+      "Sieh auf den Karten, wie er zu deinem ATS oder deiner eigenen Plattform passt, mit dem Preis pro Kandidat.",
+      "Füge im Feld am Ende der Seite eine Stellenbeschreibung ein, um einen Test zu erstellen.",
+      "Folge den Links zum Ratgeber zum Einstellen von Entwicklern, zu den fertigen Tests und zu allen Funktionen."
+    ],
+    "tips": [
+      "Kandidaten schreiben, starten oder debuggen in testee keinen Code: Nutze es vor einer Praxisrunde, nicht statt ihr."
+    ]
+  },
   "faq": {
     "title": "Häufige Fragen",
     "text": "Antworten auf häufige Fragen zu testee: Interviews, Kandidaten, Preise und Credits, Ergebnisse, Integrationen, Sprachen und deine Daten.",

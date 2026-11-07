@@ -3805,8 +3805,6 @@
         "alt": "A candidate's report with a passing grade"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "the AI interviews guide",
       "engineersGuide": "how to hire engineers"
     }
+  }
+}

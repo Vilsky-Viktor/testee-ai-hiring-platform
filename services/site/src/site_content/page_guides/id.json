@@ -673,6 +673,48 @@
       "Topik hukum berupa ringkasan bertanggal, bukan nasihat hukum: periksa aturan yang berlaku di tempatmu merekrut."
     ]
   },
+  "skillsAssessment": {
+    "title": "Software asesmen keterampilan",
+    "text": "Apa itu testee sebagai software asesmen keterampilan: tes keterampilan berbatas waktu untuk posisi apa pun, ditulis dari deskripsi pekerjaanmu, dengan hasil yang bisa dibandingkan.",
+    "actions": [
+      "Lompat ke kotak di akhir halaman dengan “Buat wawancara” di bagian atas, atau buka harga.",
+      "Lihat cara tes ditulis, dijalankan, dan dibandingkan, di samping gambar aplikasi yang sebenarnya.",
+      "Lihat apa saja yang termasuk di setiap tes pada kartu, beserta harga per kandidat.",
+      "Tempel deskripsi pekerjaan di kotak di akhir halaman untuk membuat tes.",
+      "Ikuti tautan ke tes siap pakai, panduan tes seleksi karyawan, dan semua fitur."
+    ],
+    "tips": [
+      "Semua fitur sudah termasuk: kamu hanya membayar untuk setiap kandidat yang menjawab setidaknya satu soal."
+    ]
+  },
+  "aiInterview": {
+    "title": "Software wawancara AI",
+    "text": "Apa itu testee sebagai software wawancara AI: AI menulis soal, Mira bisa membacakannya dalam mode suara, dan timmu yang membuat setiap keputusan.",
+    "actions": [
+      "Lompat ke kotak di akhir halaman dengan “Buat wawancara” di bagian atas, atau buka harga.",
+      "Lihat apa yang dilakukan AI dan yang tidak, di samping gambar aplikasi yang sebenarnya.",
+      "Lihat dokumen, ekspor audit bias, dan tempat data disimpan pada kartu.",
+      "Tempel deskripsi pekerjaan di kotak di akhir halaman untuk membuat wawancara.",
+      "Ikuti tautan ke panduan wawancara AI, halaman kepercayaan, dan semua fitur."
+    ],
+    "tips": [
+      "testee tidak pernah menolak siapa pun: jawaban dinilai berdasarkan kunci jawaban, dan manusia yang memutuskan."
+    ]
+  },
+  "codingTest": {
+    "title": "Tes coding untuk rekrutmen",
+    "text": "Apa itu testee sebagai tes coding untuk rekrutmen: tes berbatas waktu saat developer membaca potongan kode singkat lalu menjawab, sebagai penyaringan sebelum babak praktikmu.",
+    "actions": [
+      "Lompat ke kotak di akhir halaman dengan “Buat wawancara” di bagian atas, atau buka harga.",
+      "Lihat cara tes mencakup stack-mu dan seperti apa soal tentang kodenya, di samping gambar aplikasi yang sebenarnya.",
+      "Lihat kecocokannya dengan ATS atau platformmu sendiri pada kartu, beserta harga per kandidat.",
+      "Tempel deskripsi pekerjaan di kotak di akhir halaman untuk membuat tes.",
+      "Ikuti tautan ke panduan merekrut engineer, tes siap pakai, dan semua fitur."
+    ],
+    "tips": [
+      "Kandidat tidak menulis, menjalankan, atau men-debug kode di testee: pakai sebelum babak praktik, bukan sebagai penggantinya."
+    ]
+  },
   "faq": {
     "title": "Pertanyaan yang sering diajukan",
     "text": "Jawaban atas pertanyaan umum tentang testee: wawancara, kandidat, harga dan kredit, hasil, integrasi, bahasa, dan datamu.",

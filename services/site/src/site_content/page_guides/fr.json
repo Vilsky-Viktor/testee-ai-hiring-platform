@@ -673,6 +673,48 @@
       "Les sujets juridiques sont des résumés datés, pas des avis juridiques : vérifiez les règles qui s'appliquent là où vous recrutez."
     ]
   },
+  "skillsAssessment": {
+    "title": "Logiciel d'évaluation des compétences",
+    "text": "Ce qu'est testee comme logiciel d'évaluation des compétences : un test chronométré pour tout poste, rédigé à partir de votre fiche de poste, avec des résultats comparables.",
+    "actions": [
+      "Allez au champ en fin de page avec « Créer un entretien » en haut, ou ouvrez les tarifs.",
+      "Voyez comment un test est rédigé, passé et comparé, à côté d'images de l'application réelle.",
+      "Voyez sur les cartes ce que chaque test inclut, avec le prix par candidat.",
+      "Collez une fiche de poste dans le champ en fin de page pour créer un test.",
+      "Suivez les liens vers les tests prêts à l'emploi, le guide des tests de recrutement et toutes les fonctionnalités."
+    ],
+    "tips": [
+      "Toutes les fonctionnalités sont incluses : vous payez uniquement pour chaque candidat qui répond à au moins une question."
+    ]
+  },
+  "aiInterview": {
+    "title": "Logiciel d'entretien IA",
+    "text": "Ce qu'est testee comme logiciel d'entretien IA : l'IA rédige les questions, Mira peut les lire à voix haute en mode vocal, et votre équipe prend chaque décision.",
+    "actions": [
+      "Allez au champ en fin de page avec « Créer un entretien » en haut, ou ouvrez les tarifs.",
+      "Voyez ce que fait l'IA et ce qu'elle ne fait pas, à côté d'images de l'application réelle.",
+      "Voyez sur les cartes les documents, l'export pour audit des biais et le lieu de stockage des données.",
+      "Collez une fiche de poste dans le champ en fin de page pour créer un entretien.",
+      "Suivez les liens vers le guide des entretiens IA, la page confiance et toutes les fonctionnalités."
+    ],
+    "tips": [
+      "testee ne rejette jamais personne : les réponses sont notées d'après un corrigé, et une personne décide."
+    ]
+  },
+  "codingTest": {
+    "title": "Test de code pour le recrutement",
+    "text": "Ce qu'est testee comme test de code pour le recrutement : un test chronométré où les développeurs lisent de courts extraits de code et répondent, comme présélection avant votre épreuve pratique.",
+    "actions": [
+      "Allez au champ en fin de page avec « Créer un entretien » en haut, ou ouvrez les tarifs.",
+      "Voyez comment un test couvre votre stack et à quoi ressemblent ses questions sur le code, à côté d'images de l'application réelle.",
+      "Voyez sur les cartes comment il s'intègre à votre ATS ou à votre propre plateforme, avec le prix par candidat.",
+      "Collez une fiche de poste dans le champ en fin de page pour créer un test.",
+      "Suivez les liens vers le guide pour recruter des développeurs, les tests prêts à l'emploi et toutes les fonctionnalités."
+    ],
+    "tips": [
+      "Les candidats n'écrivent, n'exécutent ni ne déboguent de code dans testee : utilisez-le avant une épreuve pratique, pas à sa place."
+    ]
+  },
   "faq": {
     "title": "Questions fréquentes",
     "text": "Les réponses aux questions courantes sur testee : entretiens, candidats, prix et crédits, résultats, intégrations, langues et vos données.",

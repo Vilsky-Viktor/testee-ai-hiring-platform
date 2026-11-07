@@ -89,7 +89,7 @@ Für Preisvergleiche siehe [Kosten von Einstellungstests vergleichen](/compare/c
 
 ## Wie testee es umsetzt
 
-testee macht aus einer Stellenbeschreibung ein zeitlich begrenztes Multiple-Choice-Interview zu Fachkenntnissen.
+testee macht aus einer Stellenbeschreibung ein zeitlich begrenztes Multiple-Choice-Interview zu Fachkenntnissen: Was alles enthalten ist, liest du unter [Eignungstest-Software](/guides/skills-assessment-software).
 
 1. **Stellenbeschreibung einfügen.** Jede Stelle, jede von 23 Sprachen. testee erkennt, was ein Kandidat wissen muss, und schlägt Themen vor.
 2. **Themen prüfen.** Entferne Häkchen bei Themen, die du nicht brauchst, benenne ein Thema um, bearbeite seine Unterthemen oder beschreib Änderungen in normalem Text. Fragen werden erst geschrieben, wenn du zugestimmt hast. Du kannst auch mit einer fertigen Vorlage für deine Stelle beginnen.

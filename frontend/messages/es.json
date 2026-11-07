@@ -3805,8 +3805,6 @@
         "alt": "El informe de un candidato con una nota por encima de la nota de aprobado"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "la guía de entrevistas con IA",
       "engineersGuide": "cómo contratar ingenieros"
     }
+  }
+}

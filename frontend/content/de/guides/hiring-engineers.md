@@ -80,7 +80,7 @@ Hier passt testee. Es macht aus deiner Stellenbeschreibung ein zeitlich begrenzt
 
 Jeder Kandidat erhält einen eigenen zufälligen Fragensatz mit einem Countdown bei jeder Frage. Du siehst eine Auswertung mit jeder Antwort und ihrer Dauer sowie Hinweisen auf zu schnelle Antworten, das Verlassen der Seite, Kopierversuche und ungewöhnliche Muster in den Antworten und Antwortzeiten. Ein Hinweis ist ein Grund, genauer hinzusehen, kein Beweis für irgendetwas. Die Seite des Kandidaten schlägt außerdem richtig beantwortete Fragen vor, nach denen du im nächsten Gespräch fragen kannst.
 
-Was testee nicht tut: Kandidaten schreiben, starten oder debuggen in testee keinen Code. Code lesen und Code schreiben sind unterschiedliche Fähigkeiten, deshalb bleibt der nächste Schritt wichtig. Unter [Fachtests nach Stelle](/tests) findest du fertige Tests als Ausgangspunkt.
+Was testee nicht tut: Kandidaten schreiben, starten oder debuggen in testee keinen Code. Code lesen und Code schreiben sind unterschiedliche Fähigkeiten, deshalb bleibt der nächste Schritt wichtig. Wie das funktioniert, liest du unter [Coding-Test für Bewerber](/guides/coding-test-for-hiring), und unter [Fachtests nach Stelle](/tests) findest du fertige Tests als Ausgangspunkt.
 
 ## Schritt 4: Take-Home-Aufgabe oder Live-Coding
 

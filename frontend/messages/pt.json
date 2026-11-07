@@ -3809,8 +3809,6 @@
         "alt": "O relatório de um candidato com nota acima da nota de aprovação"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -4000,3 +3998,5 @@
       "interviewsGuide": "o guia de entrevistas com IA",
       "engineersGuide": "como contratar engenheiros"
     }
+  }
+}

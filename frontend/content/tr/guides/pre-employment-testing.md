@@ -89,7 +89,7 @@ Fiyat karşılaştırmaları için [işe alım öncesi test maliyetleri nasıl k
 
 ## testee bunu nasıl yapar
 
-testee bir iş tanımını süreli, çoktan seçmeli bir beceri mülakatına dönüştürür.
+testee bir iş tanımını süreli, çoktan seçmeli bir beceri mülakatına dönüştürür: nelerin dahil olduğunu görmek için [beceri değerlendirme yazılımı](/guides/skills-assessment-software) sayfasına bakın.
 
 1. **İş tanımını yapıştırın.** Her pozisyon, 23 dilin herhangi biri. testee adayın bilmesi gerekenleri çıkarır ve konular önerir.
 2. **Konuları gözden geçirin.** İhtiyacınız olmayanların işaretini kaldırın, bir konuyu yeniden adlandırın, alt konularını düzenleyin veya değişiklikleri düz metinle anlatın. Sorular ancak siz onayladıktan sonra yazılır. Pozisyonunuz için hazır bir şablondan da başlayabilirsiniz.

@@ -33,7 +33,7 @@ Bu modelde yazma işini yapay zekâ yapar: iş tanımını okur, neyin test edil
 
 ## testee'nin yaklaşımı
 
-testee, iş tanımınızdan bir beceri mülakatı yazmak için yapay zekâ kullanır. Neyin test edileceği ve her karar insanların kontrolünde kalır.
+testee, iş tanımınızdan bir beceri mülakatı yazmak için yapay zekâ kullanır. Neyin test edileceği ve her karar insanların kontrolünde kalır. Nelerin dahil olduğunu görmek için [yapay zekâ mülakat yazılımı](/guides/ai-interview-software) sayfasına bakın.
 
 1. **Yapay zekâ iş tanımınızı okur** ve adayın bilmesi gerekenleri çıkarır: gereklilikler, seviye ve alt konularıyla birlikte bir konu seti.
 2. **Konuları siz gözden geçirirsiniz.** Tutun, işaretini kaldırın, yeniden adlandırın veya düzenleyin ya da neyin değişeceğini yapay zekâya düz metinle söyleyin. Siz onaylamadan hiçbir soru yazılmaz. İstisna, şirketiniz yükleme yaptıktan sonra kendi platformunuzun API üzerinden oluşturduğu mülakattır: önerilen konulardan doğrudan devam eder.

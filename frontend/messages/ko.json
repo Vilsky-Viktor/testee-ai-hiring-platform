@@ -3805,8 +3805,6 @@
         "alt": "합격 기준을 넘은 지원자 보고서"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "AI 면접 가이드",
       "engineersGuide": "엔지니어 채용하는 법"
     }
+  }
+}

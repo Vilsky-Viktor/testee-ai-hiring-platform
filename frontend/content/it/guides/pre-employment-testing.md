@@ -89,7 +89,7 @@ Per confrontare i prezzi, vedi [come confrontare i costi dei test](/compare/chea
 
 ## Come funziona testee
 
-testee trasforma una descrizione del ruolo in un colloquio sulle competenze a scelta multipla e a tempo.
+testee trasforma una descrizione del ruolo in un colloquio sulle competenze a scelta multipla e a tempo: vedi il [software di valutazione delle competenze](/guides/skills-assessment-software) per sapere cosa è incluso.
 
 1. **Incolla la descrizione del ruolo.** Qualsiasi ruolo, in una qualsiasi di 23 lingue. testee individua ciò che un candidato deve sapere e propone gli argomenti.
 2. **Rivedi gli argomenti.** Deseleziona ciò che non ti serve, rinomina un argomento, modifica i suoi sottoargomenti o descrivi le modifiche in linguaggio semplice. Le domande vengono scritte solo dopo la tua approvazione. Puoi anche partire da un modello pronto per il tuo ruolo.

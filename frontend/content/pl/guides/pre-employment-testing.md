@@ -89,7 +89,7 @@ Porównania cen znajdziesz w artykułach [jak porównać koszty testów](/compar
 
 ## Jak robi to testee
 
-testee zamienia opis stanowiska w rozmowę sprawdzającą umiejętności z pytaniami zamkniętymi i limitem czasu.
+testee zamienia opis stanowiska w rozmowę sprawdzającą umiejętności z pytaniami zamkniętymi i limitem czasu: zobacz [narzędzie do testów kompetencji](/guides/skills-assessment-software), aby sprawdzić, co obejmuje.
 
 1. **Wklej opis stanowiska.** Dowolne stanowisko, dowolny z 23 języków. testee wyodrębnia, co kandydat musi wiedzieć, i proponuje tematy.
 2. **Przejrzyj tematy.** Odznacz to, czego nie potrzebujesz, zmień nazwę tematu, edytuj jego podtematy lub opisz zmiany zwykłym tekstem. Pytania powstają dopiero po Twojej akceptacji. Możesz też zacząć od gotowego szablonu dla swojego stanowiska.

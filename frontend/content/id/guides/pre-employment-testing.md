@@ -89,7 +89,7 @@ Untuk perbandingan harga, lihat [cara membandingkan biaya tes](/compare/cheapest
 
 ## Cara testee melakukannya
 
-testee mengubah deskripsi pekerjaan menjadi wawancara keterampilan pilihan ganda berbatas waktu.
+testee mengubah deskripsi pekerjaan menjadi wawancara keterampilan pilihan ganda berbatas waktu: lihat [software asesmen keterampilan](/guides/skills-assessment-software) untuk mengetahui apa saja yang termasuk.
 
 1. **Tempel deskripsi pekerjaan.** Posisi apa pun, dalam salah satu dari 23 bahasa. testee mengambil apa yang wajib diketahui kandidat dan mengusulkan topik.
 2. **Tinjau topiknya.** Hapus centang yang tidak kamu perlukan, ganti nama topik, ubah subtopiknya, atau jelaskan perubahan dengan teks biasa. Soal baru ditulis setelah kamu menyetujuinya. Kamu juga bisa mulai dari templat siap pakai untuk posisimu.

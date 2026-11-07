@@ -3805,8 +3805,6 @@
         "alt": "Report ng isang aplikanteng umabot sa passing grade"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "ang gabay sa AI interviews",
       "engineersGuide": "paano mag-hire ng mga engineer"
     }
+  }
+}

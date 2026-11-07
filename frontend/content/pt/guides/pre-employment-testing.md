@@ -89,7 +89,7 @@ Para comparar preços, veja [como comparar o custo dos testes](/compare/cheapest
 
 ## Como a testee faz
 
-A testee transforma uma descrição da vaga em uma entrevista de habilidades de múltipla escolha cronometrada.
+A testee transforma uma descrição da vaga em uma entrevista de habilidades de múltipla escolha cronometrada: veja o [software de avaliação de habilidades](/guides/skills-assessment-software) para saber o que está incluído.
 
 1. **Cole a descrição da vaga.** Qualquer função, em qualquer um de 23 idiomas. A testee identifica o que um candidato precisa saber e propõe tópicos.
 2. **Revise os tópicos.** Desmarque o que não precisa, renomeie um tópico, edite seus subtópicos ou descreva as mudanças em texto livre. As perguntas só são escritas depois da sua aprovação. Você também pode começar por um modelo pronto para o seu cargo.

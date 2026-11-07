@@ -33,7 +33,7 @@ Dans ce modèle, l'IA fait le travail de rédaction : elle lit la fiche de poste
 
 ## L'approche de testee
 
-testee utilise l'IA pour rédiger un entretien de compétences à partir de votre fiche de poste. Ce sont des personnes qui gardent la main sur ce qui est évalué et sur chaque décision.
+testee utilise l'IA pour rédiger un entretien de compétences à partir de votre fiche de poste. Ce sont des personnes qui gardent la main sur ce qui est évalué et sur chaque décision. Voir le [logiciel d'entretien IA](/guides/ai-interview-software) pour ce qui est inclus.
 
 1. **L'IA lit votre fiche de poste** et repère ce qu'un candidat doit savoir : les exigences, le niveau et une série de thèmes avec leurs sous-thèmes.
 2. **Vous vérifiez les thèmes.** Gardez-les, décochez-les, renommez-les ou modifiez-les, ou dites à l'IA en texte libre ce qu'il faut changer. Aucune question n'est rédigée avant votre validation. L'exception est un entretien que votre propre plateforme crée via l'API une fois que votre entreprise a rechargé des crédits : il se poursuit directement à partir des thèmes proposés.

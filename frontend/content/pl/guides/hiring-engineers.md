@@ -80,7 +80,7 @@ Tu pasuje testee. Zamienia Twój opis stanowiska w rozmowę na czas sprawdzając
 
 Każdy kandydat dostaje własny, losowy zestaw pytań z odliczaniem czasu przy każdym z nich. Widzisz kartę wyników z każdą odpowiedzią i czasem, jaki zajęła, oraz oznaczenia zbyt szybkich odpowiedzi, opuszczania strony, prób kopiowania i nietypowych wzorców w odpowiedziach i czasach. Oznaczenie to powód, by przyjrzeć się bliżej, a nie dowód czegokolwiek. Strona kandydata podsuwa też pytania, na które odpowiedział poprawnie, by dopytać o nie na kolejnej rozmowie.
 
-Czego testee nie robi: kandydaci nie piszą, nie uruchamiają ani nie debugują kodu w testee. Czytanie kodu i pisanie go to różne umiejętności, więc kolejny krok wciąż ma znaczenie. Gotowe testy na start znajdziesz w [testach umiejętności według roli](/tests).
+Czego testee nie robi: kandydaci nie piszą, nie uruchamiają ani nie debugują kodu w testee. Czytanie kodu i pisanie go to różne umiejętności, więc kolejny krok wciąż ma znaczenie. Jak to działa, opisuje [test programistyczny w rekrutacji](/guides/coding-test-for-hiring), a gotowe testy na start znajdziesz w [testach umiejętności według roli](/tests).
 
 ## Krok 4: Zadanie domowe lub live coding
 

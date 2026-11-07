@@ -80,7 +80,7 @@ Một bài kiểm tra kiến thức tốt cần:
 
 Mỗi ứng viên nhận bộ câu hỏi ngẫu nhiên của riêng mình, mỗi câu có đồng hồ đếm ngược. Bạn xem một bảng điểm với từng câu trả lời và thời gian trả lời, cùng các cảnh báo về trả lời quá nhanh, rời khỏi trang, cố sao chép và những điểm bất thường trong câu trả lời và thời gian trả lời. Một cảnh báo là lý do để xem kỹ hơn, không phải bằng chứng cho điều gì. Trang của ứng viên cũng gợi ý những câu họ đã trả lời đúng để hỏi lại trong buổi phỏng vấn tiếp theo.
 
-Những gì testee không làm: ứng viên không viết, chạy hay debug code trong testee. Đọc code và viết code là hai kỹ năng khác nhau, nên bước tiếp theo vẫn quan trọng. Xem [bài kiểm tra kỹ năng theo vị trí](/tests) để có sẵn bài kiểm tra làm điểm xuất phát.
+Những gì testee không làm: ứng viên không viết, chạy hay debug code trong testee. Đọc code và viết code là hai kỹ năng khác nhau, nên bước tiếp theo vẫn quan trọng. Xem [bài kiểm tra lập trình tuyển dụng](/guides/coding-test-for-hiring) để biết cách hoạt động, và [bài kiểm tra kỹ năng theo vị trí](/tests) để có sẵn bài kiểm tra làm điểm xuất phát.
 
 ## Bước 4: Bài tập về nhà hoặc lập trình trực tiếp
 

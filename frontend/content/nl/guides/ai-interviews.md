@@ -33,7 +33,7 @@ In dit model doet AI het schrijfwerk: het leest de functieomschrijving, stelt vo
 
 ## De aanpak van testee
 
-testee gebruikt AI om op basis van je functieomschrijving een interview over vaardigheden te schrijven. Mensen houden de regie over wat er getoetst wordt en over elk besluit.
+testee gebruikt AI om op basis van je functieomschrijving een interview over vaardigheden te schrijven. Mensen houden de regie over wat er getoetst wordt en over elk besluit. Zie [software voor AI-interviews](/guides/ai-interview-software) voor wat er is inbegrepen.
 
 1. **AI leest je functieomschrijving** en haalt eruit wat een kandidaat moet weten: de eisen, het niveau en een set onderwerpen met subonderwerpen.
 2. **Jij bekijkt de onderwerpen.** Houd ze, vink ze uit, hernoem of bewerk ze, of vertel de AI in gewone taal wat er anders moet. Er wordt geen vraag geschreven tot jij akkoord geeft. De uitzondering is een interview dat je eigen platform via de API maakt zodra je bedrijf heeft opgewaardeerd: dat gaat meteen door vanaf de voorgestelde onderwerpen.

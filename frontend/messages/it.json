@@ -3805,8 +3805,6 @@
         "alt": "Il report di un candidato con un punteggio sopra la soglia di superamento"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "la guida ai colloqui con IA",
       "engineersGuide": "come assumere sviluppatori"
     }
+  }
+}

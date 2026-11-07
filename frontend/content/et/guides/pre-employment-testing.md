@@ -89,7 +89,7 @@ Hindade võrdluse leiad lehtedelt [kuidas testide hindu võrrelda](/compare/chea
 
 ## Kuidas seda teeb testee
 
-testee muudab töökuulutuse ajapiiranguga valikvastustega oskuste intervjuuks.
+testee muudab töökuulutuse ajapiiranguga valikvastustega oskuste intervjuuks: mida see sisaldab, vaata lehelt [oskuste hindamise tarkvara](/guides/skills-assessment-software).
 
 1. **Kleebi töökuulutus.** Iga roll, ükskõik milline 23 keelest. testee toob välja, mida kandidaat peab teadma, ja pakub teemad.
 2. **Vaata teemad üle.** Eemalda linnuke sellelt, mida pole vaja, nimeta teema ümber, muuda selle alateemasid või kirjelda muudatusi tavalise tekstiga. Küsimused kirjutatakse alles pärast sinu heakskiitu. Võid alustada ka oma rolli valmis mallist.

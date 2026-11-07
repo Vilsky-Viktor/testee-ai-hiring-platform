@@ -673,6 +673,48 @@
       "Hukuki konular tarihli özetlerdir, hukuki tavsiye değildir: işe alım yaptığınız yerde geçerli kuralları kontrol edin."
     ]
   },
+  "skillsAssessment": {
+    "title": "Beceri değerlendirme yazılımı",
+    "text": "testee'nin beceri değerlendirme yazılımı olarak sundukları: iş tanımınızdan yazılan, her pozisyon için süreli bir beceri testi ve karşılaştırılabilir sonuçlar.",
+    "actions": [
+      "Üstteki “Mülakat oluştur” ile sayfanın sonundaki kutuya gidin veya fiyatları açın.",
+      "Gerçek uygulamanın görüntüleri yanında bir testin nasıl yazıldığını, uygulandığını ve karşılaştırıldığını görün.",
+      "Her testin neleri içerdiğini kartlarda, aday başına fiyatla birlikte görün.",
+      "Test oluşturmak için sayfanın sonundaki kutuya bir iş tanımı yapıştırın.",
+      "Bağlantılardan hazır testlere, işe alım öncesi test rehberine ve tüm özelliklere gidin."
+    ],
+    "tips": [
+      "Tüm özellikler dahil: yalnızca en az bir soruyu cevaplayan her aday için ödeme yaparsınız."
+    ]
+  },
+  "aiInterview": {
+    "title": "Yapay zekâ mülakat yazılımı",
+    "text": "testee'nin yapay zekâ mülakat yazılımı olarak sundukları: soruları yapay zekâ yazar, Mira sesli modda okuyabilir ve her kararı ekibiniz verir.",
+    "actions": [
+      "Üstteki “Mülakat oluştur” ile sayfanın sonundaki kutuya gidin veya fiyatları açın.",
+      "Gerçek uygulamanın görüntüleri yanında yapay zekânın neyi yapıp neyi yapmadığını görün.",
+      "Belgeleri, yanlılık denetimi dışa aktarımını ve verilerin nerede saklandığını kartlarda görün.",
+      "Mülakat oluşturmak için sayfanın sonundaki kutuya bir iş tanımı yapıştırın.",
+      "Bağlantılardan yapay zekâ mülakatları rehberine, güven sayfasına ve tüm özelliklere gidin."
+    ],
+    "tips": [
+      "testee kimseyi asla reddetmez: cevaplar cevap anahtarına göre notlandırılır ve kararı bir insan verir."
+    ]
+  },
+  "codingTest": {
+    "title": "İşe alım için kodlama testi",
+    "text": "testee'nin işe alım için kodlama testi olarak sundukları: geliştiricilerin kısa kod parçalarını okuyup cevapladığı, uygulamalı aşamanızdan önce ön eleme yapan süreli bir test.",
+    "actions": [
+      "Üstteki “Mülakat oluştur” ile sayfanın sonundaki kutuya gidin veya fiyatları açın.",
+      "Gerçek uygulamanın görüntüleri yanında bir testin teknolojilerinizi nasıl kapsadığını ve kod soruların nasıl göründüğünü görün.",
+      "ATS'nize veya kendi platformunuza nasıl uyduğunu kartlarda, aday başına fiyatla birlikte görün.",
+      "Test oluşturmak için sayfanın sonundaki kutuya bir iş tanımı yapıştırın.",
+      "Bağlantılardan mühendis işe alımı rehberine, hazır testlere ve tüm özelliklere gidin."
+    ],
+    "tips": [
+      "Adaylar testee'de kod yazmaz, çalıştırmaz veya hata ayıklamaz: bunu uygulamalı aşamanın yerine değil, öncesinde kullanın."
+    ]
+  },
   "faq": {
     "title": "Sıkça sorulan sorular",
     "text": "testee hakkında sık sorulan soruların cevapları: mülakatlar, adaylar, fiyatlar ve krediler, sonuçlar, entegrasyonlar, diller ve verileriniz.",

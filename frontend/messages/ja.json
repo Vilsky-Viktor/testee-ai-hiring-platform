@@ -3813,8 +3813,6 @@
         "alt": "合格ラインを超えた候補者のレポート"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -4004,3 +4002,5 @@
       "interviewsGuide": "AI 面接のガイド",
       "engineersGuide": "エンジニアの採用方法"
     }
+  }
+}

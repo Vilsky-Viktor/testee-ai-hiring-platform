@@ -33,7 +33,7 @@ En este modelo, la IA hace el trabajo de redacción: lee la descripción del pue
 
 ## El enfoque de testee
 
-testee usa la IA para redactar una entrevista de habilidades a partir de tu descripción del puesto. Las personas mantienen el control de lo que se evalúa y de cada decisión.
+testee usa la IA para redactar una entrevista de habilidades a partir de tu descripción del puesto. Las personas mantienen el control de lo que se evalúa y de cada decisión. Consulta el [software de entrevistas con IA](/guides/ai-interview-software) para ver qué incluye.
 
 1. **La IA lee tu descripción del puesto** y extrae lo que un candidato debe saber: los requisitos, el nivel y un conjunto de temas con subtemas.
 2. **Tú revisas los temas.** Consérvalos, desmárcalos, cámbiales el nombre o edítalos, o dile a la IA en texto libre qué cambiar. No se redacta ninguna pregunta hasta que des tu aprobación. La excepción es una entrevista que tu propia plataforma crea a través de la API una vez que tu empresa ha recargado créditos: continúa directamente a partir de los temas propuestos.

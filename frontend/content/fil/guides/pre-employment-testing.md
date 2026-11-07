@@ -89,7 +89,7 @@ Para sa paghahambing ng presyo, tingnan ang [paano ikumpara ang gastos ng mga te
 
 ## Paano ito ginagawa ng testee
 
-Ginagawang timed multiple-choice skills interview ng testee ang isang job description.
+Ginagawang timed multiple-choice skills interview ng testee ang isang job description: tingnan ang [skills assessment software](/guides/skills-assessment-software) para malaman kung ano ang kasama.
 
 1. **I-paste ang job description.** Anumang role, sa alinman sa 23 wika. Kinukuha ng testee ang dapat malaman ng aplikante at nagmumungkahi ng mga topic.
 2. **I-review ang mga topic.** I-uncheck ang hindi mo kailangan, palitan ang pangalan ng topic, i-edit ang mga subtopic nito, o ilarawan ang pagbabago sa simpleng text. Isinusulat lang ang mga tanong pagkatapos mong aprubahan. Puwede ka ring magsimula sa handang template para sa iyong role.

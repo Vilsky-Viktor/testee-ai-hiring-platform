@@ -80,7 +80,7 @@ Aquí es donde encaja testee. Convierte tu descripción del puesto en una entrev
 
 Cada candidato recibe su propio conjunto aleatorio de preguntas con una cuenta atrás en cada una. Ves una ficha de evaluación con cada respuesta y cuánto tardó, además de alertas de respuestas demasiado rápidas, salidas de la página, intentos de copiar y patrones inusuales en sus respuestas y tiempos. Una alerta es un motivo para mirar con más atención, no una prueba de nada. La página del candidato también sugiere preguntas que acertó, para preguntarle por ellas en la siguiente entrevista.
 
-Lo que testee no hace: los candidatos no escriben, ejecutan ni depuran código en testee. Leer código y escribirlo son habilidades distintas, así que el siguiente paso sigue siendo importante. Consulta las [pruebas de habilidades por puesto](/tests) para empezar desde pruebas ya preparadas.
+Lo que testee no hace: los candidatos no escriben, ejecutan ni depuran código en testee. Leer código y escribirlo son habilidades distintas, así que el siguiente paso sigue siendo importante. Consulta la [prueba de programación para contratar](/guides/coding-test-for-hiring) para ver cómo funciona, y las [pruebas de habilidades por puesto](/tests) para empezar desde pruebas ya preparadas.
 
 ## Paso 4: Prueba para casa o programación en directo
 

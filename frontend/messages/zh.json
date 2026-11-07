@@ -3805,8 +3805,6 @@
         "alt": "达到及格线的候选人报告"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "AI 面试指南",
       "engineersGuide": "如何招聘工程师"
     }
+  }
+}

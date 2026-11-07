@@ -33,7 +33,7 @@ In this model, AI does the writing work: it reads the job description, proposes 
 
 ## testee's approach
 
-testee uses AI to write a skills interview from your job description. People stay in control of what is tested and of every decision.
+testee uses AI to write a skills interview from your job description. People stay in control of what is tested and of every decision. See [AI interview software](/guides/ai-interview-software) for what's included.
 
 1. **AI reads your job description** and picks out what a candidate must know: the requirements, the level and a set of topics with subtopics.
 2. **You review the topics.** Keep, uncheck, rename or edit them, or tell the AI in plain text what to change. No question is written until you approve. The exception is an interview your own platform creates through the API once your company has topped up: it goes straight on from the proposed topics.

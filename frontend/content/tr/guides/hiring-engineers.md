@@ -80,7 +80,7 @@ testee burada devreye girer. İş tanımınızı süreli, çoktan seçmeli bir b
 
 Her aday, her sorusunda geri sayım olan kendine ait rastgele bir soru seti alır. Her yanıtı ve ne kadar sürdüğünü gösteren bir değerlendirme kartı görürsünüz; ayrıca çok hızlı yanıtlar, sayfadan ayrılma, kopyalama girişimleri ve yanıtlarla sürelerdeki olağan dışı örüntüler için işaretler. İşaret, daha yakından bakmak için bir nedendir, hiçbir şeyin kanıtı değildir. Adayın sayfası ayrıca bir sonraki mülakatta üzerine konuşmak için doğru yanıtladığı soruları önerir.
 
-testee'nin yapmadıkları: adaylar testee'de kod yazmaz, çalıştırmaz veya hata ayıklamaz. Kod okumak ve yazmak farklı becerilerdir, bu nedenle sonraki adım hâlâ önemlidir. Başlangıç için hazır testler için [pozisyona göre beceri testleri](/tests) sayfasına bakın.
+testee'nin yapmadıkları: adaylar testee'de kod yazmaz, çalıştırmaz veya hata ayıklamaz. Kod okumak ve yazmak farklı becerilerdir, bu nedenle sonraki adım hâlâ önemlidir. Nasıl çalıştığını [işe alım için kodlama testi](/guides/coding-test-for-hiring) sayfasında, başlayabileceğiniz hazır testleri [pozisyona göre beceri testleri](/tests) sayfasında görebilirsiniz.
 
 ## 4. adım: Ev ödevi veya canlı kodlama
 

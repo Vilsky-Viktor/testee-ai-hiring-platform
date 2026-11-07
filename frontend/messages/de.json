@@ -3805,8 +3805,6 @@
         "alt": "Der Bericht eines Kandidaten mit einem Ergebnis über der Bestehensgrenze"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "der ratgeber zu ki-interviews",
       "engineersGuide": "entwickler einstellen"
     }
+  }
+}

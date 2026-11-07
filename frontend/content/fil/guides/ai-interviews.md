@@ -33,7 +33,7 @@ Sa modelong ito, AI ang gumagawa ng pagsusulat: binabasa nito ang job descriptio
 
 ## Ang paraan ng testee
 
-Gumagamit ang testee ng AI para sumulat ng skills interview mula sa iyong job description. Tao pa rin ang may kontrol sa tine-test at sa bawat desisyon.
+Gumagamit ang testee ng AI para sumulat ng skills interview mula sa iyong job description. Tao pa rin ang may kontrol sa tine-test at sa bawat desisyon. Tingnan ang [AI interview software](/guides/ai-interview-software) para malaman kung ano ang kasama.
 
 1. **Binabasa ng AI ang iyong job description** at kinukuha ang dapat malaman ng aplikante: ang mga requirement, ang level at isang set ng mga topic na may mga subtopic.
 2. **Nire-review mo ang mga topic.** Panatilihin, i-uncheck, palitan ang pangalan o i-edit ang mga ito, o sabihin sa AI sa simpleng text kung ano ang babaguhin. Walang tanong na isinusulat hangga't hindi mo inaaprubahan. Ang eksepsyon ay interview na ginawa ng sarili mong platform sa pamamagitan ng API kapag nakapag-top up na ang kumpanya mo: diretso itong nagpapatuloy mula sa mga iminungkahing topic.

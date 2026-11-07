@@ -33,7 +33,7 @@ In diesem Modell übernimmt die KI die Schreibarbeit: Sie liest die Stellenbesch
 
 ## Der Ansatz von testee
 
-testee nutzt KI, um aus deiner Stellenbeschreibung ein Interview zu Fachkenntnissen zu schreiben. Menschen behalten die Kontrolle darüber, was geprüft wird, und über jede Entscheidung.
+testee nutzt KI, um aus deiner Stellenbeschreibung ein Interview zu Fachkenntnissen zu schreiben. Menschen behalten die Kontrolle darüber, was geprüft wird, und über jede Entscheidung. Was alles enthalten ist, liest du unter [KI-Interview-Software](/guides/ai-interview-software).
 
 1. **Die KI liest deine Stellenbeschreibung** und erkennt, was ein Kandidat wissen muss: die Anforderungen, das Niveau und eine Reihe von Themen mit Unterthemen.
 2. **Du prüfst die Themen.** Behalte sie, wähle sie ab, benenne sie um oder bearbeite sie, oder sag der KI in normalem Text, was sie ändern soll. Keine Frage wird geschrieben, bevor du zustimmst. Die Ausnahme ist ein Interview, das deine eigene Plattform über die API erstellt, sobald dein Unternehmen Credits aufgeladen hat: Es läuft direkt mit den vorgeschlagenen Themen weiter.

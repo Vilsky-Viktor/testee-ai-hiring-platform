@@ -89,7 +89,7 @@ Những câu hỏi đáng hỏi mọi nhà cung cấp:
 
 ## Cách testee thực hiện
 
-testee biến mô tả công việc thành một buổi phỏng vấn kỹ năng trắc nghiệm có tính giờ.
+testee biến mô tả công việc thành một buổi phỏng vấn kỹ năng trắc nghiệm có tính giờ: xem [phần mềm đánh giá kỹ năng](/guides/skills-assessment-software) để biết những gì được bao gồm.
 
 1. **Dán mô tả công việc.** Mọi vị trí, bằng bất kỳ ngôn ngữ nào trong 23 ngôn ngữ. testee chọn ra những gì ứng viên phải biết và đề xuất chủ đề.
 2. **Duyệt các chủ đề.** Bỏ chọn những gì bạn không cần, đổi tên một chủ đề, sửa chủ đề con, hoặc mô tả thay đổi bằng lời. Câu hỏi chỉ được viết sau khi bạn duyệt. Bạn cũng có thể bắt đầu từ một mẫu có sẵn cho vị trí của mình.

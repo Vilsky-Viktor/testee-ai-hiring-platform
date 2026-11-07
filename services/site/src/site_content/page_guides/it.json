@@ -673,6 +673,48 @@
       "Gli argomenti legali sono sintesi datate, non consulenze legali: verifica le regole che si applicano dove assumi."
     ]
   },
+  "skillsAssessment": {
+    "title": "Software di valutazione delle competenze",
+    "text": "Cos'è testee come software di valutazione delle competenze: un test di competenze a tempo per qualsiasi ruolo, scritto dalla tua descrizione del ruolo, con risultati che puoi confrontare.",
+    "actions": [
+      "Vai al riquadro in fondo alla pagina con «Crea un colloquio» in alto, oppure apri i prezzi.",
+      "Guarda come un test viene scritto, svolto e confrontato, accanto a immagini dell'app reale.",
+      "Guarda nelle schede cosa include ogni test, con il prezzo per candidato.",
+      "Incolla una descrizione del ruolo nel riquadro in fondo alla pagina per creare un test.",
+      "Segui i link ai test pronti, alla guida ai test pre-assunzione e a tutte le funzionalità."
+    ],
+    "tips": [
+      "Tutte le funzionalità sono incluse: paghi solo per ogni candidato che risponde ad almeno una domanda."
+    ]
+  },
+  "aiInterview": {
+    "title": "Software per colloqui con IA",
+    "text": "Cos'è testee come software per colloqui con IA: l'IA scrive le domande, Mira può leggerle ad alta voce in modalità vocale e il tuo team prende ogni decisione.",
+    "actions": [
+      "Vai al riquadro in fondo alla pagina con «Crea un colloquio» in alto, oppure apri i prezzi.",
+      "Guarda cosa fa l'IA e cosa non fa, accanto a immagini dell'app reale.",
+      "Guarda nelle schede i documenti, l'esportazione per audit sui bias e dove sono conservati i dati.",
+      "Incolla una descrizione del ruolo nel riquadro in fondo alla pagina per creare un colloquio.",
+      "Segui i link alla guida ai colloqui con IA, alla pagina fiducia e a tutte le funzionalità."
+    ],
+    "tips": [
+      "testee non rifiuta mai nessuno: le risposte vengono confrontate con una chiave di correzione e decide una persona."
+    ]
+  },
+  "codingTest": {
+    "title": "Test di programmazione per le assunzioni",
+    "text": "Cos'è testee come test di programmazione per le assunzioni: un test a tempo in cui gli sviluppatori leggono brevi porzioni di codice e rispondono, come screening prima della tua prova pratica.",
+    "actions": [
+      "Vai al riquadro in fondo alla pagina con «Crea un colloquio» in alto, oppure apri i prezzi.",
+      "Guarda come un test copre il tuo stack e come sono le sue domande sul codice, accanto a immagini dell'app reale.",
+      "Guarda nelle schede come si integra con il tuo ATS o la tua piattaforma, con il prezzo per candidato.",
+      "Incolla una descrizione del ruolo nel riquadro in fondo alla pagina per creare un test.",
+      "Segui i link alla guida su come assumere sviluppatori, ai test pronti e a tutte le funzionalità."
+    ],
+    "tips": [
+      "In testee i candidati non scrivono, non eseguono e non fanno debug del codice: usalo prima di una prova pratica, non al suo posto."
+    ]
+  },
   "faq": {
     "title": "Domande frequenti",
     "text": "Risposte alle domande più comuni su testee: colloqui, candidati, prezzi e crediti, risultati, integrazioni, lingue e i tuoi dati.",

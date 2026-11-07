@@ -80,7 +80,7 @@ Uma boa triagem de conhecimentos é:
 
 Cada candidato recebe seu próprio conjunto aleatório de perguntas, com contagem regressiva em cada uma. Você vê uma ficha de avaliação com cada resposta e quanto tempo levou, além de alertas para respostas rápidas demais, saídas da página, tentativas de cópia e padrões incomuns nas respostas e nos tempos. Um alerta é um motivo para olhar com mais atenção, não prova de nada. A página do candidato também sugere perguntas que ele acertou, para explorar na próxima entrevista.
 
-O que a testee não faz: os candidatos não escrevem, executam nem depuram código na testee. Ler código e escrever código são habilidades diferentes, então a próxima etapa continua importante. Veja os [testes de habilidades por cargo](/tests) para começar com testes prontos.
+O que a testee não faz: os candidatos não escrevem, executam nem depuram código na testee. Ler código e escrever código são habilidades diferentes, então a próxima etapa continua importante. Veja o [teste de programação para contratação](/guides/coding-test-for-hiring) para saber como funciona, e os [testes de habilidades por cargo](/tests) para começar com testes prontos.
 
 ## Passo 4: Desafio para casa ou live coding
 

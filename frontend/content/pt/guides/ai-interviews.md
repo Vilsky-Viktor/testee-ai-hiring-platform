@@ -33,7 +33,7 @@ Nesse modelo, a IA faz o trabalho de redação: lê a descrição da vaga, prop�
 
 ## A abordagem da testee
 
-A testee usa IA para escrever uma entrevista de habilidades a partir da sua descrição da vaga. As pessoas continuam no controle do que é avaliado e de cada decisão.
+A testee usa IA para escrever uma entrevista de habilidades a partir da sua descrição da vaga. As pessoas continuam no controle do que é avaliado e de cada decisão. Veja o [software de entrevista com IA](/guides/ai-interview-software) para saber o que está incluído.
 
 1. **A IA lê a sua descrição da vaga** e identifica o que um candidato precisa saber: os requisitos, o nível e um conjunto de tópicos com subtópicos.
 2. **Você revisa os tópicos.** Mantenha, desmarque, renomeie ou edite, ou diga à IA em texto livre o que mudar. Nenhuma pergunta é escrita antes da sua aprovação. A exceção é uma entrevista que a sua própria plataforma cria pela API depois que a sua empresa fez uma recarga: ela passa direto dos tópicos propostos.

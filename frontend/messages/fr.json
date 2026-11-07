@@ -3805,8 +3805,6 @@
         "alt": "Le rapport d'un candidat avec une note au-dessus du seuil de réussite"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "le guide des entretiens IA",
       "engineersGuide": "comment recruter des développeurs"
     }
+  }
+}

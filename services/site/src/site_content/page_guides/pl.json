@@ -673,6 +673,48 @@
       "Tematy prawne to datowane podsumowania, a nie porada prawna: sprawdź przepisy obowiązujące tam, gdzie zatrudniasz."
     ]
   },
+  "skillsAssessment": {
+    "title": "Narzędzie do testów kompetencji",
+    "text": "Czym jest testee jako narzędzie do testów kompetencji: test umiejętności na czas dla dowolnej roli, napisany na podstawie Twojego opisu stanowiska, z wynikami, które można porównać.",
+    "actions": [
+      "Przejdź do pola na końcu strony przyciskiem „Utwórz rozmowę” na górze albo otwórz cennik.",
+      "Zobacz, jak test jest pisany, przeprowadzany i porównywany, obok zrzutów prawdziwej aplikacji.",
+      "Na kartach zobacz, co obejmuje każdy test, wraz z ceną za kandydata.",
+      "Wklej opis stanowiska w polu na dole strony, aby utworzyć test.",
+      "Przejdź linkami do gotowych testów, poradnika o testach rekrutacyjnych i wszystkich funkcji."
+    ],
+    "tips": [
+      "Wszystkie funkcje są w cenie: płacisz tylko za każdego kandydata, który odpowie na co najmniej jedno pytanie."
+    ]
+  },
+  "aiInterview": {
+    "title": "Narzędzie do rozmów rekrutacyjnych z AI",
+    "text": "Czym jest testee jako narzędzie do rozmów rekrutacyjnych z AI: AI pisze pytania, Mira może czytać je na głos w trybie głosowym, a każdą decyzję podejmuje Twój zespół.",
+    "actions": [
+      "Przejdź do pola na końcu strony przyciskiem „Utwórz rozmowę” na górze albo otwórz cennik.",
+      "Zobacz, co robi AI, a czego nie robi, obok zrzutów prawdziwej aplikacji.",
+      "Na kartach zobacz dokumenty, eksport do audytu stronniczości i miejsce przechowywania danych.",
+      "Wklej opis stanowiska w polu na dole strony, aby utworzyć rozmowę.",
+      "Przejdź linkami do poradnika o rozmowach rekrutacyjnych z AI, strony zaufania i wszystkich funkcji."
+    ],
+    "tips": [
+      "testee nigdy nikogo nie odrzuca: odpowiedzi są oceniane według klucza, a decyduje człowiek."
+    ]
+  },
+  "codingTest": {
+    "title": "Test programistyczny w rekrutacji",
+    "text": "Czym jest testee jako test programistyczny w rekrutacji: test na czas, w którym programiści czytają krótkie fragmenty kodu i odpowiadają, jako preselekcja przed etapem praktycznym.",
+    "actions": [
+      "Przejdź do pola na końcu strony przyciskiem „Utwórz rozmowę” na górze albo otwórz cennik.",
+      "Zobacz, jak test obejmuje Twój stos technologiczny i jak wyglądają pytania o kod, obok zrzutów prawdziwej aplikacji.",
+      "Na kartach zobacz, jak test współpracuje z Twoim ATS lub własną platformą, wraz z ceną za kandydata.",
+      "Wklej opis stanowiska w polu na dole strony, aby utworzyć test.",
+      "Przejdź linkami do poradnika o rekrutacji programistów, gotowych testów i wszystkich funkcji."
+    ],
+    "tips": [
+      "W testee kandydaci nie piszą, nie uruchamiają ani nie debugują kodu: użyj go przed etapem praktycznym, a nie zamiast niego."
+    ]
+  },
   "faq": {
     "title": "Często zadawane pytania",
     "text": "Odpowiedzi na częste pytania o testee: rozmowy, kandydaci, ceny i kredyty, wyniki, integracje, języki i Twoje dane.",

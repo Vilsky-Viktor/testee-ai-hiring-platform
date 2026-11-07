@@ -673,6 +673,48 @@
       "Các chủ đề pháp lý là bản tóm tắt có ghi ngày, không phải tư vấn pháp lý: hãy kiểm tra các quy định áp dụng tại nơi bạn tuyển dụng."
     ]
   },
+  "skillsAssessment": {
+    "title": "Phần mềm đánh giá kỹ năng",
+    "text": "testee với vai trò phần mềm đánh giá kỹ năng: bài kiểm tra kỹ năng có tính giờ cho mọi vị trí, soạn từ mô tả công việc của bạn, với kết quả có thể so sánh.",
+    "actions": [
+      "Đi đến ô ở cuối trang bằng “Tạo buổi phỏng vấn” ở đầu trang, hoặc mở bảng giá.",
+      "Xem cách một bài kiểm tra được soạn, tổ chức và so sánh, bên cạnh hình ảnh của ứng dụng thật.",
+      "Xem những gì mỗi bài kiểm tra bao gồm trên các thẻ, cùng giá mỗi ứng viên.",
+      "Dán mô tả công việc vào ô ở cuối trang để tạo bài kiểm tra.",
+      "Theo các liên kết đến bài kiểm tra có sẵn, hướng dẫn về bài kiểm tra trước tuyển dụng và tất cả tính năng."
+    ],
+    "tips": [
+      "Mọi tính năng đều có sẵn: bạn chỉ trả tiền cho mỗi ứng viên đã trả lời ít nhất một câu hỏi."
+    ]
+  },
+  "aiInterview": {
+    "title": "Phần mềm phỏng vấn AI",
+    "text": "testee với vai trò phần mềm phỏng vấn AI: AI viết câu hỏi, Mira có thể đọc to ở chế độ giọng nói, và nhóm của bạn đưa ra mọi quyết định.",
+    "actions": [
+      "Đi đến ô ở cuối trang bằng “Tạo buổi phỏng vấn” ở đầu trang, hoặc mở bảng giá.",
+      "Xem AI làm gì và không làm gì, bên cạnh hình ảnh của ứng dụng thật.",
+      "Xem tài liệu, dữ liệu xuất cho kiểm toán thiên lệch và nơi lưu trữ dữ liệu trên các thẻ.",
+      "Dán mô tả công việc vào ô ở cuối trang để tạo buổi phỏng vấn.",
+      "Theo các liên kết đến hướng dẫn về phỏng vấn AI, trang tin cậy và tất cả tính năng."
+    ],
+    "tips": [
+      "testee không bao giờ loại ai: câu trả lời được chấm theo đáp án, và con người quyết định."
+    ]
+  },
+  "codingTest": {
+    "title": "Bài kiểm tra lập trình tuyển dụng",
+    "text": "testee với vai trò bài kiểm tra lập trình tuyển dụng: bài kiểm tra có tính giờ, nơi lập trình viên đọc những đoạn code ngắn và trả lời, để sàng lọc trước vòng thực hành của bạn.",
+    "actions": [
+      "Đi đến ô ở cuối trang bằng “Tạo buổi phỏng vấn” ở đầu trang, hoặc mở bảng giá.",
+      "Xem cách bài kiểm tra bao quát công nghệ của bạn và các câu hỏi về code trông như thế nào, bên cạnh hình ảnh của ứng dụng thật.",
+      "Xem cách nó phù hợp với ATS hoặc nền tảng của bạn trên các thẻ, cùng giá mỗi ứng viên.",
+      "Dán mô tả công việc vào ô ở cuối trang để tạo bài kiểm tra.",
+      "Theo các liên kết đến hướng dẫn tuyển kỹ sư phần mềm, bài kiểm tra có sẵn và tất cả tính năng."
+    ],
+    "tips": [
+      "Ứng viên không viết, chạy hay debug code trong testee: hãy dùng trước vòng thực hành, không thay thế nó."
+    ]
+  },
   "faq": {
     "title": "Câu hỏi thường gặp",
     "text": "Giải đáp những câu hỏi thường gặp về testee: buổi phỏng vấn, ứng viên, giá và credit, kết quả, tích hợp, ngôn ngữ và dữ liệu của bạn.",

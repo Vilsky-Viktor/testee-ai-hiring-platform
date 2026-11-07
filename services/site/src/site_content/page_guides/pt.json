@@ -673,6 +673,48 @@
       "Temas jurídicos são resumos datados, não aconselhamento jurídico: confira as regras que se aplicam onde você contrata."
     ]
   },
+  "skillsAssessment": {
+    "title": "Software de avaliação de habilidades",
+    "text": "O que a testee é como software de avaliação de habilidades: um teste de habilidades cronometrado para qualquer vaga, escrito a partir da sua descrição da vaga, com resultados que você pode comparar.",
+    "actions": [
+      "Vá até a caixa no fim da página com “Criar uma entrevista” no topo, ou abra os preços.",
+      "Veja como um teste é escrito, aplicado e comparado, ao lado de imagens do app real.",
+      "Veja nos cartões o que cada teste inclui, com o preço por candidato.",
+      "Cole uma descrição da vaga na caixa no fim da página para criar um teste.",
+      "Siga os links para os testes prontos, o guia de testes de seleção e todos os recursos."
+    ],
+    "tips": [
+      "Todos os recursos estão incluídos: você paga só por cada candidato que responde a pelo menos uma pergunta."
+    ]
+  },
+  "aiInterview": {
+    "title": "Software de entrevista com IA",
+    "text": "O que a testee é como software de entrevista com IA: a IA escreve as perguntas, a Mira pode lê-las em voz alta no modo de voz, e sua equipe toma todas as decisões.",
+    "actions": [
+      "Vá até a caixa no fim da página com “Criar uma entrevista” no topo, ou abra os preços.",
+      "Veja o que a IA faz e o que não faz, ao lado de imagens do app real.",
+      "Veja nos cartões os documentos, a exportação para auditoria de viés e onde os dados ficam armazenados.",
+      "Cole uma descrição da vaga na caixa no fim da página para criar uma entrevista.",
+      "Siga os links para o guia de entrevistas com IA, a página de confiança e todos os recursos."
+    ],
+    "tips": [
+      "A testee nunca rejeita ninguém: as respostas são corrigidas com um gabarito, e uma pessoa decide."
+    ]
+  },
+  "codingTest": {
+    "title": "Teste de programação para contratação",
+    "text": "O que a testee é como teste de programação para contratação: um teste cronometrado em que desenvolvedores leem trechos curtos de código e respondem, como triagem antes da sua etapa prática.",
+    "actions": [
+      "Vá até a caixa no fim da página com “Criar uma entrevista” no topo, ou abra os preços.",
+      "Veja como um teste cobre a sua stack e como são as perguntas sobre código, ao lado de imagens do app real.",
+      "Veja nos cartões como ele se encaixa no seu ATS ou na sua plataforma, com o preço por candidato.",
+      "Cole uma descrição da vaga na caixa no fim da página para criar um teste.",
+      "Siga os links para o guia sobre como contratar engenheiros, os testes prontos e todos os recursos."
+    ],
+    "tips": [
+      "Os candidatos não escrevem, executam nem depuram código na testee: use antes de uma etapa prática, não no lugar dela."
+    ]
+  },
   "faq": {
     "title": "Perguntas frequentes",
     "text": "Respostas a perguntas comuns sobre a testee: entrevistas, candidatos, preços e créditos, resultados, integrações, idiomas e seus dados.",

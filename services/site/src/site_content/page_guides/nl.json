@@ -673,6 +673,48 @@
       "Juridische onderwerpen zijn gedateerde samenvattingen, geen juridisch advies: controleer de regels die gelden waar je werft."
     ]
   },
+  "skillsAssessment": {
+    "title": "Software voor skills assessments",
+    "text": "Wat testee is als software voor skills assessments: een vaardigheidstest met tijdslimiet voor elke functie, geschreven vanuit je functieomschrijving, met resultaten die je kunt vergelijken.",
+    "actions": [
+      "Spring met “Maak een interview” bovenaan naar het vak aan het einde van de pagina, of open de prijzen.",
+      "Bekijk hoe een test wordt geschreven, afgenomen en vergeleken, naast afbeeldingen van de echte app.",
+      "Bekijk op de kaarten wat elke test omvat, met de prijs per kandidaat.",
+      "Plak een functieomschrijving in het vak onderaan de pagina om een test te maken.",
+      "Volg de links naar de kant-en-klare tests, de gids over selectietests en alle functionaliteiten."
+    ],
+    "tips": [
+      "Alle functionaliteiten zijn inbegrepen: je betaalt alleen voor elke kandidaat die minstens één vraag beantwoordt."
+    ]
+  },
+  "aiInterview": {
+    "title": "Software voor AI-interviews",
+    "text": "Wat testee is als software voor AI-interviews: AI schrijft de vragen, Mira kan ze voorlezen in spraakmodus, en je team neemt elke beslissing.",
+    "actions": [
+      "Spring met “Maak een interview” bovenaan naar het vak aan het einde van de pagina, of open de prijzen.",
+      "Bekijk wat de AI doet en wat niet, naast afbeeldingen van de echte app.",
+      "Bekijk op de kaarten de documenten, de export voor bias-audit en waar gegevens worden opgeslagen.",
+      "Plak een functieomschrijving in het vak onderaan de pagina om een interview te maken.",
+      "Volg de links naar de gids over AI-interviews, de vertrouwenspagina en alle functionaliteiten."
+    ],
+    "tips": [
+      "testee wijst nooit iemand af: antwoorden worden nagekeken met een antwoordsleutel, en een mens beslist."
+    ]
+  },
+  "codingTest": {
+    "title": "Programmeertest voor werving",
+    "text": "Wat testee is als programmeertest voor werving: een test met tijdslimiet waarin developers korte stukken code lezen en antwoorden, als screening vóór je praktijkronde.",
+    "actions": [
+      "Spring met “Maak een interview” bovenaan naar het vak aan het einde van de pagina, of open de prijzen.",
+      "Bekijk hoe een test je stack dekt en hoe de vragen over code eruitzien, naast afbeeldingen van de echte app.",
+      "Bekijk op de kaarten hoe het past bij je ATS of je eigen platform, met de prijs per kandidaat.",
+      "Plak een functieomschrijving in het vak onderaan de pagina om een test te maken.",
+      "Volg de links naar de gids over developers werven, de kant-en-klare tests en alle functionaliteiten."
+    ],
+    "tips": [
+      "Kandidaten schrijven, draaien of debuggen geen code in testee: gebruik het vóór een praktijkronde, niet in plaats daarvan."
+    ]
+  },
   "faq": {
     "title": "Veelgestelde vragen",
     "text": "Antwoorden op veelgestelde vragen over testee: interviews, kandidaten, prijzen en credits, resultaten, integraties, talen en je gegevens.",

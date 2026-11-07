@@ -33,7 +33,7 @@ In questo modello l'IA fa il lavoro di scrittura: legge la descrizione del ruolo
 
 ## L'approccio di testee
 
-testee usa l'IA per scrivere un colloquio sulle competenze a partire dalla tua descrizione del ruolo. Le persone mantengono il controllo su cosa viene valutato e su ogni decisione.
+testee usa l'IA per scrivere un colloquio sulle competenze a partire dalla tua descrizione del ruolo. Le persone mantengono il controllo su cosa viene valutato e su ogni decisione. Vedi il [software per colloqui con IA](/guides/ai-interview-software) per sapere cosa è incluso.
 
 1. **L'IA legge la tua descrizione del ruolo** e individua ciò che un candidato deve sapere: i requisiti, il livello e una serie di argomenti con i relativi sottoargomenti.
 2. **Tu rivedi gli argomenti.** Mantienili, deselezionali, rinominali o modificali, oppure scrivi all'IA in linguaggio semplice cosa cambiare. Nessuna domanda viene scritta finché non approvi. L'eccezione è un colloquio che la tua piattaforma crea tramite l'API una volta che la tua azienda ha ricaricato: prosegue direttamente dagli argomenti proposti.

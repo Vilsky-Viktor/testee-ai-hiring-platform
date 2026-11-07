@@ -673,6 +673,48 @@
       "May petsang buod lang ang mga legal na topic, hindi legal na payo: tingnan ang mga patakarang nalalapat kung saan ka nagha-hire."
     ]
   },
+  "skillsAssessment": {
+    "title": "Skills assessment software",
+    "text": "Ang testee bilang skills assessment software: isang timed skills test para sa anumang role, isinulat mula sa job description mo, na may mga resultang maikukumpara.",
+    "actions": [
+      "Pumunta sa box sa dulo ng page gamit ang “Gumawa ng interview” sa itaas, o buksan ang pricing.",
+      "Tingnan kung paano isinusulat, pinapatakbo at ikinukumpara ang isang test, katabi ng mga larawan ng totoong app.",
+      "Tingnan sa mga card ang kasama sa bawat test, pati ang presyo bawat aplikante.",
+      "Mag-paste ng job description sa box sa dulo ng page para gumawa ng test.",
+      "Sundan ang mga link sa mga handang test, sa gabay sa pre-employment testing at sa lahat ng feature."
+    ],
+    "tips": [
+      "Kasama ang lahat ng feature: magbabayad ka lang para sa bawat aplikanteng sumagot ng kahit isang tanong."
+    ]
+  },
+  "aiInterview": {
+    "title": "AI interview software",
+    "text": "Ang testee bilang AI interview software: AI ang sumusulat ng mga tanong, puwedeng basahin nang malakas ni Mira ang mga ito sa voice mode, at ang team mo ang gumagawa ng bawat desisyon.",
+    "actions": [
+      "Pumunta sa box sa dulo ng page gamit ang “Gumawa ng interview” sa itaas, o buksan ang pricing.",
+      "Tingnan ang ginagawa at hindi ginagawa ng AI, katabi ng mga larawan ng totoong app.",
+      "Tingnan sa mga card ang mga dokumento, ang bias audit export at kung saan nakaimbak ang data.",
+      "Mag-paste ng job description sa box sa dulo ng page para gumawa ng interview.",
+      "Sundan ang mga link sa gabay sa AI interviews, sa page ng tiwala at sa lahat ng feature."
+    ],
+    "tips": [
+      "Hindi kailanman nagre-reject ang testee ng sinuman: minamarkahan ang mga sagot batay sa answer key, at tao ang nagpapasya."
+    ]
+  },
+  "codingTest": {
+    "title": "Coding test para sa hiring",
+    "text": "Ang testee bilang coding test para sa hiring: isang timed test kung saan nagbabasa ang mga developer ng maiikling piraso ng code at sumasagot, bilang screen bago ang hands-on round mo.",
+    "actions": [
+      "Pumunta sa box sa dulo ng page gamit ang “Gumawa ng interview” sa itaas, o buksan ang pricing.",
+      "Tingnan kung paano sinasaklaw ng test ang stack mo at ang itsura ng mga tanong nito tungkol sa code, katabi ng mga larawan ng totoong app.",
+      "Tingnan sa mga card kung paano ito bumabagay sa ATS mo o sa sarili mong platform, pati ang presyo bawat aplikante.",
+      "Mag-paste ng job description sa box sa dulo ng page para gumawa ng test.",
+      "Sundan ang mga link sa gabay sa pag-hire ng mga engineer, sa mga handang test at sa lahat ng feature."
+    ],
+    "tips": [
+      "Hindi sumusulat, nagpapatakbo o nagde-debug ng code ang mga aplikante sa testee: gamitin ito bago ang hands-on round, hindi kapalit nito."
+    ]
+  },
   "faq": {
     "title": "Mga madalas itanong",
     "text": "Mga sagot sa mga karaniwang tanong tungkol sa testee: mga interview, aplikante, presyo at credits, resulta, integration, wika at ang iyong data.",

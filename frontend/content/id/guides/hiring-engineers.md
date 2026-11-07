@@ -80,7 +80,7 @@ Di sinilah testee berperan. testee mengubah deskripsi pekerjaanmu menjadi wawanc
 
 Setiap kandidat mendapat set soal acaknya sendiri dengan hitung mundur di setiap soal. Kamu melihat scorecard dengan setiap jawaban dan berapa lama waktunya, plus tanda untuk jawaban yang terlalu cepat, meninggalkan halaman, percobaan menyalin, dan pola yang tidak biasa dalam jawaban serta waktunya. Tanda adalah alasan untuk melihat lebih teliti, bukan bukti apa pun. Halaman kandidat juga menyarankan soal yang dijawabnya dengan benar untuk ditanyakan di wawancara berikutnya.
 
-Yang tidak dilakukan testee: kandidat tidak menulis, menjalankan, atau men-debug kode di testee. Membaca kode dan menulisnya adalah keterampilan yang berbeda, jadi langkah berikutnya tetap penting. Lihat [tes keterampilan per posisi](/tests) untuk tes siap pakai sebagai titik awal.
+Yang tidak dilakukan testee: kandidat tidak menulis, menjalankan, atau men-debug kode di testee. Membaca kode dan menulisnya adalah keterampilan yang berbeda, jadi langkah berikutnya tetap penting. Lihat [tes coding untuk rekrutmen](/guides/coding-test-for-hiring) untuk cara kerjanya, dan [tes keterampilan per posisi](/tests) untuk tes siap pakai sebagai titik awal.
 
 ## Langkah 4: Take-home atau live coding
 

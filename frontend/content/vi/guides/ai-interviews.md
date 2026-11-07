@@ -33,7 +33,7 @@ Trong mô hình này, AI làm phần việc viết: đọc mô tả công việc
 
 ## Cách tiếp cận của testee
 
-testee dùng AI để viết một buổi phỏng vấn kỹ năng từ mô tả công việc của bạn. Con người vẫn nắm quyền kiểm soát nội dung được kiểm tra và mọi quyết định.
+testee dùng AI để viết một buổi phỏng vấn kỹ năng từ mô tả công việc của bạn. Con người vẫn nắm quyền kiểm soát nội dung được kiểm tra và mọi quyết định. Xem [phần mềm phỏng vấn AI](/guides/ai-interview-software) để biết những gì được bao gồm.
 
 1. **AI đọc mô tả công việc của bạn** và chọn ra những gì ứng viên phải biết: các yêu cầu, cấp độ và một bộ chủ đề kèm chủ đề con.
 2. **Bạn duyệt các chủ đề.** Giữ, bỏ chọn, đổi tên hoặc chỉnh sửa, hoặc bảo AI bằng lời cần thay đổi gì. Không câu hỏi nào được viết cho đến khi bạn duyệt. Ngoại lệ là buổi phỏng vấn do chính nền tảng của bạn tạo qua API khi công ty bạn đã nạp: buổi phỏng vấn này đi tiếp thẳng từ các chủ đề đề xuất.

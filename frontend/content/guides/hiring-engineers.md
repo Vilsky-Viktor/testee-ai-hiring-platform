@@ -80,7 +80,7 @@ This is where testee fits. It turns your job description into a timed multiple-c
 
 Each candidate gets their own random set of questions with a countdown on every one. You see a scorecard with every answer and how long it took, plus flags for too-fast answers, leaving the page, copy attempts and unusual patterns in their answers and times. A flag is a reason to look closer, not proof of anything. Their page also suggests questions they got right to ask about in the next interview.
 
-What testee doesn't do: candidates don't write, run or debug code in testee. Reading code and writing it are different skills, so the next step still matters. See [skills tests by role](/tests) for ready-made tests to start from.
+What testee doesn't do: candidates don't write, run or debug code in testee. Reading code and writing it are different skills, so the next step still matters. See [the coding test for hiring](/guides/coding-test-for-hiring) for how it works, and [skills tests by role](/tests) for ready-made tests to start from.
 
 ## Step 4: Take-home or live coding
 

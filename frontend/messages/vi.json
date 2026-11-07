@@ -3809,8 +3809,6 @@
         "alt": "Báo cáo của một ứng viên đạt điểm đạt"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -4000,3 +3998,5 @@
       "interviewsGuide": "hướng dẫn về phỏng vấn AI",
       "engineersGuide": "cách tuyển kỹ sư phần mềm"
     }
+  }
+}

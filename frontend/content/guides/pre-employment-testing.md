@@ -89,7 +89,7 @@ For price comparisons, see [how to compare test costs](/compare/cheapest-pre-emp
 
 ## How testee does it
 
-testee turns a job description into a timed multiple-choice skills interview.
+testee turns a job description into a timed multiple-choice skills interview: see [skills assessment software](/guides/skills-assessment-software) for what's included.
 
 1. **Paste the job description.** Any role, any of 23 languages. testee picks out what a candidate must know and proposes topics.
 2. **Review the topics.** Uncheck what you don't need, rename a topic, edit its subtopics, or describe changes in plain text. Questions are written only after you approve. You can also start from a ready-made template for your role.

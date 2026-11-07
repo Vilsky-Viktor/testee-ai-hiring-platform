@@ -80,7 +80,7 @@ Hier past testee. Het maakt van je functieomschrijving een getimede meerkeuze-ke
 
 Elke kandidaat krijgt een eigen willekeurige set vragen, met een aftelklok bij elke vraag. Je ziet een scorekaart met elk antwoord en hoe lang het duurde, plus signalen bij te snelle antwoorden, het verlaten van de pagina, kopieerpogingen en ongebruikelijke patronen in de antwoorden en antwoordtijden. Een signaal is een reden om beter te kijken, geen bewijs van iets. De pagina van de kandidaat stelt ook vragen voor die de kandidaat goed had, om in het volgende gesprek op door te vragen.
 
-Wat testee niet doet: kandidaten schrijven, draaien of debuggen geen code in testee. Code lezen en code schrijven zijn verschillende vaardigheden, dus de volgende stap blijft belangrijk. Zie [vaardigheidstests per functie](/tests) voor kant-en-klare tests om mee te beginnen.
+Wat testee niet doet: kandidaten schrijven, draaien of debuggen geen code in testee. Code lezen en code schrijven zijn verschillende vaardigheden, dus de volgende stap blijft belangrijk. Zie [de programmeertest voor werving](/guides/coding-test-for-hiring) voor hoe het werkt, en [vaardigheidstests per functie](/tests) voor kant-en-klare tests om mee te beginnen.
 
 ## Stap 4: thuisopdracht of live coding
 

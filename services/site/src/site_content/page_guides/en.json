@@ -673,6 +673,48 @@
       "Legal topics are dated summaries, not legal advice: check the rules that apply where you hire."
     ]
   },
+  "skillsAssessment": {
+    "title": "Skills assessment software",
+    "text": "What testee is as skills assessment software: a timed skills test for any role, written from your job description, with results you can compare.",
+    "actions": [
+      "Jump to the box at the end of the page with “create an interview” at the top, or open pricing.",
+      "See how a test is written, run and compared, beside pictures of the real app.",
+      "See what every test includes on the cards, with the price per candidate.",
+      "Paste a job description in the box at the end of the page to create a test.",
+      "Follow the links to the ready-made tests, the pre-employment testing guide and all features."
+    ],
+    "tips": [
+      "Every feature is included: you pay only for each candidate who answers at least one question."
+    ]
+  },
+  "aiInterview": {
+    "title": "AI interview software",
+    "text": "What testee is as AI interview software: AI writes the questions, Mira can read them aloud in voice mode, and your team makes every decision.",
+    "actions": [
+      "Jump to the box at the end of the page with “create an interview” at the top, or open pricing.",
+      "See what the AI does and what it doesn't, beside pictures of the real app.",
+      "See the documents, the bias-audit export and where data is stored on the cards.",
+      "Paste a job description in the box at the end of the page to create an interview.",
+      "Follow the links to the AI interviews guide, the trust page and all features."
+    ],
+    "tips": [
+      "testee never rejects anyone: answers are marked against an answer key, and a person decides."
+    ]
+  },
+  "codingTest": {
+    "title": "Coding test for hiring",
+    "text": "What testee is as a coding test for hiring: a timed test where developers read short pieces of code and answer, as a screen before your hands-on round.",
+    "actions": [
+      "Jump to the box at the end of the page with “create an interview” at the top, or open pricing.",
+      "See how a test covers your stack and what its questions about code look like, beside pictures of the real app.",
+      "See how it fits your ATS or your own platform on the cards, with the price per candidate.",
+      "Paste a job description in the box at the end of the page to create a test.",
+      "Follow the links to the guide on hiring engineers, the ready-made tests and all features."
+    ],
+    "tips": [
+      "Candidates don't write, run or debug code in testee: use it before a hands-on round, not instead of one."
+    ]
+  },
   "faq": {
     "title": "Frequently asked questions",
     "text": "Answers to common questions about testee: interviews, candidates, prices and credits, results, integrations, languages and your data.",

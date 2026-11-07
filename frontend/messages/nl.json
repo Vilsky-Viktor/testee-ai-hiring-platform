@@ -3805,8 +3805,6 @@
         "alt": "Het rapport van een kandidaat met een score boven de slaaggrens"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "de gids over AI-interviews",
       "engineersGuide": "developers werven"
     }
+  }
+}

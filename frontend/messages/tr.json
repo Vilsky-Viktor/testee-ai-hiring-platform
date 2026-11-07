@@ -3809,8 +3809,6 @@
         "alt": "Geçme notu almış bir adayın raporu"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -4000,3 +3998,5 @@
       "interviewsGuide": "yapay zekâ mülakatları rehberi",
       "engineersGuide": "mühendis işe alımı rehberi"
     }
+  }
+}

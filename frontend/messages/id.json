@@ -3805,8 +3805,6 @@
         "alt": "Laporan kandidat yang mencapai nilai lulus"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "panduan wawancara AI",
       "engineersGuide": "cara merekrut engineer"
     }
+  }
+}

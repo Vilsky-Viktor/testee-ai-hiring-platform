@@ -80,7 +80,7 @@ Siia sobib testee. See muudab sinu töökuulutuse ajapiiranguga valikvastustega 
 
 Iga kandidaat saab oma juhusliku küsimuste komplekti ja igal küsimusel on taimer. Näed hindamislehte iga vastuse ja selle ajakuluga ning märkeid liiga kiirete vastuste, lehelt lahkumise, kopeerimiskatsete ning vastuste ja ajakulu ebatavaliste mustrite kohta. Märge on põhjus lähemalt vaadata, mitte tõend. Kandidaadi leht soovitab ka küsimusi, millele ta vastas õigesti, et neist järgmisel intervjuul küsida.
 
-Mida testee ei tee: kandidaadid ei kirjuta, käivita ega siluta testees koodi. Koodi lugemine ja kirjutamine on erinevad oskused, nii et järgmine samm on endiselt oluline. Valmis teste, millest alustada, leiad lehelt [oskustestid rollide kaupa](/tests).
+Mida testee ei tee: kandidaadid ei kirjuta, käivita ega siluta testees koodi. Koodi lugemine ja kirjutamine on erinevad oskused, nii et järgmine samm on endiselt oluline. Kuidas see töötab, vaata lehelt [programmeerimistest värbamiseks](/guides/coding-test-for-hiring), ja valmis teste, millest alustada, leiad lehelt [oskustestid rollide kaupa](/tests).
 
 ## 4. samm: koduülesanne või reaalajas kodeerimine
 

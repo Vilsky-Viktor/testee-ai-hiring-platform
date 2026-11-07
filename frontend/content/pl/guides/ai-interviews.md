@@ -33,7 +33,7 @@ W tym modelu AI wykonuje pracę autorską: czyta opis stanowiska, proponuje, co 
 
 ## Podejście testee
 
-testee używa AI do napisania rozmowy sprawdzającej umiejętności na podstawie Twojego opisu stanowiska. To ludzie decydują o tym, co jest sprawdzane, i podejmują każdą decyzję.
+testee używa AI do napisania rozmowy sprawdzającej umiejętności na podstawie Twojego opisu stanowiska. To ludzie decydują o tym, co jest sprawdzane, i podejmują każdą decyzję. Zobacz [narzędzie do rozmów rekrutacyjnych z AI](/guides/ai-interview-software), aby sprawdzić, co obejmuje.
 
 1. **AI czyta Twój opis stanowiska** i wyodrębnia, co kandydat musi wiedzieć: wymagania, poziom oraz zestaw tematów z podtematami.
 2. **Przeglądasz tematy.** Zostaw je, odznacz, zmień nazwę lub edytuj albo napisz AI zwykłym tekstem, co zmienić. Żadne pytanie nie powstaje, dopóki tego nie zatwierdzisz. Wyjątkiem jest rozmowa, którą Twoja platforma tworzy przez API po doładowaniu konta przez Twoją firmę: przechodzi ona dalej od razu od proponowanych tematów.

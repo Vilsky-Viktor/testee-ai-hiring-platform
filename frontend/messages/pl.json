@@ -3805,8 +3805,6 @@
         "alt": "Raport kandydata z wynikiem powyżej progu zaliczenia"
       }
     }
-  }
-}
   },
   "solutions": {
     "pages": {
@@ -3996,3 +3994,5 @@
       "interviewsGuide": "poradnik o rozmowach rekrutacyjnych z AI",
       "engineersGuide": "jak rekrutować programistów"
     }
+  }
+}

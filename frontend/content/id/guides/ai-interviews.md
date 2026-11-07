@@ -33,7 +33,7 @@ Dalam model ini, AI mengerjakan bagian penulisan: AI membaca deskripsi pekerjaan
 
 ## Pendekatan testee
 
-testee memakai AI untuk menulis wawancara keterampilan dari deskripsi pekerjaanmu. Manusia tetap memegang kendali atas apa yang diuji dan atas setiap keputusan.
+testee memakai AI untuk menulis wawancara keterampilan dari deskripsi pekerjaanmu. Manusia tetap memegang kendali atas apa yang diuji dan atas setiap keputusan. Lihat [software wawancara AI](/guides/ai-interview-software) untuk mengetahui apa saja yang termasuk.
 
 1. **AI membaca deskripsi pekerjaanmu** dan mengambil apa yang wajib diketahui kandidat: persyaratan, level, dan sekumpulan topik beserta subtopiknya.
 2. **Kamu meninjau topiknya.** Pertahankan, hapus centang, ganti nama, atau ubah topik, atau beri tahu AI dengan teks biasa apa yang perlu diubah. Tidak ada soal yang ditulis sebelum kamu menyetujuinya. Pengecualiannya adalah wawancara yang dibuat platformmu sendiri lewat API setelah perusahaanmu mengisi ulang: wawancara itu langsung berlanjut dari topik yang diusulkan.
