@@ -246,6 +246,19 @@ LIMITS = {
     # per sending address, counted before their signature is checked.
     "ATS_CALLS_PER_COMPANY_MINUTE": Limit("ats", 60, "calls", MINUTE_SECONDS, 1, 1_000, "company"),
     "ATS_WEBHOOKS_PER_IP_MINUTE": Limit("ats", 600, "calls", MINUTE_SECONDS, 10, 10_000, "ip"),
+    # Paddle's and Resend's web hooks per sending address, counted before their signature is
+    # checked: generous, as each sends everything from few addresses.
+    "PADDLE_WEBHOOKS_PER_IP_MINUTE": Limit(
+        "billing", 600, "calls", MINUTE_SECONDS, 10, 10_000, "ip"
+    ),
+    "RESEND_WEBHOOKS_PER_IP_MINUTE": Limit(
+        "notifications", 600, "calls", MINUTE_SECONDS, 10, 10_000, "ip"
+    ),
+    # Unsubscribes applied per address: generous, as a mail provider's one-click button posts for
+    # all its users from few addresses, and an unsubscribe it gives up on is lost.
+    "UNSUBSCRIBE_PER_IP_MINUTE": Limit(
+        "notifications", 600, "calls", MINUTE_SECONDS, 10, 10_000, "ip"
+    ),
     "ATS_CONNECTS_PER_HOUR": Limit("ats", 20, "calls", HOUR_SECONDS, 1, 1_000, "company"),
     "SLACK_CONNECTS_PER_HOUR": Limit(
         "notifications", 20, "calls", HOUR_SECONDS, 1, 1_000, "company"
@@ -282,19 +295,4 @@ QUESTION_SECONDS = {
     "basic": "QUESTION_SECONDS_BASIC",
     "medium": "QUESTION_SECONDS_MEDIUM",
     "hard": "QUESTION_SECONDS_HARD",
-}
-
-# Our providers' limits, recorded where a call to them is refused (kind "provider:<name>") and
-# shown read-only; Cloud Armor's per-IP limit lives in Terraform and is counted from its logs.
-PROVIDER_LIMITS = {
-    "OPENAI_RATE_LIMIT": "openai",
-    # The account ran out of money: all AI stops, so it's logged as an error and alerts at once.
-    "OPENAI_QUOTA": "openai",
-    # Waiting in generation's own request limiter (GENERATION_CALLS_PER_SECOND).
-    "OPENAI_THROTTLED": "openai",
-    "RESEND_RATE_LIMIT": "resend",
-    # Resend's sending quota used up, its daily or its monthly one.
-    "RESEND_DAILY_QUOTA": "resend",
-    "ATS_RATE_LIMIT": "ats",
-    "FIREBASE_TOKEN_REFUSED": "firebase",
 }

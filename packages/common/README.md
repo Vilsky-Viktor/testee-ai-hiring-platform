@@ -22,9 +22,9 @@ Tracing: `tracing` sends AI calls to Langfuse through its LangChain callback, on
 `LANGFUSE_PUBLIC_KEY` and `LANGFUSE_SECRET_KEY` are set (`LANGFUSE_HOST`: the EU cloud unless set).
 `traced_run(name, tags, seed)` makes every LangChain call inside it (LangGraph runs too) one trace,
 tagged with ids only; `new_trace_id` and `traced(trace_id)` give the chats' answers theirs.
-Personal data is masked before a trace leaves (`scrub.scrub_people`: emails, URLs cut to their host,
+Personal data is masked before a trace leaves (`scrub.scrub_people`: emails, secrets, IP addresses, URLs cut to their host,
 `name` and `email` fields, and the names a caller hides with `hiding`, the assistant's user's).
-Sentry's events are scrubbed by `scrub.scrub` (emails and URLs).
+Sentry's events are scrubbed by `scrub.scrub` (emails, secrets, IP addresses and URLs).
 `answer_votes` mirrors the chats' thumbs up and down there as a score on the answer's trace.
 Both need the `langfuse` extra: `testee-common[llm,langfuse]` (generation, rounds and the assistant).
 Money and counted nouns as a language writes them (`money`, `plurals`) need the `money` extra (site,
@@ -112,7 +112,7 @@ sends it as the `trace` attribute, and `pubsub.event_of` hands it to the consume
 events (`logging.follow_trace`), so one action reads as one trace across its events.
 Each request's own line names its route's template (`/invites/{token}`), never the path, which can
 carry a secret token; uvicorn's access log, which prints paths and visitors' addresses, is off.
-Every line's message and error are scrubbed (`scrub.scrub`: emails, URLs cut to their host), and the
+Every line's message and error are scrubbed (`scrub.scrub`: emails, secrets, IP addresses, URLs cut to their host), and the
 database engine hides query values from its errors (`hide_parameters`).
 Retries: `backoff.wait_seconds(first, attempt)` is the wait before a retry, doubling from `first`
 with full jitter (the welcome credits, Langfuse votes, sent within the vote's request).
@@ -238,6 +238,7 @@ out or listed under another area):
 - `http`: the shared HTTP client (a timeout, the trace passed on, no retries) and `passed_on`.
 - `no_store`: `Cache-Control: no-store` on signed-in and secret-token answers.
 - `pacing`: requests paced to a share a second, counted in Redis (`wait_turn`).
+- `public_url_constants`: hosts a request to an address someone gave never goes to.
 - `public_urls`: HTTPS addresses on the public internet only, looked up within a time, and pinned.
 - `question_feedback`: `QuestionFeedback`, library's ratings and reports of a question for one user (rounds for candidates, companies for members), library's answers passed on.
 - `question_feedback_schemas`: `RatingIn` and `ReportIn`, a vote and a report as rounds and companies take them.
@@ -262,6 +263,7 @@ out or listed under another area):
 - `credit_keys`: one-off migrations of candidates' credit keys.
 - `limit_list`: every usage limit of ours, with its default, window and scope.
 - `limit_schemas`: the shared daily budgets' use today.
+- `provider_limits`: our providers' limits, recorded where a call to them is refused.
 - `limit_types`: a limit's definition (`Limit`).
 - `limits`: limits' current values, cached per instance, and the record of every refusal.
 - `maintenance`: the maintenance switch every service reads.
@@ -284,7 +286,7 @@ out or listed under another area):
   followed by its consumer (`follow_trace`).
 - `loop_watch`: each time a service's event loop was blocked, logged with how long and where
   (files, lines and functions only); started in every service's lifespan.
-- `scrub`: emails, URLs and people's names taken out of logs, errors and traces.
+- `scrub`: emails, secrets, IP addresses, URLs and people's names taken out of logs, errors and traces.
 - `scrub_patterns`: the patterns `scrub` takes out.
 - `sentry`: Sentry without personal data, and which requests are traced.
 

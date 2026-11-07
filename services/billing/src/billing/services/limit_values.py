@@ -10,7 +10,8 @@ from fastapi import HTTPException, status
 from redis.exceptions import RedisError
 from testee_common.auth.user import User
 from testee_common.i18n.i18n import TemplateError
-from testee_common.limits.limit_list import LIMITS, LIMITS_KEY, PROVIDER_LIMITS
+from testee_common.limits.limit_list import LIMITS, LIMITS_KEY
+from testee_common.limits.provider_limits import PROVIDER_LIMITS
 
 from billing.constants.usage import HITS_DAYS, OUT_OF_BOUNDS, UNKNOWN_LIMIT
 from billing.core.db import Session
