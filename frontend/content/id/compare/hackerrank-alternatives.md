@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Alternatif dan pelengkap HackerRank untuk menguji pengetahuan teknis
 
-HackerRank adalah platform untuk rekrutmen developer. Per November 2026, situsnya menyebut tes penyaringan yang dikerjakan di rumah, wawancara pair programming langsung di lingkungan coding bersama, dan pewawancara AI yang memberikan masalah dunia nyata ([hackerrank.com](https://www.hackerrank.com/)). Kalau kamu butuh kandidat menulis dan menjalankan kode, platform seperti itu memang dibuat untuk itu.
+HackerRank adalah platform untuk rekrutmen developer. Per November 2026, situsnya menyebut tes penyaringan, wawancara pair programming langsung di lingkungan coding bersama, dan pewawancara AI yang memberikan masalah dunia nyata ([hackerrank.com](https://www.hackerrank.com/)). Kalau kamu butuh kandidat menulis dan menjalankan kode, platform seperti itu memang dibuat untuk itu.
 
 testee bukan penggantinya. testee mengerjakan tugas yang berbeda: tes pilihan ganda berbatas waktu tentang apa yang diketahui kandidat, ditulis dari deskripsi pekerjaanmu, termasuk soal membaca kode. Keduanya saling melengkapi dengan baik. Pengaturan yang umum adalah testee sebagai penyaringan pengetahuan cepat untuk setiap pelamar, lalu tes coding atau wawancara live coding dari platform developer bagi yang lolos. testee juga mencakup posisi lain yang kamu rekrut di kuartal yang sama, seperti account manager, staf pembukuan, atau agen support.
 

@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Kas AI kasutamine värbamisel on USAs seaduslik? Mida tööandjad peavad teadma
 
-Üldiselt jah: AI kasutamine värbamisel on USAs seaduslik. Föderaalset AI seadust värbamise kohta ei ole. Selle asemel kohaldub AI-tööriistadele, nagu igale testile, föderaalne diskrimineerimisvastane õigus, ning mõned kohad lisavad omad reeglid: New York City, Illinois, Colorado, California, New Jersey ja Texas. 2025. aasta detsembri presidendi korraldus lõi justiitsministeeriumi töörühma osariikide AI seaduste vaidlustamiseks ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), kuid korraldus ei tunnista neid kehtetuks: need kehtivad, kuni Kongress või kohus otsustab teisiti.
+Üldiselt jah: AI kasutamine värbamisel on USAs seaduslik. Föderaalset AI seadust värbamise kohta ei ole. Selle asemel kohaldub AI-tööriistadele, nagu igale testile, föderaalne diskrimineerimisvastane õigus, ning mõned kohad lisavad omad reeglid: New York City, Illinois, Colorado, California, New Jersey, Texas ja Connecticut. 2025. aasta detsembri presidendi korraldus lõi justiitsministeeriumi töörühma osariikide AI seaduste vaidlustamiseks ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), kuid korraldus ei tunnista neid kehtetuks: need kehtivad, kuni Kongress või kohus otsustab teisiti.
 
 See juhend selgitab üldjoontes reegleid, olulisi kuupäevi, seda, mida tööandjad peavad tegema, ja kuidas testee sellele läheneb. **See ei ole õigusnõuanne.** See kajastab reegleid 2026. aasta novembri seisuga; mitu neist on uued või alles valmimas.
 
@@ -17,7 +17,7 @@ See juhend selgitab üldjoontes reegleid, olulisi kuupäevi, seda, mida tööand
 | --- | --- |
 | Kas võin kasutada AI-d kandidaatide sõelumiseks või hindamiseks? | Jah, föderaalse diskrimineerimisvastase õiguse ning osariikide ja linnade reeglite piires |
 | Kas pean tulemusi kallutatuse suhtes kontrollima? | Ebasoodne mõju on sinu vastutus; New York Citys on enne kasutamist nõutud sõltumatu kallutatuse audit |
-| Kas pean kandidaate teavitama? | New York Citys ja Illinoisis jah; Colorados ja Californias alates 1. jaanuarist 2027 |
+| Kas pean kandidaate teavitama? | New York Citys ja Illinoisis jah; Colorados ja Californias alates 1. jaanuarist 2027; Connecticutis alates 1. oktoobrist 2027 |
 | Kas pean pakkuma lisaaega? | Puudega kandidaatidele, kes seda vajavad: see on mõistlik kohandus (reasonable accommodation) |
 | Kui kaua pean dokumente säilitama? | Californias neli aastat, Colorados kolm |
 | Kes teeb värbamisotsuse? | Inimene. Colorado ja California näevad ette inimese tehtava ülevaatuse ning see on kõikjal kõige kindlam lähenemine |
@@ -66,7 +66,7 @@ Ja nad peavad teavitama kandidaate, kui AI-d kasutatakse värbamis- ja töölev�
 
 ## Colorado
 
-Colorado AI seadus tunnistati kehtetuks ja võeti uuesti vastu SB 26-189-ga, mis allkirjastati 14. mail 2026 ja kehtib alates 1. jaanuarist 2027. Attorney Generali reeglid on välja pakutud (kuulamine oli määratud 26. oktoobrile 2026), neid ei olnud 2026. aasta novembri seisuga vastu võetud ja need peaksid valmima 1. jaanuariks 2027. Automatiseeritud otsustustehnoloogia juurutajate kohustused, kui see tehnoloogia mõjutab töölevõtmisotsust olulisel määral, on:
+Colorado AI seadus tunnistati kehtetuks ja võeti uuesti vastu SB 26-189-ga, mis allkirjastati 14. mail 2026 ja kehtib alates 1. jaanuarist 2027. Attorney Generali reeglid on välja pakutud, neid ei olnud 2026. aasta novembri seisuga vastu võetud ja need peaksid valmima 1. jaanuariks 2027. 2026. aasta aprillis peatas föderaalkohus xAI esitatud hagi asjas vana seaduse ja seda asendava seaduse täitmise kuni 14 päeva möödumiseni sellest, kui kohus teeb otsuse xAI esialgse õiguskaitse taotluse kohta; see taotlus ootab nimetatud reegleid. Jaanuari kuupäev ise pole muutunud. Automatiseeritud otsustustehnoloogia juurutajate kohustused, kui see tehnoloogia mõjutab töölevõtmisotsust olulisel määral, on:
 
 - **Teade enne kasutamist** kandidaadile.
 - **Ebasoodsa otsuse selgitus,** näiteks kui kandidaati ei võeta tööle või ta ei liigu edasi.
@@ -84,6 +84,13 @@ Colorado AI seadus tunnistati kehtetuks ja võeti uuesti vastu SB 26-189-ga, mis
 - **New Jersey.** Law Against Discriminationi (N.J.A.C. 13:16) alusel kehtivad kaudse diskrimineerimise reeglid, jõus alates 15. detsembrist 2025, nimetavad automatiseeritud töölevõtmisotsuste tööriistu praktikate hulgas, millel võib olla kaudselt diskrimineeriv mõju. Tarnija tootele tuginev tööandja peab võtma mõistlikke meetmeid, et veenduda selle vastavuses seadusele, ja tööriistal, mida pole enne kasutamist piisavalt testitud, võib ise olla kaudselt diskrimineeriv mõju.
 - **Texas.** Responsible AI Governance Act (HB 149), jõus alates 1. jaanuarist 2026, keelab AI, mida kasutatakse kavatsusega ebaseaduslikult diskrimineerida. Kaudne diskrimineerimine üksi seda kavatsust ei näita.
 
+## Connecticut
+
+Public Act 26-15 (SB 5), mis allkirjastati 2026. aasta mais, sisaldab tööandjatele kahte osa:
+
+- **Juba alates 1. oktoobrist 2026:** automatiseeritud töölevõtmisotsuste tööriista kasutamine ei ole diskrimineerimisnõude puhul kaitseargument. Kallutatuse testimine ei ole kohustuslik, kuid selle tõendeid võib arvesse võtta.
+- **Alates 1. oktoobrist 2027:** ütle kandidaatidele lihtsas keeles, kui nad suhtlevad sellise tööriistaga, välja arvatud juhul, kui see on ilmne, ja anna enne selle kasutamist otsuse tegemiseks kirjalik teade: et seda kasutatakse, selle eesmärk ja otsuse liik, selle kaubanimi, milliseid isikuandmeid see analüüsib ja kuidas, kust andmed pärinevad ning kuidas sinuga ühendust võtta.
+
 ## Kuupäevad
 
 | Kuupäev | Mis kehtib |
@@ -92,11 +99,13 @@ Colorado AI seadus tunnistati kehtetuks ja võeti uuesti vastu SB 26-189-ga, mis
 | 1. oktoober 2025 | California Civil Rights Councili reeglid automatiseeritud otsustussüsteemide kohta |
 | 15. detsember 2025 | New Jersey kaudse diskrimineerimise reeglid |
 | 1. jaanuar 2026 | Illinois: teade AI kasutamisest, mitte diskrimineerivat AI-d, mitte postiindekseid asendajana; Texas: mitte AI-d, mida kasutatakse diskrimineerimise kavatsusega |
+| 1. oktoober 2026 | Connecticut: automatiseeritud tööriist ei ole diskrimineerimisnõude puhul kaitseargument |
 | 1. jaanuar 2027 | Colorado AI seadus; California CCPA reeglid automatiseeritud otsuste kohta töölevõtmisel |
+| 1. oktoober 2027 | Connecticut: teade kandidaatidele |
 
 ## Praktiline kontrollnimekiri tööandjatele
 
-1. **Loetle töökohad ja kohad,** kuhu värbad: New York City, Illinois, Colorado, California, New Jersey, Texas, mujal USAs.
+1. **Loetle töökohad ja kohad,** kuhu värbad: New York City, Illinois, Colorado, California, New Jersey, Texas, Connecticut, mujal USAs.
 2. **Testi ainult seda, mida töö vajab.** Vali teemad ja läbimise lävi, mida saad selle rolli jaoks põhjendada.
 3. **Uuenda kandidaatidele mõeldud teadet,** et see ütleks, et kasutatakse AI-d, kuidas tulemusi kasutatakse ning kuidas taotleda kohandust ja inimese tehtavat ülevaatust. Lisa Illinoisi ja Colorado sõnastus, kus need kehtivad.
 4. **Paku kohandusi,** näiteks lisaaega, ja lepi need kokku enne, kui kandidaat alustab.
@@ -113,7 +122,7 @@ testee viib läbi ajapiiranguga valikvastustega oskuste intervjuusid, mille AI k
 Kuidas see tootes täna välja näeb:
 
 - **AI kirjutab küsimused ja nende vastusevõtmed; hindamine käib kindlate reeglite järgi.** Ükski AI ei hinda kandidaadi vastust ning video- ega näoanalüüsi ei kasutata. Häälerežiimis muudetakse kõne tekstiks ja sobitatakse vastusevariandiga, mis kandidaadile välja öeldakse ja ekraanil näidatakse: üks selgelt nimetatud variant võetakse vastuseks kohe, mitme variandi valik kinnitatakse kõigepealt. testee ei salvesta kõnet kunagi ja häält ei analüüsita kunagi.
-- **Sina kiidad teemad heaks** enne, kui ühtegi küsimust kirjutatakse, ja sina valid läbimise läve.
+- **Sina kiidad teemad heaks** enne, kui ühtegi küsimust kirjutatakse, ja sina valid läbimise läve. Erand on intervjuu, mille sinu enda platvorm loob API kaudu pärast seda, kui sinu ettevõte on krediiti juurde laadinud: see liigub pakutud teemadelt otse edasi.
 - **Otsustavad inimesed.** testee ei lükka kandidaate tagasi ega saada äraütlemiskirju.
 - **Kaitstud tunnuseid ei koguta.** testee ei küsi, ei tuleta ega salvesta kunagi kandidaatide sugu, rassi, vanust, puuet, postiindeksit ega muid kaitstud tunnuseid.
 - **Eksport kallutatuse auditi jaoks.** Ettevõtte toimingute logi lehel saab omanik alla laadida CSV-faili lõpetanud kandidaatidest, kogu ettevõtte või ühe intervjuu kohta ja kahe kuupäeva vahel: iga kandidaadi hinne, läbimise lävi, kas ta sooritas ja kas tema tulemus oli intervjuu mediaanist kõrgem. Iga rida on seotud kandidaadi e-posti aadressiga, et saaksid selle ühendada enesemääratletud kategooriatega, mille ise kogusid; seejärel eemalda e-posti veerg ja anna fail oma sõltumatule audiitorile, kes arvutab valiku- ja tulemusmäärad ning mõjusuhted. Sama failiga saad ise teha neli viiendikku kontrolli.
@@ -139,7 +148,8 @@ Kuidas see tootes täna välja näeb:
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 ja 6 RCNY §5-300 jj; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) ja selle KKK.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), muudetud Public Act 103-0804-ga.
-- Colorado SB 26-189.
+- Colorado SB 26-189; *xAI v. Weiser* (D. Colo., No. 1:26-cv-01515), [27. aprilli 2026 peatamismäärus](https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/).
 - California Code of Regulations, title 2, §11013(c); California Consumer Privacy Acti määrused automatiseeritud otsustustehnoloogia kohta; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
 - New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) tarnijate kohta, §13:16-3.2(c) automatiseeritud tööriistade kohta), koos [Morgan Lewise kokkuvõttega](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).
+- Connecticut Public Act 26-15, [Cooley](https://cooley.com/news/insight/2026/2026-11-03-connecticuts-ai-rules-take-shape-what-employers-and-developers-need-to-know) kokkuvõtte järgi, november 2026.

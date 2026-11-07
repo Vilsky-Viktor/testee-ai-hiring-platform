@@ -64,7 +64,7 @@ ELi tehisintellekti määrus loeb suure riskiga AI-süsteemideks need, mis on �
 
 ### Isikuandmete kaitse üldmäärus (GDPR)
 
-Testitulemused on isikuandmed. Isikuandmete kaitse üldmääruse (ja sellega sarnase UK GDPR-i) järgi oled sina kui tööandja tavaliselt vastutav töötleja ja testipakkuja sinu volitatud töötleja. Sul on vaja andmetöötluslepingut, selget teadet kandidaatidele, säilitusaja piirangut ning viisi, kuidas käsitleda andmetega tutvumise ja kustutamise taotlusi. Kui otsus põhineb üksnes automatiseeritud töötlusel ja mõjutab kandidaati oluliselt, kohaldub [artikkel 22](https://gdpr-info.eu/art-22-gdpr/), nii et lase tulemused inimesel üle vaadata. Küsi igalt pakkujalt, kus andmeid hoitakse ja milliseid volitatud alamtöötlejaid ta kasutab.
+Testitulemused on isikuandmed. Isikuandmete kaitse üldmääruse (ja sellega sarnase UK GDPR-i) järgi oled sina kui tööandja tavaliselt vastutav töötleja ja testipakkuja sinu volitatud töötleja. Sul on vaja andmetöötluslepingut, selget teadet kandidaatidele, säilitusaja piirangut ning viisi, kuidas käsitleda andmetega tutvumise ja kustutamise taotlusi. Kui otsus põhineb üksnes automatiseeritud töötlusel ja mõjutab kandidaati oluliselt, kohaldub [artikkel 22](https://gdpr-info.eu/art-22-gdpr/) (Ühendkuningriigis alates 5. veebruarist 2026 artiklid 22A kuni 22D), nii et lase tulemused inimesel üle vaadata. Küsi igalt pakkujalt, kus andmeid hoitakse ja milliseid volitatud alamtöötlejaid ta kasutab.
 
 ### Reegel, mis kehtib kõigi kohta
 

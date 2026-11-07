@@ -35,7 +35,7 @@ Esta página explica las alternativas a una suscripción, cómo se comparan con 
 | **CodeSignal** | Planes con créditos ([página de precios](https://codesignal.com/pricing/)) | Mensual o anual |
 | **Bryq** | Planes con invitaciones ilimitadas ([página de precios](https://www.bryq.com/pricing)) | Mensual o anual |
 | **Alooba** | Planes con créditos mensuales ([página de precios](https://www.alooba.com/pricing/)) | Mensual o anual; los créditos caducan al final de cada periodo de facturación; Enterprise tiene un mínimo de 1 año |
-| **Codility** | Planes mensuales o anuales con créditos de invitación ([página de precios](https://www.codility.com/pricing/)) | Mensual o anual |
+| **Codility** | Planes mensuales o anuales con paquetes de invitaciones ([página de precios](https://www.codility.com/pricing/)) | Mensual o anual |
 
 Algunas de estas herramientas ofrecen facturación mensual, que no es un contrato largo pero sigue siendo una cuota recurrente. Si solo contratas de vez en cuando, recuerda cancelar entre un proceso de selección y otro.
 

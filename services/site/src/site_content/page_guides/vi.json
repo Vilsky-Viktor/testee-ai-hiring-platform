@@ -418,7 +418,8 @@
     "tips": [
       "Credit cho một ứng viên được giữ lại khi mời, bị trừ khi ứng viên trả lời và được hoàn lại nếu không.",
       "Chỉ chủ sở hữu và quản trị viên thấy trang này.",
-      "Bạn có thể hoàn tiền cho credit đã mua trong 14 ngày qua và chưa dùng, ngay tại dòng của lần nạp đó trong lịch sử, qua Paddle hoặc bằng cách viết cho chúng tôi. Credit giữ chỗ cho ứng viên không thể được hoàn tiền trong thời gian giữ chỗ."
+      "Bạn có thể hoàn tiền cho credit đã mua trong 14 ngày qua và chưa dùng, ngay tại dòng của lần nạp đó trong lịch sử, qua Paddle hoặc bằng cách viết cho chúng tôi. Credit giữ chỗ cho ứng viên không thể được hoàn tiền trong thời gian giữ chỗ; credit giữ chỗ trong 14 ngày đó và được trả lại sau đó vẫn được hoàn tiền trong 7 ngày.",
+      "Credit miễn phí được tính là dùng trước, và phần chưa dùng được tính trước hết là của lần nạp mới nhất. Hoàn tiền cho lần nạp đã mang lại thưởng giới thiệu sẽ thu hồi khoản thưởng đó từ cả hai công ty. Chủ sở hữu và quản trị viên biết Paddle có duyệt hay không ở biểu tượng chuông, qua email và, nếu không tắt, trong Slack."
     ]
   },
   "topUp": {
@@ -426,7 +427,7 @@
     "text": "Mua credit cho bất kỳ công ty nào mà bạn là chủ sở hữu hoặc quản trị viên.",
     "actions": [
       "Chọn công ty, rồi nhập số ứng viên muốn nạp, từ 10 đến 1.000, hoặc chọn một mức giá: nạp càng nhiều thì chi phí cho mỗi ứng viên càng thấp.",
-      "Đổi tiền tệ của công ty ở đầu trang: các lần nạp của công ty, kể cả tự động, sẽ được định giá và tính phí bằng tiền tệ đó từ lúc ấy. Nếu đổi tiền tệ khi tự động nạp đang bật, bạn sẽ thấy cả hai số tiền để xác nhận trước, và chủ sở hữu cùng quản trị viên của công ty sẽ nhận được email.",
+      "Đổi tiền tệ của công ty ở đầu trang: các lần nạp của công ty, kể cả tự động, sẽ được định giá và tính phí bằng tiền tệ đó từ lúc ấy. Nếu đổi tiền tệ khi tự động nạp đang bật hoặc tạm dừng, bạn sẽ thấy cả hai số tiền để xác nhận trước; số tiền mới áp dụng ngay, và chủ sở hữu cùng quản trị viên của công ty được báo ở biểu tượng chuông và qua email.",
       "Thanh toán trên trang thanh toán của Paddle; credit sẽ vào trong vài giây.",
       "Mở bảng giá để so sánh các gói nạp.",
       "Thiết lập tự động nạp: chọn số tiền và số dư, rồi đánh dấu thỏa thuận. Thẻ của bạn được lưu trong trang thanh toán của Paddle và bị trừ tiền mỗi khi số dư xuống dưới mức đó."

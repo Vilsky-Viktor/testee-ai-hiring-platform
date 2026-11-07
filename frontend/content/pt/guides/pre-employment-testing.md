@@ -64,7 +64,7 @@ Para os detalhes e as datas, veja [O uso de IA no recrutamento é legal na UE?](
 
 ### GDPR
 
-Os resultados dos testes são dados pessoais. Pelo Regulamento Geral sobre a Proteção de Dados da UE (GDPR), e pelo UK GDPR, que é parecido, você, o empregador, normalmente é o controlador, e o fornecedor do teste é o seu operador. Você precisa de um acordo de tratamento de dados, um aviso claro aos candidatos, um limite de retenção e uma forma de atender pedidos de acesso e exclusão. Se uma decisão for tomada exclusivamente com base em tratamento automatizado e afetar significativamente um candidato, o [artigo 22](https://gdpr-info.eu/art-22-gdpr/) se aplica, então faça com que uma pessoa revise os resultados. Pergunte a qualquer fornecedor onde os dados ficam hospedados e quais suboperadores ele usa.
+Os resultados dos testes são dados pessoais. Pelo Regulamento Geral sobre a Proteção de Dados da UE (GDPR), e pelo UK GDPR, que é parecido, você, o empregador, normalmente é o controlador, e o fornecedor do teste é o seu operador. Você precisa de um acordo de tratamento de dados, um aviso claro aos candidatos, um limite de retenção e uma forma de atender pedidos de acesso e exclusão. Se uma decisão for tomada exclusivamente com base em tratamento automatizado e afetar significativamente um candidato, o [artigo 22](https://gdpr-info.eu/art-22-gdpr/) (no Reino Unido, artigos 22A a 22D desde 5 de fevereiro de 2026) se aplica, então faça com que uma pessoa revise os resultados. Pergunte a qualquer fornecedor onde os dados ficam hospedados e quais suboperadores ele usa.
 
 ### A regra que vale para todas
 

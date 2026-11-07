@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Các lựa chọn thay thế và bổ sung cho HackerRank để kiểm tra kiến thức kỹ thuật
 
-HackerRank là một nền tảng tuyển dụng lập trình viên. Tính đến tháng 11/2026, trang web của HackerRank mô tả các bài kiểm tra sàng lọc làm tại nhà, phỏng vấn lập trình cặp trực tiếp trong một môi trường lập trình dùng chung, và một người phỏng vấn AI đưa ra một bài toán thực tế ([hackerrank.com](https://www.hackerrank.com/)). Nếu bạn cần ứng viên viết và chạy code, một nền tảng như vậy được xây dựng cho việc đó.
+HackerRank là một nền tảng tuyển dụng lập trình viên. Tính đến tháng 11/2026, trang web của HackerRank mô tả các bài kiểm tra sàng lọc, phỏng vấn lập trình cặp trực tiếp trong một môi trường lập trình dùng chung, và một người phỏng vấn AI đưa ra một bài toán thực tế ([hackerrank.com](https://www.hackerrank.com/)). Nếu bạn cần ứng viên viết và chạy code, một nền tảng như vậy được xây dựng cho việc đó.
 
 testee không thay thế cho nó. testee làm một việc khác: một bài kiểm tra trắc nghiệm có tính giờ về những gì ứng viên biết, được viết từ mô tả công việc của bạn, kể cả câu hỏi đọc code. Hai công cụ kết hợp với nhau tốt. Một cách thiết lập phổ biến là dùng testee làm bài kiểm tra kiến thức nhanh cho mọi ứng viên, rồi bài kiểm tra lập trình hoặc phỏng vấn live coding của một nền tảng dành cho lập trình viên cho những người đạt. testee cũng bao quát các vị trí khác mà bạn tuyển trong cùng quý, như account manager, nhân viên kế toán sổ sách hay nhân viên hỗ trợ khách hàng.
 

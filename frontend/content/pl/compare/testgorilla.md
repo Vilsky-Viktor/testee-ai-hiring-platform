@@ -46,7 +46,7 @@ Różnica w praktyce: test z biblioteki jest stały i był używany wiele razy, 
 
 ## Jak działają ceny
 
-**TestGorilla** oferuje plan bezpłatny z 10 kredytami miesięcznie oraz płatne plany z cenami przy rozliczeniu rocznym, z większą liczbą funkcji w wyższych planach. Kredyty są zużywane, gdy kandydat rozpoczyna ocenę, a każdy test lub rozmowa z AI w jej ramach zużywa własne. Aktualne plany i ceny znajdziesz na jej [stronie z cenami](https://www.testgorilla.com/pricing/).
+**TestGorilla** oferuje plan bezpłatny z 10 kredytami miesięcznie oraz płatne plany z cenami przy rozliczeniu rocznym, z większą liczbą funkcji w wyższych planach. Kredyty są zużywane, gdy kandydat rozpoczyna ocenę, a każdy test lub rozmowa z AI w jej ramach zużywa własne. 5 testów podstawowych umiejętności w planie bezpłatnym nie zużywa kredytów. Aktualne plany i ceny znajdziesz na jej [stronie z cenami](https://www.testgorilla.com/pricing/).
 
 **testee** pobiera opłatę za kandydata:
 

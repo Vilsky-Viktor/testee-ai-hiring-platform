@@ -108,7 +108,7 @@ testee prowadzi rozmowy rekrutacyjne sprawdzające umiejętności w formie test�
 Jak to dziś wygląda w produkcie:
 
 - **AI pisze pytania i klucze odpowiedzi; ocenianie odbywa się według stałych reguł.** Żadna AI nie ocenia odpowiedzi kandydata i nie jest używana analiza wideo ani twarzy. W trybie głosowym mowa jest zamieniana na tekst i dopasowywana do odpowiedzi, którą kandydat słyszy i widzi na ekranie: jedna wyraźnie wskazana odpowiedź jest zapisywana od razu, a wybór kilku odpowiedzi jest najpierw potwierdzany. testee nigdy nie przechowuje mowy, a głos nigdy nie jest analizowany.
-- **Zatwierdzasz tematy,** zanim powstanie jakiekolwiek pytanie, i to Ty wybierasz próg zaliczenia.
+- **Zatwierdzasz tematy,** zanim powstanie jakiekolwiek pytanie, i to Ty wybierasz próg zaliczenia. Wyjątkiem jest rozmowa, którą Twoja platforma tworzy przez API po doładowaniu konta przez Twoją firmę: przechodzi ona dalej od razu od proponowanych tematów.
 - **Decydują ludzie.** Strona wyników i raporty PDF przypominają Twojemu zespołowi o przejrzeniu wyników; testee nie odrzuca kandydatów ani nie wysyła wiadomości z odmową.
 - **Kandydaci są informowani,** zanim zaczną, że pytania pisze AI, że wyniki przeglądają i decyzje podejmują ludzie w Twojej firmie oraz że mogą poprosić o weryfikację.
 - **Żadnych cech chronionych.** testee nigdy nie pyta o płeć, pochodzenie etniczne, wiek, niepełnosprawność ani inne cechy chronione kandydatów, nie wnioskuje ich i ich nie przechowuje.

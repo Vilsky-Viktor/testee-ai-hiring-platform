@@ -35,7 +35,7 @@ See leht selgitab tellimuse alternatiive, kuidas need tellimuspakettidega võrre
 | **CodeSignal** | Krediitidega paketid ([hinnaleht](https://codesignal.com/pricing/)) | Kuu või aasta |
 | **Bryq** | Piiramatute kutsetega paketid ([hinnaleht](https://www.bryq.com/pricing)) | Kuu või aasta |
 | **Alooba** | Kuiste krediitidega paketid ([hinnaleht](https://www.alooba.com/pricing/)) | Kuu või aasta; krediidid aeguvad iga arveldusperioodi lõpus; Enterprise'il on minimaalselt 1 aasta |
-| **Codility** | Kuu- või aastapaketid kutsekrediitidega ([hinnaleht](https://www.codility.com/pricing/)) | Kuu või aasta |
+| **Codility** | Kuu- või aastapaketid kutsepakettidega ([hinnaleht](https://www.codility.com/pricing/)) | Kuu või aasta |
 
 Mõni neist tööriistadest pakub kuist arveldust: see pole pikk leping, kuid siiski korduv tasu. Kui värbad vaid aeg-ajalt, ära unusta värbamisvoorude vahel tellimust tühistada.
 

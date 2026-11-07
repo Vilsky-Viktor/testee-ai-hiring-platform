@@ -44,6 +44,7 @@ Seega on tööriist, mis annab igale kandidaadile tulemuse ja koha pingereas, v�
 | --- | --- |
 | 2. veebruar 2025 | Keelatud praktikad (artikkel 5) ja tehisintellekti kirjaoskus (artikkel 4) |
 | 2. august 2026 | Enamik ülejäänud reegleid, sh teatud AI-süsteemide läbipaistvus (artikkel 50) |
+| 2. detsember 2026 | AI loodud sisu märgistamine sellisena (artikkel 50(2)) süsteemidel, mis olid turul enne 2. augustit 2026 |
 | 2. detsember 2027 | III lisa süsteemide, sh värbamistööriistade suure riski kohustused |
 | 2. august 2028 | I lisaga hõlmatud toodetes kasutatava AI suure riski kohustused |
 
@@ -118,8 +119,9 @@ testee viib läbi ajapiiranguga valikvastustega oskuste intervjuusid, mille AI k
 Kuidas see tootes täna välja näeb:
 
 - **AI kirjutab küsimused ja nende vastusevõtmed; hindamine käib kindlate reeglite järgi.** Ükski AI ei hinda kandidaadi vastust ning video- ega näoanalüüsi ei kasutata. Häälerežiimis muudetakse kõne tekstiks ja sobitatakse vastusevariandiga, mis kandidaadile välja öeldakse ja ekraanil näidatakse: üks selgelt nimetatud variant võetakse vastuseks kohe, mitme variandi valik kinnitatakse kõigepealt. testee ei salvesta kõnet kunagi ja häält ei analüüsita kunagi. Kui AI hiljem võtit parandab, kehtib parandus kandidaatidele, kes alustavad pärast seda; varasemad tulemused ei muutu.
-- **Sina kiidad teemad heaks** enne, kui ühtegi küsimust kirjutatakse, ja näed iga küsimust.
+- **Sina kiidad teemad heaks** enne, kui ühtegi küsimust kirjutatakse, ja näed iga küsimust. Erand on intervjuu, mille sinu enda platvorm loob API kaudu pärast seda, kui sinu ettevõte on krediiti juurde laadinud: see liigub pakutud teemadelt otse edasi.
 - **Otsustavad inimesed.** Hindamislehed ja PDF-aruanded tuletavad sinu meeskonnale meelde tulemused üle vaadata; testee ei lükka kandidaate tagasi ega saada äraütlemiskirju.
+- **AI-märgistus.** Küsimused, vastusevariandid, Mira vastused ja häälklipid on tarkvarale loetaval kujul märgitud AI loodud sisuks ning häälklippidel on lisaks OpenAI kuuldamatu vesimärk. [Usalduse leht](/trust) selgitab, kuidas neid kontrollida. Lehelt kopeeritud tekst märget ei säilita.
 - **Kandidaatidele öeldakse** enne alustamist, et küsimused on kirjutanud AI, et tulemused vaatavad üle ja otsuse teevad inimesed sinu ettevõttest ning et nad võivad taotleda ülevaatust.
 - **Lisaaega** saab anda igale kandidaadile, kes seda palub.
 - **Andmed salvestatakse.** Näidatud küsimused, vastused, ajakulu ja aususega seotud sündmused salvestatakse.

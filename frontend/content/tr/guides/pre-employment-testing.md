@@ -64,7 +64,7 @@ Ayrıntılar ve tarihler için [AB'de yapay zekâ ile işe alım yasal mı?](/gu
 
 ### GDPR
 
-Test sonuçları kişisel veridir. GDPR (ve ona benzeyen UK GDPR) kapsamında işveren olarak genellikle siz veri sorumlususunuz, test sağlayıcısı ise veri işleyeninizdir. Bir veri işleme sözleşmesine, adaylara yönelik açık bir bilgilendirmeye, bir saklama süresi sınırına ve erişim ile silme taleplerini karşılamanın bir yoluna ihtiyacınız vardır. Bir karar yalnızca otomatik işlemeye dayanıyor ve adayı önemli ölçüde etkiliyorsa [Madde 22](https://gdpr-info.eu/art-22-gdpr/) uygulanır; bu nedenle sonuçları bir kişinin incelemesini sağlayın. Her sağlayıcıya verilerin nerede barındırıldığını ve hangi alt işleyenleri kullandığını sorun.
+Test sonuçları kişisel veridir. GDPR (ve ona benzeyen UK GDPR) kapsamında işveren olarak genellikle siz veri sorumlususunuz, test sağlayıcısı ise veri işleyeninizdir. Bir veri işleme sözleşmesine, adaylara yönelik açık bir bilgilendirmeye, bir saklama süresi sınırına ve erişim ile silme taleplerini karşılamanın bir yoluna ihtiyacınız vardır. Bir karar yalnızca otomatik işlemeye dayanıyor ve adayı önemli ölçüde etkiliyorsa [Madde 22](https://gdpr-info.eu/art-22-gdpr/) (Birleşik Krallık'ta 5 Şubat 2026'dan beri 22A ila 22D maddeleri) uygulanır; bu nedenle sonuçları bir kişinin incelemesini sağlayın. Her sağlayıcıya verilerin nerede barındırıldığını ve hangi alt işleyenleri kullandığını sorun.
 
 ### Hepsini kapsayan kural
 

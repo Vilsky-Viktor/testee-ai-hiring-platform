@@ -46,7 +46,7 @@ The practical difference: a library test is fixed and has been used many times, 
 
 ## How pricing works
 
-**TestGorilla** offers a free plan with 10 credits a month and paid plans priced as billed annually, with more features on higher plans. Credits are spent when a candidate starts an assessment, and each test or AI interview in it uses its own. See its [pricing page](https://www.testgorilla.com/pricing/) for current plans and prices.
+**TestGorilla** offers a free plan with 10 credits a month and paid plans priced as billed annually, with more features on higher plans. Credits are spent when a candidate starts an assessment, and each test or AI interview in it uses its own. The free plan's 5 essential skills tests use none. See its [pricing page](https://www.testgorilla.com/pricing/) for current plans and prices.
 
 **testee** charges per candidate:
 

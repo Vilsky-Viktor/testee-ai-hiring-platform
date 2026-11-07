@@ -46,6 +46,7 @@ Jadi alat yang memberi setiap kandidat skor dan peringkat sangat mungkin tergolo
 | --- | --- |
 | 2 Februari 2025 | Praktik yang dilarang (Pasal 5) dan literasi AI (Pasal 4) |
 | 2 Agustus 2026 | Sebagian besar aturan lainnya, termasuk transparansi untuk sebagian sistem AI (Pasal 50) |
+| 2 Desember 2026 | Penandaan konten buatan AI sebagai konten buatan AI (Pasal 50(2)), untuk sistem yang sudah di pasar sebelum 2 Agustus 2026 |
 | 2 Desember 2027 | Kewajiban berisiko tinggi untuk sistem Lampiran III, termasuk alat rekrutmen |
 | 2 Agustus 2028 | Kewajiban berisiko tinggi untuk AI dalam produk yang dicakup Lampiran I |
 
@@ -120,8 +121,9 @@ testee menjalankan wawancara keterampilan pilihan ganda berbatas waktu yang ditu
 Seperti apa wujudnya di produk saat ini:
 
 - **AI menulis soal dan kunci jawabannya; penilaian mengikuti aturan tetap.** Tidak ada AI yang menilai jawaban kandidat, dan tidak ada analisis video atau wajah. Dalam mode suara, ucapan diubah menjadi teks dan dicocokkan dengan sebuah pilihan, yang disebutkan kepada kandidat dan ditampilkan di layar: satu pilihan yang disebut dengan jelas langsung dicatat, sedangkan jawaban dengan beberapa pilihan dikonfirmasi lebih dulu. testee tidak pernah menyimpan ucapan, dan suaranya tidak pernah dianalisis. Kalau AI mengoreksi sebuah kunci jawaban belakangan, koreksinya berlaku untuk kandidat yang mulai setelahnya; hasil sebelumnya tidak berubah.
-- **Kamu menyetujui topiknya** sebelum ada soal yang ditulis, dan kamu bisa melihat setiap soal.
+- **Kamu menyetujui topiknya** sebelum ada soal yang ditulis, dan kamu bisa melihat setiap soal. Pengecualiannya adalah wawancara yang dibuat platformmu sendiri lewat API setelah perusahaanmu mengisi ulang: wawancara itu langsung berlanjut dari topik yang diusulkan.
 - **Manusia yang memutuskan.** Halaman hasil dan laporan PDF mengingatkan timmu untuk meninjau hasil; testee tidak menolak kandidat atau mengirim pesan penolakan.
+- **Penanda AI.** Soal, pilihan jawaban, jawaban Mira, dan klip suara ditandai sebagai buatan AI dalam bentuk yang bisa dibaca perangkat lunak, dan klip suara juga membawa watermark OpenAI yang tidak terdengar. [Halaman kepercayaan](/trust) menjelaskan cara memeriksanya. Teks yang disalin dari halaman tidak mempertahankan penandanya.
 - **Kandidat diberi tahu** sebelum mulai bahwa soal ditulis oleh AI, bahwa orang di perusahaanmu yang meninjau hasil dan memutuskan, dan bahwa mereka bisa meminta peninjauan.
 - **Tambahan waktu** bisa diberikan kepada kandidat mana pun yang memintanya.
 - **Catatan.** Soal yang ditampilkan, jawaban, waktu, dan tanda peringatan tercatat.

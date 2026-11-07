@@ -418,7 +418,8 @@
     "tips": [
       "Die Credits eines Kandidaten werden bei der Einladung reserviert, abgebucht, sobald er antwortet, und zurückgegeben, wenn nicht.",
       "Nur Inhaber und Admins sehen diese Seite.",
-      "Du kannst Credits, die du in den letzten 14 Tagen gekauft und nicht verbraucht hast, in der Zeile der Aufladung im Verlauf erstatten lassen, über Paddle oder indem du uns schreibst. Für Kandidaten reservierte Credits können nicht erstattet werden, solange sie reserviert sind."
+      "Du kannst Credits, die du in den letzten 14 Tagen gekauft und nicht verbraucht hast, in der Zeile der Aufladung im Verlauf erstatten lassen, über Paddle oder indem du uns schreibst. Für Kandidaten reservierte Credits können nicht erstattet werden, solange sie reserviert sind; wurden sie innerhalb der 14 Tage reserviert und danach zurückgegeben, bleiben sie 7 Tage lang erstattungsfähig.",
+      "Gratis-Credits gelten als Erstes als verbraucht, und Unverbrauchtes zählt zuerst zur neuesten Aufladung. Die Erstattung einer Aufladung, die eine Empfehlungsprämie eingebracht hat, nimmt diese Prämie beiden Unternehmen wieder weg. Inhaber und Admins erfahren in der Glocke, per E-Mail und, sofern nicht deaktiviert, in Slack, ob Paddle sie genehmigt hat."
     ]
   },
   "topUp": {
@@ -426,7 +427,7 @@
     "text": "Kaufe Credits für jedes Unternehmen, in dem du Inhaber oder Admin bist.",
     "actions": [
       "Wähle ein Unternehmen und gib dann ein, für wie viele Kandidaten du aufladen willst, von 10 bis 1.000, oder wähle eine Preisstufe: Größere Aufladungen kosten pro Kandidat weniger.",
-      "Ändere die Währung des Unternehmens oben auf der Seite: Seine Aufladungen, auch die automatischen, werden von da an in ihr berechnet und abgebucht. Änderst du sie, während das automatische Aufladen läuft, siehst du zuerst beide Beträge zur Bestätigung, und die Inhaber und Admins des Unternehmens erhalten eine E-Mail.",
+      "Ändere die Währung des Unternehmens oben auf der Seite: Seine Aufladungen, auch die automatischen, werden von da an in ihr berechnet und abgebucht. Änderst du sie, während das automatische Aufladen läuft oder pausiert ist, siehst du zuerst beide Beträge zur Bestätigung; der neue Betrag gilt sofort, und die Inhaber und Admins des Unternehmens werden in der Glocke und per E-Mail informiert.",
       "Bezahle auf der Bezahlseite von Paddle; die Credits sind in wenigen Sekunden da.",
       "Öffne die Preise, um die Aufladungen zu vergleichen.",
       "Richte automatisches Aufladen ein: Wähle einen Betrag und ein Guthaben und setze das Häkchen bei der Vereinbarung. Deine Karte wird im Paddle-Checkout gespeichert und jedes Mal belastet, wenn das Guthaben unter diesen Wert fällt."

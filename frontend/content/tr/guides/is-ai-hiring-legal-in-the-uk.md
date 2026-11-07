@@ -108,7 +108,7 @@ testee, bir iş tanımından yapay zekâ tarafından yazılmış süreli, çokta
 Bunun bugün üründeki karşılığı:
 
 - **Soruları ve cevap anahtarlarını yapay zekâ yazar; değerlendirme sabit kurallara göre yapılır.** Hiçbir yapay zekâ adayın yanıtını yargılamaz; video veya yüz analizi kullanılmaz. Sesli modda konuşma metne dönüştürülür ve bir seçenekle eşleştirilir; bu seçenek adaya söylenir ve ekranda gösterilir: açıkça söylenen tek bir seçenek hemen cevap olarak kaydedilir, birden çok seçenekli bir seçim ise önce onaylatılır. testee konuşmayı asla saklamaz ve ses asla analiz edilmez.
-- **Konuları siz onaylarsınız;** bu, herhangi bir soru yazılmadan önce olur ve geçme notunu siz seçersiniz.
+- **Konuları siz onaylarsınız;** bu, herhangi bir soru yazılmadan önce olur ve geçme notunu siz seçersiniz. İstisna, şirketiniz yükleme yaptıktan sonra kendi platformunuzun API üzerinden oluşturduğu mülakattır: önerilen konulardan doğrudan devam eder.
 - **Kararı insanlar verir.** Sonuçlar sayfası ve PDF raporlar ekibinize sonuçları incelemesini hatırlatır; testee adayları reddetmez veya ret mesajı göndermez.
 - **Adaylar başlamadan önce bilgilendirilir:** soruların yapay zekâ tarafından yazıldığı, sonuçları şirketinizdeki kişilerin inceleyip karar verdiği ve yeniden inceleme talep edebilecekleri.
 - **Korunan özellik yok.** testee adayların cinsiyetini, etnik kökenini, yaşını, engelliliğini veya diğer korunan özelliklerini asla sormaz, çıkarsamaz veya saklamaz.

@@ -418,7 +418,8 @@
     "tips": [
       "Os créditos de um candidato são reservados quando ele é convidado, cobrados quando ele responde e devolvidos se não responder.",
       "Só proprietários e administradores veem esta página.",
-      "Você pode reembolsar créditos comprados nos últimos 14 dias e não gastos na linha da recarga no histórico, pela Paddle ou escrevendo para nós. Créditos reservados para candidatos não podem ser reembolsados enquanto estiverem reservados."
+      "Você pode reembolsar créditos comprados nos últimos 14 dias e não gastos na linha da recarga no histórico, pela Paddle ou escrevendo para nós. Créditos reservados para candidatos não podem ser reembolsados enquanto estiverem reservados; reservados dentro dos 14 dias e devolvidos depois deles, continuam reembolsáveis por 7 dias.",
+      "Os créditos gratuitos contam como gastos primeiro, e o que não foi gasto conta primeiro como da recarga mais recente. O reembolso de uma recarga que gerou uma recompensa por indicação retira essa recompensa das duas empresas. Proprietários e administradores ficam sabendo se a Paddle o aprovou no sino, por e-mail e, a menos que esteja desativado, no Slack."
     ]
   },
   "topUp": {
@@ -426,7 +427,7 @@
     "text": "Compre créditos para qualquer empresa da qual você é proprietário ou administrador.",
     "actions": [
       "Escolha uma empresa e digite para quantos candidatos recarregar, de 10 a 1.000, ou escolha uma faixa de preço: recargas maiores custam menos por candidato.",
-      "Mude a moeda da empresa no topo da página: a partir daí, as recargas dela, inclusive as automáticas, têm preço e cobrança nessa moeda. Se você a alterar enquanto a recarga automática estiver ativa, verá primeiro os dois valores para confirmar, e os proprietários e administradores da empresa receberão um e-mail.",
+      "Mude a moeda da empresa no topo da página: a partir daí, as recargas dela, inclusive as automáticas, têm preço e cobrança nessa moeda. Se você a alterar enquanto a recarga automática estiver ativa ou pausada, verá primeiro os dois valores para confirmar; o novo valor vale na hora, e os proprietários e administradores da empresa são avisados no sino e por e-mail.",
       "Pague na página de pagamento da Paddle; os créditos chegam em segundos.",
       "Abra os preços para comparar as recargas.",
       "Configure a recarga automática: escolha um valor e um saldo e marque o acordo. Seu cartão é salvo no checkout da Paddle e cobrado cada vez que o saldo fica abaixo desse nível."

@@ -32,7 +32,7 @@ Lalu cocokkan model harganya dengan volume rekrutmenmu. Paket langganan cocok un
 | **HackerRank** | Tes coding dan wawancara teknis | Paket Starter dan Pro dengan jatah percobaan tahunan, dan paket Enterprise kustom ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [halaman harga](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Penyaringan untuk posisi teknis dan data | Paket bulanan atau tahunan dengan kredit ([halaman harga](https://www.alooba.com/pricing/)) |
 | **Bryq** | Asesmen kognitif, kepribadian, dan keterampilan | Paket bulanan atau tahunan ([halaman harga](https://www.bryq.com/pricing)) |
-| **Codility** | Asesmen coding | Paket bulanan atau tahunan dengan kredit undangan ([halaman harga](https://www.codility.com/pricing/)) |
+| **Codility** | Asesmen coding | Paket bulanan atau tahunan dengan paket undangan ([halaman harga](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Tes psikometri dan kognitif | Lihat situs tiap vendor |
 
 ## Penjelasan tiap alat

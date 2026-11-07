@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Alternativen und Ergänzungen zu HackerRank für technische Wissenstests
 
-HackerRank ist eine Plattform für die Einstellung von Entwicklern. Mit Stand November 2026 beschreibt die Website Take-Home-Screening-Tests, Live-Pair-Programming-Interviews in einer gemeinsamen Programmierumgebung und einen KI-Interviewer, der eine praxisnahe Aufgabe stellt ([hackerrank.com](https://www.hackerrank.com/)). Wenn Kandidaten Code schreiben und ausführen sollen, ist eine solche Plattform genau dafür gebaut.
+HackerRank ist eine Plattform für die Einstellung von Entwicklern. Mit Stand November 2026 beschreibt die Website Screening-Tests, Live-Pair-Programming-Interviews in einer gemeinsamen Programmierumgebung und einen KI-Interviewer, der eine praxisnahe Aufgabe stellt ([hackerrank.com](https://www.hackerrank.com/)). Wenn Kandidaten Code schreiben und ausführen sollen, ist eine solche Plattform genau dafür gebaut.
 
 testee ersetzt sie nicht. Es erledigt eine andere Aufgabe: einen zeitlich begrenzten Multiple-Choice-Test dessen, was ein Kandidat weiß, geschrieben aus deiner Stellenbeschreibung, einschließlich Fragen zum Lesen von Code. Beides passt gut zusammen. Ein verbreitetes Vorgehen ist testee als schneller Wissenstest für alle Bewerber, danach ein Programmiertest oder ein Live-Coding-Interview auf einer Entwicklerplattform für alle, die bestehen. testee deckt außerdem die anderen Stellen ab, die du im selben Quartal besetzt, etwa einen Account Manager, eine Buchhalterin oder einen Support-Mitarbeiter.
 

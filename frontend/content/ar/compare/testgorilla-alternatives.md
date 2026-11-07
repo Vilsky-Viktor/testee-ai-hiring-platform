@@ -32,7 +32,7 @@ TestGorilla منصة لاختبارات المهارات تضم مكتبة اخ�
 | **HackerRank** | اختبارات البرمجة والمقابلات التقنية | خطتا Starter وPro بعدد محاولات سنوي، وخطط Enterprise مخصصة ([الأسئلة الشائعة](https://www.hackerrank.com/frequently-asked-questions)، [صفحة الأسعار](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | فرز المرشحين للوظائف التقنية ووظائف البيانات | خطط شهرية أو سنوية برصيد ([صفحة الأسعار](https://www.alooba.com/pricing/)) |
 | **Bryq** | تقييمات معرفية وشخصية وتقييمات مهارات | خطط شهرية أو سنوية ([صفحة الأسعار](https://www.bryq.com/pricing)) |
-| **Codility** | تقييم البرمجة | خطط شهرية أو سنوية برصيد دعوات ([صفحة الأسعار](https://www.codility.com/pricing/)) |
+| **Codility** | تقييم البرمجة | خطط شهرية أو سنوية بحزم دعوات ([صفحة الأسعار](https://www.codility.com/pricing/)) |
 | **Criteria وWonderlic وSHL** | الاختبارات السيكومترية والمعرفية | راجع مواقع المزوّدين |
 
 ## الأدوات بمزيد من التفصيل

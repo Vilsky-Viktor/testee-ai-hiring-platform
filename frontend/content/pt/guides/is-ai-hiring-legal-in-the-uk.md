@@ -108,7 +108,7 @@ A testee aplica entrevistas de habilidades de múltipla escolha cronometradas, e
 Como isso aparece no produto hoje:
 
 - **A IA escreve as perguntas e os gabaritos; a correção segue regras fixas.** Nenhuma IA julga a resposta de um candidato, e não há análise de vídeo ou rosto. No modo de voz, a fala é transformada em texto e associada a uma opção, que é dita ao candidato e mostrada na tela: uma única opção dita com clareza é registrada na hora, e uma escolha de várias opções é confirmada primeiro. A testee nunca armazena a fala, e a voz nunca é analisada.
-- **Você aprova os tópicos** antes de qualquer pergunta ser escrita, e escolhe a nota de aprovação.
+- **Você aprova os tópicos** antes de qualquer pergunta ser escrita, e escolhe a nota de aprovação. A exceção é uma entrevista que a sua própria plataforma cria pela API depois que a sua empresa fez uma recarga: ela passa direto dos tópicos propostos.
 - **Pessoas decidem.** A página de resultados e os relatórios em PDF lembram a sua equipe de revisar os resultados; a testee não reprova candidatos nem envia mensagens de reprovação.
 - **Os candidatos são informados** antes de começar de que as perguntas são escritas por IA, de que pessoas da sua empresa revisam os resultados e decidem, e de que eles podem pedir uma revisão.
 - **Nenhuma característica protegida.** A testee nunca pede, infere ou armazena sexo, etnia, idade, deficiência ou outras características protegidas dos candidatos.

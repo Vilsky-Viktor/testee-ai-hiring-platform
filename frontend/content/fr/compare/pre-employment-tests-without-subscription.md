@@ -35,7 +35,7 @@ Cette page présente les alternatives à l'abonnement, leur comparaison avec les
 | **CodeSignal** | Offres avec crédits ([page tarifs](https://codesignal.com/pricing/)) | Mensuel ou annuel |
 | **Bryq** | Offres avec invitations illimitées ([page tarifs](https://www.bryq.com/pricing)) | Mensuel ou annuel |
 | **Alooba** | Offres avec crédits mensuels ([page tarifs](https://www.alooba.com/pricing/)) | Mensuel ou annuel ; les crédits expirent à la fin de chaque période de facturation ; Enterprise avec un minimum d'un an |
-| **Codility** | Offres mensuelles ou annuelles avec crédits d'invitation ([page tarifs](https://www.codility.com/pricing/)) | Mensuel ou annuel |
+| **Codility** | Offres mensuelles ou annuelles avec packs d'invitations ([page tarifs](https://www.codility.com/pricing/)) | Mensuel ou annuel |
 
 Certains de ces outils proposent une facturation mensuelle, qui n'est pas un long contrat mais reste un paiement récurrent. Si vous ne recrutez que de temps en temps, pensez à résilier entre deux campagnes.
 

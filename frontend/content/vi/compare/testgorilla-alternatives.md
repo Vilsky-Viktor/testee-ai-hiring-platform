@@ -32,7 +32,7 @@ Sau đó đối chiếu mô hình giá với số lượng tuyển dụng của 
 | **HackerRank** | Bài kiểm tra lập trình và phỏng vấn kỹ thuật | Gói Starter và Pro với số lượt làm bài theo năm, và gói Enterprise tùy chỉnh ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [trang bảng giá](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Sàng lọc vị trí kỹ thuật và dữ liệu | Gói theo tháng hoặc theo năm kèm credit ([trang bảng giá](https://www.alooba.com/pricing/)) |
 | **Bryq** | Đánh giá nhận thức, tính cách và kỹ năng | Gói theo tháng hoặc theo năm ([trang bảng giá](https://www.bryq.com/pricing)) |
-| **Codility** | Đánh giá lập trình | Gói theo tháng hoặc theo năm kèm credit lời mời ([trang bảng giá](https://www.codility.com/pricing/)) |
+| **Codility** | Đánh giá lập trình | Gói theo tháng hoặc theo năm kèm gói lời mời ([trang bảng giá](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Trắc nghiệm tâm lý và kiểm tra nhận thức | Xem trang web của từng nhà cung cấp |
 
 ## Chi tiết từng công cụ

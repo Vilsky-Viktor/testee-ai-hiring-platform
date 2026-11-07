@@ -35,7 +35,7 @@ Diese Seite erklärt die Alternativen zum Abo, wie sie sich im Vergleich zu Abo-
 | **CodeSignal** | Tarife mit Credits ([Preisseite](https://codesignal.com/pricing/)) | Monatlich oder jährlich |
 | **Bryq** | Tarife mit unbegrenzten Einladungen ([Preisseite](https://www.bryq.com/pricing)) | Monatlich oder jährlich |
 | **Alooba** | Tarife mit monatlichen Credits ([Preisseite](https://www.alooba.com/pricing/)) | Monatlich oder jährlich; Credits verfallen am Ende jedes Abrechnungszeitraums; Enterprise mit mindestens 1 Jahr Laufzeit |
-| **Codility** | Monats- oder Jahrestarife mit Einladungs-Credits ([Preisseite](https://www.codility.com/pricing/)) | Monatlich oder jährlich |
+| **Codility** | Monats- oder Jahrestarife mit Einladungspaketen ([Preisseite](https://www.codility.com/pricing/)) | Monatlich oder jährlich |
 
 Einige dieser Tools bieten monatliche Abrechnung an; das ist kein langer Vertrag, aber trotzdem eine wiederkehrende Gebühr. Wenn du nur ab und zu einstellst, denk daran, zwischen den Einstellungsrunden zu kündigen.
 

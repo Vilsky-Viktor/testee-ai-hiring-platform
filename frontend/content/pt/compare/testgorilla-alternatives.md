@@ -32,7 +32,7 @@ Depois, compare o modelo de preço com o seu volume de contratação. Um plano c
 | **HackerRank** | Testes de programação e entrevistas técnicas | Planos Starter e Pro com tentativas anuais e planos Enterprise personalizados ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [página de preços](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Triagem para vagas técnicas e de dados | Planos mensais ou anuais com créditos ([página de preços](https://www.alooba.com/pricing/)) |
 | **Bryq** | Avaliações cognitivas, de personalidade e de habilidades | Planos mensais ou anuais ([página de preços](https://www.bryq.com/pricing)) |
-| **Codility** | Avaliação de programação | Planos mensais ou anuais com créditos de convite ([página de preços](https://www.codility.com/pricing/)) |
+| **Codility** | Avaliação de programação | Planos mensais ou anuais com pacotes de convites ([página de preços](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Testes psicométricos e cognitivos | Veja o site de cada fornecedor |
 
 ## As ferramentas em detalhe

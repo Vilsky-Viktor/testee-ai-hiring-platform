@@ -108,7 +108,7 @@ testee viib läbi ajapiiranguga valikvastustega oskuste intervjuusid, mille AI k
 Kuidas see tootes täna välja näeb:
 
 - **AI kirjutab küsimused ja nende vastusevõtmed; hindamine käib kindlate reeglite järgi.** Ükski AI ei hinda kandidaadi vastust ning video- ega näoanalüüsi ei kasutata. Häälerežiimis muudetakse kõne tekstiks ja sobitatakse vastusevariandiga, mis kandidaadile välja öeldakse ja ekraanil näidatakse: üks selgelt nimetatud variant võetakse vastuseks kohe, mitme variandi valik kinnitatakse kõigepealt. testee ei salvesta kõnet kunagi ja häält ei analüüsita kunagi.
-- **Sina kiidad teemad heaks** enne, kui ühtegi küsimust kirjutatakse, ja sina valid läbimise läve.
+- **Sina kiidad teemad heaks** enne, kui ühtegi küsimust kirjutatakse, ja sina valid läbimise läve. Erand on intervjuu, mille sinu enda platvorm loob API kaudu pärast seda, kui sinu ettevõte on krediiti juurde laadinud: see liigub pakutud teemadelt otse edasi.
 - **Otsustavad inimesed.** Tulemuste leht ja PDF-aruanded tuletavad sinu meeskonnale meelde tulemused üle vaadata; testee ei lükka kandidaate tagasi ega saada äraütlemiskirju.
 - **Kandidaatidele öeldakse** enne alustamist, et küsimused on kirjutanud AI, et tulemused vaatavad üle ja otsuse teevad inimesed sinu ettevõttest ning et nad võivad taotleda ülevaatust.
 - **Kaitstud tunnuseid ei koguta.** testee ei küsi, ei tuleta ega salvesta kunagi kandidaatide sugu, etnilist päritolu, vanust, puuet ega muid kaitstud tunnuseid.

@@ -108,7 +108,7 @@ testee neemt getimede meerkeuze-vaardigheidstests af die door AI worden geschrev
 Zo ziet dat er vandaag in het product uit:
 
 - **AI schrijft de vragen en de antwoordsleutels; het nakijken volgt vaste regels.** Geen AI beoordeelt het antwoord van een kandidaat, en er wordt geen video- of gezichtsanalyse gebruikt. In de spraakmodus wordt spraak omgezet in tekst en gekoppeld aan een antwoordoptie, die de kandidaat te horen krijgt en op het scherm ziet: één duidelijk genoemde optie wordt meteen vastgelegd, een keuze van meerdere opties wordt eerst bevestigd. testee slaat spraak nooit op, en de stem wordt nooit geanalyseerd.
-- **Jij keurt de onderwerpen goed** voordat er ook maar één vraag wordt geschreven, en jij kiest de slaaggrens.
+- **Jij keurt de onderwerpen goed** voordat er ook maar één vraag wordt geschreven, en jij kiest de slaaggrens. De uitzondering is een interview dat je eigen platform via de API maakt zodra je bedrijf heeft opgewaardeerd: dat gaat meteen door vanaf de voorgestelde onderwerpen.
 - **Mensen beslissen.** De resultatenpagina en de pdf-rapporten herinneren je team eraan de resultaten te beoordelen; testee wijst geen kandidaten af en stuurt geen afwijzingsberichten.
 - **Kandidaten krijgen te horen,** voordat ze beginnen, dat de vragen door AI zijn geschreven, dat mensen bij jouw bedrijf de resultaten beoordelen en beslissen, en dat ze om een herbeoordeling kunnen vragen.
 - **Geen beschermde kenmerken.** testee vraagt, leidt af of bewaart nooit het geslacht, de etniciteit, de leeftijd, een beperking of andere beschermde kenmerken van kandidaten.

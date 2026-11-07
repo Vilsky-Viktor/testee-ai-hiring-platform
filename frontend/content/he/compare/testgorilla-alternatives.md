@@ -32,7 +32,7 @@ TestGorilla היא פלטפורמה למבחני מיומנויות עם ספר�
 | **HackerRank** | מבחני קוד וראיונות טכניים | תוכניות Starter ו-Pro עם מספר ניסיונות שנתי, ותוכניות Enterprise מותאמות ([שאלות נפוצות](https://www.hackerrank.com/frequently-asked-questions), [עמוד המחירים](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | סינון לתפקידים טכניים ותפקידי דאטה | תוכניות חודשיות או שנתיות עם קרדיטים ([עמוד המחירים](https://www.alooba.com/pricing/)) |
 | **Bryq** | הערכות קוגניטיביות, אישיות ומיומנויות | תוכניות חודשיות או שנתיות ([עמוד המחירים](https://www.bryq.com/pricing)) |
-| **Codility** | הערכת קוד | תוכניות חודשיות או שנתיות עם קרדיטים להזמנות ([עמוד המחירים](https://www.codility.com/pricing/)) |
+| **Codility** | הערכת קוד | תוכניות חודשיות או שנתיות עם חבילות הזמנות ([עמוד המחירים](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | מבחנים פסיכומטריים וקוגניטיביים | ראו את אתרי הספקים |
 
 ## הכלים בפירוט

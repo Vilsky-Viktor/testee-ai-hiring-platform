@@ -64,7 +64,7 @@ For the details and the dates, see [Is AI hiring legal in the EU?](/guides/is-ai
 
 ### GDPR
 
-Test results are personal data. Under the GDPR (and the UK GDPR, which is similar) you, the employer, are usually the controller, and the testing vendor is your processor. You need a data processing agreement, a clear notice to candidates, a retention limit, and a way to handle access and deletion requests. If a decision is based solely on automated processing and significantly affects a candidate, [Article 22](https://gdpr-info.eu/art-22-gdpr/) applies, so have a person review results. Ask any vendor where data is hosted and which sub-processors it uses.
+Test results are personal data. Under the GDPR (and the UK GDPR, which is similar) you, the employer, are usually the controller, and the testing vendor is your processor. You need a data processing agreement, a clear notice to candidates, a retention limit, and a way to handle access and deletion requests. If a decision is based solely on automated processing and significantly affects a candidate, [Article 22](https://gdpr-info.eu/art-22-gdpr/) (in the UK, Articles 22A to 22D since 5 February 2026) applies, so have a person review results. Ask any vendor where data is hosted and which sub-processors it uses.
 
 ### The rule that covers all of them
 

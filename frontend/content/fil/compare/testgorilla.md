@@ -46,7 +46,7 @@ Ang praktikal na pagkakaiba: nakapirmi ang isang library test at ilang beses nan
 
 ## Paano gumagana ang presyo
 
-**Ang TestGorilla** ay may libreng plan na may 10 credits bawat buwan at mga paid plan na ang presyo ay para sa taunang billing, na may mas maraming feature sa mas matataas na plan. Nagagastos ang credits kapag nagsimula ang aplikante ng assessment, at may sariling credits na ginagamit ang bawat test o AI interview dito. Tingnan ang [pricing page](https://www.testgorilla.com/pricing/) nito para sa kasalukuyang mga plan at presyo.
+**Ang TestGorilla** ay may libreng plan na may 10 credits bawat buwan at mga paid plan na ang presyo ay para sa taunang billing, na may mas maraming feature sa mas matataas na plan. Nagagastos ang credits kapag nagsimula ang aplikante ng assessment, at may sariling credits na ginagamit ang bawat test o AI interview dito. Walang credits na ginagamit ang 5 essential skills test ng libreng plan. Tingnan ang [pricing page](https://www.testgorilla.com/pricing/) nito para sa kasalukuyang mga plan at presyo.
 
 **Ang testee** ay naniningil bawat aplikante:
 

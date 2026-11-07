@@ -35,7 +35,7 @@ This page explains the alternatives to a subscription, how they compare with sub
 | **CodeSignal** | Plans with credits ([pricing page](https://codesignal.com/pricing/)) | Monthly or annual |
 | **Bryq** | Plans with unlimited invitations ([pricing page](https://www.bryq.com/pricing)) | Monthly or annual |
 | **Alooba** | Plans with monthly credits ([pricing page](https://www.alooba.com/pricing/)) | Monthly or annual; credits expire at the end of each billing period; Enterprise has a 1-year minimum |
-| **Codility** | Monthly or annual plans with invite credits ([pricing page](https://www.codility.com/pricing/)) | Monthly or annual |
+| **Codility** | Monthly or annual plans with invite packs ([pricing page](https://www.codility.com/pricing/)) | Monthly or annual |
 
 Some of these tools offer monthly billing, which is not a long contract but is still a recurring fee. If you only hire now and then, remember to cancel between hiring rounds.
 

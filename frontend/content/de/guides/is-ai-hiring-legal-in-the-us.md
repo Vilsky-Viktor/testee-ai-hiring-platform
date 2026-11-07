@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Ist KI im Recruiting in den USA erlaubt? Was Arbeitgeber wissen müssen
 
-Grundsätzlich ja: KI in der Personalauswahl einzusetzen ist in den USA erlaubt. Es gibt kein Bundesgesetz zu KI im Recruiting. Stattdessen gilt das Antidiskriminierungsrecht des Bundes für KI-Tools genauso wie für jeden anderen Test, und einige Orte haben eigene Regeln: New York City, Illinois, Colorado, Kalifornien, New Jersey und Texas. Eine Executive Order vom Dezember 2025 hat eine Taskforce des Justizministeriums eingerichtet, die gegen KI-Gesetze der Bundesstaaten vorgehen soll ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), aber eine solche Anordnung hebt sie nicht auf: Sie gelten, bis der Kongress oder ein Gericht etwas anderes entscheidet.
+Grundsätzlich ja: KI in der Personalauswahl einzusetzen ist in den USA erlaubt. Es gibt kein Bundesgesetz zu KI im Recruiting. Stattdessen gilt das Antidiskriminierungsrecht des Bundes für KI-Tools genauso wie für jeden anderen Test, und einige Orte haben eigene Regeln: New York City, Illinois, Colorado, Kalifornien, New Jersey, Texas und Connecticut. Eine Executive Order vom Dezember 2025 hat eine Taskforce des Justizministeriums eingerichtet, die gegen KI-Gesetze der Bundesstaaten vorgehen soll ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), aber eine solche Anordnung hebt sie nicht auf: Sie gelten, bis der Kongress oder ein Gericht etwas anderes entscheidet.
 
 Dieser Leitfaden erklärt die Regeln im Überblick, die wichtigen Fristen, was Arbeitgeber tun müssen und wie testee damit umgeht. **Er ist keine Rechtsberatung.** Er gibt den Stand der Regeln im November 2026 wieder; mehrere davon sind neu oder werden noch fertiggestellt.
 
@@ -17,7 +17,7 @@ Dieser Leitfaden erklärt die Regeln im Überblick, die wichtigen Fristen, was A
 | --- | --- |
 | Darf ich KI nutzen, um Kandidaten vorauszuwählen oder zu bewerten? | Ja, im Rahmen des Antidiskriminierungsrechts des Bundes und der Regeln der Bundesstaaten und Städte |
 | Muss ich die Ergebnisse auf Bias prüfen? | Für Adverse Impact bist du verantwortlich; in New York City ist vor dem Einsatz ein unabhängiges Bias-Audit Pflicht |
-| Muss ich Kandidaten informieren? | In New York City und Illinois ja; in Colorado und Kalifornien ab dem 1. Januar 2027 |
+| Muss ich Kandidaten informieren? | In New York City und Illinois ja; in Colorado und Kalifornien ab dem 1. Januar 2027; in Connecticut ab dem 1. Oktober 2027 |
 | Muss ich zusätzliche Zeit anbieten? | Kandidaten mit Behinderung, die sie brauchen: als angemessene Vorkehrung (reasonable accommodation) |
 | Wie lange muss ich Unterlagen aufbewahren? | Vier Jahre in Kalifornien, drei in Colorado |
 | Wer trifft die Einstellungsentscheidung? | Ein Mensch. Colorado und Kalifornien sehen eine menschliche Prüfung vor, und überall ist sie der sicherste Weg |
@@ -66,7 +66,7 @@ Und sie müssen Kandidaten informieren, wenn KI bei Recruiting- und Einstellungs
 
 ## Colorado
 
-Das KI-Gesetz von Colorado wurde durch SB 26-189 aufgehoben und neu erlassen, unterzeichnet am 14. Mai 2026 und in Kraft ab dem 1. Januar 2027. Die Regeln des Attorney General sind vorgeschlagen (mit einer für den 26. Oktober 2026 angesetzten Anhörung), im November 2026 noch nicht verabschiedet und sollen bis zum 1. Januar 2027 kommen. Für Betreiber von Technologien für automatisierte Entscheidungen, die eine Beschäftigungsentscheidung maßgeblich beeinflussen, gelten diese Pflichten:
+Das KI-Gesetz von Colorado wurde durch SB 26-189 aufgehoben und neu erlassen, unterzeichnet am 14. Mai 2026 und in Kraft ab dem 1. Januar 2027. Die Regeln des Attorney General sind vorgeschlagen, im November 2026 noch nicht verabschiedet und sollen bis zum 1. Januar 2027 kommen. Im April 2026 setzte ein Bundesgericht in einem von xAI angestrengten Verfahren die Durchsetzung des alten Gesetzes und jedes Nachfolgegesetzes aus, und zwar bis 14 Tage nach seiner Entscheidung über den Antrag von xAI auf eine einstweilige Verfügung; dieser Antrag wartet auf diese Regeln. Der Januar-Termin selbst hat sich nicht geändert. Für Betreiber von Technologien für automatisierte Entscheidungen, die eine Beschäftigungsentscheidung maßgeblich beeinflussen, gelten diese Pflichten:
 
 - **Information vor dem Einsatz** an den Kandidaten.
 - **Eine Erklärung einer nachteiligen Entscheidung,** etwa einer Nichteinstellung oder wenn jemand nicht weiterkommt.
@@ -84,6 +84,13 @@ Das KI-Gesetz von Colorado wurde durch SB 26-189 aufgehoben und neu erlassen, un
 - **New Jersey.** Regeln zur mittelbaren Diskriminierung nach dem Law Against Discrimination (N.J.A.C. 13:16), in Kraft seit dem 15. Dezember 2025, nennen automatisierte Tools für Beschäftigungsentscheidungen unter den Praktiken, die eine mittelbare Diskriminierung bewirken können. Ein Arbeitgeber, der sich auf das Produkt eines Anbieters stützt, muss angemessene Schritte unternehmen, um sicherzustellen, dass es mit dem Gesetz vereinbar ist, und ein vor dem Einsatz nicht ausreichend getestetes Tool kann selbst eine mittelbare Diskriminierung bewirken.
 - **Texas.** Der Responsible AI Governance Act (HB 149), in Kraft seit dem 1. Januar 2026, verbietet KI, die in der Absicht rechtswidriger Diskriminierung eingesetzt wird. Eine mittelbare Diskriminierung allein belegt diese Absicht nicht.
 
+## Connecticut
+
+Public Act 26-15 (SB 5), im Mai 2026 unterzeichnet, hat zwei Teile für Arbeitgeber:
+
+- **Seit dem 1. Oktober 2026:** Der Einsatz eines automatisierten Tools für Beschäftigungsentscheidungen ist keine Verteidigung gegen eine Diskriminierungsklage. Bias-Tests sind nicht vorgeschrieben, aber Nachweise darüber können berücksichtigt werden.
+- **Ab dem 1. Oktober 2027:** Sag Kandidaten in einfacher Sprache, wenn sie mit einem solchen Tool interagieren, außer es ist offensichtlich, und informiere sie schriftlich, bevor du es für eine Entscheidung einsetzt: dass es eingesetzt wird, seinen Zweck und die Art der Entscheidung, seinen Handelsnamen, welche personenbezogenen Daten es analysiert und wie, woher die Daten stammen und wie man dich erreicht.
+
 ## Die Fristen
 
 | Datum | Was gilt |
@@ -92,11 +99,13 @@ Das KI-Gesetz von Colorado wurde durch SB 26-189 aufgehoben und neu erlassen, un
 | 1. Oktober 2025 | Regeln des Civil Rights Council in Kalifornien zu automatisierten Entscheidungssystemen |
 | 15. Dezember 2025 | Regeln New Jerseys zur mittelbaren Diskriminierung |
 | 1. Januar 2026 | Illinois: Information über KI-Einsatz, keine diskriminierende KI, keine Postleitzahlen als Ersatzmerkmal; Texas: keine KI in Diskriminierungsabsicht |
+| 1. Oktober 2026 | Connecticut: Ein automatisiertes Tool ist keine Verteidigung gegen eine Diskriminierungsklage |
 | 1. Januar 2027 | KI-Gesetz von Colorado; CCPA-Regeln Kaliforniens zu automatisierten Entscheidungen im Beschäftigungsbereich |
+| 1. Oktober 2027 | Connecticut: Information für Kandidaten |
 
 ## Eine praktische Checkliste für Arbeitgeber
 
-1. **Liste die Stellen und Orte auf,** für die du einstellst: New York City, Illinois, Colorado, Kalifornien, New Jersey, Texas, andere Orte in den USA.
+1. **Liste die Stellen und Orte auf,** für die du einstellst: New York City, Illinois, Colorado, Kalifornien, New Jersey, Texas, Connecticut, andere Orte in den USA.
 2. **Prüfe nur, was die Stelle braucht.** Wähle Themen und eine Bestehensgrenze, die du für die Rolle begründen kannst.
 3. **Aktualisiere deine Kandidateninformation,** sodass sie den KI-Einsatz erwähnt, erklärt, wie Ergebnisse verwendet werden, und wie man eine Vorkehrung und eine Prüfung durch einen Menschen beantragt. Ergänze die Formulierungen für Illinois und Colorado, wo sie gelten.
 4. **Biete Vorkehrungen an,** etwa zusätzliche Zeit, und vereinbare sie, bevor der Kandidat beginnt.
@@ -113,7 +122,7 @@ testee führt zeitlich begrenzte Multiple-Choice-Interviews zu Fachkenntnissen d
 So sieht das heute im Produkt aus:
 
 - **KI schreibt die Fragen und ihre Lösungsschlüssel; die Bewertung folgt festen Regeln.** Keine KI beurteilt die Antwort eines Kandidaten, und es wird keine Video- oder Gesichtsanalyse eingesetzt. Im Sprachmodus wird Sprache in Text umgewandelt und einer Antwortoption zugeordnet, die dem Kandidaten genannt und auf dem Bildschirm angezeigt wird: Eine eindeutig genannte einzelne Option wird sofort übernommen, eine Auswahl mehrerer Optionen wird zuerst bestätigt. testee speichert Sprache nie, und die Stimme wird nie analysiert.
-- **Du gibst die Themen frei,** bevor eine Frage geschrieben wird, und du wählst die Bestehensgrenze.
+- **Du gibst die Themen frei,** bevor eine Frage geschrieben wird, und du wählst die Bestehensgrenze. Die Ausnahme ist ein Interview, das deine eigene Plattform über die API erstellt, sobald dein Unternehmen Credits aufgeladen hat: Es läuft direkt mit den vorgeschlagenen Themen weiter.
 - **Menschen entscheiden.** testee lehnt keine Kandidaten ab und verschickt keine Absagen.
 - **Keine geschützten Merkmale.** testee fragt nie nach Geschlecht, ethnischer Herkunft, Alter, Behinderung, Postleitzahl oder anderen geschützten Merkmalen von Kandidaten, leitet sie nicht ab und speichert sie nicht.
 - **Ein Export für ein Bias-Audit.** Auf der Seite „Aktionsprotokoll“ des Unternehmens kann der Inhaber eine CSV-Datei der Kandidaten herunterladen, die fertig sind, für das ganze Unternehmen oder ein Interview und zwischen zwei Daten: die Note jedes Kandidaten, die Bestehensgrenze, ob er bestanden hat und ob er über dem Median des Interviews lag. Jede Zeile ist über die E-Mail-Adresse des Kandidaten zugeordnet, sodass du sie mit den selbst angegebenen Kategorien verknüpfen kannst, die du selbst erhoben hast; entferne dann die Spalte mit der E-Mail-Adresse und gib die Datei deinem unabhängigen Prüfer, der die Auswahl- und Bewertungsquoten und die Impact Ratios berechnet. Mit derselben Datei kannst du die Vier-Fünftel-Prüfung selbst durchführen.
@@ -139,7 +148,8 @@ So sieht das heute im Produkt aus:
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 und 6 RCNY §5-300 ff.; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) und die zugehörigen FAQ.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), geändert durch Public Act 103-0804.
-- Colorado SB 26-189.
+- Colorado SB 26-189; *xAI v. Weiser* (D. Colo., No. 1:26-cv-01515), [Aussetzung vom 27. April 2026](https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/).
 - California Code of Regulations, Title 2, §11013(c); Verordnungen zum California Consumer Privacy Act über Technologien für automatisierte Entscheidungen; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
 - New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) zu Anbietern, §13:16-3.2(c) zu automatisierten Tools), mit der [Zusammenfassung von Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).
+- Connecticut Public Act 26-15, zusammengefasst von [Cooley](https://cooley.com/news/insight/2026/2026-11-03-connecticuts-ai-rules-take-shape-what-employers-and-developers-need-to-know), November 2026.

@@ -35,7 +35,7 @@ Questa pagina spiega le alternative a un abbonamento, come si confrontano con i 
 | **CodeSignal** | Piani con crediti ([pagina prezzi](https://codesignal.com/pricing/)) | Mensile o annuale |
 | **Bryq** | Piani con inviti illimitati ([pagina prezzi](https://www.bryq.com/pricing)) | Mensile o annuale |
 | **Alooba** | Piani con crediti mensili ([pagina prezzi](https://www.alooba.com/pricing/)) | Mensile o annuale; i crediti scadono alla fine di ogni periodo di fatturazione; Enterprise ha un minimo di 1 anno |
-| **Codility** | Piani mensili o annuali con crediti di invito ([pagina prezzi](https://www.codility.com/pricing/)) | Mensile o annuale |
+| **Codility** | Piani mensili o annuali con pacchetti di inviti ([pagina prezzi](https://www.codility.com/pricing/)) | Mensile o annuale |
 
 Alcuni di questi strumenti offrono la fatturazione mensile, che non è un contratto lungo ma resta un canone ricorrente. Se assumi solo di tanto in tanto, ricordati di disdire tra una tornata di assunzioni e l'altra.
 

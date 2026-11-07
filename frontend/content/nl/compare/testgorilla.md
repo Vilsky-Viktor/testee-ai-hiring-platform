@@ -46,7 +46,7 @@ Het praktische verschil: een test uit een bibliotheek ligt vast en is al vaak ge
 
 ## Hoe de prijzen werken
 
-**TestGorilla** biedt een gratis plan met 10 credits per maand en betaalde plannen met prijzen bij jaarlijkse facturering, met meer functies in duurdere plannen. Credits worden verbruikt wanneer een kandidaat een assessment start, en elke test of elk AI-interview daarin gebruikt zijn eigen credits. Zie de [prijspagina](https://www.testgorilla.com/pricing/) voor de huidige plannen en prijzen.
+**TestGorilla** biedt een gratis plan met 10 credits per maand en betaalde plannen met prijzen bij jaarlijkse facturering, met meer functies in duurdere plannen. Credits worden verbruikt wanneer een kandidaat een assessment start, en elke test of elk AI-interview daarin gebruikt zijn eigen credits. De 5 tests voor basisvaardigheden van het gratis plan kosten geen credits. Zie de [prijspagina](https://www.testgorilla.com/pricing/) voor de huidige plannen en prijzen.
 
 **testee** rekent per kandidaat:
 

@@ -32,7 +32,7 @@ Pagkatapos, itapat ang pricing model sa dami ng iyong hiring. Bagay ang isang pl
 | **HackerRank** | Coding tests at technical interviews | Starter at Pro plans na may taunang attempts, at custom na Enterprise plans ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [pricing page](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Screening para sa technical at data roles | Buwanan o taunang plan na may credits ([pricing page](https://www.alooba.com/pricing/)) |
 | **Bryq** | Cognitive, personality at skills assessments | Buwanan o taunang plan ([pricing page](https://www.bryq.com/pricing)) |
-| **Codility** | Coding assessment | Buwanan o taunang plan na may invite credits ([pricing page](https://www.codility.com/pricing/)) |
+| **Codility** | Coding assessment | Buwanan o taunang plan na may invite packs ([pricing page](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Psychometric at cognitive testing | Tingnan ang website ng bawat vendor |
 
 ## Mas detalyadong pagtingin sa mga tool

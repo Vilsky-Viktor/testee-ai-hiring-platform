@@ -32,7 +32,7 @@ Ardından fiyatlandırma modelini işe alım hacminizle karşılaştırın. Plan
 | **HackerRank** | Kodlama testleri ve teknik mülakatlar | Yıllık deneme hakkı sunan Starter ve Pro planları ile özel Enterprise planları ([SSS](https://www.hackerrank.com/frequently-asked-questions), [fiyat sayfası](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Teknik ve veri pozisyonları için aday elemesi | Kredili aylık veya yıllık planlar ([fiyat sayfası](https://www.alooba.com/pricing/)) |
 | **Bryq** | Bilişsel, kişilik ve beceri değerlendirmeleri | Aylık veya yıllık planlar ([fiyat sayfası](https://www.bryq.com/pricing)) |
-| **Codility** | Kodlama değerlendirmesi | Davet kredili aylık veya yıllık planlar ([fiyat sayfası](https://www.codility.com/pricing/)) |
+| **Codility** | Kodlama değerlendirmesi | Davet paketli aylık veya yıllık planlar ([fiyat sayfası](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Psikometrik ve bilişsel testler | Sağlayıcıların sitelerine bakın |
 
 ## Araçlara daha yakından bakış

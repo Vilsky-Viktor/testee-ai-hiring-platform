@@ -32,7 +32,7 @@ Then check the pricing model against your hiring volume. A plan suits steady hir
 | **HackerRank** | Coding tests and technical interviews | Starter and Pro plans with yearly attempts, and custom Enterprise plans ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [pricing page](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Technical and data-role screening | Monthly or annual plans with credits ([pricing page](https://www.alooba.com/pricing/)) |
 | **Bryq** | Cognitive, personality and skills assessments | Monthly or annual plans ([pricing page](https://www.bryq.com/pricing)) |
-| **Codility** | Coding assessment | Monthly or annual plans with invite credits ([pricing page](https://www.codility.com/pricing/)) |
+| **Codility** | Coding assessment | Monthly or annual plans with invite packs ([pricing page](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Psychometric and cognitive testing | See each vendor's site |
 
 ## The tools in more detail

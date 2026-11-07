@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Alternatives et compléments à HackerRank pour évaluer les connaissances techniques
 
-HackerRank est une plateforme de recrutement de développeurs. En novembre 2026, son site décrit des tests de présélection à faire chez soi, des entretiens de pair programming en direct dans un environnement de code partagé et un recruteur IA qui pose un problème concret ([hackerrank.com](https://www.hackerrank.com/)). Si vous avez besoin que les candidats écrivent et exécutent du code, une plateforme de ce type est conçue pour cela.
+HackerRank est une plateforme de recrutement de développeurs. En novembre 2026, son site décrit des tests de présélection, des entretiens de pair programming en direct dans un environnement de code partagé et un recruteur IA qui pose un problème concret ([hackerrank.com](https://www.hackerrank.com/)). Si vous avez besoin que les candidats écrivent et exécutent du code, une plateforme de ce type est conçue pour cela.
 
 testee ne la remplace pas. Il remplit une autre fonction : un test chronométré à choix multiples sur ce que sait un candidat, rédigé à partir de votre fiche de poste, avec des questions de lecture de code. Les deux se complètent bien. Un schéma courant consiste à utiliser testee comme présélection rapide des connaissances pour chaque candidat, puis le test de code ou l'entretien de code en direct d'une plateforme pour développeurs pour ceux qui réussissent. testee couvre aussi les autres postes que vous recrutez dans le même trimestre, comme un chargé de clientèle, un comptable ou un agent de support.
 

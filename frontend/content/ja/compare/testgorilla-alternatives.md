@@ -32,7 +32,7 @@ TestGorilla は、大規模なテストライブラリと無料プランを備�
 | **HackerRank** | コーディングテストと技術面接 | 年間の受験回数が付いた Starter プランと Pro プラン、カスタムの Enterprise プラン（[FAQ](https://www.hackerrank.com/frequently-asked-questions)、[料金ページ](https://www.hackerrank.com/pricing/)） |
 | **Alooba** | 技術職とデータ職のスクリーニング | クレジット付きの月額または年間プラン（[料金ページ](https://www.alooba.com/pricing/)） |
 | **Bryq** | 認知能力、性格、スキルの評価 | 月額または年間プラン（[料金ページ](https://www.bryq.com/pricing)） |
-| **Codility** | コーディング評価 | 招待クレジット付きの月間または年間プラン（[料金ページ](https://www.codility.com/pricing/)） |
+| **Codility** | コーディング評価 | 招待パック付きの月間または年間プラン（[料金ページ](https://www.codility.com/pricing/)） |
 | **Criteria、Wonderlic、SHL** | 心理測定と認知能力テスト | 各社のサイトを参照 |
 
 ## 各ツールの詳細

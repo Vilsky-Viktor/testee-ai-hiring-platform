@@ -64,7 +64,7 @@ Pour les détails et les dates, voir [L'IA dans le recrutement est-elle légale 
 
 ### RGPD
 
-Les résultats de tests sont des données personnelles. Selon le RGPD (GDPR), et le UK GDPR qui est similaire, vous, l'employeur, êtes en général le responsable du traitement, et le fournisseur du test est votre sous-traitant. Il vous faut un accord de traitement des données, une information claire des candidats, une durée de conservation limitée et une procédure pour les demandes d'accès et d'effacement. Si une décision est fondée exclusivement sur un traitement automatisé et affecte un candidat de manière significative, l'[article 22](https://gdpr-info.eu/art-22-gdpr/) s'applique : faites donc examiner les résultats par une personne. Demandez à chaque fournisseur où les données sont hébergées et à quels sous-traitants ultérieurs il fait appel.
+Les résultats de tests sont des données personnelles. Selon le RGPD (GDPR), et le UK GDPR qui est similaire, vous, l'employeur, êtes en général le responsable du traitement, et le fournisseur du test est votre sous-traitant. Il vous faut un accord de traitement des données, une information claire des candidats, une durée de conservation limitée et une procédure pour les demandes d'accès et d'effacement. Si une décision est fondée exclusivement sur un traitement automatisé et affecte un candidat de manière significative, l'[article 22](https://gdpr-info.eu/art-22-gdpr/) (au Royaume-Uni, les articles 22A à 22D depuis le 5 février 2026) s'applique : faites donc examiner les résultats par une personne. Demandez à chaque fournisseur où les données sont hébergées et à quels sous-traitants ultérieurs il fait appel.
 
 ### La règle qui vaut partout
 

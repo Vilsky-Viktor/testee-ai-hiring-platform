@@ -32,7 +32,7 @@ Seejärel võrdle hinnamudelit oma värbamismahuga. Pakett sobib ühtlaseks vär
 | **HackerRank** | Programmeerimistestid ja tehnilised intervjuud | Starter- ja Pro-paketid aastase katsete arvuga ning kohandatud Enterprise-paketid ([KKK](https://www.hackerrank.com/frequently-asked-questions), [hinnaleht](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Tehniliste ja andmerollide eelvalik | Kuu- või aastapaketid krediitidega ([hinnaleht](https://www.alooba.com/pricing/)) |
 | **Bryq** | Kognitiivsete võimete, isiksuse ja oskuste hindamine | Kuu- või aastapaketid ([hinnaleht](https://www.bryq.com/pricing)) |
-| **Codility** | Programmeerimisoskuste hindamine | Kuu- või aastapaketid kutsekrediitidega ([hinnaleht](https://www.codility.com/pricing/)) |
+| **Codility** | Programmeerimisoskuste hindamine | Kuu- või aastapaketid kutsepakettidega ([hinnaleht](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Psühhomeetriline ja kognitiivne testimine | Vaata pakkujate veebilehti |
 
 ## Tööriistad lähemalt

@@ -64,7 +64,7 @@ Para sa mga detalye at petsa, tingnan ang [Legal ba ang AI hiring sa EU?](/guide
 
 ### GDPR
 
-Personal data ang mga resulta ng test. Sa ilalim ng GDPR (at ng UK GDPR, na kahawig nito), ikaw, ang employer, ang karaniwang controller, at ang testing vendor ang iyong processor. Kailangan mo ng data processing agreement, malinaw na abiso sa mga aplikante, limitasyon sa retention, at paraan para hawakan ang mga request para sa access at pagbura. Kung ang isang desisyon ay nakabatay lang sa automated processing at may malaking epekto sa aplikante, nalalapat ang [Article 22](https://gdpr-info.eu/art-22-gdpr/), kaya ipa-review sa isang tao ang mga resulta. Tanungin ang kahit anong vendor kung saan naka-host ang data at aling mga sub-processor ang ginagamit nito.
+Personal data ang mga resulta ng test. Sa ilalim ng GDPR (at ng UK GDPR, na kahawig nito), ikaw, ang employer, ang karaniwang controller, at ang testing vendor ang iyong processor. Kailangan mo ng data processing agreement, malinaw na abiso sa mga aplikante, limitasyon sa retention, at paraan para hawakan ang mga request para sa access at pagbura. Kung ang isang desisyon ay nakabatay lang sa automated processing at may malaking epekto sa aplikante, nalalapat ang [Article 22](https://gdpr-info.eu/art-22-gdpr/) (sa UK, Articles 22A hanggang 22D mula 5 Pebrero 2026), kaya ipa-review sa isang tao ang mga resulta. Tanungin ang kahit anong vendor kung saan naka-host ang data at aling mga sub-processor ang ginagamit nito.
 
 ### Ang patakarang sumasaklaw sa lahat
 

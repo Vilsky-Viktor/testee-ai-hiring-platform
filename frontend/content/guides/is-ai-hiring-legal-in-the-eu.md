@@ -44,6 +44,7 @@ So a tool that gives each candidate a score and a ranking is very likely high-ri
 | --- | --- |
 | 2 February 2025 | Prohibited practices (Article 5) and AI literacy (Article 4) |
 | 2 August 2026 | Most of the remaining rules, including transparency for some AI systems (Article 50) |
+| 2 December 2026 | Marking AI-generated content as such (Article 50(2)), for systems on the market before 2 August 2026 |
 | 2 December 2027 | High-risk obligations for Annex III systems, including hiring tools |
 | 2 August 2028 | High-risk obligations for AI in products covered by Annex I |
 
@@ -118,8 +119,9 @@ testee runs timed multiple-choice skills interviews written by AI from a job des
 What that looks like in the product today:
 
 - **AI writes the questions and their answer keys; marking follows fixed rules.** No AI judges a candidate's answer, and no video or face analysis is used. In voice mode, speech is turned into text and matched to an option, which is said back to the candidate and shown on screen: one clearly named option is saved at once, and a choice of several options is confirmed first. testee never stores speech, and the voice is never analysed. If AI corrects a key later, the fix applies to candidates who start after it; past results don't change.
-- **You approve the topics** before any question is written, and you can see every question.
+- **You approve the topics** before any question is written, and you can see every question. The exception is an interview your own platform creates through the API once your company has topped up: it goes straight on from the proposed topics.
 - **People decide.** The results page and PDF reports remind your team to review results; testee doesn't reject candidates or send rejection messages.
+- **AI marks.** Questions, answer options, Mira's answers and voice clips are marked as AI-generated in a form software can read, and voice clips also carry OpenAI's inaudible watermark. The [trust page](/trust) explains how to check them. Text copied from a page doesn't keep its mark.
 - **Candidates are told** before they start that questions are written by AI, that people at your company review results and decide, and that they can ask for a review.
 - **Extra time** can be given to any candidate who asks.
 - **Records.** The questions shown, answers, timings and integrity events are recorded.

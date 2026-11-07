@@ -64,7 +64,7 @@ Về chi tiết và các mốc thời gian, xem [Dùng AI trong tuyển dụng c
 
 ### GDPR
 
-Kết quả kiểm tra là dữ liệu cá nhân. Theo GDPR (và UK GDPR, tương tự), bạn, bên tuyển dụng, thường là bên kiểm soát, và nhà cung cấp bài kiểm tra là bên xử lý của bạn. Bạn cần một thỏa thuận xử lý dữ liệu, một thông báo rõ ràng cho ứng viên, thời hạn lưu giữ, và cách xử lý yêu cầu truy cập và xóa dữ liệu. Nếu một quyết định chỉ dựa trên xử lý tự động và ảnh hưởng đáng kể đến ứng viên, [Điều 22](https://gdpr-info.eu/art-22-gdpr/) sẽ áp dụng, vì vậy hãy để một người xem xét kết quả. Hãy hỏi mọi nhà cung cấp dữ liệu được lưu trữ ở đâu và họ dùng những bên xử lý phụ nào.
+Kết quả kiểm tra là dữ liệu cá nhân. Theo GDPR (và UK GDPR, tương tự), bạn, bên tuyển dụng, thường là bên kiểm soát, và nhà cung cấp bài kiểm tra là bên xử lý của bạn. Bạn cần một thỏa thuận xử lý dữ liệu, một thông báo rõ ràng cho ứng viên, thời hạn lưu giữ, và cách xử lý yêu cầu truy cập và xóa dữ liệu. Nếu một quyết định chỉ dựa trên xử lý tự động và ảnh hưởng đáng kể đến ứng viên, [Điều 22](https://gdpr-info.eu/art-22-gdpr/) (tại Vương quốc Anh, từ ngày 5/2/2026 là các Điều 22A đến 22D) sẽ áp dụng, vì vậy hãy để một người xem xét kết quả. Hãy hỏi mọi nhà cung cấp dữ liệu được lưu trữ ở đâu và họ dùng những bên xử lý phụ nào.
 
 ### Quy tắc chung cho tất cả
 

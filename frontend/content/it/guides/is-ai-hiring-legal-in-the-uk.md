@@ -108,7 +108,7 @@ testee svolge colloqui di competenze a scelta multipla e a tempo, scritti dall'I
 Ecco cosa significa oggi nel prodotto:
 
 - **L'IA scrive le domande e le relative chiavi di correzione; la correzione segue regole fisse.** Nessuna IA giudica la risposta di un candidato, e non si usa alcuna analisi di video o volto. Nella modalità vocale, il parlato viene trasformato in testo e abbinato a un'opzione, che viene detta al candidato e mostrata sullo schermo: una sola opzione indicata chiaramente viene registrata subito, una scelta di più opzioni viene prima confermata. testee non conserva mai il parlato, e la voce non viene mai analizzata.
-- **Approvi tu gli argomenti** prima che venga scritta qualsiasi domanda, e scegli tu la soglia di superamento.
+- **Approvi tu gli argomenti** prima che venga scritta qualsiasi domanda, e scegli tu la soglia di superamento. L'eccezione è un colloquio che la tua piattaforma crea tramite l'API una volta che la tua azienda ha ricaricato: prosegue direttamente dagli argomenti proposti.
 - **Decidono le persone.** La pagina dei risultati e i report PDF ricordano al tuo team di esaminare i risultati; testee non scarta candidati né invia messaggi di rifiuto.
 - **I candidati vengono informati** prima di iniziare che le domande sono scritte dall'IA, che persone della tua azienda esaminano i risultati e decidono, e che possono chiedere un riesame.
 - **Nessuna caratteristica protetta.** testee non chiede, non deduce e non conserva mai sesso, origine etnica, età, disabilità o altre caratteristiche protette dei candidati.

@@ -44,6 +44,7 @@ Narzędzie, które przypisuje każdemu kandydatowi wynik i miejsce w rankingu, j
 | --- | --- |
 | 2 lutego 2025 | Zakazane praktyki (art. 5) i kompetencje w zakresie AI (art. 4) |
 | 2 sierpnia 2026 | Większość pozostałych przepisów, w tym obowiązki przejrzystości dla niektórych systemów AI (art. 50) |
+| 2 grudnia 2026 | Oznaczanie treści wygenerowanych przez AI (art. 50 ust. 2) w systemach wprowadzonych na rynek przed 2 sierpnia 2026 |
 | 2 grudnia 2027 | Obowiązki dotyczące systemów wysokiego ryzyka z załącznika III, w tym narzędzi rekrutacyjnych |
 | 2 sierpnia 2028 | Obowiązki dotyczące systemów wysokiego ryzyka w produktach objętych załącznikiem I |
 
@@ -118,8 +119,9 @@ testee prowadzi rozmowy rekrutacyjne sprawdzające umiejętności w formie test�
 Jak to dziś wygląda w produkcie:
 
 - **AI pisze pytania i klucze odpowiedzi; ocenianie odbywa się według stałych reguł.** Żadna AI nie ocenia odpowiedzi kandydata i nie jest używana analiza wideo ani twarzy. W trybie głosowym mowa jest zamieniana na tekst i dopasowywana do odpowiedzi, którą kandydat słyszy i widzi na ekranie: jedna wyraźnie wskazana odpowiedź jest zapisywana od razu, a wybór kilku odpowiedzi jest najpierw potwierdzany. testee nigdy nie przechowuje mowy, a głos nigdy nie jest analizowany. Jeśli AI później poprawi klucz, poprawka dotyczy kandydatów, którzy zaczną po niej; wcześniejsze wyniki się nie zmieniają.
-- **Zatwierdzasz tematy,** zanim powstanie jakiekolwiek pytanie, i widzisz każde pytanie.
+- **Zatwierdzasz tematy,** zanim powstanie jakiekolwiek pytanie, i widzisz każde pytanie. Wyjątkiem jest rozmowa, którą Twoja platforma tworzy przez API po doładowaniu konta przez Twoją firmę: przechodzi ona dalej od razu od proponowanych tematów.
 - **Decydują ludzie.** Strona wyników i raporty PDF przypominają Twojemu zespołowi o przejrzeniu wyników; testee nie odrzuca kandydatów ani nie wysyła wiadomości z odmową.
+- **Oznaczenia AI.** Pytania, opcje odpowiedzi, odpowiedzi asystentki Mira i klipy głosowe są oznaczone jako wygenerowane przez AI w formie czytelnej dla oprogramowania, a klipy głosowe mają też niesłyszalny znak wodny OpenAI. Strona [Zaufanie i bezpieczeństwo](/trust) wyjaśnia, jak je sprawdzić. Tekst skopiowany ze strony nie zachowuje oznaczenia.
 - **Kandydaci są informowani,** zanim zaczną, że pytania pisze AI, że wyniki przeglądają i decyzje podejmują ludzie w Twojej firmie oraz że mogą poprosić o weryfikację.
 - **Dodatkowy czas** można przyznać każdemu kandydatowi, który o to poprosi.
 - **Rejestry.** Zapisywane są wyświetlone pytania, odpowiedzi, czasy i zdarzenia dotyczące rzetelności.

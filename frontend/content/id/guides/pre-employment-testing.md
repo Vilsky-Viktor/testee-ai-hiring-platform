@@ -64,7 +64,7 @@ Untuk detail dan tanggalnya, lihat [Apakah rekrutmen dengan AI legal di UE?](/gu
 
 ### GDPR
 
-Hasil tes adalah data pribadi. Berdasarkan GDPR (dan UK GDPR, yang serupa), kamu sebagai pemberi kerja biasanya adalah pengendali data (controller), dan vendor tes adalah pemroses data (processor) milikmu. Kamu memerlukan perjanjian pemrosesan data, pemberitahuan yang jelas kepada kandidat, batas waktu penyimpanan, dan cara menangani permintaan akses dan penghapusan. Kalau sebuah keputusan semata-mata didasarkan pada pemrosesan otomatis dan berdampak signifikan bagi kandidat, [Pasal 22](https://gdpr-info.eu/art-22-gdpr/) berlaku, jadi pastikan ada orang yang meninjau hasilnya. Tanyakan kepada vendor mana pun di mana data di-hosting dan sub-pemroses apa saja yang dipakainya.
+Hasil tes adalah data pribadi. Berdasarkan GDPR (dan UK GDPR, yang serupa), kamu sebagai pemberi kerja biasanya adalah pengendali data (controller), dan vendor tes adalah pemroses data (processor) milikmu. Kamu memerlukan perjanjian pemrosesan data, pemberitahuan yang jelas kepada kandidat, batas waktu penyimpanan, dan cara menangani permintaan akses dan penghapusan. Kalau sebuah keputusan semata-mata didasarkan pada pemrosesan otomatis dan berdampak signifikan bagi kandidat, [Pasal 22](https://gdpr-info.eu/art-22-gdpr/) (di Inggris Raya, Pasal 22A sampai 22D sejak 5 Februari 2026) berlaku, jadi pastikan ada orang yang meninjau hasilnya. Tanyakan kepada vendor mana pun di mana data di-hosting dan sub-pemroses apa saja yang dipakainya.
 
 ### Aturan yang mencakup semuanya
 

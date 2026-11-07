@@ -418,7 +418,8 @@
     "tips": [
       "Los créditos de un candidato se reservan al invitarlo, se cobran cuando responde y se devuelven si no lo hace.",
       "Solo los propietarios y administradores ven esta página.",
-      "Puedes reembolsar los créditos que compraste en los últimos 14 días y no has gastado desde la fila de la recarga en el historial, a través de Paddle o escribiéndonos. Los créditos reservados para candidatos no se pueden reembolsar mientras estén reservados."
+      "Puedes reembolsar los créditos que compraste en los últimos 14 días y no has gastado desde la fila de la recarga en el historial, a través de Paddle o escribiéndonos. Los créditos reservados para candidatos no se pueden reembolsar mientras estén reservados; si se reservaron dentro de los 14 días y se devolvieron después, siguen siendo reembolsables durante 7 días.",
+      "Los créditos gratuitos cuentan como gastados primero, y lo no gastado cuenta primero como de la recarga más reciente. El reembolso de una recarga que generó una recompensa por recomendación retira esa recompensa a ambas empresas. Los propietarios y administradores saben si Paddle lo aprobó en la campana, por correo electrónico y, salvo que lo hayan desactivado, en Slack."
     ]
   },
   "topUp": {
@@ -426,7 +427,7 @@
     "text": "Compra créditos para cualquier empresa de la que seas propietario o administrador.",
     "actions": [
       "Elige una empresa y escribe para cuántos candidatos quieres recargar, de 10 a 1.000, o elige un tramo de precio: las recargas más grandes cuestan menos por candidato.",
-      "Cambia la moneda de la empresa en la parte superior de la página: desde entonces sus recargas, también las automáticas, se calculan y cobran en ella. Si la cambias mientras la recarga automática está activa, primero verás ambos importes para confirmar, y los propietarios y administradores de la empresa recibirán un correo electrónico.",
+      "Cambia la moneda de la empresa en la parte superior de la página: desde entonces sus recargas, también las automáticas, se calculan y cobran en ella. Si la cambias mientras la recarga automática está activa o en pausa, primero verás ambos importes para confirmar; el nuevo importe se aplica de inmediato, y los propietarios y administradores de la empresa reciben el aviso en la campana y por correo electrónico.",
       "Paga en la página de pago de Paddle; los créditos llegan en segundos.",
       "Abre los precios para comparar las recargas.",
       "Configura la recarga automática: elige un importe y un saldo, y marca el acuerdo. Tu tarjeta se guarda en el pago de Paddle y se cobra cada vez que el saldo baja de ese nivel."

@@ -44,6 +44,7 @@ Ein Tool, das jedem Kandidaten eine Punktzahl und einen Rangplatz gibt, ist also
 | --- | --- |
 | 2. Februar 2025 | Verbotene Praktiken (Artikel 5) und KI-Kompetenz (Artikel 4) |
 | 2. August 2026 | Die meisten übrigen Regeln, einschließlich Transparenzpflichten für bestimmte KI-Systeme (Artikel 50) |
+| 2. Dezember 2026 | Kennzeichnung KI-generierter Inhalte als solche (Artikel 50(2)), für Systeme, die vor dem 2. August 2026 auf dem Markt waren |
 | 2. Dezember 2027 | Hochrisiko-Pflichten für Systeme nach Anhang III, einschließlich Recruiting-Tools |
 | 2. August 2028 | Hochrisiko-Pflichten für KI in Produkten nach Anhang I |
 
@@ -118,8 +119,9 @@ testee führt zeitlich begrenzte Multiple-Choice-Interviews zu Fachkenntnissen d
 So sieht das heute im Produkt aus:
 
 - **KI schreibt die Fragen und ihre Lösungsschlüssel; die Bewertung folgt festen Regeln.** Keine KI beurteilt die Antwort eines Kandidaten, und es wird keine Video- oder Gesichtsanalyse eingesetzt. Im Sprachmodus wird Sprache in Text umgewandelt und einer Antwortoption zugeordnet, die dem Kandidaten genannt und auf dem Bildschirm angezeigt wird: Eine eindeutig genannte einzelne Option wird sofort übernommen, eine Auswahl mehrerer Optionen wird zuerst bestätigt. testee speichert Sprache nie, und die Stimme wird nie analysiert. Korrigiert die KI später einen Schlüssel, gilt die Korrektur für Kandidaten, die danach beginnen; frühere Ergebnisse ändern sich nicht.
-- **Du gibst die Themen frei,** bevor eine Frage geschrieben wird, und du kannst jede Frage sehen.
+- **Du gibst die Themen frei,** bevor eine Frage geschrieben wird, und du kannst jede Frage sehen. Die Ausnahme ist ein Interview, das deine eigene Plattform über die API erstellt, sobald dein Unternehmen Credits aufgeladen hat: Es läuft direkt mit den vorgeschlagenen Themen weiter.
 - **Menschen entscheiden.** Die Ergebnisseite und die PDF-Berichte erinnern dein Team daran, die Ergebnisse zu prüfen; testee lehnt keine Kandidaten ab und verschickt keine Absagen.
+- **KI-Kennzeichnung.** Fragen, Antwortoptionen, Miras Antworten und Sprachclips sind in maschinenlesbarer Form als KI-generiert gekennzeichnet, und Sprachclips tragen zusätzlich das unhörbare Wasserzeichen von OpenAI. Auf der [Vertrauensseite](/trust) steht, wie du das prüfst. Von einer Seite kopierter Text behält seine Kennzeichnung nicht.
 - **Kandidaten werden informiert,** bevor sie beginnen: dass die Fragen von KI geschrieben sind, dass Menschen in deinem Unternehmen die Ergebnisse prüfen und entscheiden und dass sie eine Überprüfung verlangen können.
 - **Zusätzliche Zeit** kann jedem Kandidaten gewährt werden, der darum bittet.
 - **Aufzeichnungen.** Die angezeigten Fragen, Antworten, Zeiten und Auffälligkeiten (Seitenwechsel, Kopierversuche) werden protokolliert.

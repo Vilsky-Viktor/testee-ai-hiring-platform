@@ -32,7 +32,7 @@ Check daarna het prijsmodel tegen je wervingsvolume. Een plan past bij constant 
 | **HackerRank** | Programmeertests en technische interviews | Starter- en Pro-plannen met pogingen per jaar, en Enterprise-plannen op maat ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [prijspagina](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Screening voor technische en datafuncties | Maand- of jaarplannen met credits ([prijspagina](https://www.alooba.com/pricing/)) |
 | **Bryq** | Cognitieve, persoonlijkheids- en vaardigheidsassessments | Maand- of jaarplannen ([prijspagina](https://www.bryq.com/pricing)) |
-| **Codility** | Programmeerassessments | Maand- of jaarplannen met uitnodigingscredits ([prijspagina](https://www.codility.com/pricing/)) |
+| **Codility** | Programmeerassessments | Maand- of jaarplannen met uitnodigingspakketten ([prijspagina](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Psychometrische en cognitieve tests | Zie de website van elke leverancier |
 
 ## De tools in meer detail

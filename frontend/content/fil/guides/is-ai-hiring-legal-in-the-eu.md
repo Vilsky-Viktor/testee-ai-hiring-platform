@@ -46,6 +46,7 @@ Kaya malamang na high-risk ang tool na nagbibigay sa bawat aplikante ng score at
 | --- | --- |
 | 2 Pebrero 2025 | Mga ipinagbabawal na practice (Article 5) at AI literacy (Article 4) |
 | 2 Agosto 2026 | Karamihan sa natitirang mga patakaran, kasama ang transparency para sa ilang AI system (Article 50) |
+| 2 Disyembre 2026 | Pagmamarka sa AI-generated content bilang ganoon (Article 50(2)), para sa mga system na nasa market bago ang 2 Agosto 2026 |
 | 2 Disyembre 2027 | High-risk obligations para sa Annex III systems, kasama ang hiring tools |
 | 2 Agosto 2028 | High-risk obligations para sa AI sa mga produktong saklaw ng Annex I |
 
@@ -120,8 +121,9 @@ Nagpapatakbo ang testee ng timed multiple-choice skills interviews na isinulat n
 Ang hitsura nito sa produkto ngayon:
 
 - **AI ang sumusulat ng mga tanong at ng answer keys nito; sumusunod sa nakapirming patakaran ang pagmamarka.** Walang AI na humuhusga sa sagot ng aplikante, at walang video o face analysis. Sa voice mode, ginagawang text ang pananalita at itinutugma sa isang option, na sinasabi sa aplikante at ipinapakita sa screen: agad na itinatala ang iisang option na malinaw na binanggit, at kinukumpirma muna ang pagpili ng ilang option. Hindi kailanman iniimbak ng testee ang pananalita, at hindi kailanman ina-analyze ang boses. Kung itama ng AI ang isang key sa ibang pagkakataon, para lang sa mga aplikanteng magsisimula pagkatapos nito ang pagtatama; hindi nagbabago ang mga naunang resulta.
-- **Ikaw ang nag-aapruba ng mga topic** bago maisulat ang kahit isang tanong, at nakikita mo ang bawat tanong.
+- **Ikaw ang nag-aapruba ng mga topic** bago maisulat ang kahit isang tanong, at nakikita mo ang bawat tanong. Ang eksepsyon ay interview na ginawa ng sarili mong platform sa pamamagitan ng API kapag nakapag-top up na ang kumpanya mo: diretso itong nagpapatuloy mula sa mga iminungkahing topic.
 - **Tao ang nagdedesisyon.** Pinapaalalahanan ng results page at ng PDF reports ang iyong team na i-review ang mga resulta; hindi nagre-reject ng aplikante o nagpapadala ng rejection message ang testee.
+- **Mga AI mark.** Minamarkahan bilang AI-generated ang mga tanong, mga pagpipiliang sagot, mga sagot ni Mira at mga voice clip sa anyong nababasa ng software, at may inaudible watermark din ng OpenAI ang mga voice clip. Ipinapaliwanag sa [page ng tiwala](/trust) kung paano i-check ang mga ito. Hindi nananatili ang mark sa text na kinopya mula sa page.
 - **Sinasabihan ang mga aplikante** bago sila magsimula na AI ang sumulat ng mga tanong, na mga tao sa iyong kumpanya ang nagre-review ng resulta at nagdedesisyon, at na puwede silang humingi ng review.
 - **Dagdag na oras** ay puwedeng ibigay sa sinumang aplikanteng humingi.
 - **Mga record.** Nire-record ang mga ipinakitang tanong, mga sagot, oras at integrity events.

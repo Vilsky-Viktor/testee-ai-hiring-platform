@@ -64,7 +64,7 @@ Voor de details en de data, zie [Is werven met AI legaal in de EU?](/guides/is-a
 
 ### AVG
 
-Testresultaten zijn persoonsgegevens. Onder de AVG (GDPR) (en de UK GDPR, die vergelijkbaar is) ben jij als werkgever meestal de verwerkingsverantwoordelijke en is de testleverancier je verwerker. Je hebt een verwerkersovereenkomst nodig, een duidelijk bericht aan kandidaten, een bewaartermijn en een manier om verzoeken om inzage en verwijdering af te handelen. Berust een besluit uitsluitend op geautomatiseerde verwerking en treft het een kandidaat in aanmerkelijke mate, dan geldt [artikel 22](https://gdpr-info.eu/art-22-gdpr/), dus laat een mens de resultaten bekijken. Vraag elke leverancier waar de gegevens worden gehost en welke subverwerkers die gebruikt.
+Testresultaten zijn persoonsgegevens. Onder de AVG (GDPR) (en de UK GDPR, die vergelijkbaar is) ben jij als werkgever meestal de verwerkingsverantwoordelijke en is de testleverancier je verwerker. Je hebt een verwerkersovereenkomst nodig, een duidelijk bericht aan kandidaten, een bewaartermijn en een manier om verzoeken om inzage en verwijdering af te handelen. Berust een besluit uitsluitend op geautomatiseerde verwerking en treft het een kandidaat in aanmerkelijke mate, dan geldt [artikel 22](https://gdpr-info.eu/art-22-gdpr/) (in het VK sinds 5 februari 2026 de artikelen 22A tot en met 22D), dus laat een mens de resultaten bekijken. Vraag elke leverancier waar de gegevens worden gehost en welke subverwerkers die gebruikt.
 
 ### De regel die voor alles geldt
 

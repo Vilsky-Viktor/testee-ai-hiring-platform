@@ -35,7 +35,7 @@ updated: "2026-11-07"
 | **CodeSignal** | クレジット付きのプラン（[料金ページ](https://codesignal.com/pricing/)） | 月額または年間 |
 | **Bryq** | 招待無制限のプラン（[料金ページ](https://www.bryq.com/pricing)） | 月額または年間 |
 | **Alooba** | 毎月のクレジット付きのプラン（[料金ページ](https://www.alooba.com/pricing/)） | 月額または年間。クレジットは各請求期間の終わりに失効。Enterprise は最低 1 年 |
-| **Codility** | 招待クレジット付きの月間または年間プラン（[料金ページ](https://www.codility.com/pricing/)） | 月間または年間 |
+| **Codility** | 招待パック付きの月間または年間プラン（[料金ページ](https://www.codility.com/pricing/)） | 月間または年間 |
 
 これらのツールの中には月払いに対応しているものもあり、長期契約ではありませんが、継続的な料金であることに変わりはありません。ときどきしか採用しないなら、採用活動の合間に解約するのを忘れないでください。
 

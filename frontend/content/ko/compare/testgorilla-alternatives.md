@@ -32,7 +32,7 @@ TestGorilla는 대규모 테스트 라이브러리와 무료 요금제를 갖춘
 | **HackerRank** | 코딩 테스트와 기술 면접 | 연간 응시 횟수가 포함된 Starter·Pro 요금제와 맞춤형 Enterprise 요금제([FAQ](https://www.hackerrank.com/frequently-asked-questions), [요금 페이지](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | 기술 및 데이터 직무 선별 | 크레딧이 포함된 월간 또는 연간 요금제([요금 페이지](https://www.alooba.com/pricing/)) |
 | **Bryq** | 인지 능력, 성격, 역량 평가 | 월간 또는 연간 요금제([요금 페이지](https://www.bryq.com/pricing)) |
-| **Codility** | 코딩 평가 | 초대 크레딧이 포함된 월간 또는 연간 요금제([요금 페이지](https://www.codility.com/pricing/)) |
+| **Codility** | 코딩 평가 | 초대 패키지가 포함된 월간 또는 연간 요금제([요금 페이지](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | 심리 측정과 인지 능력 테스트 | 각 업체 웹사이트 참고 |
 
 ## 도구별 자세히 보기

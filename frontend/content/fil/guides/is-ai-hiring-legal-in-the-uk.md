@@ -108,7 +108,7 @@ Nagpapatakbo ang testee ng timed multiple-choice skills interviews na isinulat n
 Ang hitsura nito sa produkto ngayon:
 
 - **AI ang sumusulat ng mga tanong at ng answer keys nito; sumusunod sa nakapirming patakaran ang pagmamarka.** Walang AI na humuhusga sa sagot ng aplikante, at walang video o face analysis. Sa voice mode, ginagawang text ang pananalita at itinutugma sa isang option, na sinasabi sa aplikante at ipinapakita sa screen: agad na itinatala ang iisang option na malinaw na binanggit, at kinukumpirma muna ang pagpili ng ilang option. Hindi kailanman iniimbak ng testee ang pananalita, at hindi kailanman ina-analyze ang boses.
-- **Ikaw ang nag-aapruba ng mga topic** bago maisulat ang kahit isang tanong, at ikaw ang pumipili ng passing grade.
+- **Ikaw ang nag-aapruba ng mga topic** bago maisulat ang kahit isang tanong, at ikaw ang pumipili ng passing grade. Ang eksepsyon ay interview na ginawa ng sarili mong platform sa pamamagitan ng API kapag nakapag-top up na ang kumpanya mo: diretso itong nagpapatuloy mula sa mga iminungkahing topic.
 - **Tao ang nagdedesisyon.** Pinapaalalahanan ng results page at ng PDF reports ang iyong team na i-review ang mga resulta; hindi nagre-reject ng aplikante o nagpapadala ng rejection message ang testee.
 - **Sinasabihan ang mga aplikante** bago sila magsimula na AI ang sumulat ng mga tanong, na mga tao sa iyong kumpanya ang nagre-review ng resulta at nagdedesisyon, at na puwede silang humingi ng review.
 - **Walang protected characteristics.** Hindi kailanman nagtatanong, nanghihinuha o nag-iimbak ang testee ng kasarian, etnisidad, edad, kapansanan o iba pang protected characteristics ng mga aplikante.

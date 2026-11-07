@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # HackerRanki alternatiivid ja täiendused tehniliste teadmiste testimiseks
 
-HackerRank on arendajate värbamise platvorm. 2026. aasta novembri seisuga kirjeldab selle veebileht kodus tehtavaid eelvaliku teste, reaalajas paarisprogrammeerimise intervjuusid ühises programmeerimiskeskkonnas ja AI-intervjueerijat, kes annab päriselulise ülesande ([hackerrank.com](https://www.hackerrank.com/)). Kui vajad, et kandidaadid koodi kirjutaksid ja käivitaksid, on selline platvorm just selleks loodud.
+HackerRank on arendajate värbamise platvorm. 2026. aasta novembri seisuga kirjeldab selle veebileht eelvaliku teste, reaalajas paarisprogrammeerimise intervjuusid ühises programmeerimiskeskkonnas ja AI-intervjueerijat, kes annab päriselulise ülesande ([hackerrank.com](https://www.hackerrank.com/)). Kui vajad, et kandidaadid koodi kirjutaksid ja käivitaksid, on selline platvorm just selleks loodud.
 
 testee ei asenda seda. See teeb teist tööd: ajapiiranguga valikvastustega test selle kohta, mida kandidaat teab, kirjutatud sinu töökuulutuse põhjal ja koos koodi lugemise küsimustega. Need kaks sobivad hästi kokku. Levinud lahendus on testee kiire teadmiste kontrollina igale kandideerijale ja seejärel arendajate platvormi programmeerimistest või reaalajas kodeerimisintervjuu neile, kes selle läbivad. testee katab ka teised rollid, mida samas kvartalis värbad, näiteks kliendihalduri, raamatupidaja või klienditoe spetsialisti.
 

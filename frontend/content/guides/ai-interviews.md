@@ -36,7 +36,7 @@ In this model, AI does the writing work: it reads the job description, proposes 
 testee uses AI to write a skills interview from your job description. People stay in control of what is tested and of every decision.
 
 1. **AI reads your job description** and picks out what a candidate must know: the requirements, the level and a set of topics with subtopics.
-2. **You review the topics.** Keep, uncheck, rename or edit them, or tell the AI in plain text what to change. No question is written until you approve.
+2. **You review the topics.** Keep, uncheck, rename or edit them, or tell the AI in plain text what to change. No question is written until you approve. The exception is an interview your own platform creates through the API once your company has topped up: it goes straight on from the proposed topics.
 3. **AI writes the questions.** Each topic gets a bank of multiple-choice questions with four options each: most have one correct option and three plausible wrong ones, and about 1 in 10 are "select all that apply", with 2 or 3 correct options. For technical topics, many questions show a short code example and ask what it outputs, what it does, why it fails or which change fixes it. You can open every question and its options, and re-generate any you don't like.
 4. **Candidates answer timed questions.** Each candidate gets their own random set from each topic's bank, in their own order, with a countdown on every question. By default they tap their answers; in voice mode, Mira, testee's AI interviewer, reads each question aloud and the candidate says or taps an answer.
 5. **Answers are marked against an answer key.** AI writes the keys. A sample of each topic's keys is checked before release, and the rest when a question is flagged. Marking itself follows fixed rules, and no AI judges a candidate's answer. In voice mode, AI only turns speech into text and matches it to an option. If a key is corrected later, the fix applies to candidates who start after it; past results don't change. Speed, page leaves and copy attempts are shown to you as signals; they don't change the score.
@@ -90,7 +90,7 @@ The dates and the details are in [Is AI hiring legal in the EU?](/guides/is-ai-h
 
 ### GDPR
 
-Interview results are personal data, under the EU GDPR and the UK GDPR alike. Expect a data processing agreement, a candidate notice, limited retention and a way for candidates to access or delete their data. [Article 22](https://gdpr-info.eu/art-22-gdpr/) also limits decisions based solely on automated processing that significantly affect people, so have a person review results before acting on them. testee is hosted in the EU (some sub-processors are in the US; see the [privacy policy](/privacy)), deletes candidate data 12 months after the invite, and includes a data processing agreement and instructions for companies.
+Interview results are personal data, under the EU GDPR and the UK GDPR alike. Expect a data processing agreement, a candidate notice, limited retention and a way for candidates to access or delete their data. [Article 22](https://gdpr-info.eu/art-22-gdpr/) (in the UK, Articles 22A to 22D since 5 February 2026) also limits decisions based solely on automated processing that significantly affect people, so have a person review results before acting on them. testee is hosted in the EU (some sub-processors are in the US; see the [privacy policy](/privacy)), deletes candidate data 12 months after the invite, and includes a data processing agreement and instructions for companies.
 
 ### United States
 

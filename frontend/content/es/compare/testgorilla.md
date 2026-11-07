@@ -46,7 +46,7 @@ La diferencia práctica: una prueba de catálogo es fija y se ha usado muchas ve
 
 ## Cómo funcionan los precios
 
-**TestGorilla** ofrece un plan gratuito con 10 créditos al mes y planes de pago con precios de facturación anual, con más funciones en los planes superiores. Los créditos se gastan cuando un candidato empieza una evaluación, y cada prueba o entrevista con IA que incluye usa los suyos. Consulta su [página de precios](https://www.testgorilla.com/pricing/) para ver los planes y precios actuales.
+**TestGorilla** ofrece un plan gratuito con 10 créditos al mes y planes de pago con precios de facturación anual, con más funciones en los planes superiores. Los créditos se gastan cuando un candidato empieza una evaluación, y cada prueba o entrevista con IA que incluye usa los suyos. Las 5 pruebas de habilidades esenciales del plan gratuito no usan ninguno. Consulta su [página de precios](https://www.testgorilla.com/pricing/) para ver los planes y precios actuales.
 
 **testee** cobra por candidato:
 

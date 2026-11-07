@@ -418,7 +418,8 @@
     "tips": [
       "Kredit kandidat dicadangkan saat ia diundang, dipotong setelah ia menjawab, dan dikembalikan jika tidak.",
       "Hanya pemilik dan admin yang bisa melihat halaman ini.",
-      "Kamu bisa mengembalikan dana kredit yang dibeli dalam 14 hari terakhir dan belum terpakai dari baris isi ulang itu di riwayat, lewat Paddle, atau dengan menulis kepada kami. Kredit yang dicadangkan untuk kandidat tidak bisa dikembalikan selama masih dicadangkan."
+      "Kamu bisa mengembalikan dana kredit yang dibeli dalam 14 hari terakhir dan belum terpakai dari baris isi ulang itu di riwayat, lewat Paddle, atau dengan menulis kepada kami. Kredit yang dicadangkan untuk kandidat tidak bisa dikembalikan selama masih dicadangkan; kredit yang dicadangkan dalam 14 hari itu dan dikembalikan sesudahnya tetap bisa dikembalikan dananya selama 7 hari.",
+      "Kredit gratis dihitung terpakai lebih dulu, dan sisa yang belum terpakai dihitung lebih dulu sebagai milik isi ulang terbaru. Pengembalian dana isi ulang yang menghasilkan hadiah referal menarik kembali hadiah itu dari kedua perusahaan. Pemilik dan admin tahu apakah Paddle menyetujuinya di ikon lonceng, lewat email, dan, jika tidak dimatikan, di Slack."
     ]
   },
   "topUp": {
@@ -426,7 +427,7 @@
     "text": "Beli kredit untuk perusahaan mana pun tempat kamu menjadi pemilik atau admin.",
     "actions": [
       "Pilih perusahaan, lalu ketik berapa kandidat yang akan diisi ulang, dari 10 hingga 1.000, atau pilih tingkat harga: isi ulang yang lebih besar lebih murah per kandidat.",
-      "Ubah mata uang perusahaan di bagian atas halaman: isi ulangnya, termasuk yang otomatis, dihargai dan ditagih dalam mata uang itu sejak saat itu. Jika kamu mengubah mata uang perusahaan saat isi ulang otomatis menyala, kamu akan melihat kedua jumlah untuk dikonfirmasi lebih dulu, dan pemilik serta admin perusahaan menerima email.",
+      "Ubah mata uang perusahaan di bagian atas halaman: isi ulangnya, termasuk yang otomatis, dihargai dan ditagih dalam mata uang itu sejak saat itu. Jika kamu mengubah mata uang perusahaan saat isi ulang otomatis menyala atau dijeda, kamu akan melihat kedua jumlah untuk dikonfirmasi lebih dulu; jumlah baru langsung berlaku, dan pemilik serta admin perusahaan diberi tahu di ikon lonceng dan lewat email.",
       "Bayar di halaman pembayaran Paddle; kredit masuk dalam hitungan detik.",
       "Buka harga untuk membandingkan paket isi ulang.",
       "Siapkan isi ulang otomatis: pilih jumlah dan saldo, lalu centang persetujuan. Kartumu disimpan di checkout Paddle dan ditagih setiap kali saldo turun di bawah level itu."

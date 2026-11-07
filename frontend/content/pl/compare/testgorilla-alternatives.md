@@ -32,7 +32,7 @@ Następnie porównaj model cenowy ze swoim wolumenem rekrutacji. Plan sprawdza s
 | **HackerRank** | Testy programistyczne i rozmowy techniczne | Plany Starter i Pro z rocznym limitem podejść oraz indywidualne plany Enterprise ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [strona z cenami](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Preselekcja na stanowiska techniczne i związane z danymi | Plany miesięczne lub roczne z kredytami ([strona z cenami](https://www.alooba.com/pricing/)) |
 | **Bryq** | Oceny zdolności poznawczych, osobowości i umiejętności | Plany miesięczne lub roczne ([strona z cenami](https://www.bryq.com/pricing)) |
-| **Codility** | Ocena umiejętności programistycznych | Plany miesięczne lub roczne z kredytami na zaproszenia ([strona z cenami](https://www.codility.com/pricing/)) |
+| **Codility** | Ocena umiejętności programistycznych | Plany miesięczne lub roczne z pakietami zaproszeń ([strona z cenami](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Testy psychometryczne i poznawcze | Zobacz stronę każdego dostawcy |
 
 ## Narzędzia bardziej szczegółowo

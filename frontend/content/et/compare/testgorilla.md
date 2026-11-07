@@ -46,7 +46,7 @@ Praktiline erinevus: valmis test on muutumatu ja seda on kasutatud palju kordi, 
 
 ## Kuidas hinnastus toimib
 
-**TestGorilla** pakub tasuta paketti 10 krediidiga kuus ja aastase arvelduse hindadega tasulisi pakette, kõrgemates pakettides on rohkem funktsioone. Krediite kulub, kui kandidaat hindamist alustab, ja iga selles olev test või AI-intervjuu kasutab omi. Kehtivad paketid ja hinnad leiad selle [hinnalehelt](https://www.testgorilla.com/pricing/).
+**TestGorilla** pakub tasuta paketti 10 krediidiga kuus ja aastase arvelduse hindadega tasulisi pakette, kõrgemates pakettides on rohkem funktsioone. Krediite kulub, kui kandidaat hindamist alustab, ja iga selles olev test või AI-intervjuu kasutab omi. Tasuta paketi 5 põhioskuste testi krediite ei kasuta. Kehtivad paketid ja hinnad leiad selle [hinnalehelt](https://www.testgorilla.com/pricing/).
 
 **testee** võtab tasu kandidaadi kohta:
 

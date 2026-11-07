@@ -418,7 +418,8 @@
     "tips": [
       "De credits van een kandidaat worden gereserveerd bij de uitnodiging, afgeschreven zodra die antwoordt en teruggegeven als dat niet gebeurt.",
       "Alleen eigenaren en beheerders zien deze pagina.",
-      "Je kunt credits die je in de afgelopen 14 dagen hebt gekocht en niet hebt gebruikt, laten terugbetalen via de regel van de opwaardering in de geschiedenis, via Paddle of door ons te schrijven. Credits die voor kandidaten zijn gereserveerd, kunnen niet worden terugbetaald zolang ze gereserveerd zijn."
+      "Je kunt credits die je in de afgelopen 14 dagen hebt gekocht en niet hebt gebruikt, laten terugbetalen via de regel van de opwaardering in de geschiedenis, via Paddle of door ons te schrijven. Credits die voor kandidaten zijn gereserveerd, kunnen niet worden terugbetaald zolang ze gereserveerd zijn; gereserveerd binnen de 14 dagen en daarna teruggegeven, blijven ze 7 dagen terugbetaalbaar.",
+      "Gratis credits tellen als eerst gebruikt, en wat niet is gebruikt telt als eerst afkomstig van de nieuwste opwaardering. Een terugbetaling van een opwaardering die een doorverwijsbeloning opleverde, neemt die beloning bij beide bedrijven terug. Eigenaren en beheerders horen bij het belletje, per e-mail en, tenzij uitgeschakeld, in Slack of Paddle die heeft goedgekeurd."
     ]
   },
   "topUp": {
@@ -426,7 +427,7 @@
     "text": "Koop credits voor elk bedrijf waarvan je eigenaar of beheerder bent.",
     "actions": [
       "Kies een bedrijf en typ daarna voor hoeveel kandidaten je wilt opwaarderen, van 10 tot 1.000, of kies een prijstrede: grotere opwaarderingen kosten minder per kandidaat.",
-      "Wijzig de valuta van het bedrijf bovenaan de pagina: zijn opwaarderingen, ook de automatische, worden vanaf dan daarin geprijsd en afgeschreven. Wijzig je die terwijl automatisch opwaarderen loopt, dan zie je eerst beide bedragen om te bevestigen, en krijgen de eigenaren en beheerders van het bedrijf een e-mail.",
+      "Wijzig de valuta van het bedrijf bovenaan de pagina: zijn opwaarderingen, ook de automatische, worden vanaf dan daarin geprijsd en afgeschreven. Wijzig je die terwijl automatisch opwaarderen loopt of gepauzeerd is, dan zie je eerst beide bedragen om te bevestigen; het nieuwe bedrag geldt meteen, en de eigenaren en beheerders van het bedrijf krijgen bericht bij het belletje en per e-mail.",
       "Betaal op de betaalpagina van Paddle; de credits staan er binnen enkele seconden.",
       "Open de prijzen om de opwaarderingen te vergelijken.",
       "Stel automatisch opwaarderen in: kies een bedrag en een saldo en vink de overeenkomst aan. Je kaart wordt opgeslagen in de Paddle-checkout en belast telkens als het saldo onder dat niveau zakt."

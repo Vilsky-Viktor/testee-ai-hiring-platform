@@ -108,7 +108,7 @@ testee menjalankan wawancara keterampilan pilihan ganda berbatas waktu yang ditu
 Seperti apa wujudnya di produk saat ini:
 
 - **AI menulis soal dan kunci jawabannya; penilaian mengikuti aturan tetap.** Tidak ada AI yang menilai jawaban kandidat, dan tidak ada analisis video atau wajah. Dalam mode suara, ucapan diubah menjadi teks dan dicocokkan dengan sebuah pilihan, yang disebutkan kepada kandidat dan ditampilkan di layar: satu pilihan yang disebut dengan jelas langsung dicatat, sedangkan jawaban dengan beberapa pilihan dikonfirmasi lebih dulu. testee tidak pernah menyimpan ucapan, dan suaranya tidak pernah dianalisis.
-- **Kamu menyetujui topiknya** sebelum ada soal yang ditulis, dan kamu yang memilih nilai lulus.
+- **Kamu menyetujui topiknya** sebelum ada soal yang ditulis, dan kamu yang memilih nilai lulus. Pengecualiannya adalah wawancara yang dibuat platformmu sendiri lewat API setelah perusahaanmu mengisi ulang: wawancara itu langsung berlanjut dari topik yang diusulkan.
 - **Manusia yang memutuskan.** Halaman hasil dan laporan PDF mengingatkan timmu untuk meninjau hasil; testee tidak menolak kandidat atau mengirim pesan penolakan.
 - **Kandidat diberi tahu** sebelum mulai bahwa soal ditulis oleh AI, bahwa orang di perusahaanmu yang meninjau hasil dan memutuskan, dan bahwa mereka bisa meminta peninjauan.
 - **Tanpa karakteristik yang dilindungi.** testee tidak pernah menanyakan, menyimpulkan, atau menyimpan jenis kelamin, etnis, usia, disabilitas, atau karakteristik lain yang dilindungi milik kandidat.

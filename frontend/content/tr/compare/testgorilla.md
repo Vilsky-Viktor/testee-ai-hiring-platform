@@ -46,7 +46,7 @@ Pratikteki fark şu: kütüphane testi sabittir ve defalarca kullanılmıştır,
 
 ## Fiyatlandırma nasıl işler
 
-**TestGorilla**, ayda 10 kredili ücretsiz bir plan ve fiyatları yıllık faturalandırmaya göre verilen ücretli planlar sunar; üst planlarda daha fazla özellik vardır. Krediler aday bir değerlendirmeye başladığında harcanır ve içindeki her test veya yapay zekâ mülakatı kendi kredisini kullanır. Güncel planlar ve fiyatlar için [fiyat sayfasına](https://www.testgorilla.com/pricing/) bakın.
+**TestGorilla**, ayda 10 kredili ücretsiz bir plan ve fiyatları yıllık faturalandırmaya göre verilen ücretli planlar sunar; üst planlarda daha fazla özellik vardır. Krediler aday bir değerlendirmeye başladığında harcanır ve içindeki her test veya yapay zekâ mülakatı kendi kredisini kullanır. Ücretsiz plandaki 5 temel beceri testi kredi kullanmaz. Güncel planlar ve fiyatlar için [fiyat sayfasına](https://www.testgorilla.com/pricing/) bakın.
 
 **testee** aday başına ücret alır:
 

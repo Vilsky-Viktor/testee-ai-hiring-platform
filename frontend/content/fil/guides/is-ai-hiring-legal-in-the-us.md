@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Legal ba ang AI hiring sa US? Ang dapat malaman ng mga employer
 
-Sa pangkalahatan, oo: legal ang paggamit ng AI sa hiring sa US. Walang federal AI law para sa hiring. Sa halip, nalalapat ang federal anti-discrimination law sa AI tools gaya ng sa anumang test, at may ilang lugar na nagdadagdag ng sarili nilang patakaran: New York City, Illinois, Colorado, California, New Jersey at Texas. Nagtatag ang isang executive order noong Disyembre 2025 ng task force ng Justice Department para hamunin ang mga AI law ng mga estado ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), pero hindi sila pinapawalang-bisa ng isang order: nalalapat ang mga ito hangga't walang ibang sinasabi ang Kongreso o ang isang korte.
+Sa pangkalahatan, oo: legal ang paggamit ng AI sa hiring sa US. Walang federal AI law para sa hiring. Sa halip, nalalapat ang federal anti-discrimination law sa AI tools gaya ng sa anumang test, at may ilang lugar na nagdadagdag ng sarili nilang patakaran: New York City, Illinois, Colorado, California, New Jersey, Texas at Connecticut. Nagtatag ang isang executive order noong Disyembre 2025 ng task force ng Justice Department para hamunin ang mga AI law ng mga estado ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), pero hindi sila pinapawalang-bisa ng isang order: nalalapat ang mga ito hangga't walang ibang sinasabi ang Kongreso o ang isang korte.
 
 Ipinapaliwanag ng gabay na ito ang mga patakaran sa pangkalahatang antas, ang mahahalagang petsa, ang dapat gawin ng mga employer, at ang paraan ng testee. **Hindi ito legal advice.** Sinasalamin nito ang mga patakaran noong Nobyembre 2026, at bago pa o tinatapos pa ang ilan sa mga ito.
 
@@ -17,7 +17,7 @@ Ipinapaliwanag ng gabay na ito ang mga patakaran sa pangkalahatang antas, ang ma
 | --- | --- |
 | Puwede ba akong gumamit ng AI para mag-screen o mag-evaluate ng mga aplikante? | Oo, ayon sa federal anti-discrimination law at sa mga patakaran ng state at city |
 | Kailangan ko bang i-check ang mga resulta para sa bias? | Ikaw ang may pananagutan sa adverse impact; sa New York City, kailangan ng independent bias audit bago gamitin |
-| Kailangan ko bang sabihan ang mga aplikante? | Sa New York City at Illinois, oo; sa Colorado at California, mula 1 Enero 2027 |
+| Kailangan ko bang sabihan ang mga aplikante? | Sa New York City at Illinois, oo; sa Colorado at California, mula 1 Enero 2027; sa Connecticut, mula 1 Oktubre 2027 |
 | Kailangan ko bang mag-alok ng dagdag na oras? | Sa mga aplikanteng may kapansanan na nangangailangan nito: isa itong reasonable accommodation |
 | Gaano katagal ko dapat itabi ang mga record? | Apat na taon sa California, tatlo sa Colorado |
 | Sino ang gumagawa ng hiring decision? | Isang tao. May human review sa mga patakaran ng Colorado at California, at ito ang pinakaligtas na paraan saanman |
@@ -66,7 +66,7 @@ At dapat nilang sabihan ang mga aplikante kapag ginagamit ang AI sa recruitment 
 
 ## Colorado
 
-Pinawalang-bisa at muling isinabatas ang AI law ng Colorado sa pamamagitan ng SB 26-189, na pinirmahan noong 14 Mayo 2026 at ipapatupad mula 1 Enero 2027. Iminungkahi na ang mga patakaran ng Attorney General (may hearing na itinakda sa 26 Oktubre 2026), hindi pa pinagtibay noong Nobyembre 2026, at inaasahan pagsapit ng pagpapatupad ng batas. Para sa mga deployer ng automated decision-making technology na malaki ang impluwensya sa isang employment decision, ang mga obligasyon ay:
+Pinawalang-bisa at muling isinabatas ang AI law ng Colorado sa pamamagitan ng SB 26-189, na pinirmahan noong 14 Mayo 2026 at ipapatupad mula 1 Enero 2027. Iminungkahi na ang mga patakaran ng Attorney General, hindi pa pinagtibay noong Nobyembre 2026, at inaasahan pagsapit ng pagpapatupad ng batas. Noong Abril 2026, sa isang kasong isinampa ng xAI, ipinatigil ng isang federal court ang pagpapatupad ng lumang batas at ng anumang batas na papalit dito hanggang 14 na araw pagkatapos nitong magpasya sa hiling ng xAI para sa injunction, isang hiling na naghihintay sa mga patakarang iyon. Hindi nagbago ang petsa ng Enero. Para sa mga deployer ng automated decision-making technology na malaki ang impluwensya sa isang employment decision, ang mga obligasyon ay:
 
 - **Abiso bago gamitin** sa aplikante.
 - **Paliwanag sa isang adverse decision,** gaya ng hindi pagkatanggap o hindi pag-usad.
@@ -84,6 +84,13 @@ Pinawalang-bisa at muling isinabatas ang AI law ng Colorado sa pamamagitan ng SB
 - **New Jersey.** Binabanggit ng mga patakaran sa disparate impact sa ilalim ng Law Against Discrimination (N.J.A.C. 13:16), na umiiral mula 15 Disyembre 2025, ang automated employment decision tools kabilang sa mga gawaing maaaring magkaroon ng disparate impact. Ang employer na umaasa sa produkto ng isang vendor ay dapat gumawa ng mga makatwirang hakbang para matiyak na sumusunod ito sa batas, at ang tool na hindi sapat na nasubok bago gamitin ay maaaring magkaroon mismo ng disparate impact.
 - **Texas.** Ipinagbabawal ng Responsible AI Governance Act (HB 149), na umiiral mula 1 Enero 2026, ang AI na ginagamit nang may layuning magdiskrimina nang labag sa batas. Hindi sapat ang disparate impact lang para ipakita ang layuning iyon.
 
+## Connecticut
+
+Ang Public Act 26-15 (SB 5), na pinirmahan noong Mayo 2026, ay may dalawang bahagi para sa mga employer:
+
+- **Mula 1 Oktubre 2026:** hindi depensa sa discrimination claim ang paggamit ng automated employment decision tool. Hindi kailangan ang anti-bias testing, pero puwedeng isaalang-alang ang ebidensya nito.
+- **Simula 1 Oktubre 2027:** sabihin sa mga aplikante sa simpleng salita kapag nakikipag-ugnayan sila sa ganoong tool, maliban kung halata naman, at magbigay ng nakasulat na abiso bago ito gamitin para sa isang desisyon: na ginagamit ito, ang layunin nito at ang uri ng desisyon, ang trade name nito, ang personal data na sinusuri nito at kung paano, kung saan galing ang data, at kung paano ka makokontak.
+
 ## Ang mga petsa
 
 | Petsa | Ano ang nalalapat |
@@ -92,11 +99,13 @@ Pinawalang-bisa at muling isinabatas ang AI law ng Colorado sa pamamagitan ng SB
 | 1 Oktubre 2025 | Mga patakaran ng Civil Rights Council ng California sa automated-decision systems |
 | 15 Disyembre 2025 | Mga patakaran ng New Jersey sa disparate impact |
 | 1 Enero 2026 | Illinois: abiso sa paggamit ng AI, walang discriminatory AI, walang zip codes bilang proxy; Texas: walang AI na ginagamit nang may layuning magdiskrimina |
+| 1 Oktubre 2026 | Connecticut: hindi depensa sa discrimination claim ang automated tool |
 | 1 Enero 2027 | AI law ng Colorado; mga patakaran ng CCPA ng California sa automated decision-making sa employment |
+| 1 Oktubre 2027 | Connecticut: abiso sa mga aplikante |
 
 ## Praktikal na checklist para sa mga employer
 
-1. **Ilista ang mga trabaho at lugar** na pinagha-hire-an mo: New York City, Illinois, Colorado, California, New Jersey, Texas, iba pang lugar sa US.
+1. **Ilista ang mga trabaho at lugar** na pinagha-hire-an mo: New York City, Illinois, Colorado, California, New Jersey, Texas, Connecticut, iba pang lugar sa US.
 2. **I-test lang ang kailangan ng trabaho.** Pumili ng mga topic at passing grade na kaya mong ipagtanggol para sa role.
 3. **I-update ang iyong abiso sa aplikante** para sabihing ginagamit ang AI, paano ginagamit ang mga resulta, at paano humingi ng accommodation at human review. Idagdag ang wording ng Illinois at Colorado kung saan nalalapat.
 4. **Mag-alok ng accommodations,** gaya ng dagdag na oras, at pagkasunduan ang mga ito bago magsimula ang aplikante.
@@ -113,7 +122,7 @@ Nagpapatakbo ang testee ng timed multiple-choice skills interviews na isinulat n
 Ang hitsura nito sa produkto ngayon:
 
 - **AI ang sumusulat ng mga tanong at ng answer keys nito; sumusunod sa nakapirming patakaran ang pagmamarka.** Walang AI na humuhusga sa sagot ng aplikante, at walang video o face analysis. Sa voice mode, ginagawang text ang pananalita at itinutugma sa isang option, na sinasabi sa aplikante at ipinapakita sa screen: agad na itinatala ang iisang option na malinaw na binanggit, at kinukumpirma muna ang pagpili ng ilang option. Hindi kailanman iniimbak ng testee ang pananalita, at hindi kailanman ina-analyze ang boses.
-- **Ikaw ang nag-aapruba ng mga topic** bago maisulat ang kahit isang tanong, at ikaw ang pumipili ng passing grade.
+- **Ikaw ang nag-aapruba ng mga topic** bago maisulat ang kahit isang tanong, at ikaw ang pumipili ng passing grade. Ang eksepsyon ay interview na ginawa ng sarili mong platform sa pamamagitan ng API kapag nakapag-top up na ang kumpanya mo: diretso itong nagpapatuloy mula sa mga iminungkahing topic.
 - **Tao ang nagdedesisyon.** Hindi nagre-reject ng aplikante o nagpapadala ng rejection message ang testee.
 - **Walang protected characteristics.** Hindi kailanman nagtatanong, nanghihinuha o nag-iimbak ang testee ng kasarian, lahi, edad, kapansanan, zip code o iba pang protected characteristics ng mga aplikante.
 - **Bias audit export.** Sa Log ng aksyon page ng kumpanya, puwedeng mag-download ang owner ng CSV file ng mga aplikanteng natapos, para sa buong kumpanya o sa isang interview at sa pagitan ng dalawang petsa: ang grade ng bawat aplikante, ang passing grade, kung pumasa siya at kung lampas sa median ng interview ang score niya. Naka-key ang bawat row sa email ng aplikante, para mapagsama mo ito sa self-reported categories na ikaw mismo ang nangolekta; saka tanggalin ang email column at ibigay ang file sa iyong independent auditor, na magkukuwenta ng selection at scoring rates at ng impact ratios. Sa parehong file, puwede mong gawin mismo ang four-fifths check.
@@ -139,7 +148,8 @@ Ang hitsura nito sa produkto ngayon:
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 at 6 RCNY §5-300 at mga kasunod; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) at ang FAQ nito.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), ayon sa pagbabago ng Public Act 103-0804.
-- Colorado SB 26-189.
+- Colorado SB 26-189; *xAI v. Weiser* (D. Colo., No. 1:26-cv-01515), [stay noong 27 Abril 2026](https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/).
 - California Code of Regulations, title 2, §11013(c); mga regulation ng California Consumer Privacy Act sa automated decision-making technology; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
 - New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) tungkol sa mga vendor, §13:16-3.2(c) tungkol sa automated tools), kasama ang [buod ng Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).
+- Connecticut Public Act 26-15, ayon sa buod ng [Cooley](https://cooley.com/news/insight/2026/2026-11-03-connecticuts-ai-rules-take-shape-what-employers-and-developers-need-to-know), Nobyembre 2026.

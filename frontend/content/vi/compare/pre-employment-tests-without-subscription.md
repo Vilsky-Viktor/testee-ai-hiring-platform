@@ -35,7 +35,7 @@ Trang này giải thích các lựa chọn thay cho gói đăng ký, chúng so v
 | **CodeSignal** | Gói kèm credit ([trang bảng giá](https://codesignal.com/pricing/)) | Theo tháng hoặc theo năm |
 | **Bryq** | Gói với số lời mời không giới hạn ([trang bảng giá](https://www.bryq.com/pricing)) | Theo tháng hoặc theo năm |
 | **Alooba** | Gói kèm credit hằng tháng ([trang bảng giá](https://www.alooba.com/pricing/)) | Theo tháng hoặc theo năm; credit hết hạn vào cuối mỗi kỳ thanh toán; gói Enterprise tối thiểu 1 năm |
-| **Codility** | Gói theo tháng hoặc theo năm kèm credit lời mời ([trang bảng giá](https://www.codility.com/pricing/)) | Theo tháng hoặc theo năm |
+| **Codility** | Gói theo tháng hoặc theo năm kèm gói lời mời ([trang bảng giá](https://www.codility.com/pricing/)) | Theo tháng hoặc theo năm |
 
 Một số công cụ trên có thanh toán theo tháng, không phải hợp đồng dài hạn nhưng vẫn là phí định kỳ. Nếu bạn chỉ thỉnh thoảng mới tuyển, hãy nhớ hủy giữa các đợt tuyển dụng.
 

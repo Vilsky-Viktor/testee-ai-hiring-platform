@@ -44,6 +44,7 @@ Así que una herramienta que da a cada candidato una puntuación y una posición
 | --- | --- |
 | 2 de febrero de 2025 | Prácticas prohibidas (artículo 5) y alfabetización en materia de IA (artículo 4) |
 | 2 de agosto de 2026 | La mayor parte de las normas restantes, incluida la transparencia para algunos sistemas de IA (artículo 50) |
+| 2 de diciembre de 2026 | Marcado del contenido generado por IA como tal (artículo 50(2)), para sistemas en el mercado antes del 2 de agosto de 2026 |
 | 2 de diciembre de 2027 | Obligaciones de alto riesgo para los sistemas del anexo III, incluidas las herramientas de selección de personal |
 | 2 de agosto de 2028 | Obligaciones de alto riesgo para la IA en productos cubiertos por el anexo I |
 
@@ -118,8 +119,9 @@ testee ofrece entrevistas de habilidades de opción múltiple con tiempo límite
 Cómo se refleja hoy en el producto:
 
 - **La IA redacta las preguntas y sus claves de respuestas; la corrección sigue reglas fijas.** Ninguna IA juzga la respuesta de un candidato, y no se analiza video ni rostros. En el modo de voz, el habla se convierte en texto y se asocia a una opción, que se le dice al candidato y se muestra en pantalla: una sola opción nombrada con claridad se registra al instante, y una elección de varias opciones se confirma primero. testee nunca guarda el habla, y la voz nunca se analiza. Si la IA corrige una clave más adelante, la corrección se aplica a los candidatos que empiecen después; los resultados anteriores no cambian.
-- **Tú apruebas los temas** antes de que se redacte ninguna pregunta, y puedes ver todas las preguntas.
+- **Tú apruebas los temas** antes de que se redacte ninguna pregunta, y puedes ver todas las preguntas. La excepción es una entrevista que tu propia plataforma crea a través de la API una vez que tu empresa ha recargado créditos: continúa directamente a partir de los temas propuestos.
 - **Deciden las personas.** La página de resultados y los informes en PDF recuerdan a tu equipo que revise los resultados; testee no rechaza candidatos ni envía mensajes de rechazo.
+- **Marcas de IA.** Las preguntas, las opciones de respuesta, las respuestas de Mira y los clips de voz llevan una marca legible por software que indica que los generó la IA, y los clips de voz llevan además la marca de agua inaudible de OpenAI. La [página de confianza](/trust) explica cómo comprobarlas. El texto copiado de una página no conserva su marca.
 - **Se informa a los candidatos** antes de empezar de que las preguntas las redacta la IA, de que personas de tu empresa revisan los resultados y deciden, y de que pueden pedir una revisión.
 - **Tiempo extra** para cualquier candidato que lo pida.
 - **Registros.** Se registran las preguntas mostradas, las respuestas, los tiempos y los eventos de integridad.

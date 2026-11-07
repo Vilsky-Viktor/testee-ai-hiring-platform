@@ -46,7 +46,7 @@ Perbedaan praktisnya: tes dari pustaka bersifat tetap dan sudah dipakai berkali-
 
 ## Cara harganya bekerja
 
-**TestGorilla** menawarkan paket gratis dengan 10 kredit per bulan dan paket berbayar dengan harga untuk penagihan tahunan, dengan fitur lebih banyak di paket yang lebih tinggi. Kredit terpakai saat kandidat memulai asesmen, dan setiap tes atau wawancara AI di dalamnya memakai kreditnya sendiri. Lihat [halaman harga](https://www.testgorilla.com/pricing/)-nya untuk paket dan harga terbaru.
+**TestGorilla** menawarkan paket gratis dengan 10 kredit per bulan dan paket berbayar dengan harga untuk penagihan tahunan, dengan fitur lebih banyak di paket yang lebih tinggi. Kredit terpakai saat kandidat memulai asesmen, dan setiap tes atau wawancara AI di dalamnya memakai kreditnya sendiri. Paket gratis juga punya 5 tes keterampilan esensial yang tidak memakai kredit. Lihat [halaman harga](https://www.testgorilla.com/pricing/)-nya untuk paket dan harga terbaru.
 
 **testee** mengenakan biaya per kandidat:
 

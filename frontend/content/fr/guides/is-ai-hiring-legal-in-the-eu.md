@@ -44,6 +44,7 @@ Un outil qui attribue à chaque candidat un score et un rang est donc très prob
 | --- | --- |
 | 2 février 2025 | Pratiques interdites (article 5) et maîtrise de l'IA (article 4) |
 | 2 août 2026 | La plupart des autres règles, dont la transparence pour certains systèmes d'IA (article 50) |
+| 2 décembre 2026 | Marquage du contenu généré par l'IA comme tel (article 50(2)), pour les systèmes mis sur le marché avant le 2 août 2026 |
 | 2 décembre 2027 | Obligations relatives au haut risque pour les systèmes de l'annexe III, dont les outils de recrutement |
 | 2 août 2028 | Obligations relatives au haut risque pour l'IA intégrée aux produits relevant de l'annexe I |
 
@@ -118,8 +119,9 @@ testee fait passer des entretiens de compétences chronométrés à choix multip
 Ce que cela donne aujourd'hui dans le produit :
 
 - **L'IA rédige les questions et leurs corrigés ; la notation suit des règles fixes.** Aucune IA ne juge la réponse d'un candidat, et aucune analyse vidéo ou faciale n'est utilisée. En mode vocal, la parole est transcrite en texte et associée à une option, annoncée au candidat et affichée à l'écran : une seule option clairement nommée est enregistrée aussitôt, un choix de plusieurs options est d'abord confirmé. testee ne conserve jamais la parole, et la voix n'est jamais analysée. Si l'IA rectifie un corrigé par la suite, la rectification s'applique aux candidats qui commencent après elle ; les résultats passés ne changent pas.
-- **Vous validez les thèmes** avant qu'une question ne soit rédigée, et vous pouvez voir chaque question.
+- **Vous validez les thèmes** avant qu'une question ne soit rédigée, et vous pouvez voir chaque question. L'exception est un entretien que votre propre plateforme crée via l'API une fois que votre entreprise a rechargé des crédits : il se poursuit directement à partir des thèmes proposés.
 - **Des personnes décident.** La page de résultats et les rapports PDF rappellent à votre équipe d'examiner les résultats ; testee ne rejette pas de candidats et n'envoie pas de messages de refus.
+- **Marquage IA.** Les questions, les options de réponse, les réponses de Mira et les clips vocaux sont marqués comme générés par l'IA sous une forme lisible par un logiciel, et les clips vocaux portent aussi le filigrane inaudible d'OpenAI. La [page confiance](/trust) explique comment les vérifier. Un texte copié depuis une page ne garde pas sa marque.
 - **Les candidats sont informés** avant de commencer que les questions sont rédigées par l'IA, que des personnes de votre entreprise examinent les résultats et décident, et qu'ils peuvent demander un réexamen.
 - **Du temps supplémentaire** peut être accordé à tout candidat qui le demande.
 - **Traçabilité.** Les questions affichées, les réponses, les temps et les événements d'intégrité sont enregistrés.

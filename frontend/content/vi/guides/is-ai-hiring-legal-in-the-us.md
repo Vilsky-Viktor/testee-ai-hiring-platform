@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Dùng AI trong tuyển dụng có hợp pháp ở Mỹ không? Những điều nhà tuyển dụng cần biết
 
-Nói chung là có: dùng AI trong tuyển dụng là hợp pháp ở Mỹ. Không có luật liên bang nào về AI trong tuyển dụng. Thay vào đó, luật chống phân biệt đối xử liên bang áp dụng cho công cụ AI như với mọi bài kiểm tra khác, và một vài nơi bổ sung quy định riêng: Thành phố New York, Illinois, Colorado, California, New Jersey và Texas. Một sắc lệnh hành pháp tháng 12/2025 đã lập một tổ công tác của Bộ Tư pháp để phản đối các luật AI của tiểu bang ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), nhưng sắc lệnh không bãi bỏ các luật đó: chúng vẫn áp dụng cho đến khi Quốc hội hoặc tòa án quyết định khác.
+Nói chung là có: dùng AI trong tuyển dụng là hợp pháp ở Mỹ. Không có luật liên bang nào về AI trong tuyển dụng. Thay vào đó, luật chống phân biệt đối xử liên bang áp dụng cho công cụ AI như với mọi bài kiểm tra khác, và một vài nơi bổ sung quy định riêng: Thành phố New York, Illinois, Colorado, California, New Jersey, Texas và Connecticut. Một sắc lệnh hành pháp tháng 12/2025 đã lập một tổ công tác của Bộ Tư pháp để phản đối các luật AI của tiểu bang ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), nhưng sắc lệnh không bãi bỏ các luật đó: chúng vẫn áp dụng cho đến khi Quốc hội hoặc tòa án quyết định khác.
 
 Hướng dẫn này giải thích các quy định ở mức tổng quan, các mốc thời gian quan trọng, những gì bên tuyển dụng phải làm, và cách testee tiếp cận vấn đề. **Đây không phải tư vấn pháp lý.** Nội dung phản ánh các quy định tính đến tháng 11/2026, một số trong đó còn mới hoặc vẫn đang được hoàn thiện.
 
@@ -17,7 +17,7 @@ Hướng dẫn này giải thích các quy định ở mức tổng quan, các m
 | --- | --- |
 | Tôi có thể dùng AI để sàng lọc hoặc đánh giá ứng viên không? | Có, trong khuôn khổ luật chống phân biệt đối xử liên bang và quy định của tiểu bang, thành phố |
 | Tôi có phải kiểm tra thiên lệch trong kết quả không? | Tác động bất lợi là trách nhiệm của bạn; ở Thành phố New York, bắt buộc có kiểm toán thiên lệch độc lập trước khi sử dụng |
-| Tôi có phải thông báo cho ứng viên không? | Ở Thành phố New York và Illinois thì có; ở Colorado và California thì từ ngày 1/1/2027 |
+| Tôi có phải thông báo cho ứng viên không? | Ở Thành phố New York và Illinois thì có; ở Colorado và California thì từ ngày 1/1/2027; ở Connecticut thì từ ngày 1/10/2027 |
 | Tôi có phải cho thêm thời gian không? | Cho ứng viên khuyết tật cần đến nó: đó là một điều chỉnh hợp lý |
 | Tôi phải lưu hồ sơ bao lâu? | Bốn năm ở California, ba năm ở Colorado |
 | Ai đưa ra quyết định tuyển dụng? | Con người. Quy định của Colorado và California có khâu con người xem xét, và đó là cách an toàn nhất ở mọi nơi |
@@ -66,7 +66,7 @@ Và họ phải cho ứng viên biết khi AI được dùng trong các quyết 
 
 ## Colorado
 
-Luật AI của Colorado đã bị bãi bỏ và ban hành lại bằng SB 26-189, được ký ngày 14/5/2026 và có hiệu lực từ ngày 1/1/2027. Các quy định của Tổng chưởng lý đang ở dạng đề xuất (một phiên điều trần được ấn định vào ngày 26/10/2026), chưa được thông qua tính đến tháng 11/2026, và dự kiến ban hành chậm nhất vào ngày luật có hiệu lực. Với bên triển khai (deployer) công nghệ ra quyết định tự động có ảnh hưởng đáng kể đến một quyết định việc làm, nghĩa vụ là:
+Luật AI của Colorado đã bị bãi bỏ và ban hành lại bằng SB 26-189, được ký ngày 14/5/2026 và có hiệu lực từ ngày 1/1/2027. Các quy định của Tổng chưởng lý đang ở dạng đề xuất, chưa được thông qua tính đến tháng 11/2026, và dự kiến ban hành chậm nhất vào ngày luật có hiệu lực. Tháng 4/2026, trong vụ kiện do xAI khởi kiện, một tòa án liên bang đã tạm dừng việc thực thi luật cũ và mọi luật thay thế nó cho đến 14 ngày sau khi tòa ra phán quyết về yêu cầu lệnh cấm của xAI, một yêu cầu đang chờ các quy định đó. Bản thân mốc tháng 1 không thay đổi. Với bên triển khai (deployer) công nghệ ra quyết định tự động có ảnh hưởng đáng kể đến một quyết định việc làm, nghĩa vụ là:
 
 - **Thông báo trước khi sử dụng** cho ứng viên.
 - **Giải thích một quyết định bất lợi,** như không được tuyển hoặc không được đi tiếp.
@@ -84,6 +84,13 @@ Luật AI của Colorado đã bị bãi bỏ và ban hành lại bằng SB 26-18
 - **New Jersey.** Các quy định về tác động khác biệt theo Law Against Discrimination (N.J.A.C. 13:16), có hiệu lực từ ngày 15/12/2025, nêu các công cụ ra quyết định tuyển dụng tự động trong số các hoạt động có thể gây tác động khác biệt. Bên tuyển dụng dựa vào sản phẩm của nhà cung cấp phải thực hiện các bước hợp lý để bảo đảm sản phẩm đó phù hợp với pháp luật, và một công cụ không được kiểm tra đầy đủ trước khi sử dụng tự nó có thể gây tác động khác biệt.
 - **Texas.** Responsible AI Governance Act (HB 149), có hiệu lực từ ngày 1/1/2026, cấm AI được dùng với ý định phân biệt đối xử trái pháp luật. Chỉ riêng tác động khác biệt không chứng minh được ý định đó.
 
+## Connecticut
+
+Public Act 26-15 (SB 5), được ký tháng 5/2026, có hai phần dành cho bên tuyển dụng:
+
+- **Từ ngày 1/10/2026:** việc dùng công cụ ra quyết định tuyển dụng tự động không phải là lý do bào chữa trước khiếu nại phân biệt đối xử. Không bắt buộc kiểm tra chống thiên lệch, nhưng bằng chứng về việc này có thể được xem xét.
+- **Từ ngày 1/10/2027:** cho ứng viên biết bằng ngôn ngữ dễ hiểu khi họ đang tương tác với công cụ như vậy, trừ khi điều đó đã rõ ràng, và gửi thông báo bằng văn bản trước khi dùng công cụ cho một quyết định: rằng công cụ được sử dụng, mục đích và loại quyết định, tên thương mại, dữ liệu cá nhân mà công cụ phân tích và cách phân tích, nguồn của dữ liệu, và cách liên hệ với bạn.
+
 ## Các mốc thời gian
 
 | Ngày | Điều gì áp dụng |
@@ -92,11 +99,13 @@ Luật AI của Colorado đã bị bãi bỏ và ban hành lại bằng SB 26-18
 | 1/10/2025 | Quy định của Civil Rights Council California về hệ thống ra quyết định tự động |
 | 15/12/2025 | Quy định của New Jersey về tác động khác biệt |
 | 1/1/2026 | Illinois: thông báo việc dùng AI, cấm AI phân biệt đối xử, cấm dùng mã bưu chính làm yếu tố thay thế; Texas: cấm AI được dùng với ý định phân biệt đối xử |
+| 1/10/2026 | Connecticut: công cụ tự động không phải là lý do bào chữa trước khiếu nại phân biệt đối xử |
 | 1/1/2027 | Luật AI của Colorado; quy định CCPA của California về ra quyết định tự động trong việc làm |
+| 1/10/2027 | Connecticut: thông báo cho ứng viên |
 
 ## Danh sách việc cần làm cho bên tuyển dụng
 
-1. **Liệt kê các vị trí và nơi** bạn tuyển dụng: Thành phố New York, Illinois, Colorado, California, New Jersey, Texas, các nơi khác ở Mỹ.
+1. **Liệt kê các vị trí và nơi** bạn tuyển dụng: Thành phố New York, Illinois, Colorado, California, New Jersey, Texas, Connecticut, các nơi khác ở Mỹ.
 2. **Chỉ kiểm tra những gì công việc cần.** Chọn chủ đề và điểm đạt mà bạn có thể giải thích được cho vị trí đó.
 3. **Cập nhật thông báo cho ứng viên** để nói rằng có dùng AI, kết quả được dùng thế nào, và cách yêu cầu điều chỉnh và xem xét bởi con người. Thêm nội dung theo yêu cầu của Illinois và Colorado ở nơi áp dụng.
 4. **Cung cấp điều chỉnh,** như thêm thời gian, và thống nhất trước khi ứng viên bắt đầu.
@@ -113,7 +122,7 @@ testee tổ chức các buổi phỏng vấn kỹ năng trắc nghiệm có tín
 Hiện nay điều đó thể hiện trong sản phẩm như sau:
 
 - **AI viết câu hỏi và đáp án; việc chấm điểm theo quy tắc cố định.** Không có AI nào đánh giá câu trả lời của ứng viên, và không dùng phân tích video hay khuôn mặt. Ở chế độ giọng nói, lời nói được chuyển thành văn bản và khớp với một lựa chọn, lựa chọn đó được đọc lại cho ứng viên và hiển thị trên màn hình: một lựa chọn duy nhất được nói rõ sẽ được ghi nhận ngay, còn khi chọn nhiều lựa chọn thì phải xác nhận trước. testee không bao giờ lưu lời nói, và giọng nói không bao giờ bị phân tích.
-- **Bạn duyệt các chủ đề** trước khi bất kỳ câu hỏi nào được viết, và bạn chọn điểm đạt.
+- **Bạn duyệt các chủ đề** trước khi bất kỳ câu hỏi nào được viết, và bạn chọn điểm đạt. Ngoại lệ là buổi phỏng vấn do chính nền tảng của bạn tạo qua API khi công ty bạn đã nạp: buổi phỏng vấn này đi tiếp thẳng từ các chủ đề đề xuất.
 - **Con người quyết định.** testee không loại ứng viên và không gửi thư từ chối.
 - **Không có đặc điểm được bảo vệ.** testee không bao giờ hỏi, suy đoán hay lưu giới tính, chủng tộc, tuổi tác, khuyết tật, mã bưu chính hay các đặc điểm được bảo vệ khác của ứng viên.
 - **Xuất dữ liệu cho kiểm toán thiên lệch.** Trên trang Nhật ký thao tác của công ty, chủ sở hữu có thể tải một tệp CSV gồm các ứng viên đã hoàn thành, cho toàn công ty hoặc một buổi phỏng vấn và trong khoảng giữa hai ngày: điểm của từng ứng viên, điểm đạt, họ có đạt hay không và có cao hơn trung vị của buổi phỏng vấn hay không. Mỗi dòng gắn với email của ứng viên, nên bạn có thể ghép nó với các nhóm do ứng viên tự khai báo mà bạn đã tự thu thập; sau đó xóa cột email và đưa tệp cho kiểm toán viên độc lập, người sẽ tính tỷ lệ tuyển chọn, tỷ lệ điểm và tỷ số tác động. Cũng với tệp này, bạn có thể tự kiểm tra theo quy tắc bốn phần năm.
@@ -139,7 +148,8 @@ Hiện nay điều đó thể hiện trong sản phẩm như sau:
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 và 6 RCNY §5-300 trở đi; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) và phần Hỏi đáp (FAQ) đi kèm.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), được sửa đổi bởi Public Act 103-0804.
-- Colorado SB 26-189.
+- Colorado SB 26-189; *xAI v. Weiser* (D. Colo., No. 1:26-cv-01515), [lệnh tạm dừng ngày 27/4/2026](https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/).
 - California Code of Regulations, title 2, §11013(c); các quy định của California Consumer Privacy Act về công nghệ ra quyết định tự động; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
 - New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) về nhà cung cấp, §13:16-3.2(c) về công cụ tự động), kèm [bản tóm tắt của Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).
+- Connecticut Public Act 26-15, theo tóm tắt của [Cooley](https://cooley.com/news/insight/2026/2026-11-03-connecticuts-ai-rules-take-shape-what-employers-and-developers-need-to-know), tháng 11/2026.

@@ -35,7 +35,7 @@ Bu sayfa aboneliğe alternatifleri, bunların abonelik planlarıyla nasıl karş
 | **CodeSignal** | Kredili planlar ([fiyat sayfası](https://codesignal.com/pricing/)) | Aylık veya yıllık |
 | **Bryq** | Sınırsız davetli planlar ([fiyat sayfası](https://www.bryq.com/pricing)) | Aylık veya yıllık |
 | **Alooba** | Aylık kredili planlar ([fiyat sayfası](https://www.alooba.com/pricing/)) | Aylık veya yıllık; krediler her faturalandırma döneminin sonunda sona erer; Enterprise planında en az 1 yıl |
-| **Codility** | Davet kredili aylık veya yıllık planlar ([fiyat sayfası](https://www.codility.com/pricing/)) | Aylık veya yıllık |
+| **Codility** | Davet paketli aylık veya yıllık planlar ([fiyat sayfası](https://www.codility.com/pricing/)) | Aylık veya yıllık |
 
 Bu araçların bazıları aylık faturalandırma sunar; bu uzun bir sözleşme değildir ama yine de yinelenen bir ücrettir. Yalnızca ara sıra işe alım yapıyorsanız, işe alım dönemleri arasında iptal etmeyi unutmayın.
 

@@ -32,7 +32,7 @@ Poi confronta il modello di prezzo con il tuo volume di assunzioni. Un piano è 
 | **HackerRank** | Test di coding e colloqui tecnici | Piani Starter e Pro con tentativi annuali e piani Enterprise personalizzati ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [pagina prezzi](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Screening per ruoli tecnici e legati ai dati | Piani mensili o annuali con crediti ([pagina prezzi](https://www.alooba.com/pricing/)) |
 | **Bryq** | Valutazioni cognitive, di personalità e di competenze | Piani mensili o annuali ([pagina prezzi](https://www.bryq.com/pricing)) |
-| **Codility** | Valutazione del coding | Piani mensili o annuali con crediti di invito ([pagina prezzi](https://www.codility.com/pricing/)) |
+| **Codility** | Valutazione del coding | Piani mensili o annuali con pacchetti di inviti ([pagina prezzi](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Test psicometrici e cognitivi | Vedi il sito di ciascun fornitore |
 
 ## Gli strumenti più nel dettaglio

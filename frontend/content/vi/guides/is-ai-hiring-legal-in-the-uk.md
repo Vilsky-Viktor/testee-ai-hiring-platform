@@ -108,7 +108,7 @@ testee tổ chức các buổi phỏng vấn kỹ năng trắc nghiệm có tín
 Hiện nay điều đó thể hiện trong sản phẩm như sau:
 
 - **AI viết câu hỏi và đáp án; việc chấm điểm theo quy tắc cố định.** Không có AI nào đánh giá câu trả lời của ứng viên, và không dùng phân tích video hay khuôn mặt. Ở chế độ giọng nói, lời nói được chuyển thành văn bản và khớp với một lựa chọn, lựa chọn đó được đọc lại cho ứng viên và hiển thị trên màn hình: một lựa chọn duy nhất được nói rõ sẽ được ghi nhận ngay, còn khi chọn nhiều lựa chọn thì phải xác nhận trước. testee không bao giờ lưu lời nói, và giọng nói không bao giờ bị phân tích.
-- **Bạn duyệt các chủ đề** trước khi bất kỳ câu hỏi nào được viết, và bạn chọn điểm đạt.
+- **Bạn duyệt các chủ đề** trước khi bất kỳ câu hỏi nào được viết, và bạn chọn điểm đạt. Ngoại lệ là buổi phỏng vấn do chính nền tảng của bạn tạo qua API khi công ty bạn đã nạp: buổi phỏng vấn này đi tiếp thẳng từ các chủ đề đề xuất.
 - **Con người quyết định.** Trang kết quả và báo cáo PDF nhắc nhóm của bạn xem xét kết quả; testee không loại ứng viên và không gửi thư từ chối.
 - **Ứng viên được thông báo** trước khi bắt đầu rằng câu hỏi do AI viết, rằng người của công ty bạn xem xét kết quả và quyết định, và rằng họ có thể yêu cầu xem xét lại.
 - **Không có đặc điểm được bảo vệ.** testee không bao giờ hỏi, suy đoán hay lưu giới tính, dân tộc, tuổi tác, khuyết tật hay các đặc điểm được bảo vệ khác của ứng viên.

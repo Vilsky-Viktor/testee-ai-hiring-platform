@@ -35,7 +35,7 @@ updated: "2026-11-07"
 | **CodeSignal** | 带点数的套餐（[价格页](https://codesignal.com/pricing/)） | 按月或按年 |
 | **Bryq** | 无限邀请的套餐（[价格页](https://www.bryq.com/pricing)） | 按月或按年 |
 | **Alooba** | 带每月点数的套餐（[价格页](https://www.alooba.com/pricing/)） | 按月或按年；点数在每个计费周期结束时过期；Enterprise 套餐至少 1 年 |
-| **Codility** | 带邀请点数的月度或年度套餐（[价格页](https://www.codility.com/pricing/)） | 按月或按年 |
+| **Codility** | 带邀请包的月度或年度套餐（[价格页](https://www.codility.com/pricing/)） | 按月或按年 |
 
 其中一些工具提供按月计费，虽然不是长期合同，但仍是周期性费用。如果你只是偶尔招聘，记得在两轮招聘之间取消。
 

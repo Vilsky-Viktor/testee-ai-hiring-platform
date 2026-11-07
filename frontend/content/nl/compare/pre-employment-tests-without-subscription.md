@@ -35,7 +35,7 @@ Deze pagina legt de alternatieven voor een abonnement uit, hoe ze zich verhouden
 | **CodeSignal** | Plannen met credits ([prijspagina](https://codesignal.com/pricing/)) | Maandelijks of jaarlijks |
 | **Bryq** | Plannen met onbeperkt uitnodigen ([prijspagina](https://www.bryq.com/pricing)) | Maandelijks of jaarlijks |
 | **Alooba** | Plannen met maandelijkse credits ([prijspagina](https://www.alooba.com/pricing/)) | Maandelijks of jaarlijks; credits verlopen aan het eind van elke factuurperiode; Enterprise heeft een minimum van 1 jaar |
-| **Codility** | Maand- of jaarplannen met uitnodigingscredits ([prijspagina](https://www.codility.com/pricing/)) | Maandelijks of jaarlijks |
+| **Codility** | Maand- of jaarplannen met uitnodigingspakketten ([prijspagina](https://www.codility.com/pricing/)) | Maandelijks of jaarlijks |
 
 Sommige van deze tools bieden maandelijkse facturering, wat geen lang contract is maar wel een terugkerend bedrag. Werf je maar af en toe, vergeet dan niet tussen wervingsrondes op te zeggen.
 

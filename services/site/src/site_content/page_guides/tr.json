@@ -418,7 +418,8 @@
     "tips": [
       "Bir adayın kredileri davet edildiğinde ayrılır, yanıt verdiğinde düşülür, vermezse iade edilir.",
       "Bu sayfayı yalnızca sahipler ve yöneticiler görür.",
-      "Son 14 günde satın aldığınız ve harcamadığınız kredileri geçmişteki yükleme satırından, Paddle üzerinden veya bize yazarak iade edebilirsiniz. Adaylar için ayrılan krediler ayrılmış durumdayken iade edilemez."
+      "Son 14 günde satın aldığınız ve harcamadığınız kredileri geçmişteki yükleme satırından, Paddle üzerinden veya bize yazarak iade edebilirsiniz. Adaylar için ayrılan krediler ayrılmış durumdayken iade edilemez; bu 14 gün içinde ayrılıp sonrasında geri verilen krediler 7 gün boyunca iade edilebilir kalır.",
+      "Önce ücretsiz krediler harcanmış sayılır, harcanmayan kısım ise önce en yeni yüklemeye ait sayılır. Davet ödülü kazandıran bir yüklemenin iadesi, bu ödülü iki şirketten de geri alır. Sahipler ve yöneticiler, Paddle'ın onaylayıp onaylamadığını zil simgesinden, e-postayla ve kapatılmadıysa Slack'te öğrenir."
     ]
   },
   "topUp": {
@@ -426,7 +427,7 @@
     "text": "Sahibi veya yöneticisi olduğunuz her şirket için kredi satın alın.",
     "actions": [
       "Bir şirket seçin, sonra kaç aday için yükleme yapacağınızı 10 ile 1.000 arasında yazın veya bir fiyat basamağı seçin: büyük yüklemelerde aday başına maliyet daha düşüktür.",
-      "Şirketin para birimini sayfanın üstünden değiştirin: otomatik olanlar dahil yüklemeleri bundan sonra bu para biriminde fiyatlandırılır ve tahsil edilir. Otomatik yükleme açıkken para birimini değiştirdiğinizde önce onaylamanız için iki tutar da gösterilir ve şirketin sahipleri ile yöneticileri e-posta alır.",
+      "Şirketin para birimini sayfanın üstünden değiştirin: otomatik olanlar dahil yüklemeleri bundan sonra bu para biriminde fiyatlandırılır ve tahsil edilir. Otomatik yükleme açıkken veya duraklatılmışken para birimini değiştirdiğinizde önce onaylamanız için iki tutar da gösterilir; yeni tutar hemen geçerli olur ve şirketin sahipleri ile yöneticileri zil simgesinden ve e-postayla bilgilendirilir.",
       "Paddle'ın ödeme sayfasında ödeyin; krediler saniyeler içinde gelir.",
       "Yüklemeleri karşılaştırmak için fiyatları açın.",
       "Otomatik yüklemeyi kurun: bir tutar ve bir bakiye seçin, sözleşmeyi işaretleyin. Kartınız Paddle ödeme sayfasında kaydedilir ve bakiye bu seviyenin altına her düştüğünde tahsilat yapılır."

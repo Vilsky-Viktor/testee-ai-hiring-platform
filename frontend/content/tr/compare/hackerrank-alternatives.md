@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Teknik bilgiyi ölçmek için HackerRank alternatifleri ve tamamlayıcıları
 
-HackerRank, geliştirici işe alımı için bir platformdur. Kasım 2026 itibarıyla sitesi evde çözülen eleme testlerini, ortak bir kodlama ortamında canlı eşli programlama mülakatlarını ve gerçek hayattan bir problem veren bir yapay zekâ mülakatçısını tanımlıyor ([hackerrank.com](https://www.hackerrank.com/)). Adayların kod yazıp çalıştırmasına ihtiyacınız varsa, böyle bir platform tam da bunun için tasarlanmıştır.
+HackerRank, geliştirici işe alımı için bir platformdur. Kasım 2026 itibarıyla sitesi eleme testlerini, ortak bir kodlama ortamında canlı eşli programlama mülakatlarını ve gerçek hayattan bir problem veren bir yapay zekâ mülakatçısını tanımlıyor ([hackerrank.com](https://www.hackerrank.com/)). Adayların kod yazıp çalıştırmasına ihtiyacınız varsa, böyle bir platform tam da bunun için tasarlanmıştır.
 
 testee onun yerine geçmez. Farklı bir iş yapar: iş tanımınızdan yazılmış, kod okuma soruları da içeren, adayın bilgisini ölçen süreli ve çoktan seçmeli bir test. İkisi birbirini iyi tamamlar. Yaygın bir kurulum şöyledir: her başvuru sahibi için hızlı bir bilgi elemesi olarak testee, ardından geçenler için bir geliştirici platformunun kodlama testi veya canlı kodlama mülakatı. testee ayrıca aynı çeyrekte işe aldığınız diğer pozisyonları de kapsar; örneğin bir müşteri temsilcisi, bir ön muhasebeci veya bir destek uzmanı.
 

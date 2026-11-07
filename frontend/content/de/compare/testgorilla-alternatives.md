@@ -32,7 +32,7 @@ Prüf dann das Preismodell anhand deines Einstellungsvolumens. Ein Abo passt zu 
 | **HackerRank** | Programmiertests und technische Interviews | Starter- und Pro-Tarife mit Jahreskontingent an Versuchen sowie individuelle Enterprise-Tarife ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [Preisseite](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | Vorauswahl für technische und Datenrollen | Monats- oder Jahrestarife mit Credits ([Preisseite](https://www.alooba.com/pricing/)) |
 | **Bryq** | Kognitive, Persönlichkeits- und Kompetenz-Assessments | Monats- oder Jahrestarife ([Preisseite](https://www.bryq.com/pricing)) |
-| **Codility** | Programmier-Assessments | Monats- oder Jahrestarife mit Einladungs-Credits ([Preisseite](https://www.codility.com/pricing/)) |
+| **Codility** | Programmier-Assessments | Monats- oder Jahrestarife mit Einladungspaketen ([Preisseite](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | Psychometrische und kognitive Tests | Siehe die Website des Anbieters |
 
 ## Die Tools im Detail

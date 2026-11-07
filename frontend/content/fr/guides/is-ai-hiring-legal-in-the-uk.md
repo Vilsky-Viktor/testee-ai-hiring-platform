@@ -108,7 +108,7 @@ testee fait passer des entretiens de compétences chronométrés à choix multip
 Ce que cela donne aujourd'hui dans le produit :
 
 - **L'IA rédige les questions et leurs corrigés ; la notation suit des règles fixes.** Aucune IA ne juge la réponse d'un candidat, et aucune analyse vidéo ou faciale n'est utilisée. En mode vocal, la parole est transcrite en texte et associée à une option, annoncée au candidat et affichée à l'écran : une seule option clairement nommée est enregistrée aussitôt, un choix de plusieurs options est d'abord confirmé. testee ne conserve jamais la parole, et la voix n'est jamais analysée.
-- **Vous validez les thèmes** avant qu'une question ne soit rédigée, et vous choisissez le seuil de réussite.
+- **Vous validez les thèmes** avant qu'une question ne soit rédigée, et vous choisissez le seuil de réussite. L'exception est un entretien que votre propre plateforme crée via l'API une fois que votre entreprise a rechargé des crédits : il se poursuit directement à partir des thèmes proposés.
 - **Des personnes décident.** La page de résultats et les rapports PDF rappellent à votre équipe d'examiner les résultats ; testee ne rejette pas de candidats et n'envoie pas de messages de refus.
 - **Les candidats sont informés** avant de commencer que les questions sont rédigées par l'IA, que des personnes de votre entreprise examinent les résultats et décident, et qu'ils peuvent demander un réexamen.
 - **Aucune caractéristique protégée.** testee ne demande, n'infère ni ne conserve jamais le sexe, l'origine ethnique, l'âge, le handicap ou d'autres caractéristiques protégées des candidats.

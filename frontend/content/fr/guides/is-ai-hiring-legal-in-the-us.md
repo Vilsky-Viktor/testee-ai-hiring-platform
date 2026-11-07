@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # L'IA dans le recrutement est-elle légale aux États-Unis ? Ce que les employeurs doivent savoir
 
-En règle générale, oui : utiliser l'IA dans le recrutement est légal aux États-Unis. Il n'existe pas de loi fédérale sur l'IA dans le recrutement. C'est le droit fédéral de la non-discrimination qui s'applique aux outils d'IA comme à n'importe quel test, et quelques territoires ajoutent leurs propres règles : la ville de New York, l'Illinois, le Colorado, la Californie, le New Jersey et le Texas. Un décret présidentiel de décembre 2025 a créé au ministère de la Justice un groupe de travail chargé de contester les lois des États sur l'IA ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), mais un décret ne les abroge pas : elles s'appliquent jusqu'à ce que le Congrès ou un tribunal en décide autrement.
+En règle générale, oui : utiliser l'IA dans le recrutement est légal aux États-Unis. Il n'existe pas de loi fédérale sur l'IA dans le recrutement. C'est le droit fédéral de la non-discrimination qui s'applique aux outils d'IA comme à n'importe quel test, et quelques territoires ajoutent leurs propres règles : la ville de New York, l'Illinois, le Colorado, la Californie, le New Jersey, le Texas et le Connecticut. Un décret présidentiel de décembre 2025 a créé au ministère de la Justice un groupe de travail chargé de contester les lois des États sur l'IA ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), mais un décret ne les abroge pas : elles s'appliquent jusqu'à ce que le Congrès ou un tribunal en décide autrement.
 
 Ce guide présente les règles dans leurs grandes lignes, les dates à retenir, ce que les employeurs doivent faire et la façon dont testee aborde le sujet. **Il ne constitue pas un conseil juridique.** Il reflète les règles en vigueur en novembre 2026, dont plusieurs sont récentes ou encore en cours de finalisation.
 
@@ -17,7 +17,7 @@ Ce guide présente les règles dans leurs grandes lignes, les dates à retenir, 
 | --- | --- |
 | Puis-je utiliser l'IA pour présélectionner ou évaluer des candidats ? | Oui, dans le respect du droit fédéral de la non-discrimination et des règles des États et des villes |
 | Dois-je vérifier les résultats pour détecter des biais ? | L'impact défavorable relève de votre responsabilité ; à New York, un audit des biais indépendant est obligatoire avant toute utilisation |
-| Dois-je informer les candidats ? | À New York et dans l'Illinois, oui ; dans le Colorado et en Californie, à partir du 1er janvier 2027 |
+| Dois-je informer les candidats ? | À New York et dans l'Illinois, oui ; dans le Colorado et en Californie, à partir du 1er janvier 2027 ; dans le Connecticut, à partir du 1er octobre 2027 |
 | Dois-je proposer du temps supplémentaire ? | Aux candidats en situation de handicap qui en ont besoin : c'est un aménagement raisonnable (reasonable accommodation) |
 | Combien de temps dois-je conserver les dossiers ? | Quatre ans en Californie, trois dans le Colorado |
 | Qui prend la décision d'embauche ? | Une personne. Le Colorado et la Californie prévoient un examen humain, et c'est l'approche la plus sûre partout |
@@ -66,7 +66,7 @@ Et ils doivent informer les candidats lorsque l'IA est utilisée dans les décis
 
 ## Colorado
 
-La loi du Colorado sur l'IA a été abrogée et réadoptée par la SB 26-189, signée le 14 mai 2026 et en vigueur à partir du 1er janvier 2027. Les règles de l'Attorney General sont proposées (avec une audience fixée au 26 octobre 2026), pas encore adoptées en novembre 2026 et attendues d'ici le 1er janvier 2027. Pour les utilisateurs (deployers) d'une technologie de prise de décision automatisée qui influence de manière significative une décision d'emploi, les obligations sont :
+La loi du Colorado sur l'IA a été abrogée et réadoptée par la SB 26-189, signée le 14 mai 2026 et en vigueur à partir du 1er janvier 2027. Les règles de l'Attorney General sont proposées, pas encore adoptées en novembre 2026 et attendues d'ici le 1er janvier 2027. En avril 2026, dans un procès intenté par xAI, un tribunal fédéral a suspendu l'application de l'ancienne loi et de toute loi la remplaçant jusqu'à 14 jours après sa décision sur la demande d'injonction de xAI, une demande qui attend ces règles. La date de janvier, elle, n'a pas changé. Pour les utilisateurs (deployers) d'une technologie de prise de décision automatisée qui influence de manière significative une décision d'emploi, les obligations sont :
 
 - **Une information avant l'utilisation** destinée au candidat.
 - **Une explication de toute décision défavorable,** comme une non-embauche ou un refus de passer à l'étape suivante.
@@ -84,6 +84,13 @@ La loi du Colorado sur l'IA a été abrogée et réadoptée par la SB 26-189, si
 - **New Jersey.** Des règles sur la discrimination indirecte au titre de la Law Against Discrimination (N.J.A.C. 13:16), en vigueur depuis le 15 décembre 2025, citent les outils automatisés de décision d'emploi parmi les pratiques pouvant avoir un effet discriminatoire indirect. Un employeur qui s'appuie sur le produit d'un prestataire doit prendre des mesures raisonnables pour s'assurer qu'il est conforme à la loi, et un outil qui n'a pas été suffisamment testé avant son utilisation peut lui-même avoir un effet discriminatoire indirect.
 - **Texas.** Le Responsible AI Governance Act (HB 149), en vigueur depuis le 1er janvier 2026, interdit l'IA utilisée dans l'intention de discriminer illégalement. Une discrimination indirecte seule ne prouve pas cette intention.
 
+## Connecticut
+
+La Public Act 26-15 (SB 5), signée en mai 2026, comporte deux volets pour les employeurs :
+
+- **Depuis le 1er octobre 2026 :** utiliser un outil automatisé de décision d'emploi n'est pas un moyen de défense face à une action pour discrimination. Les tests anti-biais ne sont pas obligatoires, mais les preuves de tels tests peuvent être prises en compte.
+- **À partir du 1er octobre 2027 :** dites aux candidats en langage simple quand ils interagissent avec un tel outil, sauf si c'est évident, et donnez un avis écrit avant de l'utiliser pour une décision : qu'il est utilisé, sa finalité et le type de décision, son nom commercial, les données personnelles qu'il analyse et comment, d'où viennent les données et comment vous contacter.
+
 ## Les dates
 
 | Date | Ce qui s'applique |
@@ -92,11 +99,13 @@ La loi du Colorado sur l'IA a été abrogée et réadoptée par la SB 26-189, si
 | 1er octobre 2025 | Règles du Civil Rights Council de Californie sur les systèmes de décision automatisée |
 | 15 décembre 2025 | Règles du New Jersey sur la discrimination indirecte |
 | 1er janvier 2026 | Illinois : information sur l'usage de l'IA, pas d'IA discriminatoire, pas de codes postaux comme indicateur indirect ; Texas : pas d'IA utilisée dans l'intention de discriminer |
+| 1er octobre 2026 | Connecticut : un outil automatisé n'est pas un moyen de défense face à une action pour discrimination |
 | 1er janvier 2027 | Loi du Colorado sur l'IA ; règles du CCPA californien sur la prise de décision automatisée en matière d'emploi |
+| 1er octobre 2027 | Connecticut : information des candidats |
 
 ## Une liste de contrôle pratique pour les employeurs
 
-1. **Recensez les postes et les lieux** pour lesquels vous recrutez : ville de New York, Illinois, Colorado, Californie, New Jersey, Texas, ailleurs aux États-Unis.
+1. **Recensez les postes et les lieux** pour lesquels vous recrutez : ville de New York, Illinois, Colorado, Californie, New Jersey, Texas, Connecticut, ailleurs aux États-Unis.
 2. **N'évaluez que ce dont le poste a besoin.** Choisissez des thèmes et un seuil de réussite que vous pouvez justifier pour le poste.
 3. **Mettez à jour votre information des candidats** pour indiquer que l'IA est utilisée, comment les résultats sont utilisés, et comment demander un aménagement et un examen humain. Ajoutez les mentions propres à l'Illinois et au Colorado là où elles s'appliquent.
 4. **Proposez des aménagements,** comme du temps supplémentaire, et convenez-en avant que le candidat ne commence.
@@ -113,7 +122,7 @@ testee fait passer des entretiens de compétences chronométrés à choix multip
 Ce que cela donne aujourd'hui dans le produit :
 
 - **L'IA rédige les questions et leurs corrigés ; la notation suit des règles fixes.** Aucune IA ne juge la réponse d'un candidat, et aucune analyse vidéo ou faciale n'est utilisée. En mode vocal, la parole est transcrite en texte et associée à une option, annoncée au candidat et affichée à l'écran : une seule option clairement nommée est enregistrée aussitôt, un choix de plusieurs options est d'abord confirmé. testee ne conserve jamais la parole, et la voix n'est jamais analysée.
-- **Vous validez les thèmes** avant qu'une question ne soit rédigée, et vous choisissez le seuil de réussite.
+- **Vous validez les thèmes** avant qu'une question ne soit rédigée, et vous choisissez le seuil de réussite. L'exception est un entretien que votre propre plateforme crée via l'API une fois que votre entreprise a rechargé des crédits : il se poursuit directement à partir des thèmes proposés.
 - **Des personnes décident.** testee ne rejette pas de candidats et n'envoie pas de messages de refus.
 - **Aucune caractéristique protégée.** testee ne demande, n'infère ni ne conserve jamais le sexe, la race, l'âge, le handicap, le code postal ou d'autres caractéristiques protégées des candidats.
 - **Un export pour l'audit des biais.** Sur la page Journal des actions de l'entreprise, le propriétaire peut télécharger un fichier CSV des candidats ayant terminé, pour toute l'entreprise ou un seul entretien et entre deux dates : la note de chaque candidat, le seuil de réussite, s'il a réussi et s'il a obtenu un score supérieur à la médiane de l'entretien. Chaque ligne a pour clé l'e-mail du candidat, pour que vous puissiez la croiser avec les catégories auto-déclarées que vous avez recueillies vous-même ; supprimez ensuite la colonne de l'e-mail et remettez le fichier à votre auditeur indépendant, qui calcule les taux de sélection et de notation et les ratios d'impact. Le même fichier vous permet de faire vous-même le contrôle des quatre cinquièmes.
@@ -139,7 +148,8 @@ Ce que cela donne aujourd'hui dans le produit :
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 et 6 RCNY §5-300 et suivants ; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) et sa FAQ.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), modifié par le Public Act 103-0804.
-- Colorado SB 26-189.
+- Colorado SB 26-189 ; *xAI v. Weiser* (D. Colo., No. 1:26-cv-01515), [suspension du 27 avril 2026](https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/).
 - California Code of Regulations, title 2, §11013(c) ; règlements du California Consumer Privacy Act sur les technologies de prise de décision automatisée ; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
 - New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) sur les prestataires, §13:16-3.2(c) sur les outils automatisés), avec le [résumé de Morgan Lewis](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).
+- Connecticut Public Act 26-15, selon le résumé de [Cooley](https://cooley.com/news/insight/2026/2026-11-03-connecticuts-ai-rules-take-shape-what-employers-and-developers-need-to-know), novembre 2026.

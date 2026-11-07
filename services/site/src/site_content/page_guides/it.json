@@ -418,7 +418,8 @@
     "tips": [
       "I crediti di un candidato vengono riservati quando lo inviti, addebitati quando risponde e restituiti se non risponde.",
       "Solo proprietari e amministratori vedono questa pagina.",
-      "Puoi farti rimborsare i crediti acquistati negli ultimi 14 giorni e non spesi dalla riga della ricarica nello storico, tramite Paddle o scrivendoci. I crediti riservati ai candidati non possono essere rimborsati finché restano riservati."
+      "Puoi farti rimborsare i crediti acquistati negli ultimi 14 giorni e non spesi dalla riga della ricarica nello storico, tramite Paddle o scrivendoci. I crediti riservati ai candidati non possono essere rimborsati finché restano riservati; se riservati entro i 14 giorni e restituiti dopo, restano rimborsabili per 7 giorni.",
+      "I crediti gratuiti contano come spesi per primi, e quelli non spesi contano prima come parte della ricarica più recente. Il rimborso di una ricarica che ha fatto ottenere un premio referral toglie quel premio a entrambe le aziende. Proprietari e amministratori sanno se Paddle l'ha approvato nella campanella, via email e, se non disattivato, su Slack."
     ]
   },
   "topUp": {
@@ -426,7 +427,7 @@
     "text": "Acquista crediti per qualsiasi azienda di cui sei proprietario o amministratore.",
     "actions": [
       "Scegli un'azienda, poi scrivi per quanti candidati ricaricare, da 10 a 1.000, o scegli una fascia di prezzo: le ricariche più grandi costano meno per candidato.",
-      "Cambia la valuta dell'azienda in cima alla pagina: da quel momento le sue ricariche, anche quelle automatiche, sono prezzate e addebitate in quella valuta. Se la cambi mentre la ricarica automatica è attiva, vedrai prima entrambi gli importi da confermare, e i proprietari e gli amministratori dell'azienda riceveranno un'email.",
+      "Cambia la valuta dell'azienda in cima alla pagina: da quel momento le sue ricariche, anche quelle automatiche, sono prezzate e addebitate in quella valuta. Se la cambi mentre la ricarica automatica è attiva o in pausa, vedrai prima entrambi gli importi da confermare; il nuovo importo si applica subito, e i proprietari e gli amministratori dell'azienda vengono avvisati nella campanella e via email.",
       "Paga sulla pagina di pagamento di Paddle; i crediti arrivano in pochi secondi.",
       "Apri i prezzi per confrontare le ricariche.",
       "Configura la ricarica automatica: scegli un importo e un saldo e spunta l'accordo. La tua carta viene salvata nel checkout di Paddle e addebitata ogni volta che il saldo scende sotto quel livello."

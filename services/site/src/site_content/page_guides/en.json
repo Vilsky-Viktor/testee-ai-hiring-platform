@@ -418,7 +418,8 @@
     "tips": [
       "A candidate's credits are reserved when they're invited, charged once they answer, and given back if they don't.",
       "Only owners and admins see this page.",
-      "You can refund credits you bought in the last 14 days and haven't spent from the top-up's row in the history, through Paddle or by writing to us. Credits reserved for candidates can't be refunded while reserved."
+      "You can refund credits you bought in the last 14 days and haven't spent from the top-up's row in the history, through Paddle or by writing to us. Credits reserved for candidates can't be refunded while reserved; reserved within the 14 days and given back after them, they stay refundable for 7 days.",
+      "Free credits count as spent first, and what's unspent counts as the newest top-up's first. A refund of a top-up that earned a referral reward takes that reward back from both companies. Owners and admins hear whether Paddle approved it in the bell, by email and, unless turned off, in Slack."
     ]
   },
   "topUp": {
@@ -426,7 +427,7 @@
     "text": "Buy credits for any company you belong to as an owner or admin.",
     "actions": [
       "Pick a company, then type how many candidates to top up, from 10 to 1,000, or pick a price step: larger top-ups cost less per candidate.",
-      "Change the company's currency at the top of the page: its top-ups, automatic ones too, are priced and charged in it from then on. Changing it while automatic top-up is running shows you both amounts to confirm first, and the company's owners and admins get an email.",
+      "Change the company's currency at the top of the page: its top-ups, automatic ones too, are priced and charged in it from then on. Changing it while automatic top-up is running or paused shows you both amounts to confirm first; the new amount applies at once, and the company's owners and admins are told in the bell and by email.",
       "Pay in Paddle's checkout; the credits arrive within seconds.",
       "Open pricing to compare the top-ups.",
       "Set up automatic top-up: choose an amount and a balance, and tick the agreement. Your card is saved in Paddle's checkout and charged each time the balance falls under that level."

@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Alternatieven voor en aanvullingen op HackerRank om technische kennis te testen
 
-HackerRank is een platform voor het werven van developers. Per november 2026 beschrijft de site screeningstests om thuis te maken, live pair-programming-interviews in een gedeelde programmeeromgeving en een AI-interviewer die een praktijkprobleem voorlegt ([hackerrank.com](https://www.hackerrank.com/)). Als kandidaten code moeten schrijven en draaien, is zo'n platform daarvoor gebouwd.
+HackerRank is een platform voor het werven van developers. Per november 2026 beschrijft de site screeningstests, live pair-programming-interviews in een gedeelde programmeeromgeving en een AI-interviewer die een praktijkprobleem voorlegt ([hackerrank.com](https://www.hackerrank.com/)). Als kandidaten code moeten schrijven en draaien, is zo'n platform daarvoor gebouwd.
 
 testee vervangt het niet. Het doet iets anders: een meerkeuzetest met tijdslimiet over wat een kandidaat weet, geschreven op basis van je functieomschrijving, inclusief vragen over code lezen. De twee passen goed samen. Een gangbare opzet is testee als snelle kennisscreening voor elke sollicitant, en daarna de programmeertest of het live coding-interview van een developerplatform voor de mensen die slagen. testee dekt ook de andere functies die je in hetzelfde kwartaal invult, zoals een accountmanager, een boekhouder of een supportmedewerker.
 

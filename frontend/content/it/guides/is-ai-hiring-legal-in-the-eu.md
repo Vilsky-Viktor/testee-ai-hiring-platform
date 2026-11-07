@@ -44,6 +44,7 @@ Quindi uno strumento che assegna a ogni candidato un punteggio e una posizione i
 | --- | --- |
 | 2 febbraio 2025 | Pratiche vietate (articolo 5) e alfabetizzazione in materia di IA (articolo 4) |
 | 2 agosto 2026 | La maggior parte delle regole restanti, compresi gli obblighi di trasparenza per alcuni sistemi di IA (articolo 50) |
+| 2 dicembre 2026 | Marcatura dei contenuti generati dall'IA come tali (articolo 50(2)), per i sistemi sul mercato prima del 2 agosto 2026 |
 | 2 dicembre 2027 | Obblighi per i sistemi ad alto rischio dell'allegato III, compresi gli strumenti di selezione |
 | 2 agosto 2028 | Obblighi per l'IA ad alto rischio nei prodotti coperti dall'allegato I |
 
@@ -118,8 +119,9 @@ testee svolge colloqui di competenze a scelta multipla e a tempo, scritti dall'I
 Ecco cosa significa oggi nel prodotto:
 
 - **L'IA scrive le domande e le relative chiavi di correzione; la correzione segue regole fisse.** Nessuna IA giudica la risposta di un candidato, e non si usa alcuna analisi di video o volto. Nella modalità vocale, il parlato viene trasformato in testo e abbinato a un'opzione, che viene detta al candidato e mostrata sullo schermo: una sola opzione indicata chiaramente viene registrata subito, una scelta di più opzioni viene prima confermata. testee non conserva mai il parlato, e la voce non viene mai analizzata. Se in seguito l'IA corregge una chiave, la correzione vale per i candidati che iniziano dopo; i risultati passati non cambiano.
-- **Approvi tu gli argomenti** prima che venga scritta qualsiasi domanda, e puoi vedere ogni domanda.
+- **Approvi tu gli argomenti** prima che venga scritta qualsiasi domanda, e puoi vedere ogni domanda. L'eccezione è un colloquio che la tua piattaforma crea tramite l'API una volta che la tua azienda ha ricaricato: prosegue direttamente dagli argomenti proposti.
 - **Decidono le persone.** La pagina dei risultati e i report PDF ricordano al tuo team di esaminare i risultati; testee non scarta candidati né invia messaggi di rifiuto.
+- **Marcature IA.** Domande, opzioni di risposta, risposte di Mira e clip vocali sono marcate come generate dall'IA in una forma leggibile dal software, e le clip vocali hanno anche la filigrana inaudibile di OpenAI. La [pagina fiducia](/trust) spiega come verificarle. Il testo copiato da una pagina non conserva la marcatura.
 - **I candidati vengono informati** prima di iniziare che le domande sono scritte dall'IA, che le persone della tua azienda esaminano i risultati e decidono, e che possono chiedere una revisione.
 - **Più tempo** può essere concesso a qualsiasi candidato che lo chieda.
 - **Registrazioni.** Vengono registrati le domande mostrate, le risposte, i tempi e le segnalazioni di comportamenti sospetti.

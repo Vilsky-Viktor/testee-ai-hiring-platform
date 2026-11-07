@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # Alternative e complementi a HackerRank per valutare le conoscenze tecniche
 
-HackerRank è una piattaforma per l'assunzione di sviluppatori. A novembre 2026, il suo sito descrive test di screening da svolgere a casa, colloqui di pair programming dal vivo in un ambiente di coding condiviso e un intervistatore IA che propone un problema reale ([hackerrank.com](https://www.hackerrank.com/)). Se ti serve che i candidati scrivano ed eseguano codice, una piattaforma del genere è fatta apposta.
+HackerRank è una piattaforma per l'assunzione di sviluppatori. A novembre 2026, il suo sito descrive test di screening, colloqui di pair programming dal vivo in un ambiente di coding condiviso e un intervistatore IA che propone un problema reale ([hackerrank.com](https://www.hackerrank.com/)). Se ti serve che i candidati scrivano ed eseguano codice, una piattaforma del genere è fatta apposta.
 
 testee non la sostituisce. Fa un lavoro diverso: un test a scelta multipla a tempo su ciò che un candidato sa, scritto a partire dalla tua descrizione del ruolo, con domande di lettura del codice. I due strumenti si combinano bene. Una configurazione comune è testee come rapida verifica delle conoscenze per ogni candidato, poi il test di coding o il colloquio di live coding di una piattaforma per sviluppatori per chi lo supera. testee copre anche gli altri ruoli che assumi nello stesso trimestre, come un account manager, un contabile o un addetto all'assistenza clienti.
 

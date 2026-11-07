@@ -35,7 +35,7 @@ Ta strona wyjaśnia, jakie są alternatywy dla subskrypcji, jak wypadają na tle
 | **CodeSignal** | Plany z kredytami ([cennik](https://codesignal.com/pricing/)) | Miesięczne lub roczne |
 | **Bryq** | Plany z nielimitowanymi zaproszeniami ([cennik](https://www.bryq.com/pricing)) | Miesięczne lub roczne |
 | **Alooba** | Plany z miesięcznymi kredytami ([cennik](https://www.alooba.com/pricing/)) | Miesięczne lub roczne; kredyty wygasają z końcem każdego okresu rozliczeniowego; Enterprise ma minimum 1 rok |
-| **Codility** | Plany miesięczne lub roczne z kredytami na zaproszenia ([cennik](https://www.codility.com/pricing/)) | Miesięczne lub roczne |
+| **Codility** | Plany miesięczne lub roczne z pakietami zaproszeń ([cennik](https://www.codility.com/pricing/)) | Miesięczne lub roczne |
 
 Niektóre z tych narzędzi oferują rozliczenie miesięczne, które nie jest długą umową, ale wciąż jest opłatą cykliczną. Jeśli rekrutujesz tylko od czasu do czasu, pamiętaj, by anulować je między rundami rekrutacji.
 

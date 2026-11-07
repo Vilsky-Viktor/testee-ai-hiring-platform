@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # ABD'de yapay zekâ ile işe alım yasal mı? İşverenlerin bilmesi gerekenler
 
-Genel olarak evet: ABD'de işe alımda yapay zekâ kullanmak yasaldır. İşe alımda yapay zekâya ilişkin federal bir yasa yoktur. Bunun yerine federal ayrımcılık karşıtı hukuk, her test gibi yapay zekâ araçlarına da uygulanır ve birkaç yer kendi kurallarını ekler: New York City, Illinois, Colorado, California, New Jersey ve Texas. Aralık 2025 tarihli bir başkanlık kararnamesi, eyaletlerin yapay zekâ yasalarına itiraz etmek için Adalet Bakanlığı bünyesinde bir görev gücü kurdu ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), ancak bir kararname bu yasaları yürürlükten kaldırmaz: Kongre veya bir mahkeme aksini söyleyene kadar geçerlidirler.
+Genel olarak evet: ABD'de işe alımda yapay zekâ kullanmak yasaldır. İşe alımda yapay zekâya ilişkin federal bir yasa yoktur. Bunun yerine federal ayrımcılık karşıtı hukuk, her test gibi yapay zekâ araçlarına da uygulanır ve birkaç yer kendi kurallarını ekler: New York City, Illinois, Colorado, California, New Jersey, Texas ve Connecticut. Aralık 2025 tarihli bir başkanlık kararnamesi, eyaletlerin yapay zekâ yasalarına itiraz etmek için Adalet Bakanlığı bünyesinde bir görev gücü kurdu ([Executive Order 14365](https://www.govinfo.gov/content/pkg/FR-2025-12-16/html/2025-23092.htm)), ancak bir kararname bu yasaları yürürlükten kaldırmaz: Kongre veya bir mahkeme aksini söyleyene kadar geçerlidirler.
 
 Bu rehber kuralları üst düzeyde, önemli tarihleri, işverenlerin yapması gerekenleri ve testee'nin konuya yaklaşımını açıklar. **Hukuki tavsiye değildir.** Kasım 2026 itibarıyla geçerli kuralları yansıtır; bunların birçoğu yenidir veya hâlâ kesinleşmektedir.
 
@@ -17,7 +17,7 @@ Bu rehber kuralları üst düzeyde, önemli tarihleri, işverenlerin yapması ge
 | --- | --- |
 | Adayları elemek veya değerlendirmek için yapay zekâ kullanabilir miyim? | Evet, federal ayrımcılık karşıtı hukuk ile eyalet ve şehir kuralları içinde |
 | Sonuçları yanlılık açısından kontrol etmem gerekiyor mu? | Olumsuz etkiden siz sorumlusunuz; New York City'de kullanımdan önce bağımsız bir yanlılık denetimi zorunludur |
-| Adayları bilgilendirmem gerekiyor mu? | New York City ve Illinois'de evet; Colorado ve California'da 1 Ocak 2027'den itibaren |
+| Adayları bilgilendirmem gerekiyor mu? | New York City ve Illinois'de evet; Colorado ve California'da 1 Ocak 2027'den itibaren; Connecticut'ta 1 Ekim 2027'den itibaren |
 | Ek süre vermem gerekiyor mu? | İhtiyacı olan engelli adaylara: bu bir makul düzenlemedir |
 | Kayıtları ne kadar süre saklamalıyım? | California'da dört yıl, Colorado'da üç yıl |
 | İşe alım kararını kim verir? | Bir insan. Colorado ve California kuralları insan incelemesi öngörür ve bu her yerde en güvenli yaklaşımdır |
@@ -66,7 +66,7 @@ Ayrıca işe alım kararlarında yapay zekâ kullanıldığında adayları bilgi
 
 ## Colorado
 
-Colorado'nun yapay zekâ yasası, 14 Mayıs 2026'da imzalanan ve 1 Ocak 2027'den itibaren yürürlükte olacak SB 26-189 ile yürürlükten kaldırılıp yeniden çıkarıldı. Başsavcının kuralları taslak aşamasındadır (26 Ekim 2026 için bir duruşma belirlendi), Kasım 2026 itibarıyla kabul edilmedi ve yasa yürürlüğe girene kadar çıkması bekleniyor. Bir istihdam kararını önemli ölçüde etkileyen otomatik karar verme teknolojisini kullanıma sokanlar (deployers) için yükümlülükler şunlardır:
+Colorado'nun yapay zekâ yasası, 14 Mayıs 2026'da imzalanan ve 1 Ocak 2027'den itibaren yürürlükte olacak SB 26-189 ile yürürlükten kaldırılıp yeniden çıkarıldı. Başsavcının kuralları taslak aşamasındadır, Kasım 2026 itibarıyla kabul edilmedi ve yasa yürürlüğe girene kadar çıkması bekleniyor. Nisan 2026'da, xAI'ın açtığı bir davada federal mahkeme, eski yasanın ve onun yerini alacak her yasanın uygulanmasını, xAI'ın ihtiyati tedbir talebi hakkında karar verdikten 14 gün sonrasına kadar durdurdu; bu talep de söz konusu kuralları bekliyor. Ocak tarihinin kendisi değişmedi. Bir istihdam kararını önemli ölçüde etkileyen otomatik karar verme teknolojisini kullanıma sokanlar (deployers) için yükümlülükler şunlardır:
 
 - **Kullanımdan önce adaya bildirim.**
 - **Olumsuz bir kararın açıklanması;** örneğin işe alınmama veya bir sonraki aşamaya geçememe.
@@ -84,6 +84,13 @@ Colorado'nun yapay zekâ yasası, 14 Mayıs 2026'da imzalanan ve 1 Ocak 2027'den
 - **New Jersey.** Law Against Discrimination kapsamındaki orantısız etki kuralları (N.J.A.C. 13:16), 15 Aralık 2025'ten beri yürürlüktedir ve otomatik istihdam karar araçlarını orantısız etkiye yol açabilecek uygulamalar arasında sayar. Bir tedarikçinin ürününe güvenen işveren, ürünün kanuna uygun olduğundan emin olmak için makul adımlar atmalıdır; kullanımdan önce yeterince test edilmemiş bir aracın kendisi de orantısız etkiye yol açabilir.
 - **Texas.** 1 Ocak 2026'dan beri yürürlükte olan Responsible AI Governance Act (HB 149), hukuka aykırı ayrımcılık yapma niyetiyle kullanılan yapay zekâyı yasaklar. Orantısız etki tek başına bu niyeti göstermez.
 
+## Connecticut
+
+Mayıs 2026'da imzalanan Public Act 26-15 (SB 5), işverenler için iki bölümden oluşur:
+
+- **1 Ekim 2026'dan beri:** otomatik bir istihdam karar aracı kullanmak, ayrımcılık iddiasına karşı savunma sayılmaz. Yanlılık testi zorunlu değildir, ancak buna ilişkin kanıtlar dikkate alınabilir.
+- **1 Ekim 2027'den itibaren:** adaylar böyle bir araçla etkileşimde olduğunda, açıkça belli olmadıkça bunu sade bir dille söyleyin ve aracı bir karar için kullanmadan önce yazılı bildirim yapın: kullanıldığını, amacını ve karar türünü, ticari adını, analiz ettiği kişisel verileri ve bunu nasıl yaptığını, verilerin nereden geldiğini ve size nasıl ulaşılacağını.
+
 ## Tarihler
 
 | Tarih | Ne uygulanıyor |
@@ -92,11 +99,13 @@ Colorado'nun yapay zekâ yasası, 14 Mayıs 2026'da imzalanan ve 1 Ocak 2027'den
 | 1 Ekim 2025 | California Civil Rights Council'ın otomatik karar sistemlerine ilişkin kuralları |
 | 15 Aralık 2025 | New Jersey'nin orantısız etki kuralları |
 | 1 Ocak 2026 | Illinois: yapay zekâ kullanımının bildirilmesi, ayrımcı yapay zekâ yasağı, gösterge olarak posta kodu yasağı; Texas: ayrımcılık niyetiyle kullanılan yapay zekâ yasağı |
+| 1 Ekim 2026 | Connecticut: otomatik bir araç, ayrımcılık iddiasına karşı savunma sayılmaz |
 | 1 Ocak 2027 | Colorado'nun yapay zekâ yasası; California'nın istihdamda otomatik karar vermeye ilişkin CCPA kuralları |
+| 1 Ekim 2027 | Connecticut: adaylara bildirim |
 
 ## İşverenler için pratik kontrol listesi
 
-1. **İşe aldığınız pozisyonları ve yerleri listeleyin:** New York City, Illinois, Colorado, California, New Jersey, Texas, ABD'nin başka yerleri.
+1. **İşe aldığınız pozisyonları ve yerleri listeleyin:** New York City, Illinois, Colorado, California, New Jersey, Texas, Connecticut, ABD'nin başka yerleri.
 2. **Yalnızca işin gerektirdiğini test edin.** Pozisyon için gerekçelendirebileceğiniz konular ve geçme notu seçin.
 3. **Aday aydınlatma metninizi güncelleyin:** yapay zekâ kullanıldığını, sonuçların nasıl kullanıldığını ve düzenleme ile insan incelemesinin nasıl talep edileceğini belirtin. Geçerli olduğu yerlerde Illinois ve Colorado ifadelerini ekleyin.
 4. **Ek süre gibi düzenlemeler sunun** ve bunları aday başlamadan önce kararlaştırın.
@@ -113,7 +122,7 @@ testee, bir iş tanımından yapay zekâ tarafından yazılmış süreli, çokta
 Bunun bugün üründeki karşılığı:
 
 - **Soruları ve cevap anahtarlarını yapay zekâ yazar; değerlendirme sabit kurallara göre yapılır.** Hiçbir yapay zekâ adayın yanıtını yargılamaz; video veya yüz analizi kullanılmaz. Sesli modda konuşma metne dönüştürülür ve bir seçenekle eşleştirilir; bu seçenek adaya söylenir ve ekranda gösterilir: açıkça söylenen tek bir seçenek hemen cevap olarak kaydedilir, birden çok seçenekli bir seçim ise önce onaylatılır. testee konuşmayı asla saklamaz ve ses asla analiz edilmez.
-- **Konuları siz onaylarsınız;** bu, herhangi bir soru yazılmadan önce olur ve geçme notunu siz seçersiniz.
+- **Konuları siz onaylarsınız;** bu, herhangi bir soru yazılmadan önce olur ve geçme notunu siz seçersiniz. İstisna, şirketiniz yükleme yaptıktan sonra kendi platformunuzun API üzerinden oluşturduğu mülakattır: önerilen konulardan doğrudan devam eder.
 - **Kararı insanlar verir.** testee adayları reddetmez veya ret mesajı göndermez.
 - **Korunan özellik yok.** testee adayların cinsiyetini, ırkını, yaşını, engelliliğini, posta kodunu veya diğer korunan özelliklerini asla sormaz, çıkarsamaz veya saklamaz.
 - **Yanlılık denetimi için dışa aktarım.** Şirketin İşlem kaydı sayfasında şirket sahibi, tüm şirket veya tek bir mülakat için ve iki tarih arasında, mülakatı bitiren adayların bir CSV dosyasını indirebilir: her adayın notu, geçme notu, geçip geçmediği ve mülakatın medyanının üzerinde puan alıp almadığı. Her satır adayın e-posta adresiyle eşleştirilir; böylece onu kendi topladığınız, adayların kendi beyan ettiği kategorilerle birleştirebilirsiniz; ardından e-posta sütununu silin ve dosyayı seçilme ve puan oranlarını ve etki oranlarını hesaplayacak bağımsız denetçinize verin. Aynı dosyayla beşte dört kontrolünü kendiniz de yapabilirsiniz.
@@ -139,7 +148,8 @@ Bunun bugün üründeki karşılığı:
 - Regulations to implement the equal employment provisions of the Americans with Disabilities Act, [29 CFR 1630.11](https://www.law.cornell.edu/cfr/text/29/1630.11).
 - New York City Local Law 144 of 2021 ve 6 RCNY §5-300 ve devamı; DCWP, [Automated Employment Decision Tools](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page) ve SSS'si.
 - Illinois Human Rights Act, 775 ILCS 5/2-102(L), Public Act 103-0804 ile değiştirilmiş hâliyle.
-- Colorado SB 26-189.
+- Colorado SB 26-189; *xAI v. Weiser* (D. Colo., No. 1:26-cv-01515), [27 Nisan 2026 tarihli durdurma kararı](https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/).
 - California Code of Regulations, title 2, §11013(c); California Consumer Privacy Act'in otomatik karar verme teknolojisine ilişkin düzenlemeleri; [SB 947](https://www.morganlewis.com/pubs/2026/10/california-enacts-new-laws-governing-employer-use-of-ai).
 - New Jersey, [N.J.A.C. 13:16](https://www.jacksonlewis.com/sites/default/files/2026-02/N.J.A.C.-13-16-Disparate-Impact-Discrimination.pdf) (§13:16-2.4(e) tedarikçiler, §13:16-3.2(c) otomatik araçlar hakkında), [Morgan Lewis'in özetiyle](https://www.morganlewis.com/pubs/2025/12/new-jersey-codifies-existing-disparate-impact-rules).
 - Texas, [HB 149](https://davispolk.com/insights/client-update/texas-governor-signs-responsible-ai-governance-act).
+- Connecticut Public Act 26-15, [Cooley](https://cooley.com/news/insight/2026/2026-11-03-connecticuts-ai-rules-take-shape-what-employers-and-developers-need-to-know) özeti, Kasım 2026.

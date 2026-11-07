@@ -46,7 +46,7 @@ La differenza pratica: un test di catalogo è fisso ed è stato usato molte volt
 
 ## Come funzionano i prezzi
 
-**TestGorilla** offre un piano gratuito con 10 crediti al mese e piani a pagamento con prezzi a fatturazione annuale, con più funzioni nei piani superiori. I crediti si consumano quando un candidato avvia una valutazione, e ogni test o colloquio con IA al suo interno usa i propri. Vedi la sua [pagina prezzi](https://www.testgorilla.com/pricing/) per piani e prezzi attuali.
+**TestGorilla** offre un piano gratuito con 10 crediti al mese e piani a pagamento con prezzi a fatturazione annuale, con più funzioni nei piani superiori. I crediti si consumano quando un candidato avvia una valutazione, e ogni test o colloquio con IA al suo interno usa i propri. I 5 test sulle competenze essenziali del piano gratuito non ne usano. Vedi la sua [pagina prezzi](https://www.testgorilla.com/pricing/) per piani e prezzi attuali.
 
 **testee** addebita per candidato:
 

@@ -64,7 +64,7 @@ Einzelheiten und Fristen findest du unter [Ist KI im Recruiting in der EU erlaub
 
 ### DSGVO
 
-Testergebnisse sind personenbezogene Daten. Nach der DSGVO (GDPR) und der ähnlichen UK GDPR bist du als Arbeitgeber in der Regel der Verantwortliche und der Testanbieter dein Auftragsverarbeiter. Du brauchst einen Auftragsverarbeitungsvertrag (AVV), eine klare Information für die Kandidaten, eine begrenzte Speicherdauer und ein Verfahren für Auskunfts- und Löschanfragen. Beruht eine Entscheidung ausschließlich auf automatisierter Verarbeitung und beeinträchtigt sie Kandidaten erheblich, gilt [Artikel 22](https://gdpr-info.eu/art-22-gdpr/); lass die Ergebnisse also von einem Menschen prüfen. Frag jeden Anbieter, wo die Daten gehostet werden und welche Unterauftragsverarbeiter er einsetzt.
+Testergebnisse sind personenbezogene Daten. Nach der DSGVO (GDPR) und der ähnlichen UK GDPR bist du als Arbeitgeber in der Regel der Verantwortliche und der Testanbieter dein Auftragsverarbeiter. Du brauchst einen Auftragsverarbeitungsvertrag (AVV), eine klare Information für die Kandidaten, eine begrenzte Speicherdauer und ein Verfahren für Auskunfts- und Löschanfragen. Beruht eine Entscheidung ausschließlich auf automatisierter Verarbeitung und beeinträchtigt sie Kandidaten erheblich, gilt [Artikel 22](https://gdpr-info.eu/art-22-gdpr/) (im Vereinigten Königreich seit dem 5. Februar 2026 die Artikel 22A bis 22D); lass die Ergebnisse also von einem Menschen prüfen. Frag jeden Anbieter, wo die Daten gehostet werden und welche Unterauftragsverarbeiter er einsetzt.
 
 ### Die Regel, die überall gilt
 

@@ -35,7 +35,7 @@ Halaman ini menjelaskan alternatif selain langganan, bagaimana perbandingannya d
 | **CodeSignal** | Paket dengan kredit ([halaman harga](https://codesignal.com/pricing/)) | Bulanan atau tahunan |
 | **Bryq** | Paket dengan undangan tanpa batas ([halaman harga](https://www.bryq.com/pricing)) | Bulanan atau tahunan |
 | **Alooba** | Paket dengan kredit bulanan ([halaman harga](https://www.alooba.com/pricing/)) | Bulanan atau tahunan; kredit kedaluwarsa di akhir setiap periode penagihan; Enterprise minimal 1 tahun |
-| **Codility** | Paket bulanan atau tahunan dengan kredit undangan ([halaman harga](https://www.codility.com/pricing/)) | Bulanan atau tahunan |
+| **Codility** | Paket bulanan atau tahunan dengan paket undangan ([halaman harga](https://www.codility.com/pricing/)) | Bulanan atau tahunan |
 
 Beberapa alat ini menawarkan penagihan bulanan, yang memang bukan kontrak panjang tetapi tetap merupakan biaya berulang. Kalau kamu hanya merekrut sesekali, jangan lupa membatalkannya di antara putaran rekrutmen.
 

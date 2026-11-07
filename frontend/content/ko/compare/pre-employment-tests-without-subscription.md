@@ -35,7 +35,7 @@ updated: "2026-11-07"
 | **CodeSignal** | 크레딧이 포함된 요금제([요금 페이지](https://codesignal.com/pricing/)) | 월간 또는 연간 |
 | **Bryq** | 무제한 초대가 포함된 요금제([요금 페이지](https://www.bryq.com/pricing)) | 월간 또는 연간 |
 | **Alooba** | 월간 크레딧이 포함된 요금제([요금 페이지](https://www.alooba.com/pricing/)) | 월간 또는 연간, 크레딧은 각 청구 기간이 끝나면 만료, Enterprise는 최소 1년 |
-| **Codility** | 초대 크레딧이 포함된 월간 또는 연간 요금제([요금 페이지](https://www.codility.com/pricing/)) | 월간 또는 연간 |
+| **Codility** | 초대 패키지가 포함된 월간 또는 연간 요금제([요금 페이지](https://www.codility.com/pricing/)) | 월간 또는 연간 |
 
 이 도구 중 일부는 월 단위 청구를 제공합니다. 장기 계약은 아니지만 반복 요금이라는 점은 같습니다. 가끔만 채용한다면 채용 차수 사이에 해지하는 것을 잊지 마세요.
 

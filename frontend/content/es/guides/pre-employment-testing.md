@@ -64,7 +64,7 @@ Para los detalles y las fechas, consulta [¿Es legal usar IA en la selección de
 
 ### RGPD
 
-Los resultados de las pruebas son datos personales. Según el RGPD (GDPR), y el RGPD del Reino Unido, que es similar, tú, como empleador, sueles ser el responsable del tratamiento, y el proveedor de las pruebas es tu encargado del tratamiento. Necesitas un contrato de encargo del tratamiento, un aviso claro para los candidatos, un límite de conservación y una forma de atender las solicitudes de acceso y supresión. Si una decisión se basa únicamente en el tratamiento automatizado y afecta significativamente a un candidato, se aplica el [artículo 22](https://gdpr-info.eu/art-22-gdpr/), así que haz que una persona revise los resultados. Pregunta a cualquier proveedor dónde se alojan los datos y qué subencargados utiliza.
+Los resultados de las pruebas son datos personales. Según el RGPD (GDPR), y el RGPD del Reino Unido, que es similar, tú, como empleador, sueles ser el responsable del tratamiento, y el proveedor de las pruebas es tu encargado del tratamiento. Necesitas un contrato de encargo del tratamiento, un aviso claro para los candidatos, un límite de conservación y una forma de atender las solicitudes de acceso y supresión. Si una decisión se basa únicamente en el tratamiento automatizado y afecta significativamente a un candidato, se aplica el [artículo 22](https://gdpr-info.eu/art-22-gdpr/) (en el Reino Unido, los artículos 22A a 22D desde el 5 de febrero de 2026), así que haz que una persona revise los resultados. Pregunta a cualquier proveedor dónde se alojan los datos y qué subencargados utiliza.
 
 ### La regla que cubre todas las demás
 

@@ -7,7 +7,7 @@ updated: "2026-11-07"
 
 # HackerRank alternatives and complements for testing technical knowledge
 
-HackerRank is a platform for developer hiring. As of November 2026, its site describes take-home screening tests, live pair-programming interviews in a shared coding environment, and an AI interviewer that sets a real-world problem ([hackerrank.com](https://www.hackerrank.com/)). If you need candidates to write and run code, a platform like that is built for it.
+HackerRank is a platform for developer hiring. As of November 2026, its site describes screening tests, live pair-programming interviews in a shared coding environment, and an AI interviewer that sets a real-world problem ([hackerrank.com](https://www.hackerrank.com/)). If you need candidates to write and run code, a platform like that is built for it.
 
 testee isn't a replacement for it. It does a different job: a timed multiple-choice test of what a candidate knows, written from your job description, including code-reading questions. The two fit together well. A common setup is testee as a quick knowledge screen for every applicant, then a developer platform's coding test or live coding interview for the people who pass. testee also covers the other roles you hire in the same quarter, such as an account manager, a bookkeeper or a support agent.
 

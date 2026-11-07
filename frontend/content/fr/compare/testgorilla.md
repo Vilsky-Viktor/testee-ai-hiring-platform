@@ -46,7 +46,7 @@ La différence en pratique : un test de bibliothèque est figé et a déjà serv
 
 ## Comment fonctionne la tarification
 
-**TestGorilla** propose une offre gratuite avec 10 crédits par mois et des offres payantes, prix en facturation annuelle, avec plus de fonctionnalités dans les offres supérieures. Les crédits sont consommés lorsqu'un candidat démarre une évaluation, et chaque test ou entretien IA qu'elle contient utilise les siens. Voir sa [page tarifs](https://www.testgorilla.com/pricing/) pour les offres et prix actuels.
+**TestGorilla** propose une offre gratuite avec 10 crédits par mois et des offres payantes, prix en facturation annuelle, avec plus de fonctionnalités dans les offres supérieures. Les crédits sont consommés lorsqu'un candidat démarre une évaluation, et chaque test ou entretien IA qu'elle contient utilise les siens. Les 5 tests de compétences essentielles de l'offre gratuite n'en utilisent aucun. Voir sa [page tarifs](https://www.testgorilla.com/pricing/) pour les offres et prix actuels.
 
 **testee** facture par candidat :
 

@@ -64,7 +64,7 @@ Szczegóły i terminy znajdziesz w artykule [Czy rekrutacja z AI jest legalna w 
 
 ### RODO
 
-Wyniki testów to dane osobowe. Zgodnie z RODO (GDPR) (oraz podobnym brytyjskim UK GDPR) Ty jako pracodawca jesteś zwykle administratorem, a dostawca testów jest podmiotem przetwarzającym. Potrzebujesz umowy powierzenia przetwarzania danych, jasnej informacji dla kandydatów, limitu okresu przechowywania i sposobu obsługi żądań dostępu do danych i ich usunięcia. Jeśli decyzja opiera się wyłącznie na zautomatyzowanym przetwarzaniu i istotnie wpływa na kandydata, zastosowanie ma [art. 22](https://gdpr-info.eu/art-22-gdpr/), więc niech wyniki przejrzy człowiek. Zapytaj każdego dostawcę, gdzie hostowane są dane i z jakich podmiotów podprzetwarzających korzysta.
+Wyniki testów to dane osobowe. Zgodnie z RODO (GDPR) (oraz podobnym brytyjskim UK GDPR) Ty jako pracodawca jesteś zwykle administratorem, a dostawca testów jest podmiotem przetwarzającym. Potrzebujesz umowy powierzenia przetwarzania danych, jasnej informacji dla kandydatów, limitu okresu przechowywania i sposobu obsługi żądań dostępu do danych i ich usunięcia. Jeśli decyzja opiera się wyłącznie na zautomatyzowanym przetwarzaniu i istotnie wpływa na kandydata, zastosowanie ma [art. 22](https://gdpr-info.eu/art-22-gdpr/) (w Wielkiej Brytanii od 5 lutego 2026 r. art. 22A–22D), więc niech wyniki przejrzy człowiek. Zapytaj każdego dostawcę, gdzie hostowane są dane i z jakich podmiotów podprzetwarzających korzysta.
 
 ### Zasada, która obejmuje je wszystkie
 

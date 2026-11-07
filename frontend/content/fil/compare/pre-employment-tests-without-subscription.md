@@ -35,7 +35,7 @@ Ipinapaliwanag ng pahinang ito ang mga alternatibo sa subscription, paano sila i
 | **CodeSignal** | Mga plan na may credits ([pricing page](https://codesignal.com/pricing/)) | Buwanan o taunan |
 | **Bryq** | Mga plan na may unlimited invitations ([pricing page](https://www.bryq.com/pricing)) | Buwanan o taunan |
 | **Alooba** | Mga plan na may buwanang credits ([pricing page](https://www.alooba.com/pricing/)) | Buwanan o taunan; nag-e-expire ang credits sa dulo ng bawat billing period; may 1-taong minimum ang Enterprise |
-| **Codility** | Buwanan o taunang plan na may invite credits ([pricing page](https://www.codility.com/pricing/)) | Buwanan o taunan |
+| **Codility** | Buwanan o taunang plan na may invite packs ([pricing page](https://www.codility.com/pricing/)) | Buwanan o taunan |
 
 May ilan sa mga tool na ito na nag-aalok ng buwanang billing, na hindi mahabang kontrata pero paulit-ulit pa ring bayarin. Kung paminsan-minsan ka lang nagha-hire, tandaang mag-cancel sa pagitan ng mga hiring round.
 

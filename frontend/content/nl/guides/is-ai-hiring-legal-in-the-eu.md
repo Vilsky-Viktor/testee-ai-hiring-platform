@@ -44,6 +44,7 @@ Een tool die elke kandidaat een score en een plek in een ranglijst geeft, is dus
 | --- | --- |
 | 2 februari 2025 | Verboden praktijken (artikel 5) en AI-geletterdheid (artikel 4) |
 | 2 augustus 2026 | Het grootste deel van de overige regels, waaronder transparantie voor sommige AI-systemen (artikel 50) |
+| 2 december 2026 | Door AI gegenereerde inhoud als zodanig markeren (artikel 50, lid 2), voor systemen die vóór 2 augustus 2026 op de markt waren |
 | 2 december 2027 | Verplichtingen voor hoogrisicosystemen uit bijlage III, waaronder selectietools |
 | 2 augustus 2028 | Verplichtingen voor hoogrisico-AI in producten die onder bijlage I vallen |
 
@@ -118,8 +119,9 @@ testee neemt getimede meerkeuze-vaardigheidstests af die door AI worden geschrev
 Zo ziet dat er vandaag in het product uit:
 
 - **AI schrijft de vragen en de antwoordsleutels; het nakijken volgt vaste regels.** Geen AI beoordeelt het antwoord van een kandidaat, en er wordt geen video- of gezichtsanalyse gebruikt. In de spraakmodus wordt spraak omgezet in tekst en gekoppeld aan een antwoordoptie, die de kandidaat te horen krijgt en op het scherm ziet: één duidelijk genoemde optie wordt meteen vastgelegd, een keuze van meerdere opties wordt eerst bevestigd. testee slaat spraak nooit op, en de stem wordt nooit geanalyseerd. Als AI later een sleutel corrigeert, geldt de correctie voor kandidaten die daarna beginnen; eerdere resultaten veranderen niet.
-- **Jij keurt de onderwerpen goed** voordat er ook maar één vraag wordt geschreven, en je kunt elke vraag zien.
+- **Jij keurt de onderwerpen goed** voordat er ook maar één vraag wordt geschreven, en je kunt elke vraag zien. De uitzondering is een interview dat je eigen platform via de API maakt zodra je bedrijf heeft opgewaardeerd: dat gaat meteen door vanaf de voorgestelde onderwerpen.
 - **Mensen beslissen.** De resultatenpagina en de pdf-rapporten herinneren je team eraan de resultaten te beoordelen; testee wijst geen kandidaten af en stuurt geen afwijzingsberichten.
+- **AI-markeringen.** Vragen, antwoordopties, de antwoorden van Mira en spraakfragmenten zijn in een voor software leesbare vorm gemarkeerd als door AI gegenereerd, en spraakfragmenten dragen ook het onhoorbare watermerk van OpenAI. De pagina [Vertrouwen en beveiliging](/trust) legt uit hoe je ze controleert. Tekst die je van een pagina kopieert, behoudt zijn markering niet.
 - **Kandidaten krijgen te horen,** voordat ze beginnen, dat de vragen door AI zijn geschreven, dat mensen bij jouw bedrijf de resultaten beoordelen en beslissen, en dat ze om een herbeoordeling kunnen vragen.
 - **Extra tijd** kan worden gegeven aan elke kandidaat die erom vraagt.
 - **Vastlegging.** De getoonde vragen, antwoorden, tijden en integriteitsgebeurtenissen worden vastgelegd.

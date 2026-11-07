@@ -32,7 +32,7 @@ TestGorilla پلتفرم آزمون مهارت با کتابخانه بزرگی 
 | **HackerRank** | آزمون کدنویسی و مصاحبه فنی | طرح‌های Starter و Pro با تعداد تلاش سالانه و طرح‌های سفارشی Enterprise ([پرسش‌های متداول](https://www.hackerrank.com/frequently-asked-questions)، [صفحه قیمت](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | غربالگری مشاغل فنی و داده | طرح‌های ماهانه یا سالانه با اعتبار ([صفحه قیمت](https://www.alooba.com/pricing/)) |
 | **Bryq** | ارزیابی‌های شناختی، شخصیت و مهارت | طرح‌های ماهانه یا سالانه ([صفحه قیمت](https://www.bryq.com/pricing)) |
-| **Codility** | ارزیابی کدنویسی | طرح‌های ماهانه یا سالانه با اعتبار دعوت ([صفحه قیمت](https://www.codility.com/pricing/)) |
+| **Codility** | ارزیابی کدنویسی | طرح‌های ماهانه یا سالانه با بسته‌های دعوت ([صفحه قیمت](https://www.codility.com/pricing/)) |
 | **Criteria، Wonderlic، SHL** | آزمون‌های روان‌سنجی و شناختی | به سایت فروشندگان مراجعه کنید |
 
 ## ابزارها با جزئیات بیشتر

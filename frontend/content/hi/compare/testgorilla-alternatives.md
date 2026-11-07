@@ -32,7 +32,7 @@ TestGorilla एक स्किल्स टेस्टिंग प्ले�
 | **HackerRank** | कोडिंग टेस्ट और टेक्निकल इंटरव्यू | सालाना अटेम्प्ट वाले Starter और Pro प्लान, और कस्टम Enterprise प्लान ([FAQ](https://www.hackerrank.com/frequently-asked-questions), [प्राइसिंग पेज](https://www.hackerrank.com/pricing/)) |
 | **Alooba** | टेक्निकल और डेटा रोल की स्क्रीनिंग | क्रेडिट के साथ मंथली या सालाना प्लान ([प्राइसिंग पेज](https://www.alooba.com/pricing/)) |
 | **Bryq** | कॉग्निटिव, पर्सनैलिटी और स्किल्स असेसमेंट | मंथली या सालाना प्लान ([प्राइसिंग पेज](https://www.bryq.com/pricing)) |
-| **Codility** | कोडिंग असेसमेंट | इनवाइट क्रेडिट वाले मासिक या सालाना प्लान ([प्राइसिंग पेज](https://www.codility.com/pricing/)) |
+| **Codility** | कोडिंग असेसमेंट | इनवाइट पैक वाले मासिक या सालाना प्लान ([प्राइसिंग पेज](https://www.codility.com/pricing/)) |
 | **Criteria, Wonderlic, SHL** | साइकोमेट्रिक और कॉग्निटिव टेस्टिंग | वेंडर की वेबसाइट देखें |
 
 ## टूल विस्तार से

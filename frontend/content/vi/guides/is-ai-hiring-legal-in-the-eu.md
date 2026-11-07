@@ -46,6 +46,7 @@ Vì vậy, một công cụ cho mỗi ứng viên một điểm số và một t
 | --- | --- |
 | 2/2/2025 | Các hành vi bị cấm (Điều 5) và hiểu biết về AI (Điều 4) |
 | 2/8/2026 | Phần lớn các quy định còn lại, bao gồm yêu cầu minh bạch với một số hệ thống AI (Điều 50) |
+| 2/12/2026 | Đánh dấu nội dung do AI tạo (Điều 50(2)), với các hệ thống đã có trên thị trường trước ngày 2/8/2026 |
 | 2/12/2027 | Nghĩa vụ đối với hệ thống rủi ro cao thuộc Phụ lục III, bao gồm công cụ tuyển dụng |
 | 2/8/2028 | Nghĩa vụ đối với AI rủi ro cao trong các sản phẩm thuộc Phụ lục I |
 
@@ -120,8 +121,9 @@ testee tổ chức các buổi phỏng vấn kỹ năng trắc nghiệm có tín
 Hiện nay điều đó thể hiện trong sản phẩm như sau:
 
 - **AI viết câu hỏi và đáp án; việc chấm điểm theo quy tắc cố định.** Không có AI nào đánh giá câu trả lời của ứng viên, và không dùng phân tích video hay khuôn mặt. Ở chế độ giọng nói, lời nói được chuyển thành văn bản và khớp với một lựa chọn, lựa chọn đó được đọc lại cho ứng viên và hiển thị trên màn hình: một lựa chọn duy nhất được nói rõ sẽ được ghi nhận ngay, còn khi chọn nhiều lựa chọn thì phải xác nhận trước. testee không bao giờ lưu lời nói, và giọng nói không bao giờ bị phân tích. Nếu sau này AI sửa một đáp án, bản sửa áp dụng cho các ứng viên bắt đầu sau đó; kết quả trước đó không thay đổi.
-- **Bạn duyệt các chủ đề** trước khi bất kỳ câu hỏi nào được viết, và bạn xem được mọi câu hỏi.
+- **Bạn duyệt các chủ đề** trước khi bất kỳ câu hỏi nào được viết, và bạn xem được mọi câu hỏi. Ngoại lệ là buổi phỏng vấn do chính nền tảng của bạn tạo qua API khi công ty bạn đã nạp: buổi phỏng vấn này đi tiếp thẳng từ các chủ đề đề xuất.
 - **Con người quyết định.** Trang kết quả và báo cáo PDF nhắc nhóm của bạn xem xét kết quả; testee không loại ứng viên và không gửi thư từ chối.
+- **Dấu AI.** Câu hỏi, lựa chọn trả lời, câu trả lời của Mira và đoạn âm thanh giọng nói được đánh dấu là do AI tạo ở dạng phần mềm đọc được, và các đoạn âm thanh này còn mang watermark âm thanh không nghe được của OpenAI. [Trang Tin cậy và bảo mật](/trust) giải thích cách kiểm tra. Văn bản sao chép từ trang không giữ lại dấu này.
 - **Ứng viên được thông báo** trước khi bắt đầu rằng câu hỏi do AI viết, rằng người của công ty bạn xem xét kết quả và quyết định, và rằng họ có thể yêu cầu xem xét lại.
 - **Thời gian thêm** có thể được cấp cho bất kỳ ứng viên nào yêu cầu.
 - **Hồ sơ lưu trữ.** Các câu hỏi đã hiển thị, câu trả lời, thời gian và các lần rời trang hay sao chép đều được ghi lại.

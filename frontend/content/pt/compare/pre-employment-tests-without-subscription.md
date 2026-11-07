@@ -35,7 +35,7 @@ Esta página explica as alternativas a uma assinatura, como elas se comparam aos
 | **CodeSignal** | Planos com créditos ([página de preços](https://codesignal.com/pricing/)) | Mensal ou anual |
 | **Bryq** | Planos com convites ilimitados ([página de preços](https://www.bryq.com/pricing)) | Mensal ou anual |
 | **Alooba** | Planos com créditos mensais ([página de preços](https://www.alooba.com/pricing/)) | Mensal ou anual; os créditos expiram no fim de cada período de cobrança; o Enterprise tem mínimo de 1 ano |
-| **Codility** | Planos mensais ou anuais com créditos de convite ([página de preços](https://www.codility.com/pricing/)) | Mensal ou anual |
+| **Codility** | Planos mensais ou anuais com pacotes de convites ([página de preços](https://www.codility.com/pricing/)) | Mensal ou anual |
 
 Algumas dessas ferramentas oferecem cobrança mensal, que não é um contrato longo, mas continua sendo uma cobrança recorrente. Se você só contrata de vez em quando, lembre-se de cancelar entre um processo seletivo e outro.
 

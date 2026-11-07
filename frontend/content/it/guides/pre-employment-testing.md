@@ -64,7 +64,7 @@ Per dettagli e date, vedi [L'IA nelle assunzioni è legale nell'UE?](/guides/is-
 
 ### GDPR
 
-I risultati dei test sono dati personali. Secondo il GDPR (e il GDPR del Regno Unito, che è simile) tu, datore di lavoro, sei di solito il titolare del trattamento, e il fornitore del test è il tuo responsabile del trattamento. Ti servono un accordo sul trattamento dei dati, un'informativa chiara per i candidati, un limite di conservazione e un modo per gestire le richieste di accesso e cancellazione. Se una decisione si basa unicamente su un trattamento automatizzato e incide in modo significativo su un candidato, si applica l'[articolo 22](https://gdpr-info.eu/art-22-gdpr/), quindi fai esaminare i risultati a una persona. Chiedi a ogni fornitore dove sono ospitati i dati e quali sub-responsabili usa.
+I risultati dei test sono dati personali. Secondo il GDPR (e il GDPR del Regno Unito, che è simile) tu, datore di lavoro, sei di solito il titolare del trattamento, e il fornitore del test è il tuo responsabile del trattamento. Ti servono un accordo sul trattamento dei dati, un'informativa chiara per i candidati, un limite di conservazione e un modo per gestire le richieste di accesso e cancellazione. Se una decisione si basa unicamente su un trattamento automatizzato e incide in modo significativo su un candidato, si applica l'[articolo 22](https://gdpr-info.eu/art-22-gdpr/) (nel Regno Unito, gli articoli da 22A a 22D dal 5 febbraio 2026), quindi fai esaminare i risultati a una persona. Chiedi a ogni fornitore dove sono ospitati i dati e quali sub-responsabili usa.
 
 ### La regola che vale per tutte
 

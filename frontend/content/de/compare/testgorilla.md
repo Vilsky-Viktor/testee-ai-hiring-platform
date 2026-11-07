@@ -46,7 +46,7 @@ Der praktische Unterschied: Ein Bibliothekstest ist fest und wurde schon oft ein
 
 ## Wie die Preise funktionieren
 
-**TestGorilla** bietet einen Gratis-Tarif mit 10 Credits pro Monat und Bezahltarife, Preise bei jährlicher Abrechnung, mit mehr Funktionen in höheren Tarifen. Credits werden verbraucht, wenn ein Kandidat ein Assessment startet, und jeder Test oder jedes KI-Interview darin verbraucht eigene. Aktuelle Tarife und Preise findest du auf der [Preisseite](https://www.testgorilla.com/pricing/).
+**TestGorilla** bietet einen Gratis-Tarif mit 10 Credits pro Monat und Bezahltarife, Preise bei jährlicher Abrechnung, mit mehr Funktionen in höheren Tarifen. Credits werden verbraucht, wenn ein Kandidat ein Assessment startet, und jeder Test oder jedes KI-Interview darin verbraucht eigene. Die 5 Tests für Grundkompetenzen im Gratis-Tarif verbrauchen keine. Aktuelle Tarife und Preise findest du auf der [Preisseite](https://www.testgorilla.com/pricing/).
 
 **testee** rechnet pro Kandidat ab:
 

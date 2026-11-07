@@ -46,6 +46,7 @@ Dolayısıyla her adaya bir puan ve sıralama veren bir araç, kimin işe alına
 | --- | --- |
 | 2 Şubat 2025 | Yasaklanmış uygulamalar (Madde 5) ve yapay zekâ okuryazarlığı (Madde 4) |
 | 2 Ağustos 2026 | Bazı yapay zekâ sistemleri için şeffaflık (Madde 50) dahil kalan kuralların çoğu |
+| 2 Aralık 2026 | 2 Ağustos 2026'dan önce piyasada olan sistemler için yapay zekâ ürünü içeriğin bu şekilde işaretlenmesi (Madde 50(2)) |
 | 2 Aralık 2027 | İşe alım araçları dahil Ek III sistemleri için yüksek risk yükümlülükleri |
 | 2 Ağustos 2028 | Ek I kapsamındaki ürünlerdeki yapay zekâ için yüksek risk yükümlülükleri |
 
@@ -120,8 +121,9 @@ testee, bir iş tanımından yapay zekâ tarafından yazılmış süreli, çokta
 Bunun bugün üründeki karşılığı:
 
 - **Soruları ve cevap anahtarlarını yapay zekâ yazar; değerlendirme sabit kurallara göre yapılır.** Hiçbir yapay zekâ adayın yanıtını yargılamaz; video veya yüz analizi kullanılmaz. Sesli modda konuşma metne dönüştürülür ve bir seçenekle eşleştirilir; bu seçenek adaya söylenir ve ekranda gösterilir: açıkça söylenen tek bir seçenek hemen cevap olarak kaydedilir, birden çok seçenekli bir seçim ise önce onaylatılır. testee konuşmayı asla saklamaz ve ses asla analiz edilmez. Yapay zekâ bir anahtarı sonradan düzeltirse düzeltme, sonrasında başlayan adaylar için geçerli olur; geçmiş sonuçlar değişmez.
-- **Konuları siz onaylarsınız;** bu, herhangi bir soru yazılmadan önce olur ve her soruyu görebilirsiniz.
+- **Konuları siz onaylarsınız;** bu, herhangi bir soru yazılmadan önce olur ve her soruyu görebilirsiniz. İstisna, şirketiniz yükleme yaptıktan sonra kendi platformunuzun API üzerinden oluşturduğu mülakattır: önerilen konulardan doğrudan devam eder.
 - **Kararı insanlar verir.** Sonuçlar sayfası ve PDF raporlar ekibinize sonuçları incelemesini hatırlatır; testee adayları reddetmez veya ret mesajı göndermez.
+- **Yapay zekâ işaretleri.** Sorular, cevap seçenekleri, Mira'nın cevapları ve ses klipleri, yazılımların okuyabileceği bir biçimde yapay zekâ ürünü olarak işaretlenir; ses kliplerinde ayrıca OpenAI'ın duyulmayan filigranı vardır. [Güven ve güvenlik sayfası](/trust) bunların nasıl kontrol edileceğini açıklar. Bir sayfadan kopyalanan metin bu işareti korumaz.
 - **Adaylar başlamadan önce bilgilendirilir:** soruların yapay zekâ tarafından yazıldığı, sonuçları şirketinizdeki kişilerin inceleyip karar verdiği ve yeniden inceleme talep edebilecekleri.
 - **Ek süre,** isteyen her adaya verilebilir.
 - **Kayıtlar.** Gösterilen sorular, yanıtlar, süreler ve güvenilirlik olayları kaydedilir.

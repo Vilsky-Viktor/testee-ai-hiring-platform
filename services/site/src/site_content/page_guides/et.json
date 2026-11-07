@@ -418,7 +418,8 @@
     "tips": [
       "Kandidaadi krediidid broneeritakse kutsumisel, arvestatakse maha, kui ta vastab, ja antakse tagasi, kui ta ei vasta.",
       "Seda lehte näevad ainult omanikud ja administraatorid.",
-      "Saad tagastada viimase 14 päeva jooksul ostetud ja kasutamata krediidid ajaloos juurdelaadimise real, Paddle'i kaudu või meile kirjutades. Kandidaatidele broneeritud krediite ei saa tagastada, kuni need on broneeritud."
+      "Saad tagastada viimase 14 päeva jooksul ostetud ja kasutamata krediidid ajaloos juurdelaadimise real, Paddle'i kaudu või meile kirjutades. Kandidaatidele broneeritud krediite ei saa tagastada, kuni need on broneeritud; kui need broneeriti 14 päeva jooksul ja anti tagasi pärast seda, saab neid tagastada veel 7 päeva.",
+      "Tasuta krediidid loetakse kulutatuks esimesena ja kulutamata krediidid loetakse esmalt uusima juurdelaadimise omaks. Soovituspreemia teeninud juurdelaadimise tagastamine võtab selle preemia mõlemalt ettevõttelt tagasi. Omanikud ja administraatorid saavad teada, kas Paddle selle kinnitas, kellukese all, e-kirjaga ja, kui pole välja lülitatud, Slackis."
     ]
   },
   "topUp": {
@@ -426,7 +427,7 @@
     "text": "Osta krediiti igale ettevõttele, kus oled omanik või administraator.",
     "actions": [
       "Vali ettevõte ja sisesta, mitme kandidaadi jagu juurde laadida, 10 kuni 1 000, või vali hinnaaste: suuremad juurdelaadimised on kandidaadi kohta odavamad.",
-      "Muuda ettevõtte valuutat lehe ülaosas: edaspidi hinnastatakse ja võetakse selle juurdelaadimised, ka automaatsed, selles valuutas. Kui muudad ettevõtte valuutat ajal, mil automaatne juurdelaadimine on sees, näed kõigepealt kinnitamiseks mõlemat summat ning ettevõtte omanikud ja administraatorid saavad e-kirja.",
+      "Muuda ettevõtte valuutat lehe ülaosas: edaspidi hinnastatakse ja võetakse selle juurdelaadimised, ka automaatsed, selles valuutas. Kui muudad ettevõtte valuutat ajal, mil automaatne juurdelaadimine on sees või peatatud, näed kõigepealt kinnitamiseks mõlemat summat; uus summa hakkab kehtima kohe ning ettevõtte omanikud ja administraatorid saavad teate kellukese alla ja e-kirjaga.",
       "Maksa Paddle'i makselehel; krediidid jõuavad kohale mõne sekundiga.",
       "Ava hinnad, et juurdelaadimisi võrrelda.",
       "Seadista automaatne juurdelaadimine: vali summa ja saldo ning märgi nõusolek. Sinu kaart salvestatakse Paddle'i maksevaates ja sellelt võetakse makse iga kord, kui saldo langeb sellest tasemest allapoole."

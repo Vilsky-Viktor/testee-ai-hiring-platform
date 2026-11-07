@@ -46,7 +46,7 @@ Khác biệt thực tế: một bài kiểm tra từ thư viện là cố địn
 
 ## Cách tính giá
 
-**TestGorilla** có một gói miễn phí với 10 credit mỗi tháng và các gói trả phí với giá tính theo thanh toán hằng năm, với nhiều tính năng hơn ở các gói cao hơn. Credit bị trừ khi ứng viên bắt đầu bài đánh giá, và mỗi bài kiểm tra hoặc phỏng vấn AI trong đó dùng credit riêng. Xem [trang bảng giá](https://www.testgorilla.com/pricing/) của TestGorilla để biết các gói và giá hiện tại.
+**TestGorilla** có một gói miễn phí với 10 credit mỗi tháng và các gói trả phí với giá tính theo thanh toán hằng năm, với nhiều tính năng hơn ở các gói cao hơn. Credit bị trừ khi ứng viên bắt đầu bài đánh giá, và mỗi bài kiểm tra hoặc phỏng vấn AI trong đó dùng credit riêng. 5 bài kiểm tra kỹ năng thiết yếu của gói miễn phí không dùng credit. Xem [trang bảng giá](https://www.testgorilla.com/pricing/) của TestGorilla để biết các gói và giá hiện tại.
 
 **testee** tính phí theo ứng viên:
 
