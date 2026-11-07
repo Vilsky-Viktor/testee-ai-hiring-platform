@@ -3,7 +3,8 @@
 # their latest authors.
 from datetime import datetime
 
-from sqlalchemy import delete, func, select
+from sqlalchemy import String, cast, delete, func, select
+from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.ext.asyncio import AsyncSession
 from testee_common.events.notifications import NotificationKind, Recipient
 
@@ -21,23 +22,48 @@ async def lock_note(session: AsyncSession, note_id: str) -> None:
     await session.execute(select(func.pg_advisory_xact_lock(func.hashtext(f"note:{note_id}"))))
 
 
-async def unread_group(session: AsyncSession, user_id: str, link: str) -> Notification | None:
-    """The user's item about the notes behind `link` that came after they last opened the bell,
-    locked to add to it."""
-    seen_at = await session.scalar(select(Seen.seen_at).where(Seen.user_id == user_id))
-    query = select(Notification).where(
-        Notification.recipient == Recipient.USER,
-        Notification.recipient_id == user_id,
-        note_items(),
-        Notification.link == link,
-    )
+async def lock_readers(session: AsyncSession, user_ids: list[str]) -> None:
+    """notifications.lock_recipient for each of the (sorted) readers, in one statement."""
+    keys = [f"{Recipient.USER}:{user_id}" for user_id in user_ids]
+    rows = func.unnest(cast(keys, ARRAY(String))).table_valued("key").render_derived()
+    await session.execute(select(func.pg_advisory_xact_lock(func.hashtext(rows.c.key))))
 
-    if seen_at is not None:
-        query = query.where(Notification.created_at > seen_at)
 
-    return await session.scalar(
-        query.order_by(Notification.created_at.desc()).limit(1).with_for_update()
+async def unread_groups(
+    session: AsyncSession, user_ids: list[str], link: str
+) -> dict[str, Notification]:
+    """Each reader's newest item about the notes behind `link` that came after they last opened
+    the bell, locked to add to it."""
+    seen = dict(
+        (
+            await session.execute(
+                select(Seen.user_id, Seen.seen_at).where(Seen.user_id.in_(user_ids))
+            )
+        )
+        .tuples()
+        .all()
     )
+    rows = await session.scalars(
+        select(Notification)
+        .where(
+            Notification.recipient == Recipient.USER,
+            Notification.recipient_id.in_(user_ids),
+            note_items(),
+            Notification.link == link,
+        )
+        .order_by(Notification.created_at)
+        .with_for_update()
+    )
+    groups = {}
+
+    # Oldest first, so each reader ends with their newest.
+    for item in rows:
+        user_id = item.recipient_id
+
+        if user_id not in seen or item.created_at > seen[user_id]:
+            groups[user_id] = item
+
+    return groups
 
 
 async def holding(session: AsyncSession, interview_id: str, filters: dict) -> list[Notification]:

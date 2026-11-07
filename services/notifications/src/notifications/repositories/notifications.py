@@ -132,6 +132,20 @@ async def prune(session: AsyncSession, event: dict) -> None:
     await session.execute(delete(Notification).where(Notification.id.in_(beyond_limit)))
 
 
+async def prune_readers(session: AsyncSession, user_ids: list[str]) -> None:
+    """`prune` for each of the users, in one statement."""
+    place = func.row_number().over(
+        partition_by=Notification.recipient_id, order_by=Notification.created_at.desc()
+    )
+    ranked = (
+        select(Notification.id, place.label("place"))
+        .where(Notification.recipient == Recipient.USER, Notification.recipient_id.in_(user_ids))
+        .subquery()
+    )
+    beyond_limit = select(ranked.c.id).where(ranked.c.place > MAX_PER_RECIPIENT)
+    await session.execute(delete(Notification).where(Notification.id.in_(beyond_limit)))
+
+
 async def forget(sessions, before: datetime, until: float | None = None) -> None:
     """Notifications and received events from before `before` go, in batches (each its own
     transaction), none started after `until` (time.monotonic()); the next run deletes the rest."""

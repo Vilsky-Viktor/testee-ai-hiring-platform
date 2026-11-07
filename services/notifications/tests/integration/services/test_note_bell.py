@@ -4,12 +4,15 @@ deleted note (before or after its own event), a deleted interview, company or ac
 member who left are each handled."""
 
 import uuid
+from datetime import UTC, datetime
 
 from event_pushes import push
 from sqlalchemy import select
+from testee_common.events.notifications import NotificationKind, Recipient
 
 from notifications.core.db import Session
 from notifications.models.notifications import Notification
+from notifications.repositories import notifications
 from notifications.services import feed, notices
 from tests.integration.factories import api, company
 from tests.integration.note_events import created, deleted, note
@@ -150,3 +153,41 @@ def test_a_member_who_left_no_longer_sees_the_companys_note_items(run, teams):
 
     assert [(item.kind, member.unread) for item in member.items] == [("note_added", 1)]
     assert (left.items, left.unread) == ([], 0)
+
+
+def test_a_note_keeps_each_readers_bell_to_its_limit_and_leaves_others(run, monkeypatch):
+    monkeypatch.setattr(notifications, "MAX_PER_RECIPIENT", 2)
+    reader, other = f"u-{uuid.uuid4()}", f"u-{uuid.uuid4()}"
+
+    def item(user_id, number):
+        return Notification(
+            event_id=f"{user_id}:{number}",
+            recipient=Recipient.USER,
+            recipient_id=user_id,
+            kind=NotificationKind.NOTE_ADDED,
+            link="/x",
+            data={},
+            created_at=datetime(2026, 11, 1 + number, tzinfo=UTC),
+        )
+
+    async def scenario():
+        async with Session.begin() as session:
+            session.add_all(item(user, number) for user in (reader, other) for number in range(3))
+
+        async with Session.begin() as session:
+            await notifications.prune_readers(session, [reader])
+
+        async with Session() as session:
+            rows = await session.scalars(
+                select(Notification.event_id).where(Notification.recipient_id.in_([reader, other]))
+            )
+
+            return set(rows)
+
+    assert run(scenario()) == {
+        f"{reader}:1",
+        f"{reader}:2",
+        f"{other}:0",
+        f"{other}:1",
+        f"{other}:2",
+    }

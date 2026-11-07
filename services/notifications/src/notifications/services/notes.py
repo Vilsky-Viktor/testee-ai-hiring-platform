@@ -72,10 +72,11 @@ async def tell(session: AsyncSession, note: dict, user_ids: list[str], now: date
     starts; the reader's oldest go past the bell's limits."""
     link = NOTES_LINK.format(company_id=note["company_id"], interview_id=note["interview_id"])
 
+    await note_notices.lock_readers(session, user_ids)
+    groups = await note_notices.unread_groups(session, user_ids, link)
+
     for user_id in user_ids:
-        recipient = {"recipient": Recipient.USER, "recipient_id": user_id}
-        await notifications.lock_recipient(session, f"{Recipient.USER}:{user_id}")
-        group = await note_notices.unread_group(session, user_id, link)
+        group = groups.get(user_id)
 
         if group is None:
             await note_notices.add(session, user_id, link, first_item(note), now)
@@ -83,7 +84,7 @@ async def tell(session: AsyncSession, note: dict, user_ids: list[str], now: date
             group.data = with_note(group.data, note)
             group.created_at = now
 
-        await notifications.prune(session, recipient)
+    await notifications.prune_readers(session, user_ids)
 
 
 async def written(event: NoteWritten, created: bool) -> None:
