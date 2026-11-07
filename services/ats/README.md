@@ -18,8 +18,8 @@ src/ats/
 ├── services/               # Connecting, linking jobs, inviting candidates, reporting results,
 │                           # the recovery job, the ATSs' web hooks, account deletions; each
 │                           # opens its transaction
-├── repositories/           # Database queries: connections, links, candidates, kept results;
-│                           # take the session, never commit
+├── repositories/           # Database queries: connections, links, candidates, kept results,
+│                           # Teamtailor changes to read; take the session, never commit
 ├── models/, schemas/       # SQLAlchemy tables; request and response models
 ├── helpers/, constants/    # Pure functions; fixed values
 ├── integrations/           # One client per ATS, companies, Redis

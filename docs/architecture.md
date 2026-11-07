@@ -41,7 +41,7 @@ flowchart LR
     scheduler -- missing translations, outbox --> site
     scheduler -- recovery, outbox --> ats
     scheduler -- web hook retries, outbox --> api
-    scheduler -- activity digest, reminders, outbox --> notifications
+    scheduler -- activity digest, reminders, retention, outbox --> notifications
     scheduler -- limits, retention, Paddle reconciliation, automatic top-up prices, outbox --> billing
     scheduler -- retention --> assistant
     assistant -- user's own GET routes, as the user --> companies
@@ -78,7 +78,7 @@ flowchart LR
     companies -- candidate.started / finished / undelivered / expired, interview.ready / deleted / candidates_deleted / privacy_changed, guests.deleted --> pubsub
     library -- question.fixed --> pubsub
     notifications -- email.webhook_received --> pubsub
-    ats -- ats.candidate_arrived --> pubsub
+    ats -- ats.candidate_arrived, ats.application_changed --> pubsub
     site -- contact.sent --> pubsub
     billing -- credits.added --> pubsub
     library & companies & billing & ats & site -- notification.requested --> pubsub
@@ -94,6 +94,7 @@ flowchart LR
     pubsub -- user.deleted --> generation & site
     pubsub -- news.translated --> site
     pubsub -- guests.deleted --> accounts
+    pubsub -- guests.deleted --> billing
     pubsub -- ai.used / limit.hit, from every service --> billing
     billing & ats & notifications & api -- audit.recorded --> pubsub
     pubsub -- audit.recorded, a member's action --> companies
@@ -138,7 +139,7 @@ Where a script could spend a company's credits or testee's AI capacity, the brow
 
 - When such a form appears, the page connects to Cloudflare, loads Turnstile's script and renders its invisible widget (`frontend/src/hooks/use-human-check.ts`); on sending, the browser only runs the check for a one-time token (`frontend/src/lib/human-check.ts`: most people see nothing; the few Cloudflare isn't sure about get a small challenge at the bottom of the screen) and sends it in `X-Human-Check`. Other pages never load Turnstile.
 - The service checks it with Cloudflare (`testee_common/auth/human_check.py`, `require_human`), with `TURNSTILE_SECRET_KEY`: missing or refused, a 403 saying so. Without the secret there's no check; if Cloudflare doesn't answer, the request goes through, as the routes keep their rate limits.
-- The in-app assistant and AI apps create companies and approve topics from the server, with no browser to ask: their requests (`X-Assistant`, signed) aren't checked.
+- The in-app assistant and AI apps approve topics and create later companies from the server, with no browser to ask: their requests (`X-Assistant`, signed) aren't checked. A person's first company can't be made that way: `POST /companies` refuses it (`403`, `first_company_on_site`) and the answer carries a link to the Companies page, built by the assistant's code, unless the person is already a member of a company that has paid.
 - Locally and in CI, Cloudflare's test keys pass every check (and the browser tests' dummy token `XXXX.DUMMY.TOKEN.XXXX`); production has its own keys: the site key is built into the frontend (`NEXT_PUBLIC_TURNSTILE_SITE_KEY`), the secret is in Secret Manager.
 - Cloudflare sees the visitor's browser signals and address, so it's in the privacy policy and, for candidates, a sub-processor in the DPA.
 
@@ -181,15 +182,15 @@ Delivery:
 | rounds | `interview.deleted` (by its set: every candidate's and preview's sessions with their answers and signals), `company.deleted` (every session of the company), `user.deleted` (every session the user had, with its answers, a batch at a time); deleting again deletes nothing more, so a redelivery or a repeat is safe in any order |
 | companies | `generation.completed`, `generation.failed`, `generation.cancelled`, `interview.finished`, `audit.recorded` (a member's action, for the action log) |
 | notifications | the `notification.` family (`notification.requested`, `notification.news_withdrawn`: a deleted news post's notification goes, and generation's `notification.campaign_translated`: a campaign's translations, saved while its English still reads so), every `candidate.*` (it handles `candidate.invited`, `candidate.joined`, `candidate.reminded`, `candidate.removed` and `candidate.interview_deleted`, which companies sends with `interview.deleted` so the bell forgets a deleted interview's candidates), `member.invited`, `report.shared`, `contact.sent`, `company.deleted`, the team's notes (`company.note_created`, `company.note_edited`, `company.note_deleted`, in the `company.` family: the other members' bells grouped per interview, each note to the company's Slack channel, each new note's start for the digest; a note's events take turns, a new note is told once, the newest edit wins, and a deleted note, interview or company is marked so a late event tells nobody), `user.deleted` (the user's notifications, sent log and bulk-send rows, companies' notifications about them; the Slack channels they connected stay without them, each company told once), and its own `email.webhook_received` (a Resend web hook recorded by its delivery id before the answer; its work runs from the event) |
-| ats | `candidate.finished`, `candidate.removed`, `interview.ready`, `interview.deleted` (the `interview.` family), `company.deleted`, `credits.added`, `user.deleted` (an ATS's records of them as a candidate; the connections they made stay without them, each company told once), and its own `ats.candidate_arrived` (a candidate an ATS's web hook sent, saved before the answer: invited from the event, once, as the invite claims them) |
+| ats | `candidate.finished`, `candidate.removed`, `interview.ready`, `interview.deleted` (the `interview.` family), `company.deleted`, `credits.added`, `user.deleted` (an ATS's records of them as a candidate; the connections they made stay without them, each company told once), and its own `ats.candidate_arrived` (a candidate an ATS's web hook sent, saved before the answer: invited from the event, once, as the invite claims them) and `ats.application_changed` (a Teamtailor application changed, saved before the answer: read from the event, its candidate then arriving as above) |
 | api | every `candidate.*` (it sends `candidate.started`, `candidate.finished`, `candidate.undelivered`, `candidate.expired` and `candidate.removed` to web hooks, and on `candidate.interview_deleted` its candidates' results waiting to be sent again go), `interview.ready`, `company.deleted`, `user.deleted` (the keys and web hooks they made, their results waiting to be sent again) |
 | accounts | `guests.deleted` (deletes each guest's sign-in and accepted terms; deleting again deletes nothing more) |
 | assistant | `company.deleted` (deletes the company's conversations and its members' about all their companies), `candidate.removed` and `candidate.interview_deleted` (deletes the company's and its members' conversations that mention the erased candidate's email or invite, or the deleted interview; each event names the members, `member_ids`), `user.deleted` (their conversations, connected AI apps and pending actions); deleting again deletes nothing more |
-| billing | `ai.used`, `limit.hit` (stored once by their id), `user.deleted` (the automatic top-ups paid with their card cancelled and off; their purchases, AI costs and limit hits stay without them) |
+| billing | `ai.used`, `limit.hit` (stored once by their id), `user.deleted` (the automatic top-ups paid with their card cancelled and off; their purchases, AI costs and limit hits stay without them), `guests.deleted` (a guest's AI costs and limit hits stay without its id) |
 | generation | `user.*` (`user.deleted`: their generations stay with their company without them) |
 | site | `user.deleted` (the contact messages sent from their email), and generation's `news.translated` (a news post's translations, saved while its English still reads so; a translation saved again replaces itself) |
 
-- `user.deleted` (accounts, `testee_common.events.deletions.UserDeleted`: the user's id and verified email, empty when unverified) goes to every holder of a user's data but companies, which accounts calls first, as it may refuse while the user owns a company others have joined. Each holder deletes by the user's id and email, safe to repeat; the daily `erasures` job publishes it again for the deletions of the last 14 days, so rows a backup brought back, or a write that raced the deletion, go too. A holder failing for hours dead-letters it (alerted); the next day's replay sends it again.
+- `user.deleted` (accounts, `testee_common.events.deletions.UserDeleted`: the user's id and verified email, empty when unverified) goes to every holder of a user's data but companies, which accounts calls first, as it may refuse while the user owns a company others have joined. Each holder deletes by the user's id and email, safe to repeat; the daily `erasures` job publishes it again for the deletions of the last 14 days, with `erased_at` (holders match the email only on rows from before it, so a new invite to the same address stays), so rows a backup brought back, or a write that raced the deletion, go too; the job then deletes `user.deleted` events from accounts' outbox, so the email lasts no longer there than in `erasures`. A holder failing for hours dead-letters it (alerted); the next day's replay sends it again.
 - Locally, each consumer ignores events that aren't its own.
 - Locally, Google's Pub/Sub emulator runs in docker-compose, and [`scripts/local/pubsub-setup.sh`](../scripts/local/pubsub-setup.sh) creates the topic and subscriptions at every start of the emulator, which keeps nothing over a restart.
 

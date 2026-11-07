@@ -62,16 +62,21 @@ STALE_CLAIM_MINUTES = 10
 INVITE_BATCH = 50
 # The recovery job (every 10 minutes, 60 seconds a run) starts no new invite RECOVER_INVITE_SECONDS
 # into the run, and no new result sent to an ATS REPORT_SECONDS into it, so it ends in time even
-# when an ATS doesn't answer (each call has ATS_TIMEOUT_SECONDS). It reads at most RECOVER_LIMIT
-# of each, every connection's in turn; the rest wait for the next run.
+# when an ATS doesn't answer (each call has ATS_TIMEOUT_SECONDS), and no new read of a Teamtailor
+# application RECOVER_READ_SECONDS into it. It reads at most RECOVER_LIMIT of each, every
+# connection's in turn; the rest wait for the next run.
 RECOVER_INVITE_SECONDS = 20
 REPORT_SECONDS = 35
+RECOVER_READ_SECONDS = 40
 RECOVER_LIMIT = 500
 # Invites that failed in passing are tried again by the recovery job this many times in all
 # (about an hour), then the candidate is kept as not invited, and the company hears.
 MAX_INVITE_ATTEMPTS = 6
 # Candidates an ATS sent are kept this long (they hold emails), like companies' candidates.
 CANDIDATE_RETENTION_DAYS = 365
+# A Teamtailor application whose read keeps failing (a connection not reconnected) is given up
+# this long after its last change.
+APPLICATION_CHANGE_KEPT_DAYS = 30
 # A top-up invites again the candidates refused for lack of credits whom the ATS sent this
 # recently; older ones are left for Invite again.
 TOPPED_UP_DAYS = 30

@@ -32,7 +32,7 @@ On a company's **Integrations** tab, an owner or admin connects an ATS with its 
 - A company's ATS pages make at most 60 calls a minute to its ATS (`ATS_CALLS_PER_COMPANY_MINUTE`), and one sending address at most 600 web hooks a minute, counted before their signature is checked (`ATS_WEBHOOKS_PER_IP_MINUTE`), by default.
 - Disconnecting deletes the key and the linked jobs at once.
 - A key the ATS stops accepting marks the connection for reconnecting. Only a refusal of the key counts (401 or 403; when connecting, also a wrong address): something deleted in the ATS, like one candidate, affects only that candidate.
-- While a connection waits for reconnecting, its web hooks still count, checked with the secrets it keeps: the candidates it sends wait, and results are kept. Within 10 minutes of reconnecting, the `recover` job invites those candidates and sends those results. Teamtailor's events are the exception when its key is refused: ats can't read the application, so the event is answered with an error.
+- While a connection waits for reconnecting, its web hooks still count, checked with the secrets it keeps: the candidates it sends wait, and results are kept. Within 10 minutes of reconnecting, the `recover` job invites those candidates and sends those results. Teamtailor's events are kept the same way, as applications to read (see [Teamtailor](#candidates-from-teamtailor)).
 
 ## Linking a job
 
@@ -107,8 +107,8 @@ Teamtailor's web hooks are an add-on, set up by hand in Teamtailor too:
 - The address is the connection's own: `/api/ats/webhooks/teamtailor/<connection id>`.
 - The signature key is kept on reconnecting. Until it's saved, every event is refused.
 - An event counts only when its `TT-Signature` header is base64 of `t=<timestamp>,v2=<hex>`, the HMAC-SHA256 of `<timestamp>.<body>` with that key, and the timestamp is within 5 minutes of now (an older one is refused as a replay).
-- The event only says an application changed (`job_application.update` or `.create`), so ats reads the application from Teamtailor: its job, stage and candidate as they are now. It does so only while the connection has a linked job.
-- When Teamtailor answers that read with 429 (too many calls), the event is answered 429 too, so Teamtailor may send it again; Teamtailor's own docs disagree on whether it retries.
+- The event only says an application changed (`job_application.update` or `.create`), so while the connection has a linked job ats saves that (`ats_application_changes`, one row per application) with an `ats.application_changed` event and answers at once. The event's handler reads the application from Teamtailor: its job, stage and candidate as they are now.
+- A read that fails (Teamtailor down, or a 429 for too many calls) fails the push, which Pub/Sub retries with backoff, and the row stays: the `recover` job reads what's left every 10 minutes too. While the key is refused the row waits, and is read within 10 minutes of reconnecting. A row is deleted once read, or 30 days after its last change if it never could be (`APPLICATION_CHANGE_KEPT_DAYS`). An application changing again during a read keeps its row, so the newer state is read too.
 - A candidate whose application is in a linked job's stage is saved and invited exactly as from Workable, by their Teamtailor candidate id.
 
 ## Candidates from Recruitee

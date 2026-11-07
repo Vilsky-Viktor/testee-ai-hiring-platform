@@ -1,6 +1,7 @@
 from testee_common.events.deletions import USER_DELETED
 
 from ats.constants.events import (
+    ATS_APPLICATION_CHANGED,
     ATS_CANDIDATE_ARRIVED,
     CANDIDATE_FINISHED,
     CANDIDATE_REMOVED,
@@ -10,6 +11,7 @@ from ats.constants.events import (
     INTERVIEW_READY,
 )
 from ats.handlers import (
+    ats_application_changed,
     ats_candidate_arrived,
     candidate_finished,
     candidate_removed,
@@ -21,6 +23,7 @@ from ats.handlers import (
 )
 
 HANDLERS = {
+    ATS_APPLICATION_CHANGED: ats_application_changed.handle,
     ATS_CANDIDATE_ARRIVED: ats_candidate_arrived.handle,
     CANDIDATE_FINISHED: candidate_finished.handle,
     INTERVIEW_READY: interview_ready.handle,

@@ -8,7 +8,7 @@ import pytest
 from ats.constants.ats import MAX_INVITE_ATTEMPTS
 from ats.integrations import companies
 from ats.models.ats import AtsCandidate, AtsConnection
-from ats.repositories import ats, ats_candidates, ats_results
+from ats.repositories import ats, ats_applications, ats_candidates, ats_results
 from ats.services import ats_candidates as flow
 from ats.services import recovery
 from tests.unit.conftest import interview
@@ -169,8 +169,12 @@ def test_the_recovery_job_invites_waiting_candidates_and_sends_kept_results(worl
 
         reported.append(data["candidate_invite_id"])
 
+    async def nothing(session):
+        return []
+
     monkeypatch.setattr(ats_candidates, "recoverable", recoverable)
     monkeypatch.setattr(ats_results, "unreported", unreported)
+    monkeypatch.setattr(ats_applications, "recoverable", nothing)
     monkeypatch.setattr(recovery, "report", report)
 
     assert asyncio.run(recovery.recover()) == 1
@@ -196,6 +200,7 @@ def test_the_recovery_job_starts_no_new_result_late_in_the_run(world, monkeypatc
 
     monkeypatch.setattr(ats_candidates, "recoverable", nothing)
     monkeypatch.setattr(ats_results, "unreported", unreported)
+    monkeypatch.setattr(ats_applications, "recoverable", nothing)
     monkeypatch.setattr(recovery, "report", report)
     monkeypatch.setattr(recovery, "time", SimpleNamespace(monotonic=lambda: next(clock)))
     asyncio.run(recovery.recover())

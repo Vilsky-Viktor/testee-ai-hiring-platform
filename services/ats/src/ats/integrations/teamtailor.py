@@ -30,8 +30,7 @@ async def _call(method: str, host: str, key: str, path_or_url: str, params=None,
         method, url, headers, UNAVAILABLE, params, body, provider=AtsProvider.TEAMTAILOR
     )
 
-    # A rate limit stays a 429, so a web hook is answered that way (Teamtailor may send it again
-    # later) rather than as a failure of ours.
+    # A rate limit stays a 429, with Teamtailor's wait, rather than a failure of ours.
     return json_of(checked(response, UNAVAILABLE, passes_429=True))
 
 

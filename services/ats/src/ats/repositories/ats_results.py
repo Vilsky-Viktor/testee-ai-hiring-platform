@@ -66,6 +66,7 @@ async def unreported(session: AsyncSession) -> list[AtsCandidate]:
     first, each connection's in turn."""
     working = select(AtsConnection.id).where(AtsConnection.status == ConnectionStatus.CONNECTED)
     query = in_turns(
+        AtsCandidate,
         (
             AtsCandidate.connection_id.in_(working),
             AtsCandidate.result.is_not(None),

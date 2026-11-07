@@ -23,7 +23,7 @@ from ats.helpers.ats import (
 )
 from ats.models.ats import AtsConnection, AtsJobLink
 from ats.repositories import ats, ats_links
-from ats.services import ats as integrations
+from ats.services import ats_applications
 from ats.services import ats_candidates as flow
 
 # The events each ATS's web hook sends: checked as that ATS's, then a candidate who reached a
@@ -126,8 +126,8 @@ async def receive_teamtailor(connection_id: UUID, body: bytes, signature: str) -
     """A Teamtailor web hook: a candidate whose application is now in a linked job's stage gets
     the interview. Only events signed with the signature key the company saved count (none
     count before it's saved), and only recent ones. The event only says an application changed,
-    so the application is read from Teamtailor: its job, stage and candidate as they are now.
-    When Teamtailor answers that read with 429 (too many calls), so is the event."""
+    so that is saved and answered; the application is read from Teamtailor afterwards
+    (ats_applications): its job, stage and candidate as they are then."""
     connection = await connection_of(connection_id)
 
     if connection is None or connection.provider != AtsProvider.TEAMTAILOR:
@@ -158,13 +158,7 @@ async def receive_teamtailor(connection_id: UUID, body: bytes, signature: str) -
     if not linked:
         return
 
-    found = await integrations.call(connection, "application", application_id=str(changed["id"]))
-    link = await link_for_job(connection, found["job_id"] or "")
-
-    if link and link.stage_id == found["stage_id"] and found["email"]:
-        await flow.arrived(
-            link, connection, found["candidate_id"], found["email"], found.get("name")
-        )
+    await ats_applications.changed(connection, str(changed["id"]))
 
 
 async def receive_recruitee(connection_id: UUID, body: bytes, signature: str) -> None:

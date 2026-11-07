@@ -4,7 +4,7 @@ from uuid import UUID
 from sqlalchemy import and_, delete, func, or_, select, update
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
-from testee_common.db.db import delete_in_batches, update_in_batches
+from testee_common.db.db import delete_in_batches, made_before, update_in_batches
 from testee_common.events import outbox
 from testee_common.events.notifications import NOTIFICATION_REQUESTED
 
@@ -95,6 +95,7 @@ async def recoverable(session: AsyncSession) -> list[AtsCandidate]:
     invites cut off midway."""
     working = select(AtsConnection.id).where(AtsConnection.status == ConnectionStatus.CONNECTED)
     query = in_turns(
+        AtsCandidate,
         (
             AtsCandidate.connection_id.in_(working),
             or_(AtsCandidate.status == CandidateStatus.WAITING, _stale()),
@@ -270,8 +271,13 @@ async def of_email(session: AsyncSession, email: str) -> list[AtsCandidate]:
     return list((await session.scalars(query)).all())
 
 
-async def delete_email(session: AsyncSession, email: str) -> None:
-    await session.execute(delete(AtsCandidate).where(AtsCandidate.email == email.lower()))
+async def delete_email(session: AsyncSession, email: str, before: datetime | None = None) -> None:
+    """The address's candidates; with `before`, a replayed deletion's, those from before it."""
+    await session.execute(
+        delete(AtsCandidate).where(
+            AtsCandidate.email == email.lower(), made_before(AtsCandidate.created_at, before)
+        )
+    )
 
 
 async def delete_candidate(session: AsyncSession, interview_id: UUID, email: str) -> None:

@@ -57,9 +57,8 @@ def checked(
 ) -> httpx.Response:
     """The ATS's answer, once it worked: a refused key raises KeyRejected; something deleted in
     the ATS (a job, a candidate), a 404, as only that is gone, not the key; with `passes_429`, a
-    rate limit stays a 429 with the ATS's Retry-After (a web hook answered so is sent again
-    later); anything else that
-    failed is a 502 with `unavailable`."""
+    rate limit stays a 429 with the ATS's Retry-After; anything else that failed is a 502 with
+    `unavailable`."""
     if response.status_code in rejected:
         raise KeyRejected
 

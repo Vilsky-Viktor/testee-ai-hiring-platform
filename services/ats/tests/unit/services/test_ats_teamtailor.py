@@ -6,12 +6,12 @@ import pytest
 from fastapi import HTTPException
 
 from ats.integrations import teamtailor
-from ats.models.ats import AtsCandidate, AtsConnection, AtsJobLink
-from ats.repositories import ats, ats_candidates, ats_links, ats_results
+from ats.models.ats import AtsApplicationChange, AtsCandidate, AtsConnection, AtsJobLink
+from ats.repositories import ats, ats_applications, ats_candidates, ats_links
 from ats.services import ats as integrations
+from ats.services import ats_applications as applications
 from ats.services import ats_candidates as flow
 from ats.services import ats_webhooks as hooks
-from ats.services import reports
 from tests.unit.arrivals import deliver_arrivals
 from tests.unit.conftest import interview
 from tests.unit.helpers.test_teamtailor_signatures import signature
@@ -52,6 +52,7 @@ def world(monkeypatch, companies_api):
         },
         "read": [],
         "rows": {},
+        "changes": {},
         "linked": True,
         "sent": companies_api["sent"],
     }
@@ -101,7 +102,32 @@ def world(monkeypatch, companies_api):
     async def nothing(*args, **kwargs):
         return None
 
+    async def changed(session, connection_id, application_id):
+        state["changes"].setdefault(
+            application_id,
+            AtsApplicationChange(
+                id=uuid.uuid4(), connection_id=connection_id, application_id=application_id
+            ),
+        )
+
+    async def change(session, row_id):
+        return next((row for row in state["changes"].values() if row.id == row_id), None)
+
+    async def done(session, row):
+        del state["changes"][row.application_id]
+
+    delivered = set()
+
+    async def deliver_changes():
+        for row in list(state["changes"].values()):
+            if row.id not in delivered:
+                delivered.add(row.id)
+                await applications.read_changed({"ats_application_change_id": str(row.id)})
+
     monkeypatch.setattr(ats, "connection_by_id", connection_by_id)
+    monkeypatch.setattr(ats_applications, "add", changed)
+    monkeypatch.setattr(ats_applications, "get", change)
+    monkeypatch.setattr(ats_applications, "done", done)
     monkeypatch.setattr(ats_links, "link_for_job", link_for_job)
     monkeypatch.setattr(ats_links, "has_links", has_links)
     monkeypatch.setattr(integrations, "credentials", key)
@@ -110,7 +136,7 @@ def world(monkeypatch, companies_api):
     monkeypatch.setattr(ats_candidates, "claim", claim)
     monkeypatch.setattr(ats_candidates, "settle", nothing)
     monkeypatch.setattr(flow.outbox_service, "flush_quietly", nothing)
-    deliver_arrivals(monkeypatch, state["rows"])
+    deliver_arrivals(monkeypatch, state["rows"], then=deliver_changes)
 
     return state
 
@@ -183,17 +209,52 @@ def test_without_a_linked_job_teamtailor_isnt_asked(world):
     assert world["read"] == [] and world["sent"] == []
 
 
-def test_teamtailor_busy_answers_the_event_429_to_send_it_later(world, monkeypatch):
-    async def busy(host, key, application_id):
-        raise HTTPException(429, "Teamtailor didn't answer")
+def test_an_event_is_answered_and_kept_before_teamtailor_is_read(world, monkeypatch):
+    async def undelivered():
+        pass
 
-    monkeypatch.setattr(teamtailor, "application", busy)
+    monkeypatch.setattr(flow.outbox_service, "flush_quietly", undelivered)
+    receive(event())
 
-    with pytest.raises(HTTPException) as answered:
-        receive(event())
+    assert world["read"] == []
+    assert list(world["changes"]) == ["55"]
 
-    assert answered.value.status_code == 429
-    assert world["rows"] == {}
+
+@pytest.mark.parametrize("code", [429, 502])
+def test_teamtailor_failing_keeps_the_event_and_fails_it_for_pub_sub_to_retry(
+    world, monkeypatch, code
+):
+    async def failing(host, key, application_id):
+        raise HTTPException(code, "Teamtailor didn't answer")
+
+    world["changes"]["55"] = row = AtsApplicationChange(
+        id=uuid.uuid4(), connection_id=CONNECTION_ID, application_id="55"
+    )
+    monkeypatch.setattr(teamtailor, "application", failing)
+
+    with pytest.raises(HTTPException) as failed:
+        asyncio.run(applications.read_changed({"ats_application_change_id": str(row.id)}))
+
+    assert failed.value.status_code == code
+    assert list(world["changes"]) == ["55"]
+
+
+def test_an_application_deleted_in_teamtailor_is_given_up(world, monkeypatch):
+    async def gone(host, key, application_id):
+        raise HTTPException(404, "Not found")
+
+    monkeypatch.setattr(teamtailor, "application", gone)
+    receive(event())
+
+    assert world["changes"] == {} and world["rows"] == {}
+
+
+def test_a_broken_connection_keeps_the_event_without_reading_it(world):
+    world["connection"].status = "broken"
+    receive(event())
+
+    assert world["read"] == []
+    assert list(world["changes"]) == ["55"]
 
 
 def test_an_unknown_or_non_teamtailor_connection_is_ignored_even_unsigned(world):
@@ -204,82 +265,14 @@ def test_an_unknown_or_non_teamtailor_connection_is_ignored_even_unsigned(world)
     assert world["read"] == [] and world["sent"] == []
 
 
-def test_a_broken_connections_candidate_waits_to_be_invited_once_reconnected(world):
+def test_a_broken_connection_still_refuses_a_forged_event(world):
     world["connection"].status = "broken"
 
     with pytest.raises(HTTPException) as refused:
         receive(event(), given="forged")
 
     assert refused.value.status_code == 401
-    assert world["rows"] == {}
-
-    receive(event())
-
-    assert world["sent"] == []
-    assert len(world["rows"]) == 1
-
-
-@pytest.fixture
-def finished(monkeypatch):
-    """A candidate Teamtailor sent who finished, and the notes recorded instead of sent."""
-    connection = AtsConnection(
-        id=uuid.uuid4(), provider="teamtailor", status="connected", member_id="5"
-    )
-    row = AtsCandidate(id=uuid.uuid4(), candidate_id="44", invite_id=uuid.uuid4())
-    state = {"notes": [], "reported": [], "row": row, "connection": connection}
-
-    async def for_invite(session, invite_id):
-        return row, connection
-
-    async def key(found):
-        return {"host": "https://api.teamtailor.com", "key": "k", "webhook_secret": SECRET}
-
-    async def comment(host, key, candidate_id, member, text):
-        state["notes"].append((host, key, candidate_id, member, text))
-
-    async def claim_report(session, row_id, data):
-        return True
-
-    async def mark_reported(session, row_id):
-        state["reported"].append(row_id)
-
-    monkeypatch.setattr(ats_results, "for_invite", for_invite)
-    monkeypatch.setattr(ats_results, "claim", claim_report)
-    monkeypatch.setattr(ats_results, "mark_reported", mark_reported)
-    monkeypatch.setattr(integrations, "credentials", key)
-    monkeypatch.setattr(teamtailor, "comment", comment)
-
-    return state
-
-
-def report(state):
-    data = {
-        "candidate_invite_id": str(state["row"].invite_id),
-        "interview_id": str(INTERVIEW_ID),
-        "company_id": str(uuid.uuid4()),
-        "title": "Accountant",
-        "grade": 82,
-        "passed": True,
-        "flagged": False,
-    }
-    asyncio.run(reports.report(data))
-
-
-def test_results_go_back_to_teamtailor_as_a_note_by_the_member(finished):
-    report(finished)
-
-    [(host, key, candidate_id, member, text)] = finished["notes"]
-    assert (host, key, candidate_id, member) == ("https://api.teamtailor.com", "k", "44", "5")
-    assert "Grade: 82% (passed)" in text
-    assert finished["reported"] == [finished["row"].id]
-
-
-def test_without_a_teamtailor_user_to_write_as_nothing_goes_back(finished):
-    finished["connection"].member_id = None
-    report(finished)
-
-    # Given up: marked, so it isn't tried again.
-    assert finished["notes"] == [] and finished["reported"] == [finished["row"].id]
+    assert world["changes"] == {}
 
 
 def test_the_name_teamtailor_has_goes_with_the_invite(world, companies_api):

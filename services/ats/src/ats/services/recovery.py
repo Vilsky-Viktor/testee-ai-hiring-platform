@@ -2,9 +2,17 @@ import logging
 import time
 from datetime import UTC, datetime, timedelta
 
-from ats.constants.ats import CANDIDATE_RETENTION_DAYS, RECOVER_INVITE_SECONDS, REPORT_SECONDS
+from ats.constants.ats import (
+    APPLICATION_CHANGE_KEPT_DAYS,
+    CANDIDATE_RETENTION_DAYS,
+    RECOVER_INVITE_SECONDS,
+    RECOVER_READ_SECONDS,
+    REPORT_SECONDS,
+)
 from ats.core.db import Session
+from ats.repositories import ats_applications as application_changes
 from ats.repositories import ats_candidates, ats_results
+from ats.services import ats_applications
 from ats.services.ats_candidates import invite_all
 from ats.services.reports import report
 
@@ -15,8 +23,9 @@ async def recover() -> int:
     """Every 10 minutes: candidates still waiting (left for later by a run, by companies not
     answering, or sent while the connection was broken) and invites cut off midway (the server
     stopped) are invited, until RECOVER_INVITE_SECONDS into the run; results kept while a
-    connection was broken or the ATS failed go back, until REPORT_SECONDS into it. Both go
-    through every connection's in turn. How many candidates were found."""
+    connection was broken or the ATS failed go back, until REPORT_SECONDS into it; Teamtailor
+    applications not read yet are read, until RECOVER_READ_SECONDS into it. All go through every
+    connection's in turn. How many candidates were found."""
     started = time.monotonic()
 
     async with Session() as session:
@@ -36,6 +45,8 @@ async def recover() -> int:
         except Exception:
             logger.exception("Couldn't send the results of ATS candidate %s", row.id)
 
+    await ats_applications.recover(started + RECOVER_READ_SECONDS)
+
     return len(rows)
 
 
@@ -51,3 +62,9 @@ async def run() -> None:
 
     if deleted:
         logger.info("Deleted %d ATS candidates past their retention period", deleted)
+
+    before = datetime.now(UTC) - timedelta(days=APPLICATION_CHANGE_KEPT_DAYS)
+    deleted = await application_changes.delete_older_than(Session, before)
+
+    if deleted:
+        logger.info("Gave up on %d ATS application changes never read", deleted)

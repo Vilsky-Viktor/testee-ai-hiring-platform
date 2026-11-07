@@ -165,3 +165,23 @@ class AtsCandidate(Base):
         server_default=func.now(),
         index=True,
     )
+
+
+class AtsApplicationChange(Base):
+    """A Teamtailor application a signed web hook said changed, not read yet: Teamtailor's event
+    names no candidate, so this is what's kept until the read works, also while the connection
+    waits for reconnecting. One row per application; a new event moves `changed_at`."""
+
+    __tablename__ = "ats_application_changes"
+    __table_args__ = (UniqueConstraint("connection_id", "application_id"),)
+
+    id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
+    # Indexed by the unique (connection_id, application_id).
+    connection_id: Mapped[uuid.UUID] = mapped_column(
+        ForeignKey("ats_connections.id", ondelete="CASCADE")
+    )
+    company_id: Mapped[uuid.UUID] = mapped_column(index=True)
+    application_id: Mapped[str] = mapped_column(Text())
+    changed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=lambda: datetime.now(UTC), server_default=func.now()
+    )
