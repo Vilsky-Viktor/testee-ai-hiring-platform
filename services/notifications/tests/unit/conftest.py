@@ -1,10 +1,17 @@
 import pytest
+from no_connections import memory_redis, no_real_connections  # noqa: F401
 
 from notifications.integrations import accounts, billing, companies, generation
+from notifications.integrations import redis as redis_module
 from notifications.integrations.resend import ResendBusy
 from notifications.repositories import digest_activity, pending_notes, suppressed
 from notifications.services import delivery, member_pages, member_sends
 from tests.unit.member_world import COMPANY, finished, person
+
+
+@pytest.fixture
+def redis_integration():
+    return redis_module
 
 
 @pytest.fixture(autouse=True)

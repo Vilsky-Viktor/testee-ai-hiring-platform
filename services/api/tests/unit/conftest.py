@@ -3,8 +3,8 @@ from datetime import UTC, datetime
 from types import SimpleNamespace
 
 import pytest
-from fake_redis import FakeRedis
 from fastapi import HTTPException
+from no_connections import memory_redis, no_real_connections  # noqa: F401
 from testee_common.auth.auth import current_user
 from testee_common.auth.tokens import hashed
 from testee_common.auth.user import User
@@ -14,15 +14,21 @@ from testee_common.redis import memory_cache
 from api.config import settings
 from api.constants.permissions import Permission
 from api.integrations import companies
+from api.integrations import redis as redis_module
 from api.main import app
 from api.repositories import keys, webhook_log, webhooks
-from api.services import idempotency, key_checks, manage, manage_webhooks
+from api.services import key_checks, manage_webhooks
 from tests.unit.api_keys import KEY as API_KEY
 from tests.unit.ids import CANDIDATE, COMPANY, INTERVIEW, KEY
 from tests.unit.sample_rows import candidate, interview
 
 # The web hook fakes, a fixture of their own module.
 from tests.unit.webhook_fakes import endpoints  # noqa: F401
+
+
+@pytest.fixture
+def redis_integration():
+    return redis_module
 
 
 @pytest.fixture(autouse=True)
@@ -256,10 +262,6 @@ def stored(monkeypatch):
     monkeypatch.setattr(webhook_log, "last_delivered", last_delivered)
     monkeypatch.setattr(key_checks, "hit_or_skip", hit)
     monkeypatch.setattr(manage_webhooks, "hit_or_skip", hit)
-    monkeypatch.setattr(manage, "get_redis", lambda: FakeRedis())
-    monkeypatch.setattr(manage_webhooks, "get_redis", lambda: FakeRedis())
-    idempotent = FakeRedis()
-    monkeypatch.setattr(idempotency, "get_redis", lambda: idempotent)
 
     return state
 

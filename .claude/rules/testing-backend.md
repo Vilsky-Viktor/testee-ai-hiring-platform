@@ -48,7 +48,8 @@ Shared test rules are in `testing.md`; CLAUDE.md wins on any conflict.
 
 ## Redis, Pub/Sub and events
 
-- Real Redis in medium tests, not mocks.
+- Real Redis in medium tests, not mocks. Unit tests take `memory_redis` and
+  `no_real_connections` (`packages/common/tests/no_connections.py`): a connection fails the test.
 - Pub/Sub runs on the emulator (`PUBSUB_EMULATOR_HOST`); it lacks IAM, schemas and some
   ordering features, so those aren't tested against it.
 - Delivery is at least once (rule 11): test that a duplicate changes nothing twice, that

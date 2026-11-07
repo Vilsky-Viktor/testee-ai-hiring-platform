@@ -2,26 +2,17 @@ import itertools
 import uuid
 
 import pytest
-from fake_redis import FakeRedis
+from no_connections import memory_redis, no_real_connections  # noqa: F401
 from testee_common.redis import memory_cache
 
-from generation.api.v1 import internal, superadmin
 from generation.integrations import library, llm
+from generation.integrations import redis as redis_module
 from generation.repositories import generations
 from generation.services import (
     additions,
-    batch_usage,
-    budget,
-    key_self_check,
-    pipeline,
-    review,
-    sample_checks,
     screen,
-    starts,
     top_up,
-    topic_caps,
 )
-from generation.services.nodes import reuse
 from tests.unit.batch_fakes import FakeStore
 from tests.unit.fakes import EXAMPLE, MULTI_OPTIONS, OPTIONS
 
@@ -54,30 +45,17 @@ def batch_store(monkeypatch):
     return store
 
 
+@pytest.fixture
+def redis_integration():
+    return redis_module
+
+
 @pytest.fixture(autouse=True)
-def redis(monkeypatch):
-    """Redis in memory for the requests' limits and budgets: unit tests have none. Each test
-    reads the limits afresh, not values an earlier test cached."""
-    fake = FakeRedis()
+def redis(monkeypatch, memory_redis):  # noqa: F811
+    """Each test reads the limits afresh, not values an earlier test cached."""
     monkeypatch.setattr(memory_cache, "_entries", {})
 
-    for module in (
-        batch_usage,
-        internal,
-        superadmin,
-        starts,
-        budget,
-        review,
-        additions,
-        reuse,
-        pipeline,
-        topic_caps,
-        sample_checks,
-        key_self_check,
-    ):
-        monkeypatch.setattr(module, "get_redis", lambda: fake)
-
-    return fake
+    return memory_redis
 
 
 class Embeddings:

@@ -2,6 +2,7 @@ import uuid
 
 import pytest
 from event_pushes import push
+from google.oauth2 import id_token
 
 from library.constants.quality import MIN_ANSWERS
 from library.repositories import answer_stats
@@ -143,6 +144,11 @@ def test_a_failure_answers_with_an_error_so_pubsub_retries(client, monkeypatch):
 def test_pushes_without_a_google_token_are_refused_in_google_cloud(client, monkeypatch):
     monkeypatch.setenv("GOOGLE_CLOUD_PROJECT", "testee-prod")
     monkeypatch.setenv("INVOKER_AUDIENCE", "https://library.example.run.app")
+
+    def rejected(token, request, audience):
+        raise ValueError("Wrong number of segments in token")
+
+    monkeypatch.setattr(id_token, "verify_oauth2_token", rejected)
 
     response = client.post("/internal/events", json=push("answer.recorded", RECORDED))
 

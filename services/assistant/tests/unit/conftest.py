@@ -1,10 +1,10 @@
 import httpx
 import pytest
-from fake_redis import FakeRedis
+from no_connections import memory_redis, no_real_connections  # noqa: F401
 
 from assistant.constants.tool_groups import ToolGroup
 from assistant.integrations import llm, services
-from assistant.repositories import actions as store
+from assistant.integrations import redis as redis_module
 from assistant.services import actions
 from tests.fake_model import FakeRoutingModel
 from tests.unit.actions_setup import COMPANY
@@ -24,11 +24,12 @@ class Writes(list):
 
 
 @pytest.fixture
-def redis(monkeypatch):
-    fake = FakeRedis()
-    monkeypatch.setattr(store, "get_redis", lambda: fake)
-    monkeypatch.setattr(actions, "get_redis", lambda: fake)
+def redis_integration():
+    return redis_module
 
+
+@pytest.fixture
+def redis(monkeypatch, memory_redis):  # noqa: F811
     async def nothing(*args, **kwargs):
         pass
 
@@ -44,7 +45,7 @@ def redis(monkeypatch):
     monkeypatch.setattr(actions, "open_conversation", owned)
     monkeypatch.setattr(actions, "user_companies", companies)
 
-    return fake
+    return memory_redis
 
 
 @pytest.fixture

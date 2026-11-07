@@ -4,9 +4,11 @@ from datetime import UTC, datetime
 import pytest
 from cryptography.fernet import Fernet
 from fastapi import HTTPException
+from no_connections import memory_redis, no_real_connections  # noqa: F401
 
 from ats.config import settings
 from ats.integrations import companies, workable
+from ats.integrations import redis as redis_module
 from ats.integrations.errors import KeyRejected
 from ats.main import app
 from ats.models.ats import AtsConnection
@@ -32,6 +34,11 @@ def interview(company_id, title="Accountant", ready=True, interview_id=None) -> 
         "title": title,
         "ready": ready,
     }
+
+
+@pytest.fixture
+def redis_integration():
+    return redis_module
 
 
 @pytest.fixture

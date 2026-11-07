@@ -2,10 +2,9 @@
 off, and the model's answers replaced."""
 
 import pytest
-from fake_redis import FakeRedis
 
 from assistant.schemas.help_chat import HelpKnowledge
-from assistant.services import help_answers, help_votes
+from assistant.services import help_answers
 
 KNOWLEDGE = "<platform_guide>A company can own up to 3 companies.</platform_guide>"
 PAGE_GUIDE = "Pricing\nWhat credits cost.\nWhat you can do here:\n- Compare prices"
@@ -51,15 +50,12 @@ def knowledge(monkeypatch):
 
 
 @pytest.fixture
-def help_redis(monkeypatch, knowledge):
+def help_redis(monkeypatch, knowledge, memory_redis):
     """Redis in memory, where the limits count; the pause off unless a test turns it on."""
-    fake = FakeRedis()
 
     async def off(redis):
         return False
 
     monkeypatch.setattr("testee_common.limits.pause.is_paused", off)
-    monkeypatch.setattr(help_answers, "get_redis", lambda: fake)
-    monkeypatch.setattr(help_votes, "get_redis", lambda: fake)
 
-    return fake
+    return memory_redis

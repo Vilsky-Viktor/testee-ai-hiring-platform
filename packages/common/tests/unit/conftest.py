@@ -1,4 +1,5 @@
 import pytest
+from no_connections import no_real_connections  # noqa: F401
 from no_publishing import published  # noqa: F401
 from testee_common.redis import memory_cache
 

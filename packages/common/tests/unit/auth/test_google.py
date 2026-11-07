@@ -29,7 +29,12 @@ def test_nothing_is_checked_locally(monkeypatch):
 
 
 def test_without_a_token_google_calls_are_refused(production):
-    with pytest.raises(HTTPException) as refused:
+    unreadable = mock.Mock(side_effect=ValueError("Wrong number of segments in token"))
+
+    with (
+        mock.patch.object(google.id_token, "verify_oauth2_token", unreadable),
+        pytest.raises(HTTPException) as refused,
+    ):
         verify_invoker(request_with())
 
     assert refused.value.status_code == 401

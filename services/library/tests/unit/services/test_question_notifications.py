@@ -8,7 +8,7 @@ from testee_common.events.notifications import NOTIFICATION_REQUESTED
 from library.constants.events import QUESTION_FIXED
 from library.constants.quality import QualityFlag
 from library.integrations import generation
-from library.repositories import preparations, quality
+from library.repositories import bank, preparations, quality
 from library.services import outbox, questions
 from library.services.quality import review
 
@@ -62,9 +62,13 @@ def run_review(monkeypatch, previous_flag, question_set):
     async def fake_flush():
         flushes.append(True)
 
+    async def fake_leave(session, question_ids):
+        pass
+
     monkeypatch.setattr(quality, "load", fake_load)
     monkeypatch.setattr(generation, "verify_question", fake_verify)
     monkeypatch.setattr(quality, "change_flag", fake_change)
+    monkeypatch.setattr(bank, "leave", fake_leave)
     monkeypatch.setattr(preparations, "get_for_question", fake_set)
     monkeypatch.setattr(preparations, "topic_of_question", fake_topic)
     monkeypatch.setattr(outbox, "flush_quietly", fake_flush)

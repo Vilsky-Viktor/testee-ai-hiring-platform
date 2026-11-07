@@ -87,8 +87,14 @@ def test_a_return_address_that_runs_in_the_browser_is_refused(client, counted, s
     assert response.json()["error"] == "invalid_redirect_uri"
 
 
-def test_a_request_to_connect_missing_its_fields_gets_a_page(client, counted):
+def test_a_request_to_connect_missing_its_fields_gets_a_page(client, counted, monkeypatch):
     """Not a server error, and no redirect anywhere."""
+
+    async def known(provider, client_id):
+        return CLIENT
+
+    monkeypatch.setattr(Provider, "get_client", known)
+
     response = client.get("/authorize", params={"client_id": "c1"}, follow_redirects=False)
 
     assert response.status_code == 400

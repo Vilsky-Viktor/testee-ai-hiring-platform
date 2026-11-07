@@ -1,11 +1,18 @@
 import pytest
+from no_connections import memory_redis, no_real_connections  # noqa: F401
 from testee_common.auth.auth import current_user, optional_user
 from testee_common.auth.user import User
 
 from billing.api.v1 import company_auto_top_ups, company_payments
+from billing.integrations import redis as redis_module
 from billing.main import app
 from billing.repositories import company_actions, currencies, ledger, purchases, refunds
 from billing.services import checkout_calls
+
+
+@pytest.fixture
+def redis_integration():
+    return redis_module
 
 
 @pytest.fixture(autouse=True)

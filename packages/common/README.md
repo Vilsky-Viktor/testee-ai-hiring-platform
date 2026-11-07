@@ -71,6 +71,11 @@ services: every service's `tests/conftest.py` imports `no_publishing` and `publi
 `tests/no_publishing.py`, so its unit and integration tests keep what they publish in `published`
 (as type and data), and a test whose code still reaches a Pub/Sub publish endpoint fails
 (`tests/unit/test_no_publishing.py` checks every service takes them).
+No unit test leaves its process: every service's `tests/unit/conftest.py` imports `memory_redis` and
+`no_real_connections` from `tests/no_connections.py` and names its Redis module in a
+`redis_integration` fixture, so `get_redis` gives a `FakeRedis` emptied for each test, and a test
+whose code opens a connection fails, even when the code swallows the error
+(`tests/unit/test_no_connections.py` checks every service takes them).
 Integration tests: `clean_start` gives every test in a service's `tests/integration` a clean start (the
 tables a fresh migration left empty truncated, the tests' Redis database 15 flushed, the shared HTTP
 client dropped); it refuses any database but a `_test` one and any Redis database but 15. A race
