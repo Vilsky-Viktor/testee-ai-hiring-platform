@@ -47,7 +47,7 @@ def langfuse(monkeypatch):
     monkeypatch.setattr(
         http, "get_client", lambda: httpx.AsyncClient(transport=httpx.MockTransport(answer))
     )
-    monkeypatch.setattr(trace_retention.asyncio, "sleep", sleep)
+    monkeypatch.setattr(trace_retention, "sleep", sleep)
 
     return state
 

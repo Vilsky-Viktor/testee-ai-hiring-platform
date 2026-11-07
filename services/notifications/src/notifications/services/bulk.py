@@ -1,9 +1,9 @@
 # The bulk sender: legal notices and campaigns, to many users at once. A send's recipients are
 # worked out a page at a time (prepare) and saved; each run then sends the next pending ones, each claimed
 # under a lock, paced under Resend's per-second limit and within its daily quota.
-import asyncio
 import logging
 import time
+from asyncio import sleep
 from datetime import UTC, datetime
 
 from testee_common.limits.limits import limit, record_hit
@@ -243,7 +243,7 @@ async def send_run(now: datetime) -> int:
 
             if await send_one(row, people.get(row[2]), hashes, loaded.get(about)):
                 sent += 1
-                await asyncio.sleep(SEND_INTERVAL_SECONDS)
+                await sleep(SEND_INTERVAL_SECONDS)
 
     async with Session() as session:
         more = left <= sent and await bulk_recipients.pending(session, 1, [])

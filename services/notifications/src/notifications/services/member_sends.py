@@ -1,7 +1,7 @@
-import asyncio
 import hashlib
 import logging
 import time
+from asyncio import sleep
 from collections.abc import Callable
 from datetime import UTC, date, datetime, timedelta
 
@@ -104,6 +104,6 @@ async def send_once(
             raise
 
         sent += 1
-        await asyncio.sleep(SEND_INTERVAL_SECONDS)
+        await sleep(SEND_INTERVAL_SECONDS)
 
     return sent

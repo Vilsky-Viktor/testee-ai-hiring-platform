@@ -140,6 +140,6 @@ def world(monkeypatch):
     monkeypatch.setattr(pending_notes, "of_companies", of_companies)
     monkeypatch.setattr(member_pages, "cursor", cursor)
     monkeypatch.setattr(member_pages, "move_cursor", move_cursor)
-    monkeypatch.setattr("notifications.services.member_sends.asyncio.sleep", no_wait)
+    monkeypatch.setattr("notifications.services.member_sends.sleep", no_wait)
 
     return state

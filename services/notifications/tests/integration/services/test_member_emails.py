@@ -126,7 +126,7 @@ def outside(monkeypatch):
 
     monkeypatch.setattr(settings, "resend_api_key", "")
     monkeypatch.setattr(smtp, "send", send)
-    monkeypatch.setattr("notifications.services.member_sends.asyncio.sleep", no_wait)
+    monkeypatch.setattr("notifications.services.member_sends.sleep", no_wait)
     # Where the day's runs got to, this test's own: a cursor another test left in Redis would
     # skip this test's company.
     cursors = {}

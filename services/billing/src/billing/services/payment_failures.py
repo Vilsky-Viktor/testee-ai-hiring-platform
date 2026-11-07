@@ -1,5 +1,5 @@
-import asyncio
 import logging
+from asyncio import sleep
 
 import httpx
 from fastapi import status
@@ -31,7 +31,7 @@ async def failure(
     yet after the last read, is OTHER: the buyer still learns it failed and what to try."""
     for read in range(FAILURE_READS):
         if read:
-            await asyncio.sleep(FAILURE_READ_WAIT_SECONDS)
+            await sleep(FAILURE_READ_WAIT_SECONDS)
 
         try:
             found = await paddle.transaction(transaction_id, FAILURE_READ_TIMEOUT_SECONDS)

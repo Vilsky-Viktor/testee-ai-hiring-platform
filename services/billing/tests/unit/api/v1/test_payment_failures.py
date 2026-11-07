@@ -139,7 +139,7 @@ def test_an_attempt_whose_code_comes_late_is_read_again(monkeypatch, caplog):
         return None
 
     monkeypatch.setattr(paddle, "transaction", read)
-    monkeypatch.setattr(payment_failures.asyncio, "sleep", no_wait)
+    monkeypatch.setattr(payment_failures, "sleep", no_wait)
 
     caplog.set_level("INFO")
 
@@ -162,7 +162,7 @@ def test_a_failure_without_a_reason_logs_why(monkeypatch, caplog, found, why):
         return None
 
     monkeypatch.setattr(paddle, "transaction", answering(found))
-    monkeypatch.setattr(payment_failures.asyncio, "sleep", no_wait)
+    monkeypatch.setattr(payment_failures, "sleep", no_wait)
     caplog.set_level("INFO")
 
     found = asyncio.run(payment_failures.failure("company", COMPANY_ID, "bob", TXN))

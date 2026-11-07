@@ -113,7 +113,7 @@ def store(monkeypatch):
     monkeypatch.setattr(suppressed, "among", among)
     monkeypatch.setattr(delivery, "transmit", transmit)
     monkeypatch.setattr(campaigns, "get", get_campaign)
-    monkeypatch.setattr("notifications.services.bulk.asyncio.sleep", no_wait)
+    monkeypatch.setattr("notifications.services.bulk.sleep", no_wait)
 
     return state
 

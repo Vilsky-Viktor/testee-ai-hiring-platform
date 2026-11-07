@@ -49,7 +49,7 @@ def quiet(monkeypatch):
         return None
 
     monkeypatch.setattr(campaigns.generation, "translate_campaign", translate)
-    monkeypatch.setattr("notifications.services.bulk.asyncio.sleep", no_wait)
+    monkeypatch.setattr("notifications.services.bulk.sleep", no_wait)
 
 
 def test_a_campaign_goes_from_start_to_mailpit_once_and_only_to_who_chose_it(

@@ -5,6 +5,7 @@ Langfuse isn't set up. Deletion is Langfuse's to finish (within minutes); safe t
 import asyncio
 import logging
 import os
+from asyncio import sleep
 from collections.abc import AsyncIterator, Iterable
 from datetime import UTC, datetime, timedelta
 
@@ -56,7 +57,7 @@ async def call(method: str, path: str, **kwargs) -> httpx.Response:
 
             return response
 
-        await asyncio.sleep(wait)
+        await sleep(wait)
 
     raise RuntimeError("unreachable")
 

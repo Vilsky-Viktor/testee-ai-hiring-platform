@@ -50,7 +50,7 @@ def terms(monkeypatch):
     monkeypatch.setattr("notifications.services.audiences.accounts.user_ids", user_ids)
     monkeypatch.setattr(bulk.accounts, "recipients", recipients)
     monkeypatch.setattr(delivery, "transmit", transmit)
-    monkeypatch.setattr("notifications.services.bulk.asyncio.sleep", no_wait)
+    monkeypatch.setattr("notifications.services.bulk.sleep", no_wait)
     monkeypatch.setattr("testee_common.limits.limits.current_values", large_resend_quota)
 
     return ann, bob, sent
