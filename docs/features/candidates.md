@@ -218,4 +218,6 @@ A company emails a candidate's report only once that candidate has finished the 
 
 Both go earlier with their interview, their company, or when the company revokes the candidate.
 
+A candidate's ratings and reports of questions stay with the question. They hold the person's id only as long as it's needed: when their account goes (`user.deleted`), or a guest's invite goes by any of the ways above (`guests.deleted`), library puts a random value new to each row in its place and empties their comments, and a repeat changes nothing. When a signed-in candidate's invite goes by any of those ways (`interview.candidates_deleted`), the same happens to what they said about that interview's questions only: their account stays, and so does the link on what they said elsewhere, a bank question's copy in another interview included. Any other report's comment, free text that can name someone, is emptied 365 days after it was written by library's daily job (`/internal/schedules/bank`, `REPORT_COMMENT_KEEP_DAYS`); the report stays.
+
 Companies' daily candidate jobs (retention, invite expiry and `candidate-removals`) go a batch at a time and start no batch 100 seconds into a run (`JOB_RUN_SECONDS`), so each ends within the service's 150-second timeout; whatever is left goes in the next run.

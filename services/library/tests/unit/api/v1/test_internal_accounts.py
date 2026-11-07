@@ -1,4 +1,4 @@
-"""Accounts' `user.deleted` deletes, and accounts' export call reads, a user's data in library:
+"""Accounts' `user.deleted` unlinks, and accounts' export call reads, a user's data in library:
 their votes and reports on questions; the export only with library's own key, the email in the
 body."""
 
@@ -17,19 +17,19 @@ BODY = {"email": "ann@example.com"}
 def stored(monkeypatch):
     done = []
 
-    async def delete_data(user_id):
+    async def unlink_data(user_id):
         done.append(user_id)
 
     async def export_data(user_id):
         return {"question_votes": [{"question": "Why?", "vote": 1}], "question_reports": []}
 
-    monkeypatch.setattr(user_deleted, "delete_data", delete_data)
+    monkeypatch.setattr(user_deleted, "unlink_data", unlink_data)
     monkeypatch.setattr(internal_accounts, "export_data", export_data)
 
     return done
 
 
-def test_a_deleted_account_takes_the_users_votes_and_reports(client, stored):
+def test_a_deleted_account_unlinks_the_users_votes_and_reports(client, stored):
     gone = push("user.deleted", {"user_id": "ann", **BODY})
     response = client.post("/internal/events", json=gone)
 

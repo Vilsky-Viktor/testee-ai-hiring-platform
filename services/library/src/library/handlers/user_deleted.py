@@ -1,8 +1,9 @@
 from testee_common.events.deletions import UserDeleted
 
-from library.services.user_data import delete_data
+from library.services.user_data import unlink_data
 
 
 async def handle(event_id: str, data: dict) -> None:
-    """Accounts deleted a user's account: the votes and reports they gave on questions go."""
-    await delete_data(UserDeleted.model_validate(data).user_id)
+    """Accounts deleted a user's account: the votes and reports they gave on questions stay,
+    with no link to them."""
+    await unlink_data(UserDeleted.model_validate(data).user_id)

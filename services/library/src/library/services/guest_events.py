@@ -2,15 +2,15 @@ import logging
 
 from testee_common.config.constants import GUEST_UID_PREFIX
 
-from library.services.user_data import delete_data
+from library.services.user_data import unlink_data
 
 logger = logging.getLogger(__name__)
 
 
 async def delete_guests(event_id: str, data: dict) -> None:
-    """A deleted guest invite's guest goes too: what library kept under its sign-in (its ratings
-    and reports of questions; accounts deletes the sign-in on the same event). Safe to repeat,
-    so a redelivered event changes nothing; only guests' ids are taken."""
+    """A deleted guest invite's guest goes too: its ratings and reports of questions stay, with no
+    link to it (accounts deletes the sign-in on the same event). Safe to repeat, so a redelivered
+    event changes nothing; only guests' ids are taken."""
     user_ids = data.get("user_ids")
 
     if not isinstance(user_ids, list):
@@ -24,4 +24,4 @@ async def delete_guests(event_id: str, data: dict) -> None:
 
             continue
 
-        await delete_data(user_id)
+        await unlink_data(user_id)

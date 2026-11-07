@@ -201,8 +201,8 @@ out or listed under another area):
 - `audit_actions`: the action log's actions, targets and groups.
 - `campaigns`: the payload of `notification.campaign_translated` (`CampaignTranslated`), a
   campaign's translations from generation to notifications.
-- `deletions`: the payloads of `interview.deleted`, `company.deleted` and `user.deleted`
-  (`InterviewDeleted`, `CompanyDeleted`, `UserDeleted`), which the holders of that data consume.
+- `deletions`: the payloads of `interview.deleted`, `interview.candidates_deleted`, `company.deleted` and `user.deleted`
+  (`InterviewDeleted`, `InterviewCandidatesDeleted`, `CompanyDeleted`, `UserDeleted`), which the holders of that data consume.
 - `event_models`: the outbox's and processed events' columns every service's tables share.
 - `interviews`: the payload of `interview.privacy_changed` (`InterviewPrivacyChanged`), an
   interview's questions kept out of the shared question bank or let back in, from companies to

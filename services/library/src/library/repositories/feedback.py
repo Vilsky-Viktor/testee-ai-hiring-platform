@@ -1,8 +1,10 @@
 import uuid
+from datetime import datetime
 
 from sqlalchemy import delete, func, select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
+from testee_common.db.db import update_in_batches
 
 from library.models.feedback import QuestionRating, QuestionReport, QuestionReporter
 
@@ -132,3 +134,15 @@ async def has_reported(session: AsyncSession, question_id: uuid.UUID, user_id: s
     )
 
     return await session.scalar(query) is not None
+
+
+async def empty_old_comments(sessions, before: datetime) -> int:
+    """Empties the comments of reports written before `before`, a batch at a time; the reports
+    stay. Returns how many it emptied; a run cut off midway goes on the next day."""
+    return await update_in_batches(
+        sessions,
+        QuestionReport,
+        {"comment": ""},
+        QuestionReport.comment != "",
+        QuestionReport.created_at < before,
+    )

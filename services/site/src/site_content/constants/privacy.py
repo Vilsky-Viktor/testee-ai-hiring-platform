@@ -123,7 +123,7 @@ PRIVACY_SECTIONS = [
             "Notes you write on a company's interviews: until you delete the note or the company deletes the interview or itself. They belong to the company, so they stay with it, without your name, when you leave it or delete your account.",
             "Records of AI usage and of limits reached: 13 months, without your account id once you delete your account.",
             "Practice rounds: until you delete your account.",
-            "Ratings and reports of questions: until the question or your account is deleted.",
+            "Ratings and reports of questions: with the question. When your account is deleted, those you gave stay with no link to you and any comment you wrote with them is deleted. The same happens to those you gave in an interview when your invitation to it is deleted. Any other report's comment is deleted 12 months after it was written.",
             "Open to offers: until you turn it off or delete your account, and at most a year after you last turned it on or saved your LinkedIn profile; the log of your choices, until you delete your account.",
             "A report emailed from testee: the PDF is kept only to send the email, and deleted at most 7 days later.",
             "Pasted job descriptions in our generation records: 90 days after the generation finishes. The interview made from them stays in the company's account until it's deleted.",
