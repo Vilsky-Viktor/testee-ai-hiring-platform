@@ -21,12 +21,14 @@ from billing.services.currencies import decide
 logger = logging.getLogger(__name__)
 
 
-async def check_briefly(owner_type: str, owner_id: str) -> None:
-    """check(), waited for at most AUTO_TOP_UP_WAIT_SECONDS, so the request that used the credits
-    isn't held long and nothing runs after its answer. Cut off, the charge counts as one whose
-    answer was lost: its web hook adds the credits if Paddle took it."""
+async def check_briefly(
+    owner_type: str, owner_id: str, seconds: float = AUTO_TOP_UP_WAIT_SECONDS
+) -> None:
+    """check(), waited for at most `seconds`, so the request that used the credits isn't held
+    long and nothing runs after its answer. Cut off, the charge counts as one whose answer was
+    lost: its web hook adds the credits if Paddle took it, and auto_top_up_recheck looks it up."""
     try:
-        await asyncio.wait_for(check(owner_type, owner_id), AUTO_TOP_UP_WAIT_SECONDS)
+        await asyncio.wait_for(check(owner_type, owner_id), seconds)
     except TimeoutError:
         logger.warning("Automatic top-up cut off for %s %s", owner_type, owner_id)
 

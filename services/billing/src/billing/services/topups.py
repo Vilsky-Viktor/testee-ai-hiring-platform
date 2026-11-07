@@ -17,6 +17,7 @@ from billing.services import outbox as outbox_service
 from billing.services.auto_top_up_notices import charged
 from billing.services.catalog import bought
 from billing.services.referrals import reward_after_top_up
+from billing.services.web_hook_steps import within_web_hook
 
 logger = logging.getLogger(__name__)
 
@@ -178,9 +179,8 @@ async def grant(
 
 async def announce_top_up(owner_id, paid_cents, key, data, subscription_id) -> None:
     """Tells everyone of a new top-up: the outbox's events saved with it (the action log, the
-    services waiting for credits, an automatic one's bell) and the funnel. At once, never one
-    after another: each waits at most PUBLISH_IN_REQUEST_TIMEOUT_SECONDS and none raises, so
-    Paddle gets its answer within its 5 seconds even when Pub/Sub is slow, instead of
+    services waiting for credits, an automatic one's bell) and the funnel. At once, within one
+    web hook step, so Paddle gets its answer in time even when Pub/Sub is slow, instead of
     retrying; the outbox's next run publishes what this one couldn't."""
     steps = [
         outbox_service.flush_quietly(),
@@ -194,4 +194,4 @@ async def announce_top_up(owner_id, paid_cents, key, data, subscription_id) -> N
         ),
     ]
 
-    await asyncio.gather(*steps)
+    await within_web_hook(asyncio.gather(*steps))

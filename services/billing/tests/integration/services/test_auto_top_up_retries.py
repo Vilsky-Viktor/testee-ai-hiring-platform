@@ -13,7 +13,7 @@ from billing.repositories import auto_top_up_charges as charges
 from billing.repositories import auto_top_ups as rows
 from billing.repositories import ledger
 from billing.schemas.billing import AutoTopUpIn
-from billing.services import auto_top_ups
+from billing.services import auto_top_up_charging, auto_top_ups
 from tests.integration.factories import welcomed
 from tests.integration.services.test_auto_top_ups import checkout_data
 from tests.integration.transactions import transaction
@@ -92,7 +92,7 @@ def test_a_hard_decline_pauses_at_once_and_saving_the_setting_doesnt_retry_it(ru
 
     async def scenario():
         await running_low(acme, sub)
-        await auto_top_ups.check(COMPANY, acme)
+        await auto_top_up_charging.check(COMPANY, acme)
         row = await transaction(rows.get, COMPANY, acme)
         await auto_top_ups.turn_on(COMPANY, acme, CHOICE, row.buyer_id, Currency.USD)
         later = await transaction(rows.claim_charge, COMPANY, acme, datetime.now(UTC) + 60 * DAY)
@@ -138,7 +138,7 @@ def test_a_charge_that_goes_through_starts_the_declines_over(run, paddle_calls):
         await running_low(acme, f"sub_{uuid.uuid4().hex[:12]}")
         # Declined ten days ago: its retry is due.
         await transaction(charges.declined, COMPANY, acme, datetime.now(UTC) - 10 * DAY)
-        await auto_top_ups.check(COMPANY, acme)
+        await auto_top_up_charging.check(COMPANY, acme)
 
         return await transaction(rows.get, COMPANY, acme)
 

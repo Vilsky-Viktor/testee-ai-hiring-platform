@@ -8,7 +8,7 @@ import pytest
 
 from billing.repositories import purchases
 from billing.repositories import referrals as referrals_storage
-from billing.services import topups, webhooks
+from billing.services import topups, web_hook_steps, webhooks
 from tests.unit.paddle_events import adjustment, completed
 
 CREDITS_ADDED = "credits.added"
@@ -122,3 +122,18 @@ def test_a_slow_pub_sub_delays_paddles_answer_once_not_once_a_message(top_up, mo
 
     # Two waits of 0.3 s each: together, not one after another (0.6 s).
     assert time.monotonic() - started < 0.5
+
+
+def test_a_hung_pub_sub_doesnt_hold_paddles_answer_past_its_step(top_up, monkeypatch):
+    import time
+
+    async def hung(*args, **kwargs):
+        await asyncio.Event().wait()
+
+    monkeypatch.setattr(topups, "track", hung)
+    monkeypatch.setattr(topups.outbox_service, "flush_quietly", hung)
+    monkeypatch.setattr(web_hook_steps, "WEB_HOOK_STEP_SECONDS", 0.05)
+    started = time.monotonic()
+    asyncio.run(webhooks.handle(completed()))
+
+    assert time.monotonic() - started < 1

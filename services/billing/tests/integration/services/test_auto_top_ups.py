@@ -9,7 +9,7 @@ from billing.constants.products import AUTO_TOP_UP_COOLDOWN, OwnerType
 from billing.repositories import auto_top_ups as rows
 from billing.repositories import ledger
 from billing.schemas.billing import AutoTopUpIn
-from billing.services import accounts, auto_top_ups
+from billing.services import accounts, auto_top_up_charging, auto_top_ups
 from billing.services.topups import handle_completed
 from tests.integration.conftest import charged
 from tests.integration.factories import welcomed
@@ -43,12 +43,12 @@ def test_turning_on_waits_for_the_checkout_then_refills_under_the_threshold_once
         started = await auto_top_ups.out(COMPANY, acme, Currency.USD)
         # The welcome credits aren't under 500, so nothing is charged. Inviting candidates takes
         # them under: one charge, however often it's checked, while its credits haven't come.
-        await auto_top_ups.check(COMPANY, acme)
+        await auto_top_up_charging.check(COMPANY, acme)
         await transaction(
             ledger.reserve, COMPANY, acme, WELCOME_COMPANY - 1, "candidate:x", Reason.CANDIDATE
         )
-        await auto_top_ups.check(COMPANY, acme)
-        await auto_top_ups.check(COMPANY, acme)
+        await auto_top_up_charging.check(COMPANY, acme)
+        await auto_top_up_charging.check(COMPANY, acme)
         later = await transaction(
             rows.claim_charge, COMPANY, acme, datetime.now(UTC) + AUTO_TOP_UP_COOLDOWN * 2
         )

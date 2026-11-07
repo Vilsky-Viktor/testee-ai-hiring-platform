@@ -7,7 +7,7 @@ from billing.constants.products import AUTO_TOP_UP_COOLDOWN, OwnerType
 from billing.repositories import auto_top_ups as rows
 from billing.repositories import ledger
 from billing.schemas.billing import AutoTopUpIn
-from billing.services import auto_top_ups
+from billing.services import auto_top_up_charging, auto_top_ups
 from billing.services.topups import handle_completed
 from tests.integration.conftest import charged
 from tests.integration.factories import welcomed
@@ -40,7 +40,7 @@ def test_once_a_charges_credits_come_the_next_charge_waits_only_the_cooldown(run
             f"candidate:{uuid.uuid4()}",
             Reason.CANDIDATE,
         )
-        await auto_top_ups.check(COMPANY, acme)
+        await auto_top_up_charging.check(COMPANY, acme)
         # The charge's transaction.completed adds its credits, and they're used up again.
         await handle_completed(charged(sub))
         wallet = await transaction(ledger.wallet, COMPANY, acme)
