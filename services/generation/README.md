@@ -12,7 +12,10 @@ graph's checkpoints, the batched work and the quality patterns. What it does and
 
 Two apps share the code: `main.py` (the API other services and the admin zone call) and
 `worker_main.py` (the worker: Cloud Tasks runs the jobs and Cloud Scheduler the schedules
-through it; it holds the LangGraph graph and its checkpointer).
+through it; it holds the LangGraph graph and its checkpointer). `WORKER_URL` is where jobs go.
+On Google Cloud, `TASKS_QUEUE` is the Cloud Tasks queue and `INVOKER_SERVICE_ACCOUNT` the account
+that signs its calls. Each AI task has its own model and effort, `BANK_FILTER_MODEL` and
+`BANK_FILTER_REASONING_EFFORT` for the bank's filter among them, all in the docs' models table.
 
 ## Layout
 
