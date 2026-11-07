@@ -6,6 +6,7 @@ from testee_common.auth.google import Invoker
 from billing.services import limit_values, usage
 from billing.services import outbox as outbox_service
 from billing.services.auto_top_up_prices import check_prices
+from billing.services.auto_top_up_recheck import recheck
 from billing.services.reconciliation import reconcile
 
 router = APIRouter(
@@ -40,6 +41,12 @@ async def reconcile_with_paddle() -> None:
     """Daily: what Paddle's web hooks of the last week should have done, done again from Paddle's
     records (services/reconciliation.py)."""
     await reconcile(datetime.now(UTC))
+
+
+@router.post("/auto-top-up-recheck", status_code=status.HTTP_204_NO_CONTENT)
+async def recheck_auto_top_ups() -> None:
+    """Every 15 minutes: charges Paddle didn't answer (services/auto_top_up_recheck.py)."""
+    await recheck(datetime.now(UTC))
 
 
 @router.post("/auto-top-up-prices", status_code=status.HTTP_204_NO_CONTENT)

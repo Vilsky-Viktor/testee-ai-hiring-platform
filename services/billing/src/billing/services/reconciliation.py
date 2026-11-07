@@ -21,17 +21,7 @@ async def reconcile(now: datetime) -> None:
     those of a refund or chargeback. What it finds missing is logged; what was done is skipped.
     Transactions come first, so a refund whose payment's web hook was lost counts too."""
     since = now - RECONCILE_WINDOW
-    transactions = await paddle.completed_transactions(since)
-    ids = [transaction["id"] for transaction in transactions]
-    known = await credited(ids)
-
-    for transaction in transactions:
-        if transaction["id"] not in known:
-            await quietly(handle_completed, transaction)
-
-    for found in await credited([id_ for id_ in ids if id_ not in known]):
-        logger.warning("Reconciliation credited transaction %s: its web hook didn't", found)
-
+    await credit_completed(since)
     adjustments = await paddle.approved_adjustments(since)
     pairs = [(item["transaction_id"], item["id"]) for item in adjustments]
     done = await counted(pairs)
@@ -44,6 +34,20 @@ async def reconcile(now: datetime) -> None:
         logger.warning("Reconciliation counted adjustment %s: its web hook didn't", found)
 
     await settle_open_refunds(now)
+
+
+async def credit_completed(since: datetime) -> None:
+    """Paddle's completed transactions since then that billing hasn't credited, credited."""
+    transactions = await paddle.completed_transactions(since)
+    ids = [transaction["id"] for transaction in transactions]
+    known = await credited(ids)
+
+    for transaction in transactions:
+        if transaction["id"] not in known:
+            await quietly(handle_completed, transaction)
+
+    for found in await credited([id_ for id_ in ids if id_ not in known]):
+        logger.warning("Reconciliation credited transaction %s: its web hook didn't", found)
 
 
 async def settle_open_refunds(now: datetime) -> None:

@@ -84,6 +84,8 @@ locals {
     # What Paddle's web hooks of the last week should have done, done again from Paddle's own
     # records: a payment's credits or a refund a web hook never delivered.
     billing-reconcile = { service = "billing", path = "/internal/schedules/reconcile", cron = "15 5 * * *" }
+    # An automatic top-up's charge Paddle didn't answer, looked up in Paddle's records.
+    billing-auto-top-up-recheck = { service = "billing", path = "/internal/schedules/auto-top-up-recheck", cron = "*/15 * * * *" }
     # A new price for an automatic top-up, announced to its company 30 days before it applies.
     billing-auto-top-up-prices = { service = "billing", path = "/internal/schedules/auto-top-up-prices", cron = "45 5 * * *" }
     # Interviews whose time ran out after the candidate left.

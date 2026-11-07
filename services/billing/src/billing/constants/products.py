@@ -89,6 +89,9 @@ AUTO_TOP_UP_COOLDOWN = timedelta(minutes=10)
 # charge whose answer was lost) holds off the next one this long, so the card isn't charged again
 # and again meanwhile.
 AUTO_TOP_UP_UNCREDITED_WAIT = timedelta(days=1)
+# A charge Paddle didn't answer is looked up this long after it, when its web hook has had time.
+AUTO_TOP_UP_RECHECK_AFTER = timedelta(minutes=30)
+AUTO_TOP_UP_RECHECK_BATCH = 100
 # Using credits waits this long at most for an automatic top-up's charge: Cloud Run slows the CPU
 # once the answer is sent, so it can't run after it. A charge cut off is treated as one whose
 # answer was lost (AUTO_TOP_UP_UNCREDITED_WAIT).

@@ -5,8 +5,22 @@ from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 from testee_common.config.constants import DEFAULT_LANGUAGE
 
-from billing.constants.products import AUTO_TOP_UP_COOLDOWN, AUTO_TOP_UP_UNCREDITED_WAIT
+from billing.constants.products import (
+    AUTO_TOP_UP_COOLDOWN,
+    AUTO_TOP_UP_RECHECK_BATCH,
+    AUTO_TOP_UP_UNCREDITED_WAIT,
+)
 from billing.models.billing import AutoTopUp, Entry, Wallet
+
+
+def credited():
+    """The last charge's credits have come."""
+    return exists().where(
+        Entry.owner_type == AutoTopUp.owner_type,
+        Entry.owner_id == AutoTopUp.owner_id,
+        Entry.automatic.is_(True),
+        Entry.created_at >= AutoTopUp.charged_at,
+    )
 
 
 async def get(session: AsyncSession, owner_type: str, owner_id: str) -> AutoTopUp | None:
@@ -126,12 +140,6 @@ async def claim_charge(
     hasn't charged within the cooldown, it isn't paused and a declined card's retry is due
     (`retry_at`); marks it charged now. Atomic, so two requests at once charge once. The last
     charge's credits must have come first, else it waits AUTO_TOP_UP_UNCREDITED_WAIT."""
-    credited = exists().where(
-        Entry.owner_type == AutoTopUp.owner_type,
-        Entry.owner_id == AutoTopUp.owner_id,
-        Entry.automatic.is_(True),
-        Entry.created_at >= AutoTopUp.charged_at,
-    )
     query = (
         update(AutoTopUp)
         .where(
@@ -142,7 +150,7 @@ async def claim_charge(
                 AutoTopUp.charged_at.is_(None),
                 # Declined: the retry wait below applies.
                 AutoTopUp.failed_at >= AutoTopUp.charged_at,
-                and_(AutoTopUp.charged_at < now - AUTO_TOP_UP_COOLDOWN, credited),
+                and_(AutoTopUp.charged_at < now - AUTO_TOP_UP_COOLDOWN, credited()),
                 AutoTopUp.charged_at < now - AUTO_TOP_UP_UNCREDITED_WAIT,
             ),
             AutoTopUp.paused_at.is_(None),
@@ -151,13 +159,31 @@ async def claim_charge(
             Wallet.owner_id == AutoTopUp.owner_id,
             Wallet.balance - Wallet.reserved < AutoTopUp.threshold,
         )
-        .values(charged_at=now)
+        .values(charged_at=now, awaiting_answer=True)
         .returning(AutoTopUp)
     )
 
     row = await session.scalar(query)
 
     return row
+
+
+async def unanswered(session: AsyncSession, before: datetime) -> list[AutoTopUp]:
+    """Charges from before `before` that Paddle didn't answer and whose credits haven't come."""
+    query = (
+        select(AutoTopUp)
+        .where(
+            AutoTopUp.awaiting_answer.is_(True),
+            AutoTopUp.charged_at < before,
+            AutoTopUp.subscription_id.is_not(None),
+            AutoTopUp.paused_at.is_(None),
+            ~credited(),
+        )
+        .order_by(AutoTopUp.charged_at)
+        .limit(AUTO_TOP_UP_RECHECK_BATCH)
+    )
+
+    return list(await session.scalars(query))
 
 
 async def remove(

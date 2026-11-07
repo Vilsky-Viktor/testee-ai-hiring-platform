@@ -40,6 +40,8 @@
 # there is no web hook on a laptop, so every minute, not daily as in production, so a top-up's
 # credits arrive at once.
 * * * * * curl -s -X POST http://billing:8000/internal/schedules/reconcile
+# An automatic top-up's charge Paddle didn't answer, looked up in Paddle's records (billing).
+*/15 * * * * curl -s -X POST http://billing:8000/internal/schedules/auto-top-up-recheck
 # A new price for an automatic top-up, announced 30 days before it applies (billing), daily.
 45 5 * * * curl -s -X POST http://billing:8000/internal/schedules/auto-top-up-prices
 * * * * * curl -s -X POST http://notifications:8000/internal/schedules/outbox

@@ -23,6 +23,7 @@ async def declined(session: AsyncSession, owner_type: str, owner_id: str, now: d
         update(AutoTopUp)
         .where(*_of(owner_type, owner_id), AutoTopUp.paused_at.is_(None))
         .values(
+            awaiting_answer=False,
             declines=count,
             failed_at=now,
             retry_at=case(waits, value=count, else_=None),
@@ -47,6 +48,25 @@ async def pause(session: AsyncSession, owner_type: str, owner_id: str, now: date
     return paused is not None
 
 
+async def never_made(
+    session: AsyncSession, owner_type: str, owner_id: str, charged_at: datetime
+) -> bool:
+    """The charge of `charged_at` never reached Paddle, so nothing holds off the next. Whether
+    it was still that charge."""
+    query = (
+        update(AutoTopUp)
+        .where(
+            *_of(owner_type, owner_id),
+            AutoTopUp.charged_at == charged_at,
+            AutoTopUp.awaiting_answer.is_(True),
+        )
+        .values(charged_at=None, awaiting_answer=False)
+        .returning(AutoTopUp.owner_id)
+    )
+
+    return await session.scalar(query) is not None
+
+
 async def charged(
     session: AsyncSession, owner_type: str, owner_id: str, price: int, currency: str, now: datetime
 ) -> None:
@@ -60,6 +80,7 @@ async def charged(
         update(AutoTopUp)
         .where(*_of(owner_type, owner_id))
         .values(
+            awaiting_answer=False,
             declines=0,
             retry_at=None,
             price=price,
@@ -74,8 +95,9 @@ async def resume(
     session: AsyncSession, subscription_id: str, card_saved_at: datetime
 ) -> tuple[str, str] | None:
     """The subscription's card was updated at `card_saved_at`: a pause from before then ends and
-    the declines start over. Whose it was, or None when it wasn't paused then (a repeated web
-    hook, or one paused again since)."""
+    the declines start over. `failed_at` stays, so the decline before the pause doesn't hold off
+    the next charge (claim_charge). Whose it was, or None when it wasn't paused then (a repeated
+    web hook, or one paused again since)."""
     row = (
         await session.execute(
             update(AutoTopUp)
@@ -83,7 +105,7 @@ async def resume(
                 AutoTopUp.subscription_id == subscription_id,
                 AutoTopUp.paused_at <= card_saved_at,
             )
-            .values(paused_at=None, declines=0, retry_at=None, failed_at=None)
+            .values(paused_at=None, declines=0, retry_at=None)
             .returning(AutoTopUp.owner_type, AutoTopUp.owner_id)
         )
     ).first()

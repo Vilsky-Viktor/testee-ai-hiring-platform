@@ -84,6 +84,9 @@ class AutoTopUp(Base):
     currency: Mapped[str | None] = mapped_column(String(3))
     charged_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     failed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    # The last charge was asked for and Paddle hasn't answered (saved with the claim, so a charge
+    # cut off counts too): services/auto_top_up_recheck.py looks at it.
+    awaiting_answer: Mapped[bool] = mapped_column(default=False, server_default="false")
     # Declines in a row since the last charge that went through; the next try waits until
     # `retry_at`. Paused (`paused_at`) after a decline that can't pass later, or too many: no
     # charge until the card is updated.

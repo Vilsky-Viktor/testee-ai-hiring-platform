@@ -62,7 +62,7 @@ async def charge(row: AutoTopUp, owner_id: str, now: datetime) -> tuple[int, Cur
     return price, currency
 
 
-async def check(owner_type: str, owner_id: str) -> None:
+async def check(owner_type: str, owner_id: str) -> bool:
     """After credits are used: if the balance is now under the threshold, buys the chosen
     top-up with the saved card. Never fails the request that used the credits. A charge Paddle
     refuses (a declined card) is told to the company and tried again later, a few times at
@@ -70,7 +70,8 @@ async def check(owner_type: str, owner_id: str) -> None:
     until the card is updated (auto_top_up_declines). After a timeout or Paddle's own error the
     charge may have gone through: its transaction.completed web hook adds the credits. Until a
     charge's credits come, none follows it, for at most AUTO_TOP_UP_UNCREDITED_WAIT
-    (claim_charge). The claim is saved before Paddle is asked, and what it charged after."""
+    (claim_charge), or until Paddle shows it never took it (auto_top_up_recheck). The claim is
+    saved before Paddle is asked, and what it charged after. False when Paddle didn't answer."""
     row = None
     now = datetime.now(UTC)
 
@@ -79,16 +80,20 @@ async def check(owner_type: str, owner_id: str) -> None:
             row = await auto_top_ups.claim_charge(session, owner_type, owner_id, now)
 
         if row is None:
-            return
+            return True
 
         price, currency = await charge(row, owner_id, now)
     except Exception as error:
         logger.exception("Automatic top-up failed for %s %s", owner_type, owner_id)
 
-        if row is not None and declined(error):
-            await handle_decline(row, owner_type, owner_id, now)
+        if row is None or not declined(error):
+            return False
 
-        return
+        await handle_decline(row, owner_type, owner_id, now)
+
+        return True
 
     async with Session.begin() as session:
         await auto_top_up_charges.charged(session, owner_type, owner_id, price, currency, now)
+
+    return True
