@@ -10,7 +10,12 @@ from billing.repositories import auto_top_ups as auto_top_up_rows
 from billing.repositories import ledger, purchases, usage
 from billing.services import auto_top_up_charging, auto_top_ups
 
-AUTH = bearer(service_token("billing"))
+
+def fresh_auth():
+    """Made per call: a service token lasts a minute."""
+    return bearer(service_token("billing"))
+
+
 HOLD = {"company_id": "acme", "key": "session-1"}
 
 
@@ -18,9 +23,14 @@ def test_a_candidate_without_enough_credits_is_refused_with_a_message(client, mo
     async def too_low(session, owner_type, owner_id, amount, key, reason):
         return False
 
-    monkeypatch.setattr(ledger, "reserve", too_low)
+    async def check(owner_type, owner_id):
+        return None
 
-    response = client.post("/internal/candidates/hold", params=HOLD, headers=AUTH)
+    monkeypatch.setattr(ledger, "reserve", too_low)
+    # Reaches the database otherwise, and a failure there is swallowed.
+    monkeypatch.setattr(auto_top_up_charging, "check", check)
+
+    response = client.post("/internal/candidates/hold", params=HOLD, headers=fresh_auth())
 
     assert response.status_code == 402
     assert response.json() == {"detail": "Not enough credits. Top up to continue."}
@@ -44,7 +54,7 @@ def test_a_candidate_holds_its_credits_and_a_top_up_is_checked_before_answering(
     monkeypatch.setattr(ledger, "reserve", reserve)
     monkeypatch.setattr(auto_top_up_charging, "check", check)
 
-    response = client.post("/internal/candidates/hold", params=HOLD, headers=AUTH)
+    response = client.post("/internal/candidates/hold", params=HOLD, headers=fresh_auth())
 
     assert response.status_code == 204
     assert done == [
@@ -71,7 +81,7 @@ def test_a_slow_top_up_is_cut_off_and_the_hold_still_answers(client, monkeypatch
     monkeypatch.setattr(auto_top_up_charging, "check", never_answers)
     monkeypatch.setattr(auto_top_up_charging, "AUTO_TOP_UP_WAIT_SECONDS", 0.01)
 
-    response = client.post("/internal/candidates/hold", params=HOLD, headers=AUTH)
+    response = client.post("/internal/candidates/hold", params=HOLD, headers=fresh_auth())
 
     assert response.status_code == 204
     assert cut_off == ["acme"]
@@ -84,7 +94,7 @@ def test_several_companies_balances_at_once(client, monkeypatch):
     monkeypatch.setattr(ledger, "wallets", found)
 
     response = client.post(
-        "/internal/companies/credits", json={"owner_ids": ["a", "b"]}, headers=AUTH
+        "/internal/companies/credits", json={"owner_ids": ["a", "b"]}, headers=fresh_auth()
     )
 
     assert response.json() == {
@@ -102,7 +112,7 @@ def test_a_removed_members_card_turns_off_only_their_auto_top_up(client, monkeyp
     monkeypatch.setattr(auto_top_ups, "turn_off", turn_off)
 
     response = client.delete(
-        "/internal/companies/acme/auto-top-up", params={"buyer_id": "ann"}, headers=AUTH
+        "/internal/companies/acme/auto-top-up", params={"buyer_id": "ann"}, headers=fresh_auth()
     )
 
     assert response.status_code == 204
@@ -154,7 +164,7 @@ def test_accounts_exports_a_users_purchases_and_automatic_top_ups_with_a_post(cl
     monkeypatch.setattr(auto_top_up_rows, "of_buyer", of_buyer)
     monkeypatch.setattr(usage, "of_user", of_user)
 
-    response = client.post("/internal/users/ann/export", headers=AUTH)
+    response = client.post("/internal/users/ann/export", headers=fresh_auth())
 
     assert response.json() == {
         # Never chosen nor seen with a country: none saved.
@@ -202,7 +212,7 @@ def test_low_companies_say_how_many_credits_are_available(client, monkeypatch):
 
     monkeypatch.setattr(ledger, "running_low", running_low)
 
-    response = client.get("/internal/companies/low", headers=AUTH)
+    response = client.get("/internal/companies/low", headers=fresh_auth())
 
     assert response.json() == {
         "companies": [{"company_id": "acme", "available": 1100, "candidates": 2}]
@@ -220,7 +230,7 @@ def test_low_companies_can_be_only_those_asked_for(client, monkeypatch):
 
     monkeypatch.setattr(ledger, "running_low", running_low)
 
-    response = client.get("/internal/companies/low?ids=a&ids=b", headers=AUTH)
+    response = client.get("/internal/companies/low?ids=a&ids=b", headers=fresh_auth())
 
     assert response.json() == {"companies": []}
     assert asked == [["a", "b"]]
