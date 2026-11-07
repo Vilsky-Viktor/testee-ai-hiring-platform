@@ -8,6 +8,7 @@ from testee_common.ai.spoken_words import word_errors
 from testee_common.i18n.i18n import translate
 
 from rounds.constants.voice import (
+    CLIP_TAGS,
     LETTERS,
     MAX_ADDED_WORDS,
     MAX_READING_WORD_ERRORS,
@@ -118,12 +119,13 @@ def pcm_seconds(pcm: bytes) -> float:
 
 
 def ogg_opus(pcm: bytes) -> bytes:
-    """The speech model's audio as Ogg Opus, as clips are kept and played."""
+    """The speech model's audio as Ogg Opus, as clips are kept and played, tagged as AI speech."""
     out = io.BytesIO()
 
     with av.open(out, "w", format="ogg") as container:
         stream = container.add_stream("libopus", rate=SPEECH_RATE, layout="mono")
         stream.bit_rate = OPUS_BIT_RATE
+        stream.metadata.update(CLIP_TAGS)
         frame = av.AudioFrame(format="s16", layout="mono", samples=len(pcm) // 2)
         frame.sample_rate = SPEECH_RATE
         frame.planes[0].update(pcm)

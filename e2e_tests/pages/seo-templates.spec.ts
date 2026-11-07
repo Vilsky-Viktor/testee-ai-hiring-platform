@@ -26,6 +26,10 @@ test("a role test page is for hiring, with the way to practise second", async ({
   expect(await buttonLinks(page)).toEqual(["/", `/practice/${template.slug}`, "/"]);
   const topic = page.locator("main li").filter({ hasText: "E2E topic 1" });
   await expect(topic.locator("[data-slot=badge]")).toHaveText(SUBTOPICS);
+  // A sample question and its options carry the machine-readable mark of AI-written text.
+  const marked = page.locator("main ol > li").first().locator("[data-ai-generated=true]");
+  await expect(marked).toHaveCount(2);
+  await expect(marked.first()).toHaveAttribute("data-digital-source-type", /trainedAlgorithmicMedia$/);
   const data = await page
     .locator('script[type="application/ld+json"]')
     .allTextContents();

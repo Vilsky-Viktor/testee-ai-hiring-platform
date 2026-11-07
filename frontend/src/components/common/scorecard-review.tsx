@@ -12,6 +12,7 @@ import { QuestionText } from "@/components/common/question-text"
 import { languageOf } from "@/lib/locale"
 import { verdict } from "@/lib/rounds"
 import type { ReviewItem } from "@/types/round"
+import { AI_GENERATED } from "@/config/ai-generated"
 import { WARNING_TONE } from "@/config/tones"
 import { Dot } from "@/components/common/dot"
 
@@ -153,6 +154,7 @@ function ScorecardAnswer({
         </>
       ) : (
         <p
+          {...AI_GENERATED}
           {...languageOf(language)}
           className="bidi-auto rounded-xl bg-surface px-5 py-4 text-lg leading-relaxed font-light whitespace-pre-wrap"
         >

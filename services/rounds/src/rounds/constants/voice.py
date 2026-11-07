@@ -21,6 +21,12 @@ SPEECH_ATTEMPTS = 2
 # The speech model's audio: 16-bit mono PCM at this rate, kept as Ogg Opus at this bit rate.
 SPEECH_RATE = 24_000
 OPUS_BIT_RATE = 32_000
+# Tags in every clip's Ogg Opus comment header, the machine-readable mark that it's AI speech (EU AI
+# Act Art. 50(2)); the source type is IPTC's standard term for media made by a generative model.
+CLIP_TAGS = {
+    "AI_GENERATED": "true",
+    "DIGITAL_SOURCE_TYPE": "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+}
 # A reading strays when the model's own transcript of it has more word errors than this share of
 # the text's words, or this many words in a row the text hasn't (an answer, a comment).
 MAX_READING_WORD_ERRORS = 0.1

@@ -25,6 +25,7 @@ DETAIL_TOOLS = {
             "dislikes",
             "reports",
             "excluded",
+            "ai_generated",
             "my_rating",
             "reported",
         ],

@@ -72,6 +72,15 @@ test("an interview question sits beside its options and rates before a pick", as
     ]
     await expect(card).toContainText(LONG.slice(0, 40))
 
+    // The question and its options carry the machine-readable mark of AI-written text.
+    const question = card.getByRole("heading")
+    await expect(question).toHaveAttribute("data-ai-generated", "true")
+    await expect(question).toHaveAttribute("data-digital-source-type", /trainedAlgorithmicMedia$/)
+    const optionList = main
+      .getByRole("list")
+      .filter({ has: candidate.getByRole("button", { name: /Check .*first/ }) })
+    await expect(optionList).toHaveAttribute("data-ai-generated", "true")
+
     // Desktop: the rating shows with nothing picked, under the question, both left of the options.
     await expect(rating).toBeVisible()
 

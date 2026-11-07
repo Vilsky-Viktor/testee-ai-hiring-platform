@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl"
 
 import { gradeTone } from "@/lib/grade-tone"
 import { InlineText } from "@/components/common/inline-text"
+import { AI_GENERATED } from "@/config/ai-generated"
 
 /** A question's answer options: the right ones with a green check, the wrong ones with a red
  * cross, in the scorecards' colors. `picked` marks the options a talent or candidate chose. */
@@ -21,7 +22,7 @@ export function AnswerOptions({
   const t = useTranslations("questions")
 
   return (
-    <ul className={cn("space-y-1.5 text-sm", className)}>
+    <ul {...AI_GENERATED} className={cn("space-y-1.5 text-sm", className)}>
       {options.map((option, index) => (
         <li
           key={index}

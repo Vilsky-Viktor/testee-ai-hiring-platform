@@ -7,6 +7,7 @@ How testee turns a job description into an interview, how questions are reused a
 - [Question quality](#question-quality)
 - [Generation settings](#generation-settings)
 - [Models](#models)
+- [Marking AI output](#marking-ai-output)
 - [Rate limits](#rate-limits)
 
 ## Generation pipeline
@@ -240,6 +241,15 @@ Every generation runs on `gpt-6.1-sol` at low. In testing ([evals/README.md](../
 - Its hard questions came out too easy.
 - So generation stays on Sol, for one quality everywhere.
 - The verifier did as well at low as at medium, and stays at medium.
+
+## Marking AI output
+
+What AI generates carries a machine-readable mark (EU AI Act Art. 50(2); the legal reading and its limits are in the local `internal_docs/compliance/ai-act-technical-documentation.md`). Nothing a person sees changes.
+
+- **On pages:** `AI_GENERATED` (`frontend/src/config/ai-generated.ts`), `data-ai-generated="true"` and `data-digital-source-type` with IPTC's `trainedAlgorithmicMedia`, is on the shared components: `QuestionText`, `AnswerOptions`, `ChoiceOptions` and the AI's side of `ChatBubble` (the assistant and the help chat). So every question and option carries it wherever it's shown, the public role pages' samples and the landing's demos too.
+- **To AI apps:** `list_topic_questions` gives each question `ai_generated: true` ([MCP](features/mcp.md#tools)). The public API returns no questions.
+- **Voice clips:** every clip's Ogg Opus comment header carries `AI_GENERATED=true` and `DIGITAL_SOURCE_TYPE=<the IPTC term>` (rounds' `CLIP_TAGS`), written as the clip is made. Any tag reader shows them (`ffprobe clip.ogg`). A clip made before the tags stays as it is, as re-reading it costs money; it goes once nobody has played it for 30 days.
+- **Reports:** nothing, as a report PDF holds no questions.
 
 ## Rate limits
 

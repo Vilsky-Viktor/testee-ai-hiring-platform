@@ -97,6 +97,8 @@ class QuestionText(BaseModel):
     reported: bool = False
     # Left out by an owner or admin: no candidate gets it.
     excluded: bool = False
+    # Every question is written by AI: the machine-readable mark apps get (EU AI Act Art. 50(2)).
+    ai_generated: Literal[True] = True
 
 
 class ReportOut(BaseModel):

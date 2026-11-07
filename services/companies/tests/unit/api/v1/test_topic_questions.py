@@ -178,8 +178,11 @@ def test_topic_questions_come_with_their_options_and_the_members_own_say(client,
     response = client.get(f"/interviews/{INTERVIEW_ID}/topics/{TOPIC_ID}/questions")
 
     assert response.status_code == 200
-    # The one an owner or admin left out says so.
-    assert response.json() == [{**question, "excluded": False}, {**other, "excluded": True}]
+    # The one an owner or admin left out says so, and each is marked as written by AI.
+    assert response.json() == [
+        {**question, "excluded": False, "ai_generated": True},
+        {**other, "excluded": True, "ai_generated": True},
+    ]
 
     app.dependency_overrides.clear()
 

@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl"
 import { ChoiceOptions } from "@/features/company/components/choice-options"
 import { CodeEditor } from "@/components/common/code-editor"
 import { MultiChoiceTag } from "@/components/common/multi-choice-tag"
+import { AI_GENERATED } from "@/config/ai-generated"
 import { CARD_PADDING } from "@/config/cards"
 import type { DemoQuestion } from "@/config/candidates-demo"
 import type { CodeToken } from "@/lib/code-tokens"
@@ -49,7 +50,9 @@ export function DemoQuestionCard({
       <div className={cn("space-y-3", appear && QUESTION_APPEAR)}>
         <div className={cn("space-y-3 rounded-xl bg-surface", CARD_PADDING)}>
           {question.multi && <MultiChoiceTag />}
-          <p className="text-xl leading-snug font-normal">{question.text}</p>
+          <p {...AI_GENERATED} className="text-xl leading-snug font-normal">
+            {question.text}
+          </p>
         </div>
         {question.example && (
           <CodeEditor

@@ -4496,6 +4496,12 @@ export interface components {
        * @default false
        */
       excluded: boolean
+      /**
+       * Ai Generated
+       * @default true
+       * @constant
+       */
+      ai_generated: true
     }
     /**
      * RatingIn

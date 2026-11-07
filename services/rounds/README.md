@@ -58,7 +58,7 @@ clock and the voice start together and the reading counts in its time; a reading
 leaves the question unread, its clock started. The question and its options are read by
 OpenAI's realtime voice model (`SPEECH_MODEL`, voice `SPEECH_VOICE`; `prompts/voice_speech.py`
 tells it to say the text exactly; a reading whose own transcript strays from the text, such as
-an answer added, is made again once, then the question stays unread; kept as Ogg Opus, its eval
+an answer added, is made again once, then the question stays unread; kept as Ogg Opus, tagged as AI speech (`CLIP_TAGS`), its eval
 `evals/scripts/voice_reading_test.py`) once per text and voice and kept in
 `voice_clips` for every candidate who gets it (one reading a text: a Redis lock per clip, and a
 request needing a clip being read waits for it); a reading that fails leaves the question

@@ -2,6 +2,7 @@ import { cn } from "cn"
 import { CheckIcon } from "lucide-react"
 
 import { InlineText } from "@/components/common/inline-text"
+import { AI_GENERATED } from "@/config/ai-generated"
 import { PRIMARY_FILL } from "@/config/buttons"
 
 type ChoiceOptionsProps = {
@@ -27,7 +28,7 @@ export function ChoiceOptions({
   onChoose,
 }: ChoiceOptionsProps) {
   return (
-    <ul className={cn("space-y-2", bleed && "max-sm:-mx-6")}>
+    <ul {...AI_GENERATED} className={cn("space-y-2", bleed && "max-sm:-mx-6")}>
       {options.map((option, index) => {
         const picked = chosen.includes(index)
 

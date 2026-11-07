@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl"
 import { ChoiceOptions } from "@/features/company/components/choice-options"
 import { Button } from "@/components/ui/button"
 import { brandStyle } from "@/lib/brand"
+import { AI_GENERATED } from "@/config/ai-generated"
 import { brandFonts } from "@/config/brand-fonts"
 import type { BrandColors, BrandStyle } from "@/types/company"
 
@@ -41,7 +42,9 @@ export function BrandPreview({
       <div className="h-1.5 overflow-hidden rounded-full bg-muted">
         <div className="h-full w-2/5 bg-primary" />
       </div>
-      <p className="rounded-xl bg-surface p-4 text-lg">{t("sampleQuestion")}</p>
+      <p {...AI_GENERATED} className="rounded-xl bg-surface p-4 text-lg">
+        {t("sampleQuestion")}
+      </p>
       <ChoiceOptions
         options={t.raw("sampleOptions") as string[]}
         chosen={[0]}

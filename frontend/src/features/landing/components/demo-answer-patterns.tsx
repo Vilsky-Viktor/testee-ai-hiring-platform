@@ -4,6 +4,7 @@ import { TriangleAlertIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { CornerSign } from "@/components/common/corner-sign"
+import { AI_GENERATED } from "@/config/ai-generated"
 import { SIGN_CARD } from "@/config/cards"
 import type { DemoCandidate } from "@/config/reports-demo"
 
@@ -35,7 +36,9 @@ export function DemoAnswerPatterns({
         <p className="text-sm font-medium">{t("askTitle")}</p>
         <div className="space-y-1.5">
           <p className="text-sm text-muted-foreground">{followUp.topic}</p>
-          <p className="font-light">{followUp.text}</p>
+          <p {...AI_GENERATED} className="font-light">
+            {followUp.text}
+          </p>
           <p className="text-sm">
             {t.rich("ask", {
               answer: followUp.right,

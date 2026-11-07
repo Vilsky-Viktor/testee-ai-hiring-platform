@@ -1,5 +1,7 @@
 import { cn } from "cn"
 
+import { AI_GENERATED } from "@/config/ai-generated"
+
 /** One message of a chat with the AI: the person's a grey bubble on the end side, the AI's plain
  * text across the chat; `after` (such as the answer's votes) sits under it. */
 export function ChatBubble({
@@ -20,17 +22,24 @@ export function ChatBubble({
     className
   )
   const place = role === "user" ? "ms-auto w-fit max-w-[85%]" : "w-full"
+  const mark = role === "assistant" ? AI_GENERATED : undefined
 
   if (after) {
     return (
       <li className={cn(place, "group/answer space-y-1")}>
-        <div className={bubble}>{content}</div>
+        <div {...mark} className={bubble}>
+          {content}
+        </div>
         {after}
       </li>
     )
   }
 
-  return <li className={cn(place, bubble)}>{content}</li>
+  return (
+    <li {...mark} className={cn(place, bubble)}>
+      {content}
+    </li>
+  )
 }
 
 /** The AI's answer before its first words arrive: three dots rising in turn, named `label`

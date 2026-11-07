@@ -1,6 +1,8 @@
+import io
 import math
 import struct
 
+import av
 from testee_common.i18n.i18n import translate
 
 from rounds.constants.voice import SPEECH_RATE
@@ -89,6 +91,12 @@ def test_the_speech_models_audio_is_kept_as_ogg_opus_of_the_same_length():
     assert audio.startswith(b"OggS") and b"OpusHead" in audio
     assert abs(ogg_seconds(audio) - 2.0) < 0.05
     assert len(audio) < len(pcm) / 4
+    # Marked as AI speech for any reader of the file (EU AI Act Art. 50(2)).
+    with av.open(io.BytesIO(audio)) as clip:
+        tags = clip.streams.audio[0].metadata
+
+    assert tags["AI_GENERATED"] == "true"
+    assert tags["DIGITAL_SOURCE_TYPE"].endswith("/digitalsourcetype/trainedAlgorithmicMedia")
 
 
 def test_a_reading_strays_when_it_adds_words_or_misses_too_many():

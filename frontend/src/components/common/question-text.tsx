@@ -2,6 +2,7 @@ import { cn } from "cn"
 
 import { CodeEditor } from "@/components/common/code-editor"
 import { InlineText } from "@/components/common/inline-text"
+import { AI_GENERATED } from "@/config/ai-generated"
 import type { CodeToken } from "@/lib/code-tokens"
 import { splitCodeBlocks } from "@/lib/question-text"
 
@@ -22,6 +23,7 @@ export function QuestionText({
 
   return (
     <div
+      {...AI_GENERATED}
       role={heading ? "heading" : undefined}
       aria-level={heading ? 1 : undefined}
       // A heading takes focus when its question opens, for keyboard and screen reader users.

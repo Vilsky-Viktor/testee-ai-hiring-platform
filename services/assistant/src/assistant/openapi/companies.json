@@ -13163,6 +13163,12 @@
       "type": "boolean",
       "title": "Excluded",
       "default": false
+     },
+     "ai_generated": {
+      "type": "boolean",
+      "const": true,
+      "title": "Ai Generated",
+      "default": true
      }
     },
     "type": "object",
