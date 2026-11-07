@@ -74,7 +74,7 @@ class WebhookDelivery(Base):
     event_id: Mapped[str] = mapped_column(String(128), primary_key=True)
     # The web hook's company, kept on the row too (every tenant's row carries it).
     company_id: Mapped[uuid.UUID] = mapped_column(Uuid, index=True)
-    delivered_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    delivered_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, index=True)
 
 
 class WebhookRetry(Base):

@@ -4,6 +4,7 @@ from datetime import UTC, datetime
 from sqlalchemy import delete, func, select, update
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
+from testee_common.db.db import delete_in_batches
 from testee_common.events import audit
 from testee_common.events.audit_actions import AuditAction, TargetKind
 
@@ -187,19 +188,23 @@ async def delivered(session: AsyncSession, webhook_id: uuid.UUID, event_id: str)
 
 
 async def mark_delivered(session: AsyncSession, webhook_id: uuid.UUID, event_id: str) -> None:
-    """Notes the event as sent to the web hook, and forgets the web hook's ones long past
-    redelivery (DELIVERIES_KEPT)."""
-    old = delete(WebhookDelivery).where(
-        WebhookDelivery.webhook_id == webhook_id,
-        WebhookDelivery.delivered_at < datetime.now(UTC) - DELIVERIES_KEPT,
-    )
+    """Notes the event as sent to the web hook."""
     query = (
         insert(WebhookDelivery)
         .values(webhook_id=webhook_id, event_id=event_id, company_id=company_of(webhook_id))
         .on_conflict_do_nothing()
     )
-    await session.execute(old)
     await session.execute(query)
+
+
+async def forget_old_deliveries(sessions, until: float) -> int:
+    """Forgets deliveries long past redelivery (DELIVERIES_KEPT), batch by batch until `until`
+    (time.monotonic()); how many went."""
+    before = datetime.now(UTC) - DELIVERIES_KEPT
+
+    return await delete_in_batches(
+        sessions, WebhookDelivery, WebhookDelivery.delivered_at < before, until=until
+    )
 
 
 async def set_failing(session: AsyncSession, webhook_id: uuid.UUID, failing: bool) -> None:

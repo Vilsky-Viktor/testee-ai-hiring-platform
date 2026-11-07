@@ -52,6 +52,9 @@ def endpoints(monkeypatch, companies_api):
     async def delivered_to(session, webhook_ids, event_id):
         return {item for item in webhook_ids if (item, event_id) in state["delivered"]}
 
+    async def forget_old_deliveries(sessions, until):
+        return 0
+
     async def mark_delivered(session, webhook_id, event_id):
         state["delivered"].add((webhook_id, event_id))
 
@@ -102,6 +105,7 @@ def endpoints(monkeypatch, companies_api):
     monkeypatch.setattr(delivery.webhooks, "delivered", delivered)
     monkeypatch.setattr(delivery.webhooks, "delivered_to", delivered_to)
     monkeypatch.setattr(delivery.webhooks, "mark_delivered", mark_delivered)
+    monkeypatch.setattr(delivery.webhooks, "forget_old_deliveries", forget_old_deliveries)
     monkeypatch.setattr(delivery.webhooks, "set_failing", set_failing)
     monkeypatch.setattr(delivery.endpoints, "post", post)
     monkeypatch.setattr(delivery.retries, "add", add_retry)

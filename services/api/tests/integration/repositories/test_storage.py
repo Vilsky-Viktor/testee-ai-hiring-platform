@@ -1,4 +1,5 @@
 import os
+import time
 import uuid
 from datetime import UTC, datetime, timedelta
 
@@ -83,14 +84,21 @@ def test_a_web_hook_remembers_an_event_once_and_forgets_old_ones(run):
         # Twice: Pub/Sub may redeliver while the first is still being handled.
         await transaction(webhooks.mark_delivered, hook.id, "e1")
         await transaction(webhooks.mark_delivered, hook.id, "e1")
+        # Delivering keeps the old one; the retry schedule's batched retention removes it.
+        kept = await transaction(webhooks.delivered, hook.id, "old")
+        forgotten = await webhooks.forget_old_deliveries(Session, time.monotonic() + 30)
 
-        return await transaction(webhooks.delivered, hook.id, "e1"), await transaction(
-            webhooks.delivered, hook.id, "old"
+        return (
+            await transaction(webhooks.delivered, hook.id, "e1"),
+            await transaction(webhooks.delivered, hook.id, "old"),
+            kept,
+            forgotten,
         )
 
-    new, old = run(scenario())
+    new, old, kept, forgotten = run(scenario())
 
     assert new is True and old is False
+    assert (kept, forgotten) == (True, 1)
 
 
 def test_a_deleted_company_loses_its_keys_web_hooks_and_their_deliveries(run):

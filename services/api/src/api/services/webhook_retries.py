@@ -18,7 +18,8 @@ async def retry() -> int:
     """Every 5 minutes: events web hooks didn't take, whose time came, are sent again, a batch
     at once, batch after batch until RETRY_RUN_SECONDS into the run. One that got there since is
     dropped. One that fails again waits twice as long; after RETRY_GIVE_UP it's dropped and its
-    web hook is paused. How many were due."""
+    web hook is paused. Deliveries long past redelivery go too, in what time is left. How many
+    were due."""
     stop_at = time.monotonic() + RETRY_RUN_SECONDS
     due = 0
 
@@ -28,6 +29,8 @@ async def retry() -> int:
 
         if sent < RETRY_BATCH:
             break
+
+    await webhooks.forget_old_deliveries(Session, stop_at)
 
     return due
 
