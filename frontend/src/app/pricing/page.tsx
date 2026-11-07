@@ -123,12 +123,15 @@ export default async function PricingPage() {
             />
           ))}
         </ul>
-        {/* The credits and the taxes, each its own sentence on its own line, in one card. */}
+        {/* The credits, the taxes and refunds, each on its own line, in one card. */}
         <InfoCard className="max-sm:-mx-6 max-sm:rounded-none">
           <span className="block">
             {t("credits", { credits: catalog.candidate_credits })}
           </span>
           <span className="mt-1 block">{billing("taxes")}</span>
+          <span className="mt-1 block">
+            {landing("freeToStart.cards.refund.text")}
+          </span>
         </InfoCard>
       </section>
 
