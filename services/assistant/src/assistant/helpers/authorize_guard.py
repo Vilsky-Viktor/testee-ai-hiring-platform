@@ -11,21 +11,22 @@ from assistant.constants.mcp import (
     BAD_REQUEST,
     CONNECT_COOKIE,
     CONNECT_COOKIE_PATH,
-    CONNECT_PATH,
     REQUEST_SECONDS,
 )
+from assistant.helpers.oauth import consent_url
 
 logger = logging.getLogger(__name__)
 
 
 def request_of(location: str) -> str | None:
-    """The request id a redirect to the consent page carries."""
-    url = urlparse(location)
-
-    if url.path != CONNECT_PATH:
+    """The request id a redirect to the site's own consent page carries; None for any other
+    address, whatever its path, and for an error sent to an app's address that looks like it."""
+    if not location.startswith(consent_url()):
         return None
 
-    return (parse_qs(url.query).get("request") or [None])[0]
+    query = parse_qs(urlparse(location).query)
+
+    return query["request"][0] if set(query) == {"request"} else None
 
 
 def cookie(request_id: str) -> str:

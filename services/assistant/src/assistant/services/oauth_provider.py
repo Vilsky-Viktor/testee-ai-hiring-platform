@@ -14,11 +14,9 @@ from mcp.shared.auth import OAuthClientInformationFull, OAuthToken
 from testee_common.auth.tokens import hashed
 from testee_common.events.analytics import track
 
-from assistant.config import settings
 from assistant.constants.limits import MAX_REGISTRATION_BYTES, MAX_STATE_LENGTH
 from assistant.constants.mcp import (
     API_KEY_PREFIX,
-    CONNECT_PATH,
     MCP_SCOPE,
     OTHER_RESOURCE,
     REFRESH_REUSE_GRACE_SECONDS,
@@ -26,6 +24,7 @@ from assistant.constants.mcp import (
 from assistant.core.db import Session
 from assistant.helpers.mcp_clients import describe_client, is_document_id, refused_redirect
 from assistant.helpers.oauth import (
+    consent_url,
     funnel_client,
     new_tokens,
     other_resource,
@@ -114,7 +113,7 @@ class Provider:
         }
         await oauth_requests.save_request(request_id, request)
 
-        return f"{settings.site_url.rstrip('/')}{CONNECT_PATH}?request={request_id}"
+        return consent_url(request_id)
 
     async def load_authorization_code(
         self, client: OAuthClientInformationFull, authorization_code: str

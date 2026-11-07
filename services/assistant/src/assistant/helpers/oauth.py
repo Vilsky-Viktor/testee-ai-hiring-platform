@@ -7,6 +7,7 @@ from testee_common.auth.tokens import new_token
 from assistant.config import settings
 from assistant.constants.mcp import (
     ACCESS_SECONDS,
+    CONNECT_PATH,
     FUNNEL_CLIENTS,
     MCP_PATH,
     MCP_READ_SCOPE,
@@ -20,6 +21,11 @@ from assistant.constants.mcp import (
 def resource_url() -> str:
     """The MCP endpoint, the one resource testee's access is for."""
     return settings.site_url.rstrip("/") + MCP_PATH
+
+
+def consent_url(request_id: str = "") -> str:
+    """The site's consent page for a request; with none, how every such address starts."""
+    return f"{settings.site_url.rstrip('/')}{CONNECT_PATH}?request={request_id}"
 
 
 def other_resource(resource: str | None) -> bool:

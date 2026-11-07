@@ -3,6 +3,7 @@ from urllib.parse import urlparse
 from mcp.shared.auth import OAuthClientInformationFull
 from pydantic import ValidationError
 
+from assistant.config import settings
 from assistant.constants.mcp import (
     KNOWN_CLIENTS,
     KNOWN_SCHEMES,
@@ -39,8 +40,14 @@ def describe_client(reported_name: str | None, redirect_uri: str) -> tuple[str, 
 
 def refused_redirect(redirect_uri: str) -> bool:
     """A return address that would run or read something in the browser instead of opening an
-    app (constants/mcp.py REFUSED_REDIRECT_SCHEMES)."""
-    return urlparse(redirect_uri).scheme.lower() in REFUSED_REDIRECT_SCHEMES
+    app (constants/mcp.py REFUSED_REDIRECT_SCHEMES), or one on the site itself: an app's address
+    there could pass for the consent page."""
+    url = urlparse(redirect_uri)
+    own_site = url.hostname == urlparse(settings.site_url).hostname
+
+    return url.scheme.lower() in REFUSED_REDIRECT_SCHEMES or (
+        own_site and url.hostname not in LOOPBACK_HOSTS
+    )
 
 
 def is_document_id(client_id: str) -> bool:

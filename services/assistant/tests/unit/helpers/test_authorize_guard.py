@@ -8,6 +8,8 @@ from starlette.testclient import TestClient
 from assistant.constants.mcp import CONNECT_COOKIE, CONNECT_COOKIE_PATH
 from assistant.helpers.authorize_guard import GuardAuthorize, request_of
 
+SITE = "http://localhost:8090"
+
 
 def redirecting(location: str) -> TestClient:
     async def authorize(scope, receive, send):
@@ -19,7 +21,7 @@ def redirecting(location: str) -> TestClient:
 
 
 def test_sending_the_browser_to_the_consent_page_marks_it_for_that_request():
-    response = redirecting("https://testee.ai/connect?request=r1").get("/authorize")
+    response = redirecting(f"{SITE}/connect?request=r1").get("/authorize")
     marked = response.headers["set-cookie"]
 
     assert marked.startswith(f"{CONNECT_COOKIE}=r1;")
@@ -38,8 +40,21 @@ def test_an_error_is_a_page_never_a_redirect_to_the_apps_address():
 
 
 def test_only_the_consent_page_carries_a_request():
-    assert request_of("https://testee.ai/connect?request=r1") == "r1"
+    assert request_of(f"{SITE}/connect?request=r1") == "r1"
     assert request_of("https://evil.example/connect-x?request=r1") is None
+    assert request_of("https://evil.example/connect?request=r1") is None
+    assert request_of(f"{SITE}.evil.example/connect?request=r1") is None
+    assert request_of(f"{SITE}/connect?request=r1&error=invalid_request") is None
+    assert request_of(f"{SITE}/connect?request=") is None
+
+
+def test_a_connect_address_on_another_site_is_refused_and_marks_nothing():
+    """An attacker's app registered at https://evil.example/connect?request=R: following it would
+    mark the victim's browser for the attacker's request."""
+    response = redirecting("https://evil.example/connect?request=r1").get("/authorize")
+
+    assert response.status_code == 400
+    assert "location" not in response.headers and "set-cookie" not in response.headers
 
 
 def test_a_request_it_cant_read_is_logged_by_its_errors_type_only(caplog):

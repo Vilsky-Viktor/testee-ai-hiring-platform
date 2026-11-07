@@ -71,8 +71,8 @@ the HTTP rules are `api.md`'s, tool-writing rules `ai.md`'s, security `security.
   redirects, 5 s, 4,000 bytes), must name itself by its URL, have no secret and return only to
   app addresses; its copy is kept a day, and serves while its site is down.
 - Redirect URIs match exactly what was registered, but a loopback one on any port (RFC 8252);
-  schemes that run in the browser are refused; `/authorize` never redirects anywhere but the
-  consent page (no open redirect).
+  schemes that run in the browser and addresses on the site itself are refused; `/authorize`
+  never redirects anywhere but the consent page, checked by its whole address (no open redirect).
 - Consent: testee's own page names the app by the site it returns to (not its claimed name),
   shows the redirect host and warns for unknown ones; only the browser that started the request
   may allow it (`testee_connect` cookie: `HttpOnly`, `SameSite=Lax`, `Secure`, short-lived);
