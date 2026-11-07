@@ -12,7 +12,8 @@ your team's notes, and check your credits. To hear about results as they happen,
 2. Open your company from your workspace and go to **Integrations**, then **API**.
 3. Select **New key**.
 4. Name the key after the platform that will use it, choose its permissions and when it expires
-   (in 1, 3, 6 or 12 months, or never), then confirm.
+   (in 1, 3, 6 or 12 months, or never), then confirm. A new key only reads; the quickstart below
+   needs `candidates:invite`, which **Read & write** includes.
 5. Copy the key and store it securely. It's shown only once, because testee keeps only a hash of
    it.
 
@@ -69,7 +70,8 @@ yourself is ignored.
 ## Quickstart: invite a candidate
 
 This request invites a candidate and returns their invite link. It's safe to send twice: nobody
-is invited a second time.
+is invited a second time. Your key needs the `candidates:invite` permission, or the request returns
+`403` (`missing_permission`).
 
 ```bash
 curl -X POST "https://testee.ai/api/v1/interviews/$INTERVIEW_ID/candidates" \\
@@ -122,6 +124,10 @@ console.log(candidate.invite_url)
 All of a company's keys share a limit of 60 requests per minute by default, including their calls
 to the MCP server. Past it, requests return `429` (`rate_limited`) with a `Retry-After` header
 giving the seconds to wait.
+
+One IP address can also make at most 3,000 requests a minute, whichever companies' keys it uses.
+Past that, the edge of the network answers `429` with no `code`, body or `Retry-After` to parse:
+wait a minute, and spread calls across addresses or stay under the limit.
 
 Some actions have daily or hourly limits of their own, with the same answer. By default:
 
@@ -248,6 +254,8 @@ Any other refusal carries its status's code: `bad_request`, `unauthorized`, `for
 Within `v1`, fields, optional parameters, error codes, enum values and event types are only ever
 added. Anything retired first answers with `Deprecation` and `Sunset` headers and is listed here.
 
+- 2026-11-07: interviews carry `generation_failed`, and the `interview.failed` and
+  `interview.cancelled` web hook events say when an interview won't become ready.
 - 2026-11-07: `GET /candidates/removed` lists the candidates your company removed in the last 14
   days, to catch up after missing `candidate.removed` events.
 - 2026-11-07: `POST /interviews` goes straight on from the proposed topics to the questions, with
