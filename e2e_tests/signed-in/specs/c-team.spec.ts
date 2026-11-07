@@ -241,6 +241,8 @@ test("owner adds a viewer, who sees the company read-only", async ({
   await openMenu(page, page.getByRole("main").getByTestId("integration-menu"));
   await expect(page.getByRole("menu").getByRole("menuitem")).toHaveCount(3);
   await page.keyboard.press("Escape");
+  // Gone, so the sort menu below is the only one.
+  await expect(page.getByRole("menu")).toHaveCount(0);
   await expect(page.getByTestId("new-candidate")).toHaveCount(0);
   await shot(page, "viewer-candidates");
   // A sort menu (the search's last menu: date, then grade) closes on the pick too.
