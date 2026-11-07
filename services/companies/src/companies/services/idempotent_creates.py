@@ -1,15 +1,10 @@
 from collections.abc import Awaitable, Callable
-from typing import Protocol
 from uuid import UUID
 
-from testee_common.redis.idempotency import fingerprint, key_name, once
+from testee_common.redis.idempotency import Made, fingerprint, key_name, once_or_found
 
 from companies.constants.idempotency import IDEMPOTENCY_SECONDS
 from companies.integrations.redis import get_redis
-
-
-class Made(Protocol):
-    id: UUID
 
 
 async def once_per_key[T: Made](
@@ -28,15 +23,7 @@ async def once_per_key[T: Made](
     if key is None:
         return await make()
 
-    made = None
-
-    async def run() -> str:
-        nonlocal made
-        made = await make()
-
-        return str(made.id)
-
     name = key_name("companies", what, user_id, scope, key)
-    found = await once(get_redis(), name, IDEMPOTENCY_SECONDS, fingerprint(what, scope, body), run)
+    request = fingerprint(what, scope, body)
 
-    return made if made is not None else await find(UUID(found))
+    return await once_or_found(get_redis(), name, IDEMPOTENCY_SECONDS, request, make, find)

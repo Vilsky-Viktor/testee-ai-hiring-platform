@@ -168,7 +168,7 @@
      "Interviews"
     ],
     "summary": "Create an interview",
-    "description": "Starts an interview from a job description, as the key (the action log names it). testee\nproposes its topics and goes straight on to its questions, which take a few minutes: until\n`ready` is true, it can't take candidates; the `interview.ready` web hook event says when it\nis. Until your company's first top-up, and during a pause, the topics wait for a review\ninstead: by an owner or admin on the interview's page in testee, or by an agent with\n`review_generation` over MCP. The API has no route for it, and topics left unreviewed for 14\ndays cancel the interview. If making it fails, `ready` stays false until an owner or admin\nretries it on that page. Retrying this request is safe: the same request from the same key\nwithin 15 minutes returns the interview the first one made, with `200`.\n\nNeeds the `interviews:create` permission.",
+    "description": "Starts an interview from a job description, as the key (the action log names it). testee\nproposes its topics and goes straight on to its questions, which take a few minutes: until\n`ready` is true, it can't take candidates; the `interview.ready` web hook event says when it\nis. Until your company's first top-up, and during a pause, the topics wait for a review\ninstead: by an owner or admin on the interview's page in testee, or by an agent with\n`review_generation` over MCP. The API has no route for it, and topics left unreviewed for 14\ndays cancel the interview (`interview.cancelled`). If making it fails, `generation_failed`\nis true and `ready` stays false until an owner or admin retries it on that page\n(`interview.failed`). Retrying this request is safe: the same request from the same key\nwithin 15 minutes returns the interview the first one made, with `200`.\n\nNeeds the `interviews:create` permission.",
     "operationId": "create_interview",
     "security": [
      {
@@ -2006,6 +2006,7 @@
      "manage"
     ],
     "summary": "Create Key",
+    "description": "With an Idempotency-Key, the same request again gets the key the first made, without the\nkey itself: only its hash is kept.",
     "operationId": "create_key",
     "security": [
      {
@@ -2320,6 +2321,7 @@
      "manage"
     ],
     "summary": "Create Webhook",
+    "description": "With an Idempotency-Key, the same request again gets the web hook the first made.",
     "operationId": "create_webhook",
     "security": [
      {
@@ -3239,6 +3241,11 @@
       "title": "Ready",
       "description": "Whether the questions are ready and candidates can be invited"
      },
+     "generation_failed": {
+      "type": "boolean",
+      "title": "Generation Failed",
+      "description": "Whether making its questions failed; true until an owner or admin retries it in testee"
+     },
      "pass_mark": {
       "type": "integer",
       "title": "Pass Mark",
@@ -3275,6 +3282,7 @@
      "title",
      "status",
      "ready",
+     "generation_failed",
      "pass_mark",
      "candidate_count",
      "created_at"
@@ -3285,6 +3293,7 @@
      {
       "candidate_count": 12,
       "created_at": "2026-10-01T09:00:00Z",
+      "generation_failed": false,
       "id": "6b1f0c3e-2a7d-4c58-9e41-3f8a2d5b7c90",
       "pass_mark": 70,
       "ready": true,
@@ -3294,11 +3303,75 @@
      }
     ]
    },
+   "InterviewCancelledEvent": {
+    "properties": {
+     "interview_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Interview Id",
+      "description": "The interview's id, which no longer exists"
+     }
+    },
+    "type": "object",
+    "required": [
+     "interview_id"
+    ],
+    "title": "InterviewCancelledEvent",
+    "description": "The `data` object of an `interview.cancelled` event."
+   },
+   "InterviewCancelledWebhook": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "title": "Id",
+      "description": "The event's id: the same when it's sent again, so ignore one you've had",
+      "examples": [
+       "9f1c2b7e-4d3a-4b8e-9a51-0c6e2f1d7a44"
+      ]
+     },
+     "occurred_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Occurred At",
+      "description": "When the change happened, to put events in order: a retried one can arrive after a later one",
+      "examples": [
+       "2026-10-15T08:30:00+00:00"
+      ]
+     },
+     "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Timestamp",
+      "description": "The same as `occurred_at`, under the name most web hook libraries read",
+      "examples": [
+       "2026-10-15T08:30:00+00:00"
+      ]
+     },
+     "type": {
+      "type": "string",
+      "const": "interview.cancelled",
+      "title": "Type",
+      "description": "The event's type"
+     },
+     "data": {
+      "$ref": "#/components/schemas/InterviewCancelledEvent"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "occurred_at",
+     "timestamp",
+     "type",
+     "data"
+    ],
+    "title": "InterviewCancelledWebhook"
+   },
    "InterviewEvent": {
     "properties": {
      "interview": {
       "$ref": "#/components/schemas/Interview",
-      "description": "The interview, now ready"
+      "description": "The interview"
      }
     },
     "type": "object",
@@ -3306,7 +3379,7 @@
      "interview"
     ],
     "title": "InterviewEvent",
-    "description": "The `data` object of an `interview.ready` event."
+    "description": "The `data` object of an `interview.ready` or `interview.failed` event."
    },
    "InterviewIn": {
     "properties": {
@@ -3397,7 +3470,10 @@
      },
      "type": {
       "type": "string",
-      "const": "interview.ready",
+      "enum": [
+       "interview.ready",
+       "interview.failed"
+      ],
       "title": "Type",
       "description": "The event's type"
      },
@@ -3694,7 +3770,14 @@
       "title": "Access"
      },
      "key": {
-      "type": "string",
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
       "title": "Key"
      }
     },

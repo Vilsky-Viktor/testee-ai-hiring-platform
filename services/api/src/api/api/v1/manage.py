@@ -18,7 +18,8 @@ from api.schemas.manage import (
     WebhookIn,
     WebhookTestOut,
 )
-from api.services import manage
+from api.schemas.public_params import IdempotencyKey
+from api.services import manage, manage_webhooks
 from api.services import outbox as outbox_service
 
 # The company's keys and web hooks, for its API page; not part of the public API.
@@ -35,11 +36,21 @@ async def get_settings(company_id: UUID, user: CurrentUser) -> ApiSettingsOut:
 
 
 @router.post("/keys", status_code=status.HTTP_201_CREATED)
-async def create_key(company_id: UUID, body: KeyIn, user: CurrentUser) -> NewKeyOut:
+async def create_key(
+    company_id: UUID, body: KeyIn, user: CurrentUser, idempotency_key: IdempotencyKey = None
+) -> NewKeyOut:
+    """With an Idempotency-Key, the same request again gets the key the first made, without the
+    key itself: only its hash is kept."""
     await companies.require(company_id, user.uid, editor=True)
 
-    created = await manage.create_key(
-        company_id, body.name, body.expiry, body.permissions, body.allowed_ips, user.uid
+    created = await manage.create_key_once(
+        company_id,
+        body.name,
+        body.expiry,
+        body.permissions,
+        body.allowed_ips,
+        user.uid,
+        idempotency_key,
     )
     await outbox_service.flush_quietly()
 
@@ -92,10 +103,15 @@ async def remove_key(company_id: UUID, key_id: UUID, user: CurrentUser) -> None:
 
 
 @router.post("/webhooks", status_code=status.HTTP_201_CREATED)
-async def create_webhook(company_id: UUID, body: WebhookIn, user: CurrentUser) -> NewWebhookOut:
+async def create_webhook(
+    company_id: UUID, body: WebhookIn, user: CurrentUser, idempotency_key: IdempotencyKey = None
+) -> NewWebhookOut:
+    """With an Idempotency-Key, the same request again gets the web hook the first made."""
     await companies.require(company_id, user.uid, editor=True)
 
-    created = await manage.create_webhook(company_id, body.url, user.uid)
+    created = await manage_webhooks.create_webhook_once(
+        company_id, body.url, user.uid, idempotency_key
+    )
     await outbox_service.flush_quietly()
 
     return created
@@ -104,7 +120,7 @@ async def create_webhook(company_id: UUID, body: WebhookIn, user: CurrentUser) -
 @router.delete("/webhooks/{webhook_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def remove_webhook(company_id: UUID, webhook_id: UUID, user: CurrentUser) -> None:
     await companies.require(company_id, user.uid, editor=True)
-    await manage.remove_webhook(company_id, webhook_id, user.uid)
+    await manage_webhooks.remove_webhook(company_id, webhook_id, user.uid)
     await outbox_service.flush_quietly()
 
 
@@ -114,7 +130,7 @@ async def rotate_secret(company_id: UUID, webhook_id: UUID, user: CurrentUser) -
     signing too for a day, so its receiver can switch over."""
     await companies.require(company_id, user.uid, editor=True)
 
-    rotated = await manage.rotate_secret(company_id, webhook_id, user.uid)
+    rotated = await manage_webhooks.rotate_secret(company_id, webhook_id, user.uid)
     await outbox_service.flush_quietly()
 
     return rotated
@@ -125,7 +141,7 @@ async def test_webhook(company_id: UUID, webhook_id: UUID, user: CurrentUser) ->
     """Owners and admins send a signed test event to a web hook, now."""
     await companies.require(company_id, user.uid, editor=True)
 
-    ok, result = await manage.test_webhook(company_id, webhook_id, user.uid)
+    ok, result = await manage_webhooks.test_webhook(company_id, webhook_id, user.uid)
     await outbox_service.flush_quietly()
 
     return WebhookTestOut(ok=ok, result=result)
@@ -138,4 +154,4 @@ async def webhook_log(
     """A web hook's latest sends and how they went, newest first; every member sees them."""
     await companies.require(company_id, user.uid)
 
-    return await manage.webhook_log(company_id, webhook_id)
+    return await manage_webhooks.webhook_log(company_id, webhook_id)

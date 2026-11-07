@@ -5,6 +5,8 @@ import hashlib
 import json
 import logging
 from collections.abc import Awaitable, Callable
+from typing import Protocol
+from uuid import UUID
 
 from fastapi import status
 from redis.asyncio import Redis
@@ -15,6 +17,10 @@ from testee_common.i18n.i18n import CodedError
 
 logger = logging.getLogger(__name__)
 PENDING = "pending"
+
+
+class Made(Protocol):
+    id: UUID
 
 
 def fingerprint(*parts: object) -> str:
@@ -81,6 +87,28 @@ async def once(
         logger.warning("Idempotency result not kept, Redis failed: %s", error)
 
     return result
+
+
+async def once_or_found[T: Made](
+    redis: Redis,
+    name: str,
+    seconds: int,
+    request: str,
+    make: Callable[[], Awaitable[T]],
+    find: Callable[[UUID], Awaitable[T]],
+) -> T:
+    """`once`, for a create that answers with what it made: a retry gets it back through `find`."""
+    made = None
+
+    async def run() -> str:
+        nonlocal made
+        made = await make()
+
+        return str(made.id)
+
+    found = await once(redis, name, seconds, request, run)
+
+    return made if made is not None else await find(UUID(found))
 
 
 async def _forget(redis: Redis, name: str) -> None:

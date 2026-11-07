@@ -270,6 +270,7 @@ out or listed under another area):
 - `event_constants`: Pub/Sub's topic and message attributes, the outbox's batches and limits, and
   the answers of other services that make an event unhandleable for good.
 - `observability_constants`: the event loop's heartbeat and when a late one is logged.
+- `sign_in_constants`: what a guest's sign-in reaches, and how long an instance trusts what Firebase last said of an account.
 - `settings`: the base of every service's settings.
 
 ### `observability/`
@@ -284,7 +285,7 @@ out or listed under another area):
 
 ### `redis/`
 
-- `idempotency`: a create run once per key (`once`), a retry getting its first result; `fingerprint` a request.
+- `idempotency`: a create run once per key (`once`, and `once_or_found` for one that answers with what it made), a retry getting its first result; `fingerprint` a request.
 - `memory_cache`: a per-instance cache of values that may be stale for their TTL.
 - `redis_client`: each service's Redis client: timeouts, retries with jitter, a health check.
 - `redis_constants`: the Redis client's retries, health check and timeouts.

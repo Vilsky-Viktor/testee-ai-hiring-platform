@@ -57,12 +57,18 @@ async def create_interview(
 
 @router.post("/from-template", status_code=status.HTTP_201_CREATED)
 async def create_from_template(
-    body: InterviewFromTemplate, company_id: UUID, user: CurrentUser
+    body: InterviewFromTemplate,
+    company_id: UUID,
+    user: CurrentUser,
+    idempotency_key: IdempotencyKey = None,
 ) -> InterviewOut:
-    """A test copied from a template: free and ready at once, so no generation limits apply."""
+    """A test copied from a template: free and ready at once, so no generation limits apply.
+    With an Idempotency-Key, the same request again gets the interview the first made."""
     company, _ = await require_editor(user, company_id)
 
-    return await interview_creation.create_from_template(company, user.uid, body.template_id)
+    return await interview_creation.create_from_template_once(
+        company, user.uid, body.template_id, idempotency_key
+    )
 
 
 @router.get("")

@@ -11,7 +11,8 @@ from companies.integrations import library
 from companies.main import app
 from companies.models.companies import Company, Member
 from companies.models.interviews import Interview
-from companies.repositories import companies, template_interviews
+from companies.repositories import companies, interviews, template_interviews
+from companies.services import idempotent_creates
 from companies.services import interview_creation as routes
 
 COMPANY_ID = uuid.uuid4()
@@ -75,10 +76,11 @@ def setup(monkeypatch):
     app.dependency_overrides.clear()
 
 
-def start(client, template_id=TEMPLATE_ID, company_id=COMPANY_ID):
+def start(client, template_id=TEMPLATE_ID, company_id=COMPANY_ID, key=None):
     return client.post(
         f"/interviews/from-template?company_id={company_id}",
         json={"template_id": str(template_id)},
+        headers={"Idempotency-Key": key} if key else {},
     )
 
 
@@ -122,3 +124,31 @@ def test_copies_past_the_hourly_limit_are_refused_and_nothing_is_copied(client, 
     assert [start(client).status_code for _ in range(3)] == [201, 201, 429]
     assert len(setup) == 2
     assert redis.counts[f"rate:template-copies:{COMPANY_ID}"] == 3
+
+
+def test_a_copy_sent_again_with_its_key_is_the_first_one_made_once(client, setup, monkeypatch):
+    redis = FakeRedis()
+    made = {}
+    create = template_interviews.create
+
+    async def remembered(*args):
+        row = await create(*args)
+        made[row.id] = row
+
+        return row
+
+    async def get(session, interview_id):
+        return made.get(interview_id)
+
+    monkeypatch.setattr(idempotent_creates, "get_redis", lambda: redis)
+    monkeypatch.setattr(template_interviews, "create", remembered)
+    monkeypatch.setattr(interviews, "get", get)
+
+    first = start(client, key="action-1")
+    again = start(client, key="action-1")
+    reused = start(client, template_id=uuid.uuid4(), key="action-1")
+
+    assert (first.status_code, again.status_code) == (201, 201)
+    assert first.json()["id"] == again.json()["id"]
+    assert (reused.status_code, reused.json()["code"]) == (422, "idempotency_key_reused")
+    assert len(setup) == 1

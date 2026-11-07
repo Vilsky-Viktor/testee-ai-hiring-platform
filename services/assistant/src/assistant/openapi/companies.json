@@ -681,86 +681,6 @@
     ]
    }
   },
-  "/companies/{company_id}/audit": {
-   "get": {
-    "tags": [
-     "companies"
-    ],
-    "summary": "List Audit Events",
-    "description": "Every action the company's members took, newest first; for the owner only.",
-    "operationId": "list_audit_events_companies__company_id__audit_get",
-    "security": [
-     {
-      "HTTPBearer": []
-     }
-    ],
-    "parameters": [
-     {
-      "name": "company_id",
-      "in": "path",
-      "required": true,
-      "schema": {
-       "type": "string",
-       "format": "uuid",
-       "title": "Company Id"
-      }
-     },
-     {
-      "name": "offset",
-      "in": "query",
-      "required": false,
-      "schema": {
-       "type": "integer",
-       "minimum": 0,
-       "description": "Number of items to skip",
-       "default": 0,
-       "title": "Offset"
-      },
-      "description": "Number of items to skip"
-     },
-     {
-      "name": "limit",
-      "in": "query",
-      "required": false,
-      "schema": {
-       "type": "integer",
-       "maximum": 100,
-       "minimum": 1,
-       "description": "Number of items to return, up to 100",
-       "default": 100,
-       "title": "Limit"
-      },
-      "description": "Number of items to return, up to 100"
-     }
-    ],
-    "responses": {
-     "200": {
-      "description": "Successful Response",
-      "content": {
-       "application/json": {
-        "schema": {
-         "type": "array",
-         "items": {
-          "$ref": "#/components/schemas/AuditEventOut"
-         },
-         "title": "Response List Audit Events Companies  Company Id  Audit Get"
-        }
-       }
-      }
-     },
-     "422": {
-      "description": "Validation Error",
-      "content": {
-       "application/json": {
-        "schema": {
-         "$ref": "#/components/schemas/HTTPValidationError"
-        }
-       }
-      }
-     }
-    }
-   }
-  },
   "/companies/{company_id}/actions/export": {
    "get": {
     "tags": [
@@ -2009,7 +1929,7 @@
      "interviews"
     ],
     "summary": "Create From Template",
-    "description": "A test copied from a template: free and ready at once, so no generation limits apply.",
+    "description": "A test copied from a template: free and ready at once, so no generation limits apply.\nWith an Idempotency-Key, the same request again gets the interview the first made.",
     "operationId": "create_from_template_interviews_from_template_post",
     "security": [
      {
@@ -2025,6 +1945,23 @@
        "type": "string",
        "format": "uuid",
        "title": "Company Id"
+      }
+     },
+     {
+      "name": "idempotency-key",
+      "in": "header",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "maxLength": 255
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Idempotency-Key"
       }
      }
     ],
@@ -7668,7 +7605,7 @@
       "required": false,
       "schema": {
        "type": "string",
-       "maxLength": 200,
+       "maxLength": 254,
        "default": "",
        "title": "Q"
       }
@@ -9314,6 +9251,18 @@
        }
       ],
       "title": "Voice"
+     },
+     "company_id": {
+      "anyOf": [
+       {
+        "type": "string",
+        "format": "uuid"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Company Id"
      }
     },
     "type": "object",
@@ -9334,6 +9283,16 @@
       "type": "boolean",
       "title": "Created",
       "default": true
+     },
+     "candidate": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/CandidateOut"
+       },
+       {
+        "type": "null"
+       }
+      ]
      }
     },
     "type": "object",
@@ -9341,66 +9300,6 @@
      "invite_id"
     ],
     "title": "AtsInviteOut"
-   },
-   "AuditEventOut": {
-    "properties": {
-     "user_id": {
-      "type": "string",
-      "title": "User Id"
-     },
-     "action": {
-      "type": "string",
-      "title": "Action"
-     },
-     "target_id": {
-      "anyOf": [
-       {
-        "type": "string",
-        "format": "uuid"
-       },
-       {
-        "type": "null"
-       }
-      ],
-      "title": "Target Id"
-     },
-     "via": {
-      "anyOf": [
-       {
-        "type": "string"
-       },
-       {
-        "type": "null"
-       }
-      ],
-      "title": "Via"
-     },
-     "key_id": {
-      "anyOf": [
-       {
-        "type": "string",
-        "format": "uuid"
-       },
-       {
-        "type": "null"
-       }
-      ],
-      "title": "Key Id"
-     },
-     "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "title": "Created At"
-     }
-    },
-    "type": "object",
-    "required": [
-     "user_id",
-     "action",
-     "target_id",
-     "created_at"
-    ],
-    "title": "AuditEventOut"
    },
    "AuditGroup": {
     "type": "string",

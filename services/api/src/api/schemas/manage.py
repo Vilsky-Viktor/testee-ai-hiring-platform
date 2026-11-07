@@ -42,8 +42,8 @@ class KeyOut(BaseModel):
 
 
 class NewKeyOut(KeyOut):
-    # The whole key, shown this once.
-    key: str
+    # The whole key, shown this once; None to a retry, as only its hash is kept.
+    key: str | None
 
 
 class KeyIn(BaseModel):

@@ -198,26 +198,6 @@ export interface paths {
     patch?: never
     trace?: never
   }
-  "/companies/{company_id}/audit": {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    /**
-     * List Audit Events
-     * @description Every action the company's members took, newest first; for the owner only.
-     */
-    get: operations["list_audit_events_companies__company_id__audit_get"]
-    put?: never
-    post?: never
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
   "/companies/{company_id}/actions/export": {
     parameters: {
       query?: never
@@ -536,6 +516,7 @@ export interface paths {
     /**
      * Create From Template
      * @description A test copied from a template: free and ready at once, so no generation limits apply.
+     *     With an Idempotency-Key, the same request again gets the interview the first made.
      */
     post: operations["create_from_template_interviews_from_template_post"]
     delete?: never
@@ -2824,6 +2805,8 @@ export interface components {
       sign_in: boolean
       /** Voice */
       voice?: boolean | null
+      /** Company Id */
+      company_id?: string | null
     }
     /** AtsInviteOut */
     AtsInviteOut: {
@@ -2837,24 +2820,7 @@ export interface components {
        * @default true
        */
       created: boolean
-    }
-    /** AuditEventOut */
-    AuditEventOut: {
-      /** User Id */
-      user_id: string
-      /** Action */
-      action: string
-      /** Target Id */
-      target_id: string | null
-      /** Via */
-      via?: string | null
-      /** Key Id */
-      key_id?: string | null
-      /**
-       * Created At
-       * Format: date-time
-       */
-      created_at: string
+      candidate?: components["schemas"]["CandidateOut"] | null
     }
     /**
      * AuditGroup
@@ -5822,42 +5788,6 @@ export interface operations {
       }
     }
   }
-  list_audit_events_companies__company_id__audit_get: {
-    parameters: {
-      query?: {
-        /** @description Number of items to skip */
-        offset?: number
-        /** @description Number of items to return, up to 100 */
-        limit?: number
-      }
-      header?: never
-      path: {
-        company_id: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Successful Response */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": components["schemas"]["AuditEventOut"][]
-        }
-      }
-      /** @description Validation Error */
-      422: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": components["schemas"]["HTTPValidationError"]
-        }
-      }
-    }
-  }
   export_actions_companies__company_id__actions_export_get: {
     parameters: {
       query?: {
@@ -6409,7 +6339,9 @@ export interface operations {
       query: {
         company_id: string
       }
-      header?: never
+      header?: {
+        "idempotency-key"?: string | null
+      }
       path?: never
       cookie?: never
     }

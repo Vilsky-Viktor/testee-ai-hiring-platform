@@ -7,7 +7,7 @@ from fastapi import HTTPException
 
 from api.handlers import dispatch
 from api.repositories import webhooks
-from api.services import accounts, manage
+from api.services import accounts, manage_webhooks
 from api.services import webhooks as delivery
 from tests.unit.conftest import CANDIDATE, COMPANY, INTERVIEW, sign_in
 
@@ -77,6 +77,24 @@ def test_an_interview_ready_brings_the_interview(endpoints):
     assert body["data"]["interview"]["id"] == str(INTERVIEW)
 
 
+def test_a_failed_interview_brings_the_interview(endpoints):
+    endpoints["hook"]("https://a.example/x")
+    handle("interview.failed", {"interview_id": str(INTERVIEW), "company_id": str(COMPANY)})
+    [(_, body, _)] = endpoints["posted"]
+
+    assert body["type"] == "interview.failed"
+    assert body["data"]["interview"]["id"] == str(INTERVIEW)
+
+
+def test_a_cancelled_interview_brings_its_id_from_the_event(endpoints):
+    endpoints["hook"]("https://a.example/x")
+    handle("interview.cancelled", {"interview_id": str(INTERVIEW), "company_id": str(COMPANY)})
+    [(_, body, _)] = endpoints["posted"]
+
+    assert body["type"] == "interview.cancelled"
+    assert body["data"] == {"interview_id": str(INTERVIEW)}
+
+
 def test_each_send_is_logged_with_how_it_went(endpoints):
     good = endpoints["hook"]("https://a.example/x")
     down = endpoints["hook"]("https://down.example/x")
@@ -122,10 +140,10 @@ def hook_routes(monkeypatch, endpoints):
     async def not_limited(redis, key, name, message=None, **who):
         return None
 
-    monkeypatch.setattr(manage, "hit_or_skip", not_limited)
+    monkeypatch.setattr(manage_webhooks, "hit_or_skip", not_limited)
     monkeypatch.setattr(webhooks, "get", get)
     monkeypatch.setattr(webhooks, "tested", tested)
-    monkeypatch.setattr(manage.webhook_log_store, "latest", latest)
+    monkeypatch.setattr(manage_webhooks.webhook_log_store, "latest", latest)
 
     return hook
 
@@ -173,7 +191,7 @@ def test_test_events_past_the_hourly_limit_are_refused_and_not_sent(
         if len(counted) > 1:
             raise HTTPException(429, "Too many requests. Try again later.")
 
-    monkeypatch.setattr(manage, "hit_or_skip", one_left)
+    monkeypatch.setattr(manage_webhooks, "hit_or_skip", one_left)
     sign_in("u1")
     url = f"/manage/webhooks/{hook_routes.id}/test"
     params = {"company_id": str(COMPANY)}

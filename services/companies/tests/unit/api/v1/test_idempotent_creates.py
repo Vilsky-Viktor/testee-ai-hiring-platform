@@ -1,5 +1,5 @@
 """A new company and interview with an Idempotency-Key (the site's start, sent again after a
-reload): the same request again gets what the first made, made once; one while the first runs
+reload; an interview from a template, an assistant action confirmed again): the same request again gets what the first made, made once; one while the first runs
 is refused; the key with another request too; without a key, each request makes one."""
 
 import uuid

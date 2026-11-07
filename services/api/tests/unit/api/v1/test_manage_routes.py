@@ -5,7 +5,7 @@ from testee_common.auth.encryption import decrypt
 from testee_common.auth.tokens import hashed
 from testee_common.http import public_urls
 
-from api.services import manage
+from api.services import manage, manage_webhooks
 from tests.unit.conftest import COMPANY, KEY, sign_in
 
 KEYS = f"/manage/keys?company_id={COMPANY}"
@@ -140,7 +140,7 @@ def test_a_web_hook_must_reach_the_public_internet(client, companies_api, stored
 def test_without_an_encryption_key_web_hooks_cant_be_added(
     client, companies_api, stored, monkeypatch
 ):
-    monkeypatch.setattr(manage.settings, "api_encryption_key", "")
+    monkeypatch.setattr(manage_webhooks.settings, "api_encryption_key", "")
     sign_in()
     response = client.post(HOOKS, json={"url": "https://example.com/x"})
 
@@ -153,8 +153,48 @@ def test_deleting_what_isnt_there_is_not_found(client, companies_api, monkeypatc
         return False
 
     monkeypatch.setattr(manage.keys, "remove", nothing)
-    monkeypatch.setattr(manage.webhooks, "remove", nothing)
+    monkeypatch.setattr(manage_webhooks.webhooks, "remove", nothing)
     sign_in()
 
     assert client.delete(f"/manage/keys/{COMPANY}?company_id={COMPANY}").status_code == 404
     assert client.delete(f"/manage/webhooks/{COMPANY}?company_id={COMPANY}").status_code == 404
+
+
+def test_a_new_key_with_a_key_is_made_once_and_never_shown_again(client, companies_api, stored):
+    sign_in()
+    headers = {"Idempotency-Key": "try-1"}
+    body = {"name": "Site", "expiry": "3"}
+    first = client.post(KEYS, json=body, headers=headers)
+    retry = client.post(KEYS, json=body, headers=headers)
+    other = client.post(KEYS, json={"name": "Other", "expiry": "3"}, headers=headers)
+
+    assert (first.status_code, retry.status_code) == (201, 201)
+    assert first.json()["key"].startswith("te_")
+    assert retry.json()["id"] == first.json()["id"]
+    assert retry.json()["key"] is None
+    assert other.status_code == 422
+    assert len(stored["keys"]) == 1
+
+
+def test_a_new_web_hook_with_a_key_is_made_once_with_its_secret(
+    client, companies_api, stored, public
+):
+    sign_in()
+    headers = {"Idempotency-Key": "try-1"}
+    body = {"url": "https://hooks.example.com/testee"}
+    first = client.post(HOOKS, json=body, headers=headers)
+    retry = client.post(HOOKS, json=body, headers=headers)
+
+    assert (first.status_code, retry.status_code) == (201, 201)
+    assert retry.json()["id"] == first.json()["id"]
+    assert retry.json()["secret"] == first.json()["secret"]
+    assert len(stored["webhooks"]) == 1
+
+
+def test_new_keys_without_a_key_are_each_made(client, companies_api, stored):
+    sign_in()
+    body = {"name": "Site", "expiry": "3"}
+    client.post(KEYS, json=body)
+    client.post(KEYS, json=body)
+
+    assert len(stored["keys"]) == 2

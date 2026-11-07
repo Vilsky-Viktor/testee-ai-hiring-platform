@@ -16,43 +16,13 @@ from api.constants.permissions import Permission
 from api.integrations import companies
 from api.main import app
 from api.repositories import keys, webhook_log, webhooks
-from api.services import key_checks, manage
+from api.services import idempotency, key_checks, manage, manage_webhooks
 from tests.unit.api_keys import KEY as API_KEY
 from tests.unit.ids import CANDIDATE, COMPANY, INTERVIEW, KEY
+from tests.unit.sample_rows import candidate, interview
 
 # The web hook fakes, a fixture of their own module.
 from tests.unit.webhook_fakes import endpoints  # noqa: F401
-
-
-def interview(**changes) -> dict:
-    """An interview as companies' internal API returns it."""
-    return {
-        "id": str(INTERVIEW),
-        "title": "Backend",
-        "status": "in_process",
-        "set_id": str(uuid.uuid4()),
-        "pass_mark": 70,
-        "candidate_count": 1,
-        "created_at": "2026-10-01T09:00:00Z",
-        **changes,
-    }
-
-
-def candidate(**changes) -> dict:
-    return {
-        "id": str(CANDIDATE),
-        "email": "anna@example.com",
-        "name": "Anna Nowak",
-        "status": "finished",
-        "progress": 100,
-        "grade": 86,
-        "passed": True,
-        "tab_leaves": 0,
-        "copies": 1,
-        "fast_answers": 0,
-        "created_at": "2026-10-02T10:30:00Z",
-        **changes,
-    }
 
 
 @pytest.fixture(autouse=True)
@@ -118,6 +88,7 @@ def companies_api(monkeypatch):
         return candidate(id=str(invite_id))
 
     async def invite(
+        company_id,
         interview_id,
         email,
         sender_id,
@@ -130,15 +101,17 @@ def companies_api(monkeypatch):
         if state["refuse"]:
             raise HTTPException(state["refuse"], "Refused")
 
+        ours(company_id, interview_id)
+
         # Companies returns a candidate already invited as they are.
         if (interview_id, email, sender_id) in state["sent"]:
-            return CANDIDATE, False
+            return CANDIDATE, False, candidate()
 
         state["sent"].append((interview_id, email, sender_id))
         state.setdefault("names", {})[email] = name
         state.setdefault("options", {})[email] = (return_url, sign_in, theme, voice)
 
-        return CANDIDATE, True
+        return CANDIDATE, True, candidate()
 
     monkeypatch.setattr(companies, "access", access)
     monkeypatch.setattr(companies, "interviews", interviews)
@@ -258,6 +231,9 @@ def stored(monkeypatch):
     async def webhooks_of(session, company_id):
         return [hook for hook in state["webhooks"] if hook.company_id == company_id]
 
+    async def get_webhook(session, company_id, webhook_id):
+        return next((hook for hook in state["webhooks"] if hook.id == webhook_id), None)
+
     async def last_delivered(session, webhook_ids):
         return {}
 
@@ -275,11 +251,15 @@ def stored(monkeypatch):
     monkeypatch.setattr(keys, "change_permissions", change_permissions)
     monkeypatch.setattr(keys, "set_allowed_ips", set_allowed_ips)
     monkeypatch.setattr(webhooks, "add", add_webhook)
+    monkeypatch.setattr(webhooks, "get", get_webhook)
     monkeypatch.setattr(webhooks, "of_company", webhooks_of)
     monkeypatch.setattr(webhook_log, "last_delivered", last_delivered)
     monkeypatch.setattr(key_checks, "hit_or_skip", hit)
-    monkeypatch.setattr(manage, "hit_or_skip", hit)
+    monkeypatch.setattr(manage_webhooks, "hit_or_skip", hit)
     monkeypatch.setattr(manage, "get_redis", lambda: FakeRedis())
+    monkeypatch.setattr(manage_webhooks, "get_redis", lambda: FakeRedis())
+    idempotent = FakeRedis()
+    monkeypatch.setattr(idempotency, "get_redis", lambda: idempotent)
 
     return state
 

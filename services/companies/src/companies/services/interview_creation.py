@@ -1,3 +1,5 @@
+from uuid import UUID
+
 import httpx
 from fastapi import HTTPException, status
 from testee_common.events.analytics import track
@@ -41,16 +43,6 @@ async def create_once(
 ) -> InterviewOut:
     """create, once per the user's Idempotency-Key in the company: the same request again gets
     the interview the first made."""
-
-    async def find(interview_id) -> InterviewOut:
-        async with Session() as session:
-            interview = await interviews.get(session, interview_id)
-
-        if interview is None or interview.company_id != company.id:
-            raise HTTPException(status.HTTP_404_NOT_FOUND, "Interview not found")
-
-        return await interview_out(interview)
-
     return await once_per_key(
         "interview",
         user_id,
@@ -58,8 +50,19 @@ async def create_once(
         key,
         {"text": text, "generate_in": generate_in},
         lambda: create(company, user_id, language, text, generate_in),
-        find,
+        lambda interview_id: made_interview(company, interview_id),
     )
+
+
+async def made_interview(company: Company, interview_id: UUID) -> InterviewOut:
+    """What a retry gets back: the interview its first request made."""
+    async with Session() as session:
+        interview = await interviews.get(session, interview_id)
+
+    if interview is None or interview.company_id != company.id:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Interview not found")
+
+    return await interview_out(interview)
 
 
 async def create(
@@ -162,6 +165,22 @@ async def create(
         raise
 
     return await interview_out(interview)
+
+
+async def create_from_template_once(
+    company: Company, user_id: str, template_id: UUID, key: str | None
+) -> InterviewOut:
+    """create_from_template, once per the user's Idempotency-Key in the company: the same request
+    again gets the interview the first made."""
+    return await once_per_key(
+        "interview_from_template",
+        user_id,
+        company.id,
+        key,
+        {"template_id": template_id},
+        lambda: create_from_template(company, user_id, template_id),
+        lambda interview_id: made_interview(company, interview_id),
+    )
 
 
 async def create_from_template(company: Company, user_id: str, template_id) -> InterviewOut:
