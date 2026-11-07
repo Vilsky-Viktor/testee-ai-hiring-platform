@@ -2,7 +2,7 @@ import type { Page } from "@playwright/test"
 
 import { expect, test } from "../fixtures"
 import { api, createCompany } from "../helpers/api"
-import { addAiCalls, addLimitHits, billingNow, deleteAiRows, deleteLimitChanges } from "../helpers/db-ai"
+import { addAiCalls, addLimitHits, deleteAiRows } from "../helpers/db-ai"
 import { env } from "../helpers/env"
 import { visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
@@ -151,81 +151,72 @@ test("superadmin sees a month's AI costs, top spenders and limit hits", async ({
 // it back and removes its history entries, even when a step fails. Tagged @global: it runs alone,
 // after the other tests (signed-in.sh).
 test("superadmin changes a limit, the services apply it, and sets it back", { tag: "@global" }, async ({
+  restoresLimitAfter,
   signInSuperadmin,
 }) => {
   const superadmin = await signInSuperadmin()
   const limits = await api<{ limits: Limit[] }>(superadmin, "GET", "/billing/superadmin/limits")
   const limit = limits.limits.find((found) => found.name === EDITED_LIMIT)!
+  expect(process.env.CI && limit.changed, "a stopped run left the limit changed").toBeFalsy()
   test.skip(limit.changed, "The limit is already changed locally: left as it is")
+  await restoresLimitAfter(superadmin, EDITED_LIMIT)
   const email = env("SUPERADMIN_EMAILS").split(",")[0].trim().toLowerCase()
   const applied = async () =>
     (await api<{ limits: { calls_per_minute: number } }>(superadmin, "GET", "/assistant/mcp/tools"))
       .limits.calls_per_minute
-  const start = await billingNow()
   const changed = limit.default - 1
 
-  try {
-    await visit(superadmin, "/superadmin/controls")
-    const row = superadmin.getByTestId(`limit-${EDITED_LIMIT}`)
-    const field = row.getByRole("spinbutton")
-    const buttons = row.getByRole("button")
-    // The change, its from and to; then who made it and when.
-    const latest = superadmin.getByTestId("limit-changes").getByRole("listitem").first()
-    const latestChange = latest.locator("span").first()
-    await expect(field).toHaveValue(String(limit.default))
-    // Only Save: nothing to set back.
-    await expect(buttons).toHaveCount(1)
+  await visit(superadmin, "/superadmin/controls")
+  const row = superadmin.getByTestId(`limit-${EDITED_LIMIT}`)
+  const field = row.getByRole("spinbutton")
+  const buttons = row.getByRole("button")
+  // The change, its from and to; then who made it and when.
+  const latest = superadmin.getByTestId("limit-changes").getByRole("listitem").first()
+  const latestChange = latest.locator("span").first()
+  await expect(field).toHaveValue(String(limit.default))
+  // Only Save: nothing to set back.
+  await expect(buttons).toHaveCount(1)
 
-    // Out of its bounds, the field itself refuses it; past the browser's check, the API refuses
-    // it, saying why.
-    await field.fill(String(limit.highest + 1))
-    await buttons.first().click()
-    expect(await field.evaluate((input: HTMLInputElement) => input.validity.valid)).toBe(false)
-    await row.locator("form").evaluate((form: HTMLFormElement) => (form.noValidate = true))
-    await buttons.first().click()
-    await expect(superadmin.locator('[data-sonner-toast][data-type="error"]')).toContainText(
-      `Use a value from 1 to ${limit.highest}.`
-    )
-    expect((await api<{ limits: Limit[] }>(superadmin, "GET", "/billing/superadmin/limits")).limits
-      .find((found) => found.name === EDITED_LIMIT)?.changed).toBe(false)
+  // Out of its bounds, the field itself refuses it; past the browser's check, the API refuses
+  // it, saying why.
+  await field.fill(String(limit.highest + 1))
+  await buttons.first().click()
+  expect(await field.evaluate((input: HTMLInputElement) => input.validity.valid)).toBe(false)
+  await row.locator("form").evaluate((form: HTMLFormElement) => (form.noValidate = true))
+  await buttons.first().click()
+  await expect(superadmin.locator('[data-sonner-toast][data-type="error"]')).toContainText(
+    `Use a value from 1 to ${limit.highest}.`
+  )
+  expect((await api<{ limits: Limit[] }>(superadmin, "GET", "/billing/superadmin/limits")).limits
+    .find((found) => found.name === EDITED_LIMIT)?.changed).toBe(false)
 
-    await field.fill(String(changed))
-    await buttons.first().click()
-    await expect(superadmin.locator('[data-sonner-toast][data-type="success"]')).toBeVisible()
-    await expect(field).toHaveValue(String(changed))
-    await expect(buttons).toHaveCount(2)
-    // From its default to the new value.
-    await expect(latestChange).toHaveText(new RegExp(`\\D${changed}$`))
-    await expect(latestChange).not.toHaveText(new RegExp(`\\b${limit.default}\\b`))
-    await expect(latest).toContainText(email)
-    await shot(superadmin, "limit-changed")
-    // Every service reads it within half a minute (LIMITS_CACHE_SECONDS).
-    await expect.poll(applied, { timeout: 60_000, intervals: [3_000] }).toBe(changed)
-    await visit(superadmin, "/superadmin/controls")
-    await expect(field).toHaveValue(String(changed))
+  await field.fill(String(changed))
+  await buttons.first().click()
+  await expect(superadmin.locator('[data-sonner-toast][data-type="success"]')).toBeVisible()
+  await expect(field).toHaveValue(String(changed))
+  await expect(buttons).toHaveCount(2)
+  // From its default to the new value.
+  await expect(latestChange).toHaveText(new RegExp(`\\D${changed}$`))
+  await expect(latestChange).not.toHaveText(new RegExp(`\\b${limit.default}\\b`))
+  await expect(latest).toContainText(email)
+  await shot(superadmin, "limit-changed")
+  // Every service reads it within half a minute (LIMITS_CACHE_SECONDS).
+  await expect.poll(applied, { timeout: 60_000, intervals: [3_000] }).toBe(changed)
+  await visit(superadmin, "/superadmin/controls")
+  await expect(field).toHaveValue(String(changed))
 
-    // Set back: the default again, and a second entry from the changed value.
-    await buttons.last().click()
-    await expect(field).toHaveValue(String(limit.default))
-    await expect(buttons).toHaveCount(1)
-    await expect(latestChange).toHaveText(new RegExp(`\\D${changed}\\D+$`))
-    await expect(latestChange).not.toHaveText(new RegExp(`\\b${limit.default}\\b`))
-    await expect(latest).toContainText(email)
-    await expect(
-      superadmin.getByTestId("limit-changes").getByRole("listitem").nth(1).locator("span").first()
-    ).toHaveText(new RegExp(`\\D${changed}$`))
-    await shot(superadmin, "limit-reset")
-    await expect.poll(applied, { timeout: 60_000, intervals: [3_000] }).toBe(limit.default)
-  } finally {
-    const now = (await api<{ limits: Limit[] }>(superadmin, "GET", "/billing/superadmin/limits"))
-      .limits.find((found) => found.name === EDITED_LIMIT)
-
-    if (now?.changed) {
-      await api(superadmin, "DELETE", `/billing/superadmin/limits/${EDITED_LIMIT}`)
-    }
-
-    await deleteLimitChanges(EDITED_LIMIT, start)
-  }
+  // Set back: the default again, and a second entry from the changed value.
+  await buttons.last().click()
+  await expect(field).toHaveValue(String(limit.default))
+  await expect(buttons).toHaveCount(1)
+  await expect(latestChange).toHaveText(new RegExp(`\\D${changed}\\D+$`))
+  await expect(latestChange).not.toHaveText(new RegExp(`\\b${limit.default}\\b`))
+  await expect(latest).toContainText(email)
+  await expect(
+    superadmin.getByTestId("limit-changes").getByRole("listitem").nth(1).locator("span").first()
+  ).toHaveText(new RegExp(`\\D${changed}$`))
+  await shot(superadmin, "limit-reset")
+  await expect.poll(applied, { timeout: 60_000, intervals: [3_000] }).toBe(limit.default)
 })
 
 // A company's and a user's support pages say what AI cost for them in the last 30 days: calls

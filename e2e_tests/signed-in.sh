@@ -77,7 +77,7 @@ find "$tests/test-results" -mindepth 1 -maxdepth 1 -type d -mtime +7 -exec rm -r
 # The tests run in parallel first; then, in a run that has the stack to itself, the @global ones
 # (the `global` project), one at a time with nothing else running. Each phase has its own results
 # folder, as Playwright empties it when it starts.
-COPYFILE_DISABLE=1 tar -C "$tests" --no-xattrs --exclude node_modules --exclude test-results -cf - . |
+COPYFILE_DISABLE=1 tar -h -C "$tests" --no-xattrs --exclude node_modules --exclude test-results -cf - . |
   docker run -i --rm --name "$container" --ipc=host --network "$network" \
     -v "$results:/tests/test-results" \
     -v "$PWD/.env:/env/.env:ro" \
@@ -88,6 +88,7 @@ COPYFILE_DISABLE=1 tar -C "$tests" --no-xattrs --exclude node_modules --exclude 
     -e HOST_RULES="MAP localhost:8090 gateway:8082, MAP $emulator firebase-auth:9199" \
     -e FORWARDS="8090=gateway:8082,${emulator##*:}=firebase-auth:9199" \
     -e GLOBAL="${alone:+1}" \
+    -e CI="${CI:-}" \
     -e WORKERS \
     -e SHOTS \
     mcr.microsoft.com/playwright:v1.64.1-noble@sha256:47b510dd9230bf0b9bfc9b20102241e577ea7a99334ab4c3ca19f19770e9b8ea \
