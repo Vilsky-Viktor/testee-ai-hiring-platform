@@ -119,8 +119,10 @@ LIMITS = {
     "GENERATION_RETRIES_PER_COMPANY_DAY": Limit(
         COMPANIES, 20, "calls", DAY_SECONDS, 1, 1_000, "company"
     ),
-    "LINK_STARTS_PER_HOUR": Limit(COMPANIES, 30, "calls", HOUR_SECONDS, 1, 10_000, "company"),
-    "LINK_STARTS_PER_IP_HOUR": Limit(COMPANIES, 10, "calls", HOUR_SECONDS, 1, 1_000, "ip"),
+    # Flood levels: a job board can send hundreds in the first hour, and Turnstile and the credit
+    # hold already bound abuse.
+    "LINK_STARTS_PER_HOUR": Limit(COMPANIES, 300, "calls", HOUR_SECONDS, 1, 10_000, "company"),
+    "LINK_STARTS_PER_IP_HOUR": Limit(COMPANIES, 30, "calls", HOUR_SECONDS, 1, 1_000, "ip"),
     # The owner's bias-audit exports, each reading all of a company's finished candidates.
     "BIAS_AUDIT_EXPORTS_PER_DAY": Limit(COMPANIES, 20, "calls", DAY_SECONDS, 1, 1_000, "company"),
     # Action log downloads, each reading all of the chosen days' actions.

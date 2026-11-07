@@ -17,8 +17,8 @@ from companies.schemas.invites import InviteStartOut
 from companies.services import invite_pages, link_start
 
 # The limits' defaults: new candidates one link takes, and one address starts, an hour.
-LINK_STARTS_PER_HOUR = 30
-LINK_STARTS_PER_IP_HOUR = 10
+LINK_STARTS_PER_HOUR = 300
+LINK_STARTS_PER_IP_HOUR = 30
 TOO_MANY_REQUESTS = "Too many requests. Try again later."
 
 INTERVIEW = Interview(
