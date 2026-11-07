@@ -240,7 +240,7 @@ FAQ = [
     {
         "key": "uk_us",
         "question": "Possiamo usare testee per candidati nel Regno Unito e negli Stati Uniti?",
-        "answer": "Sì. L'accordo sul trattamento dei dati copre la legge del Regno Unito e degli Stati Uniti, e le istruzioni per le aziende e i modelli di informativa per i candidati (con versioni per New York City, l'Illinois e il Colorado) coprono ciò che devi comunicare ai candidati. Per posizioni a New York City, usalo solo dopo aver fatto ciò che la Local Law 144 ti richiede: un audit indipendente sui bias nell'anno precedente all'utilizzo, la pubblicazione della sua sintesi e un avviso ai candidati 10 giorni lavorativi prima. L'export per l'audit dei bias del Registro attività dà al tuo auditor il punteggio e l'esito di ogni candidato che ha finito, da abbinare alle risposte che i tuoi candidati hanno dichiarato loro stessi.",
+        "answer": "Sì. L'accordo sul trattamento dei dati copre la legge del Regno Unito e degli Stati Uniti, e le istruzioni per le aziende e i modelli di informativa per i candidati (con versioni per New York City, l'Illinois, il Colorado e il Connecticut) coprono ciò che devi comunicare ai candidati. Per posizioni a New York City, usalo solo dopo aver fatto ciò che la Local Law 144 ti richiede: un audit indipendente sui bias nell'anno precedente all'utilizzo, la pubblicazione della sua sintesi e un avviso ai candidati 10 giorni lavorativi prima. L'export per l'audit dei bias del Registro attività dà al tuo auditor il punteggio e l'esito di ogni candidato che ha finito, da abbinare alle risposte che i tuoi candidati hanno dichiarato loro stessi.",
     },
     {
         "key": "emails",

@@ -89,7 +89,7 @@ Undang-undang AI Colorado dicabut dan diberlakukan ulang melalui SB 26-189, dita
 Public Act 26-15 (SB 5), ditandatangani pada Mei 2026, memiliki dua bagian untuk pemberi kerja:
 
 - **Sejak 1 Oktober 2026:** memakai alat keputusan ketenagakerjaan otomatis bukan pembelaan terhadap klaim diskriminasi. Pengujian anti-bias tidak diwajibkan, tetapi buktinya dapat dipertimbangkan.
-- **Mulai 1 Oktober 2027:** beri tahu kandidat dengan bahasa sederhana saat mereka berinteraksi dengan alat seperti itu, kecuali sudah jelas, dan beri pemberitahuan tertulis sebelum memakainya untuk keputusan: bahwa alat itu dipakai, tujuannya dan jenis keputusannya, nama dagangnya, data pribadi yang dianalisisnya dan bagaimana caranya, dari mana datanya berasal, dan cara menghubungimu.
+- **Mulai 1 Oktober 2027:** beri tahu kandidat dengan bahasa sederhana saat mereka berinteraksi dengan alat seperti itu, kecuali sudah jelas, dan beri pemberitahuan tertulis sebelum keputusan diambil: bahwa alat itu dipakai, tujuannya dan jenis keputusannya, nama dagangnya, data pribadi yang dianalisisnya dan bagaimana caranya, dari mana datanya berasal, dan cara menghubungimu.
 
 ## Tanggal-tanggalnya
 
@@ -107,7 +107,7 @@ Public Act 26-15 (SB 5), ditandatangani pada Mei 2026, memiliki dua bagian untuk
 
 1. **Daftar pekerjaan dan lokasi** yang kamu rekrut: New York City, Illinois, Colorado, California, New Jersey, Texas, Connecticut, tempat lain di AS.
 2. **Uji hanya yang dibutuhkan pekerjaan itu.** Pilih topik dan nilai lulus yang bisa kamu pertanggungjawabkan untuk peran itu.
-3. **Perbarui pemberitahuan untuk kandidat** agar menyebut bahwa AI dipakai, bagaimana hasilnya dipakai, dan cara meminta akomodasi serta peninjauan oleh manusia. Tambahkan kalimat untuk Illinois dan Colorado di tempat yang berlaku.
+3. **Perbarui pemberitahuan untuk kandidat** agar menyebut bahwa AI dipakai, bagaimana hasilnya dipakai, dan cara meminta akomodasi serta peninjauan oleh manusia. Tambahkan kalimat untuk Illinois, Colorado, dan Connecticut di tempat yang berlaku.
 4. **Tawarkan akomodasi,** seperti tambahan waktu, dan sepakati sebelum kandidat mulai.
 5. **Kumpulkan data demografis dari kandidat sendiri,** melalui formulir identifikasi diri sukarela, terpisah dari keputusan perekrutan. Jangan pernah menyimpulkannya.
 6. **Periksa dampak merugikan** pada hasilmu sendiri, dengan aturan empat per lima sebagai pemeriksaan pertama.
@@ -127,7 +127,7 @@ Seperti apa wujudnya di produk saat ini:
 - **Tanpa karakteristik yang dilindungi.** testee tidak pernah menanyakan, menyimpulkan, atau menyimpan jenis kelamin, ras, usia, disabilitas, kode pos, atau karakteristik lain yang dilindungi milik kandidat.
 - **Ekspor untuk audit bias.** Di halaman Log tindakan perusahaan, pemilik bisa mengunduh file CSV berisi kandidat yang sudah selesai, untuk seluruh perusahaan atau satu wawancara dan di antara dua tanggal: nilai setiap kandidat, nilai lulus, apakah ia lulus, dan apakah skornya di atas median wawancara. Setiap baris memakai email kandidat sebagai kunci, sehingga kamu bisa menggabungkannya dengan kategori yang dilaporkan sendiri oleh kandidat yang kamu kumpulkan sendiri; lalu hapus kolom email dan serahkan file itu kepada auditor independenmu, yang menghitung tingkat seleksi dan tingkat skor serta rasio dampak. File yang sama memungkinkanmu melakukan pemeriksaan empat per lima sendiri.
 - **Tambahan waktu** +25%, +50%, atau +100% untuk setiap soal bisa diberikan kepada kandidat mana pun yang memintanya, sebelum ia mulai. testee hanya menyimpan besarnya, tidak pernah alasannya. Dalam mode suara, kandidat bisa mengetuk pilihan alih-alih berbicara. Memulai wawancara suara butuh mikrofon, jadi sebelum mulai, atur kandidat yang tidak bisa memakainya agar menjawab dengan mengetuk. Kamu juga bisa mengatur seluruh wawancara seperti itu.
-- **Templat pemberitahuan untuk kandidat,** satu yang umum dan versi untuk New York City, Illinois, dan Colorado, ada di [halaman dokumen](/documents), bersama petunjuk untuk perusahaan.
+- **Templat pemberitahuan untuk kandidat,** satu yang umum dan versi untuk New York City, Illinois, Colorado, dan Connecticut, ada di [halaman dokumen](/documents), bersama petunjuk untuk perusahaan.
 - **New York City.** testee belum menjalani audit bias independennya sendiri. Jangan pakai testee untuk pekerjaan di New York City sampai kamu melakukan apa yang diwajibkan Local Law 144 kepadamu sebagai pemberi kerja: audit bias independen dalam setahun sebelum dipakai, ringkasannya dipublikasikan, dan pemberitahuan kepada kandidat 10 hari kerja sebelumnya.
 - **Data.** Menurut CCPA, perusahaanmu adalah bisnis (business) dan testee penyedia layanannya (service provider), berdasarkan [perjanjian pemrosesan data](/dpa) dan bagian AS-nya. Data di-hosting di UE, dengan beberapa sub-pemroses di AS (lihat [kebijakan privasi](/privacy)), dan tidak dipakai untuk melatih model AI.
 - **Masa penyimpanan.** Data kandidat dihapus 12 bulan setelah undangan. Jika hukummu mewajibkan catatan disimpan lebih lama, seperti empat tahun di California, unduh laporan PDF dan file audit bias lalu simpan sendiri; secara bawaan testee tidak menyimpan hasil lebih lama.

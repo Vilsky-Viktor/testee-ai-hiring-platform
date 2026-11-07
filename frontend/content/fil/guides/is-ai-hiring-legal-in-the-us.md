@@ -89,7 +89,7 @@ Pinawalang-bisa at muling isinabatas ang AI law ng Colorado sa pamamagitan ng SB
 Ang Public Act 26-15 (SB 5), na pinirmahan noong Mayo 2026, ay may dalawang bahagi para sa mga employer:
 
 - **Mula 1 Oktubre 2026:** hindi depensa sa discrimination claim ang paggamit ng automated employment decision tool. Hindi kailangan ang anti-bias testing, pero puwedeng isaalang-alang ang ebidensya nito.
-- **Simula 1 Oktubre 2027:** sabihin sa mga aplikante sa simpleng salita kapag nakikipag-ugnayan sila sa ganoong tool, maliban kung halata naman, at magbigay ng nakasulat na abiso bago ito gamitin para sa isang desisyon: na ginagamit ito, ang layunin nito at ang uri ng desisyon, ang trade name nito, ang personal data na sinusuri nito at kung paano, kung saan galing ang data, at kung paano ka makokontak.
+- **Simula 1 Oktubre 2027:** sabihin sa mga aplikante sa simpleng salita kapag nakikipag-ugnayan sila sa ganoong tool, maliban kung halata naman, at magbigay ng nakasulat na abiso bago gawin ang desisyon: na ginagamit ito, ang layunin nito at ang uri ng desisyon, ang trade name nito, ang personal data na sinusuri nito at kung paano, kung saan galing ang data, at kung paano ka makokontak.
 
 ## Ang mga petsa
 
@@ -107,7 +107,7 @@ Ang Public Act 26-15 (SB 5), na pinirmahan noong Mayo 2026, ay may dalawang baha
 
 1. **Ilista ang mga trabaho at lugar** na pinagha-hire-an mo: New York City, Illinois, Colorado, California, New Jersey, Texas, Connecticut, iba pang lugar sa US.
 2. **I-test lang ang kailangan ng trabaho.** Pumili ng mga topic at passing grade na kaya mong ipagtanggol para sa role.
-3. **I-update ang iyong abiso sa aplikante** para sabihing ginagamit ang AI, paano ginagamit ang mga resulta, at paano humingi ng accommodation at human review. Idagdag ang wording ng Illinois at Colorado kung saan nalalapat.
+3. **I-update ang iyong abiso sa aplikante** para sabihing ginagamit ang AI, paano ginagamit ang mga resulta, at paano humingi ng accommodation at human review. Idagdag ang wording ng Illinois, Colorado at Connecticut kung saan nalalapat.
 4. **Mag-alok ng accommodations,** gaya ng dagdag na oras, at pagkasunduan ang mga ito bago magsimula ang aplikante.
 5. **Kolektahin ang demographic data mula mismo sa mga aplikante,** sa isang boluntaryong self-identification form, na hiwalay sa hiring decisions. Huwag itong hulaan kailanman.
 6. **I-check ang adverse impact** sa sarili mong outcomes, gamit ang four-fifths rule bilang unang check.
@@ -127,7 +127,7 @@ Ang hitsura nito sa produkto ngayon:
 - **Walang protected characteristics.** Hindi kailanman nagtatanong, nanghihinuha o nag-iimbak ang testee ng kasarian, lahi, edad, kapansanan, zip code o iba pang protected characteristics ng mga aplikante.
 - **Bias audit export.** Sa Log ng aksyon page ng kumpanya, puwedeng mag-download ang owner ng CSV file ng mga aplikanteng natapos, para sa buong kumpanya o sa isang interview at sa pagitan ng dalawang petsa: ang grade ng bawat aplikante, ang passing grade, kung pumasa siya at kung lampas sa median ng interview ang score niya. Naka-key ang bawat row sa email ng aplikante, para mapagsama mo ito sa self-reported categories na ikaw mismo ang nangolekta; saka tanggalin ang email column at ibigay ang file sa iyong independent auditor, na magkukuwenta ng selection at scoring rates at ng impact ratios. Sa parehong file, puwede mong gawin mismo ang four-fifths check.
 - **Dagdag na oras** na +25%, +50% o +100% sa bawat tanong ay puwedeng ibigay sa sinumang aplikanteng humingi, bago siya magsimula. Ang halaga lang ang iniimbak ng testee, hindi kailanman ang dahilan. Sa voice mode, puwedeng mag-tap ng option ang aplikante sa halip na magsalita. Kailangan ng mikropono para simulan ang voice interview, kaya bago sila magsimula, itakda sa pagsagot sa pag-tap ang aplikanteng hindi makakagamit nito. Puwede mo ring itakda nang ganoon ang buong interview.
-- **Mga template ng abiso sa aplikante,** isang pangkalahatan at mga bersyon para sa New York City, Illinois at Colorado, ay nasa [documents page](/documents), kasama ang instructions para sa mga kumpanya.
+- **Mga template ng abiso sa aplikante,** isang pangkalahatan at mga bersyon para sa New York City, Illinois, Colorado at Connecticut, ay nasa [documents page](/documents), kasama ang instructions para sa mga kumpanya.
 - **New York City.** Wala pang sariling independent bias audit ang testee. Huwag gamitin ang testee para sa mga trabaho sa New York City hangga't hindi mo nagagawa ang hinihingi sa iyo ng Local Law 144 bilang employer: isang independent bias audit sa loob ng taon bago gamitin, ang inilathalang buod nito, at abiso sa mga aplikante 10 business days bago nito.
 - **Data.** Ang iyong kumpanya ang business at ang testee ang service provider nito sa ilalim ng CCPA, ayon sa [data processing agreement](/dpa) at sa US section nito. Naka-host sa EU ang data, na may ilang sub-processor sa US (tingnan ang [privacy policy](/privacy)), at hindi ginagamit para mag-train ng AI models.
 - **Retention.** Binubura ang data ng aplikante 12 buwan pagkatapos ng imbitasyon. Kung hinihingi ng iyong batas na itabi nang mas matagal ang mga record, gaya ng apat na taon ng California, i-download ang PDF reports at ang bias-audit file at ikaw mismo ang magtabi; hindi nagtatabi ang testee ng mga resulta nang mas matagal bilang default.

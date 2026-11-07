@@ -89,7 +89,7 @@ Colorado AI seadus tunnistati kehtetuks ja võeti uuesti vastu SB 26-189-ga, mis
 Public Act 26-15 (SB 5), mis allkirjastati 2026. aasta mais, sisaldab tööandjatele kahte osa:
 
 - **Juba alates 1. oktoobrist 2026:** automatiseeritud töölevõtmisotsuste tööriista kasutamine ei ole diskrimineerimisnõude puhul kaitseargument. Kallutatuse testimine ei ole kohustuslik, kuid selle tõendeid võib arvesse võtta.
-- **Alates 1. oktoobrist 2027:** ütle kandidaatidele lihtsas keeles, kui nad suhtlevad sellise tööriistaga, välja arvatud juhul, kui see on ilmne, ja anna enne selle kasutamist otsuse tegemiseks kirjalik teade: et seda kasutatakse, selle eesmärk ja otsuse liik, selle kaubanimi, milliseid isikuandmeid see analüüsib ja kuidas, kust andmed pärinevad ning kuidas sinuga ühendust võtta.
+- **Alates 1. oktoobrist 2027:** ütle kandidaatidele lihtsas keeles, kui nad suhtlevad sellise tööriistaga, välja arvatud juhul, kui see on ilmne, ja anna enne otsuse tegemist kirjalik teade: et seda kasutatakse, selle eesmärk ja otsuse liik, selle kaubanimi, milliseid isikuandmeid see analüüsib ja kuidas, kust andmed pärinevad ning kuidas sinuga ühendust võtta.
 
 ## Kuupäevad
 
@@ -107,7 +107,7 @@ Public Act 26-15 (SB 5), mis allkirjastati 2026. aasta mais, sisaldab tööandja
 
 1. **Loetle töökohad ja kohad,** kuhu värbad: New York City, Illinois, Colorado, California, New Jersey, Texas, Connecticut, mujal USAs.
 2. **Testi ainult seda, mida töö vajab.** Vali teemad ja läbimise lävi, mida saad selle rolli jaoks põhjendada.
-3. **Uuenda kandidaatidele mõeldud teadet,** et see ütleks, et kasutatakse AI-d, kuidas tulemusi kasutatakse ning kuidas taotleda kohandust ja inimese tehtavat ülevaatust. Lisa Illinoisi ja Colorado sõnastus, kus need kehtivad.
+3. **Uuenda kandidaatidele mõeldud teadet,** et see ütleks, et kasutatakse AI-d, kuidas tulemusi kasutatakse ning kuidas taotleda kohandust ja inimese tehtavat ülevaatust. Lisa Illinoisi, Colorado ja Connecticuti sõnastus, kus need kehtivad.
 4. **Paku kohandusi,** näiteks lisaaega, ja lepi need kokku enne, kui kandidaat alustab.
 5. **Kogu demograafilised andmed kandidaatidelt endilt** vabatahtliku enesemääratlemise vormiga, hoituna värbamisotsustest eraldi. Ära neid kunagi tuleta.
 6. **Kontrolli ebasoodsat mõju** oma tulemustes, esimese kontrollina neli viiendikku reegliga.
@@ -127,7 +127,7 @@ Kuidas see tootes täna välja näeb:
 - **Kaitstud tunnuseid ei koguta.** testee ei küsi, ei tuleta ega salvesta kunagi kandidaatide sugu, rassi, vanust, puuet, postiindeksit ega muid kaitstud tunnuseid.
 - **Eksport kallutatuse auditi jaoks.** Ettevõtte toimingute logi lehel saab omanik alla laadida CSV-faili lõpetanud kandidaatidest, kogu ettevõtte või ühe intervjuu kohta ja kahe kuupäeva vahel: iga kandidaadi hinne, läbimise lävi, kas ta sooritas ja kas tema tulemus oli intervjuu mediaanist kõrgem. Iga rida on seotud kandidaadi e-posti aadressiga, et saaksid selle ühendada enesemääratletud kategooriatega, mille ise kogusid; seejärel eemalda e-posti veerg ja anna fail oma sõltumatule audiitorile, kes arvutab valiku- ja tulemusmäärad ning mõjusuhted. Sama failiga saad ise teha neli viiendikku kontrolli.
 - **Lisaaega** +25%, +50% või +100% iga küsimuse kohta saab anda igale kandidaadile, kes seda palub, enne kui ta alustab. testee salvestab ainult lisaaja suuruse, mitte kunagi põhjust. Häälerežiimis saab kandidaat rääkimise asemel vastusevarianti puudutada. Häälintervjuu alustamiseks on vaja mikrofoni, nii et sea kandidaadile, kes seda kasutada ei saa, enne alustamist vastamine puudutades. Nii saad seadistada ka kogu intervjuu.
-- **Kandidaatide teavituse mallid,** üldine ning versioonid New York City, Illinoisi ja Colorado jaoks, on [dokumentide lehel](/documents) koos ettevõtetele mõeldud juhistega.
+- **Kandidaatide teavituse mallid,** üldine ning versioonid New York City, Illinoisi, Colorado ja Connecticuti jaoks, on [dokumentide lehel](/documents) koos ettevõtetele mõeldud juhistega.
 - **New York City.** testeel ei ole veel olnud oma sõltumatut kallutatuse auditit. Ära kasuta testeed New York City töökohtade jaoks enne, kui oled teinud selle, mida Local Law 144 sinult tööandjana nõuab: sõltumatu kallutatuse audit kasutamisele eelneva aasta jooksul, selle avaldatud kokkuvõte ja teade kandidaatidele 10 tööpäeva ette.
 - **Andmed.** CCPA mõttes on sinu ettevõte ettevõte (business) ja testee selle teenusepakkuja (service provider) [andmetöötluslepingu](/dpa) ja selle USA osa alusel. Andmeid majutatakse ELis, mõned volitatud alamtöötlejad asuvad USAs (vaata [privaatsuspoliitikat](/privacy)), ja neid ei kasutata AI-mudelite treenimiseks.
 - **Säilitamine.** Kandidaatide andmed kustutatakse 12 kuud pärast kutset. Kui sinu õigus nõuab dokumentide pikemat säilitamist, näiteks Californias neli aastat, laadi PDF-aruanded ja kallutatuse auditi fail alla ja säilita need ise; testee ei säilita tulemusi vaikimisi kauem.

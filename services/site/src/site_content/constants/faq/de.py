@@ -240,7 +240,7 @@ FAQ = [
     {
         "key": "uk_us",
         "question": "Können wir testee für Kandidaten in Großbritannien und den USA nutzen?",
-        "answer": "Ja. Der Auftragsverarbeitungsvertrag deckt britisches und US-amerikanisches Recht ab, und die Hinweise für Unternehmen sowie die Vorlagen für die Kandidateninformation (mit Fassungen für New York City, Illinois und Colorado) decken ab, was du Kandidaten mitteilen musst. Für Stellen in New York City nutze es erst, wenn du erfüllt hast, was Local Law 144 von dir verlangt: ein unabhängiges Bias-Audit innerhalb des Jahres vor der Nutzung, die Veröffentlichung seiner Zusammenfassung und eine Information der Kandidaten 10 Arbeitstage vorher. Der Export für ein Bias-Audit im Aktionsprotokoll gibt deinem Auditor das Ergebnis jedes Kandidaten, der fertig ist, und ob er bestanden hat, zum Abgleich mit den selbst angegebenen Antworten deiner Kandidaten.",
+        "answer": "Ja. Der Auftragsverarbeitungsvertrag deckt britisches und US-amerikanisches Recht ab, und die Hinweise für Unternehmen sowie die Vorlagen für die Kandidateninformation (mit Fassungen für New York City, Illinois, Colorado und Connecticut) decken ab, was du Kandidaten mitteilen musst. Für Stellen in New York City nutze es erst, wenn du erfüllt hast, was Local Law 144 von dir verlangt: ein unabhängiges Bias-Audit innerhalb des Jahres vor der Nutzung, die Veröffentlichung seiner Zusammenfassung und eine Information der Kandidaten 10 Arbeitstage vorher. Der Export für ein Bias-Audit im Aktionsprotokoll gibt deinem Auditor das Ergebnis jedes Kandidaten, der fertig ist, und ob er bestanden hat, zum Abgleich mit den selbst angegebenen Antworten deiner Kandidaten.",
     },
     {
         "key": "emails",

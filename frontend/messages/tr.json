@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Aday bilgilendirme şablonları",
-        "description": "Adayları davet etmeden önce göndereceğiniz düzenlenebilir bildirimler; New York City, Illinois ve Colorado için olanlar dahil."
+        "description": "Adayları davet etmeden önce göndereceğiniz düzenlenebilir bildirimler; New York City, Illinois, Colorado ve Connecticut için olanlar dahil."
       },
       "dpia": {
         "title": "DPIA şablonu",
@@ -3110,7 +3110,7 @@
       "aiMarks": "Sorular, cevap seçenekleri, asistanın cevapları ve ses klipleri, yazılımların okuyabileceği bir biçimde yapay zekâ ürünü olarak işaretlenir: sayfanın kodunda data-ai-generated, ses klibinin dosyasında AI_GENERATED etiketi bulunur. Ses kliplerinde ayrıca OpenAI'ın duyulmayan filigranı vardır; bunu <verify>openai.com/verify</verify> adresinden kontrol edebilirsiniz. Bir sayfadan kopyalanan metin bu işareti korumaz.",
       "humanReview": "testee bir aday hakkında karar vermez: şirketteki kişiler sonuçları inceler ve karar verir, adaylar da sonuçlarının bir insan tarafından incelenmesini isteyebilir.",
       "dpa": "Veri işleme sözleşmesi koşulların bir parçasıdır, imzalanacak bir şey yoktur. GDPR'ı, UK GDPR'ı ve testee'nin şirketin hizmet sağlayıcısı olduğu, Kaliforniya'nınki gibi ABD eyalet gizlilik yasalarını kapsar.",
-      "documents": "Şirketler <link>kullanım talimatlarını, bir DPIA şablonunu ve aday bilgilendirme şablonlarını</link> alır; New York City, Illinois ve Colorado için sürümler de vardır.",
+      "documents": "Şirketler <link>kullanım talimatlarını, bir DPIA şablonunu ve aday bilgilendirme şablonlarını</link> alır; New York City, Illinois, Colorado ve Connecticut için sürümler de vardır.",
       "nyc": "New York City: işveren, oradaki bir pozisyon için testee'yi kullanmadan önce Local Law 144'ün kendisinden istediklerini yapar: kullanımdan önceki bir yıl içinde bağımsız bir yanlılık denetimi, bu denetimin özetinin yayımlanması ve şehirde yaşayan adaylar değerlendirilmeden en az 10 iş günü önce onlara bildirim. testee'nin kendi bağımsız yanlılık denetimi <time>{date}</time> tarihinden önce yapılır ve sonrasında her yıl tekrarlanır."
     },
     "residency": {

@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Modelos de aviso para candidatos",
-        "description": "Avisos editáveis para enviar aos candidatos antes de convidá-los, incluindo versões para a cidade de Nova York, Illinois e Colorado."
+        "description": "Avisos editáveis para enviar aos candidatos antes de convidá-los, incluindo versões para a cidade de Nova York, Illinois, Colorado e Connecticut."
       },
       "dpia": {
         "title": "Modelo de DPIA",
@@ -3110,7 +3110,7 @@
       "aiMarks": "As perguntas, as opções de resposta, as respostas da assistente e os clipes de voz são marcados como gerados por IA de uma forma que os programas conseguem ler: data-ai-generated no código da página e a etiqueta AI_GENERATED no arquivo do clipe de voz. Os clipes de voz também levam a marca d'água inaudível da OpenAI, que você pode verificar em <verify>openai.com/verify</verify>. O texto copiado de uma página não mantém a marca.",
       "humanReview": "A testee não toma nenhuma decisão sobre um candidato: pessoas da empresa analisam os resultados e decidem, e os candidatos podem pedir que uma pessoa revise o resultado deles.",
       "dpa": "O acordo de tratamento de dados faz parte dos termos, sem nada para assinar. Ele abrange o GDPR, o UK GDPR e as leis estaduais de privacidade dos EUA, como a da Califórnia, nas quais a testee é a prestadora de serviços da empresa.",
-      "documents": "As empresas recebem <link>instruções de utilização, um modelo de DPIA e modelos de aviso para candidatos</link>, com versões para a cidade de Nova York, Illinois e Colorado.",
+      "documents": "As empresas recebem <link>instruções de utilização, um modelo de DPIA e modelos de aviso para candidatos</link>, com versões para a cidade de Nova York, Illinois, Colorado e Connecticut.",
       "nyc": "Cidade de Nova York: antes de usar a testee para uma vaga lá, o empregador faz o que a Local Law 144 exige dele: uma auditoria de viés independente no ano anterior ao uso, a publicação do resumo dela e um aviso aos candidatos que moram na cidade pelo menos 10 dias úteis antes de serem avaliados. A auditoria de viés independente da própria testee é feita antes de <time>{date}</time>, e depois todos os anos."
     },
     "residency": {

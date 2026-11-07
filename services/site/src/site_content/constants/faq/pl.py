@@ -240,7 +240,7 @@ FAQ = [
     {
         "key": "uk_us",
         "question": "Czy możemy używać testee do kandydatów z Wielkiej Brytanii i USA?",
-        "answer": "Tak. Umowa powierzenia przetwarzania danych obejmuje prawo Wielkiej Brytanii i USA, a instrukcje dla firm i wzory informacji dla kandydatów (z wersjami dla Nowego Jorku, Illinois i Kolorado) opisują, co musisz przekazać kandydatom. Do rekrutacji na stanowiska w Nowym Jorku używaj jej dopiero wtedy, gdy wykonasz to, czego wymaga od Ciebie Local Law 144: niezależny audyt pod kątem stronniczości w ciągu roku przed użyciem, opublikowanie jego podsumowania i powiadomienie kandydatów 10 dni roboczych wcześniej. Eksport do audytu stronniczości w Dzienniku działań daje Twojemu audytorowi wynik i rezultat każdego kandydata, który skończył, do połączenia z odpowiedziami, które Twoi kandydaci podali sami.",
+        "answer": "Tak. Umowa powierzenia przetwarzania danych obejmuje prawo Wielkiej Brytanii i USA, a instrukcje dla firm i wzory informacji dla kandydatów (z wersjami dla Nowego Jorku, Illinois, Kolorado i Connecticut) opisują, co musisz przekazać kandydatom. Do rekrutacji na stanowiska w Nowym Jorku używaj jej dopiero wtedy, gdy wykonasz to, czego wymaga od Ciebie Local Law 144: niezależny audyt pod kątem stronniczości w ciągu roku przed użyciem, opublikowanie jego podsumowania i powiadomienie kandydatów 10 dni roboczych wcześniej. Eksport do audytu stronniczości w Dzienniku działań daje Twojemu audytorowi wynik i rezultat każdego kandydata, który skończył, do połączenia z odpowiedziami, które Twoi kandydaci podali sami.",
     },
     {
         "key": "emails",

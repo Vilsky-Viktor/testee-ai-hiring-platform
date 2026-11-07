@@ -89,7 +89,7 @@ La ley de IA de Colorado se derogó y se volvió a promulgar mediante la SB 26-1
 La Public Act 26-15 (SB 5), firmada en mayo de 2026, tiene dos partes para los empleadores:
 
 - **Desde el 1 de octubre de 2026:** usar una herramienta automatizada de decisión de empleo no sirve de defensa frente a una reclamación por discriminación. Las pruebas contra sesgos no son obligatorias, pero la evidencia de ellas puede tenerse en cuenta.
-- **A partir del 1 de octubre de 2027:** informa a los candidatos en lenguaje sencillo cuando interactúen con una herramienta así, salvo que sea evidente, y da un aviso por escrito antes de usarla para una decisión: que se usa, su finalidad y el tipo de decisión, su nombre comercial, los datos personales que analiza y cómo, de dónde proceden los datos y cómo contactar contigo.
+- **A partir del 1 de octubre de 2027:** informa a los candidatos en lenguaje sencillo cuando interactúen con una herramienta así, salvo que sea evidente, y da un aviso por escrito antes de que se tome la decisión: que se usa, su finalidad y el tipo de decisión, su nombre comercial, los datos personales que analiza y cómo, de dónde proceden los datos y cómo contactar contigo.
 
 ## Las fechas
 
@@ -107,7 +107,7 @@ La Public Act 26-15 (SB 5), firmada en mayo de 2026, tiene dos partes para los e
 
 1. **Enumera los puestos y lugares** para los que contratas: ciudad de Nueva York, Illinois, Colorado, California, Nueva Jersey, Texas, Connecticut, otros lugares de EE. UU.
 2. **Evalúa solo lo que el puesto necesita.** Elige temas y una nota de aprobado que puedas justificar para el puesto.
-3. **Actualiza tu aviso para candidatos** para indicar que se usa IA, cómo se usan los resultados y cómo pedir un ajuste y una revisión humana. Añade la redacción de Illinois y Colorado donde se apliquen.
+3. **Actualiza tu aviso para candidatos** para indicar que se usa IA, cómo se usan los resultados y cómo pedir un ajuste y una revisión humana. Añade la redacción de Illinois, Colorado y Connecticut donde se apliquen.
 4. **Ofrece ajustes,** como tiempo extra, y acuérdalos antes de que el candidato empiece.
 5. **Recoge los datos demográficos de los propios candidatos,** con un formulario voluntario de autoidentificación, separado de las decisiones de contratación. Nunca los infieras.
 6. **Comprueba el impacto adverso** en tus propios resultados, con la regla de los cuatro quintos como primera comprobación.
@@ -127,7 +127,7 @@ Cómo se refleja hoy en el producto:
 - **Ninguna característica protegida.** testee nunca pide, infiere ni guarda el sexo, la raza, la edad, la discapacidad, el código postal ni otras características protegidas de los candidatos.
 - **Una exportación para auditoría de sesgos.** En la página Registro de acciones de la empresa, el propietario puede descargar un archivo CSV de los candidatos que terminaron, de toda la empresa o de una entrevista y entre dos fechas: la nota de cada candidato, la nota de aprobado, si aprobó y si puntuó por encima de la mediana de la entrevista. Cada fila se identifica por el correo electrónico del candidato, para que puedas cruzarla con las categorías autodeclaradas que recogiste tú mismo; después elimina la columna del correo electrónico y entrega el archivo a tu auditor independiente, que calcula las tasas de selección y de puntuación y los ratios de impacto. Con el mismo archivo puedes hacer tú mismo la comprobación de los cuatro quintos.
 - **Tiempo extra** de +25 %, +50 % o +100 % en cada pregunta para cualquier candidato que lo pida, antes de empezar. testee solo guarda la cantidad, nunca el motivo. En el modo de voz, el candidato puede tocar una opción en lugar de hablar. Empezar una entrevista por voz requiere un micrófono, así que, antes de que empiece, configura a quien no pueda usarlo para responder tocando. También puedes configurar así toda la entrevista.
-- **Plantillas de aviso para candidatos,** una general y versiones para la ciudad de Nueva York, Illinois y Colorado, en la [página de documentos](/documents), junto con las instrucciones para empresas.
+- **Plantillas de aviso para candidatos,** una general y versiones para la ciudad de Nueva York, Illinois, Colorado y Connecticut, en la [página de documentos](/documents), junto con las instrucciones para empresas.
 - **Ciudad de Nueva York.** testee aún no ha tenido su propia auditoría de sesgos independiente. No uses testee para puestos en la ciudad de Nueva York hasta haber hecho lo que la Local Law 144 te exige como empleador: una auditoría de sesgos independiente dentro del año anterior al uso, su resumen publicado y un aviso a los candidatos 10 días hábiles antes.
 - **Datos.** Según la CCPA, tu empresa es la empresa (business) y testee su proveedor de servicios (service provider), conforme al [contrato de encargo del tratamiento](/dpa) y su sección sobre EE. UU. Los datos se alojan en la UE, con algunos subencargados en EE. UU. (consulta la [política de privacidad](/privacy)), y no se usan para entrenar modelos de IA.
 - **Conservación.** Los datos de los candidatos se eliminan 12 meses después de la invitación. Si tu legislación te exige conservar los registros más tiempo, como los cuatro años de California, descarga los informes PDF y el archivo de auditoría de sesgos y consérvalos tú; testee no conserva los resultados más tiempo por defecto.

@@ -89,7 +89,7 @@ Colorado's AI law was repealed and re-enacted by SB 26-189, signed on 14 May 202
 Public Act 26-15 (SB 5), signed in May 2026, has two parts for employers:
 
 - **Since 1 October 2026:** using an automated employment decision tool is no defense to a discrimination claim. Anti-bias testing isn't required, but evidence of it can be taken into account.
-- **From 1 October 2027:** tell candidates in plain language when they're interacting with such a tool, unless it's obvious, and give written notice before using it for a decision: that it's used, its purpose and the kind of decision, its trade name, the personal data it analyzes and how, where the data comes from, and how to contact you.
+- **From 1 October 2027:** tell candidates in plain language when they're interacting with such a tool, unless it's obvious, and give written notice before the decision is made: that it's used, its purpose and the kind of decision, its trade name, the personal data it analyzes and how, where the data comes from, and how to contact you.
 
 ## The dates
 
@@ -107,7 +107,7 @@ Public Act 26-15 (SB 5), signed in May 2026, has two parts for employers:
 
 1. **List the jobs and places** you hire for: New York City, Illinois, Colorado, California, New Jersey, Texas, Connecticut, elsewhere in the US.
 2. **Test only what the job needs.** Choose topics and a passing grade you can justify for the role.
-3. **Update your candidate notice** to say AI is used, how results are used, and how to ask for an accommodation and a human review. Add the Illinois and Colorado wording where they apply.
+3. **Update your candidate notice** to say AI is used, how results are used, and how to ask for an accommodation and a human review. Add the Illinois, Colorado and Connecticut wording where they apply.
 4. **Offer accommodations,** such as extra time, and agree them before the candidate starts.
 5. **Collect demographic data from candidates themselves,** on a voluntary self-identification form, kept apart from hiring decisions. Never infer it.
 6. **Check adverse impact** on your own outcomes, with the four-fifths rule as a first check.
@@ -127,7 +127,7 @@ What that looks like in the product today:
 - **No protected characteristics.** testee never asks for, infers or stores candidates' sex, race, age, disability, zip code or other protected characteristics.
 - **A bias-audit export.** On the company's Action log page, the owner can download a CSV file of the candidates who finished, for the whole company or one interview and between two dates: each candidate's grade, the passing grade, whether they passed and whether they scored above the interview's median. Each row is keyed by the candidate's email, so you can join it with the self-reported categories you collected yourself; then remove the email column and give the file to your independent auditor, who works out the selection and scoring rates and the impact ratios. The same file lets you run the four-fifths check yourself.
 - **Extra time** of +25%, +50% or +100% on every question can be given to any candidate who asks, before they start. testee stores only the amount, never the reason. In voice mode, a candidate can tap an option instead of speaking. Starting a voice interview needs a microphone, so before they start, set a candidate who can't use one to answering by tapping. You can also set the whole interview to that.
-- **Candidate notice templates,** a general one and versions for New York City, Illinois and Colorado, are on the [documents page](/documents), with the instructions for companies.
+- **Candidate notice templates,** a general one and versions for New York City, Illinois, Colorado and Connecticut, are on the [documents page](/documents), with the instructions for companies.
 - **New York City.** testee hasn't had its own independent bias audit yet. Don't use testee for New York City jobs until you've done what Local Law 144 asks of you as the employer: an independent bias audit within the year before use, its summary published, and a notice to candidates 10 business days before.
 - **Data.** Your company is the business and testee its service provider under the CCPA, under the [data processing agreement](/dpa) and its US section. Data is hosted in the EU, with some sub-processors in the US (see the [privacy policy](/privacy)), and isn't used to train AI models.
 - **Retention.** Candidate data is deleted 12 months after the invite. Where your law asks you to keep records longer, such as California's four years, download the PDF reports and the bias-audit file and keep them yourself; testee doesn't keep results longer by default.

@@ -240,7 +240,7 @@ FAQ = [
     {
         "key": "uk_us",
         "question": "testee'yi Birleşik Krallık ve ABD'deki adaylar için kullanabilir miyiz?",
-        "answer": "Evet. Veri işleme sözleşmesi Birleşik Krallık ve ABD hukukunu kapsar; şirketlere yönelik talimatlar ve aday bilgilendirme şablonları (New York City, Illinois ve Colorado sürümleriyle) adaylara neleri söylemeniz gerektiğini açıklar. New York City'deki işler için onu ancak Local Law 144'ün sizden istediklerini yerine getirdikten sonra kullanın: kullanımdan önceki bir yıl içinde bağımsız bir yanlılık denetimi, özetinin yayımlanması ve adayların 10 iş günü önceden bilgilendirilmesi. İşlem kaydındaki yanlılık denetimi dışa aktarımı, denetçinize mülakatı bitiren her adayın notunu ve sonucunu verir; bunlar adaylarınızın kendi beyan ettiği yanıtlarla eşleştirilir.",
+        "answer": "Evet. Veri işleme sözleşmesi Birleşik Krallık ve ABD hukukunu kapsar; şirketlere yönelik talimatlar ve aday bilgilendirme şablonları (New York City, Illinois, Colorado ve Connecticut sürümleriyle) adaylara neleri söylemeniz gerektiğini açıklar. New York City'deki işler için onu ancak Local Law 144'ün sizden istediklerini yerine getirdikten sonra kullanın: kullanımdan önceki bir yıl içinde bağımsız bir yanlılık denetimi, özetinin yayımlanması ve adayların 10 iş günü önceden bilgilendirilmesi. İşlem kaydındaki yanlılık denetimi dışa aktarımı, denetçinize mülakatı bitiren her adayın notunu ve sonucunu verir; bunlar adaylarınızın kendi beyan ettiği yanıtlarla eşleştirilir.",
     },
     {
         "key": "emails",

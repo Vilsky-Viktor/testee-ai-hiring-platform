@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Szablony informacji dla kandydatów",
-        "description": "Edytowalne informacje do wysłania kandydatom przed zaproszeniem, w tym wersje dla Nowego Jorku, Illinois i Kolorado."
+        "description": "Edytowalne informacje do wysłania kandydatom przed zaproszeniem, w tym wersje dla Nowego Jorku, Illinois, Kolorado i Connecticut."
       },
       "dpia": {
         "title": "Szablon DPIA",
@@ -3106,7 +3106,7 @@
       "aiMarks": "Pytania, opcje odpowiedzi, odpowiedzi asystentki i klipy głosowe są oznaczone jako wygenerowane przez AI w formie czytelnej dla oprogramowania: data-ai-generated w kodzie strony oraz tag AI_GENERATED w pliku klipu głosowego. Klipy głosowe mają też niesłyszalny znak wodny OpenAI, który możesz sprawdzić na <verify>openai.com/verify</verify>. Tekst skopiowany ze strony nie zachowuje oznaczenia.",
       "humanReview": "testee nie podejmuje żadnych decyzji o kandydacie: osoby w firmie przeglądają wyniki i decydują, a kandydaci mogą poprosić, aby ich wynik sprawdził człowiek.",
       "dpa": "Umowa powierzenia przetwarzania danych jest częścią regulaminu i nie trzeba niczego podpisywać. Obejmuje RODO, brytyjskie RODO (UK GDPR) oraz stanowe przepisy USA o prywatności, takie jak kalifornijskie, zgodnie z którymi testee jest usługodawcą firmy.",
-      "documents": "Firmy otrzymują <link>instrukcję używania, szablon DPIA i szablony informacji dla kandydatów</link>, w wersjach także dla Nowego Jorku, Illinois i Kolorado.",
+      "documents": "Firmy otrzymują <link>instrukcję używania, szablon DPIA i szablony informacji dla kandydatów</link>, w wersjach także dla Nowego Jorku, Illinois, Kolorado i Connecticut.",
       "nyc": "Nowy Jork: zanim pracodawca użyje testee do rekrutacji na stanowisko w tym mieście, robi to, czego wymaga od niego Local Law 144: przeprowadza niezależny audyt stronniczości w ciągu roku przed użyciem, publikuje jego podsumowanie i informuje kandydatów mieszkających w tym mieście co najmniej 10 dni roboczych przed oceną. Własny niezależny audyt stronniczości testee zostanie przeprowadzony przed <time>{date}</time>, a potem co roku."
     },
     "residency": {

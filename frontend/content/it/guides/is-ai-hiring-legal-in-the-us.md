@@ -89,7 +89,7 @@ La legge del Colorado sull'IA è stata abrogata e riemanata con la SB 26-189, fi
 La Public Act 26-15 (SB 5), firmata a maggio 2026, ha due parti per i datori di lavoro:
 
 - **Già dal 1° ottobre 2026:** usare uno strumento automatizzato per le decisioni di lavoro non è una difesa contro un'azione per discriminazione. I test contro i bias non sono obbligatori, ma le prove di averli svolti possono essere prese in considerazione.
-- **Dal 1° ottobre 2027:** di' ai candidati in linguaggio semplice quando interagiscono con uno strumento del genere, a meno che non sia evidente, e dai un avviso scritto prima di usarlo per una decisione: che viene usato, il suo scopo e il tipo di decisione, il suo nome commerciale, i dati personali che analizza e come, da dove provengono i dati e come contattarti.
+- **Dal 1° ottobre 2027:** di' ai candidati in linguaggio semplice quando interagiscono con uno strumento del genere, a meno che non sia evidente, e dai un avviso scritto prima che la decisione venga presa: che viene usato, il suo scopo e il tipo di decisione, il suo nome commerciale, i dati personali che analizza e come, da dove provengono i dati e come contattarti.
 
 ## Le date
 
@@ -107,7 +107,7 @@ La Public Act 26-15 (SB 5), firmata a maggio 2026, ha due parti per i datori di 
 
 1. **Elenca i ruoli e i luoghi** per cui assumi: New York City, Illinois, Colorado, California, New Jersey, Texas, Connecticut, altre località degli Stati Uniti.
 2. **Verifica solo ciò che serve al ruolo.** Scegli argomenti e una soglia di superamento che puoi giustificare per il ruolo.
-3. **Aggiorna l'informativa per i candidati** per dire che viene usata l'IA, come vengono usati i risultati e come chiedere un accomodamento e un riesame da parte di una persona. Aggiungi le formulazioni per Illinois e Colorado dove si applicano.
+3. **Aggiorna l'informativa per i candidati** per dire che viene usata l'IA, come vengono usati i risultati e come chiedere un accomodamento e un riesame da parte di una persona. Aggiungi le formulazioni per Illinois, Colorado e Connecticut dove si applicano.
 4. **Offri accomodamenti,** come più tempo, e concordali prima che il candidato inizi.
 5. **Raccogli i dati demografici dai candidati stessi,** con un modulo volontario di autodichiarazione, tenuto separato dalle decisioni di assunzione. Non dedurli mai.
 6. **Verifica l'impatto sfavorevole** sui tuoi risultati, con la regola dei quattro quinti come primo controllo.
@@ -127,7 +127,7 @@ Ecco cosa significa oggi nel prodotto:
 - **Nessuna caratteristica protetta.** testee non chiede, non deduce e non conserva mai sesso, razza, età, disabilità, codice postale o altre caratteristiche protette dei candidati.
 - **Un'esportazione per l'audit sui bias.** Nella pagina Registro attività dell'azienda, il proprietario può scaricare un file CSV dei candidati che hanno terminato, per tutta l'azienda o per un colloquio e tra due date: il voto di ogni candidato, la soglia di superamento, se ha superato il test e se ha ottenuto un punteggio sopra la mediana del colloquio. Ogni riga ha come chiave l'email del candidato, così puoi abbinarla alle categorie autodichiarate che hai raccolto tu; poi rimuovi la colonna dell'email e consegna il file al tuo auditor indipendente, che calcola i tassi di selezione e di punteggio e gli impact ratio. Con lo stesso file puoi fare tu stesso il controllo dei quattro quinti.
 - **Più tempo**, +25%, +50% o +100% su ogni domanda, può essere concesso a qualsiasi candidato che lo chieda, prima che inizi. testee conserva solo l'entità, mai il motivo. Nella modalità vocale, un candidato può toccare un'opzione invece di parlare. Per iniziare un colloquio vocale serve un microfono, quindi, prima che inizi, imposta sulla risposta toccando il candidato che non può usarlo. Puoi anche impostare così l'intero colloquio.
-- **Modelli di informativa per i candidati,** uno generale e versioni per New York City, Illinois e Colorado, sono nella [pagina dei documenti](/documents), insieme alle istruzioni per le aziende.
+- **Modelli di informativa per i candidati,** uno generale e versioni per New York City, Illinois, Colorado e Connecticut, sono nella [pagina dei documenti](/documents), insieme alle istruzioni per le aziende.
 - **New York City.** testee non ha ancora avuto un proprio audit sui bias indipendente. Non usare testee per posizioni a New York City finché non hai fatto ciò che la Local Law 144 chiede a te come datore di lavoro: un audit sui bias indipendente nell'anno precedente l'uso, la sua sintesi pubblicata e un avviso ai candidati 10 giorni lavorativi prima.
 - **Dati.** Ai sensi del CCPA la tua azienda è il business e testee il suo service provider, secondo l'[accordo sul trattamento dei dati](/dpa) e la sua sezione sugli Stati Uniti. I dati sono ospitati nell'UE, con alcuni sub-responsabili negli Stati Uniti (vedi l'[informativa sulla privacy](/privacy)), e non vengono usati per addestrare modelli di IA.
 - **Conservazione.** I dati dei candidati vengono cancellati 12 mesi dopo l'invito. Se la tua legge ti chiede di conservare la documentazione più a lungo, come i quattro anni della California, scarica i report PDF e il file per l'audit sui bias e conservali tu; testee non conserva i risultati più a lungo per impostazione predefinita.

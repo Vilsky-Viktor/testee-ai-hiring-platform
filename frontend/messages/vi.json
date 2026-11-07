@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Mẫu thông báo cho ứng viên",
-        "description": "Các thông báo có thể chỉnh sửa để gửi ứng viên trước khi mời, gồm cả các mẫu cho Thành phố New York, Illinois và Colorado."
+        "description": "Các thông báo có thể chỉnh sửa để gửi ứng viên trước khi mời, gồm cả các mẫu cho Thành phố New York, Illinois, Colorado và Connecticut."
       },
       "dpia": {
         "title": "Mẫu DPIA",
@@ -3110,7 +3110,7 @@
       "aiMarks": "Câu hỏi, lựa chọn trả lời, câu trả lời của trợ lý và đoạn âm thanh giọng nói được đánh dấu là do AI tạo ở dạng phần mềm đọc được: data-ai-generated trong mã của trang và thẻ AI_GENERATED trong tệp âm thanh. Các đoạn âm thanh này còn mang watermark âm thanh không nghe được của OpenAI, bạn có thể kiểm tra tại <verify>openai.com/verify</verify>. Văn bản sao chép từ trang không giữ lại dấu này.",
       "humanReview": "testee không đưa ra quyết định nào về ứng viên: những người ở công ty xem xét kết quả và quyết định, và ứng viên có thể yêu cầu một người xem xét lại kết quả của mình.",
       "dpa": "Thỏa thuận xử lý dữ liệu là một phần của các điều khoản, không cần ký gì. Thỏa thuận bao gồm GDPR, UK GDPR và các luật về quyền riêng tư của các bang tại Hoa Kỳ như luật của California, theo đó testee là nhà cung cấp dịch vụ của công ty.",
-      "documents": "Các công ty nhận được <link>hướng dẫn sử dụng, mẫu DPIA và các mẫu thông báo cho ứng viên</link>, có phiên bản cho Thành phố New York, Illinois và Colorado.",
+      "documents": "Các công ty nhận được <link>hướng dẫn sử dụng, mẫu DPIA và các mẫu thông báo cho ứng viên</link>, có phiên bản cho Thành phố New York, Illinois, Colorado và Connecticut.",
       "nyc": "Thành phố New York: trước khi dùng testee cho một vị trí tại đó, nhà tuyển dụng thực hiện những gì Local Law 144 yêu cầu: một cuộc kiểm toán thiên lệch độc lập trong vòng một năm trước khi sử dụng, công bố bản tóm tắt của nó và thông báo cho ứng viên sống tại thành phố này ít nhất 10 ngày làm việc trước khi họ được đánh giá. Cuộc kiểm toán thiên lệch độc lập của chính testee được thực hiện trước <time>{date}</time>, và sau đó hằng năm."
     },
     "residency": {

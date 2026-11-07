@@ -240,7 +240,7 @@ FAQ = [
     {
         "key": "uk_us",
         "question": "Puwede ba naming gamitin ang testee para sa mga aplikante sa UK at US?",
-        "answer": "Oo. Sakop ng data processing agreement ang batas ng UK at US, at sakop ng mga tagubilin para sa mga kumpanya at ng mga template ng abiso sa aplikante (may bersyon para sa New York City, Illinois at Colorado) ang dapat mong sabihin sa mga aplikante. Para sa mga trabaho sa New York City, gamitin lang ito kapag nagawa mo na ang hinihingi sa iyo ng Local Law 144: isang independiyenteng bias audit sa loob ng isang taon bago ang paggamit, ang paglalathala ng buod nito, at abiso sa mga aplikante 10 business day bago nito. Ibinibigay ng bias-audit export sa Log ng aksyon sa auditor mo ang grade at resulta ng bawat aplikanteng natapos, para itugma sa sariling sagot ng mga aplikante mo.",
+        "answer": "Oo. Sakop ng data processing agreement ang batas ng UK at US, at sakop ng mga tagubilin para sa mga kumpanya at ng mga template ng abiso sa aplikante (may bersyon para sa New York City, Illinois, Colorado at Connecticut) ang dapat mong sabihin sa mga aplikante. Para sa mga trabaho sa New York City, gamitin lang ito kapag nagawa mo na ang hinihingi sa iyo ng Local Law 144: isang independiyenteng bias audit sa loob ng isang taon bago ang paggamit, ang paglalathala ng buod nito, at abiso sa mga aplikante 10 business day bago nito. Ibinibigay ng bias-audit export sa Log ng aksyon sa auditor mo ang grade at resulta ng bawat aplikanteng natapos, para itugma sa sariling sagot ng mga aplikante mo.",
     },
     {
         "key": "emails",

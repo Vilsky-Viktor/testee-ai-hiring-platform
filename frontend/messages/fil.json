@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Mga template ng abiso sa aplikante",
-        "description": "Mga abisong mae-edit na ipapadala sa mga aplikante bago sila imbitahan, kasama ang para sa New York City, Illinois at Colorado."
+        "description": "Mga abisong mae-edit na ipapadala sa mga aplikante bago sila imbitahan, kasama ang para sa New York City, Illinois, Colorado at Connecticut."
       },
       "dpia": {
         "title": "Template ng DPIA",
@@ -3106,7 +3106,7 @@
       "aiMarks": "Ang mga tanong, mga opsyon sa sagot, mga sagot ng assistant at mga voice clip ay may markang AI-generated sa anyong nababasa ng software: data-ai-generated sa code ng page, at ang tag na AI_GENERATED sa file ng voice clip. May dala rin ang mga voice clip na hindi naririnig na watermark ng OpenAI, na puwede mong suriin sa <verify>openai.com/verify</verify>. Hindi nananatili ang marka sa text na kinopya mula sa page.",
       "humanReview": "Walang desisyong ginagawa ang testee tungkol sa isang aplikante: ang mga tao sa kumpanya ang nagsusuri ng mga resulta at nagpapasya, at puwedeng humiling ang mga aplikante na suriin ng isang tao ang kanilang resulta.",
       "dpa": "Bahagi ng mga tuntunin ang data processing agreement, at walang kailangang pirmahan. Saklaw nito ang GDPR, ang UK GDPR at ang mga batas sa privacy ng mga estado ng US gaya ng sa California, kung saan ang testee ang service provider ng kumpanya.",
-      "documents": "Nakakatanggap ang mga kumpanya ng <link>mga instructions for use, template ng DPIA at mga template ng abiso sa aplikante</link>, na may mga bersyon para sa New York City, Illinois at Colorado.",
+      "documents": "Nakakatanggap ang mga kumpanya ng <link>mga instructions for use, template ng DPIA at mga template ng abiso sa aplikante</link>, na may mga bersyon para sa New York City, Illinois, Colorado at Connecticut.",
       "nyc": "New York City: bago gamitin ang testee para sa isang posisyon doon, ginagawa ng employer ang hinihingi sa kanya ng Local Law 144: isang independiyenteng bias audit sa loob ng isang taon bago ang paggamit, ang paglalathala ng buod nito, at abiso sa mga aplikanteng nakatira sa lungsod nang hindi bababa sa 10 business day bago sila i-assess. Ang sariling independiyenteng bias audit ng testee ay gagawin bago ang <time>{date}</time>, at taon-taon pagkatapos noon."
     },
     "residency": {

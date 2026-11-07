@@ -240,7 +240,7 @@ FAQ = [
     {
         "key": "uk_us",
         "question": "Kunnen we testee gebruiken voor kandidaten in het Verenigd Koninkrijk en de VS?",
-        "answer": "Ja. De verwerkersovereenkomst dekt het Britse en Amerikaanse recht, en de instructies voor bedrijven en de sjablonen voor kandidaatinformatie (met versies voor New York City, Illinois en Colorado) dekken wat je kandidaten moet vertellen. Voor vacatures in New York City gebruik je het pas als je hebt gedaan wat Local Law 144 van je vraagt: een onafhankelijke bias-audit binnen het jaar vóór het gebruik, de publicatie van een samenvatting daarvan, en een kennisgeving aan kandidaten 10 werkdagen vooraf. De export voor een bias-audit in de Actielog geeft je auditor de score en de uitslag van elke kandidaat die klaar is, om te koppelen aan de antwoorden die je kandidaten zelf gaven.",
+        "answer": "Ja. De verwerkersovereenkomst dekt het Britse en Amerikaanse recht, en de instructies voor bedrijven en de sjablonen voor kandidaatinformatie (met versies voor New York City, Illinois, Colorado en Connecticut) dekken wat je kandidaten moet vertellen. Voor vacatures in New York City gebruik je het pas als je hebt gedaan wat Local Law 144 van je vraagt: een onafhankelijke bias-audit binnen het jaar vóór het gebruik, de publicatie van een samenvatting daarvan, en een kennisgeving aan kandidaten 10 werkdagen vooraf. De export voor een bias-audit in de Actielog geeft je auditor de score en de uitslag van elke kandidaat die klaar is, om te koppelen aan de antwoorden die je kandidaten zelf gaven.",
     },
     {
         "key": "emails",

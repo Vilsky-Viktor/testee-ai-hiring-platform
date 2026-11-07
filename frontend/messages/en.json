@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Candidate notice templates",
-        "description": "Editable notices to send candidates before you invite them, including ones for New York City, Illinois and Colorado."
+        "description": "Editable notices to send candidates before you invite them, including ones for New York City, Illinois, Colorado and Connecticut."
       },
       "dpia": {
         "title": "DPIA template",
@@ -3106,7 +3106,7 @@
       "aiMarks": "Questions, answer options, the assistant's answers and voice clips are marked as AI-generated in a form software can read: data-ai-generated in a page's code, and the AI_GENERATED tag in a voice clip's file. Voice clips also carry OpenAI's inaudible watermark, which you can check at <verify>openai.com/verify</verify>. Text copied from a page doesn't keep its mark.",
       "humanReview": "testee makes no decision about a candidate: people at the company review the results and decide, and candidates can ask for a person to review their result.",
       "dpa": "The data processing agreement is part of the terms, with nothing to sign. It covers the GDPR, the UK GDPR, and US state privacy laws such as California's, where testee is the company's service provider.",
-      "documents": "Companies get <link>instructions for use, a DPIA template and candidate notice templates</link>, with versions for New York City, Illinois and Colorado.",
+      "documents": "Companies get <link>instructions for use, a DPIA template and candidate notice templates</link>, with versions for New York City, Illinois, Colorado and Connecticut.",
       "nyc": "New York City: before using testee for a role there, the employer does what Local Law 144 asks of it: an independent bias audit within the year before use, its summary published, and a notice to candidates who live in the city at least 10 business days before they are assessed. testee's own independent bias audit is done before <time>{date}</time>, and every year after."
     },
     "residency": {

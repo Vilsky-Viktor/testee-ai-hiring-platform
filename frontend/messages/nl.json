@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Sjablonen voor kandidaatberichten",
-        "description": "Bewerkbare berichten om kandidaten te sturen voordat je ze uitnodigt, waaronder versies voor New York City, Illinois en Colorado."
+        "description": "Bewerkbare berichten om kandidaten te sturen voordat je ze uitnodigt, waaronder versies voor New York City, Illinois, Colorado en Connecticut."
       },
       "dpia": {
         "title": "DPIA-sjabloon",
@@ -3106,7 +3106,7 @@
       "aiMarks": "Vragen, antwoordopties, de antwoorden van de assistent en spraakfragmenten zijn in een voor software leesbare vorm gemarkeerd als door AI gegenereerd: data-ai-generated in de code van een pagina, en de tag AI_GENERATED in het bestand van een spraakfragment. Spraakfragmenten dragen ook het onhoorbare watermerk van OpenAI, dat je kunt controleren op <verify>openai.com/verify</verify>. Tekst die je van een pagina kopieert, behoudt zijn markering niet.",
       "humanReview": "testee neemt geen besluit over een kandidaat: mensen bij het bedrijf beoordelen de resultaten en beslissen, en kandidaten kunnen vragen om een beoordeling van hun resultaat door een mens.",
       "dpa": "De verwerkersovereenkomst maakt deel uit van de voorwaarden; je hoeft niets te ondertekenen. Ze dekt de GDPR, de UK GDPR en privacywetten van Amerikaanse staten zoals die van Californië, waaronder testee de dienstverlener van het bedrijf is.",
-      "documents": "Bedrijven krijgen <link>instructies voor gebruik, een DPIA-sjabloon en sjablonen voor kandidaatberichten</link>, met versies voor New York City, Illinois en Colorado.",
+      "documents": "Bedrijven krijgen <link>instructies voor gebruik, een DPIA-sjabloon en sjablonen voor kandidaatberichten</link>, met versies voor New York City, Illinois, Colorado en Connecticut.",
       "nyc": "New York City: voordat de werkgever testee gebruikt voor een functie daar, doet hij wat Local Law 144 van hem vraagt: een onafhankelijke bias-audit binnen het jaar voor gebruik, de publicatie van de samenvatting ervan en een bericht aan kandidaten die in de stad wonen minstens 10 werkdagen voordat ze worden beoordeeld. De eigen onafhankelijke bias-audit van testee wordt uitgevoerd vóór <time>{date}</time>, en daarna elk jaar."
     },
     "residency": {

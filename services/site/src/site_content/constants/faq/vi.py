@@ -240,7 +240,7 @@ FAQ = [
     {
         "key": "uk_us",
         "question": "Chúng tôi có thể dùng testee cho ứng viên ở Vương quốc Anh và Hoa Kỳ không?",
-        "answer": "Có. Thỏa thuận xử lý dữ liệu bao quát luật của Vương quốc Anh và Hoa Kỳ, còn hướng dẫn cho các công ty và các mẫu thông báo cho ứng viên (có phiên bản cho Thành phố New York, Illinois và Colorado) bao quát những gì bạn phải cho ứng viên biết. Với các công việc tại Thành phố New York, chỉ dùng testee sau khi bạn đã làm những gì Local Law 144 yêu cầu: một cuộc kiểm toán thiên lệch độc lập trong vòng một năm trước khi sử dụng, công bố bản tóm tắt của cuộc kiểm toán đó và thông báo cho ứng viên trước 10 ngày làm việc. Bản xuất cho kiểm toán thiên lệch trong Nhật ký thao tác cung cấp cho kiểm toán viên của bạn điểm và kết quả của từng ứng viên đã hoàn thành, để đối chiếu với câu trả lời do chính ứng viên tự khai.",
+        "answer": "Có. Thỏa thuận xử lý dữ liệu bao quát luật của Vương quốc Anh và Hoa Kỳ, còn hướng dẫn cho các công ty và các mẫu thông báo cho ứng viên (có phiên bản cho Thành phố New York, Illinois, Colorado và Connecticut) bao quát những gì bạn phải cho ứng viên biết. Với các công việc tại Thành phố New York, chỉ dùng testee sau khi bạn đã làm những gì Local Law 144 yêu cầu: một cuộc kiểm toán thiên lệch độc lập trong vòng một năm trước khi sử dụng, công bố bản tóm tắt của cuộc kiểm toán đó và thông báo cho ứng viên trước 10 ngày làm việc. Bản xuất cho kiểm toán thiên lệch trong Nhật ký thao tác cung cấp cho kiểm toán viên của bạn điểm và kết quả của từng ứng viên đã hoàn thành, để đối chiếu với câu trả lời do chính ứng viên tự khai.",
     },
     {
         "key": "emails",

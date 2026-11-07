@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Templat pemberitahuan kandidat",
-        "description": "Pemberitahuan yang bisa diedit untuk dikirim ke kandidat sebelum kamu mengundang mereka, termasuk untuk New York City, Illinois, dan Colorado."
+        "description": "Pemberitahuan yang bisa diedit untuk dikirim ke kandidat sebelum kamu mengundang mereka, termasuk untuk New York City, Illinois, Colorado, dan Connecticut."
       },
       "dpia": {
         "title": "Templat DPIA",
@@ -3106,7 +3106,7 @@
       "aiMarks": "Pertanyaan, pilihan jawaban, jawaban asisten, dan klip suara ditandai sebagai buatan AI dalam bentuk yang bisa dibaca perangkat lunak: data-ai-generated di kode halaman, dan tag AI_GENERATED di file klip suara. Klip suara juga membawa watermark OpenAI yang tidak terdengar, yang bisa kamu periksa di <verify>openai.com/verify</verify>. Teks yang disalin dari halaman tidak mempertahankan tandanya.",
       "humanReview": "testee tidak membuat keputusan apa pun tentang kandidat: orang-orang di perusahaan meninjau hasilnya dan memutuskan, dan kandidat bisa meminta seseorang untuk meninjau hasil mereka.",
       "dpa": "Perjanjian pemrosesan data adalah bagian dari ketentuan, tanpa perlu ditandatangani. Perjanjian ini mencakup GDPR, UK GDPR, dan undang-undang privasi negara bagian AS seperti milik California, dengan testee sebagai penyedia layanan (service provider) perusahaan.",
-      "documents": "Perusahaan mendapatkan <link>petunjuk penggunaan, templat DPIA, dan templat pemberitahuan kandidat</link>, dengan versi untuk New York City, Illinois, dan Colorado.",
+      "documents": "Perusahaan mendapatkan <link>petunjuk penggunaan, templat DPIA, dan templat pemberitahuan kandidat</link>, dengan versi untuk New York City, Illinois, Colorado, dan Connecticut.",
       "nyc": "New York City: sebelum memakai testee untuk posisi di sana, pemberi kerja memenuhi apa yang diwajibkan Local Law 144: audit bias independen dalam satu tahun sebelum penggunaan, ringkasannya dipublikasikan, dan pemberitahuan kepada kandidat yang tinggal di kota itu paling lambat 10 hari kerja sebelum mereka dinilai. Audit bias independen milik testee sendiri dilakukan sebelum <time>{date}</time>, lalu setiap tahun setelahnya."
     },
     "residency": {

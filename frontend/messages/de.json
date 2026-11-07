@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Vorlagen für Hinweise an Kandidaten",
-        "description": "Bearbeitbare Hinweise, die du Kandidaten vor der Einladung sendest, darunter solche für New York City, Illinois und Colorado."
+        "description": "Bearbeitbare Hinweise, die du Kandidaten vor der Einladung sendest, darunter solche für New York City, Illinois, Colorado und Connecticut."
       },
       "dpia": {
         "title": "DSFA-Vorlage",
@@ -3106,7 +3106,7 @@
       "aiMarks": "Fragen, Antwortoptionen, die Antworten des Assistenten und Sprachclips sind maschinenlesbar als KI-generiert gekennzeichnet: mit data-ai-generated im Code einer Seite und mit dem Tag AI_GENERATED in der Datei eines Sprachclips. Sprachclips tragen außerdem das unhörbare Wasserzeichen von OpenAI, das du unter <verify>openai.com/verify</verify> prüfen kannst. Von einer Seite kopierter Text behält seine Kennzeichnung nicht.",
       "humanReview": "testee trifft keine Entscheidung über Kandidaten: Menschen im Unternehmen prüfen die Ergebnisse und entscheiden, und Kandidaten können verlangen, dass ein Mensch ihr Ergebnis prüft.",
       "dpa": "Der Auftragsverarbeitungsvertrag ist Teil der Nutzungsbedingungen, es muss nichts unterschrieben werden. Er deckt die DSGVO, die UK GDPR und Datenschutzgesetze der US-Bundesstaaten wie das kalifornische ab, wobei testee Dienstleister (Service Provider) des Unternehmens ist.",
-      "documents": "Unternehmen erhalten eine <link>Gebrauchsanweisung, eine DSFA-Vorlage und Vorlagen für Hinweise an Kandidaten</link>, mit Fassungen für New York City, Illinois und Colorado.",
+      "documents": "Unternehmen erhalten eine <link>Gebrauchsanweisung, eine DSFA-Vorlage und Vorlagen für Hinweise an Kandidaten</link>, mit Fassungen für New York City, Illinois, Colorado und Connecticut.",
       "nyc": "New York City: Bevor ein Arbeitgeber testee für eine Stelle dort einsetzt, erfüllt er, was Local Law 144 von ihm verlangt: ein unabhängiges Bias-Audit innerhalb des Jahres vor dem Einsatz, die Veröffentlichung seiner Zusammenfassung und einen Hinweis an Kandidaten, die in der Stadt wohnen, mindestens 10 Werktage vor ihrer Bewertung. Das eigene unabhängige Bias-Audit von testee erfolgt vor dem <time>{date}</time> und danach jedes Jahr."
     },
     "residency": {

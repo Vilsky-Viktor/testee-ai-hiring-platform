@@ -240,7 +240,7 @@ FAQ = [
     {
         "key": "uk_us",
         "question": "¿Podemos usar testee con candidatos del Reino Unido y Estados Unidos?",
-        "answer": "Sí. El acuerdo de tratamiento de datos cubre la legislación del Reino Unido y de Estados Unidos, y las instrucciones para empresas y las plantillas de aviso para candidatos (con versiones para la ciudad de Nueva York, Illinois y Colorado) cubren lo que debes comunicar a los candidatos. Para puestos en la ciudad de Nueva York, úsalo solo cuando hayas cumplido lo que te exige la Local Law 144: una auditoría de sesgos independiente en el año anterior a su uso, la publicación de su resumen y un aviso a los candidatos 10 días hábiles antes. La exportación para auditoría de sesgos del Registro de acciones da a tu auditor la nota y el resultado de cada candidato que terminó, para cruzarlos con las respuestas que tus candidatos dieron ellos mismos.",
+        "answer": "Sí. El acuerdo de tratamiento de datos cubre la legislación del Reino Unido y de Estados Unidos, y las instrucciones para empresas y las plantillas de aviso para candidatos (con versiones para la ciudad de Nueva York, Illinois, Colorado y Connecticut) cubren lo que debes comunicar a los candidatos. Para puestos en la ciudad de Nueva York, úsalo solo cuando hayas cumplido lo que te exige la Local Law 144: una auditoría de sesgos independiente en el año anterior a su uso, la publicación de su resumen y un aviso a los candidatos 10 días hábiles antes. La exportación para auditoría de sesgos del Registro de acciones da a tu auditor la nota y el resultado de cada candidato que terminó, para cruzarlos con las respuestas que tus candidatos dieron ellos mismos.",
     },
     {
         "key": "emails",

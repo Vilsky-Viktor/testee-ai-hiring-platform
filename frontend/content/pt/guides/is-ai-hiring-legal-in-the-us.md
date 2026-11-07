@@ -89,7 +89,7 @@ A lei de IA do Colorado foi revogada e promulgada de novo pela SB 26-189, sancio
 A Public Act 26-15 (SB 5), sancionada em maio de 2026, tem duas partes para empregadores:
 
 - **Desde 1º de outubro de 2026:** usar uma ferramenta automatizada de decisão de emprego não é defesa contra uma alegação de discriminação. Testes antiviés não são obrigatórios, mas a evidência deles pode ser levada em conta.
-- **A partir de 1º de outubro de 2027:** informe os candidatos em linguagem simples quando estiverem interagindo com uma ferramenta assim, a menos que isso seja óbvio, e dê um aviso por escrito antes de usá-la para uma decisão: que ela é usada, sua finalidade e o tipo de decisão, seu nome comercial, os dados pessoais que analisa e como, de onde vêm os dados e como entrar em contato com você.
+- **A partir de 1º de outubro de 2027:** informe os candidatos em linguagem simples quando estiverem interagindo com uma ferramenta assim, a menos que isso seja óbvio, e dê um aviso por escrito antes de a decisão ser tomada: que ela é usada, sua finalidade e o tipo de decisão, seu nome comercial, os dados pessoais que analisa e como, de onde vêm os dados e como entrar em contato com você.
 
 ## As datas
 
@@ -107,7 +107,7 @@ A Public Act 26-15 (SB 5), sancionada em maio de 2026, tem duas partes para empr
 
 1. **Liste as vagas e os lugares** para os quais você contrata: cidade de Nova York, Illinois, Colorado, Califórnia, Nova Jersey, Texas, Connecticut, outros lugares dos EUA.
 2. **Teste só o que a vaga exige.** Escolha tópicos e uma nota de aprovação que você consiga justificar para a função.
-3. **Atualize seu aviso aos candidatos** dizendo que a IA é usada, como os resultados são usados e como pedir uma adaptação e uma revisão humana. Acrescente os textos de Illinois e do Colorado onde se aplicarem.
+3. **Atualize seu aviso aos candidatos** dizendo que a IA é usada, como os resultados são usados e como pedir uma adaptação e uma revisão humana. Acrescente os textos de Illinois, do Colorado e de Connecticut onde se aplicarem.
 4. **Ofereça adaptações,** como tempo extra, e combine-as antes de o candidato começar.
 5. **Colete dados demográficos dos próprios candidatos,** em um formulário voluntário de autoidentificação, mantido separado das decisões de contratação. Nunca os infira.
 6. **Verifique o impacto adverso** nos seus próprios resultados, com a regra dos quatro quintos como primeira checagem.
@@ -127,7 +127,7 @@ Como isso aparece no produto hoje:
 - **Nenhuma característica protegida.** A testee nunca pede, infere ou armazena sexo, raça, idade, deficiência, CEP ou outras características protegidas dos candidatos.
 - **Uma exportação para auditoria de viés.** Na página Registro de ações da empresa, o proprietário pode baixar um arquivo CSV dos candidatos que terminaram, para a empresa toda ou uma entrevista e entre duas datas: a nota de cada candidato, a nota de aprovação, se foi aprovado e se ficou acima da mediana da entrevista. Cada linha é identificada pelo e-mail do candidato, para que você possa cruzá-la com as categorias autodeclaradas que você mesmo coletou; depois remova a coluna de e-mail e entregue o arquivo ao seu auditor independente, que calcula as taxas de seleção e de pontuação e as razões de impacto. O mesmo arquivo permite que você mesmo faça a checagem dos quatro quintos.
 - **Tempo extra** de +25%, +50% ou +100% em cada pergunta pode ser dado a qualquer candidato que pedir, antes de começar. A testee armazena só o acréscimo, nunca o motivo. No modo de voz, o candidato pode tocar numa opção em vez de falar. Iniciar uma entrevista por voz exige um microfone, então, antes de ele começar, configure o candidato que não pode usar um para responder por toque. Você também pode configurar a entrevista inteira assim.
-- **Modelos de aviso aos candidatos,** um geral e versões para a cidade de Nova York, Illinois e Colorado, estão na [página de documentos](/documents), com as instruções para empresas.
+- **Modelos de aviso aos candidatos,** um geral e versões para a cidade de Nova York, Illinois, Colorado e Connecticut, estão na [página de documentos](/documents), com as instruções para empresas.
 - **Cidade de Nova York.** A testee ainda não passou pela sua própria auditoria de viés independente. Não use a testee para vagas na cidade de Nova York até ter feito o que a Local Law 144 exige de você como empregador: uma auditoria de viés independente no ano anterior ao uso, o resumo publicado e um aviso aos candidatos com 10 dias úteis de antecedência.
 - **Dados.** Pela CCPA, sua empresa é a empresa responsável (business) e a testee o seu prestador de serviços (service provider), nos termos do [acordo de tratamento de dados](/dpa) e da sua seção sobre os EUA. Os dados são hospedados na UE, com alguns suboperadores nos EUA (veja a [política de privacidade](/privacy)), e não são usados para treinar modelos de IA.
 - **Retenção.** Os dados dos candidatos são excluídos 12 meses após o convite. Quando a sua lei exige guardar registros por mais tempo, como os quatro anos da Califórnia, baixe os relatórios em PDF e o arquivo de auditoria de viés e guarde-os você mesmo; por padrão, a testee não guarda resultados por mais tempo.

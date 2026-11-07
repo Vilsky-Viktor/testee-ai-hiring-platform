@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Plantillas de aviso para candidatos",
-        "description": "Avisos editables para enviar a los candidatos antes de invitarlos, incluidos algunos para la ciudad de Nueva York, Illinois y Colorado."
+        "description": "Avisos editables para enviar a los candidatos antes de invitarlos, incluidos algunos para la ciudad de Nueva York, Illinois, Colorado y Connecticut."
       },
       "dpia": {
         "title": "Plantilla de EIPD",
@@ -3106,7 +3106,7 @@
       "aiMarks": "Las preguntas, las opciones de respuesta, las respuestas del asistente y los clips de voz están marcados como generados por IA en un formato legible por software: data-ai-generated en el código de la página y la etiqueta AI_GENERATED en el archivo del clip de voz. Los clips de voz llevan además la marca de agua inaudible de OpenAI, que puedes comprobar en <verify>openai.com/verify</verify>. El texto copiado de una página no conserva su marca.",
       "humanReview": "testee no toma ninguna decisión sobre un candidato: las personas de la empresa revisan los resultados y deciden, y los candidatos pueden pedir que una persona revise su resultado.",
       "dpa": "El acuerdo de tratamiento de datos forma parte de los términos, sin nada que firmar. Cubre el RGPD, el UK GDPR y las leyes estatales de privacidad de EE. UU., como la de California, en las que testee es el proveedor de servicios de la empresa.",
-      "documents": "Las empresas reciben <link>instrucciones de uso, una plantilla de EIPD y plantillas de aviso para candidatos</link>, con versiones para la ciudad de Nueva York, Illinois y Colorado.",
+      "documents": "Las empresas reciben <link>instrucciones de uso, una plantilla de EIPD y plantillas de aviso para candidatos</link>, con versiones para la ciudad de Nueva York, Illinois, Colorado y Connecticut.",
       "nyc": "Ciudad de Nueva York: antes de usar testee para un puesto allí, el empleador cumple lo que le exige la Local Law 144: una auditoría de sesgos independiente en el año anterior a su uso, la publicación de su resumen y un aviso a los candidatos que viven en la ciudad al menos 10 días hábiles antes de evaluarlos. La auditoría de sesgos independiente de testee se realiza antes del <time>{date}</time>, y después cada año."
     },
     "residency": {

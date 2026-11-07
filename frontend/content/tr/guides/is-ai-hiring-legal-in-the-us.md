@@ -89,7 +89,7 @@ Colorado'nun yapay zekâ yasası, 14 Mayıs 2026'da imzalanan ve 1 Ocak 2027'den
 Mayıs 2026'da imzalanan Public Act 26-15 (SB 5), işverenler için iki bölümden oluşur:
 
 - **1 Ekim 2026'dan beri:** otomatik bir istihdam karar aracı kullanmak, ayrımcılık iddiasına karşı savunma sayılmaz. Yanlılık testi zorunlu değildir, ancak buna ilişkin kanıtlar dikkate alınabilir.
-- **1 Ekim 2027'den itibaren:** adaylar böyle bir araçla etkileşimde olduğunda, açıkça belli olmadıkça bunu sade bir dille söyleyin ve aracı bir karar için kullanmadan önce yazılı bildirim yapın: kullanıldığını, amacını ve karar türünü, ticari adını, analiz ettiği kişisel verileri ve bunu nasıl yaptığını, verilerin nereden geldiğini ve size nasıl ulaşılacağını.
+- **1 Ekim 2027'den itibaren:** adaylar böyle bir araçla etkileşimde olduğunda, açıkça belli olmadıkça bunu sade bir dille söyleyin ve karar verilmeden önce yazılı bildirim yapın: kullanıldığını, amacını ve karar türünü, ticari adını, analiz ettiği kişisel verileri ve bunu nasıl yaptığını, verilerin nereden geldiğini ve size nasıl ulaşılacağını.
 
 ## Tarihler
 
@@ -107,7 +107,7 @@ Mayıs 2026'da imzalanan Public Act 26-15 (SB 5), işverenler için iki bölümd
 
 1. **İşe aldığınız pozisyonları ve yerleri listeleyin:** New York City, Illinois, Colorado, California, New Jersey, Texas, Connecticut, ABD'nin başka yerleri.
 2. **Yalnızca işin gerektirdiğini test edin.** Pozisyon için gerekçelendirebileceğiniz konular ve geçme notu seçin.
-3. **Aday aydınlatma metninizi güncelleyin:** yapay zekâ kullanıldığını, sonuçların nasıl kullanıldığını ve düzenleme ile insan incelemesinin nasıl talep edileceğini belirtin. Geçerli olduğu yerlerde Illinois ve Colorado ifadelerini ekleyin.
+3. **Aday aydınlatma metninizi güncelleyin:** yapay zekâ kullanıldığını, sonuçların nasıl kullanıldığını ve düzenleme ile insan incelemesinin nasıl talep edileceğini belirtin. Geçerli olduğu yerlerde Illinois, Colorado ve Connecticut ifadelerini ekleyin.
 4. **Ek süre gibi düzenlemeler sunun** ve bunları aday başlamadan önce kararlaştırın.
 5. **Demografik verileri adayların kendisinden toplayın;** gönüllü bir öz-tanımlama formuyla, işe alım kararlarından ayrı tutarak. Asla çıkarsamayın.
 6. **Olumsuz etkiyi** kendi sonuçlarınız üzerinde, ilk kontrol olarak beşte dört kuralıyla denetleyin.
@@ -127,7 +127,7 @@ Bunun bugün üründeki karşılığı:
 - **Korunan özellik yok.** testee adayların cinsiyetini, ırkını, yaşını, engelliliğini, posta kodunu veya diğer korunan özelliklerini asla sormaz, çıkarsamaz veya saklamaz.
 - **Yanlılık denetimi için dışa aktarım.** Şirketin İşlem kaydı sayfasında şirket sahibi, tüm şirket veya tek bir mülakat için ve iki tarih arasında, mülakatı bitiren adayların bir CSV dosyasını indirebilir: her adayın notu, geçme notu, geçip geçmediği ve mülakatın medyanının üzerinde puan alıp almadığı. Her satır adayın e-posta adresiyle eşleştirilir; böylece onu kendi topladığınız, adayların kendi beyan ettiği kategorilerle birleştirebilirsiniz; ardından e-posta sütununu silin ve dosyayı seçilme ve puan oranlarını ve etki oranlarını hesaplayacak bağımsız denetçinize verin. Aynı dosyayla beşte dört kontrolünü kendiniz de yapabilirsiniz.
 - **Ek süre:** isteyen her adaya, başlamadan önce, her soru için +%25, +%50 veya +%100 ek süre verilebilir. testee yalnızca miktarı saklar, nedenini asla saklamaz. Sesli modda aday konuşmak yerine bir seçeneğe dokunabilir. Sesli bir mülakata başlamak için mikrofon gerekir; bu yüzden mikrofon kullanamayan bir adayı, başlamadan önce dokunarak yanıtlamaya ayarlayın. Tüm mülakatı da bu şekilde ayarlayabilirsiniz.
-- **Aday aydınlatma metni şablonları,** genel bir şablon ve New York City, Illinois ve Colorado sürümleri, şirketler için talimatlarla birlikte [belgeler sayfasında](/documents) yer alır.
+- **Aday aydınlatma metni şablonları,** genel bir şablon ve New York City, Illinois, Colorado ve Connecticut sürümleri, şirketler için talimatlarla birlikte [belgeler sayfasında](/documents) yer alır.
 - **New York City.** testee henüz kendi bağımsız yanlılık denetiminden geçmedi. Local Law 144'ün işveren olarak sizden istediklerini yapana kadar testee'yi New York City'deki işler için kullanmayın: kullanımdan önceki bir yıl içinde bağımsız bir yanlılık denetimi, özetinin yayımlanması ve 10 iş günü önceden adaylara bildirim.
 - **Veriler.** CCPA kapsamında şirketiniz işletme (business), testee ise [veri işleme sözleşmesi](/dpa) ve onun ABD bölümü kapsamında hizmet sağlayıcısıdır (service provider). Veriler AB'de barındırılır, bazı alt işleyenler ABD'dedir (bkz. [gizlilik politikası](/privacy)) ve yapay zekâ modellerini eğitmek için kullanılmaz.
 - **Saklama.** Aday verileri davetten 12 ay sonra silinir. Hukukunuz kayıtları daha uzun süre saklamanızı istiyorsa, örneğin California'daki dört yıl gibi, PDF raporları ve yanlılık denetimi dosyasını indirip kendiniz saklayın; testee varsayılan olarak sonuçları daha uzun süre saklamaz.

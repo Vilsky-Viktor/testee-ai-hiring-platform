@@ -89,7 +89,7 @@ De AI-wet van Colorado werd ingetrokken en opnieuw vastgesteld door SB 26-189, o
 Public Act 26-15 (SB 5), ondertekend in mei 2026, heeft twee onderdelen voor werkgevers:
 
 - **Sinds 1 oktober 2026:** een geautomatiseerde tool voor arbeidsbesluiten gebruiken is geen verweer tegen een discriminatieclaim. Testen op bias is niet verplicht, maar bewijs daarvan kan worden meegewogen.
-- **Vanaf 1 oktober 2027:** vertel kandidaten in begrijpelijke taal wanneer ze met zo'n tool te maken hebben, tenzij dat overduidelijk is, en geef een schriftelijke kennisgeving voordat je de tool voor een besluit gebruikt: dat hij wordt gebruikt, het doel en het soort besluit, de handelsnaam, welke persoonsgegevens hij analyseert en hoe, waar de gegevens vandaan komen en hoe ze contact met je opnemen.
+- **Vanaf 1 oktober 2027:** vertel kandidaten in begrijpelijke taal wanneer ze met zo'n tool te maken hebben, tenzij dat overduidelijk is, en geef een schriftelijke kennisgeving voordat het besluit wordt genomen: dat hij wordt gebruikt, het doel en het soort besluit, de handelsnaam, welke persoonsgegevens hij analyseert en hoe, waar de gegevens vandaan komen en hoe ze contact met je opnemen.
 
 ## De data
 
@@ -107,7 +107,7 @@ Public Act 26-15 (SB 5), ondertekend in mei 2026, heeft twee onderdelen voor wer
 
 1. **Maak een lijst van de functies en plaatsen** waarvoor je werft: New York City, Illinois, Colorado, Californië, New Jersey, Texas, Connecticut, elders in de VS.
 2. **Test alleen wat de functie vraagt.** Kies onderwerpen en een slaaggrens die je voor de rol kunt verantwoorden.
-3. **Werk je informatie voor kandidaten bij** met dat AI wordt gebruikt, hoe resultaten worden gebruikt en hoe ze om een aanpassing en een menselijke beoordeling kunnen vragen. Voeg de formuleringen voor Illinois en Colorado toe waar die gelden.
+3. **Werk je informatie voor kandidaten bij** met dat AI wordt gebruikt, hoe resultaten worden gebruikt en hoe ze om een aanpassing en een menselijke beoordeling kunnen vragen. Voeg de formuleringen voor Illinois, Colorado en Connecticut toe waar die gelden.
 4. **Bied aanpassingen aan,** zoals extra tijd, en spreek ze af voordat de kandidaat begint.
 5. **Verzamel demografische gegevens bij de kandidaten zelf,** via een vrijwillig zelfidentificatieformulier, gescheiden van de wervingsbesluiten. Leid ze nooit af.
 6. **Controleer adverse impact** op je eigen uitkomsten, met de vier-vijfdenregel als eerste check.
@@ -127,7 +127,7 @@ Zo ziet dat er vandaag in het product uit:
 - **Geen beschermde kenmerken.** testee vraagt, leidt af of bewaart nooit het geslacht, het ras, de leeftijd, een beperking, de postcode of andere beschermde kenmerken van kandidaten.
 - **Een export voor een bias-audit.** Op de pagina Actielog van het bedrijf kan de eigenaar een csv-bestand downloaden van de kandidaten die klaar zijn, voor het hele bedrijf of één interview en tussen twee data: per kandidaat het cijfer, de slaaggrens, of de kandidaat geslaagd is en of die boven de mediaan van het interview scoorde. Elke rij heeft het e-mailadres van de kandidaat als sleutel, zodat je hem kunt koppelen aan de zelfgerapporteerde categorieën die je zelf hebt verzameld; verwijder daarna de kolom met e-mailadressen en geef het bestand aan je onafhankelijke auditor, die de selectie- en scorepercentages en de impact ratios berekent. Met hetzelfde bestand kun je de vier-vijfdencheck zelf uitvoeren.
 - **Extra tijd** van +25%, +50% of +100% per vraag kan worden gegeven aan elke kandidaat die erom vraagt, voordat die begint. testee bewaart alleen de hoeveelheid, nooit de reden. In de spraakmodus kan een kandidaat op een optie tikken in plaats van te spreken. Om een spraakinterview te starten is een microfoon nodig, dus stel een kandidaat die er geen kan gebruiken vóór de start in op antwoorden door te tikken. Je kunt ook het hele interview zo instellen.
-- **Sjablonen voor de informatie aan kandidaten,** een algemene en versies voor New York City, Illinois en Colorado, staan op de [documentenpagina](/documents), samen met de instructies voor bedrijven.
+- **Sjablonen voor de informatie aan kandidaten,** een algemene en versies voor New York City, Illinois, Colorado en Connecticut, staan op de [documentenpagina](/documents), samen met de instructies voor bedrijven.
 - **New York City.** testee heeft nog geen eigen onafhankelijke bias-audit gehad. Gebruik testee niet voor banen in New York City totdat je hebt gedaan wat Local Law 144 van jou als werkgever vraagt: een onafhankelijke bias-audit binnen het jaar vóór gebruik, de samenvatting gepubliceerd en een melding aan kandidaten 10 werkdagen vooraf.
 - **Gegevens.** Je bedrijf is onder de CCPA de business en testee zijn service provider, onder de [verwerkersovereenkomst](/dpa) en het Amerikaanse deel daarvan. Gegevens worden gehost in de EU, met sommige subverwerkers in de VS (zie het [privacybeleid](/privacy)), en worden niet gebruikt om AI-modellen te trainen.
 - **Bewaartermijn.** Kandidaatgegevens worden 12 maanden na de uitnodiging verwijderd. Waar jouw recht vraagt om gegevens langer te bewaren, zoals vier jaar in Californië, download je de pdf-rapporten en het bestand voor de bias-audit en bewaar je ze zelf; testee bewaart resultaten standaard niet langer.

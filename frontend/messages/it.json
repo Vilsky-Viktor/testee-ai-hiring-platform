@@ -1436,7 +1436,7 @@
       },
       "notices": {
         "title": "Modelli di informativa per i candidati",
-        "description": "Informative modificabili da inviare ai candidati prima di invitarli, incluse quelle per New York City, l'Illinois e il Colorado."
+        "description": "Informative modificabili da inviare ai candidati prima di invitarli, incluse quelle per New York City, l'Illinois, il Colorado e il Connecticut."
       },
       "dpia": {
         "title": "Modello di DPIA",
@@ -3106,7 +3106,7 @@
       "aiMarks": "Le domande, le opzioni di risposta, le risposte dell’assistente e le clip vocali sono contrassegnate come generate dall’IA in una forma leggibile da un software: data-ai-generated nel codice di una pagina e il tag AI_GENERATED nel file di una clip vocale. Le clip vocali portano anche la filigrana non udibile di OpenAI, che puoi verificare su <verify>openai.com/verify</verify>. Il testo copiato da una pagina non conserva il contrassegno.",
       "humanReview": "testee non prende alcuna decisione su un candidato: sono le persone dell'azienda a esaminare i risultati e decidere, e i candidati possono chiedere che una persona riesamini il loro risultato.",
       "dpa": "L'accordo sul trattamento dei dati fa parte dei termini, senza nulla da firmare. Copre il GDPR, lo UK GDPR e le leggi statali statunitensi sulla privacy come quella della California, per le quali testee è il fornitore di servizi (service provider) dell'azienda.",
-      "documents": "Le aziende ricevono <link>istruzioni per l'uso, un modello di DPIA e modelli di informativa per i candidati</link>, con versioni per New York City, l'Illinois e il Colorado.",
+      "documents": "Le aziende ricevono <link>istruzioni per l'uso, un modello di DPIA e modelli di informativa per i candidati</link>, con versioni per New York City, l'Illinois, il Colorado e il Connecticut.",
       "nyc": "New York City: prima di usare testee per un ruolo in città, il datore di lavoro fa ciò che la Local Law 144 gli richiede: un audit sui bias indipendente nell'anno precedente all'uso, la pubblicazione della sua sintesi e un avviso ai candidati che vivono in città almeno 10 giorni lavorativi prima della valutazione. L'audit sui bias indipendente di testee viene svolto prima del <time>{date}</time>, e poi ogni anno."
     },
     "residency": {

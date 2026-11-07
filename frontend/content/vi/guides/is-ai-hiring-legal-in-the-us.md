@@ -89,7 +89,7 @@ Luật AI của Colorado đã bị bãi bỏ và ban hành lại bằng SB 26-18
 Public Act 26-15 (SB 5), được ký tháng 5/2026, có hai phần dành cho bên tuyển dụng:
 
 - **Từ ngày 1/10/2026:** việc dùng công cụ ra quyết định tuyển dụng tự động không phải là lý do bào chữa trước khiếu nại phân biệt đối xử. Không bắt buộc kiểm tra chống thiên lệch, nhưng bằng chứng về việc này có thể được xem xét.
-- **Từ ngày 1/10/2027:** cho ứng viên biết bằng ngôn ngữ dễ hiểu khi họ đang tương tác với công cụ như vậy, trừ khi điều đó đã rõ ràng, và gửi thông báo bằng văn bản trước khi dùng công cụ cho một quyết định: rằng công cụ được sử dụng, mục đích và loại quyết định, tên thương mại, dữ liệu cá nhân mà công cụ phân tích và cách phân tích, nguồn của dữ liệu, và cách liên hệ với bạn.
+- **Từ ngày 1/10/2027:** cho ứng viên biết bằng ngôn ngữ dễ hiểu khi họ đang tương tác với công cụ như vậy, trừ khi điều đó đã rõ ràng, và gửi thông báo bằng văn bản trước khi quyết định được đưa ra: rằng công cụ được sử dụng, mục đích và loại quyết định, tên thương mại, dữ liệu cá nhân mà công cụ phân tích và cách phân tích, nguồn của dữ liệu, và cách liên hệ với bạn.
 
 ## Các mốc thời gian
 
@@ -107,7 +107,7 @@ Public Act 26-15 (SB 5), được ký tháng 5/2026, có hai phần dành cho b�
 
 1. **Liệt kê các vị trí và nơi** bạn tuyển dụng: Thành phố New York, Illinois, Colorado, California, New Jersey, Texas, Connecticut, các nơi khác ở Mỹ.
 2. **Chỉ kiểm tra những gì công việc cần.** Chọn chủ đề và điểm đạt mà bạn có thể giải thích được cho vị trí đó.
-3. **Cập nhật thông báo cho ứng viên** để nói rằng có dùng AI, kết quả được dùng thế nào, và cách yêu cầu điều chỉnh và xem xét bởi con người. Thêm nội dung theo yêu cầu của Illinois và Colorado ở nơi áp dụng.
+3. **Cập nhật thông báo cho ứng viên** để nói rằng có dùng AI, kết quả được dùng thế nào, và cách yêu cầu điều chỉnh và xem xét bởi con người. Thêm nội dung theo yêu cầu của Illinois, Colorado và Connecticut ở nơi áp dụng.
 4. **Cung cấp điều chỉnh,** như thêm thời gian, và thống nhất trước khi ứng viên bắt đầu.
 5. **Thu thập dữ liệu nhân khẩu học từ chính ứng viên,** qua một biểu mẫu tự khai báo tự nguyện, giữ tách biệt khỏi các quyết định tuyển dụng. Không bao giờ suy đoán.
 6. **Kiểm tra tác động bất lợi** trên kết quả của chính bạn, với quy tắc bốn phần năm là bước kiểm tra đầu tiên.
@@ -127,7 +127,7 @@ Hiện nay điều đó thể hiện trong sản phẩm như sau:
 - **Không có đặc điểm được bảo vệ.** testee không bao giờ hỏi, suy đoán hay lưu giới tính, chủng tộc, tuổi tác, khuyết tật, mã bưu chính hay các đặc điểm được bảo vệ khác của ứng viên.
 - **Xuất dữ liệu cho kiểm toán thiên lệch.** Trên trang Nhật ký thao tác của công ty, chủ sở hữu có thể tải một tệp CSV gồm các ứng viên đã hoàn thành, cho toàn công ty hoặc một buổi phỏng vấn và trong khoảng giữa hai ngày: điểm của từng ứng viên, điểm đạt, họ có đạt hay không và có cao hơn trung vị của buổi phỏng vấn hay không. Mỗi dòng gắn với email của ứng viên, nên bạn có thể ghép nó với các nhóm do ứng viên tự khai báo mà bạn đã tự thu thập; sau đó xóa cột email và đưa tệp cho kiểm toán viên độc lập, người sẽ tính tỷ lệ tuyển chọn, tỷ lệ điểm và tỷ số tác động. Cũng với tệp này, bạn có thể tự kiểm tra theo quy tắc bốn phần năm.
 - **Thời gian thêm** +25%, +50% hoặc +100% cho mỗi câu hỏi có thể được cấp cho bất kỳ ứng viên nào yêu cầu, trước khi họ bắt đầu. testee chỉ lưu mức thời gian thêm, không bao giờ lưu lý do. Ở chế độ giọng nói, ứng viên có thể chạm vào một lựa chọn thay vì nói. Bắt đầu một buổi phỏng vấn bằng giọng nói cần có micro, nên trước khi bắt đầu, hãy đặt ứng viên không dùng được micro sang trả lời bằng cách chạm. Bạn cũng có thể đặt cả buổi phỏng vấn như vậy.
-- **Mẫu thông báo cho ứng viên,** một mẫu chung và các phiên bản cho Thành phố New York, Illinois và Colorado, có trên [trang tài liệu](/documents), cùng hướng dẫn cho công ty.
+- **Mẫu thông báo cho ứng viên,** một mẫu chung và các phiên bản cho Thành phố New York, Illinois, Colorado và Connecticut, có trên [trang tài liệu](/documents), cùng hướng dẫn cho công ty.
 - **Thành phố New York.** testee chưa có cuộc kiểm toán thiên lệch độc lập của riêng mình. Đừng dùng testee cho công việc ở Thành phố New York cho đến khi bạn đã làm những gì Local Law 144 yêu cầu ở bạn với tư cách bên tuyển dụng: một cuộc kiểm toán thiên lệch độc lập trong vòng một năm trước khi sử dụng, công bố bản tóm tắt, và thông báo cho ứng viên trước 10 ngày làm việc.
 - **Dữ liệu.** Theo CCPA, công ty bạn là doanh nghiệp (business) và testee là nhà cung cấp dịch vụ (service provider) của công ty, theo [thỏa thuận xử lý dữ liệu](/dpa) và phần về Mỹ trong đó. Dữ liệu được lưu trữ tại EU, với một số bên xử lý phụ ở Mỹ (xem [chính sách quyền riêng tư](/privacy)), và không được dùng để huấn luyện mô hình AI.
 - **Thời hạn lưu.** Dữ liệu ứng viên được xóa sau 12 tháng kể từ lời mời. Nếu luật của bạn yêu cầu lưu hồ sơ lâu hơn, như bốn năm ở California, hãy tải báo cáo PDF và tệp kiểm toán thiên lệch và tự lưu giữ; theo mặc định testee không lưu kết quả lâu hơn.

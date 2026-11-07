@@ -89,7 +89,7 @@ Ustawa Kolorado o AI została uchylona i uchwalona na nowo przez SB 26-189, podp
 Ustawa Public Act 26-15 (SB 5), podpisana w maju 2026, ma dla pracodawców dwie części:
 
 - **Od 1 października 2026:** użycie zautomatyzowanego narzędzia do decyzji o zatrudnieniu nie jest obroną przed zarzutem dyskryminacji. Testy pod kątem stronniczości nie są wymagane, ale dowody ich przeprowadzenia mogą zostać wzięte pod uwagę.
-- **Od 1 października 2027:** informuj kandydatów prostym językiem, gdy mają do czynienia z takim narzędziem, chyba że jest to oczywiste, a przed użyciem go do podjęcia decyzji przekaż pisemne zawiadomienie: że jest używane, jaki ma cel i jakiego rodzaju decyzji dotyczy, jaka jest jego nazwa handlowa, jakie dane osobowe analizuje i w jaki sposób, skąd pochodzą dane oraz jak się z Tobą skontaktować.
+- **Od 1 października 2027:** informuj kandydatów prostym językiem, gdy mają do czynienia z takim narzędziem, chyba że jest to oczywiste, a przed podjęciem decyzji przekaż pisemne zawiadomienie: że jest używane, jaki ma cel i jakiego rodzaju decyzji dotyczy, jaka jest jego nazwa handlowa, jakie dane osobowe analizuje i w jaki sposób, skąd pochodzą dane oraz jak się z Tobą skontaktować.
 
 ## Daty
 
@@ -107,7 +107,7 @@ Ustawa Public Act 26-15 (SB 5), podpisana w maju 2026, ma dla pracodawców dwie 
 
 1. **Spisz stanowiska i miejsca,** na które rekrutujesz: Nowy Jork, Illinois, Kolorado, Kalifornia, New Jersey, Teksas, Connecticut, inne miejsca w USA.
 2. **Sprawdzaj tylko to, czego wymaga praca.** Wybierz tematy i próg zaliczenia, które potrafisz uzasadnić dla danego stanowiska.
-3. **Zaktualizuj informację dla kandydatów,** podając, że używasz AI, jak wykorzystujesz wyniki i jak poprosić o usprawnienie oraz weryfikację przez człowieka. Dodaj sformułowania wymagane w Illinois i Kolorado tam, gdzie mają zastosowanie.
+3. **Zaktualizuj informację dla kandydatów,** podając, że używasz AI, jak wykorzystujesz wyniki i jak poprosić o usprawnienie oraz weryfikację przez człowieka. Dodaj sformułowania wymagane w Illinois, Kolorado i Connecticut tam, gdzie mają zastosowanie.
 4. **Oferuj usprawnienia,** takie jak dodatkowy czas, i uzgadniaj je, zanim kandydat zacznie.
 5. **Zbieraj dane demograficzne od samych kandydatów** w dobrowolnym formularzu samoidentyfikacji, przechowywane oddzielnie od decyzji o zatrudnieniu. Nigdy ich nie wnioskuj.
 6. **Sprawdzaj niekorzystny wpływ** na własnych wynikach, z regułą czterech piątych jako pierwszym testem.
@@ -127,7 +127,7 @@ Jak to dziś wygląda w produkcie:
 - **Żadnych cech chronionych.** testee nigdy nie pyta o płeć, rasę, wiek, niepełnosprawność, kod pocztowy ani inne cechy chronione kandydatów, nie wnioskuje ich i ich nie przechowuje.
 - **Eksport do audytu stronniczości.** Na stronie „Dziennik działań” firmy właściciel może pobrać plik CSV z kandydatami, którzy ukończyli rozmowę, dla całej firmy lub jednej rozmowy i za okres między dwiema datami: wynik każdego kandydata, próg zaliczenia, to, czy zaliczył, i czy uzyskał wynik powyżej mediany rozmowy. Kluczem każdego wiersza jest adres e-mail kandydata, więc możesz połączyć go z kategoriami, które kandydaci sami podali i które zebrała Twoja firma; potem usuń kolumnę z adresem e-mail i przekaż plik niezależnemu audytorowi, który obliczy wskaźniki selekcji i punktacji oraz współczynniki wpływu. Ten sam plik pozwala Ci samodzielnie przeprowadzić test czterech piątych.
 - **Dodatkowy czas** +25%, +50% lub +100% na każde pytanie można przyznać każdemu kandydatowi, który o to poprosi, zanim zacznie. testee przechowuje tylko wymiar dodatkowego czasu, nigdy powód. W trybie głosowym kandydat może dotknąć odpowiedzi zamiast mówić. Rozpoczęcie rozmowy głosowej wymaga mikrofonu, więc kandydatowi, który nie może z niego korzystać, ustaw przed startem odpowiadanie dotknięciem. Tak samo możesz ustawić całą rozmowę.
-- **Wzory informacji dla kandydatów,** ogólny oraz wersje dla Nowego Jorku, Illinois i Kolorado, są na [stronie dokumentów](/documents) wraz z instrukcjami dla firm.
+- **Wzory informacji dla kandydatów,** ogólny oraz wersje dla Nowego Jorku, Illinois, Kolorado i Connecticut, są na [stronie dokumentów](/documents) wraz z instrukcjami dla firm.
 - **Nowy Jork.** testee nie przeszła jeszcze własnego niezależnego audytu stronniczości. Nie używaj testee do stanowisk w Nowym Jorku, dopóki nie wykonasz tego, czego Local Law 144 wymaga od Ciebie jako pracodawcy: niezależnego audytu stronniczości w ciągu roku przed użyciem, publikacji jego podsumowania i informacji dla kandydatów 10 dni roboczych wcześniej.
 - **Dane.** Na gruncie CCPA Twoja firma jest przedsiębiorstwem (business), a testee jej usługodawcą (service provider) na podstawie [umowy powierzenia przetwarzania danych](/dpa) i jej sekcji dotyczącej USA. Dane są hostowane w UE, część podmiotów podprzetwarzających jest w USA (zobacz [politykę prywatności](/privacy)), i nie są używane do trenowania modeli AI.
 - **Przechowywanie.** Dane kandydatów są usuwane 12 miesięcy po zaproszeniu. Jeśli Twoje prawo wymaga dłuższego przechowywania dokumentacji, na przykład czterech lat w Kalifornii, pobierz raporty PDF i plik do audytu stronniczości i przechowuj je samodzielnie; testee domyślnie nie przechowuje wyników dłużej.
