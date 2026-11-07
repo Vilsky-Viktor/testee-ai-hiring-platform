@@ -172,7 +172,6 @@ def test_the_export_holds_every_service_and_downloads_as_a_file(client, monkeypa
         "ats": {"from": "ats"},
         "api": {"from": "api"},
         "assistant": {"from": "assistant"},
-        "library": {"from": "library"},
         "site": {"from": "site"},
     }
 

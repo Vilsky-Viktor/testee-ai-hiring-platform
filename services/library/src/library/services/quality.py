@@ -4,7 +4,12 @@ from datetime import UTC, datetime, timedelta
 
 from testee_common.events.notifications import NotificationKind
 
-from library.constants.quality import FLAG_RESEND_AFTER_HOURS, MAX_FLAG_RESENDS, QualityFlag
+from library.constants.quality import (
+    FEEDBACK_REST_DAYS,
+    FLAG_RESEND_AFTER_HOURS,
+    MAX_FLAG_RESENDS,
+    QualityFlag,
+)
 from library.core.db import Session
 from library.helpers.quality import flag_for, no_separation, too_slow
 from library.integrations import generation
@@ -84,6 +89,12 @@ async def save_review(question_id: uuid.UUID) -> tuple[str, bool] | None:
 
         if stats is not None and stats.kept:
             return None
+
+        rest_from = datetime.now(UTC) - timedelta(days=FEEDBACK_REST_DAYS)
+
+        # Fixed a moment ago: anonymous feedback, perhaps one person's, doesn't send it back.
+        if await quality.fixed_since(session, question_id, rest_from):
+            reports, likes, dislikes = {}, 0, 0
 
         flag = flag_for(
             question.options,

@@ -63,14 +63,10 @@ async def rename_set(set_id: UUID, title: str) -> None:
     response.raise_for_status()
 
 
-async def get_topic_questions(
-    set_id: UUID, topic_id: UUID, user_id: str | None = None
-) -> list[dict] | None:
-    """The topic's questions with their feedback counts; with `user_id`, that member's own vote
-    and report on each. None when the topic isn't in the set."""
+async def get_topic_questions(set_id: UUID, topic_id: UUID) -> list[dict] | None:
+    """The topic's questions with their feedback counts. None when the topic isn't in the set."""
     response = await http.get_client().get(
         f"{settings.library_url}/internal/sets/{set_id}/topics/{topic_id}/questions",
-        params={"user_id": user_id} if user_id else None,
         headers=bearer(service_token("library")),
     )
 

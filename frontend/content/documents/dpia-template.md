@@ -77,7 +77,7 @@ multiple-choice test, as one input to a hiring decision made by **[COMPANY: who]
 | Team notes | Notes your members and API keys write on an interview, which may name candidates; kept with the interview |
 | Open to offers | For people on your Discover tab: name, LinkedIn profile address, latest timed practice results on your interview's subjects; never their email until you invite them |
 | Pledge | When the candidate confirmed, before starting, that they'd answer on their own, without AI tools or other people |
-| Feedback | Candidate's ratings and reports of questions (reports may include a free-text comment) |
+| Feedback | Any comment a candidate writes when reporting a question, deleted after 12 months; ratings and reports themselves are anonymous, with no link to the candidate |
 | Reports | PDFs made in your browser; if emailed through testee, kept at most 7 days to send |
 | Email opt-outs | A one-way hash of the email address of a candidate who stops your emails (or one interview's reminders) through the link in testee's invites and reminders, and of an address that bounced for good or marked an email as spam |
 | Special categories | None requested. **[COMPANY]** confirm you do not add any (e.g. in job descriptions or notes) |
@@ -147,7 +147,8 @@ generation records: 90 days. Your company's action log: 12 months. Assistant con
 company is deleted. AI app connections: until the member disconnects one or deletes their
 account, and 90 days after its last use. Candidates' requests to stop your emails: until your
 company is deleted. Hashes of addresses that bounced or marked an email as spam: until testee
-removes them. Ratings and reports of questions: with the question or the candidate's account.
+removes them. Ratings and reports of questions: with the question, with no link to the candidate;
+a report's comment: 12 months after it was written.
 Notifications in members' bells: up to 90 days. Web hooks being retried: up to 3 days.
 Records of AI calls at Langfuse: 30 days. Team notes: with their interview, also after a candidate
 they name is deleted. Voice mode's spoken answers: never stored by testee, up to 30 days at OpenAI.

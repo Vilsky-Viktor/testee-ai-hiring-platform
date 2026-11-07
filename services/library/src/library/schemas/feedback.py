@@ -7,14 +7,6 @@ from pydantic import BaseModel, Field, model_validator
 from library.constants.feedback import MAX_REPORT_COMMENT_LENGTH, ReportReason
 
 
-class QuestionRatingIn(BaseModel):
-    value: Literal[-1, 1]
-
-
-class QuestionRatingOut(BaseModel):
-    value: Literal[-1, 1] | None = None
-
-
 class ReportIn(BaseModel):
     reason: ReportReason
     comment: str = Field(default="", max_length=MAX_REPORT_COMMENT_LENGTH)
@@ -27,23 +19,24 @@ class ReportIn(BaseModel):
         return self
 
 
-class InternalRatingIn(QuestionRatingIn):
+class InternalRatingIn(BaseModel):
+    """The reader's vote and the one it replaces, by this page's memory (no vote is kept by
+    person); `user_id` only counts against their limit."""
+
     user_id: str
+    value: Literal[-1, 1] | None
+    previous: Literal[-1, 1] | None = None
 
 
 class InternalReportIn(ReportIn):
     user_id: str
 
 
-class MyReportOut(BaseModel):
-    reported: bool
-
-
 class ReportOut(BaseModel):
-    """A report without the reporter's identity."""
+    """A report, anonymous: nothing saved says who made it."""
 
     id: UUID
     reason: str
-    # Empty for a replaced question's kept reports: their comments aren't kept.
+    # Empty once REPORT_COMMENT_KEEP_DAYS have passed, and for a replaced question's kept reports.
     comment: str
     created_at: datetime

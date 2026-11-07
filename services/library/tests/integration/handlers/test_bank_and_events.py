@@ -8,13 +8,7 @@ from library.constants.sets import Pool
 from library.core.db import Session
 from library.handlers.dispatch import handle
 from library.models.events import ProcessedEvent
-from library.repositories import (
-    answer_stats,
-    feedback,
-    preparations,
-    quality,
-    user_data,
-)
+from library.repositories import answer_stats, preparations, quality
 from library.services import questions as question_service
 from tests.integration.factories import COPYABLE, a_company, copy_of, direction, interview, set_pool
 from tests.integration.transactions import transaction
@@ -159,28 +153,6 @@ def test_thin_template_topics_are_left_out_of_a_copy_which_keeps_their_embedding
     assert topic_count == 1
     assert copied is not None and copied == original
     assert nothing_left is None
-
-
-def test_a_user_reports_a_question_once_across_its_revisions(run):
-    async def scenario():
-        set_id = await interview("Reported", questions=1)
-        question = (await transaction(preparations.get_content, set_id)).topics[0].questions[0]
-        first = await transaction(feedback.report_question, question.id, "ann-r", "unclear", "")
-        await question_service.replace(
-            question.id, "A clearer question?", [{"answer": "Yes", "correct": True}]
-        )
-        again = await transaction(feedback.report_question, question.id, "ann-r", "unclear", "")
-        reported = await transaction(feedback.has_reported, question.id, "ann-r")
-        other = await transaction(feedback.report_question, question.id, "bob-r", "unclear", "")
-        await transaction(user_data.delete_user, "ann-r")
-        after_deletion = await transaction(feedback.has_reported, question.id, "ann-r")
-
-        return first, again, reported, other, after_deletion
-
-    first, again, reported, other, after_deletion = run(scenario())
-
-    assert (first, again, reported, other) == (True, False, True, True)
-    assert after_deletion is False
 
 
 def test_flags_left_unfixed_are_taken_for_sending_again_once_a_while(run):

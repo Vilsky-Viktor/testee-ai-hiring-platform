@@ -13,8 +13,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { ROUND_ICON_BUTTON } from "@/config/buttons"
-import { apiErrorMessage, apiFetch } from "@/lib/api"
-import { nextVote, type Thumb, withVote } from "@/lib/question-votes"
+import { apiErrorMessage } from "@/lib/api"
+import { nextVote, saveVote, type Thumb, withVote } from "@/lib/question-votes"
 import type { QuestionStats } from "@/types/feedback"
 
 // A round icon button with its count, hovered like the stats beside it.
@@ -74,17 +74,13 @@ export function QuestionFeedback({
     }
 
     const before = question
-    const next = nextVote(question.my_rating ?? null, value)
+    const previous = question.my_rating ?? null
+    const next = nextVote(previous, value)
     onChange(withVote(question, next))
     setSaving(true)
 
     try {
-      await apiFetch(
-        ratingPath,
-        next === null
-          ? { method: "DELETE" }
-          : { method: "PUT", body: JSON.stringify({ value: next }) }
-      )
+      await saveVote(ratingPath, previous, next)
     } catch (error) {
       onChange(before)
       toast.error(apiErrorMessage(error, t("ratingFailed")))

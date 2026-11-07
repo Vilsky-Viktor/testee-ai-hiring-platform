@@ -186,20 +186,16 @@ export async function addFeedback(
     );
 
     for (const [index, { likes, dislikes, reports }] of counts.entries()) {
-      const votes = [...Array(likes).fill(1), ...Array(dislikes).fill(-1)];
-
-      for (const [voter, value] of votes.entries()) {
-        await client.query(
-          "INSERT INTO question_ratings (question_id, user_id, value) VALUES ($1, $2, $3)",
-          [rows[index].id, `e2e-shot-${voter}`, value],
-        );
-      }
+      await client.query(
+        "INSERT INTO question_ratings (question_id, likes, dislikes) VALUES ($1, $2, $3)",
+        [rows[index].id, likes, dislikes],
+      );
 
       for (let reporter = 0; reporter < reports; reporter++) {
         await client.query(
-          `INSERT INTO question_reports (id, question_id, user_id, reason, comment, status)
-           VALUES (gen_random_uuid(), $1, $2, 'unclear', '', 'open')`,
-          [rows[index].id, `e2e-shot-${reporter}`],
+          `INSERT INTO question_reports (id, question_id, reason, comment, status)
+           VALUES (gen_random_uuid(), $1, 'unclear', '', 'open')`,
+          [rows[index].id],
         );
       }
     }

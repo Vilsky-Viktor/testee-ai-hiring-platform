@@ -91,7 +91,6 @@ EXCEPTIONS = {
     "GET /companies/{company_id}/billing/reserved": OWNER_ONLY,
     # Every member, viewers too, likes, dislikes and reports the interview's questions.
     "PUT /interviews/{interview_id}/questions/{question_id}/rating": {"viewer": ALLOWED},
-    "DELETE /interviews/{interview_id}/questions/{question_id}/rating": {"viewer": ALLOWED},
     "POST /interviews/{interview_id}/questions/{question_id}/reports": {"viewer": ALLOWED},
 }
 

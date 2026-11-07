@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "Workable से जवाब नहीं मिला",
     "You're already a member": "आप पहले से सदस्य हैं",
     "Already finished": "पहले ही पूरा हो चुका है",
-    "Already reported": "पहले ही रिपोर्ट किया जा चुका है",
     "Cancel the generation instead": "इसके बजाय जनरेशन रद्द करें",
     "Candidate not found": "उम्मीदवार नहीं मिला",
     "Choose topics from the list": "सूची से विषय चुनें",

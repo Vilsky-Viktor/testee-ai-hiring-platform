@@ -37,25 +37,21 @@ def library(monkeypatch):
 
 
 @pytest.mark.parametrize(
-    ("call", "method", "path", "query", "body"),
+    ("call", "method", "path", "body"),
     [
-        ("get_rating", "GET", "rating", {"user_id": "u1"}, None),
-        ("unrate", "DELETE", "rating", {"user_id": "u1"}, None),
-        ("my_report", "GET", "reports/mine", {"user_id": "u1"}, None),
-        ("rate", "PUT", "rating", {}, {"user_id": "u1", "value": -1}),
+        ("rate", "PUT", "rating", {"user_id": "u1", "value": -1, "previous": 1}),
         (
             "report",
             "POST",
             "reports",
-            {},
             {"user_id": "u1", "reason": "unclear", "comment": "Two answers fit"},
         ),
     ],
 )
-def test_each_call_reaches_librarys_route_as_the_caller(library, call, method, path, query, body):
+def test_each_call_reaches_librarys_route_as_the_caller(library, call, method, path, body):
     asked, _ = library
     client = QuestionFeedback("http://library", "companies")
-    extra = {"rate": (-1,), "report": ("unclear", "Two answers fit")}.get(call, ())
+    extra = {"rate": (-1, 1), "report": ("unclear", "Two answers fit")}[call]
 
     asyncio.run(getattr(client, call)(QUESTION_ID, "u1", *extra))
 
@@ -66,28 +62,33 @@ def test_each_call_reaches_librarys_route_as_the_caller(library, call, method, p
         method,
         f"/internal/questions/{QUESTION_ID}/{path}",
     )
-    assert dict(request.url.params) == query
-    assert (json.loads(request.content) if request.content else None) == body
+    # Never in the address, which request logs record.
+    assert not request.url.params
+    assert json.loads(request.content) == body
     # Signed with library's key, from the service that made the client.
     assert token_caller(token, SECRET, "library") == "companies"
 
 
 def test_librarys_answer_comes_back_as_it_is(library):
     _, answer = library
-    answer["response"] = httpx.Response(409, json={"detail": "Already reported."})
+    answer["response"] = httpx.Response(429, json={"detail": "Too many reports today."})
     client = QuestionFeedback("http://library", "rounds")
 
     response = asyncio.run(client.report(QUESTION_ID, "u1", "unclear", ""))
 
-    assert (response.status_code, response.json()) == (409, {"detail": "Already reported."})
+    assert (response.status_code, response.json()) == (429, {"detail": "Too many reports today."})
 
 
-def test_a_vote_is_a_thumbs_up_or_down_only():
-    assert [RatingIn(value=value).value for value in (1, -1)] == [1, -1]
+def test_a_vote_is_a_thumbs_up_or_down_or_none():
+    assert [RatingIn(value=value).value for value in (1, -1, None)] == [1, -1, None]
+    assert RatingIn(value=None, previous=-1).previous == -1
 
     for value in (0, 2, -2):
         with pytest.raises(ValidationError):
             RatingIn(value=value)
+
+        with pytest.raises(ValidationError):
+            RatingIn(value=1, previous=value)
 
 
 def test_a_reports_comment_may_be_left_out():

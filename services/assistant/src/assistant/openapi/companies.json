@@ -3781,7 +3781,7 @@
      "interviews"
     ],
     "summary": "List Topic Questions",
-    "description": "The topic's questions, each with the member's own like or dislike and report, and\nwhether an owner or admin left it out.",
+    "description": "The topic's questions with their feedback counts, and whether an owner or admin left each\nout.",
     "operationId": "list_topic_questions_interviews__interview_id__topics__topic_id__questions_get",
     "security": [
      {
@@ -3916,7 +3916,7 @@
      "interviews"
     ],
     "summary": "Rate Question",
-    "description": "A member's like (1) or dislike (-1) on one of the interview's questions.",
+    "description": "A member's like (1) or dislike (-1) on one of the interview's questions, or none to take it\nback (a click by mistake); `previous` is the vote it replaces, as the page knows it: nothing\nkeeps it by person.",
     "operationId": "rate_question_interviews__interview_id__questions__question_id__rating_put",
     "security": [
      {
@@ -3975,61 +3975,6 @@
       }
      }
     }
-   },
-   "delete": {
-    "tags": [
-     "interviews"
-    ],
-    "summary": "Unrate Question",
-    "description": "Takes back a member's like or dislike (a click by mistake).",
-    "operationId": "unrate_question_interviews__interview_id__questions__question_id__rating_delete",
-    "security": [
-     {
-      "HTTPBearer": []
-     }
-    ],
-    "parameters": [
-     {
-      "name": "interview_id",
-      "in": "path",
-      "required": true,
-      "schema": {
-       "type": "string",
-       "format": "uuid",
-       "title": "Interview Id"
-      }
-     },
-     {
-      "name": "question_id",
-      "in": "path",
-      "required": true,
-      "schema": {
-       "type": "string",
-       "format": "uuid",
-       "title": "Question Id"
-      }
-     }
-    ],
-    "responses": {
-     "200": {
-      "description": "Successful Response",
-      "content": {
-       "application/json": {
-        "schema": {}
-       }
-      }
-     },
-     "422": {
-      "description": "Validation Error",
-      "content": {
-       "application/json": {
-        "schema": {
-         "$ref": "#/components/schemas/HTTPValidationError"
-        }
-       }
-      }
-     }
-    }
    }
   },
   "/interviews/{interview_id}/questions/{question_id}/reports": {
@@ -4038,7 +3983,7 @@
      "interviews"
     ],
     "summary": "Report Question",
-    "description": "A member's report on one of the interview's questions, once each (409 for a second).",
+    "description": "A member's report on one of the interview's questions, anonymous.",
     "operationId": "report_question_interviews__interview_id__questions__question_id__reports_post",
     "security": [
      {
@@ -13139,26 +13084,6 @@
       "type": "integer",
       "title": "Reports"
      },
-     "my_rating": {
-      "anyOf": [
-       {
-        "type": "integer",
-        "enum": [
-         -1,
-         1
-        ]
-       },
-       {
-        "type": "null"
-       }
-      ],
-      "title": "My Rating"
-     },
-     "reported": {
-      "type": "boolean",
-      "title": "Reported",
-      "default": false
-     },
      "excluded": {
       "type": "boolean",
       "title": "Excluded",
@@ -13180,12 +13105,34 @@
    "RatingIn": {
     "properties": {
      "value": {
-      "type": "integer",
-      "enum": [
-       -1,
-       1
+      "anyOf": [
+       {
+        "type": "integer",
+        "enum": [
+         -1,
+         1
+        ]
+       },
+       {
+        "type": "null"
+       }
       ],
       "title": "Value"
+     },
+     "previous": {
+      "anyOf": [
+       {
+        "type": "integer",
+        "enum": [
+         -1,
+         1
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Previous"
      }
     },
     "type": "object",
@@ -13193,7 +13140,7 @@
      "value"
     ],
     "title": "RatingIn",
-    "description": "A thumbs up (1) or down (-1) on a question."
+    "description": "A thumbs up (1) or down (-1) on a question, or none: a vote is kept with no person, so the\nreader's page says what it replaces (`previous`, its earlier click on this question)."
    },
    "ReferralOut": {
     "properties": {

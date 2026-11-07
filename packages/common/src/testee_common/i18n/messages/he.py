@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "Workable לא הגיבה",
     "You're already a member": "אתם כבר חברי צוות",
     "Already finished": "כבר הסתיים",
-    "Already reported": "כבר דווח",
     "Cancel the generation instead": "בטלו את היצירה במקום זאת",
     "Candidate not found": "המועמד לא נמצא",
     "Choose topics from the list": "בחרו נושאים מהרשימה",

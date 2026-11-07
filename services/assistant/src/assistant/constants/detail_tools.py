@@ -25,8 +25,6 @@ DETAIL_TOOLS = {
             "dislikes",
             "reports",
             "excluded",
-            "my_rating",
-            "reported",
         ],
         "max_items": 30,
     },

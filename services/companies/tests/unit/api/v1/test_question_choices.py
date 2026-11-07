@@ -61,7 +61,7 @@ def member(monkeypatch):
         async def fake_company(session, _company_id):
             return company
 
-        async def fake_questions(set_id, topic_id, user_id=None):
+        async def fake_questions(set_id, topic_id):
             if set_id != SET_ID or topic_id != TOPIC_ID:
                 return None
 
@@ -163,7 +163,7 @@ def feedback_calls(monkeypatch, answer=None):
 
         return call
 
-    for name in ("rate", "unrate", "report"):
+    for name in ("rate", "report"):
         monkeypatch.setattr(feedback, name, recorded(name))
 
     return calls
@@ -179,7 +179,11 @@ def in_set(set_id):
 QUESTION = QUESTIONS[0]
 FEEDBACK_ROUTES = [
     ("put", f"/interviews/{INTERVIEW_ID}/questions/{QUESTION}/rating", {"value": -1}),
-    ("delete", f"/interviews/{INTERVIEW_ID}/questions/{QUESTION}/rating", None),
+    (
+        "put",
+        f"/interviews/{INTERVIEW_ID}/questions/{QUESTION}/rating",
+        {"value": None, "previous": -1},
+    ),
     (
         "post",
         f"/interviews/{INTERVIEW_ID}/questions/{QUESTION}/reports",
@@ -201,8 +205,8 @@ def test_every_member_rates_takes_back_and_reports_the_interviews_questions(
 
     assert statuses == [204, 204, 204]
     assert calls == [
-        ("rate", QUESTION, "bob", -1),
-        ("unrate", QUESTION, "bob"),
+        ("rate", QUESTION, "bob", -1, None),
+        ("rate", QUESTION, "bob", None, -1),
         ("report", QUESTION, "bob", "unclear", "Two right answers"),
     ]
 
@@ -230,11 +234,8 @@ def test_a_member_of_another_company_is_refused(client, member, monkeypatch, met
     assert calls == []
 
 
-@pytest.mark.parametrize(
-    ("status", "detail"),
-    [(409, "You already reported this question."), (429, "Too many reports today.")],
-)
-def test_librarys_refusal_reaches_the_member(client, member, monkeypatch, status, detail):
+def test_librarys_refusal_reaches_the_member(client, member, monkeypatch):
+    status, detail = 429, "Too many reports today."
     member("admin")
     feedback_calls(monkeypatch, httpx.Response(status, json={"detail": detail}))
     monkeypatch.setattr(library, "get_question_context", in_set(SET_ID))

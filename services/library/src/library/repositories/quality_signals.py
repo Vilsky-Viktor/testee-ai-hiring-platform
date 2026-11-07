@@ -31,15 +31,9 @@ async def feedback(session: AsyncSession, question_ids: list[uuid.UUID]) -> tupl
         .where(QuestionReport.question_id.in_(question_ids))
         .group_by(QuestionReport.question_id, QuestionReport.reason)
     )
-    ratings = (
-        select(
-            QuestionRating.question_id,
-            func.count().filter(QuestionRating.value == 1),
-            func.count().filter(QuestionRating.value == -1),
-        )
-        .where(QuestionRating.question_id.in_(question_ids))
-        .group_by(QuestionRating.question_id)
-    )
+    ratings = select(
+        QuestionRating.question_id, QuestionRating.likes, QuestionRating.dislikes
+    ).where(QuestionRating.question_id.in_(question_ids))
     reasons = {}
 
     for question_id, reason, count in await session.execute(reports):

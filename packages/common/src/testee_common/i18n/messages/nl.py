@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "Workable reageerde niet",
     "You're already a member": "Je bent al lid",
     "Already finished": "Al afgerond",
-    "Already reported": "Al gemeld",
     "Cancel the generation instead": "Annuleer in plaats daarvan het genereren",
     "Candidate not found": "Kandidaat niet gevonden",
     "Choose topics from the list": "Kies onderwerpen uit de lijst",

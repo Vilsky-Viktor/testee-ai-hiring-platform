@@ -22,10 +22,9 @@ async def require_session_question(session_id: UUID, question_id: UUID, user: Cu
 
 
 def passed_through(response: httpx.Response) -> Response:
-    """Keeps the library's 409 (already rated or reported), validation errors and 429 (its daily
-    ratings or reports limit) for the client."""
+    """Keeps the library's validation errors and 429 (its daily ratings or reports limit) for the
+    client."""
     kept = {
-        status.HTTP_409_CONFLICT,
         status.HTTP_422_UNPROCESSABLE_CONTENT,
         status.HTTP_429_TOO_MANY_REQUESTS,
     }
@@ -34,33 +33,15 @@ def passed_through(response: httpx.Response) -> Response:
     return Response(response.content, response.status_code, media_type="application/json")
 
 
-@router.get("/{session_id}/questions/{question_id}/rating")
-async def get_rating(session_id: UUID, question_id: UUID, user: CurrentUser) -> Response:
-    await require_session_question(session_id, question_id, user)
-
-    return passed_through(await feedback.client.get_rating(question_id, user.uid))
-
-
 @router.put("/{session_id}/questions/{question_id}/rating")
 async def rate(session_id: UUID, question_id: UUID, body: RatingIn, user: CurrentUser) -> Response:
+    """The candidate's thumbs up or down, or none to take it back (a click by mistake); `previous`
+    is the vote it replaces, as the page knows it: nothing keeps it by person."""
     await require_session_question(session_id, question_id, user)
 
-    return passed_through(await feedback.client.rate(question_id, user.uid, body.value))
-
-
-@router.delete("/{session_id}/questions/{question_id}/rating")
-async def unrate(session_id: UUID, question_id: UUID, user: CurrentUser) -> Response:
-    """Takes back the candidate's thumbs up or down (a click by mistake)."""
-    await require_session_question(session_id, question_id, user)
-
-    return passed_through(await feedback.client.unrate(question_id, user.uid))
-
-
-@router.get("/{session_id}/questions/{question_id}/reports/mine")
-async def my_report(session_id: UUID, question_id: UUID, user: CurrentUser) -> Response:
-    await require_session_question(session_id, question_id, user)
-
-    return passed_through(await feedback.client.my_report(question_id, user.uid))
+    return passed_through(
+        await feedback.client.rate(question_id, user.uid, body.value, body.previous)
+    )
 
 
 @router.post("/{session_id}/questions/{question_id}/reports")

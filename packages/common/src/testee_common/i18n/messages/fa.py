@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "Workable پاسخ نداد",
     "You're already a member": "شما قبلاً عضو هستید",
     "Already finished": "قبلاً پایان یافته است",
-    "Already reported": "قبلاً گزارش شده است",
     "Cancel the generation instead": "به‌جای آن، ساخت را لغو کنید",
     "Candidate not found": "متقاضی پیدا نشد",
     "Choose topics from the list": "موضوع‌ها را از فهرست انتخاب کنید",

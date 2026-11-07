@@ -35,64 +35,43 @@ def left_bank(monkeypatch):
     return left
 
 
-async def not_reported(session, question_id, user_id):
-    return False
+def test_each_report_counts_and_leaves_no_trace_of_who_made_it(client, monkeypatch, left_bank):
+    saved = []
 
-
-def test_a_candidates_second_report_is_rejected(client, monkeypatch, left_bank):
-    reported = set()
-
-    async def fake_report(session, question_id, user_id, reason, comment):
-        if (question_id, user_id) in reported:
-            return False
-
-        reported.add((question_id, user_id))
-
-        return True
-
-    async def fake_has_reported(session, question_id, user_id):
-        return (question_id, user_id) in reported
+    async def fake_report(session, question_id, reason, comment):
+        saved.append((question_id, reason, comment))
 
     async def fake_review(question_id):
         pass
 
     monkeypatch.setattr(feedback, "report_question", fake_report)
-    monkeypatch.setattr(feedback, "has_reported", fake_has_reported)
     monkeypatch.setattr("library.services.question_feedback.review", fake_review)
     url = f"/internal/questions/{QUESTION_ID}/reports"
-    body = {"user_id": "ann", "reason": "unclear"}
+    body = {"user_id": "ann", "reason": "unclear", "comment": "Two answers fit"}
 
-    assert client.get(f"{url}/mine", params={"user_id": "ann"}, headers=AUTH).json() == {
-        "reported": False
-    }
     assert client.post(url, json=body, headers=AUTH).status_code == 201
-    assert client.post(url, json=body, headers=AUTH).status_code == 409
-    # Reported, it left the shared bank once; the refused second report changed nothing.
-    assert left_bank == [QUESTION_ID]
-    assert client.get(f"{url}/mine", params={"user_id": "ann"}, headers=AUTH).json() == {
-        "reported": True
-    }
+    # Nothing can tell it's the same person: only their limit counts it.
+    assert client.post(url, json=body, headers=AUTH).status_code == 201
+    assert saved == [(QUESTION_ID, "unclear", "Two answers fit")] * 2
+    assert left_bank == [QUESTION_ID] * 2
 
 
 def test_a_question_reported_as_hard_to_read_is_saved_with_that_reason(client, monkeypatch):
     saved = []
 
-    async def fake_report(session, question_id, user_id, reason, comment):
-        saved.append((question_id, user_id, reason))
-
-        return True
+    async def fake_report(session, question_id, reason, comment):
+        saved.append((question_id, reason))
 
     async def fake_review(question_id):
         pass
 
     monkeypatch.setattr(feedback, "report_question", fake_report)
-    monkeypatch.setattr(feedback, "has_reported", not_reported)
     monkeypatch.setattr("library.services.question_feedback.review", fake_review)
     url = f"/internal/questions/{QUESTION_ID}/reports"
     body = {"user_id": "ann", "reason": "hard_to_read"}
 
     assert client.post(url, json=body, headers=AUTH).status_code == 201
-    assert saved == [(QUESTION_ID, "ann", "hard_to_read")]
+    assert saved == [(QUESTION_ID, "hard_to_read")]
 
 
 @pytest.mark.parametrize("edited", [None, 2])
@@ -103,14 +82,13 @@ def test_a_users_reports_are_limited_a_day(client, monkeypatch, redis, published
     if edited:
         redis.limits["REPORTS_PER_DAY"] = str(edited)
 
-    async def fake_report(session, question_id, user_id, reason, comment):
-        return True
+    async def fake_report(session, question_id, reason, comment):
+        pass
 
     async def fake_review(question_id):
         pass
 
     monkeypatch.setattr(feedback, "report_question", fake_report)
-    monkeypatch.setattr(feedback, "has_reported", not_reported)
     monkeypatch.setattr("library.services.question_feedback.review", fake_review)
     body = {"user_id": "spammer", "reason": "unclear"}
 

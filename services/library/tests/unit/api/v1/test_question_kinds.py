@@ -55,27 +55,6 @@ def test_a_topics_questions_say_which_are_multi_answer(client, topic):
     assert [item["multi"] for item in found] == [False, True]
 
 
-def test_a_topics_questions_carry_the_named_users_own_say(client, topic, monkeypatch):
-    single, multi = topic.questions
-    asked = []
-
-    async def fake_mine(session, question_ids, user_id):
-        asked.append(user_id)
-
-        return {single.id: -1}, {multi.id}
-
-    monkeypatch.setattr(feedback, "mine", fake_mine)
-    url = f"/internal/sets/{SET_ID}/topics/{uuid.uuid4()}/questions"
-
-    named = client.get(url, params={"user_id": "ann"}, headers=bearer(token())).json()
-    unnamed = client.get(url, headers=bearer(token())).json()
-
-    assert [(item["my_rating"], item["reported"]) for item in named] == [(-1, False), (None, True)]
-    # Without a user, library doesn't look anyone's up.
-    assert [(item["my_rating"], item["reported"]) for item in unnamed] == [(None, False)] * 2
-    assert asked == ["ann"]
-
-
 def test_a_questions_context_says_whether_it_is_multi_answer(client, topic):
     single, multi = topic.questions
 

@@ -3,7 +3,7 @@
 import { cn } from "cn"
 import { FlagIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { type ReactElement, type ReactNode, useEffect, useState } from "react"
+import { type ReactElement, type ReactNode, useState } from "react"
 import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
@@ -21,7 +21,7 @@ import { FloatingTextarea } from "@/components/ui/floating-field"
 import { PillSelect } from "@/components/common/pill-select"
 import { FEEDBACK_HOVER_CLASS, REPORT_REASONS } from "@/config/feedback"
 import { MAX_REPORT_COMMENT_LENGTH } from "@/config/limits"
-import { ApiError, apiErrorMessage, apiFetch } from "@/lib/api"
+import { apiErrorMessage, apiFetch } from "@/lib/api"
 import type { ReportReason } from "@/types/feedback"
 
 export function ReportDialog({
@@ -31,7 +31,7 @@ export function ReportDialog({
   onReported,
 }: {
   basePath: string
-  // Whether the user has reported it, when the caller already knows (no extra request).
+  // Whether the user has reported it on this page: reports are anonymous, so the API can't say.
   known?: boolean
   // What opens it, instead of the candidate's flag button; hidden once they've reported.
   trigger?: ReactElement
@@ -44,18 +44,8 @@ export function ReportDialog({
   const [reason, setReason] = useState<ReportReason | "">("")
   const [comment, setComment] = useState("")
   const [sending, setSending] = useState(false)
-  const [reported, setReported] = useState(known ?? false)
-
   // Callers remount this per question, so the state never carries over.
-  useEffect(() => {
-    if (known !== undefined) {
-      return
-    }
-
-    apiFetch<{ reported: boolean }>(`${basePath}/reports/mine`)
-      .then((body) => setReported(body.reported))
-      .catch(() => {})
-  }, [basePath, known])
+  const [reported, setReported] = useState(known ?? false)
 
   function handleOpen(next: boolean) {
     setOpen(next)
@@ -86,14 +76,6 @@ export function ReportDialog({
       onReported?.()
       handleOpen(false)
     } catch (error) {
-      if (error instanceof ApiError && error.status === 409) {
-        setReported(true)
-        onReported?.()
-        handleOpen(false)
-
-        return
-      }
-
       toast.error(apiErrorMessage(error, t("reportFailed")))
     } finally {
       setSending(false)

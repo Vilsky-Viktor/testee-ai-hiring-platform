@@ -1,7 +1,14 @@
-import { describe, expect, it } from "vitest"
+import { afterEach, describe, expect, it, vi } from "vitest"
 
-import { nextVote, withVote } from "@/lib/question-votes"
+import { apiFetch } from "@/lib/api"
+import { nextVote, saveVote, withVote } from "@/lib/question-votes"
 import type { QuestionStats } from "@/types/feedback"
+
+vi.mock("@/lib/api", () => ({ apiFetch: vi.fn() }))
+
+afterEach(() => {
+  vi.mocked(apiFetch).mockReset()
+})
 
 function question(overrides: Partial<QuestionStats> = {}): QuestionStats {
   return {
@@ -32,6 +39,21 @@ describe("nextVote", () => {
   it("takes the vote back on the same thumb", () => {
     expect(nextVote(1, 1)).toBeNull()
     expect(nextVote(-1, -1)).toBeNull()
+  })
+})
+
+describe("saveVote", () => {
+  it.each([
+    [null, 1],
+    [1, -1],
+    [-1, null],
+  ] as const)("sends %s moving to %s", async (previous, value) => {
+    await saveVote("/path/rating", previous, value)
+
+    expect(apiFetch).toHaveBeenCalledExactlyOnceWith("/path/rating", {
+      method: "PUT",
+      body: JSON.stringify({ value, previous }),
+    })
   })
 })
 

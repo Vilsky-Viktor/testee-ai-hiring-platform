@@ -37,9 +37,8 @@ MCP_DESCRIPTIONS = {
         "The questions of one topic of an interview, by interview_id and topic_id (from "
         "get_interview): each question's text, options, the correct answer, whether it's select"
         " all that apply (multi), its likes, dislikes and reports from candidates and the team, "
-        "whether an owner or admin disabled it (excluded: no new candidate gets it), and the "
-        "user's own vote (my_rating: 1 or -1) and report (reported). Use it to review or discuss"
-        " an interview's questions."
+        "and whether an owner or admin disabled it (excluded: no new candidate gets it). "
+        "Votes and reports are anonymous. Use it to review or discuss an interview's questions."
     ),
     "get_email_preferences": (
         "Which emails the signed-in user gets from testee, each on or off: a candidate "

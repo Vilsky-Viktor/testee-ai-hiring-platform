@@ -92,9 +92,6 @@ class QuestionText(BaseModel):
     likes: int
     dislikes: int
     reports: int
-    # The member's own vote (1 or -1), and whether they've reported it (once each).
-    my_rating: Literal[-1, 1] | None = None
-    reported: bool = False
     # Left out by an owner or admin: no candidate gets it.
     excluded: bool = False
 

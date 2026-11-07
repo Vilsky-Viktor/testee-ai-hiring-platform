@@ -16,7 +16,6 @@ from testee_common.observability.sentry import init_sentry
 
 from library.api.v1 import (
     internal,
-    internal_accounts,
     internal_additions,
     internal_bank,
     internal_code,
@@ -69,7 +68,6 @@ app.include_router(superadmin.router)
 app.include_router(superadmin_quality.router)
 app.include_router(templates.router)
 app.include_router(internal.router)
-app.include_router(internal_accounts.router)
 app.include_router(internal_additions.router)
 app.include_router(internal_bank.router)
 app.include_router(schedules.router)

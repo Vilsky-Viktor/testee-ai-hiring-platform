@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "Workable yanıt vermedi",
     "You're already a member": "Zaten üyesiniz",
     "Already finished": "Zaten bitti",
-    "Already reported": "Zaten bildirildi",
     "Cancel the generation instead": "Bunun yerine oluşturmayı iptal edin",
     "Candidate not found": "Aday bulunamadı",
     "Choose topics from the list": "Listeden konu seçin",

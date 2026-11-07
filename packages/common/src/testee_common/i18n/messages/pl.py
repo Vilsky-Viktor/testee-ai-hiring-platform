@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "Workable nie odpowiada",
     "You're already a member": "Jesteś już członkiem zespołu",
     "Already finished": "Już zakończono",
-    "Already reported": "Już zgłoszono",
     "Cancel the generation instead": "Zamiast tego anuluj generowanie",
     "Candidate not found": "Nie znaleziono kandydata",
     "Choose topics from the list": "Wybierz tematy z listy",

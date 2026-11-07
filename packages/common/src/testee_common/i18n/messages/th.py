@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "Workable ไม่ตอบสนอง",
     "You're already a member": "คุณเป็นสมาชิกอยู่แล้ว",
     "Already finished": "จบไปแล้ว",
-    "Already reported": "รายงานไปแล้ว",
     "Cancel the generation instead": "โปรดยกเลิกการสร้างแทน",
     "Candidate not found": "ไม่พบผู้สมัคร",
     "Choose topics from the list": "เลือกหัวข้อจากรายการ",

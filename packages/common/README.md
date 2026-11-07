@@ -234,7 +234,7 @@ out or listed under another area):
 - `no_store`: `Cache-Control: no-store` on signed-in and secret-token answers.
 - `pacing`: requests paced to a share a second, counted in Redis (`wait_turn`).
 - `public_urls`: HTTPS addresses on the public internet only, looked up within a time, and pinned.
-- `question_feedback`: `QuestionFeedback`, library's ratings and reports of a question for one user (rounds for candidates, companies for members), library's answers passed on.
+- `question_feedback`: `QuestionFeedback`, library's ratings and reports of a question (rounds for candidates, companies for members), library's answers passed on.
 - `question_feedback_schemas`: `RatingIn` and `ReportIn`, a vote and a report as rounds and companies take them.
 - `shutdown`: `close_shared`: what a service holds open, closed at the end of its lifespan.
 - `sse`: server-sent events: framing, keep-alives, no-store.

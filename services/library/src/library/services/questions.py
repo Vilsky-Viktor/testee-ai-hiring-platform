@@ -14,11 +14,9 @@ from library.services import outbox as outbox_service
 from library.services.notices import tell_owner
 
 
-async def topic_questions(
-    topic_id: uuid.UUID, user_id: str | None = None
-) -> tuple[QuestionSet, list[QuestionText]] | None:
-    """A topic's set, and its questions with their options and feedback counts, and with
-    `user_id`, that user's own vote and report; None when there's no such topic."""
+async def topic_questions(topic_id: uuid.UUID) -> tuple[QuestionSet, list[QuestionText]] | None:
+    """A topic's set, and its questions with their options and feedback counts; None when there's
+    no such topic."""
     async with Session() as session:
         found = await preparations.get_topic_with_question_texts(session, topic_id)
 
@@ -28,7 +26,6 @@ async def topic_questions(
         question_set, topic = found
         ids = [question.id for question in topic.questions]
         stats = await feedback.question_stats(session, ids)
-        votes, reported = await feedback.mine(session, ids, user_id) if user_id else ({}, set())
 
     return question_set, [
         QuestionText(
@@ -37,8 +34,6 @@ async def topic_questions(
             options=question.options,
             multi=is_multi(question.options),
             **stats.get(question.id, {}),
-            my_rating=votes.get(question.id),
-            reported=question.id in reported,
         )
         for question in topic.questions
     ]

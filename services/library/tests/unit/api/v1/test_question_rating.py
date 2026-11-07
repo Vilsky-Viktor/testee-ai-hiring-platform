@@ -22,41 +22,35 @@ def redis(monkeypatch):
     return fake
 
 
-def test_a_candidate_rates_a_question_reads_it_back_and_takes_it_back(client, monkeypatch):
-    stored = {}
+def test_each_vote_moves_the_counts_and_goes_to_the_review(client, monkeypatch):
+    moved = []
     reviewed = []
 
-    async def fake_rate(session, question_id, user_id, value):
-        stored[user_id] = value
-
-    async def fake_unrate(session, question_id, user_id):
-        stored.pop(user_id, None)
-
-    async def fake_mine(session, question_id, user_id):
-        return stored.get(user_id)
+    async def fake_change(session, question_id, value, previous):
+        moved.append((question_id, value, previous))
 
     async def fake_review(question_id):
         reviewed.append(question_id)
 
-    monkeypatch.setattr(feedback, "rate_question", fake_rate)
-    monkeypatch.setattr(feedback, "unrate_question", fake_unrate)
-    monkeypatch.setattr(feedback, "my_question_rating", fake_mine)
+    monkeypatch.setattr(feedback, "change_rating", fake_change)
     monkeypatch.setattr("library.services.question_feedback.review", fake_review)
     url = f"/internal/questions/{QUESTION_ID}/rating"
+    votes = [(1, None), (-1, 1), (None, -1)]
 
-    empty = client.get(url, params={"user_id": "ann"}, headers=AUTH)
-    put = client.put(url, json={"user_id": "ann", "value": 1}, headers=AUTH)
-    again = client.put(url, json={"user_id": "ann", "value": -1}, headers=AUTH)
-    saved = client.get(url, params={"user_id": "ann"}, headers=AUTH)
-    taken_back = client.delete(url, params={"user_id": "ann"}, headers=AUTH)
-    after = client.get(url, params={"user_id": "ann"}, headers=AUTH)
+    for value, previous in votes:
+        body = {"user_id": "ann", "value": value, "previous": previous}
+        assert client.put(url, json=body, headers=AUTH).status_code == 204
 
-    assert empty.json() == {"value": None}
-    assert (put.status_code, again.status_code, taken_back.status_code) == (204, 204, 204)
-    assert saved.json() == {"value": -1}
-    assert after.json() == {"value": None}
+    # The repository is never given who voted.
+    assert moved == [(QUESTION_ID, value, previous) for value, previous in votes]
     # Every vote, and one taken back, goes to the quality review, which may flag the question.
     assert reviewed == [QUESTION_ID] * 3
+
+
+def test_only_a_thumbs_up_or_down_or_none_is_a_vote(client):
+    url = f"/internal/questions/{QUESTION_ID}/rating"
+
+    assert client.put(url, json={"user_id": "ann", "value": 2}, headers=AUTH).status_code == 422
 
 
 @pytest.mark.parametrize("edited", [None, 3])
@@ -67,21 +61,21 @@ def test_a_users_ratings_are_limited_a_day(client, monkeypatch, redis, published
     if edited:
         redis.limits["RATINGS_PER_DAY"] = str(edited)
 
-    async def fake_rate(session, question_id, user_id, value):
+    async def fake_change(session, question_id, value, previous):
         pass
 
     async def fake_review(question_id):
         pass
 
-    monkeypatch.setattr(feedback, "rate_question", fake_rate)
+    monkeypatch.setattr(feedback, "change_rating", fake_change)
     monkeypatch.setattr("library.services.question_feedback.review", fake_review)
     body = {"user_id": "voter", "value": 1}
+    # One question: nothing tells a person's second vote on it from another's.
+    url = f"/internal/questions/{QUESTION_ID}/rating"
 
     for _ in range(allowed):
-        url = f"/internal/questions/{uuid.uuid4()}/rating"
         assert client.put(url, json=body, headers=AUTH).status_code == 204
 
-    url = f"/internal/questions/{uuid.uuid4()}/rating"
     assert client.put(url, json=body, headers=AUTH).status_code == 429
     assert [(event, data["limit"], data["user_id"]) for event, data in published] == [
         (LIMIT_HIT, "RATINGS_PER_DAY", "voter")

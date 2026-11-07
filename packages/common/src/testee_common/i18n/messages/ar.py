@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "لم يردّ Workable",
     "You're already a member": "أنت عضو بالفعل",
     "Already finished": "انتهى بالفعل",
-    "Already reported": "تم الإبلاغ عنه بالفعل",
     "Cancel the generation instead": "ألغِ الإنشاء بدلًا من ذلك",
     "Candidate not found": "لم يتم العثور على المرشح",
     "Choose topics from the list": "اختر المواضيع من القائمة",

@@ -19,7 +19,6 @@ from companies.repositories import audit, excluded_questions
 # Library's answers a member's feedback passes on: a repeat report (409), a reason or comment it
 # refuses (422), its daily limits (429).
 FEEDBACK_ANSWERS = {
-    status.HTTP_409_CONFLICT,
     status.HTTP_422_UNPROCESSABLE_CONTENT,
     status.HTTP_429_TOO_MANY_REQUESTS,
 }
@@ -69,25 +68,19 @@ def answered(response) -> Response:
     return Response(response.content, response.status_code, media_type="application/json")
 
 
-async def rate(interview: Interview, question_id: UUID, value: int, user_id: str) -> Response:
-    """The member's like (1) or dislike (-1); rating again changes it."""
+async def rate(
+    interview: Interview, question_id: UUID, value: int | None, previous: int | None, user_id: str
+) -> Response:
+    """The member's like (1) or dislike (-1), or none, in place of `previous`."""
     await interview_question(interview, question_id)
 
-    return answered(await feedback.rate(question_id, user_id, value))
-
-
-async def unrate(interview: Interview, question_id: UUID, user_id: str) -> Response:
-    """Takes the member's like or dislike back."""
-    await interview_question(interview, question_id)
-
-    return answered(await feedback.unrate(question_id, user_id))
+    return answered(await feedback.rate(question_id, user_id, value, previous))
 
 
 async def report(
     interview: Interview, question_id: UUID, reason: str, comment: str, user_id: str
 ) -> Response:
-    """The member's report, once per member and question (a second is 409); it goes to the
-    verifier as a candidate's does."""
+    """The member's report, anonymous; it goes to the verifier as a candidate's does."""
     await interview_question(interview, question_id)
 
     return answered(await feedback.report(question_id, user_id, reason, comment))

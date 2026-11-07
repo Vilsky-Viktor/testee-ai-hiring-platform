@@ -209,31 +209,13 @@ export interface paths {
       path?: never
       cookie?: never
     }
-    /** Get Rating */
-    get: operations["get_rating_sessions__session_id__questions__question_id__rating_get"]
-    /** Rate */
-    put: operations["rate_sessions__session_id__questions__question_id__rating_put"]
-    post?: never
+    get?: never
     /**
-     * Unrate
-     * @description Takes back the candidate's thumbs up or down (a click by mistake).
+     * Rate
+     * @description The candidate's thumbs up or down, or none to take it back (a click by mistake); `previous`
+     *     is the vote it replaces, as the page knows it: nothing keeps it by person.
      */
-    delete: operations["unrate_sessions__session_id__questions__question_id__rating_delete"]
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  "/sessions/{session_id}/questions/{question_id}/reports/mine": {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    /** My Report */
-    get: operations["my_report_sessions__session_id__questions__question_id__reports_mine_get"]
-    put?: never
+    put: operations["rate_sessions__session_id__questions__question_id__rating_put"]
     post?: never
     delete?: never
     options?: never
@@ -1289,14 +1271,14 @@ export interface components {
     }
     /**
      * RatingIn
-     * @description A thumbs up (1) or down (-1) on a question.
+     * @description A thumbs up (1) or down (-1) on a question, or none: a vote is kept with no person, so the
+     *     reader's page says what it replaces (`previous`, its earlier click on this question).
      */
     RatingIn: {
-      /**
-       * Value
-       * @enum {integer}
-       */
-      value: -1 | 1
+      /** Value */
+      value: (-1 | 1) | null
+      /** Previous */
+      previous?: (-1 | 1) | null
     }
     /**
      * ReportIn
@@ -1897,38 +1879,6 @@ export interface operations {
       }
     }
   }
-  get_rating_sessions__session_id__questions__question_id__rating_get: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        session_id: string
-        question_id: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Successful Response */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": unknown
-        }
-      }
-      /** @description Validation Error */
-      422: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": components["schemas"]["HTTPValidationError"]
-        }
-      }
-    }
-  }
   rate_sessions__session_id__questions__question_id__rating_put: {
     parameters: {
       query?: never
@@ -1944,70 +1894,6 @@ export interface operations {
         "application/json": components["schemas"]["RatingIn"]
       }
     }
-    responses: {
-      /** @description Successful Response */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": unknown
-        }
-      }
-      /** @description Validation Error */
-      422: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": components["schemas"]["HTTPValidationError"]
-        }
-      }
-    }
-  }
-  unrate_sessions__session_id__questions__question_id__rating_delete: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        session_id: string
-        question_id: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Successful Response */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": unknown
-        }
-      }
-      /** @description Validation Error */
-      422: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": components["schemas"]["HTTPValidationError"]
-        }
-      }
-    }
-  }
-  my_report_sessions__session_id__questions__question_id__reports_mine_get: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        session_id: string
-        question_id: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
     responses: {
       /** @description Successful Response */
       200: {

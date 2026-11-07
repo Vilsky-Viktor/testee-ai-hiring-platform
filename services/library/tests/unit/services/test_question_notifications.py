@@ -21,6 +21,10 @@ OPTIONS = [
 TOPIC = "Double-entry bookkeeping"
 
 
+async def not_fixed(session, _question_id, _since):
+    return False
+
+
 def kit(owner_type="company", owner_id="u1"):
     return SimpleNamespace(id=SET_ID, owner_type=owner_type, owner_id=owner_id, title="Accounting")
 
@@ -63,6 +67,7 @@ def run_review(monkeypatch, previous_flag, question_set):
         flushes.append(True)
 
     monkeypatch.setattr(quality, "load", fake_load)
+    monkeypatch.setattr(quality, "fixed_since", not_fixed)
     monkeypatch.setattr(generation, "verify_question", fake_verify)
     monkeypatch.setattr(quality, "change_flag", fake_change)
     monkeypatch.setattr(preparations, "get_for_question", fake_set)

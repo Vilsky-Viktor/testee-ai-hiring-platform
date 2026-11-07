@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "Hindi sumagot ang Workable",
     "You're already a member": "Miyembro ka na",
     "Already finished": "Tapos na",
-    "Already reported": "Nai-report na",
     "Cancel the generation instead": "I-cancel na lang ang paggawa",
     "Candidate not found": "Hindi nakita ang aplikante",
     "Choose topics from the list": "Pumili ng mga topic mula sa listahan",

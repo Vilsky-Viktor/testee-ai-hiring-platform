@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "Workable tidak merespons",
     "You're already a member": "Kamu sudah menjadi anggota",
     "Already finished": "Sudah selesai",
-    "Already reported": "Sudah dilaporkan",
     "Cancel the generation instead": "Batalkan pembuatannya saja",
     "Candidate not found": "Kandidat tidak ditemukan",
     "Choose topics from the list": "Pilih topik dari daftar",

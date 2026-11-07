@@ -91,7 +91,6 @@ MESSAGES = {
     "Workable didn't answer": "Workable 没有响应",
     "You're already a member": "你已经是成员",
     "Already finished": "已经结束",
-    "Already reported": "已经举报过",
     "Cancel the generation instead": "请改为取消生成",
     "Candidate not found": "未找到候选人",
     "Choose topics from the list": "请从列表中选择主题",
