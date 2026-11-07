@@ -14,9 +14,9 @@ const nextConfig: NextConfig = {
   output: "standalone",
   // No X-Powered-By header: it only tells attackers what the site runs on.
   poweredByHeader: false,
-  // Responses go out uncompressed: Cloud CDN compresses them, with Brotli for browsers that take
-  // it, which it can't do for a response already gzipped here (the gateway, locally).
-  compress: false,
+  // Pages are gzipped here: they stream, with no Content-Length, and Cloud CDN compresses only
+  // responses that have one. It still gives static files Brotli, and leaves these alone.
+  compress: true,
   // Version skew protection: the commit CI builds the image from (a build argument). A page left
   // open across a deploy then reloads in full on its next navigation instead of asking the new
   // server for the old build's files. Unset in development, where it does nothing.
@@ -73,7 +73,9 @@ const nextConfig: NextConfig = {
       { source: "/vad/:file+", headers: VAD_HEADERS },
     ]
   },
-  // In `pnpm dev` there is no gateway in front of Next, so proxy the API to it.
+  // In `pnpm dev` there is no gateway in front of Next, so proxy the API to it. Read when the site
+  // is built: only .env.development sets API_URL by then, so images carry no proxy, and the
+  // API_URL they get at run time is only the address their server-side calls use.
   async rewrites() {
     if (!process.env.API_URL) {
       return []

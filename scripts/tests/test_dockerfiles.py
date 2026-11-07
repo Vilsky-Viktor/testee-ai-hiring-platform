@@ -54,3 +54,11 @@ def test_the_production_stage_has_no_uv_and_runs_as_another_user():
         assert "uv" not in re.findall(r"\b\w+\b", prod), path
         assert "uv" not in re.findall(r"\b\w+\b", stages(text).get(base, "")), path
         assert re.search(r"^USER (?!root)\w+", prod, re.MULTILINE), path
+
+
+def test_the_frontends_image_is_built_without_the_dev_proxy():
+    """next.config.ts proxies /api to API_URL when it's set at build time, which in production
+    would send the API's unowned paths back through the public domain."""
+    text = (ROOT / "frontend" / "Dockerfile").read_text()
+
+    assert not re.search(r"^(ARG|ENV)\b.*\bAPI_URL\b", text, re.MULTILINE)
