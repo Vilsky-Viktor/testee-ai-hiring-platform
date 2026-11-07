@@ -60,7 +60,7 @@ k6() {
     docker run -i --rm --network "$network" \
       -e BASE_URL="$base_url" -e FIREBASE_PROJECT_ID="$project" \
       -e VUS -e RATE -e DURATION -e ITERATIONS -e THINK_SECONDS -e COMPANIES -e TEMPLATE_ID -e PAGES \
-      --entrypoint sh grafana/k6:2.3.0 \
+      --entrypoint sh grafana/k6:2.3.0@sha256:2dd4756ec6e14e62778916e1eb850108e4b499304c02df56760fa0bdb0fba0b8 \
       -c "mkdir -p /tmp/load && tar -xf - -C /tmp/load && cd /tmp/load && k6 run --quiet $1"
 }
 

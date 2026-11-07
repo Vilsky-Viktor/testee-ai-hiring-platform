@@ -41,14 +41,22 @@ def test_every_lock_file_is_updated_by_dependabot():
             assert (ecosystem, directory) in listed, path
 
 
-def test_images_scripts_run_are_pinned_by_digest():
-    scripts = [*ROOT.glob("scripts/*.sh"), *ROOT.glob("e2e_tests/*.sh")]
-    images = [
-        (path.name, image)
-        for path in scripts
-        for image in re.findall(r"\b(mcr\.microsoft\.com/\S+|docker\.io/\S+)", path.read_text())
-    ]
+def images_in(script: str) -> list[str]:
+    """The images a script names: a known registry's anywhere (a variable may hold them), and any
+    other `name:tag` on a `docker run` command, its continued lines included."""
+    known = re.findall(r"\b((?:mcr\.microsoft\.com|docker\.io)/\S+)", script)
+    commands = [line for line in script.replace("\\\n", " ").splitlines() if "docker run" in line]
+    named = re.compile(r"(?:^|\s)([a-z0-9][a-z0-9._/-]*:[\w.-]+(?:@sha256:\S+)?)(?=\s|$)")
 
-    assert images
+    found = (image for line in commands for image in named.findall(line))
+
+    return [*known, *(image for image in found if not image.startswith("localhost:"))]
+
+
+def test_images_scripts_run_are_pinned_by_digest():
+    scripts = [*ROOT.glob("scripts/**/*.sh"), *ROOT.glob("e2e_tests/**/*.sh")]
+    images = [(path.name, image) for path in scripts for image in images_in(path.read_text())]
+
+    assert any("grafana/k6" in image for _, image in images)
     for name, image in images:
         assert re.fullmatch(r"[\w./-]+:[\w.-]+@sha256:[0-9a-f]{64}", image), (name, image)
