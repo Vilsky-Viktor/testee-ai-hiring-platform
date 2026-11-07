@@ -53,7 +53,7 @@ Each template has a readable slug made from its title when it's saved: `backend-
 
 ## Free practice
 
-Free practice (`/practice`) gives people preparing for a role practice interviews on the templates' practice questions, timed unless they choose otherwise.
+Free practice (`/practice`) gives people preparing for a role practice interviews on the templates' practice questions, timed unless they choose otherwise. Every practice page has an info button with its guide (see [page guides](companies.md#page-guides)).
 
 - 10 questions a topic, about 1 in 10 of them "select all that apply" (scored as in [Interviews](interviews.md#questions)), with an average time per question of the seconds a company's new test of the template's level starts with (60 for basic and medium, 75 for hard, by default); each question gets its own time from that average, as in a company's interview ([Timing](candidates.md#timing)).
 - Before a round, beside its start button, the person picks the average time per question: the standard seconds, double (the average doubled, then fitted to each question), or no time limit (WCAG 2.2.1: practice measures nothing, so whoever needs it gets more time or none). Rounds decides the options (`PRACTICE_TIMINGS` in `services/rounds/src/rounds/constants/practice.py`), sends them with the round's size (`GET /rounds/practice/{template_id}/size`, worked out from the level's current seconds) and takes the choice when the round starts (`POST /rounds/practice/{template_id}` with `{"timing": "standard" | "double" | "untimed"}`; anything else is a 422). A round with double time or none doesn't count in the questions' statistics, as repeat rounds don't.

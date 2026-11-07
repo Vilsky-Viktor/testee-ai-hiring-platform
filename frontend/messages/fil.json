@@ -1625,6 +1625,24 @@
       "voiceQuality": "Nag-iiba-iba sa bawat wika kung gaano kahusay magbasa at makinig si Mira. <link>Tingnan ang kalidad sa bawat isa</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Pag-alis sa page at pagtatangkang kumopya",
+          "text": "Binibilang ang bawat pag-alis ng aplikante sa interview page o pagkopya mula rito, maliban sa mabilis na pagsilip sa notification."
+        },
+        "fast": {
+          "title": "Masyadong mabilis na sagot",
+          "text": "Fina-flag ang mga sagot na masyadong mabilis para mabasa ang tanong."
+        },
+        "patterns": {
+          "title": "Hindi karaniwang pattern",
+          "text": "Fina-flag ang mga oras o resulta na hindi tugma sa haba at hirap ng mga tanong."
+        },
+        "followUps": {
+          "title": "Mga follow-up na tanong",
+          "text": "Mungkahi mula sa mga tanong na tama ang sagot ng aplikante: itanong kung bakit tama ang sagot, para masuri ito sa isang live na interview."
+        }
+      },
       "title": "Tingnan kung sino ang pinakamagaling\nI-share sa loob ng ilang segundo",
       "text": "Ang mga sagot, grade at integrity flag ng bawat aplikante, ishine-share sa email o chat.",
       "chat": {

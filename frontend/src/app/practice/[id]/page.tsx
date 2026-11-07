@@ -24,7 +24,6 @@ import { breadcrumbData } from "@/lib/structured-data"
 import type { PracticeSize, PracticeTopicProgress } from "@/types/round"
 import type { Template } from "@/types/superadmin"
 import { LIST_BOX, ROW_HOVER, ROW_ICON } from "@/config/lists"
-import { PageKey } from "@/components/common/page-key"
 
 export async function generateMetadata({
   params,
@@ -100,7 +99,6 @@ export default async function PracticeTestPage({
 
   return (
     <main className="mx-auto max-w-page space-y-8 px-6 py-12">
-      <PageKey page="practiceTest" />
       <JsonLd
         data={breadcrumbData(siteUrl(), [
           { name: "testee", path: at("/") },
@@ -112,7 +110,11 @@ export default async function PracticeTestPage({
         ])}
       />
       <PageHeader
-        back={<BackLink href="/practice">{t("title")}</BackLink>}
+        back={
+          <BackLink href="/practice" help="practiceTest">
+            {t("title")}
+          </BackLink>
+        }
         // On phones the actions come after the title, on a line of their own.
         title={
           <div className="flex items-start justify-between gap-4 max-sm:flex-wrap">

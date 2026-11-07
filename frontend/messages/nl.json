@@ -1625,6 +1625,24 @@
       "voiceQuality": "Hoe goed Mira voorleest en verstaat, verschilt per taal. <link>Bekijk de kwaliteit per taal</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Pagina verlaten & kopieerpogingen",
+          "text": "Elke keer dat een kandidaat de interviewpagina verlaat of ervan kopieert, wordt geteld; een snelle blik op een melding telt niet mee."
+        },
+        "fast": {
+          "title": "Te snelle antwoorden",
+          "text": "Antwoorden die te snel kwamen om de vraag gelezen te hebben, worden gemarkeerd."
+        },
+        "patterns": {
+          "title": "Ongebruikelijke patronen",
+          "text": "Tijden of resultaten die niet passen bij de lengte en moeilijkheid van de vragen, worden gemarkeerd."
+        },
+        "followUps": {
+          "title": "Vervolgvragen",
+          "text": "Voorgesteld op basis van vragen die de kandidaat goed had: vraag waarom het antwoord klopt, om het te controleren in een live gesprek."
+        }
+      },
       "title": "Zie wie de beste is\nDeel het in seconden",
       "text": "De antwoorden, scores en integriteitssignalen van elke kandidaat, gedeeld per e-mail of chat.",
       "chat": {

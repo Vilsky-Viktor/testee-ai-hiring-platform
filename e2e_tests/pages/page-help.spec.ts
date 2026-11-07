@@ -1,6 +1,5 @@
-import { expect, test } from "@playwright/test";
-
 import { REQUEST_URL } from "./helpers/env";
+import { expect, test } from "./helpers/templates";
 import { loaded, settled } from "./helpers/waits";
 
 // The home page's "how it works" button, beside the video's under the title, opens a guide to
@@ -38,6 +37,31 @@ test("the home page's how it works button opens its guide", async ({ page }) => 
   await dialog.locator('[data-slot="dialog-footer"] button').click();
   await expect(dialog).toBeHidden();
 });
+
+// The practice pages anyone can open: each one's info button opens that page's own guide.
+const PRACTICE_PAGES = [
+  { key: "practice", path: () => "/practice" },
+  { key: "practiceTest", path: (slug: string) => `/practice/${slug}` },
+];
+
+for (const { key, path } of PRACTICE_PAGES) {
+  test(`the ${key} page's info button opens its guide`, async ({ page, addTemplate }) => {
+    // The local dev server compiles the page on first open.
+    test.setTimeout(120_000);
+    const template = await addTemplate();
+    const response = await page.request.get(`${REQUEST_URL}/api/site/help/pages/${key}`);
+    const guide = (await response.json()) as { title: string };
+
+    await page.goto(path(template.slug));
+    await loaded(page);
+    await page.getByRole("main").getByTestId("page-help").click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog.getByRole("heading").first()).toHaveText(guide.title);
+    await expect(dialog.getByRole("listitem").first()).toBeVisible();
+    await dialog.locator('[data-slot="dialog-footer"] button').click();
+    await expect(dialog).toBeHidden();
+  });
+}
 
 // Every guide ends with a card across the whole dialog asking for problems, ideas and missing
 // features, whose button opens the contact page.

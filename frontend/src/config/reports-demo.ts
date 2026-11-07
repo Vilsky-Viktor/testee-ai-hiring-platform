@@ -242,3 +242,12 @@ export const DEMO_NOTES = [
 
 // The member writing the new note.
 export const DEMO_AUTHOR = "Lisa Novak"
+
+// What the report tells about how a candidate answered, explained under the demo, in the order
+// shown.
+export const INTEGRITY_SIGNALS = [
+  "conduct",
+  "fast",
+  "patterns",
+  "followUps",
+] as const

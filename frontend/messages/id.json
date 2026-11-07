@@ -1625,6 +1625,24 @@
       "voiceQuality": "Seberapa baik Mira membaca dan mendengar berbeda-beda menurut bahasa. <link>Lihat kualitas di tiap bahasa</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Meninggalkan halaman dan percobaan menyalin",
+          "text": "Setiap kali kandidat meninggalkan halaman wawancara atau menyalin darinya akan dihitung, kecuali melirik notifikasi sebentar."
+        },
+        "fast": {
+          "title": "Jawaban terlalu cepat",
+          "text": "Jawaban yang terlalu cepat untuk sempat membaca soal akan ditandai."
+        },
+        "patterns": {
+          "title": "Pola tidak biasa",
+          "text": "Waktu atau hasil yang tidak sesuai dengan panjang dan tingkat kesulitan soal akan ditandai."
+        },
+        "followUps": {
+          "title": "Pertanyaan lanjutan",
+          "text": "Disarankan dari soal yang dijawab benar: tanyakan mengapa jawabannya benar, untuk memastikannya dalam wawancara langsung."
+        }
+      },
       "title": "Lihat siapa yang terbaik\nBagikan dalam hitungan detik",
       "text": "Jawaban, nilai, dan tanda integritas setiap kandidat, dibagikan lewat email atau chat.",
       "chat": {

@@ -45,10 +45,11 @@ export default async function PracticeHistoryPage({
 
   return (
     <main className="mx-auto max-w-page space-y-8 px-6 py-12">
-      <PageKey page="practiceHistory" />
       <PageHeader
         back={
-          <BackLink href={`/practice/${templateId}`}>{t("title")}</BackLink>
+          <BackLink href={`/practice/${templateId}`} help="practiceHistory">
+            {t("title")}
+          </BackLink>
         }
         title={
           // On phones "practice again" takes its own line, at full width.

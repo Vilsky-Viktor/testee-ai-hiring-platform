@@ -5,7 +5,10 @@ import { DEMO_GROUP } from "@/features/landing/components/demo-panel"
 import { PhoneSteps } from "@/features/landing/components/phone-steps"
 import { QualityLoop } from "@/features/landing/components/quality-loop"
 import { LandingSection } from "@/features/landing/components/section"
-import { TrustCards } from "@/features/landing/components/trust-cards"
+import {
+  TrustCards,
+  TrustCardText,
+} from "@/features/landing/components/trust-cards"
 import { LocalizedLink } from "@/components/common/localized-link"
 import {
   QUALITY_ICONS,
@@ -52,19 +55,15 @@ export async function TrustQualitySection() {
           cards={TRUST_CARDS.map((key) => ({
             key,
             content: (
-              <>
-                <h3 className="font-heading text-lg font-medium lowercase sm:text-xl">
-                  <KeepAcronyms text={t(`cards.${key}.title`)} />
-                  <span className="blue-dot">.</span>
-                </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  {key === "laws"
-                    ? t.rich("cards.laws.text", {
-                        documents: link("/documents"),
-                      })
-                    : t(`cards.${key}.text`)}
-                </p>
-              </>
+              <TrustCardText
+                title={<KeepAcronyms text={t(`cards.${key}.title`)} />}
+              >
+                {key === "laws"
+                  ? t.rich("cards.laws.text", {
+                      documents: link("/documents"),
+                    })
+                  : t(`cards.${key}.text`)}
+              </TrustCardText>
             ),
           }))}
         />

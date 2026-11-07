@@ -60,10 +60,12 @@ export default async function PracticeRoundPage({
 
   return (
     <main className="mx-auto max-w-page space-y-10 px-6 py-12">
-      <PageKey page="practiceRound" />
       <PageHeader
         back={
-          <BackLink href={`/practice/${round.template_id}`}>
+          <BackLink
+            href={`/practice/${round.template_id}`}
+            help="practiceRound"
+          >
             {t("title")}
           </BackLink>
         }

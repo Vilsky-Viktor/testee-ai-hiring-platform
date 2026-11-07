@@ -5,7 +5,8 @@ import { loaded } from "./helpers/waits";
 
 // The home page's "see who's best" section: one frame playing the candidates list, its PDF
 // downloaded and emailed, two candidates' pages shared to a chat, a note posted and the Slack
-// channel testee posts to. On phones, what it does as cards.
+// channel testee posts to. On phones, what it does as cards. Under it, four columns on what the
+// reports tell about how a candidate answered, then the line of facts.
 
 // Steps the demo reaches, in order (frontend/src/config/reports-demo-steps.ts): the PDF
 // downloaded, then emailed; each candidate's summary in the chat; the note posted; Slack last.
@@ -58,6 +59,36 @@ test("the reports demo reaches sharing, the notes and Slack, and the frame never
   expect(await played.evaluate(({ boxes }) => [...boxes])).toHaveLength(1);
 });
 
+test("four columns show side by side under the demo, above the line of facts", async ({ page }) => {
+  test.setTimeout(120_000);
+  await page.goto("/");
+  await loaded(page);
+  const section = page.locator("#reports");
+  const list = section.getByTestId("trust-cards");
+  const columns = list.getByRole("listitem");
+  await expect(columns).toHaveCount(4);
+  await list.scrollIntoViewIfNeeded();
+
+  const tops: number[] = [];
+
+  for (const column of await columns.all()) {
+    await expect(column).toHaveCSS("opacity", "1");
+    await expect(column.getByRole("heading")).not.toBeEmpty();
+    await expect(column.getByRole("paragraph")).not.toBeEmpty();
+    tops.push((await column.boundingBox())!.y);
+  }
+
+  for (const top of tops) {
+    expect(top).toBeCloseTo(tops[0], 0);
+  }
+
+  const demo = (await section.getByTestId("reports-demo").boundingBox())!;
+  const box = (await list.boundingBox())!;
+  const notes = (await section.getByTestId("notes").boundingBox())!;
+  expect(box.y).toBeGreaterThanOrEqual(demo.y + demo.height);
+  expect(notes.y).toBeGreaterThanOrEqual(box.y + box.height);
+});
+
 test("on a phone what it does shows as three cards in place of the demo", { tag: "@phone-only" }, async ({
   page,
 }) => {
@@ -68,5 +99,6 @@ test("on a phone what it does shows as three cards in place of the demo", { tag:
 
   await expect(section.getByTestId("reports-demo")).toBeHidden();
   await expect(section.getByTestId("phone-steps").getByTestId("icon-card")).toHaveCount(3);
+  await expect(section.getByTestId("trust-cards").getByRole("listitem")).toHaveCount(4);
   await expect(section.getByTestId("notes")).toBeVisible();
 });

@@ -1625,6 +1625,24 @@
       "voiceQuality": "O quanto a Mira lê e entende bem depende do idioma. <link>Veja a qualidade em cada um</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Saídas da página e tentativas de cópia",
+          "text": "Conta-se cada vez que um candidato sai da página da entrevista ou copia algo dela, sem considerar uma olhada rápida em uma notificação."
+        },
+        "fast": {
+          "title": "Respostas rápidas demais",
+          "text": "As respostas rápidas demais para ter lido a pergunta são marcadas."
+        },
+        "patterns": {
+          "title": "Padrões incomuns",
+          "text": "Os tempos ou resultados que não acompanham a extensão e a dificuldade das perguntas são sinalizados."
+        },
+        "followUps": {
+          "title": "Perguntas de acompanhamento",
+          "text": "Sugeridas a partir das perguntas que o candidato acertou: pergunte por que a resposta está certa, para verificar isso em uma entrevista ao vivo."
+        }
+      },
       "title": "Veja quem é o melhor\nCompartilhe em segundos",
       "text": "As respostas, as notas e os alertas de integridade de cada candidato, compartilhados por e-mail ou chat.",
       "chat": {

@@ -1625,6 +1625,24 @@
       "voiceQuality": "Mira đọc và nghe tốt đến đâu tùy theo ngôn ngữ. <link>Xem chất lượng ở từng ngôn ngữ</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Rời trang và thử sao chép",
+          "text": "Mỗi lần ứng viên rời trang phỏng vấn hoặc sao chép từ trang đó đều được tính, trừ khi chỉ liếc nhanh một thông báo."
+        },
+        "fast": {
+          "title": "Trả lời quá nhanh",
+          "text": "Những câu trả lời quá nhanh để kịp đọc câu hỏi sẽ được đánh dấu."
+        },
+        "patterns": {
+          "title": "Mẫu bất thường",
+          "text": "Thời gian hoặc kết quả không tương ứng với độ dài và độ khó của câu hỏi sẽ được đánh dấu."
+        },
+        "followUps": {
+          "title": "Câu hỏi để hỏi thêm",
+          "text": "Gợi ý từ những câu ứng viên đã trả lời đúng: hỏi vì sao đáp án đúng, để kiểm tra lại trong buổi phỏng vấn trực tiếp."
+        }
+      },
       "title": "Biết ngay ai giỏi nhất\nChia sẻ trong vài giây",
       "text": "Câu trả lời, điểm và cảnh báo hành vi bất thường của mọi ứng viên, chia sẻ qua email hoặc chat.",
       "chat": {

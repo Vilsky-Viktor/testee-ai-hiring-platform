@@ -1625,6 +1625,24 @@
       "voiceQuality": "How well Mira reads and hears varies by language. <link>See the quality in each</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Page leaves & copying",
+          "text": "Each time a candidate leaves the interview page or copies from it is counted, ignoring a quick notification."
+        },
+        "fast": {
+          "title": "Answers too fast",
+          "text": "Answers given too quickly to have read the question are marked."
+        },
+        "patterns": {
+          "title": "Unusual patterns",
+          "text": "Times or results that don't follow the questions' length and difficulty are flagged."
+        },
+        "followUps": {
+          "title": "Follow-up questions",
+          "text": "Suggested from questions they got right: ask why the answer is right, to check it in a live interview."
+        }
+      },
       "title": "See who's best\nShare it in seconds",
       "text": "Every candidate's answers, grades and integrity signals, shared by email or chat.",
       "chat": {

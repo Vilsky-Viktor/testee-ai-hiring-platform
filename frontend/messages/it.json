@@ -1625,6 +1625,24 @@
       "voiceQuality": "Quanto bene Mira legge e capisce dipende dalla lingua. <link>Guarda la qualità in ciascuna</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Uscite dalla pagina e tentativi di copia",
+          "text": "Ogni uscita del candidato dalla pagina del colloquio e ogni copia del suo contenuto vengono conteggiate, esclusa una rapida occhiata a una notifica."
+        },
+        "fast": {
+          "title": "Risposte troppo rapide",
+          "text": "Le risposte troppo rapide per aver letto la domanda vengono segnalate."
+        },
+        "patterns": {
+          "title": "Andamenti insoliti",
+          "text": "I tempi o i risultati che non seguono la lunghezza e la difficoltà delle domande vengono segnalati."
+        },
+        "followUps": {
+          "title": "Domande di approfondimento",
+          "text": "Suggerite in base alle domande a cui il candidato ha risposto correttamente: chiedigli perché la risposta è giusta, per verificarlo in un colloquio dal vivo."
+        }
+      },
       "title": "Scopri chi è il migliore\nCondividilo in pochi secondi",
       "text": "Le risposte, i punteggi e le segnalazioni di integrità di ogni candidato, condivisi via email o in chat.",
       "chat": {

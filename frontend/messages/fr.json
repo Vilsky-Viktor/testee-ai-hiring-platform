@@ -1625,6 +1625,24 @@
       "voiceQuality": "La qualité de lecture et d'écoute de Mira varie selon la langue. <link>Voir la qualité dans chacune</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Sorties de la page et tentatives de copie",
+          "text": "On compte chaque fois qu'un candidat quitte la page de l'entretien ou en copie le contenu, sans tenir compte d'un rapide coup d'œil à une notification."
+        },
+        "fast": {
+          "title": "Réponses trop rapides",
+          "text": "Les réponses trop rapides pour avoir lu la question sont signalées."
+        },
+        "patterns": {
+          "title": "Schémas inhabituels",
+          "text": "Les temps ou les résultats qui ne suivent pas la longueur et la difficulté des questions sont signalés."
+        },
+        "followUps": {
+          "title": "Questions de suivi",
+          "text": "Suggérées à partir des questions auxquelles le candidat a bien répondu : demandez-lui pourquoi la réponse est juste, pour le vérifier lors d'un entretien en direct."
+        }
+      },
       "title": "Voyez qui est le meilleur\nPartagez-le en quelques secondes",
       "text": "Les réponses, les notes et les alertes d'intégrité de chaque candidat, partagées par e-mail ou par chat.",
       "chat": {

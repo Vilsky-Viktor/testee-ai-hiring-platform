@@ -1625,6 +1625,24 @@
       "voiceQuality": "See, kui hästi Mira loeb ja kuuleb, oleneb keelest. <link>Vaata kvaliteeti igas keeles</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Lehelt lahkumised ja kopeerimiskatsed",
+          "text": "Loetakse iga kord, kui kandidaat lahkub intervjuu lehelt või kopeerib sealt; põgusat pilku teavitusele arvesse ei võeta."
+        },
+        "fast": {
+          "title": "Liiga kiired vastused",
+          "text": "Märgitakse vastused, mis tulid liiga kiiresti, et küsimus läbi lugeda."
+        },
+        "patterns": {
+          "title": "Ebatavalised mustrid",
+          "text": "Märgitakse ajad või tulemused, mis ei sobi küsimuste pikkuse ja raskusega."
+        },
+        "followUps": {
+          "title": "Lisaküsimused",
+          "text": "Soovitatud õigesti vastatud küsimuste põhjal: küsi töövestlusel, miks vastus on õige, et see üle kontrollida."
+        }
+      },
       "title": "Vaata, kes on parim\nJaga sekunditega",
       "text": "Iga kandidaadi vastused, hinded ja märked kahtlase käitumise kohta, jagatud e-kirja või vestluse kaudu.",
       "chat": {

@@ -1625,6 +1625,24 @@
       "voiceQuality": "Mira'nın ne kadar iyi okuyup duyduğu dile göre değişir. <link>Her dildeki kaliteyi görün</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Sayfadan ayrılmalar ve kopyalama girişimleri",
+          "text": "Adayın mülakat sayfasından her ayrılışı ve sayfadan her kopyalaması sayılır; bir bildirime hızlıca göz atmak sayılmaz."
+        },
+        "fast": {
+          "title": "Çok hızlı cevaplar",
+          "text": "Soruyu okumuş olamayacak kadar hızlı cevaplar işaretlenir."
+        },
+        "patterns": {
+          "title": "Olağan dışı örüntüler",
+          "text": "Soruların uzunluğuna ve zorluğuna uymayan süreler veya sonuçlar işaretlenir."
+        },
+        "followUps": {
+          "title": "Ek sorular",
+          "text": "Adayın doğru cevapladığı sorulardan önerilir: canlı bir mülakatta cevabın neden doğru olduğunu sorun ve doğrulayın."
+        }
+      },
       "title": "En iyisini görün\nSaniyeler içinde paylaşın",
       "text": "Her adayın cevapları, notları ve dürüstlük uyarıları, e-postayla ya da sohbette paylaşılır.",
       "chat": {

@@ -1625,6 +1625,24 @@
       "voiceQuality": "Wie gut Mira vorliest und versteht, hängt von der Sprache ab. <link>Qualität in jeder Sprache ansehen</link>."
     },
     "shareReports": {
+      "signals": {
+        "conduct": {
+          "title": "Seitenwechsel & Kopierversuche",
+          "text": "Gezählt wird jedes Mal, wenn ein Kandidat die Interviewseite verlässt oder von ihr kopiert; ein kurzer Blick auf eine Benachrichtigung zählt nicht."
+        },
+        "fast": {
+          "title": "Zu schnelle Antworten",
+          "text": "Antworten, die zu schnell kamen, um die Frage gelesen zu haben, werden markiert."
+        },
+        "patterns": {
+          "title": "Ungewöhnliche Muster",
+          "text": "Zeiten oder Ergebnisse, die nicht zur Länge und Schwierigkeit der Fragen passen, werden markiert."
+        },
+        "followUps": {
+          "title": "Nachfragen",
+          "text": "Vorgeschlagen aus richtig beantworteten Fragen: Frag im Live-Gespräch, warum die Antwort richtig ist, um es zu prüfen."
+        }
+      },
       "title": "Sieh, wer am besten ist\nTeile es in Sekunden",
       "text": "Die Antworten, Ergebnisse und Integritätshinweise jedes Kandidaten, geteilt per E-Mail oder Chat.",
       "chat": {

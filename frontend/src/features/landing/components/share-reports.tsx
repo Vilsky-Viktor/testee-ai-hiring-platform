@@ -9,6 +9,11 @@ import { PhoneSteps } from "@/features/landing/components/phone-steps"
 import { ReportsDemo } from "@/features/landing/components/reports-demo"
 import { LandingSection } from "@/features/landing/components/section"
 import { StartButton } from "@/features/landing/components/start-button"
+import {
+  TrustCards,
+  TrustCardText,
+} from "@/features/landing/components/trust-cards"
+import { INTEGRITY_SIGNALS } from "@/config/reports-demo"
 import { OUTLINE_BUTTON } from "@/components/common/more-link"
 import { buttonVariants } from "@/components/ui/button"
 import { BAND } from "@/config/landing-backgrounds"
@@ -50,6 +55,19 @@ export async function ShareReportsSection() {
             text: t(`shareReports.phone.${key}.text`),
           }))}
         />
+        {/* A promo: its columns pop in as they come into view (promo.css). */}
+        <div data-promo>
+          <TrustCards
+            cards={INTEGRITY_SIGNALS.map((key) => ({
+              key,
+              content: (
+                <TrustCardText title={t(`shareReports.signals.${key}.title`)}>
+                  {t(`shareReports.signals.${key}.text`)}
+                </TrustCardText>
+              ),
+            }))}
+          />
+        </div>
         <NotesLine
           notes={[
             t("shareReports.notes.notes"),
