@@ -14,8 +14,11 @@ MAX_HELP_QUESTION_LENGTH = 1_000
 MAX_HELP_MESSAGE_LENGTH = 10_000
 # What the help chat's signing key is made for (testee_common.auth.tokens.purpose_key).
 HELP_SIGNING_PURPOSE = "help-signatures"
-# A reply's signature: SHA-256, in hex.
-SIGNATURE_LENGTH = 64
+# A signature: SHA-256, in hex, after a reply's time.
+SIGNATURE_LENGTH = 80
+# How long a signed reply counts: the model reads it and it spares the human check. An answer
+# signs its reply anew, so only a chat left this long needs the check again.
+HELP_REPLY_SECONDS = 24 * 60 * 60
 # A Langfuse trace id: 32 hex characters.
 TRACE_ID_LENGTH = 32
 MAX_HELP_MESSAGES = 200

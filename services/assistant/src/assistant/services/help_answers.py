@@ -1,4 +1,5 @@
 import logging
+import time
 import uuid
 from collections.abc import AsyncIterator
 
@@ -56,10 +57,11 @@ async def start(
     redis = get_redis()
     user_id = user.uid if user else None
     await refuse_if_paused(redis, HELP_CHAT, user_id=user_id)
-    conversation = trusted(body.messages, help_signing_key(settings.service_secret))
+    key = help_signing_key(settings.service_secret)
+    conversation = trusted(body.messages, time.time(), key)
 
-    # A visitor shows they're a person once, until the chat has a reply: the chat has no id to
-    # remember it by, a signed reply came only after the check, and it shows nothing to most.
+    # A visitor shows they're a person once, until the chat has a recent reply: a signed
+    # reply came only after the check, and the check shows nothing to most.
     if user is None and not any(item.role == HelpRole.ASSISTANT for item in conversation):
         await require_human(request, settings.turnstile_secret_key)
 
@@ -136,7 +138,7 @@ async def answer(
     yield sse_event(
         {
             "done": True,
-            "signature": reply_signature(reply, key),
+            "signature": reply_signature(reply, int(time.time()), key),
             "answer": {
                 "id": str(answer_id),
                 "trace_id": trace_id,

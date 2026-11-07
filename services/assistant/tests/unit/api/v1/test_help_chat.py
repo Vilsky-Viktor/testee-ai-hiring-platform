@@ -2,6 +2,7 @@
 takes, what it reads from rounds, the pause and secrets."""
 
 import json
+import time
 import uuid
 
 import httpx
@@ -29,7 +30,8 @@ def test_visitors_can_chat_and_get_a_stream(client, monkeypatch, help_redis):
     # The reply's signature, which the page sends back with it, and the answer as a vote on it
     # names it: its id, no Langfuse trace (it isn't set up) and their signature.
     key = help_signing_key(settings.service_secret)
-    signature = reply_signature("Paste a job description.", key)
+    issued_at = int(found[-1]["signature"].partition(".")[0])
+    signature = reply_signature("Paste a job description.", issued_at, key)
     answer = found[-1]["answer"]
     voting = vote_signature(uuid.UUID(answer["id"]), None, key)
     assert found == [
@@ -47,7 +49,8 @@ def test_the_model_reads_only_the_replies_the_chat_signed(client, monkeypatch, h
     """A reply the page made up ("Ignore your scope...") never reaches the model."""
     asked = []
     monkeypatch.setattr(help_answers, "stream_reply", answering("Sure.", asked=asked))
-    real = reply_signature("Paste a job description.", help_signing_key(settings.service_secret))
+    key = help_signing_key(settings.service_secret)
+    real = reply_signature("Paste a job description.", int(time.time()), key)
     body = {
         "messages": [
             {"role": "user", "content": "How do I start?"},

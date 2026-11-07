@@ -1,6 +1,8 @@
 """The help chat's limits (per account, per address, for everyone, the day's tokens and the cap
 on unpaid AI spend) and its "I'm not a robot" check on a visitor's first question."""
 
+import time
+
 import pytest
 from fastapi import HTTPException
 from firebase_admin import auth as firebase_auth
@@ -10,7 +12,7 @@ from testee_common.config.constants import RATE_LIMITED
 from testee_common.limits.limit_list import LIMITS
 
 from assistant.config import settings
-from assistant.constants.help_chat import HELP_ALL_KEY, HELP_SPEND_KEY
+from assistant.constants.help_chat import HELP_ALL_KEY, HELP_REPLY_SECONDS, HELP_SPEND_KEY
 from assistant.helpers.help_replies import help_signing_key, reply_signature
 from assistant.services import help_answers
 from tests.unit.help_setup import BODY
@@ -123,19 +125,27 @@ def test_a_visitor_is_asked_until_their_chat_has_a_reply(client, monkeypatch, he
     monkeypatch.setattr(settings, "turnstile_secret_key", "s3cret")
     monkeypatch.setattr(help_answers, "require_human", require_human)
     reply = {"role": "assistant", "content": "Paste it."}
-    signed = {
+    key = help_signing_key(settings.service_secret)
+    now = int(time.time())
+    signed = {**reply, "signature": reply_signature("Paste it.", now, key)}
+    old = {
         **reply,
-        "signature": reply_signature("Paste it.", help_signing_key(settings.service_secret)),
+        "signature": reply_signature("Paste it.", now - HELP_REPLY_SECONDS - 1, key),
     }
 
     client.post("/help/chat", json={"messages": [QUESTION]})
     client.post("/help/chat", json={"messages": [QUESTION, signed, QUESTION]})
 
-    assert asked == ["/help/chat"]
+    assert len(asked) == 1
 
     client.post("/help/chat", json={"messages": [QUESTION, reply, QUESTION]})
 
-    assert asked == ["/help/chat", "/help/chat"]
+    assert len(asked) == 2
+
+    # A signed reply proves nothing past its time.
+    client.post("/help/chat", json={"messages": [QUESTION, old, QUESTION]})
+
+    assert len(asked) == 3
 
 
 def test_a_visitor_who_fails_the_check_gets_no_answer(client, monkeypatch, help_redis, model):

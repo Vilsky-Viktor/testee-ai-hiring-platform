@@ -96,7 +96,8 @@ export function startHelpChat() {
 and sends it whole, each reply with the signature the chat gave it (the chat reads no reply
 without one). Its events: {"delta"}, a {"block"} sign-in card when the visitor asks to sign in,
 and {"done"} with the reply's signature. Until the chat has a signed reply, a question shows
-the visitor is a person (lib/human-check.ts). `page`: the key of the page the visitor asks on,
+the visitor is a person (lib/human-check.ts), and again when the chat refuses one for its age.
+`page`: the key of the page the visitor asks on,
 whose guide the answer reads. */
 export function streamHelp(
   messages: HelpMessage[],
@@ -113,13 +114,22 @@ export function streamHelp(
     (message) => message.role === "assistant" && message.signature
   )
 
-  return humanHeaders(first).then((headers) =>
-    streamEvents(
-      "/assistant/help/chat",
-      { messages, chat_id: helpChat, ...(page && { page }) },
-      onEvent,
-      signal,
-      headers
+  const ask = (needed: boolean) =>
+    humanHeaders(needed).then((headers) =>
+      streamEvents(
+        "/assistant/help/chat",
+        { messages, chat_id: helpChat, ...(page && { page }) },
+        onEvent,
+        signal,
+        headers
+      )
     )
-  )
+
+  return ask(first).catch((error) => {
+    if (!first && error instanceof ApiError && error.status === 403) {
+      return ask(true)
+    }
+
+    throw error
+  })
 }

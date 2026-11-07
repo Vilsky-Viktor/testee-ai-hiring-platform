@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 
+import { HUMAN_CHECK_HEADER } from "@/config/security"
 import { ApiError } from "@/lib/api"
 import {
   StreamError,
@@ -152,6 +153,25 @@ describe("streamHelp", () => {
       status: 503,
       message: "Paused",
     })
+  })
+
+  it("shows the visitor is a person when the chat refuses its old replies", async () => {
+    vi.mocked(fetch)
+      .mockResolvedValueOnce(Response.json({}, { status: 403 }))
+      .mockResolvedValueOnce(streamed(['data: {"delta":"Hi"}\n\n']))
+    const got: string[] = []
+
+    await streamHelp(
+      [{ role: "assistant", content: "Paste it.", signature: "s" }],
+      (event) => event.delta && got.push(event.delta),
+      new AbortController().signal
+    )
+
+    const [first, second] = vi.mocked(fetch).mock.calls
+
+    expect(first?.[1]?.headers).not.toHaveProperty(HUMAN_CHECK_HEADER)
+    expect(second?.[1]?.headers).toHaveProperty(HUMAN_CHECK_HEADER)
+    expect(got).toEqual(["Hi"])
   })
 
   it("names the status when a failed answer has no detail", async () => {
