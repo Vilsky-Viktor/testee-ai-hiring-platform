@@ -9,6 +9,8 @@ type Status = { on: boolean; superadmin: boolean }
 
 const OFF: Status = { on: false, superadmin: false }
 let cached = { status: OFF, until: 0 }
+// The one call under way, so a burst of requests shares it.
+let loading: Promise<void> | null = null
 
 async function fetchStatus(token?: string): Promise<Status> {
   try {
@@ -27,16 +29,28 @@ async function fetchStatus(token?: string): Promise<Status> {
   }
 }
 
+function refresh() {
+  loading ??= fetchStatus()
+    .then((status) => {
+      cached = { status, until: Date.now() + MAINTENANCE_CACHE_MS }
+    })
+    .finally(() => {
+      loading = null
+    })
+
+  return loading
+}
+
 /** Maintenance mode for this visitor, as the companies service says: closed to everyone but
- * superadmins while it's on. */
+ * superadmins while it's on. Only a fresh instance's first requests wait for the answer; after
+ * that an old answer is used while a new one is fetched. */
 export async function maintenanceState(
   token?: string
 ): Promise<MaintenanceState> {
-  if (Date.now() > cached.until) {
-    cached = {
-      status: await fetchStatus(),
-      until: Date.now() + MAINTENANCE_CACHE_MS,
-    }
+  if (cached.until === 0) {
+    await refresh()
+  } else if (Date.now() > cached.until) {
+    void refresh()
   }
 
   if (!cached.status.on) {
