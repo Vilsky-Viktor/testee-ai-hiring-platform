@@ -195,7 +195,7 @@
     ],
     "tips": [
       "Pola liczbowe zapisują się, gdy tylko je opuścisz; przełączniki i tryb zapisują się od razu.",
-      "Kandydaci nigdy nie widzą swoich wyników; widzi je tylko Twój zespół.",
+      "Rozmowa nigdy nie pokazuje kandydatom wyniku ani tego, czy odpowiedź była poprawna; wynik zawiera tylko pobrana przez nich kopia ich własnych danych.",
       "Jeśli jeden kandydat potrzebuje więcej czasu, dodaj mu dodatkowy czas na jego stronie.",
       "Nowy tryb dotyczy kandydatów, którzy nie zaczęli, z wyjątkiem tych, którzy dostali własny tryb na swojej stronie.",
       "Średni czas to 10 do 600 sekund; próg zaliczenia to 1 do 100%."

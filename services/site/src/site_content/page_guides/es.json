@@ -195,7 +195,7 @@
     ],
     "tips": [
       "Los campos numéricos se guardan en cuanto sales de ellos; los interruptores y el modo se guardan al momento.",
-      "Los candidatos nunca ven sus puntuaciones; solo tu equipo las ve.",
+      "La entrevista nunca muestra a los candidatos su puntuación ni si una respuesta fue correcta; solo la descarga de sus propios datos incluye su nota.",
       "Para un candidato que necesite más tiempo, añade tiempo extra en su página.",
       "Un modo nuevo se aplica a los candidatos que no han empezado, salvo a quienes tienen uno propio asignado en su página.",
       "El tiempo medio va de 10 a 600 segundos; la nota de aprobado va del 1 al 100 %."

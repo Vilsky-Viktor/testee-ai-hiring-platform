@@ -195,7 +195,7 @@
     ],
     "tips": [
       "Number fields save as soon as you leave them; switches and the mode save at once.",
-      "Candidates never see their scores; only your team does.",
+      "The interview never shows candidates their score or whether an answer was right; only their own data download has their grade.",
       "For one candidate who needs more time, add extra time on their page.",
       "A new mode applies to candidates who haven't started, except those given their own on their page.",
       "The average time is 10 to 600 seconds; the passing grade is 1 to 100%."

@@ -195,7 +195,7 @@
     ],
     "tips": [
       "Les champs numériques sont enregistrés dès que vous les quittez ; les interrupteurs et le mode sont enregistrés tout de suite.",
-      "Les candidats ne voient jamais leurs scores ; seule votre équipe les voit.",
+      "L'entretien ne montre jamais aux candidats leur score ni si une réponse était juste ; seul le téléchargement de leurs propres données contient leur note.",
       "Pour un candidat qui a besoin de plus de temps, ajoutez du temps supplémentaire sur sa page.",
       "Un nouveau mode s'applique aux candidats qui n'ont pas commencé, sauf à ceux qui ont reçu le leur sur leur page.",
       "Le temps moyen va de 10 à 600 secondes ; le seuil de réussite va de 1 à 100 %."
