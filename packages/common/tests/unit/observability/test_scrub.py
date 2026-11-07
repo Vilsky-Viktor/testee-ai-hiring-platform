@@ -3,7 +3,7 @@ host, and for Langfuse people's names too."""
 
 import pytest
 from pydantic import BaseModel
-from testee_common.observability.scrub import scrub, scrub_people
+from testee_common.observability.scrub import person_values, scrub, scrub_people
 
 
 def test_emails_are_scrubbed_everywhere_in_an_event():
@@ -50,6 +50,31 @@ def test_names_and_emails_in_a_tools_json_result_are_masked():
         scrub_people(result)
         == '{"id": "c1", "name": "[person]", "email": "[person]", "candidate_name": "[person]"}'
     )
+
+
+def test_camel_case_and_capitalised_name_fields_are_masked_in_data_and_json():
+    result = '{"candidateName": "Ann", "firstName": "Bo", "Name": "Cy", "Email": "d@e.f", "n": 1}'
+    data = {"candidateName": "Ann", "FirstName": "Bo", "grade": "A"}
+
+    assert scrub_people(result) == (
+        '{"candidateName": "[person]", "firstName": "[person]", "Name": "[person]",'
+        ' "Email": "[person]", "n": 1}'
+    )
+    assert scrub_people(data) == {
+        "candidateName": "[person]",
+        "FirstName": "[person]",
+        "grade": "A",
+    }
+
+
+def test_person_values_finds_every_name_field_however_deep():
+    data = {
+        "data": [{"candidateName": "Ann Lee", "grade": "A"}, {"email": "bo@example.com"}],
+        "name": None,
+        "source": ("x", {"owner_name": "Cy"}),
+    }
+
+    assert person_values(data) == {"Ann Lee", "bo@example.com", "Cy"}
 
 
 def test_name_fields_of_data_and_hidden_names_are_masked_and_the_rest_kept():

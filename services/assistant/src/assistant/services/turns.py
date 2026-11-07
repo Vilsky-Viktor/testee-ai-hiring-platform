@@ -189,7 +189,7 @@ async def run_turn(turn: Turn, prompt: list, answer: Answer, emit: Emit) -> None
         emit(last)
 
         if turn.new_question and "done" in last:
-            title = await titles.refresh(turn)
+            title = await titles.refresh(turn, answer.names)
 
             if title:
                 emit({"title": title})

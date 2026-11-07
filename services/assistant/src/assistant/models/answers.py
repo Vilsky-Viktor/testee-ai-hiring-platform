@@ -27,6 +27,8 @@ class Answer:
     given: str = ""
     # The Langfuse trace its model calls report to; None when Langfuse isn't set up.
     trace_id: str | None = None
+    # The names in the tools' results: the model repeats them, so they're masked in its traces.
+    names: set = field(default_factory=set)
 
     @property
     def content(self) -> str:

@@ -205,6 +205,22 @@ def test_traces_are_masked_before_they_leave(monkeypatch):
     assert made["mask"](data="José") == "José"
 
 
+def test_a_longer_hidden_name_goes_whole_though_a_shorter_is_hidden_too(monkeypatch):
+    made = {}
+    monkeypatch.setattr(tracing, "Langfuse", lambda **kwargs: made.update(kwargs))
+    monkeypatch.setenv("LANGFUSE_PUBLIC_KEY", "pk")
+    monkeypatch.setenv("LANGFUSE_SECRET_KEY", "sk")
+    tracing.client.cache_clear()
+
+    try:
+        tracing.client()
+    finally:
+        tracing.client.cache_clear()
+
+    with tracing.hiding("Ann", "Ann Lee"):
+        assert made["mask"](data="Ask Ann Lee") == "Ask [person]"
+
+
 def test_a_call_made_outside_langchain_is_one_generation_on_its_seeds_trace(langfuse, monkeypatch):
     made = []
 

@@ -47,10 +47,29 @@ def scrub(value):
     return value
 
 
+def is_person_field(key) -> bool:
+    return isinstance(key, str) and key.lower().endswith(PERSON_FIELD_ENDINGS)
+
+
+def person_values(value) -> set[str]:
+    """The texts of the `name` and `email` fields in data, however deep."""
+    if isinstance(value, dict):
+        fields = {item for key, item in value.items() if is_person_field(key) and item}
+        found = {item for item in fields if isinstance(item, str)}
+
+        return found.union(*(person_values(item) for item in value.values()))
+
+    if isinstance(value, list | tuple):
+        return set().union(*(person_values(item) for item in value))
+
+    return set()
+
+
 def scrub_people(value, hidden: tuple[str, ...] = ()):
-    """`scrub`, and also people's names: the value of a field named `name` or `email` or ending so (`candidate_name`), in data or in JSON
-    text (a tool's result), and each of `hidden` (a name the caller knows is in the text). Any
-    other object is scrubbed as its JSON form or its text."""
+    """`scrub`, and also people's names: the value of a field named `name` or `email` or ending
+    so (`candidate_name`, `firstName`), in data or in JSON text (a tool's result), and each of
+    `hidden` (a name the caller knows is in the text). Any other object is scrubbed as its JSON
+    form or its text."""
     if hasattr(value, "model_dump"):
         value = value.model_dump(mode="json")
 
@@ -65,7 +84,7 @@ def scrub_people(value, hidden: tuple[str, ...] = ()):
     if isinstance(value, dict):
         return {
             key: REDACTED_PERSON
-            if isinstance(key, str) and key.endswith(PERSON_FIELD_ENDINGS) and isinstance(item, str)
+            if is_person_field(key) and isinstance(item, str)
             else scrub_people(item, hidden)
             for key, item in value.items()
             if key not in QUERY_FIELDS

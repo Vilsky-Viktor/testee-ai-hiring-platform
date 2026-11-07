@@ -2,6 +2,7 @@ import asyncio
 import json
 import os
 import uuid
+from contextlib import contextmanager
 
 import httpx
 import pytest
@@ -273,6 +274,23 @@ def test_with_langfuse_every_call_of_an_answer_reports_to_its_one_trace(model, g
     seen = {"trace": "a" * 32, "in": str(TURN.conversation_id)}
     assert model.configs == [seen, seen]
     assert answer.trace_id == "a" * 32
+
+
+def test_names_the_tools_returned_are_hidden_from_the_later_calls_traces(model, gets, monkeypatch):
+    gets.answer = response(json={"name": "Ann Lee", "email": "ann@example.com"})
+    hidden = []
+
+    @contextmanager
+    def hiding(*words):
+        hidden.append(set(words))
+        yield
+
+    monkeypatch.setattr(chat, "hiding", hiding)
+
+    _, answer = run(model, calls(("get_me", {})), text("Ann Lee passed."))
+
+    assert hidden == [{TURN.user_name}, {TURN.user_name, "Ann Lee", "ann@example.com"}]
+    assert answer.names == {"Ann Lee", "ann@example.com"}
 
 
 def test_without_langfuse_no_trace_is_named_or_kept(model):

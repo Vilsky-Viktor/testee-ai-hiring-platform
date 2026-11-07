@@ -46,7 +46,7 @@ def saved(monkeypatch):
             200, json={"email": "ann@example.com"}, request=httpx.Request("GET", "http://x")
         )
 
-    async def no_title(turn):
+    async def no_title(turn, names):
         return None
 
     monkeypatch.setattr(turns.messages, "add_answer", add_answer)

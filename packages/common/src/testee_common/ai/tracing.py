@@ -52,7 +52,8 @@ def hiding(*words: str | None) -> Iterator[None]:
     """Masks `words` (empty ones skipped) in what the calls made inside report, also as JSON
     writes them (non-ASCII letters escaped)."""
     hidden = {form for word in words if word for form in (word, json.dumps(word)[1:-1])}
-    token = _hidden.set(tuple(hidden))
+    # The longest first, so "Ann Lee" goes whole when "Ann" is hidden too.
+    token = _hidden.set(tuple(sorted(hidden, key=len, reverse=True)))
 
     try:
         yield

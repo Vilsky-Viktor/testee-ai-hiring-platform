@@ -51,7 +51,7 @@ async def routed_tools(messages: list[BaseMessage], turn: Turn, answer: Answer):
     answer.trace_id = answer.trace_id or new_trace_id()
 
     try:
-        with hiding(turn.user_name):
+        with hiding(turn.user_name, *answer.names):
             config = traced(answer.trace_id, str(turn.conversation_id))
             result = (
                 await llm.get_routing_model()

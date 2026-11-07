@@ -17,6 +17,7 @@ from testee_common.ai.scope import SCOPE_RULE
 from testee_common.ai.tracing import hiding, new_trace_id, traced
 from testee_common.config.constants import LANGUAGES
 from testee_common.i18n.i18n import translate
+from testee_common.observability.scrub import person_values
 
 from assistant.config import settings
 from assistant.constants.ai_usage import MESSAGE_ACTION
@@ -132,8 +133,8 @@ async def ask(
     answer.trace_id = answer.trace_id or new_trace_id()
 
     try:
-        # The user's name, in the turn's context, isn't sent with the trace.
-        with hiding(turn.user_name):
+        # The user's name, in the turn's context, and the tools' aren't sent with the trace.
+        with hiding(turn.user_name, *answer.names):
             config = traced(answer.trace_id, str(turn.conversation_id))
 
             async for chunk in model.astream(messages, config):
@@ -249,6 +250,7 @@ async def run_tools(calls: list[dict], turn: Turn, answer: Answer, emit: Emit) -
             answer.pending.append(result.action_id)
         state = ToolState.DONE if result.succeeded or pending else ToolState.FAILED
         emit(tool_event(call["name"], state, turn.language))
+        answer.names |= person_values(result.content)
 
         # A prepared action's card and arguments aren't kept with the answer: only in Redis,
         # until the user confirms or cancels it.
