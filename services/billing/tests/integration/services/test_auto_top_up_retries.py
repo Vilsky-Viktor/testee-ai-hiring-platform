@@ -34,6 +34,24 @@ async def running_low(acme: str, sub: str) -> None:
     )
 
 
+def test_a_new_card_after_a_pause_charges_at_once(run, paddle_calls):
+    acme = str(uuid.uuid4())
+    sub = f"sub_{uuid.uuid4().hex[:12]}"
+    start = datetime.now(UTC)
+
+    async def scenario():
+        await running_low(acme, sub)
+        await transaction(rows.claim_charge, COMPANY, acme, start)
+        await transaction(charges.declined, COMPANY, acme, start)
+        await transaction(charges.pause, COMPANY, acme, start)
+        saved = start + timedelta(hours=2)
+        await transaction(charges.resume, sub, saved)
+
+        return await transaction(rows.claim_charge, COMPANY, acme, saved)
+
+    assert run(scenario()) is not None
+
+
 def test_soft_declines_are_tried_again_after_1_3_and_7_days_then_it_pauses(run, paddle_calls):
     acme = str(uuid.uuid4())
     start = datetime.now(UTC)
