@@ -19,13 +19,16 @@ allowBuilds:
   core-js: false
   protobufjs: false
 
-# Patched versions of transitive packages with security advisories: grpc-js (under Firebase's
-# Firestore, unused here), source-map-js (under PostCSS, at build time) and DOMPurify (under
-# jsPDF, which the PDF report uses).
+# Patched versions of transitive packages with security advisories: grpc-js and re2js (under
+# Firebase's Firestore, unused here), source-map-js (under PostCSS, at build time), DOMPurify
+# (under jsPDF, which the PDF report uses), glob and minimatch (under Sentry's build plugins).
 overrides:
   "@grpc/grpc-js": ">=1.13.6"
   source-map-js: ">=1.2.2"
   dompurify: ">=3.4.17"
+  re2js: ">=2.8.7"
+  glob: ">=14.0.2"
+  "minimatch@>=7.0.0 <11.0.1": ">=11.0.1"
 
 # Versions already in the lockfile before the trust guard existed, flagged only because they are
 # maintenance releases of older majors published after newer, signed ones (no new code pulled in).

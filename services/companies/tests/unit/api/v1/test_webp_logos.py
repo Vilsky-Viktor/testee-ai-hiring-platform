@@ -1,6 +1,7 @@
 import base64
 import io
 
+import pytest
 from PIL import Image
 
 from companies.constants.logos import MAX_LOGO_SIDE
@@ -104,3 +105,33 @@ def test_a_jpeg_logo_is_kept_as_jpeg_without_its_photos_metadata(client, company
     stored = Image.open(io.BytesIO(content))
     assert (media_type, stored.format) == ("image/jpeg", "JPEG")
     assert dict(stored.getexif()) == {}
+
+
+@pytest.mark.parametrize(
+    ("mode", "save_as", "kept_as"),
+    [
+        ("RGBA", "PNG", "image/png"),
+        ("P", "PNG", "image/png"),
+        ("I;16", "PNG", "image/png"),
+        ("L", "JPEG", "image/jpeg"),
+        ("CMYK", "JPEG", "image/jpeg"),
+    ],
+)
+def test_every_colour_mode_of_a_logo_is_kept_as_it_was(
+    client,
+    company,  # noqa: F811
+    mode,
+    save_as,
+    kept_as,
+):
+    _, saved = company
+    sign_in("bob")
+    out = io.BytesIO()
+    Image.new(mode, (8, 8)).save(out, save_as)
+
+    response = client.put(URL, json={"image": base64.b64encode(out.getvalue()).decode()})
+
+    assert response.status_code == 200
+    content, media_type = saved["logo"]
+    assert media_type == kept_as
+    assert Image.open(io.BytesIO(content)).mode == mode
