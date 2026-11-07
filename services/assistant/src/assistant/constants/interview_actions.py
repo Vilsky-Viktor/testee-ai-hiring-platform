@@ -214,7 +214,9 @@ INTERVIEW_ACTIONS = {
     "revoke_candidate": interview_action(
         "DELETE",
         "/interviews/{interview_id}/candidates/{invite_id}",
-        "Revoke a candidate's invite that hasn't been used yet.",
+        "Withdraw an unused invite (its credits come back), or erase a candidate who started or "
+        "finished, with their answers and results, for good (charged if they answered anything). "
+        "Can't be undone.",
         params=["invite_id"],
         subject=CANDIDATE_SUBJECT,
         destructive=True,

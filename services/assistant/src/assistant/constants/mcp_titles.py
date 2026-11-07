@@ -57,7 +57,7 @@ MCP_TITLES = {
     "pin_interview_note": "Pin or unpin an interview's note",
     "invite_candidate": "Invite a candidate",
     "invite_candidates": "Invite candidates",
-    "revoke_candidate": "Revoke a candidate's invite",
+    "revoke_candidate": "Withdraw an invite or erase a candidate",
     "rename_candidate": "Rename a candidate",
     "set_extra_time": "Set a candidate's extra time",
     "update_language": "Change the language",
