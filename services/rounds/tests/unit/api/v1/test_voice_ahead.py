@@ -45,7 +45,11 @@ def ahead(monkeypatch):
     async def made_ahead(row, text, language, company_text):
         made.append((text, language, company_text))
 
+    async def none_kept(texts, language):
+        return texts
+
     monkeypatch.setattr(voice_session, "made_ahead", made_ahead)
+    monkeypatch.setattr(voice_session, "not_kept", none_kept)
 
     return made
 

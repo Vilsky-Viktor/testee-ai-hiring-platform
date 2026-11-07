@@ -122,7 +122,11 @@ def test_a_voice_questions_clock_starts_once_its_reading_is_ready(
         if reading_fails:
             raise HTTPException(502, "OpenAI is down")
 
+    async def none_kept(texts, language):
+        return texts
+
     monkeypatch.setattr(voice_session, "question_clip", question_clip)
+    monkeypatch.setattr(voice_session, "not_kept", none_kept)
 
     step = asyncio.run(interview_flow.interview_step(rows[0], CANDIDATE))
 

@@ -118,6 +118,18 @@ def test_two_readings_of_one_text_at_once_keep_one_clip(run, monkeypatch):
     assert one.company_id is None
 
 
+def test_only_clips_not_kept_are_found_missing(run, monkeypatch):
+    reading(monkeypatch)
+    kept, new = f"Kept {uuid.uuid4()}", f"New {uuid.uuid4()}"
+
+    async def scenario():
+        await voice_clips.clip_for(await voice_section(), kept, "en", company_text=False)
+
+        return await voice_clips.not_kept([kept, new], "en")
+
+    assert run(scenario()) == [new]
+
+
 def test_a_clip_made_ahead_is_paid_for_once_and_found_when_its_question_opens(
     run, monkeypatch, published
 ):

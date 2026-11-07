@@ -67,9 +67,32 @@ async def cached(key: str) -> VoiceClip | None:
 
     if found is not None and found.used_at < now - timedelta(hours=CLIP_TOUCH_HOURS):
         async with Db.begin() as session:
-            await voice_clips.touch(session, found.id, now)
+            await voice_clips.touch(session, [found.id], now)
 
     return found
+
+
+async def not_kept(texts: list[str], language: str) -> list[str]:
+    """Those of `texts` with no clip kept, read in one query with no audio; the last use of the
+    ones kept brought up to date as in `cached`."""
+    now = datetime.now(UTC)
+    keys = {
+        text: clip_key(settings.speech_model, settings.speech_voice, language, text)
+        for text in texts
+    }
+
+    async with Db() as session:
+        found = await voice_clips.kept(session, list(keys.values()))
+
+    stale = [row.id for row in found if row.used_at < now - timedelta(hours=CLIP_TOUCH_HOURS)]
+
+    if stale:
+        async with Db.begin() as session:
+            await voice_clips.touch(session, stale, now)
+
+    held = {row.key for row in found}
+
+    return [text for text in texts if keys[text] not in held]
 
 
 def lock_of(key: str) -> str:
@@ -111,13 +134,9 @@ async def clip_for(row: Session, text: str, language: str, company_text: bool) -
 
 
 async def made_ahead(row: Session, text: str, language: str, company_text: bool) -> None:
-    """clip_for, ahead of time: nothing when the clip is kept or another request is reading it
-    aloud now."""
+    """clip_for, ahead of time, for a clip not kept (not_kept): nothing when another request is
+    reading it aloud now."""
     key = clip_key(settings.speech_model, settings.speech_voice, language, text)
-
-    if await cached(key) is not None:
-        return
-
     token = await redis_lock.acquire(get_redis(), lock_of(key), CLIP_LOCK_SECONDS)
 
     if token is not None:

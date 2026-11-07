@@ -13,7 +13,7 @@ from rounds.models.voice_clips import VoiceClip
 from rounds.schemas.rounds import NextQuestion
 from rounds.services.session_access import own_sections
 from rounds.services.session_titles import interview_language
-from rounds.services.voice_clips import clip_for, made_ahead
+from rounds.services.voice_clips import clip_for, made_ahead, not_kept
 
 logger = logging.getLogger(__name__)
 
@@ -49,6 +49,11 @@ async def clip_ready(row: Session, question: NextQuestion) -> None:
     if not row.voice or row.question_shown_at is not None:
         return
 
+    language = await interview_language(row)
+
+    if not await not_kept([question_script(question, language)], language):
+        return
+
     try:
         await question_clip(row, question)
     except HTTPException as error:
@@ -68,17 +73,22 @@ async def prepare_next(row: Session) -> None:
         return
 
     language = await interview_language(row)
-    ahead = [
-        made_ahead(row, saved_answer([pick], language), language, company_text=False)
+    # Whether each is the company's text.
+    texts = {
+        saved_answer([pick], language): False
         for pick in ([] if question.multi else range(len(question.options)))
-    ]
+    }
     following = next_session_question(row, after=1) or following_question(
         row, await own_sections(row)
     )
 
     if following is not None:
-        script = question_script(following, language)
-        ahead.append(made_ahead(row, script, language, company_text=True))
+        texts[question_script(following, language)] = True
+
+    ahead = [
+        made_ahead(row, text, language, company_text=texts[text])
+        for text in await not_kept(list(texts), language)
+    ]
 
     # All end before the response (no work after it); then the first failure, as one alone gave.
     failures = [

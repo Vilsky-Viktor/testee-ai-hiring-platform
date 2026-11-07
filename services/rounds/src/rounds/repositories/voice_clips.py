@@ -14,6 +14,13 @@ async def get(session: AsyncSession, key: str) -> VoiceClip | None:
     return await session.scalar(select(VoiceClip).where(VoiceClip.key == key))
 
 
+async def kept(session: AsyncSession, keys: list[str]) -> list:
+    """Which of the clips are kept, and since when unused, without loading their audio."""
+    query = select(VoiceClip.id, VoiceClip.key, VoiceClip.used_at).where(VoiceClip.key.in_(keys))
+
+    return list((await session.execute(query)).all())
+
+
 async def add(session: AsyncSession, clip: VoiceClip) -> VoiceClip:
     """Saves a new clip; when another request read the same text first, theirs is kept and
     returned (the key is unique)."""
@@ -31,8 +38,8 @@ async def add(session: AsyncSession, clip: VoiceClip) -> VoiceClip:
     return await get(session, clip.key)
 
 
-async def touch(session: AsyncSession, clip_id: uuid.UUID, now: datetime) -> None:
-    await session.execute(update(VoiceClip).where(VoiceClip.id == clip_id).values(used_at=now))
+async def touch(session: AsyncSession, clip_ids: list[uuid.UUID], now: datetime) -> None:
+    await session.execute(update(VoiceClip).where(VoiceClip.id.in_(clip_ids)).values(used_at=now))
 
 
 async def remove_for_company(sessions, company_id: uuid.UUID) -> int:
