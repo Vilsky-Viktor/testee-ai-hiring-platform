@@ -156,7 +156,7 @@ def test_an_answer_about_one_interview_gets_its_candidates_link_when_the_model_g
             "block": {
                 "kind": "link",
                 "items": [],
-                "links": [f"/companies/{COMPANY}/interviews/i1/candidates"],
+                "links": [f"/companies/{COMPANY}/interviews/i1?tab=candidates"],
                 "page": "interview_candidates",
                 "label": "Senior Backend",
             }
@@ -232,7 +232,7 @@ def test_rows_are_newest_first_with_the_page_of_all_of_them(companies):
         f"/companies/{COMPANY}/interviews/i1/candidates/c2",
         f"/companies/{COMPANY}/interviews/i1/candidates/c1",
     ]
-    assert block["all"] == f"/companies/{COMPANY}/interviews/i1/candidates"
+    assert block["all"] == f"/companies/{COMPANY}/interviews/i1?tab=candidates"
     # Kept in the same order, so the conversation shows it again as it was.
     assert block["ref"]["refs"] == [
         {"id": "c2", "interview_id": "i1"},
@@ -265,7 +265,7 @@ def test_with_all_companies_picked_the_rows_links_take_the_interviews_company(co
     )
 
     assert block["links"] == [f"/companies/{COMPANY}/interviews/i1/candidates/c1"]
-    assert block["all"] == f"/companies/{COMPANY}/interviews/i1/candidates"
+    assert block["all"] == f"/companies/{COMPANY}/interviews/i1?tab=candidates"
     assert "/interviews/i1" in companies
 
 

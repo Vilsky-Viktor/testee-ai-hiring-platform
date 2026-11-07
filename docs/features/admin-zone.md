@@ -58,7 +58,7 @@ POST       /notifications/superadmin/campaigns/from-news/{news_id}
 
 ## Questions
 
-Three tabs of its own, at `/superadmin/questions/flagged`, `/superadmin/questions/replaced` and `/superadmin/questions/patterns` (the older `/superadmin/flagged` and `/superadmin/replaced` lead there):
+Three tabs of its own, at `/superadmin/questions/flagged`, `/superadmin/questions/replaced` and `/superadmin/questions/patterns`:
 
 - **Flagged:** the flagged questions, each to fix now or dismiss. A superadmin's "Fix now" isn't counted towards the verifier's daily limit.
 - **Replaced:** the questions the verifier replaced.
@@ -90,7 +90,7 @@ It sorts by lowest pass rate or most finished first. It marks the interviews out
 
 ## Stats
 
-Two tabs of its own: **General** (`/superadmin/stats/general`, below) and **AI costs** (`/superadmin/stats/ai-costs`). The older `/superadmin/stats` opens General, and `/superadmin/ai-costs` AI costs.
+Two tabs of its own: **General** (`/superadmin/stats/general`, below) and **AI costs** (`/superadmin/stats/ai-costs`). `/superadmin/stats` opens General.
 
 General has ten numbers as cards:
 

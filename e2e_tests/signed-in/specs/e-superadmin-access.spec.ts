@@ -24,7 +24,6 @@ test("someone who isn't a superadmin finds no admin page", async ({ signInAs }) 
     "/superadmin/templates/new",
     "/superadmin/stats/general",
     "/superadmin/news",
-    "/superadmin/emails",
     "/superadmin/support",
     `/superadmin/support/users/${await uidOf(owner)}`,
     `/superadmin/support/candidates/${invite.id}`,
@@ -46,11 +45,7 @@ test("the admin zone's older addresses open their tabs' new places", async ({
   const superadmin = await signInSuperadmin()
   const moved = {
     "/superadmin/questions": "/superadmin/questions/flagged",
-    "/superadmin/flagged": "/superadmin/questions/flagged",
-    "/superadmin/replaced": "/superadmin/questions/replaced",
     "/superadmin/stats": "/superadmin/stats/general",
-    "/superadmin/ai-costs": "/superadmin/stats/ai-costs",
-    "/superadmin/emails": "/superadmin/support",
   }
 
   for (const [from, to] of Object.entries(moved)) {

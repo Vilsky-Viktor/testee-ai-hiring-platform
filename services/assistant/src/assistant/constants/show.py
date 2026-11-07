@@ -19,7 +19,7 @@ MAX_ROWS = 10
 # writes a URL), and what names the page on its button (read with the user's token).
 PAGES = {
     "interview": "/companies/{company_id}/interviews/{interview_id}",
-    "interview_candidates": "/companies/{company_id}/interviews/{interview_id}/candidates",
+    "interview_candidates": "/companies/{company_id}/interviews/{interview_id}?tab=candidates",
     "candidate": "/companies/{company_id}/interviews/{interview_id}/candidates/{candidate_id}",
     "topic": "/companies/{company_id}/interviews/{interview_id}/topics/{topic_id}",
     "company": "/companies/{company_id}/interviews",

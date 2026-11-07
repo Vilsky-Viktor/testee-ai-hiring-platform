@@ -248,9 +248,6 @@ test("superadmin suspends, lifts, renames and deletes a company from its page", 
   const invitePath = `/invite/${await inviteToken(candidate)}`
 
   const superadmin = await signInSuperadmin()
-  // The old companies tab's address leads to support.
-  await visit(superadmin, "/superadmin/companies")
-  await expect(superadmin).toHaveURL(/\/superadmin\/support$/)
   await visit(superadmin, `/superadmin/support/companies/${company.id}`)
 
   await superadmin.getByTestId("suspend").click()
