@@ -178,9 +178,9 @@ export async function addAiConnections(userId: string, names: string[]) {
       );
       await client.query(
         `INSERT INTO mcp_grants (id, user_id, client_id, client_name, redirect_host, created_at,
-           access_hash, access_expires_at, refresh_hash, refresh_expires_at)
+           access_hash, access_expires_at, refresh_hash, refresh_family, refresh_expires_at)
          VALUES (gen_random_uuid(), $1, $2, $3, 'e2e.example.com',
-           now() - make_interval(hours => $4), $5, now() + interval '1 hour', $6,
+           now() - make_interval(hours => $4), $5, now() + interval '1 hour', $6, $6,
            now() + interval '30 days')`,
         [userId, clientId, name, index, randomUUID(), randomUUID()],
       );

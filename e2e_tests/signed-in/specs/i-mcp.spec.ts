@@ -255,7 +255,7 @@ test("Allow on the consent page connects the AI app", async ({ signInAs }) => {
     )
     const code = new URL(owner.url()).searchParams.get("code") ?? ""
 
-    // The app's side: the code buys its tokens, once.
+    // The app's side: the code buys its tokens.
     const exchange = () =>
       owner.request.post(`${FRONTEND_URL}/token`, {
         form: {
@@ -272,13 +272,17 @@ test("Allow on the consent page connects the AI app", async ({ signInAs }) => {
     expect(granted.access_token).toMatch(/^tem_/)
     // Allowed with changes on (the default): everything.
     expect(granted.scope).toBe("testee")
-    expect((await exchange()).status()).toBe(400)
 
     // The user sees the app connected.
     await visit(owner, `/companies/${company.id}/integrations/ai`)
     const app = owner.getByRole("main").getByRole("listitem").filter({ hasText: name })
     await expect(app.getByRole("button")).toBeVisible()
     await shot(owner, "apps-after-allow")
+
+    // A used code tried again is refused, and ends the connection: it may have been stolen.
+    expect((await exchange()).status()).toBe(400)
+    await owner.reload()
+    await expect(owner.getByRole("main").getByRole("listitem").filter({ hasText: name })).toHaveCount(0)
   } finally {
     await deleteAiConnections(uid, [clientId])
   }
