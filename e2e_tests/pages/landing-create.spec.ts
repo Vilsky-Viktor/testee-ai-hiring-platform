@@ -204,8 +204,9 @@ test("on a 375 px phone the cards are two a row, and nothing scrolls sideways", 
 
   const cards = section.getByTestId("trust-cards").locator("li");
   await expect(cards).toHaveCount(4);
+  // Their places in the layout: each is moved by its animation as it pops in.
   const tops = await cards.evaluateAll((items) =>
-    items.map((item) => Math.round(item.getBoundingClientRect().top)),
+    (items as HTMLElement[]).map((item) => item.offsetTop),
   );
   // Two rows of two.
   expect(tops[0]).toBe(tops[1]);
