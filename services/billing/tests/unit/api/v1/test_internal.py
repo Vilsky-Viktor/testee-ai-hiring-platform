@@ -114,7 +114,17 @@ def test_accounts_exports_a_users_purchases_and_automatic_top_ups_with_a_post(cl
     automatic top-up the user turned on charges their card, so it's theirs to see too."""
 
     async def purchases_of(session, user_id):
-        return []
+        return [
+            SimpleNamespace(
+                transaction_id="txn_1",
+                owner_id="acme",
+                product="topup_50",
+                quantity=1,
+                total_minor=5000,
+                currency="EUR",
+                created_at=datetime(2026, 10, 30, 9, tzinfo=UTC),
+            )
+        ]
 
     async def of_buyer(session, buyer_id):
         return [
@@ -122,6 +132,9 @@ def test_accounts_exports_a_users_purchases_and_automatic_top_ups_with_a_post(cl
                 owner_id="acme",
                 product="topup_50",
                 threshold=500,
+                price=5000,
+                price_currency="EUR",
+                language="de",
                 subscription_id="sub_1",
                 agreed_at=datetime(2026, 10, 30, 9, tzinfo=UTC),
                 charged_at=None,
@@ -151,6 +164,9 @@ def test_accounts_exports_a_users_purchases_and_automatic_top_ups_with_a_post(cl
                 "company_id": "acme",
                 "product": "topup_50",
                 "threshold": 500,
+                "price": "5000",
+                "currency": "EUR",
+                "language": "de",
                 "started": True,
                 # When they agreed to its terms.
                 "agreed_at": "2026-10-30T09:00:00+00:00",
@@ -158,7 +174,17 @@ def test_accounts_exports_a_users_purchases_and_automatic_top_ups_with_a_post(cl
                 "last_declined_at": None,
             }
         ],
-        "purchases": [],
+        "purchases": [
+            {
+                "transaction_id": "txn_1",
+                "company_id": "acme",
+                "product": "topup_50",
+                "quantity": 1,
+                "total": "5000",
+                "currency": "EUR",
+                "at": "2026-10-30T09:00:00+00:00",
+            }
+        ],
         "ai_usage": [
             {"at": None, "action": "chat", "model": "m", "company_id": "acme", "outcome": "ok"}
         ],

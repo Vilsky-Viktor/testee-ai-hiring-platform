@@ -1,7 +1,7 @@
 import uuid
 from datetime import UTC, datetime
 
-from sqlalchemy import CheckConstraint, DateTime, ForeignKey, Index, Text, func, text
+from sqlalchemy import CheckConstraint, DateTime, ForeignKey, Index, String, Text, func, text
 from sqlalchemy.orm import Mapped, mapped_column
 from testee_common.config.constants import MAX_NOTE_LENGTH
 
@@ -11,7 +11,9 @@ from companies.models.base import Base
 class InterviewNote(Base):
     """A note a member wrote on an interview, for its team only. It goes with the interview and
     the company; a member who leaves (or deletes their account) leaves their notes behind,
-    shown as a former member's (author_member_id becomes null). An API key writes as itself."""
+    shown as a former member's (author_member_id becomes null), and their account id stays on it
+    (author_user_id), for their data export, until they delete their account. An API key writes
+    as itself."""
 
     __tablename__ = "interview_notes"
     __table_args__ = (
@@ -37,6 +39,7 @@ class InterviewNote(Base):
     author_member_id: Mapped[uuid.UUID | None] = mapped_column(
         ForeignKey("members.id", ondelete="SET NULL"), index=True
     )
+    author_user_id: Mapped[str | None] = mapped_column(String(128), index=True)
     # The API key that wrote it (the api service's), which acts as itself; None for a member's.
     author_key_id: Mapped[uuid.UUID | None]
     text: Mapped[str] = mapped_column(Text)

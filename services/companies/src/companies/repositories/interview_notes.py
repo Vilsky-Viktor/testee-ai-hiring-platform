@@ -50,13 +50,14 @@ async def get(session: AsyncSession, interview_id, note_id) -> InterviewNote | N
 
 
 async def add(
-    session: AsyncSession, interview: Interview, member_id, key_id, text: str
+    session: AsyncSession, interview: Interview, member: Member, key_id, text: str
 ) -> InterviewNote:
-    """A note by a member (`member_id`) or an API key (`key_id`)."""
+    """A note by a member, or by an API key (`key_id`) acting as one, which isn't a person."""
     note = InterviewNote(
         company_id=interview.company_id,
         interview_id=interview.id,
-        author_member_id=member_id,
+        author_member_id=member.id,
+        author_user_id=None if key_id else member.user_id,
         author_key_id=key_id,
         text=text,
     )
@@ -94,8 +95,8 @@ async def set_pinned(session: AsyncSession, interview_id, note_id, pinned: bool)
 
 
 async def authored(session: AsyncSession, user_id: str) -> list[tuple]:
-    """Every note the user wrote as a member, for their data export: (company, interview, text,
-    written, edited), oldest first."""
+    """Every note the user wrote as a member, also of companies they've left, for their data
+    export: (company, interview, text, written, edited), oldest first."""
     query = (
         select(
             Company.name,
@@ -104,11 +105,19 @@ async def authored(session: AsyncSession, user_id: str) -> list[tuple]:
             InterviewNote.created_at,
             InterviewNote.edited_at,
         )
-        .join(Member, Member.id == InterviewNote.author_member_id)
         .join(Company, Company.id == InterviewNote.company_id)
         .join(Interview, Interview.id == InterviewNote.interview_id)
-        .where(Member.user_id == user_id)
+        .where(InterviewNote.author_user_id == user_id)
         .order_by(InterviewNote.created_at)
     )
 
     return [tuple(row) for row in await session.execute(query)]
+
+
+async def forget_author(session: AsyncSession, user_id: str) -> None:
+    """A deleted account's notes stay the company's, without its id."""
+    await session.execute(
+        update(InterviewNote)
+        .where(InterviewNote.author_user_id == user_id)
+        .values(author_user_id=None)
+    )

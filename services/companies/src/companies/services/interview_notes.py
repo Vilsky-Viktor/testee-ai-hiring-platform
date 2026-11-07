@@ -150,7 +150,7 @@ async def add(
 
     async with Session.begin() as session:
         note = await interview_notes.add(
-            session, interview, member.id, actor_key(member.user_id), text
+            session, interview, member, actor_key(member.user_id), text
         )
         await audit.record_interview(
             session, interview, member.user_id, AuditAction.NOTE_ADDED, via
