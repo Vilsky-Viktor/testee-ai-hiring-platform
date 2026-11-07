@@ -20,7 +20,7 @@ One box takes whatever the complaint gives (at most 300 characters), sent in the
 - **an id:** the company, interview or candidate invite that has it,
 - **a Paddle transaction** (`txn_…`, from a receipt): the company the top-up paid into, as billing knows it,
 - **an email address,** whatever its case: the account that signs in with it (accounts asks Firebase), then the companies with a member of that address and the candidates invited at it,
-- **anything else:** the account with that id (from "copy id" in its menu or Settings) and the companies it's a member of, then companies whose name contains it; a company found both ways shows once. Only text that could be an account id (letters, digits, `-` and `_`, up to 128) is asked of library.
+- **anything else:** the account with that id (from "copy id" in its menu or Settings) and the companies it's a member of, then companies whose name contains it; a company found both ways shows once. Only text that could be an account id (letters, digits, `-` and `_`, up to 128) is asked of accounts.
 
 An account is titled by its address (by its id when it has none: a company's guest candidate). Each result opens its page, by its kind and id: an account's, a company's, an interview's or a candidate's. An id nothing has finds nothing.
 
