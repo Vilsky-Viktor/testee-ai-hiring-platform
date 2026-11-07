@@ -7,7 +7,10 @@ from testee_common.http.http import bearer
 
 from generation.repositories import generations
 
-TOKEN = issue_token("notifications", "generation", "test-secret-that-is-at-least-32-bytes")
+
+def fresh_token():
+    """Made per call: a service token lasts a minute."""
+    return issue_token("notifications", "generation", "test-secret-that-is-at-least-32-bytes")
 
 
 def test_statuses_say_who_started_each_generation_and_since_when(client, monkeypatch):
@@ -26,7 +29,7 @@ def test_statuses_say_who_started_each_generation_and_since_when(client, monkeyp
     response = client.post(
         "/internal/generations/statuses",
         json={"ids": [str(found.id), str(uuid.uuid4())]},
-        headers=bearer(TOKEN),
+        headers=bearer(fresh_token()),
     )
 
     assert response.json() == {

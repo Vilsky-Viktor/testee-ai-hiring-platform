@@ -28,8 +28,14 @@ INVITE = SimpleNamespace(
     finished_at=datetime(2026, 10, 3, 9, 20, tzinfo=UTC),
     updated_at=datetime(2026, 10, 3, 9, 20, tzinfo=UTC),
 )
-TOKEN = issue_token("api", "companies", "test-secret-that-is-at-least-32-bytes")
-HEADERS = bearer(TOKEN)
+
+
+def fresh_token():
+    """Made per call: a service token lasts a minute."""
+    return issue_token("api", "companies", "test-secret-that-is-at-least-32-bytes")
+
+
+HEADERS = bearer(fresh_token())
 BASE = f"/internal/companies/{COMPANY_ID}/interviews"
 
 

@@ -10,7 +10,11 @@ from library.repositories import feedback
 from tests.unit.api.v1.test_internal import token
 
 QUESTION_ID = uuid.uuid4()
-AUTH = bearer(token())
+
+
+def fresh_auth():
+    """Made per call: a service token lasts a minute."""
+    return bearer(token())
 
 
 @pytest.fixture(autouse=True)
@@ -44,12 +48,12 @@ def test_a_candidate_rates_a_question_reads_it_back_and_takes_it_back(client, mo
     monkeypatch.setattr("library.services.question_feedback.review", fake_review)
     url = f"/internal/questions/{QUESTION_ID}/rating"
 
-    empty = client.get(url, params={"user_id": "ann"}, headers=AUTH)
-    put = client.put(url, json={"user_id": "ann", "value": 1}, headers=AUTH)
-    again = client.put(url, json={"user_id": "ann", "value": -1}, headers=AUTH)
-    saved = client.get(url, params={"user_id": "ann"}, headers=AUTH)
-    taken_back = client.delete(url, params={"user_id": "ann"}, headers=AUTH)
-    after = client.get(url, params={"user_id": "ann"}, headers=AUTH)
+    empty = client.get(url, params={"user_id": "ann"}, headers=fresh_auth())
+    put = client.put(url, json={"user_id": "ann", "value": 1}, headers=fresh_auth())
+    again = client.put(url, json={"user_id": "ann", "value": -1}, headers=fresh_auth())
+    saved = client.get(url, params={"user_id": "ann"}, headers=fresh_auth())
+    taken_back = client.delete(url, params={"user_id": "ann"}, headers=fresh_auth())
+    after = client.get(url, params={"user_id": "ann"}, headers=fresh_auth())
 
     assert empty.json() == {"value": None}
     assert (put.status_code, again.status_code, taken_back.status_code) == (204, 204, 204)
@@ -79,10 +83,10 @@ def test_a_users_ratings_are_limited_a_day(client, monkeypatch, redis, published
 
     for _ in range(allowed):
         url = f"/internal/questions/{uuid.uuid4()}/rating"
-        assert client.put(url, json=body, headers=AUTH).status_code == 204
+        assert client.put(url, json=body, headers=fresh_auth()).status_code == 204
 
     url = f"/internal/questions/{uuid.uuid4()}/rating"
-    assert client.put(url, json=body, headers=AUTH).status_code == 429
+    assert client.put(url, json=body, headers=fresh_auth()).status_code == 429
     assert [(event, data["limit"], data["user_id"]) for event, data in published] == [
         (LIMIT_HIT, "RATINGS_PER_DAY", "voter")
     ]

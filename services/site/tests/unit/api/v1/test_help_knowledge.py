@@ -12,7 +12,13 @@ from site_content.services.help import guide_limits
 from tests.unit.api.v1.test_help import CATALOG, fake_catalog
 
 SECRET = "test-secret-that-is-at-least-32-bytes"
-FROM_ASSISTANT = {"Authorization": "Bearer " + issue_token("assistant", "site", SECRET)}
+
+
+def fresh_from_assistant():
+    """Made per call: a service token lasts a minute."""
+    return {"Authorization": "Bearer " + issue_token("assistant", "site", SECRET)}
+
+
 URL = "/internal/help/knowledge"
 
 
@@ -22,7 +28,7 @@ def test_the_help_chat_reads_the_platform_guide_in_english_with_the_visitors_pri
     asked = []
     monkeypatch.setattr("site_content.services.help.billing.catalog", fake_catalog(CATALOG, asked))
 
-    response = client.get(URL, params={"country": "DE"}, headers=FROM_ASSISTANT)
+    response = client.get(URL, params={"country": "DE"}, headers=fresh_from_assistant())
     found = response.json()
 
     assert response.status_code == 200
@@ -48,10 +54,13 @@ def test_the_guide_of_the_page_asked_on_comes_in_english_and_an_unknown_page_has
     monkeypatch.setattr("site_content.services.help.billing.catalog", fake_catalog(CATALOG))
     guide = GUIDES["en"]["pricing"]
 
-    pricing = client.get(URL, params={"page": "pricing"}, headers=FROM_ASSISTANT).json()
-    unknown = client.get(URL, params={"page": "superadmin"}, headers=FROM_ASSISTANT).json()
+    pricing = client.get(URL, params={"page": "pricing"}, headers=fresh_from_assistant()).json()
+    unknown = client.get(URL, params={"page": "superadmin"}, headers=fresh_from_assistant()).json()
 
     assert pricing["page_guide"].startswith(guide["title"])
     assert all(item in pricing["page_guide"] for item in guide["actions"] + guide["tips"])
     assert unknown["page_guide"] is None
-    assert client.get(URL, params={"page": "x" * 100}, headers=FROM_ASSISTANT).status_code == 422
+    assert (
+        client.get(URL, params={"page": "x" * 100}, headers=fresh_from_assistant()).status_code
+        == 422
+    )

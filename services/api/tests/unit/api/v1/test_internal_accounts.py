@@ -3,10 +3,13 @@ from testee_common.auth.service_auth import issue_token
 
 from api.repositories import keys, webhook_retries, webhooks
 
-HEADERS = {
-    "Authorization": "Bearer "
-    + issue_token("accounts", "api", "test-secret-that-is-at-least-32-bytes")
-}
+
+def auth() -> dict:
+    """Made per call: a service token lasts a minute."""
+    return {
+        "Authorization": "Bearer "
+        + issue_token("accounts", "api", "test-secret-that-is-at-least-32-bytes")
+    }
 
 
 async def nothing(session, user_id):
@@ -36,7 +39,7 @@ def test_a_deleted_account_leaves_its_keys_and_web_hooks_takes_waiting_results_a
         json=push("user.deleted", {"user_id": "ann", "email": "ann@example.com"}),
     )
     exported = client.post(
-        "/internal/users/ann/export", json={"email": "ann@example.com"}, headers=HEADERS
+        "/internal/users/ann/export", json={"email": "ann@example.com"}, headers=auth()
     )
 
     assert deleted.status_code == 204

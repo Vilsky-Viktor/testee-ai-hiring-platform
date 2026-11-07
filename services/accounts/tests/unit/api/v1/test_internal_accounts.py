@@ -10,7 +10,12 @@ from testee_common.http.http import bearer
 from accounts.constants.emails import FIREBASE_LOOKUP_LIMIT
 from accounts.core.security import service_token
 
-AUTH = bearer(service_token("accounts"))
+
+def auth() -> dict:
+    """Made per call: a service token lasts a minute."""
+    return bearer(service_token("accounts"))
+
+
 ANN = SimpleNamespace(
     uid="ann",
     email="ann@example.com",
@@ -51,10 +56,10 @@ def firebase(monkeypatch):
 
 
 def test_an_account_by_its_id_with_its_address_and_when_it_was_made(client):
-    response = client.get("/internal/accounts/ann", headers=AUTH)
+    response = client.get("/internal/accounts/ann", headers=auth())
 
     assert (response.status_code, response.json()) == (200, FOUND)
-    assert client.get("/internal/accounts/guest-1", headers=AUTH).json() == {
+    assert client.get("/internal/accounts/guest-1", headers=auth()).json() == {
         "user_id": "guest-1",
         "email": None,
         "created_at": None,
@@ -63,14 +68,16 @@ def test_an_account_by_its_id_with_its_address_and_when_it_was_made(client):
 
 @pytest.mark.parametrize("user_id", ["gone", "x" * 200])
 def test_an_id_without_an_account_is_not_found(client, user_id):
-    assert client.get(f"/internal/accounts/{user_id}", headers=AUTH).status_code == 404
+    assert client.get(f"/internal/accounts/{user_id}", headers=auth()).status_code == 404
 
 
 def test_an_account_by_its_address_whatever_its_case(client, firebase):
     response = client.post(
-        "/internal/accounts/lookup", json={"email": " Ann@Example.com "}, headers=AUTH
+        "/internal/accounts/lookup", json={"email": " Ann@Example.com "}, headers=auth()
     )
-    gone = client.post("/internal/accounts/lookup", json={"email": "zoe@example.com"}, headers=AUTH)
+    gone = client.post(
+        "/internal/accounts/lookup", json={"email": "zoe@example.com"}, headers=auth()
+    )
 
     assert (response.status_code, response.json()) == (200, FOUND)
     assert gone.status_code == 404
@@ -92,7 +99,7 @@ def test_profiles_give_each_accounts_name_or_email_and_leave_out_those_gone(clie
     monkeypatch.setattr(firebase_auth, "get_users", get_users)
 
     response = client.post(
-        "/internal/accounts/profiles", json={"user_ids": ["ann", "bob", "gone"]}, headers=AUTH
+        "/internal/accounts/profiles", json={"user_ids": ["ann", "bob", "gone"]}, headers=auth()
     )
 
     assert response.json() == {
@@ -112,6 +119,6 @@ def test_profiles_of_no_ids_ask_firebase_nothing_and_of_too_many_are_refused(cli
     url = "/internal/accounts/profiles"
     too_many = [f"user-{index}" for index in range(FIREBASE_LOOKUP_LIMIT + 1)]
 
-    assert client.post(url, json={"user_ids": []}, headers=AUTH).json() == {"profiles": []}
-    assert client.post(url, json={"user_ids": too_many}, headers=AUTH).status_code == 422
+    assert client.post(url, json={"user_ids": []}, headers=auth()).json() == {"profiles": []}
+    assert client.post(url, json={"user_ids": too_many}, headers=auth()).status_code == 422
     assert client.post(url, json={"user_ids": ["ann"]}).status_code == 401

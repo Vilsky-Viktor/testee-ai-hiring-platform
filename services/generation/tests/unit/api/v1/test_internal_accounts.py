@@ -2,10 +2,13 @@ from testee_common.auth.service_auth import issue_token
 
 from generation.repositories import accounts
 
-HEADERS = {
-    "Authorization": "Bearer "
-    + issue_token("library", "generation", "test-secret-that-is-at-least-32-bytes")
-}
+
+def fresh_headers():
+    """Made per call: a service token lasts a minute."""
+    return {
+        "Authorization": "Bearer "
+        + issue_token("library", "generation", "test-secret-that-is-at-least-32-bytes")
+    }
 
 
 def test_library_exports_a_users_generations_with_a_post(client, monkeypatch):
@@ -14,6 +17,6 @@ def test_library_exports_a_users_generations_with_a_post(client, monkeypatch):
 
     monkeypatch.setattr(accounts, "export", export)
 
-    response = client.post("/internal/users/ann/export", headers=HEADERS)
+    response = client.post("/internal/users/ann/export", headers=fresh_headers())
 
     assert response.json() == {"generations": [{"owner": "ann"}]}

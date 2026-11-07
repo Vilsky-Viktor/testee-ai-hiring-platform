@@ -7,8 +7,13 @@ from testee_common.http.http import bearer
 
 from companies.repositories import email_reminders
 
-TOKEN = issue_token("notifications", "companies", "test-secret-that-is-at-least-32-bytes")
-HEADERS = bearer(TOKEN)
+
+def fresh_token():
+    """Made per call: a service token lasts a minute."""
+    return issue_token("notifications", "companies", "test-secret-that-is-at-least-32-bytes")
+
+
+HEADERS = bearer(fresh_token())
 COMPANY_ID = uuid.uuid4()
 
 

@@ -8,7 +8,10 @@ from testee_common.http.http import bearer
 
 from site_content.services import accounts
 
-FROM_ACCOUNTS = bearer(issue_token("accounts", "site", "test-secret-that-is-at-least-32-bytes"))
+
+def fresh_from_accounts():
+    """Made per call: a service token lasts a minute."""
+    return bearer(issue_token("accounts", "site", "test-secret-that-is-at-least-32-bytes"))
 
 
 def test_a_deleted_account_takes_its_contact_messages_by_email(client, monkeypatch):
@@ -35,7 +38,9 @@ def test_a_users_export_holds_their_contact_messages(client, monkeypatch):
     monkeypatch.setattr(accounts, "export_user", export)
 
     response = client.post(
-        "/internal/users/u1/export", json={"email": "ann@example.com"}, headers=FROM_ACCOUNTS
+        "/internal/users/u1/export",
+        json={"email": "ann@example.com"},
+        headers=fresh_from_accounts(),
     )
 
     assert response.json() == {

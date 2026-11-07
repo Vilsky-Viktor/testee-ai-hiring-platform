@@ -7,11 +7,15 @@ from tests.unit.api_keys import KEY
 from tests.unit.conftest import COMPANY
 
 SECRET = "test-secret-that-is-at-least-32-bytes"
-HEADERS = {"Authorization": "Bearer " + issue_token("assistant", "api", SECRET)}
 
 
-def verify(client, raw=KEY, headers=HEADERS):
-    return client.post("/internal/keys/verify", json={"key": raw}, headers=headers)
+def auth() -> dict:
+    """Made per call: a service token lasts a minute."""
+    return {"Authorization": "Bearer " + issue_token("assistant", "api", SECRET)}
+
+
+def verify(client, raw=KEY, headers=None):
+    return client.post("/internal/keys/verify", json={"key": raw}, headers=headers or auth())
 
 
 def test_a_working_key_answers_its_company_and_permissions_never_its_maker(

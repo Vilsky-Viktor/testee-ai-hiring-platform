@@ -2,10 +2,13 @@ from testee_common.auth.service_auth import issue_token
 
 from rounds.repositories import accounts, open_to_offers
 
-HEADERS = {
-    "Authorization": "Bearer "
-    + issue_token("library", "rounds", "test-secret-that-is-at-least-32-bytes")
-}
+
+def fresh_headers():
+    """Made per call: a service token lasts a minute."""
+    return {
+        "Authorization": "Bearer "
+        + issue_token("library", "rounds", "test-secret-that-is-at-least-32-bytes")
+    }
 
 
 def test_library_exports_a_users_sessions_with_a_post(client, monkeypatch):
@@ -28,7 +31,7 @@ def test_library_exports_a_users_sessions_with_a_post(client, monkeypatch):
     monkeypatch.setattr(open_to_offers, "get", not_open)
     monkeypatch.setattr(open_to_offers, "consents", no_consents)
 
-    response = client.post("/internal/users/ann/export", headers=HEADERS)
+    response = client.post("/internal/users/ann/export", headers=fresh_headers())
 
     assert asked == ["ann", "ann", "ann"]
     assert response.json() == {

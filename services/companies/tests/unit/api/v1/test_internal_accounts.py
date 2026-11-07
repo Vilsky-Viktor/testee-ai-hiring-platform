@@ -5,10 +5,16 @@ from companies.repositories import accounts, companies
 from companies.services import accounts as account_service
 
 URL = "/internal/users/ann/companies"
-HEADERS = {
-    "Authorization": "Bearer "
-    + issue_token("accounts", "companies", "test-secret-that-is-at-least-32-bytes")
-}
+
+
+def fresh_headers():
+    """Made per call: a service token lasts a minute."""
+    return {
+        "Authorization": "Bearer "
+        + issue_token("accounts", "companies", "test-secret-that-is-at-least-32-bytes")
+    }
+
+
 BODY = {"email": "ann@example.com"}
 
 
@@ -48,8 +54,8 @@ def test_deleting_and_exporting_an_account_read_the_email_from_the_body(client, 
     monkeypatch.setattr(account_service, "delete_user", delete_user)
     monkeypatch.setattr(accounts, "export", export)
 
-    deleted = client.request("DELETE", "/internal/users/ann", json=BODY, headers=HEADERS)
-    exported = client.post("/internal/users/ann/export", json=BODY, headers=HEADERS)
+    deleted = client.request("DELETE", "/internal/users/ann", json=BODY, headers=fresh_headers())
+    exported = client.post("/internal/users/ann/export", json=BODY, headers=fresh_headers())
 
     assert deleted.status_code == 204
     assert exported.json() == {"company_memberships": []}

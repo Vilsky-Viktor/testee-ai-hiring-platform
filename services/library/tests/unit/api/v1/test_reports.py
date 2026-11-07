@@ -10,7 +10,11 @@ from library.repositories import bank, feedback
 from tests.unit.api.v1.test_internal import token
 
 QUESTION_ID = uuid.uuid4()
-AUTH = bearer(token())
+
+
+def fresh_auth():
+    """Made per call: a service token lasts a minute."""
+    return bearer(token())
 
 
 @pytest.fixture(autouse=True)
@@ -62,14 +66,14 @@ def test_a_candidates_second_report_is_rejected(client, monkeypatch, left_bank):
     url = f"/internal/questions/{QUESTION_ID}/reports"
     body = {"user_id": "ann", "reason": "unclear"}
 
-    assert client.get(f"{url}/mine", params={"user_id": "ann"}, headers=AUTH).json() == {
+    assert client.get(f"{url}/mine", params={"user_id": "ann"}, headers=fresh_auth()).json() == {
         "reported": False
     }
-    assert client.post(url, json=body, headers=AUTH).status_code == 201
-    assert client.post(url, json=body, headers=AUTH).status_code == 409
+    assert client.post(url, json=body, headers=fresh_auth()).status_code == 201
+    assert client.post(url, json=body, headers=fresh_auth()).status_code == 409
     # Reported, it left the shared bank once; the refused second report changed nothing.
     assert left_bank == [QUESTION_ID]
-    assert client.get(f"{url}/mine", params={"user_id": "ann"}, headers=AUTH).json() == {
+    assert client.get(f"{url}/mine", params={"user_id": "ann"}, headers=fresh_auth()).json() == {
         "reported": True
     }
 
@@ -91,7 +95,7 @@ def test_a_question_reported_as_hard_to_read_is_saved_with_that_reason(client, m
     url = f"/internal/questions/{QUESTION_ID}/reports"
     body = {"user_id": "ann", "reason": "hard_to_read"}
 
-    assert client.post(url, json=body, headers=AUTH).status_code == 201
+    assert client.post(url, json=body, headers=fresh_auth()).status_code == 201
     assert saved == [(QUESTION_ID, "ann", "hard_to_read")]
 
 
@@ -116,10 +120,10 @@ def test_a_users_reports_are_limited_a_day(client, monkeypatch, redis, published
 
     for _ in range(allowed):
         url = f"/internal/questions/{uuid.uuid4()}/reports"
-        assert client.post(url, json=body, headers=AUTH).status_code == 201
+        assert client.post(url, json=body, headers=fresh_auth()).status_code == 201
 
     url = f"/internal/questions/{uuid.uuid4()}/reports"
-    assert client.post(url, json=body, headers=AUTH).status_code == 429
+    assert client.post(url, json=body, headers=fresh_auth()).status_code == 429
     assert [(event, data["limit"], data["user_id"]) for event, data in published] == [
         (LIMIT_HIT, "REPORTS_PER_DAY", "spammer")
     ]

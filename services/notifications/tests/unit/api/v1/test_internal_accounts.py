@@ -11,9 +11,12 @@ from notifications.repositories import (
     slack,
 )
 
-HEADERS = {
-    "Authorization": f"Bearer {issue_token('library', 'notifications', 'test-secret-that-is-at-least-32-bytes')}"
-}
+
+def fresh_headers():
+    """Made per call: a service token lasts a minute."""
+    return {
+        "Authorization": f"Bearer {issue_token('library', 'notifications', 'test-secret-that-is-at-least-32-bytes')}"
+    }
 
 
 def test_a_deleted_account_takes_their_notifications_and_sent_log_and_forgets_their_channels(
@@ -98,7 +101,7 @@ def test_an_export_holds_the_slack_channels_they_connected(client, monkeypatch):
     monkeypatch.setattr(sent_emails, "of_user", nothing)
     monkeypatch.setattr(bulk_recipients, "of_user", nothing)
 
-    response = client.post("/internal/users/u1/export", headers=HEADERS)
+    response = client.post("/internal/users/u1/export", headers=fresh_headers())
 
     assert response.json() == {
         "notifications": [],

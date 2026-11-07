@@ -7,7 +7,10 @@ from accounts.constants.emails import DEFAULTS
 from accounts.repositories import emails
 from tests.unit.tokens import token
 
-HEADERS = bearer(token())
+
+def auth() -> dict:
+    """Made per call: a service token lasts a minute."""
+    return bearer(token())
 
 
 def account(uid, email, language=None, disabled=False):
@@ -40,7 +43,7 @@ def test_recipients_have_their_address_language_and_preferences(client, monkeypa
     response = client.post(
         "/internal/users/email-recipients",
         json={"user_ids": ["ann", "bob", "off", "phone", "gone"]},
-        headers=HEADERS,
+        headers=auth(),
     )
     found = response.json()["recipients"]
 
@@ -70,7 +73,7 @@ def test_firebase_is_asked_at_most_a_hundred_at_a_time(client, monkeypatch):
     client.post(
         "/internal/users/email-recipients",
         json={"user_ids": [f"u{index}" for index in range(250)]},
-        headers=HEADERS,
+        headers=auth(),
     )
 
     assert sizes == [100, 100, 50]
@@ -88,8 +91,8 @@ def test_every_account_is_listed_a_page_at_a_time_for_a_notice_to_everyone(clien
 
     monkeypatch.setattr(firebase_auth, "list_users", list_users)
 
-    first = client.get("/internal/users/ids", params={"limit": 2}, headers=HEADERS)
-    rest = client.get("/internal/users/ids", params={"after": "bob", "limit": 2}, headers=HEADERS)
+    first = client.get("/internal/users/ids", params={"limit": 2}, headers=auth())
+    rest = client.get("/internal/users/ids", params={"after": "bob", "limit": 2}, headers=auth())
 
     assert first.json() == {"user_ids": ["ann", "bob"]}
     assert rest.json() == {"user_ids": ["cy"]}
@@ -108,16 +111,16 @@ def test_a_campaign_asks_only_for_the_users_with_its_setting_on(client, monkeypa
 
     monkeypatch.setattr(emails, "ids_with", ids_with)
 
-    response = client.get("/internal/users/ids", params={"setting": "promotions"}, headers=HEADERS)
+    response = client.get("/internal/users/ids", params={"setting": "promotions"}, headers=auth())
     later = client.get(
-        "/internal/users/ids", params={"setting": "promotions", "after": "ann"}, headers=HEADERS
+        "/internal/users/ids", params={"setting": "promotions", "after": "ann"}, headers=auth()
     )
 
     assert response.json() == later.json() == {"user_ids": ["ann"]}
     # A page at a time, after the last id of the one before.
     assert asked == [("promotions", "", 5000), ("promotions", "ann", 5000)]
     # Only the marketing settings, which are off until the user turns them on.
-    assert client.get("/internal/users/ids?setting=reminders", headers=HEADERS).status_code == 422
+    assert client.get("/internal/users/ids?setting=reminders", headers=auth()).status_code == 422
 
 
 def test_of_some_users_notifications_learns_who_has_a_campaigns_setting_on(client, monkeypatch):
@@ -131,13 +134,13 @@ def test_of_some_users_notifications_learns_who_has_a_campaigns_setting_on(clien
     monkeypatch.setattr(emails, "having", having)
     body = {"user_ids": ["ann", "bob"], "setting": "promotions"}
 
-    response = client.post("/internal/users/with-setting", json=body, headers=HEADERS)
+    response = client.post("/internal/users/with-setting", json=body, headers=auth())
 
     assert response.json() == {"user_ids": ["ann"]}
     assert asked == [("promotions", ["ann", "bob"])]
     # Only a campaign's settings, and only for a service.
     wrong = {**body, "setting": "reminders"}
     assert (
-        client.post("/internal/users/with-setting", json=wrong, headers=HEADERS).status_code == 422
+        client.post("/internal/users/with-setting", json=wrong, headers=auth()).status_code == 422
     )
     assert client.post("/internal/users/with-setting", json=body).status_code in (401, 403)

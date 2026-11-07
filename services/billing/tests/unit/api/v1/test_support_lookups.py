@@ -10,7 +10,12 @@ from billing.constants.products import MAX_BUYER_PURCHASES
 from billing.core.security import service_token
 from billing.repositories import ledger, purchases
 
-AUTH = bearer(service_token("billing"))
+
+def fresh_auth():
+    """Made per call: a service token lasts a minute."""
+    return bearer(service_token("billing"))
+
+
 NOW = datetime(2026, 10, 10, 12, tzinfo=UTC)
 
 
@@ -26,7 +31,7 @@ def test_a_persons_top_ups_newest_first(client, monkeypatch):
         return [row] if user_id == "ann" else []
 
     monkeypatch.setattr(purchases, "bought_by", bought_by)
-    response = client.get("/internal/purchases", params={"buyer_id": "ann"}, headers=AUTH)
+    response = client.get("/internal/purchases", params={"buyer_id": "ann"}, headers=fresh_auth())
 
     assert response.json() == [
         {
@@ -37,7 +42,10 @@ def test_a_persons_top_ups_newest_first(client, monkeypatch):
             "created_at": "2026-10-10T12:00:00Z",
         }
     ]
-    assert client.get("/internal/purchases", params={"buyer_id": "bob"}, headers=AUTH).json() == []
+    assert (
+        client.get("/internal/purchases", params={"buyer_id": "bob"}, headers=fresh_auth()).json()
+        == []
+    )
     assert asked == [("ann", MAX_BUYER_PURCHASES), ("bob", MAX_BUYER_PURCHASES)]
 
 
@@ -46,8 +54,10 @@ def test_a_candidates_credits_by_the_key_companies_gave_them(client, monkeypatch
         return "charged" if key == "candidate:interview-1:abc" else None
 
     monkeypatch.setattr(ledger, "hold_status", hold_status)
-    found = client.get("/internal/candidates/hold", params={"key": "interview-1:abc"}, headers=AUTH)
-    missing = client.get("/internal/candidates/hold", params={"key": "other"}, headers=AUTH)
+    found = client.get(
+        "/internal/candidates/hold", params={"key": "interview-1:abc"}, headers=fresh_auth()
+    )
+    missing = client.get("/internal/candidates/hold", params={"key": "other"}, headers=fresh_auth())
 
     assert (found.status_code, found.json()) == (200, {"status": "charged"})
     assert missing.status_code == 404

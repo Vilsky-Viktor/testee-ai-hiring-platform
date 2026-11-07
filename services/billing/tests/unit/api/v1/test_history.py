@@ -12,7 +12,12 @@ from billing.models.billing import Entry
 from billing.repositories import history, purchases
 from billing.services import refund_offers
 
-AUTH = bearer(service_token("billing"))
+
+def fresh_auth():
+    """Made per call: a service token lasts a minute."""
+    return bearer(service_token("billing"))
+
+
 NOW = datetime(2026, 10, 10, 12, tzinfo=UTC)
 
 
@@ -84,7 +89,7 @@ def test_the_history_route_lists_a_page_with_the_money_and_transaction(client, m
     monkeypatch.setattr(refund_offers, "states", states)
 
     response = client.get(
-        "/internal/companies/acme/history", params={"offset": 20, "limit": 10}, headers=AUTH
+        "/internal/companies/acme/history", params={"offset": 20, "limit": 10}, headers=fresh_auth()
     )
     topup, candidate = response.json()
 
@@ -124,7 +129,9 @@ def invoices(monkeypatch):
 
 def test_a_companys_own_top_up_has_an_invoice(client, invoices):
     response = client.get(
-        "/internal/companies/acme/invoice", params={"transaction_id": "txn_01"}, headers=AUTH
+        "/internal/companies/acme/invoice",
+        params={"transaction_id": "txn_01"},
+        headers=fresh_auth(),
     )
 
     assert response.json() == {"url": "https://paddle.test/txn_01.pdf"}
@@ -132,7 +139,9 @@ def test_a_companys_own_top_up_has_an_invoice(client, invoices):
 
 def test_another_companys_transaction_is_not_found_and_paddle_isnt_asked(client, invoices):
     response = client.get(
-        "/internal/companies/evil/invoice", params={"transaction_id": "txn_01"}, headers=AUTH
+        "/internal/companies/evil/invoice",
+        params={"transaction_id": "txn_01"},
+        headers=fresh_auth(),
     )
 
     assert response.status_code == 404
@@ -145,8 +154,8 @@ def test_a_top_ups_transaction_says_whose_wallet_it_paid_into(client, monkeypatc
 
     monkeypatch.setattr(purchases, "for_transaction", for_transaction)
 
-    found = client.get("/internal/purchases/txn_01", headers=AUTH)
-    unknown = client.get("/internal/purchases/txn_02", headers=AUTH)
+    found = client.get("/internal/purchases/txn_01", headers=fresh_auth())
+    unknown = client.get("/internal/purchases/txn_02", headers=fresh_auth())
 
     assert found.json() == {"owner_type": "company", "owner_id": "acme"}
     assert unknown.status_code == 404

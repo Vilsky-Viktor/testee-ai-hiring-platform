@@ -9,7 +9,7 @@ import pytest
 
 from billing.constants.currencies import Currency
 from billing.repositories import auto_top_ups
-from tests.unit.api.v1.test_internal import AUTH
+from tests.unit.api.v1.test_internal import fresh_auth
 
 COMPANY_ID = str(uuid.uuid4())
 COMPANY = f"/companies/{COMPANY_ID}"
@@ -73,7 +73,7 @@ def test_a_new_accounts_currency_is_saved_only_with_a_country(
 ):
     params = {"country": country} if country else {}
 
-    response = client.post("/internal/users/ann/currency", params=params, headers=AUTH)
+    response = client.post("/internal/users/ann/currency", params=params, headers=fresh_auth())
 
     assert response.status_code == 204
     assert saved_currencies.get(("user", "ann")) == kept
@@ -110,7 +110,9 @@ def test_a_company_is_welcomed_with_or_without_its_owners_country(
 
     for company, country in (("acme", None), ("beta", "IE")):
         body = {"owner_email": "ann@example.com", **({"country": country} if country else {})}
-        response = client.post(f"/internal/companies/{company}/welcome", json=body, headers=AUTH)
+        response = client.post(
+            f"/internal/companies/{company}/welcome", json=body, headers=fresh_auth()
+        )
         assert response.status_code == 204
 
     assert saved_currencies == {("company", "beta"): "EUR"}
