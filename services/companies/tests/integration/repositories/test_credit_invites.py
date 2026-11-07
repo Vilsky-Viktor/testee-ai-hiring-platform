@@ -88,3 +88,17 @@ def test_history_keys_find_only_the_companys_own_invites(run):
 
 def test_no_keys_ask_nothing(run):
     assert run(transaction(credit_invites.by_hold_keys, uuid.uuid4(), [])) == {}
+
+
+def test_a_key_is_held_by_any_companys_invite_that_isnt_removed(run):
+    async def scenario():
+        company = await factories.company(f"Acme {uuid.uuid4()}", "owner", "owner@example.com")
+        found = await interview_of(company, "Backend")
+        await invite(found, "ann@example.com", hold_key="held-open")
+        await invite(found, "ben@example.com", InviteStatus.FINISHED, "held-done")
+        await invite(found, "cleo@example.com", InviteStatus.DELETED, "held-removed")
+        keys = ["held-open", "held-done", "held-removed", "held-nowhere"]
+
+        return await transaction(credit_invites.held_keys, keys)
+
+    assert run(scenario()) == {"held-open", "held-done"}

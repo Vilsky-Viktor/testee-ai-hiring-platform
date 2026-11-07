@@ -404,6 +404,69 @@
     ]
    }
   },
+  "/internal/candidates/holds/open": {
+   "get": {
+    "tags": [
+     "internal"
+    ],
+    "summary": "Open Candidate Holds",
+    "description": "A page of candidates' open holds made before `before`, their keys in order, past `after`,\nfor companies to find those no invite holds.",
+    "operationId": "open_candidate_holds_internal_candidates_holds_open_get",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "before",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "date-time",
+       "title": "Before"
+      }
+     },
+     {
+      "name": "after",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "string",
+       "default": "",
+       "title": "After"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         },
+         "title": "Response Open Candidate Holds Internal Candidates Holds Open Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/internal/companies/{company_id}/welcome": {
    "post": {
     "tags": [

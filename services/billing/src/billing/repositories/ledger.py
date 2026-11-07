@@ -157,6 +157,26 @@ async def hold_status(session: AsyncSession, key: str) -> str | None:
     return await session.scalar(select(Hold.status).where(Hold.key == key))
 
 
+async def open_candidate_holds(
+    session: AsyncSession, before: datetime, after: str, limit: int
+) -> list[str]:
+    """Up to `limit` keys of candidates' holds still open that were made before `before`, in key
+    order, past `after`."""
+    query = (
+        select(Hold.key)
+        .where(
+            Hold.reason == Reason.CANDIDATE,
+            Hold.status == HoldStatus.OPEN,
+            Hold.created_at < before,
+            Hold.key > after,
+        )
+        .order_by(Hold.key)
+        .limit(limit)
+    )
+
+    return list(await session.scalars(query))
+
+
 async def open_hold(session: AsyncSession, key: str) -> Hold | None:
     """The open hold, locked. Its wallet is locked first, as everywhere else (reserve, deleting
     a company), so two transactions never wait on each other's lock."""

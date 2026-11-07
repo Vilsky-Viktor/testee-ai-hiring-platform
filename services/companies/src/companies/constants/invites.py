@@ -1,3 +1,4 @@
+from datetime import timedelta
 from enum import StrEnum
 from http import HTTPStatus
 
@@ -112,6 +113,9 @@ EXPIRIES_PER_BATCH = 200
 # A deleted interview's unfinished invites are settled (charged or given back) this many at a
 # time, read by key.
 SETTLE_BATCH = 200
+# Credits set aside for an invite that's never saved: an invite saves within seconds, so a hold
+# this old with no invite has lost it.
+ORPHAN_HOLD_AGE = timedelta(hours=1)
 TOO_MANY_COMPANIES = "You already own as many companies as one person may: {limit}."
 # Company names are unique across testee, ignoring case, and short enough for a heading.
 MAX_COMPANY_NAME_LENGTH = 45

@@ -7186,6 +7186,31 @@
     }
    }
   },
+  "/internal/schedules/orphan-holds": {
+   "post": {
+    "tags": [
+     "schedules"
+    ],
+    "summary": "Orphan Holds",
+    "description": "Daily, from Cloud Scheduler: credits set aside for an invite that was never saved come\nback; any at all is a drift worth a look.",
+    "operationId": "orphan_holds_internal_schedules_orphan_holds_post",
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/internal/schedules/invite-reminders": {
    "post": {
     "tags": [

@@ -60,3 +60,12 @@ async def by_hold_keys(
     )
 
     return {key: (invite, interview) for key, invite, interview in await session.execute(query)}
+
+
+async def held_keys(session: AsyncSession, keys: list[str]) -> set[str]:
+    """Which of these credit keys belong to an invite that isn't removed, in any company."""
+    query = select(HOLD_KEY).where(
+        CandidateInvite.status != InviteStatus.DELETED, HOLD_KEY.in_(keys)
+    )
+
+    return set(await session.scalars(query))

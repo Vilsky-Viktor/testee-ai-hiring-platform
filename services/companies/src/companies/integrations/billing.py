@@ -268,24 +268,6 @@ async def turn_off_auto_top_up(company_id: UUID, buyer_id: str | None = None) ->
     response.raise_for_status()
 
 
-async def candidate_hold(key: str) -> str | None:
-    """Whether the credits of the invite with that key are open, charged or released; None
-    when none were held."""
-    response = await http.get_client().get(
-        f"{settings.billing_url}/internal/candidates/hold",
-        params={"key": key},
-        headers=_headers(),
-        timeout=READ_TIMEOUT_SECONDS,
-    )
-
-    if response.status_code == status.HTTP_404_NOT_FOUND:
-        return None
-
-    response.raise_for_status()
-
-    return response.json()["status"]
-
-
 async def adjust_company(company_id: UUID, amount: int, note: str, key: UUID) -> None:
     """A superadmin's adjustment of the company's credits, once per key. Billing's refusals
     reach the superadmin unchanged: one that would take the available balance below zero (409),

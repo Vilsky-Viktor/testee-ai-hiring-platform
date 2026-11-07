@@ -10,7 +10,7 @@ import httpx
 import pytest
 from testee_common.http import http
 
-from companies.integrations import accounts, billing, billing_purchases
+from companies.integrations import accounts, billing, billing_holds, billing_purchases
 from companies.models.companies import Company, Member
 from companies.repositories import companies, members
 
@@ -168,8 +168,8 @@ def test_an_address_is_looked_up_in_the_body(billing_answers):
 def test_a_candidate_never_held_has_no_credits_state(billing_answers):
     billing_answers.answers["/internal/candidates/hold"] = (404, {"detail": "Not found"})
 
-    assert asyncio.run(billing.candidate_hold("key-1")) is None
+    assert asyncio.run(billing_holds.candidate_hold("key-1")) is None
 
     billing_answers.answers["/internal/candidates/hold"] = (200, {"status": "open"})
 
-    assert asyncio.run(billing.candidate_hold("key-1")) == "open"
+    assert asyncio.run(billing_holds.candidate_hold("key-1")) == "open"

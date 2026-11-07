@@ -2058,6 +2058,27 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/internal/schedules/orphan-holds": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /**
+     * Orphan Holds
+     * @description Daily, from Cloud Scheduler: credits set aside for an invite that was never saved come
+     *     back; any at all is a drift worth a look.
+     */
+    post: operations["orphan_holds_internal_schedules_orphan_holds_post"]
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/internal/schedules/invite-reminders": {
     parameters: {
       query?: never
@@ -9214,6 +9235,33 @@ export interface operations {
     }
   }
   invite_expiry_internal_schedules_invite_expiry_post: {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      204: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  orphan_holds_internal_schedules_orphan_holds_post: {
     parameters: {
       query?: never
       header?: never

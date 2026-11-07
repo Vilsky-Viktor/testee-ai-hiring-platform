@@ -8,7 +8,13 @@ from datetime import UTC, datetime
 
 import pytest
 
-from companies.integrations import accounts, billing, billing_purchases, library, rounds
+from companies.integrations import (
+    accounts,
+    billing_holds,
+    billing_purchases,
+    library,
+    rounds,
+)
 from companies.models.companies import Company
 from companies.models.interviews import Interview
 from companies.models.invites import CandidateInvite
@@ -108,7 +114,7 @@ def stored(monkeypatch, stored_candidates):
     monkeypatch.setattr(superadmin_support, "candidate", candidate)
     monkeypatch.setattr(superadmin_support, "interview", interview)
     monkeypatch.setattr(rounds, "invite_scores", invite_scores)
-    monkeypatch.setattr(billing, "candidate_hold", candidate_hold)
+    monkeypatch.setattr(billing_holds, "candidate_hold", candidate_hold)
     monkeypatch.setattr(library, "get_set", get_set)
     monkeypatch.setattr(candidates, "page", page)
 
@@ -187,7 +193,7 @@ def test_a_candidates_credits_say_held_while_set_aside(client, superadmin, monke
     async def candidate_hold(key):
         return "open"
 
-    monkeypatch.setattr(billing, "candidate_hold", candidate_hold)
+    monkeypatch.setattr(billing_holds, "candidate_hold", candidate_hold)
     superadmin("ann@example.com")
 
     assert client.get(f"/superadmin/support/candidates/{CID.id}").json()["credits"] == "held"

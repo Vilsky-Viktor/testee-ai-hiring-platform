@@ -9,7 +9,7 @@ from testee_common.config.constants import MAX_PAGE_SIZE
 from companies.constants.superadmin import CREDIT_STATES
 from companies.core.db import Session
 from companies.helpers.candidates import candidate_out
-from companies.integrations import accounts, billing, billing_purchases, rounds
+from companies.integrations import accounts, billing, billing_holds, billing_purchases, rounds
 from companies.repositories import candidates, companies, members, superadmin_support
 from companies.schemas.superadmin_support import (
     SupportCandidateOut,
@@ -65,7 +65,7 @@ async def candidate_page(invite, interview, company) -> SupportCandidateOut:
     totals = (await rounds.invite_scores([invite.id])).get(str(invite.id)) or {}
     await candidate_results.sync([invite], {str(invite.id): totals})
     row = candidate_out(invite, totals, interview)
-    hold = await billing.candidate_hold(invite.hold_key)
+    hold = await billing_holds.candidate_hold(invite.hold_key)
 
     return SupportCandidateOut(
         invite_id=invite.id,

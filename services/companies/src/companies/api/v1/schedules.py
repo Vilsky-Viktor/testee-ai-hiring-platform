@@ -13,6 +13,7 @@ from companies.models.events import ProcessedEvent
 from companies.services import outbox as outbox_service
 from companies.services import removal_replay
 from companies.services.candidate_billing import expire_unstarted
+from companies.services.orphan_holds import release_orphans
 from companies.services.reminders import remind_unstarted
 from companies.services.retention import delete_expired_candidates, delete_old_audit_events
 
@@ -58,6 +59,16 @@ async def invite_expiry() -> None:
 
     if count:
         logger.info("Expired %d invites never started", count)
+
+
+@router.post("/orphan-holds", status_code=status.HTTP_204_NO_CONTENT)
+async def orphan_holds() -> None:
+    """Daily, from Cloud Scheduler: credits set aside for an invite that was never saved come
+    back; any at all is a drift worth a look."""
+    count = await release_orphans()
+
+    if count:
+        logger.warning("Gave back %d orphan candidate holds", count)
 
 
 @router.post("/invite-reminders", status_code=status.HTTP_204_NO_CONTENT)

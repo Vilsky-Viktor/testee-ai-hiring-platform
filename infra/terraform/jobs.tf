@@ -34,6 +34,7 @@ locals {
     bank-filter         = { service = "generation-worker", path = "/internal/schedules/bank-filter", cron = "30 3 * * *" }
     candidate-retention = { service = "companies", path = "/internal/schedules/retention", cron = "15 3 * * *" }
     invite-expiry       = { service = "companies", path = "/internal/schedules/invite-expiry", cron = "30 3 * * *" }
+    orphan-holds        = { service = "companies", path = "/internal/schedules/orphan-holds", cron = "35 3 * * *" }
     # Candidates erased in the last 14 days, erased again if a restore brought them back.
     candidate-removals = { service = "companies", path = "/internal/schedules/removals", cron = "15 5 * * *" }
     # In the morning (UTC), not the night: a reminder candidates see.

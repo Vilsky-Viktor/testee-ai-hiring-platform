@@ -80,6 +80,35 @@ def test_a_hold_unknown_released_or_charged_changes_nothing_when_settled_again(r
     assert after == settled == (WELCOME_COMPANY - CANDIDATE_CREDITS, 0)
 
 
+def test_open_candidate_holds_are_paged_in_key_order_and_only_old_enough(run):
+    acme = company()
+    first, second, charged, released, late = (f"candidate:{acme}-{n}" for n in range(5))
+
+    async def scenario():
+        await welcomed(acme, f"{acme}@example.com")
+
+        for key in (first, second, charged, released, late):
+            await transaction(ledger.reserve, COMPANY, acme, 1, key, Reason.CANDIDATE)
+
+        await transaction(ledger.charge, charged)
+        await transaction(ledger.release, released)
+        await transaction(ledger.reserve, COMPANY, acme, 1, f"refund:{acme}", Reason.REFUND)
+        after = f"candidate:{acme}"
+        now = datetime.now(UTC)
+
+        return (
+            await transaction(ledger.open_candidate_holds, now, after, 2),
+            await transaction(ledger.open_candidate_holds, now, first, 9),
+            await transaction(ledger.open_candidate_holds, NOW, after, 9),
+        )
+
+    page, rest, old = run(scenario())
+
+    assert page == [first, second]
+    assert rest == [second, late]
+    assert old == []
+
+
 def test_credits_set_aside_cant_be_held_twice(run):
     acme = company()
 

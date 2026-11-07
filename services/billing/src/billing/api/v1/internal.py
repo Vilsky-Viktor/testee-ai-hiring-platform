@@ -7,7 +7,7 @@ from testee_common.config.constants import MAX_PAGE_SIZE
 from testee_common.db.paging import IdPageParams, PageParams
 
 from billing.api.dependencies import ServiceCaller
-from billing.constants.credits import CANDIDATE_PREFIX
+from billing.constants.credits import CANDIDATE_PREFIX, OPEN_HOLDS_PAGE
 from billing.constants.products import (
     MAX_BUYER_PURCHASES,
     OwnerType,
@@ -74,6 +74,20 @@ async def candidate_hold(key: str, caller: ServiceCaller) -> HoldOut:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Not found")
 
     return HoldOut(status=found)
+
+
+@router.get("/candidates/holds/open")
+async def open_candidate_holds(
+    before: datetime, caller: ServiceCaller, after: str = ""
+) -> list[str]:
+    """A page of candidates' open holds made before `before`, their keys in order, past `after`,
+    for companies to find those no invite holds."""
+    async with Session() as session:
+        keys = await ledger.open_candidate_holds(
+            session, before, CANDIDATE_PREFIX + after, OPEN_HOLDS_PAGE
+        )
+
+    return [key.removeprefix(CANDIDATE_PREFIX) for key in keys]
 
 
 @router.post("/companies/{company_id}/welcome", status_code=status.HTTP_204_NO_CONTENT)
