@@ -5,9 +5,13 @@ import httpx
 from fastapi import HTTPException, status
 from testee_common.events.notifications import NotificationKind, notification
 
-from billing.constants.declines import DECLINE_READ_TIMEOUT_SECONDS, HARD_DECLINE_CODES
+from billing.constants.declines import (
+    DECLINE_READ_TIMEOUT_SECONDS,
+    HARD_DECLINE_CODES,
+    PADDLE_DECLINED,
+)
 from billing.constants.notifications import COMPANY_BILLING_LINK, TOP_UP_LINK
-from billing.constants.products import NOT_YOUR_AUTO_TOP_UP, PADDLE_REFUSES_BILLING
+from billing.constants.products import NOT_YOUR_AUTO_TOP_UP
 from billing.core.db import Session
 from billing.integrations import paddle
 from billing.models.billing import AutoTopUp
@@ -22,13 +26,16 @@ NOT_RUNNING = "Automatic top-up isn't on"
 
 
 def declined(error: Exception) -> bool:
-    """Whether Paddle refused the charge itself (a declined card), not billing: its key or rate
-    limit failing is billing's problem, never told to the owner as their card's."""
-    return (
-        isinstance(error, httpx.HTTPStatusError)
-        and error.response.is_client_error
-        and error.response.status_code not in PADDLE_REFUSES_BILLING
-    )
+    """Whether the card declined the charge, by Paddle's error code. Anything else (a subscription
+    gone or locked, a currency Paddle refuses, billing's key) isn't the owner's card: it's a charge
+    that wasn't made, which auto_top_up_recheck tries again."""
+    if not isinstance(error, httpx.HTTPStatusError):
+        return False
+
+    try:
+        return error.response.json()["error"]["code"] == PADDLE_DECLINED
+    except (ValueError, KeyError, TypeError):
+        return False
 
 
 async def hard(subscription_id: str, since: datetime) -> bool:

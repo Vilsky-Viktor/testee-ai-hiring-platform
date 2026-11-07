@@ -77,6 +77,7 @@ def paddle_calls(monkeypatch):
     import httpx
 
     from billing.config import settings
+    from billing.constants.declines import PADDLE_DECLINED
     from billing.integrations import paddle
 
     calls = []
@@ -96,7 +97,8 @@ def paddle_calls(monkeypatch):
 
         if subscription_id.startswith("sub_declined"):
             request = httpx.Request("POST", "https://paddle.test")
-            response = httpx.Response(400, request=request)
+            body = {"error": {"code": PADDLE_DECLINED}}
+            response = httpx.Response(400, request=request, json=body)
 
             raise httpx.HTTPStatusError("declined", request=request, response=response)
 

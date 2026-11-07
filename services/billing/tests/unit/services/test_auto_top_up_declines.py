@@ -9,6 +9,7 @@ import httpx
 import pytest
 from testee_common.events.notifications import notification
 
+from billing.constants.declines import PADDLE_DECLINED
 from billing.integrations import paddle
 from billing.repositories import auto_top_up_charges, events
 from billing.repositories import auto_top_ups as rows
@@ -18,12 +19,11 @@ ROW = SimpleNamespace(subscription_id="sub_01", product="topup_50", currency="US
 FAILED = notification("company", "acme", "auto_top_up_failed", "/top-up")
 
 
-def refused(status: int) -> httpx.HTTPStatusError:
+def refused(status: int, code: str = PADDLE_DECLINED) -> httpx.HTTPStatusError:
     request = httpx.Request("POST", "https://sandbox-api.paddle.com/subscriptions/sub_01/charge")
+    response = httpx.Response(status, request=request, json={"error": {"code": code}})
 
-    return httpx.HTTPStatusError(
-        "refused", request=request, response=httpx.Response(status, request=request)
-    )
+    return httpx.HTTPStatusError("refused", request=request, response=response)
 
 
 @pytest.fixture
@@ -59,9 +59,9 @@ def charging(monkeypatch):
     async def nothing():
         pass
 
-    def answer(status):
+    def answer(status, code=PADDLE_DECLINED):
         async def charge(row, owner_id, now):
-            raise refused(status)
+            raise refused(status, code)
 
         monkeypatch.setattr(auto_top_up_charging, "charge", charge)
 
@@ -79,7 +79,7 @@ def paused_notice(event):
     return (event["kind"], event["link"], event["key"].startswith("auto_top_up_paused:acme:"))
 
 
-@pytest.mark.parametrize("status", [400, 402, 422])
+@pytest.mark.parametrize("status", [400, 402])
 def test_a_soft_decline_counts_and_the_company_is_told_it_will_be_tried_again(charging, status):
     answer, setup, seen = charging
     answer(status)
@@ -145,10 +145,28 @@ def test_a_decline_whose_reason_isnt_known_counts_as_one_that_may_pass(charging,
     assert seen["told"] == [FAILED]
 
 
+@pytest.mark.parametrize(
+    "error",
+    [
+        refused(404, "not_found"),
+        refused(409, "subscription_locked_pending_changes"),
+        refused(400, "invalid_field"),
+        httpx.HTTPStatusError(
+            "refused",
+            request=httpx.Request("POST", "https://sandbox-api.paddle.com"),
+            response=httpx.Response(400, text="not json"),
+        ),
+    ],
+    ids=["gone", "locked", "invalid", "no code"],
+)
+def test_a_refusal_that_isnt_the_cards_is_no_decline(error):
+    assert auto_top_up_declines.declined(error) is False
+
+
 @pytest.mark.parametrize("status", [401, 403, 429, 500])
 def test_paddle_refusing_billing_isnt_the_companys_card(charging, status):
     answer, _, seen = charging
-    answer(status)
+    answer(status, "forbidden")
 
     asyncio.run(auto_top_up_charging.check("company", "acme"))
 

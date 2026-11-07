@@ -2,6 +2,8 @@
 # in 30 days, and none after a decline it marks "never retry"; Mastercard's advice codes alike).
 from datetime import timedelta
 
+# Paddle's answer to a subscription charge the card declined, the only refusal that counts as one.
+PADDLE_DECLINED = "subscription_payment_declined"
 # Paddle's `payments[].error_code` for a card that won't pay however often it's tried: stolen,
 # lost or blocked, closed, expired, refused for good, or one that needs its holder (a bank check,
 # details to correct). Automatic top-up pauses at once. Any other code, an unknown one or none,

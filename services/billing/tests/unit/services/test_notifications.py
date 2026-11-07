@@ -5,6 +5,7 @@ import httpx
 import pytest
 from testee_common.events.notifications import NOTIFICATION_REQUESTED, notification
 
+from billing.constants.declines import PADDLE_DECLINED
 from billing.integrations import paddle
 from billing.repositories import auto_top_up_charges, events, purchases
 from billing.repositories import auto_top_ups as auto_top_ups_storage
@@ -109,9 +110,10 @@ def test_a_top_up_bought_by_hand_tells_nobody(granted, notified):
 
 def paddle_error(code):
     request = httpx.Request("POST", "https://paddle.test")
+    body = {"error": {"code": PADDLE_DECLINED if code == 400 else "other"}}
 
     return httpx.HTTPStatusError(
-        "", request=request, response=httpx.Response(code, request=request)
+        "", request=request, response=httpx.Response(code, request=request, json=body)
     )
 
 

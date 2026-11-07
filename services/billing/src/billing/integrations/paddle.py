@@ -44,8 +44,8 @@ async def _call(method: str, path: str, **kwargs) -> httpx.Response:
 
 async def charge(subscription_id: str, price: dict) -> None:
     """Bills one top-up, at a `price` made here in the subscription's currency, to its saved
-    card now. Its transaction.completed webhook adds the credits; a declined card raises and
-    changes nothing."""
+    card now. Its transaction.completed webhook adds the credits; a declined card raises (a 4xx
+    with the code PADDLE_DECLINED) and changes nothing."""
     await _call(
         "POST",
         f"/subscriptions/{subscription_id}/charge",
