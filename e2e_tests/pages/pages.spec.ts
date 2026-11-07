@@ -25,6 +25,9 @@ const PAGES = [
   "/guides/ai-interviews",
   "/compare/testgorilla",
   "/guides/hiring-engineers",
+  "/guides/skills-assessment-software",
+  "/guides/ai-interview-software",
+  "/guides/coding-test-for-hiring",
   "/de/pricing",
 ];
 // Articles keep their headings' capitals (names such as TestGorilla or EU).

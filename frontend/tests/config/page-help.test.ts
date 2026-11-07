@@ -25,6 +25,7 @@ const locales = readdirSync(join(FRONTEND, "messages")).map((name) =>
 const REGISTERS: [RegExp, string][] = [
   [/<PageHelp\b/, "components/common/page-help.tsx"],
   [/<PageKey\b/, "components/common/page-key.tsx"],
+  [/<SolutionPage\b/, "features/features/components/solution-page.tsx"],
   [/\bhelp=/, "components/common/back-link.tsx"],
   [/<CompanyHeader\b/, "features/company/components/company-header.tsx"],
   [/<InterviewHeader\b/, "features/company/components/interview-header.tsx"],

@@ -33,7 +33,7 @@ Timed knowledge interviews for hiring, made from a job description or a ready-ma
 - **23 languages:** the interface, generated interviews, emails and news posts.
 - **Search everything:** the header's search finds, as you type, the user's own companies, interviews and candidates, the site's pages, guides, comparisons, legal texts and FAQ, and the skills tests; every list's search (interviews, candidates, templates, guides, admin support) works as you type too.
 - **Hiring flow page:** every step of hiring with testee, from the job description to the hire, with the options at each, along a line that draws itself as the page scrolls.
-- **Public site:** the features page, skills tests by role, guides, comparisons, FAQ, pricing, developer docs and the trust page, in a light and a dark theme.
+- **Public site:** the features page, solution pages, skills tests by role, guides, comparisons, FAQ, pricing, developer docs and the trust page, in a light and a dark theme.
 - **News:** a public news page and every user's bell; posts are written in English in the admin zone and translated automatically.
 - **Campaigns:** product updates and offers emailed to the users who chose them, written in the admin zone, translated and sent through one bulk sender that legal notices share, with its own suppression list.
 - **Admin zone:** templates, news, campaigns, question quality, verification, support (finding an account, a company, an interview or a candidate; a company's credits and history, adjusting them; an account's companies, top-ups, email settings and whether its address is on the suppression list; a candidate's progress, credits and the company emails stopped for them; a company's and an account's AI cost), pass rates, stats, AI costs (by action, model and who it was for, the shared budgets and the limits hit), the pause and maintenance switches, and every usage limit, editable.
@@ -68,7 +68,7 @@ Then open the app at http://localhost:8090. Sign-in uses the Firebase Auth emula
 | [AI apps over MCP](docs/features/mcp.md) | Connecting Claude, ChatGPT and other AI apps, and agents with an API key: the consent page, OAuth, the tools, what's new since the last check, connections, limits, the developer docs' MCP tab |
 | [Admin zone](docs/features/admin-zone.md) | Superadmins' templates, news, campaigns, quality, support, pass rates, stats, AI costs, pause and maintenance mode, limits |
 | [Admin zone: Support](docs/features/admin-support.md) | Finding an account, company, interview or candidate from a complaint, their support pages, credits, suspension, stopping emails, logs |
-| [Public site](docs/features/site.md) | Home page, features page, hiring flow page, skills tests, articles, FAQ, legal pages, contact, SEO |
+| [Public site](docs/features/site.md) | Home page, features page, hiring flow page, solution pages, skills tests, articles, FAQ, legal pages, contact, SEO |
 | [Languages](docs/features/languages.md) | The 23 languages, language addresses, fonts, right-to-left |
 
 ### Engineering

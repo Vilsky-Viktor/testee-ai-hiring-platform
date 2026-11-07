@@ -117,10 +117,18 @@ def test_nothing_is_shown_for_an_unknown_page_bad_ids_or_what_the_user_cant_see(
 
 
 # The contact page for handing over to a person; the features page for "what can testee do";
-# the hiring flow page for "how does hiring with testee go".
+# the hiring flow page for "how does hiring with testee go"; the solution pages for what testee
+# is as each kind of software.
 @pytest.mark.parametrize(
     ("page", "path"),
-    [("contact", "/contact"), ("features", "/features"), ("hiring_flow", "/hiring-flow")],
+    [
+        ("contact", "/contact"),
+        ("features", "/features"),
+        ("hiring_flow", "/hiring-flow"),
+        ("skills_assessment", "/guides/skills-assessment-software"),
+        ("ai_interview", "/guides/ai-interview-software"),
+        ("coding_test", "/guides/coding-test-for-hiring"),
+    ],
 )
 def test_a_public_page_is_a_link_without_ids(companies, page, path):
     content, block = run({"kind": "link", "page": page}, set())

@@ -31,7 +31,10 @@ export const LINK_PAGES: [RegExp, MessageKey<"assistant.pages">][] = [
   [/^\/generate\//, "topics"],
   [/^\/sessions\//, "practice"],
   [/^\/news$/, "news"],
-  [/^\/features$/, "features"],
+  [
+    /^\/(features|guides\/(skills-assessment-software|ai-interview-software|coding-test-for-hiring))$/,
+    "features",
+  ],
   [/^\/hiring-flow$/, "hiringFlow"],
   [/\/integrations\/slack$/, "slack"],
   [/\/integrations\/api$/, "api"],

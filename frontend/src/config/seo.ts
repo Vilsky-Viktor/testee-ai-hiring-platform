@@ -46,6 +46,9 @@ export const PUBLIC_PATHS = [
   "/trust",
   "/news",
   "/practice",
+  "/guides/skills-assessment-software",
+  "/guides/ai-interview-software",
+  "/guides/coding-test-for-hiring",
 ]
 
 // Public pages also served in every other language under its prefix (/de/pricing), linked to
@@ -66,6 +69,9 @@ export const LOCALIZED_PATHS = [
   "/compare",
   "/guides",
   "/news",
+  "/guides/skills-assessment-software",
+  "/guides/ai-interview-software",
+  "/guides/coding-test-for-hiring",
 ]
 
 // Articles also have an address in every language: in a language without a translation yet they

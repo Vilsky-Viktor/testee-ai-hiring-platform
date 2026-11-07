@@ -7,11 +7,13 @@ import { pageMetadata } from "@/lib/site"
 import { PageKey } from "@/components/common/page-key"
 import { SearchField } from "@/components/common/search-field"
 import { SearchedList } from "@/components/common/searched-list"
+import { LOCALES } from "@/config/i18n"
 import { LIST_EMPTY } from "@/config/lists"
 import {
   MAX_SITE_SEARCH_LENGTH,
   MAX_SITE_SEARCH_RESULTS,
 } from "@/config/search"
+import { SOLUTIONS, SOLUTIONS_UPDATED } from "@/config/solutions"
 import { publicFetch } from "@/lib/server-api"
 import type { SiteResult } from "@/types/search"
 
@@ -31,14 +33,29 @@ export default async function HubPage({
   const t = await getTranslations("guides")
   const q = (await searchParams).q?.trim() ?? ""
   // In the interface's language where translated.
-  const [pages, found] = await Promise.all([
-    contentPages("guides", await getLocale()),
+  const locale = await getLocale()
+  const solutions = await getTranslations("solutions")
+  const [articles, found] = await Promise.all([
+    contentPages("guides", locale),
     q
       ? publicFetch<SiteResult[]>(
           `/site/search?kind=guide&limit=${MAX_SITE_SEARCH_RESULTS}&q=${encodeURIComponent(q)}`
         )
       : null,
   ])
+  // The solution pages are listed as guides, by their own titles.
+  const pages = [
+    ...articles,
+    ...SOLUTIONS.map(({ id, path }) => ({
+      slug: path.replace("/guides/", ""),
+      language: locale,
+      title: solutions(`pages.${id}.name`),
+      description: solutions(`pages.${id}.description`, {
+        count: LOCALES.length,
+      }),
+      updated: SOLUTIONS_UPDATED,
+    })),
+  ].sort((a, b) => a.title.localeCompare(b.title, locale))
   const shown = found
     ? found.flatMap((result) =>
         pages.filter((page) => `/guides/${page.slug}` === result.path)

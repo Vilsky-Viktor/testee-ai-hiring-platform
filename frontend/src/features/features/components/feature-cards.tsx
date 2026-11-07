@@ -7,7 +7,11 @@ export function FeatureCards({
   cards,
   onBand,
 }: {
-  cards: (FeatureCard & { title: string; text: string })[]
+  cards: (Pick<FeatureCard, "icon"> & {
+    key: string
+    title: string
+    text: string
+  })[]
   onBand: boolean
 }) {
   return (

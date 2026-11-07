@@ -6,6 +6,7 @@ from site_content.constants.search import (
     FAQ_PATH,
     LEGAL_PAGES,
     PUBLIC_PAGES,
+    SOLUTION_PAGES,
     SearchKind,
 )
 from site_content.helpers.guide_articles import articles
@@ -34,11 +35,16 @@ def rank(q: str, title: str, text: str = "") -> int | None:
 
 def pages(language: str) -> list[dict]:
     """Every public page the site's search finds, in `language` where translated: the pages by
-    their guide's title, the legal texts, the guides, the comparisons and the FAQ's questions."""
+    their guide's title, the legal texts, the guides with the solution pages, the comparisons and
+    the FAQ's questions."""
     found = [
         {"kind": kind, "title": page_guide(key, language)["title"], "path": path}
         for table, kind in ((PUBLIC_PAGES, SearchKind.PAGE), (LEGAL_PAGES, SearchKind.LEGAL))
         for key, path in table.items()
+    ]
+    found += [
+        {"kind": SearchKind.GUIDE, **page_guide(key, language), "path": path}
+        for key, path in SOLUTION_PAGES.items()
     ]
     found += [
         {"kind": kind, "title": item["title"], "text": item["description"], "path": item["path"]}

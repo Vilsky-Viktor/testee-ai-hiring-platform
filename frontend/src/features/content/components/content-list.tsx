@@ -14,7 +14,10 @@ export async function ContentList({
   base,
   icon: Icon,
 }: {
-  pages: ContentPage[]
+  pages: Pick<
+    ContentPage,
+    "slug" | "language" | "title" | "description" | "updated"
+  >[]
   base: string
   icon: LucideIcon
 }) {

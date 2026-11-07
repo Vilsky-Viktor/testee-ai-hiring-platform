@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest"
 import { FEATURE_GROUPS } from "@/config/features-page"
 import { FEATURE_SHOTS, FEATURE_SHOTS_PATH } from "@/config/features-shots"
 import { FLOW_STAGES } from "@/config/hiring-flow"
+import { SOLUTIONS } from "@/config/solutions"
 
 import { FRONTEND } from "../source-files"
 
@@ -43,6 +44,7 @@ describe("the features and hiring flow pages' pictures", () => {
     const shown = [
       ...FEATURE_GROUPS.flatMap((group) => group.rows.map((row) => row.shot)),
       ...FLOW_STAGES.flatMap((stage) => (stage.shot ? [stage.shot] : [])),
+      ...SOLUTIONS.flatMap((solution) => solution.rows.map((row) => row.shot)),
     ]
     const files = readdirSync(FOLDER).map((file) =>
       file.replace(/-(light|dark)\.webp$/, "")

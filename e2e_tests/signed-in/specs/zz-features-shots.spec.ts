@@ -172,6 +172,44 @@ test("features page: a candidate's question", async ({ signInAs }) => {
   await pair(mail, "email")
 })
 
+// A question with code, for the coding test page: questions come in random order, so the
+// candidate answers until one opens.
+test("features page: a question about code", async ({ signInAs }) => {
+  test.setTimeout(300_000)
+  const owner = await signInAs(ownerEmail())
+  const company = await createCompany(owner, "Lumen Health")
+  await verifyCompany(company.id, "lumenhealth.example")
+  await shotLogo(owner, company.id)
+  const interviewId = await roleInterview(owner, company.id, SHOT_AI_ROLE, SHOT_AI_TEMPLATE)
+  const email = throwawayEmail("shot-code")
+  await inviteCandidate(owner, interviewId, email)
+  const candidate = await signInAs(email, undefined, "Nina Patel")
+  await visit(candidate, `/invite/${await inviteToken(email)}`)
+  await candidate.getByTestId("start-pledge").filter({ visible: true }).click()
+  await candidate.getByRole("main").getByRole("button").last().click()
+  await expect(candidate).toHaveURL(/\/sessions\//)
+  const main = candidate.getByRole("main")
+  const code = main.locator('[data-slot="code-editor"]').filter({ visible: true })
+  const option = main.locator("li > button[aria-pressed]")
+
+  for (let answered = 0; answered < 50; answered += 1) {
+    await expect(option.first()).toBeVisible()
+
+    if ((await code.count()) > 0) {
+      break
+    }
+
+    await option.first().click()
+    await candidate.getByTestId("next-question").click()
+    await expect(option.first()).toHaveAttribute("aria-pressed", "false")
+  }
+
+  await expect(code.first()).toBeVisible()
+  await option.nth(1).click()
+  await expect(option.nth(1)).toHaveAttribute("aria-pressed", "true")
+  await pair(candidate, "code-question")
+})
+
 // Voice mode: Mira reading the question aloud, her wave moving. Her clips are mocked, so nothing
 // is read aloud by OpenAI; the question's is a sentence of real speech, long enough for both
 // pictures.

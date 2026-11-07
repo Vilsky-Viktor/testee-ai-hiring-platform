@@ -8,6 +8,7 @@ The site follows the device's light or dark setting until a visitor picks a them
 - [Header search](#header-search)
 - [Features page](#features-page)
 - [Hiring flow page](#hiring-flow-page)
+- [Solution pages](#solution-pages)
 - [Skills tests by role](#skills-tests-by-role)
 - [Articles](#articles)
 - [FAQ and help chat](#faq-and-help-chat)
@@ -45,10 +46,10 @@ Prices, the price range and the free candidates come from billing's catalog, so 
 The header's search ("search...", `components/common/global-search.tsx`, `lib/search.ts`) finds any kind of page from anywhere on the site. From tablets up it fills the header between its links and its buttons; on phones a magnifier opens it in a bar under the header. It asks once typing stops for half a second (no button), a light gliding along the field's bottom while it loads, with a clear button, and lists at most 5 results, each with what it is (company, interview, candidate, page, guide, comparison, legal, FAQ, skills test); a candidate shows their company and interview under their name. Picking one, by click or with the arrow keys and Enter, opens it. It asks three services at once and lists their results in this order, leaving out one that fails:
 
 - **The user's own companies** (signed in only): companies by name, interviews by title and candidates by name or email, in the companies the user is a member of, any role, at most 5 (companies' `GET /api/companies/search?q=`).
-- **The site's pages** (site's public `GET /api/site/search?q=&kind=&limit=`, in the page's language): the public pages by their [page guide](companies.md#page-guides)'s title, the legal texts, the guides, the comparisons (by title or description) and the FAQ's questions; best first: a title that starts with the text, then a word of the title that does, then a title that contains it, then a description that does. `kind` (`page`, `guide`, `comparison`, `legal`, `faq`) keeps only one kind; `limit` is 5 by default and at most 50. An empty query finds nothing.
+- **The site's pages** (site's public `GET /api/site/search?q=&kind=&limit=`, in the page's language): the public pages by their [page guide](companies.md#page-guides)'s title, the legal texts, the guides and the [solution pages](#solution-pages), the comparisons (by title or description) and the FAQ's questions; best first: a title that starts with the text, then a word of the title that does, then a title that contains it, then a description that does. `kind` (`page`, `guide`, `comparison`, `legal`, `faq`) keeps only one kind; `limit` is 5 by default and at most 50. An empty query finds nothing.
 - **The skills tests** by title, in the interface's language or English (the public template catalog, as on `/tests`).
 
-The guides hub (`/guides`) has its own search, over the guides only: the same site search with `kind=guide`, its query in the address (`?q=`).
+The guides hub (`/guides`) has its own search, over the guides and the solution pages: the same site search with `kind=guide`, its query in the address (`?q=`).
 
 Every list search works the same way as you type (`components/common/search-field.tsx`): a company's interviews, an interview's candidates, the templates and the practice tests, the guides hub and the admin zone's support search ask 500 ms after typing stops (`SEARCH_DELAY_MS`), Enter at once, with no button, the same gliding light while they load and a clear button.
 
@@ -77,6 +78,16 @@ It's in every language, in the sitemap with hreflang, and has its page guide.
 
 It's in every language, in the sitemap with hreflang, and has its page guide.
 
+## Solution pages
+
+Three pages answer what buyers search for, built from the features page's parts (`features/features/components/solution-page.tsx`, `config/solutions.ts`, texts in `solutions.*`): `/guides/skills-assessment-software`, `/guides/ai-interview-software` and `/guides/coding-test-for-hiring`.
+
+- **The page:** the features page's first screen with its own promise, three rows beside pictures of the real app, cards and links onwards, then the closing screen with the start box. The coding test's picture of a question about code (`code-question`) is taken with the features page's.
+- **Where they're linked:** the guides hub lists them with the articles, by title; the three guides they belong to link them in every language (pre-employment testing, AI interviews, hiring engineers). They aren't in the header or the footer.
+- **Search and help:** each has its page guide, whose title and text the site's search reads, as a guide. Mira can link each (`skills_assessment`, `ai_interview`, `coding_test` in her `show` tool).
+
+They're in every language, in the sitemap with hreflang, with breadcrumbs under the guides.
+
 ## Skills tests by role
 
 `/tests` and `/tests/<slug>`: a page per template, for companies hiring for the role. It shows:
@@ -88,7 +99,9 @@ It's in every language, in the sitemap with hreflang, and has its page guide.
 
 Addresses use the template's slug (see [Templates and practice](templates-and-practice.md#slugs)); an old address by id moves there for good.
 
-A role page, like the template's free practice page, is in English and in its template's language only. For a German template, that's `/de/tests/<slug>` and `/de/practice/<slug>`, with hreflang between the two. Its address in any other language isn't found. The free practice page stays out of search results and the sitemap: it's a thin copy of its role page.
+A role page, like the template's free practice page, is in English and in its template's language only. For a German template, that's `/de/tests/<slug>` and `/de/practice/<slug>`, with hreflang between the two. Its address in any other language isn't found.
+
+**The hubs:** `/tests` and `/practice` before any search or filter list only the indexable templates (see [Indexing](#search-engines)) in the page's language and English, A to Z (library's public `GET /api/library/templates/hub` and `/hub/count`). Every row of a page is in the HTML, and plain links under the list lead to `?page=2` and on, 20 rows each; people can also scroll on from the first page. A numbered page has its own title and is its own canonical address, without language versions, as each language's pages list other rows; a page past the last isn't found. A search or a filter reaches every template, the thin ones and near-duplicates too, without numbered pages.
 
 ## Articles
 
@@ -247,7 +260,7 @@ Every public page has its title, description, canonical address and link-preview
 
 **Structured data:** organization (with its postal address in parts), product and price range (no rating until real reviews exist), founder, articles (with their picture and language), the developer docs as a technical article in English, breadcrumbs (role and practice pages, the API docs), FAQ (left out when there are no questions).
 
-**Sitemap:** every language version, article, and the role page of each indexable template, dated by the template's last change; each language of an article by its own file's `updated`. Its calls to the API give up after 5 seconds. The news page is dated by its newest post, and the privacy policy, terms and DPA by their last update.
+**Sitemap:** every language version, article, the hubs' numbered pages in each language, and the role and practice pages of each indexable template, dated by the template's last change; each language of an article by its own file's `updated`. Its calls to the API give up after 5 seconds. The news page is dated by its newest post, and the privacy policy, terms and DPA by their last update.
 
 **Indexing:**
 

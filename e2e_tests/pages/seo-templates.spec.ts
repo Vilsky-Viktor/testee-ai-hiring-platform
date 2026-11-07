@@ -111,6 +111,10 @@ test("robots.txt and the sitemap list what should be found", async ({
     "/guides/hiring-engineers",
     "/guides/pre-employment-testing",
     "/de/guides/hiring-engineers",
+    "/guides/skills-assessment-software",
+    "/guides/ai-interview-software",
+    "/guides/coding-test-for-hiring",
+    "/de/guides/coding-test-for-hiring",
     "/ja/compare/testgorilla",
   ]) {
     expect(sitemap).toContain(`${path}</loc>`);

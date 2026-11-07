@@ -41,7 +41,7 @@ export default async function FeaturesPage() {
       <main className="mx-auto max-w-page px-6">
         <PageKey page="features" />
         <HeroBack />
-        <FeaturesHero />
+        <FeaturesHero title={t("hero.title")} text={t("hero.text")} />
         <FeaturesNav
           items={FEATURE_GROUPS.map((group) => ({
             id: group.id,

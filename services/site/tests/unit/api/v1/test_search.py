@@ -28,6 +28,7 @@ def site(tmp_path, monkeypatch):
     monkeypatch.setattr(guide_articles, "ARTICLES_ROOT", tmp_path)
     monkeypatch.setattr(search_helper, "PUBLIC_PAGES", {"pricing": "/pricing", "about": "/about"})
     monkeypatch.setattr(search_helper, "LEGAL_PAGES", {"terms": "/terms"})
+    monkeypatch.setattr(search_helper, "SOLUTION_PAGES", {})
     monkeypatch.setattr(
         search_helper, "page_guide", lambda key, language: {"title": TITLES[language][key]}
     )

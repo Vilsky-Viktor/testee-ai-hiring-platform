@@ -39,6 +39,9 @@ PAGES = {
     "news": "/news",
     "features": "/features",
     "hiring_flow": "/hiring-flow",
+    "skills_assessment": "/guides/skills-assessment-software",
+    "ai_interview": "/guides/ai-interview-software",
+    "coding_test": "/guides/coding-test-for-hiring",
     "guide": "/guides/{slug}",
 }
 # Pages named by what they're about: the service and read giving the name, and its field.

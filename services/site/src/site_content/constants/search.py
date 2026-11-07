@@ -34,6 +34,12 @@ PUBLIC_PAGES = {
     "trust": "/trust",
     "accessibility": "/accessibility",
 }
+# The solution pages, found as guides by their guide's title and text: the guides hub lists them.
+SOLUTION_PAGES = {
+    "skillsAssessment": "/guides/skills-assessment-software",
+    "aiInterview": "/guides/ai-interview-software",
+    "codingTest": "/guides/coding-test-for-hiring",
+}
 LEGAL_PAGES = {"terms": "/terms", "privacy": "/privacy", "dpa": "/dpa"}
 
 # The comparisons, where the site keeps them (beside the guides) and shows them.

@@ -8,6 +8,7 @@ export const FEATURE_SHOTS = {
   settings: { width: 2000, height: 1280 },
   start: { width: 2480, height: 1560 },
   question: { width: 2520, height: 1280 },
+  "code-question": { width: 2520, height: 1280 },
   voice: { width: 2520, height: 1280 },
   brand: { width: 1988, height: 1400 },
   candidates: { width: 2000, height: 1310 },
