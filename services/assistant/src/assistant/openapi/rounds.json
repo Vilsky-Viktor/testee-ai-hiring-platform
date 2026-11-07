@@ -213,6 +213,7 @@
      "practice"
     ],
     "summary": "Start Practice",
+    "description": "With an Idempotency-Key (the assistant's action), the same request again gets the round\nthe first started.",
     "operationId": "start_practice_practice__template_id__post",
     "security": [
      {
@@ -228,6 +229,23 @@
        "type": "string",
        "format": "uuid",
        "title": "Template Id"
+      }
+     },
+     {
+      "name": "idempotency-key",
+      "in": "header",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "maxLength": 255
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Idempotency-Key"
       }
      }
     ],

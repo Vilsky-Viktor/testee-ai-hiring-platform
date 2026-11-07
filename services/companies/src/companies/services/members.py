@@ -3,6 +3,7 @@ hands the company over; invitees join through their link. Each change is saved w
 the action log."""
 
 import secrets
+from uuid import UUID
 
 import httpx
 from fastapi import HTTPException, status
@@ -28,6 +29,24 @@ from companies.integrations.redis import get_redis
 from companies.models.companies import Company, Member
 from companies.repositories import audit, companies, members, outbox
 from companies.services import outbox as outbox_service
+from companies.services.idempotent_creates import once_per_key
+
+
+async def invite_once(
+    company: Company, user: User, email: str, role: str, idempotency_key: str | None
+) -> Member:
+    """`invite`, once per key: a retry after a lost answer gets the member the first made."""
+
+    async def make() -> Member:
+        return await invite(company, user, email, role)
+
+    async def find(member_id: UUID) -> Member:
+        async with Session() as session:
+            return await session.get(Member, member_id)
+
+    body = {"email": email, "role": role}
+
+    return await once_per_key("member", user.uid, company.id, idempotency_key, body, make, find)
 
 
 async def invite(company: Company, user: User, email: str, role: str) -> Member:

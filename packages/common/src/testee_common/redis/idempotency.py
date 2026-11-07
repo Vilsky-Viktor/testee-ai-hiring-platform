@@ -24,6 +24,14 @@ def fingerprint(*parts: object) -> str:
     return hashlib.sha256(canonical.encode()).hexdigest()
 
 
+def key_name(service: str, what: str, user_id: str, scope: object, key: str) -> str:
+    """Where a user's client key keeps its result: the key is theirs alone (their id is in the
+    name) and hashed; `scope` is what it's for."""
+    digest = hashlib.sha256(key.encode()).hexdigest()
+
+    return f"{service}:idempotency:{what}:{user_id}:{scope}:{digest}"
+
+
 async def once(
     redis: Redis, name: str, seconds: int, request: str, run: Callable[[], Awaitable[str]]
 ) -> str:

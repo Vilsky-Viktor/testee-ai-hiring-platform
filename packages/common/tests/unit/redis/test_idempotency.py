@@ -5,7 +5,7 @@ from fake_redis import FakeRedis
 from redis.exceptions import RedisError
 from testee_common.i18n.i18n import CodedError
 from testee_common.redis import idempotency
-from testee_common.redis.idempotency import fingerprint, once
+from testee_common.redis.idempotency import fingerprint, key_name, once
 
 
 class FlakyRedis(FakeRedis):
@@ -125,3 +125,11 @@ def test_a_failed_run_raises_its_own_error_when_redis_fails_to_free_its_claim():
 
     with pytest.raises(ValueError, match="No credits"):
         asyncio.run(once(FlakyRedis(fail_free=True), "slot", 60, "req", refused))
+
+
+def test_a_client_key_is_kept_hashed_and_per_user():
+    name = key_name("rounds", "practice", "ann", "t-1", "secret-key")
+
+    assert name.startswith("rounds:idempotency:practice:ann:t-1:")
+    assert "secret-key" not in name
+    assert name != key_name("rounds", "practice", "bob", "t-1", "secret-key")

@@ -129,6 +129,16 @@ def cleaned(tool: Tool, arguments: dict) -> dict:
     }
 
 
+async def action_id_for(conversation_id: UUID, tool: Tool, arguments: dict) -> UUID:
+    """The id of an action still waiting in the conversation that does the same, or a new one:
+    asked again after no answer (one put back, see `run`), it keeps its Idempotency-Key."""
+    for pending in await actions.of_conversation(conversation_id):
+        if pending["tool"] == tool.name and pending["arguments"] == arguments:
+            return UUID(pending["card"]["action_id"])
+
+    return uuid.uuid4()
+
+
 async def prepare(tool: Tool, arguments: dict, turn: Turn, seen: str | None = None) -> ToolResult:
     """What the model asked for, its texts cleaned, kept (in Redis, for a short while) for the
     user to confirm: bound to them, the conversation and the company. Nothing runs yet; what
@@ -158,7 +168,7 @@ async def prepare(tool: Tool, arguments: dict, turn: Turn, seen: str | None = No
 
     subject = current.get(tool.subject["field"]) if current else None
 
-    action_id = uuid.uuid4()
+    action_id = await action_id_for(turn.conversation_id, tool, arguments)
     company_id = arguments.get("company_id")
     lost = await credits_lost(tool, company_id, turn) if tool.credits else None
     block = card(action_id, tool, arguments, PENDING, subject=subject, credits=lost)
@@ -254,13 +264,18 @@ async def run(
         await actions.put_back(action_id, pending)
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, SESSION_EXPIRED)
 
+    # No answer, or the service failed: it may have run all the same. The action stays, so doing
+    # it again sends the same Idempotency-Key, and a service that reads it makes nothing twice.
+    if result.status_code is None or result.status_code >= status.HTTP_500_INTERNAL_SERVER_ERROR:
+        await actions.put_back(action_id, pending)
+
     done = result.succeeded
     data = result.content.get("data") if done else None
     label = data.get(tool.result_label) if tool.result_label and isinstance(data, dict) else None
     block = {
         **pending["card"],
         "state": DONE if done else FAILED,
-        "links": result.block["links"] if done and result.block else [],
+        "links": result.block["links"] if result.block else [],
         "result_label": label,
         "detail": None if done else result.content.get("detail"),
     }

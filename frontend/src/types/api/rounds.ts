@@ -91,7 +91,11 @@ export interface paths {
     }
     get?: never
     put?: never
-    /** Start Practice */
+    /**
+     * Start Practice
+     * @description With an Idempotency-Key (the assistant's action), the same request again gets the round
+     *     the first started.
+     */
     post: operations["start_practice_practice__template_id__post"]
     delete?: never
     options?: never
@@ -1716,7 +1720,9 @@ export interface operations {
   start_practice_practice__template_id__post: {
     parameters: {
       query?: never
-      header?: never
+      header?: {
+        "idempotency-key"?: string | null
+      }
       path: {
         template_id: string
       }

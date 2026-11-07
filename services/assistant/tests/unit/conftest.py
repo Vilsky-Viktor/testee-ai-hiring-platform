@@ -12,9 +12,11 @@ from tests.unit.help_setup import help_redis, knowledge  # noqa: F401
 
 
 class Writes(list):
-    """The services' writes; each answers `status`. `referrals`: the referral code each carried."""
+    """The services' writes; each answers `status`, with `body` when set. `referrals`: the
+    referral code each carried."""
 
     status = 201
+    body: dict | None = None
 
     def __init__(self):
         super().__init__()
@@ -66,9 +68,12 @@ def writes(monkeypatch):
         made.referrals.append(referral)
         request = httpx.Request(method, f"http://{service}{path}")
 
+        if made.status is None:
+            raise httpx.ReadTimeout("no answer", request=request)
+
         return httpx.Response(
             made.status,
-            json={"id": COMPANY, "name": body["name"], "role": "owner"},
+            json=made.body or {"id": COMPANY, "name": body["name"], "role": "owner"},
             request=request,
         )
 

@@ -66,8 +66,8 @@ async def claim(action_id: UUID) -> dict | None:
 
 
 async def put_back(action_id: UUID, pending: dict) -> None:
-    """Gives a claimed action back when it couldn't run at all (the user's token had expired),
-    unless it was prepared again meanwhile."""
+    """Gives a claimed action back when it didn't run (the user's token had expired) or may not
+    have (no answer), unless it was prepared again meanwhile."""
     await get_redis().set(key(action_id), json.dumps(pending), ex=ACTION_TTL_SECONDS, nx=True)
 
 

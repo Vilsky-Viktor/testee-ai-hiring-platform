@@ -1,6 +1,7 @@
+from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Header, HTTPException, status
 from testee_common.auth.auth import CurrentUser
 from testee_common.db.paging import PageParams
 from testee_common.limits.limits import question_seconds
@@ -38,9 +39,16 @@ router = APIRouter(prefix="/practice", tags=["practice"])
 
 @router.post("/{template_id}", status_code=status.HTTP_201_CREATED)
 async def start_practice(
-    template_id: UUID, user: CurrentUser, body: PracticeStartIn | None = None
+    template_id: UUID,
+    user: CurrentUser,
+    body: PracticeStartIn | None = None,
+    idempotency_key: Annotated[str | None, Header(max_length=255)] = None,
 ) -> PracticeStartOut:
-    return await practice.start(template_id, user.uid, body.timing if body else STANDARD_TIMING)
+    """With an Idempotency-Key (the assistant's action), the same request again gets the round
+    the first started."""
+    timing = body.timing if body else STANDARD_TIMING
+
+    return await practice.start_once(template_id, user.uid, timing, idempotency_key)
 
 
 @router.get("/statuses")

@@ -7,8 +7,13 @@ from testee_common.ai.multi_answer import multi_share
 from testee_common.limits.limits import question_seconds
 from testee_common.limits.pause import refuse_if_paused
 from testee_common.limits.rate_limit import hit_or_skip
+from testee_common.redis.idempotency import fingerprint, key_name, once
 
-from rounds.constants.practice import NO_PRACTICE_QUESTIONS, STANDARD_TIMING
+from rounds.constants.practice import (
+    NO_PRACTICE_QUESTIONS,
+    PRACTICE_KEY_SECONDS,
+    STANDARD_TIMING,
+)
 from rounds.core.db import Session
 from rounds.helpers.practice import practice_topics, timing_seconds
 from rounds.helpers.sessions import new_sections
@@ -16,6 +21,35 @@ from rounds.integrations import library
 from rounds.integrations.redis import get_redis
 from rounds.repositories import practice_sessions, sessions
 from rounds.schemas.practice import PracticeStartOut
+
+
+async def start_once(
+    template_id: UUID, user_id: str, timing: str, key: str | None
+) -> PracticeStartOut:
+    """`start`, once per client `key`: a retry after a lost answer gets the first round back."""
+    if key is None:
+        return await start(template_id, user_id, timing)
+
+    made = None
+
+    async def run() -> str:
+        nonlocal made
+        made = await start(template_id, user_id, timing)
+
+        return str(made.session_id)
+
+    name = key_name("rounds", "practice", user_id, template_id, key)
+    found = await once(
+        get_redis(), name, PRACTICE_KEY_SECONDS, fingerprint(template_id, timing), run
+    )
+
+    if made is not None:
+        return made
+
+    async with Session() as session:
+        row = await sessions.get(session, uuid.UUID(found))
+
+    return PracticeStartOut(round_id=row.candidate_invite_id, session_id=row.id)
 
 
 async def start(template_id: UUID, user_id: str, timing: str) -> PracticeStartOut:

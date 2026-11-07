@@ -1,9 +1,8 @@
-import hashlib
 from collections.abc import Awaitable, Callable
 from typing import Protocol
 from uuid import UUID
 
-from testee_common.redis.idempotency import fingerprint, once
+from testee_common.redis.idempotency import fingerprint, key_name, once
 
 from companies.constants.idempotency import IDEMPOTENCY_SECONDS
 from companies.integrations.redis import get_redis
@@ -37,8 +36,7 @@ async def once_per_key[T: Made](
 
         return str(made.id)
 
-    digest = hashlib.sha256(key.encode()).hexdigest()
-    name = f"companies:idempotency:{what}:{user_id}:{scope}:{digest}"
+    name = key_name("companies", what, user_id, scope, key)
     found = await once(get_redis(), name, IDEMPOTENCY_SECONDS, fingerprint(what, scope, body), run)
 
     return made if made is not None else await find(UUID(found))

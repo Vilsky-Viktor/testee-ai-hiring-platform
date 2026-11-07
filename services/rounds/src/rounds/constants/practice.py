@@ -10,3 +10,6 @@ PRACTICE_SIZE_CACHE_SECONDS = 5 * 60
 # None means untimed.
 PRACTICE_TIMINGS: dict[str, int | None] = {"standard": 1, "double": 2, "untimed": None}
 STANDARD_TIMING = "standard"
+# A practice round's Idempotency-Key (an assistant action confirmed again) keeps its first result
+# this long: a retry within it gets that round back.
+PRACTICE_KEY_SECONDS = 60 * 60

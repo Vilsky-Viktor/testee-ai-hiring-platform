@@ -5,6 +5,7 @@ import uuid
 import httpx
 import pytest
 from fastapi import HTTPException
+from testee_common.i18n import error_codes
 
 from assistant.constants.actions_flow import ACTION_TTL_SECONDS
 from assistant.integrations import services
@@ -135,6 +136,42 @@ def test_a_refused_token_runs_nothing_and_keeps_the_action_for_a_fresh_one(redis
 
     assert refused.value.status_code == 401
     assert store.key(action_id) in redis.counts
+
+
+@pytest.mark.parametrize("answer", [None, 500])
+def test_no_answer_keeps_the_action_so_asking_again_sends_the_same_key(redis, writes, answer):
+    action_id = prepared(redis)
+    writes.status = answer
+    asyncio.run(actions.run(CONVERSATION, action_id, ANN, "token", "en"))
+
+    assert store.key(action_id) in redis.counts
+
+    writes.status = 201
+    assert prepared(redis) == action_id
+    asyncio.run(actions.run(CONVERSATION, action_id, ANN, "token", "en"))
+
+    # The second run carries the first's key.
+    assert [write[-1] for write in writes] == [str(action_id), str(action_id)]
+
+
+def test_a_refusal_ends_the_action(redis, writes):
+    action_id = prepared(redis)
+    writes.status = 403
+    asyncio.run(actions.run(CONVERSATION, action_id, ANN, "token", "en"))
+
+    assert store.key(action_id) not in redis.counts
+
+
+def test_a_first_company_refused_shows_the_link_code_built_never_the_models(redis, writes):
+    action_id = prepared(redis)
+    writes.status = 403
+    writes.body = {"detail": "Finish it on the site.", "code": error_codes.FIRST_COMPANY_ON_SITE}
+    _, _, result, block = asyncio.run(actions.run(CONVERSATION, action_id, ANN, "token", "en"))
+
+    assert (block["state"], block["detail"]) == ("failed", "Finish it on the site.")
+    assert block["links"] == ["/companies"]
+    # What the model reads has no link to repeat.
+    assert result.content == {"error": 403, "detail": "Finish it on the site."}
 
 
 def test_a_tool_naming_another_company_is_refused_before_anything_is_called(monkeypatch):

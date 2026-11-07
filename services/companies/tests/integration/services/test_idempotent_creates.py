@@ -6,6 +6,7 @@ import uuid
 import pytest
 from fake_redis import FakeRedis
 from sqlalchemy import func, select
+from testee_common.auth.user import User
 from testee_common.redis.redis_client import redis_client
 
 from companies.config import settings
@@ -13,7 +14,10 @@ from companies.core.db import Session
 from companies.integrations import billing
 from companies.integrations import generation as generation_api
 from companies.models.interviews import Interview
+from companies.models.outbox import OutboxEvent
+from companies.repositories import companies
 from companies.services import idempotent_creates, interview_creation
+from companies.services import members as member_service
 from tests.integration import factories
 
 
@@ -70,3 +74,45 @@ def test_an_interview_sent_again_with_its_key_is_saved_and_generated_once(
     assert first.id == again.id
     assert saved == 1
     assert len(generations) == 1
+
+
+def test_a_member_invite_sent_again_with_its_key_is_saved_and_emailed_once(run, monkeypatch):
+    async def paid(company_id):
+        return True
+
+    async def nothing():
+        pass
+
+    async def scenario():
+        redis = redis_client(settings.redis_url)
+        monkeypatch.setattr(idempotent_creates, "get_redis", lambda: redis)
+        monkeypatch.setattr(member_service, "get_redis", FakeRedis)
+        monkeypatch.setattr(billing, "company_paid", paid)
+        monkeypatch.setattr(member_service.outbox_service, "flush_quietly", nothing)
+        owner = User(uid="ann", email="ann@example.com", email_verified=True)
+        created = await factories.company(f"Keyed {uuid.uuid4()}", "ann", "ann@example.com")
+        email = f"{uuid.uuid4()}@example.com"
+
+        async with Session() as session:
+            company = await companies.get(session, created.id)
+
+        try:
+            first, again = [
+                await member_service.invite_once(company, owner, email, "admin", "action-1")
+                for _ in range(2)
+            ]
+        finally:
+            await redis.aclose()
+
+        async with Session() as session:
+            emails = await session.scalars(
+                select(OutboxEvent).where(OutboxEvent.data["email"].astext == email)
+            )
+
+            return first, again, len(emails.all())
+
+    first, again, emails = run(scenario())
+
+    assert first.id == again.id
+    assert again.invited_email == first.invited_email
+    assert emails == 1

@@ -4,7 +4,7 @@ from fastapi import APIRouter, HTTPException, status
 from testee_common.auth.auth import CurrentUser, OptionalUser
 from testee_common.db.paging import PageParams
 
-from companies.api.dependencies import Via
+from companies.api.dependencies import IdempotencyKey, Via
 from companies.constants.roles import Role
 from companies.core.db import Session
 from companies.helpers.invite_links import addressed_to
@@ -48,15 +48,23 @@ async def list_members(company_id: UUID, user: CurrentUser, page: PageParams) ->
 
 
 @router.post("", status_code=status.HTTP_201_CREATED)
-async def invite_member(company_id: UUID, body: MemberIn, user: CurrentUser) -> MemberOut:
+async def invite_member(
+    company_id: UUID,
+    body: MemberIn,
+    user: CurrentUser,
+    idempotency_key: IdempotencyKey = None,
+) -> MemberOut:
     """The owner invites an admin or a viewer, who is emailed the join link; the role applies
-    once the invite is accepted."""
+    once the invite is accepted. With an Idempotency-Key, the same request again gets the
+    invite the first made."""
     company, caller = await require_company(user, company_id)
 
     if not is_owner(caller):
         raise HTTPException(status.HTTP_403_FORBIDDEN, "Only the owner can add members")
 
-    member = await member_service.invite(company, user, str(body.email).lower(), body.role)
+    member = await member_service.invite_once(
+        company, user, str(body.email).lower(), body.role, idempotency_key
+    )
 
     return member_out(member, caller)
 
