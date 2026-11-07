@@ -172,7 +172,7 @@ TEXTS = {
     # Notices of a significant change to a legal document, sent at least 14 days before it
     # applies; service emails, whatever the email settings.
     "legal_terms": {
-        "subject": "{date} से नई सेवा की शर्तें",
+        "subject": "{date} से सेवा की नई शर्तें",
         "preheader": "सेवा की नई शर्तें {date} से लागू होंगी।",
         "heading": "हम अपनी सेवा की शर्तें अपडेट कर रहे हैं",
         "lines": [
