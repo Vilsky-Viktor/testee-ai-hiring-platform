@@ -2986,9 +2986,6 @@
       "timed": "Les questions d'entretien sont chronométrées, comme l'exige l'évaluation de l'entreprise. Si vous avez besoin de plus de temps, demandez du temps supplémentaire à l'entreprise avant de commencer.",
       "audit": "testee n'a pas encore fait l'objet d'un audit indépendant : certaines parties peuvent donc ne pas respecter les WCAG 2.2 niveau AA.",
       "providers": "Le paiement des crédits (la page de paiement de Paddle), la vérification « Je ne suis pas un robot » (Cloudflare Turnstile) et la vidéo de la page d'accueil (YouTube) sont gérés par ces prestataires, avec leur propre accessibilité.",
-      "contrast": "Dans le thème clair, le texte blanc des boutons principaux de testee a un contraste de 4.34:1, juste en dessous du 4.5:1 demandé par les WCAG AA. Le thème sombre le respecte.",
-      "motion": "Les images animées de la page d'accueil et quelques petites animations, comme le bouton de lecture pulsant, le bouton « demander à Mira » et la cloche, continuent de bouger sans bouton de pause. Le réglage de réduction des animations de votre appareil les arrête.",
-      "contactForm": "Le formulaire de contact n'affiche le nom de chaque champ que comme texte indicatif, qui disparaît quand vous écrivez. Les lecteurs d'écran annoncent quand même le nom.",
       "voice": "Un entretien en mode vocal exige que vous autorisiez le micro et le son avant de commencer, même si vous comptez toucher vos réponses. Si vous ne pouvez pas les utiliser, demandez à l'entreprise de vous faire passer à des réponses tactiles."
     },
     "feedback": {

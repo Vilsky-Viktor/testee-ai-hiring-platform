@@ -2986,9 +2986,6 @@
       "timed": "Interviewvragen hebben een tijdslimiet, zoals de beoordeling van het bedrijf vereist. Heb je meer tijd nodig, vraag het bedrijf dan om extra tijd voordat je begint.",
       "audit": "testee is nog niet onafhankelijk getoetst, dus sommige onderdelen voldoen mogelijk niet aan WCAG 2.2 AA.",
       "providers": "Betalen voor credits (de betaalpagina van Paddle), de controle “Ik ben geen robot” (Cloudflare Turnstile) en de video op de startpagina (YouTube) worden door die aanbieders verzorgd, met hun eigen toegankelijkheid.",
-      "contrast": "In het lichte thema heeft de witte tekst op de primaire knoppen van testee een contrast van 4.34:1, net onder de 4.5:1 die WCAG AA vraagt. Het donkere thema voldoet eraan.",
-      "motion": "De bewegende beelden op de startpagina en een paar kleine animaties, zoals de pulserende afspeelknop, de knop “vraag Mira” en de bel, blijven bewegen zonder pauzeknop. De instelling voor minder beweging op je apparaat stopt ze.",
-      "contactForm": "Het contactformulier toont de naam van elk veld alleen als voorbeeldtekst, die verdwijnt zodra je typt. Schermlezers noemen de naam wel.",
       "voice": "Voor een interview in spraakmodus moet je vóór het begin je microfoon en geluid toestaan, ook als je je antwoorden aantikt. Kun je ze niet gebruiken, vraag het bedrijf dan om je in te stellen op antwoorden door te tikken."
     },
     "feedback": {

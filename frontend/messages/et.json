@@ -2986,9 +2986,6 @@
       "timed": "Intervjuu küsimustel on ajapiirang, nagu ettevõtte hindamine nõuab. Kui vajad rohkem aega, küsi ettevõttelt enne alustamist lisaaega.",
       "audit": "testeed pole veel sõltumatult auditeeritud, seega ei pruugi mõned osad vastata WCAG 2.2 AA nõuetele.",
       "providers": "Krediitide eest maksmist (Paddle'i makseleht), kontrolli „Ma ei ole robot” (Cloudflare Turnstile) ja avalehe videot (YouTube) haldavad need teenusepakkujad, oma ligipääsetavusega.",
-      "contrast": "Heledas teemas on valgel tekstil testee peamistel nuppudel kontrast 4.34:1, veidi alla WCAG AA nõutud 4.5:1. Tume teema vastab sellele nõudele.",
-      "motion": "Avalehe liikuvad pildid ja mõned väikesed animatsioonid, näiteks pulseeriv esitusnupp, nupp „küsi Miralt” ja kelluke, liiguvad edasi ning neil pole pausinuppu. Sinu seadme liikumise vähendamise seade peatab need.",
-      "contactForm": "Kontaktivormis on iga välja nimi näidatud ainult kohatäitena, mis kaob, kui hakkad kirjutama. Ekraanilugejad loevad nime siiski ette.",
       "voice": "Häälerežiimis intervjuu jaoks pead enne alustamist lubama mikrofoni ja heli, isegi kui kavatsed vastuseid puudutada. Kui sa ei saa neid kasutada, palu ettevõttel määrata sulle puudutamisega vastamine."
     },
     "feedback": {

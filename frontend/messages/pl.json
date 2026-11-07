@@ -2986,9 +2986,6 @@
       "timed": "Pytania w rozmowie mają limit czasu, bo wymaga tego ocena prowadzona przez firmę. Jeśli potrzebujesz więcej czasu, przed startem poproś firmę o dodatkowy czas.",
       "audit": "testee nie przeszła jeszcze niezależnego audytu, więc niektóre części mogą nie spełniać WCAG 2.2 AA.",
       "providers": "Płatność za kredyty (strona płatności Paddle), weryfikację „Nie jestem robotem” (Cloudflare Turnstile) i film na stronie głównej (YouTube) obsługują ci dostawcy, z ich własną dostępnością.",
-      "contrast": "W jasnym motywie biały tekst na głównych przyciskach testee ma kontrast 4.34:1, tuż poniżej 4.5:1 wymaganego przez WCAG AA. Ciemny motyw spełnia ten wymóg.",
-      "motion": "Ruchome obrazy na stronie głównej i kilka małych animacji, takich jak pulsujący przycisk odtwarzania, przycisk „zapytaj Mirę” i dzwonek, poruszają się dalej bez przycisku wstrzymania. Ustawienie ograniczania ruchu na Twoim urządzeniu je zatrzymuje.",
-      "contactForm": "Formularz kontaktowy pokazuje nazwę każdego pola tylko jako tekst zastępczy, który znika podczas pisania. Czytniki ekranu nadal odczytują nazwę.",
       "voice": "Rozmowa w trybie głosowym wymaga, aby przed startem zezwolić na mikrofon i dźwięk, nawet jeśli zamierzasz dotykać odpowiedzi. Jeśli nie możesz z nich korzystać, poproś firmę o ustawienie odpowiadania przez dotknięcie."
     },
     "feedback": {

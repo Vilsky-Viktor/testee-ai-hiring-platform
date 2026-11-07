@@ -2986,9 +2986,6 @@
       "timed": "Interview questions are timed, as the company's assessment requires. If you need more time, ask the company for extra time before you start.",
       "audit": "testee hasn't been audited independently yet, so some parts may not meet WCAG 2.2 AA.",
       "providers": "Paying for credits (Paddle's checkout), the \"I'm not a robot\" check (Cloudflare Turnstile) and the video on the home page (YouTube) are run by those providers, under their own accessibility.",
-      "contrast": "In the light theme, the white text on testee's primary buttons has a contrast of 4.34:1, just under the 4.5:1 that WCAG AA asks for. The dark theme meets it.",
-      "motion": "The home page's moving pictures and a few small animations, such as the pulsing play button, the \"ask Mira\" button and the bell, keep moving with no pause button. Your device's reduce-motion setting stops them.",
-      "contactForm": "The contact form shows each field's name only as a placeholder, which disappears as you type. Screen readers still announce the name.",
       "voice": "An interview in voice mode needs your microphone and sound allowed before you start, even if you'll tap your answers. If you can't use them, ask the company to set you to answering by tapping."
     },
     "feedback": {

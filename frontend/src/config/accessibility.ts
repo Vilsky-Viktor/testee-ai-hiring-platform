@@ -13,9 +13,6 @@ export const ACCESSIBILITY_DONE = [
 export const ACCESSIBILITY_LIMITS = [
   "timed",
   "audit",
-  "contrast",
-  "motion",
-  "contactForm",
   "voice",
   "providers",
 ] as const

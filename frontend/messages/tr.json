@@ -2990,9 +2990,6 @@
       "timed": "Mülakat soruları, şirketin değerlendirmesinin gerektirdiği gibi sürelidir. Daha fazla süreye ihtiyacınız varsa başlamadan önce şirketten ek süre isteyin.",
       "audit": "testee henüz bağımsız olarak denetlenmedi; bu yüzden bazı bölümler WCAG 2.2 AA'yı karşılamayabilir.",
       "providers": "Kredi ödemesi (Paddle'ın ödeme sayfası), “Ben robot değilim” doğrulaması (Cloudflare Turnstile) ve ana sayfadaki video (YouTube) bu sağlayıcılar tarafından, kendi erişilebilirlikleriyle yürütülür.",
-      "contrast": "Açık temada testee'nin birincil düğmelerindeki beyaz metnin kontrastı 4.34:1'dir; bu, WCAG AA'nın istediği 4.5:1'in biraz altındadır. Koyu tema bu değeri karşılar.",
-      "motion": "Ana sayfadaki hareketli görseller ile titreşen oynatma düğmesi, “Mira'ya sor” düğmesi ve zil gibi birkaç küçük animasyon, duraklatma düğmesi olmadan hareket etmeye devam eder. Cihazınızın hareketi azaltma ayarı bunları durdurur.",
-      "contactForm": "İletişim formu her alanın adını yalnızca yazmaya başlayınca kaybolan bir yer tutucu olarak gösterir. Ekran okuyucular adı yine de seslendirir.",
       "voice": "Sesli moddaki bir mülakat, cevaplarınıza dokunacak olsanız bile başlamadan önce mikrofonunuza ve sese izin vermenizi gerektirir. Bunları kullanamıyorsanız şirketten sizi dokunarak cevaplamaya almasını isteyin."
     },
     "feedback": {

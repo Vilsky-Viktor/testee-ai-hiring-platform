@@ -2990,9 +2990,6 @@
       "timed": "Câu hỏi phỏng vấn có giới hạn thời gian, theo yêu cầu đánh giá của công ty. Nếu cần thêm thời gian, hãy đề nghị công ty cho thêm thời gian trước khi bắt đầu.",
       "audit": "testee chưa được kiểm định độc lập, nên một số phần có thể chưa đáp ứng WCAG 2.2 AA.",
       "providers": "Việc thanh toán credit (trang thanh toán của Paddle), bước kiểm tra “Tôi không phải là người máy” (Cloudflare Turnstile) và video trên trang chủ (YouTube) do các nhà cung cấp đó vận hành, theo khả năng tiếp cận riêng của họ.",
-      "contrast": "Ở giao diện sáng, chữ trắng trên các nút chính của testee có độ tương phản 4.34:1, thấp hơn một chút so với mức 4.5:1 mà WCAG AA yêu cầu. Giao diện tối đáp ứng mức này.",
-      "motion": "Các hình ảnh chuyển động trên trang chủ và một vài hiệu ứng động nhỏ, như nút phát nhấp nháy, nút “hỏi Mira” và chuông, vẫn chuyển động mà không có nút tạm dừng. Cài đặt giảm chuyển động trên thiết bị của bạn sẽ dừng chúng.",
-      "contactForm": "Biểu mẫu liên hệ chỉ hiển thị tên mỗi trường dưới dạng văn bản gợi ý, và văn bản này biến mất khi bạn nhập. Trình đọc màn hình vẫn đọc tên trường.",
       "voice": "Buổi phỏng vấn ở chế độ giọng nói cần bạn cho phép micrô và âm thanh trước khi bắt đầu, ngay cả khi bạn sẽ chạm để trả lời. Nếu bạn không thể dùng chúng, hãy đề nghị công ty đặt cho bạn cách trả lời bằng chạm."
     },
     "feedback": {

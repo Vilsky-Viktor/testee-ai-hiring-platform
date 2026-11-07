@@ -2986,9 +2986,6 @@
       "timed": "Le domande del colloquio sono a tempo, come richiede la valutazione dell'azienda. Se ti serve più tempo, chiedi all'azienda tempo aggiuntivo prima di iniziare.",
       "audit": "testee non è ancora stato verificato da un ente indipendente, quindi alcune parti potrebbero non soddisfare le WCAG 2.2 AA.",
       "providers": "Il pagamento dei crediti (la pagina di pagamento di Paddle), la verifica «Non sono un robot» (Cloudflare Turnstile) e il video nella home page (YouTube) sono gestiti da questi fornitori, con la loro accessibilità.",
-      "contrast": "Nel tema chiaro, il testo bianco sui pulsanti principali di testee ha un contrasto di 4.34:1, appena sotto il 4.5:1 richiesto da WCAG AA. Il tema scuro lo rispetta.",
-      "motion": "Le immagini in movimento della home page e alcune piccole animazioni, come il pulsante di riproduzione che pulsa, il pulsante «chiedi a Mira» e la campanella, continuano a muoversi senza un pulsante di pausa. L'impostazione di riduzione del movimento del tuo dispositivo le ferma.",
-      "contactForm": "Il modulo di contatto mostra il nome di ogni campo solo come segnaposto, che scompare mentre scrivi. Gli screen reader annunciano comunque il nome.",
       "voice": "Un colloquio in modalità vocale richiede che tu consenta microfono e audio prima di iniziare, anche se toccherai le risposte. Se non puoi usarli, chiedi all'azienda di impostarti la risposta tramite tocco."
     },
     "feedback": {

@@ -2986,9 +2986,6 @@
       "timed": "Interviewfragen haben ein Zeitlimit, wie es die Beurteilung des Unternehmens verlangt. Wenn du mehr Zeit brauchst, bitte das Unternehmen vor dem Start um zusätzliche Zeit.",
       "audit": "testee wurde noch nicht unabhängig geprüft, daher erfüllen manche Teile WCAG 2.2 AA vielleicht nicht.",
       "providers": "Das Bezahlen von Credits (die Bezahlseite von Paddle), die Prüfung „Ich bin kein Roboter“ (Cloudflare Turnstile) und das Video auf der Startseite (YouTube) werden von diesen Anbietern betrieben, mit deren eigener Barrierefreiheit.",
-      "contrast": "Im hellen Design hat der weiße Text auf den primären Buttons von testee einen Kontrast von 4.34:1, knapp unter den 4.5:1, die WCAG AA verlangt. Das dunkle Design erfüllt diesen Wert.",
-      "motion": "Die bewegten Bilder der Startseite und einige kleine Animationen, etwa der pulsierende Wiedergabe-Button, der Button „Mira fragen“ und die Glocke, bewegen sich ohne Pause-Button weiter. Die Einstellung für reduzierte Bewegung auf deinem Gerät stoppt sie.",
-      "contactForm": "Das Kontaktformular zeigt den Namen jedes Felds nur als Platzhalter, der beim Tippen verschwindet. Screenreader lesen den Namen trotzdem vor.",
       "voice": "Für ein Interview im Sprachmodus musst du vor dem Start Mikrofon und Ton erlauben, auch wenn du deine Antworten antippen willst. Wenn du sie nicht nutzen kannst, bitte das Unternehmen, dich auf Antworten per Antippen umzustellen."
     },
     "feedback": {

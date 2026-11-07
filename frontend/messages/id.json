@@ -2986,9 +2986,6 @@
       "timed": "Pertanyaan wawancara diberi batas waktu, sesuai kebutuhan penilaian perusahaan. Jika butuh waktu lebih, minta waktu tambahan kepada perusahaan sebelum kamu mulai.",
       "audit": "testee belum diaudit secara independen, jadi beberapa bagian mungkin belum memenuhi WCAG 2.2 AA.",
       "providers": "Pembayaran kredit (halaman pembayaran Paddle), pemeriksaan “Saya bukan robot” (Cloudflare Turnstile), dan video di beranda (YouTube) dijalankan oleh penyedia tersebut, dengan aksesibilitas mereka sendiri.",
-      "contrast": "Di tema terang, teks putih pada tombol utama testee memiliki kontras 4.34:1, sedikit di bawah 4.5:1 yang diminta WCAG AA. Tema gelap memenuhinya.",
-      "motion": "Gambar bergerak di beranda dan beberapa animasi kecil, seperti tombol putar yang berdenyut, tombol “tanya Mira”, dan lonceng, terus bergerak tanpa tombol jeda. Pengaturan pengurangan gerakan di perangkatmu menghentikannya.",
-      "contactForm": "Formulir kontak menampilkan nama setiap kolom hanya sebagai placeholder, yang hilang saat kamu mengetik. Pembaca layar tetap membacakan nama itu.",
       "voice": "Wawancara dalam mode suara memerlukan izin mikrofon dan suara sebelum kamu mulai, meskipun kamu akan mengetuk jawabanmu. Jika kamu tidak bisa memakainya, minta perusahaan mengatur agar kamu menjawab dengan mengetuk."
     },
     "feedback": {

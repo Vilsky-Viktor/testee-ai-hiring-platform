@@ -2986,9 +2986,6 @@
       "timed": "Las preguntas de la entrevista tienen tiempo limitado, como exige la evaluación de la empresa. Si necesitas más tiempo, pide a la empresa tiempo adicional antes de empezar.",
       "audit": "testee aún no ha pasado una auditoría independiente, así que algunas partes podrían no cumplir las WCAG 2.2 AA.",
       "providers": "El pago de créditos (la página de pago de Paddle), la comprobación «No soy un robot» (Cloudflare Turnstile) y el vídeo de la página de inicio (YouTube) los gestionan esos proveedores, con su propia accesibilidad.",
-      "contrast": "En el tema claro, el texto blanco de los botones principales de testee tiene un contraste de 4.34:1, justo por debajo del 4.5:1 que piden las WCAG AA. El tema oscuro lo cumple.",
-      "motion": "Las imágenes en movimiento de la página de inicio y algunas animaciones pequeñas, como el botón de reproducción que late, el botón «preguntar a Mira» y la campana, siguen moviéndose sin botón de pausa. El ajuste de reducir movimiento de tu dispositivo las detiene.",
-      "contactForm": "El formulario de contacto muestra el nombre de cada campo solo como texto de ejemplo, que desaparece al escribir. Los lectores de pantalla siguen anunciando el nombre.",
       "voice": "Una entrevista en modo de voz requiere que permitas el micrófono y el sonido antes de empezar, aunque vayas a tocar tus respuestas. Si no puedes usarlos, pide a la empresa que te configure para responder tocando."
     },
     "feedback": {

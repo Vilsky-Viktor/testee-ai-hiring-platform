@@ -2986,9 +2986,6 @@
       "timed": "May takdang oras ang mga tanong sa interview, ayon sa hinihingi ng assessment ng kumpanya. Kung kailangan mo ng mas maraming oras, humingi ng dagdag na oras sa kumpanya bago ka magsimula.",
       "audit": "Hindi pa independiyenteng na-audit ang testee, kaya maaaring may mga bahaging hindi pa umaabot sa WCAG 2.2 AA.",
       "providers": "Ang pagbabayad para sa credits (checkout ng Paddle), ang “Hindi ako robot” na check (Cloudflare Turnstile) at ang video sa home page (YouTube) ay pinapatakbo ng mga provider na iyon, ayon sa sarili nilang accessibility.",
-      "contrast": "Sa light theme, may contrast na 4.34:1 ang puting text sa mga primary button ng testee, bahagyang mas mababa sa 4.5:1 na hinihingi ng WCAG AA. Naaabot ito ng dark theme.",
-      "motion": "Patuloy na gumagalaw nang walang pause button ang mga gumagalaw na larawan sa home page at ilang maliliit na animation, gaya ng pumipintig na play button, ang “magtanong kay Mira” na button at ang bell. Pinapahinto ang mga ito ng reduce-motion setting ng iyong device.",
-      "contactForm": "Ipinapakita lang ng contact form ang pangalan ng bawat field bilang placeholder, na nawawala habang nagta-type ka. Binabasa pa rin ng mga screen reader ang pangalan.",
       "voice": "Kailangan ng interview na naka-voice mode na payagan mo ang mikropono at tunog bago ka magsimula, kahit mag-tap ka ng mga sagot mo. Kung hindi mo magagamit ang mga ito, hilingin sa kumpanya na itakda kang sumagot sa pamamagitan ng pag-tap."
     },
     "feedback": {
