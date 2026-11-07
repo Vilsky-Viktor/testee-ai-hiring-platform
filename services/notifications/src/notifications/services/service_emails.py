@@ -1,7 +1,7 @@
-from testee_common.events.notifications import NotificationKind, Recipient
+from testee_common.events.notifications import BILLING_KINDS, NotificationKind, Recipient
 
 from notifications.config import settings
-from notifications.constants.notifications import BILLING_KINDS, NAMED_KINDS, REFUND_KINDS
+from notifications.constants.notifications import NAMED_KINDS, REFUND_KINDS
 from notifications.helpers.member_emails import (
     currency_change_email,
     price_change_email,

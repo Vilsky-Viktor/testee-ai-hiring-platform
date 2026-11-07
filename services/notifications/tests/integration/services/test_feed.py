@@ -3,13 +3,14 @@ import uuid
 
 import pytest
 from testee_common.events.notifications import (
+    BILLING_KINDS,
     NOTIFICATION_REQUESTED,
     NotificationKind,
     Recipient,
     notification,
 )
 
-from notifications.constants.notifications import BILLING_KINDS, DROPDOWN_LIMIT
+from notifications.constants.notifications import DROPDOWN_LIMIT
 from notifications.handlers import dispatch
 from notifications.integrations import accounts, companies, subscription
 from notifications.repositories import notifications

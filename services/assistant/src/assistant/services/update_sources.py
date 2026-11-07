@@ -5,14 +5,23 @@ import httpx
 from testee_common.config.constants import VIA_MCP
 from testee_common.i18n.i18n import translate
 
+from assistant.constants.key_tools import CREDITS_READ, INTERVIEWS_READ
 from assistant.constants.tool_calls import SERVICE_UNAVAILABLE
 from assistant.constants.updates import (
     CANDIDATE_UPDATES_PATH,
+    NO_QUESTIONS,
     NOT_INVITED_PATH,
     QUESTION_UPDATES_PATH,
     UPDATES_PATH,
 )
-from assistant.helpers.updates import counts_of, credits_low, events_of, updates_result
+from assistant.helpers.updates import (
+    counts_of,
+    credits_low,
+    events_of,
+    may_hear,
+    may_read,
+    updates_result,
+)
 from assistant.integrations import billing, services
 from assistant.integrations import update_sources as sources
 from assistant.services.tool_calls import error_content
@@ -51,18 +60,20 @@ async def read(
     period: tuple[datetime, datetime],
     via: str,
     site: str,
-    sees_credits: bool,
+    permissions: list[str] | None,
 ) -> dict:
     """The updates between the two times in the companies the call may read (only
     `company_id`'s when it names one), each from the service that holds it (see
     constants/updates.py), and, where the user may see credits (an owner or admin; a key with
-    credits:read), whether they run low."""
+    credits:read), whether they run low. An API key's `permissions` narrow what it hears (None
+    for a person): flagged questions take interviews:read, the bell's kinds KEY_BELL_KINDS."""
     found = await user_companies(token, language, via)
 
     if arguments.get("company_id"):
         found = {key: company for key, company in found.items() if key == arguments["company_id"]}
 
     ids = list(found)
+    sees_credits = may_read(permissions, CREDITS_READ)
     editors = [key for key, company in found.items() if company["can_edit"] and sees_credits]
 
     if not ids:
@@ -84,9 +95,14 @@ async def read(
         raise Refused(503, translate(SERVICE_UNAVAILABLE, language)) from None
 
     candidates, not_invited, questions, bell = answers[:4]
+
+    if not may_read(permissions, INTERVIEWS_READ):
+        questions = NO_QUESTIONS
+
+    heard = [row for row in bell["items"] if may_hear(row, permissions, editors)]
     low = [credits_low(company) for company in (answers[4] if editors else [])]
     names = {key: company["name"] for key, company in found.items()}
-    events = events_of(candidates["items"], not_invited["items"], questions["items"], bell["items"])
+    events = events_of(candidates["items"], not_invited["items"], questions["items"], heard)
     counts = counts_of(candidates, not_invited, questions, events)
 
     return updates_result(events, counts, low, names, period[0], site)

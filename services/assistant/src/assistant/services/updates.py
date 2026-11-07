@@ -7,7 +7,6 @@ from testee_common.i18n.i18n import translate
 from assistant.config import settings
 from assistant.constants.tool_calls import INVALID_ARGUMENTS
 from assistant.constants.updates import (
-    CREDITS_TOOL,
     FIRST_CHECK_DAYS,
     GET_UPDATES,
     GET_UPDATES_DEFINITION,
@@ -21,7 +20,6 @@ from assistant.models.answers import Turn
 from assistant.models.oauth_tokens import Access
 from assistant.models.tools import ToolResult
 from assistant.repositories import update_checks
-from assistant.services.mcp_keys import key_may_use
 from assistant.services.update_sources import Refused, read
 
 
@@ -47,7 +45,7 @@ async def for_app(arguments: dict, access: Access, token: str, language: str) ->
     """An AI app's (or API key's) call: since its connection's last check, the first time the
     last FIRST_CHECK_DAYS days, or the `since` it asks for, which doesn't count as a check; up
     to where the next check starts, so nothing is told twice or missed. Only companies
-    that allow AI apps; low credits only for a key that may read credits; links on the site."""
+    that allow AI apps; a key hears only what its permissions cover; links on the site."""
     started = time.monotonic()
     # A step saved in a transaction still open is stamped before it can be read: the check
     # ends SETTLE_SECONDS ago, so the next one, starting there, still finds it.
@@ -65,9 +63,9 @@ async def for_app(arguments: dict, access: Access, token: str, language: str) ->
             since = last or now - timedelta(FIRST_CHECK_DAYS)
 
         period = (since, now)
-        sees_credits = key_may_use(access, CREDITS_TOOL)
+        permissions = access.permissions if access.key_id else None
         content = await read(
-            arguments, token, language, period, VIA_MCP, settings.site_url.rstrip("/"), sees_credits
+            arguments, token, language, period, VIA_MCP, settings.site_url.rstrip("/"), permissions
         )
     except Refused as refused:
         return result(arguments, started, refused.status, {"detail": refused.detail})
@@ -89,7 +87,7 @@ async def in_panel(arguments: dict, turn: Turn) -> ToolResult:
         now = datetime.now(UTC)
         period = (since or now - timedelta(FIRST_CHECK_DAYS), now)
         content = await read(
-            arguments, turn.token, turn.language, period, VIA_ASSISTANT, "", sees_credits=True
+            arguments, turn.token, turn.language, period, VIA_ASSISTANT, "", permissions=None
         )
     except Refused as refused:
         return result(arguments, started, refused.status, {"detail": refused.detail})

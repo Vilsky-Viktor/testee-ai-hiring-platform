@@ -12,17 +12,7 @@ KEEP_DAYS = 90
 # Each new notification removes up to this many expired ones (and their received events), which
 # keeps up with how many arrive.
 EXPIRED_PER_PRUNE = 100
-# A company's billing: in the bell for its owners and admins only, and emailed to them too.
-# Referral rewards aren't among them: every member sees the referrals tab they open.
 REFUND_KINDS = {NotificationKind.REFUND_APPROVED, NotificationKind.REFUND_REJECTED}
-BILLING_KINDS = {
-    NotificationKind.AUTO_TOP_UP_ON,
-    NotificationKind.AUTO_TOP_UP_CHARGED,
-    NotificationKind.AUTO_TOP_UP_FAILED,
-    NotificationKind.AUTO_TOP_UP_PAUSED,
-    NotificationKind.AUTO_TOP_UP_PRICE_CHANGE,
-    *REFUND_KINDS,
-}
 # Notifications that carry their company's name, added here as billing doesn't know it.
 NAMED_KINDS = {NotificationKind.AUTO_TOP_UP_PRICE_CHANGE, *REFUND_KINDS}
 # Kinds that can come in bursts. One about the same thing (its page and title) within

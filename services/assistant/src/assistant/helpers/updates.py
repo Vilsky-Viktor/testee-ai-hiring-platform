@@ -1,6 +1,7 @@
 from datetime import UTC, datetime
 
 from testee_common.config.constants import MAX_UPDATES
+from testee_common.events.notifications import BILLING_KINDS
 
 from assistant.constants.tool_calls import MAX_STRING_LENGTH
 from assistant.constants.updates import (
@@ -8,6 +9,7 @@ from assistant.constants.updates import (
     BELL_FIELDS,
     CREDITS_LOW,
     FROM_SOURCES,
+    KEY_BELL_KINDS,
     PASSED,
     SOURCE_FIELDS,
     TOP_UP_PATH,
@@ -36,6 +38,22 @@ def source_event(item: dict, kind: str | None = None) -> dict:
         **{field: item[field] for field in SOURCE_FIELDS if item.get(field) is not None},
         "link": item["link"],
     }
+
+
+def may_read(permissions: list[str] | None, permission: str) -> bool:
+    """Whether the call may read what the permission covers: a person (None) always, an API key
+    with that permission."""
+    return permissions is None or permission in permissions
+
+
+def may_hear(row: dict, permissions: list[str] | None, billing: list[str]) -> bool:
+    """Whether the call may hear a bell notification: a company's billing only in the companies
+    it may see the billing of (`billing`), as the bell shows it to their owners and admins only;
+    an API key only the kinds its permissions cover."""
+    if row["kind"] in BILLING_KINDS and row["company_id"] not in billing:
+        return False
+
+    return permissions is None or KEY_BELL_KINDS.get(row["kind"]) in permissions
 
 
 def bell_event(row: dict) -> dict:

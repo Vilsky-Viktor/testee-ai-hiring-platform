@@ -5,6 +5,7 @@ from datetime import UTC, datetime, timedelta
 
 import httpx
 import pytest
+from testee_common.events.notifications import BILLING_KINDS
 from testee_common.i18n.i18n import translate
 
 from assistant.constants.tool_calls import SERVICE_UNAVAILABLE
@@ -23,7 +24,7 @@ VIEWED = {"id": "viewed", "name": "Viewed", "ai_apps_allowed": True, "can_edit":
 def asked(monkeypatch):
     """The user's companies, and what each service was asked: one finished candidate per
     company it's asked about, and every company it's asked about low on credits."""
-    made = {"low": []}
+    made = {"low": [], "bell": [], "questions": []}
 
     async def get(service, path, query, token, language, via=None):
         request = httpx.Request("GET", f"http://{service}{path}")
@@ -36,6 +37,14 @@ def asked(monkeypatch):
         # Each service's answer: its newest updates, and how many in all where it counts.
         if service == "ats":
             return {"items": [], "total": 0}
+
+        if service == "notifications":
+            return {"items": made["bell"], "counts": {}}
+
+        if service == "library":
+            counts = {"question_flagged": len(made["questions"])} if made["questions"] else {}
+
+            return {"items": made["questions"], "counts": counts}
 
         if service != "companies":
             return {"items": [], "counts": {}}
@@ -66,10 +75,30 @@ def asked(monkeypatch):
     return made
 
 
-def reading(arguments=None, via="mcp", sees_credits=True) -> dict:
+def reading(arguments=None, via="mcp", permissions=None) -> dict:
     return asyncio.run(
-        read(arguments or {}, "token", "de", PERIOD, via, "https://site", sees_credits)
+        read(arguments or {}, "token", "de", PERIOD, via, "https://site", permissions)
     )
+
+
+def bell(kind: str, company_id: str = "open") -> dict:
+    return {
+        "kind": kind,
+        "created_at": UNTIL.isoformat(),
+        "company_id": company_id,
+        "data": {"title": "Backend", "credits": 500},
+        "link": f"/companies/{company_id}",
+    }
+
+
+def heard(result: dict) -> list[str]:
+    return [
+        update["kind"]
+        for company in result["companies"]
+        for interview in company["interviews"]
+        for update in interview["updates"]
+        if update["kind"] != "candidate_finished"
+    ]
 
 
 def names(result: dict) -> list[str]:
@@ -99,7 +128,7 @@ def test_low_credits_only_for_companies_the_user_owns_or_runs(asked):
 
 
 def test_low_credits_never_without_the_permission_to_read_them(asked):
-    result = reading(sees_credits=False)
+    result = reading(permissions=["candidates:read"])
 
     assert asked["low"] == []
     assert "credits_low" not in result["summary"]
@@ -133,3 +162,55 @@ def test_a_service_that_doesnt_answer_is_a_refusal_in_the_users_language(asked, 
         503,
         translate(SERVICE_UNAVAILABLE, "de"),
     )
+
+
+@pytest.mark.parametrize(
+    "kind, permissions, hears",
+    [
+        *((kind, ["candidates:read"], False) for kind in sorted(BILLING_KINDS)),
+        *((kind, ["candidates:read", "credits:read"], True) for kind in sorted(BILLING_KINDS)),
+        ("referral_rewarded", ["candidates:read"], False),
+        ("referral_rewarded", ["candidates:read", "credits:read"], True),
+        ("interview_ready", ["candidates:read"], False),
+        ("interview_ready", ["candidates:read", "interviews:read"], True),
+        ("interview_cancelled", ["candidates:read"], False),
+        ("interview_cancelled", ["candidates:read", "interviews:read"], True),
+        ("connection_broken", ["candidates:read", "credits:read", "interviews:read"], False),
+        ("ats_cannot_write", ["candidates:read", "credits:read", "interviews:read"], False),
+        ("connection_broken", None, True),
+        ("referral_rewarded", None, True),
+    ],
+)
+def test_a_key_hears_only_the_bell_kinds_its_permissions_cover(asked, kind, permissions, hears):
+    asked["bell"].append(bell(kind))
+
+    assert heard(reading({"company_id": "open"}, permissions=permissions)) == (
+        [kind] if hears else []
+    )
+
+
+def test_a_companys_billing_never_reaches_a_viewer_of_it(asked):
+    """The bell shows it to owners and admins only; everyone hears the rest there."""
+    asked["bell"].extend([bell("auto_top_up_charged", "viewed"), bell("interview_ready", "viewed")])
+
+    assert heard(reading({"company_id": "viewed"})) == ["interview_ready"]
+
+
+@pytest.mark.parametrize(
+    "permissions, count", [(["candidates:read"], 0), (["candidates:read", "interviews:read"], 1)]
+)
+def test_questions_take_the_permission_that_reads_them(asked, permissions, count):
+    asked["questions"].append(
+        {
+            "kind": "question_flagged",
+            "at": UNTIL.isoformat(),
+            "company_id": "open",
+            "title": "Backend",
+            "link": "/companies/open",
+        }
+    )
+
+    result = reading({"company_id": "open"}, permissions=permissions)
+
+    assert heard(result).count("question_flagged") == count
+    assert result["summary"].get("question_flagged", 0) == count

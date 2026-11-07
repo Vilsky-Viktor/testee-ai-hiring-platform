@@ -45,8 +45,8 @@ def world(monkeypatch):
     async def save(session, connection, at):
         checks[connection] = max(at, checks.get(connection, at))
 
-    async def read(arguments, token, language, period, via, site, sees_credits):
-        reads.append((period, via, site, sees_credits))
+    async def read(arguments, token, language, period, via, site, permissions):
+        reads.append((period, via, site, permissions))
         since, until = period
         found = [happened for happened, readable in held if readable <= Clock.moment]
 
@@ -165,19 +165,19 @@ def test_a_since_that_isnt_a_time_is_refused_in_the_users_language(world):
 
 
 @pytest.mark.parametrize(
-    "access, sees_credits",
+    "access, permissions",
     [
-        (ACCESS, True),
-        (key("candidates:read"), False),
-        (key("candidates:read", "credits:read"), True),
+        (ACCESS, None),
+        (key("candidates:read"), ["mcp", "candidates:read"]),
+        (key("candidates:read", "credits:read"), ["mcp", "candidates:read", "credits:read"]),
     ],
 )
-def test_credits_only_for_an_app_or_a_key_that_may_read_them(world, access, sees_credits):
+def test_a_key_is_narrowed_by_its_permissions_and_an_app_is_not(world, access, permissions):
     _, _, reads = world
 
     check(access)
 
-    assert (reads[0][1], reads[0][3]) == ("mcp", sees_credits)
+    assert (reads[0][1], reads[0][3]) == ("mcp", permissions)
 
 
 def test_the_panel_reads_the_last_days_with_the_apps_own_links_and_keeps_no_check(world):
@@ -187,7 +187,7 @@ def test_the_panel_reads_the_last_days_with_the_apps_own_links_and_keeps_no_chec
     result = asyncio.run(updates_service.in_panel({}, turn))
 
     assert result.status_code == 200
-    assert reads[0] == ((NOW - timedelta(days=FIRST_CHECK_DAYS), NOW), "assistant", "", True)
+    assert reads[0] == ((NOW - timedelta(days=FIRST_CHECK_DAYS), NOW), "assistant", "", None)
     assert checks == {}
 
 

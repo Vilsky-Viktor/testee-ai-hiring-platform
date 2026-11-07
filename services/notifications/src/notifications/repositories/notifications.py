@@ -4,11 +4,10 @@ from datetime import datetime, timedelta
 from sqlalchemy import and_, delete, func, or_, select, tuple_
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
-from testee_common.events.notifications import NotificationKind, Recipient
+from testee_common.events.notifications import BILLING_KINDS, NotificationKind, Recipient
 
 from notifications.constants.member_emails import INTERVIEW_LINK
 from notifications.constants.notifications import (
-    BILLING_KINDS,
     EXPIRED_PER_PRUNE,
     GROUP_HOURS,
     KEEP_DAYS,

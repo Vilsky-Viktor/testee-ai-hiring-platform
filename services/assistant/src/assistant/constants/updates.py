@@ -2,6 +2,9 @@
 # AI apps over MCP and the in-app panel alike. It reads the notifications service's feed (an
 # internal route), so it isn't an allow-list entry of a user-facing route: it's added to the
 # registry by hand (services/registry.py) and carried out by services/updates.py.
+from testee_common.events.notifications import BILLING_KINDS, NotificationKind
+
+from assistant.constants.key_tools import CREDITS_READ, INTERVIEWS_READ
 
 GET_UPDATES = "get_updates"
 GET_UPDATES_DEFINITION = {
@@ -61,6 +64,8 @@ PASSED = "passed"
 CANDIDATE_UPDATES_PATH = "/internal/candidates/updates"
 NOT_INVITED_PATH = "/internal/candidates/not-invited"
 QUESTION_UPDATES_PATH = "/internal/questions/updates"
+# What library's answer becomes for a key that may not read questions.
+NO_QUESTIONS = {"items": [], "counts": {}}
 ATS_NOT_INVITED = "ats_not_invited"
 FROM_SOURCES = frozenset(
     {
@@ -75,12 +80,18 @@ FROM_SOURCES = frozenset(
 SOURCE_FIELDS = ("candidate_name", "email", "grade", "passed", "ats", "reason", "topic")
 # What an update keeps of a bell notification's data (its title names its interview).
 BELL_FIELDS = ("ats", "credits")
+# The bell's kinds an API key hears, each with the permission it needs; any other (a broken
+# connection, an ATS that can't write) isn't for a key, as the same tools aren't (key_tools.py).
+KEY_BELL_KINDS = {
+    NotificationKind.INTERVIEW_READY: INTERVIEWS_READ,
+    NotificationKind.INTERVIEW_CANCELLED: INTERVIEWS_READ,
+    NotificationKind.REFERRAL_REWARDED: CREDITS_READ,
+    **dict.fromkeys(BILLING_KINDS, CREDITS_READ),
+}
 # A company running low on credits that no automatic top-up refills (billing's say, as for its
 # reminder emails), on every check while it lasts, for those who may see its credits: its owners
 # and admins, and API keys with credits:read.
 CREDITS_LOW = "credits_low"
-# The tool whose key permission (credits:read) lets an API key see them.
-CREDITS_TOOL = "get_credits"
 LOW_COMPANIES_PATH = "/internal/companies/low"
 TOP_UP_PATH = "/top-up"
 

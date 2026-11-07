@@ -62,6 +62,19 @@ class NotificationKind(StrEnum):
     LEGAL_DPA = "legal_dpa"
 
 
+# A company's billing: in the bell for its owners and admins only, and emailed to them too.
+# Referral rewards aren't among them: every member sees the referrals tab they open.
+BILLING_KINDS = {
+    NotificationKind.AUTO_TOP_UP_ON,
+    NotificationKind.AUTO_TOP_UP_CHARGED,
+    NotificationKind.AUTO_TOP_UP_FAILED,
+    NotificationKind.AUTO_TOP_UP_PAUSED,
+    NotificationKind.AUTO_TOP_UP_PRICE_CHANGE,
+    NotificationKind.REFUND_APPROVED,
+    NotificationKind.REFUND_REJECTED,
+}
+
+
 # Who a notification is for: one user, every member of a company, or every user (ALL, one row
 # that each user's feed shows when it's newer than their account).
 class Recipient(StrEnum):
