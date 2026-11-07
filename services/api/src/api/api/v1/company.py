@@ -1,19 +1,21 @@
 from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, Query, Response
+from fastapi import APIRouter, Query, Request, Response
 from pydantic import EmailStr
+from testee_common.db.paging import PageParams
 
 from api.api.dependencies import needs
 from api.config import settings
 from api.constants.api import EMAIL_QUERY_DEPRECATED_AT, EMAIL_QUERY_SUNSET_AT
 from api.constants.permissions import Permission
 from api.constants.responses import COMMON, DEPRECATION_HEADERS
-from api.helpers.public import candidate_of, deprecation_headers
+from api.helpers.public import candidate_of, deprecation_headers, link_next
 from api.integrations import companies
 from api.models.api import ApiKey
 from api.schemas.changes import CandidateSearch, Credits
-from api.schemas.public import Candidate
+from api.schemas.public import Candidate, RemovedCandidate
+from api.schemas.public_params import After, UpdatedSince
 
 # What's the company's as a whole: its candidates across interviews and its credits.
 router = APIRouter(tags=["Company"], responses=COMMON)
@@ -27,6 +29,27 @@ async def search_candidates(
     first, at most 100, each with its interview's `interview_id`. The email goes in the body, so
     it stays out of URLs and the logs that keep them."""
     return await found_by_email(key, str(body.email))
+
+
+@router.get("/candidates/removed", summary="List removed candidates")
+async def removed_candidates(
+    key: Annotated[ApiKey, needs(Permission.CANDIDATES_READ)],
+    page: PageParams,
+    request: Request,
+    response: Response,
+    updated_since: UpdatedSince = None,
+    after: After = None,
+) -> list[RemovedCandidate]:
+    """The candidates your company removed in the last 14 days, oldest first: the same removals
+    as the `candidate.removed` web hook event, so you can catch up after missing events. A full
+    page comes with a `Link` header to the next one (`rel="next"`)."""
+    found = await companies.removed_candidates(
+        key.company_id, page.offset, page.limit, updated_since, after
+    )
+    listed = [RemovedCandidate(**item) for item in found]
+    link_next(request, response, page.offset, page.limit, listed, True)
+
+    return listed
 
 
 @router.get(

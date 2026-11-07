@@ -7,6 +7,30 @@ from testee_common.db.db import delete_in_batches
 
 from companies.models.invites import CandidateInvite
 from companies.models.removals import RemovedInvite
+from companies.repositories.sync import from_cursor
+
+
+async def of_company(
+    session: AsyncSession,
+    company_id: UUID,
+    offset: int,
+    limit: int,
+    since: datetime | None = None,
+    after: UUID | None = None,
+) -> list[RemovedInvite]:
+    """The candidates the company removed in the last REMOVAL_KEEP_DAYS, oldest first; with
+    `since`, a sync's page (from_cursor)."""
+    order = [RemovedInvite.removed_at, RemovedInvite.invite_id]
+    synced = from_cursor(order, since, after) if since else []
+    query = (
+        select(RemovedInvite)
+        .where(RemovedInvite.company_id == company_id, *synced)
+        .order_by(*order)
+        .offset(offset)
+        .limit(limit)
+    )
+
+    return list((await session.scalars(query)).all())
 
 
 async def restored(

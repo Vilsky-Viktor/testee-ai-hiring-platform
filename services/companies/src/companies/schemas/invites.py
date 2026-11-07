@@ -264,3 +264,9 @@ class InvitedCompaniesOut(BaseModel):
 class GuestTokenOut(BaseModel):
     # A Firebase custom token for the invite's guest.
     token: str
+
+
+class RemovedCandidateOut(BaseModel):
+    id: UUID
+    # When they were removed: the name every list syncs by.
+    updated_at: datetime

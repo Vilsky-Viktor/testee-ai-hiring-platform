@@ -1,15 +1,22 @@
+from datetime import datetime
 from uuid import UUID
 
 from fastapi import APIRouter, HTTPException, status
 from testee_common.config.constants import MAX_PAGE_SIZE
+from testee_common.db.paging import PageParams
 
 from companies.api.dependencies import ServiceCaller
 from companies.constants.audit import VIA_API
 from companies.core.db import Session
-from companies.repositories import candidates
+from companies.repositories import candidates, removals
 from companies.schemas.companies import CompanyCreditsOut
 from companies.schemas.interviews import InterviewCreate, InterviewOut
-from companies.schemas.invites import CandidateChangesIn, CandidateSearchIn, CompanyCandidateOut
+from companies.schemas.invites import (
+    CandidateChangesIn,
+    CandidateSearchIn,
+    CompanyCandidateOut,
+    RemovedCandidateOut,
+)
 from companies.services import (
     candidate_changes,
     candidate_invites,
@@ -87,6 +94,24 @@ async def resend_invite(
     the invite keeps its return address and theme."""
     interview, invite = await company_candidate(company_id, interview_id, invite_id)
     await candidate_invites.resend(company_id, interview, invite, user_id)
+
+
+@router.get("/candidates/removed")
+async def removed_candidates(
+    company_id: UUID,
+    page: PageParams,
+    caller: ServiceCaller,
+    updated_since: datetime | None = None,
+    after: UUID | None = None,
+) -> list[RemovedCandidateOut]:
+    """Who the company removed lately, ids only: what a web hook that missed `candidate.removed`
+    catches up from."""
+    async with Session() as session:
+        rows = await removals.of_company(
+            session, company_id, page.offset, page.limit, updated_since, after
+        )
+
+    return [RemovedCandidateOut(id=row.invite_id, updated_at=row.removed_at) for row in rows]
 
 
 @router.post("/candidates/search")

@@ -1586,6 +1586,162 @@
     ]
    }
   },
+  "/candidates/removed": {
+   "get": {
+    "tags": [
+     "Company"
+    ],
+    "summary": "List removed candidates",
+    "description": "The candidates your company removed in the last 14 days, oldest first: the same removals\nas the `candidate.removed` web hook event, so you can catch up after missing events. A full\npage comes with a `Link` header to the next one (`rel=\"next\"`).\n\nNeeds the `candidates:read` permission.",
+    "operationId": "removed_candidates",
+    "security": [
+     {
+      "HTTPBearer": []
+     }
+    ],
+    "parameters": [
+     {
+      "name": "updated_since",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "date-time"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "description": "Only items that changed at this time or later (ISO 8601), oldest change first: pass the last `updated_at` you got to sync",
+       "title": "Updated Since"
+      },
+      "description": "Only items that changed at this time or later (ISO 8601), oldest change first: pass the last `updated_at` you got to sync"
+     },
+     {
+      "name": "after",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "format": "uuid"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "description": "With `updated_since`: the `id` of the last item you got, so the next page starts after it and items changed at the same moment are neither repeated nor missed",
+       "title": "After"
+      },
+      "description": "With `updated_since`: the `id` of the last item you got, so the next page starts after it and items changed at the same moment are neither repeated nor missed"
+     },
+     {
+      "name": "offset",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "minimum": 0,
+       "description": "Number of items to skip",
+       "default": 0,
+       "title": "Offset"
+      },
+      "description": "Number of items to skip"
+     },
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "maximum": 100,
+       "minimum": 1,
+       "description": "Number of items to return, up to 100",
+       "default": 100,
+       "title": "Limit"
+      },
+      "description": "Number of items to return, up to 100"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/RemovedCandidate"
+         },
+         "title": "Response Removed Candidates"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "The API key is missing, invalid or expired (`invalid_api_key`, `api_key_expired`)",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Error"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "The API key doesn't have the permission the endpoint needs (`missing_permission`), or doesn't allow the address the request came from (`ip_not_allowed`)",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Error"
+        }
+       }
+      }
+     },
+     "429": {
+      "description": "Your company's keys exceeded 60 requests per minute (`rate_limited`)",
+      "headers": {
+       "Retry-After": {
+        "description": "How many seconds to wait before trying again",
+        "schema": {
+         "type": "integer"
+        }
+       }
+      },
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Error"
+        }
+       }
+      }
+     },
+     "503": {
+      "description": "testee is down for maintenance (`maintenance`), or what the endpoint does is paused for a while (`paused`); try again later",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Error"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/candidates": {
    "get": {
     "tags": [
@@ -3742,6 +3898,29 @@
      "mcp"
     ],
     "title": "Permission"
+   },
+   "RemovedCandidate": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Id",
+      "description": "The candidate's id"
+     },
+     "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Updated At",
+      "description": "When they were removed"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "updated_at"
+    ],
+    "title": "RemovedCandidate",
+    "description": "A candidate your company removed: the id alone, as the candidate is gone."
    },
    "RemovedEvent": {
     "properties": {

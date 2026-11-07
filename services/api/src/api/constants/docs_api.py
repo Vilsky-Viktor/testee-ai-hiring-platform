@@ -155,9 +155,11 @@ so items changed at the same moment are neither repeated nor missed. The `Link` 
 page does this for you. Keep the last pair and start from it next time.
 
 A candidate's progress while they answer doesn't change `updated_at`. A removed candidate leaves
-the list, and the `candidate.removed` web hook event tells you so. A deleted interview leaves with
-its candidates, and a candidate is deleted 365 days after their invitation was last sent. Neither
-sends an event, so compare with a full list now and then if you keep your own copy.
+the list, and the `candidate.removed` web hook event tells you so. Missed that event, say while
+your endpoint was down? `GET /candidates/removed` lists the candidates your company removed in the
+last 14 days, by id, and pages the same way, so delete those from your copy. A deleted interview
+leaves with its candidates, and a candidate is deleted 365 days after their invitation was last
+sent. Neither sends an event, so compare with a full list now and then if you keep your own copy.
 
 ## Retry safely
 
@@ -246,6 +248,8 @@ Any other refusal carries its status's code: `bad_request`, `unauthorized`, `for
 Within `v1`, fields, optional parameters, error codes, enum values and event types are only ever
 added. Anything retired first answers with `Deprecation` and `Sunset` headers and is listed here.
 
+- 2026-11-07: `GET /candidates/removed` lists the candidates your company removed in the last 14
+  days, to catch up after missing `candidate.removed` events.
 - 2026-11-07: `POST /interviews` goes straight on from the proposed topics to the questions, with
   no review, once your company has topped up; until then the topics still wait for a review. A
   suspended company's request is refused with `409` (`company_suspended`).

@@ -4,6 +4,7 @@ import pytest
 from testee_common.auth.key_actor import key_actor
 
 from api.helpers.public import candidate_of
+from api.integrations import companies
 from tests.unit.api_keys import call
 from tests.unit.conftest import CANDIDATE, COMPANY, INTERVIEW, candidate
 
@@ -164,6 +165,26 @@ def test_another_companys_interview_is_not_found(client, companies_api, key):
     assert companies_api["sent"] == []
 
 
+def test_a_full_page_of_removed_candidates_links_to_the_next_from_the_last_one(
+    client, monkeypatch, key
+):
+    gone = str(uuid.uuid4())
+    asked = []
+
+    async def removed(company_id, offset, limit, since, after):
+        asked.append((company_id, limit))
+
+        return [{"id": gone, "updated_at": "2026-11-05T10:00:00Z"}]
+
+    monkeypatch.setattr(companies, "removed_candidates", removed)
+    response = call(client, "GET", "/candidates/removed?limit=1")
+
+    assert response.json() == [{"id": gone, "updated_at": "2026-11-05T10:00:00Z"}]
+    assert asked == [(COMPANY, 1)]
+    assert f"after={gone}" in response.headers["Link"]
+    assert "updated_since=2026-11-05" in response.headers["Link"]
+
+
 def test_the_public_reference_lists_only_the_public_api(client):
     spec = client.get("/openapi.json").json()
 
@@ -175,6 +196,7 @@ def test_the_public_reference_lists_only_the_public_api(client):
         "/interviews/{interview_id}/candidates/{candidate_id}/resend",
         "/interviews/{interview_id}/notes",
         "/candidates",
+        "/candidates/removed",
         "/candidates/search",
         "/credits",
     }

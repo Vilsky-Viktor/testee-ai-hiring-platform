@@ -231,6 +231,13 @@ class CandidateEvent(BaseModel):
     candidate: Candidate = Field(description="The candidate, as they are now")
 
 
+class RemovedCandidate(BaseModel):
+    """A candidate your company removed: the id alone, as the candidate is gone."""
+
+    id: UUID = Field(description="The candidate's id")
+    updated_at: datetime = Field(description="When they were removed")
+
+
 class RemovedEvent(BaseModel):
     """The `data` object of a `candidate.removed` event: who was removed, as the candidate is
     gone."""
