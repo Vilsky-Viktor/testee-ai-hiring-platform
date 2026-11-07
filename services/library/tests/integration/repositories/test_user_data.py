@@ -98,8 +98,8 @@ def test_a_deleted_persons_feedback_stays_with_nothing_that_points_back(run, pre
     dump = str(after)
     traces = [
         gone,
-        hashlib.md5(gone.encode()).hexdigest(),  # noqa: S324
-        hashlib.sha1(gone.encode()).hexdigest(),  # noqa: S324
+        hashlib.md5(gone.encode()).hexdigest(),
+        hashlib.sha1(gone.encode()).hexdigest(),
         hashlib.sha256(gone.encode()).hexdigest(),
     ]
     assert not [trace for trace in traces + ["Two answers fit."] if trace in dump]
