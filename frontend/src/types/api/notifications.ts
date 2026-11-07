@@ -692,6 +692,27 @@ export interface paths {
     patch?: never
     trace?: never
   }
+  "/internal/schedules/retention": {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /**
+     * Expired Notifications
+     * @description Daily, from Cloud Scheduler: notifications past their 90 days, until CLEANUP_SECONDS after
+     *     the run started; the next run deletes the rest.
+     */
+    post: operations["expired_notifications_internal_schedules_retention_post"]
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
   "/internal/schedules/bulk": {
     parameters: {
       query?: never
@@ -2467,6 +2488,33 @@ export interface operations {
     }
   }
   reminders_internal_schedules_reminders_post: {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
+    responses: {
+      /** @description Successful Response */
+      204: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
+  }
+  expired_notifications_internal_schedules_retention_post: {
     parameters: {
       query?: never
       header?: never

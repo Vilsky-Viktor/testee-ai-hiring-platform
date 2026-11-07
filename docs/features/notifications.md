@@ -13,7 +13,7 @@ A bell next to the account menu shows notifications live: it updates within a se
 
 - A badge counts the unread ones.
 - It shows the latest 10.
-- Each person or company keeps at most 100, none older than 90 days.
+- Each person or company keeps at most 100, none older than 90 days: storing one removes those past the 100, and a daily job (`notifications-retention`, `/internal/schedules/retention`) deletes those past the 90 days, also of people who get no new ones.
 - A deleted company's notifications go with it.
 - AI apps hear what reached a company's bell through the assistant's `get_updates` ([AI apps over MCP](mcp.md#whats-new-get_updates)), which reads `POST /internal/updates`: the company notifications of the given companies after `since` and up to `until`, newest first. Only the assistant's service token may call it (others get `403`), and reading marks nothing as seen.
 

@@ -36,6 +36,13 @@ async def reminders() -> None:
     await retention.forget_old(now, until)
 
 
+@router.post("/retention", status_code=status.HTTP_204_NO_CONTENT)
+async def expired_notifications() -> None:
+    """Daily, from Cloud Scheduler: notifications past their 90 days, until CLEANUP_SECONDS after
+    the run started; the next run deletes the rest."""
+    await retention.forget_notifications(datetime.now(UTC), time.monotonic() + CLEANUP_SECONDS)
+
+
 @router.post("/bulk", status_code=status.HTTP_204_NO_CONTENT)
 async def bulk() -> None:
     """Every minute from 08:00 to 18:59 UTC, from Cloud Scheduler: legal notices and campaigns,

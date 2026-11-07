@@ -4,15 +4,11 @@ from datetime import datetime, timedelta
 from sqlalchemy import and_, delete, func, or_, select, tuple_
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
+from testee_common.db.db import delete_in_batches, made_before
 from testee_common.events.notifications import BILLING_KINDS, NotificationKind, Recipient
 
 from notifications.constants.member_emails import INTERVIEW_LINK
-from notifications.constants.notifications import (
-    EXPIRED_PER_PRUNE,
-    GROUP_HOURS,
-    KEEP_DAYS,
-    MAX_PER_RECIPIENT,
-)
+from notifications.constants.notifications import GROUP_HOURS, MAX_PER_RECIPIENT
 from notifications.models.notifications import Notification, Received, Seen
 
 # (recipient, recipient_id): a user's own notifications and their companies'.
@@ -122,11 +118,8 @@ async def add_to_group(session: AsyncSession, event: dict, now: datetime) -> boo
     return True
 
 
-async def prune(session: AsyncSession, event: dict, now: datetime) -> None:
-    """The recipient keeps their newest MAX_PER_RECIPIENT; nothing is kept past KEEP_DAYS. Each
-    call removes at most EXPIRED_PER_PRUNE expired rows of each table, skipping rows another
-    call is removing, so it stays quick and never waits."""
-    oldest_kept = now - timedelta(days=KEEP_DAYS)
+async def prune(session: AsyncSession, event: dict) -> None:
+    """The recipient keeps their newest MAX_PER_RECIPIENT."""
     beyond_limit = (
         select(Notification.id)
         .where(
@@ -136,21 +129,14 @@ async def prune(session: AsyncSession, event: dict, now: datetime) -> None:
         .order_by(Notification.created_at.desc())
         .offset(MAX_PER_RECIPIENT)
     )
-    expired = (
-        select(Notification.id)
-        .where(Notification.created_at < oldest_kept)
-        .limit(EXPIRED_PER_PRUNE)
-        .with_for_update(skip_locked=True)
-    )
-    expired_events = (
-        select(Received.event_id)
-        .where(Received.received_at < oldest_kept)
-        .limit(EXPIRED_PER_PRUNE)
-        .with_for_update(skip_locked=True)
-    )
     await session.execute(delete(Notification).where(Notification.id.in_(beyond_limit)))
-    await session.execute(delete(Notification).where(Notification.id.in_(expired)))
-    await session.execute(delete(Received).where(Received.event_id.in_(expired_events)))
+
+
+async def forget(sessions, before: datetime, until: float | None = None) -> None:
+    """Notifications and received events from before `before` go, in batches (each its own
+    transaction), none started after `until` (time.monotonic()); the next run deletes the rest."""
+    await delete_in_batches(sessions, Notification, Notification.created_at < before, until=until)
+    await delete_in_batches(sessions, Received, Received.received_at < before, until=until)
 
 
 async def latest(
@@ -216,13 +202,18 @@ async def remove_user(session: AsyncSession, user_id: str) -> None:
 
 
 async def remove_candidate(
-    session: AsyncSession, email: str, company_id: str | None = None
+    session: AsyncSession,
+    email: str,
+    company_id: str | None = None,
+    before: datetime | None = None,
 ) -> None:
     """Company notifications about the candidate with this email go: one company's when it erased
-    them, every company's when they deleted their account. Safe to repeat."""
+    them, every company's when they deleted their account (with `before`, a replay's, those from
+    before it). Safe to repeat."""
     query = delete(Notification).where(
         Notification.recipient == Recipient.COMPANY,
         Notification.data["email"].astext == email.lower(),
+        made_before(Notification.created_at, before),
     )
 
     if company_id is not None:
@@ -248,13 +239,14 @@ async def remove_interview_candidates(
     )
 
 
-async def remove_member(session: AsyncSession, email: str) -> None:
+async def remove_member(session: AsyncSession, email: str, before: datetime | None = None) -> None:
     """An owner's notifications that this person joined their company go with the person's
-    account. Safe to repeat."""
+    account (with `before`, a replay's, those from before it). Safe to repeat."""
     await session.execute(
         delete(Notification).where(
             Notification.kind == NotificationKind.MEMBER_JOINED,
             Notification.data["email"].astext == email.lower(),
+            made_before(Notification.created_at, before),
         )
     )
 

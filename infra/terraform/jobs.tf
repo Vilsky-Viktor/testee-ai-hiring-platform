@@ -54,6 +54,8 @@ locals {
     # reminders from 8:00; each again three hours later, catching up on what the first missed.
     member-digest    = { service = "notifications", path = "/internal/schedules/digest", cron = "* 7,10 * * *" }
     member-reminders = { service = "notifications", path = "/internal/schedules/reminders", cron = "* 8,11 * * *" }
+    # The bell's notifications past their 90 days, also of those who get no new ones.
+    notifications-retention = { service = "notifications", path = "/internal/schedules/retention", cron = "45 4 * * *" }
     # Emails to many users (legal notices, campaigns): every minute from 8:00 to 18:59 UTC, each
     # run sending the next pending recipients for 40 seconds.
     bulk-emails = { service = "notifications", path = "/internal/schedules/bulk", cron = "* 8-18 * * *" }

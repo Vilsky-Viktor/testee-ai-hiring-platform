@@ -2,9 +2,10 @@ from datetime import datetime, timedelta
 
 from notifications.constants.member_emails import SENT_KEEP_DAYS
 from notifications.constants.notes import PENDING_NOTE_HOURS
+from notifications.constants.notifications import KEEP_DAYS
 from notifications.constants.suppression import SOFT_BOUNCE_DAYS
 from notifications.core.db import Session
-from notifications.repositories import pending_notes, sent_emails, soft_bounces
+from notifications.repositories import notifications, pending_notes, sent_emails, soft_bounces
 
 
 async def forget_old(now: datetime, until: float) -> None:
@@ -14,3 +15,8 @@ async def forget_old(now: datetime, until: float) -> None:
     await sent_emails.forget(Session, now.date() - timedelta(days=SENT_KEEP_DAYS), until)
     await soft_bounces.forget(Session, now - timedelta(days=SOFT_BOUNCE_DAYS), until)
     await pending_notes.forget(Session, now - timedelta(hours=PENDING_NOTE_HOURS), until)
+
+
+async def forget_notifications(now: datetime, until: float) -> None:
+    """The bell's notifications past KEEP_DAYS, with the marks of events received then."""
+    await notifications.forget(Session, now - timedelta(days=KEEP_DAYS), until)

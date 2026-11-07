@@ -1849,6 +1849,31 @@
     }
    }
   },
+  "/internal/schedules/retention": {
+   "post": {
+    "tags": [
+     "schedules"
+    ],
+    "summary": "Expired Notifications",
+    "description": "Daily, from Cloud Scheduler: notifications past their 90 days, until CLEANUP_SECONDS after\nthe run started; the next run deletes the rest.",
+    "operationId": "expired_notifications_internal_schedules_retention_post",
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/internal/schedules/bulk": {
    "post": {
     "tags": [

@@ -32,7 +32,7 @@ async def store(key: str, event: dict) -> bool:
         if not grouped:
             await notifications.add(session, key, event, now)
 
-        await notifications.prune(session, event, now)
+        await notifications.prune(session, event)
 
     return True
 

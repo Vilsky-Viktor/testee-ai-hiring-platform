@@ -10,7 +10,7 @@ from notifications.constants.email import AUTOMATED_HEADERS
 from notifications.constants.member_emails import CLEANUP_SECONDS
 from notifications.integrations.resend import ResendBusy
 from notifications.repositories import pending_notes, sent_emails, soft_bounces
-from notifications.services import digest, events, member_sends, notices, reminders
+from notifications.services import digest, events, member_sends, notices, reminders, retention
 from tests.unit.member_world import NOW, person
 
 
@@ -173,3 +173,17 @@ def test_other_notifications_email_nobody(world, monkeypatch):
     asyncio.run(events.notify(event, "e-2"))
 
     assert world["sent"] == []
+
+
+def test_the_daily_retention_job_runs_until_its_cleanup_deadline(client, monkeypatch):
+    runs = []
+
+    async def forget(now, until):
+        runs.append(until)
+
+    monkeypatch.setattr(retention, "forget_notifications", forget)
+    started = time.monotonic()
+
+    assert client.post("/internal/schedules/retention").status_code == 204
+    assert len(runs) == 1
+    assert started + CLEANUP_SECONDS <= runs[0] <= time.monotonic() + CLEANUP_SECONDS

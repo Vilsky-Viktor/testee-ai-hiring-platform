@@ -83,7 +83,7 @@ async def tell(session: AsyncSession, note: dict, user_ids: list[str], now: date
             group.data = with_note(group.data, note)
             group.created_at = now
 
-        await notifications.prune(session, recipient, now)
+        await notifications.prune(session, recipient)
 
 
 async def written(event: NoteWritten, created: bool) -> None:

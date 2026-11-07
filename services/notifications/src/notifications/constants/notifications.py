@@ -5,12 +5,11 @@ from testee_common.events.notifications import NotificationKind
 DB_POOL_SIZE = 1
 DB_MAX_OVERFLOW = 1
 # The bell shows the latest few. A recipient keeps at most MAX_PER_RECIPIENT, none older than
-# KEEP_DAYS.
+# KEEP_DAYS: the daily retention job deletes what's older, also of those who get no new ones.
 DROPDOWN_LIMIT = 10
 MAX_PER_RECIPIENT = 100
 KEEP_DAYS = 90
-# Each new notification removes up to this many expired ones (and their received events), which
-# keeps up with how many arrive.
+# Each new Slack post removes up to this many expired marks, which keeps up with how many arrive.
 EXPIRED_PER_PRUNE = 100
 REFUND_KINDS = {NotificationKind.REFUND_APPROVED, NotificationKind.REFUND_REJECTED}
 # Notifications that carry their company's name, added here as billing doesn't know it.

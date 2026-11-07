@@ -18,6 +18,8 @@
 # hour each morning, and again for a catch-up hour three hours later.
 * 7,10 * * * curl -s -X POST http://notifications:8000/internal/schedules/digest
 * 8,11 * * * curl -s -X POST http://notifications:8000/internal/schedules/reminders
+# The bell's notifications past their 90 days (notifications), daily.
+45 4 * * * curl -s -X POST http://notifications:8000/internal/schedules/retention
 # Emails to many users, legal notices and campaigns (notifications), every minute from 8:00 to
 # 18:59 UTC.
 * 8-18 * * * curl -s -X POST http://notifications:8000/internal/schedules/bulk

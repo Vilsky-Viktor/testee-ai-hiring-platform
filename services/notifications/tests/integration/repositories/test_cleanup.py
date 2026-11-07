@@ -1,14 +1,14 @@
-import asyncio
+import time
 import uuid
 from datetime import UTC, datetime, timedelta
 
 from sqlalchemy import delete, func, select
 
-from notifications.constants.notifications import EXPIRED_PER_PRUNE, KEEP_DAYS, MAX_PER_RECIPIENT
+from notifications.constants.notifications import KEEP_DAYS, MAX_PER_RECIPIENT
 from notifications.core.db import Session
 from notifications.models.notifications import Notification, Received
 from notifications.repositories import notifications
-from notifications.services import notices
+from notifications.services import notices, retention
 from tests.integration.factories import company, finished
 from tests.integration.transactions import transaction
 
@@ -56,45 +56,27 @@ async def count_expired() -> tuple[int, int]:
         return rows, events
 
 
-def test_each_new_notification_removes_a_bounded_batch_of_expired_rows(run):
-    async def scenario():
-        await store_expired(EXPIRED_PER_PRUNE + 5)
-        await notices.store(str(uuid.uuid4()), finished(company()))
-        after_one = await count_expired()
-        await notices.store(str(uuid.uuid4()), finished(company()))
-
-        return after_one, await count_expired()
-
-    assert run(scenario()) == ((5, 5), (0, 0))
-
-
-def test_cleanup_skips_expired_rows_another_call_holds_and_never_waits(run):
+def test_the_daily_job_deletes_expired_rows_though_no_new_notification_comes(run):
     async def scenario():
         await store_expired(3)
+        kept = company()
 
-        async with Session() as holder:
-            # Another call is removing these right now.
-            held = list(
-                await holder.scalars(
-                    select(Notification.id)
-                    .where(Notification.created_at < expired_at())
-                    .with_for_update()
-                )
+        async with Session() as session:
+            session.add(row(kept, datetime.now(UTC)))
+            await session.commit()
+
+        await retention.forget_notifications(datetime.now(UTC), time.monotonic() + 30)
+
+        async with Session() as session:
+            recent = await session.scalar(
+                select(func.count())
+                .select_from(Notification)
+                .where(Notification.recipient_id == kept)
             )
-            held_events = list(
-                await holder.scalars(
-                    select(Received.event_id)
-                    .where(Received.received_at < expired_at())
-                    .with_for_update()
-                )
-            )
-            added = await asyncio.wait_for(notices.store(str(uuid.uuid4()), finished(company())), 5)
-            await holder.rollback()
 
-        return len(held), len(held_events), added, await count_expired()
+        return await count_expired(), recent
 
-    # The new notification was stored without waiting; the held rows are left for later.
-    assert run(scenario()) == (3, 3, True, (3, 3))
+    assert run(scenario()) == ((0, 0), 1)
 
 
 def test_a_recipient_keeps_only_their_newest(run):
@@ -120,3 +102,32 @@ def test_a_recipient_keeps_only_their_newest(run):
     assert (kept, newest) == (MAX_PER_RECIPIENT, "candidate_finished")
     # The oldest went; the one just after it stayed.
     assert oldest > datetime.now(UTC) - timedelta(minutes=MAX_PER_RECIPIENT)
+
+
+def test_a_replayed_deletion_leaves_notifications_about_that_address_since(run):
+    company_id = company()
+    email = f"{uuid.uuid4()}@example.com"
+
+    def about(created_at: datetime) -> Notification:
+        found = row(company_id, created_at)
+        found.data = {"email": email}
+
+        return found
+
+    async def scenario():
+        erased_at = datetime.now(UTC)
+
+        async with Session.begin() as session:
+            session.add(about(erased_at - timedelta(hours=1)))
+            session.add(about(erased_at + timedelta(hours=1)))
+
+        await transaction(notifications.remove_candidate, email, before=erased_at)
+
+        async with Session() as session:
+            left = await session.scalars(
+                select(Notification.created_at).where(Notification.recipient_id == company_id)
+            )
+
+            return [when > erased_at for when in left]
+
+    assert run(scenario()) == [True]
