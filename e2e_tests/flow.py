@@ -240,18 +240,24 @@ def company() -> None:
         60,
         2,
     )
-    check(bool(scorecard), "the company sees the finished scorecard")
+    check(scorecard.get("grade") is not None, "the company sees the graded scorecard")
+    # A charge leaves `available` as the hold left it: only the hold's end shows it happened.
     balance = wait(
         "the charge",
         lambda: (
-            (row := api("GET", f"/companies/companies/{company_id}/credits", owner))["available"]
-            == left
+            (row := api("GET", credits, owner))["reserved"] == 0
+            and row["reserved_candidates"] == 0
             and row
         ),
         30,
         2,
     )
     check(balance["available"] == left, "the answered candidate is charged")
+    report = api("GET", f"{path}/report", owner)
+    check(
+        [row["id"] for row in report["candidates"]] == [invite["id"]],
+        "the report the PDF is drawn from has the candidate",
+    )
     step("scorecard ready; candidate charged")
 
 
