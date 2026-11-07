@@ -8,7 +8,7 @@ import { apiErrorMessage } from "@/lib/api"
 import { acknowledgement } from "@/lib/voice-acknowledgement"
 import { answerInProgress } from "@/lib/voice-answering"
 import { react } from "@/lib/voice-reaction"
-import { clipUrl, prepareNextQuestion } from "@/lib/voice-clips"
+import { prepareNextQuestion, sayGoodbye } from "@/lib/voice-clips"
 import { keptClips, savedClip, savedClips } from "@/lib/voice-kept-clips"
 import { type Meter, meters, soundAllowed } from "@/lib/voice-meters"
 import { type Listener, listen, openMicrophone } from "@/lib/voice-listening"
@@ -61,8 +61,9 @@ export function useVoiceInterviewer(
   const gotIt = useRef(acknowledgement(clips.current))
   // How long each answer's turn took, for Sentry.
   const timing = useRef(turnTiming())
-  // The answer being heard or understood, the question's own.
+  // The answer of the question on screen, and the one last heard, each its question's own.
   const inProgress = useRef(answerInProgress())
+  const speaking = useRef(inProgress.current)
   // Listening live: the speech streamed as it's said, and the answer it gives once it ends.
   const live = useRef(liveListening(latest))
 
@@ -84,16 +85,7 @@ export function useVoiceInterviewer(
     listener.current?.pause()
     gotIt.current.cancel(player)
     // The first clip after an answer is her reaction to it.
-    player.onplaying = () => timing.current.reacted()
-
-    try {
-      await clips.current.play(player, path)
-    } catch (error) {
-      // Unread: the question is on screen, and listening goes on.
-      console.warn("Mira's clip didn't play", error)
-    } finally {
-      player.onplaying = null
-    }
+    await clips.current.say(player, path, () => timing.current.reacted())
 
     if (!more) {
       heardAll()
@@ -125,6 +117,7 @@ export function useVoiceInterviewer(
    * stops the moment it's back. */
   async function onSpeech(recording: Blob, voicedMs: number) {
     const id = latest.current.sessionId
+    const progress = speaking.current
     setStatus("thinking")
     timing.current.ended()
     const sent = live.current.answer(recording)
@@ -133,27 +126,34 @@ export function useVoiceInterviewer(
       gotIt.current.schedule(audio.current, id, voicedMs)
     }
 
-    // After the time ran out, the screen alone acts on the answer (timeUp).
+    // After the time ran out, the screen alone acts on the answer (timeUp); once the next
+    // question has opened, nothing does: its option belongs to the question it was said to.
     try {
       const { answer, stages, live: streamed } = await sent
       gotIt.current.cancel(audio.current)
       timing.current.answered(answer, stages, streamed)
-      inProgress.current.end(answer)
+      progress.end(answer)
 
-      await (inProgress.current.timedOut()
+      await (progress.timedOut() || progress !== inProgress.current
         ? timing.current.dropped()
         : understood(answer))
     } catch (error) {
       gotIt.current.cancel(audio.current)
       timing.current.dropped()
-      inProgress.current.end(null)
+      progress.end(null)
+
+      if (progress !== inProgress.current) {
+        return
+      }
+
       setProblem(apiErrorMessage(error, latest.current.handlers.failedMessage))
-      await (inProgress.current.timedOut() || heardAll())
+      await (progress.timedOut() || heardAll())
     }
   }
 
   function onSpeechStart() {
-    inProgress.current.begin()
+    speaking.current = inProgress.current
+    speaking.current.begin()
     setStatus("hearing")
   }
 
@@ -264,9 +264,7 @@ export function useVoiceInterviewer(
   useEffect(
     () => () => {
       if (listener.current && confirmed.current) {
-        void clipUrl(`${sessionId}/voice/phrases/end`)
-          .then((url) => new Audio(url).play())
-          .catch(() => undefined)
+        sayGoodbye(sessionId)
       }
 
       stop()

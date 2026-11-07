@@ -15,9 +15,21 @@ vi.mock("@/lib/api", async (original) => ({
 
 vi.mock("@/lib/voice-clips", () => ({ sendSpokenAnswer: vi.fn() }))
 
-const ANSWER = { heard: "B", intent: "choose", picks: [1], clear: true }
+const ANSWER = {
+  heard: "B",
+  intent: "choose",
+  picks: [1],
+  clear: true,
+  doubted: false,
+}
 const UPLOADED = {
-  answer: { heard: "C", intent: "choose", picks: [2], clear: true },
+  answer: {
+    heard: "C",
+    intent: "choose",
+    picks: [2],
+    clear: true,
+    doubted: false,
+  },
   stages: { transcribe: 2000 },
 }
 
@@ -68,7 +80,9 @@ class FakeSocket {
 }
 
 function listening() {
-  const latest = { current: { sessionId: "s1", chosen: [2] } }
+  const latest = {
+    current: { sessionId: "s1", chosen: [2], questionId: "q1" },
+  }
 
   return liveListening(latest)
 }
@@ -124,7 +138,7 @@ describe("liveListening", () => {
       1024,
       1024,
       1024,
-      { type: "end", waiting: [2] },
+      { type: "end", waiting: [2], question_id: "q1" },
     ])
     expect(understood).toEqual({
       answer: ANSWER,
@@ -151,7 +165,7 @@ describe("liveListening", () => {
     const understood = await live.answer(recording)
 
     expect(understood).toEqual({ ...UPLOADED, live: false })
-    expect(sendSpokenAnswer).toHaveBeenCalledWith("s1", recording, [2])
+    expect(sendSpokenAnswer).toHaveBeenCalledWith("s1", recording, [2], "q1")
     // Nothing more went out once it dropped.
     expect(socket.messages()).toEqual([
       { token: "token" },

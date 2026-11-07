@@ -12,6 +12,7 @@ from rounds.services import voice_match, voice_session
 from tests.unit.api.v1 import test_voice
 
 OGG = test_voice.OGG
+answers_url = test_voice.answers_url
 SPOKEN = test_voice.SPOKEN
 section = test_voice.section
 # The candidate's voice interview, as test_voice.py's tests get it.
@@ -27,6 +28,10 @@ voice = test_voice.voice
         # The model's choice: clear only as one option on a single-answer question.
         ("die zweite", ["B"], [1], "choose", [1], True, True),
         ("die zweite und die letzte", ["B", "D"], [1, 3], "choose", [1, 3], False, True),
+        # In doubt, whatever the model read: confirmed, never saved at once.
+        ("A? nein", ["A"], [1], "choose", [0], False, True),
+        ("nicht die zweite", ["B"], [1], "choose", [1], False, True),
+        ("vielleicht C", ["C"], [1], "choose", [2], False, True),
     ],
 )
 def test_a_choice_is_clear_only_as_one_option_on_a_single_answer_question(
@@ -43,16 +48,22 @@ def test_a_choice_is_clear_only_as_one_option_on_a_single_answer_question(
 
     monkeypatch.setattr(voice_match, "read_match", read_match)
 
-    response = client.post(f"/sessions/{voice.row.id}/voice/answers", content=SPOKEN, headers=OGG)
+    response = client.post(answers_url(voice.row), content=SPOKEN, headers=OGG)
 
-    assert response.json() == {"heard": heard, "intent": intent, "picks": picks, "clear": clear}
+    assert response.json() == {
+        "heard": heard,
+        "intent": intent,
+        "picks": picks,
+        "clear": clear,
+        "doubted": heard in ("A? nein", "nicht die zweite", "vielleicht C"),
+    }
     assert bool(voice.matched) == matched
 
 
 def test_a_turns_stages_are_logged_with_ids_only(client, voice, caplog):
     caplog.set_level("INFO")
 
-    client.post(f"/sessions/{voice.row.id}/voice/answers", content=SPOKEN, headers=OGG)
+    client.post(answers_url(voice.row), content=SPOKEN, headers=OGG)
 
     [line] = [r.getMessage() for r in caplog.records if r.getMessage().startswith("Voice answer")]
     assert line.startswith(f"Voice answer {voice.row.id}: choose by model, transcribe;dur=")

@@ -40,7 +40,7 @@ from rounds.schemas.voice import StreamSignIn, StreamStep
 from rounds.services import voice_answers, voice_deadline, voice_limits
 from rounds.services.session_access import get_own_session
 from rounds.services.session_titles import interview_language
-from rounds.services.voice_session import shown_question, voice_only
+from rounds.services.voice_session import asked_question, shown_question, voice_only
 
 logger = logging.getLogger(__name__)
 # This instance's open streams (MAX_OPEN_STREAMS).
@@ -83,9 +83,9 @@ async def signed_in(websocket: WebSocket) -> User:
     return user
 
 
-async def take_audio(websocket: WebSocket, row: Session, hearing: LiveHearing) -> list[int]:
+async def take_audio(websocket: WebSocket, row: Session, hearing: LiveHearing) -> StreamStep:
     """Passes the answer's audio on until its end, counting it as an answer at `start` (over the
-    limits, a 429 or 503); gives the choice `waiting` for a yes or no."""
+    limits, a 429 or 503); gives the `end` step."""
     resample = live_resampler()
     started, size = False, 0
 
@@ -108,7 +108,7 @@ async def take_audio(websocket: WebSocket, row: Session, hearing: LiveHearing) -
         elif message.type == "end" and started:
             await hearing.send(resample(None))
 
-            return sorted(set(message.waiting))
+            return message
         else:
             raise Refused
 
@@ -116,20 +116,23 @@ async def take_audio(websocket: WebSocket, row: Session, hearing: LiveHearing) -
 async def answer_live(
     websocket: WebSocket, row: Session, user: User, hearing: LiveHearing, language: str
 ) -> dict[str, float]:
-    """One answer: its audio, then, at its end, the question on screen now (it may have changed
-    or timed out meanwhile), the arrival noted for the time-up grace as an upload's is
+    """One answer: its audio, then, at its end, the question on screen now, which must be the one
+    the browser says was answered (a 409 otherwise: it may have changed or timed out meanwhile),
+    the arrival noted for the time-up grace as an upload's is
     (services/voice_deadline.py), the final text and its meaning, sent to the browser as
     {"type": "answer", "answer": VoiceAnswerOut, "stages": milliseconds}. Gives the stages'
     seconds."""
-    waiting = await take_audio(websocket, row, hearing)
+    end = await take_audio(websocket, row, hearing)
     ended = time.monotonic()
     row = await get_own_session(row.id, user)
-    question = shown_question(row)
+    question = asked_question(row, end.question_id)
     await voice_deadline.note_arrival(row, question.question_id)
     said = await hearing.final()
     await record(row, hearing)
     heard_at = time.monotonic()
-    understood, by = await voice_answers.understand(row, question, said, waiting, language)
+    understood, by = await voice_answers.understand(
+        row, question, said, sorted(set(end.waiting)), language
+    )
     now = time.monotonic()
     stages = {"transcribe": heard_at - ended, "match": now - heard_at, "total": now - ended}
     voice_answers.log_answer(row, understood, f"{by}, heard live", stages)

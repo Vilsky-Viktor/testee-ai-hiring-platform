@@ -22,7 +22,11 @@ from rounds.services import voice_stream
 from tests.integration.factories import created, topic
 
 FRAME = bytes(1024)
-ANSWER = [{"type": "start"}, FRAME, FRAME, {"type": "end", "waiting": []}]
+
+
+def end(row: Session) -> dict:
+    """The end of an answer to the row's first question."""
+    return {"type": "end", "waiting": [], "question_id": row.questions[0]["id"]}
 
 
 class FakeSocket:
@@ -109,7 +113,7 @@ async def voice_question(user: str, voice=True) -> Session:
 
 
 async def streamed(row: Session, token: str) -> FakeSocket:
-    socket = FakeSocket([{"token": token}, *ANSWER])
+    socket = FakeSocket([{"token": token}, {"type": "start"}, FRAME, FRAME, end(row)])
     await voice_stream.stream(socket, row.id)
 
     return socket
@@ -144,7 +148,13 @@ def test_only_the_candidates_own_voice_question_is_streamed(run, caller, voice, 
     if code == 1000:
         [ready, answer] = socket.got
         assert ready == {"type": "ready"}
-        assert answer["answer"] == {"heard": "B", "intent": "choose", "picks": [1], "clear": True}
+        assert answer["answer"] == {
+            "heard": "B",
+            "intent": "choose",
+            "picks": [1],
+            "clear": True,
+            "doubted": False,
+        }
         # Counted as an answer; its arrival noted, so its answer counts a little past the time.
         assert noted.decode() == row.questions[0]["id"]
         assert answers
@@ -156,16 +166,17 @@ def test_only_the_candidates_own_voice_question_is_streamed(run, caller, voice, 
 class HeldSocket(FakeSocket):
     """A browser that says `start` and some audio, then holds the stream open until `go`."""
 
-    def __init__(self, token, go):
+    def __init__(self, token, go, row):
         super().__init__([{"token": token}, {"type": "start"}, FRAME])
         self.go = go
+        self.row = row
         self.waiting = asyncio.Event()
 
     async def receive(self):
         if not self.inbox:
             self.waiting.set()
             await self.go.wait()
-            self.inbox = [{"type": "end", "waiting": []}]
+            self.inbox = [end(self.row)]
 
         return await super().receive()
 
@@ -181,7 +192,8 @@ def test_an_open_stream_holds_no_database_connection(run):
 
         for _ in range(streams):
             owner = f"cand-{uuid.uuid4()}"
-            sockets.append((HeldSocket(owner, go), await voice_question(owner)))
+            row = await voice_question(owner)
+            sockets.append((HeldSocket(owner, go, row), row))
 
         tasks = [asyncio.create_task(voice_stream.stream(s, row.id)) for s, row in sockets]
         await asyncio.wait_for(asyncio.gather(*(s.waiting.wait() for s, _ in sockets)), 10)

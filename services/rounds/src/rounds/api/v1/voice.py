@@ -83,16 +83,24 @@ async def saved_audio(session_id: UUID, picks: Chosen, user: CurrentUser) -> Res
 
 @router.post("/{session_id}/voice/answers")
 async def voice_answer(
-    session_id: UUID, request: Request, response: Response, user: CurrentUser, waiting: Picks = None
+    session_id: UUID,
+    question_id: UUID,
+    request: Request,
+    response: Response,
+    user: CurrentUser,
+    waiting: Picks = None,
 ) -> VoiceAnswerOut:
     """Voice mode: a spoken answer to the question on screen, understood. The body is the
-    recording (audio/webm, audio/mp4 or audio/ogg, at most 2 MB); `waiting` is the choice (option
+    recording (audio/webm, audio/mp4 or audio/ogg, at most 2 MB); `question_id` is the question
+    answered, refused with a 409 once it's no longer on screen; `waiting` is the choice (option
     indices) waiting for the candidate's yes or no. Nothing is saved: a clear choice, or a
     confirmed one, is sent to the answers route as a tapped one is. The audio and the words are
     never kept. The `Server-Timing` header gives the stages' milliseconds: transcribe, match,
     total."""
     row = await get_own_session(session_id, user)
-    understood, stages = await voice_answers.answer(row, request, sorted(set(waiting or [])))
+    understood, stages = await voice_answers.answer(
+        row, request, sorted(set(waiting or [])), question_id
+    )
     response.headers["Server-Timing"] = server_timing(stages)
 
     return understood

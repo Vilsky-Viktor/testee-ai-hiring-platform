@@ -1,6 +1,8 @@
 import asyncio
 import logging
 
+from uuid import UUID
+
 from fastapi import HTTPException, status
 from testee_common.i18n.i18n import translate
 
@@ -30,6 +32,17 @@ def shown_question(row: Session) -> NextQuestion:
     question = next_session_question(row) if row.question_shown_at else None
 
     if question is None:
+        raise HTTPException(status.HTTP_409_CONFLICT, NO_QUESTION)
+
+    return question
+
+
+def asked_question(row: Session, question_id: UUID | None) -> NextQuestion:
+    """The question on screen, if it's the one the candidate answered: speech said to a question
+    that has since been left must never be matched to the next one's options (409 otherwise)."""
+    question = shown_question(row)
+
+    if question.question_id != question_id:
         raise HTTPException(status.HTTP_409_CONFLICT, NO_QUESTION)
 
     return question

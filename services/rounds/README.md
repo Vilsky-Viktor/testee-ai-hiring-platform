@@ -77,13 +77,14 @@ give a WebSocket headers, and an address would be logged), the same guards as th
 `start` once the browser hears the candidate (counted as a spoken answer; audio only after it),
 16-bit PCM at 16 kHz as it comes (resampled to OpenAI's 24 kHz, `helpers/voice_pcm.py`) into a
 realtime transcription session (`integrations/live_hearing.py`, `TRANSCRIBE_MODEL` with the same
-keywords, no turn detection of its own), and `end` with the choice waiting: the final text comes
-within a second, is matched as below and sent back, and the connection closes. One answer per
+keywords, no turn detection of its own), and `end` with the choice waiting and the question
+answered (a question no longer on screen is refused with 4409, and the upload with 409, so speech
+is never matched to the next question's options): the final text comes within a second, is matched as below and sent back, and the connection closes. One answer per
 connection, at most `STREAM_SECONDS` (55, under Cloud Run's 60-second timeout; the browser
 renews a quiet one after 25) and 30 seconds of audio, and at most `MAX_OPEN_STREAMS` (20) open
 per instance, so short requests keep the rest of its 40 slots. A refusal or failure closes it
 with 4000 plus the status the upload would get (4401, 4404, 4409, 4429, 4502, 4503, 4504; 4400
-for anything out of turn), and the browser sends the recording instead (`POST .../voice/answers`,
+for anything out of turn), and the browser sends the recording instead (`POST .../voice/answers?question_id=`,
 at most 2 MB), which is turned into text (`TRANSCRIBE_MODEL`, told the options' letters and texts
 as keywords) and matched the same way: the candidate gets the same answer or the same refusal.
 The audio sent to OpenAI is billed in seconds whether or not its text came back. Each spoken
@@ -93,8 +94,9 @@ a reply of only options' letters ("B", "option B", "B and D": `helpers/voice_let
 `constants/voice_letters.py`) is read by code, without the model (`helpers/voice_match.py` `obvious`);
 anything else by the model (`VOICE_MATCH_MODEL`, `prompts/voice_match.py`, never the answer
 key; its eval is `evals/scripts/voice_answers_test.py`). The answer says whether the choice is
-`clear` (one option on a single-answer question): the browser saves it at once; any other is
-confirmed first. Nothing of it is saved here: the choice is sent to `.../answers` as a tapped one
+`clear` (one option on a single-answer question, the reply not in doubt: `doubted`, a question
+mark or a word of `constants/voice_doubts.py`, "A? no", "not A", "maybe A"): the browser saves it
+at once; any other is confirmed first, and one in doubt isn't saved as the time runs out. Nothing of it is saved here: the choice is sent to `.../answers` as a tapped one
 is, and the audio and the words are never stored, logged or traced. Each answer's stages
 (transcribe, match, total; from the speech's end when streamed) come back in a `Server-Timing`
 header or the stream's answer and are logged with the session's id only (`Voice answer <id>:

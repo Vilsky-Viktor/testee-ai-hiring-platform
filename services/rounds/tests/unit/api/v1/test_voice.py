@@ -7,7 +7,7 @@ from testee_common.auth.auth import current_user
 from testee_common.auth.user import User
 from testee_common.i18n.i18n import translate
 
-from rounds.constants.voice import IN_TIME_KEY
+from rounds.constants.voice import IN_TIME_KEY, NO_QUESTION
 from rounds.constants.voice_phrases import GOT_IT, NEXT, TIME_UP, TIME_UP_SAVED
 from rounds.integrations import library
 from rounds.main import app
@@ -51,6 +51,11 @@ def section(voice=True, shown=True, user_id="cand") -> Session:
     )
 
 
+def answers_url(row: Session, query: str = "") -> str:
+    """The upload's address for the row's first question, as the browser asks it."""
+    return f"/sessions/{row.id}/voice/answers?question_id={row.questions[0]['id']}{query}"
+
+
 @pytest.fixture
 def voice(monkeypatch):
     """A candidate's voice interview in German, OpenAI's hearing and matching faked: what each
@@ -86,9 +91,7 @@ def voice(monkeypatch):
 def test_a_spoken_answer_is_heard_in_the_interviews_language_and_matched(
     client, voice, published, redis
 ):
-    response = client.post(
-        f"/sessions/{voice.row.id}/voice/answers?waiting=2", content=SPOKEN, headers=OGG
-    )
+    response = client.post(answers_url(voice.row, "&waiting=2"), content=SPOKEN, headers=OGG)
 
     assert response.status_code == 200
     # One option on a single-answer question: clear, saved without asking.
@@ -97,6 +100,7 @@ def test_a_spoken_answer_is_heard_in_the_interviews_language_and_matched(
         "intent": "choose",
         "picks": [1],
         "clear": True,
+        "doubted": False,
     }
     # Each stage's milliseconds, for the browser's timings.
     stages = [entry.split(";")[0] for entry in response.headers["server-timing"].split(", ")]
@@ -125,13 +129,14 @@ def test_a_spoken_answer_is_heard_in_the_interviews_language_and_matched(
 def test_a_sound_without_words_is_noise_without_a_matching_call(client, voice, published, heard):
     voice.heard = heard
 
-    response = client.post(f"/sessions/{voice.row.id}/voice/answers", content=SPOKEN, headers=OGG)
+    response = client.post(answers_url(voice.row), content=SPOKEN, headers=OGG)
 
     assert response.json() == {
         "heard": heard.strip(),
         "intent": "noise",
         "picks": [],
         "clear": False,
+        "doubted": False,
     }
     assert voice.matched == []
     used = [data["action"] for kind, data in published if kind == "ai.used"]
@@ -149,16 +154,27 @@ def test_a_sound_without_words_is_noise_without_a_matching_call(client, voice, p
 def test_only_the_candidates_own_voice_question_on_the_clock_is_heard(client, voice, row, status):
     voice.row = row
 
-    response = client.post(f"/sessions/{row.id}/voice/answers", content=SPOKEN, headers=OGG)
+    response = client.post(answers_url(row), content=SPOKEN, headers=OGG)
 
     assert response.status_code == status
     assert voice.heard_calls == []
 
 
+def test_an_answer_to_a_question_left_behind_is_refused_unheard(client, voice):
+    """Said to the last question and sent after the next one opened: its option belongs to the
+    other question, so it's never matched to this one."""
+    url = f"/sessions/{voice.row.id}/voice/answers?question_id={uuid4()}"
+
+    response = client.post(url, content=SPOKEN, headers=OGG)
+
+    assert response.status_code == 409
+    assert response.json()["detail"] == NO_QUESTION
+    assert voice.heard_calls == []
+    assert voice.matched == []
+
+
 def test_a_body_that_isnt_a_recording_is_refused(client, voice):
-    response = client.post(
-        f"/sessions/{voice.row.id}/voice/answers", content=b"<html>", headers=OGG
-    )
+    response = client.post(answers_url(voice.row), content=b"<html>", headers=OGG)
 
     assert response.status_code == 415
     assert voice.heard_calls == []
@@ -166,7 +182,7 @@ def test_a_body_that_isnt_a_recording_is_refused(client, voice):
 
 def test_spoken_answers_stop_at_the_candidates_hourly_limit(client, voice, redis):
     redis.limits["VOICE_ANSWERS_PER_USER_HOUR"] = 1
-    url = f"/sessions/{voice.row.id}/voice/answers"
+    url = answers_url(voice.row)
 
     assert client.post(url, content=SPOKEN, headers=OGG).status_code == 200
 
@@ -243,7 +259,7 @@ def test_the_candidates_words_reach_no_log_trace_or_event(
     monkeypatch.setattr(voice_match, "traced_call", lambda *arguments: traced.append(arguments))
     caplog.set_level("DEBUG")
 
-    response = client.post(f"/sessions/{voice.row.id}/voice/answers", content=SPOKEN, headers=OGG)
+    response = client.post(answers_url(voice.row), content=SPOKEN, headers=OGG)
 
     assert response.json()["heard"] == "die Mediane"
     [arguments] = traced
@@ -256,15 +272,14 @@ def test_the_candidates_words_reach_no_log_trace_or_event(
 def test_a_plain_yes_confirms_without_a_matching_call(client, voice, published):
     voice.heard = "Ja, genau."
 
-    response = client.post(
-        f"/sessions/{voice.row.id}/voice/answers?waiting=1", content=SPOKEN, headers=OGG
-    )
+    response = client.post(answers_url(voice.row, "&waiting=1"), content=SPOKEN, headers=OGG)
 
     assert response.json() == {
         "heard": "Ja, genau.",
         "intent": "confirm",
         "picks": [1],
         "clear": False,
+        "doubted": False,
     }
     assert voice.matched == []
     # Only the hearing is paid for.

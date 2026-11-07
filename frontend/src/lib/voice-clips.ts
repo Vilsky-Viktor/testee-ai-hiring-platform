@@ -55,14 +55,23 @@ export function prepareNextQuestion(sessionId: string) {
 /** A spoken answer to the question on screen, understood by the service: what it heard, what it
  * meant and the options it picks, with the service's stages' milliseconds (its Server-Timing).
  * `waiting` is the choice on screen, which a yes confirms. */
+/** Mira's goodbye, on a player of its own: the voice screen has gone by then. Best effort. */
+export function sayGoodbye(sessionId: string) {
+  void clipUrl(`${sessionId}/voice/phrases/end`)
+    .then((url) => new Audio(url).play())
+    .catch(() => undefined)
+}
+
 export async function sendSpokenAnswer(
   sessionId: string,
   audio: Blob,
-  waiting: number[]
+  waiting: number[],
+  questionId: string
 ): Promise<{ answer: VoiceAnswer; stages: Record<string, number> }> {
-  const query = new URLSearchParams(
-    waiting.map((pick) => ["waiting", String(pick)])
-  )
+  const query = new URLSearchParams([
+    ["question_id", questionId],
+    ...waiting.map((pick) => ["waiting", String(pick)]),
+  ])
   const response = await checkedResponse(
     await fetch(`/api/rounds/sessions/${sessionId}/voice/answers?${query}`, {
       method: "POST",

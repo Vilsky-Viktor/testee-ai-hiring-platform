@@ -895,57 +895,6 @@
     ]
    }
   },
-  "/internal/session-companies": {
-   "post": {
-    "tags": [
-     "internal"
-    ],
-    "summary": "Session Companies",
-    "description": "Companies' backfill: the company of each interview set, for the sections started before\nrounds kept it.",
-    "operationId": "session_companies_internal_session_companies_post",
-    "requestBody": {
-     "content": {
-      "application/json": {
-       "schema": {
-        "$ref": "#/components/schemas/SetCompaniesIn"
-       }
-      }
-     },
-     "required": true
-    },
-    "responses": {
-     "200": {
-      "description": "Successful Response",
-      "content": {
-       "application/json": {
-        "schema": {
-         "additionalProperties": {
-          "type": "integer"
-         },
-         "type": "object",
-         "title": "Response Session Companies Internal Session Companies Post"
-        }
-       }
-      }
-     },
-     "422": {
-      "description": "Validation Error",
-      "content": {
-       "application/json": {
-        "schema": {
-         "$ref": "#/components/schemas/HTTPValidationError"
-        }
-       }
-      }
-     }
-    },
-    "security": [
-     {
-      "HTTPBearer": []
-     }
-    ]
-   }
-  },
   "/internal/invite-scores": {
    "post": {
     "tags": [
@@ -1800,7 +1749,7 @@
      "voice"
     ],
     "summary": "Voice Answer",
-    "description": "Voice mode: a spoken answer to the question on screen, understood. The body is the\nrecording (audio/webm, audio/mp4 or audio/ogg, at most 2 MB); `waiting` is the choice (option\nindices) waiting for the candidate's yes or no. Nothing is saved: a clear choice, or a\nconfirmed one, is sent to the answers route as a tapped one is. The audio and the words are\nnever kept. The `Server-Timing` header gives the stages' milliseconds: transcribe, match,\ntotal.",
+    "description": "Voice mode: a spoken answer to the question on screen, understood. The body is the\nrecording (audio/webm, audio/mp4 or audio/ogg, at most 2 MB); `question_id` is the question\nanswered, refused with a 409 once it's no longer on screen; `waiting` is the choice (option\nindices) waiting for the candidate's yes or no. Nothing is saved: a clear choice, or a\nconfirmed one, is sent to the answers route as a tapped one is. The audio and the words are\nnever kept. The `Server-Timing` header gives the stages' milliseconds: transcribe, match,\ntotal.",
     "operationId": "voice_answer_sessions__session_id__voice_answers_post",
     "security": [
      {
@@ -1816,6 +1765,16 @@
        "type": "string",
        "format": "uuid",
        "title": "Session Id"
+      }
+     },
+     {
+      "name": "question_id",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Question Id"
       }
      },
      {
@@ -3606,28 +3565,6 @@
     ],
     "title": "SessionsCreate"
    },
-   "SetCompaniesIn": {
-    "properties": {
-     "companies": {
-      "additionalProperties": {
-       "type": "string",
-       "format": "uuid"
-      },
-      "propertyNames": {
-       "format": "uuid"
-      },
-      "type": "object",
-      "maxProperties": 500,
-      "title": "Companies"
-     }
-    },
-    "type": "object",
-    "required": [
-     "companies"
-    ],
-    "title": "SetCompaniesIn",
-    "description": "Each interview's set and its company, by set id (companies' backfill of old sections)."
-   },
    "SetIdsIn": {
     "properties": {
      "set_ids": {
@@ -3795,6 +3732,10 @@
      "clear": {
       "type": "boolean",
       "title": "Clear"
+     },
+     "doubted": {
+      "type": "boolean",
+      "title": "Doubted"
      }
     },
     "type": "object",
@@ -3802,10 +3743,11 @@
      "heard",
      "intent",
      "picks",
-     "clear"
+     "clear",
+     "doubted"
     ],
     "title": "VoiceAnswerOut",
-    "description": "A spoken answer, understood: what was heard (the candidate's own words, shown back to\nthem and kept nowhere), what it meant, and the options it picks (indices, as a click sends\nthem) for `choose` and `confirm`. `noise` (no words: a cough, a knock) is ignored. `clear`: a\nchoice of one option on a single-answer question, saved at once without asking to confirm\nit; any other choice is confirmed first."
+    "description": "A spoken answer, understood: what was heard (the candidate's own words, shown back to\nthem and kept nowhere), what it meant, and the options it picks (indices, as a click sends\nthem) for `choose` and `confirm`. `noise` (no words: a cough, a knock) is ignored. `clear`: a\nchoice of one option on a single-answer question, saved at once without asking to confirm\nit; any other choice is confirmed first. `doubted`: the reply questions, negates or doubts\nwhat it names (\"A? no\", \"maybe A\"), so it's never saved unconfirmed, also as the time runs\nout."
    }
   },
   "securitySchemes": {

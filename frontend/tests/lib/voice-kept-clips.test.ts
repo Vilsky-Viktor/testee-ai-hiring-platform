@@ -99,3 +99,14 @@ it("fetches a clip again after a failed fetch", async () => {
 
   expect(vi.mocked(fetch).mock.calls).toHaveLength(2)
 })
+
+it("tells when a clip starts and goes on when it won't play", async () => {
+  const { audio } = player()
+  vi.spyOn(console, "warn").mockImplementation(() => undefined)
+  vi.mocked(audio.play).mockRejectedValue(new Error("blocked"))
+  const playing = vi.fn()
+
+  await keptClips().say(audio, "s1/voice/phrases/unclear", playing)
+
+  expect(audio.onplaying).toBeNull()
+})

@@ -15,7 +15,7 @@ type Connection = {
   started: () => boolean
   start: (frames: Float32Array[]) => void
   frame: (samples: Float32Array) => void
-  end: (waiting: number[]) => Promise<Understood | null>
+  end: (waiting: number[], questionId?: string) => Promise<Understood | null>
   close: () => void
 }
 
@@ -119,7 +119,7 @@ function connect(
         send(pcm16(samples))
       }
     },
-    end: (waiting) => {
+    end: (waiting, questionId) => {
       if (!started || closed) {
         close()
 
@@ -130,7 +130,7 @@ function connect(
         answered = resolve
       })
       const timer = setTimeout(close, LIVE_ANSWER_WAIT_MS)
-      send(JSON.stringify({ type: "end", waiting }))
+      send(JSON.stringify({ type: "end", waiting, question_id: questionId }))
 
       return result.finally(() => {
         clearTimeout(timer)
@@ -143,12 +143,12 @@ function connect(
 
 /** Voice mode's live listening, the listener's live sink (lib/voice-listening.ts): a connection
  * opened as listening starts (open), the candidate's speech sent as it comes once they're heard
- * (start, frame), and its end sent with the choice waiting on screen (end). `answer(recording)`
- * then gives that answer, or, when it wasn't heard live, the recording's, sent whole. `latest`
- * holds the session and the choice on screen now. A quiet connection is renewed after
+ * (start, frame), and its end sent with the question and the choice waiting on screen (end).
+ * `answer(recording)` then gives that answer, or, when it wasn't heard live, the recording's, sent
+ * whole. `latest` holds the session, the question and the choice on screen now. A quiet connection is renewed after
  * LIVE_RENEW_MS; after LIVE_MAX_FAILURES that never got ready in a row, none is opened again. */
 export function liveListening(latest: {
-  current: { sessionId: string; chosen: number[] }
+  current: { sessionId: string; chosen: number[]; questionId?: string }
 }) {
   let current: Connection | null = null
   let renew: ReturnType<typeof setTimeout> | undefined
@@ -194,10 +194,11 @@ export function liveListening(latest: {
       const mine = current
       clearTimeout(renew)
       current = null
-      ended = mine ? mine.end(latest.current.chosen) : null
+      const { chosen, questionId } = latest.current
+      ended = mine ? mine.end(chosen, questionId) : null
     },
     answer: async (recording: Blob) => {
-      const { sessionId, chosen } = latest.current
+      const { sessionId, chosen, questionId } = latest.current
       const heard = await (ended ?? Promise.resolve(null))
       ended = null
 
@@ -205,7 +206,12 @@ export function liveListening(latest: {
         return { ...heard, live: true }
       }
 
-      const sent = await sendSpokenAnswer(sessionId, recording, chosen)
+      const sent = await sendSpokenAnswer(
+        sessionId,
+        recording,
+        chosen,
+        questionId ?? ""
+      )
 
       return { ...sent, live: false }
     },

@@ -7,6 +7,14 @@ import { clipUrl, playClip, playUrl } from "@/lib/voice-clips"
 export function keptClips() {
   const urls = new Map<string, Promise<string>>()
 
+  /** Plays the clip at `path` ("<session>/voice/phrases/unclear") on `player` as playClip does:
+   * from the page when it's kept, fetched otherwise. */
+  async function play(player: HTMLAudioElement, path: string) {
+    const kept = urls.get(path.replace(/^[^/]+\/voice\//, ""))
+
+    return kept ? playUrl(player, await kept) : playClip(player, path)
+  }
+
   /** The clip's address, fetched now unless kept; fetched again next time if this one fails. */
   function load(sessionId: string, clip: string) {
     const kept = urls.get(clip)
@@ -28,12 +36,23 @@ export function keptClips() {
 
   return {
     load,
-    /** Plays the clip at `path` ("<session>/voice/phrases/unclear") on `player` as playClip
-     * does: from the page when it's kept, fetched otherwise. */
-    play: async (player: HTMLAudioElement, path: string) => {
-      const kept = urls.get(path.replace(/^[^/]+\/voice\//, ""))
+    play,
+    /** Mira says the clip to its end, `playing` told as it starts. One that won't play goes
+     * unread: what it says is on screen, and listening goes on. */
+    say: async (
+      player: HTMLAudioElement,
+      path: string,
+      playing: () => void
+    ) => {
+      player.onplaying = playing
 
-      return kept ? playUrl(player, await kept) : playClip(player, path)
+      try {
+        await play(player, path)
+      } catch (error) {
+        console.warn("Mira's clip didn't play", error)
+      } finally {
+        player.onplaying = null
+      }
     },
     /** Fetches each clip ahead; best effort, as a clip not kept is fetched when it's said. */
     preload: (sessionId: string, clips: string[]) => {

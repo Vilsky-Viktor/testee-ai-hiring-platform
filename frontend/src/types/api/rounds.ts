@@ -282,27 +282,6 @@ export interface paths {
     patch?: never
     trace?: never
   }
-  "/internal/session-companies": {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    get?: never
-    put?: never
-    /**
-     * Session Companies
-     * @description Companies' backfill: the company of each interview set, for the sections started before
-     *     rounds kept it.
-     */
-    post: operations["session_companies_internal_session_companies_post"]
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
   "/internal/invite-scores": {
     parameters: {
       query?: never
@@ -725,7 +704,8 @@ export interface paths {
     /**
      * Voice Answer
      * @description Voice mode: a spoken answer to the question on screen, understood. The body is the
-     *     recording (audio/webm, audio/mp4 or audio/ogg, at most 2 MB); `waiting` is the choice (option
+     *     recording (audio/webm, audio/mp4 or audio/ogg, at most 2 MB); `question_id` is the question
+     *     answered, refused with a 409 once it's no longer on screen; `waiting` is the choice (option
      *     indices) waiting for the candidate's yes or no. Nothing is saved: a clear choice, or a
      *     confirmed one, is sent to the answers route as a tapped one is. The audio and the words are
      *     never kept. The `Server-Timing` header gives the stages' milliseconds: transcribe, match,
@@ -1494,16 +1474,6 @@ export interface components {
        */
       voice: boolean
     }
-    /**
-     * SetCompaniesIn
-     * @description Each interview's set and its company, by set id (companies' backfill of old sections).
-     */
-    SetCompaniesIn: {
-      /** Companies */
-      companies: {
-        [key: string]: string
-      }
-    }
     /** SetIdsIn */
     SetIdsIn: {
       /** Set Ids */
@@ -1565,7 +1535,9 @@ export interface components {
      *     them and kept nowhere), what it meant, and the options it picks (indices, as a click sends
      *     them) for `choose` and `confirm`. `noise` (no words: a cough, a knock) is ignored. `clear`: a
      *     choice of one option on a single-answer question, saved at once without asking to confirm
-     *     it; any other choice is confirmed first.
+     *     it; any other choice is confirmed first. `doubted`: the reply questions, negates or doubts
+     *     what it names ("A? no", "maybe A"), so it's never saved unconfirmed, also as the time runs
+     *     out.
      */
     VoiceAnswerOut: {
       /** Heard */
@@ -1575,6 +1547,8 @@ export interface components {
       picks: number[]
       /** Clear */
       clear: boolean
+      /** Doubted */
+      doubted: boolean
     }
   }
   responses: never
@@ -2089,41 +2063,6 @@ export interface operations {
         }
         content: {
           "application/json": components["schemas"]["SessionOut"][]
-        }
-      }
-      /** @description Validation Error */
-      422: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": components["schemas"]["HTTPValidationError"]
-        }
-      }
-    }
-  }
-  session_companies_internal_session_companies_post: {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["SetCompaniesIn"]
-      }
-    }
-    responses: {
-      /** @description Successful Response */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          "application/json": {
-            [key: string]: number
-          }
         }
       }
       /** @description Validation Error */
@@ -2706,7 +2645,8 @@ export interface operations {
   }
   voice_answer_sessions__session_id__voice_answers_post: {
     parameters: {
-      query?: {
+      query: {
+        question_id: string
         waiting?: number[] | null
       }
       header?: never

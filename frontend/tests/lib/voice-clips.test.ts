@@ -105,12 +105,14 @@ describe("sendSpokenAnswer", () => {
     )
     const audio = new Blob(["sound"], { type: "audio/webm" })
 
-    await expect(sendSpokenAnswer("s-1", audio, [0, 2])).resolves.toEqual({
+    await expect(
+      sendSpokenAnswer("s-1", audio, [0, 2], "q-1")
+    ).resolves.toEqual({
       answer,
       stages: { transcribe: 812, match: 3 },
     })
     expect(calls[0][0]).toBe(
-      "/api/rounds/sessions/s-1/voice/answers?waiting=0&waiting=2"
+      "/api/rounds/sessions/s-1/voice/answers?question_id=q-1&waiting=0&waiting=2"
     )
     expect(calls[0][1].method).toBe("POST")
     expect(calls[0][1].headers).toEqual({
@@ -132,7 +134,7 @@ describe("sendSpokenAnswer", () => {
     )
 
     await expect(
-      sendSpokenAnswer("s-1", new Blob(["sound"]), [])
+      sendSpokenAnswer("s-1", new Blob(["sound"]), [], "q-1")
     ).rejects.toThrow(
       "Couldn't hear the answer.\nPlease try again or tap an option."
     )

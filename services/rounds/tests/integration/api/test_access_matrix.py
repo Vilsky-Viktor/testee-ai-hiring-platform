@@ -34,6 +34,11 @@ BODIES = {
 
 # Path values that aren't ids: voice mode's phrase and a saved answer's option.
 VALUES = {"phrase": "end", "pick": "1"}
+# The spoken answer's question is only compared with the one the caller's own session shows: any
+# other gets the 409 of a question left behind, and nothing of it is read.
+EXCEPTIONS = {
+    "POST /sessions/{session_id}/voice/answers": {"cross question_id": access_matrix.ALLOWED},
+}
 
 
 async def side(kind: str) -> Side:
@@ -73,4 +78,4 @@ def test_no_internal_route_takes_an_id_with_another_that_scopes_it():
 def test_only_whoever_may_gets_through(route, world, run):
     found, statuses = run(access_matrix.outcomes(app, route, world, BODIES, VALUES))
 
-    assert found == access_matrix.expected(route, world, {}), str(statuses)
+    assert found == access_matrix.expected(route, world, EXCEPTIONS), str(statuses)

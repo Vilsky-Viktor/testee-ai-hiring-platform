@@ -1,5 +1,6 @@
 import logging
 import time
+from uuid import UUID
 
 from fastapi import HTTPException, Request, status
 from openai import OpenAIError
@@ -14,9 +15,8 @@ from rounds.constants.voice import (
     MAX_ANSWER_SECONDS,
     TRANSCRIPTION_ACTION,
     VOICE_FAILED,
-    Intent,
 )
-from rounds.helpers.voice_match import hearing_keywords
+from rounds.helpers.voice_match import hearing_keywords, in_doubt, is_clear
 from rounds.helpers.voice_timing import server_timing
 from rounds.integrations.llm import get_transcribe_client
 from rounds.models.sessions import Session
@@ -24,7 +24,7 @@ from rounds.schemas.rounds import NextQuestion
 from rounds.schemas.voice import VoiceAnswerOut
 from rounds.services import voice_deadline, voice_limits, voice_match
 from rounds.services.session_titles import interview_language
-from rounds.services.voice_session import shown_question, voice_only
+from rounds.services.voice_session import asked_question, voice_only
 
 logger = logging.getLogger(__name__)
 
@@ -85,8 +85,11 @@ async def understand(
     if usage is not None:
         await ai_usage.record(MATCH_ACTION, model, usage, **who)
 
-    clear = intent == Intent.CHOOSE and not question.multi
-    understood = VoiceAnswerOut(heard=said, intent=intent, picks=picks, clear=clear)
+    clear = is_clear(intent, question.multi, said, language)
+    doubted = in_doubt(said, language)
+    understood = VoiceAnswerOut(
+        heard=said, intent=intent, picks=picks, clear=clear, doubted=doubted
+    )
 
     return understood, "model" if usage is not None else "code"
 
@@ -100,19 +103,19 @@ def log_answer(row: Session, understood: VoiceAnswerOut, by: str, stages: dict[s
 
 
 async def answer(
-    row: Session, request: Request, waiting: list[int]
+    row: Session, request: Request, waiting: list[int], question_id: UUID
 ) -> tuple[VoiceAnswerOut, dict[str, float]]:
-    """A spoken answer to the question on screen, recorded whole and uploaded (when it couldn't be
-    heard live, services/voice_stream.py), understood: heard, then matched to its options (or to
-    a yes or no for the choice `waiting` for confirmation); a sound without words is noise, which
-    the browser ignores. Nothing is saved here: a clear choice (one option on a single-answer
-    question) is sent at once, any other once the candidate confirms it, as a tapped one is. With
-    it, each stage's seconds (transcribe, match, total), also logged with the session's id and
-    the intent: never the words. The audio and the words are never kept or logged. Over the
-    limits a 429 (or 503); a failed call a 502."""
+    """A spoken answer to the question on screen (`question_id`; a 409 once it's left), recorded
+    whole and uploaded (when it couldn't be heard live, services/voice_stream.py), understood:
+    heard, then matched to its options (or to a yes or no for the choice `waiting` for
+    confirmation); a sound without words is noise, which the browser ignores. Nothing is saved
+    here: a clear choice (one option on a single-answer question) is sent at once, any other once
+    the candidate confirms it, as a tapped one is. With it, each stage's seconds (transcribe,
+    match, total), also logged with the session's id and the intent: never the words. The audio
+    and the words are never kept or logged. Over the limits a 429 (or 503); a failed call a 502."""
     started = time.monotonic()
     voice_only(row)
-    question = shown_question(row)
+    question = asked_question(row, question_id)
     # Noted as it arrives, before the upload is read: in time, its answer may come after the
     # deadline (services/voice_deadline.py).
     await voice_deadline.note_arrival(row, question.question_id)

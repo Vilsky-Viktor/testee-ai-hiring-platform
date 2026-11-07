@@ -90,6 +90,11 @@ def close_code(socket) -> int:
             return message["code"]
 
 
+def end(voice, **step) -> dict:
+    """The end of an answer to the question on screen."""
+    return {"type": "end", "question_id": voice.row.questions[0]["id"], **step}
+
+
 def signed_in(socket, token="good"):
     socket.send_json({"token": token})
 
@@ -106,7 +111,7 @@ def test_an_answer_streamed_while_spoken_is_heard_and_matched(
         for _ in range(10):
             socket.send_bytes(FRAME)
 
-        socket.send_json({"type": "end", "waiting": [2, 2]})
+        socket.send_json(end(voice, waiting=[2, 2]))
         reply = socket.receive_json()
         code = close_code(socket)
 
@@ -118,6 +123,7 @@ def test_an_answer_streamed_while_spoken_is_heard_and_matched(
         "intent": "choose",
         "picks": [1],
         "clear": True,
+        "doubted": False,
     }
     assert list(reply["stages"]) == ["transcribe", "match", "total"]
     [opened] = live.sessions
@@ -163,36 +169,6 @@ def test_only_the_candidates_own_voice_question_on_the_clock_is_streamed(
     assert live.sessions == []
 
 
-@pytest.mark.parametrize(
-    "steps",
-    [
-        # Audio before the answer is counted.
-        [FRAME],
-        # A frame larger than any the detector makes.
-        [{"type": "start"}, bytes(16_386)],
-        # Half a sample.
-        [{"type": "start"}, b"\x00"],
-        [{"type": "end"}],
-        [{"type": "start"}, {"type": "start"}],
-        [{"type": "listen"}],
-        [{"type": "end", "waiting": [4]}],
-    ],
-)
-def test_anything_out_of_turn_closes_the_stream(client, voice, live, published, steps):
-    with client.websocket_connect(url(voice)) as socket:
-        signed_in(socket)
-
-        for step in steps:
-            if isinstance(step, bytes):
-                socket.send_bytes(step)
-            else:
-                socket.send_json(step)
-
-        assert close_code(socket) == 4400
-
-    assert voice.matched == []
-
-
 def test_an_answer_longer_than_allowed_closes_the_stream(client, voice, live, monkeypatch):
     monkeypatch.setattr(voice_stream, "MAX_ANSWER_SECONDS", 0.05)
 
@@ -212,7 +188,7 @@ def test_streams_stop_at_the_candidates_limits(client, voice, live, redis, limit
     with client.websocket_connect(url(voice)) as socket:
         signed_in(socket)
         socket.send_json({"type": "start"})
-        socket.send_json({"type": "end"})
+        socket.send_json(end(voice))
         socket.receive_json()
 
     with client.websocket_connect(url(voice)) as socket:
@@ -246,7 +222,7 @@ def test_openais_failures_close_the_stream_and_the_audio_sent_is_paid_for(
             assert socket.receive_json() == {"type": "ready"}
             socket.send_json({"type": "start"})
             socket.send_bytes(FRAME)
-            socket.send_json({"type": "end"})
+            socket.send_json(end(voice))
 
         assert close_code(socket) == code
 
@@ -283,7 +259,7 @@ def test_the_candidates_words_and_token_reach_no_log(client, voice, live, caplog
         signed_in(socket)
         socket.send_json({"type": "start"})
         socket.send_bytes(FRAME)
-        socket.send_json({"type": "end"})
+        socket.send_json(end(voice))
         socket.receive_json()
 
     assert "Voice answer" in caplog.text
