@@ -1,5 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
+import { REQUEST_URL } from "./helpers/env";
 import { loaded } from "./helpers/waits";
 
 // The home page's hero: the title and its sentence with two pill buttons under them on the start
@@ -75,6 +76,12 @@ test("the wires' circles show from laptops up", { tag: "@phone" }, async ({ page
   for (const source of await sources.all()) {
     expect((await source.boundingBox())!.y).toBeLessThan(form.y);
   }
+});
+
+test("the box's language comes with the page, so the box never grows", async ({ request }) => {
+  const html = await (await request.get(`${REQUEST_URL}/`)).text();
+
+  expect(html).toMatch(/<form[^]*aria-labelledby[^]*<\/form>/);
 });
 
 test("the box's language and create button share a row", async ({ page }) => {

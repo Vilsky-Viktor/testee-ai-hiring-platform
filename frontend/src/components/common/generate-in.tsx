@@ -18,17 +18,14 @@ export function GenerateIn({
   onChange: (language: Locale) => void
 }) {
   const t = useTranslations("generateIn")
-  const [languages, setLanguages] = useState<Locale[]>([])
+  // The form's own language until the list comes, so the row never makes the form grow.
+  const [languages, setLanguages] = useState<Locale[]>([value])
 
   useEffect(() => {
     apiFetch<string[]>("/generate/languages")
       .then((codes) => setLanguages(codes.filter(isLocale)))
       .catch(() => {})
   }, [])
-
-  if (languages.length === 0) {
-    return null
-  }
 
   return (
     <div className="flex items-center gap-2 text-xs text-muted-foreground">
