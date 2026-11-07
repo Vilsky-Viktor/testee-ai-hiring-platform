@@ -2,7 +2,7 @@
 title: "Apakah rekrutmen dengan AI legal di Inggris Raya? Yang perlu diketahui pemberi kerja"
 seoTitle: "Apakah Rekrutmen dengan AI Legal di Inggris Raya?"
 description: "AI dalam rekrutmen legal di Inggris Raya, dengan aturan: Equality Act, aturan baru UK GDPR soal keputusan otomatis sejak Februari 2026, dan temuan ICO."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Apakah rekrutmen dengan AI legal di Inggris Raya? Yang perlu diketahui pemberi kerja
@@ -51,6 +51,8 @@ Pasal 22D memungkinkan pemerintah menambah aturan ini melalui peraturan, misalny
 
 **Dalam praktiknya:** pastikan ada orang yang memahami hasilnya dan bisa membatalkannya melihat setiap hasil sebelum kandidat ditolak, dan beri tahu kandidat cara meminta peninjauan. Dengan begitu keputusannya tidak semata-mata otomatis, dan perlindungan tadi menjadi praktik yang baik, bukan kewajiban hukum.
 
+Masih ada dua hal yang akan datang. Rancangan panduan ICO tentang keputusan otomatis, termasuk pembuatan profil, dibuka untuk [konsultasi](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/) dari 31 Maret hingga 29 Mei 2026 dan belum final per November 2026. Dan [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made), yang berlaku sejak 12 Mei 2026, mewajibkan Information Commissioner menyiapkan kode praktik berdasarkan undang-undang tentang AI dan pengambilan keputusan otomatis.
+
 ## Dasar-dasar UK GDPR
 
 Data kandidat tunduk pada UK GDPR dan Data Protection Act 2018, yang cara kerjanya mirip dengan GDPR UE:
@@ -83,7 +85,7 @@ Tujuh rekomendasi utamanya, untuk penyedia maupun perekrut:
 
 ICO juga merekomendasikan peninjauan manusia yang bermakna atas output AI, dengan catatan peninjauan yang dilakukan.
 
-Pada Maret 2026, ICO menerbitkan laporan kedua, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), dari kerjanya bersama lebih dari 30 pemberi kerja. Laporan itu menemukan bahwa banyak yang memperlakukan alatnya sebagai pendukung keputusan padahal keterlibatan manusia yang nyata sangat sedikit, bahwa perlindungan untuk menggugat keputusan diterapkan tidak merata, bahwa kandidat sering tidak diberi tahu dengan jelas bagaimana otomatisasi dipakai, dan bahwa DPIA sering tidak ada atau lemah. Panduan terbarunya tentang keputusan otomatis dibuka untuk konsultasi hingga 29 Mei 2026 dan belum final per November 2026, dan kode praktik berdasarkan undang-undang tentang AI dan pengambilan keputusan otomatis sedang disiapkan. Sejak 30 September 2026, regulatornya adalah Information Commission, yang masih memakai nama ICO.
+Pada Maret 2026, ICO menerbitkan laporan kedua, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), dari kerjanya bersama lebih dari 30 pemberi kerja. Laporan itu menemukan bahwa banyak yang memperlakukan alatnya sebagai pendukung keputusan padahal keterlibatan manusia yang nyata sangat sedikit, bahwa perlindungan untuk menggugat keputusan diterapkan tidak merata, bahwa kandidat sering tidak diberi tahu dengan jelas bagaimana otomatisasi dipakai, dan bahwa DPIA sering tidak ada atau lemah. Sejak 30 September 2026, regulatornya adalah Information Commission, yang masih memakai nama ICO.
 
 ## Transfer ke AS
 
@@ -115,7 +117,7 @@ Seperti apa wujudnya di produk saat ini:
 - **Pemantauan keadilan.** Pemilik perusahaanmu bisa mengunduh file untuk audit bias dari halaman Log tindakan perusahaan: untuk setiap kandidat yang sudah selesai, nilainya, nilai lulus, apakah ia lulus, dan apakah skornya di atas median wawancara, dengan email sebagai kunci. Gabungkan dengan jawaban yang diberikan kandidat di formulir kesempatan yang setara milikmu sendiri, lalu hapus emailnya.
 - **Tambahan waktu** +25%, +50%, atau +100% untuk setiap soal bisa diberikan kepada kandidat mana pun yang memintanya, sebelum ia mulai. testee hanya menyimpan besarnya, tidak pernah alasannya.
 - **Dokumen.** Templat pemberitahuan untuk kandidat, petunjuk untuk perusahaan, dan templat DPIA ada di [halaman dokumen](/documents).
-- **Data.** Perusahaanmu adalah pengendali dan testee pemrosesnya, berdasarkan [perjanjian pemrosesan data](/dpa), yang mencakup hukum Inggris Raya. Data di-hosting di UE dan tidak dipakai untuk melatih model AI; transfer data kandidat Inggris Raya ke sub-pemroses di AS bersandar pada jembatan data Inggris Raya–AS atau adendum Inggris Raya (lihat [kebijakan privasi](/privacy)). Data kandidat dihapus 12 bulan setelah undangan.
+- **Data.** Perusahaanmu adalah pengendali dan testee pemrosesnya, berdasarkan [perjanjian pemrosesan data](/dpa), yang mencakup hukum Inggris Raya. Data di-hosting di UE dan tidak dipakai untuk melatih model AI; transfer data kandidat Inggris Raya ke sub-pemroses di AS bersandar pada jembatan data Inggris Raya–AS atau adendum Inggris Raya (lihat [kebijakan privasi](/privacy)). Data kandidat dihapus 12 bulan setelah undangan terakhir dikirim.
 
 ## Bacaan terkait
 
@@ -132,3 +134,5 @@ Seperti apa wujudnya di produk saat ini:
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [November 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
 - Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), Maret 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).
+- The Data Protection Act 2018 (Code of Practice on Artificial Intelligence and Automated Decision-Making) Regulations 2026, [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made).
+- Information Commissioner's Office, [konsultasi rancangan panduan tentang pengambilan keputusan otomatis, termasuk pembuatan profil](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/), 31 Maret hingga 29 Mei 2026.

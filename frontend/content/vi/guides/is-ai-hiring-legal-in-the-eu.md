@@ -2,7 +2,7 @@
 title: "Dùng AI trong tuyển dụng có hợp pháp ở EU không? Những điều nhà tuyển dụng cần biết"
 seoTitle: "Tuyển dụng bằng AI ở EU: Đạo luật AI và GDPR cơ bản"
 description: "Dùng AI trong tuyển dụng ở EU là hợp pháp, nhưng có quy định. Nhóm rủi ro cao của Đạo luật AI nghĩa là gì, các mốc đến 12/2027 và GDPR cơ bản."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Dùng AI trong tuyển dụng có hợp pháp ở EU không? Những điều nhà tuyển dụng cần biết
@@ -125,9 +125,12 @@ Hiện nay điều đó thể hiện trong sản phẩm như sau:
 - **Con người quyết định.** Trang kết quả và báo cáo PDF nhắc nhóm của bạn xem xét kết quả; testee không loại ứng viên và không gửi thư từ chối.
 - **Dấu AI.** Câu hỏi, lựa chọn trả lời, câu trả lời của Mira và đoạn âm thanh giọng nói được đánh dấu là do AI tạo ở dạng phần mềm đọc được, và các đoạn âm thanh này còn mang watermark âm thanh không nghe được của OpenAI. [Trang Tin cậy và bảo mật](/trust) giải thích cách kiểm tra. Văn bản sao chép từ trang không giữ lại dấu này.
 - **Ứng viên được thông báo** trước khi bắt đầu rằng câu hỏi do AI viết, rằng người của công ty bạn xem xét kết quả và quyết định, và rằng họ có thể yêu cầu xem xét lại.
+- **Không có đặc điểm được bảo vệ.** testee không bao giờ hỏi, suy đoán hay lưu giới tính, dân tộc, tuổi tác, khuyết tật hay các đặc điểm được bảo vệ khác của ứng viên.
+- **Giám sát công bằng.** Chủ sở hữu công ty bạn có thể tải tệp dùng cho kiểm toán thiên lệch từ trang Nhật ký thao tác của công ty: với mỗi ứng viên đã hoàn thành, điểm của họ, điểm đạt, họ có đạt hay không và có cao hơn trung vị của buổi phỏng vấn hay không, gắn với email. Hãy ghép tệp này với câu trả lời ứng viên đã đưa cho bạn trong biểu mẫu cơ hội bình đẳng của riêng bạn, rồi xóa email.
 - **Thời gian thêm** có thể được cấp cho bất kỳ ứng viên nào yêu cầu.
 - **Hồ sơ lưu trữ.** Các câu hỏi đã hiển thị, câu trả lời, thời gian và các lần rời trang hay sao chép đều được ghi lại.
-- **Dữ liệu.** Lưu trữ tại EU (một số bên xử lý phụ ở Mỹ; xem [chính sách quyền riêng tư](/privacy)), dữ liệu ứng viên được xóa sau 12 tháng kể từ lời mời, có kèm thỏa thuận xử lý dữ liệu, và dữ liệu của bạn không được dùng để huấn luyện mô hình AI.
+- **Tài liệu.** Mẫu thông báo cho ứng viên, hướng dẫn cho công ty và mẫu DPIA có trên [trang tài liệu](/documents).
+- **Dữ liệu.** Lưu trữ tại EU (một số bên xử lý phụ ở Mỹ; xem [chính sách quyền riêng tư](/privacy)), dữ liệu ứng viên được xóa sau 12 tháng kể từ lần gửi lời mời gần nhất, có kèm [thỏa thuận xử lý dữ liệu](/dpa), và dữ liệu của bạn không được dùng để huấn luyện mô hình AI.
 
 Bản nháp tài liệu kỹ thuật, sổ đăng ký rủi ro, hướng dẫn cho công ty, hệ thống quản lý chất lượng và kế hoạch giám sát sau khi đưa ra thị trường đã có và đang được hoàn thiện trước mốc năm 2027. Đó là các bản nháp đang làm, không phải tuyên bố về việc tuân thủ.
 

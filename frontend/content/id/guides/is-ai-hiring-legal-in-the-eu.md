@@ -2,7 +2,7 @@
 title: "Apakah rekrutmen dengan AI legal di UE? Yang perlu diketahui pemberi kerja"
 seoTitle: "Apakah Rekrutmen dengan AI Legal di UE? AI Act dan GDPR"
 description: "AI dalam rekrutmen legal di UE, dengan aturan. Arti kategori berisiko tinggi AI Act bagi pemberi kerja, tanggal penting hingga Desember 2027, dan GDPR."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Apakah rekrutmen dengan AI legal di UE? Yang perlu diketahui pemberi kerja
@@ -125,9 +125,12 @@ Seperti apa wujudnya di produk saat ini:
 - **Manusia yang memutuskan.** Halaman hasil dan laporan PDF mengingatkan timmu untuk meninjau hasil; testee tidak menolak kandidat atau mengirim pesan penolakan.
 - **Penanda AI.** Soal, pilihan jawaban, jawaban Mira, dan klip suara ditandai sebagai buatan AI dalam bentuk yang bisa dibaca perangkat lunak, dan klip suara juga membawa watermark OpenAI yang tidak terdengar. [Halaman kepercayaan](/trust) menjelaskan cara memeriksanya. Teks yang disalin dari halaman tidak mempertahankan penandanya.
 - **Kandidat diberi tahu** sebelum mulai bahwa soal ditulis oleh AI, bahwa orang di perusahaanmu yang meninjau hasil dan memutuskan, dan bahwa mereka bisa meminta peninjauan.
+- **Tanpa karakteristik yang dilindungi.** testee tidak pernah menanyakan, menyimpulkan, atau menyimpan jenis kelamin, etnis, usia, disabilitas, atau karakteristik lain yang dilindungi milik kandidat.
+- **Pemantauan keadilan.** Pemilik perusahaanmu bisa mengunduh file untuk audit bias dari halaman Log tindakan perusahaan: untuk setiap kandidat yang sudah selesai, nilainya, nilai lulus, apakah ia lulus, dan apakah skornya di atas median wawancara, dengan email sebagai kunci. Gabungkan dengan jawaban yang diberikan kandidat di formulir kesempatan yang setara milikmu sendiri, lalu hapus emailnya.
 - **Tambahan waktu** bisa diberikan kepada kandidat mana pun yang memintanya.
 - **Catatan.** Soal yang ditampilkan, jawaban, waktu, dan tanda peringatan tercatat.
-- **Data.** Di-hosting di UE (beberapa sub-pemroses ada di AS; lihat [kebijakan privasi](/privacy)), data kandidat dihapus 12 bulan setelah undangan, perjanjian pemrosesan data sudah termasuk, dan datamu tidak dipakai untuk melatih model AI.
+- **Dokumen.** Templat pemberitahuan untuk kandidat, petunjuk untuk perusahaan, dan templat DPIA ada di [halaman dokumen](/documents).
+- **Data.** Di-hosting di UE (beberapa sub-pemroses ada di AS; lihat [kebijakan privasi](/privacy)), data kandidat dihapus 12 bulan setelah undangan terakhir dikirim, [perjanjian pemrosesan data](/dpa) sudah termasuk, dan datamu tidak dipakai untuk melatih model AI.
 
 Draf dokumentasi teknis, daftar risiko, petunjuk untuk perusahaan, sistem manajemen mutu, dan rencana pemantauan pascapasar sudah ada dan sedang dilengkapi menjelang tanggal 2027. Semuanya masih draf kerja, bukan klaim kepatuhan.
 

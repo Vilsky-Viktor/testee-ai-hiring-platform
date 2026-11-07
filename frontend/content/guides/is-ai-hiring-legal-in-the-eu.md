@@ -2,7 +2,7 @@
 title: "Is AI hiring legal in the EU? What employers need to know"
 seoTitle: "Is AI Hiring Legal in the EU? AI Act and GDPR Basics"
 description: "AI in hiring is legal in the EU, with rules. What the AI Act's high-risk category means for employers, the key dates to December 2027, and the GDPR basics."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Is AI hiring legal in the EU? What employers need to know
@@ -123,9 +123,12 @@ What that looks like in the product today:
 - **People decide.** The results page and PDF reports remind your team to review results; testee doesn't reject candidates or send rejection messages.
 - **AI marks.** Questions, answer options, Mira's answers and voice clips are marked as AI-generated in a form software can read, and voice clips also carry OpenAI's inaudible watermark. The [trust page](/trust) explains how to check them. Text copied from a page doesn't keep its mark.
 - **Candidates are told** before they start that questions are written by AI, that people at your company review results and decide, and that they can ask for a review.
+- **No protected characteristics.** testee never asks for, infers or stores candidates' sex, ethnicity, age, disability or other protected characteristics.
+- **Fairness monitoring.** Your company's owner can download a bias-audit file from the company's Action log page: each finished candidate's grade, the passing grade, whether they passed and whether they scored above the interview's median, keyed by email. Join it with the answers candidates gave you on your own equal opportunities form, then remove the email.
 - **Extra time** can be given to any candidate who asks.
 - **Records.** The questions shown, answers, timings and integrity events are recorded.
-- **Data.** Hosted in the EU (some sub-processors are in the US; see the [privacy policy](/privacy)), candidate data deleted 12 months after the invite, a data processing agreement included, and your data isn't used to train AI models.
+- **Documents.** Candidate notice templates, the instructions for companies and a DPIA template are on the [documents page](/documents).
+- **Data.** Hosted in the EU (some sub-processors are in the US; see the [privacy policy](/privacy)), candidate data deleted 12 months after the invite was last sent, a [data processing agreement](/dpa) included, and your data isn't used to train AI models.
 
 Drafts of the technical documentation, risk register, instructions for companies, quality management system and post-market monitoring plan exist and are being completed ahead of the 2027 date. They are working drafts, not a claim of compliance.
 

@@ -2,7 +2,7 @@
 title: "Kas AI kasutamine värbamisel on Ühendkuningriigis seaduslik? Mida tööandjad peavad teadma"
 seoTitle: "AI värbamisel Ühendkuningriigis: võrdõiguslikkus ja andmed"
 description: "AI kasutamine värbamisel on Ühendkuningriigis seaduslik, kuid reeglitega: Equality Act, UK GDPR-i uued automatiseeritud otsuste reeglid 2026 ja ICO leiud."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Kas AI kasutamine värbamisel on Ühendkuningriigis seaduslik? Mida tööandjad peavad teadma
@@ -51,6 +51,8 @@ Artikkel 22D lubab valitsusel neid reegleid määrustega täiendada, näiteks se
 
 **Praktikas:** lase igal tulemusel enne kandidaadi tagasilükkamist üle vaadata inimesel, kes tulemustest aru saab ja võib need ümber otsustada, ning ütle kandidaatidele, kuidas ülevaatust taotleda. Siis ei ole otsus üksnes automatiseeritud ja kaitsemeetmed on hea tava, mitte seadusest tulenev nõue.
 
+Kaks asja on veel tulekul. ICO automatiseeritud otsuste, sealhulgas profileerimise juhiste kavand oli [avalikul konsultatsioonil](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/) 31. märtsist 29. maini 2026 ega olnud 2026. aasta novembri seisuga lõplik. Ja 12. maist 2026 kehtiv [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made) kohustab Information Commissionerit koostama seadusjärgse tegevusjuhendi AI ja automatiseeritud otsuste kohta.
+
 ## UK GDPR-i põhitõed
 
 Kandidaatide andmetele kohalduvad UK GDPR ja Data Protection Act 2018, mis toimivad suures osas nagu ELi isikuandmete kaitse üldmäärus:
@@ -83,7 +85,7 @@ Tema seitse peamist soovitust, nii pakkujatele kui ka värbajatele:
 
 ICO soovitab ka AI väljundite sisulist inimülevaatust koos tehtud ülevaatuste kirjetega.
 
-Märtsis 2026 avaldas ICO teise aruande, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), mis põhineb tööl enam kui 30 tööandjaga. Selle järgi käsitlevad paljud oma tööriistu otsustustoena ka siis, kui tegelikku inimese osalust on vähe, otsuse vaidlustamise kaitsemeetmeid rakendatakse ebaühtlaselt, kandidaatidele ei öelda sageli selgelt, kuidas automatiseerimist kasutatakse, ning mõjuhinnangud puuduvad sageli või on nõrgad. Selle uuendatud juhised automatiseeritud otsuste kohta olid avalikul konsultatsioonil 29. maini 2026 ega olnud 2026. aasta novembri seisuga lõplikud ning teel on seadusjärgne tegevusjuhend AI ja automatiseeritud otsuste kohta. Alates 30. septembrist 2026 on järelevalveasutus Information Commission, mis kannab endiselt nime ICO.
+Märtsis 2026 avaldas ICO teise aruande, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), mis põhineb tööl enam kui 30 tööandjaga. Selle järgi käsitlevad paljud oma tööriistu otsustustoena ka siis, kui tegelikku inimese osalust on vähe, otsuse vaidlustamise kaitsemeetmeid rakendatakse ebaühtlaselt, kandidaatidele ei öelda sageli selgelt, kuidas automatiseerimist kasutatakse, ning mõjuhinnangud puuduvad sageli või on nõrgad. Alates 30. septembrist 2026 on järelevalveasutus Information Commission, mis kannab endiselt nime ICO.
 
 ## Edastamine USAsse
 
@@ -115,7 +117,7 @@ Kuidas see tootes täna välja näeb:
 - **Õigluse jälgimine.** Sinu ettevõtte omanik saab ettevõtte toimingute logi lehelt alla laadida faili kallutatuse auditi jaoks: iga lõpetanud kandidaadi hinne, läbimise lävi, kas ta sooritas ja kas tema tulemus oli intervjuu mediaanist kõrgem, seotud e-posti aadressiga. Ühenda see vastustega, mille kandidaadid andsid sinu enda võrdsete võimaluste vormis, ja eemalda seejärel e-posti aadress.
 - **Lisaaega** +25%, +50% või +100% iga küsimuse kohta saab anda igale kandidaadile, kes seda palub, enne kui ta alustab. testee salvestab ainult lisaaja suuruse, mitte kunagi põhjust.
 - **Dokumendid.** Kandidaatide teavituse mallid, ettevõtetele mõeldud juhised ja mõjuhinnangu (DPIA) mall on [dokumentide lehel](/documents).
-- **Andmed.** Sinu ettevõte on vastutav töötleja ja testee volitatud töötleja [andmetöötluslepingu](/dpa) alusel, mis hõlmab Ühendkuningriigi õigust. Andmeid majutatakse ELis ja neid ei kasutata AI-mudelite treenimiseks; Ühendkuningriigi kandidaatide andmete edastamine USAs asuvatele volitatud alamtöötlejatele tugineb Ühendkuningriigi ja USA andmesillale või Ühendkuningriigi lisale (vaata [privaatsuspoliitikat](/privacy)). Kandidaatide andmed kustutatakse 12 kuud pärast kutset.
+- **Andmed.** Sinu ettevõte on vastutav töötleja ja testee volitatud töötleja [andmetöötluslepingu](/dpa) alusel, mis hõlmab Ühendkuningriigi õigust. Andmeid majutatakse ELis ja neid ei kasutata AI-mudelite treenimiseks; Ühendkuningriigi kandidaatide andmete edastamine USAs asuvatele volitatud alamtöötlejatele tugineb Ühendkuningriigi ja USA andmesillale või Ühendkuningriigi lisale (vaata [privaatsuspoliitikat](/privacy)). Kandidaatide andmed kustutatakse 12 kuud pärast kutse viimast saatmist.
 
 ## Loe ka
 
@@ -132,3 +134,5 @@ Kuidas see tootes täna välja näeb:
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [november 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
 - Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), märts 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).
+- The Data Protection Act 2018 (Code of Practice on Artificial Intelligence and Automated Decision-Making) Regulations 2026, [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made).
+- Information Commissioner's Office, [konsultatsioon automatiseeritud otsuste, sealhulgas profileerimise juhiste kavandi kohta](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/), 31. märts kuni 29. mai 2026.

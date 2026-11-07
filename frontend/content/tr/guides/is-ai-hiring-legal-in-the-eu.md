@@ -2,7 +2,7 @@
 title: "AB'de yapay zekâ ile işe alım yasal mı? İşverenlerin bilmesi gerekenler"
 seoTitle: "AB'de Yapay Zekâ ile İşe Alım Yasal mı? AI Act ve GDPR"
 description: "AB'de işe alımda yapay zekâ kurallar dahilinde yasaldır. Yapay Zekâ Yasası'nın yüksek risk kategorisi, Aralık 2027'ye kadarki tarihler ve GDPR esasları."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # AB'de yapay zekâ ile işe alım yasal mı? İşverenlerin bilmesi gerekenler
@@ -125,9 +125,12 @@ Bunun bugün üründeki karşılığı:
 - **Kararı insanlar verir.** Sonuçlar sayfası ve PDF raporlar ekibinize sonuçları incelemesini hatırlatır; testee adayları reddetmez veya ret mesajı göndermez.
 - **Yapay zekâ işaretleri.** Sorular, cevap seçenekleri, Mira'nın cevapları ve ses klipleri, yazılımların okuyabileceği bir biçimde yapay zekâ ürünü olarak işaretlenir; ses kliplerinde ayrıca OpenAI'ın duyulmayan filigranı vardır. [Güven ve güvenlik sayfası](/trust) bunların nasıl kontrol edileceğini açıklar. Bir sayfadan kopyalanan metin bu işareti korumaz.
 - **Adaylar başlamadan önce bilgilendirilir:** soruların yapay zekâ tarafından yazıldığı, sonuçları şirketinizdeki kişilerin inceleyip karar verdiği ve yeniden inceleme talep edebilecekleri.
+- **Korunan özellik yok.** testee adayların cinsiyetini, etnik kökenini, yaşını, engelliliğini veya diğer korunan özelliklerini asla sormaz, çıkarsamaz veya saklamaz.
+- **Adaletin izlenmesi.** Şirketinizin sahibi, şirketin İşlem kaydı sayfasından bir yanlılık denetimi dosyası indirebilir: mülakatı bitiren her adayın notu, geçme notu, geçip geçmediği ve mülakatın medyanının üzerinde puan alıp almadığı, e-posta adresine göre eşleştirilmiş şekilde. Bunu adayların kendi fırsat eşitliği formunuzda size verdiği yanıtlarla birleştirin, ardından e-posta adresini silin.
 - **Ek süre,** isteyen her adaya verilebilir.
 - **Kayıtlar.** Gösterilen sorular, yanıtlar, süreler ve güvenilirlik olayları kaydedilir.
-- **Veriler.** AB'de barındırılır (bazı alt işleyenler ABD'dedir; bkz. [gizlilik politikası](/privacy)); aday verileri davetten 12 ay sonra silinir, bir veri işleme sözleşmesi dahildir ve verileriniz yapay zekâ modellerini eğitmek için kullanılmaz.
+- **Belgeler.** Aday aydınlatma metni şablonları, şirketler için talimatlar ve bir DPIA şablonu [belgeler sayfasında](/documents) yer alır.
+- **Veriler.** AB'de barındırılır (bazı alt işleyenler ABD'dedir; bkz. [gizlilik politikası](/privacy)); aday verileri davetin son gönderiminden 12 ay sonra silinir, bir [veri işleme sözleşmesi](/dpa) dahildir ve verileriniz yapay zekâ modellerini eğitmek için kullanılmaz.
 
 Teknik dokümantasyon, risk kaydı, şirketler için talimatlar, kalite yönetim sistemi ve piyasaya arz sonrası izleme planının taslakları mevcuttur ve 2027 tarihinden önce tamamlanmaktadır. Bunlar çalışma taslaklarıdır, uyum iddiası değildir.
 

@@ -2,7 +2,7 @@
 title: "英国で AI を使った採用は合法か？雇用主が知っておくべきこと"
 seoTitle: "英国で AI 採用は合法か？平等法とデータ保護の基本"
 description: "英国では AI を使った採用は合法ですが、ルールがあります。Equality Act、2026 年 2 月からの UK GDPR の自動化された意思決定の新ルール、ICO の監査結果を解説。"
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # 英国で AI を使った採用は合法か？雇用主が知っておくべきこと
@@ -51,6 +51,8 @@ UK GDPR の旧第 22 条は、いくつかの例外を除き、自動化され�
 
 **実務では：** 結果を理解し、それを覆すことができる人に、候補者を不採用にする前に一つひとつの結果を確認してもらい、候補者には見直しを求める方法を伝えましょう。そうすれば決定は自動化された処理のみによるものではなくなり、保護措置は法的義務ではなく良い慣行になります。
 
+さらに 2 つの動きが控えています。プロファイリングを含む自動化された判断に関する ICO のガイダンス草案は、2026 年 3 月 31 日から 5 月 29 日まで[意見募集](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/)が行われ、2026 年 11 月時点では確定していません。また、2026 年 5 月 12 日に施行された [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made) は、AI と自動化された意思決定に関する法定の実務規範を作成するよう情報コミッショナーに義務づけています。
+
 ## UK GDPR の基本
 
 候補者のデータには、EU の GDPR とほぼ同じように機能する UK GDPR と 2018 年データ保護法（Data Protection Act 2018）が適用されます。
@@ -83,7 +85,7 @@ UK GDPR の旧第 22 条は、いくつかの例外を除き、自動化され�
 
 ICO はまた、AI の出力を人が意味のある形で確認し、行った確認を記録することも勧めています。
 
-2026 年 3 月、ICO は 30 社を超える雇用主との取り組みをもとに、2 つ目の報告書 [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/) を公表しました。多くの雇用主が、実際には人の関与がほとんどないのにツールを意思決定の支援として扱っていること、判断に異議を唱えるための保護措置の適用にばらつきがあること、自動化の使われ方が候補者に明確に伝えられていないことが多いこと、DPIA が欠けているか不十分なことが多いことがわかりました。自動化された判断に関する ICO の更新版ガイダンスは 2026 年 5 月 29 日まで意見募集が行われ、2026 年 11 月時点では確定しておらず、AI と自動化された意思決定に関する法定の実務規範も準備が進んでいます。2026 年 9 月 30 日から規制当局は情報委員会（Information Commission）となりましたが、引き続き ICO と呼ばれています。
+2026 年 3 月、ICO は 30 社を超える雇用主との取り組みをもとに、2 つ目の報告書 [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/) を公表しました。多くの雇用主が、実際には人の関与がほとんどないのにツールを意思決定の支援として扱っていること、判断に異議を唱えるための保護措置の適用にばらつきがあること、自動化の使われ方が候補者に明確に伝えられていないことが多いこと、DPIA が欠けているか不十分なことが多いことがわかりました。2026 年 9 月 30 日から規制当局は情報委員会（Information Commission）となりましたが、引き続き ICO と呼ばれています。
 
 ## 米国への移転
 
@@ -115,7 +117,7 @@ testee は、職務内容をもとに AI が作成した、時間制限付きの
 - **公平性の監視。** 会社のオーナーは、会社の操作ログのページからバイアス監査用のファイルをダウンロードできます。面接を終えた候補者ごとに、得点、合格ライン、合格したかどうか、面接の中央値を上回ったかどうかが、メールアドレスをキーとして含まれます。これを、自社の機会均等に関するアンケートで候補者が答えた内容と結合し、その後メールアドレスを削除してください。
 - **追加時間**は、申し出たどの候補者にも、開始前に各問題の +25%、+50%、+100% を与えられます。testee が保存するのは追加の量だけで、理由は保存しません。
 - **文書。** 候補者への通知のテンプレート、会社向けの説明書、DPIA のテンプレートは[文書ページ](/documents)にあります。
-- **データ。** 英国法をカバーする[データ処理契約](/dpa)のもとで、あなたの会社が管理者、testee が処理者です。データは EU でホストされ、AI モデルの学習には使われません。英国の候補者のデータを米国の再委託先に移転する際は、英米データブリッジまたは英国補遺に基づきます（[プライバシーポリシー](/privacy)をご覧ください）。候補者のデータは招待から 12 か月後に削除されます。
+- **データ。** 英国法をカバーする[データ処理契約](/dpa)のもとで、あなたの会社が管理者、testee が処理者です。データは EU でホストされ、AI モデルの学習には使われません。英国の候補者のデータを米国の再委託先に移転する際は、英米データブリッジまたは英国補遺に基づきます（[プライバシーポリシー](/privacy)をご覧ください）。候補者のデータは招待を最後に送信してから 12 か月後に削除されます。
 
 ## 関連記事
 
@@ -132,3 +134,5 @@ testee は、職務内容をもとに AI が作成した、時間制限付きの
 - Information Commissioner's Office、*AI tools in recruitment: audit outcomes report*、[2024 年 11 月](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf)。
 - Information Commissioner's Office、[*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/)、2026 年 3 月。
 - The Data Protection (Adequacy) (United States of America) Regulations 2023、[SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents)。
+- The Data Protection Act 2018 (Code of Practice on Artificial Intelligence and Automated Decision-Making) Regulations 2026、[SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made).
+- Information Commissioner's Office、[プロファイリングを含む自動化された意思決定に関するガイダンス草案の意見募集](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/)、2026 年 3 月 31 日から 5 月 29 日まで。

@@ -2,7 +2,7 @@
 title: "L'IA dans le recrutement est-elle légale au Royaume-Uni ? Ce que les employeurs doivent savoir"
 seoTitle: "IA et recrutement : légal au Royaume-Uni ? Égalité, données"
 description: "L'IA dans le recrutement est légale au Royaume-Uni, sous conditions : l'Equality Act, les règles du RGPD britannique de février 2026, l'ICO."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # L'IA dans le recrutement est-elle légale au Royaume-Uni ? Ce que les employeurs doivent savoir
@@ -51,6 +51,8 @@ L'article 22D permet au gouvernement de compléter ces règles par voie régleme
 
 **En pratique :** faites examiner chaque résultat par une personne qui le comprend et peut passer outre, avant d'écarter un candidat, et indiquez aux candidats comment demander un réexamen. La décision n'est alors pas exclusivement automatisée, et les garanties deviennent une bonne pratique plutôt qu'une obligation légale.
 
+Deux éléments restent à venir. Le projet de lignes directrices de l'ICO sur les décisions automatisées, profilage compris, a été [soumis à consultation](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/) du 31 mars au 29 mai 2026 et n'était pas définitif en novembre 2026. Et le [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made), en vigueur depuis le 12 mai 2026, oblige l'Information Commissioner à préparer un code de pratique légal sur l'IA et la prise de décision automatisée.
+
 ## L'essentiel du RGPD britannique
 
 Les données des candidats relèvent du RGPD britannique et du Data Protection Act 2018, qui fonctionnent en grande partie comme le RGPD de l'UE :
@@ -83,7 +85,7 @@ Ses sept recommandations clés, pour les fournisseurs comme pour les recruteurs 
 
 L'ICO recommande aussi des examens humains significatifs des résultats de l'IA, avec une trace des examens réalisés.
 
-En mars 2026, l'ICO a publié un second rapport, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), issu de son travail avec plus de 30 employeurs. Il constate que beaucoup traitent leurs outils comme une aide à la décision alors que l'intervention humaine réelle est faible, que les garanties permettant de contester une décision sont appliquées de façon inégale, que les candidats ne sont souvent pas clairement informés de l'usage de l'automatisation, et que les AIPD manquent souvent ou sont insuffisantes. Ses lignes directrices actualisées sur les décisions automatisées ont été soumises à consultation jusqu'au 29 mai 2026 et n'étaient pas définitives en novembre 2026, et un code de pratique légal sur l'IA et la prise de décision automatisée est en préparation. Depuis le 30 septembre 2026, l'autorité de contrôle est l'Information Commission, qui garde le nom d'ICO.
+En mars 2026, l'ICO a publié un second rapport, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), issu de son travail avec plus de 30 employeurs. Il constate que beaucoup traitent leurs outils comme une aide à la décision alors que l'intervention humaine réelle est faible, que les garanties permettant de contester une décision sont appliquées de façon inégale, que les candidats ne sont souvent pas clairement informés de l'usage de l'automatisation, et que les AIPD manquent souvent ou sont insuffisantes. Depuis le 30 septembre 2026, l'autorité de contrôle est l'Information Commission, qui garde le nom d'ICO.
 
 ## Transferts vers les États-Unis
 
@@ -115,7 +117,7 @@ Ce que cela donne aujourd'hui dans le produit :
 - **Suivi de l'équité.** Le propriétaire de votre entreprise peut télécharger un fichier pour un audit des biais depuis la page Journal des actions de l'entreprise : pour chaque candidat ayant terminé, sa note, le seuil de réussite, s'il a réussi et s'il a obtenu un score supérieur à la médiane de l'entretien, avec son e-mail comme clé. Croisez-le avec les réponses que les candidats vous ont données dans votre propre formulaire d'égalité des chances, puis supprimez l'e-mail.
 - **Du temps supplémentaire** de +25 %, +50 % ou +100 % sur chaque question peut être accordé à tout candidat qui le demande, avant qu'il ne commence. testee ne conserve que la durée accordée, jamais la raison.
 - **Documents.** Des modèles d'information des candidats, les instructions pour les entreprises et un modèle d'AIPD sont sur la [page des documents](/documents).
-- **Données.** Votre entreprise est le responsable du traitement et testee le sous-traitant, selon l'[accord de traitement des données](/dpa), qui couvre le droit britannique. Les données sont hébergées dans l'UE et ne servent pas à entraîner des modèles d'IA ; les transferts de données de candidats britanniques vers des sous-traitants ultérieurs aux États-Unis reposent sur la passerelle de données Royaume-Uni–États-Unis ou l'avenant britannique (voir la [politique de confidentialité](/privacy)). Les données des candidats sont supprimées 12 mois après l'invitation.
+- **Données.** Votre entreprise est le responsable du traitement et testee le sous-traitant, selon l'[accord de traitement des données](/dpa), qui couvre le droit britannique. Les données sont hébergées dans l'UE et ne servent pas à entraîner des modèles d'IA ; les transferts de données de candidats britanniques vers des sous-traitants ultérieurs aux États-Unis reposent sur la passerelle de données Royaume-Uni–États-Unis ou l'avenant britannique (voir la [politique de confidentialité](/privacy)). Les données des candidats sont supprimées 12 mois après le dernier envoi de l'invitation.
 
 ## À lire aussi
 
@@ -132,3 +134,5 @@ Ce que cela donne aujourd'hui dans le produit :
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [novembre 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
 - Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), mars 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).
+- The Data Protection Act 2018 (Code of Practice on Artificial Intelligence and Automated Decision-Making) Regulations 2026, [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made).
+- Information Commissioner's Office, [consultation sur le projet de lignes directrices sur la prise de décision automatisée, profilage compris](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/), du 31 mars au 29 mai 2026.

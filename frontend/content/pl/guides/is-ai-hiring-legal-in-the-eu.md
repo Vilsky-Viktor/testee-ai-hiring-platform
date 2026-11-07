@@ -2,7 +2,7 @@
 title: "Czy rekrutacja z AI jest legalna w UE? Co musi wiedzieć pracodawca"
 seoTitle: "Czy rekrutacja z AI jest legalna w UE? AI Act i RODO"
 description: "AI w rekrutacji jest w UE legalna, ale z zasadami. Co dla pracodawców oznacza kategoria wysokiego ryzyka w AI Act, kluczowe daty do grudnia 2027 i RODO."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Czy rekrutacja z AI jest legalna w UE? Co musi wiedzieć pracodawca
@@ -123,9 +123,12 @@ Jak to dziś wygląda w produkcie:
 - **Decydują ludzie.** Strona wyników i raporty PDF przypominają Twojemu zespołowi o przejrzeniu wyników; testee nie odrzuca kandydatów ani nie wysyła wiadomości z odmową.
 - **Oznaczenia AI.** Pytania, opcje odpowiedzi, odpowiedzi asystentki Mira i klipy głosowe są oznaczone jako wygenerowane przez AI w formie czytelnej dla oprogramowania, a klipy głosowe mają też niesłyszalny znak wodny OpenAI. Strona [Zaufanie i bezpieczeństwo](/trust) wyjaśnia, jak je sprawdzić. Tekst skopiowany ze strony nie zachowuje oznaczenia.
 - **Kandydaci są informowani,** zanim zaczną, że pytania pisze AI, że wyniki przeglądają i decyzje podejmują ludzie w Twojej firmie oraz że mogą poprosić o weryfikację.
+- **Żadnych cech chronionych.** testee nigdy nie pyta o płeć, pochodzenie etniczne, wiek, niepełnosprawność ani inne cechy chronione kandydatów, nie wnioskuje ich i ich nie przechowuje.
+- **Monitorowanie rzetelności.** Właściciel Twojej firmy może pobrać plik do audytu stronniczości na stronie „Dziennik działań” firmy: dla każdego kandydata, który ukończył rozmowę, jego wynik, próg zaliczenia, to, czy zaliczył, i czy uzyskał wynik powyżej mediany rozmowy, z adresem e-mail jako kluczem. Połącz go z odpowiedziami, których kandydaci udzielili Ci we własnym formularzu dotyczącym równych szans, a potem usuń adres e-mail.
 - **Dodatkowy czas** można przyznać każdemu kandydatowi, który o to poprosi.
 - **Rejestry.** Zapisywane są wyświetlone pytania, odpowiedzi, czasy i zdarzenia dotyczące rzetelności.
-- **Dane.** Hosting w UE (niektóre podmioty podprzetwarzające są w USA; zobacz [politykę prywatności](/privacy)), dane kandydatów usuwane 12 miesięcy po zaproszeniu, umowa powierzenia przetwarzania danych w pakiecie, a Twoje dane nie są używane do trenowania modeli AI.
+- **Dokumenty.** Wzory informacji dla kandydatów, instrukcje dla firm i wzór DPIA są na [stronie dokumentów](/documents).
+- **Dane.** Hosting w UE (niektóre podmioty podprzetwarzające są w USA; zobacz [politykę prywatności](/privacy)), dane kandydatów usuwane 12 miesięcy po ostatnim wysłaniu zaproszenia, [umowa powierzenia przetwarzania danych](/dpa) w pakiecie, a Twoje dane nie są używane do trenowania modeli AI.
 
 Istnieją wersje robocze dokumentacji technicznej, rejestru ryzyk, instrukcji dla firm, systemu zarządzania jakością i planu monitorowania po wprowadzeniu do obrotu; są uzupełniane przed terminem w 2027 roku. To wersje robocze, a nie deklaracja zgodności.
 

@@ -2,7 +2,7 @@
 title: "Legal ba ang AI hiring sa EU? Ang dapat malaman ng mga employer"
 seoTitle: "Legal ba ang AI Hiring sa EU? Basics ng AI Act at GDPR"
 description: "Legal ang AI sa hiring sa EU, may patakaran. Ano ang high-risk sa AI Act para sa employer, mga petsa hanggang Disyembre 2027, at ang GDPR basics."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Legal ba ang AI hiring sa EU? Ang dapat malaman ng mga employer
@@ -125,9 +125,12 @@ Ang hitsura nito sa produkto ngayon:
 - **Tao ang nagdedesisyon.** Pinapaalalahanan ng results page at ng PDF reports ang iyong team na i-review ang mga resulta; hindi nagre-reject ng aplikante o nagpapadala ng rejection message ang testee.
 - **Mga AI mark.** Minamarkahan bilang AI-generated ang mga tanong, mga pagpipiliang sagot, mga sagot ni Mira at mga voice clip sa anyong nababasa ng software, at may inaudible watermark din ng OpenAI ang mga voice clip. Ipinapaliwanag sa [page ng tiwala](/trust) kung paano i-check ang mga ito. Hindi nananatili ang mark sa text na kinopya mula sa page.
 - **Sinasabihan ang mga aplikante** bago sila magsimula na AI ang sumulat ng mga tanong, na mga tao sa iyong kumpanya ang nagre-review ng resulta at nagdedesisyon, at na puwede silang humingi ng review.
+- **Walang protected characteristics.** Hindi kailanman nagtatanong, nanghihinuha o nag-iimbak ang testee ng kasarian, etnisidad, edad, kapansanan o iba pang protected characteristics ng mga aplikante.
+- **Pag-monitor ng pagiging patas.** Puwedeng mag-download ang owner ng iyong kumpanya ng file para sa bias audit mula sa Log ng aksyon page ng kumpanya: para sa bawat aplikanteng natapos, ang grade niya, ang passing grade, kung pumasa siya at kung lampas sa median ng interview ang score niya, naka-key sa email. Pagsamahin ito sa mga sagot na ibinigay sa iyo ng mga aplikante sa sarili mong equal opportunities form, saka tanggalin ang email.
 - **Dagdag na oras** ay puwedeng ibigay sa sinumang aplikanteng humingi.
 - **Mga record.** Nire-record ang mga ipinakitang tanong, mga sagot, oras at integrity events.
-- **Data.** Naka-host sa EU (may ilang sub-processor sa US; tingnan ang [privacy policy](/privacy)), binubura ang data ng aplikante 12 buwan pagkatapos ng imbitasyon, kasama ang data processing agreement, at hindi ginagamit ang iyong data para mag-train ng AI models.
+- **Mga dokumento.** Nasa [documents page](/documents) ang mga template ng abiso sa aplikante, ang instructions para sa mga kumpanya at isang DPIA template.
+- **Data.** Naka-host sa EU (may ilang sub-processor sa US; tingnan ang [privacy policy](/privacy)), binubura ang data ng aplikante 12 buwan pagkatapos ng huling pagpapadala ng imbitasyon, kasama ang [data processing agreement](/dpa), at hindi ginagamit ang iyong data para mag-train ng AI models.
 
 May mga draft na ng technical documentation, risk register, instructions para sa mga kumpanya, quality management system at post-market monitoring plan, at tinatapos ang mga ito bago ang petsa sa 2027. Mga working draft ang mga ito, hindi pahayag ng compliance.
 

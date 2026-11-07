@@ -2,7 +2,7 @@
 title: "Birleşik Krallık'ta yapay zekâ ile işe alım yasal mı? İşverenlerin bilmesi gerekenler"
 seoTitle: "Birleşik Krallık'ta Yapay Zekâ ile İşe Alım Yasal mı?"
 description: "Birleşik Krallık'ta işe alımda yapay zekâ kurallarla yasaldır: Equality Act, Şubat 2026'dan beri UK GDPR'ın otomatik karar kuralları ve ICO bulguları."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Birleşik Krallık'ta yapay zekâ ile işe alım yasal mı? İşverenlerin bilmesi gerekenler
@@ -51,6 +51,8 @@ UK GDPR'ın eski 22. maddesi, birkaç istisnayla, kişilere yalnızca otomatik i
 
 **Uygulamada:** bir aday reddedilmeden önce, sonuçları anlayan ve onları geçersiz kılabilen bir kişinin her birine bakmasını sağlayın ve adaylara nasıl yeniden inceleme talep edeceklerini söyleyin. O zaman karar yalnızca otomatik olmaz ve güvenceler yasal bir zorunluluk değil, iyi bir uygulama olur.
 
+İki adım daha geliyor. ICO'nun profil çıkarma dâhil otomatik kararlara ilişkin kılavuz taslağı 31 Mart - 29 Mayıs 2026 arasında [görüşe açıldı](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/) ve Kasım 2026 itibarıyla kesinleşmedi. Ayrıca 12 Mayıs 2026'dan beri yürürlükte olan [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made), Information Commissioner'ı yapay zekâ ve otomatik karar verme konusunda yasal dayanağı olan bir uygulama kodu hazırlamakla yükümlü kılıyor.
+
 ## UK GDPR esasları
 
 Aday verileri, büyük ölçüde AB'nin GDPR'ı gibi işleyen UK GDPR ve 2018 Veri Koruma Yasası'na (Data Protection Act 2018) tabidir:
@@ -83,7 +85,7 @@ Hem sağlayıcılar hem işe alım yapanlar için yedi temel önerisi:
 
 ICO ayrıca yapay zekâ çıktılarının insanlar tarafından anlamlı biçimde incelenmesini ve yapılan incelemelerin kayıt altına alınmasını önerir.
 
-ICO, Mart 2026'da 30'dan fazla işverenle yaptığı çalışmaya dayanan ikinci bir rapor yayımladı: [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/). Rapora göre birçok işveren, gerçekte çok az insan katılımı olmasına rağmen araçlarını karar desteği olarak görüyor; bir karara itiraz için öngörülen güvenceler eşit uygulanmıyor; adaylara otomasyonun nasıl kullanıldığı çoğu zaman açıkça söylenmiyor; DPIA'lar ise çoğu zaman yok veya zayıf. ICO'nun otomatik kararlara ilişkin güncellenmiş kılavuzu 29 Mayıs 2026'ya kadar görüşe açıldı ve Kasım 2026 itibarıyla kesinleşmedi; yapay zekâ ve otomatik karar verme konusunda yasal dayanağı olan bir uygulama kodu da yolda. Düzenleyici kurum 30 Eylül 2026'dan beri Information Commission olarak anılıyor, ancak hâlâ ICO adını kullanıyor.
+ICO, Mart 2026'da 30'dan fazla işverenle yaptığı çalışmaya dayanan ikinci bir rapor yayımladı: [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/). Rapora göre birçok işveren, gerçekte çok az insan katılımı olmasına rağmen araçlarını karar desteği olarak görüyor; bir karara itiraz için öngörülen güvenceler eşit uygulanmıyor; adaylara otomasyonun nasıl kullanıldığı çoğu zaman açıkça söylenmiyor; DPIA'lar ise çoğu zaman yok veya zayıf. Düzenleyici kurum 30 Eylül 2026'dan beri Information Commission olarak anılıyor, ancak hâlâ ICO adını kullanıyor.
 
 ## ABD'ye aktarımlar
 
@@ -115,7 +117,7 @@ Bunun bugün üründeki karşılığı:
 - **Adaletin izlenmesi.** Şirketinizin sahibi, şirketin İşlem kaydı sayfasından bir yanlılık denetimi dosyası indirebilir: mülakatı bitiren her adayın notu, geçme notu, geçip geçmediği ve mülakatın medyanının üzerinde puan alıp almadığı, e-posta adresine göre eşleştirilmiş şekilde. Bunu adayların kendi fırsat eşitliği formunuzda size verdiği yanıtlarla birleştirin, ardından e-posta adresini silin.
 - **Ek süre:** isteyen her adaya, başlamadan önce, her soru için +%25, +%50 veya +%100 ek süre verilebilir. testee yalnızca miktarı saklar, nedenini asla saklamaz.
 - **Belgeler.** Aday aydınlatma metni şablonları, şirketler için talimatlar ve bir DPIA şablonu [belgeler sayfasında](/documents) yer alır.
-- **Veriler.** Şirketiniz veri sorumlusu, testee ise Birleşik Krallık hukukunu kapsayan [veri işleme sözleşmesi](/dpa) kapsamında veri işleyendir. Veriler AB'de barındırılır ve yapay zekâ modellerini eğitmek için kullanılmaz; Birleşik Krallık'taki adayların verilerinin ABD'deki alt işleyenlere aktarımı, Birleşik Krallık–ABD veri köprüsüne veya Birleşik Krallık ekine dayanır (bkz. [gizlilik politikası](/privacy)). Aday verileri davetten 12 ay sonra silinir.
+- **Veriler.** Şirketiniz veri sorumlusu, testee ise Birleşik Krallık hukukunu kapsayan [veri işleme sözleşmesi](/dpa) kapsamında veri işleyendir. Veriler AB'de barındırılır ve yapay zekâ modellerini eğitmek için kullanılmaz; Birleşik Krallık'taki adayların verilerinin ABD'deki alt işleyenlere aktarımı, Birleşik Krallık–ABD veri köprüsüne veya Birleşik Krallık ekine dayanır (bkz. [gizlilik politikası](/privacy)). Aday verileri davetin son gönderiminden 12 ay sonra silinir.
 
 ## İlgili yazılar
 
@@ -132,3 +134,5 @@ Bunun bugün üründeki karşılığı:
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [Kasım 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
 - Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), Mart 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).
+- The Data Protection Act 2018 (Code of Practice on Artificial Intelligence and Automated Decision-Making) Regulations 2026, [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made).
+- Information Commissioner's Office, [profil çıkarma dâhil otomatik karar vermeye ilişkin kılavuz taslağı için görüş alma](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/), 31 Mart - 29 Mayıs 2026.

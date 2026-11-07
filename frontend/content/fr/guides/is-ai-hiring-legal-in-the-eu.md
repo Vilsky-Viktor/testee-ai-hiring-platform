@@ -2,7 +2,7 @@
 title: "L'IA dans le recrutement est-elle légale dans l'UE ? Ce que les employeurs doivent savoir"
 seoTitle: "IA et recrutement : légal dans l'UE ? AI Act et RGPD"
 description: "L'IA dans le recrutement est légale dans l'UE, sous conditions : le haut risque du Règlement sur l'IA, les dates clés jusqu'à décembre 2027, le RGPD."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # L'IA dans le recrutement est-elle légale dans l'UE ? Ce que les employeurs doivent savoir
@@ -123,9 +123,12 @@ Ce que cela donne aujourd'hui dans le produit :
 - **Des personnes décident.** La page de résultats et les rapports PDF rappellent à votre équipe d'examiner les résultats ; testee ne rejette pas de candidats et n'envoie pas de messages de refus.
 - **Marquage IA.** Les questions, les options de réponse, les réponses de Mira et les clips vocaux sont marqués comme générés par l'IA sous une forme lisible par un logiciel, et les clips vocaux portent aussi le filigrane inaudible d'OpenAI. La [page confiance](/trust) explique comment les vérifier. Un texte copié depuis une page ne garde pas sa marque.
 - **Les candidats sont informés** avant de commencer que les questions sont rédigées par l'IA, que des personnes de votre entreprise examinent les résultats et décident, et qu'ils peuvent demander un réexamen.
+- **Aucune caractéristique protégée.** testee ne demande, n'infère ni ne conserve jamais le sexe, l'origine ethnique, l'âge, le handicap ou d'autres caractéristiques protégées des candidats.
+- **Suivi de l'équité.** Le propriétaire de votre entreprise peut télécharger un fichier pour un audit des biais depuis la page Journal des actions de l'entreprise : pour chaque candidat ayant terminé, sa note, le seuil de réussite, s'il a réussi et s'il a obtenu un score supérieur à la médiane de l'entretien, avec son e-mail comme clé. Croisez-le avec les réponses que les candidats vous ont données dans votre propre formulaire d'égalité des chances, puis supprimez l'e-mail.
 - **Du temps supplémentaire** peut être accordé à tout candidat qui le demande.
 - **Traçabilité.** Les questions affichées, les réponses, les temps et les événements d'intégrité sont enregistrés.
-- **Données.** Hébergement dans l'UE (certains sous-traitants ultérieurs sont aux États-Unis ; voir la [politique de confidentialité](/privacy)), suppression des données des candidats 12 mois après l'invitation, accord de traitement des données inclus, et vos données ne servent pas à entraîner des modèles d'IA.
+- **Documents.** Des modèles d'information des candidats, les instructions pour les entreprises et un modèle d'AIPD sont sur la [page des documents](/documents).
+- **Données.** Hébergement dans l'UE (certains sous-traitants ultérieurs sont aux États-Unis ; voir la [politique de confidentialité](/privacy)), suppression des données des candidats 12 mois après le dernier envoi de l'invitation, [accord de traitement des données](/dpa) inclus, et vos données ne servent pas à entraîner des modèles d'IA.
 
 Des versions provisoires de la documentation technique, du registre des risques, des instructions pour les entreprises, du système de gestion de la qualité et du plan de surveillance après commercialisation existent et sont en cours de finalisation avant l'échéance de 2027. Ce sont des documents de travail, pas une déclaration de conformité.
 

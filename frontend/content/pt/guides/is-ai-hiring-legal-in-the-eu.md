@@ -2,7 +2,7 @@
 title: "O uso de IA no recrutamento é legal na UE? O que as empresas precisam saber"
 seoTitle: "IA no recrutamento é legal na UE? AI Act e GDPR"
 description: "Usar IA no recrutamento é legal na UE, com regras. O que a categoria de alto risco do Regulamento de IA significa, as datas até 2027 e o básico do GDPR."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # O uso de IA no recrutamento é legal na UE? O que as empresas precisam saber
@@ -123,9 +123,12 @@ Como isso aparece no produto hoje:
 - **Pessoas decidem.** A página de resultados e os relatórios em PDF lembram a sua equipe de revisar os resultados; a testee não reprova candidatos nem envia mensagens de reprovação.
 - **Marcas de IA.** As perguntas, as opções de resposta, as respostas da Mira e os clipes de voz são marcados como gerados por IA de uma forma que os programas conseguem ler, e os clipes de voz também levam a marca d'água inaudível da OpenAI. A página [Confiança e segurança](/trust) explica como verificá-las. O texto copiado de uma página não mantém a marca.
 - **Os candidatos são informados** antes de começar de que as perguntas são escritas por IA, de que pessoas da sua empresa revisam os resultados e decidem, e de que eles podem pedir uma revisão.
+- **Nenhuma característica protegida.** A testee nunca pede, infere ou armazena sexo, etnia, idade, deficiência ou outras características protegidas dos candidatos.
+- **Monitoramento de justiça.** O proprietário da sua empresa pode baixar um arquivo de auditoria de viés na página Registro de ações da empresa: para cada candidato que terminou, a nota, a nota de aprovação, se foi aprovado e se ficou acima da mediana da entrevista, identificado pelo e-mail. Cruze-o com as respostas que os candidatos deram no seu próprio formulário de igualdade de oportunidades e depois remova o e-mail.
 - **Tempo extra** pode ser dado a qualquer candidato que pedir.
 - **Registros.** As perguntas exibidas, as respostas, os tempos e os eventos de integridade são registrados.
-- **Dados.** Hospedados na UE (alguns suboperadores estão nos EUA; veja a [política de privacidade](/privacy)), dados dos candidatos excluídos 12 meses após o convite, acordo de tratamento de dados incluído, e os seus dados não são usados para treinar modelos de IA.
+- **Documentos.** Modelos de aviso aos candidatos, as instruções para empresas e um modelo de DPIA estão na [página de documentos](/documents).
+- **Dados.** Hospedados na UE (alguns suboperadores estão nos EUA; veja a [política de privacidade](/privacy)), dados dos candidatos excluídos 12 meses após o último envio do convite, [acordo de tratamento de dados](/dpa) incluído, e os seus dados não são usados para treinar modelos de IA.
 
 Já existem rascunhos da documentação técnica, do registro de riscos, das instruções para empresas, do sistema de gestão da qualidade e do plano de acompanhamento pós-comercialização, que estão sendo concluídos antes da data de 2027. São rascunhos de trabalho, não uma declaração de conformidade.
 

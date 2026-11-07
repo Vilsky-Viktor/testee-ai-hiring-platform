@@ -2,7 +2,7 @@
 title: "Dùng AI trong tuyển dụng có hợp pháp ở Vương quốc Anh không? Những điều nhà tuyển dụng cần biết"
 seoTitle: "Tuyển dụng bằng AI ở Vương quốc Anh: bình đẳng và dữ liệu"
 description: "Dùng AI để tuyển dụng ở Vương quốc Anh là hợp pháp, có quy định: Equality Act, quy định mới của UK GDPR về quyết định tự động từ 2/2026 và kết luận ICO."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Dùng AI trong tuyển dụng có hợp pháp ở Vương quốc Anh không? Những điều nhà tuyển dụng cần biết
@@ -51,6 +51,8 @@ Ai viết bài kiểm tra không quan trọng: bên tuyển dụng chịu trách
 
 **Trên thực tế:** hãy để một người hiểu kết quả và có thể bác bỏ chúng xem từng kết quả trước khi loại một ứng viên, và cho ứng viên biết cách yêu cầu xem xét lại. Khi đó, quyết định không còn là hoàn toàn tự động, và các biện pháp bảo vệ là thông lệ tốt chứ không phải yêu cầu pháp lý.
 
+Vẫn còn hai việc sắp tới. Dự thảo hướng dẫn của ICO về quyết định tự động, bao gồm lập hồ sơ, được [lấy ý kiến](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/) từ 31/3 đến 29/5/2026 và chưa phải bản cuối tính đến tháng 11/2026. Và [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made), có hiệu lực từ 12/5/2026, yêu cầu Information Commissioner soạn một bộ quy tắc thực hành theo luật định về AI và ra quyết định tự động.
+
 ## UK GDPR cơ bản
 
 Dữ liệu ứng viên chịu sự điều chỉnh của UK GDPR và Luật Bảo vệ Dữ liệu 2018 (Data Protection Act 2018), vốn hoạt động khá giống GDPR của EU:
@@ -83,7 +85,7 @@ Bảy khuyến nghị chính, cho cả nhà cung cấp lẫn bên tuyển dụng
 
 ICO cũng khuyến nghị con người xem xét có ý nghĩa các kết quả của AI, và lưu hồ sơ các lần xem xét đã thực hiện.
 
-Tháng 3/2026, ICO công bố báo cáo thứ hai, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), từ quá trình làm việc với hơn 30 bên tuyển dụng. Báo cáo cho thấy nhiều bên coi công cụ của mình là hỗ trợ quyết định trong khi con người thực sự tham gia rất ít, các biện pháp bảo vệ để phản đối một quyết định được áp dụng không đồng đều, ứng viên thường không được cho biết rõ tự động hóa được dùng như thế nào, và DPIA thường thiếu hoặc yếu. Hướng dẫn cập nhật của ICO về quyết định tự động được lấy ý kiến đến ngày 29/5/2026 và chưa phải bản cuối tính đến tháng 11/2026, và một bộ quy tắc thực hành theo luật định về AI và ra quyết định tự động đang được chuẩn bị. Từ ngày 30/9/2026, cơ quan quản lý là Information Commission, vẫn dùng tên ICO.
+Tháng 3/2026, ICO công bố báo cáo thứ hai, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), từ quá trình làm việc với hơn 30 bên tuyển dụng. Báo cáo cho thấy nhiều bên coi công cụ của mình là hỗ trợ quyết định trong khi con người thực sự tham gia rất ít, các biện pháp bảo vệ để phản đối một quyết định được áp dụng không đồng đều, ứng viên thường không được cho biết rõ tự động hóa được dùng như thế nào, và DPIA thường thiếu hoặc yếu. Từ ngày 30/9/2026, cơ quan quản lý là Information Commission, vẫn dùng tên ICO.
 
 ## Chuyển dữ liệu sang Mỹ
 
@@ -115,7 +117,7 @@ Hiện nay điều đó thể hiện trong sản phẩm như sau:
 - **Giám sát công bằng.** Chủ sở hữu công ty bạn có thể tải tệp dùng cho kiểm toán thiên lệch từ trang Nhật ký thao tác của công ty: với mỗi ứng viên đã hoàn thành, điểm của họ, điểm đạt, họ có đạt hay không và có cao hơn trung vị của buổi phỏng vấn hay không, gắn với email. Hãy ghép tệp này với câu trả lời ứng viên đã đưa cho bạn trong biểu mẫu cơ hội bình đẳng của riêng bạn, rồi xóa email.
 - **Thời gian thêm** +25%, +50% hoặc +100% cho mỗi câu hỏi có thể được cấp cho bất kỳ ứng viên nào yêu cầu, trước khi họ bắt đầu. testee chỉ lưu mức thời gian thêm, không bao giờ lưu lý do.
 - **Tài liệu.** Mẫu thông báo cho ứng viên, hướng dẫn cho công ty và mẫu DPIA có trên [trang tài liệu](/documents).
-- **Dữ liệu.** Công ty bạn là bên kiểm soát và testee là bên xử lý, theo [thỏa thuận xử lý dữ liệu](/dpa), có bao gồm luật của Vương quốc Anh. Dữ liệu được lưu trữ tại EU và không được dùng để huấn luyện mô hình AI; việc chuyển dữ liệu của ứng viên ở Vương quốc Anh cho các bên xử lý phụ ở Mỹ dựa trên cầu nối dữ liệu Anh–Mỹ hoặc phụ lục của Vương quốc Anh (xem [chính sách quyền riêng tư](/privacy)). Dữ liệu ứng viên được xóa sau 12 tháng kể từ lời mời.
+- **Dữ liệu.** Công ty bạn là bên kiểm soát và testee là bên xử lý, theo [thỏa thuận xử lý dữ liệu](/dpa), có bao gồm luật của Vương quốc Anh. Dữ liệu được lưu trữ tại EU và không được dùng để huấn luyện mô hình AI; việc chuyển dữ liệu của ứng viên ở Vương quốc Anh cho các bên xử lý phụ ở Mỹ dựa trên cầu nối dữ liệu Anh–Mỹ hoặc phụ lục của Vương quốc Anh (xem [chính sách quyền riêng tư](/privacy)). Dữ liệu ứng viên được xóa sau 12 tháng kể từ lần gửi lời mời gần nhất.
 
 ## Đọc thêm
 
@@ -132,3 +134,5 @@ Hiện nay điều đó thể hiện trong sản phẩm như sau:
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [tháng 11/2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
 - Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), tháng 3/2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).
+- The Data Protection Act 2018 (Code of Practice on Artificial Intelligence and Automated Decision-Making) Regulations 2026, [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made).
+- Information Commissioner's Office, [lấy ý kiến về dự thảo hướng dẫn về ra quyết định tự động, bao gồm lập hồ sơ](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/), từ 31/3 đến 29/5/2026.

@@ -2,7 +2,7 @@
 title: "Is AI bij werving en selectie legaal in het VK? Wat werkgevers moeten weten"
 seoTitle: "AI bij werving en selectie: legaal in het VK?"
 description: "AI bij werving is legaal in het VK, met regels: de Equality Act, nieuwe regels in de UK GDPR voor geautomatiseerde besluiten sinds februari 2026 en de ICO."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Is AI bij werving en selectie legaal in het VK? Wat werkgevers moeten weten
@@ -51,6 +51,8 @@ Artikel 22D laat de regering deze regels bij regelgeving aanvullen, bijvoorbeeld
 
 **In de praktijk:** laat iemand die de resultaten begrijpt en ze kan overrulen elk resultaat bekijken voordat een kandidaat wordt afgewezen, en vertel kandidaten hoe ze om een herbeoordeling kunnen vragen. Dan is het besluit niet uitsluitend geautomatiseerd, en zijn de waarborgen goede praktijk in plaats van een wettelijke verplichting.
 
+Er komen nog twee dingen aan. De conceptrichtsnoeren van de ICO over geautomatiseerde besluiten, inclusief profilering, lagen van 31 maart tot 29 mei 2026 [ter consultatie](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/) en waren in november 2026 niet definitief. En [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made), van kracht sinds 12 mei 2026, verplicht de Information Commissioner een wettelijke gedragscode over AI en geautomatiseerde besluitvorming op te stellen.
+
 ## De basis van de UK GDPR
 
 Kandidaatgegevens vallen onder de UK GDPR en de Data Protection Act 2018, die grotendeels werken zoals de AVG in de EU:
@@ -83,7 +85,7 @@ De zeven belangrijkste aanbevelingen, voor aanbieders en werkgevers allebei:
 
 De ICO raadt ook betekenisvolle menselijke beoordeling van AI-uitkomsten aan, met vastlegging van de gedane beoordelingen.
 
-In maart 2026 publiceerde de ICO een tweede rapport, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), op basis van zijn werk met meer dan 30 werkgevers. Daaruit blijkt dat velen hun tools als beslissingsondersteuning behandelen terwijl er weinig echte menselijke betrokkenheid is, dat waarborgen om een besluit aan te vechten ongelijk worden toegepast, dat kandidaten vaak niet duidelijk horen hoe automatisering wordt gebruikt en dat DPIA's vaak ontbreken of zwak zijn. De bijgewerkte richtsnoeren over geautomatiseerde besluiten lagen tot 29 mei 2026 ter consultatie en waren in november 2026 niet definitief, en er komt een wettelijke gedragscode over AI en geautomatiseerde besluitvorming. Sinds 30 september 2026 is de toezichthouder de Information Commission, die nog steeds als ICO door het leven gaat.
+In maart 2026 publiceerde de ICO een tweede rapport, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), op basis van zijn werk met meer dan 30 werkgevers. Daaruit blijkt dat velen hun tools als beslissingsondersteuning behandelen terwijl er weinig echte menselijke betrokkenheid is, dat waarborgen om een besluit aan te vechten ongelijk worden toegepast, dat kandidaten vaak niet duidelijk horen hoe automatisering wordt gebruikt en dat DPIA's vaak ontbreken of zwak zijn. Sinds 30 september 2026 is de toezichthouder de Information Commission, die nog steeds als ICO door het leven gaat.
 
 ## Doorgifte naar de VS
 
@@ -115,7 +117,7 @@ Zo ziet dat er vandaag in het product uit:
 - **Eerlijkheid monitoren.** De eigenaar van je bedrijf kan op de pagina Actielog van het bedrijf een bestand voor een bias-audit downloaden: per kandidaat die klaar is het cijfer, de slaaggrens, of de kandidaat geslaagd is en of die boven de mediaan van het interview scoorde, met het e-mailadres als sleutel. Koppel het aan de antwoorden die kandidaten je gaven op je eigen formulier over gelijke kansen, en verwijder daarna het e-mailadres.
 - **Extra tijd** van +25%, +50% of +100% per vraag kan worden gegeven aan elke kandidaat die erom vraagt, voordat die begint. testee bewaart alleen de hoeveelheid, nooit de reden.
 - **Documenten.** Sjablonen voor de informatie aan kandidaten, de instructies voor bedrijven en een DPIA-sjabloon staan op de [documentenpagina](/documents).
-- **Gegevens.** Je bedrijf is de verwerkingsverantwoordelijke en testee de verwerker, onder de [verwerkersovereenkomst](/dpa), die het Britse recht dekt. Gegevens worden gehost in de EU en niet gebruikt om AI-modellen te trainen; doorgifte van gegevens van Britse kandidaten aan Amerikaanse subverwerkers steunt op de UK–US data bridge of het Britse addendum (zie het [privacybeleid](/privacy)). Kandidaatgegevens worden 12 maanden na de uitnodiging verwijderd.
+- **Gegevens.** Je bedrijf is de verwerkingsverantwoordelijke en testee de verwerker, onder de [verwerkersovereenkomst](/dpa), die het Britse recht dekt. Gegevens worden gehost in de EU en niet gebruikt om AI-modellen te trainen; doorgifte van gegevens van Britse kandidaten aan Amerikaanse subverwerkers steunt op de UK–US data bridge of het Britse addendum (zie het [privacybeleid](/privacy)). Kandidaatgegevens worden 12 maanden nadat de uitnodiging voor het laatst is verstuurd verwijderd.
 
 ## Verder lezen
 
@@ -132,3 +134,5 @@ Zo ziet dat er vandaag in het product uit:
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [november 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
 - Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), maart 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).
+- The Data Protection Act 2018 (Code of Practice on Artificial Intelligence and Automated Decision-Making) Regulations 2026, [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made).
+- Information Commissioner's Office, [consultatie over de conceptrichtsnoeren over geautomatiseerde besluitvorming, inclusief profilering](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/), 31 maart tot 29 mei 2026.

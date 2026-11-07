@@ -2,7 +2,7 @@
 title: "Legal ba ang AI hiring sa UK? Ang dapat malaman ng mga employer"
 seoTitle: "Legal ba ang AI Hiring sa UK? Equality at Data Law"
 description: "Legal ang AI sa hiring sa UK, may patakaran: ang Equality Act, ang bagong automated-decision rules ng UK GDPR mula Pebrero 2026, at ang findings ng ICO."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Legal ba ang AI hiring sa UK? Ang dapat malaman ng mga employer
@@ -51,6 +51,8 @@ Pinapayagan ng Article 22D ang gobyerno na dagdagan ang mga patakarang ito sa pa
 
 **Sa praktika:** ipatingin ang bawat resulta sa isang taong nakakaintindi nito at may kakayahang baligtarin ito bago i-reject ang isang aplikante, at sabihin sa mga aplikante kung paano humingi ng review. Sa ganoon, hindi puro automated ang desisyon, at nagiging good practice ang mga safeguard sa halip na legal na requirement.
 
+May dalawa pang paparating. Ang draft guidance ng ICO sa automated decisions, kasama ang profiling, ay nasa [konsultasyon](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/) mula 31 Marso hanggang 29 Mayo 2026 at hindi pa final noong Nobyembre 2026. At ang [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made), na may bisa mula 12 Mayo 2026, ay nag-aatas sa Information Commissioner na maghanda ng statutory code of practice sa AI at automated decision-making.
+
 ## Ang UK GDPR basics
 
 Saklaw ng UK GDPR at ng Data Protection Act 2018 ang data ng aplikante, at halos pareho ang takbo ng mga ito sa GDPR ng EU:
@@ -83,7 +85,7 @@ Ang pito nitong pangunahing rekomendasyon, para sa mga provider at mga recruiter
 
 Inirerekomenda rin ng ICO ang makabuluhang human review ng AI outputs, na may record ng mga review na ginawa.
 
-Noong Marso 2026, inilathala ng ICO ang ikalawang ulat, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), mula sa trabaho nito kasama ang mahigit 30 employer. Nakita nito na itinuturing ng marami ang kanilang tools bilang decision support kahit kakaunti ang tunay na partisipasyon ng tao, na hindi pantay ang paglalapat ng mga safeguard para sa paghamon sa isang desisyon, na madalas hindi malinaw na sinasabi sa mga aplikante kung paano ginagamit ang automation, at na madalas wala o mahina ang mga DPIA. Isinailalim sa konsultasyon hanggang 29 Mayo 2026 ang updated guidance nito sa automated decisions at hindi pa final noong Nobyembre 2026, at paparating ang isang statutory code of practice sa AI at automated decision-making. Mula 30 Setyembre 2026, Information Commission na ang regulator, na ICO pa rin ang gamit na pangalan.
+Noong Marso 2026, inilathala ng ICO ang ikalawang ulat, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), mula sa trabaho nito kasama ang mahigit 30 employer. Nakita nito na itinuturing ng marami ang kanilang tools bilang decision support kahit kakaunti ang tunay na partisipasyon ng tao, na hindi pantay ang paglalapat ng mga safeguard para sa paghamon sa isang desisyon, na madalas hindi malinaw na sinasabi sa mga aplikante kung paano ginagamit ang automation, at na madalas wala o mahina ang mga DPIA. Mula 30 Setyembre 2026, Information Commission na ang regulator, na ICO pa rin ang gamit na pangalan.
 
 ## Mga transfer sa US
 
@@ -115,7 +117,7 @@ Ang hitsura nito sa produkto ngayon:
 - **Pag-monitor ng pagiging patas.** Puwedeng mag-download ang owner ng iyong kumpanya ng file para sa bias audit mula sa Log ng aksyon page ng kumpanya: para sa bawat aplikanteng natapos, ang grade niya, ang passing grade, kung pumasa siya at kung lampas sa median ng interview ang score niya, naka-key sa email. Pagsamahin ito sa mga sagot na ibinigay sa iyo ng mga aplikante sa sarili mong equal opportunities form, saka tanggalin ang email.
 - **Dagdag na oras** na +25%, +50% o +100% sa bawat tanong ay puwedeng ibigay sa sinumang aplikanteng humingi, bago siya magsimula. Ang halaga lang ang iniimbak ng testee, hindi kailanman ang dahilan.
 - **Mga dokumento.** Nasa [documents page](/documents) ang mga template ng abiso sa aplikante, ang instructions para sa mga kumpanya at isang DPIA template.
-- **Data.** Ang iyong kumpanya ang controller at ang testee ang processor, sa ilalim ng [data processing agreement](/dpa), na sumasaklaw sa batas ng UK. Naka-host sa EU ang data at hindi ginagamit para mag-train ng AI models; ang mga transfer ng data ng mga aplikante sa UK sa mga sub-processor sa US ay nakaasa sa UK–US data bridge o sa UK addendum (tingnan ang [privacy policy](/privacy)). Binubura ang data ng aplikante 12 buwan pagkatapos ng imbitasyon.
+- **Data.** Ang iyong kumpanya ang controller at ang testee ang processor, sa ilalim ng [data processing agreement](/dpa), na sumasaklaw sa batas ng UK. Naka-host sa EU ang data at hindi ginagamit para mag-train ng AI models; ang mga transfer ng data ng mga aplikante sa UK sa mga sub-processor sa US ay nakaasa sa UK–US data bridge o sa UK addendum (tingnan ang [privacy policy](/privacy)). Binubura ang data ng aplikante 12 buwan pagkatapos ng huling pagpapadala ng imbitasyon.
 
 ## Kaugnay na babasahin
 
@@ -132,3 +134,5 @@ Ang hitsura nito sa produkto ngayon:
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [Nobyembre 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
 - Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), Marso 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).
+- The Data Protection Act 2018 (Code of Practice on Artificial Intelligence and Automated Decision-Making) Regulations 2026, [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made).
+- Information Commissioner's Office, [konsultasyon sa draft guidance tungkol sa automated decision-making, kasama ang profiling](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/), 31 Marso hanggang 29 Mayo 2026.

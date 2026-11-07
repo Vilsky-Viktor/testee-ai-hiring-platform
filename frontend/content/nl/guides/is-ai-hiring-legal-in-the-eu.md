@@ -2,7 +2,7 @@
 title: "Is AI bij werving en selectie legaal in de EU? Wat werkgevers moeten weten"
 seoTitle: "AI bij werving en selectie: legaal in de EU?"
 description: "AI bij werving is legaal in de EU, met regels. Wat de hoogrisicocategorie van de AI-verordening betekent, de data tot december 2027 en de basis van de AVG."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Is AI bij werving en selectie legaal in de EU? Wat werkgevers moeten weten
@@ -123,9 +123,12 @@ Zo ziet dat er vandaag in het product uit:
 - **Mensen beslissen.** De resultatenpagina en de pdf-rapporten herinneren je team eraan de resultaten te beoordelen; testee wijst geen kandidaten af en stuurt geen afwijzingsberichten.
 - **AI-markeringen.** Vragen, antwoordopties, de antwoorden van Mira en spraakfragmenten zijn in een voor software leesbare vorm gemarkeerd als door AI gegenereerd, en spraakfragmenten dragen ook het onhoorbare watermerk van OpenAI. De pagina [Vertrouwen en beveiliging](/trust) legt uit hoe je ze controleert. Tekst die je van een pagina kopieert, behoudt zijn markering niet.
 - **Kandidaten krijgen te horen,** voordat ze beginnen, dat de vragen door AI zijn geschreven, dat mensen bij jouw bedrijf de resultaten beoordelen en beslissen, en dat ze om een herbeoordeling kunnen vragen.
+- **Geen beschermde kenmerken.** testee vraagt, leidt af of bewaart nooit het geslacht, de etniciteit, de leeftijd, een beperking of andere beschermde kenmerken van kandidaten.
+- **Eerlijkheid monitoren.** De eigenaar van je bedrijf kan op de pagina Actielog van het bedrijf een bestand voor een bias-audit downloaden: per kandidaat die klaar is het cijfer, de slaaggrens, of de kandidaat geslaagd is en of die boven de mediaan van het interview scoorde, met het e-mailadres als sleutel. Koppel het aan de antwoorden die kandidaten je gaven op je eigen formulier over gelijke kansen, en verwijder daarna het e-mailadres.
 - **Extra tijd** kan worden gegeven aan elke kandidaat die erom vraagt.
 - **Vastlegging.** De getoonde vragen, antwoorden, tijden en integriteitsgebeurtenissen worden vastgelegd.
-- **Gegevens.** Gehost in de EU (sommige subverwerkers zitten in de VS; zie het [privacybeleid](/privacy)), kandidaatgegevens worden 12 maanden na de uitnodiging verwijderd, een verwerkersovereenkomst is inbegrepen en je gegevens worden niet gebruikt om AI-modellen te trainen.
+- **Documenten.** Sjablonen voor de informatie aan kandidaten, de instructies voor bedrijven en een DPIA-sjabloon staan op de [documentenpagina](/documents).
+- **Gegevens.** Gehost in de EU (sommige subverwerkers zitten in de VS; zie het [privacybeleid](/privacy)), kandidaatgegevens worden 12 maanden nadat de uitnodiging voor het laatst is verstuurd verwijderd, een [verwerkersovereenkomst](/dpa) is inbegrepen en je gegevens worden niet gebruikt om AI-modellen te trainen.
 
 Er bestaan concepten van de technische documentatie, het risicoregister, de instructies voor bedrijven, het systeem voor kwaliteitsbeheer en het plan voor monitoring na het in de handel brengen, en die worden voor de datum in 2027 afgerond. Het zijn werkversies, geen claim van compliance.
 

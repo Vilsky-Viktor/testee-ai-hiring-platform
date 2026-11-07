@@ -2,7 +2,7 @@
 title: "Is AI hiring legal in the UK? What employers need to know"
 seoTitle: "Is AI Hiring Legal in the UK? Equality and Data Law"
 description: "AI in hiring is legal in the UK, with rules: the Equality Act, the UK GDPR's new automated-decision rules from February 2026, and the ICO's findings."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Is AI hiring legal in the UK? What employers need to know
@@ -51,6 +51,8 @@ Article 22D lets the government add to these rules by regulations, for example o
 
 **In practice:** have a person who understands the results and can overrule them look at each one before a candidate is rejected, and tell candidates how to ask for a review. Then the decision isn't solely automated, and the safeguards are good practice rather than a legal requirement.
 
+Two more pieces are still to come. The ICO's draft guidance on automated decisions, including profiling, was [out for consultation](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/) from 31 March to 29 May 2026 and wasn't final as of November 2026. And [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made), in force since 12 May 2026, requires the Information Commissioner to prepare a statutory code of practice on AI and automated decision-making.
+
 ## The UK GDPR basics
 
 Candidate data falls under the UK GDPR and the Data Protection Act 2018, which work much like the EU's GDPR:
@@ -83,7 +85,7 @@ Its seven key recommendations, for providers and recruiters alike:
 
 The ICO also recommends meaningful human reviews of AI outputs, with records of the reviews done.
 
-In March 2026 the ICO published a second report, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), from its work with more than 30 employers. It found that many treat their tools as decision support when there's little real human involvement, that safeguards for challenging a decision are applied unevenly, that candidates often aren't told clearly how automation is used, and that DPIAs are often missing or weak. Its updated guidance on automated decisions went out for consultation until 29 May 2026 and wasn't final as of November 2026, and a statutory code of practice on AI and automated decision-making is on its way. Since 30 September 2026 the regulator has been the Information Commission, which still goes by ICO.
+In March 2026 the ICO published a second report, [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), from its work with more than 30 employers. It found that many treat their tools as decision support when there's little real human involvement, that safeguards for challenging a decision are applied unevenly, that candidates often aren't told clearly how automation is used, and that DPIAs are often missing or weak. Since 30 September 2026 the regulator has been the Information Commission, which still goes by ICO.
 
 ## Transfers to the US
 
@@ -115,7 +117,7 @@ What that looks like in the product today:
 - **Fairness monitoring.** Your company's owner can download a bias-audit file from the company's Action log page: each finished candidate's grade, the passing grade, whether they passed and whether they scored above the interview's median, keyed by email. Join it with the answers candidates gave you on your own equal opportunities form, then remove the email.
 - **Extra time** of +25%, +50% or +100% on every question can be given to any candidate who asks, before they start. testee stores only the amount, never the reason.
 - **Documents.** Candidate notice templates, the instructions for companies and a DPIA template are on the [documents page](/documents).
-- **Data.** Your company is the controller and testee the processor, under the [data processing agreement](/dpa), which covers UK law. Data is hosted in the EU and isn't used to train AI models; transfers of UK candidates' data to US sub-processors rely on the UK–US data bridge or the UK addendum (see the [privacy policy](/privacy)). Candidate data is deleted 12 months after the invite.
+- **Data.** Your company is the controller and testee the processor, under the [data processing agreement](/dpa), which covers UK law. Data is hosted in the EU and isn't used to train AI models; transfers of UK candidates' data to US sub-processors rely on the UK–US data bridge or the UK addendum (see the [privacy policy](/privacy)). Candidate data is deleted 12 months after the invite was last sent.
 
 ## Related reading
 
@@ -132,3 +134,5 @@ What that looks like in the product today:
 - Information Commissioner's Office, *AI tools in recruitment: audit outcomes report*, [November 2024](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf).
 - Information Commissioner's Office, [*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/), March 2026.
 - The Data Protection (Adequacy) (United States of America) Regulations 2023, [SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents).
+- The Data Protection Act 2018 (Code of Practice on Artificial Intelligence and Automated Decision-Making) Regulations 2026, [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made).
+- Information Commissioner's Office, [consultation on the draft guidance about automated decision-making, including profiling](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/), 31 March to 29 May 2026.

@@ -2,7 +2,7 @@
 title: "¿Es legal usar IA en la selección de personal en la UE? Lo que deben saber las empresas"
 seoTitle: "¿Es legal la IA en selección de personal? Reglamento de IA"
 description: "Usar IA en la selección de personal es legal en la UE, con reglas. El alto riesgo del Reglamento de IA, las fechas clave hasta 2027 y lo básico del RGPD."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # ¿Es legal usar IA en la selección de personal en la UE? Lo que deben saber las empresas
@@ -123,9 +123,12 @@ Cómo se refleja hoy en el producto:
 - **Deciden las personas.** La página de resultados y los informes en PDF recuerdan a tu equipo que revise los resultados; testee no rechaza candidatos ni envía mensajes de rechazo.
 - **Marcas de IA.** Las preguntas, las opciones de respuesta, las respuestas de Mira y los clips de voz llevan una marca legible por software que indica que los generó la IA, y los clips de voz llevan además la marca de agua inaudible de OpenAI. La [página de confianza](/trust) explica cómo comprobarlas. El texto copiado de una página no conserva su marca.
 - **Se informa a los candidatos** antes de empezar de que las preguntas las redacta la IA, de que personas de tu empresa revisan los resultados y deciden, y de que pueden pedir una revisión.
+- **Ninguna característica protegida.** testee nunca pide, infiere ni guarda el sexo, el origen étnico, la edad, la discapacidad ni otras características protegidas de los candidatos.
+- **Supervisión de la equidad.** El propietario de tu empresa puede descargar un archivo para una auditoría de sesgos desde la página Registro de acciones de la empresa: de cada candidato que haya terminado, su nota, la nota de aprobado, si aprobó y si puntuó por encima de la mediana de la entrevista, identificado por su correo electrónico. Crúzalo con las respuestas que los candidatos te dieron en tu propio formulario de igualdad de oportunidades y después elimina el correo electrónico.
 - **Tiempo extra** para cualquier candidato que lo pida.
 - **Registros.** Se registran las preguntas mostradas, las respuestas, los tiempos y los eventos de integridad.
-- **Datos.** Alojados en la UE (algunos subencargados están en EE. UU.; consulta la [política de privacidad](/privacy)), datos de los candidatos eliminados 12 meses después de la invitación, contrato de encargo del tratamiento incluido, y tus datos no se usan para entrenar modelos de IA.
+- **Documentos.** Las plantillas de aviso para candidatos, las instrucciones para empresas y una plantilla de EIPD están en la [página de documentos](/documents).
+- **Datos.** Alojados en la UE (algunos subencargados están en EE. UU.; consulta la [política de privacidad](/privacy)), datos de los candidatos eliminados 12 meses después del último envío de la invitación, [contrato de encargo del tratamiento](/dpa) incluido, y tus datos no se usan para entrenar modelos de IA.
 
 Existen borradores de la documentación técnica, el registro de riesgos, las instrucciones para empresas, el sistema de gestión de la calidad y el plan de vigilancia poscomercialización, y se están completando antes de la fecha de 2027. Son borradores de trabajo, no una declaración de cumplimiento.
 

@@ -2,7 +2,7 @@
 title: "Ist KI im Recruiting in der EU erlaubt? Was Arbeitgeber wissen müssen"
 seoTitle: "KI im Recruiting erlaubt? KI-Verordnung und DSGVO"
 description: "KI im Recruiting ist in der EU erlaubt, mit Regeln: was die Hochrisiko-Kategorie der KI-Verordnung bedeutet, Fristen bis Dezember 2027, DSGVO-Grundlagen."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Ist KI im Recruiting in der EU erlaubt? Was Arbeitgeber wissen müssen
@@ -123,9 +123,12 @@ So sieht das heute im Produkt aus:
 - **Menschen entscheiden.** Die Ergebnisseite und die PDF-Berichte erinnern dein Team daran, die Ergebnisse zu prüfen; testee lehnt keine Kandidaten ab und verschickt keine Absagen.
 - **KI-Kennzeichnung.** Fragen, Antwortoptionen, Miras Antworten und Sprachclips sind in maschinenlesbarer Form als KI-generiert gekennzeichnet, und Sprachclips tragen zusätzlich das unhörbare Wasserzeichen von OpenAI. Auf der [Vertrauensseite](/trust) steht, wie du das prüfst. Von einer Seite kopierter Text behält seine Kennzeichnung nicht.
 - **Kandidaten werden informiert,** bevor sie beginnen: dass die Fragen von KI geschrieben sind, dass Menschen in deinem Unternehmen die Ergebnisse prüfen und entscheiden und dass sie eine Überprüfung verlangen können.
+- **Keine geschützten Merkmale.** testee fragt nie nach Geschlecht, ethnischer Herkunft, Alter, Behinderung oder anderen geschützten Merkmalen von Kandidaten, leitet sie nicht ab und speichert sie nicht.
+- **Fairness-Überwachung.** Der Inhaber deines Unternehmens kann auf der Seite „Aktionsprotokoll“ des Unternehmens eine Datei für ein Bias-Audit herunterladen: für jeden Kandidaten, der fertig ist, die Note, die Bestehensgrenze, ob er bestanden hat und ob er über dem Median des Interviews lag, zugeordnet über die E-Mail-Adresse. Verknüpfe sie mit den Antworten, die Kandidaten dir in deinem eigenen Formular zur Chancengleichheit gegeben haben, und entferne dann die E-Mail-Adresse.
 - **Zusätzliche Zeit** kann jedem Kandidaten gewährt werden, der darum bittet.
 - **Aufzeichnungen.** Die angezeigten Fragen, Antworten, Zeiten und Auffälligkeiten (Seitenwechsel, Kopierversuche) werden protokolliert.
-- **Daten.** Gehostet in der EU (einige Unterauftragsverarbeiter sitzen in den USA; siehe die [Datenschutzerklärung](/privacy)), Kandidatendaten werden 12 Monate nach der Einladung gelöscht, ein Auftragsverarbeitungsvertrag ist enthalten, und deine Daten werden nicht zum Training von KI-Modellen genutzt.
+- **Dokumente.** Vorlagen für die Kandidateninformation, die Anleitung für Unternehmen und eine DSFA-Vorlage findest du auf der [Dokumente-Seite](/documents).
+- **Daten.** Gehostet in der EU (einige Unterauftragsverarbeiter sitzen in den USA; siehe die [Datenschutzerklärung](/privacy)), Kandidatendaten werden 12 Monate nach dem letzten Versand der Einladung gelöscht, ein [Auftragsverarbeitungsvertrag](/dpa) ist enthalten, und deine Daten werden nicht zum Training von KI-Modellen genutzt.
 
 Entwürfe der technischen Dokumentation, des Risikoregisters, der Anleitung für Unternehmen, des Qualitätsmanagementsystems und des Plans zur Beobachtung nach dem Inverkehrbringen liegen vor und werden vor dem Stichtag 2027 fertiggestellt. Es sind Arbeitsentwürfe, keine Behauptung von Konformität.
 

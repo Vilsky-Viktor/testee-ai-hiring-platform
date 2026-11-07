@@ -2,7 +2,7 @@
 title: "Kas AI kasutamine värbamisel on ELis seaduslik? Mida tööandjad peavad teadma"
 seoTitle: "AI värbamisel ELis: tehisintellekti määrus ja GDPR"
 description: "AI kasutamine värbamisel on ELis seaduslik, kuid reeglitega. Mida tähendab tehisintellekti määruse suure riski kategooria tööandjale, tähtajad ja GDPR."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Kas AI kasutamine värbamisel on ELis seaduslik? Mida tööandjad peavad teadma
@@ -123,9 +123,12 @@ Kuidas see tootes täna välja näeb:
 - **Otsustavad inimesed.** Hindamislehed ja PDF-aruanded tuletavad sinu meeskonnale meelde tulemused üle vaadata; testee ei lükka kandidaate tagasi ega saada äraütlemiskirju.
 - **AI-märgistus.** Küsimused, vastusevariandid, Mira vastused ja häälklipid on tarkvarale loetaval kujul märgitud AI loodud sisuks ning häälklippidel on lisaks OpenAI kuuldamatu vesimärk. [Usalduse leht](/trust) selgitab, kuidas neid kontrollida. Lehelt kopeeritud tekst märget ei säilita.
 - **Kandidaatidele öeldakse** enne alustamist, et küsimused on kirjutanud AI, et tulemused vaatavad üle ja otsuse teevad inimesed sinu ettevõttest ning et nad võivad taotleda ülevaatust.
+- **Kaitstud tunnuseid ei koguta.** testee ei küsi, ei tuleta ega salvesta kunagi kandidaatide sugu, etnilist päritolu, vanust, puuet ega muid kaitstud tunnuseid.
+- **Õigluse jälgimine.** Sinu ettevõtte omanik saab ettevõtte toimingute logi lehelt alla laadida faili kallutatuse auditi jaoks: iga lõpetanud kandidaadi hinne, läbimise lävi, kas ta sooritas ja kas tema tulemus oli intervjuu mediaanist kõrgem, seotud e-posti aadressiga. Ühenda see vastustega, mille kandidaadid andsid sinu enda võrdsete võimaluste vormis, ja eemalda seejärel e-posti aadress.
 - **Lisaaega** saab anda igale kandidaadile, kes seda palub.
 - **Andmed salvestatakse.** Näidatud küsimused, vastused, ajakulu ja aususega seotud sündmused salvestatakse.
-- **Andmed.** Majutatud ELis (mõned volitatud alamtöötlejad asuvad USAs; vaata [privaatsuspoliitikat](/privacy)), kandidaatide andmed kustutatakse 12 kuud pärast kutset, andmetöötlusleping on hinnas ja sinu andmeid ei kasutata AI-mudelite treenimiseks.
+- **Dokumendid.** Kandidaatide teavituse mallid, ettevõtetele mõeldud juhised ja mõjuhinnangu (DPIA) mall on [dokumentide lehel](/documents).
+- **Andmed.** Majutatud ELis (mõned volitatud alamtöötlejad asuvad USAs; vaata [privaatsuspoliitikat](/privacy)), kandidaatide andmed kustutatakse 12 kuud pärast kutse viimast saatmist, [andmetöötlusleping](/dpa) on hinnas ja sinu andmeid ei kasutata AI-mudelite treenimiseks.
 
 Tehnilise dokumentatsiooni, riskiregistri, ettevõtetele mõeldud juhiste, kvaliteedijuhtimissüsteemi ja turustamisjärgse seire kava mustandid on olemas ja neid viiakse lõpule enne 2027. aasta tähtaega. Need on töömustandid, mitte väide nõuetele vastamise kohta.
 

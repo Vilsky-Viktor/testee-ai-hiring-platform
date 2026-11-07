@@ -2,7 +2,7 @@
 title: "Usare l'IA nella selezione del personale è legale nell'UE? Cosa devono sapere i datori di lavoro"
 seoTitle: "IA nella selezione del personale: è legale nell'UE?"
 description: "L'IA nelle assunzioni è legale nell'UE, con regole. Cosa implica l'alto rischio del regolamento sull'IA, le date fino a dicembre 2027 e le basi del GDPR."
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # Usare l'IA nella selezione del personale è legale nell'UE? Cosa devono sapere i datori di lavoro
@@ -123,9 +123,12 @@ Ecco cosa significa oggi nel prodotto:
 - **Decidono le persone.** La pagina dei risultati e i report PDF ricordano al tuo team di esaminare i risultati; testee non scarta candidati né invia messaggi di rifiuto.
 - **Marcature IA.** Domande, opzioni di risposta, risposte di Mira e clip vocali sono marcate come generate dall'IA in una forma leggibile dal software, e le clip vocali hanno anche la filigrana inaudibile di OpenAI. La [pagina fiducia](/trust) spiega come verificarle. Il testo copiato da una pagina non conserva la marcatura.
 - **I candidati vengono informati** prima di iniziare che le domande sono scritte dall'IA, che le persone della tua azienda esaminano i risultati e decidono, e che possono chiedere una revisione.
+- **Nessuna caratteristica protetta.** testee non chiede, non deduce e non conserva mai sesso, origine etnica, età, disabilità o altre caratteristiche protette dei candidati.
+- **Monitoraggio dell'equità.** Il proprietario della tua azienda può scaricare un file per un audit sui bias dalla pagina Registro attività dell'azienda: per ogni candidato che ha terminato, il voto, la soglia di superamento, se ha superato il test e se ha ottenuto un punteggio sopra la mediana del colloquio, con l'email come chiave. Abbinalo alle risposte che i candidati ti hanno dato nel tuo modulo sulle pari opportunità, poi rimuovi l'email.
 - **Più tempo** può essere concesso a qualsiasi candidato che lo chieda.
 - **Registrazioni.** Vengono registrati le domande mostrate, le risposte, i tempi e le segnalazioni di comportamenti sospetti.
-- **Dati.** Ospitati nell'UE (alcuni sub-responsabili si trovano negli Stati Uniti; vedi l'[informativa sulla privacy](/privacy)), dati dei candidati cancellati 12 mesi dopo l'invito, accordo sul trattamento dei dati incluso, e i tuoi dati non vengono usati per addestrare modelli di IA.
+- **Documenti.** I modelli di informativa per i candidati, le istruzioni per le aziende e un modello di DPIA sono nella [pagina dei documenti](/documents).
+- **Dati.** Ospitati nell'UE (alcuni sub-responsabili si trovano negli Stati Uniti; vedi l'[informativa sulla privacy](/privacy)), dati dei candidati cancellati 12 mesi dopo l'ultimo invio dell'invito, [accordo sul trattamento dei dati](/dpa) incluso, e i tuoi dati non vengono usati per addestrare modelli di IA.
 
 Esistono bozze della documentazione tecnica, del registro dei rischi, delle istruzioni per le aziende, del sistema di gestione della qualità e del piano di monitoraggio successivo all'immissione sul mercato, che vengono completate in vista della scadenza del 2027. Sono bozze di lavoro, non una dichiarazione di conformità.
 

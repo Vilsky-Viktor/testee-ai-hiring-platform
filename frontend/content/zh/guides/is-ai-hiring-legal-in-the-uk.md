@@ -2,7 +2,7 @@
 title: "在英国用 AI 招聘合法吗？雇主需要了解的要点"
 seoTitle: "英国 AI 招聘合规指南：平等法与数据保护要点"
 description: "在英国用 AI 招聘是合法的，但有规则约束：《平等法》、UK GDPR 自 2026 年 2 月起施行的自动化决策新规，以及英国信息专员办公室（ICO）的审计发现。"
-updated: "2026-11-07"
+updated: "2026-11-08"
 ---
 
 # 在英国用 AI 招聘合法吗？雇主需要了解的要点
@@ -51,6 +51,8 @@ UK GDPR 原第 22 条赋予个人不受仅基于自动化处理作出的决定�
 
 **实际操作中：** 在拒绝候选人之前，让一位理解结果并能推翻结果的人查看每一项结果，并告诉候选人如何申请复核。这样，决定就不是完全自动化的，保障措施也就成了良好做法，而不是法律要求。
 
+还有两项内容即将到来。ICO 关于自动化决策（包括画像）的指南草案于 2026 年 3 月 31 日至 5 月 29 日[公开征求意见](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/)，截至 2026 年 11 月尚未定稿。此外，2026 年 5 月 12 日起施行的 [SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made) 要求信息专员制定关于 AI 和自动化决策的法定实务守则。
+
 ## UK GDPR 基本要求
 
 候选人数据受 UK GDPR 和《2018 年数据保护法》（Data Protection Act 2018）约束，两者的运作方式与欧盟的 GDPR 大体相同：
@@ -83,7 +85,7 @@ UK GDPR 原第 22 条赋予个人不受仅基于自动化处理作出的决定�
 
 ICO 还建议对 AI 输出进行有意义的人工审核，并记录已完成的审核。
 
-2026 年 3 月，ICO 发布了第二份报告 [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/)，依据是它与 30 多家雇主的合作。报告发现，许多雇主把工具当作决策辅助，而实际的人工参与却很少；对决定提出质疑的保障措施执行不一；候选人往往没有被清楚告知自动化的使用方式；DPIA 常常缺失或质量不高。ICO 关于自动化决策的更新版指南已公开征求意见至 2026 年 5 月 29 日，截至 2026 年 11 月尚未定稿，关于 AI 和自动化决策的法定实务守则也即将出台。自 2026 年 9 月 30 日起，监管机构变为信息委员会（Information Commission），但仍沿用 ICO 的名称。
+2026 年 3 月，ICO 发布了第二份报告 [Recruitment rewired](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/)，依据是它与 30 多家雇主的合作。报告发现，许多雇主把工具当作决策辅助，而实际的人工参与却很少；对决定提出质疑的保障措施执行不一；候选人往往没有被清楚告知自动化的使用方式；DPIA 常常缺失或质量不高。自 2026 年 9 月 30 日起，监管机构变为信息委员会（Information Commission），但仍沿用 ICO 的名称。
 
 ## 向美国传输数据
 
@@ -115,7 +117,7 @@ testee 根据职位描述，由 AI 编写限时的多项选择技能面试。它
 - **公平性监测。** 公司所有者可以在公司的操作记录页面下载一个偏见审计文件：每位完成面试的候选人的分数、及格线、是否通过，以及是否高于该面试的中位数，以电子邮箱作为键。将它与候选人在你自己的平等机会表中给出的回答关联起来，然后删除电子邮箱。
 - **额外时间：** 可以在候选人开始之前，为任何提出需要的候选人的每道题提供 +25%、+50% 或 +100% 的额外时间。testee 只存储额外时间的幅度，从不存储原因。
 - **文件：** 候选人告知模板、面向公司的使用说明和 DPIA 模板都在[文件页面](/documents)上。
-- **数据：** 根据涵盖英国法律的[数据处理协议](/dpa)，你的公司是控制者，testee 是处理者。数据托管在欧盟，不会用于训练 AI 模型；向美国子处理者传输英国候选人的数据，依据的是英美数据桥或英国附录（请参阅[隐私政策](/privacy)）。候选人数据在邀请发出 12 个月后删除。
+- **数据：** 根据涵盖英国法律的[数据处理协议](/dpa)，你的公司是控制者，testee 是处理者。数据托管在欧盟，不会用于训练 AI 模型；向美国子处理者传输英国候选人的数据，依据的是英美数据桥或英国附录（请参阅[隐私政策](/privacy)）。候选人数据在邀请最后一次发出 12 个月后删除。
 
 ## 延伸阅读
 
@@ -132,3 +134,5 @@ testee 根据职位描述，由 AI 编写限时的多项选择技能面试。它
 - Information Commissioner's Office，*AI tools in recruitment: audit outcomes report*，[2024 年 11 月](https://ico.org.uk/media2/migrated/4031620/ai-in-recruitment-outcomes-report.pdf)。
 - Information Commissioner's Office，[*Recruitment rewired*](https://ico.org.uk/about-the-ico/what-we-do/recruitment-rewired/)，2026 年 3 月。
 - The Data Protection (Adequacy) (United States of America) Regulations 2023，[SI 2023/1028](https://www.legislation.gov.uk/uksi/2023/1028/contents)。
+- The Data Protection Act 2018 (Code of Practice on Artificial Intelligence and Automated Decision-Making) Regulations 2026，[SI 2026/425](https://www.legislation.gov.uk/uksi/2026/425/made).
+- Information Commissioner's Office，[关于自动化决策（包括画像）指南草案的公开征求意见](https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/03/ico-consultation-on-the-draft-guidance-about-automated-decision-making-including-profiling/)，2026 年 3 月 31 日至 5 月 29 日。
