@@ -15,12 +15,10 @@ from rounds.schemas.sessions import (
     ScorecardSession,
     SessionOut,
     SessionsCreate,
-    SetCompaniesIn,
     SetIdsIn,
 )
 from rounds.services import invite_scores as invite_scores_service
 from rounds.services import sections
-from rounds.services import session_companies as session_companies_service
 
 router = APIRouter(prefix="/internal", tags=["internal"])
 
@@ -29,13 +27,6 @@ router = APIRouter(prefix="/internal", tags=["internal"])
 async def create_sessions(body: SessionsCreate, caller: ServiceCaller) -> list[SessionOut]:
     """Creates one session per topic for a candidate invite; returns existing ones if any."""
     return [session_out(row) for row in await sections.start_interview(body)]
-
-
-@router.post("/session-companies")
-async def session_companies(body: SetCompaniesIn, caller: ServiceCaller) -> dict[str, int]:
-    """Companies' backfill: the company of each interview set, for the sections started before
-    rounds kept it."""
-    return {"filled": await session_companies_service.fill(body.companies)}
 
 
 @router.post("/invite-scores")

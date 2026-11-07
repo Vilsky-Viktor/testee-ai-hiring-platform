@@ -130,19 +130,6 @@ async def give_time_back(stopped: timedelta) -> None:
     response.raise_for_status()
 
 
-async def fill_session_companies(companies: dict[UUID, UUID]) -> int:
-    """Tells rounds each interview set's company, for its sections started before it kept it."""
-    response = await http.get_client().post(
-        f"{settings.rounds_url}/internal/session-companies",
-        json={"companies": {str(key): str(value) for key, value in companies.items()}},
-        headers=bearer(service_token("rounds")),
-    )
-
-    response.raise_for_status()
-
-    return response.json()["filled"]
-
-
 async def offer_matches(topic_ids: list[str], offset: int, limit: int) -> list[dict]:
     """A page of the people open to offers with practice results on these template topics, as
     rounds gives them ({"user_id", "linkedin_url", "results"}), whoever practised last first."""

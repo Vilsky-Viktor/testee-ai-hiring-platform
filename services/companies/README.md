@@ -75,5 +75,4 @@ docker compose up -d --build companies           # the service and its migration
 cd services/companies && uv run pytest           # unit tests
 scripts/integration.sh companies                 # integration tests (real Postgres and Redis)
 scripts/assistant-openapi.sh                     # refresh the assistant's snapshot of these routes
-python -m companies.services.round_companies     # one-off backfill (in the container)
 ```
