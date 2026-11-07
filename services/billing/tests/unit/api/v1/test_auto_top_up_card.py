@@ -3,7 +3,7 @@ saves a new one, and Paddle saving it resumes the top-up; what the company sees 
 
 import asyncio
 import uuid
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from types import SimpleNamespace
 
 import pytest
@@ -109,6 +109,12 @@ def test_paddle_saving_the_new_card_resumes_it_and_grants_nothing(monkeypatch, r
     assert granted == []
 
 
+# Always ahead: a price's day passing is what the code compares with now.
+NEW_PRICE_DAY = (datetime.now(UTC) + timedelta(days=30)).replace(
+    hour=0, minute=0, second=0, microsecond=0
+)
+
+
 @pytest.mark.parametrize(
     ("row", "paused", "price", "coming"),
     [
@@ -116,12 +122,10 @@ def test_paddle_saving_the_new_card_resumes_it_and_grants_nothing(monkeypatch, r
         (running(), True, 4500, (None, None)),
         # Running with a new price announced: the agreed one now, the new one and its day.
         (
-            running(
-                paused_at=None, next_price=5000, next_price_from=datetime(2026, 11, 21, tzinfo=UTC)
-            ),
+            running(paused_at=None, next_price=5000, next_price_from=NEW_PRICE_DAY),
             False,
             4500,
-            (5000, "2026-11-21T00:00:00Z"),
+            (5000, NEW_PRICE_DAY.strftime("%Y-%m-%dT%H:%M:%SZ")),
         ),
     ],
 )
