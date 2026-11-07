@@ -161,9 +161,9 @@ CI runs all of these except the end-to-end test, which needs an OpenAI key, and 
 - `checks.yml` also runs Terraform's format check, `terraform validate` (no credentials, no state, Terraform's version pinned) and TFLint (`infra/terraform/.tflint.hcl`: Terraform's recommended rules, and a type and description on every variable and output).
 - And ShellCheck on every shell script (`.shellcheckrc` also asks for `[[ ]]` in bash and quotes around every variable), and actionlint and zizmor on the workflows (tools pinned by version and checksum). Locally: `shellcheck $(git ls-files '*.sh')`, `actionlint` and `uvx zizmor@1.31.1 --offline .github`.
 - The dependency audit (`.github/workflows/audit.yml`) runs on every change and every Monday: `pip-audit`, `pnpm audit --prod`, and gitleaks over the whole history (`.gitleaks.toml` allows tests' made-up keys and placeholders; mark another made-up value with a `gitleaks:allow` comment). On Mondays it also builds and scans every production image's OS packages with Trivy.
-- It starts the whole stack for the smoke, integration, MCP, page and signed-in tests when any part changed, or `e2e_tests/`, `gateway/`, `database/`, `firebase/`, `scripts/`, `compose/` or `docker-compose.yml` did. A change to docs alone skips it.
+- It starts the whole stack for the smoke, integration and MCP tests, and again in a job of its own for the page and signed-in tests, when any part changed, or `e2e_tests/`, `gateway/`, `database/`, `firebase/`, `scripts/`, `compose/` or `docker-compose.yml` did. A change to docs alone skips it.
 - Its stack has no templates, so before the signed-in tests it adds a small English one (`e2e_tests/signed-in/seed/template.py`, no OpenAI).
 - Its superadmin is a CI-only emulator account.
-- On failure, the screenshots and traces are kept as the run's `signed-in-test-results` artifact.
+- On failure, the page and signed-in tests' screenshots and traces are kept as the run's `browser-test-results` artifact.
 
 When CI runs, and how releases follow it, is in [Deployment](deployment.md#cicd).
