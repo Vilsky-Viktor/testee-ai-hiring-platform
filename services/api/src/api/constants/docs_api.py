@@ -226,7 +226,7 @@ by its HTTP status.
 | `candidate_finished` | 409 | The candidate already finished |
 | `candidate_started` | 409 | Extra time only before the candidate starts |
 | `invited_without_sign_in` | 409 | testee doesn't email a candidate invited with `sign_in` false |
-| `company_suspended` | 409 | The company is suspended, so it can't invite candidates or add notes |
+| `company_suspended` | 409 | The company is suspended: no new interviews, invites or notes |
 | `interview_quota_reached` | 409 | As many interviews without candidates as allowed |
 | `request_in_progress` | 409 | The same request is still running |
 | `idempotency_key_reused` | 422 | An `Idempotency-Key` sent before with another request |
@@ -246,6 +246,9 @@ Any other refusal carries its status's code: `bad_request`, `unauthorized`, `for
 Within `v1`, fields, optional parameters, error codes, enum values and event types are only ever
 added. Anything retired first answers with `Deprecation` and `Sunset` headers and is listed here.
 
+- 2026-11-07: `POST /interviews` goes straight on from the proposed topics to the questions, with
+  no review, once your company has topped up; until then the topics still wait for a review. A
+  suspended company's request is refused with `409` (`company_suspended`).
 - 2026-11-04: voice mode works in every language, so `voice_unavailable` is no longer returned.
 - 2026-10-30: inviting a candidate takes an optional `mode` (`click` or `voice`), refused with
   `voice_unavailable` in a language voice mode doesn't support; candidates carry their `mode`.

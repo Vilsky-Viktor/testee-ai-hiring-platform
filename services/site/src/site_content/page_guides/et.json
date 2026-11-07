@@ -103,6 +103,7 @@
     ],
     "tips": [
       "Saad teavituse, kui intervjuu on valmis.",
+      "Pärast ettevõtte esimest juurdelaadimist jääb API kaudu loodud intervjuul ülevaatus vahele: küsimused kirjutatakse pakutud teemade põhjal.",
       "Tule igal ajal tagasi intervjuude loendist."
     ]
   },

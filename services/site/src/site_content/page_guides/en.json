@@ -103,6 +103,7 @@
     ],
     "tips": [
       "You get a notification when the interview is ready.",
+      "Once the company has topped up, an interview made through the API skips the review: its questions are written from the proposed topics.",
       "Come back any time from the interviews list."
     ]
   },

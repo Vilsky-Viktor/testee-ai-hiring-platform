@@ -187,8 +187,9 @@ async def invite_candidate(
             "description": "A retry within 15 minutes: the interview the first request made",
         },
         409: refusal(
-            "The same request is still running (`request_in_progress`), or your company has as "
-            "many interviews without candidates as it may (`interview_quota_reached`)"
+            "The same request is still running (`request_in_progress`), your company has as many "
+            "interviews without candidates as it may (`interview_quota_reached`), or it is "
+            "suspended (`company_suspended`)"
         ),
         422: refusal("The body is invalid (`validation_failed`)"),
         429: {
@@ -208,12 +209,14 @@ async def create_interview(
     idempotency_key: IdempotencyKey = None,
 ) -> Interview:
     """Starts an interview from a job description, as the key (the action log names it). testee
-    first proposes its topics, and nothing more happens until they're reviewed: by an owner or
-    admin on the interview's page in testee, or by an agent with `review_generation` over MCP.
-    The API has no route for it. Topics left unreviewed for 14 days cancel the interview. The
-    questions then take a few minutes: until `ready` is true, it can't take candidates; the
-    `interview.ready` web hook event says when it is. Retrying is safe: the same request from
-    the same key within 15 minutes returns the interview the first one made, with `200`."""
+    proposes its topics and goes straight on to its questions, which take a few minutes: until
+    `ready` is true, it can't take candidates; the `interview.ready` web hook event says when it
+    is. Until your company's first top-up, and during a pause, the topics wait for a review
+    instead: by an owner or admin on the interview's page in testee, or by an agent with
+    `review_generation` over MCP. The API has no route for it, and topics left unreviewed for 14
+    days cancel the interview. If making it fails, `ready` stays false until an owner or admin
+    retries it on that page. Retrying this request is safe: the same request from the same key
+    within 15 minutes returns the interview the first one made, with `200`."""
 
     created = False
 

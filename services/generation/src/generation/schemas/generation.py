@@ -32,6 +32,8 @@ class InterviewGenerationCreate(BaseModel):
     generate_in: Language | None = None
     # Whether the company ever topped up: then it isn't held to the daily limit for everyone.
     paid: bool = False
+    # Go on from the proposed topics with no review: a paying company's, through the public API.
+    auto_approve: bool = False
 
 
 class TemplateGenerationCreate(BaseModel):

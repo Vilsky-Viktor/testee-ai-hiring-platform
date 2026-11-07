@@ -1,5 +1,6 @@
 from fastapi import HTTPException, status
 from testee_common.i18n.i18n import TemplateError
+from testee_common.limits.pause import is_paused
 from testee_common.limits.rate_limit import hit
 
 from generation.constants.generation import (
@@ -17,7 +18,29 @@ from generation.integrations.redis import get_redis
 from generation.models.generation import Generation
 from generation.repositories import generations
 from generation.schemas.generation import ReviewRequest
+from generation.services.run_state import save
 from generation.services.topic_caps import topic_caps
+
+
+async def topics_proposed(generation: Generation, topics: list[dict]) -> None:
+    """A run stopped for its review (the graph's interrupt, already checkpointed). It waits for
+    one, unless the generation needs none (auto_approve): then it's queued straight on, with what
+    a reviewer who keeps the proposed topics sends, up to the most a review may approve. It never
+    awaits review, so the expiry and the reminders don't see it; a job lost here leaves it queued,
+    which the sweeper fails, and its retry comes back here. The emergency pause refuses a
+    reviewer, so while it's on the topics wait for a review too. A cancelled one queues nothing."""
+    if not generation.auto_approve or await is_paused(get_redis()):
+        await save(generation.id, status=Status.AWAITING_REVIEW, topics=topics)
+
+        return
+
+    caps = await topic_caps()
+    approved = ReviewRequest(selected=list(range(min(len(topics), caps["max_topics"]))))
+
+    if await save(generation.id, status=Status.QUEUED, topics=topics):
+        await tasks.enqueue(
+            RUN_GENERATION, {"generation_id": str(generation.id), "resume": approved.model_dump()}
+        )
 
 
 async def submit_review(generation: Generation, body: ReviewRequest) -> Generation:

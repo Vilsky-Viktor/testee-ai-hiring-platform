@@ -4,7 +4,9 @@ from fastapi import HTTPException, status
 from testee_common.auth.auth import CurrentUser
 from testee_common.auth.key_actor import actor_key
 from testee_common.config.constants import VIA_MCP
+from testee_common.i18n.i18n import CodedError
 
+from companies.constants import error_codes
 from companies.constants.ai_apps import AI_APPS_OFF, KEY_OTHER_COMPANY
 from companies.constants.invites import (
     COMPANY_SUSPENDED,
@@ -67,6 +69,12 @@ def ai_apps_refusal(company: Company) -> str | None:
 def suspension_refusal(company: Company) -> str | None:
     """Suspended by a superadmin: it can still be read (and deleted by its owner), not changed."""
     return COMPANY_SUSPENDED if company.suspended_at is not None else None
+
+
+def refuse_change_if_suspended(company: Company) -> None:
+    """For a change a caller may retry later: invites, notes, an interview through the API (409)."""
+    if refusal := suspension_refusal(company):
+        raise CodedError(status.HTTP_409_CONFLICT, refusal, error_codes.COMPANY_SUSPENDED)
 
 
 def member_of(company: Company, user_id: str) -> Member | None:

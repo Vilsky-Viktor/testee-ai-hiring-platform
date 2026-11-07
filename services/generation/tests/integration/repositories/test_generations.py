@@ -24,6 +24,18 @@ def test_a_saved_generation_reads_back(run):
     )
 
 
+def test_a_generation_needs_a_review_unless_started_without_one(run):
+    async def scenario():
+        reviewed = await transaction(generations.create, "ann", "reviewed")
+        going_on = await transaction(generations.create, "ann", "api", auto_approve=True)
+
+        return [await transaction(generations.get, row.id) for row in (reviewed, going_on)]
+
+    reviewed, going_on = run(scenario())
+
+    assert (reviewed.auto_approve, going_on.auto_approve) == (False, True)
+
+
 def test_running_generations_untouched_for_long_and_queued_ones_waiting_longer_are_failed(run):
     async def scenario():
         now = datetime.now(UTC)

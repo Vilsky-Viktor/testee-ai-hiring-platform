@@ -770,6 +770,11 @@ export interface components {
        * @default false
        */
       paid: boolean
+      /**
+       * Auto Approve
+       * @default false
+       */
+      auto_approve: boolean
     }
     /**
      * NewsSource

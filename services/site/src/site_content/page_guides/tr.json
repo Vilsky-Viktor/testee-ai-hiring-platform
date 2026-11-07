@@ -103,6 +103,7 @@
     ],
     "tips": [
       "Mülakat hazır olduğunda bildirim alırsınız.",
+      "Şirket kredi yükledikten sonra API ile oluşturulan mülakat incelemeyi atlar: sorular önerilen konulardan yazılır.",
       "Mülakatlar listesinden istediğiniz zaman geri dönün."
     ]
   },

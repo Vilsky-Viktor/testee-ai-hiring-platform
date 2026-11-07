@@ -21,6 +21,7 @@ async def create(
     language: str = DEFAULT_LANGUAGE,
     generation_id: uuid.UUID | None = None,
     kind: str = GenerationKind.INTERVIEW,
+    auto_approve: bool = False,
 ) -> Generation:
     generation = Generation(
         id=generation_id or uuid.uuid4(),
@@ -30,6 +31,7 @@ async def create(
         text=text,
         language=language,
         status=Status.QUEUED,
+        auto_approve=auto_approve,
     )
     session.add(generation)
 

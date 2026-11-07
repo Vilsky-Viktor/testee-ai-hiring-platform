@@ -10,15 +10,27 @@ from tests.unit.api.v1.test_internal_generations import headers
 COMPANY_ID = uuid.uuid4()
 
 
+# Whether each generation in `queue` was started to go on with no review.
+approvals = []
+
+
 @pytest.fixture
 def queue(monkeypatch):
     """Generations that are recorded, not run."""
     created = []
+    approvals.clear()
 
     async def fake_create(
-        session, owner_uid, text, company_id=None, language="en", generation_id=None
+        session,
+        owner_uid,
+        text,
+        company_id=None,
+        language="en",
+        generation_id=None,
+        auto_approve=False,
     ):
         created.append((owner_uid, company_id, language))
+        approvals.append(auto_approve)
 
         return Generation(
             id=uuid.uuid4(),
@@ -56,6 +68,12 @@ def test_a_recruiter_can_choose_the_tests_language(client, queue):
     response = start(client, generate_in="ar")
 
     assert response.json()["language"] == "ar"
+
+
+@pytest.mark.parametrize(("body", "goes_on"), [({}, False), ({"auto_approve": True}, True)])
+def test_a_generation_needs_a_review_unless_companies_says_it_doesnt(client, queue, body, goes_on):
+    assert start(client, **body).status_code == 201
+    assert approvals == [goes_on]
 
 
 def test_only_supported_languages_can_be_chosen(client, queue):

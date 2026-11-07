@@ -4,14 +4,18 @@ from datetime import UTC, datetime
 from types import SimpleNamespace
 
 import pytest
+from fake_redis import FakeRedis
 from fastapi import HTTPException
 from sqlalchemy.exc import IntegrityError
+from testee_common.auth.key_actor import key_actor
 from testee_common.auth.user import User
+from testee_common.i18n.i18n import CodedError
 
+from companies.constants import error_codes
 from companies.constants.invites import COMPANY_SUSPENDED, INTERVIEW_UNAVAILABLE, InviteStatus
 from companies.models.companies import Company, Member
 from companies.repositories import companies, superadmin_companies
-from companies.services import candidate_invites
+from companies.services import candidate_invites, interview_creation
 from companies.services import superadmin_companies as routes
 from companies.services.access import require_editor
 from tests.unit.api.v1.test_invites import invite_page, stored_invite  # noqa: F401 (fixtures)
@@ -97,6 +101,32 @@ def test_a_suspended_company_is_read_not_changed(monkeypatch):
         asyncio.run(require_editor(owner, COMPANY_ID))
 
     assert (refused.value.status_code, refused.value.detail) == (403, COMPANY_SUSPENDED)
+
+
+def test_a_suspended_company_makes_no_interview_through_the_api(monkeypatch):
+    started = []
+
+    async def get(session, company_id):
+        return suspended_company()
+
+    async def start(*args, **kwargs):
+        started.append(args)
+
+    monkeypatch.setattr(companies, "get", get)
+    monkeypatch.setattr(interview_creation, "get_redis", FakeRedis)
+    monkeypatch.setattr(interview_creation.generation_api, "create", start)
+
+    with pytest.raises(CodedError) as refused:
+        asyncio.run(
+            interview_creation.create_for_api(COMPANY_ID, key_actor(uuid.uuid4()), "Backend", None)
+        )
+
+    assert (refused.value.status_code, refused.value.detail, refused.value.code) == (
+        409,
+        COMPANY_SUSPENDED,
+        error_codes.COMPANY_SUSPENDED,
+    )
+    assert started == []
 
 
 def test_a_suspended_company_invites_nobody(monkeypatch):

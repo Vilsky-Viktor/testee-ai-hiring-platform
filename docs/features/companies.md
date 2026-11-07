@@ -95,6 +95,7 @@ A superadmin can suspend a company from the admin zone (see [Admin zone](admin-s
 - its members still see it, with a notice saying so, but nothing in it can be changed,
 - its interviews' notes can be read but not written, edited, deleted or pinned (409, `company_suspended`),
 - it invites nobody: new candidates are refused (an ATS keeps them waiting until the suspension is lifted),
+- its API keys make no interviews (409, `company_suspended`),
 - candidates who haven't started find its invites and shareable link invalid; those already in an interview can finish it.
 
 ## Action log

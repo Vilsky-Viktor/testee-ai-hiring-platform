@@ -16,6 +16,7 @@ async def create(
     language: str,
     generate_in: str | None,
     paid: bool,
+    auto_approve: bool = False,
 ) -> dict:
     """Only companies may start an interview generation, after checking the user's membership."""
     response = await http.get_client().post(
@@ -27,6 +28,7 @@ async def create(
             "language": language,
             "generate_in": generate_in,
             "paid": paid,
+            "auto_approve": auto_approve,
         },
         headers=bearer(service_token("generation")),
     )

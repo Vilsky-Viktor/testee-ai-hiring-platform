@@ -103,6 +103,7 @@
     ],
     "tips": [
       "Bạn sẽ nhận thông báo khi buổi phỏng vấn sẵn sàng.",
+      "Khi công ty đã nạp credit, buổi phỏng vấn tạo qua API sẽ bỏ qua bước xem xét: câu hỏi được soạn từ các chủ đề đề xuất.",
       "Quay lại bất cứ lúc nào từ danh sách buổi phỏng vấn."
     ]
   },

@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 
-from sqlalchemy import CheckConstraint, DateTime, Index, String, Text, func, text
+from sqlalchemy import CheckConstraint, DateTime, Index, String, Text, false, func, text
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 from testee_common.config.constants import DEFAULT_LANGUAGE
@@ -56,6 +56,8 @@ class Generation(Base):
     # The questions a superadmin's addition adds to each topic; none for a top-up, which writes
     # what each topic lacks, and for every other kind.
     question_count: Mapped[int | None]
+    # Goes on from its proposed topics with no review: a paying company's, through the public API.
+    auto_approve: Mapped[bool] = mapped_column(default=False, server_default=false())
     error: Mapped[str | None] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(

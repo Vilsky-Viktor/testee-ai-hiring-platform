@@ -31,7 +31,7 @@ def calls_elsewhere(monkeypatch):
     async def paid(company_id):
         return True
 
-    async def started(*args):
+    async def started(*args, **kwargs):
         return {"id": str(uuid.uuid4()), "language": "en"}
 
     async def copied(template_id, company_id):

@@ -23,6 +23,8 @@ Before anything expensive runs, the company reviews the proposed topics, for fre
 
 A review takes at most 10 revisions in words; after that, topics are only chosen by checkbox (see [Generation](../generation.md#rate-limits)).
 
+An interview a paying company makes through the [public API](api.md) has no review: its questions are written from the proposed topics at once. Through the API, a company that never paid still reviews, as here.
+
 ### Questions
 
 - Every topic gets a bank of multiple-choice questions.

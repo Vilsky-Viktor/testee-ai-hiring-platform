@@ -103,6 +103,7 @@
     ],
     "tips": [
       "Dostaniesz powiadomienie, gdy rozmowa będzie gotowa.",
+      "Po pierwszym doładowaniu firmy rozmowa utworzona przez API pomija przegląd: pytania powstają na podstawie proponowanych tematów.",
       "Wróć tu w każdej chwili z listy rozmów."
     ]
   },

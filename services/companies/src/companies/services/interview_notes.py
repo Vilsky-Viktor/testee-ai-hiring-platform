@@ -9,10 +9,8 @@ import httpx
 from fastapi import HTTPException, status
 from testee_common.auth.key_actor import actor_key
 from testee_common.events.audit_actions import AuditAction
-from testee_common.i18n.i18n import CodedError
 from testee_common.limits.rate_limit import hit_or_skip
 
-from companies.constants import error_codes
 from companies.constants.interview_notes import (
     NOTE_NOT_FOUND,
     ONLY_AUTHOR_DELETES,
@@ -28,7 +26,7 @@ from companies.models.interviews import Interview
 from companies.repositories import audit, interview_notes, note_events
 from companies.schemas.interview_notes import NoteAuthor, NoteOut
 from companies.services import outbox as outbox_service
-from companies.services.access import can_edit, suspension_refusal
+from companies.services.access import can_edit, refuse_change_if_suspended
 
 logger = logging.getLogger(__name__)
 
@@ -135,17 +133,11 @@ async def page(interview: Interview, member: Member, offset: int, limit: int) ->
     return [note_out(note, author, member, profiles, keys) for note, author in rows]
 
 
-def refuse_if_suspended(company: Company) -> None:
-    """A suspended company's notes can be read, not changed (409, as inviting is)."""
-    if refusal := suspension_refusal(company):
-        raise CodedError(status.HTTP_409_CONFLICT, refusal, error_codes.COMPANY_SUSPENDED)
-
-
 async def add(
     interview: Interview, company: Company, member: Member, text: str, via: str | None = None
 ) -> NoteOut:
     """Any member writes one, within their hourly notes (429); not in a suspended company."""
-    refuse_if_suspended(company)
+    refuse_change_if_suspended(company)
     await hit_or_skip(
         get_redis(),
         f"rate:notes:{member.user_id}",
@@ -186,7 +178,7 @@ async def edit(
     interview: Interview, company: Company, member: Member, note_id, text: str
 ) -> NoteOut:
     """Only its author changes its text (403)."""
-    refuse_if_suspended(company)
+    refuse_change_if_suspended(company)
     profiles, keys = await writer(interview.company_id, member)
 
     async with Session.begin() as session:
@@ -211,7 +203,7 @@ async def edit(
 
 async def delete(interview: Interview, company: Company, member: Member, note_id) -> None:
     """Its author, the owner or an admin deletes it, for good (403 for anyone else)."""
-    refuse_if_suspended(company)
+    refuse_change_if_suspended(company)
     note = await found(interview, note_id)
 
     if not is_author(note, member) and not can_edit(member):
@@ -230,7 +222,7 @@ async def pin(
 ) -> None:
     """The owner or an admin pins a note, unpinning the interview's other one, or unpins it
     (403 for a viewer)."""
-    refuse_if_suspended(company)
+    refuse_change_if_suspended(company)
 
     if not can_edit(member):
         raise HTTPException(status.HTTP_403_FORBIDDEN, ONLY_EDITORS_PIN)

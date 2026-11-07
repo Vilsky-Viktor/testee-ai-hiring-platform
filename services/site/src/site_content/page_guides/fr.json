@@ -103,6 +103,7 @@
     ],
     "tips": [
       "Vous recevez une notification quand l'entretien est prêt.",
+      "Une fois que l'entreprise a rechargé des crédits, un entretien créé via l'API se passe de vérification : ses questions sont rédigées à partir des thèmes proposés.",
       "Revenez à tout moment depuis la liste des entretiens."
     ]
   },

@@ -103,6 +103,7 @@
     ],
     "tips": [
       "Je krijgt een melding als het interview klaar is.",
+      "Zodra het bedrijf heeft opgewaardeerd, slaat een interview dat via de API is gemaakt de controle over: de vragen worden geschreven op basis van de voorgestelde onderwerpen.",
       "Kom op elk moment terug via de lijst met interviews."
     ]
   },

@@ -103,6 +103,7 @@
     ],
     "tips": [
       "Ricevi una notifica quando il colloquio è pronto.",
+      "Dopo la prima ricarica dell'azienda, un colloquio creato tramite l'API salta la revisione: le domande vengono scritte dagli argomenti proposti.",
       "Torna quando vuoi dall'elenco dei colloqui."
     ]
   },

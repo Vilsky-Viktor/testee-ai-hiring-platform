@@ -18,6 +18,7 @@ from generation.integrations.redis import get_redis
 from generation.integrations.usage import ai_run
 from generation.models.generation import Generation
 from generation.services import outbox as outbox_service
+from generation.services.review import topics_proposed
 from generation.services.run_state import is_cancelled, save
 from generation.services.sample_checks import check_sample
 
@@ -62,7 +63,7 @@ async def run_pipeline(graph, generation: Generation, resume: dict | None) -> No
 
 async def stream_graph(graph, generation: Generation, graph_input, config: dict, size: int) -> None:
     progress = dict(generation.progress or {})
-    paused = False
+    proposed = None
 
     # aclosing stops the graph right away on cancel instead of leaving it to garbage collection.
     async with aclosing(graph.astream(graph_input, config, stream_mode="updates")) as stream:
@@ -73,16 +74,20 @@ async def stream_graph(graph, generation: Generation, graph_input, config: dict,
 
             # The stream ends by itself after an interrupt; leaving early would abort the run.
             if "__interrupt__" in chunk:
-                topics = chunk["__interrupt__"][0].value["topics"]
-                await save(generation.id, status=Status.AWAITING_REVIEW, topics=topics)
-                paused = True
+                proposed = chunk["__interrupt__"][0].value["topics"]
 
                 continue
 
             if track_progress(progress, chunk, size):
                 await save(generation.id, progress=progress)
 
-    if paused or await is_cancelled(generation.id):
+    # Once the stream ended: the next job resumes from the checkpoint it finished writing.
+    if proposed is not None:
+        await topics_proposed(generation, proposed)
+
+        return
+
+    if await is_cancelled(generation.id):
         return
 
     values = (await graph.aget_state(config)).values

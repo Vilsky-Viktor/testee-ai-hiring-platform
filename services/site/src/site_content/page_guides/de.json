@@ -103,6 +103,7 @@
     ],
     "tips": [
       "Du bekommst eine Benachrichtigung, wenn das Interview fertig ist.",
+      "Sobald das Unternehmen Credits aufgeladen hat, entfällt die Prüfung bei einem über die API erstellten Interview: Die Fragen werden direkt aus den vorgeschlagenen Themen geschrieben.",
       "Du kannst jederzeit über die Liste der Interviews zurückkommen."
     ]
   },

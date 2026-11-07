@@ -26,6 +26,7 @@ from companies.integrations.redis import get_redis
 from companies.models.companies import Company
 from companies.repositories import audit, companies, interviews, template_interviews
 from companies.schemas.interviews import InterviewOut
+from companies.services.access import refuse_change_if_suspended
 from companies.services.idempotent_creates import once_per_key
 from companies.services.interview_views import interview_out
 
@@ -120,7 +121,15 @@ async def create(
 
     try:
         created = await generation_api.create(
-            text, company.id, user_id, language, generate_in, paid
+            text,
+            company.id,
+            user_id,
+            language,
+            generate_in,
+            paid,
+            # No one reviews through the API. A company that never paid still does, on the site
+            # or over MCP, as approving its topics is where it's checked (generation_steps.review).
+            auto_approve=via == VIA_API and paid,
         )
     except Exception as error:
         # Nothing was made: the attempt gives back its place in the day's count.
@@ -195,7 +204,7 @@ async def create_for_api(
     company_id, user_id: str, text: str, generate_in: str | None
 ) -> InterviewOut:
     """create, through the public API as `user_id`, the key itself (key_actor): refused during
-    the emergency pause, 404 for a company that's gone."""
+    the emergency pause, 404 for a company that's gone, 409 for a suspended one."""
     await refuse_if_paused(get_redis(), "interview_generation", company_id, user_id)
 
     async with Session() as session:
@@ -203,5 +212,7 @@ async def create_for_api(
 
     if company is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Company not found")
+
+    refuse_change_if_suspended(company)
 
     return await create(company, user_id, None, text, generate_in, VIA_API)

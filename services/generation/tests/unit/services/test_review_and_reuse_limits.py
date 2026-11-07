@@ -43,6 +43,33 @@ def claimed(monkeypatch):
     return claims
 
 
+def test_topics_going_on_unreviewed_are_held_to_what_a_review_may_approve(monkeypatch):
+    queued = []
+
+    async def not_paused(redis):
+        return False
+
+    async def caps():
+        return {"max_topics": 2}
+
+    async def saved(generation_id, **values):
+        return True
+
+    async def enqueue(path, payload):
+        queued.append(payload["resume"]["selected"])
+
+    monkeypatch.setattr(review, "is_paused", not_paused)
+    monkeypatch.setattr(review, "topic_caps", caps)
+    monkeypatch.setattr(review, "save", saved)
+    monkeypatch.setattr(review.tasks, "enqueue", enqueue)
+    generation = Generation(id=uuid.uuid4(), auto_approve=True)
+    topics = [{"main_topic": name, "subtopics": []} for name in ("Python", "SQL", "Git")]
+
+    asyncio.run(review.topics_proposed(generation, topics))
+
+    assert queued == [[0, 1]]
+
+
 def test_a_selection_outside_the_drafted_topics_is_refused(claimed):
     with pytest.raises(HTTPException) as refused:
         asyncio.run(review.submit_review(awaiting_review(), ReviewRequest(selected=[0, 2])))

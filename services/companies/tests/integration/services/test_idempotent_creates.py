@@ -25,7 +25,7 @@ def generations(monkeypatch):
     async def paid(company_id):
         return True
 
-    async def start(*args):
+    async def start(*args, **kwargs):
         started.append(str(uuid.uuid4()))
 
         return {"id": started[-1], "language": "en"}

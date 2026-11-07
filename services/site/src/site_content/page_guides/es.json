@@ -103,6 +103,7 @@
     ],
     "tips": [
       "Recibirás una notificación cuando la entrevista esté lista.",
+      "Cuando la empresa haya recargado créditos, una entrevista creada mediante la API se salta la revisión: sus preguntas se escriben a partir de los temas propuestos.",
       "Vuelve cuando quieras desde la lista de entrevistas."
     ]
   },

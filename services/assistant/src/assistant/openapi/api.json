@@ -168,7 +168,7 @@
      "Interviews"
     ],
     "summary": "Create an interview",
-    "description": "Starts an interview from a job description, as the key (the action log names it). testee\nfirst proposes its topics, and nothing more happens until they're reviewed: by an owner or\nadmin on the interview's page in testee, or by an agent with `review_generation` over MCP.\nThe API has no route for it. Topics left unreviewed for 14 days cancel the interview. The\nquestions then take a few minutes: until `ready` is true, it can't take candidates; the\n`interview.ready` web hook event says when it is. Retrying is safe: the same request from\nthe same key within 15 minutes returns the interview the first one made, with `200`.\n\nNeeds the `interviews:create` permission.",
+    "description": "Starts an interview from a job description, as the key (the action log names it). testee\nproposes its topics and goes straight on to its questions, which take a few minutes: until\n`ready` is true, it can't take candidates; the `interview.ready` web hook event says when it\nis. Until your company's first top-up, and during a pause, the topics wait for a review\ninstead: by an owner or admin on the interview's page in testee, or by an agent with\n`review_generation` over MCP. The API has no route for it, and topics left unreviewed for 14\ndays cancel the interview. If making it fails, `ready` stays false until an owner or admin\nretries it on that page. Retrying this request is safe: the same request from the same key\nwithin 15 minutes returns the interview the first one made, with `200`.\n\nNeeds the `interviews:create` permission.",
     "operationId": "create_interview",
     "security": [
      {
@@ -255,7 +255,7 @@
       }
      },
      "409": {
-      "description": "The same request is still running (`request_in_progress`), or your company has as many interviews without candidates as it may (`interview_quota_reached`)",
+      "description": "The same request is still running (`request_in_progress`), your company has as many interviews without candidates as it may (`interview_quota_reached`), or it is suspended (`company_suspended`)",
       "content": {
        "application/json": {
         "schema": {

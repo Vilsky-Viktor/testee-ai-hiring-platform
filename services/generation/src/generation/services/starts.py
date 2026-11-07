@@ -46,7 +46,12 @@ async def start_interview(body: InterviewGenerationCreate) -> Generation:
 
     async with Session.begin() as session:
         generation = await generations.create(
-            session, body.owner_uid, body.text, body.company_id, language
+            session,
+            body.owner_uid,
+            body.text,
+            body.company_id,
+            language,
+            auto_approve=body.auto_approve,
         )
 
     return await queued(generation)

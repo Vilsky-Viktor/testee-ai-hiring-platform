@@ -103,6 +103,7 @@
     ],
     "tips": [
       "Kamu akan mendapat notifikasi saat wawancara siap.",
+      "Setelah perusahaan mengisi ulang kredit, wawancara yang dibuat lewat API melewati peninjauan: soalnya ditulis dari topik yang diusulkan.",
       "Kembali kapan saja dari daftar wawancara."
     ]
   },

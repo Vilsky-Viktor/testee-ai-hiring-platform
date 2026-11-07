@@ -51,7 +51,7 @@ def generate(client, monkeypatch, waiting, paid=False, redis=None, refusal=None,
     async def fake_waiting(session, company_id):
         return waiting
 
-    async def fake_generation(*args):
+    async def fake_generation(*args, **kwargs):
         reached.append(args[-1])
 
         if refusal is not None:

@@ -10,7 +10,6 @@ from companies.constants import error_codes
 from companies.constants.audit import VIA_API
 from companies.constants.invites import (
     ALREADY_FINISHED,
-    COMPANY_SUSPENDED,
     INTERVIEW_NOT_READY,
     NO_EMAILS_FOR_GUEST,
     NOT_STARTED,
@@ -26,6 +25,7 @@ from companies.models.interviews import Interview
 from companies.models.invites import CandidateInvite
 from companies.repositories import audit, companies, invites
 from companies.services import outbox as outbox_service
+from companies.services.access import refuse_change_if_suspended
 from companies.services.candidate_billing import hold_again
 from companies.services.interview_views import interview_title
 
@@ -48,9 +48,7 @@ async def invite(
     superadmin has the company suspended (an ATS keeps its candidates waiting then). The action
     log records it as `user`'s, through `via` when an ATS or the API sent it. `voice` chooses how
     a candidate not started yet takes it (none leaves it as it is)."""
-    if company.suspended_at is not None:
-        raise CodedError(status.HTTP_409_CONFLICT, COMPANY_SUSPENDED, error_codes.COMPANY_SUSPENDED)
-
+    refuse_change_if_suspended(company)
     email = email.lower()
 
     async with Session() as session:
