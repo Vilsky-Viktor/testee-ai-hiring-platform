@@ -2,7 +2,7 @@ import type { Locator, Page } from "@playwright/test"
 
 import { expect, test } from "../fixtures"
 import { api, createCompany } from "../helpers/api"
-import { addTemplate, deleteTemplate } from "../helpers/db-library"
+import { addTemplate } from "../helpers/db-library"
 import { PHONE } from "../helpers/layout"
 import { visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
@@ -78,89 +78,85 @@ async function addReport(page: Page, row: Locator, details: string) {
 test("an owner manages a topic's questions on their page", async ({ signInAs }) => {
   const template = await addTemplate(`E2E topic page ${randomId()}`, 12)
 
-  try {
-    const owner = await signInAs(ownerEmail())
-    const { interviewId, topicId, path } = await interviewFrom(owner, template)
-    const limit = owner.getByRole("main").getByRole("spinbutton").first()
+  const owner = await signInAs(ownerEmail())
+  const { interviewId, topicId, path } = await interviewFrom(owner, template)
+  const limit = owner.getByRole("main").getByRole("spinbutton").first()
 
-    // From the Topics tab: the topic's button links to its page.
-    await visit(owner, path)
-    await expect(limit).toHaveAttribute("max", "12")
-    await owner.getByTestId("manage-questions").first().click()
-    await expect(owner).toHaveURL(new RegExp(`/topics/${topicId}$`))
-    const row = owner.getByTestId("question-row").first()
-    const include = row.getByRole("checkbox")
-    await expect(include).toHaveAttribute("aria-checked", "true")
-    await expect(include).toBeEnabled()
-    await shot(owner, "topic-questions")
+  // From the Topics tab: the topic's button links to its page.
+  await visit(owner, path)
+  await expect(limit).toHaveAttribute("max", "12")
+  await owner.getByTestId("manage-questions").first().click()
+  await expect(owner).toHaveURL(new RegExp(`/topics/${topicId}$`))
+  const row = owner.getByTestId("question-row").first()
+  const include = row.getByRole("checkbox")
+  await expect(include).toHaveAttribute("aria-checked", "true")
+  await expect(include).toBeEnabled()
+  await shot(owner, "topic-questions")
 
-    // Disabled: saved, so it stays out after a reload and the topic counts one question less.
-    await include.click()
-    await expect(include).toHaveAttribute("aria-checked", "false")
-    await expect
-      .poll(async () => {
-        const detail = await api<Detail>(owner, "GET", `/companies/interviews/${interviewId}`)
+  // Disabled: saved, so it stays out after a reload and the topic counts one question less.
+  await include.click()
+  await expect(include).toHaveAttribute("aria-checked", "false")
+  await expect
+    .poll(async () => {
+      const detail = await api<Detail>(owner, "GET", `/companies/interviews/${interviewId}`)
 
-        return detail.topics[0].question_count
-      })
-      .toBe(11)
-    await owner.reload()
-    await expect(include).toHaveAttribute("aria-checked", "false")
-    await shot(owner, "question-disabled")
-    // The back link, to the interview's Topics tab.
-    await owner.getByRole("main").locator(`a[href$="${path}"]`).first().click()
-    await expect(limit).toHaveAttribute("max", "11")
+      return detail.topics[0].question_count
+    })
+    .toBe(11)
+  await owner.reload()
+  await expect(include).toHaveAttribute("aria-checked", "false")
+  await shot(owner, "question-disabled")
+  // The back link, to the interview's Topics tab.
+  await owner.getByRole("main").locator(`a[href$="${path}"]`).first().click()
+  await expect(limit).toHaveAttribute("max", "11")
 
-    // Enabled again: the count is back.
-    await owner.getByTestId("manage-questions").first().click()
-    await expect(include).toHaveAttribute("aria-checked", "false")
-    await include.click()
-    await expect(include).toHaveAttribute("aria-checked", "true")
-    await expect
-      .poll(async () => {
-        const detail = await api<Detail>(owner, "GET", `/companies/interviews/${interviewId}`)
+  // Enabled again: the count is back.
+  await owner.getByTestId("manage-questions").first().click()
+  await expect(include).toHaveAttribute("aria-checked", "false")
+  await include.click()
+  await expect(include).toHaveAttribute("aria-checked", "true")
+  await expect
+    .poll(async () => {
+      const detail = await api<Detail>(owner, "GET", `/companies/interviews/${interviewId}`)
 
-        return detail.topics[0].question_count
-      })
-      .toBe(12)
-    await owner.getByRole("main").locator(`a[href$="${path}"]`).first().click()
-    await expect(limit).toHaveAttribute("max", "12")
+      return detail.topics[0].question_count
+    })
+    .toBe(12)
+  await owner.getByRole("main").locator(`a[href$="${path}"]`).first().click()
+  await expect(limit).toHaveAttribute("max", "12")
 
-    // Like, the same again to take it back, then dislike.
-    await owner.getByTestId("manage-questions").first().click()
-    const [like, dislike] = [
-      row.locator("button[aria-pressed]").nth(0),
-      row.locator("button[aria-pressed]").nth(1),
-    ]
-    await expect(like).toHaveAttribute("aria-pressed", "false")
-    const likes = await countOf(like)
-    const dislikes = await countOf(dislike)
-    await vote(owner, like, "PUT")
-    await expect(like).toHaveAttribute("aria-pressed", "true")
-    await expect.poll(() => countOf(like)).toBe(likes + 1)
-    await vote(owner, like, "DELETE")
-    await expect(like).toHaveAttribute("aria-pressed", "false")
-    await expect.poll(() => countOf(like)).toBe(likes)
-    await vote(owner, dislike, "PUT")
-    await expect(dislike).toHaveAttribute("aria-pressed", "true")
-    await expect(like).toHaveAttribute("aria-pressed", "false")
-    await expect.poll(() => countOf(dislike)).toBe(dislikes + 1)
-    // Saved: still the dislike after a reload.
-    await owner.reload()
-    await expect(dislike).toHaveAttribute("aria-pressed", "true")
-    await expect.poll(() => countOf(dislike)).toBe(dislikes + 1)
-    await expect.poll(() => countOf(like)).toBe(likes)
+  // Like, the same again to take it back, then dislike.
+  await owner.getByTestId("manage-questions").first().click()
+  const [like, dislike] = [
+    row.locator("button[aria-pressed]").nth(0),
+    row.locator("button[aria-pressed]").nth(1),
+  ]
+  await expect(like).toHaveAttribute("aria-pressed", "false")
+  const likes = await countOf(like)
+  const dislikes = await countOf(dislike)
+  await vote(owner, like, "PUT")
+  await expect(like).toHaveAttribute("aria-pressed", "true")
+  await expect.poll(() => countOf(like)).toBe(likes + 1)
+  await vote(owner, like, "DELETE")
+  await expect(like).toHaveAttribute("aria-pressed", "false")
+  await expect.poll(() => countOf(like)).toBe(likes)
+  await vote(owner, dislike, "PUT")
+  await expect(dislike).toHaveAttribute("aria-pressed", "true")
+  await expect(like).toHaveAttribute("aria-pressed", "false")
+  await expect.poll(() => countOf(dislike)).toBe(dislikes + 1)
+  // Saved: still the dislike after a reload.
+  await owner.reload()
+  await expect(dislike).toHaveAttribute("aria-pressed", "true")
+  await expect.poll(() => countOf(dislike)).toBe(dislikes + 1)
+  await expect.poll(() => countOf(like)).toBe(likes)
 
-    await addReport(owner, row, `Owner details ${randomId()}`)
-    await shot(owner, "question-reported")
+  await addReport(owner, row, `Owner details ${randomId()}`)
+  await shot(owner, "question-reported")
 
-    // Phone: the checkbox stays on screen, at its row's side.
-    await owner.setViewportSize(PHONE)
-    await expect(include).toBeInViewport()
-    await shot(owner, "topic-questions-phone")
-  } finally {
-    await deleteTemplate(template)
-  }
+  // Phone: the checkbox stays on screen, at its row's side.
+  await owner.setViewportSize(PHONE)
+  await expect(include).toBeInViewport()
+  await shot(owner, "topic-questions-phone")
 })
 
 // A viewer member sees whether each question is in the interview without changing it, and likes
@@ -170,36 +166,32 @@ test("a viewer likes and reports a topic's questions but can't disable them", as
 }) => {
   const template = await addTemplate(`E2E topic viewer ${randomId()}`, 12)
 
-  try {
-    const owner = await signInAs(ownerEmail())
-    const { companyId, topicId, path } = await interviewFrom(owner, template)
-    const viewerAddress = ownerEmail()
-    const invited = await api<{ token: string }>(
-      owner,
-      "POST",
-      `/companies/members?company_id=${companyId}`,
-      { email: viewerAddress, role: "viewer" },
-    )
-    const viewer = await signInAs(viewerAddress)
-    await api(viewer, "POST", `/companies/members/invites/${invited.token}/accept`)
+  const owner = await signInAs(ownerEmail())
+  const { companyId, topicId, path } = await interviewFrom(owner, template)
+  const viewerAddress = ownerEmail()
+  const invited = await api<{ token: string }>(
+    owner,
+    "POST",
+    `/companies/members?company_id=${companyId}`,
+    { email: viewerAddress, role: "viewer" },
+  )
+  const viewer = await signInAs(viewerAddress)
+  await api(viewer, "POST", `/companies/members/invites/${invited.token}/accept`)
 
-    await visit(viewer, path)
-    await viewer.getByTestId("manage-questions").first().click()
-    await expect(viewer).toHaveURL(new RegExp(`/topics/${topicId}$`))
-    const row = viewer.getByTestId("question-row").first()
-    const include = row.getByRole("checkbox")
-    await expect(include).toHaveAttribute("aria-checked", "true")
-    await expect(include).toBeDisabled()
-    await shot(viewer, "viewer-topic-questions")
+  await visit(viewer, path)
+  await viewer.getByTestId("manage-questions").first().click()
+  await expect(viewer).toHaveURL(new RegExp(`/topics/${topicId}$`))
+  const row = viewer.getByTestId("question-row").first()
+  const include = row.getByRole("checkbox")
+  await expect(include).toHaveAttribute("aria-checked", "true")
+  await expect(include).toBeDisabled()
+  await shot(viewer, "viewer-topic-questions")
 
-    const like = row.locator("button[aria-pressed]").first()
-    const likes = await countOf(like)
-    await vote(viewer, like, "PUT")
-    await expect(like).toHaveAttribute("aria-pressed", "true")
-    await expect.poll(() => countOf(like)).toBe(likes + 1)
+  const like = row.locator("button[aria-pressed]").first()
+  const likes = await countOf(like)
+  await vote(viewer, like, "PUT")
+  await expect(like).toHaveAttribute("aria-pressed", "true")
+  await expect.poll(() => countOf(like)).toBe(likes + 1)
 
-    await addReport(viewer, row, `Viewer details ${randomId()}`)
-  } finally {
-    await deleteTemplate(template)
-  }
+  await addReport(viewer, row, `Viewer details ${randomId()}`)
 })

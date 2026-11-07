@@ -2,7 +2,7 @@ import type { Page } from "@playwright/test"
 
 import { expect, test } from "../fixtures"
 import { api, createCompany, createInterview, inviteCandidate } from "../helpers/api"
-import { addPracticeRounds, addTemplate, deleteTemplate } from "../helpers/db-library"
+import { addPracticeRounds, addTemplate } from "../helpers/db-library"
 import { box } from "../helpers/layout"
 import { openDialog, visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
@@ -76,19 +76,15 @@ test("the info button explains a practice test's rounds and a round's results", 
   const talent = await signInAs(throwawayEmail("practice-help"))
   const templateId = await addTemplate("E2E practice help", 1, "practice")
 
-  try {
-    await addPracticeRounds(await uidOf(talent), templateId, 1)
-    await visit(talent, `/practice/history/${templateId}`)
-    const rounds = await api<{ title: string }>(talent, "GET", "/site/help/pages/practiceHistory")
-    expect(await checkHelp(talent, "practice-history")).toBe(rounds.title)
+  await addPracticeRounds(await uidOf(talent), templateId, 1)
+  await visit(talent, `/practice/history/${templateId}`)
+  const rounds = await api<{ title: string }>(talent, "GET", "/site/help/pages/practiceHistory")
+  expect(await checkHelp(talent, "practice-history")).toBe(rounds.title)
 
-    const round = await api<{ round_id: string }>(talent, "POST", `/rounds/practice/${templateId}`)
-    await visit(talent, `/practice/rounds/${round.round_id}`)
-    const results = await api<{ title: string }>(talent, "GET", "/site/help/pages/practiceRound")
-    expect(await checkHelp(talent, "practice-round")).toBe(results.title)
-  } finally {
-    await deleteTemplate(templateId)
-  }
+  const round = await api<{ round_id: string }>(talent, "POST", `/rounds/practice/${templateId}`)
+  await visit(talent, `/practice/rounds/${round.round_id}`)
+  const results = await api<{ title: string }>(talent, "GET", "/site/help/pages/practiceRound")
+  expect(await checkHelp(talent, "practice-round")).toBe(results.title)
 })
 
 // The companies list: its guide, and the back arrow before it. On a wide screen the arrow sits in

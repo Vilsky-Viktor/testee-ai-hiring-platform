@@ -2,7 +2,7 @@ import type { Page } from "@playwright/test"
 
 import { expect, test } from "../fixtures"
 import { api, createCompany } from "../helpers/api"
-import { addReplacedVersion, addTemplate, deleteTemplate } from "../helpers/db-library"
+import { addReplacedVersion, addTemplate } from "../helpers/db-library"
 import { openDialog, visit, visitUntil } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { ownerEmail, randomId } from "../helpers/users"
@@ -188,20 +188,16 @@ test("superadmin sees what a replaced question was replaced with", async ({ sign
   const templateId = await addTemplate(`E2E replaced ${randomId()}`, 1)
   await addReplacedVersion(templateId, oldText)
 
-  try {
-    const superadmin = await signInSuperadmin()
-    await visit(superadmin, "/superadmin/questions/replaced")
-    const row = superadmin.getByRole("listitem").filter({ hasText: oldText })
-    await expect(row).toBeVisible()
-    await shot(superadmin, "replaced")
-    await row.getByTestId("replaced-with").click()
-    const dialog = superadmin.getByRole("dialog")
-    await expect(dialog).toContainText("E2E question 1?")
-    await expect(dialog).toContainText("Skip the check")
-    await shot(superadmin, "replaced-with")
-  } finally {
-    await deleteTemplate(templateId)
-  }
+  const superadmin = await signInSuperadmin()
+  await visit(superadmin, "/superadmin/questions/replaced")
+  const row = superadmin.getByRole("listitem").filter({ hasText: oldText })
+  await expect(row).toBeVisible()
+  await shot(superadmin, "replaced")
+  await row.getByTestId("replaced-with").click()
+  const dialog = superadmin.getByRole("dialog")
+  await expect(dialog).toContainText("E2E question 1?")
+  await expect(dialog).toContainText("Skip the check")
+  await shot(superadmin, "replaced-with")
 })
 
 test("superadmin sees each legal document's notice on the controls page", async ({
@@ -222,18 +218,14 @@ test("superadmin sees a template's practice and company questions per topic", as
 }) => {
   const templateId = await addTemplate(`E2E pools ${randomId()}`, 12)
 
-  try {
-    const superadmin = await signInSuperadmin()
-    await visit(superadmin, `/superadmin/templates/${templateId}`)
-    // Practice first, then company.
-    await expect(superadmin.getByTestId("pool-counts")).toHaveText(/^0\D+12\D*$/)
-    await expect(superadmin.getByTestId("top-up").filter({ visible: true })).toBeVisible()
-    await shot(superadmin, "template-pools")
-    await openDialog(superadmin, superadmin.getByTestId("add-questions"))
-    await expect(superadmin.getByRole("dialog").getByRole("spinbutton")).toHaveValue("30")
-    await shot(superadmin, "add-questions")
-    await superadmin.keyboard.press("Escape")
-  } finally {
-    await deleteTemplate(templateId)
-  }
+  const superadmin = await signInSuperadmin()
+  await visit(superadmin, `/superadmin/templates/${templateId}`)
+  // Practice first, then company.
+  await expect(superadmin.getByTestId("pool-counts")).toHaveText(/^0\D+12\D*$/)
+  await expect(superadmin.getByTestId("top-up").filter({ visible: true })).toBeVisible()
+  await shot(superadmin, "template-pools")
+  await openDialog(superadmin, superadmin.getByTestId("add-questions"))
+  await expect(superadmin.getByRole("dialog").getByRole("spinbutton")).toHaveValue("30")
+  await shot(superadmin, "add-questions")
+  await superadmin.keyboard.press("Escape")
 })

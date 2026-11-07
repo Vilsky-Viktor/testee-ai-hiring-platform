@@ -1,5 +1,11 @@
 import { withDatabase } from "./db";
 
+const LEFTOVER_AGE = "6 hours";
+
+// The templates the running test made (a worker runs one at a time); the fixtures'
+// `templatesGoAfter` deletes them when it ends, however it ends.
+const madeTemplates = new Set<string>();
+
 /** A throwaway template with one topic of `questions` questions in `pool`, saved straight into
  * the library database (a real one needs an OpenAI generation). A company can copy it only with
  * at least 10 company questions (MIN_COPY_QUESTIONS in services/library); practice uses only
@@ -14,7 +20,7 @@ export async function addTemplate(
   level: "basic" | "medium" | "hard" = "basic",
   language = "de",
 ): Promise<string> {
-  return withDatabase("library", async (client) => {
+  const template = await withDatabase("library", async (client) => {
     const set = await client.query(
       `INSERT INTO sets (id, kind, owner_type, owner_id, title, source_text, level, language,
          requirements, topic_count, created_at)
@@ -44,6 +50,9 @@ export async function addTemplate(
 
     return id;
   });
+  madeTemplates.add(template);
+
+  return template;
 }
 
 /** Deletes a template addTemplate made; its topics and questions go with it, and the companies'
@@ -52,6 +61,40 @@ export async function deleteTemplate(id: string) {
   await withDatabase("library", (client) =>
     client.query("DELETE FROM sets WHERE id = $1", [id]),
   );
+}
+
+/** Deletes the templates the test that just ended made. */
+export async function deleteMadeTemplates() {
+  for (const id of madeTemplates) {
+    await deleteTemplate(id);
+  }
+
+  madeTemplates.clear();
+}
+
+/** Deletes what stopped runs left behind: their templates, those templates' practice rounds and
+ * the AI apps of addAiConnections. Only rows the tests marked, past LEFTOVER_AGE, so a run going
+ * on beside this one keeps its own. */
+export async function deleteLeftovers() {
+  const templates = await withDatabase("library", (client) =>
+    client.query(
+      `DELETE FROM sets WHERE kind = 'template' AND owner_type = 'platform'
+         AND source_text = 'E2E' AND created_at < now() - $1::interval RETURNING id`,
+      [LEFTOVER_AGE],
+    ),
+  );
+  await withDatabase("rounds", (client) =>
+    client.query(
+      "DELETE FROM sessions WHERE topic_title = 'E2E topic' AND interview_set_id = ANY($1)",
+      [templates.rows.map((row) => row.id)],
+    ),
+  );
+  await withDatabase("assistant", async (client) => {
+    const stale = `SELECT client_id FROM oauth_clients
+      WHERE client_id LIKE 'e2e-%' AND created_at < now() - $1::interval`;
+    await client.query(`DELETE FROM mcp_grants WHERE client_id IN (${stale})`, [LEFTOVER_AGE]);
+    await client.query(`DELETE FROM oauth_clients WHERE client_id IN (${stale})`, [LEFTOVER_AGE]);
+  });
 }
 
 /** Keeps `oldText` as a replaced version of the first question of a template addTemplate made,
@@ -109,7 +152,7 @@ export async function multiAnswerTemplate(
   company = 15,
   practice = 15,
 ): Promise<string> {
-  return withDatabase("library", async (client) => {
+  const template = await withDatabase("library", async (client) => {
     const set = await client.query(
       `INSERT INTO sets (id, kind, owner_type, owner_id, title, source_text, level, language,
          requirements, topic_count, created_at)
@@ -153,6 +196,9 @@ export async function multiAnswerTemplate(
 
     return id;
   });
+  madeTemplates.add(template);
+
+  return template;
 }
 
 /** Adds `extra` to the end of every question of a template addTemplate made (or of those at

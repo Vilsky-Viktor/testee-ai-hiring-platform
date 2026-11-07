@@ -1,6 +1,6 @@
 import { expect, test } from "../fixtures"
 import { api, createCompany } from "../helpers/api"
-import { addTemplate, deleteTemplate } from "../helpers/db-library"
+import { addTemplate } from "../helpers/db-library"
 import { visit } from "../helpers/navigation"
 import { throwawayEmail } from "../helpers/users"
 
@@ -15,32 +15,28 @@ test("an interview's topics and questions carry the interview's language", async
   const owner = await signInAs(throwawayEmail("text-language"))
   const templateId = await addTemplate("E2E text language", 12)
 
-  try {
-    const company = await createCompany(owner)
-    const interview = await api<{ id: string }>(
-      owner,
-      "POST",
-      `/companies/interviews/from-template?company_id=${company.id}`,
-      { template_id: templateId }
-    )
-    const detail = await api<{ language: string }>(
-      owner,
-      "GET",
-      `/companies/interviews/${interview.id}`
-    )
-    expect(detail.language).toBe("de")
+  const company = await createCompany(owner)
+  const interview = await api<{ id: string }>(
+    owner,
+    "POST",
+    `/companies/interviews/from-template?company_id=${company.id}`,
+    { template_id: templateId }
+  )
+  const detail = await api<{ language: string }>(
+    owner,
+    "GET",
+    `/companies/interviews/${interview.id}`
+  )
+  expect(detail.language).toBe("de")
 
-    await visit(owner, `/companies/${company.id}/interviews/${interview.id}`)
-    const topics = owner.getByRole("main").locator('[lang="de"][dir="ltr"]')
-    await expect(topics.getByText("E2E topic").filter({ visible: true })).toBeVisible()
+  await visit(owner, `/companies/${company.id}/interviews/${interview.id}`)
+  const topics = owner.getByRole("main").locator('[lang="de"][dir="ltr"]')
+  await expect(topics.getByText("E2E topic").filter({ visible: true })).toBeVisible()
 
-    await owner.getByTestId("manage-questions").first().click()
-    await expect(owner).toHaveURL(/\/topics\/[^/?]+$/)
-    const questions = owner.getByRole("main").locator('[lang="de"]')
-    await expect(questions.getByText("E2E question 1?").filter({ visible: true })).toBeVisible()
-  } finally {
-    await deleteTemplate(templateId)
-  }
+  await owner.getByTestId("manage-questions").first().click()
+  await expect(owner).toHaveURL(/\/topics\/[^/?]+$/)
+  const questions = owner.getByRole("main").locator('[lang="de"]')
+  await expect(questions.getByText("E2E question 1?").filter({ visible: true })).toBeVisible()
 })
 
 // A language picker names each language in itself, marked as that language: Japanese's name

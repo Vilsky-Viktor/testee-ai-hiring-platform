@@ -1,5 +1,5 @@
 import { expect, test } from "../fixtures"
-import { addTemplate, deleteTemplate } from "../helpers/db-library"
+import { addTemplate } from "../helpers/db-library"
 import { openTab, visit } from "../helpers/navigation"
 import { shot } from "../helpers/screenshots"
 import { ownerEmail, randomId, throwawayEmail } from "../helpers/users"
@@ -71,33 +71,27 @@ test("owner creates a company, an interview from a template and invites a candid
   const uncopyable = `E2E Uncopyable ${randomId()}`
   const templateIds = [await addTemplate(used, 10), await addTemplate(uncopyable, 9)]
 
-  try {
-    await visit(owner, `/practice?q=${encodeURIComponent(uncopyable)}&lang=de`)
-    await expect(owner.getByText(uncopyable).filter({ visible: true })).toBeVisible()
-    await visit(owner, `${companyUrl}/templates?q=${encodeURIComponent(uncopyable)}&lang=de`)
-    await expect(owner.getByRole("main").getByRole("listitem")).toHaveCount(0)
-    await expect(owner.getByText(uncopyable)).toHaveCount(0)
+  await visit(owner, `/practice?q=${encodeURIComponent(uncopyable)}&lang=de`)
+  await expect(owner.getByText(uncopyable).filter({ visible: true })).toBeVisible()
+  await visit(owner, `${companyUrl}/templates?q=${encodeURIComponent(uncopyable)}&lang=de`)
+  await expect(owner.getByRole("main").getByRole("listitem")).toHaveCount(0)
+  await expect(owner.getByText(uncopyable)).toHaveCount(0)
 
-    await visit(owner, `${companyUrl}/interviews`)
-    await openTab(owner, "/templates")
-    // The filters are lowercase, the level's first among them (language names keep their capitals).
-    await expect(
-      owner.locator('main [data-slot="searched-list"] > :first-child').getByRole("button").first()
-    ).toHaveCSS(
-      "text-transform",
-      "lowercase"
-    )
-    await shot(owner, "templates")
-    await visit(owner, `${companyUrl}/templates?q=${encodeURIComponent(used)}&lang=de`)
-    const row = owner.getByRole("listitem").filter({ hasText: used })
-    await row.getByTestId("use-template").click()
-    // The local dev server can take a while to build the interview page the first time.
-    await expect(owner).toHaveURL(/\/interviews\/[^/?]+$/, { timeout: 90_000 })
-  } finally {
-    for (const id of templateIds) {
-      await deleteTemplate(id)
-    }
-  }
+  await visit(owner, `${companyUrl}/interviews`)
+  await openTab(owner, "/templates")
+  // The filters are lowercase, the level's first among them (language names keep their capitals).
+  await expect(
+    owner.locator('main [data-slot="searched-list"] > :first-child').getByRole("button").first()
+  ).toHaveCSS(
+    "text-transform",
+    "lowercase"
+  )
+  await shot(owner, "templates")
+  await visit(owner, `${companyUrl}/templates?q=${encodeURIComponent(used)}&lang=de`)
+  const row = owner.getByRole("listitem").filter({ hasText: used })
+  await row.getByTestId("use-template").click()
+  // The local dev server can take a while to build the interview page the first time.
+  await expect(owner).toHaveURL(/\/interviews\/[^/?]+$/, { timeout: 90_000 })
 
   await expect(owner.getByTestId("manage-questions").first()).toBeVisible()
   await shot(owner, "interview")

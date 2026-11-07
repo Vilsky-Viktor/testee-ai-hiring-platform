@@ -1,6 +1,5 @@
 import { expect, test } from "../fixtures"
 import { api, createCompany, createInterview } from "../helpers/api"
-import { deleteTemplate } from "../helpers/db-library"
 import {
   addPracticeResult,
   deletePracticeResults,
@@ -66,7 +65,6 @@ test("a talent turns Open to offers on after a practice round and off in Setting
   } finally {
     await api(talent, "DELETE", "/rounds/open-to-offers")
     await deletePracticeResults(talentId, templateId)
-    await deleteTemplate(templateId)
     await unmarkPaid(company.id)
   }
 })

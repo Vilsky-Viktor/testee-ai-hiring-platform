@@ -2,6 +2,8 @@ import { test as base, type Page } from "@playwright/test"
 
 import { API_URL } from "./constants"
 import { deleteOwnCompanies } from "./helpers/api"
+import { billingNow, deleteLimitChanges } from "./helpers/db-ai"
+import { deleteMadeTemplates } from "./helpers/db-library"
 import { env } from "./helpers/env"
 import { signIn, tokenOf, type SignInEmails } from "./helpers/sign-in"
 
@@ -25,6 +27,13 @@ type Fixtures = {
   // timeout too): given the superadmin's page, it keeps their token and calls the API itself,
   // as the page may be closed by then.
   switchesOffAfter: (superadmin: Page) => Promise<void>
+  // Sets the limit `name` back to its default and removes its history entries from now on when
+  // the test ends, however it ends (a timeout too), keeping the superadmin's token as above.
+  // A limit left changed would skip that limit's tests from then on, and fails them in CI.
+  restoresLimitAfter: (superadmin: Page, name: string) => Promise<void>
+  // On for every test: the templates it made (helpers/db-library.ts) are deleted when it ends,
+  // however it ends (a timeout too).
+  templatesGoAfter: void
 }
 
 export const test = base.extend<Fixtures>({
@@ -70,6 +79,31 @@ export const test = base.extend<Fixtures>({
     await request.put(`${API_URL}/companies/superadmin/pause`, { headers, data: { paused: false } })
     await request.dispose()
   },
+  restoresLimitAfter: async ({ playwright }, use) => {
+    const limits: { token: string; name: string; since: Date }[] = []
+
+    await use(async (superadmin, name) => {
+      limits.push({ token: await tokenOf(superadmin), name, since: await billingNow() })
+    })
+
+    const request = await playwright.request.newContext()
+
+    for (const { token, name, since } of limits) {
+      await request.delete(`${API_URL}/billing/superadmin/limits/${name}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      await deleteLimitChanges(name, since)
+    }
+
+    await request.dispose()
+  },
+  templatesGoAfter: [
+    async ({}, use) => {
+      await use()
+      await deleteMadeTemplates()
+    },
+    { auto: true },
+  ],
 })
 
 export { expect } from "@playwright/test"
