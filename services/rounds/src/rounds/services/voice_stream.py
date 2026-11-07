@@ -15,6 +15,7 @@ from uuid import UUID
 import sentry_sdk
 from fastapi import HTTPException, WebSocket, WebSocketDisconnect, status
 from openai import OpenAIError
+from redis.exceptions import RedisError
 from testee_common.ai import ai_usage
 from testee_common.ai.ai_constants import Outcome
 from testee_common.auth.auth import verify
@@ -204,6 +205,10 @@ async def close_code(websocket: WebSocket, session_id: UUID) -> int:
         return STREAM_REFUSED
     except TimeoutError:
         return STREAM_CLOSE_BASE + status.HTTP_504_GATEWAY_TIMEOUT
+    except RedisError:
+        logger.warning("Voice mode's live listening failed: Redis", exc_info=True)
+
+        return STREAM_CLOSE_BASE + status.HTTP_503_SERVICE_UNAVAILABLE
     except OpenAIError as error:
         logger.warning("Voice mode's live listening failed: %s", type(error).__name__)
 

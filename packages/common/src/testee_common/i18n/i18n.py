@@ -1,3 +1,5 @@
+import logging
+
 from fastapi import FastAPI, Request
 from fastapi import HTTPException as RaisedHTTPException
 from fastapi.encoders import jsonable_encoder
@@ -7,14 +9,23 @@ from fastapi.exception_handlers import (
 )
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
+from redis.exceptions import RedisError
 from sqlalchemy.exc import TimeoutError as PoolTimeout
 from starlette.exceptions import HTTPException
-from testee_common.config.constants import DB_POOL_RETRY_SECONDS, DEFAULT_LANGUAGE, LANGUAGES
+from testee_common.config.constants import (
+    DB_POOL_RETRY_SECONDS,
+    DEFAULT_LANGUAGE,
+    LANGUAGES,
+    RETRY_AFTER,
+)
 from testee_common.i18n.translations import TRANSLATIONS
+from testee_common.redis.redis_constants import REDIS_DOWN_RETRY_SECONDS
+
+logger = logging.getLogger(__name__)
 
 # Pydantic's prefix on messages raised from a validator.
 VALUE_ERROR = "Value error, "
-# Told when no database connection came free in time.
+# Told when no database connection came free in time, or Redis doesn't answer.
 TOO_BUSY = "Too many requests. Try again later."
 # Traditional Chinese (Taiwan's, Hong Kong's, Macau's, or the Hant script): never given the
 # Simplified Chinese that "zh" is.
@@ -121,9 +132,21 @@ def add_localized_errors(app: FastAPI, codes: dict[int, str] | None = None) -> N
         return JSONResponse(
             {"detail": translate(TOO_BUSY, request_language(request))},
             status_code=503,
-            headers={"Retry-After": str(DB_POOL_RETRY_SECONDS)},
+            headers={RETRY_AFTER: str(DB_POOL_RETRY_SECONDS)},
+        )
+
+    async def redis_failed(request: Request, error: RedisError):
+        """A limit that caps spend refuses with Redis down (`hit`, never `hit_or_skip`): a 503
+        saying when to try again. Logged with its traceback, which the Redis alert counts."""
+        logger.warning("Redis failed; refused the request", exc_info=error)
+
+        return JSONResponse(
+            {"detail": translate(TOO_BUSY, request_language(request))},
+            status_code=503,
+            headers={RETRY_AFTER: str(REDIS_DOWN_RETRY_SECONDS)},
         )
 
     app.add_exception_handler(HTTPException, http_error)
     app.add_exception_handler(RequestValidationError, validation_error)
     app.add_exception_handler(PoolTimeout, no_free_connection)
+    app.add_exception_handler(RedisError, redis_failed)

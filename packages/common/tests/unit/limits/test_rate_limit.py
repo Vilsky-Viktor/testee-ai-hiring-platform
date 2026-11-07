@@ -4,6 +4,7 @@ from datetime import UTC, datetime
 import pytest
 from fake_redis import DownRedis, FakeRedis
 from fastapi import HTTPException
+from redis.exceptions import RedisError
 from testee_common.ai.ai_constants import LIMIT_HIT
 from testee_common.limits import rate_limit
 from testee_common.limits.limit_list import LIMITS
@@ -191,6 +192,11 @@ def test_spend_with_no_limit_counts_nothing(value, published):
 def test_with_redis_down_a_use_goes_uncounted():
     # No exception: the request goes through.
     asyncio.run(hit_or_skip(DownRedis(), "rate:x:u1", HOURLY))
+
+
+def test_a_limit_that_caps_spend_leaves_a_redis_failure_to_the_503_handler():
+    with pytest.raises(RedisError):
+        asyncio.run(spend(DownRedis(), "spend:x:all", 1, TOKENS))
 
 
 def test_over_a_limit_that_skips_on_failure_is_still_refused(published):

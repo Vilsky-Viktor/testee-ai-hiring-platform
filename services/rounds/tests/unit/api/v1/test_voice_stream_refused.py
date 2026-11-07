@@ -3,7 +3,9 @@
 from uuid import uuid4
 
 import pytest
+from redis.exceptions import ConnectionError as RedisConnectionError
 
+from rounds.services import voice_stream
 from tests.unit.api.v1 import test_voice, test_voice_stream
 
 section = test_voice.section
@@ -41,6 +43,21 @@ def test_anything_out_of_turn_closes_the_stream(client, voice, live, published, 
                 socket.send_json(step)
 
         assert close_code(socket) == 4400
+
+    assert voice.matched == []
+
+
+def test_redis_down_closes_the_stream_as_unavailable(client, voice, live, monkeypatch):
+    """A voice answer's limit caps spend, so it refuses with Redis down; the page then takes the
+    answer by tapping, as with a full server."""
+
+    async def down(*args):
+        raise RedisConnectionError("no route")
+
+    monkeypatch.setattr(voice_stream, "hear", down)
+
+    with client.websocket_connect(url(voice)) as socket:
+        assert close_code(socket) == 4503
 
     assert voice.matched == []
 

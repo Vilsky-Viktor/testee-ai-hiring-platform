@@ -189,9 +189,7 @@ def test_with_redis_down_voice_previews_are_refused_and_others_start(client, sta
 
     started.voice["on"] = True
 
-    with pytest.raises(ConnectionError):
-        preview(client)
-
+    assert preview(client).status_code == 503
     assert len(started) == 1
 
 

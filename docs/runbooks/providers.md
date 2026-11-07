@@ -130,7 +130,7 @@ What to do when a provider testee depends on fails, a payment isn't credited or 
 
 ## Redis down
 
-**How you notice:** **testee Redis failing**, over 20 Redis errors in 10 minutes ([monitoring_log_alerts.tf](../../infra/terraform/monitoring_log_alerts.tf)). The uptime checks stay green: `/ready` checks only the database. Live updates (the bell) stop, and some rate-limited actions are refused.
+**How you notice:** **testee Redis failing**, over 20 Redis errors in 10 minutes ([monitoring_log_alerts.tf](../../infra/terraform/monitoring_log_alerts.tf)). The uptime checks stay green: `/ready` checks only the database. Live updates (the bell) stop, and rate-limited actions that cap spend are refused with a `503` and `Retry-After: 30`.
 
 **What the system does by itself:** services retry a command whose connection dropped ([infra/README.md](../../infra/README.md#bootstrap-once), step 4). The emergency pause and maintenance mode count as off and can't be turned on ([pause.py](../../packages/common/src/testee_common/limits/pause.py), [Admin zone](../features/admin-zone.md#controls)); rate limits refuse or let the request through uncounted, by limit ([rate_limit.py](../../packages/common/src/testee_common/limits/rate_limit.py)). Each running service keeps the edited limits it last read (one started during the outage has every limit at its default), and the unpaid users' daily AI spend cap refuses nothing.
 

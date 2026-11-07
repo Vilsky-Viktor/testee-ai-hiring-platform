@@ -2,9 +2,18 @@ import pytest
 from fastapi import FastAPI, HTTPException
 from fastapi.testclient import TestClient
 from pydantic import BaseModel, field_validator
+from redis.exceptions import ConnectionError as RedisConnectionError
 from sqlalchemy.exc import TimeoutError as PoolTimeout
 from testee_common.config.constants import RATE_LIMITED
-from testee_common.i18n.i18n import CodedError, TemplateError, add_localized_errors, language_of
+from testee_common.i18n.i18n import (
+    TOO_BUSY,
+    CodedError,
+    TemplateError,
+    add_localized_errors,
+    language_of,
+    translate,
+)
+from testee_common.redis.redis_constants import REDIS_DOWN_RETRY_SECONDS
 
 
 class Body(BaseModel):
@@ -26,6 +35,11 @@ add_localized_errors(app)
 @app.get("/pool-exhausted")
 def pool_exhausted():
     raise PoolTimeout("no connection")
+
+
+@app.get("/redis-down")
+def redis_down():
+    raise RedisConnectionError("no route")
 
 
 @app.get("/limited")
@@ -204,3 +218,14 @@ def test_no_free_database_connection_is_a_503_that_says_when_to_retry():
     assert response.status_code == 503
     assert response.headers["Retry-After"] == "5"
     assert response.json()["detail"] == "Zu viele Anfragen. Versuche es später erneut."
+
+
+def test_with_redis_down_a_request_is_told_when_to_try_again_and_the_alert_can_count_it(caplog):
+    response = client.get("/redis-down", headers={"Accept-Language": "de"})
+
+    assert response.status_code == 503
+    assert response.headers["Retry-After"] == str(REDIS_DOWN_RETRY_SECONDS)
+    assert response.json()["detail"] == translate(TOO_BUSY, "de")
+    # The Redis alert counts log lines whose traceback names redis.exceptions.
+    [record] = [r for r in caplog.records if r.exc_info]
+    assert record.exc_info[0].__module__ == "redis.exceptions"
