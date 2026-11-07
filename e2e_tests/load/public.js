@@ -8,6 +8,7 @@ import {
   API_URL,
   BASE_URL,
   DURATION,
+  CHECKS_PASS,
   ERROR_RATE,
   PAGE_P95,
   THINK_SECONDS,
@@ -41,6 +42,8 @@ export const options = {
       Object.keys(API).map((name) => [`http_req_duration{endpoint:${name}}`, [API_P95]])
     ),
     "http_req_failed{phase:load}": [ERROR_RATE],
+    // A redirect or a 200 with the wrong body counts only here.
+    checks: [CHECKS_PASS],
   },
 }
 

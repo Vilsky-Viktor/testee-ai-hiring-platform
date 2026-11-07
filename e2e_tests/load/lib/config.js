@@ -37,3 +37,5 @@ export const EMAIL_TAG = "load-"
 export const API_P95 = "p(95)<500"
 export const PAGE_P95 = "p(95)<2000"
 export const ERROR_RATE = "rate<0.01"
+// Failed checks alone don't fail a run: k6 needs a threshold on them.
+export const CHECKS_PASS = "rate>0.99"

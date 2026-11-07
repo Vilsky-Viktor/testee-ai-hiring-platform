@@ -11,6 +11,7 @@ import {
   CANDIDATES_PER_COMPANY,
   DASHBOARD_COMPANIES,
   DURATION,
+  CHECKS_PASS,
   ERROR_RATE,
   THINK_SECONDS,
   VUS,
@@ -36,6 +37,8 @@ export const options = {
       ENDPOINTS.map((name) => [`http_req_duration{endpoint:${name}}`, [API_P95]])
     ),
     "http_req_failed{phase:load}": [ERROR_RATE],
+    // A redirect or a 200 with the wrong body counts only here.
+    checks: [CHECKS_PASS],
   },
 }
 

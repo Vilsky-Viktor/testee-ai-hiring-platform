@@ -10,6 +10,7 @@ import {
   API_P95,
   CANDIDATES_PER_COMPANY,
   DURATION,
+  CHECKS_PASS,
   ERROR_RATE,
   ITERATIONS,
   RATE,
@@ -51,6 +52,8 @@ export const options = {
     "http_req_duration{endpoint:step}": [API_P95],
     "http_req_duration{endpoint:answer}": [API_P95],
     "http_req_failed{phase:load}": [ERROR_RATE],
+    // A redirect or a 200 with the wrong body counts only here.
+    checks: [CHECKS_PASS],
     interviews_finished: ["rate>0.99"],
     // Arrivals the stack couldn't take (no VU free): capacity ran out.
     ...(RATE ? { dropped_iterations: ["count==0"] } : {}),
