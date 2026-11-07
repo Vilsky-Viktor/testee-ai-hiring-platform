@@ -24,6 +24,18 @@ async function metadata(folder: ContentFolder, slug: string, path: string) {
     : {}
 }
 
+/** Done a turn after the metadata. Next.js holds the page's first bytes for the metadata but
+ * renders the two apart, so an article, as quick as its metadata, could get there first and leave
+ * the tags in the body, whatever `htmlLimitedBots` says. */
+async function afterMetadata(
+  folder: ContentFolder,
+  slug: string,
+  path: string
+) {
+  await metadata(folder, slug, path)
+  await new Promise((resolve) => setImmediate(resolve))
+}
+
 async function article(
   folder: ContentFolder,
   slug: string,
@@ -36,6 +48,8 @@ async function article(
   if (!page) {
     notFound()
   }
+
+  await afterMetadata(folder, slug, path)
 
   return (
     <ContentArticle
