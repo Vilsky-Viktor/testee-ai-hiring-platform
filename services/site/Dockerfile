@@ -1,5 +1,5 @@
 # Built from the repo root (see docker-compose.yml), so the shared package can be copied in.
-FROM python:3.14-alpine@sha256:f6a589d43c42b9e7f7dc67a12d37132491f362859a5d750607710cc56da3bc72 AS python
+FROM python:3.15-alpine@sha256:0f9552bb28711333da16915ec146f5e6bb44a7fdac9ced15dc17c2e0206346dd AS python
 
 # Installs the locked packages. uv stays in this stage and in dev, out of production's image.
 FROM python AS base
